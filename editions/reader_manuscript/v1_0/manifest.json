@@ -1455,12 +1455,12 @@
       "voice_pass_slot_ids": [
         "reader-close"
       ],
-      "divergence_summary": "First curated reader prose pass reframes the final chapter as the book's research-intake contract: source states, Appendix G/H ownership boundaries, backlog records, new-paper triage, proof/test lanes, no-promotion blockers, and release traces are made readable while preserving the argument-level chapter core claim.",
+      "divergence_summary": "First curated reader prose pass reframes the final chapter as the book's research-intake contract: source states, Appendix G/H ownership boundaries, backlog records, new-paper triage, proof/test lanes, no-promotion blockers, and release traces are made readable while preserving the argument-level chapter core claim. The 2026-07-03 alignment surfaces the bounded implemented intake slice: one research-backlog fixture, one new-paper triage fixture with four synthetic cases, two finite Lean gates with negative-case theorems, and no live-paper, citation-normalization, chapter-insertion, source-interpretation, or support-state promotion claim.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose",
         "support-state boundary preserved at argument support for the chapter core claim",
         "source boundary preserved; all assigned sources remain research-agenda, backlog, implementation-reference, proof-contract, connector/recovery, or external-literature context inside their stated limits",
-        "proof/test status preserved without adding citation-accuracy, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, source-interpretation-quality, public-release-permission, external-review, or support-state results",
+        "proof/test status preserved while surfacing the backlog/triage fixture and Lean-gate boundary without adding citation-accuracy, external-literature-completeness, benchmark-reproduction, artifact-reproduction, live-new-paper-triage, source-interpretation-quality, public-release-permission, external-review, chapter-insertion, or support-state results",
         "implementation horizon preserved without implying the mature active research graph has been implemented",
         "release blocker status preserved until an edition release record clears it"
       ],
@@ -1471,7 +1471,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First curated reader prose pass recorded in docs/curated_reader_open_research_agenda_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "First curated reader prose pass updated in docs/curated_reader_open_research_agenda_prose_pass.md with the backlog/triage fixture and Lean-gate boundary; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",

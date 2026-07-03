@@ -156,8 +156,14 @@ an existing boundary.
 The current repository already has synthetic protocol coverage for this shape:
 the new-paper triage scenario fixture checks update-existing,
 propose-new-chapter, defer-external-literature, and reject-duplicate cases.
-That fixture is useful, but narrow. It validates record shape and decision
-categories. It does not prove that a future real paper has been judged well.
+The paired research-backlog fixture names one mapped backlog item with access,
+storage, public-safety, chapter-action, deduplication, promotion-blocker, and
+non-claim fields. `AsiStackProofs.BibliographyPlan` adds two finite gates and
+two negative-case theorems: source-derived support requires a source note or
+equivalent ingested-source artifact, and an accepted new-source assignment
+requires an existing chapter id. Those fixtures and proofs are useful, but
+narrow. They validate record shape, decision categories, and two record-level
+failure gates. They do not prove that a future real paper has been judged well.
 
 ```{mermaid}
 flowchart TD
@@ -267,6 +273,15 @@ governance system: a split Corben/local source appendix and external-source
 appendix, source inventory, source notes, source queues, exact claim-source
 mappings, proof targets, research backlog schema, new-paper triage scenario,
 and validation commands.
+
+The bounded implemented slice is small enough to name exactly: one
+`research_backlog_record.valid.json` fixture, one
+`new_paper_triage_scenario.valid.json` fixture with four synthetic intake
+cases, protocol-schema validation for those records, and two finite Lean gates
+with negative cases. The fixture support effect is backlog-only or
+record-shape-only. It is not a live paper intake, citation check, literature
+normalization pass, chapter-insertion approval, source-interpretation review,
+or support-state promotion.
 
 That is enough to stop the worst drift. A new source has somewhere to land. A
 future chapter proposal has to name its boundary. External literature stays

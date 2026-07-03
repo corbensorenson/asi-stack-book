@@ -53,6 +53,12 @@ The reader throughline is:
   live new-paper intake completion, benchmark reproduction, public release
   permission, external review completion, support-state movement, or reader
   artifact approval.
+- The reader chapter now names the exact bounded implemented surfaces: one
+  research-backlog valid fixture, one new-paper triage valid fixture with four
+  synthetic intake cases, protocol-schema validation for those records, and two
+  finite Lean gates with negative-case theorems. This is not a live paper
+  intake, citation check, literature-normalization pass, chapter-insertion
+  approval, source-interpretation review, or support-state promotion.
 
 ## Non-Claims
 

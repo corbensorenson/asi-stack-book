@@ -1621,6 +1621,20 @@
   completion, autonomous future-agent correctness result, support-state
   promotion, or artifact approval.
 
+## 2026-07-03 - Align Open Research reader intake boundary
+
+- Updated the Open Research Agenda curated reader chapter, prose-pass record,
+  reader-manuscript manifest, reconciliation report, and reader-review matrix
+  so the human-reader path now explicitly names the bounded implemented intake
+  slice: one research-backlog fixture, one new-paper triage fixture with four
+  synthetic cases, protocol-schema validation for those records, and two finite
+  Lean gates with negative-case theorems.
+- This is a reader evidence-boundary alignment only. It is not a live-paper
+  intake, citation check, literature-normalization pass, chapter-insertion
+  approval, source-interpretation review, benchmark reproduction,
+  public-release permission check, external-review completion, support-state
+  promotion, reader release, or ebook/document/PDF/audio artifact approval.
+
 ## 2026-07-02 - Add RankFold public-safe replay probe
 
 - Added `python3 scripts/run_rankfold_public_safe_probe.py`,
