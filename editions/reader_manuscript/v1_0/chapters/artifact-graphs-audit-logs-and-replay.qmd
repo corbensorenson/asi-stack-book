@@ -146,6 +146,21 @@ artifact may be context, a review target, a release input, or a procedural
 memory candidate. It should not become evidence for a stronger claim unless
 the artifact record says that the relevant provenance and checks exist.
 
+The hardest version of this problem is receipt faithfulness. A receipt can be
+well formed and still be false about the world. The file may be missing. The
+observer may be the same component that produced the claim. The attestation
+may cover only the record fields, not the thing the record points at. A trap
+receipt may reveal that the reviewer is checking shape instead of reality.
+
+The receipt-faithfulness fixture makes that failure visible. It accepts a
+bounded cross-checked receipt, a record-only limited attestation, and a trap
+receipt that correctly blocks promotion after detecting a mismatch. It rejects
+a shape-valid but false receipt, an ignored trap receipt, a missing independent
+cross-check, a same-component self-check, an unbounded attestation, and a
+support promotion based only on receipt shape. That is not a deployed
+attestation system. It is a record-level guardrail against treating valid
+paperwork as truth.
+
 ## A Book-Scale Example
 
 The living book is a small example of the same problem.
@@ -219,6 +234,14 @@ near-miss, and repair path. A benchmark run can be valuable only within the
 dataset, configuration, contamination, metric, and execution record it
 actually carries. The graph lets the system reuse failure without laundering
 failure into success.
+
+The implemented receipt-faithfulness fixture adds a second replay lesson:
+before a receipt can affect support, it needs reality checks, not just record
+shape. `python3 scripts/validate_receipt_faithfulness.py` writes
+`experiments/receipt_faithfulness/results/2026-07-03-local.json` after testing
+three bounded honest records and six dishonest controls. Its scope is narrow:
+it does not prove open-world receipt truth, verifier independence, deployed
+attestation, audit-service correctness, or chapter-core support.
 
 ## Interfaces
 

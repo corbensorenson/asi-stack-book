@@ -1619,6 +1619,7 @@ Draft arc:
 - Mechanism: Treat replay as graded rather than binary: byte-for-byte replay, semantic replay, partial replay, and non-replayability must be declared before artifact reuse can affect evidence state.
 - Mechanism: link artifact nodes to context transaction refs and semantic certificate refs so artifact reuse preserves the memory and representation boundaries it inherited.
 - Mechanism: require replay grade, evidence gate, residuals, and non-claims before an artifact can influence claim support, compression, procedural memory, or release records.
+- Mechanism: require receipt faithfulness checks before a shape-valid record can affect support state; a receipt must be cross-checked against independent observation, trap receipts, and explicit attestation limits instead of being trusted because it matches schema.
 - Handoff: Runtime adapters produce effect receipts and residuals that must return to the artifact graph before they become evidence.
 - Interface: VCM references artifacts.
 - Interface: Evidence consumes logs.
@@ -1637,6 +1638,7 @@ Failure modes to cover:
 - Untraceable output.
 - Non-replayable workflow.
 - Provenance gaps.
+- Receipt-shape laundering, where a schema-valid receipt is treated as reality even when independent observation, trap checks, or attestation limits contradict it.
 
 Draft deliverables:
 
@@ -1647,6 +1649,8 @@ Draft deliverables:
 - Implemented Lean predicate: missing required provenance blocks promoted-claim support.
 - Implemented Lean route envelope: artifact-admission review now covers missing artifact, parent/source/context/transaction/certificate/tool/claim/test/audit/replay/evidence/non-claim blockers, replay-grade sufficiency, stale-certificate blocking, blocked promotion, complete non-promoted admission, and approved-promoted admission over modeled records only.
 - Implemented Lean replay-packet bridge: cross-record artifact replay packets now model parent-job alignment, job-output coverage, context-transaction and certificate links, source coverage, audit-chain completeness, replay-grade alignment, byte-exact observation requirements, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission. This mirrors the synthetic fixture harness shape; it is not a deployed replay engine.
+- Implemented receipt-faithfulness adversarial fixture: `python3 scripts/validate_receipt_faithfulness.py` checks bounded receipt/reality cases, records result `experiments/receipt_faithfulness/results/2026-07-03-local.json`, and rejects shape-valid but reality-false receipts, ignored trap-receipt failures, missing independent cross-check routes, same-component self-check laundering, unbounded attestation, and support promotion from receipt shape. It is a bounded adversarial fixture only: it does not prove open-world receipt faithfulness, verifier independence, attestation-service correctness, deployed audit behavior, or chapter-core support.
+- Implemented Lean bridge: `receipt_faithfulness_adversarial_fixture_bridge` records that bounded cross-checked, attestation-limited, and trap-detected receipt records are accepted only inside their limits while shape-valid false receipts, trap failures, missing independent cross-checks, unbounded attestation, and receipt-shape support promotion are rejected.
 - Implemented synthetic Codex test: `python3 scripts/validate_artifact_graph_replay.py` checks artifact parentage, typed job outputs, context transaction refs, semantic certificate refs, source-ref coverage, replay grade, observed artifacts, audit reconstruction, stale-certificate blocking, and promotion-blocking boundaries. It remains synthetic record-gate evidence only, not a deployed artifact graph, replay engine, audit-reconstruction service, or source-interpretation claim.
 - Implemented synthetic Codex test: Audit reconstruction test via `python3 scripts/validate_artifact_graph_replay.py`; deployed audit reconstruction remains open.
 - Implemented synthetic Codex test: Replay metadata completeness test via `python3 scripts/validate_artifact_graph_replay.py`; deployed replay engine remains open.
@@ -1658,6 +1662,7 @@ Lean proof targets:
 | `lean:artifacts.graph.operational_invariant` | `AsiStackProofs.ArtifactGraph` | Every produced artifact records its parent job and source/context references. | implemented |
 | `lean:artifacts.graph.failure_blocks_promotion` | `AsiStackProofs.ArtifactGraph` | An artifact with missing required provenance cannot support a promoted claim. | implemented |
 | `lean:artifacts.graph.replay_packet_bridge` | `AsiStackProofs.ArtifactGraph` | A modeled artifact replay packet routes cross-record mismatches, missing observation, stale certificates, support-review transaction gaps, and partial-replay promotion attempts to explicit outcomes while admitting complete bounded-review packets. | implemented |
+| `lean:artifacts.graph.receipt_faithfulness_fixture_bridge` | `AsiStackProofs.ArtifactGraph` | An adversarial receipt-faithfulness fixture accepts bounded cross-checked, attestation-limited, and trap-detected records while rejecting shape-valid but reality-false receipts, ignored trap failures, missing independent cross-checks, unbounded attestation, and support promotion from receipt shape. | implemented |
 
 ### Runtime Adapters, Tool Permissions, and Human Approval
 
@@ -2765,9 +2770,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 180 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 180 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 180 proof targets, 54 Lean modules, 942 theorem declarations, 760 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 181 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 181 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 181 proof targets, 54 Lean modules, 943 theorem declarations, 761 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -2776,7 +2781,7 @@ Draft deliverables:
 - Implemented Codex test: External theorem reference boundary negative case.
 - Implemented Codex test: Proof artifact traceability audit.
 - Implemented Codex test: Proof-depth surface synchronization, via `python3 scripts/validate_proof_depth_surface.py`, so the live chapter, reader chapter, outline, and roadmap expose the current proof-depth classification counts and direct/projection versus derived/decomposed distinction without promoting proof-envelope support.
-- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 180 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
+- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 181 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
 
 Lean proof targets:
 

@@ -1,0 +1,215 @@
+{
+  "schema_version": "asi_stack.receipt_faithfulness.input.v0",
+  "fixture_id": "receipt-faithfulness-adversarial-fixture-2026-07-03",
+  "cases": [
+    {
+      "case_id": "valid_cross_checked_receipt_record",
+      "expect_valid": true,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "artifact_observed",
+      "actual_reality_state": "artifact_observed",
+      "independent_cross_check_route": "route://independent-artifact-observer",
+      "cross_check_independent": true,
+      "cross_check_result": "match",
+      "trap_receipt_included": true,
+      "trap_receipt_result": "passed",
+      "attestation_scope": "bounded",
+      "attestation_limits": [
+        "attests observed artifact digest only",
+        "does not attest source interpretation",
+        "does not attest model quality"
+      ],
+      "evidence_request": "record_only",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    },
+    {
+      "case_id": "valid_attestation_limited_record_only",
+      "expect_valid": true,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "bounded_attestation_only",
+      "actual_reality_state": "unknown_outside_scope",
+      "independent_cross_check_route": "route://attestation-scope-review",
+      "cross_check_independent": true,
+      "cross_check_result": "scope_limited",
+      "trap_receipt_included": true,
+      "trap_receipt_result": "passed",
+      "attestation_scope": "bounded",
+      "attestation_limits": [
+        "attests record fields only",
+        "does not attest external-world truth",
+        "requires later replay before support review"
+      ],
+      "evidence_request": "record_only",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    },
+    {
+      "case_id": "valid_trap_detected_blocked_receipt",
+      "expect_valid": true,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "artifact_observed",
+      "actual_reality_state": "artifact_missing",
+      "independent_cross_check_route": "route://trap-receipt-review",
+      "cross_check_independent": true,
+      "cross_check_result": "mismatch_detected",
+      "trap_receipt_included": true,
+      "trap_receipt_result": "failed_detected",
+      "attestation_scope": "bounded",
+      "attestation_limits": [
+        "trap failure blocks support review",
+        "record retained only as negative evidence",
+        "requires repair before reuse"
+      ],
+      "evidence_request": "blocked_from_promotion",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    },
+    {
+      "case_id": "invalid_shape_valid_reality_false_promoted",
+      "expect_valid": false,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "artifact_observed",
+      "actual_reality_state": "artifact_missing",
+      "independent_cross_check_route": "",
+      "cross_check_independent": false,
+      "cross_check_result": "not_run",
+      "trap_receipt_included": false,
+      "trap_receipt_result": "not_run",
+      "attestation_scope": "unbounded",
+      "attestation_limits": [],
+      "evidence_request": "support_state_review",
+      "support_state_effect": "promotes_support",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    },
+    {
+      "case_id": "invalid_trap_receipt_ignored",
+      "expect_valid": false,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "artifact_observed",
+      "actual_reality_state": "artifact_missing",
+      "independent_cross_check_route": "route://trap-receipt-review",
+      "cross_check_independent": true,
+      "cross_check_result": "mismatch_detected",
+      "trap_receipt_included": true,
+      "trap_receipt_result": "failed_ignored",
+      "attestation_scope": "bounded",
+      "attestation_limits": [
+        "trap failure present but ignored"
+      ],
+      "evidence_request": "support_state_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    },
+    {
+      "case_id": "invalid_missing_independent_cross_check",
+      "expect_valid": false,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "artifact_observed",
+      "actual_reality_state": "artifact_observed",
+      "independent_cross_check_route": "",
+      "cross_check_independent": false,
+      "cross_check_result": "not_run",
+      "trap_receipt_included": true,
+      "trap_receipt_result": "passed",
+      "attestation_scope": "bounded",
+      "attestation_limits": [
+        "attests record fields only"
+      ],
+      "evidence_request": "support_state_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    },
+    {
+      "case_id": "invalid_same_component_cross_check",
+      "expect_valid": false,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "artifact_observed",
+      "actual_reality_state": "artifact_observed",
+      "independent_cross_check_route": "route://same-component-self-check",
+      "cross_check_independent": false,
+      "cross_check_result": "match",
+      "trap_receipt_included": true,
+      "trap_receipt_result": "passed",
+      "attestation_scope": "bounded",
+      "attestation_limits": [
+        "self-check cannot satisfy independence"
+      ],
+      "evidence_request": "support_state_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    },
+    {
+      "case_id": "invalid_attestation_overclaim",
+      "expect_valid": false,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "artifact_observed",
+      "actual_reality_state": "artifact_observed",
+      "independent_cross_check_route": "route://independent-artifact-observer",
+      "cross_check_independent": true,
+      "cross_check_result": "match",
+      "trap_receipt_included": true,
+      "trap_receipt_result": "passed",
+      "attestation_scope": "unbounded",
+      "attestation_limits": [],
+      "evidence_request": "support_state_review",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    },
+    {
+      "case_id": "invalid_support_promotion_from_receipt_shape",
+      "expect_valid": false,
+      "receipt_shape_valid": true,
+      "claimed_reality_state": "artifact_observed",
+      "actual_reality_state": "unknown_outside_scope",
+      "independent_cross_check_route": "route://attestation-scope-review",
+      "cross_check_independent": true,
+      "cross_check_result": "scope_limited",
+      "trap_receipt_included": true,
+      "trap_receipt_result": "passed",
+      "attestation_scope": "bounded",
+      "attestation_limits": [
+        "attests record fields only"
+      ],
+      "evidence_request": "support_state_review",
+      "support_state_effect": "promotes_support",
+      "non_claims": [
+        "does not prove receipt truth",
+        "does not promote any chapter core claim",
+        "does not prove deployed attestation or audit behavior"
+      ]
+    }
+  ]
+}

@@ -982,4 +982,50 @@ theorem complete_support_review_packet_admits_bounded_review
     certificateVerified, activeCertificate, reusableLifecycle, nonClaims,
     ReplayGrade.requiresReplayEvidenceChecks]
 
+structure ReceiptFaithfulnessFixtureSummary where
+  crossCheckedReceiptRecordAccepted : Bool
+  attestationLimitedRecordOnlyAccepted : Bool
+  trapDetectedBlockedReceiptAccepted : Bool
+  shapeValidRealityFalseRejected : Bool
+  trapReceiptNegativeControlRejected : Bool
+  independentCrossCheckRequired : Bool
+  attestationLimitsRecorded : Bool
+  supportPromotionFromReceiptShapeRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def receiptFaithfulnessFixtureSummary :
+    ReceiptFaithfulnessFixtureSummary where
+  crossCheckedReceiptRecordAccepted := true
+  attestationLimitedRecordOnlyAccepted := true
+  trapDetectedBlockedReceiptAccepted := true
+  shapeValidRealityFalseRejected := true
+  trapReceiptNegativeControlRejected := true
+  independentCrossCheckRequired := true
+  attestationLimitsRecorded := true
+  supportPromotionFromReceiptShapeRejected := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+
+def ReceiptFaithfulnessFixtureValid
+    (summary : ReceiptFaithfulnessFixtureSummary) : Prop :=
+  summary.crossCheckedReceiptRecordAccepted = true ∧
+    summary.attestationLimitedRecordOnlyAccepted = true ∧
+    summary.trapDetectedBlockedReceiptAccepted = true ∧
+    summary.shapeValidRealityFalseRejected = true ∧
+    summary.trapReceiptNegativeControlRejected = true ∧
+    summary.independentCrossCheckRequired = true ∧
+    summary.attestationLimitsRecorded = true ∧
+    summary.supportPromotionFromReceiptShapeRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem receipt_faithfulness_adversarial_fixture_bridge :
+    ReceiptFaithfulnessFixtureValid
+      receiptFaithfulnessFixtureSummary := by
+  unfold ReceiptFaithfulnessFixtureValid
+  unfold receiptFaithfulnessFixtureSummary
+  simp
+
 end AsiStackProofs.ArtifactGraph

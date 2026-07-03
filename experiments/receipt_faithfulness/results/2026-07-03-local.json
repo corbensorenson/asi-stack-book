@@ -1,0 +1,238 @@
+{
+  "accepted_records": [
+    "valid_attestation_limited_record_only",
+    "valid_cross_checked_receipt_record",
+    "valid_trap_detected_blocked_receipt"
+  ],
+  "case_count": 9,
+  "case_results": [
+    {
+      "actual_reality_state": "artifact_observed",
+      "actual_valid": false,
+      "case_id": "invalid_attestation_overclaim",
+      "claimed_reality_state": "artifact_observed",
+      "evidence_request": "support_state_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "attestation_limits_missing",
+        "attestation_scope_unbounded"
+      ]
+    },
+    {
+      "actual_reality_state": "artifact_observed",
+      "actual_valid": false,
+      "case_id": "invalid_missing_independent_cross_check",
+      "claimed_reality_state": "artifact_observed",
+      "evidence_request": "support_state_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "cross_check_not_independent",
+        "independent_cross_check_route_missing",
+        "promotion_requested_without_independent_cross_check_match"
+      ]
+    },
+    {
+      "actual_reality_state": "artifact_observed",
+      "actual_valid": false,
+      "case_id": "invalid_same_component_cross_check",
+      "claimed_reality_state": "artifact_observed",
+      "evidence_request": "support_state_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "cross_check_not_independent",
+        "promotion_requested_without_independent_cross_check_match"
+      ]
+    },
+    {
+      "actual_reality_state": "artifact_missing",
+      "actual_valid": false,
+      "case_id": "invalid_shape_valid_reality_false_promoted",
+      "claimed_reality_state": "artifact_observed",
+      "evidence_request": "support_state_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "attestation_limits_missing",
+        "attestation_scope_unbounded",
+        "cross_check_not_independent",
+        "independent_cross_check_route_missing",
+        "promotion_requested_without_independent_cross_check_match",
+        "promotion_requested_without_passing_trap",
+        "promotion_requested_without_reality_match",
+        "shape_valid_but_reality_false",
+        "support_state_promotion_attempt",
+        "trap_receipt_missing"
+      ]
+    },
+    {
+      "actual_reality_state": "unknown_outside_scope",
+      "actual_valid": false,
+      "case_id": "invalid_support_promotion_from_receipt_shape",
+      "claimed_reality_state": "artifact_observed",
+      "evidence_request": "support_state_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "promotion_requested_for_unknown_reality",
+        "promotion_requested_without_independent_cross_check_match",
+        "promotion_requested_without_reality_match",
+        "shape_valid_but_reality_false",
+        "support_state_promotion_attempt"
+      ]
+    },
+    {
+      "actual_reality_state": "artifact_missing",
+      "actual_valid": false,
+      "case_id": "invalid_trap_receipt_ignored",
+      "claimed_reality_state": "artifact_observed",
+      "evidence_request": "support_state_review",
+      "expected_valid": false,
+      "rejection_reasons": [
+        "promotion_requested_without_independent_cross_check_match",
+        "promotion_requested_without_passing_trap",
+        "promotion_requested_without_reality_match",
+        "shape_valid_but_reality_false",
+        "trap_receipt_failure_ignored"
+      ]
+    },
+    {
+      "actual_reality_state": "unknown_outside_scope",
+      "actual_valid": true,
+      "case_id": "valid_attestation_limited_record_only",
+      "claimed_reality_state": "bounded_attestation_only",
+      "evidence_request": "record_only",
+      "expected_valid": true,
+      "rejection_reasons": []
+    },
+    {
+      "actual_reality_state": "artifact_observed",
+      "actual_valid": true,
+      "case_id": "valid_cross_checked_receipt_record",
+      "claimed_reality_state": "artifact_observed",
+      "evidence_request": "record_only",
+      "expected_valid": true,
+      "rejection_reasons": []
+    },
+    {
+      "actual_reality_state": "artifact_missing",
+      "actual_valid": true,
+      "case_id": "valid_trap_detected_blocked_receipt",
+      "claimed_reality_state": "artifact_observed",
+      "evidence_request": "blocked_from_promotion",
+      "expected_valid": true,
+      "rejection_reasons": []
+    }
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_receipt_faithfulness.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 6,
+  "input_ref": "experiments/receipt_faithfulness/input/adversarial_receipt_cases.json",
+  "lean_fixture_alignment": {
+    "expected": {
+      "attestationLimitedRecordOnlyAccepted": true,
+      "attestationLimitsRecorded": true,
+      "crossCheckedReceiptRecordAccepted": true,
+      "independentCrossCheckRequired": true,
+      "nonClaimBoundary": true,
+      "shapeValidRealityFalseRejected": true,
+      "supportPromotionFromReceiptShapeRejected": true,
+      "supportStateEffectNone": true,
+      "trapDetectedBlockedReceiptAccepted": true,
+      "trapReceiptNegativeControlRejected": true
+    },
+    "module": "AsiStackProofs.ArtifactGraph",
+    "theorem_refs": [
+      "receipt_faithfulness_adversarial_fixture_bridge"
+    ]
+  },
+  "non_claims": [
+    "does not prove receipt truth",
+    "does not promote any chapter core claim",
+    "does not prove deployed attestation or audit behavior",
+    "does not prove open-world receipt faithfulness",
+    "does not prove verifier independence or attestation-service correctness",
+    "does not create an evidence transition"
+  ],
+  "recorded_date": "2026-07-03",
+  "rejected_controls": [
+    {
+      "case_id": "invalid_attestation_overclaim",
+      "rejection_reasons": [
+        "attestation_limits_missing",
+        "attestation_scope_unbounded"
+      ]
+    },
+    {
+      "case_id": "invalid_missing_independent_cross_check",
+      "rejection_reasons": [
+        "cross_check_not_independent",
+        "independent_cross_check_route_missing",
+        "promotion_requested_without_independent_cross_check_match"
+      ]
+    },
+    {
+      "case_id": "invalid_same_component_cross_check",
+      "rejection_reasons": [
+        "cross_check_not_independent",
+        "promotion_requested_without_independent_cross_check_match"
+      ]
+    },
+    {
+      "case_id": "invalid_shape_valid_reality_false_promoted",
+      "rejection_reasons": [
+        "attestation_limits_missing",
+        "attestation_scope_unbounded",
+        "cross_check_not_independent",
+        "independent_cross_check_route_missing",
+        "promotion_requested_without_independent_cross_check_match",
+        "promotion_requested_without_passing_trap",
+        "promotion_requested_without_reality_match",
+        "shape_valid_but_reality_false",
+        "support_state_promotion_attempt",
+        "trap_receipt_missing"
+      ]
+    },
+    {
+      "case_id": "invalid_support_promotion_from_receipt_shape",
+      "rejection_reasons": [
+        "promotion_requested_for_unknown_reality",
+        "promotion_requested_without_independent_cross_check_match",
+        "promotion_requested_without_reality_match",
+        "shape_valid_but_reality_false",
+        "support_state_promotion_attempt"
+      ]
+    },
+    {
+      "case_id": "invalid_trap_receipt_ignored",
+      "rejection_reasons": [
+        "promotion_requested_without_independent_cross_check_match",
+        "promotion_requested_without_passing_trap",
+        "promotion_requested_without_reality_match",
+        "shape_valid_but_reality_false",
+        "trap_receipt_failure_ignored"
+      ]
+    }
+  ],
+  "residuals": [
+    "The fixture checks receipt-shape/reality correspondence only in finite synthetic records.",
+    "The fixture rejects shape-valid but reality-false promotion attempts and trap-receipt failures.",
+    "The fixture requires independent cross-check routes and explicit attestation limits before any support review could be considered."
+  ],
+  "result_id": "2026-07-03-receipt-faithfulness-adversarial-fixture",
+  "result_kind": "deterministic_adversarial_receipt_faithfulness_fixture",
+  "schema_version": "asi_stack.receipt_faithfulness.result.v0",
+  "support_state_effect": "none",
+  "trace_summary": {
+    "attestationLimitedRecordOnlyAccepted": true,
+    "attestationLimitsRecorded": true,
+    "crossCheckedReceiptRecordAccepted": true,
+    "independentCrossCheckRequired": true,
+    "nonClaimBoundary": true,
+    "shapeValidRealityFalseRejected": true,
+    "supportPromotionFromReceiptShapeRejected": true,
+    "supportStateEffectNone": true,
+    "trapDetectedBlockedReceiptAccepted": true,
+    "trapReceiptNegativeControlRejected": true
+  },
+  "valid_case_count": 3,
+  "verification_result": "pass"
+}

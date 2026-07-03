@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-03 - Add receipt faithfulness adversarial fixture
+
+- Added `scripts/validate_receipt_faithfulness.py`,
+  `docs/receipt_faithfulness_adversarial_fixture.md`,
+  `experiments/receipt_faithfulness/input/adversarial_receipt_cases.json`, and
+  result artifact
+  `experiments/receipt_faithfulness/results/2026-07-03-local.json` for a
+  deterministic adversarial receipt-faithfulness fixture. Command:
+  `python3 scripts/validate_receipt_faithfulness.py`.
+- The validator accepts three bounded receipt records and rejects six
+  expected-invalid controls covering a shape-valid but reality-false receipt,
+  a trap-receipt negative control, missing independent cross-check routes,
+  same-component self-check laundering, unbounded attestation, and support
+  promotion from receipt shape.
+- Added the Lean fixture bridge
+  `receipt_faithfulness_adversarial_fixture_bridge` in
+  `AsiStackProofs.ArtifactGraph` and wired the validator into
+  `scripts/validate_book.py`.
+- Updated Artifact Graphs, Evidence States, Proof-Carrying Claims, Integrated
+  Reference Architecture, the outline, roadmap, and contribution novelty
+  ledger while preserving the boundary: this does not prove open-world receipt
+  faithfulness, does not prove deployed attestation or audit behavior, does not
+  create a support-state transition, does not create an evidence transition, and
+  does not promote any chapter core claim.
+
 ## 2026-07-03 - Add residual ledger trace
 
 - Added `scripts/validate_residual_ledger_trace.py`,
@@ -16,7 +41,7 @@
 - Added the Lean surface bridge `residual_ledger_trace_surface_bridge` in
   `AsiStackProofs.CompactGenerativeSystems` and wired the validator into
   `scripts/validate_book.py`.
-- Current proof-depth snapshot: 180 proof targets, 54 Lean modules, 942 theorem declarations, 760 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 181 proof targets, 54 Lean modules, 943 theorem declarations, 761 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the live chapter, curated reader chapter, outline, roadmap burn-down,
   and contribution novelty ledger while preserving the boundary: this does not
   prove deployed residual-ledger behavior, does not prove safety, does not
@@ -423,7 +448,7 @@
 
 - Added `python3 scripts/validate_proof_adequacy_review.py` and wired it into
   `scripts/validate_book.py` so `docs/proof_adequacy_review.md` must match the
-  180-target proof manifest, 44 manifest chapters, generated proof-depth
+  181-target proof manifest, 44 manifest chapters, generated proof-depth
   snapshot, adequacy-class totals, and no-support-promotion boundary language.
 - Updated the proof adequacy review, proof-envelope chapter, outline,
   `book_structure.json`, generated Appendix E, v1 status/publication
