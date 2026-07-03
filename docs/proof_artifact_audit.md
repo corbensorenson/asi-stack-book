@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 190 |
-| Manifest status counts | {"implemented": 190} |
-| Triage class counts | {"formal-invariant": 190} |
+| Proof targets audited | 191 |
+| Manifest status counts | {"implemented": 191} |
+| Triage class counts | {"formal-invariant": 191} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -57,7 +57,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntentToExecution.lean` | 4 | 12 | 4 | 4 |
 | `lean/AsiStackProofs/LivingBook.lean` | 3 | 10 | 5 | 5 |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 4 | 2 | 2 |
-| `lean/AsiStackProofs/PersonalComputeHives.lean` | 5 | 22 | 5 | 5 |
+| `lean/AsiStackProofs/PersonalComputeHives.lean` | 6 | 26 | 8 | 7 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 11 | 8 |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | 4 | 18 | 9 | 7 |
@@ -115,7 +115,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 6 | 6 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
-| `personal-compute-hives-and-federated-edge-intelligence` | 5 | 5 | 0 | 0 |
+| `personal-compute-hives-and-federated-edge-intelligence` | 6 | 6 | 0 | 0 |
 | `planning-as-a-control-layer` | 7 | 7 | 0 | 0 |
 | `policy-optimization-and-learning-from-feedback` | 4 | 4 | 0 | 0 |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 2 | 0 | 0 |
@@ -263,6 +263,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:personal_hives.approval_gate.failure_blocks_promotion` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:personal_hives.federation_lease.operational_invariant` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:personal_hives.work_admission.lifecycle_route` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:personal_hives.partitioned_authority.fixture_bridge` | `personal-compute-hives-and-federated-edge-intelligence` | `AsiStackProofs.PersonalComputeHives` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.cgs.operational_invariant` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.cgs.failure_blocks_promotion` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.cgs.admission_route` | `compact-generative-systems-and-residual-honesty` | `AsiStackProofs.CompactGenerativeSystems` | triage ok; module ok; chapter tag ok; limitation ok |

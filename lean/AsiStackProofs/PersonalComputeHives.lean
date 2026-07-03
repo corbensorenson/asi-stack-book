@@ -544,4 +544,131 @@ theorem complete_hive_work_admission_review_admits
     schedulerPassed, notHighRisk, noExternal, costRecorded, energyRecorded,
     dropoutRecorded, receiptPlanned, residualOwner, noPromotion]
 
+inductive PartitionedAuthorityRoute where
+  | quarantinePendingSync
+  | requestFreshAuthorityReceipt
+  | requestNoMutationEvidence
+  | preserveNoPromotionBoundary
+  | dispatch
+deriving DecidableEq, Repr
+
+structure PartitionedAuthorityReview where
+  partitionDetected : Bool
+  grantSeenAtRequester : Bool
+  revocationSeenAtEffectSite : Bool
+  staleGrantPossible : Bool
+  freshAuthorityReceipt : Bool
+  effectAttempted : Bool
+  deniedBeforeMutation : Bool
+  stateUnchangedAfterDenial : Bool
+  residualOwnerRecorded : Bool
+  auditRefsRecorded : Bool
+  supportStateEffectNone : Bool
+  nonClaimsRecorded : Bool
+deriving DecidableEq, Repr
+
+def PartitionedAuthorityRouteFor
+    (review : PartitionedAuthorityReview) :
+    PartitionedAuthorityRoute :=
+  if review.partitionDetected = true ∧
+      (review.staleGrantPossible = true ∨
+        review.revocationSeenAtEffectSite = false) then
+    if review.deniedBeforeMutation = true ∧
+        review.stateUnchangedAfterDenial = true ∧
+          review.residualOwnerRecorded = true then
+      PartitionedAuthorityRoute.quarantinePendingSync
+    else
+      PartitionedAuthorityRoute.requestNoMutationEvidence
+  else if review.grantSeenAtRequester = true ∧
+      review.freshAuthorityReceipt = false then
+    PartitionedAuthorityRoute.requestFreshAuthorityReceipt
+  else if review.effectAttempted = true ∧
+      review.auditRefsRecorded = false then
+    PartitionedAuthorityRoute.requestNoMutationEvidence
+  else if review.supportStateEffectNone = false ∨
+      review.nonClaimsRecorded = false then
+    PartitionedAuthorityRoute.preserveNoPromotionBoundary
+  else
+    PartitionedAuthorityRoute.dispatch
+
+theorem partitioned_stale_authority_with_no_mutation_quarantines
+    {review : PartitionedAuthorityReview} :
+    review.partitionDetected = true ->
+      review.staleGrantPossible = true ->
+        review.deniedBeforeMutation = true ->
+          review.stateUnchangedAfterDenial = true ->
+            review.residualOwnerRecorded = true ->
+              PartitionedAuthorityRouteFor review =
+                PartitionedAuthorityRoute.quarantinePendingSync := by
+  intro partitionDetected staleGrant denied unchanged residualOwner
+  unfold PartitionedAuthorityRouteFor
+  simp [partitionDetected, staleGrant, denied, unchanged, residualOwner]
+
+theorem partitioned_stale_authority_without_no_mutation_requests_evidence
+    {review : PartitionedAuthorityReview} :
+    review.partitionDetected = true ->
+      review.staleGrantPossible = true ->
+        review.deniedBeforeMutation = false ->
+          PartitionedAuthorityRouteFor review =
+            PartitionedAuthorityRoute.requestNoMutationEvidence := by
+  intro partitionDetected staleGrant missingDenial
+  unfold PartitionedAuthorityRouteFor
+  simp [partitionDetected, staleGrant, missingDenial]
+
+theorem healed_partition_with_stale_grant_requires_fresh_receipt
+    {review : PartitionedAuthorityReview} :
+    review.partitionDetected = false ->
+      review.grantSeenAtRequester = true ->
+        review.freshAuthorityReceipt = false ->
+          PartitionedAuthorityRouteFor review =
+            PartitionedAuthorityRoute.requestFreshAuthorityReceipt := by
+  intro noPartition grantSeen staleReceipt
+  unfold PartitionedAuthorityRouteFor
+  simp [noPartition, grantSeen, staleReceipt]
+
+structure PartitionedAuthorityFixtureSummary where
+  partitionRevocationQuarantined : Bool
+  healedPartitionRequiresFreshReceipt : Bool
+  freshReceiptDispatchBounded : Bool
+  staleGrantDispatchRejected : Bool
+  grantEffectRaceRejected : Bool
+  mutationWithoutNoMutationEvidenceRejected : Bool
+  residualOwnerRequired : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+  deployedPartitionToleranceNotClaimed : Bool
+deriving DecidableEq, Repr
+
+def partitionedAuthorityFixtureSummary :
+    PartitionedAuthorityFixtureSummary where
+  partitionRevocationQuarantined := true
+  healedPartitionRequiresFreshReceipt := true
+  freshReceiptDispatchBounded := true
+  staleGrantDispatchRejected := true
+  grantEffectRaceRejected := true
+  mutationWithoutNoMutationEvidenceRejected := true
+  residualOwnerRequired := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+  deployedPartitionToleranceNotClaimed := true
+
+def PartitionedAuthorityFixtureValid
+    (summary : PartitionedAuthorityFixtureSummary) : Prop :=
+  summary.partitionRevocationQuarantined = true ∧
+    summary.healedPartitionRequiresFreshReceipt = true ∧
+      summary.freshReceiptDispatchBounded = true ∧
+        summary.staleGrantDispatchRejected = true ∧
+          summary.grantEffectRaceRejected = true ∧
+            summary.mutationWithoutNoMutationEvidenceRejected = true ∧
+              summary.residualOwnerRequired = true ∧
+                summary.supportStateEffectNone = true ∧
+                  summary.nonClaimBoundary = true ∧
+                    summary.deployedPartitionToleranceNotClaimed = true
+
+theorem partitioned_authority_fixture_bridge :
+    PartitionedAuthorityFixtureValid partitionedAuthorityFixtureSummary := by
+  unfold PartitionedAuthorityFixtureValid
+  unfold partitionedAuthorityFixtureSummary
+  simp
+
 end AsiStackProofs.PersonalComputeHives

@@ -160,6 +160,13 @@ look clean while the review underneath it has weakened. A serious adapter has
 to route those states to delay, reviewer rotation, independent evidence checks,
 or blocked dispatch.
 
+Authority can also degrade across the network. If a worker can act while a
+revocation, approval expiry, or lease update is partitioned elsewhere, the
+adapter may see a stale grant that still looks usable. Partitioned authority is
+the rule that protected effects need a fresh authority receipt, quarantine, or
+no-mutation evidence before dispatch. A stale grant is not permission just
+because it is available to the local process.
+
 If the adapter runs, it returns an effect receipt. The receipt says what was
 requested, what was approved, what was invoked, what changed, what verified,
 what failed, what can be rolled back, what cannot be undone, and what evidence
@@ -222,6 +229,12 @@ sandbox isolation, secret-handle safety, rollback execution, or delivery
 correctness. It shows the adapter's job: convert a thought into a scoped effect
 only when permission, approval, receipt, and residual handling are explicit.
 
+The same logic applies when authority state is stale. If the system cannot tell
+whether a grant is current, sending the message is not safer merely because the
+mail service is reachable; that partitioned authority boundary matters even
+for ordinary communication tools. The adapter should ask for a fresh receipt or
+preserve a no-mutation denial record.
+
 ## Interfaces
 
 Runtime work reaches the world through the Runtime Adapter Invocation.
@@ -278,6 +291,9 @@ Approval scope expires and does not authorize unrelated reuse.
 Authority handles are not exposed to model-visible context merely because a
 tool request exists.
 
+Partitioned authority or a possible stale grant blocks protected dispatch
+until the adapter has a fresh receipt or no-mutation evidence.
+
 Rollback handles are captured when available, and irreversible residuals are
 declared when rollback is unavailable.
 
@@ -303,6 +319,11 @@ Human oversight degradation occurs when approval is present but unreliable:
 the reviewer is overloaded, the rationale is template-only, alerts have become
 noise, or the automation recommendation is accepted despite contradictory
 evidence.
+
+Partitioned authority occurs when approval, lease, or revocation state is no
+longer fresh at the effect site. It is a stale-control failure: the local
+process can still see a grant, but the architecture cannot honestly treat that
+grant as current.
 
 Receipt laundering occurs when a successful tool response is treated as
 verified task success.
@@ -340,6 +361,13 @@ adapter-invocation, authority-use-receipt, and authority-probe consistency for
 permissions, approval gates, expiry markers, receipts, rollback handles,
 irreversible residuals, authority receipt alignment, ambient-authority
 confused-deputy rejection, and revoked-receipt blocking.
+
+The partitioned-authority fixture adds the distributed stale-grant case. It
+checks finite records for revocation-delay quarantine, fresh authority receipt
+requirements, grant/effect race residual ownership, no-mutation evidence, and
+support-state non-promotion. It is not a live partition test and does not prove
+distributed consensus, availability, revocation propagation, or deployed
+adapter enforcement.
 
 The Runtime adapter effect replay probe adds the smallest executable slice:
 `python3 scripts/run_runtime_adapter_effect_probe.py --write-result` creates a

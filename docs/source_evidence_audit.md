@@ -11,11 +11,11 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 44 |
-| Assigned source/chapter pairs | 435 |
+| Assigned source/chapter pairs | 437 |
 | Exact claim-source mappings | 435 |
-| Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 435 |
-| Source notes listing assigned chapter | 435 |
+| Unmapped assigned pairs | 2 |
+| Source notes present for assigned pairs | 437 |
+| Source notes listing assigned chapter | 437 |
 | Passage-reviewed mappings recorded | 435 |
 | Support-state counts | {"argument": 44} |
 | Validation errors | 0 |
@@ -55,11 +55,11 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `spinoza-verification-and-proof-carrying-claims` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `labor-os-and-typed-jobs` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
-| `runtime-adapters-tool-permissions-and-human-approval` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
+| `runtime-adapters-tool-permissions-and-human-approval` | 13 | 12 | 13 | 13 | 12 | argument | passage review required before source-derived promotion |
 | `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `routing-heads-and-specialist-cores` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
-| `personal-compute-hives-and-federated-edge-intelligence` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
+| `personal-compute-hives-and-federated-edge-intelligence` | 23 | 22 | 23 | 23 | 22 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 15 | 15 | 15 | 15 | 15 | argument | eligible for support review |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -134,6 +134,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `field_of_god` | 2 | yes |
 | `ethica_mechanica` | 2 | yes |
 | `planforge_compiler_arch` | 2 | yes |
+| `ext_cap_theorem_gilbert_lynch_2002` | 2 | yes |
 | `ext_akash_docs_2026` | 2 | yes |
 | `ext_golem_docs_2025` | 2 | yes |
 | `ext_github_self_hosted_runners_docs` | 2 | yes |
@@ -360,6 +361,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_ironies_automation_1983` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_levels_automation_2000` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_complacency_bias_automation_2010` | mapped | note present | chapter listed | passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_cap_theorem_gilbert_lynch_2002` | unmapped | note present | chapter listed | not passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
@@ -414,6 +416,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_akash_docs_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_golem_docs_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_github_self_hosted_runners_docs` | mapped | note present | chapter listed | passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_cap_theorem_gilbert_lynch_2002` | unmapped | note present | chapter listed | not passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `bugbrain` | mapped | note present | chapter listed | passage-reviewed |

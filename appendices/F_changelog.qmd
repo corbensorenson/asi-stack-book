@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-03 - Add partitioned authority fixture
+
+- Added external source record and public source note
+  `ext_cap_theorem_gilbert_lynch_2002` for CAP-style consistency,
+  availability, partition-tolerance, and safety/liveness trade-off vocabulary
+  at the hives/runtime authority boundary.
+- Added `python3 scripts/validate_partitioned_authority_fixture.py`,
+  `docs/partitioned_authority_fixture.md`, result record
+  `experiments/partitioned_authority/results/2026-07-03-local.json`, and Lean
+  bridge `lean:personal_hives.partitioned_authority.fixture_bridge` in
+  `AsiStackProofs.PersonalComputeHives`.
+- Updated the live Personal Compute Hives and Runtime Adapters chapters,
+  curated reader chapters, `docs/book_outline.md`, `book_structure.json`, and
+  the v1.x roadmap so governance under partition now covers stale grants,
+  revocation-delay quarantine, fresh authority receipts, grant/effect races,
+  residual ownership, no-mutation evidence, and CAP-style authority consistency
+  boundaries.
+- Boundary: this does not prove deployed partition tolerance, distributed
+  consensus, availability, runtime adapter enforcement, revocation propagation,
+  approval-service behavior, support-state promotion, or a chapter-core
+  evidence transition.
+
 ## 2026-07-03 - Add interpretability evidence-class grounding
 
 - Added external source records and public source notes for Transformer
@@ -99,9 +121,7 @@
 - Added Lean bridge `lean:artifacts.graph.receipt_repository_audit_fixture_bridge`
   in `AsiStackProofs.ArtifactGraph`, plus manifest, outline, live-chapter,
   curated-reader, contribution-ledger, roadmap, and global validator wiring.
-- Current proof-depth snapshot: 190 proof targets, 54 Lean modules, 967
-  theorem declarations, 782 derived/decomposed, 181 direct/projection, 4
-  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 191 proof targets, 54 Lean modules, 971 theorem declarations, 786 derived/decomposed, 181 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Boundary: this audit does not prove open-world receipt faithfulness, deployed
   attestation behavior, deployed audit behavior, verifier correctness, external
   project truth, chapter-core support, or deployment readiness, and it does not

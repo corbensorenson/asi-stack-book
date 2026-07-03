@@ -1831,6 +1831,16 @@
       "rationale": "Implemented in AsiStackProofs.PersonalComputeHives as a finite hive-work admission route function and derived route theorems for malformed jobs, missing policy checks, registry and scheduler-policy gaps, high-risk jobs without approval, external access lease or sandbox gaps, cost and energy budget gaps, missing dropout plans, missing audit receipt plans, missing residual owners, and support-promotion attempts without evidence transitions."
     },
     {
+      "tag": "lean:personal_hives.partitioned_authority.fixture_bridge",
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "module": "AsiStackProofs.PersonalComputeHives",
+      "formal_target": "A partitioned-authority fixture quarantines partitioned stale-grant revocation cases, requests fresh authority receipts after healing, rejects stale-grant dispatch and mutation without no-mutation evidence, preserves residual ownership, and blocks support-state promotion while making no deployed partition-tolerance claim.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.PersonalComputeHives as a finite fixture-summary bridge for the partitioned-authority validator. It records stale-grant quarantine, fresh-authority receipt requirements, no-mutation evidence, residual ownership, and support-state non-promotion without claiming deployed partition tolerance, distributed consensus, availability, runtime adapter enforcement, or revocation propagation."
+    },
+    {
       "tag": "lean:artifact_stewards.release_gate.operational_invariant",
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "module": "AsiStackProofs.ArtifactStewardAgents",
@@ -1911,5 +1921,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 190
+  "record_count": 191
 }

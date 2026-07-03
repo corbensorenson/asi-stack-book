@@ -192,6 +192,10 @@ The actual placement decision is a separate record. A `HiveSchedulingDecision` l
 
 These objects do not prove that the hive works. They make the first implementation inspectable: what asked for work, which devices were rejected, who approved the boundary, where data moved, what evidence came back, and how the permission ends.
 
+The hive also has to handle partitioned authority. A phone portal might revoke a grant while a worker on another network still sees the old permission. A rented node might hold a stale grant while the project hive has already narrowed or ended the job. In that state, availability is not authority. A serious hive should quarantine the action, request a fresh authority receipt, or preserve no-mutation evidence instead of letting a stale grant become an effect.
+
+The repository's partitioned-authority fixture is only a finite record check, not a live network test. Its value is that it names the failure clearly: under partition pressure, protected effects should prefer fresh authority over available stale authority.
+
 ## Job classes and federation modes
 
 Hive scheduling should classify work before it asks any device to bid. Some work is local and harmless: a small transform, a note cleanup, or a local review that touches no private memory, physical tool, credential, or spend. Some work is personal and private, which pushes it toward trusted local nodes and away from rented compute. Family-sensitive work adds dignity, role, and guardian boundaries; the route has to preserve the person in front of the portal, not merely satisfy a logging rule.
@@ -260,6 +264,7 @@ Treating all of these memories as one store erases the point of a hive. VCM deci
 - Secrets remain handles and approvals, not strings in model context.
 - Rented nodes can receive public, synthetic, encrypted, or scrubbed jobs only when the job contract permits that exposure.
 - Every temporary federation link has an expiration, revocation path, and audit record.
+- Stale grants under partition do not authorize protected effects without a fresh authority receipt or no-mutation evidence.
 
 The phrase "personal hive" should not be allowed to smuggle in surveillance. A family hive is not a parental monitoring system by default. It is a policy system whose goal is to give the right person or guardian the right approval point for the right transition while minimizing unnecessary observation.
 
@@ -276,6 +281,8 @@ The operational failure is wrong-device scheduling. A job may drain batteries, o
 The identity failure is authority confusion. A child, guest, agent, project, or borrowed node can be mistaken for the owner or guardian. The identity boundary uses principal-specific identity, role-specific leases, and denial by default when identity or guardianship is ambiguous.
 
 The memory failure is a swamp. Logs, embeddings, screenshots, transcripts, models, tool outputs, and personal data accumulate without ownership or deletion. The hive memory contract uses VCM-style source binding, taint, retention classes, revocation, and evidence/reference separation.
+
+The distributed-governance failure is subtler. A system can be responsive and wrong: a worker can answer quickly using a grant that was already revoked somewhere else. The hive should not treat that as clever availability. It should treat it as a residual to quarantine and reconcile.
 
 ## Minimum Viable Implementation
 
@@ -299,6 +306,13 @@ registry, network overlay, approval service, family-governance engine,
 rented-node sandbox, cross-router connectivity, portal continuity, energy
 measurement, dropout recovery, privacy, security, federation behavior,
 scheduler quality, or support-state promotion.
+
+The partitioned-authority fixture adds one more bounded check: stale grants,
+revocation delays, and grant/effect races cannot close as safe dispatch
+records unless fresh authority, residual ownership, audit references,
+no-mutation evidence, and non-claim boundaries are present. It does not prove
+deployed partition tolerance, distributed consensus, availability, runtime
+adapter enforcement, or revocation propagation.
 
 ## Beyond the State of the Art
 

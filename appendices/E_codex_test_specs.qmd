@@ -222,6 +222,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Portal, approval, bid, and federation fixture validation | implemented | passes via protocol fixture validation |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Policy-first scheduling denial test | implemented | passes via Lean build |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Hive admission harness | implemented | passes via python3 scripts/validate_hive_admission.py; 2 valid and 8 expected-invalid synthetic fixtures |
+| `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Partitioned authority fixture | implemented | passes via python3 scripts/validate_partitioned_authority_fixture.py over experiments/partitioned_authority/results/2026-07-03-local.json: 3 valid finite records and 6 expected-invalid controls; does not prove deployed partition tolerance, distributed consensus, availability, runtime adapter enforcement, revocation propagation, or support-state-promotion claim |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Data locality and rented-node denial test | implemented | passes via python3 scripts/validate_hive_admission.py |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Phone approval gate test | implemented | passes via python3 scripts/validate_hive_admission.py |
 | `personal-compute-hives-and-federated-edge-intelligence` | Personal Compute Hives and Federated Edge Intelligence | Child topic routing test | implemented | passes via python3 scripts/validate_hive_admission.py |
@@ -482,16 +483,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 190 |
+| Proof targets covered by triage | 191 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 190 |
+| implemented | 191 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 190 |
+| implemented | formal-invariant | lean-candidate | 191 |

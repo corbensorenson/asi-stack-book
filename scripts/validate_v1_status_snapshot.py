@@ -595,7 +595,7 @@ def main() -> None:
         start = expected_fragments.index(old_harness_start)
         end = expected_fragments.index(non_infra_start)
         current_harness_fragments = [
-            "| Test harnesses | Fifty-seven synthetic, deterministic, measured, local replay, local external-project receipt, local artifact-import, or publication-governance checks are wired into book validation; twenty-two are wired into the Phase 5 registry and thirty-five chapter-specific/support checks are book-gate-only:",
+            "| Test harnesses | Fifty-eight synthetic, deterministic, measured, local replay, local external-project receipt, local artifact-import, or publication-governance checks are wired into book validation; twenty-two are wired into the Phase 5 registry and thirty-six chapter-specific/support checks are book-gate-only:",
             "the Theseus public task-bundle import",
             "The Theseus public task-bundle import checks `theseus_public_task_bundle_import_2026_07_03_local`, 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, 18 benchmark gates, 19 residuals, visible artifact gaps, clean live Theseus replay remains unclaimed, and no model-quality, speed, useful-solution-per-second, support-state, or chapter-core-promotion claim.",
             "`docs/theseus_public_task_bundle_import.md`",
@@ -605,6 +605,7 @@ def main() -> None:
             "Authority revocation propagation trace",
             "the epistemic trusted computing base fixture",
             "the Human oversight degradation fixture",
+            "the Partitioned authority fixture",
             "experiments/authority_revocation_trace/results/2026-07-03-local.json",
             "revoked authority receipt blocking",
             "expired approval no-mutation evidence",
@@ -612,12 +613,16 @@ def main() -> None:
             "no deployed revocation propagation",
             "The epistemic trusted computing base fixture checks `experiments/epistemic_tcb/results/2026-07-03-local.json`, 3 valid records, 6 expected-invalid controls, verifier-trust laundering rejection, outside-TCB residual preservation, no verifier-correctness claim, no deployed trust-base claim, and no support-state promotion.",
             "The Human oversight degradation fixture checks `experiments/human_oversight_degradation/results/2026-07-03-local.json`, 3 valid records, 7 expected-invalid controls, approval fatigue, rubber-stamping, alarm fatigue, automation bias, missing reviewer qualification, no approval-service quality claim, no deployed human-factors result, and no support-state promotion.",
+            "The Partitioned authority fixture checks `experiments/partitioned_authority/results/2026-07-03-local.json`, 3 valid records, 6 expected-invalid controls, stale grants, revocation-delay quarantine, fresh authority receipt requirements, grant/effect race residual ownership, no-mutation evidence, CAP-style authority consistency boundaries, does not prove deployed partition tolerance, no distributed consensus or availability claim, no revocation propagation claim, and no support-state promotion.",
             "`docs/epistemic_trusted_computing_base_fixture.md`",
             "`experiments/epistemic_tcb/results/2026-07-03-local.json`",
             "`python3 scripts/validate_epistemic_trusted_computing_base.py`",
             "`docs/human_oversight_degradation_fixture.md`",
             "`experiments/human_oversight_degradation/results/2026-07-03-local.json`",
             "`python3 scripts/validate_human_oversight_degradation.py`",
+            "`docs/partitioned_authority_fixture.md`",
+            "`experiments/partitioned_authority/results/2026-07-03-local.json`",
+            "`python3 scripts/validate_partitioned_authority_fixture.py`",
             "Living-book change-packet harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).",
             "the Benchmark anti-Goodhart fixture bridge",
             "2 valid fixtures",

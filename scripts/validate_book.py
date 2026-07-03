@@ -150,6 +150,7 @@ REQUIRED = [
     "scripts/validate_plan_execution_contracts.py",
     "scripts/validate_cognitive_compilation_traces.py",
     "scripts/validate_hive_admission.py",
+    "scripts/validate_partitioned_authority_fixture.py",
     "scripts/validate_runtime_adapter_permissions.py",
     "scripts/run_runtime_adapter_effect_probe.py",
     "scripts/validate_runtime_adapter_effect_probe.py",
@@ -169,6 +170,8 @@ REQUIRED = [
     "experiments/epistemic_tcb/results/2026-07-03-local.json",
     "docs/human_oversight_degradation_fixture.md",
     "experiments/human_oversight_degradation/results/2026-07-03-local.json",
+    "docs/partitioned_authority_fixture.md",
+    "experiments/partitioned_authority/results/2026-07-03-local.json",
     "scripts/validate_procedural_memory_loop.py",
     "scripts/validate_routing_decision_lease.py",
     "scripts/validate_cyclic_memory_contracts.py",
@@ -965,6 +968,7 @@ def main() -> None:
     run_validator("validate_typed_job_durable_lifecycle_probe.py")
     run_validator("validate_cognitive_compilation_traces.py")
     run_validator("validate_hive_admission.py")
+    run_validator("validate_partitioned_authority_fixture.py")
     run_validator("validate_runtime_adapter_permissions.py")
     run_validator("validate_runtime_adapter_effect_probe.py")
     run_validator("validate_runtime_adapter_adversarial_boundary_probe.py")

@@ -1,0 +1,162 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_partitioned_authority_fixture.py",
+  "evidence_transition_created": false,
+  "expected_invalid_controls": [
+    {
+      "mutated_state": false,
+      "rejected_reason": "partitioned stale grant cannot dispatch",
+      "scenario_id": "invalid_dispatch_under_partition_stale_grant"
+    },
+    {
+      "mutated_state": true,
+      "rejected_reason": "unseen revocation requires quarantine or no-mutation evidence",
+      "scenario_id": "invalid_mutation_after_unseen_revocation"
+    },
+    {
+      "rejected_reason": "grant/effect race must preserve residual ownership",
+      "residual_owner_recorded": false,
+      "scenario_id": "invalid_grant_effect_race_without_residual_owner"
+    },
+    {
+      "denied_before_mutation": false,
+      "rejected_reason": "partition denial must carry no-mutation evidence before closure",
+      "scenario_id": "invalid_no_mutation_evidence_missing",
+      "state_unchanged_after_denial": false
+    },
+    {
+      "rejected_reason": "fixture shape cannot promote support state",
+      "scenario_id": "invalid_support_promotion_from_partition_fixture",
+      "support_state_effect": "promote"
+    },
+    {
+      "non_claims": [],
+      "rejected_reason": "partition fixture must carry non-claim boundaries",
+      "scenario_id": "invalid_missing_non_claim_boundary"
+    }
+  ],
+  "expected_invalid_count": 6,
+  "external_comparator_refs": [
+    "ext_cap_theorem_gilbert_lynch_2002"
+  ],
+  "lean_fixture_alignment": {
+    "expected": {
+      "deployedPartitionToleranceNotClaimed": true,
+      "freshReceiptDispatchBounded": true,
+      "grantEffectRaceRejected": true,
+      "healedPartitionRequiresFreshReceipt": true,
+      "mutationWithoutNoMutationEvidenceRejected": true,
+      "nonClaimBoundary": true,
+      "partitionRevocationQuarantined": true,
+      "residualOwnerRequired": true,
+      "staleGrantDispatchRejected": true,
+      "supportStateEffectNone": true
+    },
+    "module": "AsiStackProofs.PersonalComputeHives",
+    "theorem_refs": [
+      "partitioned_authority_fixture_bridge"
+    ]
+  },
+  "non_claims": [
+    "does not prove deployed partition tolerance",
+    "does not prove distributed consensus or availability",
+    "does not prove deployed revocation propagation",
+    "does not prove runtime adapter enforcement",
+    "does not promote any chapter core claim",
+    "does not reproduce the CAP theorem",
+    "does not create an evidence transition",
+    "does not prove model quality, benchmark performance, safety, or ASI"
+  ],
+  "recorded_date": "2026-07-03",
+  "residuals": [
+    "This is a finite record fixture; it does not run a distributed authority service.",
+    "Partitioned authority remains argument-level until live or externally reviewable grant/revocation traces exist.",
+    "CAP-style terminology is used as comparator vocabulary, not as proof that ASI Stack governance solves distributed consistency."
+  ],
+  "result_id": "partitioned_authority_fixture_2026_07_03_local",
+  "result_kind": "bounded_partitioned_authority_fixture",
+  "schema_version": "asi_stack.partitioned_authority.fixture_result.v0",
+  "support_state_effect": "none",
+  "trace_summary": {
+    "deployedPartitionToleranceNotClaimed": true,
+    "freshReceiptDispatchBounded": true,
+    "grantEffectRaceRejected": true,
+    "healedPartitionRequiresFreshReceipt": true,
+    "mutationWithoutNoMutationEvidenceRejected": true,
+    "nonClaimBoundary": true,
+    "partitionRevocationQuarantined": true,
+    "residualOwnerRequired": true,
+    "staleGrantDispatchRejected": true,
+    "supportStateEffectNone": true
+  },
+  "valid_record_count": 3,
+  "valid_records": [
+    {
+      "audit_refs_recorded": true,
+      "denied_before_mutation": true,
+      "effect_attempted": false,
+      "fresh_authority_receipt": false,
+      "grant_seen_at_requester": true,
+      "non_claims": [
+        "does not prove deployed partition tolerance",
+        "does not prove distributed consensus or availability",
+        "does not prove deployed revocation propagation",
+        "does not prove runtime adapter enforcement",
+        "does not promote any chapter core claim"
+      ],
+      "partition_detected": true,
+      "residual_owner_recorded": true,
+      "revocation_seen_at_effect_site": false,
+      "route": "quarantine_pending_sync",
+      "scenario_id": "valid_partition_revocation_quarantine",
+      "stale_grant_possible": true,
+      "state_unchanged_after_denial": true,
+      "support_state_effect": "none"
+    },
+    {
+      "audit_refs_recorded": true,
+      "denied_before_mutation": true,
+      "effect_attempted": false,
+      "fresh_authority_receipt": false,
+      "grant_seen_at_requester": true,
+      "non_claims": [
+        "does not prove deployed partition tolerance",
+        "does not prove distributed consensus or availability",
+        "does not prove deployed revocation propagation",
+        "does not prove runtime adapter enforcement",
+        "does not promote any chapter core claim"
+      ],
+      "partition_detected": false,
+      "residual_owner_recorded": true,
+      "revocation_seen_at_effect_site": true,
+      "route": "request_fresh_authority_receipt",
+      "scenario_id": "valid_healed_partition_requires_fresh_receipt",
+      "stale_grant_possible": true,
+      "state_unchanged_after_denial": true,
+      "support_state_effect": "none"
+    },
+    {
+      "audit_refs_recorded": true,
+      "denied_before_mutation": false,
+      "effect_attempted": true,
+      "fresh_authority_receipt": true,
+      "grant_seen_at_requester": true,
+      "non_claims": [
+        "does not prove deployed partition tolerance",
+        "does not prove distributed consensus or availability",
+        "does not prove deployed revocation propagation",
+        "does not prove runtime adapter enforcement",
+        "does not promote any chapter core claim"
+      ],
+      "partition_detected": false,
+      "residual_owner_recorded": true,
+      "revocation_seen_at_effect_site": true,
+      "route": "dispatch",
+      "scenario_id": "valid_fresh_receipt_dispatch",
+      "stale_grant_possible": false,
+      "state_unchanged_after_denial": false,
+      "support_state_effect": "none"
+    }
+  ],
+  "verification_result": "pass"
+}
