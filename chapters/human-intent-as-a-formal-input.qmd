@@ -70,6 +70,8 @@ This makes intent a scoped authority lease. The lease can authorize drafting, pl
 
 An intent contract should also preserve the human texture of the request without letting that texture carry authority by itself. A user can express urgency, uncertainty, trust, frustration, taste, or aspiration. Those signals matter for service quality and interpretation. They do not automatically authorize broader means, weaker evidence, skipped approvals, or irreversible side effects.
 
+The same boundary applies to approval fatigue and human oversight degradation. A user may confirm intent, and a reviewer may approve a later action, but those are different control states. Intent capture should preserve what the human asked for, what remains unresolved, and what still needs review; it should not treat a tired approval click, a trust-laden request, or an automation-shaped suggestion as durable authority for downstream execution.
+
 ## Why existing approaches are insufficient
 
 Prompt-only workflows blur request, requirements, permission, risk tolerance, and acceptance criteria.

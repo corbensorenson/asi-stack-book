@@ -1,0 +1,169 @@
+{
+  "accepted_records": [
+    "valid_automation_bias_blocked_record",
+    "valid_fatigue_routed_to_reviewer_rotation",
+    "valid_scoped_restored_reviewer_approval"
+  ],
+  "case_count": 10,
+  "case_results": [
+    {
+      "actual_route": "escalate_alarm_fatigue",
+      "case_id": "invalid_alarm_fatigue_ordinary_approval",
+      "decision": "approve",
+      "expected_valid": false,
+      "support_state_effect": "none"
+    },
+    {
+      "actual_route": "block_automation_bias",
+      "case_id": "invalid_automation_bias_contradiction_ignored",
+      "decision": "approve",
+      "expected_valid": false,
+      "support_state_effect": "none"
+    },
+    {
+      "actual_route": "rotate_or_delay_review",
+      "case_id": "invalid_fatigued_reviewer_accepted",
+      "decision": "approve",
+      "expected_valid": false,
+      "support_state_effect": "none"
+    },
+    {
+      "actual_route": "request_non_claim_boundary",
+      "case_id": "invalid_missing_non_claim_boundary",
+      "decision": "approve",
+      "expected_valid": false,
+      "support_state_effect": "none"
+    },
+    {
+      "actual_route": "reject_unqualified_reviewer",
+      "case_id": "invalid_missing_reviewer_qualification",
+      "decision": "approve",
+      "expected_valid": false,
+      "support_state_effect": "none"
+    },
+    {
+      "actual_route": "block_rubber_stamp",
+      "case_id": "invalid_rubber_stamp_approval_accepted",
+      "decision": "approve",
+      "expected_valid": false,
+      "support_state_effect": "none"
+    },
+    {
+      "actual_route": "block_support_promotion",
+      "case_id": "invalid_support_promotion_from_human_approval",
+      "decision": "approve",
+      "expected_valid": false,
+      "support_state_effect": "source-derived"
+    },
+    {
+      "actual_route": "block_automation_bias",
+      "case_id": "valid_automation_bias_blocked_record",
+      "decision": "block",
+      "expected_valid": true,
+      "support_state_effect": "none"
+    },
+    {
+      "actual_route": "rotate_or_delay_review",
+      "case_id": "valid_fatigue_routed_to_reviewer_rotation",
+      "decision": "defer",
+      "expected_valid": true,
+      "support_state_effect": "none"
+    },
+    {
+      "actual_route": "accept_scoped_human_approval",
+      "case_id": "valid_scoped_restored_reviewer_approval",
+      "decision": "approve",
+      "expected_valid": true,
+      "support_state_effect": "none"
+    }
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_human_oversight_degradation.py",
+  "evidence_transition_created": false,
+  "expected_invalid_control_count": 7,
+  "input_ref": "experiments/human_oversight_degradation/input/human_oversight_cases.json",
+  "lean_fixture_alignment": {
+    "expected": {
+      "alarmFatigueEscalated": true,
+      "automationBiasBlocked": true,
+      "automationBiasContradictionRejected": true,
+      "chapterCoreSupportEffectNone": true,
+      "fatigueRoutedToRotation": true,
+      "fatiguedApprovalRejected": true,
+      "missingQualificationRejected": true,
+      "nonClaimBoundaryRequired": true,
+      "rubberStampRejected": true,
+      "scopedApprovalAccepted": true,
+      "supportPromotionRejected": true,
+      "supportStateEffectNone": true
+    },
+    "module": "AsiStackProofs.RuntimeAdapters",
+    "theorem_refs": [
+      "human_oversight_degradation_fixture_bridge"
+    ]
+  },
+  "non_claims": [
+    "does not prove approval-service quality",
+    "does not prove deployed human-factors behavior",
+    "does not promote any chapter core claim",
+    "does not prove reviewer correctness",
+    "does not prove that human oversight cannot be manipulated",
+    "does not create an evidence transition"
+  ],
+  "recorded_date": "2026-07-03",
+  "rejected_controls": [
+    {
+      "actual_route": "escalate_alarm_fatigue",
+      "case_id": "invalid_alarm_fatigue_ordinary_approval"
+    },
+    {
+      "actual_route": "block_automation_bias",
+      "case_id": "invalid_automation_bias_contradiction_ignored"
+    },
+    {
+      "actual_route": "rotate_or_delay_review",
+      "case_id": "invalid_fatigued_reviewer_accepted"
+    },
+    {
+      "actual_route": "request_non_claim_boundary",
+      "case_id": "invalid_missing_non_claim_boundary"
+    },
+    {
+      "actual_route": "reject_unqualified_reviewer",
+      "case_id": "invalid_missing_reviewer_qualification"
+    },
+    {
+      "actual_route": "block_rubber_stamp",
+      "case_id": "invalid_rubber_stamp_approval_accepted"
+    },
+    {
+      "actual_route": "block_support_promotion",
+      "case_id": "invalid_support_promotion_from_human_approval"
+    }
+  ],
+  "residuals": [
+    "The fixture checks human-oversight degradation only in finite synthetic records.",
+    "The fixture treats reviewer fatigue, rubber-stamping, alarm fatigue, and automation bias as route-changing component failure modes.",
+    "The fixture rejects support promotion from approval shape and preserves explicit non-claims."
+  ],
+  "result_id": "2026-07-03-human-oversight-degradation-fixture",
+  "result_kind": "deterministic_human_oversight_degradation_fixture",
+  "schema_version": "asi_stack.human_oversight_degradation.result.v0",
+  "support_state_effect": "none",
+  "trace_summary": {
+    "alarmFatigueEscalated": true,
+    "automationBiasBlocked": true,
+    "automationBiasContradictionRejected": true,
+    "chapterCoreSupportEffectNone": true,
+    "fatigueRoutedToRotation": true,
+    "fatiguedApprovalRejected": true,
+    "missingQualificationRejected": true,
+    "nonClaimBoundaryRequired": true,
+    "rubberStampRejected": true,
+    "scopedApprovalAccepted": true,
+    "supportPromotionRejected": true,
+    "supportStateEffectNone": true
+  },
+  "valid_case_count": 3,
+  "verification_result": "pass"
+}

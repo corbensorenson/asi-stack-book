@@ -1237,4 +1237,58 @@ theorem runtime_adapter_adversarial_boundary_probe_bridge
   intro valid
   exact valid
 
+structure HumanOversightDegradationFixtureSummary where
+  scopedApprovalAccepted : Bool
+  fatigueRoutedToRotation : Bool
+  automationBiasBlocked : Bool
+  missingQualificationRejected : Bool
+  fatiguedApprovalRejected : Bool
+  rubberStampRejected : Bool
+  automationBiasContradictionRejected : Bool
+  alarmFatigueEscalated : Bool
+  supportPromotionRejected : Bool
+  nonClaimBoundaryRequired : Bool
+  supportStateEffectNone : Bool
+  chapterCoreSupportEffectNone : Bool
+deriving DecidableEq, Repr
+
+def humanOversightDegradationFixtureSummary :
+    HumanOversightDegradationFixtureSummary :=
+  {
+    scopedApprovalAccepted := true,
+    fatigueRoutedToRotation := true,
+    automationBiasBlocked := true,
+    missingQualificationRejected := true,
+    fatiguedApprovalRejected := true,
+    rubberStampRejected := true,
+    automationBiasContradictionRejected := true,
+    alarmFatigueEscalated := true,
+    supportPromotionRejected := true,
+    nonClaimBoundaryRequired := true,
+    supportStateEffectNone := true,
+    chapterCoreSupportEffectNone := true
+  }
+
+def HumanOversightDegradationFixtureValid
+    (summary : HumanOversightDegradationFixtureSummary) : Prop :=
+  summary.scopedApprovalAccepted = true ∧
+    summary.fatigueRoutedToRotation = true ∧
+      summary.automationBiasBlocked = true ∧
+        summary.missingQualificationRejected = true ∧
+          summary.fatiguedApprovalRejected = true ∧
+            summary.rubberStampRejected = true ∧
+              summary.automationBiasContradictionRejected = true ∧
+                summary.alarmFatigueEscalated = true ∧
+                  summary.supportPromotionRejected = true ∧
+                    summary.nonClaimBoundaryRequired = true ∧
+                      summary.supportStateEffectNone = true ∧
+                        summary.chapterCoreSupportEffectNone = true
+
+theorem human_oversight_degradation_fixture_bridge :
+    HumanOversightDegradationFixtureValid
+      humanOversightDegradationFixtureSummary := by
+  unfold HumanOversightDegradationFixtureValid
+  unfold humanOversightDegradationFixtureSummary
+  simp
+
 end AsiStackProofs.RuntimeAdapters

@@ -1686,6 +1686,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `talos`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010` | Load after internal approval and adapter sources to ground human oversight degradation, automation irony, approval fatigue, rubber-stamping, alarm fatigue, and automation bias. Treat them as human-factors comparators only; do not claim deployed reviewer correctness, approval-service quality, or support-state promotion. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1697,6 +1698,7 @@ Draft arc:
 - Mechanism: Treat approval as a scoped, expiring, reviewable artifact and adapter execution as a narrow effect lease rather than ambient tool authority.
 - Mechanism: Keep job request, approval decision, effect receipt, verification result, rollback handle, and irreversible residuals as separate artifacts.
 - Mechanism: Treat approval as scoped to target, risk tier, expiration, permitted reuse, and revocation path.
+- Mechanism: Treat human oversight degradation as a first-class adapter failure mode: approval fatigue, rubber-stamping, alarm fatigue, and automation bias can route an approval record to delay, reviewer rotation, independent-evidence checking, blocked dispatch, or non-claim repair rather than accepted execution.
 - Handoff: Repeated adapter traces and repair patterns become candidates for procedural memory only after evidence and regression checks exist.
 - Interface: Execution owns adapters.
 - Interface: Security mediates secrets.
@@ -1717,6 +1719,7 @@ Failure modes to cover:
 - Approval bypass.
 - Irreversible deployment without rollback.
 - Approval laundering, where a narrow human approval is reused as broad authorization.
+- Human oversight degradation, where a qualified approval role becomes unreliable through fatigue, rubber-stamping, alarm fatigue, or automation bias.
 - Receipt laundering, where a successful tool response is treated as verified task success.
 
 Draft deliverables:
@@ -1733,6 +1736,7 @@ Draft deliverables:
 - Implemented synthetic Codex test: `python3 scripts/validate_runtime_adapter_permissions.py` checks typed-job, runtime-adapter-invocation, authority-use-receipt, and authority-probe consistency for permission coverage, high-impact approval gates, approval expiry markers, effect receipts, rollback handles, irreversible residuals, authority receipt alignment, ambient-authority confused-deputy rejection, and revoked-receipt blocking. It remains synthetic record-gate evidence only, not deployed adapter, sandbox, approval-service, rollback-execution, deployed revocation propagation, or secret-handle evidence.
 - Implemented local effect-replay Codex test: the Runtime adapter effect replay probe via `python3 scripts/validate_runtime_adapter_effect_probe.py` checks `valid_low_impact_local_write_effect_replay`, pre/post/rollback hashes, rollback-exact restoration, `invalid_missing_permission_no_mutation`, and `invalid_expired_approval_no_mutation`, with `repo_write=false`, `network_used=false`, `support_state_effect=none`, and `chapter_core_support_effect=none`. It remains a public-safe temp-file replay, not deployed-adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, benchmark, or support-state-promotion evidence.
 - Implemented adversarial-boundary Codex test: the Runtime adapter adversarial boundary probe via `python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`, producing `experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json`; covers two valid synthetic adapter boundary reviews and twelve expected-invalid controls for confused-deputy parent mismatch, parent authority ceiling overrun, lease authority ceiling overrun, approval scope mismatch, expired approval, sandbox escape path, secret materialized into model-visible context, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundary. This is a deterministic synthetic runtime-adapter adversarial boundary fixture only; deployed adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, revocation-propagation, security-review, support-state-promotion, and evidence-transition claims remain open.
+- Implemented human-oversight degradation fixture: `python3 scripts/validate_human_oversight_degradation.py`, producing `experiments/human_oversight_degradation/results/2026-07-03-local.json`; checks three valid finite records and seven expected-invalid controls for approval fatigue, rubber-stamping, alarm fatigue, automation bias, missing reviewer qualification, support-state promotion from approval shape, and missing non-claim boundaries. The fixture is grounded by source notes for `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, and `ext_complacency_bias_automation_2010`; it remains finite synthetic record-gate evidence only, not approval-service quality, reviewer-correctness, deployed human-factors behavior, support-state promotion, or chapter-core support.
 
 Lean proof targets:
 
@@ -1743,6 +1747,7 @@ Lean proof targets:
 | `lean:runtime.adapters.effect_replay_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay. | implemented |
 | `lean:runtime.adapters.adversarial_boundary_probe_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records. | implemented |
 | `lean:runtime.adapters.revocation_route_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries. | implemented |
+| `lean:runtime.adapters.human_oversight_degradation_fixture_bridge` | `AsiStackProofs.RuntimeAdapters` | A modeled human-oversight degradation fixture accepts scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases, and rejects missing qualifications, rubber-stamped approvals, alarm-fatigue acceptance, support-state promotion, and missing non-claim boundaries. | implemented |
 
 ### Procedural Memory and Cognitive Loop Closure
 
@@ -2780,7 +2785,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 182 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 182 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 184 proof targets, 54 Lean modules, 950 theorem declarations, 768 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 185 proof targets, 54 Lean modules, 951 theorem declarations, 769 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

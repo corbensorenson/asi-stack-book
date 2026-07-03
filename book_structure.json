@@ -5352,7 +5352,11 @@
             "genesiscode",
             "moecot",
             "field_of_god_ai_constitution",
-            "theseus_operator_os"
+            "theseus_operator_os",
+            "ext_humans_automation_1997",
+            "ext_ironies_automation_1983",
+            "ext_levels_automation_2000",
+            "ext_complacency_bias_automation_2010"
           ],
           "source_queue": {
             "primary": [
@@ -5485,6 +5489,50 @@
                 "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:116-146"
               ],
               "passage_review_note": "Reviewed local public-project source for shared command vocabulary, durable SQLite work board, background/watch/wake/phone-delivery contracts, persistent goal visibility, skill packs, before/after tool-hook contracts, live hook ledger, command-channel proof path, rollback/checkpoint/worktree/TTL/kill-switch/signed update/personality safety contracts, feedback routing, report surfaces, skill permissions, board-task execution, node assignment, hook ledger entries, run evidence, operator panels, node registry, and visible autonomy gates. No Hive board, SQLite database, node registry, command channel, hook ledger, dashboard, or distributed runtime was run from this repository."
+            },
+            {
+              "source_id": "ext_humans_automation_1997",
+              "mapped_support": "Positions human approval against automation use, misuse, disuse, abuse, overreliance, monitoring failure, trust, workload, risk, and false-alarm dynamics.",
+              "limits": "External human-factors comparator only; no local human-subjects study, approval-service result, or deployed reviewer-quality evidence exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_humans_automation_1997.md:11-26",
+                "sources/source_notes/ext_humans_automation_1997.md:28-40"
+              ],
+              "passage_review_note": "Reviewed source note for use/misuse/disuse/abuse framing, overreliance, monitoring failure, false alarms, trust/workload/risk, and role-design pressure. This grounds human oversight degradation as a comparator and does not promote approval-service quality or deployed human-factors behavior."
+            },
+            {
+              "source_id": "ext_ironies_automation_1983",
+              "mapped_support": "Positions human approval against the automation-irony problem: automation can move humans into harder supervisory and abnormal-condition duties.",
+              "limits": "External conceptual comparator only; no local operator study, deployed approval service, or live supervisory-control result exists here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_ironies_automation_1983.md:11-25",
+                "sources/source_notes/ext_ironies_automation_1983.md:27-36"
+              ],
+              "passage_review_note": "Reviewed source note for automation-supervision failure modes, context loss, and abnormal-condition duty. This grounds reviewer degradation language and does not prove the ASI Stack can preserve reviewer context in deployment."
+            },
+            {
+              "source_id": "ext_levels_automation_2000",
+              "mapped_support": "Positions approval records against automation levels across information acquisition, analysis, decision/action selection, and action implementation.",
+              "limits": "External taxonomy comparator only; the book does not claim a deployed adapter service implements every automation level.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_levels_automation_2000.md:11-29",
+                "sources/source_notes/ext_levels_automation_2000.md:31-41"
+              ],
+              "passage_review_note": "Reviewed source note for automation-level decomposition and for the distinction among intent approval, evidence approval, action-selection approval, and effect approval. This adds comparator vocabulary only."
+            },
+            {
+              "source_id": "ext_complacency_bias_automation_2010",
+              "mapped_support": "Positions approval fatigue, rubber-stamping, and automation bias against external literature on automation complacency, omission/commission errors, workload, attention, and imperfect decision aids.",
+              "limits": "External human-factors comparator only; no local reviewer-quality benchmark, live approval workflow, or human-subjects result is claimed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_complacency_bias_automation_2010.md:11-28",
+                "sources/source_notes/ext_complacency_bias_automation_2010.md:30-43"
+              ],
+              "passage_review_note": "Reviewed source note for complacency, automation bias, omission and commission errors, workload, attention, independent-evidence checking, and template-only approval risks. This grounds the fixture's failure modes but does not prove real reviewer correctness."
             }
           ],
           "mechanism": [
@@ -5560,6 +5608,11 @@
                   "name": "Runtime adapter revocation route proof",
                   "implementation_status": "implemented",
                   "result_status": "passes via Lean build; finite revocation-route predicates for revoked approvals, revoked leases, revoked authority receipts, no-mutation denial evidence, receipt/audit boundaries, and non-promotion boundaries only; no deployed revocation propagation claim"
+                },
+                {
+                  "name": "Human oversight degradation fixture",
+                  "implementation_status": "implemented",
+                  "result_status": "passes via python3 scripts/validate_human_oversight_degradation.py over experiments/human_oversight_degradation/results/2026-07-03-local.json: three valid finite records and seven expected-invalid controls for approval fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer qualification, support-state promotion, and non-claim boundaries; no support-state promotion, approval-service quality, reviewer-correctness, deployed human-factors behavior, or support-state-promotion claim"
                 }
               ],
               "lean_module": "AsiStackProofs.RuntimeAdapters",
@@ -5592,6 +5645,12 @@
                   "tag": "lean:runtime.adapters.revocation_route_bridge",
                   "module": "AsiStackProofs.RuntimeAdapters",
                   "target": "A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries.",
+                  "status": "implemented"
+                },
+                {
+                  "tag": "lean:runtime.adapters.human_oversight_degradation_fixture_bridge",
+                  "module": "AsiStackProofs.RuntimeAdapters",
+                  "target": "A modeled human-oversight degradation fixture accepts scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases, and rejects missing qualifications, rubber-stamped approvals, alarm-fatigue acceptance, support-state promotion, and missing non-claim boundaries.",
                   "status": "implemented"
                 }
               ],

@@ -24,6 +24,7 @@ EXPECTED_IDEAS = {
     "support_state_ladder",
     "stable_capability_identity",
     "bounded_self_improvement",
+    "human_oversight_degradation",
     "receipt_faithfulness_gap",
 }
 REQUIRED_FIELDS = {
@@ -43,9 +44,10 @@ REQUIRED_FIELDS = {
 }
 REQUIRED_SUMMARY_FRAGMENTS = [
     "Contribution Novelty Ledger",
-    "Rows: 8 signature ideas",
+    "Rows: 9 signature ideas",
     "not proof of novelty",
     "Record-reality gap",
+    "Human oversight degradation",
     "receipt_faithfulness_gap",
     "all 44 chapter core claims remain",
     "does not approve reader, release, ebook, PDF, DOCX, audio",
@@ -221,7 +223,7 @@ def main() -> None:
     validate_surfaces(errors)
     if errors:
         fail(errors)
-    print("Contribution novelty ledger validation passed: 8 signature ideas, source-noted comparators, no support-state effect.")
+    print("Contribution novelty ledger validation passed: 9 signature ideas, source-noted comparators, no support-state effect.")
 
 
 if __name__ == "__main__":

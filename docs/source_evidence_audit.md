@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 44 |
-| Assigned source/chapter pairs | 431 |
-| Exact claim-source mappings | 431 |
+| Assigned source/chapter pairs | 435 |
+| Exact claim-source mappings | 435 |
 | Unmapped assigned pairs | 0 |
-| Source notes present for assigned pairs | 431 |
-| Source notes listing assigned chapter | 431 |
-| Passage-reviewed mappings recorded | 431 |
+| Source notes present for assigned pairs | 435 |
+| Source notes listing assigned chapter | 435 |
+| Passage-reviewed mappings recorded | 435 |
 | Support-state counts | {"argument": 44} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -55,7 +55,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `spinoza-verification-and-proof-carrying-claims` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `labor-os-and-typed-jobs` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `artifact-graphs-audit-logs-and-replay` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
-| `runtime-adapters-tool-permissions-and-human-approval` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `runtime-adapters-tool-permissions-and-human-approval` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `procedural-memory-and-cognitive-loop-closure` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `routing-heads-and-specialist-cores` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `readiness-gates-residual-escrow-and-quarantine` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
@@ -149,6 +149,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `black_hole_context_manager` | 1 | yes |
 | `talos_md` | 1 | yes |
 | `spinoza_composer` | 1 | yes |
+| `ext_humans_automation_1997` | 1 | yes |
+| `ext_ironies_automation_1983` | 1 | yes |
+| `ext_levels_automation_2000` | 1 | yes |
+| `ext_complacency_bias_automation_2010` | 1 | yes |
 | `ext_tailscale_docs_2025` | 1 | yes |
 | `ext_kubernetes_overview_docs` | 1 | yes |
 | `ext_k3s_docs_2026` | 1 | yes |
@@ -352,6 +356,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_humans_automation_1997` | mapped | note present | chapter listed | passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_ironies_automation_1983` | mapped | note present | chapter listed | passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_levels_automation_2000` | mapped | note present | chapter listed | passage-reviewed |
+| `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ext_complacency_bias_automation_2010` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `rgs` | mapped | note present | chapter listed | passage-reviewed |

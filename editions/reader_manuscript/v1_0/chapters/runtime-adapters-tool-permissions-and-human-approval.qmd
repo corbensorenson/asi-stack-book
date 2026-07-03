@@ -146,6 +146,14 @@ and audit references. A human "yes" to one deployment, message, payment,
 credential use, or hardware action is not a permanent license for future
 similar actions.
 
+The human gate can also degrade. A reviewer may be tired, moving too quickly,
+facing too many alerts, or leaning on the system's recommendation instead of
+checking the evidence. That is human oversight degradation: approval fatigue,
+rubber-stamping, alarm fatigue, and automation bias can make an approval record
+look clean while the review underneath it has weakened. A serious adapter has
+to route those states to delay, reviewer rotation, independent evidence checks,
+or blocked dispatch.
+
 If the adapter runs, it returns an effect receipt. The receipt says what was
 requested, what was approved, what was invoked, what changed, what verified,
 what failed, what can be rolled back, what cannot be undone, and what evidence
@@ -285,6 +293,11 @@ scoped approval record.
 Approval laundering occurs when a narrow approval is reused as broad
 authorization for similar but unapproved effects.
 
+Human oversight degradation occurs when approval is present but unreliable:
+the reviewer is overloaded, the rationale is template-only, alerts have become
+noise, or the automation recommendation is accepted despite contradictory
+evidence.
+
 Receipt laundering occurs when a successful tool response is treated as
 verified task success.
 
@@ -350,6 +363,15 @@ one more finite-record gap by showing where revoked approval, lease, and
 authority-receipt records route, but it is still not deployed revocation
 propagation.
 
+The Human oversight degradation fixture adds one more record-level boundary:
+approval can fail even when a human is present. It checks scoped low-fatigue
+approval, overloaded-reviewer delay, automation-bias blocking, missing
+qualification, rubber-stamping, alarm fatigue, support-state promotion from
+approval shape, and missing non-claim boundaries. That fixture does not prove
+reviewer correctness, approval-service quality, deployed human-factors
+behavior, or tool safety. It prevents the chapter from treating "human in the
+loop" as a magic phrase.
+
 The next honest slice would run a deployed adapter fixture end to end in a
 safe local environment: a low-impact local write with approval not required, a
 high-impact dry-run deployment requiring approval, a stale-approval negative
@@ -391,15 +413,16 @@ claim that the ASI Stack can safely use arbitrary tools.
 Current evidence consists of source synthesis, passage-reviewed source
 mappings, public schemas and fixtures, finite Lean predicates, a synthetic
 runtime-adapter permission harness, one public-safe Runtime adapter effect
-replay probe, and one Runtime adapter adversarial boundary probe. Those
-artifacts support the shape of the control surface, one toy temp-file effect
-path, and a broader synthetic denial matrix. They do not prove deployed
-adapter behavior, sandbox isolation, approval-service correctness,
-secret-handle safety, live effect receipt validity, rollback-service behavior,
-incident response, benchmark performance, security behavior, Talos runtime
-behavior, MoECOT runtime reproduction, ReAct reproduction, Simplex-level
-assurance, Copilot-style runtime monitoring, or proof-carrying-code
-enforcement.
+replay probe, one Runtime adapter adversarial boundary probe, and one Human
+oversight degradation fixture. Those artifacts support the shape of the
+control surface, one toy temp-file effect path, a broader synthetic denial
+matrix, and a finite reviewer-degradation denial matrix. They do not prove
+deployed adapter behavior, sandbox isolation, approval-service correctness,
+reviewer correctness, deployed human-factors behavior, secret-handle safety,
+live effect receipt validity, rollback-service behavior, incident response,
+benchmark performance, security behavior, Talos runtime behavior, MoECOT
+runtime reproduction, ReAct reproduction, Simplex-level assurance,
+Copilot-style runtime monitoring, or proof-carrying-code enforcement.
 
 The adapter exists to keep authority from leaking through convenience. The
 chapter preserves the same discipline about its own evidence.

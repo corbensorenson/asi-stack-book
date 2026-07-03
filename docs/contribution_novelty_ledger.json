@@ -214,6 +214,36 @@
       ]
     },
     {
+      "idea_id": "human_oversight_degradation",
+      "signature_phrase": "Human oversight degradation",
+      "chapter_refs": [
+        "runtime-adapters-tool-permissions-and-human-approval",
+        "human-intent-as-a-formal-input",
+        "evidence-states-and-claim-discipline"
+      ],
+      "claimed_contribution": "Treat human approval as a degradable control component whose approval fatigue, rubber-stamping, alarm fatigue, and automation-bias states can route an adapter record away from accepted dispatch.",
+      "closest_prior_art_refs": [
+        "ext_humans_automation_1997",
+        "ext_ironies_automation_1983",
+        "ext_levels_automation_2000",
+        "ext_complacency_bias_automation_2010"
+      ],
+      "audited_delta": "Human-factors automation literature describes use/misuse/disuse/abuse, automation irony, automation levels, complacency, and automation bias; the ASI Stack turns those risks into adapter record fields, negative controls, reviewer-rotation routes, independent-evidence checks, and no-promotion boundaries.",
+      "non_obvious_consequence": "A high-impact action can have a human approval record and still be ineligible for dispatch when reviewer load, rationale quality, alert quality, or automation-bias evidence shows the approval channel has degraded.",
+      "strongest_objection": "Finite metadata about reviewer load, rationale time, or alert quality may be gamed, superficial, or invasive, and may still fail to capture whether the human meaningfully understood the decision.",
+      "answer_status": "first_finite_fixture_seeded_but_reviewer_quality_open",
+      "confidence_state": "finite_fixture_backed_not_deployed",
+      "needed_next_artifact": "The first bounded fixture exists at experiments/human_oversight_degradation/results/2026-07-03-local.json. Next: add a deployed or externally reviewable approval-workflow trace with public-safe reviewer-load fields, independent-evidence checks, reviewer-rotation behavior, and explicit no-promotion decisions.",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove reviewer correctness",
+        "does not prove approval-service quality",
+        "does not prove deployed human-factors behavior",
+        "does not prove that human oversight cannot be manipulated",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
       "idea_id": "receipt_faithfulness_gap",
       "signature_phrase": "Record-reality gap",
       "chapter_refs": [
