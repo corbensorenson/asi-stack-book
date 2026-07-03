@@ -3,6 +3,7 @@
 Date: 2026-06-30
 
 Follow-up: 2026-07-02
+Evidence-boundary alignment: 2026-07-03
 
 Chapter: `prototype-roadmap`
 
@@ -38,6 +39,9 @@ The reader throughline is:
   accepted phase, using the existing phase-gate fixture boundary to explain
   research-only, phase-debt, and blocked self-improvement cases without
   claiming any phase is complete.
+- Aligned the reader MVI with `prototype_phase_gates_2026_07_02_local`: two
+  valid fixtures, six expected-invalid controls, integrate/research-only/reject
+  routes, and support-state effect `none`.
 
 ## Meaning-Preservation Checks
 
@@ -47,7 +51,9 @@ The reader throughline is:
 - The roadmap remains sequencing logic, not evidence that any phase has been
   implemented, accepted, validated, or used to promote a capability claim.
 - The existing fixture, phase-gate harness, and Lean hooks remain narrow
-  record-shape and gate-predicate checks only.
+  record-shape and gate-predicate checks only; the phase-gate harness is
+  described as two valid fixtures and six expected-invalid controls, not phase
+  completion.
 - The prose does not claim a phase acceptance result, dependency-gate audit,
   phase execution, benchmark result, model-quality result, deployment
   readiness, self-improvement readiness, roadmap-controller deployment, or

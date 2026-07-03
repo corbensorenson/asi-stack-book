@@ -1593,6 +1593,20 @@
   promotion, reader release, ebook/document/PDF/audio artifact, or artifact
   approval.
 
+## 2026-07-03 - Align Prototype Roadmap reader phase-gate boundary
+
+- Updated the Prototype Roadmap curated reader chapter, prose-pass record,
+  reader-manuscript manifest, reconciliation report, and reader-review matrix
+  so the human-reader path now explicitly names
+  `prototype_phase_gates_2026_07_02_local` as bounded fixture evidence: two
+  valid fixtures, six expected-invalid controls, integrate/research-only/reject
+  routes, and support-state effect `none`.
+- This is a reader evidence-boundary alignment only. It is not a real phase
+  acceptance, full dependency-gate audit, prototype phase execution, deployed
+  build-controller result, benchmark result, evaluator-independence result,
+  rollback-execution result, release-readiness result, support-state promotion,
+  reader release, ebook/document/PDF/audio artifact, or artifact approval.
+
 ## 2026-07-02 - Add RankFold public-safe replay probe
 
 - Added `python3 scripts/run_rankfold_public_safe_probe.py`,

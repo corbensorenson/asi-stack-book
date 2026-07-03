@@ -271,21 +271,20 @@ The roadmap should turn those temptations into blocked rows.
 The minimum viable implementation is a phase table with deliverables, gates,
 blockers, commands, evidence references, residuals, non-claims, and status.
 
-The first executable fixture is not a triumphant phase. It tests refusal:
+The first executable fixture is not a triumphant phase. It tests refusal. The
+local result `prototype_phase_gates_2026_07_02_local` has two valid fixtures:
+`valid_phase_acceptance_infrastructure` routes to `integrate`, and
+`valid_research_only_phase_debt` routes to `research_only`. It has six
+expected-invalid controls routed to `reject`: missing required artifacts,
+dependency inversion, self-improvement without an independent evaluator,
+support promotion without an evidence-transition record, phase debt without a
+retirement condition, and missing non-claim boundaries.
 
-- one accepted non-promoting infrastructure phase;
-- one phase allowed for research but not promotion;
-- one phase carrying phase debt with a retirement condition;
-- one self-improvement phase blocked by absent evaluator independence;
-- additional controls for missing artifacts, dependency inversion, promotion
-  without an evidence-transition record, phase debt without retirement, and
-  missing non-claim boundaries.
-
-`python3 scripts/validate_prototype_phase_gates.py` now checks that surface
-with `Phase acceptance checklist` and `Dependency gate review` coverage under
-result `prototype_phase_gates_2026_07_02_local`. It proves only fixture
-discipline. It does not prove phase completion, deployed build-controller
-behavior, benchmark performance, evaluator independence in practice, or no support-state promotion.
+`python3 scripts/validate_prototype_phase_gates.py` checks that surface with
+`Phase acceptance checklist` and `Dependency gate review` coverage. It proves
+only fixture discipline, with support-state effect `none`; no support-state promotion is claimed. It does not prove phase completion, deployed
+build-controller behavior, benchmark performance, evaluator independence in
+practice, rollback execution, or release readiness.
 
 ## Beyond The State Of The Art
 
