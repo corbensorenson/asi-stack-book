@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Recursive Self-Improvement Boundaries
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
 
 Chapter ID: `recursive-self-improvement-boundaries`
 
@@ -45,6 +45,10 @@ Allowed curation scopes used:
 - Preserved both Mermaid gate diagrams, the core claim, evidence boundary,
   minimum viable implementation, beyond-state-of-the-art endpoint, and handoff
   into Intent-to-Execution Contracts.
+- Added a 2026-07-02 bounded routing-specialist self-improvement scenario that
+  separates residual capture, cheaper-intervention review, boundary-delta
+  review, independent evaluation, canary scope, monitor triggers, rollback, and
+  support-state non-claims for human readers.
 
 ## Meaning Preservation Checks
 
@@ -68,8 +72,9 @@ Allowed curation scopes used:
   artifacts.
 - This pass does not promote any chapter core claim or non-core claim.
 - This pass does not claim autonomous self-improvement, evaluator independence,
-  rollback effectiveness, teacher independence, runtime safety, stale-gate
-  replay, or deployed governance behavior.
+  route-quality improvement, rollback effectiveness, teacher independence,
+  runtime safety, stale-gate replay, deployed governance behavior, or support
+  state promotion.
 
 ## Remaining Blockers
 

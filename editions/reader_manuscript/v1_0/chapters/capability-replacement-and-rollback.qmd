@@ -160,6 +160,37 @@ can help explain why a candidate exists. It cannot by itself prove that the
 candidate preserved identity, evaluator independence, authority boundaries, or
 rollback readiness.
 
+## A Replacement Scenario
+
+Suppose a planner in the stack has a slower but trusted implementation and a
+new candidate that produces shorter plans on a benchmark slice. An ordinary
+upgrade story would stop there: the candidate is better, so it ships. A
+replacement transaction asks a different set of questions before the word
+better is allowed to matter.
+
+The record names the stable capability field first. The candidate must show
+that it is still the same kind of planner, with the same authority ceiling,
+same human-approval obligations, same context restrictions, and same audit
+retention. The old regression suite follows the field forward. If the new
+planner wins on short planning tasks but forgets a denial path for tool
+authority, that failure becomes a blocker, not a tradeoff hidden inside an
+average score.
+
+The candidate then enters shadow or canary scope. It may plan for a narrow
+workload, but the prior implementation remains available. The monitor window
+has explicit triggers: missed approval, unowned external effect, larger hidden
+context request, failed regression, stale evidence, or cost breach. The rollback
+receipt names the old artifact, the state migration boundary, the dry-run
+status, and the owner who must act if the monitor fires. If the candidate has
+already caused irreversible external effects, the record says compensation,
+fork, quarantine, or residual; it does not pretend rollback is clean.
+
+This scenario does not claim a deployed planner replacement, production
+rollback, real monitor quality, evaluator-integrity enforcement, or benchmark
+improvement. It gives the reader the shape of a valid replacement: the
+candidate may be promising, but default status belongs only to the transaction
+that preserved the floor.
+
 ## Interfaces
 
 Replacement connects the stack's ledgers.

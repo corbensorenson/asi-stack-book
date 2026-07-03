@@ -97,6 +97,39 @@ Even a ready packet does not become default immediately. It still needs gate rev
 
 Transition states should be explicit: `proposed`, `research_only`, `evidence_packet_ready`, `boundary_delta_blocked`, `canary`, `default_candidate`, `promoted`, `quarantined`, `rolled_back`, `superseded`, or `retired`. Those states keep architecture experiments, teacher suggestions, and source-reported green gates from becoming default behavior by vocabulary drift.
 
+## A Self-Improvement Scenario
+
+Imagine a routing specialist that repeatedly fails at a class of verification
+tasks. The system proposes a self-improvement: add a new specialist, revise the
+router policy, and retire an older benchmark slice that the candidate calls
+obsolete. The proposal looks useful. It also touches almost every dangerous
+surface in the stack.
+
+The governed path starts by refusing to treat the candidate's explanation as
+permission. The residual that triggered the proposal is recorded first. The
+cheaper-intervention ladder asks whether the failure can be solved by a prompt
+repair, tool patch, added regression, benchmark clarification, or narrower
+route update before the stack changes its own routing policy. If the broader
+change is still justified, the boundary-delta review names exactly what would
+change: which routes widen, which context pages the new specialist can see,
+which verification budget it consumes, which regression floor it wants to
+retire, and which rollback path returns traffic to the old route.
+
+The candidate may supply traces and arguments, but it does not get to judge the
+promotion. An independent evaluator checks the preserved invariants. The old
+benchmark slice can be marked stale only through a separate evidence decision,
+not through the candidate's preference. A canary can route a limited workload
+through the new specialist while the old specialist remains recoverable. If the
+monitor finds a regression, authority widening, missing rollback handle, or
+budget cut, the transition moves to residual, quarantine, or rollback rather
+than default.
+
+That example is deliberately small. It is not autonomous self-modification, a
+proof of evaluator independence, a deployed route-quality result, or a support
+state promotion. Its value is procedural: it shows how self-improvement becomes
+an auditable transaction instead of a story about a system deciding that its own
+next version deserves trust.
+
 ## Interfaces
 
 A Self-Improvement Transition points outward rather than absorbing the other ledgers. It links to the residual that triggered the proposal, the field being changed, the replacement transaction, the protected-invariant review, evaluator-independence evidence, governance approval, monitor window, rollback path, and outcome ledger.

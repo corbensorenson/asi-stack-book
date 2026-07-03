@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: Capability Replacement and Rollback
 
-Last updated: 2026-06-29
+Last updated: 2026-07-02
 
 Chapter ID: `capability-replacement-and-rollback`
 
@@ -55,6 +55,10 @@ permission to change proof or test status.
 - Preserved the core claim, minimum viable implementation,
   beyond-state-of-the-art endpoint, and handoff into Security Kernel and
   Digital SCIFs.
+- Added a 2026-07-02 bounded planner-replacement scenario that separates field
+  identity, old regression floors, authority ceilings, canary scope, monitor
+  triggers, rollback receipt, irreversible-effect handling, and support-state
+  non-claims for human readers.
 
 ## Meaning Preservation Checks
 
@@ -78,11 +82,12 @@ permission to change proof or test status.
   artifacts.
 - This pass does not promote any chapter core claim or non-core claim.
 - This pass does not claim deployed replacement behavior, deployed route
-  quality, real regression-suite quality, evaluator-integrity enforcement,
-  authority enforcement, monitor-window success, rollback execution, benchmark
-  improvement, MoECOT runtime reproduction, MoECOT benchmark reproduction,
-  implemented corrigibility, production safety, strategic-deception
-  resistance, or global alignment.
+  quality, deployed planner replacement, real regression-suite quality,
+  evaluator-integrity enforcement, authority enforcement, monitor-window
+  success, rollback execution, benchmark improvement, MoECOT runtime
+  reproduction, MoECOT benchmark reproduction, implemented corrigibility,
+  production safety, strategic-deception resistance, support-state promotion,
+  or global alignment.
 
 ## Remaining Blockers
 
