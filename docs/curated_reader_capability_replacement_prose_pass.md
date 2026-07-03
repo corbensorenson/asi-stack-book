@@ -1,11 +1,14 @@
 # Curated Reader Prose Pass: Capability Replacement and Rollback
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 Chapter ID: `capability-replacement-and-rollback`
 
 Curated reader file:
 `editions/reader_manuscript/v1_0/chapters/capability-replacement-and-rollback.qmd`
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -59,6 +62,10 @@ permission to change proof or test status.
   identity, old regression floors, authority ceilings, canary scope, monitor
   triggers, rollback receipt, irreversible-effect handling, and support-state
   non-claims for human readers.
+- Added a 2026-07-03 reconciliation pass that frames fields as the nouns and
+  replacement transactions as the verbs, clarifies the identity-to-action
+  bridge into the security kernel, and closes the summary around floor
+  preservation rather than successful demos.
 
 ## Meaning Preservation Checks
 

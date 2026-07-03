@@ -14,6 +14,11 @@ Stable Capability Fields define what must remain true when a capability
 changes. Capability Replacement and Rollback defines how the change is allowed
 to happen.
 
+If a field is the noun, replacement is the verb. The field names the capability
+that must remain recognizable. The transaction says whether a proposed
+implementation has preserved enough of that capability to receive traffic,
+authority, evidence trust, and default status.
+
 An upgrade is not a moral event, and it is not a magic word. A new component
 may be faster, cleaner, cheaper, or more capable while still weakening the
 system. It may erase an old regression, widen a route's authority, change the
@@ -44,6 +49,11 @@ The floor includes more than accuracy. It includes field identity, regression
 history, permission scope, auditability, context restrictions, human review,
 residual ownership, and recovery paths. A candidate that wins a new comparison
 while losing those older obligations should not become default.
+
+That is why replacement sits between Stable Capability Fields and the security
+kernel. Before the stack asks what a new capability can touch, it has to ask
+whether the new candidate is still the same capability at all. The transaction
+is the reader's bridge from identity to action.
 
 Capability replacement therefore needs a procedure. Stable Capability Fields
 provide the target identity. The replacement transaction decides whether a
@@ -342,6 +352,9 @@ path visible while a candidate earns promotion.
 
 The governing discipline is floor preservation. The frontier may move only
 when the floor remains visible and recoverable.
+
+That discipline is what lets a self-improving system keep moving without
+teaching itself that every successful demo is a new default.
 
 ## Handoff
 

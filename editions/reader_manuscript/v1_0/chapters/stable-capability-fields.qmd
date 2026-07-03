@@ -24,10 +24,18 @@ ceiling it carries, what interface it exposes, what evidence qualifies an
 implementation, and what rollback obligations survive replacement. The
 implementation may change. The trust contract does not move quietly with it.
 
-This is the bridge from governance into self-improvement. Governance rights ask
-what survives institutional change. Stable Capability Fields ask what survives
-technical change. In both cases, the point is continuity under pressure:
-progress should improve the machinery without moving the terms of trust.
+This chapter is the hinge from governance into self-improvement. Governance
+rights ask what survives institutional change. Stable Capability Fields ask
+what survives technical change. In both cases, the point is continuity under
+pressure: progress should improve the machinery without moving the terms of
+trust.
+
+The easiest way to read the idea is to treat a field as a promise rather than
+a component. A component can be faster tomorrow, replaced next month, or
+retired after an incident. The field is the place where the stack records what
+that component was supposed to mean, who was allowed to depend on it, which
+evidence made that dependence reasonable, and what must happen if the new
+candidate fails.
 
 ## Problem
 
@@ -48,6 +56,12 @@ verifiers, and learned policies will all ask to become default. A stable field
 turns that pressure into a qualification question: does this candidate satisfy
 the same capability, under the same or explicitly changed authority, with
 evidence and rollback still attached?
+
+That question gives the rest of Part I a concrete object. Moral uncertainty,
+constitutional predicates, evidence states, and authority ceilings can all be
+attached to the field instead of being rediscovered every time an
+implementation changes. Without that object, improvement begins to erase the
+very record that was supposed to make it governable.
 
 ## Why Ordinary Replacement Is Not Enough
 
@@ -328,6 +342,10 @@ alone. A capability should be replaced only when the field can still say what
 remained true, what changed, who authorized the change, what evidence qualified
 the candidate, what authority it received, what regressions it inherited, and
 how to recover if it fails.
+
+That turns improvement into a continuity problem instead of a branding problem.
+The field keeps the old obligations alive long enough for a new implementation
+to earn them.
 
 ## Handoff
 

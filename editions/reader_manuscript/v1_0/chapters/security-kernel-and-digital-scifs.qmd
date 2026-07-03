@@ -33,6 +33,11 @@ that the model become morally careful with secrets. It is a design that keeps
 privileged material narrower than the model's curiosity, usefulness, and
 ability to paraphrase.
 
+The previous chapter protected the meaning of an upgrade. This one protects
+the material consequences of an upgrade. A candidate can preserve field
+identity and still be unsafe if it receives credentials, private context, or
+external-effect authority that the old route never carried.
+
 ## Problem
 
 High-agency systems need boundaries for secrets, context, permissions, and
@@ -57,7 +62,11 @@ be written afterward. The model should know the permitted action and the
 sanitized result, not automatically receive the secret bytes that made the
 action possible.
 
-## Why existing approaches are insufficient
+That separation is the chapter's central move. A model can be useful without
+being a vault, and it can be accountable without being shown every protected
+object it helps operate on.
+
+## Why Existing Approaches Are Insufficient
 
 The usual shortcut is to put sensitive material in a prompt and rely on
 instructions, redaction, or trust. That shortcut breaks the stack's authority
@@ -345,6 +354,10 @@ Handles are useful because they reveal less than the model might want.
 Digital SCIFs are useful because they give sensitive work a lifecycle instead
 of letting it blur into memory. Receipts are useful because they make power
 inspectable without publishing the secret itself.
+
+The result is not a claim that leakage has been solved. It is a stricter
+default: protected material must justify each exposure, each derivative, and
+each commit back into ordinary state.
 
 The boundary carries forward into the next chapter. Recursive
 self-improvement is acceptable only if improvement cannot make protected

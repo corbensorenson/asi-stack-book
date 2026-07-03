@@ -1,11 +1,14 @@
 # Curated Reader Prose Pass: Security Kernel and Digital SCIFs
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 Chapter ID: `security-kernel-and-digital-scifs`
 
 Curated reader file:
 `editions/reader_manuscript/v1_0/chapters/security-kernel-and-digital-scifs.qmd`
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -58,6 +61,10 @@ permission to change proof or test status.
   source folder, separating handle visibility, scoped read requests,
   compartment admission, prompt-injection handling, sanitized commits,
   zeroization/expiry receipts, residual leak risk, and support-state non-claims.
+- Added a 2026-07-03 reconciliation pass that connects security to the
+  material consequences of replacement, sharpens reasoning-versus-possession
+  as the central move, normalizes the existing-insufficiency heading, and
+  closes the summary around exposure discipline rather than solved leakage.
 
 ## Meaning Preservation Checks
 

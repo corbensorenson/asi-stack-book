@@ -1,11 +1,14 @@
 # Curated Reader Prose Pass: Recursive Self-Improvement Boundaries
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 Chapter ID: `recursive-self-improvement-boundaries`
 
 Curated reader file:
 `editions/reader_manuscript/v1_0/chapters/recursive-self-improvement-boundaries.qmd`
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -49,6 +52,10 @@ Allowed curation scopes used:
   separates residual capture, cheaper-intervention review, boundary-delta
   review, independent evaluation, canary scope, monitor triggers, rollback, and
   support-state non-claims for human readers.
+- Added a 2026-07-03 reconciliation pass that makes recursive improvement the
+  resolution of Part I's tension between progress and governability, clarifies
+  self-change as narrow permission rather than general license, and strengthens
+  the final handoff into Part II operations.
 
 ## Meaning Preservation Checks
 

@@ -1,11 +1,14 @@
 # Curated Reader Prose Pass: Stable Capability Fields
 
-Last updated: 2026-07-02
+Last updated: 2026-07-03
 
 Chapter ID: `stable-capability-fields`
 
 Curated reader file:
 `editions/reader_manuscript/v1_0/chapters/stable-capability-fields.qmd`
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -61,6 +64,10 @@ permission to change proof or test status.
   field that separates field identity, source-access authority, citation
   receipts, private-mount boundaries, scoped qualification, lease expiry,
   quarantine, rollback, and support-state non-claims.
+- Added a 2026-07-03 reconciliation pass that makes the field-as-promise
+  throughline explicit, connects moral uncertainty, constitutional predicates,
+  evidence states, and authority ceilings to field identity, and sharpens the
+  summary around continuity rather than capability branding.
 
 ## Meaning Preservation Checks
 

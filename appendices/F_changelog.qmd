@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-03 - Reconcile Part I control reader arc
+
+- Updated the curated reader manuscript chapters `Stable Capability Fields`,
+  `Capability Replacement and Rollback`, `Security Kernel and Digital SCIFs`,
+  and `Recursive Self-Improvement Boundaries` with second prose passes that
+  sharpen the Part I control arc: field identity as a promise, replacement as a
+  transaction, least-exposure security, and bounded self-improvement as the
+  transition into operational layers.
+- Advanced those four curated reader records from `drafting` to `reconciled` in
+  `editions/reader_manuscript/v1_0/manifest.json`, while preserving
+  `reader_release_record_not_created`, `format_artifact_not_reviewed`, and
+  `curated_reconciliation_not_approved` release blockers on every row.
+- Updated the reader reconciliation report, prose-pass sidecars, reader
+  status/readme surfaces, graduation review, companion-note routing review,
+  roadmap language, review matrix notes, and v1 status snapshot so the curated
+  reader manuscript now records 32 drafting chapters and 12 reconciled prose
+  chapters without implying release approval, format approval, support
+  promotion, source-authority changes, deployed security, rollback execution,
+  self-improvement success, or ebook/document/PDF/audio artifact approval.
+
 ## 2026-07-03 - Reconcile Part I reader foundations arc
 
 - Updated the curated reader manuscript chapters `ASI Is a Stack, Not a Model`,
