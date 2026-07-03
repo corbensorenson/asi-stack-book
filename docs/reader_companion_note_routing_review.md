@@ -64,8 +64,9 @@ must preserve the claim boundary.
 - This review does not approve a reader release.
 - This review does not approve EPUB, PDF, DOCX, HTML, AZW3, MOBI, Markdown,
   plain-text, MP3, M4B, or audio-embedded EPUB artifacts.
-- This review records that forty-four drafting-only curated reader chapters now
-  exist; it does not approve any chapter for release.
+- This review records that forty-four curated reader chapters now exist, with
+  forty-three drafting records and one reconciled prose record; it does not
+  approve any chapter for release.
 - This review records twelve drafting companion notes for dense planning,
   routing, hive, compression, speed, resource, proof, cyclic-substrate, policy,
   governance, and implementation-reference chapters; it does not approve them as

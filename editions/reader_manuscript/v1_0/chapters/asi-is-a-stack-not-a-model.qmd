@@ -10,10 +10,12 @@ implementation horizons, and release blockers.
 
 # ASI Is a Stack, Not a Model
 
-The book begins by changing the object in view. The subject is not a magic
-model, a prompt wrapper, or an agent loop with a grand name. It is a governed
-system whose parts must say what they own, what they may do, what evidence
-they create, and how they can be stopped, repaired, or replaced.
+The first move is deceptively simple: change the object in view. Advanced
+intelligence is not a glowing model at the center of everything, a prompt
+wrapper with a grand name, or an agent loop that inherits every responsibility
+because it can call tools. It is a governed system whose parts must say what
+they own, what they may do, what evidence they create, and how they can be
+stopped, repaired, or replaced.
 
 That opening move matters because the rest of the architecture adds machinery
 quickly. Planning, memory, routing, proof, execution, compression, governance,
@@ -23,19 +25,22 @@ every mechanism the same questions: what responsibility do you own, what
 artifact do you pass, what authority ceiling binds you, what evidence state
 can you honestly create, and what failure mode should stop you?
 
-A model can generate, compress, criticize, route, and propose. Those abilities
-are powerful, but they are not the whole institution. A governed stack decides
-when a model output becomes a plan, when a plan becomes a job, when a job may
-touch a tool, when a tool result becomes evidence, and when evidence can
-justify replacement. Without that separation, intelligence becomes hard to
-audit at exactly the moment it becomes important.
+A component can be brilliant and still be institutionally mute. A model can
+generate, compress, criticize, route, and propose, but those abilities do not
+say who authorized the action, which source grounded the claim, what residual
+was left behind, or what should happen when the result fails. A governed stack
+answers those institutional questions. It decides when a model output becomes
+a plan, when a plan becomes a job, when a job may touch a tool, when a tool
+result becomes evidence, and when evidence can justify replacement. Without
+that separation, intelligence becomes hardest to audit at exactly the moment
+it becomes most consequential.
 
-The first claim of the book is therefore modest but load-bearing: efficient
-ASI should be modeled as a governed stack of cooperating layers rather than as
-one undifferentiated model. The claim is architectural. It remains at
-`argument` support. The point is not that this repository already contains a
-working ASI stack; the point is that every later chapter needs this unit of
-analysis before it can make a disciplined claim.
+That is the book's first load-bearing claim: efficient ASI should be modeled
+as a governed stack of cooperating layers rather than as one undifferentiated
+model. The claim is architectural, and it remains at `argument` support. The
+point is not that this repository already contains a working ASI stack. The
+point is that every later chapter needs this unit of analysis before it can
+make a disciplined claim.
 
 ![Draft ASI Stack control plane.](../../../../assets/diagrams/asi-stack-control-plane.svg){#reader-fig-asi-stack-control-plane fig-alt="Draft ASI Stack control plane figure showing inputs, governed stack layers, authority and evidence rails, improvement loops, release records, residuals, and rollback paths."}
 
@@ -47,12 +52,12 @@ evidence that an integrated runtime exists.
 
 Advanced AI systems that plan, remember, verify, act, route work, compress
 representations, and improve under governance need a single architecture
-frame. Otherwise each paper, component, and prototype can sound like it is
-competing for the center of the system. One source emphasizes intent to
-execution. Another emphasizes stateful cognition. Another emphasizes
-verification, labor, orchestration, or stable capability replacement. Read
-without an architecture, those ideas become an anthology. Read through a stack
-contract, they become fragments of one machine.
+frame. Otherwise each paper, component, and prototype competes for the center
+of the system. One source emphasizes intent to execution. Another emphasizes
+stateful cognition. Another emphasizes verification, labor, orchestration, or
+stable capability replacement. Read without an architecture, those ideas
+become an anthology. Read through a stack contract, they become fragments of
+one machine.
 
 The first boundary is conceptual. An ASI system should not be described only
 by the model that generates tokens, the agent loop that calls tools, or the
@@ -67,14 +72,14 @@ layers. The unit is not "the model." The unit is a governed stack of
 cooperating layers. Each layer has a responsibility, an interface, a durable
 artifact, an invariant, a failure mode, and a promotion rule. Later layers can
 add detail only because the stack frame says what it means for those details
-to compose.
+to compose without silently changing authority or evidence.
 
-The frame also gives the reader a practical test. A new mechanism belongs in
-the stack only when it lowers confusion at a boundary: who owns the decision,
-what artifact crosses the interface, which authority is available, which
-evidence state is possible, and what rollback path exists if the mechanism
-fails. If it cannot answer those questions, it may still be an idea, but it is
-not yet an architectural layer.
+The frame gives the reader a practical test. A new mechanism belongs in the
+stack only when it lowers confusion at a boundary: who owns the decision, what
+artifact crosses the interface, which authority is available, which evidence
+state is possible, and what rollback path exists if the mechanism fails. If it
+cannot answer those questions, it may still be an idea, but it is not yet an
+architectural layer.
 
 ## Why existing approaches are insufficient
 

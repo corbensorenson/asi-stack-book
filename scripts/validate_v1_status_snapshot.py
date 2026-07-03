@@ -158,6 +158,16 @@ def main() -> None:
     curated_records = reader_manifest.get("chapter_records", [])
     if not isinstance(curated_records, list):
         fail(["reader manuscript manifest chapter_records must contain a list."])
+    curated_status_counts = Counter(
+        str(record.get("reconciliation_status", "missing"))
+        for record in curated_records
+        if isinstance(record, dict)
+    )
+    curated_status_summary = ", ".join(
+        f"{curated_status_counts[status]} {status}"
+        for status in ("drafting", "reconciled", "blocked", "not_started", "missing")
+        if curated_status_counts.get(status)
+    )
     reader_reviewed = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "review_status:reviewed")
     reader_overlay_active = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:reader_overlay_active")
     reader_no_action = summary_metric(ROOT / "docs" / "reader_chapter_review_matrix.md", "disposition:no_immediate_action")
@@ -429,7 +439,7 @@ def main() -> None:
         "`docs/reader_format_review_matrix.md` records the HTML row as release-approved against `release_records/2026-06-29-v1-reader-html-855dc277.json` while EPUB, DOCX, and PDF retain format-specific review blockers.",
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`",
         f"The current v1.0 reader-overlay set carries {reader_overlay_operation_count} active operations across {len(reader_overlay_operation_chapters)} chapters for Human view and generated reader editions only.",
-        f"The curated reader-manuscript manifest exists with `{reader_manifest.get('status')}` status and {len(curated_records)} drafting-only curated chapter records; its reader handoff contract records the book thesis, part arcs, signature ideas, ten draft key-figure assets with text-equivalent chapter anchors and curated reader-manuscript placements, Corben voice-pass slots, and chapter stakes/payoffs without release approval; retired standalone reader drafts are archived as history, and the active manifest remains a subordinate narrative derivative whose reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
+        f"The curated reader-manuscript manifest exists with `{reader_manifest.get('status')}` status and {len(curated_records)} curated chapter records ({curated_status_summary}); its reader handoff contract records the book thesis, part arcs, signature ideas, ten draft key-figure assets with text-equivalent chapter anchors and curated reader-manuscript placements, Corben voice-pass slots, and chapter stakes/payoffs without release approval; retired standalone reader drafts are archived as history, and the active manifest remains a subordinate narrative derivative whose reconciliation report keeps release blockers active until reconciliation, format review, and an edition release record exist.",
         "`editions/reader_overlays/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/manifest.json`",
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`",

@@ -1,6 +1,6 @@
 # Curated Reader Prose Pass: ASI Is a Stack
 
-Last updated: 2026-06-29
+Last updated: 2026-07-03
 
 Chapter ID: `asi-is-a-stack-not-a-model`
 
@@ -9,8 +9,9 @@ Curated reader file:
 
 ## Scope
 
-This pass turns the generated reader baseline for the opener into a first
-booklike curated reader draft. It is a reader-prose derivative only.
+This pass turns the generated reader baseline for the opener into a booklike
+curated reader chapter and records the first chapter-level reconciliation
+state for the tracked reader manuscript. It is a reader-prose derivative only.
 
 Allowed curation scopes used:
 
@@ -37,8 +38,22 @@ Allowed curation scopes used:
   2026-07-01 roadmap burn-down update: the endpoint now argues directly
   against scale-only, generic agent-loop, and compound/modular AI framings
   while preserving the comparator-only source boundary.
+- Ran a second reader-prose pass over the opening and problem statement so the
+  chapter foregrounds the institutional stakes of the stack frame: authority,
+  evidence, residuals, failure, and replacement are not hidden inside model
+  fluency.
+- Marked the chapter's curated-reader manifest record `reconciled` for the
+  current source boundary while preserving all release blockers.
 - Preserved the core claim, evidence boundary, minimum viable implementation,
   and handoff into the efficiency chapter.
+
+## Reconciliation Status
+
+The curated reader chapter is reconciled against the current live chapter,
+generated reader baseline, Appendix C claim/support boundary, and Appendix K
+implementation horizon for prose meaning. This is not release approval.
+`curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, and
+`reader_release_record_not_created` remain active blockers.
 
 ## Meaning Preservation Checks
 
@@ -49,13 +64,15 @@ Allowed curation scopes used:
 | Source boundary preserved | Pass. No new source IDs, source facts, citations, or external claims were introduced by this pass; the draft carries the live chapter's comparator-only boundary. |
 | Proof/test status preserved | Pass. The curated draft keeps the boundary that this is not implemented or proven safe and that layer-boundary fixtures/proofs remain narrow surfaces. |
 | Implementation horizon preserved | Pass. The minimum viable implementation remains a stack map, layer boundary schema, fixture, source map, and Appendix C; the mature endpoint remains architectural until integration evidence exists. |
-| Release blockers preserved | Pass. No reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
+| Release blockers preserved | Pass. The chapter can be marked reconciled for prose meaning while no reader release record, format review, reconciliation approval, EPUB, DOCX, PDF, HTML, or audio artifact is approved by this pass. |
 
 ## Non-Claims
 
 - This pass includes a live/reader reconciliation update to the Beyond-SOTA
   endpoint and the manifest mature-endpoint field; it does not change claim
   meaning, support-state boundaries, or source assignments.
+- This pass marks only the opener's curated-reader record `reconciled`; it
+  does not make the full curated manuscript release-candidate or released.
 - This pass does not alter Appendix C, source assignments, proof targets, test
   status, implementation horizons, or release records.
 - This pass does not approve the curated chapter for reader release.

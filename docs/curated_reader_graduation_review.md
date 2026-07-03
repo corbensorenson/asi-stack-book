@@ -25,7 +25,7 @@ ebook/document/PDF/audio artifact record, and not a support-state promotion.
 - Active reader-overlay operations: 31
 - Companion-note candidates: 3
 - Curated-manuscript candidates: 44
-- Curated chapter records: 44 drafting records; see `editions/reader_manuscript/v1_0/manifest.json` and `editions/reader_manuscript/v1_0/reconciliation_report.md` for the current chapter-level list. Earlier curated records include
+- Curated chapter records: 43 drafting records and 1 reconciled record; see `editions/reader_manuscript/v1_0/manifest.json` and `editions/reader_manuscript/v1_0/reconciliation_report.md` for the current chapter-level list. Earlier curated records include
   `asi-is-a-stack-not-a-model`,
   `the-efficient-asi-hypothesis`,
   `system-boundaries-and-authority`,
@@ -121,7 +121,7 @@ merge or fold packages.
 
 | Chapter | Current disposition | Graduation decision |
 |---|---|---|
-| `asi-is-a-stack-not-a-model` | `curated_manuscript_candidate`; pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_asi_stack_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
+| `asi-is-a-stack-not-a-model` | `curated_manuscript_candidate`; pilot curated reader chapter outside the pending consolidation cluster | Curated reader reconciliation completed and recorded in `docs/curated_reader_asi_stack_prose_pass.md`. Release blockers remain active, no reader artifact is approved, and this does not make the full curated manuscript release-candidate or released. |
 | `the-efficient-asi-hypothesis` | `curated_manuscript_candidate`; pilot curated reader chapter outside the pending consolidation cluster | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_efficient_asi_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, and no reader artifact is approved. |
 | `system-boundaries-and-authority` | foundational protected standalone chapter outside the pending consolidation cluster; active overlay already existed for permission-class prose | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_system_boundaries_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and deployed authorization enforcement is not claimed. |
 | `failure-modes-of-ungoverned-intelligence` | foundational protected standalone chapter outside the pending consolidation cluster; owns the failure-obligation map that follows authority boundaries | First drafting-only curated reader prose pass completed and recorded in `docs/curated_reader_failure_modes_prose_pass.md`. Reconciliation remains incomplete, release blockers remain active, no reader artifact is approved, and no scenario-coverage, deployed-detection, or deployed-prevention claim is implied. |
@@ -197,8 +197,9 @@ true:
 
 ## Non-Claims
 
-- This review records forty-four drafting-only curated reader chapter files for
-  future prose editing; it does not approve any file for release.
+- This review records forty-four curated reader chapter files for future prose
+  editing, with forty-three drafting records and one reconciled prose record;
+  it does not approve any file for release.
 - This review does not create or approve EPUB, PDF, DOCX, HTML, audio, or
   audio-embedded EPUB artifacts.
 - This review does not remove release blockers from any chapter.

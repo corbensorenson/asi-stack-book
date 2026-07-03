@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-03 - Reconcile opening reader chapter
+
+- Updated the curated reader manuscript chapter `ASI Is a Stack, Not a Model`
+  with a second prose pass that foregrounds the institutional stakes of the
+  stack frame: authority, evidence, residuals, failure, and replacement remain
+  visible instead of being hidden inside model fluency.
+- Advanced only that curated reader record from `drafting` to `reconciled` in
+  `editions/reader_manuscript/v1_0/manifest.json`, while preserving
+  `reader_release_record_not_created`, `format_artifact_not_reviewed`, and
+  `curated_reconciliation_not_approved` release blockers.
+- Updated the reader reconciliation report, reader status/readme surfaces,
+  graduation review, roadmap language, and v1 status snapshot validator so the
+  curated reader manuscript now records 43 drafting chapters and 1 reconciled
+  prose chapter without implying release approval, format approval, support
+  promotion, source-authority changes, or ebook/document/PDF/audio artifact
+  approval.
+
 ## 2026-07-03 - Implement proof adequacy review validation
 
 - Added `python3 scripts/validate_proof_adequacy_review.py` and wired it into
