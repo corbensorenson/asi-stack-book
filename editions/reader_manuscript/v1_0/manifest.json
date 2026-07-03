@@ -1129,12 +1129,12 @@
       "voice_pass_slot_ids": [
         "proof-practice"
       ],
-      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, proof-target receipt example, and minimum viable implementation boundary were edited for human reading while preserving claim meaning and evidence boundaries.",
+      "divergence_summary": "First curated prose pass completed from the generated reader baseline: opening, proof-lane distinction, semantic adequacy explanation, companion-note integration, proof-target receipt example, and minimum viable implementation boundary were edited for human reading while preserving claim meaning and evidence boundaries. The 2026-07-03 alignment surfaces the concrete proof-envelope executable surface: protocol fixture validation, proof readiness, proof artifact audit, proof-depth surface synchronization, local Lean build, 179 implemented proof targets, 54 Lean modules, all 44 chapters in the audit, zero audit errors or warnings, and finite ProofEnvelope negative cases.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
+        "proof/test status preserved without adding unrun results, semantic adequacy claims, source-interpretation claims, deployed-enforcement claims, theorem-importance claims, external-theorem-validity claims, benchmark claims, or support-state promotions",
+        "implementation horizon preserved without implying proof authority beyond finite-record traceability and executable receipt discipline",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -1144,7 +1144,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass and 2026-07-02 proof-target receipt follow-up recorded in docs/curated_reader_executable_specs_prose_pass.md; not release-reviewed."
+      "review_notes": "First prose curation pass, 2026-07-02 proof-target receipt follow-up, and 2026-07-03 executable proof-envelope evidence-boundary alignment recorded in docs/curated_reader_executable_specs_prose_pass.md; not release-reviewed and no chapter core claim is promoted."
     },
     {
       "chapter_id": "failure-modes-of-ungoverned-intelligence",

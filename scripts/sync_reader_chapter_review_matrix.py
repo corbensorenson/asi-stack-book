@@ -256,14 +256,30 @@ SPECIAL_REVIEW_DEFAULTS = {
         ),
     },
     "executable-specifications-and-lean-proof-envelope": {
-        "review_status": "spot_checked",
-        "review_depth": "medium_priority_manual_review",
-        "dispositions": ["reader_overlay_active", "companion_note_candidate", "no_immediate_action"],
-        "review_refs": ["docs/reader_continuity_review.md#medium-priority-queue-decisions"],
+        "review_status": "reviewed",
+        "review_depth": "full_chapter_review",
+        "dispositions": [
+            "reader_overlay_active",
+            "curated_manuscript_candidate",
+            "companion_note_candidate",
+            "no_immediate_action",
+        ],
+        "review_refs": [
+            "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
+            "docs/curated_reader_executable_specs_prose_pass.md",
+        ],
         "review_notes": (
-            "Medium-priority density row read; no additional overlay now. Future "
-            "reader release work may route proof-envelope vocabulary through "
-            "companion notes or glossary treatment."
+            "Full generated-reader chapter review recorded. The existing "
+            "overlay keeps the proof envelope readable while preserving "
+            "separation between Lean predicates, schemas, process validators, "
+            "behavior tests, benchmarks, external theorem references, semantic "
+            "adequacy review, and broad claim non-claims. First curated reader "
+            "prose pass is recorded; the 2026-07-03 alignment surfaces the "
+            "concrete proof-envelope executable surface as finite-record "
+            "traceability and receipt discipline only. Semantic adequacy, "
+            "source interpretation, deployment, theorem-importance, external "
+            "theorem validity, benchmark, support-promotion, companion-note "
+            "treatment, and release blockers remain active."
         ),
     },
     "circle-calculus-and-proof-carrying-ai-contracts": {

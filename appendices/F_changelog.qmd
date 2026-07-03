@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-03 - Align executable specs reader evidence boundary
+
+- Updated the curated reader manuscript draft for `Executable Specifications and
+  Lean Proof Envelope` so its minimum viable implementation names the current
+  proof-envelope executable surface: protocol example validation, proof
+  readiness, proof artifact audit, proof-depth surface synchronization, local
+  `lake build`, 179 implemented proof targets, 54 Lean modules, all 44 chapters
+  in the audit, zero audit errors or warnings, and the
+  `AsiStackProofs.ProofEnvelope` finite negative cases.
+- Updated the executable-specs prose-pass note, reader manuscript manifest,
+  chapter review matrix, review-matrix generator, and reconciliation report to
+  record the 2026-07-03 evidence-boundary alignment. This is curated
+  reader-manuscript alignment only; it is not semantic proof adequacy, source
+  interpretation, deployed enforcement, theorem-importance evidence, external
+  theorem validity, model-quality evidence, benchmark evidence, support-state
+  promotion, chapter core support-state promotion, reader release,
+  ebook/document/PDF/audio artifact, or artifact approval.
+
 ## 2026-07-03 - Align CoilRA reader evidence boundary
 
 - Updated the curated reader manuscript draft for `CoilRA, MultiCoil RoPE, and
