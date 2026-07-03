@@ -6,6 +6,7 @@
   "purpose": "Record the latest local curated-reader HTML, EPUB, DOCX, and PDF structural render evidence without treating ignored build artifacts as release artifacts.",
   "source_mode": "tracked_curated_reader_manuscript",
   "source_commands": [
+    "python3 scripts/render_curated_reader_formats.py --include-pdf",
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py"
   ],
@@ -64,8 +65,8 @@
     },
     "epub": {
       "status": "passed",
-      "bytes": 8697682,
-      "sha256": "61648d1d4b2924c8c629c6ba225ace2326f7e53863730aeef5663d9dd614a94b",
+      "bytes": 8699526,
+      "sha256": "fc96a767e5746f8e98fdd27463244ab24662f01cc56307bd2aa52503b0094b2a",
       "entries": 120,
       "xhtml_entries": 52,
       "image_entries": 62,
@@ -85,13 +86,13 @@
     },
     "docx": {
       "status": "passed",
-      "bytes": 8354610,
-      "sha256": "ac5166ef15b4e957dc17537c1668a6d362dfe14893f355d346947adf087b3551",
+      "bytes": 8356410,
+      "sha256": "29783665f677c0952fd4eb731a6a4a8dbd617254adcdfe04f694492eaf4b957d",
       "entries": 77,
       "media_entries": 61,
       "png_media_entries": 61,
       "svg_media_entries": 0,
-      "paragraph_markers": 17186,
+      "paragraph_markers": 17204,
       "required_entries_present": [
         "[Content_Types].xml",
         "_rels/.rels",
@@ -102,8 +103,8 @@
     },
     "pdf": {
       "status": "passed",
-      "bytes": 9342811,
-      "sha256": "69ae4109cfd2979b44808e791924d2ce25d22b654b27cd112638fe91fa9ddfa4",
+      "bytes": 9347225,
+      "sha256": "62a5a20511099a82807ee116283c5bcb067d3a59c2bd2fdc24159c2ca7456dbd",
       "pages": 523,
       "title": "The ASI Stack",
       "author": "Corben Sorenson",

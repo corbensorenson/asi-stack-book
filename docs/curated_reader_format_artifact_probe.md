@@ -8,9 +8,10 @@ format approval, a public deployment artifact, or a support-state promotion.
 
 ## Inputs
 
-Commands run:
+Commands and reproduction path:
 
 ```bash
+python3 scripts/render_curated_reader_formats.py --include-pdf
 python3 scripts/render_curated_reader_formats.py --formats html epub docx pdf
 python3 scripts/inspect_curated_reader_format_artifacts.py
 ```
@@ -47,9 +48,9 @@ or PDF artifact.
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,697,682 bytes, SHA-256 `61648d1d4b2924c8c629c6ba225ace2326f7e53863730aeef5663d9dd614a94b`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,354,610 bytes, SHA-256 `ac5166ef15b4e957dc17537c1668a6d362dfe14893f355d346947adf087b3551`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,186 paragraph markers, required Word package entries present. |
-| pdf | passed | 9,342,811 bytes, SHA-256 `69ae4109cfd2979b44808e791924d2ce25d22b654b27cd112638fe91fa9ddfa4`, 523 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,699,526 bytes, SHA-256 `fc96a767e5746f8e98fdd27463244ab24662f01cc56307bd2aa52503b0094b2a`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,356,410 bytes, SHA-256 `29783665f677c0952fd4eb731a6a4a8dbd617254adcdfe04f694492eaf4b957d`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,204 paragraph markers, required Word package entries present. |
+| pdf | passed | 9,347,225 bytes, SHA-256 `62a5a20511099a82807ee116283c5bcb067d3a59c2bd2fdc24159c2ca7456dbd`, 523 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## Review Decision
 

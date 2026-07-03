@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-03 - Refresh curated reader format probe after craft passes
+
+- Re-rendered the tracked curated reader manuscript in ignored local review
+  space to HTML, EPUB, DOCX, and PDF after the latest reader-craft updates.
+- Updated `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`,
+  `docs/curated_reader_format_artifact_probe.md`, and the validator digest
+  fragments with the refreshed structural inspection: 49 HTML files, 52 EPUB
+  XHTML entries, 61 DOCX PNG media entries, 0 DOCX SVG media entries, and a
+  523-page PDF with sampled page PNGs.
+- Boundary: this is local format-probe evidence only. It does not approve
+  EPUB, DOCX, PDF, HTML, e-reader, audio, or audio-embedded EPUB artifacts,
+  does not create an edition release record, and does not promote any support
+  state.
+
 ## 2026-07-03 - Refine living book reader craft
 
 - Polished the curated reader manuscript draft for `Living Book Methodology`
