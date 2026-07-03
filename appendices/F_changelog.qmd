@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-03 - Clarify idea-depth execution states
+
+- Reviewed the latest idea-focused Claude output against the current roadmap,
+  outline, chapters, reader manuscript, and contribution novelty ledger.
+- Tightened `docs/v1_x_beyond_sota_roadmap.md` so idea-depth work now moves
+  through explicit execution states: absent/scattered, owned argument, bounded
+  fixture or source pack, live/external replay, and defended contribution.
+- Clarified that `missing_argument` means missing as a defended open-world
+  argument or contribution result, not absent from the manuscript, and that
+  future runs should not redo bounded fixtures for receipt faithfulness,
+  epistemic TCB, or human oversight degradation.
+- Boundary: this is roadmap execution guidance only. It creates no source
+  evidence, support-state transition, novelty proof, external review, proof
+  result, benchmark result, deployed attestation, model-quality result, reader
+  artifact approval, edition release record, or new chapter.
+
 ## 2026-07-03 - Add Theseus/Fast support-lane aggregate bridge
 
 - Added the selected Theseus/Fast support-lane aggregate. `python3
