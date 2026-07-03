@@ -2,12 +2,17 @@
 
 Date: 2026-07-02
 
+Follow-up: 2026-07-03
+
 Chapter: `cognitive-compilation-and-semantic-ir`
 
 Reader manuscript file:
 `editions/reader_manuscript/v1_0/chapters/cognitive-compilation-and-semantic-ir.qmd`
 
 Live source file: `chapters/cognitive-compilation-and-semantic-ir.qmd`
+
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
 
 ## Reader Promise
 
@@ -40,6 +45,10 @@ The reader throughline is:
   chapter edit, separating source-plan atoms, no-new-source checks,
   support-boundary checks, prose-pass/manifest/changelog updates, localized
   repair, lowering receipts, and support-state non-claims.
+- Added a 2026-07-03 reconciliation pass that makes the planning-to-compilation
+  handoff explicit, frames the compiler boundary as a ledger for generated
+  work rather than a limit on creativity, and strengthens the transition into
+  Virtual Context ABI.
 
 ## Meaning-Preservation Checks
 

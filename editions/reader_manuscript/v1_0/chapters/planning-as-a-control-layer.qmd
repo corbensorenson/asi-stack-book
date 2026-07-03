@@ -42,6 +42,11 @@ graph full of plausible steps is not a governed system. The graph becomes
 governed only when proposed work, blocked work, reviewable work, dispatchable
 work, executed work, replanned work, and stopped work remain different states.
 
+If the command contract answers "what is this system allowed to try," the plan
+graph answers "which parts of that attempt are real work, which parts are only
+hypotheses, and which parts must stay blocked." That distinction is what makes
+planning a control layer instead of a prelude to tool use.
+
 ## Problem
 
 Goals need to become governed plans with dependencies, budgets, risk limits,
@@ -216,6 +221,10 @@ Every node therefore carries two contracts. The work contract names what the
 node may do. The adequacy contract names what would make the result usable by
 downstream dependents. Scheduling without the adequacy contract creates output
 without reliable progress.
+
+The reader should notice the reversal: planning does not earn trust by finding
+more actions. It earns trust by finding the smallest set of actions that are
+authorized, adequate, ordered, and worth dispatching.
 
 A cost-quality ledger keeps the economics honest. It should count tokens,
 latency, tool cost, review cost, repair cost, failed attempts, human cleanup,
@@ -462,6 +471,10 @@ That is why planning belongs between command contracts and execution. It lets
 the system slow down in a structured way. It turns "we could do this" into the
 more important question: "which parts of this are actually allowed to become
 work, and what kind of intelligence would make each part adequate?"
+
+The next chapter takes those dispatchable obligations and asks for their build
+language. A plan can say what should happen; cognitive compilation says what
+must be preserved while the artifact is being made.
 
 ## Handoff
 

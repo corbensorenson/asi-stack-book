@@ -30,6 +30,11 @@ same evidential weight.
 In reader terms, context becomes governed memory only when it has an identity,
 a certificate, a lease, an authority boundary, and a fault path.
 
+This follows directly from semantic IR. If the compiler gives obligations
+addresses, the context system has to give evidence and memory addresses. A
+semantic atom cannot honestly preserve a source, constraint, or policy if the
+context behind it arrives as anonymous prompt material.
+
 ## Problem
 
 Long-horizon agents need a stable context interface whose addresses, versions,
@@ -71,6 +76,12 @@ revocation, or a limit on who may use it. That kind of loss is easy to miss
 because the output still reads fluently. Semantic pages and certificates do
 not make summaries automatically true. They make the loss, provenance,
 authority, permitted use, and revocation state visible before reuse.
+
+The ABI is therefore a discipline of role preservation. A useful summary may
+orient planning without supporting quotation. A redacted packet may enable a
+tool without exposing the source. A reader paraphrase may clarify an idea
+without becoming evidence. The interface exists so those roles do not collapse
+just because they share a context window.
 
 ## Core Claim
 
@@ -296,6 +307,20 @@ The endpoint is a governed context fabric: exact source excerpts, summaries,
 redactions, planning briefs, claim cells, contradiction pairs, reader
 paraphrases, and execution packets can all be materialized from shared sources
 without pretending they have the same authority or evidential role.
+
+## Summary
+
+The Virtual Context ABI gives memory a calling convention. It turns context
+from anonymous relevant text into typed, leased, certified packets with stable
+addresses, versions, authority labels, adequacy states, permitted uses, and
+fault paths.
+
+The chapter's practical lesson is that model-visible context should not erase
+the contract around the material it contains. A source excerpt, planning
+summary, redacted instruction, contradiction pair, and reader paraphrase can
+all help the system, but they cannot honestly do the same job. The ABI keeps
+those roles separate before downstream reasoning, execution, or publication
+depends on them.
 
 ## Handoff
 

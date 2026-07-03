@@ -31,6 +31,11 @@ The throughline is simple: ordinary language can begin the work, but explicit
 fields have to govern the work, and every later artifact needs to show which
 contract authorized it.
 
+This is the first operational move after Part I. The previous part defined the
+boundaries a governed system may not spend. This chapter turns those
+boundaries into an intake object that later layers can inherit, narrow,
+inspect, refuse, or return to the human for a new contract.
+
 ![Draft intent-to-artifact trace.](../../../../assets/diagrams/intent-to-artifact-trace.svg){#reader-fig-intent-to-artifact-trace fig-alt="Draft intent-to-artifact trace figure showing accepted intent, command contract, plan graph, typed job, authority gate, adapter effect, artifact node, evidence ledger, replay, feedback, refusal, residual, re-contract, and non-claim boundaries."}
 
 Figure boundary: this draft reader aid shows the intended continuity path from
@@ -111,6 +116,11 @@ layers do not infer authority from helpful prose.
 Missing fields are also information. If acceptance criteria, authority,
 allowed tools, verifier, budget, or failure behavior are absent, the system
 should not invent permissive defaults. It should ask, narrow, defer, or stop.
+
+That makes the command contract a refusal surface as much as an execution
+surface. Its job is not to make every request runnable. Its job is to make the
+conditions for running, narrowing, or stopping explicit before momentum takes
+over.
 
 ## Core Claim
 
@@ -365,6 +375,10 @@ action.
 
 A downstream layer should never have to guess whether it is allowed to act. If
 it has to guess, the trace should stop, ask, narrow, or re-contract.
+
+That is why Part II starts here rather than with planning, memory, or tools.
+Every later operational layer is safer when it receives a contract instead of
+an implied wish.
 
 ## Handoff
 

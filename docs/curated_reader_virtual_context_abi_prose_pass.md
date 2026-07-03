@@ -6,6 +6,8 @@ Follow-up: 2026-07-01
 
 Follow-up: 2026-07-02
 
+Follow-up: 2026-07-03
+
 Chapter: `virtual-context-abi`
 
 Reader manuscript file:
@@ -13,12 +15,16 @@ Reader manuscript file:
 
 Live source file: `chapters/virtual-context-abi.qmd`
 
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
+
 Consolidation caveat:
 The 2026-06-30 static context ABI consolidation executed after this pass:
 `semantic-pages-context-cells-and-certificates` is now archived as historical
 reader/source lineage, and active reader work routes through
-`virtual-context-abi`. This prose-pass note remains drafting history, not a
-reader release, support-state transition, or source-evidence record.
+`virtual-context-abi`. This prose-pass note now records the reconciled curated
+reader state for the merged destination, not a reader release, support-state
+transition, or source-evidence record.
 
 2026-07-01 follow-up:
 The live chapter's mechanism prose and the curated reader opening were smoothed
@@ -34,6 +40,11 @@ summaries, redacted instructions, contradiction pairs, and reader paraphrases.
 The example is reader-facing explanation only; it does not claim deployed
 resolver behavior, certificate truthfulness, model-facing runtime quality, or
 summary-fidelity evaluation.
+
+2026-07-03 follow-up:
+The curated reader chapter now makes the Semantic IR to context handoff
+explicit, frames the ABI as role preservation for context objects, and adds a
+reader-facing summary before the handoff into context transactions.
 
 ## Reader Promise
 
@@ -68,6 +79,10 @@ The reader throughline is:
 - Added the 2026-07-02 reader-facing packet example so the chapter explains
   what typed context changes for the worker model without changing live claims,
   source boundaries, proof/test status, or implementation status.
+- Added a 2026-07-03 reconciliation pass that links obligation addresses to
+  context addresses, sharpens role preservation for summaries, redactions,
+  excerpts, and paraphrases, and adds a summary section without changing claim
+  meaning or support boundaries.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint without implying a deployed VCM resolver, context compiler,
   snapshot service, adequacy classifier, VCM-Bench result, or MoECOT runtime.

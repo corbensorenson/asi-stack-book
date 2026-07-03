@@ -31,6 +31,10 @@ A broken requirement does not have to trigger a full regeneration of the whole
 artifact. The system can inspect the atom, dependency, validator, lowering
 receipt, or repair ledger that failed.
 
+Planning made work schedulable. Cognitive compilation makes it buildable. A
+dispatchable node is still too large and too vague until the obligations inside
+it have addresses, validators, lowering states, and repair scopes.
+
 That is the reader promise of this chapter: generated work should be explainable
 through the obligations it preserved. If the stack cannot trace a target output
 back to source plan, semantic atoms, assumptions, validators, and residuals, it
@@ -100,6 +104,10 @@ Prompting can remain the human input surface. It should not be the only
 internal build artifact. A conversation transcript is too unstable to carry all
 requirements, assumptions, dependencies, validators, authority limits, and
 repair scopes by itself.
+
+The compiler boundary is therefore a pressure valve against hidden drift. It
+does not make generation uncreative. It gives generated work a ledger of what
+was supposed to survive.
 
 ## Core Claim
 
@@ -322,6 +330,10 @@ do not preserve obligations. It does not yet have a working cognitive compiler.
 The next path is to connect the same control surface to concrete target
 artifacts, real validators, and measured localized repair before any broader
 compiler claim moves.
+
+That path also depends on context. An obligation graph can preserve only the
+source material, memory, and authority labels it can actually address. The
+next chapter gives that context an interface.
 
 ## Handoff
 

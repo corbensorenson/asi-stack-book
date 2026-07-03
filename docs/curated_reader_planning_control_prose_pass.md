@@ -2,6 +2,8 @@
 
 Date: 2026-06-30
 
+Follow-up: 2026-07-03
+
 Chapter: `planning-as-a-control-layer`
 
 Reader manuscript file:
@@ -9,12 +11,22 @@ Reader manuscript file:
 
 Live source file: `chapters/planning-as-a-control-layer.qmd`
 
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
+
 Consolidation history:
 The 2026-06-30 planning/DAG consolidation folded
 `planforge-dags-and-intelligence-arbitrage` into this continuity chapter. This
-pass remains a drafting-only curated reader record for the merged destination;
-it does not approve a reader release, move support states, or claim deployed
-planning, scheduling, or intelligence-arbitrage behavior.
+note now records the reconciled curated reader state for the merged
+destination; it does not approve a reader release, move support states, or
+claim deployed planning, scheduling, or intelligence-arbitrage behavior.
+
+2026-07-03 follow-up:
+The curated reader chapter now makes the command-to-plan handoff explicit:
+command contracts say what may be tried, while plan graphs separate real work,
+hypotheses, blocked nodes, and dispatchable obligations. It also sharpens
+intelligence arbitrage as the smallest authorized adequate action set, not a
+cheap-model slogan.
 
 ## Reader Promise
 
@@ -41,6 +53,10 @@ The reader throughline is:
 - Reworked the Mermaid diagram around accepted command contracts, plan graphs,
   node states, residuals, review, dispatch receipts, typed jobs, runtime
   feedback, replanning, and the plan ledger.
+- Added a 2026-07-03 reconciliation pass that clarifies planning as a control
+  distinction between possible action and dispatchable work, strengthens the
+  adequacy-contract explanation, and repairs the handoff into Cognitive
+  Compilation and Semantic IR.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint without implying a deployed planning control plane, scheduler,
   parser, replanner, or execution runtime exists.

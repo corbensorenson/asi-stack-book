@@ -862,7 +862,7 @@
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "title": "Cognitive Compilation and Semantic IR",
       "file": "editions/reader_manuscript/v1_0/chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/cognitive-compilation-and-semantic-ir.qmd",
       "live_source_ref": "chapters/cognitive-compilation-and-semantic-ir.qmd@a57098412",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#cognitive-compilation-and-semantic-ir.core",
@@ -882,12 +882,13 @@
       "voice_pass_slot_ids": [
         "memory-experience"
       ],
-      "divergence_summary": "First curated prose pass completed from generated reader baseline; opening, pacing, paragraph order, section flow, transitions, obligation-addressability throughline, semantic IR as artifact-language framing, lowering-receipt explanation, validator-failure/localized-repair boundary, semantic-IR build-trace example, minimum viable implementation boundary, and proof/test boundary clarification revised for human-reader flow.",
+      "divergence_summary": "Curated reader reconciliation completed for the current cognitive-compilation source: opening, pacing, paragraph order, section flow, transitions, planning-to-compilation bridge, obligation-addressability throughline, semantic IR as artifact-language framing, compiler boundary as generated-work ledger, lowering-receipt explanation, validator-failure/localized-repair boundary, semantic-IR build-trace example, context handoff, minimum viable implementation boundary, and proof/test boundary clarification were edited for human reading while preserving claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, and release approval boundaries.",
       "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results",
-        "implementation horizon preserved without implying current implementation",
+        "core claim meaning preserved in reader prose after second-pass reconciliation",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved: Cognitive Compilation, PlanForge compiler architecture, GenesisCode, TreeLLM, VIEA, and external compiler/planning baselines remain source-grounding, design context, or comparators rather than reproduced local evidence",
+        "proof/test status preserved without adding source-plan parser behavior, target-lowering correctness, compiler correctness, localized-repair performance, artifact validator adequacy, quality improvement, cost improvement, deployed compiler behavior, reader-edit automation, or support-state movement claims",
+        "implementation horizon preserved without implying current cognitive compiler deployment",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -897,7 +898,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "First prose curation pass and 2026-07-02 semantic-IR build-trace follow-up recorded in docs/curated_reader_cognitive_compilation_prose_pass.md; not release-reviewed."
+      "review_notes": "Curated reader reconciliation recorded in docs/curated_reader_cognitive_compilation_prose_pass.md after the 2026-07-03 planning-to-compilation and context-handoff pass; release blockers remain active and this is not release-reviewed or equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
@@ -2099,7 +2100,7 @@
       "chapter_id": "intent-to-execution-contracts",
       "title": "Command Contracts: From Intent to Executable Work",
       "file": "editions/reader_manuscript/v1_0/chapters/intent-to-execution-contracts.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/intent-to-execution-contracts.qmd",
       "live_source_ref": "chapters/intent-to-execution-contracts.qmd@post-intent-contracts-merge",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#intent-to-execution-contracts.core",
@@ -2118,17 +2119,14 @@
       "voice_pass_slot_ids": [
         "execution-craft"
       ],
-      "divergence_summary": "Curated prose now follows the executed intent/contracts merge, combining intent-to-execution trace pacing with command-field, validation-state, authority, and residual language while preserving the live chapter claim boundary.",
+      "divergence_summary": "Curated reader reconciliation completed for the current merged intent/contracts source: opening, pacing, paragraph order, section flow, transition prose, Part I boundary-to-intake bridge, command contract as refusal and execution surface, intent-to-execution trace pacing, command-field validation states, authority deltas, residual language, contract-to-plan handoff, and compression were edited for human reading while preserving claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, and release approval boundaries.",
       "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose: core claim remains argument",
-        "source boundary preserved: Corben sources remain design lineage and trace vocabulary, external ReAct remains a comparator",
-        "MoECOT remains connector/source-note mapped without imported runtime artifacts, logs, reports, or benchmark records",
-        "proof/test status preserved: IntentToExecution Lean hooks and synthetic plan-execution harness remain finite record and synthetic cross-record checks only",
+        "core claim meaning preserved in reader prose after the executed intent/contracts merge",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved: Corben sources remain design lineage and trace vocabulary, external ReAct and workflow/specification sources remain comparators rather than reproduced local evidence, and MoECOT remains connector/source-note mapped without imported runtime artifacts, logs, reports, or benchmark records",
+        "proof/test status preserved without adding parser correctness, planner quality, runtime execution, tool-effect enforcement, approval-service behavior, artifact satisfaction, replay correctness, benchmark performance, ReAct reproduction, MoECOT runtime reproduction, or support-state movement claims",
         "implementation horizon preserved without implying deployed intent runtime, parser, approval service, artifact verifier, replay system, or vertical execution slice",
-        "release blocker status preserved until an edition release record clears it",
-        "no parser correctness, planner quality, runtime execution, tool-effect enforcement, artifact acceptance, replay correctness, benchmark performance, ReAct reproduction, MoECOT runtime reproduction, or support-state movement claim added",
-        "executed consolidation caveat preserved: command-contracts-and-semantic-interfaces folded into this chapter on 2026-06-30 with no support-state promotion",
-        "folded command-interface material preserves proof/test and source-boundary status without support-state movement"
+        "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -2137,13 +2135,13 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "Canonical chapter was updated by the 2026-06-30 intent/contracts merge; this reader source now follows that active boundary.",
-      "review_notes": "First curated reader prose pass completed; see docs/curated_reader_intent_execution_prose_pass.md. Deferred intent/command-contract consolidation caveat remains active; not release-reviewed. Executed intent/contracts merge folded command-contract semantic-interface material into this chapter; the standalone command-contract reader draft is archived for lineage and is no longer an active reader chapter record."
+      "review_notes": "Curated reader reconciliation recorded in docs/curated_reader_intent_execution_prose_pass.md after the 2026-07-03 Part I boundary-to-intake and refusal-surface pass; the executed command-contracts merge remains preserved as lineage, release blockers remain active, and this is not release-reviewed or equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "planning-as-a-control-layer",
       "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
       "file": "editions/reader_manuscript/v1_0/chapters/planning-as-a-control-layer.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/planning-as-a-control-layer.qmd",
       "live_source_ref": "chapters/planning-as-a-control-layer.qmd@post-planning-dag-merge",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#planning-as-a-control-layer.core",
@@ -2162,14 +2160,13 @@
       "voice_pass_slot_ids": [
         "execution-craft"
       ],
-      "divergence_summary": "Curated reader prose now treats planning and PlanForge DAG/intelligence-arbitrage material as one chapter: planning as controlled delay before action, schedulable DAGs, node lifecycle states, blocked work, dispatch receipts, adequacy contracts, route assignments, cost-quality ledgers, residuals, Semantic IR handoff, schema/harness boundaries, and finite-record Planning plus PlanForge proof limits; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "Curated reader reconciliation completed for the current merged planning/DAG source: opening, pacing, paragraph order, section flow, transition prose, command-to-plan bridge, possible-action versus dispatchable-work distinction, planning as controlled delay, schedulable DAGs, node lifecycle states, blocked work, dispatch receipts, adequacy contracts, route assignments, cost-quality ledgers, residuals, Semantic IR handoff, schema/harness boundaries, and finite-record Planning plus PlanForge proof limits were edited for human reading while preserving claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, and release approval boundaries.",
       "meaning_preservation_checks": [
         "core claim meaning preserved in reader prose after folding PlanForge DAG and intelligence-arbitrage material into the planning-control chapter",
         "support-state boundary preserved at argument support",
         "source boundary preserved: PlanForge, PlanForge Compiler Architecture, VIEA, Cognitive Compilation, Software Magic Grimoire, TokenMana, Coherence Exchange, and MoECOT remain architectural, source-note, or implementation-reference context, not scheduler evidence",
-        "proof/test status preserved without adding deployed planner behavior, decomposition accuracy, dependency soundness, scheduler correctness, context-demand prediction, selected-tier adequacy, route-selection quality, cost savings, cost-quality dominance, runtime replanning, dispatch safety, parser behavior, tool execution, runtime adapter safety, approval-service behavior, ReAct reproduction, Tree-of-Thoughts reproduction, PDDL/SHOP2/TAMP implementation, AutoGen reproduction, PlanForge runtime behavior, MoECOT runtime behavior, benchmark performance, source-interpretation adequacy, or support-state movement claims",
+        "proof/test status preserved without adding deployed planner behavior, decomposition accuracy, dependency soundness, scheduler correctness, context-demand prediction, selected-tier adequacy, route-selection quality, cost savings, cost-quality dominance, runtime replanning, dispatch safety, parser behavior, tool execution, runtime adapter safety, approval-service behavior, external planner reproduction, PlanForge runtime behavior, MoECOT runtime behavior, benchmark performance, source-interpretation adequacy, or support-state movement claims",
         "implementation horizon preserved without implying current planning control-plane deployment or governed scheduler deployment",
-        "consolidation execution recorded separately in docs/chapter_consolidation_sequence.md and docs/chapter_history_ledger.md; the retired PlanForge reader draft is historical only",
         "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
@@ -2179,13 +2176,13 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "Curated reader prose pass recorded in docs/curated_reader_planning_control_prose_pass.md and updated after the 2026-06-30 planning/DAG consolidation to preserve PlanForge DAG scheduling, adequacy contracts, cost-quality ledgers, and proof/test boundaries inside the surviving planning chapter; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Curated reader reconciliation recorded in docs/curated_reader_planning_control_prose_pass.md after the 2026-07-03 command-to-plan and adequacy-contract pass; the executed PlanForge consolidation remains preserved as lineage, release blockers remain active, and this is not release-reviewed or equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "virtual-context-abi",
       "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
       "file": "editions/reader_manuscript/v1_0/chapters/virtual-context-abi.qmd",
-      "reconciliation_status": "drafting",
+      "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/virtual-context-abi.qmd",
       "live_source_ref": "chapters/virtual-context-abi.qmd@static-context-abi-merge",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#virtual-context-abi.core",
@@ -2204,14 +2201,14 @@
       "voice_pass_slot_ids": [
         "memory-experience"
       ],
-      "divergence_summary": "Merged curated prose pass after static context ABI consolidation: the active reader chapter now combines ABI addressing, typed pages, context cells, representation certificates, authority/loss/permitted-use boundaries, a model-visible typed-packet example, finite proof/test limits, and the transaction/verification handoff while preserving claim meaning and evidence boundaries.",
+      "divergence_summary": "Curated reader reconciliation completed for the current merged Virtual Context ABI source: opening, pacing, paragraph order, section flow, transition prose, Semantic IR to context bridge, ABI addressing, typed pages, context cells, representation certificates, role preservation for summaries/redactions/excerpts/paraphrases, authority/loss/permitted-use boundaries, model-visible typed-packet example, finite proof/test limits, summary section, and transaction/verification handoff were edited for human reading while preserving claim meaning, support state, source boundary, proof/test status, implementation horizon, artifact approval, and release approval boundaries.",
       "meaning_preservation_checks": [
-        "support-state boundary preserved in reader prose",
-        "source boundary preserved or reconciled back to the live merged chapter",
+        "core claim meaning preserved in reader prose after the executed static context ABI consolidation",
+        "support-state boundary preserved at argument support",
+        "source boundary preserved: VCM, Context Engineer, Verification Bandwidth, VIEA, editable VCM, MoECOT, and external context/retrieval/compression baselines remain architecture vocabulary, context-supply-chain pressure, adequacy framing, implementation-reference context, or comparators rather than reproduced local evidence",
         "proof/test status preserved without adding deployed VCM behavior, resolver correctness, context compiler correctness, snapshot-service behavior, adequacy-classifier quality, materialization correctness, summary fidelity, certificate truthfulness, omission completeness, transaction isolation, deletion closure, leak prevention, Digital SCIF behavior, VCM-Bench performance, model-facing context quality, MoECOT runtime behavior, source-interpretation adequacy, or support-state movement claims",
-        "implementation horizon preserved: current MVI is context ABI and semantic-page certificate schemas, valid/invalid fixtures, finite proof hooks, and synthetic admission/adequacy checks; mature endpoint remains a governed memory operating interface with materialization receipts and certified context cells",
-        "release blocker status preserved until an edition release record clears it",
-        "executed consolidation caveat preserved: semantic-pages-context-cells-and-certificates is archived as historical reader/source lineage, not a live reader chapter"
+        "implementation horizon preserved without implying current deployed VCM resolver, context compiler, snapshot service, adequacy classifier, memory store, or model-facing context runtime",
+        "release blocker status preserved until an edition release record clears it"
       ],
       "release_blockers": [
         "reader_release_record_not_created",
@@ -2220,7 +2217,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "Curated reader prose pass and 2026-07-02 typed-packet follow-up recorded in docs/curated_reader_virtual_context_abi_prose_pass.md; merged drafting-only curated reader prose now targets the executed static context ABI destination. This is not a release-reviewed chapter, not equal authority with the live book, and not a support-state, proof/test, resolver, summary-fidelity, certificate-truthfulness, memory-store, or model-facing context claim."
+      "review_notes": "Curated reader reconciliation recorded in docs/curated_reader_virtual_context_abi_prose_pass.md after the 2026-07-03 obligation-address-to-context-address pass; the executed static context ABI consolidation remains preserved as lineage, release blockers remain active, and this is not release-reviewed or equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",

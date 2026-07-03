@@ -4,6 +4,8 @@ Date: 2026-06-30
 
 Follow-up: 2026-07-01
 
+Follow-up: 2026-07-03
+
 Chapter: `intent-to-execution-contracts`
 
 Reader manuscript file:
@@ -11,12 +13,15 @@ Reader manuscript file:
 
 Live source file: `chapters/intent-to-execution-contracts.qmd`
 
+Status: reconciled for current curated-reader prose meaning; not
+release-reviewed and not a reader artifact approval.
+
 Consolidation caveat:
 `docs/chapter_history_ledger.md` records that
 `command-contracts-and-semantic-interfaces` folded into this destination
-chapter on 2026-06-30. This pass is now historical input to the merged reader
-chapter; it does not approve a reader release artifact and does not promote any
-support state.
+chapter on 2026-06-30. This note now records the reconciled curated reader
+state for the merged destination chapter; it does not approve a reader release
+artifact and does not promote any support state.
 
 2026-07-01 follow-up:
 The live mechanism prose was smoothed to remove visible merge-scaffold language
@@ -25,6 +30,12 @@ receipt, builds a command contract, carries field provenance and confidence,
 and follows execution through handoff, dispatch, job, artifact, verifier,
 feedback, residual, stop/fault, and non-claim records. The curated reader
 opening now makes the contract-to-artifact authorization throughline explicit.
+
+2026-07-03 follow-up:
+The curated reader chapter now makes this the first operational move after
+Part I, frames command contracts as refusal surfaces as well as execution
+surfaces, and closes by explaining why planning, memory, and tools should
+inherit a contract rather than an implied wish.
 
 ## Reader Promise
 
@@ -55,6 +66,9 @@ The reader throughline is:
   destination no longer reads as a list of three lanes while preserving
   intent, contract, authority, artifact, receipt, residual, and evidence
   boundaries.
+- Added a 2026-07-03 reconciliation pass that connects Part I boundaries to
+  the first Part II intake object, sharpens missing fields as stopping
+  information, and strengthens the handoff into Planning as a Control Layer.
 - Preserved the minimum viable implementation and beyond-state-of-the-art
   endpoint without implying a deployed intent runtime, parser, approval
   service, artifact verifier, replay system, or vertical execution slice
