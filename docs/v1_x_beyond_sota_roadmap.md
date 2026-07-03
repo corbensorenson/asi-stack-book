@@ -51,7 +51,7 @@ It should retire the important IOUs:
   of the AI/research source;
 - the human-reader edition also needs authored vision, voice, and selection:
   evidence discipline can make the book honest, but it does not by itself make
-  the book memorable, beautiful, or unmistakably Corben's;
+  the book memorable, beautiful, or unmistakably authored;
 - EPUB, DOCX, PDF, and audio should be treated as reviewed edition artifacts
   only after exact artifact records exist.
 - retired public chapter URLs from the consolidation must stay preserved by
@@ -98,6 +98,13 @@ This roadmap reconciles:
   `ext_` count means external-anchoring depth, not missing positioning; low
   theorem count means narrow coverage, not weak proof; and planned-test counts
   are qualitative signals until rechecked chapter by chapter;
+- the 2026-07-02 direction update from Corben, which supersedes the earlier
+  voice-gating framing: Codex must push all prose — live/research edition and
+  human-reader edition — to what a demanding editor would call finished, with
+  no work items left waiting on Corben; Corben performs one final editing pass
+  at the end over a complete book, as polish rather than as a release
+  dependency; the external-review lane is parked as user-owned; and the target
+  is A+ on every graded dimension for both editions of every chapter;
 - Codex verification of Claude's claims against the local tree;
 - `book_structure.json`, which currently defines four parts, 44 chapters, and
   11 appendices;
@@ -116,10 +123,10 @@ not be quoted in the book as an external authority.
 | P0 | The 44-lane evidence plan can reintroduce the breadth trap. | The first roadmap version named a lane and acceptance bar for every chapter, which is useful as backlog but dangerous as an execution checklist. | Keep the 44-row plan in `docs/per_chapter_evidence_plan.md`, execute one flagship measured lane first, allow at most two direct supporting lanes, and leave the rest explicitly planned. |
 | P0 | The project's strongest quality is the least legible one. | The validation, support-state discipline, and non-claim machinery are real, but a cold reader first sees broad scope, self-coined terms, and many self-sourced ideas. | Add a 60-second trust surface and make the evidence discipline visible before readers infer overreach. |
 | P0 | Formal proof count is no longer the bottleneck; executable-model depth is. | `docs/proof_depth_classification.md` now records 936 theorem declarations, 178 direct/projection-style, 754 derived/decomposed, 4 unknown/mixed, and 103 safety-critical theorem declarations after the Readiness lifecycle probe bridge pass. The first anti-projection sweep is real, but most theorems still verify finite records and decision routes rather than traces of a running system. | Stop optimizing for theorem-count growth. Pick one proof/evidence bridge and prove a property over transitions or fixture equivalence, then run the same cases through the executable harness where possible. |
-| P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | Add an early external-review milestone after evidence visibility, before deep proof/prototype work locks in the wrong target. |
+| P0 | External review is too important to leave until preprints. | The evidence base is still mostly self-sourced: Corben's source papers, Project Theseus, Circle, local harnesses, and Codex/Claude planning reviews. | 2026-07-02 direction: this lane is parked as user-owned for Codex execution. The public request issue and dated outreach blocker remain the sequencing record; they prevent other milestones from waiting, but they are not accepted external-review evidence. Codex must not schedule outreach work, must not gate any other milestone on review, and spends cycles here only if Corben supplies a review to ingest. |
 | P0 | The field-impact path requires defended contributions, not a complete encyclopedia. | The 44 active chapters are useful as architecture coverage, but no single idea yet has enough depth, external grounding, and evidence to stand as a defended result. | Select three to five contribution tracks and push a smaller subset to A+ depth. |
-| P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and explicit Corben voice-pass slots. |
-| P0 | Codex must not counterfeit the author's presence. | Agent-written first-person lessons, personal stakes, scars, or hard-won conviction would be fabricated unless Corben supplies them. | Codex may prepare prompts, candidate cuts, continuity edits, and placeholder notes for Corben; first-person lived experience and final authorial voice must be supplied or approved by Corben before release. |
+| P0 | Human-reader excellence is a separate axis from evidence validation. | The project can be scientifically honest while still reading like a templated architecture reference; current reader prose is drafting-quality and still carries the flattening created by repeated generated sections. | Add a craft-and-authorial-distillation milestone: keep the live research spine intact, but make the reader manuscript carry a single thesis, a narrative arc, signature ideas, crafted examples, and finished authored prose written by Codex to its own editorial ceiling; Corben's edit comes last as polish, not as a dependency (2026-07-02 direction). |
+| P0 | Codex must not counterfeit the author's presence. | Agent-written first-person lessons, personal stakes, scars, or hard-won conviction would be fabricated unless Corben supplies them. | Codex must not fabricate first-person biography, invented anecdotes, or claimed personal history — that rule stands. But per the 2026-07-02 direction it must also not leave slots or placeholders: write finished third-person prose whose conviction, specificity, and stakes stand without personal anecdote, and keep any optional first-person enrichment points in a sidecar queue rather than as gaps in the manuscript. Nothing in the reader edition may remain unfinished on the grounds that the author will fill it in. |
 | P0 | The consolidation problem is mostly executed; the remaining risk is linkrot and reopening churn. | The manifest is 44 chapters, the executed fold packages preserve source/proof/reader lineage, ten retired public slugs have historical HTML stubs, and `validate_chapter_consolidation_sequence.py` now guards those stubs directly. | Keep the 44-chapter spine stable. Do not reopen consolidation unless a named external review, source, evidence lane, or reader edit shows a specific chapter boundary is weaker than a destination. |
 | P0 | Planning churn is now a release risk. | The local tree already has enough roadmap, review, scorecard, grounding, and release surfaces to execute. The best recent progress changed proof code, manifests, stubs, reader source, and evidence fixtures. | New reports are out of scope unless required by a validator, release record, external reviewer response, or an executed proof/evidence/reader/artifact change. Default to code, proof, source, evidence, reader, or artifact work. |
 | P0 | The chapter-by-chapter review should become a burn-down queue, not another grade sheet. | `docs/CHAPTER_REVIEWS.md` identifies concrete per-chapter weaknesses after self-auditing its proxies. Codex verified the two manifest proof-mapping bugs: `personal-compute-hives-and-federated-edge-intelligence` and `artifact-steward-agents-and-living-project-governance` had missing chapter-level `lean_module` values despite on-disk Lean modules with 22 and 16 theorem/lemma declarations. | Keep the review as planning input only, track every chapter weakness in the roadmap burn-down below, and execute fixes as proof, source-note, evidence-import, reader-prose, or manifest changes. The two `lean_module` mappings are fixed in `book_structure.json` in the current workset; no support state moves. |
@@ -129,7 +136,7 @@ not be quoted in the book as an external authority.
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, and `docs/circle_public_replay_consumer_gate.md` now adds a CI-verifiable ASI-side consumer gate with negative controls. The ASI repo still does not rerun the external checkout in CI or vendor a public replay pack. | Treat the consumer gate as the first milestone closure, then pursue a public contract pack, archived evidence bundle, or clean replay before stronger claims. |
 | P1 | Project Theseus is the right implementation reference; the first imports are intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes; `docs/theseus_report_import_slice.md` records one static digest-verified architecture-gate report import; `docs/theseus_generation_mode_import_slice.md` records one static digest-verified generation-mode import; and `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests. The local checkout still had private/dirty surfaces, so no clean live Theseus replay or support-state transition exists. | Keep the static imports and support probe as implementation-reference evidence only, then pursue a clean replay or archived public fixture before any stronger transition. |
-| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the curated manuscript path is now `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft live-chapter assets, text-equivalent chapter anchors, curated reader-manuscript placements, and rendered curated-reader HTML DOM checks with captions, alt text, responsive classes, copied SVGs, and non-claim boundaries checked by `scripts/validate_reader_key_figures.py` and `scripts/validate_reader_key_figure_html_probe.py`. The figures remain draft reader aids, and there is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, visual aids, and audio flow. |
+| P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the current reader projection has 50 active/applied overlay operations across 25 chapters, 0 high-priority and 9 medium-priority heuristic review rows, and 0 generated-reader paragraphs at or above 160 words. The curated manuscript path is still `drafting` with 44 active drafting-only curated chapter records, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft live-chapter assets, text-equivalent chapter anchors, curated reader-manuscript placements, and rendered curated-reader HTML DOM checks with captions, alt text, responsive classes, copied SVGs, and non-claim boundaries checked by `scripts/validate_reader_key_figures.py` and `scripts/validate_reader_key_figure_html_probe.py`. The figures remain draft reader aids, and there is still no release approval. | Continue curated chapter graduation only when prose changes are chapter-structural, not section-local. Treat the human-reader book as a parallel derivative manuscript for pacing, examples, visual aids, and audio flow. |
 | P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated; ten reader-handoff key figures now have draft SVG assets, accessibility-oriented prose equivalents, and validator-checked placements, but they remain draft reader aids rather than release-reviewed art. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, stable across web, EPUB, PDF, DOCX, and audio companion treatment, and reviewed as artifacts before reader release. |
 | P2 | The project has many ledgers but still few promotions. | The v1.0.0 release was honest, and the current 44 core claims still remain `argument`; four narrow non-core claims moved upward. | Future roadmap work should close evidence gaps, not multiply status documents. Add ledgers only when they make support-state decisions clearer or enforceable. |
 
@@ -230,6 +237,63 @@ roadmap. The findings with teeth are:
   execution, monitor-quality, regression-suite-quality, support-state
   promotion, or evidence-transition claim.
 
+## 2026-07-02 Direction Update - Finish Without Waiting
+
+Corben's direction, superseding every earlier voice-gating and review-gating
+statement in this file:
+
+1. **No work item may wait on Corben.** Codex pushes all prose — the
+   AI/research edition and the human-reader edition — to what a demanding
+   editor would call finished. Corben performs one final editing pass at the
+   very end over a complete book. That pass is polish, not a release
+   dependency, and it is not a reason to leave any sentence, section, figure,
+   or edition unfinished.
+2. **The no-fabrication rule stands, resolved by craft rather than by gaps.**
+   Codex never invents Corben's first-person experience, biography, lessons,
+   or convictions. It also never leaves a slot: it writes finished third-person
+   prose that carries conviction, stakes, and specificity without personal
+   anecdote. Optional first-person enrichment points live in one sidecar queue
+   (`editions/reader_manuscript/v1_0/` handoff surfaces), never as holes in the
+   manuscript.
+3. **The external-review lane is parked as user-owned.** The public request
+   issue and the dated outreach blocker are the standing Codex-execution
+   record, not an accepted external review. Codex does not schedule outreach,
+   does not gate milestones on review, and touches the lane only to ingest a
+   review Corben supplies.
+4. **The bar is A+ on every graded dimension, for both editions of every
+   chapter.** Breadth and depth are both required; the unglamorous chapters
+   get the same standard as the showpieces. Nothing is deferred on the theory
+   that a human will finish it.
+
+## Grade-To-A-Plus Map
+
+The 2026-07-02 planning review graded the project A− overall. This map turns
+each graded dimension into the work that closes the distance to A+. It is an
+execution compass, not a claim surface; nothing here promotes a support state.
+
+| Dimension | Current grade | A+ bar | Work that closes the gap |
+|---|---|---|---|
+| Engineering / tooling / discipline | A | Gates stay green, fast, and drift-proof while the surface grows; no new ledgers unless a validator or release record requires them. | Maintenance only. Keep the full gate under a small time budget; keep validator-coverage and scaffold-drift checks green; resist probe sprawl (prefer deepening an existing lane over adding a new shape probe). |
+| Epistemic honesty | A+ | Already at bar. | Preserve it through every change below; no-promotion decisions and negative results stay first-class. |
+| Formal layer | A− | Executable-model depth, not count: properties over *sequences* of transitions, Lean/Python fixture equivalence on shared fixtures, and adversarial negative cases tied to live evidence lanes; projection bridges stay labeled. | Build one transition-system invariant or trace property per cycle, starting where evidence lanes already exist (costed-route selector, replacement lifecycle, context transactions). Run the same fixture set through the Lean decision procedure and the Python harness and check agreement. |
+| Evidence / validated substance | B | A steady cadence of *accepted* narrow transitions earned by real measurements and imports — refusals recorded honestly, but the ladder visibly climbs; every chapter's named evidence lane eventually executes. | Strengthen one measured lane per cycle to an accepted narrow transition (load-stability and workload-quality are closest). Import the next real Circle/Theseus result each cycle. Keep the flagship-first pacing (one flagship, at most two supporting lanes) so the 44-lane plan never becomes a breadth trap. |
+| External grounding | A− | 44/44 positioned with genuine depth everywhere: each load-bearing chapter names its comparators in prose and its `ext_` records carry source notes; no chapter reads as self-coined nomenclature. | Continue the per-chapter grounding lane through the burn-down; when a chapter's comparator set is thin, mine its linked Corben papers' bibliographies first, then add vetted third-party records through the inventory and Appendix H. |
+| Writing / craft (live edition) | A− | Every part carries at least one showpiece-caliber section; the largest chapters carry their evidence without sprawl; zero template residue or merge seams anywhere. | Execute the chapter-length watchlist (move bulky tables, validator minutiae, and repeated caveats to companion/live-only surfaces where evidence boundaries allow). Extend the showpiece-trace standard to one anchor section per part. |
+| Human reader edition | B+ | Every one of the 44 reader chapters reads at the level of the current best ones; thesis, part arcs, and signature ideas are realized in the prose itself (not only in the handoff manifest); figures are polished per format; the edition is built, format-validated, and release-recorded. **This is the largest single gap and the first priority.** | Convert the current 44 drafting-only curated files from coverage to finished prose, reduce the 9 medium-priority reader-continuity rows to reviewed decisions or artifact-backed edits, and keep the 50 active overlay operations synchronized across live Human view and generated reader editions. Realize the thesis and part arcs in actual openings, endings, and transitions. Then build HTML/EPUB/DOCX (PDF where local dependencies allow), run the format validators and application-level checks the format-review matrix already defines, and produce an edition release record. "Drafting" must become a release state. |
+| Ideas / synthesis | B+ | The 8-12 signature ideas are honed to quotable, load-bearing form and recur across both editions; the defended contribution tracks each have one deep, well-grounded, evidence-linked treatment. | Hone the signature-idea wording in reader prose, chapter endings, and figures. Deepen the defended contribution tracks one at a time alongside their evidence lanes. |
+
+Priority order when a run cannot do everything:
+
+1. Human reader edition to finished and release-recorded (largest gap).
+2. Evidence cadence: one accepted narrow transition plus the next real
+   Circle/Theseus import.
+3. One executable-model proof bridge tied to a live evidence lane.
+4. Burn-down truth maintenance: reconcile Milestone 2.5 rows against artifacts
+   that already exist, in both directions, before starting new rows.
+5. Live-edition craft: chapter-length watchlist and per-part showpiece
+   sections.
+6. Maintenance of the dimensions already at grade.
+
 ## Operating Principles
 
 - Retire IOUs before adding new control surfaces.
@@ -274,8 +338,9 @@ roadmap. The findings with teeth are:
   edition should make the essential thesis, stakes, and signature ideas
   impossible to miss.
 - Do not invent first-person authorial experience, personal project history,
-  emotional stakes, or claims about what Corben learned. Mark those as Corben
-  voice-pass needs until the author supplies or approves the language.
+  emotional stakes, or claims about what Corben learned. Write finished
+  third-person prose instead, and record optional author-enrichment questions in
+  the sidecar queue rather than leaving reader-manuscript holes.
 - Proof depth, source coverage, and validation count are not substitutes for
   craft. They protect honesty; they do not by themselves create narrative arc,
   beauty, memorability, or authorial presence.
@@ -318,16 +383,18 @@ is:
    artifact boundary;
 2. execute one measured evidence lane with a baseline, negative control,
    residual accounting, reproducible command, and evidence-transition decision;
-3. solicit or record one external human review or dated outreach blocker for a
-   defended contribution surface;
-4. finish the curated human-reader manuscript as an editable book against the
+3. keep the external-review lane parked as user-owned: the public request and
+   dated outreach blocker are the standing record; do not schedule outreach or
+   gate anything on review (2026-07-02 direction);
+4. finish the curated human-reader manuscript as a finished book against the
    current 44-chapter table of contents: reconcile curated source against the
-   live book and prepare the manuscript for Corben's human edit rather than
-   producing more per-chapter pass paperwork;
-5. prepare an authorial craft pass for Corben: one book-level thesis, part-level
-   arcs, 8-12 signature ideas, chapter-specific openings and endings, and
-   explicit voice-pass slots where only Corben can supply first-person lessons,
-   conviction, or lived project stakes;
+   live book and push every chapter's reader prose to Codex's own editorial
+   ceiling — Corben's edit comes last as polish, not as a handoff dependency;
+5. execute the authorial craft pass directly: one book-level thesis, part-level
+   arcs, 8-12 signature ideas, and chapter-specific openings and endings
+   written to finished quality in third person, with optional first-person
+   enrichment points kept in a sidecar queue rather than as gaps
+   (2026-07-02 direction);
 6. make the honesty system legible in 60 seconds from README, landing page, and
    Human view, and keep the four bounded non-core evidence transitions visible
    without chapter-core promotion;
@@ -345,22 +412,25 @@ Dependency order:
 - Retired URL preservation is now an operating guard, not a roadmap blocker:
   `scripts/validate_chapter_consolidation_sequence.py` checks the ten historical
   stubs and their canonical targets.
-- Milestone 5 measured evidence, Milestone 1.5 external review, and Milestone 7
-  curated reader readiness now outrank new consolidation, proof-count, or audit
-  sweeps.
+- Milestone 7 curated reader completion and Milestone 5 measured evidence now
+  outrank new consolidation, proof-count, or audit sweeps. Milestone 1.5 is
+  parked as user-owned and outranks nothing.
 - Milestone 7.5 authorial craft is downstream of the evidence boundaries but
-  upstream of any claim that the human-reader edition is release-ready. Codex
-  can improve continuity and prepare voice-pass prompts, but Corben's approved
-  voice is a release dependency for a final human edition.
+  upstream of any claim that the human-reader edition is release-ready. Per the
+  2026-07-02 direction, Codex executes the craft pass itself to finished
+  quality; Corben's final edit is polish, not a release dependency, and no
+  reader chapter may remain below finished quality while waiting for it.
 - Milestone 2 should target one executable-model bridge at a time: a state
   transition invariant, Lean/Python fixture equivalence, or trace property that
   strengthens a selected evidence lane.
 - Milestone 6.5 is dormant unless a concrete duplicate-boundary finding appears
   from source ingestion, evidence work, external review, or Corben's human-reader
   edits.
-- Milestones 8 and 9 stay downstream: EPUB/PDF/DOCX/audio and preprints should
-  wait for reconciled reader prose, at least one stronger evidence lane, prior-art
-  checks, and at least one external review or dated outreach blocker.
+- Milestone 8 (EPUB/PDF/DOCX/audio) waits only on reconciled, finished reader
+  prose and format review — the existing dated outreach blocker already
+  satisfies any review precondition, so no artifact work waits on external
+  review (2026-07-02 direction). Milestone 9 preprint/archive work stays
+  downstream of prior-art checks and remains user-triggered.
 
 ## Beyond-SOTA Distance Map
 
@@ -376,7 +446,7 @@ internal activity alone.
 | Routing/resource efficiency | One bounded synthetic selector slice plus a synthetic routing decision lease harness; still below real routing SOTA, learned-router quality, deployed authority enforcement, and scheduler/load evidence. | Extend only if a public fixture or trace includes baseline, negative control, quality/adequacy, cost, residuals, source-state boundaries, and replay. |
 | Compression/representation | Mostly architecture and source synthesis; Circle receipt is structural, not model-quality evidence. | Add one narrow artifact-compression, representation-preservation, or proof-contract lane with negative controls before stronger claims. |
 | Human/AI dual-edition publishing | Unusual and promising scaffold with reviewed reader HTML; not yet a polished human book or audio edition. | Graduate selected reader chapters into curated prose and approve artifacts only through exact release records. |
-| Authorial craft and artifact beauty | Current public site is clean and disciplined, but not yet a crafted technical-book object with unmistakable authorial presence, distilled signature ideas, and designed figures. | Turn the reader manuscript into a deliberate book: one thesis, part arcs, memorable phrases, Corben-approved voice, designed key figures, and format-specific review without weakening evidence boundaries. |
+| Authorial craft and artifact beauty | Current public site is clean and disciplined, but not yet a crafted technical-book object with unmistakable authorial presence, distilled signature ideas, and designed figures. | Turn the reader manuscript into a deliberate book: one thesis, part arcs, memorable phrases, finished third-person prose, optional sidecar author-enrichment prompts, designed key figures, and format-specific review without weakening evidence boundaries. |
 | External literature/novelty | Placement gate now records 44/44 positioned chapters and 0 explicit external-baseline exceptions, but novelty questions and the depth of external engagement still remain. Some chapters can still read as Corben-originated nomenclature before readers see enough related outside literature. | Maintain the per-chapter external-grounding pack, keep mining citations inside each chapter's linked Corben papers, replace any future or regressed weak exception with source-noted literature where possible, perform prior-art checks before preprints, and record where the project is competitive, below SOTA, or genuinely novel. |
 | Structural cohesion | The manifest is dynamic and complete, and the active shape is now 44 chapters after the executed consolidation packages and folds. The known packaged queue is resolved for the current table of contents; future duplicate-boundary findings should be handled as concrete evidence or reader-edit issues, not new planning churn. | Keep the 44-chapter spine stable for proof, evidence, and reader work; reopen consolidation only when a specific chapter boundary becomes weaker than a named destination. |
 
@@ -555,6 +625,12 @@ Current status:
 - The blocker has no source-evidence, support-state, artifact-release, or
   evidence-transition effect. Actionable routing remains pending until an
   accepted review record exists.
+- 2026-07-02 direction: this milestone is **parked as user-owned**. The open
+  public request plus the dated blocker satisfy the roadmap sequencing bar for
+  Codex work, but they are not accepted external-review evidence. Codex must
+  not schedule outreach work, must not gate any other milestone or artifact on
+  external review, and returns to this lane only to ingest a review that Corben
+  supplies.
 
 ### Milestone 2 - Safety-Critical Lean Depth
 
@@ -1021,7 +1097,7 @@ Masterwork closure gates:
 | Proof coverage | Reviewer notes about narrow proof surface, missing adversarial scenarios, weak lifecycle coverage, or projection-heavy formality. | Lean/Python proof or fixture artifacts that add a transition invariant, negative case, fixture bridge, or boundary theorem; updated proof-limit prose; `lake build` and proof-depth validation. |
 | Test or measured evidence | Reviewer notes about planned tests, Theseus/Circle/RankFold facts left in the basement, or empirical claims that remain fixture-only. | A committed public-safe replay, measurement, digest-verifiable import, or recorded no-promotion decision with baseline/negative controls where relevant, residuals, non-claims, and validators. |
 | External grounding | Reviewer notes about lightly anchored external lineage or missing named prior art. | Source-noted records in `sources/source_inventory.json` and `sources/source_notes/`, regenerated Appendix H, and chapter prose that names the comparator without treating it as validation of the ASI Stack. |
-| Reader craft | Reviewer notes about recap-like Beyond-SOTA sections, visible merge scaffolds, generic phrasing, undersold contribution, or weak human-version payoff. | Live and curated reader prose edits that preserve claim meaning, support states, source boundaries, proof/test status, implementation horizons, and explicit Corben voice-pass boundaries. |
+| Reader craft | Reviewer notes about recap-like Beyond-SOTA sections, visible merge scaffolds, generic phrasing, undersold contribution, or weak human-version payoff. | Live and curated reader prose edits that preserve claim meaning, support states, source boundaries, proof/test status, implementation horizons, and the no-fabricated-first-person boundary. |
 | Project-evidence surfacing | Reviewer notes that Circle, Theseus, RankFold, or the book's proof layer is described abstractly despite real artifacts. | Source-verified or digest-verifiable artifact details in the chapter, validator-backed non-claims, and an explicit boundary between structural/proof evidence and model-quality, deployment, or chapter-core support claims. |
 | Recorded blocker | Reviewer notes that cannot yet close because of private source text, unavailable local artifacts, hardware, external review, or Corben authorial input. | A dated blocker naming the exact missing condition and the reason the chapter should not be cosmetically rewritten around the gap. |
 
@@ -1062,8 +1138,10 @@ Execution batches:
   records, regenerate generated appendices, and only then revise chapter prose.
 - Batch 4, human-reader craft: after proof/evidence/source boundaries are
   current for a chapter, smooth merge scaffolds, rewrite recap-like
-  Beyond-SOTA sections, sharpen signature language, and preserve explicit
-  Corben voice-pass slots where lived experience or conviction is needed.
+  Beyond-SOTA sections, sharpen signature language, and write the chapter's
+  conviction and stakes to finished third-person quality; log any optional
+  first-person enrichment point in the sidecar queue instead of leaving a
+  slot in the prose (2026-07-02 direction).
 
 Do not mark a burn-down row complete in prose. Mark it complete only through
 the artifact that closes it: a proof commit, source-note/inventory commit,
@@ -1084,8 +1162,9 @@ Closure classes:
   prose; regenerate generated appendices instead of hand-editing citations.
 - `reader-craft`: revise live or curated reader prose only after claim,
   source, proof, and test boundaries are current; smooth merge scaffolds,
-  sharpen Beyond-SOTA sections, and keep Corben voice-pass placeholders rather
-  than inventing first-person experience.
+  sharpen Beyond-SOTA sections, write finished third-person conviction and
+  stakes, and route optional first-person enrichment questions to the sidecar
+  queue rather than leaving placeholders.
 - `recorded-blocker`: when the honest closure requires unavailable source
   text, private project artifacts, external review, local hardware, or Corben
   authorial input, record the blocker with the exact missing condition and do
@@ -2225,31 +2304,33 @@ Execution pivot:
 
 - Stop treating first-pass curated chapters as the finish line. The manuscript
   is not human-edit ready until consolidation decisions have been reflected in
-  the reader table of contents, every remaining chapter has either curated
-  prose or a recorded reason to wait, and a book-level continuity edit has
-  removed repeated scaffolding and repaired transitions.
+  the reader table of contents, every active chapter has curated prose that can
+  stand without placeholders, and a book-level continuity edit has removed
+  repeated scaffolding and repaired transitions.
 - The next reader task is not another review report. All 44 active manifest
   chapters now have tracked drafting-only curated reader files, and
   `scripts/build_curated_reader_edition.py --check` verifies that those files
   assemble into a renderable local Quarto review workspace. The remaining work
-  is source-level reconciliation, book-level continuity editing, Corben voice
-  review, and artifact review, not coverage bookkeeping.
+  is source-level reconciliation, book-level continuity editing, optional
+  sidecar author-enrichment routing, and artifact review, not coverage
+  bookkeeping.
 - Human-reader source may become a parallel derivative prose source for
   pacing, examples, openings, closings, and audio flow, but the live book
   remains authority for claims, support states, source boundaries, proof/test
   status, implementation horizons, and release records.
 - The reader manuscript is not final merely because every chapter has a
   drafting file. It needs a book-level thesis, part-level narrative arcs,
-  chapter-specific stakes, memorable repeatable ideas, and Corben-approved
-  authorial voice before it is ready for serious human review.
+  chapter-specific stakes, memorable repeatable ideas, finished third-person
+  prose, and an explicit no-fabricated-first-person boundary before it is ready
+  for serious human review.
 
 Tasks:
 
 - Select a consolidation-aware pilot set for curated graduation. Protected
   standalone chapters may graduate when overlays are too small; source chapters
-  inside pending merge or fold packages should wait for an execute, revise,
-  defer, or reject decision unless the edit is explicitly scoped as local
-  cleanup:
+  inside any future merge or fold package should either edit the active
+  destination chapter directly or record a scoped/deferred caveat; do not leave
+  reader work idle just because a structural question exists:
   - `asi-is-a-stack-not-a-model`;
   - `the-efficient-asi-hypothesis`;
   - `system-boundaries-and-authority`;
@@ -2307,11 +2388,14 @@ Tasks:
 - With consolidation execution reflected in the current table of contents, run a
   book-level reader edit over the destination table of contents, not the old
   pre-consolidation 54-chapter shape. This pass should remove duplicated
-  introductions, repair part transitions, normalize examples, and make the
-  prose ready for Corben's human editing notes.
-- During the book-level continuity edit, prepare a Corben authorial-pass queue:
-  where the text needs first-person lessons, hard-won opinions, project history,
-  or personal stakes, mark the need plainly instead of fabricating it.
+  introductions, repair part transitions, normalize examples, and push the
+  prose to finished quality; Corben's later editing notes are polish over a
+  complete book, not a stage the prose waits for (2026-07-02 direction).
+- During the book-level continuity edit, maintain the sidecar enrichment
+  queue: where author-supplied first-person lessons, hard-won opinions,
+  project history, or personal stakes could later enrich a passage, record the
+  location and a candidate question there — while writing the passage itself
+  to finished third-person quality, never fabricating the first person.
 - Distill the full 44-chapter architecture into 8-12 signature ideas that recur
   deliberately across the reader manuscript, landing page, preface, part
   openings, chapter endings, diagrams, and audio script treatment.
@@ -2329,15 +2413,17 @@ Acceptance bar:
 - Human view and generated reader edition still preserve support-state
   boundaries.
 - a human-edit handoff packet exists with the current table of contents,
-  known repetition debt, unresolved evidence blockers, chapters ready for line
-  edit, and chapters blocked by pending merge/fold decisions.
-- the human-edit handoff identifies authorial voice-pass slots and does not
-  present agent-invented first-person material as Corben's experience;
+  known repetition debt, unresolved evidence blockers, and per-chapter
+  finished-quality status; no chapter is held below finished quality waiting
+  for the human edit (2026-07-02 direction).
+- the sidecar enrichment queue records optional author-enrichment locations
+  without leaving manuscript gaps, and no agent-invented first-person material
+  is presented as Corben's experience;
 - the reader manuscript has a book-level thesis, part arcs, a named set of
   recurring signature ideas, chapter-specific stakes/payoffs, key-figure
   targets with draft assets, text-equivalent chapter anchors, validator-checked
-  reader-manuscript placements, and voice-pass slots without changing evidence
-  boundaries.
+  reader-manuscript placements, and a sidecar enrichment queue without changing
+  evidence boundaries.
 
 Current status:
 
@@ -2352,8 +2438,11 @@ Current status:
 - The same manifest now carries a validated `reader_handoff_contract` with one
   book-level thesis, four part arcs, ten recurring signature ideas, ten
   key-figure targets with draft assets, text-equivalent chapter anchors, and
-  curated reader-manuscript placements, twelve Corben voice-pass slots, and
-  per-chapter stakes/payoffs. `scripts/validate_reader_key_figures.py` now
+  curated reader-manuscript placements, twelve recorded legacy voice-pass
+  slots, and per-chapter stakes/payoffs. Per the 2026-07-02 direction, those
+  twelve slots must be converted: write each location to finished third-person
+  quality and move the enrichment prompts into the sidecar queue so the
+  manuscript carries zero gaps. `scripts/validate_reader_key_figures.py` now
   checks the draft SVG metadata, live chapter text equivalents, reader
   placements, captions, alt text, and non-claim boundaries, while
   `scripts/validate_reader_key_figure_html_probe.py` checks rendered curated
@@ -2748,9 +2837,11 @@ Tasks:
 - Replace template-like reader openings and closings with chapter-specific
   stakes, examples, tensions, and payoffs. Keep repeated evidence boundaries in
   compact form, but stop repeating the same rhetorical motion.
-- Mark every place where Corben's lived project experience, personal
-  conviction, or first-person lesson would materially improve the prose. Codex
-  may suggest questions and candidate locations; it must not invent the answer.
+- Write every chapter's conviction, stakes, and payoff to finished quality in
+  third person; never invent first-person experience. Where Corben's lived
+  project experience could later enrich a passage, record the location and a
+  candidate question in the sidecar enrichment queue — but the prose at that
+  location must already stand as finished without it (2026-07-02 direction).
 - Identify any chapter material that belongs in the live AI/research view but
   should be shortened, moved to companion notes, or summarized in the human
   reader path. This is reader-edition selection, not live-source deletion.
@@ -2765,11 +2856,12 @@ Acceptance bar:
 
 - The reader manuscript has one explicit thesis, part arcs, recurring
   signature ideas, chapter-specific stakes/payoffs, key-figure targets with
-  draft assets, text-equivalent chapter anchors, validator-checked
-  reader-manuscript placements, and voice-pass slots that a non-research reader
-  could review before line editing.
-- The authorial-pass queue is explicit: every first-person or personal-history
-  slot is supplied by Corben, marked as needing Corben, or removed.
+  draft assets, text-equivalent chapter anchors, and validator-checked
+  reader-manuscript placements — realized in the prose itself, at finished
+  quality, with zero empty slots or placeholders (2026-07-02 direction).
+- The optional enrichment queue is a sidecar record of locations where
+  author-supplied first-person material could later be added; the manuscript
+  is complete and finished without any of them.
 - No agent-generated prose claims Corben's personal experience, intent, or
   belief unless the source is author-supplied or explicitly approved.
 - The live book still owns claim meaning, support states, source boundaries,
@@ -2783,14 +2875,17 @@ Current status:
 - Partially executed. The reader-manuscript manifest now records and validates
   the thesis, part arcs, recurring signature ideas, key-figure targets with
   draft assets, text-equivalent chapter anchors, validator-checked
-  reader-manuscript placements, chapter-level stakes/payoffs, and Corben
-  voice-pass slots. This is handoff structure only; it is not source evidence,
-  external review, support-state evidence, final figure review, authorial
-  approval, or release approval.
-- The current curated reader manuscript remains drafting-only. Existing prose
-  passes can support the craft pass, but Corben still needs to supply or
-  approve voice-pass language before the book can be treated as an authored
-  human-review manuscript.
+  reader-manuscript placements, chapter-level stakes/payoffs, and recorded
+  legacy voice-pass-slot records. This is handoff structure only; it is not
+  source evidence, external review, support-state evidence, final figure
+  review, authorial approval, or release approval. Per the 2026-07-02
+  direction the recorded slots are conversion work, not waiting work: each
+  becomes finished prose plus a sidecar enrichment entry.
+- The current curated reader manuscript remains drafting-only. Per the
+  2026-07-02 direction, Codex finishes it: every reader chapter is pushed to
+  finished authored quality in third person, the enrichment queue stays a
+  sidecar, and graduation out of drafting does not wait on author-supplied
+  voice language.
 - The ten draft key figures are now embedded/adapted into the curated reader
   manuscript where they serve the reader arc, not only the live AI/research
   chapters. Each placement carries a caption, alt text, and a non-claim
@@ -2980,8 +3075,8 @@ explicitly passed or explicitly scoped out in a release record.
 | External-SOTA distance | The release updates distance from SOTA, not only internal activity. | "Beyond-SOTA" remains unaudited. |
 | Consolidation stability | The 44-chapter spine remains stable unless a source, evidence, reviewer, or reader-edit finding justifies a specific boundary change; any retired URL remains preserved. | The project reopens structural churn without evidence. |
 | Negative-outcome handling | Failed, demoted, refuted, merged, or retired lanes are recorded instead of hidden. | Evidence process is monotonic and biased. |
-| Authorial craft and distillation | The reader manuscript has a single thesis, part arcs, recurring signature ideas, chapter-specific openings/closings, designed key figures, and explicit Corben voice-pass slots without fabricated first-person material. | Human edition remains a template-shaped derivative and cannot be honestly called final-quality. |
-| Human-reader quality | Curated reader manuscript reaches handoff-ready status for Corben review, and any released artifact has an exact release record. | Human edition remains a generated projection only. |
+| Authorial craft and distillation | The reader manuscript has a single thesis, part arcs, recurring signature ideas, chapter-specific openings/closings, designed key figures, and finished third-person prose with a sidecar enrichment queue and zero manuscript gaps — no fabricated first-person material anywhere. | Human edition remains a template-shaped derivative and cannot be honestly called final-quality. |
+| Human-reader quality | Every curated reader chapter reads at finished quality, the edition is built and release-recorded, and any released artifact has an exact release record; Corben's final edit is polish over the complete book, not a gate (2026-07-02 direction). | Human edition remains a generated projection only. |
 | Artifact honesty | EPUB/DOCX/PDF/audio/DOI are claimed only if exact artifacts or archive identifiers exist. | Artifact or archive claim would be fabricated. |
 
 ## Version Targets
@@ -2991,7 +3086,7 @@ explicitly passed or explicitly scoped out in a release record.
 | `v1.1` | Moves from internal release hygiene toward externally reviewable evidence process. | Retired URL stubs are guarded; sixty-second trust surface exists and is validator-checked; non-core evidence ledger visible; one external review request, response, or dated blocker is recorded; one flagship measured lane is selected with baseline/negative-control design. |
 | `v1.2` | Moves from internal discipline to a reproducible architecture-relevant result. | The flagship measured lane has a one-command run, baseline, negative control, residuals, non-claims, and an accepted evidence transition or explicit no-promotion decision; any Theseus/Circle import used by the lane is CI-verifiable by digest or replay. |
 | `v1.3` | Moves formal layer from finite-record routing toward executable-model practice. | One selected proof/evidence lane has a transition-system invariant, trace property, or Lean/Python fixture-equivalence check; theorem-count growth alone does not satisfy the target. |
-| `v1.4` | Moves reader surface from generated projection toward a handoff-ready human manuscript. | Curated reader manuscript follows the stable 44-chapter table of contents, includes a book-level thesis, part arcs, signature ideas, chapter stakes/payoffs, key-figure targets with draft assets, text equivalents, validator-checked placements, authorial-pass queue, and Corben voice blockers, is ready for Corben human review, reader HTML remains validated, and EPUB/DOCX/PDF blockers have concrete review status. |
+| `v1.4` | Moves reader surface from generated projection to a finished human manuscript. | Curated reader manuscript follows the stable 44-chapter table of contents; every reader chapter reads at the level of the current best ones; the book-level thesis, part arcs, signature ideas, and chapter stakes/payoffs are realized in the prose itself; key figures are placed with text equivalents and validator-checked placements; the optional enrichment queue is a sidecar with zero manuscript gaps; reader HTML remains validated; and the edition is built and release-recorded with EPUB/DOCX/PDF blockers reduced to format-review items only (2026-07-02 direction: nothing waits on Corben). |
 | `v1.5` | Moves the human edition from clean technical prose toward a crafted artifact. | Key figures have moved beyond draft coverage into visual review, visual identity, EPUB/DOCX/PDF layout probes, audio-script treatment, and companion-note routing are reviewed enough to show exactly what remains before a polished major reader release. |
 | `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; one flagship measured lane has executed evidence or an explicit no-promotion decision; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
 | `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger executable-model proofs, prior-art-reviewed preprints, and DOI/archive metadata exist. |
@@ -3000,7 +3095,7 @@ explicitly passed or explicitly scoped out in a release record.
 
 Use this wording when it is time to start the next large autonomous work run:
 
-> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode and move the project from internally rigorous to externally reviewable, evidence-producing, and human-review ready. Keep the executed 44-chapter consolidation spine stable and preserve retired chapter URLs through guarded stubs; do not create new planning/report surfaces unless they are required by a validator, release record, external reviewer response, or an executed proof/evidence/source/reader/artifact change. Work the `docs/CHAPTER_REVIEWS.md` burn-down through artifact commits: proof/evidence/source/reader changes or recorded blockers, not new grading passes. Use the Milestone 2.5 closure classes to choose the cheapest honest next row: proof coverage, test/evidence, external grounding, reader craft, or recorded blocker. Prioritize one flagship measured evidence lane with a one-command run, baseline, negative control, residuals, non-claims, and an accepted evidence transition or explicit no-promotion decision. In parallel, solicit or record one external human review or dated outreach blocker, keep the sixty-second trust surface and non-core evidence visibility accurate, and finish the curated human-reader manuscript to handoff-ready status for Corben review. The reader manuscript must become an authored book draft, not a template strip: add a single thesis, part-level arcs, 8-12 recurring signature ideas, chapter-specific stakes and payoffs, designed key-figure targets, and explicit Corben voice-pass slots; never invent first-person experience, personal conviction, or authorial lessons. Deepen formal work only where it changes proof quality: build one transition-system invariant, trace property, or Lean/Python fixture-equivalence bridge tied to the selected evidence lane instead of chasing theorem count. Keep external grounding current through source-noted Appendix H records, make any Project Theseus or Circle evidence used by the lane CI-replayable or digest-verifiable where public-safe, and record demotions, rejections, blockers, and non-claims honestly. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
+> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode with the Grade-To-A-Plus Map as the priority compass: the target is A+ on every graded dimension for both editions of every chapter, and per the 2026-07-02 direction nothing waits on Corben — his editing pass comes last, over a finished book. First priority: finish the human-reader edition. Extend the refine/table-density/long-paragraph treatment until all 44 reader chapters read at the level of the current best ones; realize the thesis, part arcs, and 8-12 signature ideas in the prose itself (openings, endings, transitions), writing conviction and stakes to finished quality in third person with the optional first-person enrichment queue kept as a sidecar, never as manuscript gaps; never invent first-person experience, personal conviction, or authorial lessons. Then build the edition — HTML, EPUB, DOCX, and PDF where local dependencies allow — run the format validators and application-level checks the format-review matrix defines, and produce an edition release record so "drafting" becomes a release state. Second priority: evidence cadence. Strengthen one measured lane per cycle to an accepted narrow non-core transition (load-stability and workload-quality are closest), import the next public-safe Circle or Theseus result CI-verifiable by digest or replay, and record demotions, rejections, and no-promotion decisions honestly. Third: build one executable-model proof bridge tied to a live evidence lane — a transition-system invariant, trace property, or Lean/Python fixture-equivalence check — instead of chasing theorem count. Fourth: reconcile the Milestone 2.5 burn-down against artifacts that already exist, in both directions, before opening new rows; work remaining rows through artifact commits using the closure classes: proof coverage, test/evidence, external grounding, reader craft, or recorded blocker. Fifth: execute the live-edition craft watchlist — move bulky tables, validator minutiae, and repeated caveats to companion or live-only surfaces where evidence boundaries allow, and bring one anchor section per part to showpiece-trace caliber. Keep the executed 44-chapter spine stable and retired URLs stub-guarded; keep the sixty-second trust surface and non-core evidence ledger accurate; keep the external-review lane parked as user-owned (the dated blocker is the standing record — schedule no outreach and gate nothing on it); do not create new planning/report surfaces unless a validator, release record, or executed change requires them. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
 
 ## Non-Claims
 
