@@ -181,6 +181,18 @@ keeps the missing pieces visible: the clean live replay, public task bundle,
 current work-board state, benchmark environment notes, publication permissions,
 and external review are still absent.
 
+The newer public task-bundle import narrows one of those gaps without erasing
+the others. `theseus_public_task_bundle_import_2026_07_03_local` records 64
+public BigCodeBench metadata-only tasks, 0 public training rows, 0 external
+inference calls, 18 benchmark gates, 19 residuals, and 0 task-level
+regressions from pinned report summaries. It also records the dirty checkout,
+missing artifact paths, and no-promotion boundary. The clean live Theseus replay
+remains unclaimed, and the import does not prove model quality, benchmark
+superiority, generation speed, useful-solution-per-second improvement, or a
+support-state transition.
+
+Boundary sentence: clean live Theseus replay remains unclaimed.
+
 The whole surface is narrow. It does not rerun Project Theseus. It does not
 prove that the current checkout is clean. It does not reproduce a benchmark. It
 does not inspect a live dashboard. It does not authorize training. It does not
@@ -328,6 +340,11 @@ operator work boards, checkpoints, and self-evolution governance.
 The public boundary stays strict. The static architecture-gate and
 generation-mode imports show how Theseus reports can be mirrored safely, the
 support replay probe shows that the ASI-side validators can be rerun against
+their committed fixtures, and the public task-bundle import shows how a richer
+public calibration summary can keep 64 public BigCodeBench metadata-only tasks,
+0 public training rows, 0 task-level regressions, and artifact gaps visible
+without becoming capability evidence. It remains a summary import, not a clean
+live replay or model-quality result.
 tracked artifacts, and the report-bundle audit shows the minimum public-safe
 bundle shape plus the visible artifact gaps. None of that becomes a clean live
 replay, benchmark result, current dashboard inspection, deployment claim,

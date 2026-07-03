@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-03 - Add Theseus public task-bundle import
+
+- Added `scripts/validate_theseus_public_task_bundle_import.py`,
+  `docs/theseus_public_task_bundle_import.md`,
+  `experiments/theseus_public_task_bundle_import/fixtures/valid/public_task_bundle_import.valid.json`,
+  seven expected-invalid fixtures, and result artifact
+  `experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json`
+  for a bounded Project Theseus public task-bundle summary import.
+- The validator records 64 public BigCodeBench metadata-only tasks, 0 public
+  training rows, 0 external inference calls, 12 of 12 operator gates passed,
+  18 of 18 benchmark gates passed, 19 residuals, 512 summarized student
+  candidates, 45 source quality-passing candidates, and 0 task-level
+  regressions while rejecting clean-live-replay overclaim, public-training
+  leakage, public prompt export, support-state promotion, hidden task
+  regression, hidden artifact-gap rows, and benchmark-gate failure.
+- Added finite Lean bridge target
+  `lean:theseus.reference.public_task_bundle_import.fixture_bridge` in
+  `AsiStackProofs.TheseusReference` and wired the validator into
+  `scripts/validate_book.py`.
+- Updated the Project Theseus and Fast Generation live/reader chapters, outline,
+  active evidence cycle, roadmap, and manifest while preserving the boundary:
+  clean live Theseus replay remains unclaimed; this does not copy public
+  prompts/tests/solutions/traces/scores/candidate code, does not prove model
+  quality, benchmark superiority, generation speed, useful-solution-per-second
+  improvement, or support-state movement, and does not promote any chapter core
+  claim.
+
 ## 2026-07-03 - Clarify idea-depth roadmap execution order
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` to make the Idea Depth Program
@@ -79,7 +106,7 @@
 - Added the Lean surface bridge `residual_ledger_trace_surface_bridge` in
   `AsiStackProofs.CompactGenerativeSystems` and wired the validator into
   `scripts/validate_book.py`.
-- Current proof-depth snapshot: 182 proof targets, 54 Lean modules, 944 theorem declarations, 762 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Current proof-depth snapshot: 183 proof targets, 54 Lean modules, 949 theorem declarations, 767 derived/decomposed, 178 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Updated the live chapter, curated reader chapter, outline, roadmap burn-down,
   and contribution novelty ledger while preserving the boundary: this does not
   prove deployed residual-ledger behavior, does not prove safety, does not
@@ -3014,7 +3041,7 @@
   `experiments/resource_flagship_lane/results/2026-07-01-local.json`. The run
   composes ten existing validators, command-output digests, the accepted
   non-core costed-route transition, the Resource Economics chapter-core
-  no-change decision, and 19 tracked artifact hashes.
+  no-change decision, and 25 tracked artifact hashes.
 - Wired the aggregate replay into the Resource Economics chapter, manifest,
   active evidence-cycle ledger, v1.x roadmap burn-down, repository map,
   publication-readiness surface, README, and book validation. This is aggregate

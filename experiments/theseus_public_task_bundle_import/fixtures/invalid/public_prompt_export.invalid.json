@@ -1,0 +1,9 @@
+{
+  "case_id": "public_prompt_export",
+  "base_report": "experiments/theseus_public_task_bundle_import/fixtures/valid/public_task_bundle_import.valid.json",
+  "mutation": {
+    "path": "public_boundary.prompts_exported",
+    "value": true
+  },
+  "expected_error_fragment": "public_boundary.prompts_exported must be False"
+}

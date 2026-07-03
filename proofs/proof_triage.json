@@ -1651,6 +1651,16 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture-summary bridge for the public-safe Theseus report-bundle audit: accepted audits require complete bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, support-state effect none, no live replay claim, and no support-promotion claim. It proves only report-bundle audit discipline and no-promotion boundaries, not a clean live Theseus replay, report truth, benchmark performance, model quality, safety, alignment, transfer, or self-evolution safety."
     },
     {
+      "tag": "lean:theseus.reference.public_task_bundle_import.fixture_bridge",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture-summary bridge for the public-safe Theseus task-bundle import: accepted summaries require seven source reports, 64 metadata-only public tasks, zero public training rows, zero external inference calls, no exported public prompts/tests/solutions/traces/scores/candidate code, 12 operator gates, 18 benchmark gates, 19 residuals, zero task-level regressions, visible missing artifacts, a dirty-checkout boundary, no clean live replay claim, no support-state effect, and no evidence transition. It proves only record-level public-boundary and no-promotion discipline, not a clean live Theseus replay, report truth, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, safety, alignment, transfer, or self-evolution safety."
+    },
+    {
       "tag": "lean:roadmap.phases.operational_invariant",
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
@@ -1831,5 +1841,5 @@
       "rationale": "Implemented in AsiStackProofs.Planning as a finite runtime-replan delta route and fixture bridge: it rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context or verification deltas, missing residuals, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta."
     }
   ],
-  "record_count": 182
+  "record_count": 183
 }

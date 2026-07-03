@@ -1,0 +1,165 @@
+{
+  "schema_version": "0.1",
+  "record_kind": "theseus_public_task_bundle_import",
+  "import_id": "theseus_public_task_bundle_import_2026_07_03_local",
+  "source_project": {
+    "name": "Project Theseus",
+    "local_path": "/Users/corbensorenson/Documents/Theseus-Hive",
+    "commit": "1ad88a22b28e9228a67a4779176aeef5c41d2544",
+    "working_tree_dirty_at_import": true,
+    "clean_live_replay_claimed": false,
+    "source_reports_imported_as_summary_only": true
+  },
+  "source_reports": [
+    {
+      "report_id": "operator_execute",
+      "path": "reports/theseus_benchmark_public_operator_execute.json",
+      "sha256": "57d79db2fcac952c31e913f59fcd3e6ecc4d8dfc978d4135c326bb29dcb9c966",
+      "bytes": 18937
+    },
+    {
+      "report_id": "planner",
+      "path": "reports/theseus_benchmark_public_plan.json",
+      "sha256": "fdcf77320e2fb467176b0e46e4671a736a575e65f632acfe67426e26745f56e9",
+      "bytes": 17168
+    },
+    {
+      "report_id": "capacity",
+      "path": "reports/theseus_benchmark_public_capacity.json",
+      "sha256": "f44ae08534cbc56566a47f748676447cc555d534ae0f5c6da16cabe1fca38688",
+      "bytes": 8798
+    },
+    {
+      "report_id": "cli_smoke",
+      "path": "reports/theseus_cli_benchmark_public_smoke.json",
+      "sha256": "633ef57496ed45b7017c6ff57738edc0cfa9a8441ebeffc72bde6463c700a1dd",
+      "bytes": 12495
+    },
+    {
+      "report_id": "benchmark_result",
+      "path": "reports/real_code_benchmark_graduation_public_transfer_measurement_partial_diagnostic_seed9_1x64.json",
+      "sha256": "0fdfd6a79503c9a15e90bfdb0d9b9bf4194c43fd29f8031f4e9c4e94fba70264",
+      "bytes": 35615
+    },
+    {
+      "report_id": "readiness_packet",
+      "path": "reports/public_transfer_readiness_packet_public_transfer_measurement_partial_diagnostic_seed9_1x64.json",
+      "sha256": "be14ca4f29db934540cc57134f09153913f7739ba3ae0f88a9ee89f37d753f4c",
+      "bytes": 23031
+    },
+    {
+      "report_id": "metadata_case_manifest",
+      "path": "reports/public_wide_slice_manifest_public_transfer_measurement_partial_diagnostic_seed9_1x64.jsonl",
+      "sha256": "29474bbabecf46164f1b99bfd3724f8b9a1b67f4e25443a5a7b53e1addb9fb91",
+      "bytes": 57517
+    }
+  ],
+  "public_boundary": {
+    "public_calibration_only": true,
+    "case_manifest_metadata_only": true,
+    "prompts_exported": false,
+    "tests_exported": false,
+    "solutions_exported": false,
+    "candidate_code_exported": false,
+    "traces_exported": false,
+    "score_labels_exported": false,
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0
+  },
+  "operator_execution": {
+    "policy": "project_theseus_operator_bounded_public_calibration_v1",
+    "run_id": "public_transfer_measurement_partial_diagnostic_seed9_1x64",
+    "executed": true,
+    "command_safe": true,
+    "run_returncode": 0,
+    "runtime_ms": 38535,
+    "output_exists_after": true,
+    "trace_exists_after": true,
+    "run_registry_allowed": true,
+    "operator_gate_count": 12,
+    "operator_gates_passed": 12
+  },
+  "task_bundle": {
+    "run_id": "public_transfer_measurement_partial_diagnostic_seed9_1x64",
+    "source_card": "source_bigcodebench",
+    "selected_task_count": 64,
+    "manifest_row_count": 64,
+    "available_after_exclusions": 708,
+    "public_training_rows": 0,
+    "private_eval_rows": 320,
+    "packet_state": "GREEN",
+    "selector_state": "GREEN"
+  },
+  "benchmark_result": {
+    "policy": "project_theseus_real_code_benchmark_graduation_v1",
+    "public_task_count": 64,
+    "case_manifest_enabled": true,
+    "case_manifest_selected_count": 64,
+    "single_stream_pass_rate": 0.6875,
+    "multi_stream_pass_rate": 0.703125,
+    "real_public_task_pass_rate": 0.703125,
+    "pass_rate_delta": 0.015625,
+    "task_level_improvements_over_single_stream": 1,
+    "task_level_regressions_vs_single_stream": 0,
+    "transfer_artifacts_loaded": 14,
+    "student_candidate_count": 512,
+    "student_candidate_provenance_valid": true,
+    "student_candidate_benchmark_integrity_valid": true,
+    "template_like_candidate_count": 0,
+    "loop_closure_candidate_count": 0,
+    "token_level_code_generation_learned": true,
+    "deterministic_guardrail_failed_candidate_count": 0,
+    "benchmark_gate_count": 18,
+    "benchmark_gates_passed": 18,
+    "residual_count": 19
+  },
+  "quality_boundary": {
+    "policy": "beautiful_code_quality_gate_v1",
+    "candidate_attempts": 197,
+    "raw_test_pass_count": 45,
+    "quality_pass_count": 45,
+    "quality_blocked_test_pass_count": 0,
+    "rank1_quality_pass_count": 45,
+    "mean_quality_score": 0.25736,
+    "verification_workers": 8,
+    "verification_stage_count": 6,
+    "score_semantics": "public calibration pass requires tests plus exact-signature non-vacuous beautiful-code gate"
+  },
+  "artifact_gaps": [
+    {
+      "gap": "local Project Theseus checkout was dirty at import time",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "clean live Theseus replay remains unclaimed",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "transfer artifact path reported by source result is not present in the local checkout",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "student candidate manifest path reported by operator summary is not present in the local checkout",
+      "visible": true,
+      "blocks_support_movement": true
+    },
+    {
+      "gap": "no archived public Theseus release fixture is bundled in this repository",
+      "visible": true,
+      "blocks_support_movement": true
+    }
+  ],
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "non_claims": [
+    "Does not prove clean live Project Theseus replay.",
+    "Does not prove model quality, benchmark superiority, generation speed, or useful-solution-per-second improvement.",
+    "Does not copy public prompts, tests, solutions, traces, scores, or candidate code into this repository.",
+    "Does not promote any chapter core claim above argument.",
+    "Does not create a support-state transition or evidence transition."
+  ]
+}

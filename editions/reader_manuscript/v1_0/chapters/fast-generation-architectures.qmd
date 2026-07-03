@@ -36,7 +36,7 @@ usable: context adequacy, verifier access, acceptance predicates, fallback,
 repair, memory accounting, and evidence recording. Raw velocity is not enough.
 Speed becomes progress only after the whole route has paid for acceptance.
 
-The reader promise for this chapter is simple: by the end, fast generation
+The reader promise for Fast Generation is simple: by the end, fast generation
 should look less like a leaderboard metric and more like a control plane for
 choosing, verifying, and retiring generation modes.
 
@@ -312,7 +312,7 @@ candidate production with a nicer story.
 
 The sixth is fallback omission. The route accepts uncertainty without a
 slower path, repair path, residual record, or quarantine. That is the failure
-this chapter is most designed to prevent.
+Fast Generation is most designed to prevent.
 
 ## Minimum Viable Implementation
 
@@ -340,6 +340,18 @@ promotable comparisons, and five accepted-span speed-lift warnings with zero
 useful-solution-per-second evidence. The book-side validators and finite Lean
 fixture preserve that as negative promotion evidence: raw speed warnings do not
 become a speedup claim when task passes and useful-solution evidence are absent.
+
+The related Theseus public task-bundle import gives Fast Generation one richer
+implementation-reference boundary. `theseus_public_task_bundle_import_2026_07_03_local`
+records 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0
+task-level regressions, 18 benchmark gates, and visible residual/artifact-gap
+fields. That helps the Fast Generation argument talk about quality and residual accounting
+beside speed, but the clean live Theseus replay remains unclaimed and the
+import does not prove model quality, benchmark superiority, generation speed,
+useful-solution-per-second improvement, or a support-state transition.
+
+Boundary sentence: 0 task-level regressions; clean live Theseus replay remains
+unclaimed.
 
 That is still useful. A record-shape fixture gives the stack a place to put
 future evidence without letting future evidence blur the boundaries. It can

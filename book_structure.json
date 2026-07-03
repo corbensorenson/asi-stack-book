@@ -12112,6 +12112,13 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_report_bundle_audit.py`"
             },
             {
+              "name": "Theseus public task-bundle import validation",
+              "purpose": "Validate a bounded public-safe Project Theseus task-bundle summary import with source report digests, 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, visible artifact gaps, expected-invalid controls, and no-promotion boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_public_task_bundle_import.py`; clean live Theseus replay remains unclaimed and this does not prove model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, or support-state promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_public_task_bundle_import.py`"
+            },
+            {
               "name": "Report-bundle completeness test",
               "purpose": "Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported.",
               "implementation_status": "implemented",
@@ -12237,6 +12244,12 @@
               "tag": "lean:theseus.reference.report_bundle_audit.fixture_bridge",
               "module": "AsiStackProofs.TheseusReference",
               "target": "A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:theseus.reference.public_task_bundle_import.fixture_bridge",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
               "status": "implemented"
             }
           ]

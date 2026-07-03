@@ -490,4 +490,130 @@ theorem complete_theseus_report_bundle_audit_satisfies_public_bundle_review
     publication,
   ]
 
+structure TheseusPublicTaskBundleImportSummary where
+  sourceReportCount : Nat
+  publicTaskCount : Nat
+  metadataCaseManifestRows : Nat
+  publicTrainingRows : Nat
+  externalInferenceCalls : Nat
+  operatorGateCount : Nat
+  operatorGatesPassed : Nat
+  benchmarkGateCount : Nat
+  benchmarkGatesPassed : Nat
+  residualCount : Nat
+  taskLevelRegressions : Nat
+  promptsExported : Bool
+  testsExported : Bool
+  solutionsExported : Bool
+  candidateCodeExported : Bool
+  tracesExported : Bool
+  scoreLabelsExported : Bool
+  localCheckoutDirty : Bool
+  cleanLiveReplayClaimed : Bool
+  missingArtifactsVisible : Bool
+  supportStateEffectNone : Bool
+  evidenceTransitionCreated : Bool
+deriving DecidableEq, Repr
+
+def TheseusPublicTaskBundleImportPublicSafe
+    (summary : TheseusPublicTaskBundleImportSummary) : Prop :=
+  summary.publicTrainingRows = 0 ∧
+    summary.externalInferenceCalls = 0 ∧
+      summary.promptsExported = false ∧
+        summary.testsExported = false ∧
+          summary.solutionsExported = false ∧
+            summary.candidateCodeExported = false ∧
+              summary.tracesExported = false ∧
+                summary.scoreLabelsExported = false
+
+def TheseusPublicTaskBundleImportGatesComplete
+    (summary : TheseusPublicTaskBundleImportSummary) : Prop :=
+  summary.operatorGateCount = summary.operatorGatesPassed ∧
+    summary.benchmarkGateCount = summary.benchmarkGatesPassed ∧
+      summary.operatorGateCount = 12 ∧
+        summary.benchmarkGateCount = 18
+
+def TheseusPublicTaskBundleImportPreservesBoundaries
+    (summary : TheseusPublicTaskBundleImportSummary) : Prop :=
+  summary.sourceReportCount = 7 ∧
+    summary.publicTaskCount = 64 ∧
+      summary.metadataCaseManifestRows = 64 ∧
+        summary.residualCount = 19 ∧
+          summary.taskLevelRegressions = 0 ∧
+            summary.localCheckoutDirty = true ∧
+              summary.cleanLiveReplayClaimed = false ∧
+                summary.missingArtifactsVisible = true ∧
+                  summary.supportStateEffectNone = true ∧
+                    summary.evidenceTransitionCreated = false
+
+def TheseusPublicTaskBundleImportValid
+    (summary : TheseusPublicTaskBundleImportSummary) : Prop :=
+  TheseusPublicTaskBundleImportPublicSafe summary ∧
+    TheseusPublicTaskBundleImportGatesComplete summary ∧
+      TheseusPublicTaskBundleImportPreservesBoundaries summary
+
+def theseusPublicTaskBundleImportFixture :
+    TheseusPublicTaskBundleImportSummary := {
+  sourceReportCount := 7
+  publicTaskCount := 64
+  metadataCaseManifestRows := 64
+  publicTrainingRows := 0
+  externalInferenceCalls := 0
+  operatorGateCount := 12
+  operatorGatesPassed := 12
+  benchmarkGateCount := 18
+  benchmarkGatesPassed := 18
+  residualCount := 19
+  taskLevelRegressions := 0
+  promptsExported := false
+  testsExported := false
+  solutionsExported := false
+  candidateCodeExported := false
+  tracesExported := false
+  scoreLabelsExported := false
+  localCheckoutDirty := true
+  cleanLiveReplayClaimed := false
+  missingArtifactsVisible := true
+  supportStateEffectNone := true
+  evidenceTransitionCreated := false
+}
+
+theorem theseus_public_task_bundle_import_fixture_public_safe :
+    TheseusPublicTaskBundleImportPublicSafe
+      theseusPublicTaskBundleImportFixture := by
+  simp [TheseusPublicTaskBundleImportPublicSafe,
+    theseusPublicTaskBundleImportFixture]
+
+theorem theseus_public_task_bundle_import_fixture_gates_complete :
+    TheseusPublicTaskBundleImportGatesComplete
+      theseusPublicTaskBundleImportFixture := by
+  simp [TheseusPublicTaskBundleImportGatesComplete,
+    theseusPublicTaskBundleImportFixture]
+
+theorem theseus_public_task_bundle_import_fixture_preserves_no_promotion_boundary :
+    TheseusPublicTaskBundleImportPreservesBoundaries
+      theseusPublicTaskBundleImportFixture := by
+  simp [TheseusPublicTaskBundleImportPreservesBoundaries,
+    theseusPublicTaskBundleImportFixture]
+
+theorem theseus_public_task_bundle_import_fixture_valid :
+    TheseusPublicTaskBundleImportValid
+      theseusPublicTaskBundleImportFixture := by
+  simp [TheseusPublicTaskBundleImportValid,
+    TheseusPublicTaskBundleImportPublicSafe,
+    TheseusPublicTaskBundleImportGatesComplete,
+    TheseusPublicTaskBundleImportPreservesBoundaries,
+    theseusPublicTaskBundleImportFixture]
+
+theorem theseus_public_task_bundle_import_clean_replay_overclaim_rejected :
+    ¬ TheseusPublicTaskBundleImportValid
+      { theseusPublicTaskBundleImportFixture with
+        cleanLiveReplayClaimed := true } := by
+  intro valid
+  simp [TheseusPublicTaskBundleImportValid,
+    TheseusPublicTaskBundleImportPreservesBoundaries,
+    TheseusPublicTaskBundleImportPublicSafe,
+    TheseusPublicTaskBundleImportGatesComplete,
+    theseusPublicTaskBundleImportFixture] at valid
+
 end AsiStackProofs.TheseusReference

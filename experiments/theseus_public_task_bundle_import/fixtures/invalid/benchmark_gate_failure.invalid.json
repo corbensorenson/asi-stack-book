@@ -1,0 +1,9 @@
+{
+  "case_id": "benchmark_gate_failure",
+  "base_report": "experiments/theseus_public_task_bundle_import/fixtures/valid/public_task_bundle_import.valid.json",
+  "mutation": {
+    "path": "benchmark_result.benchmark_gates_passed",
+    "value": 17
+  },
+  "expected_error_fragment": "benchmark_result.benchmark_gates_passed must be 18"
+}

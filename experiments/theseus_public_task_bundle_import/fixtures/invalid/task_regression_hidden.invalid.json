@@ -1,0 +1,9 @@
+{
+  "case_id": "task_regression_hidden",
+  "base_report": "experiments/theseus_public_task_bundle_import/fixtures/valid/public_task_bundle_import.valid.json",
+  "mutation": {
+    "path": "benchmark_result.task_level_regressions_vs_single_stream",
+    "value": 1
+  },
+  "expected_error_fragment": "benchmark_result.task_level_regressions_vs_single_stream must be 0"
+}

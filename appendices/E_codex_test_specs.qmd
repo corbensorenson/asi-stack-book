@@ -391,6 +391,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus support replay probe | implemented | passes via `python3 scripts/run_theseus_support_replay_probe.py --write-result` and `python3 scripts/validate_theseus_support_replay_probe.py`; no clean live Theseus replay, public task bundle, model-quality result, generation-speed result, or support-state promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus concrete evidence-surface validation | implemented | passes via `python3 scripts/validate_theseus_concrete_evidence_surface.py`; no live Theseus replay, model-quality result, generation-speed result, or support-state promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report-bundle audit validation | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; 1 valid fixture, 7 expected-invalid controls, 8 crosswalk rows, 6 visible artifact gaps, no live Theseus replay or support-state promotion |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus public task-bundle import validation | implemented | passes via `python3 scripts/validate_theseus_public_task_bundle_import.py`; clean live Theseus replay remains unclaimed and this does not prove model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, or support-state promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Report-bundle completeness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; repository fixture only; no live report-bundle import |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Replay-readiness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; no replay execution beyond existing ASI-side validators |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report crosswalk completeness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; public-safe repository fixture only; no clean live Theseus bundle |
@@ -474,16 +475,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 182 |
+| Proof targets covered by triage | 183 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 182 |
+| implemented | 183 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 182 |
+| implemented | formal-invariant | lean-candidate | 183 |

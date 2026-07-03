@@ -1,0 +1,9 @@
+{
+  "case_id": "support_promotion_overclaim",
+  "base_report": "experiments/theseus_public_task_bundle_import/fixtures/valid/public_task_bundle_import.valid.json",
+  "mutation": {
+    "path": "support_state_effect",
+    "value": "prototype-backed"
+  },
+  "expected_error_fragment": "support_state_effect must be 'none'"
+}
