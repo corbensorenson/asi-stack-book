@@ -9,7 +9,7 @@ remaining blockers, and release-classification boundaries are visible.
 The current state is a tagged v1.0.0 living-book evidence-and-reader release
 boundary for source commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`. It has a
 release-gate audit, reviewed local reader HTML artifact, complete chapter-core
-no-promotion coverage, three bounded synthetic-test-backed measured/replayed
+no-promotion coverage, four bounded synthetic-test-backed measured/replayed
 transitions plus one prototype-backed imported Circle receipt transition outside
 chapter core claims, proof-depth honesty, protocol crosswalks, external-SOTA
 placement, architecture desk red-team coverage, final citation metadata, and a
@@ -23,8 +23,8 @@ pending because no archive identifier has been issued.
 | Phase 0 | Operating discipline and CI honesty | Validator coverage meta-check, prior-run check discipline, manifest schema, and public-surface validation are active | Keep prior Pages run checks and all validators green before each commit. |
 | Phase 1 | Reader-visible voice and de-templating | Complete for current tree; repeated-prose guards reject known scaffold formulas | Keep guards passing after future chapter edits. |
 | Phase 2 | Reviewed reader manuscript path | Generated reader review matrix is complete; local reader HTML artifact has an edition release record | EPUB/DOCX/PDF/audio remain unapproved unless separately reviewed and release-recorded. |
-| Phase 3 | Claim-state coverage | All 46 chapter core claims have an accepted no-change transition or explicit no-promotion decision | No chapter core claim can move above `argument` without a specific accepted evidence transition. |
-| Phase 3B | First measured or replayed slice | Registry-runner infrastructure slice and costed-route/resource-budget selector slice are accepted as bounded `synthetic-test-backed` transitions; Circle external rope receipt replay is accepted as a bounded `prototype-backed` transition | Deeper prototype or empirical measured/replayed slices remain needed before stronger chapter claims. |
+| Phase 3 | Claim-state coverage | All 44 chapter core claims have an accepted no-change transition or explicit no-promotion decision | No chapter core claim can move above `argument` without a specific accepted evidence transition. |
+| Phase 3B | First measured or replayed slice | Registry-runner infrastructure slice, costed-route/resource-budget selector slice, finite load-smoothing selector slice, and compact GVR receipt slice are accepted as bounded `synthetic-test-backed` transitions; Circle external rope receipt replay is accepted as a bounded `prototype-backed` transition | Deeper prototype or empirical measured/replayed slices remain needed before stronger chapter claims. |
 | Phase 4 | Proof-depth honesty | Proof-depth classifier and safety-critical projection-only classifications are recorded | Richer state-machine proofs remain future quality work unless claims widen. |
 | Phase 5 | Test harness and evidence depth | Twenty-two harnesses, registry runner, costed-route selector slice, and Circle external receipt slice are wired and validated | Next useful evidence should be real trace, additional imported prototype receipt, or empirical replay rather than more synthetic scaffolding. |
 | Phase 5A | Protocol source-of-truth hardening | v1-critical schema/fixture/harness/Lean crosswalk exists and validates | Keep crosswalk current when protocol records or evidence transitions change. |

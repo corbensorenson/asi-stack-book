@@ -1,12 +1,12 @@
 {
   "actual_command_record": {
     "command": "python3 scripts/validate_resource_flagship_lane.py",
-    "elapsed_ms": 2302.646,
+    "elapsed_ms": 1932.58,
     "exit_code": 0,
     "output_excerpt": [
-      "Resource flagship lane validation passed: 10 command replay(s), 24 tracked artifact digest(s), support-state effect none."
+      "Resource flagship lane validation passed: 10 command replay(s), 25 tracked artifact digest(s), support-state effect none."
     ],
-    "output_sha256": "147d88d53a75d22f4b8499920d5e503a19a5cbd312bcf73e94c8408f2c3e3e9f"
+    "output_sha256": "4b039ec66b40336f157c558034d165cf562eeb22f0715153ac0cfc63c1fb0c58"
   },
   "artifact_refs": [
     "docs/reference_trace_harness.md",
@@ -43,7 +43,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "reference_trace_replay",
-  "recorded_at_utc": "2026-07-02T16:06:07Z",
+  "recorded_at_utc": "2026-07-03T12:01:37Z",
   "reference_trace_record": {
     "artifacts": [
       "command://validate-resource-flagship-lane",
@@ -149,28 +149,28 @@
       "sha256": "6e625f893eda7e5345b6cf9db38f0789dd38bfe8cc0bc6ac5c3a20972d42aaa3"
     },
     {
-      "bytes": 5459,
-      "lines": 113,
+      "bytes": 6086,
+      "lines": 125,
       "path": "docs/resource_flagship_lane_run.md",
-      "sha256": "eef239a5c58b782529aa1e1c2569e94d6f132a30641a423346ab2a2e3ee6d537"
+      "sha256": "a8cab8aabf3290c776cd24dc2cebcc11fc1ddea7374a79d5e1a028a3f6f28fa2"
     },
     {
-      "bytes": 19292,
-      "lines": 436,
+      "bytes": 20383,
+      "lines": 454,
       "path": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
-      "sha256": "25bd693326d2fd32a878cfe37e8dd0b9ed440c847c0a26143e59451335f7dacc"
+      "sha256": "b7a9163046c4aa9ee7674a836fe0d4eb830cc9d51f5df6c57d696951e5f22d32"
     },
     {
-      "bytes": 12284,
-      "lines": 268,
+      "bytes": 13309,
+      "lines": 280,
       "path": "scripts/validate_resource_flagship_lane.py",
-      "sha256": "016bf75b5bb1974d39ac8cf296ab8e97ee21840e90211ba2571faf202a77ee4d"
+      "sha256": "2cfe3b39c8926720ca3360b26075ebd8ebacc5082629dccd1402e2e660aa671a"
     },
     {
-      "bytes": 16432,
-      "lines": 356,
+      "bytes": 17605,
+      "lines": 373,
       "path": "scripts/run_resource_flagship_lane.py",
-      "sha256": "20afe4b427b047fac825cf37bf01ddd60f3fac5f0590ab9a33e8d5acce552308"
+      "sha256": "25ddc32d0075b415d1f9dbc607a924ecfa0fd9337dfce71524d2062073e45afb"
     },
     {
       "bytes": 8138,

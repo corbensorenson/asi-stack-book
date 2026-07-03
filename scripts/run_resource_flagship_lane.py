@@ -90,6 +90,7 @@ TRACKED_ARTIFACTS = [
     "docs/simulation_transfer_boundary_harness.md",
     "docs/v1_x_active_evidence_cycle.md",
     "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
+    "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json",
     "evidence_transitions/v1_0_pilot/resource_economics_no_change.json",
     "evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json",
     "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -128,7 +129,7 @@ NON_CLAIMS = [
 ]
 
 RESIDUALS = [
-    "The accepted upward transition remains scoped to resource-economics.costed_route_budget_slice, not the chapter core claim.",
+    "Accepted upward transitions remain scoped to non-core Resource claims: costed-route selection and finite synthetic load-smoothing selection, not the chapter core claim.",
     "Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.",
     "Load-stability evidence is a finite synthetic burst-review workload with residualized deferrals, not a production queue trace.",
     "CI cost evidence is publication-pipeline metadata, not a scheduler or economic-result measurement.",
@@ -200,6 +201,9 @@ def build_component_summary() -> dict[str, Any]:
     transition = load_json(
         "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json"
     )
+    load_transition = load_json(
+        "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json"
+    )
     no_change = load_json("evidence_transitions/v1_0_pilot/resource_economics_no_change.json")
     workflow = load_json("experiments/resource_workflow_trace/results/2026-07-01-local.json")
     live = load_json("experiments/resource_live_probe/results/2026-07-01-local.json")
@@ -227,6 +231,18 @@ def build_component_summary() -> dict[str, Any]:
             "negative_control_routes": costed.get("negative_control_routes"),
             "cost_reduction_vs_baseline_percent": costed.get("cost_reduction_vs_baseline_percent"),
             "support_state_effect": costed.get("support_state_effect"),
+        },
+        "load_stability_accepted_transition": {
+            "claim_id": load_transition.get("claim_id"),
+            "new_support_state": load_transition.get("new_support_state"),
+            "transition_validity_state": load_transition.get("transition_validity_state"),
+            "support_state_effect": load_transition.get("support_state_effect"),
+            "selected_route_id": load_stability.get("selected_route_id"),
+            "baseline_route_id": load_stability.get("baseline_route_id"),
+            "negative_control_route_id": load_stability.get("negative_control_route_id"),
+            "selected_vs_baseline_instability_reduction_percent": load_stability.get(
+                "selected_vs_baseline_instability_reduction_percent"
+            ),
         },
         "chapter_core_decision": {
             "claim_id": no_change.get("claim_id"),
@@ -319,6 +335,7 @@ def build_record() -> dict[str, Any]:
         "evidence_transition_created": False,
         "accepted_transition_refs": [
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
+            "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json",
         ],
         "no_promotion_decision_refs": NO_PROMOTION_DECISION_REFS,
         "summary": (

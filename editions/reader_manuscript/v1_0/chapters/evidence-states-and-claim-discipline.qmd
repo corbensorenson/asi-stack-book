@@ -316,8 +316,8 @@ open-gap-missing, and promotion-path-missing rows are rejected. That is not a
 truth audit. It says the ledger is complete enough to hold the argument
 honestly; it does not say the argument has been proven.
 
-The accepted live transition review audit checks 35 accepted transition
-records, including four bounded non-core upward transitions and no accepted
+The accepted live transition review audit checks 36 accepted transition
+records, including five bounded non-core upward transitions and no accepted
 upward transition for a chapter core claim. It checks changelog references,
 evidence packets, verification commands, limitations, reviewer-independence
 disclosure, non-claims, and the accepted no-promotion ledger. That is not an

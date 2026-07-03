@@ -28,6 +28,10 @@ EXPECTED = {
         "state": "synthetic-test-backed",
         "transition": "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
     },
+    "resource-economics.finite_burst_load_smoothing_selector": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json",
+    },
     "circle-calculus.external_rope_receipt_replay": {
         "state": "prototype-backed",
         "transition": "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
@@ -40,7 +44,7 @@ EXPECTED = {
 
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
-    "Accepted non-core upward transitions | 4 narrow transitions.",
+    "Accepted non-core upward transitions | 5 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Chapter-core promotion effect | None.",
@@ -139,18 +143,18 @@ def main() -> None:
             errors.append(f"{name} does not reference {ref}")
 
     surface_counts = [
-        ("README.md", readme, "four narrow non-core transitions are accepted"),
-        ("index.qmd", index, "Four narrow non-core evidence transitions accepted"),
-        ("index.qmd", index, "Four narrow non-core transitions are accepted"),
+        ("README.md", readme, "five narrow non-core transitions are accepted"),
+        ("index.qmd", index, "Five narrow non-core evidence transitions accepted"),
+        ("index.qmd", index, "Five narrow non-core transitions are accepted"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():
-            errors.append(f"{name} does not expose the current four-transition count: {required}")
+            errors.append(f"{name} does not expose the current five-transition count: {required}")
 
     if errors:
         fail(errors)
 
-    print("Non-core evidence ledger validation passed: 4 accepted non-core transitions, 0 chapter-core promotions.")
+    print("Non-core evidence ledger validation passed: 5 accepted non-core transitions, 0 chapter-core promotions.")
 
 
 if __name__ == "__main__":

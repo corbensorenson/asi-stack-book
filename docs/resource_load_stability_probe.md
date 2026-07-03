@@ -82,6 +82,18 @@ The negative control preserves the hidden-cost boundary. A route that appears
 cheaper because it reports zero review minutes is rejected when that saving
 comes from erasing protected review or hiding deferred work.
 
+## Bounded Transition Review
+
+A later accepted evidence-transition record scopes this probe to the finite
+synthetic selector claim
+`resource-economics.finite_burst_load_smoothing_selector`:
+`evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json`.
+That transition moves only the bounded selector claim from `argument` to
+`synthetic-test-backed`. It does not move the Resource Economics chapter core
+claim, the broader real load-stability claim, the deployed scheduler claim,
+TokenMana, PlanForge, reviewer optimization, human productivity, economic
+behavior, model quality, safety, or source interpretation.
+
 ## Residuals
 
 - The workload is a deterministic local synthetic burst of repository-review
@@ -106,7 +118,9 @@ review, or the full book gate.
 
 - This load-stability probe does not promote any chapter core claim above
   `argument`.
-- This load-stability probe does not create a support-state transition.
+- This load-stability probe's original result record does not by itself create
+  a support-state transition; the later accepted transition is scoped only to
+  the finite synthetic selector claim named above.
 - This load-stability probe does not prove TokenMana behavior, PlanForge
   behavior, deployed scheduler behavior, production queue behavior, real load
   stability, human productivity, model quality, economic outcomes, physical

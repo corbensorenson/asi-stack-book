@@ -1,0 +1,106 @@
+{
+  "transition_id": "v1_x_measured.resource_load_stability_selector.synthetic_test_backed",
+  "claim_id": "resource-economics.finite_burst_load_smoothing_selector",
+  "claim_surface_refs": [
+    "docs/resource_load_stability_probe.md",
+    "docs/resource_flagship_lane_run.md",
+    "docs/evidence_transition_pilot.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
+    "scripts/run_resource_load_stability_probe.py",
+    "scripts/validate_resource_load_stability_probe.py",
+    "lean/AsiStackProofs/ResourceEconomics.lean",
+    "schemas/evidence_transition_record.schema.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "synthetic-test-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the finite synthetic burst-review selector claim moves to synthetic-test-backed: the validator recomputes one 10-task local synthetic workload, compares admit-arrivals baseline against protected capacity smoothing, rejects a cheaper review-erasure negative control, checks residualized deferrals, and checks the finite Lean fixture bridge. This does not move the Resource Economics chapter core claim or any real load-stability, scheduler, TokenMana, PlanForge, human-productivity, economic, model-quality, safety, or deployment claim.",
+  "evidence_roles": [
+    "local_synthetic_burst_workload",
+    "admit_arrivals_baseline",
+    "protected_capacity_smoothing_selected_route",
+    "review_erasure_negative_control",
+    "residualized_deferral_check",
+    "lean_fixture_alignment_gate",
+    "public_safe_result_record"
+  ],
+  "transition_reason": "The local validation command checks a deterministic 10-task burst-review workload over three routes. The selected protected-capacity-smoothing route reduces recorded load-instability units from 5 under the admit-arrivals baseline to 0, preserves protected review, residualizes all 7 selected deferred task-ticks, and rejects the cheaper latency-only review-erasure route because it erases 3 protected reviews and hides 7 deferred task-ticks. The validator also checks the tracked public-safe result record and the finite ResourceEconomics Lean fixture theorem refs for workload validity, overload reduction, review-erasure rejection, residualized deferrals, and no support promotion. This is enough to accept the narrow finite selector claim, while preserving the existing no-change record for broader load-stability and chapter-core claims.",
+  "required_artifacts": [
+    "tracked synthetic burst-review result record",
+    "load-stability validation command",
+    "admit-arrivals baseline route",
+    "protected capacity-smoothing selected route",
+    "review-erasure negative-control rejection",
+    "residualized deferral accounting",
+    "Lean fixture alignment with the public result record",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/resource_load_stability_probe.md",
+    "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
+    "scripts/run_resource_load_stability_probe.py",
+    "scripts/validate_resource_load_stability_probe.py",
+    "lean/AsiStackProofs/ResourceEconomics.lean",
+    "scripts/validate_evidence_transitions.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/resource_load_stability_probe.md",
+    "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
+    "docs/resource_flagship_lane_run.md",
+    "docs/evidence_transition_pilot.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "docs/resource_load_stability_probe.md#result-record",
+    "docs/resource_load_stability_probe.md#lean-fixture-bridge",
+    "docs/resource_load_stability_probe.md#boundary"
+  ],
+  "verification_command": "python3 scripts/validate_resource_load_stability_probe.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "route://negative-latency-only-review-erasure is rejected despite zero reported instability because it erases 3 protected high-risk reviews and hides 7 deferred task-ticks",
+    "the selected route records 7 deferred task-ticks as residualized costs rather than treating smoothing as free capacity",
+    "the existing no-change record for resource-economics.synthetic_load_stability_route_selection remains in force for broader real load-stability, deployed scheduler, TokenMana, PlanForge, reviewer-optimization, and economic claims",
+    "no Resource Economics chapter core claim is promoted above argument",
+    "no deployed scheduler, production queue, human-productivity, model-quality, benchmark, safety, source-interpretation, or economic outcome is claimed"
+  ],
+  "negative_evidence_refs": [
+    "docs/resource_load_stability_probe.md",
+    "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
+    "evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json"
+  ],
+  "downgrade_triggers": [
+    "load-stability validator fails",
+    "selected route no longer reduces finite baseline overload",
+    "selected route stops residualizing all deferred task-ticks",
+    "review-erasure negative control is accepted or loses protected-review violations",
+    "Lean fixture bridge drifts from the public result record",
+    "chapter or public prose describes this transition as real load stability, deployed scheduling, TokenMana, PlanForge, human-productivity, model-quality, safety, economic, or chapter-core evidence"
+  ],
+  "promotion_burden": "Broader Resource Economics, real load-stability, scheduler, or economic claims require a separate accepted transition with live or externally reviewed workload traces, production queue logs or public-safe replay packs, reviewer-capacity measurements, residual/displaced-cost accounting, hidden-cost audits, and independent review where relevant.",
+  "limitations": [
+    "finite synthetic 10-task workload only",
+    "local deterministic route simulation",
+    "no production queue, deployed scheduler, TokenMana, or PlanForge runtime",
+    "no human-outcome, reviewer-capacity, serving-system, model-quality, benchmark, safety, or economic measurement",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent scheduler, queueing, economics, workload-quality, human-outcome, or external safety audit",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-03---accept-load-stability-selector-transition",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not prove real load stability, deployed scheduling, TokenMana, PlanForge, reviewer-optimization, human productivity, economic behavior, model quality, benchmark performance, safety, or ASI capability",
+    "does not prove source interpretation, simulator adequacy, production queue behavior, serving-system behavior, or workload-quality improvement outside the finite synthetic workload",
+    "does not replace future live traces, public replay packs, external review, production logs, hidden-cost audits, or independent review"
+  ]
+}

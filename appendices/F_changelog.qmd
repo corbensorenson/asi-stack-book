@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-03 - Accept load-stability selector transition
+
+- Added
+  `evidence_transitions/v1_x_measured/resource_load_stability_selector_synthetic_test_backed.json`
+  as the fifth accepted non-core upward transition, scoped only to
+  `resource-economics.finite_burst_load_smoothing_selector`.
+- Updated Resource Economics evidence surfaces so the finite 10-task
+  load-stability probe moves only the bounded synthetic selector claim to
+  `synthetic-test-backed`: protected capacity smoothing reduces instability
+  from 5 units to 0, residualizes 7 deferred task-ticks, rejects the
+  review-erasure negative control, and remains a finite Lean/Python fixture
+  bridge with no chapter-core, deployed scheduler, real load-stability,
+  TokenMana, PlanForge, model-quality, safety, economic, or source-interpretation
+  promotion.
+- Regenerated the Resource flagship lane result and accepted-transition audit
+  result so public trust surfaces, the non-core evidence ledger, v1 status,
+  publication readiness, roadmap, README, landing page, outline, and Appendix E
+  report five accepted non-core transitions while keeping all 44 chapter core
+  claims at `argument`.
+
 ## 2026-07-03 - Record curated reader HTML browser viability review
 
 - Built the tracked curated reader manuscript into

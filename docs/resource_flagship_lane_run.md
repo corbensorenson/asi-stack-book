@@ -29,22 +29,34 @@ python3 scripts/validate_resource_flagship_lane.py
 - Commands replayed: 10
 - Tracked artifact digests: 24
 
-The run ties together the bounded costed-route slice, workflow trace,
+The run ties together the bounded costed-route slice, load-stability selector
+transition, workflow trace,
 budget-ledger fixtures, capacity-smoothing trace, local live replay probe,
 workload-quality probe, load-stability probe, CI cost profile,
 simulation-transfer boundary fixtures, and evidence-transition validation.
 
-## Accepted Narrow Transition
+## Accepted Narrow Transitions
 
-The accepted upward transition remains scoped to
-`resource-economics.costed_route_budget_slice`, not the chapter core claim.
+The accepted upward transitions remain scoped to non-core Resource claims, not
+the Resource Economics chapter core claim.
 
 | Field | Value |
 |---|---|
+| Costed-route claim | `resource-economics.costed_route_budget_slice` |
 | Selected route | `route://bounded-transform-plus-verifier` |
 | Baseline route | `route://frontier-manual-review` |
 | Negative controls | `route://cheap-unverified-transform`; `route://hidden-residual-auto-merge` |
 | Cost reduction vs baseline | 66.98 percent |
+| New support state | `synthetic-test-backed` |
+| Transition state | `review_accepted` |
+
+| Field | Value |
+|---|---|
+| Load-stability claim | `resource-economics.finite_burst_load_smoothing_selector` |
+| Selected route | `route://selected-protected-capacity-smoothing` |
+| Baseline route | `route://baseline-admit-arrivals` |
+| Negative control | `route://negative-latency-only-review-erasure` |
+| Instability reduction vs baseline | 100.0 percent |
 | New support state | `synthetic-test-backed` |
 | Transition state | `review_accepted` |
 
@@ -68,7 +80,7 @@ without creating new upward transitions.
 | Workflow trace | `resource-economics.workflow_trace_dispatch_accounting` | `evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json` | `blocks_promotion` |
 | Local replay probe | `resource-economics.local_replay_probe` | `evidence_transitions/v1_x_measured/resource_live_probe_no_change.json` | `blocks_promotion` |
 | Workload-quality probe | `resource-economics.local_workload_quality_route_selection` | `evidence_transitions/v1_x_measured/resource_workload_quality_probe_no_change.json` | `blocks_promotion` |
-| Load-stability probe | `resource-economics.synthetic_load_stability_route_selection` | `evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json` | `blocks_promotion` |
+| Broader load-stability probe | `resource-economics.synthetic_load_stability_route_selection` | `evidence_transitions/v1_x_measured/resource_load_stability_probe_no_change.json` | `blocks_promotion` |
 | CI cost profile | `resource-economics.publication_pipeline_cost_profile` | `evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json` | `blocks_promotion` |
 
 ## Measured Workload-Quality Slice
@@ -99,7 +111,7 @@ Observed selected-vs-baseline instability reduction: 100.0 percent.
 
 ## Residuals
 
-- The accepted upward transition remains scoped to `resource-economics.costed_route_budget_slice`, not the chapter core claim.
+- The accepted upward transitions remain scoped to `resource-economics.costed_route_budget_slice` and `resource-economics.finite_burst_load_smoothing_selector`, not the chapter core claim.
 - Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.
 - Load-stability evidence is a finite synthetic burst-review workload with residualized deferrals, not a production queue trace.
 - CI cost evidence is publication-pipeline metadata, not a scheduler or economic-result measurement.
