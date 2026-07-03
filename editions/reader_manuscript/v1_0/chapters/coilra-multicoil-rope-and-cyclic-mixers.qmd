@@ -239,6 +239,18 @@ certifier run, sidecar regeneration, Circle contract-pack generation, cyclic
 mixer benchmark, MLX experiment, hardware-kernel benchmark, downstream quality
 evaluation, transfer consumer, or external Circle Lean build.
 
+The concrete RoPE boundary surface is already checkable through
+`python3 scripts/validate_circle_concrete_evidence_surface.py`. For this
+chapter, that validator preserves the imported Circle RoPE receipt facts as
+diagnostic structural evidence: Circle commit `63b0f511`,
+`CC-AI-CONTRACT-ROPE-001`, certifier `theorem_count 55`, ready digest
+`fields=31 missing=0 theorems=75`, `evidence.exact_discrete_pass=true`,
+`evidence.total_bank_collision_pair_count=0`, seven required theorem IDs,
+fingerprints, and the ASI consumer-gate boundary. That surface does not rerun
+Circle from this repository, vendor a contract pack, prove longer usable
+context, prove model quality, prove speed, prove memory savings, prove
+hardware efficiency, or promote the chapter core claim.
+
 The next honest packet is small but concrete: one structural receipt accepted
 for diagnostics, one quality-promotion request rejected for missing baselines,
 one hardware mismatch that narrows deployment scope, one wrong-period or

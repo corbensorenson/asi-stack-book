@@ -247,10 +247,12 @@ SPECIAL_REVIEW_DEFAULTS = {
             "alias/load diagnostics, parameter and hardware ledgers, baseline "
             "symmetry, negative controls, tradeoff packets, and canary-route "
             "non-claims while preserving the argument-level support boundary. "
+            "The 2026-07-03 alignment surfaces the concrete Circle RoPE "
+            "evidence surface as imported diagnostic structural evidence only. "
             "The companion note is for e-reader/audio density support only, "
             "while quality, performance, context-length, memory, training, "
-            "hardware, deployment, and support-state boundaries remain in the "
-            "reader spine."
+            "hardware, deployment, support-promotion, and reader-artifact "
+            "boundaries remain in the reader spine."
         ),
     },
     "executable-specifications-and-lean-proof-envelope": {
