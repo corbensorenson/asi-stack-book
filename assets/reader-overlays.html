@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 65,
+  "operation_count": 66,
   "operations": [
     {
       "id": "v1_0.artifact_graphs.minimum_viable_implementation_reader_replace",
@@ -53,6 +53,18 @@
       },
       "content": "A mature stewardship layer would be a project-lifecycle operating system, but not a project owner. It would keep mission, memory, roadmap, work, funds, compute, contributors, evidence, releases, governance, and sunset criteria inspectable across many human and AI work cycles.\n\nThe steward's power would come only from explicit records: a charter, work contracts, contribution ledgers, treasury policy, event-taint rules, release evidence, federation contracts, action decisions, and sunset reviews. Humans, maintainers, communities, project hives, personal hives, CI runners, and rented compute would receive scoped contracts rather than inheriting project authority.\n\nThe mature system would make spending, compute, contribution credit, governance influence, releases, appeals, forks, and exit paths visible without forcing people to ask the steward for permission to understand the project. It would also know when to stop: if value, maintainership, funds, mission coherence, or safety posture falls below the charter threshold, ordinary work generation should yield to transfer, archive, freeze, or sunset.\n\nThat endpoint remains unimplemented here. It should stay at `argument` support until workflow runners, treasury boundaries, event-taint pipelines, governance gates, release checks, sunset protocols, and behavioral tests show that stewardship can coordinate a project without seizing it.",
       "rationale": "Replace the dense steward-OS target architecture with reader prose while preserving the canonical AI/research lifecycle-control checklist."
+    },
+    {
+      "id": "v1_0.artifact_stewards.mvi_reader_replace",
+      "target_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation",
+        "aliases": []
+      },
+      "content": "The smallest honest steward is repository-local and proposal-first. It begins with a charter that names mission, non-goals, maintainers, authority ceiling, evidence policy, budget policy, allowed work, forbidden work, and sunset criteria. Work then enters through proposed contracts, not free-form agent initiative: each task should name allowed files or systems, allowed tools, required outputs, review gates, rollback path, and non-claims.\n\nIn that minimal form, the steward may label issues, draft plans, summarize pull requests, request CI, prepare decision logs, and propose work. It should not merge protected branches, spend funds, change governance, publish releases, promote evidence states, or assign outside workers without human approval. The early win is legibility, not autonomy.\n\nThe repository currently carries the record-shape slice for this idea. Schemas and valid fixtures exist for steward charters, work contracts, contribution entries, treasury policy, event taint, action decisions, and sunset reviews. Those records show that the public contract can be represented consistently, but they do not execute a steward, connect to a wallet, scan workflow events, run a governance process, or prove project safety.\n\nA bounded lifecycle probe adds one more useful check. It accepts clean release-review and sunset-review routes, and it rejects tainted intake without review, over-policy spending, contribution-to-governance laundering, unscoped federation, release without gate evidence, and ordinary work after sunset criteria are met. That is still a fixture-level result. It is useful because it keeps the failure boundaries explicit before anyone treats stewardship as an autonomous project manager.",
+      "rationale": "Replace the dense schema-and-probe inventory with reader prose while preserving the canonical steward record fixtures, lifecycle probe, and no-promotion boundary."
     },
     {
       "id": "v1_0.asi_stack_not_model.problem_reader_replace",

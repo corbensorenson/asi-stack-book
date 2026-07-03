@@ -58,6 +58,25 @@
         "",
         "That endpoint remains unimplemented here. It should stay at `argument` support until workflow runners, treasury boundaries, event-taint pipelines, governance gates, release checks, sunset protocols, and behavioral tests show that stewardship can coordinate a project without seizing it."
       ]
+    },
+    {
+      "id": "v1_0.artifact_stewards.mvi_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the dense schema-and-probe inventory with reader prose while preserving the canonical steward record fixtures, lifecycle probe, and no-promotion boundary.",
+      "content_lines": [
+        "The smallest honest steward is repository-local and proposal-first. It begins with a charter that names mission, non-goals, maintainers, authority ceiling, evidence policy, budget policy, allowed work, forbidden work, and sunset criteria. Work then enters through proposed contracts, not free-form agent initiative: each task should name allowed files or systems, allowed tools, required outputs, review gates, rollback path, and non-claims.",
+        "",
+        "In that minimal form, the steward may label issues, draft plans, summarize pull requests, request CI, prepare decision logs, and propose work. It should not merge protected branches, spend funds, change governance, publish releases, promote evidence states, or assign outside workers without human approval. The early win is legibility, not autonomy.",
+        "",
+        "The repository currently carries the record-shape slice for this idea. Schemas and valid fixtures exist for steward charters, work contracts, contribution entries, treasury policy, event taint, action decisions, and sunset reviews. Those records show that the public contract can be represented consistently, but they do not execute a steward, connect to a wallet, scan workflow events, run a governance process, or prove project safety.",
+        "",
+        "A bounded lifecycle probe adds one more useful check. It accepts clean release-review and sunset-review routes, and it rejects tainted intake without review, over-policy spending, contribution-to-governance laundering, unscoped federation, release without gate evidence, and ordinary work after sunset criteria are met. That is still a fixture-level result. It is useful because it keeps the failure boundaries explicit before anyone treats stewardship as an autonomous project manager."
+      ]
     }
   ]
 }
