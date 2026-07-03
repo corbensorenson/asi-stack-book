@@ -1,0 +1,116 @@
+{
+  "transition_id": "v1_x_measured.theseus_public_task_bundle_import.no_change",
+  "claim_id": "project-theseus-as-report-first-implementation-reference.public_task_bundle_import_summary",
+  "claim_surface_refs": [
+    "docs/theseus_public_task_bundle_import.md",
+    "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "editions/reader_manuscript/v1_0/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json",
+    "experiments/theseus_public_task_bundle_import/fixtures/valid/public_task_bundle_import.valid.json",
+    "scripts/validate_theseus_public_task_bundle_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe Project Theseus task-bundle summary import only. The import records pinned report hashes, 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 external inference calls, 0 task-level regressions, 18 benchmark gates, 19 residuals, visible artifact gaps, and expected-invalid overclaim controls from a dirty local source checkout. It does not rerun Project Theseus cleanly, reproduce benchmarks, export prompts/tests/solutions/traces/scores/candidate code, or validate model quality.",
+  "evidence_roles": [
+    "public_safe_static_import",
+    "metadata_only_task_boundary",
+    "dirty_checkout_boundary",
+    "visible_artifact_gap_accounting",
+    "expected_invalid_overclaim_controls",
+    "lean_python_fixture_alignment",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The bounded public task-bundle import is useful implementation-reference evidence because it preserves public metadata-only task counts, gate counts, residuals, artifact gaps, and non-claim boundaries while rejecting clean-live-replay, public-training leakage, prompt export, support-promotion, hidden-regression, hidden-gap, and failed-benchmark-gate controls. It remains a static summary import from a dirty checkout and therefore blocks promotion for clean live Theseus replay, model quality, benchmark superiority, generation speed, useful-solution-per-second, support-state, deployment, self-evolution, or chapter-core claims.",
+  "required_artifacts": [
+    "clean Project Theseus replay from a public-safe checkout or archived public release fixture",
+    "environment notes and exact replay command for the task-bundle lane",
+    "publication permission or redaction record for any public artifact bundle",
+    "missing-artifact closure or durable gap ledger with reviewer acceptance",
+    "verifier-quality or benchmark-quality review",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/theseus_public_task_bundle_import.md",
+    "experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json",
+    "experiments/theseus_public_task_bundle_import/fixtures/valid/public_task_bundle_import.valid.json",
+    "scripts/validate_theseus_public_task_bundle_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/v1_x_active_evidence_cycle.md",
+    "docs/theseus_report_import_slice.md",
+    "docs/theseus_generation_mode_import_slice.md",
+    "docs/theseus_support_replay_probe.md",
+    "docs/theseus_report_bundle_audit.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#project-theseus-as-report-first-implementation-reference.core",
+    "docs/book_outline.md#project-theseus-as-report-first-implementation-reference"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_public_task_bundle_import.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "clean live Project Theseus replay remains unclaimed",
+    "source checkout was dirty at import time",
+    "public prompts, tests, solutions, traces, score labels, and candidate code are not copied into this repository",
+    "0 public training rows are recorded",
+    "0 task-level regressions are recorded only inside the imported summary boundary",
+    "visible artifact gaps block support movement",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/theseus_public_task_bundle_import.md",
+    "experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json",
+    "scripts/validate_theseus_public_task_bundle_import.py"
+  ],
+  "downgrade_triggers": [
+    "task-bundle import validator failure",
+    "clean-live-replay overclaim accepted",
+    "public training rows or public prompt/test/solution/trace/score/candidate-code export accepted",
+    "hidden task regression accepted",
+    "hidden artifact gap accepted",
+    "benchmark-gate failure accepted as passing",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Project Theseus implementation-reference claim after clean public-safe replay or archived public fixture, environment notes, missing-artifact/publication-permission closure, verifier-quality review, benchmark-quality review where relevant, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "static summary import only",
+    "dirty local source checkout at import time",
+    "metadata-only public task boundary",
+    "no exported prompts, tests, solutions, traces, scores, or candidate code",
+    "no clean live Project Theseus replay",
+    "no benchmark reproduction",
+    "no model-quality result",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Project Theseus, benchmark, model-quality, verifier-quality, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no clean public-safe Theseus replay",
+    "no archived public release fixture",
+    "dirty source checkout at import time",
+    "missing artifact gaps remain visible",
+    "no publication-permission closure for broader artifacts",
+    "no verifier-quality review",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-03---record-theseus-task-bundle-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Project Theseus above argument",
+    "does not prove clean live Project Theseus replay, deployed Theseus behavior, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, support-state movement, or self-evolution safety",
+    "does not create an upward support-state transition",
+    "does not promote the Project Theseus chapter core claim"
+  ]
+}

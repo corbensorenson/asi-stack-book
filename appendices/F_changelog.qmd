@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-03 - Record Theseus task-bundle no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`
+  for the bounded public-safe Project Theseus task-bundle summary import.
+- Updated `scripts/validate_theseus_public_task_bundle_import.py` so the
+  Theseus task-bundle gate now requires the accepted no-promotion decision
+  alongside result `theseus_public_task_bundle_import_2026_07_03_local`.
+- Updated the Project Theseus live chapter, curated reader chapter, Fast
+  Generation live and reader chapters, active evidence cycle, outline,
+  roadmap, task-bundle documentation, and reader companion note so the
+  no-promotion boundary is visible at the claim surface.
+- Regenerated the accepted-transition audit result; it now records 41 accepted
+  transition records, 35 accepted no-change records, six bounded non-core
+  upward transitions, and zero accepted upward chapter-core transitions.
+- Regenerated the v1.x core-claim disposition ledger so the Project Theseus
+  chapter records the relevant non-core Theseus task-bundle no-promotion
+  transition while preserving 22 accepted transition dispositions, 22 accepted
+  no-promotion dispositions, and zero promoted core claims.
+- Boundary: this does not promote Project Theseus above `argument`, does not
+  prove clean live Project Theseus replay, deployed Theseus behavior, model
+  quality, benchmark superiority, generation speed,
+  useful-solution-per-second improvement, support-state movement, deployment
+  readiness, self-evolution safety, or any chapter core claim, and does not
+  create an upward support-state transition.
+
 ## 2026-07-03 - Tighten idea-depth roadmap execution rules
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after reviewing the latest

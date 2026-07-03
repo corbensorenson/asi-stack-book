@@ -27,7 +27,7 @@ python3 scripts/validate_resource_flagship_lane.py
 - Chapter-core support effect: `none`
 - Evidence transition created by this run: `false`
 - Commands replayed: 10
-- Tracked artifact digests: 25
+- Tracked artifact digests: 26
 
 The run ties together the bounded costed-route slice, load-stability selector
 transition, workflow trace,

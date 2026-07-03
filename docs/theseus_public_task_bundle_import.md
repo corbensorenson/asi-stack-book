@@ -17,6 +17,15 @@ boundary flags, and artifact gaps only.
 The import does not prove model quality, benchmark superiority, generation
 speed, useful-solution-per-second improvement, or clean live Theseus replay.
 
+Accepted no-promotion decision:
+`evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`.
+The decision keeps the import at `argument` support and blocks clean-live-replay,
+model-quality, benchmark-superiority, generation-speed,
+useful-solution-per-second, support-state, deployment, self-evolution, and
+chapter-core promotion claims until a clean public-safe replay or archived
+public fixture, environment notes, missing-artifact and publication-permission
+closure, verifier-quality review, and independent review exist.
+
 The imported source surface records 64 public BigCodeBench metadata-only tasks,
 0 public training rows, 0 external inference calls, 12 of 12 operator gates
 passed, 18 of 18 benchmark gates passed, 19 residuals exported, 512 student
@@ -55,4 +64,6 @@ hidden task regression, hidden artifact gap, and benchmark gate failure.
 - Does not copy public prompts, tests, solutions, traces, scores, or candidate
   code into this repository.
 - Does not promote any chapter core claim above `argument`.
-- Does not create a support-state transition or evidence transition.
+- The import result itself records support-state effect `none`; the separate
+  accepted no-promotion decision blocks broader promotion and does not create
+  an upward support-state transition.

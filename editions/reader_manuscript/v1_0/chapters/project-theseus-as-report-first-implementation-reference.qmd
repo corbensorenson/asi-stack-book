@@ -186,10 +186,15 @@ the others. `theseus_public_task_bundle_import_2026_07_03_local` records 64
 public BigCodeBench metadata-only tasks, 0 public training rows, 0 external
 inference calls, 18 benchmark gates, 19 residuals, and 0 task-level
 regressions from pinned report summaries. It also records the dirty checkout,
-missing artifact paths, and no-promotion boundary. The clean live Theseus replay
-remains unclaimed, and the import does not prove model quality, benchmark
-superiority, generation speed, useful-solution-per-second improvement, or a
-support-state transition.
+missing artifact paths, and no-promotion boundary. The accepted no-promotion
+decision `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`
+keeps the import at `argument` support and blocks clean-live-replay,
+model-quality, benchmark-superiority, generation-speed,
+useful-solution-per-second, support-state, and chapter-core promotion claims.
+The clean live Theseus replay remains unclaimed, and the import does not prove
+model quality, benchmark superiority, generation speed,
+useful-solution-per-second improvement, or an upward support-state transition.
+Boundary sentence: the import does not prove model quality.
 
 Boundary sentence: clean live Theseus replay remains unclaimed.
 

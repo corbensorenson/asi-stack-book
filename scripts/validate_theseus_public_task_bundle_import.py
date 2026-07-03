@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 VALID_FIXTURE = ROOT / "experiments" / "theseus_public_task_bundle_import" / "fixtures" / "valid" / "public_task_bundle_import.valid.json"
 INVALID_DIR = ROOT / "experiments" / "theseus_public_task_bundle_import" / "fixtures" / "invalid"
 RESULT = ROOT / "experiments" / "theseus_public_task_bundle_import" / "results" / "2026-07-03-local.json"
+DECISION = ROOT / "evidence_transitions" / "v1_x_measured" / "theseus_public_task_bundle_import_no_change.json"
 DOC = ROOT / "docs" / "theseus_public_task_bundle_import.md"
 CHAPTER = ROOT / "chapters" / "project-theseus-as-report-first-implementation-reference.qmd"
 READER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapters" / "project-theseus-as-report-first-implementation-reference.qmd"
@@ -43,11 +44,12 @@ EXPECTED_NON_CLAIMS = [
     "Does not prove model quality, benchmark superiority, generation speed, or useful-solution-per-second improvement.",
     "Does not copy public prompts, tests, solutions, traces, scores, or candidate code into this repository.",
     "Does not promote any chapter core claim above argument.",
-    "Does not create a support-state transition or evidence transition.",
+    "The import result itself records support-state effect none; the separate accepted no-promotion decision blocks promotion without creating an upward support-state transition.",
 ]
 
 SURFACE_PHRASES = [
     IMPORT_ID,
+    "evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json",
     "64 public BigCodeBench metadata-only tasks",
     "0 public training rows",
     "0 task-level regressions",
@@ -355,6 +357,46 @@ def validate_result(expected: dict[str, Any], errors: list[str]) -> None:
         errors.append(f"{rel(RESULT)} is out of date. Run `{COMMAND} --write-result`.")
 
 
+def validate_decision(errors: list[str]) -> None:
+    if not DECISION.exists():
+        errors.append(f"Missing {rel(DECISION)}.")
+        return
+    decision = load_json(DECISION)
+    if not isinstance(decision, dict):
+        errors.append(f"{rel(DECISION)} must contain an object.")
+        return
+    expected = {
+        "transition_id": "v1_x_measured.theseus_public_task_bundle_import.no_change",
+        "claim_id": "project-theseus-as-report-first-implementation-reference.public_task_bundle_import_summary",
+        "old_support_state": "argument",
+        "new_support_state": "argument",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "review_status": "accepted",
+        "support_state_effect": "blocks_promotion",
+        "verification_result": "pass",
+    }
+    for field, expected_value in expected.items():
+        if decision.get(field) != expected_value:
+            errors.append(f"{rel(DECISION)}: {field} must be {expected_value!r}.")
+    for field, phrase in (
+        ("artifact_refs", rel(RESULT)),
+        ("artifact_refs", rel(VALID_FIXTURE)),
+        ("artifact_refs", "scripts/validate_theseus_public_task_bundle_import.py"),
+        ("negative_results", "clean live Project Theseus replay remains unclaimed"),
+        ("negative_results", "source checkout was dirty at import time"),
+        ("downgrade_triggers", "clean-live-replay overclaim accepted"),
+        ("acceptance_blockers", "no clean public-safe Theseus replay"),
+        ("non_claims", "does not promote the Project Theseus chapter core claim"),
+    ):
+        if phrase.lower() not in text_blob(decision.get(field, [])).lower():
+            errors.append(f"{rel(DECISION)}: {field} missing {phrase!r}.")
+    reason = str(decision.get("transition_reason", "")).lower()
+    for phrase in ("model quality", "benchmark superiority", "generation speed", "useful-solution-per-second"):
+        if phrase not in reason:
+            errors.append(f"{rel(DECISION)}: transition_reason missing {phrase!r} boundary.")
+
+
 def validate_surfaces(errors: list[str]) -> None:
     surfaces = {
         rel(DOC): DOC,
@@ -403,6 +445,7 @@ def main() -> None:
         RESULT.write_text(json.dumps(expected_result, indent=2) + "\n", encoding="utf-8")
     else:
         validate_result(expected_result, errors)
+    validate_decision(errors)
     validate_surfaces(errors)
 
     if errors:

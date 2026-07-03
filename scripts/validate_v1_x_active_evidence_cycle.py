@@ -42,6 +42,7 @@ STATIC_REQUIRED_FRAGMENTS = (
     "docs/theseus_support_replay_probe.md",
     "docs/fast_generation_task_bundle.md",
     "evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json",
+    "evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json",
     "lean/AsiStackProofs/FastGeneration.lean",
 )
 
@@ -159,6 +160,7 @@ def main() -> None:
         "experiments/fast_generation_task_bundle/results/2026-07-02-local.json",
         "scripts/validate_fast_generation_task_bundle.py",
         "evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json",
+        "evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json",
     )
     for relative in referenced_paths:
         if relative not in text:
