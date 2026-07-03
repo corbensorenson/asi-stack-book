@@ -33,6 +33,12 @@ That moment is where a record becomes authority, and where a missing approval,
 stale lease, leaked handle, or vague rollback path can turn a good plan into a
 bad effect.
 
+The adapter chapter's specific addition is the external-effect lease. Many
+parts of the stack produce records, but an adapter record has to decide whether
+anything may actually change outside the system. Permission, approval, sandbox,
+secret handle, pre-state, post-state, rollback, residual, and effect receipt
+are the difference between thinking about an action and doing it.
+
 ## Problem
 
 Plans become real-world effects only through tools, runtimes, deployment
@@ -407,7 +413,7 @@ stronger state.
 
 ## Evidence Boundary
 
-This chapter argues for capability-mediated external effects. It does not
+The runtime-adapter layer argues for capability-mediated external effects. It does not
 claim that the ASI Stack can safely use arbitrary tools.
 
 Current evidence consists of source synthesis, passage-reviewed source

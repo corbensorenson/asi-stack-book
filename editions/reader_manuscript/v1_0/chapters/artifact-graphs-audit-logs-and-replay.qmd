@@ -44,6 +44,12 @@ attempt left behind and what future systems are allowed to do with it. That
 distinction keeps execution from becoming a pile of outputs that later readers
 mistake for proof.
 
+The local contribution is the record-reality boundary. The stack will produce
+many receipts, logs, and validation records, but a record becomes
+useful evidence only when it can be tied to a work product, replay grade,
+trusted verifier path, residual, and allowed claim effect. Stored confidence is
+not the same thing as inspectable continuity.
+
 ## Problem
 
 The stack needs durable work products and replayable traces.
@@ -376,7 +382,7 @@ is remembered as structured evidence rather than as folders full of outputs.
 
 ## Evidence Boundary
 
-This chapter argues for an artifact-continuity layer. It does not claim that a
+The artifact-continuity layer remains an argument. It does not claim that a
 complete artifact graph has been deployed.
 
 The current evidence is source synthesis, a public artifact record schema,

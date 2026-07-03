@@ -22,7 +22,7 @@ permission expires, what failures remain in escrow, and where the system must
 route if the gate fails. In ordinary software terms, it is release engineering.
 In the ASI Stack, it is release engineering for intelligence.
 
-The previous chapter made a route into a lease. This chapter asks whether the
+The previous layer made a route into a lease. Readiness asks whether the
 leased capability is mature enough for ordinary use, narrow enough for canary
 use, useful only for diagnosis, or too stale to touch the task at all. It is
 the difference between selecting a promising candidate and admitting a
@@ -34,6 +34,11 @@ be kept in shadow, canary, diagnostic use, quarantine, or review until the
 evidence catches up. That makes progress slower on paper and safer in
 practice, because the stack can remember promise without spending it as
 permission.
+
+Readiness contributes the routability rule. A capability can remain the same
+capability while its allowed use changes: draft, shadow, canary, default,
+diagnostic-only, quarantined, retired, or superseded. The gate turns evidence
+and residuals into permission for ordinary use, not just a nicer status label.
 
 ![Draft readiness residual quarantine map.](../../../../assets/diagrams/readiness-residual-quarantine-map.svg){#reader-fig-readiness-residual-quarantine-map fig-alt="Draft readiness residual quarantine map showing a candidate route or replacement proposal entering a readiness gate record, splitting into limited allowed use, residual escrow, quarantine, blocker handling, review rerun, gate-laundering boundary, and support-state non-claim boundary."}
 
@@ -70,7 +75,7 @@ records performance. A router records selection. A safety review records risk.
 A changelog records deployment. A bug tracker records failures. The promotion
 decision happens between them.
 
-This chapter joins those surfaces into one transition record. Benchmaxxing
+Readiness joins those surfaces into one transition record. Benchmaxxing
 contributes the idea that benchmarks are temporary pressure surfaces rather
 than permanent definitions of intelligence. RMI contributes residual escrow:
 the tail of unsolved cases should remain visible as the frontier moves. Stable

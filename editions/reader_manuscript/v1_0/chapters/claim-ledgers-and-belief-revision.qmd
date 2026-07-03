@@ -38,6 +38,12 @@ variants, preserve contradictions, route uncertainty to review, or retire a
 claim whose support has failed. Those are not editorial embarrassments. They
 are maintenance operations on the system's epistemic state.
 
+The local contribution here is continuity. Evidence States explains when a
+claim may move; the claim ledger keeps the claim recognizable while wording,
+surface, source context, contradiction state, and revision history change. It
+protects the old trail so the system can improve its belief without erasing
+how it got there.
+
 ## Problem
 
 Verification bandwidth decides whether a context packet is adequate for a
@@ -121,7 +127,7 @@ Claim ledgers should maintain support states, provenance, contradiction links,
 uncertainty, and revision history for material claims. In the live book, this
 chapter's core claim remains a design rationale at `argument` support.
 
-Spinoza supplies the strongest reasoning source for this chapter: claims
+Spinoza supplies the strongest reasoning source for the claim-ledger layer: claims
 should be proposed separately from verification, represented with provenance
 and tiers, revised when contradictions appear, and downgraded when proof,
 citation, or procedure support fails. VIEA supplies the execution pressure:
@@ -340,7 +346,7 @@ catch confidence laundering.
 
 ## Evidence Boundary
 
-This chapter is evidence-aware, not evidence-promoted.
+The claim-ledger layer is evidence-aware, not evidence-promoted.
 
 The live chapter remains at `argument` support. The local Lean predicates and
 synthetic harnesses support only record discipline over declared finite

@@ -65,6 +65,8 @@ Talos treats evidence, logs, and replay as execution primitives. GenesisCode add
 
 This is not only a software-engineering hygiene issue. It is an alignment boundary. A system that can alter documents, invoke tools, route tasks, summarize sources, or rewrite its own procedures must leave inspectable work products behind. Without artifact continuity, review becomes forensic guesswork and self-improvement becomes memory without accountability.
 
+Within the governed-cognition pattern, the artifact-graph layer owns the record-reality delta. The common record shape is not enough: the artifact graph asks whether a receipt corresponds to a work product, whether replay has a declared grade, where verifier trust bottoms out, and what residual remains outside the trusted path. Other layers may emit receipts; the artifact-graph layer defines how those receipts become inspectable artifacts rather than self-reported confidence.
+
 ## Why existing approaches are insufficient
 
 If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.

@@ -10,8 +10,8 @@ implementation horizons, and release blockers.
 
 # Evidence States and Claim Discipline
 
-The failure chapter names ways an intelligent system can go wrong. This chapter
-names a quieter failure: a book about such systems can go wrong by sounding more
+The failure chapter names ways an intelligent system can go wrong. Evidence
+discipline names a quieter failure: a book about such systems can go wrong by sounding more
 certain than its evidence allows.
 
 That is not a stylistic issue. In a living book, prose improves continuously.
@@ -29,11 +29,17 @@ be able to tell the difference between clearer exposition and stronger support.
 That distinction is the trust surface for the whole project. The live book can
 change every day, but confidence should change only through records.
 
-That makes this chapter more than a set of house rules. It is one of the
-book's central methodological claims: a living technical text needs a public
+That makes evidence discipline more than a set of house rules. It is one of
+the book's central methodological claims: a living technical text needs a public
 way to keep claims, evidence, revisions, failures, and confidence from drifting
 apart. Without that discipline, the book could become more persuasive while
 becoming less accountable. With it, ambition stays attached to receipts.
+
+The local contribution is claim movement. Many layers use records
+and receipts, but this layer decides when a claim is allowed to sound stronger,
+weaker, narrower, deprecated, or refuted. The central safeguard is not caution
+as a mood; it is confidence changing only when the right evidence transition
+exists.
 
 ![Draft evidence-state ladder.](../../../../assets/diagrams/evidence-state-ladder.svg){#reader-fig-evidence-state-ladder fig-alt="Draft evidence-state ladder figure separating claim labels from support states and showing transition review, promotion, no change, demotion or refutation, blockers, residuals, non-claims, and public ledger updates."}
 
@@ -74,7 +80,7 @@ scope, contamination awareness, failure semantics, and regression duties before
 it can move confidence. A proof is not enough unless its formal scope matches
 the claim being strengthened.
 
-The internal sources used by this chapter each point at part of that discipline.
+The internal sources used by the evidence-state layer each point at part of that discipline.
 Benchmaxxing treats benchmarks as pressure surfaces with lifecycle states,
 anti-Goodhart safeguards, wall diagnoses, residuals, and regression duties
 rather than permanent definitions of intelligence. Spinoza contributes claim
@@ -325,7 +331,7 @@ external review. It is a local record audit that keeps the book from quietly
 treating review paperwork as stronger evidence than it is.
 
 That is useful. It is also limited. The schemas and Lean hooks do not promote
-this chapter's core claim without claim-specific evidence and accepted review.
+the evidence-state core claim without claim-specific evidence and accepted review.
 They prove that the book has a record shape and a small transition discipline,
 not that every claim in the book is true.
 

@@ -40,7 +40,7 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter defines the authority vocabulary for the stack. It is not a claim that all authority checks are implemented; only the explicitly recorded schemas, fixtures, harnesses, and Lean modules count as executable support.
+The authority layer defines the vocabulary for the stack. It is not a claim that all authority checks are implemented; only the explicitly recorded schemas, fixtures, harnesses, and Lean modules count as executable support.
 
 It follows the efficiency chapter because the cheapest adequate route is useful only when route selection remains separate from permission to act. Cost, quality, and authority are different ledgers.
 
@@ -63,6 +63,8 @@ Boundaries, authority ceilings, permissions, and handoffs need a formal vocabula
 Efficiency routes cognition by cost and quality. That only works if route selection cannot silently become permission to act. A planner may know how to decompose a task without being allowed to touch production. A memory layer may read a source without being allowed to reveal it. A specialist may generate a patch without being allowed to apply it. Those separations need words and records before governance can be claimed.
 
 Authority is not a mood, trust score, or model reputation. It is a typed capability attached to a principal, layer, tool, field, artifact, or handoff, bounded by a ceiling and revoked through an auditable path. VIEA needs this to keep intent-to-execution from becoming intent-to-side-effect. SCF needs it so replacement implementations cannot inherit broader powers by occupying a stable capability slot. Talos needs it so typed jobs and tool permissions stay inside a control plane. Ladon/Manhattan and GenesisCode sharpen the same point: secrets, effects, patches, and executors need explicit gates.
+
+Within the book's governed-cognition pattern, the permission layer owns the can/may delta. The shared governance shape becomes usable only when it can distinguish competence from permission, carry revocation forward, and make denial evidence durable. Other layers reuse permission fields; this layer defines why permission cannot be inferred from capability, context, route quality, source access, or user enthusiasm.
 
 Refusal and escalation should behave like normal engineering outcomes. A well-governed system should be able to say: the plan is coherent, the source is available, the model is capable, and the action is still not authorized. That sentence names the boundary the stack must protect. It lets the architecture remain useful under pressure, because a denial is not a failure to be intelligent; it is evidence that the correct authority boundary held.
 

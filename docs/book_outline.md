@@ -264,6 +264,7 @@ Draft arc:
 - Mechanism: Define principals, authorities, ceilings, grants, revocations, and handoff contracts.
 - Mechanism: Separate knowledge access from action authority.
 - Mechanism: Represent missing authority as a detectable failure rather than implicit permission.
+- Mechanism: State the local governed-cognition pattern delta: this chapter owns the authority-ceiling distinction between competence and permission, including durable denial and revocation evidence.
 - Mechanism: Model grant lifecycle as requested, denied, granted, delegated, used, receipted, expired, or revoked.
 - Mechanism: Distinguish read, transform, disclose, write, execute, and approve permissions.
 - Mechanism: Preserve caller ceiling, target-required authority, delegation chain, expiry/review condition, audit receipts, and non-claims so a capable tool cannot launder broader permission through a lower-authority requester.
@@ -404,6 +405,7 @@ Draft arc:
 - Mechanism: Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.
 - Mechanism: emit evidence receipts that lock artifact role, claim scope, claim-record linkage, source-mapping status, evidence-readiness state, transition effect, transition validity state, evidence role, verification command or review, reviewer refs, downgrade triggers, promotion burden, acceptance blockers, reviewer independence, changelog ref, limitations, non-claims, and negative or inconclusive results.
 - Mechanism: frame support-state discipline as the book's methodological contribution, paired with Living Book Methodology, while keeping the current claim at `argument` support until accepted transitions or stronger evidence exist.
+- Mechanism: State the local governed-cognition pattern delta: this chapter owns claim movement, where records become evidence transitions with claim identity, support state, artifact role, review or command receipt, negative evidence, downgrade triggers, blockers, and non-claims.
 - Mechanism: treat upward support movement as a burden and downward movement as mandatory when contradiction, missing evidence, failed verification, or scope mismatch appears.
 - Interface: Drafting updates claims.
 - Interface: Experiments update evidence.
@@ -1406,6 +1408,7 @@ Draft arc:
 - Mechanism: Treat belief revision as support-state change, downgrade, split, merge, residual creation, or tribunal escalation rather than promotion-only bookkeeping.
 - Mechanism: Track claim lifecycle states such as proposed, recorded, mapped, challenged, revised, downgraded, deprecated, split, merged, promoted, and retired.
 - Mechanism: Preserve ledger identity across chapters, diagrams, appendices, release notes, and reader editions so confidence cannot drift through repetition.
+- Mechanism: State the local governed-cognition pattern delta: this chapter owns belief-state continuity, keeping claim identity, wording variants, surface refs, contradiction state, assumptions, and revision history joined as prose changes.
 - Mechanism: Record claim scope, surface refs, contradiction state, residual refs, changed surfaces, non-overwrite attestation, ledger effect, promotion blockers, and non-claims so repeated prose cannot launder confidence.
 - Handoff: Selected high-value claims flow to Spinoza for proof-, citation-, or procedure-carrying justification envelopes.
 - Interface: VCM supplies source context.
@@ -1624,6 +1627,7 @@ Draft arc:
 - Mechanism: Treat replay as graded rather than binary: byte-for-byte replay, semantic replay, partial replay, and non-replayability must be declared before artifact reuse can affect evidence state.
 - Mechanism: link artifact nodes to context transaction refs and semantic certificate refs so artifact reuse preserves the memory and representation boundaries it inherited.
 - Mechanism: require replay grade, evidence gate, residuals, and non-claims before an artifact can influence claim support, compression, procedural memory, or release records.
+- Mechanism: State the local governed-cognition pattern delta: this chapter owns the record-reality boundary, requiring receipt faithfulness, replay grade, trusted verifier roots, recursion stops, residuals, and allowed claim effects before stored records become evidence-ready artifacts.
 - Mechanism: require receipt faithfulness checks before a shape-valid record can affect support state; a receipt must be cross-checked against independent observation, trap receipts, and explicit attestation limits instead of being trusted because it matches schema.
 - Mechanism: name the epistemic trusted computing base for artifact evidence: the minimal trusted core, root-of-trust refs, delegation rule, recursion stop condition, verifier independence state, outside-TCB residuals, and non-claims must be explicit before verifier outputs can be consumed.
 - Handoff: Runtime adapters produce effect receipts and residuals that must return to the artifact graph before they become evidence.
@@ -1701,6 +1705,7 @@ Draft arc:
 - Mechanism: Keep job request, approval decision, effect receipt, verification result, rollback handle, and irreversible residuals as separate artifacts.
 - Mechanism: Treat approval as scoped to target, risk tier, expiration, permitted reuse, and revocation path.
 - Mechanism: Treat human oversight degradation as a first-class adapter failure mode: approval fatigue, rubber-stamping, alarm fatigue, and automation bias can route an approval record to delay, reviewer rotation, independent-evidence checking, blocked dispatch, or non-claim repair rather than accepted execution.
+- Mechanism: State the local governed-cognition pattern delta: this chapter owns the external-effect lease, where permission, approval, sandbox, secret handle, pre-state, post-state, rollback, residual, and effect receipt gate mutation of outside state.
 - Handoff: Repeated adapter traces and repair patterns become candidates for procedural memory only after evidence and regression checks exist.
 - Interface: Execution owns adapters.
 - Interface: Security mediates secrets.
@@ -1941,6 +1946,7 @@ Draft arc:
 - Mechanism: record scoped lifecycle transitions with authority envelope, freshness window, workload family, fallback path, expiry, floor evidence, frontier evidence, and inherited residuals.
 - Mechanism: expose allowed routes, blocked routes, fallback path, expiry, inherited residuals, and non-claims so canary or diagnostic permission cannot be mistaken for default readiness.
 - Mechanism: Separate evidence state, floor evidence, frontier evidence, diagnostic permissions, and closure conditions so fixture validation, source-reported gates, and reproduced readiness cannot collapse into one status.
+- Mechanism: State the local governed-cognition pattern delta: this chapter owns routability, where lifecycle records turn evidence and residual custody into allowed routes, blocked routes, quarantine, retirement, or supersession rather than mere status labels.
 - Handoff: Runtime references such as MoECOT must emit the gate, replay, benchmark, residual, and promotion-blocker records that readiness decisions require.
 - Interface: Routing reads readiness.
 - Interface: Benchmarks update gates.

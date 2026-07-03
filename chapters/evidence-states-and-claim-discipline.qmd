@@ -4,7 +4,7 @@ chapter_id: "evidence-states-and-claim-discipline"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-03"
 primary_sources:
   - "benchmaxxing"
   - "spinoza"
@@ -15,7 +15,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Appendix C now records a claim-level source-note map for this chapter's core claim, and five of six assigned mappings have local raw-cache passage review; the support state remains argument until the connector-only mapping has stronger recoverable passage support or an evidence transition is accepted."
+  - "Appendix C now records a claim-level source-note map for the evidence-state core claim, and five of six assigned mappings have local raw-cache passage review; the support state remains argument until the connector-only mapping has stronger recoverable passage support or an evidence transition is accepted."
   - "The claim_record and evidence_transition_record fixtures and evidence-state Lean proofs validate narrow transition surfaces only; the fixtures now record source mapping status, source mapping refs, evidence readiness state, required next evidence, claim surface refs, claim record refs, transition validity state, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, acceptance blockers, reviewer independence, changelog ref, support-state effect, and non-claims. The support-state harness includes synthetic downward demotion and terminal refutation cases, and Lean now includes a finite transition-lifecycle route envelope for no-change, missing record, scope, support-effect, review, evidence, negative-evidence, downgrade-trigger, terminal-effect, changelog, and non-claim-boundary cases. The Evidence bundle completeness and changelog-consistency probe adds two valid synthetic evidence bundles and seven expected-invalid controls; the Claim ledger completeness audit checks 44 manifest chapter core claims, 44 Appendix C rows, and seven expected-invalid mutation controls; the Accepted live transition review audit checks 41 accepted transition records, six bounded non-core upward transitions, the accepted no-promotion ledger, and seven expected-invalid mutation controls. No live chapter core claim is promoted, demoted, deprecated, or refuted."
   - "Source-noted external comparators now position the evidence-state method against model cards, datasheets, ML reproducibility-review practice, and proof-carrying-code lineage; this is methodological positioning only, not a reproduced model-card, datasheet, external-review, or proof-carrying-code implementation."
   - "No support-state promotion is implied by this drafting pass."
@@ -29,7 +29,7 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
+| Last updated | 2026-07-03 |
 | Primary source records | `benchmaxxing`, `spinoza`, `viea`, `uat`, `coherence_exchange`, `verification_bandwidth` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -46,7 +46,7 @@ It follows the failure chapter because the book itself has the same failure surf
 
 The control object is an evidence receipt. A receipt says exactly what artifact supports which claim, under which scope, in which evidence role, with which claim record, by which command or review, with which acceptance blockers, with which limitations, with which downgrade triggers, and with which negative or inconclusive results still attached.
 
-This chapter is therefore not a housekeeping chapter. It is the book's methodological claim-control layer, paired with Living Book Methodology: the method by which a living technical text can keep changing without turning clearer writing into stronger evidence.
+Evidence discipline is therefore not housekeeping. It is the book's methodological claim-control layer, paired with Living Book Methodology: the method by which a living technical text can keep changing without turning clearer writing into stronger evidence.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -67,6 +67,8 @@ Failure modes need a claim discipline or they turn into confident prose. A livin
 The book therefore treats evidence discipline as an architectural layer, not as editorial housekeeping. Each important claim must say what kind of claim it is and what currently supports it. A source note may justify a source-derived discussion. A Lean module may justify a mechanized invariant. A synthetic fixture may justify a narrow test-backed claim. None of those automatically proves the others, and none should borrow confidence from the reader's trust in the surrounding prose.
 
 That makes evidence states one of the book's methodological contributions. The proposal is not merely "write caveats." The proposal is to give claims a finite lifecycle, a support-state ledger, transition records, downgrade paths, non-claim boundaries, and public receipts so that a living architecture can revise itself without laundering confidence.
+
+Within the governed-cognition pattern, the evidence-state layer owns the claim-movement delta. A record becomes an evidence transition only when it names the claim identity, support state, artifact role, review or command receipt, negative-evidence slot, downgrade trigger, acceptance blocker, and explicit non-claims. Other layers can attach evidence gates to their mechanisms; the evidence-state layer defines how confidence is allowed to move at all.
 
 ## Why existing approaches are insufficient
 
@@ -296,7 +298,7 @@ These evidence-state hooks are implemented in the local Lean workspace. The modu
 | `ext_ml_reproducibility_program_2021` | Improving Reproducibility in Machine Learning Research | ml_reproducibility_reporting | External comparator for checklists, code submission, reproducibility reports, artifact review, and reviewer-readable replay expectations. | source note available; comparator only |
 | `ext_proof_carrying_code_1997` | Proof-Carrying Code | formal_methods | External comparator for pairing artifacts with machine-checkable evidence scoped to a declared host policy. | source note available; comparator only |
 
-The crosswalk names the evidence vocabulary loaded for this chapter. The external comparators position the method against known reporting, reproducibility, and proof-carrying practices. They do not assert a local model-card workflow, datasheet workflow, external reproducibility review, proof-carrying-code implementation, or support-state promotion. Support movement still requires an exact transition record, source mapping, proof, test, or external-literature citation.
+The crosswalk names the evidence vocabulary loaded for the evidence-state layer. The external comparators position the method against known reporting, reproducibility, and proof-carrying practices. They do not assert a local model-card workflow, datasheet workflow, external reproducibility review, proof-carrying-code implementation, or support-state promotion. Support movement still requires an exact transition record, source mapping, proof, test, or external-literature citation.
 
 ## Summary
 
