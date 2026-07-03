@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-03 - Surface core claim dispositions in public trust path
+
+- Updated the README and landing-page 60-second trust surfaces to link
+  `docs/core_claim_disposition_ledger.md` and name the current disposition
+  counts: 44 per-chapter core-claim dispositions, 22 accepted no-change
+  transition dispositions, 22 accepted no-promotion dispositions, and 0
+  promoted chapter core claims.
+- Updated `scripts/validate_trust_surface.py` so those public counts are
+  derived from `claim_decisions/v1_x_core_claim_dispositions.json` and fail if
+  the README or landing page drifts.
+- Updated `docs/v1_0_candidate_status.md` and
+  `scripts/validate_v1_status_snapshot.py` to include the v1.x disposition
+  ledger and to correct a stale 24-decision sentence to the current 22/22
+  split.
+- Updated `scripts/sync_scaffold.py` so generated Appendix C points to the
+  per-chapter disposition ledger without hand-editing the generated appendix.
+- Boundary: this is public traceability and stale-count repair only. It does
+  not promote any chapter core claim, convert non-core evidence into
+  chapter-core support, approve reader artifacts, or create external review.
+
 ## 2026-07-03 - Add v1.x core claim disposition ledger
 
 - Added `claim_decisions/v1_x_core_claim_dispositions.json` and generated

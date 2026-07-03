@@ -772,6 +772,21 @@ def write_claim_matrix(structure: dict) -> None:
         )
     label_rows = "\n".join(f"| {qmd_escape(label)} | {qmd_escape(meaning)} |" for label, meaning in CLAIM_LABELS)
     support_rows = "\n".join(f"| {qmd_escape(state)} | {qmd_escape(meaning)} |" for state, meaning in SUPPORT_STATES)
+    disposition_summary = ""
+    disposition_path = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
+    if disposition_path.exists():
+        disposition_data = read_json(disposition_path)
+        if isinstance(disposition_data, dict) and isinstance(disposition_data.get("summary"), dict):
+            summary = disposition_data["summary"]
+            disposition_summary = (
+                "\nThe current per-chapter core-claim dispositions are summarized in "
+                "`docs/core_claim_disposition_ledger.md`: "
+                f"{summary.get('accepted_core_transition_dispositions', 0)} accepted core-transition dispositions, "
+                f"{summary.get('accepted_no_promotion_dispositions', 0)} accepted no-promotion dispositions, "
+                f"{summary.get('promoted_core_claims', 0)} promoted core claims, and "
+                f"{summary.get('chapter_core_claims_remaining_at_argument', len(chapters))} chapter core claims remaining at `argument`."
+            )
+
     text = f"""# Claim/Evidence Matrix
 
 This matrix contains one core claim per dynamic chapter and records the conservative evidence state used by the current manuscript.
@@ -783,6 +798,7 @@ No chapter core claim is marked `source-derived`, `prototype-backed`, `synthetic
 Current generated coverage: {len(chapters)} chapter core claims, {total_claim_mappings} exact claim-source mappings, {total_passage_reviewed} passage-reviewed mappings, and {len(promotion_paths)} reviewer-facing promotion-path rows from `docs/per_chapter_evidence_plan.md`. Unreviewed mappings remain source-note mappings until passage review, accepted evidence transitions, or validated artifacts justify narrower support-state movement.
 
 The current accepted non-core upward transitions are summarized in `docs/non_core_evidence_ledger.md`. They do not promote any chapter core claim above `argument`.
+{disposition_summary}
 
 | Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap | What would promote this |
 |---|---|---|---|---|---|---|---|---|---|---|

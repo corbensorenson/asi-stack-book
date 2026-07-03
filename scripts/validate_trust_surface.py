@@ -20,6 +20,7 @@ INDEX = ROOT / "index.qmd"
 STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
 READER_AUDIT = ROOT / "docs" / "reader_continuity_audit.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
+CORE_DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
 
 EXPECTED_NON_CORE = {
     "living-book-methodology.phase5_harness_registry_runner": "synthetic-test-backed",
@@ -32,6 +33,7 @@ EXPECTED_NON_CORE = {
 
 REQUIRED_LINKS = [
     "docs/v1_0_candidate_status.md",
+    "docs/core_claim_disposition_ledger.md",
     "docs/non_core_evidence_ledger.md",
     "docs/contribution_novelty_ledger.md",
     "appendices/C_claim_evidence_matrix.qmd",
@@ -93,6 +95,27 @@ def source_count() -> int:
     return len(inventory)
 
 
+def disposition_summary() -> dict[str, int]:
+    data = read_json(CORE_DISPOSITIONS)
+    if not isinstance(data, dict) or not isinstance(data.get("summary"), dict):
+        raise SystemExit("claim_decisions/v1_x_core_claim_dispositions.json missing summary.")
+    summary = data["summary"]
+    required = {
+        "manifest_chapter_core_claims",
+        "accepted_core_transition_dispositions",
+        "accepted_no_promotion_dispositions",
+        "promoted_core_claims",
+        "chapter_core_claims_remaining_at_argument",
+    }
+    missing = sorted(key for key in required if not isinstance(summary.get(key), int))
+    if missing:
+        raise SystemExit(
+            "claim_decisions/v1_x_core_claim_dispositions.json summary missing integer keys: "
+            + ", ".join(missing)
+        )
+    return {key: int(summary[key]) for key in required}
+
+
 def metric(report: str, label: str) -> str:
     pattern = re.compile(rf"^\|\s*{re.escape(label)}\s*\|\s*([^|]+?)\s*\|", re.MULTILINE)
     match = pattern.search(report)
@@ -112,10 +135,15 @@ def assert_surface(
     medium: str,
     long_paragraphs: str,
     active_overlays: str,
+    dispositions: dict[str, int],
 ) -> None:
     required = [
         "60-Second Trust Surface",
         f"{chapters} chapter core claims remain at `argument`",
+        f"{dispositions['manifest_chapter_core_claims']} per-chapter core-claim dispositions",
+        f"{dispositions['accepted_core_transition_dispositions']} accepted no-change transition dispositions",
+        f"{dispositions['accepted_no_promotion_dispositions']} accepted no-promotion dispositions",
+        f"{dispositions['promoted_core_claims']} promoted core claims",
         f"{sources} public-safe records",
         f"{chapters}/{chapters} chapters externally positioned",
         "0 explicit external-baseline exceptions",
@@ -156,6 +184,7 @@ def main() -> None:
     errors: list[str] = []
     chapters = chapter_count()
     sources = source_count()
+    dispositions = disposition_summary()
     reader_audit = read_text(READER_AUDIT)
     high = metric(reader_audit, "High-priority heuristic review chapters")
     medium = metric(reader_audit, "Medium-priority heuristic review chapters")
@@ -181,6 +210,7 @@ def main() -> None:
             medium=medium,
             long_paragraphs=long_paragraphs,
             active_overlays=active_overlays,
+            dispositions=dispositions,
         )
 
     public_status_needles = [
