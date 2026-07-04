@@ -16,6 +16,8 @@ REVIEW = ROOT / "docs" / "reader_key_figure_artifact_review.md"
 COMPANION_NOTE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "companion_notes" / "key-figures.md"
 FORMAT_PROBE_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 FORMAT_PROBE_DOC = ROOT / "docs" / "reader_key_figure_format_probe.md"
+RASTER_PROBE_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_raster_manifest.json"
+RASTER_PROBE_DOC = ROOT / "docs" / "reader_key_figure_raster_review.md"
 
 EXPECTED_COUNT = 10
 BOUNDARY_PHRASES = (
@@ -169,6 +171,7 @@ def validate_review_doc(figures: list[dict[str, Any]], errors: list[str]) -> Non
     required = [
         "python3 scripts/validate_reader_key_figures.py",
         "python3 scripts/validate_reader_key_figure_format_probe.py --write-manifest --write-doc",
+        "python3 scripts/validate_reader_key_figure_raster_probe.py --write-manifest --write-doc",
         "not a release approval",
         "not final figure-artifact review",
         "EPUB",
@@ -232,6 +235,56 @@ def validate_format_probe(figures: list[dict[str, Any]], errors: list[str]) -> N
     ):
         if phrase not in doc_text:
             errors.append(f"{rel(FORMAT_PROBE_DOC)} missing required phrase {phrase!r}.")
+
+
+def validate_raster_probe(figures: list[dict[str, Any]], errors: list[str]) -> None:
+    if not RASTER_PROBE_MANIFEST.exists():
+        errors.append(f"Missing {rel(RASTER_PROBE_MANIFEST)}.")
+        return
+    if not RASTER_PROBE_DOC.exists():
+        errors.append(f"Missing {rel(RASTER_PROBE_DOC)}.")
+        return
+    manifest = load_json(RASTER_PROBE_MANIFEST)
+    if manifest.get("schema_version") != "asi_stack.reader_key_figure_raster_probe.v0":
+        errors.append(f"{rel(RASTER_PROBE_MANIFEST)} schema_version drifted.")
+    if manifest.get("status") != "passed_local_raster_artifact_probe":
+        errors.append(f"{rel(RASTER_PROBE_MANIFEST)} status must be passed_local_raster_artifact_probe.")
+    summary = manifest.get("summary", {})
+    if not isinstance(summary, dict):
+        errors.append(f"{rel(RASTER_PROBE_MANIFEST)} summary must be an object.")
+        summary = {}
+    expected = {
+        "figure_count": len(figures),
+        "raster_artifact_count": 10,
+        "standard_dimension_count": 10,
+        "maximum_transparent_pixel_count": 420,
+    }
+    for key, value in expected.items():
+        observed = summary.get(key)
+        if observed != value:
+            errors.append(f"{rel(RASTER_PROBE_MANIFEST)} summary.{key} must be {value}, found {observed}.")
+    thresholds = {
+        "minimum_opaque_pixel_percent": 99.9,
+        "minimum_luminance_std": 25.0,
+        "minimum_quantized_color_count": 100,
+        "minimum_dark_pixel_percent": 0.4,
+        "minimum_mid_tone_pixel_percent": 5.0,
+    }
+    for key, threshold in thresholds.items():
+        observed = summary.get(key)
+        if not isinstance(observed, (int, float)) or observed < threshold:
+            errors.append(f"{rel(RASTER_PROBE_MANIFEST)} summary.{key} must be at least {threshold}.")
+    doc_text = RASTER_PROBE_DOC.read_text(encoding="utf-8", errors="ignore")
+    for phrase in (
+        "Reader Key-Figure Raster Review",
+        "| Raster artifacts checked | 10 |",
+        "| Standard dimensions | 10 |",
+        "not manual aesthetic review",
+        "not final figure-artifact approval",
+        "not reader release approval",
+    ):
+        if phrase not in doc_text:
+            errors.append(f"{rel(RASTER_PROBE_DOC)} missing required phrase {phrase!r}.")
 
 
 def validate_companion_note(figures: list[dict[str, Any]], errors: list[str]) -> None:
@@ -311,6 +364,7 @@ def main() -> None:
 
     validate_review_doc(figures, errors)
     validate_format_probe(figures, errors)
+    validate_raster_probe(figures, errors)
     validate_companion_note(figures, errors)
     if errors:
         print("Reader key-figure validation failed:")

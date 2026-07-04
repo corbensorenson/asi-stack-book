@@ -26,6 +26,12 @@ Format-package probe:
 python3 scripts/validate_reader_key_figure_format_probe.py --write-manifest --write-doc
 ```
 
+Raster artifact probe:
+
+```bash
+python3 scripts/validate_reader_key_figure_raster_probe.py --write-manifest --write-doc
+```
+
 This review records the current draft key-figure artifact inspection for the
 curated reader manuscript. It is not a release approval and not final figure-artifact review. It checks only that the ten draft SVG assets named in
 `editions/reader_manuscript/v1_0/manifest.json` are present, parseable,
@@ -46,6 +52,16 @@ paragraphs in EPUB, rasterized figure stems and boundaries in DOCX, and
 extracted draft captions plus figure-boundary paragraphs in PDF. This is still
 not e-reader review, not Word/LibreOffice/Google Docs review, not manual PDF
 review, not final figure-artifact approval, and not reader release approval.
+
+The raster artifact probe in `docs/reader_key_figure_raster_review.md` inspects
+the current ignored PNG fallbacks generated for the curated reader figures. It
+records 10 raster artifacts, 10 standard 1200 x 760 canvases, minimum opaque
+pixel coverage 99.954%, minimum luminance standard deviation 27.64, minimum
+quantized color count 116, and SHA-256 hashes for every PNG. This catches
+missing, blank, low-ink, or visually collapsed raster outputs, but it is still
+not manual aesthetic review, not e-reader visual review, not DOCX/PDF
+application review, not final figure-artifact approval, and not reader release
+approval.
 
 The curated-reader HTML browser review in
 `docs/curated_reader_html_artifact_browser_review.md` now also checks the ten
@@ -98,6 +114,17 @@ is not manual aesthetic review, not e-reader visual review, not DOCX/PDF
 application review, not final figure-artifact approval, and not reader release
 approval.
 
+2026-07-04 raster artifact update:
+`python3 scripts/validate_reader_key_figure_raster_probe.py` now records
+`editions/reader_manuscript/v1_0/key_figure_raster_manifest.json` and the
+review surface `docs/reader_key_figure_raster_review.md`. The automated local
+PNG review checks the ten generated raster fallbacks for standard 1200 x 760
+dimensions, opaque page-area coverage, nonblank luminance variation, dark and
+mid-tone pixel presence, quantized color diversity, and per-artifact SHA-256
+digests. It is not manual aesthetic review, not e-reader visual review, not
+DOCX/PDF application review, not final figure-artifact approval, and not reader
+release approval.
+
 2026-07-04 audio/e-reader companion update:
 `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` now records a
 draft spoken summary, e-reader treatment note, and non-claim boundary for each
@@ -124,19 +151,23 @@ release record.
 ## Format-Specific Residuals
 
 The validator checks source-level SVG structure and manuscript placement; the
-format-package probe checks EPUB/DOCX/PDF package or text survival. Neither
-replaces visual review in rendered HTML, EPUB, DOCX, PDF, e-reader, or audio
-companion treatment. Before a reader release can call the figures final, each
-format still needs inspection for scale, line weight, text legibility, caption
-placement, page breaks, color contrast, and audio-friendly text equivalents.
+format-package probe checks EPUB/DOCX/PDF package or text survival; the raster
+probe checks generated PNG fallback presence, dimensions, hashes, and nonblank
+visual variation. None replaces visual review in rendered HTML, EPUB, DOCX,
+PDF, e-reader, or audio companion treatment. Before a reader release can call
+the figures final, each format still needs inspection for scale, line weight,
+text legibility, caption placement, page breaks, color contrast, and
+audio-friendly text equivalents.
 
 Open residuals:
 
 - HTML visual/layout: automated browser checks now cover rendered figure
   loading, size, captions, boundaries, and viewport containment for all ten
   draft key figures at desktop and mobile widths. The source-SVG contrast and
-  readability gate now passes; manual aesthetic judgment, line-weight review,
-  rendered-format inspection, and final visual approval remain open.
+  readability gate now passes, and the generated PNG fallback raster probe now
+  catches missing, blank, low-ink, or visually collapsed fallback outputs;
+  manual aesthetic judgment, line-weight review, rendered-format inspection,
+  and final visual approval remain open.
 - EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
 - DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
 - PDF: inspect page-level layout, figure scaling, and caption placement.
