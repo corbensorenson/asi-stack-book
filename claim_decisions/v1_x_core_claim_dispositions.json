@@ -565,7 +565,9 @@
       "formal_or_prototype_work": "Add SCIF lifecycle, revocation, sanitization, and prompt-injection negative controls.",
       "human_reader_focus": "Make SCIFs feel like controlled rooms and handles, not jargon.",
       "what_would_move_this": "Receipt fixture proves handle-mediated use and rejects leak paths.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json"
+      ]
     },
     {
       "claim_id": "recursive-self-improvement-boundaries.core",

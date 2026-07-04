@@ -1,0 +1,118 @@
+{
+  "transition_id": "v1_x_measured.security_scif_commit_probe.no_change",
+  "claim_id": "security-kernel.scif_sanitized_commit_replay",
+  "claim_surface_refs": [
+    "docs/security_scif_commit_probe.md",
+    "chapters/security-kernel-and-digital-scifs.qmd",
+    "editions/reader_manuscript/v1_0/chapters/security-kernel-and-digital-scifs.qmd",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/security_scif_commit_probe/results/2026-07-02-local.json",
+    "scripts/run_security_scif_commit_probe.py",
+    "scripts/validate_security_scif_commit_probe.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "SCIF sanitized commit replay probe only. The probe records two valid local synthetic routes and six expected-invalid controls for secret canary leakage, live handle leakage, missing zeroization, overbroad context admission, unapproved destination or inactive approval, and missing residual ownership. It uses public-safe synthetic records and does not test a deployed kernel, sandbox, vault, approval service, side-channel boundary, runtime prompt-injection containment system, or real secret-handle workflow.",
+  "evidence_roles": [
+    "synthetic_scif_commit_replay_probe",
+    "sanitized_output_boundary",
+    "secret_and_handle_leak_negative_controls",
+    "zeroize_lifecycle_negative_control",
+    "least_context_admission_negative_control",
+    "approval_destination_negative_control",
+    "residual_ownership_negative_control",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The SCIF sanitized commit replay probe is useful because it makes a public-safe sanitized-output path and six leak/authority/lifecycle negative controls executable as a local book-gate replay. It remains a synthetic local probe, not deployed security evidence, so this accepted decision blocks promotion for deployed-kernel behavior, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, approval-service behavior, least-privilege context behavior, privacy, security, or the Security Kernel chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable security-kernel trace",
+    "real or externally reviewable sandbox-isolation evidence",
+    "side-channel review or test evidence",
+    "runtime prompt-injection containment evidence",
+    "secret-handle or vault workflow evidence with public-safe redaction",
+    "approval-service behavior trace",
+    "least-privilege context-admission trace over real or externally reviewable workflows",
+    "residual leak-risk review with independent review",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/security_scif_commit_probe.md",
+    "experiments/security_scif_commit_probe/results/2026-07-02-local.json",
+    "scripts/run_security_scif_commit_probe.py",
+    "scripts/validate_security_scif_commit_probe.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/security_scif_commit_probe.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/test_harness_status_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#security-kernel-and-digital-scifs.core",
+    "docs/book_outline.md#security-kernel-and-digital-scifs"
+  ],
+  "verification_command": "python3 scripts/validate_security_scif_commit_probe.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "secret canary in candidate output is blocked before commit",
+    "live handle in candidate output is blocked before commit",
+    "missing zeroization lifecycle step is blocked before commit",
+    "overbroad context admission is blocked before commit",
+    "unapproved destination or inactive approval is blocked before commit",
+    "missing residual ownership is blocked before commit",
+    "valid sanitized commit routes record no deployed vault, sandbox, network, private-source, job-dispatch, or publication effects",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/security_scif_commit_probe.md",
+    "experiments/security_scif_commit_probe/results/2026-07-02-local.json",
+    "scripts/validate_security_scif_commit_probe.py"
+  ],
+  "downgrade_triggers": [
+    "SCIF sanitized commit probe validator failure",
+    "secret canary or live handle appears in the public result record",
+    "local temp paths or private source material appear in the public result record",
+    "invalid leak, missing-zeroize, overbroad-context, unapproved-destination, or missing-residual control accepted as valid",
+    "probe described as deployed kernel, sandbox-isolation, side-channel, prompt-injection-containment, secret-handle, approval-service, privacy, security, or support-state evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed SCIF or security-kernel claim after deployed or externally reviewable kernel traces, sandbox-isolation evidence, side-channel review, runtime prompt-injection containment evidence, secret-handle or vault workflow evidence, approval-service behavior, least-privilege context-admission traces, residual leak-risk review, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "synthetic local probe only",
+    "no deployed security kernel",
+    "no deployed sandbox isolation",
+    "no side-channel safety evidence",
+    "no runtime prompt-injection containment result",
+    "no real secret-handle or vault workflow",
+    "no approval-service behavior result",
+    "no privacy or security guarantee",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent security, sandbox, side-channel, prompt-injection, vault, approval-service, privacy, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable security-kernel trace",
+    "no sandbox-isolation or side-channel review evidence",
+    "no runtime prompt-injection containment evidence",
+    "no real secret-handle or vault workflow trace",
+    "no approval-service behavior evidence",
+    "no independent security review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-scif-commit-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote SCIF sanitized commit replay evidence above argument",
+    "does not prove deployed-kernel behavior, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, approval-service behavior, least-privilege context behavior, privacy, security, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Security Kernel and Digital SCIFs chapter core claim"
+  ]
+}

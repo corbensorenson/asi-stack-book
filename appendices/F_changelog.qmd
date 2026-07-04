@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-04 - Record SCIF commit no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json`
+  as an accepted `blocks_promotion` decision for the existing SCIF sanitized
+  commit replay probe.
+- Updated `docs/non_core_evidence_ledger.md`, README, the landing page, and
+  the v1.x roadmap so the no-promotion side-lane count moves from 15 to 16 and
+  Security Kernel SCIF commit replay appears in the explicit blocking ledger.
+- Boundary: no support-state movement, no chapter-core promotion, no deployed
+  kernel claim, no sandbox-isolation claim, no side-channel-safety claim, no
+  prompt-injection-containment claim, no secret-handle-safety claim, no
+  approval-service claim, no privacy/security guarantee, and no ASI claim.
+
 ## 2026-07-04 - Record blocked curated reader release candidate
 
 - Added `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`
