@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-04 - Add key-figure EPUB/DOCX/PDF format probe
+
+- Added `scripts/validate_reader_key_figure_format_probe.py`,
+  `docs/reader_key_figure_format_probe.md`, and
+  `editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json` to
+  track package/text survival for the ten draft key figures across the current
+  ignored curated-reader EPUB, DOCX, and PDF artifacts.
+- Recorded 10 packaged EPUB SVG entries with 10 matched source SVG titles, 10
+  DOCX figure-stem matches with 0 raw `.qmd` relationship targets, and 10 PDF
+  draft-caption matches with 10 figure-boundary paragraphs.
+- Wired the probe into `scripts/validate_reader_key_figures.py`,
+  `scripts/validate_release_surface_status_ledger.py`, `scripts/validate_book.py`,
+  the generated release-surface ledger, README, repository map, publication
+  readiness notes, release-editions plan, and v1.x roadmap.
+- Boundary: this is local package/text evidence only. It is not final
+  figure-artifact approval, not EPUB/DOCX/PDF application approval, not e-reader
+  review, not audio approval, not a reader release record, and not source
+  support-state movement.
+
 ## 2026-07-04 - Add curated-reader PDF visual raster audit
 
 - Added `scripts/audit_curated_reader_pdf_visual_raster.py` to raster-render

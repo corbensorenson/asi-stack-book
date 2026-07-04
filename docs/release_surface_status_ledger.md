@@ -21,6 +21,7 @@ It records release-profile, reader-manuscript, format-probe, and artifact-review
 | Companion-note candidates | 12 |
 | Curated-manuscript candidates | 44 |
 | Key-figure targets | 10 |
+| Key figures matched in EPUB/DOCX/PDF probes | 10 / 10 / 10 |
 | Signature ideas | 10 |
 | Voice-pass slots preserved as author-enrichment queue context | 12 |
 | Release-approved reader formats | html |
@@ -30,7 +31,7 @@ It records release-profile, reader-manuscript, format-probe, and artifact-review
 
 ## Status-Page Row
 
-| Release surfaces | Live, research, reader, and audio profiles exist. Release detail is generated in `docs/release_surface_status_ledger.md`: generated-reader HTML remains the only approved reader artifact; `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json` records the current curated-reader candidate as partial and blocked; the curated manuscript remains `drafting` with 44 records (44 reconciled); 73 overlay operations are tracked; EPUB, DOCX, PDF, e-reader, audio, refreshed reader HTML, and final figure-artifact approval remain unapproved. | `docs/release_surface_status_ledger.md`; `editions/release_profiles.json`; `editions/reader_overlays/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/chapter_review_matrix.json`; `editions/reader_manuscript/v1_0/format_review_matrix.json`; `docs/reader_chapter_review_matrix.md`; `docs/reader_format_review_matrix.md`; `docs/reader_html_artifact_browser_review.md`; `docs/curated_reader_html_artifact_browser_review.md`; `docs/curated_reader_format_artifact_probe.md`; `docs/reader_epub_probe_manifest.md`; `docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; `docs/reader_audio_script_probe_manifest.md`; `release_records/2026-06-29-v1-reader-html-855dc277.json`; `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`; `python3 scripts/validate_curated_reader_blocked_release_record.py`; `python3 scripts/validate_release_surface_status_ledger.py` |
+| Release surfaces | Live, research, reader, and audio profiles exist. Release detail is generated in `docs/release_surface_status_ledger.md`: generated-reader HTML remains the only approved reader artifact; `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json` records the current curated-reader candidate as partial and blocked; the curated manuscript remains `drafting` with 44 records (44 reconciled); 73 overlay operations are tracked; EPUB, DOCX, PDF, e-reader, audio, refreshed reader HTML, and final figure-artifact approval remain unapproved. | `docs/release_surface_status_ledger.md`; `editions/release_profiles.json`; `editions/reader_overlays/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/chapter_review_matrix.json`; `editions/reader_manuscript/v1_0/format_review_matrix.json`; `docs/reader_chapter_review_matrix.md`; `docs/reader_format_review_matrix.md`; `docs/reader_html_artifact_browser_review.md`; `docs/curated_reader_html_artifact_browser_review.md`; `docs/curated_reader_format_artifact_probe.md`; `docs/reader_epub_probe_manifest.md`; `docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; `docs/reader_audio_script_probe_manifest.md`; `docs/reader_key_figure_format_probe.md`; `release_records/2026-06-29-v1-reader-html-855dc277.json`; `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`; `python3 scripts/validate_curated_reader_blocked_release_record.py`; `python3 scripts/validate_release_surface_status_ledger.py` |
 
 ## Reader Manuscript And Chapter Review
 
@@ -51,7 +52,7 @@ It records release-profile, reader-manuscript, format-probe, and artifact-review
 - `docs/reader_docx_probe_manifest.md` records the generated reader DOCX conversion probe: 514 pages and 8,190,162 bytes, with full-format review still active.
 - `docs/reader_pdf_probe_manifest.md` records the generated reader PDF probe: 535 pages and 8,613,924 bytes, with full PDF layout review still active.
 - `docs/reader_audio_script_probe_manifest.md` records 49 audio-script workspace files; target artifact states remain audio-embedded-epub: target_not_generated, m4b: target_not_generated, mp3: target_not_generated.
-- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval.
+- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval; `docs/reader_key_figure_format_probe.md` records package/text survival with 10 EPUB SVG entries, 10 matched EPUB SVG titles, 10 DOCX figure stems, and 10 PDF draft-caption matches while preserving final-art, e-reader, application, PDF-layout, and release blockers.
 
 ## Non-Claim Boundary
 

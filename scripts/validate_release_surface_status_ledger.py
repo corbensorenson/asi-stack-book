@@ -32,6 +32,9 @@ EPUB_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "epub_probe_mani
 DOCX_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "docx_probe_manifest.json"
 PDF_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "pdf_probe_manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
+KEY_FIGURE_FORMAT_PROBE = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
+)
 HTML_RELEASE_RECORD = ROOT / "release_records" / "2026-06-29-v1-reader-html-855dc277.json"
 CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
 
@@ -44,6 +47,7 @@ REVIEW_DOCS = {
     "reader_pdf": ROOT / "docs" / "reader_pdf_probe_manifest.md",
     "reader_audio": ROOT / "docs" / "reader_audio_script_probe_manifest.md",
     "reader_figures": ROOT / "docs" / "reader_key_figure_artifact_review.md",
+    "reader_figure_format": ROOT / "docs" / "reader_key_figure_format_probe.md",
     "reader_chapter_matrix": ROOT / "docs" / "reader_chapter_review_matrix.md",
     "reader_format_matrix": ROOT / "docs" / "reader_format_review_matrix.md",
 }
@@ -123,6 +127,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         DOCX_PROBE,
         PDF_PROBE,
         AUDIO_PROBE,
+        KEY_FIGURE_FORMAT_PROBE,
         HTML_RELEASE_RECORD,
         CURATED_BLOCKED_RECORD,
         *REVIEW_DOCS.values(),
@@ -144,6 +149,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     docx_probe = load_json(DOCX_PROBE)
     pdf_probe = load_json(PDF_PROBE)
     audio_probe = load_json(AUDIO_PROBE)
+    key_figure_format_probe = load_json(KEY_FIGURE_FORMAT_PROBE)
     curated_blocked_record = load_json(CURATED_BLOCKED_RECORD)
 
     profile_ids = {profile.get("id") for profile in release_profiles.get("profiles", []) if isinstance(profile, dict)}
@@ -282,6 +288,34 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if missing_audio_blockers:
         errors.append(f"audio probe missing blockers: {missing_audio_blockers}")
 
+    if key_figure_format_probe.get("status") != "passed_local_format_package_probe":
+        errors.append("key-figure format probe must remain passed_local_format_package_probe.")
+    expected_key_figure_metrics = {
+        ("epub", "svg_entries"): 10,
+        ("epub", "matched_source_svg_titles"): 10,
+        ("epub", "figure_boundary_paragraphs"): 10,
+        ("docx", "matched_figure_stems"): 10,
+        ("docx", "figure_boundary_paragraphs"): 10,
+        ("pdf", "matched_caption_titles"): 10,
+        ("pdf", "figure_boundary_paragraphs"): 10,
+    }
+    for (section, key), expected in expected_key_figure_metrics.items():
+        observed = key_figure_format_probe.get(section, {}).get(key)
+        if observed != expected:
+            errors.append(f"key-figure format probe {section}.{key} must be {expected}; found {observed}.")
+    required_key_figure_blockers = {
+        "final_figure_artifact_review_not_completed",
+        "epub_e_reader_review_not_completed",
+        "docx_application_review_not_completed",
+        "pdf_page_layout_review_not_completed",
+        "reader_edition_release_record_not_created",
+    }
+    missing_key_figure_blockers = sorted(
+        required_key_figure_blockers - set(key_figure_format_probe.get("release_blockers_preserved", []))
+    )
+    if missing_key_figure_blockers:
+        errors.append(f"key-figure format probe missing blockers: {missing_key_figure_blockers}")
+
     curated_blockers = set(curated_format.get("release_blockers_preserved", []))
     required_curated_format_blockers = REQUIRED_CURATED_BLOCKERS | {
         "full_format_artifact_review_not_completed",
@@ -327,6 +361,15 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "reader_figures": [
             "not a release approval and not final figure-artifact review",
             "does not approve final figure art, EPUB, DOCX, PDF, e-reader",
+            "docs/reader_key_figure_format_probe.md",
+            "current ignored curated EPUB, DOCX, and PDF artifacts",
+        ],
+        "reader_figure_format": [
+            "packaged SVG titles in EPUB",
+            "rasterized figure IDs and boundaries in DOCX",
+            "extracted captions and figure-boundary paragraphs in PDF",
+            "not final figure-artifact approval",
+            "not reader release approval",
         ],
     }
     for doc_name, fragments in required_doc_fragments.items():
@@ -404,6 +447,16 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "reader_pdf_bytes": pdf_info.get("file_size_bytes"),
         "audio_script_files": audio_workspace.get("script_files"),
         "audio_targets": audio_targets,
+        "key_figure_epub_svg_entries": key_figure_format_probe.get("epub", {}).get("svg_entries"),
+        "key_figure_epub_matched_titles": key_figure_format_probe.get("epub", {}).get(
+            "matched_source_svg_titles"
+        ),
+        "key_figure_docx_matched_stems": key_figure_format_probe.get("docx", {}).get(
+            "matched_figure_stems"
+        ),
+        "key_figure_pdf_matched_captions": key_figure_format_probe.get("pdf", {}).get(
+            "matched_caption_titles"
+        ),
         "release_record": rel(HTML_RELEASE_RECORD),
     }
     return metrics, errors
@@ -431,7 +484,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_html_artifact_browser_review.md`; `docs/curated_reader_html_artifact_browser_review.md`; "
         "`docs/curated_reader_format_artifact_probe.md`; `docs/reader_epub_probe_manifest.md`; "
         "`docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; "
-        "`docs/reader_audio_script_probe_manifest.md`; `release_records/2026-06-29-v1-reader-html-855dc277.json`; "
+        "`docs/reader_audio_script_probe_manifest.md`; `docs/reader_key_figure_format_probe.md`; "
+        "`release_records/2026-06-29-v1-reader-html-855dc277.json`; "
         "`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`; "
         "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
         "`python3 scripts/validate_release_surface_status_ledger.py` |"
@@ -471,6 +525,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Companion-note candidates | {disposition_counts.get('companion_note_candidate', 0)} |",
             f"| Curated-manuscript candidates | {disposition_counts.get('curated_manuscript_candidate', 0)} |",
             f"| Key-figure targets | {metrics['key_figure_target_count']} |",
+            f"| Key figures matched in EPUB/DOCX/PDF probes | {metrics['key_figure_epub_matched_titles']} / {metrics['key_figure_docx_matched_stems']} / {metrics['key_figure_pdf_matched_captions']} |",
             f"| Signature ideas | {metrics['signature_idea_count']} |",
             f"| Voice-pass slots preserved as author-enrichment queue context | {metrics['voice_slot_count']} |",
             f"| Release-approved reader formats | {qmd_escape(', '.join(metrics['format_approved']))} |",
@@ -501,7 +556,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_docx_probe_manifest.md` records the generated reader DOCX conversion probe: {metrics['reader_docx_pages']} pages and {metrics['reader_docx_bytes']:,} bytes, with full-format review still active.",
             f"- `docs/reader_pdf_probe_manifest.md` records the generated reader PDF probe: {metrics['reader_pdf_pages']} pages and {metrics['reader_pdf_bytes']:,} bytes, with full PDF layout review still active.",
             f"- `docs/reader_audio_script_probe_manifest.md` records {metrics['audio_script_files']} audio-script workspace files; target artifact states remain {qmd_escape(', '.join(f'{key}: {value}' for key, value in sorted(audio_targets.items())))}.",
-            "- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval.",
+            f"- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval; `docs/reader_key_figure_format_probe.md` records package/text survival with {metrics['key_figure_epub_svg_entries']} EPUB SVG entries, {metrics['key_figure_epub_matched_titles']} matched EPUB SVG titles, {metrics['key_figure_docx_matched_stems']} DOCX figure stems, and {metrics['key_figure_pdf_matched_captions']} PDF draft-caption matches while preserving final-art, e-reader, application, PDF-layout, and release blockers.",
             "",
             "## Non-Claim Boundary",
             "",

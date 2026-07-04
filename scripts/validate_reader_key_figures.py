@@ -14,6 +14,8 @@ MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 ASSET_README = ROOT / "assets" / "diagrams" / "README.md"
 REVIEW = ROOT / "docs" / "reader_key_figure_artifact_review.md"
 COMPANION_NOTE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "companion_notes" / "key-figures.md"
+FORMAT_PROBE_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
+FORMAT_PROBE_DOC = ROOT / "docs" / "reader_key_figure_format_probe.md"
 
 EXPECTED_COUNT = 10
 BOUNDARY_PHRASES = (
@@ -166,6 +168,7 @@ def validate_review_doc(figures: list[dict[str, Any]], errors: list[str]) -> Non
     text = REVIEW.read_text(encoding="utf-8", errors="ignore")
     required = [
         "python3 scripts/validate_reader_key_figures.py",
+        "python3 scripts/validate_reader_key_figure_format_probe.py --write-manifest --write-doc",
         "not a release approval",
         "not final figure-artifact review",
         "EPUB",
@@ -180,6 +183,55 @@ def validate_review_doc(figures: list[dict[str, Any]], errors: list[str]) -> Non
         asset = str(figure.get("draft_asset_path", ""))
         if asset and asset not in text:
             errors.append(f"{rel(REVIEW)} missing figure asset {asset}.")
+
+
+def validate_format_probe(figures: list[dict[str, Any]], errors: list[str]) -> None:
+    if not FORMAT_PROBE_MANIFEST.exists():
+        errors.append(f"Missing {rel(FORMAT_PROBE_MANIFEST)}.")
+        return
+    if not FORMAT_PROBE_DOC.exists():
+        errors.append(f"Missing {rel(FORMAT_PROBE_DOC)}.")
+        return
+    manifest = load_json(FORMAT_PROBE_MANIFEST)
+    if manifest.get("schema_version") != "asi_stack.reader_key_figure_format_probe.v0":
+        errors.append(f"{rel(FORMAT_PROBE_MANIFEST)} schema_version drifted.")
+    if manifest.get("status") != "passed_local_format_package_probe":
+        errors.append(f"{rel(FORMAT_PROBE_MANIFEST)} status must be passed_local_format_package_probe.")
+    if manifest.get("figure_count") != len(figures):
+        errors.append(f"{rel(FORMAT_PROBE_MANIFEST)} figure_count must match key_figure_targets.")
+    expected = {
+        ("epub", "svg_entries"): 10,
+        ("epub", "matched_source_svg_titles"): 10,
+        ("epub", "figure_boundary_paragraphs"): 10,
+        ("docx", "matched_figure_stems"): 10,
+        ("docx", "figure_boundary_paragraphs"): 10,
+        ("pdf", "figure_boundary_paragraphs"): 10,
+        ("pdf", "matched_caption_titles"): 10,
+    }
+    for (section, key), value in expected.items():
+        observed = manifest.get(section, {}).get(key)
+        if observed != value:
+            errors.append(f"{rel(FORMAT_PROBE_MANIFEST)} {section}.{key} must be {value}, found {observed}.")
+    blockers = set(manifest.get("release_blockers_preserved", []))
+    for blocker in (
+        "final_figure_artifact_review_not_completed",
+        "epub_e_reader_review_not_completed",
+        "docx_application_review_not_completed",
+        "pdf_page_layout_review_not_completed",
+        "reader_edition_release_record_not_created",
+    ):
+        if blocker not in blockers:
+            errors.append(f"{rel(FORMAT_PROBE_MANIFEST)} missing blocker {blocker}.")
+    doc_text = FORMAT_PROBE_DOC.read_text(encoding="utf-8", errors="ignore")
+    for phrase in (
+        "not final figure-artifact approval",
+        "EPUB still needs real e-reader",
+        "DOCX still needs Word",
+        "PDF still needs manual page-level layout",
+        "does not approve final figure art",
+    ):
+        if phrase not in doc_text:
+            errors.append(f"{rel(FORMAT_PROBE_DOC)} missing required phrase {phrase!r}.")
 
 
 def validate_companion_note(figures: list[dict[str, Any]], errors: list[str]) -> None:
@@ -258,6 +310,7 @@ def main() -> None:
         validate_reader_surface(figure, owner, asset_name, errors)
 
     validate_review_doc(figures, errors)
+    validate_format_probe(figures, errors)
     validate_companion_note(figures, errors)
     if errors:
         print("Reader key-figure validation failed:")

@@ -40,6 +40,9 @@ REQUIRED = [
     "docs/reader_key_figure_html_probe.md",
     "experiments/reader_key_figure_html_probe/README.md",
     "experiments/reader_key_figure_html_probe/results/2026-07-02-local.json",
+    "scripts/validate_reader_key_figure_format_probe.py",
+    "docs/reader_key_figure_format_probe.md",
+    "editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json",
     "scripts/render_curated_reader_formats.py",
     "scripts/inspect_curated_reader_format_artifacts.py",
     "scripts/validate_curated_reader_format_probe_manifest.py",
@@ -926,6 +929,7 @@ def main() -> None:
     run_validator("validate_curated_reader_format_probe_manifest.py")
     run_validator("validate_reader_key_figures.py")
     run_validator("validate_reader_key_figure_contrast.py")
+    run_validator("validate_reader_key_figure_format_probe.py")
     run_validator("validate_reader_artifact_inspection_manifest.py")
     run_validator("validate_reader_epub_probe_manifest.py")
     run_validator("validate_reader_docx_probe_manifest.py")

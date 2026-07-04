@@ -1,0 +1,225 @@
+{
+  "schema_version": "asi_stack.reader_key_figure_format_probe.v0",
+  "status": "passed_local_format_package_probe",
+  "source_manifest": "editions/reader_manuscript/v1_0/manifest.json",
+  "format_probe_manifest": "editions/reader_manuscript/v1_0/curated_format_probe_manifest.json",
+  "figure_count": 10,
+  "epub": {
+    "artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+    "sha256": "62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e",
+    "svg_entries": 10,
+    "matched_source_svg_titles": 10,
+    "min_packaged_desc_words": 21,
+    "figure_boundary_paragraphs": 10,
+    "draft_reader_aid_mentions": 10,
+    "per_figure": [
+      {
+        "id": "asi_stack_control_plane",
+        "source_svg_title": "ASI Stack control plane draft figure",
+        "packaged_svg_entry": "EPUB/media/file1.svg",
+        "packaged_desc_words": 26,
+        "matched": true
+      },
+      {
+        "id": "authority_to_effect_path",
+        "source_svg_title": "Authority to effect path draft figure",
+        "packaged_svg_entry": "EPUB/media/file5.svg",
+        "packaged_desc_words": 33,
+        "matched": true
+      },
+      {
+        "id": "evidence_state_ladder",
+        "source_svg_title": "Evidence state ladder draft figure",
+        "packaged_svg_entry": "EPUB/media/file9.svg",
+        "packaged_desc_words": 22,
+        "matched": true
+      },
+      {
+        "id": "intent_to_artifact_trace",
+        "source_svg_title": "Intent to artifact trace draft figure",
+        "packaged_svg_entry": "EPUB/media/file19.svg",
+        "packaged_desc_words": 33,
+        "matched": true
+      },
+      {
+        "id": "context_transaction_lifecycle",
+        "source_svg_title": "Context transaction lifecycle draft figure",
+        "packaged_svg_entry": "EPUB/media/file24.svg",
+        "packaged_desc_words": 36,
+        "matched": true
+      },
+      {
+        "id": "readiness_residual_quarantine_map",
+        "source_svg_title": "Readiness residual quarantine map draft figure",
+        "packaged_svg_entry": "EPUB/media/file34.svg",
+        "packaged_desc_words": 40,
+        "matched": true
+      },
+      {
+        "id": "route_selection_budget_tradeoff",
+        "source_svg_title": "Route selection budget tradeoff draft figure",
+        "packaged_svg_entry": "EPUB/media/file43.svg",
+        "packaged_desc_words": 31,
+        "matched": true
+      },
+      {
+        "id": "compression_and_generation_acceptance",
+        "source_svg_title": "Compression and generation acceptance draft figure",
+        "packaged_svg_entry": "EPUB/media/file37.svg",
+        "packaged_desc_words": 21,
+        "matched": true
+      },
+      {
+        "id": "cyclic_substrate_adoption_gate",
+        "source_svg_title": "Cyclic substrate adoption gate draft figure",
+        "packaged_svg_entry": "EPUB/media/file48.svg",
+        "packaged_desc_words": 22,
+        "matched": true
+      },
+      {
+        "id": "living_book_release_pipeline",
+        "source_svg_title": "Living book release pipeline draft figure",
+        "packaged_svg_entry": "EPUB/media/file58.svg",
+        "packaged_desc_words": 23,
+        "matched": true
+      }
+    ]
+  },
+  "docx": {
+    "artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+    "sha256": "7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce",
+    "media_entries": 61,
+    "png_media_entries": 61,
+    "svg_media_entries": 0,
+    "relationship_count": 286,
+    "raw_qmd_relationship_targets": 0,
+    "matched_figure_stems": 10,
+    "figure_boundary_paragraphs": 10,
+    "draft_reader_aid_mentions": 10,
+    "per_figure": [
+      {
+        "id": "asi_stack_control_plane",
+        "asset_stem": "asi-stack-control-plane",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "authority_to_effect_path",
+        "asset_stem": "authority-to-effect-path",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "evidence_state_ladder",
+        "asset_stem": "evidence-state-ladder",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "intent_to_artifact_trace",
+        "asset_stem": "intent-to-artifact-trace",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "context_transaction_lifecycle",
+        "asset_stem": "context-transaction-lifecycle",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "readiness_residual_quarantine_map",
+        "asset_stem": "readiness-residual-quarantine-map",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "route_selection_budget_tradeoff",
+        "asset_stem": "route-selection-budget-tradeoff",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "compression_and_generation_acceptance",
+        "asset_stem": "compression-and-generation-acceptance",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "cyclic_substrate_adoption_gate",
+        "asset_stem": "cyclic-substrate-adoption-gate",
+        "stem_in_document_xml": true
+      },
+      {
+        "id": "living_book_release_pipeline",
+        "asset_stem": "living-book-release-pipeline",
+        "stem_in_document_xml": true
+      }
+    ]
+  },
+  "pdf": {
+    "artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
+    "sha256": "f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a",
+    "figure_boundary_paragraphs": 10,
+    "draft_caption_count": 10,
+    "matched_caption_titles": 10,
+    "does_not_prove_mentions": 50,
+    "per_figure": [
+      {
+        "id": "asi_stack_control_plane",
+        "caption_title": "ASI Stack control plane",
+        "caption_title_present": true
+      },
+      {
+        "id": "authority_to_effect_path",
+        "caption_title": "Authority to effect path",
+        "caption_title_present": true
+      },
+      {
+        "id": "evidence_state_ladder",
+        "caption_title": "Evidence state ladder",
+        "caption_title_present": true
+      },
+      {
+        "id": "intent_to_artifact_trace",
+        "caption_title": "Intent to artifact trace",
+        "caption_title_present": true
+      },
+      {
+        "id": "context_transaction_lifecycle",
+        "caption_title": "Context transaction lifecycle",
+        "caption_title_present": true
+      },
+      {
+        "id": "readiness_residual_quarantine_map",
+        "caption_title": "Readiness residual quarantine map",
+        "caption_title_present": true
+      },
+      {
+        "id": "route_selection_budget_tradeoff",
+        "caption_title": "Route selection budget tradeoff",
+        "caption_title_present": true
+      },
+      {
+        "id": "compression_and_generation_acceptance",
+        "caption_title": "Compression and generation acceptance",
+        "caption_title_present": true
+      },
+      {
+        "id": "cyclic_substrate_adoption_gate",
+        "caption_title": "Cyclic substrate adoption gate",
+        "caption_title_present": true
+      },
+      {
+        "id": "living_book_release_pipeline",
+        "caption_title": "Living book release pipeline",
+        "caption_title_present": true
+      }
+    ]
+  },
+  "release_blockers_preserved": [
+    "final_figure_artifact_review_not_completed",
+    "epub_e_reader_review_not_completed",
+    "docx_application_review_not_completed",
+    "pdf_page_layout_review_not_completed",
+    "reader_edition_release_record_not_created"
+  ],
+  "non_claims": [
+    "This is a local package/text probe for draft key figures only.",
+    "This probe is not final figure-artifact approval.",
+    "This probe is not EPUB approval, not DOCX approval, not PDF approval, not e-reader approval, not audio approval, not HTML approval, and not reader release approval.",
+    "This probe does not prove visual quality, accessibility adequacy, narration quality, model behavior, deployed runtime behavior, evidence transitions, or support-state promotion."
+  ]
+}

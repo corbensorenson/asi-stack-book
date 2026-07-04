@@ -20,6 +20,12 @@ Rendered HTML browser layout check:
 node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json
 ```
 
+Format-package probe:
+
+```bash
+python3 scripts/validate_reader_key_figure_format_probe.py --write-manifest --write-doc
+```
+
 This review records the current draft key-figure artifact inspection for the
 curated reader manuscript. It is not a release approval and not final figure-artifact review. It checks only that the ten draft SVG assets named in
 `editions/reader_manuscript/v1_0/manifest.json` are present, parseable,
@@ -32,6 +38,14 @@ tracked curated reader manuscript in a temporary workspace, renders HTML, and
 checks all ten draft figures for rendered image references, copied SVG assets,
 alt text, captions, responsive image classes, and visible non-claim boundary
 paragraphs. That probe is still not visual review and not release approval.
+
+The format-package probe in `docs/reader_key_figure_format_probe.md` inspects
+the current ignored curated EPUB, DOCX, and PDF artifacts. It records that all
+ten draft key figures survive as packaged SVG titles and figure-boundary
+paragraphs in EPUB, rasterized figure stems and boundaries in DOCX, and
+extracted draft captions plus figure-boundary paragraphs in PDF. This is still
+not e-reader review, not Word/LibreOffice/Google Docs review, not manual PDF
+review, not final figure-artifact approval, and not reader release approval.
 
 The curated-reader HTML browser review in
 `docs/curated_reader_html_artifact_browser_review.md` now also checks the ten
@@ -84,12 +98,12 @@ release record.
 
 ## Format-Specific Residuals
 
-The validator checks source-level SVG structure and manuscript placement. It
-does not replace visual review in rendered HTML, EPUB, DOCX, PDF, e-reader, or
-audio companion treatment. Before a reader release can call the figures final,
-each format still needs inspection for scale, line weight, text legibility,
-caption placement, page breaks, color contrast, and audio-friendly text
-equivalents.
+The validator checks source-level SVG structure and manuscript placement; the
+format-package probe checks EPUB/DOCX/PDF package or text survival. Neither
+replaces visual review in rendered HTML, EPUB, DOCX, PDF, e-reader, or audio
+companion treatment. Before a reader release can call the figures final, each
+format still needs inspection for scale, line weight, text legibility, caption
+placement, page breaks, color contrast, and audio-friendly text equivalents.
 
 Open residuals:
 
@@ -101,7 +115,8 @@ Open residuals:
 - EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
 - DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
 - PDF: inspect page-level layout, figure scaling, and caption placement.
-- Audio: write companion narration or spoken summaries for each figure.
+- Audio: integrate and review the companion summaries inside the future
+  narration script.
 - Audio: review the drafting spoken summaries in
   `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` inside the
   future narration script; no audio artifact or narration approval exists yet.
