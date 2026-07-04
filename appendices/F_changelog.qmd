@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-04 - Add Artifact Graph record-reality sequence bridge
+
+- Added `python3 scripts/validate_artifact_graph_record_reality_sequence.py`,
+  fixture
+  `experiments/artifact_graph_record_reality_sequence/input/record_reality_sequence.json`,
+  result
+  `experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json`,
+  and summary `docs/artifact_graph_record_reality_sequence.md`.
+- The sequence bridge accepts one stale/partial/fresh replay sequence and
+  rejects four expected-invalid controls for stale-certificate promotion,
+  restoration without fresh replay, missing non-claims, and support review
+  without replay-validated transaction state.
+- Added `lean:artifacts.graph.record_reality_sequence_bridge` in
+  `AsiStackProofs.ArtifactGraph`, synchronized the Artifact Graphs chapter,
+  outline, manifest, Appendix E, proof manifest, proof triage, proof-depth
+  report, and proof adequacy review.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 197 proof
+  targets, 54 Lean modules, 991 theorem declarations, 804 derived/decomposed,
+  183 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter
+  classifications present.
+- Boundary: this is a finite record-reality sequence fixture and Lean bridge
+  only; it does not create an evidence transition, prove deployed artifact graph
+  behavior, prove real replay, prove verifier correctness, prove audit
+  durability, prove source interpretation, or promote any chapter core claim.
+
 ## 2026-07-04 - Refresh curated reader format probes
 
 - Refreshed the local tracked curated-reader HTML, EPUB, DOCX, and PDF

@@ -182,6 +182,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Replay metadata completeness test | implemented | passing via synthetic artifact graph replay harness and bounded provenance/route negative cases; no deployed replay-engine claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact graph route proof | implemented | passing via Lean route proof for missing artifact, parent/source/context transaction/semantic certificate/tool/claim/test/audit/replay/evidence/non-claim fields, stale certificate blocking, blocked promotion, and complete modeled admission; no deployed artifact graph claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact replay packet bridge proof | implemented | passing via Lean replay-packet bridge for parent-job alignment, job-output coverage, transaction and certificate links, source coverage, audit-chain completeness, byte-exact observation, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission; no deployed replay-engine claim |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Record-reality sequence bridge | implemented | passing via `python3 scripts/validate_artifact_graph_record_reality_sequence.py` and Lean bridge; accepts 1 stale/partial/fresh replay sequence and rejects 4 expected-invalid controls for stale-certificate promotion, restoration without fresh replay, missing non-claims, and support review without replay-validated transaction; no support-state promotion |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Receipt faithfulness adversarial fixture | implemented | passing via `python3 scripts/validate_receipt_faithfulness.py`; accepts 3 bounded receipt records, rejects 6 expected-invalid controls for shape-valid but reality-false receipts, trap-receipt failure, missing independent cross-check, unbounded attestation, and support promotion from receipt shape; no support-state promotion |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Receipt repository audit | implemented | passing via `python3 scripts/validate_receipt_repository_audit.py`; accepts 4 selected repository receipt records, checks tracked digest integrity, command pass status, external receipt fingerprints, non-claim boundaries, and no support-state promotion; no open-world receipt-faithfulness claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Receipt repository challenge audit | implemented | passing via `python3 scripts/validate_receipt_repository_challenge.py`; deterministic challenge over the prior repository audit accepts 3 tracked digest challenges and 1 Circle external fingerprint challenge while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion controls; no support-state promotion |
@@ -487,16 +488,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 196 |
+| Proof targets covered by triage | 197 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 196 |
+| implemented | 197 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 196 |
+| implemented | formal-invariant | lean-candidate | 197 |

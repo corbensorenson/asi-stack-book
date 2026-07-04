@@ -89,6 +89,9 @@ REQUIRED = [
     "scripts/validate_claim_state_transition_bridge.py",
     "docs/claim_state_transition_bridge.md",
     "experiments/claim_state_transition_bridge/results/2026-07-04-local.json",
+    "scripts/validate_artifact_graph_record_reality_sequence.py",
+    "docs/artifact_graph_record_reality_sequence.md",
+    "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
     "docs/living_book_change_packet_harness.md",
     "experiments/living_book_change_packets/results/2026-07-02-local.md",
     "scripts/validate_claim_ledger_completeness_audit.py",
@@ -989,6 +992,7 @@ def main() -> None:
     run_validator("validate_human_oversight_degradation.py")
     run_validator("validate_artifact_steward_lifecycle_probe.py")
     run_validator("validate_artifact_graph_replay.py")
+    run_validator("validate_artifact_graph_record_reality_sequence.py")
     run_validator("validate_receipt_faithfulness.py")
     run_validator("validate_receipt_repository_audit.py")
     run_validator("validate_receipt_repository_challenge.py")

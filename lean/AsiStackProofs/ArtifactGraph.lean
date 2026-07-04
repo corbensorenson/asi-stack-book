@@ -982,6 +982,150 @@ theorem complete_support_review_packet_admits_bounded_review
     certificateVerified, activeCertificate, reusableLifecycle, nonClaims,
     ReplayGrade.requiresReplayEvidenceChecks]
 
+inductive RecordRealitySequenceRoute where
+  | rejectSupportStateEffect
+  | requireNonClaimBoundary
+  | blockStaleCertificate
+  | blockIncompleteReplay
+  | requireReplayValidatedTransaction
+  | requireDigestVerification
+  | requireIndependentCheck
+  | eligibleForBoundedReview
+deriving DecidableEq, Repr
+
+structure RecordRealitySequenceEvent where
+  replayGrade : ReplayGrade
+  provenanceComplete : Bool
+  certificateActive : Bool
+  transactionReplayValidated : Bool
+  artifactDigestVerified : Bool
+  independentCheckPresent : Bool
+  supportStateEffectNone : Bool
+  nonClaimsPresent : Bool
+deriving DecidableEq, Repr
+
+def RecordRealitySequenceRouteFor
+    (event : RecordRealitySequenceEvent) : RecordRealitySequenceRoute :=
+  if event.supportStateEffectNone = false then
+    RecordRealitySequenceRoute.rejectSupportStateEffect
+  else if event.nonClaimsPresent = false then
+    RecordRealitySequenceRoute.requireNonClaimBoundary
+  else if event.certificateActive = false then
+    RecordRealitySequenceRoute.blockStaleCertificate
+  else if event.replayGrade.requiresReplayEvidenceChecks = false then
+    RecordRealitySequenceRoute.blockIncompleteReplay
+  else if event.provenanceComplete = false then
+    RecordRealitySequenceRoute.blockIncompleteReplay
+  else if event.transactionReplayValidated = false then
+    RecordRealitySequenceRoute.requireReplayValidatedTransaction
+  else if event.artifactDigestVerified = false then
+    RecordRealitySequenceRoute.requireDigestVerification
+  else if event.independentCheckPresent = false then
+    RecordRealitySequenceRoute.requireIndependentCheck
+  else
+    RecordRealitySequenceRoute.eligibleForBoundedReview
+
+theorem stale_certificate_sequence_event_blocks_bounded_review
+    {event : RecordRealitySequenceEvent} :
+    event.supportStateEffectNone = true ->
+      event.nonClaimsPresent = true ->
+        event.certificateActive = false ->
+          RecordRealitySequenceRouteFor event =
+            RecordRealitySequenceRoute.blockStaleCertificate := by
+  intro supportEffect nonClaims staleCertificate
+  unfold RecordRealitySequenceRouteFor
+  simp [supportEffect, nonClaims, staleCertificate]
+
+theorem incomplete_replay_sequence_event_blocks_bounded_review
+    {event : RecordRealitySequenceEvent} :
+    event.supportStateEffectNone = true ->
+      event.nonClaimsPresent = true ->
+        event.certificateActive = true ->
+          event.replayGrade = ReplayGrade.partialReplay ->
+            RecordRealitySequenceRouteFor event =
+              RecordRealitySequenceRoute.blockIncompleteReplay := by
+  intro supportEffect nonClaims activeCertificate partialReplay
+  unfold RecordRealitySequenceRouteFor
+  simp [supportEffect, nonClaims, activeCertificate, partialReplay,
+    ReplayGrade.requiresReplayEvidenceChecks]
+
+theorem fresh_byte_exact_sequence_event_restores_bounded_review
+    {event : RecordRealitySequenceEvent} :
+    event.supportStateEffectNone = true ->
+      event.nonClaimsPresent = true ->
+        event.certificateActive = true ->
+          event.replayGrade = ReplayGrade.byteExact ->
+            event.provenanceComplete = true ->
+              event.transactionReplayValidated = true ->
+                event.artifactDigestVerified = true ->
+                  event.independentCheckPresent = true ->
+                    RecordRealitySequenceRouteFor event =
+                      RecordRealitySequenceRoute.eligibleForBoundedReview := by
+  intro supportEffect nonClaims activeCertificate byteExact provenance
+    transactionValidated digestVerified independentCheck
+  unfold RecordRealitySequenceRouteFor
+  simp [supportEffect, nonClaims, activeCertificate, byteExact, provenance,
+    transactionValidated, digestVerified, independentCheck,
+    ReplayGrade.requiresReplayEvidenceChecks]
+
+structure RecordRealitySequenceSummary where
+  validSequenceCount : Nat
+  expectedInvalidControlCount : Nat
+  invalidControlsRejected : Nat
+  validEventCount : Nat
+  staleCertificateBlocked : Bool
+  incompleteReplayBlocked : Bool
+  supportEffectRejected : Bool
+  missingNonClaimRejected : Bool
+  missingReplayValidatedTransactionRejected : Bool
+  freshReplayRestoresAfterBlock : Bool
+  validSequencesEndEligible : Bool
+  supportStateEffectNone : Bool
+  chapterCoreSupportEffectNone : Bool
+  evidenceTransitionCreated : Bool
+deriving DecidableEq, Repr
+
+def artifactRecordRealitySequenceSummary :
+    RecordRealitySequenceSummary where
+  validSequenceCount := 1
+  expectedInvalidControlCount := 4
+  invalidControlsRejected := 4
+  validEventCount := 4
+  staleCertificateBlocked := true
+  incompleteReplayBlocked := true
+  supportEffectRejected := true
+  missingNonClaimRejected := true
+  missingReplayValidatedTransactionRejected := true
+  freshReplayRestoresAfterBlock := true
+  validSequencesEndEligible := true
+  supportStateEffectNone := true
+  chapterCoreSupportEffectNone := true
+  evidenceTransitionCreated := false
+
+def RecordRealitySequenceFixtureValid
+    (summary : RecordRealitySequenceSummary) : Prop :=
+  summary.validSequenceCount = 1 ∧
+    summary.expectedInvalidControlCount = 4 ∧
+    summary.invalidControlsRejected = 4 ∧
+    summary.validEventCount = 4 ∧
+    summary.staleCertificateBlocked = true ∧
+    summary.incompleteReplayBlocked = true ∧
+    summary.supportEffectRejected = true ∧
+    summary.missingNonClaimRejected = true ∧
+    summary.missingReplayValidatedTransactionRejected = true ∧
+    summary.freshReplayRestoresAfterBlock = true ∧
+    summary.validSequencesEndEligible = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.chapterCoreSupportEffectNone = true ∧
+    summary.evidenceTransitionCreated = false
+
+theorem artifact_record_reality_sequence_fixture_bridge :
+    RecordRealitySequenceFixtureValid
+      artifactRecordRealitySequenceSummary := by
+  unfold RecordRealitySequenceFixtureValid
+  unfold artifactRecordRealitySequenceSummary
+  simp
+
 structure ReceiptFaithfulnessFixtureSummary where
   crossCheckedReceiptRecordAccepted : Bool
   attestationLimitedRecordOnlyAccepted : Bool

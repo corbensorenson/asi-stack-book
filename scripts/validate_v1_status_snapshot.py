@@ -645,7 +645,12 @@ def main() -> None:
         start = expected_fragments.index(old_harness_start)
         end = expected_fragments.index(non_infra_start)
         current_harness_fragments = [
-            "| Test harnesses | Fifty-eight synthetic, deterministic, measured, local replay, local external-project receipt, local artifact-import, or publication-governance checks are wired into book validation; twenty-two are wired into the Phase 5 registry and thirty-six chapter-specific/support checks are book-gate-only:",
+            "| Test harnesses | Fifty-nine synthetic, deterministic, measured, local replay, local external-project receipt, local artifact-import, or publication-governance checks are wired into book validation; twenty-two are wired into the Phase 5 registry and thirty-seven chapter-specific/support checks are book-gate-only:",
+            "the artifact graph record-reality sequence bridge",
+            "The artifact graph record-reality sequence bridge checks one valid stale/partial/fresh replay sequence, four expected-invalid controls, fresh replay restoration after blocked eligibility, and no support-state promotion.",
+            "`docs/artifact_graph_record_reality_sequence.md`",
+            "`experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json`",
+            "`python3 scripts/validate_artifact_graph_record_reality_sequence.py`",
             "the Theseus public task-bundle import",
             "The Theseus public task-bundle import checks `theseus_public_task_bundle_import_2026_07_03_local`, 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, 18 benchmark gates, 19 residuals, visible artifact gaps, clean live Theseus replay remains unclaimed, and no model-quality, speed, useful-solution-per-second, support-state, or chapter-core-promotion claim.",
             "`docs/theseus_public_task_bundle_import.md`",

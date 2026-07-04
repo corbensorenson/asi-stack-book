@@ -1021,6 +1021,16 @@
       "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite replay-packet route bridge matching the synthetic artifact-graph replay harness shape for cross-record alignment, byte-exact observation, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission."
     },
     {
+      "tag": "lean:artifacts.graph.record_reality_sequence_bridge",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "module": "AsiStackProofs.ArtifactGraph",
+      "formal_target": "A modeled record-reality sequence blocks bounded-review eligibility on stale certificate or incomplete replay events, rejects support movement and missing non-claim controls, and restores bounded-review eligibility only after a fresh byte-exact replay/provenance event.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite record-reality sequence bridge matching the Python sequence fixture: stale certificate and incomplete replay events block bounded-review eligibility, support-state effects and missing non-claims are rejected, replay-unvalidated support review is rejected, and only a fresh complete replay/provenance event restores bounded-review eligibility without support-state movement."
+    },
+    {
       "tag": "lean:artifacts.graph.receipt_faithfulness_fixture_bridge",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactGraph",
@@ -1971,5 +1981,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 196
+  "record_count": 197
 }

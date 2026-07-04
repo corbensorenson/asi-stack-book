@@ -1,0 +1,25 @@
+{
+  "result_id": "artifact_graph_record_reality_sequence_2026_07_04_local",
+  "fixture": "experiments/artifact_graph_record_reality_sequence/input/record_reality_sequence.json",
+  "valid_case_count": 1,
+  "expected_invalid_case_count": 4,
+  "invalid_controls_rejected": 4,
+  "valid_event_count": 4,
+  "routes_observed": [
+    "block_incomplete_replay",
+    "block_stale_certificate",
+    "eligible_for_bounded_review",
+    "reject_support_state_effect",
+    "require_non_claim_boundary",
+    "require_replay_validated_transaction"
+  ],
+  "fresh_replay_restores_after_block": true,
+  "valid_sequences_end_eligible": true,
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "non_claims": [
+    "does not promote any chapter core support state",
+    "does not prove deployed artifact graph behavior, real replay, verifier correctness, audit durability, or source interpretation"
+  ]
+}

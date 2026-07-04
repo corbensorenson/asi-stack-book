@@ -1,0 +1,168 @@
+{
+  "schema_version": "0.1",
+  "purpose": "Bounded record-reality sequence fixture for artifact graph replay eligibility without support-state promotion.",
+  "cases": [
+    {
+      "case_id": "valid_stale_then_fresh_replay_restores_bounded_review",
+      "expectation": "valid",
+      "expected_final_eligible": true,
+      "events": [
+        {
+          "event_id": "event-001-initial-byte-exact",
+          "artifact_id": "artifact://asi-stack/render/site-index",
+          "replay_grade": "byte_exact",
+          "provenance_status": "complete",
+          "certificate_state": "active",
+          "transaction_validity_state": "replay_validated",
+          "artifact_digest_verified": true,
+          "independent_check": "internal_independent",
+          "support_review_requested": false,
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not promote support state",
+            "does not prove deployed replay behavior"
+          ]
+        },
+        {
+          "event_id": "event-002-stale-certificate",
+          "artifact_id": "artifact://asi-stack/render/site-index",
+          "replay_grade": "byte_exact",
+          "provenance_status": "complete",
+          "certificate_state": "stale",
+          "transaction_validity_state": "replay_validated",
+          "artifact_digest_verified": true,
+          "independent_check": "internal_independent",
+          "support_review_requested": false,
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not promote support state",
+            "does not reuse stale certificate evidence"
+          ]
+        },
+        {
+          "event_id": "event-003-partial-replay",
+          "artifact_id": "artifact://asi-stack/render/site-index",
+          "replay_grade": "partial",
+          "provenance_status": "incomplete",
+          "certificate_state": "active",
+          "transaction_validity_state": "committed_only",
+          "artifact_digest_verified": true,
+          "independent_check": "internal_independent",
+          "support_review_requested": false,
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not promote support state",
+            "does not treat partial replay as evidence readiness"
+          ]
+        },
+        {
+          "event_id": "event-004-fresh-byte-exact",
+          "artifact_id": "artifact://asi-stack/render/site-index",
+          "replay_grade": "byte_exact",
+          "provenance_status": "complete",
+          "certificate_state": "active",
+          "transaction_validity_state": "replay_validated",
+          "artifact_digest_verified": true,
+          "independent_check": "internal_independent",
+          "support_review_requested": true,
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not promote support state",
+            "does not imply source interpretation"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "invalid_promotes_after_stale_certificate",
+      "expectation": "invalid",
+      "expected_final_eligible": false,
+      "events": [
+        {
+          "event_id": "event-001-stale-overclaim",
+          "artifact_id": "artifact://asi-stack/render/site-index",
+          "replay_grade": "byte_exact",
+          "provenance_status": "complete",
+          "certificate_state": "stale",
+          "transaction_validity_state": "replay_validated",
+          "artifact_digest_verified": true,
+          "independent_check": "internal_independent",
+          "support_review_requested": true,
+          "support_state_effect": "promoted",
+          "non_claims": [
+            "does not prove deployed replay behavior"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "invalid_claims_restore_without_fresh_replay",
+      "expectation": "invalid",
+      "expected_final_eligible": true,
+      "events": [
+        {
+          "event_id": "event-001-partial-only",
+          "artifact_id": "artifact://asi-stack/render/site-index",
+          "replay_grade": "partial",
+          "provenance_status": "incomplete",
+          "certificate_state": "active",
+          "transaction_validity_state": "committed_only",
+          "artifact_digest_verified": true,
+          "independent_check": "internal_independent",
+          "support_review_requested": false,
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not promote support state"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "invalid_missing_non_claim_boundary",
+      "expectation": "invalid",
+      "expected_final_eligible": true,
+      "events": [
+        {
+          "event_id": "event-001-no-boundary",
+          "artifact_id": "artifact://asi-stack/render/site-index",
+          "replay_grade": "byte_exact",
+          "provenance_status": "complete",
+          "certificate_state": "active",
+          "transaction_validity_state": "replay_validated",
+          "artifact_digest_verified": true,
+          "independent_check": "internal_independent",
+          "support_review_requested": false,
+          "support_state_effect": "none",
+          "non_claims": []
+        }
+      ]
+    },
+    {
+      "case_id": "invalid_support_review_without_replay_validated_transaction",
+      "expectation": "invalid",
+      "expected_final_eligible": false,
+      "events": [
+        {
+          "event_id": "event-001-unvalidated-support-review",
+          "artifact_id": "artifact://asi-stack/render/site-index",
+          "replay_grade": "byte_exact",
+          "provenance_status": "complete",
+          "certificate_state": "active",
+          "transaction_validity_state": "committed_only",
+          "artifact_digest_verified": true,
+          "independent_check": "internal_independent",
+          "support_review_requested": true,
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not promote support state",
+            "does not approve support review without replay validation"
+          ]
+        }
+      ]
+    }
+  ],
+  "non_claims": [
+    "This fixture does not promote any chapter core support state.",
+    "This fixture does not prove deployed artifact graph behavior, real replay, source interpretation, verifier correctness, or audit durability."
+  ]
+}

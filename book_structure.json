@@ -5329,6 +5329,11 @@
               "result_status": "passing via Lean replay-packet bridge for parent-job alignment, job-output coverage, transaction and certificate links, source coverage, audit-chain completeness, byte-exact observation, stale-certificate blocking, support-review transaction validation, partial-replay promotion blocking, record-only partial replay, and bounded-review admission; no deployed replay-engine claim"
             },
             {
+              "name": "Record-reality sequence bridge",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_artifact_graph_record_reality_sequence.py` and Lean bridge; accepts 1 stale/partial/fresh replay sequence and rejects 4 expected-invalid controls for stale-certificate promotion, restoration without fresh replay, missing non-claims, and support review without replay-validated transaction; no support-state promotion"
+            },
+            {
               "name": "Receipt faithfulness adversarial fixture",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_receipt_faithfulness.py`; accepts 3 bounded receipt records, rejects 6 expected-invalid controls for shape-valid but reality-false receipts, trap-receipt failure, missing independent cross-check, unbounded attestation, and support promotion from receipt shape; no support-state promotion"
@@ -5367,6 +5372,12 @@
               "tag": "lean:artifacts.graph.replay_packet_bridge",
               "module": "AsiStackProofs.ArtifactGraph",
               "target": "A modeled artifact replay packet routes cross-record mismatches, missing observation, stale certificates, support-review transaction gaps, and partial-replay promotion attempts to explicit outcomes while admitting complete bounded-review packets.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifacts.graph.record_reality_sequence_bridge",
+              "module": "AsiStackProofs.ArtifactGraph",
+              "target": "A modeled record-reality sequence blocks bounded-review eligibility on stale certificate or incomplete replay events, rejects support movement and missing non-claim controls, and restores bounded-review eligibility only after a fresh byte-exact replay/provenance event.",
               "status": "implemented"
             },
             {
