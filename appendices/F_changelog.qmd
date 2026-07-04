@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-04 - Move Theseus import detail into checked ledger
+
+- Added `docs/project_theseus_static_import_status_ledger.md` and
+  `python3 scripts/validate_project_theseus_static_import_status_ledger.py`
+  to carry the detailed Project Theseus static-import, support-replay,
+  public-task-bundle, and no-promotion evidence behind the v1.0 status
+  snapshot.
+- Replaced the oversized `Project Theseus static import lane` row in
+  `docs/v1_0_candidate_status.md` with a compact generated row that preserves
+  the current facts: 2 sanitized static report imports, 1 support replay
+  probe, 64 metadata-only public tasks, 0 public training rows, 18 generation
+  modes, 13 comparisons, 0 promotable comparisons, 16 expected-invalid
+  controls, and 1 accepted no-promotion decision.
+- Wired the new validator into `scripts/validate_v1_status_snapshot.py` and
+  `scripts/validate_book.py`; updated the repository map and v1.x roadmap
+  status-surface sprawl rule.
+- Boundary: status-surface hygiene and validator tightening only; no clean
+  live Theseus replay, no model-quality claim, no benchmark-superiority claim,
+  no useful-solution-per-second claim, no deployment/self-evolution claim, no
+  chapter-core support movement, and no copied private Theseus payload.
+
 ## 2026-07-04 - Move measured-slice detail into checked ledger
 
 - Added `docs/non_infrastructure_measured_slice_status_ledger.md` and

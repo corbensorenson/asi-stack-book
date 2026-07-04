@@ -17,6 +17,7 @@ from pathlib import Path
 import validate_release_surface_status_ledger as release_surface_ledger
 import validate_test_harness_status_ledger as test_harness_ledger
 import validate_non_infrastructure_measured_slice_status_ledger as non_infra_ledger
+import validate_project_theseus_static_import_status_ledger as theseus_static_ledger
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -605,6 +606,22 @@ def main() -> None:
             "`python3 scripts/validate_non_infrastructure_measured_slice_status_ledger.py`",
         ]
         expected_fragments = expected_fragments[:start] + current_non_infra_fragments + expected_fragments[end:]
+
+    theseus_start = "| Project Theseus static import lane | The public-safe Project Theseus import lane now records two sanitized static report fixtures"
+    phase5_start = "`experiments/phase5_harness_registry.json`"
+    if theseus_start in expected_fragments:
+        start = expected_fragments.index(theseus_start)
+        end = next(
+            (index for index, fragment in enumerate(expected_fragments[start + 1 :], start + 1) if fragment == phase5_start),
+            None,
+        )
+        if end is not None:
+            current_theseus_fragments = [
+                theseus_static_ledger.compact_status_row(),
+                "`docs/project_theseus_static_import_status_ledger.md`",
+                "`python3 scripts/validate_project_theseus_static_import_status_ledger.py`",
+            ]
+            expected_fragments = expected_fragments[:start] + current_theseus_fragments + expected_fragments[end:]
 
     if len(chapters) != chapter_file_count:
         errors.append(f"Manifest has {len(chapters)} chapters but chapters/ has {chapter_file_count} .qmd files.")
