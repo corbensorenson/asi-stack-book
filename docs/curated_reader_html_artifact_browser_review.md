@@ -1,6 +1,6 @@
 # Curated Reader HTML Artifact Browser Review
 
-Last updated: 2026-07-03
+Last updated: 2026-07-04
 
 This note records a full local browser review of the tracked curated reader
 manuscript rendered as local HTML. It is not an edition release record, a
@@ -66,6 +66,9 @@ opened every curated reader HTML page at desktop and mobile widths.
 | Viewports | 2 |
 | Page-view pairs | 98 |
 | Failed page-view pairs | 0 |
+| Reader key figures detected | 10 |
+| Reader key-figure page-view pairs | 20 |
+| Failed reader key-figure checks | 0 |
 
 For each page-view pair, the browser check required:
 
@@ -79,11 +82,19 @@ For each page-view pair, the browser check required:
   `Formalization hooks`;
 - at least one rendered SVG diagram on every chapter page.
 
+For each rendered curated-reader key figure, the browser check now also
+requires a visible figure container, a loaded SVG image with substantive
+natural and rendered dimensions, a caption, a `Figure boundary:` paragraph,
+and viewport-contained figure framing at desktop and mobile widths. This is
+an automated rendered-layout check, not final art direction.
+
 ## Review Decision
 
 The tracked curated reader manuscript clears local HTML browser viability for
-this ignored review snapshot. This means the curated reader source can be used
-as a concrete input for release-quality continuity, figure, and format review.
+this ignored review snapshot. The ten draft key figures also clear automated
+HTML browser layout and visibility checks for this snapshot. This means the
+curated reader source can be used as a concrete input for release-quality
+continuity, figure, and format review.
 
 This review does not clear any release blocker, does not mark the HTML format
 row release-approved, does not create an edition release record, does not
@@ -102,7 +113,8 @@ PDF, e-reader, audio, or audio-embedded EPUB inspection.
 - EPUB, DOCX, PDF, e-reader, MP3, M4B, and audio-embedded EPUB artifacts remain
   unapproved until exact artifacts, application-level review, and release
   records exist.
-- Figure polish and final visual review remain open.
+- Figure polish, manual visual judgment, measured contrast review, and final
+  visual review remain open.
 - This review does not promote any claim support state, source interpretation,
   proof status, benchmark result, runtime behavior, model-quality claim, safety
   claim, or deployment-readiness claim.

@@ -14,6 +14,12 @@ Rendered HTML probe:
 python3 scripts/validate_reader_key_figure_html_probe.py --write-result
 ```
 
+Rendered HTML browser layout check:
+
+```bash
+node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json
+```
+
 This review records the current draft key-figure artifact inspection for the
 curated reader manuscript. It is not a release approval and not final figure-artifact review. It checks only that the ten draft SVG assets named in
 `editions/reader_manuscript/v1_0/manifest.json` are present, parseable,
@@ -26,6 +32,15 @@ tracked curated reader manuscript in a temporary workspace, renders HTML, and
 checks all ten draft figures for rendered image references, copied SVG assets,
 alt text, captions, responsive image classes, and visible non-claim boundary
 paragraphs. That probe is still not visual review and not release approval.
+
+The curated-reader HTML browser review in
+`docs/curated_reader_html_artifact_browser_review.md` now also checks the ten
+draft key figures at desktop and mobile widths: 10 figure containers, 20
+figure page-view pairs, 0 figure-check failures. It verifies loaded SVG
+images, visible figure containers, captions, `Figure boundary:` paragraphs,
+substantive rendered dimensions, and viewport-contained figure framing. This
+is still not manual visual judgment, measured contrast review, final
+figure-artifact approval, or reader release approval.
 
 2026-07-04 presentation-layer update: `assets/styles.scss` now applies a shared
 key-figure presentation shell to both live `.asi-key-figure` blocks and curated
@@ -68,10 +83,11 @@ equivalents.
 
 Open residuals:
 
-- HTML visual/layout: inspect scale, line weight, text legibility, caption
-  placement, and color contrast in the rendered reader HTML after the shared
-  presentation-layer update; the DOM probe and CSS change are not final visual
-  approval.
+- HTML visual/layout: automated browser checks now cover rendered figure
+  loading, size, captions, boundaries, and viewport containment for all ten
+  draft key figures at desktop and mobile widths. Manual aesthetic judgment,
+  measured contrast, line-weight review, and final visual approval remain
+  open.
 - EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
 - DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
 - PDF: inspect page-level layout, figure scaling, and caption placement.

@@ -170,6 +170,33 @@ async function inspectPage(page, filePath, viewportName, viewportSize) {
     const body = document.body;
     const main = document.querySelector("main") || document.body;
     const title = document.querySelector("h1");
+    const readerFigures = Array.from(document.querySelectorAll('[id^="reader-fig-"]')).map((node) => {
+      const rect = node.getBoundingClientRect();
+      const style = window.getComputedStyle(node);
+      const img = node.querySelector("img");
+      const imgRect = img ? img.getBoundingClientRect() : null;
+      const caption = node.querySelector("figcaption, .figure-caption");
+      const boundary = node.nextElementSibling && node.nextElementSibling.tagName === "P"
+        ? node.nextElementSibling.textContent.trim()
+        : "";
+      return {
+        id: node.id || "",
+        container_width: Math.round(rect.width),
+        container_height: Math.round(rect.height),
+        container_client_width: node.clientWidth,
+        container_scroll_width: node.scrollWidth,
+        overflow_x: style.overflowX,
+        img_present: Boolean(img),
+        img_complete: Boolean(img && img.complete),
+        img_natural_width: img ? img.naturalWidth : 0,
+        img_natural_height: img ? img.naturalHeight : 0,
+        img_width: imgRect ? Math.round(imgRect.width) : 0,
+        img_height: imgRect ? Math.round(imgRect.height) : 0,
+        caption_chars: caption ? caption.textContent.trim().length : 0,
+        boundary_chars: boundary.length,
+        boundary_text: boundary,
+      };
+    });
     const scrollWidth = Math.max(doc.scrollWidth, body ? body.scrollWidth : 0);
     const clientWidth = doc.clientWidth;
     return {
@@ -183,6 +210,7 @@ async function inspectPage(page, filePath, viewportName, viewportSize) {
       scroll_width: scrollWidth,
       client_width: clientWidth,
       horizontal_overflow_px: Math.max(0, scrollWidth - clientWidth),
+      reader_figures: readerFigures,
     };
   });
 
@@ -198,6 +226,29 @@ async function inspectPage(page, filePath, viewportName, viewportSize) {
   }
   if (filePath.includes(`${path.sep}chapters${path.sep}`) && metrics.svg_count < 1) {
     errors.push("chapter page has no rendered SVG diagram");
+  }
+  for (const figure of metrics.reader_figures) {
+    if (figure.container_width <= 0 || figure.container_height < 160) {
+      errors.push(`reader figure ${figure.id} container is not visibly sized`);
+    }
+    if (figure.container_width > metrics.client_width + 2) {
+      errors.push(`reader figure ${figure.id} container overflows viewport`);
+    }
+    if (!["auto", "scroll", "visible"].includes(figure.overflow_x)) {
+      errors.push(`reader figure ${figure.id} has unexpected overflow-x ${figure.overflow_x}`);
+    }
+    if (!figure.img_present || !figure.img_complete || figure.img_natural_width < 200 || figure.img_natural_height < 120) {
+      errors.push(`reader figure ${figure.id} image did not load with substantive dimensions`);
+    }
+    if (figure.img_width < (viewportName === "desktop" ? 500 : 300) || figure.img_height < 120) {
+      errors.push(`reader figure ${figure.id} rendered image is too small`);
+    }
+    if (figure.caption_chars < 10) {
+      errors.push(`reader figure ${figure.id} caption is missing or too short`);
+    }
+    if (figure.boundary_chars < 40 || !figure.boundary_text.toLowerCase().includes("figure boundary:")) {
+      errors.push(`reader figure ${figure.id} boundary paragraph is missing`);
+    }
   }
 
   return {
@@ -243,6 +294,14 @@ async function main() {
   }
 
   const failures = results.filter((result) => result.status !== "passed");
+  const figureResults = results.flatMap((result) =>
+    (result.reader_figures || []).map((figure) => ({
+      path: result.path,
+      viewport: result.viewport,
+      ...figure,
+    }))
+  );
+  const figureIds = [...new Set(figureResults.map((figure) => figure.id).filter(Boolean))].sort();
   const report = {
     schema_version: "0.1",
     artifact_root: relative(args.site),
@@ -251,6 +310,9 @@ async function main() {
     page_count: files.length,
     viewport_count: Object.keys(VIEWPORTS).length,
     page_view_pairs: results.length,
+    reader_figure_count: figureIds.length,
+    reader_figure_page_view_pairs: figureResults.length,
+    reader_figure_ids: figureIds,
     status: failures.length ? "failed" : "passed",
     failures,
     results,
