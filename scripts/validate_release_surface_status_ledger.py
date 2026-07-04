@@ -33,6 +33,7 @@ DOCX_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "docx_probe_mani
 PDF_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "pdf_probe_manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
 HTML_RELEASE_RECORD = ROOT / "release_records" / "2026-06-29-v1-reader-html-855dc277.json"
+CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
 
 REVIEW_DOCS = {
     "reader_html": ROOT / "docs" / "reader_html_artifact_browser_review.md",
@@ -123,6 +124,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         PDF_PROBE,
         AUDIO_PROBE,
         HTML_RELEASE_RECORD,
+        CURATED_BLOCKED_RECORD,
         *REVIEW_DOCS.values(),
     ]
     for path in required_paths:
@@ -142,6 +144,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     docx_probe = load_json(DOCX_PROBE)
     pdf_probe = load_json(PDF_PROBE)
     audio_probe = load_json(AUDIO_PROBE)
+    curated_blocked_record = load_json(CURATED_BLOCKED_RECORD)
 
     profile_ids = {profile.get("id") for profile in release_profiles.get("profiles", []) if isinstance(profile, dict)}
     missing_profiles = sorted(REQUIRED_PROFILE_IDS - profile_ids)
@@ -232,6 +235,36 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             errors.append(f"format review matrix missing blocker: {blocker}")
     if "edition release record" not in format_matrix.get("release_rule", ""):
         errors.append("format review matrix release rule must mention edition release record.")
+
+    if curated_blocked_record.get("record_type") != "edition_release":
+        errors.append("curated blocked release-candidate record must use record_type edition_release.")
+    if curated_blocked_record.get("release_id") != "2026-07-04-v1-curated-reader-blocked-5dc1cd46":
+        errors.append("curated blocked release-candidate record release_id drifted.")
+    if curated_blocked_record.get("validation_status") != "partial":
+        errors.append("curated blocked release-candidate record must remain validation_status partial.")
+    blocked_non_claim_text = " ".join(str(item) for item in curated_blocked_record.get("non_claims", [])).lower()
+    for fragment in ("does not approve", "does not publish", "does not promote"):
+        if fragment not in blocked_non_claim_text:
+            errors.append(f"curated blocked release-candidate record non_claims missing {fragment!r}.")
+    blocked_artifacts = {
+        artifact.get("format"): artifact
+        for artifact in curated_blocked_record.get("artifact_formats", [])
+        if isinstance(artifact, dict)
+    }
+    required_blocked_formats = {
+        "curated_reader_html",
+        "curated_reader_epub",
+        "curated_reader_docx",
+        "curated_reader_pdf",
+        "ereader_application_review",
+        "audio",
+    }
+    if set(blocked_artifacts) != required_blocked_formats:
+        errors.append(
+            "curated blocked release-candidate record must name exactly the current curated HTML/EPUB/DOCX/PDF, e-reader, and audio blockers."
+        )
+    if any(artifact.get("status") == "published" for artifact in blocked_artifacts.values()):
+        errors.append("curated blocked release-candidate artifacts must not be published.")
 
     curated_inspection = curated_format.get("inspection_summary", {})
     reader_inspection = artifact_inspection.get("inspection_summary", {})
@@ -328,6 +361,8 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "format_approved": approved_formats,
         "format_blocked": blocked_formats,
         "format_blocker_counts": blocker_counts,
+        "curated_blocked_record": rel(CURATED_BLOCKED_RECORD),
+        "curated_blocked_record_status": curated_blocked_record.get("validation_status"),
         "generated_html_pages": generated_html_pages,
         "generated_html_pairs": generated_html_pairs,
         "generated_html_failures": generated_html_failures,
@@ -362,22 +397,14 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         if errors:
             fail(errors)
     reconciliation_counts: Counter[str] = metrics["curated_reconciliation_counts"]
-    disposition_counts: Counter[str] = metrics["disposition_counts"]
     return (
         "| Release surfaces | Live, research, reader, and audio profiles exist. "
-        "Detailed release-surface state is generated in `docs/release_surface_status_ledger.md`: "
-        "generated-reader HTML remains the only release-approved reader artifact; "
-        f"the tracked curated reader manuscript is `{metrics['reader_manifest_status']}` with "
-        f"{metrics['curated_record_count']} records "
-        f"({reconciliation_counts.get('drafting', 0)} drafting, {reconciliation_counts.get('reconciled', 0)} reconciled) "
-        "and no release approval; "
-        f"the synced chapter review matrix records {metrics['chapter_review_count']} reviewed rows, "
-        f"{disposition_counts.get('reader_overlay_active', 0)} active-overlay chapters, "
-        f"{metrics['overlay_operation_count']} overlay operations, "
-        f"{disposition_counts.get('companion_note_candidate', 0)} companion-note candidates, and "
-        f"{disposition_counts.get('curated_manuscript_candidate', 0)} curated-manuscript candidates; "
-        "current curated HTML/EPUB/DOCX/PDF and reader EPUB/DOCX/PDF/audio records are probe evidence only, "
-        "with EPUB, DOCX, PDF, e-reader, audio, refreshed reader HTML, and final figure-artifact review still unapproved. | "
+        "Release detail is generated in `docs/release_surface_status_ledger.md`: generated-reader HTML remains the only approved reader artifact; "
+        f"`{metrics['curated_blocked_record']}` records the current curated-reader candidate as partial and blocked; "
+        f"the curated manuscript remains `{metrics['reader_manifest_status']}` with "
+        f"{metrics['curated_record_count']} records ({reconciliation_counts.get('reconciled', 0)} reconciled); "
+        f"{metrics['overlay_operation_count']} overlay operations are tracked; "
+        "EPUB, DOCX, PDF, e-reader, audio, refreshed reader HTML, and final figure-artifact approval remain unapproved. | "
         "`docs/release_surface_status_ledger.md`; `editions/release_profiles.json`; "
         "`editions/reader_overlays/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/manifest.json`; "
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`; "
@@ -387,6 +414,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/curated_reader_format_artifact_probe.md`; `docs/reader_epub_probe_manifest.md`; "
         "`docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; "
         "`docs/reader_audio_script_probe_manifest.md`; `release_records/2026-06-29-v1-reader-html-855dc277.json`; "
+        "`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`; "
+        "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
         "`python3 scripts/validate_release_surface_status_ledger.py` |"
     )
 
@@ -429,6 +458,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Release-approved reader formats | {qmd_escape(', '.join(metrics['format_approved']))} |",
             f"| Reader formats still carrying blockers | {qmd_escape(', '.join(metrics['format_blocked']))} |",
             f"| Format blocker counts | {qmd_escape(counter_phrase(blocker_counts))} |",
+            f"| Blocked curated reader candidate record | {metrics['curated_blocked_record_status']} |",
             "",
             "## Status-Page Row",
             "",
@@ -445,6 +475,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "## Format And Artifact Review",
             "",
             f"- Generated reader HTML is the only release-approved reader format row, backed by `{metrics['release_record']}`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, or figure-artifact review.",
+            f"- `{metrics['curated_blocked_record']}` records the current curated-reader HTML/EPUB/DOCX/PDF/e-reader/audio candidate as `partial` and blocked. It names exact local artifacts and blockers but does not approve, publish, tag, or archive any curated-reader artifact.",
             f"- `docs/reader_html_artifact_browser_review.md` records {metrics['generated_html_pages']} generated reader HTML pages, {metrics['generated_html_pairs']} page-view pairs, and {metrics['generated_html_failures']} failed page-view pairs.",
             f"- `docs/curated_reader_html_artifact_browser_review.md` records {metrics['curated_html_pages']} curated reader HTML pages, {metrics['curated_html_pairs']} page-view pairs, {metrics['curated_html_failures']} failed page-view pairs, {metrics['curated_key_figure_pairs']} key-figure page-view pairs, {metrics['curated_key_figure_failures']} key-figure failures, and ignored snapshot digest `{metrics['curated_html_digest']}`.",
             f"- `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: {metrics['curated_html_files']} HTML files, {metrics['curated_epub_xhtml']} EPUB XHTML entries, {metrics['curated_docx_png']} DOCX PNG media entries, {metrics['curated_docx_svg']} DOCX SVG media entries, and {metrics['curated_pdf_pages']} PDF pages. It preserves release blockers.",

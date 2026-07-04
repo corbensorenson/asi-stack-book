@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-04 - Record blocked curated reader release candidate
+
+- Added `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`
+  as a schema-validated partial edition-release candidate for the current
+  curated reader manuscript, naming exact local HTML, EPUB, DOCX, PDF,
+  e-reader, and audio blockers without approving or publishing artifacts.
+- Added `scripts/validate_curated_reader_blocked_release_record.py` and wired
+  it into `scripts/validate_book.py` and the release-surface ledger gate so the
+  blocked candidate stays aligned with the curated-reader manifests, local
+  probe fingerprints, blocker rows, and non-claim boundaries.
+- Updated README, the repository map, Appendix J, the v1.x roadmap, the release
+  surface ledger, and the v1.0 status snapshot to distinguish the approved
+  generated reader HTML artifact from the blocked curated reader candidate.
+- Boundary: no reader-release approval, no refreshed reader HTML approval, no
+  EPUB/DOCX/PDF/e-reader/audio approval, no source tag, no DOI/archive, no
+  support-state movement, no final figure-artifact approval, and no release
+  publication claim.
+
 ## 2026-07-04 - Move live Human-view detail into checked ledger
 
 - Added `docs/live_human_view_status_ledger.md` and

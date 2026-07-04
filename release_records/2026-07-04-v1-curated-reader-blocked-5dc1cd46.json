@@ -1,0 +1,122 @@
+{
+  "record_type": "edition_release",
+  "release_id": "2026-07-04-v1-curated-reader-blocked-5dc1cd46",
+  "major_version": "v1.0",
+  "source_commit": "5dc1cd467543edc97b1517901529347a6ef40052",
+  "source_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-04",
+  "edition_profile": "reader_release",
+  "primary_audiences": [
+    "interested_humans"
+  ],
+  "derivation_source": "Blocked release-candidate record for the tracked curated reader manuscript at source commit 5dc1cd467543edc97b1517901529347a6ef40052. The artifacts named here are ignored local review outputs from `python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf`, not approved release artifacts.",
+  "artifact_formats": [
+    {
+      "format": "curated_reader_html",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/html/_reader_site",
+      "notes": "Rendered local curated reader HTML review tree with 49 pages and 98 of 98 browser page-view pairs passing, including 20 of 20 key-figure page-view pairs. Tracked review digest is 4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a. Blocked: this is not release-approved, not published, and not the generated-reader HTML artifact approved by the 2026-06-29 record."
+    },
+    {
+      "format": "curated_reader_epub",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+      "notes": "Rendered and structurally inspected local EPUB review artifact: 8,703,384 bytes, SHA-256 1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4, 52 XHTML entries, 62 image entries, OPF title The ASI Stack, creator Corben Sorenson, and language en-US. Blocked: e-reader or application-level review has not happened and this EPUB is not release-approved."
+    },
+    {
+      "format": "curated_reader_docx",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+      "notes": "Rendered and structurally inspected local DOCX review artifact: 8,360,691 bytes, SHA-256 9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c, 77 zip entries, 61 PNG media entries, 0 SVG media entries, and 17,360 paragraph markers. Blocked: Word, LibreOffice GUI, or Google Docs application-level review has not happened and this DOCX is not release-approved."
+    },
+    {
+      "format": "curated_reader_pdf",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py; python3 scripts/audit_curated_reader_pdf_layout.py",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
+      "notes": "Rendered and structurally inspected local PDF review artifact: 9,360,937 bytes, SHA-256 f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a, 528 pages, title The ASI Stack, author Corben Sorenson, unencrypted letter pages, and an all-page text/bounding-box probe with 169,904 word boxes and 0 out-of-bounds word boxes. Blocked: this is not manual PDF page-by-page reading-flow review and the PDF is not release-approved."
+    },
+    {
+      "format": "ereader_application_review",
+      "status": "not_attempted",
+      "command_or_tool": "not run",
+      "path_or_uri": "",
+      "notes": "Blocked: EPUB has not been opened and inspected in a real e-reader or application review path, so e-reader approval remains absent."
+    },
+    {
+      "format": "audio",
+      "status": "not_attempted",
+      "command_or_tool": "not run",
+      "path_or_uri": "",
+      "notes": "Blocked: no MP3, M4B, or audio-embedded EPUB artifact exists; the current audio-script probe is a preparation workspace only."
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
+    "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/audit_curated_reader_pdf_layout.py",
+    "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
+    "python3 scripts/validate_curated_reader_format_probe_manifest.py",
+    "python3 scripts/validate_reader_key_figures.py",
+    "python3 scripts/validate_reader_key_figure_contrast.py",
+    "python3 scripts/validate_reader_key_figure_html_probe.py"
+  ],
+  "validation_status": "partial",
+  "review_status": {
+    "reader_continuity_review": "pass",
+    "source_scaffold_removed": "pass",
+    "audio_script_review": "in_progress",
+    "notes": "Curated reader chapter-level reconciliation and local HTML browser viability are recorded, but release-quality continuity, e-reader/application review, final figure-artifact review, and audio review remain open. This record intentionally preserves blockers rather than approving artifacts."
+  },
+  "reader_manuscript": {
+    "source_dir": "editions/reader_manuscript/v1_0",
+    "status": "reviewed",
+    "review_notes": "The tracked curated reader manuscript has 44 reconciled chapter records and no missing curated chapter files, but all chapter records still preserve release blockers until final format review and a future approval record explicitly clear them."
+  },
+  "audio_package": {
+    "script_dir": "build/audio_script",
+    "status": "script_generated",
+    "review_notes": "The audio-script workspace is generated for review only; no audio files, chapter timing, MP3, M4B, or audio-embedded EPUB package exists or is approved."
+  },
+  "companion_material": {
+    "path_or_uri": "editions/reader_manuscript/v1_0/companion_notes",
+    "status": "generated",
+    "review_notes": "Companion notes exist for dense figure/e-reader/audio support, but they are not released as standalone artifacts and do not replace meaning-critical prose."
+  },
+  "human_consumption_gate": {
+    "reader_spine_review": "pass",
+    "ebook_layout_review": "in_progress",
+    "diagram_image_review": "in_progress",
+    "bedtime_readability_review": "in_progress",
+    "companion_notes_status": "in_progress",
+    "notes": "The curated reader manuscript is a concrete human-reader candidate with rendered local artifacts, but it is not yet a release. EPUB, DOCX, PDF, figure-artifact, e-reader, and audio review gates remain open."
+  },
+  "audiobook_gate": {
+    "script_review": "in_progress",
+    "spoken_treatment_review": "not_started",
+    "chapter_marker_review": "not_started",
+    "audio_spot_check": "not_started",
+    "embedded_epub_check": "not_started",
+    "status": "not_started",
+    "notes": "Audio remains downstream of the reviewed reader edition. No audio artifact has been generated or approved."
+  },
+  "release_notes": "Blocked curated reader release-candidate record. It records exact current local HTML, EPUB, DOCX, PDF, e-reader, and audio blocker state for the tracked curated reader manuscript. It does not approve, publish, archive, or tag any curated reader artifact.",
+  "residuals": [
+    "curated_reconciliation_not_approved remains active on all 44 curated chapter records until a future approval record clears it.",
+    "format_artifact_not_reviewed remains active on all 44 curated chapter records until exact format review is complete.",
+    "reader_release_record_not_created remains active for approved curated reader artifacts; this record is explicitly blocked and partial.",
+    "full_format_artifact_review_not_completed remains active for EPUB, DOCX, and PDF.",
+    "app_or_ereader_review_not_completed remains active for EPUB and e-reader paths.",
+    "full_pdf_layout_review_not_completed remains active because the all-page bounding-box audit is not manual page-by-page reading-flow review.",
+    "Final figure-artifact review, visual identity approval, e-reader inspection, audio narration review, audio file generation, and audio-embedded EPUB packaging remain incomplete."
+  ],
+  "non_claims": [
+    "does not approve curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, MP3, M4B, or audio-embedded EPUB artifacts",
+    "does not publish a reader artifact to GitHub Pages or an external archive",
+    "does not create a source tag, DOI, Zenodo archive, audiobook, final figure-artifact approval, or final reader release",
+    "does not promote any chapter core claim above argument",
+    "does not prove ASI capability, model quality, deployment readiness, runtime safety, benchmark performance, source interpretation, or proof adequacy"
+  ]
+}

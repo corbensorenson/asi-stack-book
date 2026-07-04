@@ -3963,14 +3963,17 @@ validator-enforced status row that grows past compact status-summary size.
 - Test 1: reader arc reconciliation is complete across all 44 active curated
   reader chapters, and the twelve legacy voice-pass slots are converted into
   optional non-blocking sidecar enrichment entries. Live-edition chapter-length
-  watchlist, release-quality continuity polish, exact format review, and an
-  edition release record remain open.
-- Test 2: no edition release record beyond the 2026-06-29 reader HTML. The
-  current curated reader manuscript now has a refreshed local HTML/EPUB/DOCX/PDF
-  structural probe with 49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media
-  entries, 0 SVG conversion warnings, and a 528-page PDF sample-page render,
-  but EPUB/DOCX/PDF remain probe-level; audio remains script-probe-level;
-  visual identity review is not complete.
+  watchlist, release-quality continuity polish, exact format review, and a
+  release-approval record remain open; the current blocked candidate record
+  keeps those blockers explicit without promoting the manuscript to release.
+- Test 2: one blocked curated-reader release-candidate record now exists beyond
+  the 2026-06-29 approved generated-reader HTML record. It names exact current
+  local HTML/EPUB/DOCX/PDF/e-reader/audio blockers without approving or
+  publishing artifacts. The current curated reader manuscript now has a
+  refreshed local HTML/EPUB/DOCX/PDF structural probe with 49 HTML files, 52
+  EPUB XHTML entries, 61 DOCX PNG media entries, 0 SVG conversion warnings, and
+  a 528-page PDF sample-page render, but EPUB/DOCX/PDF remain probe-level; audio
+  remains script-probe-level; visual identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route
   selector transition; most chapter evidence lanes have not yet executed.
@@ -3985,6 +3988,18 @@ validator-enforced status row that grows past compact status-summary size.
   rows carry either `closed by artifact` or explicit `partially executed`
   status with named remaining work; intake and release loops exist and are
   validated; DOI/archive remains user-triggered and pending.
+- Cross-project (2026-07-04): Project Theseus's roadmap now carries a
+  Fourth-Pass AI Book Parity Addendum (Theseus-Hive `roadmap.md`) committing
+  Theseus to implement every book mechanism as the exemplar repo, with a
+  two-way contract: Theseus consumes the book's schemas/fixtures as a
+  conformance suite, and emits standard public-safe evidence packs plus one
+  real end-to-end reference trace (intent through improvement gate with real
+  layer handoffs) for the book to import. When those exports land, route them
+  through Milestone 3 import gates and the integrated-reference chapter's
+  open live-trace ask; they are the designated path for several Test 3/Test 4
+  closures. Governance-tax measurements from real Theseus runs are the
+  designated empirical evidence for the resource-economics governance-tax
+  lane.
 
 ## Version Targets
 
