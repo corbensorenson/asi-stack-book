@@ -7,7 +7,8 @@
   "source_commands": [
     "python3 scripts/build_audio_script.py --check",
     "python3 scripts/build_audio_script.py --source-mode curated_reader_manuscript",
-    "python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_manifest.json in a temporary workspace ..."
+    "python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_manifest.json in a temporary workspace ...",
+    "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest"
   ],
   "local_artifact_refs": [
     "build/audio_script/audio_manifest.json",
@@ -15,7 +16,8 @@
     "build/audio_script/companion_notes.md",
     "build/audio_script/chapter_markers.md",
     "build/audio_script/pronunciation_glossary.md",
-    "build/audio_script/proof_equation_reading_rules.md"
+    "build/audio_script/proof_equation_reading_rules.md",
+    "build/audio_script/audio_script_reading_flow_report.json"
   ],
   "tracked_evidence_refs": [
     "docs/release_editions_plan.md#audio-release-path",
@@ -91,5 +93,77 @@
     "This manifest does not approve EPUB, DOCX, PDF, HTML, e-reader, document, audio, MP3, M4B, or audio-embedded EPUB artifacts for publication.",
     "This manifest does not check narration quality, pronunciation quality, accessibility quality, full editorial quality, source interpretation, proof adequacy, theorem validity, benchmark behavior, runtime behavior, model quality, deployment safety, or release readiness.",
     "This manifest does not promote any chapter core claim and does not promote any claim support state."
-  ]
+  ],
+  "audio_script_reading_flow_review": {
+    "status": "passed_audio_script_reading_flow_review",
+    "source_workspace": "build/audio_script",
+    "source_generator": "scripts/build_audio_script.py",
+    "source_mode": "tracked_curated_reader_manuscript",
+    "requested_source_mode": "curated_reader_manuscript",
+    "report_ref": "build/audio_script/audio_script_reading_flow_report.json",
+    "review_command": "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
+    "script_files_checked": 49,
+    "front_matter_scripts_checked": 2,
+    "chapter_scripts_checked": 44,
+    "appendix_scripts_checked": 3,
+    "script_file_order_status": "matches_book_structure",
+    "script_file_order_errors": [],
+    "ordered_script_file_samples": {
+      "first_five": [
+        "index.md",
+        "preface.md",
+        "chapters/asi-is-a-stack-not-a-model.md",
+        "chapters/the-efficient-asi-hypothesis.md",
+        "chapters/system-boundaries-and-authority.md"
+      ],
+      "last_five": [
+        "chapters/living-book-methodology.md",
+        "chapters/open-research-agenda-and-bibliography-plan.md",
+        "appendices/B_glossary.md",
+        "appendices/G_corben_source_corpus.md",
+        "appendices/H_external_sources.md"
+      ]
+    },
+    "combined_script_sha256": "b16b8a8249ea89d7ddd47825bad7d64860762b12450c6c30cd3ae217ed28f9b3",
+    "text_characters_checked": 1066517,
+    "word_tokens_checked": 143288,
+    "release_note_count": 49,
+    "review_frontmatter_count": 49,
+    "narration_note_count": 66,
+    "table_narration_notes": 5,
+    "diagram_narration_notes": 50,
+    "image_narration_notes": 11,
+    "code_schema_narration_notes": 0,
+    "companion_treatment_totals": {
+      "tables": 5,
+      "mermaid_diagrams": 50,
+      "code_or_schema_blocks": 0,
+      "images": 11
+    },
+    "chapter_marker_rows": 49,
+    "chapter_marker_order_status": "matches_script_file_order",
+    "chapter_marker_order_errors": [],
+    "chapter_marker_tbd_rows": 49,
+    "implementation_horizon_chapter_scripts": 44,
+    "chapter_scripts_with_evidence_boundary_phrase": 26,
+    "live_marker_hits": 0,
+    "raw_core_claim_marker_hits": 0,
+    "replacement_character_count": 0,
+    "max_line_characters": 1800,
+    "max_word_characters": 143,
+    "target_artifact_status": {
+      "mp3": "target_not_generated",
+      "m4b": "target_not_generated",
+      "audio-embedded-epub": "target_not_generated"
+    },
+    "review_boundary": "This audio-script reading-flow review checks generated script order, chapter-marker order, implementation-horizon survival, narration-note coverage, stripped live markers, and audio target absence. It is not narration quality review, not pronunciation review, not chapter timecoding, not an audiobook, not audio generation, and not release approval.",
+    "non_claims": [
+      "does not approve narration quality",
+      "does not approve pronunciation quality",
+      "does not create MP3, M4B, or audio-embedded EPUB artifacts",
+      "does not timecode chapter markers",
+      "does not approve an audiobook or audio release",
+      "does not promote any chapter core claim or support state"
+    ]
+  }
 }

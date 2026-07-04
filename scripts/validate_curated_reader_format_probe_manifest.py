@@ -95,7 +95,17 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if manifest.get("source_mode") != "tracked_curated_reader_manuscript":
         errors.append("source_mode must be tracked_curated_reader_manuscript.")
     require_string("manifest", "purpose", manifest.get("purpose"), errors, min_words=12)
-    require_string("manifest", "review_decision", manifest.get("review_decision"), errors, min_words=20)
+    review_decision = require_string("manifest", "review_decision", manifest.get("review_decision"), errors, min_words=20)
+    for phrase in (
+        "renders locally to HTML, EPUB, DOCX, and PDF",
+        "PDF extracted-text reading-flow review checks 504 text pages",
+        "manual PDF viewer reading-flow/layout review",
+        "remain unapproved",
+    ):
+        if phrase not in review_decision:
+            errors.append(f"review_decision missing required phrase: {phrase}")
+    if "PDF reading-flow review, and an edition release record do not yet exist" in review_decision:
+        errors.append("review_decision must not say the automated PDF reading-flow review is missing.")
 
     commands = set(require_string_list("manifest", "source_commands", manifest.get("source_commands"), errors))
     missing_commands = sorted(REQUIRED_COMMANDS - commands)

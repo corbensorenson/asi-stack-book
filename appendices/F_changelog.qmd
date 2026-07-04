@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-04 - Add audio-script reading-flow review
+
+- Fixed `scripts/build_audio_script.py` so generated narration scripts and
+  `chapter_markers.md` follow `book_structure.json` order: index, preface, the
+  44 active chapters, then the included reader appendices, rather than
+  alphabetical filesystem order.
+- Added `scripts/validate_reader_audio_script_reading_flow.py` to regenerate
+  the ignored audio-script workspace, check script order, chapter-marker order,
+  implementation-horizon survival, narration-note coverage, stripped live
+  markers, raw core-claim marker leakage, and target audio artifact absence.
+- Recorded the current result in
+  `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`: 49
+  scripts, 49 ordered marker rows, 49 untimecoded marker rows, 66 narration
+  notes, 1,066,517 checked text characters, 44 chapter scripts with
+  implementation horizons, 0 live/research marker hits, and 0 raw core-claim
+  marker hits.
+- Updated `docs/reader_audio_script_probe_manifest.md`,
+  `docs/release_surface_status_ledger.md`,
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`,
+  `docs/v1_x_beyond_sota_roadmap.md`, and the release-record schema/validators
+  so the audio-script reading-flow evidence is required and visible.
+- Boundary: this is automated narration-source ordering and reading-flow
+  evidence only. It is not narration quality review, not pronunciation review,
+  not chapter timecoding, not audio generation, not an audiobook, not release
+  approval, and it does not promote any support state.
+
 ## 2026-07-04 - Add curated PDF reading-flow review
 
 - Added `scripts/validate_curated_reader_pdf_reading_flow.py` to run

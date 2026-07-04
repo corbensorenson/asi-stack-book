@@ -3639,7 +3639,8 @@ Current status:
   audio artifacts still remain unapproved until dedicated e-reader approval,
   Word/LibreOffice GUI/Google Docs DOCX review or an explicit release decision,
   manual PDF viewer reading-flow/layout review or an explicit release decision,
-  audio review, and an edition release record exist.
+  narration-quality/timecode/audio-generation review, and an edition release
+  record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,
@@ -3753,8 +3754,16 @@ Current status:
   validate the tracked local audio-script probe: 49 script files, preserved
   implementation horizons, 5 table treatment notes, 50 Mermaid diagram notes,
   11 image notes, 10 key-figure spoken-summary rows, and MP3/M4B/
-  audio-embedded EPUB targets still marked `target_not_generated`. This is not
-  narration approval, an audiobook, or an audio release record.
+  audio-embedded EPUB targets still marked `target_not_generated`.
+  `scripts/build_audio_script.py` now emits scripts in manifest reading order
+  rather than alphabetical filesystem order, and
+  `scripts/validate_reader_audio_script_reading_flow.py` records the automated
+  reading-flow check: 49 script files, 49 ordered marker rows, 49 untimecoded
+  `TBD` marker rows, 66 narration notes, 1,066,517 checked text characters, 44
+  chapter scripts with implementation horizons, 0 live/research marker hits, 0
+  raw core-claim marker hits, and audio targets still not generated. This is
+  not narration quality review, pronunciation review, chapter timecoding, an
+  audiobook, audio generation, or an audio release record.
 
 ### Milestone 9 - Prior Art, Preprints, And Archiving
 
@@ -4035,8 +4044,11 @@ validator-enforced status row that grows past compact status-summary size.
   pages; its PDF extracted-text reading-flow review checks 504 nonempty text
   pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0
   replacement characters. PDF remains probe-level until real PDF-viewer
-  reading-flow/layout review and an edition release record exist; audio remains
-  script-probe-level; visual
+  reading-flow/layout review and an edition release record exist; audio now has
+  automated script reading-flow/order review with 49 ordered marker rows and 66
+  narration notes, but it remains blocked on narration-quality review,
+  timecoding, generated audio artifacts, audio-embedded EPUB checks, and an
+  edition release record; visual
   identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route

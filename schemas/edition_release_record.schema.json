@@ -244,6 +244,10 @@
         "key_figure_epub_matched_titles",
         "key_figure_docx_matched_stems",
         "key_figure_pdf_matched_captions",
+        "audio_reading_flow_script_files",
+        "audio_reading_flow_ordered_markers",
+        "audio_reading_flow_narration_notes",
+        "audio_reading_flow_text_characters",
         "release_boundary"
       ],
       "properties": {
@@ -282,6 +286,10 @@
         "key_figure_epub_matched_titles": { "type": "integer", "minimum": 0 },
         "key_figure_docx_matched_stems": { "type": "integer", "minimum": 0 },
         "key_figure_pdf_matched_captions": { "type": "integer", "minimum": 0 },
+        "audio_reading_flow_script_files": { "type": "integer", "minimum": 0 },
+        "audio_reading_flow_ordered_markers": { "type": "integer", "minimum": 0 },
+        "audio_reading_flow_narration_notes": { "type": "integer", "minimum": 0 },
+        "audio_reading_flow_text_characters": { "type": "integer", "minimum": 0 },
         "release_boundary": { "type": "string", "minLength": 1 }
       },
       "additionalProperties": false

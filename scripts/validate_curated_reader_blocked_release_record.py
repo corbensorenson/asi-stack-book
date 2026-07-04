@@ -20,6 +20,7 @@ RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd
 CURATED_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
 KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
+AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 
@@ -50,6 +51,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
     "python3 scripts/validate_reader_key_figure_format_probe.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
+    "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_release_surface_status_ledger.py",
 }
 
@@ -88,7 +90,7 @@ def text_contains_all(owner: str, text: str, fragments: list[str], errors: list[
 
 def main() -> None:
     errors: list[str] = []
-    for path in (RECORD, CURATED_FORMAT, KEY_FIGURE_FORMAT, READER_MANIFEST, HTML_REVIEW):
+    for path in (RECORD, CURATED_FORMAT, KEY_FIGURE_FORMAT, READER_MANIFEST, AUDIO_PROBE, HTML_REVIEW):
         if not path.exists():
             errors.append(f"required path missing: {rel(path)}")
     if errors:
@@ -98,6 +100,7 @@ def main() -> None:
     curated = load_json(CURATED_FORMAT)
     key_figures = load_json(KEY_FIGURE_FORMAT)
     reader_manifest = load_json(READER_MANIFEST)
+    audio_probe = load_json(AUDIO_PROBE)
     html_review = HTML_REVIEW.read_text(encoding="utf-8")
     if not isinstance(record, dict):
         fail([f"{rel(RECORD)} must contain a JSON object."])
@@ -107,6 +110,8 @@ def main() -> None:
         fail([f"{rel(KEY_FIGURE_FORMAT)} must contain a JSON object."])
     if not isinstance(reader_manifest, dict):
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
+    if not isinstance(audio_probe, dict):
+        fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
 
     if record.get("record_type") != "edition_release":
         errors.append("record_type must be edition_release.")
@@ -183,6 +188,7 @@ def main() -> None:
     pdf_raster = curated.get("pdf_visual_raster_audit", {})
     pdf_reading_flow = curated.get("pdf_reading_flow_review", {})
     pdf_layout = curated.get("pdf_layout_audit", {})
+    audio_reading_flow = audio_probe.get("audio_script_reading_flow_review", {})
     if not isinstance(epub_audit, dict):
         errors.append("curated format epub_content_audit must be an object.")
         epub_audit = {}
@@ -204,6 +210,9 @@ def main() -> None:
     if not isinstance(pdf_layout, dict):
         errors.append("curated format pdf_layout_audit must be an object.")
         pdf_layout = {}
+    if not isinstance(audio_reading_flow, dict):
+        errors.append("audio_script_probe_manifest audio_script_reading_flow_review must be an object.")
+        audio_reading_flow = {}
 
     key_figure_expected = {
         ("epub", "matched_source_svg_titles"): 10,
@@ -247,6 +256,10 @@ def main() -> None:
         "key_figure_epub_matched_titles": 10,
         "key_figure_docx_matched_stems": 10,
         "key_figure_pdf_matched_captions": 10,
+        "audio_reading_flow_script_files": audio_reading_flow.get("script_files_checked"),
+        "audio_reading_flow_ordered_markers": audio_reading_flow.get("chapter_marker_rows"),
+        "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
+        "audio_reading_flow_text_characters": audio_reading_flow.get("text_characters_checked"),
     }
     for key, expected in expected_closure.items():
         if closure.get(key) != expected:
@@ -299,6 +312,18 @@ def main() -> None:
     ):
         if fragment and fragment not in pdf_note:
             errors.append(f"curated_reader_pdf notes missing PDF audit fragment: {fragment}")
+
+    audio_note = str(artifacts.get("audio", {}).get("notes", ""))
+    for fragment in (
+        "49 scripts",
+        "49 ordered markers",
+        "66 narration notes",
+        "1,066,517 text characters",
+        "not narration quality review",
+        "no MP3, M4B, or audio-embedded EPUB artifact exists",
+    ):
+        if fragment not in audio_note:
+            errors.append(f"audio notes missing audio reading-flow fragment: {fragment}")
 
     residual_text = " ".join(str(item) for item in record.get("residuals", []))
     missing_blockers = sorted(REQUIRED_BLOCKERS - {blocker for blocker in REQUIRED_BLOCKERS if blocker in residual_text})

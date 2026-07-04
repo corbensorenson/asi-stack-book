@@ -13,6 +13,7 @@ an audio release, and not a support-state promotion.
 python3 scripts/build_audio_script.py --check
 python3 scripts/build_audio_script.py --source-mode curated_reader_manuscript
 python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_manifest.json in a temporary workspace ...
+python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest
 ```
 
 ## Script Workspace Summary
@@ -31,6 +32,48 @@ Required review files are generated in the ignored workspace:
 `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `companion_notes.md`,
 `chapter_markers.md`, `pronunciation_glossary.md`, and
 `proof_equation_reading_rules.md`.
+
+## Audio Script Reading-Flow Review
+
+The generated script workspace now has an automated reading-flow review. It
+checks that `index.md`, `preface.md`, the 44 chapter scripts, and the included
+appendix scripts follow `book_structure.json` order instead of alphabetical
+filesystem order. It also checks that `chapter_markers.md` follows the same
+script order.
+
+| Metric | Value |
+|---|---:|
+| Script files checked | 49 |
+| Front-matter scripts checked | 2 |
+| Chapter scripts checked | 44 |
+| Appendix scripts checked | 3 |
+| Script order | matches book-structure order |
+| Ordered chapter markers | 49 ordered markers |
+| Chapter-marker timecodes | 49 `TBD` rows |
+| Narration notes | 66 narration notes |
+| Table narration notes | 5 |
+| Diagram narration notes | 50 |
+| Image narration notes | 11 |
+| Code/schema narration notes | 0 |
+| Implementation-horizon chapter scripts | 44 |
+| Text checked | 1,066,517 text characters |
+| Word tokens checked | 143,288 |
+| Replacement characters | 0 |
+| Live/research marker hits | 0 |
+| Raw core-claim marker hits | 0 |
+
+First scripts in order: `index.md`, `preface.md`,
+`chapters/asi-is-a-stack-not-a-model.md`,
+`chapters/the-efficient-asi-hypothesis.md`, and
+`chapters/system-boundaries-and-authority.md`.
+
+Last scripts in order: `chapters/living-book-methodology.md`,
+`chapters/open-research-agenda-and-bibliography-plan.md`,
+`appendices/B_glossary.md`, `appendices/G_corben_source_corpus.md`, and
+`appendices/H_external_sources.md`.
+
+This is not narration quality review, not pronunciation review, not chapter
+timecoding, not an audiobook, not audio generation, and not release approval.
 
 ## Companion Treatment Totals
 

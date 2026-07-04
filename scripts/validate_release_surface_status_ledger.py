@@ -296,6 +296,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     audio_workspace = audio_probe.get("script_workspace_summary", {})
     audio_targets = audio_probe.get("target_artifact_status", {})
     audio_key_figures = audio_probe.get("key_figure_companion_note", {})
+    audio_reading_flow = audio_probe.get("audio_script_reading_flow_review", {})
     if set(audio_targets.values()) != {"target_not_generated"}:
         errors.append("audio target artifacts must remain target_not_generated until audio release artifacts exist.")
     missing_audio_blockers = sorted(REQUIRED_AUDIO_BLOCKERS - set(audio_probe.get("release_blockers_preserved", [])))
@@ -307,6 +308,22 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         errors.append("audio probe key_figure_companion_note.has_audio_treatment must remain true.")
     if audio_key_figures.get("has_e_reader_treatment") is not True:
         errors.append("audio probe key_figure_companion_note.has_e_reader_treatment must remain true.")
+    expected_audio_reading_flow = {
+        "status": "passed_audio_script_reading_flow_review",
+        "script_files_checked": 49,
+        "chapter_marker_rows": 49,
+        "chapter_marker_tbd_rows": 49,
+        "narration_note_count": 66,
+        "text_characters_checked": 1066517,
+        "target_artifact_status": {
+            "mp3": "target_not_generated",
+            "m4b": "target_not_generated",
+            "audio-embedded-epub": "target_not_generated",
+        },
+    }
+    for key, expected in expected_audio_reading_flow.items():
+        if audio_reading_flow.get(key) != expected:
+            errors.append(f"audio_script_reading_flow_review.{key} must be {expected!r}.")
 
     if key_figure_format_probe.get("status") != "passed_local_format_package_probe":
         errors.append("key-figure format probe must remain passed_local_format_package_probe.")
@@ -384,6 +401,12 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "This manifest does not approve PDF, EPUB, DOCX, HTML, e-reader, document, audio, or audio-embedded EPUB artifacts",
         ],
         "reader_audio": [
+            "Audio Script Reading-Flow Review",
+            "matches book-structure order",
+            "49 ordered markers",
+            "66 narration notes",
+            "1,066,517 text characters",
+            "not narration quality review",
             "final figure-artifact approval, or evidence that audio files exist.",
             "| Draft figure summaries routed | 10 |",
             "This manifest does not approve EPUB, DOCX, PDF, HTML, e-reader, document, audio, MP3, M4B, or audio-embedded EPUB artifacts",
@@ -490,6 +513,10 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "reader_pdf_pages": pdf_info.get("pages"),
         "reader_pdf_bytes": pdf_info.get("file_size_bytes"),
         "audio_script_files": audio_workspace.get("script_files"),
+        "audio_reading_flow_markers": audio_reading_flow.get("chapter_marker_rows"),
+        "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
+        "audio_reading_flow_text_chars": audio_reading_flow.get("text_characters_checked"),
+        "audio_reading_flow_tbd_rows": audio_reading_flow.get("chapter_marker_tbd_rows"),
         "audio_targets": audio_targets,
         "audio_key_figure_count": audio_key_figures.get("figure_count"),
         "key_figure_epub_svg_entries": key_figure_format_probe.get("epub", {}).get("svg_entries"),
@@ -602,7 +629,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_epub_probe_manifest.md` records the generated reader EPUB probe: {metrics['reader_epub_bytes']:,} bytes and `{metrics['reader_epub_language']}` language metadata, with the e-reader/application blocker still active.",
             f"- `docs/reader_docx_probe_manifest.md` records the generated reader DOCX conversion probe: {metrics['reader_docx_pages']} pages and {metrics['reader_docx_bytes']:,} bytes, with full-format review still active.",
             f"- `docs/reader_pdf_probe_manifest.md` records the generated reader PDF probe: {metrics['reader_pdf_pages']} pages and {metrics['reader_pdf_bytes']:,} bytes, with full PDF layout review still active.",
-            f"- `docs/reader_audio_script_probe_manifest.md` records {metrics['audio_script_files']} audio-script workspace files and routes {metrics['audio_key_figure_count']} draft key-figure spoken summaries into the generated audio companion workspace; target artifact states remain {qmd_escape(', '.join(f'{key}: {value}' for key, value in sorted(audio_targets.items())))}.",
+            f"- `docs/reader_audio_script_probe_manifest.md` records {metrics['audio_script_files']} audio-script workspace files, a reading-flow review with {metrics['audio_reading_flow_markers']} ordered chapter-marker rows, {metrics['audio_reading_flow_tbd_rows']} untimecoded marker rows, {metrics['audio_reading_flow_narration_notes']} narration notes, and {metrics['audio_reading_flow_text_chars']:,} text characters, plus {metrics['audio_key_figure_count']} draft key-figure spoken summaries routed into the generated audio companion workspace; target artifact states remain {qmd_escape(', '.join(f'{key}: {value}' for key, value in sorted(audio_targets.items())))}.",
             f"- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval; `docs/reader_key_figure_format_probe.md` records package/text survival with {metrics['key_figure_epub_svg_entries']} EPUB SVG entries, {metrics['key_figure_epub_matched_titles']} matched EPUB SVG titles, {metrics['key_figure_docx_matched_stems']} DOCX figure stems, and {metrics['key_figure_pdf_matched_captions']} PDF draft-caption matches while preserving final-art, e-reader, application, PDF-layout, and release blockers.",
             "",
             "## Non-Claim Boundary",

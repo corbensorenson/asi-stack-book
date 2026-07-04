@@ -289,6 +289,45 @@ def flatten_chapters(structure: dict) -> list[dict]:
     return chapters
 
 
+def ordered_reader_qmd_files(reader_dir: Path) -> list[Path]:
+    """Return generated reader files in book order, then any extras."""
+    structure = load_structure()
+    ordered_relatives: list[Path] = []
+    seen: set[Path] = set()
+
+    def add_if_present(relative: str) -> None:
+        path = Path(relative)
+        if path.suffix != ".qmd":
+            return
+        if path in seen:
+            return
+        if (reader_dir / path).exists():
+            ordered_relatives.append(path)
+            seen.add(path)
+
+    for relative in structure.get("front_matter", []):
+        if isinstance(relative, str):
+            add_if_present(relative)
+
+    for chapter in flatten_chapters(structure):
+        relative = chapter.get("file")
+        if isinstance(relative, str):
+            add_if_present(relative)
+
+    for appendix in structure.get("appendices", []):
+        if isinstance(appendix, dict):
+            relative = appendix.get("file")
+            if isinstance(relative, str):
+                add_if_present(relative)
+
+    extras = [
+        path.relative_to(reader_dir)
+        for path in sorted(reader_dir.rglob("*.qmd"))
+        if path.relative_to(reader_dir) not in seen
+    ]
+    return [reader_dir / relative for relative in ordered_relatives + extras]
+
+
 def implementation_horizon_script_records(output_dir: Path) -> list[dict[str, object]]:
     records: list[dict[str, object]] = []
     for chapter in flatten_chapters(load_structure()):
@@ -562,7 +601,7 @@ def generate(output_dir: Path, source_mode: str = DEFAULT_SOURCE_MODE) -> dict[s
 
         script_files: list[str] = []
         treatment_summary: dict[str, dict[str, int]] = {}
-        for source_path in sorted(reader_dir.rglob("*.qmd")):
+        for source_path in ordered_reader_qmd_files(reader_dir):
             relative = source_path.relative_to(reader_dir)
             target = output_dir / relative.with_suffix(".md")
             target.parent.mkdir(parents=True, exist_ok=True)

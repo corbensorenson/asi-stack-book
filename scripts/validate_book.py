@@ -53,6 +53,7 @@ REQUIRED = [
     "scripts/validate_reader_docx_probe_manifest.py",
     "scripts/validate_reader_pdf_probe_manifest.py",
     "scripts/validate_reader_audio_script_probe_manifest.py",
+    "scripts/validate_reader_audio_script_reading_flow.py",
     "scripts/validate_curated_reader_blocked_release_record.py",
     "scripts/sync_reader_chapter_review_matrix.py",
     "scripts/sync_reader_format_review_matrix.py",
@@ -936,6 +937,7 @@ def main() -> None:
     run_validator("validate_reader_epub_probe_manifest.py")
     run_validator("validate_reader_docx_probe_manifest.py")
     run_validator("validate_reader_pdf_probe_manifest.py")
+    run_validator("validate_reader_audio_script_reading_flow.py")
     run_validator("validate_reader_audio_script_probe_manifest.py")
     run_validator("validate_curated_reader_blocked_release_record.py")
     run_validator("sync_reader_format_review_matrix.py", "--check")
