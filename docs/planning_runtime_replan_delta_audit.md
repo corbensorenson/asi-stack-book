@@ -28,3 +28,12 @@ This audit does not execute a deployed planner, does not prove runtime
 scheduler behavior, does not prove decomposition quality, does not prove route
 quality or selected-tier adequacy, does not prove live feedback handling, and
 does not promote the chapter support state. In short: no support-state transition.
+
+The accepted no-promotion decision
+`evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json`
+records this audit as a blocking decision, not upward support movement. It
+blocks deployed planner, runtime-scheduler, decomposition-quality,
+context-demand-prediction, route-quality, selected-tier-adequacy,
+scheduler-optimality, live-feedback, deployed-runtime-replanning, benchmark,
+model-quality, safety, ASI, and chapter-core promotion claims until stronger
+artifacts exist.

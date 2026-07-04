@@ -300,7 +300,11 @@ missing context deltas, missing verification deltas, blocked-authority
 dispatch receipts, support-promotion overclaims, and missing non-claim
 boundaries. The audit sharpens the runtime-replan record shape while leaving
 planner quality, live feedback handling, runtime scheduler behavior, route
-quality, selected-tier adequacy, and deployment unclaimed.
+quality, selected-tier adequacy, and deployment unclaimed. The accepted
+no-promotion decision
+`evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json`
+records the audit as blocking evidence for those runtime claims, not as
+chapter-core promotion.
 
 ## Beyond the State of the Art
 
@@ -338,7 +342,7 @@ This traffic-control layer is still an architectural target. Keep planning suppo
 | Dispatch-state enforcement test | Check that only `dispatchable` nodes can lower into typed jobs and blocked/proposed nodes remain residuals or review items. | planned; not run |
 | Replanning-delta audit | Check that replanning records changed assumptions, authority basis, context, verification, stop conditions, and residuals. | planned; not run |
 | Planning scheduler-state probe | Check that a synthetic scheduler fixture separates ready, blocked, dispatchable, merged, and replanned states; rejects failed cheap-route adequacy, conflicting merges, authority-erasing replans, dependency cycles, and erased repair or residual costs; and preserves no-promotion boundaries. | implemented by `python3 scripts/validate_planning_scheduler_state_probe.py` with two valid synthetic scheduler traces and seven expected-invalid controls; no decomposition-quality, context-demand-prediction, selected-tier-adequacy, route-quality, scheduler-optimality, deployed scheduler, runtime-replanning, support-state-promotion, or evidence-transition claim |
-| Planning runtime-replan delta audit | Check that synthetic runtime replans preserve authority and stop conditions, stay inside the affected subgraph, record context and verification deltas, keep residual ownership, block authority-denied dispatch, and preserve no-promotion boundaries. | implemented by `python3 scripts/validate_planning_runtime_replan_delta.py` with two valid synthetic runtime-replan traces and nine expected-invalid controls; no deployed-planner, runtime-scheduler, decomposition-quality, route-quality, selected-tier-adequacy, live-feedback-handling, support-state-promotion, or evidence-transition claim |
+| Planning runtime-replan delta audit | Check that synthetic runtime replans preserve authority and stop conditions, stay inside the affected subgraph, record context and verification deltas, keep residual ownership, block authority-denied dispatch, and preserve no-promotion boundaries. | implemented by `python3 scripts/validate_planning_runtime_replan_delta.py` with two valid synthetic runtime-replan traces and nine expected-invalid controls; no deployed-planner, runtime-scheduler, decomposition-quality, route-quality, selected-tier-adequacy, live-feedback-handling, support-state-promotion, or upward evidence-transition claim |
 | DAG acyclicity test | Check that plan-graph dependencies and PlanForge DAG edges are acyclic and agree before dispatch. | implemented in `python3 scripts/validate_plan_execution_contracts.py`; no deployed scheduler claim |
 | Capability tier assignment test | Check that each node has a minimum adequate tier, route assignment, and verification burden. | planned; not run |
 | Escalation trigger test | Check that failed quality predicates route to escalation or residuals. | implemented in `AsiStackProofs.PlanForge`; builds locally |

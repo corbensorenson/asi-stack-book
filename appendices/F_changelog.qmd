@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-04 - Record Planning runtime-replan no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json`
+  as an accepted `blocks_promotion` decision for the existing Planning
+  runtime-replan delta audit.
+- Updated `docs/non_core_evidence_ledger.md`, README, the landing page, the
+  runtime-replan audit note, the Planning live/reader chapter text, the
+  outline, and the v1.x roadmap so the no-promotion side-lane count moves from
+  21 to 22 and the runtime-replan fixture appears in the explicit blocking
+  ledger.
+- Boundary: no support-state movement, no chapter-core promotion, no deployed
+  planner claim, no runtime-scheduler claim, no decomposition-quality claim, no
+  context-demand-prediction claim, no route-quality or selected-tier-adequacy
+  claim, no scheduler-optimality claim, no live-feedback or deployed
+  runtime-replanning claim, and no benchmark/model-quality/safety/ASI claim.
+
 ## 2026-07-04 - Record typed job durable lifecycle no-promotion decision
 
 - Added
