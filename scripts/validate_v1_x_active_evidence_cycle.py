@@ -19,6 +19,7 @@ EXPECTED_SELECTED = {
     "fast-generation-architectures",
 }
 STATIC_REQUIRED_FRAGMENTS = (
+    "Last updated: 2026-07-04",
     "Selected chapter lanes | 3",
     "Lane cap | 1 flagship measured lane plus at most 2 direct support lanes per v1.x cycle",
     "Flagship measured lane | `resource-economics-and-token-budgets`",
@@ -29,6 +30,12 @@ STATIC_REQUIRED_FRAGMENTS = (
     "docs/resource_workflow_trace.md",
     "docs/resource_live_probe.md",
     "docs/resource_ci_cost_profile.md",
+    "finite CI failure-classification summary",
+    "resourceCICostProfileFixture",
+    "eight completed runs",
+    "five successful completed runs",
+    "three classified GitHub Pages deploy-service failures",
+    "131-second recovery boundary",
     "docs/resource_flagship_lane_run.md",
     "evidence_transitions/v1_x_measured/resource_workflow_trace_no_change.json",
     "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",

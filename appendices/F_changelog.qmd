@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-04 - Guard active evidence-cycle CI metrics
+
+- Updated `docs/v1_x_active_evidence_cycle.md` so the selected Resource
+  Economics flagship lane reflects the current Resource CI profile: 8 recorded
+  Pages runs, 8 completed runs, 5 successes, 3 classified deploy-service
+  failures, the 131-second recovery boundary, and the finite
+  `resourceCICostProfileFixture` classifier bridge.
+- Tightened `scripts/validate_v1_x_active_evidence_cycle.py` so the active
+  evidence-cycle ledger must expose the current CI metrics and Lean bridge
+  fragments instead of merely referencing the CI profile document.
+- Boundary: this is trust-surface accuracy and validator hardening only. It
+  does not create a new evidence transition, rerun a prototype, approve a
+  release artifact, or promote any chapter core claim.
+
 ## 2026-07-04 - Add Resource CI finite Lean bridge
 
 - Added `lean:resources.ci_failure_classification.fixture_bridge` for Resource
@@ -34,9 +48,9 @@
   from generated-scaffold drift, keep the final deploy failure line in the
   logged excerpt, and preserve the publication-metadata non-claim boundary.
 - Added `experiments/resource_ci_cost_profile/results/2026-07-04-main.json`
-  from the current GitHub Actions run window: 8 Pages runs, 7 completed runs,
-  3 successful completed runs, 4 classified deploy-service failures, 1
-  in-progress run at capture, and a 131-second recovery run.
+  from the current GitHub Actions run window: 8 Pages runs, 8 completed runs,
+  5 successful completed runs, 3 classified deploy-service failures, 0
+  in-progress runs at capture, and a 131-second recovery run.
 - Refreshed the Resource CI profile doc, no-promotion decision references,
   active evidence-cycle/status surfaces, and the aggregate Resource flagship
   replay record so tracked artifact hashes point at the current CI profile.
