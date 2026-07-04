@@ -18,8 +18,10 @@ REQUIRED_COMMANDS = {
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
     "python3 scripts/repair_curated_reader_epub_links.py",
+    "python3 scripts/repair_curated_reader_docx_links.py",
     "python3 scripts/audit_curated_reader_pdf_layout.py",
     "python3 scripts/audit_curated_reader_epub_content.py",
+    "python3 scripts/audit_curated_reader_docx_content.py",
 }
 REQUIRED_BLOCKERS = {
     "curated_reconciliation_not_approved",
@@ -107,6 +109,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     inspection_summary = manifest.get("inspection_summary")
     pdf_layout_audit = manifest.get("pdf_layout_audit")
     epub_content_audit = manifest.get("epub_content_audit")
+    docx_content_audit = manifest.get("docx_content_audit")
     if not isinstance(render_summary, dict):
         errors.append("render_summary must be an object.")
         render_summary = {}
@@ -119,6 +122,9 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(epub_content_audit, dict):
         errors.append("epub_content_audit must be an object.")
         epub_content_audit = {}
+    if not isinstance(docx_content_audit, dict):
+        errors.append("docx_content_audit must be an object.")
+        docx_content_audit = {}
     if set(render_summary) != EXPECTED_FORMATS:
         errors.append(f"render_summary must contain exactly {sorted(EXPECTED_FORMATS)}.")
     if set(inspection_summary) != EXPECTED_FORMATS:
@@ -284,6 +290,40 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         if "not e-reader application review" not in boundary or "does not approve the EPUB artifact" not in boundary:
             errors.append("epub_content_audit.review_boundary must preserve e-reader and release-approval boundaries.")
 
+    if docx_content_audit:
+        if docx_content_audit.get("status") != "passed_docx_document_xml_relationship_probe":
+            errors.append("docx_content_audit.status must be passed_docx_document_xml_relationship_probe.")
+        if docx_content_audit.get("source_artifact") != "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx":
+            errors.append("docx_content_audit.source_artifact must point to the curated reader DOCX.")
+        if not SHA_RE.match(str(docx_content_audit.get("source_sha256", ""))):
+            errors.append("docx_content_audit.source_sha256 must be a SHA-256 digest.")
+        expected_values = {
+            "zip_entries": 77,
+            "paragraph_markers": 17360,
+            "image_relationships": 61,
+            "media_entries": 61,
+            "png_media_entries": 61,
+            "svg_media_entries": 0,
+            "raw_qmd_relationship_targets": 0,
+            "unresolved_internal_relationship_targets": 0,
+            "live_marker_hits": 0,
+            "raw_core_claim_marker_hits": 0,
+        }
+        for key, expected_value in expected_values.items():
+            if docx_content_audit.get(key) != expected_value:
+                errors.append(f"docx_content_audit.{key} must be {expected_value}.")
+        require_int("docx_content_audit", "document_xml_characters", docx_content_audit.get("document_xml_characters"), errors, minimum=2_000_000)
+        require_int("docx_content_audit", "text_characters_checked", docx_content_audit.get("text_characters_checked"), errors, minimum=1_000_000)
+        require_int("docx_content_audit", "relationship_count", docx_content_audit.get("relationship_count"), errors, minimum=250)
+        require_int("docx_content_audit", "external_hyperlink_relationships", docx_content_audit.get("external_hyperlink_relationships"), errors, minimum=200)
+        markers = set(require_string_list("docx_content_audit", "required_text_markers_present", docx_content_audit.get("required_text_markers_present"), errors))
+        for marker in {"The ASI Stack", "Reader Edition Draft", "evidence boundary", "Reader Source List", "External Citation Policy"}:
+            if marker not in markers:
+                errors.append(f"docx_content_audit.required_text_markers_present missing {marker}.")
+        boundary = require_string("docx_content_audit", "review_boundary", docx_content_audit.get("review_boundary"), errors, min_words=18)
+        if "not Word, LibreOffice GUI, or Google Docs application review" not in boundary or "does not approve the DOCX artifact" not in boundary:
+            errors.append("docx_content_audit.review_boundary must preserve application-review and release-approval boundaries.")
+
     blockers = set(require_string_list("manifest", "release_blockers_preserved", manifest.get("release_blockers_preserved"), errors))
     missing_blockers = sorted(REQUIRED_BLOCKERS - blockers)
     if missing_blockers:
@@ -307,8 +347,10 @@ def validate_summary(errors: list[str]) -> None:
         "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
         "python3 scripts/inspect_curated_reader_format_artifacts.py",
         "python3 scripts/repair_curated_reader_epub_links.py",
+        "python3 scripts/repair_curated_reader_docx_links.py",
         "python3 scripts/audit_curated_reader_pdf_layout.py",
         "python3 scripts/audit_curated_reader_epub_content.py",
+        "python3 scripts/audit_curated_reader_docx_content.py",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
         "| docx | rendered | 1 | 1 | 0 | 0 |",
@@ -320,6 +362,7 @@ def validate_summary(errors: list[str]) -> None:
         "SHA-256 `1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4`",
         "repaired EPUB package SHA-256 `62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e`",
         "SHA-256 `9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c`",
+        "repaired DOCX package SHA-256 `7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce`",
         "SHA-256 `f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a`",
         "528 pages",
         "sample pages 1, 2, 25, 300, and 500",
@@ -333,6 +376,9 @@ def validate_summary(errors: list[str]) -> None:
         "49 packaged content XHTML entries",
         "0 unresolved internal hrefs",
         "not e-reader application review",
+        "17,360 paragraphs",
+        "0 raw .qmd relationship targets",
+        "not Word, LibreOffice GUI, or Google Docs application review",
         "does not clear release blockers",
         "does not promote any claim support state",
     ]

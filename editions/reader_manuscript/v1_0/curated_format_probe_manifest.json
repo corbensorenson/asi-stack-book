@@ -9,8 +9,10 @@
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
     "python3 scripts/repair_curated_reader_epub_links.py",
+    "python3 scripts/repair_curated_reader_docx_links.py",
     "python3 scripts/audit_curated_reader_pdf_layout.py",
-    "python3 scripts/audit_curated_reader_epub_content.py"
+    "python3 scripts/audit_curated_reader_epub_content.py",
+    "python3 scripts/audit_curated_reader_docx_content.py"
   ],
   "local_report_refs": [
     "build/curated_reader_edition/curated_reader_render_report.json",
@@ -193,5 +195,33 @@
       "External Citation Policy"
     ],
     "review_boundary": "All-XHTML EPUB package, content-marker, and internal-link checks are stronger local EPUB evidence than container inspection alone, but this is not e-reader application review and does not approve the EPUB artifact for release."
+  },
+  "docx_content_audit": {
+    "status": "passed_docx_document_xml_relationship_probe",
+    "source_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+    "source_sha256": "7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce",
+    "zip_entries": 77,
+    "document_xml_characters": 2797249,
+    "text_characters_checked": 1196634,
+    "paragraph_markers": 17360,
+    "run_markers": 28307,
+    "relationship_count": 286,
+    "image_relationships": 61,
+    "external_hyperlink_relationships": 217,
+    "media_entries": 61,
+    "png_media_entries": 61,
+    "svg_media_entries": 0,
+    "raw_qmd_relationship_targets": 0,
+    "unresolved_internal_relationship_targets": 0,
+    "live_marker_hits": 0,
+    "raw_core_claim_marker_hits": 0,
+    "required_text_markers_present": [
+      "The ASI Stack",
+      "Reader Edition Draft",
+      "evidence boundary",
+      "Reader Source List",
+      "External Citation Policy"
+    ],
+    "review_boundary": "DOCX document XML, media, and relationship checks are stronger local DOCX evidence than package inspection alone, but this is not Word, LibreOffice GUI, or Google Docs application review and does not approve the DOCX artifact for release."
   }
 }

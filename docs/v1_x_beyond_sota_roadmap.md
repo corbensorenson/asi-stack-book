@@ -3609,7 +3609,11 @@ Current status:
   EPUB package audit now checks all 52 XHTML entries, 49 packaged content XHTML
   entries, OPF/nav counts, required reader text markers, live-marker leakage,
   raw core-claim marker leakage, and internal links with 0 unresolved internal
-  hrefs. EPUB, DOCX, PDF, e-reader, and audio artifacts still remain
+  hrefs. The repaired DOCX package audit now checks document XML, required
+  reader text markers, media entries, relationship targets, live-marker
+  leakage, raw core-claim marker leakage, and internal relationship targets with
+  0 raw `.qmd` relationship targets and 0 unresolved internal relationship
+  targets. EPUB, DOCX, PDF, e-reader, and audio artifacts still remain
   unapproved until
   application-level review and an edition release record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
@@ -3985,7 +3989,10 @@ validator-enforced status row that grows past compact status-summary size.
   a 528-page PDF sample-page render. Its repaired-package EPUB audit checks all
   XHTML content/navigation links with 0 unresolved internal hrefs, but EPUB
   still remains probe-level until real e-reader/application review and an
-  edition release record exist; DOCX/PDF remain probe-level; audio remains
+  edition release record exist. Its repaired-package DOCX audit checks document
+  XML/media/relationships with 0 raw `.qmd` relationship targets, but DOCX still
+  remains probe-level until real Word, LibreOffice GUI, or Google Docs review and
+  an edition release record exist; PDF remains probe-level; audio remains
   script-probe-level; visual identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route

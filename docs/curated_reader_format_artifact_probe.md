@@ -14,8 +14,10 @@ Commands and reproduction path:
 python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf
 python3 scripts/inspect_curated_reader_format_artifacts.py
 python3 scripts/repair_curated_reader_epub_links.py
+python3 scripts/repair_curated_reader_docx_links.py
 python3 scripts/audit_curated_reader_pdf_layout.py
 python3 scripts/audit_curated_reader_epub_content.py
+python3 scripts/audit_curated_reader_docx_content.py
 ```
 
 Local ignored reports:
@@ -82,6 +84,38 @@ This all-XHTML EPUB package audit is stronger local EPUB evidence than
 container inspection alone, but it is not e-reader application review and does
 not approve the EPUB artifact for release.
 
+## DOCX Document XML And Relationship Audit
+
+After the container inspection above, the probe applies
+`python3 scripts/repair_curated_reader_docx_links.py` to the ignored DOCX
+snapshot. That command removes Quarto's known forward-link leakage from the
+source appendix target `H_external_sources.qmd` by unwrapping the broken DOCX
+hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce`
+then passed a document XML, media, and relationship audit with 17,360 paragraphs and 0 raw .qmd relationship targets.
+
+| Metric | Result |
+|---|---:|
+| ZIP entries checked | 77 |
+| Document XML characters checked | 2,797,249 |
+| Text characters checked | 1,196,634 |
+| Paragraph markers | 17,360 |
+| Run markers | 28,307 |
+| Relationships checked | 286 |
+| Image relationships | 61 |
+| External hyperlink relationships | 217 |
+| Media entries | 61 |
+| PNG media entries | 61 |
+| SVG media entries | 0 |
+| Raw `.qmd` relationship targets | 0 |
+| Unresolved internal relationship targets | 0 |
+| Live-marker leaks | 0 |
+| Raw core-claim marker leaks | 0 |
+
+Required text markers were present: `The ASI Stack`, `Reader Edition Draft`,
+`evidence boundary`, `Reader Source List`, and `External Citation Policy`.
+This DOCX package audit is stronger local DOCX evidence than package
+inspection alone, but it is not Word, LibreOffice GUI, or Google Docs application review and does not approve the DOCX artifact for release.
+
 ## PDF Text And Layout Extraction Audit
 
 The refreshed PDF probe also ran full-document text and bounding-box extraction
@@ -109,9 +143,10 @@ not approve the PDF artifact for release.
 The tracked curated reader manuscript now has a local format-probe path beyond
 HTML browser viability: the same curated source rendered to HTML, EPUB, DOCX,
 and PDF, and the snapshots passed structural inspection. The repaired EPUB
-package also passed the all-XHTML content/navigation audit above, and the PDF
-also passed the all-page text/bounding-box audit above. This is useful evidence
-for release preparation, e-reader testing, DOCX application review, PDF layout
+package also passed the all-XHTML content/navigation audit above, the repaired
+DOCX package passed the document XML/relationship audit above, and the PDF also
+passed the all-page text/bounding-box audit above. This is useful evidence for
+release preparation, e-reader testing, DOCX application review, PDF layout
 review, and figure conversion work.
 
 This does not clear release blockers. EPUB still needs real e-reader or app
