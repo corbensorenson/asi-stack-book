@@ -1,0 +1,131 @@
+{
+  "transition_id": "v1_x_measured.typed_job_durable_lifecycle_probe.no_change",
+  "claim_id": "labor-os.typed_job_durable_lifecycle_probe",
+  "claim_surface_refs": [
+    "docs/typed_job_durable_lifecycle_probe.md",
+    "chapters/labor-os-and-typed-jobs.qmd",
+    "editions/reader_manuscript/v1_0/chapters/labor-os-and-typed-jobs.qmd",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json",
+    "scripts/validate_typed_job_durable_lifecycle_probe.py",
+    "lean/AsiStackProofs/TypedJobs.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Typed job durable lifecycle probe only. The probe validates two deterministic synthetic durable lifecycle traces and rejects nine expected-invalid controls for retry without idempotency, authority widening on retry, permission overreach after resume, expired-lease dispatch, missing completion receipt, missing replay ref, missing residual owner, missing non-claim boundary, and support-state promotion from fixture shape. It does not execute a deployed scheduler, durable workflow engine, permission enforcement service, approval service, runtime adapter, replay engine, lifecycle checker, completion-receipt service, benchmark, model-quality evaluation, safety evaluation, or working Labor OS runtime.",
+  "evidence_roles": [
+    "deterministic_synthetic_typed_job_durable_lifecycle_fixture",
+    "retry_idempotency_negative_control",
+    "authority_preservation_negative_control",
+    "permission_scope_negative_control",
+    "expired_lease_dispatch_blocking_control",
+    "completion_receipt_and_replay_ref_controls",
+    "residual_owner_control",
+    "finite_lean_typed_job_durable_lifecycle_bridge",
+    "support_state_and_non_claim_negative_controls",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The typed job durable lifecycle probe is useful because it makes retry/resume, idempotency, authority preservation, permission basis, lease blocking, completion receipts, replay refs, residual ownership, non-claim boundaries, and support-state non-promotion executable as finite Labor OS records. It remains a deterministic synthetic record gate, not deployed Labor OS evidence, so this accepted decision blocks promotion for deployed scheduler behavior, durable workflow recovery, permission enforcement, approval-service behavior, adapter execution, replay correctness, completion-receipt service behavior, live workflow traces, benchmark performance, model quality, safety, ASI, or the Labor OS chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable typed-job lifecycle checker trace",
+    "tool-permission enforcement service evidence",
+    "approval-service behavior trace",
+    "adapter-runner execution trace",
+    "completion-receipt service trace",
+    "replay engine trace with replay-correctness checks",
+    "durable workflow recovery trace",
+    "deployed scheduler or externally replayed workflow trace",
+    "runtime evidence across real or externally reviewable typed jobs",
+    "independent review of Labor OS execution boundaries",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/typed_job_durable_lifecycle_probe.md",
+    "experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json",
+    "scripts/validate_typed_job_durable_lifecycle_probe.py",
+    "lean/AsiStackProofs/TypedJobs.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/typed_job_durable_lifecycle_probe.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/test_harness_status_ledger.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#labor-os-and-typed-jobs.core",
+    "docs/book_outline.md#labor-os-and-typed-jobs"
+  ],
+  "verification_command": "python3 scripts/validate_typed_job_durable_lifecycle_probe.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "retry without idempotency is rejected",
+    "authority widening on retry is rejected",
+    "permission overreach after resume is rejected",
+    "expired-lease dispatch is rejected",
+    "evidence-ready durable job without completion receipt is rejected",
+    "evidence-ready durable job without replay ref is rejected",
+    "blocked durable trace without residual owner is rejected",
+    "missing non-claim boundary is rejected",
+    "support-state promotion from fixture shape is rejected",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/typed_job_durable_lifecycle_probe.md",
+    "experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json",
+    "scripts/validate_typed_job_durable_lifecycle_probe.py"
+  ],
+  "downgrade_triggers": [
+    "Typed job durable lifecycle probe validator failure",
+    "retry without idempotency, authority widening, permission overreach, expired-lease dispatch, missing completion receipt, missing replay ref, missing residual owner, missing non-claim boundary, or support-promotion control accepted as valid",
+    "probe described as deployed scheduler, durable workflow recovery, permission-enforcement, approval-service, adapter-runner, completion-receipt service, replay-correctness, benchmark, model-quality, safety, ASI, or support-state evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Labor OS durable lifecycle claim after deployed or externally reviewable typed-job lifecycle checking, tool-permission enforcement, approval-service behavior, adapter-runner execution, completion-receipt service behavior, replay-engine correctness, durable workflow recovery, scheduler or externally replayed workflow traces, runtime evidence over real or externally reviewable jobs, residual accounting, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "deterministic synthetic durable lifecycle fixture only",
+    "no deployed scheduler",
+    "no durable workflow engine",
+    "no durable workflow recovery evidence",
+    "no deployed permission enforcement",
+    "no approval-service behavior result",
+    "no runtime adapter execution",
+    "no completion-receipt service behavior result",
+    "no replay engine or replay-correctness result",
+    "no live or externally replayed workflow trace",
+    "no benchmark evidence",
+    "no model-quality evidence",
+    "no safety or ASI evidence",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Labor OS, workflow-engine, permission-service, approval-service, adapter-runner, replay-engine, scheduler, benchmark, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable typed-job lifecycle checker trace",
+    "no permission-enforcement service evidence",
+    "no approval-service behavior trace",
+    "no adapter-runner execution trace",
+    "no completion-receipt service behavior trace",
+    "no replay-engine correctness evidence",
+    "no durable workflow recovery evidence",
+    "no live or externally replayed workflow traces",
+    "no independent Labor OS execution review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-typed-job-durable-lifecycle-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote typed job durable lifecycle evidence above argument",
+    "does not prove deployed scheduler behavior, durable workflow recovery, permission enforcement, approval-service behavior, adapter execution, completion-receipt service behavior, replay correctness, benchmark performance, model quality, safety, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Labor OS and Typed Jobs chapter core claim"
+  ]
+}

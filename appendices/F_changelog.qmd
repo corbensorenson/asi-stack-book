@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-04 - Record typed job durable lifecycle no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/typed_job_durable_lifecycle_probe_no_change.json`
+  as an accepted `blocks_promotion` decision for the existing Labor OS durable
+  lifecycle probe.
+- Updated `docs/non_core_evidence_ledger.md`, README, the landing page, the
+  durable lifecycle probe note, the Labor OS live/reader chapter text, the
+  outline, and the v1.x roadmap so the no-promotion side-lane count moves from
+  20 to 21 and the typed-job durable lifecycle fixture appears in the explicit
+  blocking ledger.
+- Boundary: no support-state movement, no chapter-core promotion, no deployed
+  scheduler claim, no durable-workflow-recovery claim, no permission-service
+  claim, no approval-service claim, no adapter-runner claim, no
+  completion-receipt service claim, no replay-engine or replay-correctness
+  claim, no workflow-trace claim, no benchmark/model-quality/safety/ASI claim,
+  and no working Labor OS runtime claim.
+
 ## 2026-07-04 - Record readiness lifecycle no-promotion decision
 
 - Added

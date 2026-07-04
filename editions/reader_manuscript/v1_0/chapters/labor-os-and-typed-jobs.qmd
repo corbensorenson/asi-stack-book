@@ -353,7 +353,10 @@ rejects nine bad paths, including retry without idempotency, authority
 widening on retry, permission overreach after resume, expired-lease dispatch,
 missing completion receipt, missing replay reference, missing residual owner,
 missing non-claim boundary, and support-state promotion from the fixture.
-This is not a deployed Labor OS result either.
+
+This is not a deployed Labor OS result either. The no-promotion record for
+this probe treats it as a blocking decision: it helps say what would be needed
+for stronger Labor OS evidence, but it does not move the chapter support state.
 
 ## Beyond the State of the Art
 

@@ -29,3 +29,11 @@ experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json
 This probe does not execute a deployed scheduler, prove durable workflow
 recovery, prove permission enforcement, prove approval-service behavior, prove
 replay correctness, or promote the chapter support state. In short: no support-state transition.
+
+The accepted no-promotion decision
+`evidence_transitions/v1_x_measured/typed_job_durable_lifecycle_probe_no_change.json`
+records this fixture as a blocking decision, not upward support movement. It
+blocks deployed scheduler, durable workflow recovery, permission-enforcement,
+approval-service, adapter-runner, completion-receipt service, replay-engine,
+workflow-trace, benchmark, model-quality, safety, ASI, and chapter-core
+promotion claims until stronger artifacts exist.
