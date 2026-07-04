@@ -13,6 +13,7 @@ Commands and reproduction path:
 ```bash
 python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf
 python3 scripts/inspect_curated_reader_format_artifacts.py
+python3 scripts/audit_curated_reader_pdf_layout.py
 ```
 
 Local ignored reports:
@@ -47,17 +48,40 @@ or PDF artifact.
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,704,385 bytes, SHA-256 `eff77fb066771316ddfd4578b2511d455b3f4e325890462d2942a44a2e0f759b`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,361,902 bytes, SHA-256 `a7b760a86852f3983ac046d77bb8b5bf6f8b0d2aed67cc8d6aa4ed430db477f4`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,360 paragraph markers, required Word package entries present. |
-| pdf | passed | 9,363,284 bytes, SHA-256 `e003c6f9cb2f2a0f7b77f022282595cd960ced6653a1a4db10bb1b7ecb86e50c`, 528 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,703,384 bytes, SHA-256 `1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,360,691 bytes, SHA-256 `9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,360 paragraph markers, required Word package entries present. |
+| pdf | passed | 9,360,937 bytes, SHA-256 `f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a`, 528 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+
+## PDF Text And Layout Extraction Audit
+
+The refreshed PDF probe also ran full-document text and bounding-box extraction
+after the reader-prose pass that removed overlong machine identifiers from the
+relaxed reader chapters.
+
+| Metric | Result |
+|---|---:|
+| Pages checked | 528 |
+| Word boxes checked | 169,904 |
+| Textless pages | 0 |
+| Out-of-bounds word boxes | 0 |
+| Layout lines over 160 characters | 0 |
+| Minimum word-box height | 14.531 |
+| Maximum word-box height | 35.47 |
+
+Required text markers were present: `The ASI Stack`, `Reader Edition Draft`,
+`evidence boundary`, `Reader Source List`, and `External Citation Policy`.
+This all-page extraction audit is stronger local PDF evidence than
+representative sampling, but it is not manual PDF page-by-page review and does
+not approve the PDF artifact for release.
 
 ## Review Decision
 
 The tracked curated reader manuscript now has a local format-probe path beyond
 HTML browser viability: the same curated source rendered to HTML, EPUB, DOCX,
-and PDF, and the snapshots passed structural inspection. This is useful
-evidence for release preparation, e-reader testing, DOCX application review,
-PDF layout review, and figure conversion work.
+and PDF, and the snapshots passed structural inspection. The PDF also passed
+the all-page text/bounding-box audit above. This is useful evidence for release
+preparation, e-reader testing, DOCX application review, PDF layout review, and
+figure conversion work.
 
 This does not clear release blockers. EPUB still needs real e-reader or app
 inspection. DOCX still needs application-level review in Word, LibreOffice GUI,

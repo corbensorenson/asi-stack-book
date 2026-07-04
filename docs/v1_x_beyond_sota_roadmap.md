@@ -3580,7 +3580,7 @@ Current status:
   across 20 desktop/mobile figure page-view pairs with 0 failures, exact
   ignored-snapshot
   digest
-  `b75f54d27856b63e9e6bdea4f8a8d3e073c2c76ab700b3e6c1c51425d021a9eb`, and
+  `4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a`, and
   all 44 `curated_reconciliation_not_approved`,
   `format_artifact_not_reviewed`, and `reader_release_record_not_created`
   blockers preserved. This closes a render/browser-viability uncertainty for
@@ -3675,7 +3675,7 @@ Current status:
   `build/curated_reader_edition/format_artifacts/html/_reader_site` opened 49
   pages across desktop and mobile widths, passed 98 of 98 page-view checks,
   and has deterministic directory digest
-  `b75f54d27856b63e9e6bdea4f8a8d3e073c2c76ab700b3e6c1c51425d021a9eb`. This
+  `4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a`. This
   is review input for release-quality artifact work; it does not mark the
   curated reader edition, refreshed HTML, EPUB, DOCX, PDF, e-reader, or audio
   release-approved.

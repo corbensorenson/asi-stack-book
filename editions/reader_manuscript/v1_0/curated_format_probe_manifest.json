@@ -7,7 +7,8 @@
   "source_mode": "tracked_curated_reader_manuscript",
   "source_commands": [
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
-    "python3 scripts/inspect_curated_reader_format_artifacts.py"
+    "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/audit_curated_reader_pdf_layout.py"
   ],
   "local_report_refs": [
     "build/curated_reader_edition/curated_reader_render_report.json",
@@ -64,8 +65,8 @@
     },
     "epub": {
       "status": "passed",
-      "bytes": 8704385,
-      "sha256": "eff77fb066771316ddfd4578b2511d455b3f4e325890462d2942a44a2e0f759b",
+      "bytes": 8703384,
+      "sha256": "1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4",
       "entries": 120,
       "xhtml_entries": 52,
       "image_entries": 62,
@@ -85,8 +86,8 @@
     },
     "docx": {
       "status": "passed",
-      "bytes": 8361902,
-      "sha256": "a7b760a86852f3983ac046d77bb8b5bf6f8b0d2aed67cc8d6aa4ed430db477f4",
+      "bytes": 8360691,
+      "sha256": "9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c",
       "entries": 77,
       "media_entries": 61,
       "png_media_entries": 61,
@@ -102,8 +103,8 @@
     },
     "pdf": {
       "status": "passed",
-      "bytes": 9363284,
-      "sha256": "e003c6f9cb2f2a0f7b77f022282595cd960ced6653a1a4db10bb1b7ecb86e50c",
+      "bytes": 9360937,
+      "sha256": "f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a",
       "pages": 528,
       "title": "The ASI Stack",
       "author": "Corben Sorenson",
@@ -133,6 +134,26 @@
       ]
     }
   },
+  "pdf_layout_audit": {
+    "status": "passed_full_text_bbox_probe",
+    "source_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
+    "source_sha256": "f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a",
+    "pages_checked": 528,
+    "word_boxes_checked": 169904,
+    "textless_pages": 0,
+    "out_of_bounds_word_boxes": 0,
+    "long_layout_lines_over_160_chars": 0,
+    "min_word_box_height": 14.531,
+    "max_word_box_height": 35.47,
+    "required_text_markers_present": [
+      "The ASI Stack",
+      "Reader Edition Draft",
+      "evidence boundary",
+      "Reader Source List",
+      "External Citation Policy"
+    ],
+    "review_boundary": "All-page text and bounding-box extraction is stronger local PDF layout evidence than representative sampling, but it is not manual PDF page-by-page review and does not approve the PDF artifact for release."
+  },
   "release_blockers_preserved": [
     "curated_reconciliation_not_approved",
     "format_artifact_not_reviewed",
@@ -140,7 +161,7 @@
     "full_format_artifact_review_not_completed",
     "app_or_ereader_review_not_completed"
   ],
-  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, DOCX, and PDF and passes structural artifact inspection. The DOCX and PDF renders now use ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, so the previous SVG conversion warnings are no longer present. EPUB, DOCX, and PDF remain unapproved because application-level e-reader/DOCX/PDF review has not happened and no edition release record exists.",
+  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, DOCX, and PDF and passes structural artifact inspection. The DOCX and PDF renders now use ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, so the previous SVG conversion warnings are no longer present. The refreshed PDF all-page text/bounding-box audit checked 528 pages, 169904 word boxes, 0 textless pages, 0 out-of-bounds word boxes, 0 layout lines over 160 characters, and required text markers. EPUB, DOCX, and PDF remain unapproved because application-level e-reader/DOCX/PDF review has not happened and no edition release record exists.",
   "non_claims": [
     "This manifest records local structural inspection of ignored curated-reader snapshots only.",
     "This manifest is not a reader release, ebook release, document release, PDF release, edition release record, or artifact approval.",

@@ -43,6 +43,25 @@ SURFACE_FRAGMENTS = (
     "no natural-language-intent-understanding, deployed-parser-quality, deployed-authority-extraction, prompt-injection-containment, runtime-dispatch, approval-service, user-satisfaction, or support-state-promotion claim",
 )
 
+READER_SURFACE_FRAGMENTS = (
+    "Intent re-contract trigger probe",
+    "One valid case keeps work under the accepted contract when nothing material changes",
+    "another routes a changed publication surface back through re-contracting before dispatch",
+    "authority widening",
+    "private-source publication pressure",
+    "stop-condition erasure",
+    "weaker evidence bars",
+    "affected-party changes",
+    "means expansion",
+    "support-state promotion",
+    "not a claim that the system understands intent",
+    "extracts hidden authority",
+    "contains prompt injection",
+    "runs an approval service",
+    "satisfies users",
+    "can promote support states",
+)
+
 REQUIRED_NON_CLAIM_TERMS = (
     "does not promote any chapter core claim",
     "does not create a support-state transition",
@@ -244,12 +263,12 @@ def main() -> None:
         (rel(OUTLINE), OUTLINE),
         (rel(ROADMAP), ROADMAP),
         (rel(LIVE_CHAPTER), LIVE_CHAPTER),
-        (rel(READER_CHAPTER), READER_CHAPTER),
         (rel(README), README),
         (rel(PUBLICATION), PUBLICATION),
         (rel(STATUS), STATUS),
     ):
         require_fragments(owner, path.read_text(encoding="utf-8"), SURFACE_FRAGMENTS, errors)
+    require_fragments(rel(READER_CHAPTER), READER_CHAPTER.read_text(encoding="utf-8"), READER_SURFACE_FRAGMENTS, errors)
 
     record = chapter_record(structure, "human-intent-as-a-formal-input")
     if record.get("evidence_level") != "argument":

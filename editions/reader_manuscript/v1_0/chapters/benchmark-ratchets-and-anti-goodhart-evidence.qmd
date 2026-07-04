@@ -291,16 +291,12 @@ without approval.
 
 The bridge is public and replayable as bounded synthetic evidence. The
 anti-Goodhart harness reports 2 valid fixtures and 5 expected-invalid fixtures.
-The fixture-bridge validator then recomputes the fixture set, checks
-`experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json`,
-and verifies the `AsiStackProofs.BenchmarkRatchets` finite summary for
-`lean:benchmarks.ratchet.fixture_bridge`. The result record names one
-promotion-ready synthetic path, one saturated-regression-floor path, five
-expected-invalid controls, `support_state_effect: none`,
-`chapter_core_support_effect: none`, `evidence_transition_created: false`, and
-the theorem refs `benchmark_antigoodhart_fixture_bridge_valid`,
-`benchmark_antigoodhart_fixture_bridge_has_expected_controls`, and
-`benchmark_antigoodhart_fixture_bridge_preserves_no_support_promotion`.
+The fixture-bridge validator then recomputes the fixture set, checks the
+tracked fixture-bridge result, and verifies the `AsiStackProofs.BenchmarkRatchets`
+finite summary. The result record names one promotion-ready synthetic path, one
+saturated-regression-floor path, five expected-invalid controls, no support-state
+effect, no chapter-core support effect, no evidence transition, and three theorem
+references covering fixture validity, expected controls, and no-promotion preservation.
 
 That is useful protocol discipline. It is not an empirical benchmark run. It
 does not prove hidden holdout quality, transfer validity, contamination

@@ -43,7 +43,7 @@ It records release-profile, reader-manuscript, format-probe, and artifact-review
 
 - Generated reader HTML is the only release-approved reader format row, backed by `release_records/2026-06-29-v1-reader-html-855dc277.json`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, or figure-artifact review.
 - `docs/reader_html_artifact_browser_review.md` records 59 generated reader HTML pages, 118 page-view pairs, and 0 failed page-view pairs.
-- `docs/curated_reader_html_artifact_browser_review.md` records 49 curated reader HTML pages, 98 page-view pairs, 0 failed page-view pairs, 20 key-figure page-view pairs, 0 key-figure failures, and ignored snapshot digest `b75f54d27856b63e9e6bdea4f8a8d3e073c2c76ab700b3e6c1c51425d021a9eb`.
+- `docs/curated_reader_html_artifact_browser_review.md` records 49 curated reader HTML pages, 98 page-view pairs, 0 failed page-view pairs, 20 key-figure page-view pairs, 0 key-figure failures, and ignored snapshot digest `4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a`.
 - `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: 49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, 0 DOCX SVG media entries, and 528 PDF pages. It preserves release blockers.
 - `docs/reader_epub_probe_manifest.md` records the generated reader EPUB probe: 9,078,787 bytes and `en-US` language metadata, with the e-reader/application blocker still active.
 - `docs/reader_docx_probe_manifest.md` records the generated reader DOCX conversion probe: 514 pages and 8,190,162 bytes, with full-format review still active.

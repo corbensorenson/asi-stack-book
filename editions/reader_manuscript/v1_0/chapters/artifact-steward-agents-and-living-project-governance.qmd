@@ -394,14 +394,11 @@ They do not execute a steward, connect to a wallet, scan live workflows, prove
 event-intake safety, or run a governance system.
 
 It also contains the Artifact steward lifecycle probe. That deterministic
-local check composes the public fixture records into two valid route examples,
-`valid_clean_release_review_proposal` and `valid_sunset_review_route`, plus
-six expected-invalid controls: `invalid_tainted_event_without_review`,
-`invalid_over_policy_treasury_spend`,
-`invalid_contribution_governance_laundering`,
-`invalid_unscoped_federation_contract`,
-`invalid_release_without_gate_evidence`, and
-`invalid_sunset_criteria_ordinary_work`. The point is not to claim a working
+local check composes the public fixture records into two valid route examples:
+a clean release-review proposal and a sunset-review route. The rejected controls
+cover tainted events without review, over-policy treasury spending, contribution
+governance laundering, unscoped federation contracts, releases without gate
+evidence, and ordinary work mislabeled as sunset criteria. The point is not to claim a working
 project manager. It is a bounded fixture-route check with an explicit no
 steward-bot, treasury-executor, event-taint-workflow, contributor-ledger,
 governance-runner, project-federation, release-runner, sunset-protocol, or

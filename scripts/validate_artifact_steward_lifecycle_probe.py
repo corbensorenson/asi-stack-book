@@ -49,6 +49,21 @@ SURFACE_FRAGMENTS = (
     "no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim",
 )
 
+READER_SURFACE_FRAGMENTS = (
+    "Artifact steward lifecycle probe",
+    "clean release-review proposal",
+    "sunset-review route",
+    "tainted events without review",
+    "over-policy treasury spending",
+    "contribution governance laundering",
+    "unscoped federation contracts",
+    "releases without gate evidence",
+    "ordinary work mislabeled as sunset criteria",
+    "not to claim a working project manager",
+    "bounded fixture-route check",
+    "no steward-bot, treasury-executor, event-taint-workflow, contributor-ledger, governance-runner, project-federation, release-runner, sunset-protocol, or support-state-promotion claim",
+)
+
 REQUIRED_NON_CLAIM_TERMS = (
     "does not promote any chapter core claim",
     "does not create a support-state transition",
@@ -256,12 +271,12 @@ def main() -> None:
         (rel(OUTLINE), OUTLINE),
         (rel(ROADMAP), ROADMAP),
         (rel(LIVE_CHAPTER), LIVE_CHAPTER),
-        (rel(READER_CHAPTER), READER_CHAPTER),
         (rel(README), README),
         (rel(PUBLICATION), PUBLICATION),
         (rel(STATUS), STATUS),
     ):
         require_fragments(owner, path.read_text(encoding="utf-8"), SURFACE_FRAGMENTS, errors)
+    require_fragments(rel(READER_CHAPTER), READER_CHAPTER.read_text(encoding="utf-8"), READER_SURFACE_FRAGMENTS, errors)
 
     record = chapter_record(structure, "artifact-steward-agents-and-living-project-governance")
     if record.get("evidence_level") != "argument":

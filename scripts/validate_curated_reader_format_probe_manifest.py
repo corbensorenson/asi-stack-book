@@ -17,6 +17,7 @@ EXPECTED_FORMATS = {"html", "epub", "docx", "pdf"}
 REQUIRED_COMMANDS = {
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/audit_curated_reader_pdf_layout.py",
 }
 REQUIRED_BLOCKERS = {
     "curated_reconciliation_not_approved",
@@ -102,12 +103,16 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
 
     render_summary = manifest.get("render_summary")
     inspection_summary = manifest.get("inspection_summary")
+    pdf_layout_audit = manifest.get("pdf_layout_audit")
     if not isinstance(render_summary, dict):
         errors.append("render_summary must be an object.")
         render_summary = {}
     if not isinstance(inspection_summary, dict):
         errors.append("inspection_summary must be an object.")
         inspection_summary = {}
+    if not isinstance(pdf_layout_audit, dict):
+        errors.append("pdf_layout_audit must be an object.")
+        pdf_layout_audit = {}
     if set(render_summary) != EXPECTED_FORMATS:
         errors.append(f"render_summary must contain exactly {sorted(EXPECTED_FORMATS)}.")
     if set(inspection_summary) != EXPECTED_FORMATS:
@@ -215,6 +220,35 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             if marker not in markers:
                 errors.append(f"inspection_summary.pdf.required_text_markers missing {marker}.")
 
+    if pdf_layout_audit:
+        if pdf_layout_audit.get("status") != "passed_full_text_bbox_probe":
+            errors.append("pdf_layout_audit.status must be passed_full_text_bbox_probe.")
+        if pdf_layout_audit.get("source_artifact") != "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf":
+            errors.append("pdf_layout_audit.source_artifact must point to the curated reader PDF.")
+        if pdf_layout_audit.get("source_sha256") != pdf.get("sha256"):
+            errors.append("pdf_layout_audit.source_sha256 must match inspection_summary.pdf.sha256.")
+        if pdf_layout_audit.get("pages_checked") != 528:
+            errors.append("pdf_layout_audit.pages_checked must be 528.")
+        if pdf_layout_audit.get("word_boxes_checked") != 169904:
+            errors.append("pdf_layout_audit.word_boxes_checked must be 169904.")
+        if pdf_layout_audit.get("textless_pages") != 0:
+            errors.append("pdf_layout_audit.textless_pages must be 0.")
+        if pdf_layout_audit.get("out_of_bounds_word_boxes") != 0:
+            errors.append("pdf_layout_audit.out_of_bounds_word_boxes must be 0.")
+        if pdf_layout_audit.get("long_layout_lines_over_160_chars") != 0:
+            errors.append("pdf_layout_audit.long_layout_lines_over_160_chars must be 0.")
+        if pdf_layout_audit.get("min_word_box_height") != 14.531:
+            errors.append("pdf_layout_audit.min_word_box_height must be 14.531.")
+        if pdf_layout_audit.get("max_word_box_height") != 35.47:
+            errors.append("pdf_layout_audit.max_word_box_height must be 35.47.")
+        markers = set(require_string_list("pdf_layout_audit", "required_text_markers_present", pdf_layout_audit.get("required_text_markers_present"), errors))
+        for marker in {"The ASI Stack", "Reader Edition Draft", "evidence boundary", "Reader Source List", "External Citation Policy"}:
+            if marker not in markers:
+                errors.append(f"pdf_layout_audit.required_text_markers_present missing {marker}.")
+        boundary = require_string("pdf_layout_audit", "review_boundary", pdf_layout_audit.get("review_boundary"), errors, min_words=18)
+        if "not manual PDF page-by-page review" not in boundary or "does not approve the PDF artifact" not in boundary:
+            errors.append("pdf_layout_audit.review_boundary must preserve manual-review and release-approval boundaries.")
+
     blockers = set(require_string_list("manifest", "release_blockers_preserved", manifest.get("release_blockers_preserved"), errors))
     missing_blockers = sorted(REQUIRED_BLOCKERS - blockers)
     if missing_blockers:
@@ -237,6 +271,7 @@ def validate_summary(errors: list[str]) -> None:
         "Curated Reader Format Artifact Probe",
         "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
         "python3 scripts/inspect_curated_reader_format_artifacts.py",
+        "python3 scripts/audit_curated_reader_pdf_layout.py",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
         "| docx | rendered | 1 | 1 | 0 | 0 |",
@@ -245,11 +280,17 @@ def validate_summary(errors: list[str]) -> None:
         "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `eff77fb066771316ddfd4578b2511d455b3f4e325890462d2942a44a2e0f759b`",
-        "SHA-256 `a7b760a86852f3983ac046d77bb8b5bf6f8b0d2aed67cc8d6aa4ed430db477f4`",
-        "SHA-256 `e003c6f9cb2f2a0f7b77f022282595cd960ced6653a1a4db10bb1b7ecb86e50c`",
+        "SHA-256 `1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4`",
+        "SHA-256 `9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c`",
+        "SHA-256 `f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a`",
         "528 pages",
         "sample pages 1, 2, 25, 300, and 500",
+        "| Pages checked | 528 |",
+        "| Word boxes checked | 169,904 |",
+        "| Textless pages | 0 |",
+        "| Out-of-bounds word boxes | 0 |",
+        "| Layout lines over 160 characters | 0 |",
+        "not manual PDF page-by-page review",
         "does not clear release blockers",
         "does not promote any claim support state",
     ]

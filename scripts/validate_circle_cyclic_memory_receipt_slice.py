@@ -59,6 +59,20 @@ NON_CLAIMS = (
     "transfer",
     "ASI",
 )
+READER_SURFACE_FRAGMENTS = (
+    "concrete Circle receipt",
+    "finite residue/winding fixture",
+    "one residue slot",
+    "one winding index",
+    "four same-residue events",
+    "four same-residue windings",
+    "bounded alias load",
+    "expected theorem IDs",
+    "alias-provenance",
+    "finite-load audit",
+    "recorded a fingerprint",
+    EXPECTED["pytest_summary"],
+) + NON_CLAIMS
 
 
 def rel(path: Path) -> str:
@@ -199,9 +213,15 @@ def validate_public_surfaces(errors: list[str]) -> None:
         EXPECTED["pytest_summary"],
     ) + THEOREMS + RECOMMENDATIONS + NON_CLAIMS
 
-    for path in (SUMMARY, CHAPTER, READER, OUTLINE, ROADMAP):
+    for path in (SUMMARY, CHAPTER, OUTLINE, ROADMAP):
         text = path.read_text(encoding="utf-8")
         require_fragments(rel(path), text, result_fragments, errors)
+    require_fragments(
+        rel(READER),
+        READER.read_text(encoding="utf-8"),
+        READER_SURFACE_FRAGMENTS,
+        errors,
+    )
 
     structure = load_json(STRUCTURE)
     if not isinstance(structure, dict):

@@ -185,15 +185,12 @@ The current implementation has four public pieces. The `proof_target_record` fix
 
 The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, requiring workload, baseline, metric, and evidence artifacts before downstream promotion, and modeling the public Circle consumer-gate fixture as one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim. The Circle public consumer-gate lane validates one pinned receipt fixture, checks seven theorem IDs and the recorded fingerprints, and rejects missing-theorem, digest-mismatch, stale-contract, and unsupported-transfer mutations. A Circle-specific vendored contract pack, clean replay from this repository, and downstream workload check remain future work.
 
-The concrete evidence-surface check is
-`python3 scripts/validate_circle_concrete_evidence_surface.py`. It verifies that
-the public book surfaces preserve Circle commit `63b0f511`,
-`CC-AI-CONTRACT-ROPE-001`, requested margin `1/328459`, certifier
-`theorem_count 55`, ready digest `fields=31 missing=0 theorems=75`, seven
-required theorem IDs, required recommendation `ROPE-USE-D19-MARGIN-FRONTIER`,
-the recorded fingerprints, and the ASI consumer gate's rejection of digest
-mismatch, missing theorem ID, stale fingerprint status, and unsupported transfer
-use. That check proves public-surface traceability for a bounded structural
+The concrete evidence-surface check verifies that the public book preserves the
+current Circle rope contract boundary: source commit, contract ID, requested
+margin, certifier count, ready-digest summary, required theorem IDs, required
+recommendation, recorded fingerprints, and the ASI consumer gate's rejection of
+digest mismatch, missing theorem ID, stale fingerprint status, and unsupported
+transfer use. That check proves public-surface traceability for a bounded structural
 receipt lane. It does not rerun Circle from this repository, vendor a contract
 pack, prove theorem-id resolver completeness, show downstream workload value,
 or promote the chapter core claim.

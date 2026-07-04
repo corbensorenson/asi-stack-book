@@ -45,6 +45,30 @@ SURFACE_FRAGMENTS = (
     "no deployed-resolver, memory-store, context-compiler, open-domain-summary-fidelity, certificate-truthfulness, transaction-isolation, deletion-enforcement, model-facing-context-quality, VCM-Bench, leak-prevention, or support-state-promotion claim",
 )
 
+READER_SURFACE_FRAGMENTS = (
+    "VCM resolver/certificate probe",
+    "admits a valid resolver materialization receipt",
+    "mandatory-miss fault",
+    "address, version, and snapshot mismatches",
+    "denied mount policies",
+    "expired lease reuse",
+    "certificate source-binding errors",
+    "authority escalation",
+    "truthfulness overclaiming",
+    "summary-fidelity omission",
+    "not evidence for a deployed resolver",
+    "memory store",
+    "context compiler",
+    "open-domain summary fidelity",
+    "certificate truthfulness",
+    "transaction isolation",
+    "deletion enforcement",
+    "model-facing context quality",
+    "VCM-Bench performance",
+    "leak prevention",
+    "support-state promotion",
+)
+
 REQUIRED_NON_CLAIM_TERMS = (
     "does not promote any chapter core claim",
     "does not create a support-state transition",
@@ -248,12 +272,12 @@ def main() -> None:
         (rel(OUTLINE), OUTLINE),
         (rel(ROADMAP), ROADMAP),
         (rel(LIVE_CHAPTER), LIVE_CHAPTER),
-        (rel(READER_CHAPTER), READER_CHAPTER),
         (rel(README), README),
         (rel(PUBLICATION), PUBLICATION),
         (rel(STATUS), STATUS),
     ):
         require_fragments(owner, path.read_text(encoding="utf-8"), SURFACE_FRAGMENTS, errors)
+    require_fragments(rel(READER_CHAPTER), READER_CHAPTER.read_text(encoding="utf-8"), READER_SURFACE_FRAGMENTS, errors)
 
     record = chapter_record(structure, "virtual-context-abi")
     if record.get("evidence_level") != "argument":

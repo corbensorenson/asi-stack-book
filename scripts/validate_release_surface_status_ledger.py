@@ -262,7 +262,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "This review does not approve EPUB, DOCX, PDF, e-reader conversion, audio, or",
         ],
         "curated_html": [
-            "b75f54d27856b63e9e6bdea4f8a8d3e073c2c76ab700b3e6c1c51425d021a9eb",
+            "4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a",
             "newer local viability",
             "EPUB, DOCX, PDF, e-reader, MP3, M4B, and audio-embedded EPUB artifacts remain",
         ],
@@ -336,7 +336,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "curated_html_failures": curated_html_failures,
         "curated_key_figure_pairs": curated_key_figure_pairs,
         "curated_key_figure_failures": curated_key_figure_failures,
-        "curated_html_digest": "b75f54d27856b63e9e6bdea4f8a8d3e073c2c76ab700b3e6c1c51425d021a9eb",
+        "curated_html_digest": "4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a",
         "curated_html_files": curated_inspection.get("html", {}).get("html_files"),
         "curated_epub_xhtml": curated_inspection.get("epub", {}).get("xhtml_entries"),
         "curated_docx_png": curated_inspection.get("docx", {}).get("png_media_entries"),

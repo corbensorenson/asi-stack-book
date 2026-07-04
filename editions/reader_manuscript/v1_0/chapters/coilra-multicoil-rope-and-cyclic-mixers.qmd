@@ -246,10 +246,9 @@ certifier run, sidecar regeneration, Circle contract-pack generation, cyclic
 mixer benchmark, MLX experiment, hardware-kernel benchmark, downstream quality
 evaluation, transfer consumer, or external Circle Lean build.
 
-The concrete RoPE boundary surface is already checkable through
-`python3 scripts/validate_circle_concrete_evidence_surface.py`. For this
-chapter, that validator preserves the imported Circle RoPE receipt facts as
-diagnostic structural evidence: Circle commit `63b0f511`,
+The concrete RoPE boundary surface is already checkable through the public
+evidence-surface validator. For this chapter, that validator preserves the
+imported Circle RoPE receipt facts as diagnostic structural evidence: Circle commit `63b0f511`,
 `CC-AI-CONTRACT-ROPE-001`, certifier `theorem_count 55`, ready digest
 `fields=31 missing=0 theorems=75`, `evidence.exact_discrete_pass=true`,
 `evidence.total_bank_collision_pair_count=0`, seven required theorem IDs,

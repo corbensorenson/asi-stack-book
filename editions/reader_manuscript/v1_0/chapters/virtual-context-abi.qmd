@@ -279,20 +279,14 @@ summary fidelity, contradiction-rate improvement, distractor resistance,
 runtime memory-store behavior, or model-facing context quality.
 
 The next practical slice is now present as the VCM resolver/certificate probe.
-It checks `valid_resolver_materialization_receipt`,
-`valid_mandatory_miss_typed_fault`, and nine expected-invalid controls:
-`invalid_address_mismatch_materialization_denied`,
-`invalid_version_mismatch_materialization_denied`,
-`invalid_snapshot_mismatch_materialization_denied`,
-`invalid_mount_policy_denied`, `invalid_lease_expired_reuse_blocked`,
-`invalid_certificate_source_binding_mismatch_denied`,
-`invalid_certificate_authority_escalation_denied`,
-`invalid_certificate_truthfulness_overclaim_denied`, and
-`invalid_summary_fidelity_omission_denied`. This is a no deployed-resolver,
-memory-store, context-compiler, open-domain-summary-fidelity,
-certificate-truthfulness, transaction-isolation, deletion-enforcement,
-model-facing-context-quality, VCM-Bench, leak-prevention, or
-support-state-promotion claim.
+It admits a valid resolver materialization receipt and a mandatory-miss fault,
+then rejects address, version, and snapshot mismatches; denied mount policies;
+expired lease reuse; certificate source-binding errors; authority escalation;
+truthfulness overclaiming; and summary-fidelity omission. This is useful record
+discipline, not evidence for a deployed resolver, memory store, context
+compiler, open-domain summary fidelity, certificate truthfulness, transaction
+isolation, deletion enforcement, model-facing context quality, VCM-Bench
+performance, leak prevention, or support-state promotion.
 
 ## Beyond the State of the Art
 
