@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-04 - Compact proof envelope status surface
+
+- Added generated `docs/proof_envelope_status_ledger.md` plus
+  `python3 scripts/validate_proof_envelope_status_ledger.py` so the v1.0
+  status page can point to a maintained proof-envelope ledger instead of
+  carrying a run-on enumeration of every follow-through proof increment.
+- Replaced the `docs/v1_0_candidate_status.md` Proof envelope row with a
+  compact summary that still names the current 194 proof targets, adequacy
+  classes, proof traceability/depth reports, `lake build`, and the
+  no-chapter-core-promotion boundary.
+- Wired the new ledger into `python3 scripts/validate_book.py` and updated
+  `python3 scripts/validate_v1_status_snapshot.py` to derive the compact row
+  from the current proof adequacy table.
+- Boundary: this is a status-surface cleanup only. It does not add proof
+  targets, strengthen theorem adequacy, validate external theorem references,
+  claim deployed enforcement, promote any chapter core claim, or move any
+  support state above `argument`.
+
 ## 2026-07-04 - Calibrate roadmap after project review
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after reviewing the current tree

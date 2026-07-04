@@ -42,6 +42,14 @@ TEMPLATE_BRIDGE_PHRASES = (
     "begins by",
     "ended by",
 )
+ADEQUACY_ORDER = [
+    "adequate finite-record invariant",
+    "useful but too narrow",
+    "needs richer state-machine or review semantics",
+    "needs executable tests first",
+    "needs empirical or baseline tests first",
+    "research-agenda until artifact import",
+]
 
 
 def fail(errors: list[str]) -> None:
@@ -74,6 +82,41 @@ def summary_metric(path: Path, metric: str) -> str | None:
     text = path.read_text(encoding="utf-8", errors="ignore")
     match = re.search(rf"^\|\s*{re.escape(metric)}\s*\|\s*(.*?)\s*\|$", text, re.MULTILINE)
     return match.group(1).strip() if match else None
+
+
+def table_cells(line: str) -> list[str]:
+    return [cell.strip() for cell in line.strip().strip("|").split("|")]
+
+
+def section(text: str, start: str, end: str) -> str:
+    if start not in text:
+        return ""
+    body = text.split(start, 1)[1]
+    if end in body:
+        body = body.split(end, 1)[0]
+    return body
+
+
+def parse_proof_adequacy_counts() -> Counter[str]:
+    text = (ROOT / "docs" / "proof_adequacy_review.md").read_text(encoding="utf-8")
+    counts: Counter[str] = Counter()
+    body = section(text, "## Summary", "The reviewed targets")
+    for line in body.splitlines():
+        if not line.startswith("| ") or line.startswith("|---") or "Adequacy class" in line:
+            continue
+        cells = table_cells(line)
+        if len(cells) < 2:
+            continue
+        try:
+            counts[cells[0]] = int(cells[1].replace(",", ""))
+        except ValueError:
+            continue
+    return counts
+
+
+def proof_adequacy_phrase(counts: Counter[str]) -> str:
+    parts = [f"{counts.get(adequacy_class, 0)} `{adequacy_class}`" for adequacy_class in ADEQUACY_ORDER]
+    return ", ".join(parts[:-1]) + f", and {parts[-1]}"
 
 
 def human_bridge_metrics(chapters: list[dict]) -> tuple[int, int, int, int]:
@@ -155,6 +198,8 @@ def main() -> None:
         "Accepted explicit no-promotion decisions",
     )
     proof_targets = str(proof_manifest.get("proof_target_count", ""))
+    proof_adequacy_counts = parse_proof_adequacy_counts()
+    proof_adequacy_summary = proof_adequacy_phrase(proof_adequacy_counts)
     curated_records = reader_manifest.get("chapter_records", [])
     if not isinstance(curated_records, list):
         fail(["reader manuscript manifest chapter_records must contain a list."])
@@ -422,8 +467,13 @@ def main() -> None:
         "`experiments/phase5_harness_registry.json`",
         "`docs/phase5_harness_registry.md`",
         "`python3 scripts/validate_phase5_harness_registry.py`",
-        f"| Proof envelope | {proof_targets} proof targets, all implemented as narrow finite-record Lean predicates; current proof adequacy review classifies 13 targets as adequate only for narrow finite-record claims, 109 useful-but-too-narrow, 18 needing richer state or review semantics, 34 needing executable tests first, 18 needing empirical or baseline tests first, and 2 remaining research-agenda until artifact import; follow-through increments add a stack-boundary trace and layer-contract admission envelope, an efficiency route/residual negative-case and claim-admission lifecycle route envelope, a compact-generation/GVR/semantic negative-case, compact-admission-route, and Compact GVR fixture-bridge envelope, an artifact-compression negative-case and admission-lifecycle route envelope, a circle proof-contract receipt/consumer negative-case envelope, a coil-attention memory negative-case envelope plus synthetic cyclic-memory harness, a cyclic-mixer adoption-boundary negative-case envelope, a living-book release-boundary and change-packet boundary negative-case envelope, a project-theseus report-boundary negative-case envelope, a readiness lifecycle negative-case and lifecycle-probe bridge envelope, a proof-envelope artifact authority negative-case envelope, a proof-carrying claim negative-case envelope, a tribunal review negative-case and lifecycle-route envelope, a corrigibility agency-correction lifecycle-route envelope, a governance-right lifecycle-route envelope, a value-conflict lifecycle-admission route envelope, a constitutional lifecycle-admission route envelope, a personal-compute hive approval/lease negative-case envelope, a finite hive-work admission lifecycle route envelope, a runtime-adapter permission, authority-ceiling, confused-deputy, sandbox-escape, dispatch-route, effect-replay fixture bridge, adversarial-boundary fixture bridge, revocation-route bridge envelope, and human-oversight degradation fixture bridge envelope plus synthetic permission and adversarial boundary harnesses, a procedural-memory generated-tool/regression lifecycle-route and synthetic-fixture bridge envelope plus synthetic loop harness, a routing/MoECOT source-boundary negative-case envelope, a finite routing-decision lifecycle route envelope, a synthetic route-lease harness, a record-aware allow/deny/escalate authority decision, lifecycle admission envelope, and authority revocation trace surface bridge, a failure incident-route and recurrence-escalation envelope, a failure-taxonomy detector-probe bridge envelope, a finite intent-resolution route envelope, an execution dispatch-route envelope, an intent-execution handoff-probe bridge envelope, a planning scheduler-state bridge envelope, a planning runtime-replan delta audit bridge envelope, a verification-bandwidth contradiction-probe bridge envelope, a claim-ledger semantic-assumption fixture bridge envelope, an adversarial-review dossier-probe bridge envelope, a command-contract missing-field/hidden-override negative-case and field-confidence route envelope, a bibliography source-record/chapter-assignment negative-case envelope, a resource/simulation budget-fidelity negative-case envelope, a semantic-lowering route envelope, a context-admission route envelope, a certificate-lifecycle route envelope, a context-transaction snapshot/branch/mount/taint/deletion/replay route envelope, a context-transaction sequence fixture bridge envelope, a verification-adequacy route envelope, a job-execution route envelope, a typed-job delivery-probe bridge envelope, a typed-job durable lifecycle probe envelope, a stable-capability lifecycle-route envelope, a replacement transaction-route envelope, a replacement identity-sequence bridge envelope, an intent-governed replacement bridge envelope, a security-kernel authority-use route envelope, a self-improvement transition-route envelope, a record-aware planning control and dispatch-route envelope, evidence-state terminal/downgrade and transition-lifecycle envelopes, a claim-state transition bridge, a benchmark-ratchet decision envelope, an artifact-steward lifecycle/contribution/federation route envelope, finite claim-ledger record/lifecycle-route and proof-carrying-claim record envelopes, an artifact-graph provenance/replay/link route envelope, synthetic replay harness, receipt-faithfulness fixture bridge envelope, receipt repository audit bridge envelope, an epistemic-TCB fixture bridge envelope, deterministic generation-mode/resource-budget accounting coverage, a finite fast-generation acceptance-accounting negative-case, admission-lifecycle route, Theseus import fixture bridge envelopes, a Theseus report-bundle audit bridge envelope, a Theseus public task-bundle import fixture bridge, a finite fast-generation task-bundle fixture bridge envelope, a finite policy-optimization promotion-boundary and promotion-route negative-case envelope, a deterministic resource-budget ledger harness, a finite costed-route fixture and selector-state trace bridge, a finite resource-workflow trace-property bridge, a reference-trace harness and route envelope, a prototype-roadmap phase-route and phase-gate fixture bridge envelope, a capacity-smoothing toy harness, a substrate-adoption trace bridge envelope, a Theseus/Fast support-lane aggregate bridge, a Resource flagship aggregate invariant bridge, a Resource CI failure-classification bridge, and a bounded Resource governance-tax trade-off bridge without promoting ASI Is a Stack, the Efficient ASI Hypothesis, Compact Generative Systems, Mathematical/Search Substrates, Circle Contracts, Coil Attention, CoilRA/MultiCoil/cyclic mixers, Living Book Methodology, Project Theseus, Readiness Gates, Proof Envelope, System Boundaries, Failure Modes, Human Intent, Command Contracts, Cognitive Compilation, Virtual Context ABI, Verification Bandwidth, Labor OS, Artifact Graphs, Procedural Memory, Routing Heads, Personal Compute Hives, RankFold, Stable Capability Fields, Capability Replacement, Security Kernel, Recursive Self-Improvement, Planning, Evidence States, Benchmark Ratchets, Artifact Steward Agents, Claim Ledgers, Spinoza, Runtime Adapters, Integrated Reference Architecture, Fast Generation, Policy Optimization, Prototype Roadmap, or Resource Economics above `argument` |",
+        f"| Proof envelope | {proof_targets} proof targets remain implemented as bounded finite-record Lean predicates; the generated proof envelope ledger records traceability, adequacy classes, proof-depth metrics, and non-claim boundaries. Current adequacy: {proof_adequacy_summary}. No proof-envelope artifact promotes any chapter core claim above `argument`. |",
+        "`proofs/proof_manifest.json`",
+        "`docs/proof_envelope_status_ledger.md`",
+        "`docs/proof_artifact_audit.md`",
         "`docs/proof_adequacy_review.md`",
+        "`docs/proof_depth_classification.md`",
+        "`lake build`",
         f"| Schemas and fixtures | {schema_count} JSON Schemas, {fixture_count} valid protocol fixtures, {release_count} public release records |",
         f"| Implementation horizons | {len(chapters)} generated chapter build horizons with manifest-sourced minimum viable implementation and beyond-state-of-the-art endpoint fields |",
         "browser Human-view gate checks rendered Mermaid SVG visibility; dense Mermaid diagrams keep mobile labels readable through contained diagram-block scrolling without page-level horizontal overflow",

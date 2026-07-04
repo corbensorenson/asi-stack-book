@@ -56,6 +56,7 @@ REQUIRED = [
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
     "scripts/validate_proof_artifact_audit.py",
+    "scripts/validate_proof_envelope_status_ledger.py",
     "scripts/validate_proof_adequacy_review.py",
     "scripts/validate_proof_depth_surface.py",
     "scripts/validate_source_evidence_audit.py",
@@ -251,6 +252,7 @@ REQUIRED = [
     "docs/v1_progress_ledger.md",
     "docs/v1_0_release_gate_audit.md",
     "docs/proof_artifact_audit.md",
+    "docs/proof_envelope_status_ledger.md",
     "docs/source_evidence_audit.md",
     "docs/fast_generation_task_bundle.md",
     "experiments/fast_generation_task_bundle/README.md",
@@ -913,6 +915,7 @@ def main() -> None:
     run_validator("validate_source_notes.py")
     run_validator("validate_proof_readiness.py")
     run_validator("validate_proof_artifact_audit.py")
+    run_validator("validate_proof_envelope_status_ledger.py")
     run_validator("validate_proof_adequacy_review.py")
     run_validator("validate_proof_depth_surface.py")
     run_validator("validate_protocol_crosswalk.py")
