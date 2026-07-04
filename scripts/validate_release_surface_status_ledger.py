@@ -385,7 +385,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "chapter_marker_rows": 49,
         "chapter_marker_tbd_rows": 49,
         "narration_note_count": 66,
-        "text_characters_checked": 1067718,
+        "text_characters_checked": 1067905,
         "target_artifact_status": {
             "mp3": "target_not_generated",
             "m4b": "target_not_generated",
@@ -794,7 +794,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "matches book-structure order",
             "49 ordered markers",
             "66 narration notes",
-            "1,067,718 text characters",
+            "1,067,905 text characters",
             "not narration quality review",
             "final figure-artifact approval, or evidence that audio files exist.",
             "| Draft figure summaries routed | 10 |",

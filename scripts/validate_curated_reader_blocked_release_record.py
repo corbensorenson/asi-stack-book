@@ -676,7 +676,7 @@ def main() -> None:
         "49 scripts",
         "49 ordered markers",
         "66 narration notes",
-        "1,067,718 text characters",
+        "1,067,905 text characters",
         "not narration quality review",
         "no MP3, M4B, or audio-embedded EPUB artifact exists",
     ):

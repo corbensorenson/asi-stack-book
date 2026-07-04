@@ -205,6 +205,28 @@ Only an accepted evidence transition or named release approval can affect suppor
 state, and only within that exact scope. This ladder prevents a useful audit
 result from becoming an all-purpose proof.
 
+::: {.asi-ai-only}
+```{mermaid}
+flowchart TB
+  A["Stored receipt\nfields present"] --> B["Inspectable artifact\nfile + digest observed"]
+  B --> C["Reviewable artifact\nreplay or independent route agrees"]
+  C --> D["Overclaim blocker\ntraps / controls reject bad routes"]
+  D --> E["Authority-affecting record\naccepted transition or exact release approval"]
+  A -. "cannot support promotion" .-> R["Residual / non-claim boundary"]
+  B -. "still not proof" .-> R
+  C -. "scope stays bounded" .-> R
+  D -. "blocks only named overclaim" .-> R
+```
+
+**Reading the record-reality ladder:** The artifact graph does not ask the
+reader to trust a receipt because it is detailed. It asks what level of authority
+the receipt has earned. Storage preserves a claimable object. Inspection ties it
+to bytes. Review ties it to replay or an independent observation route.
+Overclaim-blocking rejects bad routes before they can launder confidence. Only a
+separate accepted transition or exact release approval can change support or
+publication state.
+:::
+
 The epistemic trusted computing base is the companion problem: even an honest receipt needs a place where verifier trust bottoms out. A verifier cannot become trusted because it produced a fluent verdict, because it shares a component with the claim producer, or because a downstream agent repeats its summary. The bounded fixture at `docs/epistemic_trusted_computing_base_fixture.md` makes that finite-record boundary explicit. A trust-base record must name the minimal trusted core, root-of-trust refs, a bounded delegation rule, a recursion stop condition, verifier independence state, outside-TCB residuals, and non-claims. It accepts a minimal trust-base record, a delegated verifier record-only path, and a blocked self-verifier record, while rejecting missing roots of trust, verifier-trust laundering, ambient trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.
 
 ## Strongest Objection

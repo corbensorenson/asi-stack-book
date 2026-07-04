@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-04 - Strengthen Artifact Graphs record-reality ladder
+
+- Added an explicit record-reality authority-ladder diagram to the live
+  Artifact Graphs chapter, separating stored receipts, inspectable artifacts,
+  reviewable artifacts, overclaim blockers, and authority-affecting records.
+- Mirrored the ladder in the curated reader chapter with reader-facing prose
+  that explains which permission each rung earns and why none of the lower
+  rungs approve releases or promote chapter claims.
+- Refreshed the reader continuity audit, accessibility/navigation manifest, and
+  audio-script reading-flow manifest so generated reader and audio-prep counts
+  match the updated curated prose while preserving release blockers.
+- Boundary: this is prose and diagram clarification over existing recorded
+  evidence only. It does not add a new evidence transition, approve an artifact,
+  claim deployed attestation, claim verifier correctness, or move any support
+  state.
+
 ## 2026-07-04 - Add curated reader format-candidate matrix
 
 - Extended `editions/reader_manuscript/v1_0/format_review_matrix.json` and
