@@ -51,6 +51,42 @@ five mutation controls while preserving no support-state promotion.
 Lean bridge: `receipt_repository_audit_fixture_bridge` in
 `AsiStackProofs.ArtifactGraph`.
 
+## Receipt Challenge Layer
+
+Command: `python3 scripts/validate_receipt_repository_challenge.py`
+
+Result:
+`experiments/receipt_repository_audit/results/2026-07-04-challenge.json`
+
+The challenge layer is a deterministic challenge over the audit above. It uses
+seed `asi-stack-receipt-reality-challenge-v1-2026-07-04` to select one
+challenge response per audited receipt:
+
+- Resource flagship: tracked digest for
+  `evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json`.
+- Theseus/Fast support: tracked digest for
+  `docs/theseus_public_task_bundle_import.md`.
+- Reference trace replay: tracked digest for
+  `docs/resource_flagship_lane_run.md`.
+- Circle external rope: external `contract_content_fingerprint`.
+
+The validator accepts all four deterministic challenge responses and rejects
+five expected-invalid controls:
+
+- `invalid_challenge_tracked_digest_mismatch`
+- `invalid_challenge_artifact_missing`
+- `invalid_external_fingerprint_mismatch`
+- `invalid_challenge_missing_non_claims`
+- `invalid_challenge_support_promotion_overclaim`
+
+Lean bridge: `receipt_repository_challenge_fixture_bridge` in
+`AsiStackProofs.ArtifactGraph`.
+
+This challenge makes the repository audit harder to fake than a static summary:
+the chosen files or fingerprint fields must still answer a reproducible
+challenge. It remains a repository challenge, not a deployed or open-world
+attestation system.
+
 ## Boundaries
 
 - This audit does not prove open-world receipt faithfulness.

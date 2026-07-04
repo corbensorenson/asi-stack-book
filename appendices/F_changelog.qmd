@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-04 - Add receipt repository challenge audit
+
+- Added `python3 scripts/validate_receipt_repository_challenge.py` and result
+  `experiments/receipt_repository_audit/results/2026-07-04-challenge.json` as
+  a deterministic receipt-reality challenge over the existing repository receipt
+  audit.
+- The challenge accepts three tracked-digest responses and one Circle external
+  fingerprint response, then rejects digest mismatch, missing artifact,
+  external fingerprint mismatch, missing non-claims, and support-promotion
+  controls.
+- Added `lean:artifacts.graph.receipt_repository_challenge_fixture_bridge` in
+  `AsiStackProofs.ArtifactGraph` and synchronized the Artifact Graphs chapter,
+  reader chapter, outline, contribution novelty ledger, roadmap, and book gate.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 196 proof
+  targets, 54 Lean modules, 987 theorem declarations, 800 derived/decomposed,
+  183 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter
+  classifications present.
+- Boundary: this does not create a support-state transition, prove open-world
+  receipt faithfulness, prove deployed attestation/audit behavior, validate
+  external project truth, or promote any chapter core claim.
+
 ## 2026-07-04 - Align Circle reader path with proof bridge
 
 - Updated the curated reader Circle chapter, live Human-view reader overlay,

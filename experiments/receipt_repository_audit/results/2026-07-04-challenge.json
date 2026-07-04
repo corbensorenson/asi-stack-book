@@ -1,0 +1,150 @@
+{
+  "base_audit_result": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
+  "base_audit_result_id": "receipt-repository-audit-2026-07-03-local",
+  "challenge_responses": [
+    {
+      "accepted": true,
+      "challenge_id": "challenge:resource_flagship_lane:tracked_artifact:10",
+      "challenge_kind": "tracked_digest",
+      "expected_sha256": "e7e9f10f0987c217b4888786a7185e0312a2025c076436bc6b07b294bdd7592c",
+      "observed_sha256": "e7e9f10f0987c217b4888786a7185e0312a2025c076436bc6b07b294bdd7592c",
+      "receipt_id": "resource_flagship_lane",
+      "selected_index": 10,
+      "selected_ref": "evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json",
+      "selection_method": "sha256_seeded_index"
+    },
+    {
+      "accepted": true,
+      "challenge_id": "challenge:theseus_fast_support_lane:tracked_artifact:2",
+      "challenge_kind": "tracked_digest",
+      "expected_sha256": "dcc425f22ec628c3db8b17dd440fbf9d55cefda9e7037960a6bbce013336b0c5",
+      "observed_sha256": "dcc425f22ec628c3db8b17dd440fbf9d55cefda9e7037960a6bbce013336b0c5",
+      "receipt_id": "theseus_fast_support_lane",
+      "selected_index": 2,
+      "selected_ref": "docs/theseus_public_task_bundle_import.md",
+      "selection_method": "sha256_seeded_index"
+    },
+    {
+      "accepted": true,
+      "challenge_id": "challenge:reference_trace_replay:tracked_artifact:1",
+      "challenge_kind": "tracked_digest",
+      "expected_sha256": "8d20201f4bcb03215549577732893f76240ed5b7f4d0023e071b8d0ea6a4a51e",
+      "observed_sha256": "8d20201f4bcb03215549577732893f76240ed5b7f4d0023e071b8d0ea6a4a51e",
+      "receipt_id": "reference_trace_replay",
+      "selected_index": 1,
+      "selected_ref": "docs/resource_flagship_lane_run.md",
+      "selection_method": "sha256_seeded_index"
+    },
+    {
+      "accepted": true,
+      "challenge_id": "challenge:circle_external_rope_receipt_slice:external_fingerprint:4",
+      "challenge_kind": "external_fingerprint",
+      "command_index": 3,
+      "expected_fingerprint": "a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468",
+      "observed_fingerprint": "a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468",
+      "receipt_id": "circle_external_rope_receipt_slice",
+      "selected_index": 4,
+      "selected_ref": "contract_content_fingerprint",
+      "selection_method": "sha256_seeded_index"
+    }
+  ],
+  "challenge_seed": "asi-stack-receipt-reality-challenge-v1-2026-07-04",
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_receipt_repository_challenge.py",
+  "evidence_transition_created": false,
+  "lean_fixture_alignment": {
+    "expected": {
+      "accepted_challenge_count": 4,
+      "base_audit_passed": true,
+      "challenge_count": 4,
+      "external_fingerprint_challenge_count": 1,
+      "external_fingerprint_mismatch_control_rejected": true,
+      "missing_artifact_control_rejected": true,
+      "missing_non_claims_control_rejected": true,
+      "mutation_control_count": 5,
+      "non_claim_boundary": true,
+      "support_promotion_control_rejected": true,
+      "support_state_effect_none": true,
+      "tracked_digest_challenge_count": 3,
+      "tracked_digest_mismatch_control_rejected": true
+    },
+    "module": "AsiStackProofs.ArtifactGraph",
+    "theorem_refs": [
+      "receipt_repository_challenge_fixture_bridge"
+    ]
+  },
+  "mutation_controls": [
+    {
+      "control_id": "invalid_challenge_tracked_digest_mismatch",
+      "rejected": true,
+      "rejection_reasons": [
+        "challenge_digest_mismatch"
+      ]
+    },
+    {
+      "control_id": "invalid_challenge_artifact_missing",
+      "rejected": true,
+      "rejection_reasons": [
+        "challenge_artifact_missing=docs/does-not-exist-for-receipt-challenge.md"
+      ]
+    },
+    {
+      "control_id": "invalid_external_fingerprint_mismatch",
+      "rejected": true,
+      "rejection_reasons": [
+        "challenge_external_fingerprint_mismatch"
+      ]
+    },
+    {
+      "control_id": "invalid_challenge_missing_non_claims",
+      "rejected": true,
+      "rejection_reasons": [
+        "non_claim_phrase_missing=does not promote",
+        "non_claim_phrase_missing=does not prove",
+        "non_claims_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_challenge_support_promotion_overclaim",
+      "rejected": true,
+      "rejection_reasons": [
+        "chapter_core_support_effect_not_none",
+        "evidence_transition_created",
+        "support_state_effect_not_none"
+      ]
+    }
+  ],
+  "non_claims": [
+    "does not prove open-world receipt faithfulness",
+    "does not prove deployed attestation or audit behavior",
+    "does not prove verifier correctness or external project truth",
+    "does not promote any chapter core claim",
+    "does not create an evidence transition"
+  ],
+  "recorded_date": "2026-07-04",
+  "residuals": [
+    "The challenge samples selected receipt fields deterministically; it is not a live attestation service.",
+    "Tracked-digest challenges cover repository files only; the Circle challenge checks a recorded external fingerprint, not a vendored contract pack.",
+    "The challenge preserves no-promotion boundaries and does not prove open-world receipt faithfulness."
+  ],
+  "result_id": "receipt-repository-challenge-2026-07-04",
+  "result_kind": "repository_receipt_reality_challenge",
+  "schema_version": "asi_stack.receipt_repository_challenge.result.v0",
+  "support_state_effect": "none",
+  "trace_summary": {
+    "accepted_challenge_count": 4,
+    "base_audit_passed": true,
+    "challenge_count": 4,
+    "external_fingerprint_challenge_count": 1,
+    "external_fingerprint_mismatch_control_rejected": true,
+    "missing_artifact_control_rejected": true,
+    "missing_non_claims_control_rejected": true,
+    "mutation_control_count": 5,
+    "non_claim_boundary": true,
+    "support_promotion_control_rejected": true,
+    "support_state_effect_none": true,
+    "tracked_digest_challenge_count": 3,
+    "tracked_digest_mismatch_control_rejected": true
+  },
+  "verification_result": "pass"
+}

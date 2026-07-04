@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated": "2026-07-03",
+  "updated": "2026-07-04",
   "generated_from": "proofs/proof_manifest.json",
   "note": "Initial conservative triage. It prevents ceremonial Lean by distinguishing formal invariants from schema, process, and research targets.",
   "triage_classes": {
@@ -1041,6 +1041,16 @@
       "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite receipt repository audit bridge matching the repository validator: selected receipt surfaces retain artifact refs, tracked digest checks, command pass records, external receipt fingerprints, non-claim boundaries, and no support-state promotion while missing artifacts, digest mismatches, failed commands, missing non-claims, and support-promotion overclaims are rejected."
     },
     {
+      "tag": "lean:artifacts.graph.receipt_repository_challenge_fixture_bridge",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "module": "AsiStackProofs.ArtifactGraph",
+      "formal_target": "A deterministic receipt-reality challenge accepts three sampled tracked-digest responses and one Circle external fingerprint response over the prior repository audit while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion overclaim controls.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite receipt repository challenge bridge matching the deterministic challenge validator: three tracked digest responses and one Circle external fingerprint response are accepted only with non-claim and no-promotion boundaries, while digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion overclaims are rejected."
+    },
+    {
       "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactGraph",
@@ -1961,5 +1971,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 195
+  "record_count": 196
 }

@@ -191,6 +191,14 @@ is still bounded evidence, but it is the right kind of bounded evidence: it
 tests whether the book's own receipts remain attached to actual artifacts
 rather than only to plausible record shapes.
 
+The receipt repository challenge adds one more refusal point: a deterministic challenge
+selects three tracked file digests and one Circle contract fingerprint from the
+repository audit, checks that those challenge responses still match, and rejects
+mutations for digest mismatch, missing artifact, external fingerprint mismatch,
+missing non-claims, and support promotion. That is still not deployed
+attestation. It is a small proof that the book can ask its own receipt records
+to answer reproducible reality checks.
+
 ## A Book-Scale Example
 
 The living book is a small example of the same problem.
@@ -280,6 +288,13 @@ receipt fingerprints, and explicit non-claims remain intact. That still does
 not make the receipts true in the open world, but it prevents a quieter failure:
 the book cannot keep citing a receipt after its referenced files, digests,
 command records, or no-promotion boundaries stop lining up.
+
+The deterministic challenge pass tightens that one step. It samples specific audit targets:
+a Resource evidence-transition digest, a Theseus public task-bundle note, a
+Resource flagship run note, and a Circle contract fingerprint. If a sampled
+file disappears, a digest changes without a new record, the Circle fingerprint
+is altered, non-claims are erased, or the challenge tries to promote support,
+the result is rejected.
 
 ## Interfaces
 
@@ -374,9 +389,10 @@ promoted-claim support.
 That is record discipline. It is not replay. The next honest implementation
 slice would be one produced artifact with a parent job, source/context set,
 context transaction, semantic certificate, tool path, replay declaration,
-residual declaration, evidence gate, and claim/test link. That packet would
-show the practical difference between stored work and evidence-ready work
-without implying a general artifact-graph service.
+residual declaration, evidence gate, claim/test link, independent observation
+route, and challenge response. That packet would show the practical difference
+between stored work and evidence-ready work without implying a general
+artifact-graph service.
 
 ## Beyond the State of the Art
 

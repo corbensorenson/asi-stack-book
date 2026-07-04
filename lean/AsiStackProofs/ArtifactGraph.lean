@@ -1086,6 +1086,61 @@ theorem receipt_repository_audit_fixture_bridge :
   unfold receiptRepositoryAuditSummary
   simp
 
+structure ReceiptRepositoryChallengeSummary where
+  baseAuditPassed : Bool
+  challengeCount : Nat
+  acceptedChallengeCount : Nat
+  trackedDigestChallengeCount : Nat
+  externalFingerprintChallengeCount : Nat
+  mutationControlCount : Nat
+  trackedDigestMismatchControlRejected : Bool
+  missingArtifactControlRejected : Bool
+  externalFingerprintMismatchControlRejected : Bool
+  missingNonClaimsControlRejected : Bool
+  supportPromotionControlRejected : Bool
+  supportStateEffectNone : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def receiptRepositoryChallengeSummary :
+    ReceiptRepositoryChallengeSummary where
+  baseAuditPassed := true
+  challengeCount := 4
+  acceptedChallengeCount := 4
+  trackedDigestChallengeCount := 3
+  externalFingerprintChallengeCount := 1
+  mutationControlCount := 5
+  trackedDigestMismatchControlRejected := true
+  missingArtifactControlRejected := true
+  externalFingerprintMismatchControlRejected := true
+  missingNonClaimsControlRejected := true
+  supportPromotionControlRejected := true
+  supportStateEffectNone := true
+  nonClaimBoundary := true
+
+def ReceiptRepositoryChallengeValid
+    (summary : ReceiptRepositoryChallengeSummary) : Prop :=
+  summary.baseAuditPassed = true ∧
+    summary.challengeCount = 4 ∧
+    summary.acceptedChallengeCount = 4 ∧
+    summary.trackedDigestChallengeCount = 3 ∧
+    summary.externalFingerprintChallengeCount = 1 ∧
+    summary.mutationControlCount = 5 ∧
+    summary.trackedDigestMismatchControlRejected = true ∧
+    summary.missingArtifactControlRejected = true ∧
+    summary.externalFingerprintMismatchControlRejected = true ∧
+    summary.missingNonClaimsControlRejected = true ∧
+    summary.supportPromotionControlRejected = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.nonClaimBoundary = true
+
+theorem receipt_repository_challenge_fixture_bridge :
+    ReceiptRepositoryChallengeValid
+      receiptRepositoryChallengeSummary := by
+  unfold ReceiptRepositoryChallengeValid
+  unfold receiptRepositoryChallengeSummary
+  simp
+
 structure EpistemicTcbFixtureSummary where
   minimalTrustBaseAccepted : Bool
   delegatedVerifierRecordOnlyAccepted : Bool
