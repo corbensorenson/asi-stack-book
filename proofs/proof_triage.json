@@ -791,6 +791,16 @@
       "rationale": "Implemented in AsiStackProofs.ContextTransactions as a finite harness-summary bridge aligned with python3 scripts/validate_context_transaction_memory_store.py; it preserves fixture counts, invalid-control rejection flags, replay-boundary checks, and no chapter-core support promotion without claiming deployed memory-store behavior."
     },
     {
+      "tag": "lean:vcm.transactions.sequence_fixture_bridge",
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "module": "AsiStackProofs.ContextTransactions",
+      "formal_target": "The bounded context transaction sequence bridge preserves 2 valid sequences, 4 expected-invalid controls, read-after-write checks, replay-boundary checks, taint-blocking checks, invalid-control rejection, and no chapter-core support promotion.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ContextTransactions as a finite sequence-summary bridge aligned with python3 scripts/validate_context_transaction_sequence_bridge.py; it preserves bounded fixture counts, ordered read-after-write checks, replay-boundary checks, taint-blocking checks, invalid-control rejection, and no chapter-core support promotion without claiming deployed transactional memory-store behavior."
+    },
+    {
       "tag": "lean:verification_bandwidth.adequacy.operational_invariant",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "module": "AsiStackProofs.VerificationBandwidth",
@@ -1921,5 +1931,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 191
+  "record_count": 192
 }

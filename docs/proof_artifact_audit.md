@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 191 |
-| Manifest status counts | {"implemented": 191} |
-| Triage class counts | {"formal-invariant": 191} |
+| Proof targets audited | 192 |
+| Manifest status counts | {"implemented": 192} |
+| Triage class counts | {"formal-invariant": 192} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -44,7 +44,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/CommandContracts.lean` | 3 | 7 | 4 | 3 |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | 4 | 23 | 10 | 5 |
 | `lean/AsiStackProofs/ContextCertificates.lean` | 3 | 18 | 6 | 4 |
-| `lean/AsiStackProofs/ContextTransactions.lean` | 3 | 20 | 9 | 7 |
+| `lean/AsiStackProofs/ContextTransactions.lean` | 4 | 23 | 11 | 8 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 5 | 5 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 9 | 4 |
@@ -102,7 +102,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 8 | 8 | 0 | 0 |
 | `constitutional-alignment-substrate` | 5 | 5 | 0 | 0 |
-| `context-transactions-snapshots-mounts-and-taint` | 3 | 3 | 0 | 0 |
+| `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 6 | 6 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
@@ -218,6 +218,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:vcm.transactions.operational_invariant` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.transactions.failure_blocks_promotion` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.transactions.memory_store_fixture_bridge` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:vcm.transactions.sequence_fixture_bridge` | `context-transactions-snapshots-mounts-and-taint` | `AsiStackProofs.ContextTransactions` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:verification_bandwidth.adequacy.operational_invariant` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:verification_bandwidth.adequacy.failure_blocks_promotion` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:verification_bandwidth.adequacy.route_envelope` | `verification-bandwidth-and-context-adequacy` | `AsiStackProofs.VerificationBandwidth` | triage ok; module ok; chapter tag ok; limitation ok |

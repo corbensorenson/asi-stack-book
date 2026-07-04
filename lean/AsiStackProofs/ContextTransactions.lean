@@ -481,4 +481,70 @@ theorem memory_store_harness_summary_with_support_promotion_rejected
   rw [promoted] at noCorePromotion
   cases noCorePromotion
 
+structure ContextTransactionSequenceSummary where
+  validSequenceFixtureCount : Nat
+  expectedInvalidSequenceFixtureCount : Nat
+  orderedTransactionsChecked : Bool
+  readAfterWriteChecked : Bool
+  replayBoundariesChecked : Bool
+  taintBlockingChecked : Bool
+  invalidControlsRejected : Bool
+  supportPromotionRejected : Bool
+  chapterCoreSupportPromoted : Bool
+deriving DecidableEq, Repr
+
+def ContextTransactionSequenceSummaryAccepted
+    (summary : ContextTransactionSequenceSummary) : Prop :=
+  summary.validSequenceFixtureCount = 2 ∧
+    summary.expectedInvalidSequenceFixtureCount = 4 ∧
+      summary.orderedTransactionsChecked = true ∧
+        summary.readAfterWriteChecked = true ∧
+          summary.replayBoundariesChecked = true ∧
+            summary.taintBlockingChecked = true ∧
+              summary.invalidControlsRejected = true ∧
+                summary.supportPromotionRejected = true ∧
+                  summary.chapterCoreSupportPromoted = false
+
+def currentContextTransactionSequenceSummary :
+    ContextTransactionSequenceSummary :=
+  {
+    validSequenceFixtureCount := 2
+    expectedInvalidSequenceFixtureCount := 4
+    orderedTransactionsChecked := true
+    readAfterWriteChecked := true
+    replayBoundariesChecked := true
+    taintBlockingChecked := true
+    invalidControlsRejected := true
+    supportPromotionRejected := true
+    chapterCoreSupportPromoted := false
+  }
+
+theorem current_context_transaction_sequence_summary_accepted :
+    ContextTransactionSequenceSummaryAccepted
+      currentContextTransactionSequenceSummary := by
+  unfold ContextTransactionSequenceSummaryAccepted
+    currentContextTransactionSequenceSummary
+  simp
+
+theorem accepted_context_transaction_sequence_summary_requires_order
+    {summary : ContextTransactionSequenceSummary} :
+    ContextTransactionSequenceSummaryAccepted summary ->
+      summary.orderedTransactionsChecked = true := by
+  intro accepted
+  rcases accepted with ⟨_validCount, _invalidCount, ordered,
+    _readAfterWrite, _replayBoundaries, _taintBlocking, _invalidControls,
+    _supportPromotion, _noCorePromotion⟩
+  exact ordered
+
+theorem context_transaction_sequence_with_support_promotion_rejected
+    {summary : ContextTransactionSequenceSummary} :
+    summary.chapterCoreSupportPromoted = true ->
+      ¬ ContextTransactionSequenceSummaryAccepted summary := by
+  intro promoted accepted
+  rcases accepted with ⟨_validCount, _invalidCount, _ordered,
+    _readAfterWrite, _replayBoundaries, _taintBlocking, _invalidControls,
+    _supportPromotion, noCorePromotion⟩
+  rw [promoted] at noCorePromotion
+  cases noCorePromotion
+
 end AsiStackProofs.ContextTransactions

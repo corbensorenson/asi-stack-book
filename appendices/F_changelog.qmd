@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-04 - Add context transaction sequence bridge
+
+- Added `python3 scripts/validate_context_transaction_sequence_bridge.py` plus
+  bounded fixtures and result record under
+  `experiments/context_transaction_sequence_bridge/` for 2 valid ordered
+  context-transaction sequences and 4 expected-invalid controls.
+- Extended `AsiStackProofs.ContextTransactions` with a finite sequence-summary
+  bridge covering read-after-write checks, replay-boundary checks,
+  taint-blocking checks, invalid-control rejection, and no chapter-core support
+  promotion.
+- Current proof-depth snapshot: 192 proof targets, 54 Lean modules, 974 theorem
+  declarations, 789 derived/decomposed, 181 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+- Updated the Context Transactions live chapter, curated reader chapter,
+  outline, manifest, global validator wiring, and v1.x roadmap to record the
+  sequence bridge as bounded fixture evidence.
+- Boundary: this is synthetic finite sequence and Lean-summary coverage only.
+  It is not deployed transactional memory-store behavior, runtime branch
+  isolation, mount visibility, deletion-closure execution, declassification
+  quality, replay-service behavior, VCM conformance, benchmark evidence,
+  support-state promotion, or chapter-core promotion.
+
 ## 2026-07-04 - Add key-figure audio companion treatment
 
 - Added

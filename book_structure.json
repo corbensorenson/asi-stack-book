@@ -4175,6 +4175,11 @@
               "name": "Context transaction memory-store fixture bridge",
               "implementation_status": "implemented",
               "result_status": "passes via finite Lean summary for 3 valid fixtures, 6 expected-invalid controls, replay-boundary checks, invalid-control rejection flags, and no chapter-core support promotion"
+            },
+            {
+              "name": "Context transaction sequence bridge",
+              "implementation_status": "implemented",
+              "result_status": "passes via synthetic sequence fixtures and finite Lean summary for 2 valid sequences, 4 expected-invalid controls, read-after-write checks, replay-boundary checks, taint-blocking checks, invalid-control rejection, and no chapter-core support promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ContextTransactions",
@@ -4195,6 +4200,12 @@
               "tag": "lean:vcm.transactions.memory_store_fixture_bridge",
               "module": "AsiStackProofs.ContextTransactions",
               "target": "The bounded context memory-store harness summary preserves 3 valid fixtures, 6 expected-invalid controls, replay-boundary checks, and no chapter-core support promotion.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:vcm.transactions.sequence_fixture_bridge",
+              "module": "AsiStackProofs.ContextTransactions",
+              "target": "The bounded context transaction sequence bridge preserves 2 valid sequences, 4 expected-invalid controls, read-after-write checks, replay-boundary checks, taint-blocking checks, invalid-control rejection, and no chapter-core support promotion.",
               "status": "implemented"
             }
           ],

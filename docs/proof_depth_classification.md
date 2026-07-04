@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 191 |
+| Proof targets in manifest | 192 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 971 |
+| Theorem declarations classified | 974 |
 | Direct/projection-style theorem declarations | 181 |
-| Derived/decomposed theorem declarations | 786 |
+| Derived/decomposed theorem declarations | 789 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -65,7 +65,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CommandContracts.lean` | intent-to-execution-contracts | 3 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CompactGenerativeSystems.lean` | compact-generative-systems-and-residual-honesty | 4 | 23 | 6 | 16 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ContextCertificates.lean` | virtual-context-abi | 3 | 18 | 2 | 16 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 3 | 20 | 2 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -334,9 +334,12 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextCertificates.lean` | `tainted_certificate_quarantines` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `undeclared_omissions_require_omission_record` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextCertificates.lean` | `unpermitted_consumer_use_requires_policy_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `accepted_context_transaction_sequence_summary_requires_order` | derived_or_decomposed | no | uses rcases |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `accepted_memory_store_harness_summary_requires_invalid_controls` | derived_or_decomposed | no | uses rcases |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `committed_read_without_visible_read_set_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `complete_context_transaction_admits_committed_read` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `context_transaction_sequence_with_support_promotion_rejected` | derived_or_decomposed | no | uses cases, rcases, rw |
+| `lean/AsiStackProofs/ContextTransactions.lean` | `current_context_transaction_sequence_summary_accepted` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `current_memory_store_harness_summary_accepted` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `deleted_cell_without_closure_blocks_materialization_route` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ContextTransactions.lean` | `memory_store_harness_summary_with_support_promotion_rejected` | derived_or_decomposed | no | uses cases, rcases, rw |

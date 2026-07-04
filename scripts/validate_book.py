@@ -176,6 +176,7 @@ REQUIRED = [
     "scripts/validate_routing_decision_lease.py",
     "scripts/validate_cyclic_memory_contracts.py",
     "scripts/validate_context_transaction_memory_store.py",
+    "scripts/validate_context_transaction_sequence_bridge.py",
     "scripts/validate_context_admission_adequacy.py",
     "scripts/run_vcm_resolver_certificate_probe.py",
     "scripts/validate_vcm_resolver_certificate_probe.py",
@@ -982,6 +983,7 @@ def main() -> None:
     run_validator("validate_routing_decision_lease.py")
     run_validator("validate_cyclic_memory_contracts.py")
     run_validator("validate_context_transaction_memory_store.py")
+    run_validator("validate_context_transaction_sequence_bridge.py")
     run_validator("validate_context_admission_adequacy.py")
     run_validator("validate_vcm_resolver_certificate_probe.py")
     run_validator("validate_verification_bandwidth_probe.py")

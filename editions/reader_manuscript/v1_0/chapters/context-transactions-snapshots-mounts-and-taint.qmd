@@ -289,13 +289,18 @@ and adequacy scenarios, including deletion-closure and transaction-reference
 gates. `AsiStackProofs.ContextTransactions` proves finite predicates for a
 valid snapshot read exposing a committed event in its declared view and for a
 tainted source tainting a derivative unless declassification is authorized.
+The synthetic memory-store harness now checks bounded fixture cases for
+committed-read visibility, mount faults, branch isolation, deletion blocking,
+taint handling, replay boundaries, and support non-promotion. A companion
+sequence bridge checks ordered write/read and tainted-derivative sequences,
+then rejects read-before-write ordering, missing replay boundaries,
+undeclassified taint materialization, and support-promotion attempts.
 
 Those artifacts support record discipline. They do not prove deployed memory
-behavior. The next honest implementation slice would be a tiny memory-store
-fixture set: one coherent snapshot read, one branch that cannot merge because
-taint remains, one deleted source whose derivative blocks materialization, one
-unauthorized mount fault, one declassification record that preserves residual
-risk, and one artifact graph node that records the replay boundary.
+behavior. The next honest implementation slice is a runtime-backed context
+store that can replay real context views, enforce branch and mount visibility,
+and show deletion closure across summaries, cached packets, artifacts, and
+claims.
 
 ## Beyond the State of the Art
 
