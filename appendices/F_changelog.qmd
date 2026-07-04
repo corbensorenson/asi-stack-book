@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-04 - Record runtime adapter effect no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/runtime_adapter_effect_probe_no_change.json`
+  as an accepted `blocks_promotion` decision for the existing Runtime adapter
+  effect replay probe.
+- Updated `docs/non_core_evidence_ledger.md`, README, the landing page, and
+  the v1.x roadmap so the no-promotion side-lane count moves from 16 to 17 and
+  the local temp-file effect replay appears in the explicit blocking ledger.
+- Boundary: no support-state movement, no chapter-core promotion, no deployed
+  adapter claim, no sandbox-isolation claim, no approval-service claim, no
+  secret-handle-safety claim, no revocation-propagation claim, no
+  rollback-service claim, no policy-enforcement claim, no benchmark claim, and
+  no runtime-security/model-behavior/ASI claim.
+
 ## 2026-07-04 - Record SCIF commit no-promotion decision
 
 - Added

@@ -1,0 +1,121 @@
+{
+  "transition_id": "v1_x_measured.runtime_adapter_effect_probe.no_change",
+  "claim_id": "runtime-adapters.local_effect_replay_probe",
+  "claim_surface_refs": [
+    "docs/runtime_adapter_effect_probe.md",
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+    "scripts/run_runtime_adapter_effect_probe.py",
+    "scripts/validate_runtime_adapter_effect_probe.py",
+    "lean/AsiStackProofs/RuntimeAdapters.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Runtime adapter effect replay probe only. The probe runs one generated public-safe temp-file write outside the repository, records pre/post/rollback hashes, checks rollback-exact restoration, and rejects missing-permission plus expired-approval controls before mutation. It does not run a deployed adapter, production sandbox, approval service, secret-handle broker, revocation service, policy-enforcement layer, rollback service, benchmark, or runtime safety harness.",
+  "evidence_roles": [
+    "local_temp_file_effect_replay",
+    "rollback_exact_digest_check",
+    "missing_permission_no_mutation_control",
+    "expired_approval_no_mutation_control",
+    "repo_and_network_non_effect_boundary",
+    "finite_lean_effect_replay_route",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The Runtime adapter effect replay probe is useful because it moves one adapter lane from pure record shape into a public-safe local effect and rollback trace, while preserving missing-permission and expired-approval no-mutation controls. It remains a temporary-file replay, not deployed adapter evidence, so this accepted decision blocks promotion for deployed adapter behavior, sandbox isolation, approval-service behavior, secret-handle safety, revocation propagation, policy-enforcement correctness, rollback-service behavior, benchmark performance, runtime security, model behavior, or the Runtime Adapters chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable adapter execution trace",
+    "real sandbox-isolation evidence",
+    "approval-service behavior trace",
+    "secret-handle mediation trace",
+    "deployed revocation propagation evidence",
+    "policy-enforcement correctness tests",
+    "rollback execution in a target service",
+    "live effect-receipt validation with residuals",
+    "security review",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/runtime_adapter_effect_probe.md",
+    "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+    "scripts/run_runtime_adapter_effect_probe.py",
+    "scripts/validate_runtime_adapter_effect_probe.py",
+    "lean/AsiStackProofs/RuntimeAdapters.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/runtime_adapter_effect_probe.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/test_harness_status_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
+    "docs/book_outline.md#runtime-adapters-tool-permissions-and-human-approval"
+  ],
+  "verification_command": "python3 scripts/validate_runtime_adapter_effect_probe.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "missing parent permission is denied before mutation",
+    "expired approval is denied before mutation",
+    "valid replay writes only a generated public-safe temp file outside the repository",
+    "valid replay records pre/post/rollback hashes and rollback-exact restoration",
+    "valid replay records repo_write=false and network_used=false",
+    "no file contents, private source text, local absolute paths, private keys, or secret payloads are copied into the repository",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/runtime_adapter_effect_probe.md",
+    "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+    "scripts/validate_runtime_adapter_effect_probe.py"
+  ],
+  "downgrade_triggers": [
+    "Runtime adapter effect replay validator failure",
+    "missing-permission control mutates state",
+    "expired-approval control mutates state",
+    "rollback digest differs from pre-state digest",
+    "repository write, network use, private source text, local path, or secret payload appears in the public record",
+    "probe described as deployed adapter, sandbox, approval-service, secret-handle, revocation, policy-enforcement, rollback-service, benchmark, runtime-security, model-behavior, or support-state evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed runtime-adapter effect claim after deployed or externally reviewable adapter execution, sandbox-isolation evidence, approval-service behavior, secret-handle mediation, deployed revocation propagation, policy-enforcement tests, rollback execution in target services, live effect receipts, residual accounting, security review, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "local temp-file effect replay only",
+    "no deployed adapter execution",
+    "no real sandbox-isolation evidence",
+    "no approval-service behavior result",
+    "no secret-handle mediation",
+    "no deployed revocation propagation",
+    "no policy-enforcement correctness result",
+    "no rollback-service behavior result",
+    "no benchmark performance result",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent runtime-adapter, sandbox, approval-service, rollback-service, policy-enforcement, benchmark, security, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable adapter execution trace",
+    "no real sandbox-isolation evidence",
+    "no approval-service behavior evidence",
+    "no secret-handle mediation trace",
+    "no deployed rollback-service behavior",
+    "no independent security review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-runtime-adapter-effect-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Runtime adapter effect replay evidence above argument",
+    "does not prove deployed adapter behavior, sandbox isolation, approval-service behavior, secret-handle safety, revocation propagation, policy-enforcement correctness, rollback-service behavior, benchmark performance, runtime security, model behavior, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Runtime Adapters chapter core claim"
+  ]
+}
