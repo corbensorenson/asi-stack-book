@@ -3476,6 +3476,23 @@
   declarations, 731 derived/decomposed, 176 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 
+## 2026-07-04 - Record Planning scheduler-state no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json`
+  as an accepted `blocks_promotion` no-change decision for the existing
+  Planning scheduler-state probe.
+- Updated the Planning live chapter, curated reader chapter, scheduler-state
+  probe note, outline, roadmap, README, landing page, and non-core evidence
+  ledger so the probe is recorded as blocking evidence for scheduler-state
+  overclaims only.
+- The accepted decision does not create an upward support-state transition,
+  move any chapter core claim above `argument`, prove deployed planner or
+  scheduler behavior, prove decomposition quality, prove context-demand
+  prediction, prove route quality, prove selected-tier adequacy, prove
+  scheduler optimality, prove runtime replanning, prove benchmark performance,
+  prove model quality, prove safety, or prove ASI.
+
 ## 2026-07-02 - Add substrate adoption trace
 
 - Added `python3 scripts/validate_substrate_adoption_trace.py`,

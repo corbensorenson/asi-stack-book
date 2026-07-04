@@ -29,3 +29,14 @@ This probe does not prove decomposition quality, context-demand prediction,
 selected-tier adequacy, route quality, scheduler optimality, deployed
 scheduler behavior, runtime replanning behavior, or chapter support-state
 promotion. In short: no support-state transition.
+
+Accepted no-promotion decision:
+
+```text
+evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json
+```
+
+The decision treats this probe as blocking evidence for scheduler-state
+overclaims only. It records what would be needed for stronger Planning
+evidence, but it does not move support state, create an upward transition, or
+promote the Planning chapter core claim.

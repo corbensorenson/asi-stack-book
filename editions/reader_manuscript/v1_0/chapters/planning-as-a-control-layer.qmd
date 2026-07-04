@@ -383,7 +383,9 @@ or residual costs.
 That makes the control surface easier to inspect. It is a trace-shape check,
 not a deployed scheduler result. It does not prove planner quality,
 context-demand prediction, route quality, selected-tier adequacy, or runtime
-replanning.
+replanning. The no-promotion record for this probe treats it as a blocking
+decision for overclaims about scheduler behavior, not as evidence that the
+Planning chapter is now stronger than argument-level support.
 
 The runtime-replan delta audit adds one more small guard. It asks what must be
 true when feedback changes a plan after work has started. The audit uses two synthetic runtime-replan traces. In the synthetic fixture, a source repair can

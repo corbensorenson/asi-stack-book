@@ -1,0 +1,130 @@
+{
+  "transition_id": "v1_x_measured.planning_scheduler_state_probe.no_change",
+  "claim_id": "planning.scheduler_state_probe",
+  "claim_surface_refs": [
+    "docs/planning_scheduler_state_probe.md",
+    "chapters/planning-as-a-control-layer.qmd",
+    "editions/reader_manuscript/v1_0/chapters/planning-as-a-control-layer.qmd",
+    "docs/book_outline.md",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/planning_scheduler_state/results/2026-07-02-local.json",
+    "scripts/validate_planning_scheduler_state_probe.py",
+    "lean/AsiStackProofs/Planning.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Planning scheduler-state probe only. The probe validates two deterministic synthetic scheduler traces and rejects seven expected-invalid controls for blocked-node dispatch, ready-without-context dispatch, failed-adequacy route selection, conflicting merge acceptance, replanning authority erasure, dependency-cycle acceptance, and hidden-cost ledger erasure. It does not execute a deployed planner, deployed scheduler, runtime replanning loop, decomposition-quality evaluator, context-demand predictor, route-quality evaluator, selected-tier adequacy evaluator, scheduler-optimality test, benchmark, model-quality evaluation, safety evaluation, or ASI system.",
+  "evidence_roles": [
+    "deterministic_synthetic_scheduler_state_fixture",
+    "blocked_node_dispatch_negative_control",
+    "ready_without_context_negative_control",
+    "failed_adequacy_route_negative_control",
+    "conflicting_merge_negative_control",
+    "replanning_authority_erasure_negative_control",
+    "dependency_cycle_negative_control",
+    "hidden_cost_ledger_negative_control",
+    "finite_lean_planning_scheduler_state_bridge",
+    "support_state_and_non_claim_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The Planning scheduler-state probe is useful because it makes ready, blocked, dispatchable, merged, repaired, and residualized scheduler states executable as finite Planning records while forcing cheap-route adequacy failure, conflicting assumptions, authority preservation, dependency acyclicity, and repair/human-review/residual costs to stay visible. It remains a deterministic synthetic record gate, not deployed scheduler evidence, so this accepted decision blocks promotion for deployed planner behavior, runtime scheduler behavior, decomposition quality, context-demand prediction, selected-tier adequacy, route quality, scheduler optimality, runtime replanning, live feedback handling, benchmark performance, model quality, safety, ASI, or the Planning chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable scheduler trace",
+    "planner harness with real or externally replayed plan-node lifecycle states",
+    "dispatch trace showing ready, blocked, residualized, and dispatched nodes under realistic dependencies",
+    "decomposition-quality measurement over task objectives and constraints",
+    "context-demand prediction evaluation",
+    "route-quality or selected-tier adequacy evaluation",
+    "scheduler-optimality or cost-quality comparison with visible residuals",
+    "runtime-replanning trace with authority and stop-condition preservation",
+    "live feedback handling trace",
+    "independent review of planning-control boundaries",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/planning_scheduler_state_probe.md",
+    "experiments/planning_scheduler_state/results/2026-07-02-local.json",
+    "scripts/validate_planning_scheduler_state_probe.py",
+    "lean/AsiStackProofs/Planning.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/planning_scheduler_state_probe.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/test_harness_status_ledger.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#planning-as-a-control-layer.core",
+    "docs/book_outline.md#planning-as-a-control-layer"
+  ],
+  "verification_command": "python3 scripts/validate_planning_scheduler_state_probe.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "blocked-node dispatch is rejected",
+    "ready-without-context dispatch is rejected",
+    "failed-adequacy route selection is rejected",
+    "conflicting merge acceptance is rejected",
+    "replanning authority erasure is rejected",
+    "dependency-cycle acceptance is rejected",
+    "repair, human-review, failed-attempt, or residual cost erasure is rejected",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/planning_scheduler_state_probe.md",
+    "experiments/planning_scheduler_state/results/2026-07-02-local.json",
+    "scripts/validate_planning_scheduler_state_probe.py"
+  ],
+  "downgrade_triggers": [
+    "Planning scheduler-state probe validator failure",
+    "blocked-node dispatch, ready-without-context dispatch, failed-adequacy route selection, conflicting merge acceptance, replanning authority erasure, dependency-cycle acceptance, or hidden-cost erasure accepted as valid",
+    "probe described as deployed planner, runtime-scheduler, decomposition-quality, context-demand-prediction, route-quality, selected-tier-adequacy, scheduler-optimality, runtime-replanning, live-feedback, benchmark, model-quality, safety, ASI, or support-state evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Planning scheduler-state claim after deployed or externally reviewable scheduler traces, planner-harness evidence, dispatch and blocked-node traces under realistic dependencies, decomposition-quality measurement, context-demand prediction evidence, selected-tier or route-quality evaluation, scheduler-optimality or cost-quality comparison with visible residuals, runtime-replanning and live-feedback traces, residual accounting, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "deterministic synthetic scheduler-state fixture only",
+    "no deployed planner",
+    "no deployed scheduler",
+    "no runtime replanning behavior result",
+    "no live feedback loop",
+    "no decomposition-quality measurement",
+    "no context-demand prediction evaluation",
+    "no route-quality evaluation",
+    "no selected-tier adequacy evaluation",
+    "no scheduler-optimality result",
+    "no benchmark evidence",
+    "no model-quality evidence",
+    "no safety or ASI evidence",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent planner, scheduler, decomposition-quality, route-quality, selected-tier, live-feedback, benchmark, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable scheduler trace",
+    "no planner harness with real or externally replayed plan-node lifecycle states",
+    "no realistic dispatch and blocked-node trace",
+    "no decomposition-quality measurement",
+    "no context-demand prediction evidence",
+    "no route-quality or selected-tier adequacy evaluation",
+    "no scheduler-optimality or live-feedback evidence",
+    "no independent planning-control review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-planning-scheduler-state-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Planning scheduler-state evidence above argument",
+    "does not prove deployed planner behavior, runtime scheduler behavior, decomposition quality, context-demand prediction, route quality, selected-tier adequacy, scheduler optimality, runtime replanning, live feedback handling, benchmark performance, model quality, safety, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Planning as a Control Layer chapter core claim"
+  ]
+}
