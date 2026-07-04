@@ -2,15 +2,15 @@
 
 Status: manual Phase 2 review log for the generated v1.0 reader manuscript.
 
-Last updated: 2026-06-28
+Last updated: 2026-07-04
 
 This note records manual decisions made after reading medium-priority rows from `docs/reader_continuity_audit.md`. It is not a full 44-chapter continuity review, not a reader release, and not a claim that any ebook, document, PDF, or audio artifact exists.
 
 ## Source State
 
 - Generated reader source: `build/reader_edition/`
-- Reader overlay set: 31 active and 31 applied operations
-- Reader continuity audit: 44 chapters, 106,698 reader words, 2 high-priority heuristic rows, 4 medium-priority heuristic rows, 15 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
+- Reader overlay set: 71 active and 71 applied operations
+- Reader continuity audit: 44 chapters, 117,404 reader words, 0 high-priority heuristic rows, 0 medium-priority heuristic rows, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
 - Live source of truth: Quarto chapters plus `book_structure.json`, `docs/book_outline.md`, Appendix C, source appendices, proof/test records, implementation horizons, and release records
 
 ## Decision Rules
@@ -27,12 +27,13 @@ This note records manual decisions made after reading medium-priority rows from 
 | `executable-specifications-and-lean-proof-envelope` | Dense technical terms | No additional overlay now; companion-note/glossary candidate for future reader release | The chapter reads as a proof-boundary chapter and already has a reader overlay for `Beyond the State of the Art`. Terms such as Lean, schema, validator, semantic adequacy, and proof receipt are necessary to preserve the evidence boundary. The prose keeps clear non-claims: local finite-record predicates do not prove broad safety, deployment enforcement, model quality, source truth, or benchmark performance. |
 | `circle-calculus-and-proof-carrying-ai-contracts` | Dense technical terms | No additional overlay now; companion-note/glossary candidate for future reader release | The chapter is inherently about theorem-linked receipts, resolver status, replay, fingerprints, consumer gates, and workload-blocked promotion. Existing overlays convert the receipt lifecycle and mature transport endpoint into prose. Additional deletion would weaken the structural-proof versus model-quality boundary. |
 | `artifact-steward-agents-and-living-project-governance` | Lower-density long chapter | Retain current reader chapter; companion-note candidate for implementation ladder and project-object summary in future ebook/audio treatment | The chapter remains long because it carries governance, treasury, worker federation, contribution ledgers, event taint, and sunset policy. Those are central to the chapter rather than removable scaffolding. The current reader overlays already convert the table-like autonomy, treasury, project-object, and mature endpoint material into prose. A later curated reader manuscript may compress examples and move the implementation ladder to companion material, but doing so now would be broader than a clean overlay decision. |
+| `compact-generative-systems-and-residual-honesty` | Former length/density row after the Semantic Representation fold | Reader-only overlay tightened; now low-priority in the generated audit | The compact chapter remains long enough to carry residual honesty and semantic leasing, but the reader overlay now reduces repeated receipt, record, and residual terminology while preserving exactness, fallback, consumer policy, Lean/GVR, non-claim, and support-state boundaries. |
 
 ## Outcome
 
-The three medium-priority heuristic rows have been read and classified. The audit can continue to show the same rows because it measures density and length mechanically; the manual decision is that they are not current blockers for the generated reader path.
+The current generated continuity audit now has 0 high-priority and 0 medium-priority heuristic rows. Earlier medium rows remain classified above because they explain why dense proof/governance language was retained, and the Compact chapter row records the 2026-07-04 overlay tightening that moved the last active medium-priority row out of the queue.
 
-The remaining Phase 2 work is the full chapter-by-chapter continuity pass across the current reader manuscript, with special attention to the low-priority rows that are dense, long, or central to later release artifacts.
+The remaining Phase 2 work is release-quality format review, curated reader-manuscript packaging, and future manual editorial review of low-priority rows that are dense, long, or central to later release artifacts.
 
 ## Non-Claims
 
