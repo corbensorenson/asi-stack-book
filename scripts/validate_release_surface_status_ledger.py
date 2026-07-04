@@ -281,6 +281,31 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             errors.append(f"format review matrix missing blocker: {blocker}")
     if "edition release record" not in format_matrix.get("release_rule", ""):
         errors.append("format review matrix release rule must mention edition release record.")
+    curated_candidate = format_matrix.get("current_curated_candidate", {})
+    if not isinstance(curated_candidate, dict):
+        errors.append("format review matrix must carry current_curated_candidate.")
+        curated_candidate = {}
+    curated_candidate_records = curated_candidate.get("records", [])
+    if not isinstance(curated_candidate_records, list):
+        errors.append("format review matrix current_curated_candidate.records must be a list.")
+        curated_candidate_records = []
+    curated_candidate_approved = sorted(
+        record.get("format")
+        for record in curated_candidate_records
+        if isinstance(record, dict) and record.get("release_approved") is True
+    )
+    if curated_candidate_approved:
+        errors.append(f"curated candidate rows must not be release-approved; found {curated_candidate_approved}.")
+    curated_candidate_blocker_counts: Counter[str] = Counter()
+    for record in curated_candidate_records:
+        if isinstance(record, dict):
+            curated_candidate_blocker_counts.update(record.get("release_blockers", []))
+    if curated_candidate.get("status") != "partial_release_candidate_blocked":
+        errors.append("current curated candidate status must remain partial_release_candidate_blocked.")
+    if len(curated_candidate_records) != 6:
+        errors.append("current curated candidate must track exactly six rows.")
+    if curated_candidate.get("release_blocker_counts") != dict(sorted(curated_candidate_blocker_counts.items())):
+        errors.append("current curated candidate blocker counts drifted from candidate rows.")
 
     if curated_blocked_record.get("record_type") != "edition_release":
         errors.append("curated blocked release-candidate record must use record_type edition_release.")
@@ -932,6 +957,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "format_approved": approved_formats,
         "format_blocked": blocked_formats,
         "format_blocker_counts": blocker_counts,
+        "curated_candidate_count": len(curated_candidate_records),
+        "curated_candidate_status": curated_candidate.get("status"),
+        "curated_candidate_blocker_counts": curated_candidate_blocker_counts,
         "curated_blocked_record": rel(CURATED_BLOCKED_RECORD),
         "curated_blocked_record_status": curated_blocked_record.get("validation_status"),
         "curated_blocked_probe_status": blocked_probe_closure.get("status"),
@@ -1071,6 +1099,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "| Release surfaces | Live, research, reader, and audio profiles exist. "
         "Release detail is generated in `docs/release_surface_status_ledger.md`: generated-reader HTML remains the only approved reader artifact; "
         f"`{metrics['curated_blocked_record']}` records the current curated-reader candidate as partial and blocked; "
+        f"`docs/reader_format_review_matrix.md` tracks {metrics['curated_candidate_count']} current curated-candidate rows with release blockers; "
         f"automated keyboard traversal covers {metrics['reader_keyboard_navigation_pairs']} page-view pairs with "
         f"{metrics['reader_keyboard_navigation_failures']} failures; "
         f"the curated manuscript remains `{metrics['reader_manifest_status']}` with "
@@ -1154,6 +1183,9 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Release-approved reader formats | {qmd_escape(', '.join(metrics['format_approved']))} |",
             f"| Reader formats still carrying blockers | {qmd_escape(', '.join(metrics['format_blocked']))} |",
             f"| Format blocker counts | {qmd_escape(counter_phrase(blocker_counts))} |",
+            f"| Current curated candidate rows | {metrics['curated_candidate_count']} |",
+            f"| Current curated candidate status | `{qmd_escape(metrics['curated_candidate_status'])}` |",
+            f"| Current curated candidate blocker counts | {qmd_escape(counter_phrase(metrics['curated_candidate_blocker_counts']))} |",
             f"| Blocked curated reader candidate record | {metrics['curated_blocked_record_status']} |",
             f"| Blocked curated format-probe closure | {metrics['curated_blocked_probe_status']} |",
             "",
@@ -1172,6 +1204,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "## Format And Artifact Review",
             "",
             f"- Generated reader HTML is the only release-approved reader format row, backed by `{metrics['release_record']}`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, or figure-artifact review.",
+            f"- `docs/reader_format_review_matrix.md` distinguishes the historical generated-reader format queue from the current curated-reader candidate queue: {metrics['curated_candidate_count']} current candidate rows remain `{metrics['curated_candidate_status']}` with blocker counts {counter_phrase(metrics['curated_candidate_blocker_counts'])}.",
             f"- `{metrics['curated_blocked_record']}` records the current curated-reader HTML/EPUB/DOCX/PDF/e-reader/audio candidate as `partial` and blocked. It names exact local artifacts and blockers but does not approve, publish, tag, or archive any curated-reader artifact.",
             f"- The blocked candidate also records `{metrics['curated_blocked_probe_status']}` for the automated package, link, raster, key-figure, and browser probes; this is release-preparation evidence only and does not clear application-level review.",
             f"- `docs/reader_html_artifact_browser_review.md` records {metrics['generated_html_pages']} generated reader HTML pages, {metrics['generated_html_pairs']} page-view pairs, and {metrics['generated_html_failures']} failed page-view pairs.",

@@ -2,8 +2,8 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "pre_release_review_matrix",
-  "last_updated": "2026-06-29",
-  "purpose": "Track human-reader format artifact review separately from generated-reader chapter-text review and separately from edition release records.",
+  "last_updated": "2026-07-04",
+  "purpose": "Track human-reader format artifact review separately from generated-reader chapter-text review and separately from edition release records, including the approved generated-reader HTML row and the current blocked curated-reader candidate.",
   "source_docs": [
     "docs/reader_format_dry_run.md",
     "docs/reader_artifact_inspection_manifest.md",
@@ -13,7 +13,15 @@
     "docs/reader_artifact_layout_review.md",
     "docs/reader_html_artifact_browser_review.md",
     "docs/reader_chapter_review_matrix.md",
-    "release_records/2026-06-29-v1-reader-html-855dc277.json"
+    "docs/curated_reader_html_artifact_browser_review.md",
+    "docs/curated_reader_format_artifact_probe.md",
+    "docs/reader_key_figure_epub_layout_review.md",
+    "docs/reader_key_figure_docx_layout_review.md",
+    "docs/reader_key_figure_pdf_layout_review.md",
+    "docs/reader_keyboard_navigation_review.md",
+    "docs/reader_audio_script_probe_manifest.md",
+    "release_records/2026-06-29-v1-reader-html-855dc277.json",
+    "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
   ],
   "release_record_status": "created",
   "release_record_path": "release_records/2026-06-29-v1-reader-html-855dc277.json",
@@ -21,6 +29,170 @@
     "app_or_ereader_review_not_completed": 1,
     "full_format_artifact_review_not_completed": 3,
     "full_pdf_layout_review_not_completed": 1
+  },
+  "current_curated_candidate": {
+    "status": "partial_release_candidate_blocked",
+    "release_record_path": "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json",
+    "scope": "Tracked curated reader manuscript rendered into ignored local HTML, EPUB, DOCX, and PDF review artifacts, plus e-reader and audio release-preparation lanes.",
+    "release_blocker_counts": {
+      "app_or_ereader_review_not_completed": 2,
+      "audio_edition_release_record_not_created": 1,
+      "audio_files_not_generated": 1,
+      "chapter_markers_not_timecoded": 1,
+      "docx_application_review_not_completed": 1,
+      "final_figure_artifact_review_not_completed": 4,
+      "manual_keyboard_only_review_not_completed": 1,
+      "manual_pdf_page_by_page_review_not_completed": 1,
+      "narration_quality_review_not_completed": 1,
+      "pdf_viewer_review_not_completed": 1,
+      "reader_release_approval_not_created": 5,
+      "reviewed_reader_release_record_not_created_for_audio": 1,
+      "screen_reader_review_not_completed": 1,
+      "wcag_conformance_review_not_completed": 1
+    },
+    "records": [
+      {
+        "format": "curated_reader_html",
+        "artifact_scope": "Local ignored curated reader HTML snapshot under build/curated_reader_edition/format_artifacts/html/_reader_site.",
+        "render_status": "rendered_local",
+        "automated_review_status": "passed_release_preparation_probe",
+        "release_approved": false,
+        "evidence_refs": [
+          "docs/curated_reader_html_artifact_browser_review.md#browser-sweep",
+          "docs/reader_keyboard_navigation_review.md#summary",
+          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+        ],
+        "release_blockers": [
+          "manual_keyboard_only_review_not_completed",
+          "screen_reader_review_not_completed",
+          "wcag_conformance_review_not_completed",
+          "final_figure_artifact_review_not_completed",
+          "reader_release_approval_not_created"
+        ],
+        "notes": "The curated reader HTML snapshot rendered locally, passed the strict browser viability sweep across 98 page-view pairs, passed the automated keyboard traversal review across 98 page-view pairs, and preserved all curated release blockers. It is a release-preparation artifact, not the 2026-06-29 generated reader HTML approval.",
+        "non_claims": [
+          "This candidate row does not approve curated reader HTML for release.",
+          "This candidate row does not publish the ignored local HTML artifact.",
+          "This candidate row does not promote any claim support state."
+        ]
+      },
+      {
+        "format": "curated_reader_epub",
+        "artifact_scope": "Local ignored curated reader EPUB snapshot under build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub.",
+        "render_status": "rendered_local",
+        "automated_review_status": "passed_release_preparation_probe",
+        "release_approved": false,
+        "evidence_refs": [
+          "docs/curated_reader_format_artifact_probe.md#epub-content-and-navigation-audit",
+          "docs/reader_key_figure_epub_layout_review.md#summary",
+          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+        ],
+        "release_blockers": [
+          "app_or_ereader_review_not_completed",
+          "final_figure_artifact_review_not_completed",
+          "reader_release_approval_not_created"
+        ],
+        "notes": "The curated EPUB snapshot rendered locally, passed repaired-package content and internal-link checks, passed Chromium EPUB XHTML browser review, and passed the automated key-figure XHTML layout probe. It has not received dedicated e-reader application approval or release approval.",
+        "non_claims": [
+          "This candidate row does not approve curated reader EPUB for release.",
+          "This candidate row does not publish the ignored local EPUB artifact.",
+          "This candidate row does not promote any claim support state."
+        ]
+      },
+      {
+        "format": "curated_reader_docx",
+        "artifact_scope": "Local ignored curated reader DOCX snapshot under build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx.",
+        "render_status": "rendered_local",
+        "automated_review_status": "passed_release_preparation_probe",
+        "release_approved": false,
+        "evidence_refs": [
+          "docs/curated_reader_format_artifact_probe.md#docx-libreoffice-headless-review",
+          "docs/reader_key_figure_docx_layout_review.md#summary",
+          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+        ],
+        "release_blockers": [
+          "docx_application_review_not_completed",
+          "final_figure_artifact_review_not_completed",
+          "reader_release_approval_not_created"
+        ],
+        "notes": "The curated DOCX snapshot rendered locally, passed repaired-package relationship checks, converted through LibreOffice headless Writer with all pages raster-checked, and passed the key-figure DOCX-to-PDF title-page layout probe. It has not received Word, LibreOffice GUI, Google Docs, manual document, or release approval.",
+        "non_claims": [
+          "This candidate row does not approve curated reader DOCX for release.",
+          "This candidate row does not publish the ignored local DOCX artifact.",
+          "This candidate row does not promote any claim support state."
+        ]
+      },
+      {
+        "format": "curated_reader_pdf",
+        "artifact_scope": "Local ignored curated reader PDF snapshot under build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf.",
+        "render_status": "rendered_local",
+        "automated_review_status": "passed_release_preparation_probe",
+        "release_approved": false,
+        "evidence_refs": [
+          "docs/curated_reader_format_artifact_probe.md#pdf-text-and-layout-extraction-audit",
+          "docs/reader_key_figure_pdf_layout_review.md#summary",
+          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+        ],
+        "release_blockers": [
+          "manual_pdf_page_by_page_review_not_completed",
+          "pdf_viewer_review_not_completed",
+          "final_figure_artifact_review_not_completed",
+          "reader_release_approval_not_created"
+        ],
+        "notes": "The curated PDF snapshot rendered locally, passed all-page text and bounding-box extraction, all-page raster smoke testing, extracted-text reading-flow checks, and key-figure caption-page layout review. It has not received manual page-by-page PDF reading-flow review, PDF viewer approval, or release approval.",
+        "non_claims": [
+          "This candidate row does not approve curated reader PDF for release.",
+          "This candidate row does not publish the ignored local PDF artifact.",
+          "This candidate row does not promote any claim support state."
+        ]
+      },
+      {
+        "format": "ereader_application_review",
+        "artifact_scope": "Dedicated e-reader or e-reader-application approval path for the current curated EPUB candidate.",
+        "render_status": "not_attempted",
+        "automated_review_status": "not_attempted",
+        "release_approved": false,
+        "evidence_refs": [
+          "docs/reader_key_figure_epub_layout_review.md#summary",
+          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+        ],
+        "release_blockers": [
+          "app_or_ereader_review_not_completed",
+          "reader_release_approval_not_created"
+        ],
+        "notes": "The automated Chromium EPUB XHTML review and key-figure layout probe prepare the e-reader lane, but a dedicated e-reader device or application approval path has not been executed.",
+        "non_claims": [
+          "This candidate row does not approve an e-reader artifact or e-reader experience.",
+          "This candidate row does not publish the ignored local EPUB artifact.",
+          "This candidate row does not promote any claim support state."
+        ]
+      },
+      {
+        "format": "audio",
+        "artifact_scope": "Audio-script preparation workspace and downstream MP3, M4B, and audio-embedded EPUB targets for the curated reader manuscript.",
+        "render_status": "not_attempted",
+        "automated_review_status": "partial_release_preparation_probe",
+        "release_approved": false,
+        "evidence_refs": [
+          "docs/reader_audio_script_probe_manifest.md#audio-script-reading-flow-review",
+          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+        ],
+        "release_blockers": [
+          "reviewed_reader_release_record_not_created_for_audio",
+          "narration_quality_review_not_completed",
+          "audio_files_not_generated",
+          "chapter_markers_not_timecoded",
+          "audio_edition_release_record_not_created"
+        ],
+        "notes": "The audio-script workspace has automated reading-flow and marker-order checks, but no narration-quality review, pronunciation review, timing, MP3, M4B, audio-embedded EPUB, or audio release record exists.",
+        "non_claims": [
+          "This candidate row does not approve audio, MP3, M4B, or audio-embedded EPUB artifacts.",
+          "This candidate row does not publish any audio artifact.",
+          "This candidate row does not promote any claim support state."
+        ]
+      }
+    ],
+    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence and exact blockers, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
   },
   "records": [
     {

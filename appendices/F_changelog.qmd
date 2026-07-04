@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-04 - Add curated reader format-candidate matrix
+
+- Extended `editions/reader_manuscript/v1_0/format_review_matrix.json` and
+  `scripts/sync_reader_format_review_matrix.py` so the generated matrix keeps
+  the 2026-06-29 generated-reader HTML approval separate from the current
+  blocked curated-reader candidate.
+- Regenerated `docs/reader_format_review_matrix.md` with six current
+  curated-candidate rows for curated HTML, EPUB, DOCX, PDF, e-reader
+  application review, and audio, each preserving release blockers and evidence
+  refs without approving artifacts.
+- Updated `scripts/validate_release_surface_status_ledger.py`,
+  `docs/release_surface_status_ledger.md`, and
+  `docs/v1_0_candidate_status.md` so the public release-surface summary names
+  the current curated-candidate matrix queue and blocker counts.
+- Boundary: this is release-surface accounting only. It does not approve,
+  publish, archive, tag, or generate any reader, EPUB, DOCX, PDF, e-reader,
+  audio, MP3, M4B, audio-embedded EPUB, or final figure artifact, and it does
+  not promote any support state.
+
 ## 2026-07-04 - Add curated reader keyboard traversal review
 
 - Added `assets/skip-link.html` and wired it through the Quarto scaffold and

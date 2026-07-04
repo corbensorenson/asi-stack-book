@@ -15,11 +15,25 @@ ROOT = Path(__file__).resolve().parents[1]
 MATRIX = ROOT / "editions" / "reader_manuscript" / "v1_0" / "format_review_matrix.json"
 SUMMARY = ROOT / "docs" / "reader_format_review_matrix.md"
 EXPECTED_FORMATS = ["html", "epub", "docx", "pdf"]
+EXPECTED_CURATED_CANDIDATE_FORMATS = [
+    "curated_reader_html",
+    "curated_reader_epub",
+    "curated_reader_docx",
+    "curated_reader_pdf",
+    "ereader_application_review",
+    "audio",
+]
 ALLOWED_STATUS = {"pre_release_review_matrix"}
 ALLOWED_RELEASE_RECORD_STATUS = {"not_created", "drafting", "created"}
+ALLOWED_CURATED_CANDIDATE_STATUS = {"partial_release_candidate_blocked"}
 ALLOWED_RENDER_STATUS = {"not_attempted", "rendered_local", "probe_rendered_local", "failed"}
 ALLOWED_STRUCTURAL_STATUS = {"not_checked", "partial", "passed", "failed"}
 ALLOWED_MANUAL_STATUS = {"not_started", "in_progress", "representative_spot_check", "pass", "fail"}
+ALLOWED_CANDIDATE_REVIEW_STATUS = {
+    "not_attempted",
+    "passed_release_preparation_probe",
+    "partial_release_preparation_probe",
+}
 RELEASE_RECORD_BLOCKER = "reader_release_record_not_created"
 FULL_REVIEW_BLOCKER = "full_format_artifact_review_not_completed"
 
@@ -186,12 +200,102 @@ def validate_matrix(matrix: dict[str, Any]) -> list[str]:
     if matrix.get("release_blocker_counts") != expected_counts:
         errors.append(f"release_blocker_counts must equal {expected_counts}.")
 
+    candidate = matrix.get("current_curated_candidate")
+    if not isinstance(candidate, dict):
+        errors.append("current_curated_candidate must be an object.")
+        return errors
+
+    if candidate.get("status") not in ALLOWED_CURATED_CANDIDATE_STATUS:
+        errors.append(
+            "current_curated_candidate.status must be one of "
+            f"{sorted(ALLOWED_CURATED_CANDIDATE_STATUS)}."
+        )
+    require_string("current_curated_candidate", "scope", candidate.get("scope"), errors, min_words=10)
+    boundary = require_string(
+        "current_curated_candidate",
+        "release_boundary",
+        candidate.get("release_boundary"),
+        errors,
+        min_words=14,
+    ).lower()
+    for phrase in ("not release-approved", "does not approve", "edition release record"):
+        if phrase not in boundary:
+            errors.append(f"current_curated_candidate.release_boundary must include {phrase!r}.")
+
+    candidate_record_path = candidate.get("release_record_path")
+    if not isinstance(candidate_record_path, str) or not candidate_record_path:
+        errors.append("current_curated_candidate.release_record_path must be a non-empty string.")
+    elif not (ROOT / candidate_record_path).exists():
+        errors.append(f"current_curated_candidate.release_record_path does not exist: {candidate_record_path}")
+
+    candidate_records = candidate.get("records")
+    if not isinstance(candidate_records, list) or not candidate_records:
+        errors.append("current_curated_candidate.records must be a non-empty list.")
+        candidate_records = []
+
+    candidate_seen: set[str] = set()
+    candidate_blocker_counts: Counter[str] = Counter()
+    for index, record in enumerate(candidate_records):
+        owner = f"current_curated_candidate.records[{index}]"
+        if not isinstance(record, dict):
+            errors.append(f"{owner} must be an object.")
+            continue
+        fmt = record.get("format")
+        if not isinstance(fmt, str) or not fmt:
+            errors.append(f"{owner}: format must be a non-empty string.")
+            continue
+        if fmt in candidate_seen:
+            errors.append(f"{owner}: duplicate format {fmt}.")
+        candidate_seen.add(fmt)
+        if record.get("render_status") not in ALLOWED_RENDER_STATUS:
+            errors.append(f"{owner}: render_status must be one of {sorted(ALLOWED_RENDER_STATUS)}.")
+        if record.get("automated_review_status") not in ALLOWED_CANDIDATE_REVIEW_STATUS:
+            errors.append(
+                f"{owner}: automated_review_status must be one of "
+                f"{sorted(ALLOWED_CANDIDATE_REVIEW_STATUS)}."
+            )
+        if record.get("release_approved") is not False:
+            errors.append(f"{owner}: release_approved must remain false for the blocked curated candidate.")
+        require_string(owner, "artifact_scope", record.get("artifact_scope"), errors, min_words=6)
+        require_string(owner, "notes", record.get("notes"), errors, min_words=14)
+        for ref in require_string_list(owner, "evidence_refs", record.get("evidence_refs"), errors):
+            validate_ref(f"{owner}.evidence_refs", ref, errors)
+        blockers = require_string_list(owner, "release_blockers", record.get("release_blockers"), errors)
+        for blocker in blockers:
+            candidate_blocker_counts[blocker] += 1
+        row_non_claims = require_string_list(owner, "non_claims", record.get("non_claims"), errors)
+        row_non_claim_text = " ".join(row_non_claims).lower()
+        for phrase in ("does not approve", "does not publish", "does not promote"):
+            if phrase not in row_non_claim_text:
+                errors.append(f"{owner}: non_claims must include boundary phrase: {phrase}")
+
+    missing_candidate_formats = sorted(set(EXPECTED_CURATED_CANDIDATE_FORMATS) - candidate_seen)
+    extra_candidate_formats = sorted(candidate_seen - set(EXPECTED_CURATED_CANDIDATE_FORMATS))
+    if missing_candidate_formats:
+        errors.append(f"current_curated_candidate.records missing expected format(s): {missing_candidate_formats}")
+    if extra_candidate_formats:
+        errors.append(f"current_curated_candidate.records contain unexpected format(s): {extra_candidate_formats}")
+
+    expected_candidate_counts = dict(sorted(candidate_blocker_counts.items()))
+    if candidate.get("release_blocker_counts") != expected_candidate_counts:
+        errors.append(
+            "current_curated_candidate.release_blocker_counts must equal "
+            f"{expected_candidate_counts}."
+        )
+
     return errors
+
+
+def md_cell(value: object) -> str:
+    return str(value).replace("|", "\\|").replace("\n", " ").strip()
 
 
 def markdown_table(matrix: dict[str, Any]) -> str:
     records = matrix.get("records", [])
     counts = matrix.get("release_blocker_counts", {})
+    candidate = matrix.get("current_curated_candidate", {})
+    candidate_records = candidate.get("records", []) if isinstance(candidate, dict) else []
+    candidate_counts = candidate.get("release_blocker_counts", {}) if isinstance(candidate, dict) else {}
     lines = [
         "# Reader Format Review Matrix",
         "",
@@ -209,6 +313,11 @@ def markdown_table(matrix: dict[str, Any]) -> str:
     if isinstance(counts, dict):
         for key, value in sorted(counts.items()):
             lines.append(f"| release_blocker:{key} | {value} |")
+    if isinstance(candidate_records, list):
+        lines.append(f"| current_curated_candidate rows | {len(candidate_records)} |")
+    if isinstance(candidate_counts, dict):
+        for key, value in sorted(candidate_counts.items()):
+            lines.append(f"| current_curated_candidate_blocker:{key} | {value} |")
 
     lines.extend(
         [
@@ -230,17 +339,61 @@ def markdown_table(matrix: dict[str, Any]) -> str:
                 "| "
                 + " | ".join(
                     [
-                        str(record.get("format", "")),
-                        str(record.get("render_status", "")),
-                        str(record.get("structural_inspection_status", "")),
-                        str(record.get("manual_layout_review_status", "")),
+                        md_cell(record.get("format", "")),
+                        md_cell(record.get("render_status", "")),
+                        md_cell(record.get("structural_inspection_status", "")),
+                        md_cell(record.get("manual_layout_review_status", "")),
                         "yes" if record.get("release_approved") is True else "no",
-                        blockers,
-                        refs,
+                        md_cell(blockers),
+                        md_cell(refs),
                     ]
                 )
                 + " |"
             )
+
+    if isinstance(candidate, dict) and isinstance(candidate_records, list):
+        lines.extend(
+            [
+                "",
+                "## Current Curated Reader Candidate",
+                "",
+                f"Status: `{candidate.get('status', '')}`",
+                "",
+                f"Release-candidate record: `{candidate.get('release_record_path', '')}`",
+                "",
+                md_cell(candidate.get("scope", "")),
+                "",
+                "| Candidate format | Render status | Automated review | Release approved | Blockers | Evidence refs |",
+                "|---|---|---|---:|---|---|",
+            ]
+        )
+        for record in candidate_records:
+            if not isinstance(record, dict):
+                continue
+            blockers = ", ".join(str(item) for item in record.get("release_blockers", []))
+            refs = ", ".join(str(item) for item in record.get("evidence_refs", []))
+            lines.append(
+                "| "
+                + " | ".join(
+                    [
+                        md_cell(record.get("format", "")),
+                        md_cell(record.get("render_status", "")),
+                        md_cell(record.get("automated_review_status", "")),
+                        "yes" if record.get("release_approved") is True else "no",
+                        md_cell(blockers),
+                        md_cell(refs),
+                    ]
+                )
+                + " |"
+            )
+        lines.extend(
+            [
+                "",
+                "Curated-candidate release boundary:",
+                "",
+                str(candidate.get("release_boundary", "")),
+            ]
+        )
 
     lines.extend(
         [
