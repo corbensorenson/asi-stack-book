@@ -1,0 +1,194 @@
+{
+  "bridge_assertions": {
+    "downgrade_case_present": true,
+    "downgrade_trigger_required": true,
+    "narrowing_case_present": true,
+    "negative_evidence_required": true,
+    "no_live_claim_movement": true,
+    "non_claim_boundary": true,
+    "refutation_case_present": true,
+    "support_promotion_laundering_rejected": true,
+    "support_state_effect_bounded": true,
+    "terminal_effect_required": true
+  },
+  "command": "python3 scripts/validate_claim_state_transition_bridge.py",
+  "expected_invalid_control_count": 6,
+  "lean_fixture_alignment": {
+    "expected_invalid_control_count": 6,
+    "negative_evidence_required": true,
+    "no_live_claim_movement": true,
+    "proof_tag": "lean:evidence.claim_state.transition_bridge",
+    "support_state_effect_bounded": true,
+    "theorem_refs": [
+      "claim_state_transition_bridge_fixture_valid",
+      "claim_state_transition_bridge_requires_negative_evidence",
+      "claim_state_transition_bridge_preserves_no_live_claim_movement",
+      "claim_state_transition_bridge_preserves_nonclaim_boundary"
+    ],
+    "valid_scenario_count": 3
+  },
+  "non_claims": [
+    "does not demote, deprecate, or refute any live chapter core claim",
+    "does not prove source interpretation adequacy",
+    "does not prove reviewer correctness",
+    "does not create a support-state promotion",
+    "does not prove deployed belief-revision behavior"
+  ],
+  "recorded_date": "2026-07-04",
+  "rejected_controls": [
+    {
+      "rejection_reasons": [
+        "missing_negative_evidence"
+      ],
+      "scenario_id": "invalid_narrowing_without_negative_evidence"
+    },
+    {
+      "rejection_reasons": [
+        "missing_downgrade_trigger"
+      ],
+      "scenario_id": "invalid_downgrade_without_trigger"
+    },
+    {
+      "rejection_reasons": [
+        "missing_terminal_effect"
+      ],
+      "scenario_id": "invalid_refutation_without_terminal_effect"
+    },
+    {
+      "rejection_reasons": [
+        "narrowing_changed_support_effect",
+        "narrowing_changed_support_state",
+        "support_promotion_laundering_attempt"
+      ],
+      "scenario_id": "invalid_support_promotion_laundered_as_narrowing"
+    },
+    {
+      "rejection_reasons": [
+        "missing_non_claim_boundary"
+      ],
+      "scenario_id": "invalid_missing_nonclaim_boundary"
+    },
+    {
+      "rejection_reasons": [
+        "live_claim_movement_claimed"
+      ],
+      "scenario_id": "invalid_live_claim_movement_claimed"
+    }
+  ],
+  "result_id": "2026-07-04-claim-state-transition-bridge",
+  "result_kind": "deterministic_synthetic_claim_state_transition_bridge",
+  "scenario_results": [
+    {
+      "actual_valid": true,
+      "expected_valid": true,
+      "new_support_state": "argument",
+      "old_support_state": "argument",
+      "rejection_reasons": [],
+      "scenario_id": "valid_scope_narrowing_after_failed_mapping",
+      "support_state_effect": "none",
+      "transition_kind": "claim_narrowing"
+    },
+    {
+      "actual_valid": true,
+      "expected_valid": true,
+      "new_support_state": "argument",
+      "old_support_state": "synthetic-test-backed",
+      "rejection_reasons": [],
+      "scenario_id": "valid_downgrade_after_failed_replay",
+      "support_state_effect": "blocks_promotion",
+      "transition_kind": "support_downgrade"
+    },
+    {
+      "actual_valid": true,
+      "expected_valid": true,
+      "new_support_state": "refuted",
+      "old_support_state": "argument",
+      "rejection_reasons": [],
+      "scenario_id": "valid_terminal_refutation_after_counterexample",
+      "support_state_effect": "blocks_promotion",
+      "transition_kind": "terminal_refutation"
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "new_support_state": "argument",
+      "old_support_state": "argument",
+      "rejection_reasons": [
+        "missing_negative_evidence"
+      ],
+      "scenario_id": "invalid_narrowing_without_negative_evidence",
+      "support_state_effect": "none",
+      "transition_kind": "claim_narrowing"
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "new_support_state": "argument",
+      "old_support_state": "synthetic-test-backed",
+      "rejection_reasons": [
+        "missing_downgrade_trigger"
+      ],
+      "scenario_id": "invalid_downgrade_without_trigger",
+      "support_state_effect": "blocks_promotion",
+      "transition_kind": "support_downgrade"
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "new_support_state": "refuted",
+      "old_support_state": "argument",
+      "rejection_reasons": [
+        "missing_terminal_effect"
+      ],
+      "scenario_id": "invalid_refutation_without_terminal_effect",
+      "support_state_effect": "blocks_promotion",
+      "transition_kind": "terminal_refutation"
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "new_support_state": "source-derived",
+      "old_support_state": "argument",
+      "rejection_reasons": [
+        "narrowing_changed_support_effect",
+        "narrowing_changed_support_state",
+        "support_promotion_laundering_attempt"
+      ],
+      "scenario_id": "invalid_support_promotion_laundered_as_narrowing",
+      "support_state_effect": "eligible_for_bounded_evidence_review",
+      "transition_kind": "claim_narrowing"
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "new_support_state": "argument",
+      "old_support_state": "synthetic-test-backed",
+      "rejection_reasons": [
+        "missing_non_claim_boundary"
+      ],
+      "scenario_id": "invalid_missing_nonclaim_boundary",
+      "support_state_effect": "blocks_promotion",
+      "transition_kind": "support_downgrade"
+    },
+    {
+      "actual_valid": false,
+      "expected_valid": false,
+      "new_support_state": "argument",
+      "old_support_state": "argument",
+      "rejection_reasons": [
+        "live_claim_movement_claimed"
+      ],
+      "scenario_id": "invalid_live_claim_movement_claimed",
+      "support_state_effect": "none",
+      "transition_kind": "claim_narrowing"
+    }
+  ],
+  "schema_version": "asi_stack.claim_state_transition_bridge.v0",
+  "valid_scenario_count": 3,
+  "valid_scenarios": [
+    "valid_downgrade_after_failed_replay",
+    "valid_scope_narrowing_after_failed_mapping",
+    "valid_terminal_refutation_after_counterexample"
+  ],
+  "weakening_condition": "The support-state ladder soundness argument weakens if failed evidence cannot produce a recorded narrowing, downgrade, or refutation without also allowing support promotion, live-claim movement, or erased non-claims."
+}

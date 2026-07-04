@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 193 |
-| Manifest status counts | {"implemented": 193} |
-| Triage class counts | {"formal-invariant": 193} |
+| Proof targets audited | 194 |
+| Manifest status counts | {"implemented": 194} |
+| Triage class counts | {"formal-invariant": 194} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -48,7 +48,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Corrigibility.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 5 | 5 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 9 | 4 |
-| `lean/AsiStackProofs/EvidenceStates.lean` | 6 | 27 | 15 | 6 |
+| `lean/AsiStackProofs/EvidenceStates.lean` | 7 | 31 | 17 | 7 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 6 | 4 |
 | `lean/AsiStackProofs/FastGeneration.lean` | 5 | 38 | 21 | 8 |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 4 | 3 | 2 |
@@ -103,7 +103,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `compact-generative-systems-and-residual-honesty` | 8 | 8 | 0 | 0 |
 | `constitutional-alignment-substrate` | 5 | 5 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
-| `evidence-states-and-claim-discipline` | 6 | 6 | 0 | 0 |
+| `evidence-states-and-claim-discipline` | 7 | 7 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
 | `fast-generation-architectures` | 5 | 5 | 0 | 0 |
@@ -160,6 +160,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:evidence.bundle.completeness_probe_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.claim_ledger.completeness_audit_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.accepted_transition.review_audit_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:evidence.claim_state.transition_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.operational_invariant` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |

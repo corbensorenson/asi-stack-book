@@ -221,6 +221,16 @@
       "rationale": "Implemented in AsiStackProofs.EvidenceStates as a finite fixture summary bridge for accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected core-promotion/missing-changelog/missing-nonclaims/missing-evidence/unresolved-blocker/no-change-movement/no-promotion-drift controls, bounded support-state effects, and non-claim boundaries."
     },
     {
+      "tag": "lean:evidence.claim_state.transition_bridge",
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "module": "AsiStackProofs.EvidenceStates",
+      "formal_target": "A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.EvidenceStates as a finite fixture summary bridge for synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, six rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries."
+    },
+    {
       "tag": "lean:intent.contract.operational_invariant",
       "chapter_id": "human-intent-as-a-formal-input",
       "module": "AsiStackProofs.IntentContracts",
@@ -1941,5 +1951,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 193
+  "record_count": 194
 }

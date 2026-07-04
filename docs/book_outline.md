@@ -437,6 +437,7 @@ Draft deliverables:
 - Implemented Codex test: Evidence bundle completeness and changelog-consistency probe, via `python3 scripts/validate_evidence_bundle_completeness_probe.py`, checks two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition. Result: `experiments/evidence_bundle_completeness/results/2026-07-02-local.json`.
 - Implemented Codex test: Claim ledger completeness audit, via `python3 scripts/validate_claim_ledger_completeness_audit.py`, checks the real Appendix C ledger against 44 manifest chapter core claims, expected labels, support states, assigned sources, open gaps, promotion paths, duplicate/stale rows, and seven expected-invalid mutation controls. Result: `experiments/claim_ledger_completeness/results/2026-07-02-local.json`.
 - Implemented Codex test: Accepted live transition review audit, via `python3 scripts/validate_accepted_transition_review_audit.py`, checks 41 accepted transition records, six bounded non-core upward transitions, the accepted no-promotion ledger, no accepted upward chapter-core transition, review/changelog/evidence-packet/non-claim boundaries, and seven expected-invalid mutation controls. Result: `experiments/accepted_transition_review/results/2026-07-02-local.json`.
+- Implemented Codex test: Claim-state transition bridge, via `python3 scripts/validate_claim_state_transition_bridge.py`, checks synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries. Result: `experiments/claim_state_transition_bridge/results/2026-07-04-local.json`.
 - Source-noted external comparator rows now position evidence states against model cards, datasheets, ML reproducibility-review practice, proof-carrying-code lineage, Transformer Circuits, and monosemantic feature decomposition as adjacent reporting, proof-carrying, and mechanistic-interpretability disciplines; no model-card, datasheet, external reproducibility-review, proof-carrying-code implementation, circuit analysis, sparse-autoencoder run, model transparency result, or support-state promotion is claimed.
 
 Lean proof targets:
@@ -449,6 +450,7 @@ Lean proof targets:
 | `lean:evidence.bundle.completeness_probe_bridge` | `AsiStackProofs.EvidenceStates` | A synthetic evidence-bundle completeness probe records a no-change bundle, a blocked-promotion bundle, rejected negative controls, changelog consistency, no support-state effect, and non-claim boundaries. | implemented |
 | `lean:evidence.claim_ledger.completeness_audit_bridge` | `AsiStackProofs.EvidenceStates` | A claim-ledger completeness audit records manifest claim coverage, unique Appendix C rows, label/support matching, open gaps, promotion paths, rejected mutation controls, no support-state effect, and non-claim boundaries. | implemented |
 | `lean:evidence.accepted_transition.review_audit_bridge` | `AsiStackProofs.EvidenceStates` | An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries. | implemented |
+| `lean:evidence.claim_state.transition_bridge` | `AsiStackProofs.EvidenceStates` | A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries. | implemented |
 
 ### Human Intent as a Formal Input
 
@@ -2828,7 +2830,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 192 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 192 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 193 proof targets, 54 Lean modules, 978 theorem declarations, 793 derived/decomposed, 181 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 194 proof targets, 54 Lean modules, 982 theorem declarations, 797 derived/decomposed, 181 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -2837,7 +2839,7 @@ Draft deliverables:
 - Implemented Codex test: External theorem reference boundary negative case.
 - Implemented Codex test: Proof artifact traceability audit.
 - Implemented Codex test: Proof-depth surface synchronization, via `python3 scripts/validate_proof_depth_surface.py`, so the live chapter, reader chapter, outline, and roadmap expose the current proof-depth classification counts and direct/projection versus derived/decomposed distinction without promoting proof-envelope support.
-- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 191 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
+- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 194 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
 
 Lean proof targets:
 

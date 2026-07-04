@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-04 - Add claim-state transition bridge
+
+- Added `python3 scripts/validate_claim_state_transition_bridge.py` and result
+  `experiments/claim_state_transition_bridge/results/2026-07-04-local.json`
+  for a bounded Evidence States bridge over synthetic claim narrowing, support
+  downgrade, and terminal refutation records.
+- Added Lean bridge `lean:evidence.claim_state.transition_bridge` in
+  `AsiStackProofs.EvidenceStates` so the finite summary records negative
+  evidence requirements, six rejected mutation controls, bounded support-state
+  effects, no live claim movement, and non-claim boundaries.
+- Updated the Evidence States live chapter, curated reader chapter, outline,
+  manifest proof/test metadata, roadmap, contribution novelty ledger, and book
+  validation gate so the support-state ladder lane now has a first
+  claim-state transition bridge rather than another no-promotion-only example.
+- Current proof-depth snapshot: 194 proof targets, 54 Lean modules, 982 theorem
+  declarations, 797 derived/decomposed, 181 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+- Boundary: this is a synthetic record bridge only. It does not demote,
+  deprecate, or refute any live chapter core claim; it does not prove source
+  interpretation adequacy, reviewer correctness, deployed belief-revision
+  behavior, support-state promotion, or open-world evidence-state soundness.
+
 ## 2026-07-04 - Tighten idea-depth novelty routing
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after reviewing the idea-focused

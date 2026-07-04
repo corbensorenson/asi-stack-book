@@ -1226,6 +1226,12 @@
               "purpose": "Check the real accepted transition records and no-promotion ledger for review status, changelog refs, evidence packets, verification commands, limitations, reviewer-independence disclosure, non-claims, bounded non-core upward transitions, no chapter-core upward transition, and seven expected-invalid mutation controls.",
               "implementation_status": "implemented",
               "result_status": "validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; audit of existing records only; no evidence-truth, reviewer-independence, source-interpretation, external-review-quality, new-transition-approval, or chapter-core-promotion claim"
+            },
+            {
+              "name": "Claim-state transition bridge",
+              "purpose": "Check synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; synthetic-record and finite-Lean bridge only; no live claim demotion, deprecation, refutation, reviewer-correctness, source-interpretation, deployed belief-revision, or support-state-promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.EvidenceStates",
@@ -1264,6 +1270,12 @@
               "tag": "lean:evidence.accepted_transition.review_audit_bridge",
               "module": "AsiStackProofs.EvidenceStates",
               "target": "An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:evidence.claim_state.transition_bridge",
+              "module": "AsiStackProofs.EvidenceStates",
+              "target": "A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
               "status": "implemented"
             }
           ]

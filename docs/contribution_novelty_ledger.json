@@ -153,15 +153,16 @@
         "ext_assumption_based_tms_1986"
       ],
       "audited_delta": "Model reporting, reproducibility, proof-carrying code, and belief-revision literature each cover part of the problem; the ASI Stack joins them into a public claim-state transition discipline with explicit non-claims and downgrade paths.",
-      "non_obvious_consequence": "A beautiful chapter, green test, or successful proof build should still leave a claim at argument support when scope boundaries or source interpretation are missing.",
+      "non_obvious_consequence": "A beautiful chapter, green test, or successful proof build should still leave a claim at argument support when scope boundaries or source interpretation are missing; failed evidence should also be able to narrow, downgrade, or refute a claim without becoming an upward support move.",
       "strongest_objection": "The support-state ladder may improve documentation honesty without improving truth or safety.",
-      "answer_status": "partially_answered_by_ledgers_and_no_promotion_records",
-      "confidence_state": "methodologically_strong_needs_external_review",
-      "needed_next_artifact": "A true demotion, refutation, or claim-narrowing case caused by failed evidence, prior art, or review, plus independent review of the ladder.",
+      "answer_status": "partially_answered_by_ledgers_no_promotion_records_and_claim_state_transition_bridge",
+      "confidence_state": "bounded_transition_bridge_backed_needs_live_or_external_review",
+      "needed_next_artifact": "A true live demotion, refutation, or claim-narrowing case caused by failed evidence, prior art, or review, plus independent review of the ladder. Current bounded bridge: experiments/claim_state_transition_bridge/results/2026-07-04-local.json and lean:evidence.claim_state.transition_bridge.",
       "support_state_effect": "none",
       "non_claims": [
         "does not prove claim truth",
         "does not prove source interpretation adequacy",
+        "does not demote, deprecate, or refute any live chapter core claim",
         "does not promote any chapter core claim"
       ]
     },

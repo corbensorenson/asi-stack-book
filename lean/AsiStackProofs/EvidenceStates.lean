@@ -492,4 +492,64 @@ theorem accepted_transition_review_audit_bridge
   intro valid
   exact valid
 
+structure ClaimStateTransitionBridgeSummary where
+  narrowingCasePresent : Bool
+  downgradeCasePresent : Bool
+  refutationCasePresent : Bool
+  negativeEvidenceRequired : Bool
+  rejectedMutationControls : Nat
+  supportStateEffectBounded : Bool
+  noLiveClaimMovement : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def ClaimStateTransitionBridgeSummaryValid
+    (summary : ClaimStateTransitionBridgeSummary) : Prop :=
+  summary.narrowingCasePresent = true ∧
+    summary.downgradeCasePresent = true ∧
+    summary.refutationCasePresent = true ∧
+    summary.negativeEvidenceRequired = true ∧
+    summary.rejectedMutationControls = 6 ∧
+    summary.supportStateEffectBounded = true ∧
+    summary.noLiveClaimMovement = true ∧
+    summary.nonClaimBoundary = true
+
+def claimStateTransitionBridgeFixture : ClaimStateTransitionBridgeSummary where
+  narrowingCasePresent := true
+  downgradeCasePresent := true
+  refutationCasePresent := true
+  negativeEvidenceRequired := true
+  rejectedMutationControls := 6
+  supportStateEffectBounded := true
+  noLiveClaimMovement := true
+  nonClaimBoundary := true
+
+theorem claim_state_transition_bridge_fixture_valid :
+    ClaimStateTransitionBridgeSummaryValid claimStateTransitionBridgeFixture := by
+  simp [ClaimStateTransitionBridgeSummaryValid, claimStateTransitionBridgeFixture]
+
+theorem claim_state_transition_bridge_requires_negative_evidence
+    {summary : ClaimStateTransitionBridgeSummary} :
+    ClaimStateTransitionBridgeSummaryValid summary ->
+      summary.negativeEvidenceRequired = true := by
+  intro valid
+  rcases valid with ⟨_, _, _, negativeEvidenceRequired, _, _, _, _⟩
+  exact negativeEvidenceRequired
+
+theorem claim_state_transition_bridge_preserves_no_live_claim_movement
+    {summary : ClaimStateTransitionBridgeSummary} :
+    ClaimStateTransitionBridgeSummaryValid summary ->
+      summary.noLiveClaimMovement = true := by
+  intro valid
+  rcases valid with ⟨_, _, _, _, _, _, noLiveClaimMovement, _⟩
+  exact noLiveClaimMovement
+
+theorem claim_state_transition_bridge_preserves_nonclaim_boundary
+    {summary : ClaimStateTransitionBridgeSummary} :
+    ClaimStateTransitionBridgeSummaryValid summary ->
+      summary.nonClaimBoundary = true := by
+  intro valid
+  rcases valid with ⟨_, _, _, _, _, _, _, nonClaimBoundary⟩
+  exact nonClaimBoundary
+
 end AsiStackProofs
