@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from datetime import datetime
 from pathlib import Path
 import re
@@ -17,10 +18,12 @@ from build_resource_ci_cost_profile import (
     RESULT,
     ROOT,
     WORKFLOW,
+    LEAN_THEOREMS,
 )
 
 
 DOC = ROOT / "docs" / "resource_ci_cost_profile.md"
+LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "ResourceEconomics.lean"
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
 KNOWN_FAILURE_TYPES = {
     "generated_scaffold_drift",
@@ -203,6 +206,91 @@ def validate_failure_and_repair(value: dict[str, Any], errors: list[str]) -> Non
         errors.append(f"{rel(RESULT)}: repair_events must preserve the no-claim repair boundary.")
 
 
+def validate_lean_alignment(value: dict[str, Any], errors: list[str]) -> None:
+    alignment = value.get("lean_fixture_alignment")
+    if not isinstance(alignment, dict):
+        errors.append(f"{rel(RESULT)}: lean_fixture_alignment must be an object.")
+        return
+
+    metrics = value.get("metrics")
+    failures = value.get("failure_events")
+    repairs = value.get("repair_events")
+    if not isinstance(metrics, dict) or not isinstance(failures, list) or not isinstance(repairs, list):
+        errors.append(f"{rel(RESULT)}: metrics, failure_events, and repair_events are required for Lean alignment.")
+        return
+
+    failure_type_counts = Counter(str(failure.get("failure_type", "")) for failure in failures if isinstance(failure, dict))
+    repair_durations = [
+        int(repair["repair_duration_seconds"])
+        for repair in repairs
+        if isinstance(repair, dict) and isinstance(repair.get("repair_duration_seconds"), int)
+    ]
+    expected = {
+        "proof_bridge_type": "finite CI failure-classification summary",
+        "lean_module": "AsiStackProofs.ResourceEconomics",
+        "lean_fixture": "resourceCICostProfileFixture",
+        "lean_theorem_names": LEAN_THEOREMS,
+        "run_count": metrics.get("run_count"),
+        "completed_run_count": metrics.get("completed_run_count"),
+        "success_count": metrics.get("success_count"),
+        "failure_count": metrics.get("failure_count"),
+        "in_progress_count": metrics.get("in_progress_count"),
+        "deploy_service_failure_count": failure_type_counts.get("github_pages_deploy_service_failure", 0),
+        "classified_failure_count": len(failures),
+        "recovery_run_seconds": min(repair_durations) if repair_durations else 0,
+        "support_state_effect_none": value.get("support_state_effect") == "none",
+        "chapter_core_support_effect_none": value.get("chapter_core_support_effect") == "none",
+        "evidence_transition_created": value.get("evidence_transition_created"),
+        "publication_metadata_only": True,
+        "classified_failures": len(failures) == metrics.get("failure_count"),
+        "deploy_service_failures_match_failures": failure_type_counts.get("github_pages_deploy_service_failure", 0)
+        == metrics.get("failure_count"),
+        "non_evidence_boundary": all(
+            "not a chapter evidence result" in str(failure.get("classification_boundary", "")).lower()
+            or "publication-pipeline" in str(failure.get("classification_boundary", "")).lower()
+            for failure in failures
+            if isinstance(failure, dict)
+        ),
+        "non_claim_boundary": "does not prove deployed scheduler behavior" in text_blob(value.get("non_claims")),
+    }
+    for key, expected_value in expected.items():
+        if alignment.get(key) != expected_value:
+            errors.append(f"{rel(RESULT)}: lean_fixture_alignment.{key} must be {expected_value!r}.")
+
+    non_claims = alignment.get("non_claims")
+    non_claim_text = text_blob(non_claims)
+    for term in ("finite metadata classification", "does not prove deployed scheduler behavior", "chapter-core support-state promotion"):
+        if term not in non_claim_text:
+            errors.append(f"{rel(RESULT)}: lean_fixture_alignment non_claims missing {term!r}.")
+
+    if not LEAN_FIXTURE.exists():
+        errors.append(f"Missing {rel(LEAN_FIXTURE)}.")
+        return
+    lean_text = LEAN_FIXTURE.read_text(encoding="utf-8")
+    for theorem in LEAN_THEOREMS:
+        if not re.search(rf"^theorem\s+{re.escape(theorem)}\b", lean_text, flags=re.MULTILINE):
+            errors.append(f"{rel(LEAN_FIXTURE)} missing theorem {theorem}.")
+    for fragment in (
+        "structure ResourceCICostProfileSummary",
+        "def resourceCICostProfileFixture",
+        f"runCount := {alignment.get('run_count')}",
+        f"completedRunCount := {alignment.get('completed_run_count')}",
+        f"successCount := {alignment.get('success_count')}",
+        f"failureCount := {alignment.get('failure_count')}",
+        f"inProgressCount := {alignment.get('in_progress_count')}",
+        f"deployServiceFailureCount := {alignment.get('deploy_service_failure_count')}",
+        f"classifiedFailureCount := {alignment.get('classified_failure_count')}",
+        f"recoveryRunSeconds := {alignment.get('recovery_run_seconds')}",
+        "publicationMetadataOnly := true",
+        "supportStateEffectNone := true",
+        "chapterCoreSupportEffectNone := true",
+        "evidenceTransitionCreated := false",
+        "nonClaimBoundary := true",
+    ):
+        if fragment not in lean_text:
+            errors.append(f"{rel(LEAN_FIXTURE)} missing CI fixture fragment {fragment!r}.")
+
+
 def validate_doc(errors: list[str]) -> None:
     if not DOC.exists():
         errors.append(f"Missing {rel(DOC)}.")
@@ -215,6 +303,9 @@ def validate_doc(errors: list[str]) -> None:
         rel(RESULT),
         "GitHub Actions publication-pipeline metadata only",
         "failure classification",
+        "Finite Lean Alignment",
+        "finite CI failure-classification summary",
+        "resourceCICostProfileFixture",
         "Support-state effect | `none`",
         "does not promote any chapter core claim above `argument`",
     ]
@@ -234,6 +325,7 @@ def main() -> None:
     validate_shape(value, errors)
     validate_runs(value, errors)
     validate_failure_and_repair(value, errors)
+    validate_lean_alignment(value, errors)
     validate_doc(errors)
     if errors:
         fail(errors)

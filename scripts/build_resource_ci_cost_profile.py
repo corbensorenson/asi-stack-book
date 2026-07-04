@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import hashlib
 import json
 from datetime import datetime, timezone
@@ -25,6 +26,13 @@ NON_CLAIMS = [
     "This CI cost profile does not create a support-state transition.",
     "This CI cost profile does not prove deployed scheduler behavior, runtime budget enforcement, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement.",
     "This CI cost profile records GitHub Actions publication-pipeline metadata only; it is not a production workload trace or external review.",
+]
+
+LEAN_THEOREMS = [
+    "resource_ci_cost_profile_fixture_valid",
+    "resource_ci_cost_profile_preserves_no_core_promotion",
+    "resource_ci_cost_profile_classifies_all_failures",
+    "resource_ci_cost_profile_records_recovery_boundary",
 ]
 
 
@@ -166,6 +174,48 @@ def metric_summary(runs: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def recovery_run_seconds(repair_events: list[dict[str, Any]]) -> int:
+    durations = [
+        int(event["repair_duration_seconds"])
+        for event in repair_events
+        if isinstance(event.get("repair_duration_seconds"), int)
+    ]
+    return min(durations) if durations else 0
+
+
+def build_lean_fixture_alignment(
+    metrics: dict[str, Any], failure_events: list[dict[str, Any]], repair_events: list[dict[str, Any]]
+) -> dict[str, Any]:
+    failure_type_counts = Counter(str(event.get("failure_type", "")) for event in failure_events)
+    deploy_service_failure_count = failure_type_counts.get("github_pages_deploy_service_failure", 0)
+    return {
+        "proof_bridge_type": "finite CI failure-classification summary",
+        "lean_module": "AsiStackProofs.ResourceEconomics",
+        "lean_fixture": "resourceCICostProfileFixture",
+        "lean_theorem_names": LEAN_THEOREMS,
+        "run_count": metrics["run_count"],
+        "completed_run_count": metrics["completed_run_count"],
+        "success_count": metrics["success_count"],
+        "failure_count": metrics["failure_count"],
+        "in_progress_count": metrics["in_progress_count"],
+        "deploy_service_failure_count": deploy_service_failure_count,
+        "classified_failure_count": len(failure_events),
+        "recovery_run_seconds": recovery_run_seconds(repair_events),
+        "support_state_effect_none": True,
+        "chapter_core_support_effect_none": True,
+        "evidence_transition_created": False,
+        "publication_metadata_only": True,
+        "classified_failures": len(failure_events) == metrics["failure_count"],
+        "deploy_service_failures_match_failures": deploy_service_failure_count == metrics["failure_count"],
+        "non_evidence_boundary": True,
+        "non_claim_boundary": True,
+        "non_claims": [
+            "This Lean bridge is finite metadata classification over the recorded CI profile only.",
+            "It does not prove deployed scheduler behavior, production workload behavior, economic adequacy, model quality, external review, or chapter-core support-state promotion.",
+        ],
+    }
+
+
 def build_record() -> dict[str, Any]:
     list_command = [
         "gh",
@@ -200,18 +250,18 @@ def build_record() -> dict[str, Any]:
 
     repair_events = []
     for failure in failure_events:
-        later_success = next(
+        failed_created_at = parse_time(next(item["created_at"] for item in runs if item["run_id"] == failure["run_id"]))
+        later_successes = sorted(
             (
                 run
                 for run in runs
                 if run["status"] == "completed"
                 and run["conclusion"] == "success"
-                and parse_time(run["created_at"]) > parse_time(
-                    next(item["created_at"] for item in runs if item["run_id"] == failure["run_id"])
-                )
+                and parse_time(run["created_at"]) > failed_created_at
             ),
-            None,
+            key=lambda run: parse_time(run["created_at"]),
         )
+        later_success = later_successes[0] if later_successes else None
         if later_success is not None:
             repair_events.append(
                 {
@@ -224,6 +274,7 @@ def build_record() -> dict[str, Any]:
                 }
             )
 
+    metrics = metric_summary(runs)
     return {
         "profile_id": PROFILE_ID,
         "record_kind": "resource_ci_cost_profile",
@@ -238,10 +289,11 @@ def build_record() -> dict[str, Any]:
             " ".join(list_command),
             "gh run view <failed-run-id> --log-failed",
         ],
-        "metrics": metric_summary(runs),
+        "metrics": metrics,
         "runs": runs,
         "failure_events": failure_events,
         "repair_events": repair_events,
+        "lean_fixture_alignment": build_lean_fixture_alignment(metrics, failure_events, repair_events),
         "non_claims": NON_CLAIMS,
     }
 

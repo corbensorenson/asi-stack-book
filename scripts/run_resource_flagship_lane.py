@@ -320,6 +320,11 @@ def build_component_summary() -> dict[str, Any]:
             "workflow": ci_profile.get("workflow"),
             "metrics": ci_profile.get("metrics"),
             "support_state_effect": ci_profile.get("support_state_effect"),
+            "lean_bridge": ci_profile.get("lean_fixture_alignment", {}).get("proof_bridge_type"),
+            "deploy_service_failure_count": ci_profile.get("lean_fixture_alignment", {}).get(
+                "deploy_service_failure_count"
+            ),
+            "recovery_run_seconds": ci_profile.get("lean_fixture_alignment", {}).get("recovery_run_seconds"),
         },
         "sublane_no_promotion_decisions": {
             decision_id: {

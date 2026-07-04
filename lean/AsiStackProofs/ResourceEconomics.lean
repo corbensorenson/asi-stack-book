@@ -684,6 +684,91 @@ theorem resource_flagship_lane_aggregate_carries_transition_accounting :
       resourceFlagshipLaneAggregateFixture.sublaneNoPromotionDecisionCount = 5 := by
   simp [resourceFlagshipLaneAggregateFixture]
 
+structure ResourceCICostProfileSummary where
+  runCount : Nat
+  completedRunCount : Nat
+  successCount : Nat
+  failureCount : Nat
+  inProgressCount : Nat
+  deployServiceFailureCount : Nat
+  classifiedFailureCount : Nat
+  recoveryRunSeconds : Nat
+  supportStateEffectNone : Bool
+  chapterCoreSupportEffectNone : Bool
+  evidenceTransitionCreated : Bool
+  publicationMetadataOnly : Bool
+  classifiedFailures : Bool
+  deployServiceFailuresMatchFailures : Bool
+  nonEvidenceBoundary : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def ResourceCICostProfileValid (summary : ResourceCICostProfileSummary) : Prop :=
+  summary.runCount = 8 ∧
+    summary.completedRunCount = 8 ∧
+    summary.successCount = 5 ∧
+    summary.failureCount = 3 ∧
+    summary.inProgressCount = 0 ∧
+    summary.deployServiceFailureCount = 3 ∧
+    summary.classifiedFailureCount = 3 ∧
+    summary.recoveryRunSeconds = 131 ∧
+    summary.completedRunCount + summary.inProgressCount = summary.runCount ∧
+    summary.successCount + summary.failureCount = summary.completedRunCount ∧
+    summary.deployServiceFailureCount = summary.failureCount ∧
+    summary.classifiedFailureCount = summary.failureCount ∧
+    summary.supportStateEffectNone = true ∧
+    summary.chapterCoreSupportEffectNone = true ∧
+    summary.evidenceTransitionCreated = false ∧
+    summary.publicationMetadataOnly = true ∧
+    summary.classifiedFailures = true ∧
+    summary.deployServiceFailuresMatchFailures = true ∧
+    summary.nonEvidenceBoundary = true ∧
+    summary.nonClaimBoundary = true
+
+def resourceCICostProfileFixture : ResourceCICostProfileSummary :=
+  { runCount := 8,
+    completedRunCount := 8,
+    successCount := 5,
+    failureCount := 3,
+    inProgressCount := 0,
+    deployServiceFailureCount := 3,
+    classifiedFailureCount := 3,
+    recoveryRunSeconds := 131,
+    supportStateEffectNone := true,
+    chapterCoreSupportEffectNone := true,
+    evidenceTransitionCreated := false,
+    publicationMetadataOnly := true,
+    classifiedFailures := true,
+    deployServiceFailuresMatchFailures := true,
+    nonEvidenceBoundary := true,
+    nonClaimBoundary := true }
+
+theorem resource_ci_cost_profile_fixture_valid :
+    ResourceCICostProfileValid resourceCICostProfileFixture := by
+  simp [ResourceCICostProfileValid, resourceCICostProfileFixture]
+
+theorem resource_ci_cost_profile_preserves_no_core_promotion :
+    resourceCICostProfileFixture.supportStateEffectNone = true ∧
+      resourceCICostProfileFixture.chapterCoreSupportEffectNone = true ∧
+      resourceCICostProfileFixture.evidenceTransitionCreated = false ∧
+      resourceCICostProfileFixture.nonClaimBoundary = true := by
+  simp [resourceCICostProfileFixture]
+
+theorem resource_ci_cost_profile_classifies_all_failures :
+    resourceCICostProfileFixture.deployServiceFailureCount =
+        resourceCICostProfileFixture.failureCount ∧
+      resourceCICostProfileFixture.classifiedFailureCount =
+        resourceCICostProfileFixture.failureCount ∧
+      resourceCICostProfileFixture.classifiedFailures = true ∧
+      resourceCICostProfileFixture.deployServiceFailuresMatchFailures = true := by
+  simp [resourceCICostProfileFixture]
+
+theorem resource_ci_cost_profile_records_recovery_boundary :
+    resourceCICostProfileFixture.recoveryRunSeconds = 131 ∧
+      resourceCICostProfileFixture.publicationMetadataOnly = true ∧
+      resourceCICostProfileFixture.nonEvidenceBoundary = true := by
+  simp [resourceCICostProfileFixture]
+
 structure GovernanceTaxTradeoffSummary where
   validScenarioCount : Nat
   expectedInvalidControlCount : Nat

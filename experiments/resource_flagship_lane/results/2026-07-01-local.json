@@ -63,7 +63,7 @@
   "command_records": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 58.596,
+      "elapsed_ms": 29.038,
       "exit_code": 0,
       "id": "costed_route_resource_slice",
       "output_excerpt": [
@@ -74,7 +74,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 47.798,
+      "elapsed_ms": 27.487,
       "exit_code": 0,
       "id": "resource_workflow_trace",
       "output_excerpt": [
@@ -85,7 +85,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 31.385,
+      "elapsed_ms": 40.084,
       "exit_code": 0,
       "id": "resource_budget_ledgers",
       "output_excerpt": [
@@ -96,7 +96,7 @@
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 61.665,
+      "elapsed_ms": 60.422,
       "exit_code": 0,
       "id": "capacity_smoothing",
       "output_excerpt": [
@@ -107,7 +107,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 209.177,
+      "elapsed_ms": 195.3,
       "exit_code": 0,
       "id": "resource_live_probe",
       "output_excerpt": [
@@ -118,7 +118,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workload_quality_probe.py",
-      "elapsed_ms": 1143.218,
+      "elapsed_ms": 1284.148,
       "exit_code": 0,
       "id": "resource_workload_quality_probe",
       "output_excerpt": [
@@ -129,7 +129,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_load_stability_probe.py",
-      "elapsed_ms": 41.544,
+      "elapsed_ms": 34.34,
       "exit_code": 0,
       "id": "resource_load_stability_probe",
       "output_excerpt": [
@@ -140,18 +140,18 @@
     },
     {
       "command": "python3 scripts/validate_resource_ci_cost_profile.py",
-      "elapsed_ms": 50.038,
+      "elapsed_ms": 42.725,
       "exit_code": 0,
       "id": "resource_ci_cost_profile",
       "output_excerpt": [
-        "Resource CI cost profile validation passed: 8 run(s), 7 completed, 4 failure event(s), support-state effect none."
+        "Resource CI cost profile validation passed: 8 run(s), 8 completed, 3 failure event(s), support-state effect none."
       ],
-      "output_sha256": "1409a6ce50c369514ca5764e158535731f0fd4a0a6d1346dfcbbad009272822a",
+      "output_sha256": "07226cfbd9e2cf2ca4e2cd7b41f72110dea3848a88f53a67e9f36e2907b3d938",
       "role": "publication_pipeline_cost_profile"
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 26.891,
+      "elapsed_ms": 43.852,
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
       "output_excerpt": [
@@ -162,7 +162,7 @@
     },
     {
       "command": "python3 scripts/validate_evidence_transitions.py",
-      "elapsed_ms": 40.876,
+      "elapsed_ms": 42.449,
       "exit_code": 0,
       "id": "evidence_transitions",
       "output_excerpt": [
@@ -193,18 +193,21 @@
       "transition_validity_state": "review_accepted"
     },
     "ci_cost_profile": {
+      "deploy_service_failure_count": 3,
+      "lean_bridge": "finite CI failure-classification summary",
       "metrics": {
-        "completed_duration_seconds_mean": 184.714,
-        "completed_duration_seconds_median": 195,
-        "completed_duration_seconds_total": 1293,
-        "completed_run_count": 7,
-        "failure_count": 4,
-        "in_progress_count": 1,
+        "completed_duration_seconds_mean": 187.125,
+        "completed_duration_seconds_median": 197,
+        "completed_duration_seconds_total": 1497,
+        "completed_run_count": 8,
+        "failure_count": 3,
+        "in_progress_count": 0,
         "run_count": 8,
-        "success_count": 3,
-        "success_duration_seconds_mean": 172.667
+        "success_count": 5,
+        "success_duration_seconds_mean": 183.4
       },
       "profile_id": "resource-ci-cost-profile-2026-07-04-main",
+      "recovery_run_seconds": 131,
       "support_state_effect": "none",
       "workflow": "Publish Quarto site"
     },
@@ -287,20 +290,20 @@
       "claim_id": "resource-economics.scoped_workflow_trace_route_selector",
       "negative_control_route_id": "route://negative-no-op-success-text",
       "new_support_state": "empirical-test-backed",
-      "observed_selected_vs_baseline_elapsed_reduction_percent": 86.493,
+      "observed_selected_vs_baseline_elapsed_reduction_percent": 83.454,
       "selected_route_id": "route://selected-scoped-workflow-trace-validator",
       "support_state_effect": "eligible_for_bounded_evidence_review",
       "transition_validity_state": "review_accepted"
     },
     "workload_quality_probe": {
-      "baseline_elapsed_ms": 235.764,
+      "baseline_elapsed_ms": 172.851,
       "baseline_route_id": "route://baseline-full-resource-lane-replay",
-      "negative_control_elapsed_ms": 1.558,
+      "negative_control_elapsed_ms": 4.052,
       "negative_control_rejected": true,
       "negative_control_route_id": "route://negative-no-op-success-text",
-      "observed_selected_vs_baseline_elapsed_reduction_percent": 86.493,
+      "observed_selected_vs_baseline_elapsed_reduction_percent": 83.454,
       "probe_id": "resource-workload-quality-probe-2026-07-01-local",
-      "selected_elapsed_ms": 31.844,
+      "selected_elapsed_ms": 28.6,
       "selected_route_id": "route://selected-scoped-workflow-trace-validator",
       "support_state_effect": "none"
     }
@@ -324,7 +327,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "resource_flagship_lane_replay",
-  "recorded_at_utc": "2026-07-04T02:33:35Z",
+  "recorded_at_utc": "2026-07-04T02:54:01Z",
   "residuals": [
     "Accepted upward transitions remain scoped to non-core Resource claims: costed-route selection, finite synthetic load-smoothing selection, and local scoped workflow-trace route selection, not the chapter core claim.",
     "Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.",
@@ -368,10 +371,10 @@
       "sha256": "f8850b9489873aa702616b79a22b5f10d2d5e2f9df1fb5684ae2a4ac92305c47"
     },
     {
-      "bytes": 3661,
-      "lines": 87,
+      "bytes": 4550,
+      "lines": 105,
       "path": "docs/resource_ci_cost_profile.md",
-      "sha256": "07ad101993895b8985358aa46b52b89dd20ecc672b0762f6d9553b548d8dcca5"
+      "sha256": "c21a9b218d0c12fc2e8155153c222bfa6ce15cf49cede8649911645591b9e14d"
     },
     {
       "bytes": 1339,
@@ -452,28 +455,28 @@
       "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
     },
     {
-      "bytes": 7897,
+      "bytes": 7895,
       "lines": 185,
       "path": "experiments/resource_live_probe/results/2026-07-01-local.json",
-      "sha256": "9eb6c14ab3ba882585fbb9f7d8bc60be4e6d2087dfb5d12cd461362e7462eda3"
+      "sha256": "5a7391c2760eed76e9a9f3de3bf93baf72038ebf6db27ba678b24583ad5230a5"
     },
     {
-      "bytes": 8661,
+      "bytes": 8656,
       "lines": 225,
       "path": "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
-      "sha256": "3669152528fcfe99fa95b8d2b5e8ee7e9c25fd316773e3bb777f8177b1e8173e"
+      "sha256": "d60e5b72c137936eb70e3bcad5183e7108fe2eb65fd3773cef469b946c60e105"
     },
     {
       "bytes": 19062,
       "lines": 582,
       "path": "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
-      "sha256": "3cfddc5f0a7bbed807674f4e8b4b0185e040015ddd1424b02e570cb9969020a6"
+      "sha256": "f914a1b4bf7c38e7d74f74988a60cce7c6647b7b615e60e201c3b9dd627e5b22"
     },
     {
-      "bytes": 14169,
-      "lines": 258,
+      "bytes": 13332,
+      "lines": 260,
       "path": "experiments/resource_ci_cost_profile/results/2026-07-04-main.json",
-      "sha256": "eeab61143d3fc641e4e9926ec145e10438757ac75d1871fc61abac6deb09dc11"
+      "sha256": "13f65c0bb56b4c33ddc1ccca690aac243ca0ba0242236819d3e3119f47e5ec63"
     },
     {
       "bytes": 799,
@@ -482,10 +485,10 @@
       "sha256": "1d7f6057484ad5591eb0489e1e61534f092c739418a6af57ece66c69fe5f0a17"
     },
     {
-      "bytes": 28374,
-      "lines": 754,
+      "bytes": 31878,
+      "lines": 839,
       "path": "lean/AsiStackProofs/ResourceEconomics.lean",
-      "sha256": "5848336b024e6850afda7b4d73048ca5de5befdd465686fe0a8bdec991c173b0"
+      "sha256": "f5d768de3853d3479e2042aeb1d210a7e6f69776ec14975c03824e0f930bab86"
     },
     {
       "bytes": 2439,

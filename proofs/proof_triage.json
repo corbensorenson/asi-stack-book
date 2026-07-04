@@ -1441,6 +1441,16 @@
       "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite aggregate bridge over the Resource flagship replay result: it aligns the Python-computed replay counts, tracked artifact count, accepted-transition count, no-promotion decision count, preserved negative-control boundary, residual presence, non-claims, no-core-promotion, and no-new-transition fields with the Lean fixture. It does not prove deployed scheduler behavior, production workload behavior, economic optimality, model quality, external review, or chapter-core support-state promotion."
     },
     {
+      "tag": "lean:resources.ci_failure_classification.fixture_bridge",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.ResourceEconomics",
+      "formal_target": "The finite Resource CI cost-profile fixture carries 8 recorded Pages runs, 8 completed runs, 5 successes, 3 classified deploy-service failures, 0 in-progress runs, the 131-second recovery boundary, publication-metadata-only scope, and no support-state or chapter-core promotion.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ResourceEconomics as a finite CI failure-classification bridge over the Resource CI cost-profile result: it aligns run counts, completed/success/failure/in-progress counts, deploy-service failure classification, repair-run duration, publication-metadata-only scope, non-evidence boundary, and no support-state or chapter-core promotion with the Lean fixture. It does not prove deployed scheduler behavior, production workload behavior, economic adequacy, model quality, external review, or chapter-core support-state promotion."
+    },
+    {
       "tag": "lean:resource.governance_tax.tradeoff_bridge",
       "chapter_id": "resource-economics-and-token-budgets",
       "module": "AsiStackProofs.ResourceEconomics",
@@ -1931,5 +1941,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 192
+  "record_count": 193
 }

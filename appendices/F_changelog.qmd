@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-04 - Add Resource CI finite Lean bridge
+
+- Added `lean:resources.ci_failure_classification.fixture_bridge` for Resource
+  Economics and implemented `resourceCICostProfileFixture` plus four Lean
+  theorems that check the finite CI publication-metadata summary, classified
+  deploy-service failures, 131-second recovery boundary, and no-promotion
+  boundaries.
+- Updated `scripts/build_resource_ci_cost_profile.py` and
+  `scripts/validate_resource_ci_cost_profile.py` so the CI result record carries
+  a `lean_fixture_alignment` block and the offline validator checks it against
+  `AsiStackProofs.ResourceEconomics`.
+- Refreshed `experiments/resource_ci_cost_profile/results/2026-07-04-main.json`
+  to the current eight-run Pages window: 8 completed runs, 5 successful
+  completed runs, 3 classified deploy-service failures, 0 in-progress runs, and
+  the 131-second earliest later successful recovery run.
+- Updated the Resource CI profile doc, Resource flagship lane doc/validator,
+  Resource Economics chapter, proof outline/triage surfaces, and v1.x roadmap
+  so the proof bridge is visible without promoting any Resource Economics core
+  claim.
+- Current proof-depth snapshot: 193 proof targets, 54 Lean modules, 978 theorem
+  declarations, 793 derived/decomposed, 181 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+- Boundary: this bridge proves only finite agreement between the checked-in CI
+  profile metadata and the Lean fixture. It does not prove deployed scheduler
+  behavior, production workload behavior, economic adequacy, model quality,
+  external review, support-state promotion, or chapter-core promotion.
+
 ## 2026-07-04 - Classify Resource CI deploy failures
 
 - Updated `scripts/build_resource_ci_cost_profile.py` so Resource Economics CI

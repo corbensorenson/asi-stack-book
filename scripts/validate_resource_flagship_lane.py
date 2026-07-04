@@ -181,6 +181,17 @@ def validate_component_summary(value: dict[str, Any], errors: list[str]) -> None
     if core.get("transition_effect") != "no_change":
         errors.append(f"{rel(RESULT)}: chapter-core decision must remain no_change.")
 
+    ci_profile = recorded.get("ci_cost_profile", {})
+    ci_metrics = ci_profile.get("metrics", {}) if isinstance(ci_profile.get("metrics"), dict) else {}
+    if ci_profile.get("lean_bridge") != "finite CI failure-classification summary":
+        errors.append(f"{rel(RESULT)}: CI cost profile must expose the finite Lean classifier bridge.")
+    if ci_profile.get("deploy_service_failure_count") != ci_metrics.get("failure_count"):
+        errors.append(f"{rel(RESULT)}: CI deploy-service failures must account for all recorded failures.")
+    if ci_profile.get("recovery_run_seconds") != 131:
+        errors.append(f"{rel(RESULT)}: CI recovery boundary must remain the 131-second run in this profile.")
+    if ci_profile.get("support_state_effect") != "none":
+        errors.append(f"{rel(RESULT)}: CI cost profile support_state_effect must remain none.")
+
     workload = recorded.get("workload_quality_probe", {})
     if workload.get("negative_control_rejected") is not True:
         errors.append(f"{rel(RESULT)}: workload-quality negative control must be rejected.")
@@ -347,6 +358,9 @@ def validate_doc(errors: list[str]) -> None:
         "resource-economics.synthetic_load_stability_route_selection",
         "aggregate Python/Lean flagship invariant",
         "resourceFlagshipLaneAggregateFixture",
+        "CI Classifier Lean Alignment",
+        "finite CI failure-classification summary",
+        "resourceCICostProfileFixture",
         "Support-state effect: `none`",
         "This run does not promote the Resource Economics chapter core claim",
     ]

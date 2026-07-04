@@ -66,39 +66,49 @@
       },
       "run_id": 28690842480,
       "title": "Tighten idea-depth roadmap closure rules"
-    },
-    {
-      "classification_boundary": "Artifact upload/build steps completed before the deploy action created a Pages deployment and GitHub returned a deploy-service failure; this is publication-pipeline metadata only and not a chapter evidence result.",
-      "failure_stage": "Deploy to GitHub Pages",
-      "failure_type": "github_pages_deploy_service_failure",
-      "log_command": "gh run view 28689805295 --log-failed",
-      "log_summary": {
-        "excerpt": [
-          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:53:06.0685692Z ##[error]Deployment failed, try again later.",
-          "deploy\tDeploy to GitHub Pages\t\ufeff2026-07-04T00:52:59.8018320Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
-          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8027837Z ##[group]Run actions/deploy-pages@v4",
-          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8028702Z with:",
-          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8029161Z   timeout: 1800000",
-          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8033184Z   token: ***",
-          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8033661Z   error_count: 10",
-          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8034159Z   reporting_interval: 5000"
-        ],
-        "sha256": "91a372eff71c2e1c794d7872b962b5b16060e8f09c3d907f2fe57eb4f506d390"
-      },
-      "run_id": 28689805295,
-      "title": "Add key figure audio companion treatment"
     }
   ],
-  "metrics": {
-    "completed_duration_seconds_mean": 184.714,
-    "completed_duration_seconds_median": 195,
-    "completed_duration_seconds_total": 1293,
-    "completed_run_count": 7,
-    "failure_count": 4,
-    "in_progress_count": 1,
+  "lean_fixture_alignment": {
+    "chapter_core_support_effect_none": true,
+    "classified_failure_count": 3,
+    "classified_failures": true,
+    "completed_run_count": 8,
+    "deploy_service_failure_count": 3,
+    "deploy_service_failures_match_failures": true,
+    "evidence_transition_created": false,
+    "failure_count": 3,
+    "in_progress_count": 0,
+    "lean_fixture": "resourceCICostProfileFixture",
+    "lean_module": "AsiStackProofs.ResourceEconomics",
+    "lean_theorem_names": [
+      "resource_ci_cost_profile_fixture_valid",
+      "resource_ci_cost_profile_preserves_no_core_promotion",
+      "resource_ci_cost_profile_classifies_all_failures",
+      "resource_ci_cost_profile_records_recovery_boundary"
+    ],
+    "non_claim_boundary": true,
+    "non_claims": [
+      "This Lean bridge is finite metadata classification over the recorded CI profile only.",
+      "It does not prove deployed scheduler behavior, production workload behavior, economic adequacy, model quality, external review, or chapter-core support-state promotion."
+    ],
+    "non_evidence_boundary": true,
+    "proof_bridge_type": "finite CI failure-classification summary",
+    "publication_metadata_only": true,
+    "recovery_run_seconds": 131,
     "run_count": 8,
-    "success_count": 3,
-    "success_duration_seconds_mean": 172.667
+    "success_count": 5,
+    "support_state_effect_none": true
+  },
+  "metrics": {
+    "completed_duration_seconds_mean": 187.125,
+    "completed_duration_seconds_median": 197,
+    "completed_duration_seconds_total": 1497,
+    "completed_run_count": 8,
+    "failure_count": 3,
+    "in_progress_count": 0,
+    "run_count": 8,
+    "success_count": 5,
+    "success_duration_seconds_mean": 183.4
   },
   "non_claims": [
     "This CI cost profile does not promote any chapter core claim above argument.",
@@ -108,7 +118,7 @@
   ],
   "profile_id": "resource-ci-cost-profile-2026-07-04-main",
   "record_kind": "resource_ci_cost_profile",
-  "recorded_at_utc": "2026-07-04T02:30:24Z",
+  "recorded_at_utc": "2026-07-04T02:47:04Z",
   "repair_events": [
     {
       "failed_run_id": 28691198056,
@@ -133,27 +143,32 @@
       "repair_duration_seconds": 131,
       "repair_run_id": 28691825193,
       "repair_title": "Refresh curated reader format probe after heading guard"
-    },
-    {
-      "failed_run_id": 28689805295,
-      "repair_boundary": "The next completed successful Pages run demonstrates that the publication gate recovered; it does not prove the underlying chapter claim.",
-      "repair_conclusion": "success",
-      "repair_duration_seconds": 131,
-      "repair_run_id": 28691825193,
-      "repair_title": "Refresh curated reader format probe after heading guard"
     }
   ],
   "runs": [
     {
-      "conclusion": "",
+      "conclusion": "success",
+      "created_at": "2026-07-04T02:39:02Z",
+      "duration_seconds": 202,
+      "event": "push",
+      "head_sha": "22601946c207f8eb13e898a39508312a0905265e",
+      "run_id": 28692389867,
+      "status": "completed",
+      "title": "Classify Resource CI deploy failures",
+      "updated_at": "2026-07-04T02:42:24Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28692389867",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
       "created_at": "2026-07-04T02:27:08Z",
-      "duration_seconds": 188,
+      "duration_seconds": 197,
       "event": "push",
       "head_sha": "f01a695a533e3a852e412ca06724721821b03c31",
       "run_id": 28692127270,
-      "status": "in_progress",
+      "status": "completed",
       "title": "Guard curated reader prose density",
-      "updated_at": "2026-07-04T02:30:16Z",
+      "updated_at": "2026-07-04T02:30:25Z",
       "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28692127270",
       "workflow": "Publish Quarto site"
     },
@@ -233,19 +248,6 @@
       "title": "Add context transaction sequence bridge",
       "updated_at": "2026-07-04T01:15:07Z",
       "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28690375288",
-      "workflow": "Publish Quarto site"
-    },
-    {
-      "conclusion": "failure",
-      "created_at": "2026-07-04T00:49:54Z",
-      "duration_seconds": 195,
-      "event": "push",
-      "head_sha": "07f53d17ff5618b40c3871a79cbb914e9a4bc9f2",
-      "run_id": 28689805295,
-      "status": "completed",
-      "title": "Add key figure audio companion treatment",
-      "updated_at": "2026-07-04T00:53:09Z",
-      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28689805295",
       "workflow": "Publish Quarto site"
     }
   ],

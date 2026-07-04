@@ -1,7 +1,7 @@
 {
   "actual_command_record": {
     "command": "python3 scripts/validate_resource_flagship_lane.py",
-    "elapsed_ms": 1616.708,
+    "elapsed_ms": 1638.665,
     "exit_code": 0,
     "output_excerpt": [
       "Resource flagship lane validation passed: 10 command replay(s), 26 tracked artifact digest(s), support-state effect none."
@@ -43,7 +43,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "reference_trace_replay",
-  "recorded_at_utc": "2026-07-04T02:34:58Z",
+  "recorded_at_utc": "2026-07-04T02:54:12Z",
   "reference_trace_record": {
     "artifacts": [
       "command://validate-resource-flagship-lane",
@@ -149,28 +149,28 @@
       "sha256": "6e625f893eda7e5345b6cf9db38f0789dd38bfe8cc0bc6ac5c3a20972d42aaa3"
     },
     {
-      "bytes": 7955,
-      "lines": 165,
+      "bytes": 8759,
+      "lines": 181,
       "path": "docs/resource_flagship_lane_run.md",
-      "sha256": "98d9844591b08a622f9d324a27fbb8333471753fe58c9f1158e582644e9d66b9"
+      "sha256": "8d20201f4bcb03215549577732893f76240ed5b7f4d0023e071b8d0ea6a4a51e"
     },
     {
-      "bytes": 22679,
-      "lines": 497,
+      "bytes": 22814,
+      "lines": 500,
       "path": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
-      "sha256": "fe39f13ff79dde3a02303c0a3accb2e9f9b4c776916974bbb4522248ff3c76cf"
+      "sha256": "34daa5dbd0b7893946f40f7cb13f193f254a6636e7db7c44c7eea791a57937bc"
     },
     {
-      "bytes": 18940,
-      "lines": 383,
+      "bytes": 19931,
+      "lines": 397,
       "path": "scripts/validate_resource_flagship_lane.py",
-      "sha256": "b101c48720ab0a61688ae45fe8fdc39f8bf53a50a9bc5181c4965001a5d91ed9"
+      "sha256": "5e183878ed00f68a08a30f290b6c31e83f099b85ac2802c2a379747eee28611a"
     },
     {
-      "bytes": 21201,
-      "lines": 435,
+      "bytes": 21565,
+      "lines": 440,
       "path": "scripts/run_resource_flagship_lane.py",
-      "sha256": "6f803aa2c3089709f8c52fb53a4373b4e63e52ded5ba84dbc6fccf39654a0447"
+      "sha256": "b80c548c6f4d4ad0e74351e27b55f06ae7bdd45eae80d352b60b6567216ca96f"
     },
     {
       "bytes": 8138,

@@ -32,35 +32,53 @@ Result record:
 | Field | Value |
 |---|---:|
 | Runs recorded | 8 |
-| Completed runs | 7 |
-| Successful completed runs | 3 |
-| Failed completed runs | 4 |
-| In-progress at capture | 1 |
-| Completed duration total | 1,293 seconds |
-| Completed duration median | 195 seconds |
-| Completed duration mean | 184.714 seconds |
-| Successful-run duration mean | 172.667 seconds |
+| Completed runs | 8 |
+| Successful completed runs | 5 |
+| Failed completed runs | 3 |
+| In-progress at capture | 0 |
+| Completed duration total | 1,497 seconds |
+| Completed duration median | 197 seconds |
+| Completed duration mean | 187.125 seconds |
+| Successful-run duration mean | 183.4 seconds |
 | Support-state effect | `none` |
 | Chapter-core support effect | `none` |
 
 ## Failure And Repair Boundary
 
-The recorded run window contains four classified failures. Each failed run
+The recorded run window contains three classified failures. Each failed run
 reached the `Deploy to GitHub Pages` stage, found the uploaded `github-pages`
 artifact, created a Pages deployment, and then received GitHub's deploy-service
 response `Deployment failed, try again later.` The failure type is therefore
 recorded as `github_pages_deploy_service_failure`, not generated scaffold
 drift.
 
-The four failed runs are `28691198056` (`Guard curated reader horizon
+The three failed runs are `28691198056` (`Guard curated reader horizon
 headings`), `28691102172` (`Derive audio scripts from curated reader`),
-`28690842480` (`Tighten idea-depth roadmap closure rules`), and `28689805295`
-(`Add key figure audio companion treatment`). The next completed successful
-run in this profile is `28691825193`, titled `Refresh curated reader format
-probe after heading guard`, with a 131-second publication run. That recovery
+and `28690842480` (`Tighten idea-depth roadmap closure rules`). The earliest
+later completed successful run in this profile is `28691825193`, titled
+`Refresh curated reader format probe after heading guard`, with a 131-second
+publication run. That recovery
 demonstrates publication-gate recovery for the repository state. It does not
 prove the Resource Economics chapter claim, scheduler quality, model quality,
 or economic adequacy.
+
+## Finite Lean Alignment
+
+The result record carries `lean_fixture_alignment` with proof bridge type
+`finite CI failure-classification summary`. The bridge points to
+`AsiStackProofs.ResourceEconomics.resourceCICostProfileFixture` and the Lean
+theorems `resource_ci_cost_profile_fixture_valid`,
+`resource_ci_cost_profile_preserves_no_core_promotion`,
+`resource_ci_cost_profile_classifies_all_failures`, and
+`resource_ci_cost_profile_records_recovery_boundary`.
+
+This fixture checks only finite metadata accounting: 8 recorded Pages runs, 8
+completed runs, 5 successes, 3 classified deploy-service failures, 0
+in-progress runs, the 131-second recovery boundary, publication-metadata-only
+scope, non-evidence classification, and no support-state or chapter-core
+promotion. It does not prove deployed scheduler behavior, production workload
+behavior, economic adequacy, model quality, external review, or chapter-core
+support-state promotion.
 
 ## Resource Reading
 

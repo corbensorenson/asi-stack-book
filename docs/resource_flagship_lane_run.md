@@ -62,6 +62,22 @@ prove deployed scheduler behavior, production workload behavior, economic
 optimality, model quality, external review, artifact approval, or Resource
 Economics chapter-core support-state promotion.
 
+## CI Classifier Lean Alignment
+
+The CI cost profile sublane now also carries a narrower Lean bridge:
+`finite CI failure-classification summary`. It points to
+`resourceCICostProfileFixture` in `AsiStackProofs.ResourceEconomics` and checks
+the recorded Pages-window accounting: 8 runs, 8 completed runs, 5 successes, 3
+classified deploy-service failures, 0 in-progress runs, a 131-second recovery
+boundary, publication-metadata-only scope, and no support-state or chapter-core
+promotion.
+
+This bridge is deliberately weaker than scheduler evidence. It classifies
+publication-pipeline metadata and preserves the non-evidence boundary for CI
+deploy failures; it does not prove deployed scheduling, production workload
+behavior, economic adequacy, model quality, external review, or chapter-core
+promotion.
+
 ## Accepted Narrow Transitions
 
 The accepted upward transitions remain scoped to non-core Resource claims, not
