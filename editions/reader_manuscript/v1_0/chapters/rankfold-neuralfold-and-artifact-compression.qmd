@@ -78,13 +78,15 @@ The live book also records a separate RankFold public-safe replay probe. This
 one is a fresh local run over a generated 3,936-byte synthetic text file: pack
 it, verify it, list it, unpack it, check roundtrip-exact byte identity, then
 run a single-byte archive mutation and confirm that verification rejects the
-corrupted archive. That sounds small because it is small. The point is not to claim a
+corrupted archive.
+
+That sounds small because it is small. The point is not to claim a
 breakthrough compression result. The local CLI reported `RAW0` storage because
 NeuralFold was disabled by license, and the archive was larger than the input.
-So the probe proves only replay discipline and a negative control. It does not
-prove NeuralFold compression, compression advantage, RankFold codec correctness,
-downstream utility, fallback execution, deployed compression behavior, or
-support-state promotion.
+The probe therefore proves only replay discipline and a negative control. It
+does not prove NeuralFold compression, compression advantage, RankFold codec
+correctness, downstream utility, fallback execution, deployed compression
+behavior, or support-state promotion.
 The corresponding no-promotion record,
 `evidence_transitions/v1_x_measured/rankfold_public_safe_replay_probe_no_change.json`,
 keeps the replay at `argument` and blocks stronger claims until an enabled

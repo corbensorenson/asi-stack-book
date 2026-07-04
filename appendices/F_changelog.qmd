@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-04 - Guard curated reader prose density
+
+- Revised the curated reader RankFold/NeuralFold chapter to split the dense
+  public-safe replay probe paragraph into clearer reader prose while preserving
+  the no-promotion boundary for NeuralFold compression, compression advantage,
+  codec correctness, downstream utility, fallback execution, deployed behavior,
+  and support-state movement.
+- Reran the curated reader HTML/EPUB/DOCX/PDF render and structural inspector
+  after the prose edit; the counts remain stable at 49 HTML files, 52 EPUB
+  XHTML entries, 61 DOCX PNG media entries, 0 DOCX SVG media entries, and 525
+  PDF pages, with refreshed EPUB/DOCX/PDF fingerprints in the tracked format
+  probe.
+- Extended `scripts/validate_reader_manuscript_manifest.py` with a curated
+  prose-density guard so reader-facing prose paragraphs across all 44 curated
+  chapters must stay below the configured dense-paragraph threshold.
+- Boundary: this is reader-manuscript craft and validation work only. It does
+  not change live claim meaning, support states, source boundaries, proof/test
+  status, implementation horizons, release blockers, or artifact approval.
+
 ## 2026-07-04 - Refresh curated format digests after heading guard
 
 - Hardened `scripts/render_reader_formats.py` and
@@ -14,11 +33,11 @@
   media entries, and 525 PDF pages.
 - Refreshed the exact local ignored artifact fingerprints in the curated
   format probe: EPUB SHA-256
-  `f785f41af02466b2498c5ebd20a85a80c51bcadc08d1acbb9d7ec8a51dd9cb94`,
+  `d04769039f00b6576ea8679228ad8de4bc2a334522409587dc168b6c4b1b9832`,
   DOCX SHA-256
-  `f53c73cb650b6c25cbde208c771ba5ab541345cde969dab4ae2ac17e980b9b96`,
+  `07d22539453804f07e5b00bf11b088557d3a30758fbbf26aad4cf56208e3e4d8`,
   and PDF SHA-256
-  `f6266681c6d7c39a2a5e2dc2c87e96203b22236a095bd8a5d7654d14c54542f6`.
+  `54c1e0709ba4c095590a1549a31394bca8b0738ace380f9d885c1db25716ac45`.
 - After checking the latest completed Pages failure, normalized the deploy
   action timeout to GitHub's logged maximum of 600000 ms so future deploy-only
   failures are not obscured by an avoidable timeout warning.
@@ -81,11 +100,11 @@
   `python3 scripts/inspect_curated_reader_format_artifacts.py`; the current
   probe records 49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media
   entries, 0 DOCX SVG media entries, 0 SVG conversion warnings, EPUB SHA-256
-  `f785f41af02466b2498c5ebd20a85a80c51bcadc08d1acbb9d7ec8a51dd9cb94`,
+  `d04769039f00b6576ea8679228ad8de4bc2a334522409587dc168b6c4b1b9832`,
   DOCX SHA-256
-  `f53c73cb650b6c25cbde208c771ba5ab541345cde969dab4ae2ac17e980b9b96`,
+  `07d22539453804f07e5b00bf11b088557d3a30758fbbf26aad4cf56208e3e4d8`,
   and a 525-page PDF with SHA-256
-  `f6266681c6d7c39a2a5e2dc2c87e96203b22236a095bd8a5d7654d14c54542f6`.
+  `54c1e0709ba4c095590a1549a31394bca8b0738ace380f9d885c1db25716ac45`.
 - Updated the curated reader format probe manifest, summary, validator, v1.0
   status snapshot, and v1.x roadmap so format-review blockers reference the
   current local artifacts.

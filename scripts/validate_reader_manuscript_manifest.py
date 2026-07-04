@@ -151,6 +151,7 @@ REQUIRED_IMPLEMENTATION_HORIZON_HEADINGS = (
     "## Minimum Viable Implementation",
     "## Beyond the State of the Art",
 )
+MAX_CURATED_PROSE_PARAGRAPH_WORDS = 149
 REQUIRED_FIELDS = {
     "schema_version",
     "major_version",
@@ -247,6 +248,47 @@ def markdown_heading_anchors(path: Path) -> set[str]:
         if title:
             anchors.add(title)
     return anchors
+
+
+def long_curated_prose_paragraphs(text: str) -> list[tuple[int, int]]:
+    """Return prose paragraphs that are too dense for the curated reader draft."""
+
+    violations: list[tuple[int, int]] = []
+    in_code = False
+    block_lines: list[tuple[int, str]] = []
+
+    def flush() -> None:
+        nonlocal block_lines
+        if not block_lines:
+            return
+        first_line, _ = block_lines[0]
+        block = "\n".join(line for _, line in block_lines).strip()
+        block_lines = []
+        if not block:
+            return
+        stripped = block.lstrip()
+        if stripped.startswith("<!--") or stripped.startswith("#"):
+            return
+        if stripped.startswith(("![", "|", "-", "*", ">", "::", "`", "{")):
+            return
+        words = len(re.findall(r"\b[\w'-]+\b", block))
+        if words > MAX_CURATED_PROSE_PARAGRAPH_WORDS:
+            violations.append((first_line, words))
+
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        stripped = line.strip()
+        if stripped.startswith("```"):
+            flush()
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        if not stripped:
+            flush()
+            continue
+        block_lines.append((line_number, line))
+    flush()
+    return violations
 
 
 def flatten_parts(structure: dict[str, Any]) -> list[dict[str, Any]]:
@@ -1092,6 +1134,12 @@ def validate_chapter_records(
                     errors.append(
                         f"{owner}: curated chapter must contain exactly one canonical {heading!r} heading."
                     )
+            for line_number, word_count in long_curated_prose_paragraphs(curated_text):
+                errors.append(
+                    f"{owner}: curated prose paragraph in {file_path}:{line_number} "
+                    f"has {word_count} words; keep reader paragraphs at "
+                    f"{MAX_CURATED_PROSE_PARAGRAPH_WORDS} words or fewer."
+                )
 
         status = record.get("reconciliation_status")
         if status not in ALLOWED_RECONCILIATION_STATUS:
