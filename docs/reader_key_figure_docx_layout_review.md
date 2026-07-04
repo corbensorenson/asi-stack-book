@@ -15,7 +15,7 @@ This local probe converts the current ignored curated-reader DOCX through LibreO
 | Metric | Value |
 |---|---:|
 | Status | `passed_local_docx_key_figure_layout_probe` |
-| Converted PDF pages | 503 |
+| Converted PDF pages | 504 |
 | Key-figure title pages | 10 |
 | Raster pages rendered | 10 |
 | Standard page size count | 10 |
@@ -33,11 +33,11 @@ This local probe converts the current ignored curated-reader DOCX through LibreO
 | `evidence_state_ladder` | 39 | 72.1 pt | 11.61% | 0.0% | 38.17 |
 | `intent_to_artifact_trace` | 106 | 72.1 pt | 12.09% | 0.0% | 40.04 |
 | `context_transaction_lifecycle` | 142 | 72.1 pt | 12.35% | 0.0% | 39.76 |
-| `readiness_residual_quarantine_map` | 223 | 72.1 pt | 12.65% | 0.0% | 39.55 |
-| `route_selection_budget_tradeoff` | 282 | 72.1 pt | 10.93% | 0.0% | 39.17 |
-| `compression_and_generation_acceptance` | 246 | 72.1 pt | 11.4% | 0.0% | 39.97 |
-| `cyclic_substrate_adoption_gate` | 319 | 72.1 pt | 9.98% | 0.0% | 38.65 |
-| `living_book_release_pipeline` | 393 | 72.1 pt | 9.53% | 0.0% | 37.95 |
+| `readiness_residual_quarantine_map` | 224 | 72.1 pt | 12.35% | 0.0% | 38.89 |
+| `route_selection_budget_tradeoff` | 283 | 72.1 pt | 10.93% | 0.0% | 39.17 |
+| `compression_and_generation_acceptance` | 247 | 72.1 pt | 11.4% | 0.0% | 39.97 |
+| `cyclic_substrate_adoption_gate` | 320 | 72.1 pt | 9.98% | 0.0% | 38.65 |
+| `living_book_release_pipeline` | 394 | 72.1 pt | 9.53% | 0.0% | 37.95 |
 
 ## Residuals
 

@@ -22,16 +22,16 @@ DOC = ROOT / "docs" / "reader_key_figure_pdf_layout_review.md"
 PDF = ROOT / "build" / "curated_reader_edition" / "format_artifacts" / "pdf" / "_reader_site" / "The-ASI-Stack.pdf"
 COMMAND = "python3 scripts/validate_reader_key_figure_pdf_layout.py"
 EXPECTED_CAPTION_PAGES = {
-    "asi_stack_control_plane": 29,
-    "authority_to_effect_path": 45,
-    "evidence_state_ladder": 63,
-    "intent_to_artifact_trace": 129,
-    "context_transaction_lifecycle": 164,
-    "readiness_residual_quarantine_map": 242,
-    "compression_and_generation_acceptance": 263,
-    "route_selection_budget_tradeoff": 296,
-    "cyclic_substrate_adoption_gate": 331,
-    "living_book_release_pipeline": 403,
+    "asi_stack_control_plane": 30,
+    "authority_to_effect_path": 46,
+    "evidence_state_ladder": 64,
+    "intent_to_artifact_trace": 130,
+    "context_transaction_lifecycle": 165,
+    "readiness_residual_quarantine_map": 244,
+    "compression_and_generation_acceptance": 265,
+    "route_selection_budget_tradeoff": 298,
+    "cyclic_substrate_adoption_gate": 333,
+    "living_book_release_pipeline": 405,
 }
 
 
@@ -255,7 +255,7 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         summary = {}
     expected_summary = {
         "figure_count": 10,
-        "pdf_pages": 504,
+        "pdf_pages": 506,
         "unique_caption_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,

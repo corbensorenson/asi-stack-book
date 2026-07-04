@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-04 - Add curated reader PDF viewer smoke review
+
+- Added `scripts/validate_curated_reader_pdf_viewer_review.py` to open the
+  current ignored curated-reader PDF in a headed Chromium PDF viewer, capture
+  two nonblank viewer screenshots, and verify that scrolling changes the
+  rendered view.
+- Refreshed the curated reader format probe, key-figure PDF/DOCX manifests,
+  release matrix, blocked release record, release-surface ledger, and roadmap
+  around the current 506-page PDF and 504-page LibreOffice-converted DOCX
+  candidate.
+- Removed only the `pdf_viewer_review_not_completed` blocker from the current
+  curated PDF candidate while preserving manual page-by-page PDF review, final
+  figure-artifact review, and reader release approval as blockers.
+- Boundary: this is local PDF-viewer smoke evidence for release preparation.
+  It does not approve the PDF, replace manual page-by-page reading-flow/layout
+  review, approve final figure art, publish a reader artifact, or move any
+  support state.
+
 ## 2026-07-04 - Strengthen Artifact Graphs record-reality ladder
 
 - Added an explicit record-reality authority-ladder diagram to the live

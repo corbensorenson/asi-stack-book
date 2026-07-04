@@ -74,6 +74,7 @@ REQUIRED = [
     "scripts/validate_curated_reader_format_probe_manifest.py",
     "scripts/validate_curated_reader_docx_libreoffice_review.py",
     "scripts/validate_curated_reader_pdf_reading_flow.py",
+    "scripts/validate_curated_reader_pdf_viewer_review.py",
     "scripts/validate_reader_artifact_inspection_manifest.py",
     "scripts/validate_reader_epub_probe_manifest.py",
     "scripts/validate_reader_docx_probe_manifest.py",
@@ -958,6 +959,7 @@ def main() -> None:
     run_validator("validate_reader_manuscript_manifest.py")
     run_validator("build_curated_reader_edition.py", "--check")
     run_validator("validate_curated_reader_format_probe_manifest.py")
+    run_validator("validate_curated_reader_pdf_viewer_review.py")
     run_validator("validate_reader_key_figures.py")
     run_validator("validate_reader_key_figure_contrast.py")
     run_validator("validate_reader_key_figure_geometry.py")

@@ -22,21 +22,21 @@
       "status": "rendered",
       "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py",
       "path_or_uri": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
-      "notes": "Rendered and structurally inspected local EPUB review artifact: 8,663,801 bytes, SHA-256 9b03601a6023392d52bfa594cf1f4e6c20bd6e9d79bac62d362f30ad58938157, 52 XHTML entries, 62 image entries, OPF title The ASI Stack, creator Corben Sorenson, and language en-US. The repaired EPUB package audit records SHA-256 2e15e9f20bebd4816ae10081e2faff69314686d659c62c85c2c93ef23e70aca9, 52 XHTML entries checked, 49 packaged content XHTML entries checked, 0 unresolved internal hrefs, 104 browser page-view pairs, 0 browser failures, and 10 matched key-figure SVG titles. The EPUB key-figure layout review records 10 key-figure XHTML entries, 20 key-figure page-view pairs, 0 key-figure browser failures, 5476 minimum body text characters, 23 minimum alt-text words, 10 px maximum horizontal overflow, and 0 image failures. Blocked: dedicated e-reader approval or an explicit release decision accepting the Chromium XHTML review has not happened, and this EPUB is not release-approved."
+      "notes": "Rendered and structurally inspected local EPUB review artifact: 8,664,713 bytes, SHA-256 049df485288e8f513d36212dc9c458e3815565677a62b1ba7ef61525359473d4, 52 XHTML entries, 62 image entries, OPF title The ASI Stack, creator Corben Sorenson, and language en-US. The repaired EPUB package audit records SHA-256 34e41f9d3e33f6fda824d59a6da51dcf3308090a7ff7624b1742b9060cfc3d25, 52 XHTML entries checked, 49 packaged content XHTML entries checked, 0 unresolved internal hrefs, 104 browser page-view pairs, 0 browser failures, and 10 matched key-figure SVG titles. The EPUB key-figure layout review records 10 key-figure XHTML entries, 20 key-figure page-view pairs, 0 key-figure browser failures, 5476 minimum body text characters, 23 minimum alt-text words, 10 px maximum horizontal overflow, and 0 image failures. Blocked: dedicated e-reader approval or an explicit release decision accepting the Chromium XHTML review has not happened, and this EPUB is not release-approved."
     },
     {
       "format": "curated_reader_docx",
       "status": "rendered",
       "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py",
       "path_or_uri": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-      "notes": "Rendered and structurally inspected local DOCX review artifact: 8,321,124 bytes, SHA-256 99f9bf48050c2a34244e98fb43e35ee35c377db207fd79d891c3385e11337bc6, 77 zip entries, 61 PNG media entries, 0 SVG media entries, and 17,354 paragraph markers. The repaired DOCX package audit records SHA-256 1690f5b3bf63781e9dd819a7c66f1724043d74eee4d2132fa48e6597d4e5d7c1, 17,354 paragraphs, 286 relationships, 0 raw .qmd relationship targets, 0 unresolved internal relationship targets, and 10 matched key-figure stems. The LibreOffice headless Writer review converted the repaired DOCX to a 503-page PDF, checked 1,025,566 text characters, raster-checked 503 converted pages, and found 0 blank, 0 low-ink, and 0 near-edge converted-page rasters. The DOCX key-figure layout review records 10 key-figure title pages, 10 rastered key-figure pages, 72.1 pt minimum title margin, 9.53% minimum page ink, 0.0% maximum near-edge ink, and 37.95 minimum luminance standard deviation. Blocked: Word, LibreOffice GUI, or Google Docs application-level review has not happened and this DOCX is not release-approved."
+      "notes": "Rendered and structurally inspected local DOCX review artifact: 8,321,648 bytes, SHA-256 b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3, 77 zip entries, 61 PNG media entries, 0 SVG media entries, and 17,369 paragraph markers. The repaired DOCX package audit records SHA-256 d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e, 17,369 paragraphs, 286 relationships, 0 raw .qmd relationship targets, 0 unresolved internal relationship targets, and 10 matched key-figure stems. The LibreOffice headless Writer review converted the repaired DOCX to a 504-page PDF, checked 1,026,949 text characters, raster-checked 504 converted pages, and found 0 blank, 0 low-ink, and 0 near-edge converted-page rasters. The DOCX key-figure layout review records 10 key-figure title pages, 10 rastered key-figure pages, 72.1 pt minimum title margin, 9.53% minimum page ink, 0.0% maximum near-edge ink, and 37.95 minimum luminance standard deviation. Blocked: Word, LibreOffice GUI, or Google Docs application-level review has not happened and this DOCX is not release-approved."
     },
     {
       "format": "curated_reader_pdf",
       "status": "rendered",
       "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py; python3 scripts/audit_curated_reader_pdf_layout.py",
       "path_or_uri": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-      "notes": "Rendered and structurally inspected local PDF review artifact: 5,892,357 bytes, SHA-256 7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d, 504 pages, title The ASI Stack, author Corben Sorenson, unencrypted letter pages, 50 Chrome-screenshot Mermaid fallbacks, and an all-page text/bounding-box probe with 169,766 word boxes and 0 out-of-bounds word boxes. The all-page raster probe records 504 rendered pages, 0 blank pages, 0 low-ink pages, 0 near-edge pages, and 10 matched key-figure captions. The extracted-text reading-flow review records 504 nonempty text pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0 replacement characters. The PDF key-figure layout review records 10 key-figure caption pages, 10 rastered key-figure pages, 165.878 pt minimum caption margin, 3.36% minimum page ink, 0.0% maximum near-edge ink, and 14.2 minimum luminance standard deviation. Blocked: this is not manual PDF page-by-page reading-flow review, not PDF viewer approval, and the PDF is not release-approved."
+      "notes": "Rendered and structurally inspected local PDF review artifact: 5,894,740 bytes, SHA-256 491113418d68c6a830d6d194d4b0263a47f9dc994196cd62bb342773fc6f7078, 506 pages, title The ASI Stack, author Corben Sorenson, unencrypted letter pages, 50 Chrome-screenshot Mermaid fallbacks, and an all-page text/bounding-box probe with 170,036 word boxes and 0 out-of-bounds word boxes. The all-page raster probe records 506 rendered pages, 0 blank pages, 1 low-ink page, 0 near-edge pages, and 10 matched key-figure captions. The extracted-text reading-flow review records 506 nonempty text pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0 replacement characters. The headed Chromium PDF viewer smoke review records 2 nonblank viewer screenshots and 4.434% changed pixels after scroll. The PDF key-figure layout review records 10 key-figure caption pages, 10 rastered key-figure pages, 165.878 pt minimum caption margin, 3.36% minimum page ink, 0.0% maximum near-edge ink, and 14.21 minimum luminance standard deviation. Blocked: this is not manual PDF page-by-page reading-flow/layout review, not final figure-artifact approval, and the PDF is not release-approved."
     },
     {
       "format": "ereader_application_review",
@@ -66,6 +66,7 @@
     "python3 scripts/audit_curated_reader_docx_content.py",
     "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
     "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest",
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
     "python3 scripts/validate_reader_key_figures.py",
@@ -88,23 +89,23 @@
     "status": "automated_probe_passed_release_blocked",
     "curated_format_probe_manifest": "editions/reader_manuscript/v1_0/curated_format_probe_manifest.json",
     "key_figure_format_probe_manifest": "editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json",
-    "epub_repaired_package_sha256": "2e15e9f20bebd4816ae10081e2faff69314686d659c62c85c2c93ef23e70aca9",
+    "epub_repaired_package_sha256": "34e41f9d3e33f6fda824d59a6da51dcf3308090a7ff7624b1742b9060cfc3d25",
     "epub_content_xhtml_entries_checked": 49,
     "epub_unresolved_internal_hrefs": 0,
     "epub_browser_page_view_pairs": 104,
     "epub_browser_failed_page_view_pairs": 0,
-    "docx_repaired_package_sha256": "1690f5b3bf63781e9dd819a7c66f1724043d74eee4d2132fa48e6597d4e5d7c1",
+    "docx_repaired_package_sha256": "d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e",
     "docx_raw_qmd_relationship_targets": 0,
-    "docx_libreoffice_converted_pages": 503,
-    "docx_libreoffice_text_characters_checked": 1025566,
+    "docx_libreoffice_converted_pages": 504,
+    "docx_libreoffice_text_characters_checked": 1026949,
     "docx_libreoffice_blank_pages": 0,
     "docx_libreoffice_low_ink_pages": 0,
     "docx_libreoffice_near_edge_pages": 0,
-    "pdf_pages_raster_rendered": 504,
+    "pdf_pages_raster_rendered": 506,
     "pdf_blank_raster_pages": 0,
     "pdf_near_edge_raster_pages": 0,
-    "pdf_reading_flow_text_pages": 504,
-    "pdf_reading_flow_nonempty_text_pages": 504,
+    "pdf_reading_flow_text_pages": 506,
+    "pdf_reading_flow_nonempty_text_pages": 506,
     "pdf_reading_flow_chapter_headings": 44,
     "pdf_reading_flow_appendix_headings": 3,
     "pdf_reading_flow_replacement_characters": 0,
@@ -131,6 +132,8 @@
     "key_figure_pdf_layout_caption_pages": 10,
     "key_figure_pdf_layout_raster_pages": 10,
     "key_figure_pdf_layout_min_caption_margin": 165.878,
+    "pdf_viewer_review_screenshots": 2,
+    "pdf_viewer_review_scroll_changed_pixels": 4.434,
     "key_figure_pdf_layout_min_page_ink": 3.36,
     "key_figure_pdf_layout_max_near_edge_ink": 0.0,
     "key_figure_docx_layout_manifest": "editions/reader_manuscript/v1_0/key_figure_docx_layout_manifest.json",
@@ -164,7 +167,7 @@
     "audio_reading_flow_ordered_markers": 49,
     "audio_reading_flow_narration_notes": 66,
     "audio_reading_flow_text_characters": 1067905,
-    "release_boundary": "The automated package, link, text, raster, automated PNG raster, PDF Mermaid fallback, key-figure, EPUB key-figure layout, PDF key-figure layout, DOCX key-figure layout, browser, source-geometry, source-level visual identity, source-level accessibility/navigation, automated keyboard traversal, and audio-script reading-flow probes support release preparation only; they do not clear manual keyboard-only review, screen-reader review, or WCAG conformance, and do not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or the curated reader edition."
+    "release_boundary": "The automated package, link, text, raster, automated PNG raster, PDF Mermaid fallback, key-figure, EPUB key-figure layout, PDF key-figure layout, DOCX key-figure layout, browser, PDF viewer smoke, source-geometry, source-level visual identity, source-level accessibility/navigation, automated keyboard traversal, and audio-script reading-flow probes support release preparation only; they do not clear manual keyboard-only review, screen-reader review, WCAG conformance, manual page-by-page PDF review, or final figure-artifact approval, and do not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or the curated reader edition."
   },
   "validation_status": "partial",
   "review_status": {
@@ -220,7 +223,7 @@
     "Automated keyboard traversal review is recorded as preparation evidence only; it checks 98 desktop/mobile curated-reader HTML page-view pairs, 98 skip-link activations, 98 main-content routes, navigation and search reachability, and 0 keyboard trap candidates, but it does not clear manual keyboard-only review, screen-reader review, WCAG conformance, e-reader review, audiobook review, or release approval.",
     "Automated PNG raster review is recorded as preparation evidence only; it checks generated fallback dimensions, nonblank luminance variation, color diversity, opaque coverage, and per-artifact digests, but it does not clear manual aesthetic review, e-reader visual review, DOCX/PDF application review, final figure-artifact review, visual identity approval, or release approval.",
     "EPUB key-figure layout review is recorded as preparation evidence only; it checks 10 key-figure XHTML entries, 20 key-figure page-view pairs, 0 key-figure browser failures, 10 px maximum horizontal overflow, 0 image failures, figure boundaries, release boundaries, alt text, and body-text presence, but it does not clear dedicated e-reader device review, does not clear e-reader application approval, final figure-artifact review, visual identity approval, or release approval.",
-    "PDF key-figure layout review is recorded as preparation evidence only; it checks 10 key-figure caption pages, caption-page raster dimensions, 165.878 pt minimum caption margin, page ink, near-edge ink absence, and luminance variation, but it does not clear manual page-by-page PDF review, does not clear PDF viewer review, does not clear final figure-artifact review, visual identity approval, or release approval.",
+    "PDF key-figure layout review is recorded as preparation evidence only; it checks 10 key-figure caption pages, caption-page raster dimensions, 165.878 pt minimum caption margin, page ink, near-edge ink absence, and luminance variation, but it does not clear manual page-by-page PDF review, final figure-artifact review, visual identity approval, or release approval.",
     "DOCX key-figure layout review is recorded as preparation evidence only; it checks 10 key-figure title pages in the LibreOffice-converted DOCX PDF, title-page raster dimensions, 72.1 pt minimum title margin, page ink, near-edge ink absence, and luminance variation, but it does not clear Word review, does not clear LibreOffice GUI review, does not clear Google Docs review, does not clear manual document review, final figure-artifact review, visual identity approval, or release approval.",
     "Final figure-artifact review, visual identity approval, e-reader inspection, audio narration review, audio file generation, and audio-embedded EPUB packaging remain incomplete."
   ],

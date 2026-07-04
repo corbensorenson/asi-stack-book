@@ -57,6 +57,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/audit_curated_reader_docx_content.py",
     "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
     "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest",
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
     "python3 scripts/validate_reader_key_figure_format_probe.py",
@@ -218,9 +219,9 @@ def main() -> None:
         errors.append("curated format inspection_summary must be an object.")
         inspection = {}
     expected_artifacts = {
-        "curated_reader_epub": ("epub", "9b03601a6023392d52bfa594cf1f4e6c20bd6e9d79bac62d362f30ad58938157"),
-        "curated_reader_docx": ("docx", "99f9bf48050c2a34244e98fb43e35ee35c377db207fd79d891c3385e11337bc6"),
-        "curated_reader_pdf": ("pdf", "7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d"),
+        "curated_reader_epub": ("epub", "049df485288e8f513d36212dc9c458e3815565677a62b1ba7ef61525359473d4"),
+        "curated_reader_docx": ("docx", "b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3"),
+        "curated_reader_pdf": ("pdf", "491113418d68c6a830d6d194d4b0263a47f9dc994196cd62bb342773fc6f7078"),
     }
     for record_format, (manifest_format, expected_sha) in expected_artifacts.items():
         manifest_row = inspection.get(manifest_format, {})
@@ -244,6 +245,7 @@ def main() -> None:
     docx_libreoffice = curated.get("docx_libreoffice_review", {})
     pdf_raster = curated.get("pdf_visual_raster_audit", {})
     pdf_reading_flow = curated.get("pdf_reading_flow_review", {})
+    pdf_viewer = curated.get("pdf_viewer_review", {})
     pdf_layout = curated.get("pdf_layout_audit", {})
     audio_reading_flow = audio_probe.get("audio_script_reading_flow_review", {})
     geometry_summary = key_figure_geometry.get("summary", {})
@@ -274,6 +276,9 @@ def main() -> None:
     if not isinstance(pdf_reading_flow, dict):
         errors.append("curated format pdf_reading_flow_review must be an object.")
         pdf_reading_flow = {}
+    if not isinstance(pdf_viewer, dict):
+        errors.append("curated format pdf_viewer_review must be an object.")
+        pdf_viewer = {}
     if not isinstance(pdf_layout, dict):
         errors.append("curated format pdf_layout_audit must be an object.")
         pdf_layout = {}
@@ -439,7 +444,7 @@ def main() -> None:
         errors.append("key_figure_pdf_layout_manifest status must remain passed_local_pdf_key_figure_layout_probe.")
     expected_pdf_layout_metrics = {
         "figure_count": 10,
-        "pdf_pages": 504,
+        "pdf_pages": 506,
         "unique_caption_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -462,7 +467,7 @@ def main() -> None:
         errors.append("key_figure_docx_layout_manifest status must remain passed_local_docx_key_figure_layout_probe.")
     expected_docx_layout_metrics = {
         "figure_count": 10,
-        "docx_converted_pdf_pages": 503,
+        "docx_converted_pdf_pages": 504,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -509,6 +514,8 @@ def main() -> None:
         "pdf_reading_flow_chapter_headings": pdf_reading_flow.get("chapter_headings_checked"),
         "pdf_reading_flow_appendix_headings": pdf_reading_flow.get("appendix_headings_checked"),
         "pdf_reading_flow_replacement_characters": pdf_reading_flow.get("replacement_character_count"),
+        "pdf_viewer_review_screenshots": len(pdf_viewer.get("screenshots", [])),
+        "pdf_viewer_review_scroll_changed_pixels": pdf_viewer.get("page_down_changed_pixel_percent"),
         "key_figure_epub_matched_titles": 10,
         "key_figure_docx_matched_stems": 10,
         "key_figure_pdf_matched_captions": 10,
@@ -638,11 +645,11 @@ def main() -> None:
     docx_note = str(artifacts.get("curated_reader_docx", {}).get("notes", ""))
     for fragment in (
         str(docx_audit.get("source_sha256", "")),
-        "17,354 paragraphs",
+        "17,369 paragraphs",
         "286 relationships",
         "0 raw .qmd relationship targets",
-        "503-page PDF",
-        "1,025,566 text characters",
+        "504-page PDF",
+        "1,026,949 text characters",
         "0 blank",
         "0 low-ink",
         "0 near-edge converted-page rasters",
@@ -657,13 +664,15 @@ def main() -> None:
     for fragment in (
         f"{pdf_layout.get('word_boxes_checked'):,} word boxes",
         "0 out-of-bounds word boxes",
-        "504 rendered pages",
+        "506 rendered pages",
         "0 blank pages",
         "0 near-edge pages",
-        "504 nonempty text pages",
+        "506 nonempty text pages",
         "44 ordered chapter headings",
         "3 ordered appendix headings",
         "0 replacement characters",
+        "2 nonblank viewer screenshots",
+        "4.434% changed pixels",
         "10 matched key-figure captions",
         "10 key-figure caption pages",
         "165.878 pt minimum caption margin",
@@ -761,7 +770,6 @@ def main() -> None:
             "does not clear e-reader application approval",
             "PDF key-figure layout review is recorded as preparation evidence only",
             "does not clear manual page-by-page PDF review",
-            "does not clear PDF viewer review",
             "DOCX key-figure layout review is recorded as preparation evidence only",
             "does not clear Word review",
             "does not clear LibreOffice GUI review",

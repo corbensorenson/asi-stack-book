@@ -155,7 +155,7 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     expected_exact = {
         "zip_entries": 77,
-        "paragraph_markers": 17354,
+        "paragraph_markers": 17369,
         "media_entries": 61,
         "png_media_entries": 61,
         "svg_media_entries": 0,

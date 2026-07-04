@@ -27,6 +27,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/audit_curated_reader_docx_content.py",
     "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
     "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest",
 }
 REQUIRED_BLOCKERS = {
     "curated_reconciliation_not_approved",
@@ -98,8 +99,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     review_decision = require_string("manifest", "review_decision", manifest.get("review_decision"), errors, min_words=20)
     for phrase in (
         "renders locally to HTML, EPUB, DOCX, and PDF",
-        "PDF extracted-text reading-flow review checks 504 text pages",
-        "manual PDF viewer reading-flow/layout review",
+        "PDF extracted-text reading-flow review checks 506 text pages",
+        "headed Chromium PDF viewer smoke review records 2 nonblank viewer screenshots",
         "remain unapproved",
     ):
         if phrase not in review_decision:
@@ -125,6 +126,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     pdf_layout_audit = manifest.get("pdf_layout_audit")
     pdf_visual_raster_audit = manifest.get("pdf_visual_raster_audit")
     pdf_reading_flow_review = manifest.get("pdf_reading_flow_review")
+    pdf_viewer_review = manifest.get("pdf_viewer_review")
     epub_content_audit = manifest.get("epub_content_audit")
     epub_browser_review = manifest.get("epub_browser_review")
     docx_content_audit = manifest.get("docx_content_audit")
@@ -144,6 +146,9 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(pdf_reading_flow_review, dict):
         errors.append("pdf_reading_flow_review must be an object.")
         pdf_reading_flow_review = {}
+    if not isinstance(pdf_viewer_review, dict):
+        errors.append("pdf_viewer_review must be an object.")
+        pdf_viewer_review = {}
     if not isinstance(epub_content_audit, dict):
         errors.append("epub_content_audit must be an object.")
         epub_content_audit = {}
@@ -249,8 +254,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         require_int("inspection_summary.pdf", "bytes", pdf.get("bytes"), errors, minimum=1_000_000)
         if not SHA_RE.match(str(pdf.get("sha256", ""))):
             errors.append("inspection_summary.pdf.sha256 must be a SHA-256 digest.")
-        if pdf.get("pages") != 504:
-            errors.append("inspection_summary.pdf.pages must be 504.")
+        if pdf.get("pages") != 506:
+            errors.append("inspection_summary.pdf.pages must be 506.")
         if pdf.get("title") != "The ASI Stack":
             errors.append("inspection_summary.pdf.title must be The ASI Stack.")
         if pdf.get("author") != "Corben Sorenson":
@@ -277,10 +282,10 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("pdf_layout_audit.source_artifact must point to the curated reader PDF.")
         if pdf_layout_audit.get("source_sha256") != pdf.get("sha256"):
             errors.append("pdf_layout_audit.source_sha256 must match inspection_summary.pdf.sha256.")
-        if pdf_layout_audit.get("pages_checked") != 504:
-            errors.append("pdf_layout_audit.pages_checked must be 504.")
-        if pdf_layout_audit.get("word_boxes_checked") != 169766:
-            errors.append("pdf_layout_audit.word_boxes_checked must be 169766.")
+        if pdf_layout_audit.get("pages_checked") != 506:
+            errors.append("pdf_layout_audit.pages_checked must be 506.")
+        if pdf_layout_audit.get("word_boxes_checked") != 170036:
+            errors.append("pdf_layout_audit.word_boxes_checked must be 170036.")
         if pdf_layout_audit.get("textless_pages") != 0:
             errors.append("pdf_layout_audit.textless_pages must be 0.")
         if pdf_layout_audit.get("out_of_bounds_word_boxes") != 0:
@@ -311,19 +316,19 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             "nonwhite_threshold": 245,
             "edge_margin_px": 2,
             "low_ink_threshold": 1000,
-            "pages_rendered": 504,
+            "pages_rendered": 506,
             "page_width_pixels": [612],
             "page_height_pixels": [792],
             "blank_pages": 0,
-            "low_ink_pages": 0,
+            "low_ink_pages": 1,
             "near_edge_content_pages": 0,
-            "min_nonwhite_pixels": 1961,
-            "max_nonwhite_pixels": 105544,
+            "min_nonwhite_pixels": 695,
+            "max_nonwhite_pixels": 105553,
             "min_left_margin_px": 82,
             "min_top_margin_px": 71,
             "min_right_margin_px": 4,
             "min_bottom_margin_px": 92,
-            "sample_low_ink_pages": [],
+            "sample_low_ink_pages": [24],
             "sample_near_edge_pages": [],
         }
         for key, expected_value in expected_values.items():
@@ -343,27 +348,27 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         if pdf and pdf_reading_flow_review.get("source_sha256") != pdf.get("sha256"):
             errors.append("pdf_reading_flow_review.source_sha256 must match inspection_summary.pdf.sha256.")
         expected_values = {
-            "pdfinfo_pages": 504,
+            "pdfinfo_pages": 506,
             "pdfinfo_title": "The ASI Stack",
             "pdfinfo_author": "Corben Sorenson",
             "pdfinfo_encrypted": "no",
             "pdfinfo_page_size": "612 x 792 pts (letter)",
-            "text_characters_checked": 1102861,
-            "word_tokens_checked": 169232,
-            "form_feed_count": 504,
-            "text_pages_checked": 504,
-            "nonempty_text_pages": 504,
+            "text_characters_checked": 1104355,
+            "word_tokens_checked": 169502,
+            "form_feed_count": 506,
+            "text_pages_checked": 506,
+            "nonempty_text_pages": 506,
             "min_page_text_characters": 44,
-            "max_page_text_characters": 3768,
-            "pages_under_300_text_characters": 16,
+            "max_page_text_characters": 3828,
+            "pages_under_300_text_characters": 17,
             "max_word_characters": 83,
             "replacement_character_count": 0,
             "live_marker_hits": 0,
             "raw_core_claim_marker_hits": 0,
             "chapter_headings_checked": 44,
             "chapter_heading_errors": [],
-            "first_chapter_pdf_text_page_index": 27,
-            "last_chapter_pdf_text_page_index": 410,
+            "first_chapter_pdf_text_page_index": 28,
+            "last_chapter_pdf_text_page_index": 412,
             "appendix_headings_checked": 3,
             "appendix_heading_errors": [],
         }
@@ -387,6 +392,54 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         for phrase in ("does not approve the pdf artifact", "does not replace manual pdf page-by-page reading-flow review", "does not promote any chapter core claim"):
             if phrase not in non_claim_text:
                 errors.append(f"pdf_reading_flow_review.non_claims missing boundary phrase: {phrase}")
+
+    if pdf_viewer_review:
+        if pdf_viewer_review.get("status") != "passed_chromium_pdf_viewer_smoke_review":
+            errors.append("pdf_viewer_review.status must be passed_chromium_pdf_viewer_smoke_review.")
+        if pdf_viewer_review.get("source_artifact") != "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf":
+            errors.append("pdf_viewer_review.source_artifact must point to the curated reader PDF.")
+        if not SHA_RE.match(str(pdf_viewer_review.get("source_sha256", ""))):
+            errors.append("pdf_viewer_review.source_sha256 must be a SHA-256 digest.")
+        if pdf and pdf_viewer_review.get("source_sha256") != pdf.get("sha256"):
+            errors.append("pdf_viewer_review.source_sha256 must match inspection_summary.pdf.sha256.")
+        expected_values = {
+            "renderer": "Google Chrome PDF viewer through headed Playwright",
+            "viewport_width": 1280,
+            "viewport_height": 900,
+            "pdfinfo_pages": 506,
+            "viewer_url_scheme": "file",
+            "viewer_shell_detected": True,
+            "viewer_dom_body_text_characters": 0,
+            "viewer_html_shell_characters": 159,
+            "page_down_changed_pixel_percent": 4.434,
+        }
+        for key, expected_value in expected_values.items():
+            if pdf_viewer_review.get(key) != expected_value:
+                errors.append(f"pdf_viewer_review.{key} must be {expected_value!r}.")
+        screenshots = pdf_viewer_review.get("screenshots", [])
+        if not isinstance(screenshots, list) or len(screenshots) != 2:
+            errors.append("pdf_viewer_review.screenshots must contain two rows.")
+            screenshots = []
+        for index, row in enumerate(screenshots):
+            if not isinstance(row, dict):
+                errors.append("pdf_viewer_review screenshot rows must be objects.")
+                continue
+            if row.get("width") != 1280 or row.get("height") != 900:
+                errors.append(f"pdf_viewer_review.screenshots[{index}] dimensions must be 1280 x 900.")
+            require_int(f"pdf_viewer_review.screenshots[{index}]", "bytes", row.get("bytes"), errors, minimum=20_000)
+            if row.get("dark_pixel_percent", 0) < 10:
+                errors.append(f"pdf_viewer_review.screenshots[{index}] must include dark viewer chrome.")
+            if row.get("white_pixel_percent", 0) < 20:
+                errors.append(f"pdf_viewer_review.screenshots[{index}] must include a white page region.")
+            if row.get("luminance_variation_proxy", 0) < 40:
+                errors.append(f"pdf_viewer_review.screenshots[{index}] must be visibly nonblank.")
+        boundary = require_string("pdf_viewer_review", "review_boundary", pdf_viewer_review.get("review_boundary"), errors, min_words=24)
+        if "not manual page-by-page PDF review" not in boundary or "does not approve the PDF artifact" not in boundary:
+            errors.append("pdf_viewer_review.review_boundary must preserve manual-review and release-approval boundaries.")
+        non_claim_text = " ".join(require_string_list("pdf_viewer_review", "non_claims", pdf_viewer_review.get("non_claims"), errors)).lower()
+        for phrase in ("does not approve the pdf artifact", "does not replace manual pdf page-by-page", "does not promote any chapter core claim"):
+            if phrase not in non_claim_text:
+                errors.append(f"pdf_viewer_review.non_claims missing boundary phrase: {phrase}")
 
     if epub_content_audit:
         if epub_content_audit.get("status") != "passed_epub_package_content_navigation_probe":
@@ -464,7 +517,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("docx_content_audit.source_sha256 must be a SHA-256 digest.")
         expected_values = {
             "zip_entries": 77,
-            "paragraph_markers": 17354,
+            "paragraph_markers": 17369,
             "image_relationships": 61,
             "media_entries": 61,
             "png_media_entries": 61,
@@ -499,7 +552,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         if docx_content_audit and docx_libreoffice_review.get("source_sha256") != docx_content_audit.get("source_sha256"):
             errors.append("docx_libreoffice_review.source_sha256 must match docx_content_audit.source_sha256.")
         expected_values = {
-            "converted_pdf_pages": 503,
+            "converted_pdf_pages": 504,
             "converted_pdf_title": "The ASI Stack",
             "converted_pdf_author": "Corben Sorenson",
             "converted_pdf_creator": "Writer",
@@ -510,7 +563,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             "nonwhite_threshold": 245,
             "edge_margin_px": 2,
             "low_ink_threshold": 1000,
-            "pages_raster_rendered": 503,
+            "pages_raster_rendered": 504,
             "page_width_pixels": [612],
             "page_height_pixels": [792],
             "blank_pages": 0,
@@ -579,6 +632,7 @@ def validate_summary(errors: list[str]) -> None:
         "python3 scripts/audit_curated_reader_docx_content.py",
         "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
         "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
+        "python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
         "| docx | rendered | 1 | 1 | 0 | 0 |",
@@ -588,28 +642,31 @@ def validate_summary(errors: list[str]) -> None:
         "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `9b03601a6023392d52bfa594cf1f4e6c20bd6e9d79bac62d362f30ad58938157`",
-        "repaired EPUB package SHA-256 `2e15e9f20bebd4816ae10081e2faff69314686d659c62c85c2c93ef23e70aca9`",
-        "SHA-256 `99f9bf48050c2a34244e98fb43e35ee35c377db207fd79d891c3385e11337bc6`",
-        "repaired DOCX package SHA-256 `1690f5b3bf63781e9dd819a7c66f1724043d74eee4d2132fa48e6597d4e5d7c1`",
-        "SHA-256 `7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d`",
-        "504 pages",
+        "SHA-256 `049df485288e8f513d36212dc9c458e3815565677a62b1ba7ef61525359473d4`",
+        "repaired EPUB package SHA-256 `34e41f9d3e33f6fda824d59a6da51dcf3308090a7ff7624b1742b9060cfc3d25`",
+        "SHA-256 `b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3`",
+        "repaired DOCX package SHA-256 `d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e`",
+        "SHA-256 `491113418d68c6a830d6d194d4b0263a47f9dc994196cd62bb342773fc6f7078`",
+        "506 pages",
         "sample pages 1, 2, 25, 300, and 500",
-        "| Pages checked | 504 |",
-        "| Word boxes checked | 169,766 |",
+        "| Pages checked | 506 |",
+        "| Word boxes checked | 170,036 |",
         "| Textless pages | 0 |",
         "| Out-of-bounds word boxes | 0 |",
         "| Layout lines over 160 characters | 0 |",
-        "| Pages raster-rendered | 504 |",
+        "| Pages raster-rendered | 506 |",
         "| Blank raster pages | 0 |",
-        "| Low-ink raster pages | 0 |",
+        "| Low-ink raster pages | 1 |",
         "| Near-edge raster pages | 0 |",
         "not manual PDF page-by-page review",
         "PDF Extracted Text Reading-Flow Review",
         "44 chapter headings",
         "3 appendix headings",
-        "504 nonempty text pages",
-        "1,102,861 text characters",
+        "506 nonempty text pages",
+        "1,104,355 text characters",
+        "PDF Chromium Viewer Smoke Review",
+        "Scroll-changed pixels",
+        "4.434%",
         "not manual PDF page-by-page reading-flow review",
         "52 XHTML entries",
         "49 packaged content XHTML entries",
@@ -618,12 +675,12 @@ def validate_summary(errors: list[str]) -> None:
         "104 page-view pairs",
         "not dedicated e-reader device/app approval",
         "not e-reader application review",
-        "17,354 paragraphs",
+        "17,369 paragraphs",
         "0 raw .qmd relationship targets",
         "not Word, LibreOffice GUI, or Google Docs application review",
         "DOCX LibreOffice Headless Review",
-        "503 converted pages",
-        "1,025,566 text characters",
+        "504 converted pages",
+        "1,026,949 text characters",
         "0 blank converted-page rasters",
         "not Word review, not LibreOffice GUI review, not Google Docs review",
         "does not clear release blockers",
@@ -644,7 +701,8 @@ def main() -> None:
         fail(errors)
     print(
         "Curated reader format probe validation passed: html, epub, docx, pdf structural evidence recorded "
-        "with raster PNG fallbacks, DOCX LibreOffice review, and PDF extracted-text reading-flow review."
+        "with raster PNG fallbacks, DOCX LibreOffice review, PDF extracted-text reading-flow review, "
+        "and Chromium PDF viewer smoke review."
     )
 
 
