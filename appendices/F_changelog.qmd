@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-04 - Add curated PDF reading-flow review
+
+- Added `scripts/validate_curated_reader_pdf_reading_flow.py` to run
+  `pdfinfo`/`pdftotext` over the ignored curated-reader PDF, check extracted
+  text volume, required reader markers, live-marker leakage, chapter heading
+  order, appendix heading order, and replacement-character count, and write the
+  bounded result into
+  `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`.
+- Recorded the current result: 504 PDF pages, 504 nonempty extracted-text
+  pages, 1,102,861 text characters, 169,232 word tokens, 44 ordered chapter
+  headings, 3 ordered appendix headings, and 0 replacement characters.
+- Updated `docs/curated_reader_format_artifact_probe.md`,
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`,
+  `docs/release_surface_status_ledger.md`,
+  `docs/v1_x_beyond_sota_roadmap.md`, and release-record validators/schema so
+  the PDF reading-flow evidence is required and visible.
+- Boundary: this is automated extracted-text reading-flow evidence only. It is
+  not manual PDF page-by-page reading-flow review, not PDF viewer approval, does
+  not approve the PDF or reader edition, and does not promote any support state.
+
 ## 2026-07-04 - Add curated DOCX LibreOffice review
 
 - Added `scripts/validate_curated_reader_docx_libreoffice_review.py` to open

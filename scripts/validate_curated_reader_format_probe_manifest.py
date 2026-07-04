@@ -26,6 +26,7 @@ REQUIRED_COMMANDS = {
     "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "python3 scripts/audit_curated_reader_docx_content.py",
     "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
 }
 REQUIRED_BLOCKERS = {
     "curated_reconciliation_not_approved",
@@ -113,6 +114,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     inspection_summary = manifest.get("inspection_summary")
     pdf_layout_audit = manifest.get("pdf_layout_audit")
     pdf_visual_raster_audit = manifest.get("pdf_visual_raster_audit")
+    pdf_reading_flow_review = manifest.get("pdf_reading_flow_review")
     epub_content_audit = manifest.get("epub_content_audit")
     epub_browser_review = manifest.get("epub_browser_review")
     docx_content_audit = manifest.get("docx_content_audit")
@@ -129,6 +131,9 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(pdf_visual_raster_audit, dict):
         errors.append("pdf_visual_raster_audit must be an object.")
         pdf_visual_raster_audit = {}
+    if not isinstance(pdf_reading_flow_review, dict):
+        errors.append("pdf_reading_flow_review must be an object.")
+        pdf_reading_flow_review = {}
     if not isinstance(epub_content_audit, dict):
         errors.append("epub_content_audit must be an object.")
         epub_content_audit = {}
@@ -317,6 +322,61 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         boundary = require_string("pdf_visual_raster_audit", "review_boundary", pdf_visual_raster_audit.get("review_boundary"), errors, min_words=18)
         if "not manual PDF page-by-page review" not in boundary or "does not approve the PDF artifact" not in boundary:
             errors.append("pdf_visual_raster_audit.review_boundary must preserve manual-review and release-approval boundaries.")
+
+    if pdf_reading_flow_review:
+        if pdf_reading_flow_review.get("status") != "passed_pdf_extracted_text_reading_flow_review":
+            errors.append("pdf_reading_flow_review.status must be passed_pdf_extracted_text_reading_flow_review.")
+        if pdf_reading_flow_review.get("source_artifact") != "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf":
+            errors.append("pdf_reading_flow_review.source_artifact must point to the curated reader PDF.")
+        if not SHA_RE.match(str(pdf_reading_flow_review.get("source_sha256", ""))):
+            errors.append("pdf_reading_flow_review.source_sha256 must be a SHA-256 digest.")
+        if pdf and pdf_reading_flow_review.get("source_sha256") != pdf.get("sha256"):
+            errors.append("pdf_reading_flow_review.source_sha256 must match inspection_summary.pdf.sha256.")
+        expected_values = {
+            "pdfinfo_pages": 504,
+            "pdfinfo_title": "The ASI Stack",
+            "pdfinfo_author": "Corben Sorenson",
+            "pdfinfo_encrypted": "no",
+            "pdfinfo_page_size": "612 x 792 pts (letter)",
+            "text_characters_checked": 1102861,
+            "word_tokens_checked": 169232,
+            "form_feed_count": 504,
+            "text_pages_checked": 504,
+            "nonempty_text_pages": 504,
+            "min_page_text_characters": 44,
+            "max_page_text_characters": 3768,
+            "pages_under_300_text_characters": 16,
+            "max_word_characters": 83,
+            "replacement_character_count": 0,
+            "live_marker_hits": 0,
+            "raw_core_claim_marker_hits": 0,
+            "chapter_headings_checked": 44,
+            "chapter_heading_errors": [],
+            "first_chapter_pdf_text_page_index": 27,
+            "last_chapter_pdf_text_page_index": 410,
+            "appendix_headings_checked": 3,
+            "appendix_heading_errors": [],
+        }
+        for key, expected_value in expected_values.items():
+            if pdf_reading_flow_review.get(key) != expected_value:
+                errors.append(f"pdf_reading_flow_review.{key} must be {expected_value!r}.")
+        markers = set(require_string_list("pdf_reading_flow_review", "required_text_markers_present", pdf_reading_flow_review.get("required_text_markers_present"), errors))
+        for marker in {"The ASI Stack", "Reader Edition Draft", "evidence boundary", "Reader Source List", "External Citation Policy"}:
+            if marker not in markers:
+                errors.append(f"pdf_reading_flow_review.required_text_markers_present missing {marker}.")
+        samples = pdf_reading_flow_review.get("chapter_heading_samples", [])
+        if not isinstance(samples, list) or len(samples) != 6:
+            errors.append("pdf_reading_flow_review.chapter_heading_samples must carry first/last three chapter headings.")
+        appendix_samples = pdf_reading_flow_review.get("appendix_heading_samples", [])
+        if not isinstance(appendix_samples, list) or len(appendix_samples) != 3:
+            errors.append("pdf_reading_flow_review.appendix_heading_samples must carry three appendix headings.")
+        boundary = require_string("pdf_reading_flow_review", "review_boundary", pdf_reading_flow_review.get("review_boundary"), errors, min_words=24)
+        if "not manual PDF page-by-page reading-flow review" not in boundary or "does not approve the PDF artifact" not in boundary:
+            errors.append("pdf_reading_flow_review.review_boundary must preserve manual-review and release-approval boundaries.")
+        non_claim_text = " ".join(require_string_list("pdf_reading_flow_review", "non_claims", pdf_reading_flow_review.get("non_claims"), errors)).lower()
+        for phrase in ("does not approve the pdf artifact", "does not replace manual pdf page-by-page reading-flow review", "does not promote any chapter core claim"):
+            if phrase not in non_claim_text:
+                errors.append(f"pdf_reading_flow_review.non_claims missing boundary phrase: {phrase}")
 
     if epub_content_audit:
         if epub_content_audit.get("status") != "passed_epub_package_content_navigation_probe":
@@ -508,6 +568,7 @@ def validate_summary(errors: list[str]) -> None:
         "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
         "python3 scripts/audit_curated_reader_docx_content.py",
         "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
+        "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
         "| docx | rendered | 1 | 1 | 0 | 0 |",
@@ -534,6 +595,12 @@ def validate_summary(errors: list[str]) -> None:
         "| Low-ink raster pages | 0 |",
         "| Near-edge raster pages | 0 |",
         "not manual PDF page-by-page review",
+        "PDF Extracted Text Reading-Flow Review",
+        "44 chapter headings",
+        "3 appendix headings",
+        "504 nonempty text pages",
+        "1,102,861 text characters",
+        "not manual PDF page-by-page reading-flow review",
         "52 XHTML entries",
         "49 packaged content XHTML entries",
         "0 unresolved internal hrefs",
@@ -565,7 +632,10 @@ def main() -> None:
     validate_summary(errors)
     if errors:
         fail(errors)
-    print("Curated reader format probe validation passed: html, epub, docx, pdf structural evidence recorded with raster PNG fallbacks and DOCX LibreOffice review.")
+    print(
+        "Curated reader format probe validation passed: html, epub, docx, pdf structural evidence recorded "
+        "with raster PNG fallbacks, DOCX LibreOffice review, and PDF extracted-text reading-flow review."
+    )
 
 
 if __name__ == "__main__":

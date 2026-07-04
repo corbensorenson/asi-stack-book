@@ -45,6 +45,7 @@ REQUIRED_COMMANDS = {
     "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "python3 scripts/audit_curated_reader_docx_content.py",
     "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
     "python3 scripts/validate_reader_key_figure_format_probe.py",
@@ -180,6 +181,7 @@ def main() -> None:
     docx_audit = curated.get("docx_content_audit", {})
     docx_libreoffice = curated.get("docx_libreoffice_review", {})
     pdf_raster = curated.get("pdf_visual_raster_audit", {})
+    pdf_reading_flow = curated.get("pdf_reading_flow_review", {})
     pdf_layout = curated.get("pdf_layout_audit", {})
     if not isinstance(epub_audit, dict):
         errors.append("curated format epub_content_audit must be an object.")
@@ -196,6 +198,9 @@ def main() -> None:
     if not isinstance(pdf_raster, dict):
         errors.append("curated format pdf_visual_raster_audit must be an object.")
         pdf_raster = {}
+    if not isinstance(pdf_reading_flow, dict):
+        errors.append("curated format pdf_reading_flow_review must be an object.")
+        pdf_reading_flow = {}
     if not isinstance(pdf_layout, dict):
         errors.append("curated format pdf_layout_audit must be an object.")
         pdf_layout = {}
@@ -234,6 +239,11 @@ def main() -> None:
         "pdf_pages_raster_rendered": pdf_raster.get("pages_rendered"),
         "pdf_blank_raster_pages": pdf_raster.get("blank_pages"),
         "pdf_near_edge_raster_pages": pdf_raster.get("near_edge_content_pages"),
+        "pdf_reading_flow_text_pages": pdf_reading_flow.get("text_pages_checked"),
+        "pdf_reading_flow_nonempty_text_pages": pdf_reading_flow.get("nonempty_text_pages"),
+        "pdf_reading_flow_chapter_headings": pdf_reading_flow.get("chapter_headings_checked"),
+        "pdf_reading_flow_appendix_headings": pdf_reading_flow.get("appendix_headings_checked"),
+        "pdf_reading_flow_replacement_characters": pdf_reading_flow.get("replacement_character_count"),
         "key_figure_epub_matched_titles": 10,
         "key_figure_docx_matched_stems": 10,
         "key_figure_pdf_matched_captions": 10,
@@ -281,6 +291,10 @@ def main() -> None:
         "504 rendered pages",
         "0 blank pages",
         "0 near-edge pages",
+        "504 nonempty text pages",
+        "44 ordered chapter headings",
+        "3 ordered appendix headings",
+        "0 replacement characters",
         "10 matched key-figure captions",
     ):
         if fragment and fragment not in pdf_note:

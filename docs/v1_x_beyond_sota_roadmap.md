@@ -3631,10 +3631,15 @@ Current status:
   Google Docs review as release blockers. The PDF visual raster audit now
   renders all 504 pages at 72 dpi with
   0 blank pages, 0 low-ink pages, and 0 near-edge pages while still preserving
-  manual PDF-viewer review as a release blocker. EPUB, DOCX, PDF, e-reader, and
+  manual PDF-viewer review as a release blocker. The PDF extracted-text
+  reading-flow review now checks 504 text pages, 504 nonempty text pages, 44
+  ordered chapter headings, 3 ordered appendix headings, and 0 replacement
+  characters while still preserving manual PDF page-by-page reading-flow review
+  as a release blocker. EPUB, DOCX, PDF, e-reader, and
   audio artifacts still remain unapproved until dedicated e-reader approval,
   Word/LibreOffice GUI/Google Docs DOCX review or an explicit release decision,
-  PDF reading-flow review, audio review, and an edition release record exist.
+  manual PDF viewer reading-flow/layout review or an explicit release decision,
+  audio review, and an edition release record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,
@@ -4025,10 +4030,13 @@ validator-enforced status row that grows past compact status-summary size.
   LibreOffice headless DOCX review converts 503 pages with 0 blank, 0 low-ink,
   and 0 near-edge converted-page rasters, but DOCX still remains probe-level
   until Word, LibreOffice GUI, Google Docs review, or an explicit release
-  decision and an edition release record exist. Its PDF visual raster audit renders all 504
-  pages with 0 blank pages, 0 low-ink pages, and 0 near-edge pages, but PDF
-  remains probe-level until real PDF-viewer reading-flow/layout review and an
-  edition release record exist; audio remains script-probe-level; visual
+  decision and an edition release record exist. Its PDF visual raster audit
+  renders all 504 pages with 0 blank pages, 0 low-ink pages, and 0 near-edge
+  pages; its PDF extracted-text reading-flow review checks 504 nonempty text
+  pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0
+  replacement characters. PDF remains probe-level until real PDF-viewer
+  reading-flow/layout review and an edition release record exist; audio remains
+  script-probe-level; visual
   identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route

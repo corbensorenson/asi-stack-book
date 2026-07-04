@@ -16,12 +16,14 @@
     "python3 scripts/audit_curated_reader_epub_content.py",
     "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "python3 scripts/audit_curated_reader_docx_content.py",
-    "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest"
+    "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest"
   ],
   "local_report_refs": [
     "build/curated_reader_edition/curated_reader_render_report.json",
     "build/curated_reader_edition/curated_reader_artifact_inspection_report.json",
-    "build/curated_reader_edition/curated_reader_docx_libreoffice_review_report.json"
+    "build/curated_reader_edition/curated_reader_docx_libreoffice_review_report.json",
+    "build/curated_reader_edition/curated_reader_pdf_reading_flow_report.json"
   ],
   "tracked_evidence_refs": [
     "docs/curated_reader_html_artifact_browser_review.md",
@@ -354,6 +356,123 @@
       "does not replace Word, LibreOffice GUI, or Google Docs application review",
       "does not publish or archive a reader artifact",
       "does not approve EPUB, PDF, e-reader, audio, or final figure artifacts",
+      "does not promote any chapter core claim or support state"
+    ]
+  },
+  "pdf_reading_flow_review": {
+    "status": "passed_pdf_extracted_text_reading_flow_review",
+    "source_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
+    "source_sha256": "7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d",
+    "report_ref": "build/curated_reader_edition/curated_reader_pdf_reading_flow_report.json",
+    "review_command": "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
+    "text_extractor": "pdftotext",
+    "pdfinfo_pages": 504,
+    "pdfinfo_title": "The ASI Stack",
+    "pdfinfo_author": "Corben Sorenson",
+    "pdfinfo_encrypted": "no",
+    "pdfinfo_page_size": "612 x 792 pts (letter)",
+    "text_characters_checked": 1102861,
+    "word_tokens_checked": 169232,
+    "form_feed_count": 504,
+    "text_pages_checked": 504,
+    "nonempty_text_pages": 504,
+    "min_page_text_characters": 44,
+    "max_page_text_characters": 3768,
+    "pages_under_300_text_characters": 16,
+    "sample_pages_under_300_text_characters": [
+      1,
+      27,
+      29,
+      32,
+      45,
+      63,
+      127,
+      129,
+      147,
+      155
+    ],
+    "max_word_characters": 83,
+    "replacement_character_count": 0,
+    "required_text_markers_present": [
+      "The ASI Stack",
+      "Reader Edition Draft",
+      "evidence boundary",
+      "Reader Source List",
+      "External Citation Policy"
+    ],
+    "live_marker_hits": 0,
+    "raw_core_claim_marker_hits": 0,
+    "chapter_headings_checked": 44,
+    "chapter_heading_errors": [],
+    "first_chapter_pdf_text_page_index": 27,
+    "last_chapter_pdf_text_page_index": 410,
+    "chapter_heading_samples": [
+      {
+        "chapter_number": 1,
+        "title": "ASI Is a Stack, Not a Model",
+        "text_offset": 80407,
+        "pdf_text_page_index": 27
+      },
+      {
+        "chapter_number": 2,
+        "title": "The Efficient ASI Hypothesis",
+        "text_offset": 98403,
+        "pdf_text_page_index": 36
+      },
+      {
+        "chapter_number": 3,
+        "title": "System Boundaries and Authority",
+        "text_offset": 115275,
+        "pdf_text_page_index": 43
+      },
+      {
+        "chapter_number": 42,
+        "title": "Prototype Roadmap",
+        "text_offset": 880227,
+        "pdf_text_page_index": 394
+      },
+      {
+        "chapter_number": 43,
+        "title": "Living Book Methodology",
+        "text_offset": 895604,
+        "pdf_text_page_index": 401
+      },
+      {
+        "chapter_number": 44,
+        "title": "Open Research Agenda and Bibliography Plan",
+        "text_offset": 915792,
+        "pdf_text_page_index": 410
+      }
+    ],
+    "appendix_headings_checked": 3,
+    "appendix_heading_errors": [],
+    "appendix_heading_samples": [
+      {
+        "appendix_letter": "A",
+        "title": "Glossary",
+        "text_offset": 934497,
+        "pdf_text_page_index": 419
+      },
+      {
+        "appendix_letter": "B",
+        "title": "Corben\u2019s Own Sources, Papers, and Local Projects",
+        "text_offset": 938345,
+        "pdf_text_page_index": 422
+      },
+      {
+        "appendix_letter": "C",
+        "title": "External Sources by Other Authors",
+        "text_offset": 986914,
+        "pdf_text_page_index": 447
+      }
+    ],
+    "review_boundary": "This pdftotext reading-flow review checks extracted text volume, page text presence, chapter heading order, appendix heading order, reader markers, and live-marker leakage. It is not manual PDF page-by-page reading-flow review, not PDF viewer approval, and does not approve the PDF artifact.",
+    "non_claims": [
+      "does not approve the PDF artifact for release",
+      "does not replace manual PDF page-by-page reading-flow review",
+      "does not replace PDF viewer review",
+      "does not publish or archive a reader artifact",
+      "does not approve EPUB, DOCX, e-reader, audio, or final figure artifacts",
       "does not promote any chapter core claim or support state"
     ]
   }

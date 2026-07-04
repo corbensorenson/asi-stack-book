@@ -22,6 +22,7 @@ python3 scripts/audit_curated_reader_epub_content.py
 node scripts/validate_curated_reader_epub_browser_review.js --write-manifest
 python3 scripts/audit_curated_reader_docx_content.py
 python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest
+python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest
 ```
 
 Local ignored reports:
@@ -29,6 +30,7 @@ Local ignored reports:
 - `build/curated_reader_edition/curated_reader_render_report.json`
 - `build/curated_reader_edition/curated_reader_artifact_inspection_report.json`
 - `build/curated_reader_edition/curated_reader_docx_libreoffice_review_report.json`
+- `build/curated_reader_edition/curated_reader_pdf_reading_flow_report.json`
 
 Tracked manifest:
 
@@ -248,6 +250,43 @@ fallback pass. This all-page low-resolution raster rendering is stronger local
 PDF visual evidence than sample-page rendering alone, but it is not manual PDF
 page-by-page review and does not approve the PDF artifact for release.
 
+## PDF Extracted Text Reading-Flow Review
+
+The refreshed PDF probe also runs an extracted-text reading-flow review:
+
+```bash
+python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest
+```
+
+That pass uses `pdftotext` and `pdfinfo` to check text volume, page text
+presence, required reader markers, live-marker leakage, chapter heading order,
+and appendix heading order in the current 504-page PDF.
+
+The result records 1,102,861 text characters, 44 chapter headings, 3 appendix headings, and 504 nonempty text pages; it is not manual PDF page-by-page reading-flow review.
+
+| Metric | Result |
+|---|---:|
+| PDF pages | 504 |
+| Text pages checked | 504 |
+| Nonempty text pages | 504 |
+| Text characters checked | 1,102,861 |
+| Word tokens checked | 169,232 |
+| Chapter headings checked | 44 |
+| Appendix headings checked | 3 |
+| First chapter text-page index | 27 |
+| Last chapter text-page index | 410 |
+| Replacement characters | 0 |
+| Live-marker leaks | 0 |
+| Raw core-claim marker leaks | 0 |
+
+The extracted-text flow check found 44 chapter headings and 3 appendix headings
+in order, with 504 nonempty text pages. Required text markers were present:
+`The ASI Stack`, `Reader Edition Draft`, `evidence boundary`, `Reader Source
+List`, and `External Citation Policy`. This is stronger than page-count and
+raster evidence alone, but it is not manual PDF page-by-page reading-flow
+review, not PDF viewer approval, and does not approve the PDF artifact for
+release.
+
 ## Review Decision
 
 The tracked curated reader manuscript now has a local format-probe path beyond
@@ -256,10 +295,10 @@ and PDF, and the snapshots passed structural inspection. The repaired EPUB
 package also passed the all-XHTML content/navigation audit and a Chromium
 browser XHTML application review, the repaired DOCX package passed the document
 XML/relationship audit and LibreOffice headless conversion/raster review above,
-and the PDF also passed the all-page text/bounding-box and visual raster audits
-above. This is useful evidence for release preparation, dedicated e-reader
-testing, DOCX GUI/application review, PDF layout review, and figure conversion
-work.
+and the PDF also passed the all-page text/bounding-box, visual raster, and
+extracted-text reading-flow audits above. This is useful evidence for release
+preparation, dedicated e-reader testing, DOCX GUI/application review, PDF layout
+review, and figure conversion work.
 
 This does not clear release blockers. EPUB still needs dedicated e-reader
 device/app approval or an explicit release decision that accepts the Chromium
