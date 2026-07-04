@@ -17,7 +17,6 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from scripts import validate_curated_reader_docx_libreoffice_review as docx_review  # noqa: E402
 from scripts import validate_reader_key_figure_pdf_layout as pdf_layout  # noqa: E402
 
 RESULT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
@@ -51,6 +50,14 @@ def fail(errors: list[str]) -> None:
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def load_docx_review_module():
+    # This module imports Pillow for page-raster inspection. Keep it out of the
+    # normal tracked-manifest validation path so CI does not need Pillow here.
+    from scripts import validate_curated_reader_docx_libreoffice_review as docx_review
+
+    return docx_review
 
 
 def figure_title_bbox(path: Path, page: int, caption_title: str) -> dict[str, float]:
@@ -88,6 +95,7 @@ def figure_title_bbox(path: Path, page: int, caption_title: str) -> dict[str, fl
 
 
 def observe() -> dict[str, Any]:
+    docx_review = load_docx_review_module()
     if not DOCX.exists():
         fail([f"missing curated reader DOCX artifact: {rel(DOCX)}"])
     soffice_paths = docx_review.candidate_soffice_paths()
