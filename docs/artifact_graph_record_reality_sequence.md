@@ -36,7 +36,17 @@ The valid sequence has four events:
 
 The validator records `fresh_replay_restores_after_block: true`,
 `valid_sequences_end_eligible: true`, `support_state_effect: none`,
-`chapter_core_support_effect: none`, and `evidence_transition_created: false`.
+`chapter_core_support_effect: none`, and `evidence_transition_created: false`
+inside the result artifact. The separate accepted no-promotion decision is:
+
+```text
+evidence_transitions/v1_x_measured/artifact_record_reality_sequence_no_change.json
+```
+
+That decision treats the sequence as blocking evidence for record-reality
+overclaims only. It names the deployed replay, audit durability, verifier
+quality, provenance-completeness, and independent-review burden needed before
+any upward support movement.
 
 ## Expected-Invalid Controls
 
@@ -58,7 +68,8 @@ certificates, incomplete replay, and fresh byte-exact replay restoration.
 ## Non-Claims
 
 - This fixture does not promote any chapter core support state.
-- This fixture does not create an evidence transition.
+- This fixture and its accepted no-promotion decision do not create an upward
+  support-state transition.
 - This fixture does not prove deployed artifact graph behavior, real replay,
   verifier correctness, audit durability, source interpretation, or open-world
   receipt faithfulness.

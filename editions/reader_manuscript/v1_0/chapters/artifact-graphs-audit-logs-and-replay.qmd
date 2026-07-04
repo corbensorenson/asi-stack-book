@@ -207,6 +207,11 @@ support-promotion controls. It is not a deployed attestation service. It is a
 bounded way to show that the book can compare a stored receipt against the
 repository reality it points to.
 
+The record-reality sequence has its own no-promotion decision now. It treats
+the stale-certificate, partial-replay, fresh-replay pattern as a blocking
+decision against overclaims, not as proof that the system has a deployed replay
+engine or a verifier that can force reality to match the receipt.
+
 The randomized artifact attestation audit widens that local check without
 pretending to leave the repository. Command `python3 scripts/validate_artifact_randomized_attestation_audit.py` records
 `experiments/artifact_randomized_attestation/results/2026-07-04-local.json`

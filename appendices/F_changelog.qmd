@@ -443,9 +443,26 @@
   183 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter
   classifications present.
 - Boundary: this is a finite record-reality sequence fixture and Lean bridge
-  only; it does not create an evidence transition, prove deployed artifact graph
-  behavior, prove real replay, prove verifier correctness, prove audit
-  durability, prove source interpretation, or promote any chapter core claim.
+  only; it does not create an upward support-state transition, prove deployed
+  artifact graph behavior, prove real replay, prove verifier correctness, prove
+  audit durability, prove source interpretation, or promote any chapter core
+  claim.
+
+## 2026-07-04 - Record Artifact Graph record-reality no-promotion decision
+
+- Added accepted no-promotion decision
+  `evidence_transitions/v1_x_measured/artifact_record_reality_sequence_no_change.json`
+  for `artifact-graphs.record_reality_sequence_bridge`.
+- Synchronized `docs/artifact_graph_record_reality_sequence.md`, the live
+  Artifact Graphs chapter, the curated reader chapter, `docs/book_outline.md`,
+  `docs/v1_x_beyond_sota_roadmap.md`, `docs/non_core_evidence_ledger.md`,
+  `README.md`, and `index.qmd` so the record-reality sequence bridge is visible
+  as a `blocks_promotion` decision.
+- Boundary: the decision blocks overclaims from the stale/partial/fresh replay
+  fixture. It does not create an upward support-state transition, prove deployed
+  artifact-graph behavior, prove deployed replay, prove verifier correctness,
+  prove audit durability, prove provenance completeness, prove open-world
+  receipt faithfulness, or promote any chapter core claim.
 
 ## 2026-07-04 - Refresh curated reader format probes
 

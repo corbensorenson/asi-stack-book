@@ -1,0 +1,127 @@
+{
+  "transition_id": "v1_x_measured.artifact_record_reality_sequence.no_change",
+  "claim_id": "artifact-graphs.record_reality_sequence_bridge",
+  "claim_surface_refs": [
+    "docs/artifact_graph_record_reality_sequence.md",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "docs/book_outline.md",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/artifact_graph_record_reality_sequence/input/record_reality_sequence.json",
+    "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+    "scripts/validate_artifact_graph_record_reality_sequence.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Artifact Graph record-reality sequence bridge only. The fixture accepts one finite stale/partial/fresh replay sequence and rejects four expected-invalid controls for stale-certificate support movement, restoration without fresh replay/provenance, missing non-claim boundaries, and support review without replay-validated transaction state. It is not a deployed artifact graph, not a deployed replay engine, not deployed audit behavior, not open-world receipt faithfulness, not verifier-correctness evidence, not source-interpretation evidence, and not an upward support-state transition.",
+  "evidence_roles": [
+    "bounded_record_reality_sequence_fixture",
+    "stale_certificate_blocker",
+    "partial_replay_blocker",
+    "fresh_replay_restoration_gate",
+    "replay_validated_transaction_gate",
+    "missing_non_claim_negative_control",
+    "support_state_effect_negative_control",
+    "finite_lean_record_reality_bridge",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The record-reality sequence bridge is useful because it makes a key Artifact Graph distinction executable: a record can lose bounded-review eligibility when a certificate is stale or replay is partial, and it can regain bounded-review eligibility only after a fresh byte-exact replay/provenance event with replay-validated transaction state, digest verification, independent checking, non-claim boundaries, and no support-state effect. The evidence remains a finite local fixture, so this accepted decision blocks promotion for deployed artifact-graph behavior, deployed replay, deployed audit durability, open-world receipt faithfulness, verifier correctness, provenance completeness, source interpretation, benchmark performance, model quality, safety, ASI, or the Artifact Graphs chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable artifact-graph replay trace",
+    "public-safe produced artifact with parent job, source/context set, context transaction, semantic certificate, replay declaration, residual declaration, evidence gate, and claim/test link",
+    "fresh replay/provenance event over real or externally replayed artifacts",
+    "independent observation route outside the producing component",
+    "trap receipt or challenge suite executed outside the producing component",
+    "verifier-quality and provenance-completeness review",
+    "deployed or externally reviewable audit durability evidence",
+    "source-interpretation adequacy review where source-derived claims are involved",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/artifact_graph_record_reality_sequence.md",
+    "experiments/artifact_graph_record_reality_sequence/input/record_reality_sequence.json",
+    "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+    "scripts/validate_artifact_graph_record_reality_sequence.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/artifact_graph_record_reality_sequence.md",
+    "docs/receipt_faithfulness_adversarial_fixture.md",
+    "docs/artifact_live_attestation_probe.md",
+    "docs/artifact_randomized_attestation_audit.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+    "docs/book_outline.md#artifact-graphs-audit-logs-and-replay"
+  ],
+  "verification_command": "python3 scripts/validate_artifact_graph_record_reality_sequence.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "stale-certificate support-state effect is rejected",
+    "claimed restoration without fresh replay/provenance is rejected",
+    "missing non-claim boundary is rejected",
+    "support review without replay-validated transaction state is rejected",
+    "fresh replay restoration remains bounded to the finite fixture",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/artifact_graph_record_reality_sequence.md",
+    "experiments/artifact_graph_record_reality_sequence/input/record_reality_sequence.json",
+    "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+    "scripts/validate_artifact_graph_record_reality_sequence.py"
+  ],
+  "downgrade_triggers": [
+    "Artifact graph record-reality sequence validator failure",
+    "stale certificate, incomplete replay, missing non-claim boundary, support-state effect, or replay-unvalidated support review accepted as valid",
+    "fresh replay restoration described as deployed artifact-graph behavior, deployed replay, audit durability, open-world receipt faithfulness, verifier correctness, source interpretation, benchmark, model-quality, safety, ASI, or chapter-core evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Artifact Graph record-reality claim after deployed or externally reviewable replay traces, produced-artifact provenance records, independent observer routes, trap/challenge execution outside the producing component, verifier-quality evidence, provenance-completeness review, audit-durability evidence, source-interpretation review where applicable, residuals, non-claims, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "finite record-reality sequence fixture only",
+    "one valid synthetic stale/partial/fresh replay sequence only",
+    "no deployed artifact graph",
+    "no deployed replay engine",
+    "no deployed audit durability evidence",
+    "no open-world receipt-faithfulness proof",
+    "no verifier-correctness proof",
+    "no provenance-completeness proof",
+    "no source-interpretation evidence",
+    "no benchmark evidence",
+    "no model-quality evidence",
+    "no safety or ASI evidence",
+    "no independent external review",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent replay, audit, verifier-quality, source-interpretation, external-project, or external human review",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable replay trace",
+    "no independent observation route outside the producing component",
+    "no external verifier-quality review",
+    "no deployed audit-durability evidence",
+    "no open-world receipt-faithfulness evidence",
+    "no independent external review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-artifact-graph-record-reality-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote the Artifact Graphs chapter core claim",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not prove deployed artifact-graph behavior, deployed replay, deployed audit durability, open-world receipt faithfulness, verifier correctness, provenance completeness, source interpretation, benchmark performance, model quality, safety, deployment safety, or ASI"
+  ]
+}
