@@ -1,6 +1,6 @@
 # v1.x Beyond-SOTA Roadmap
 
-Last updated: 2026-07-03
+Last updated: 2026-07-04
 
 This roadmap is the post-`v1.0.0` long-term plan for turning **The ASI
 Stack** from a tagged living-book release into a stronger evidence-and-reader
@@ -548,6 +548,25 @@ Current status for defended contribution focus:
   row's next closure artifact: live prose, reader prose, source/prior-art
   delta, proof/evidence movement, no-promotion decision, or dated blocker.
 
+2026-07-04 idea-review reconciliation:
+
+- Claude's idea-focused diagnosis has teeth, but the current roadmap already
+  contains its load-bearing concepts: the governed-cognition pattern language,
+  receipt faithfulness / record-reality gap, epistemic trusted computing base,
+  human oversight degradation, governance economics, partitioned authority,
+  stable identity, and bounded self-improvement. The next work is therefore
+  execution against the dispatch table, not another idea inventory.
+- Treat bounded fixtures as necessary scaffolding, not as defended
+  contributions. Once a row has a bounded fixture or local repository trace,
+  the next closure must move one state to the right - live/external replay,
+  source-reviewed novelty posture, stronger verifier-independence evidence,
+  or a dated blocker naming the exact missing artifact.
+- The answer to "one meta-idea in many costumes" is not to invent more terms.
+  It is to keep the pattern-language owner spine explicit, make non-owner
+  chapters honest local deltas, and only admit a new signature idea when it
+  changes chapter prose, reader prose, prior-art positioning, and the next
+  proof/evidence artifact path.
+
 ## Idea Depth Program - Ideas To A-Plus
 
 Added 2026-07-03 from Corben's direct question: why is Ideas graded B+, and
@@ -643,6 +662,10 @@ at discovery or chapter-placement debate. It must name the next state to the
 right and implement that state, or record a dated blocker. In this roadmap,
 `missing_argument` means missing as a defended open-world argument or
 contribution result; it does not mean the idea is absent from the corpus.
+Same-state expansion counts only when it closes a different named artifact
+boundary, such as moving from a synthetic fixture to a real repository trace.
+Repeating the same class of local fixture over the same evidence surface is
+maintenance, not idea-depth progress.
 
 Analytic consequence rule: every signature-idea closure must name both the
 consequence and the weakening condition. Examples: the verification-bandwidth
@@ -3776,16 +3799,19 @@ marked `closed by artifact` in that same run, or carry a dated blocker naming
 the one closure class that remains. A tracker that understates progress is a
 defect with the same severity as one that overstates it.
 
-### Remaining distance as of 2026-07-03
+### Remaining distance as of 2026-07-04
 
 - Test 1: reader arc reconciliation is complete across all 44 active curated
   reader chapters, and the twelve legacy voice-pass slots are converted into
   optional non-blocking sidecar enrichment entries. Live-edition chapter-length
   watchlist, release-quality continuity polish, exact format review, and an
   edition release record remain open.
-- Test 2: no edition build or release record beyond the 2026-06-29 reader
-  HTML; EPUB/DOCX/PDF remain probe-level; audio remains script-probe-level;
-  visual identity review not started.
+- Test 2: no edition release record beyond the 2026-06-29 reader HTML. The
+  current curated reader manuscript now has a refreshed local HTML/EPUB/DOCX/PDF
+  structural probe with 49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media
+  entries, 0 SVG conversion warnings, and a 525-page PDF sample-page render,
+  but EPUB/DOCX/PDF remain probe-level; audio remains script-probe-level;
+  visual identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route
   selector transition; most chapter evidence lanes have not yet executed.
