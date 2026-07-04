@@ -1,6 +1,6 @@
 # Reader Key-Figure Artifact Review
 
-Last checked: 2026-07-02
+Last checked: 2026-07-04
 
 Command:
 
@@ -26,6 +26,13 @@ tracked curated reader manuscript in a temporary workspace, renders HTML, and
 checks all ten draft figures for rendered image references, copied SVG assets,
 alt text, captions, responsive image classes, and visible non-claim boundary
 paragraphs. That probe is still not visual review and not release approval.
+
+2026-07-04 presentation-layer update: `assets/styles.scss` now applies a shared
+key-figure presentation shell to both live `.asi-key-figure` blocks and curated
+reader `reader-fig-*` Quarto figure blocks, including a restrained rule,
+caption treatment, mobile contained horizontal scroll for wide diagrams, and
+print page-break avoidance. This improves the rendered review surface, but it
+does not approve final figure art or any reader release artifact.
 
 ## Current Draft Assets
 
@@ -54,8 +61,9 @@ equivalents.
 Open residuals:
 
 - HTML visual/layout: inspect scale, line weight, text legibility, caption
-  placement, and color contrast in the rendered reader HTML beyond the DOM
-  probe.
+  placement, and color contrast in the rendered reader HTML after the shared
+  presentation-layer update; the DOM probe and CSS change are not final visual
+  approval.
 - EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
 - DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
 - PDF: inspect page-level layout, figure scaling, and caption placement.

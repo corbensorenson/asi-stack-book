@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-04 - Polish key-figure presentation layer
+
+- Updated `assets/styles.scss` so live `.asi-key-figure` blocks and curated
+  reader `reader-fig-*` Quarto figure blocks share a restrained presentation
+  shell, caption treatment, mobile contained horizontal scroll for wide
+  diagrams, and print page-break avoidance.
+- Updated the reader key-figure artifact review and v1.x roadmap to record the
+  presentation-layer improvement while preserving all draft-figure,
+  format-review, final-art, and release-approval blockers.
+- Boundary: this is visual and reader-artifact polish only. It does not change
+  figure source content, evidence states, support states, release approval,
+  final figure-artifact approval, or EPUB/DOCX/PDF/audio artifact status.
+
 ## 2026-07-03 - Tighten idea-depth roadmap findings
 
 - Reviewed Claude's idea-focused roadmap critique against the current v1.x

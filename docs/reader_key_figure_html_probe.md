@@ -1,6 +1,6 @@
 # Reader Key-Figure HTML Probe
 
-Last checked: 2026-07-02
+Last checked: 2026-07-04
 
 Command:
 
