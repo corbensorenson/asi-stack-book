@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-04 - Refresh curated format digests after heading guard
+
+- Hardened `scripts/render_reader_formats.py` and
+  `scripts/render_curated_reader_formats.py` so long Quarto render logs are
+  captured through temporary log files instead of an in-memory stdout pipe
+  while preserving the report `log_excerpt` field.
+- Reran
+  `python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf`
+  and `python3 scripts/inspect_curated_reader_format_artifacts.py` after the
+  curated manuscript heading guard. The structural facts remain stable at 49
+  HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, 0 DOCX SVG
+  media entries, and 525 PDF pages.
+- Refreshed the exact local ignored artifact fingerprints in the curated
+  format probe: EPUB SHA-256
+  `f785f41af02466b2498c5ebd20a85a80c51bcadc08d1acbb9d7ec8a51dd9cb94`,
+  DOCX SHA-256
+  `f53c73cb650b6c25cbde208c771ba5ab541345cde969dab4ae2ac17e980b9b96`,
+  and PDF SHA-256
+  `f6266681c6d7c39a2a5e2dc2c87e96203b22236a095bd8a5d7654d14c54542f6`.
+- After checking the latest completed Pages failure, normalized the deploy
+  action timeout to GitHub's logged maximum of 600000 ms so future deploy-only
+  failures are not obscured by an avoidable timeout warning.
+- Boundary: this is a local structural probe over ignored artifacts only. It
+  does not approve EPUB, DOCX, PDF, e-reader, audio, a reader release, an
+  edition release record, or any support-state promotion.
+
 ## 2026-07-04 - Derive audio scripts from curated reader manuscript
 
 - Updated `scripts/build_audio_script.py` so the default audio-script review
@@ -55,11 +81,11 @@
   `python3 scripts/inspect_curated_reader_format_artifacts.py`; the current
   probe records 49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media
   entries, 0 DOCX SVG media entries, 0 SVG conversion warnings, EPUB SHA-256
-  `fb7801cea04de13cfc0a432b6728b6ef80ff062da39389b8613b1432c07e0e3a`,
+  `f785f41af02466b2498c5ebd20a85a80c51bcadc08d1acbb9d7ec8a51dd9cb94`,
   DOCX SHA-256
-  `5ca64f4fe2d46250d690a14757647b60cf4598d4de8cfc540ca29606efe08c02`,
+  `f53c73cb650b6c25cbde208c771ba5ab541345cde969dab4ae2ac17e980b9b96`,
   and a 525-page PDF with SHA-256
-  `d1031a4ab093a3689b3a3b10a0918148bcedd0479d8463d1a0b0e508cddf77a7`.
+  `f6266681c6d7c39a2a5e2dc2c87e96203b22236a095bd8a5d7654d14c54542f6`.
 - Updated the curated reader format probe manifest, summary, validator, v1.0
   status snapshot, and v1.x roadmap so format-review blockers reference the
   current local artifacts.

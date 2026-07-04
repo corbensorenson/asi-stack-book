@@ -183,28 +183,30 @@ def run_render(output_dir: Path, fmt: str) -> dict[str, object]:
         "fallback_refs": [],
         "error": "",
     }
-    if fmt in {"docx", "pdf"}:
-        with raster_diagram_fallbacks(output_dir) as fallback_info:
+    with tempfile.NamedTemporaryFile("w+", encoding="utf-8", errors="ignore") as log_file:
+        if fmt in {"docx", "pdf"}:
+            with raster_diagram_fallbacks(output_dir) as fallback_info:
+                result = subprocess.run(
+                    command,
+                    cwd=output_dir,
+                    check=False,
+                    text=True,
+                    stdout=log_file,
+                    stderr=subprocess.STDOUT,
+                    env=render_environment(),
+                )
+        else:
             result = subprocess.run(
                 command,
                 cwd=output_dir,
                 check=False,
                 text=True,
-                stdout=subprocess.PIPE,
+                stdout=log_file,
                 stderr=subprocess.STDOUT,
                 env=render_environment(),
             )
-    else:
-        result = subprocess.run(
-            command,
-            cwd=output_dir,
-            check=False,
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            env=render_environment(),
-        )
-    output = result.stdout or ""
+        log_file.seek(0)
+        output = log_file.read()
     artifacts = find_artifacts(output_dir, fmt) if result.returncode == 0 else []
     preserved_artifacts = preserve_artifacts(output_dir, fmt, artifacts) if artifacts else []
     warning_lines = [line for line in output.splitlines() if "[WARNING]" in line]

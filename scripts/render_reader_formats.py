@@ -76,15 +76,17 @@ def preserve_artifacts(output_dir: Path, fmt: str, artifacts: list[str]) -> list
 
 def run_render(output_dir: Path, fmt: str) -> dict[str, object]:
     command = ["quarto", "render", "--to", fmt]
-    result = subprocess.run(
-        command,
-        cwd=output_dir,
-        check=False,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-    )
-    output = result.stdout or ""
+    with tempfile.NamedTemporaryFile("w+", encoding="utf-8", errors="ignore") as log_file:
+        result = subprocess.run(
+            command,
+            cwd=output_dir,
+            check=False,
+            text=True,
+            stdout=log_file,
+            stderr=subprocess.STDOUT,
+        )
+        log_file.seek(0)
+        output = log_file.read()
     artifacts = find_artifacts(output_dir, fmt) if result.returncode == 0 else []
     preserved_artifacts = preserve_artifacts(output_dir, fmt, artifacts) if artifacts else []
     return {
