@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-04 - Calibrate roadmap after project review
+
+- Updated `docs/v1_x_beyond_sota_roadmap.md` after reviewing the current tree
+  against the supplied Claude review: the Grade-To-A-Plus map now reflects the
+  post-idea-depth state, with Evidence at B+, Human Reader Edition at A-, and
+  Ideas/Synthesis at A- while preserving the remaining A+ blockers.
+- Recorded the current record-reality ownership decision: Artifact Graphs is
+  the receipt-faithfulness owner for the next implementation pass, and a new
+  chapter is allowed only if an upgraded owner section fails the split test by
+  creating duplication, hiding a distinct evidence lane, or making adjacent
+  chapters less clear.
+- Wired the status-surface sprawl rule into the suggested long-running goal so
+  future work shortens overlong validator-enforced status cells, starting with
+  the Proof envelope status cell, instead of preserving unreadable run-on
+  fragments.
+- Boundary: this is roadmap calibration only. It does not add a chapter,
+  promote or demote any support state, create an edition release record,
+  approve reader artifacts, or claim open-world receipt faithfulness.
+
 ## 2026-07-04 - Add claim-state transition bridge
 
 - Added `python3 scripts/validate_claim_state_transition_bridge.py` and result
