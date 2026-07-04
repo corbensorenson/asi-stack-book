@@ -20,9 +20,6 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from PIL import Image, ImageChops, ImageStat
-
-
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
 PDF = ROOT / "build" / "curated_reader_edition" / "format_artifacts" / "pdf" / "_reader_site" / "The-ASI-Stack.pdf"
@@ -159,6 +156,8 @@ def pdfinfo_pages(path: Path) -> int:
 
 
 def screenshot_metrics(path: Path) -> dict[str, Any]:
+    from PIL import Image, ImageStat
+
     image = Image.open(path).convert("RGB")
     pixels = image.getdata()
     total = image.width * image.height
@@ -178,6 +177,8 @@ def screenshot_metrics(path: Path) -> dict[str, Any]:
 
 
 def screenshot_difference_percent(first: Path, second: Path) -> float:
+    from PIL import Image, ImageChops
+
     a = Image.open(first).convert("RGB")
     b = Image.open(second).convert("RGB")
     if a.size != b.size:
