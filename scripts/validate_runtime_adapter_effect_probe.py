@@ -34,7 +34,7 @@ READER_CHAPTER = (
 )
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
-STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
+STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
 
 SURFACE_FRAGMENTS = (
     "Runtime adapter effect replay probe",

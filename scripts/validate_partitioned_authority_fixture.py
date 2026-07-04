@@ -38,7 +38,7 @@ BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "PersonalComputeHives.lean"
 SOURCE_INVENTORY = ROOT / "sources" / "source_inventory.json"
 SOURCE_NOTE = ROOT / "sources" / "source_notes" / "ext_cap_theorem_gilbert_lynch_2002.md"
-STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
+STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
 APPENDIX_E = ROOT / "appendices" / "E_codex_test_specs.qmd"
 
 COMMAND = "python3 scripts/validate_partitioned_authority_fixture.py"

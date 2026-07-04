@@ -32,10 +32,11 @@ REQUIRED_FIELDS = {
     "non_claims",
 }
 PUBLIC_SURFACES = [
-    ROOT / "docs" / "v1_0_candidate_status.md",
+    ROOT / "docs" / "test_harness_status_ledger.md",
     ROOT / "docs" / "v1_0_roadmap.md",
     ROOT / "README.md",
 ]
+STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
 
 
 def load_json(path: Path) -> Any:
@@ -153,9 +154,20 @@ def main() -> None:
     shared_paths = [
         ROOT / "scripts" / "validate_book.py",
         ROOT / "appendices" / "E_codex_test_specs.qmd",
+        STATUS,
         *PUBLIC_SURFACES,
     ]
     shared_text = {path: path.read_text(encoding="utf-8", errors="ignore") for path in shared_paths}
+
+    status_text = shared_text[STATUS]
+    for fragment in (
+        "docs/test_harness_status_ledger.md",
+        "59 wired checks",
+        "22 Phase 5 registry harnesses",
+        "37 chapter-specific/support book-gate checks",
+    ):
+        if fragment not in status_text:
+            errors.append(f"{rel(STATUS)} missing compact harness-ledger fragment: {fragment}")
 
     for entry in registry:
         if not isinstance(entry, dict):

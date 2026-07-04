@@ -38,7 +38,7 @@ CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "Authority.lean"
-STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
+STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 
 COMMAND = "python3 scripts/validate_authority_revocation_trace.py"

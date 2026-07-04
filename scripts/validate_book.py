@@ -56,6 +56,8 @@ REQUIRED = [
     "scripts/validate_source_appendices.py",
     "scripts/validate_trust_surface.py",
     "scripts/validate_v1_status_snapshot.py",
+    "scripts/validate_test_harness_status_ledger.py",
+    "docs/test_harness_status_ledger.md",
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
     "scripts/validate_proof_artifact_audit.py",
@@ -914,6 +916,7 @@ def main() -> None:
     run_validator("sync_reader_format_review_matrix.py", "--check")
     run_validator("validate_source_appendices.py")
     run_validator("validate_v1_status_snapshot.py")
+    run_validator("validate_test_harness_status_ledger.py")
     run_validator("validate_outline_consistency.py")
     run_validator("validate_implementation_horizons.py")
     run_validator("validate_reader_spine.py", "--check")

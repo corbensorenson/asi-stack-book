@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-04 - Move test harness status detail into generated ledger
+
+- Added `python3 scripts/validate_test_harness_status_ledger.py` and generated
+  `docs/test_harness_status_ledger.md` as the detailed inventory for 59 wired
+  checks: 22 Phase 5 registry harnesses and 37 chapter-specific/support
+  book-gate checks.
+- Replaced the 14.9k-character `docs/v1_0_candidate_status.md` Test harnesses
+  row with a compact count-plus-ledger-link row and updated
+  `python3 scripts/validate_v1_status_snapshot.py` plus
+  `python3 scripts/validate_book.py` to enforce the ledger pattern.
+- Boundary: this is status-surface structure and validation plumbing only; it
+  does not add a new harness result, create an evidence transition, approve a
+  release artifact, or promote any chapter core claim.
+
 ## 2026-07-04 - Add Artifact Graph record-reality sequence bridge
 
 - Added `python3 scripts/validate_artifact_graph_record_reality_sequence.py`,

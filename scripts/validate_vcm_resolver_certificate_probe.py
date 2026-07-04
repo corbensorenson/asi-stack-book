@@ -27,7 +27,7 @@ LIVE_CHAPTER = ROOT / "chapters" / "virtual-context-abi.qmd"
 READER_CHAPTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapters" / "virtual-context-abi.qmd"
 README = ROOT / "README.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
-STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
+STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
 
 SURFACE_FRAGMENTS = (
     "VCM resolver/certificate probe",
