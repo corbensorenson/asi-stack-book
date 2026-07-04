@@ -1,0 +1,130 @@
+{
+  "transition_id": "v1_x_measured.partitioned_authority_fixture.no_change",
+  "claim_id": "personal-compute-hives.partitioned_authority_fixture",
+  "claim_surface_refs": [
+    "docs/partitioned_authority_fixture.md",
+    "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "editions/reader_manuscript/v1_0/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+    "editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/partitioned_authority/results/2026-07-03-local.json",
+    "scripts/validate_partitioned_authority_fixture.py",
+    "lean/AsiStackProofs/PersonalComputeHives.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Partitioned-authority fixture only. The fixture validates three finite records and rejects six expected-invalid controls for stale-grant dispatch, mutation after unseen revocation, grant/effect race residual ownership, missing no-mutation evidence, support-state promotion, and missing non-claim boundaries. It does not run a distributed authority service, network partition test, deployed hive scheduler, runtime adapter enforcement service, consensus system, availability test, revocation propagation service, benchmark, security audit, or privacy audit.",
+  "evidence_roles": [
+    "finite_partitioned_authority_fixture",
+    "stale_grant_negative_control",
+    "revocation_delay_quarantine_route",
+    "fresh_authority_receipt_route",
+    "grant_effect_race_residual_owner_control",
+    "no_mutation_evidence_control",
+    "cap_style_authority_consistency_boundary",
+    "finite_lean_partitioned_authority_bridge",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The partitioned-authority fixture is useful because it makes stale grants, revocation-delay quarantine, fresh authority receipts, grant/effect race residual ownership, no-mutation evidence, CAP-style authority consistency limits, support-state boundaries, and non-claims executable as finite hives/runtime records. It remains a synthetic record fixture, not deployed distributed-authority evidence, so this accepted decision blocks promotion for deployed partition tolerance, distributed consensus, availability, runtime-adapter enforcement, revocation propagation, hive scheduler behavior, rented-node sandbox behavior, family-governance behavior, network-overlay behavior, security, privacy, benchmark performance, or chapter-core support.",
+  "required_artifacts": [
+    "live or externally reviewable grant/revocation propagation trace",
+    "partition and reconciliation replay",
+    "fresh-authority receipt trace from a deployed or externally reviewable authority service",
+    "runtime adapter enforcement trace under stale-grant pressure",
+    "distributed authority-service behavior evidence",
+    "hive scheduler or worker trace under partition pressure",
+    "independent authority-service review",
+    "security and privacy review for cross-device authority handling",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/partitioned_authority_fixture.md",
+    "experiments/partitioned_authority/results/2026-07-03-local.json",
+    "scripts/validate_partitioned_authority_fixture.py",
+    "lean/AsiStackProofs/PersonalComputeHives.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/partitioned_authority_fixture.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/test_harness_status_ledger.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#personal-compute-hives-and-federated-edge-intelligence.core",
+    "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
+    "docs/book_outline.md#personal-compute-hives-and-federated-edge-intelligence",
+    "docs/book_outline.md#runtime-adapters-tool-permissions-and-human-approval"
+  ],
+  "verification_command": "python3 scripts/validate_partitioned_authority_fixture.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "partitioned stale-grant dispatch is rejected",
+    "mutation after unseen revocation is rejected",
+    "grant/effect race without residual owner is rejected",
+    "partition denial without no-mutation evidence is rejected",
+    "support-state promotion from fixture shape is rejected",
+    "missing non-claim boundary is rejected",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/partitioned_authority_fixture.md",
+    "experiments/partitioned_authority/results/2026-07-03-local.json",
+    "scripts/validate_partitioned_authority_fixture.py"
+  ],
+  "downgrade_triggers": [
+    "partitioned-authority fixture validator failure",
+    "stale-grant dispatch accepted as valid",
+    "mutation after unseen revocation accepted without quarantine or no-mutation evidence",
+    "grant/effect race accepted without residual ownership",
+    "support-state promotion accepted from fixture shape",
+    "fixture described as deployed partition-tolerance, consensus, availability, revocation-propagation, runtime-adapter enforcement, hive-scheduler, security, privacy, benchmark, or support-state evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed partitioned-authority claim after live or externally reviewable grant/revocation propagation traces, partition/reconciliation replay, fresh-authority receipt behavior, runtime-adapter enforcement under stale-grant pressure, distributed authority-service behavior, hive scheduler or worker behavior under partition pressure, residual accounting, security and privacy review, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "finite synthetic record fixture only",
+    "no distributed authority service",
+    "no live network partition test",
+    "no deployed hive scheduler",
+    "no deployed runtime adapter enforcement",
+    "no distributed consensus or availability result",
+    "no deployed revocation propagation",
+    "no rented-node sandbox result",
+    "no family-governance result",
+    "no network-overlay result",
+    "no security review",
+    "no privacy review",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent distributed-systems, runtime-adapter, hive-scheduler, authority-service, security, privacy, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no live or externally reviewable grant/revocation propagation trace",
+    "no partition/reconciliation replay",
+    "no deployed authority-service behavior evidence",
+    "no runtime-adapter enforcement trace under stale-grant pressure",
+    "no deployed hive scheduler or worker trace under partition pressure",
+    "no independent authority-service review",
+    "no security or privacy review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-partitioned-authority-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote partitioned-authority evidence above argument",
+    "does not prove deployed partition tolerance, distributed consensus, availability, runtime-adapter enforcement, revocation propagation, hive scheduler behavior, rented-node sandbox behavior, family-governance behavior, network-overlay behavior, security, privacy, model quality, benchmark performance, safety, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Personal Compute Hives chapter core claim",
+    "does not promote the Runtime Adapters chapter core claim"
+  ]
+}

@@ -231,7 +231,7 @@ def build_result(errors: list[str]) -> dict[str, Any]:
         "non_claims": REQUIRED_NON_CLAIMS
         + [
             "does not reproduce the CAP theorem",
-            "does not create an evidence transition",
+            "does not create an upward evidence transition",
             "does not prove model quality, benchmark performance, safety, or ASI",
         ],
     }

@@ -22,4 +22,4 @@ The external comparator is `ext_cap_theorem_gilbert_lynch_2002`. It is used only
 - does not prove deployed revocation propagation
 - does not prove runtime adapter enforcement
 - does not promote any chapter core claim
-- does not create an evidence transition
+- does not create an upward evidence transition

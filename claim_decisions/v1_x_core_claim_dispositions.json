@@ -1156,6 +1156,7 @@
       "what_would_move_this": "High-impact adapter call fails without current approval and receipt.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
+        "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
         "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
         "evidence_transitions/v1_x_measured/runtime_adapter_effect_probe_no_change.json"
       ]
@@ -1335,7 +1336,9 @@
       "formal_or_prototype_work": "Add lease, approval, runner, and federation negative controls.",
       "human_reader_focus": "Make the chapter useful to people imagining home and edge compute.",
       "what_would_move_this": "Lease fixture proves bounded compute delegation and revocation.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json"
+      ]
     },
     {
       "claim_id": "compact-generative-systems-and-residual-honesty.core",

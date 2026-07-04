@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-04 - Record partitioned authority no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json`
+  as an accepted `blocks_promotion` decision for the existing finite
+  partitioned-authority fixture.
+- Updated `docs/non_core_evidence_ledger.md`, README, the landing page, and
+  the v1.x roadmap so the no-promotion side-lane count moves from 18 to 19 and
+  the hives/runtime stale-authority fixture appears in the explicit blocking
+  ledger.
+- Boundary: no support-state movement, no chapter-core promotion, no deployed
+  partition-tolerance claim, no distributed-consensus claim, no availability
+  claim, no runtime-adapter-enforcement claim, no revocation-propagation claim,
+  no hive-scheduler claim, no rented-node-sandbox claim, no family-governance
+  claim, no network-overlay claim, no security/privacy claim, no benchmark
+  claim, and no model-quality/safety/ASI claim.
+
 ## 2026-07-04 - Record runtime adapter adversarial boundary no-promotion decision
 
 - Added
