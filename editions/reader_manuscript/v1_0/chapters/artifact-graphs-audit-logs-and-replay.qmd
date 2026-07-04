@@ -180,6 +180,23 @@ The randomized artifact attestation audit widens the same local check. Its
 digest, replay, sample-laundering, self-check, unbounded-attestation, and
 support-promotion controls.
 
+The GitHub Pages CI attestation adds a different kind of observation. It
+records GitHub Actions run `28722833821`, where the public publication workflow
+on `main` completed source validation, Lean build, HTML render, live Human view
+validation, browser Human-view smoke testing, artifact upload, and deploy for
+commit `20c83c3ca1fc10d70ef8ff5bf6b8c5cc9e1f5450`. That matters because the
+evidence no longer lives only in a local terminal transcript. A hosted CI
+service also says this exact commit passed the publication pipeline.
+
+That stronger observation still has a narrow authority. The result at
+`experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json`
+and the no-promotion decision at
+`evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json`
+do not create external human review, open-world receipt faithfulness, deployed
+attestation behavior, reader release approval, or Artifact Graphs chapter-core
+support. They block one overclaim: a local-only record-reality story can no
+longer ignore the externally hosted CI service record for that commit.
+
 ## A Book-Scale Example
 
 The living book is a small example of the same problem.

@@ -386,7 +386,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "chapter_marker_rows": 49,
         "chapter_marker_tbd_rows": 49,
         "narration_note_count": 66,
-        "text_characters_checked": 1067905,
+        "text_characters_checked": 1069015,
         "target_artifact_status": {
             "mp3": "target_not_generated",
             "m4b": "target_not_generated",

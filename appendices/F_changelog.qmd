@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-04 - Add GitHub Pages CI attestation
+
+- Added `scripts/validate_artifact_github_pages_ci_attestation.py` and
+  `docs/artifact_github_pages_ci_attestation.md` to record one bounded external
+  CI-service attestation for the `Publish Quarto site` workflow.
+- Captured GitHub Actions run `28722833821` for commit
+  `20c83c3ca1fc10d70ef8ff5bf6b8c5cc9e1f5450`, where source validation, Lean
+  build, HTML render, live Human view validation, browser Human-view smoke
+  testing, Pages artifact upload, and deploy completed successfully.
+- Added accepted no-promotion decision
+  `evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json`
+  and updated the Artifact Graphs live/reader prose, contribution novelty
+  ledger, non-core evidence ledger, status count, outline, and roadmap.
+- Boundary: this is GitHub Actions service-status evidence for one commit. It
+  is not independent external human review, not reader release approval, not
+  deployed attestation behavior, not open-world receipt faithfulness, and it
+  does not move any chapter support state.
+
 ## 2026-07-04 - Add curated reader PDF viewer smoke review
 
 - Added `scripts/validate_curated_reader_pdf_viewer_review.py` to open the

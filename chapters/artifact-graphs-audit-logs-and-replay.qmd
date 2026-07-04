@@ -259,6 +259,20 @@ that audit and asks particular files and a Circle fingerprint to answer. The
 live artifact attestation probe then makes one produced artifact answer through
 filesystem bytes, git object bytes, and command replay.
 
+The GitHub Pages CI attestation adds one externally hosted service route to the
+same ladder. `python3 scripts/validate_artifact_github_pages_ci_attestation.py`
+checks `experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json`,
+which records GitHub Actions run `28722833821` for the `Publish Quarto site`
+workflow on `main`: source validation, Lean build, HTML render, live Human view
+validation, browser Human-view smoke testing, Pages artifact upload, and deploy
+completed successfully for commit `20c83c3ca1fc10d70ef8ff5bf6b8c5cc9e1f5450`.
+Accepted no-promotion decision
+`evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json`
+records that run as a `blocks_promotion` side lane only. It is GitHub Actions
+service-status evidence for one commit, not independent external human review,
+not open-world receipt faithfulness, not deployed attestation behavior, not
+reader release approval, and not Artifact Graphs chapter-core support.
+
 That chain is a showpiece for the argument, not a victory lap. It demonstrates
 a bounded route from record shape toward record reality inside this repository.
 It does not prove deployed attestation behavior, verifier correctness,
