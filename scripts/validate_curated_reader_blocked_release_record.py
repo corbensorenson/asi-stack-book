@@ -30,6 +30,7 @@ VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_ide
 ACCESSIBILITY_NAVIGATION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
 )
+KEYBOARD_NAVIGATION = ROOT / "editions" / "reader_manuscript" / "v1_0" / "keyboard_navigation_manifest.json"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 
@@ -62,6 +63,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_key_figure_geometry.py",
     "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_accessibility_navigation.py",
+    "python3 scripts/validate_reader_keyboard_navigation.py",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
     "python3 scripts/validate_reader_key_figure_epub_layout.py",
     "python3 scripts/validate_reader_key_figure_pdf_layout.py",
@@ -119,6 +121,7 @@ def main() -> None:
         AUDIO_PROBE,
         VISUAL_IDENTITY,
         ACCESSIBILITY_NAVIGATION,
+        KEYBOARD_NAVIGATION,
         HTML_REVIEW,
     ):
         if not path.exists():
@@ -138,6 +141,7 @@ def main() -> None:
     audio_probe = load_json(AUDIO_PROBE)
     visual_identity = load_json(VISUAL_IDENTITY)
     accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
+    keyboard_navigation = load_json(KEYBOARD_NAVIGATION)
     html_review = HTML_REVIEW.read_text(encoding="utf-8")
     if not isinstance(record, dict):
         fail([f"{rel(RECORD)} must contain a JSON object."])
@@ -163,6 +167,8 @@ def main() -> None:
         fail([f"{rel(VISUAL_IDENTITY)} must contain a JSON object."])
     if not isinstance(accessibility_navigation, dict):
         fail([f"{rel(ACCESSIBILITY_NAVIGATION)} must contain a JSON object."])
+    if not isinstance(keyboard_navigation, dict):
+        fail([f"{rel(KEYBOARD_NAVIGATION)} must contain a JSON object."])
 
     if record.get("record_type") != "edition_release":
         errors.append("record_type must be edition_release.")
@@ -249,6 +255,7 @@ def main() -> None:
     visual_figures = visual_identity.get("figure_source_summary", {})
     visual_contrast = visual_identity.get("contrast_summary", {})
     accessibility_summary = accessibility_navigation.get("summary", {})
+    keyboard_summary = keyboard_navigation.get("summary", {})
     if not isinstance(epub_audit, dict):
         errors.append("curated format epub_content_audit must be an object.")
         epub_audit = {}
@@ -333,6 +340,42 @@ def main() -> None:
             errors.append(
                 f"accessibility_navigation_manifest summary.{key} must be {expected!r}; found {observed!r}."
             )
+
+    if keyboard_navigation.get("status") != "passed_automated_keyboard_traversal_review":
+        errors.append("keyboard_navigation_manifest status must remain passed_automated_keyboard_traversal_review.")
+    if not isinstance(keyboard_summary, dict):
+        errors.append("keyboard_navigation_manifest summary must be an object.")
+        keyboard_summary = {}
+    expected_keyboard_metrics = {
+        "pages_checked": 49,
+        "expected_pages": 49,
+        "viewport_count": 2,
+        "page_view_pairs": 98,
+        "chapter_page_view_pairs": 88,
+        "tab_steps_per_page_view": 80,
+        "failed_page_view_pairs": 0,
+        "skip_link_reached_pairs": 98,
+        "skip_link_activated_pairs": 98,
+        "main_content_route_available_pairs": 98,
+        "navigation_focus_reached_pairs": 98,
+        "search_focus_reached_pairs": 98,
+        "keyboard_trap_candidates": 0,
+    }
+    for key, expected in expected_keyboard_metrics.items():
+        observed = keyboard_summary.get(key)
+        if observed != expected:
+            errors.append(f"keyboard_navigation_manifest summary.{key} must be {expected!r}; found {observed!r}.")
+    keyboard_boundary = str(keyboard_navigation.get("review_boundary", ""))
+    for fragment in (
+        "not manual keyboard-only review",
+        "not screen-reader review",
+        "not WCAG conformance",
+        "not e-reader review",
+        "not audiobook review",
+        "not reader release approval",
+    ):
+        if fragment not in keyboard_boundary:
+            errors.append(f"keyboard_navigation_manifest review_boundary missing {fragment!r}.")
 
     key_figure_expected = {
         ("epub", "matched_source_svg_titles"): 10,
@@ -540,6 +583,14 @@ def main() -> None:
         "reader_accessibility_navigation_figure_boundaries": accessibility_summary.get("figure_boundary_count"),
         "reader_accessibility_navigation_live_marker_leaks": accessibility_summary.get("live_marker_leak_count"),
         "reader_accessibility_navigation_raw_claim_leaks": accessibility_summary.get("raw_core_claim_marker_leak_count"),
+        "reader_keyboard_navigation_manifest": "editions/reader_manuscript/v1_0/keyboard_navigation_manifest.json",
+        "reader_keyboard_navigation_page_view_pairs": keyboard_summary.get("page_view_pairs"),
+        "reader_keyboard_navigation_failed_pairs": keyboard_summary.get("failed_page_view_pairs"),
+        "reader_keyboard_navigation_skip_link_activated": keyboard_summary.get("skip_link_activated_pairs"),
+        "reader_keyboard_navigation_main_route_pairs": keyboard_summary.get("main_content_route_available_pairs"),
+        "reader_keyboard_navigation_navigation_pairs": keyboard_summary.get("navigation_focus_reached_pairs"),
+        "reader_keyboard_navigation_search_pairs": keyboard_summary.get("search_focus_reached_pairs"),
+        "reader_keyboard_navigation_trap_candidates": keyboard_summary.get("keyboard_trap_candidates"),
         "audio_reading_flow_script_files": audio_reading_flow.get("script_files_checked"),
         "audio_reading_flow_ordered_markers": audio_reading_flow.get("chapter_marker_rows"),
         "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
@@ -558,6 +609,10 @@ def main() -> None:
         "epub key-figure layout",
         "pdf key-figure layout",
         "docx key-figure layout",
+        "automated keyboard traversal",
+        "manual keyboard-only",
+        "screen-reader",
+        "wcag",
         "do not approve epub",
         "final figure art",
         "curated reader edition",
@@ -654,6 +709,9 @@ def main() -> None:
             "DOCX key-figure layout review",
             "10 key-figure title pages",
             "72.1 pt minimum title margin",
+            "automated keyboard traversal review",
+            "98 page-view pairs",
+            "0 keyboard trap candidates",
         ],
         errors,
     )
@@ -670,6 +728,7 @@ def main() -> None:
             "EPUB key-figure layout review",
             "PDF key-figure layout review",
             "DOCX key-figure layout review",
+            "automated keyboard traversal review",
             "keyboard-only",
             "screen-reader",
             "manual aesthetic",
@@ -707,6 +766,8 @@ def main() -> None:
             "does not clear Word review",
             "does not clear LibreOffice GUI review",
             "does not clear Google Docs review",
+            "Automated keyboard traversal review is recorded as preparation evidence only",
+            "does not clear manual keyboard-only review",
             "e-reader visual review",
             "visual identity approval",
         ],

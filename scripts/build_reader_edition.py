@@ -1082,6 +1082,8 @@ def write_quarto(output_dir: Path, structure: dict, profile: dict) -> None:
             "    theme:",
             "      - cosmo",
             "      - assets/styles.scss",
+            "    include-before-body:",
+            "      - assets/skip-link.html",
             "    link-external-newwindow: true",
         ])
     if "epub" in formats:

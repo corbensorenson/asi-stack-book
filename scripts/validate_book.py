@@ -37,6 +37,8 @@ REQUIRED = [
     "scripts/validate_reader_key_figure_geometry.py",
     "scripts/validate_reader_visual_identity.py",
     "scripts/validate_reader_accessibility_navigation.py",
+    "scripts/validate_reader_keyboard_navigation.py",
+    "scripts/validate_curated_reader_keyboard_navigation.js",
     "scripts/validate_reader_key_figure_raster_probe.py",
     "scripts/validate_reader_key_figure_epub_layout.py",
     "scripts/validate_reader_key_figure_pdf_layout.py",
@@ -49,6 +51,9 @@ REQUIRED = [
     "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
     "docs/reader_accessibility_navigation_review.md",
     "editions/reader_manuscript/v1_0/accessibility_navigation_manifest.json",
+    "docs/reader_keyboard_navigation_review.md",
+    "editions/reader_manuscript/v1_0/keyboard_navigation_manifest.json",
+    "assets/skip-link.html",
     "docs/reader_key_figure_raster_review.md",
     "editions/reader_manuscript/v1_0/key_figure_raster_manifest.json",
     "docs/reader_key_figure_epub_layout_review.md",
@@ -958,6 +963,7 @@ def main() -> None:
     run_validator("validate_reader_key_figure_geometry.py")
     run_validator("validate_reader_visual_identity.py")
     run_validator("validate_reader_accessibility_navigation.py")
+    run_validator("validate_reader_keyboard_navigation.py")
     run_validator("validate_reader_key_figure_raster_probe.py")
     run_validator("validate_reader_key_figure_epub_layout.py")
     run_validator("validate_reader_key_figure_pdf_layout.py")

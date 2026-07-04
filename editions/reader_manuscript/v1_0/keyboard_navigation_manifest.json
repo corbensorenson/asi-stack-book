@@ -1,0 +1,39 @@
+{
+  "schema_version": "asi_stack.curated_reader_keyboard_navigation.v0",
+  "result_id": "curated-reader-keyboard-navigation-2026-07-04",
+  "status": "passed_automated_keyboard_traversal_review",
+  "command": "node scripts/validate_curated_reader_keyboard_navigation.js",
+  "write_command": "node scripts/validate_curated_reader_keyboard_navigation.js --write-manifest",
+  "artifact_root": "build/curated_reader_edition/format_artifacts/html/_reader_site",
+  "source_manifest": "build/curated_reader_edition/reader_manifest.json",
+  "detailed_report": "build/curated_reader_edition/curated_reader_keyboard_navigation_report.json",
+  "summary": {
+    "pages_checked": 49,
+    "expected_pages": 49,
+    "viewport_count": 2,
+    "page_view_pairs": 98,
+    "chapter_page_view_pairs": 88,
+    "tab_steps_per_page_view": 80,
+    "failed_page_view_pairs": 0,
+    "minimum_focusable_elements": 7,
+    "minimum_unique_focus_targets": 8,
+    "skip_link_reached_pairs": 98,
+    "skip_link_activated_pairs": 98,
+    "main_content_focus_reached_pairs": 97,
+    "main_content_route_available_pairs": 98,
+    "navigation_focus_reached_pairs": 98,
+    "search_focus_reached_pairs": 98,
+    "body_or_document_focus_events": 86,
+    "invisible_focus_events": 113,
+    "keyboard_trap_candidates": 0
+  },
+  "review_boundary": "This automated keyboard traversal review opens the ignored local curated reader HTML artifact in Chromium, verifies the skip-to-main route, tabs through each page at desktop and mobile widths, and checks focus reachability, search/nav reachability, main-content route availability, and trap absence. It records body-wrap and offscreen focus observations as residuals. It is not manual keyboard-only review, not screen-reader review, not WCAG conformance, not e-reader review, not audiobook review, not final figure-artifact approval, and not reader release approval.",
+  "non_claims": [
+    "does not approve the curated reader HTML artifact for release",
+    "does not certify WCAG conformance",
+    "does not perform screen-reader review",
+    "does not perform manual keyboard-only review",
+    "does not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or reader release artifacts",
+    "does not promote any chapter core claim or support state"
+  ]
+}

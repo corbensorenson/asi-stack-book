@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-04 - Add curated reader keyboard traversal review
+
+- Added `assets/skip-link.html` and wired it through the Quarto scaffold and
+  curated reader builder so generated pages expose a skip-to-main route for the
+  live and curated-reader HTML surfaces.
+- Added `scripts/validate_curated_reader_keyboard_navigation.js` and
+  `scripts/validate_reader_keyboard_navigation.py`, recording the result in
+  `editions/reader_manuscript/v1_0/keyboard_navigation_manifest.json` and
+  `docs/reader_keyboard_navigation_review.md`: 49 curated reader HTML pages,
+  98 desktop/mobile page-view pairs, 0 failed pairs, 98 skip-link activations,
+  98 main-content routes, 98 navigation/search reach observations, and 0
+  keyboard-trap candidates.
+- Wired the review into `scripts/validate_book.py`, the release-surface status
+  ledger, the blocked curated-reader release record, the release-record schema,
+  the repository map, and the v1.x roadmap.
+- Boundary: this is automated local Chromium keyboard traversal review only.
+  It is not manual keyboard-only review, not screen-reader review, not WCAG
+  conformance, not e-reader review, not audiobook review, not final figure-art
+  approval, not reader release approval, and it does not promote any support
+  state.
+
 ## 2026-07-04 - Add Compact GVR status ledger
 
 - Added `scripts/validate_compact_gvr_status_ledger.py` and generated

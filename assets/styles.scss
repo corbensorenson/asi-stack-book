@@ -23,6 +23,32 @@ body {
   letter-spacing: 0;
 }
 
+.asi-skip-link {
+  position: fixed;
+  top: -6rem;
+  left: 0.75rem;
+  z-index: 3000;
+  border: 2px solid var(--asi-accent);
+  border-radius: 6px;
+  padding: 0.45rem 0.65rem;
+  background: #ffffff;
+  color: var(--asi-ink);
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(24, 32, 42, 0.16);
+}
+
+.asi-skip-link:focus,
+.asi-skip-link:focus-visible {
+  top: 0.5rem;
+  outline: 3px solid #245f73;
+  outline-offset: 2px;
+}
+
+:where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid #245f73;
+  outline-offset: 2px;
+}
+
 .quarto-title-banner {
   background: linear-gradient(180deg, #f4f8fa 0%, #ffffff 100%);
   border-bottom: 1px solid var(--asi-border);
