@@ -44,6 +44,13 @@ These counts are script-preparation cues. They tell a future narration review
 where tables, diagrams, images, or dense material need spoken summaries or
 companion-note routing before any audio artifact can be claimed.
 
+The ten reader-manuscript key figures now have tracked draft spoken summaries
+and e-reader fallback guidance in
+`editions/reader_manuscript/v1_0/companion_notes/key-figures.md`. The generated
+audio companion workspace points future reviewers to that note through the
+release-profile companion-material policy. This is still not narration
+approval, final figure-artifact approval, or evidence that audio files exist.
+
 ## Target Artifact Status
 
 | Artifact | Status |

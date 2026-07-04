@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 ASSET_README = ROOT / "assets" / "diagrams" / "README.md"
 REVIEW = ROOT / "docs" / "reader_key_figure_artifact_review.md"
+COMPANION_NOTE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "companion_notes" / "key-figures.md"
 
 EXPECTED_COUNT = 10
 BOUNDARY_PHRASES = (
@@ -181,6 +182,35 @@ def validate_review_doc(figures: list[dict[str, Any]], errors: list[str]) -> Non
             errors.append(f"{rel(REVIEW)} missing figure asset {asset}.")
 
 
+def validate_companion_note(figures: list[dict[str, Any]], errors: list[str]) -> None:
+    if not COMPANION_NOTE.exists():
+        errors.append(f"Missing {rel(COMPANION_NOTE)}.")
+        return
+    text = COMPANION_NOTE.read_text(encoding="utf-8", errors="ignore")
+    lower = text.lower()
+    required = [
+        "Status: drafting companion note, not release reviewed.",
+        "## Spoken Figure Summaries",
+        "## Audio Treatment",
+        "## E-Reader Treatment",
+        "not final figure-artifact approval",
+        "not EPUB, DOCX, PDF, HTML, e-reader, MP3, M4B, or",
+        "does not promote any chapter core claim",
+    ]
+    for phrase in required:
+        if phrase not in text:
+            errors.append(f"{rel(COMPANION_NOTE)} missing required phrase {phrase!r}.")
+    for figure in figures:
+        asset = str(figure.get("draft_asset_path", ""))
+        title = str(figure.get("working_title", ""))
+        if asset and asset not in text:
+            errors.append(f"{rel(COMPANION_NOTE)} missing figure asset {asset}.")
+        if title and title not in text:
+            errors.append(f"{rel(COMPANION_NOTE)} missing figure title {title!r}.")
+    if lower.count("does not prove") < 6:
+        errors.append(f"{rel(COMPANION_NOTE)} must preserve repeated non-proof boundaries.")
+
+
 def main() -> None:
     errors: list[str] = []
     manifest = load_json(MANIFEST)
@@ -228,6 +258,7 @@ def main() -> None:
         validate_reader_surface(figure, owner, asset_name, errors)
 
     validate_review_doc(figures, errors)
+    validate_companion_note(figures, errors)
     if errors:
         print("Reader key-figure validation failed:")
         for error in errors:

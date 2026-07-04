@@ -7,6 +7,14 @@ companion-note candidates in the reader chapter review matrix. It is not a
 reader release record, not an ebook/document/PDF/audio artifact review, not a
 curated reader-manuscript graduation, and not a support-state promotion.
 
+The ten reader-manuscript key figures are now handled by a separate drafting
+companion note at
+`editions/reader_manuscript/v1_0/companion_notes/key-figures.md`, validated by
+`python3 scripts/validate_reader_key_figures.py`. That note supports audio and
+e-reader review for figures; it does not change the twelve chapter-level
+companion-note routing decisions below and does not approve any figure, format,
+or audio artifact.
+
 ## Inputs
 
 - `editions/reader_manuscript/v1_0/chapter_review_matrix.json`
@@ -67,10 +75,13 @@ must preserve the claim boundary.
 - This review records that forty-four curated reader chapters now exist, with
   zero drafting records and forty-four reconciled prose records; it does not
   approve any chapter for release.
-- This review records twelve drafting companion notes for dense planning,
+- This review records twelve drafting chapter companion notes for dense planning,
   routing, hive, compression, speed, resource, proof, cyclic-substrate, policy,
   governance, and implementation-reference chapters; it does not approve them as
   e-reader, audio, or release artifacts.
+- This review records one separate drafting key-figure companion note; it does
+  not approve key figures as final art or approve any spoken, e-reader, EPUB,
+  DOCX, PDF, HTML, MP3, M4B, or audio-embedded EPUB artifact.
 - This review does not promote any claim support state.
 - This review does not claim planner quality, route quality, hive scheduler
   execution, federation safety, speedup, compression utility, semantic

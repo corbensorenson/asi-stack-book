@@ -34,6 +34,14 @@ caption treatment, mobile contained horizontal scroll for wide diagrams, and
 print page-break avoidance. This improves the rendered review surface, but it
 does not approve final figure art or any reader release artifact.
 
+2026-07-04 audio/e-reader companion update:
+`editions/reader_manuscript/v1_0/companion_notes/key-figures.md` now records a
+draft spoken summary, e-reader treatment note, and non-claim boundary for each
+of the ten key figures. `python3 scripts/validate_reader_key_figures.py` checks
+that the companion note covers every manifest key-figure asset. This is still
+not narration approval, final figure-artifact approval, or an audio/e-reader
+release record.
+
 ## Current Draft Assets
 
 | Asset | Live chapter | Curated reader chapter | Current state |
@@ -68,5 +76,8 @@ Open residuals:
 - DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
 - PDF: inspect page-level layout, figure scaling, and caption placement.
 - Audio: write companion narration or spoken summaries for each figure.
+- Audio: review the drafting spoken summaries in
+  `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` inside the
+  future narration script; no audio artifact or narration approval exists yet.
 - Release: create or update an edition release record only after format review
   is complete.

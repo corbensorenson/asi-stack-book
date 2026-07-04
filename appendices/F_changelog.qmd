@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-04 - Add key-figure audio companion treatment
+
+- Added
+  `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` with draft
+  spoken summaries, e-reader treatment guidance, and explicit non-claims for
+  all ten reader-manuscript key figures.
+- Extended `scripts/validate_reader_key_figures.py` so the key-figure companion
+  note must cover every manifest key-figure asset and preserve audio/e-reader
+  release boundaries.
+- Updated the key-figure artifact review, companion-note README, and v1.x
+  roadmap to route key-figure audio/e-reader treatment through tracked review
+  support instead of leaving it as an unrecorded future task; the release
+  profile now names the key-figure spoken-summary companion note as required
+  companion-review material.
+- Boundary: this is companion-note and validator work only. It is not
+  narration approval, final figure-artifact approval, EPUB/DOCX/PDF/e-reader
+  approval, an audiobook, an audio-embedded EPUB, a release record, a source
+  claim, or a support-state transition.
+
 ## 2026-07-04 - Polish key-figure presentation layer
 
 - Updated `assets/styles.scss` so live `.asi-key-figure` blocks and curated
