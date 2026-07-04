@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-04 - Refresh curated reader format probe
+
+- Rerendered the tracked curated reader manuscript locally to HTML, EPUB,
+  DOCX, and PDF using
+  `python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf`.
+- Reinspected the ignored local artifacts with
+  `python3 scripts/inspect_curated_reader_format_artifacts.py`; the current
+  probe records 49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media
+  entries, 0 DOCX SVG media entries, 0 SVG conversion warnings, EPUB SHA-256
+  `fb7801cea04de13cfc0a432b6728b6ef80ff062da39389b8613b1432c07e0e3a`,
+  DOCX SHA-256
+  `5ca64f4fe2d46250d690a14757647b60cf4598d4de8cfc540ca29606efe08c02`,
+  and a 525-page PDF with SHA-256
+  `d1031a4ab093a3689b3a3b10a0918148bcedd0479d8463d1a0b0e508cddf77a7`.
+- Updated the curated reader format probe manifest, summary, validator, v1.0
+  status snapshot, and v1.x roadmap so format-review blockers reference the
+  current local artifacts.
+- Boundary: this is a local structural probe over ignored artifacts only. It
+  does not approve EPUB, DOCX, PDF, e-reader, audio, or a refreshed reader
+  release; it does not create an edition release record; it does not clear
+  application-level review blockers; and it does not promote any support
+  state.
+
 ## 2026-07-04 - Add context transaction sequence bridge
 
 - Added `python3 scripts/validate_context_transaction_sequence_bridge.py` plus

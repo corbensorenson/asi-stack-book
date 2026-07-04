@@ -1,6 +1,6 @@
 # Curated Reader Format Artifact Probe
 
-Last updated: 2026-07-03
+Last updated: 2026-07-04
 
 This note records a local structural render and inspection probe for the
 tracked curated reader manuscript. It is not an edition release record, a
@@ -47,9 +47,9 @@ or PDF artifact.
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,700,252 bytes, SHA-256 `476e78683e060447b0e36ba746db746bf901f70427ce7b9e022e039bface72aa`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,357,441 bytes, SHA-256 `966f78babb53d1caa2e42f70eb1258dd690b6a387cf15c7b3ced8acaca7ec445`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,255 paragraph markers, required Word package entries present. |
-| pdf | passed | 9,350,151 bytes, SHA-256 `40bc507d909a1614ae4cbe0f54f35dfeb95cdd787ac4368fe9e8ca0450d166cb`, 524 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,701,941 bytes, SHA-256 `fb7801cea04de13cfc0a432b6728b6ef80ff062da39389b8613b1432c07e0e3a`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,359,460 bytes, SHA-256 `5ca64f4fe2d46250d690a14757647b60cf4598d4de8cfc540ca29606efe08c02`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,306 paragraph markers, required Word package entries present. |
+| pdf | passed | 9,355,288 bytes, SHA-256 `d1031a4ab093a3689b3a3b10a0918148bcedd0479d8463d1a0b0e508cddf77a7`, 525 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## Review Decision
 

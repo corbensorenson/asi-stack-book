@@ -3459,7 +3459,7 @@ Current status:
   record that the tracked curated reader manuscript rendered locally to HTML,
   EPUB, DOCX, and PDF and passed structural inspection: 49 HTML files, 44
   chapter HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, and a
-  524-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
+  525-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
   now generates ten temporary PNG fallbacks from the tracked SVG key figures
   inside the ignored build workspace and restores the source workspace after
   rendering, eliminating the previous SVG-conversion warnings. EPUB, DOCX, PDF,
