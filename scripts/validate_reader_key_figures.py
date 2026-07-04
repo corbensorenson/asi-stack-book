@@ -20,6 +20,8 @@ RASTER_PROBE_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_
 RASTER_PROBE_DOC = ROOT / "docs" / "reader_key_figure_raster_review.md"
 PDF_LAYOUT_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 PDF_LAYOUT_DOC = ROOT / "docs" / "reader_key_figure_pdf_layout_review.md"
+DOCX_LAYOUT_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
+DOCX_LAYOUT_DOC = ROOT / "docs" / "reader_key_figure_docx_layout_review.md"
 
 EXPECTED_COUNT = 10
 BOUNDARY_PHRASES = (
@@ -175,6 +177,7 @@ def validate_review_doc(figures: list[dict[str, Any]], errors: list[str]) -> Non
         "python3 scripts/validate_reader_key_figure_format_probe.py --write-manifest --write-doc",
         "python3 scripts/validate_reader_key_figure_raster_probe.py --write-manifest --write-doc",
         "python3 scripts/validate_reader_key_figure_pdf_layout.py --write-manifest --write-doc",
+        "python3 scripts/validate_reader_key_figure_docx_layout.py --write-manifest --write-doc",
         "not a release approval",
         "not final figure-artifact review",
         "EPUB",
@@ -340,6 +343,59 @@ def validate_pdf_layout_probe(figures: list[dict[str, Any]], errors: list[str]) 
             errors.append(f"{rel(PDF_LAYOUT_DOC)} missing required phrase {phrase!r}.")
 
 
+def validate_docx_layout_probe(figures: list[dict[str, Any]], errors: list[str]) -> None:
+    if not DOCX_LAYOUT_MANIFEST.exists():
+        errors.append(f"Missing {rel(DOCX_LAYOUT_MANIFEST)}.")
+        return
+    if not DOCX_LAYOUT_DOC.exists():
+        errors.append(f"Missing {rel(DOCX_LAYOUT_DOC)}.")
+        return
+    manifest = load_json(DOCX_LAYOUT_MANIFEST)
+    if manifest.get("schema_version") != "asi_stack.reader_key_figure_docx_layout.v0":
+        errors.append(f"{rel(DOCX_LAYOUT_MANIFEST)} schema_version drifted.")
+    if manifest.get("status") != "passed_local_docx_key_figure_layout_probe":
+        errors.append(f"{rel(DOCX_LAYOUT_MANIFEST)} status must be passed_local_docx_key_figure_layout_probe.")
+    summary = manifest.get("summary", {})
+    if not isinstance(summary, dict):
+        errors.append(f"{rel(DOCX_LAYOUT_MANIFEST)} summary must be an object.")
+        summary = {}
+    expected = {
+        "figure_count": len(figures),
+        "docx_converted_pdf_pages": 503,
+        "unique_title_pages": 10,
+        "raster_pages_rendered": 10,
+        "standard_page_size_count": 10,
+        "minimum_title_margin_pt": 72.1,
+        "maximum_near_edge_ink_percent": 0.0,
+    }
+    for key, value in expected.items():
+        observed = summary.get(key)
+        if observed != value:
+            errors.append(f"{rel(DOCX_LAYOUT_MANIFEST)} summary.{key} must be {value}, found {observed}.")
+    thresholds = {
+        "minimum_page_ink_percent": 9.0,
+        "minimum_luminance_std": 37.0,
+    }
+    for key, threshold in thresholds.items():
+        observed = summary.get(key)
+        if not isinstance(observed, (int, float)) or observed < threshold:
+            errors.append(f"{rel(DOCX_LAYOUT_MANIFEST)} summary.{key} must be at least {threshold}.")
+    doc_text = DOCX_LAYOUT_DOC.read_text(encoding="utf-8", errors="ignore")
+    for phrase in (
+        "Reader Key-Figure DOCX Layout Review",
+        "| Key-figure title pages | 10 |",
+        "| Raster pages rendered | 10 |",
+        "not Word review",
+        "not LibreOffice GUI review",
+        "not Google Docs review",
+        "not manual document review",
+        "not final figure-artifact approval",
+        "not reader release approval",
+    ):
+        if phrase not in doc_text:
+            errors.append(f"{rel(DOCX_LAYOUT_DOC)} missing required phrase {phrase!r}.")
+
+
 def validate_companion_note(figures: list[dict[str, Any]], errors: list[str]) -> None:
     if not COMPANION_NOTE.exists():
         errors.append(f"Missing {rel(COMPANION_NOTE)}.")
@@ -419,6 +475,7 @@ def main() -> None:
     validate_format_probe(figures, errors)
     validate_raster_probe(figures, errors)
     validate_pdf_layout_probe(figures, errors)
+    validate_docx_layout_probe(figures, errors)
     validate_companion_note(figures, errors)
     if errors:
         print("Reader key-figure validation failed:")

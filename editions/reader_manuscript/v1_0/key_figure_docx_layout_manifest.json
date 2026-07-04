@@ -1,0 +1,244 @@
+{
+  "schema_version": "asi_stack.reader_key_figure_docx_layout.v0",
+  "status": "passed_local_docx_key_figure_layout_probe",
+  "command": "python3 scripts/validate_reader_key_figure_docx_layout.py",
+  "source_docx_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+  "source_docx_sha256": "1690f5b3bf63781e9dd819a7c66f1724043d74eee4d2132fa48e6597d4e5d7c1",
+  "conversion_engine": "LibreOffice headless Writer PDF export",
+  "converter_version": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+  "converted_pdf_sha256": "0440a8d2c814a9a115b05729127be397cddd9d237d004906579157c157e93457",
+  "summary": {
+    "figure_count": 10,
+    "docx_converted_pdf_pages": 503,
+    "unique_title_pages": 10,
+    "raster_pages_rendered": 10,
+    "standard_page_size_count": 10,
+    "minimum_title_margin_pt": 72.1,
+    "minimum_page_ink_percent": 9.53,
+    "maximum_near_edge_ink_percent": 0.0,
+    "minimum_luminance_std": 37.95
+  },
+  "figures": [
+    {
+      "id": "asi_stack_control_plane",
+      "caption_title": "ASI Stack control plane",
+      "title_page": 4,
+      "expected_title_page": 4,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 438.772,
+        "x_max": 238.024,
+        "y_max": 455.116,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 10.08,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 38.69
+      },
+      "passed": true
+    },
+    {
+      "id": "authority_to_effect_path",
+      "caption_title": "Authority to effect path",
+      "title_page": 21,
+      "expected_title_page": 21,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 464.122,
+        "x_max": 237.076,
+        "y_max": 480.466,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 10.42,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 39.33
+      },
+      "passed": true
+    },
+    {
+      "id": "evidence_state_ladder",
+      "caption_title": "Evidence state ladder",
+      "title_page": 39,
+      "expected_title_page": 39,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 348.022,
+        "x_max": 225.616,
+        "y_max": 364.366,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 11.61,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 38.17
+      },
+      "passed": true
+    },
+    {
+      "id": "intent_to_artifact_trace",
+      "caption_title": "Intent to artifact trace",
+      "title_page": 106,
+      "expected_title_page": 106,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 629.272,
+        "x_max": 232.66,
+        "y_max": 645.616,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 12.09,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 40.04
+      },
+      "passed": true
+    },
+    {
+      "id": "context_transaction_lifecycle",
+      "caption_title": "Context transaction lifecycle",
+      "title_page": 142,
+      "expected_title_page": 142,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 587.572,
+        "x_max": 264.34,
+        "y_max": 603.916,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 12.35,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 39.76
+      },
+      "passed": true
+    },
+    {
+      "id": "readiness_residual_quarantine_map",
+      "caption_title": "Readiness residual quarantine map",
+      "title_page": 223,
+      "expected_title_page": 223,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 464.122,
+        "x_max": 302.152,
+        "y_max": 480.466,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 12.65,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 39.55
+      },
+      "passed": true
+    },
+    {
+      "id": "route_selection_budget_tradeoff",
+      "caption_title": "Route selection budget tradeoff",
+      "title_page": 282,
+      "expected_title_page": 282,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 538.522,
+        "x_max": 278.632,
+        "y_max": 554.866,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 10.93,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 39.17
+      },
+      "passed": true
+    },
+    {
+      "id": "compression_and_generation_acceptance",
+      "caption_title": "Compression and generation acceptance",
+      "title_page": 246,
+      "expected_title_page": 246,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 406.072,
+        "x_max": 330.964,
+        "y_max": 422.416,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 11.4,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 39.97
+      },
+      "passed": true
+    },
+    {
+      "id": "cyclic_substrate_adoption_gate",
+      "caption_title": "Cyclic substrate adoption gate",
+      "title_page": 319,
+      "expected_title_page": 319,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 348.022,
+        "x_max": 274.3,
+        "y_max": 364.366,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 9.98,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 38.65
+      },
+      "passed": true
+    },
+    {
+      "id": "living_book_release_pipeline",
+      "caption_title": "Living book release pipeline",
+      "title_page": 393,
+      "expected_title_page": 393,
+      "title_bbox": {
+        "x_min": 72.1,
+        "y_min": 480.472,
+        "x_max": 258.916,
+        "y_max": 496.816,
+        "margin_min_pt": 72.1
+      },
+      "raster": {
+        "width": 612,
+        "height": 792,
+        "ink_percent": 9.53,
+        "near_edge_ink_percent": 0.0,
+        "luminance_std": 37.95
+      },
+      "passed": true
+    }
+  ],
+  "release_blockers_preserved": [
+    "docx_application_review_not_completed",
+    "final_figure_artifact_review_not_completed",
+    "reader_edition_release_record_not_created"
+  ],
+  "non_claims": [
+    "This is a local DOCX-to-PDF key-figure layout probe only.",
+    "This probe is not Word review, not LibreOffice GUI review, not Google Docs review, and not manual document review.",
+    "This probe is not final figure-artifact approval and not reader release approval.",
+    "This probe does not prove visual quality, accessibility adequacy, source interpretation, support-state movement, or publication readiness."
+  ]
+}

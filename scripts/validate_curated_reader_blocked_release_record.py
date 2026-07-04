@@ -22,6 +22,7 @@ KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figu
 KEY_FIGURE_GEOMETRY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_geometry_manifest.json"
 KEY_FIGURE_RASTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_raster_manifest.json"
 KEY_FIGURE_PDF_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
+KEY_FIGURE_DOCX_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
 VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
@@ -62,6 +63,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_accessibility_navigation.py",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
     "python3 scripts/validate_reader_key_figure_pdf_layout.py",
+    "python3 scripts/validate_reader_key_figure_docx_layout.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_release_surface_status_ledger.py",
@@ -109,6 +111,7 @@ def main() -> None:
         KEY_FIGURE_GEOMETRY,
         KEY_FIGURE_RASTER,
         KEY_FIGURE_PDF_LAYOUT,
+        KEY_FIGURE_DOCX_LAYOUT,
         READER_MANIFEST,
         AUDIO_PROBE,
         VISUAL_IDENTITY,
@@ -126,6 +129,7 @@ def main() -> None:
     key_figure_geometry = load_json(KEY_FIGURE_GEOMETRY)
     key_figure_raster = load_json(KEY_FIGURE_RASTER)
     key_figure_pdf_layout = load_json(KEY_FIGURE_PDF_LAYOUT)
+    key_figure_docx_layout = load_json(KEY_FIGURE_DOCX_LAYOUT)
     reader_manifest = load_json(READER_MANIFEST)
     audio_probe = load_json(AUDIO_PROBE)
     visual_identity = load_json(VISUAL_IDENTITY)
@@ -143,6 +147,8 @@ def main() -> None:
         fail([f"{rel(KEY_FIGURE_RASTER)} must contain a JSON object."])
     if not isinstance(key_figure_pdf_layout, dict):
         fail([f"{rel(KEY_FIGURE_PDF_LAYOUT)} must contain a JSON object."])
+    if not isinstance(key_figure_docx_layout, dict):
+        fail([f"{rel(KEY_FIGURE_DOCX_LAYOUT)} must contain a JSON object."])
     if not isinstance(reader_manifest, dict):
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
     if not isinstance(audio_probe, dict):
@@ -231,6 +237,7 @@ def main() -> None:
     geometry_summary = key_figure_geometry.get("summary", {})
     raster_summary = key_figure_raster.get("summary", {})
     pdf_layout_summary = key_figure_pdf_layout.get("summary", {})
+    docx_layout_summary = key_figure_docx_layout.get("summary", {})
     visual_palette = visual_identity.get("palette_summary", {})
     visual_figures = visual_identity.get("figure_source_summary", {})
     visual_contrast = visual_identity.get("contrast_summary", {})
@@ -375,6 +382,29 @@ def main() -> None:
         if not isinstance(observed, (int, float)) or observed < minimum:
             errors.append(f"key_figure_pdf_layout_manifest summary.{key} must be at least {minimum}; found {observed!r}.")
 
+    if key_figure_docx_layout.get("status") != "passed_local_docx_key_figure_layout_probe":
+        errors.append("key_figure_docx_layout_manifest status must remain passed_local_docx_key_figure_layout_probe.")
+    expected_docx_layout_metrics = {
+        "figure_count": 10,
+        "docx_converted_pdf_pages": 503,
+        "unique_title_pages": 10,
+        "raster_pages_rendered": 10,
+        "standard_page_size_count": 10,
+        "minimum_title_margin_pt": 72.1,
+        "maximum_near_edge_ink_percent": 0.0,
+    }
+    for key, expected in expected_docx_layout_metrics.items():
+        observed = docx_layout_summary.get(key) if isinstance(docx_layout_summary, dict) else None
+        if observed != expected:
+            errors.append(f"key_figure_docx_layout_manifest summary.{key} must be {expected!r}; found {observed!r}.")
+    for key, minimum in {
+        "minimum_page_ink_percent": 9.0,
+        "minimum_luminance_std": 37.0,
+    }.items():
+        observed = docx_layout_summary.get(key) if isinstance(docx_layout_summary, dict) else None
+        if not isinstance(observed, (int, float)) or observed < minimum:
+            errors.append(f"key_figure_docx_layout_manifest summary.{key} must be at least {minimum}; found {observed!r}.")
+
     closure = record.get("format_probe_closure")
     if not isinstance(closure, dict):
         errors.append("format_probe_closure must be present and must be an object.")
@@ -432,6 +462,22 @@ def main() -> None:
         "key_figure_pdf_layout_max_near_edge_ink": pdf_layout_summary.get("maximum_near_edge_ink_percent")
         if isinstance(pdf_layout_summary, dict)
         else None,
+        "key_figure_docx_layout_manifest": "editions/reader_manuscript/v1_0/key_figure_docx_layout_manifest.json",
+        "key_figure_docx_layout_title_pages": docx_layout_summary.get("unique_title_pages")
+        if isinstance(docx_layout_summary, dict)
+        else None,
+        "key_figure_docx_layout_raster_pages": docx_layout_summary.get("raster_pages_rendered")
+        if isinstance(docx_layout_summary, dict)
+        else None,
+        "key_figure_docx_layout_min_title_margin": docx_layout_summary.get("minimum_title_margin_pt")
+        if isinstance(docx_layout_summary, dict)
+        else None,
+        "key_figure_docx_layout_min_page_ink": docx_layout_summary.get("minimum_page_ink_percent")
+        if isinstance(docx_layout_summary, dict)
+        else None,
+        "key_figure_docx_layout_max_near_edge_ink": docx_layout_summary.get("maximum_near_edge_ink_percent")
+        if isinstance(docx_layout_summary, dict)
+        else None,
         "visual_identity_manifest": "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
         "visual_identity_colors": visual_palette.get("combined_hex_color_count"),
         "visual_identity_non_neutral_families": visual_palette.get("non_neutral_family_count"),
@@ -461,6 +507,7 @@ def main() -> None:
         "source-level visual identity",
         "source-level accessibility/navigation",
         "pdf key-figure layout",
+        "docx key-figure layout",
         "do not approve epub",
         "final figure art",
         "curated reader edition",
@@ -492,6 +539,8 @@ def main() -> None:
         "0 low-ink",
         "0 near-edge converted-page rasters",
         "10 matched key-figure stems",
+        "10 key-figure title pages",
+        "72.1 pt minimum title margin",
     ):
         if fragment and fragment not in docx_note:
             errors.append(f"curated_reader_docx notes missing repaired-audit fragment: {fragment}")
@@ -546,6 +595,9 @@ def main() -> None:
             "PDF key-figure layout review",
             "10 key-figure caption pages",
             "165.878 pt minimum caption margin",
+            "DOCX key-figure layout review",
+            "10 key-figure title pages",
+            "72.1 pt minimum title margin",
         ],
         errors,
     )
@@ -560,6 +612,7 @@ def main() -> None:
             "source-level accessibility/navigation review",
             "automated PNG raster review",
             "PDF key-figure layout review",
+            "DOCX key-figure layout review",
             "keyboard-only",
             "screen-reader",
             "manual aesthetic",
@@ -590,6 +643,10 @@ def main() -> None:
             "PDF key-figure layout review is recorded as preparation evidence only",
             "does not clear manual page-by-page PDF review",
             "does not clear PDF viewer review",
+            "DOCX key-figure layout review is recorded as preparation evidence only",
+            "does not clear Word review",
+            "does not clear LibreOffice GUI review",
+            "does not clear Google Docs review",
             "e-reader visual review",
             "visual identity approval",
         ],

@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-07-04 - Add reader key-figure DOCX layout review
+
+- Added `scripts/validate_reader_key_figure_docx_layout.py` to convert the
+  ignored curated-reader DOCX through LibreOffice headless Writer PDF export
+  and inspect the ten key-figure title pages for exact page placement, title
+  bounding-box margins, page raster dimensions, page ink, near-edge ink, and
+  luminance variation.
+- Recorded the result in
+  `editions/reader_manuscript/v1_0/key_figure_docx_layout_manifest.json` and
+  `docs/reader_key_figure_docx_layout_review.md`: 10 title pages, 10 rendered
+  title-page rasters, 10 standard 612 x 792 page rasters, 72.1 pt minimum
+  title margin, 9.53% minimum page ink, 0.0% maximum near-edge ink, and 37.95
+  minimum luminance standard deviation.
+- Wired the DOCX layout review into `scripts/validate_book.py`,
+  `scripts/validate_reader_key_figures.py`,
+  `scripts/validate_release_surface_status_ledger.py`,
+  `scripts/validate_curated_reader_blocked_release_record.py`,
+  `schemas/edition_release_record.schema.json`,
+  `docs/reader_key_figure_artifact_review.md`,
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`,
+  `docs/repository_map.md`, and `docs/v1_x_beyond_sota_roadmap.md` so
+  reader-release status now distinguishes DOCX package survival, DOCX
+  application-engine conversion, and DOCX key-figure converted-layout
+  preparation.
+- Boundary: this is automated local DOCX-to-PDF key-figure title-page layout
+  review only. It is not Word review, not LibreOffice GUI review, not Google
+  Docs review, not manual document review, not final figure-artifact approval,
+  not reader release approval, and it does not promote any support state.
+
 ## 2026-07-04 - Add reader key-figure PDF layout review
 
 - Added `scripts/validate_reader_key_figure_pdf_layout.py` to inspect the

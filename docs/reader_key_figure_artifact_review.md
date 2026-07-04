@@ -38,6 +38,12 @@ PDF key-figure layout probe:
 python3 scripts/validate_reader_key_figure_pdf_layout.py --write-manifest --write-doc
 ```
 
+DOCX key-figure layout probe:
+
+```bash
+python3 scripts/validate_reader_key_figure_docx_layout.py --write-manifest --write-doc
+```
+
 This review records the current draft key-figure artifact inspection for the
 curated reader manuscript. It is not a release approval and not final figure-artifact review. It checks only that the ten draft SVG assets named in
 `editions/reader_manuscript/v1_0/manifest.json` are present, parseable,
@@ -77,6 +83,17 @@ page rasters, 165.878 pt minimum caption margin, 3.36% minimum page ink, 0.0%
 maximum near-edge ink, and 14.2 minimum luminance standard deviation. This is
 still not manual page-by-page PDF review, not PDF viewer review, not final
 figure-artifact approval, and not reader release approval.
+
+The DOCX key-figure layout probe in
+`docs/reader_key_figure_docx_layout_review.md` converts the current ignored
+curated-reader DOCX through LibreOffice headless Writer PDF export, then
+inspects the ten draft key-figure title pages in that converted PDF. It
+records 10 unique title pages, 10 rendered title-page rasters, 10 standard 612
+x 792 page rasters, 72.1 pt minimum title margin, 9.53% minimum page ink, 0.0%
+maximum near-edge ink, and 37.95 minimum luminance standard deviation. This is
+still not Word review, not LibreOffice GUI review, not Google Docs review, not
+manual document review, not final figure-artifact approval, and not reader
+release approval.
 
 The curated-reader HTML browser review in
 `docs/curated_reader_html_artifact_browser_review.md` now also checks the ten
@@ -149,6 +166,17 @@ caption-page raster dimensions, page ink, near-edge ink absence, and luminance
 variation. It is not manual page-by-page PDF review, not PDF viewer review, not
 final figure-artifact approval, and not reader release approval.
 
+2026-07-04 DOCX key-figure layout update:
+`python3 scripts/validate_reader_key_figure_docx_layout.py` now records
+`editions/reader_manuscript/v1_0/key_figure_docx_layout_manifest.json` and the
+review surface `docs/reader_key_figure_docx_layout_review.md`. The local DOCX
+probe converts the ignored curated-reader DOCX through LibreOffice headless
+Writer PDF export, then checks exact key-figure title pages, title bounding-box
+margins, title-page raster dimensions, page ink, near-edge ink absence, and
+luminance variation. It is not Word review, not LibreOffice GUI review, not
+Google Docs review, not manual document review, not final figure-artifact
+approval, and not reader release approval.
+
 2026-07-04 audio/e-reader companion update:
 `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` now records a
 draft spoken summary, e-reader treatment note, and non-claim boundary for each
@@ -178,7 +206,9 @@ The validator checks source-level SVG structure and manuscript placement; the
 format-package probe checks EPUB/DOCX/PDF package or text survival; the raster
 probe checks generated PNG fallback presence, dimensions, hashes, and nonblank
 visual variation; the PDF key-figure layout probe checks the ten figure caption
-pages for safe margins and page-raster health. None replaces visual review in
+pages for safe margins and page-raster health; the DOCX key-figure layout probe
+checks the ten LibreOffice-converted DOCX figure title pages for safe margins
+and page-raster health. None replaces visual review in
 rendered HTML, EPUB, DOCX, PDF, e-reader, or audio companion treatment. Before
 a reader release can call the figures final, each format still needs inspection
 for scale, line weight, text legibility, caption placement, page breaks, color
@@ -194,7 +224,9 @@ Open residuals:
   manual aesthetic judgment, line-weight review, rendered-format inspection,
   and final visual approval remain open.
 - EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
-- DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
+- DOCX: automated LibreOffice-converted key-figure title-page layout now passes
+  for all ten figures; inspect Word/LibreOffice GUI/Google Docs page breaks,
+  image anchoring, and caption flow.
 - PDF: automated key-figure caption-page layout now passes for all ten figures;
   manual page-by-page PDF review and PDF viewer review remain open.
 - Audio: integrate and review the companion summaries inside the future
