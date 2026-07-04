@@ -128,114 +128,59 @@ benchmark, or security result for this layer.
 
 ## Mechanism
 
-The artifact graph is execution memory.
+The mechanism is a work trail with authority limits. Each important output
+should carry enough history for a later reviewer to ask: what job produced
+this, what inputs shaped it, what checks ran, what can be replayed, what
+uncertainty remains, and what claims may use it?
 
 ```{mermaid}
 flowchart LR
-  Job["Typed job"] --> Artifact["Artifact node"]
-  Artifact --> Sources["Source refs"]
-  Artifact --> Context["Context refs"]
-  Context --> Tx["Context transaction refs"]
-  Artifact --> Tools["Tool and adapter refs"]
-  Artifact --> Audit["Audit events"]
-  Artifact --> Replay["Replay metadata and grade"]
-  Artifact --> Links["Claim and test links"]
-  Sources --> Gate["Evidence gate"]
-  Tx --> Gate
-  Tools --> Gate
-  Audit --> Gate
-  Replay --> Gate
-  Links --> Gate
-  Gate --> Use{"Allowed reuse?"}
-  Use -- "yes" --> Reuse["Context, evidence, release, regression, or memory"]
-  Use -- "no" --> Residual["Residual, repair, or no-promotion blocker"]
+  Job["Typed job"] --> Output["Produced output"]
+  Output --> History["Lineage and context"]
+  Output --> Checks["Checks and replay"]
+  Output --> Limits["Residuals and non-claims"]
+  History --> Gate["Evidence gate"]
+  Checks --> Gate
+  Limits --> Gate
+  Gate -- "allowed" --> Reuse["Use as context, release input, regression, or evidence"]
+  Gate -- "blocked" --> Repair["Residual, repair, quarantine, or no-promotion"]
 ```
 
-The artifact node is the hub. It records the parent job, source references,
-context references, context transaction references, semantic certificates,
-tool and adapter references, audit events, replay metadata, replay grade,
-environment assumptions, provenance status, evidence gate, residuals, and
-non-claims.
+The gate is conservative. It does not ask whether an output looks impressive.
+It asks whether the supporting trail is strong enough for the use being
+requested. A draft can be reading material before it is a release. A failed run
+can be a regression case before it is proof. A checked file can be useful
+history before it is evidence.
 
-Replay is graded, not binary. Some work can be replayed byte for byte. Some
-can be replayed semantically, where the same obligations are checked even if
-text differs. Some can be replayed only in part because a source snapshot,
-external service, human decision, or environment state is missing. Some work
-is intentionally non-replayable for privacy or security reasons. Some work
-has not been replayed at all. The artifact record should say which case
-applies.
+Replay is graded for the same reason. Some work can be reproduced byte for
+byte. Some can be checked again for the same obligations even if the wording
+changes. Some depends on missing services, source snapshots, human judgment, or
+security limits. Some has not been replayed at all. Those differences stay
+visible instead of being flattened into confidence.
 
-The evidence gate is what prevents convenience from becoming support. A useful
-artifact may be context, a review target, a release input, or a procedural
-memory candidate. It should not become evidence for a stronger claim unless
-the artifact record says that the relevant provenance and checks exist.
+Receipt faithfulness is the hardest version of the gate. A receipt can have
+the right fields while pointing at the wrong world. The current fixture catches
+that bounded failure by rejecting a shape-valid but false receipt, an ignored
+trap receipt, a missing independent check, a same-path self-check, an unbounded
+attestation, and a support promotion based only on paperwork shape. The
+accepted no-promotion decision keeps this as a guardrail: it blocks overclaims
+but does not prove open-world truth, verifier independence, deployed audit
+behavior, or the core claim for this layer.
 
-The hardest version of this problem is receipt faithfulness. A receipt can be
-well formed and still be false about the world. The file may be missing. The
-observer may be the same component that produced the claim. The attestation
-may cover only the record fields, not the thing the record points at. A trap
-receipt may reveal that the reviewer is checking shape instead of reality.
+The follow-on repository checks make the idea less abstract. They ask selected
+files, digests, commands, external receipt fingerprints, and one live local
+output to answer concrete questions. The receipt repository challenge samples
+that trail instead of trusting the earlier audit as a static note. That is
+useful because it forces the book's own evidence trail to stay attached to real
+files. It is still bounded local discipline, not a deployed attestation
+service.
 
-The receipt-faithfulness fixture makes that failure visible. It accepts a
-bounded cross-checked receipt, a record-only limited attestation, and a trap
-receipt that correctly blocks promotion after detecting a mismatch. It rejects
-a shape-valid but false receipt, an ignored trap receipt, a missing independent
-cross-check, a same-component self-check, an unbounded attestation, and a
-support promotion based only on receipt shape. That is not a deployed
-attestation system. It is a record-level guardrail against treating valid
-paperwork as truth.
-
-The accepted no-promotion decision at
-`evidence_transitions/v1_x_measured/artifact_receipt_faithfulness_no_change.json`
-keeps it in that role: useful for blocking overclaims, not enough for
-open-world receipt truth, verifier independence, deployed audit behavior, or
-chapter core promotion.
-
-The receipt repository audit takes one step closer to the real project. It
-does not invent a deployed attestation service; it reads selected records that
-already exist in the repository. It checks whether their artifact references
-exist, whether tracked digests still match the files they name, whether command
-records passed, whether the Circle external receipt fingerprints are present,
-and whether the records keep their non-claim and no-promotion boundaries. This
-is still bounded evidence, but it is the right kind of bounded evidence: it
-tests whether the book's own receipts remain attached to actual artifacts
-rather than only to plausible record shapes.
-
-The receipt repository challenge adds one more refusal point: a deterministic challenge
-selects three tracked file digests and one Circle contract fingerprint from the
-repository audit, checks that those challenge responses still match, and rejects
-mutations for digest mismatch, missing artifact, external fingerprint mismatch,
-missing non-claims, and support promotion. The accepted no-promotion decision at
-`evidence_transitions/v1_x_measured/artifact_receipt_repository_audit_challenge_no_change.json`
-keeps that audit/challenge at `argument`: useful as a guardrail, not enough for
-deployed attestation, open-world receipt truth, verifier correctness, or chapter
-core promotion. It is a small proof that the book can ask its own receipt records
-to answer reproducible reality checks.
-
-The live artifact attestation probe takes the smallest local live step after
-that. It checks one current produced artifact through filesystem bytes, git
-object bytes, and command replay, then rejects wrong-digest, failed-replay,
-same-component self-check, accepted-trap, unbounded-attestation, and
-support-promotion controls. It is not a deployed attestation service. It is a
-bounded way to show that the book can compare a stored receipt against the
-repository reality it points to.
-
-The record-reality sequence has its own no-promotion decision now. It treats
-the stale-certificate, partial-replay, fresh-replay pattern as a blocking
-decision against overclaims, not as proof that the system has a deployed replay
-engine or a verifier that can force reality to match the receipt.
-
-The randomized artifact attestation audit widens that local check without
-pretending to leave the repository. Command `python3 scripts/validate_artifact_randomized_attestation_audit.py` records
+The randomized artifact attestation audit widens the same local check:
+`python3 scripts/validate_artifact_randomized_attestation_audit.py` records
 `experiments/artifact_randomized_attestation/results/2026-07-04-local.json`
-after using a deterministic pseudo-random seed to choose four public-safe
-repository result artifacts from six candidates. Each selected artifact has to
-agree across filesystem bytes, git object bytes, and command replay, and the
-audit rejects wrong digests, failed replay, one-artifact sample laundering,
-same-component self-checks, unbounded attestation, and support promotion. That
-is stronger than one hand-picked target; it is still local bounded evidence,
-not deployed attestation, external review, verifier correctness, or
-open-world receipt faithfulness.
+after sampling public-safe repository artifacts and rejecting digest, replay,
+sample-laundering, self-check, unbounded-attestation, and support-promotion
+controls.
 
 ## A Book-Scale Example
 

@@ -3,6 +3,40 @@
   "target_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
   "operations": [
     {
+      "id": "v1_0.artifact_graphs.mechanism_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Mechanism"
+      },
+      "rationale": "Make the generated reader and live Human view explanation of record-reality less ledger-dense while preserving the canonical AI/research chapter, receipt-faithfulness boundary, and no-promotion decisions.",
+      "content_lines": [
+        "The mechanism is a work trail with authority limits. Each important output should carry enough history for a later reviewer to ask: what job produced this, what inputs shaped it, what checks ran, what can be replayed, what uncertainty remains, and what claims may use it?",
+        "",
+        "```{mermaid}",
+        "flowchart LR",
+        "  Job[\"Typed job\"] --> Output[\"Produced output\"]",
+        "  Output --> History[\"Lineage and context\"]",
+        "  Output --> Checks[\"Checks and replay\"]",
+        "  Output --> Limits[\"Residuals and non-claims\"]",
+        "  History --> Gate[\"Evidence gate\"]",
+        "  Checks --> Gate",
+        "  Limits --> Gate",
+        "  Gate -- \"allowed\" --> Reuse[\"Use as context, release input, regression, or evidence\"]",
+        "  Gate -- \"blocked\" --> Repair[\"Residual, repair, quarantine, or no-promotion\"]",
+        "```",
+        "",
+        "The gate is conservative. It does not ask whether an output looks impressive. It asks whether the supporting trail is strong enough for the use being requested. A draft can be reading material before it is a release. A failed run can be a regression case before it is proof. A checked file can be useful history before it is evidence.",
+        "",
+        "Replay is graded for the same reason. Some work can be reproduced byte for byte. Some can be checked again for the same obligations even if the wording changes. Some depends on missing services, source snapshots, human judgment, or security limits. Some has not been replayed at all. Those differences stay visible instead of being flattened into confidence.",
+        "",
+        "Receipt faithfulness is the hardest version of the gate. A receipt can have the right fields while pointing at the wrong world. The current fixture catches that bounded failure by rejecting a false but well-formed receipt, an ignored trap, a missing independent check, a same-path self-check, an unbounded attestation, and a support promotion based only on paperwork shape. The accepted no-promotion decision keeps this as a guardrail: it blocks overclaims but does not prove open-world truth, verifier independence, deployed audit behavior, or the core claim for this layer.",
+        "",
+        "The follow-on repository checks make the idea less abstract. They ask selected files, digests, commands, external fingerprints, and one live local output to answer concrete questions. That is useful because it forces the book's own evidence trail to stay attached to real files. It is still bounded local discipline, not a deployed attestation service."
+      ]
+    },
+    {
       "id": "v1_0.artifact_graphs.minimum_viable_implementation_reader_replace",
       "status": "active",
       "action": "replace_section",

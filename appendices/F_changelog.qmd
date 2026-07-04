@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-04 - Restore generated-reader continuity queue to zero medium rows
+
+- Added a reader-only overlay operation
+  `v1_0.artifact_graphs.mechanism_reader_replace` for the Artifact Graphs
+  Mechanism section and regenerated `assets/reader-overlays.html`, raising the
+  v1.0 active/applied overlay count from 72 to 73.
+- Mirrored the same reader-facing Mechanism treatment in the tracked curated
+  reader manuscript chapter so the generated Human view and curated draft stay
+  aligned on the record-reality explanation.
+- Regenerated `docs/reader_continuity_audit.md`; the generated reader queue is
+  back to 0 high-priority and 0 medium-priority heuristic rows with 0
+  paragraphs at or above 160 words.
+- Boundary: this is reader-edition prose and overlay maintenance only. It does
+  not change the canonical AI/research evidence surface, create a release
+  approval, approve EPUB/DOCX/PDF/audio artifacts, move any support state, or
+  promote the Artifact Graphs chapter core claim.
+
 ## 2026-07-04 - Record receipt-faithfulness no-promotion decision
 
 - Added accepted no-promotion decision
