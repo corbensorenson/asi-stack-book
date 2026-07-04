@@ -1,0 +1,144 @@
+{
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_residual_ledger_storage_replay.py",
+  "control_results": [
+    {
+      "accepted": false,
+      "control_id": "invalid_handoff_owner_mismatch",
+      "reasons": [
+        "handoff_owner_mismatch"
+      ],
+      "rejected_for_expected_reason": true
+    },
+    {
+      "accepted": false,
+      "control_id": "invalid_discharge_without_review_receipt",
+      "reasons": [
+        "discharge_receipt_or_review_missing"
+      ],
+      "rejected_for_expected_reason": true
+    },
+    {
+      "accepted": false,
+      "control_id": "invalid_sequence_gap",
+      "reasons": [
+        "sequence_gap"
+      ],
+      "rejected_for_expected_reason": true
+    },
+    {
+      "accepted": false,
+      "control_id": "invalid_missing_workload_context",
+      "reasons": [
+        "workload_context_missing"
+      ],
+      "rejected_for_expected_reason": true
+    },
+    {
+      "accepted": false,
+      "control_id": "invalid_support_promotion_from_replay",
+      "reasons": [
+        "support_state_promotion_attempt"
+      ],
+      "rejected_for_expected_reason": true
+    }
+  ],
+  "evidence_transition_ref": "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
+  "expected_invalid_control_count": 5,
+  "final_chain_digest": "593cdd824a569fd05751eb4b674a71a9a95c6953c05ceaa582b0270c87681f10",
+  "input_ref": "experiments/residual_ledger_storage_replay/input/residual_ledger_records.json",
+  "lean_fixture_alignment": {
+    "expected": {
+      "appendOnlyDigestChainComputed": true,
+      "deployedLedgerNotClaimed": true,
+      "dischargeReviewRequired": true,
+      "invalidControlsRejected": true,
+      "liveStorageNotClaimed": true,
+      "nonClaimBoundary": true,
+      "ownerHandoffPreserved": true,
+      "sequenceContinuityChecked": true,
+      "supportStateEffectNone": true,
+      "workloadContextPreserved": true
+    },
+    "module": "AsiStackProofs.CompactGenerativeSystems",
+    "theorem_refs": [
+      "residual_ledger_storage_replay_bridge"
+    ]
+  },
+  "non_claims": [
+    "does not prove deployed residual-ledger storage",
+    "does not prove live residual detection",
+    "does not promote any chapter core claim",
+    "does not prove model quality or benchmark performance"
+  ],
+  "recorded_date": "2026-07-04",
+  "replay_entries": [
+    {
+      "entry_digest": "a08192651b80861ccea79ae657fecb2d136bdefb9d12cec457393e58cabcd50b",
+      "entry_id": "entry-001-resource-deferred-task-ticks",
+      "event": "create",
+      "owner": "owner://resource-review",
+      "previous_digest": "GENESIS",
+      "residual_id": "residual://resource/deferred-task-ticks",
+      "sequence": 1,
+      "status": "deferred",
+      "workload_context_ref": "experiments/resource_flagship_lane/results/2026-07-01-local.json"
+    },
+    {
+      "entry_digest": "17ad147b9bf761d4edd3b16f884253281c8f85880d13e0677e05afe5fb472ba3",
+      "entry_id": "entry-002-compact-repair-handoff",
+      "event": "handoff",
+      "owner": "owner://compact-repair-review",
+      "previous_digest": "a08192651b80861ccea79ae657fecb2d136bdefb9d12cec457393e58cabcd50b",
+      "residual_id": "residual://resource/deferred-task-ticks",
+      "sequence": 2,
+      "status": "deferred",
+      "workload_context_ref": "experiments/compact_gvr_slice/results/2026-07-01-local.json"
+    },
+    {
+      "entry_digest": "d6da37a9cd1e8b267108b2c8216da980b263ffae001fab4870b86cdf85fc7176",
+      "entry_id": "entry-003-compact-repair-discharged",
+      "event": "discharge",
+      "owner": "owner://compact-repair-review",
+      "previous_digest": "17ad147b9bf761d4edd3b16f884253281c8f85880d13e0677e05afe5fb472ba3",
+      "residual_id": "residual://resource/deferred-task-ticks",
+      "sequence": 3,
+      "status": "discharged",
+      "workload_context_ref": "experiments/compact_gvr_slice/results/2026-07-01-local.json"
+    },
+    {
+      "entry_digest": "593cdd824a569fd05751eb4b674a71a9a95c6953c05ceaa582b0270c87681f10",
+      "entry_id": "entry-004-readiness-escrow",
+      "event": "create",
+      "owner": "owner://readiness-review",
+      "previous_digest": "d6da37a9cd1e8b267108b2c8216da980b263ffae001fab4870b86cdf85fc7176",
+      "residual_id": "residual://readiness/residual-escrow",
+      "sequence": 4,
+      "status": "deferred",
+      "workload_context_ref": "experiments/readiness_residual_gates/results/2026-06-28-local.md"
+    }
+  ],
+  "replay_summary": {
+    "appendOnlyDigestChainComputed": true,
+    "deployedLedgerNotClaimed": true,
+    "dischargeReviewRequired": true,
+    "invalidControlsRejected": true,
+    "liveStorageNotClaimed": true,
+    "nonClaimBoundary": true,
+    "ownerHandoffPreserved": true,
+    "sequenceContinuityChecked": true,
+    "supportStateEffectNone": true,
+    "workloadContextPreserved": true
+  },
+  "residuals": [
+    "This is a deterministic local storage/replay fixture over an append-only residual ledger event log.",
+    "The fixture checks sequence continuity, digest-chain construction, owner handoff, discharge review, workload-context retention, rejected invalid controls, and no-promotion boundaries.",
+    "The fixture is not a deployed residual ledger, not live residual detection, not an external replay, and not proof of model quality, benchmark performance, safety, or chapter-core support."
+  ],
+  "result_id": "2026-07-04-residual-ledger-storage-replay",
+  "result_kind": "bounded_residual_ledger_storage_replay",
+  "schema_version": "asi_stack.residual_ledger_storage_replay.result.v0",
+  "support_state_effect": "none",
+  "valid_entry_count": 4,
+  "verification_result": "pass"
+}

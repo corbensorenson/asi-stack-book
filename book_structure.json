@@ -7376,6 +7376,13 @@
               "status": "implemented as a local repository residual-ledger trace; no deployed residual-ledger behavior, no safety proof, no model-quality or benchmark claim, and no support-state promotion"
             },
             {
+              "name": "Residual ledger storage replay",
+              "purpose": "Replay a bounded append-only residual ledger event log, checking sequence continuity, owner handoff, discharge review, workload-context retention, invalid-control rejection, and no-promotion boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_residual_ledger_storage_replay.py`; records 4 replay entries, rejects 5 expected-invalid controls, and records a `blocks_promotion` no-change transition",
+              "status": "implemented as a bounded local storage/replay fixture with `blocks_promotion`; not a deployed residual ledger, not live residual detection, no safety proof, no model-quality or benchmark claim, and no chapter-core promotion"
+            },
+            {
               "name": "Exact reconstruction mismatch negative case",
               "purpose": "Check that an exact claim whose generator output plus repair residual does not equal the target rejects the finite exact-reconstruction predicate.",
               "implementation_status": "implemented",
@@ -7439,6 +7446,12 @@
               "tag": "lean:compression.cgs.gvr_fixture_bridge",
               "module": "AsiStackProofs.CompactGenerativeSystems",
               "target": "The compact GVR synthetic slice has a finite Lean fixture bridge matching the literal baseline, selected compact receipt, lossy exactness control, negative-rate/no-fallback control, bounded-search-overrun control, and selected-versus-baseline byte relation.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:compression.cgs.residual_storage_replay_bridge",
+              "module": "AsiStackProofs.CompactGenerativeSystems",
+              "target": "The residual-ledger storage/replay fixture has a finite Lean summary bridge matching append-only digest-chain construction, sequence continuity, owner handoff, discharge review, workload-context retention, invalid-control rejection, no support-state effect, non-claim boundaries, and live/deployed-ledger non-claims.",
               "status": "implemented"
             },
             {

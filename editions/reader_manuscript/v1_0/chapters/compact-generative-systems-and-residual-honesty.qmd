@@ -77,7 +77,7 @@ metric.
 
 Figure boundary: this draft reader aid compares compact generation, fast
 generation, and artifact compression as acceptance-gated paths. It is not
-release-reviewed art and does not prove compression ratios, task quality,
+release-reviewed art and does not establish compression ratios, task quality,
 reconstruction utility, or model performance.
 
 ## Problem
@@ -342,7 +342,7 @@ Compactness should first appear as a compact generative record and fixture. That
 
 The repository fixtures validate that this public contract can be represented consistently. They also give later experiments a stable place to attach metrics: rate, reconstruction fidelity, verification cost, residual volume, utility, latency, and fallback frequency. The point is to make future evidence land in the right field instead of letting a compactness story outrun its tests.
 
-`AsiStackProofs.CompactGenerativeSystems` adds bounded residual-honesty and exactness predicates, compact-admission route checks, and a finite bridge to the Compact GVR synthetic slice. The Lean bridge proves only the modeled fixture relation: the selected compact receipt is eligible, the three controls are ineligible, and the selected modeled byte count is below the literal baseline. The remaining engineering burden is still explicit: a real codec, generator, independent verifier, downstream utility test, corpus, and fallback harness must exist before compact-core behavior can carry stronger evidence.
+`AsiStackProofs.CompactGenerativeSystems` adds bounded residual-honesty and exactness predicates, compact-admission route checks, and finite bridges to the Compact GVR synthetic slice, residual-conservation fixture, residual-ledger trace, and residual-ledger storage replay. The Lean bridges prove only modeled fixture relations: selected compact receipts and residual records preserve the fields the fixture names, and malformed controls are rejected inside that bounded world. The remaining engineering burden is still explicit: a real codec, generator, independent verifier, downstream utility test, corpus, fallback harness, live residual detector, and deployed residual ledger must exist before compact-core behavior can carry stronger evidence.
 
 The implemented Compact GVR slice gives the reader one concrete, bounded example without turning it into a codec claim. `python3 scripts/validate_compact_gvr_slice.py` recomputes five public-safe synthetic receipt records: a 368-byte literal baseline, a 78-byte exact repeat-generator-plus-repair receipt, and three rejected controls for lossy exactness, negative-rate/no-fallback accounting, and bounded-search overrun. The slice moves only the subordinate claim `compact-generative-systems.compact_gvr_receipt_slice` to `synthetic-test-backed`; the chapter core claim remains at `argument`.
 
@@ -351,8 +351,8 @@ without turning it into a deployed residual ledger. `python3
 scripts/validate_residual_honesty_conservation.py` recomputes three honest
 synthetic residual records and five dishonest controls, then checks the finite
 Lean bridge in `AsiStackProofs.CompactGenerativeSystems`. The fixture records
-residual movement; it does not prove all residuals are discoverable, does not
-prove safety, and does not promote the chapter core claim.
+residual movement; it does not establish that all residuals are discoverable,
+does not establish safety, and does not promote the chapter core claim.
 
 The implemented residual-ledger trace adds a repository-level example without
 changing that boundary. `python3 scripts/validate_residual_ledger_trace.py`
@@ -362,6 +362,18 @@ It records four trace entries showing that residualized deferrals, displaced
 costs, repair residuals, readiness escrow, rejected hidden burdens, and
 no-promotion decisions remain attached across artifact boundaries. It is not
 proof that a deployed ledger exists.
+
+The implemented residual-ledger storage replay checks a narrower but more
+operational shape. `python3 scripts/validate_residual_ledger_storage_replay.py`
+replays a bounded append-only event log, computes a digest chain, preserves
+owner handoff, requires discharge review, keeps workload context, rejects five
+invalid controls, and writes
+`experiments/residual_ledger_storage_replay/results/2026-07-04-local.json`.
+It records a `blocks_promotion` decision, so it is not proof of a deployed
+residual ledger, live residual detection, safety, model quality, or the
+chapter core claim.
+
+It is not proof of a deployed residual ledger.
 
 The folded generate/verify/repair lane adds the compression receipt. The bounded slice now shows the shape of that receipt discipline: exactness belongs to generator plus repair plus verification, not to the generator alone; negative-rate and missing-fallback cases stay as negative evidence; bounded-search failures do not become success stories; and consumer scope remains attached to the receipt. That slice is still not a codec benchmark. Its evidential scope is the public record's distinction among exactness, declared loss, repair, fallback, quarantine, and consumer scope.
 

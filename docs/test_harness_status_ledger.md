@@ -9,13 +9,13 @@ It records implementation wiring and non-claim boundaries only; it does not prom
 
 | Metric | Count |
 |---|---:|
-| Total wired checks | 59 |
+| Total wired checks | 60 |
 | Phase 5 registry harnesses | 22 |
-| Chapter-specific/support book-gate checks | 37 |
+| Chapter-specific/support book-gate checks | 38 |
 
 ## Status-Page Row
 
-| Test harnesses | 59 wired checks: 22 Phase 5 registry harnesses and 37 chapter-specific/support book-gate checks. Detailed harness summaries, artifact references, and non-claim boundaries are generated in `docs/test_harness_status_ledger.md`; Appendix E remains the per-harness source of truth. None of these harnesses promotes chapter core claims. | `docs/test_harness_status_ledger.md`; `appendices/E_codex_test_specs.qmd`; `experiments/phase5_harness_registry.json`; `docs/phase5_harness_registry.md`; `python3 scripts/validate_test_harness_status_ledger.py`; `python3 scripts/validate_phase5_harness_registry.py`; `python3 scripts/validate_book.py` |
+| Test harnesses | 60 wired checks: 22 Phase 5 registry harnesses and 38 chapter-specific/support book-gate checks. Detailed harness summaries, artifact references, and non-claim boundaries are generated in `docs/test_harness_status_ledger.md`; Appendix E remains the per-harness source of truth. None of these harnesses promotes chapter core claims. | `docs/test_harness_status_ledger.md`; `appendices/E_codex_test_specs.qmd`; `experiments/phase5_harness_registry.json`; `docs/phase5_harness_registry.md`; `python3 scripts/validate_test_harness_status_ledger.py`; `python3 scripts/validate_phase5_harness_registry.py`; `python3 scripts/validate_book.py` |
 
 ## Phase 5 Registry Harnesses
 
@@ -67,6 +67,7 @@ It records implementation wiring and non-claim boundaries only; it does not prom
 | Theseus report-bundle audit | `docs/theseus_report_bundle_audit.md` | `python3 scripts/validate_theseus_report_bundle_audit.py` | `experiments/theseus_report_bundle_audit/results/2026-07-02-local.json` | Public-safe bundle-shaped Theseus fixture with seven expected-invalid controls. | No clean live Theseus replay or support-state transition claim. |
 | Theseus public task-bundle import | `docs/theseus_public_task_bundle_import.md` | `python3 scripts/validate_theseus_public_task_bundle_import.py` | `experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json` | Sixty-four public BigCodeBench metadata-only tasks, benchmark gates, residuals, and seven controls. | No clean live replay, model-quality, speed, useful-solution-per-second, or support-state claim. |
 | Compact GVR synthetic slice | `docs/compact_gvr_slice.md` | `python3 scripts/validate_compact_gvr_slice.py` | `experiments/compact_gvr_slice/results/2026-07-01-local.json` | Five compact-generation receipt records with selected compact receipt and negative controls. | No deployed compression, codec-correctness, semantic-utility, or chapter-core claim. |
+| Residual ledger storage replay | `docs/residual_ledger_storage_replay.md` | `python3 scripts/validate_residual_ledger_storage_replay.py` | `experiments/residual_ledger_storage_replay/results/2026-07-04-local.json` | Four append-only residual replay entries with owner handoff, discharge review, workload context, digest-chain construction, and five rejected controls. | No deployed residual-ledger storage, live residual detection, safety, model-quality, benchmark, or chapter-core claim. |
 | Hive admission harness | `docs/hive_admission_harness.md` | `python3 scripts/validate_hive_admission.py` | `experiments/hive_admission/results/2026-07-01-local.md` | Personal Compute Hive admission fixtures and expected-invalid policy controls. | No deployed hive, network, scheduling, or support-state claim. |
 | Runtime adapter effect replay probe | `docs/runtime_adapter_effect_probe.md` | `python3 scripts/validate_runtime_adapter_effect_probe.py` | `experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json` | Checks `valid_low_impact_local_write_effect_replay`, rollback-exact temp-file restoration, `invalid_missing_permission_no_mutation`, and `invalid_expired_approval_no_mutation`. | No deployed adapter, sandbox, approval-service, rollback-service, or benchmark claim. |
 | Runtime adapter adversarial boundary probe | `docs/runtime_adapter_adversarial_boundary_probe.md` | `python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py` | `experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json` | Two valid adapter boundary reviews and twelve expected-invalid controls. | No deployed adapter, policy-enforcement, rollback, security-review, or support-state claim. |

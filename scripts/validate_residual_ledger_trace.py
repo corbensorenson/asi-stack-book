@@ -361,7 +361,7 @@ def validate_surfaces(errors: list[str]) -> None:
         rel(LEDGER_MD): (
             LEDGER_MD,
             [
-                "residual_ledger_trace_backed_not_deployed",
+                "residual_storage_replay_backed_not_deployed",
                 rel(RESULT),
             ],
         ),
@@ -440,7 +440,7 @@ def validate_ledger_json(errors: list[str]) -> None:
     entry = matches[0]
     blob = text_blob(entry)
     for phrase in (
-        "residual_ledger_trace_backed_not_deployed",
+        "residual_storage_replay_backed_not_deployed",
         rel(RESULT),
         "does not prove deployed residual-ledger behavior",
     ):

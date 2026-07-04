@@ -1,0 +1,114 @@
+{
+  "transition_id": "v1_x_measured.residual_ledger_storage_replay.no_change",
+  "claim_id": "compact-generative-systems.residual_ledger_storage_replay",
+  "claim_surface_refs": [
+    "docs/residual_ledger_storage_replay.md",
+    "chapters/compact-generative-systems-and-residual-honesty.qmd",
+    "editions/reader_manuscript/v1_0/chapters/compact-generative-systems-and-residual-honesty.qmd",
+    "docs/contribution_novelty_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/residual_ledger_storage_replay/input/residual_ledger_records.json",
+    "experiments/residual_ledger_storage_replay/results/2026-07-04-local.json",
+    "scripts/validate_residual_ledger_storage_replay.py",
+    "lean/AsiStackProofs/CompactGenerativeSystems.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Bounded local residual-ledger storage/replay fixture only. The fixture computes an append-only digest chain over four public-safe residual events and rejects five expected-invalid controls for handoff owner mismatch, missing discharge receipt or review, sequence gaps, missing workload context, and support promotion from replay shape. It is not a deployed residual ledger. It does not run a deployed residual ledger, observe live residuals, prove all residuals are observable, prove safety, measure model quality, or promote the Compact Generative Systems chapter core claim.",
+  "evidence_roles": [
+    "bounded_storage_replay_fixture",
+    "append_only_digest_chain",
+    "owner_handoff_check",
+    "discharge_review_check",
+    "workload_context_retention",
+    "expected_invalid_controls",
+    "lean_python_fixture_alignment",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The storage/replay fixture is useful because it moves residual honesty from field-presence and cross-artifact visibility into bounded replay behavior: residuals must keep sequence continuity, owner handoff, discharge review, workload context, and non-claim boundaries. It remains a local deterministic fixture, not live or externally reviewable residual-ledger evidence, so it blocks promotion for deployed storage, live residual detection, safety, model quality, benchmark performance, or chapter-core support.",
+  "required_artifacts": [
+    "live or externally reviewable residual-ledger storage replay",
+    "public-safe workload trace with residual creation, handoff, discharge, and residual survival under replay",
+    "independent review of owner handoff and discharge criteria",
+    "tamper or adversarial replay evidence beyond deterministic local fixtures",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/residual_ledger_storage_replay.md",
+    "experiments/residual_ledger_storage_replay/input/residual_ledger_records.json",
+    "experiments/residual_ledger_storage_replay/results/2026-07-04-local.json",
+    "scripts/validate_residual_ledger_storage_replay.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/residual_honesty_conservation.md",
+    "docs/residual_ledger_trace.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/contribution_novelty_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honesty.core",
+    "docs/book_outline.md#compact-generative-systems-and-residual-honesty"
+  ],
+  "verification_command": "python3 scripts/validate_residual_ledger_storage_replay.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "handoff owner mismatch is rejected",
+    "discharge without receipt or review is rejected",
+    "sequence gap is rejected",
+    "missing workload context is rejected",
+    "support promotion from replay shape is rejected",
+    "deployed residual-ledger storage remains unclaimed",
+    "live residual detection remains unclaimed",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/residual_ledger_storage_replay.md",
+    "experiments/residual_ledger_storage_replay/results/2026-07-04-local.json",
+    "scripts/validate_residual_ledger_storage_replay.py"
+  ],
+  "downgrade_triggers": [
+    "residual-ledger storage/replay validator failure",
+    "handoff owner mismatch accepted",
+    "undischarged or unreviewed discharge accepted",
+    "sequence gap accepted",
+    "missing workload context accepted",
+    "support-state promotion accepted from replay shape",
+    "fixture described as a deployed residual ledger or live residual detector"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed residual-ledger storage/replay claim after live or externally reviewable residual-ledger replay, public-safe workload context, owner handoff records, discharge review records, adversarial or tamper replay behavior, independent review, residuals, and non-claims are recorded with a separate accepted transition.",
+  "limitations": [
+    "bounded local deterministic fixture only",
+    "no deployed residual ledger",
+    "no live residual detection",
+    "no external replay",
+    "no proof that every residual is observable",
+    "no safety proof",
+    "no model-quality or benchmark result",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent residual-ledger, workflow, safety, verifier-quality, source-interpretation, or external audit",
+  "acceptance_blockers": [
+    "no live or externally reviewable residual-ledger storage replay",
+    "no public-safe workload trace from a deployed residual ledger",
+    "no independent owner-handoff or discharge review",
+    "no adversarial replay beyond deterministic local controls",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---add-residual-ledger-storage-replay",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote residual honesty above argument",
+    "does not prove deployed residual-ledger storage, live residual detection, safety, model quality, benchmark performance, deployment safety, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Compact Generative Systems chapter core claim"
+  ]
+}

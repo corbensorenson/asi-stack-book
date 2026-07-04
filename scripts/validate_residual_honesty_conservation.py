@@ -298,7 +298,8 @@ def require_surface(path: Path, phrases: list[str], errors: list[str]) -> None:
 
 
 def validate_surfaces(errors: list[str]) -> None:
-    shared_nonclaim = "does not prove all residuals are observable"
+    fixture_nonclaim = "does not prove all residuals are observable"
+    chapter_nonclaim = "does not establish that all residuals are observable"
     require_surface(
         DOC,
         [
@@ -311,7 +312,7 @@ def validate_surfaces(errors: list[str]) -> None:
             "hidden residual after a metric gain",
             "support-state promotion attempt",
             LEAN_THEOREM,
-            shared_nonclaim,
+            fixture_nonclaim,
         ],
         errors,
     )
@@ -322,7 +323,7 @@ def validate_surfaces(errors: list[str]) -> None:
             COMMAND,
             rel(RESULT),
             "hidden, erased, unowned, and support-promoting residual controls",
-            shared_nonclaim,
+            chapter_nonclaim,
         ],
         errors,
     )
@@ -366,7 +367,7 @@ def validate_surfaces(errors: list[str]) -> None:
         LEDGER_MD,
         [
             "Residual honesty",
-            "residual_ledger_trace_backed_not_deployed",
+            "residual_storage_replay_backed_not_deployed",
             rel(RESULT),
         ],
         errors,
@@ -377,7 +378,7 @@ def validate_surfaces(errors: list[str]) -> None:
         errors.append(f"{rel(LEDGER_JSON)} must contain one residual_honesty row.")
     else:
         row = residual_rows[0]
-        if row.get("confidence_state") != "residual_ledger_trace_backed_not_deployed":
+        if row.get("confidence_state") != "residual_storage_replay_backed_not_deployed":
             errors.append(f"{rel(LEDGER_JSON)} residual_honesty confidence_state is stale.")
         if rel(RESULT) not in text_blob(row):
             errors.append(f"{rel(LEDGER_JSON)} residual_honesty row must reference {rel(RESULT)}.")

@@ -148,7 +148,7 @@ def assert_surface(
         f"{chapters}/{chapters} chapters externally positioned",
         "0 explicit external-baseline exceptions",
         "Six narrow non-core transitions are accepted",
-        "Two accepted no-promotion side-lane decisions",
+        "Three accepted no-promotion side-lane decisions",
         f"{high} high-priority",
         f"{medium} medium-priority",
         f"{long_paragraphs} paragraphs at or above 160 words",
@@ -174,7 +174,7 @@ def assert_surface(
 
     if "six narrow non-core transitions are accepted" not in text.lower():
         errors.append(f"{name} missing current six-transition count")
-    if "two accepted no-promotion side-lane decisions" not in text.lower():
+    if "three accepted no-promotion side-lane decisions" not in text.lower():
         errors.append(f"{name} missing current no-promotion side-lane count")
 
     lowered = text.lower()

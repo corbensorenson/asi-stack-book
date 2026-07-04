@@ -246,6 +246,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Compact GVR synthetic slice | implemented | passes via `python3 scripts/validate_compact_gvr_slice.py`; selected 78-byte compact receipt versus 368-byte literal baseline, rejected 3 negative controls, no chapter-core promotion |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Residual honesty conservation fixture | implemented | passes via `python3 scripts/validate_residual_honesty_conservation.py`; accepts 3 valid residual records, rejects 5 expected-invalid controls, no support-state effect |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Residual ledger trace | implemented | passes via `python3 scripts/validate_residual_ledger_trace.py`; reads 5 existing artifacts, records 4 residual trace entries, and preserves no support-state effect |
+| `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Residual ledger storage replay | implemented | passes via `python3 scripts/validate_residual_ledger_storage_replay.py`; records 4 replay entries, rejects 5 expected-invalid controls, and records a `blocks_promotion` no-change transition |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Exact reconstruction mismatch negative case | implemented | passes via Lean negative case; no real reconstruction-quality claim |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Failed verification promotion negative case | implemented | passes via Lean negative case; no verifier-quality or codec-behavior claim |
 | `compact-generative-systems-and-residual-honesty` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | Semantic grounded-provenance negative case | implemented | passes via Lean negative case; no grounding-quality or semantic-utility claim |
@@ -488,16 +489,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 197 |
+| Proof targets covered by triage | 198 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 197 |
+| implemented | 198 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 197 |
+| implemented | formal-invariant | lean-candidate | 198 |

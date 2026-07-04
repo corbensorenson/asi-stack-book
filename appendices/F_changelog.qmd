@@ -1,10 +1,37 @@
 # Changelog
 
+## 2026-07-04 - Add residual ledger storage replay
+
+- Added `python3 scripts/validate_residual_ledger_storage_replay.py`,
+  `docs/residual_ledger_storage_replay.md`, fixture
+  `experiments/residual_ledger_storage_replay/input/residual_ledger_records.json`,
+  and result artifact
+  `experiments/residual_ledger_storage_replay/results/2026-07-04-local.json`.
+  Command: `python3 scripts/validate_residual_ledger_storage_replay.py`.
+- The validator replays four bounded append-only residual events, computes a
+  digest chain, preserves owner handoff, requires discharge review, keeps
+  workload-context references, and rejects five expected-invalid controls for
+  handoff-owner mismatch, missing discharge receipt/review, sequence gap,
+  missing workload context, and support promotion from replay shape.
+- Added `evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json`
+  as an accepted `blocks_promotion` no-change decision for
+  `compact-generative-systems.residual_ledger_storage_replay`.
+- Added the Lean summary bridge `residual_ledger_storage_replay_bridge` in
+  `AsiStackProofs.CompactGenerativeSystems` and wired the validator into
+  `scripts/validate_book.py`.
+- Current proof-depth snapshot: 198 proof targets, 54 Lean modules, 992 theorem declarations, 805 derived/decomposed, 183 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Updated the Compact Generative Systems live and reader chapters, outline,
+  roadmap, non-core evidence ledger, contribution novelty ledger, v1 progress
+  ledger, README, and home page while preserving the boundary: this does not
+  prove deployed residual-ledger storage, live residual detection, safety,
+  model quality, benchmark performance, an upward support-state transition, or
+  any chapter core claim.
+
 ## 2026-07-04 - Move test harness status detail into generated ledger
 
 - Added `python3 scripts/validate_test_harness_status_ledger.py` and generated
-  `docs/test_harness_status_ledger.md` as the detailed inventory for 59 wired
-  checks: 22 Phase 5 registry harnesses and 37 chapter-specific/support
+  `docs/test_harness_status_ledger.md` as the detailed inventory for 60 wired
+  checks: 22 Phase 5 registry harnesses and 38 chapter-specific/support
   book-gate checks.
 - Replaced the 14.9k-character `docs/v1_0_candidate_status.md` Test harnesses
   row with a compact count-plus-ledger-link row and updated

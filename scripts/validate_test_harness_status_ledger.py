@@ -156,6 +156,13 @@ BOOK_GATE_CHECKS = [
         "boundary": "No deployed compression, codec-correctness, semantic-utility, or chapter-core claim.",
     },
     {
+        "name": "Residual ledger storage replay",
+        "doc": "docs/residual_ledger_storage_replay.md",
+        "script": "scripts/validate_residual_ledger_storage_replay.py",
+        "summary": "Four append-only residual replay entries with owner handoff, discharge review, workload context, digest-chain construction, and five rejected controls.",
+        "boundary": "No deployed residual-ledger storage, live residual detection, safety, model-quality, benchmark, or chapter-core claim.",
+    },
+    {
         "name": "Hive admission harness",
         "doc": "docs/hive_admission_harness.md",
         "script": "scripts/validate_hive_admission.py",
@@ -304,6 +311,7 @@ BOOK_GATE_RESULTS_BY_SCRIPT = {
     "scripts/validate_theseus_report_bundle_audit.py": "experiments/theseus_report_bundle_audit/results/2026-07-02-local.json",
     "scripts/validate_theseus_public_task_bundle_import.py": "experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json",
     "scripts/validate_compact_gvr_slice.py": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+    "scripts/validate_residual_ledger_storage_replay.py": "experiments/residual_ledger_storage_replay/results/2026-07-04-local.json",
     "scripts/validate_hive_admission.py": "experiments/hive_admission/results/2026-07-01-local.md",
     "scripts/validate_runtime_adapter_effect_probe.py": "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
     "scripts/validate_runtime_adapter_adversarial_boundary_probe.py": "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
@@ -454,8 +462,8 @@ def validate(args: argparse.Namespace) -> list[str]:
         return ["experiments/phase5_harness_registry.json must contain a list."]
     if len(registry) != 22:
         errors.append(f"Expected 22 Phase 5 registry harnesses, found {len(registry)}.")
-    if len(BOOK_GATE_CHECKS) != 37:
-        errors.append(f"Expected 37 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
+    if len(BOOK_GATE_CHECKS) != 38:
+        errors.append(f"Expected 38 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
 
     names = [check["name"] for check in BOOK_GATE_CHECKS]
     duplicates = sorted({name for name in names if names.count(name) > 1})

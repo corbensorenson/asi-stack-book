@@ -63,16 +63,25 @@ NO_PROMOTION_EXPECTED = {
             "does not promote any chapter core claim",
         ],
     },
+    "compact-generative-systems.residual_ledger_storage_replay": {
+        "transition": "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
+        "required_non_claims": [
+            "does not promote the Compact Generative Systems chapter core claim",
+            "does not create an upward support-state transition",
+            "does not promote any chapter core claim",
+        ],
+    },
 }
 
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
     "Accepted non-core upward transitions | 6 narrow transitions.",
-    "Accepted no-promotion side-lane decisions | 2 accepted no-promotion side-lane decisions; no support-state movement.",
+    "Accepted no-promotion side-lane decisions | 3 accepted no-promotion side-lane decisions; no support-state movement.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
     "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
+    "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
     "Accepted No-Promotion Side-Lane Decisions",
     "Chapter-core promotion effect | None.",
     "no independent external human review record yet.",
@@ -216,7 +225,7 @@ def main() -> None:
 
     print(
         "Non-core evidence ledger validation passed: 6 accepted non-core upward transitions, "
-        "2 accepted side-lane no-promotion decisions, 0 chapter-core promotions."
+        "3 accepted side-lane no-promotion decisions, 0 chapter-core promotions."
     )
 
 

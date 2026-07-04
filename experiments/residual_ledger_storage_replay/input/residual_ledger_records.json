@@ -1,0 +1,247 @@
+{
+  "schema_version": "asi_stack.residual_ledger_storage_replay.input.v0",
+  "ledger_id": "local-residual-ledger-storage-replay-2026-07-04",
+  "valid_records": [
+    {
+      "entry_id": "entry-001-resource-deferred-task-ticks",
+      "residual_id": "residual://resource/deferred-task-ticks",
+      "sequence": 1,
+      "event": "create",
+      "owner": "owner://resource-review",
+      "workload_context_ref": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+      "residual_type": "deferred_task_ticks",
+      "burden": {
+        "deferred_task_ticks": 7
+      },
+      "status": "deferred",
+      "review_status": "accepted",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove deployed residual-ledger storage",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "entry_id": "entry-002-compact-repair-handoff",
+      "residual_id": "residual://resource/deferred-task-ticks",
+      "sequence": 2,
+      "event": "handoff",
+      "owner": "owner://compact-repair-review",
+      "handoff": {
+        "from_owner": "owner://resource-review",
+        "to_owner": "owner://compact-repair-review",
+        "review_status": "accepted"
+      },
+      "workload_context_ref": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+      "residual_type": "repair_residual",
+      "burden": {
+        "repair_residual_visible": true
+      },
+      "status": "deferred",
+      "review_status": "accepted",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove deployed residual-ledger storage",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "entry_id": "entry-003-compact-repair-discharged",
+      "residual_id": "residual://resource/deferred-task-ticks",
+      "sequence": 3,
+      "event": "discharge",
+      "owner": "owner://compact-repair-review",
+      "workload_context_ref": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+      "residual_type": "repair_residual",
+      "burden": {
+        "repair_residual_visible": true
+      },
+      "status": "discharged",
+      "discharge": {
+        "receipt_ref": "receipt://repeat-generator-plus-repair",
+        "review_status": "accepted"
+      },
+      "review_status": "accepted",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove deployed residual-ledger storage",
+        "does not promote any chapter core claim"
+      ]
+    },
+    {
+      "entry_id": "entry-004-readiness-escrow",
+      "residual_id": "residual://readiness/residual-escrow",
+      "sequence": 4,
+      "event": "create",
+      "owner": "owner://readiness-review",
+      "workload_context_ref": "experiments/readiness_residual_gates/results/2026-06-28-local.md",
+      "residual_type": "residual_escrow",
+      "burden": {
+        "residual_escrow_carried": true
+      },
+      "status": "deferred",
+      "review_status": "accepted",
+      "support_state_effect": "none",
+      "non_claims": [
+        "does not prove deployed residual-ledger storage",
+        "does not promote any chapter core claim"
+      ]
+    }
+  ],
+  "expected_invalid_controls": [
+    {
+      "control_id": "invalid_handoff_owner_mismatch",
+      "expected_reason": "handoff_owner_mismatch",
+      "records": [
+        {
+          "entry_id": "invalid-001-create",
+          "residual_id": "residual://invalid/handoff-owner",
+          "sequence": 1,
+          "event": "create",
+          "owner": "owner://resource-review",
+          "workload_context_ref": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+          "residual_type": "deferred_task_ticks",
+          "burden": {
+            "deferred_task_ticks": 7
+          },
+          "status": "deferred",
+          "review_status": "accepted",
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not prove deployed residual-ledger storage",
+            "does not promote any chapter core claim"
+          ]
+        },
+        {
+          "entry_id": "invalid-002-mismatched-handoff",
+          "residual_id": "residual://invalid/handoff-owner",
+          "sequence": 2,
+          "event": "handoff",
+          "owner": "owner://compact-repair-review",
+          "handoff": {
+            "from_owner": "owner://unrecorded-owner",
+            "to_owner": "owner://compact-repair-review",
+            "review_status": "accepted"
+          },
+          "workload_context_ref": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+          "residual_type": "repair_residual",
+          "burden": {
+            "repair_residual_visible": true
+          },
+          "status": "deferred",
+          "review_status": "accepted",
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not prove deployed residual-ledger storage",
+            "does not promote any chapter core claim"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "invalid_discharge_without_review_receipt",
+      "expected_reason": "discharge_receipt_or_review_missing",
+      "records": [
+        {
+          "entry_id": "invalid-003-discharge-no-receipt",
+          "residual_id": "residual://invalid/discharge",
+          "sequence": 1,
+          "event": "discharge",
+          "owner": "owner://compact-repair-review",
+          "workload_context_ref": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
+          "residual_type": "repair_residual",
+          "burden": {
+            "repair_residual_visible": true
+          },
+          "status": "discharged",
+          "review_status": "accepted",
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not prove deployed residual-ledger storage",
+            "does not promote any chapter core claim"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "invalid_sequence_gap",
+      "expected_reason": "sequence_gap",
+      "records": [
+        {
+          "entry_id": "invalid-004-gap",
+          "residual_id": "residual://invalid/sequence-gap",
+          "sequence": 2,
+          "event": "create",
+          "owner": "owner://resource-review",
+          "workload_context_ref": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+          "residual_type": "deferred_task_ticks",
+          "burden": {
+            "deferred_task_ticks": 7
+          },
+          "status": "deferred",
+          "review_status": "accepted",
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not prove deployed residual-ledger storage",
+            "does not promote any chapter core claim"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "invalid_missing_workload_context",
+      "expected_reason": "workload_context_missing",
+      "records": [
+        {
+          "entry_id": "invalid-005-no-workload",
+          "residual_id": "residual://invalid/no-workload",
+          "sequence": 1,
+          "event": "create",
+          "owner": "owner://resource-review",
+          "residual_type": "deferred_task_ticks",
+          "burden": {
+            "deferred_task_ticks": 7
+          },
+          "status": "deferred",
+          "review_status": "accepted",
+          "support_state_effect": "none",
+          "non_claims": [
+            "does not prove deployed residual-ledger storage",
+            "does not promote any chapter core claim"
+          ]
+        }
+      ]
+    },
+    {
+      "control_id": "invalid_support_promotion_from_replay",
+      "expected_reason": "support_state_promotion_attempt",
+      "records": [
+        {
+          "entry_id": "invalid-006-promotion",
+          "residual_id": "residual://invalid/promotion",
+          "sequence": 1,
+          "event": "create",
+          "owner": "owner://resource-review",
+          "workload_context_ref": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
+          "residual_type": "deferred_task_ticks",
+          "burden": {
+            "deferred_task_ticks": 7
+          },
+          "status": "deferred",
+          "review_status": "accepted",
+          "support_state_effect": "promotes_core_claim",
+          "non_claims": [
+            "does not prove deployed residual-ledger storage",
+            "does not promote any chapter core claim"
+          ]
+        }
+      ]
+    }
+  ],
+  "required_boundaries": [
+    "no deployed residual-ledger storage claim",
+    "no live residual detection claim",
+    "no chapter-core support-state promotion",
+    "no model-quality or benchmark claim"
+  ]
+}
