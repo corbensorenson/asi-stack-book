@@ -23,6 +23,9 @@ KEY_FIGURE_GEOMETRY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_fi
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
 VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
+ACCESSIBILITY_NAVIGATION = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
+)
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 
@@ -54,6 +57,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_key_figure_format_probe.py",
     "python3 scripts/validate_reader_key_figure_geometry.py",
     "python3 scripts/validate_reader_visual_identity.py",
+    "python3 scripts/validate_reader_accessibility_navigation.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_release_surface_status_ledger.py",
@@ -102,6 +106,7 @@ def main() -> None:
         READER_MANIFEST,
         AUDIO_PROBE,
         VISUAL_IDENTITY,
+        ACCESSIBILITY_NAVIGATION,
         HTML_REVIEW,
     ):
         if not path.exists():
@@ -116,6 +121,7 @@ def main() -> None:
     reader_manifest = load_json(READER_MANIFEST)
     audio_probe = load_json(AUDIO_PROBE)
     visual_identity = load_json(VISUAL_IDENTITY)
+    accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
     html_review = HTML_REVIEW.read_text(encoding="utf-8")
     if not isinstance(record, dict):
         fail([f"{rel(RECORD)} must contain a JSON object."])
@@ -131,6 +137,8 @@ def main() -> None:
         fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
     if not isinstance(visual_identity, dict):
         fail([f"{rel(VISUAL_IDENTITY)} must contain a JSON object."])
+    if not isinstance(accessibility_navigation, dict):
+        fail([f"{rel(ACCESSIBILITY_NAVIGATION)} must contain a JSON object."])
 
     if record.get("record_type") != "edition_release":
         errors.append("record_type must be edition_release.")
@@ -212,6 +220,7 @@ def main() -> None:
     visual_palette = visual_identity.get("palette_summary", {})
     visual_figures = visual_identity.get("figure_source_summary", {})
     visual_contrast = visual_identity.get("contrast_summary", {})
+    accessibility_summary = accessibility_navigation.get("summary", {})
     if not isinstance(epub_audit, dict):
         errors.append("curated format epub_content_audit must be an object.")
         epub_audit = {}
@@ -274,6 +283,28 @@ def main() -> None:
         observed = visual_sections.get(section, {}).get(key)
         if observed != expected:
             errors.append(f"visual_identity_manifest {section}.{key} must be {expected!r}; found {observed!r}.")
+    if accessibility_navigation.get("status") != "passed_source_accessibility_navigation_review":
+        errors.append(
+            "accessibility_navigation_manifest status must remain passed_source_accessibility_navigation_review."
+        )
+    expected_accessibility_metrics = {
+        "chapter_records": 44,
+        "existing_chapter_files": 44,
+        "reconciled_records": 44,
+        "release_blocker_preserved_records": 44,
+        "chapters_with_one_h1": 44,
+        "handoff_sections": 44,
+        "fig_alt_count": 10,
+        "figure_boundary_count": 10,
+        "live_marker_leak_count": 0,
+        "raw_core_claim_marker_leak_count": 0,
+    }
+    for key, expected in expected_accessibility_metrics.items():
+        observed = accessibility_summary.get(key)
+        if observed != expected:
+            errors.append(
+                f"accessibility_navigation_manifest summary.{key} must be {expected!r}; found {observed!r}."
+            )
 
     key_figure_expected = {
         ("epub", "matched_source_svg_titles"): 10,
@@ -326,6 +357,14 @@ def main() -> None:
         "visual_identity_non_neutral_families": visual_palette.get("non_neutral_family_count"),
         "visual_identity_key_figures": visual_figures.get("figure_count"),
         "visual_identity_min_text_contrast": visual_contrast.get("minimum_text_contrast_ratio"),
+        "reader_accessibility_navigation_manifest": "editions/reader_manuscript/v1_0/accessibility_navigation_manifest.json",
+        "reader_accessibility_navigation_chapters": accessibility_summary.get("chapter_records"),
+        "reader_accessibility_navigation_h1": accessibility_summary.get("chapters_with_one_h1"),
+        "reader_accessibility_navigation_handoffs": accessibility_summary.get("handoff_sections"),
+        "reader_accessibility_navigation_fig_alts": accessibility_summary.get("fig_alt_count"),
+        "reader_accessibility_navigation_figure_boundaries": accessibility_summary.get("figure_boundary_count"),
+        "reader_accessibility_navigation_live_marker_leaks": accessibility_summary.get("live_marker_leak_count"),
+        "reader_accessibility_navigation_raw_claim_leaks": accessibility_summary.get("raw_core_claim_marker_leak_count"),
         "audio_reading_flow_script_files": audio_reading_flow.get("script_files_checked"),
         "audio_reading_flow_ordered_markers": audio_reading_flow.get("chapter_marker_rows"),
         "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
@@ -339,6 +378,7 @@ def main() -> None:
         "automated package",
         "source-geometry",
         "source-level visual identity",
+        "source-level accessibility/navigation",
         "do not approve epub",
         "final figure art",
         "curated reader edition",
@@ -413,6 +453,9 @@ def main() -> None:
             "source-level visual identity review",
             "54 combined colors",
             "5 non-neutral color families",
+            "source-level accessibility/navigation review",
+            "44 one-H1 chapters",
+            "10 draft figure alt texts",
         ],
         errors,
     )
@@ -421,7 +464,15 @@ def main() -> None:
     text_contains_all(
         "review_status.notes",
         review_note,
-        ["source-geometry review", "source-level visual identity review", "visual identity approval", "remain open"],
+        [
+            "source-geometry review",
+            "source-level visual identity review",
+            "source-level accessibility/navigation review",
+            "keyboard-only",
+            "screen-reader",
+            "visual identity approval",
+            "remain open",
+        ],
         errors,
     )
 
@@ -437,6 +488,10 @@ def main() -> None:
             "does not clear raster review",
             "Source-level visual identity review is recorded as preparation evidence only",
             "does not clear final figure-artifact review",
+            "Source-level accessibility/navigation review is recorded as preparation evidence only",
+            "does not clear keyboard-only review",
+            "screen-reader review",
+            "WCAG conformance",
             "visual identity approval",
         ],
         errors,

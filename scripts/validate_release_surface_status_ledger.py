@@ -37,6 +37,9 @@ KEY_FIGURE_FORMAT_PROBE = (
 )
 KEY_FIGURE_GEOMETRY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_geometry_manifest.json"
 VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
+ACCESSIBILITY_NAVIGATION = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
+)
 HTML_RELEASE_RECORD = ROOT / "release_records" / "2026-06-29-v1-reader-html-855dc277.json"
 CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
 
@@ -52,6 +55,7 @@ REVIEW_DOCS = {
     "reader_figure_format": ROOT / "docs" / "reader_key_figure_format_probe.md",
     "reader_figure_geometry": ROOT / "docs" / "reader_key_figure_geometry_review.md",
     "reader_visual_identity": ROOT / "docs" / "reader_visual_identity_review.md",
+    "reader_accessibility_navigation": ROOT / "docs" / "reader_accessibility_navigation_review.md",
     "reader_chapter_matrix": ROOT / "docs" / "reader_chapter_review_matrix.md",
     "reader_format_matrix": ROOT / "docs" / "reader_format_review_matrix.md",
 }
@@ -134,6 +138,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         KEY_FIGURE_FORMAT_PROBE,
         KEY_FIGURE_GEOMETRY,
         VISUAL_IDENTITY,
+        ACCESSIBILITY_NAVIGATION,
         HTML_RELEASE_RECORD,
         CURATED_BLOCKED_RECORD,
         *REVIEW_DOCS.values(),
@@ -158,6 +163,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     key_figure_format_probe = load_json(KEY_FIGURE_FORMAT_PROBE)
     key_figure_geometry = load_json(KEY_FIGURE_GEOMETRY)
     visual_identity = load_json(VISUAL_IDENTITY)
+    accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
     curated_blocked_record = load_json(CURATED_BLOCKED_RECORD)
 
     profile_ids = {profile.get("id") for profile in release_profiles.get("profiles", []) if isinstance(profile, dict)}
@@ -433,6 +439,54 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         if fragment not in visual_non_claims:
             errors.append(f"reader visual identity non_claims missing {fragment!r}.")
 
+    if accessibility_navigation.get("status") != "passed_source_accessibility_navigation_review":
+        errors.append(
+            "reader accessibility/navigation manifest must remain passed_source_accessibility_navigation_review."
+        )
+    access_summary = accessibility_navigation.get("summary", {})
+    expected_accessibility_metrics = {
+        "chapter_records": 44,
+        "existing_chapter_files": 44,
+        "reconciled_records": 44,
+        "release_blocker_preserved_records": 44,
+        "chapters_with_one_h1": 44,
+        "skipped_heading_count": 0,
+        "duplicate_heading_slug_count": 0,
+        "handoff_sections": 44,
+        "image_count": 10,
+        "fig_alt_count": 10,
+        "figure_boundary_count": 10,
+        "live_marker_leak_count": 0,
+        "raw_core_claim_marker_leak_count": 0,
+        "key_figure_targets": 10,
+        "key_figure_assets_present": 10,
+        "key_figure_reader_refs_present": 10,
+        "key_figure_fig_alts_present": 10,
+        "key_figure_boundaries_present": 10,
+    }
+    for key, expected in expected_accessibility_metrics.items():
+        observed = access_summary.get(key)
+        if observed != expected:
+            errors.append(
+                f"reader accessibility/navigation manifest summary.{key} must be {expected!r}; found {observed!r}."
+            )
+    access_boundary = str(accessibility_navigation.get("review_boundary", ""))
+    for fragment in (
+        "not rendered browser review",
+        "not keyboard-only review",
+        "not screen-reader review",
+        "not WCAG conformance",
+        "not e-reader review",
+        "not audiobook review",
+        "not reader release approval",
+    ):
+        if fragment not in access_boundary:
+            errors.append(f"reader accessibility/navigation review_boundary missing {fragment!r}.")
+    access_non_claims = " ".join(str(item) for item in accessibility_navigation.get("non_claims", [])).lower()
+    for fragment in ("does not certify wcag", "does not approve epub", "does not promote any chapter core claim"):
+        if fragment not in access_non_claims:
+            errors.append(f"reader accessibility/navigation non_claims missing {fragment!r}.")
+
     curated_blockers = set(curated_format.get("release_blockers_preserved", []))
     required_curated_format_blockers = REQUIRED_CURATED_BLOCKERS | {
         "full_format_artifact_review_not_completed",
@@ -528,6 +582,23 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "Non-neutral color families | 5",
             "Minimum text contrast ratio | 5.19",
             "not final figure-artifact approval",
+            "does not approve EPUB, DOCX, PDF, e-reader, audio, or reader release artifacts",
+        ],
+        "reader_accessibility_navigation": [
+            "Reader Accessibility And Navigation Review",
+            "source-level review",
+            "Chapter records | 44",
+            "Release blockers preserved | 44",
+            "Chapters with one H1 | 44",
+            "Skipped heading levels | 0",
+            "Duplicate heading slugs | 0",
+            "Handoff sections | 44",
+            "Draft reader images | 10",
+            "Figure alt texts | 10",
+            "Figure boundary paragraphs | 10",
+            "not keyboard-only review",
+            "not screen-reader review",
+            "not WCAG conformance",
             "does not approve EPUB, DOCX, PDF, e-reader, audio, or reader release artifacts",
         ],
     }
@@ -645,6 +716,14 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "visual_identity_non_neutral_families": visual_palette.get("non_neutral_family_count"),
         "visual_identity_figure_count": visual_figures.get("figure_count"),
         "visual_identity_min_text_contrast": visual_contrast.get("minimum_text_contrast_ratio"),
+        "reader_accessibility_navigation_status": accessibility_navigation.get("status"),
+        "reader_accessibility_navigation_chapters": access_summary.get("chapter_records"),
+        "reader_accessibility_navigation_h1": access_summary.get("chapters_with_one_h1"),
+        "reader_accessibility_navigation_handoffs": access_summary.get("handoff_sections"),
+        "reader_accessibility_navigation_fig_alts": access_summary.get("fig_alt_count"),
+        "reader_accessibility_navigation_boundaries": access_summary.get("figure_boundary_count"),
+        "reader_accessibility_navigation_live_marker_leaks": access_summary.get("live_marker_leak_count"),
+        "reader_accessibility_navigation_raw_claim_leaks": access_summary.get("raw_core_claim_marker_leak_count"),
         "release_record": rel(HTML_RELEASE_RECORD),
     }
     return metrics, errors
@@ -674,6 +753,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; "
         "`docs/reader_audio_script_probe_manifest.md`; `docs/reader_key_figure_format_probe.md`; "
         "`docs/reader_key_figure_geometry_review.md`; `docs/reader_visual_identity_review.md`; "
+        "`docs/reader_accessibility_navigation_review.md`; "
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`; "
         "`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`; "
         "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
@@ -719,6 +799,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Key-figure source geometry bounds | {metrics['key_figure_geometry_content_bounds']} content / {metrics['key_figure_geometry_text_anchor_bounds']} text-anchor, min edge {metrics['key_figure_geometry_min_edge_margin']} px |",
             f"| Source-level visual identity status | `{metrics['visual_identity_status']}` |",
             f"| Source-level visual identity colors | {metrics['visual_identity_color_count']} total / {metrics['visual_identity_non_neutral_families']} non-neutral families |",
+            f"| Reader source accessibility/navigation status | `{metrics['reader_accessibility_navigation_status']}` |",
+            f"| Reader source accessibility/navigation checks | {metrics['reader_accessibility_navigation_chapters']} chapters, {metrics['reader_accessibility_navigation_h1']} one-H1 chapters, {metrics['reader_accessibility_navigation_handoffs']} handoffs, {metrics['reader_accessibility_navigation_fig_alts']} figure alt texts |",
             f"| Signature ideas | {metrics['signature_idea_count']} |",
             f"| Voice-pass slots preserved as author-enrichment queue context | {metrics['voice_slot_count']} |",
             f"| Release-approved reader formats | {qmd_escape(', '.join(metrics['format_approved']))} |",
@@ -754,6 +836,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval; `docs/reader_key_figure_format_probe.md` records package/text survival with {metrics['key_figure_epub_svg_entries']} EPUB SVG entries, {metrics['key_figure_epub_matched_titles']} matched EPUB SVG titles, {metrics['key_figure_docx_matched_stems']} DOCX figure stems, and {metrics['key_figure_pdf_matched_captions']} PDF draft-caption matches while preserving final-art, e-reader, application, PDF-layout, and release blockers.",
             f"- `docs/reader_key_figure_geometry_review.md` records a source-geometry review for {metrics['key_figure_geometry_count']} key figures: {metrics['key_figure_geometry_content_bounds']} content-bound checks, {metrics['key_figure_geometry_text_anchor_bounds']} text-anchor checks, and {metrics['key_figure_geometry_min_edge_margin']} px minimum content edge margin; it is not raster review, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_visual_identity_review.md` records a source-level visual identity review: {metrics['visual_identity_figure_count']} key figures, {metrics['visual_identity_color_count']} combined colors, {metrics['visual_identity_non_neutral_families']} non-neutral color families, and minimum text contrast {metrics['visual_identity_min_text_contrast']}; it is not manual aesthetic review, final figure-artifact approval, or reader release approval.",
+            f"- `docs/reader_accessibility_navigation_review.md` records a source-level accessibility/navigation review: {metrics['reader_accessibility_navigation_chapters']} curated chapters, {metrics['reader_accessibility_navigation_h1']} one-H1 chapters, {metrics['reader_accessibility_navigation_handoffs']} handoff sections, {metrics['reader_accessibility_navigation_fig_alts']} draft figure alt texts, {metrics['reader_accessibility_navigation_boundaries']} figure boundary paragraphs, {metrics['reader_accessibility_navigation_live_marker_leaks']} live-marker leaks, and {metrics['reader_accessibility_navigation_raw_claim_leaks']} raw core-claim marker leaks; it is not keyboard-only review, screen-reader review, WCAG conformance, e-reader review, audiobook review, or reader release approval.",
             "",
             "## Non-Claim Boundary",
             "",
