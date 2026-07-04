@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-04 - Move release-surface detail into checked ledger
+
+- Added `docs/release_surface_status_ledger.md` and
+  `python3 scripts/validate_release_surface_status_ledger.py` to carry the
+  detailed reader/release surface state that had made the v1.0 status snapshot
+  hard to scan.
+- Replaced the oversized `Release surfaces` row in
+  `docs/v1_0_candidate_status.md` with a compact generated row that points to
+  the ledger while preserving the current blockers: generated reader HTML is
+  the only release-approved reader artifact; curated reader HTML/EPUB/DOCX/PDF
+  and reader EPUB/DOCX/PDF/audio remain probe evidence only; EPUB, DOCX, PDF,
+  e-reader, audio, refreshed reader HTML, and final figure-artifact review
+  remain unapproved.
+- Wired the new validator into `scripts/validate_book.py` and the v1.0 status
+  snapshot validator so the public status page stays readable without losing
+  release-blocker enforcement.
+- Boundary: status-surface hygiene and validator tightening only; no new
+  release artifact, no edition release record, no support-state movement, no
+  final figure approval, and no e-reader or audio approval.
+
 ## 2026-07-04 - Correct README curated reader digest
 
 - Updated the README's curated reader HTML browser-review fingerprint to the

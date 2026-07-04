@@ -58,6 +58,7 @@ This repository is organized around the living book and its validation loop.
 | `docs/reader_continuity_audit.md` | Generated Phase 2 heuristic audit and priority queue for reader-manuscript continuity review. | tracked |
 | `docs/reader_chapter_review_matrix.md` | Generated public summary of the manifest-synced 44-chapter human-reader review queue, overlay dispositions, and release blockers. | tracked |
 | `docs/reader_format_review_matrix.md` | Generated public summary of the v1.0 reader-format review ledger, local render/inspection evidence, and artifact-release blockers. | tracked |
+| `docs/release_surface_status_ledger.md` | Generated public-safe ledger for release profiles, reader-manuscript review state, format-probe status, release blockers, and the compact `Release surfaces` status row. | tracked |
 | `docs/reader_artifact_inspection_manifest.md` | Tracked local HTML/EPUB/DOCX structural-inspection summary for ignored reader-format snapshots, preserving release blockers and non-claims. | tracked |
 | `docs/reader_key_figure_artifact_review.md` | Tracked draft key-figure metadata, live-placement, curated-reader-placement, caption, alt-text, and non-claim-boundary review; not final figure-artifact approval. | tracked |
 | `docs/reader_key_figure_html_probe.md` | Tracked rendered curated-reader HTML DOM probe for the ten draft key figures; checks image refs, copied SVG assets, alt text, captions, responsive classes, and non-claim boundaries without final figure approval. | tracked |
