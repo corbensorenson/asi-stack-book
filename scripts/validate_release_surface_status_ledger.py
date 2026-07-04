@@ -271,6 +271,16 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         )
     if any(artifact.get("status") == "published" for artifact in blocked_artifacts.values()):
         errors.append("curated blocked release-candidate artifacts must not be published.")
+    blocked_probe_closure = curated_blocked_record.get("format_probe_closure", {})
+    if not isinstance(blocked_probe_closure, dict):
+        errors.append("curated blocked release-candidate record must carry format_probe_closure.")
+        blocked_probe_closure = {}
+    if blocked_probe_closure.get("status") != "automated_probe_passed_release_blocked":
+        errors.append("curated blocked release-candidate format_probe_closure status must remain automated_probe_passed_release_blocked.")
+    release_boundary = str(blocked_probe_closure.get("release_boundary", "")).lower()
+    for fragment in ("automated package", "do not approve epub", "final figure art", "curated reader edition"):
+        if fragment not in release_boundary:
+            errors.append(f"curated blocked release-candidate format_probe_closure boundary missing {fragment!r}.")
 
     curated_inspection = curated_format.get("inspection_summary", {})
     curated_epub_content_audit = curated_format.get("epub_content_audit", {})
@@ -420,6 +430,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "format_blocker_counts": blocker_counts,
         "curated_blocked_record": rel(CURATED_BLOCKED_RECORD),
         "curated_blocked_record_status": curated_blocked_record.get("validation_status"),
+        "curated_blocked_probe_status": blocked_probe_closure.get("status"),
         "generated_html_pages": generated_html_pages,
         "generated_html_pairs": generated_html_pairs,
         "generated_html_failures": generated_html_failures,
@@ -541,6 +552,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Reader formats still carrying blockers | {qmd_escape(', '.join(metrics['format_blocked']))} |",
             f"| Format blocker counts | {qmd_escape(counter_phrase(blocker_counts))} |",
             f"| Blocked curated reader candidate record | {metrics['curated_blocked_record_status']} |",
+            f"| Blocked curated format-probe closure | {metrics['curated_blocked_probe_status']} |",
             "",
             "## Status-Page Row",
             "",
@@ -558,6 +570,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "",
             f"- Generated reader HTML is the only release-approved reader format row, backed by `{metrics['release_record']}`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, or figure-artifact review.",
             f"- `{metrics['curated_blocked_record']}` records the current curated-reader HTML/EPUB/DOCX/PDF/e-reader/audio candidate as `partial` and blocked. It names exact local artifacts and blockers but does not approve, publish, tag, or archive any curated-reader artifact.",
+            f"- The blocked candidate also records `{metrics['curated_blocked_probe_status']}` for the automated package, link, raster, key-figure, and browser probes; this is release-preparation evidence only and does not clear application-level review.",
             f"- `docs/reader_html_artifact_browser_review.md` records {metrics['generated_html_pages']} generated reader HTML pages, {metrics['generated_html_pairs']} page-view pairs, and {metrics['generated_html_failures']} failed page-view pairs.",
             f"- `docs/curated_reader_html_artifact_browser_review.md` records {metrics['curated_html_pages']} curated reader HTML pages, {metrics['curated_html_pairs']} page-view pairs, {metrics['curated_html_failures']} failed page-view pairs, {metrics['curated_key_figure_pairs']} key-figure page-view pairs, {metrics['curated_key_figure_failures']} key-figure failures, and ignored snapshot digest `{metrics['curated_html_digest']}`.",
             f"- `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: {metrics['curated_html_files']} HTML files, {metrics['curated_epub_xhtml']} EPUB XHTML entries, {metrics['curated_docx_png']} DOCX PNG media entries, {metrics['curated_docx_svg']} DOCX SVG media entries, and {metrics['curated_pdf_pages']} PDF pages. Its repaired-package EPUB audit checks {metrics['curated_epub_audit_xhtml']} XHTML entries, {metrics['curated_epub_audit_content_xhtml']} packaged content XHTML entries, and {metrics['curated_epub_audit_unresolved']} unresolved internal hrefs, with repaired artifact SHA `{metrics['curated_epub_audit_sha']}`. Its repaired-package DOCX audit checks {metrics['curated_docx_audit_paragraphs']} paragraphs, {metrics['curated_docx_audit_relationships']} relationships, and {metrics['curated_docx_audit_raw_qmd']} raw .qmd relationship targets, with repaired artifact SHA `{metrics['curated_docx_audit_sha']}`. Its all-page PDF raster audit checks {metrics['curated_pdf_raster_pages']} pages, {metrics['curated_pdf_raster_blank_pages']} blank pages, {metrics['curated_pdf_raster_low_ink_pages']} low-ink pages, and {metrics['curated_pdf_raster_near_edge_pages']} near-edge pages. It preserves release blockers.",

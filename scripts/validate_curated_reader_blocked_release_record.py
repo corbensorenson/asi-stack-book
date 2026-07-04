@@ -18,6 +18,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
 CURATED_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
+KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
@@ -35,9 +36,17 @@ REQUIRED_BLOCKERS = {
 REQUIRED_COMMANDS = {
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/repair_curated_reader_epub_links.py",
+    "python3 scripts/repair_curated_reader_docx_links.py",
     "python3 scripts/audit_curated_reader_pdf_layout.py",
+    "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
+    "python3 scripts/audit_curated_reader_epub_content.py",
+    "python3 scripts/audit_curated_reader_docx_content.py",
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
+    "python3 scripts/validate_reader_key_figure_format_probe.py",
+    "python3 scripts/validate_reader_audio_script_probe_manifest.py",
+    "python3 scripts/validate_release_surface_status_ledger.py",
 }
 
 
@@ -75,7 +84,7 @@ def text_contains_all(owner: str, text: str, fragments: list[str], errors: list[
 
 def main() -> None:
     errors: list[str] = []
-    for path in (RECORD, CURATED_FORMAT, READER_MANIFEST, HTML_REVIEW):
+    for path in (RECORD, CURATED_FORMAT, KEY_FIGURE_FORMAT, READER_MANIFEST, HTML_REVIEW):
         if not path.exists():
             errors.append(f"required path missing: {rel(path)}")
     if errors:
@@ -83,12 +92,15 @@ def main() -> None:
 
     record = load_json(RECORD)
     curated = load_json(CURATED_FORMAT)
+    key_figures = load_json(KEY_FIGURE_FORMAT)
     reader_manifest = load_json(READER_MANIFEST)
     html_review = HTML_REVIEW.read_text(encoding="utf-8")
     if not isinstance(record, dict):
         fail([f"{rel(RECORD)} must contain a JSON object."])
     if not isinstance(curated, dict):
         fail([f"{rel(CURATED_FORMAT)} must contain a JSON object."])
+    if not isinstance(key_figures, dict):
+        fail([f"{rel(KEY_FIGURE_FORMAT)} must contain a JSON object."])
     if not isinstance(reader_manifest, dict):
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
 
@@ -159,6 +171,95 @@ def main() -> None:
         byte_forms = {str(byte_count), f"{byte_count:,}"} if isinstance(byte_count, int) else {str(byte_count)}
         if not any(form in note for form in byte_forms):
             errors.append(f"{record_format} notes missing tracked byte count {manifest_row.get('bytes')}.")
+
+    epub_audit = curated.get("epub_content_audit", {})
+    docx_audit = curated.get("docx_content_audit", {})
+    pdf_raster = curated.get("pdf_visual_raster_audit", {})
+    pdf_layout = curated.get("pdf_layout_audit", {})
+    if not isinstance(epub_audit, dict):
+        errors.append("curated format epub_content_audit must be an object.")
+        epub_audit = {}
+    if not isinstance(docx_audit, dict):
+        errors.append("curated format docx_content_audit must be an object.")
+        docx_audit = {}
+    if not isinstance(pdf_raster, dict):
+        errors.append("curated format pdf_visual_raster_audit must be an object.")
+        pdf_raster = {}
+    if not isinstance(pdf_layout, dict):
+        errors.append("curated format pdf_layout_audit must be an object.")
+        pdf_layout = {}
+
+    key_figure_expected = {
+        ("epub", "matched_source_svg_titles"): 10,
+        ("docx", "matched_figure_stems"): 10,
+        ("pdf", "matched_caption_titles"): 10,
+    }
+    for (section, key), expected in key_figure_expected.items():
+        section_obj = key_figures.get(section, {})
+        observed = section_obj.get(key) if isinstance(section_obj, dict) else None
+        if observed != expected:
+            errors.append(f"key-figure format probe {section}.{key} must be {expected}; found {observed}.")
+
+    closure = record.get("format_probe_closure")
+    if not isinstance(closure, dict):
+        errors.append("format_probe_closure must be present and must be an object.")
+        closure = {}
+    expected_closure = {
+        "status": "automated_probe_passed_release_blocked",
+        "curated_format_probe_manifest": "editions/reader_manuscript/v1_0/curated_format_probe_manifest.json",
+        "key_figure_format_probe_manifest": "editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json",
+        "epub_repaired_package_sha256": epub_audit.get("source_sha256"),
+        "epub_content_xhtml_entries_checked": epub_audit.get("content_xhtml_entries_checked"),
+        "epub_unresolved_internal_hrefs": epub_audit.get("unresolved_internal_hrefs"),
+        "docx_repaired_package_sha256": docx_audit.get("source_sha256"),
+        "docx_raw_qmd_relationship_targets": docx_audit.get("raw_qmd_relationship_targets"),
+        "pdf_pages_raster_rendered": pdf_raster.get("pages_rendered"),
+        "pdf_blank_raster_pages": pdf_raster.get("blank_pages"),
+        "pdf_near_edge_raster_pages": pdf_raster.get("near_edge_content_pages"),
+        "key_figure_epub_matched_titles": 10,
+        "key_figure_docx_matched_stems": 10,
+        "key_figure_pdf_matched_captions": 10,
+    }
+    for key, expected in expected_closure.items():
+        if closure.get(key) != expected:
+            errors.append(f"format_probe_closure.{key} must be {expected!r}; found {closure.get(key)!r}.")
+    release_boundary = str(closure.get("release_boundary", "")).lower()
+    for fragment in ("automated package", "do not approve epub", "final figure art", "curated reader edition"):
+        if fragment not in release_boundary:
+            errors.append(f"format_probe_closure.release_boundary missing {fragment!r}.")
+
+    epub_note = str(artifacts.get("curated_reader_epub", {}).get("notes", ""))
+    for fragment in (
+        str(epub_audit.get("source_sha256", "")),
+        "49 packaged content XHTML entries checked",
+        "0 unresolved internal hrefs",
+        "10 matched key-figure SVG titles",
+    ):
+        if fragment and fragment not in epub_note:
+            errors.append(f"curated_reader_epub notes missing repaired-audit fragment: {fragment}")
+
+    docx_note = str(artifacts.get("curated_reader_docx", {}).get("notes", ""))
+    for fragment in (
+        str(docx_audit.get("source_sha256", "")),
+        "17,360 paragraphs",
+        "286 relationships",
+        "0 raw .qmd relationship targets",
+        "10 matched key-figure stems",
+    ):
+        if fragment and fragment not in docx_note:
+            errors.append(f"curated_reader_docx notes missing repaired-audit fragment: {fragment}")
+
+    pdf_note = str(artifacts.get("curated_reader_pdf", {}).get("notes", ""))
+    for fragment in (
+        f"{pdf_layout.get('word_boxes_checked'):,} word boxes",
+        "0 out-of-bounds word boxes",
+        "528 rendered pages",
+        "0 blank pages",
+        "49 near-edge pages",
+        "10 matched key-figure captions",
+    ):
+        if fragment and fragment not in pdf_note:
+            errors.append(f"curated_reader_pdf notes missing PDF audit fragment: {fragment}")
 
     residual_text = " ".join(str(item) for item in record.get("residuals", []))
     missing_blockers = sorted(REQUIRED_BLOCKERS - {blocker for blocker in REQUIRED_BLOCKERS if blocker in residual_text})

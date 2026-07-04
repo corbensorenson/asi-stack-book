@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-04 - Tighten curated-reader blocked release record
+
+- Updated `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`
+  so the blocked curated-reader candidate now records the repaired EPUB package
+  audit, repaired DOCX relationship audit, all-page PDF raster probe, key-figure
+  EPUB/DOCX/PDF package survival, and generated audio-script release-surface
+  checks in its validation command and closure surface.
+- Tightened `scripts/validate_curated_reader_blocked_release_record.py` and
+  `scripts/validate_release_surface_status_ledger.py` so the blocked candidate
+  must preserve the automated-probe-passed-but-release-blocked state and cannot
+  drop repaired-package SHA values, PDF raster metrics, key-figure probe counts,
+  or non-approval boundaries.
+- Regenerated `docs/release_surface_status_ledger.md` so the public release
+  surface distinguishes automated probe closure from EPUB, DOCX, PDF, e-reader,
+  audio, and final figure-artifact approval.
+- Boundary: this is release-control hardening only. It does not approve or
+  publish the curated reader edition, EPUB, DOCX, PDF, e-reader, audio,
+  audio-embedded EPUB, or final figure art, and it does not promote any
+  support state.
+
 ## 2026-07-04 - Route key-figure summaries into audio companion workspace
 
 - Updated `scripts/build_audio_script.py` so generated audio companion notes

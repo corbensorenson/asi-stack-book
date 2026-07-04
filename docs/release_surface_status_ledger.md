@@ -28,6 +28,7 @@ It records release-profile, reader-manuscript, format-probe, and artifact-review
 | Reader formats still carrying blockers | docx, epub, pdf |
 | Format blocker counts | 1 `app_or_ereader_review_not_completed`, 3 `full_format_artifact_review_not_completed`, 1 `full_pdf_layout_review_not_completed` |
 | Blocked curated reader candidate record | partial |
+| Blocked curated format-probe closure | automated_probe_passed_release_blocked |
 
 ## Status-Page Row
 
@@ -45,6 +46,7 @@ It records release-profile, reader-manuscript, format-probe, and artifact-review
 
 - Generated reader HTML is the only release-approved reader format row, backed by `release_records/2026-06-29-v1-reader-html-855dc277.json`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, or figure-artifact review.
 - `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json` records the current curated-reader HTML/EPUB/DOCX/PDF/e-reader/audio candidate as `partial` and blocked. It names exact local artifacts and blockers but does not approve, publish, tag, or archive any curated-reader artifact.
+- The blocked candidate also records `automated_probe_passed_release_blocked` for the automated package, link, raster, key-figure, and browser probes; this is release-preparation evidence only and does not clear application-level review.
 - `docs/reader_html_artifact_browser_review.md` records 59 generated reader HTML pages, 118 page-view pairs, and 0 failed page-view pairs.
 - `docs/curated_reader_html_artifact_browser_review.md` records 49 curated reader HTML pages, 98 page-view pairs, 0 failed page-view pairs, 20 key-figure page-view pairs, 0 key-figure failures, and ignored snapshot digest `4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a`.
 - `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: 49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, 0 DOCX SVG media entries, and 528 PDF pages. Its repaired-package EPUB audit checks 52 XHTML entries, 49 packaged content XHTML entries, and 0 unresolved internal hrefs, with repaired artifact SHA `62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e`. Its repaired-package DOCX audit checks 17360 paragraphs, 286 relationships, and 0 raw .qmd relationship targets, with repaired artifact SHA `7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce`. Its all-page PDF raster audit checks 528 pages, 0 blank pages, 1 low-ink pages, and 49 near-edge pages. It preserves release blockers.
