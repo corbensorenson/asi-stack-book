@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-03 - Tighten idea-depth roadmap findings
+
+- Reviewed Claude's idea-focused roadmap critique against the current v1.x
+  roadmap and corrected stale early finding language so it no longer implies
+  that bounded idea-depth closures, selected defended tracks, or reconciled
+  reader chapters do not exist.
+- The roadmap now distinguishes first bounded closures from full defended
+  contribution state, ties future idea work to both selected contribution
+  tracks and signature-idea execution states, and keeps reader-manuscript
+  blockers focused on release review, continuity polish, visual polish, and
+  format/audio treatment.
+- Boundary: this is roadmap truth maintenance only. It does not add a new
+  source, proof, evidence result, support-state transition, release approval,
+  external review, or reader artifact approval.
+- Also reconciled the routing decision lease test-result manifest entry in
+  `book_structure.json` so `scripts/sync_scaffold.py` preserves the accepted
+  no-promotion record reference in generated Appendix E.
+
 ## 2026-07-03 - Record routing lease no-promotion decision
 
 - Added
