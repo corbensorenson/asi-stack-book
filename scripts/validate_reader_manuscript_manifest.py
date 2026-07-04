@@ -147,6 +147,10 @@ REQUIRED_ROUTING_RELEASE_BLOCKERS = {
     "companion_note_not_release_reviewed",
     "audio_script_not_reviewed",
 }
+REQUIRED_IMPLEMENTATION_HORIZON_HEADINGS = (
+    "## Minimum Viable Implementation",
+    "## Beyond the State of the Art",
+)
 REQUIRED_FIELDS = {
     "schema_version",
     "major_version",
@@ -1081,6 +1085,13 @@ def validate_chapter_records(
             errors.append(f"{owner}: file must be under editions/reader_manuscript/v1_0/chapters/.")
         elif not (ROOT / file_path).exists():
             errors.append(f"{owner}: curated chapter file does not exist: {file_path}")
+        else:
+            curated_text = (ROOT / file_path).read_text(encoding="utf-8", errors="ignore")
+            for heading in REQUIRED_IMPLEMENTATION_HORIZON_HEADINGS:
+                if curated_text.count(f"\n{heading}") != 1:
+                    errors.append(
+                        f"{owner}: curated chapter must contain exactly one canonical {heading!r} heading."
+                    )
 
         status = record.get("reconciliation_status")
         if status not in ALLOWED_RECONCILIATION_STATUS:

@@ -11,6 +11,9 @@
   `Beyond The State Of The Art` to the canonical `Beyond the State of the Art`
   so curated-source audio scripts preserve both implementation-horizon
   headings.
+- Extended `scripts/validate_reader_manuscript_manifest.py` so every curated
+  chapter must carry exactly one canonical `Minimum Viable Implementation` and
+  `Beyond the State of the Art` heading before the manuscript can validate.
 - Refreshed `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`
   and `docs/reader_audio_script_probe_manifest.md`: the current curated-source
   probe records 49 script files, preserved implementation horizons, 5 table
