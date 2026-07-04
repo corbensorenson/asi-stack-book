@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-03 - Reconcile routing and steward burn-down artifact refs
+
+- Reconciled Milestone 2.5 burn-down accounting for
+  `routing-heads-and-specialist-cores` and
+  `artifact-steward-agents-and-living-project-governance` so both rows name
+  their current validator/result artifacts and finite proof boundaries instead
+  of only summarizing fixture behavior.
+- Boundary: this is roadmap truth maintenance only; it does not add a new
+  harness, proof result, source record, support-state transition, deployed
+  routing/steward result, or chapter-core promotion.
+
 ## 2026-07-03 - Condense Personal Compute Hives reader mechanism
 
 - Added a reader-only overlay for the Personal Compute Hives `Mechanism`
