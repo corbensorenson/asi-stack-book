@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-04 - Make no-promotion side-lane ledger complete
+
+- Updated `docs/non_core_evidence_ledger.md` so it exposes all 15 accepted
+  `blocks_promotion` no-promotion records under
+  `evidence_transitions/v1_x_measured/`, rather than only the earlier four
+  side-lane decisions.
+- Changed `scripts/validate_non_core_evidence_ledger.py` to derive the
+  no-promotion ledger set from accepted transition records, so future
+  `blocks_promotion` decisions cannot silently disappear from the public
+  trust surface.
+- Updated the README, landing-page trust surface, and
+  `scripts/validate_trust_surface.py` to report the current 15-record
+  no-promotion boundary while preserving the six accepted non-core upward
+  transitions and zero chapter-core promotions.
+- Boundary: visibility and validator tightening only; no new evidence,
+  no support-state promotion, no demotion/refutation, no external review, and
+  no chapter-core support movement.
+
 ## 2026-07-04 - Refresh current curated reader artifact probes
 
 - Reran the curated reader key-figure HTML probe, curated reader

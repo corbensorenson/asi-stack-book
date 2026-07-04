@@ -21,6 +21,7 @@ STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
 READER_AUDIT = ROOT / "docs" / "reader_continuity_audit.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 CORE_DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
+NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
 
 EXPECTED_NON_CORE = {
     "living-book-methodology.phase5_harness_registry_runner": "synthetic-test-backed",
@@ -116,6 +117,22 @@ def disposition_summary() -> dict[str, int]:
     return {key: int(summary[key]) for key in required}
 
 
+def no_promotion_decision_count() -> int:
+    count = 0
+    for path in NO_PROMOTION_DIR.glob("*.json"):
+        data = read_json(path)
+        if not isinstance(data, dict):
+            continue
+        if (
+            data.get("transition_effect") == "no_change"
+            and data.get("support_state_effect") == "blocks_promotion"
+            and data.get("transition_validity_state") == "review_accepted"
+            and data.get("review_status") == "accepted"
+        ):
+            count += 1
+    return count
+
+
 def metric(report: str, label: str) -> str:
     pattern = re.compile(rf"^\|\s*{re.escape(label)}\s*\|\s*([^|]+?)\s*\|", re.MULTILINE)
     match = pattern.search(report)
@@ -136,6 +153,7 @@ def assert_surface(
     long_paragraphs: str,
     active_overlays: str,
     dispositions: dict[str, int],
+    no_promotion_decisions: int,
 ) -> None:
     required = [
         "60-Second Trust Surface",
@@ -148,7 +166,7 @@ def assert_surface(
         f"{chapters}/{chapters} chapters externally positioned",
         "0 explicit external-baseline exceptions",
         "Six narrow non-core transitions are accepted",
-        "Four accepted no-promotion side-lane decisions",
+        f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions",
         f"{high} high-priority",
         f"{medium} medium-priority",
         f"{long_paragraphs} paragraphs at or above 160 words",
@@ -174,7 +192,7 @@ def assert_surface(
 
     if "six narrow non-core transitions are accepted" not in text.lower():
         errors.append(f"{name} missing current six-transition count")
-    if "four accepted no-promotion side-lane decisions" not in text.lower():
+    if f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions" not in text:
         errors.append(f"{name} missing current no-promotion side-lane count")
 
     lowered = text.lower()
@@ -193,6 +211,7 @@ def main() -> None:
     medium = metric(reader_audit, "Medium-priority heuristic review chapters")
     long_paragraphs = metric(reader_audit, "Paragraphs at or above 160 words")
     active_overlays = metric(reader_audit, "Active reader overlay operations")
+    no_promotion_decisions = no_promotion_decision_count()
 
     readme = read_text(README)
     index = read_text(INDEX)
@@ -214,6 +233,7 @@ def main() -> None:
             long_paragraphs=long_paragraphs,
             active_overlays=active_overlays,
             dispositions=dispositions,
+            no_promotion_decisions=no_promotion_decisions,
         )
 
     public_status_needles = [

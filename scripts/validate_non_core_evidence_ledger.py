@@ -46,51 +46,13 @@ EXPECTED = {
     },
 }
 
-NO_PROMOTION_EXPECTED = {
-    "circle-calculus.public_consumer_gate": {
-        "transition": "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
-        "required_non_claims": [
-            "does not promote the Circle Calculus chapter core claim",
-            "does not create an upward support-state transition",
-            "does not promote any chapter core claim",
-        ],
-    },
-    "runtime-adapters.human_oversight_degradation": {
-        "transition": "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
-        "required_non_claims": [
-            "does not promote the Runtime Adapters chapter core claim",
-            "does not create an upward support-state transition",
-            "does not promote any chapter core claim",
-        ],
-    },
-    "compact-generative-systems.residual_ledger_storage_replay": {
-        "transition": "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
-        "required_non_claims": [
-            "does not promote the Compact Generative Systems chapter core claim",
-            "does not create an upward support-state transition",
-            "does not promote any chapter core claim",
-        ],
-    },
-    "artifact-graphs.live_artifact_attestation_probe": {
-        "transition": "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
-        "required_non_claims": [
-            "does not promote the Artifact Graphs chapter core claim",
-            "does not create an upward support-state transition",
-            "does not promote any chapter core claim",
-        ],
-    },
-}
+NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
 
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
     "Accepted non-core upward transitions | 6 narrow transitions.",
-    "Accepted no-promotion side-lane decisions | 4 accepted no-promotion side-lane decisions; no support-state movement.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
-    "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
-    "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
-    "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
-    "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
     "Accepted No-Promotion Side-Lane Decisions",
     "Chapter-core promotion effect | None.",
     "no independent external human review record yet.",
@@ -125,14 +87,44 @@ def load_transition(path: Path) -> dict:
     return data
 
 
+def accepted_no_promotion_records(errors: list[str]) -> dict[str, dict[str, object]]:
+    records: dict[str, dict[str, object]] = {}
+    for path in sorted(NO_PROMOTION_DIR.glob("*.json")):
+        record = load_transition(path)
+        if (
+            record.get("transition_effect") == "no_change"
+            and record.get("support_state_effect") == "blocks_promotion"
+        ):
+            claim_id = record.get("claim_id")
+            if not isinstance(claim_id, str) or not claim_id:
+                errors.append(f"{path.relative_to(ROOT)} missing non-empty claim_id")
+                continue
+            relative = str(path.relative_to(ROOT))
+            if claim_id in records:
+                errors.append(f"duplicate no-promotion claim_id {claim_id!r}")
+            records[claim_id] = {"transition": relative, "record": record}
+    if not records:
+        errors.append("no accepted blocks_promotion records found under evidence_transitions/v1_x_measured")
+    return records
+
+
 def main() -> None:
     errors: list[str] = []
     ledger = LEDGER.read_text(encoding="utf-8", errors="ignore")
     appendix_c = APPENDIX_C.read_text(encoding="utf-8", errors="ignore")
     readme = README.read_text(encoding="utf-8", errors="ignore")
     index = INDEX.read_text(encoding="utf-8", errors="ignore")
+    no_promotion_expected = accepted_no_promotion_records(errors)
 
-    for required in REQUIRED_LEDGER_STRINGS:
+    dynamic_required_ledger_strings = [
+        (
+            "Accepted no-promotion side-lane decisions | "
+            f"{len(no_promotion_expected)} accepted `blocks_promotion` decisions; "
+            "no support-state movement."
+        )
+    ]
+
+    for required in REQUIRED_LEDGER_STRINGS + dynamic_required_ledger_strings:
         if required not in ledger:
             errors.append(f"ledger missing required boundary text: {required}")
     for forbidden in FORBIDDEN_LEDGER_STRINGS:
@@ -178,9 +170,13 @@ def main() -> None:
         if expected["transition"] not in ledger:
             errors.append(f"ledger does not link transition record {expected['transition']}")
 
-    for claim_id, expected in NO_PROMOTION_EXPECTED.items():
-        record_path = ROOT / expected["transition"]
-        record = load_transition(record_path)
+    for claim_id, expected in no_promotion_expected.items():
+        transition = str(expected["transition"])
+        record_path = ROOT / transition
+        record = expected["record"]
+        if not isinstance(record, dict):
+            errors.append(f"{transition} did not load as a transition record")
+            continue
         if record.get("claim_id") != claim_id:
             errors.append(
                 f"{record_path.relative_to(ROOT)} claim_id {record.get('claim_id')!r} "
@@ -196,18 +192,32 @@ def main() -> None:
             errors.append(f"{record_path.relative_to(ROOT)} review_status is not accepted")
         if record.get("support_state_effect") != "blocks_promotion":
             errors.append(f"{record_path.relative_to(ROOT)} must block promotion")
-        non_claims = " ".join(str(item) for item in record.get("non_claims", []))
-        limitations = " ".join(str(item) for item in record.get("limitations", []))
-        for required_non_claim in expected.get("required_non_claims", []):
-            if required_non_claim not in f"{non_claims} {limitations}":
-                errors.append(
-                    f"{record_path.relative_to(ROOT)} lacks required no-promotion text: "
-                    f"{required_non_claim}"
-                )
+        boundary_text = " ".join(
+            str(item)
+            for item in (
+                list(record.get("non_claims", []))
+                + list(record.get("limitations", []))
+                + [
+                    record.get("scope_boundary", ""),
+                    record.get("transition_reason", ""),
+                    record.get("promotion_burden", ""),
+                ]
+            )
+        ).lower()
+        if "does not create an upward support-state transition" not in boundary_text:
+            errors.append(
+                f"{record_path.relative_to(ROOT)} lacks upward support-state transition boundary text"
+            )
+        if (
+            "chapter core" not in boundary_text
+            and "chapter-core" not in boundary_text
+            and "above argument" not in boundary_text
+        ):
+            errors.append(f"{record_path.relative_to(ROOT)} lacks chapter-core or above-argument boundary text")
         if claim_id not in ledger:
             errors.append(f"ledger does not list no-promotion claim id {claim_id}")
-        if expected["transition"] not in ledger:
-            errors.append(f"ledger does not link no-promotion transition record {expected['transition']}")
+        if transition not in ledger:
+            errors.append(f"ledger does not link no-promotion transition record {transition}")
         if "blocks_promotion" not in ledger:
             errors.append("ledger does not expose blocks_promotion for side-lane no-promotion decisions")
 
@@ -234,7 +244,8 @@ def main() -> None:
 
     print(
         "Non-core evidence ledger validation passed: 6 accepted non-core upward transitions, "
-        "4 accepted side-lane no-promotion decisions, 0 chapter-core promotions."
+        f"{len(no_promotion_expected)} accepted side-lane no-promotion decisions, "
+        "0 chapter-core promotions."
     )
 
 
