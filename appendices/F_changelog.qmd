@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-04 - Derive audio scripts from curated reader manuscript
+
+- Updated `scripts/build_audio_script.py` so the default audio-script review
+  workspace is generated from the tracked curated reader manuscript via
+  `scripts/build_curated_reader_edition.py`; the generated-reader projection
+  remains available through `--source-mode generated_reader_edition` for
+  diagnostics.
+- Normalized seven curated reader chapter headings from
+  `Beyond The State Of The Art` to the canonical `Beyond the State of the Art`
+  so curated-source audio scripts preserve both implementation-horizon
+  headings.
+- Refreshed `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`
+  and `docs/reader_audio_script_probe_manifest.md`: the current curated-source
+  probe records 49 script files, preserved implementation horizons, 5 table
+  treatment notes, 50 Mermaid diagram notes, 11 image notes, required
+  checklist/companion/glossary/proof-rule files, and MP3/M4B/audio-embedded
+  EPUB targets still marked `target_not_generated`.
+- Updated README, Appendix J, release-editions planning, v1.0 status, and the
+  v1.x roadmap so public surfaces no longer imply that the audio script is
+  derived only from the generated reader projection.
+- Boundary: this creates no audiobook, narration approval, audio files, MP3,
+  M4B, audio-embedded EPUB, audio release record, format approval,
+  support-state promotion, proof result, benchmark result, model-quality claim,
+  or release-readiness claim.
+
 ## 2026-07-04 - Tighten idea-depth roadmap closure rules
 
 - Reviewed Claude's idea-focused critique against the current v1.x roadmap and

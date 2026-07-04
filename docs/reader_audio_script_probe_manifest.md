@@ -1,18 +1,17 @@
 # Reader Audio-Script Probe Manifest
 
-Last updated: 2026-07-02
+Last updated: 2026-07-04
 
 This summary is synced from
 `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`. It records
-the latest tracked local audio-script review-workspace facts for the generated
-reader edition. It is not an audiobook, not narration approval, not an audio
-release, and not a support-state promotion.
+the latest tracked local audio-script review-workspace facts for the tracked curated reader manuscript. It is not an audiobook, not narration approval, not
+an audio release, and not a support-state promotion.
 
 ## Commands
 
 ```bash
 python3 scripts/build_audio_script.py --check
-python3 scripts/build_audio_script.py
+python3 scripts/build_audio_script.py --source-mode curated_reader_manuscript
 python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_manifest.json in a temporary workspace ...
 ```
 
@@ -21,6 +20,8 @@ python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_mani
 | Field | Value |
 |---|---:|
 | Source profile | `reader_release` |
+| Source mode | `tracked_curated_reader_manuscript` |
+| Source generator | `scripts/build_curated_reader_edition.py` |
 | Audio profile | `audio_release` |
 | Script files | 49 |
 | Implementation-horizon script status | pass |
@@ -36,7 +37,7 @@ Required review files are generated in the ignored workspace:
 | Material | Count |
 |---|---:|
 | Tables | 5 |
-| Mermaid diagrams | 53 |
+| Mermaid diagrams | 50 |
 | Code/schema blocks | 0 |
 | Images | 11 |
 

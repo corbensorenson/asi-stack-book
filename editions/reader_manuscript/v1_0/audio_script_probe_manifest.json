@@ -2,11 +2,11 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "local_audio_script_probe_record",
-  "last_updated": "2026-07-02",
-  "purpose": "Record the latest tracked local audio-script review-workspace facts for the generated reader edition without treating the ignored narration scripts as an audiobook, narration approval, or audio release artifact.",
+  "last_updated": "2026-07-04",
+  "purpose": "Record the latest tracked local audio-script review-workspace facts for the tracked curated reader manuscript without treating the ignored narration scripts as an audiobook, narration approval, or audio release artifact.",
   "source_commands": [
     "python3 scripts/build_audio_script.py --check",
-    "python3 scripts/build_audio_script.py",
+    "python3 scripts/build_audio_script.py --source-mode curated_reader_manuscript",
     "python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_manifest.json in a temporary workspace ..."
   ],
   "local_artifact_refs": [
@@ -26,6 +26,9 @@
   "script_workspace_summary": {
     "status": "generated_in_temp_and_checked",
     "source_profile": "reader_release",
+    "source_mode": "tracked_curated_reader_manuscript",
+    "requested_source_mode": "curated_reader_manuscript",
+    "source_generator": "scripts/build_curated_reader_edition.py",
     "audio_profile": "audio_release",
     "script_files": 49,
     "implementation_horizon_script_status": "pass",
@@ -41,7 +44,7 @@
   },
   "companion_treatment_totals": {
     "tables": 5,
-    "mermaid_diagrams": 53,
+    "mermaid_diagrams": 50,
     "code_or_schema_blocks": 0,
     "images": 11
   },

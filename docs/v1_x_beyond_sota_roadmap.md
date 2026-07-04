@@ -3547,9 +3547,9 @@ Acceptance bar:
 
 Current status:
 
-- `scripts/build_audio_script.py --check` generates 49 review-script files and
-  verifies that every chapter script preserves both implementation-horizon
-  sections.
+- `scripts/build_audio_script.py --check` generates 49 review-script files
+  from the tracked curated reader manuscript and verifies that every chapter
+  script preserves both implementation-horizon sections.
 - The tracked curated reader manuscript now has a full local HTML browser
   viability review recorded in
   `docs/curated_reader_html_artifact_browser_review.md`: the rendered ignored
@@ -3588,7 +3588,7 @@ Current status:
   `docs/reader_audio_script_probe_manifest.md`, and
   `scripts/validate_reader_audio_script_probe_manifest.py` now record and
   validate the tracked local audio-script probe: 49 script files, preserved
-  implementation horizons, 5 table treatment notes, 53 Mermaid diagram notes,
+  implementation horizons, 5 table treatment notes, 50 Mermaid diagram notes,
   11 image notes, and MP3/M4B/audio-embedded EPUB targets still marked
   `target_not_generated`. This is not narration approval, an audiobook, or an
   audio release record.

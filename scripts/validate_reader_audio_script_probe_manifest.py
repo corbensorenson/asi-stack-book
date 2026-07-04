@@ -162,6 +162,12 @@ def validate_generated_workspace(
         )
     if generated.get("source_profile") != summary.get("source_profile"):
         errors.append("Generated source_profile does not match tracked source_profile.")
+    if generated.get("source_mode") != summary.get("source_mode"):
+        errors.append("Generated source_mode does not match tracked source_mode.")
+    if generated.get("requested_source_mode") != summary.get("requested_source_mode"):
+        errors.append("Generated requested_source_mode does not match tracked requested_source_mode.")
+    if generated.get("source_generator") != summary.get("source_generator"):
+        errors.append("Generated source_generator does not match tracked source_generator.")
     if generated.get("audio_profile") != summary.get("audio_profile"):
         errors.append("Generated audio_profile does not match tracked audio_profile.")
     if generated.get("implementation_horizon_script_status") != "pass":
@@ -240,6 +246,12 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         errors.append("script_workspace_summary.status must be generated_in_temp_and_checked.")
     if summary.get("source_profile") != "reader_release":
         errors.append("script_workspace_summary.source_profile must be reader_release.")
+    if summary.get("source_mode") != "tracked_curated_reader_manuscript":
+        errors.append("script_workspace_summary.source_mode must be tracked_curated_reader_manuscript.")
+    if summary.get("requested_source_mode") != "curated_reader_manuscript":
+        errors.append("script_workspace_summary.requested_source_mode must be curated_reader_manuscript.")
+    if summary.get("source_generator") != "scripts/build_curated_reader_edition.py":
+        errors.append("script_workspace_summary.source_generator must be scripts/build_curated_reader_edition.py.")
     if summary.get("audio_profile") != "audio_release":
         errors.append("script_workspace_summary.audio_profile must be audio_release.")
     require_int("script_workspace_summary", "script_files", summary.get("script_files"), errors, minimum=1)
@@ -306,7 +318,9 @@ def validate_summary(manifest: dict[str, Any], errors: list[str]) -> None:
     mermaid_diagrams = totals.get("mermaid_diagrams") if isinstance(totals, dict) else None
     required_fragments = [
         "Reader Audio-Script Probe Manifest",
+        "tracked curated reader manuscript",
         "python3 scripts/build_audio_script.py --check",
+        "| Source mode | `tracked_curated_reader_manuscript` |",
         f"| Script files | {script_files} |",
         "| Implementation-horizon script status | pass |",
         f"| Mermaid diagrams | {mermaid_diagrams} |",

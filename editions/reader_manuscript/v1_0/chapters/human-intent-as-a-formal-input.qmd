@@ -175,7 +175,7 @@ The live project now has a first synthetic version of that corpus. The intent in
 
 The Intent re-contract trigger probe adds a second small gate. `valid_no_material_delta_continue` keeps work under the accepted contract when nothing material changes. `valid_publication_surface_delta_recontracts` routes back to the contract boundary when publication surface changes and a re-contract record is present. Seven expected-invalid controls block material deltas before dispatch: `invalid_authority_delta_without_recontract`, `invalid_private_source_delta_without_recontract`, `invalid_stop_condition_erasure_without_recontract`, `invalid_evidence_bar_weakening_without_recontract`, `invalid_affected_party_widening_without_recontract`, `invalid_means_expansion_without_recontract`, and `invalid_support_state_promotion_without_recontract`. That is useful evidence for the shape of the gate. It is a no natural-language-intent-understanding, deployed-parser-quality, deployed-authority-extraction, prompt-injection-containment, runtime-dispatch, approval-service, user-satisfaction, or support-state-promotion claim.
 
-## Beyond The State Of The Art
+## Beyond the State of the Art
 
 The mature endpoint is an intent compiler that turns goals into bounded command contracts before planning sees executable work. Goals, constraints, authority, artifacts, evidence requirements, ambiguities, and stop conditions travel together. Refusal, clarification, bounded drafting, approval request, and acceptance are contract states rather than conversational moods.
 

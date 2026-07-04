@@ -204,7 +204,7 @@ Generate the audio-script candidate with:
 
 ```bash
 python3 scripts/build_audio_script.py --check
-python3 scripts/build_audio_script.py
+python3 scripts/build_audio_script.py --source-mode curated_reader_manuscript
 ```
 
 Required future artifacts:
@@ -218,15 +218,15 @@ Required future artifacts:
 
 Embedding audio into an EPUB is allowed only when the produced EPUB actually contains the audio and the release record says so.
 
-The generated audio script is a review workspace, not an audiobook. It marks tables, diagrams, images, code, and schemas for spoken treatment so they are not silently omitted.
+The generated audio script is a review workspace, not an audiobook. By default it is derived from the tracked curated reader manuscript, then marks tables, diagrams, images, code, and schemas for spoken treatment so they are not silently omitted.
 
-The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, `pronunciation_glossary.md`, `proof_equation_reading_rules.md`, and `companion_notes.md`. The manifest records that the script was derived from the reader release path, whether every chapter script preserved both implementation-horizon sections, and that review is still required before any MP3, M4B, or audio-embedded EPUB can be claimed. The companion notes count tables, diagrams, code/schema blocks, and images by script file so the narration review can decide what is spoken, summarized, or moved to companion material. The proof/equation rules keep theorem IDs, equations, support states, schemas, hashes, and negative controls scoped in spoken form. The checklist records table/diagram/code spoken-treatment requirements, packaging checks, and the rule that an audio-embedded EPUB exists only after the reviewed audio files are actually embedded and checked.
+The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, `pronunciation_glossary.md`, `proof_equation_reading_rules.md`, and `companion_notes.md`. The manifest records that the script was derived from the tracked curated reader manuscript through the reader release path, whether every chapter script preserved both implementation-horizon sections, and that review is still required before any MP3, M4B, or audio-embedded EPUB can be claimed. The companion notes count tables, diagrams, code/schema blocks, and images by script file so the narration review can decide what is spoken, summarized, or moved to companion material. The proof/equation rules keep theorem IDs, equations, support states, schemas, hashes, and negative controls scoped in spoken form. The checklist records table/diagram/code spoken-treatment requirements, packaging checks, and the rule that an audio-embedded EPUB exists only after the reviewed audio files are actually embedded and checked.
 
 The audio manifest carries the same human-consumption bundle policy, but only to enforce dependency direction. Audio is not a shortcut around reader review, and audio embedded in EPUB remains a separate checked artifact.
 
 The tracked audio-script probe manifest records the current local workspace
 facts: 49 generated script files, preserved implementation horizons, 5 table
-treatment notes, 53 Mermaid diagram notes, 11 image notes, and MP3/M4B/
+treatment notes, 50 Mermaid diagram notes, 11 image notes, and MP3/M4B/
 audio-embedded EPUB targets still marked `target_not_generated`. This keeps
 audio preparation visible without approving narration or claiming audio files
 exist.

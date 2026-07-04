@@ -139,16 +139,16 @@ The script-preparation tool is:
 
 ```bash
 python3 scripts/build_audio_script.py --check
-python3 scripts/build_audio_script.py
+python3 scripts/build_audio_script.py --source-mode curated_reader_manuscript
 ```
 
 It creates `build/audio_script/` and a pronunciation glossary for review. It does not synthesize audio and does not produce MP3, M4B, or audio-embedded EPUB artifacts.
 
-The generated audio workspace includes `audio_manifest.json` with the source reader generation summary, audio profile, content-layer policy, implementation-horizon script status, script files, companion-treatment counts, pronunciation glossary, proof/equation reading rules, chapter markers, audio review checklist, review status, and non-claims. `companion_notes.md` counts tables, diagrams, code/schema blocks, and images by script file. `proof_equation_reading_rules.md` tells a future narrator how to speak theorem IDs, support states, equations, schemas, hashes, and negative controls without turning them into broader proof than the book records. `AUDIO_RELEASE_CHECKLIST.md` keeps the narration-review and packaging gate explicit so dense tables, diagrams, source IDs, schemas, and proof hooks are either spoken clearly or moved to companion notes rather than silently omitted.
+The generated audio workspace includes `audio_manifest.json` with the tracked curated reader generation summary, source mode, audio profile, content-layer policy, implementation-horizon script status, script files, companion-treatment counts, pronunciation glossary, proof/equation reading rules, chapter markers, audio review checklist, review status, and non-claims. `companion_notes.md` counts tables, diagrams, code/schema blocks, and images by script file. `proof_equation_reading_rules.md` tells a future narrator how to speak theorem IDs, support states, equations, schemas, hashes, and negative controls without turning them into broader proof than the book records. `AUDIO_RELEASE_CHECKLIST.md` keeps the narration-review and packaging gate explicit so dense tables, diagrams, source IDs, schemas, and proof hooks are either spoken clearly or moved to companion notes rather than silently omitted.
 
 `docs/reader_audio_script_probe_manifest.md` records the current tracked
 audio-script probe: 49 generated script files, preserved implementation
-horizons, 5 table treatment notes, 53 Mermaid diagram notes, 11 image notes,
+horizons, 5 table treatment notes, 50 Mermaid diagram notes, 11 image notes,
 and all MP3/M4B/audio-embedded EPUB targets still marked
 `target_not_generated`.
 It is a review-workspace probe, not an audiobook or audio release record.

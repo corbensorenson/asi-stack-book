@@ -16,11 +16,13 @@ import shutil
 import tempfile
 from pathlib import Path
 
+import build_curated_reader_edition
 import build_reader_edition
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "build" / "audio_script"
 DEFAULT_READER_TEMP_NAME = "reader_source"
+DEFAULT_SOURCE_MODE = "curated_reader_manuscript"
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]+\).*")
 IMPLEMENTATION_HORIZON_HEADINGS = (
     "## Minimum Viable Implementation",
@@ -120,6 +122,18 @@ def qmd_to_audio_markdown(text: str) -> str:
         "",
     ]
     return "\n".join(header + output).strip() + "\n"
+
+
+def build_audio_source_workspace(reader_dir: Path, source_mode: str) -> tuple[dict[str, object], str, str]:
+    if source_mode == "curated_reader_manuscript":
+        report = build_curated_reader_edition.generate(reader_dir, "reader_release")
+        return report, "tracked_curated_reader_manuscript", "scripts/build_curated_reader_edition.py"
+    if source_mode == "generated_reader_edition":
+        report = build_reader_edition.generate(reader_dir, "reader_release")
+        return report, "generated_reader_edition", "scripts/build_reader_edition.py"
+    raise ValueError(
+        "source_mode must be 'curated_reader_manuscript' or 'generated_reader_edition'"
+    )
 
 
 def write_pronunciation_glossary(
@@ -468,10 +482,13 @@ def write_audio_companion_notes(
     return companion_path
 
 
-def generate(output_dir: Path) -> dict[str, object]:
+def generate(output_dir: Path, source_mode: str = DEFAULT_SOURCE_MODE) -> dict[str, object]:
     with tempfile.TemporaryDirectory(prefix="asi-reader-for-audio-") as temp_dir:
         reader_dir = Path(temp_dir) / DEFAULT_READER_TEMP_NAME
-        reader_summary = build_reader_edition.generate(reader_dir, "reader_release")
+        reader_summary, generated_source_mode, source_generator = build_audio_source_workspace(
+            reader_dir,
+            source_mode,
+        )
         profile_data = build_reader_edition.load_release_profiles()
         audio_profile = build_reader_edition.find_profile("audio_release")
         audio_policy = profile_data.get("audio_manuscript_policy", {})
@@ -527,6 +544,9 @@ def generate(output_dir: Path) -> dict[str, object]:
         manifest = {
             "schema_version": "0.1",
             "source_profile": "reader_release",
+            "source_mode": generated_source_mode,
+            "requested_source_mode": source_mode,
+            "source_generator": source_generator,
             "audio_profile": audio_profile.get("id", "audio_release"),
             "content_layer_policy": audio_profile.get("content_layer_policy", {}),
             "source_reader_generation": reader_summary,
@@ -566,6 +586,12 @@ def generate(output_dir: Path) -> dict[str, object]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT), help="output directory for generated narration script")
+    parser.add_argument(
+        "--source-mode",
+        choices=("curated_reader_manuscript", "generated_reader_edition"),
+        default=DEFAULT_SOURCE_MODE,
+        help="reader source workspace to adapt into narration scripts",
+    )
     parser.add_argument("--check", action="store_true", help="generate into a temporary directory and verify the script workspace")
     return parser.parse_args()
 
@@ -574,7 +600,7 @@ def main() -> None:
     args = parse_args()
     if args.check:
         with tempfile.TemporaryDirectory(prefix="asi-audio-script-") as temp_dir:
-            manifest = generate(Path(temp_dir))
+            manifest = generate(Path(temp_dir), args.source_mode)
             if not manifest["script_files"]:
                 raise SystemExit("Audio script check failed: no script files generated.")
             if not (Path(temp_dir) / "AUDIO_RELEASE_CHECKLIST.md").exists():
@@ -624,7 +650,7 @@ def main() -> None:
             )
             return
 
-    manifest = generate(Path(args.output))
+    manifest = generate(Path(args.output), args.source_mode)
     print(
         "Audio script generated: "
         f"{manifest['output_dir']} ({len(manifest['script_files'])} files)."
