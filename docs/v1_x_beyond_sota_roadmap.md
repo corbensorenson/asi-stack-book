@@ -3605,8 +3605,12 @@ Current status:
   528-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
   now generates ten temporary PNG fallbacks from the tracked SVG key figures
   inside the ignored build workspace and restores the source workspace after
-  rendering, eliminating the previous SVG-conversion warnings. EPUB, DOCX, PDF,
-  e-reader, and audio artifacts still remain unapproved until
+  rendering, eliminating the previous SVG-conversion warnings. The repaired
+  EPUB package audit now checks all 52 XHTML entries, 49 packaged content XHTML
+  entries, OPF/nav counts, required reader text markers, live-marker leakage,
+  raw core-claim marker leakage, and internal links with 0 unresolved internal
+  hrefs. EPUB, DOCX, PDF, e-reader, and audio artifacts still remain
+  unapproved until
   application-level review and an edition release record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
@@ -3978,8 +3982,11 @@ validator-enforced status row that grows past compact status-summary size.
   publishing artifacts. The current curated reader manuscript now has a
   refreshed local HTML/EPUB/DOCX/PDF structural probe with 49 HTML files, 52
   EPUB XHTML entries, 61 DOCX PNG media entries, 0 SVG conversion warnings, and
-  a 528-page PDF sample-page render, but EPUB/DOCX/PDF remain probe-level; audio
-  remains script-probe-level; visual identity review is not complete.
+  a 528-page PDF sample-page render. Its repaired-package EPUB audit checks all
+  XHTML content/navigation links with 0 unresolved internal hrefs, but EPUB
+  still remains probe-level until real e-reader/application review and an
+  edition release record exist; DOCX/PDF remain probe-level; audio remains
+  script-probe-level; visual identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route
   selector transition; most chapter evidence lanes have not yet executed.

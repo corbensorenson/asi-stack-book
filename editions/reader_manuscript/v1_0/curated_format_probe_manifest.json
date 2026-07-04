@@ -8,7 +8,9 @@
   "source_commands": [
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
-    "python3 scripts/audit_curated_reader_pdf_layout.py"
+    "python3 scripts/repair_curated_reader_epub_links.py",
+    "python3 scripts/audit_curated_reader_pdf_layout.py",
+    "python3 scripts/audit_curated_reader_epub_content.py"
   ],
   "local_report_refs": [
     "build/curated_reader_edition/curated_reader_render_report.json",
@@ -168,5 +170,28 @@
     "This manifest does not approve EPUB, DOCX, HTML, PDF, e-reader, or audio artifacts for publication.",
     "This manifest does not check full editorial quality, full layout quality, e-reader behavior, DOCX application behavior, full PDF page-by-page layout quality, source interpretation, proof adequacy, benchmark behavior, runtime behavior, or audio output.",
     "This manifest does not promote any claim support state."
-  ]
+  ],
+  "epub_content_audit": {
+    "status": "passed_epub_package_content_navigation_probe",
+    "source_artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+    "source_sha256": "62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e",
+    "xhtml_entries_checked": 52,
+    "content_xhtml_entries_checked": 49,
+    "total_text_characters_checked": 1781879,
+    "nav_href_count": 840,
+    "opf_item_count": 116,
+    "opf_itemref_count": 52,
+    "empty_xhtml_entries": 0,
+    "live_marker_hits": 0,
+    "raw_core_claim_marker_hits": 0,
+    "unresolved_internal_hrefs": 0,
+    "required_text_markers_present": [
+      "The ASI Stack",
+      "Reader Edition Draft",
+      "evidence boundary",
+      "Reader Source List",
+      "External Citation Policy"
+    ],
+    "review_boundary": "All-XHTML EPUB package, content-marker, and internal-link checks are stronger local EPUB evidence than container inspection alone, but this is not e-reader application review and does not approve the EPUB artifact for release."
+  }
 }

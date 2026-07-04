@@ -17,7 +17,9 @@ EXPECTED_FORMATS = {"html", "epub", "docx", "pdf"}
 REQUIRED_COMMANDS = {
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/repair_curated_reader_epub_links.py",
     "python3 scripts/audit_curated_reader_pdf_layout.py",
+    "python3 scripts/audit_curated_reader_epub_content.py",
 }
 REQUIRED_BLOCKERS = {
     "curated_reconciliation_not_approved",
@@ -104,6 +106,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     render_summary = manifest.get("render_summary")
     inspection_summary = manifest.get("inspection_summary")
     pdf_layout_audit = manifest.get("pdf_layout_audit")
+    epub_content_audit = manifest.get("epub_content_audit")
     if not isinstance(render_summary, dict):
         errors.append("render_summary must be an object.")
         render_summary = {}
@@ -113,6 +116,9 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(pdf_layout_audit, dict):
         errors.append("pdf_layout_audit must be an object.")
         pdf_layout_audit = {}
+    if not isinstance(epub_content_audit, dict):
+        errors.append("epub_content_audit must be an object.")
+        epub_content_audit = {}
     if set(render_summary) != EXPECTED_FORMATS:
         errors.append(f"render_summary must contain exactly {sorted(EXPECTED_FORMATS)}.")
     if set(inspection_summary) != EXPECTED_FORMATS:
@@ -249,6 +255,35 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         if "not manual PDF page-by-page review" not in boundary or "does not approve the PDF artifact" not in boundary:
             errors.append("pdf_layout_audit.review_boundary must preserve manual-review and release-approval boundaries.")
 
+    if epub_content_audit:
+        if epub_content_audit.get("status") != "passed_epub_package_content_navigation_probe":
+            errors.append("epub_content_audit.status must be passed_epub_package_content_navigation_probe.")
+        if epub_content_audit.get("source_artifact") != "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub":
+            errors.append("epub_content_audit.source_artifact must point to the curated reader EPUB.")
+        if not SHA_RE.match(str(epub_content_audit.get("source_sha256", ""))):
+            errors.append("epub_content_audit.source_sha256 must be a SHA-256 digest.")
+        if epub_content_audit.get("xhtml_entries_checked") != 52:
+            errors.append("epub_content_audit.xhtml_entries_checked must be 52.")
+        if epub_content_audit.get("content_xhtml_entries_checked") != 49:
+            errors.append("epub_content_audit.content_xhtml_entries_checked must be 49.")
+        require_int("epub_content_audit", "total_text_characters_checked", epub_content_audit.get("total_text_characters_checked"), errors, minimum=500_000)
+        if epub_content_audit.get("nav_href_count") != epub.get("nav_href_count"):
+            errors.append("epub_content_audit.nav_href_count must match inspection_summary.epub.nav_href_count.")
+        if epub_content_audit.get("opf_item_count") != epub.get("opf_item_count"):
+            errors.append("epub_content_audit.opf_item_count must match inspection_summary.epub.opf_item_count.")
+        if epub_content_audit.get("opf_itemref_count") != epub.get("opf_itemref_count"):
+            errors.append("epub_content_audit.opf_itemref_count must match inspection_summary.epub.opf_itemref_count.")
+        for zero_key in ("empty_xhtml_entries", "live_marker_hits", "raw_core_claim_marker_hits", "unresolved_internal_hrefs"):
+            if epub_content_audit.get(zero_key) != 0:
+                errors.append(f"epub_content_audit.{zero_key} must be 0.")
+        markers = set(require_string_list("epub_content_audit", "required_text_markers_present", epub_content_audit.get("required_text_markers_present"), errors))
+        for marker in {"The ASI Stack", "Reader Edition Draft", "evidence boundary", "Reader Source List", "External Citation Policy"}:
+            if marker not in markers:
+                errors.append(f"epub_content_audit.required_text_markers_present missing {marker}.")
+        boundary = require_string("epub_content_audit", "review_boundary", epub_content_audit.get("review_boundary"), errors, min_words=18)
+        if "not e-reader application review" not in boundary or "does not approve the EPUB artifact" not in boundary:
+            errors.append("epub_content_audit.review_boundary must preserve e-reader and release-approval boundaries.")
+
     blockers = set(require_string_list("manifest", "release_blockers_preserved", manifest.get("release_blockers_preserved"), errors))
     missing_blockers = sorted(REQUIRED_BLOCKERS - blockers)
     if missing_blockers:
@@ -271,7 +306,9 @@ def validate_summary(errors: list[str]) -> None:
         "Curated Reader Format Artifact Probe",
         "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
         "python3 scripts/inspect_curated_reader_format_artifacts.py",
+        "python3 scripts/repair_curated_reader_epub_links.py",
         "python3 scripts/audit_curated_reader_pdf_layout.py",
+        "python3 scripts/audit_curated_reader_epub_content.py",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
         "| docx | rendered | 1 | 1 | 0 | 0 |",
@@ -281,6 +318,7 @@ def validate_summary(errors: list[str]) -> None:
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
         "SHA-256 `1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4`",
+        "repaired EPUB package SHA-256 `62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e`",
         "SHA-256 `9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c`",
         "SHA-256 `f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a`",
         "528 pages",
@@ -291,6 +329,10 @@ def validate_summary(errors: list[str]) -> None:
         "| Out-of-bounds word boxes | 0 |",
         "| Layout lines over 160 characters | 0 |",
         "not manual PDF page-by-page review",
+        "52 XHTML entries",
+        "49 packaged content XHTML entries",
+        "0 unresolved internal hrefs",
+        "not e-reader application review",
         "does not clear release blockers",
         "does not promote any claim support state",
     ]

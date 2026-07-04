@@ -13,7 +13,9 @@ Commands and reproduction path:
 ```bash
 python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf
 python3 scripts/inspect_curated_reader_format_artifacts.py
+python3 scripts/repair_curated_reader_epub_links.py
 python3 scripts/audit_curated_reader_pdf_layout.py
+python3 scripts/audit_curated_reader_epub_content.py
 ```
 
 Local ignored reports:
@@ -52,6 +54,34 @@ or PDF artifact.
 | docx | passed | 8,360,691 bytes, SHA-256 `9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,360 paragraph markers, required Word package entries present. |
 | pdf | passed | 9,360,937 bytes, SHA-256 `f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a`, 528 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
+## EPUB Content And Navigation Audit
+
+After the container inspection above, the probe applies
+`python3 scripts/repair_curated_reader_epub_links.py` to the ignored EPUB
+snapshot. That command rewrites Quarto's known forward-link leakage from the
+source appendix target `H_external_sources.qmd` to the packaged EPUB spine
+target. The repaired EPUB package SHA-256 `62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e`
+then passed an all-XHTML content and internal-link audit covering 49 packaged content XHTML entries and 0 unresolved internal hrefs.
+
+| Metric | Result |
+|---|---:|
+| XHTML entries checked | 52 |
+| Packaged content XHTML entries checked | 49 |
+| Text characters checked | 1,781,879 |
+| Navigation hrefs checked | 840 |
+| OPF item entries | 116 |
+| OPF spine itemrefs | 52 |
+| Empty XHTML entries | 0 |
+| Live-marker leaks | 0 |
+| Raw core-claim marker leaks | 0 |
+| Unresolved internal hrefs | 0 |
+
+Required text markers were present: `The ASI Stack`, `Reader Edition Draft`,
+`evidence boundary`, `Reader Source List`, and `External Citation Policy`.
+This all-XHTML EPUB package audit is stronger local EPUB evidence than
+container inspection alone, but it is not e-reader application review and does
+not approve the EPUB artifact for release.
+
 ## PDF Text And Layout Extraction Audit
 
 The refreshed PDF probe also ran full-document text and bounding-box extraction
@@ -78,10 +108,11 @@ not approve the PDF artifact for release.
 
 The tracked curated reader manuscript now has a local format-probe path beyond
 HTML browser viability: the same curated source rendered to HTML, EPUB, DOCX,
-and PDF, and the snapshots passed structural inspection. The PDF also passed
-the all-page text/bounding-box audit above. This is useful evidence for release
-preparation, e-reader testing, DOCX application review, PDF layout review, and
-figure conversion work.
+and PDF, and the snapshots passed structural inspection. The repaired EPUB
+package also passed the all-XHTML content/navigation audit above, and the PDF
+also passed the all-page text/bounding-box audit above. This is useful evidence
+for release preparation, e-reader testing, DOCX application review, PDF layout
+review, and figure conversion work.
 
 This does not clear release blockers. EPUB still needs real e-reader or app
 inspection. DOCX still needs application-level review in Word, LibreOffice GUI,

@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-04 - Add curated-reader EPUB package content audit
+
+- Added `scripts/repair_curated_reader_epub_links.py` to rewrite the known
+  Quarto EPUB forward-link leakage from the source appendix `.qmd` target to
+  the packaged appendix spine target in ignored curated-reader EPUB snapshots.
+- Added `scripts/audit_curated_reader_epub_content.py` and recorded the
+  repaired EPUB audit in
+  `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`: 52
+  XHTML entries checked, 49 packaged content XHTML entries checked, 0 empty
+  XHTML entries, 0 live-marker leaks, 0 raw core-claim marker leaks, and 0
+  unresolved internal hrefs.
+- Updated `docs/curated_reader_format_artifact_probe.md`,
+  `scripts/validate_curated_reader_format_probe_manifest.py`,
+  `scripts/validate_release_surface_status_ledger.py`, and the generated
+  release-surface ledger so this EPUB audit is visible without clearing any
+  release blocker.
+- Boundary: this is local repaired-package EPUB evidence only. It does not
+  approve the EPUB artifact, replace e-reader application review, approve
+  DOCX/PDF/audio artifacts, publish a reader edition, create an edition release
+  record, alter source support states, or promote any chapter core claim.
+
 ## 2026-07-04 - Record authority revocation no-promotion decision
 
 - Added accepted no-promotion decision
