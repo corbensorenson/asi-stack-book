@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-07-04 - Add curated-reader PDF visual raster audit
+
+- Added `scripts/audit_curated_reader_pdf_visual_raster.py` to raster-render
+  every current curated-reader PDF page at 72 dpi in a temporary workspace and
+  check for blank pages, page dimensions, low-ink pages, and near-edge content.
+- Recorded the audit in
+  `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`: 528
+  raster-rendered pages, 0 blank pages, 1 low-ink page, 49 near-edge pages,
+  stable 612x792 pixel page images, and the current PDF SHA-256 boundary.
+- Updated `docs/curated_reader_format_artifact_probe.md`,
+  `scripts/validate_curated_reader_format_probe_manifest.py`,
+  `scripts/validate_release_surface_status_ledger.py`, the generated
+  release-surface ledger, `docs/release_editions_plan.md`, and
+  `docs/v1_x_beyond_sota_roadmap.md` so the PDF visual audit and residuals are
+  visible without clearing release blockers.
+- Boundary: this is local all-page low-resolution PDF raster evidence only. It
+  does not approve the PDF artifact, replace manual PDF page-by-page or
+  PDF-viewer reading-flow review, approve EPUB/DOCX/audio artifacts, publish a
+  reader edition, create an edition release record, alter source support
+  states, or promote any chapter core claim.
+
 ## 2026-07-04 - Add curated-reader DOCX relationship audit
 
 - Added `scripts/repair_curated_reader_docx_links.py` to remove the known

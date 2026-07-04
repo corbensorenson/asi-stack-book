@@ -20,6 +20,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/repair_curated_reader_epub_links.py",
     "python3 scripts/repair_curated_reader_docx_links.py",
     "python3 scripts/audit_curated_reader_pdf_layout.py",
+    "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
     "python3 scripts/audit_curated_reader_epub_content.py",
     "python3 scripts/audit_curated_reader_docx_content.py",
 }
@@ -108,6 +109,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     render_summary = manifest.get("render_summary")
     inspection_summary = manifest.get("inspection_summary")
     pdf_layout_audit = manifest.get("pdf_layout_audit")
+    pdf_visual_raster_audit = manifest.get("pdf_visual_raster_audit")
     epub_content_audit = manifest.get("epub_content_audit")
     docx_content_audit = manifest.get("docx_content_audit")
     if not isinstance(render_summary, dict):
@@ -119,6 +121,9 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(pdf_layout_audit, dict):
         errors.append("pdf_layout_audit must be an object.")
         pdf_layout_audit = {}
+    if not isinstance(pdf_visual_raster_audit, dict):
+        errors.append("pdf_visual_raster_audit must be an object.")
+        pdf_visual_raster_audit = {}
     if not isinstance(epub_content_audit, dict):
         errors.append("epub_content_audit must be an object.")
         epub_content_audit = {}
@@ -261,6 +266,40 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         if "not manual PDF page-by-page review" not in boundary or "does not approve the PDF artifact" not in boundary:
             errors.append("pdf_layout_audit.review_boundary must preserve manual-review and release-approval boundaries.")
 
+    if pdf_visual_raster_audit:
+        if pdf_visual_raster_audit.get("status") != "passed_all_page_pdf_raster_probe":
+            errors.append("pdf_visual_raster_audit.status must be passed_all_page_pdf_raster_probe.")
+        if pdf_visual_raster_audit.get("source_artifact") != "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf":
+            errors.append("pdf_visual_raster_audit.source_artifact must point to the curated reader PDF.")
+        if pdf_visual_raster_audit.get("source_sha256") != pdf.get("sha256"):
+            errors.append("pdf_visual_raster_audit.source_sha256 must match inspection_summary.pdf.sha256.")
+        expected_values = {
+            "raster_dpi": 72,
+            "nonwhite_threshold": 245,
+            "edge_margin_px": 2,
+            "low_ink_threshold": 1000,
+            "pages_rendered": 528,
+            "page_width_pixels": [612],
+            "page_height_pixels": [792],
+            "blank_pages": 0,
+            "low_ink_pages": 1,
+            "near_edge_content_pages": 49,
+            "min_nonwhite_pixels": 57,
+            "max_nonwhite_pixels": 106555,
+            "min_left_margin_px": 82,
+            "min_top_margin_px": 71,
+            "min_right_margin_px": 0,
+            "min_bottom_margin_px": 0,
+            "sample_low_ink_pages": [32],
+            "sample_near_edge_pages": [33, 35, 41, 51, 60, 70, 78, 87, 96, 103],
+        }
+        for key, expected_value in expected_values.items():
+            if pdf_visual_raster_audit.get(key) != expected_value:
+                errors.append(f"pdf_visual_raster_audit.{key} must be {expected_value!r}.")
+        boundary = require_string("pdf_visual_raster_audit", "review_boundary", pdf_visual_raster_audit.get("review_boundary"), errors, min_words=18)
+        if "not manual PDF page-by-page review" not in boundary or "does not approve the PDF artifact" not in boundary:
+            errors.append("pdf_visual_raster_audit.review_boundary must preserve manual-review and release-approval boundaries.")
+
     if epub_content_audit:
         if epub_content_audit.get("status") != "passed_epub_package_content_navigation_probe":
             errors.append("epub_content_audit.status must be passed_epub_package_content_navigation_probe.")
@@ -349,6 +388,7 @@ def validate_summary(errors: list[str]) -> None:
         "python3 scripts/repair_curated_reader_epub_links.py",
         "python3 scripts/repair_curated_reader_docx_links.py",
         "python3 scripts/audit_curated_reader_pdf_layout.py",
+        "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
         "python3 scripts/audit_curated_reader_epub_content.py",
         "python3 scripts/audit_curated_reader_docx_content.py",
         "| html | rendered | 49 | 81 | 0 | 0 |",
@@ -371,6 +411,10 @@ def validate_summary(errors: list[str]) -> None:
         "| Textless pages | 0 |",
         "| Out-of-bounds word boxes | 0 |",
         "| Layout lines over 160 characters | 0 |",
+        "| Pages raster-rendered | 528 |",
+        "| Blank raster pages | 0 |",
+        "| Low-ink raster pages | 1 |",
+        "| Near-edge raster pages | 49 |",
         "not manual PDF page-by-page review",
         "52 XHTML entries",
         "49 packaged content XHTML entries",

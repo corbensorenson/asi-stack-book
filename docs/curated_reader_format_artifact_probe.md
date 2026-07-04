@@ -16,6 +16,7 @@ python3 scripts/inspect_curated_reader_format_artifacts.py
 python3 scripts/repair_curated_reader_epub_links.py
 python3 scripts/repair_curated_reader_docx_links.py
 python3 scripts/audit_curated_reader_pdf_layout.py
+python3 scripts/audit_curated_reader_pdf_visual_raster.py
 python3 scripts/audit_curated_reader_epub_content.py
 python3 scripts/audit_curated_reader_docx_content.py
 ```
@@ -138,6 +139,36 @@ This all-page extraction audit is stronger local PDF evidence than
 representative sampling, but it is not manual PDF page-by-page review and does
 not approve the PDF artifact for release.
 
+## PDF Visual Raster Audit
+
+The refreshed PDF probe also raster-rendered every page at 72 dpi in a
+temporary review workspace. This is a low-resolution visual smoke test for
+blank pages, unexpected page dimensions, low-ink pages, and near-edge content.
+It preserves near-edge pages as review residuals rather than treating them as
+approval.
+
+| Metric | Result |
+|---|---:|
+| Pages raster-rendered | 528 |
+| Raster DPI | 72 |
+| Page width in pixels | 612 |
+| Page height in pixels | 792 |
+| Blank raster pages | 0 |
+| Low-ink raster pages | 1 |
+| Near-edge raster pages | 49 |
+| Minimum nonwhite pixels | 57 |
+| Maximum nonwhite pixels | 106,555 |
+| Minimum left margin px | 82 |
+| Minimum top margin px | 71 |
+| Minimum right margin px | 0 |
+| Minimum bottom margin px | 0 |
+
+The single low-ink raster page is page 32. The first near-edge pages observed
+were 33, 35, 41, 51, 60, 70, 78, 87, 96, and 103. This all-page low-resolution
+raster rendering is stronger local PDF visual evidence than sample-page
+rendering alone, but it is not manual PDF page-by-page review and does not
+approve the PDF artifact for release.
+
 ## Review Decision
 
 The tracked curated reader manuscript now has a local format-probe path beyond
@@ -145,9 +176,9 @@ HTML browser viability: the same curated source rendered to HTML, EPUB, DOCX,
 and PDF, and the snapshots passed structural inspection. The repaired EPUB
 package also passed the all-XHTML content/navigation audit above, the repaired
 DOCX package passed the document XML/relationship audit above, and the PDF also
-passed the all-page text/bounding-box audit above. This is useful evidence for
-release preparation, e-reader testing, DOCX application review, PDF layout
-review, and figure conversion work.
+passed the all-page text/bounding-box and visual raster audits above. This is
+useful evidence for release preparation, e-reader testing, DOCX application
+review, PDF layout review, and figure conversion work.
 
 This does not clear release blockers. EPUB still needs real e-reader or app
 inspection. DOCX still needs application-level review in Word, LibreOffice GUI,

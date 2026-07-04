@@ -3613,7 +3613,9 @@ Current status:
   reader text markers, media entries, relationship targets, live-marker
   leakage, raw core-claim marker leakage, and internal relationship targets with
   0 raw `.qmd` relationship targets and 0 unresolved internal relationship
-  targets. EPUB, DOCX, PDF, e-reader, and audio artifacts still remain
+  targets. The PDF visual raster audit now renders all 528 pages at 72 dpi with
+  0 blank pages, 1 low-ink page, and 49 near-edge pages preserved as manual
+  review residuals. EPUB, DOCX, PDF, e-reader, and audio artifacts still remain
   unapproved until
   application-level review and an edition release record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
@@ -3992,8 +3994,11 @@ validator-enforced status row that grows past compact status-summary size.
   edition release record exist. Its repaired-package DOCX audit checks document
   XML/media/relationships with 0 raw `.qmd` relationship targets, but DOCX still
   remains probe-level until real Word, LibreOffice GUI, or Google Docs review and
-  an edition release record exist; PDF remains probe-level; audio remains
-  script-probe-level; visual identity review is not complete.
+  an edition release record exist. Its PDF visual raster audit renders all 528
+  pages with 0 blank pages and preserves 49 near-edge pages as review residuals,
+  but PDF remains probe-level until real PDF-viewer reading-flow/layout review
+  and an edition release record exist; audio remains script-probe-level; visual
+  identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route
   selector transition; most chapter evidence lanes have not yet executed.
