@@ -1,0 +1,133 @@
+{
+  "transition_id": "v1_x_measured.artifact_receipt_faithfulness.no_change",
+  "claim_id": "artifact-graphs.receipt_faithfulness_adversarial_fixture",
+  "claim_surface_refs": [
+    "docs/receipt_faithfulness_adversarial_fixture.md",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "docs/book_outline.md",
+    "docs/v1_x_beyond_sota_roadmap.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/receipt_faithfulness/input/adversarial_receipt_cases.json",
+    "experiments/receipt_faithfulness/results/2026-07-03-local.json",
+    "scripts/validate_receipt_faithfulness.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Artifact Graph receipt-faithfulness adversarial fixture only. The fixture accepts three bounded receipt records and rejects six expected-invalid controls for shape-valid reality-false receipts, ignored trap-receipt failures, missing independent cross-check routes, same-component self-check laundering, unbounded attestation, and support promotion from receipt shape. This is not open-world receipt truth, not verifier-independence evidence, not attestation-service correctness evidence, not deployed audit behavior, not external review, and not an upward support-state transition.",
+  "evidence_roles": [
+    "bounded_receipt_faithfulness_fixture",
+    "shape_valid_reality_false_negative_control",
+    "trap_receipt_negative_control",
+    "independent_cross_check_requirement",
+    "same_component_self_check_rejection",
+    "attestation_limit_record",
+    "support_state_effect_negative_control",
+    "finite_lean_receipt_faithfulness_bridge",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The receipt-faithfulness adversarial fixture is useful because it makes the core record-reality objection executable: a receipt can satisfy record shape while failing to correspond to the artifact or observation it claims to record. The fixture keeps cross-checked, attestation-limited, and trap-detected records inside bounded record-only roles while rejecting receipt-shape support promotion. The evidence remains a finite local fixture, so this accepted decision blocks promotion for open-world receipt faithfulness, verifier independence, attestation-service correctness, deployed audit behavior, benchmark performance, model quality, safety, ASI, or the Artifact Graphs chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable receipt-faithfulness trace",
+    "independent observation route outside the producing component",
+    "trap receipt or challenge source outside the producing component",
+    "public-safe produced artifact with parent job, source/context set, context transaction, semantic certificate, replay declaration, residual declaration, evidence gate, and claim/test link",
+    "verifier-independence and attestation-limit review",
+    "deployed or externally reviewable audit behavior",
+    "source-interpretation adequacy review where source-derived claims are involved",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/receipt_faithfulness_adversarial_fixture.md",
+    "experiments/receipt_faithfulness/input/adversarial_receipt_cases.json",
+    "experiments/receipt_faithfulness/results/2026-07-03-local.json",
+    "scripts/validate_receipt_faithfulness.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/receipt_faithfulness_adversarial_fixture.md",
+    "docs/receipt_repository_audit.md",
+    "docs/artifact_graph_record_reality_sequence.md",
+    "docs/artifact_live_attestation_probe.md",
+    "docs/artifact_randomized_attestation_audit.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+    "docs/book_outline.md#artifact-graphs-audit-logs-and-replay"
+  ],
+  "verification_command": "python3 scripts/validate_receipt_faithfulness.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "shape-valid but reality-false receipt promotion is rejected",
+    "ignored trap-receipt failure is rejected",
+    "missing independent cross-check route is rejected",
+    "same-component self-check laundering is rejected",
+    "unbounded attestation is rejected",
+    "support promotion from receipt shape is rejected",
+    "finite fixture evidence remains bounded to synthetic receipt cases",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/receipt_faithfulness_adversarial_fixture.md",
+    "experiments/receipt_faithfulness/input/adversarial_receipt_cases.json",
+    "experiments/receipt_faithfulness/results/2026-07-03-local.json",
+    "scripts/validate_receipt_faithfulness.py"
+  ],
+  "downgrade_triggers": [
+    "receipt-faithfulness validator failure",
+    "shape-valid reality-false receipt, trap failure, missing independent check, same-component self-check, unbounded attestation, or support-promotion control accepted as valid",
+    "finite receipt-faithfulness fixture described as open-world receipt truth, verifier independence, attestation-service correctness, deployed audit behavior, benchmark, model-quality, safety, ASI, or chapter-core evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed receipt-faithfulness claim after deployed or externally reviewable receipt traces, independent observer routes outside the producing component, trap/challenge sources outside the producing component, verifier-independence evidence, attestation-limit review, provenance-completeness review, audit-behavior evidence, source-interpretation review where applicable, residuals, non-claims, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "bounded finite receipt-faithfulness fixture only",
+    "three accepted synthetic receipt records only",
+    "six expected-invalid controls only",
+    "no deployed artifact graph",
+    "no deployed attestation service",
+    "no deployed audit behavior",
+    "no open-world receipt-faithfulness proof",
+    "no verifier-independence proof",
+    "no attestation-service correctness proof",
+    "no provenance-completeness proof",
+    "no source-interpretation evidence",
+    "no benchmark evidence",
+    "no model-quality evidence",
+    "no safety or ASI evidence",
+    "no independent external review",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent attestation, audit, verifier-independence, source-interpretation, external-project, challenge-source, or external human review",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable receipt-faithfulness trace",
+    "no independent observation route outside the producing component",
+    "no trap or challenge source outside the producing component",
+    "no external verifier-independence review",
+    "no deployed audit-behavior evidence",
+    "no open-world receipt-faithfulness evidence",
+    "no independent external review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-receipt-faithfulness-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote the Artifact Graphs chapter core claim",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not prove open-world receipt faithfulness, verifier independence, attestation-service correctness, deployed audit behavior, source interpretation, benchmark performance, model quality, safety, deployment safety, or ASI"
+  ]
+}

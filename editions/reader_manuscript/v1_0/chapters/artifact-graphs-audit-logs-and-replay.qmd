@@ -185,6 +185,12 @@ support promotion based only on receipt shape. That is not a deployed
 attestation system. It is a record-level guardrail against treating valid
 paperwork as truth.
 
+The accepted no-promotion decision at
+`evidence_transitions/v1_x_measured/artifact_receipt_faithfulness_no_change.json`
+keeps it in that role: useful for blocking overclaims, not enough for
+open-world receipt truth, verifier independence, deployed audit behavior, or
+chapter core promotion.
+
 The receipt repository audit takes one step closer to the real project. It
 does not invent a deployed attestation service; it reads selected records that
 already exist in the repository. It checks whether their artifact references
@@ -311,7 +317,11 @@ shape. `python3 scripts/validate_receipt_faithfulness.py` writes
 `experiments/receipt_faithfulness/results/2026-07-03-local.json` after testing
 three bounded honest records and six dishonest controls. Its scope is narrow:
 it does not prove open-world receipt truth, verifier independence, deployed
-attestation, audit-service correctness, or chapter-core support.
+attestation, audit-service correctness, or chapter-core support. The accepted
+no-promotion decision at
+`evidence_transitions/v1_x_measured/artifact_receipt_faithfulness_no_change.json`
+keeps that fixture as a blocking decision only; it does not move support state
+or promote the Artifact Graphs core claim.
 
 The companion receipt repository audit checks four existing repository receipt
 surfaces instead of synthetic records alone. It accepts the selected records

@@ -56,3 +56,12 @@ Non-claims:
 - This does not prove deployed attestation or audit behavior.
 - This does not promote any chapter core claim.
 - This does not create an evidence transition or support-state transition.
+
+Accepted no-promotion decision:
+`evidence_transitions/v1_x_measured/artifact_receipt_faithfulness_no_change.json`
+records this fixture as a `blocks_promotion` side-lane decision. The decision
+keeps the finite fixture useful as a receipt-reality guard while blocking
+open-world receipt-faithfulness, verifier-independence,
+attestation-service-correctness, deployed-audit-behavior, benchmark,
+model-quality, safety, ASI, support-state-promotion, and Artifact Graphs
+chapter-core-promotion claims until stronger evidence exists.
