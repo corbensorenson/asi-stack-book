@@ -155,7 +155,7 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
     errors: list[str] = []
     expected_exact = {
         "zip_entries": 77,
-        "paragraph_markers": 17360,
+        "paragraph_markers": 17354,
         "media_entries": 61,
         "png_media_entries": 61,
         "svg_media_entries": 0,
@@ -186,14 +186,13 @@ def main() -> None:
 
     manifest = load_manifest()
     observed = observe()
-    errors = validate_observed(observed)
-    if errors:
-        fail(errors)
-
     if args.write_manifest:
         manifest["docx_content_audit"] = observed
         MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     else:
+        errors = validate_observed(observed)
+        if errors:
+            fail(errors)
         recorded = manifest.get("docx_content_audit")
         if recorded != observed:
             fail(["curated_format_probe_manifest.json docx_content_audit is stale; run `python3 scripts/audit_curated_reader_docx_content.py --write-manifest`."])

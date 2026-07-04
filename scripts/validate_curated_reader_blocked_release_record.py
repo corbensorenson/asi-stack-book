@@ -36,6 +36,7 @@ REQUIRED_BLOCKERS = {
 REQUIRED_COMMANDS = {
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/sync_curated_reader_format_probe_manifest.py",
     "python3 scripts/repair_curated_reader_epub_links.py",
     "python3 scripts/repair_curated_reader_docx_links.py",
     "python3 scripts/audit_curated_reader_pdf_layout.py",
@@ -152,9 +153,9 @@ def main() -> None:
         errors.append("curated format inspection_summary must be an object.")
         inspection = {}
     expected_artifacts = {
-        "curated_reader_epub": ("epub", "1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4"),
-        "curated_reader_docx": ("docx", "9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c"),
-        "curated_reader_pdf": ("pdf", "f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a"),
+        "curated_reader_epub": ("epub", "8027d8e9104ef0357424703dbcec50c2e43d22a574eff76a2c0947c47fd8b9fc"),
+        "curated_reader_docx": ("docx", "16eb7643a79b41680897491014d71ed0964a25db28703ba4258f498953368ea9"),
+        "curated_reader_pdf": ("pdf", "dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342"),
     }
     for record_format, (manifest_format, expected_sha) in expected_artifacts.items():
         manifest_row = inspection.get(manifest_format, {})
@@ -241,7 +242,7 @@ def main() -> None:
     docx_note = str(artifacts.get("curated_reader_docx", {}).get("notes", ""))
     for fragment in (
         str(docx_audit.get("source_sha256", "")),
-        "17,360 paragraphs",
+        "17,354 paragraphs",
         "286 relationships",
         "0 raw .qmd relationship targets",
         "10 matched key-figure stems",
@@ -253,9 +254,9 @@ def main() -> None:
     for fragment in (
         f"{pdf_layout.get('word_boxes_checked'):,} word boxes",
         "0 out-of-bounds word boxes",
-        "528 rendered pages",
+        "505 rendered pages",
         "0 blank pages",
-        "49 near-edge pages",
+        "0 near-edge pages",
         "10 matched key-figure captions",
     ):
         if fragment and fragment not in pdf_note:

@@ -22,21 +22,21 @@
       "status": "rendered",
       "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py",
       "path_or_uri": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
-      "notes": "Rendered and structurally inspected local EPUB review artifact: 8,703,384 bytes, SHA-256 1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4, 52 XHTML entries, 62 image entries, OPF title The ASI Stack, creator Corben Sorenson, and language en-US. The repaired EPUB package audit records SHA-256 62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e, 52 XHTML entries checked, 49 packaged content XHTML entries checked, 0 unresolved internal hrefs, and 10 matched key-figure SVG titles. Blocked: e-reader or application-level review has not happened and this EPUB is not release-approved."
+      "notes": "Rendered and structurally inspected local EPUB review artifact: 8,664,089 bytes, SHA-256 8027d8e9104ef0357424703dbcec50c2e43d22a574eff76a2c0947c47fd8b9fc, 52 XHTML entries, 62 image entries, OPF title The ASI Stack, creator Corben Sorenson, and language en-US. The repaired EPUB package audit records SHA-256 2828f90c6a4298118b8b3af0508d01783aaa84c28558401f7fbc32af28cb9b1a, 52 XHTML entries checked, 49 packaged content XHTML entries checked, 0 unresolved internal hrefs, and 10 matched key-figure SVG titles. Blocked: e-reader or application-level review has not happened and this EPUB is not release-approved."
     },
     {
       "format": "curated_reader_docx",
       "status": "rendered",
       "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py",
       "path_or_uri": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-      "notes": "Rendered and structurally inspected local DOCX review artifact: 8,360,691 bytes, SHA-256 9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c, 77 zip entries, 61 PNG media entries, 0 SVG media entries, and 17,360 paragraph markers. The repaired DOCX package audit records SHA-256 7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce, 17,360 paragraphs, 286 relationships, 0 raw .qmd relationship targets, 0 unresolved internal relationship targets, and 10 matched key-figure stems. Blocked: Word, LibreOffice GUI, or Google Docs application-level review has not happened and this DOCX is not release-approved."
+      "notes": "Rendered and structurally inspected local DOCX review artifact: 8,321,125 bytes, SHA-256 16eb7643a79b41680897491014d71ed0964a25db28703ba4258f498953368ea9, 77 zip entries, 61 PNG media entries, 0 SVG media entries, and 17,354 paragraph markers. The repaired DOCX package audit records SHA-256 bd1db6539c998bbf8f8a10921ded35e889aaf57ce0f8d56874172d5ef41cd1e6, 17,354 paragraphs, 286 relationships, 0 raw .qmd relationship targets, 0 unresolved internal relationship targets, and 10 matched key-figure stems. Blocked: Word, LibreOffice GUI, or Google Docs application-level review has not happened and this DOCX is not release-approved."
     },
     {
       "format": "curated_reader_pdf",
       "status": "rendered",
       "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py; python3 scripts/audit_curated_reader_pdf_layout.py",
       "path_or_uri": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-      "notes": "Rendered and structurally inspected local PDF review artifact: 9,360,937 bytes, SHA-256 f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a, 528 pages, title The ASI Stack, author Corben Sorenson, unencrypted letter pages, and an all-page text/bounding-box probe with 169,904 word boxes and 0 out-of-bounds word boxes. The all-page raster probe records 528 rendered pages, 0 blank pages, 1 low-ink page, 49 near-edge pages, and 10 matched key-figure captions. Blocked: this is not manual PDF page-by-page reading-flow review and the PDF is not release-approved."
+      "notes": "Rendered and structurally inspected local PDF review artifact: 5,893,421 bytes, SHA-256 dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342, 505 pages, title The ASI Stack, author Corben Sorenson, unencrypted letter pages, 50 Chrome-screenshot Mermaid fallbacks, and an all-page text/bounding-box probe with 169,762 word boxes and 0 out-of-bounds word boxes. The all-page raster probe records 505 rendered pages, 0 blank pages, 0 low-ink pages, 0 near-edge pages, and 10 matched key-figure captions. Blocked: this is not manual PDF page-by-page reading-flow review and the PDF is not release-approved."
     },
     {
       "format": "ereader_application_review",
@@ -56,6 +56,7 @@
   "validation_commands": [
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/sync_curated_reader_format_probe_manifest.py",
     "python3 scripts/repair_curated_reader_epub_links.py",
     "python3 scripts/repair_curated_reader_docx_links.py",
     "python3 scripts/audit_curated_reader_pdf_layout.py",
@@ -75,25 +76,25 @@
     "status": "automated_probe_passed_release_blocked",
     "curated_format_probe_manifest": "editions/reader_manuscript/v1_0/curated_format_probe_manifest.json",
     "key_figure_format_probe_manifest": "editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json",
-    "epub_repaired_package_sha256": "62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e",
+    "epub_repaired_package_sha256": "2828f90c6a4298118b8b3af0508d01783aaa84c28558401f7fbc32af28cb9b1a",
     "epub_content_xhtml_entries_checked": 49,
     "epub_unresolved_internal_hrefs": 0,
-    "docx_repaired_package_sha256": "7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce",
+    "docx_repaired_package_sha256": "bd1db6539c998bbf8f8a10921ded35e889aaf57ce0f8d56874172d5ef41cd1e6",
     "docx_raw_qmd_relationship_targets": 0,
-    "pdf_pages_raster_rendered": 528,
+    "pdf_pages_raster_rendered": 505,
     "pdf_blank_raster_pages": 0,
-    "pdf_near_edge_raster_pages": 49,
+    "pdf_near_edge_raster_pages": 0,
     "key_figure_epub_matched_titles": 10,
     "key_figure_docx_matched_stems": 10,
     "key_figure_pdf_matched_captions": 10,
-    "release_boundary": "The automated package, link, text, raster, key-figure, and browser probes support release preparation only; they do not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or the curated reader edition."
+    "release_boundary": "The automated package, link, text, raster, PDF Mermaid fallback, key-figure, and browser probes support release preparation only; they do not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or the curated reader edition."
   },
   "validation_status": "partial",
   "review_status": {
     "reader_continuity_review": "pass",
     "source_scaffold_removed": "pass",
     "audio_script_review": "in_progress",
-    "notes": "Curated reader chapter-level reconciliation, local HTML browser viability, repaired EPUB package/content navigation, repaired DOCX relationship integrity, all-page PDF text/bounding-box extraction, all-page low-resolution PDF raster smoke testing, and key-figure package/text survival are recorded. Release-quality continuity, e-reader/application review, final figure-artifact review, and audio review remain open. This record intentionally preserves blockers rather than approving artifacts."
+    "notes": "Curated reader chapter-level reconciliation, local HTML browser viability, repaired EPUB package/content navigation, repaired DOCX relationship integrity, PDF-safe Mermaid fallback rendering, all-page PDF text/bounding-box extraction, all-page low-resolution PDF raster smoke testing, and key-figure package/text survival are recorded. Release-quality continuity, e-reader/application review, final figure-artifact review, and audio review remain open. This record intentionally preserves blockers rather than approving artifacts."
   },
   "reader_manuscript": {
     "source_dir": "editions/reader_manuscript/v1_0",
@@ -116,7 +117,7 @@
     "diagram_image_review": "in_progress",
     "bedtime_readability_review": "in_progress",
     "companion_notes_status": "in_progress",
-    "notes": "The curated reader manuscript is a concrete human-reader candidate with rendered local artifacts and automated package/text/raster/key-figure probes, but it is not yet a release. EPUB e-reader/app inspection, DOCX application review, PDF reading-flow review, final figure-artifact review, and audio review gates remain open."
+    "notes": "The curated reader manuscript is a concrete human-reader candidate with rendered local artifacts, PDF-safe Mermaid fallbacks, and automated package/text/raster/key-figure probes, but it is not yet a release. EPUB e-reader/app inspection, DOCX application review, PDF reading-flow review, final figure-artifact review, and audio review gates remain open."
   },
   "audiobook_gate": {
     "script_review": "in_progress",
@@ -135,7 +136,7 @@
     "full_format_artifact_review_not_completed remains active for EPUB, DOCX, and PDF.",
     "app_or_ereader_review_not_completed remains active for EPUB and e-reader paths.",
     "full_pdf_layout_review_not_completed remains active because the all-page bounding-box audit is not manual page-by-page reading-flow review.",
-    "Automated repaired-package EPUB/DOCX checks, all-page PDF raster checks, and key-figure package/text survival checks are recorded as preparation evidence only; they do not clear application-level review.",
+    "Automated repaired-package EPUB/DOCX checks, PDF-safe Mermaid fallbacks, all-page PDF raster checks, and key-figure package/text survival checks are recorded as preparation evidence only; they do not clear application-level review.",
     "Final figure-artifact review, visual identity approval, e-reader inspection, audio narration review, audio file generation, and audio-embedded EPUB packaging remain incomplete."
   ],
   "non_claims": [

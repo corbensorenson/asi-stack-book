@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import subprocess
@@ -108,6 +109,10 @@ def fail(errors: list[str]) -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--write-manifest", action="store_true", help="write observed PDF layout audit into the curated format probe manifest")
+    args = parser.parse_args()
+
     manifest = load_manifest()
     audit = manifest.get("pdf_layout_audit", {})
     if not isinstance(audit, dict):
@@ -129,8 +134,17 @@ def main() -> None:
         }
         observed.update(bbox_metrics(pdf_path, tmpdir / "bbox.html"))
         observed.update(layout_metrics(pdf_path, tmpdir / "layout.txt"))
+        observed["review_boundary"] = (
+            "All-page text and bounding-box extraction is stronger local PDF layout evidence than representative "
+            "sampling, but it is not manual PDF page-by-page review and does not approve the PDF artifact for release."
+        )
 
     errors: list[str] = []
+    if args.write_manifest:
+        manifest["pdf_layout_audit"] = observed
+        MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+        audit = observed
+
     for key, value in observed.items():
         if audit.get(key) != value:
             errors.append(f"pdf_layout_audit.{key} expected {value!r}, found {audit.get(key)!r}.")

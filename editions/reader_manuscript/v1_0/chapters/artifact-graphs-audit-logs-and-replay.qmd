@@ -175,12 +175,10 @@ useful because it forces the book's own evidence trail to stay attached to real
 files. It is still bounded local discipline, not a deployed attestation
 service.
 
-The randomized artifact attestation audit widens the same local check:
-`python3 scripts/validate_artifact_randomized_attestation_audit.py` records
-`experiments/artifact_randomized_attestation/results/2026-07-04-local.json`
-after sampling public-safe repository artifacts and rejecting digest, replay,
-sample-laundering, self-check, unbounded-attestation, and support-promotion
-controls.
+The randomized artifact attestation audit widens the same local check. Its
+2026-07-04 local result samples public-safe repository artifacts and rejects
+digest, replay, sample-laundering, self-check, unbounded-attestation, and
+support-promotion controls.
 
 ## A Book-Scale Example
 

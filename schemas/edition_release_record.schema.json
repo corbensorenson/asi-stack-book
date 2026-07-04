@@ -217,6 +217,53 @@
       },
       "additionalProperties": false
     },
+    "format_probe_closure": {
+      "type": "object",
+      "required": [
+        "status",
+        "curated_format_probe_manifest",
+        "key_figure_format_probe_manifest",
+        "epub_repaired_package_sha256",
+        "epub_content_xhtml_entries_checked",
+        "epub_unresolved_internal_hrefs",
+        "docx_repaired_package_sha256",
+        "docx_raw_qmd_relationship_targets",
+        "pdf_pages_raster_rendered",
+        "pdf_blank_raster_pages",
+        "pdf_near_edge_raster_pages",
+        "key_figure_epub_matched_titles",
+        "key_figure_docx_matched_stems",
+        "key_figure_pdf_matched_captions",
+        "release_boundary"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["automated_probe_passed_release_blocked"]
+        },
+        "curated_format_probe_manifest": { "type": "string", "minLength": 1 },
+        "key_figure_format_probe_manifest": { "type": "string", "minLength": 1 },
+        "epub_repaired_package_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "epub_content_xhtml_entries_checked": { "type": "integer", "minimum": 0 },
+        "epub_unresolved_internal_hrefs": { "type": "integer", "minimum": 0 },
+        "docx_repaired_package_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "docx_raw_qmd_relationship_targets": { "type": "integer", "minimum": 0 },
+        "pdf_pages_raster_rendered": { "type": "integer", "minimum": 0 },
+        "pdf_blank_raster_pages": { "type": "integer", "minimum": 0 },
+        "pdf_near_edge_raster_pages": { "type": "integer", "minimum": 0 },
+        "key_figure_epub_matched_titles": { "type": "integer", "minimum": 0 },
+        "key_figure_docx_matched_stems": { "type": "integer", "minimum": 0 },
+        "key_figure_pdf_matched_captions": { "type": "integer", "minimum": 0 },
+        "release_boundary": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
     "release_notes": { "type": "string", "minLength": 1 },
     "residuals": {
       "type": "array",

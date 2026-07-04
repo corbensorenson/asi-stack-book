@@ -14,6 +14,7 @@ import argparse
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import json
+import math
 import os
 from pathlib import Path
 import re
@@ -37,6 +38,13 @@ FORMAT_EXTENSIONS = {
 PRESERVED_ARTIFACT_DIR = "format_artifacts"
 REPORT_NAME = "curated_reader_render_report.json"
 DIAGRAM_SVG_REF_RE = re.compile(r"(\]\()(\.\./assets/diagrams/)([^)]+?)\.svg(\))")
+MERMAID_BLOCK_RE = re.compile(r"```\{mermaid\}\s*\n([\s\S]*?)\n```")
+MERMAID_SVG_RE = re.compile(r"""<svg\b(?=[^>]*\bid=["']mermaid-\d+["'])[\s\S]*?</svg>""")
+VIEWBOX_RE = re.compile(r"""viewBox=["']\s*0\s+0\s+([0-9.]+)\s+([0-9.]+)\s*["']""")
+CHROME_CANDIDATES = (
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+)
 
 
 def render_environment() -> dict[str, str]:
@@ -111,6 +119,237 @@ def convert_svg_to_png(svg_path: Path, png_path: Path) -> str:
     raise RuntimeError("no SVG-to-PNG converter found for raster fallback generation")
 
 
+def find_chrome_binary() -> str:
+    for candidate in ("google-chrome", "chromium", "chromium-browser", "chrome"):
+        found = shutil.which(candidate)
+        if found:
+            return found
+    for candidate in CHROME_CANDIDATES:
+        path = Path(candidate)
+        if path.exists():
+            return str(path)
+    raise RuntimeError("no Chrome/Chromium binary found for PDF Mermaid fallback generation")
+
+
+def html_path_for_qmd(output_dir: Path, qmd_path: Path) -> Path:
+    relative = qmd_path.relative_to(output_dir).with_suffix(".html")
+    return output_dir / "_reader_site" / relative
+
+
+def ensure_html_for_mermaid(output_dir: Path, html_paths: list[Path]) -> bool:
+    if all(path.exists() for path in html_paths):
+        return False
+    result = subprocess.run(
+        ["quarto", "render", "--to", "html"],
+        cwd=output_dir,
+        check=False,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        env=render_environment(),
+    )
+    if result.returncode != 0:
+        raise RuntimeError("HTML render for PDF Mermaid fallbacks failed:\n" + result.stdout[-2000:])
+    missing = [str(path.relative_to(output_dir)) for path in html_paths if not path.exists()]
+    if missing:
+        raise RuntimeError("HTML render did not create expected Mermaid page(s): " + ", ".join(missing[:10]))
+    return True
+
+
+def rendered_mermaid_svgs(chrome_binary: str, html_path: Path) -> list[str]:
+    result = subprocess.run(
+        [
+            chrome_binary,
+            "--headless",
+            "--disable-gpu",
+            "--allow-file-access-from-files",
+            "--virtual-time-budget=7000",
+            "--dump-dom",
+            html_path.resolve().as_uri(),
+        ],
+        check=False,
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"Chrome DOM dump failed for {html_path.name} ({result.returncode}):\n{result.stderr[-2000:]}"
+        )
+    return [normalize_svg(match.group(0)) for match in MERMAID_SVG_RE.finditer(result.stdout)]
+
+
+def normalize_svg(svg: str) -> str:
+    svg = svg.strip().replace("&nbsp;", "&#160;")
+    svg = re.sub(r"<br([^>/]*?)>", r"<br\1/>", svg)
+    first_tag_end = svg.find(">")
+    if first_tag_end != -1 and "xmlns=" not in svg[:first_tag_end]:
+        svg = svg.replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg"', 1)
+    return '<?xml version="1.0" encoding="UTF-8"?>\n' + svg + "\n"
+
+
+def mermaid_image_attrs(svg: str) -> str:
+    width, height = svg_viewbox_size(svg)
+    if height / max(width, 1.0) > 1.05:
+        return 'height=5.85in fig-alt="PDF-safe rendered Mermaid diagram."'
+    if width / max(height, 1.0) > 2.2:
+        return 'width=95% fig-alt="PDF-safe rendered Mermaid diagram."'
+    return 'width=90% fig-alt="PDF-safe rendered Mermaid diagram."'
+
+
+def svg_viewbox_size(svg: str) -> tuple[float, float]:
+    match = VIEWBOX_RE.search(svg)
+    if not match:
+        return (800.0, 500.0)
+    return (float(match.group(1)), float(match.group(2)))
+
+
+def render_svg_to_png_with_chrome(chrome_binary: str, svg: str, png_path: Path) -> str:
+    width, height = svg_viewbox_size(svg)
+    viewport_width = max(64, math.ceil(width))
+    viewport_height = max(64, math.ceil(height))
+    png_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with tempfile.TemporaryDirectory(prefix="asi-mermaid-shot-") as temp_dir:
+            html_path = Path(temp_dir) / "diagram.html"
+            html_path.write_text(
+                "\n".join(
+                    [
+                        "<!doctype html>",
+                        "<html>",
+                        "<head>",
+                        "<meta charset=\"utf-8\">",
+                        "<style>",
+                        "html, body { margin: 0; padding: 0; background: #fff; overflow: hidden; }",
+                        f"svg {{ width: {viewport_width}px !important; height: {viewport_height}px !important; max-width: none !important; }}",
+                        "</style>",
+                        "</head>",
+                        "<body>",
+                        svg,
+                        "</body>",
+                        "</html>",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            result = subprocess.run(
+                [
+                    chrome_binary,
+                    "--headless",
+                    "--disable-gpu",
+                    "--hide-scrollbars",
+                    "--force-device-scale-factor=1",
+                    "--timeout=10000",
+                    f"--window-size={viewport_width},{viewport_height}",
+                    f"--screenshot={png_path}",
+                    html_path.resolve().as_uri(),
+                ],
+                check=False,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=30,
+            )
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError(f"Chrome SVG screenshot timed out for {png_path.name}") from exc
+    if result.returncode != 0:
+        raise RuntimeError(f"Chrome SVG screenshot failed for {png_path.name}: {result.stderr[-2000:]}")
+    if not png_path.exists() or png_path.stat().st_size == 0:
+        raise RuntimeError(f"Chrome SVG screenshot did not create {png_path}")
+    return "chrome-screenshot"
+
+
+@contextmanager
+def pdf_mermaid_static_fallbacks(output_dir: Path) -> Iterator[dict[str, object]]:
+    """Temporarily replace Mermaid fences with browser-rendered PNGs for PDF."""
+    qmd_paths = [
+        path
+        for path in sorted(output_dir.rglob("*.qmd"))
+        if PRESERVED_ARTIFACT_DIR not in path.relative_to(output_dir).parts
+    ]
+    original_text: dict[Path, str] = {}
+    matches_by_path: dict[Path, list[re.Match[str]]] = {}
+    for path in qmd_paths:
+        text = path.read_text(encoding="utf-8")
+        matches = list(MERMAID_BLOCK_RE.finditer(text))
+        if matches:
+            original_text[path] = text
+            matches_by_path[path] = matches
+
+    fallback_info: dict[str, object] = {
+        "applied": False,
+        "chrome_binary": "",
+        "converter": "",
+        "fallback_count": 0,
+        "rewritten_files": 0,
+        "fallback_refs": [],
+        "html_rendered_for_fallback": False,
+        "error": "",
+    }
+    if not original_text:
+        yield fallback_info
+        return
+
+    try:
+        chrome_binary = find_chrome_binary()
+        html_rendered = ensure_html_for_mermaid(
+            output_dir,
+            [html_path_for_qmd(output_dir, path) for path in original_text],
+        )
+        converter = ""
+        fallback_refs: list[str] = []
+        replacements_by_path: dict[Path, list[str]] = {}
+
+        for qmd_path, matches in matches_by_path.items():
+            html_path = html_path_for_qmd(output_dir, qmd_path)
+            svgs = rendered_mermaid_svgs(chrome_binary, html_path)
+            if len(svgs) < len(matches):
+                raise RuntimeError(
+                    f"expected at least {len(matches)} rendered Mermaid SVG(s) for "
+                    f"{qmd_path.relative_to(output_dir)}, found {len(svgs)}"
+                )
+
+            replacements: list[str] = []
+            file_stem = "-".join(qmd_path.relative_to(output_dir).with_suffix("").parts)
+            for index, svg in enumerate(svgs[: len(matches)], start=1):
+                svg_rel = Path("assets") / "diagrams" / "pdf-mermaid" / f"{file_stem}-mermaid-{index:02d}.svg"
+                png_rel = svg_rel.with_suffix(".png")
+                svg_path = output_dir / svg_rel
+                png_path = output_dir / png_rel
+                svg_path.parent.mkdir(parents=True, exist_ok=True)
+                svg_path.write_text(svg, encoding="utf-8")
+                converter = render_svg_to_png_with_chrome(chrome_binary, svg, png_path)
+                fallback_refs.append(str(png_rel))
+                image_ref = os.path.relpath(png_path, start=qmd_path.parent).replace(os.sep, "/")
+                replacements.append(f"![]({image_ref}){{{mermaid_image_attrs(svg)}}}")
+            replacements_by_path[qmd_path] = replacements
+
+        for qmd_path, replacements in replacements_by_path.items():
+            replacement_iter = iter(replacements)
+            qmd_path.write_text(
+                MERMAID_BLOCK_RE.sub(lambda _match: next(replacement_iter), original_text[qmd_path]),
+                encoding="utf-8",
+            )
+
+        fallback_info = {
+            "applied": True,
+            "chrome_binary": chrome_binary,
+            "converter": converter,
+            "fallback_count": len(fallback_refs),
+            "rewritten_files": len(original_text),
+            "fallback_refs": fallback_refs,
+            "html_rendered_for_fallback": html_rendered,
+            "error": "",
+        }
+        yield fallback_info
+    except Exception as exc:
+        fallback_info["error"] = str(exc)
+        raise
+    finally:
+        for path, text in original_text.items():
+            path.write_text(text, encoding="utf-8")
+
+
 @contextmanager
 def raster_diagram_fallbacks(output_dir: Path) -> Iterator[dict[str, object]]:
     """Temporarily rewrite curated-reader diagram refs to PNG fallbacks."""
@@ -183,8 +422,30 @@ def run_render(output_dir: Path, fmt: str) -> dict[str, object]:
         "fallback_refs": [],
         "error": "",
     }
+    mermaid_fallback_info: dict[str, object] = {
+        "applied": False,
+        "chrome_binary": "",
+        "converter": "",
+        "fallback_count": 0,
+        "rewritten_files": 0,
+        "fallback_refs": [],
+        "html_rendered_for_fallback": False,
+        "error": "",
+    }
     with tempfile.NamedTemporaryFile("w+", encoding="utf-8", errors="ignore") as log_file:
-        if fmt in {"docx", "pdf"}:
+        if fmt == "pdf":
+            with raster_diagram_fallbacks(output_dir) as fallback_info:
+                with pdf_mermaid_static_fallbacks(output_dir) as mermaid_fallback_info:
+                    result = subprocess.run(
+                        command,
+                        cwd=output_dir,
+                        check=False,
+                        text=True,
+                        stdout=log_file,
+                        stderr=subprocess.STDOUT,
+                        env=render_environment(),
+                    )
+        elif fmt == "docx":
             with raster_diagram_fallbacks(output_dir) as fallback_info:
                 result = subprocess.run(
                     command,
@@ -221,6 +482,7 @@ def run_render(output_dir: Path, fmt: str) -> dict[str, object]:
         "warning_count": len(warning_lines),
         "svg_conversion_warning_count": svg_conversion_warning_count,
         "raster_diagram_fallbacks": fallback_info,
+        "pdf_mermaid_static_fallbacks": mermaid_fallback_info,
         "log_excerpt": output[-4000:],
     }
 

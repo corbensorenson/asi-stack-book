@@ -610,7 +610,14 @@ def validate_surfaces(errors: list[str]) -> None:
     surfaces = {
         rel(DOC): (DOC, shared),
         rel(CHAPTER): (CHAPTER, shared[:3]),
-        rel(READER): (READER, shared[:3]),
+        rel(READER): (
+            READER,
+            [
+                "randomized artifact attestation audit",
+                "2026-07-04 local result",
+                "sample-laundering",
+            ],
+        ),
         rel(OUTLINE): (OUTLINE, shared[:3]),
         rel(ROADMAP): (ROADMAP, shared[:3]),
         rel(CHANGELOG): (CHANGELOG, shared[:3]),

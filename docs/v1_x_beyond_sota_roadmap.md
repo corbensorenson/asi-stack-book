@@ -3609,10 +3609,12 @@ Current status:
   record that the tracked curated reader manuscript rendered locally to HTML,
   EPUB, DOCX, and PDF and passed structural inspection: 49 HTML files, 44
   chapter HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, and a
-  528-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
+  505-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
   now generates ten temporary PNG fallbacks from the tracked SVG key figures
-  inside the ignored build workspace and restores the source workspace after
-  rendering, eliminating the previous SVG-conversion warnings. The repaired
+  inside the ignored build workspace, and the PDF renderer also generates 50
+  temporary Chrome-screenshot Mermaid fallbacks from the rendered HTML pages.
+  It restores the source workspace after rendering, preserves browser-rendered
+  Mermaid labels in PDF, and eliminates SVG-conversion warnings. The repaired
   EPUB package audit now checks all 52 XHTML entries, 49 packaged content XHTML
   entries, OPF/nav counts, required reader text markers, live-marker leakage,
   raw core-claim marker leakage, and internal links with 0 unresolved internal
@@ -3620,9 +3622,10 @@ Current status:
   reader text markers, media entries, relationship targets, live-marker
   leakage, raw core-claim marker leakage, and internal relationship targets with
   0 raw `.qmd` relationship targets and 0 unresolved internal relationship
-  targets. The PDF visual raster audit now renders all 528 pages at 72 dpi with
-  0 blank pages, 1 low-ink page, and 49 near-edge pages preserved as manual
-  review residuals. EPUB, DOCX, PDF, e-reader, and audio artifacts still remain
+  targets. The PDF visual raster audit now renders all 505 pages at 72 dpi with
+  0 blank pages, 0 low-ink pages, and 0 near-edge pages while still preserving
+  manual PDF-viewer review as a release blocker. EPUB, DOCX, PDF, e-reader, and
+  audio artifacts still remain
   unapproved until
   application-level review and an edition release record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
@@ -4004,16 +4007,17 @@ validator-enforced status row that grows past compact status-summary size.
   publishing artifacts. The current curated reader manuscript now has a
   refreshed local HTML/EPUB/DOCX/PDF structural probe with 49 HTML files, 52
   EPUB XHTML entries, 61 DOCX PNG media entries, 0 SVG conversion warnings, and
-  a 528-page PDF sample-page render. Its repaired-package EPUB audit checks all
+  a 505-page PDF sample-page render with 50 Chrome-screenshot Mermaid
+  fallbacks. Its repaired-package EPUB audit checks all
   XHTML content/navigation links with 0 unresolved internal hrefs, but EPUB
   still remains probe-level until real e-reader/application review and an
   edition release record exist. Its repaired-package DOCX audit checks document
   XML/media/relationships with 0 raw `.qmd` relationship targets, but DOCX still
   remains probe-level until real Word, LibreOffice GUI, or Google Docs review and
-  an edition release record exist. Its PDF visual raster audit renders all 528
-  pages with 0 blank pages and preserves 49 near-edge pages as review residuals,
-  but PDF remains probe-level until real PDF-viewer reading-flow/layout review
-  and an edition release record exist; audio remains script-probe-level; visual
+  an edition release record exist. Its PDF visual raster audit renders all 505
+  pages with 0 blank pages, 0 low-ink pages, and 0 near-edge pages, but PDF
+  remains probe-level until real PDF-viewer reading-flow/layout review and an
+  edition release record exist; audio remains script-probe-level; visual
   identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route

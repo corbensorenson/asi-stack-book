@@ -13,6 +13,7 @@ Commands and reproduction path:
 ```bash
 python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf
 python3 scripts/inspect_curated_reader_format_artifacts.py
+python3 scripts/sync_curated_reader_format_probe_manifest.py
 python3 scripts/repair_curated_reader_epub_links.py
 python3 scripts/repair_curated_reader_docx_links.py
 python3 scripts/audit_curated_reader_pdf_layout.py
@@ -48,14 +49,20 @@ entries. The PDF render also produced zero SVG conversion warnings. This
 removes the previous conversion-warning blocker; it does not approve the DOCX
 or PDF artifact.
 
+The PDF render also generates 50 temporary Chrome-screenshot Mermaid fallbacks
+from the rendered HTML pages before running Pandoc. This keeps browser-rendered
+Mermaid labels visible in the PDF and prevents the previously observed diagram
+clipping in the ignored PDF artifact. It remains automated format-preparation
+evidence, not manual figure, page-flow, or release approval.
+
 ## Structural Inspection Summary
 
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,703,384 bytes, SHA-256 `1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,360,691 bytes, SHA-256 `9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,360 paragraph markers, required Word package entries present. |
-| pdf | passed | 9,360,937 bytes, SHA-256 `f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a`, 528 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,664,089 bytes, SHA-256 `8027d8e9104ef0357424703dbcec50c2e43d22a574eff76a2c0947c47fd8b9fc`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,321,125 bytes, SHA-256 `16eb7643a79b41680897491014d71ed0964a25db28703ba4258f498953368ea9`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,354 paragraph markers, required Word package entries present. |
+| pdf | passed | 5,893,421 bytes, SHA-256 `dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342`, 505 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## EPUB Content And Navigation Audit
 
@@ -63,14 +70,14 @@ After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_epub_links.py` to the ignored EPUB
 snapshot. That command rewrites Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` to the packaged EPUB spine
-target. The repaired EPUB package SHA-256 `62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e`
+target. The repaired EPUB package SHA-256 `2828f90c6a4298118b8b3af0508d01783aaa84c28558401f7fbc32af28cb9b1a`
 then passed an all-XHTML content and internal-link audit covering 49 packaged content XHTML entries and 0 unresolved internal hrefs.
 
 | Metric | Result |
 |---|---:|
 | XHTML entries checked | 52 |
 | Packaged content XHTML entries checked | 49 |
-| Text characters checked | 1,781,879 |
+| Text characters checked | 1,780,817 |
 | Navigation hrefs checked | 840 |
 | OPF item entries | 116 |
 | OPF spine itemrefs | 52 |
@@ -91,16 +98,16 @@ After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_docx_links.py` to the ignored DOCX
 snapshot. That command removes Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` by unwrapping the broken DOCX
-hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce`
-then passed a document XML, media, and relationship audit with 17,360 paragraphs and 0 raw .qmd relationship targets.
+hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `bd1db6539c998bbf8f8a10921ded35e889aaf57ce0f8d56874172d5ef41cd1e6`
+then passed a document XML, media, and relationship audit with 17,354 paragraphs and 0 raw .qmd relationship targets.
 
 | Metric | Result |
 |---|---:|
 | ZIP entries checked | 77 |
-| Document XML characters checked | 2,797,249 |
-| Text characters checked | 1,196,634 |
-| Paragraph markers | 17,360 |
-| Run markers | 28,307 |
+| Document XML characters checked | 2,794,565 |
+| Text characters checked | 1,195,421 |
+| Paragraph markers | 17,354 |
+| Run markers | 28,271 |
 | Relationships checked | 286 |
 | Image relationships | 61 |
 | External hyperlink relationships | 217 |
@@ -125,8 +132,8 @@ relaxed reader chapters.
 
 | Metric | Result |
 |---|---:|
-| Pages checked | 528 |
-| Word boxes checked | 169,904 |
+| Pages checked | 505 |
+| Word boxes checked | 169,762 |
 | Textless pages | 0 |
 | Out-of-bounds word boxes | 0 |
 | Layout lines over 160 characters | 0 |
@@ -144,30 +151,29 @@ not approve the PDF artifact for release.
 The refreshed PDF probe also raster-rendered every page at 72 dpi in a
 temporary review workspace. This is a low-resolution visual smoke test for
 blank pages, unexpected page dimensions, low-ink pages, and near-edge content.
-It preserves near-edge pages as review residuals rather than treating them as
-approval.
+It preserves release blockers rather than treating automated raster cleanliness
+as manual page-flow approval.
 
 | Metric | Result |
 |---|---:|
-| Pages raster-rendered | 528 |
+| Pages raster-rendered | 505 |
 | Raster DPI | 72 |
 | Page width in pixels | 612 |
 | Page height in pixels | 792 |
 | Blank raster pages | 0 |
-| Low-ink raster pages | 1 |
-| Near-edge raster pages | 49 |
-| Minimum nonwhite pixels | 57 |
-| Maximum nonwhite pixels | 106,555 |
+| Low-ink raster pages | 0 |
+| Near-edge raster pages | 0 |
+| Minimum nonwhite pixels | 1,961 |
+| Maximum nonwhite pixels | 105,544 |
 | Minimum left margin px | 82 |
 | Minimum top margin px | 71 |
-| Minimum right margin px | 0 |
-| Minimum bottom margin px | 0 |
+| Minimum right margin px | 4 |
+| Minimum bottom margin px | 92 |
 
-The single low-ink raster page is page 32. The first near-edge pages observed
-were 33, 35, 41, 51, 60, 70, 78, 87, 96, and 103. This all-page low-resolution
-raster rendering is stronger local PDF visual evidence than sample-page
-rendering alone, but it is not manual PDF page-by-page review and does not
-approve the PDF artifact for release.
+No low-ink or near-edge raster pages were observed after the PDF-only Mermaid
+fallback pass. This all-page low-resolution raster rendering is stronger local
+PDF visual evidence than sample-page rendering alone, but it is not manual PDF
+page-by-page review and does not approve the PDF artifact for release.
 
 ## Review Decision
 

@@ -171,20 +171,20 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "nonwhite_threshold": NONWHITE_THRESHOLD,
         "edge_margin_px": EDGE_MARGIN_PX,
         "low_ink_threshold": LOW_INK_THRESHOLD,
-        "pages_rendered": 528,
+        "pages_rendered": 505,
         "page_width_pixels": [612],
         "page_height_pixels": [792],
         "blank_pages": 0,
-        "low_ink_pages": 1,
-        "near_edge_content_pages": 49,
-        "min_nonwhite_pixels": 57,
-        "max_nonwhite_pixels": 106555,
+        "low_ink_pages": 0,
+        "near_edge_content_pages": 0,
+        "min_nonwhite_pixels": 1961,
+        "max_nonwhite_pixels": 105544,
         "min_left_margin_px": 82,
         "min_top_margin_px": 71,
-        "min_right_margin_px": 0,
-        "min_bottom_margin_px": 0,
-        "sample_low_ink_pages": [32],
-        "sample_near_edge_pages": [33, 35, 41, 51, 60, 70, 78, 87, 96, 103],
+        "min_right_margin_px": 4,
+        "min_bottom_margin_px": 92,
+        "sample_low_ink_pages": [],
+        "sample_near_edge_pages": [],
     }
     for key, expected in expected_exact.items():
         if observed.get(key) != expected:
@@ -199,14 +199,13 @@ def main() -> None:
 
     manifest = load_manifest()
     observed = observe(DEFAULT_DPI)
-    errors = validate_observed(observed)
-    if errors:
-        fail(errors)
-
     if args.write_manifest:
         manifest["pdf_visual_raster_audit"] = observed
         MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     else:
+        errors = validate_observed(observed)
+        if errors:
+            fail(errors)
         recorded = manifest.get("pdf_visual_raster_audit")
         if recorded != observed:
             fail(["curated_format_probe_manifest.json pdf_visual_raster_audit is stale; run `python3 scripts/audit_curated_reader_pdf_visual_raster.py --write-manifest`."])

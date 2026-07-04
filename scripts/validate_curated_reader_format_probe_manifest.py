@@ -17,6 +17,7 @@ EXPECTED_FORMATS = {"html", "epub", "docx", "pdf"}
 REQUIRED_COMMANDS = {
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
     "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/sync_curated_reader_format_probe_manifest.py",
     "python3 scripts/repair_curated_reader_epub_links.py",
     "python3 scripts/repair_curated_reader_docx_links.py",
     "python3 scripts/audit_curated_reader_pdf_layout.py",
@@ -156,6 +157,13 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
                 errors.append(f"render_summary.{fmt}.png_fallback_count must be 10.")
             if render.get("png_fallback_converter") not in {"sips", "rsvg-convert"}:
                 errors.append(f"render_summary.{fmt}.png_fallback_converter must be sips or rsvg-convert.")
+        if fmt == "pdf":
+            if render.get("pdf_mermaid_fallback_count") != 50:
+                errors.append("render_summary.pdf.pdf_mermaid_fallback_count must be 50.")
+            if render.get("pdf_mermaid_fallback_converter") != "chrome-screenshot":
+                errors.append("render_summary.pdf.pdf_mermaid_fallback_converter must be chrome-screenshot.")
+            if render.get("pdf_mermaid_rewritten_files") != 44:
+                errors.append("render_summary.pdf.pdf_mermaid_rewritten_files must be 44.")
 
     html = inspection_summary.get("html", {}) if isinstance(inspection_summary, dict) else {}
     if isinstance(html, dict):
@@ -216,8 +224,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         require_int("inspection_summary.pdf", "bytes", pdf.get("bytes"), errors, minimum=1_000_000)
         if not SHA_RE.match(str(pdf.get("sha256", ""))):
             errors.append("inspection_summary.pdf.sha256 must be a SHA-256 digest.")
-        if pdf.get("pages") != 528:
-            errors.append("inspection_summary.pdf.pages must be 528.")
+        if pdf.get("pages") != 505:
+            errors.append("inspection_summary.pdf.pages must be 505.")
         if pdf.get("title") != "The ASI Stack":
             errors.append("inspection_summary.pdf.title must be The ASI Stack.")
         if pdf.get("author") != "Corben Sorenson":
@@ -244,10 +252,10 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("pdf_layout_audit.source_artifact must point to the curated reader PDF.")
         if pdf_layout_audit.get("source_sha256") != pdf.get("sha256"):
             errors.append("pdf_layout_audit.source_sha256 must match inspection_summary.pdf.sha256.")
-        if pdf_layout_audit.get("pages_checked") != 528:
-            errors.append("pdf_layout_audit.pages_checked must be 528.")
-        if pdf_layout_audit.get("word_boxes_checked") != 169904:
-            errors.append("pdf_layout_audit.word_boxes_checked must be 169904.")
+        if pdf_layout_audit.get("pages_checked") != 505:
+            errors.append("pdf_layout_audit.pages_checked must be 505.")
+        if pdf_layout_audit.get("word_boxes_checked") != 169762:
+            errors.append("pdf_layout_audit.word_boxes_checked must be 169762.")
         if pdf_layout_audit.get("textless_pages") != 0:
             errors.append("pdf_layout_audit.textless_pages must be 0.")
         if pdf_layout_audit.get("out_of_bounds_word_boxes") != 0:
@@ -278,20 +286,20 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             "nonwhite_threshold": 245,
             "edge_margin_px": 2,
             "low_ink_threshold": 1000,
-            "pages_rendered": 528,
+            "pages_rendered": 505,
             "page_width_pixels": [612],
             "page_height_pixels": [792],
             "blank_pages": 0,
-            "low_ink_pages": 1,
-            "near_edge_content_pages": 49,
-            "min_nonwhite_pixels": 57,
-            "max_nonwhite_pixels": 106555,
+            "low_ink_pages": 0,
+            "near_edge_content_pages": 0,
+            "min_nonwhite_pixels": 1961,
+            "max_nonwhite_pixels": 105544,
             "min_left_margin_px": 82,
             "min_top_margin_px": 71,
-            "min_right_margin_px": 0,
-            "min_bottom_margin_px": 0,
-            "sample_low_ink_pages": [32],
-            "sample_near_edge_pages": [33, 35, 41, 51, 60, 70, 78, 87, 96, 103],
+            "min_right_margin_px": 4,
+            "min_bottom_margin_px": 92,
+            "sample_low_ink_pages": [],
+            "sample_near_edge_pages": [],
         }
         for key, expected_value in expected_values.items():
             if pdf_visual_raster_audit.get(key) != expected_value:
@@ -338,7 +346,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("docx_content_audit.source_sha256 must be a SHA-256 digest.")
         expected_values = {
             "zip_entries": 77,
-            "paragraph_markers": 17360,
+            "paragraph_markers": 17354,
             "image_relationships": 61,
             "media_entries": 61,
             "png_media_entries": 61,
@@ -385,6 +393,7 @@ def validate_summary(errors: list[str]) -> None:
         "Curated Reader Format Artifact Probe",
         "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
         "python3 scripts/inspect_curated_reader_format_artifacts.py",
+        "python3 scripts/sync_curated_reader_format_probe_manifest.py",
         "python3 scripts/repair_curated_reader_epub_links.py",
         "python3 scripts/repair_curated_reader_docx_links.py",
         "python3 scripts/audit_curated_reader_pdf_layout.py",
@@ -396,31 +405,32 @@ def validate_summary(errors: list[str]) -> None:
         "| docx | rendered | 1 | 1 | 0 | 0 |",
         "| pdf | rendered | 1 | 1 | 0 | 0 |",
         "ten temporary PNG fallbacks",
+        "50 temporary Chrome-screenshot Mermaid fallbacks",
         "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `1507dc1658969e081ce9a80b000f28b367a32474fef02932eccf3b00494803e4`",
-        "repaired EPUB package SHA-256 `62975cdebec4a459fcdbde9ebec48fde40a281bb692b75261233b411b946239e`",
-        "SHA-256 `9ac3b9de5b994e411cd17f4cff4bb6ffdf05abbb7de0b9b9b2329e44ddb0013c`",
-        "repaired DOCX package SHA-256 `7e9a0d5c943520f8c18c34c680bafffc932d0bd9c7d81003cbbca4422bac4cce`",
-        "SHA-256 `f39001097c0d8289980034a681d261ac737905b5840e231e2a0dba6ad8a41f2a`",
-        "528 pages",
+        "SHA-256 `8027d8e9104ef0357424703dbcec50c2e43d22a574eff76a2c0947c47fd8b9fc`",
+        "repaired EPUB package SHA-256 `2828f90c6a4298118b8b3af0508d01783aaa84c28558401f7fbc32af28cb9b1a`",
+        "SHA-256 `16eb7643a79b41680897491014d71ed0964a25db28703ba4258f498953368ea9`",
+        "repaired DOCX package SHA-256 `bd1db6539c998bbf8f8a10921ded35e889aaf57ce0f8d56874172d5ef41cd1e6`",
+        "SHA-256 `dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342`",
+        "505 pages",
         "sample pages 1, 2, 25, 300, and 500",
-        "| Pages checked | 528 |",
-        "| Word boxes checked | 169,904 |",
+        "| Pages checked | 505 |",
+        "| Word boxes checked | 169,762 |",
         "| Textless pages | 0 |",
         "| Out-of-bounds word boxes | 0 |",
         "| Layout lines over 160 characters | 0 |",
-        "| Pages raster-rendered | 528 |",
+        "| Pages raster-rendered | 505 |",
         "| Blank raster pages | 0 |",
-        "| Low-ink raster pages | 1 |",
-        "| Near-edge raster pages | 49 |",
+        "| Low-ink raster pages | 0 |",
+        "| Near-edge raster pages | 0 |",
         "not manual PDF page-by-page review",
         "52 XHTML entries",
         "49 packaged content XHTML entries",
         "0 unresolved internal hrefs",
         "not e-reader application review",
-        "17,360 paragraphs",
+        "17,354 paragraphs",
         "0 raw .qmd relationship targets",
         "not Word, LibreOffice GUI, or Google Docs application review",
         "does not clear release blockers",

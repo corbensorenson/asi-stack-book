@@ -1,5 +1,39 @@
 # Changelog
 
+## 2026-07-04 - Add PDF-safe Mermaid fallbacks for curated reader
+
+- Updated `scripts/render_curated_reader_formats.py` so the curated-reader PDF
+  render temporarily replaces 50 Mermaid fences across 44 generated source files
+  with Chrome-screenshot PNG fallbacks derived from the rendered HTML pages,
+  while preserving the Mermaid source for HTML/EPUB/DOCX and restoring the
+  generated workspace after the PDF pass.
+- Added `scripts/sync_curated_reader_format_probe_manifest.py` and write-mode
+  support for the curated PDF layout audit so local render/inspection reports
+  can refresh the tracked format probe mechanically before validators enforce
+  the observed state.
+- Refreshed `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`,
+  `docs/curated_reader_format_artifact_probe.md`,
+  `editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json`, and
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`: the
+  current ignored curated-reader PDF is 505 pages, has 169,762 checked word
+  boxes, 0 out-of-bounds word boxes, 0 blank raster pages, 0 low-ink pages, and
+  0 near-edge raster pages.
+- Shortened one curated reader path-heavy sentence in
+  `editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd`
+  so the refreshed PDF keeps the randomized-attestation evidence meaning without
+  an unbreakable result-path overflow.
+- Updated `scripts/validate_artifact_randomized_attestation_audit.py` so the
+  curated reader chapter can satisfy the randomized-attestation surface check
+  with prose-level evidence wording while the live chapter, outline, roadmap,
+  changelog, and audit note keep the exact command and result-path fragments.
+- Extended `schemas/edition_release_record.schema.json` with an optional
+  structured `format_probe_closure` object so blocked reader-candidate records
+  can carry automated probe closure evidence while remaining schema-valid.
+- Boundary: this is automated local format-preparation evidence only. It does
+  not approve the curated reader PDF, EPUB, DOCX, e-reader flow, final figure
+  art, audio artifacts, or the reader edition, and it does not promote any
+  support state.
+
 ## 2026-07-04 - Tighten curated-reader blocked release record
 
 - Updated `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`
