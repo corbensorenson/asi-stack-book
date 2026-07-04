@@ -23,6 +23,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/audit_curated_reader_pdf_layout.py",
     "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
     "python3 scripts/audit_curated_reader_epub_content.py",
+    "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "python3 scripts/audit_curated_reader_docx_content.py",
 }
 REQUIRED_BLOCKERS = {
@@ -112,6 +113,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     pdf_layout_audit = manifest.get("pdf_layout_audit")
     pdf_visual_raster_audit = manifest.get("pdf_visual_raster_audit")
     epub_content_audit = manifest.get("epub_content_audit")
+    epub_browser_review = manifest.get("epub_browser_review")
     docx_content_audit = manifest.get("docx_content_audit")
     if not isinstance(render_summary, dict):
         errors.append("render_summary must be an object.")
@@ -128,6 +130,9 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(epub_content_audit, dict):
         errors.append("epub_content_audit must be an object.")
         epub_content_audit = {}
+    if not isinstance(epub_browser_review, dict):
+        errors.append("epub_browser_review must be an object.")
+        epub_browser_review = {}
     if not isinstance(docx_content_audit, dict):
         errors.append("docx_content_audit must be an object.")
         docx_content_audit = {}
@@ -224,8 +229,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         require_int("inspection_summary.pdf", "bytes", pdf.get("bytes"), errors, minimum=1_000_000)
         if not SHA_RE.match(str(pdf.get("sha256", ""))):
             errors.append("inspection_summary.pdf.sha256 must be a SHA-256 digest.")
-        if pdf.get("pages") != 505:
-            errors.append("inspection_summary.pdf.pages must be 505.")
+        if pdf.get("pages") != 504:
+            errors.append("inspection_summary.pdf.pages must be 504.")
         if pdf.get("title") != "The ASI Stack":
             errors.append("inspection_summary.pdf.title must be The ASI Stack.")
         if pdf.get("author") != "Corben Sorenson":
@@ -252,10 +257,10 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("pdf_layout_audit.source_artifact must point to the curated reader PDF.")
         if pdf_layout_audit.get("source_sha256") != pdf.get("sha256"):
             errors.append("pdf_layout_audit.source_sha256 must match inspection_summary.pdf.sha256.")
-        if pdf_layout_audit.get("pages_checked") != 505:
-            errors.append("pdf_layout_audit.pages_checked must be 505.")
-        if pdf_layout_audit.get("word_boxes_checked") != 169762:
-            errors.append("pdf_layout_audit.word_boxes_checked must be 169762.")
+        if pdf_layout_audit.get("pages_checked") != 504:
+            errors.append("pdf_layout_audit.pages_checked must be 504.")
+        if pdf_layout_audit.get("word_boxes_checked") != 169766:
+            errors.append("pdf_layout_audit.word_boxes_checked must be 169766.")
         if pdf_layout_audit.get("textless_pages") != 0:
             errors.append("pdf_layout_audit.textless_pages must be 0.")
         if pdf_layout_audit.get("out_of_bounds_word_boxes") != 0:
@@ -286,7 +291,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             "nonwhite_threshold": 245,
             "edge_margin_px": 2,
             "low_ink_threshold": 1000,
-            "pages_rendered": 505,
+            "pages_rendered": 504,
             "page_width_pixels": [612],
             "page_height_pixels": [792],
             "blank_pages": 0,
@@ -336,6 +341,44 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         boundary = require_string("epub_content_audit", "review_boundary", epub_content_audit.get("review_boundary"), errors, min_words=18)
         if "not e-reader application review" not in boundary or "does not approve the EPUB artifact" not in boundary:
             errors.append("epub_content_audit.review_boundary must preserve e-reader and release-approval boundaries.")
+
+    if epub_browser_review:
+        if epub_browser_review.get("status") != "passed_browser_xhtml_application_review":
+            errors.append("epub_browser_review.status must be passed_browser_xhtml_application_review.")
+        if epub_browser_review.get("source_artifact") != "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub":
+            errors.append("epub_browser_review.source_artifact must point to the curated reader EPUB.")
+        if not SHA_RE.match(str(epub_browser_review.get("source_sha256", ""))):
+            errors.append("epub_browser_review.source_sha256 must be a SHA-256 digest.")
+        if epub_content_audit and epub_browser_review.get("source_sha256") != epub_content_audit.get("source_sha256"):
+            errors.append("epub_browser_review.source_sha256 must match epub_content_audit.source_sha256.")
+        expected_values = {
+            "spine_entries_checked": 52,
+            "content_xhtml_entries_checked": 49,
+            "viewport_count": 2,
+            "page_view_pairs": 104,
+            "failed_page_view_pairs": 0,
+            "image_load_failures": 0,
+            "live_marker_hits": 0,
+            "raw_core_claim_marker_hits": 0,
+        }
+        for key, expected_value in expected_values.items():
+            if epub_browser_review.get(key) != expected_value:
+                errors.append(f"epub_browser_review.{key} must be {expected_value}.")
+        require_int("epub_browser_review", "rendered_image_count", epub_browser_review.get("rendered_image_count"), errors, minimum=10)
+        require_int("epub_browser_review", "max_horizontal_overflow_px", epub_browser_review.get("max_horizontal_overflow_px"), errors, minimum=0)
+        require_int("epub_browser_review", "min_body_text_chars", epub_browser_review.get("min_body_text_chars"), errors, minimum=0)
+        require_int("epub_browser_review", "min_content_body_text_chars", epub_browser_review.get("min_content_body_text_chars"), errors, minimum=500)
+        markers = set(require_string_list("epub_browser_review", "required_text_markers_present", epub_browser_review.get("required_text_markers_present"), errors))
+        for marker in {"The ASI Stack", "Reader Edition Draft", "evidence boundary", "Reader Source List", "External Citation Policy"}:
+            if marker not in markers:
+                errors.append(f"epub_browser_review.required_text_markers_present missing {marker}.")
+        boundary = require_string("epub_browser_review", "review_boundary", epub_browser_review.get("review_boundary"), errors, min_words=20)
+        if "not dedicated e-reader" not in boundary or "does not approve the EPUB artifact" not in boundary:
+            errors.append("epub_browser_review.review_boundary must preserve e-reader and release-approval boundaries.")
+        non_claim_text = " ".join(require_string_list("epub_browser_review", "non_claims", epub_browser_review.get("non_claims"), errors)).lower()
+        for phrase in ("does not approve the epub artifact", "does not replace dedicated e-reader", "does not promote any chapter core claim"):
+            if phrase not in non_claim_text:
+                errors.append(f"epub_browser_review.non_claims missing boundary phrase: {phrase}")
 
     if docx_content_audit:
         if docx_content_audit.get("status") != "passed_docx_document_xml_relationship_probe":
@@ -399,6 +442,7 @@ def validate_summary(errors: list[str]) -> None:
         "python3 scripts/audit_curated_reader_pdf_layout.py",
         "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
         "python3 scripts/audit_curated_reader_epub_content.py",
+        "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
         "python3 scripts/audit_curated_reader_docx_content.py",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
@@ -409,19 +453,19 @@ def validate_summary(errors: list[str]) -> None:
         "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `8027d8e9104ef0357424703dbcec50c2e43d22a574eff76a2c0947c47fd8b9fc`",
-        "repaired EPUB package SHA-256 `2828f90c6a4298118b8b3af0508d01783aaa84c28558401f7fbc32af28cb9b1a`",
-        "SHA-256 `16eb7643a79b41680897491014d71ed0964a25db28703ba4258f498953368ea9`",
-        "repaired DOCX package SHA-256 `bd1db6539c998bbf8f8a10921ded35e889aaf57ce0f8d56874172d5ef41cd1e6`",
-        "SHA-256 `dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342`",
-        "505 pages",
+        "SHA-256 `9b03601a6023392d52bfa594cf1f4e6c20bd6e9d79bac62d362f30ad58938157`",
+        "repaired EPUB package SHA-256 `2e15e9f20bebd4816ae10081e2faff69314686d659c62c85c2c93ef23e70aca9`",
+        "SHA-256 `99f9bf48050c2a34244e98fb43e35ee35c377db207fd79d891c3385e11337bc6`",
+        "repaired DOCX package SHA-256 `1690f5b3bf63781e9dd819a7c66f1724043d74eee4d2132fa48e6597d4e5d7c1`",
+        "SHA-256 `7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d`",
+        "504 pages",
         "sample pages 1, 2, 25, 300, and 500",
-        "| Pages checked | 505 |",
-        "| Word boxes checked | 169,762 |",
+        "| Pages checked | 504 |",
+        "| Word boxes checked | 169,766 |",
         "| Textless pages | 0 |",
         "| Out-of-bounds word boxes | 0 |",
         "| Layout lines over 160 characters | 0 |",
-        "| Pages raster-rendered | 505 |",
+        "| Pages raster-rendered | 504 |",
         "| Blank raster pages | 0 |",
         "| Low-ink raster pages | 0 |",
         "| Near-edge raster pages | 0 |",
@@ -429,6 +473,9 @@ def validate_summary(errors: list[str]) -> None:
         "52 XHTML entries",
         "49 packaged content XHTML entries",
         "0 unresolved internal hrefs",
+        "EPUB Browser XHTML Application Review",
+        "104 page-view pairs",
+        "not dedicated e-reader device/app approval",
         "not e-reader application review",
         "17,354 paragraphs",
         "0 raw .qmd relationship targets",

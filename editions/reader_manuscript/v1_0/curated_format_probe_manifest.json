@@ -14,6 +14,7 @@
     "python3 scripts/audit_curated_reader_pdf_layout.py",
     "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
     "python3 scripts/audit_curated_reader_epub_content.py",
+    "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "python3 scripts/audit_curated_reader_docx_content.py"
   ],
   "local_report_refs": [
@@ -74,8 +75,8 @@
     },
     "epub": {
       "status": "passed",
-      "bytes": 8664089,
-      "sha256": "8027d8e9104ef0357424703dbcec50c2e43d22a574eff76a2c0947c47fd8b9fc",
+      "bytes": 8663801,
+      "sha256": "9b03601a6023392d52bfa594cf1f4e6c20bd6e9d79bac62d362f30ad58938157",
       "entries": 120,
       "xhtml_entries": 52,
       "image_entries": 62,
@@ -95,8 +96,8 @@
     },
     "docx": {
       "status": "passed",
-      "bytes": 8321125,
-      "sha256": "16eb7643a79b41680897491014d71ed0964a25db28703ba4258f498953368ea9",
+      "bytes": 8321124,
+      "sha256": "99f9bf48050c2a34244e98fb43e35ee35c377db207fd79d891c3385e11337bc6",
       "entries": 77,
       "media_entries": 61,
       "png_media_entries": 61,
@@ -112,9 +113,9 @@
     },
     "pdf": {
       "status": "passed",
-      "bytes": 5893421,
-      "sha256": "dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342",
-      "pages": 505,
+      "bytes": 5892357,
+      "sha256": "7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d",
+      "pages": 504,
       "title": "The ASI Stack",
       "author": "Corben Sorenson",
       "producer": "LuaTeX-1.24.0",
@@ -146,9 +147,9 @@
   "pdf_layout_audit": {
     "status": "passed_full_text_bbox_probe",
     "source_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-    "source_sha256": "dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342",
-    "pages_checked": 505,
-    "word_boxes_checked": 169762,
+    "source_sha256": "7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d",
+    "pages_checked": 504,
+    "word_boxes_checked": 169766,
     "textless_pages": 0,
     "out_of_bounds_word_boxes": 0,
     "min_word_box_height": 14.531,
@@ -170,7 +171,7 @@
     "full_format_artifact_review_not_completed",
     "app_or_ereader_review_not_completed"
   ],
-  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, DOCX, and PDF and passes structural artifact inspection. The DOCX and PDF renders use ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, and the PDF render now also uses 50 temporary Chrome-screenshot Mermaid fallbacks so browser-rendered diagram labels survive without clipping. The refreshed PDF all-page text/bounding-box audit checked 505 pages, 169762 word boxes, 0 textless pages, 0 out-of-bounds word boxes, 0 layout lines over 160 characters, and required text markers; the all-page raster audit reports 0 blank pages, 0 low-ink pages, and 0 near-edge pages. EPUB, DOCX, and PDF remain unapproved because application-level e-reader/DOCX/PDF review has not happened and no edition release record exists.",
+  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, DOCX, and PDF and passes structural artifact inspection. The DOCX and PDF renders use ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, and the PDF render now also uses 50 temporary Chrome-screenshot Mermaid fallbacks so browser-rendered diagram labels survive without clipping. The refreshed PDF all-page text/bounding-box audit checked 504 pages, 169766 word boxes, 0 textless pages, 0 out-of-bounds word boxes, 0 layout lines over 160 characters, and required text markers; the all-page raster audit reports 0 blank pages, 0 low-ink pages, and 0 near-edge pages. EPUB also has a Chromium XHTML browser review with 104 page-view pairs and 0 failures. EPUB, DOCX, and PDF remain unapproved because dedicated e-reader approval, DOCX application review, PDF reading-flow review, and an edition release record do not yet exist.",
   "non_claims": [
     "This manifest records local structural inspection of ignored curated-reader snapshots only.",
     "This manifest is not a reader release, ebook release, document release, PDF release, edition release record, or artifact approval.",
@@ -181,10 +182,10 @@
   "epub_content_audit": {
     "status": "passed_epub_package_content_navigation_probe",
     "source_artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
-    "source_sha256": "2828f90c6a4298118b8b3af0508d01783aaa84c28558401f7fbc32af28cb9b1a",
+    "source_sha256": "2e15e9f20bebd4816ae10081e2faff69314686d659c62c85c2c93ef23e70aca9",
     "xhtml_entries_checked": 52,
     "content_xhtml_entries_checked": 49,
-    "total_text_characters_checked": 1780817,
+    "total_text_characters_checked": 1780626,
     "nav_href_count": 840,
     "opf_item_count": 116,
     "opf_itemref_count": 52,
@@ -204,12 +205,12 @@
   "docx_content_audit": {
     "status": "passed_docx_document_xml_relationship_probe",
     "source_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-    "source_sha256": "bd1db6539c998bbf8f8a10921ded35e889aaf57ce0f8d56874172d5ef41cd1e6",
+    "source_sha256": "1690f5b3bf63781e9dd819a7c66f1724043d74eee4d2132fa48e6597d4e5d7c1",
     "zip_entries": 77,
-    "document_xml_characters": 2794565,
-    "text_characters_checked": 1195421,
+    "document_xml_characters": 2793806,
+    "text_characters_checked": 1195187,
     "paragraph_markers": 17354,
-    "run_markers": 28271,
+    "run_markers": 28255,
     "relationship_count": 286,
     "image_relationships": 61,
     "external_hyperlink_relationships": 217,
@@ -232,12 +233,12 @@
   "pdf_visual_raster_audit": {
     "status": "passed_all_page_pdf_raster_probe",
     "source_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-    "source_sha256": "dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342",
+    "source_sha256": "7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d",
     "raster_dpi": 72,
     "nonwhite_threshold": 245,
     "edge_margin_px": 2,
     "low_ink_threshold": 1000,
-    "pages_rendered": 505,
+    "pages_rendered": 504,
     "page_width_pixels": [
       612
     ],
@@ -256,5 +257,41 @@
     "sample_low_ink_pages": [],
     "sample_near_edge_pages": [],
     "review_boundary": "All-page low-resolution raster rendering is stronger local PDF visual evidence than sample-page rendering alone, but it is not manual PDF page-by-page review and does not approve the PDF artifact for release."
+  },
+  "epub_browser_review": {
+    "status": "passed_browser_xhtml_application_review",
+    "source_artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+    "source_sha256": "2e15e9f20bebd4816ae10081e2faff69314686d659c62c85c2c93ef23e70aca9",
+    "report_ref": "build/curated_reader_edition/curated_reader_epub_browser_review_report.json",
+    "review_command": "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
+    "renderer": "Chromium via Playwright over unpacked EPUB spine XHTML",
+    "spine_entries_checked": 52,
+    "content_xhtml_entries_checked": 49,
+    "viewport_count": 2,
+    "page_view_pairs": 104,
+    "failed_page_view_pairs": 0,
+    "rendered_image_count": 22,
+    "image_load_failures": 0,
+    "max_horizontal_overflow_px": 10,
+    "min_body_text_chars": 0,
+    "min_content_body_text_chars": 1225,
+    "required_text_markers_present": [
+      "The ASI Stack",
+      "Reader Edition Draft",
+      "evidence boundary",
+      "Reader Source List",
+      "External Citation Policy"
+    ],
+    "live_marker_hits": 0,
+    "raw_core_claim_marker_hits": 0,
+    "failure_samples": [],
+    "review_boundary": "This Chromium pass renders the unpacked EPUB spine XHTML as a local browser application review; it is stronger than package inspection, but it is not dedicated e-reader device/app approval, not a release record, and does not approve the EPUB artifact.",
+    "non_claims": [
+      "does not approve the EPUB artifact for release",
+      "does not replace dedicated e-reader device or application review",
+      "does not publish or archive a reader artifact",
+      "does not approve DOCX, PDF, audio, e-reader, or final figure artifacts",
+      "does not promote any chapter core claim or support state"
+    ]
   }
 }

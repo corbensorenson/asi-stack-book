@@ -42,6 +42,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/audit_curated_reader_pdf_layout.py",
     "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
     "python3 scripts/audit_curated_reader_epub_content.py",
+    "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "python3 scripts/audit_curated_reader_docx_content.py",
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
@@ -153,9 +154,9 @@ def main() -> None:
         errors.append("curated format inspection_summary must be an object.")
         inspection = {}
     expected_artifacts = {
-        "curated_reader_epub": ("epub", "8027d8e9104ef0357424703dbcec50c2e43d22a574eff76a2c0947c47fd8b9fc"),
-        "curated_reader_docx": ("docx", "16eb7643a79b41680897491014d71ed0964a25db28703ba4258f498953368ea9"),
-        "curated_reader_pdf": ("pdf", "dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342"),
+        "curated_reader_epub": ("epub", "9b03601a6023392d52bfa594cf1f4e6c20bd6e9d79bac62d362f30ad58938157"),
+        "curated_reader_docx": ("docx", "99f9bf48050c2a34244e98fb43e35ee35c377db207fd79d891c3385e11337bc6"),
+        "curated_reader_pdf": ("pdf", "7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d"),
     }
     for record_format, (manifest_format, expected_sha) in expected_artifacts.items():
         manifest_row = inspection.get(manifest_format, {})
@@ -174,12 +175,16 @@ def main() -> None:
             errors.append(f"{record_format} notes missing tracked byte count {manifest_row.get('bytes')}.")
 
     epub_audit = curated.get("epub_content_audit", {})
+    epub_browser = curated.get("epub_browser_review", {})
     docx_audit = curated.get("docx_content_audit", {})
     pdf_raster = curated.get("pdf_visual_raster_audit", {})
     pdf_layout = curated.get("pdf_layout_audit", {})
     if not isinstance(epub_audit, dict):
         errors.append("curated format epub_content_audit must be an object.")
         epub_audit = {}
+    if not isinstance(epub_browser, dict):
+        errors.append("curated format epub_browser_review must be an object.")
+        epub_browser = {}
     if not isinstance(docx_audit, dict):
         errors.append("curated format docx_content_audit must be an object.")
         docx_audit = {}
@@ -212,6 +217,8 @@ def main() -> None:
         "epub_repaired_package_sha256": epub_audit.get("source_sha256"),
         "epub_content_xhtml_entries_checked": epub_audit.get("content_xhtml_entries_checked"),
         "epub_unresolved_internal_hrefs": epub_audit.get("unresolved_internal_hrefs"),
+        "epub_browser_page_view_pairs": epub_browser.get("page_view_pairs"),
+        "epub_browser_failed_page_view_pairs": epub_browser.get("failed_page_view_pairs"),
         "docx_repaired_package_sha256": docx_audit.get("source_sha256"),
         "docx_raw_qmd_relationship_targets": docx_audit.get("raw_qmd_relationship_targets"),
         "pdf_pages_raster_rendered": pdf_raster.get("pages_rendered"),
@@ -234,6 +241,8 @@ def main() -> None:
         str(epub_audit.get("source_sha256", "")),
         "49 packaged content XHTML entries checked",
         "0 unresolved internal hrefs",
+        "104 browser page-view pairs",
+        "0 browser failures",
         "10 matched key-figure SVG titles",
     ):
         if fragment and fragment not in epub_note:
@@ -254,7 +263,7 @@ def main() -> None:
     for fragment in (
         f"{pdf_layout.get('word_boxes_checked'):,} word boxes",
         "0 out-of-bounds word boxes",
-        "505 rendered pages",
+        "504 rendered pages",
         "0 blank pages",
         "0 near-edge pages",
         "10 matched key-figure captions",

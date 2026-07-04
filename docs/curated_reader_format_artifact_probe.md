@@ -19,6 +19,7 @@ python3 scripts/repair_curated_reader_docx_links.py
 python3 scripts/audit_curated_reader_pdf_layout.py
 python3 scripts/audit_curated_reader_pdf_visual_raster.py
 python3 scripts/audit_curated_reader_epub_content.py
+node scripts/validate_curated_reader_epub_browser_review.js --write-manifest
 python3 scripts/audit_curated_reader_docx_content.py
 ```
 
@@ -60,9 +61,9 @@ evidence, not manual figure, page-flow, or release approval.
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,664,089 bytes, SHA-256 `8027d8e9104ef0357424703dbcec50c2e43d22a574eff76a2c0947c47fd8b9fc`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,321,125 bytes, SHA-256 `16eb7643a79b41680897491014d71ed0964a25db28703ba4258f498953368ea9`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,354 paragraph markers, required Word package entries present. |
-| pdf | passed | 5,893,421 bytes, SHA-256 `dd2babdcffa867584537761249357492a2151af7eec5b1d385266af7ef0c6342`, 505 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,663,801 bytes, SHA-256 `9b03601a6023392d52bfa594cf1f4e6c20bd6e9d79bac62d362f30ad58938157`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,321,124 bytes, SHA-256 `99f9bf48050c2a34244e98fb43e35ee35c377db207fd79d891c3385e11337bc6`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,354 paragraph markers, required Word package entries present. |
+| pdf | passed | 5,892,357 bytes, SHA-256 `7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d`, 504 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## EPUB Content And Navigation Audit
 
@@ -70,14 +71,14 @@ After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_epub_links.py` to the ignored EPUB
 snapshot. That command rewrites Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` to the packaged EPUB spine
-target. The repaired EPUB package SHA-256 `2828f90c6a4298118b8b3af0508d01783aaa84c28558401f7fbc32af28cb9b1a`
+target. The repaired EPUB package SHA-256 `2e15e9f20bebd4816ae10081e2faff69314686d659c62c85c2c93ef23e70aca9`
 then passed an all-XHTML content and internal-link audit covering 49 packaged content XHTML entries and 0 unresolved internal hrefs.
 
 | Metric | Result |
 |---|---:|
 | XHTML entries checked | 52 |
 | Packaged content XHTML entries checked | 49 |
-| Text characters checked | 1,780,817 |
+| Text characters checked | 1,780,626 |
 | Navigation hrefs checked | 840 |
 | OPF item entries | 116 |
 | OPF spine itemrefs | 52 |
@@ -92,22 +93,54 @@ This all-XHTML EPUB package audit is stronger local EPUB evidence than
 container inspection alone, but it is not e-reader application review and does
 not approve the EPUB artifact for release.
 
+## EPUB Browser XHTML Application Review
+
+The probe then renders the repaired EPUB spine XHTML in Chromium through:
+
+```bash
+node scripts/validate_curated_reader_epub_browser_review.js --write-manifest
+```
+
+That pass checks the unpacked EPUB spine at desktop and e-reader-like viewport
+widths. It covered 104 page-view pairs. It also treats the cover page
+separately from content pages, so a visual cover can be textless while every
+content spine entry still has substantive body text.
+
+| Metric | Result |
+|---|---:|
+| Spine entries checked | 52 |
+| Packaged content XHTML entries checked | 49 |
+| Viewports checked | 2 |
+| Browser page-view pairs | 104 |
+| Failed page-view pairs | 0 |
+| Rendered images observed | 22 |
+| Image load failures | 0 |
+| Maximum horizontal overflow | 10 px |
+| Minimum content body text characters | 1,225 |
+| Live-marker leaks | 0 |
+| Raw core-claim marker leaks | 0 |
+
+Required text markers were present: `The ASI Stack`, `Reader Edition Draft`,
+`evidence boundary`, `Reader Source List`, and `External Citation Policy`.
+This Chromium pass is stronger than package inspection because it actually
+renders the unpacked EPUB spine XHTML, but it is not dedicated e-reader device/app approval, not a release record, and does not approve the EPUB artifact.
+
 ## DOCX Document XML And Relationship Audit
 
 After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_docx_links.py` to the ignored DOCX
 snapshot. That command removes Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` by unwrapping the broken DOCX
-hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `bd1db6539c998bbf8f8a10921ded35e889aaf57ce0f8d56874172d5ef41cd1e6`
+hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `1690f5b3bf63781e9dd819a7c66f1724043d74eee4d2132fa48e6597d4e5d7c1`
 then passed a document XML, media, and relationship audit with 17,354 paragraphs and 0 raw .qmd relationship targets.
 
 | Metric | Result |
 |---|---:|
 | ZIP entries checked | 77 |
-| Document XML characters checked | 2,794,565 |
-| Text characters checked | 1,195,421 |
+| Document XML characters checked | 2,793,806 |
+| Text characters checked | 1,195,187 |
 | Paragraph markers | 17,354 |
-| Run markers | 28,271 |
+| Run markers | 28,255 |
 | Relationships checked | 286 |
 | Image relationships | 61 |
 | External hyperlink relationships | 217 |
@@ -132,8 +165,8 @@ relaxed reader chapters.
 
 | Metric | Result |
 |---|---:|
-| Pages checked | 505 |
-| Word boxes checked | 169,762 |
+| Pages checked | 504 |
+| Word boxes checked | 169,766 |
 | Textless pages | 0 |
 | Out-of-bounds word boxes | 0 |
 | Layout lines over 160 characters | 0 |
@@ -156,7 +189,7 @@ as manual page-flow approval.
 
 | Metric | Result |
 |---|---:|
-| Pages raster-rendered | 505 |
+| Pages raster-rendered | 504 |
 | Raster DPI | 72 |
 | Page width in pixels | 612 |
 | Page height in pixels | 792 |
@@ -180,16 +213,17 @@ page-by-page review and does not approve the PDF artifact for release.
 The tracked curated reader manuscript now has a local format-probe path beyond
 HTML browser viability: the same curated source rendered to HTML, EPUB, DOCX,
 and PDF, and the snapshots passed structural inspection. The repaired EPUB
-package also passed the all-XHTML content/navigation audit above, the repaired
-DOCX package passed the document XML/relationship audit above, and the PDF also
-passed the all-page text/bounding-box and visual raster audits above. This is
-useful evidence for release preparation, e-reader testing, DOCX application
-review, PDF layout review, and figure conversion work.
+package also passed the all-XHTML content/navigation audit and a Chromium
+browser XHTML application review, the repaired DOCX package passed the document
+XML/relationship audit above, and the PDF also passed the all-page
+text/bounding-box and visual raster audits above. This is useful evidence for
+release preparation, dedicated e-reader testing, DOCX application review, PDF
+layout review, and figure conversion work.
 
-This does not clear release blockers. EPUB still needs real e-reader or app
-inspection. DOCX still needs application-level review in Word, LibreOffice GUI,
-or Google Docs. PDF still needs page-layout and reading-flow review in a PDF
-viewer. Audio artifacts remain outside this probe.
+This does not clear release blockers. EPUB still needs dedicated e-reader
+device/app approval or an explicit release decision that accepts the Chromium
+XHTML review as sufficient for a named artifact. DOCX still needs
+application-level review in Word, LibreOffice GUI, or Google Docs. PDF still needs page-layout and reading-flow review in a PDF viewer. Audio artifacts remain outside this probe.
 
 ## Residuals
 

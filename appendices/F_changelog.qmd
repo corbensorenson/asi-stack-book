@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-04 - Add curated EPUB browser review
+
+- Added `scripts/validate_curated_reader_epub_browser_review.js` to unpack the
+  ignored curated-reader EPUB, render all 52 spine XHTML entries in Chromium at
+  desktop and e-reader-like viewport widths, and write the bounded review result
+  into `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`.
+- Replaced long no-promotion record paths in the Fast Generation and RankFold
+  curated reader chapters with human-readable record names, closing the
+  remaining e-reader-width EPUB overflow without changing the AI/research
+  edition's exact evidence paths.
+- Refreshed the curated format artifacts and release-preparation records: the
+  repaired EPUB now has 104 browser page-view pairs with 0 failures, the current
+  ignored PDF is 504 pages with 169,766 checked word boxes and 0 out-of-bounds
+  boxes, and the all-page raster probe still reports 0 blank, low-ink, or
+  near-edge pages.
+- Updated the blocked curated-reader release-candidate record and release
+  surface ledger with the new exact EPUB/DOCX/PDF hashes while preserving
+  release blockers for dedicated e-reader approval, DOCX application review,
+  PDF reading-flow review, final figure-artifact review, audio, and an edition
+  release record.
+- Boundary: this is local application-rendering and format-preparation evidence
+  only. It does not approve the EPUB, PDF, DOCX, e-reader flow, audio artifacts,
+  final figure art, or the reader edition, and it does not promote any support
+  state.
+
 ## 2026-07-04 - Add PDF-safe Mermaid fallbacks for curated reader
 
 - Updated `scripts/render_curated_reader_formats.py` so the curated-reader PDF
@@ -14,8 +39,8 @@
 - Refreshed `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`,
   `docs/curated_reader_format_artifact_probe.md`,
   `editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json`, and
-  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`: the
-  current ignored curated-reader PDF is 505 pages, has 169,762 checked word
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`: that
+  ignored curated-reader PDF was 505 pages, had 169,762 checked word
   boxes, 0 out-of-bounds word boxes, 0 blank raster pages, 0 low-ink pages, and
   0 near-edge raster pages.
 - Shortened one curated reader path-heavy sentence in

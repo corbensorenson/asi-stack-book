@@ -284,6 +284,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
 
     curated_inspection = curated_format.get("inspection_summary", {})
     curated_epub_content_audit = curated_format.get("epub_content_audit", {})
+    curated_epub_browser_review = curated_format.get("epub_browser_review", {})
     curated_docx_content_audit = curated_format.get("docx_content_audit", {})
     curated_pdf_visual_raster_audit = curated_format.get("pdf_visual_raster_audit", {})
     reader_inspection = artifact_inspection.get("inspection_summary", {})
@@ -355,8 +356,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         ],
         "curated_format": [
             "This does not clear release blockers.",
-            "EPUB still needs real e-reader or app",
+            "EPUB still needs dedicated e-reader",
             "0 unresolved internal hrefs",
+            "104 page-view pairs",
             "0 raw .qmd relationship targets",
             "Near-edge raster pages",
             "PDF still needs page-layout and reading-flow review",
@@ -446,6 +448,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "curated_epub_audit_content_xhtml": curated_epub_content_audit.get("content_xhtml_entries_checked"),
         "curated_epub_audit_unresolved": curated_epub_content_audit.get("unresolved_internal_hrefs"),
         "curated_epub_audit_sha": curated_epub_content_audit.get("source_sha256"),
+        "curated_epub_browser_pairs": curated_epub_browser_review.get("page_view_pairs"),
+        "curated_epub_browser_failures": curated_epub_browser_review.get("failed_page_view_pairs"),
+        "curated_epub_browser_max_overflow": curated_epub_browser_review.get("max_horizontal_overflow_px"),
         "curated_docx_png": curated_inspection.get("docx", {}).get("png_media_entries"),
         "curated_docx_svg": curated_inspection.get("docx", {}).get("svg_media_entries"),
         "curated_docx_audit_paragraphs": curated_docx_content_audit.get("paragraph_markers"),
@@ -573,7 +578,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- The blocked candidate also records `{metrics['curated_blocked_probe_status']}` for the automated package, link, raster, key-figure, and browser probes; this is release-preparation evidence only and does not clear application-level review.",
             f"- `docs/reader_html_artifact_browser_review.md` records {metrics['generated_html_pages']} generated reader HTML pages, {metrics['generated_html_pairs']} page-view pairs, and {metrics['generated_html_failures']} failed page-view pairs.",
             f"- `docs/curated_reader_html_artifact_browser_review.md` records {metrics['curated_html_pages']} curated reader HTML pages, {metrics['curated_html_pairs']} page-view pairs, {metrics['curated_html_failures']} failed page-view pairs, {metrics['curated_key_figure_pairs']} key-figure page-view pairs, {metrics['curated_key_figure_failures']} key-figure failures, and ignored snapshot digest `{metrics['curated_html_digest']}`.",
-            f"- `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: {metrics['curated_html_files']} HTML files, {metrics['curated_epub_xhtml']} EPUB XHTML entries, {metrics['curated_docx_png']} DOCX PNG media entries, {metrics['curated_docx_svg']} DOCX SVG media entries, and {metrics['curated_pdf_pages']} PDF pages. Its repaired-package EPUB audit checks {metrics['curated_epub_audit_xhtml']} XHTML entries, {metrics['curated_epub_audit_content_xhtml']} packaged content XHTML entries, and {metrics['curated_epub_audit_unresolved']} unresolved internal hrefs, with repaired artifact SHA `{metrics['curated_epub_audit_sha']}`. Its repaired-package DOCX audit checks {metrics['curated_docx_audit_paragraphs']} paragraphs, {metrics['curated_docx_audit_relationships']} relationships, and {metrics['curated_docx_audit_raw_qmd']} raw .qmd relationship targets, with repaired artifact SHA `{metrics['curated_docx_audit_sha']}`. Its all-page PDF raster audit checks {metrics['curated_pdf_raster_pages']} pages, {metrics['curated_pdf_raster_blank_pages']} blank pages, {metrics['curated_pdf_raster_low_ink_pages']} low-ink pages, and {metrics['curated_pdf_raster_near_edge_pages']} near-edge pages. It preserves release blockers.",
+            f"- `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: {metrics['curated_html_files']} HTML files, {metrics['curated_epub_xhtml']} EPUB XHTML entries, {metrics['curated_docx_png']} DOCX PNG media entries, {metrics['curated_docx_svg']} DOCX SVG media entries, and {metrics['curated_pdf_pages']} PDF pages. Its repaired-package EPUB audit checks {metrics['curated_epub_audit_xhtml']} XHTML entries, {metrics['curated_epub_audit_content_xhtml']} packaged content XHTML entries, and {metrics['curated_epub_audit_unresolved']} unresolved internal hrefs, with repaired artifact SHA `{metrics['curated_epub_audit_sha']}`. Its Chromium EPUB XHTML browser review checks {metrics['curated_epub_browser_pairs']} page-view pairs with {metrics['curated_epub_browser_failures']} failures and {metrics['curated_epub_browser_max_overflow']} px maximum overflow. Its repaired-package DOCX audit checks {metrics['curated_docx_audit_paragraphs']} paragraphs, {metrics['curated_docx_audit_relationships']} relationships, and {metrics['curated_docx_audit_raw_qmd']} raw .qmd relationship targets, with repaired artifact SHA `{metrics['curated_docx_audit_sha']}`. Its all-page PDF raster audit checks {metrics['curated_pdf_raster_pages']} pages, {metrics['curated_pdf_raster_blank_pages']} blank pages, {metrics['curated_pdf_raster_low_ink_pages']} low-ink pages, and {metrics['curated_pdf_raster_near_edge_pages']} near-edge pages. It preserves release blockers.",
             f"- `docs/reader_epub_probe_manifest.md` records the generated reader EPUB probe: {metrics['reader_epub_bytes']:,} bytes and `{metrics['reader_epub_language']}` language metadata, with the e-reader/application blocker still active.",
             f"- `docs/reader_docx_probe_manifest.md` records the generated reader DOCX conversion probe: {metrics['reader_docx_pages']} pages and {metrics['reader_docx_bytes']:,} bytes, with full-format review still active.",
             f"- `docs/reader_pdf_probe_manifest.md` records the generated reader PDF probe: {metrics['reader_pdf_pages']} pages and {metrics['reader_pdf_bytes']:,} bytes, with full PDF layout review still active.",

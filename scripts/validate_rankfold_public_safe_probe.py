@@ -50,6 +50,17 @@ SURFACE_FRAGMENTS = (
     "support-state",
 )
 
+READER_SURFACE_FRAGMENTS = (
+    "RankFold public-safe replay probe",
+    "no-promotion record for the public-safe replay",
+    "RAW0",
+    "roundtrip-exact",
+    "single-byte archive mutation",
+    "NeuralFold",
+    "compression advantage",
+    "support-state",
+)
+
 
 def rel(path: Path) -> str:
     return str(path.relative_to(ROOT))
@@ -240,11 +251,16 @@ def main() -> None:
         (rel(OUTLINE), OUTLINE),
         (rel(ROADMAP), ROADMAP),
         (rel(LIVE_CHAPTER), LIVE_CHAPTER),
-        (rel(READER_CHAPTER), READER_CHAPTER),
         (rel(README), README),
         (rel(PUBLICATION), PUBLICATION),
     ):
         require_fragments(owner, path.read_text(encoding="utf-8"), SURFACE_FRAGMENTS, errors)
+    require_fragments(
+        rel(READER_CHAPTER),
+        READER_CHAPTER.read_text(encoding="utf-8"),
+        READER_SURFACE_FRAGMENTS,
+        errors,
+    )
 
     record = chapter_record(structure, "rankfold-neuralfold-and-artifact-compression")
     if record.get("evidence_level") != "argument":

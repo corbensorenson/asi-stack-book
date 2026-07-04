@@ -33,6 +33,15 @@ EXPECTED_SURFACE_PHRASES = [
     "no model-speed or deployment claim",
 ]
 
+EXPECTED_READER_SURFACE_PHRASES = [
+    "fast_generation_task_bundle_2026_07_02_local",
+    "no-promotion decision",
+    "fast-generation task bundle",
+    "route://fast-template-verified",
+    "route://latency-only-proxy",
+    "no model-speed or deployment claim",
+]
+
 EXPECTED_LEAN_THEOREMS = [
     "fast_generation_task_bundle_candidate_preserves_quality",
     "fast_generation_task_bundle_candidate_improves_cost_accounting",
@@ -193,7 +202,8 @@ def validate_surfaces() -> list[str]:
     }
     for label, path in surfaces.items():
         text = path.read_text(encoding="utf-8", errors="ignore") if path.exists() else ""
-        for phrase in EXPECTED_SURFACE_PHRASES:
+        phrases = EXPECTED_READER_SURFACE_PHRASES if path == READER else EXPECTED_SURFACE_PHRASES
+        for phrase in phrases:
             if phrase not in text:
                 errors.append(f"{label} missing phrase {phrase!r}.")
     lean_text = LEAN.read_text(encoding="utf-8", errors="ignore") if LEAN.exists() else ""

@@ -76,6 +76,18 @@ SURFACE_FRAGMENTS = (
     "does not promote the RankFold chapter core claim",
 )
 
+READER_SURFACE_FRAGMENTS = (
+    "RankFold artifact import",
+    "no-promotion record for the artifact import",
+    "100,000,000-byte decoded artifact",
+    EXPECTED_DECODED_SHA,
+    "2.76634019",
+    "1 OK, 0 failed",
+    "NEURAL0",
+    "does not prove RankFold codec correctness",
+    "does not promote the RankFold chapter core claim",
+)
+
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
@@ -258,9 +270,9 @@ def main() -> None:
         (rel(OUTLINE), outline_text),
         (rel(ROADMAP), roadmap_text),
         (rel(LIVE_CHAPTER), live_text),
-        (rel(READER_CHAPTER), reader_text),
     ):
         require_fragments(owner, text, SURFACE_FRAGMENTS, errors)
+    require_fragments(rel(READER_CHAPTER), reader_text, READER_SURFACE_FRAGMENTS, errors)
 
     record = chapter_record(structure, "rankfold-neuralfold-and-artifact-compression")
     if record.get("evidence_level") != "argument":

@@ -249,6 +249,8 @@
         },
         "epub_content_xhtml_entries_checked": { "type": "integer", "minimum": 0 },
         "epub_unresolved_internal_hrefs": { "type": "integer", "minimum": 0 },
+        "epub_browser_page_view_pairs": { "type": "integer", "minimum": 0 },
+        "epub_browser_failed_page_view_pairs": { "type": "integer", "minimum": 0 },
         "docx_repaired_package_sha256": {
           "type": "string",
           "pattern": "^[0-9a-f]{64}$"
