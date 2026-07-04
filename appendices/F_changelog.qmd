@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-04 - Strengthen Artifact Graphs record-reality prose
+
+- Added a record-reality authority ladder to the live Artifact Graphs chapter:
+  stored receipt, inspectable receipt, reviewable receipt, overclaim-blocking
+  receipt, and support/release-affecting receipt.
+- Mirrored the ladder in the curated reader manuscript as a new
+  `From Receipt to Authority` section so the human edition explains why
+  detailed records can exist before they are allowed to persuade.
+- Boundary: this is prose clarification only. It does not add a new evidence
+  artifact, approve a release artifact, or move any support state.
+
 ## 2026-07-04 - Add reader key-figure EPUB layout review
 
 - Added `scripts/validate_reader_key_figure_epub_layout.py` to inspect the
@@ -199,7 +210,7 @@
 - Recorded the current result in
   `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`: 49
   scripts, 49 ordered marker rows, 49 untimecoded marker rows, 66 narration
-  notes, 1,066,517 checked text characters, 44 chapter scripts with
+  notes, 1,067,718 checked text characters, 44 chapter scripts with
   implementation horizons, 0 live/research marker hits, and 0 raw core-claim
   marker hits.
 - Updated `docs/reader_audio_script_probe_manifest.md`,

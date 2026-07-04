@@ -196,6 +196,15 @@ The next step is a Receipt repository audit rather than another synthetic receip
 
 The follow-on receipt repository challenge makes that audit less static. `python3 scripts/validate_receipt_repository_challenge.py` writes `experiments/receipt_repository_audit/results/2026-07-04-challenge.json` after deterministically selecting three tracked-digest challenges and one Circle external fingerprint challenge from the prior audit. It accepts the sampled Resource, Theseus/Fast, reference-trace, and Circle fingerprint responses, then rejects challenge controls for digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support promotion. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_receipt_repository_audit_challenge_no_change.json` records the audit/challenge as a `blocks_promotion` decision for receipt-reality overclaims only. This still does not prove deployed attestation or open-world receipt truth; it proves only that selected repository receipts can answer a reproducible audit challenge without changing support state.
 
+Record-reality should be read as an authority ladder, not a binary stamp. A
+paper trail with only the right fields is stored. If the file exists and the
+digest still matches, it is inspectable. If replay, command output, or an
+independent observation route agrees, it is reviewable. If negative controls
+fail in the expected way and residuals stay visible, it may block overclaims.
+Only an accepted evidence transition or named release approval can affect support
+state, and only within that exact scope. This ladder prevents a useful audit
+result from becoming an all-purpose proof.
+
 The epistemic trusted computing base is the companion problem: even an honest receipt needs a place where verifier trust bottoms out. A verifier cannot become trusted because it produced a fluent verdict, because it shares a component with the claim producer, or because a downstream agent repeats its summary. The bounded fixture at `docs/epistemic_trusted_computing_base_fixture.md` makes that finite-record boundary explicit. A trust-base record must name the minimal trusted core, root-of-trust refs, a bounded delegation rule, a recursion stop condition, verifier independence state, outside-TCB residuals, and non-claims. It accepts a minimal trust-base record, a delegated verifier record-only path, and a blocked self-verifier record, while rejecting missing roots of trust, verifier-trust laundering, ambient trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.
 
 ## Strongest Objection

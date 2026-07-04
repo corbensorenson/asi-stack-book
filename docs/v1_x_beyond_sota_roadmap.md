@@ -3872,7 +3872,7 @@ Current status:
   rather than alphabetical filesystem order, and
   `scripts/validate_reader_audio_script_reading_flow.py` records the automated
   reading-flow check: 49 script files, 49 ordered marker rows, 49 untimecoded
-  `TBD` marker rows, 66 narration notes, 1,066,517 checked text characters, 44
+  `TBD` marker rows, 66 narration notes, 1,067,718 checked text characters, 44
   chapter scripts with implementation horizons, 0 live/research marker hits, 0
   raw core-claim marker hits, and audio targets still not generated. This is
   not narration quality review, pronunciation review, chapter timecoding, an

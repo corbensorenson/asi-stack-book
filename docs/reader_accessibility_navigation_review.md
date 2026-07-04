@@ -22,7 +22,7 @@ This CI-friendly source-level review checks the tracked curated reader manuscrip
 | Reconciled records | 44 |
 | Release blockers preserved | 44 |
 | Chapters with one H1 | 44 |
-| Total headings | 597 |
+| Total headings | 598 |
 | Maximum heading level | 3 |
 | Skipped heading levels | 0 |
 | Duplicate heading slugs | 0 |
