@@ -73,6 +73,18 @@ caption treatment, mobile contained horizontal scroll for wide diagrams, and
 print page-break avoidance. This improves the rendered review surface, but it
 does not approve final figure art or any reader release artifact.
 
+2026-07-04 source-geometry update:
+`python3 scripts/validate_reader_key_figure_geometry.py` now records
+`editions/reader_manuscript/v1_0/key_figure_geometry_manifest.json` and the
+review surface `docs/reader_key_figure_geometry_review.md`. The CI-friendly
+source-geometry review checks the ten draft SVG figures for the standard
+`0 0 1200 760` viewBox, visible content bounds, text-anchor bounds, entity
+counts, and visible draft/non-release status. It records 10 content-bound
+checks, 10 text-anchor checks, minimum visible text nodes 25, minimum visible
+rectangles 7, minimum visible connector paths 8, and 22.0 px minimum content
+edge margin. This is not raster review, not manual aesthetic review, not final
+figure-artifact approval, and not reader release approval.
+
 2026-07-04 visual identity source-level update:
 `python3 scripts/validate_reader_visual_identity.py` now records
 `editions/reader_manuscript/v1_0/visual_identity_manifest.json` and the review

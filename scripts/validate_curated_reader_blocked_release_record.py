@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
 CURATED_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
 KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
+KEY_FIGURE_GEOMETRY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_geometry_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
 VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
@@ -51,6 +52,7 @@ REQUIRED_COMMANDS = {
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
     "python3 scripts/validate_reader_key_figure_format_probe.py",
+    "python3 scripts/validate_reader_key_figure_geometry.py",
     "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
@@ -92,7 +94,16 @@ def text_contains_all(owner: str, text: str, fragments: list[str], errors: list[
 
 def main() -> None:
     errors: list[str] = []
-    for path in (RECORD, CURATED_FORMAT, KEY_FIGURE_FORMAT, READER_MANIFEST, AUDIO_PROBE, VISUAL_IDENTITY, HTML_REVIEW):
+    for path in (
+        RECORD,
+        CURATED_FORMAT,
+        KEY_FIGURE_FORMAT,
+        KEY_FIGURE_GEOMETRY,
+        READER_MANIFEST,
+        AUDIO_PROBE,
+        VISUAL_IDENTITY,
+        HTML_REVIEW,
+    ):
         if not path.exists():
             errors.append(f"required path missing: {rel(path)}")
     if errors:
@@ -101,6 +112,7 @@ def main() -> None:
     record = load_json(RECORD)
     curated = load_json(CURATED_FORMAT)
     key_figures = load_json(KEY_FIGURE_FORMAT)
+    key_figure_geometry = load_json(KEY_FIGURE_GEOMETRY)
     reader_manifest = load_json(READER_MANIFEST)
     audio_probe = load_json(AUDIO_PROBE)
     visual_identity = load_json(VISUAL_IDENTITY)
@@ -111,6 +123,8 @@ def main() -> None:
         fail([f"{rel(CURATED_FORMAT)} must contain a JSON object."])
     if not isinstance(key_figures, dict):
         fail([f"{rel(KEY_FIGURE_FORMAT)} must contain a JSON object."])
+    if not isinstance(key_figure_geometry, dict):
+        fail([f"{rel(KEY_FIGURE_GEOMETRY)} must contain a JSON object."])
     if not isinstance(reader_manifest, dict):
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
     if not isinstance(audio_probe, dict):
@@ -194,6 +208,7 @@ def main() -> None:
     pdf_reading_flow = curated.get("pdf_reading_flow_review", {})
     pdf_layout = curated.get("pdf_layout_audit", {})
     audio_reading_flow = audio_probe.get("audio_script_reading_flow_review", {})
+    geometry_summary = key_figure_geometry.get("summary", {})
     visual_palette = visual_identity.get("palette_summary", {})
     visual_figures = visual_identity.get("figure_source_summary", {})
     visual_contrast = visual_identity.get("contrast_summary", {})
@@ -221,6 +236,22 @@ def main() -> None:
     if not isinstance(audio_reading_flow, dict):
         errors.append("audio_script_probe_manifest audio_script_reading_flow_review must be an object.")
         audio_reading_flow = {}
+    if key_figure_geometry.get("status") != "passed_source_geometry_review":
+        errors.append("key_figure_geometry_manifest status must remain passed_source_geometry_review.")
+    expected_geometry_metrics = {
+        "figure_count": 10,
+        "standard_viewbox_count": 10,
+        "content_bounds_passed_count": 10,
+        "text_anchor_bounds_passed_count": 10,
+        "minimum_visible_text_nodes": 25,
+        "minimum_visible_rects": 7,
+        "minimum_visible_connector_paths": 8,
+        "minimum_content_edge_margin_px": 22.0,
+    }
+    for key, expected in expected_geometry_metrics.items():
+        observed = geometry_summary.get(key)
+        if observed != expected:
+            errors.append(f"key_figure_geometry_manifest summary.{key} must be {expected!r}; found {observed!r}.")
     if visual_identity.get("status") != "passed_source_level_visual_identity_review":
         errors.append("visual_identity_manifest status must remain passed_source_level_visual_identity_review.")
     expected_visual_metrics = {
@@ -286,6 +317,10 @@ def main() -> None:
         "key_figure_epub_matched_titles": 10,
         "key_figure_docx_matched_stems": 10,
         "key_figure_pdf_matched_captions": 10,
+        "key_figure_geometry_manifest": "editions/reader_manuscript/v1_0/key_figure_geometry_manifest.json",
+        "key_figure_geometry_content_bounds": geometry_summary.get("content_bounds_passed_count"),
+        "key_figure_geometry_text_anchor_bounds": geometry_summary.get("text_anchor_bounds_passed_count"),
+        "key_figure_geometry_min_edge_margin": geometry_summary.get("minimum_content_edge_margin_px"),
         "visual_identity_manifest": "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
         "visual_identity_colors": visual_palette.get("combined_hex_color_count"),
         "visual_identity_non_neutral_families": visual_palette.get("non_neutral_family_count"),
@@ -300,7 +335,14 @@ def main() -> None:
         if closure.get(key) != expected:
             errors.append(f"format_probe_closure.{key} must be {expected!r}; found {closure.get(key)!r}.")
     release_boundary = str(closure.get("release_boundary", "")).lower()
-    for fragment in ("automated package", "source-level visual identity", "do not approve epub", "final figure art", "curated reader edition"):
+    for fragment in (
+        "automated package",
+        "source-geometry",
+        "source-level visual identity",
+        "do not approve epub",
+        "final figure art",
+        "curated reader edition",
+    ):
         if fragment not in release_boundary:
             errors.append(f"format_probe_closure.release_boundary missing {fragment!r}.")
 
@@ -364,7 +406,14 @@ def main() -> None:
     text_contains_all(
         "human_consumption_gate.notes",
         gate_note,
-        ["source-level visual identity review", "54 combined colors", "5 non-neutral color families"],
+        [
+            "source-geometry review",
+            "10 content-bound checks",
+            "22.0 px minimum content edge margin",
+            "source-level visual identity review",
+            "54 combined colors",
+            "5 non-neutral color families",
+        ],
         errors,
     )
 
@@ -372,7 +421,7 @@ def main() -> None:
     text_contains_all(
         "review_status.notes",
         review_note,
-        ["source-level visual identity review", "visual identity approval", "remain open"],
+        ["source-geometry review", "source-level visual identity review", "visual identity approval", "remain open"],
         errors,
     )
 
@@ -384,6 +433,8 @@ def main() -> None:
         "residuals",
         residual_text,
         [
+            "Source-geometry review is recorded as preparation evidence only",
+            "does not clear raster review",
             "Source-level visual identity review is recorded as preparation evidence only",
             "does not clear final figure-artifact review",
             "visual identity approval",

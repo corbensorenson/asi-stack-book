@@ -1,0 +1,355 @@
+{
+  "schema_version": "asi_stack.reader_key_figure_geometry.v0",
+  "result_id": "reader-key-figure-source-geometry-2026-07-04",
+  "status": "passed_source_geometry_review",
+  "command": "python3 scripts/validate_reader_key_figure_geometry.py",
+  "source_manifest": "editions/reader_manuscript/v1_0/manifest.json",
+  "figure_count": 10,
+  "summary": {
+    "figure_count": 10,
+    "standard_viewbox_count": 10,
+    "content_bounds_passed_count": 10,
+    "text_anchor_bounds_passed_count": 10,
+    "minimum_visible_text_nodes": 25,
+    "minimum_visible_rects": 7,
+    "minimum_visible_connector_paths": 8,
+    "minimum_content_width_px": 1016.0,
+    "minimum_content_height_px": 532.0,
+    "minimum_content_edge_margin_px": 22.0,
+    "maximum_text_anchor_x": 1064.0,
+    "maximum_text_anchor_y": 738.0
+  },
+  "figures": [
+    {
+      "figure_id": "asi_stack_control_plane",
+      "asset_path": "assets/diagrams/asi-stack-control-plane.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 39,
+      "visible_rects": 11,
+      "visible_connector_paths": 11,
+      "content_bounds": {
+        "min_x": 50.0,
+        "min_y": 62.0,
+        "max_x": 1172.0,
+        "max_y": 730.0,
+        "width": 1122.0,
+        "height": 668.0,
+        "minimum_edge_margin": 28.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 930.0,
+        "max_y": 665.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "authority_to_effect_path",
+      "asset_path": "assets/diagrams/authority-to-effect-path.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 35,
+      "visible_rects": 10,
+      "visible_connector_paths": 11,
+      "content_bounds": {
+        "min_x": 52.0,
+        "min_y": 62.0,
+        "max_x": 1138.0,
+        "max_y": 682.0,
+        "width": 1086.0,
+        "height": 620.0,
+        "minimum_edge_margin": 52.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 928.0,
+        "max_y": 682.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "evidence_state_ladder",
+      "asset_path": "assets/diagrams/evidence-state-ladder.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 38,
+      "visible_rects": 10,
+      "visible_connector_paths": 10,
+      "content_bounds": {
+        "min_x": 54.0,
+        "min_y": 62.0,
+        "max_x": 1146.0,
+        "max_y": 718.0,
+        "width": 1092.0,
+        "height": 656.0,
+        "minimum_edge_margin": 42.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 964.0,
+        "max_y": 700.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "intent_to_artifact_trace",
+      "asset_path": "assets/diagrams/intent-to-artifact-trace.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 34,
+      "visible_rects": 10,
+      "visible_connector_paths": 12,
+      "content_bounds": {
+        "min_x": 54.0,
+        "min_y": 62.0,
+        "max_x": 1156.0,
+        "max_y": 738.0,
+        "width": 1102.0,
+        "height": 676.0,
+        "minimum_edge_margin": 22.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 1064.0,
+        "max_y": 738.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "context_transaction_lifecycle",
+      "asset_path": "assets/diagrams/context-transaction-lifecycle.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 35,
+      "visible_rects": 10,
+      "visible_connector_paths": 12,
+      "content_bounds": {
+        "min_x": 54.0,
+        "min_y": 62.0,
+        "max_x": 1114.0,
+        "max_y": 738.0,
+        "width": 1060.0,
+        "height": 676.0,
+        "minimum_edge_margin": 22.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 916.0,
+        "max_y": 738.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "readiness_residual_quarantine_map",
+      "asset_path": "assets/diagrams/readiness-residual-quarantine-map.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 41,
+      "visible_rects": 9,
+      "visible_connector_paths": 9,
+      "content_bounds": {
+        "min_x": 54.0,
+        "min_y": 62.0,
+        "max_x": 1148.0,
+        "max_y": 738.0,
+        "width": 1094.0,
+        "height": 676.0,
+        "minimum_edge_margin": 22.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 1020.0,
+        "max_y": 738.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "route_selection_budget_tradeoff",
+      "asset_path": "assets/diagrams/route-selection-budget-tradeoff.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 39,
+      "visible_rects": 9,
+      "visible_connector_paths": 8,
+      "content_bounds": {
+        "min_x": 54.0,
+        "min_y": 62.0,
+        "max_x": 1142.0,
+        "max_y": 714.0,
+        "width": 1088.0,
+        "height": 652.0,
+        "minimum_edge_margin": 46.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 980.0,
+        "max_y": 714.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "compression_and_generation_acceptance",
+      "asset_path": "assets/diagrams/compression-and-generation-acceptance.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 34,
+      "visible_rects": 10,
+      "visible_connector_paths": 11,
+      "content_bounds": {
+        "min_x": 54.0,
+        "min_y": 62.0,
+        "max_x": 1144.0,
+        "max_y": 674.0,
+        "width": 1090.0,
+        "height": 612.0,
+        "minimum_edge_margin": 54.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 960.0,
+        "max_y": 664.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "cyclic_substrate_adoption_gate",
+      "asset_path": "assets/diagrams/cyclic-substrate-adoption-gate.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 28,
+      "visible_rects": 8,
+      "visible_connector_paths": 8,
+      "content_bounds": {
+        "min_x": 54.0,
+        "min_y": 62.0,
+        "max_x": 1070.0,
+        "max_y": 594.0,
+        "width": 1016.0,
+        "height": 532.0,
+        "minimum_edge_margin": 54.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 888.0,
+        "max_y": 576.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    },
+    {
+      "figure_id": "living_book_release_pipeline",
+      "asset_path": "assets/diagrams/living-book-release-pipeline.svg",
+      "viewbox": [
+        0.0,
+        0.0,
+        1200.0,
+        760.0
+      ],
+      "standard_viewbox": true,
+      "visible_text_nodes": 25,
+      "visible_rects": 7,
+      "visible_connector_paths": 9,
+      "content_bounds": {
+        "min_x": 58.0,
+        "min_y": 62.0,
+        "max_x": 1142.0,
+        "max_y": 622.0,
+        "width": 1084.0,
+        "height": 560.0,
+        "minimum_edge_margin": 58.0
+      },
+      "text_anchor_bounds": {
+        "max_x": 952.0,
+        "max_y": 594.0
+      },
+      "content_bounds_passed": true,
+      "text_anchor_bounds_passed": true,
+      "has_non_release_status": true,
+      "no_release_approval_claim": true,
+      "passed": true
+    }
+  ],
+  "release_effect": "none",
+  "support_state_effect": "none",
+  "review_boundary": "This source-geometry review checks SVG viewBox, visible content bounds, text anchors, entity counts, and visible draft/non-release status. It is not raster review, not manual aesthetic review, not e-reader visual review, not DOCX/PDF application review, not final figure-artifact approval, and not reader release approval.",
+  "non_claims": [
+    "does not render or raster-inspect the figures",
+    "does not approve final figure art",
+    "does not approve EPUB, DOCX, PDF, e-reader, audio, or reader release artifacts",
+    "does not prove visual quality in every target application",
+    "does not promote any chapter core claim or support state"
+  ],
+  "errors": []
+}

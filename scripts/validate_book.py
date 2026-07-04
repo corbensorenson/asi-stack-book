@@ -34,9 +34,12 @@ REQUIRED = [
     "scripts/validate_reader_manuscript_manifest.py",
     "scripts/validate_reader_key_figures.py",
     "scripts/validate_reader_key_figure_contrast.py",
+    "scripts/validate_reader_key_figure_geometry.py",
     "scripts/validate_reader_visual_identity.py",
     "docs/reader_key_figure_contrast_review.md",
     "editions/reader_manuscript/v1_0/key_figure_contrast_manifest.json",
+    "docs/reader_key_figure_geometry_review.md",
+    "editions/reader_manuscript/v1_0/key_figure_geometry_manifest.json",
     "docs/reader_visual_identity_review.md",
     "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
     "scripts/validate_reader_key_figure_html_probe.py",
@@ -935,6 +938,7 @@ def main() -> None:
     run_validator("validate_curated_reader_format_probe_manifest.py")
     run_validator("validate_reader_key_figures.py")
     run_validator("validate_reader_key_figure_contrast.py")
+    run_validator("validate_reader_key_figure_geometry.py")
     run_validator("validate_reader_visual_identity.py")
     run_validator("validate_reader_key_figure_format_probe.py")
     run_validator("validate_reader_artifact_inspection_manifest.py")
