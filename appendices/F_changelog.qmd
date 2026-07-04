@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-04 - Move measured-slice detail into checked ledger
+
+- Added `docs/non_infrastructure_measured_slice_status_ledger.md` and
+  `python3 scripts/validate_non_infrastructure_measured_slice_status_ledger.py`
+  to carry the detailed Resource Economics measured/replayed evidence lane
+  behind the v1.0 status snapshot.
+- Replaced the oversized `Non-infrastructure measured slice` row in
+  `docs/v1_0_candidate_status.md` with a compact generated row that points to
+  the ledger while preserving the current facts: 3 accepted bounded non-core
+  transitions, 6 local Resource result artifacts, 5 replayed validators, 3
+  route-selection probes, and 8 classified GitHub Pages runs.
+- Wired the new validator into `scripts/validate_v1_status_snapshot.py` and
+  `scripts/validate_book.py`; updated the repository map and v1.x roadmap
+  status-surface sprawl rule.
+- Boundary: status-surface hygiene and validator tightening only; no new
+  evidence result, no chapter-core support movement, no deployed scheduler or
+  routing claim, no stable-speedup claim, no benchmark claim, and no release
+  approval.
+
 ## 2026-07-04 - Tighten curated reader PDF layout evidence
 
 - Edited nine curated reader chapters to replace long machine identifiers,
