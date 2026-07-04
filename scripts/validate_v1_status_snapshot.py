@@ -125,6 +125,13 @@ def proof_adequacy_phrase(counts: Counter[str]) -> str:
     return ", ".join(parts[:-1]) + f", and {parts[-1]}"
 
 
+def leading_count(value: str | None) -> str:
+    if value is None:
+        return "missing"
+    match = re.search(r"\d+", value)
+    return match.group(0) if match else "missing"
+
+
 def human_bridge_metrics(chapters: list[dict]) -> tuple[int, int, int, int]:
     values: list[int] = []
     opening_values: list[int] = []
@@ -203,6 +210,12 @@ def main() -> None:
         ROOT / "docs" / "core_claim_transition_coverage.md",
         "Accepted explicit no-promotion decisions",
     )
+    accepted_non_core_upward = leading_count(
+        summary_metric(ROOT / "docs" / "non_core_evidence_ledger.md", "Accepted non-core upward transitions")
+    )
+    accepted_side_lane_blocks = leading_count(
+        summary_metric(ROOT / "docs" / "non_core_evidence_ledger.md", "Accepted no-promotion side-lane decisions")
+    )
     proof_targets = str(proof_manifest.get("proof_target_count", ""))
     proof_adequacy_counts = parse_proof_adequacy_counts()
     proof_adequacy_summary = proof_adequacy_phrase(proof_adequacy_counts)
@@ -258,24 +271,14 @@ def main() -> None:
         f"| Source inventory | {len(source_records)} public-safe source records, each with a matching public source note;",
         "| Source appendix ownership | Appendix G (`Corben's Own Sources, Papers, and Local Projects`) and Appendix H (`External Sources by Other Authors`) are independent top-level appendices with explicit source-ownership boundary blocks, ownership-rule rows, and appendix-local identity rows: G contains Corben's own papers, Corben-supplied materials, recovered project records, and local project records; H contains external records and third-party literature marked `external_literature`; neither appendix renders the other source class as a second ownership row |",
         f"| Claim/source traceability | {assigned_pairs} assigned source/chapter pairs, {exact_mappings} exact claim-source mappings, {passage_reviewed} passage-reviewed mappings |",
-        f"| Support states | {evidence_counts.get('argument', 0)} chapter core claims at `argument`; the v1.0 claim-state coverage gate records {accepted_core_transitions} accepted no-change transition records plus {accepted_no_promotion} accepted explicit no-promotion decisions, the v1.x disposition ledger records {len(chapters)} per-chapter core-claim dispositions with 0 promoted core claims, and the separate measured/replayed set records four bounded `synthetic-test-backed` transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, `resource-economics.finite_burst_load_smoothing_selector`, and `compact-generative-systems.compact_gvr_receipt_slice`, one bounded `empirical-test-backed` local selector transition for `resource-economics.scoped_workflow_trace_route_selector`, plus one bounded `prototype-backed` imported Circle receipt transition for `circle-calculus.external_rope_receipt_replay`; no chapter core claim support-state promotion |",
+        f"| Support states | All {evidence_counts.get('argument', 0)} chapter core claims remain at `argument`; detailed core coverage, disposition, non-core upward transitions, and no-promotion side-lane decisions live in generated ledgers. Current counts: {accepted_core_transitions} accepted core no-change records, {accepted_no_promotion} accepted explicit core no-promotion decisions, {accepted_non_core_upward} accepted narrow non-core upward transitions, {accepted_side_lane_blocks} accepted `blocks_promotion` side-lane decisions, 0 promoted core claims, and no chapter core claim support-state promotion. |",
         "`docs/core_claim_transition_coverage.md`",
         "`docs/core_claim_disposition_ledger.md`",
-        "`docs/first_measured_replayed_slice.md`",
-        "`docs/costed_route_resource_slice.md`",
-        "`docs/resource_load_stability_probe.md`",
-        "`docs/resource_workload_quality_probe.md`",
-        "`docs/circle_external_receipt_slice.md`",
-        "`docs/compact_gvr_slice.md`",
-        "`evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json`",
+        "`docs/non_core_evidence_ledger.md`",
         "`python3 scripts/validate_evidence_transitions.py`",
         "`python3 scripts/validate_core_claim_decisions.py`",
         "`python3 scripts/validate_v1_x_core_claim_dispositions.py`",
-        "`python3 scripts/validate_costed_route_resource_slice.py`",
-        "`python3 scripts/validate_resource_load_stability_probe.py`",
-        "`python3 scripts/validate_resource_workload_quality_probe.py`",
-        "`python3 scripts/validate_circle_external_receipt_slice.py`",
-        "`python3 scripts/validate_compact_gvr_slice.py`",
+        "`python3 scripts/validate_non_core_evidence_ledger.py`",
         f"| External SOTA positioning | Phase 6 placement is machine-tracked and closed for the v1.0 placement gate: {len(chapters)} of {len(chapters)} chapters have `ext_*` positioning before the Source crosswalk, 0 chapters have explicit external-baseline exceptions, 0 chapters need source-target placement, and 0 chapters need an exception or added source-noted baseline |",
         "`docs/external_sota_positioning_audit.md`",
         "`python3 scripts/validate_external_sota_positioning.py`",

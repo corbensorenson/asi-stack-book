@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-07-04 - Compact support-state status surface
+
+- Replaced the overlong `Support states` release-snapshot row with a compact
+  count-plus-ledger summary that delegates core coverage, core disposition,
+  non-core upward transition, and no-promotion side-lane detail to existing
+  generated ledgers.
+- Updated `scripts/validate_v1_status_snapshot.py` so the compact row remains
+  validator-enforced from the current ledger counts.
+- Boundary: status-surface cleanup only; no support-state movement, no
+  chapter-core promotion, no new evidence transition, no new proof result, and
+  no new test result.
+
 ## 2026-07-04 - Record Planning runtime-replan no-promotion decision
 
 - Added
