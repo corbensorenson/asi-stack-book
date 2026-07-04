@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-04 - Record readiness lifecycle no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json`
+  as an accepted `blocks_promotion` decision for the existing deterministic
+  Readiness lifecycle probe.
+- Updated `docs/non_core_evidence_ledger.md`, README, the landing page, the
+  Readiness lifecycle probe note, and the v1.x roadmap so the no-promotion
+  side-lane count moves from 19 to 20 and the finite lifecycle fixture appears
+  in the explicit blocking ledger.
+- Boundary: no support-state movement, no chapter-core promotion, no deployed
+  readiness-engine claim, no lifecycle-execution claim, no residual-ledger
+  storage claim, no live-quarantine-routing claim, no gate-quality claim, no
+  terminal-governance claim, no rollback/runtime-monitoring claim, no MoECOT
+  replay claim, no benchmark/current-readiness claim, and no model-quality,
+  safety, or ASI claim.
+
 ## 2026-07-04 - Record partitioned authority no-promotion decision
 
 - Added

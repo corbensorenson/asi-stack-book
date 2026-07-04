@@ -50,6 +50,9 @@ behavior.
 
 ## Boundary
 
-This is no support-state transition. It does not execute a deployed readiness
-engine, prove residual-ledger storage, prove live quarantine routing, prove
-benchmark quality, prove MoECOT replay, or promote the chapter support state.
+This is no support-state transition. The accepted no-promotion decision
+`evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json`
+records the fixture as a blocking decision, not as upward support movement. It
+does not execute a deployed readiness engine, prove residual-ledger storage,
+prove live quarantine routing, prove benchmark quality, prove MoECOT replay, or
+promote the chapter support state.
