@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-04 - Add artifact live attestation probe
+
+- Added `python3 scripts/validate_artifact_live_attestation_probe.py`,
+  `docs/artifact_live_attestation_probe.md`, result artifact
+  `experiments/artifact_live_attestation/results/2026-07-04-local.json`, and
+  accepted no-promotion transition
+  `evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json`.
+- The validator checks one current produced artifact,
+  `experiments/receipt_repository_audit/results/2026-07-04-challenge.json`,
+  through filesystem bytes, git object bytes, and command replay, while
+  rejecting seven mutation controls for filesystem digest mismatch, git blob
+  mismatch, command replay failure, same-component self-check laundering,
+  accepted trap receipt, unbounded attestation, and support promotion from
+  attestation shape.
+- Added the Lean summary bridge `artifact_live_attestation_probe_bridge` in
+  `AsiStackProofs.ArtifactGraph` and wired the validator into
+  `scripts/validate_book.py`.
+- Current proof-depth snapshot: 199 proof targets, 54 Lean modules, 993 theorem declarations, 806 derived/decomposed, 183 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Boundary: this is local live repository attestation only; it does not create
+  an upward support-state transition, does not prove open-world receipt
+  faithfulness, deployed attestation behavior, deployed audit behavior,
+  verifier correctness, external project truth, model quality, benchmark
+  performance, safety, ASI, or any chapter core claim.
+
 ## 2026-07-04 - Add residual ledger storage replay
 
 - Added `python3 scripts/validate_residual_ledger_storage_replay.py`,

@@ -1094,7 +1094,9 @@
       "formal_or_prototype_work": "Add graph integrity, provenance mismatch, and replay failure cases.",
       "human_reader_focus": "Show artifacts as memory the system can audit.",
       "what_would_move_this": "Replay reproduces expected graph or records exact divergence.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json"
+      ]
     },
     {
       "claim_id": "runtime-adapters-tool-permissions-and-human-approval.core",

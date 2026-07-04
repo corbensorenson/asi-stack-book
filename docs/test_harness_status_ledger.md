@@ -9,13 +9,13 @@ It records implementation wiring and non-claim boundaries only; it does not prom
 
 | Metric | Count |
 |---|---:|
-| Total wired checks | 60 |
+| Total wired checks | 61 |
 | Phase 5 registry harnesses | 22 |
-| Chapter-specific/support book-gate checks | 38 |
+| Chapter-specific/support book-gate checks | 39 |
 
 ## Status-Page Row
 
-| Test harnesses | 60 wired checks: 22 Phase 5 registry harnesses and 38 chapter-specific/support book-gate checks. Detailed harness summaries, artifact references, and non-claim boundaries are generated in `docs/test_harness_status_ledger.md`; Appendix E remains the per-harness source of truth. None of these harnesses promotes chapter core claims. | `docs/test_harness_status_ledger.md`; `appendices/E_codex_test_specs.qmd`; `experiments/phase5_harness_registry.json`; `docs/phase5_harness_registry.md`; `python3 scripts/validate_test_harness_status_ledger.py`; `python3 scripts/validate_phase5_harness_registry.py`; `python3 scripts/validate_book.py` |
+| Test harnesses | 61 wired checks: 22 Phase 5 registry harnesses and 39 chapter-specific/support book-gate checks. Detailed harness summaries, artifact references, and non-claim boundaries are generated in `docs/test_harness_status_ledger.md`; Appendix E remains the per-harness source of truth. None of these harnesses promotes chapter core claims. | `docs/test_harness_status_ledger.md`; `appendices/E_codex_test_specs.qmd`; `experiments/phase5_harness_registry.json`; `docs/phase5_harness_registry.md`; `python3 scripts/validate_test_harness_status_ledger.py`; `python3 scripts/validate_phase5_harness_registry.py`; `python3 scripts/validate_book.py` |
 
 ## Phase 5 Registry Harnesses
 
@@ -51,6 +51,7 @@ It records implementation wiring and non-claim boundaries only; it does not prom
 | Stack layer traceability audit | `docs/stack_layer_traceability_audit.md` | `python3 scripts/validate_stack_layer_traceability.py` | `experiments/stack_layer_traceability/results/2026-07-02-local.md` | Layer-boundary fixture, source-to-layer visibility, Appendix C labels, and no-promotion markers. | Repository traceability audit only; no runtime stack-separation claim. |
 | Artifact graph replay harness | `docs/artifact_graph_replay_harness.md` | `python3 scripts/validate_artifact_graph_replay.py` | `experiments/artifact_graph_replay/results/2026-06-30-local.md` | Synthetic replay metadata completeness and negative replay cases. | No deployed replay-engine or open-world receipt-faithfulness claim. |
 | Artifact graph record-reality sequence bridge | `docs/artifact_graph_record_reality_sequence.md` | `python3 scripts/validate_artifact_graph_record_reality_sequence.py` | `experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json` | One valid stale/partial/fresh replay sequence and four expected-invalid controls. | No evidence transition, verifier-correctness claim, or support-state promotion. |
+| Artifact live attestation probe | `docs/artifact_live_attestation_probe.md` | `python3 scripts/validate_artifact_live_attestation_probe.py` | `experiments/artifact_live_attestation/results/2026-07-04-local.json` | One current produced artifact checked by filesystem bytes, git object bytes, command replay, trap receipt, and seven controls. | No deployed attestation, open-world receipt-faithfulness, verifier-correctness, or support-state claim. |
 | Procedural memory loop harness | `docs/procedural_memory_loop_harness.md` | `python3 scripts/validate_procedural_memory_loop.py` | `experiments/procedural_memory_loop/results/2026-06-30-local.md` | Procedural-memory valid and expected-invalid loop records. | No deployed loop detector, tool synthesis, or regression-quality claim. |
 | Routing decision lease harness | `docs/routing_decision_lease_harness.md` | `python3 scripts/validate_routing_decision_lease.py` | `experiments/routing_decision_lease/results/2026-07-01-local.md` | Lease-bounded route packets, fallback/residual ownership, and authority-envelope checks. | No learned-router, route-quality, MoECOT replay, or deployed authority-enforcement claim. |
 | Cyclic memory contract harness | `docs/cyclic_memory_contract_harness.md` | `python3 scripts/validate_cyclic_memory_contracts.py` | `experiments/cyclic_memory_contracts/results/2026-06-30-local.md` | Cyclic-memory contract fixtures and expected-invalid controls. | No deployed memory system, retrieval-quality, or support-state claim. |

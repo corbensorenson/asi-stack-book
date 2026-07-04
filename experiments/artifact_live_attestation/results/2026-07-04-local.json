@@ -1,0 +1,175 @@
+{
+  "attestation_kind": "bounded_live_repository_artifact_attestation",
+  "attestation_limits": [
+    "local repository target only",
+    "current committed git object and filesystem bytes only",
+    "command replay covers the selected validator output only",
+    "not a deployed attestation service",
+    "not open-world receipt faithfulness"
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_artifact_live_attestation_probe.py",
+  "evidence_transition_created": false,
+  "lean_fixture_alignment": {
+    "expected": {
+      "accepted_observation_route_count": 3,
+      "attestation_limits_recorded": true,
+      "chapter_core_support_effect_none": true,
+      "command_replay_passed": true,
+      "filesystem_digest_matches_target": true,
+      "git_blob_digest_matches_target": true,
+      "mutation_control_count": 7,
+      "no_upward_transition": true,
+      "non_claim_boundary": true,
+      "observation_route_count": 3,
+      "observer_routes_independent": true,
+      "support_state_effect_none": true,
+      "target_artifact_count": 1,
+      "trap_receipt_rejected": true
+    },
+    "module": "AsiStackProofs.ArtifactGraph",
+    "theorem_refs": [
+      "artifact_live_attestation_probe_bridge"
+    ]
+  },
+  "mutation_controls": [
+    {
+      "control_id": "invalid_filesystem_digest_mismatch",
+      "rejected": true,
+      "rejection_reasons": [
+        "filesystem_digest_mismatch"
+      ]
+    },
+    {
+      "control_id": "invalid_git_blob_digest_mismatch",
+      "rejected": true,
+      "rejection_reasons": [
+        "git_blob_digest_mismatch"
+      ]
+    },
+    {
+      "control_id": "invalid_command_replay_failure",
+      "rejected": true,
+      "rejection_reasons": [
+        "command_replay_failed",
+        "command_replay_not_accepted"
+      ]
+    },
+    {
+      "control_id": "invalid_same_component_self_check_laundering",
+      "rejected": true,
+      "rejection_reasons": [
+        "independent_observer_routes_missing",
+        "same_component_self_check_allowed"
+      ]
+    },
+    {
+      "control_id": "invalid_trap_receipt_accepted",
+      "rejected": true,
+      "rejection_reasons": [
+        "trap_receipt_missing_digest_mismatch_reason",
+        "trap_receipt_not_rejected"
+      ]
+    },
+    {
+      "control_id": "invalid_unbounded_attestation",
+      "rejected": true,
+      "rejection_reasons": [
+        "attestation_limits_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_support_promotion_from_attestation",
+      "rejected": true,
+      "rejection_reasons": [
+        "chapter_core_support_effect_not_none",
+        "evidence_transition_created",
+        "support_state_effect_not_none"
+      ]
+    }
+  ],
+  "non_claims": [
+    "does not prove open-world receipt faithfulness",
+    "does not prove deployed attestation behavior",
+    "does not prove deployed audit behavior",
+    "does not prove verifier correctness or external project truth",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim"
+  ],
+  "observation_routes": [
+    {
+      "accepted": true,
+      "observed_ref": "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+      "observed_sha256": "ac73ef679304056bc27b08b17f1c2c16c8dba7f4813aa6dec1523e564f397b50",
+      "observer_role": "filesystem_reader",
+      "route_id": "filesystem_bytes"
+    },
+    {
+      "accepted": true,
+      "git_blob_sha1": "ee0cfb616bbd0b860465c347e7827141326fc17e",
+      "observed_ref": "HEAD:experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+      "observed_sha256": "ac73ef679304056bc27b08b17f1c2c16c8dba7f4813aa6dec1523e564f397b50",
+      "observer_role": "git_object_database",
+      "route_id": "git_object_bytes"
+    },
+    {
+      "accepted": true,
+      "command": "python3 scripts/validate_receipt_repository_challenge.py",
+      "exit_code": 0,
+      "observer_role": "command_replay_validator",
+      "output_excerpt": [
+        "Receipt repository challenge validation passed: 4 challenge response(s), 3 tracked digest challenge(s), 1 external fingerprint challenge(s), 5 mutation control(s), no support-state effect."
+      ],
+      "output_sha256": "361da51b803c814108399e59b27bb3e96b7ef2d5417906f4a5a24641dd9bf0d4",
+      "route_id": "command_replay"
+    }
+  ],
+  "observer_roles": [
+    "filesystem_reader",
+    "git_object_database",
+    "command_replay_validator"
+  ],
+  "recorded_date": "2026-07-04",
+  "residuals": [
+    "The probe attests one selected repository artifact, not every artifact in the graph.",
+    "Git-object and filesystem agreement do not prove that the original causal process was complete.",
+    "Command replay checks the selected validator, not deployed audit or attestation behavior.",
+    "External project truth, verifier correctness, and open-world receipt faithfulness remain unproved."
+  ],
+  "result_id": "artifact-live-attestation-probe-2026-07-04",
+  "same_component_self_check_allowed": false,
+  "schema_version": "asi_stack.artifact_live_attestation.result.v0",
+  "support_state_effect": "none",
+  "target_artifact": "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+  "target_artifact_result_id": "receipt-repository-challenge-2026-07-04",
+  "target_artifact_sha256": "ac73ef679304056bc27b08b17f1c2c16c8dba7f4813aa6dec1523e564f397b50",
+  "target_clean_in_worktree": true,
+  "trace_summary": {
+    "accepted_observation_route_count": 3,
+    "attestation_limits_recorded": true,
+    "chapter_core_support_effect_none": true,
+    "command_replay_passed": true,
+    "filesystem_digest_matches_target": true,
+    "git_blob_digest_matches_target": true,
+    "mutation_control_count": 7,
+    "no_upward_transition": true,
+    "non_claim_boundary": true,
+    "observation_route_count": 3,
+    "observer_routes_independent": true,
+    "support_state_effect_none": true,
+    "target_artifact_count": 1,
+    "trap_receipt_rejected": true
+  },
+  "trap_receipt": {
+    "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "observed_sha256": "ac73ef679304056bc27b08b17f1c2c16c8dba7f4813aa6dec1523e564f397b50",
+    "receipt_shape_valid": true,
+    "rejected": true,
+    "rejection_reasons": [
+      "target_digest_mismatch"
+    ],
+    "trap_id": "shape_valid_wrong_digest_attestation"
+  },
+  "verification_result": "pass"
+}

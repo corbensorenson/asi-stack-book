@@ -185,8 +185,15 @@ def validate_ledger(value: dict[str, Any], errors: list[str]) -> None:
     missing_ideas = sorted(EXPECTED_IDEAS - seen)
     if missing_ideas:
         errors.append(f"{rel(LEDGER)}: missing expected idea rows {missing_ideas}.")
-    if "missing_argument" not in confidence_states:
-        errors.append(f"{rel(LEDGER)}: at least one row must honestly record missing_argument.")
+    unresolved_markers = (
+        "not_defended",
+        "not_deployed",
+        "not_empirical",
+        "not_open_world",
+        "not_novelty_proven",
+    )
+    if not any(any(marker in state for marker in unresolved_markers) for state in confidence_states):
+        errors.append(f"{rel(LEDGER)}: at least one row must honestly preserve an unresolved confidence state.")
     top_non_claims = value.get("non_claims")
     if not isinstance(top_non_claims, list):
         errors.append(f"{rel(LEDGER)}: top-level non_claims must be a list.")

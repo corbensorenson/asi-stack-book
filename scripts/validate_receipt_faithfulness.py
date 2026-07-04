@@ -379,7 +379,7 @@ def validate_surfaces(errors: list[str]) -> None:
             [
                 "Record-reality gap",
                 rel(RESULT),
-                "missing_argument",
+                "live_artifact_attestation_backed_not_open_world",
             ],
         ),
         rel(VALIDATE_BOOK): (
@@ -444,7 +444,11 @@ def validate_ledger_json(errors: list[str]) -> None:
         return
     row = matches[0]
     blob = text_blob(row)
-    for phrase in (rel(RESULT), "missing_argument", "does not prove open-world receipt faithfulness"):
+    for phrase in (
+        rel(RESULT),
+        "live_artifact_attestation_backed_not_open_world",
+        "does not prove open-world receipt faithfulness",
+    ):
         if phrase not in blob:
             errors.append(f"{rel(LEDGER_JSON)} receipt_faithfulness_gap row missing {phrase!r}.")
 

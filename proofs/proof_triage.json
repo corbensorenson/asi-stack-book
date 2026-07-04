@@ -1061,6 +1061,16 @@
       "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite receipt repository challenge bridge matching the deterministic challenge validator: three tracked digest responses and one Circle external fingerprint response are accepted only with non-claim and no-promotion boundaries, while digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion overclaims are rejected."
     },
     {
+      "tag": "lean:artifacts.graph.live_attestation_probe_bridge",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "module": "AsiStackProofs.ArtifactGraph",
+      "formal_target": "A live repository artifact-attestation probe accepts one produced artifact only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries all align.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite live attestation bridge matching the local repository probe: one produced artifact is accepted only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries align."
+    },
+    {
       "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactGraph",
@@ -1991,5 +2001,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 198
+  "record_count": 199
 }

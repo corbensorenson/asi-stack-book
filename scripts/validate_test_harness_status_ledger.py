@@ -44,6 +44,13 @@ BOOK_GATE_CHECKS = [
         "boundary": "No evidence transition, verifier-correctness claim, or support-state promotion.",
     },
     {
+        "name": "Artifact live attestation probe",
+        "doc": "docs/artifact_live_attestation_probe.md",
+        "script": "scripts/validate_artifact_live_attestation_probe.py",
+        "summary": "One current produced artifact checked by filesystem bytes, git object bytes, command replay, trap receipt, and seven controls.",
+        "boundary": "No deployed attestation, open-world receipt-faithfulness, verifier-correctness, or support-state claim.",
+    },
+    {
         "name": "Procedural memory loop harness",
         "doc": "docs/procedural_memory_loop_harness.md",
         "script": "scripts/validate_procedural_memory_loop.py",
@@ -295,6 +302,7 @@ BOOK_GATE_RESULTS_BY_SCRIPT = {
     "scripts/validate_stack_layer_traceability.py": "experiments/stack_layer_traceability/results/2026-07-02-local.md",
     "scripts/validate_artifact_graph_replay.py": "experiments/artifact_graph_replay/results/2026-06-30-local.md",
     "scripts/validate_artifact_graph_record_reality_sequence.py": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+    "scripts/validate_artifact_live_attestation_probe.py": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
     "scripts/validate_procedural_memory_loop.py": "experiments/procedural_memory_loop/results/2026-06-30-local.md",
     "scripts/validate_routing_decision_lease.py": "experiments/routing_decision_lease/results/2026-07-01-local.md",
     "scripts/validate_cyclic_memory_contracts.py": "experiments/cyclic_memory_contracts/results/2026-06-30-local.md",
@@ -462,8 +470,8 @@ def validate(args: argparse.Namespace) -> list[str]:
         return ["experiments/phase5_harness_registry.json must contain a list."]
     if len(registry) != 22:
         errors.append(f"Expected 22 Phase 5 registry harnesses, found {len(registry)}.")
-    if len(BOOK_GATE_CHECKS) != 38:
-        errors.append(f"Expected 38 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
+    if len(BOOK_GATE_CHECKS) != 39:
+        errors.append(f"Expected 39 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
 
     names = [check["name"] for check in BOOK_GATE_CHECKS]
     duplicates = sorted({name for name in names if names.count(name) > 1})

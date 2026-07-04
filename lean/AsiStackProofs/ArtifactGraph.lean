@@ -1285,6 +1285,67 @@ theorem receipt_repository_challenge_fixture_bridge :
   unfold receiptRepositoryChallengeSummary
   simp
 
+structure ArtifactLiveAttestationSummary where
+  targetArtifactCount : Nat
+  observationRouteCount : Nat
+  acceptedObservationRouteCount : Nat
+  mutationControlCount : Nat
+  filesystemDigestMatchesTarget : Bool
+  gitBlobDigestMatchesTarget : Bool
+  commandReplayPassed : Bool
+  observerRoutesIndependent : Bool
+  sameComponentSelfCheckRejected : Bool
+  trapReceiptRejected : Bool
+  attestationLimitsRecorded : Bool
+  supportStateEffectNone : Bool
+  chapterCoreSupportEffectNone : Bool
+  noUpwardTransition : Bool
+  nonClaimBoundary : Bool
+deriving DecidableEq, Repr
+
+def artifactLiveAttestationSummary :
+    ArtifactLiveAttestationSummary where
+  targetArtifactCount := 1
+  observationRouteCount := 3
+  acceptedObservationRouteCount := 3
+  mutationControlCount := 7
+  filesystemDigestMatchesTarget := true
+  gitBlobDigestMatchesTarget := true
+  commandReplayPassed := true
+  observerRoutesIndependent := true
+  sameComponentSelfCheckRejected := true
+  trapReceiptRejected := true
+  attestationLimitsRecorded := true
+  supportStateEffectNone := true
+  chapterCoreSupportEffectNone := true
+  noUpwardTransition := true
+  nonClaimBoundary := true
+
+def ArtifactLiveAttestationValid
+    (summary : ArtifactLiveAttestationSummary) : Prop :=
+  summary.targetArtifactCount = 1 ∧
+    summary.observationRouteCount = 3 ∧
+    summary.acceptedObservationRouteCount = 3 ∧
+    summary.mutationControlCount = 7 ∧
+    summary.filesystemDigestMatchesTarget = true ∧
+    summary.gitBlobDigestMatchesTarget = true ∧
+    summary.commandReplayPassed = true ∧
+    summary.observerRoutesIndependent = true ∧
+    summary.sameComponentSelfCheckRejected = true ∧
+    summary.trapReceiptRejected = true ∧
+    summary.attestationLimitsRecorded = true ∧
+    summary.supportStateEffectNone = true ∧
+    summary.chapterCoreSupportEffectNone = true ∧
+    summary.noUpwardTransition = true ∧
+    summary.nonClaimBoundary = true
+
+theorem artifact_live_attestation_probe_bridge :
+    ArtifactLiveAttestationValid
+      artifactLiveAttestationSummary := by
+  unfold ArtifactLiveAttestationValid
+  unfold artifactLiveAttestationSummary
+  simp
+
 structure EpistemicTcbFixtureSummary where
   minimalTrustBaseAccepted : Bool
   delegatedVerifierRecordOnlyAccepted : Bool

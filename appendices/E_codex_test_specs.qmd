@@ -186,6 +186,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Receipt faithfulness adversarial fixture | implemented | passing via `python3 scripts/validate_receipt_faithfulness.py`; accepts 3 bounded receipt records, rejects 6 expected-invalid controls for shape-valid but reality-false receipts, trap-receipt failure, missing independent cross-check, unbounded attestation, and support promotion from receipt shape; no support-state promotion |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Receipt repository audit | implemented | passing via `python3 scripts/validate_receipt_repository_audit.py`; accepts 4 selected repository receipt records, checks tracked digest integrity, command pass status, external receipt fingerprints, non-claim boundaries, and no support-state promotion; no open-world receipt-faithfulness claim |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Receipt repository challenge audit | implemented | passing via `python3 scripts/validate_receipt_repository_challenge.py`; deterministic challenge over the prior repository audit accepts 3 tracked digest challenges and 1 Circle external fingerprint challenge while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion controls; no support-state promotion |
+| `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Artifact live attestation probe | implemented | passing via `python3 scripts/validate_artifact_live_attestation_probe.py`; local live repository attestation over one produced artifact checks filesystem bytes, git object bytes, command replay, independent observer routes, a wrong-digest trap receipt, attestation limits, and 7 mutation controls; no support-state promotion |
 | `artifact-graphs-audit-logs-and-replay` | Artifact Graphs, Audit Logs, and Replay | Epistemic trusted computing base fixture | implemented | passing via `python3 scripts/validate_epistemic_trusted_computing_base.py`; accepts 3 bounded trust-base records and rejects 6 expected-invalid controls for missing root of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residuals, and support promotion from trust-base shape; no support-state promotion |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Adapter permission test | implemented | passes via synthetic runtime adapter permission harness |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Approval gate enforcement test | implemented | passes via synthetic runtime adapter permission harness |
@@ -489,16 +490,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 198 |
+| Proof targets covered by triage | 199 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 198 |
+| implemented | 199 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 198 |
+| implemented | formal-invariant | lean-candidate | 199 |

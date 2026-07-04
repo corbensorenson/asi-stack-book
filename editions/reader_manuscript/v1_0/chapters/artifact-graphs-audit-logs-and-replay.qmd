@@ -199,6 +199,14 @@ missing non-claims, and support promotion. That is still not deployed
 attestation. It is a small proof that the book can ask its own receipt records
 to answer reproducible reality checks.
 
+The live artifact attestation probe takes the smallest local live step after
+that. It checks one current produced artifact through filesystem bytes, git
+object bytes, and command replay, then rejects wrong-digest, failed-replay,
+same-component self-check, accepted-trap, unbounded-attestation, and
+support-promotion controls. It is not a deployed attestation service. It is a
+bounded way to show that the book can compare a stored receipt against the
+repository reality it points to.
+
 ## A Book-Scale Example
 
 The living book is a small example of the same problem.
@@ -295,6 +303,12 @@ Resource flagship run note, and a Circle contract fingerprint. If a sampled
 file disappears, a digest changes without a new record, the Circle fingerprint
 is altered, non-claims are erased, or the challenge tries to promote support,
 the result is rejected.
+
+The live artifact attestation probe then checks the current receipt-challenge
+artifact itself through filesystem bytes, git object bytes, and command replay.
+This is still local repository evidence, not a deployed attestation service,
+but it gives the record-reality argument one live artifact whose bytes and
+replay result must agree before the receipt is allowed even bounded authority.
 
 ## The Hardest Objection
 

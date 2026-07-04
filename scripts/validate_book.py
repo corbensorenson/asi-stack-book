@@ -179,6 +179,9 @@ REQUIRED = [
     "experiments/receipt_repository_audit/results/2026-07-03-local.json",
     "scripts/validate_receipt_repository_challenge.py",
     "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+    "scripts/validate_artifact_live_attestation_probe.py",
+    "docs/artifact_live_attestation_probe.md",
+    "experiments/artifact_live_attestation/results/2026-07-04-local.json",
     "scripts/validate_epistemic_trusted_computing_base.py",
     "docs/epistemic_trusted_computing_base_fixture.md",
     "experiments/epistemic_tcb/results/2026-07-03-local.json",
@@ -1002,6 +1005,7 @@ def main() -> None:
     run_validator("validate_receipt_faithfulness.py")
     run_validator("validate_receipt_repository_audit.py")
     run_validator("validate_receipt_repository_challenge.py")
+    run_validator("validate_artifact_live_attestation_probe.py")
     run_validator("validate_epistemic_trusted_computing_base.py")
     run_validator("validate_procedural_memory_loop.py")
     run_validator("validate_routing_decision_lease.py")
