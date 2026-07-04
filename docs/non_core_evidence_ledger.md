@@ -1,6 +1,6 @@
 # Non-Core Evidence Ledger
 
-Last updated: 2026-07-03
+Last updated: 2026-07-04
 
 This ledger makes the currently accepted non-core evidence transitions visible
 without promoting any chapter core claim. It is a public trust surface for
@@ -12,10 +12,11 @@ readers, reviewers, and future writing agents.
 |---|---|
 | Chapter core claims | All 44 remain at `argument`. |
 | Accepted non-core upward transitions | 6 narrow transitions. |
+| Accepted no-promotion side-lane decisions | 1 Circle consumer-gate decision; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
 | Chapter-core promotion effect | None. |
 | External review status | Public review request opened in GitHub issue #1; no independent external human review record yet. |
-| Project Theseus/Circle status | Circle has the bounded prototype-backed receipt transition below plus a separate ASI-side public consumer gate at `docs/circle_public_replay_consumer_gate.md` that CI verifies by digest and negative controls; Project Theseus has a separate public-safe static architecture-gate report import at `docs/theseus_report_import_slice.md` that CI verifies by digest and negative controls. Neither side lane promotes a chapter core claim, and the Project Theseus import plus Circle consumer gate do not create accepted support-state transitions. |
+| Project Theseus/Circle status | Circle has the bounded prototype-backed receipt transition below plus a separate ASI-side public consumer gate at `docs/circle_public_replay_consumer_gate.md` that CI verifies by digest and negative controls; `evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json` records that consumer gate as an accepted `blocks_promotion` no-change decision, not an upward transition. Project Theseus has a separate public-safe static architecture-gate report import at `docs/theseus_report_import_slice.md` that CI verifies by digest and negative controls. Neither side lane promotes a chapter core claim, and the Project Theseus import plus Circle consumer gate do not create accepted upward support-state transitions. |
 
 ## Accepted Non-Core Transitions
 
@@ -27,6 +28,12 @@ readers, reviewers, and future writing agents.
 | `resource-economics.scoped_workflow_trace_route_selector` | `empirical-test-backed` | `docs/resource_workload_quality_probe.md`; `evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json` | The bounded local repository-task selector claim that five measured samples per route select the scoped workflow-trace validator over the broader Resource live-probe baseline while rejecting a cheaper no-op success-text command that exits 0 without producing the required validation surface. | No chapter core claim, broader workload-quality claim, stable-speedup claim, deployed scheduler, TokenMana, PlanForge, production workload, economic, benchmark, model-quality, safety, or source-interpretation claim moved. |
 | `circle-calculus.external_rope_receipt_replay` | `prototype-backed` | `docs/circle_external_receipt_slice.md`; `evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json` | The bounded imported external-prototype receipt fact that a clean local Circle checkout at commit `63b0f511` built the Circle target, certified one rope position distinguishability contract, emitted/accepted the recorded receipt, and passed the selected receipt/contract test batch summarized in the public-safe result record. | No chapter core claim, deployed proof-contract transport, model quality, reasoning ability, context length, speed, memory scaling, transfer, benchmark, safety, or ASI claim moved. |
 | `compact-generative-systems.compact_gvr_receipt_slice` | `synthetic-test-backed` | `docs/compact_gvr_slice.md`; `evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json` | The bounded synthetic compact-generation/GVR receipt claim that a local validator compares a 368-byte literal baseline to a 78-byte exact compact generator-plus-repair receipt, rejects lossy exactness, negative-rate/no-fallback, and bounded-search-overrun controls, and checks a finite Lean fixture bridge. | No chapter core claim, deployed compression, codec correctness, semantic utility, fallback execution, benchmark, model-quality, safety, ASI, or source-interpretation claim moved. |
+
+## Accepted No-Promotion Side-Lane Decisions
+
+| Claim ID | Support-state effect | Evidence packet | What the decision records | What stays blocked |
+|---|---|---|---|---|
+| `circle-calculus.public_consumer_gate` | `blocks_promotion` | `docs/circle_public_replay_consumer_gate.md`; `evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json` | The ASI-side public consumer gate validates one pinned `CC-AI-CONTRACT-ROPE-001` receipt fixture by digest, theorem IDs, deterministic fields, and four expected-invalid overclaim controls. | Proof-contract transport, model quality, context length, speed, memory scaling, transfer, safety, ASI, and Circle chapter-core promotion stay blocked until stronger replay, transport, workload, baseline, metric, and review artifacts exist. |
 
 ## Live Claim-Surface Narrowing Records
 
@@ -47,7 +54,8 @@ reader-quality edits do not promote a claim by themselves.
 The ledger is checked by `scripts/validate_non_core_evidence_ledger.py`. That
 validator reads the accepted transition records under
 `evidence_transitions/v1_0_measured/` and `evidence_transitions/v1_x_measured/`,
-checks that all six current non-core claims are listed here, checks the live
+checks that all six current non-core upward claims are listed here, checks the
+accepted Circle consumer-gate no-promotion side-lane decision, checks the live
 claim-surface narrowing record, checks the chapter-core non-promotion boundary,
 and checks that the public entry surfaces link to this ledger. The live
 revision record is also checked by `scripts/validate_claim_revision_records.py`.

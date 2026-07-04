@@ -69,6 +69,19 @@ The validator rejects four mutation controls:
 These controls are the practical point of this lane. They make the receipt
 usable as a guarded public fixture rather than a local-only prose summary.
 
+## Accepted No-Promotion Decision
+
+`evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json`
+records a review-accepted no-change decision for
+`circle-calculus.public_consumer_gate` with
+`support_state_effect: blocks_promotion`. This makes the consumer-gate boundary
+auditable without creating a support-state promotion. The record blocks claims
+that this ASI-side fixture proves deployed proof-contract transport, model
+quality, context length, speed, memory scaling, transfer, deployment safety,
+ASI, or the Circle chapter core claim until a fresh public Circle replay,
+archived contract pack, deployed consumer trace, workload/baseline metrics, and
+independent review exist.
+
 ## Non-Claims
 
 - Does not promote any chapter core claim above `argument`.
@@ -83,7 +96,9 @@ usable as a guarded public fixture rather than a local-only prose summary.
 
 The Circle lane is now ASI-side CI-verifiable by public fixture and pinned
 digest, but it is still not a vendored upstream Circle contract pack or a clean
-Circle replay performed by this repository. Stronger proof-carrying-computation,
+Circle replay performed by this repository. The accepted no-promotion decision
+only records the current boundary. Stronger proof-carrying-computation,
 cyclic-memory, RoPE, transport, transfer, or model-quality claims still require
-fresh replay artifacts, workload baselines, metrics, negative controls, and
-accepted evidence-transition records before any support-state promotion.
+fresh replay artifacts, workload baselines, metrics, negative controls,
+independent review, and accepted upward evidence-transition records before any
+support-state promotion.

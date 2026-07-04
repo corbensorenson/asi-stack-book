@@ -1,0 +1,106 @@
+{
+  "transition_id": "v1_x_measured.circle_public_consumer_gate.no_change",
+  "claim_id": "circle-calculus.public_consumer_gate",
+  "claim_surface_refs": [
+    "docs/circle_public_replay_consumer_gate.md",
+    "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+    "editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_public_replay/fixtures/valid/circle_rope_receipt.consumer.valid.json",
+    "experiments/circle_public_replay/results/2026-06-29-local.json",
+    "scripts/validate_circle_public_replay.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public ASI-side Circle consumer-gate fixture only. The gate validates one pinned `CC-AI-CONTRACT-ROPE-001` rope receipt boundary by digest, theorem IDs, deterministic fields, and four expected-invalid downstream-overclaim controls. It does not rerun Circle Lean in this repository, vendor a public Circle contract pack, prove deployed proof-contract transport, measure model quality, or validate transfer, context-length, memory-scaling, speed, safety, or ASI claims.",
+  "evidence_roles": [
+    "public_safe_consumer_gate",
+    "pinned_receipt_digest_check",
+    "required_theorem_id_check",
+    "downstream_use_negative_controls",
+    "external_replay_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The Circle consumer gate is useful because it makes a prior external Circle receipt consumable by this repository through a public fixture, deterministic digest checks, theorem-ID requirements, and mutation controls for digest mismatch, missing theorem IDs, stale contract status, and unsupported transfer-claim use. It remains a consumer-gate wrapper around one prior receipt, not a fresh Circle replay or transport implementation, so it blocks promotion for proof-contract transport, model-quality, context-length, speed, memory-scaling, transfer, safety, ASI, or chapter-core claims.",
+  "required_artifacts": [
+    "fresh public Circle replay or archived public contract pack",
+    "repository-owned command that reruns the relevant Circle proof target or verifies an archived replay bundle",
+    "proof-contract transport implementation or consumer integration trace",
+    "workload, baseline, metric, and report for any downstream model-quality, context-length, transfer, speed, or memory-scaling claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/circle_public_replay_consumer_gate.md",
+    "experiments/circle_public_replay/fixtures/valid/circle_rope_receipt.consumer.valid.json",
+    "experiments/circle_public_replay/results/2026-06-29-local.json",
+    "scripts/validate_circle_public_replay.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_public_replay_consumer_gate.md",
+    "docs/circle_external_receipt_slice.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#circle-calculus-and-proof-carrying-ai-contracts.core",
+    "docs/book_outline.md#circle-calculus-and-proof-carrying-ai-contracts"
+  ],
+  "verification_command": "python3 scripts/validate_circle_public_replay.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "digest-mismatch mutation is rejected",
+    "missing required theorem ID mutation is rejected",
+    "stale contract fingerprint status mutation is rejected",
+    "unsupported transfer-claim use is rejected",
+    "fresh Circle replay in this repository remains unclaimed",
+    "deployed proof-contract transport remains unclaimed",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_public_replay_consumer_gate.md",
+    "experiments/circle_public_replay/results/2026-06-29-local.json",
+    "scripts/validate_circle_public_replay.py"
+  ],
+  "downgrade_triggers": [
+    "consumer-gate validator failure",
+    "digest mismatch accepted",
+    "missing theorem ID accepted",
+    "stale contract fingerprint accepted",
+    "unsupported transfer claim accepted",
+    "consumer gate described as a fresh Circle replay",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Circle consumer-gate or proof-contract transport claim after a fresh public Circle replay or archived public contract pack, repository-owned replay/verification command, downstream consumer integration evidence, workload/baseline metrics for any model-facing claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one pinned public consumer-gate fixture",
+    "depends on a prior external Circle receipt rather than rerunning Circle Lean here",
+    "no vendored public Circle contract pack",
+    "no deployed ASI proof-contract transport",
+    "no model workload, context-length, speed, memory-scaling, transfer, or safety measurement",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, proof-contract transport, model-quality, benchmark, transfer, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no archived public Circle contract pack",
+    "no deployed proof-contract transport implementation",
+    "no downstream workload or baseline evidence",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-circle-consumer-gate-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Circle public consumer-gate evidence above argument",
+    "does not prove deployed proof-contract transport, model quality, reasoning ability, context length, speed, memory scaling, deployment safety, transfer, benchmark performance, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote the Circle Calculus chapter core claim"
+  ]
+}

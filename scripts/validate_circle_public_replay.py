@@ -17,6 +17,7 @@ VALID_DIR = ROOT / "experiments" / "circle_public_replay" / "fixtures" / "valid"
 INVALID_DIR = ROOT / "experiments" / "circle_public_replay" / "fixtures" / "invalid"
 RESULT = ROOT / "experiments" / "circle_public_replay" / "results" / "2026-06-29-local.json"
 SUMMARY = ROOT / "docs" / "circle_public_replay_consumer_gate.md"
+TRANSITION = ROOT / "evidence_transitions" / "v1_x_measured" / "circle_public_consumer_gate_no_change.json"
 
 EXPECTED_RECEIPT_ID = "circle.rope.CC-AI-CONTRACT-ROPE-001.public_consumer_gate"
 EXPECTED_CONTENT_FINGERPRINT = "a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468"
@@ -266,11 +267,63 @@ def validate_summary(expected_digest: str, errors: list[str]) -> None:
         "unsupported transfer-claim use",
         "Does not promote any chapter core claim above `argument`.",
         "Does not prove deployed proof-contract transport inside The ASI Stack.",
+        "Does not create a new accepted support-state transition.",
+        "Accepted No-Promotion Decision",
+        "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
+        "support_state_effect: blocks_promotion",
         "python3 scripts/validate_circle_public_replay.py",
     )
     for fragment in required:
         if fragment not in text:
             errors.append(f"{rel(SUMMARY)} missing required fragment: {fragment}")
+
+
+def validate_transition(errors: list[str]) -> None:
+    if not TRANSITION.exists():
+        errors.append(f"Missing {rel(TRANSITION)}.")
+        return
+    record = load_json(TRANSITION)
+    if not isinstance(record, dict):
+        errors.append(f"{rel(TRANSITION)} must contain an object.")
+        return
+
+    expected = {
+        "claim_id": "circle-calculus.public_consumer_gate",
+        "old_support_state": "argument",
+        "new_support_state": "argument",
+        "transition_effect": "no_change",
+        "transition_validity_state": "review_accepted",
+        "review_status": "accepted",
+        "support_state_effect": "blocks_promotion",
+        "verification_result": "pass",
+    }
+    for key, expected_value in expected.items():
+        if record.get(key) != expected_value:
+            errors.append(f"{rel(TRANSITION)}: {key} must be {expected_value!r}.")
+
+    for key, fragment in (
+        ("verification_command", "python3 scripts/validate_circle_public_replay.py"),
+        ("scope_boundary", "does not rerun Circle Lean"),
+        ("transition_reason", "not a fresh Circle replay"),
+        ("promotion_burden", "fresh public Circle replay"),
+        ("changelog_ref", "2026-07-04---record-circle-consumer-gate-no-promotion-decision"),
+    ):
+        if fragment not in str(record.get(key, "")):
+            errors.append(f"{rel(TRANSITION)}: {key} missing {fragment!r}.")
+
+    non_claims = text_blob(record.get("non_claims", []))
+    limitations = text_blob(record.get("limitations", []))
+    blockers = text_blob(record.get("acceptance_blockers", []))
+    for fragment in (
+        "does not create an upward support-state transition",
+        "does not promote the Circle Calculus chapter core claim",
+        "does not prove deployed proof-contract transport",
+    ):
+        if fragment not in non_claims:
+            errors.append(f"{rel(TRANSITION)}: non_claims missing {fragment!r}.")
+    for fragment in ("does not promote any chapter core claim", "no fresh public Circle replay"):
+        if fragment not in f"{limitations} {blockers}":
+            errors.append(f"{rel(TRANSITION)}: limitations/blockers missing {fragment!r}.")
 
 
 def main() -> None:
@@ -315,6 +368,7 @@ def main() -> None:
         }
         validate_result(expected_result, errors)
         validate_summary(receipt_digest, errors)
+        validate_transition(errors)
 
     if errors:
         fail(errors)

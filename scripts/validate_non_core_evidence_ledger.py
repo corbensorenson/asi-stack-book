@@ -46,11 +46,20 @@ EXPECTED = {
     },
 }
 
+NO_PROMOTION_EXPECTED = {
+    "circle-calculus.public_consumer_gate": {
+        "transition": "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
+    },
+}
+
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
     "Accepted non-core upward transitions | 6 narrow transitions.",
+    "Accepted no-promotion side-lane decisions | 1 Circle consumer-gate decision; no support-state movement.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
+    "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
+    "Accepted No-Promotion Side-Lane Decisions",
     "Chapter-core promotion effect | None.",
     "no independent external human review record yet.",
     "does not promote any chapter core claim above `argument`",
@@ -137,6 +146,39 @@ def main() -> None:
         if expected["transition"] not in ledger:
             errors.append(f"ledger does not link transition record {expected['transition']}")
 
+    for claim_id, expected in NO_PROMOTION_EXPECTED.items():
+        record_path = ROOT / expected["transition"]
+        record = load_transition(record_path)
+        if record.get("claim_id") != claim_id:
+            errors.append(
+                f"{record_path.relative_to(ROOT)} claim_id {record.get('claim_id')!r} "
+                f"does not match {claim_id!r}"
+            )
+        if record.get("old_support_state") != "argument" or record.get("new_support_state") != "argument":
+            errors.append(f"{record_path.relative_to(ROOT)} must keep support state at argument")
+        if record.get("transition_effect") != "no_change":
+            errors.append(f"{record_path.relative_to(ROOT)} must be a no_change transition")
+        if record.get("transition_validity_state") != "review_accepted":
+            errors.append(f"{record_path.relative_to(ROOT)} is not review_accepted")
+        if record.get("review_status") != "accepted":
+            errors.append(f"{record_path.relative_to(ROOT)} review_status is not accepted")
+        if record.get("support_state_effect") != "blocks_promotion":
+            errors.append(f"{record_path.relative_to(ROOT)} must block promotion")
+        non_claims = " ".join(str(item) for item in record.get("non_claims", []))
+        limitations = " ".join(str(item) for item in record.get("limitations", []))
+        if "does not promote the Circle Calculus chapter core claim" not in non_claims:
+            errors.append(f"{record_path.relative_to(ROOT)} lacks Circle chapter-core non-claim text")
+        if "does not create an upward support-state transition" not in non_claims:
+            errors.append(f"{record_path.relative_to(ROOT)} lacks upward-transition non-claim text")
+        if "does not promote any chapter core claim" not in f"{non_claims} {limitations}":
+            errors.append(f"{record_path.relative_to(ROOT)} lacks chapter-core non-promotion boundary")
+        if claim_id not in ledger:
+            errors.append(f"ledger does not list no-promotion claim id {claim_id}")
+        if expected["transition"] not in ledger:
+            errors.append(f"ledger does not link no-promotion transition record {expected['transition']}")
+        if "blocks_promotion" not in ledger:
+            errors.append("ledger does not expose blocks_promotion for side-lane no-promotion decisions")
+
     ledger_refs = [
         ("README.md", readme, "docs/non_core_evidence_ledger.md"),
         ("index.qmd", index, "docs/non_core_evidence_ledger.md"),
@@ -158,7 +200,10 @@ def main() -> None:
     if errors:
         fail(errors)
 
-    print("Non-core evidence ledger validation passed: 6 accepted non-core transitions, 0 chapter-core promotions.")
+    print(
+        "Non-core evidence ledger validation passed: 6 accepted non-core upward transitions, "
+        "1 accepted side-lane no-promotion decision, 0 chapter-core promotions."
+    )
 
 
 if __name__ == "__main__":

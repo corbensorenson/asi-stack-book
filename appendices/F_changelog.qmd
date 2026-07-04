@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-04 - Record Circle consumer-gate no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json`
+  to record the public ASI-side Circle consumer gate as an accepted
+  `blocks_promotion` no-change decision for
+  `circle-calculus.public_consumer_gate`.
+- Updated `docs/circle_public_replay_consumer_gate.md`,
+  `docs/non_core_evidence_ledger.md`, `docs/v1_0_candidate_status.md`,
+  `docs/v1_x_beyond_sota_roadmap.md`, and `README.md` so the Circle gate is
+  visible as an accountability side lane without changing the six accepted
+  upward non-core transition count.
+- Tightened `python3 scripts/validate_circle_public_replay.py` and
+  `python3 scripts/validate_non_core_evidence_ledger.py` so the transition
+  record must stay `argument` to `argument`, `no_change`,
+  `review_accepted`, and `blocks_promotion`.
+- Regenerated the dependent accepted-transition audit, Resource flagship lane,
+  reference-trace replay, and residual-ledger trace result records so their
+  counts and digests reflect the new 43-record evidence-transition surface
+  while preserving no chapter-core promotion and no new Resource support-state
+  movement.
+- Boundary: this does not rerun Circle Lean in this repository, vendor a public
+  Circle contract pack, prove deployed proof-contract transport, create an
+  upward support-state transition, promote any chapter core claim, or claim
+  model quality, context length, speed, memory scaling, transfer, safety, or
+  ASI capability.
+
 ## 2026-07-04 - Add curated reader figure browser checks
 
 - Extended `node scripts/validate_reader_html_artifact_browser.js` so curated
