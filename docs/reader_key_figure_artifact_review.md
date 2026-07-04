@@ -42,6 +42,16 @@ substantive rendered dimensions, and viewport-contained figure framing. This
 is still not manual visual judgment, measured contrast review, final
 figure-artifact approval, or reader release approval.
 
+2026-07-04 measured contrast/readability update:
+`python3 scripts/validate_reader_key_figure_contrast.py` now records
+`editions/reader_manuscript/v1_0/key_figure_contrast_manifest.json` and the
+review surface `docs/reader_key_figure_contrast_review.md`. The ten draft key
+figures pass the source-level gate with minimum text contrast ratio 5.19,
+minimum flow-line contrast ratio 3.96, minimum marker contrast ratio 3.96, and
+minimum SVG text size 15 px. This closes the measured SVG contrast/readability
+slice only; it does not approve final figure art, EPUB, DOCX, PDF, e-reader,
+audio, HTML, or a reader release artifact.
+
 2026-07-04 presentation-layer update: `assets/styles.scss` now applies a shared
 key-figure presentation shell to both live `.asi-key-figure` blocks and curated
 reader `reader-fig-*` Quarto figure blocks, including a restrained rule,
@@ -85,9 +95,9 @@ Open residuals:
 
 - HTML visual/layout: automated browser checks now cover rendered figure
   loading, size, captions, boundaries, and viewport containment for all ten
-  draft key figures at desktop and mobile widths. Manual aesthetic judgment,
-  measured contrast, line-weight review, and final visual approval remain
-  open.
+  draft key figures at desktop and mobile widths. The source-SVG contrast and
+  readability gate now passes; manual aesthetic judgment, line-weight review,
+  rendered-format inspection, and final visual approval remain open.
 - EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
 - DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
 - PDF: inspect page-level layout, figure scaling, and caption placement.

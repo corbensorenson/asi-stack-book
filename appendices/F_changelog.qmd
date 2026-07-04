@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-04 - Add reader key-figure contrast gate
+
+- Added `python3 scripts/validate_reader_key_figure_contrast.py` and tracked
+  result `editions/reader_manuscript/v1_0/key_figure_contrast_manifest.json`
+  as a deterministic source-SVG contrast/readability gate for the ten draft
+  reader key figures.
+- The gate records minimum text contrast ratio 5.19, minimum flow-line contrast
+  ratio 3.96, minimum marker contrast ratio 3.96, and minimum SVG text size
+  15 px against thresholds of 4.5, 3.0, 3.0, and 15 px.
+- Synchronized `docs/reader_key_figure_contrast_review.md`,
+  `docs/reader_key_figure_artifact_review.md`, README, the roadmap, and
+  `python3 scripts/validate_book.py` so the measured contrast/readability slice
+  is enforced without approving final figure art.
+- Boundary: this does not approve EPUB, DOCX, PDF, e-reader, audio, HTML, final
+  figure art, a reader release artifact, or any claim support-state movement.
+
 ## 2026-07-04 - Add receipt repository challenge audit
 
 - Added `python3 scripts/validate_receipt_repository_challenge.py` and result

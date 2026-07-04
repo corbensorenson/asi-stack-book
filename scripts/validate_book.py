@@ -33,6 +33,9 @@ REQUIRED = [
     "scripts/validate_reader_overlays.py",
     "scripts/validate_reader_manuscript_manifest.py",
     "scripts/validate_reader_key_figures.py",
+    "scripts/validate_reader_key_figure_contrast.py",
+    "docs/reader_key_figure_contrast_review.md",
+    "editions/reader_manuscript/v1_0/key_figure_contrast_manifest.json",
     "scripts/validate_reader_key_figure_html_probe.py",
     "docs/reader_key_figure_html_probe.md",
     "experiments/reader_key_figure_html_probe/README.md",
@@ -899,6 +902,7 @@ def main() -> None:
     run_validator("build_curated_reader_edition.py", "--check")
     run_validator("validate_curated_reader_format_probe_manifest.py")
     run_validator("validate_reader_key_figures.py")
+    run_validator("validate_reader_key_figure_contrast.py")
     run_validator("validate_reader_artifact_inspection_manifest.py")
     run_validator("validate_reader_epub_probe_manifest.py")
     run_validator("validate_reader_docx_probe_manifest.py")

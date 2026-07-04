@@ -1,0 +1,340 @@
+{
+  "all_figures_passed": true,
+  "command": "python3 scripts/validate_reader_key_figure_contrast.py",
+  "figure_count": 10,
+  "figure_results": [
+    {
+      "asset_path": "assets/diagrams/asi-stack-control-plane.svg",
+      "figure_id": "asi_stack_control_plane",
+      "flow_classes_checked": [
+        "dash",
+        "line",
+        "loop"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 3.96,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 3.96,
+      "minimum_text_contrast_ratio": 5.42,
+      "passed": true,
+      "surface_classes_checked": [
+        "bg",
+        "core",
+        "evidence",
+        "gate",
+        "panel",
+        "risk"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/authority-to-effect-path.svg",
+      "figure_id": "authority_to_effect_path",
+      "flow_classes_checked": [
+        "copper",
+        "dash",
+        "line"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 3.96,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 3.96,
+      "minimum_text_contrast_ratio": 5.36,
+      "passed": true,
+      "surface_classes_checked": [
+        "bg",
+        "deny",
+        "effect",
+        "gate",
+        "ok",
+        "panel"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/evidence-state-ladder.svg",
+      "figure_id": "evidence_state_ladder",
+      "flow_classes_checked": [
+        "dash",
+        "line",
+        "rose"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 5.54,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 5.73,
+      "minimum_text_contrast_ratio": 5.25,
+      "passed": true,
+      "surface_classes_checked": [
+        "bad",
+        "bg",
+        "gate",
+        "labelBox",
+        "ledger",
+        "panel",
+        "stateBox"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/intent-to-artifact-trace.svg",
+      "figure_id": "intent_to_artifact_trace",
+      "flow_classes_checked": [
+        "copper",
+        "dash",
+        "line"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 3.96,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 3.96,
+      "minimum_text_contrast_ratio": 5.25,
+      "passed": true,
+      "surface_classes_checked": [
+        "artifact",
+        "bg",
+        "contract",
+        "gate",
+        "panel",
+        "residual",
+        "work"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/context-transaction-lifecycle.svg",
+      "figure_id": "context_transaction_lifecycle",
+      "flow_classes_checked": [
+        "dash",
+        "line",
+        "rose"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 5.54,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 5.73,
+      "minimum_text_contrast_ratio": 5.25,
+      "passed": true,
+      "surface_classes_checked": [
+        "abi",
+        "bad",
+        "bg",
+        "gate",
+        "ok",
+        "panel",
+        "tx"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/readiness-residual-quarantine-map.svg",
+      "figure_id": "readiness_residual_quarantine_map",
+      "flow_classes_checked": [
+        "amber",
+        "dash",
+        "line",
+        "rose"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 3,
+      "minimum_flow_line_contrast_ratio": 3.96,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 3.96,
+      "minimum_text_contrast_ratio": 5.25,
+      "passed": true,
+      "surface_classes_checked": [
+        "bg",
+        "blocked",
+        "escrow",
+        "gate",
+        "input",
+        "ledger",
+        "ok",
+        "panel"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/route-selection-budget-tradeoff.svg",
+      "figure_id": "route_selection_budget_tradeoff",
+      "flow_classes_checked": [
+        "dash",
+        "line",
+        "rose"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 5.54,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 5.73,
+      "minimum_text_contrast_ratio": 5.36,
+      "passed": true,
+      "surface_classes_checked": [
+        "baseline",
+        "bg",
+        "gate",
+        "panel",
+        "rejected",
+        "route",
+        "selected"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/compression-and-generation-acceptance.svg",
+      "figure_id": "compression_and_generation_acceptance",
+      "flow_classes_checked": [
+        "dash",
+        "line",
+        "redline"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 4.5,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 5.55,
+      "minimum_text_contrast_ratio": 5.19,
+      "passed": true,
+      "surface_classes_checked": [
+        "accept",
+        "bg",
+        "gate",
+        "panel",
+        "path",
+        "reject"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/cyclic-substrate-adoption-gate.svg",
+      "figure_id": "cyclic_substrate_adoption_gate",
+      "flow_classes_checked": [
+        "dash",
+        "gray",
+        "line"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 4.57,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 4.57,
+      "minimum_text_contrast_ratio": 5.2,
+      "passed": true,
+      "surface_classes_checked": [
+        "baseline",
+        "bg",
+        "hold",
+        "panel",
+        "stage"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    },
+    {
+      "asset_path": "assets/diagrams/living-book-release-pipeline.svg",
+      "figure_id": "living_book_release_pipeline",
+      "flow_classes_checked": [
+        "amber",
+        "dash",
+        "line"
+      ],
+      "graphic_contrast_threshold": 3.0,
+      "marker_color_count": 2,
+      "minimum_flow_line_contrast_ratio": 4.27,
+      "minimum_font_size_px": 15.0,
+      "minimum_font_size_threshold_px": 15.0,
+      "minimum_marker_contrast_ratio": 4.27,
+      "minimum_text_contrast_ratio": 5.23,
+      "passed": true,
+      "surface_classes_checked": [
+        "artifact",
+        "bg",
+        "gate",
+        "panel",
+        "reader",
+        "source"
+      ],
+      "text_color_classes_checked": [
+        "ink",
+        "muted"
+      ],
+      "text_contrast_threshold": 4.5
+    }
+  ],
+  "non_claims": [
+    "does not approve final figure art",
+    "does not approve EPUB, DOCX, PDF, e-reader, audio, or HTML release artifacts",
+    "does not prove any ASI Stack claim",
+    "does not promote any chapter core claim"
+  ],
+  "recorded_date": "2026-07-04",
+  "release_effect": "none",
+  "residuals": [
+    "This is a deterministic source-level SVG contrast and readability gate, not a human visual-art review.",
+    "EPUB, DOCX, PDF, e-reader, and audio artifacts still need application-level review before release approval.",
+    "The figures remain draft reader aids until an edition release record names exact reviewed artifacts."
+  ],
+  "result_id": "reader-key-figure-contrast-2026-07-04",
+  "schema_version": "asi_stack.reader_key_figure_contrast.v0",
+  "summary": {
+    "minimum_flow_line_contrast_ratio": 3.96,
+    "minimum_font_size_px": 15.0,
+    "minimum_marker_contrast_ratio": 3.96,
+    "minimum_text_contrast_ratio": 5.19
+  },
+  "support_state_effect": "none",
+  "thresholds": {
+    "graphic_contrast_minimum": 3.0,
+    "minimum_text_size_px": 15.0,
+    "text_contrast_minimum": 4.5
+  }
+}
