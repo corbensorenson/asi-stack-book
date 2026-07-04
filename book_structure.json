@@ -5348,16 +5348,21 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_receipt_repository_challenge.py`; deterministic challenge over the prior repository audit accepts 3 tracked digest challenges and 1 Circle external fingerprint challenge while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion controls; no support-state promotion"
             },
-            {
-              "name": "Artifact live attestation probe",
-              "implementation_status": "implemented",
-              "result_status": "passing via `python3 scripts/validate_artifact_live_attestation_probe.py`; local live repository attestation over one produced artifact checks filesystem bytes, git object bytes, command replay, independent observer routes, a wrong-digest trap receipt, attestation limits, and 7 mutation controls; no support-state promotion"
-            },
-            {
-              "name": "Epistemic trusted computing base fixture",
-              "implementation_status": "implemented",
-              "result_status": "passing via `python3 scripts/validate_epistemic_trusted_computing_base.py`; accepts 3 bounded trust-base records and rejects 6 expected-invalid controls for missing root of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residuals, and support promotion from trust-base shape; no support-state promotion"
-            }
+        {
+          "name": "Artifact live attestation probe",
+          "implementation_status": "implemented",
+          "result_status": "passing via `python3 scripts/validate_artifact_live_attestation_probe.py`; local live repository attestation over one produced artifact checks filesystem bytes, git object bytes, command replay, independent observer routes, a wrong-digest trap receipt, attestation limits, and 7 mutation controls; no support-state promotion"
+        },
+        {
+          "name": "Artifact randomized attestation audit",
+          "implementation_status": "implemented",
+          "result_status": "passing via `python3 scripts/validate_artifact_randomized_attestation_audit.py`; deterministic pseudo-random sample over 4 selected public-safe repository artifacts checks filesystem bytes, git object bytes, command replay, trap receipts, attestation limits, and 8 mutation controls; no support-state promotion"
+        },
+        {
+          "name": "Epistemic trusted computing base fixture",
+          "implementation_status": "implemented",
+          "result_status": "passing via `python3 scripts/validate_epistemic_trusted_computing_base.py`; accepts 3 bounded trust-base records and rejects 6 expected-invalid controls for missing root of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residuals, and support promotion from trust-base shape; no support-state promotion"
+        }
           ],
           "lean_module": "AsiStackProofs.ArtifactGraph",
           "proof_targets": [
@@ -5403,17 +5408,23 @@
               "target": "A deterministic receipt-reality challenge accepts three sampled tracked-digest responses and one Circle external fingerprint response over the prior repository audit while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion overclaim controls.",
               "status": "implemented"
             },
-            {
-              "tag": "lean:artifacts.graph.live_attestation_probe_bridge",
-              "module": "AsiStackProofs.ArtifactGraph",
-              "target": "A live repository artifact-attestation probe accepts one produced artifact only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries all align.",
-              "status": "implemented"
-            },
-            {
-              "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
-              "module": "AsiStackProofs.ArtifactGraph",
-              "target": "An epistemic trusted-computing-base fixture accepts bounded minimal, delegated, and blocked trust-base records while rejecting missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.",
-              "status": "implemented"
+        {
+          "tag": "lean:artifacts.graph.live_attestation_probe_bridge",
+          "module": "AsiStackProofs.ArtifactGraph",
+          "target": "A live repository artifact-attestation probe accepts one produced artifact only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries all align.",
+          "status": "implemented"
+        },
+        {
+          "tag": "lean:artifacts.graph.randomized_attestation_audit_bridge",
+          "module": "AsiStackProofs.ArtifactGraph",
+          "target": "A deterministic pseudo-random repository attestation audit accepts a multi-artifact sample only when filesystem bytes, git object bytes, command replay, trap receipts, independent observer routes, attestation limits, no upward transition, and non-claim boundaries all align.",
+          "status": "implemented"
+        },
+        {
+          "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
+          "module": "AsiStackProofs.ArtifactGraph",
+          "target": "An epistemic trusted-computing-base fixture accepts bounded minimal, delegated, and blocked trust-base records while rejecting missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.",
+          "status": "implemented"
             }
           ]
         },

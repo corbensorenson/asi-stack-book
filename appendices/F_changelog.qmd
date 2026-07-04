@@ -1,5 +1,35 @@
 # Changelog
 
+## 2026-07-04 - Add randomized artifact attestation audit
+
+- Added `python3 scripts/validate_artifact_randomized_attestation_audit.py`,
+  result artifact
+  `experiments/artifact_randomized_attestation/results/2026-07-04-local.json`,
+  audit note `docs/artifact_randomized_attestation_audit.md`, and accepted
+  no-change transition
+  `evidence_transitions/v1_x_measured/artifact_randomized_attestation_no_change.json`.
+- The randomized artifact attestation audit uses deterministic pseudo-random
+  seed `asi-stack.record-reality.randomized-live-audit.2026-07-04` to select
+  four public-safe repository result artifacts from a six-artifact candidate
+  pool, then checks filesystem bytes, git object bytes, command replay, trap
+  receipts, attestation limits, and eight mutation controls.
+- Added Lean bridge
+  `lean:artifacts.graph.randomized_attestation_audit_bridge`, regenerated the
+  proof manifest and Appendix E to 200 proof targets, and updated the proof
+  depth snapshot to 994 theorem declarations, 807 derived/decomposed, 183
+  direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter
+  classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 200 proof
+  targets, 54 Lean modules, 994 theorem declarations, 807 derived/decomposed,
+  183 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter
+  classifications present.
+- Updated the Artifact Graphs live chapter, curated reader chapter, outline,
+  contribution novelty ledger, roadmap, proof adequacy review, proof envelope
+  surfaces, and test harness ledger. Boundary: bounded local repository audit
+  only; no upward support-state transition, no chapter-core promotion, no
+  deployed attestation claim, no verifier-correctness claim, no external
+  project-truth claim, and no open-world receipt-faithfulness claim.
+
 ## 2026-07-04 - Strengthen Artifact Graphs record-reality owner section
 
 - Upgraded the live Artifact Graphs strongest-objection section into the

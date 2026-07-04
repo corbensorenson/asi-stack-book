@@ -1,0 +1,124 @@
+{
+  "transition_id": "v1_x_measured.artifact_randomized_attestation.no_change",
+  "claim_id": "artifact-graphs.randomized_artifact_attestation_audit",
+  "claim_surface_refs": [
+    "docs/artifact_randomized_attestation_audit.md",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "docs/contribution_novelty_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
+    "scripts/validate_artifact_randomized_attestation_audit.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Bounded deterministic pseudo-random sample for local repository attestation over four selected public-safe result artifacts from a six-artifact candidate pool. The audit compares filesystem bytes, git object bytes, and command replay for each selected artifact, rejects eight mutation controls, and records explicit attestation limits. It is not a deployed attestation service, not open-world receipt faithfulness, not external review, not verifier-correctness evidence, and not an upward support-state transition.",
+  "evidence_roles": [
+    "bounded_live_repository_attestation",
+    "deterministic_pseudo_random_artifact_sample",
+    "filesystem_digest_check",
+    "git_object_digest_check",
+    "command_replay_check",
+    "trap_receipt_rejection",
+    "same_component_self_check_rejection",
+    "attestation_limit_record",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The randomized attestation audit is useful because it moves the record-reality lane beyond one selected artifact: a reproducible deterministic sample checks four public-safe repository result artifacts through separate filesystem, git-object, and command-replay routes while trap, same-component self-check, unbounded-attestation, and support-promotion controls remain rejected. The evidence remains local and bounded, so it blocks promotion for deployed attestation, open-world receipt faithfulness, verifier correctness, external project truth, deployed audit behavior, or chapter-core support.",
+  "required_artifacts": [
+    "deployed or externally reviewable attestation service trace",
+    "public-safe produced artifacts with parent jobs, source/context sets, context transactions, semantic certificates, replay declarations, residual declarations, evidence gates, and claim/test links",
+    "independent attestation route outside the producing component",
+    "trap receipt or challenge suite executed outside the attested component",
+    "external review of verifier-quality and attestation limits",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/artifact_randomized_attestation_audit.md",
+    "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
+    "scripts/validate_artifact_randomized_attestation_audit.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/receipt_repository_audit.md",
+    "docs/artifact_graph_record_reality_sequence.md",
+    "docs/artifact_live_attestation_probe.md",
+    "docs/epistemic_trusted_computing_base_fixture.md",
+    "docs/artifact_randomized_attestation_audit.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/contribution_novelty_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+    "docs/book_outline.md#artifact-graphs-audit-logs-and-replay"
+  ],
+  "verification_command": "python3 scripts/validate_artifact_randomized_attestation_audit.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "missing selection seed is rejected",
+    "filesystem digest mismatch in the selected sample is rejected",
+    "git object digest mismatch in the selected sample is rejected",
+    "command replay failure in the selected sample is rejected",
+    "single-artifact sample laundering is rejected",
+    "same-component self-check laundering is rejected",
+    "unbounded randomized attestation is rejected",
+    "support promotion from randomized attestation shape is rejected",
+    "deployed attestation behavior remains unclaimed",
+    "open-world receipt faithfulness remains unclaimed",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/artifact_randomized_attestation_audit.md",
+    "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
+    "scripts/validate_artifact_randomized_attestation_audit.py"
+  ],
+  "downgrade_triggers": [
+    "artifact randomized attestation validator failure",
+    "seeded selection mismatch accepted",
+    "filesystem digest mismatch accepted",
+    "git object digest mismatch accepted",
+    "command replay failure accepted",
+    "single-artifact sample treated as randomized audit",
+    "same-component self-check accepted as independent attestation",
+    "support-state promotion accepted from randomized attestation shape",
+    "audit described as deployed attestation, external review, or open-world receipt faithfulness"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed artifact-attestation claim after deployed or externally reviewable attestation traces, independent observer routes, trap/challenge execution outside the producing component, verifier-quality evidence, provenance completeness review, residuals, non-claims, and external or independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "bounded deterministic local repository attestation only",
+    "four selected target artifacts only",
+    "fixed candidate pool and fixed seed, not an external random beacon",
+    "no deployed attestation service",
+    "no deployed audit service",
+    "no open-world receipt-faithfulness proof",
+    "no verifier-correctness proof",
+    "no external project truth proof",
+    "no independent external review",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent attestation, audit, verifier-quality, source-interpretation, external-project, or external human review",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable attestation service trace",
+    "no independent attestation route outside the producing component",
+    "no external verifier-quality review",
+    "no open-world receipt-faithfulness evidence",
+    "no independent external review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---add-artifact-randomized-attestation-audit",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote the Artifact Graphs chapter core claim",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not prove open-world receipt faithfulness, deployed attestation behavior, deployed audit behavior, verifier correctness, external project truth, model quality, benchmark performance, safety, deployment safety, or ASI"
+  ]
+}

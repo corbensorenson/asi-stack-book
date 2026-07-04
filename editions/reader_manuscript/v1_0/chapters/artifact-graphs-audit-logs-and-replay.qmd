@@ -207,6 +207,18 @@ support-promotion controls. It is not a deployed attestation service. It is a
 bounded way to show that the book can compare a stored receipt against the
 repository reality it points to.
 
+The randomized artifact attestation audit widens that local check without
+pretending to leave the repository. Command `python3 scripts/validate_artifact_randomized_attestation_audit.py` records
+`experiments/artifact_randomized_attestation/results/2026-07-04-local.json`
+after using a deterministic pseudo-random seed to choose four public-safe
+repository result artifacts from six candidates. Each selected artifact has to
+agree across filesystem bytes, git object bytes, and command replay, and the
+audit rejects wrong digests, failed replay, one-artifact sample laundering,
+same-component self-checks, unbounded attestation, and support promotion. That
+is stronger than one hand-picked target; it is still local bounded evidence,
+not deployed attestation, external review, verifier correctness, or
+open-world receipt faithfulness.
+
 ## A Book-Scale Example
 
 The living book is a small example of the same problem.

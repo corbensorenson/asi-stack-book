@@ -1,0 +1,375 @@
+{
+  "attestation_kind": "deterministic_randomized_live_repository_artifact_attestation",
+  "attestation_limits": [
+    "deterministic pseudo-random sample over a fixed public-safe candidate pool",
+    "local repository artifacts only",
+    "current committed git objects and filesystem bytes only",
+    "command replay covers each selected validator output only",
+    "not a deployed attestation service",
+    "not open-world receipt faithfulness"
+  ],
+  "candidate_artifact_pool": [
+    {
+      "artifact": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+      "selection_score": "4e044bde3fb54a4c828fa5bca85d6028ecaf3d2f9cee8b33eb8d1452100de19b",
+      "validator": "python3 scripts/validate_artifact_graph_record_reality_sequence.py"
+    },
+    {
+      "artifact": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
+      "selection_score": "c9e3c5630e9ffa7ddd350f7fdaac047d1ac3a1efb71a2d93e3c64ced12b74ba6",
+      "validator": "python3 scripts/validate_artifact_live_attestation_probe.py"
+    },
+    {
+      "artifact": "experiments/epistemic_tcb/results/2026-07-03-local.json",
+      "selection_score": "511e02c8bdff3d046598a833e9dc0b6880848dc8e05b749154193758183ee8b2",
+      "validator": "python3 scripts/validate_epistemic_trusted_computing_base.py"
+    },
+    {
+      "artifact": "experiments/receipt_faithfulness/results/2026-07-03-local.json",
+      "selection_score": "e332fcd443f21dd3315d5982e5d5c219b6855175feb962c6e2ec645609ba85a7",
+      "validator": "python3 scripts/validate_receipt_faithfulness.py"
+    },
+    {
+      "artifact": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
+      "selection_score": "2f758d07eb1797972045b46e6943e11f74c8bffcdcec7449067c6aeb6f2acf69",
+      "validator": "python3 scripts/validate_receipt_repository_audit.py"
+    },
+    {
+      "artifact": "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+      "selection_score": "d177543728e9611b6477567efb64d40f9f3a307adbe52a156c6e38ae65bfbca7",
+      "validator": "python3 scripts/validate_receipt_repository_challenge.py"
+    }
+  ],
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/validate_artifact_randomized_attestation_audit.py",
+  "evidence_transition_created": false,
+  "lean_fixture_alignment": {
+    "expected": {
+      "accepted_observation_route_count": 12,
+      "candidate_artifact_count": 6,
+      "chapter_core_support_effect_none": true,
+      "mutation_control_count": 8,
+      "mutation_controls_rejected": 8,
+      "no_upward_transition": true,
+      "non_claim_boundary": true,
+      "observation_route_count": 12,
+      "observer_routes_independent": true,
+      "sample_beyond_one_artifact": true,
+      "seeded_selection_reproducible": true,
+      "selected_artifact_count": 4,
+      "support_state_effect_none": true,
+      "trap_receipt_count": 4,
+      "trap_receipts_rejected": true
+    },
+    "module": "AsiStackProofs.ArtifactGraph",
+    "theorem_refs": [
+      "artifact_randomized_attestation_audit_bridge"
+    ]
+  },
+  "mutation_controls": [
+    {
+      "control_id": "invalid_missing_selection_seed",
+      "rejected": true,
+      "rejection_reasons": [
+        "selection_seed_missing_or_mismatch",
+        "trace_summary_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_filesystem_digest_mismatch_in_sample",
+      "rejected": true,
+      "rejection_reasons": [
+        "experiments/receipt_repository_audit/results/2026-07-03-local.json:filesystem_digest_mismatch",
+        "trace_summary_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_git_object_digest_mismatch_in_sample",
+      "rejected": true,
+      "rejection_reasons": [
+        "experiments/receipt_repository_audit/results/2026-07-03-local.json:git_object_digest_mismatch",
+        "trace_summary_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_command_replay_failure_in_sample",
+      "rejected": true,
+      "rejection_reasons": [
+        "experiments/receipt_repository_audit/results/2026-07-03-local.json:command_replay_failed",
+        "trace_summary_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_not_beyond_one_selected_artifact",
+      "rejected": true,
+      "rejection_reasons": [
+        "randomized_audit_not_beyond_one_artifact",
+        "selected_artifact_count_mismatch",
+        "selected_artifacts_do_not_match_seeded_order",
+        "trace_summary_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_same_component_self_check_laundering",
+      "rejected": true,
+      "rejection_reasons": [
+        "independent_observer_routes_missing",
+        "same_component_self_check_allowed",
+        "trace_summary_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_unbounded_randomized_attestation",
+      "rejected": true,
+      "rejection_reasons": [
+        "attestation_limits_missing",
+        "trace_summary_missing"
+      ]
+    },
+    {
+      "control_id": "invalid_support_promotion_from_randomized_audit",
+      "rejected": true,
+      "rejection_reasons": [
+        "chapter_core_support_effect_not_none",
+        "evidence_transition_created",
+        "support_state_effect_not_none",
+        "trace_summary_missing"
+      ]
+    }
+  ],
+  "non_claims": [
+    "does not prove open-world receipt faithfulness",
+    "does not prove deployed attestation behavior",
+    "does not prove deployed audit behavior",
+    "does not prove verifier correctness or external project truth",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim"
+  ],
+  "observer_roles": [
+    "filesystem_reader",
+    "git_object_database",
+    "command_replay_validator"
+  ],
+  "recorded_date": "2026-07-04",
+  "residuals": [
+    "The audit samples four public-safe repository result artifacts, not every artifact in the graph.",
+    "The deterministic seed makes the sample reproducible; it is not a cryptographic random beacon or independent external challenge.",
+    "Filesystem/git/command agreement does not prove that the original causal process was complete or externally truthful.",
+    "Verifier correctness, deployed attestation behavior, external project truth, and open-world receipt faithfulness remain unproved."
+  ],
+  "result_id": "artifact-randomized-attestation-audit-2026-07-04",
+  "same_component_self_check_allowed": false,
+  "schema_version": "asi_stack.artifact_randomized_attestation.result.v0",
+  "selected_artifacts": [
+    {
+      "artifact": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
+      "artifact_result_id": "receipt-repository-audit-2026-07-03-local",
+      "artifact_sha256": "6bc5f15cc18667d9df2ed7a94eb93b8394e85ba44854b5d5d8b084f397e4dc51",
+      "clean_in_worktree": true,
+      "observation_routes": [
+        {
+          "accepted": true,
+          "observed_ref": "experiments/receipt_repository_audit/results/2026-07-03-local.json",
+          "observed_sha256": "6bc5f15cc18667d9df2ed7a94eb93b8394e85ba44854b5d5d8b084f397e4dc51",
+          "observer_role": "filesystem_reader",
+          "route_id": "filesystem_bytes"
+        },
+        {
+          "accepted": true,
+          "git_blob_sha1": "1b672d4bd28faa0df9b08076f6ed8ef5f611c4b6",
+          "observed_ref": "HEAD:experiments/receipt_repository_audit/results/2026-07-03-local.json",
+          "observed_sha256": "6bc5f15cc18667d9df2ed7a94eb93b8394e85ba44854b5d5d8b084f397e4dc51",
+          "observer_role": "git_object_database",
+          "route_id": "git_object_bytes"
+        },
+        {
+          "accepted": true,
+          "command": "python3 scripts/validate_receipt_repository_audit.py",
+          "exit_code": 0,
+          "observer_role": "command_replay_validator",
+          "output_excerpt": [
+            "Receipt repository audit validation passed: 4 receipt record(s), 55 tracked digest check(s), 5 mutation control(s), no support-state effect."
+          ],
+          "output_sha256": "b5c9a09832f7d9d17b400886ece56614332dbe1bda9edf9fa01b31e77506c179",
+          "route_id": "command_replay"
+        }
+      ],
+      "selection_rank": 1,
+      "selection_score": "2f758d07eb1797972045b46e6943e11f74c8bffcdcec7449067c6aeb6f2acf69",
+      "trap_receipt": {
+        "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "observed_sha256": "6bc5f15cc18667d9df2ed7a94eb93b8394e85ba44854b5d5d8b084f397e4dc51",
+        "receipt_shape_valid": true,
+        "rejected": true,
+        "rejection_reasons": [
+          "target_digest_mismatch"
+        ],
+        "trap_id": "shape_valid_wrong_digest_attestation_1"
+      },
+      "validator": "python3 scripts/validate_receipt_repository_audit.py"
+    },
+    {
+      "artifact": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+      "artifact_result_id": "artifact_graph_record_reality_sequence_2026_07_04_local",
+      "artifact_sha256": "f3c2132360050831ba42e075199b2577b640efc8d9d18e8a369bbb6e94111e47",
+      "clean_in_worktree": true,
+      "observation_routes": [
+        {
+          "accepted": true,
+          "observed_ref": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+          "observed_sha256": "f3c2132360050831ba42e075199b2577b640efc8d9d18e8a369bbb6e94111e47",
+          "observer_role": "filesystem_reader",
+          "route_id": "filesystem_bytes"
+        },
+        {
+          "accepted": true,
+          "git_blob_sha1": "20319d0ce292c574b461d7a22331cf44a72a02aa",
+          "observed_ref": "HEAD:experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
+          "observed_sha256": "f3c2132360050831ba42e075199b2577b640efc8d9d18e8a369bbb6e94111e47",
+          "observer_role": "git_object_database",
+          "route_id": "git_object_bytes"
+        },
+        {
+          "accepted": true,
+          "command": "python3 scripts/validate_artifact_graph_record_reality_sequence.py",
+          "exit_code": 0,
+          "observer_role": "command_replay_validator",
+          "output_excerpt": [
+            "Artifact graph record-reality sequence validation passed: 1 valid sequence(s), 4 expected-invalid control(s), 4 rejected."
+          ],
+          "output_sha256": "7ae5707eaa2002a8c89222c3005996f6e8e77016f87dba3dc402b52f785ac69e",
+          "route_id": "command_replay"
+        }
+      ],
+      "selection_rank": 2,
+      "selection_score": "4e044bde3fb54a4c828fa5bca85d6028ecaf3d2f9cee8b33eb8d1452100de19b",
+      "trap_receipt": {
+        "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "observed_sha256": "f3c2132360050831ba42e075199b2577b640efc8d9d18e8a369bbb6e94111e47",
+        "receipt_shape_valid": true,
+        "rejected": true,
+        "rejection_reasons": [
+          "target_digest_mismatch"
+        ],
+        "trap_id": "shape_valid_wrong_digest_attestation_2"
+      },
+      "validator": "python3 scripts/validate_artifact_graph_record_reality_sequence.py"
+    },
+    {
+      "artifact": "experiments/epistemic_tcb/results/2026-07-03-local.json",
+      "artifact_result_id": "2026-07-03-epistemic-trusted-computing-base-fixture",
+      "artifact_sha256": "13ef0b6e6be36e11b0a0be3da6ce74c47a60d696275a42dd8c298f0fc2e8d2b0",
+      "clean_in_worktree": true,
+      "observation_routes": [
+        {
+          "accepted": true,
+          "observed_ref": "experiments/epistemic_tcb/results/2026-07-03-local.json",
+          "observed_sha256": "13ef0b6e6be36e11b0a0be3da6ce74c47a60d696275a42dd8c298f0fc2e8d2b0",
+          "observer_role": "filesystem_reader",
+          "route_id": "filesystem_bytes"
+        },
+        {
+          "accepted": true,
+          "git_blob_sha1": "696f14e9895b3ac20f30a2aa8ac7110b5c426be6",
+          "observed_ref": "HEAD:experiments/epistemic_tcb/results/2026-07-03-local.json",
+          "observed_sha256": "13ef0b6e6be36e11b0a0be3da6ce74c47a60d696275a42dd8c298f0fc2e8d2b0",
+          "observer_role": "git_object_database",
+          "route_id": "git_object_bytes"
+        },
+        {
+          "accepted": true,
+          "command": "python3 scripts/validate_epistemic_trusted_computing_base.py",
+          "exit_code": 0,
+          "observer_role": "command_replay_validator",
+          "output_excerpt": [
+            "Epistemic trusted computing base validation passed: 3 valid records, 6 expected-invalid controls, verifier-trust laundering rejected, no support-state effect."
+          ],
+          "output_sha256": "052247f6682ce2e9ad0e372327086dda4e5c0992d4a9135e24f39f2631081d80",
+          "route_id": "command_replay"
+        }
+      ],
+      "selection_rank": 3,
+      "selection_score": "511e02c8bdff3d046598a833e9dc0b6880848dc8e05b749154193758183ee8b2",
+      "trap_receipt": {
+        "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "observed_sha256": "13ef0b6e6be36e11b0a0be3da6ce74c47a60d696275a42dd8c298f0fc2e8d2b0",
+        "receipt_shape_valid": true,
+        "rejected": true,
+        "rejection_reasons": [
+          "target_digest_mismatch"
+        ],
+        "trap_id": "shape_valid_wrong_digest_attestation_3"
+      },
+      "validator": "python3 scripts/validate_epistemic_trusted_computing_base.py"
+    },
+    {
+      "artifact": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
+      "artifact_result_id": "artifact-live-attestation-probe-2026-07-04",
+      "artifact_sha256": "499d2138b5f768c70d4868a0b09a99ecd467f6f44c70bb899306c4a8436fe654",
+      "clean_in_worktree": true,
+      "observation_routes": [
+        {
+          "accepted": true,
+          "observed_ref": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
+          "observed_sha256": "499d2138b5f768c70d4868a0b09a99ecd467f6f44c70bb899306c4a8436fe654",
+          "observer_role": "filesystem_reader",
+          "route_id": "filesystem_bytes"
+        },
+        {
+          "accepted": true,
+          "git_blob_sha1": "0ff0f875418ee70167b7bf5a0b4b1f4c743bfec8",
+          "observed_ref": "HEAD:experiments/artifact_live_attestation/results/2026-07-04-local.json",
+          "observed_sha256": "499d2138b5f768c70d4868a0b09a99ecd467f6f44c70bb899306c4a8436fe654",
+          "observer_role": "git_object_database",
+          "route_id": "git_object_bytes"
+        },
+        {
+          "accepted": true,
+          "command": "python3 scripts/validate_artifact_live_attestation_probe.py",
+          "exit_code": 0,
+          "observer_role": "command_replay_validator",
+          "output_excerpt": [
+            "Artifact live attestation probe validation passed: 3 observation route(s), 7 mutation control(s), no support-state effect."
+          ],
+          "output_sha256": "638437a72a9d8a869f034b23ca1fb6d3a0851ac5611ab79080a0ef29a5057ac0",
+          "route_id": "command_replay"
+        }
+      ],
+      "selection_rank": 4,
+      "selection_score": "c9e3c5630e9ffa7ddd350f7fdaac047d1ac3a1efb71a2d93e3c64ced12b74ba6",
+      "trap_receipt": {
+        "expected_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+        "observed_sha256": "499d2138b5f768c70d4868a0b09a99ecd467f6f44c70bb899306c4a8436fe654",
+        "receipt_shape_valid": true,
+        "rejected": true,
+        "rejection_reasons": [
+          "target_digest_mismatch"
+        ],
+        "trap_id": "shape_valid_wrong_digest_attestation_4"
+      },
+      "validator": "python3 scripts/validate_artifact_live_attestation_probe.py"
+    }
+  ],
+  "selection_algorithm": "sha256(seed + ':' + artifact_path), ascending, first four candidates",
+  "selection_seed": "asi-stack.record-reality.randomized-live-audit.2026-07-04",
+  "support_state_effect": "none",
+  "trace_summary": {
+    "accepted_observation_route_count": 12,
+    "candidate_artifact_count": 6,
+    "chapter_core_support_effect_none": true,
+    "mutation_control_count": 8,
+    "mutation_controls_rejected": 8,
+    "no_upward_transition": true,
+    "non_claim_boundary": true,
+    "observation_route_count": 12,
+    "observer_routes_independent": true,
+    "sample_beyond_one_artifact": true,
+    "seeded_selection_reproducible": true,
+    "selected_artifact_count": 4,
+    "support_state_effect_none": true,
+    "trap_receipt_count": 4,
+    "trap_receipts_rejected": true
+  },
+  "verification_result": "pass"
+}

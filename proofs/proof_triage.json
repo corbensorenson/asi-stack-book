@@ -1071,6 +1071,16 @@
       "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite live attestation bridge matching the local repository probe: one produced artifact is accepted only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries align."
     },
     {
+      "tag": "lean:artifacts.graph.randomized_attestation_audit_bridge",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "module": "AsiStackProofs.ArtifactGraph",
+      "formal_target": "A deterministic pseudo-random repository attestation audit accepts a multi-artifact sample only when filesystem bytes, git object bytes, command replay, trap receipts, independent observer routes, attestation limits, no upward transition, and non-claim boundaries all align.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ArtifactGraph as a finite randomized attestation bridge matching the local repository audit: a deterministic pseudo-random multi-artifact sample is accepted only when seeded selection, filesystem bytes, git object bytes, command replay, trap-receipt rejection, independent observer routes, attestation limits, no upward transition, and non-claim boundaries align."
+    },
+    {
       "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "module": "AsiStackProofs.ArtifactGraph",
@@ -2001,5 +2011,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 199
+  "record_count": 200
 }
