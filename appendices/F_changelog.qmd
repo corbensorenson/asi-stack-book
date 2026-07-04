@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-04 - Record receipt repository audit/challenge no-promotion decision
+
+- Added accepted no-promotion decision
+  `evidence_transitions/v1_x_measured/artifact_receipt_repository_audit_challenge_no_change.json`
+  for `artifact-graphs.receipt_repository_audit_challenge`.
+- Synchronized `docs/receipt_repository_audit.md`, the live Artifact Graphs
+  chapter, the curated reader chapter, `docs/book_outline.md`,
+  `docs/v1_x_beyond_sota_roadmap.md`, `docs/non_core_evidence_ledger.md`,
+  `README.md`, `index.qmd`, and the v1.0 candidate status snapshot so the
+  receipt repository audit/challenge is visible as a `blocks_promotion`
+  decision and the no-promotion side-lane count moves from 25 to 26.
+- Boundary: the decision blocks overclaims from the repository audit/challenge
+  only. It does not create an upward support-state transition, prove deployed
+  artifact-graph behavior, prove deployed attestation or audit behavior, prove
+  verifier correctness, prove provenance completeness, prove external project
+  truth, prove open-world receipt faithfulness, or promote any chapter core
+  claim.
+
 ## 2026-07-04 - Compact support-state status surface
 
 - Replaced the overlong `Support states` release-snapshot row with a compact

@@ -199,8 +199,11 @@ The receipt repository challenge adds one more refusal point: a deterministic ch
 selects three tracked file digests and one Circle contract fingerprint from the
 repository audit, checks that those challenge responses still match, and rejects
 mutations for digest mismatch, missing artifact, external fingerprint mismatch,
-missing non-claims, and support promotion. That is still not deployed
-attestation. It is a small proof that the book can ask its own receipt records
+missing non-claims, and support promotion. The accepted no-promotion decision at
+`evidence_transitions/v1_x_measured/artifact_receipt_repository_audit_challenge_no_change.json`
+keeps that audit/challenge at `argument`: useful as a guardrail, not enough for
+deployed attestation, open-world receipt truth, verifier correctness, or chapter
+core promotion. It is a small proof that the book can ask its own receipt records
 to answer reproducible reality checks.
 
 The live artifact attestation probe takes the smallest local live step after
@@ -323,7 +326,9 @@ a Resource evidence-transition digest, a Theseus public task-bundle note, a
 Resource flagship run note, and a Circle contract fingerprint. If a sampled
 file disappears, a digest changes without a new record, the Circle fingerprint
 is altered, non-claims are erased, or the challenge tries to promote support,
-the result is rejected.
+the result is rejected. The no-promotion decision makes that boundary explicit:
+repository receipts can block overclaiming without becoming proof of deployed
+attestation, verifier correctness, or open-world receipt faithfulness.
 
 The live artifact attestation probe then checks the current receipt-challenge
 artifact itself through filesystem bytes, git object bytes, and command replay.

@@ -87,6 +87,15 @@ the chosen files or fingerprint fields must still answer a reproducible
 challenge. It remains a repository challenge, not a deployed or open-world
 attestation system.
 
+Accepted no-promotion decision:
+`evidence_transitions/v1_x_measured/artifact_receipt_repository_audit_challenge_no_change.json`
+records the audit/challenge as a `blocks_promotion` side-lane decision. The
+decision keeps the bounded repository audit useful while blocking deployed
+attestation, deployed audit behavior, open-world receipt-faithfulness,
+verifier-correctness, external-project-truth, benchmark, model-quality, safety,
+ASI, support-state-promotion, and Artifact Graphs chapter-core-promotion claims
+until stronger evidence exists.
+
 ## Boundaries
 
 - This audit does not prove open-world receipt faithfulness.

@@ -1,0 +1,146 @@
+{
+  "transition_id": "v1_x_measured.artifact_receipt_repository_audit_challenge.no_change",
+  "claim_id": "artifact-graphs.receipt_repository_audit_challenge",
+  "claim_surface_refs": [
+    "docs/receipt_repository_audit.md",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "docs/book_outline.md",
+    "docs/v1_x_beyond_sota_roadmap.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/receipt_repository_audit/results/2026-07-03-local.json",
+    "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+    "scripts/validate_receipt_repository_audit.py",
+    "scripts/validate_receipt_repository_challenge.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Artifact Graph receipt repository audit/challenge only. The audit accepts four selected repository receipt surfaces, checks 55 tracked artifact digests plus external Circle receipt fingerprints, and rejects five mutation controls; the deterministic challenge accepts three tracked-digest responses and one Circle external fingerprint response while rejecting five challenge controls. This is not a deployed artifact graph, not a deployed attestation service, not deployed audit behavior, not open-world receipt faithfulness, not verifier-correctness evidence, not external-project truth, and not an upward support-state transition.",
+  "evidence_roles": [
+    "repository_receipt_audit",
+    "tracked_digest_check",
+    "command_pass_check",
+    "external_fingerprint_check",
+    "deterministic_receipt_challenge",
+    "missing_artifact_negative_control",
+    "digest_mismatch_negative_control",
+    "failed_command_negative_control",
+    "missing_non_claim_negative_control",
+    "support_state_effect_negative_control",
+    "finite_lean_receipt_audit_bridge",
+    "finite_lean_receipt_challenge_bridge",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The receipt repository audit/challenge is useful because it moves the record-reality lane from synthetic receipt shape toward current repository evidence: selected receipts must still name existing artifacts, match tracked digests, preserve command-pass or external-fingerprint evidence, keep non-claims, and answer a deterministic digest/fingerprint challenge. The evidence remains bounded to local repository records and one imported Circle fingerprint surface, so this accepted decision blocks promotion for deployed artifact-graph behavior, deployed attestation, deployed audit durability, open-world receipt faithfulness, verifier correctness, external project truth, benchmark performance, model quality, safety, ASI, or the Artifact Graphs chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable artifact-graph receipt trace",
+    "independent observation route outside the producing component",
+    "challenge source or verifier outside this repository",
+    "public-safe produced artifact with parent job, source/context set, context transaction, semantic certificate, replay declaration, residual declaration, evidence gate, and claim/test link",
+    "verifier-quality and provenance-completeness review",
+    "deployed or externally reviewable audit durability evidence",
+    "source-interpretation adequacy review where source-derived claims are involved",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/receipt_repository_audit.md",
+    "experiments/receipt_repository_audit/results/2026-07-03-local.json",
+    "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+    "scripts/validate_receipt_repository_audit.py",
+    "scripts/validate_receipt_repository_challenge.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/receipt_repository_audit.md",
+    "docs/receipt_faithfulness_adversarial_fixture.md",
+    "docs/artifact_graph_record_reality_sequence.md",
+    "docs/artifact_live_attestation_probe.md",
+    "docs/artifact_randomized_attestation_audit.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+    "docs/book_outline.md#artifact-graphs-audit-logs-and-replay"
+  ],
+  "verification_command": "python3 scripts/validate_receipt_repository_audit.py && python3 scripts/validate_receipt_repository_challenge.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "missing artifact reference is rejected",
+    "tracked digest mismatch is rejected",
+    "failed command replay is rejected",
+    "missing non-claims are rejected",
+    "support promotion from receipt shape is rejected",
+    "challenge tracked-digest mismatch is rejected",
+    "challenge missing artifact is rejected",
+    "external fingerprint mismatch is rejected",
+    "challenge missing non-claims are rejected",
+    "support promotion from challenge shape is rejected",
+    "repository audit/challenge evidence remains bounded to local repository records",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/receipt_repository_audit.md",
+    "experiments/receipt_repository_audit/results/2026-07-03-local.json",
+    "experiments/receipt_repository_audit/results/2026-07-04-challenge.json",
+    "scripts/validate_receipt_repository_audit.py",
+    "scripts/validate_receipt_repository_challenge.py"
+  ],
+  "downgrade_triggers": [
+    "receipt repository audit validator failure",
+    "receipt repository challenge validator failure",
+    "missing artifact, stale digest, failed command, missing non-claim, fingerprint mismatch, or support-promotion control accepted as valid",
+    "repository audit/challenge described as deployed attestation, deployed audit behavior, open-world receipt faithfulness, verifier correctness, external project truth, benchmark, model-quality, safety, ASI, or chapter-core evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Artifact Graph receipt-faithfulness or record-reality claim after deployed or externally reviewable receipt traces, independent observer routes outside the producing component, challenge sources or verifier routes outside this repository, verifier-quality evidence, provenance-completeness review, audit-durability evidence, source-interpretation review where applicable, residuals, non-claims, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "bounded repository receipt audit only",
+    "four selected receipt surfaces only",
+    "deterministic local challenge only",
+    "challenge source remains inside this repository",
+    "no deployed artifact graph",
+    "no deployed attestation service",
+    "no deployed audit durability evidence",
+    "no open-world receipt-faithfulness proof",
+    "no verifier-correctness proof",
+    "no provenance-completeness proof",
+    "no external project truth proof",
+    "no source-interpretation evidence",
+    "no benchmark evidence",
+    "no model-quality evidence",
+    "no safety or ASI evidence",
+    "no independent external review",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent attestation, audit, verifier-quality, source-interpretation, external-project, challenge-source, or external human review",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable receipt trace",
+    "no independent observation route outside the producing component",
+    "no challenge source outside this repository",
+    "no external verifier-quality review",
+    "no deployed audit-durability evidence",
+    "no open-world receipt-faithfulness evidence",
+    "no independent external review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-receipt-repository-auditchallenge-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote the Artifact Graphs chapter core claim",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not prove deployed artifact-graph behavior, deployed attestation behavior, deployed audit durability, open-world receipt faithfulness, verifier correctness, provenance completeness, source interpretation, external project truth, benchmark performance, model quality, safety, deployment safety, or ASI"
+  ]
+}
