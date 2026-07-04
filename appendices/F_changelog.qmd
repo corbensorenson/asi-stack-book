@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-04 - Add Circle public consumer-gate proof bridge
+
+- Added `lean:circle_contracts.public_consumer_gate.fixture_bridge` in
+  `AsiStackProofs.ProofCarryingContracts` with a finite
+  `CirclePublicConsumerGateFixture`, accepted-fixture predicate, concrete
+  public consumer-gate fixture, and negative-case theorems for public
+  consumer-gate promotion overclaims and missing mutation-control rejection.
+- Updated `docs/book_outline.md`, `book_structure.json`,
+  `chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd`,
+  `proofs/proof_manifest.json`, `proofs/proof_triage.json`, Appendix E,
+  `docs/proof_artifact_audit.md`, `docs/proof_adequacy_review.md`,
+  `docs/proof_depth_classification.md`, `docs/proof_envelope_status_ledger.md`,
+  `docs/v1_0_candidate_status.md`, and
+  `docs/v1_x_beyond_sota_roadmap.md` for the new tracked proof target.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 195 proof
+  targets, 54 Lean modules, 986 theorem declarations, 799 derived/decomposed,
+  183 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter
+  classifications present.
+- Boundary: this is a finite-record bridge over the public ASI-side Circle
+  consumer-gate fixture. It does not rerun Circle Lean here, vendor a public
+  Circle contract pack, resolve external theorem IDs from local artifacts,
+  prove deployed proof-contract transport, prove model quality, create an
+  upward support-state transition, or promote any chapter core claim.
+
 ## 2026-07-04 - Record Circle consumer-gate no-promotion decision
 
 - Added

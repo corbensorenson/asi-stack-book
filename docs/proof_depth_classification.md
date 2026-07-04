@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 194 |
+| Proof targets in manifest | 195 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 982 |
-| Direct/projection-style theorem declarations | 181 |
-| Derived/decomposed theorem declarations | 797 |
+| Theorem declarations classified | 986 |
+| Direct/projection-style theorem declarations | 183 |
+| Derived/decomposed theorem declarations | 799 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -84,7 +84,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PolicyOptimization.lean` | policy-optimization-and-learning-from-feedback | 4 | 18 | 7 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 8 | 6 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 2 | 6 | 1 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 10 | 3 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofEnvelope.lean` | executable-specifications-and-lean-proof-envelope | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PrototypeRoadmap.lean` | prototype-roadmap | 3 | 11 | 2 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReadinessGates.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 20 | 9 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -677,6 +677,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_result_requires_verifier_artifact_reference` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `passed_verifier_without_artifact_reference_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | `valid_proof_carrying_claim_record_preserves_mapping_scope_limits_and_boundary` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_acceptance_blocks_promotion` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_fixture_accepted` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_missing_mutation_control_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
+| `lean/AsiStackProofs/ProofCarryingContracts.lean` | `circle_public_consumer_gate_promotion_overclaim_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `consumer_gate_acceptance_with_stale_or_unsupported_receipt_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `contract_readiness_alone_cannot_promote_downstream_claim` | derived_or_decomposed | no | uses cases, have, rw, unfold |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | `downstream_ready_receipt_exposes_boundary_fields` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

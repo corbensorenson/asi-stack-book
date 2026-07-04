@@ -2604,13 +2604,14 @@ Draft deliverables:
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-record fields only; no Circle theorem-id resolver, fingerprint check, or vendored contract pack exists yet.
 - Implemented external receipt slice: `docs/circle_external_receipt_slice.md`, `experiments/circle_external_receipt_slice/results/2026-06-29-local.json`, and `evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json` record one bounded local Circle rope-position receipt replay for `circle-calculus.external_rope_receipt_replay` only; it does not promote `circle-calculus-and-proof-carrying-ai-contracts.core`.
 - Implemented concrete evidence surface: `python3 scripts/validate_circle_concrete_evidence_surface.py` checks that the chapter and outline surface Circle commit `63b0f511`, `CC-AI-CONTRACT-ROPE-001`, requested margin `1/328459`, certifier `theorem_count 55`, ready digest `fields=31 missing=0 theorems=75`, seven required theorem IDs, fingerprints, the ASI consumer gate, and non-claims; it does not promote chapter-core support.
-- Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary, consumer-gate promotion, missing-boundary, missing-contract-readiness, stale/unsupported-consumer, and replay-artifact requirements without claiming deployed Circle theorem transport.
+- Implemented Lean predicates: `AsiStackProofs.ProofCarryingContracts` proves local finite-record receipt-boundary, consumer-gate promotion, public consumer-gate no-promotion fixture, missing-boundary, missing-contract-readiness, stale/unsupported-consumer, overclaimed public consumer-gate promotion, missing public consumer-gate mutation-control, and replay-artifact requirements without claiming deployed Circle theorem transport.
 - Implemented Codex test: Proof target record fixture validation
 - Implemented Codex test: Proof contract receipt record fixture validation
 - Implemented Codex test: Circle public consumer-gate validation
 - Implemented Codex test: Circle concrete receipt evidence-surface validation
 - Implemented Codex test: Receipt boundary Lean predicate
 - Implemented Codex test: Consumer gate promotion predicate
+- Implemented Codex test: Circle public consumer-gate Lean fixture bridge
 - Implemented Codex test: Missing receipt-boundary negative case
 - Implemented Codex test: Contract-readiness promotion negative case
 - Implemented Codex test: Stale or unsupported consumer-gate negative case
@@ -2626,8 +2627,9 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:circle_contracts.receipt_requires_boundary.operational_invariant` | `AsiStackProofs.ProofCarryingContracts` | A proof-carrying AI contract exposes theorem references, deterministic fields, and an explicit non-claim boundary before downstream use. | implemented |
 | `lean:circle_contracts.consumer_gate.failure_blocks_promotion` | `AsiStackProofs.ProofCarryingContracts` | A downstream claim cannot be promoted solely from contract readiness without a workload, baseline, metric, and evidence artifact. | implemented |
+| `lean:circle_contracts.public_consumer_gate.fixture_bridge` | `AsiStackProofs.ProofCarryingContracts` | The public Circle consumer-gate fixture records one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim. | implemented |
 
-Implemented negative-case theorems now reject downstream-ready receipts missing theorem refs, deterministic fields, or non-claim boundaries; promoted downstream claims without contract readiness; consumer-gate acceptance with unresolved refs, fingerprint mismatch, stale contract state, disallowed consumer state, unsupported transfer claims, or missing non-claims; and passing replay status without replay command, source digest, receipt fingerprint, recomputed deterministic fields, or theorem refs. These remain record-level gates only; they do not resolve external theorem IDs, replay Circle receipts from source, vendor Circle packs, approve transfer, promote support state, or evaluate downstream model behavior.
+Implemented negative-case theorems now reject downstream-ready receipts missing theorem refs, deterministic fields, or non-claim boundaries; promoted downstream claims without contract readiness; public consumer-gate overclaims that create upward transition, chapter-core promotion, or deployed-transport claims; public consumer-gate summaries missing digest-mismatch, missing-theorem, stale-contract, or unsupported-transfer rejection; consumer-gate acceptance with unresolved refs, fingerprint mismatch, stale contract state, disallowed consumer state, unsupported transfer claims, or missing non-claims; and passing replay status without replay command, source digest, receipt fingerprint, recomputed deterministic fields, or theorem refs. These remain record-level gates only; they do not resolve external theorem IDs, replay Circle receipts from source, vendor Circle packs, approve transfer, promote support state, or evaluate downstream model behavior.
 
 ### Coil Attention, Cyclic Memory, and Recurrence Contracts
 
@@ -2830,7 +2832,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 192 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 192 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 194 proof targets, 54 Lean modules, 982 theorem declarations, 797 derived/decomposed, 181 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 195 proof targets, 54 Lean modules, 986 theorem declarations, 799 derived/decomposed, 183 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -2839,7 +2841,7 @@ Draft deliverables:
 - Implemented Codex test: External theorem reference boundary negative case.
 - Implemented Codex test: Proof artifact traceability audit.
 - Implemented Codex test: Proof-depth surface synchronization, via `python3 scripts/validate_proof_depth_surface.py`, so the live chapter, reader chapter, outline, and roadmap expose the current proof-depth classification counts and direct/projection versus derived/decomposed distinction without promoting proof-envelope support.
-- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 194 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
+- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 195 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
 
 Lean proof targets:
 

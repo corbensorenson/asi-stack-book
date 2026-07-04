@@ -1531,6 +1531,16 @@
       "rationale": "Implemented as a local finite-record Lean consumer-gate predicate requiring workload, baseline, metric, and evidence artifacts beyond contract readiness before downstream promotion."
     },
     {
+      "tag": "lean:circle_contracts.public_consumer_gate.fixture_bridge",
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "module": "AsiStackProofs.ProofCarryingContracts",
+      "formal_target": "The public Circle consumer-gate fixture records one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ProofCarryingContracts as a finite fixture bridge for the public ASI-side Circle consumer gate: it records one accepted receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocks promotion, and preserves no upward transition, no chapter-core promotion, and no deployed proof-contract transport claim."
+    },
+    {
       "tag": "lean:coil_memory.alias_boundary.operational_invariant",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "module": "AsiStackProofs.CoilAttentionMemory",
@@ -1951,5 +1961,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 194
+  "record_count": 195
 }
