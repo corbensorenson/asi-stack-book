@@ -15,11 +15,13 @@
     "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
     "python3 scripts/audit_curated_reader_epub_content.py",
     "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
-    "python3 scripts/audit_curated_reader_docx_content.py"
+    "python3 scripts/audit_curated_reader_docx_content.py",
+    "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest"
   ],
   "local_report_refs": [
     "build/curated_reader_edition/curated_reader_render_report.json",
-    "build/curated_reader_edition/curated_reader_artifact_inspection_report.json"
+    "build/curated_reader_edition/curated_reader_artifact_inspection_report.json",
+    "build/curated_reader_edition/curated_reader_docx_libreoffice_review_report.json"
   ],
   "tracked_evidence_refs": [
     "docs/curated_reader_html_artifact_browser_review.md",
@@ -291,6 +293,67 @@
       "does not replace dedicated e-reader device or application review",
       "does not publish or archive a reader artifact",
       "does not approve DOCX, PDF, audio, e-reader, or final figure artifacts",
+      "does not promote any chapter core claim or support state"
+    ]
+  },
+  "docx_libreoffice_review": {
+    "status": "passed_docx_libreoffice_headless_pdf_review",
+    "source_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+    "source_sha256": "1690f5b3bf63781e9dd819a7c66f1724043d74eee4d2132fa48e6597d4e5d7c1",
+    "report_ref": "build/curated_reader_edition/curated_reader_docx_libreoffice_review_report.json",
+    "review_command": "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
+    "converter": "LibreOffice headless Writer PDF export",
+    "converter_executable": "soffice",
+    "converter_version": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
+    "converted_pdf_pages": 503,
+    "converted_pdf_file_size_bytes": 8545141,
+    "converted_pdf_title": "The ASI Stack",
+    "converted_pdf_author": "Corben Sorenson",
+    "converted_pdf_creator": "Writer",
+    "converted_pdf_producer": "LibreOfficeDev 26.8.0.0.alpha0 (AARCH64)",
+    "converted_pdf_tagged": "yes",
+    "converted_pdf_encrypted": "no",
+    "converted_pdf_page_size": "612 x 792 pts (letter)",
+    "converted_pdf_version": "1.7",
+    "text_characters_checked": 1025566,
+    "required_text_markers_present": [
+      "The ASI Stack",
+      "Reader Edition Draft",
+      "evidence boundary",
+      "Reader Source List",
+      "External Citation Policy"
+    ],
+    "live_marker_hits": 0,
+    "raw_core_claim_marker_hits": 0,
+    "raster_dpi": 72,
+    "nonwhite_threshold": 245,
+    "edge_margin_px": 2,
+    "low_ink_threshold": 1000,
+    "pages_raster_rendered": 503,
+    "page_width_pixels": [
+      612
+    ],
+    "page_height_pixels": [
+      792
+    ],
+    "blank_pages": 0,
+    "low_ink_pages": 0,
+    "near_edge_content_pages": 0,
+    "min_nonwhite_pixels": 10476,
+    "max_nonwhite_pixels": 103397,
+    "min_left_margin_px": 66,
+    "min_top_margin_px": 72,
+    "min_right_margin_px": 72,
+    "min_bottom_margin_px": 72,
+    "sample_blank_pages": [],
+    "sample_low_ink_pages": [],
+    "sample_near_edge_pages": [],
+    "review_boundary": "LibreOffice headless Writer PDF export is stronger local DOCX application-engine evidence than package inspection alone, but it is not Word review, not LibreOffice GUI review, not Google Docs review, not manual document review, and does not approve the DOCX artifact.",
+    "non_claims": [
+      "does not approve the DOCX artifact for release",
+      "does not replace Word, LibreOffice GUI, or Google Docs application review",
+      "does not publish or archive a reader artifact",
+      "does not approve EPUB, PDF, e-reader, audio, or final figure artifacts",
       "does not promote any chapter core claim or support state"
     ]
   }

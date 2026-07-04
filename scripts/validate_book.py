@@ -46,6 +46,7 @@ REQUIRED = [
     "scripts/render_curated_reader_formats.py",
     "scripts/inspect_curated_reader_format_artifacts.py",
     "scripts/validate_curated_reader_format_probe_manifest.py",
+    "scripts/validate_curated_reader_docx_libreoffice_review.py",
     "scripts/validate_reader_artifact_inspection_manifest.py",
     "scripts/validate_reader_epub_probe_manifest.py",
     "scripts/validate_reader_docx_probe_manifest.py",

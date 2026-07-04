@@ -44,6 +44,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/audit_curated_reader_epub_content.py",
     "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "python3 scripts/audit_curated_reader_docx_content.py",
+    "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
     "python3 scripts/validate_reader_key_figure_format_probe.py",
@@ -177,6 +178,7 @@ def main() -> None:
     epub_audit = curated.get("epub_content_audit", {})
     epub_browser = curated.get("epub_browser_review", {})
     docx_audit = curated.get("docx_content_audit", {})
+    docx_libreoffice = curated.get("docx_libreoffice_review", {})
     pdf_raster = curated.get("pdf_visual_raster_audit", {})
     pdf_layout = curated.get("pdf_layout_audit", {})
     if not isinstance(epub_audit, dict):
@@ -188,6 +190,9 @@ def main() -> None:
     if not isinstance(docx_audit, dict):
         errors.append("curated format docx_content_audit must be an object.")
         docx_audit = {}
+    if not isinstance(docx_libreoffice, dict):
+        errors.append("curated format docx_libreoffice_review must be an object.")
+        docx_libreoffice = {}
     if not isinstance(pdf_raster, dict):
         errors.append("curated format pdf_visual_raster_audit must be an object.")
         pdf_raster = {}
@@ -221,6 +226,11 @@ def main() -> None:
         "epub_browser_failed_page_view_pairs": epub_browser.get("failed_page_view_pairs"),
         "docx_repaired_package_sha256": docx_audit.get("source_sha256"),
         "docx_raw_qmd_relationship_targets": docx_audit.get("raw_qmd_relationship_targets"),
+        "docx_libreoffice_converted_pages": docx_libreoffice.get("converted_pdf_pages"),
+        "docx_libreoffice_text_characters_checked": docx_libreoffice.get("text_characters_checked"),
+        "docx_libreoffice_blank_pages": docx_libreoffice.get("blank_pages"),
+        "docx_libreoffice_low_ink_pages": docx_libreoffice.get("low_ink_pages"),
+        "docx_libreoffice_near_edge_pages": docx_libreoffice.get("near_edge_content_pages"),
         "pdf_pages_raster_rendered": pdf_raster.get("pages_rendered"),
         "pdf_blank_raster_pages": pdf_raster.get("blank_pages"),
         "pdf_near_edge_raster_pages": pdf_raster.get("near_edge_content_pages"),
@@ -254,6 +264,11 @@ def main() -> None:
         "17,354 paragraphs",
         "286 relationships",
         "0 raw .qmd relationship targets",
+        "503-page PDF",
+        "1,025,566 text characters",
+        "0 blank",
+        "0 low-ink",
+        "0 near-edge converted-page rasters",
         "10 matched key-figure stems",
     ):
         if fragment and fragment not in docx_note:

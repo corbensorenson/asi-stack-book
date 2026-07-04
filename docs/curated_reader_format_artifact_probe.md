@@ -21,12 +21,14 @@ python3 scripts/audit_curated_reader_pdf_visual_raster.py
 python3 scripts/audit_curated_reader_epub_content.py
 node scripts/validate_curated_reader_epub_browser_review.js --write-manifest
 python3 scripts/audit_curated_reader_docx_content.py
+python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest
 ```
 
 Local ignored reports:
 
 - `build/curated_reader_edition/curated_reader_render_report.json`
 - `build/curated_reader_edition/curated_reader_artifact_inspection_report.json`
+- `build/curated_reader_edition/curated_reader_docx_libreoffice_review_report.json`
 
 Tracked manifest:
 
@@ -157,6 +159,44 @@ Required text markers were present: `The ASI Stack`, `Reader Edition Draft`,
 This DOCX package audit is stronger local DOCX evidence than package
 inspection alone, but it is not Word, LibreOffice GUI, or Google Docs application review and does not approve the DOCX artifact for release.
 
+## DOCX LibreOffice Headless Review
+
+The probe then opens the repaired DOCX through LibreOffice's headless Writer
+PDF export path:
+
+```bash
+python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest
+```
+
+That pass converts the current DOCX to PDF in a temporary profile, extracts
+text from the converted PDF, and raster-renders every converted page at 72 dpi.
+It is application-engine evidence for the DOCX artifact because it exercises
+LibreOffice's document import and PDF layout path, not only the DOCX ZIP/XML
+container.
+
+The result records 503 converted pages, 1,025,566 text characters, and 0 blank converted-page rasters.
+
+| Metric | Result |
+|---|---:|
+| Converted PDF pages | 503 |
+| Converted PDF bytes | 8,545,141 |
+| Text characters checked | 1,025,566 |
+| Converted-page rasters checked | 503 |
+| Blank converted-page rasters | 0 |
+| Low-ink converted-page rasters | 0 |
+| Near-edge converted-page rasters | 0 |
+| Minimum nonwhite pixels | 10,476 |
+| Maximum nonwhite pixels | 103,397 |
+| Live-marker leaks | 0 |
+| Raw core-claim marker leaks | 0 |
+
+Required text markers were present: `The ASI Stack`, `Reader Edition Draft`,
+`evidence boundary`, `Reader Source List`, and `External Citation Policy`.
+The converted PDF is tagged, unencrypted, letter-sized, titled `The ASI Stack`,
+and produced by LibreOffice. This is stronger than package inspection alone,
+but it is not Word review, not LibreOffice GUI review, not Google Docs review,
+not manual document review, and does not approve the DOCX artifact for release.
+
 ## PDF Text And Layout Extraction Audit
 
 The refreshed PDF probe also ran full-document text and bounding-box extraction
@@ -215,15 +255,18 @@ HTML browser viability: the same curated source rendered to HTML, EPUB, DOCX,
 and PDF, and the snapshots passed structural inspection. The repaired EPUB
 package also passed the all-XHTML content/navigation audit and a Chromium
 browser XHTML application review, the repaired DOCX package passed the document
-XML/relationship audit above, and the PDF also passed the all-page
-text/bounding-box and visual raster audits above. This is useful evidence for
-release preparation, dedicated e-reader testing, DOCX application review, PDF
-layout review, and figure conversion work.
+XML/relationship audit and LibreOffice headless conversion/raster review above,
+and the PDF also passed the all-page text/bounding-box and visual raster audits
+above. This is useful evidence for release preparation, dedicated e-reader
+testing, DOCX GUI/application review, PDF layout review, and figure conversion
+work.
 
 This does not clear release blockers. EPUB still needs dedicated e-reader
 device/app approval or an explicit release decision that accepts the Chromium
 XHTML review as sufficient for a named artifact. DOCX still needs
-application-level review in Word, LibreOffice GUI, or Google Docs. PDF still needs page-layout and reading-flow review in a PDF viewer. Audio artifacts remain outside this probe.
+application-level review in Word, LibreOffice GUI, or Google Docs; the
+headless LibreOffice review is recorded as preparation evidence only. PDF still needs page-layout and reading-flow review in a PDF viewer. Audio artifacts
+remain outside this probe.
 
 ## Residuals
 

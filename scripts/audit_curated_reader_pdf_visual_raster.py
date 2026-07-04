@@ -171,7 +171,7 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "nonwhite_threshold": NONWHITE_THRESHOLD,
         "edge_margin_px": EDGE_MARGIN_PX,
         "low_ink_threshold": LOW_INK_THRESHOLD,
-        "pages_rendered": 505,
+        "pages_rendered": 504,
         "page_width_pixels": [612],
         "page_height_pixels": [792],
         "blank_pages": 0,

@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-04 - Add curated DOCX LibreOffice review
+
+- Added `scripts/validate_curated_reader_docx_libreoffice_review.py` to open
+  the ignored curated-reader DOCX through LibreOffice headless Writer PDF
+  export, extract text from the converted PDF, raster-check every converted
+  page, and write bounded review evidence into
+  `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`.
+- Recorded the current result: the repaired DOCX converts to a 503-page tagged
+  PDF, carries required reader markers, checks 1,025,566 text characters,
+  raster-checks 503 converted pages, and reports 0 blank, 0 low-ink, and 0
+  near-edge converted-page rasters.
+- Updated `docs/curated_reader_format_artifact_probe.md`,
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`,
+  `docs/release_surface_status_ledger.md`,
+  `docs/v1_x_beyond_sota_roadmap.md`, and the release-record schema/validators
+  so the DOCX application-engine evidence is required and visible.
+- Fixed `scripts/audit_curated_reader_pdf_visual_raster.py` so its non-write
+  validation expects the current 504-page curated-reader PDF rather than the
+  prior 505-page artifact.
+- Boundary: this is local LibreOffice headless application-engine evidence
+  only. It is not Word review, not LibreOffice GUI review, not Google Docs
+  review, not manual document review, does not approve the DOCX or reader
+  edition, and does not promote any support state.
+
 ## 2026-07-04 - Add curated EPUB browser review
 
 - Added `scripts/validate_curated_reader_epub_browser_review.js` to unpack the

@@ -25,6 +25,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/audit_curated_reader_epub_content.py",
     "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "python3 scripts/audit_curated_reader_docx_content.py",
+    "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
 }
 REQUIRED_BLOCKERS = {
     "curated_reconciliation_not_approved",
@@ -115,6 +116,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     epub_content_audit = manifest.get("epub_content_audit")
     epub_browser_review = manifest.get("epub_browser_review")
     docx_content_audit = manifest.get("docx_content_audit")
+    docx_libreoffice_review = manifest.get("docx_libreoffice_review")
     if not isinstance(render_summary, dict):
         errors.append("render_summary must be an object.")
         render_summary = {}
@@ -136,6 +138,9 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if not isinstance(docx_content_audit, dict):
         errors.append("docx_content_audit must be an object.")
         docx_content_audit = {}
+    if not isinstance(docx_libreoffice_review, dict):
+        errors.append("docx_libreoffice_review must be an object.")
+        docx_libreoffice_review = {}
     if set(render_summary) != EXPECTED_FORMATS:
         errors.append(f"render_summary must contain exactly {sorted(EXPECTED_FORMATS)}.")
     if set(inspection_summary) != EXPECTED_FORMATS:
@@ -414,6 +419,64 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         if "not Word, LibreOffice GUI, or Google Docs application review" not in boundary or "does not approve the DOCX artifact" not in boundary:
             errors.append("docx_content_audit.review_boundary must preserve application-review and release-approval boundaries.")
 
+    if docx_libreoffice_review:
+        if docx_libreoffice_review.get("status") != "passed_docx_libreoffice_headless_pdf_review":
+            errors.append("docx_libreoffice_review.status must be passed_docx_libreoffice_headless_pdf_review.")
+        if docx_libreoffice_review.get("source_artifact") != "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx":
+            errors.append("docx_libreoffice_review.source_artifact must point to the curated reader DOCX.")
+        if not SHA_RE.match(str(docx_libreoffice_review.get("source_sha256", ""))):
+            errors.append("docx_libreoffice_review.source_sha256 must be a SHA-256 digest.")
+        if docx_content_audit and docx_libreoffice_review.get("source_sha256") != docx_content_audit.get("source_sha256"):
+            errors.append("docx_libreoffice_review.source_sha256 must match docx_content_audit.source_sha256.")
+        expected_values = {
+            "converted_pdf_pages": 503,
+            "converted_pdf_title": "The ASI Stack",
+            "converted_pdf_author": "Corben Sorenson",
+            "converted_pdf_creator": "Writer",
+            "converted_pdf_tagged": "yes",
+            "converted_pdf_encrypted": "no",
+            "converted_pdf_page_size": "612 x 792 pts (letter)",
+            "raster_dpi": 72,
+            "nonwhite_threshold": 245,
+            "edge_margin_px": 2,
+            "low_ink_threshold": 1000,
+            "pages_raster_rendered": 503,
+            "page_width_pixels": [612],
+            "page_height_pixels": [792],
+            "blank_pages": 0,
+            "low_ink_pages": 0,
+            "near_edge_content_pages": 0,
+            "min_nonwhite_pixels": 10476,
+            "max_nonwhite_pixels": 103397,
+            "min_left_margin_px": 66,
+            "min_top_margin_px": 72,
+            "min_right_margin_px": 72,
+            "min_bottom_margin_px": 72,
+            "sample_blank_pages": [],
+            "sample_low_ink_pages": [],
+            "sample_near_edge_pages": [],
+            "live_marker_hits": 0,
+            "raw_core_claim_marker_hits": 0,
+        }
+        for key, expected_value in expected_values.items():
+            if docx_libreoffice_review.get(key) != expected_value:
+                errors.append(f"docx_libreoffice_review.{key} must be {expected_value!r}.")
+        require_int("docx_libreoffice_review", "converted_pdf_file_size_bytes", docx_libreoffice_review.get("converted_pdf_file_size_bytes"), errors, minimum=8_000_000)
+        require_int("docx_libreoffice_review", "text_characters_checked", docx_libreoffice_review.get("text_characters_checked"), errors, minimum=1_000_000)
+        if "LibreOffice" not in str(docx_libreoffice_review.get("converted_pdf_producer", "")):
+            errors.append("docx_libreoffice_review.converted_pdf_producer must identify LibreOffice.")
+        markers = set(require_string_list("docx_libreoffice_review", "required_text_markers_present", docx_libreoffice_review.get("required_text_markers_present"), errors))
+        for marker in {"The ASI Stack", "Reader Edition Draft", "evidence boundary", "Reader Source List", "External Citation Policy"}:
+            if marker not in markers:
+                errors.append(f"docx_libreoffice_review.required_text_markers_present missing {marker}.")
+        boundary = require_string("docx_libreoffice_review", "review_boundary", docx_libreoffice_review.get("review_boundary"), errors, min_words=22)
+        if "not Word review" not in boundary or "not LibreOffice GUI review" not in boundary or "does not approve the DOCX artifact" not in boundary:
+            errors.append("docx_libreoffice_review.review_boundary must preserve Word/GUI/Docs and release-approval boundaries.")
+        non_claim_text = " ".join(require_string_list("docx_libreoffice_review", "non_claims", docx_libreoffice_review.get("non_claims"), errors)).lower()
+        for phrase in ("does not approve the docx artifact", "does not replace word, libreoffice gui, or google docs", "does not promote any chapter core claim"):
+            if phrase not in non_claim_text:
+                errors.append(f"docx_libreoffice_review.non_claims missing boundary phrase: {phrase}")
+
     blockers = set(require_string_list("manifest", "release_blockers_preserved", manifest.get("release_blockers_preserved"), errors))
     missing_blockers = sorted(REQUIRED_BLOCKERS - blockers)
     if missing_blockers:
@@ -444,6 +507,7 @@ def validate_summary(errors: list[str]) -> None:
         "python3 scripts/audit_curated_reader_epub_content.py",
         "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
         "python3 scripts/audit_curated_reader_docx_content.py",
+        "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
         "| html | rendered | 49 | 81 | 0 | 0 |",
         "| epub | rendered | 1 | 1 | 0 | 0 |",
         "| docx | rendered | 1 | 1 | 0 | 0 |",
@@ -480,6 +544,11 @@ def validate_summary(errors: list[str]) -> None:
         "17,354 paragraphs",
         "0 raw .qmd relationship targets",
         "not Word, LibreOffice GUI, or Google Docs application review",
+        "DOCX LibreOffice Headless Review",
+        "503 converted pages",
+        "1,025,566 text characters",
+        "0 blank converted-page rasters",
+        "not Word review, not LibreOffice GUI review, not Google Docs review",
         "does not clear release blockers",
         "does not promote any claim support state",
     ]
@@ -496,7 +565,7 @@ def main() -> None:
     validate_summary(errors)
     if errors:
         fail(errors)
-    print("Curated reader format probe validation passed: html, epub, docx, pdf structural evidence recorded with raster PNG fallbacks.")
+    print("Curated reader format probe validation passed: html, epub, docx, pdf structural evidence recorded with raster PNG fallbacks and DOCX LibreOffice review.")
 
 
 if __name__ == "__main__":

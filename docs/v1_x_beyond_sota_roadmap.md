@@ -3624,12 +3624,17 @@ Current status:
   reader text markers, media entries, relationship targets, live-marker
   leakage, raw core-claim marker leakage, and internal relationship targets with
   0 raw `.qmd` relationship targets and 0 unresolved internal relationship
-  targets. The PDF visual raster audit now renders all 504 pages at 72 dpi with
+  targets. The LibreOffice headless DOCX review now converts the repaired DOCX
+  to a 503-page tagged PDF, checks 1,025,566 extracted text characters,
+  raster-checks 503 converted pages, and records 0 blank, 0 low-ink, and 0
+  near-edge converted-page rasters while preserving Word, LibreOffice GUI, or
+  Google Docs review as release blockers. The PDF visual raster audit now
+  renders all 504 pages at 72 dpi with
   0 blank pages, 0 low-ink pages, and 0 near-edge pages while still preserving
   manual PDF-viewer review as a release blocker. EPUB, DOCX, PDF, e-reader, and
   audio artifacts still remain unapproved until dedicated e-reader approval,
-  DOCX application review, PDF reading-flow review, audio review, and an edition
-  release record exist.
+  Word/LibreOffice GUI/Google Docs DOCX review or an explicit release decision,
+  PDF reading-flow review, audio review, and an edition release record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,
@@ -4016,9 +4021,11 @@ validator-enforced status row that grows past compact status-summary size.
   but EPUB still remains probe-level until dedicated e-reader approval or an
   explicit release decision and an edition release record exist. Its
   repaired-package DOCX audit checks document
-  XML/media/relationships with 0 raw `.qmd` relationship targets, but DOCX still
-  remains probe-level until real Word, LibreOffice GUI, or Google Docs review and
-  an edition release record exist. Its PDF visual raster audit renders all 504
+  XML/media/relationships with 0 raw `.qmd` relationship targets, and its
+  LibreOffice headless DOCX review converts 503 pages with 0 blank, 0 low-ink,
+  and 0 near-edge converted-page rasters, but DOCX still remains probe-level
+  until Word, LibreOffice GUI, Google Docs review, or an explicit release
+  decision and an edition release record exist. Its PDF visual raster audit renders all 504
   pages with 0 blank pages, 0 low-ink pages, and 0 near-edge pages, but PDF
   remains probe-level until real PDF-viewer reading-flow/layout review and an
   edition release record exist; audio remains script-probe-level; visual
