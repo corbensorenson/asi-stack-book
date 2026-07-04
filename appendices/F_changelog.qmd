@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-07-04 - Add reader key-figure EPUB layout review
+
+- Added `scripts/validate_reader_key_figure_epub_layout.py` to inspect the
+  ignored curated-reader EPUB package through the existing Chromium EPUB XHTML
+  browser-review report and check the ten key-figure XHTML entries for package
+  mapping, figure boundaries, release boundaries, alt text, image presence,
+  body text, and desktop/e-reader-like viewport health.
+- Recorded the result in
+  `editions/reader_manuscript/v1_0/key_figure_epub_layout_manifest.json` and
+  `docs/reader_key_figure_epub_layout_review.md`: 10 XHTML entries, 20
+  browser page-view pairs, 0 failed pairs, 5,476 minimum body text characters,
+  23 minimum alt-text words, 10 px maximum horizontal overflow, 0 image
+  failures, 10 figure boundaries, and 10 release boundaries.
+- Wired the EPUB layout review into `scripts/validate_book.py`,
+  `scripts/validate_reader_key_figures.py`,
+  `scripts/validate_release_surface_status_ledger.py`,
+  `scripts/validate_curated_reader_blocked_release_record.py`,
+  `schemas/edition_release_record.schema.json`,
+  `docs/reader_key_figure_artifact_review.md`,
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`,
+  `docs/repository_map.md`, and `docs/v1_x_beyond_sota_roadmap.md` so
+  reader-release status now distinguishes EPUB package survival, all-XHTML
+  Chromium browser review, and key-figure XHTML layout preparation.
+- Boundary: this is automated local EPUB XHTML key-figure browser-report review
+  only. It is not dedicated e-reader device review, not e-reader application
+  approval, not final figure-artifact approval, not reader release approval,
+  and it does not promote any support state.
+
 ## 2026-07-04 - Add reader key-figure DOCX layout review
 
 - Added `scripts/validate_reader_key_figure_docx_layout.py` to convert the

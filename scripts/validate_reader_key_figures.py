@@ -18,6 +18,8 @@ FORMAT_PROBE_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_
 FORMAT_PROBE_DOC = ROOT / "docs" / "reader_key_figure_format_probe.md"
 RASTER_PROBE_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_raster_manifest.json"
 RASTER_PROBE_DOC = ROOT / "docs" / "reader_key_figure_raster_review.md"
+EPUB_LAYOUT_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_epub_layout_manifest.json"
+EPUB_LAYOUT_DOC = ROOT / "docs" / "reader_key_figure_epub_layout_review.md"
 PDF_LAYOUT_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 PDF_LAYOUT_DOC = ROOT / "docs" / "reader_key_figure_pdf_layout_review.md"
 DOCX_LAYOUT_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
@@ -176,6 +178,7 @@ def validate_review_doc(figures: list[dict[str, Any]], errors: list[str]) -> Non
         "python3 scripts/validate_reader_key_figures.py",
         "python3 scripts/validate_reader_key_figure_format_probe.py --write-manifest --write-doc",
         "python3 scripts/validate_reader_key_figure_raster_probe.py --write-manifest --write-doc",
+        "python3 scripts/validate_reader_key_figure_epub_layout.py --write-manifest --write-doc",
         "python3 scripts/validate_reader_key_figure_pdf_layout.py --write-manifest --write-doc",
         "python3 scripts/validate_reader_key_figure_docx_layout.py --write-manifest --write-doc",
         "not a release approval",
@@ -343,6 +346,61 @@ def validate_pdf_layout_probe(figures: list[dict[str, Any]], errors: list[str]) 
             errors.append(f"{rel(PDF_LAYOUT_DOC)} missing required phrase {phrase!r}.")
 
 
+def validate_epub_layout_probe(figures: list[dict[str, Any]], errors: list[str]) -> None:
+    if not EPUB_LAYOUT_MANIFEST.exists():
+        errors.append(f"Missing {rel(EPUB_LAYOUT_MANIFEST)}.")
+        return
+    if not EPUB_LAYOUT_DOC.exists():
+        errors.append(f"Missing {rel(EPUB_LAYOUT_DOC)}.")
+        return
+    manifest = load_json(EPUB_LAYOUT_MANIFEST)
+    if manifest.get("schema_version") != "asi_stack.reader_key_figure_epub_layout.v0":
+        errors.append(f"{rel(EPUB_LAYOUT_MANIFEST)} schema_version drifted.")
+    if manifest.get("status") != "passed_local_epub_key_figure_xhtml_layout_probe":
+        errors.append(f"{rel(EPUB_LAYOUT_MANIFEST)} status must be passed_local_epub_key_figure_xhtml_layout_probe.")
+    summary = manifest.get("summary", {})
+    if not isinstance(summary, dict):
+        errors.append(f"{rel(EPUB_LAYOUT_MANIFEST)} summary must be an object.")
+        summary = {}
+    expected = {
+        "figure_count": len(figures),
+        "unique_xhtml_entries": 10,
+        "viewport_count": 2,
+        "page_view_pairs": 20,
+        "failed_page_view_pairs": 0,
+        "maximum_horizontal_overflow_px": 10,
+        "minimum_image_count": 1,
+        "image_failure_count": 0,
+        "figure_boundary_count": 10,
+        "release_boundary_count": 10,
+    }
+    for key, value in expected.items():
+        observed = summary.get(key)
+        if observed != value:
+            errors.append(f"{rel(EPUB_LAYOUT_MANIFEST)} summary.{key} must be {value}, found {observed}.")
+    thresholds = {
+        "minimum_body_text_chars": 1_200,
+        "minimum_alt_text_words": 12,
+    }
+    for key, threshold in thresholds.items():
+        observed = summary.get(key)
+        if not isinstance(observed, (int, float)) or observed < threshold:
+            errors.append(f"{rel(EPUB_LAYOUT_MANIFEST)} summary.{key} must be at least {threshold}.")
+    doc_text = EPUB_LAYOUT_DOC.read_text(encoding="utf-8", errors="ignore")
+    for phrase in (
+        "Reader Key-Figure EPUB Layout Review",
+        "| Key-figure XHTML entries | 10 |",
+        "| Browser page-view pairs | 20 |",
+        "| Failed page-view pairs | 0 |",
+        "not dedicated e-reader device review",
+        "not e-reader application approval",
+        "not final figure-artifact approval",
+        "not reader release approval",
+    ):
+        if phrase not in doc_text:
+            errors.append(f"{rel(EPUB_LAYOUT_DOC)} missing required phrase {phrase!r}.")
+
+
 def validate_docx_layout_probe(figures: list[dict[str, Any]], errors: list[str]) -> None:
     if not DOCX_LAYOUT_MANIFEST.exists():
         errors.append(f"Missing {rel(DOCX_LAYOUT_MANIFEST)}.")
@@ -474,6 +532,7 @@ def main() -> None:
     validate_review_doc(figures, errors)
     validate_format_probe(figures, errors)
     validate_raster_probe(figures, errors)
+    validate_epub_layout_probe(figures, errors)
     validate_pdf_layout_probe(figures, errors)
     validate_docx_layout_probe(figures, errors)
     validate_companion_note(figures, errors)

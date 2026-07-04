@@ -1,0 +1,355 @@
+{
+  "schema_version": "asi_stack.reader_key_figure_epub_layout.v0",
+  "status": "passed_local_epub_key_figure_xhtml_layout_probe",
+  "command": "python3 scripts/validate_reader_key_figure_epub_layout.py",
+  "source_format_probe": "editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json",
+  "source_browser_report": "build/curated_reader_edition/curated_reader_epub_browser_review_report.json",
+  "source_epub_artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+  "summary": {
+    "figure_count": 10,
+    "unique_xhtml_entries": 10,
+    "viewport_count": 2,
+    "page_view_pairs": 20,
+    "failed_page_view_pairs": 0,
+    "minimum_body_text_chars": 5476,
+    "minimum_alt_text_words": 23,
+    "maximum_horizontal_overflow_px": 10,
+    "minimum_image_count": 1,
+    "image_failure_count": 0,
+    "figure_boundary_count": 10,
+    "release_boundary_count": 10
+  },
+  "figures": [
+    {
+      "id": "asi_stack_control_plane",
+      "source_svg_title": "ASI Stack control plane draft figure",
+      "packaged_svg_entry": "EPUB/media/file1.svg",
+      "xhtml_entry": "EPUB/text/ch003.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 23,
+      "figcaption": "Draft ASI Stack control plane.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 7848,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 7848,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "authority_to_effect_path",
+      "source_svg_title": "Authority to effect path draft figure",
+      "packaged_svg_entry": "EPUB/media/file5.svg",
+      "xhtml_entry": "EPUB/text/ch005.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 23,
+      "figcaption": "Draft authority-to-effect path.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 8093,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 8093,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "evidence_state_ladder",
+      "source_svg_title": "Evidence state ladder draft figure",
+      "packaged_svg_entry": "EPUB/media/file9.svg",
+      "xhtml_entry": "EPUB/text/ch007.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 27,
+      "figcaption": "Draft evidence-state ladder.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 9938,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 9938,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "intent_to_artifact_trace",
+      "source_svg_title": "Intent to artifact trace draft figure",
+      "packaged_svg_entry": "EPUB/media/file19.svg",
+      "xhtml_entry": "EPUB/text/ch015.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 29,
+      "figcaption": "Draft intent-to-artifact trace.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 8695,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 8695,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "context_transaction_lifecycle",
+      "source_svg_title": "Context transaction lifecycle draft figure",
+      "packaged_svg_entry": "EPUB/media/file24.svg",
+      "xhtml_entry": "EPUB/text/ch019.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 35,
+      "figcaption": "Draft context transaction lifecycle.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 5476,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 5476,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "readiness_residual_quarantine_map",
+      "source_svg_title": "Readiness residual quarantine map draft figure",
+      "packaged_svg_entry": "EPUB/media/file34.svg",
+      "xhtml_entry": "EPUB/text/ch028.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 35,
+      "figcaption": "Draft readiness residual quarantine map.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 5968,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 5968,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "route_selection_budget_tradeoff",
+      "source_svg_title": "Route selection budget tradeoff draft figure",
+      "packaged_svg_entry": "EPUB/media/file43.svg",
+      "xhtml_entry": "EPUB/text/ch033.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 32,
+      "figcaption": "Draft route-selection budget tradeoff.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 6304,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 6304,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "compression_and_generation_acceptance",
+      "source_svg_title": "Compression and generation acceptance draft figure",
+      "packaged_svg_entry": "EPUB/media/file37.svg",
+      "xhtml_entry": "EPUB/text/ch030.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 32,
+      "figcaption": "Draft compression and generation acceptance.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 10283,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 10283,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "cyclic_substrate_adoption_gate",
+      "source_svg_title": "Cyclic substrate adoption gate draft figure",
+      "packaged_svg_entry": "EPUB/media/file48.svg",
+      "xhtml_entry": "EPUB/text/ch037.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 33,
+      "figcaption": "Draft cyclic substrate adoption gate.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 6100,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 6100,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    },
+    {
+      "id": "living_book_release_pipeline",
+      "source_svg_title": "Living book release pipeline draft figure",
+      "packaged_svg_entry": "EPUB/media/file58.svg",
+      "xhtml_entry": "EPUB/text/ch045.xhtml",
+      "has_figure_boundary": true,
+      "has_draft_reader_aid_boundary": true,
+      "has_release_boundary": true,
+      "alt_text_words": 27,
+      "figcaption": "Draft living book release pipeline.",
+      "viewports": [
+        {
+          "viewport": "desktop",
+          "status": "passed",
+          "body_text_chars": 12161,
+          "image_count": 1,
+          "horizontal_overflow_px": 0,
+          "main_visible": true,
+          "image_failures": 0
+        },
+        {
+          "viewport": "ereader",
+          "status": "passed",
+          "body_text_chars": 12161,
+          "image_count": 1,
+          "horizontal_overflow_px": 10,
+          "main_visible": true,
+          "image_failures": 0
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "release_blockers_preserved": [
+    "epub_e_reader_review_not_completed",
+    "final_figure_artifact_review_not_completed",
+    "reader_edition_release_record_not_created"
+  ],
+  "non_claims": [
+    "This is a local EPUB XHTML key-figure browser-report probe only.",
+    "This probe is not dedicated e-reader device review and not e-reader application approval.",
+    "This probe is not final figure-artifact approval and not reader release approval.",
+    "This probe does not prove visual quality, accessibility adequacy, source interpretation, support-state movement, or publication readiness."
+  ]
+}

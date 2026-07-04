@@ -41,6 +41,9 @@ ACCESSIBILITY_NAVIGATION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
 )
 KEY_FIGURE_RASTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_raster_manifest.json"
+KEY_FIGURE_EPUB_LAYOUT = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_epub_layout_manifest.json"
+)
 KEY_FIGURE_PDF_LAYOUT = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 )
@@ -64,6 +67,7 @@ REVIEW_DOCS = {
     "reader_visual_identity": ROOT / "docs" / "reader_visual_identity_review.md",
     "reader_accessibility_navigation": ROOT / "docs" / "reader_accessibility_navigation_review.md",
     "reader_figure_raster": ROOT / "docs" / "reader_key_figure_raster_review.md",
+    "reader_figure_epub_layout": ROOT / "docs" / "reader_key_figure_epub_layout_review.md",
     "reader_figure_pdf_layout": ROOT / "docs" / "reader_key_figure_pdf_layout_review.md",
     "reader_figure_docx_layout": ROOT / "docs" / "reader_key_figure_docx_layout_review.md",
     "reader_chapter_matrix": ROOT / "docs" / "reader_chapter_review_matrix.md",
@@ -150,6 +154,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         VISUAL_IDENTITY,
         ACCESSIBILITY_NAVIGATION,
         KEY_FIGURE_RASTER,
+        KEY_FIGURE_EPUB_LAYOUT,
         KEY_FIGURE_PDF_LAYOUT,
         KEY_FIGURE_DOCX_LAYOUT,
         HTML_RELEASE_RECORD,
@@ -178,6 +183,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     visual_identity = load_json(VISUAL_IDENTITY)
     accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
     key_figure_raster = load_json(KEY_FIGURE_RASTER)
+    key_figure_epub_layout = load_json(KEY_FIGURE_EPUB_LAYOUT)
     key_figure_pdf_layout = load_json(KEY_FIGURE_PDF_LAYOUT)
     key_figure_docx_layout = load_json(KEY_FIGURE_DOCX_LAYOUT)
     curated_blocked_record = load_json(CURATED_BLOCKED_RECORD)
@@ -308,7 +314,13 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if blocked_probe_closure.get("status") != "automated_probe_passed_release_blocked":
         errors.append("curated blocked release-candidate format_probe_closure status must remain automated_probe_passed_release_blocked.")
     release_boundary = str(blocked_probe_closure.get("release_boundary", "")).lower()
-    for fragment in ("automated package", "do not approve epub", "final figure art", "curated reader edition"):
+    for fragment in (
+        "automated package",
+        "epub key-figure layout",
+        "do not approve epub",
+        "final figure art",
+        "curated reader edition",
+    ):
         if fragment not in release_boundary:
             errors.append(f"curated blocked release-candidate format_probe_closure boundary missing {fragment!r}.")
 
@@ -532,6 +544,48 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         if fragment not in raster_non_claims:
             errors.append(f"reader key-figure raster non_claims missing {fragment!r}.")
 
+    if key_figure_epub_layout.get("status") != "passed_local_epub_key_figure_xhtml_layout_probe":
+        errors.append("reader key-figure EPUB layout manifest must remain passed_local_epub_key_figure_xhtml_layout_probe.")
+    epub_layout_summary = key_figure_epub_layout.get("summary", {})
+    if not isinstance(epub_layout_summary, dict):
+        errors.append("reader key-figure EPUB layout summary must be an object.")
+        epub_layout_summary = {}
+    expected_epub_layout_metrics = {
+        "figure_count": 10,
+        "unique_xhtml_entries": 10,
+        "viewport_count": 2,
+        "page_view_pairs": 20,
+        "failed_page_view_pairs": 0,
+        "maximum_horizontal_overflow_px": 10,
+        "minimum_image_count": 1,
+        "image_failure_count": 0,
+        "figure_boundary_count": 10,
+        "release_boundary_count": 10,
+    }
+    for key, expected in expected_epub_layout_metrics.items():
+        observed = epub_layout_summary.get(key)
+        if observed != expected:
+            errors.append(f"reader key-figure EPUB layout summary.{key} must be {expected!r}; found {observed!r}.")
+    epub_layout_thresholds = {
+        "minimum_body_text_chars": 1_200,
+        "minimum_alt_text_words": 12,
+    }
+    for key, minimum in epub_layout_thresholds.items():
+        observed = epub_layout_summary.get(key)
+        if not isinstance(observed, (int, float)) or observed < minimum:
+            errors.append(f"reader key-figure EPUB layout summary.{key} must be at least {minimum}; found {observed!r}.")
+    epub_layout_non_claims = " ".join(str(item) for item in key_figure_epub_layout.get("non_claims", [])).lower()
+    for fragment in (
+        "local epub xhtml key-figure browser-report probe",
+        "not dedicated e-reader device review",
+        "not e-reader application approval",
+        "not final figure-artifact approval",
+        "not reader release approval",
+        "does not prove visual quality",
+    ):
+        if fragment not in epub_layout_non_claims:
+            errors.append(f"reader key-figure EPUB layout non_claims missing {fragment!r}.")
+
     if key_figure_pdf_layout.get("status") != "passed_local_pdf_key_figure_layout_probe":
         errors.append("reader key-figure PDF layout manifest must remain passed_local_pdf_key_figure_layout_probe.")
     pdf_layout_summary = key_figure_pdf_layout.get("summary", {})
@@ -676,6 +730,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "docs/reader_key_figure_geometry_review.md",
             "docs/reader_visual_identity_review.md",
             "docs/reader_key_figure_raster_review.md",
+            "docs/reader_key_figure_epub_layout_review.md",
             "54 combined colors",
             "current ignored curated EPUB, DOCX, and PDF artifacts",
         ],
@@ -734,6 +789,18 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "Minimum luminance standard deviation | 27.64",
             "Minimum quantized color count | 116",
             "not manual aesthetic review",
+            "not final figure-artifact approval",
+            "not reader release approval",
+        ],
+        "reader_figure_epub_layout": [
+            "Reader Key-Figure EPUB Layout Review",
+            "Key-figure XHTML entries | 10",
+            "Browser page-view pairs | 20",
+            "Failed page-view pairs | 0",
+            "Maximum horizontal overflow | 10 px",
+            "Image failures | 0",
+            "not dedicated e-reader device review",
+            "not e-reader application approval",
             "not final figure-artifact approval",
             "not reader release approval",
         ],
@@ -889,6 +956,14 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "key_figure_raster_min_opaque_percent": raster_summary.get("minimum_opaque_pixel_percent"),
         "key_figure_raster_min_luminance_std": raster_summary.get("minimum_luminance_std"),
         "key_figure_raster_min_colors": raster_summary.get("minimum_quantized_color_count"),
+        "key_figure_epub_layout_status": key_figure_epub_layout.get("status"),
+        "key_figure_epub_layout_entries": epub_layout_summary.get("unique_xhtml_entries"),
+        "key_figure_epub_layout_pairs": epub_layout_summary.get("page_view_pairs"),
+        "key_figure_epub_layout_failures": epub_layout_summary.get("failed_page_view_pairs"),
+        "key_figure_epub_layout_min_body_chars": epub_layout_summary.get("minimum_body_text_chars"),
+        "key_figure_epub_layout_min_alt_words": epub_layout_summary.get("minimum_alt_text_words"),
+        "key_figure_epub_layout_max_overflow": epub_layout_summary.get("maximum_horizontal_overflow_px"),
+        "key_figure_epub_layout_image_failures": epub_layout_summary.get("image_failure_count"),
         "key_figure_pdf_layout_status": key_figure_pdf_layout.get("status"),
         "key_figure_pdf_layout_pages": pdf_layout_summary.get("pdf_pages"),
         "key_figure_pdf_layout_caption_pages": pdf_layout_summary.get("unique_caption_pages"),
@@ -935,6 +1010,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_audio_script_probe_manifest.md`; `docs/reader_key_figure_format_probe.md`; "
         "`docs/reader_key_figure_geometry_review.md`; `docs/reader_visual_identity_review.md`; "
         "`docs/reader_accessibility_navigation_review.md`; `docs/reader_key_figure_raster_review.md`; "
+        "`docs/reader_key_figure_epub_layout_review.md`; "
         "`docs/reader_key_figure_pdf_layout_review.md`; "
         "`docs/reader_key_figure_docx_layout_review.md`; "
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`; "
@@ -986,6 +1062,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Reader source accessibility/navigation checks | {metrics['reader_accessibility_navigation_chapters']} chapters, {metrics['reader_accessibility_navigation_h1']} one-H1 chapters, {metrics['reader_accessibility_navigation_handoffs']} handoffs, {metrics['reader_accessibility_navigation_fig_alts']} figure alt texts |",
             f"| Key-figure raster status | `{metrics['key_figure_raster_status']}` |",
             f"| Key-figure raster checks | {metrics['key_figure_raster_count']} PNGs, {metrics['key_figure_raster_standard_dimensions']} standard dimensions, min luminance std {metrics['key_figure_raster_min_luminance_std']}, min colors {metrics['key_figure_raster_min_colors']} |",
+            f"| Key-figure EPUB layout status | `{metrics['key_figure_epub_layout_status']}` |",
+            f"| Key-figure EPUB layout checks | {metrics['key_figure_epub_layout_entries']} XHTML entries, {metrics['key_figure_epub_layout_pairs']} page-view pairs, {metrics['key_figure_epub_layout_failures']} failures, max overflow {metrics['key_figure_epub_layout_max_overflow']} px, {metrics['key_figure_epub_layout_image_failures']} image failures |",
             f"| Key-figure PDF layout status | `{metrics['key_figure_pdf_layout_status']}` |",
             f"| Key-figure PDF layout checks | {metrics['key_figure_pdf_layout_caption_pages']} caption pages, {metrics['key_figure_pdf_layout_raster_pages']} raster pages, min caption margin {metrics['key_figure_pdf_layout_min_caption_margin']} pt, min page ink {metrics['key_figure_pdf_layout_min_page_ink']}%, max near-edge ink {metrics['key_figure_pdf_layout_max_near_edge_ink']}%, min luminance std {metrics['key_figure_pdf_layout_min_luminance_std']} |",
             f"| Key-figure DOCX layout status | `{metrics['key_figure_docx_layout_status']}` |",
@@ -1027,6 +1105,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_visual_identity_review.md` records a source-level visual identity review: {metrics['visual_identity_figure_count']} key figures, {metrics['visual_identity_color_count']} combined colors, {metrics['visual_identity_non_neutral_families']} non-neutral color families, and minimum text contrast {metrics['visual_identity_min_text_contrast']}; it is not manual aesthetic review, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_accessibility_navigation_review.md` records a source-level accessibility/navigation review: {metrics['reader_accessibility_navigation_chapters']} curated chapters, {metrics['reader_accessibility_navigation_h1']} one-H1 chapters, {metrics['reader_accessibility_navigation_handoffs']} handoff sections, {metrics['reader_accessibility_navigation_fig_alts']} draft figure alt texts, {metrics['reader_accessibility_navigation_boundaries']} figure boundary paragraphs, {metrics['reader_accessibility_navigation_live_marker_leaks']} live-marker leaks, and {metrics['reader_accessibility_navigation_raw_claim_leaks']} raw core-claim marker leaks; it is not keyboard-only review, screen-reader review, WCAG conformance, e-reader review, audiobook review, or reader release approval.",
             f"- `docs/reader_key_figure_raster_review.md` records an automated PNG raster artifact review: {metrics['key_figure_raster_count']} generated fallbacks, {metrics['key_figure_raster_standard_dimensions']} standard 1200 x 760 canvases, {metrics['key_figure_raster_min_opaque_percent']}% minimum opaque pixel coverage, {metrics['key_figure_raster_min_luminance_std']} minimum luminance standard deviation, and {metrics['key_figure_raster_min_colors']} minimum quantized colors; it is not manual aesthetic review, e-reader visual review, DOCX/PDF application review, final figure-artifact approval, or reader release approval.",
+            f"- `docs/reader_key_figure_epub_layout_review.md` records a local EPUB key-figure XHTML layout probe: {metrics['key_figure_epub_layout_entries']} XHTML entries, {metrics['key_figure_epub_layout_pairs']} desktop/e-reader-like browser page-view pairs, {metrics['key_figure_epub_layout_failures']} failed pairs, {metrics['key_figure_epub_layout_min_body_chars']} minimum body text characters, {metrics['key_figure_epub_layout_min_alt_words']} minimum alt-text words, {metrics['key_figure_epub_layout_max_overflow']} px maximum horizontal overflow, and {metrics['key_figure_epub_layout_image_failures']} image failures; it is not dedicated e-reader device review, e-reader application approval, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_key_figure_pdf_layout_review.md` records a local PDF key-figure caption-page layout probe: {metrics['key_figure_pdf_layout_caption_pages']} caption pages in a {metrics['key_figure_pdf_layout_pages']}-page PDF, {metrics['key_figure_pdf_layout_raster_pages']} raster pages, {metrics['key_figure_pdf_layout_min_caption_margin']} pt minimum caption margin, {metrics['key_figure_pdf_layout_min_page_ink']}% minimum page ink, {metrics['key_figure_pdf_layout_max_near_edge_ink']}% maximum near-edge ink, and {metrics['key_figure_pdf_layout_min_luminance_std']} minimum luminance standard deviation; it is not manual page-by-page PDF review, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_key_figure_docx_layout_review.md` records a local DOCX-to-PDF key-figure title-page layout probe: {metrics['key_figure_docx_layout_title_pages']} title pages in a {metrics['key_figure_docx_layout_pages']}-page LibreOffice-converted PDF, {metrics['key_figure_docx_layout_raster_pages']} raster pages, {metrics['key_figure_docx_layout_min_title_margin']} pt minimum title margin, {metrics['key_figure_docx_layout_min_page_ink']}% minimum page ink, {metrics['key_figure_docx_layout_max_near_edge_ink']}% maximum near-edge ink, and {metrics['key_figure_docx_layout_min_luminance_std']} minimum luminance standard deviation; it is not Word review, LibreOffice GUI review, Google Docs review, manual document review, final figure-artifact approval, or reader release approval.",
             "",

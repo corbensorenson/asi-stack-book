@@ -32,6 +32,12 @@ Raster artifact probe:
 python3 scripts/validate_reader_key_figure_raster_probe.py --write-manifest --write-doc
 ```
 
+EPUB key-figure layout probe:
+
+```bash
+python3 scripts/validate_reader_key_figure_epub_layout.py --write-manifest --write-doc
+```
+
 PDF key-figure layout probe:
 
 ```bash
@@ -74,6 +80,17 @@ missing, blank, low-ink, or visually collapsed raster outputs, but it is still
 not manual aesthetic review, not e-reader visual review, not DOCX/PDF
 application review, not final figure-artifact approval, and not reader release
 approval.
+
+The EPUB key-figure layout probe in
+`docs/reader_key_figure_epub_layout_review.md` combines the current ignored
+curated-reader EPUB package with the local Chromium EPUB XHTML browser review
+report. It records 10 key-figure XHTML entries, 20 desktop/e-reader-like
+browser page-view pairs, 0 failed page-view pairs, 5,476 minimum body text
+characters, 23 minimum alt-text words, 10 px maximum horizontal overflow, 0
+image failures, 10 figure boundaries, and 10 release boundaries. This is still
+not dedicated e-reader device review, not e-reader application approval, not
+manual visual review, not final figure-artifact approval, and not reader
+release approval.
 
 The PDF key-figure layout probe in
 `docs/reader_key_figure_pdf_layout_review.md` inspects the current ignored
@@ -157,6 +174,18 @@ digests. It is not manual aesthetic review, not e-reader visual review, not
 DOCX/PDF application review, not final figure-artifact approval, and not reader
 release approval.
 
+2026-07-04 EPUB key-figure layout update:
+`python3 scripts/validate_reader_key_figure_epub_layout.py` now records
+`editions/reader_manuscript/v1_0/key_figure_epub_layout_manifest.json` and the
+review surface `docs/reader_key_figure_epub_layout_review.md`. The local EPUB
+probe checks the ten key-figure XHTML entries against the current Chromium EPUB
+XHTML browser review report for packaged SVG references, figure-boundary
+paragraphs, release-boundary text, alt text, desktop/e-reader-like viewport
+pass status, image presence, image failures, body text, and horizontal
+overflow. It is not dedicated e-reader device review, not e-reader application
+approval, not manual visual review, not final figure-artifact approval, and not
+reader release approval.
+
 2026-07-04 PDF key-figure layout update:
 `python3 scripts/validate_reader_key_figure_pdf_layout.py` now records
 `editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json` and the
@@ -205,8 +234,10 @@ release record.
 The validator checks source-level SVG structure and manuscript placement; the
 format-package probe checks EPUB/DOCX/PDF package or text survival; the raster
 probe checks generated PNG fallback presence, dimensions, hashes, and nonblank
-visual variation; the PDF key-figure layout probe checks the ten figure caption
-pages for safe margins and page-raster health; the DOCX key-figure layout probe
+visual variation; the EPUB key-figure layout probe checks the ten EPUB XHTML
+entries against Chromium browser-review metrics; the PDF key-figure layout
+probe checks the ten figure caption pages for safe margins and page-raster
+health; the DOCX key-figure layout probe
 checks the ten LibreOffice-converted DOCX figure title pages for safe margins
 and page-raster health. None replaces visual review in
 rendered HTML, EPUB, DOCX, PDF, e-reader, or audio companion treatment. Before
@@ -223,7 +254,9 @@ Open residuals:
   catches missing, blank, low-ink, or visually collapsed fallback outputs;
   manual aesthetic judgment, line-weight review, rendered-format inspection,
   and final visual approval remain open.
-- EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
+- EPUB: automated EPUB XHTML key-figure browser-review metrics now pass for all
+  ten figures; inspect actual e-reader behavior, image sizing, and fallback
+  text in a real device/app path.
 - DOCX: automated LibreOffice-converted key-figure title-page layout now passes
   for all ten figures; inspect Word/LibreOffice GUI/Google Docs page breaks,
   image anchoring, and caption flow.

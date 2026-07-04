@@ -21,6 +21,7 @@ CURATED_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_for
 KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 KEY_FIGURE_GEOMETRY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_geometry_manifest.json"
 KEY_FIGURE_RASTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_raster_manifest.json"
+KEY_FIGURE_EPUB_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_epub_layout_manifest.json"
 KEY_FIGURE_PDF_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 KEY_FIGURE_DOCX_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
@@ -62,6 +63,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_accessibility_navigation.py",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
+    "python3 scripts/validate_reader_key_figure_epub_layout.py",
     "python3 scripts/validate_reader_key_figure_pdf_layout.py",
     "python3 scripts/validate_reader_key_figure_docx_layout.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
@@ -110,6 +112,7 @@ def main() -> None:
         KEY_FIGURE_FORMAT,
         KEY_FIGURE_GEOMETRY,
         KEY_FIGURE_RASTER,
+        KEY_FIGURE_EPUB_LAYOUT,
         KEY_FIGURE_PDF_LAYOUT,
         KEY_FIGURE_DOCX_LAYOUT,
         READER_MANIFEST,
@@ -128,6 +131,7 @@ def main() -> None:
     key_figures = load_json(KEY_FIGURE_FORMAT)
     key_figure_geometry = load_json(KEY_FIGURE_GEOMETRY)
     key_figure_raster = load_json(KEY_FIGURE_RASTER)
+    key_figure_epub_layout = load_json(KEY_FIGURE_EPUB_LAYOUT)
     key_figure_pdf_layout = load_json(KEY_FIGURE_PDF_LAYOUT)
     key_figure_docx_layout = load_json(KEY_FIGURE_DOCX_LAYOUT)
     reader_manifest = load_json(READER_MANIFEST)
@@ -145,6 +149,8 @@ def main() -> None:
         fail([f"{rel(KEY_FIGURE_GEOMETRY)} must contain a JSON object."])
     if not isinstance(key_figure_raster, dict):
         fail([f"{rel(KEY_FIGURE_RASTER)} must contain a JSON object."])
+    if not isinstance(key_figure_epub_layout, dict):
+        fail([f"{rel(KEY_FIGURE_EPUB_LAYOUT)} must contain a JSON object."])
     if not isinstance(key_figure_pdf_layout, dict):
         fail([f"{rel(KEY_FIGURE_PDF_LAYOUT)} must contain a JSON object."])
     if not isinstance(key_figure_docx_layout, dict):
@@ -236,6 +242,7 @@ def main() -> None:
     audio_reading_flow = audio_probe.get("audio_script_reading_flow_review", {})
     geometry_summary = key_figure_geometry.get("summary", {})
     raster_summary = key_figure_raster.get("summary", {})
+    epub_layout_summary = key_figure_epub_layout.get("summary", {})
     pdf_layout_summary = key_figure_pdf_layout.get("summary", {})
     docx_layout_summary = key_figure_docx_layout.get("summary", {})
     visual_palette = visual_identity.get("palette_summary", {})
@@ -359,6 +366,32 @@ def main() -> None:
         if not isinstance(observed, (int, float)) or observed < minimum:
             errors.append(f"key_figure_raster_manifest summary.{key} must be at least {minimum}; found {observed!r}.")
 
+    if key_figure_epub_layout.get("status") != "passed_local_epub_key_figure_xhtml_layout_probe":
+        errors.append("key_figure_epub_layout_manifest status must remain passed_local_epub_key_figure_xhtml_layout_probe.")
+    expected_epub_layout_metrics = {
+        "figure_count": 10,
+        "unique_xhtml_entries": 10,
+        "viewport_count": 2,
+        "page_view_pairs": 20,
+        "failed_page_view_pairs": 0,
+        "maximum_horizontal_overflow_px": 10,
+        "minimum_image_count": 1,
+        "image_failure_count": 0,
+        "figure_boundary_count": 10,
+        "release_boundary_count": 10,
+    }
+    for key, expected in expected_epub_layout_metrics.items():
+        observed = epub_layout_summary.get(key) if isinstance(epub_layout_summary, dict) else None
+        if observed != expected:
+            errors.append(f"key_figure_epub_layout_manifest summary.{key} must be {expected!r}; found {observed!r}.")
+    for key, minimum in {
+        "minimum_body_text_chars": 1_200,
+        "minimum_alt_text_words": 12,
+    }.items():
+        observed = epub_layout_summary.get(key) if isinstance(epub_layout_summary, dict) else None
+        if not isinstance(observed, (int, float)) or observed < minimum:
+            errors.append(f"key_figure_epub_layout_manifest summary.{key} must be at least {minimum}; found {observed!r}.")
+
     if key_figure_pdf_layout.get("status") != "passed_local_pdf_key_figure_layout_probe":
         errors.append("key_figure_pdf_layout_manifest status must remain passed_local_pdf_key_figure_layout_probe.")
     expected_pdf_layout_metrics = {
@@ -446,6 +479,22 @@ def main() -> None:
         "key_figure_raster_min_opaque_percent": raster_summary.get("minimum_opaque_pixel_percent"),
         "key_figure_raster_min_luminance_std": raster_summary.get("minimum_luminance_std"),
         "key_figure_raster_min_quantized_colors": raster_summary.get("minimum_quantized_color_count"),
+        "key_figure_epub_layout_manifest": "editions/reader_manuscript/v1_0/key_figure_epub_layout_manifest.json",
+        "key_figure_epub_layout_xhtml_entries": epub_layout_summary.get("unique_xhtml_entries")
+        if isinstance(epub_layout_summary, dict)
+        else None,
+        "key_figure_epub_layout_page_view_pairs": epub_layout_summary.get("page_view_pairs")
+        if isinstance(epub_layout_summary, dict)
+        else None,
+        "key_figure_epub_layout_failed_pairs": epub_layout_summary.get("failed_page_view_pairs")
+        if isinstance(epub_layout_summary, dict)
+        else None,
+        "key_figure_epub_layout_max_overflow": epub_layout_summary.get("maximum_horizontal_overflow_px")
+        if isinstance(epub_layout_summary, dict)
+        else None,
+        "key_figure_epub_layout_image_failures": epub_layout_summary.get("image_failure_count")
+        if isinstance(epub_layout_summary, dict)
+        else None,
         "key_figure_pdf_layout_manifest": "editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json",
         "key_figure_pdf_layout_caption_pages": pdf_layout_summary.get("unique_caption_pages")
         if isinstance(pdf_layout_summary, dict)
@@ -506,6 +555,7 @@ def main() -> None:
         "source-geometry",
         "source-level visual identity",
         "source-level accessibility/navigation",
+        "epub key-figure layout",
         "pdf key-figure layout",
         "docx key-figure layout",
         "do not approve epub",
@@ -523,6 +573,9 @@ def main() -> None:
         "104 browser page-view pairs",
         "0 browser failures",
         "10 matched key-figure SVG titles",
+        "10 key-figure XHTML entries",
+        "20 key-figure page-view pairs",
+        "0 key-figure browser failures",
     ):
         if fragment and fragment not in epub_note:
             errors.append(f"curated_reader_epub notes missing repaired-audit fragment: {fragment}")
@@ -592,6 +645,9 @@ def main() -> None:
             "automated PNG raster review",
             "10 generated raster fallbacks",
             "27.64 minimum luminance standard deviation",
+            "EPUB key-figure layout review",
+            "10 key-figure XHTML entries",
+            "20 key-figure page-view pairs",
             "PDF key-figure layout review",
             "10 key-figure caption pages",
             "165.878 pt minimum caption margin",
@@ -611,6 +667,7 @@ def main() -> None:
             "source-level visual identity review",
             "source-level accessibility/navigation review",
             "automated PNG raster review",
+            "EPUB key-figure layout review",
             "PDF key-figure layout review",
             "DOCX key-figure layout review",
             "keyboard-only",
@@ -640,6 +697,9 @@ def main() -> None:
             "WCAG conformance",
             "Automated PNG raster review is recorded as preparation evidence only",
             "does not clear manual aesthetic review",
+            "EPUB key-figure layout review is recorded as preparation evidence only",
+            "does not clear dedicated e-reader device review",
+            "does not clear e-reader application approval",
             "PDF key-figure layout review is recorded as preparation evidence only",
             "does not clear manual page-by-page PDF review",
             "does not clear PDF viewer review",
