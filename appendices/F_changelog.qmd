@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-04 - Refresh curated reader format probes
+
+- Refreshed the local tracked curated-reader HTML, EPUB, DOCX, and PDF
+  structural probe after the Artifact Graphs reader prose changed.
+- Recorded the current EPUB, DOCX, and PDF artifact sizes, SHA-256 hashes,
+  browser-review digest, and 526-page PDF sample-page result while preserving
+  all reader release blockers.
+- Boundary: this is local ignored artifact inspection only; it does not approve
+  EPUB, DOCX, PDF, HTML, e-reader, audio, figure art, reader release artifacts,
+  or any claim support-state movement.
+
 ## 2026-07-04 - Strengthen Artifact Graphs record-reality objection
 
 - Updated the live and curated reader Artifact Graphs chapters to make the

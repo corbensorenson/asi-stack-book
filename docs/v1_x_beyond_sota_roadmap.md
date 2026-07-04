@@ -3546,7 +3546,7 @@ Current status:
   across 20 desktop/mobile figure page-view pairs with 0 failures, exact
   ignored-snapshot
   digest
-  `80c74ca1b73b37e1356eb68b21cf6266ea4d6936a945e4039305695ee217271c`, and
+  `690117e693b92f9d836c2d17a39ddb96747b87bb4e31f4598c705e54ec70c177`, and
   all 44 `curated_reconciliation_not_approved`,
   `format_artifact_not_reviewed`, and `reader_release_record_not_created`
   blockers preserved. This closes a render/browser-viability uncertainty for
@@ -3566,7 +3566,7 @@ Current status:
   record that the tracked curated reader manuscript rendered locally to HTML,
   EPUB, DOCX, and PDF and passed structural inspection: 49 HTML files, 44
   chapter HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, and a
-  525-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
+  526-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
   now generates ten temporary PNG fallbacks from the tracked SVG key figures
   inside the ignored build workspace and restores the source workspace after
   rendering, eliminating the previous SVG-conversion warnings. EPUB, DOCX, PDF,
@@ -3641,7 +3641,7 @@ Current status:
   `build/curated_reader_edition/format_artifacts/html/_reader_site` opened 49
   pages across desktop and mobile widths, passed 98 of 98 page-view checks,
   and has deterministic directory digest
-  `80c74ca1b73b37e1356eb68b21cf6266ea4d6936a945e4039305695ee217271c`. This
+  `690117e693b92f9d836c2d17a39ddb96747b87bb4e31f4598c705e54ec70c177`. This
   is review input for release-quality artifact work; it does not mark the
   curated reader edition, refreshed HTML, EPUB, DOCX, PDF, e-reader, or audio
   release-approved.
@@ -3924,7 +3924,7 @@ to the Proof envelope cell and the corresponding
 - Test 2: no edition release record beyond the 2026-06-29 reader HTML. The
   current curated reader manuscript now has a refreshed local HTML/EPUB/DOCX/PDF
   structural probe with 49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media
-  entries, 0 SVG conversion warnings, and a 525-page PDF sample-page render,
+  entries, 0 SVG conversion warnings, and a 526-page PDF sample-page render,
   but EPUB/DOCX/PDF remain probe-level; audio remains script-probe-level;
   visual identity review is not complete.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
