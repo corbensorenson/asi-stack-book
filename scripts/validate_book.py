@@ -963,7 +963,7 @@ def main() -> None:
     run_validator("validate_reader_key_figure_geometry.py")
     run_validator("validate_reader_visual_identity.py")
     run_validator("validate_reader_accessibility_navigation.py")
-    run_validator("validate_reader_keyboard_navigation.py")
+    run_validator("validate_reader_keyboard_navigation.py", "--tracked-only")
     run_validator("validate_reader_key_figure_raster_probe.py")
     run_validator("validate_reader_key_figure_epub_layout.py")
     run_validator("validate_reader_key_figure_pdf_layout.py")

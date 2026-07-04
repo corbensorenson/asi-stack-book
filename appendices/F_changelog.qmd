@@ -15,6 +15,11 @@
 - Wired the review into `scripts/validate_book.py`, the release-surface status
   ledger, the blocked curated-reader release record, the release-record schema,
   the repository map, and the v1.x roadmap.
+- CI split: the default keyboard validator still opens the ignored local
+  curated-reader HTML artifact, while `validate_book.py` uses
+  `python3 scripts/validate_reader_keyboard_navigation.py --tracked-only` to
+  verify the tracked manifest and review boundary without requiring ignored
+  build output in GitHub Actions.
 - Boundary: this is automated local Chromium keyboard traversal review only.
   It is not manual keyboard-only review, not screen-reader review, not WCAG
   conformance, not e-reader review, not audiobook review, not final figure-art

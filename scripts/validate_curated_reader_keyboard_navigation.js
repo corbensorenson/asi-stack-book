@@ -51,6 +51,7 @@ function parseArgs(argv) {
     manifest: DEFAULT_MANIFEST,
     report: DEFAULT_REPORT,
     writeManifest: false,
+    trackedOnly: false,
   };
   for (let index = 2; index < argv.length; index += 1) {
     const value = argv[index];
@@ -62,6 +63,8 @@ function parseArgs(argv) {
       args.report = path.resolve(argv[++index]);
     } else if (value === "--write-manifest") {
       args.writeManifest = true;
+    } else if (value === "--tracked-only") {
+      args.trackedOnly = true;
     } else {
       throw new Error(`Unknown argument: ${value}`);
     }
@@ -577,6 +580,25 @@ function trackedComparable(manifest) {
 
 async function main() {
   const args = parseArgs(process.argv);
+  if (args.trackedOnly) {
+    if (args.writeManifest) throw new Error("--tracked-only cannot be combined with --write-manifest.");
+    if (!fs.existsSync(TRACKED_MANIFEST)) {
+      throw new Error(`${rel(TRACKED_MANIFEST)} is missing; run \`${WRITE_COMMAND}\`.`);
+    }
+    const tracked = JSON.parse(fs.readFileSync(TRACKED_MANIFEST, "utf8"));
+    const trackedErrors = validateManifest(tracked);
+    trackedErrors.push(...validateReviewDoc(tracked));
+    if (trackedErrors.length) {
+      console.error("Curated reader tracked keyboard navigation validation failed:");
+      for (const error of trackedErrors) console.error(` - ${error}`);
+      process.exit(1);
+    }
+    console.log(
+      `Curated reader tracked keyboard navigation validation passed: ` +
+        `${tracked.summary.page_view_pairs} page-view pairs, ${tracked.summary.failed_page_view_pairs} failures.`
+    );
+    return;
+  }
   if (!fs.existsSync(args.site)) throw new Error(`Curated reader HTML site not found: ${args.site}`);
   if (!fs.existsSync(args.manifest)) throw new Error(`Curated reader manifest not found: ${args.manifest}`);
 
