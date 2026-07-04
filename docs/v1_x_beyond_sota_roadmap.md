@@ -571,6 +571,12 @@ Current status for defended contribution focus:
   belief-revision-quality test case: a true demotion, refutation, or claim
   narrowing caused by failed evidence, prior art, or review. More no-promotion
   examples alone do not close the evidence-state soundness idea.
+- The novelty audit must be allowed to lose. If source-noted prior art
+  subsumes a claimed delta, the closure is not to preserve the term with
+  better rhetoric; it is to narrow the claimed contribution, change the chapter
+  role to pattern application or bridge work where appropriate, update the
+  contribution ledger confidence state, and keep the idea honest in both live
+  and reader prose.
 
 ## Idea Depth Program - Ideas To A-Plus
 
@@ -606,7 +612,8 @@ It changes prose, structure, and argument only - it promotes no support state.
    exists. The remaining risk is ledger/chapter separation - a novelty row
    that never changes the chapter can still leave readers seeing only renamed
    prior art. The next work must move ledger deltas into prose, sources, and
-   proof/evidence lanes.
+   proof/evidence lanes, or narrow the novelty claim when the ledger finds no
+   distinct delta.
 
 ### Signature-idea upgrade queue (ranked)
 
@@ -651,12 +658,16 @@ It changes prose, structure, and argument only - it promotes no support state.
    narrowing case, or a transition-system proof/evidence bridge that shows how
    failed evidence changes claim state without laundering support. Additional
    no-promotion examples are accountability, not closure.
-6. **Stable capability fields** → develop identity-under-replacement as an
-   explicit thesis (the Ship of Theseus, formalized — deliberately, given the
-   project lineage).
-7. **Bounded self-improvement** → state the corrigibility-capability
-   trade-off as a crisp, arguable claim rather than an implicit property of
-   the gates.
+6. **Stable capability fields** → first bounded closure exists through the
+   capability-replacement identity-sequence bridge; the next honest artifact is
+   live or externally reviewable replacement replay, regression-floor evidence,
+   monitor-window evidence, rollback dry-run evidence, evaluator-independence
+   review, or a stronger Theseus/Circle public fixture. Do not spend the next
+   pass only repeating the Ship-of-Theseus metaphor.
+7. **Bounded self-improvement** → finite proof coverage exists, but the
+   corrigibility-capability trade-off still needs to be stated as a crisp,
+   arguable consequence and paired with a transition-system invariant, clean
+   Theseus replay, archived public fixture, external review, or dated blocker.
 
 The A+ criterion for every signature idea: a crisp statement, an audited
 delta versus closest prior art, at least one non-obvious consequence (bound,
@@ -808,6 +819,12 @@ adds a chapter paragraph without source/proof/evidence routing, or creates a
 new audit surface when the existing chapter, outline, ledger, source note,
 fixture, transition, or blocker can carry the decision.
 
+The packet must also be willing to reduce ambition. If a closest-prior-art
+pass shows that the project has a useful synthesis but not a distinct
+contribution, the correct closure is a narrower chapter claim, lower ledger
+confidence, clearer comparator language, and a role change from signature idea
+to pattern application or bridge chapter where warranted.
+
 ### Idea-depth dispatch table
 
 Use this table as the execution surface for the Ideas/Synthesis grade. Closing
@@ -826,6 +843,17 @@ or standalone audit does not close a row.
 | Bounded self-improvement | Recursive Self-Improvement, Capability Replacement, Project Theseus | Safety-critical finite-record proof coverage exists; clean Theseus replay and live improvement trace remain open. | Pair a transition-system invariant with a clean Theseus replay or archived public fixture that shows evaluator independence, authority ceiling, rollback, monitor window, and non-claims. | More theorem count, self-improvement prose, or private/dirty project summaries. |
 | Human oversight degradation | Runtime Adapters, Human Intent, Evidence States | Finite fixture and human-factors grounding exist; deployed or externally reviewable approval-workflow evidence remains open. | Produce approval-workflow traces with reviewer-load fields, independent-evidence checks, reviewer rotation, alert-quality evidence, privacy boundary, and no-promotion decision. | Treating human approval as inherently safe, adding more approval fields, or citing automation literature without adapter evidence. |
 | Record-reality gap | Artifact Graphs, Proof-Carrying Claims, Integrated Reference Architecture, Bounded Self-Improvement | Receipt-faithfulness and epistemic-TCB fixtures exist, and the receipt repository audit now checks selected real repository receipt records at `experiments/receipt_repository_audit/results/2026-07-03-local.json` for artifact refs, tracked digest integrity, command pass status, Circle external rope receipt fingerprints, non-claims, and no support-state promotion; open-world receipt faithfulness and verifier correctness remain unproven. | Decide section-versus-chapter ownership, then add live/external attestation, randomized audit, independent verifier-quality, trust-base storage/replay, and incentive-limit evidence. | Schema-valid receipts, self-checking by the same component, unbounded attestation language, trust-base naming without roots and residuals, or another repository-only audit over the same records without stronger replay/evidence. |
+
+Nested keystone responsibilities are not extra signature-idea rows unless the
+contribution ledger is deliberately expanded and its validator updated.
+Epistemic trusted computing base work currently advances the record-reality
+gap; partitioned authority advances inter-stack/distributed governance work;
+interpretability-as-evidence advances support-state soundness; constitutional
+amendment legitimacy advances bounded self-improvement and constitutional
+alignment. Treat them as first-class book work through the ownership table
+below, but do not count them as A+ idea-depth closures unless they update the
+owner chapter, reader chapter, outline route, source/prior-art position, proof
+or evidence artifact, non-claims, and the relevant ledger state.
 
 ### Idea-depth acceptance gate
 
@@ -988,12 +1016,12 @@ Default ownership table for the next implementation pass:
 | Governance under partition | Personal Compute Hives and Runtime Adapters. | First bounded closure now exists: live and curated reader prose state grant/effect races, stale grants, revocation-delay quarantine, fresh authority receipt requirements, residual ownership, and CAP-style authority consistency limits in the hives/runtime boundary; `python3 scripts/validate_partitioned_authority_fixture.py` records the finite partitioned-authority fixture at `experiments/partitioned_authority/results/2026-07-03-local.json` with 3 valid records and 6 expected-invalid controls. It is source-noted against `ext_cap_theorem_gilbert_lynch_2002` and does not prove deployed partition tolerance, distributed consensus, availability, runtime adapter enforcement, revocation propagation, or support-state movement. | Move from finite records to a live or externally reviewable grant/revocation propagation trace, partition/reconciliation replay, independent authority-service review, or dated blocker; do not redo the same finite fixture without stronger partition evidence. |
 | Constitutional amendment legitimacy | Constitutional Alignment and Recursive Self-Improvement. | Define who may amend the constitution, what makes amendment legitimate rather than merely gated, and how amendment residuals are recorded. | Amendment workflow fixture, authority-ceiling proof route, external governance comparator notes, or dated blocker. |
 
-The four section-level rows above are first-class book work, not optional
-footnotes, but they should close inside the named owner chapters unless a
-future artifact proves that a standalone chapter would reduce duplication or
-clarify a distinct boundary. A pass over any of them must update live prose,
-curated reader prose, outline routing, source/proof/evidence routing, and
-non-claims together; a new roadmap note alone is not movement.
+The section-level rows above are first-class book work, not optional footnotes,
+but they should close inside the named owner chapters unless a future artifact
+proves that a standalone chapter would reduce duplication or clarify a
+distinct boundary. A pass over any of them must update live prose, curated
+reader prose, outline routing, source/proof/evidence routing, and non-claims
+together; a new roadmap note alone is not movement.
 
 ### Contribution ledger
 
@@ -1005,7 +1033,9 @@ idea and coined term — claimed contribution, closest prior art
 (source-noted), the delta, non-obvious consequence, strongest objection,
 confidence, and next artifact. The ledger is linked from the sixty-second
 trust surface. Novelty claims without a ledger row do not belong in reader
-prose.
+prose. Ledger rows are not success badges: they may record a narrowing,
+demotion, or "useful synthesis but not distinct contribution" finding when
+closest prior art is stronger than the current ASI Stack delta.
 
 ## Milestone Plan
 
