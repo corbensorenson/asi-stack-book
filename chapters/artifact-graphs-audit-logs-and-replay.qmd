@@ -200,34 +200,52 @@ The epistemic trusted computing base is the companion problem: even an honest re
 
 ## Strongest Objection
 
-The strongest objection to the record-reality rule is not that attestations
-can be malformed. Malformed attestations are easy to reject. The harder
-objection is that a capable system may produce receipts, logs, proof summaries,
-traces, and verifier
-summaries that all pass the visible gates while the internal causal process
-does not correspond to the recorded story. The graph can check that a file
-exists, that a digest matches, that a command passed, that a verifier route was
-named, and that a trap case was not ignored. It cannot, by paperwork shape
-alone, prove that every hidden dependency, human interpretation, external
-service, or model-side causal step was faithfully captured.
+Record-reality is the artifact-graph version of the book's hardest evidence
+problem: a record can be valid while the world it points at is not what the
+record says. Malformed attestations are easy to reject. The serious objection
+is a strategic or merely overconfident system that produces receipts, logs,
+proof summaries, replay traces, and verifier summaries that all pass the
+visible gates while the causal process remains outside the recorded story.
 
-The architecture's answer is therefore deliberately weaker than open-world
-truth.
-The graph should make attestation failure expensive to hide, make verifier
-trust explicit, and make unsupported jumps visible before they affect claims.
-They should not pretend to eliminate adversarial misrepresentation. The
-weakening condition is clear: when the observer, verifier, producer, or
-approval path collapses into one untrusted component, the record may still be
-stored but should lose evidence authority until an independent route, trap
-check, replay packet, or external review restores a bounded trust path.
+The current graph can ask narrow reality questions. Does the file exist? Does
+the digest still match? Did the command replay? Was the observer independent
+of the producer? Did a trap receipt force rejection instead of being waved
+through? Did the verifier route name its trust root, delegation limit,
+recursion stop, and outside-TCB residual? Those questions are not enough to
+prove open-world truth, but they change what a receipt is allowed to do. A
+receipt that cannot answer them can still be stored; it should not move a
+claim, qualify a release, bless a benchmark, or teach a future agent as if it
+were evidence-ready.
 
-That limit is part of the architecture, not a caveat after the fact.
-Proof-carrying code, debate-style review, LLM-as-judge evaluation, extreme-risk
-evaluation, and zero-trust access control each expose one side of the same
-pressure: records and verifiers are useful only inside a named trust model. The
-graph imports that pressure into work products. It treats receipt faithfulness
-as an obligation to preserve roots, routes, residuals, and refusal states, not
-as a promise that any finite ledger can force reality to match its paperwork.
+The repository now carries four bounded answers to that objection. The
+receipt-faithfulness fixture rejects shape-valid but reality-false records,
+ignored trap receipts, missing independent cross-checks, same-component
+self-check laundering, unbounded attestation, and promotion from receipt
+shape. The repository receipt audit checks selected current receipt surfaces
+against artifact references, tracked digests, command status, external
+fingerprints, and non-claim boundaries. The deterministic challenge samples
+that audit and asks particular files and a Circle fingerprint to answer. The
+live artifact attestation probe then makes one produced artifact answer through
+filesystem bytes, git object bytes, and command replay.
+
+That chain is a showpiece for the argument, not a victory lap. It demonstrates
+a bounded route from record shape toward record reality inside this repository.
+It does not prove deployed attestation behavior, verifier correctness,
+complete provenance, external-project truth, model quality, audit-service
+correctness, or open-world receipt faithfulness. The epistemic trusted
+computing base fixture adds the companion limit: a verifier is only useful
+inside a named trust path, and trust does not propagate indefinitely just
+because downstream records cite the verifier.
+
+The weakening condition is therefore explicit. If the observer, verifier,
+producer, or approval path collapses into one untrusted component, or if a
+hidden dependency cannot be replayed, challenged, independently observed, or
+residualized, the artifact graph may preserve the record but must strip it of
+evidence authority. The next stronger artifact would be deployed or externally
+reviewable attestation and audit behavior, randomized challenges beyond one
+selected artifact, verifier-quality review, and trust-base storage/replay
+evidence. Until then, record-reality remains a disciplined boundary, not a
+claim that the stack can force reality to match its paperwork.
 
 ## Minimum Viable Implementation
 

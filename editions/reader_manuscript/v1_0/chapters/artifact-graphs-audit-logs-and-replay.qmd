@@ -318,17 +318,34 @@ outside the receipt. It may write the right fields, preserve the right-looking
 logs, run a verifier that shares its assumptions, and still leave the important
 causal step unrecorded.
 
-That objection is real. Artifact graphs do not make receipts magically true.
-They make false or overconfident receipts harder to promote. The important
-shift is authority: a record that lacks an independent check, a named trust
-root, a replay path, a trap result, or an honest residual can still be stored,
-but it should not become strong evidence for a claim.
+Artifact graphs do not make receipts magically true. They change the authority
+of the receipt. A record that lacks an independent check, a named trust root, a
+replay path, a trap result, or an honest residual can still be stored, but it
+should not become strong evidence for a claim.
+
+The current project gives a bounded example of that rule. The receipt fixture
+rejects paperwork that looks valid but fails reality checks. The repository
+audit checks selected receipts against actual files, digests, commands, and
+external fingerprints. The deterministic challenge makes sampled records answer
+specific digest and fingerprint questions. The live attestation probe takes one
+current produced artifact and checks it through filesystem bytes, git object
+bytes, and command replay. None of that proves deployed attestation. It shows
+what the book means by refusing to let a receipt become evidence merely because
+it has the right shape.
 
 This is the difference between bookkeeping and governance. Bookkeeping says
 the paperwork exists. Governance asks what the paperwork is allowed to do. The
 artifact graph answers: store the record, show its limits, preserve the
 residual, and refuse support movement until the observation route is strong
 enough for the claim being made.
+
+The weakening condition is just as important as the answer. If producer,
+observer, verifier, and approver collapse into the same untrusted path, or if
+the important dependency cannot be replayed, challenged, independently
+observed, or honestly residualized, the artifact graph should keep the record
+but remove its evidence authority. Stronger claims need stronger public or
+external attestation, randomized audit, verifier-quality review, and trust-base
+evidence.
 
 ## Interfaces
 

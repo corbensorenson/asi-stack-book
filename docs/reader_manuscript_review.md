@@ -23,7 +23,7 @@ Generated workspace:
 - 44 raw core-claim markers removed
 - 39 repeated support-boilerplate passages humanized
 - 61 reader scaffold terms humanized
-- 71 active reader-overlay operations applied; 2 retired semantic-representation
+- 72 active reader-overlay operations applied; 2 retired semantic-representation
   operations skipped after the fold
 
 Generated review files inspected:
@@ -91,7 +91,7 @@ The current generated reader source now has a deterministic heuristic audit at `
 python3 scripts/audit_reader_continuity.py --write
 ```
 
-The audit currently measures 44 reader chapters, 49 generated files, 117,404 reader words, 71 active and applied reader-overlay operations, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority and 0 medium-priority heuristic review chapters; the remaining queue is low-priority continuity review, not release approval.
+The audit currently measures 44 reader chapters, 49 generated files, 117,388 reader words, 72 active and applied reader-overlay operations, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority and 0 medium-priority heuristic review chapters; the remaining queue is low-priority continuity review, not release approval.
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 
@@ -103,6 +103,7 @@ The current generated continuity audit has no high-priority or medium-priority h
 - `circle-calculus-and-proof-carrying-ai-contracts`: no additional overlay now; the dense terms preserve the theorem-linked receipt versus model-quality boundary, and future reader release work should consider companion-note or glossary treatment.
 - `artifact-steward-agents-and-living-project-governance`: retain current reader chapter; the long governance chapter carries central stewardship, treasury, worker-federation, contribution-ledger, event-taint, and sunset concepts. Future curated reader work may compress the implementation ladder or route parts to companion material.
 - `compact-generative-systems-and-residual-honesty`: handled by a 2026-07-04 reader-only overlay tightening pass that reduced repeated receipt, record, and residual terminology while keeping exactness, fallback, consumer-policy, Lean/GVR, non-claim, and support-state boundaries visible.
+- `artifact-graphs-audit-logs-and-replay`: handled by a 2026-07-04 reader-only overlay for the record-reality strongest-objection section, preserving independent observation, trap checks, challenge/replay routes, trust-base limits, remaining uncertainty, and no-promotion boundaries while keeping the generated reader queue at 0 high and 0 medium rows.
 
 This manual pass does not make the reader manuscript release-reviewed. It only records that the medium-priority rows already reviewed are not immediate blockers for the generated reader path.
 

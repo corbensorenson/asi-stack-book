@@ -9,8 +9,8 @@ This note records manual decisions made after reading medium-priority rows from 
 ## Source State
 
 - Generated reader source: `build/reader_edition/`
-- Reader overlay set: 71 active and 71 applied operations
-- Reader continuity audit: 44 chapters, 117,404 reader words, 0 high-priority heuristic rows, 0 medium-priority heuristic rows, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
+- Reader overlay set: 72 active and 72 applied operations
+- Reader continuity audit: 44 chapters, 117,388 reader words, 0 high-priority heuristic rows, 0 medium-priority heuristic rows, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
 - Live source of truth: Quarto chapters plus `book_structure.json`, `docs/book_outline.md`, Appendix C, source appendices, proof/test records, implementation horizons, and release records
 
 ## Decision Rules
@@ -28,10 +28,11 @@ This note records manual decisions made after reading medium-priority rows from 
 | `circle-calculus-and-proof-carrying-ai-contracts` | Dense technical terms | No additional overlay now; companion-note/glossary candidate for future reader release | The chapter is inherently about theorem-linked receipts, resolver status, replay, fingerprints, consumer gates, and workload-blocked promotion. Existing overlays convert the receipt lifecycle and mature transport endpoint into prose. Additional deletion would weaken the structural-proof versus model-quality boundary. |
 | `artifact-steward-agents-and-living-project-governance` | Lower-density long chapter | Retain current reader chapter; companion-note candidate for implementation ladder and project-object summary in future ebook/audio treatment | The chapter remains long because it carries governance, treasury, worker federation, contribution ledgers, event taint, and sunset policy. Those are central to the chapter rather than removable scaffolding. The current reader overlays already convert the table-like autonomy, treasury, project-object, and mature endpoint material into prose. A later curated reader manuscript may compress examples and move the implementation ladder to companion material, but doing so now would be broader than a clean overlay decision. |
 | `compact-generative-systems-and-residual-honesty` | Former length/density row after the Semantic Representation fold | Reader-only overlay tightened; now low-priority in the generated audit | The compact chapter remains long enough to carry residual honesty and semantic leasing, but the reader overlay now reduces repeated receipt, record, and residual terminology while preserving exactness, fallback, consumer policy, Lean/GVR, non-claim, and support-state boundaries. |
+| `artifact-graphs-audit-logs-and-replay` | Former record-reality owner-section density row after the showpiece pass | Reader-only overlay added; now low-priority in the generated audit | The AI/research chapter keeps the precise record-reality and no-deployed-faithfulness argument. Human view and generated reader editions receive calmer prose for the strongest-objection section while preserving independent observation, trap checks, challenge/replay routes, trust-base limits, remaining uncertainty, and no-promotion boundaries. |
 
 ## Outcome
 
-The current generated continuity audit now has 0 high-priority and 0 medium-priority heuristic rows. Earlier medium rows remain classified above because they explain why dense proof/governance language was retained, and the Compact chapter row records the 2026-07-04 overlay tightening that moved the last active medium-priority row out of the queue.
+The current generated continuity audit now has 0 high-priority and 0 medium-priority heuristic rows. Earlier medium rows remain classified above because they explain why dense proof/governance language was retained; the Compact and Artifact Graphs rows record the 2026-07-04 overlay tightening that moved active medium-priority rows out of the queue.
 
 The remaining Phase 2 work is release-quality format review, curated reader-manuscript packaging, and future manual editorial review of low-priority rows that are dense, long, or central to later release artifacts.
 

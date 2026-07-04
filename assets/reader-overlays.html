@@ -4,7 +4,7 @@
   "profile": "reader_release",
   "manifest_path": "editions/reader_overlays/v1_0/manifest.json",
   "manifest_id": "v1_0_reader_overlay",
-  "operation_count": 71,
+  "operation_count": 72,
   "operations": [
     {
       "id": "v1_0.artifact_graphs.minimum_viable_implementation_reader_replace",
@@ -17,6 +17,18 @@
       },
       "content": "The smallest useful artifact graph is not a full provenance platform. It is one structured record for one produced artifact. That record names the parent job, source references, context references, context transaction, semantic certificate, tool path, claim and test links, audit events, replay declaration, replay grade, environment assumptions, residuals, evidence gate, and non-claims.\n\nThe current `artifact_graph_record` schema and fixture validate that this record has the fields a reviewer needs. They do not prove the artifact is true. They make the artifact inspectable enough for later evidence review, routing, replay, and memory reuse.\n\n`AsiStackProofs.ArtifactGraph` models the same boundary with finite predicates. It checks that modeled artifact admission rejects missing parent, source, context transaction, semantic certificate, tool, claim, test, audit, replay, evidence, stale-certificate, promotion, and non-claim fields. It also models replay-packet cases where parent jobs mismatch, byte-exact replay lacks an observed artifact, a stale certificate blocks admission, support review lacks a replay-validated transaction, or partial replay tries to promote too far.\n\n`python3 scripts/validate_artifact_graph_replay.py` adds a synthetic cross-record replay packet check across artifact records, typed jobs, context transactions, semantic certificates, source refs, replay grade, audit reconstruction, stale-certificate status, and promotion boundaries. This is record discipline over fixtures. It is not a deployed replay engine, audit reconstruction service, provenance completeness checker, benchmark result, or support-state promotion.\n\nThe next useful artifact is a tiny replay packet that demonstrates the difference between an artifact being stored and an artifact being evidence-ready: one produced artifact, one parent job, one source/context set, one context transaction, one semantic certificate, one tool path, one replay declaration, one residual declaration, one evidence gate, and one claim/test link.",
       "rationale": "Replace the dense proof-and-harness inventory with reader prose while preserving the canonical AI/research evidence boundaries."
+    },
+    {
+      "id": "v1_0.artifact_graphs.strongest_objection_reader_replace",
+      "target_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Strongest Objection",
+        "aliases": []
+      },
+      "content": "The hardest case is a system that produces convincing paperwork while the important event remains outside the story. The file may exist. The digest may match. A command may pass. A verifier may give a fluent answer. None of that is enough if the same path created the work, observed it, judged it, and approved it.\n\nThe answer is deliberately bounded. The graph should ask whether the work product is still present, whether the bytes match an independent view, whether a replay or challenge can be answered, whether a trap case was rejected, where verifier trust bottoms out, and what uncertainty remains. A package that cannot answer those questions may still be useful history, but it should not move a claim, approve a release, bless a measurement, or teach a future agent as if it were evidence-ready.\n\nThe current project shows this at small scale. One lane rejects paperwork that looks valid but fails reality checks. Another checks selected project claims against actual files, digests, commands, and external fingerprints. A deterministic challenge samples those checks. A live local probe then makes one produced file answer through filesystem bytes, git object bytes, and command replay. Those are useful refusals, not deployed attestation.\n\nThe weakening condition stays visible. If producer, observer, verifier, and approver collapse into one untrusted path, or if the crucial dependency cannot be replayed, challenged, independently observed, or named as remaining uncertainty, the graph can keep the material but should remove its evidence power. Stronger claims need public or external attestation, randomized audit, verifier-quality review, and trust-base evidence.",
+      "rationale": "Make the record-reality owner section readable in Human view and generated reader editions while preserving the canonical AI/research precision and no-deployed-faithfulness boundary."
     },
     {
       "id": "v1_0.artifact_stewards.autonomy_treasury_reader_replace",
