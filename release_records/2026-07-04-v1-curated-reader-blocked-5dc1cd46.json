@@ -36,7 +36,7 @@
       "status": "rendered",
       "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py; python3 scripts/audit_curated_reader_pdf_layout.py",
       "path_or_uri": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-      "notes": "Rendered and structurally inspected local PDF review artifact: 5,892,357 bytes, SHA-256 7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d, 504 pages, title The ASI Stack, author Corben Sorenson, unencrypted letter pages, 50 Chrome-screenshot Mermaid fallbacks, and an all-page text/bounding-box probe with 169,766 word boxes and 0 out-of-bounds word boxes. The all-page raster probe records 504 rendered pages, 0 blank pages, 0 low-ink pages, 0 near-edge pages, and 10 matched key-figure captions. The extracted-text reading-flow review records 504 nonempty text pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0 replacement characters. Blocked: this is not manual PDF page-by-page reading-flow review, not PDF viewer approval, and the PDF is not release-approved."
+      "notes": "Rendered and structurally inspected local PDF review artifact: 5,892,357 bytes, SHA-256 7c120d9e8ef4b595e46d52434c80d7ec72135ef11472e908133db76ed606317d, 504 pages, title The ASI Stack, author Corben Sorenson, unencrypted letter pages, 50 Chrome-screenshot Mermaid fallbacks, and an all-page text/bounding-box probe with 169,766 word boxes and 0 out-of-bounds word boxes. The all-page raster probe records 504 rendered pages, 0 blank pages, 0 low-ink pages, 0 near-edge pages, and 10 matched key-figure captions. The extracted-text reading-flow review records 504 nonempty text pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0 replacement characters. The PDF key-figure layout review records 10 key-figure caption pages, 10 rastered key-figure pages, 165.878 pt minimum caption margin, 3.36% minimum page ink, 0.0% maximum near-edge ink, and 14.2 minimum luminance standard deviation. Blocked: this is not manual PDF page-by-page reading-flow review, not PDF viewer approval, and the PDF is not release-approved."
     },
     {
       "format": "ereader_application_review",
@@ -76,6 +76,7 @@
     "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_accessibility_navigation.py",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
+    "python3 scripts/validate_reader_key_figure_pdf_layout.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_release_surface_status_ledger.py"
@@ -117,6 +118,12 @@
     "key_figure_raster_min_opaque_percent": 99.954,
     "key_figure_raster_min_luminance_std": 27.64,
     "key_figure_raster_min_quantized_colors": 116,
+    "key_figure_pdf_layout_manifest": "editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json",
+    "key_figure_pdf_layout_caption_pages": 10,
+    "key_figure_pdf_layout_raster_pages": 10,
+    "key_figure_pdf_layout_min_caption_margin": 165.878,
+    "key_figure_pdf_layout_min_page_ink": 3.36,
+    "key_figure_pdf_layout_max_near_edge_ink": 0.0,
     "visual_identity_manifest": "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
     "visual_identity_colors": 54,
     "visual_identity_non_neutral_families": 5,
@@ -134,14 +141,14 @@
     "audio_reading_flow_ordered_markers": 49,
     "audio_reading_flow_narration_notes": 66,
     "audio_reading_flow_text_characters": 1066517,
-    "release_boundary": "The automated package, link, text, raster, automated PNG raster, PDF Mermaid fallback, key-figure, browser, source-geometry, source-level visual identity, source-level accessibility/navigation, and audio-script reading-flow probes support release preparation only; they do not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or the curated reader edition."
+    "release_boundary": "The automated package, link, text, raster, automated PNG raster, PDF Mermaid fallback, key-figure, PDF key-figure layout, browser, source-geometry, source-level visual identity, source-level accessibility/navigation, and audio-script reading-flow probes support release preparation only; they do not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or the curated reader edition."
   },
   "validation_status": "partial",
   "review_status": {
     "reader_continuity_review": "pass",
     "source_scaffold_removed": "pass",
     "audio_script_review": "in_progress",
-    "notes": "Curated reader chapter-level reconciliation, local HTML browser viability, repaired EPUB package/content navigation, Chromium EPUB XHTML browser review, repaired DOCX relationship integrity, LibreOffice headless DOCX conversion/raster review, PDF-safe Mermaid fallback rendering, all-page PDF text/bounding-box extraction, all-page low-resolution PDF raster smoke testing, PDF extracted-text reading-flow review, audio-script reading-flow review, key-figure package/text survival, source-geometry review, source-level visual identity review, source-level accessibility/navigation review, and automated PNG raster review are recorded. Release-quality continuity, dedicated e-reader approval or explicit release decision, Word/LibreOffice GUI/Google Docs DOCX review or explicit release decision, final figure-artifact review, manual aesthetic review, visual identity approval, keyboard-only review, screen-reader review, WCAG conformance review, and audio review remain open. This record intentionally preserves blockers rather than approving artifacts."
+    "notes": "Curated reader chapter-level reconciliation, local HTML browser viability, repaired EPUB package/content navigation, Chromium EPUB XHTML browser review, repaired DOCX relationship integrity, LibreOffice headless DOCX conversion/raster review, PDF-safe Mermaid fallback rendering, all-page PDF text/bounding-box extraction, all-page low-resolution PDF raster smoke testing, PDF extracted-text reading-flow review, PDF key-figure layout review, audio-script reading-flow review, key-figure package/text survival, source-geometry review, source-level visual identity review, source-level accessibility/navigation review, and automated PNG raster review are recorded. Release-quality continuity, dedicated e-reader approval or explicit release decision, Word/LibreOffice GUI/Google Docs DOCX review or explicit release decision, final figure-artifact review, manual aesthetic review, visual identity approval, keyboard-only review, screen-reader review, WCAG conformance review, and audio review remain open. This record intentionally preserves blockers rather than approving artifacts."
   },
   "reader_manuscript": {
     "source_dir": "editions/reader_manuscript/v1_0",
@@ -164,7 +171,7 @@
     "diagram_image_review": "in_progress",
     "bedtime_readability_review": "in_progress",
     "companion_notes_status": "in_progress",
-    "notes": "The curated reader manuscript is a concrete human-reader candidate with rendered local artifacts, PDF-safe Mermaid fallbacks, automated package/text/raster/key-figure probes, a Chromium EPUB XHTML browser review, a LibreOffice headless DOCX conversion/raster review, a PDF extracted-text reading-flow review, an audio-script reading-flow review, a source-geometry review recording 10 content-bound checks, 10 text-anchor checks, and 22.0 px minimum content edge margin, a source-level visual identity review recording 54 combined colors, 5 non-neutral color families, and 10 key figures, a source-level accessibility/navigation review recording 44 one-H1 chapters, 44 handoff sections, 10 draft figure alt texts, 10 figure boundary paragraphs, 0 live-marker leaks, and 0 raw core-claim marker leaks, and an automated PNG raster review recording 10 generated raster fallbacks, 10 standard 1200 x 760 canvases, 99.954% minimum opaque pixel coverage, 27.64 minimum luminance standard deviation, and 116 minimum quantized colors, but it is not yet a release. Dedicated EPUB e-reader approval or explicit release decision, Word/LibreOffice GUI/Google Docs DOCX review or explicit release decision, manual PDF page-by-page reading-flow or explicit release decision, manual aesthetic review, final figure-artifact review, manual visual identity approval, keyboard-only review, screen-reader review, WCAG conformance review, and audio review gates remain open."
+    "notes": "The curated reader manuscript is a concrete human-reader candidate with rendered local artifacts, PDF-safe Mermaid fallbacks, automated package/text/raster/key-figure probes, a Chromium EPUB XHTML browser review, a LibreOffice headless DOCX conversion/raster review, a PDF extracted-text reading-flow review, a PDF key-figure layout review recording 10 key-figure caption pages, 10 rastered key-figure pages, 165.878 pt minimum caption margin, 3.36% minimum page ink, 0.0% maximum near-edge ink, and 14.2 minimum luminance standard deviation, an audio-script reading-flow review, a source-geometry review recording 10 content-bound checks, 10 text-anchor checks, and 22.0 px minimum content edge margin, a source-level visual identity review recording 54 combined colors, 5 non-neutral color families, and 10 key figures, a source-level accessibility/navigation review recording 44 one-H1 chapters, 44 handoff sections, 10 draft figure alt texts, 10 figure boundary paragraphs, 0 live-marker leaks, and 0 raw core-claim marker leaks, and an automated PNG raster review recording 10 generated raster fallbacks, 10 standard 1200 x 760 canvases, 99.954% minimum opaque pixel coverage, 27.64 minimum luminance standard deviation, and 116 minimum quantized colors, but it is not yet a release. Dedicated EPUB e-reader approval or explicit release decision, Word/LibreOffice GUI/Google Docs DOCX review or explicit release decision, manual PDF page-by-page reading-flow or explicit release decision, manual aesthetic review, final figure-artifact review, manual visual identity approval, keyboard-only review, screen-reader review, WCAG conformance review, and audio review gates remain open."
   },
   "audiobook_gate": {
     "script_review": "in_progress",
@@ -188,6 +195,7 @@
     "Source-level visual identity review is recorded as preparation evidence only; it checks stylesheet tokens, source SVG accessibility metadata, palette diversity, and carried contrast metrics, but it does not clear final figure-artifact review, manual aesthetic review, e-reader review, DOCX/PDF application review, visual identity approval, or release approval.",
     "Source-level accessibility/navigation review is recorded as preparation evidence only; it checks tracked reader source headings, one-H1 chapter shape, handoff sections, draft figure alt texts, figure boundary paragraphs, live-scaffold leakage, raw claim-marker leakage, and release-blocker preservation, but it does not clear keyboard-only review, screen-reader review, WCAG conformance, e-reader review, audiobook review, or release approval.",
     "Automated PNG raster review is recorded as preparation evidence only; it checks generated fallback dimensions, nonblank luminance variation, color diversity, opaque coverage, and per-artifact digests, but it does not clear manual aesthetic review, e-reader visual review, DOCX/PDF application review, final figure-artifact review, visual identity approval, or release approval.",
+    "PDF key-figure layout review is recorded as preparation evidence only; it checks 10 key-figure caption pages, caption-page raster dimensions, 165.878 pt minimum caption margin, page ink, near-edge ink absence, and luminance variation, but it does not clear manual page-by-page PDF review, does not clear PDF viewer review, does not clear final figure-artifact review, visual identity approval, or release approval.",
     "Final figure-artifact review, visual identity approval, e-reader inspection, audio narration review, audio file generation, and audio-embedded EPUB packaging remain incomplete."
   ],
   "non_claims": [

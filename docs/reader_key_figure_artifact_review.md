@@ -32,6 +32,12 @@ Raster artifact probe:
 python3 scripts/validate_reader_key_figure_raster_probe.py --write-manifest --write-doc
 ```
 
+PDF key-figure layout probe:
+
+```bash
+python3 scripts/validate_reader_key_figure_pdf_layout.py --write-manifest --write-doc
+```
+
 This review records the current draft key-figure artifact inspection for the
 curated reader manuscript. It is not a release approval and not final figure-artifact review. It checks only that the ten draft SVG assets named in
 `editions/reader_manuscript/v1_0/manifest.json` are present, parseable,
@@ -62,6 +68,15 @@ missing, blank, low-ink, or visually collapsed raster outputs, but it is still
 not manual aesthetic review, not e-reader visual review, not DOCX/PDF
 application review, not final figure-artifact approval, and not reader release
 approval.
+
+The PDF key-figure layout probe in
+`docs/reader_key_figure_pdf_layout_review.md` inspects the current ignored
+curated-reader PDF for the ten draft key-figure caption pages. It records 10
+unique caption pages, 10 rendered caption-page rasters, 10 standard 612 x 792
+page rasters, 165.878 pt minimum caption margin, 3.36% minimum page ink, 0.0%
+maximum near-edge ink, and 14.2 minimum luminance standard deviation. This is
+still not manual page-by-page PDF review, not PDF viewer review, not final
+figure-artifact approval, and not reader release approval.
 
 The curated-reader HTML browser review in
 `docs/curated_reader_html_artifact_browser_review.md` now also checks the ten
@@ -125,6 +140,15 @@ digests. It is not manual aesthetic review, not e-reader visual review, not
 DOCX/PDF application review, not final figure-artifact approval, and not reader
 release approval.
 
+2026-07-04 PDF key-figure layout update:
+`python3 scripts/validate_reader_key_figure_pdf_layout.py` now records
+`editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json` and the
+review surface `docs/reader_key_figure_pdf_layout_review.md`. The local PDF
+probe checks exact key-figure caption pages, caption bounding-box margins,
+caption-page raster dimensions, page ink, near-edge ink absence, and luminance
+variation. It is not manual page-by-page PDF review, not PDF viewer review, not
+final figure-artifact approval, and not reader release approval.
+
 2026-07-04 audio/e-reader companion update:
 `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` now records a
 draft spoken summary, e-reader treatment note, and non-claim boundary for each
@@ -153,11 +177,12 @@ release record.
 The validator checks source-level SVG structure and manuscript placement; the
 format-package probe checks EPUB/DOCX/PDF package or text survival; the raster
 probe checks generated PNG fallback presence, dimensions, hashes, and nonblank
-visual variation. None replaces visual review in rendered HTML, EPUB, DOCX,
-PDF, e-reader, or audio companion treatment. Before a reader release can call
-the figures final, each format still needs inspection for scale, line weight,
-text legibility, caption placement, page breaks, color contrast, and
-audio-friendly text equivalents.
+visual variation; the PDF key-figure layout probe checks the ten figure caption
+pages for safe margins and page-raster health. None replaces visual review in
+rendered HTML, EPUB, DOCX, PDF, e-reader, or audio companion treatment. Before
+a reader release can call the figures final, each format still needs inspection
+for scale, line weight, text legibility, caption placement, page breaks, color
+contrast, and audio-friendly text equivalents.
 
 Open residuals:
 
@@ -170,7 +195,8 @@ Open residuals:
   and final visual approval remain open.
 - EPUB: inspect actual e-reader behavior, image sizing, and fallback text.
 - DOCX: inspect Word/LibreOffice page breaks, image anchoring, and caption flow.
-- PDF: inspect page-level layout, figure scaling, and caption placement.
+- PDF: automated key-figure caption-page layout now passes for all ten figures;
+  manual page-by-page PDF review and PDF viewer review remain open.
 - Audio: integrate and review the companion summaries inside the future
   narration script.
 - Audio: review the drafting spoken summaries in

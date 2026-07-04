@@ -21,6 +21,7 @@ CURATED_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_for
 KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 KEY_FIGURE_GEOMETRY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_geometry_manifest.json"
 KEY_FIGURE_RASTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_raster_manifest.json"
+KEY_FIGURE_PDF_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
 VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
@@ -60,6 +61,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_accessibility_navigation.py",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
+    "python3 scripts/validate_reader_key_figure_pdf_layout.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_release_surface_status_ledger.py",
@@ -106,6 +108,7 @@ def main() -> None:
         KEY_FIGURE_FORMAT,
         KEY_FIGURE_GEOMETRY,
         KEY_FIGURE_RASTER,
+        KEY_FIGURE_PDF_LAYOUT,
         READER_MANIFEST,
         AUDIO_PROBE,
         VISUAL_IDENTITY,
@@ -122,6 +125,7 @@ def main() -> None:
     key_figures = load_json(KEY_FIGURE_FORMAT)
     key_figure_geometry = load_json(KEY_FIGURE_GEOMETRY)
     key_figure_raster = load_json(KEY_FIGURE_RASTER)
+    key_figure_pdf_layout = load_json(KEY_FIGURE_PDF_LAYOUT)
     reader_manifest = load_json(READER_MANIFEST)
     audio_probe = load_json(AUDIO_PROBE)
     visual_identity = load_json(VISUAL_IDENTITY)
@@ -137,6 +141,8 @@ def main() -> None:
         fail([f"{rel(KEY_FIGURE_GEOMETRY)} must contain a JSON object."])
     if not isinstance(key_figure_raster, dict):
         fail([f"{rel(KEY_FIGURE_RASTER)} must contain a JSON object."])
+    if not isinstance(key_figure_pdf_layout, dict):
+        fail([f"{rel(KEY_FIGURE_PDF_LAYOUT)} must contain a JSON object."])
     if not isinstance(reader_manifest, dict):
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
     if not isinstance(audio_probe, dict):
@@ -224,6 +230,7 @@ def main() -> None:
     audio_reading_flow = audio_probe.get("audio_script_reading_flow_review", {})
     geometry_summary = key_figure_geometry.get("summary", {})
     raster_summary = key_figure_raster.get("summary", {})
+    pdf_layout_summary = key_figure_pdf_layout.get("summary", {})
     visual_palette = visual_identity.get("palette_summary", {})
     visual_figures = visual_identity.get("figure_source_summary", {})
     visual_contrast = visual_identity.get("contrast_summary", {})
@@ -345,6 +352,29 @@ def main() -> None:
         if not isinstance(observed, (int, float)) or observed < minimum:
             errors.append(f"key_figure_raster_manifest summary.{key} must be at least {minimum}; found {observed!r}.")
 
+    if key_figure_pdf_layout.get("status") != "passed_local_pdf_key_figure_layout_probe":
+        errors.append("key_figure_pdf_layout_manifest status must remain passed_local_pdf_key_figure_layout_probe.")
+    expected_pdf_layout_metrics = {
+        "figure_count": 10,
+        "pdf_pages": 504,
+        "unique_caption_pages": 10,
+        "raster_pages_rendered": 10,
+        "standard_page_size_count": 10,
+        "maximum_near_edge_ink_percent": 0.0,
+    }
+    for key, expected in expected_pdf_layout_metrics.items():
+        observed = pdf_layout_summary.get(key) if isinstance(pdf_layout_summary, dict) else None
+        if observed != expected:
+            errors.append(f"key_figure_pdf_layout_manifest summary.{key} must be {expected!r}; found {observed!r}.")
+    for key, minimum in {
+        "minimum_caption_margin_pt": 72.0,
+        "minimum_page_ink_percent": 3.0,
+        "minimum_luminance_std": 14.0,
+    }.items():
+        observed = pdf_layout_summary.get(key) if isinstance(pdf_layout_summary, dict) else None
+        if not isinstance(observed, (int, float)) or observed < minimum:
+            errors.append(f"key_figure_pdf_layout_manifest summary.{key} must be at least {minimum}; found {observed!r}.")
+
     closure = record.get("format_probe_closure")
     if not isinstance(closure, dict):
         errors.append("format_probe_closure must be present and must be an object.")
@@ -386,6 +416,22 @@ def main() -> None:
         "key_figure_raster_min_opaque_percent": raster_summary.get("minimum_opaque_pixel_percent"),
         "key_figure_raster_min_luminance_std": raster_summary.get("minimum_luminance_std"),
         "key_figure_raster_min_quantized_colors": raster_summary.get("minimum_quantized_color_count"),
+        "key_figure_pdf_layout_manifest": "editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json",
+        "key_figure_pdf_layout_caption_pages": pdf_layout_summary.get("unique_caption_pages")
+        if isinstance(pdf_layout_summary, dict)
+        else None,
+        "key_figure_pdf_layout_raster_pages": pdf_layout_summary.get("raster_pages_rendered")
+        if isinstance(pdf_layout_summary, dict)
+        else None,
+        "key_figure_pdf_layout_min_caption_margin": pdf_layout_summary.get("minimum_caption_margin_pt")
+        if isinstance(pdf_layout_summary, dict)
+        else None,
+        "key_figure_pdf_layout_min_page_ink": pdf_layout_summary.get("minimum_page_ink_percent")
+        if isinstance(pdf_layout_summary, dict)
+        else None,
+        "key_figure_pdf_layout_max_near_edge_ink": pdf_layout_summary.get("maximum_near_edge_ink_percent")
+        if isinstance(pdf_layout_summary, dict)
+        else None,
         "visual_identity_manifest": "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
         "visual_identity_colors": visual_palette.get("combined_hex_color_count"),
         "visual_identity_non_neutral_families": visual_palette.get("non_neutral_family_count"),
@@ -414,6 +460,7 @@ def main() -> None:
         "source-geometry",
         "source-level visual identity",
         "source-level accessibility/navigation",
+        "pdf key-figure layout",
         "do not approve epub",
         "final figure art",
         "curated reader edition",
@@ -461,6 +508,8 @@ def main() -> None:
         "3 ordered appendix headings",
         "0 replacement characters",
         "10 matched key-figure captions",
+        "10 key-figure caption pages",
+        "165.878 pt minimum caption margin",
     ):
         if fragment and fragment not in pdf_note:
             errors.append(f"curated_reader_pdf notes missing PDF audit fragment: {fragment}")
@@ -494,6 +543,9 @@ def main() -> None:
             "automated PNG raster review",
             "10 generated raster fallbacks",
             "27.64 minimum luminance standard deviation",
+            "PDF key-figure layout review",
+            "10 key-figure caption pages",
+            "165.878 pt minimum caption margin",
         ],
         errors,
     )
@@ -507,6 +559,7 @@ def main() -> None:
             "source-level visual identity review",
             "source-level accessibility/navigation review",
             "automated PNG raster review",
+            "PDF key-figure layout review",
             "keyboard-only",
             "screen-reader",
             "manual aesthetic",
@@ -534,6 +587,9 @@ def main() -> None:
             "WCAG conformance",
             "Automated PNG raster review is recorded as preparation evidence only",
             "does not clear manual aesthetic review",
+            "PDF key-figure layout review is recorded as preparation evidence only",
+            "does not clear manual page-by-page PDF review",
+            "does not clear PDF viewer review",
             "e-reader visual review",
             "visual identity approval",
         ],

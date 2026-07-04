@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-07-04 - Add reader key-figure PDF layout review
+
+- Added `scripts/validate_reader_key_figure_pdf_layout.py` to inspect the
+  ignored curated-reader PDF for the ten key-figure caption pages and track
+  exact caption-page location, caption bounding-box margin, page raster
+  dimensions, page ink, near-edge ink, luminance variation, and PDF SHA-256.
+- Recorded the result in
+  `editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json` and
+  `docs/reader_key_figure_pdf_layout_review.md`: 10 caption pages, 10 rendered
+  caption-page rasters, 10 standard 612 x 792 page rasters, 165.878 pt minimum
+  caption margin, 3.36% minimum page ink, 0.0% maximum near-edge ink, and 14.2
+  minimum luminance standard deviation.
+- Wired the PDF layout review into `scripts/validate_book.py`,
+  `scripts/validate_reader_key_figures.py`,
+  `scripts/validate_release_surface_status_ledger.py`,
+  `scripts/validate_curated_reader_blocked_release_record.py`,
+  `schemas/edition_release_record.schema.json`,
+  `docs/reader_key_figure_artifact_review.md`,
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`, and
+  `docs/v1_x_beyond_sota_roadmap.md` so reader-release status now
+  distinguishes all-page PDF probes from key-figure caption-page layout
+  preparation.
+- Boundary: this is automated local PDF key-figure caption-page layout review
+  only. It is not manual page-by-page PDF review, not PDF viewer approval, not
+  final figure-artifact approval, not reader release approval, and it does not
+  promote any support state.
+
 ## 2026-07-04 - Add reader key-figure raster artifact review
 
 - Added `scripts/validate_reader_key_figure_raster_probe.py` to inspect the

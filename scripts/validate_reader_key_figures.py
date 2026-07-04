@@ -18,6 +18,8 @@ FORMAT_PROBE_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_
 FORMAT_PROBE_DOC = ROOT / "docs" / "reader_key_figure_format_probe.md"
 RASTER_PROBE_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_raster_manifest.json"
 RASTER_PROBE_DOC = ROOT / "docs" / "reader_key_figure_raster_review.md"
+PDF_LAYOUT_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
+PDF_LAYOUT_DOC = ROOT / "docs" / "reader_key_figure_pdf_layout_review.md"
 
 EXPECTED_COUNT = 10
 BOUNDARY_PHRASES = (
@@ -172,6 +174,7 @@ def validate_review_doc(figures: list[dict[str, Any]], errors: list[str]) -> Non
         "python3 scripts/validate_reader_key_figures.py",
         "python3 scripts/validate_reader_key_figure_format_probe.py --write-manifest --write-doc",
         "python3 scripts/validate_reader_key_figure_raster_probe.py --write-manifest --write-doc",
+        "python3 scripts/validate_reader_key_figure_pdf_layout.py --write-manifest --write-doc",
         "not a release approval",
         "not final figure-artifact review",
         "EPUB",
@@ -287,6 +290,56 @@ def validate_raster_probe(figures: list[dict[str, Any]], errors: list[str]) -> N
             errors.append(f"{rel(RASTER_PROBE_DOC)} missing required phrase {phrase!r}.")
 
 
+def validate_pdf_layout_probe(figures: list[dict[str, Any]], errors: list[str]) -> None:
+    if not PDF_LAYOUT_MANIFEST.exists():
+        errors.append(f"Missing {rel(PDF_LAYOUT_MANIFEST)}.")
+        return
+    if not PDF_LAYOUT_DOC.exists():
+        errors.append(f"Missing {rel(PDF_LAYOUT_DOC)}.")
+        return
+    manifest = load_json(PDF_LAYOUT_MANIFEST)
+    if manifest.get("schema_version") != "asi_stack.reader_key_figure_pdf_layout.v0":
+        errors.append(f"{rel(PDF_LAYOUT_MANIFEST)} schema_version drifted.")
+    if manifest.get("status") != "passed_local_pdf_key_figure_layout_probe":
+        errors.append(f"{rel(PDF_LAYOUT_MANIFEST)} status must be passed_local_pdf_key_figure_layout_probe.")
+    summary = manifest.get("summary", {})
+    if not isinstance(summary, dict):
+        errors.append(f"{rel(PDF_LAYOUT_MANIFEST)} summary must be an object.")
+        summary = {}
+    expected = {
+        "figure_count": len(figures),
+        "pdf_pages": 504,
+        "unique_caption_pages": 10,
+        "raster_pages_rendered": 10,
+        "standard_page_size_count": 10,
+        "maximum_near_edge_ink_percent": 0.0,
+    }
+    for key, value in expected.items():
+        observed = summary.get(key)
+        if observed != value:
+            errors.append(f"{rel(PDF_LAYOUT_MANIFEST)} summary.{key} must be {value}, found {observed}.")
+    thresholds = {
+        "minimum_caption_margin_pt": 72.0,
+        "minimum_page_ink_percent": 3.0,
+        "minimum_luminance_std": 14.0,
+    }
+    for key, threshold in thresholds.items():
+        observed = summary.get(key)
+        if not isinstance(observed, (int, float)) or observed < threshold:
+            errors.append(f"{rel(PDF_LAYOUT_MANIFEST)} summary.{key} must be at least {threshold}.")
+    doc_text = PDF_LAYOUT_DOC.read_text(encoding="utf-8", errors="ignore")
+    for phrase in (
+        "Reader Key-Figure PDF Layout Review",
+        "| Key-figure caption pages | 10 |",
+        "| Raster pages rendered | 10 |",
+        "not manual page-by-page PDF review",
+        "not final figure-artifact approval",
+        "not reader release approval",
+    ):
+        if phrase not in doc_text:
+            errors.append(f"{rel(PDF_LAYOUT_DOC)} missing required phrase {phrase!r}.")
+
+
 def validate_companion_note(figures: list[dict[str, Any]], errors: list[str]) -> None:
     if not COMPANION_NOTE.exists():
         errors.append(f"Missing {rel(COMPANION_NOTE)}.")
@@ -365,6 +418,7 @@ def main() -> None:
     validate_review_doc(figures, errors)
     validate_format_probe(figures, errors)
     validate_raster_probe(figures, errors)
+    validate_pdf_layout_probe(figures, errors)
     validate_companion_note(figures, errors)
     if errors:
         print("Reader key-figure validation failed:")
