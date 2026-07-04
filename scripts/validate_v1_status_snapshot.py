@@ -18,6 +18,7 @@ import validate_release_surface_status_ledger as release_surface_ledger
 import validate_test_harness_status_ledger as test_harness_ledger
 import validate_non_infrastructure_measured_slice_status_ledger as non_infra_ledger
 import validate_project_theseus_static_import_status_ledger as theseus_static_ledger
+import validate_live_human_view_status_ledger as live_human_ledger
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -622,6 +623,19 @@ def main() -> None:
                 "`python3 scripts/validate_project_theseus_static_import_status_ledger.py`",
             ]
             expected_fragments = expected_fragments[:start] + current_theseus_fragments + expected_fragments[end:]
+
+    live_human_start = f"All {book_page_count} rendered book pages carry the persistent and shareable `AI view` / `Human view` switch"
+    live_human_index = next(
+        (index for index, fragment in enumerate(expected_fragments) if fragment.startswith(live_human_start)),
+        None,
+    )
+    if live_human_index is not None:
+        current_live_human_fragments = [
+            live_human_ledger.compact_status_row(),
+            "`docs/live_human_view_status_ledger.md`",
+            "`python3 scripts/validate_live_human_view_status_ledger.py`",
+        ]
+        expected_fragments = expected_fragments[:live_human_index] + current_live_human_fragments
 
     if len(chapters) != chapter_file_count:
         errors.append(f"Manifest has {len(chapters)} chapters but chapters/ has {chapter_file_count} .qmd files.")

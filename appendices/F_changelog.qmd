@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-04 - Move live Human-view detail into checked ledger
+
+- Added `docs/live_human_view_status_ledger.md` and
+  `python3 scripts/validate_live_human_view_status_ledger.py` to carry the
+  detailed live AI/Human switch, Human Reading Path, reader-overlay, and
+  post-render gate contract behind the v1.0 status snapshot.
+- Replaced the oversized `Live Human view` row in
+  `docs/v1_0_candidate_status.md` with a compact generated row that preserves
+  the current facts: 57 expected book pages, 44 manifest chapters with one
+  Human Reading Path each, 72 active reader-overlay operations across 30
+  chapters, bridge minima of 170/11/11 words, 0 targeted template hits, and
+  required post-render static/browser gates.
+- Wired the new validator into `scripts/validate_v1_status_snapshot.py` and
+  `scripts/validate_book.py`; updated the repository map and v1.x roadmap
+  status-surface sprawl rule.
+- Boundary: status-surface hygiene and validator tightening only; no reader
+  release approval, no ebook/DOCX/PDF/e-reader/audio approval, no accessibility
+  compliance claim, no final figure approval, no support-state movement, and
+  no rendered-site pass claimed by the pre-render ledger.
+
 ## 2026-07-04 - Move Theseus import detail into checked ledger
 
 - Added `docs/project_theseus_static_import_status_ledger.md` and
