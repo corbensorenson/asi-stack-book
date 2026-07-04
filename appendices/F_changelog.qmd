@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-04 - Refresh current curated reader artifact probes
+
+- Reran the curated reader key-figure HTML probe, curated reader
+  HTML/EPUB/DOCX/PDF render, structural artifact inspection, and strict
+  browser sweep against the current 44-chapter curated reader manuscript.
+- Updated the tracked curated format probe to the current local artifacts:
+  49 HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, 0 SVG
+  conversion warnings, a 528-page PDF sample-page render, EPUB SHA-256
+  `eff77fb066771316ddfd4578b2511d455b3f4e325890462d2942a44a2e0f759b`,
+  DOCX SHA-256
+  `a7b760a86852f3983ac046d77bb8b5bf6f8b0d2aed67cc8d6aa4ed430db477f4`,
+  and PDF SHA-256
+  `e003c6f9cb2f2a0f7b77f022282595cd960ced6653a1a4db10bb1b7ecb86e50c`.
+- Updated the curated reader HTML browser review digest to
+  `b75f54d27856b63e9e6bdea4f8a8d3e073c2c76ab700b3e6c1c51425d021a9eb`
+  after 98 of 98 local desktop/mobile page-view checks passed across 49
+  curated-reader pages.
+- Synchronized the v1.0 status snapshot, roadmap, and validators with the
+  refreshed current artifact fingerprints. Boundary: refresh and inspection
+  evidence only; no reader release approval, no edition release record, no
+  EPUB/DOCX/PDF/e-reader/audio approval, no final figure-artifact approval, and
+  no support-state movement.
+
 ## 2026-07-04 - Add randomized artifact attestation audit
 
 - Added `python3 scripts/validate_artifact_randomized_attestation_audit.py`,
