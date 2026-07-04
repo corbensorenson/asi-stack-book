@@ -2044,9 +2044,9 @@ Current status for the focused v1.x active evidence cycle:
   economic outcome, external review, or support-state transition.
 - `docs/resource_ci_cost_profile.md` adds a CI publication cost profile for
   the same lane: `python3 scripts/build_resource_ci_cost_profile.py --write-result`
-  records eight actual GitHub Pages workflow runs, seven completed runs, six
-  successful completed runs, one generated-scaffold failure, one repair run,
-  and publication-duration metrics, while
+  records eight actual GitHub Pages workflow runs, seven completed runs, three
+  successful completed runs, four classified GitHub Pages deploy-service
+  failures, one recovery run, and publication-duration metrics, while
   `python3 scripts/validate_resource_ci_cost_profile.py` validates the recorded
   timestamps, durations, failure classification, repair boundary, source
   commands, and non-claims offline. This is real publication-pipeline metadata,

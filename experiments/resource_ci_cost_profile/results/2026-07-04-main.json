@@ -1,0 +1,258 @@
+{
+  "branch": "main",
+  "chapter_core_support_effect": "none",
+  "command": "python3 scripts/build_resource_ci_cost_profile.py --write-result",
+  "evidence_transition_created": false,
+  "failure_events": [
+    {
+      "classification_boundary": "Artifact upload/build steps completed before the deploy action created a Pages deployment and GitHub returned a deploy-service failure; this is publication-pipeline metadata only and not a chapter evidence result.",
+      "failure_stage": "Deploy to GitHub Pages",
+      "failure_type": "github_pages_deploy_service_failure",
+      "log_command": "gh run view 28691198056 --log-failed",
+      "log_summary": {
+        "excerpt": [
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:49:45.8658912Z ##[error]Deployment failed, try again later.",
+          "deploy\tDeploy to GitHub Pages\t\ufeff2026-07-04T01:49:39.8856534Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:49:39.8866273Z ##[group]Run actions/deploy-pages@v4",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:49:39.8867052Z with:",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:49:39.8867469Z   timeout: 1800000",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:49:39.8871368Z   token: ***",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:49:39.8871797Z   error_count: 10",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:49:39.8872236Z   reporting_interval: 5000"
+        ],
+        "sha256": "674a3b684d5867d404e51bcce2a7505ac6c7e1e93bc6adb48f071997e2b8a5ac"
+      },
+      "run_id": 28691198056,
+      "title": "Guard curated reader horizon headings"
+    },
+    {
+      "classification_boundary": "Artifact upload/build steps completed before the deploy action created a Pages deployment and GitHub returned a deploy-service failure; this is publication-pipeline metadata only and not a chapter evidence result.",
+      "failure_stage": "Deploy to GitHub Pages",
+      "failure_type": "github_pages_deploy_service_failure",
+      "log_command": "gh run view 28691102172 --log-failed",
+      "log_summary": {
+        "excerpt": [
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:45:15.8798018Z ##[error]Deployment failed, try again later.",
+          "deploy\tDeploy to GitHub Pages\t\ufeff2026-07-04T01:45:10.0039510Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:45:10.0049107Z ##[group]Run actions/deploy-pages@v4",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:45:10.0049923Z with:",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:45:10.0050358Z   timeout: 1800000",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:45:10.0054591Z   token: ***",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:45:10.0055041Z   error_count: 10",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:45:10.0055509Z   reporting_interval: 5000"
+        ],
+        "sha256": "8d90b227dcf56e3eef38b21ae3c02474ab243078fb81ea4d4d87fce3023f4474"
+      },
+      "run_id": 28691102172,
+      "title": "Derive audio scripts from curated reader"
+    },
+    {
+      "classification_boundary": "Artifact upload/build steps completed before the deploy action created a Pages deployment and GitHub returned a deploy-service failure; this is publication-pipeline metadata only and not a chapter evidence result.",
+      "failure_stage": "Deploy to GitHub Pages",
+      "failure_type": "github_pages_deploy_service_failure",
+      "log_command": "gh run view 28690842480 --log-failed",
+      "log_summary": {
+        "excerpt": [
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:34:47.5689152Z ##[error]Deployment failed, try again later.",
+          "deploy\tDeploy to GitHub Pages\t\ufeff2026-07-04T01:34:41.2720315Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:34:41.2729570Z ##[group]Run actions/deploy-pages@v4",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:34:41.2730440Z with:",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:34:41.2730909Z   timeout: 1800000",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:34:41.2734910Z   token: ***",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:34:41.2735381Z   error_count: 10",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T01:34:41.2735872Z   reporting_interval: 5000"
+        ],
+        "sha256": "b7888a36d06656181e61b571afbf23b93c3936cdb71c0d7c820cdefe33ff183a"
+      },
+      "run_id": 28690842480,
+      "title": "Tighten idea-depth roadmap closure rules"
+    },
+    {
+      "classification_boundary": "Artifact upload/build steps completed before the deploy action created a Pages deployment and GitHub returned a deploy-service failure; this is publication-pipeline metadata only and not a chapter evidence result.",
+      "failure_stage": "Deploy to GitHub Pages",
+      "failure_type": "github_pages_deploy_service_failure",
+      "log_command": "gh run view 28689805295 --log-failed",
+      "log_summary": {
+        "excerpt": [
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:53:06.0685692Z ##[error]Deployment failed, try again later.",
+          "deploy\tDeploy to GitHub Pages\t\ufeff2026-07-04T00:52:59.8018320Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8027837Z ##[group]Run actions/deploy-pages@v4",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8028702Z with:",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8029161Z   timeout: 1800000",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8033184Z   token: ***",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8033661Z   error_count: 10",
+          "deploy\tDeploy to GitHub Pages\t2026-07-04T00:52:59.8034159Z   reporting_interval: 5000"
+        ],
+        "sha256": "91a372eff71c2e1c794d7872b962b5b16060e8f09c3d907f2fe57eb4f506d390"
+      },
+      "run_id": 28689805295,
+      "title": "Add key figure audio companion treatment"
+    }
+  ],
+  "metrics": {
+    "completed_duration_seconds_mean": 184.714,
+    "completed_duration_seconds_median": 195,
+    "completed_duration_seconds_total": 1293,
+    "completed_run_count": 7,
+    "failure_count": 4,
+    "in_progress_count": 1,
+    "run_count": 8,
+    "success_count": 3,
+    "success_duration_seconds_mean": 172.667
+  },
+  "non_claims": [
+    "This CI cost profile does not promote any chapter core claim above argument.",
+    "This CI cost profile does not create a support-state transition.",
+    "This CI cost profile does not prove deployed scheduler behavior, runtime budget enforcement, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement.",
+    "This CI cost profile records GitHub Actions publication-pipeline metadata only; it is not a production workload trace or external review."
+  ],
+  "profile_id": "resource-ci-cost-profile-2026-07-04-main",
+  "record_kind": "resource_ci_cost_profile",
+  "recorded_at_utc": "2026-07-04T02:30:24Z",
+  "repair_events": [
+    {
+      "failed_run_id": 28691198056,
+      "repair_boundary": "The next completed successful Pages run demonstrates that the publication gate recovered; it does not prove the underlying chapter claim.",
+      "repair_conclusion": "success",
+      "repair_duration_seconds": 131,
+      "repair_run_id": 28691825193,
+      "repair_title": "Refresh curated reader format probe after heading guard"
+    },
+    {
+      "failed_run_id": 28691102172,
+      "repair_boundary": "The next completed successful Pages run demonstrates that the publication gate recovered; it does not prove the underlying chapter claim.",
+      "repair_conclusion": "success",
+      "repair_duration_seconds": 131,
+      "repair_run_id": 28691825193,
+      "repair_title": "Refresh curated reader format probe after heading guard"
+    },
+    {
+      "failed_run_id": 28690842480,
+      "repair_boundary": "The next completed successful Pages run demonstrates that the publication gate recovered; it does not prove the underlying chapter claim.",
+      "repair_conclusion": "success",
+      "repair_duration_seconds": 131,
+      "repair_run_id": 28691825193,
+      "repair_title": "Refresh curated reader format probe after heading guard"
+    },
+    {
+      "failed_run_id": 28689805295,
+      "repair_boundary": "The next completed successful Pages run demonstrates that the publication gate recovered; it does not prove the underlying chapter claim.",
+      "repair_conclusion": "success",
+      "repair_duration_seconds": 131,
+      "repair_run_id": 28691825193,
+      "repair_title": "Refresh curated reader format probe after heading guard"
+    }
+  ],
+  "runs": [
+    {
+      "conclusion": "",
+      "created_at": "2026-07-04T02:27:08Z",
+      "duration_seconds": 188,
+      "event": "push",
+      "head_sha": "f01a695a533e3a852e412ca06724721821b03c31",
+      "run_id": 28692127270,
+      "status": "in_progress",
+      "title": "Guard curated reader prose density",
+      "updated_at": "2026-07-04T02:30:16Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28692127270",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-04T02:13:52Z",
+      "duration_seconds": 131,
+      "event": "push",
+      "head_sha": "4aa00b3b18e96bff7c6c30ffe9b3f2024800512d",
+      "run_id": 28691825193,
+      "status": "completed",
+      "title": "Refresh curated reader format probe after heading guard",
+      "updated_at": "2026-07-04T02:16:03Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28691825193",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "failure",
+      "created_at": "2026-07-04T01:46:23Z",
+      "duration_seconds": 205,
+      "event": "push",
+      "head_sha": "bebb0c35ed45f0c44d9837bacb0bf629562535e9",
+      "run_id": 28691198056,
+      "status": "completed",
+      "title": "Guard curated reader horizon headings",
+      "updated_at": "2026-07-04T01:49:48Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28691198056",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "failure",
+      "created_at": "2026-07-04T01:42:20Z",
+      "duration_seconds": 177,
+      "event": "push",
+      "head_sha": "caed4d979462aa253d74e759887e27c33927005e",
+      "run_id": 28691102172,
+      "status": "completed",
+      "title": "Derive audio scripts from curated reader",
+      "updated_at": "2026-07-04T01:45:17Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28691102172",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "failure",
+      "created_at": "2026-07-04T01:31:32Z",
+      "duration_seconds": 198,
+      "event": "push",
+      "head_sha": "1fbcb122edbe2e7411baa80a4d412ca8ffa5b4b3",
+      "run_id": 28690842480,
+      "status": "completed",
+      "title": "Tighten idea-depth roadmap closure rules",
+      "updated_at": "2026-07-04T01:34:50Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28690842480",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-04T01:26:05Z",
+      "duration_seconds": 214,
+      "event": "push",
+      "head_sha": "8a7d68f34b566e9c1bd6f8a4de6a50bfd089d705",
+      "run_id": 28690710820,
+      "status": "completed",
+      "title": "Refresh curated reader format probe",
+      "updated_at": "2026-07-04T01:29:39Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28690710820",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "success",
+      "created_at": "2026-07-04T01:12:14Z",
+      "duration_seconds": 173,
+      "event": "push",
+      "head_sha": "c61d8f4b40e3c59a7e0c3ccedf2addc670404e04",
+      "run_id": 28690375288,
+      "status": "completed",
+      "title": "Add context transaction sequence bridge",
+      "updated_at": "2026-07-04T01:15:07Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28690375288",
+      "workflow": "Publish Quarto site"
+    },
+    {
+      "conclusion": "failure",
+      "created_at": "2026-07-04T00:49:54Z",
+      "duration_seconds": 195,
+      "event": "push",
+      "head_sha": "07f53d17ff5618b40c3871a79cbb914e9a4bc9f2",
+      "run_id": 28689805295,
+      "status": "completed",
+      "title": "Add key figure audio companion treatment",
+      "updated_at": "2026-07-04T00:53:09Z",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28689805295",
+      "workflow": "Publish Quarto site"
+    }
+  ],
+  "source_commands": [
+    "gh run list --workflow Publish Quarto site --branch main --limit 8 --json databaseId,displayTitle,headSha,status,conclusion,createdAt,updatedAt,event,workflowName,url",
+    "gh run view <failed-run-id> --log-failed"
+  ],
+  "support_state_effect": "none",
+  "workflow": "Publish Quarto site"
+}

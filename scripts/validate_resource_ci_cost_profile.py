@@ -22,6 +22,11 @@ from build_resource_ci_cost_profile import (
 
 DOC = ROOT / "docs" / "resource_ci_cost_profile.md"
 SHA_RE = re.compile(r"^[0-9a-f]{64}$")
+KNOWN_FAILURE_TYPES = {
+    "generated_scaffold_drift",
+    "github_pages_deploy_service_failure",
+    "unclassified_workflow_failure",
+}
 
 
 def rel(path: Path) -> str:
@@ -170,21 +175,29 @@ def validate_failure_and_repair(value: dict[str, Any], errors: list[str]) -> Non
     if not isinstance(repairs, list) or not repairs:
         errors.append(f"{rel(RESULT)}: repair_events must be a non-empty list.")
         return
-    failure_text = text_blob(failures)
-    for phrase in (
-        "generated_scaffold_drift",
-        "check generated scaffold",
-        "git diff --exit-code",
-        "appendices/e_codex_test_specs.qmd",
-    ):
-        if phrase not in failure_text:
-            errors.append(f"{rel(RESULT)}: failure_events missing {phrase!r}.")
     for failure in failures:
         if not isinstance(failure, dict):
             continue
+        failure_type = failure.get("failure_type")
+        if failure_type not in KNOWN_FAILURE_TYPES:
+            errors.append(f"{rel(RESULT)}: failure_type must be one of {sorted(KNOWN_FAILURE_TYPES)}.")
+        if not isinstance(failure.get("failure_stage"), str) or not failure["failure_stage"].strip():
+            errors.append(f"{rel(RESULT)}: failure_stage must be a non-empty string.")
+        boundary = str(failure.get("classification_boundary", "")).lower()
+        if "publication-pipeline" not in boundary and "not a chapter evidence result" not in boundary:
+            errors.append(f"{rel(RESULT)}: failure classification must preserve a non-evidence boundary.")
         digest = str(failure.get("log_summary", {}).get("sha256", ""))
         if not SHA_RE.match(digest):
             errors.append(f"{rel(RESULT)}: failure event log summary must include a SHA-256 digest.")
+        log_text = text_blob(failure.get("log_summary", {}))
+        if failure_type == "generated_scaffold_drift":
+            for phrase in ("git diff --exit-code", "check generated scaffold"):
+                if phrase not in log_text:
+                    errors.append(f"{rel(RESULT)}: generated scaffold failure missing {phrase!r}.")
+        if failure_type == "github_pages_deploy_service_failure":
+            for phrase in ("deploy to github pages", "deployment failed"):
+                if phrase not in log_text:
+                    errors.append(f"{rel(RESULT)}: Pages deploy failure missing {phrase!r}.")
     repair_text = text_blob(repairs)
     if "repair_boundary" not in repair_text or "does not prove the underlying chapter claim" not in repair_text:
         errors.append(f"{rel(RESULT)}: repair_events must preserve the no-claim repair boundary.")
@@ -201,7 +214,7 @@ def validate_doc(errors: list[str]) -> None:
         BUILD_COMMAND,
         rel(RESULT),
         "GitHub Actions publication-pipeline metadata only",
-        "generated scaffold drift",
+        "failure classification",
         "Support-state effect | `none`",
         "does not promote any chapter core claim above `argument`",
     ]

@@ -406,7 +406,7 @@ REQUIRED = [
     "experiments/resource_live_probe/results/2026-07-01-local.json",
     "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
     "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
-    "experiments/resource_ci_cost_profile/results/2026-07-01-main.json",
+    "experiments/resource_ci_cost_profile/results/2026-07-04-main.json",
     "experiments/resource_flagship_lane/results/2026-07-01-local.json",
     "experiments/resource_governance_tax_tradeoff/results/2026-07-03-local.json",
     "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",

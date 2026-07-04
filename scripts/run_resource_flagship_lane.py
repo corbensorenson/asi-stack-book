@@ -103,7 +103,7 @@ TRACKED_ARTIFACTS = [
     "experiments/resource_live_probe/results/2026-07-01-local.json",
     "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
     "experiments/resource_load_stability_probe/results/2026-07-01-local.json",
-    "experiments/resource_ci_cost_profile/results/2026-07-01-main.json",
+    "experiments/resource_ci_cost_profile/results/2026-07-04-main.json",
     "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md",
     "lean/AsiStackProofs/ResourceEconomics.lean",
     "lean/AsiStackProofs/SimulationFidelity.lean",
@@ -213,7 +213,7 @@ def build_component_summary() -> dict[str, Any]:
     live = load_json("experiments/resource_live_probe/results/2026-07-01-local.json")
     workload = load_json("experiments/resource_workload_quality_probe/results/2026-07-01-local.json")
     load_stability = load_json("experiments/resource_load_stability_probe/results/2026-07-01-local.json")
-    ci_profile = load_json("experiments/resource_ci_cost_profile/results/2026-07-01-main.json")
+    ci_profile = load_json("experiments/resource_ci_cost_profile/results/2026-07-04-main.json")
     sublane_decisions = {
         Path(ref).stem: load_json(ref) for ref in SUBLANE_NO_PROMOTION_DECISION_REFS
     }

@@ -13,8 +13,8 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RESULT = ROOT / "experiments" / "resource_ci_cost_profile" / "results" / "2026-07-01-main.json"
-PROFILE_ID = "resource-ci-cost-profile-2026-07-01-main"
+RESULT = ROOT / "experiments" / "resource_ci_cost_profile" / "results" / "2026-07-04-main.json"
+PROFILE_ID = "resource-ci-cost-profile-2026-07-04-main"
 WORKFLOW = "Publish Quarto site"
 BRANCH = "main"
 RUN_LIMIT = 8
@@ -51,12 +51,28 @@ def sha256_text(value: str) -> str:
 
 def summarize_log(log_text: str) -> dict[str, Any]:
     lines = [line for line in log_text.splitlines() if line.strip()]
-    interesting = [
+    priority = [
         line
         for line in lines
         if any(
             fragment in line
             for fragment in (
+                "Deployment failed, try again later",
+                "Process completed with exit code 1",
+            )
+        )
+    ]
+    context = [
+        line
+        for line in lines
+        if any(
+            fragment in line
+            for fragment in (
+                "Deploy to GitHub Pages",
+                "Deployment failed, try again later",
+                "actions/deploy-pages",
+                "Fetching artifact metadata",
+                "Created deployment",
                 "git diff --exit-code",
                 "appendices/E_codex_test_specs.qmd",
                 "Resource workflow trace harness",
@@ -64,9 +80,46 @@ def summarize_log(log_text: str) -> dict[str, Any]:
             )
         )
     ]
+    excerpt: list[str] = []
+    for line in [*priority, *context]:
+        if line not in excerpt:
+            excerpt.append(line)
+        if len(excerpt) == 8:
+            break
     return {
         "sha256": sha256_text(log_text),
-        "excerpt": interesting[:8],
+        "excerpt": excerpt,
+    }
+
+
+def classify_failure(log_text: str) -> dict[str, str]:
+    lower = log_text.lower()
+    if "deployment failed, try again later" in lower or "actions/deploy-pages" in lower:
+        return {
+            "failure_stage": "Deploy to GitHub Pages",
+            "failure_type": "github_pages_deploy_service_failure",
+            "classification_boundary": (
+                "Artifact upload/build steps completed before the deploy action "
+                "created a Pages deployment and GitHub returned a deploy-service failure; "
+                "this is publication-pipeline metadata only and not a chapter evidence result."
+            ),
+        }
+    if "check generated scaffold" in lower and "git diff --exit-code" in lower:
+        return {
+            "failure_stage": "Check generated scaffold",
+            "failure_type": "generated_scaffold_drift",
+            "classification_boundary": (
+                "Generated scaffold drift means source-of-truth regeneration was "
+                "missing; it is not a chapter evidence result."
+            ),
+        }
+    return {
+        "failure_stage": "Unclassified workflow failure",
+        "failure_type": "unclassified_workflow_failure",
+        "classification_boundary": (
+            "The failure is recorded as publication-pipeline metadata only until "
+            "a maintainer classifies the stage."
+        ),
     }
 
 
@@ -134,12 +187,12 @@ def build_record() -> dict[str, Any]:
         if run["status"] == "completed" and run["conclusion"] == "failure":
             log_command = ["gh", "run", "view", str(run["run_id"]), "--log-failed"]
             log_text = run_command(log_command)
+            classification = classify_failure(log_text)
             failure_events.append(
                 {
                     "run_id": run["run_id"],
                     "title": run["title"],
-                    "failure_stage": "Check generated scaffold",
-                    "failure_type": "generated_scaffold_drift",
+                    **classification,
                     "log_command": " ".join(log_command),
                     "log_summary": summarize_log(log_text),
                 }

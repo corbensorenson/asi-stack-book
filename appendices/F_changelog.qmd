@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-04 - Classify Resource CI deploy failures
+
+- Updated `scripts/build_resource_ci_cost_profile.py` so Resource Economics CI
+  publication profiles classify GitHub Pages deploy-service failures separately
+  from generated-scaffold drift, keep the final deploy failure line in the
+  logged excerpt, and preserve the publication-metadata non-claim boundary.
+- Added `experiments/resource_ci_cost_profile/results/2026-07-04-main.json`
+  from the current GitHub Actions run window: 8 Pages runs, 7 completed runs,
+  3 successful completed runs, 4 classified deploy-service failures, 1
+  in-progress run at capture, and a 131-second recovery run.
+- Refreshed the Resource CI profile doc, no-promotion decision references,
+  active evidence-cycle/status surfaces, and the aggregate Resource flagship
+  replay record so tracked artifact hashes point at the current CI profile.
+- Boundary: this is publication-pipeline metadata and no-promotion accounting
+  only. It does not prove deployed scheduler behavior, production workload
+  behavior, economic optimization, model quality, physical feasibility,
+  support-state promotion, or chapter-core promotion.
+
 ## 2026-07-04 - Guard curated reader prose density
 
 - Revised the curated reader RankFold/NeuralFold chapter to split the dense

@@ -383,7 +383,7 @@ def main() -> None:
         "`experiments/resource_live_probe/results/2026-07-01-local.json`",
         "`experiments/resource_workload_quality_probe/results/2026-07-01-local.json`",
         "`experiments/resource_load_stability_probe/results/2026-07-01-local.json`",
-        "`experiments/resource_ci_cost_profile/results/2026-07-01-main.json`",
+        "`experiments/resource_ci_cost_profile/results/2026-07-04-main.json`",
         "`lean/AsiStackProofs/ResourceEconomics.lean`",
         "`evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json`",
         "`python3 scripts/validate_costed_route_resource_slice.py`",

@@ -27,48 +27,53 @@ classification, repair boundary, source commands, and non-claims offline.
 ## Result Record
 
 Result record:
-`experiments/resource_ci_cost_profile/results/2026-07-01-main.json`
+`experiments/resource_ci_cost_profile/results/2026-07-04-main.json`
 
 | Field | Value |
 |---|---:|
 | Runs recorded | 8 |
 | Completed runs | 7 |
-| Successful completed runs | 6 |
-| Failed completed runs | 1 |
+| Successful completed runs | 3 |
+| Failed completed runs | 4 |
 | In-progress at capture | 1 |
-| Completed duration total | 1,533 seconds |
-| Completed duration median | 213 seconds |
-| Completed duration mean | 219.0 seconds |
-| Successful-run duration mean | 251.833 seconds |
+| Completed duration total | 1,293 seconds |
+| Completed duration median | 195 seconds |
+| Completed duration mean | 184.714 seconds |
+| Successful-run duration mean | 172.667 seconds |
 | Support-state effect | `none` |
 | Chapter-core support effect | `none` |
 
 ## Failure And Repair Boundary
 
-The recorded failed run is `28521511292`, titled `Add Resource Economics
-workflow trace`. The failure stage was `Check generated scaffold`, and the
-failure type is recorded as generated scaffold drift: the workflow ran
-`python3 scripts/sync_scaffold.py` followed by `git diff --exit-code`, then
-detected generated Appendix E drift around the Resource workflow trace harness
-row.
+The recorded run window contains four classified failures. Each failed run
+reached the `Deploy to GitHub Pages` stage, found the uploaded `github-pages`
+artifact, created a Pages deployment, and then received GitHub's deploy-service
+response `Deployment failed, try again later.` The failure type is therefore
+recorded as `github_pages_deploy_service_failure`, not generated scaffold
+drift.
 
-The next completed successful run in the profile is `28522244545`, titled
-`Bridge resource workflow trace to Lean`, with a 356-second publication run.
-That repair event demonstrates publication-gate recovery for the repository
-state. It does not prove the Resource Economics chapter claim, scheduler
-quality, model quality, or economic adequacy.
+The four failed runs are `28691198056` (`Guard curated reader horizon
+headings`), `28691102172` (`Derive audio scripts from curated reader`),
+`28690842480` (`Tighten idea-depth roadmap closure rules`), and `28689805295`
+(`Add key figure audio companion treatment`). The next completed successful
+run in this profile is `28691825193`, titled `Refresh curated reader format
+probe after heading guard`, with a 131-second publication run. That recovery
+demonstrates publication-gate recovery for the repository state. It does not
+prove the Resource Economics chapter claim, scheduler quality, model quality,
+or economic adequacy.
 
 ## Resource Reading
 
 For the book project itself, the cost profile makes several pipeline resources
 visible:
 
-- Generated surfaces have to be updated through their source of truth; direct
-  edits create fast CI failures.
-- The failure was cheap in wall-clock time, but it displaced reviewer and
-  maintainer attention until the manifest source was corrected.
-- The next successful publication run carried the real recovery cost, including
-  full validation and render time.
+- Publication cost includes service-level deploy failures even when the source
+  build and artifact upload have already completed.
+- A successful later run is a recovery boundary for the publication pipeline,
+  not evidence that any architecture claim became stronger.
+- The profile distinguishes source-drift failures from deploy-service failures
+  so Resource Economics evidence is not laundered through a generic failure
+  count.
 
 ## Non-Claims
 

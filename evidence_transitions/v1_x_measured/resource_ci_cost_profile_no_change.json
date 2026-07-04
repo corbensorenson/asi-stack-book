@@ -7,7 +7,7 @@
     "docs/v1_x_active_evidence_cycle.md"
   ],
   "claim_record_refs": [
-    "experiments/resource_ci_cost_profile/results/2026-07-01-main.json",
+    "experiments/resource_ci_cost_profile/results/2026-07-04-main.json",
     "scripts/build_resource_ci_cost_profile.py",
     "scripts/validate_resource_ci_cost_profile.py"
   ],
@@ -15,7 +15,7 @@
   "new_support_state": "argument",
   "transition_effect": "no_change",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "GitHub Actions publication-pipeline metadata only: recent Pages run durations, one generated-scaffold failure, and one repair run. This is not production workload evidence, scheduler behavior, economic optimization, model quality, or physical-feasibility evidence.",
+  "scope_boundary": "GitHub Actions publication-pipeline metadata only: recent Pages run durations, classified workflow failures, and repair boundaries. This is not production workload evidence, scheduler behavior, economic optimization, model quality, or physical-feasibility evidence.",
   "evidence_roles": [
     "ci_publication_metadata",
     "failure_repair_boundary",
@@ -32,7 +32,7 @@
   ],
   "artifact_refs": [
     "docs/resource_ci_cost_profile.md",
-    "experiments/resource_ci_cost_profile/results/2026-07-01-main.json",
+    "experiments/resource_ci_cost_profile/results/2026-07-04-main.json",
     "scripts/build_resource_ci_cost_profile.py",
     "scripts/validate_resource_ci_cost_profile.py"
   ],
@@ -54,7 +54,7 @@
   ],
   "negative_evidence_refs": [
     "docs/resource_ci_cost_profile.md",
-    "experiments/resource_ci_cost_profile/results/2026-07-01-main.json"
+    "experiments/resource_ci_cost_profile/results/2026-07-04-main.json"
   ],
   "downgrade_triggers": [
     "CI cost profile validator failure",

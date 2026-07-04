@@ -130,7 +130,7 @@ def main() -> None:
         "experiments/resource_live_probe/results/2026-07-01-local.json",
         "scripts/validate_resource_live_probe.py",
         "docs/resource_ci_cost_profile.md",
-        "experiments/resource_ci_cost_profile/results/2026-07-01-main.json",
+        "experiments/resource_ci_cost_profile/results/2026-07-04-main.json",
         "scripts/validate_resource_ci_cost_profile.py",
         "docs/resource_flagship_lane_run.md",
         "experiments/resource_flagship_lane/results/2026-07-01-local.json",
