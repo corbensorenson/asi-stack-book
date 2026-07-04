@@ -836,7 +836,7 @@
       "file": "editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
       "reconciliation_status": "reconciled",
       "generated_baseline_ref": "build/reader_edition/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
-      "live_source_ref": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd@b51f5dca1",
+      "live_source_ref": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd@a46ba8aae",
       "claim_boundary_ref": "appendices/C_claim_evidence_matrix.qmd#circle-calculus-and-proof-carrying-ai-contracts.core",
       "implementation_horizon_ref": "appendices/K_implementation_horizons.qmd#circle-calculus-and-proof-carrying-ai-contracts",
       "curation_scope": [
@@ -856,11 +856,11 @@
         "substrate-curiosity",
         "proof-practice"
       ],
-      "divergence_summary": "Second curated reader reconciliation positions Circle contracts after substrate adoption: finite structural facts can travel only with theorem references, deterministic fields, fingerprints, consumer gates, replay expectations, and explicit non-claims still attached; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
+      "divergence_summary": "Second curated reader reconciliation positions Circle contracts after substrate adoption, and the 2026-07-04 follow-up aligns the reader path with the public consumer-gate Lean fixture bridge: finite structural facts can travel only with theorem references, deterministic fields, fingerprints, consumer gates, replay expectations, explicit non-claims, and no support-state movement; no claim meaning, support state, source boundary, proof/test status, implementation horizon, or release approval is changed.",
       "meaning_preservation_checks": [
         "support-state boundary preserved in reader prose",
         "source boundary preserved or reconciled back to the live chapter",
-        "proof/test status preserved without adding unrun results; the concrete Circle evidence-surface validator remains public-surface traceability for a bounded structural receipt lane only",
+        "proof/test status preserved without adding unrun results; the concrete Circle evidence-surface validator remains public-surface traceability for a bounded structural receipt lane only, and the public consumer-gate Lean fixture bridge remains a finite-record boundary proof rather than an external Circle replay or deployed-transport result",
         "implementation horizon preserved without implying current implementation",
         "release blocker status preserved until an edition release record clears it",
         "2026-07-03 Part III proof/cyclic-substrate reconciliation preserves claim meaning, support state, source boundaries, proof/test status, implementation horizons, and release blockers"
@@ -872,7 +872,7 @@
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
-      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects substrate adoption to proof transport, making theorem-linked receipts portable only with consumer gates, replay expectations, and non-claims intact before cyclic memory consumes them. Prose-pass details recorded in docs/curated_reader_circle_contracts_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects substrate adoption to proof transport, making theorem-linked receipts portable only with consumer gates, replay expectations, and non-claims intact before cyclic memory consumes them. The 2026-07-04 follow-up aligns the reader path with the public consumer-gate Lean fixture bridge while preserving that it is a finite-record boundary proof, not external Circle replay, theorem-resolution, deployed transport, or support movement. Prose-pass details recorded in docs/curated_reader_circle_contracts_prose_pass.md; not release-reviewed and not equal authority to the live AI/research chapter."
     },
     {
       "chapter_id": "claim-ledgers-and-belief-revision",

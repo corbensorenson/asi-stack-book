@@ -1,6 +1,6 @@
 # Reader Chapter Review Matrix
 
-Last updated: 2026-07-03
+Last updated: 2026-07-04
 
 This document is generated from `editions/reader_manuscript/v1_0/chapter_review_matrix.json` by `python3 scripts/sync_reader_chapter_review_matrix.py --write`.
 

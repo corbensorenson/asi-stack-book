@@ -330,8 +330,11 @@ SPECIAL_REVIEW_DEFAULTS = {
             "curated reader prose pass is recorded; the 2026-07-03 alignment "
             "surfaces the concrete Circle evidence-surface validator and exact "
             "imported receipt facts as bounded structural receipt traceability "
-            "only. Companion-note treatment and release blockers remain active, "
-            "and no Circle replay, vendored contract pack, resolver-completeness, "
+            "only. The 2026-07-04 follow-up aligns the reader path with the "
+            "public consumer-gate Lean fixture bridge as a finite-record "
+            "boundary proof, not external Circle replay or deployed transport. "
+            "Companion-note treatment and release blockers remain active, and "
+            "no Circle replay, vendored contract pack, resolver-completeness, "
             "workload-value, support-promotion, or reader-artifact claim is "
             "approved."
         ),

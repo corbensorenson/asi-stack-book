@@ -4,6 +4,8 @@ Last updated: 2026-07-03
 
 Follow-up: 2026-07-03
 
+Follow-up: 2026-07-04
+
 Chapter ID: `circle-calculus-and-proof-carrying-ai-contracts`
 
 Curated reader file: `editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd`
@@ -48,6 +50,11 @@ Allowed curation scopes used in this pass:
   `theorem_count 55`, `fields=31 missing=0 theorems=75`, seven theorem IDs,
   fingerprints, recommendation, and consumer-gate mutation controls) as
   structural receipt traceability only.
+- Added a 2026-07-04 reader alignment for
+  `lean:circle_contracts.public_consumer_gate.fixture_bridge`, preserving it as
+  a finite-record bridge over one accepted public consumer-gate fixture, four
+  rejected mutation controls, seven theorem IDs, pinned digest fields, blocked
+  support movement, no chapter-core promotion, and no deployed-transport claim.
 
 ## Meaning Preservation Checks
 
@@ -57,6 +64,7 @@ Allowed curation scopes used in this pass:
 | Support-state boundary preserved | Pass. The chapter core claim remains `argument`. |
 | Source boundary preserved | Pass. No new source IDs, facts, citations, or source-derived claims were added; the external receipt and consumer gate remain bounded structural evidence only. |
 | Proof/test status preserved | Pass. The prose says schema, fixture, Lean, and consumer-gate checks are narrow; it does not claim clean Circle replay, a vendored pack, or downstream workload evidence. |
+| Public consumer-gate Lean bridge preserved | Pass. The reader prose and companion note now name the finite-record bridge while preserving that it does not prove external Circle contracts, resolve theorem IDs from local artifacts, vendor a pack, or validate deployed transport. |
 | Concrete receipt boundary preserved | Pass. The concrete evidence-surface validator is described as public-surface traceability for a bounded structural receipt lane, not as a rerun, vendored contract pack, resolver-completeness result, workload result, or chapter-core promotion. |
 | Implementation horizon preserved | Pass. The minimum viable implementation includes existing fixtures, Lean predicates, and the Circle consumer gate; the mature endpoint remains a design destination. |
 | Companion-note routing preserved | Pass. The companion note remains drafting support, not release-reviewed evidence. |
@@ -69,6 +77,10 @@ Allowed curation scopes used in this pass:
 - This pass does not approve the curated chapter, reader release, EPUB, DOCX, PDF, HTML artifact, audio artifact, or audio-embedded EPUB.
 - This pass does not promote any claim support state.
 - This pass does not claim local Circle proof ownership, clean Circle replay, theorem-ID resolver completion, a vendored Circle contract pack, downstream model quality, runtime improvement, memory improvement, context-length improvement, safety, or ASI capability.
+- This pass does not claim that the public consumer-gate Lean bridge proves
+  external Circle contracts, resolves external theorem IDs from local artifacts,
+  vendors a public Circle pack, validates deployed proof-contract transport, or
+  changes any support state.
 - This pass does not claim that the concrete Circle evidence-surface validator
   reruns Circle from this repository, vendors the external contract pack,
   proves resolver completeness, proves downstream workload value, creates a new

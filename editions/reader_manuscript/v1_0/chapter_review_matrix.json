@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "active_review_queue",
-  "last_updated": "2026-07-03",
+  "last_updated": "2026-07-04",
   "source_of_truth": "book_structure.json",
   "generated_reader_baseline": {
     "command": "python3 scripts/build_reader_edition.py",
@@ -854,7 +854,7 @@
         "docs/reader_part_iii_iv_proof_bridge_full_review_pass.md#decisions",
         "docs/curated_reader_circle_contracts_prose_pass.md"
       ],
-      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects substrate adoption to proof transport, making theorem-linked receipts portable only with consumer gates, replay expectations, and non-claims intact before cyclic memory consumes them.",
+      "review_notes": "Full generated-reader chapter-text review plus curated reader reconciliation recorded. The 2026-07-03 pass connects substrate adoption to proof transport, making theorem-linked receipts portable only with consumer gates, replay expectations, and non-claims intact before cyclic memory consumes them. The 2026-07-04 follow-up aligns the reader path with the public consumer-gate Lean fixture bridge as a finite-record boundary proof, not external Circle replay, theorem-resolution, deployed transport, support movement, or a reader-artifact approval.",
       "release_blockers": [
         "reader_release_record_not_created",
         "format_artifact_not_reviewed"

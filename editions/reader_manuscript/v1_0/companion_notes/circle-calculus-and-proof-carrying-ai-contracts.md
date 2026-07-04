@@ -11,7 +11,8 @@ Primary reader source: `build/reader_edition/chapters/circle-calculus-and-proof-
 Evidence references: `docs/circle_external_receipt_slice.md`,
 `docs/circle_public_replay_consumer_gate.md`,
 `experiments/circle_public_replay/fixtures/valid/circle_rope_receipt.consumer.valid.json`,
-and `scripts/validate_circle_public_replay.py`.
+`scripts/validate_circle_public_replay.py`, and
+`AsiStackProofs.ProofCarryingContracts`.
 
 This note helps e-reader and audio review for the Circle proof-contract chapter.
 It does not replace the chapter prose. Meaning-critical limits must still stay
@@ -55,6 +56,12 @@ That validator checks the accepted fixture and rejects four mutation controls:
 digest mismatch, missing required theorem ID, stale contract fingerprint status,
 and unsupported transfer-claim use in the consumer gate.
 
+The local Lean bridge models the same public consumer-gate boundary as a finite
+fixture: one accepted receipt, four rejected mutation controls, seven required
+theorem IDs, pinned digest fields, blocked support movement, no chapter-core
+promotion, and no deployed-transport claim. It is a boundary proof over the ASI
+Stack record shape, not a replay of the external Circle proof stack.
+
 The allowed use is structural proof-contract receipt discussion and future
 consumer-fixture design. The blocked uses include chapter-core claim promotion,
 model-quality promotion, runtime promotion, context-length promotion,
@@ -84,6 +91,9 @@ clear.
 - This companion note does not promote any chapter core claim above `argument`.
 - This companion note does not claim local replay of external Circle proofs
   from this repository.
+- This companion note does not claim that the local Lean bridge proves the
+  external Circle contracts, resolves theorem IDs from local artifacts, vendors
+  a public Circle pack, or validates deployed proof-contract transport.
 - This companion note does not prove model quality, reasoning ability, context
   length, speed, memory scaling, deployment safety, transfer, or ASI.
 - This companion note does not make curated reader prose equal authority beside
