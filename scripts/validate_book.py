@@ -89,11 +89,13 @@ REQUIRED = [
     "scripts/validate_non_infrastructure_measured_slice_status_ledger.py",
     "scripts/validate_project_theseus_static_import_status_ledger.py",
     "scripts/validate_live_human_view_status_ledger.py",
+    "scripts/validate_compact_gvr_status_ledger.py",
     "docs/test_harness_status_ledger.md",
     "docs/release_surface_status_ledger.md",
     "docs/non_infrastructure_measured_slice_status_ledger.md",
     "docs/project_theseus_static_import_status_ledger.md",
     "docs/live_human_view_status_ledger.md",
+    "docs/compact_gvr_status_ledger.md",
     "scripts/validate_outline_consistency.py",
     "scripts/validate_implementation_horizons.py",
     "scripts/validate_proof_artifact_audit.py",
@@ -976,6 +978,7 @@ def main() -> None:
     run_validator("validate_non_infrastructure_measured_slice_status_ledger.py")
     run_validator("validate_project_theseus_static_import_status_ledger.py")
     run_validator("validate_live_human_view_status_ledger.py")
+    run_validator("validate_compact_gvr_status_ledger.py")
     run_validator("validate_outline_consistency.py")
     run_validator("validate_implementation_horizons.py")
     run_validator("validate_reader_spine.py", "--check")

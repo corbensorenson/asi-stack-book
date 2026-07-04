@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-04 - Add Compact GVR status ledger
+
+- Added `scripts/validate_compact_gvr_status_ledger.py` and generated
+  `docs/compact_gvr_status_ledger.md` so the v1.0 status snapshot can keep
+  Compact GVR synthetic-slice detail in a generated ledger instead of an
+  overlong status row.
+- Replaced the public `Compact GVR synthetic slice` status row with a compact
+  count-plus-ledger-link summary and wired the ledger validator through
+  `scripts/validate_book.py` and `scripts/validate_v1_status_snapshot.py`.
+- Boundary: this is status-surface cleanup over existing compact GVR artifacts.
+  It does not add a new compact-generation result, promote a chapter core
+  claim, approve a deployed codec, or move any support state.
+
 ## 2026-07-04 - Strengthen Artifact Graphs record-reality prose
 
 - Added a record-reality authority ladder to the live Artifact Graphs chapter:

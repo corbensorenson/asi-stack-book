@@ -19,6 +19,7 @@ import validate_test_harness_status_ledger as test_harness_ledger
 import validate_non_infrastructure_measured_slice_status_ledger as non_infra_ledger
 import validate_project_theseus_static_import_status_ledger as theseus_static_ledger
 import validate_live_human_view_status_ledger as live_human_ledger
+import validate_compact_gvr_status_ledger as compact_gvr_ledger
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -443,11 +444,14 @@ def main() -> None:
         "`python3 scripts/validate_resource_workload_quality_probe.py`",
         "`python3 scripts/validate_resource_load_stability_probe.py`",
         "`python3 scripts/validate_resource_ci_cost_profile.py`",
-        "| Compact GVR synthetic slice | A bounded Compact Generative Systems receipt slice checks five tracked public-safe compact-generation records, keeps a 368-byte literal baseline, selects a 78-byte exact repeat-generator-plus-repair receipt, rejects lossy exactness, negative-rate/no-fallback, and bounded-search-overrun controls, and checks a finite `AsiStackProofs.CompactGenerativeSystems` Lean fixture bridge",
-        "This supports only `compact-generative-systems.compact_gvr_receipt_slice`; it does not promote any chapter core claim",
+        compact_gvr_ledger.compact_status_row(),
+        "`docs/compact_gvr_status_ledger.md`",
+        "`docs/compact_gvr_slice.md`",
         "`experiments/compact_gvr_slice/input/v1_x_compact_gvr_records.json`",
         "`experiments/compact_gvr_slice/results/2026-07-01-local.json`",
         "`evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json`",
+        "`python3 scripts/validate_compact_gvr_status_ledger.py`",
+        "`python3 scripts/validate_compact_gvr_slice.py`",
         "| Imported external prototype slice | The first bounded imported external-prototype receipt slice records a clean local Circle checkout at commit `63b0f511`, a successful `lake build Circle`, a proved and passed rope certification for `CC-AI-CONTRACT-ROPE-001`, a ready digest with 31 fields, 0 missing fields, and 75 theorems, an accepted receipt requiring seven theorem IDs plus `ROPE-USE-D19-MARGIN-FRONTIER`, and a selected receipt/contract pytest batch with 145 passing tests.",
         "`experiments/circle_external_receipt_slice/results/2026-06-29-local.json`",
         "`evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json`",
@@ -596,7 +600,7 @@ def main() -> None:
         ]
         expected_fragments = expected_fragments[:start] + current_harness_fragments + expected_fragments[end:]
 
-    compact_gvr_start = "| Compact GVR synthetic slice | A bounded Compact Generative Systems receipt slice checks five tracked public-safe compact-generation records"
+    compact_gvr_start = compact_gvr_ledger.compact_status_row()
     compact_gvr_index = next(
         (index for index, fragment in enumerate(expected_fragments) if fragment.startswith(compact_gvr_start)),
         None,
