@@ -1,0 +1,119 @@
+{
+  "transition_id": "v1_x_measured.authority_revocation_trace.no_change",
+  "claim_id": "system-boundaries.authority_revocation_trace",
+  "claim_surface_refs": [
+    "docs/authority_revocation_trace.md",
+    "chapters/system-boundaries-and-authority.qmd",
+    "editions/reader_manuscript/v1_0/chapters/system-boundaries-and-authority.qmd",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/authority_revocation_trace/results/2026-07-03-local.json",
+    "experiments/authority_revocation_trace/input/artifact_manifest.json",
+    "scripts/validate_authority_revocation_trace.py",
+    "lean/AsiStackProofs/Authority.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Authority revocation propagation trace only. The trace reads already committed authority, runtime-adapter, SCIF, runtime-effect, and reference-trace artifacts and checks that over-ceiling denial, revoked authority receipt blocking, expired approval no-mutation evidence, SCIF inactive approval blocking, and blocked reference-trace authority remain visible. It does not execute a deployed authorization service, deployed revocation propagation service, runtime adapter enforcement system, approval service, sandbox, or tool wrapper.",
+  "evidence_roles": [
+    "cross_artifact_authority_revocation_trace",
+    "over_ceiling_denial_visibility",
+    "revoked_authority_receipt_blocking",
+    "expired_approval_no_mutation_evidence",
+    "scif_inactive_approval_blocking",
+    "reference_trace_authority_blocker",
+    "finite_lean_authority_trace_bridge",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The authority revocation propagation trace is useful because it connects the authority harness, runtime-adapter permission fixtures, runtime effect no-mutation controls, SCIF commit blockers, reference trace authority blockers, and finite Lean bridge into one cross-artifact denial/revocation surface. It remains repository evidence over existing artifacts, not deployed revocation behavior, so this accepted decision blocks promotion for deployed authorization enforcement, live revocation propagation, runtime adapter enforcement, approval-service quality, sandbox isolation, tool-wrapper security, model quality, benchmark performance, safety, ASI, or the System Boundaries chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable authorization-service trace",
+    "live revocation propagation trace across grant, lease, adapter, and SCIF boundaries",
+    "runtime adapter enforcement trace under revoked authority pressure",
+    "approval-service expiry and revocation behavior evidence",
+    "sandbox or tool-wrapper enforcement review",
+    "independent security review",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/authority_revocation_trace.md",
+    "experiments/authority_revocation_trace/input/artifact_manifest.json",
+    "experiments/authority_revocation_trace/results/2026-07-03-local.json",
+    "scripts/validate_authority_revocation_trace.py",
+    "lean/AsiStackProofs/Authority.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/authority_revocation_trace.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/test_harness_status_ledger.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#system-boundaries-and-authority.core",
+    "docs/book_outline.md#system-boundaries-and-authority"
+  ],
+  "verification_command": "python3 scripts/validate_authority_revocation_trace.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "over-ceiling authority request preserves denial reason and no effect receipt",
+    "revoked authority receipt is expected to deny and block promotion",
+    "expired approval is denied before mutation with unchanged pre/post state hashes",
+    "SCIF inactive approval or unapproved destination blocks commit and dispatch",
+    "reference trace preserves missing execution authority stop condition and promotion blocker",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/authority_revocation_trace.md",
+    "experiments/authority_revocation_trace/results/2026-07-03-local.json",
+    "scripts/validate_authority_revocation_trace.py"
+  ],
+  "downgrade_triggers": [
+    "authority revocation trace validator failure",
+    "over-ceiling denial record carries an effect receipt",
+    "revoked authority receipt accepted as dispatchable",
+    "expired approval mutates state",
+    "SCIF inactive approval or unapproved destination dispatches a job",
+    "reference trace loses missing-authority stop condition or promotion blocker",
+    "trace described as deployed authorization, revocation propagation, adapter enforcement, approval-service, sandbox, tool-wrapper security, benchmark, safety, or support-state evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed authority-revocation claim after deployed or externally reviewable authorization-service traces, live revocation propagation across grant, lease, adapter, and SCIF boundaries, runtime adapter enforcement under revoked authority pressure, approval-service expiry/revocation behavior, sandbox or tool-wrapper enforcement review, residual accounting, independent security review, and a separate accepted upward transition are recorded.",
+  "limitations": [
+    "repository cross-artifact trace only",
+    "no deployed authorization service",
+    "no deployed revocation propagation",
+    "no deployed runtime adapter enforcement",
+    "no approval-service quality result",
+    "no sandbox isolation result",
+    "no tool-wrapper security review",
+    "no benchmark performance result",
+    "no independent security review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent authorization, runtime-adapter, approval-service, sandbox, tool-wrapper, security, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable authorization-service trace",
+    "no live revocation propagation trace",
+    "no deployed runtime adapter enforcement trace under revoked authority pressure",
+    "no approval-service behavior evidence",
+    "no sandbox or tool-wrapper security review",
+    "no independent security review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-authority-revocation-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote authority revocation evidence above argument",
+    "does not prove deployed authorization enforcement, deployed revocation propagation, runtime adapter enforcement, approval-service quality, sandbox isolation, tool-wrapper security, model quality, benchmark performance, safety, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the System Boundaries and Authority chapter core claim"
+  ]
+}

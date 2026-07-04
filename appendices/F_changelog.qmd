@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-04 - Record authority revocation no-promotion decision
+
+- Added accepted no-promotion decision
+  `evidence_transitions/v1_x_measured/authority_revocation_trace_no_change.json`
+  for `system-boundaries.authority_revocation_trace`.
+- Synchronized `docs/non_core_evidence_ledger.md`, README, the landing page,
+  the v1.0 candidate status snapshot, and `docs/v1_x_beyond_sota_roadmap.md`
+  so the cross-artifact authority revocation trace is visible as a
+  `blocks_promotion` decision and the no-promotion side-lane count moves from
+  27 to 28.
+- Boundary: the decision blocks overclaims from the repository trace only. It
+  does not create an upward support-state transition, prove deployed
+  authorization enforcement, prove live revocation propagation, prove runtime
+  adapter enforcement, prove approval-service quality, prove sandbox isolation,
+  prove tool-wrapper security, or promote any chapter core claim.
+
 ## 2026-07-04 - Restore generated-reader continuity queue to zero medium rows
 
 - Added a reader-only overlay operation
