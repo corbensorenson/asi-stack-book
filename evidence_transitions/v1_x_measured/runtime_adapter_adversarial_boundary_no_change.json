@@ -1,0 +1,127 @@
+{
+  "transition_id": "v1_x_measured.runtime_adapter_adversarial_boundary.no_change",
+  "claim_id": "runtime-adapters.adversarial_boundary_probe",
+  "claim_surface_refs": [
+    "docs/runtime_adapter_adversarial_boundary_probe.md",
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
+    "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
+    "lean/AsiStackProofs/RuntimeAdapters.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Runtime adapter adversarial boundary probe only. The probe validates two synthetic complete boundary reviews and rejects twelve expected-invalid controls for confused-deputy parent mismatch, parent and lease authority ceiling overruns, scoped-approval mismatch, expired approval, sandbox escape path, secret materialization into model-visible context, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundary. It does not execute a deployed adapter, production sandbox, approval service, secret-handle broker, policy engine, rollback service, revocation service, benchmark, or security audit.",
+  "evidence_roles": [
+    "synthetic_runtime_adapter_adversarial_boundary_fixture",
+    "confused_deputy_negative_control",
+    "authority_ceiling_negative_controls",
+    "approval_scope_and_expiry_negative_controls",
+    "sandbox_escape_negative_control",
+    "secret_materialization_negative_control",
+    "rollback_receipt_audit_negative_controls",
+    "support_state_and_non_claim_negative_controls",
+    "finite_lean_adversarial_boundary_bridge",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The Runtime adapter adversarial boundary probe is useful because it makes external-effect parentage, authority ceilings, scoped approvals, sandbox paths, secret non-materialization, rollback handles, effect receipts, audit refs, support-state boundaries, and non-claims executable as finite review routes. It remains a deterministic synthetic record gate, not deployed runtime evidence, so this accepted decision blocks promotion for deployed adapter behavior, sandbox isolation, approval-service behavior, secret-handle safety, policy-enforcement correctness, rollback-service behavior, revocation propagation, security review, benchmark performance, runtime security, or the Runtime Adapters chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable adapter execution trace",
+    "real sandbox-isolation evidence",
+    "approval-service behavior trace",
+    "secret-handle mediation trace",
+    "policy-enforcement correctness tests",
+    "rollback execution in a target service",
+    "deployed revocation propagation evidence",
+    "live effect receipts and audit refs",
+    "security review",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/runtime_adapter_adversarial_boundary_probe.md",
+    "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
+    "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
+    "lean/AsiStackProofs/RuntimeAdapters.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/runtime_adapter_adversarial_boundary_probe.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/test_harness_status_ledger.md",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
+    "docs/book_outline.md#runtime-adapters-tool-permissions-and-human-approval"
+  ],
+  "verification_command": "python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "confused-deputy parent mismatch is rejected",
+    "parent authority ceiling overrun is rejected",
+    "lease authority ceiling overrun is rejected",
+    "approval scope mismatch is rejected",
+    "expired approval is rejected",
+    "sandbox escape path is rejected",
+    "secret materialized into model-visible context is rejected",
+    "missing rollback handle is rejected",
+    "missing effect receipt is rejected",
+    "missing audit refs are rejected",
+    "support-state promotion from record shape is rejected",
+    "missing non-claim boundary is rejected",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/runtime_adapter_adversarial_boundary_probe.md",
+    "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
+    "scripts/validate_runtime_adapter_adversarial_boundary_probe.py"
+  ],
+  "downgrade_triggers": [
+    "Runtime adapter adversarial boundary validator failure",
+    "confused-deputy, authority-ceiling, approval, sandbox, secret, rollback, receipt, audit, support-state, or non-claim control accepted as valid",
+    "probe described as deployed adapter, sandbox-isolation, approval-service, secret-handle, policy-enforcement, rollback-service, revocation, benchmark, runtime-security, security-review, or support-state evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed runtime-adapter boundary claim after deployed or externally reviewable adapter execution, sandbox-isolation evidence, approval-service behavior, secret-handle mediation, policy-enforcement tests, rollback execution in target services, deployed revocation propagation, live effect receipts and audit refs, residual accounting, security review, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "deterministic synthetic record gate only",
+    "no deployed adapter execution",
+    "no real sandbox-isolation evidence",
+    "no approval-service behavior result",
+    "no secret-handle mediation",
+    "no policy-enforcement correctness result",
+    "no rollback-service behavior result",
+    "no deployed revocation propagation",
+    "no security review",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent runtime-adapter, sandbox, approval-service, rollback-service, policy-enforcement, security, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable adapter execution trace",
+    "no real sandbox-isolation evidence",
+    "no approval-service behavior evidence",
+    "no secret-handle mediation trace",
+    "no rollback-service behavior evidence",
+    "no deployed revocation-propagation evidence",
+    "no independent security review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-runtime-adapter-adversarial-boundary-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Runtime adapter adversarial boundary evidence above argument",
+    "does not prove deployed adapter behavior, sandbox isolation, approval-service behavior, secret-handle safety, policy-enforcement correctness, rollback-service behavior, revocation propagation, security review, benchmark performance, runtime security, model behavior, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Runtime Adapters chapter core claim"
+  ]
+}
