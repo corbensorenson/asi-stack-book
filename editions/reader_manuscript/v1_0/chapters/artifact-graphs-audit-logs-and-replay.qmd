@@ -207,7 +207,7 @@ A reader chapter can begin as a generated baseline, receive semantic overlay
 operations, become a tracked curated manuscript draft, get a prose-pass note,
 move through a review matrix, render into a local Quarto workspace, and appear
 inside the live Human view. Each step creates something useful. None of those
-steps, by itself, makes the chapter release-approved.
+steps, by itself, makes that reader draft release-approved.
 
 The artifact graph is what keeps those states from collapsing. The generated
 baseline is an artifact with one role. The curated chapter is another. The
@@ -233,17 +233,17 @@ artifact graph gives those verbs different records.
 
 ## An Artifact Replay Packet in Practice
 
-Return to the chapter-edit job from the previous chapter. When the job
-finishes, the patch is not the only artifact. The system should also preserve
-the job packet, source-note refs, context refs, manifest diff, prose-pass note,
+Return to the editing job from the previous section. When the job finishes,
+the patch is not the only artifact. The system should also preserve the job
+packet, source-note refs, context refs, manifest diff, prose-pass note,
 changelog entry, validator logs, render logs, review residuals, and any
 explicit decision not to promote a claim.
 
 Those objects should be linked, not left as scattered files. A future reviewer
-should be able to open the chapter draft and ask: which job produced this
-paragraph, which source was in scope, which files were allowed to change,
-which checks ran, which checks did not run, what failed first, what was
-repaired, and what authority does this artifact have?
+should be able to open the draft and ask: which job produced this paragraph,
+which source was in scope, which files were allowed to change, which checks
+ran, which checks did not run, what failed first, what was repaired, and what
+authority does this artifact have?
 
 A bounded replay packet might say that the edit is semantically replayable but
 not byte-exact. The same source refs, chapter refs, and validator set can be
@@ -295,6 +295,26 @@ Resource flagship run note, and a Circle contract fingerprint. If a sampled
 file disappears, a digest changes without a new record, the Circle fingerprint
 is altered, non-claims are erased, or the challenge tries to promote support,
 the result is rejected.
+
+## The Hardest Objection
+
+The hardest objection is not that a bad receipt can be caught. The harder case
+is a system that learns to pass the receipt process while hiding the truth
+outside the receipt. It may write the right fields, preserve the right-looking
+logs, run a verifier that shares its assumptions, and still leave the important
+causal step unrecorded.
+
+That objection is real. Artifact graphs do not make receipts magically true.
+They make false or overconfident receipts harder to promote. The important
+shift is authority: a record that lacks an independent check, a named trust
+root, a replay path, a trap result, or an honest residual can still be stored,
+but it should not become strong evidence for a claim.
+
+This is the difference between bookkeeping and governance. Bookkeeping says
+the paperwork exists. Governance asks what the paperwork is allowed to do. The
+artifact graph answers: store the record, show its limits, preserve the
+residual, and refuse support movement until the observation route is strong
+enough for the claim being made.
 
 ## Interfaces
 
@@ -425,8 +445,8 @@ control surface. They do not prove replay correctness, audit reconstruction,
 artifact completeness, provenance completeness, runtime execution quality,
 benchmark performance, security behavior, or MoECOT runtime reproduction.
 
-This boundary is part of the chapter's point. The artifact graph exists to
-stop useful work from becoming unearned evidence. The chapter should not make
+This boundary is part of the design. The artifact graph exists to stop useful
+work from becoming unearned evidence. The reader prose should not make
 that mistake about itself.
 
 ## Handoff

@@ -198,6 +198,37 @@ The follow-on receipt repository challenge makes that audit less static. `python
 
 The epistemic trusted computing base is the companion problem: even an honest receipt needs a place where verifier trust bottoms out. A verifier cannot become trusted because it produced a fluent verdict, because it shares a component with the claim producer, or because a downstream agent repeats its summary. The bounded fixture at `docs/epistemic_trusted_computing_base_fixture.md` makes that finite-record boundary explicit. A trust-base record must name the minimal trusted core, root-of-trust refs, a bounded delegation rule, a recursion stop condition, verifier independence state, outside-TCB residuals, and non-claims. It accepts a minimal trust-base record, a delegated verifier record-only path, and a blocked self-verifier record, while rejecting missing roots of trust, verifier-trust laundering, ambient trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.
 
+## Strongest Objection
+
+The strongest objection to the record-reality rule is not that attestations
+can be malformed. Malformed attestations are easy to reject. The harder
+objection is that a capable system may produce receipts, logs, proof summaries,
+traces, and verifier
+summaries that all pass the visible gates while the internal causal process
+does not correspond to the recorded story. The graph can check that a file
+exists, that a digest matches, that a command passed, that a verifier route was
+named, and that a trap case was not ignored. It cannot, by paperwork shape
+alone, prove that every hidden dependency, human interpretation, external
+service, or model-side causal step was faithfully captured.
+
+The architecture's answer is therefore deliberately weaker than open-world
+truth.
+The graph should make attestation failure expensive to hide, make verifier
+trust explicit, and make unsupported jumps visible before they affect claims.
+They should not pretend to eliminate adversarial misrepresentation. The
+weakening condition is clear: when the observer, verifier, producer, or
+approval path collapses into one untrusted component, the record may still be
+stored but should lose evidence authority until an independent route, trap
+check, replay packet, or external review restores a bounded trust path.
+
+That limit is part of the architecture, not a caveat after the fact.
+Proof-carrying code, debate-style review, LLM-as-judge evaluation, extreme-risk
+evaluation, and zero-trust access control each expose one side of the same
+pressure: records and verifiers are useful only inside a named trust model. The
+graph imports that pressure into work products. It treats receipt faithfulness
+as an obligation to preserve roots, routes, residuals, and refusal states, not
+as a promise that any finite ledger can force reality to match its paperwork.
+
 ## Minimum Viable Implementation
 
 An artifact graph schema with job, source, context, and evidence edges.

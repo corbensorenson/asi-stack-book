@@ -1645,6 +1645,7 @@ Draft arc:
 - Mechanism: State the local governed-cognition pattern delta: this chapter owns the record-reality boundary, requiring receipt faithfulness, replay grade, trusted verifier roots, recursion stops, residuals, and allowed claim effects before stored records become evidence-ready artifacts.
 - Mechanism: require receipt faithfulness checks before a shape-valid record can affect support state; a receipt must be cross-checked against independent observation, trap receipts, and explicit attestation limits instead of being trusted because it matches schema.
 - Mechanism: name the epistemic trusted computing base for artifact evidence: the minimal trusted core, root-of-trust refs, delegation rule, recursion stop condition, verifier independence state, outside-TCB residuals, and non-claims must be explicit before verifier outputs can be consumed.
+- Mechanism: answer the strongest record-reality objection in chapter prose: a strategic system may pass visible receipt and verifier gates while hiding the real causal story, so the artifact graph only earns bounded evidence authority when independent routes, trap checks, replay packets, trust roots, and residuals remain visible.
 - Handoff: Runtime adapters produce effect receipts and residuals that must return to the artifact graph before they become evidence.
 - Interface: VCM references artifacts.
 - Interface: Evidence consumes logs.
