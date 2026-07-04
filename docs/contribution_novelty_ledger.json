@@ -245,7 +245,7 @@
       "strongest_objection": "Finite metadata about reviewer load, rationale time, or alert quality may be gamed, superficial, or invasive, and may still fail to capture whether the human meaningfully understood the decision.",
       "answer_status": "first_finite_fixture_seeded_but_reviewer_quality_open",
       "confidence_state": "finite_fixture_backed_not_deployed",
-      "needed_next_artifact": "The first bounded fixture exists at experiments/human_oversight_degradation/results/2026-07-03-local.json. Next: add a deployed or externally reviewable approval-workflow trace with public-safe reviewer-load fields, independent-evidence checks, reviewer-rotation behavior, and explicit no-promotion decisions.",
+      "needed_next_artifact": "The first bounded fixture exists at experiments/human_oversight_degradation/results/2026-07-03-local.json, and the accepted no-promotion decision at evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json blocks approval-workflow, deployed-human-factors, reviewer-correctness, alert-quality, and Runtime Adapters chapter-core promotion. Next: add a deployed or externally reviewable approval-workflow trace with public-safe reviewer-load fields, independent-evidence checks, reviewer-rotation behavior, alert-quality evidence, privacy boundaries, and independent review before any upward support movement.",
       "support_state_effect": "none",
       "non_claims": [
         "does not prove reviewer correctness",

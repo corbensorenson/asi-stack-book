@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-04 - Record human oversight no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json`
+  to record the Human oversight degradation fixture as an accepted
+  `blocks_promotion` no-change decision for
+  `runtime-adapters.human_oversight_degradation`.
+- Updated the non-core evidence ledger, trust surfaces, contribution novelty
+  ledger, Runtime Adapters live and reader chapters, outline, roadmap, and
+  accepted-transition audit surfaces so the fixture blocks overclaiming
+  without changing the six accepted upward non-core transition count.
+- Boundary: this does not promote human oversight degradation above
+  `argument`, prove approval-service quality, reviewer correctness, alert
+  quality, deployed human-factors behavior, runtime-adapter safety, deployment
+  safety, ASI capability, or the Runtime Adapters chapter core claim, and it
+  does not create an upward support-state transition.
+
 ## 2026-07-04 - Add reader key-figure contrast gate
 
 - Added `python3 scripts/validate_reader_key_figure_contrast.py` and tracked

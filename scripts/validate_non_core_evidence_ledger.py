@@ -49,16 +49,30 @@ EXPECTED = {
 NO_PROMOTION_EXPECTED = {
     "circle-calculus.public_consumer_gate": {
         "transition": "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
+        "required_non_claims": [
+            "does not promote the Circle Calculus chapter core claim",
+            "does not create an upward support-state transition",
+            "does not promote any chapter core claim",
+        ],
+    },
+    "runtime-adapters.human_oversight_degradation": {
+        "transition": "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
+        "required_non_claims": [
+            "does not promote the Runtime Adapters chapter core claim",
+            "does not create an upward support-state transition",
+            "does not promote any chapter core claim",
+        ],
     },
 }
 
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
     "Accepted non-core upward transitions | 6 narrow transitions.",
-    "Accepted no-promotion side-lane decisions | 1 Circle consumer-gate decision; no support-state movement.",
+    "Accepted no-promotion side-lane decisions | 2 accepted no-promotion side-lane decisions; no support-state movement.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
+    "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
     "Accepted No-Promotion Side-Lane Decisions",
     "Chapter-core promotion effect | None.",
     "no independent external human review record yet.",
@@ -166,12 +180,12 @@ def main() -> None:
             errors.append(f"{record_path.relative_to(ROOT)} must block promotion")
         non_claims = " ".join(str(item) for item in record.get("non_claims", []))
         limitations = " ".join(str(item) for item in record.get("limitations", []))
-        if "does not promote the Circle Calculus chapter core claim" not in non_claims:
-            errors.append(f"{record_path.relative_to(ROOT)} lacks Circle chapter-core non-claim text")
-        if "does not create an upward support-state transition" not in non_claims:
-            errors.append(f"{record_path.relative_to(ROOT)} lacks upward-transition non-claim text")
-        if "does not promote any chapter core claim" not in f"{non_claims} {limitations}":
-            errors.append(f"{record_path.relative_to(ROOT)} lacks chapter-core non-promotion boundary")
+        for required_non_claim in expected.get("required_non_claims", []):
+            if required_non_claim not in f"{non_claims} {limitations}":
+                errors.append(
+                    f"{record_path.relative_to(ROOT)} lacks required no-promotion text: "
+                    f"{required_non_claim}"
+                )
         if claim_id not in ledger:
             errors.append(f"ledger does not list no-promotion claim id {claim_id}")
         if expected["transition"] not in ledger:
@@ -202,7 +216,7 @@ def main() -> None:
 
     print(
         "Non-core evidence ledger validation passed: 6 accepted non-core upward transitions, "
-        "1 accepted side-lane no-promotion decision, 0 chapter-core promotions."
+        "2 accepted side-lane no-promotion decisions, 0 chapter-core promotions."
     )
 
 

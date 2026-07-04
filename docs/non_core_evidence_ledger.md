@@ -12,11 +12,11 @@ readers, reviewers, and future writing agents.
 |---|---|
 | Chapter core claims | All 44 remain at `argument`. |
 | Accepted non-core upward transitions | 6 narrow transitions. |
-| Accepted no-promotion side-lane decisions | 1 Circle consumer-gate decision; no support-state movement. |
+| Accepted no-promotion side-lane decisions | 2 accepted no-promotion side-lane decisions; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
 | Chapter-core promotion effect | None. |
 | External review status | Public review request opened in GitHub issue #1; no independent external human review record yet. |
-| Project Theseus/Circle status | Circle has the bounded prototype-backed receipt transition below plus a separate ASI-side public consumer gate at `docs/circle_public_replay_consumer_gate.md` that CI verifies by digest and negative controls; `evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json` records that consumer gate as an accepted `blocks_promotion` no-change decision, not an upward transition. Project Theseus has a separate public-safe static architecture-gate report import at `docs/theseus_report_import_slice.md` that CI verifies by digest and negative controls. Neither side lane promotes a chapter core claim, and the Project Theseus import plus Circle consumer gate do not create accepted upward support-state transitions. |
+| Project Theseus/Circle/status side lanes | Circle has the bounded prototype-backed receipt transition below plus a separate ASI-side public consumer gate at `docs/circle_public_replay_consumer_gate.md` that CI verifies by digest and negative controls; `evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json` records that consumer gate as an accepted `blocks_promotion` no-change decision, not an upward transition. Runtime Adapters has a separate human-oversight degradation no-promotion decision at `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json`, grounded in `docs/human_oversight_degradation_fixture.md`, that blocks approval-workflow and deployed human-factors promotion until stronger traces exist. Project Theseus has a separate public-safe static architecture-gate report import at `docs/theseus_report_import_slice.md` that CI verifies by digest and negative controls. None of these side lanes promotes a chapter core claim, and they do not create accepted upward support-state transitions. |
 
 ## Accepted Non-Core Transitions
 
@@ -34,6 +34,7 @@ readers, reviewers, and future writing agents.
 | Claim ID | Support-state effect | Evidence packet | What the decision records | What stays blocked |
 |---|---|---|---|---|
 | `circle-calculus.public_consumer_gate` | `blocks_promotion` | `docs/circle_public_replay_consumer_gate.md`; `evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json` | The ASI-side public consumer gate validates one pinned `CC-AI-CONTRACT-ROPE-001` receipt fixture by digest, theorem IDs, deterministic fields, and four expected-invalid overclaim controls. | Proof-contract transport, model quality, context length, speed, memory scaling, transfer, safety, ASI, and Circle chapter-core promotion stay blocked until stronger replay, transport, workload, baseline, metric, and review artifacts exist. |
+| `runtime-adapters.human_oversight_degradation` | `blocks_promotion` | `docs/human_oversight_degradation_fixture.md`; `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json` | The finite human-oversight degradation fixture validates three bounded synthetic approval-review records and rejects seven controls for missing reviewer qualification, fatigued approval, rubber-stamping, automation-bias contradiction, alarm fatigue, support-promotion overclaim, and missing non-claim boundaries. | Approval-service quality, reviewer correctness, deployed human-factors behavior, runtime-adapter safety, alert quality, approval-workflow evidence, and Runtime Adapters chapter-core promotion stay blocked until public-safe deployed or externally reviewable approval-workflow traces, reviewer-load fields, independent-evidence checks, reviewer rotation or delay behavior, alert-quality evidence, privacy-boundary handling, residuals, and independent review exist. |
 
 ## Live Claim-Surface Narrowing Records
 
@@ -55,7 +56,7 @@ The ledger is checked by `scripts/validate_non_core_evidence_ledger.py`. That
 validator reads the accepted transition records under
 `evidence_transitions/v1_0_measured/` and `evidence_transitions/v1_x_measured/`,
 checks that all six current non-core upward claims are listed here, checks the
-accepted Circle consumer-gate no-promotion side-lane decision, checks the live
+two accepted no-promotion side-lane decisions, checks the live
 claim-surface narrowing record, checks the chapter-core non-promotion boundary,
 and checks that the public entry surfaces link to this ledger. The live
 revision record is also checked by `scripts/validate_claim_revision_records.py`.

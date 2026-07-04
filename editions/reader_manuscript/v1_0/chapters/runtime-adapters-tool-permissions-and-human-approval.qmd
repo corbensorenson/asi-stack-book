@@ -406,6 +406,14 @@ reviewer correctness, approval-service quality, deployed human-factors
 behavior, or tool safety. It prevents the chapter from treating "human in the
 loop" as a magic phrase.
 
+The accepted no-promotion record
+`evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json`
+makes that boundary explicit: reviewer-load fields and synthetic routing are
+useful evidence controls, but approval-service quality, reviewer correctness,
+alert quality, deployed human-factors behavior, runtime-adapter safety, and the
+chapter core claim stay at argument level until stronger workflow traces and
+review exist.
+
 The next honest slice would run a deployed adapter fixture end to end in a
 safe local environment: a low-impact local write with approval not required, a
 high-impact dry-run deployment requiring approval, a stale-approval negative

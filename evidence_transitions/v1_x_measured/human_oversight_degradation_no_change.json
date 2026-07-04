@@ -1,0 +1,115 @@
+{
+  "transition_id": "v1_x_measured.human_oversight_degradation.no_change",
+  "claim_id": "runtime-adapters.human_oversight_degradation",
+  "claim_surface_refs": [
+    "docs/human_oversight_degradation_fixture.md",
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "docs/contribution_novelty_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/human_oversight_degradation/input/human_oversight_cases.json",
+    "experiments/human_oversight_degradation/results/2026-07-03-local.json",
+    "scripts/validate_human_oversight_degradation.py",
+    "lean/AsiStackProofs/RuntimeAdapters.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Human oversight degradation finite fixture only. The fixture validates three bounded synthetic records and rejects seven expected-invalid controls for missing reviewer qualification, fatigued approval, rubber-stamping, automation-bias contradiction, alarm fatigue, support-promotion overclaim, and missing non-claim boundaries. It does not run a deployed approval workflow, measure reviewer correctness, measure alert quality, conduct a human-subjects study, prove approval-service behavior, or promote the Runtime Adapters chapter core claim.",
+  "evidence_roles": [
+    "finite_human_oversight_degradation_fixture",
+    "reviewer_load_fields",
+    "independent_evidence_check_boundary",
+    "reviewer_rotation_route",
+    "alert_quality_failure_route",
+    "privacy_and_reviewer_correctness_non_claim",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The human-oversight degradation fixture is useful because it makes reviewer fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer qualification, independent-evidence checks, and non-claim boundaries executable as finite adapter-review routes. It remains a synthetic record fixture, not deployed approval-workflow evidence, so it blocks promotion for approval-service quality, reviewer correctness, deployed human-factors behavior, safety, runtime-adapter behavior, or chapter-core support.",
+  "required_artifacts": [
+    "public-safe deployed or externally reviewable approval-workflow trace",
+    "reviewer-load fields from a real or externally reviewable process",
+    "independent-evidence-check records tied to concrete review decisions",
+    "reviewer-rotation or delay behavior under overload",
+    "alert-quality or false-alarm evidence with residuals",
+    "privacy boundary for reviewer data",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/human_oversight_degradation_fixture.md",
+    "experiments/human_oversight_degradation/input/human_oversight_cases.json",
+    "experiments/human_oversight_degradation/results/2026-07-03-local.json",
+    "scripts/validate_human_oversight_degradation.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/human_oversight_degradation_fixture.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/contribution_novelty_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
+    "docs/book_outline.md#runtime-adapters-tool-permissions-and-human-approval"
+  ],
+  "verification_command": "python3 scripts/validate_human_oversight_degradation.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "missing reviewer qualification is rejected",
+    "fatigued reviewer approval routes to rotation or delay",
+    "rubber-stamped approval is blocked",
+    "automation-bias contradiction without independent evidence is blocked",
+    "alarm-fatigue ordinary approval is escalated",
+    "support promotion from human approval shape is rejected",
+    "missing non-claim boundary is rejected",
+    "deployed approval-workflow evidence remains unclaimed",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/human_oversight_degradation_fixture.md",
+    "experiments/human_oversight_degradation/results/2026-07-03-local.json",
+    "scripts/validate_human_oversight_degradation.py"
+  ],
+  "downgrade_triggers": [
+    "human-oversight degradation validator failure",
+    "fatigued approval accepted as ordinary approval",
+    "rubber-stamped approval accepted",
+    "automation-bias contradiction ignored",
+    "alarm-fatigue route accepted without escalation",
+    "support-state promotion without a separate accepted upward transition",
+    "fixture described as deployed approval-workflow evidence"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed human-oversight degradation or approval-workflow claim after public-safe deployed or externally reviewable workflow traces, reviewer-load fields, independent-evidence checks, reviewer rotation or delay behavior, alert-quality evidence, privacy-boundary handling, residuals, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "finite synthetic record fixture only",
+    "no deployed approval workflow",
+    "no human-subjects study",
+    "no reviewer-correctness measurement",
+    "no alert-quality measurement",
+    "no approval-service quality result",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent human-factors, approval-workflow, runtime-adapter, safety, source-interpretation, or external audit",
+  "acceptance_blockers": [
+    "no public-safe deployed or externally reviewable approval-workflow trace",
+    "no real reviewer-load or alert-quality evidence",
+    "no deployed reviewer-rotation behavior",
+    "no privacy-reviewed reviewer-data handling",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-human-oversight-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote human oversight degradation evidence above argument",
+    "does not prove approval-service quality, reviewer correctness, deployed human-factors behavior, runtime-adapter safety, alert quality, deployment safety, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Runtime Adapters chapter core claim"
+  ]
+}
