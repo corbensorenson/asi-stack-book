@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-04 - Add reader visual identity source review
+
+- Added `scripts/validate_reader_visual_identity.py` to check the source-level
+  reader visual system across `assets/styles.scss`, the ten key SVG figures,
+  the reader-manuscript handoff manifest, and the existing key-figure contrast
+  manifest.
+- Recorded the result in
+  `editions/reader_manuscript/v1_0/visual_identity_manifest.json` and
+  `docs/reader_visual_identity_review.md`: 10 key figures, 54 combined colors,
+  5 non-neutral color families, minimum text contrast ratio 5.19, minimum
+  flow-line contrast ratio 3.96, minimum marker contrast ratio 3.96, and
+  minimum SVG text size 15 px.
+- Wired the new review into `scripts/validate_book.py`,
+  `scripts/validate_release_surface_status_ledger.py`,
+  `scripts/validate_curated_reader_blocked_release_record.py`,
+  `docs/reader_key_figure_artifact_review.md`,
+  `release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`, and
+  `docs/v1_x_beyond_sota_roadmap.md` so future release status checks preserve
+  the exact metrics and non-claim boundary.
+- Boundary: this is a source-level visual-identity review only. It is not
+  manual aesthetic review, not e-reader visual review, not DOCX/PDF application
+  review, not final figure-artifact approval, not reader release approval, and
+  it does not promote any support state.
+
 ## 2026-07-04 - Add audio-script reading-flow review
 
 - Fixed `scripts/build_audio_script.py` so generated narration scripts and

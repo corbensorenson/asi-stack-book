@@ -35,6 +35,7 @@ AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_p
 KEY_FIGURE_FORMAT_PROBE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 )
+VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
 HTML_RELEASE_RECORD = ROOT / "release_records" / "2026-06-29-v1-reader-html-855dc277.json"
 CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
 
@@ -48,6 +49,7 @@ REVIEW_DOCS = {
     "reader_audio": ROOT / "docs" / "reader_audio_script_probe_manifest.md",
     "reader_figures": ROOT / "docs" / "reader_key_figure_artifact_review.md",
     "reader_figure_format": ROOT / "docs" / "reader_key_figure_format_probe.md",
+    "reader_visual_identity": ROOT / "docs" / "reader_visual_identity_review.md",
     "reader_chapter_matrix": ROOT / "docs" / "reader_chapter_review_matrix.md",
     "reader_format_matrix": ROOT / "docs" / "reader_format_review_matrix.md",
 }
@@ -128,6 +130,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         PDF_PROBE,
         AUDIO_PROBE,
         KEY_FIGURE_FORMAT_PROBE,
+        VISUAL_IDENTITY,
         HTML_RELEASE_RECORD,
         CURATED_BLOCKED_RECORD,
         *REVIEW_DOCS.values(),
@@ -150,6 +153,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     pdf_probe = load_json(PDF_PROBE)
     audio_probe = load_json(AUDIO_PROBE)
     key_figure_format_probe = load_json(KEY_FIGURE_FORMAT_PROBE)
+    visual_identity = load_json(VISUAL_IDENTITY)
     curated_blocked_record = load_json(CURATED_BLOCKED_RECORD)
 
     profile_ids = {profile.get("id") for profile in release_profiles.get("profiles", []) if isinstance(profile, dict)}
@@ -353,6 +357,47 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if missing_key_figure_blockers:
         errors.append(f"key-figure format probe missing blockers: {missing_key_figure_blockers}")
 
+    if visual_identity.get("status") != "passed_source_level_visual_identity_review":
+        errors.append("reader visual identity manifest must remain passed_source_level_visual_identity_review.")
+    visual_palette = visual_identity.get("palette_summary", {})
+    visual_figures = visual_identity.get("figure_source_summary", {})
+    visual_contrast = visual_identity.get("contrast_summary", {})
+    expected_visual_metrics = {
+        ("palette_summary", "combined_hex_color_count"): 54,
+        ("palette_summary", "non_neutral_family_count"): 5,
+        ("figure_source_summary", "figure_count"): 10,
+        ("figure_source_summary", "standard_viewbox_count"): 10,
+        ("figure_source_summary", "role_img_count"): 10,
+        ("figure_source_summary", "title_id_count"): 10,
+        ("figure_source_summary", "desc_id_count"): 10,
+        ("contrast_summary", "minimum_text_contrast_ratio"): 5.19,
+        ("contrast_summary", "minimum_flow_line_contrast_ratio"): 3.96,
+        ("contrast_summary", "minimum_marker_contrast_ratio"): 3.96,
+    }
+    visual_sections = {
+        "palette_summary": visual_palette,
+        "figure_source_summary": visual_figures,
+        "contrast_summary": visual_contrast,
+    }
+    for (section, key), expected in expected_visual_metrics.items():
+        observed = visual_sections.get(section, {}).get(key)
+        if observed != expected:
+            errors.append(f"reader visual identity manifest {section}.{key} must be {expected!r}; found {observed!r}.")
+    visual_boundary = str(visual_identity.get("review_boundary", ""))
+    for fragment in (
+        "not manual aesthetic review",
+        "not e-reader visual review",
+        "not DOCX/PDF application review",
+        "not final figure-artifact approval",
+        "not reader release approval",
+    ):
+        if fragment not in visual_boundary:
+            errors.append(f"reader visual identity review_boundary missing {fragment!r}.")
+    visual_non_claims = " ".join(str(item) for item in visual_identity.get("non_claims", [])).lower()
+    for fragment in ("does not approve final figure art", "does not approve epub", "does not prove visual quality"):
+        if fragment not in visual_non_claims:
+            errors.append(f"reader visual identity non_claims missing {fragment!r}.")
+
     curated_blockers = set(curated_format.get("release_blockers_preserved", []))
     required_curated_format_blockers = REQUIRED_CURATED_BLOCKERS | {
         "full_format_artifact_review_not_completed",
@@ -415,6 +460,8 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "not a release approval and not final figure-artifact review",
             "does not approve final figure art, EPUB, DOCX, PDF, e-reader",
             "docs/reader_key_figure_format_probe.md",
+            "docs/reader_visual_identity_review.md",
+            "54 combined colors",
             "current ignored curated EPUB, DOCX, and PDF artifacts",
         ],
         "reader_figure_format": [
@@ -423,6 +470,17 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "extracted captions and figure-boundary paragraphs in PDF",
             "not final figure-artifact approval",
             "not reader release approval",
+        ],
+        "reader_visual_identity": [
+            "Reader Visual Identity Review",
+            "source-level review",
+            "CSS color count | 18",
+            "SVG color count | 43",
+            "Combined color count | 54",
+            "Non-neutral color families | 5",
+            "Minimum text contrast ratio | 5.19",
+            "not final figure-artifact approval",
+            "does not approve EPUB, DOCX, PDF, e-reader, audio, or reader release artifacts",
         ],
     }
     for doc_name, fragments in required_doc_fragments.items():
@@ -529,6 +587,11 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "key_figure_pdf_matched_captions": key_figure_format_probe.get("pdf", {}).get(
             "matched_caption_titles"
         ),
+        "visual_identity_status": visual_identity.get("status"),
+        "visual_identity_color_count": visual_palette.get("combined_hex_color_count"),
+        "visual_identity_non_neutral_families": visual_palette.get("non_neutral_family_count"),
+        "visual_identity_figure_count": visual_figures.get("figure_count"),
+        "visual_identity_min_text_contrast": visual_contrast.get("minimum_text_contrast_ratio"),
         "release_record": rel(HTML_RELEASE_RECORD),
     }
     return metrics, errors
@@ -557,6 +620,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/curated_reader_format_artifact_probe.md`; `docs/reader_epub_probe_manifest.md`; "
         "`docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; "
         "`docs/reader_audio_script_probe_manifest.md`; `docs/reader_key_figure_format_probe.md`; "
+        "`docs/reader_visual_identity_review.md`; "
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`; "
         "`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`; "
         "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
@@ -598,6 +662,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Curated-manuscript candidates | {disposition_counts.get('curated_manuscript_candidate', 0)} |",
             f"| Key-figure targets | {metrics['key_figure_target_count']} |",
             f"| Key figures matched in EPUB/DOCX/PDF probes | {metrics['key_figure_epub_matched_titles']} / {metrics['key_figure_docx_matched_stems']} / {metrics['key_figure_pdf_matched_captions']} |",
+            f"| Source-level visual identity status | `{metrics['visual_identity_status']}` |",
+            f"| Source-level visual identity colors | {metrics['visual_identity_color_count']} total / {metrics['visual_identity_non_neutral_families']} non-neutral families |",
             f"| Signature ideas | {metrics['signature_idea_count']} |",
             f"| Voice-pass slots preserved as author-enrichment queue context | {metrics['voice_slot_count']} |",
             f"| Release-approved reader formats | {qmd_escape(', '.join(metrics['format_approved']))} |",
@@ -631,6 +697,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_pdf_probe_manifest.md` records the generated reader PDF probe: {metrics['reader_pdf_pages']} pages and {metrics['reader_pdf_bytes']:,} bytes, with full PDF layout review still active.",
             f"- `docs/reader_audio_script_probe_manifest.md` records {metrics['audio_script_files']} audio-script workspace files, a reading-flow review with {metrics['audio_reading_flow_markers']} ordered chapter-marker rows, {metrics['audio_reading_flow_tbd_rows']} untimecoded marker rows, {metrics['audio_reading_flow_narration_notes']} narration notes, and {metrics['audio_reading_flow_text_chars']:,} text characters, plus {metrics['audio_key_figure_count']} draft key-figure spoken summaries routed into the generated audio companion workspace; target artifact states remain {qmd_escape(', '.join(f'{key}: {value}' for key, value in sorted(audio_targets.items())))}.",
             f"- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval; `docs/reader_key_figure_format_probe.md` records package/text survival with {metrics['key_figure_epub_svg_entries']} EPUB SVG entries, {metrics['key_figure_epub_matched_titles']} matched EPUB SVG titles, {metrics['key_figure_docx_matched_stems']} DOCX figure stems, and {metrics['key_figure_pdf_matched_captions']} PDF draft-caption matches while preserving final-art, e-reader, application, PDF-layout, and release blockers.",
+            f"- `docs/reader_visual_identity_review.md` records a source-level visual identity review: {metrics['visual_identity_figure_count']} key figures, {metrics['visual_identity_color_count']} combined colors, {metrics['visual_identity_non_neutral_families']} non-neutral color families, and minimum text contrast {metrics['visual_identity_min_text_contrast']}; it is not manual aesthetic review, final figure-artifact approval, or reader release approval.",
             "",
             "## Non-Claim Boundary",
             "",

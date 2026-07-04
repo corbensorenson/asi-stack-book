@@ -72,6 +72,7 @@
     "python3 scripts/validate_reader_key_figure_contrast.py",
     "python3 scripts/validate_reader_key_figure_html_probe.py",
     "python3 scripts/validate_reader_key_figure_format_probe.py",
+    "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_release_surface_status_ledger.py"
@@ -103,18 +104,23 @@
     "key_figure_epub_matched_titles": 10,
     "key_figure_docx_matched_stems": 10,
     "key_figure_pdf_matched_captions": 10,
+    "visual_identity_manifest": "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
+    "visual_identity_colors": 54,
+    "visual_identity_non_neutral_families": 5,
+    "visual_identity_key_figures": 10,
+    "visual_identity_min_text_contrast": 5.19,
     "audio_reading_flow_script_files": 49,
     "audio_reading_flow_ordered_markers": 49,
     "audio_reading_flow_narration_notes": 66,
     "audio_reading_flow_text_characters": 1066517,
-    "release_boundary": "The automated package, link, text, raster, PDF Mermaid fallback, key-figure, browser, and audio-script reading-flow probes support release preparation only; they do not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or the curated reader edition."
+    "release_boundary": "The automated package, link, text, raster, PDF Mermaid fallback, key-figure, browser, source-level visual identity, and audio-script reading-flow probes support release preparation only; they do not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or the curated reader edition."
   },
   "validation_status": "partial",
   "review_status": {
     "reader_continuity_review": "pass",
     "source_scaffold_removed": "pass",
     "audio_script_review": "in_progress",
-    "notes": "Curated reader chapter-level reconciliation, local HTML browser viability, repaired EPUB package/content navigation, Chromium EPUB XHTML browser review, repaired DOCX relationship integrity, LibreOffice headless DOCX conversion/raster review, PDF-safe Mermaid fallback rendering, all-page PDF text/bounding-box extraction, all-page low-resolution PDF raster smoke testing, PDF extracted-text reading-flow review, audio-script reading-flow review, and key-figure package/text survival are recorded. Release-quality continuity, dedicated e-reader approval or explicit release decision, Word/LibreOffice GUI/Google Docs DOCX review or explicit release decision, final figure-artifact review, and audio review remain open. This record intentionally preserves blockers rather than approving artifacts."
+    "notes": "Curated reader chapter-level reconciliation, local HTML browser viability, repaired EPUB package/content navigation, Chromium EPUB XHTML browser review, repaired DOCX relationship integrity, LibreOffice headless DOCX conversion/raster review, PDF-safe Mermaid fallback rendering, all-page PDF text/bounding-box extraction, all-page low-resolution PDF raster smoke testing, PDF extracted-text reading-flow review, audio-script reading-flow review, key-figure package/text survival, and source-level visual identity review are recorded. Release-quality continuity, dedicated e-reader approval or explicit release decision, Word/LibreOffice GUI/Google Docs DOCX review or explicit release decision, final figure-artifact review, visual identity approval, and audio review remain open. This record intentionally preserves blockers rather than approving artifacts."
   },
   "reader_manuscript": {
     "source_dir": "editions/reader_manuscript/v1_0",
@@ -137,7 +143,7 @@
     "diagram_image_review": "in_progress",
     "bedtime_readability_review": "in_progress",
     "companion_notes_status": "in_progress",
-    "notes": "The curated reader manuscript is a concrete human-reader candidate with rendered local artifacts, PDF-safe Mermaid fallbacks, automated package/text/raster/key-figure probes, a Chromium EPUB XHTML browser review, a LibreOffice headless DOCX conversion/raster review, a PDF extracted-text reading-flow review, and an audio-script reading-flow review, but it is not yet a release. Dedicated EPUB e-reader approval or explicit release decision, Word/LibreOffice GUI/Google Docs DOCX review or explicit release decision, manual PDF page-by-page reading-flow or explicit release decision, final figure-artifact review, and audio review gates remain open."
+    "notes": "The curated reader manuscript is a concrete human-reader candidate with rendered local artifacts, PDF-safe Mermaid fallbacks, automated package/text/raster/key-figure probes, a Chromium EPUB XHTML browser review, a LibreOffice headless DOCX conversion/raster review, a PDF extracted-text reading-flow review, an audio-script reading-flow review, and a source-level visual identity review recording 54 combined colors, 5 non-neutral color families, and 10 key figures, but it is not yet a release. Dedicated EPUB e-reader approval or explicit release decision, Word/LibreOffice GUI/Google Docs DOCX review or explicit release decision, manual PDF page-by-page reading-flow or explicit release decision, final figure-artifact review, manual visual identity approval, and audio review gates remain open."
   },
   "audiobook_gate": {
     "script_review": "in_progress",
@@ -157,6 +163,7 @@
     "app_or_ereader_review_not_completed remains active for EPUB and e-reader paths because the Chromium XHTML review is not dedicated e-reader approval or release approval.",
     "full_pdf_layout_review_not_completed remains active because the all-page bounding-box audit is not manual page-by-page reading-flow review.",
     "Automated repaired-package EPUB/DOCX checks, Chromium EPUB XHTML browser review, LibreOffice headless DOCX conversion/raster review, PDF-safe Mermaid fallbacks, all-page PDF raster checks, PDF extracted-text reading-flow checks, audio-script reading-flow checks, and key-figure package/text survival checks are recorded as preparation evidence only; they do not clear dedicated e-reader approval, Word/LibreOffice GUI/Google Docs DOCX review, manual PDF page-by-page reading-flow review, narration quality review, audio generation, or release approval.",
+    "Source-level visual identity review is recorded as preparation evidence only; it checks stylesheet tokens, source SVG accessibility metadata, palette diversity, and carried contrast metrics, but it does not clear final figure-artifact review, manual aesthetic review, e-reader review, DOCX/PDF application review, visual identity approval, or release approval.",
     "Final figure-artifact review, visual identity approval, e-reader inspection, audio narration review, audio file generation, and audio-embedded EPUB packaging remain incomplete."
   ],
   "non_claims": [

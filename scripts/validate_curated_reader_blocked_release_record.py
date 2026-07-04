@@ -21,6 +21,7 @@ CURATED_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_for
 KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
+VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 
@@ -50,6 +51,7 @@ REQUIRED_COMMANDS = {
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
     "python3 scripts/validate_reader_key_figure_format_probe.py",
+    "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_release_surface_status_ledger.py",
@@ -90,7 +92,7 @@ def text_contains_all(owner: str, text: str, fragments: list[str], errors: list[
 
 def main() -> None:
     errors: list[str] = []
-    for path in (RECORD, CURATED_FORMAT, KEY_FIGURE_FORMAT, READER_MANIFEST, AUDIO_PROBE, HTML_REVIEW):
+    for path in (RECORD, CURATED_FORMAT, KEY_FIGURE_FORMAT, READER_MANIFEST, AUDIO_PROBE, VISUAL_IDENTITY, HTML_REVIEW):
         if not path.exists():
             errors.append(f"required path missing: {rel(path)}")
     if errors:
@@ -101,6 +103,7 @@ def main() -> None:
     key_figures = load_json(KEY_FIGURE_FORMAT)
     reader_manifest = load_json(READER_MANIFEST)
     audio_probe = load_json(AUDIO_PROBE)
+    visual_identity = load_json(VISUAL_IDENTITY)
     html_review = HTML_REVIEW.read_text(encoding="utf-8")
     if not isinstance(record, dict):
         fail([f"{rel(RECORD)} must contain a JSON object."])
@@ -112,6 +115,8 @@ def main() -> None:
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
     if not isinstance(audio_probe, dict):
         fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
+    if not isinstance(visual_identity, dict):
+        fail([f"{rel(VISUAL_IDENTITY)} must contain a JSON object."])
 
     if record.get("record_type") != "edition_release":
         errors.append("record_type must be edition_release.")
@@ -189,6 +194,9 @@ def main() -> None:
     pdf_reading_flow = curated.get("pdf_reading_flow_review", {})
     pdf_layout = curated.get("pdf_layout_audit", {})
     audio_reading_flow = audio_probe.get("audio_script_reading_flow_review", {})
+    visual_palette = visual_identity.get("palette_summary", {})
+    visual_figures = visual_identity.get("figure_source_summary", {})
+    visual_contrast = visual_identity.get("contrast_summary", {})
     if not isinstance(epub_audit, dict):
         errors.append("curated format epub_content_audit must be an object.")
         epub_audit = {}
@@ -213,6 +221,28 @@ def main() -> None:
     if not isinstance(audio_reading_flow, dict):
         errors.append("audio_script_probe_manifest audio_script_reading_flow_review must be an object.")
         audio_reading_flow = {}
+    if visual_identity.get("status") != "passed_source_level_visual_identity_review":
+        errors.append("visual_identity_manifest status must remain passed_source_level_visual_identity_review.")
+    expected_visual_metrics = {
+        ("palette_summary", "combined_hex_color_count"): 54,
+        ("palette_summary", "non_neutral_family_count"): 5,
+        ("figure_source_summary", "figure_count"): 10,
+        ("figure_source_summary", "role_img_count"): 10,
+        ("figure_source_summary", "title_id_count"): 10,
+        ("figure_source_summary", "desc_id_count"): 10,
+        ("contrast_summary", "minimum_text_contrast_ratio"): 5.19,
+        ("contrast_summary", "minimum_flow_line_contrast_ratio"): 3.96,
+        ("contrast_summary", "minimum_marker_contrast_ratio"): 3.96,
+    }
+    visual_sections = {
+        "palette_summary": visual_palette,
+        "figure_source_summary": visual_figures,
+        "contrast_summary": visual_contrast,
+    }
+    for (section, key), expected in expected_visual_metrics.items():
+        observed = visual_sections.get(section, {}).get(key)
+        if observed != expected:
+            errors.append(f"visual_identity_manifest {section}.{key} must be {expected!r}; found {observed!r}.")
 
     key_figure_expected = {
         ("epub", "matched_source_svg_titles"): 10,
@@ -256,6 +286,11 @@ def main() -> None:
         "key_figure_epub_matched_titles": 10,
         "key_figure_docx_matched_stems": 10,
         "key_figure_pdf_matched_captions": 10,
+        "visual_identity_manifest": "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
+        "visual_identity_colors": visual_palette.get("combined_hex_color_count"),
+        "visual_identity_non_neutral_families": visual_palette.get("non_neutral_family_count"),
+        "visual_identity_key_figures": visual_figures.get("figure_count"),
+        "visual_identity_min_text_contrast": visual_contrast.get("minimum_text_contrast_ratio"),
         "audio_reading_flow_script_files": audio_reading_flow.get("script_files_checked"),
         "audio_reading_flow_ordered_markers": audio_reading_flow.get("chapter_marker_rows"),
         "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
@@ -265,7 +300,7 @@ def main() -> None:
         if closure.get(key) != expected:
             errors.append(f"format_probe_closure.{key} must be {expected!r}; found {closure.get(key)!r}.")
     release_boundary = str(closure.get("release_boundary", "")).lower()
-    for fragment in ("automated package", "do not approve epub", "final figure art", "curated reader edition"):
+    for fragment in ("automated package", "source-level visual identity", "do not approve epub", "final figure art", "curated reader edition"):
         if fragment not in release_boundary:
             errors.append(f"format_probe_closure.release_boundary missing {fragment!r}.")
 
@@ -325,10 +360,36 @@ def main() -> None:
         if fragment not in audio_note:
             errors.append(f"audio notes missing audio reading-flow fragment: {fragment}")
 
+    gate_note = str(record.get("human_consumption_gate", {}).get("notes", ""))
+    text_contains_all(
+        "human_consumption_gate.notes",
+        gate_note,
+        ["source-level visual identity review", "54 combined colors", "5 non-neutral color families"],
+        errors,
+    )
+
+    review_note = str(record.get("review_status", {}).get("notes", ""))
+    text_contains_all(
+        "review_status.notes",
+        review_note,
+        ["source-level visual identity review", "visual identity approval", "remain open"],
+        errors,
+    )
+
     residual_text = " ".join(str(item) for item in record.get("residuals", []))
     missing_blockers = sorted(REQUIRED_BLOCKERS - {blocker for blocker in REQUIRED_BLOCKERS if blocker in residual_text})
     if missing_blockers:
         errors.append(f"residuals must preserve blockers: {missing_blockers}")
+    text_contains_all(
+        "residuals",
+        residual_text,
+        [
+            "Source-level visual identity review is recorded as preparation evidence only",
+            "does not clear final figure-artifact review",
+            "visual identity approval",
+        ],
+        errors,
+    )
 
     non_claim_text = " ".join(str(item) for item in record.get("non_claims", [])).lower()
     for fragment in (

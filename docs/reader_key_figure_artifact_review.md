@@ -73,6 +73,19 @@ caption treatment, mobile contained horizontal scroll for wide diagrams, and
 print page-break avoidance. This improves the rendered review surface, but it
 does not approve final figure art or any reader release artifact.
 
+2026-07-04 visual identity source-level update:
+`python3 scripts/validate_reader_visual_identity.py` now records
+`editions/reader_manuscript/v1_0/visual_identity_manifest.json` and the review
+surface `docs/reader_visual_identity_review.md`. The source-level review checks
+stylesheet tokens, shared key-figure presentation rules, mobile/print behavior,
+SVG accessibility metadata, palette diversity, and carried contrast metrics for
+the ten draft key figures. It records 54 combined colors, 5 non-neutral color
+families, minimum text contrast ratio 5.19, minimum flow-line contrast ratio
+3.96, minimum marker contrast ratio 3.96, and minimum SVG text size 15 px. This
+is not manual aesthetic review, not e-reader visual review, not DOCX/PDF
+application review, not final figure-artifact approval, and not reader release
+approval.
+
 2026-07-04 audio/e-reader companion update:
 `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` now records a
 draft spoken summary, e-reader treatment note, and non-claim boundary for each

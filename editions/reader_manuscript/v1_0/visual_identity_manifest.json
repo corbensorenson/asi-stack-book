@@ -1,0 +1,206 @@
+{
+  "schema_version": "asi_stack.reader_visual_identity.v0",
+  "result_id": "reader-visual-identity-source-review-2026-07-04",
+  "status": "passed_source_level_visual_identity_review",
+  "command": "python3 scripts/validate_reader_visual_identity.py",
+  "source_files": [
+    "assets/styles.scss",
+    "editions/reader_manuscript/v1_0/manifest.json",
+    "editions/reader_manuscript/v1_0/key_figure_contrast_manifest.json",
+    "assets/diagrams/*.svg"
+  ],
+  "style_summary": {
+    "style_variables_checked": [
+      "--asi-accent",
+      "--asi-border",
+      "--asi-copper",
+      "--asi-figure-bg",
+      "--asi-figure-rule",
+      "--asi-figure-shadow",
+      "--asi-ink",
+      "--asi-muted",
+      "--asi-soft"
+    ],
+    "style_variable_count": 9,
+    "missing_style_variables": [],
+    "fragment_groups": {
+      "key_figure_shell": {
+        "fragments_checked": 5,
+        "missing_fragments": []
+      },
+      "key_figure_images": {
+        "fragments_checked": 4,
+        "missing_fragments": []
+      },
+      "reading_mode": {
+        "fragments_checked": 4,
+        "missing_fragments": []
+      },
+      "mobile_behavior": {
+        "fragments_checked": 3,
+        "missing_fragments": []
+      },
+      "print_behavior": {
+        "fragments_checked": 4,
+        "missing_fragments": []
+      },
+      "overflow_and_accessibility": {
+        "fragments_checked": 5,
+        "missing_fragments": []
+      }
+    }
+  },
+  "palette_summary": {
+    "css_hex_color_count": 18,
+    "svg_hex_color_count": 43,
+    "combined_hex_color_count": 54,
+    "combined_color_family_counts": {
+      "copper-amber": 2,
+      "green": 3,
+      "neutral": 28,
+      "purple": 4,
+      "rose-red": 2,
+      "teal-blue": 15
+    },
+    "dominant_family": "neutral",
+    "non_neutral_family_count": 5
+  },
+  "figure_source_summary": {
+    "figure_count": 10,
+    "standard_viewbox_count": 10,
+    "role_img_count": 10,
+    "title_id_count": 10,
+    "desc_id_count": 10,
+    "not_release_reviewed_boundary_count": 10,
+    "figure_rows": [
+      {
+        "asset_path": "assets/diagrams/asi-stack-control-plane.svg",
+        "hex_color_count": 13,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/authority-to-effect-path.svg",
+        "hex_color_count": 13,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/evidence-state-ladder.svg",
+        "hex_color_count": 15,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/intent-to-artifact-trace.svg",
+        "hex_color_count": 15,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/context-transaction-lifecycle.svg",
+        "hex_color_count": 15,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/readiness-residual-quarantine-map.svg",
+        "hex_color_count": 15,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/route-selection-budget-tradeoff.svg",
+        "hex_color_count": 14,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/compression-and-generation-acceptance.svg",
+        "hex_color_count": 15,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/cyclic-substrate-adoption-gate.svg",
+        "hex_color_count": 13,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      },
+      {
+        "asset_path": "assets/diagrams/living-book-release-pipeline.svg",
+        "hex_color_count": 15,
+        "role_img": true,
+        "aria_labelledby_title_desc": true,
+        "title_id": true,
+        "desc_id": true,
+        "standard_viewbox": true,
+        "draft_visual_boundary": true,
+        "not_release_reviewed_boundary": true
+      }
+    ]
+  },
+  "contrast_summary": {
+    "figure_count": 10,
+    "all_figures_passed": true,
+    "minimum_text_contrast_ratio": 5.19,
+    "minimum_flow_line_contrast_ratio": 3.96,
+    "minimum_marker_contrast_ratio": 3.96,
+    "minimum_font_size_px": 15.0
+  },
+  "release_effect": "none",
+  "support_state_effect": "none",
+  "review_boundary": "This source-level visual identity review checks stylesheet tokens, key-figure presentation rules, mobile and print behavior, palette diversity, SVG accessibility metadata, and existing contrast metrics. It is not manual aesthetic review, not e-reader visual review, not DOCX/PDF application review, not final figure-artifact approval, and not reader release approval.",
+  "non_claims": [
+    "does not approve final figure art",
+    "does not approve EPUB, DOCX, PDF, e-reader, audio, or reader release artifacts",
+    "does not prove visual quality in every target application",
+    "does not promote any chapter core claim or support state"
+  ],
+  "errors": []
+}
