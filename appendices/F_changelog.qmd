@@ -464,6 +464,22 @@
   prove audit durability, prove provenance completeness, prove open-world
   receipt faithfulness, or promote any chapter core claim.
 
+## 2026-07-04 - Record epistemic-TCB no-promotion decision
+
+- Added accepted no-promotion decision
+  `evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json`
+  for `artifact-graphs.epistemic_tcb_fixture`.
+- Synchronized `docs/epistemic_trusted_computing_base_fixture.md`, the live
+  Artifact Graphs chapter, the curated reader chapter, `docs/book_outline.md`,
+  `docs/v1_x_beyond_sota_roadmap.md`, `docs/non_core_evidence_ledger.md`,
+  `README.md`, and `index.qmd` so the finite trust-base fixture is visible as a
+  `blocks_promotion` decision.
+- Boundary: the decision blocks verifier-trust overclaims from the finite
+  trust-base fixture. It does not create an upward support-state transition,
+  prove verifier correctness, prove deployed trust-base behavior, prove
+  audit-log durability, prove policy correctness, prove open-world receipt
+  faithfulness, or promote any chapter core claim.
+
 ## 2026-07-04 - Refresh curated reader format probes
 
 - Refreshed the local tracked curated-reader HTML, EPUB, DOCX, and PDF

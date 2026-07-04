@@ -30,6 +30,10 @@ log, and the verifier route. If the same component writes a claim and then
 certifies that claim, the record can still be useful, but it is outside the
 trusted core and cannot promote support.
 
+That boundary now has its own no-promotion decision. The finite trust-base
+fixture blocks overclaims about verifier trust, but it does not prove verifier
+correctness or a deployed trusted core.
+
 This matters because the ASI Stack depends on reuse. A proof becomes evidence
 for a claim. A source note becomes context. A failed run becomes a regression
 case. A reader-edition chapter becomes a release artifact. A repeated trace

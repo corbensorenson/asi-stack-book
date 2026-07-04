@@ -17,6 +17,18 @@ base. It asks where verification trust bottoms out, how trust is delegated, and
 what remains outside the trusted core. Its explicit boundary is no support-state
 promotion from a well-shaped trust-base record.
 
+The result artifact records `evidence_transition_created: false`. The separate
+accepted no-promotion decision is:
+
+```text
+evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json
+```
+
+That decision treats the fixture as blocking evidence for trust-base overclaims
+only. It names the deployed trust-base storage/replay, verifier-quality,
+audit-log durability, policy-review, outside-TCB residual, and independent-review
+burden needed before any upward support movement.
+
 The fixture rejects verifier-trust laundering and preserves a no support-state promotion boundary.
 
 The validator accepts three honest records:
@@ -56,5 +68,6 @@ Non-claims:
 - This does not prove deployed trust-base behavior.
 - This does not prove audit-log durability, policy correctness, or verifier
   independence outside the finite records.
-- This does not create an evidence transition or support-state transition.
+- This fixture and its accepted no-promotion decision do not create an upward
+  support-state transition.
 - This does not promote any chapter core claim.

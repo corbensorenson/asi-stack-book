@@ -1,0 +1,130 @@
+{
+  "transition_id": "v1_x_measured.artifact_epistemic_tcb_fixture.no_change",
+  "claim_id": "artifact-graphs.epistemic_tcb_fixture",
+  "claim_surface_refs": [
+    "docs/epistemic_trusted_computing_base_fixture.md",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "docs/book_outline.md",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/epistemic_tcb/input/epistemic_tcb_cases.json",
+    "experiments/epistemic_tcb/results/2026-07-03-local.json",
+    "scripts/validate_epistemic_trusted_computing_base.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Artifact Graph epistemic trusted computing base fixture only. The fixture accepts three finite trust-base records and rejects six expected-invalid controls for missing roots of trust, same-component verifier laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape. It is not verifier-correctness evidence, not deployed trust-base behavior, not deployed audit-log durability, not policy-correctness evidence, not open-world receipt faithfulness, not source-interpretation evidence, and not an upward support-state transition.",
+  "evidence_roles": [
+    "bounded_epistemic_tcb_fixture",
+    "root_of_trust_gate",
+    "bounded_delegation_gate",
+    "recursion_stop_gate",
+    "verifier_independence_gate",
+    "outside_tcb_residual_gate",
+    "self_verifier_laundering_negative_control",
+    "finite_lean_epistemic_tcb_bridge",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The epistemic trusted computing base fixture is useful because it makes a record-level trust boundary executable: a verifier route must name a root of trust, bounded delegation rule, recursion stop, verifier-independence state, outside-TCB residuals, and non-claims before it can even be considered for support review, and a well-shaped trust-base record cannot promote support by shape alone. The evidence remains a finite local fixture, so this accepted decision blocks promotion for verifier correctness, deployed trust-base behavior, audit-log durability, policy correctness, open-world receipt faithfulness, source interpretation, benchmark performance, model quality, safety, ASI, or the Artifact Graphs chapter core claim.",
+  "required_artifacts": [
+    "deployed or externally reviewable trust-base storage and replay trace",
+    "independent verifier-quality review outside the producing component",
+    "audit-log durability evidence for the trust-base route",
+    "policy-correctness or policy-review evidence for named roots of trust",
+    "verifier-independence evidence over real or externally replayed artifacts",
+    "outside-TCB residual lifecycle evidence",
+    "open-world receipt-faithfulness or attestation evidence where trust-base claims affect artifact support",
+    "source-interpretation adequacy review where source-derived claims are involved",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/epistemic_trusted_computing_base_fixture.md",
+    "experiments/epistemic_tcb/input/epistemic_tcb_cases.json",
+    "experiments/epistemic_tcb/results/2026-07-03-local.json",
+    "scripts/validate_epistemic_trusted_computing_base.py",
+    "lean/AsiStackProofs/ArtifactGraph.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/epistemic_trusted_computing_base_fixture.md",
+    "docs/artifact_graph_record_reality_sequence.md",
+    "docs/receipt_faithfulness_adversarial_fixture.md",
+    "docs/artifact_live_attestation_probe.md",
+    "docs/artifact_randomized_attestation_audit.md",
+    "appendices/E_codex_test_specs.qmd",
+    "docs/proof_adequacy_review.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+    "docs/book_outline.md#artifact-graphs-audit-logs-and-replay"
+  ],
+  "verification_command": "python3 scripts/validate_epistemic_trusted_computing_base.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "missing root of trust is rejected",
+    "same-component self-verifier laundering is rejected",
+    "unbounded trust propagation is rejected",
+    "missing recursion stop condition is rejected",
+    "erased outside-TCB residuals are rejected",
+    "support promotion from trust-base shape is rejected",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/epistemic_trusted_computing_base_fixture.md",
+    "experiments/epistemic_tcb/input/epistemic_tcb_cases.json",
+    "experiments/epistemic_tcb/results/2026-07-03-local.json",
+    "scripts/validate_epistemic_trusted_computing_base.py"
+  ],
+  "downgrade_triggers": [
+    "Epistemic trusted computing base validator failure",
+    "missing root of trust, same-component verifier laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residual, or trust-base-shape support promotion accepted as valid",
+    "the finite trust-base fixture described as verifier correctness, deployed trust-base behavior, audit-log durability, policy correctness, open-world receipt faithfulness, source interpretation, benchmark, model-quality, safety, ASI, or chapter-core evidence",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed epistemic-TCB claim after deployed or externally reviewable trust-base storage/replay traces, independent verifier-quality review, audit-log durability evidence, policy-review evidence for named roots of trust, verifier-independence evidence, outside-TCB residual lifecycle evidence, receipt-faithfulness evidence where applicable, source-interpretation review where applicable, residuals, non-claims, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "finite epistemic trusted computing base fixture only",
+    "three valid synthetic trust-base records only",
+    "six expected-invalid synthetic controls only",
+    "no deployed trust-base storage",
+    "no deployed trust-base replay",
+    "no verifier-correctness proof",
+    "no audit-log durability evidence",
+    "no policy-correctness proof",
+    "no open-world receipt-faithfulness proof",
+    "no source-interpretation evidence",
+    "no benchmark evidence",
+    "no model-quality evidence",
+    "no safety or ASI evidence",
+    "no independent external review",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent verifier-quality, audit-durability, policy-correctness, source-interpretation, external-project, or external human review",
+  "acceptance_blockers": [
+    "no deployed or externally reviewable trust-base storage/replay trace",
+    "no independent verifier-quality review",
+    "no deployed audit-log durability evidence",
+    "no policy-correctness review for named roots of trust",
+    "no open-world receipt-faithfulness evidence",
+    "no independent external review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-04---record-epistemic-tcb-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote the Artifact Graphs chapter core claim",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not prove verifier correctness, deployed trust-base behavior, deployed audit-log durability, policy correctness, open-world receipt faithfulness, source interpretation, benchmark performance, model quality, safety, deployment safety, or ASI"
+  ]
+}
