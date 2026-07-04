@@ -1,6 +1,6 @@
 # Routing Decision Lease Harness
 
-Last updated: 2026-07-01
+Last updated: 2026-07-03
 
 Command:
 
@@ -11,6 +11,12 @@ python3 scripts/validate_routing_decision_lease.py
 Result record: `experiments/routing_decision_lease/results/2026-07-01-local.md`
 
 Result summary: Routing decision lease harness passed: 3 valid fixture(s), 7 expected-invalid fixture(s).
+
+No-promotion decision: `evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json`
+accepts the harness as useful synthetic routing-lease boundary evidence while
+blocking learned-router, route-quality, deployed authority-enforcement,
+specialist-quality, MoECOT replay, orchestration benchmark, and chapter-core
+promotion claims.
 
 ## What It Checks
 
@@ -36,4 +42,5 @@ fixtures obey the route-lease rules checked by the script. It does not prove
 routing accuracy, learned-router quality, deployed authority enforcement,
 least-cost optimality, specialist quality, MoECOT replay, benchmark
 performance, runtime behavior, model quality, safety, or ASI capability. It
-does not promote any Appendix C or chapter core support state.
+does not promote any Appendix C or chapter core support state. The accepted
+no-promotion decision above records that boundary explicitly.

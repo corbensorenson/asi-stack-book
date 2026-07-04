@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-03 - Record routing lease no-promotion decision
+
+- Added
+  `evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json`
+  and wired it into the routing lease harness doc, live chapter, curated reader
+  chapter, outline, Appendix E test spec, and v1.x roadmap.
+- The decision accepts the existing synthetic routing decision lease harness as
+  useful boundary evidence while blocking learned-router, route-quality,
+  deployed authority-enforcement, specialist-quality, MoECOT replay,
+  orchestration benchmark, and chapter-core promotion claims.
+- Boundary: this is an accepted no-promotion decision over an existing
+  planned-only routing fixture; it does not add a new harness, rerun a routing
+  benchmark, select the Routing chapter as an active evidence lane, prove
+  runtime behavior, promote any support state, or promote the chapter core
+  claim.
+
 ## 2026-07-03 - Reconcile routing and steward burn-down artifact refs
 
 - Reconciled Milestone 2.5 burn-down accounting for

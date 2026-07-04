@@ -1,0 +1,115 @@
+{
+  "transition_id": "v1_x_measured.routing_decision_lease.no_change",
+  "claim_id": "routing-heads.synthetic_routing_decision_lease",
+  "claim_surface_refs": [
+    "docs/routing_decision_lease_harness.md",
+    "chapters/routing-heads-and-specialist-cores.qmd",
+    "editions/reader_manuscript/v1_0/chapters/routing-heads-and-specialist-cores.qmd",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/routing_decision_lease/results/2026-07-01-local.md",
+    "scripts/validate_routing_decision_lease.py",
+    "lean/AsiStackProofs/Routing.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Synthetic routing decision lease packet validation only. The harness checks record-level least-capable selection, rejected overprivileged candidates, selected-route authority-envelope containment, readiness fallback, expired-lease residualization, rejected-candidate evidence, residual ownership, and MoECOT source-boundary non-claims. It does not run real routing tasks, train or evaluate a learned router, measure route quality, import MoECOT replay packets, benchmark orchestration, enforce deployed authority, or validate specialist quality.",
+  "evidence_roles": [
+    "synthetic_route_lease_harness",
+    "least_capable_selection_boundary",
+    "authority_envelope_negative_control",
+    "readiness_fallback_boundary",
+    "expired_lease_residual_boundary",
+    "moecot_source_boundary",
+    "finite_lean_lifecycle_route",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The routing decision lease harness is useful because it makes route receipts reject overprivileged selection, authority widening, stale leases, missing readiness, missing residual ownership, and source-only MoECOT promotion at record level. It remains synthetic fixture evidence, so this accepted decision blocks promotion for learned-router, route-quality, deployed authority-enforcement, specialist-quality, MoECOT replay, orchestration benchmark, or chapter-core claims.",
+  "required_artifacts": [
+    "real routing task suite with task inputs, expected capability needs, and outcome criteria",
+    "learned-router or policy-router implementation with reproducible route logs",
+    "route-quality measurement with baselines, negative controls, and residual accounting",
+    "imported MoECOT replay packets or archived public replay bundle",
+    "orchestration benchmarks with environment notes",
+    "deployed authority-enforcement evidence",
+    "independent review before broader support movement"
+  ],
+  "artifact_refs": [
+    "docs/routing_decision_lease_harness.md",
+    "experiments/routing_decision_lease/results/2026-07-01-local.md",
+    "scripts/validate_routing_decision_lease.py",
+    "lean/AsiStackProofs/Routing.lean"
+  ],
+  "evidence_packet_refs": [
+    "appendices/E_codex_test_specs.qmd",
+    "docs/book_outline.md",
+    "docs/v1_x_beyond_sota_roadmap.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#routing-heads-and-specialist-cores.core",
+    "docs/book_outline.md#routing-heads-and-specialist-cores"
+  ],
+  "verification_command": "python3 scripts/validate_routing_decision_lease.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "overprivileged specialist selection is rejected",
+    "selected-route authority-envelope widening is rejected",
+    "missing readiness preserves fallback or residual handling",
+    "expired leases residualize rather than select stale routes",
+    "missing rejected-candidate evidence is rejected",
+    "source-only MoECOT packets preserve replay gaps and promotion blockers",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/routing_decision_lease_harness.md",
+    "experiments/routing_decision_lease/results/2026-07-01-local.md",
+    "scripts/validate_routing_decision_lease.py"
+  ],
+  "downgrade_triggers": [
+    "routing decision lease validator failure",
+    "authority-widening fixture accepted as valid",
+    "missing-readiness route selected without fallback or residual handling",
+    "expired lease selected without residualization",
+    "MoECOT source-only packet described as replay evidence",
+    "harness described as learned-router, route-quality, deployed authority-enforcement, specialist-quality, benchmark, or MoECOT-runtime evidence",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed routing claim after real routing tasks, a learned-router or policy-router implementation, route-quality measurements with baselines and negative controls, imported MoECOT replay or archived public replay fixtures, orchestration benchmark records, deployed authority-enforcement evidence, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "synthetic fixtures only",
+    "no real routing task outcomes",
+    "no learned-router or policy-router implementation",
+    "no route-quality measurement",
+    "no deployed authority enforcement",
+    "no MoECOT replay",
+    "no orchestration benchmark",
+    "no specialist-quality evidence",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent routing, MoECOT, benchmark, authority-enforcement, specialist-quality, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no real routing task suite",
+    "no learned-router or policy-router implementation",
+    "no route-quality measurement",
+    "no imported MoECOT replay packets",
+    "no orchestration benchmark",
+    "no deployed authority-enforcement evidence",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-03---record-routing-lease-no-promotion-decision",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Routing Heads and Specialist Cores above argument",
+    "does not prove learned-router quality, route-quality dominance, deployed authority enforcement, specialist quality, MoECOT replay, orchestration benchmark performance, runtime behavior, model quality, safety, or ASI capability",
+    "does not create an upward support-state transition",
+    "does not promote the Routing Heads and Specialist Cores chapter core claim"
+  ]
+}
