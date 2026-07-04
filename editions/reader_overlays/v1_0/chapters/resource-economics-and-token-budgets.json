@@ -1,0 +1,33 @@
+{
+  "schema_version": "0.1",
+  "target_file": "chapters/resource-economics-and-token-budgets.qmd",
+  "operations": [
+    {
+      "id": "v1_0.resource_economics.minimum_viable_implementation_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 2,
+        "title": "Minimum Viable Implementation"
+      },
+      "rationale": "Replace the reader-visible harness inventory with prose that explains the Resource Economics minimum artifact while preserving no-deployed-scheduler and no-promotion boundaries.",
+      "content_lines": [
+        "The smallest honest implementation is not a market, scheduler, or TokenMana simulation. It is a Resource Budget Record paired with the evidence records that say what a route was allowed to mean.",
+        "",
+        "That record has to price the whole route before calling anything efficient: task value, risk class, capacity pool, cost estimate, verification tax, protected overhead, displaced costs, quality predicate, safety gates, escalation rule, residuals, and evidence references. When synthetic or simulated evidence is involved, a Simulation Contract Record has to travel with it so scope, fidelity, omissions, instrumentation effects, resource bills, and transfer limits stay attached.",
+        "",
+        "The current repository has a deliberately narrow version of that idea. The budget fixtures and ledger checks accept low-risk dispatch, high-risk escalation, protected-overhead dispatch, displaced-cost residualization, review-capacity hoarding detection, and security-overhead erasure rejection. The simulation-transfer checks accept only scoped claim movement and reject missing fidelity, unbounded world transfer, missing resource bills, ignored instrumentation, and support-state promotion.",
+        "",
+        "The flagship Resource lane then makes the accounting concrete. Its costed-route slice compares four routes: an adequate but expensive manual-review baseline, a bounded transform route with verification, a cheaper route that fails verification, and a cheaper route that hides residual cost. The accepted slice chooses the bounded transform route only after the cheaper failed and hidden-residual routes are rejected. The Lean bridge checks the same finite selector state rather than asking the reader to trust the prose.",
+        "",
+        "The workflow and load-stability fixtures add route history. The workflow trace keeps high-risk release work ahead of lower-risk work and preserves protected overhead, residual ownership, and non-claim boundaries. The finite load-stability probe selects protected capacity smoothing over admitting every arrival in a 10-task synthetic burst, while residualizing seven deferrals and rejecting review erasure.",
+        "",
+        "The aggregate replay ties the local evidence package together: `python3 scripts/validate_resource_flagship_lane.py` checks ten command replays, twenty-six tracked artifact digests, three accepted narrow transitions, five explicit no-promotion decisions, preserved negative controls, residuals, non-claims, and the no-core-promotion boundary. The CI cost profile adds publication-pipeline metadata, including classified deploy-service failures and a recorded recovery boundary, but it remains operations metadata rather than workload evidence.",
+        "",
+        "The governance-tax model supplies the reader-facing trade-off. Two modeled cases choose governance once hidden verification, fallback, reviewer burden, and residual discharge are priced. One low-risk shortcut remains allowed because no protected gate is required and the full cost stays lower. This is the point of resource economics: governed efficiency is neither always-pay-every-tax nor always-take-the-cheapest-route. It is the discipline of pricing the whole route before accepting the saving.",
+        "",
+        "None of this proves deployed scheduler behavior, real verification-tax measurement, stable speedup, TokenMana or PlanForge behavior, model quality, economic optimality, physical feasibility, external review, artifact approval, support-state movement, or the Resource Economics core claim. It is a public-safe minimum slice for one narrower claim: a route is not cheaper when the savings come from erased verification, erased protected overhead, or displaced residual burden."
+      ]
+    }
+  ]
+}
