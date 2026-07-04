@@ -83,8 +83,8 @@ The reader manuscript is the human-prose source for the bundle. The audio script
 - `scripts/validate_human_reading_paths.py` checks that every manifest chapter has exactly one Human Reading Path bridge and that generated reader chapters retain it as ordinary prose.
 - `scripts/render_reader_formats.py` attempts selected reader-edition renders, snapshots successful format outputs under ignored `build/reader_edition/format_artifacts/`, and writes `reader_render_report.json` with actual local outcomes.
 - `scripts/inspect_reader_format_artifacts.py` structurally inspects ignored local HTML/EPUB/DOCX snapshots for expected files, EPUB/DOCX container integrity, media counts, and obvious live-scaffold leaks.
-- `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source, and its check verifies that chapter scripts preserve the minimum-viable and beyond-state-of-the-art implementation horizons.
-- `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`, `docs/reader_audio_script_probe_manifest.md`, and `scripts/validate_reader_audio_script_probe_manifest.py` record and check the current audio-script review-workspace probe without treating the ignored scripts as narration approval or audio artifacts.
+- `scripts/build_audio_script.py` creates a narration-script candidate under `build/audio_script/` after deriving the reader source, routes the ten tracked key-figure spoken summaries into generated audio companion notes, and checks that chapter scripts preserve the minimum-viable and beyond-state-of-the-art implementation horizons.
+- `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`, `docs/reader_audio_script_probe_manifest.md`, and `scripts/validate_reader_audio_script_probe_manifest.py` record and check the current audio-script review-workspace probe, including key-figure spoken-summary routing, without treating the ignored scripts as narration approval or audio artifacts.
 - `schemas/edition_release_record.schema.json` defines public-safe records for future major-version research, reader, and audio releases.
 - `assets/reading-mode.html` and `assets/styles.scss` implement the live-site reading-mode switch.
 - `scripts/validate_reading_mode_toggle.py` checks that the live-site Human view tracks `reader_release.strip_headings`, uses the recorded local-storage key and URL query parameter, hides live-only page-TOC entries, section numbers, raw core-claim markers, and repeated support boilerplate, and exposes the assistive description/status contract.
@@ -222,16 +222,16 @@ Embedding audio into an EPUB is allowed only when the produced EPUB actually con
 
 The generated audio script is a review workspace, not an audiobook. By default it is derived from the tracked curated reader manuscript, then marks tables, diagrams, images, code, and schemas for spoken treatment so they are not silently omitted.
 
-The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, `pronunciation_glossary.md`, `proof_equation_reading_rules.md`, and `companion_notes.md`. The manifest records that the script was derived from the tracked curated reader manuscript through the reader release path, whether every chapter script preserved both implementation-horizon sections, and that review is still required before any MP3, M4B, or audio-embedded EPUB can be claimed. The companion notes count tables, diagrams, code/schema blocks, and images by script file so the narration review can decide what is spoken, summarized, or moved to companion material. The proof/equation rules keep theorem IDs, equations, support states, schemas, hashes, and negative controls scoped in spoken form. The checklist records table/diagram/code spoken-treatment requirements, packaging checks, and the rule that an audio-embedded EPUB exists only after the reviewed audio files are actually embedded and checked.
+The generated audio workspace includes `audio_manifest.json`, `AUDIO_RELEASE_CHECKLIST.md`, `chapter_markers.md`, `pronunciation_glossary.md`, `proof_equation_reading_rules.md`, and `companion_notes.md`. The manifest records that the script was derived from the tracked curated reader manuscript through the reader release path, whether every chapter script preserved both implementation-horizon sections, and that review is still required before any MP3, M4B, or audio-embedded EPUB can be claimed. The companion notes count tables, diagrams, code/schema blocks, and images by script file so the narration review can decide what is spoken, summarized, or moved to companion material; they also route the ten tracked key-figure spoken summaries from `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` into the generated audio review workspace. The proof/equation rules keep theorem IDs, equations, support states, schemas, hashes, and negative controls scoped in spoken form. The checklist records table/diagram/code spoken-treatment requirements, packaging checks, and the rule that an audio-embedded EPUB exists only after the reviewed audio files are actually embedded and checked.
 
 The audio manifest carries the same human-consumption bundle policy, but only to enforce dependency direction. Audio is not a shortcut around reader review, and audio embedded in EPUB remains a separate checked artifact.
 
 The tracked audio-script probe manifest records the current local workspace
 facts: 49 generated script files, preserved implementation horizons, 5 table
-treatment notes, 50 Mermaid diagram notes, 11 image notes, and MP3/M4B/
-audio-embedded EPUB targets still marked `target_not_generated`. This keeps
-audio preparation visible without approving narration or claiming audio files
-exist.
+treatment notes, 50 Mermaid diagram notes, 11 image notes, ten routed
+key-figure spoken-summary rows, and MP3/M4B/audio-embedded EPUB targets still
+marked `target_not_generated`. This keeps audio preparation visible without
+approving narration or claiming audio files exist.
 
 ## Major Version Rule
 

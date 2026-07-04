@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "build" / "audio_script"
 DEFAULT_READER_TEMP_NAME = "reader_source"
 DEFAULT_SOURCE_MODE = "curated_reader_manuscript"
+KEY_FIGURE_COMPANION_NOTE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "companion_notes" / "key-figures.md"
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]+\).*")
 IMPLEMENTATION_HORIZON_HEADINGS = (
     "## Minimum Viable Implementation",
@@ -75,6 +76,44 @@ def scan_audio_treatments(text: str) -> dict[str, int]:
         in_table = False
 
     return counts
+
+
+def key_figure_companion_summary() -> dict[str, object]:
+    text = KEY_FIGURE_COMPANION_NOTE.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    status = ""
+    for line in lines:
+        if line.startswith("Status:"):
+            status = line.removeprefix("Status:").strip()
+            break
+
+    table_lines: list[str] = []
+    in_table = False
+    for line in lines:
+        if line.startswith("| Figure | Asset | Spoken summary | Boundary |"):
+            in_table = True
+        if in_table:
+            if not line.startswith("|"):
+                break
+            table_lines.append(line)
+
+    figure_rows = [
+        line
+        for line in table_lines
+        if line.startswith("| ")
+        and "assets/diagrams/" in line
+        and " | " in line
+    ]
+    return {
+        "path": str(KEY_FIGURE_COMPANION_NOTE.relative_to(ROOT)),
+        "status": status,
+        "figure_count": len(figure_rows),
+        "has_audio_treatment": "## Audio Treatment" in text,
+        "has_e_reader_treatment": "## E-Reader Treatment" in text,
+        "non_claim_boundary_count": text.count("This companion note is not")
+        + text.count("This companion note does not"),
+        "spoken_summary_table": table_lines,
+    }
 
 
 def qmd_to_audio_markdown(text: str) -> str:
@@ -366,6 +405,7 @@ def write_audio_companion_notes(
     output_dir: Path,
     companion_policy: dict,
     treatment_summary: dict[str, dict[str, int]],
+    key_figure_summary: dict[str, object],
 ) -> str:
     companion_path = str(companion_policy.get("audio_companion_path", "companion_notes.md"))
     totals = {
@@ -411,6 +451,21 @@ def write_audio_companion_notes(
         f"{totals['code_or_schema_blocks']} | "
         f"{totals['images']} |",
     ])
+
+    lines.extend([
+        "",
+        "## Key-Figure Spoken Summary Routing",
+        "",
+        f"- Source note: `{key_figure_summary.get('path')}`",
+        f"- Source status: `{key_figure_summary.get('status')}`",
+        f"- Draft figure summaries routed: {key_figure_summary.get('figure_count')}",
+        "- Boundary: these summaries are drafting companion material, not narration approval, not final figure-artifact approval, not audio approval, and not reader release approval.",
+        "",
+    ])
+    table_lines = key_figure_summary.get("spoken_summary_table", [])
+    if isinstance(table_lines, list) and table_lines:
+        lines.extend(str(line) for line in table_lines)
+        lines.append("")
 
     companion_routing = build_reader_edition.load_companion_routing(companion_policy)
     if companion_routing.get("configured"):
@@ -525,7 +580,13 @@ def generate(output_dir: Path, source_mode: str = DEFAULT_SOURCE_MODE) -> dict[s
             str(audio_policy.get("proof_equation_reading_rules_path", "proof_equation_reading_rules.md")),
         )
         chapter_markers = write_chapter_markers(output_dir, script_files)
-        companion_notes = write_audio_companion_notes(output_dir, companion_policy, treatment_summary)
+        key_figure_summary = key_figure_companion_summary()
+        companion_notes = write_audio_companion_notes(
+            output_dir,
+            companion_policy,
+            treatment_summary,
+            key_figure_summary,
+        )
         review_checklist = write_audio_checklist(
             output_dir,
             audio_profile,
@@ -556,6 +617,7 @@ def generate(output_dir: Path, source_mode: str = DEFAULT_SOURCE_MODE) -> dict[s
             "script_files": script_files,
             "companion_notes": companion_notes,
             "companion_treatment_summary": treatment_summary,
+            "key_figure_companion_note": key_figure_summary,
             "implementation_horizon_script_status": implementation_horizon_status,
             "implementation_horizon_script_records": implementation_horizon_records,
             "pronunciation_glossary": pronunciation_glossary,

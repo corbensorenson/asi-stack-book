@@ -48,6 +48,28 @@
     "code_or_schema_blocks": 0,
     "images": 11
   },
+  "key_figure_companion_note": {
+    "path": "editions/reader_manuscript/v1_0/companion_notes/key-figures.md",
+    "status": "drafting companion note, not release reviewed.",
+    "figure_count": 10,
+    "has_audio_treatment": true,
+    "has_e_reader_treatment": true,
+    "non_claim_boundary_count": 6,
+    "spoken_summary_table": [
+      "| Figure | Asset | Spoken summary | Boundary |",
+      "|---|---|---|---|",
+      "| ASI Stack Control Plane | `assets/diagrams/asi-stack-control-plane.svg` | The stack starts with human intent, moves through governed planning, memory, claims, execution, routing, evidence, release records, residuals, and rollback, and only improves through recorded gates. | This is a draft orientation map, not evidence that an integrated ASI runtime exists. |",
+      "| Authority to Effect Path | `assets/diagrams/authority-to-effect-path.svg` | A request becomes an external effect only after permission class, authority ceiling, scoped approval, adapter handoff, receipt, denial, escalation, rollback, and incident paths are kept explicit. | This does not prove deployed authorization, revocation, rollback, adapter security, or incident response. |",
+      "| Evidence State Ladder | `assets/diagrams/evidence-state-ladder.svg` | Claim labels and support states are separate; promotions, no-change decisions, demotions, refutations, blockers, residuals, and non-claims move through review rather than through confident prose. | This does not promote any claim or prove that future evidence reviews will be correct. |",
+      "| Intent to Artifact Trace | `assets/diagrams/intent-to-artifact-trace.svg` | One request is followed through accepted intent, command contract, plan, typed job, authority gate, adapter effect, artifact node, evidence ledger, replay, feedback, refusal, residual, and re-contracting. | This does not prove parser quality, dispatcher enforcement, adapter safety, replay behavior, or artifact satisfaction. |",
+      "| Context Transaction Lifecycle | `assets/diagrams/context-transaction-lifecycle.svg` | Memory is treated as an accountable transaction: records, certificates, snapshots, mounts, taint, deletion closure, materialized views, faults, quarantine, adequacy, belief updates, and job handoffs stay linked. | This does not prove retrieval quality, runtime memory-store behavior, deletion closure, taint enforcement, or context adequacy. |",
+      "| Readiness, Residual, Quarantine Map | `assets/diagrams/readiness-residual-quarantine-map.svg` | A candidate route or replacement moves through readiness, limited use, residual escrow, quarantine, blocker handling, review reruns, and anti-laundering boundaries before any stronger claim is allowed. | This does not prove readiness-engine behavior, residual-ledger storage, quarantine enforcement, rollback behavior, or support-state promotion. |",
+      "| Route Selection Budget Tradeoff | `assets/diagrams/route-selection-budget-tradeoff.svg` | Route choice prices adequacy, authority, readiness, protected review cost, fallback, residual ownership, and negative controls before selecting what is cheaper enough and safe enough to try. | This does not prove deployed routing, production scheduler behavior, model quality, economic optimality, or core-claim promotion. |",
+      "| Compression and Generation Acceptance | `assets/diagrams/compression-and-generation-acceptance.svg` | Compact generation, fast generation, and artifact compression are useful only when verification, repair, fallback, residual burden, and consumer policy decide what is accepted. | This does not prove compression ratio, speed, task quality, reconstruction utility, verifier behavior, or model performance. |",
+      "| Cyclic Substrate Adoption Gate | `assets/diagrams/cyclic-substrate-adoption-gate.svg` | Cyclic substrates such as RoPE-like position schemes, circulant mixers, or cyclic memory enter only through structural receipts, symmetry baselines, measured tradeoffs, canary routing, and retirement paths. | This does not prove model quality, context-length improvement, hardware performance, training stability, transfer, or deployment. |",
+      "| Living Book Release Pipeline | `assets/diagrams/living-book-release-pipeline.svg` | The live book, human reader manuscript, proof/evidence artifacts, format builds, release records, open blockers, and future backlog stay separate so the project can publish without confusing drafts with approved artifacts. | This does not approve any reader release, EPUB, DOCX, PDF, audiobook, source adequacy, or support-state movement. |"
+    ]
+  },
   "target_artifact_status": {
     "mp3": "target_not_generated",
     "m4b": "target_not_generated",

@@ -34,6 +34,8 @@ EXPECTED_TARGET_STATUS = {
     "m4b": "target_not_generated",
     "audio-embedded-epub": "target_not_generated",
 }
+KEY_FIGURE_COMPANION_PATH = "editions/reader_manuscript/v1_0/companion_notes/key-figures.md"
+EXPECTED_KEY_FIGURE_COUNT = 10
 COMPANION_TOTAL_KEYS = (
     "tables",
     "mermaid_diagrams",
@@ -177,6 +179,11 @@ def validate_generated_workspace(
     if generated.get("target_artifact_status") != EXPECTED_TARGET_STATUS:
         errors.append("Generated target_artifact_status must keep all audio targets not generated.")
 
+    generated_key_figures = generated.get("key_figure_companion_note")
+    tracked_key_figures = tracked.get("key_figure_companion_note")
+    if generated_key_figures != tracked_key_figures:
+        errors.append("Generated key_figure_companion_note does not match tracked manifest.")
+
     treatment = generated.get("companion_treatment_summary")
     if not isinstance(treatment, dict):
         errors.append("Generated companion_treatment_summary must be an object.")
@@ -215,6 +222,22 @@ def validate_generated_workspace(
     for term in ("ASI", "MoECOT", "Lean", "EPUB", "DOCX", "MP3", "M4B"):
         if term not in glossary:
             errors.append(f"pronunciation_glossary.md missing term: {term}")
+
+    companion_notes = (workspace / "companion_notes.md").read_text(
+        encoding="utf-8",
+        errors="ignore",
+    )
+    for phrase in (
+        "Key-Figure Spoken Summary Routing",
+        KEY_FIGURE_COMPANION_PATH,
+        "Draft figure summaries routed: 10",
+        "not narration approval",
+        "not reader release approval",
+    ):
+        if phrase not in companion_notes:
+            errors.append(f"companion_notes.md missing key-figure routing phrase: {phrase}")
+    if companion_notes.count("assets/diagrams/") < EXPECTED_KEY_FIGURE_COUNT:
+        errors.append("companion_notes.md must include all ten key-figure asset rows.")
 
 
 def validate_manifest(manifest: dict[str, Any]) -> list[str]:
@@ -281,6 +304,26 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     if manifest.get("target_artifact_status") != EXPECTED_TARGET_STATUS:
         errors.append("target_artifact_status must keep MP3, M4B, and audio-embedded EPUB at target_not_generated.")
 
+    key_figures = manifest.get("key_figure_companion_note")
+    if not isinstance(key_figures, dict):
+        errors.append("key_figure_companion_note must be an object.")
+        key_figures = {}
+    if key_figures.get("path") != KEY_FIGURE_COMPANION_PATH:
+        errors.append("key_figure_companion_note.path drifted.")
+    if "drafting" not in str(key_figures.get("status", "")).lower():
+        errors.append("key_figure_companion_note.status must remain drafting.")
+    if key_figures.get("figure_count") != EXPECTED_KEY_FIGURE_COUNT:
+        errors.append("key_figure_companion_note.figure_count must be 10.")
+    if key_figures.get("has_audio_treatment") is not True:
+        errors.append("key_figure_companion_note.has_audio_treatment must be true.")
+    if key_figures.get("has_e_reader_treatment") is not True:
+        errors.append("key_figure_companion_note.has_e_reader_treatment must be true.")
+    if int(key_figures.get("non_claim_boundary_count", 0)) < 5:
+        errors.append("key_figure_companion_note.non_claim_boundary_count must be at least 5.")
+    table = key_figures.get("spoken_summary_table")
+    if not isinstance(table, list) or sum(1 for row in table if "assets/diagrams/" in str(row)) != EXPECTED_KEY_FIGURE_COUNT:
+        errors.append("key_figure_companion_note.spoken_summary_table must carry all ten asset rows.")
+
     blockers = set(require_string_list("manifest", "release_blockers_preserved", manifest.get("release_blockers_preserved"), errors))
     missing_blockers = REQUIRED_BLOCKERS - blockers
     if missing_blockers:
@@ -325,6 +368,9 @@ def validate_summary(manifest: dict[str, Any], errors: list[str]) -> None:
         "| Implementation-horizon script status | pass |",
         f"| Mermaid diagrams | {mermaid_diagrams} |",
         "| MP3 | `target_not_generated` |",
+        "Key-figure companion note |",
+        "ten draft key figures",
+        KEY_FIGURE_COMPANION_PATH,
         "audio_edition_release_record_not_created",
         "This manifest is not an audiobook",
         "does not promote any chapter core claim",

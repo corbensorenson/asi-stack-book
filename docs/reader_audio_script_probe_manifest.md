@@ -51,6 +51,17 @@ and e-reader fallback guidance in
 audio companion workspace points future reviewers to that note through the
 release-profile companion-material policy. This is still not narration
 approval, final figure-artifact approval, or evidence that audio files exist.
+The bridge routes ten draft key figures into the generated audio companion
+workspace for review.
+
+| Key-figure companion note | Value |
+|---|---:|
+| Source note | `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` |
+| Source status | `drafting companion note, not release reviewed.` |
+| Draft figure summaries routed | 10 |
+| Audio treatment section present | true |
+| E-reader treatment section present | true |
+| Non-claim boundaries | 6 |
 
 ## Target Artifact Status
 

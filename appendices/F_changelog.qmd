@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-04 - Route key-figure summaries into audio companion workspace
+
+- Updated `scripts/build_audio_script.py` so generated audio companion notes
+  now carry the ten tracked key-figure spoken-summary rows from
+  `editions/reader_manuscript/v1_0/companion_notes/key-figures.md`, including
+  their drafting status and non-claim boundaries.
+- Extended `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`,
+  `docs/reader_audio_script_probe_manifest.md`, and
+  `scripts/validate_reader_audio_script_probe_manifest.py` so the audio-script
+  probe validates 10 routed key-figure summaries alongside the existing 49
+  script files, 5 table notes, 50 Mermaid diagram notes, and 11 image notes.
+- Updated the release-surface ledger, README, repository map, publication
+  readiness notes, release-editions plan, and v1.x roadmap to record the bridge.
+- Boundary: this is audio/e-reader review scaffolding only. It does not approve
+  narration, MP3, M4B, audio-embedded EPUB, final figure art, EPUB/DOCX/PDF
+  artifacts, a reader release record, or any support-state movement.
+
 ## 2026-07-04 - Add key-figure EPUB/DOCX/PDF format probe
 
 - Added `scripts/validate_reader_key_figure_format_probe.py`,
