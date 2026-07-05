@@ -160,7 +160,7 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
     expected_ebook = {
         "epub_key_figure_page_view_pairs": 20,
         "epub_key_figure_failed_pairs": 0,
-        "epub_key_figure_max_overflow_px": 10,
+        "epub_key_figure_max_overflow_px": 0,
         "pdf_key_figure_caption_pages": 10,
         "pdf_key_figure_max_near_edge_ink_percent": 0.0,
         "docx_key_figure_title_pages": 10,

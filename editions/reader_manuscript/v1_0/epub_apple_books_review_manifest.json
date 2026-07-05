@@ -3,7 +3,7 @@
   "status": "passed_apple_books_epub_application_review",
   "reviewed_at_local": "2026-07-05",
   "source_artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
-  "source_sha256": "36e7ef644f1f44f4e2c5f1f50e26f5e381a552c1b504bb7b53068ab3db5e45a5",
+  "source_sha256": "7484f0e903cd7e6f6f56918a58f51c0149a0cf191c0cd3d53aed203a4c23fbf4",
   "source_probe_manifest": "editions/reader_manuscript/v1_0/curated_format_probe_manifest.json",
   "source_epub_content_audit_status": "passed_epub_package_content_navigation_probe",
   "source_epub_browser_review_status": "passed_browser_xhtml_application_review",
@@ -17,19 +17,19 @@
     {
       "id": "library_opened",
       "result": "pass",
-      "evidence": "Apple Books library displayed The ASI Stack by Corben Sorenson and opened it into a reader window.",
+      "evidence": "Apple Books opened the current repaired local EPUB digest into a reader window titled The ASI Stack.",
       "xml_error_banner_visible": false
     },
     {
       "id": "chapter_render_without_xml_error",
       "result": "pass",
-      "evidence": "Chapter 1 rendered in Apple Books with body text, page 23 navigation state, and the ASI Stack control-plane figure visible; the earlier XML error banner was absent.",
+      "evidence": "Chapter 1 rendered in Apple Books with body text, page 22 navigation state, and the ASI Stack control-plane figure exposed in the accessibility tree; the earlier XML error banner was absent.",
       "xml_error_banner_visible": false
     },
     {
       "id": "page_advance_to_figure",
       "result": "pass",
-      "evidence": "The current page rendered the ASI Stack control-plane figure, caption, figure-boundary text, and 1.1 Problem heading visibly in the Apple Books reader.",
+      "evidence": "The Apple Books reader advanced through baseline, preface, and chapter 1 pages and exposed the ASI Stack control-plane figure and descriptive alt text without an XML error banner.",
       "xml_error_banner_visible": false
     },
     {
@@ -52,8 +52,6 @@
   "preserved_blockers": [
     "reader_release_approval_not_created",
     "reader_release_record_not_created",
-    "docx_application_review_not_completed",
-    "manual_keyboard_only_review_not_completed",
     "screen_reader_review_not_completed",
     "wcag_conformance_review_not_completed",
     "narration_quality_review_not_completed",

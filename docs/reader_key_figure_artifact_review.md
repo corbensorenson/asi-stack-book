@@ -146,7 +146,7 @@ source-geometry review checks the ten draft SVG figures for the standard
 `0 0 1200 760` viewBox, visible content bounds, text-anchor bounds, entity
 counts, and visible draft/non-release status. It records 10 content-bound
 checks, 10 text-anchor checks, minimum visible text nodes 25, minimum visible
-rectangles 7, minimum visible connector paths 8, and 22.0 px minimum content
+rectangles 8, minimum visible connector paths 8, and 22.0 px minimum content
 edge margin. This is not raster review, not manual aesthetic review, not final
 figure-artifact approval, and not reader release approval.
 
@@ -156,7 +156,7 @@ figure-artifact approval, and not reader release approval.
 surface `docs/reader_visual_identity_review.md`. The source-level review checks
 stylesheet tokens, shared key-figure presentation rules, mobile/print behavior,
 SVG accessibility metadata, palette diversity, and carried contrast metrics for
-the ten draft key figures. It records 54 combined colors, 5 non-neutral color
+the ten draft key figures. It records 67 combined colors, 5 non-neutral color
 families, minimum text contrast ratio 5.19, minimum flow-line contrast ratio
 3.96, minimum marker contrast ratio 3.96, and minimum SVG text size 15 px. This
 is not manual aesthetic review, not e-reader visual review, not DOCX/PDF

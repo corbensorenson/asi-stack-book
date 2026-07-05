@@ -18,10 +18,10 @@ This local probe combines the current ignored curated-reader EPUB package with t
 | Key-figure XHTML entries | 10 |
 | Browser page-view pairs | 20 |
 | Failed page-view pairs | 0 |
-| Minimum body text characters | 5476 |
+| Minimum body text characters | 15628 |
 | Minimum alt-text words | 23 |
-| Maximum horizontal overflow | 10 px |
-| Minimum image count | 1 |
+| Maximum horizontal overflow | 0 px |
+| Minimum image count | 2 |
 | Image failures | 0 |
 | Figure boundaries | 10 |
 | Release boundaries | 10 |
@@ -30,16 +30,16 @@ This local probe combines the current ignored curated-reader EPUB package with t
 
 | Figure | XHTML entry | Alt words | Desktop overflow | E-reader overflow |
 |---|---|---:|---:|---:|
-| `asi_stack_control_plane` | `EPUB/text/ch003.xhtml` | 23 | 0 px | 10 px |
-| `authority_to_effect_path` | `EPUB/text/ch005.xhtml` | 23 | 0 px | 10 px |
-| `evidence_state_ladder` | `EPUB/text/ch007.xhtml` | 27 | 0 px | 10 px |
-| `intent_to_artifact_trace` | `EPUB/text/ch015.xhtml` | 29 | 0 px | 10 px |
-| `context_transaction_lifecycle` | `EPUB/text/ch019.xhtml` | 35 | 0 px | 10 px |
-| `readiness_residual_quarantine_map` | `EPUB/text/ch028.xhtml` | 35 | 0 px | 10 px |
-| `route_selection_budget_tradeoff` | `EPUB/text/ch033.xhtml` | 32 | 0 px | 10 px |
-| `compression_and_generation_acceptance` | `EPUB/text/ch030.xhtml` | 32 | 0 px | 10 px |
-| `cyclic_substrate_adoption_gate` | `EPUB/text/ch037.xhtml` | 33 | 0 px | 10 px |
-| `living_book_release_pipeline` | `EPUB/text/ch045.xhtml` | 27 | 0 px | 10 px |
+| `asi_stack_control_plane` | `EPUB/text/ch003.xhtml` | 23 | 0 px | 0 px |
+| `authority_to_effect_path` | `EPUB/text/ch005.xhtml` | 23 | 0 px | 0 px |
+| `evidence_state_ladder` | `EPUB/text/ch007.xhtml` | 27 | 0 px | 0 px |
+| `intent_to_artifact_trace` | `EPUB/text/ch015.xhtml` | 29 | 0 px | 0 px |
+| `context_transaction_lifecycle` | `EPUB/text/ch019.xhtml` | 35 | 0 px | 0 px |
+| `readiness_residual_quarantine_map` | `EPUB/text/ch028.xhtml` | 35 | 0 px | 0 px |
+| `route_selection_budget_tradeoff` | `EPUB/text/ch033.xhtml` | 32 | 0 px | 0 px |
+| `compression_and_generation_acceptance` | `EPUB/text/ch030.xhtml` | 32 | 0 px | 0 px |
+| `cyclic_substrate_adoption_gate` | `EPUB/text/ch037.xhtml` | 33 | 0 px | 0 px |
+| `living_book_release_pipeline` | `EPUB/text/ch045.xhtml` | 27 | 0 px | 0 px |
 
 ## Residuals
 

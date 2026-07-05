@@ -3,8 +3,8 @@
   "status": "accepted_docx_application_evidence_for_release_preparation",
   "decision_date": "2026-07-05",
   "source_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-  "source_docx_sha256": "6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74",
-  "repaired_docx_sha256": "6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74",
+  "source_docx_sha256": "ff045865d1d10a002f24835867f96262844d2d8916fe7882c565d95f7b4275bf",
+  "repaired_docx_sha256": "ff045865d1d10a002f24835867f96262844d2d8916fe7882c565d95f7b4275bf",
   "docx_content_audit_status": "passed_docx_document_xml_relationship_probe",
   "docx_libreoffice_review_status": "passed_docx_libreoffice_headless_pdf_review",
   "key_figure_docx_layout_status": "passed_local_docx_key_figure_layout_probe",
@@ -13,7 +13,7 @@
   "pages_text_fallback_status": "passed_pages_open_text_fallback_probe",
   "evidence": {
     "document_xml_relationship_probe": {
-      "paragraph_markers": 17378,
+      "paragraph_markers": 17381,
       "relationship_count": 286,
       "raw_qmd_relationship_targets": 0,
       "unresolved_internal_relationship_targets": 0,
@@ -21,8 +21,8 @@
       "raw_core_claim_marker_hits": 0
     },
     "libreoffice_headless_writer_review": {
-      "converted_pdf_pages": 504,
-      "text_characters_checked": 1028304,
+      "converted_pdf_pages": 505,
+      "text_characters_checked": 1029074,
       "blank_pages": 0,
       "low_ink_pages": 0,
       "near_edge_content_pages": 0
@@ -38,7 +38,7 @@
       "cleared_blockers": 1
     },
     "pages_text_fallback_probe": {
-      "text_characters_checked": 1105916,
+      "text_characters_checked": 1106715,
       "media_entries": 0,
       "live_marker_hits": 0,
       "raw_core_claim_marker_hits": 0

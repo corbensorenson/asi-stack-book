@@ -15,7 +15,7 @@ transition.
 
 | Gate | Status | Key facts |
 |---|---|---|
-| Ebook layout | `pass_pre_release_review` | EPUB key figures: 20 page-view pairs, 0 failed pairs, 10 px max overflow; PDF key figures: 10 caption pages, 0.0% near-edge ink; DOCX key figures: 10 title pages, 0.0% near-edge ink. |
+| Ebook layout | `pass_pre_release_review` | EPUB key figures: 20 page-view pairs, 0 failed pairs, 0 px max overflow; PDF key figures: 10 caption pages, 0.0% near-edge ink; DOCX key figures: 10 title pages, 0.0% near-edge ink. |
 | Diagram/image readiness | `pass_pre_release_review` | 10 key figures, 10 content-bound checks, 10 raster fallbacks, 27.64 minimum luminance std, 116 minimum quantized colors, 5 non-neutral color families, 10 alt texts, final figure-artifact review `passed_final_figure_artifact_release_preparation_review`. |
 | Bedtime readability | `pass_pre_release_review` | 44 curated chapters, 44 reconciled, 2384 to 5176 words per chapter, 150 maximum paragraph words, 0 paragraphs over 180 words, 0 live marker hits. |
 | Companion notes | `pass_pre_release_review` | 12 routing records, 12 existing chapter companion notes, key-figure companion note present: True, 10 figure spoken summaries routed. |

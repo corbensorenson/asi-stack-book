@@ -22,7 +22,7 @@ This CI-friendly source-geometry review checks the ten draft key figures for sta
 | Content bounds passed | 10 |
 | Text-anchor bounds passed | 10 |
 | Minimum visible text nodes | 25 |
-| Minimum visible rectangles | 7 |
+| Minimum visible rectangles | 8 |
 | Minimum visible connector paths | 8 |
 | Minimum content width | 1016.0 px |
 | Minimum content height | 532.0 px |

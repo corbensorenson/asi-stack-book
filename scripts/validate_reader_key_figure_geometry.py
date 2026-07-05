@@ -45,7 +45,7 @@ EXPECTED_SUMMARY = {
     "content_bounds_passed_count": 10,
     "text_anchor_bounds_passed_count": 10,
     "minimum_visible_text_nodes": 25,
-    "minimum_visible_rects": 7,
+    "minimum_visible_rects": 8,
     "minimum_visible_connector_paths": 8,
     "minimum_content_width_px": 1016.0,
     "minimum_content_height_px": 532.0,

@@ -346,9 +346,9 @@ def main() -> None:
         errors.append("curated format inspection_summary must be an object.")
         inspection = {}
     expected_artifacts = {
-        "curated_reader_epub": ("epub", "36e7ef644f1f44f4e2c5f1f50e26f5e381a552c1b504bb7b53068ab3db5e45a5"),
-        "curated_reader_docx": ("docx", "6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74"),
-        "curated_reader_pdf": ("pdf", "0b78383e1ba8edefb6ff1185f8ae9a5eb367dfb9e4c789e253327a51aa13a681"),
+        "curated_reader_epub": ("epub", "7484f0e903cd7e6f6f56918a58f51c0149a0cf191c0cd3d53aed203a4c23fbf4"),
+        "curated_reader_docx": ("docx", "ff045865d1d10a002f24835867f96262844d2d8916fe7882c565d95f7b4275bf"),
+        "curated_reader_pdf": ("pdf", "e6eeeacd839d353bc267d58932645c537c3001419df7f31be889625506ffdf48"),
     }
     for record_format, (manifest_format, expected_sha) in expected_artifacts.items():
         manifest_row = inspection.get(manifest_format, {})
@@ -636,8 +636,8 @@ def main() -> None:
             "Reader DOCX Application Evidence Decision",
             "accepted_docx_application_evidence_for_release_preparation",
             "clears only `docx_application_review_not_completed`",
-            "504-page PDF",
-            "1,028,304 text characters",
+            "505-page PDF",
+            "1,029,074 text characters",
             "does not claim Word, LibreOffice GUI, or Google Docs approval",
             "does not approve DOCX publication",
         ],
@@ -865,7 +865,7 @@ def main() -> None:
         "content_bounds_passed_count": 10,
         "text_anchor_bounds_passed_count": 10,
         "minimum_visible_text_nodes": 25,
-        "minimum_visible_rects": 7,
+        "minimum_visible_rects": 8,
         "minimum_visible_connector_paths": 8,
         "minimum_content_edge_margin_px": 22.0,
     }
@@ -876,7 +876,7 @@ def main() -> None:
     if visual_identity.get("status") != "passed_source_level_visual_identity_review":
         errors.append("visual_identity_manifest status must remain passed_source_level_visual_identity_review.")
     expected_visual_metrics = {
-        ("palette_summary", "combined_hex_color_count"): 54,
+        ("palette_summary", "combined_hex_color_count"): 67,
         ("palette_summary", "non_neutral_family_count"): 5,
         ("figure_source_summary", "figure_count"): 10,
         ("figure_source_summary", "role_img_count"): 10,
@@ -1122,8 +1122,8 @@ def main() -> None:
         "viewport_count": 2,
         "page_view_pairs": 20,
         "failed_page_view_pairs": 0,
-        "maximum_horizontal_overflow_px": 10,
-        "minimum_image_count": 1,
+        "maximum_horizontal_overflow_px": 0,
+        "minimum_image_count": 2,
         "image_failure_count": 0,
         "figure_boundary_count": 10,
         "release_boundary_count": 10,
@@ -1167,7 +1167,7 @@ def main() -> None:
         errors.append("key_figure_docx_layout_manifest status must remain passed_local_docx_key_figure_layout_probe.")
     expected_docx_layout_metrics = {
         "figure_count": 10,
-        "docx_converted_pdf_pages": 504,
+        "docx_converted_pdf_pages": 505,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -1444,11 +1444,11 @@ def main() -> None:
     docx_note = str(artifacts.get("curated_reader_docx", {}).get("notes", ""))
     for fragment in (
         str(docx_audit.get("source_sha256", "")),
-        "17,378 paragraphs",
+        "17,381 paragraphs",
         "286 relationships",
         "0 raw .qmd relationship targets",
-        "504-page PDF",
-        "1,028,304 text characters",
+        "505-page PDF",
+        "1,029,074 text characters",
         "0 blank",
         "0 low-ink",
         "0 near-edge converted-page rasters",
@@ -1623,7 +1623,7 @@ def main() -> None:
             "10 content-bound checks",
             "22.0 px minimum content edge margin",
             "source-level visual identity review",
-            "54 combined colors",
+            "67 combined colors",
             "5 non-neutral color families",
             "source-level accessibility/navigation review",
             "44 one-H1 chapters",

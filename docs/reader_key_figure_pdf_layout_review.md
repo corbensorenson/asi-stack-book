@@ -37,7 +37,7 @@ This local probe inspects the current ignored curated-reader PDF for the ten dra
 | `route_selection_budget_tradeoff` | 298 | 186.66 pt | 4.68% | 0.0% | 15.91 |
 | `compression_and_generation_acceptance` | 265 | 165.878 pt | 9.22% | 0.0% | 28.69 |
 | `cyclic_substrate_adoption_gate` | 333 | 188.16 pt | 3.36% | 0.0% | 14.21 |
-| `living_book_release_pipeline` | 405 | 194.847 pt | 6.77% | 0.0% | 24.27 |
+| `living_book_release_pipeline` | 405 | 194.847 pt | 29.57% | 0.0% | 26.46 |
 
 ## Residuals
 

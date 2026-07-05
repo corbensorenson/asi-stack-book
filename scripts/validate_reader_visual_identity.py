@@ -75,15 +75,15 @@ STYLE_FRAGMENT_GROUPS = {
 }
 EXPECTED_FIGURE_COUNT = 10
 EXPECTED_CSS_COLOR_COUNT = 18
-EXPECTED_SVG_COLOR_COUNT = 43
-EXPECTED_COMBINED_COLOR_COUNT = 54
+EXPECTED_SVG_COLOR_COUNT = 56
+EXPECTED_COMBINED_COLOR_COUNT = 67
 EXPECTED_COLOR_FAMILIES = {
-    "neutral": 28,
-    "teal-blue": 15,
+    "neutral": 33,
+    "teal-blue": 20,
     "purple": 4,
-    "green": 3,
+    "green": 4,
     "rose-red": 2,
-    "copper-amber": 2,
+    "copper-amber": 4,
 }
 EXPECTED_CONTRAST_SUMMARY = {
     "minimum_text_contrast_ratio": 5.19,
@@ -417,8 +417,8 @@ def validate_review_doc(observed: dict[str, Any], errors: list[str]) -> None:
         rel(RESULT),
         "source-level review",
         "CSS color count | 18",
-        "SVG color count | 43",
-        "Combined color count | 54",
+        "SVG color count | 56",
+        "Combined color count | 67",
         "Non-neutral color families | 5",
         "Minimum text contrast ratio | 5.19",
         "not final figure-artifact approval",

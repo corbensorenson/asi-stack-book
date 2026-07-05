@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-05 - Refresh current curated reader artifacts
+
+- Strengthened `assets/diagrams/living-book-release-pipeline.svg` so the
+  living-book release pipeline figure clears the DOCX key-figure visual gate
+  without lowering the existing ink and luminance thresholds.
+- Rerendered the current curated reader HTML, EPUB, DOCX, and PDF review
+  artifacts, repaired EPUB/DOCX links, and refreshed package, browser,
+  LibreOffice, PDF text/layout/raster, key-figure, visual identity, Apple Books,
+  DOCX application, human-consumption, release-surface, and blocked-release
+  records around the new artifact digests.
+- Recorded the current EPUB digest
+  `7484f0e903cd7e6f6f56918a58f51c0149a0cf191c0cd3d53aed203a4c23fbf4` as
+  opened in Apple Books without the prior XML error banner.
+- Boundary: this keeps the curated reader candidate blocked, not
+  release-approved, and does not publish, tag, archive, approve audio,
+  certify screen-reader/WCAG conformance, or move any chapter support state.
+
 ## 2026-07-05 - Add public deployed-site attestation
 
 - Added `scripts/validate_artifact_public_site_attestation.py`, result artifact

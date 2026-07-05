@@ -4,7 +4,7 @@
   "command": "python3 scripts/validate_reader_key_figure_pdf_layout.py",
   "source_format_probe": "editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json",
   "pdf_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-  "pdf_sha256": "491113418d68c6a830d6d194d4b0263a47f9dc994196cd62bb342773fc6f7078",
+  "pdf_sha256": "e6eeeacd839d353bc267d58932645c537c3001419df7f31be889625506ffdf48",
   "summary": {
     "figure_count": 10,
     "pdf_pages": 506,
@@ -221,9 +221,9 @@
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 6.77,
+        "ink_percent": 29.57,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 24.27
+        "luminance_std": 26.46
       },
       "passed": true
     }

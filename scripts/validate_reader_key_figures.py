@@ -368,8 +368,8 @@ def validate_epub_layout_probe(figures: list[dict[str, Any]], errors: list[str])
         "viewport_count": 2,
         "page_view_pairs": 20,
         "failed_page_view_pairs": 0,
-        "maximum_horizontal_overflow_px": 10,
-        "minimum_image_count": 1,
+        "maximum_horizontal_overflow_px": 0,
+        "minimum_image_count": 2,
         "image_failure_count": 0,
         "figure_boundary_count": 10,
         "release_boundary_count": 10,
@@ -419,7 +419,7 @@ def validate_docx_layout_probe(figures: list[dict[str, Any]], errors: list[str])
         summary = {}
     expected = {
         "figure_count": len(figures),
-        "docx_converted_pdf_pages": 504,
+        "docx_converted_pdf_pages": 505,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,

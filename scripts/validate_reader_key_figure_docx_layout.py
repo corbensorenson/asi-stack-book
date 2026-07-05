@@ -30,10 +30,10 @@ EXPECTED_TITLE_PAGES = {
     "intent_to_artifact_trace": 106,
     "context_transaction_lifecycle": 142,
     "readiness_residual_quarantine_map": 224,
-    "compression_and_generation_acceptance": 247,
-    "route_selection_budget_tradeoff": 283,
-    "cyclic_substrate_adoption_gate": 320,
-    "living_book_release_pipeline": 394,
+    "compression_and_generation_acceptance": 248,
+    "route_selection_budget_tradeoff": 284,
+    "cyclic_substrate_adoption_gate": 321,
+    "living_book_release_pipeline": 395,
 }
 
 
@@ -186,7 +186,7 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         summary = {}
     expected_summary = {
         "figure_count": 10,
-        "docx_converted_pdf_pages": 504,
+        "docx_converted_pdf_pages": 505,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,

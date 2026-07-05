@@ -207,7 +207,6 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         "viewport_count": 2,
         "page_view_pairs": 20,
         "failed_page_view_pairs": 0,
-        "minimum_image_count": 1,
         "image_failure_count": 0,
         "figure_boundary_count": 10,
         "release_boundary_count": 10,
@@ -223,6 +222,9 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         observed = summary.get(key)
         if not isinstance(observed, (int, float)) or observed < threshold:
             errors.append(f"summary.{key} must be at least {threshold}; found {observed!r}.")
+    minimum_image_count = summary.get("minimum_image_count")
+    if not isinstance(minimum_image_count, (int, float)) or minimum_image_count < 1:
+        errors.append(f"summary.minimum_image_count must be at least 1; found {minimum_image_count!r}.")
     max_overflow = summary.get("maximum_horizontal_overflow_px")
     if not isinstance(max_overflow, (int, float)) or max_overflow > 10:
         errors.append(f"summary.maximum_horizontal_overflow_px must be no more than 10; found {max_overflow!r}.")
@@ -327,7 +329,8 @@ def validate_doc(errors: list[str]) -> None:
         "| Key-figure XHTML entries | 10 |",
         "| Browser page-view pairs | 20 |",
         "| Failed page-view pairs | 0 |",
-        "| Maximum horizontal overflow | 10 px |",
+        "| Maximum horizontal overflow |",
+        "| Minimum image count |",
         "| Image failures | 0 |",
         "not dedicated e-reader device review",
         "not e-reader application approval",

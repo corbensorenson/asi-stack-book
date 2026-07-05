@@ -3,20 +3,20 @@
   "status": "passed_local_docx_key_figure_layout_probe",
   "command": "python3 scripts/validate_reader_key_figure_docx_layout.py",
   "source_docx_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-  "source_docx_sha256": "d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e",
+  "source_docx_sha256": "ff045865d1d10a002f24835867f96262844d2d8916fe7882c565d95f7b4275bf",
   "conversion_engine": "LibreOffice headless Writer PDF export",
   "converter_version": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
-  "converted_pdf_sha256": "16f8cbbda17c4ab903f78eda9a4ff841420ba8bb6ac6c3bbc806a14bd3755fa5",
+  "converted_pdf_sha256": "cf9ef4b684172786a464fcfc842d9e9a07e4e0a4eed24827b9612285b9023f28",
   "summary": {
     "figure_count": 10,
-    "docx_converted_pdf_pages": 504,
+    "docx_converted_pdf_pages": 505,
     "unique_title_pages": 10,
     "raster_pages_rendered": 10,
     "standard_page_size_count": 10,
     "minimum_title_margin_pt": 72.1,
-    "minimum_page_ink_percent": 9.53,
+    "minimum_page_ink_percent": 9.98,
     "maximum_near_edge_ink_percent": 0.0,
-    "minimum_luminance_std": 37.95
+    "minimum_luminance_std": 37.11
   },
   "figures": [
     {
@@ -131,25 +131,25 @@
       "expected_title_page": 224,
       "title_bbox": {
         "x_min": 72.1,
-        "y_min": 348.022,
+        "y_min": 661.972,
         "x_max": 302.152,
-        "y_max": 364.366,
+        "y_max": 678.316,
         "margin_min_pt": 72.1
       },
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 12.35,
+        "ink_percent": 12.62,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 38.89
+        "luminance_std": 39.55
       },
       "passed": true
     },
     {
       "id": "route_selection_budget_tradeoff",
       "caption_title": "Route selection budget tradeoff",
-      "title_page": 283,
-      "expected_title_page": 283,
+      "title_page": 284,
+      "expected_title_page": 284,
       "title_bbox": {
         "x_min": 72.1,
         "y_min": 538.522,
@@ -169,8 +169,8 @@
     {
       "id": "compression_and_generation_acceptance",
       "caption_title": "Compression and generation acceptance",
-      "title_page": 247,
-      "expected_title_page": 247,
+      "title_page": 248,
+      "expected_title_page": 248,
       "title_bbox": {
         "x_min": 72.1,
         "y_min": 406.072,
@@ -190,8 +190,8 @@
     {
       "id": "cyclic_substrate_adoption_gate",
       "caption_title": "Cyclic substrate adoption gate",
-      "title_page": 320,
-      "expected_title_page": 320,
+      "title_page": 321,
+      "expected_title_page": 321,
       "title_bbox": {
         "x_min": 72.1,
         "y_min": 348.022,
@@ -211,21 +211,21 @@
     {
       "id": "living_book_release_pipeline",
       "caption_title": "Living book release pipeline",
-      "title_page": 394,
-      "expected_title_page": 394,
+      "title_page": 395,
+      "expected_title_page": 395,
       "title_bbox": {
         "x_min": 72.1,
-        "y_min": 480.472,
+        "y_min": 554.872,
         "x_max": 258.916,
-        "y_max": 496.816,
+        "y_max": 571.216,
         "margin_min_pt": 72.1
       },
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 9.53,
+        "ink_percent": 29.02,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 37.95
+        "luminance_std": 37.11
       },
       "passed": true
     }

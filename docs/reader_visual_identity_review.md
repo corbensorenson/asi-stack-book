@@ -19,10 +19,10 @@ This source-level review checks the shared reader visual system before a final v
 | Status | `passed_source_level_visual_identity_review` |
 | Stylesheet variables checked | 9 |
 | CSS color count | 18 |
-| SVG color count | 43 |
-| Combined color count | 54 |
+| SVG color count | 56 |
+| Combined color count | 67 |
 | Non-neutral color families | 5 |
-| Color-family mix | copper-amber: 2, green: 3, neutral: 28, purple: 4, rose-red: 2, teal-blue: 15 |
+| Color-family mix | copper-amber: 4, green: 4, neutral: 33, purple: 4, rose-red: 2, teal-blue: 20 |
 | Key figures checked | 10 |
 | SVG role/title/desc/viewBox coverage | 10 / 10 / 10 / 10 |
 | Draft non-release boundaries | 10 |
