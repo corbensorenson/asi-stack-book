@@ -3775,11 +3775,11 @@ Current status:
   viewer screenshots and 4.479% changed pixels after scroll. EPUB publication,
   DOCX publication, PDF, and audio artifacts still remain unapproved until
   reader release approval, audio file generation, pronunciation/listening
-  review, chapter-marker timecoding, metadata review, audio-embedded EPUB
-  packaging, and an edition release record exist; the separate DOCX
-  application-evidence decision closes only the DOCX application-review
-  blocker, and the separate audio narration treatment review closes only the
-  script-level narration-treatment blocker.
+  review, chapter-marker timecoding, audio-embedded EPUB packaging, and an
+  edition release record exist; the separate DOCX application-evidence decision
+  closes only the DOCX application-review blocker, the separate audio narration
+  treatment review closes only the script-level narration-treatment blocker,
+  and the separate audio metadata review closes only the metadata blocker.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,
@@ -3962,8 +3962,12 @@ Current status:
   `editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json`,
   clearing only `narration_quality_review_not_completed` for the current
   blocked candidate. Audio files, spot/listening review, chapter-marker
-  timecoding, metadata review, audio-embedded EPUB packaging, the audio edition
-  release record, and audiobook approval remain open.
+  timecoding, audio-embedded EPUB packaging, the audio edition release record,
+  and audiobook approval remain open. `scripts/validate_reader_audio_metadata_review.py`
+  records the metadata-only review in `docs/reader_audio_metadata_review.md`
+  and `editions/reader_manuscript/v1_0/audio_metadata_review_manifest.json`,
+  clearing only `audio_metadata_not_reviewed` while preserving all artifact,
+  timing, listening, packaging, and audio-release blockers.
 
 ### Milestone 9 - Prior Art, Preprints, And Archiving
 
@@ -4272,10 +4276,10 @@ validator-enforced status row that grows past compact status-summary size.
   `final_figure_artifact_review_not_completed`. PDF remains probe-level until
   an edition release record exists; audio now has
   automated script reading-flow/order review with 49 ordered marker rows and 66
-  narration notes, plus accepted script-level narration treatment, but it
-  remains blocked on pronunciation/listening review, chapter-marker timecoding,
-  generated audio artifacts, metadata review, audio-embedded EPUB checks, and
-  an edition release record; source-geometry review now exists with 10
+  narration notes, plus accepted script-level narration treatment and accepted
+  metadata review, but it remains blocked on pronunciation/listening review,
+  chapter-marker timecoding, generated audio artifacts, audio-embedded EPUB
+  checks, and an edition release record; source-geometry review now exists with 10
   content-bound checks, 10 text-anchor checks, and 22.0 px minimum content edge
   margin; source-level visual identity review now exists with 10 key figures,
   54 combined colors, 5 non-neutral color families, and minimum text contrast
@@ -4392,11 +4396,16 @@ validator-enforced status row that grows past compact status-summary size.
    and `docs/reader_audio_narration_treatment_review.md`: the script-level
    treatment review checks 49 ordered scripts, 66 narration notes, 1,069,266
    text characters, and 10 draft key-figure spoken summaries, clearing only
-   `narration_quality_review_not_completed`. The active release queue is now:
+   `narration_quality_review_not_completed`. The audio metadata rung is closed
+   by `python3 scripts/validate_reader_audio_metadata_review.py`,
+   `editions/reader_manuscript/v1_0/audio_metadata_review_manifest.json`, and
+   `docs/reader_audio_metadata_review.md`: it records title, version, source
+   commit/tag, script digest, narrator/tooling boundary, and rights-statement
+   fields, clearing only `audio_metadata_not_reviewed`. The active release queue is now:
    complete manual keyboard-only, screen-reader, and WCAG review where release
    scope requires it; complete audio file generation, pronunciation/listening
-   review, chapter-marker timecoding, metadata review, audio-embedded EPUB
-   packaging, and audio-edition gates where audio scope requires them;
+   review, chapter-marker timecoding, audio-embedded EPUB packaging, and
+   audio-edition gates where audio scope requires them;
    reconcile any remaining release-scope e-reader visual review beyond the
    Apple Books application path; and issue the approved or still-blocked
    edition release record. The DOCX application-evidence decision is closed

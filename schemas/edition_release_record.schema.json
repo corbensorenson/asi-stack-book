@@ -197,6 +197,10 @@
           "type": "string",
           "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
         },
+        "metadata_review": {
+          "type": "string",
+          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+        },
         "chapter_marker_review": {
           "type": "string",
           "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
@@ -336,6 +340,10 @@
         "audio_narration_treatment_review_status",
         "audio_narration_treatment_cleared_blockers",
         "audio_narration_treatment_preserved_blockers",
+        "audio_metadata_review_manifest",
+        "audio_metadata_review_status",
+        "audio_metadata_review_cleared_blockers",
+        "audio_metadata_review_preserved_blockers",
         "release_boundary"
       ],
       "properties": {
@@ -487,6 +495,13 @@
         },
         "audio_narration_treatment_cleared_blockers": { "type": "integer", "minimum": 0 },
         "audio_narration_treatment_preserved_blockers": { "type": "integer", "minimum": 0 },
+        "audio_metadata_review_manifest": { "type": "string", "minLength": 1 },
+        "audio_metadata_review_status": {
+          "type": "string",
+          "enum": ["accepted_audio_metadata_for_release_preparation"]
+        },
+        "audio_metadata_review_cleared_blockers": { "type": "integer", "minimum": 0 },
+        "audio_metadata_review_preserved_blockers": { "type": "integer", "minimum": 0 },
         "release_boundary": { "type": "string", "minLength": 1 }
       },
       "additionalProperties": false

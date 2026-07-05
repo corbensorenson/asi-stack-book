@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-05 - Clear curated reader audio metadata blocker
+
+- Added the audio metadata release-preparation manifest, review note, and
+  validator for the current blocked curated-reader audio lane.
+- Updated the blocked release record, format review matrix, release-surface
+  ledger, roadmap, and publication-readiness summary so `audio_metadata_not_reviewed`
+  is the only blocker cleared by this rung.
+- Preserved the blocked candidate's `partial` validation status and remaining
+  audio blockers for reviewed-reader release record, audio file generation,
+  listening spot check, chapter-marker timecoding, audio-embedded EPUB
+  packaging, and audio edition release approval.
+- Boundary: this metadata review does not approve a narrator, synthesis tool,
+  audio publication rights, MP3, M4B, audio-embedded EPUB, audiobook release,
+  reader release, or chapter support-state movement.
+
 ## 2026-07-05 - Re-identify current blocked reader candidate
 
 - Renamed the active blocked curated-reader release-candidate record to

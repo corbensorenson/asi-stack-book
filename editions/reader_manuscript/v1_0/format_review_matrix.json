@@ -51,7 +51,6 @@
       "audio_edition_release_record_not_created": 1,
       "audio_embedded_epub_not_packaged_or_checked": 1,
       "audio_files_not_generated": 1,
-      "audio_metadata_not_reviewed": 1,
       "audio_spot_check_not_performed": 1,
       "chapter_markers_not_timecoded": 1,
       "reader_release_approval_not_created": 5,
@@ -193,27 +192,28 @@
         "automated_review_status": "partial_release_preparation_probe",
         "release_approved": false,
         "evidence_refs": [
-          "docs/reader_audio_script_probe_manifest.md#audio-script-reading-flow-review",
-          "release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json",
-          "docs/reader_audio_narration_treatment_review.md#decision",
-          "editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json"
-        ],
-        "release_blockers": [
-          "reviewed_reader_release_record_not_created_for_audio",
-          "audio_files_not_generated",
-          "audio_spot_check_not_performed",
-          "chapter_markers_not_timecoded",
-          "audio_metadata_not_reviewed",
-          "audio_embedded_epub_not_packaged_or_checked",
-          "audio_edition_release_record_not_created"
-        ],
-        "notes": "The audio-script workspace has automated reading-flow and marker-order checks, and the script-level narration treatment review accepts the current script treatment for release preparation, clearing only narration_quality_review_not_completed. No pronunciation review, recorded-audio spot check, chapter timing, metadata review, MP3, M4B, audio-embedded EPUB, or audio release record exists.",
-        "non_claims": [
-          "This candidate row does not approve audio, MP3, M4B, or audio-embedded EPUB artifacts.",
-          "This candidate row does not publish any audio artifact.",
-          "This candidate row does not promote any claim support state.",
-          "This candidate row does not approve pronunciation, recorded audio, timecoded markers, metadata, or an audiobook."
-        ]
+        "docs/reader_audio_script_probe_manifest.md#audio-script-reading-flow-review",
+        "release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json",
+        "docs/reader_audio_narration_treatment_review.md#decision",
+        "editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json",
+        "docs/reader_audio_metadata_review.md#decision",
+        "editions/reader_manuscript/v1_0/audio_metadata_review_manifest.json"
+      ],
+      "release_blockers": [
+        "reviewed_reader_release_record_not_created_for_audio",
+        "audio_files_not_generated",
+        "audio_spot_check_not_performed",
+        "chapter_markers_not_timecoded",
+        "audio_embedded_epub_not_packaged_or_checked",
+        "audio_edition_release_record_not_created"
+      ],
+      "notes": "The audio-script workspace has automated reading-flow and marker-order checks, the script-level narration treatment review accepts the current script treatment for release preparation, clearing only narration_quality_review_not_completed, and the audio metadata review accepts the title, version, source commit/tag, script digest, narrator/tooling boundary, and rights-statement fields for release preparation, clearing only audio_metadata_not_reviewed. No audio files, pronunciation review, recorded-audio spot check, chapter timing, MP3, M4B, audio-embedded EPUB, or audio release record exists.",
+      "non_claims": [
+        "This candidate row does not approve audio, MP3, M4B, or audio-embedded EPUB artifacts.",
+        "This candidate row does not publish any audio artifact.",
+        "This candidate row does not promote any claim support state.",
+        "This candidate row does not approve pronunciation, recorded audio, timecoded markers, audio publication rights, or an audiobook."
+      ]
       }
     ],
     "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, the keyboard-only evidence decision, the accessibility-tree release-preparation probe, and the script-level audio narration treatment review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."

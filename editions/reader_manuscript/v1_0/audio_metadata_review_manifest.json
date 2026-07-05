@@ -1,0 +1,56 @@
+{
+  "schema_version": "asi_stack.reader_audio_metadata_review.v0",
+  "status": "accepted_audio_metadata_for_release_preparation",
+  "decision_date": "2026-07-05",
+  "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
+  "source_release_profiles": "editions/release_profiles.json",
+  "source_blocked_release_record": "release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json",
+  "source_candidate_release_id": "2026-07-05-v1-curated-reader-blocked-d81d505a",
+  "source_candidate_commit": "d81d505acd5866aec6def5419a68ab2c53978b2d",
+  "source_candidate_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-05",
+  "source_audio_script_sha256": "165398a8a9d3e77bccf71271c2669b4f8e7c1dc980ee073bcc806d8cd0046878",
+  "script_files_checked": 49,
+  "chapter_scripts_checked": 44,
+  "chapter_marker_rows": 49,
+  "audio_profile": "audio_release",
+  "metadata_fields": {
+    "title": "The ASI Stack",
+    "subtitle": "A Systems Architecture for Governed, Efficient, Self-Improving AI",
+    "author": "Corben Sorenson",
+    "major_version": "v1.0",
+    "language": "en-US",
+    "source_commit": "d81d505acd5866aec6def5419a68ab2c53978b2d",
+    "source_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-05",
+    "script_digest": "165398a8a9d3e77bccf71271c2669b4f8e7c1dc980ee073bcc806d8cd0046878",
+    "narrator_or_tooling_note": "No narrator or synthesis tooling is approved yet; final audio artifacts must record the actual narrator or generation tool before release.",
+    "rights_statement": "Blocked pre-release metadata only: no audio publication or distribution approval exists until an audio edition release record explicitly grants it."
+  },
+  "profile_requirements_checked": [
+    "title",
+    "major version",
+    "source tag or commit",
+    "narrator/tooling note",
+    "license or rights statement"
+  ],
+  "decision": "The current curated-reader audio lane now has complete pre-release metadata fields for title, subtitle, author, major version, language, source commit, source tag, script digest, narrator/tooling note, and rights statement. This clears only `audio_metadata_not_reviewed` for the blocked candidate. The metadata deliberately records that no narrator, synthesis tool, audio artifact, distribution right, or audio release approval exists yet.",
+  "cleared_blockers": [
+    "audio_metadata_not_reviewed"
+  ],
+  "preserved_blockers": [
+    "reviewed_reader_release_record_not_created_for_audio",
+    "audio_files_not_generated",
+    "audio_spot_check_not_performed",
+    "chapter_markers_not_timecoded",
+    "audio_embedded_epub_not_packaged_or_checked",
+    "audio_edition_release_record_not_created"
+  ],
+  "release_boundary": "This metadata review clears only `audio_metadata_not_reviewed` because the required audio metadata fields have been specified for the current blocked candidate. It does not create MP3, M4B, or audio-embedded EPUB artifacts, does not approve a narrator or synthesis tool, does not timecode chapter markers, does not perform a pronunciation or listening spot check, does not approve audio publication rights, does not create an audio edition release record, and does not promote any claim support state.",
+  "non_claims": [
+    "This manifest does not create MP3, M4B, or audio-embedded EPUB artifacts.",
+    "This manifest does not approve a narrator, voice, synthesis tool, pronunciation, or recorded listening quality.",
+    "This manifest does not timecode chapter markers.",
+    "This manifest does not approve audio publication or distribution rights.",
+    "This manifest does not approve an audiobook or audio edition release.",
+    "This manifest does not promote any chapter core claim or support state."
+  ]
+}

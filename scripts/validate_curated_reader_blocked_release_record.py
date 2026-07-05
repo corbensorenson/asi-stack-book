@@ -40,6 +40,10 @@ AUDIO_NARRATION_TREATMENT_REVIEW = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_narration_treatment_review_manifest.json"
 )
 AUDIO_NARRATION_TREATMENT_REVIEW_DOC = ROOT / "docs" / "reader_audio_narration_treatment_review.md"
+AUDIO_METADATA_REVIEW = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_metadata_review_manifest.json"
+)
+AUDIO_METADATA_REVIEW_DOC = ROOT / "docs" / "reader_audio_metadata_review.md"
 HUMAN_CONSUMPTION_GATE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
 )
@@ -103,6 +107,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_docx_application_decision.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_narration_treatment.py",
+    "python3 scripts/validate_reader_audio_metadata_review.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_reader_human_consumption_gate.py",
     "python3 scripts/validate_reader_final_figure_artifact_review.py",
@@ -117,6 +122,16 @@ AUDIO_NARRATION_TREATMENT_PRESERVED = [
     "audio_spot_check_not_performed",
     "chapter_markers_not_timecoded",
     "audio_metadata_not_reviewed",
+    "audio_embedded_epub_not_packaged_or_checked",
+    "audio_edition_release_record_not_created",
+]
+AUDIO_METADATA_STATUS = "accepted_audio_metadata_for_release_preparation"
+AUDIO_METADATA_CLEARED = ["audio_metadata_not_reviewed"]
+AUDIO_METADATA_PRESERVED = [
+    "reviewed_reader_release_record_not_created_for_audio",
+    "audio_files_not_generated",
+    "audio_spot_check_not_performed",
+    "chapter_markers_not_timecoded",
     "audio_embedded_epub_not_packaged_or_checked",
     "audio_edition_release_record_not_created",
 ]
@@ -173,6 +188,8 @@ def main() -> None:
         AUDIO_PROBE,
         AUDIO_NARRATION_TREATMENT_REVIEW,
         AUDIO_NARRATION_TREATMENT_REVIEW_DOC,
+        AUDIO_METADATA_REVIEW,
+        AUDIO_METADATA_REVIEW_DOC,
         HUMAN_CONSUMPTION_GATE,
         HUMAN_CONSUMPTION_REVIEW,
         FINAL_FIGURE_REVIEW,
@@ -211,6 +228,8 @@ def main() -> None:
     audio_probe = load_json(AUDIO_PROBE)
     audio_narration_treatment_review = load_json(AUDIO_NARRATION_TREATMENT_REVIEW)
     audio_narration_treatment_review_doc = AUDIO_NARRATION_TREATMENT_REVIEW_DOC.read_text(encoding="utf-8")
+    audio_metadata_review = load_json(AUDIO_METADATA_REVIEW)
+    audio_metadata_review_doc = AUDIO_METADATA_REVIEW_DOC.read_text(encoding="utf-8")
     human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
     human_consumption_review = HUMAN_CONSUMPTION_REVIEW.read_text(encoding="utf-8")
     final_figure_review = load_json(FINAL_FIGURE_REVIEW)
@@ -253,6 +272,8 @@ def main() -> None:
         fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
     if not isinstance(audio_narration_treatment_review, dict):
         fail([f"{rel(AUDIO_NARRATION_TREATMENT_REVIEW)} must contain a JSON object."])
+    if not isinstance(audio_metadata_review, dict):
+        fail([f"{rel(AUDIO_METADATA_REVIEW)} must contain a JSON object."])
     if not isinstance(human_consumption_gate, dict):
         fail([f"{rel(HUMAN_CONSUMPTION_GATE)} must contain a JSON object."])
     if not isinstance(final_figure_review, dict):
@@ -747,6 +768,91 @@ def main() -> None:
             "66 narration notes",
             "1,069,266 text characters",
             "does not approve pronunciation",
+            "does not approve an audiobook",
+        ],
+        errors,
+    )
+    expected_audio_metadata = {
+        "status": AUDIO_METADATA_STATUS,
+        "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
+        "source_blocked_release_record": "release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json",
+        "source_candidate_release_id": EXPECTED_RELEASE_ID,
+        "source_candidate_commit": EXPECTED_SOURCE_COMMIT,
+        "source_candidate_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-05",
+        "source_audio_script_sha256": audio_reading_flow.get("combined_script_sha256"),
+        "script_files_checked": audio_reading_flow.get("script_files_checked"),
+        "chapter_scripts_checked": audio_reading_flow.get("chapter_scripts_checked"),
+        "chapter_marker_rows": audio_reading_flow.get("chapter_marker_rows"),
+        "audio_profile": "audio_release",
+    }
+    for key, expected in expected_audio_metadata.items():
+        if audio_metadata_review.get(key) != expected:
+            errors.append(
+                f"audio_metadata_review.{key} must be "
+                f"{expected!r}; found {audio_metadata_review.get(key)!r}."
+            )
+    metadata_fields = audio_metadata_review.get("metadata_fields", {})
+    if not isinstance(metadata_fields, dict):
+        errors.append("audio_metadata_review.metadata_fields must be an object.")
+        metadata_fields = {}
+    expected_metadata_fields = {
+        "title": "The ASI Stack",
+        "subtitle": "A Systems Architecture for Governed, Efficient, Self-Improving AI",
+        "author": "Corben Sorenson",
+        "major_version": "v1.0",
+        "language": "en-US",
+        "source_commit": EXPECTED_SOURCE_COMMIT,
+        "source_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-05",
+        "script_digest": audio_reading_flow.get("combined_script_sha256"),
+    }
+    for key, expected in expected_metadata_fields.items():
+        if metadata_fields.get(key) != expected:
+            errors.append(
+                f"audio_metadata_review.metadata_fields.{key} must be "
+                f"{expected!r}; found {metadata_fields.get(key)!r}."
+            )
+    text_contains_all(
+        "audio_metadata_review.metadata_fields.narrator_or_tooling_note",
+        str(metadata_fields.get("narrator_or_tooling_note", "")),
+        ["No narrator or synthesis tooling is approved yet"],
+        errors,
+    )
+    text_contains_all(
+        "audio_metadata_review.metadata_fields.rights_statement",
+        str(metadata_fields.get("rights_statement", "")),
+        ["no audio publication or distribution approval exists"],
+        errors,
+    )
+    if audio_metadata_review.get("cleared_blockers") != AUDIO_METADATA_CLEARED:
+        errors.append("audio_metadata_review must clear only audio_metadata_not_reviewed.")
+    if audio_metadata_review.get("preserved_blockers") != AUDIO_METADATA_PRESERVED:
+        errors.append("audio_metadata_review preserved blockers drifted.")
+    text_contains_all(
+        "audio_metadata_review.release_boundary",
+        str(audio_metadata_review.get("release_boundary", "")),
+        [
+            "clears only `audio_metadata_not_reviewed`",
+            "does not create MP3, M4B, or audio-embedded EPUB artifacts",
+            "does not approve a narrator or synthesis tool",
+            "does not timecode chapter markers",
+            "does not perform a pronunciation or listening spot check",
+            "does not approve audio publication rights",
+            "does not create an audio edition release record",
+            "does not promote any claim support state",
+        ],
+        errors,
+    )
+    text_contains_all(
+        rel(AUDIO_METADATA_REVIEW_DOC),
+        audio_metadata_review_doc,
+        [
+            "Reader Audio Metadata Review",
+            AUDIO_METADATA_STATUS,
+            "clears only `audio_metadata_not_reviewed`",
+            "Script files checked | 49",
+            "Chapter-marker rows | 49",
+            "does not create MP3",
+            "does not approve a narrator or synthesis",
             "does not approve an audiobook",
         ],
         errors,
@@ -1271,6 +1377,14 @@ def main() -> None:
         )
         if isinstance(audio_narration_treatment_review.get("preserved_blockers"), list)
         else None,
+        "audio_metadata_review_manifest": rel(AUDIO_METADATA_REVIEW),
+        "audio_metadata_review_status": audio_metadata_review.get("status"),
+        "audio_metadata_review_cleared_blockers": len(audio_metadata_review.get("cleared_blockers", []))
+        if isinstance(audio_metadata_review.get("cleared_blockers"), list)
+        else None,
+        "audio_metadata_review_preserved_blockers": len(audio_metadata_review.get("preserved_blockers", []))
+        if isinstance(audio_metadata_review.get("preserved_blockers"), list)
+        else None,
     }
     for key, expected in expected_closure.items():
         if closure.get(key) != expected:
@@ -1293,14 +1407,17 @@ def main() -> None:
         "pdf page-by-page release-preparation review",
         "final figure-artifact review",
         "audio narration treatment review",
+        "audio metadata review",
         "clears the current final-figure blocker",
         "docx_application_review_not_completed",
         "narration_quality_review_not_completed",
+        "audio_metadata_not_reviewed",
         "manual_keyboard_only_review_not_completed",
         "screen-reader",
         "wcag",
         "audio file generation",
         "chapter timecoding",
+        "audio publication-rights approval",
         "do not approve epub",
         "curated reader edition",
     ):
@@ -1382,10 +1499,14 @@ def main() -> None:
         "1,069,266 text characters",
         "script-level narration treatment review",
         "clears only narration_quality_review_not_completed",
+        "audio metadata review",
+        "clears only audio_metadata_not_reviewed",
+        "title, version, source commit/tag, script digest, narrator/tooling boundary, and rights-statement fields",
         "no MP3, M4B, or audio-embedded EPUB artifact exists",
         "not pronunciation review",
         "not recorded-audio spot check",
         "not chapter timecoding",
+        "not audio publication-rights approval",
         "not audio release approval",
     ):
         if fragment not in audio_note:
@@ -1553,10 +1674,10 @@ def main() -> None:
             "Apple Books EPUB application review",
             "automated keyboard traversal review",
             "audio narration treatment review",
+            "audio metadata review",
             "audio file generation",
             "audio pronunciation/listening review",
             "chapter-marker timecoding",
-            "audio metadata review",
             "audio release approval",
             "keyboard-only",
             "screen-reader",
