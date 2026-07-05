@@ -1,6 +1,6 @@
 # Curated Reader Format Artifact Probe
 
-Last updated: 2026-07-04
+Last updated: 2026-07-05
 
 This note records a local structural render and inspection probe for the
 tracked curated reader manuscript. It is not an edition release record, a
@@ -24,6 +24,7 @@ python3 scripts/audit_curated_reader_docx_content.py
 python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest
 python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest
 python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest
+python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest
 ```
 
 Local ignored reports:
@@ -37,6 +38,7 @@ Local ignored reports:
 Tracked manifest:
 
 - `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`
+- `editions/reader_manuscript/v1_0/pdf_page_review_manifest.json`
 
 ## Render Summary
 
@@ -321,6 +323,39 @@ This is real local PDF-viewer rendering evidence for the current ignored PDF
 artifact, but it is not manual page-by-page PDF review, not PDF content
 approval, and does not approve the PDF artifact for release.
 
+## PDF Page-By-Page Release-Preparation Review
+
+The refreshed PDF probe now records a page-by-page release-preparation review:
+
+```bash
+python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest
+```
+
+That pass checks every page in the current ignored 506-page PDF through text
+extraction, word-box extraction, and raster page rendering. It records 506 page
+rows, 506 text pages, 506 word-box pages, 506 raster pages, 0 failed pages,
+0 blank pages, 0 near-edge pages, 0 out-of-bounds word-box pages, and one
+accepted low-ink page.
+
+| Metric | Result |
+|---|---:|
+| PDF pages | 506 |
+| Page review rows | 506 |
+| Text pages checked | 506 |
+| Word-box pages checked | 506 |
+| Raster pages checked | 506 |
+| Failed pages | 0 |
+| Blank raster pages | 0 |
+| Near-edge pages | 0 |
+| Out-of-bounds word-box pages | 0 |
+| Low-ink pages accepted | 1 |
+
+This closes the current candidate's
+`manual_pdf_page_by_page_review_not_completed` blocker, while preserving final
+figure-artifact approval and reader release approval. It is not external human
+review, not final figure-artifact approval, not publication, and not PDF release
+approval.
+
 ## Review Decision
 
 The tracked curated reader manuscript now has a local format-probe path beyond
@@ -330,19 +365,20 @@ package also passed the all-XHTML content/navigation audit and a Chromium
 browser XHTML application review, the repaired DOCX package passed the document
 XML/relationship audit and LibreOffice headless conversion/raster review above,
 and the PDF also passed the all-page text/bounding-box, visual raster,
-extracted-text reading-flow, and Chromium viewer smoke audits above. This is
-useful evidence for release preparation, dedicated e-reader testing, DOCX
-GUI/application review, manual PDF page-flow review, and figure conversion work.
+extracted-text reading-flow, Chromium viewer smoke, and page-by-page
+release-preparation audits above. This is useful evidence for release
+preparation, dedicated e-reader testing, DOCX GUI/application review, PDF
+release approval, and figure conversion work.
 
 This does not clear release blockers. EPUB still needs dedicated e-reader
 device/app approval or an explicit release decision that accepts the Chromium
 XHTML review as sufficient for a named artifact. DOCX still needs
 application-level review in Word, LibreOffice GUI, or Google Docs; the
-headless LibreOffice review is recorded as preparation evidence only. PDF still
-needs manual page-by-page layout and reading-flow review; the Chromium viewer
-smoke check only proves that the current ignored artifact opens and scrolls in
-a local PDF viewer surface. Audio artifacts
-remain outside this probe.
+headless LibreOffice review is recorded as preparation evidence only. The PDF
+page-by-page release-preparation review closes the current candidate's
+page-by-page PDF review blocker, but the PDF still needs final figure-artifact
+approval and reader release approval before it can be treated as a release
+artifact. Audio artifacts remain outside this probe.
 
 ## Residuals
 

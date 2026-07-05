@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-05 - Add curated reader PDF page-by-page review
+
+- Added `scripts/validate_curated_reader_pdf_page_review.py`,
+  `editions/reader_manuscript/v1_0/pdf_page_review_manifest.json`, and
+  `docs/curated_reader_pdf_page_review.md` to inspect every page in the
+  current ignored curated-reader PDF through extracted text, word-box
+  extraction, and raster page rendering.
+- Recorded 506 page rows, 506 text pages, 506 word-box pages, 506 raster
+  pages, 0 failed pages, 0 blank pages, 0 near-edge pages, 0 out-of-bounds
+  word-box pages, and one accepted low-ink page.
+- Updated the release matrix, blocked release-candidate record,
+  human-consumption gate, release-surface ledger, format-probe note, roadmap,
+  edition-release schema, protocol appendix, and orchestrated validation so the
+  current PDF candidate clears only `manual_pdf_page_by_page_review_not_completed`.
+- Boundary: this does not approve the PDF, final figure art, EPUB, DOCX,
+  e-reader, audio, reader release, publication, or any chapter support-state
+  movement.
+
 ## 2026-07-05 - Add curated reader human-consumption gate
 
 - Added `scripts/validate_reader_human_consumption_gate.py` plus

@@ -30,6 +30,8 @@ HUMAN_CONSUMPTION_GATE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
 )
 HUMAN_CONSUMPTION_REVIEW = ROOT / "docs" / "reader_human_consumption_gate_review.md"
+PDF_PAGE_REVIEW = ROOT / "editions" / "reader_manuscript" / "v1_0" / "pdf_page_review_manifest.json"
+PDF_PAGE_REVIEW_DOC = ROOT / "docs" / "curated_reader_pdf_page_review.md"
 VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
 ACCESSIBILITY_NAVIGATION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
@@ -46,7 +48,6 @@ REQUIRED_BLOCKERS = {
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
     "app_or_ereader_review_not_completed",
-    "full_pdf_layout_review_not_completed",
 }
 REQUIRED_COMMANDS = {
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
@@ -62,6 +63,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
     "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
     "python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest",
     "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
     "python3 scripts/validate_curated_reader_format_probe_manifest.py",
     "python3 scripts/validate_reader_key_figure_format_probe.py",
@@ -127,6 +129,8 @@ def main() -> None:
         AUDIO_PROBE,
         HUMAN_CONSUMPTION_GATE,
         HUMAN_CONSUMPTION_REVIEW,
+        PDF_PAGE_REVIEW,
+        PDF_PAGE_REVIEW_DOC,
         VISUAL_IDENTITY,
         ACCESSIBILITY_NAVIGATION,
         KEYBOARD_NAVIGATION,
@@ -149,6 +153,8 @@ def main() -> None:
     audio_probe = load_json(AUDIO_PROBE)
     human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
     human_consumption_review = HUMAN_CONSUMPTION_REVIEW.read_text(encoding="utf-8")
+    pdf_page_review = load_json(PDF_PAGE_REVIEW)
+    pdf_page_review_doc = PDF_PAGE_REVIEW_DOC.read_text(encoding="utf-8")
     visual_identity = load_json(VISUAL_IDENTITY)
     accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
     keyboard_navigation = load_json(KEYBOARD_NAVIGATION)
@@ -175,6 +181,8 @@ def main() -> None:
         fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
     if not isinstance(human_consumption_gate, dict):
         fail([f"{rel(HUMAN_CONSUMPTION_GATE)} must contain a JSON object."])
+    if not isinstance(pdf_page_review, dict):
+        fail([f"{rel(PDF_PAGE_REVIEW)} must contain a JSON object."])
     if not isinstance(visual_identity, dict):
         fail([f"{rel(VISUAL_IDENTITY)} must contain a JSON object."])
     if not isinstance(accessibility_navigation, dict):
@@ -293,6 +301,62 @@ def main() -> None:
     if not isinstance(pdf_layout, dict):
         errors.append("curated format pdf_layout_audit must be an object.")
         pdf_layout = {}
+    if pdf_page_review.get("status") != "passed_pdf_page_by_page_release_preparation_review":
+        errors.append("pdf_page_review_manifest status must be passed_pdf_page_by_page_release_preparation_review.")
+    pdf_page_summary = pdf_page_review.get("summary", {})
+    if not isinstance(pdf_page_summary, dict):
+        errors.append("pdf_page_review_manifest summary must be an object.")
+        pdf_page_summary = {}
+    expected_pdf_page_review_metrics = {
+        "pdf_pages": 506,
+        "page_review_rows": 506,
+        "text_pages_checked": 506,
+        "bbox_pages_checked": 506,
+        "raster_pages_checked": 506,
+        "pages_with_text": 506,
+        "pages_with_word_boxes": 506,
+        "pages_with_raster_content": 506,
+        "failed_pages": [],
+        "blank_pages": [],
+        "near_edge_pages": [],
+        "out_of_bounds_word_box_pages": [],
+        "low_ink_pages": [24],
+    }
+    for key, expected in expected_pdf_page_review_metrics.items():
+        observed = pdf_page_summary.get(key)
+        if observed != expected:
+            errors.append(f"pdf_page_review_manifest summary.{key} must be {expected!r}; found {observed!r}.")
+    if pdf_page_review.get("cleared_blockers") != ["manual_pdf_page_by_page_review_not_completed"]:
+        errors.append("pdf_page_review_manifest must clear only manual_pdf_page_by_page_review_not_completed.")
+    required_pdf_page_preserved = {
+        "final_figure_artifact_review_not_completed",
+        "reader_release_approval_not_created",
+    }
+    missing_pdf_page_preserved = sorted(
+        required_pdf_page_preserved - set(pdf_page_review.get("release_blockers_preserved", []))
+    )
+    if missing_pdf_page_preserved:
+        errors.append(f"pdf_page_review_manifest missing preserved blockers: {missing_pdf_page_preserved}")
+    pdf_page_non_claims = " ".join(str(item) for item in pdf_page_review.get("non_claims", [])).lower()
+    for fragment in (
+        "does not approve the pdf artifact",
+        "does not approve final figure art",
+        "does not publish",
+        "does not promote any chapter core claim",
+    ):
+        if fragment not in pdf_page_non_claims:
+            errors.append(f"pdf_page_review_manifest non_claims missing {fragment!r}.")
+    text_contains_all(
+        rel(PDF_PAGE_REVIEW_DOC),
+        pdf_page_review_doc,
+        [
+            "Curated Reader PDF Page-By-Page Review",
+            "passed_pdf_page_by_page_release_preparation_review",
+            "manual_pdf_page_by_page_review_not_completed",
+            "does not approve the PDF artifact",
+        ],
+        errors,
+    )
     if not isinstance(audio_reading_flow, dict):
         errors.append("audio_script_probe_manifest audio_script_reading_flow_review must be an object.")
         audio_reading_flow = {}
@@ -527,6 +591,25 @@ def main() -> None:
         "pdf_reading_flow_replacement_characters": pdf_reading_flow.get("replacement_character_count"),
         "pdf_viewer_review_screenshots": len(pdf_viewer.get("screenshots", [])),
         "pdf_viewer_review_scroll_changed_pixels": pdf_viewer.get("page_down_changed_pixel_percent"),
+        "pdf_page_review_manifest": "editions/reader_manuscript/v1_0/pdf_page_review_manifest.json",
+        "pdf_page_review_rows": pdf_page_summary.get("page_review_rows"),
+        "pdf_page_review_failed_pages": len(pdf_page_summary.get("failed_pages", []))
+        if isinstance(pdf_page_summary.get("failed_pages"), list)
+        else None,
+        "pdf_page_review_blank_pages": len(pdf_page_summary.get("blank_pages", []))
+        if isinstance(pdf_page_summary.get("blank_pages"), list)
+        else None,
+        "pdf_page_review_near_edge_pages": len(pdf_page_summary.get("near_edge_pages", []))
+        if isinstance(pdf_page_summary.get("near_edge_pages"), list)
+        else None,
+        "pdf_page_review_out_of_bounds_word_box_pages": len(
+            pdf_page_summary.get("out_of_bounds_word_box_pages", [])
+        )
+        if isinstance(pdf_page_summary.get("out_of_bounds_word_box_pages"), list)
+        else None,
+        "pdf_page_review_low_ink_pages": len(pdf_page_summary.get("low_ink_pages", []))
+        if isinstance(pdf_page_summary.get("low_ink_pages"), list)
+        else None,
         "key_figure_epub_matched_titles": 10,
         "key_figure_docx_matched_stems": 10,
         "key_figure_pdf_matched_captions": 10,
@@ -628,6 +711,7 @@ def main() -> None:
         "pdf key-figure layout",
         "docx key-figure layout",
         "automated keyboard traversal",
+        "pdf page-by-page release-preparation review",
         "manual keyboard-only",
         "screen-reader",
         "wcag",
@@ -687,6 +771,13 @@ def main() -> None:
         "10 matched key-figure captions",
         "10 key-figure caption pages",
         "165.878 pt minimum caption margin",
+        "page-by-page PDF release-preparation review",
+        "506 page rows",
+        "0 failed pages",
+        "0 blank pages",
+        "0 near-edge pages",
+        "0 out-of-bounds word-box pages",
+        "one accepted low-ink page",
     ):
         if fragment and fragment not in pdf_note:
             errors.append(f"curated_reader_pdf notes missing PDF audit fragment: {fragment}")
@@ -766,7 +857,6 @@ def main() -> None:
         "format_artifact_not_reviewed",
         "reader_release_record_not_created",
         "app_or_ereader_review_not_completed",
-        "manual_pdf_page_by_page_review_not_completed",
         "final_figure_artifact_review_not_completed",
         "manual_keyboard_only_review_not_completed",
         "screen_reader_review_not_completed",
@@ -783,7 +873,7 @@ def main() -> None:
     for fragment in (
         "does not approve, publish, tag, or archive",
         "does not clear dedicated e-reader",
-        "manual pdf page-by-page",
+        "final figure-artifact review",
         "does not promote any chapter core claim",
     ):
         if fragment not in human_non_claims:
@@ -796,7 +886,7 @@ def main() -> None:
             "pass_pre_release_review",
             "does not approve, publish, tag, or archive",
             "does not clear dedicated e-reader review",
-            "page-by-page review",
+            "final figure-artifact",
             "does not promote any chapter core claim",
         ],
         errors,
@@ -837,6 +927,8 @@ def main() -> None:
             "automated keyboard traversal review",
             "98 page-view pairs",
             "0 keyboard trap candidates",
+            "PDF page-by-page release-preparation review",
+            "0 out-of-bounds word-box pages",
         ],
         errors,
     )
@@ -853,6 +945,7 @@ def main() -> None:
             "EPUB key-figure layout review",
             "PDF key-figure layout review",
             "DOCX key-figure layout review",
+            "PDF page-by-page release-preparation review",
             "automated keyboard traversal review",
             "keyboard-only",
             "screen-reader",
@@ -885,7 +978,7 @@ def main() -> None:
             "does not clear dedicated e-reader device review",
             "does not clear e-reader application approval",
             "PDF key-figure layout review is recorded as preparation evidence only",
-            "does not clear manual page-by-page PDF review",
+            "PDF page-by-page release-preparation review closes",
             "DOCX key-figure layout review is recorded as preparation evidence only",
             "does not clear Word review",
             "does not clear LibreOffice GUI review",

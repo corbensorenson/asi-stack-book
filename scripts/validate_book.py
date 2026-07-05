@@ -64,6 +64,8 @@ REQUIRED = [
     "editions/reader_manuscript/v1_0/key_figure_docx_layout_manifest.json",
     "docs/reader_human_consumption_gate_review.md",
     "editions/reader_manuscript/v1_0/human_consumption_gate_manifest.json",
+    "docs/curated_reader_pdf_page_review.md",
+    "editions/reader_manuscript/v1_0/pdf_page_review_manifest.json",
     "scripts/validate_reader_key_figure_html_probe.py",
     "docs/reader_key_figure_html_probe.md",
     "experiments/reader_key_figure_html_probe/README.md",
@@ -77,6 +79,7 @@ REQUIRED = [
     "scripts/validate_curated_reader_docx_libreoffice_review.py",
     "scripts/validate_curated_reader_pdf_reading_flow.py",
     "scripts/validate_curated_reader_pdf_viewer_review.py",
+    "scripts/validate_curated_reader_pdf_page_review.py",
     "scripts/validate_reader_artifact_inspection_manifest.py",
     "scripts/validate_reader_epub_probe_manifest.py",
     "scripts/validate_reader_docx_probe_manifest.py",
@@ -966,6 +969,7 @@ def main() -> None:
     run_validator("build_curated_reader_edition.py", "--check")
     run_validator("validate_curated_reader_format_probe_manifest.py")
     run_validator("validate_curated_reader_pdf_viewer_review.py")
+    run_validator("validate_curated_reader_pdf_page_review.py")
     run_validator("validate_reader_key_figures.py")
     run_validator("validate_reader_key_figure_contrast.py")
     run_validator("validate_reader_key_figure_geometry.py")

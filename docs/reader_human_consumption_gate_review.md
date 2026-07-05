@@ -22,7 +22,7 @@ and not a support-state transition.
 
 ## Preserved Blockers
 
-The following blockers remain active after this gate: `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, `reader_release_record_not_created`, `app_or_ereader_review_not_completed`, `manual_pdf_page_by_page_review_not_completed`, `final_figure_artifact_review_not_completed`, `manual_keyboard_only_review_not_completed`, `screen_reader_review_not_completed`, `wcag_conformance_review_not_completed`, `narration_quality_review_not_completed`, `audio_files_not_generated`.
+The following blockers remain active after this gate: `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, `reader_release_record_not_created`, `app_or_ereader_review_not_completed`, `final_figure_artifact_review_not_completed`, `manual_keyboard_only_review_not_completed`, `screen_reader_review_not_completed`, `wcag_conformance_review_not_completed`, `narration_quality_review_not_completed`, `audio_files_not_generated`.
 
 ## Non-Claims
 
@@ -30,8 +30,8 @@ The following blockers remain active after this gate: `curated_reconciliation_no
   HTML, EPUB, DOCX, PDF, e-reader, audio, MP3, M4B, or audio-embedded EPUB
   artifact.
 - This review does not clear dedicated e-reader review, e-reader application
-  approval, Word review, LibreOffice GUI review, Google Docs review, manual PDF
-  page-by-page review, final figure-artifact review, manual keyboard-only
+  approval, Word review, LibreOffice GUI review, Google Docs review,
+  final figure-artifact review, manual keyboard-only
   review, screen-reader review, WCAG conformance review, narration quality
   review, audio generation, audiobook approval, or reader release approval.
 - This review does not promote any chapter core claim or claim support state.

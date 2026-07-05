@@ -1871,6 +1871,12 @@ edition_release_record:
     bedtime_readability_review: not_started
     companion_notes_status: not_started
     notes: string
+  format_probe_closure:
+    status: automated_probe_passed_release_blocked
+    curated_format_probe_manifest: string
+    pdf_page_review_manifest: string
+    pdf_page_review_rows: integer
+    release_boundary: string
   audiobook_gate:
     script_review: not_required
     spoken_treatment_review: not_required

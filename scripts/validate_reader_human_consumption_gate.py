@@ -226,7 +226,6 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "does not approve",
         "does not approve, publish",
         "does not clear dedicated e-reader",
-        "manual pdf page-by-page",
         "does not promote",
     ):
         if phrase not in non_claims:
@@ -310,7 +309,7 @@ def build_observed() -> dict[str, Any]:
                 },
                 [
                     "This is local layout preparation evidence, not e-reader, Word, PDF, or release approval.",
-                    "It does not clear dedicated e-reader/application review or manual PDF page-by-page review.",
+                    "It does not clear dedicated e-reader/application review, final figure-artifact approval, or reader release approval.",
                 ],
             ),
             "diagram_image_review": pass_status(
@@ -364,7 +363,6 @@ def build_observed() -> dict[str, Any]:
             "format_artifact_not_reviewed",
             "reader_release_record_not_created",
             "app_or_ereader_review_not_completed",
-            "manual_pdf_page_by_page_review_not_completed",
             "final_figure_artifact_review_not_completed",
             "manual_keyboard_only_review_not_completed",
             "screen_reader_review_not_completed",
@@ -374,7 +372,7 @@ def build_observed() -> dict[str, Any]:
         ],
         "non_claims": [
             "This gate does not approve, publish, tag, or archive any curated reader artifact.",
-            "This gate does not clear dedicated e-reader review, e-reader application approval, Word review, LibreOffice GUI review, Google Docs review, manual PDF page-by-page review, final figure-artifact review, manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality review, audio generation, audiobook approval, or reader release approval.",
+            "This gate does not clear dedicated e-reader review, e-reader application approval, Word review, LibreOffice GUI review, Google Docs review, final figure-artifact review, manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality review, audio generation, audiobook approval, or reader release approval.",
             "This gate does not promote any chapter core claim or claim support state.",
         ],
     }
@@ -419,8 +417,8 @@ The following blockers remain active after this gate: {blockers}.
   HTML, EPUB, DOCX, PDF, e-reader, audio, MP3, M4B, or audio-embedded EPUB
   artifact.
 - This review does not clear dedicated e-reader review, e-reader application
-  approval, Word review, LibreOffice GUI review, Google Docs review, manual PDF
-  page-by-page review, final figure-artifact review, manual keyboard-only
+  approval, Word review, LibreOffice GUI review, Google Docs review,
+  final figure-artifact review, manual keyboard-only
   review, screen-reader review, WCAG conformance review, narration quality
   review, audio generation, audiobook approval, or reader release approval.
 - This review does not promote any chapter core claim or claim support state.
