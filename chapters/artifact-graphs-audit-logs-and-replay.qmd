@@ -273,6 +273,22 @@ service-status evidence for one commit, not independent external human review,
 not open-world receipt faithfulness, not deployed attestation behavior, not
 reader release approval, and not Artifact Graphs chapter-core support.
 
+The public deployed-site attestation adds a served-page observation on top of
+that CI service record. `python3 scripts/validate_artifact_public_site_attestation.py`
+checks `experiments/artifact_public_site_attestation/results/2026-07-05-live.json`,
+which records a successful fetch of the public GitHub Pages Artifact Graphs
+chapter, the served HTML digest
+`8732d88da373a8135310bbaae3c9302b0a44423648028a3c7833cde373072c5c`,
+and required fragments for the record-reality authority ladder, epistemic-TCB
+boundary, CI attestation section, live/randomized attestation probe references,
+and non-claim boundaries. Accepted no-promotion decision
+`evidence_transitions/v1_x_measured/artifact_public_site_attestation_no_change.json`
+records that fetch as a `blocks_promotion` side lane only. It says the public
+site served the expected record-reality treatment at fetch time; it does not
+prove deployed attestation behavior, open-world receipt faithfulness, verifier
+correctness, independent external human review, reader release approval, or
+Artifact Graphs chapter-core support.
+
 That chain is a showpiece for the argument, not a victory lap. It demonstrates
 a bounded route from record shape toward record reality inside this repository.
 It does not prove deployed attestation behavior, verifier correctness,
@@ -334,6 +350,7 @@ This replayable artifact graph is still proposed architecture. Leave support at 
 | Receipt repository challenge audit | Check deterministic digest/fingerprint challenge responses over the selected repository receipt audit and reject digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion controls. | implemented in `python3 scripts/validate_receipt_repository_challenge.py`; repository challenge only |
 | Artifact live attestation probe | Check one current produced artifact through filesystem bytes, git object bytes, and command replay while rejecting same-component self-check laundering, accepted trap receipts, unbounded attestation, and support promotion from attestation shape. | implemented in `python3 scripts/validate_artifact_live_attestation_probe.py`; local live repository attestation only; not a deployed attestation service |
 | Artifact randomized attestation audit | Check a deterministic pseudo-random sample of four public-safe repository artifacts through filesystem bytes, git object bytes, command replay, trap receipts, attestation limits, and mutation controls. | implemented in `python3 scripts/validate_artifact_randomized_attestation_audit.py`; result `experiments/artifact_randomized_attestation/results/2026-07-04-local.json`; local repository audit only; not a deployed attestation service |
+| Artifact public deployed-site attestation | Check that the public GitHub Pages Artifact Graphs chapter serves the expected record-reality authority ladder, epistemic-TCB boundary, CI-attestation section, live/randomized attestation references, and non-claim boundary fragments. | implemented in `python3 scripts/validate_artifact_public_site_attestation.py`; result `experiments/artifact_public_site_attestation/results/2026-07-05-live.json`; public served-page evidence only; not deployed attestation behavior, release approval, external human review, or chapter-core support |
 | Epistemic trusted computing base fixture | Check that bounded trust-base records reject missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape. | implemented in `python3 scripts/validate_epistemic_trusted_computing_base.py`, `AsiStackProofs.ArtifactGraph`, and accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json`; finite synthetic records only, no verifier-correctness or deployed trust-base claim |
 | Audit reconstruction test | Check that audit events are sufficient to reconstruct the execution path. | implemented for synthetic replay packets; no deployed audit-reconstruction service |
 | Replay metadata completeness test | Check that replay limits and environment assumptions are declared. | implemented for synthetic replay packets; no deployed replay engine |

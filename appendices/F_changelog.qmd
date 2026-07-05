@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-05 - Add public deployed-site attestation
+
+- Added `scripts/validate_artifact_public_site_attestation.py`, result artifact
+  `experiments/artifact_public_site_attestation/results/2026-07-05-live.json`,
+  and `docs/artifact_public_site_attestation.md` to record one bounded public
+  GitHub Pages fetch of the Artifact Graphs chapter.
+- Added accepted no-promotion decision
+  `evidence_transitions/v1_x_measured/artifact_public_site_attestation_no_change.json`
+  for `artifact-graphs.public_site_record_reality_attestation`, moving the
+  no-promotion side-lane count from 29 to 30 without changing any chapter-core
+  support state.
+- Updated the Artifact Graphs live and reader prose, outline, v1.x roadmap,
+  contribution novelty ledger, non-core evidence ledger, and test-harness
+  wiring so the served-page observation is visible beside the CI, local live,
+  randomized, receipt, and epistemic-TCB record-reality evidence.
+- Boundary: this is public served-HTML evidence for one URL at fetch time only;
+  it is not independent external human review, deployed attestation behavior,
+  open-world receipt faithfulness, verifier correctness, reader release
+  approval, future-commit status, or Artifact Graphs chapter-core support.
+
 ## 2026-07-05 - Refresh GitHub Pages CI attestation
 
 - Captured the latest completed successful `Publish Quarto site` run
@@ -115,7 +135,7 @@
   and `docs/reader_audio_narration_treatment_review.md` to record the current
   curated-reader audio-script narration treatment review.
 - Accepted the existing audio-script reading-flow evidence, 49 ordered script
-  files, 66 narration notes, 1,069,266 checked text characters, and 10 draft
+  files, 66 narration notes, 1,070,046 checked text characters, and 10 draft
   key-figure spoken summaries as enough to clear only
   `narration_quality_review_not_completed` for the current blocked curated
   reader candidate.

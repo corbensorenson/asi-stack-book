@@ -1,0 +1,111 @@
+{
+  "schema_version": "0.1",
+  "result_id": "artifact-public-site-record-reality-attestation-2026-07-05",
+  "claim_id": "artifact-graphs.public_site_record_reality_attestation",
+  "fetched_at": "2026-07-05T08:00:49Z",
+  "fetch_url": "https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html",
+  "final_url": "https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html",
+  "http_status": 200,
+  "content_type": "text/html; charset=utf-8",
+  "etag": "\"6a4a066a-46f6b\"",
+  "last_modified": "Sun, 05 Jul 2026 07:23:22 GMT",
+  "content_length_bytes": 290667,
+  "content_sha256": "8732d88da373a8135310bbaae3c9302b0a44423648028a3c7833cde373072c5c",
+  "required_fragments": [
+    {
+      "fragment_id": "chapter_title",
+      "fragment": "Artifact Graphs, Audit Logs, and Replay",
+      "present": true,
+      "position": 277
+    },
+    {
+      "fragment_id": "record_reality_ladder",
+      "fragment": "Record-reality should be read as an authority ladder",
+      "present": true,
+      "position": 64322
+    },
+    {
+      "fragment_id": "epistemic_tcb_boundary",
+      "fragment": "The epistemic trusted computing base is the companion problem",
+      "present": true,
+      "position": 66209
+    },
+    {
+      "fragment_id": "github_pages_ci_attestation",
+      "fragment": "GitHub Pages CI attestation adds one externally hosted service route",
+      "present": true,
+      "position": 69230
+    },
+    {
+      "fragment_id": "live_attestation_probe",
+      "fragment": "Artifact live attestation probe",
+      "present": true,
+      "position": 87177
+    },
+    {
+      "fragment_id": "randomized_attestation_audit",
+      "fragment": "randomized artifact attestation audit",
+      "present": true,
+      "position": 73624
+    },
+    {
+      "fragment_id": "no_deployed_attestation",
+      "fragment": "not a deployed attestation service",
+      "present": true,
+      "position": 87602
+    },
+    {
+      "fragment_id": "no_independent_human_review",
+      "fragment": "not independent external human review",
+      "present": true,
+      "position": 70116
+    },
+    {
+      "fragment_id": "no_reader_release",
+      "fragment": "not reader release approval",
+      "present": true,
+      "position": 70227
+    },
+    {
+      "fragment_id": "no_chapter_core_support",
+      "fragment": "not Artifact Graphs chapter-core support",
+      "present": true,
+      "position": 70260
+    }
+  ],
+  "observation_routes": [
+    {
+      "route_id": "public_github_pages_url_fetch",
+      "observer_role": "public_http_client",
+      "accepted": true
+    },
+    {
+      "route_id": "record_reality_fragment_set",
+      "observer_role": "html_content_probe",
+      "accepted": true
+    },
+    {
+      "route_id": "boundary_fragment_set",
+      "observer_role": "html_boundary_probe",
+      "accepted": true
+    }
+  ],
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "attestation_limits": [
+    "Public GitHub Pages fetch attests served HTML content for one URL at fetch time only.",
+    "The public page is an externally reachable publication surface, not an independent human reviewer.",
+    "Served page content does not prove deployed attestation behavior, verifier correctness, open-world receipt faithfulness, model quality, safety, or ASI capability.",
+    "The fetch does not approve any reader artifact or future commit."
+  ],
+  "non_claims": [
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim",
+    "does not prove open-world receipt faithfulness",
+    "does not prove deployed attestation behavior",
+    "does not create independent external human review",
+    "does not approve any reader release artifact"
+  ]
+}

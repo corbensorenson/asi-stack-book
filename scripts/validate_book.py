@@ -262,6 +262,9 @@ REQUIRED = [
     "scripts/validate_artifact_github_pages_ci_attestation.py",
     "docs/artifact_github_pages_ci_attestation.md",
     "experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json",
+    "scripts/validate_artifact_public_site_attestation.py",
+    "docs/artifact_public_site_attestation.md",
+    "experiments/artifact_public_site_attestation/results/2026-07-05-live.json",
     "scripts/validate_epistemic_trusted_computing_base.py",
     "docs/epistemic_trusted_computing_base_fixture.md",
     "experiments/epistemic_tcb/results/2026-07-03-local.json",
@@ -1120,6 +1123,7 @@ def main() -> None:
     run_validator("validate_artifact_live_attestation_probe.py")
     run_validator("validate_artifact_randomized_attestation_audit.py")
     run_validator("validate_artifact_github_pages_ci_attestation.py")
+    run_validator("validate_artifact_public_site_attestation.py")
     run_validator("validate_epistemic_trusted_computing_base.py")
     run_validator("validate_procedural_memory_loop.py")
     run_validator("validate_routing_decision_lease.py")

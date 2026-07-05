@@ -59,6 +59,13 @@ BOOK_GATE_CHECKS = [
         "boundary": "No deployed attestation, external review, open-world receipt-faithfulness, verifier-correctness, or support-state claim.",
     },
     {
+        "name": "Artifact public deployed-site attestation",
+        "doc": "docs/artifact_public_site_attestation.md",
+        "script": "scripts/validate_artifact_public_site_attestation.py",
+        "summary": "Public GitHub Pages Artifact Graphs chapter fetched and checked for record-reality, epistemic-TCB, attestation, and boundary fragments.",
+        "boundary": "Served-page evidence only; no deployed attestation, external review, reader release, or support-state claim.",
+    },
+    {
         "name": "Procedural memory loop harness",
         "doc": "docs/procedural_memory_loop_harness.md",
         "script": "scripts/validate_procedural_memory_loop.py",
@@ -312,6 +319,7 @@ BOOK_GATE_RESULTS_BY_SCRIPT = {
     "scripts/validate_artifact_graph_record_reality_sequence.py": "experiments/artifact_graph_record_reality_sequence/results/2026-07-04-local.json",
     "scripts/validate_artifact_live_attestation_probe.py": "experiments/artifact_live_attestation/results/2026-07-04-local.json",
     "scripts/validate_artifact_randomized_attestation_audit.py": "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
+    "scripts/validate_artifact_public_site_attestation.py": "experiments/artifact_public_site_attestation/results/2026-07-05-live.json",
     "scripts/validate_procedural_memory_loop.py": "experiments/procedural_memory_loop/results/2026-06-30-local.md",
     "scripts/validate_routing_decision_lease.py": "experiments/routing_decision_lease/results/2026-07-01-local.md",
     "scripts/validate_cyclic_memory_contracts.py": "experiments/cyclic_memory_contracts/results/2026-06-30-local.md",
@@ -479,8 +487,8 @@ def validate(args: argparse.Namespace) -> list[str]:
         return ["experiments/phase5_harness_registry.json must contain a list."]
     if len(registry) != 22:
         errors.append(f"Expected 22 Phase 5 registry harnesses, found {len(registry)}.")
-    if len(BOOK_GATE_CHECKS) != 40:
-        errors.append(f"Expected 40 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
+    if len(BOOK_GATE_CHECKS) != 41:
+        errors.append(f"Expected 41 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
 
     names = [check["name"] for check in BOOK_GATE_CHECKS]
     duplicates = sorted({name for name in names if names.count(name) > 1})

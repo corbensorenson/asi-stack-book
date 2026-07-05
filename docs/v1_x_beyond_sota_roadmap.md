@@ -3951,7 +3951,7 @@ Current status:
   rather than alphabetical filesystem order, and
   `scripts/validate_reader_audio_script_reading_flow.py` records the automated
   reading-flow check: 49 script files, 49 ordered marker rows, 49 untimecoded
-  `TBD` marker rows, 66 narration notes, 1,069,266 checked text characters, 44
+  `TBD` marker rows, 66 narration notes, 1,070,046 checked text characters, 44
   chapter scripts with implementation horizons, 0 live/research marker hits, 0
   raw core-claim marker hits, and audio targets still not generated. This is
   not narration quality review, pronunciation review, chapter timecoding, an
@@ -4319,7 +4319,12 @@ validator-enforced status row that grows past compact status-summary size.
   Core-claim dispositions are now recorded per chapter in
   `claim_decisions/v1_x_core_claim_dispositions.json` and rendered in
   `docs/core_claim_disposition_ledger.md`; the remaining work is executing
-  those lanes, not discovering what would move them.
+  those lanes, not discovering what would move them. The Artifact Graphs
+  record-reality side lane now also has a public deployed-site attestation at
+  `experiments/artifact_public_site_attestation/results/2026-07-05-live.json`;
+  it is an accepted no-promotion served-page observation only, not deployed
+  attestation behavior, open-world receipt faithfulness, reader release
+  approval, external human review, or chapter-core support.
 - Test 4: first fixture-equivalence, memory-store, and identity-sequence
   bridges exist; most safety-critical modules remain finite-record grade with
   correct labeling.
@@ -4394,7 +4399,7 @@ validator-enforced status row that grows past compact status-summary size.
    `python3 scripts/validate_reader_audio_narration_treatment.py`,
    `editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json`,
    and `docs/reader_audio_narration_treatment_review.md`: the script-level
-   treatment review checks 49 ordered scripts, 66 narration notes, 1,069,266
+   treatment review checks 49 ordered scripts, 66 narration notes, 1,070,046
    text characters, and 10 draft key-figure spoken summaries, clearing only
    `narration_quality_review_not_completed`. The audio metadata rung is closed
    by `python3 scripts/validate_reader_audio_metadata_review.py`,

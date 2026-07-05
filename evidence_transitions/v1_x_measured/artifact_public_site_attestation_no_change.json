@@ -1,0 +1,116 @@
+{
+  "transition_id": "v1_x_measured.artifact_public_site_attestation.no_change",
+  "claim_id": "artifact-graphs.public_site_record_reality_attestation",
+  "claim_surface_refs": [
+    "docs/artifact_public_site_attestation.md",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "docs/contribution_novelty_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/artifact_public_site_attestation/results/2026-07-05-live.json",
+    "scripts/validate_artifact_public_site_attestation.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Bounded public deployed-site attestation for one Artifact Graphs GitHub Pages URL. The tracked result records a successful HTTP fetch, content digest, response metadata, and required record-reality and non-claim fragments from the public site. It is not independent external human review, not deployed attestation behavior, not open-world receipt faithfulness, not verifier-correctness evidence, not reader release approval, and not an upward support-state transition.",
+  "evidence_roles": [
+    "public_github_pages_url_fetch",
+    "served_html_digest_check",
+    "record_reality_fragment_check",
+    "boundary_fragment_check",
+    "publication_surface_observation",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The public deployed-site attestation result artifact-public-site-record-reality-attestation-2026-07-05 is useful because it moves the Artifact Graphs record-reality lane beyond local files and CI-service status: the public GitHub Pages URL served the Artifact Graphs chapter with the expected record-reality ladder, epistemic-TCB boundary, CI attestation section, live/randomized attestation probe references, and explicit non-claim boundaries. The evidence remains served-page evidence for one URL at one fetch time, so it blocks promotion for deployed attestation, open-world receipt faithfulness, verifier correctness, reader release approval, external human review, or chapter-core support.",
+  "required_artifacts": [
+    "externally reviewable attestation or audit trace beyond served HTML content",
+    "independent verifier-quality review",
+    "trap or challenge execution outside the producing component",
+    "provenance-completeness review for the deployed artifact set",
+    "reader release record for any reader artifact approval",
+    "accepted evidence-transition record for any narrowed upward support movement"
+  ],
+  "artifact_refs": [
+    "docs/artifact_public_site_attestation.md",
+    "experiments/artifact_public_site_attestation/results/2026-07-05-live.json",
+    "scripts/validate_artifact_public_site_attestation.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/artifact_public_site_attestation.md",
+    "docs/artifact_github_pages_ci_attestation.md",
+    "docs/artifact_live_attestation_probe.md",
+    "docs/artifact_randomized_attestation_audit.md",
+    "docs/contribution_novelty_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+    "docs/book_outline.md#artifact-graphs-audit-logs-and-replay"
+  ],
+  "verification_command": "python3 scripts/validate_artifact_public_site_attestation.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "non-200 public HTTP fetch is rejected",
+    "missing record-reality ladder fragment is rejected",
+    "missing epistemic-TCB boundary fragment is rejected",
+    "missing CI attestation fragment is rejected",
+    "missing live or randomized attestation fragment is rejected",
+    "missing non-claim boundary fragment is rejected",
+    "upward support-state movement remains rejected",
+    "independent external human review remains unclaimed",
+    "reader release approval remains unclaimed",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/artifact_public_site_attestation.md",
+    "experiments/artifact_public_site_attestation/results/2026-07-05-live.json",
+    "scripts/validate_artifact_public_site_attestation.py"
+  ],
+  "downgrade_triggers": [
+    "artifact public-site attestation validator failure",
+    "public URL fetch no longer returns HTTP 200",
+    "served page digest or required fragments drift without a new result record",
+    "record-reality treatment described as independent external human review",
+    "served HTML described as reader release approval",
+    "served HTML described as deployed attestation or open-world receipt faithfulness",
+    "support-state promotion accepted from served HTML content"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed public deployed-site attestation claim after externally reviewable attestation or audit traces, independent verifier-quality review, trap/challenge execution outside the producing component, provenance-completeness review, residuals, non-claims, and independent review are recorded with a separate accepted transition.",
+  "limitations": [
+    "one public GitHub Pages URL fetch only",
+    "served HTML content evidence only",
+    "not independent external human review",
+    "no deployed attestation service",
+    "no deployed audit service",
+    "no open-world receipt-faithfulness proof",
+    "no verifier-correctness proof",
+    "no reader release approval",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review of an externally reachable public site fetch only; not independent external human review, not source-interpretation review, not verifier-quality review, and not release approval",
+  "acceptance_blockers": [
+    "no independent external human review",
+    "no deployed or externally reviewable attestation service trace beyond served HTML content",
+    "no external verifier-quality review",
+    "no open-world receipt-faithfulness evidence",
+    "no reader release approval"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---add-public-deployed-site-attestation",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote the Artifact Graphs chapter core claim",
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not create independent external human review",
+    "does not approve any reader release artifact",
+    "does not prove open-world receipt faithfulness, deployed attestation behavior, deployed audit behavior, verifier correctness, external project truth, model quality, benchmark performance, safety, deployment safety, or ASI"
+  ]
+}

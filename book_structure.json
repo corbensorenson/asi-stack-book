@@ -5359,6 +5359,11 @@
           "result_status": "passing via `python3 scripts/validate_artifact_randomized_attestation_audit.py`; deterministic pseudo-random sample over 4 selected public-safe repository artifacts checks filesystem bytes, git object bytes, command replay, trap receipts, attestation limits, and 8 mutation controls; no support-state promotion"
         },
         {
+          "name": "Artifact public deployed-site attestation",
+          "implementation_status": "implemented",
+          "result_status": "passing via `python3 scripts/validate_artifact_public_site_attestation.py`; public GitHub Pages Artifact Graphs chapter fetch checks served HTML digest plus record-reality, epistemic-TCB, attestation, and non-claim fragments; no support-state promotion"
+        },
+        {
           "name": "Epistemic trusted computing base fixture",
           "implementation_status": "implemented",
           "result_status": "passing via `python3 scripts/validate_epistemic_trusted_computing_base.py`; accepts 3 bounded trust-base records and rejects 6 expected-invalid controls for missing root of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residuals, and support promotion from trust-base shape; no support-state promotion"
