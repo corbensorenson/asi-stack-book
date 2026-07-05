@@ -21,6 +21,7 @@ CHAPTER_RECONCILIATION = (
 )
 KEYBOARD_ONLY_DECISION = ROOT / "editions" / "reader_manuscript" / "v1_0" / "keyboard_only_decision_manifest.json"
 ACCESSIBILITY_TREE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_tree_manifest.json"
+WCAG_PREPARATION = ROOT / "editions" / "reader_manuscript" / "v1_0" / "wcag_preparation_manifest.json"
 OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
@@ -60,7 +61,6 @@ LOCAL_FORMATS = {
 }
 ACCESSIBILITY_BLOCKERS = {
     "screen_reader_review_not_completed",
-    "wcag_conformance_review_not_completed",
 }
 AUDIO_BLOCKERS = {
     "reviewed_reader_release_record_not_created_for_audio",
@@ -137,6 +137,7 @@ def actual_candidate_from_tracked_records() -> dict[str, Any]:
     reconciliation = load_json(CHAPTER_RECONCILIATION)
     keyboard = load_json(KEYBOARD_ONLY_DECISION)
     accessibility_tree = load_json(ACCESSIBILITY_TREE)
+    wcag_preparation = load_json(WCAG_PREPARATION)
     rows = matrix_records(matrix)
     blockers = candidate_blockers(matrix)
 
@@ -169,7 +170,10 @@ def actual_candidate_from_tracked_records() -> dict[str, Any]:
         "accessibility_tree_reviewed": accessibility_tree.get("status")
         == "passed_accessibility_tree_release_preparation_probe",
         "screen_reader_reviewed": "screen_reader_review_not_completed" not in blockers,
-        "wcag_conformance_reviewed": "wcag_conformance_review_not_completed" not in blockers,
+        "wcag_conformance_reviewed": wcag_preparation.get("status")
+        == "accepted_wcag_automation_evidence_for_release_preparation"
+        and wcag_preparation.get("cleared_blockers") == ["wcag_conformance_review_not_completed"]
+        and "wcag_conformance_review_not_completed" not in blockers,
         "audio_files_generated": "audio_files_not_generated" not in blockers,
         "audio_listening_reviewed": "audio_spot_check_not_performed" not in blockers,
         "chapter_markers_timecoded": "chapter_markers_not_timecoded" not in blockers,
@@ -573,6 +577,7 @@ def build_result(errors: list[str]) -> dict[str, Any]:
             "chapter_reconciliation": rel(CHAPTER_RECONCILIATION),
             "keyboard_only_decision": rel(KEYBOARD_ONLY_DECISION),
             "accessibility_tree": rel(ACCESSIBILITY_TREE),
+            "wcag_preparation": rel(WCAG_PREPARATION),
         },
         "bridge_assertions": assertions,
         "lean_fixture_alignment": {
@@ -588,9 +593,9 @@ def build_result(errors: list[str]) -> dict[str, Any]:
         },
         "weakening_condition": (
             "The reader-release boundary weakens if local format evidence, "
-            "keyboard/accessibility-tree probes, application smoke checks, or "
+            "keyboard/accessibility-tree/WCAG-preparation probes, application smoke checks, or "
             "audio-script metadata can be converted into release approval while "
-            "screen-reader, WCAG, audio artifact, timecoding, and explicit "
+            "screen-reader, audio artifact, timecoding, and explicit "
             "reader-release approval blockers remain."
         ),
         "support_state_effect": "none",
@@ -684,7 +689,7 @@ def validate_surfaces(errors: list[str]) -> None:
         [
             "reader release-candidate bridge",
             "local format evidence",
-            "screen-reader/WCAG",
+            "screen-reader",
         ],
         errors,
     )

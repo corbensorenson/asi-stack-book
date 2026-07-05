@@ -22,9 +22,10 @@ The bridge reads the tracked blocked curated-reader release candidate and
 format-review matrix, then mirrors the same finite route in Lean and Python.
 The current candidate is modeled as:
 
-- local HTML, EPUB, DOCX, PDF, application, key-figure, keyboard-only, and
-  accessibility-tree preparation evidence complete enough to be locally useful;
-- screen-reader and WCAG conformance review still incomplete;
+- local HTML, EPUB, DOCX, PDF, application, key-figure, keyboard-only,
+  accessibility-tree, and WCAG-preparation evidence complete enough to be
+  locally useful;
+- screen-reader review still incomplete;
 - audio files, listening review, chapter-marker timecoding, audio-embedded
   EPUB packaging, and audio release record still incomplete;
 - reader release approval and approved edition release record still missing.
@@ -40,7 +41,7 @@ The bridge also checks synthetic controls for:
 - all release gates complete;
 - `invalid_current_candidate_claimed_approved`, an invalid copy of the
   tracked current candidate claimed as approved while preserving the visible
-  screen-reader, WCAG, audio, and release-approval blocker list;
+  screen-reader, audio, and release-approval blocker list;
 - `invalid_screen_reader_missing_claimed_approved`;
 - `invalid_wcag_conformance_missing_claimed_approved`;
 - `invalid_audio_missing_claimed_approved`;
@@ -56,10 +57,11 @@ The bridge also checks synthetic controls for:
 The release ladder now has substantial local preparation evidence. That
 evidence is useful, but it must not become publication laundering. This bridge
 keeps a crisp boundary: local format evidence, keyboard traversal,
-accessibility-tree probes, Apple Books smoke review, DOCX application evidence,
-PDF page review, audio-script narration treatment, and audio metadata do not
-approve a reader release while screen-reader/WCAG, audio artifact, timecoding,
-and explicit release-approval blockers remain.
+accessibility-tree probes, WCAG-preparation automation, Apple Books smoke
+review, DOCX application evidence, PDF page review, audio-script narration
+treatment, and audio metadata do not approve a reader release while
+screen-reader, audio artifact, timecoding, and explicit release-approval
+blockers remain.
 
 ## Boundary
 
@@ -71,7 +73,7 @@ final reader release. It does not promote any chapter core claim above
 `argument`.
 
 The weakening condition is explicit: the reader-release boundary weakens if
-local format evidence, keyboard/accessibility-tree probes, application smoke
-checks, or audio-script metadata can be converted into release approval while
-screen-reader, WCAG, audio artifact, timecoding, and explicit reader-release
-approval blockers remain.
+local format evidence, keyboard/accessibility-tree/WCAG-preparation probes,
+application smoke checks, or audio-script metadata can be converted into
+release approval while screen-reader, audio artifact, timecoding, and explicit
+reader-release approval blockers remain.

@@ -41,6 +41,8 @@ REQUIRED = [
     "scripts/validate_reader_keyboard_only_decision.py",
     "scripts/validate_reader_accessibility_tree.py",
     "scripts/validate_curated_reader_accessibility_tree.js",
+    "scripts/validate_reader_wcag_preparation.py",
+    "scripts/validate_curated_reader_wcag_preparation.js",
     "scripts/validate_reader_chapter_reconciliation_approval.py",
     "scripts/validate_curated_reader_keyboard_navigation.js",
     "scripts/validate_reader_key_figure_raster_probe.py",
@@ -61,6 +63,8 @@ REQUIRED = [
     "editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json",
     "docs/reader_accessibility_tree_review.md",
     "editions/reader_manuscript/v1_0/accessibility_tree_manifest.json",
+    "docs/reader_wcag_preparation_review.md",
+    "editions/reader_manuscript/v1_0/wcag_preparation_manifest.json",
     "docs/reader_chapter_reconciliation_approval.md",
     "editions/reader_manuscript/v1_0/chapter_reconciliation_approval_manifest.json",
     "assets/skip-link.html",
@@ -1061,6 +1065,7 @@ def main() -> None:
     run_validator("validate_reader_keyboard_navigation.py", "--tracked-only")
     run_validator("validate_reader_keyboard_only_decision.py")
     run_validator("validate_reader_accessibility_tree.py", "--tracked-only")
+    run_validator("validate_reader_wcag_preparation.py", "--tracked-only")
     run_validator("validate_reader_chapter_reconciliation_approval.py")
     run_validator("validate_reader_key_figure_raster_probe.py")
     run_validator("validate_reader_key_figure_epub_layout.py")

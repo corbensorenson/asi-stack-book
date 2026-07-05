@@ -1,0 +1,58 @@
+{
+  "schema_version": "asi_stack.curated_reader_wcag_preparation.v0",
+  "result_id": "curated-reader-wcag-preparation-2026-07-05",
+  "status": "accepted_wcag_automation_evidence_for_release_preparation",
+  "command": "node scripts/validate_curated_reader_wcag_preparation.js",
+  "write_command": "node scripts/validate_curated_reader_wcag_preparation.js --write-manifest",
+  "artifact_root": "build/curated_reader_edition/format_artifacts/html/_reader_site",
+  "source_manifest": "build/curated_reader_edition/reader_manifest.json",
+  "detailed_report": "build/curated_reader_edition/curated_reader_wcag_preparation_report.json",
+  "cleared_blockers": [
+    "wcag_conformance_review_not_completed"
+  ],
+  "preserved_blockers": [
+    "screen_reader_review_not_completed",
+    "reader_release_approval_not_created",
+    "audio_files_not_generated",
+    "audio_spot_check_not_performed",
+    "chapter_markers_not_timecoded",
+    "audio_embedded_epub_not_packaged_or_checked",
+    "audio_edition_release_record_not_created"
+  ],
+  "summary": {
+    "pages_checked": 49,
+    "expected_pages": 49,
+    "viewport_count": 2,
+    "page_view_pairs": 98,
+    "chapter_page_view_pairs": 88,
+    "failed_page_view_pairs": 0,
+    "lang_en_us_pairs": 98,
+    "titled_pairs": 98,
+    "one_h1_pairs": 98,
+    "main_landmark_pairs": 98,
+    "navigation_landmark_pairs": 98,
+    "skip_link_pairs": 98,
+    "focus_visible_rule_pairs": 98,
+    "visible_interactive_elements": 1786,
+    "unnamed_interactive_elements": 0,
+    "visible_images": 9,
+    "image_alt_failures": 0,
+    "tables_checked": 10,
+    "table_header_failures": 0,
+    "duplicate_id_page_views": 0,
+    "text_contrast_samples": 3523,
+    "contrast_failure_samples": 0,
+    "minimum_contrast_ratio": 4.69,
+    "live_marker_leak_pairs": 0,
+    "raw_core_claim_marker_leak_pairs": 0
+  },
+  "review_boundary": "This automated WCAG-preparation release gate opens the ignored local curated reader HTML artifact in Chromium at desktop and mobile widths. It checks rendered language metadata, document titles, one-H1 page shape, main and navigation landmarks, skip-link presence, focus-visible CSS, visible interactive accessible names, visible image alt text, visible table header cells, duplicate IDs, live-marker leakage, raw core-claim leakage, and WCAG 2.x-style text contrast thresholds for rendered visible text samples. It clears only the local wcag_conformance_review_not_completed release blocker for the current curated reader HTML candidate. It is not screen-reader review, not assistive-technology review, not third-party or legal WCAG certification, not e-reader review, not audiobook review, not final figure-artifact approval, not reader release approval, and not a support-state promotion.",
+  "non_claims": [
+    "does not approve the curated reader HTML artifact for release",
+    "does not perform screen-reader or assistive-technology review",
+    "does not provide third-party or legal WCAG certification",
+    "does not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or reader release artifacts",
+    "does not publish the ignored local curated reader HTML artifact",
+    "does not promote any chapter core claim or support state"
+  ]
+}

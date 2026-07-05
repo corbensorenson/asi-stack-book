@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-05 - Add curated reader WCAG-preparation gate
+
+- Added `scripts/validate_curated_reader_wcag_preparation.js`,
+  `scripts/validate_reader_wcag_preparation.py`,
+  `editions/reader_manuscript/v1_0/wcag_preparation_manifest.json`, and
+  `docs/reader_wcag_preparation_review.md` to record an automated Chromium
+  WCAG-preparation gate for the current ignored curated-reader HTML candidate.
+- The gate checks 49 curated reader HTML pages across 98 desktop/mobile
+  page-view pairs, 3,523 visible text contrast samples, focus-visible styling,
+  accessible names, image alt text, table headers, duplicate IDs, live-marker
+  leakage, and raw core-claim leakage. It records 0 failed page-view pairs, 0
+  contrast failures, and 4.69 minimum contrast ratio.
+- Updated the reader format matrix, blocked curated-reader release record,
+  release-candidate bridge, release-surface ledger, candidate-status row, and
+  main validation wiring so the current curated HTML row clears only
+  `wcag_conformance_review_not_completed`.
+- Boundary: this is automated release-preparation evidence only. It does not
+  perform screen-reader or assistive-technology review, provide third-party or
+  legal WCAG certification, approve any reader artifact, publish the ignored
+  HTML candidate, create a reader release approval, or promote any support
+  state.
+
 ## 2026-07-05 - Tighten Failure Modes taxonomy bridge
 
 - Added an explicit external-taxonomy bridge to the live and curated reader

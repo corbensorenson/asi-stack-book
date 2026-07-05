@@ -65,6 +65,8 @@ KEYBOARD_ONLY_DECISION = (
 KEYBOARD_ONLY_DECISION_DOC = ROOT / "docs" / "reader_keyboard_only_decision.md"
 ACCESSIBILITY_TREE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_tree_manifest.json"
 ACCESSIBILITY_TREE_DOC = ROOT / "docs" / "reader_accessibility_tree_review.md"
+WCAG_PREPARATION = ROOT / "editions" / "reader_manuscript" / "v1_0" / "wcag_preparation_manifest.json"
+WCAG_PREPARATION_DOC = ROOT / "docs" / "reader_wcag_preparation_review.md"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 
@@ -99,6 +101,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_keyboard_navigation.py",
     "python3 scripts/validate_reader_keyboard_only_decision.py",
     "python3 scripts/validate_reader_accessibility_tree.py --tracked-only",
+    "python3 scripts/validate_reader_wcag_preparation.py --tracked-only",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
     "python3 scripts/validate_reader_key_figure_epub_layout.py",
     "python3 scripts/validate_reader_epub_apple_books_review.py",
@@ -203,6 +206,8 @@ def main() -> None:
         KEYBOARD_ONLY_DECISION_DOC,
         ACCESSIBILITY_TREE,
         ACCESSIBILITY_TREE_DOC,
+        WCAG_PREPARATION,
+        WCAG_PREPARATION_DOC,
         HTML_REVIEW,
     ):
         if not path.exists():
@@ -243,6 +248,8 @@ def main() -> None:
     keyboard_only_decision_doc = KEYBOARD_ONLY_DECISION_DOC.read_text(encoding="utf-8")
     accessibility_tree = load_json(ACCESSIBILITY_TREE)
     accessibility_tree_doc = ACCESSIBILITY_TREE_DOC.read_text(encoding="utf-8")
+    wcag_preparation = load_json(WCAG_PREPARATION)
+    wcag_preparation_doc = WCAG_PREPARATION_DOC.read_text(encoding="utf-8")
     html_review = HTML_REVIEW.read_text(encoding="utf-8")
     if not isinstance(record, dict):
         fail([f"{rel(RECORD)} must contain a JSON object."])
@@ -290,6 +297,8 @@ def main() -> None:
         fail([f"{rel(KEYBOARD_ONLY_DECISION)} must contain a JSON object."])
     if not isinstance(accessibility_tree, dict):
         fail([f"{rel(ACCESSIBILITY_TREE)} must contain a JSON object."])
+    if not isinstance(wcag_preparation, dict):
+        fail([f"{rel(WCAG_PREPARATION)} must contain a JSON object."])
 
     if record.get("record_type") != "edition_release":
         errors.append("record_type must be edition_release.")
@@ -335,6 +344,9 @@ def main() -> None:
         "49 pages",
         "98 of 98",
         "accessibility-tree release-preparation probe",
+        "WCAG-preparation gate",
+        "3,523 rendered text contrast samples",
+        "4.69 minimum contrast ratio",
         "0 unnamed interactive elements",
         "not release-approved",
     ):
@@ -386,6 +398,7 @@ def main() -> None:
     accessibility_summary = accessibility_navigation.get("summary", {})
     keyboard_summary = keyboard_navigation.get("summary", {})
     accessibility_tree_summary = accessibility_tree.get("summary", {})
+    wcag_summary = wcag_preparation.get("summary", {})
     if not isinstance(epub_audit, dict):
         errors.append("curated format epub_content_audit must be an object.")
         epub_audit = {}
@@ -1082,6 +1095,67 @@ def main() -> None:
         errors,
     )
 
+    if wcag_preparation.get("status") != "accepted_wcag_automation_evidence_for_release_preparation":
+        errors.append("wcag_preparation_manifest status must remain accepted_wcag_automation_evidence_for_release_preparation.")
+    if wcag_preparation.get("cleared_blockers") != ["wcag_conformance_review_not_completed"]:
+        errors.append("wcag_preparation_manifest must clear only wcag_conformance_review_not_completed.")
+    if not isinstance(wcag_summary, dict):
+        errors.append("wcag_preparation_manifest summary must be an object.")
+        wcag_summary = {}
+    expected_wcag_metrics = {
+        "pages_checked": 49,
+        "expected_pages": 49,
+        "viewport_count": 2,
+        "page_view_pairs": 98,
+        "chapter_page_view_pairs": 88,
+        "failed_page_view_pairs": 0,
+        "lang_en_us_pairs": 98,
+        "titled_pairs": 98,
+        "one_h1_pairs": 98,
+        "main_landmark_pairs": 98,
+        "navigation_landmark_pairs": 98,
+        "skip_link_pairs": 98,
+        "focus_visible_rule_pairs": 98,
+        "unnamed_interactive_elements": 0,
+        "image_alt_failures": 0,
+        "table_header_failures": 0,
+        "duplicate_id_page_views": 0,
+        "text_contrast_samples": 3523,
+        "contrast_failure_samples": 0,
+        "minimum_contrast_ratio": 4.69,
+        "live_marker_leak_pairs": 0,
+        "raw_core_claim_marker_leak_pairs": 0,
+    }
+    for key, expected in expected_wcag_metrics.items():
+        observed = wcag_summary.get(key)
+        if observed != expected:
+            errors.append(f"wcag_preparation_manifest summary.{key} must be {expected!r}; found {observed!r}.")
+    wcag_boundary = str(wcag_preparation.get("review_boundary", ""))
+    for fragment in (
+        "clears only the local wcag_conformance_review_not_completed release blocker",
+        "not screen-reader review",
+        "not assistive-technology review",
+        "not third-party or legal WCAG certification",
+        "not reader release approval",
+    ):
+        if fragment not in wcag_boundary:
+            errors.append(f"wcag_preparation_manifest review_boundary missing {fragment!r}.")
+    text_contains_all(
+        rel(WCAG_PREPARATION_DOC),
+        wcag_preparation_doc,
+        [
+            "Reader WCAG Preparation Review",
+            "accepted_wcag_automation_evidence_for_release_preparation",
+            "Cleared blockers | wcag_conformance_review_not_completed",
+            "Page-view pairs | 98",
+            "Contrast failure samples | 0",
+            "Minimum contrast ratio | 4.69",
+            "does not perform screen-reader or assistive-technology review",
+            "does not provide third-party or legal WCAG certification",
+        ],
+        errors,
+    )
+
     key_figure_expected = {
         ("epub", "matched_source_svg_titles"): 10,
         ("docx", "matched_figure_stems"): 10,
@@ -1361,6 +1435,19 @@ def main() -> None:
         "reader_accessibility_tree_image_alt_failures": accessibility_tree_summary.get("image_alt_failures"),
         "reader_accessibility_tree_table_header_failures": accessibility_tree_summary.get("table_header_failures"),
         "reader_accessibility_tree_duplicate_id_hits": accessibility_tree_summary.get("duplicate_id_page_views"),
+        "reader_wcag_preparation_manifest": rel(WCAG_PREPARATION),
+        "reader_wcag_preparation_status": wcag_preparation.get("status"),
+        "reader_wcag_preparation_page_view_pairs": wcag_summary.get("page_view_pairs"),
+        "reader_wcag_preparation_failed_pairs": wcag_summary.get("failed_page_view_pairs"),
+        "reader_wcag_preparation_text_contrast_samples": wcag_summary.get("text_contrast_samples"),
+        "reader_wcag_preparation_contrast_failures": wcag_summary.get("contrast_failure_samples"),
+        "reader_wcag_preparation_min_contrast_ratio": wcag_summary.get("minimum_contrast_ratio"),
+        "reader_wcag_preparation_cleared_blockers": len(wcag_preparation.get("cleared_blockers", []))
+        if isinstance(wcag_preparation.get("cleared_blockers"), list)
+        else None,
+        "reader_wcag_preparation_preserved_blockers": len(wcag_preparation.get("preserved_blockers", []))
+        if isinstance(wcag_preparation.get("preserved_blockers"), list)
+        else None,
         "audio_reading_flow_script_files": audio_reading_flow.get("script_files_checked"),
         "audio_reading_flow_ordered_markers": audio_reading_flow.get("chapter_marker_rows"),
         "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
@@ -1404,6 +1491,8 @@ def main() -> None:
         "automated keyboard traversal",
         "keyboard-only evidence decision",
         "accessibility-tree release-preparation probe",
+        "automated wcag-preparation gate",
+        "wcag_conformance_review_not_completed",
         "pdf page-by-page release-preparation review",
         "final figure-artifact review",
         "audio narration treatment review",
@@ -1414,7 +1503,7 @@ def main() -> None:
         "audio_metadata_not_reviewed",
         "manual_keyboard_only_review_not_completed",
         "screen-reader",
-        "wcag",
+        "third-party/legal wcag certification",
         "audio file generation",
         "chapter timecoding",
         "audio publication-rights approval",

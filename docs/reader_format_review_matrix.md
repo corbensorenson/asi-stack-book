@@ -21,7 +21,6 @@ This generated summary is synced from `editions/reader_manuscript/v1_0/format_re
 | current_curated_candidate_blocker:reader_release_approval_not_created | 5 |
 | current_curated_candidate_blocker:reviewed_reader_release_record_not_created_for_audio | 1 |
 | current_curated_candidate_blocker:screen_reader_review_not_completed | 1 |
-| current_curated_candidate_blocker:wcag_conformance_review_not_completed | 1 |
 
 ## Format Queue
 
@@ -42,7 +41,7 @@ Tracked curated reader manuscript rendered into ignored local HTML, EPUB, DOCX, 
 
 | Candidate format | Render status | Automated review | Release approved | Blockers | Evidence refs |
 |---|---|---|---:|---|---|
-| curated_reader_html | rendered_local | passed_release_preparation_probe | no | screen_reader_review_not_completed, wcag_conformance_review_not_completed, reader_release_approval_not_created | docs/curated_reader_html_artifact_browser_review.md#browser-sweep, docs/reader_keyboard_navigation_review.md#summary, editions/reader_manuscript/v1_0/accessibility_tree_manifest.json, docs/reader_accessibility_tree_review.md#summary, docs/reader_keyboard_only_decision.md#decision, editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json, docs/reader_final_figure_artifact_review.md#summary, release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json |
+| curated_reader_html | rendered_local | passed_release_preparation_probe | no | screen_reader_review_not_completed, reader_release_approval_not_created | docs/curated_reader_html_artifact_browser_review.md#browser-sweep, docs/reader_keyboard_navigation_review.md#summary, editions/reader_manuscript/v1_0/accessibility_tree_manifest.json, docs/reader_accessibility_tree_review.md#summary, docs/reader_keyboard_only_decision.md#decision, editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json, docs/reader_final_figure_artifact_review.md#summary, editions/reader_manuscript/v1_0/wcag_preparation_manifest.json, docs/reader_wcag_preparation_review.md#decision, release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json |
 | curated_reader_epub | rendered_local | passed_release_preparation_probe | no | reader_release_approval_not_created | docs/curated_reader_format_artifact_probe.md#epub-content-and-navigation-audit, docs/reader_key_figure_epub_layout_review.md#summary, docs/reader_final_figure_artifact_review.md#summary, release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json, docs/reader_epub_apple_books_review.md#what-was-checked, editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json |
 | curated_reader_docx | rendered_local | passed_release_preparation_probe | no | reader_release_approval_not_created | docs/curated_reader_format_artifact_probe.md#docx-libreoffice-headless-review, docs/reader_key_figure_docx_layout_review.md#summary, docs/reader_final_figure_artifact_review.md#summary, release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json, docs/reader_docx_text_fallback_review.md#pages-observation, editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json, docs/reader_docx_application_decision.md#decision, editions/reader_manuscript/v1_0/docx_application_decision_manifest.json |
 | curated_reader_pdf | rendered_local | passed_release_preparation_probe | no | reader_release_approval_not_created | docs/curated_reader_format_artifact_probe.md#pdf-text-and-layout-extraction-audit, docs/curated_reader_pdf_page_review.md#summary, docs/curated_reader_format_artifact_probe.md#pdf-chromium-viewer-smoke-review, docs/reader_key_figure_pdf_layout_review.md#summary, docs/reader_final_figure_artifact_review.md#summary, release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json |
@@ -51,7 +50,7 @@ Tracked curated reader manuscript rendered into ignored local HTML, EPUB, DOCX, 
 
 Curated-candidate release boundary:
 
-The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, the keyboard-only evidence decision, the accessibility-tree release-preparation probe, and the script-level audio narration treatment review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact.
+The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, the keyboard-only evidence decision, the accessibility-tree release-preparation probe, the automated WCAG-preparation decision, and the script-level audio narration treatment review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires screen-reader review where release scope demands it and an edition release record naming the exact reviewed artifact.
 
 ## Release Rule
 
