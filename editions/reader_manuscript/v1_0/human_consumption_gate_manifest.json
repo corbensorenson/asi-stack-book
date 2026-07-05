@@ -13,7 +13,8 @@
     "editions/reader_manuscript/v1_0/key_figure_epub_layout_manifest.json",
     "editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json",
     "editions/reader_manuscript/v1_0/key_figure_docx_layout_manifest.json",
-    "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json"
+    "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
+    "editions/reader_manuscript/v1_0/final_figure_artifact_review_manifest.json"
   ],
   "gates": {
     "ebook_layout_review": {
@@ -53,11 +54,13 @@
         "non_neutral_color_families": 5,
         "visual_identity_min_text_contrast": 5.19,
         "accessibility_alt_texts": 10,
-        "accessibility_figure_boundaries": 10
+        "accessibility_figure_boundaries": 10,
+        "final_figure_review_status": "passed_final_figure_artifact_release_preparation_review",
+        "final_figure_review_cleared_blockers": 1
       },
       "limitations": [
         "This is automated figure readiness evidence, not manual aesthetic review.",
-        "It does not clear final figure-artifact approval or visual identity approval."
+        "The separate final figure-artifact review clears the current final-figure blocker; this gate does not approve reader release."
       ]
     },
     "bedtime_readability_review": {
@@ -175,7 +178,6 @@
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
     "app_or_ereader_review_not_completed",
-    "final_figure_artifact_review_not_completed",
     "manual_keyboard_only_review_not_completed",
     "screen_reader_review_not_completed",
     "wcag_conformance_review_not_completed",
@@ -184,7 +186,7 @@
   ],
   "non_claims": [
     "This gate does not approve, publish, tag, or archive any curated reader artifact.",
-    "This gate does not clear dedicated e-reader review, e-reader application approval, Word review, LibreOffice GUI review, Google Docs review, final figure-artifact review, manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality review, audio generation, audiobook approval, or reader release approval.",
+    "This gate does not clear dedicated e-reader review, e-reader application approval, Word review, LibreOffice GUI review, Google Docs review, manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality review, audio generation, audiobook approval, or reader release approval.",
     "This gate does not promote any chapter core claim or claim support state."
   ]
 }

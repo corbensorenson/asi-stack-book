@@ -36,6 +36,9 @@ HUMAN_CONSUMPTION_GATE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
 )
 PDF_PAGE_REVIEW = ROOT / "editions" / "reader_manuscript" / "v1_0" / "pdf_page_review_manifest.json"
+FINAL_FIGURE_REVIEW = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "final_figure_artifact_review_manifest.json"
+)
 KEY_FIGURE_FORMAT_PROBE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 )
@@ -68,6 +71,7 @@ REVIEW_DOCS = {
     "reader_audio": ROOT / "docs" / "reader_audio_script_probe_manifest.md",
     "reader_human_consumption": ROOT / "docs" / "reader_human_consumption_gate_review.md",
     "curated_pdf_page_review": ROOT / "docs" / "curated_reader_pdf_page_review.md",
+    "reader_final_figure_artifact_review": ROOT / "docs" / "reader_final_figure_artifact_review.md",
     "reader_figures": ROOT / "docs" / "reader_key_figure_artifact_review.md",
     "reader_figure_format": ROOT / "docs" / "reader_key_figure_format_probe.md",
     "reader_figure_geometry": ROOT / "docs" / "reader_key_figure_geometry_review.md",
@@ -158,6 +162,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         AUDIO_PROBE,
         HUMAN_CONSUMPTION_GATE,
         PDF_PAGE_REVIEW,
+        FINAL_FIGURE_REVIEW,
         KEY_FIGURE_FORMAT_PROBE,
         KEY_FIGURE_GEOMETRY,
         VISUAL_IDENTITY,
@@ -190,6 +195,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     audio_probe = load_json(AUDIO_PROBE)
     human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
     pdf_page_review = load_json(PDF_PAGE_REVIEW)
+    final_figure_review = load_json(FINAL_FIGURE_REVIEW)
     key_figure_format_probe = load_json(KEY_FIGURE_FORMAT_PROBE)
     key_figure_geometry = load_json(KEY_FIGURE_GEOMETRY)
     visual_identity = load_json(VISUAL_IDENTITY)
@@ -356,7 +362,8 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "automated package",
         "epub key-figure layout",
         "do not approve epub",
-        "final figure art",
+        "final figure-artifact review",
+        "clears the current final-figure blocker",
         "curated reader edition",
     ):
         if fragment not in release_boundary:
@@ -401,7 +408,6 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             errors.append(f"human-consumption gate {gate_name} must remain pass_pre_release_review.")
     human_gate_required_blockers = REQUIRED_CURATED_BLOCKERS | {
         "app_or_ereader_review_not_completed",
-        "final_figure_artifact_review_not_completed",
         "manual_keyboard_only_review_not_completed",
         "screen_reader_review_not_completed",
         "wcag_conformance_review_not_completed",
@@ -449,6 +455,52 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     )
     if missing_pdf_page_preserved:
         errors.append(f"PDF page-review manifest missing preserved blockers: {missing_pdf_page_preserved}")
+    if final_figure_review.get("status") != "passed_final_figure_artifact_release_preparation_review":
+        errors.append("final figure-artifact review manifest must remain passed_final_figure_artifact_release_preparation_review.")
+    final_figure_summary = final_figure_review.get("summary", {})
+    if not isinstance(final_figure_summary, dict):
+        errors.append("final figure-artifact review summary must be an object.")
+        final_figure_summary = {}
+    expected_final_figure_summary = {
+        "figure_count": 10,
+        "source_geometry_status": "passed_source_geometry_review",
+        "source_visual_identity_status": "passed_source_level_visual_identity_review",
+        "source_accessibility_status": "passed_source_accessibility_navigation_review",
+        "contrast_all_figures_passed": True,
+        "geometry_content_bounds_passed": 10,
+        "geometry_text_anchor_bounds_passed": 10,
+        "accessibility_alt_texts": 10,
+        "accessibility_figure_boundaries": 10,
+        "raster_artifacts": 10,
+        "raster_standard_dimensions": 10,
+        "epub_layout_page_view_pairs": 20,
+        "epub_layout_failed_pairs": 0,
+        "epub_layout_image_failures": 0,
+        "pdf_layout_caption_pages": 10,
+        "pdf_layout_raster_pages": 10,
+        "docx_layout_title_pages": 10,
+        "docx_layout_raster_pages": 10,
+    }
+    for key, expected in expected_final_figure_summary.items():
+        observed = final_figure_summary.get(key)
+        if observed != expected:
+            errors.append(f"final figure-artifact review summary.{key} must be {expected!r}; found {observed!r}.")
+    if final_figure_review.get("cleared_blockers") != ["final_figure_artifact_review_not_completed"]:
+        errors.append("final figure-artifact review must clear only final_figure_artifact_review_not_completed.")
+    missing_final_figure_preserved = sorted(
+        {
+            "reader_release_approval_not_created",
+            "app_or_ereader_review_not_completed",
+            "docx_application_review_not_completed",
+            "manual_keyboard_only_review_not_completed",
+            "screen_reader_review_not_completed",
+            "wcag_conformance_review_not_completed",
+            "audio_files_not_generated",
+        }
+        - set(final_figure_review.get("release_blockers_preserved", []))
+    )
+    if missing_final_figure_preserved:
+        errors.append(f"final figure-artifact review manifest missing preserved blockers: {missing_final_figure_preserved}")
     if set(audio_targets.values()) != {"target_not_generated"}:
         errors.append("audio target artifacts must remain target_not_generated until audio release artifacts exist.")
     missing_audio_blockers = sorted(REQUIRED_AUDIO_BLOCKERS - set(audio_probe.get("release_blockers_preserved", [])))
@@ -894,6 +946,13 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "final figure-artifact",
             "does not promote any chapter core claim",
         ],
+        "reader_final_figure_artifact_review": [
+            "Reader Final Figure-Artifact Review",
+            "passed_final_figure_artifact_release_preparation_review",
+            "final_figure_artifact_review_not_completed",
+            "does not approve the curated reader edition",
+            "does not promote any chapter core claim",
+        ],
         "curated_pdf_page_review": [
             "Curated Reader PDF Page-By-Page Review",
             "passed_pdf_page_by_page_release_preparation_review",
@@ -1140,6 +1199,11 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "curated_pdf_page_review_low_ink_pages": len(pdf_page_summary.get("low_ink_pages", []))
         if isinstance(pdf_page_summary.get("low_ink_pages"), list)
         else None,
+        "final_figure_review_status": final_figure_review.get("status"),
+        "final_figure_review_figures": final_figure_summary.get("figure_count"),
+        "final_figure_review_cleared_blockers": len(final_figure_review.get("cleared_blockers", []))
+        if isinstance(final_figure_review.get("cleared_blockers"), list)
+        else None,
         "reader_html_files": reader_inspection.get("html", {}).get("html_files"),
         "reader_epub_bytes": epub_summary.get("file_size_bytes"),
         "reader_epub_language": epub_probe.get("metadata_summary", {}).get("language"),
@@ -1260,10 +1324,12 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"the human-consumption pre-release gate is `{metrics['human_consumption_gate_status']}`; "
         f"PDF page-by-page release-preparation review covers {metrics['curated_pdf_page_review_rows']} pages with "
         f"{metrics['curated_pdf_page_review_failed_pages']} failures; "
+        f"final figure-artifact review is `{metrics['final_figure_review_status']}` for "
+        f"{metrics['final_figure_review_figures']} figures; "
         f"the curated manuscript remains `{metrics['reader_manifest_status']}` with "
         f"{metrics['curated_record_count']} records ({reconciliation_counts.get('reconciled', 0)} reconciled); "
         f"{metrics['overlay_operation_count']} overlay operations are tracked; "
-        "EPUB, DOCX, PDF, e-reader, audio, refreshed reader HTML, and final figure-artifact approval remain unapproved. | "
+        "EPUB, DOCX, PDF, e-reader, audio, and refreshed reader HTML remain unapproved. | "
         "`docs/release_surface_status_ledger.md`; `editions/release_profiles.json`; "
         "`editions/reader_overlays/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/manifest.json`; "
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`; "
@@ -1275,6 +1341,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_audio_script_probe_manifest.md`; `docs/reader_key_figure_format_probe.md`; "
         "`docs/reader_human_consumption_gate_review.md`; "
         "`docs/curated_reader_pdf_page_review.md`; "
+        "`docs/reader_final_figure_artifact_review.md`; "
         "`docs/reader_key_figure_geometry_review.md`; `docs/reader_visual_identity_review.md`; "
         "`docs/reader_accessibility_navigation_review.md`; `docs/reader_key_figure_raster_review.md`; "
         "`docs/reader_keyboard_navigation_review.md`; "
@@ -1286,6 +1353,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
         "`python3 scripts/validate_curated_reader_pdf_page_review.py`; "
         "`python3 scripts/validate_reader_human_consumption_gate.py`; "
+        "`python3 scripts/validate_reader_final_figure_artifact_review.py`; "
         "`python3 scripts/validate_release_surface_status_ledger.py` |"
     )
 
@@ -1305,7 +1373,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "Generated by `python3 scripts/validate_release_surface_status_ledger.py --write`.",
             "",
             "This ledger replaces the former long `Release surfaces` cell in `docs/v1_0_candidate_status.md`.",
-            "It records release-profile, reader-manuscript, format-probe, and artifact-review state only; it does not create release approval, final figure approval, audiobook approval, e-reader approval, or claim-support movement.",
+            "It records release-profile, reader-manuscript, format-probe, and artifact-review state only; it does not create reader release approval, audiobook approval, e-reader approval, or claim-support movement.",
             "",
             "## Summary",
             "",
@@ -1351,6 +1419,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Blocked curated reader candidate record | {metrics['curated_blocked_record_status']} |",
             f"| Blocked curated format-probe closure | {metrics['curated_blocked_probe_status']} |",
             f"| Curated PDF page-by-page review | `{metrics['curated_pdf_page_review_status']}`; {metrics['curated_pdf_page_review_rows']} rows, {metrics['curated_pdf_page_review_failed_pages']} failed, {metrics['curated_pdf_page_review_blank_pages']} blank, {metrics['curated_pdf_page_review_near_edge_pages']} near-edge, {metrics['curated_pdf_page_review_out_of_bounds_pages']} out-of-bounds word-box pages, {metrics['curated_pdf_page_review_low_ink_pages']} accepted low-ink page |",
+            f"| Final figure-artifact review | `{metrics['final_figure_review_status']}`; {metrics['final_figure_review_figures']} figures, {metrics['final_figure_review_cleared_blockers']} blocker cleared |",
             f"| Human-consumption pre-release gate | `{metrics['human_consumption_gate_status']}` |",
             f"| Human-consumption gate statuses | {qmd_escape(counter_phrase(Counter(metrics['human_consumption_gate_statuses'].values())))} |",
             f"| Human-consumption ebook checks | {metrics['human_consumption_epub_pairs']} EPUB key-figure pairs, {metrics['human_consumption_epub_failures']} failures, {metrics['human_consumption_pdf_caption_pages']} PDF caption pages, {metrics['human_consumption_docx_title_pages']} DOCX title pages |",
@@ -1371,19 +1440,20 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "",
             "## Format And Artifact Review",
             "",
-            f"- Generated reader HTML is the only release-approved reader format row, backed by `{metrics['release_record']}`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, or figure-artifact review.",
+            f"- Generated reader HTML is the only release-approved reader format row, backed by `{metrics['release_record']}`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, or audio.",
             f"- `docs/reader_format_review_matrix.md` distinguishes the historical generated-reader format queue from the current curated-reader candidate queue: {metrics['curated_candidate_count']} current candidate rows remain `{metrics['curated_candidate_status']}` with blocker counts {counter_phrase(metrics['curated_candidate_blocker_counts'])}.",
             f"- `{metrics['curated_blocked_record']}` records the current curated-reader HTML/EPUB/DOCX/PDF/e-reader/audio candidate as `partial` and blocked. It names exact local artifacts and blockers but does not approve, publish, tag, or archive any curated-reader artifact.",
             f"- The blocked candidate also records `{metrics['curated_blocked_probe_status']}` for the automated package, link, raster, key-figure, and browser probes; this is release-preparation evidence only and does not clear application-level review.",
             f"- `docs/reader_html_artifact_browser_review.md` records {metrics['generated_html_pages']} generated reader HTML pages, {metrics['generated_html_pairs']} page-view pairs, and {metrics['generated_html_failures']} failed page-view pairs.",
             f"- `docs/curated_reader_html_artifact_browser_review.md` records {metrics['curated_html_pages']} curated reader HTML pages, {metrics['curated_html_pairs']} page-view pairs, {metrics['curated_html_failures']} failed page-view pairs, {metrics['curated_key_figure_pairs']} key-figure page-view pairs, {metrics['curated_key_figure_failures']} key-figure failures, and ignored snapshot digest `{metrics['curated_html_digest']}`.",
             f"- `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: {metrics['curated_html_files']} HTML files, {metrics['curated_epub_xhtml']} EPUB XHTML entries, {metrics['curated_docx_png']} DOCX PNG media entries, {metrics['curated_docx_svg']} DOCX SVG media entries, and {metrics['curated_pdf_pages']} PDF pages. Its repaired-package EPUB audit checks {metrics['curated_epub_audit_xhtml']} XHTML entries, {metrics['curated_epub_audit_content_xhtml']} packaged content XHTML entries, and {metrics['curated_epub_audit_unresolved']} unresolved internal hrefs, with repaired artifact SHA `{metrics['curated_epub_audit_sha']}`. Its Chromium EPUB XHTML browser review checks {metrics['curated_epub_browser_pairs']} page-view pairs with {metrics['curated_epub_browser_failures']} failures and {metrics['curated_epub_browser_max_overflow']} px maximum overflow. Its repaired-package DOCX audit checks {metrics['curated_docx_audit_paragraphs']} paragraphs, {metrics['curated_docx_audit_relationships']} relationships, and {metrics['curated_docx_audit_raw_qmd']} raw .qmd relationship targets, with repaired artifact SHA `{metrics['curated_docx_audit_sha']}`. Its LibreOffice headless DOCX review checks {metrics['curated_docx_libreoffice_pages']} converted pages, {metrics['curated_docx_libreoffice_text_chars']:,} text characters, {metrics['curated_docx_libreoffice_blank_pages']} blank converted-page rasters, {metrics['curated_docx_libreoffice_low_ink_pages']} low-ink converted-page rasters, and {metrics['curated_docx_libreoffice_near_edge_pages']} near-edge converted-page rasters. Its all-page PDF raster audit checks {metrics['curated_pdf_raster_pages']} pages, {metrics['curated_pdf_raster_blank_pages']} blank pages, {metrics['curated_pdf_raster_low_ink_pages']} low-ink pages, and {metrics['curated_pdf_raster_near_edge_pages']} near-edge pages. Its PDF extracted-text reading-flow review checks {metrics['curated_pdf_reading_flow_text_pages']} text pages, {metrics['curated_pdf_reading_flow_nonempty_pages']} nonempty text pages, {metrics['curated_pdf_reading_flow_chapters']} chapter headings, {metrics['curated_pdf_reading_flow_appendices']} appendix headings, and {metrics['curated_pdf_reading_flow_replacement_chars']} replacement characters. Its Chromium PDF viewer smoke review records {metrics['curated_pdf_viewer_screenshots']} viewer screenshots and {metrics['curated_pdf_viewer_scroll_changed_pixels']}% changed pixels after scroll. It preserves release blockers.",
-            f"- `docs/curated_reader_pdf_page_review.md` records a local page-by-page PDF release-preparation review: {metrics['curated_pdf_page_review_rows']} page rows, {metrics['curated_pdf_page_review_failed_pages']} failed pages, {metrics['curated_pdf_page_review_blank_pages']} blank pages, {metrics['curated_pdf_page_review_near_edge_pages']} near-edge pages, {metrics['curated_pdf_page_review_out_of_bounds_pages']} out-of-bounds word-box pages, and {metrics['curated_pdf_page_review_low_ink_pages']} accepted low-ink page. It clears only the current candidate's `manual_pdf_page_by_page_review_not_completed` blocker and does not approve the PDF artifact, final figure art, or reader release.",
+            f"- `docs/curated_reader_pdf_page_review.md` records a local page-by-page PDF release-preparation review: {metrics['curated_pdf_page_review_rows']} page rows, {metrics['curated_pdf_page_review_failed_pages']} failed pages, {metrics['curated_pdf_page_review_blank_pages']} blank pages, {metrics['curated_pdf_page_review_near_edge_pages']} near-edge pages, {metrics['curated_pdf_page_review_out_of_bounds_pages']} out-of-bounds word-box pages, and {metrics['curated_pdf_page_review_low_ink_pages']} accepted low-ink page. It clears only the current candidate's `manual_pdf_page_by_page_review_not_completed` blocker and does not approve the PDF artifact or reader release.",
+            f"- `docs/reader_final_figure_artifact_review.md` records the aggregate final figure-artifact release-preparation review as `{metrics['final_figure_review_status']}` for {metrics['final_figure_review_figures']} key figures and clears only `final_figure_artifact_review_not_completed`. It does not approve the curated reader edition, e-reader/application review, DOCX application review, accessibility compliance, audio, or release.",
             f"- `docs/reader_epub_probe_manifest.md` records the generated reader EPUB probe: {metrics['reader_epub_bytes']:,} bytes and `{metrics['reader_epub_language']}` language metadata, with the e-reader/application blocker still active.",
             f"- `docs/reader_docx_probe_manifest.md` records the generated reader DOCX conversion probe: {metrics['reader_docx_pages']} pages and {metrics['reader_docx_bytes']:,} bytes, with full-format review still active.",
             f"- `docs/reader_pdf_probe_manifest.md` records the generated reader PDF probe: {metrics['reader_pdf_pages']} pages and {metrics['reader_pdf_bytes']:,} bytes, with full PDF layout review still active.",
             f"- `docs/reader_audio_script_probe_manifest.md` records {metrics['audio_script_files']} audio-script workspace files, a reading-flow review with {metrics['audio_reading_flow_markers']} ordered chapter-marker rows, {metrics['audio_reading_flow_tbd_rows']} untimecoded marker rows, {metrics['audio_reading_flow_narration_notes']} narration notes, and {metrics['audio_reading_flow_text_chars']:,} text characters, plus {metrics['audio_key_figure_count']} draft key-figure spoken summaries routed into the generated audio companion workspace; target artifact states remain {qmd_escape(', '.join(f'{key}: {value}' for key, value in sorted(audio_targets.items())))}.",
-            f"- `docs/reader_human_consumption_gate_review.md` records the current pre-release human-consumption gate as `{metrics['human_consumption_gate_status']}`: ebook layout, diagram/image readiness, bedtime readability, and companion-note routing are `pass_pre_release_review` while e-reader, application, final figure-artifact, accessibility, audio, and release-approval blockers remain active.",
+            f"- `docs/reader_human_consumption_gate_review.md` records the current pre-release human-consumption gate as `{metrics['human_consumption_gate_status']}`: ebook layout, diagram/image readiness, bedtime readability, and companion-note routing are `pass_pre_release_review`; the separate final figure-artifact review is passed, while e-reader, application, accessibility, audio, and release-approval blockers remain active.",
             f"- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval; `docs/reader_key_figure_format_probe.md` records package/text survival with {metrics['key_figure_epub_svg_entries']} EPUB SVG entries, {metrics['key_figure_epub_matched_titles']} matched EPUB SVG titles, {metrics['key_figure_docx_matched_stems']} DOCX figure stems, and {metrics['key_figure_pdf_matched_captions']} PDF draft-caption matches while preserving final-art, e-reader, application, PDF-layout, and release blockers.",
             f"- `docs/reader_key_figure_geometry_review.md` records a source-geometry review for {metrics['key_figure_geometry_count']} key figures: {metrics['key_figure_geometry_content_bounds']} content-bound checks, {metrics['key_figure_geometry_text_anchor_bounds']} text-anchor checks, and {metrics['key_figure_geometry_min_edge_margin']} px minimum content edge margin; it is not raster review, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_visual_identity_review.md` records a source-level visual identity review: {metrics['visual_identity_figure_count']} key figures, {metrics['visual_identity_color_count']} combined colors, {metrics['visual_identity_non_neutral_families']} non-neutral color families, and minimum text contrast {metrics['visual_identity_min_text_contrast']}; it is not manual aesthetic review, final figure-artifact approval, or reader release approval.",
@@ -1397,7 +1467,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "## Non-Claim Boundary",
             "",
             "- This ledger does not publish a new reader, research, ebook, document, PDF, e-reader, audio, or audio-embedded EPUB artifact.",
-            "- This ledger does not approve curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifacts.",
+            "- This ledger does not approve curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, or the curated reader edition.",
             "- This ledger does not promote any Appendix C support state or chapter core claim.",
             "- Future release approval must name the exact reviewed artifact in an edition release record and update the relevant format row.",
             "",

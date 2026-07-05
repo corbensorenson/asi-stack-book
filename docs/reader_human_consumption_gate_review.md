@@ -8,21 +8,21 @@ preparation only: ebook layout, diagram/image readiness, bedtime readability,
 and companion-note routing.
 
 It is not a reader release record, not e-reader approval, not DOCX/PDF
-application approval, not final figure-art approval, not audiobook approval,
-and not a support-state transition.
+application approval, not audiobook approval, and not a support-state
+transition.
 
 ## Summary
 
 | Gate | Status | Key facts |
 |---|---|---|
 | Ebook layout | `pass_pre_release_review` | EPUB key figures: 20 page-view pairs, 0 failed pairs, 10 px max overflow; PDF key figures: 10 caption pages, 0.0% near-edge ink; DOCX key figures: 10 title pages, 0.0% near-edge ink. |
-| Diagram/image readiness | `pass_pre_release_review` | 10 key figures, 10 content-bound checks, 10 raster fallbacks, 27.64 minimum luminance std, 116 minimum quantized colors, 5 non-neutral color families, 10 alt texts. |
+| Diagram/image readiness | `pass_pre_release_review` | 10 key figures, 10 content-bound checks, 10 raster fallbacks, 27.64 minimum luminance std, 116 minimum quantized colors, 5 non-neutral color families, 10 alt texts, final figure-artifact review `passed_final_figure_artifact_release_preparation_review`. |
 | Bedtime readability | `pass_pre_release_review` | 44 curated chapters, 44 reconciled, 2384 to 5110 words per chapter, 150 maximum paragraph words, 0 paragraphs over 180 words, 0 live marker hits. |
 | Companion notes | `pass_pre_release_review` | 12 routing records, 12 existing chapter companion notes, key-figure companion note present: True, 10 figure spoken summaries routed. |
 
 ## Preserved Blockers
 
-The following blockers remain active after this gate: `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, `reader_release_record_not_created`, `app_or_ereader_review_not_completed`, `final_figure_artifact_review_not_completed`, `manual_keyboard_only_review_not_completed`, `screen_reader_review_not_completed`, `wcag_conformance_review_not_completed`, `narration_quality_review_not_completed`, `audio_files_not_generated`.
+The following blockers remain active after this gate: `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, `reader_release_record_not_created`, `app_or_ereader_review_not_completed`, `manual_keyboard_only_review_not_completed`, `screen_reader_review_not_completed`, `wcag_conformance_review_not_completed`, `narration_quality_review_not_completed`, `audio_files_not_generated`.
 
 ## Non-Claims
 
@@ -31,7 +31,6 @@ The following blockers remain active after this gate: `curated_reconciliation_no
   artifact.
 - This review does not clear dedicated e-reader review, e-reader application
   approval, Word review, LibreOffice GUI review, Google Docs review,
-  final figure-artifact review, manual keyboard-only
-  review, screen-reader review, WCAG conformance review, narration quality
+  manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality
   review, audio generation, audiobook approval, or reader release approval.
 - This review does not promote any chapter core claim or claim support state.

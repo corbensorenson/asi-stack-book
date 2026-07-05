@@ -27,6 +27,9 @@ EPUB_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_epu
 PDF_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 DOCX_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
+FINAL_FIGURE_REVIEW = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "final_figure_artifact_review_manifest.json"
+)
 RESULT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
 DOC = ROOT / "docs" / "reader_human_consumption_gate_review.md"
 COMMAND = "python3 scripts/validate_reader_human_consumption_gate.py"
@@ -244,6 +247,7 @@ def build_observed() -> dict[str, Any]:
     pdf_layout = load_json(PDF_LAYOUT)
     docx_layout = load_json(DOCX_LAYOUT)
     audio_probe = load_json(AUDIO_PROBE)
+    final_figure = load_json(FINAL_FIGURE_REVIEW)
 
     companion_records = companion_routing.get("records", [])
     if not isinstance(companion_records, list):
@@ -290,6 +294,7 @@ def build_observed() -> dict[str, Any]:
             rel(PDF_LAYOUT),
             rel(DOCX_LAYOUT),
             rel(AUDIO_PROBE),
+            rel(FINAL_FIGURE_REVIEW),
         ],
         "gates": {
             "ebook_layout_review": pass_status(
@@ -328,10 +333,12 @@ def build_observed() -> dict[str, Any]:
                     "visual_identity_min_text_contrast": visual_contrast.get("minimum_text_contrast_ratio"),
                     "accessibility_alt_texts": accessibility_summary.get("fig_alt_count"),
                     "accessibility_figure_boundaries": accessibility_summary.get("figure_boundary_count"),
+                    "final_figure_review_status": final_figure.get("status"),
+                    "final_figure_review_cleared_blockers": len(final_figure.get("cleared_blockers", [])),
                 },
                 [
                     "This is automated figure readiness evidence, not manual aesthetic review.",
-                    "It does not clear final figure-artifact approval or visual identity approval.",
+                    "The separate final figure-artifact review clears the current final-figure blocker; this gate does not approve reader release.",
                 ],
             ),
             "bedtime_readability_review": pass_status(
@@ -363,7 +370,6 @@ def build_observed() -> dict[str, Any]:
             "format_artifact_not_reviewed",
             "reader_release_record_not_created",
             "app_or_ereader_review_not_completed",
-            "final_figure_artifact_review_not_completed",
             "manual_keyboard_only_review_not_completed",
             "screen_reader_review_not_completed",
             "wcag_conformance_review_not_completed",
@@ -372,7 +378,7 @@ def build_observed() -> dict[str, Any]:
         ],
         "non_claims": [
             "This gate does not approve, publish, tag, or archive any curated reader artifact.",
-            "This gate does not clear dedicated e-reader review, e-reader application approval, Word review, LibreOffice GUI review, Google Docs review, final figure-artifact review, manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality review, audio generation, audiobook approval, or reader release approval.",
+            "This gate does not clear dedicated e-reader review, e-reader application approval, Word review, LibreOffice GUI review, Google Docs review, manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality review, audio generation, audiobook approval, or reader release approval.",
             "This gate does not promote any chapter core claim or claim support state.",
         ],
     }
@@ -395,15 +401,15 @@ preparation only: ebook layout, diagram/image readiness, bedtime readability,
 and companion-note routing.
 
 It is not a reader release record, not e-reader approval, not DOCX/PDF
-application approval, not final figure-art approval, not audiobook approval,
-and not a support-state transition.
+application approval, not audiobook approval, and not a support-state
+transition.
 
 ## Summary
 
 | Gate | Status | Key facts |
 |---|---|---|
 | Ebook layout | `{gates['ebook_layout_review']['status']}` | EPUB key figures: {ebook['epub_key_figure_page_view_pairs']} page-view pairs, {ebook['epub_key_figure_failed_pairs']} failed pairs, {ebook['epub_key_figure_max_overflow_px']} px max overflow; PDF key figures: {ebook['pdf_key_figure_caption_pages']} caption pages, {ebook['pdf_key_figure_max_near_edge_ink_percent']}% near-edge ink; DOCX key figures: {ebook['docx_key_figure_title_pages']} title pages, {ebook['docx_key_figure_max_near_edge_ink_percent']}% near-edge ink. |
-| Diagram/image readiness | `{gates['diagram_image_review']['status']}` | {diagram['key_figures']} key figures, {diagram['geometry_content_bounds']} content-bound checks, {diagram['raster_artifacts']} raster fallbacks, {diagram['raster_min_luminance_std']} minimum luminance std, {diagram['raster_min_quantized_colors']} minimum quantized colors, {diagram['non_neutral_color_families']} non-neutral color families, {diagram['accessibility_alt_texts']} alt texts. |
+| Diagram/image readiness | `{gates['diagram_image_review']['status']}` | {diagram['key_figures']} key figures, {diagram['geometry_content_bounds']} content-bound checks, {diagram['raster_artifacts']} raster fallbacks, {diagram['raster_min_luminance_std']} minimum luminance std, {diagram['raster_min_quantized_colors']} minimum quantized colors, {diagram['non_neutral_color_families']} non-neutral color families, {diagram['accessibility_alt_texts']} alt texts, final figure-artifact review `{diagram['final_figure_review_status']}`. |
 | Bedtime readability | `{gates['bedtime_readability_review']['status']}` | {bedtime['chapter_records']} curated chapters, {bedtime['reconciled_records']} reconciled, {bedtime['minimum_chapter_words']} to {bedtime['maximum_chapter_words']} words per chapter, {bedtime['maximum_paragraph_words']} maximum paragraph words, {bedtime['paragraphs_over_180_words']} paragraphs over 180 words, {bedtime['live_marker_hits']} live marker hits. |
 | Companion notes | `{gates['companion_notes_status']['status']}` | {companion['routing_records']} routing records, {companion['routing_records_with_existing_notes']} existing chapter companion notes, key-figure companion note present: {companion['key_figure_companion_note_present']}, {companion['audio_probe_companion_summaries']} figure spoken summaries routed. |
 
@@ -418,8 +424,7 @@ The following blockers remain active after this gate: {blockers}.
   artifact.
 - This review does not clear dedicated e-reader review, e-reader application
   approval, Word review, LibreOffice GUI review, Google Docs review,
-  final figure-artifact review, manual keyboard-only
-  review, screen-reader review, WCAG conformance review, narration quality
+  manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality
   review, audio generation, audiobook approval, or reader release approval.
 - This review does not promote any chapter core claim or claim support state.
 """
@@ -441,6 +446,7 @@ def main() -> None:
         PDF_LAYOUT,
         DOCX_LAYOUT,
         AUDIO_PROBE,
+        FINAL_FIGURE_REVIEW,
     ):
         if not path.exists():
             fail([f"required path missing: {rel(path)}"])

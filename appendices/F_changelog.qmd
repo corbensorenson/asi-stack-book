@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-05 - Clear curated reader final figure-artifact blocker
+
+- Added `scripts/validate_reader_final_figure_artifact_review.py`,
+  `editions/reader_manuscript/v1_0/final_figure_artifact_review_manifest.json`,
+  and `docs/reader_final_figure_artifact_review.md` to aggregate the tracked
+  source, accessibility, contrast, geometry, visual-identity, PNG raster,
+  package-survival, EPUB layout, PDF layout, and DOCX layout evidence for the
+  ten current curated-reader key figures.
+- Recorded status
+  `passed_final_figure_artifact_release_preparation_review`, 10 reviewed key
+  figures, 10 source-geometry content/text-anchor checks, 10 alt texts, 10
+  raster fallbacks, 20 EPUB layout page-view pairs with 0 failures, 10 PDF
+  caption/raster pages, and 10 DOCX title/raster pages.
+- Updated the human-consumption gate, current format review matrix, blocked
+  curated-reader release record, release-surface ledger, status row, edition
+  release schema, repository map, roadmap, and orchestrated validation so the
+  current candidate clears only
+  `final_figure_artifact_review_not_completed`.
+- Boundary: this does not approve the curated reader edition, EPUB, DOCX, PDF,
+  e-reader/application review, manual keyboard-only review, screen-reader
+  review, WCAG conformance, audio, release publication, or any chapter
+  support-state movement.
+
 ## 2026-07-05 - Add curated reader PDF page-by-page review
 
 - Added `scripts/validate_curated_reader_pdf_page_review.py`,

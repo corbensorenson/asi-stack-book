@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "pre_release_review_matrix",
-  "last_updated": "2026-07-04",
+  "last_updated": "2026-07-05",
   "purpose": "Track human-reader format artifact review separately from generated-reader chapter-text review and separately from edition release records, including the approved generated-reader HTML row and the current blocked curated-reader candidate.",
   "source_docs": [
     "docs/reader_format_dry_run.md",
@@ -18,6 +18,7 @@
     "docs/reader_key_figure_epub_layout_review.md",
     "docs/reader_key_figure_docx_layout_review.md",
     "docs/reader_key_figure_pdf_layout_review.md",
+    "docs/reader_final_figure_artifact_review.md",
     "docs/reader_keyboard_navigation_review.md",
     "docs/reader_audio_script_probe_manifest.md",
     "release_records/2026-06-29-v1-reader-html-855dc277.json",
@@ -40,7 +41,6 @@
       "audio_files_not_generated": 1,
       "chapter_markers_not_timecoded": 1,
       "docx_application_review_not_completed": 1,
-      "final_figure_artifact_review_not_completed": 4,
       "manual_keyboard_only_review_not_completed": 1,
       "narration_quality_review_not_completed": 1,
       "reader_release_approval_not_created": 5,
@@ -58,16 +58,16 @@
         "evidence_refs": [
           "docs/curated_reader_html_artifact_browser_review.md#browser-sweep",
           "docs/reader_keyboard_navigation_review.md#summary",
+          "docs/reader_final_figure_artifact_review.md#summary",
           "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
         ],
         "release_blockers": [
           "manual_keyboard_only_review_not_completed",
           "screen_reader_review_not_completed",
           "wcag_conformance_review_not_completed",
-          "final_figure_artifact_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated reader HTML snapshot rendered locally, passed the strict browser viability sweep across 98 page-view pairs, passed the automated keyboard traversal review across 98 page-view pairs, and preserved all curated release blockers. It is a release-preparation artifact, not the 2026-06-29 generated reader HTML approval.",
+        "notes": "The curated reader HTML snapshot rendered locally, passed the strict browser viability sweep across 98 page-view pairs, passed the automated keyboard traversal review across 98 page-view pairs, and is covered by the final figure-artifact review. It is a release-preparation artifact, not the 2026-06-29 generated reader HTML approval.",
         "non_claims": [
           "This candidate row does not approve curated reader HTML for release.",
           "This candidate row does not publish the ignored local HTML artifact.",
@@ -83,14 +83,14 @@
         "evidence_refs": [
           "docs/curated_reader_format_artifact_probe.md#epub-content-and-navigation-audit",
           "docs/reader_key_figure_epub_layout_review.md#summary",
+          "docs/reader_final_figure_artifact_review.md#summary",
           "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
         ],
         "release_blockers": [
           "app_or_ereader_review_not_completed",
-          "final_figure_artifact_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated EPUB snapshot rendered locally, passed repaired-package content and internal-link checks, passed Chromium EPUB XHTML browser review, and passed the automated key-figure XHTML layout probe. It has not received dedicated e-reader application approval or release approval.",
+        "notes": "The curated EPUB snapshot rendered locally, passed repaired-package content and internal-link checks, passed Chromium EPUB XHTML browser review, passed the automated key-figure XHTML layout probe, and is covered by the final figure-artifact review. It has not received dedicated e-reader application approval or release approval.",
         "non_claims": [
           "This candidate row does not approve curated reader EPUB for release.",
           "This candidate row does not publish the ignored local EPUB artifact.",
@@ -106,14 +106,14 @@
         "evidence_refs": [
           "docs/curated_reader_format_artifact_probe.md#docx-libreoffice-headless-review",
           "docs/reader_key_figure_docx_layout_review.md#summary",
+          "docs/reader_final_figure_artifact_review.md#summary",
           "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
         ],
         "release_blockers": [
           "docx_application_review_not_completed",
-          "final_figure_artifact_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated DOCX snapshot rendered locally, passed repaired-package relationship checks, converted through LibreOffice headless Writer with all pages raster-checked, and passed the key-figure DOCX-to-PDF title-page layout probe. It has not received Word, LibreOffice GUI, Google Docs, manual document, or release approval.",
+        "notes": "The curated DOCX snapshot rendered locally, passed repaired-package relationship checks, converted through LibreOffice headless Writer with all pages raster-checked, passed the key-figure DOCX-to-PDF title-page layout probe, and is covered by the final figure-artifact review. It has not received Word, LibreOffice GUI, Google Docs, manual document, or release approval.",
         "non_claims": [
           "This candidate row does not approve curated reader DOCX for release.",
           "This candidate row does not publish the ignored local DOCX artifact.",
@@ -131,13 +131,13 @@
           "docs/curated_reader_pdf_page_review.md#summary",
           "docs/curated_reader_format_artifact_probe.md#pdf-chromium-viewer-smoke-review",
           "docs/reader_key_figure_pdf_layout_review.md#summary",
+          "docs/reader_final_figure_artifact_review.md#summary",
           "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
         ],
         "release_blockers": [
-          "final_figure_artifact_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated PDF snapshot rendered locally, passed all-page text and bounding-box extraction, all-page raster smoke testing, extracted-text reading-flow checks, page-by-page PDF release-preparation review, Chromium PDF viewer smoke review, and key-figure caption-page layout review. It has not received final figure-artifact approval or release approval.",
+        "notes": "The curated PDF snapshot rendered locally, passed all-page text and bounding-box extraction, all-page raster smoke testing, extracted-text reading-flow checks, page-by-page PDF release-preparation review, Chromium PDF viewer smoke review, key-figure caption-page layout review, and final figure-artifact review. It has not received release approval.",
         "non_claims": [
           "This candidate row does not approve curated reader PDF for release.",
           "This candidate row does not publish the ignored local PDF artifact.",

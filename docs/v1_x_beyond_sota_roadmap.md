@@ -3679,6 +3679,16 @@ Current status:
   LibreOffice GUI review, Google Docs review, manual document review, final
   figure-artifact approval, visual identity approval, or reader release
   approval.
+- `scripts/validate_reader_final_figure_artifact_review.py` now records
+  `editions/reader_manuscript/v1_0/final_figure_artifact_review_manifest.json`
+  and `docs/reader_final_figure_artifact_review.md`: 10 key figures, 10
+  content-bound checks, 10 alt texts, 10 PNG raster fallbacks, 20 EPUB layout
+  page-view pairs with 0 failures, 10 PDF caption/raster pages, and 10 DOCX
+  title/raster pages. This aggregate review clears only the current
+  `final_figure_artifact_review_not_completed` blocker; it does not approve
+  the reader edition, e-reader/application review, DOCX application review,
+  manual keyboard-only review, screen-reader review, WCAG conformance, audio,
+  publication, or any support-state movement.
 - `docs/curated_reader_format_artifact_probe.md` and
   `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json` now
   record that the tracked curated reader manuscript rendered locally to HTML,
@@ -3718,17 +3728,19 @@ Current status:
   page rows, 506 text pages, 506 word-box pages, 506 raster pages, 0 failed
   pages, 0 blank pages, 0 near-edge pages, 0 out-of-bounds word-box pages, and
   one accepted low-ink page, closing the current candidate's
-  `manual_pdf_page_by_page_review_not_completed` blocker while preserving final
-  figure-artifact approval and reader release approval. The PDF key-figure
-  layout probe checks 10 caption
+  `manual_pdf_page_by_page_review_not_completed` blocker while preserving
+  reader release approval. The aggregate final figure-artifact review checks
+  the ten key figures across source, raster, EPUB, PDF, and DOCX evidence and
+  clears only `final_figure_artifact_review_not_completed`. The PDF
+  key-figure layout probe checks 10 caption
   pages, 10 caption-page rasters, 165.878 pt minimum caption margin, 3.36%
   minimum page ink, 0.0% maximum near-edge ink, and 14.2 minimum luminance
   standard deviation. The Chromium PDF viewer smoke review records 2 nonblank
   viewer screenshots and 4.434% changed pixels after scroll. EPUB, DOCX, PDF, e-reader, and
   audio artifacts still remain unapproved until dedicated e-reader approval,
   Word/LibreOffice GUI/Google Docs DOCX review or an explicit release decision,
-  final figure-artifact approval, narration-quality/timecode/audio-generation
-  review, and an edition release record exist.
+  narration-quality/timecode/audio-generation review, and an edition release
+  record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,
@@ -4186,9 +4198,13 @@ validator-enforced status row that grows past compact status-summary size.
   Its PDF page-by-page release-preparation review checks 506 page rows, 0
   failed pages, 0 blank pages, 0 near-edge pages, 0 out-of-bounds word-box
   pages, and one accepted low-ink page, closing the current candidate's
-  `manual_pdf_page_by_page_review_not_completed` blocker while preserving final
-  figure-artifact approval and reader release approval. PDF remains probe-level
-  until final figure-artifact approval and an edition release record exist; audio now has
+  `manual_pdf_page_by_page_review_not_completed` blocker while preserving
+  reader release approval. Its aggregate final figure-artifact review records
+  10 key figures, 10 content-bound checks, 10 alt texts, 10 PNG raster
+  fallbacks, 20 EPUB layout page-view pairs with 0 failures, 10 PDF
+  caption/raster pages, and 10 DOCX title/raster pages, clearing only
+  `final_figure_artifact_review_not_completed`. PDF remains probe-level until
+  an edition release record exists; audio now has
   automated script reading-flow/order review with 49 ordered marker rows and 66
   narration notes, but it remains blocked on narration-quality review,
   timecoding, generated audio artifacts, audio-embedded EPUB checks, and an
@@ -4198,7 +4214,7 @@ validator-enforced status row that grows past compact status-summary size.
   54 combined colors, 5 non-neutral color families, and minimum text contrast
   5.19, but visual identity remains blocked on manual rendered visual
   inspection, manual aesthetic judgment, real e-reader/application review,
-  final figure-artifact approval, and reader release approval.
+  and reader release approval.
   Source-level accessibility/navigation review now exists with 44 one-H1
   chapters, 44 handoff sections, 10 draft figure alt texts, 10 figure boundary
   paragraphs, 0 live-marker leaks, and 0 raw core-claim marker leaks, but it
@@ -4210,9 +4226,14 @@ validator-enforced status row that grows past compact status-summary size.
   Automated PNG raster fallback review now exists
   with 10 generated fallbacks, 10 standard 1200 x 760 canvases, 99.954%
   minimum opaque pixel coverage, 27.64 minimum luminance standard deviation,
-  and 116 minimum quantized colors, but it remains blocked on manual aesthetic
-  review, real e-reader/application review, DOCX/PDF application review, final
-  figure-artifact approval, and reader release approval.
+  and 116 minimum quantized colors. The aggregate final figure-artifact
+  release-preparation review now exists in
+  `docs/reader_final_figure_artifact_review.md` with status
+  `passed_final_figure_artifact_release_preparation_review`, covers all ten
+  key figures, and clears only the current candidate's
+  `final_figure_artifact_review_not_completed` blocker; manual aesthetic
+  judgment, real e-reader/application review, DOCX/PDF application review, and
+  reader release approval remain open.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route
   selector transition; most chapter evidence lanes have not yet executed.
@@ -4275,13 +4296,20 @@ validator-enforced status row that grows past compact status-summary size.
    word-box, and raster rows, with 0 failed pages, 0 blank pages, 0 near-edge
    pages, 0 out-of-bounds word-box pages, and one accepted low-ink page. This
    clears only the current candidate's
-   `manual_pdf_page_by_page_review_not_completed` blocker. The active release
-   queue is now: complete the dedicated e-reader review for EPUB (the Chromium
-   XHTML review is explicitly not that); complete DOCX application-level review
-   or record an explicit release decision accepting the available LibreOffice
-   headless evidence; clear final figure-artifact/manual visual approval where
-   release scope requires it; complete manual keyboard-only, screen-reader, and
-   WCAG review where release scope requires it; clear
+   `manual_pdf_page_by_page_review_not_completed` blocker. The final
+   figure-artifact preparation rung is closed by
+   `python3 scripts/validate_reader_final_figure_artifact_review.py`,
+   `editions/reader_manuscript/v1_0/final_figure_artifact_review_manifest.json`,
+   and `docs/reader_final_figure_artifact_review.md`: the aggregate gate
+   records 10 key figures, 10 content-bound checks, 10 alt texts, 10 PNG
+   fallbacks, 20 EPUB layout page-view pairs with 0 failures, 10 PDF
+   caption/raster pages, and 10 DOCX title/raster pages, clearing only
+   `final_figure_artifact_review_not_completed`. The active release queue is
+   now: complete the dedicated e-reader review for EPUB (the Chromium XHTML
+   review is explicitly not that); complete DOCX application-level review or
+   record an explicit release decision accepting the available LibreOffice
+   headless evidence; complete manual keyboard-only, screen-reader, and WCAG
+   review where release scope requires it; clear
    `curated_reconciliation_not_approved` across the 44 curated chapter records
    with an approval record; and issue the approved edition release record.
    Publication/tagging of the approved artifacts remains a user-triggered act,

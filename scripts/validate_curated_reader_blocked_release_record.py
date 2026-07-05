@@ -30,6 +30,10 @@ HUMAN_CONSUMPTION_GATE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
 )
 HUMAN_CONSUMPTION_REVIEW = ROOT / "docs" / "reader_human_consumption_gate_review.md"
+FINAL_FIGURE_REVIEW = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "final_figure_artifact_review_manifest.json"
+)
+FINAL_FIGURE_REVIEW_DOC = ROOT / "docs" / "reader_final_figure_artifact_review.md"
 PDF_PAGE_REVIEW = ROOT / "editions" / "reader_manuscript" / "v1_0" / "pdf_page_review_manifest.json"
 PDF_PAGE_REVIEW_DOC = ROOT / "docs" / "curated_reader_pdf_page_review.md"
 VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
@@ -78,6 +82,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_reader_human_consumption_gate.py",
+    "python3 scripts/validate_reader_final_figure_artifact_review.py",
     "python3 scripts/validate_release_surface_status_ledger.py",
 }
 
@@ -129,6 +134,8 @@ def main() -> None:
         AUDIO_PROBE,
         HUMAN_CONSUMPTION_GATE,
         HUMAN_CONSUMPTION_REVIEW,
+        FINAL_FIGURE_REVIEW,
+        FINAL_FIGURE_REVIEW_DOC,
         PDF_PAGE_REVIEW,
         PDF_PAGE_REVIEW_DOC,
         VISUAL_IDENTITY,
@@ -153,6 +160,8 @@ def main() -> None:
     audio_probe = load_json(AUDIO_PROBE)
     human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
     human_consumption_review = HUMAN_CONSUMPTION_REVIEW.read_text(encoding="utf-8")
+    final_figure_review = load_json(FINAL_FIGURE_REVIEW)
+    final_figure_review_doc = FINAL_FIGURE_REVIEW_DOC.read_text(encoding="utf-8")
     pdf_page_review = load_json(PDF_PAGE_REVIEW)
     pdf_page_review_doc = PDF_PAGE_REVIEW_DOC.read_text(encoding="utf-8")
     visual_identity = load_json(VISUAL_IDENTITY)
@@ -181,6 +190,8 @@ def main() -> None:
         fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
     if not isinstance(human_consumption_gate, dict):
         fail([f"{rel(HUMAN_CONSUMPTION_GATE)} must contain a JSON object."])
+    if not isinstance(final_figure_review, dict):
+        fail([f"{rel(FINAL_FIGURE_REVIEW)} must contain a JSON object."])
     if not isinstance(pdf_page_review, dict):
         fail([f"{rel(PDF_PAGE_REVIEW)} must contain a JSON object."])
     if not isinstance(visual_identity, dict):
@@ -354,6 +365,83 @@ def main() -> None:
             "passed_pdf_page_by_page_release_preparation_review",
             "manual_pdf_page_by_page_review_not_completed",
             "does not approve the PDF artifact",
+        ],
+        errors,
+    )
+    if final_figure_review.get("status") != "passed_final_figure_artifact_release_preparation_review":
+        errors.append(
+            "final_figure_artifact_review_manifest status must be "
+            "passed_final_figure_artifact_release_preparation_review."
+        )
+    final_figure_summary = final_figure_review.get("summary", {})
+    if not isinstance(final_figure_summary, dict):
+        errors.append("final_figure_artifact_review_manifest summary must be an object.")
+        final_figure_summary = {}
+    expected_final_figure_metrics = {
+        "figure_count": 10,
+        "source_geometry_status": "passed_source_geometry_review",
+        "source_visual_identity_status": "passed_source_level_visual_identity_review",
+        "source_accessibility_status": "passed_source_accessibility_navigation_review",
+        "contrast_all_figures_passed": True,
+        "geometry_content_bounds_passed": 10,
+        "geometry_text_anchor_bounds_passed": 10,
+        "accessibility_alt_texts": 10,
+        "accessibility_figure_boundaries": 10,
+        "raster_artifacts": 10,
+        "raster_standard_dimensions": 10,
+        "epub_layout_page_view_pairs": 20,
+        "epub_layout_failed_pairs": 0,
+        "epub_layout_image_failures": 0,
+        "pdf_layout_caption_pages": 10,
+        "pdf_layout_raster_pages": 10,
+        "docx_layout_title_pages": 10,
+        "docx_layout_raster_pages": 10,
+    }
+    for key, expected in expected_final_figure_metrics.items():
+        observed = final_figure_summary.get(key)
+        if observed != expected:
+            errors.append(
+                f"final_figure_artifact_review_manifest summary.{key} must be "
+                f"{expected!r}; found {observed!r}."
+            )
+    if final_figure_review.get("cleared_blockers") != ["final_figure_artifact_review_not_completed"]:
+        errors.append("final_figure_artifact_review_manifest must clear only final_figure_artifact_review_not_completed.")
+    required_final_figure_preserved = {
+        "reader_release_approval_not_created",
+        "app_or_ereader_review_not_completed",
+        "docx_application_review_not_completed",
+        "manual_keyboard_only_review_not_completed",
+        "screen_reader_review_not_completed",
+        "wcag_conformance_review_not_completed",
+        "audio_files_not_generated",
+    }
+    missing_final_figure_preserved = sorted(
+        required_final_figure_preserved - set(final_figure_review.get("release_blockers_preserved", []))
+    )
+    if missing_final_figure_preserved:
+        errors.append(
+            "final_figure_artifact_review_manifest missing preserved blockers: "
+            f"{missing_final_figure_preserved}"
+        )
+    final_figure_non_claims = " ".join(str(item) for item in final_figure_review.get("non_claims", [])).lower()
+    for fragment in (
+        "does not approve the curated reader edition",
+        "does not clear dedicated e-reader",
+        "does not clear word",
+        "does not clear manual keyboard-only",
+        "does not generate or approve audio",
+        "does not promote any chapter core claim",
+    ):
+        if fragment not in final_figure_non_claims:
+            errors.append(f"final_figure_artifact_review_manifest non_claims missing {fragment!r}.")
+    text_contains_all(
+        rel(FINAL_FIGURE_REVIEW_DOC),
+        final_figure_review_doc,
+        [
+            "Reader Final Figure-Artifact Review",
+            "passed_final_figure_artifact_release_preparation_review",
+            "final_figure_artifact_review_not_completed",
+            "does not approve the curated reader edition",
         ],
         errors,
     )
@@ -610,6 +698,17 @@ def main() -> None:
         "pdf_page_review_low_ink_pages": len(pdf_page_summary.get("low_ink_pages", []))
         if isinstance(pdf_page_summary.get("low_ink_pages"), list)
         else None,
+        "final_figure_artifact_review_manifest": "editions/reader_manuscript/v1_0/final_figure_artifact_review_manifest.json",
+        "final_figure_artifact_review_status": final_figure_review.get("status"),
+        "final_figure_artifact_review_figures": final_figure_summary.get("figure_count"),
+        "final_figure_artifact_review_cleared_blockers": len(final_figure_review.get("cleared_blockers", []))
+        if isinstance(final_figure_review.get("cleared_blockers"), list)
+        else None,
+        "final_figure_artifact_review_preserved_blockers": len(
+            final_figure_review.get("release_blockers_preserved", [])
+        )
+        if isinstance(final_figure_review.get("release_blockers_preserved"), list)
+        else None,
         "key_figure_epub_matched_titles": 10,
         "key_figure_docx_matched_stems": 10,
         "key_figure_pdf_matched_captions": 10,
@@ -712,11 +811,12 @@ def main() -> None:
         "docx key-figure layout",
         "automated keyboard traversal",
         "pdf page-by-page release-preparation review",
+        "final figure-artifact review",
+        "clears the current final-figure blocker",
         "manual keyboard-only",
         "screen-reader",
         "wcag",
         "do not approve epub",
-        "final figure art",
         "curated reader edition",
     ):
         if fragment not in release_boundary:
@@ -778,6 +878,7 @@ def main() -> None:
         "0 near-edge pages",
         "0 out-of-bounds word-box pages",
         "one accepted low-ink page",
+        "final figure-artifact review",
     ):
         if fragment and fragment not in pdf_note:
             errors.append(f"curated_reader_pdf notes missing PDF audit fragment: {fragment}")
@@ -836,6 +937,7 @@ def main() -> None:
         ("diagram_image_review", "geometry_content_bounds"): 10,
         ("diagram_image_review", "raster_artifacts"): 10,
         ("diagram_image_review", "accessibility_alt_texts"): 10,
+        ("diagram_image_review", "final_figure_review_cleared_blockers"): 1,
         ("bedtime_readability_review", "chapter_records"): 44,
         ("bedtime_readability_review", "reconciled_records"): 44,
         ("bedtime_readability_review", "paragraphs_over_180_words"): 0,
@@ -857,7 +959,6 @@ def main() -> None:
         "format_artifact_not_reviewed",
         "reader_release_record_not_created",
         "app_or_ereader_review_not_completed",
-        "final_figure_artifact_review_not_completed",
         "manual_keyboard_only_review_not_completed",
         "screen_reader_review_not_completed",
         "wcag_conformance_review_not_completed",
@@ -873,7 +974,6 @@ def main() -> None:
     for fragment in (
         "does not approve, publish, tag, or archive",
         "does not clear dedicated e-reader",
-        "final figure-artifact review",
         "does not promote any chapter core claim",
     ):
         if fragment not in human_non_claims:
@@ -929,6 +1029,8 @@ def main() -> None:
             "0 keyboard trap candidates",
             "PDF page-by-page release-preparation review",
             "0 out-of-bounds word-box pages",
+            "final figure-artifact review",
+            "passed_final_figure_artifact_release_preparation_review",
         ],
         errors,
     )
@@ -946,6 +1048,7 @@ def main() -> None:
             "PDF key-figure layout review",
             "DOCX key-figure layout review",
             "PDF page-by-page release-preparation review",
+            "final figure-artifact review",
             "automated keyboard traversal review",
             "keyboard-only",
             "screen-reader",
@@ -967,13 +1070,14 @@ def main() -> None:
             "Source-geometry review is recorded as preparation evidence only",
             "does not clear raster review",
             "Source-level visual identity review is recorded as preparation evidence only",
-            "does not clear final figure-artifact review",
+            "is not the aggregate final figure-artifact review by itself",
             "Source-level accessibility/navigation review is recorded as preparation evidence only",
             "does not clear keyboard-only review",
             "screen-reader review",
             "WCAG conformance",
             "Automated PNG raster review is recorded as preparation evidence only",
             "does not clear manual aesthetic review",
+            "Final figure-artifact review clears",
             "EPUB key-figure layout review is recorded as preparation evidence only",
             "does not clear dedicated e-reader device review",
             "does not clear e-reader application approval",
