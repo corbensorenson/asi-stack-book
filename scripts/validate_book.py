@@ -334,6 +334,7 @@ REQUIRED = [
     "scripts/validate_resource_governance_tax_tradeoff.py",
     "scripts/validate_circle_external_receipt_slice.py",
     "scripts/validate_circle_public_replay.py",
+    "scripts/validate_circle_contract_pack_archive.py",
     "scripts/validate_circle_concrete_evidence_surface.py",
     "scripts/validate_circle_cyclic_memory_receipt_slice.py",
     "scripts/validate_circle_cyclic_mixer_receipt_slice.py",
@@ -536,6 +537,8 @@ REQUIRED = [
     "experiments/resource_governance_tax_tradeoff/results/2026-07-03-local.json",
     "experiments/circle_external_receipt_slice/results/2026-06-29-local.json",
     "experiments/circle_public_replay/results/2026-06-29-local.json",
+    "experiments/circle_contract_pack_archive/README.md",
+    "experiments/circle_contract_pack_archive/results/2026-07-05-local.json",
     "experiments/circle_cyclic_memory_receipt_slice/README.md",
     "experiments/circle_cyclic_memory_receipt_slice/results/2026-07-02-local.json",
     "experiments/circle_cyclic_mixer_receipt_slice/README.md",
@@ -1197,6 +1200,7 @@ def main() -> None:
     run_validator("validate_resource_governance_tax_tradeoff.py")
     run_validator("validate_circle_external_receipt_slice.py")
     run_validator("validate_circle_public_replay.py")
+    run_validator("validate_circle_contract_pack_archive.py")
     run_validator("validate_circle_concrete_evidence_surface.py")
     run_validator("validate_circle_cyclic_memory_receipt_slice.py")
     run_validator("validate_circle_cyclic_mixer_receipt_slice.py")

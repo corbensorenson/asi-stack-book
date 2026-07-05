@@ -1,0 +1,115 @@
+{
+  "transition_id": "v1_x_measured.circle_contract_pack_archive.no_change",
+  "claim_id": "circle-calculus.contract_pack_archive",
+  "claim_surface_refs": [
+    "docs/circle_contract_pack_archive.md",
+    "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+    "editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_contract_pack_archive/fixtures/circle_ai_contract_pack.63b0f511.json",
+    "experiments/circle_contract_pack_archive/fixtures/circle_ai_acceptance_policy_report.63b0f511.json",
+    "experiments/circle_contract_pack_archive/results/2026-07-05-local.json",
+    "scripts/validate_circle_contract_pack_archive.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Circle contract-pack archive verification only. The ASI Stack repository now carries a pinned public-safe Circle contract-pack artifact from commit 63b0f511 with 9 archived contracts, 4 acceptance-policy receipts, public_safe_fixture status, pack fingerprint df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae, raw and stable JSON digests, public-safety hygiene checks, five expected-invalid mutation controls, and transition record circle_contract_pack_archive_no_change.json. This does not rerun Circle Lean, does not prove deployed proof-contract transport, does not prove model quality, context length, runtime speed, memory scaling, deployment safety, transfer, safety, or ASI, and does not promote the Circle chapter core claim.",
+  "evidence_roles": [
+    "public_safe_archived_contract_pack",
+    "pinned_digest_verification",
+    "acceptance_policy_report_check",
+    "contract_fingerprint_index_check",
+    "public_safety_hygiene_check",
+    "mutation_negative_controls",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The archive materially improves reproducibility because reviewers can inspect and validate the Circle contract-pack artifact inside this public repository instead of relying only on a local summary or a single receipt fixture. The evidence still supports only archive integrity and boundary discipline: it is not a fresh Circle replay, not a deployed proof-contract transport trace, and not a workload or model-quality result, so the proper support-state effect is blocks_promotion.",
+  "required_artifacts": [
+    "fresh public Circle replay or stable external release replay",
+    "Circle Lean proof-target rerun or independently archived proof bundle",
+    "deployed proof-contract transport implementation or consumer integration trace",
+    "workload, baseline, metric, and report for any downstream model-quality, context-length, transfer, speed, or memory-scaling claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent external review"
+  ],
+  "artifact_refs": [
+    "docs/circle_contract_pack_archive.md",
+    "experiments/circle_contract_pack_archive/fixtures/circle_ai_contract_pack.63b0f511.json",
+    "experiments/circle_contract_pack_archive/fixtures/circle_ai_acceptance_policy_report.63b0f511.json",
+    "experiments/circle_contract_pack_archive/results/2026-07-05-local.json",
+    "scripts/validate_circle_contract_pack_archive.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_contract_pack_archive.md",
+    "docs/circle_public_replay_consumer_gate.md",
+    "docs/circle_external_receipt_slice.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#circle-calculus-and-proof-carrying-ai-contracts.core",
+    "docs/book_outline.md#circle-calculus-and-proof-carrying-ai-contracts"
+  ],
+  "verification_command": "python3 scripts/validate_circle_contract_pack_archive.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "pack fingerprint mismatch mutation is rejected",
+    "contract fingerprint mismatch mutation is rejected",
+    "unsafe local-path injection is rejected",
+    "rejected acceptance-policy report mutation is rejected",
+    "acceptance-report pack mismatch mutation is rejected",
+    "fresh Circle replay in this repository remains unclaimed",
+    "deployed proof-contract transport remains unclaimed",
+    "no chapter core claim is promoted",
+    "does not create an upward support-state transition"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_contract_pack_archive.md",
+    "experiments/circle_contract_pack_archive/results/2026-07-05-local.json",
+    "scripts/validate_circle_contract_pack_archive.py"
+  ],
+  "downgrade_triggers": [
+    "archived pack digest mismatch",
+    "acceptance report digest mismatch",
+    "contract fingerprint mismatch accepted",
+    "unsafe local path accepted",
+    "acceptance-report rejection accepted as valid",
+    "archive described as a fresh Circle replay",
+    "support-state promotion without a separate accepted upward transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Circle archive, replay, or proof-contract transport claim after a fresh public Circle replay or independently archived proof bundle, repository-owned replay or verification command, downstream consumer integration evidence, workload/baseline metrics for any model-facing claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one archived public-safe Circle contract pack",
+    "one bounded 4-receipt acceptance-policy report",
+    "does not rerun Circle Lean",
+    "does not prove deployed proof-contract transport",
+    "does not prove model quality, context length, runtime speed, memory scaling, deployment safety, transfer, safety, or ASI",
+    "does not promote any chapter core claim",
+    "does not create an upward support-state transition"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, proof-contract transport, model-quality, benchmark, transfer, source-interpretation, or external safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no independently archived Circle proof bundle",
+    "no deployed proof-contract transport implementation",
+    "no downstream workload or baseline evidence",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---archive-circle-contract-pack-evidence-slice",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not create a support-state transition",
+    "does not create an upward support-state transition",
+    "does not rerun Circle Lean",
+    "does not prove deployed proof-contract transport",
+    "does not prove model quality, context length, runtime speed, memory scaling, deployment safety, transfer, safety, or ASI",
+    "does not promote the Circle Calculus chapter core claim"
+  ]
+}

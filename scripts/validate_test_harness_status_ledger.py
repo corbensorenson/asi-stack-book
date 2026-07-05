@@ -122,6 +122,13 @@ BOOK_GATE_CHECKS = [
         "boundary": "No sparse-attention coverage success, deployed sparse-attention behavior, retrieval-quality, long-context, model-quality, speed, deployment-safety, or ASI claim.",
     },
     {
+        "name": "Circle contract-pack archive",
+        "doc": "docs/circle_contract_pack_archive.md",
+        "script": "scripts/validate_circle_contract_pack_archive.py",
+        "summary": "Public-safe Circle contract-pack archive with 9 archived contracts, 4 acceptance-policy receipts, pinned pack/report digests, and five expected-invalid controls.",
+        "boundary": "No local Circle Lean replay, deployed proof-contract transport, model-quality, context-length, runtime-speed, memory-scaling, deployment-safety, transfer, safety, ASI, or support-state claim.",
+    },
+    {
         "name": "Context transaction memory-store harness",
         "doc": "docs/context_transaction_memory_store_harness.md",
         "script": "scripts/validate_context_transaction_memory_store.py",
@@ -356,6 +363,7 @@ BOOK_GATE_RESULTS_BY_SCRIPT = {
     "scripts/validate_circle_kv_cache_receipt_slice.py": "experiments/circle_kv_cache_receipt_slice/results/2026-07-05-local.json",
     "scripts/validate_circle_recurrence_receipt_slice.py": "experiments/circle_recurrence_receipt_slice/results/2026-07-05-local.json",
     "scripts/validate_circle_sparse_attention_receipt_slice.py": "experiments/circle_sparse_attention_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_contract_pack_archive.py": "experiments/circle_contract_pack_archive/results/2026-07-05-local.json",
     "scripts/validate_context_transaction_memory_store.py": "experiments/context_transaction_memory_store/results/2026-07-01-local.md",
     "scripts/validate_vcm_resolver_certificate_probe.py": "experiments/vcm_resolver_certificate_probe/results/2026-07-02-local.json",
     "scripts/validate_simulation_transfer_boundaries.py": "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md",
@@ -519,8 +527,8 @@ def validate(args: argparse.Namespace) -> list[str]:
         return ["experiments/phase5_harness_registry.json must contain a list."]
     if len(registry) != 22:
         errors.append(f"Expected 22 Phase 5 registry harnesses, found {len(registry)}.")
-    if len(BOOK_GATE_CHECKS) != 45:
-        errors.append(f"Expected 45 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
+    if len(BOOK_GATE_CHECKS) != 46:
+        errors.append(f"Expected 46 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
 
     names = [check["name"] for check in BOOK_GATE_CHECKS]
     duplicates = sorted({name for name in names if names.count(name) > 1})

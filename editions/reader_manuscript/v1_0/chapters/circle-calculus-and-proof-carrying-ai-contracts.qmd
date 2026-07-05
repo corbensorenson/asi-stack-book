@@ -76,7 +76,7 @@ Operationally, the layer should produce artifacts that can be inspected without 
 
 The repository now mechanizes the smallest boundary that can be stated without importing the external Circle proof stack: a downstream-ready receipt must expose theorem references, deterministic fields, and an explicit non-claim boundary, and a downstream promotion gate must demand workload, baseline, metric, and evidence-artifact fields beyond contract readiness. The public `proof_contract_receipt_record` schema adds the adjacent receipt fields that prose needs: receipt state, finite-model scope, proof boundary, proof status, source version, content fingerprint, fingerprint status, resolver status, replay status, consumer permissions, consumer state, staleness policy, failure behavior, source refs, support-state effect, and evidence references.
 
-The Circle public consumer-gate validator applies those fields to one pinned `CC-AI-CONTRACT-ROPE-001` receipt and rejects malformed or overclaimed uses. The local Lean bridge then models that same public consumer-gate boundary as a finite accepted-fixture predicate with rejected mutation controls, blocked support movement, no chapter-core promotion, and no deployed-transport claim. Both checks remain silent about unrun Circle commands in this repository.
+The Circle public consumer-gate validator applies those fields to one pinned `CC-AI-CONTRACT-ROPE-001` receipt and rejects malformed or overclaimed uses. The local Lean bridge then models that same public consumer-gate boundary as a finite accepted-fixture predicate with rejected mutation controls, blocked support movement, no chapter-core promotion, and no deployed-transport claim. The Circle contract-pack archive adds a public-safe generated pack snapshot from Circle commit `63b0f511` with 9 archived contracts, 4 acceptance-policy receipts, pack fingerprint `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`, and no-promotion decision `circle_contract_pack_archive_no_change.json`. These checks preserve the same boundary: the archive does not promote any chapter core claim, does not create a support-state transition, does not rerun Circle Lean, and does not prove deployed proof-contract transport, model quality, context length, runtime speed, memory scaling, deployment safety, transfer, safety, or ASI.
 
 The contract should therefore be read in two layers. The proof layer says whether a finite structural fact has a theorem-linked receipt. The consumer layer says whether that receipt is adequate for a particular downstream use. Passing the first layer can be necessary for the second, but it is never sufficient by itself.
 
@@ -183,19 +183,21 @@ The first transportable Circle artifact is a proof or contract record with theor
 
 The current implementation has four public pieces. The `proof_target_record` fixture validates the record shape for proof targets. The `proof_contract_receipt_record` fixture validates the record shape for theorem-linked structural receipts, including receipt state, not-run resolver and replay states, fingerprint status, consumer state, staleness policy, source refs, support-state effect, and non-claims.
 
-The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, requiring workload, baseline, metric, and evidence artifacts before downstream promotion, and modeling the public Circle consumer-gate fixture as one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim. The Circle public consumer-gate lane validates one pinned receipt fixture, checks seven theorem IDs and the recorded fingerprints, and rejects missing-theorem, digest-mismatch, stale-contract, and unsupported-transfer mutations. A Circle-specific vendored contract pack, clean replay from this repository, and downstream workload check remain future work.
+The Lean module `AsiStackProofs.ProofCarryingContracts` implements finite-record predicates requiring theorem references, deterministic fields, and a non-claim boundary before downstream use, requiring workload, baseline, metric, and evidence artifacts before downstream promotion, and modeling the public Circle consumer-gate fixture as one valid receipt, four rejected mutation controls, seven required theorem IDs, pinned digest fields, blocked support movement, no chapter-core promotion, and no deployed-transport claim. The Circle public consumer-gate lane validates one pinned receipt fixture, checks seven theorem IDs and the recorded fingerprints, and rejects missing-theorem, digest-mismatch, stale-contract, and unsupported-transfer mutations. The Circle contract-pack archive validates a public-safe pack snapshot from Circle commit `63b0f511` with 9 archived contracts, 4 acceptance-policy receipts, pack fingerprint `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`, raw pack digest `b5488c93109ef120b97fdea7bd5d5605f32b2618c6cbfb9dde9a3328652551c4`, raw report digest `f1671f5cecdee311185f7e4508b21c139d4ae4bd1fa9610a12827f4d31c7985a`, and no-promotion decision `circle_contract_pack_archive_no_change.json`.
 
 The concrete evidence-surface check verifies that the public book preserves the
 current Circle rope contract boundary: source commit, contract ID, requested
 margin, certifier count, ready-digest summary, required theorem IDs, required
 recommendation, recorded fingerprints, and the ASI consumer gate's rejection of
 digest mismatch, missing theorem ID, stale fingerprint status, and unsupported
-transfer use. That check proves public-surface traceability for a bounded structural
-receipt lane. It does not rerun Circle from this repository, vendor a contract
-pack, prove theorem-id resolver completeness, show downstream workload value,
-or promote the chapter core claim.
+transfer use. The archive check verifies a generated pack artifact and
+acceptance-policy report, not the full external proof stack. These checks do
+not promote any chapter core claim. The archive does not create a support-state transition,
+does not rerun Circle Lean, does not prove deployed proof-contract transport, and does
+not prove model quality, context length, runtime speed, memory scaling,
+deployment safety, transfer, safety, or ASI.
 
-The next build slice should be a local surrogate contract pack: one valid receipt with a resolvable local theorem reference, one stale theorem reference, one fingerprint mismatch, one consumer gate that allows structural use only, and one promotion attempt blocked for missing workload evidence. That slice would test transfer semantics without importing private or unrun Circle results.
+The next build slice should be a clean Circle replay from this repository or a transport-oriented local surrogate with one stale theorem reference, one fingerprint mismatch, one consumer gate that allows structural use only, and one promotion attempt blocked for missing workload evidence.
 
 ## Beyond the State of the Art
 

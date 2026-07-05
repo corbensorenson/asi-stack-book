@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-05 - Archive Circle contract pack evidence slice
+
+- Added `python3 scripts/validate_circle_contract_pack_archive.py`,
+  `docs/circle_contract_pack_archive.md`, the public-safe Circle contract-pack
+  archive under `experiments/circle_contract_pack_archive/fixtures/`, result
+  artifact `experiments/circle_contract_pack_archive/results/2026-07-05-local.json`,
+  and accepted no-promotion transition
+  `evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json`.
+- The Circle contract-pack archive records Circle commit `63b0f511`, 9 archived
+  contracts, 4 acceptance-policy receipts, `public_safe_fixture` status, pack
+  fingerprint
+  `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`,
+  raw pack digest
+  `b5488c93109ef120b97fdea7bd5d5605f32b2618c6cbfb9dde9a3328652551c4`,
+  raw report digest
+  `f1671f5cecdee311185f7e4508b21c139d4ae4bd1fa9610a12827f4d31c7985a`,
+  stable JSON digests, all nine contract IDs and fingerprints, public-safety
+  hygiene checks, and five expected-invalid mutation controls.
+- Updated the Circle live chapter, curated reader chapter, outline, roadmap,
+  non-core evidence ledger, v1 status page, README, landing page, Appendix E,
+  and book gate wiring so the no-promotion side-lane count moves from 37 to 38.
+  The archive does not promote any chapter core claim, does not create a
+  support-state transition, does not rerun Circle Lean, does not prove deployed
+  proof-contract transport, and does not prove model quality, context length,
+  runtime speed, memory scaling, deployment safety, transfer, safety, or ASI.
+
 ## 2026-07-05 - Import Circle seed-rule receipt slice
 
 - Added `python3 scripts/validate_circle_seed_rule_receipt_slice.py`,

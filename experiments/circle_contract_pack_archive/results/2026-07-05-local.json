@@ -1,0 +1,106 @@
+{
+  "result_id": "2026-07-05-circle-contract-pack-archive",
+  "slice_id": "circle_contract_pack_archive",
+  "source_project": "Circle Calculus",
+  "source_commit": "63b0f511",
+  "archive_status": "public_safe_archived_pack",
+  "pack_fixture": "experiments/circle_contract_pack_archive/fixtures/circle_ai_contract_pack.63b0f511.json",
+  "acceptance_policy_report_fixture": "experiments/circle_contract_pack_archive/fixtures/circle_ai_acceptance_policy_report.63b0f511.json",
+  "pack_file_sha256": "b5488c93109ef120b97fdea7bd5d5605f32b2618c6cbfb9dde9a3328652551c4",
+  "pack_stable_json_sha256": "10e2dc51e9a6fe2591b2878a293dfdaa2fecf7a2ff588954495f429082724891",
+  "report_file_sha256": "f1671f5cecdee311185f7e4508b21c139d4ae4bd1fa9610a12827f4d31c7985a",
+  "report_stable_json_sha256": "6f49d87702e1d9e078c806778abfcdfd0efdc762d263a973b78f0b9c15c491a6",
+  "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+  "pack_status": "public_safe_fixture",
+  "contract_count": 9,
+  "acceptance_policy_contract_count": 4,
+  "accepted_receipt_count": 4,
+  "expected_invalid_control_count": 5,
+  "archived_contracts": [
+    {
+      "kind": "rope_position_distinguishability",
+      "contract_id": "CC-AI-CONTRACT-ROPE-001",
+      "contract_content_fingerprint": "a0f35d3e89e9b6eac555f0392450f4f75cf7e70f30cff44ec7434f61bd85b468",
+      "theorem_count": 75,
+      "in_acceptance_policy_report": true
+    },
+    {
+      "kind": "kv_cache_ring_buffer",
+      "contract_id": "CC-AI-CONTRACT-KV-001",
+      "contract_content_fingerprint": "bfebf150ce45d1eb124ea553bf2ba8c62008751ebec9f8600b83cc09e0526a46",
+      "theorem_count": 54,
+      "in_acceptance_policy_report": true
+    },
+    {
+      "kind": "sparse_attention_coverage",
+      "contract_id": "CC-AI-CONTRACT-SPARSE-001",
+      "contract_content_fingerprint": "c23809cef9b821b1e4f9cabf53fcac724a0757bf3f86594e1d12710fe0cd9ec1",
+      "theorem_count": 141,
+      "in_acceptance_policy_report": true
+    },
+    {
+      "kind": "recurrence_schedule",
+      "contract_id": "CC-AI-CONTRACT-RECURRENCE-001",
+      "contract_content_fingerprint": "571edd5dce4f7b64441806de323295218a3e2293b3b540dd4772ba34b9371515",
+      "theorem_count": 64,
+      "in_acceptance_policy_report": true
+    },
+    {
+      "kind": "strided_candidate_fanout",
+      "contract_id": "CC-AI-CONTRACT-FANOUT-001",
+      "contract_content_fingerprint": "d4c878563747da9c9f1f55cd689f04e2a0a8e31ce9429a138341ec4e27ee3799",
+      "theorem_count": 4,
+      "in_acceptance_policy_report": false
+    },
+    {
+      "kind": "cyclic_memory_residue_winding",
+      "contract_id": "CC-AI-CONTRACT-MEMORY-001",
+      "contract_content_fingerprint": "a25d841aff585b59519919cad25d89a3f76cd8ddb11fb1549d593f7f2f09c62a",
+      "theorem_count": 4,
+      "in_acceptance_policy_report": false
+    },
+    {
+      "kind": "multicoil_phase_feature",
+      "contract_id": "CC-AI-CONTRACT-PHASE-FEATURE-001",
+      "contract_content_fingerprint": "4b562beab64ec863903e4267f50c90049f0d3fa612f6c1bb2f06ad07e821ffd7",
+      "theorem_count": 5,
+      "in_acceptance_policy_report": false
+    },
+    {
+      "kind": "circulant_block_cyclic_mixer",
+      "contract_id": "CC-AI-CONTRACT-MIXER-001",
+      "contract_content_fingerprint": "b3e3e0cf420d9e8e79a28a55ef8322f9a214c8d5a957dd8b06e5e5373c684ea5",
+      "theorem_count": 7,
+      "in_acceptance_policy_report": false
+    },
+    {
+      "kind": "seed_rule_exact_regeneration",
+      "contract_id": "CC-AI-CONTRACT-SEED-RULE-001",
+      "contract_content_fingerprint": "836594a5f1d448900797e595cb98f0e476c0b9cbd7365fe333cf7ae2622f13c5",
+      "theorem_count": 32,
+      "in_acceptance_policy_report": false
+    }
+  ],
+  "expected_invalid_controls": [
+    "pack_fingerprint_mismatch",
+    "contract_fingerprint_mismatch",
+    "unsafe_local_path",
+    "acceptance_report_rejected",
+    "acceptance_report_pack_mismatch"
+  ],
+  "support_state_effect": "blocks_promotion",
+  "verification_command": "python3 scripts/validate_circle_contract_pack_archive.py",
+  "verification_result": "pass",
+  "transition_id": "v1_x_measured.circle_contract_pack_archive.no_change",
+  "claim_id": "circle-calculus.contract_pack_archive",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not create a support-state transition",
+    "does not rerun Circle Lean",
+    "does not prove deployed proof-contract transport",
+    "does not prove model quality, context length, runtime speed, memory scaling, deployment safety, transfer, safety, or ASI"
+  ],
+  "archive_name": "Circle contract-pack archive",
+  "archive_summary": "Circle contract-pack archive with 9 archived contracts and 4 acceptance-policy receipts from Circle commit 63b0f511.",
+  "transition_record": "evidence_transitions/v1_x_measured/circle_contract_pack_archive_no_change.json"
+}
