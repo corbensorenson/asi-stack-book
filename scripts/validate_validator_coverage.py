@@ -30,8 +30,12 @@ def read_json(path: Path) -> Any:
         return json.load(f)
 
 
-def covered_by_text(script_name: str, text: str) -> bool:
-    return bool(re.search(rf"(^|[\s/'\"]){re.escape(script_name)}($|[\s'\":])", text))
+def covered_by_workflow(script_name: str, text: str) -> bool:
+    return bool(re.search(rf"python3\s+scripts/{re.escape(script_name)}(?:\s|$)", text))
+
+
+def covered_by_validate_book(script_name: str, text: str) -> bool:
+    return bool(re.search(rf"run_validator\(\s*['\"]{re.escape(script_name)}['\"]", text))
 
 
 def load_allowlist() -> dict[str, str]:
@@ -94,8 +98,8 @@ def main() -> None:
         errors.append(f"Allow-listed validator {name} does not exist under scripts/.")
 
     for name in sorted(validator_names):
-        direct = covered_by_text(name, workflow_text)
-        transitive = covered_by_text(name, validate_book_text)
+        direct = covered_by_workflow(name, workflow_text)
+        transitive = covered_by_validate_book(name, validate_book_text)
         if direct:
             covered_direct.add(name)
         if transitive:

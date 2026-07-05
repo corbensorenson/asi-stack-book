@@ -284,6 +284,11 @@ without an independent evaluator, support promotion without an evidence-transiti
 record, phase debt without a retirement condition, and missing non-claim
 boundaries.
 
+The tracked local prototype phase-gate result is the evidence sentence to keep
+in the reader manuscript: two valid fixture routes, six rejected controls,
+phase-acceptance coverage, dependency-gate coverage, and no support-state
+promotion.
+
 `python3 scripts/validate_prototype_phase_gates.py` checks that surface with
 `Phase acceptance checklist` and `Dependency gate review` coverage. It proves
 only fixture discipline, with support-state effect `none`; no support-state promotion is claimed. It does not prove phase completion, deployed

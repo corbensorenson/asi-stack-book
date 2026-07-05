@@ -1,3 +1,12 @@
 {
-  "allowlisted_validators": []
+  "allowlisted_validators": [
+    {
+      "script": "scripts/validate_curated_reader_docx_libreoffice_review.py",
+      "reason": "Artifact-producing local application review: requires the ignored curated-reader DOCX artifact plus LibreOffice/Poppler tooling and writes the tracked curated format manifest. The orchestrated gate validates the resulting manifest and blocked release record instead of regenerating the local review artifact in every CI run."
+    },
+    {
+      "script": "scripts/validate_curated_reader_pdf_reading_flow.py",
+      "reason": "Artifact-producing local PDF reading-flow review: requires the ignored curated-reader PDF artifact and Poppler text extraction, then writes the tracked curated format manifest. The orchestrated gate validates the resulting manifest and blocked release record instead of regenerating the local review artifact in every CI run."
+    }
+  ]
 }

@@ -46,6 +46,12 @@ SURFACE_PHRASES = [
     "no support-state promotion",
 ]
 
+READER_SURFACE_ALTERNATES = {
+    "prototype_phase_gates_2026_07_02_local": [
+        "tracked local prototype phase-gate result",
+    ],
+}
+
 LEAN_PHRASES = [
     "PrototypePhaseGateFixtureBridgeRouteFor",
     "missing_non_claim_boundary_rejects_prototype_fixture_bridge",
@@ -252,7 +258,10 @@ def validate_surfaces() -> list[str]:
     for label, path in surfaces.items():
         text = path.read_text(encoding="utf-8", errors="ignore") if path.exists() else ""
         for phrase in SURFACE_PHRASES:
-            if phrase not in text:
+            alternates = READER_SURFACE_ALTERNATES.get(phrase, []) if label == (
+                "editions/reader_manuscript/v1_0/chapters/prototype-roadmap.qmd"
+            ) else []
+            if phrase not in text and not any(alternate in text for alternate in alternates):
                 errors.append(f"{label} missing phrase {phrase!r}.")
     lean_text = LEAN.read_text(encoding="utf-8", errors="ignore") if LEAN.exists() else ""
     for phrase in LEAN_PHRASES:

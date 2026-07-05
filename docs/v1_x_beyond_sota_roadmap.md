@@ -4232,6 +4232,50 @@ validator-enforced status row that grows past compact status-summary size.
   designated empirical evidence for the resource-economics governance-tax
   lane.
 
+### 2026-07-04 evening review findings (standing until closed)
+
+1. **Validator execution semantics (immediate closure plus standing rule).**
+   The evening review found a real gate hole: `validate_prototype_phase_gates.py`
+   failed standalone after curated-reader prose polish removed a raw result
+   identifier, while the orchestrated suite still passed because file-reference
+   mentions were counted as coverage. Close the trigger by making
+   `validate_validator_coverage.py` count actual CI commands or
+   `run_validator(...)` calls, wiring executable missing validators into
+   `scripts/validate_book.py`, preserving explicit reasons for the two
+   artifact-producing local DOCX/PDF review validators that should not rerun
+   on every CI pass, and restoring a plain-language reader evidence sentence
+   for the curated prototype-roadmap chapter. The standing policy is now:
+   every validator must be executed by the orchestrator, executed directly in
+   CI, or allow-listed with a specific artifact/dependency reason; curated
+   reader validators that enforce evidence text must accept a defined
+   reader-form equivalent rather than forcing raw result IDs into human prose.
+   Audit future curated prose passes for the same polish-versus-evidence
+   collision before treating a green gate as release evidence.
+2. **Release unblock ladder.** The blocked curated-reader release candidate
+   (`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`) is
+   the close-out queue; work it in order and flip the record from blocked to
+   approved when it empties: finish the four in-progress human-consumption
+   gate reviews (ebook layout, diagram image, bedtime readability, companion
+   notes); complete the dedicated e-reader review for EPUB (the Chromium
+   XHTML review is explicitly not that); complete the manual page-by-page
+   PDF reading-flow review (the bounding-box audit is explicitly not that);
+   then clear `curated_reconciliation_not_approved` across the 44 curated
+   chapter records with an approval record, and issue the approved edition
+   release record. Publication/tagging of the approved artifacts remains a
+   user-triggered act, like DOI; producing the approved record does not wait
+   on anyone.
+3. **Evidence ladder static at 6 for two decision-heavy rounds.** The 19 new
+   no-promotion decisions are correct refusals, but the cadence rule needs an
+   ascent path executed, not only guarded: the named next accepted-transition
+   candidates are live or externally reviewable residual-ledger
+   storage/replay, receipt-attestation/audit evidence, or the first Theseus
+   parity imports (governance-tax measurement, reference-trace export) under
+   the cross-project contract above.
+4. **Gate operations note.** The orchestrated gate (`validate_book.py`) is
+   the canonical local gate; one-by-one loops over the full validator set are
+   not an operational mode and now exceed interactive budgets. Keep the
+   orchestrator complete (finding 1) rather than making the loop fast.
+
 ## Version Targets
 
 | Target | Position vs SOTA | Minimum bar |

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-04 - Harden validator execution coverage
+
+- Tightened `scripts/validate_validator_coverage.py` so validator coverage now
+  means an actual GitHub Actions command or `scripts/validate_book.py`
+  `run_validator(...)` call, not a passive required-file reference.
+- Wired `validate_external_review_status.py`,
+  `validate_reader_key_figure_html_probe.py`, and
+  `validate_prototype_phase_gates.py` into the orchestrated book gate.
+- Added explicit allow-list reasons for the two curated reader DOCX/PDF local
+  review validators that require ignored format artifacts and optional
+  application tooling, while keeping their tracked manifests and blocked
+  release record under validation.
+- Updated the curated prototype-roadmap reader chapter and its validator so
+  human prose can preserve a plain-language evidence sentence instead of
+  carrying the raw local result ID.
+- Boundary: this is gate-accountability and reader-evidence phrasing work. It
+  does not approve any reader artifact, add a new evidence transition, prove a
+  prototype phase complete, or move any chapter support state.
+
 ## 2026-07-04 - Add GitHub Pages CI attestation
 
 - Added `scripts/validate_artifact_github_pages_ci_attestation.py` and
