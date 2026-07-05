@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 200 |
+| Proof targets in manifest | 201 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 994 |
-| Direct/projection-style theorem declarations | 183 |
-| Derived/decomposed theorem declarations | 807 |
+| Theorem declarations classified | 999 |
+| Direct/projection-style theorem declarations | 184 |
+| Derived/decomposed theorem declarations | 811 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 103 |
 | Safety-critical direct/projection declarations | 11 |
@@ -76,7 +76,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 4 | 25 | 2 | 23 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 4 | 12 | 3 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 3 | 10 | 2 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 15 | 3 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 26 | 4 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -569,10 +569,15 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | `required_approval_missing_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_public_surface_records_required_boundaries` | derived_or_decomposed | no | uses cases, have |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_without_validation_changelog_support_or_nonclaims_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
+| `lean/AsiStackProofs/LivingBook.lean` | `curated_reader_blocked_candidate_fixture_routes_to_accessibility_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_equal_authority_change_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `derived_artifact_without_source_review_or_support_boundary_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `every_manifest_chapter_has_outline_targets_and_claim_placeholders` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/LivingBook.lean` | `local_reader_artifacts_do_not_clear_missing_accessibility_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `manifest_chapter_missing_outline_targets_or_claim_placeholders_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_missing_approval_routes_to_release_approval` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_missing_audio_routes_to_audio_review` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/LivingBook.lean` | `reader_release_candidate_support_promotion_claim_rejected` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `release_ready_without_validation_changelog_or_residuals_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_marked_valid_without_sync_artifacts_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `structural_update_without_regenerated_scaffold_and_proof_manifest_is_invalid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

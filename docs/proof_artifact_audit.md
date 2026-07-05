@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 200 |
-| Manifest status counts | {"implemented": 200} |
-| Triage class counts | {"formal-invariant": 200} |
+| Proof targets audited | 201 |
+| Manifest status counts | {"implemented": 201} |
+| Triage class counts | {"formal-invariant": 201} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -55,7 +55,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/GovernanceRights.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 4 | 25 | 8 | 5 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 4 | 12 | 4 | 4 |
-| `lean/AsiStackProofs/LivingBook.lean` | 3 | 10 | 5 | 5 |
+| `lean/AsiStackProofs/LivingBook.lean` | 4 | 15 | 11 | 6 |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 4 | 2 | 2 |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | 6 | 26 | 8 | 7 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |
@@ -111,7 +111,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 5 | 5 | 0 | 0 |
-| `living-book-methodology` | 3 | 3 | 0 | 0 |
+| `living-book-methodology` | 4 | 4 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 6 | 6 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
@@ -337,6 +337,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:living_book.methodology.operational_invariant` | `living-book-methodology` | `AsiStackProofs.LivingBook` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:living_book.methodology.failure_blocks_promotion` | `living-book-methodology` | `AsiStackProofs.LivingBook` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:living_book.methodology.change_packet_boundary` | `living-book-methodology` | `AsiStackProofs.LivingBook` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:living_book.methodology.reader_release_candidate_bridge` | `living-book-methodology` | `AsiStackProofs.LivingBook` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:bibliography.plan.operational_invariant` | `open-research-agenda-and-bibliography-plan` | `AsiStackProofs.BibliographyPlan` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:bibliography.plan.failure_blocks_promotion` | `open-research-agenda-and-bibliography-plan` | `AsiStackProofs.BibliographyPlan` | triage ok; module ok; chapter tag ok; limitation ok |
 

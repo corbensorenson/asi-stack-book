@@ -210,7 +210,7 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "appendix_scripts_checked": 3,
         "script_file_order_status": "matches_book_structure",
         "script_file_order_errors": [],
-        "combined_script_sha256": "dba449bbc21a7ac183bcac4e9845c526da9d55544305635830833b1e8e14560e",
+        "combined_script_sha256": "ca6716feb14b9ff0aa1872c22e91897f3c665bf14d82b8903b3a5b67b4bf1c90",
         "text_characters_checked": 1070046,
         "word_tokens_checked": 143783,
         "release_note_count": 49,

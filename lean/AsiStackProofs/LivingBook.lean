@@ -311,4 +311,172 @@ theorem support_promotion_without_evidence_transition_rejected
                       rw [noEvidence] at evidence
                       contradiction
 
+inductive ReaderReleaseCandidateRoute where
+  | requestArtifactReview
+  | requestAccessibilityReview
+  | requestAudioArtifactReview
+  | requestReleaseApproval
+  | rejectSupportPromotion
+  | approveRelease
+deriving DecidableEq, Repr
+
+structure ReaderReleaseCandidateReview where
+  htmlRendered : Bool
+  epubRendered : Bool
+  docxRendered : Bool
+  pdfRendered : Bool
+  htmlBrowserReviewed : Bool
+  epubApplicationReviewed : Bool
+  docxApplicationReviewed : Bool
+  pdfPageReviewed : Bool
+  finalFigureReviewed : Bool
+  chapterReconciliationApproved : Bool
+  keyboardOnlyReviewed : Bool
+  accessibilityTreeReviewed : Bool
+  screenReaderReviewed : Bool
+  wcagConformanceReviewed : Bool
+  audioFilesGenerated : Bool
+  audioListeningReviewed : Bool
+  chapterMarkersTimecoded : Bool
+  audioEmbeddedEpubChecked : Bool
+  audioReleaseRecordCreated : Bool
+  readerReleaseApprovalRecorded : Bool
+  approvedEditionReleaseRecordCreated : Bool
+  chapterSupportPromotionClaimed : Bool
+  nonClaimsRecorded : Bool
+  releaseBlockersRecorded : Bool
+deriving DecidableEq, Repr
+
+def ReaderReleaseCandidateLocalReviewComplete
+    (review : ReaderReleaseCandidateReview) : Bool :=
+  review.htmlRendered &&
+    review.epubRendered &&
+      review.docxRendered &&
+        review.pdfRendered &&
+          review.htmlBrowserReviewed &&
+            review.epubApplicationReviewed &&
+              review.docxApplicationReviewed &&
+                review.pdfPageReviewed &&
+                  review.finalFigureReviewed &&
+                    review.chapterReconciliationApproved &&
+                      review.keyboardOnlyReviewed &&
+                        review.accessibilityTreeReviewed &&
+                          review.nonClaimsRecorded &&
+                            review.releaseBlockersRecorded
+
+def ReaderReleaseCandidateAccessibilityComplete
+    (review : ReaderReleaseCandidateReview) : Bool :=
+  review.screenReaderReviewed && review.wcagConformanceReviewed
+
+def ReaderReleaseCandidateAudioComplete
+    (review : ReaderReleaseCandidateReview) : Bool :=
+  review.audioFilesGenerated &&
+    review.audioListeningReviewed &&
+      review.chapterMarkersTimecoded &&
+        review.audioEmbeddedEpubChecked &&
+          review.audioReleaseRecordCreated
+
+def ReaderReleaseCandidateApprovalComplete
+    (review : ReaderReleaseCandidateReview) : Bool :=
+  review.readerReleaseApprovalRecorded &&
+    review.approvedEditionReleaseRecordCreated
+
+def ReaderReleaseCandidateRouteFor
+    (review : ReaderReleaseCandidateReview) : ReaderReleaseCandidateRoute :=
+  if review.chapterSupportPromotionClaimed = true then
+    ReaderReleaseCandidateRoute.rejectSupportPromotion
+  else if ReaderReleaseCandidateLocalReviewComplete review = false then
+    ReaderReleaseCandidateRoute.requestArtifactReview
+  else if ReaderReleaseCandidateAccessibilityComplete review = false then
+    ReaderReleaseCandidateRoute.requestAccessibilityReview
+  else if ReaderReleaseCandidateAudioComplete review = false then
+    ReaderReleaseCandidateRoute.requestAudioArtifactReview
+  else if ReaderReleaseCandidateApprovalComplete review = false then
+    ReaderReleaseCandidateRoute.requestReleaseApproval
+  else
+    ReaderReleaseCandidateRoute.approveRelease
+
+def curatedReaderBlockedCandidateFixture : ReaderReleaseCandidateReview := {
+  htmlRendered := true,
+  epubRendered := true,
+  docxRendered := true,
+  pdfRendered := true,
+  htmlBrowserReviewed := true,
+  epubApplicationReviewed := true,
+  docxApplicationReviewed := true,
+  pdfPageReviewed := true,
+  finalFigureReviewed := true,
+  chapterReconciliationApproved := true,
+  keyboardOnlyReviewed := true,
+  accessibilityTreeReviewed := true,
+  screenReaderReviewed := false,
+  wcagConformanceReviewed := false,
+  audioFilesGenerated := false,
+  audioListeningReviewed := false,
+  chapterMarkersTimecoded := false,
+  audioEmbeddedEpubChecked := false,
+  audioReleaseRecordCreated := false,
+  readerReleaseApprovalRecorded := false,
+  approvedEditionReleaseRecordCreated := false,
+  chapterSupportPromotionClaimed := false,
+  nonClaimsRecorded := true,
+  releaseBlockersRecorded := true
+}
+
+theorem curated_reader_blocked_candidate_fixture_routes_to_accessibility_review :
+    ReaderReleaseCandidateRouteFor curatedReaderBlockedCandidateFixture =
+      ReaderReleaseCandidateRoute.requestAccessibilityReview := by
+  rfl
+
+theorem local_reader_artifacts_do_not_clear_missing_accessibility_review
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    ReaderReleaseCandidateAccessibilityComplete review = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestAccessibilityReview := by
+  intro noPromotion localComplete missingAccessibility
+  unfold ReaderReleaseCandidateRouteFor
+  simp [noPromotion, localComplete, missingAccessibility]
+
+theorem reader_release_candidate_missing_audio_routes_to_audio_review
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    ReaderReleaseCandidateAccessibilityComplete review = true ->
+    ReaderReleaseCandidateAudioComplete review = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestAudioArtifactReview := by
+  intro noPromotion localComplete accessibilityComplete missingAudio
+  unfold ReaderReleaseCandidateRouteFor
+  simp [noPromotion, localComplete, accessibilityComplete, missingAudio]
+
+theorem reader_release_candidate_missing_approval_routes_to_release_approval
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    ReaderReleaseCandidateAccessibilityComplete review = true ->
+    ReaderReleaseCandidateAudioComplete review = true ->
+    ReaderReleaseCandidateApprovalComplete review = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestReleaseApproval := by
+  intro noPromotion localComplete accessibilityComplete audioComplete missingApproval
+  unfold ReaderReleaseCandidateRouteFor
+  simp [
+    noPromotion,
+    localComplete,
+    accessibilityComplete,
+    audioComplete,
+    missingApproval,
+  ]
+
+theorem reader_release_candidate_support_promotion_claim_rejected
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = true ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.rejectSupportPromotion := by
+  intro promotionClaimed
+  unfold ReaderReleaseCandidateRouteFor
+  simp [promotionClaimed]
+
 end AsiStackProofs.LivingBook

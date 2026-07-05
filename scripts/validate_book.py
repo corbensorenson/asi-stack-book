@@ -112,6 +112,9 @@ REQUIRED = [
     "scripts/validate_reader_human_consumption_gate.py",
     "scripts/validate_reader_final_figure_artifact_review.py",
     "scripts/validate_curated_reader_blocked_release_record.py",
+    "scripts/validate_reader_release_candidate_bridge.py",
+    "docs/reader_release_candidate_bridge.md",
+    "experiments/reader_release_candidate_bridge/results/2026-07-05-local.json",
     "scripts/sync_reader_chapter_review_matrix.py",
     "scripts/sync_reader_format_review_matrix.py",
     "scripts/validate_live_human_view.py",
@@ -1028,6 +1031,7 @@ def main() -> None:
     run_validator("validate_reader_human_consumption_gate.py")
     run_validator("validate_reader_final_figure_artifact_review.py")
     run_validator("validate_curated_reader_blocked_release_record.py")
+    run_validator("validate_reader_release_candidate_bridge.py")
     run_validator("sync_reader_format_review_matrix.py", "--check")
     run_validator("validate_source_appendices.py")
     run_validator("validate_release_surface_status_ledger.py")

@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-05 - Add reader release-candidate bridge
+
+- Added `python3 scripts/validate_reader_release_candidate_bridge.py`,
+  `docs/reader_release_candidate_bridge.md`, and result artifact
+  `experiments/reader_release_candidate_bridge/results/2026-07-05-local.json`
+  to check the current blocked curated-reader release candidate against a
+  finite release-routing model.
+- Extended `AsiStackProofs.LivingBook` with
+  `lean:living_book.methodology.reader_release_candidate_bridge`, proving that
+  the current blocked fixture routes to accessibility review, local artifacts
+  do not clear missing accessibility review, missing audio routes to audio
+  review, missing approval routes to release approval, and support-promotion
+  overclaims are rejected.
+- Current proof-depth snapshot: 201 proof targets, 54 Lean modules, 999 theorem
+  declarations, 811 derived/decomposed, 184 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+- Wired the bridge into `validate_book.py`, `docs/book_outline.md`,
+  `book_structure.json`, and the v1.x roadmap so future proof/evidence runs see
+  the release boundary as an implemented Living Book Methodology artifact.
+- Boundary: this bridge does not approve curated reader HTML, EPUB, DOCX, PDF,
+  e-reader, audio, MP3, M4B, audio-embedded EPUB, a final reader release, or
+  any chapter support-state movement.
+
 ## 2026-07-05 - Refresh current curated reader artifacts
 
 - Strengthened `assets/diagrams/living-book-release-pipeline.svg` so the
