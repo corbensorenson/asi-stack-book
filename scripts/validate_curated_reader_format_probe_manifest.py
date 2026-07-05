@@ -283,8 +283,8 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("pdf_layout_audit.source_sha256 must match inspection_summary.pdf.sha256.")
         if pdf_layout_audit.get("pages_checked") != 506:
             errors.append("pdf_layout_audit.pages_checked must be 506.")
-        if pdf_layout_audit.get("word_boxes_checked") != 170036:
-            errors.append("pdf_layout_audit.word_boxes_checked must be 170036.")
+        if pdf_layout_audit.get("word_boxes_checked") != 170217:
+            errors.append("pdf_layout_audit.word_boxes_checked must be 170217.")
         if pdf_layout_audit.get("textless_pages") != 0:
             errors.append("pdf_layout_audit.textless_pages must be 0.")
         if pdf_layout_audit.get("out_of_bounds_word_boxes") != 0:
@@ -322,10 +322,10 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             "low_ink_pages": 1,
             "near_edge_content_pages": 0,
             "min_nonwhite_pixels": 695,
-            "max_nonwhite_pixels": 105553,
+            "max_nonwhite_pixels": 106283,
             "min_left_margin_px": 82,
             "min_top_margin_px": 71,
-            "min_right_margin_px": 4,
+            "min_right_margin_px": 47,
             "min_bottom_margin_px": 92,
             "sample_low_ink_pages": [24],
             "sample_near_edge_pages": [],
@@ -352,15 +352,15 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             "pdfinfo_author": "Corben Sorenson",
             "pdfinfo_encrypted": "no",
             "pdfinfo_page_size": "612 x 792 pts (letter)",
-            "text_characters_checked": 1104355,
-            "word_tokens_checked": 169502,
+            "text_characters_checked": 1105741,
+            "word_tokens_checked": 169692,
             "form_feed_count": 506,
             "text_pages_checked": 506,
             "nonempty_text_pages": 506,
             "min_page_text_characters": 44,
             "max_page_text_characters": 3828,
             "pages_under_300_text_characters": 17,
-            "max_word_characters": 83,
+            "max_word_characters": 74,
             "replacement_character_count": 0,
             "live_marker_hits": 0,
             "raw_core_claim_marker_hits": 0,
@@ -410,7 +410,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             "viewer_shell_detected": True,
             "viewer_dom_body_text_characters": 0,
             "viewer_html_shell_characters": 159,
-            "page_down_changed_pixel_percent": 4.434,
+            "page_down_changed_pixel_percent": 4.479,
         }
         for key, expected_value in expected_values.items():
             if pdf_viewer_review.get(key) != expected_value:
@@ -524,7 +524,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("docx_content_audit.source_sha256 must be a SHA-256 digest.")
         expected_values = {
             "zip_entries": 77,
-            "paragraph_markers": 17369,
+            "paragraph_markers": 17378,
             "image_relationships": 61,
             "media_entries": 61,
             "png_media_entries": 61,
@@ -577,7 +577,7 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             "low_ink_pages": 0,
             "near_edge_content_pages": 0,
             "min_nonwhite_pixels": 10476,
-            "max_nonwhite_pixels": 103397,
+            "max_nonwhite_pixels": 104088,
             "min_left_margin_px": 66,
             "min_top_margin_px": 72,
             "min_right_margin_px": 72,
@@ -649,15 +649,15 @@ def validate_summary(errors: list[str]) -> None:
         "zero SVG conversion warnings",
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
-        "SHA-256 `049df485288e8f513d36212dc9c458e3815565677a62b1ba7ef61525359473d4`",
-        "repaired EPUB package SHA-256 `0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda`",
-        "SHA-256 `b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3`",
-        "repaired DOCX package SHA-256 `d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e`",
-        "SHA-256 `491113418d68c6a830d6d194d4b0263a47f9dc994196cd62bb342773fc6f7078`",
+        "SHA-256 `36e7ef644f1f44f4e2c5f1f50e26f5e381a552c1b504bb7b53068ab3db5e45a5`",
+        "repaired EPUB package SHA-256 `36e7ef644f1f44f4e2c5f1f50e26f5e381a552c1b504bb7b53068ab3db5e45a5`",
+        "SHA-256 `6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74`",
+        "repaired DOCX package SHA-256 `6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74`",
+        "SHA-256 `0b78383e1ba8edefb6ff1185f8ae9a5eb367dfb9e4c789e253327a51aa13a681`",
         "506 pages",
         "sample pages 1, 2, 25, 300, and 500",
         "| Pages checked | 506 |",
-        "| Word boxes checked | 170,036 |",
+        "| Word boxes checked | 170,217 |",
         "| Textless pages | 0 |",
         "| Out-of-bounds word boxes | 0 |",
         "| Layout lines over 160 characters | 0 |",
@@ -670,10 +670,10 @@ def validate_summary(errors: list[str]) -> None:
         "44 chapter headings",
         "3 appendix headings",
         "506 nonempty text pages",
-        "1,104,355 text characters",
+        "1,105,741 text characters",
         "PDF Chromium Viewer Smoke Review",
         "Scroll-changed pixels",
-        "4.434%",
+        "4.479%",
         "not manual PDF page-by-page reading-flow review",
         "52 XHTML entries",
         "49 packaged content XHTML entries",
@@ -685,12 +685,12 @@ def validate_summary(errors: list[str]) -> None:
         "104 page-view pairs",
         "not dedicated e-reader device/app approval",
         "not e-reader application review",
-        "17,369 paragraphs",
+        "17,378 paragraphs",
         "0 raw .qmd relationship targets",
         "not Word, LibreOffice GUI, or Google Docs application review",
         "DOCX LibreOffice Headless Review",
         "504 converted pages",
-        "1,026,949 text characters",
+        "1,028,304 text characters",
         "0 blank converted-page rasters",
         "not Word review, not LibreOffice GUI review, not Google Docs review",
         "does not clear release blockers",

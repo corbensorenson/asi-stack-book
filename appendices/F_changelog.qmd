@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-05 - Harden curated reader PDF format refresh
+
+- Replaced the curated-reader Mermaid extraction path with a Playwright-backed
+  helper and strengthened Chrome screenshot timing so rendered diagrams survive
+  EPUB, DOCX, and PDF review builds more reliably.
+- Added PDF-only inline-code/path wrapping support for the reader edition so
+  long generated file paths no longer create right-edge PDF overflow.
+- Rerendered and repaired the exact local curated-reader HTML, EPUB, DOCX, and
+  PDF review artifacts, then refreshed the format probe, Apple Books EPUB
+  observation, DOCX application decision, PDF page/layout/raster/read-flow
+  manifests, release-surface ledger, format review matrix, and blocked release
+  record around the new artifact hashes.
+- Boundary: this preserves the blocked release-candidate status and does not
+  approve the curated reader edition, create audio artifacts, certify
+  accessibility or e-reader quality, publish a major version, or move any
+  chapter support state.
+
 ## 2026-07-05 - Clear curated reader keyboard-only blocker
 
 - Added `scripts/validate_reader_keyboard_only_decision.py`,

@@ -1102,6 +1102,10 @@ def write_quarto(output_dir: Path, structure: dict, profile: dict) -> None:
             "  pdf:",
             "    toc: true",
             "    number-sections: true",
+            "    include-in-header:",
+            "      - assets/pdf-long-inline-code.tex",
+            "    filters:",
+            "      - assets/pdf-break-inline-code.lua",
         ])
 
     lines.extend(["", "execute:", "  freeze: auto", ""])

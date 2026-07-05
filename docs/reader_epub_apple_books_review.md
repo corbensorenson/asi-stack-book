@@ -10,15 +10,15 @@ Status: `passed_apple_books_epub_application_review`
 
 Reviewed artifact: `build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub`
 
-Reviewed artifact SHA-256: `0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda`
+Reviewed artifact SHA-256: `36e7ef644f1f44f4e2c5f1f50e26f5e381a552c1b504bb7b53068ab3db5e45a5`
 
 Application path: Apple Books (`com.apple.iBooksX`) on macOS.
 
 ## What Was Checked
 
 - Apple Books imported or retained The ASI Stack in the local Books library and opened it into a reader window.
-- Chapter 1 rendered without the earlier XML error banner.
-- A page advance rendered the ASI Stack control-plane figure, caption, figure-boundary text, and the next section heading.
+- Chapter 1 rendered without the earlier XML error banner, with page 23 navigation state visible.
+- The Apple Books reader rendered the ASI Stack control-plane figure, caption, figure-boundary text, and the `1.1 Problem` heading.
 - The Apple Books table-of-contents popover opened and listed front matter, chapter 1, and chapter 1 section entries with page targets.
 - The package-level EPUB audit records zero XML parse errors, zero bare class attributes, zero paragraph-wrapped figure tags, zero unresolved internal hrefs, and zero live-marker or raw core-claim marker leaks.
 - The browser EPUB review records 104 page-view pairs with zero failed pairs.

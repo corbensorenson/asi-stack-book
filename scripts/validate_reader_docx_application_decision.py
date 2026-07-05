@@ -100,8 +100,8 @@ def validate() -> list[str]:
 
     expected_top_level = {
         "source_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-        "source_docx_sha256": "b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3",
-        "repaired_docx_sha256": "d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e",
+        "source_docx_sha256": "6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74",
+        "repaired_docx_sha256": "6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74",
         "docx_content_audit_status": "passed_docx_document_xml_relationship_probe",
         "docx_libreoffice_review_status": "passed_docx_libreoffice_headless_pdf_review",
         "key_figure_docx_layout_status": "passed_local_docx_key_figure_layout_probe",
@@ -136,7 +136,7 @@ def validate() -> list[str]:
         ("document_xml_relationship_probe", "live_marker_hits"): 0,
         ("document_xml_relationship_probe", "raw_core_claim_marker_hits"): 0,
         ("libreoffice_headless_writer_review", "converted_pdf_pages"): 504,
-        ("libreoffice_headless_writer_review", "text_characters_checked"): 1026949,
+        ("libreoffice_headless_writer_review", "text_characters_checked"): 1028304,
         ("libreoffice_headless_writer_review", "blank_pages"): 0,
         ("libreoffice_headless_writer_review", "low_ink_pages"): 0,
         ("libreoffice_headless_writer_review", "near_edge_content_pages"): 0,
@@ -209,7 +209,7 @@ def validate() -> list[str]:
         EXPECTED_STATUS,
         "clears only `docx_application_review_not_completed`",
         "504-page PDF",
-        "1,026,949 text characters",
+        "1,028,304 text characters",
         "10 key-figure title pages",
         "Pages-readable text fallback",
         "does not claim Word, LibreOffice GUI, or Google Docs approval",

@@ -71,9 +71,9 @@ evidence, not manual figure, page-flow, or release approval.
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,664,713 bytes, SHA-256 `049df485288e8f513d36212dc9c458e3815565677a62b1ba7ef61525359473d4`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,321,648 bytes, SHA-256 `b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,369 paragraph markers, required Word package entries present. |
-| pdf | passed | 5,894,740 bytes, SHA-256 `491113418d68c6a830d6d194d4b0263a47f9dc994196cd62bb342773fc6f7078`, 506 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,665,134 bytes, SHA-256 `36e7ef644f1f44f4e2c5f1f50e26f5e381a552c1b504bb7b53068ab3db5e45a5`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,322,321 bytes, SHA-256 `6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,378 paragraph markers, required Word package entries present. |
+| pdf | passed | 5,899,615 bytes, SHA-256 `0b78383e1ba8edefb6ff1185f8ae9a5eb367dfb9e4c789e253327a51aa13a681`, 506 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## EPUB Content And Navigation Audit
 
@@ -81,14 +81,14 @@ After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_epub_links.py` to the ignored EPUB
 snapshot. That command rewrites Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` to the packaged EPUB spine
-target. The repaired EPUB package SHA-256 `0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda`
+target. The repaired EPUB package SHA-256 `36e7ef644f1f44f4e2c5f1f50e26f5e381a552c1b504bb7b53068ab3db5e45a5`
 then passed an all-XHTML content, XML, and internal-link audit covering 49 packaged content XHTML entries and 0 unresolved internal hrefs.
 
 | Metric | Result |
 |---|---:|
 | XHTML entries checked | 52 |
 | Packaged content XHTML entries checked | 49 |
-| Text characters checked | 1,783,217 |
+| Text characters checked | 1,783,237 |
 | Navigation hrefs checked | 841 |
 | OPF item entries | 116 |
 | OPF spine itemrefs | 52 |
@@ -144,15 +144,15 @@ After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_docx_links.py` to the ignored DOCX
 snapshot. That command removes Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` by unwrapping the broken DOCX
-hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e`
-then passed a document XML, media, and relationship audit with 17,369 paragraphs and 0 raw .qmd relationship targets.
+hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74`
+then passed a document XML, media, and relationship audit with 17,378 paragraphs and 0 raw .qmd relationship targets.
 
 | Metric | Result |
 |---|---:|
 | ZIP entries checked | 77 |
 | Document XML characters checked | 2,797,102 |
 | Text characters checked | 1,196,769 |
-| Paragraph markers | 17,369 |
+| Paragraph markers | 17,378 |
 | Run markers | 28,290 |
 | Relationships checked | 286 |
 | Image relationships | 61 |
@@ -185,13 +185,13 @@ It is application-engine evidence for the DOCX artifact because it exercises
 LibreOffice's document import and PDF layout path, not only the DOCX ZIP/XML
 container.
 
-The result records 504 converted pages, 1,026,949 text characters, and 0 blank converted-page rasters.
+The result records 504 converted pages, 1,028,304 text characters, and 0 blank converted-page rasters.
 
 | Metric | Result |
 |---|---:|
 | Converted PDF pages | 504 |
 | Converted PDF bytes | 8,549,454 |
-| Text characters checked | 1,026,949 |
+| Text characters checked | 1,028,304 |
 | Converted-page rasters checked | 504 |
 | Blank converted-page rasters | 0 |
 | Low-ink converted-page rasters | 0 |
@@ -251,7 +251,7 @@ relaxed reader chapters.
 | Metric | Result |
 |---|---:|
 | Pages checked | 506 |
-| Word boxes checked | 170,036 |
+| Word boxes checked | 170,217 |
 | Textless pages | 0 |
 | Out-of-bounds word boxes | 0 |
 | Layout lines over 160 characters | 0 |
@@ -306,14 +306,14 @@ That pass uses `pdftotext` and `pdfinfo` to check text volume, page text
 presence, required reader markers, live-marker leakage, chapter heading order,
 and appendix heading order in the current 506-page PDF.
 
-The result records 1,104,355 text characters, 44 chapter headings, 3 appendix headings, and 506 nonempty text pages; it is not manual PDF page-by-page reading-flow review.
+The result records 1,105,741 text characters, 44 chapter headings, 3 appendix headings, and 506 nonempty text pages; it is not manual PDF page-by-page reading-flow review.
 
 | Metric | Result |
 |---|---:|
 | PDF pages | 506 |
 | Text pages checked | 506 |
 | Nonempty text pages | 506 |
-| Text characters checked | 1,104,355 |
+| Text characters checked | 1,105,741 |
 | Word tokens checked | 169,502 |
 | Chapter headings checked | 44 |
 | Appendix headings checked | 3 |
@@ -356,7 +356,7 @@ rendered pixels.
 | First screenshot white pixels | 64.666% |
 | Second screenshot dark pixels | 34.9% |
 | Second screenshot white pixels | 62.366% |
-| Scroll-changed pixels | 4.434% |
+| Scroll-changed pixels | 4.479% |
 
 This is real local PDF-viewer rendering evidence for the current ignored PDF
 artifact, but it is not manual page-by-page PDF review, not PDF content

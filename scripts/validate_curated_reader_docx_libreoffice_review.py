@@ -334,7 +334,7 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "low_ink_pages": 0,
         "near_edge_content_pages": 0,
         "min_nonwhite_pixels": 10476,
-        "max_nonwhite_pixels": 103397,
+        "max_nonwhite_pixels": 104088,
         "min_left_margin_px": 66,
         "min_top_margin_px": 72,
         "min_right_margin_px": 72,

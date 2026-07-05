@@ -325,9 +325,9 @@ def main() -> None:
         errors.append("curated format inspection_summary must be an object.")
         inspection = {}
     expected_artifacts = {
-        "curated_reader_epub": ("epub", "049df485288e8f513d36212dc9c458e3815565677a62b1ba7ef61525359473d4"),
-        "curated_reader_docx": ("docx", "b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3"),
-        "curated_reader_pdf": ("pdf", "491113418d68c6a830d6d194d4b0263a47f9dc994196cd62bb342773fc6f7078"),
+        "curated_reader_epub": ("epub", "36e7ef644f1f44f4e2c5f1f50e26f5e381a552c1b504bb7b53068ab3db5e45a5"),
+        "curated_reader_docx": ("docx", "6f0d87007979a7a70d88335eb147c6edee426ace21ac68cdaf137f2886fa9a74"),
+        "curated_reader_pdf": ("pdf", "0b78383e1ba8edefb6ff1185f8ae9a5eb367dfb9e4c789e253327a51aa13a681"),
     }
     for record_format, (manifest_format, expected_sha) in expected_artifacts.items():
         manifest_row = inspection.get(manifest_format, {})
@@ -616,7 +616,7 @@ def main() -> None:
             "accepted_docx_application_evidence_for_release_preparation",
             "clears only `docx_application_review_not_completed`",
             "504-page PDF",
-            "1,026,949 text characters",
+            "1,028,304 text characters",
             "does not claim Word, LibreOffice GUI, or Google Docs approval",
             "does not approve DOCX publication",
         ],
@@ -1327,11 +1327,11 @@ def main() -> None:
     docx_note = str(artifacts.get("curated_reader_docx", {}).get("notes", ""))
     for fragment in (
         str(docx_audit.get("source_sha256", "")),
-        "17,369 paragraphs",
+        "17,378 paragraphs",
         "286 relationships",
         "0 raw .qmd relationship targets",
         "504-page PDF",
-        "1,026,949 text characters",
+        "1,028,304 text characters",
         "0 blank",
         "0 low-ink",
         "0 near-edge converted-page rasters",
@@ -1358,7 +1358,7 @@ def main() -> None:
         "3 ordered appendix headings",
         "0 replacement characters",
         "2 nonblank viewer screenshots",
-        "4.434% changed pixels",
+        "4.479% changed pixels",
         "10 matched key-figure captions",
         "10 key-figure caption pages",
         "165.878 pt minimum caption margin",

@@ -157,26 +157,36 @@ def ensure_html_for_mermaid(output_dir: Path, html_paths: list[Path]) -> bool:
 
 
 def rendered_mermaid_svgs(chrome_binary: str, html_path: Path) -> list[str]:
-    result = subprocess.run(
-        [
-            chrome_binary,
-            "--headless",
-            "--disable-gpu",
-            "--allow-file-access-from-files",
-            "--virtual-time-budget=7000",
-            "--dump-dom",
-            html_path.resolve().as_uri(),
-        ],
-        check=False,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
+    node = shutil.which("node")
+    if not node:
+        raise RuntimeError("node executable is required for Mermaid SVG extraction")
+    helper = ROOT / "scripts" / "extract_rendered_mermaid_svgs.js"
+    env = os.environ.copy()
+    env["PLAYWRIGHT_CHROMIUM_EXECUTABLE"] = chrome_binary
+    try:
+        result = subprocess.run(
+            [node, str(helper), str(html_path.resolve())],
+            check=False,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            env=env,
+            timeout=120,
+        )
+    except subprocess.TimeoutExpired as exc:
+        raise RuntimeError(f"Playwright Mermaid SVG extraction timed out for {html_path.name}") from exc
     if result.returncode != 0:
         raise RuntimeError(
-            f"Chrome DOM dump failed for {html_path.name} ({result.returncode}):\n{result.stderr[-2000:]}"
+            f"Playwright Mermaid SVG extraction failed for {html_path.name} "
+            f"({result.returncode}):\n{result.stderr[-2000:]}"
         )
-    return [normalize_svg(match.group(0)) for match in MERMAID_SVG_RE.finditer(result.stdout)]
+    try:
+        svgs = json.loads(result.stdout)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"Playwright Mermaid SVG extraction returned invalid JSON for {html_path.name}") from exc
+    if not isinstance(svgs, list) or not all(isinstance(svg, str) for svg in svgs):
+        raise RuntimeError(f"Playwright Mermaid SVG extraction returned an invalid SVG list for {html_path.name}")
+    return [normalize_svg(svg) for svg in svgs]
 
 
 def normalize_svg(svg: str) -> str:
@@ -239,7 +249,9 @@ def render_svg_to_png_with_chrome(chrome_binary: str, svg: str, png_path: Path) 
                     "--disable-gpu",
                     "--hide-scrollbars",
                     "--force-device-scale-factor=1",
-                    "--timeout=10000",
+                    "--run-all-compositor-stages-before-draw",
+                    "--virtual-time-budget=10000",
+                    "--timeout=60000",
                     f"--window-size={viewport_width},{viewport_height}",
                     f"--screenshot={png_path}",
                     html_path.resolve().as_uri(),
@@ -248,7 +260,7 @@ def render_svg_to_png_with_chrome(chrome_binary: str, svg: str, png_path: Path) 
                 text=True,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                timeout=30,
+                timeout=120,
             )
     except subprocess.TimeoutExpired as exc:
         raise RuntimeError(f"Chrome SVG screenshot timed out for {png_path.name}") from exc
@@ -406,7 +418,7 @@ def raster_diagram_fallbacks(output_dir: Path) -> Iterator[dict[str, object]]:
         yield fallback_info
     except Exception as exc:  # pragma: no cover - recorded in render report.
         fallback_info["error"] = str(exc)
-        yield fallback_info
+        raise
     finally:
         for path, text in original_text.items():
             path.write_text(text, encoding="utf-8")
@@ -511,7 +523,8 @@ def write_report(
             "A rendered curated-reader file is not a published major-version edition until reviewed and listed in an edition release record.",
             "Preserved artifacts are local snapshots in an ignored review workspace, not release artifacts.",
             "EPUB and DOCX renders are structural review inputs only until application-level review is complete.",
-            "PDF and audio artifacts are not produced by this curated-reader format renderer.",
+            "PDF renders are structural review inputs only until layout/page review and release approval are complete.",
+            "Audio artifacts are not produced by this curated-reader format renderer.",
             "This report does not promote any claim support state.",
         ],
     }
