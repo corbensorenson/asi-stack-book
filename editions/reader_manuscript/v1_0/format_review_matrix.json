@@ -24,7 +24,9 @@
     "release_records/2026-06-29-v1-reader-html-855dc277.json",
     "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json",
     "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json",
-    "docs/reader_epub_apple_books_review.md"
+    "docs/reader_epub_apple_books_review.md",
+    "docs/reader_docx_text_fallback_review.md",
+    "editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json"
   ],
   "release_record_status": "created",
   "release_record_path": "release_records/2026-06-29-v1-reader-html-855dc277.json",
@@ -109,16 +111,19 @@
           "docs/curated_reader_format_artifact_probe.md#docx-libreoffice-headless-review",
           "docs/reader_key_figure_docx_layout_review.md#summary",
           "docs/reader_final_figure_artifact_review.md#summary",
-          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json",
+          "docs/reader_docx_text_fallback_review.md#pages-observation",
+          "editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json"
         ],
         "release_blockers": [
           "docx_application_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated DOCX snapshot rendered locally, passed repaired-package relationship checks, converted through LibreOffice headless Writer with all pages raster-checked, passed the key-figure DOCX-to-PDF title-page layout probe, and is covered by the final figure-artifact review. It has not received Word, LibreOffice GUI, Google Docs, manual document, or release approval.",
+        "notes": "The curated DOCX snapshot rendered locally, passed repaired-package relationship checks, converted through LibreOffice headless Writer with all pages raster-checked, passed the key-figure DOCX-to-PDF title-page layout probe, and is covered by the final figure-artifact review. A separate Apple textutil text fallback opened in Pages and exposed title/front-matter and chapter text, but that fallback has zero media entries and does not preserve the rich DOCX visual package. The rich DOCX has not received Word, LibreOffice GUI, Google Docs, manual document, or release approval.",
         "non_claims": [
           "This candidate row does not approve curated reader DOCX for release.",
           "This candidate row does not publish the ignored local DOCX artifact.",
+          "This candidate row does not treat the textutil fallback as rich DOCX approval.",
           "This candidate row does not promote any claim support state."
         ]
       },

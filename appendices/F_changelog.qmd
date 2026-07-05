@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-05 - Add curated DOCX Pages text fallback probe
+
+- Added `scripts/validate_reader_docx_textutil_fallback.py`,
+  `editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json`, and
+  `docs/reader_docx_text_fallback_review.md` to make the Pages-readable
+  textutil fallback path reproducible for the curated reader DOCX workspace.
+- Recorded fallback digest
+  `3f64e165a314c50de921d5835c0217b554c662f543bca99e836cbcfc1fc59271`,
+  1,105,916 checked text characters, 11,588 paragraph markers, 0 media
+  entries, 0 live-marker leaks, and a local Pages observation showing that
+  the fallback opens and exposes title/front matter plus chapter text.
+- Updated the curated format probe and format review matrix to preserve the
+  distinction between a Pages-readable text fallback and the rich DOCX
+  artifact.
+- Boundary: this does not approve the curated reader DOCX, does not clear the
+  rich-DOCX application-review blocker, does not preserve the full figure or
+  visual package, does not publish a reader artifact, and does not move any
+  chapter support state.
+
 ## 2026-07-05 - Clear curated EPUB Apple Books application blocker
 
 - Repaired the current curated-reader EPUB path after Apple Books exposed real

@@ -1,0 +1,51 @@
+{
+  "status": "passed_textutil_docx_text_fallback_probe",
+  "last_updated": "2026-07-05",
+  "source_docx": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+  "source_docx_sha256": "448440bf4b58dba1646e37cb25682c9e416bc3e090286211a5af0992045388da",
+  "fallback_docx": "build/curated_reader_edition/format_artifacts/docx_text_fallback/_reader_site/The-ASI-Stack-pages-text-fallback.docx",
+  "fallback_docx_sha256": "3f64e165a314c50de921d5835c0217b554c662f543bca99e836cbcfc1fc59271",
+  "fallback_bytes": 339427,
+  "textutil_path": "/usr/bin/textutil",
+  "zip_entries": 8,
+  "text_characters_checked": 1105916,
+  "paragraph_markers": 11588,
+  "run_markers": 17433,
+  "media_entries": 0,
+  "png_media_entries": 0,
+  "svg_media_entries": 0,
+  "required_text_markers_present": [
+    "The ASI Stack",
+    "Reader Edition Draft",
+    "evidence boundary",
+    "Reader Source List",
+    "External Citation Policy"
+  ],
+  "live_marker_hits": 0,
+  "raw_core_claim_marker_hits": 0,
+  "pages_application_review": {
+    "status": "passed_pages_open_text_fallback_probe",
+    "review_date": "2026-07-05",
+    "application": "Pages (com.apple.iWork.Pages)",
+    "observation_count": 4,
+    "observations": [
+      "Pages opened the textutil fallback document without the rich-DOCX read error.",
+      "Pages exposed the title page text, reader edition draft marker, and table-of-contents text.",
+      "Pages exposed chapter 1 body text in the accessibility tree.",
+      "The fallback is a text-oriented import and does not preserve the rich DOCX visual package."
+    ]
+  },
+  "release_blockers_preserved": [
+    "docx_application_review_not_completed_for_rich_docx",
+    "reader_release_approval_not_created",
+    "visual_package_not_preserved_by_text_fallback"
+  ],
+  "review_boundary": "The textutil fallback is useful for Pages-readable text access, but it is not the rich DOCX artifact, not a Word/LibreOffice GUI/Google Docs approval, not visual-package approval, and not reader release approval.",
+  "non_claims": [
+    "does not approve the curated reader DOCX for release",
+    "does not clear the rich DOCX application-review blocker",
+    "does not preserve the full figure and visual package",
+    "does not publish any reader artifact",
+    "does not promote any chapter core claim"
+  ]
+}

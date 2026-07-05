@@ -22,6 +22,7 @@ python3 scripts/audit_curated_reader_epub_content.py
 node scripts/validate_curated_reader_epub_browser_review.js --write-manifest
 python3 scripts/audit_curated_reader_docx_content.py
 python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest
+python3 scripts/validate_reader_docx_textutil_fallback.py --write-manifest
 python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest
 python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest
 python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest
@@ -39,6 +40,7 @@ Tracked manifest:
 
 - `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`
 - `editions/reader_manuscript/v1_0/pdf_page_review_manifest.json`
+- `editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json`
 
 ## Render Summary
 
@@ -205,6 +207,40 @@ The converted PDF is tagged, unencrypted, letter-sized, titled `The ASI Stack`,
 and produced by LibreOffice. This is stronger than package inspection alone,
 but it is not Word review, not LibreOffice GUI review, not Google Docs review,
 not manual document review, and does not approve the DOCX artifact for release.
+
+## DOCX Textutil Pages Fallback Probe
+
+The probe also records a text-oriented fallback path through Apple's
+`textutil`:
+
+```bash
+python3 scripts/validate_reader_docx_textutil_fallback.py --write-manifest
+```
+
+That command converts the current ignored curated-reader DOCX into
+`build/curated_reader_edition/format_artifacts/docx_text_fallback/_reader_site/The-ASI-Stack-pages-text-fallback.docx`,
+inspects the fallback package, and writes
+`editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json`. The exact
+fallback artifact was opened locally in Pages. Pages exposed the title page,
+reader edition draft marker, table-of-contents text, and chapter 1 body text
+without the rich-DOCX read error.
+
+| Metric | Result |
+|---|---:|
+| Source DOCX SHA-256 | `448440bf4b58dba1646e37cb25682c9e416bc3e090286211a5af0992045388da` |
+| Fallback DOCX SHA-256 | `3f64e165a314c50de921d5835c0217b554c662f543bca99e836cbcfc1fc59271` |
+| Fallback bytes | 339,427 |
+| ZIP entries | 8 |
+| Text characters checked | 1,105,916 |
+| Paragraph markers | 11,588 |
+| Media entries | 0 |
+| Live-marker leaks | 0 |
+| Raw core-claim marker leaks | 0 |
+
+This fallback is useful as a Pages-readable text path, but it is not the rich
+DOCX artifact and it does not preserve the full figure or visual package. It
+does not clear the rich DOCX application-review blocker, does not approve the
+curated reader DOCX for release, and does not create reader release approval.
 
 ## PDF Text And Layout Extraction Audit
 
