@@ -14,6 +14,9 @@
   human-consumption gate, release-surface ledger, format-probe note, roadmap,
   edition-release schema, protocol appendix, and orchestrated validation so the
   current PDF candidate clears only `manual_pdf_page_by_page_review_not_completed`.
+- Kept the validator CI-safe by requiring Pillow only in `--write-manifest`
+  raster-inspection mode; the default check validates tracked evidence without
+  local PDF raster dependencies.
 - Boundary: this does not approve the PDF, final figure art, EPUB, DOCX,
   e-reader, audio, reader release, publication, or any chapter support-state
   movement.

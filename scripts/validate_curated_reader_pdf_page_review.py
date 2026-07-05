@@ -21,8 +21,6 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
-from PIL import Image
-
 
 ROOT = Path(__file__).resolve().parents[1]
 FORMAT_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
@@ -146,6 +144,10 @@ def page_number(path: Path) -> int:
 
 
 def raster_rows(pdf_path: Path, output_dir: Path) -> dict[int, dict[str, Any]]:
+    try:
+        from PIL import Image
+    except ModuleNotFoundError:
+        fail(["Pillow is required for raster inspection in --write-manifest mode."])
     require_tool("pdftoppm")
     output_dir.mkdir(parents=True, exist_ok=True)
     prefix = output_dir / "page"
