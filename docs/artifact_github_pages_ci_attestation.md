@@ -14,12 +14,12 @@ python3 scripts/validate_artifact_github_pages_ci_attestation.py
 The local capture command for the current result was:
 
 ```bash
-python3 scripts/validate_artifact_github_pages_ci_attestation.py --write-result --run-id 28722833821
+python3 scripts/validate_artifact_github_pages_ci_attestation.py --write-result --run-id 28733145259
 ```
 
 The generated result is:
 
-`experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json`
+`experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json`
 
 The accepted no-promotion decision is:
 
@@ -27,7 +27,7 @@ The accepted no-promotion decision is:
 
 Result id:
 
-`artifact-github-pages-ci-attestation-2026-07-04`
+`artifact-github-pages-ci-attestation-2026-07-05`
 
 ## What Is Checked
 

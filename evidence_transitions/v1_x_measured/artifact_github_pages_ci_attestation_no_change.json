@@ -8,7 +8,7 @@
     "docs/contribution_novelty_ledger.md"
   ],
   "claim_record_refs": [
-    "experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json",
+    "experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json",
     "scripts/validate_artifact_github_pages_ci_attestation.py"
   ],
   "old_support_state": "argument",
@@ -25,7 +25,7 @@
     "commit_scoped_attestation_limit",
     "no_promotion_boundary"
   ],
-  "transition_reason": "The GitHub Pages CI attestation result artifact-github-pages-ci-attestation-2026-07-04 is useful because it moves the Artifact Graphs record-reality lane beyond local-only replay: an externally hosted CI service reports that the repository publication workflow passed for a specific commit, including source validation, Lean build, HTML render, live Human view validation, browser smoke testing, artifact upload, and deploy. The evidence remains service-status evidence for one workflow run, so it blocks promotion for deployed attestation, open-world receipt faithfulness, verifier correctness, reader release approval, external human review, or chapter-core support.",
+  "transition_reason": "The GitHub Pages CI attestation result artifact-github-pages-ci-attestation-2026-07-05 is useful because it moves the Artifact Graphs record-reality lane beyond local-only replay: an externally hosted CI service reports that the repository publication workflow passed for a specific commit, including source validation, Lean build, HTML render, live Human view validation, browser smoke testing, artifact upload, and deploy. The evidence remains service-status evidence for one workflow run, so it blocks promotion for deployed attestation, open-world receipt faithfulness, verifier correctness, reader release approval, external human review, or chapter-core support.",
   "required_artifacts": [
     "externally reviewable attestation or audit trace beyond GitHub workflow status",
     "independent verifier-quality review",
@@ -36,7 +36,7 @@
   ],
   "artifact_refs": [
     "docs/artifact_github_pages_ci_attestation.md",
-    "experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json",
+    "experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json",
     "scripts/validate_artifact_github_pages_ci_attestation.py"
   ],
   "evidence_packet_refs": [
@@ -64,7 +64,7 @@
   ],
   "negative_evidence_refs": [
     "docs/artifact_github_pages_ci_attestation.md",
-    "experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json",
+    "experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json",
     "scripts/validate_artifact_github_pages_ci_attestation.py"
   ],
   "downgrade_triggers": [

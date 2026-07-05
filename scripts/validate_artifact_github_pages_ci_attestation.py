@@ -19,7 +19,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RESULT = ROOT / "experiments" / "artifact_github_pages_ci_attestation" / "results" / "2026-07-04-local.json"
+RESULT = ROOT / "experiments" / "artifact_github_pages_ci_attestation" / "results" / "2026-07-05-local.json"
 DOC = ROOT / "docs" / "artifact_github_pages_ci_attestation.md"
 TRANSITION = ROOT / "evidence_transitions" / "v1_x_measured" / "artifact_github_pages_ci_attestation_no_change.json"
 CHAPTER = ROOT / "chapters" / "artifact-graphs-audit-logs-and-replay.qmd"
@@ -31,7 +31,7 @@ LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 
 COMMAND = "python3 scripts/validate_artifact_github_pages_ci_attestation.py"
-RESULT_ID = "artifact-github-pages-ci-attestation-2026-07-04"
+RESULT_ID = "artifact-github-pages-ci-attestation-2026-07-05"
 CLAIM_ID = "artifact-graphs.github_pages_ci_attestation"
 WORKFLOW_NAME = "Publish Quarto site"
 HEAD_BRANCH = "main"

@@ -261,7 +261,7 @@ REQUIRED = [
     "experiments/artifact_randomized_attestation/results/2026-07-04-local.json",
     "scripts/validate_artifact_github_pages_ci_attestation.py",
     "docs/artifact_github_pages_ci_attestation.md",
-    "experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json",
+    "experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json",
     "scripts/validate_epistemic_trusted_computing_base.py",
     "docs/epistemic_trusted_computing_base_fixture.md",
     "experiments/epistemic_tcb/results/2026-07-03-local.json",

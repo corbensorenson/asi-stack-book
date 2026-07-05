@@ -181,15 +181,15 @@ digest, replay, sample-laundering, self-check, unbounded-attestation, and
 support-promotion controls.
 
 The GitHub Pages CI attestation adds a different kind of observation. It
-records GitHub Actions run `28722833821`, where the public publication workflow
+records GitHub Actions run `28733145259`, where the public publication workflow
 on `main` completed source validation, Lean build, HTML render, live Human view
 validation, browser Human-view smoke testing, artifact upload, and deploy for
-commit `20c83c3ca1fc10d70ef8ff5bf6b8c5cc9e1f5450`. That matters because the
+commit `fdff2c1cb0a100e4c68099adc5128d3b461384fd`. That matters because the
 evidence no longer lives only in a local terminal transcript. A hosted CI
 service also says this exact commit passed the publication pipeline.
 
 That stronger observation still has a narrow authority. The result at
-`experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json`
+`experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json`
 and the no-promotion decision at
 `evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json`
 do not create external human review, open-world receipt faithfulness, deployed

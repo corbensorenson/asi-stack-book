@@ -261,11 +261,11 @@ filesystem bytes, git object bytes, and command replay.
 
 The GitHub Pages CI attestation adds one externally hosted service route to the
 same ladder. `python3 scripts/validate_artifact_github_pages_ci_attestation.py`
-checks `experiments/artifact_github_pages_ci_attestation/results/2026-07-04-local.json`,
-which records GitHub Actions run `28722833821` for the `Publish Quarto site`
+checks `experiments/artifact_github_pages_ci_attestation/results/2026-07-05-local.json`,
+which records GitHub Actions run `28733145259` for the `Publish Quarto site`
 workflow on `main`: source validation, Lean build, HTML render, live Human view
 validation, browser Human-view smoke testing, Pages artifact upload, and deploy
-completed successfully for commit `20c83c3ca1fc10d70ef8ff5bf6b8c5cc9e1f5450`.
+completed successfully for commit `fdff2c1cb0a100e4c68099adc5128d3b461384fd`.
 Accepted no-promotion decision
 `evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json`
 records that run as a `blocks_promotion` side lane only. It is GitHub Actions

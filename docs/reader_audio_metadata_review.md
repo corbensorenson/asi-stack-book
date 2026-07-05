@@ -27,7 +27,7 @@ record explicitly grants it.
 |---|---:|
 | Source candidate | `2026-07-05-v1-curated-reader-blocked-d81d505a` |
 | Source commit | `d81d505acd5866aec6def5419a68ab2c53978b2d` |
-| Audio script digest | `165398a8a9d3e77bccf71271c2669b4f8e7c1dc980ee073bcc806d8cd0046878` |
+| Audio script digest | `21c846d260e20a1b75d3a013cb6fadc87332c5b58b18d0a9c9450b2d038e8def` |
 | Script files checked | 49 |
 | Chapter scripts checked | 44 |
 | Chapter-marker rows | 49 |

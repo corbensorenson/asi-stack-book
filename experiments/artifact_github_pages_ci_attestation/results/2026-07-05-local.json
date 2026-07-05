@@ -1,0 +1,253 @@
+{
+  "schema_version": "0.1",
+  "result_id": "artifact-github-pages-ci-attestation-2026-07-05",
+  "claim_id": "artifact-graphs.github_pages_ci_attestation",
+  "run_id": 28733145259,
+  "run_url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28733145259",
+  "workflow_name": "Publish Quarto site",
+  "run_name": "Publish Quarto site",
+  "display_title": "Re-identify blocked reader candidate",
+  "event": "push",
+  "head_branch": "main",
+  "head_sha": "fdff2c1cb0a100e4c68099adc5128d3b461384fd",
+  "status": "completed",
+  "conclusion": "success",
+  "created_at": "2026-07-05T07:19:04Z",
+  "updated_at": "2026-07-05T07:23:28Z",
+  "jobs": [
+    {
+      "name": "build",
+      "database_id": 85202434613,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28733145259/job/85202434613",
+      "started_at": "2026-07-05T07:19:07Z",
+      "completed_at": "2026-07-05T07:23:16Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:19:08Z",
+          "completed_at": "2026-07-05T07:19:10Z"
+        },
+        {
+          "name": "Check out repository",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:19:10Z",
+          "completed_at": "2026-07-05T07:19:12Z"
+        },
+        {
+          "name": "Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:19:12Z",
+          "completed_at": "2026-07-05T07:19:12Z"
+        },
+        {
+          "name": "Set up Node",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:19:12Z",
+          "completed_at": "2026-07-05T07:19:13Z"
+        },
+        {
+          "name": "Set up Quarto",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:19:13Z",
+          "completed_at": "2026-07-05T07:19:27Z"
+        },
+        {
+          "name": "Install Lean",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:19:27Z",
+          "completed_at": "2026-07-05T07:19:28Z"
+        },
+        {
+          "name": "Check generated scaffold",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:19:28Z",
+          "completed_at": "2026-07-05T07:19:28Z"
+        },
+        {
+          "name": "Validate book source",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:19:28Z",
+          "completed_at": "2026-07-05T07:20:43Z"
+        },
+        {
+          "name": "Build Lean proofs",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:20:43Z",
+          "completed_at": "2026-07-05T07:21:20Z"
+        },
+        {
+          "name": "Render HTML",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:21:20Z",
+          "completed_at": "2026-07-05T07:23:07Z"
+        },
+        {
+          "name": "Validate live Human view",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:07Z",
+          "completed_at": "2026-07-05T07:23:10Z"
+        },
+        {
+          "name": "Browser-smoke live Human view",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:10Z",
+          "completed_at": "2026-07-05T07:23:10Z"
+        },
+        {
+          "name": "Upload Pages artifact",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:10Z",
+          "completed_at": "2026-07-05T07:23:12Z"
+        },
+        {
+          "name": "Post Set up Node",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:12Z",
+          "completed_at": "2026-07-05T07:23:12Z"
+        },
+        {
+          "name": "Post Set up Python",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:12Z",
+          "completed_at": "2026-07-05T07:23:13Z"
+        },
+        {
+          "name": "Post Check out repository",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:13Z",
+          "completed_at": "2026-07-05T07:23:13Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:13Z",
+          "completed_at": "2026-07-05T07:23:13Z"
+        }
+      ]
+    },
+    {
+      "name": "deploy",
+      "database_id": 85202700131,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/28733145259/job/85202700131",
+      "started_at": "2026-07-05T07:23:19Z",
+      "completed_at": "2026-07-05T07:23:27Z",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:19Z",
+          "completed_at": "2026-07-05T07:23:20Z"
+        },
+        {
+          "name": "Deploy to GitHub Pages",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:20Z",
+          "completed_at": "2026-07-05T07:23:26Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-05T07:23:26Z",
+          "completed_at": "2026-07-05T07:23:26Z"
+        }
+      ]
+    }
+  ],
+  "required_build_steps": [
+    {
+      "name": "Check generated scaffold",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate book source",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build Lean proofs",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Render HTML",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate live Human view",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Browser-smoke live Human view",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "name": "Upload Pages artifact",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "observation_routes": [
+    {
+      "route_id": "github_actions_run_api",
+      "observer_role": "github_actions_service",
+      "accepted": true
+    },
+    {
+      "route_id": "workflow_job_set",
+      "observer_role": "github_actions_jobs_api",
+      "accepted": true
+    },
+    {
+      "route_id": "required_step_set",
+      "observer_role": "publish_workflow_step_status",
+      "accepted": true
+    }
+  ],
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "attestation_limits": [
+    "GitHub Actions run success attests this workflow execution only.",
+    "GitHub Actions is an external CI service, not an independent human reviewer.",
+    "A successful Pages workflow does not prove source interpretation, verifier correctness, deployment safety, model quality, or ASI capability.",
+    "The run attests the recorded commit, not future commits."
+  ],
+  "non_claims": [
+    "does not create an upward support-state transition",
+    "does not promote any chapter core claim",
+    "does not promote the Artifact Graphs chapter core claim",
+    "does not prove open-world receipt faithfulness",
+    "does not prove deployed attestation behavior",
+    "does not create independent external human review",
+    "does not approve any reader release artifact"
+  ]
+}
