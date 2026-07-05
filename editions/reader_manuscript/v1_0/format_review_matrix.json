@@ -26,7 +26,9 @@
     "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json",
     "docs/reader_epub_apple_books_review.md",
     "docs/reader_docx_text_fallback_review.md",
-    "editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json"
+    "editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json",
+    "docs/reader_docx_application_decision.md",
+    "editions/reader_manuscript/v1_0/docx_application_decision_manifest.json"
   ],
   "release_record_status": "created",
   "release_record_path": "release_records/2026-06-29-v1-reader-html-855dc277.json",
@@ -43,7 +45,6 @@
       "audio_edition_release_record_not_created": 1,
       "audio_files_not_generated": 1,
       "chapter_markers_not_timecoded": 1,
-      "docx_application_review_not_completed": 1,
       "manual_keyboard_only_review_not_completed": 1,
       "narration_quality_review_not_completed": 1,
       "reader_release_approval_not_created": 5,
@@ -113,13 +114,14 @@
           "docs/reader_final_figure_artifact_review.md#summary",
           "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json",
           "docs/reader_docx_text_fallback_review.md#pages-observation",
-          "editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json"
+          "editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json",
+          "docs/reader_docx_application_decision.md#decision",
+          "editions/reader_manuscript/v1_0/docx_application_decision_manifest.json"
         ],
         "release_blockers": [
-          "docx_application_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated DOCX snapshot rendered locally, passed repaired-package relationship checks, converted through LibreOffice headless Writer with all pages raster-checked, passed the key-figure DOCX-to-PDF title-page layout probe, and is covered by the final figure-artifact review. A separate Apple textutil text fallback opened in Pages and exposed title/front-matter and chapter text, but that fallback has zero media entries and does not preserve the rich DOCX visual package. The rich DOCX has not received Word, LibreOffice GUI, Google Docs, manual document, or release approval.",
+        "notes": "The curated DOCX snapshot rendered locally, passed repaired-package relationship checks, converted through LibreOffice headless Writer with all pages raster-checked, passed the key-figure DOCX-to-PDF title-page layout probe, and is covered by the final figure-artifact review. A separate Apple textutil text fallback opened in Pages and exposed title/front-matter and chapter text, but that fallback has zero media entries and does not preserve the rich DOCX visual package. The DOCX application-evidence decision accepts the tracked local application-engine evidence for release preparation and clears only docx_application_review_not_completed. The rich DOCX has not received Word, LibreOffice GUI, Google Docs, manual document, or release approval.",
         "non_claims": [
           "This candidate row does not approve curated reader DOCX for release.",
           "This candidate row does not publish the ignored local DOCX artifact.",
@@ -198,7 +200,7 @@
         ]
       }
     ],
-    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence and the Apple Books EPUB application review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
+    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, and the DOCX application-evidence decision, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
   },
   "records": [
     {

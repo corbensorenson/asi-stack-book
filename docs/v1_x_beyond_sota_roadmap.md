@@ -3688,9 +3688,19 @@ Current status:
   page-view pairs with 0 failures, 10 PDF caption/raster pages, and 10 DOCX
   title/raster pages. This aggregate review clears only the current
   `final_figure_artifact_review_not_completed` blocker; it does not approve
-  the reader edition, e-reader/application review, DOCX application review,
-  manual keyboard-only review, screen-reader review, WCAG conformance, audio,
-  publication, or any support-state movement.
+  the reader edition, e-reader/application review, manual keyboard-only
+  review, screen-reader review, WCAG conformance, audio, publication, or any
+  support-state movement.
+- `scripts/validate_reader_docx_application_decision.py` now records
+  `editions/reader_manuscript/v1_0/docx_application_decision_manifest.json`
+  and `docs/reader_docx_application_decision.md`: the current curated DOCX
+  release-preparation gate accepts repaired DOCX XML/relationship checks,
+  LibreOffice headless Writer conversion/raster evidence, DOCX key-figure
+  layout evidence, the final figure-artifact review, and the Pages-readable
+  text fallback as enough to clear only
+  `docx_application_review_not_completed`. This does not claim Word,
+  LibreOffice GUI, or Google Docs approval and does not approve DOCX
+  publication or reader release.
 - `docs/curated_reader_format_artifact_probe.md` and
   `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json` now
   record that the tracked curated reader manuscript rendered locally to HTML,
@@ -3744,10 +3754,11 @@ Current status:
   minimum page ink, 0.0% maximum near-edge ink, and 14.2 minimum luminance
   standard deviation. The Chromium PDF viewer smoke review records 2 nonblank
   viewer screenshots and 4.434% changed pixels after scroll. EPUB publication,
-  DOCX, PDF, and audio artifacts still remain unapproved until reader release
-  approval, Word/LibreOffice GUI/Google Docs DOCX review or an explicit release
-  decision, narration-quality/timecode/audio-generation review, and an edition
-  release record exist.
+  DOCX publication, PDF, and audio artifacts still remain unapproved until
+  reader release approval, narration-quality/timecode/audio-generation review
+  where audio scope applies, and an edition release record exist; the separate
+  DOCX application-evidence decision closes only the DOCX application-review
+  blocker.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,
@@ -3871,9 +3882,11 @@ Current status:
   `draft_not_release_reviewed` with no new
   support-state, enforcement, security, proof, test, external-review, or
   artifact-release effect. Current blocker: manual aesthetic judgment, figure
-  polish, e-reader visual review beyond the Apple Books smoke/application path, Word/LibreOffice GUI/Google Docs
-  review, final PDF figure/readability release review, and release review still
-  need to happen before any approved reader-figure artifact claim.
+  polish, e-reader visual review beyond the Apple Books smoke/application path
+  where release scope demands it, final PDF figure/readability release review,
+  and release review still need to happen before any approved reader-figure
+  artifact claim. Word/LibreOffice GUI/Google Docs review remains optional
+  stronger evidence, not a claimed completed review.
 - `docs/reader_accessibility_navigation_review.md` and
   `editions/reader_manuscript/v1_0/accessibility_navigation_manifest.json`
   now record a source-level reader accessibility/navigation review for the
@@ -4323,12 +4336,13 @@ validator-enforced status row that grows past compact status-summary size.
    chapter records are reconciled, full-review rows are present, curated files
    exist, and the approval clears only `curated_reconciliation_not_approved`.
    The active release queue is
-   now: complete the dedicated e-reader review for EPUB (the Chromium XHTML
-   review is explicitly not that); complete DOCX application-level review or
-   record an explicit release decision accepting the available LibreOffice
-   headless evidence; complete manual keyboard-only, screen-reader, and WCAG
-   review where release scope requires it; and issue the approved edition
-   release record.
+   now: complete manual keyboard-only, screen-reader, and WCAG review where
+   release scope requires it; complete audio narration-quality, timecode, audio
+   file, and audio-edition gates where audio scope requires them; reconcile
+   any remaining release-scope e-reader visual review beyond the Apple Books
+   application path; and issue the approved or still-blocked edition release
+   record. The DOCX application-evidence decision is closed for this candidate
+   and clears only `docx_application_review_not_completed`.
    Publication/tagging of the approved artifacts remains a user-triggered act,
    like DOI; producing the approved record does not wait on anyone.
 3. **Evidence ladder static at 6 for two decision-heavy rounds.** The 19 new

@@ -1,0 +1,71 @@
+{
+  "schema_version": "asi_stack.reader_docx_application_decision.v0",
+  "status": "accepted_docx_application_evidence_for_release_preparation",
+  "decision_date": "2026-07-05",
+  "source_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+  "source_docx_sha256": "b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3",
+  "repaired_docx_sha256": "d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e",
+  "docx_content_audit_status": "passed_docx_document_xml_relationship_probe",
+  "docx_libreoffice_review_status": "passed_docx_libreoffice_headless_pdf_review",
+  "key_figure_docx_layout_status": "passed_local_docx_key_figure_layout_probe",
+  "final_figure_review_status": "passed_final_figure_artifact_release_preparation_review",
+  "text_fallback_status": "passed_textutil_docx_text_fallback_probe",
+  "pages_text_fallback_status": "passed_pages_open_text_fallback_probe",
+  "evidence": {
+    "document_xml_relationship_probe": {
+      "paragraph_markers": 17369,
+      "relationship_count": 286,
+      "raw_qmd_relationship_targets": 0,
+      "unresolved_internal_relationship_targets": 0,
+      "live_marker_hits": 0,
+      "raw_core_claim_marker_hits": 0
+    },
+    "libreoffice_headless_writer_review": {
+      "converted_pdf_pages": 504,
+      "text_characters_checked": 1026949,
+      "blank_pages": 0,
+      "low_ink_pages": 0,
+      "near_edge_content_pages": 0
+    },
+    "docx_key_figure_layout_review": {
+      "title_pages": 10,
+      "raster_pages_rendered": 10,
+      "minimum_title_margin_pt": 72.1,
+      "maximum_near_edge_ink_percent": 0.0
+    },
+    "final_figure_artifact_review": {
+      "figure_count": 10,
+      "cleared_blockers": 1
+    },
+    "pages_text_fallback_probe": {
+      "text_characters_checked": 1105916,
+      "media_entries": 0,
+      "live_marker_hits": 0,
+      "raw_core_claim_marker_hits": 0
+    }
+  },
+  "decision": "For the current curated-reader candidate, the DOCX application-review blocker is closed by accepting the available local application-engine evidence: repaired DOCX document XML and relationship checks, LibreOffice headless Writer conversion with full converted-page raster review, DOCX key-figure layout checks, final figure-artifact release-preparation review, and a Pages-readable text fallback. This decision does not claim Word, LibreOffice GUI, or Google Docs approval, does not treat the text fallback as rich-DOCX visual approval, and does not approve the curated reader DOCX for publication.",
+  "cleared_blockers": [
+    "docx_application_review_not_completed"
+  ],
+  "preserved_blockers": [
+    "reader_release_approval_not_created",
+    "manual_keyboard_only_review_not_completed",
+    "screen_reader_review_not_completed",
+    "wcag_conformance_review_not_completed",
+    "reviewed_reader_release_record_not_created_for_audio",
+    "narration_quality_review_not_completed",
+    "audio_files_not_generated",
+    "chapter_markers_not_timecoded",
+    "audio_edition_release_record_not_created"
+  ],
+  "release_boundary": "This decision clears only `docx_application_review_not_completed` for the current curated-reader DOCX release candidate by accepting the tracked local application-engine evidence as sufficient for release preparation. It does not approve DOCX publication, does not create reader release approval, does not replace Word, LibreOffice GUI, Google Docs, or manual document review evidence, does not approve EPUB, PDF, e-reader, audio, or the curated reader edition, and does not promote any claim support state.",
+  "non_claims": [
+    "does not claim Word approval",
+    "does not claim LibreOffice GUI approval",
+    "does not claim Google Docs approval",
+    "does not approve the curated reader DOCX for publication",
+    "does not publish or archive a reader artifact",
+    "does not promote any chapter core claim"
+  ]
+}

@@ -71,6 +71,9 @@ REQUIRED = [
     "docs/reader_docx_text_fallback_review.md",
     "editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json",
     "scripts/validate_reader_docx_textutil_fallback.py",
+    "docs/reader_docx_application_decision.md",
+    "editions/reader_manuscript/v1_0/docx_application_decision_manifest.json",
+    "scripts/validate_reader_docx_application_decision.py",
     "docs/reader_human_consumption_gate_review.md",
     "editions/reader_manuscript/v1_0/human_consumption_gate_manifest.json",
     "docs/reader_final_figure_artifact_review.md",
@@ -995,6 +998,7 @@ def main() -> None:
     run_validator("validate_reader_key_figure_pdf_layout.py")
     run_validator("validate_reader_key_figure_docx_layout.py")
     run_validator("validate_reader_docx_textutil_fallback.py")
+    run_validator("validate_reader_docx_application_decision.py")
     run_validator("validate_reader_key_figure_format_probe.py")
     run_validator("validate_reader_key_figure_html_probe.py")
     run_validator("validate_reader_artifact_inspection_manifest.py")

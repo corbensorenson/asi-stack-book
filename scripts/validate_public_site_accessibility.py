@@ -49,9 +49,9 @@ ACCESSIBILITY_FRAGMENTS = (
     "diagram walkthrough note",
     "manual keyboard-only pass",
     "screen-reader pass",
-    "EPUB e-reader application review",
-    "DOCX application review",
-    "PDF page-by-page layout review",
+    "EPUB publication or e-reader release approval",
+    "DOCX publication or reader release approval",
+    "PDF publication or reader release approval",
     "does not promote any chapter core claim above `argument`",
 )
 

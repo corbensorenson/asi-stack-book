@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-05 - Clear curated DOCX application-evidence blocker
+
+- Added `scripts/validate_reader_docx_application_decision.py`,
+  `editions/reader_manuscript/v1_0/docx_application_decision_manifest.json`,
+  and `docs/reader_docx_application_decision.md` to record the current curated
+  DOCX release-preparation decision.
+- Accepted the tracked repaired DOCX XML/relationship checks, LibreOffice
+  headless Writer conversion/raster review, DOCX key-figure layout review,
+  final figure-artifact review, and Pages-readable text fallback as sufficient
+  to clear only `docx_application_review_not_completed` for the current
+  candidate.
+- Updated the blocked curated-reader release record, format review matrix,
+  release-surface ledger/status row, roadmap, schema, and orchestrated
+  validation around that decision.
+- Boundary: this does not claim Word, LibreOffice GUI, or Google Docs approval;
+  does not approve DOCX publication, reader release, accessibility conformance,
+  audio, EPUB/PDF publication, or the curated reader edition; and does not move
+  any chapter support state.
+
 ## 2026-07-05 - Add curated DOCX Pages text fallback probe
 
 - Added `scripts/validate_reader_docx_textutil_fallback.py`,

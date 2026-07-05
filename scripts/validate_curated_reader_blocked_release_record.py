@@ -24,6 +24,10 @@ KEY_FIGURE_RASTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figu
 KEY_FIGURE_EPUB_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_epub_layout_manifest.json"
 KEY_FIGURE_PDF_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 KEY_FIGURE_DOCX_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
+DOCX_APPLICATION_DECISION = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "docx_application_decision_manifest.json"
+)
+DOCX_APPLICATION_DECISION_DOC = ROOT / "docs" / "reader_docx_application_decision.md"
 EPUB_APP_REVIEW = ROOT / "editions" / "reader_manuscript" / "v1_0" / "epub_apple_books_review_manifest.json"
 EPUB_APP_REVIEW_DOC = ROOT / "docs" / "reader_epub_apple_books_review.md"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
@@ -84,6 +88,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_epub_apple_books_review.py",
     "python3 scripts/validate_reader_key_figure_pdf_layout.py",
     "python3 scripts/validate_reader_key_figure_docx_layout.py",
+    "python3 scripts/validate_reader_docx_application_decision.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_reader_human_consumption_gate.py",
@@ -166,6 +171,8 @@ def main() -> None:
     key_figure_epub_layout = load_json(KEY_FIGURE_EPUB_LAYOUT)
     key_figure_pdf_layout = load_json(KEY_FIGURE_PDF_LAYOUT)
     key_figure_docx_layout = load_json(KEY_FIGURE_DOCX_LAYOUT)
+    docx_application_decision = load_json(DOCX_APPLICATION_DECISION)
+    docx_application_decision_doc = DOCX_APPLICATION_DECISION_DOC.read_text(encoding="utf-8")
     epub_app_review = load_json(EPUB_APP_REVIEW)
     epub_app_review_doc = EPUB_APP_REVIEW_DOC.read_text(encoding="utf-8")
     reader_manifest = load_json(READER_MANIFEST)
@@ -198,6 +205,8 @@ def main() -> None:
         fail([f"{rel(KEY_FIGURE_PDF_LAYOUT)} must contain a JSON object."])
     if not isinstance(key_figure_docx_layout, dict):
         fail([f"{rel(KEY_FIGURE_DOCX_LAYOUT)} must contain a JSON object."])
+    if not isinstance(docx_application_decision, dict):
+        fail([f"{rel(DOCX_APPLICATION_DECISION)} must contain a JSON object."])
     if not isinstance(epub_app_review, dict):
         fail([f"{rel(EPUB_APP_REVIEW)} must contain a JSON object."])
     if not isinstance(reader_manifest, dict):
@@ -499,6 +508,70 @@ def main() -> None:
         ],
         errors,
     )
+    if docx_application_decision.get("status") != "accepted_docx_application_evidence_for_release_preparation":
+        errors.append(
+            "docx_application_decision_manifest status must be "
+            "accepted_docx_application_evidence_for_release_preparation."
+        )
+    if docx_application_decision.get("source_docx_sha256") != curated.get("inspection_summary", {}).get("docx", {}).get(
+        "sha256"
+    ):
+        errors.append("docx_application_decision source_docx_sha256 must match inspection_summary.docx.sha256.")
+    if docx_application_decision.get("repaired_docx_sha256") != docx_audit.get("source_sha256"):
+        errors.append("docx_application_decision repaired_docx_sha256 must match the repaired DOCX audit.")
+    if docx_application_decision.get("docx_libreoffice_review_status") != docx_libreoffice.get("status"):
+        errors.append("docx_application_decision must name the current LibreOffice review status.")
+    if docx_application_decision.get("key_figure_docx_layout_status") != key_figure_docx_layout.get("status"):
+        errors.append("docx_application_decision must name the current DOCX key-figure layout status.")
+    if docx_application_decision.get("final_figure_review_status") != final_figure_review.get("status"):
+        errors.append("docx_application_decision must name the current final-figure review status.")
+    if docx_application_decision.get("cleared_blockers") != ["docx_application_review_not_completed"]:
+        errors.append("docx_application_decision must clear only docx_application_review_not_completed.")
+    required_docx_decision_preserved = {
+        "reader_release_approval_not_created",
+        "manual_keyboard_only_review_not_completed",
+        "screen_reader_review_not_completed",
+        "wcag_conformance_review_not_completed",
+        "reviewed_reader_release_record_not_created_for_audio",
+        "narration_quality_review_not_completed",
+        "audio_files_not_generated",
+        "chapter_markers_not_timecoded",
+        "audio_edition_release_record_not_created",
+    }
+    missing_docx_decision_preserved = sorted(
+        required_docx_decision_preserved - set(docx_application_decision.get("preserved_blockers", []))
+    )
+    if missing_docx_decision_preserved:
+        errors.append(
+            "docx_application_decision_manifest missing preserved blockers: "
+            f"{missing_docx_decision_preserved}"
+        )
+    docx_decision_boundary = str(docx_application_decision.get("release_boundary", ""))
+    text_contains_all(
+        "docx_application_decision.release_boundary",
+        docx_decision_boundary,
+        [
+            "clears only `docx_application_review_not_completed`",
+            "does not approve DOCX publication",
+            "does not create reader release approval",
+            "does not promote any claim support state",
+        ],
+        errors,
+    )
+    text_contains_all(
+        rel(DOCX_APPLICATION_DECISION_DOC),
+        docx_application_decision_doc,
+        [
+            "Reader DOCX Application Evidence Decision",
+            "accepted_docx_application_evidence_for_release_preparation",
+            "clears only `docx_application_review_not_completed`",
+            "504-page PDF",
+            "1,026,949 text characters",
+            "does not claim Word, LibreOffice GUI, or Google Docs approval",
+            "does not approve DOCX publication",
+        ],
+        errors,
+    )
     if chapter_reconciliation_approval.get("status") != "passed_curated_chapter_reconciliation_approval":
         errors.append(
             "chapter_reconciliation_approval manifest status must be "
@@ -785,6 +858,14 @@ def main() -> None:
         "docx_libreoffice_blank_pages": docx_libreoffice.get("blank_pages"),
         "docx_libreoffice_low_ink_pages": docx_libreoffice.get("low_ink_pages"),
         "docx_libreoffice_near_edge_pages": docx_libreoffice.get("near_edge_content_pages"),
+        "docx_application_decision_manifest": "editions/reader_manuscript/v1_0/docx_application_decision_manifest.json",
+        "docx_application_decision_status": docx_application_decision.get("status"),
+        "docx_application_decision_cleared_blockers": len(docx_application_decision.get("cleared_blockers", []))
+        if isinstance(docx_application_decision.get("cleared_blockers"), list)
+        else None,
+        "docx_application_decision_preserved_blockers": len(docx_application_decision.get("preserved_blockers", []))
+        if isinstance(docx_application_decision.get("preserved_blockers"), list)
+        else None,
         "pdf_pages_raster_rendered": pdf_raster.get("pages_rendered"),
         "pdf_blank_raster_pages": pdf_raster.get("blank_pages"),
         "pdf_near_edge_raster_pages": pdf_raster.get("near_edge_content_pages"),
@@ -931,11 +1012,13 @@ def main() -> None:
         "epub key-figure layout",
         "pdf key-figure layout",
         "docx key-figure layout",
+        "docx application-evidence decision",
         "apple books",
         "automated keyboard traversal",
         "pdf page-by-page release-preparation review",
         "final figure-artifact review",
         "clears the current final-figure blocker",
+        "docx_application_review_not_completed",
         "manual keyboard-only",
         "screen-reader",
         "wcag",
@@ -976,6 +1059,10 @@ def main() -> None:
         "10 matched key-figure stems",
         "10 key-figure title pages",
         "72.1 pt minimum title margin",
+        "DOCX application-evidence decision",
+        "clearing only docx_application_review_not_completed",
+        "not release-approved",
+        "Word, LibreOffice GUI, Google Docs, and manual document approval are not claimed",
     ):
         if fragment and fragment not in docx_note:
             errors.append(f"curated_reader_docx notes missing repaired-audit fragment: {fragment}")
@@ -1148,6 +1235,8 @@ def main() -> None:
             "DOCX key-figure layout review",
             "10 key-figure title pages",
             "72.1 pt minimum title margin",
+            "DOCX application-evidence decision",
+            "clears only docx_application_review_not_completed",
             "automated keyboard traversal review",
             "98 page-view pairs",
             "0 keyboard trap candidates",
@@ -1173,6 +1262,7 @@ def main() -> None:
             "EPUB key-figure layout review",
             "PDF key-figure layout review",
             "DOCX key-figure layout review",
+            "DOCX application-evidence decision",
             "PDF page-by-page release-preparation review",
             "final figure-artifact review",
             "chapter reconciliation approval",
@@ -1182,6 +1272,7 @@ def main() -> None:
             "screen-reader",
             "manual aesthetic",
             "visual identity approval",
+            "Word/LibreOffice GUI/Google Docs DOCX review as separate non-claimed evidence",
             "remain open",
         ],
         errors,
@@ -1213,6 +1304,8 @@ def main() -> None:
             "does not clear e-reader application approval",
             "PDF key-figure layout review is recorded as preparation evidence only",
             "PDF page-by-page release-preparation review closes",
+            "DOCX application-evidence decision clears",
+            "does not clear Word/LibreOffice GUI/Google Docs approval",
             "DOCX key-figure layout review is recorded as preparation evidence only",
             "does not clear Word review",
             "does not clear LibreOffice GUI review",

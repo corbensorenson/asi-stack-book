@@ -49,6 +49,6 @@ Boundary phrase for validator stability: this review does not approve the curate
 
 - `reader_release_approval_not_created` remains active.
 - `reader_release_record_not_created` remains active.
-- DOCX application review or an explicit release decision remains open.
+- The DOCX application-evidence decision is now recorded separately; DOCX publication and reader release approval remain open.
 - Manual keyboard-only review, screen-reader review, and WCAG conformance review remain open unless scoped out by a later release decision.
 - Audio narration, timecoding, files, and audio release records remain open.

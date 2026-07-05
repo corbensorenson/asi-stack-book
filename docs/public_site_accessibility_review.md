@@ -18,9 +18,7 @@ appendix tables, color and contrast hooks, keyboard/focus hooks, screen-reader
 hooks, status language, and downstream e-reader boundaries.
 
 This review does not cover a full manual screen-reader pass, full keyboard-only
-walkthrough, WCAG conformance audit, EPUB e-reader application review, DOCX
-application review, PDF page-by-page layout review, or accessibility testing of
-future audio artifacts.
+walkthrough, WCAG conformance audit, EPUB publication or e-reader release approval, DOCX publication or reader release approval, PDF publication or reader release approval, or accessibility testing of future audio artifacts.
 
 ## Evidence Reviewed
 
@@ -57,7 +55,7 @@ future audio artifacts.
 | Color and contrast | Styles use dark body text, high-contrast active toggle color, visible focus styling, and restrained accent colors | Acceptable for current candidate readiness | No measured WCAG contrast report has been run, so no contrast-compliance claim is made. |
 | Keyboard and focus | Toggle buttons are native buttons and have `:focus-visible` styling | Candidate-ready hook exists | No full tab-order, skip-link, or keyboard-only walkthrough has been recorded. |
 | Screen reader | The reading-mode switch exposes an assistive description and polite status updates | Candidate-ready hook exists | No VoiceOver, NVDA, JAWS, or other screen-reader pass has been recorded. |
-| E-reader and reader artifacts | Reader-format probes and the HTML artifact review exist; EPUB/DOCX/PDF blockers remain explicit | Live-site accessibility review does not approve downstream artifacts | EPUB e-reader application review, DOCX application review, and PDF full layout review remain blockers. |
+| E-reader and reader artifacts | Reader-format probes and the HTML artifact review exist; EPUB/DOCX/PDF blockers remain explicit | Live-site accessibility review does not approve downstream artifacts | EPUB publication/e-reader release approval, DOCX publication/release approval, and PDF publication/release approval remain blockers. |
 | Release/status language | Roadmap, candidate status, publication readiness, and release records separate live-site readiness from reader artifact approval | Ready for conservative public status | Final v1.0 tag metadata and DOI/archive facts remain pending until they exist. |
 
 ## Residuals
