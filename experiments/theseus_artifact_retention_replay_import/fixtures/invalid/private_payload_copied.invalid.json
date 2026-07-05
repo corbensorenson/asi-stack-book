@@ -1,0 +1,9 @@
+{
+  "case_id": "private_payload_copied",
+  "base_report": "experiments/theseus_artifact_retention_replay_import/fixtures/valid/artifact_retention_replay_import.valid.json",
+  "mutation": {
+    "path": "private_payload_copied",
+    "value": true
+  },
+  "expected_error_fragment": "private_payload_copied must remain false"
+}

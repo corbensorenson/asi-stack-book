@@ -1,0 +1,81 @@
+{
+  "schema_version": "asi_stack.theseus_artifact_retention_replay_import.v0",
+  "import_id": "theseus-artifact-retention-replay-import-2026-07-05",
+  "source_project": "Project Theseus / Theseus-Hive",
+  "source_report": "reports/theseus_artifact_retention_replay_gate.json",
+  "source_report_created_utc": "2026-06-26T05:32:39.287461Z",
+  "source_report_sha256": "a3d35452ec3a8f0db233f5985d5d0824a1d9f571ee9012970d52303bfece9759",
+  "raw_report_copied": false,
+  "private_payload_copied": false,
+  "private_path_fields_redacted": true,
+  "sanitized_for_public_repo": true,
+  "policy": "project_theseus_artifact_retention_replay_gate_v1",
+  "trigger_state": "GREEN",
+  "summary": {
+    "eligible_action_count": 1,
+    "passed_replay_count": 1,
+    "failed_replay_count": 0,
+    "pointer_verified_count": 1,
+    "defeater_verified_count": 1,
+    "json_parse_verified_count": 1,
+    "hard_gap_count": 0,
+    "runtime_ms": 391
+  },
+  "sanitized_replay_check": {
+    "check_id": "d30286013e9ed1fc004e1eff",
+    "status": "archived",
+    "passed": true,
+    "path_fields_redacted": true,
+    "expected_sha256": "5d26d57612479e1b5a0547af49e34d8ae779aef41e91b3eb2e676ad415a99da3",
+    "decoded_sha256": "5d26d57612479e1b5a0547af49e34d8ae779aef41e91b3eb2e676ad415a99da3",
+    "archive_exists": true,
+    "pointer_verified": true,
+    "resolver_verified": true,
+    "hash_verified": true,
+    "json_parse_verified": true,
+    "defeater_verified": true,
+    "compression_record_verified": true,
+    "payload_bytes": 41943527,
+    "archived_bytes": 2389576,
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0
+  },
+  "record_counts": {
+    "compressed_artifact_records": 1,
+    "compression_receipts": 1,
+    "proof_contract_receipt_records": 1,
+    "claim_records": 1,
+    "artifact_graph_records": 1,
+    "evidence_transition_records": 1,
+    "defeater_records": 1
+  },
+  "claim_boundary": {
+    "claim_id": "project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import",
+    "old_support_state": "argument",
+    "new_support_state": "prototype-backed",
+    "transition_effect": "upward",
+    "chapter_core_support_effect": "none",
+    "support_state_effect": "eligible_for_bounded_evidence_review",
+    "chapter_core_promotion_claimed": false,
+    "model_quality_claimed": false,
+    "benchmark_performance_claimed": false,
+    "clean_live_theseus_replay_claimed": false,
+    "deployed_residual_ledger_claimed": false,
+    "deployed_artifact_graph_claimed": false
+  },
+  "public_safety_boundary": {
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0,
+    "raw_private_payloads_exported": false,
+    "public_prompts_tests_solutions_traces_or_score_labels_exported": false
+  },
+  "non_claims": [
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove clean live Project Theseus replay",
+    "does not prove deployed residual-ledger storage or deployed artifact-graph behavior",
+    "does not prove model quality, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}

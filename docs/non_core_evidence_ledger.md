@@ -1,6 +1,6 @@
 # Non-Core Evidence Ledger
 
-Last updated: 2026-07-04
+Last updated: 2026-07-05
 
 This ledger makes the currently accepted non-core evidence transitions visible
 without promoting any chapter core claim. It is a public trust surface for
@@ -11,7 +11,7 @@ readers, reviewers, and future writing agents.
 | Field | Status |
 |---|---|
 | Chapter core claims | All 44 remain at `argument`. |
-| Accepted non-core upward transitions | 6 narrow transitions. |
+| Accepted non-core upward transitions | 7 narrow transitions. |
 | Accepted no-promotion side-lane decisions | 30 accepted `blocks_promotion` decisions; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
 | Chapter-core promotion effect | None. |
@@ -28,6 +28,7 @@ readers, reviewers, and future writing agents.
 | `resource-economics.scoped_workflow_trace_route_selector` | `empirical-test-backed` | `docs/resource_workload_quality_probe.md`; `evidence_transitions/v1_x_measured/resource_workload_quality_selector_empirical_test_backed.json` | The bounded local repository-task selector claim that five measured samples per route select the scoped workflow-trace validator over the broader Resource live-probe baseline while rejecting a cheaper no-op success-text command that exits 0 without producing the required validation surface. | No chapter core claim, broader workload-quality claim, stable-speedup claim, deployed scheduler, TokenMana, PlanForge, production workload, economic, benchmark, model-quality, safety, or source-interpretation claim moved. |
 | `circle-calculus.external_rope_receipt_replay` | `prototype-backed` | `docs/circle_external_receipt_slice.md`; `evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json` | The bounded imported external-prototype receipt fact that a clean local Circle checkout at commit `63b0f511` built the Circle target, certified one rope position distinguishability contract, emitted/accepted the recorded receipt, and passed the selected receipt/contract test batch summarized in the public-safe result record. | No chapter core claim, deployed proof-contract transport, model quality, reasoning ability, context length, speed, memory scaling, transfer, benchmark, safety, or ASI claim moved. |
 | `compact-generative-systems.compact_gvr_receipt_slice` | `synthetic-test-backed` | `docs/compact_gvr_slice.md`; `evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json` | The bounded synthetic compact-generation/GVR receipt claim that a local validator compares a 368-byte literal baseline to a 78-byte exact compact generator-plus-repair receipt, rejects lossy exactness, negative-rate/no-fallback, and bounded-search-overrun controls, and checks a finite Lean fixture bridge. | No chapter core claim, deployed compression, codec correctness, semantic utility, fallback execution, benchmark, model-quality, safety, ASI, or source-interpretation claim moved. |
+| `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import` | `prototype-backed` | `docs/theseus_artifact_retention_replay_import.md`; `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json` | The bounded sanitized Project Theseus artifact-retention replay import records one exact-hash retained-artifact replay, 41,943,527 replayed payload bytes, 2,389,576 archived bytes, one compressed-artifact record, one compression receipt, one proof-contract receipt, one claim record, one artifact-graph record, one storage evidence-transition record, one defeater record, zero public training rows, zero external inference calls, and seven expected-invalid controls. | No Project Theseus chapter core claim, clean live Project Theseus replay, deployed residual-ledger storage, deployed artifact-graph behavior, model quality, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, or ASI claim moved. |
 
 ## Accepted No-Promotion Side-Lane Decisions
 
@@ -83,7 +84,7 @@ reader-quality edits do not promote a claim by themselves.
 The ledger is checked by `scripts/validate_non_core_evidence_ledger.py`. That
 validator reads the accepted transition records under
 `evidence_transitions/v1_0_measured/` and `evidence_transitions/v1_x_measured/`,
-checks that all six current non-core upward claims are listed here, derives and
+checks that all seven current non-core upward claims are listed here, derives and
 checks all accepted `blocks_promotion` side-lane decisions, checks the live
 claim-surface narrowing record, checks the chapter-core non-promotion boundary,
 and checks that the public entry surfaces link to this ledger. The live

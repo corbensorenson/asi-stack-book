@@ -1,0 +1,9 @@
+{
+  "case_id": "path_redaction_disabled",
+  "base_report": "experiments/theseus_artifact_retention_replay_import/fixtures/valid/artifact_retention_replay_import.valid.json",
+  "mutation": {
+    "path": "sanitized_replay_check.path_fields_redacted",
+    "value": false
+  },
+  "expected_error_fragment": "path_fields_redacted must be true"
+}

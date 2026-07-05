@@ -22,12 +22,34 @@ SUPPORT_REPLAY = ROOT / "experiments" / "theseus_support_replay_probe" / "result
 TASK_RESULT = ROOT / "experiments" / "theseus_public_task_bundle_import" / "results" / "2026-07-03-local.json"
 TASK_FIXTURE = ROOT / "experiments" / "theseus_public_task_bundle_import" / "fixtures" / "valid" / "public_task_bundle_import.valid.json"
 NO_PROMOTION = ROOT / "evidence_transitions" / "v1_x_measured" / "theseus_public_task_bundle_import_no_change.json"
+ARTIFACT_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_artifact_retention_replay_import"
+    / "results"
+    / "2026-07-05-local.json"
+)
+ARTIFACT_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_artifact_retention_replay_import"
+    / "fixtures"
+    / "valid"
+    / "artifact_retention_replay_import.valid.json"
+)
+ARTIFACT_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_artifact_retention_replay_import_prototype_backed.json"
+)
 
 DOCS = (
     "docs/theseus_report_import_slice.md",
     "docs/theseus_generation_mode_import_slice.md",
     "docs/theseus_support_replay_probe.md",
     "docs/theseus_public_task_bundle_import.md",
+    "docs/theseus_artifact_retention_replay_import.md",
 )
 VALIDATORS = (
     "python3 scripts/validate_theseus_report.py",
@@ -35,6 +57,7 @@ VALIDATORS = (
     "python3 scripts/run_theseus_support_replay_probe.py --write-result",
     "python3 scripts/validate_theseus_support_replay_probe.py",
     "python3 scripts/validate_theseus_public_task_bundle_import.py",
+    "python3 scripts/validate_theseus_artifact_retention_replay_import.py",
 )
 
 
@@ -60,18 +83,23 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: "
         f"{metrics['static_report_imports']} sanitized static report imports, "
         f"{metrics['support_replay_count']} support replay probe, "
+        f"{metrics['artifact_retention_replay_imports']} artifact-retention replay import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
         f"{metrics['public_training_rows']} public training rows, "
         f"{metrics['generation_mode_count']} generation modes, "
         f"{metrics['generation_comparison_count']} comparisons, "
         f"{metrics['promotable_comparison_count']} promotable comparisons, "
         f"{metrics['expected_invalid_total']} expected-invalid controls, "
-        f"and {metrics['no_promotion_decisions']} accepted no-promotion decision; clean live replay remains unclaimed. "
+        f"{metrics['no_promotion_decisions']} accepted no-promotion decision, "
+        f"and {metrics['artifact_upward_transitions']} accepted bounded artifact-retention transition; "
+        "clean live replay remains unclaimed. "
         "| `docs/project_theseus_static_import_status_ledger.md`; "
         "`docs/theseus_report_import_slice.md`; "
         "`docs/theseus_generation_mode_import_slice.md`; "
         "`docs/theseus_support_replay_probe.md`; "
         "`docs/theseus_public_task_bundle_import.md`; "
+        "`docs/theseus_artifact_retention_replay_import.md`; "
+        "`evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json`; "
         "`evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`; "
         "`python3 scripts/validate_project_theseus_static_import_status_ledger.py` |"
     )
@@ -88,6 +116,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         TASK_RESULT,
         TASK_FIXTURE,
         NO_PROMOTION,
+        ARTIFACT_RESULT,
+        ARTIFACT_FIXTURE,
+        ARTIFACT_TRANSITION,
         *(ROOT / path for path in DOCS),
     ]
     for path in required:
@@ -104,6 +135,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     task_result = load_json(TASK_RESULT)
     task_fixture = load_json(TASK_FIXTURE)
     no_promotion = load_json(NO_PROMOTION)
+    artifact_result = load_json(ARTIFACT_RESULT)
+    artifact_fixture = load_json(ARTIFACT_FIXTURE)
+    artifact_transition = load_json(ARTIFACT_TRANSITION)
 
     if arch_result.get("validation_result") != "pass":
         errors.append("architecture-gate import result must pass.")
@@ -195,9 +229,52 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         if fragment not in no_promotion_text:
             errors.append(f"Theseus no-promotion decision missing boundary fragment: {fragment}")
 
+    artifact_counts = artifact_result.get("record_counts", {})
+    artifact_replay = artifact_fixture.get("sanitized_replay_check", {})
+    artifact_boundary = artifact_fixture.get("claim_boundary", {})
+    artifact_safety = artifact_fixture.get("public_safety_boundary", {})
+    if artifact_result.get("validation_result") != "pass":
+        errors.append("Theseus artifact-retention replay import result must pass.")
+    if artifact_result.get("expected_invalid_count") != 7:
+        errors.append("Theseus artifact-retention replay import must keep seven expected-invalid controls.")
+    if artifact_result.get("payload_bytes") != 41943527 or artifact_replay.get("payload_bytes") != 41943527:
+        errors.append("Theseus artifact-retention replay import must keep 41,943,527 replayed payload bytes.")
+    if artifact_result.get("archived_bytes") != 2389576 or artifact_replay.get("archived_bytes") != 2389576:
+        errors.append("Theseus artifact-retention replay import must keep 2,389,576 archived bytes.")
+    if artifact_result.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus artifact-retention replay import must remain prototype-backed.")
+    if artifact_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus artifact-retention replay import must preserve chapter_core_support_effect none.")
+    if artifact_boundary.get("chapter_core_promotion_claimed") is not False:
+        errors.append("Theseus artifact-retention replay import must not claim chapter-core promotion.")
+    if artifact_safety.get("public_training_rows_written") != 0 or artifact_safety.get("external_inference_calls") != 0:
+        errors.append("Theseus artifact-retention replay import must keep zero public training rows and external inference calls.")
+    for field in (
+        "compressed_artifact_records",
+        "compression_receipts",
+        "proof_contract_receipt_records",
+        "claim_records",
+        "artifact_graph_records",
+        "evidence_transition_records",
+        "defeater_records",
+    ):
+        if artifact_counts.get(field) != 1:
+            errors.append(f"Theseus artifact-retention replay import record count drifted for {field}.")
+    if artifact_transition.get("review_status") != "accepted":
+        errors.append("Theseus artifact-retention replay transition must remain accepted.")
+    if artifact_transition.get("transition_effect") != "upward":
+        errors.append("Theseus artifact-retention replay transition_effect must remain upward.")
+    if artifact_transition.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus artifact-retention replay transition must remain prototype-backed.")
+    if "does not prove clean live Project Theseus replay" not in " ".join(
+        str(item) for item in artifact_transition.get("non_claims", [])
+    ):
+        errors.append("Theseus artifact-retention replay transition missing clean-live-replay non-claim.")
+
     metrics = {
         "static_report_imports": 2,
         "support_replay_count": 1,
+        "artifact_retention_replay_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
         "support_replay_tracked_artifacts": len(support_replay.get("tracked_artifacts", [])),
         "architecture_gate_count": arch_result.get("accepted_gate_count"),
@@ -228,9 +305,15 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "quality_pass_count": quality.get("quality_pass_count"),
         "public_calibration_pass_rate": benchmark.get("real_public_task_pass_rate"),
         "task_expected_invalid": task_result.get("expected_invalid_count"),
+        "artifact_payload_bytes": artifact_result.get("payload_bytes"),
+        "artifact_archived_bytes": artifact_result.get("archived_bytes"),
+        "artifact_compression_ratio": artifact_result.get("compression_ratio_observed_not_benchmarked"),
+        "artifact_expected_invalid": artifact_result.get("expected_invalid_count"),
+        "artifact_upward_transitions": 1,
         "expected_invalid_total": arch_result.get("expected_invalid_count", 0)
         + gen_result.get("expected_invalid_count", 0)
-        + task_result.get("expected_invalid_count", 0),
+        + task_result.get("expected_invalid_count", 0)
+        + artifact_result.get("expected_invalid_count", 0),
         "no_promotion_decisions": 1,
         "source_commit_short": str(source_project.get("commit", ""))[:8],
     }
@@ -253,6 +336,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "|---|---:|",
             f"| Sanitized static report imports | {metrics['static_report_imports']} |",
             f"| Support replay probes | {metrics['support_replay_count']} |",
+            f"| Artifact-retention replay imports | {metrics['artifact_retention_replay_imports']} |",
             f"| Replayed validators in support probe | {metrics['support_replay_commands']} |",
             f"| Support replay tracked artifacts | {metrics['support_replay_tracked_artifacts']} |",
             f"| Architecture gates passed | {metrics['architecture_gate_passed']} / {metrics['architecture_gate_count']} |",
@@ -267,6 +351,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Residuals / artifact gaps | {metrics['residual_count']} / {metrics['artifact_gap_count']} |",
             f"| Expected-invalid controls | {metrics['expected_invalid_total']} |",
             f"| Accepted no-promotion decisions | {metrics['no_promotion_decisions']} |",
+            f"| Accepted bounded artifact-retention transitions | {metrics['artifact_upward_transitions']} |",
             "",
             "## Status-Page Row",
             "",
@@ -279,13 +364,16 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/theseus_support_replay_probe.md` records {metrics['support_replay_commands']} local validator replays and {metrics['support_replay_tracked_artifacts']} tracked artifact hashes with support-state effect `none`.",
             f"- `docs/theseus_public_task_bundle_import.md` records {metrics['source_report_count']} source reports, {metrics['public_task_count']} metadata-only public tasks, {metrics['public_training_rows']} public training rows, {metrics['external_inference_calls']} external inference calls, {metrics['operator_gate_passed']}/{metrics['operator_gate_count']} operator gates, {metrics['benchmark_gate_passed']}/{metrics['benchmark_gate_count']} benchmark gates, {metrics['residual_count']} residuals, {metrics['task_regression_count']} task-level regressions, {metrics['student_candidate_count']} student candidates in the public summary, {metrics['quality_pass_count']} quality-passing candidates, {metrics['artifact_gap_count']} artifact gaps, and {metrics['task_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json` is the accepted no-promotion decision: it blocks clean-live-replay, model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, deployment, self-evolution, and chapter-core promotion claims.",
+            f"- `docs/theseus_artifact_retention_replay_import.md` records one sanitized artifact-retention replay import with {metrics['artifact_payload_bytes']} replayed payload bytes, {metrics['artifact_archived_bytes']} archived bytes, observed ratio {metrics['artifact_compression_ratio']} not benchmarked, one compressed-artifact record, one proof-contract receipt, one artifact-graph record, one storage evidence-transition record, and {metrics['artifact_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import`; it does not prove clean live Project Theseus replay and does not promote the Project Theseus chapter core claim.",
             "",
             "## Non-Claim Boundary",
             "",
             "- This ledger does not prove clean live Project Theseus replay.",
             "- This ledger does not prove model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, deployment readiness, self-evolution, transfer, safety, or ASI.",
             "- This ledger does not copy private Project Theseus payloads, prompts, tests, solutions, candidate code, traces, score labels, checkpoints, or training rows into this repository.",
-            "- This ledger does not promote any chapter core claim above `argument` and does not create an upward support-state transition.",
+            "- This ledger does not promote any chapter core claim above `argument` and does not create a chapter-core upward support-state transition.",
+            "- The artifact-retention replay import creates only a bounded non-core support transition; it does not prove deployed residual-ledger storage, deployed artifact-graph behavior, clean live Project Theseus replay, model quality, benchmark performance, safety, alignment, deployment readiness, or ASI.",
             "",
             "## Validation Errors",
             "",

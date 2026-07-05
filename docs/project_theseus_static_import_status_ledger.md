@@ -10,6 +10,7 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 |---|---:|
 | Sanitized static report imports | 2 |
 | Support replay probes | 1 |
+| Artifact-retention replay imports | 1 |
 | Replayed validators in support probe | 2 |
 | Support replay tracked artifacts | 10 |
 | Architecture gates passed | 14 / 14 |
@@ -22,12 +23,13 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 | Operator gates passed | 12 / 12 |
 | Benchmark gates passed | 18 / 18 |
 | Residuals / artifact gaps | 19 / 5 |
-| Expected-invalid controls | 16 |
+| Expected-invalid controls | 23 |
 | Accepted no-promotion decisions | 1 |
+| Accepted bounded artifact-retention transitions | 1 |
 
 ## Status-Page Row
 
-| Project Theseus static import lane | Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: 2 sanitized static report imports, 1 support replay probe, 64 metadata-only public tasks, 0 public training rows, 18 generation modes, 13 comparisons, 0 promotable comparisons, 16 expected-invalid controls, and 1 accepted no-promotion decision; clean live replay remains unclaimed. | `docs/project_theseus_static_import_status_ledger.md`; `docs/theseus_report_import_slice.md`; `docs/theseus_generation_mode_import_slice.md`; `docs/theseus_support_replay_probe.md`; `docs/theseus_public_task_bundle_import.md`; `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`; `python3 scripts/validate_project_theseus_static_import_status_ledger.py` |
+| Project Theseus static import lane | Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: 2 sanitized static report imports, 1 support replay probe, 1 artifact-retention replay import, 64 metadata-only public tasks, 0 public training rows, 18 generation modes, 13 comparisons, 0 promotable comparisons, 23 expected-invalid controls, 1 accepted no-promotion decision, and 1 accepted bounded artifact-retention transition; clean live replay remains unclaimed. | `docs/project_theseus_static_import_status_ledger.md`; `docs/theseus_report_import_slice.md`; `docs/theseus_generation_mode_import_slice.md`; `docs/theseus_support_replay_probe.md`; `docs/theseus_public_task_bundle_import.md`; `docs/theseus_artifact_retention_replay_import.md`; `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json`; `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`; `python3 scripts/validate_project_theseus_static_import_status_ledger.py` |
 
 ## Imported Evidence Surfaces
 
@@ -36,13 +38,16 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 - `docs/theseus_support_replay_probe.md` records 2 local validator replays and 10 tracked artifact hashes with support-state effect `none`.
 - `docs/theseus_public_task_bundle_import.md` records 7 source reports, 64 metadata-only public tasks, 0 public training rows, 0 external inference calls, 12/12 operator gates, 18/18 benchmark gates, 19 residuals, 0 task-level regressions, 512 student candidates in the public summary, 45 quality-passing candidates, 5 artifact gaps, and 7 expected-invalid controls.
 - `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json` is the accepted no-promotion decision: it blocks clean-live-replay, model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, deployment, self-evolution, and chapter-core promotion claims.
+- `docs/theseus_artifact_retention_replay_import.md` records one sanitized artifact-retention replay import with 41943527 replayed payload bytes, 2389576 archived bytes, observed ratio 17.553 not benchmarked, one compressed-artifact record, one proof-contract receipt, one artifact-graph record, one storage evidence-transition record, and 7 expected-invalid controls.
+- `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import`; it does not prove clean live Project Theseus replay and does not promote the Project Theseus chapter core claim.
 
 ## Non-Claim Boundary
 
 - This ledger does not prove clean live Project Theseus replay.
 - This ledger does not prove model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, deployment readiness, self-evolution, transfer, safety, or ASI.
 - This ledger does not copy private Project Theseus payloads, prompts, tests, solutions, candidate code, traces, score labels, checkpoints, or training rows into this repository.
-- This ledger does not promote any chapter core claim above `argument` and does not create an upward support-state transition.
+- This ledger does not promote any chapter core claim above `argument` and does not create a chapter-core upward support-state transition.
+- The artifact-retention replay import creates only a bounded non-core support transition; it does not prove deployed residual-ledger storage, deployed artifact-graph behavior, clean live Project Theseus replay, model quality, benchmark performance, safety, alignment, deployment readiness, or ASI.
 
 ## Validation Errors
 

@@ -1,0 +1,9 @@
+{
+  "case_id": "missing_non_claim",
+  "base_report": "experiments/theseus_artifact_retention_replay_import/fixtures/valid/artifact_retention_replay_import.valid.json",
+  "mutation": {
+    "path": "non_claims.4",
+    "value": "does not mention chapter-core boundaries"
+  },
+  "expected_error_fragment": "non_claims missing"
+}

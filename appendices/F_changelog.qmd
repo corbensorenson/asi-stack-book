@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-07-05 - Import Theseus artifact-retention replay gate
+
+- Added `python3 scripts/validate_theseus_artifact_retention_replay_import.py`,
+  `docs/theseus_artifact_retention_replay_import.md`, sanitized fixtures under
+  `experiments/theseus_artifact_retention_replay_import/`, and accepted
+  transition record
+  `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json`
+  for `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import`.
+- The Theseus artifact-retention replay import records
+  `theseus-artifact-retention-replay-import-2026-07-05`:
+  source report digest
+  `a3d35452ec3a8f0db233f5985d5d0824a1d9f571ee9012970d52303bfece9759`,
+  one exact-hash retained-artifact replay, 41,943,527 replayed payload bytes,
+  2,389,576 archived bytes, one compressed-artifact record, one
+  proof-contract receipt, one artifact-graph record, one storage
+  evidence-transition record, one defeater record, zero public training rows,
+  zero external inference calls, and seven expected-invalid controls.
+- Added `lean:theseus.reference.artifact_retention_replay_import.fixture_bridge`
+  to `AsiStackProofs.TheseusReference` for the finite public-safe replay
+  fixture, hash-mismatch rejection, and chapter-core promotion-overclaim
+  rejection.
+- Updated the Project Theseus live chapter, curated reader chapter, outline,
+  manifest, non-core evidence ledger, accepted-transition audit, trust
+  surfaces, status ledgers, roadmap, and validation wiring so the import is
+  visible as the seventh accepted narrow non-core upward transition.
+- Boundary: this moves only the bounded non-core artifact-retention import
+  claim from `argument` to `prototype-backed`. It does not prove clean live
+  Project Theseus replay, deployed residual-ledger storage, deployed
+  artifact-graph behavior, model quality, benchmark performance, generation
+  speed, safety, alignment, transfer, deployment readiness, ASI, or any
+  Project Theseus chapter-core support-state promotion.
+
 ## 2026-07-05 - Add reader release-candidate bridge
 
 - Added `python3 scripts/validate_reader_release_candidate_bridge.py`,
@@ -13,8 +45,8 @@
   do not clear missing accessibility review, missing audio routes to audio
   review, missing approval routes to release approval, and support-promotion
   overclaims are rejected.
-- Current proof-depth snapshot: 201 proof targets, 54 Lean modules, 999 theorem
-  declarations, 811 derived/decomposed, 184 direct/projection, 4 unknown/mixed,
+- Current proof-depth snapshot: 202 proof targets, 54 Lean modules, 1002 theorem
+  declarations, 814 derived/decomposed, 184 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 - Wired the bridge into `validate_book.py`, `docs/book_outline.md`,
   `book_structure.json`, and the v1.x roadmap so future proof/evidence runs see

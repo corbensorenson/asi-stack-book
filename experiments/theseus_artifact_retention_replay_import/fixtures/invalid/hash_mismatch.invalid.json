@@ -1,0 +1,9 @@
+{
+  "case_id": "hash_mismatch",
+  "base_report": "experiments/theseus_artifact_retention_replay_import/fixtures/valid/artifact_retention_replay_import.valid.json",
+  "mutation": {
+    "path": "sanitized_replay_check.decoded_sha256",
+    "value": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "expected_error_fragment": "decoded_sha256 must equal expected_sha256"
+}

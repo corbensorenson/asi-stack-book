@@ -1,0 +1,9 @@
+{
+  "case_id": "hard_gap_present",
+  "base_report": "experiments/theseus_artifact_retention_replay_import/fixtures/valid/artifact_retention_replay_import.valid.json",
+  "mutation": {
+    "path": "summary.hard_gap_count",
+    "value": 1
+  },
+  "expected_error_fragment": "summary.hard_gap_count must be 0"
+}

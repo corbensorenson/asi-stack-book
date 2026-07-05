@@ -12356,6 +12356,13 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_fast_support_lane.py`"
             },
             {
+              "name": "Theseus artifact-retention replay import validation",
+              "purpose": "Validate a sanitized public-safe Project Theseus artifact-retention replay import with exact retained-payload hash replay, source-report digest, public-safety redaction boundary, record-count checks, accepted bounded non-core transition, and expected-invalid controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_artifact_retention_replay_import.py`; result `theseus-artifact-retention-replay-import-2026-07-05` checks 41,943,527 replayed payload bytes, 2,389,576 archived bytes, 7 expected-invalid controls, and bounded claim `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import` from `argument` to `prototype-backed`; does not prove clean live Project Theseus replay, deployed residual-ledger storage, deployed artifact-graph behavior, model quality, benchmark performance, safety, alignment, ASI, or chapter-core promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_artifact_retention_replay_import.py`"
+            },
+            {
               "name": "Report-bundle completeness test",
               "purpose": "Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported.",
               "implementation_status": "implemented",
@@ -12493,6 +12500,12 @@
               "tag": "lean:theseus.reference.fast_support_aggregate.fixture_bridge",
               "module": "AsiStackProofs.TheseusReference",
               "target": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:theseus.reference.artifact_retention_replay_import.fixture_bridge",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
               "status": "implemented"
             }
           ]

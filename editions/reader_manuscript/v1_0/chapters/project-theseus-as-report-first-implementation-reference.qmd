@@ -209,6 +209,25 @@ and does not promote any chapter core claim.
 
 Boundary sentence: clean live Theseus replay remains unclaimed.
 
+The artifact-retention replay import is the first Theseus lane in this chapter
+that records a bounded replay fact instead of only report shape. The validator
+`python3 scripts/validate_theseus_artifact_retention_replay_import.py` checks
+the sanitized public fixture for one exact-hash retained-artifact replay,
+private-path redaction, 41,943,527 replayed payload bytes, 2,389,576 archived
+bytes, one compressed-artifact record, one proof-contract receipt, one
+artifact-graph record, one storage evidence-transition record, zero public
+training rows, zero external inference calls, and seven expected-invalid
+controls. That is enough to move only the narrow non-core claim
+`project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import`
+from `argument` to `prototype-backed`.
+
+It does not prove clean live Project Theseus replay. It does not prove deployed
+residual-ledger storage, deployed artifact-graph behavior, model quality,
+benchmark performance, generation speed, safety, alignment, transfer,
+deployment readiness, ASI, or the Project Theseus chapter core claim. The
+replay import is useful precisely because it demonstrates a small piece of
+report-first machinery without relaxing the chapter boundary.
+
 The whole surface is narrow. It does not rerun Project Theseus. It does not
 prove that the current checkout is clean. It does not reproduce a benchmark. It
 does not inspect a live dashboard. It does not authorize training. It does not

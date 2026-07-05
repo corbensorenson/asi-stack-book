@@ -44,13 +44,17 @@ EXPECTED = {
         "state": "synthetic-test-backed",
         "transition": "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
     },
+    "project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import": {
+        "state": "prototype-backed",
+        "transition": "evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json",
+    },
 }
 
 NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
 
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
-    "Accepted non-core upward transitions | 6 narrow transitions.",
+    "Accepted non-core upward transitions | 7 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Accepted No-Promotion Side-Lane Decisions",
@@ -231,19 +235,19 @@ def main() -> None:
             errors.append(f"{name} does not reference {ref}")
 
     surface_counts = [
-        ("README.md", readme, "six narrow non-core transitions are accepted"),
-        ("index.qmd", index, "Six narrow non-core evidence transitions accepted"),
-        ("index.qmd", index, "Six narrow non-core transitions are accepted"),
+        ("README.md", readme, "seven narrow non-core transitions are accepted"),
+        ("index.qmd", index, "Seven narrow non-core evidence transitions accepted"),
+        ("index.qmd", index, "Seven narrow non-core transitions are accepted"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():
-            errors.append(f"{name} does not expose the current six-transition count: {required}")
+            errors.append(f"{name} does not expose the current seven-transition count: {required}")
 
     if errors:
         fail(errors)
 
     print(
-        "Non-core evidence ledger validation passed: 6 accepted non-core upward transitions, "
+        "Non-core evidence ledger validation passed: 7 accepted non-core upward transitions, "
         f"{len(no_promotion_expected)} accepted side-lane no-promotion decisions, "
         "0 chapter-core promotions."
     )

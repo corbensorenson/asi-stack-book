@@ -56,7 +56,7 @@ script order.
 | Image narration notes | 11 |
 | Code/schema narration notes | 0 |
 | Implementation-horizon chapter scripts | 44 |
-| Text checked | 1,070,046 text characters |
+| Text checked | 1,071,293 text characters |
 | Word tokens checked | 143,684 |
 | Replacement characters | 0 |
 | Live/research marker hits | 0 |

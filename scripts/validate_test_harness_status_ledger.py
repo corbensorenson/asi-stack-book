@@ -171,6 +171,13 @@ BOOK_GATE_CHECKS = [
         "boundary": "No clean live replay, model-quality, speed, useful-solution-per-second, or support-state claim.",
     },
     {
+        "name": "Theseus artifact-retention replay import",
+        "doc": "docs/theseus_artifact_retention_replay_import.md",
+        "script": "scripts/validate_theseus_artifact_retention_replay_import.py",
+        "summary": "Sanitized exact-hash artifact-retention replay import with record counts, redaction checks, and seven controls.",
+        "boundary": "No clean live replay, deployed residual-ledger or artifact-graph behavior, model-quality, benchmark, safety, ASI, or chapter-core claim.",
+    },
+    {
         "name": "Compact GVR synthetic slice",
         "doc": "docs/compact_gvr_slice.md",
         "script": "scripts/validate_compact_gvr_slice.py",
@@ -335,6 +342,7 @@ BOOK_GATE_RESULTS_BY_SCRIPT = {
     "scripts/validate_theseus_support_replay_probe.py": "experiments/theseus_support_replay_probe/results/2026-07-01-local.json",
     "scripts/validate_theseus_report_bundle_audit.py": "experiments/theseus_report_bundle_audit/results/2026-07-02-local.json",
     "scripts/validate_theseus_public_task_bundle_import.py": "experiments/theseus_public_task_bundle_import/results/2026-07-03-local.json",
+    "scripts/validate_theseus_artifact_retention_replay_import.py": "experiments/theseus_artifact_retention_replay_import/results/2026-07-05-local.json",
     "scripts/validate_compact_gvr_slice.py": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
     "scripts/validate_residual_ledger_storage_replay.py": "experiments/residual_ledger_storage_replay/results/2026-07-04-local.json",
     "scripts/validate_hive_admission.py": "experiments/hive_admission/results/2026-07-01-local.md",
@@ -487,8 +495,8 @@ def validate(args: argparse.Namespace) -> list[str]:
         return ["experiments/phase5_harness_registry.json must contain a list."]
     if len(registry) != 22:
         errors.append(f"Expected 22 Phase 5 registry harnesses, found {len(registry)}.")
-    if len(BOOK_GATE_CHECKS) != 41:
-        errors.append(f"Expected 41 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
+    if len(BOOK_GATE_CHECKS) != 42:
+        errors.append(f"Expected 42 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
 
     names = [check["name"] for check in BOOK_GATE_CHECKS]
     duplicates = sorted({name for name in names if names.count(name) > 1})

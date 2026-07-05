@@ -301,6 +301,10 @@ REQUIRED = [
     "scripts/validate_fast_generation_task_bundle.py",
     "scripts/run_theseus_fast_support_lane.py",
     "scripts/validate_theseus_fast_support_lane.py",
+    "scripts/validate_theseus_artifact_retention_replay_import.py",
+    "docs/theseus_artifact_retention_replay_import.md",
+    "experiments/theseus_artifact_retention_replay_import/results/2026-07-05-local.json",
+    "evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json",
     "scripts/validate_compact_gvr_slice.py",
     "scripts/validate_residual_honesty_conservation.py",
     "scripts/validate_residual_ledger_trace.py",
@@ -1174,6 +1178,7 @@ def main() -> None:
     run_validator("validate_theseus_support_replay_probe.py")
     run_validator("validate_theseus_report_bundle_audit.py")
     run_validator("validate_theseus_public_task_bundle_import.py")
+    run_validator("validate_theseus_artifact_retention_replay_import.py")
     run_validator("validate_theseus_concrete_evidence_surface.py")
     run_validator("validate_prototype_phase_gates.py")
     run_validator("validate_phase5_harness_registry.py")

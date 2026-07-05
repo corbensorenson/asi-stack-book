@@ -1,0 +1,111 @@
+{
+  "transition_id": "v1_x_measured.theseus_artifact_retention_replay_import.prototype_backed",
+  "claim_id": "project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import",
+  "claim_surface_refs": [
+    "docs/theseus_artifact_retention_replay_import.md",
+    "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "editions/reader_manuscript/v1_0/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_artifact_retention_replay_import/fixtures/valid/artifact_retention_replay_import.valid.json",
+    "experiments/theseus_artifact_retention_replay_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_artifact_retention_replay_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "prototype-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded Project Theseus artifact-retention replay-gate import moves to prototype-backed: a sanitized public-safe fixture records one local Theseus report with GREEN trigger state, one passed exact-hash retained-artifact replay, pointer/resolver/hash/JSON/defeater/compression-record verification, 41,943,527 replayed payload bytes, 2,389,576 archived bytes, one artifact-graph record, one proof-contract receipt, one storage evidence-transition record, zero public training rows, zero external inference calls, and seven expected-invalid controls. This does not promote the Project Theseus chapter core claim, deployed residual-ledger storage, deployed artifact-graph behavior, clean live Project Theseus replay, model quality, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, or ASI.",
+  "evidence_roles": [
+    "external_project_prototype_report_import",
+    "sanitized_public_fixture",
+    "exact_hash_replay_record",
+    "artifact_graph_record",
+    "proof_contract_receipt",
+    "defeater_resolution_record",
+    "expected_invalid_controls",
+    "lean_python_fixture_alignment",
+    "no_chapter_core_promotion_boundary"
+  ],
+  "transition_reason": "The imported Theseus report records a real artifact-retention replay gate rather than only a proposed report shape: a retained artifact pointer was followed, its archive payload was decoded, the decoded payload SHA-256 matched the expected payload SHA-256, the payload parsed as JSON, the defeater was verified, and the result emitted artifact-graph, proof-contract, claim, storage-transition, and defeater records. The ASI Stack repository validates only a sanitized public-safe summary, so the support movement is limited to the non-core import claim and remains prototype-backed rather than empirical-test-backed or chapter-core evidence.",
+  "required_artifacts": [
+    "sanitized public-safe Theseus artifact-retention replay fixture",
+    "source report digest",
+    "exact payload hash replay status",
+    "public-safety redaction boundary",
+    "negative controls for hash mismatch, private-payload copying, training-row leakage, hard-gap erasure, and support overclaim",
+    "finite Lean fixture alignment",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/theseus_artifact_retention_replay_import.md",
+    "experiments/theseus_artifact_retention_replay_import/fixtures/valid/artifact_retention_replay_import.valid.json",
+    "experiments/theseus_artifact_retention_replay_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_artifact_retention_replay_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/theseus_artifact_retention_replay_import.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/G_corben_source_corpus.qmd#project_theseus_whitepaper",
+    "appendices/G_corben_source_corpus.qmd#theseus_operator_os",
+    "docs/book_outline.md#project-theseus-as-report-first-implementation-reference"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_artifact_retention_replay_import.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "hash mismatch is rejected",
+    "private payload copying is rejected",
+    "chapter-core promotion overclaim is rejected",
+    "public training row leakage is rejected",
+    "hard-gap erasure is rejected",
+    "missing chapter-core non-claim boundary is rejected",
+    "disabled path redaction is rejected",
+    "no Project Theseus chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "experiments/theseus_artifact_retention_replay_import/fixtures/invalid/hash_mismatch.invalid.json",
+    "experiments/theseus_artifact_retention_replay_import/fixtures/invalid/private_payload_copied.invalid.json",
+    "experiments/theseus_artifact_retention_replay_import/fixtures/invalid/support_promotion_overclaim.invalid.json",
+    "experiments/theseus_artifact_retention_replay_import/fixtures/invalid/training_rows_leak.invalid.json",
+    "experiments/theseus_artifact_retention_replay_import/fixtures/invalid/hard_gap_present.invalid.json",
+    "experiments/theseus_artifact_retention_replay_import/fixtures/invalid/missing_non_claim.invalid.json",
+    "experiments/theseus_artifact_retention_replay_import/fixtures/invalid/path_redaction_disabled.invalid.json"
+  ],
+  "downgrade_triggers": [
+    "the sanitized fixture no longer validates against the recorded source report digest, replay hash, redaction boundary, or exact replay counts",
+    "a hash mismatch, private payload copy, training-row leak, hard-gap erasure, or support overclaim is accepted as valid",
+    "the imported report is described as clean live Project Theseus replay, deployed residual-ledger storage, deployed artifact-graph behavior, benchmark performance, model quality, safety, ASI, or chapter-core evidence",
+    "future public dependency policy requires archived raw report publication and this record remains a digest-only sanitized summary"
+  ],
+  "promotion_burden": "Move beyond this bounded prototype-backed import only after a public-safe archived Theseus report bundle or clean live replay is available, raw-private payload publication boundaries are resolved, the replay command and environment are independently reproducible, artifact paths and payloads can be externally reviewed or intentionally redacted with reviewer acceptance, deployed residual-ledger or artifact-graph behavior is tested separately, residuals and non-claims are preserved, and independent review is recorded with a separate accepted transition.",
+  "limitations": [
+    "sanitized digest-and-count import only",
+    "raw Theseus report and private payloads are not copied into this public repository",
+    "local maintainer-agent review only",
+    "does not prove clean live Project Theseus replay",
+    "does not prove deployed residual-ledger storage or deployed artifact-graph behavior",
+    "does not prove model quality, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent external audit, Project Theseus reviewer, residual-ledger reviewer, artifact-graph reviewer, benchmark auditor, security auditor, or safety auditor",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-theseus-artifact-retention-replay-gate",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove clean live Project Theseus replay",
+    "does not prove deployed residual-ledger storage or deployed artifact-graph behavior",
+    "does not prove model quality, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}

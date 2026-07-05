@@ -1,0 +1,52 @@
+{
+  "archived_bytes": 2389576,
+  "artifact_refs": [
+    "experiments/theseus_artifact_retention_replay_import/fixtures/valid/artifact_retention_replay_import.valid.json",
+    "experiments/theseus_artifact_retention_replay_import/results/2026-07-05-local.json",
+    "docs/theseus_artifact_retention_replay_import.md",
+    "evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "chapter_core_support_effect": "none",
+  "claim_id": "project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import",
+  "command": "python3 scripts/validate_theseus_artifact_retention_replay_import.py",
+  "compression_ratio_observed_not_benchmarked": 17.553,
+  "expected_invalid_count": 7,
+  "fixture_sha256": "d50bdda4e5dce29b0df577a3d1e616037cf4f8b590e8a5527af1ca06e070cd97",
+  "import_id": "theseus-artifact-retention-replay-import-2026-07-05",
+  "lean_alignment": {
+    "checked_theorem_names": [
+      "theseus_artifact_retention_replay_import_fixture_valid",
+      "theseus_artifact_retention_replay_import_hash_mismatch_rejected",
+      "theseus_artifact_retention_replay_import_core_promotion_rejected"
+    ],
+    "fixture_def": "theseusArtifactRetentionReplayImportFixture",
+    "module": "AsiStackProofs.TheseusReference",
+    "proof_tag": "lean:theseus.reference.artifact_retention_replay_import.fixture_bridge"
+  },
+  "new_support_state": "prototype-backed",
+  "non_claims": [
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove clean live Project Theseus replay",
+    "does not prove deployed residual-ledger storage or deployed artifact-graph behavior",
+    "does not prove model quality, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "old_support_state": "argument",
+  "payload_bytes": 41943527,
+  "record_counts": {
+    "artifact_graph_records": 1,
+    "claim_records": 1,
+    "compressed_artifact_records": 1,
+    "compression_receipts": 1,
+    "defeater_records": 1,
+    "evidence_transition_records": 1,
+    "proof_contract_receipt_records": 1
+  },
+  "result_id": "2026-07-05-theseus-artifact-retention-replay-import",
+  "schema_version": "asi_stack.theseus_artifact_retention_replay_import.result.v0",
+  "source_report_sha256": "a3d35452ec3a8f0db233f5985d5d0824a1d9f571ee9012970d52303bfece9759",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "valid_fixture_count": 1,
+  "validation_result": "pass"
+}

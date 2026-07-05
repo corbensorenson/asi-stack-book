@@ -724,4 +724,172 @@ theorem theseus_fast_support_aggregate_clean_replay_overclaim_rejected :
     TheseusFastSupportAggregatePreservesBoundaries,
     theseusFastSupportAggregateFixture] at valid
 
+structure TheseusArtifactRetentionReplayImportSummary where
+  sourceReportDigestRecorded : Bool
+  triggerStateGreen : Bool
+  eligibleActionCount : Nat
+  passedReplayCount : Nat
+  failedReplayCount : Nat
+  pointerVerifiedCount : Nat
+  defeaterVerifiedCount : Nat
+  jsonParseVerifiedCount : Nat
+  hardGapCount : Nat
+  expectedHashMatchesDecodedHash : Bool
+  archiveExists : Bool
+  resolverVerified : Bool
+  compressionRecordVerified : Bool
+  payloadBytes : Nat
+  archivedBytes : Nat
+  recordCountCompressedArtifact : Nat
+  recordCountCompressionReceipt : Nat
+  recordCountProofContractReceipt : Nat
+  recordCountClaim : Nat
+  recordCountArtifactGraph : Nat
+  recordCountEvidenceTransition : Nat
+  recordCountDefeater : Nat
+  privatePayloadCopied : Bool
+  pathFieldsRedacted : Bool
+  publicTrainingRowsWritten : Nat
+  externalInferenceCalls : Nat
+  fallbackReturnCount : Nat
+  chapterCorePromotionClaimed : Bool
+  cleanLiveReplayClaimed : Bool
+  modelQualityClaimed : Bool
+  benchmarkPerformanceClaimed : Bool
+  deployedResidualLedgerClaimed : Bool
+  deployedArtifactGraphClaimed : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def TheseusArtifactRetentionReplayImportReplayValid
+    (summary : TheseusArtifactRetentionReplayImportSummary) : Prop :=
+  summary.sourceReportDigestRecorded = true ∧
+    summary.triggerStateGreen = true ∧
+      summary.eligibleActionCount = 1 ∧
+        summary.passedReplayCount = 1 ∧
+          summary.failedReplayCount = 0 ∧
+            summary.pointerVerifiedCount = 1 ∧
+              summary.defeaterVerifiedCount = 1 ∧
+                summary.jsonParseVerifiedCount = 1 ∧
+                  summary.hardGapCount = 0 ∧
+                    summary.expectedHashMatchesDecodedHash = true ∧
+                      summary.archiveExists = true ∧
+                        summary.resolverVerified = true ∧
+                          summary.compressionRecordVerified = true ∧
+                            summary.payloadBytes = 41943527 ∧
+                              summary.archivedBytes = 2389576
+
+def TheseusArtifactRetentionReplayImportRecordsPresent
+    (summary : TheseusArtifactRetentionReplayImportSummary) : Prop :=
+  summary.recordCountCompressedArtifact = 1 ∧
+    summary.recordCountCompressionReceipt = 1 ∧
+      summary.recordCountProofContractReceipt = 1 ∧
+        summary.recordCountClaim = 1 ∧
+          summary.recordCountArtifactGraph = 1 ∧
+            summary.recordCountEvidenceTransition = 1 ∧
+              summary.recordCountDefeater = 1
+
+def TheseusArtifactRetentionReplayImportPublicSafe
+    (summary : TheseusArtifactRetentionReplayImportSummary) : Prop :=
+  summary.privatePayloadCopied = false ∧
+    summary.pathFieldsRedacted = true ∧
+      summary.publicTrainingRowsWritten = 0 ∧
+        summary.externalInferenceCalls = 0 ∧
+          summary.fallbackReturnCount = 0
+
+def TheseusArtifactRetentionReplayImportPreservesBoundaries
+    (summary : TheseusArtifactRetentionReplayImportSummary) : Prop :=
+  summary.chapterCorePromotionClaimed = false ∧
+    summary.cleanLiveReplayClaimed = false ∧
+      summary.modelQualityClaimed = false ∧
+        summary.benchmarkPerformanceClaimed = false ∧
+          summary.deployedResidualLedgerClaimed = false ∧
+            summary.deployedArtifactGraphClaimed = false ∧
+              summary.nonClaimBoundaryRecorded = true
+
+def TheseusArtifactRetentionReplayImportValid
+    (summary : TheseusArtifactRetentionReplayImportSummary) : Prop :=
+  TheseusArtifactRetentionReplayImportReplayValid summary ∧
+    TheseusArtifactRetentionReplayImportRecordsPresent summary ∧
+      TheseusArtifactRetentionReplayImportPublicSafe summary ∧
+        TheseusArtifactRetentionReplayImportPreservesBoundaries summary
+
+def theseusArtifactRetentionReplayImportFixture :
+    TheseusArtifactRetentionReplayImportSummary := {
+  sourceReportDigestRecorded := true
+  triggerStateGreen := true
+  eligibleActionCount := 1
+  passedReplayCount := 1
+  failedReplayCount := 0
+  pointerVerifiedCount := 1
+  defeaterVerifiedCount := 1
+  jsonParseVerifiedCount := 1
+  hardGapCount := 0
+  expectedHashMatchesDecodedHash := true
+  archiveExists := true
+  resolverVerified := true
+  compressionRecordVerified := true
+  payloadBytes := 41943527
+  archivedBytes := 2389576
+  recordCountCompressedArtifact := 1
+  recordCountCompressionReceipt := 1
+  recordCountProofContractReceipt := 1
+  recordCountClaim := 1
+  recordCountArtifactGraph := 1
+  recordCountEvidenceTransition := 1
+  recordCountDefeater := 1
+  privatePayloadCopied := false
+  pathFieldsRedacted := true
+  publicTrainingRowsWritten := 0
+  externalInferenceCalls := 0
+  fallbackReturnCount := 0
+  chapterCorePromotionClaimed := false
+  cleanLiveReplayClaimed := false
+  modelQualityClaimed := false
+  benchmarkPerformanceClaimed := false
+  deployedResidualLedgerClaimed := false
+  deployedArtifactGraphClaimed := false
+  nonClaimBoundaryRecorded := true
+}
+
+theorem theseus_artifact_retention_replay_import_fixture_valid :
+    TheseusArtifactRetentionReplayImportValid
+      theseusArtifactRetentionReplayImportFixture := by
+  simp [
+    TheseusArtifactRetentionReplayImportValid,
+    TheseusArtifactRetentionReplayImportReplayValid,
+    TheseusArtifactRetentionReplayImportRecordsPresent,
+    TheseusArtifactRetentionReplayImportPublicSafe,
+    TheseusArtifactRetentionReplayImportPreservesBoundaries,
+    theseusArtifactRetentionReplayImportFixture,
+  ]
+
+theorem theseus_artifact_retention_replay_import_hash_mismatch_rejected :
+    ¬ TheseusArtifactRetentionReplayImportValid
+      { theseusArtifactRetentionReplayImportFixture with
+        expectedHashMatchesDecodedHash := false } := by
+  intro valid
+  simp [
+    TheseusArtifactRetentionReplayImportValid,
+    TheseusArtifactRetentionReplayImportReplayValid,
+    TheseusArtifactRetentionReplayImportRecordsPresent,
+    TheseusArtifactRetentionReplayImportPublicSafe,
+    TheseusArtifactRetentionReplayImportPreservesBoundaries,
+    theseusArtifactRetentionReplayImportFixture,
+  ] at valid
+
+theorem theseus_artifact_retention_replay_import_core_promotion_rejected :
+    ¬ TheseusArtifactRetentionReplayImportValid
+      { theseusArtifactRetentionReplayImportFixture with
+        chapterCorePromotionClaimed := true } := by
+  intro valid
+  simp [
+    TheseusArtifactRetentionReplayImportValid,
+    TheseusArtifactRetentionReplayImportReplayValid,
+    TheseusArtifactRetentionReplayImportRecordsPresent,
+    TheseusArtifactRetentionReplayImportPublicSafe,
+    TheseusArtifactRetentionReplayImportPreservesBoundaries,
+    theseusArtifactRetentionReplayImportFixture,
+  ] at valid
+
 end AsiStackProofs.TheseusReference
