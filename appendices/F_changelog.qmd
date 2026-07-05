@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-05 - Tighten Failure Modes taxonomy bridge
+
+- Added an explicit external-taxonomy bridge to the live and curated reader
+  Failure Modes chapters, mapping stack failure terms to source-noted concrete
+  AI safety accident risks, goal misgeneralization, learned optimization,
+  power-seeking/option preservation, Goodhart/proxy-failure, side-effect,
+  safe-exploration, reward-hacking, and evidence-smoothing families.
+- Extended `python3 scripts/validate_failure_taxonomy_detector_probe.py` so the
+  existing failure-taxonomy gate now guards that bridge in both editions,
+  alongside the synthetic detector fixture and Lean bridge.
+- Updated the outline and Milestone 2.5 burn-down so the original
+  external-taxonomy mapping weakness is closed by artifact while deployed
+  detector traces, runtime authority/context/evaluator/claim-verifier behavior,
+  recurrence detection, mitigation effectiveness, prevention evidence, and
+  external review remain explicit blockers.
+- Boundary: this is comparator positioning and prose/validator hardening only;
+  it does not prove failure detection, prevention, mitigation effectiveness,
+  evaluator independence, runtime containment, external review, or support-state
+  promotion.
+
 ## 2026-07-05 - Import Theseus project-registry health
 
 - Added `python3 scripts/validate_theseus_project_registry_import.py`,

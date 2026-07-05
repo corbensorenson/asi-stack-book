@@ -28,7 +28,7 @@ This CI-friendly source-level review checks the tracked curated reader manuscrip
 | Duplicate heading slugs | 0 |
 | Handoff sections | 44 |
 | H2 sections per chapter | 10 min / 19 max |
-| Character count per chapter | 16650 min / 39750 max |
+| Character count per chapter | 16792 min / 39750 max |
 | Draft reader images | 10 |
 | Figure alt texts | 10 |
 | Figure boundary paragraphs | 10 |

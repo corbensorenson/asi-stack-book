@@ -72,8 +72,26 @@ External safety literature gives the taxonomy an outside pressure point.
 Concrete AI Safety names accident-risk families such as side effects, reward
 hacking, scalable oversight, safe exploration, and distributional shift. Work
 on power-seeking pressure helps explain why broad objectives can create
-option-preserving behavior. The ASI Stack uses those sources as positioning
-comparators, not as validation of this repository's failure map.
+option-preserving behavior. Goal-misgeneralization work separates competent
+behavior from correctly bound objectives, learned-optimization work names the
+risk of hidden internal optimizers, and Goodhart variants keep metric failure
+from collapsing into one vague benchmark story. The ASI Stack uses those
+sources as positioning comparators, not as validation of this repository's
+failure map.
+
+The mapping is simple enough to inspect. Goal misbinding is the stack's route
+from goal misgeneralization into intent contracts. Authority creep is the route
+from power-seeking pressure into ceilings, delegation, expiry, and receipts.
+Evaluator drift is the route from Goodhart and reward-hacking pressure into
+frozen metrics, residuals, and blocked promotion. Hidden optimization pressure
+is the route from learned-optimization risk into self-improvement boundaries.
+Tool overreach is the route from side-effect and safe-exploration failures
+into scoped action, approval, and rollback. Residual hiding is the route from
+metric laundering into evidence ledgers that keep negative cases visible.
+
+That bridge does not prove detection or prevention. It keeps the book's terms
+from floating away from the safety literature and makes the later engineering
+obligations easier to audit.
 
 The stack therefore treats failure modes as first-class architectural objects.
 A failure should map to an invariant, detector, evidence record, containment
