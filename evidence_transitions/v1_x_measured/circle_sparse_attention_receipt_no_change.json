@@ -1,0 +1,107 @@
+{
+  "transition_id": "v1_x_measured.circle_sparse_attention_receipt.no_change",
+  "claim_id": "circle-calculus.sparse_attention_receipt_slice",
+  "claim_surface_refs": [
+    "docs/circle_sparse_attention_receipt_slice.md",
+    "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+    "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_sparse_attention_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_sparse_attention_receipt_slice.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe local external Circle sparse-attention receipt import only. The slice records one pinned `CC-AI-CONTRACT-SPARSE-001` structural fixture at Circle commit `63b0f511`, `coverage_complete=false`, first missed lag `5`, uncovered intervals, complete repair window `119`, two required theorem IDs, two planner recommendations, contract fingerprint `c23809cef9b821b1e4f9cabf53fcac724a0757bf3f86594e1d12710fe0cd9ec1`, command-output digests, and a passing Circle CLI test summary. It does not prove sparse-attention coverage success, deployed sparse-attention behavior, retrieval quality, long-context quality, model quality, speed, memory savings, transfer, safety, ASI, or Coil chapter-core promotion.",
+  "evidence_roles": [
+    "external_project_receipt_import",
+    "sparse_attention_gap_fixture",
+    "first_interval_repair_boundary",
+    "dense_local_complete_fallback_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The sparse-attention receipt slice makes one Circle sparse coverage/gap structural fixture concrete in the book and closes the stale 'no sparse-attention receipt import' blocker for the Coil chapter. The evidence remains an external-project receipt import with an explicit `coverage_complete=false` boundary, no deployed ASI-side sparse-attention trace, no retrieval or long-context workload, no runtime or memory measurement, no model-quality result, and no independent review, so it blocks promotion rather than moving support state.",
+  "required_artifacts": [
+    "fresh public Circle replay or archived public sparse-attention contract pack",
+    "repository-owned command that reruns the relevant Circle sparse-attention proof target or verifies an archived replay bundle",
+    "deployed or replayed ASI-side sparse-attention trace",
+    "ordinary full-attention and sparse-attention baselines with workload metrics",
+    "retrieval-quality, long-context, runtime, memory, and model-quality measurements for any promoted claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/circle_sparse_attention_receipt_slice.md",
+    "experiments/circle_sparse_attention_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_sparse_attention_receipt_slice.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_sparse_attention_receipt_slice.md",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#coil-attention-cyclic-memory-and-recurrence-contracts.core",
+    "docs/book_outline.md#coil-attention-cyclic-memory-and-recurrence-contracts"
+  ],
+  "verification_command": "python3 scripts/validate_circle_sparse_attention_receipt_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "support state remains argument",
+    "support_state_effect remains blocks_promotion",
+    "coverage_complete=false is preserved",
+    "does not create a support-state transition",
+    "no sparse-attention coverage success is claimed",
+    "does not prove deployed sparse-attention behavior",
+    "no deployed sparse-attention behavior is claimed",
+    "no retrieval quality, long-context, model-quality, speed, memory-savings, transfer, safety, or ASI claim is promoted",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_sparse_attention_receipt_slice.md",
+    "experiments/circle_sparse_attention_receipt_slice/results/2026-07-05-local.json"
+  ],
+  "downgrade_triggers": [
+    "sparse-attention receipt-slice validator failure",
+    "receipt fingerprint drift",
+    "missing required theorem ID accepted",
+    "coverage-complete, first-gap, repair-window, or fallback evidence field drift",
+    "external-project receipt import described as deployed sparse-attention behavior",
+    "coverage success, retrieval-quality, long-context, model-quality, speed, memory-savings, transfer, safety, ASI, or support-state promotion claimed without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed sparse-attention claim after a fresh public Circle replay or archived public contract pack, repository-owned proof/replay verification, deployed or replayed ASI-side sparse-attention traces, ordinary full-attention and sparse-attention baselines, retrieval/long-context/runtime/memory/model-quality measurements for the specific claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one pinned local external Circle receipt import",
+    "external Circle checkout is not vendored into this public repository",
+    "no clean ASI-side CI replay of Circle",
+    "coverage_complete=false for the pinned fixture",
+    "no deployed sparse-attention trace",
+    "no retrieval-quality, long-context, runtime, memory, model-quality, transfer, safety, or ASI measurement",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, sparse-attention, retrieval-quality, long-context, benchmark, model-quality, transfer, or safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no archived public Circle sparse-attention contract pack",
+    "no deployed or replayed ASI-side sparse-attention trace",
+    "no workload baselines or measurements",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-circle-sparse-attention-receipt-slice",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Coil Attention or Circle sparse-attention evidence above argument",
+    "does not create a support-state transition",
+    "does not prove deployed sparse-attention behavior",
+    "does not prove sparse-attention coverage success, deployed sparse-attention behavior, retrieval quality, reasoning quality, long-context quality, model quality, context length, speed, memory savings, deployment safety, transfer, benchmark performance, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote the Coil Attention chapter core claim"
+  ]
+}

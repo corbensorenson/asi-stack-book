@@ -115,6 +115,13 @@ BOOK_GATE_CHECKS = [
         "boundary": "No deployed recurrence behavior, reasoning-quality, retrieval-quality, learned-memory, convergence, model-quality, deployment-safety, or ASI claim.",
     },
     {
+        "name": "Circle sparse-attention receipt slice",
+        "doc": "docs/circle_sparse_attention_receipt_slice.md",
+        "script": "scripts/validate_circle_sparse_attention_receipt_slice.py",
+        "summary": "Public-safe Circle sparse-attention gap and repair/fallback receipt slice for `CC-AI-CONTRACT-SPARSE-001`.",
+        "boundary": "No sparse-attention coverage success, deployed sparse-attention behavior, retrieval-quality, long-context, model-quality, speed, deployment-safety, or ASI claim.",
+    },
+    {
         "name": "Context transaction memory-store harness",
         "doc": "docs/context_transaction_memory_store_harness.md",
         "script": "scripts/validate_context_transaction_memory_store.py",
@@ -348,6 +355,7 @@ BOOK_GATE_RESULTS_BY_SCRIPT = {
     "scripts/validate_circle_cyclic_memory_receipt_slice.py": "experiments/circle_cyclic_memory_receipt_slice/results/2026-07-02-local.json",
     "scripts/validate_circle_kv_cache_receipt_slice.py": "experiments/circle_kv_cache_receipt_slice/results/2026-07-05-local.json",
     "scripts/validate_circle_recurrence_receipt_slice.py": "experiments/circle_recurrence_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_sparse_attention_receipt_slice.py": "experiments/circle_sparse_attention_receipt_slice/results/2026-07-05-local.json",
     "scripts/validate_context_transaction_memory_store.py": "experiments/context_transaction_memory_store/results/2026-07-01-local.md",
     "scripts/validate_vcm_resolver_certificate_probe.py": "experiments/vcm_resolver_certificate_probe/results/2026-07-02-local.json",
     "scripts/validate_simulation_transfer_boundaries.py": "experiments/simulation_transfer_boundaries/results/2026-06-30-local.md",
@@ -511,8 +519,8 @@ def validate(args: argparse.Namespace) -> list[str]:
         return ["experiments/phase5_harness_registry.json must contain a list."]
     if len(registry) != 22:
         errors.append(f"Expected 22 Phase 5 registry harnesses, found {len(registry)}.")
-    if len(BOOK_GATE_CHECKS) != 44:
-        errors.append(f"Expected 44 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
+    if len(BOOK_GATE_CHECKS) != 45:
+        errors.append(f"Expected 45 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
 
     names = [check["name"] for check in BOOK_GATE_CHECKS]
     duplicates = sorted({name for name in names if names.count(name) > 1})

@@ -1,6 +1,6 @@
 # Reader Audio-Script Probe Manifest
 
-Last updated: 2026-07-04
+Last updated: 2026-07-05
 
 This summary is synced from
 `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`. It records
@@ -56,8 +56,8 @@ script order.
 | Image narration notes | 11 |
 | Code/schema narration notes | 0 |
 | Implementation-horizon chapter scripts | 44 |
-| Text checked | 1,073,268 text characters |
-| Word tokens checked | 143,684 |
+| Text checked | 1,077,501 text characters |
+| Word tokens checked | 144,553 |
 | Replacement characters | 0 |
 | Live/research marker hits | 0 |
 | Raw core-claim marker hits | 0 |

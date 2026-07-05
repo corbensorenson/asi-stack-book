@@ -1,0 +1,264 @@
+{
+  "result_id": "2026-07-05-local-circle-sparse-attention-receipt-slice",
+  "slice_id": "circle_sparse_attention_receipt_slice",
+  "created_at": "2026-07-05",
+  "external_project": {
+    "name": "Circle Calculus",
+    "git_commit": "63b0f511",
+    "worktree_state": "clean_before_commands",
+    "public_safe_import": true
+  },
+  "sparse_fixture": {
+    "sequence_length": 120,
+    "strides": [
+      7,
+      13
+    ],
+    "path_length": 3,
+    "local_window": 4,
+    "candidate_budget_per_query": 10,
+    "full_attention_budget": 120,
+    "coverage_complete": false,
+    "coverage_ratio": 0.08403361344537816,
+    "covered_lag_count": 10,
+    "uncovered_lag_count": 109,
+    "covered_lags": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      14,
+      21,
+      13,
+      26,
+      39
+    ],
+    "uncovered_lag_intervals": [
+      [
+        5,
+        6
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        15,
+        20
+      ],
+      [
+        22,
+        25
+      ],
+      [
+        27,
+        38
+      ],
+      [
+        40,
+        119
+      ]
+    ],
+    "first_uncovered_lag": 5,
+    "first_uncovered_interval_start": 5,
+    "first_uncovered_interval_stop": 6,
+    "first_uncovered_interval_length": 2,
+    "first_uncovered_interval_additional_local_slots": 2,
+    "first_uncovered_interval_repair_reaches_interval": true,
+    "first_interval_repair_next_uncovered_lag": 8,
+    "first_interval_repair_still_has_gap": true,
+    "complete_repair_window": 119,
+    "complete_repair_window_additional_local_slots": 115,
+    "complete_repair_window_covers_context": true,
+    "complete_repair_window_uses_dense_threshold": true,
+    "complete_repair_window_minimal_for_declared_stride_family": true,
+    "complete_repair_window_minimal_witness_lag": 119,
+    "local_window_complete_threshold_is_exact_local_minimum": true,
+    "interval_repair_plan": [
+      [
+        5,
+        6,
+        6,
+        2,
+        107
+      ],
+      [
+        8,
+        12,
+        12,
+        6,
+        102
+      ],
+      [
+        15,
+        20,
+        20,
+        8,
+        96
+      ],
+      [
+        22,
+        25,
+        25,
+        5,
+        92
+      ],
+      [
+        27,
+        38,
+        38,
+        13,
+        80
+      ],
+      [
+        40,
+        119,
+        119,
+        81,
+        0
+      ]
+    ],
+    "interval_repair_plan_step_count": 6,
+    "interval_repair_plan_final_window": 119,
+    "interval_repair_plan_covers_context": true,
+    "interval_repair_plan_strictly_progresses": true,
+    "lag_collision_pair_count": 0,
+    "query_collision_pair_count": 0,
+    "lag_collision_pair_count_zero_iff_no_collision": true,
+    "query_collision_pair_count_zero_iff_no_collision": true,
+    "raw_budget_shortfall_certifies_incomplete": true,
+    "contract_ready_theorem_count": 141,
+    "circle_ai_receipt_theorem_count": 132
+  },
+  "accepted_receipt": {
+    "contract_id": "CC-AI-CONTRACT-SPARSE-001",
+    "kind": "sparse_attention_coverage",
+    "receipt_schema": "circle_calculus.ai_contract_acceptance_receipt.v0",
+    "schema_id": "circle_calculus.ai_contract_pack.v0",
+    "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+    "contract_content_fingerprint": "c23809cef9b821b1e4f9cabf53fcac724a0757bf3f86594e1d12710fe0cd9ec1",
+    "accepted": true,
+    "required_theorem_ids": [
+      "AIT-T0104",
+      "AIT-T0172"
+    ],
+    "required_recommendation_ids": [
+      "SPARSE-LOCAL-FIRST-INTERVAL-REPAIR",
+      "SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK"
+    ],
+    "required_recommendation_theorem_ids": [
+      "SPARSE-LOCAL-FIRST-INTERVAL-REPAIR=AIT-T0104",
+      "SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0023",
+      "SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0034",
+      "SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0172",
+      "SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0168",
+      "SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0169",
+      "SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0170"
+    ],
+    "evidence_fields": {
+      "complete_repair_window": 119,
+      "complete_repair_window_covers_context": true,
+      "complete_repair_window_minimal_for_declared_stride_family": true,
+      "complete_repair_window_minimal_witness_lag": 119,
+      "first_uncovered_interval_start": 5,
+      "first_uncovered_lag": 5
+    },
+    "planner_recommendations": [
+      {
+        "id": "SPARSE-LOCAL-FIRST-INTERVAL-REPAIR",
+        "action_kind": "increase_local_window",
+        "coverage_scope": "first_uncovered_interval_only",
+        "proposed_local_window": 6,
+        "additional_local_slots": 2,
+        "target_interval_start": 5,
+        "target_interval_stop": 6,
+        "still_has_gap_after_repair": true,
+        "next_uncovered_lag_after_repair": 8,
+        "theorem_ids": [
+          "AIT-T0104",
+          "AIT-T0171",
+          "AIT-T0166",
+          "AIT-T0167"
+        ],
+        "not_claimed": "This repair target covers the first reported gap interval only; it is not a complete sparse-attention coverage theorem and not a performance recommendation."
+      },
+      {
+        "id": "SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK",
+        "action_kind": "increase_local_window",
+        "coverage_scope": "all_positive_lags",
+        "proposed_local_window": 119,
+        "additional_local_slots": 115,
+        "theorem_ids": [
+          "AIT-T0023",
+          "AIT-T0034",
+          "AIT-T0172",
+          "AIT-T0168",
+          "AIT-T0169",
+          "AIT-T0170"
+        ],
+        "not_claimed": "This is the dense-local correctness fallback for complete positive-lag coverage. In the default fixture it is also the minimal local-window repair for the declared path and stride family, but it is not a claim that dense local attention is efficient or architecturally preferable."
+      }
+    ]
+  },
+  "circle_ai_certifier_boundary": {
+    "decision_verdict": "failed",
+    "claim_status": "proved",
+    "request_passed": false,
+    "summary": "The declared local-window plus stride-family sparse-attention pattern does not cover all positive lags; the useful imported fact is the gap and repair/fallback receipt, not a coverage-success claim."
+  },
+  "commands": [
+    {
+      "command": "PYTHONPATH=. python3 scripts/stride_family_certify.py --context 120 --strides 7,13 --path-length 3 --local-window 4 --format json",
+      "output_sha256": "3521b057c86435df7896d636c98d8981e8bd8550c3ec9ac39d782748c72bd4be",
+      "output_bytes": 11664,
+      "verification_result": "pass",
+      "summary": "stride-family sparse-attention certificate JSON emitted for the pinned fixture"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_certify.py sparse-attention --context 120 --strides 7,13 --path-length 3 --local-window 4 --format json",
+      "output_sha256": "8b3d6787cc13c84a9cdcd9d8312f185acdf126bb110f49ae9c1c194c025bd1e7",
+      "output_bytes": 35487,
+      "verification_result": "pass",
+      "summary": "Circle AI sparse-attention receipt emitted with request_passed=false and theorem-backed gap fields"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind sparse_attention_coverage --digest --field first_uncovered_lag --field first_uncovered_interval_start --field first_uncovered_interval_stop --field uncovered_lag_count --field covered_lag_count --field complete_repair_window --field complete_repair_window_covers_context --field complete_repair_window_minimal_for_declared_stride_family --field complete_repair_window_minimal_witness_lag --field interval_repair_plan_step_count --field interval_repair_plan_final_window --field interval_repair_plan_covers_context --field lag_collision_pair_count --field query_collision_pair_count --include-recommendations",
+      "output_sha256": "3022d3631af609f518accbc8998e9f471f1c8b0929fbc754656215359682d210",
+      "output_bytes": 4664,
+      "verification_result": "pass",
+      "summary": "circle AI contract digest ok: sparse_attention_coverage; ready=True fields=14 missing=0 theorems=141"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind sparse_attention_coverage --receipt --format json --field first_uncovered_lag --field first_uncovered_interval_start --field complete_repair_window --field complete_repair_window_covers_context --field complete_repair_window_minimal_for_declared_stride_family --field complete_repair_window_minimal_witness_lag --require-theorem AIT-T0104 --require-theorem AIT-T0172 --require-recommendation SPARSE-LOCAL-FIRST-INTERVAL-REPAIR --require-recommendation SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK --require-recommendation-evidence-field SPARSE-LOCAL-FIRST-INTERVAL-REPAIR=first_uncovered_interval_start --require-recommendation-evidence-field SPARSE-LOCAL-FIRST-INTERVAL-REPAIR=first_uncovered_interval_stop --require-recommendation-evidence-field SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=complete_repair_window --require-recommendation-evidence-field SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=complete_repair_window_covers_context --require-recommendation-evidence-field SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=complete_repair_window_uses_dense_threshold --require-recommendation-evidence-field SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=local_window_complete_threshold_is_exact_local_minimum --require-recommendation-evidence-field SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=complete_repair_window_minimal_for_declared_stride_family --require-recommendation-evidence-field SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=complete_repair_window_minimal_witness_lag --require-recommendation-theorem SPARSE-LOCAL-FIRST-INTERVAL-REPAIR=AIT-T0104 --require-recommendation-theorem SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0023 --require-recommendation-theorem SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0034 --require-recommendation-theorem SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0172 --require-recommendation-theorem SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0168 --require-recommendation-theorem SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0169 --require-recommendation-theorem SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=AIT-T0170 --require-recommendation-action-parameter SPARSE-LOCAL-FIRST-INTERVAL-REPAIR=proposed_local_window --require-recommendation-action-parameter SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=proposed_local_window --require-recommendation-action-parameter SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=additional_local_slots --require-recommendation-action-parameter-path SPARSE-LOCAL-FIRST-INTERVAL-REPAIR=proposed_local_window --require-recommendation-action-parameter-path SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=proposed_local_window --require-recommendation-action-parameter-path SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK=additional_local_slots",
+      "output_sha256": "668b395f8850be6993a6be32ec7b83326e8056bbdb7d2d55599104a176e871a1",
+      "output_bytes": 11385,
+      "verification_result": "pass",
+      "summary": "strict sparse-attention acceptance receipt accepted with first-interval and dense-local fallback theorem/recommendation pins"
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m pytest tests/test_stride_family_certifier_cli.py tests/test_circle_transformer.py -q",
+      "output_sha256": "bccd01af074f2766287e392495d35e1977aaa5cf050e80710d26a61ef606757f",
+      "output_bytes": 99,
+      "verification_result": "pass",
+      "summary": "10 passed in 1.87s"
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not create a support-state transition",
+    "does not prove sparse-attention coverage success",
+    "does not prove deployed sparse-attention behavior",
+    "does not prove retrieval quality",
+    "does not prove reasoning quality",
+    "does not prove long-context quality",
+    "does not prove model quality",
+    "does not prove speed",
+    "does not prove memory savings",
+    "does not prove deployment safety",
+    "does not prove transfer",
+    "does not prove benchmark performance",
+    "does not prove ASI"
+  ]
+}

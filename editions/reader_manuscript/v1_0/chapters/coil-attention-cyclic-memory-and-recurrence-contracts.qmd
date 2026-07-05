@@ -133,6 +133,23 @@ support-state transition, and does not prove deployed KV-cache behavior,
 serving throughput, memory savings, paging correctness, retrieval quality,
 model quality, context length, deployment safety, transfer, or ASI.
 
+The sparse-attention receipt makes the same point from the other direction:
+the useful result is a recorded gap, not a claimed success. For
+`CC-AI-CONTRACT-SPARSE-001`, kind `sparse_attention_coverage`, at Circle commit
+`63b0f511`, the receipt records `coverage_complete=false`, first missed lag
+`5`, `uncovered_lag_count=109`, `covered_lag_count=10`, a complete repair
+window of `119`, and a dense-local fallback. It cites theorem IDs `AIT-T0104`
+and `AIT-T0172`, recommendations `SPARSE-LOCAL-FIRST-INTERVAL-REPAIR` and
+`SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK`, fingerprint
+`c23809cef9b821b1e4f9cabf53fcac724a0757bf3f86594e1d12710fe0cd9ec1`, and Circle
+CLI output `10 passed in 1.87s`.
+
+That third receipt is valuable because it refuses to hide the miss. It does
+not prove sparse-attention coverage success, does not prove deployed
+sparse-attention behavior, does not create a support-state transition, and does
+not prove retrieval quality, long-context quality, model quality, speed, memory
+savings, deployment safety, transfer, or ASI.
+
 The third Circle receipt covers the recurrence-schedule side. It is for
 `CC-AI-CONTRACT-RECURRENCE-001`, kind `recurrence_schedule`, at Circle commit
 `63b0f511`. It records theorem IDs `AIM-T0026`, `AIM-T0130`, and
@@ -364,6 +381,21 @@ traceability. It does not prove deployed recurrence behavior, reasoning
 quality, retrieval quality, learned-memory behavior, convergence, long-context
 quality, or model quality.
 
+The Circle sparse-attention receipt slice makes the coverage-gap example
+concrete. `python3 scripts/validate_circle_sparse_attention_receipt_slice.py`
+checks `CC-AI-CONTRACT-SPARSE-001`, kind `sparse_attention_coverage`, theorem
+IDs `AIT-T0104` and `AIT-T0172`, `theorem_count=141`, recommendations
+`SPARSE-LOCAL-FIRST-INTERVAL-REPAIR` and
+`SPARSE-DENSE-LOCAL-COMPLETE-FALLBACK`, strict receipt fingerprint
+`c23809cef9b821b1e4f9cabf53fcac724a0757bf3f86594e1d12710fe0cd9ec1`,
+`coverage_complete=false`, first missed lag `5`, gap and repair fields,
+dense-local fallback fields, Circle CLI output `10 passed in 1.87s`, and
+no-promotion decision `circle_sparse_attention_receipt_no_change.json`. That is
+structural sparse-attention traceability. It does not prove sparse-attention
+coverage success, deployed sparse-attention behavior, retrieval quality,
+long-context quality, model quality, speed, memory savings, deployment safety,
+transfer, or ASI.
+
 The next honest minimum is a broader small trace set: stale reads blocked or
 residualized, sparse coverage gaps that trigger fallback, recurrence schedules
 that exit, and baseline comparisons tied to explicit workloads. Only after
@@ -412,8 +444,8 @@ recurrence-exit behavior, freshness performance, retrieval quality, reasoning
 quality, memory savings, speed, long-context usefulness, or model behavior.
 
 The implemented protocol fixture validates the contract shape. The Circle
-cyclic-memory, KV-cache, and recurrence receipts validate three external
-structural slices.
+cyclic-memory, KV-cache, recurrence, and sparse-attention receipts validate
+four external structural slices.
 The planned behavioral tests still need deployed or replayed memory traces,
 stale-read cases, sparse-coverage cases, recurrence schedules, baselines,
 commands, environment notes, and result artifacts before they can support
