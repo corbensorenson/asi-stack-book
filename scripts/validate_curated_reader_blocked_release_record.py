@@ -26,6 +26,10 @@ KEY_FIGURE_PDF_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_
 KEY_FIGURE_DOCX_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
+HUMAN_CONSUMPTION_GATE = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
+)
+HUMAN_CONSUMPTION_REVIEW = ROOT / "docs" / "reader_human_consumption_gate_review.md"
 VISUAL_IDENTITY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "visual_identity_manifest.json"
 ACCESSIBILITY_NAVIGATION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
@@ -71,6 +75,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_key_figure_docx_layout.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
+    "python3 scripts/validate_reader_human_consumption_gate.py",
     "python3 scripts/validate_release_surface_status_ledger.py",
 }
 
@@ -120,6 +125,8 @@ def main() -> None:
         KEY_FIGURE_DOCX_LAYOUT,
         READER_MANIFEST,
         AUDIO_PROBE,
+        HUMAN_CONSUMPTION_GATE,
+        HUMAN_CONSUMPTION_REVIEW,
         VISUAL_IDENTITY,
         ACCESSIBILITY_NAVIGATION,
         KEYBOARD_NAVIGATION,
@@ -140,6 +147,8 @@ def main() -> None:
     key_figure_docx_layout = load_json(KEY_FIGURE_DOCX_LAYOUT)
     reader_manifest = load_json(READER_MANIFEST)
     audio_probe = load_json(AUDIO_PROBE)
+    human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
+    human_consumption_review = HUMAN_CONSUMPTION_REVIEW.read_text(encoding="utf-8")
     visual_identity = load_json(VISUAL_IDENTITY)
     accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
     keyboard_navigation = load_json(KEYBOARD_NAVIGATION)
@@ -164,6 +173,8 @@ def main() -> None:
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
     if not isinstance(audio_probe, dict):
         fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
+    if not isinstance(human_consumption_gate, dict):
+        fail([f"{rel(HUMAN_CONSUMPTION_GATE)} must contain a JSON object."])
     if not isinstance(visual_identity, dict):
         fail([f"{rel(VISUAL_IDENTITY)} must contain a JSON object."])
     if not isinstance(accessibility_navigation, dict):
@@ -692,11 +703,116 @@ def main() -> None:
         if fragment not in audio_note:
             errors.append(f"audio notes missing audio reading-flow fragment: {fragment}")
 
-    gate_note = str(record.get("human_consumption_gate", {}).get("notes", ""))
+    release_human_gate = record.get("human_consumption_gate", {})
+    if not isinstance(release_human_gate, dict):
+        errors.append("human_consumption_gate must be an object.")
+        release_human_gate = {}
+    expected_release_gate_statuses = {
+        "reader_spine_review": "pass",
+        "ebook_layout_review": "pass_pre_release_review",
+        "diagram_image_review": "pass_pre_release_review",
+        "bedtime_readability_review": "pass_pre_release_review",
+        "companion_notes_status": "pass_pre_release_review",
+    }
+    for key, expected in expected_release_gate_statuses.items():
+        if release_human_gate.get(key) != expected:
+            errors.append(f"human_consumption_gate.{key} must be {expected!r}.")
+
+    if human_consumption_gate.get("status") != "passed_human_consumption_pre_release_gate":
+        errors.append("human consumption gate manifest status must be passed_human_consumption_pre_release_gate.")
+    human_gates = human_consumption_gate.get("gates", {})
+    if not isinstance(human_gates, dict):
+        errors.append("human consumption gate manifest gates must be an object.")
+        human_gates = {}
+    for gate_name in (
+        "ebook_layout_review",
+        "diagram_image_review",
+        "bedtime_readability_review",
+        "companion_notes_status",
+    ):
+        gate = human_gates.get(gate_name, {})
+        if not isinstance(gate, dict):
+            errors.append(f"human consumption gate {gate_name} must be an object.")
+            continue
+        if gate.get("status") != "pass_pre_release_review":
+            errors.append(f"human consumption gate {gate_name}.status must be pass_pre_release_review.")
+    human_fact_expectations = {
+        ("ebook_layout_review", "epub_key_figure_page_view_pairs"): 20,
+        ("ebook_layout_review", "epub_key_figure_failed_pairs"): 0,
+        ("ebook_layout_review", "pdf_key_figure_caption_pages"): 10,
+        ("ebook_layout_review", "docx_key_figure_title_pages"): 10,
+        ("diagram_image_review", "key_figures"): 10,
+        ("diagram_image_review", "geometry_content_bounds"): 10,
+        ("diagram_image_review", "raster_artifacts"): 10,
+        ("diagram_image_review", "accessibility_alt_texts"): 10,
+        ("bedtime_readability_review", "chapter_records"): 44,
+        ("bedtime_readability_review", "reconciled_records"): 44,
+        ("bedtime_readability_review", "paragraphs_over_180_words"): 0,
+        ("bedtime_readability_review", "live_marker_hits"): 0,
+        ("companion_notes_status", "routing_records"): 12,
+        ("companion_notes_status", "routing_records_with_existing_notes"): 12,
+        ("companion_notes_status", "audio_probe_companion_summaries"): 10,
+    }
+    for (gate_name, fact_name), expected in human_fact_expectations.items():
+        gate = human_gates.get(gate_name, {})
+        facts = gate.get("facts", {}) if isinstance(gate, dict) else {}
+        observed = facts.get(fact_name) if isinstance(facts, dict) else None
+        if observed != expected:
+            errors.append(
+                f"human consumption gate {gate_name}.facts.{fact_name} must be {expected!r}; found {observed!r}."
+            )
+    required_human_blockers = {
+        "curated_reconciliation_not_approved",
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created",
+        "app_or_ereader_review_not_completed",
+        "manual_pdf_page_by_page_review_not_completed",
+        "final_figure_artifact_review_not_completed",
+        "manual_keyboard_only_review_not_completed",
+        "screen_reader_review_not_completed",
+        "wcag_conformance_review_not_completed",
+        "narration_quality_review_not_completed",
+        "audio_files_not_generated",
+    }
+    missing_human_blockers = sorted(
+        required_human_blockers - set(human_consumption_gate.get("release_blockers_preserved", []))
+    )
+    if missing_human_blockers:
+        errors.append(f"human consumption gate manifest missing preserved blockers: {missing_human_blockers}")
+    human_non_claims = " ".join(str(item) for item in human_consumption_gate.get("non_claims", [])).lower()
+    for fragment in (
+        "does not approve, publish, tag, or archive",
+        "does not clear dedicated e-reader",
+        "manual pdf page-by-page",
+        "does not promote any chapter core claim",
+    ):
+        if fragment not in human_non_claims:
+            errors.append(f"human consumption gate manifest non_claims missing {fragment!r}.")
+    text_contains_all(
+        rel(HUMAN_CONSUMPTION_REVIEW),
+        human_consumption_review,
+        [
+            "Reader Human-Consumption Gate Review",
+            "pass_pre_release_review",
+            "does not approve, publish, tag, or archive",
+            "does not clear dedicated e-reader review",
+            "page-by-page review",
+            "does not promote any chapter core claim",
+        ],
+        errors,
+    )
+
+    gate_note = str(release_human_gate.get("notes", ""))
     text_contains_all(
         "human_consumption_gate.notes",
         gate_note,
         [
+            "human-consumption gate review",
+            "pass_pre_release_review",
+            "bedtime readability",
+            "companion-note routing",
+            "does not approve artifacts",
+            "does not approve artifacts or clear release blockers",
             "source-geometry review",
             "10 content-bound checks",
             "22.0 px minimum content edge margin",

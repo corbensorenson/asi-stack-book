@@ -159,19 +159,19 @@
         },
         "ebook_layout_review": {
           "type": "string",
-          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+          "enum": ["not_required", "not_started", "in_progress", "pass_pre_release_review", "pass", "fail"]
         },
         "diagram_image_review": {
           "type": "string",
-          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+          "enum": ["not_required", "not_started", "in_progress", "pass_pre_release_review", "pass", "fail"]
         },
         "bedtime_readability_review": {
           "type": "string",
-          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+          "enum": ["not_required", "not_started", "in_progress", "pass_pre_release_review", "pass", "fail"]
         },
         "companion_notes_status": {
           "type": "string",
-          "enum": ["not_required", "not_started", "in_progress", "pass", "fail"]
+          "enum": ["not_required", "not_started", "in_progress", "pass_pre_release_review", "pass", "fail"]
         },
         "notes": { "type": "string", "minLength": 1 }
       },

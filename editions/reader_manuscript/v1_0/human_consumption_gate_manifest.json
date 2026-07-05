@@ -1,0 +1,191 @@
+{
+  "schema_version": "asi_stack.reader_human_consumption_gate.v0",
+  "result_id": "reader-human-consumption-gate-2026-07-05",
+  "status": "passed_human_consumption_pre_release_gate",
+  "command": "python3 scripts/validate_reader_human_consumption_gate.py",
+  "source_refs": [
+    "editions/reader_manuscript/v1_0/manifest.json",
+    "editions/reader_manuscript/v1_0/companion_note_routing.json",
+    "editions/reader_manuscript/v1_0/accessibility_navigation_manifest.json",
+    "editions/reader_manuscript/v1_0/visual_identity_manifest.json",
+    "editions/reader_manuscript/v1_0/key_figure_geometry_manifest.json",
+    "editions/reader_manuscript/v1_0/key_figure_raster_manifest.json",
+    "editions/reader_manuscript/v1_0/key_figure_epub_layout_manifest.json",
+    "editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json",
+    "editions/reader_manuscript/v1_0/key_figure_docx_layout_manifest.json",
+    "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json"
+  ],
+  "gates": {
+    "ebook_layout_review": {
+      "status": "pass_pre_release_review",
+      "gate": "ebook_layout_review",
+      "facts": {
+        "epub_key_figure_page_view_pairs": 20,
+        "epub_key_figure_failed_pairs": 0,
+        "epub_key_figure_max_overflow_px": 10,
+        "epub_key_figure_min_body_text_chars": 5476,
+        "epub_key_figure_image_failures": 0,
+        "pdf_key_figure_caption_pages": 10,
+        "pdf_key_figure_min_caption_margin_pt": 165.878,
+        "pdf_key_figure_max_near_edge_ink_percent": 0.0,
+        "docx_key_figure_title_pages": 10,
+        "docx_key_figure_min_title_margin_pt": 72.1,
+        "docx_key_figure_max_near_edge_ink_percent": 0.0
+      },
+      "limitations": [
+        "This is local layout preparation evidence, not e-reader, Word, PDF, or release approval.",
+        "It does not clear dedicated e-reader/application review or manual PDF page-by-page review."
+      ]
+    },
+    "diagram_image_review": {
+      "status": "pass_pre_release_review",
+      "gate": "diagram_image_review",
+      "facts": {
+        "key_figures": 10,
+        "geometry_content_bounds": 10,
+        "geometry_text_anchor_bounds": 10,
+        "geometry_min_edge_margin": 22.0,
+        "raster_artifacts": 10,
+        "raster_standard_dimensions": 10,
+        "raster_min_luminance_std": 27.64,
+        "raster_min_quantized_colors": 116,
+        "visual_identity_key_figures": 10,
+        "non_neutral_color_families": 5,
+        "visual_identity_min_text_contrast": 5.19,
+        "accessibility_alt_texts": 10,
+        "accessibility_figure_boundaries": 10
+      },
+      "limitations": [
+        "This is automated figure readiness evidence, not manual aesthetic review.",
+        "It does not clear final figure-artifact approval or visual identity approval."
+      ]
+    },
+    "bedtime_readability_review": {
+      "status": "pass_pre_release_review",
+      "gate": "bedtime_readability_review",
+      "facts": {
+        "chapter_records": 44,
+        "reconciled_records": 44,
+        "release_blocker_preserved_records": 44,
+        "minimum_chapter_words": 2384,
+        "maximum_chapter_words": 5110,
+        "maximum_paragraph_words": 150,
+        "paragraphs_over_180_words": 0,
+        "live_marker_hits": 0,
+        "raw_core_claim_marker_hits": 0,
+        "sample_longest_chapters": [
+          {
+            "chapter_id": "compact-generative-systems-and-residual-honesty",
+            "word_count": 5110,
+            "paragraphs": 102,
+            "max_paragraph_words": 114,
+            "paragraphs_over_180_words": 0
+          },
+          {
+            "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+            "word_count": 4730,
+            "paragraphs": 102,
+            "max_paragraph_words": 120,
+            "paragraphs_over_180_words": 0
+          },
+          {
+            "chapter_id": "artifact-graphs-audit-logs-and-replay",
+            "word_count": 3973,
+            "paragraphs": 99,
+            "max_paragraph_words": 103,
+            "paragraphs_over_180_words": 0
+          },
+          {
+            "chapter_id": "artifact-steward-agents-and-living-project-governance",
+            "word_count": 3809,
+            "paragraphs": 82,
+            "max_paragraph_words": 125,
+            "paragraphs_over_180_words": 0
+          },
+          {
+            "chapter_id": "planning-as-a-control-layer",
+            "word_count": 3748,
+            "paragraphs": 90,
+            "max_paragraph_words": 142,
+            "paragraphs_over_180_words": 0
+          }
+        ],
+        "sample_longest_paragraphs": [
+          {
+            "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+            "word_count": 3184,
+            "paragraphs": 91,
+            "max_paragraph_words": 150,
+            "paragraphs_over_180_words": 0
+          },
+          {
+            "chapter_id": "planning-as-a-control-layer",
+            "word_count": 3748,
+            "paragraphs": 90,
+            "max_paragraph_words": 142,
+            "paragraphs_over_180_words": 0
+          },
+          {
+            "chapter_id": "executable-specifications-and-lean-proof-envelope",
+            "word_count": 2707,
+            "paragraphs": 60,
+            "max_paragraph_words": 140,
+            "paragraphs_over_180_words": 0
+          },
+          {
+            "chapter_id": "fast-generation-architectures",
+            "word_count": 3189,
+            "paragraphs": 78,
+            "max_paragraph_words": 136,
+            "paragraphs_over_180_words": 0
+          },
+          {
+            "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+            "word_count": 2568,
+            "paragraphs": 75,
+            "max_paragraph_words": 134,
+            "paragraphs_over_180_words": 0
+          }
+        ]
+      },
+      "limitations": [
+        "This checks source-level relaxed-reading shape only.",
+        "It does not replace human editorial judgment or reader release approval."
+      ]
+    },
+    "companion_notes_status": {
+      "status": "pass_pre_release_review",
+      "gate": "companion_notes_status",
+      "facts": {
+        "routing_records": 12,
+        "routing_records_with_existing_notes": 12,
+        "drafting_companion_notes": 12,
+        "key_figure_companion_note_present": true,
+        "key_figure_companion_figure_count": 10,
+        "audio_probe_companion_summaries": 10
+      },
+      "limitations": [
+        "Companion notes remain drafting support, not released artifacts.",
+        "They do not move meaning-critical caveats out of the reader spine."
+      ]
+    }
+  },
+  "release_blockers_preserved": [
+    "curated_reconciliation_not_approved",
+    "format_artifact_not_reviewed",
+    "reader_release_record_not_created",
+    "app_or_ereader_review_not_completed",
+    "manual_pdf_page_by_page_review_not_completed",
+    "final_figure_artifact_review_not_completed",
+    "manual_keyboard_only_review_not_completed",
+    "screen_reader_review_not_completed",
+    "wcag_conformance_review_not_completed",
+    "narration_quality_review_not_completed",
+    "audio_files_not_generated"
+  ],
+  "non_claims": [
+    "This gate does not approve, publish, tag, or archive any curated reader artifact.",
+    "This gate does not clear dedicated e-reader review, e-reader application approval, Word review, LibreOffice GUI review, Google Docs review, manual PDF page-by-page review, final figure-artifact review, manual keyboard-only review, screen-reader review, WCAG conformance review, narration quality review, audio generation, audiobook approval, or reader release approval.",
+    "This gate does not promote any chapter core claim or claim support state."
+  ]
+}

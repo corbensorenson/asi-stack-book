@@ -32,6 +32,9 @@ EPUB_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "epub_probe_mani
 DOCX_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "docx_probe_manifest.json"
 PDF_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "pdf_probe_manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
+HUMAN_CONSUMPTION_GATE = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
+)
 KEY_FIGURE_FORMAT_PROBE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 )
@@ -62,6 +65,7 @@ REVIEW_DOCS = {
     "reader_docx": ROOT / "docs" / "reader_docx_probe_manifest.md",
     "reader_pdf": ROOT / "docs" / "reader_pdf_probe_manifest.md",
     "reader_audio": ROOT / "docs" / "reader_audio_script_probe_manifest.md",
+    "reader_human_consumption": ROOT / "docs" / "reader_human_consumption_gate_review.md",
     "reader_figures": ROOT / "docs" / "reader_key_figure_artifact_review.md",
     "reader_figure_format": ROOT / "docs" / "reader_key_figure_format_probe.md",
     "reader_figure_geometry": ROOT / "docs" / "reader_key_figure_geometry_review.md",
@@ -151,6 +155,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         DOCX_PROBE,
         PDF_PROBE,
         AUDIO_PROBE,
+        HUMAN_CONSUMPTION_GATE,
         KEY_FIGURE_FORMAT_PROBE,
         KEY_FIGURE_GEOMETRY,
         VISUAL_IDENTITY,
@@ -181,6 +186,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     docx_probe = load_json(DOCX_PROBE)
     pdf_probe = load_json(PDF_PROBE)
     audio_probe = load_json(AUDIO_PROBE)
+    human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
     key_figure_format_probe = load_json(KEY_FIGURE_FORMAT_PROBE)
     key_figure_geometry = load_json(KEY_FIGURE_GEOMETRY)
     visual_identity = load_json(VISUAL_IDENTITY)
@@ -369,6 +375,42 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     audio_targets = audio_probe.get("target_artifact_status", {})
     audio_key_figures = audio_probe.get("key_figure_companion_note", {})
     audio_reading_flow = audio_probe.get("audio_script_reading_flow_review", {})
+    human_gate_records = human_consumption_gate.get("gates", {})
+    if human_consumption_gate.get("status") != "passed_human_consumption_pre_release_gate":
+        errors.append("human-consumption gate manifest must remain passed_human_consumption_pre_release_gate.")
+    if not isinstance(human_gate_records, dict):
+        errors.append("human-consumption gate manifest gates must be an object.")
+        human_gate_records = {}
+    human_gate_statuses: dict[str, str] = {}
+    for gate_name in (
+        "ebook_layout_review",
+        "diagram_image_review",
+        "bedtime_readability_review",
+        "companion_notes_status",
+    ):
+        gate = human_gate_records.get(gate_name, {})
+        if not isinstance(gate, dict):
+            errors.append(f"human-consumption gate {gate_name} must be an object.")
+            continue
+        status = gate.get("status")
+        human_gate_statuses[gate_name] = str(status)
+        if status != "pass_pre_release_review":
+            errors.append(f"human-consumption gate {gate_name} must remain pass_pre_release_review.")
+    human_gate_required_blockers = REQUIRED_CURATED_BLOCKERS | {
+        "app_or_ereader_review_not_completed",
+        "manual_pdf_page_by_page_review_not_completed",
+        "final_figure_artifact_review_not_completed",
+        "manual_keyboard_only_review_not_completed",
+        "screen_reader_review_not_completed",
+        "wcag_conformance_review_not_completed",
+        "narration_quality_review_not_completed",
+        "audio_files_not_generated",
+    }
+    missing_human_gate_blockers = sorted(
+        human_gate_required_blockers - set(human_consumption_gate.get("release_blockers_preserved", []))
+    )
+    if missing_human_gate_blockers:
+        errors.append(f"human-consumption gate manifest missing blockers: {missing_human_gate_blockers}")
     if set(audio_targets.values()) != {"target_not_generated"}:
         errors.append("audio target artifacts must remain target_not_generated until audio release artifacts exist.")
     missing_audio_blockers = sorted(REQUIRED_AUDIO_BLOCKERS - set(audio_probe.get("release_blockers_preserved", [])))
@@ -803,6 +845,17 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "| Draft figure summaries routed | 10 |",
             "This manifest does not approve EPUB, DOCX, PDF, HTML, e-reader, document, audio, MP3, M4B, or audio-embedded EPUB artifacts",
         ],
+        "reader_human_consumption": [
+            "Reader Human-Consumption Gate Review",
+            "pass_pre_release_review",
+            "Ebook layout",
+            "Diagram/image readiness",
+            "Bedtime readability",
+            "Companion notes",
+            "does not clear dedicated e-reader review",
+            "page-by-page review",
+            "does not promote any chapter core claim",
+        ],
         "reader_figures": [
             "not a release approval and not final figure-artifact review",
             "does not approve final figure art, EPUB, DOCX, PDF, e-reader",
@@ -942,6 +995,19 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if curated_key_figure_pairs != 20 or curated_key_figure_failures != 0:
         errors.append("curated reader HTML key-figure browser metrics must stay at 20 pairs and 0 failures.")
 
+    human_ebook_facts = human_gate_records.get("ebook_layout_review", {}).get("facts", {})
+    human_diagram_facts = human_gate_records.get("diagram_image_review", {}).get("facts", {})
+    human_bedtime_facts = human_gate_records.get("bedtime_readability_review", {}).get("facts", {})
+    human_companion_facts = human_gate_records.get("companion_notes_status", {}).get("facts", {})
+    if not isinstance(human_ebook_facts, dict):
+        human_ebook_facts = {}
+    if not isinstance(human_diagram_facts, dict):
+        human_diagram_facts = {}
+    if not isinstance(human_bedtime_facts, dict):
+        human_bedtime_facts = {}
+    if not isinstance(human_companion_facts, dict):
+        human_companion_facts = {}
+
     metrics: dict[str, Any] = {
         "profile_count": len(profile_ids),
         "profile_ids": sorted(profile_ids),
@@ -1025,6 +1091,23 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "audio_reading_flow_tbd_rows": audio_reading_flow.get("chapter_marker_tbd_rows"),
         "audio_targets": audio_targets,
         "audio_key_figure_count": audio_key_figures.get("figure_count"),
+        "human_consumption_gate_status": human_consumption_gate.get("status"),
+        "human_consumption_gate_statuses": human_gate_statuses,
+        "human_consumption_epub_pairs": human_ebook_facts.get("epub_key_figure_page_view_pairs"),
+        "human_consumption_epub_failures": human_ebook_facts.get("epub_key_figure_failed_pairs"),
+        "human_consumption_pdf_caption_pages": human_ebook_facts.get("pdf_key_figure_caption_pages"),
+        "human_consumption_docx_title_pages": human_ebook_facts.get("docx_key_figure_title_pages"),
+        "human_consumption_diagram_figures": human_diagram_facts.get("key_figures"),
+        "human_consumption_diagram_rasters": human_diagram_facts.get("raster_artifacts"),
+        "human_consumption_min_luminance_std": human_diagram_facts.get("raster_min_luminance_std"),
+        "human_consumption_readability_chapters": human_bedtime_facts.get("chapter_records"),
+        "human_consumption_readability_min_words": human_bedtime_facts.get("minimum_chapter_words"),
+        "human_consumption_readability_max_words": human_bedtime_facts.get("maximum_chapter_words"),
+        "human_consumption_readability_max_paragraph_words": human_bedtime_facts.get("maximum_paragraph_words"),
+        "human_consumption_live_marker_hits": human_bedtime_facts.get("live_marker_hits"),
+        "human_consumption_companion_routes": human_companion_facts.get("routing_records"),
+        "human_consumption_companion_existing": human_companion_facts.get("routing_records_with_existing_notes"),
+        "human_consumption_companion_summaries": human_companion_facts.get("audio_probe_companion_summaries"),
         "key_figure_epub_svg_entries": key_figure_format_probe.get("epub", {}).get("svg_entries"),
         "key_figure_epub_matched_titles": key_figure_format_probe.get("epub", {}).get(
             "matched_source_svg_titles"
@@ -1111,6 +1194,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"`docs/reader_format_review_matrix.md` tracks {metrics['curated_candidate_count']} current curated-candidate rows with release blockers; "
         f"automated keyboard traversal covers {metrics['reader_keyboard_navigation_pairs']} page-view pairs with "
         f"{metrics['reader_keyboard_navigation_failures']} failures; "
+        f"the human-consumption pre-release gate is `{metrics['human_consumption_gate_status']}`; "
         f"the curated manuscript remains `{metrics['reader_manifest_status']}` with "
         f"{metrics['curated_record_count']} records ({reconciliation_counts.get('reconciled', 0)} reconciled); "
         f"{metrics['overlay_operation_count']} overlay operations are tracked; "
@@ -1124,6 +1208,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/curated_reader_format_artifact_probe.md`; `docs/reader_epub_probe_manifest.md`; "
         "`docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; "
         "`docs/reader_audio_script_probe_manifest.md`; `docs/reader_key_figure_format_probe.md`; "
+        "`docs/reader_human_consumption_gate_review.md`; "
         "`docs/reader_key_figure_geometry_review.md`; `docs/reader_visual_identity_review.md`; "
         "`docs/reader_accessibility_navigation_review.md`; `docs/reader_key_figure_raster_review.md`; "
         "`docs/reader_keyboard_navigation_review.md`; "
@@ -1133,6 +1218,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`; "
         "`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`; "
         "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
+        "`python3 scripts/validate_reader_human_consumption_gate.py`; "
         "`python3 scripts/validate_release_surface_status_ledger.py` |"
     )
 
@@ -1197,6 +1283,11 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Current curated candidate blocker counts | {qmd_escape(counter_phrase(metrics['curated_candidate_blocker_counts']))} |",
             f"| Blocked curated reader candidate record | {metrics['curated_blocked_record_status']} |",
             f"| Blocked curated format-probe closure | {metrics['curated_blocked_probe_status']} |",
+            f"| Human-consumption pre-release gate | `{metrics['human_consumption_gate_status']}` |",
+            f"| Human-consumption gate statuses | {qmd_escape(counter_phrase(Counter(metrics['human_consumption_gate_statuses'].values())))} |",
+            f"| Human-consumption ebook checks | {metrics['human_consumption_epub_pairs']} EPUB key-figure pairs, {metrics['human_consumption_epub_failures']} failures, {metrics['human_consumption_pdf_caption_pages']} PDF caption pages, {metrics['human_consumption_docx_title_pages']} DOCX title pages |",
+            f"| Human-consumption readability checks | {metrics['human_consumption_readability_chapters']} chapters, {metrics['human_consumption_readability_min_words']} to {metrics['human_consumption_readability_max_words']} words, max paragraph {metrics['human_consumption_readability_max_paragraph_words']} words, {metrics['human_consumption_live_marker_hits']} live-marker hits |",
+            f"| Human-consumption companion checks | {metrics['human_consumption_companion_routes']} routes, {metrics['human_consumption_companion_existing']} existing notes, {metrics['human_consumption_companion_summaries']} figure spoken summaries |",
             "",
             "## Status-Page Row",
             "",
@@ -1223,6 +1314,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_docx_probe_manifest.md` records the generated reader DOCX conversion probe: {metrics['reader_docx_pages']} pages and {metrics['reader_docx_bytes']:,} bytes, with full-format review still active.",
             f"- `docs/reader_pdf_probe_manifest.md` records the generated reader PDF probe: {metrics['reader_pdf_pages']} pages and {metrics['reader_pdf_bytes']:,} bytes, with full PDF layout review still active.",
             f"- `docs/reader_audio_script_probe_manifest.md` records {metrics['audio_script_files']} audio-script workspace files, a reading-flow review with {metrics['audio_reading_flow_markers']} ordered chapter-marker rows, {metrics['audio_reading_flow_tbd_rows']} untimecoded marker rows, {metrics['audio_reading_flow_narration_notes']} narration notes, and {metrics['audio_reading_flow_text_chars']:,} text characters, plus {metrics['audio_key_figure_count']} draft key-figure spoken summaries routed into the generated audio companion workspace; target artifact states remain {qmd_escape(', '.join(f'{key}: {value}' for key, value in sorted(audio_targets.items())))}.",
+            f"- `docs/reader_human_consumption_gate_review.md` records the current pre-release human-consumption gate as `{metrics['human_consumption_gate_status']}`: ebook layout, diagram/image readiness, bedtime readability, and companion-note routing are `pass_pre_release_review` while e-reader, application, manual PDF, final figure-artifact, accessibility, audio, and release-approval blockers remain active.",
             f"- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval; `docs/reader_key_figure_format_probe.md` records package/text survival with {metrics['key_figure_epub_svg_entries']} EPUB SVG entries, {metrics['key_figure_epub_matched_titles']} matched EPUB SVG titles, {metrics['key_figure_docx_matched_stems']} DOCX figure stems, and {metrics['key_figure_pdf_matched_captions']} PDF draft-caption matches while preserving final-art, e-reader, application, PDF-layout, and release blockers.",
             f"- `docs/reader_key_figure_geometry_review.md` records a source-geometry review for {metrics['key_figure_geometry_count']} key figures: {metrics['key_figure_geometry_content_bounds']} content-bound checks, {metrics['key_figure_geometry_text_anchor_bounds']} text-anchor checks, and {metrics['key_figure_geometry_min_edge_margin']} px minimum content edge margin; it is not raster review, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_visual_identity_review.md` records a source-level visual identity review: {metrics['visual_identity_figure_count']} key figures, {metrics['visual_identity_color_count']} combined colors, {metrics['visual_identity_non_neutral_families']} non-neutral color families, and minimum text contrast {metrics['visual_identity_min_text_contrast']}; it is not manual aesthetic review, final figure-artifact approval, or reader release approval.",

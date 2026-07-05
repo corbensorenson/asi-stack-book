@@ -4254,16 +4254,21 @@ validator-enforced status row that grows past compact status-summary size.
 2. **Release unblock ladder.** The blocked curated-reader release candidate
    (`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`) is
    the close-out queue; work it in order and flip the record from blocked to
-   approved when it empties: finish the four in-progress human-consumption
-   gate reviews (ebook layout, diagram image, bedtime readability, companion
-   notes); complete the dedicated e-reader review for EPUB (the Chromium
-   XHTML review is explicitly not that); complete the manual page-by-page
-   PDF reading-flow review (the bounding-box audit is explicitly not that);
-   then clear `curated_reconciliation_not_approved` across the 44 curated
-   chapter records with an approval record, and issue the approved edition
-   release record. Publication/tagging of the approved artifacts remains a
-   user-triggered act, like DOI; producing the approved record does not wait
-   on anyone.
+   approved when it empties. The first rung is now closed by
+   `python3 scripts/validate_reader_human_consumption_gate.py`,
+   `editions/reader_manuscript/v1_0/human_consumption_gate_manifest.json`,
+   and `docs/reader_human_consumption_gate_review.md`: ebook layout,
+   diagram/image readiness, bedtime readability, and companion-note routing
+   are `pass_pre_release_review` for release preparation only. The active
+   release queue is now: complete the dedicated e-reader review for EPUB (the
+   Chromium XHTML review is explicitly not that); complete the manual
+   page-by-page PDF reading-flow review (the bounding-box audit is explicitly
+   not that); clear final figure-artifact/manual visual approval where release
+   scope requires it; clear `curated_reconciliation_not_approved` across the
+   44 curated chapter records with an approval record; and issue the approved
+   edition release record. Publication/tagging of the approved artifacts
+   remains a user-triggered act, like DOI; producing the approved record does
+   not wait on anyone.
 3. **Evidence ladder static at 6 for two decision-heavy rounds.** The 19 new
    no-promotion decisions are correct refusals, but the cadence rule needs an
    ascent path executed, not only guarded: the named next accepted-transition
