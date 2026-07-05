@@ -1,0 +1,100 @@
+{
+  "transition_id": "v1_x_measured.circle_recurrence_receipt.no_change",
+  "claim_id": "circle-calculus.recurrence_schedule_receipt_slice",
+  "claim_surface_refs": [
+    "docs/circle_recurrence_receipt_slice.md",
+    "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+    "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_recurrence_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_recurrence_receipt_slice.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe local external Circle recurrence-schedule receipt import only. The slice records one pinned `CC-AI-CONTRACT-RECURRENCE-001` structural fixture at Circle commit `63b0f511`, active/inactive token work traces, scheduled work-saving fields, whole-period shift invariants, three required theorem IDs, two planner recommendations, contract fingerprint `571edd5dce4f7b64441806de323295218a3e2293b3b540dd4772ba34b9371515`, command-output digests, and a passing Circle CLI test summary. It does not prove deployed recurrence behavior, reasoning quality, retrieval quality, learned-memory behavior, convergence, model quality, long-context utility, transfer, safety, ASI, or Coil chapter-core promotion.",
+  "evidence_roles": [
+    "external_project_receipt_import",
+    "recurrence_schedule_structural_fixture",
+    "work_budget_accounting_boundary",
+    "whole_period_shift_invariant_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The recurrence receipt slice makes one Circle recurrence-schedule structural fixture concrete in the book and closes the stale 'no recurrence certifier import' blocker for the Coil chapter. The evidence remains an external-project receipt import with no deployed ASI-side recurrence-controller trace, no ordinary attention or recurrence baseline, no memory-quality workload, no long-context result, no model-quality result, and no independent review, so it blocks promotion rather than moving support state.",
+  "required_artifacts": [
+    "fresh public Circle replay or archived public recurrence contract pack",
+    "repository-owned command that reruns the relevant Circle recurrence proof target or verifies an archived replay bundle",
+    "deployed or replayed ASI-side recurrence-controller trace",
+    "ordinary attention and recurrence baselines with workload metrics",
+    "retrieval-quality, reasoning-quality, long-context, convergence, memory-savings, and model-quality measurements for any promoted claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/circle_recurrence_receipt_slice.md",
+    "experiments/circle_recurrence_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_recurrence_receipt_slice.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_recurrence_receipt_slice.md",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#coil-attention-cyclic-memory-and-recurrence-contracts.core",
+    "docs/book_outline.md#coil-attention-cyclic-memory-and-recurrence-contracts"
+  ],
+  "verification_command": "python3 scripts/validate_circle_recurrence_receipt_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "support state remains argument",
+    "support_state_effect remains blocks_promotion",
+    "no deployed recurrence behavior is claimed",
+    "no reasoning quality, retrieval quality, learned-memory, convergence, long-context, model-quality, transfer, safety, or ASI claim is promoted",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_recurrence_receipt_slice.md",
+    "experiments/circle_recurrence_receipt_slice/results/2026-07-05-local.json"
+  ],
+  "downgrade_triggers": [
+    "recurrence receipt-slice validator failure",
+    "receipt fingerprint drift",
+    "missing required theorem ID accepted",
+    "active-work, saved-work, or shift-invariant evidence field drift",
+    "external-project receipt import described as deployed recurrence behavior",
+    "reasoning-quality, retrieval-quality, learned-memory, convergence, long-context, model-quality, transfer, safety, ASI, or support-state promotion claimed without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed recurrence-schedule claim after a fresh public Circle replay or archived public contract pack, repository-owned proof/replay verification, deployed or replayed ASI-side recurrence-controller traces, ordinary baselines, retrieval/reasoning/long-context/convergence/model-quality measurements for the specific claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one pinned local external Circle receipt import",
+    "external Circle checkout is not vendored into this public repository",
+    "no clean ASI-side CI replay of Circle",
+    "no deployed recurrence-controller trace",
+    "no reasoning-quality, retrieval-quality, learned-memory, convergence, long-context, model-quality, transfer, safety, or ASI measurement",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, recurrence-controller, memory-quality, long-context, benchmark, model-quality, transfer, or safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no archived public Circle recurrence contract pack",
+    "no deployed or replayed ASI-side recurrence-controller trace",
+    "no workload baselines or measurements",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-circle-recurrence-receipt-slice",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Coil Attention or Circle recurrence evidence above argument",
+    "does not prove deployed recurrence behavior, reasoning quality, retrieval quality, learned-memory behavior, convergence, model quality, context length, speed, memory savings, deployment safety, transfer, benchmark performance, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote the Coil Attention chapter core claim"
+  ]
+}

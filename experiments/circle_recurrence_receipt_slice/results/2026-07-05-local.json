@@ -1,0 +1,186 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-07-05-local-circle-recurrence-receipt-slice",
+  "slice_id": "circle_recurrence_receipt_slice",
+  "external_project": {
+    "name": "Circle Calculus",
+    "public_remote": "https://github.com/corbensorenson/circle-calculus",
+    "git_commit": "63b0f511",
+    "worktree_state": "clean_before_commands"
+  },
+  "environment": "local external Circle Calculus checkout; outputs recorded here as public-safe summaries without vendoring the external project",
+  "commands": [
+    {
+      "command": "PYTHONPATH=. python3 scripts/recurrence_schedule_certify.py --loop-period 5 --sample-index 8 --max-loops 7 --token-count 8 --selected-block-start 2 --selected-block-width 3 --shift-passes 3 --format json",
+      "verification_result": "pass",
+      "observed_summary": "contract_passed true; loop_period 5; sample_index 8; max_loops 7; required_steps 4; exit_step 4; active_token_count_trace [8, 6, 4, 2, 1]; inactive_token_count_trace [0, 2, 4, 6, 7]; total_active_token_work 21; total_inactive_token_work 19; scheduled_work_saving 19; periodic_shift_amount 15; shifted_token 22",
+      "output_sha256": "18dec9b030fdae61838ae778c9f22b39f318d7449611244f4e745e7e1d77d9ad",
+      "output_bytes": 38845
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_certify.py recurrence --loop-period 5 --sample-index 8 --max-loops 7 --token-count 8 --selected-block-start 2 --selected-block-width 3 --shift-passes 3 --format json",
+      "verification_result": "pass",
+      "observed_summary": "circle AI certifier accepted recurrence request; contract_id CC-AI-CONTRACT-RECURRENCE-001; kind recurrence_schedule; theorem_count 64; planner recommendations RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE and RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT",
+      "output_sha256": "2a4a40151f7c4ac900bcfcbb3a1f42fe68020c8eae269a523f971af5b794318d",
+      "output_bytes": 58239
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind recurrence_schedule --digest --field active_token_count_trace --field inactive_token_count_trace --field total_active_token_work --field total_inactive_token_work --field scheduled_work_saving --field periodic_shift_required_steps_invariant --field post_period_extension_active_work_unchanged --field post_period_multi_extension_active_work_unchanged --include-recommendations",
+      "verification_result": "pass",
+      "observed_summary": "circle AI contract digest ok: recurrence_schedule; id=CC-AI-CONTRACT-RECURRENCE-001 ready=True fields=8 missing=0 theorems=64; recommendations RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE and RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT",
+      "output_sha256": "cbb84e6e0fcd374895ed998307380917849d30a1268c211dfa4e43bac1357689",
+      "output_bytes": 4060
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind recurrence_schedule --receipt --format json --field periodic_shift_required_steps_invariant --field periodic_shift_active_at_step_invariant --field total_active_token_work --field scheduled_work_saving --field scheduled_work_saving_accounting --field active_inactive_work_accounting --field scheduled_work_saving_positive --field post_period_multi_extension_scheduled_work_saving --require-theorem AIM-T0026 --require-theorem AIM-T0130 --require-theorem AIM-T0159 --require-recommendation RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE --require-recommendation RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT --require-recommendation-evidence-field RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=total_active_token_work --require-recommendation-evidence-field RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=scheduled_work_saving --require-recommendation-evidence-field RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=post_period_multi_extension_scheduled_work_saving --require-recommendation-evidence-field RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT=periodic_shift_required_steps_invariant --require-recommendation-evidence-field RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT=periodic_shift_active_at_step_invariant --require-recommendation-theorem RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=AIM-T0130 --require-recommendation-theorem RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=AIM-T0159 --require-recommendation-theorem RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT=AIM-T0026 --require-recommendation-action-parameter RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=loop_period --require-recommendation-action-parameter RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=scheduled_work_saving --require-recommendation-action-parameter RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT=base_token --require-recommendation-action-parameter-path RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=loop_period --require-recommendation-action-parameter-path RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=token_count --require-recommendation-action-parameter-path RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=horizon_steps --require-recommendation-action-parameter-path RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=scheduled_work_saving --require-recommendation-action-parameter-path RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE=post_period_multi_extension_scheduled_work_saving --require-recommendation-action-parameter-path RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT=base_token --require-recommendation-action-parameter-path RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT=shifted_token --require-recommendation-action-parameter-path RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT=shift_amount",
+      "verification_result": "pass",
+      "observed_summary": "accepted true; receipt_schema circle_calculus.ai_contract_acceptance_receipt.v0; contract_id CC-AI-CONTRACT-RECURRENCE-001; kind recurrence_schedule; pack_content_fingerprint df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae; contract_content_fingerprint 571edd5dce4f7b64441806de323295218a3e2293b3b540dd4772ba34b9371515; required theorem IDs AIM-T0026 AIM-T0130 AIM-T0159; required recommendations RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE and RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT",
+      "output_sha256": "5b1d20752090cda0e4c2d0cf43b22c6832b46db6ae910f98fa3f18a4d47f32fa",
+      "output_bytes": 12285
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m pytest tests/test_recurrence_schedule_certifier_cli.py -q",
+      "verification_result": "pass",
+      "observed_summary": "2 passed in 2.37s",
+      "output_sha256": "4ebae0342e485c764b9428f69b6f0535e7506cc353926f4c51e028fd1052d0d3",
+      "output_bytes": 98
+    }
+  ],
+  "recurrence_fixture": {
+    "loop_period": 5,
+    "sample_index": 8,
+    "max_loops": 7,
+    "required_steps": 4,
+    "exit_step": 4,
+    "overthinking_boundary": 5,
+    "total_work_horizon_steps": 5,
+    "active_token_count_trace": [8, 6, 4, 2, 1],
+    "inactive_token_count_trace": [0, 2, 4, 6, 7],
+    "active_token_count_trace_sum": 21,
+    "inactive_token_count_trace_sum": 19,
+    "active_token_count_trace_sum_matches_total": true,
+    "inactive_token_count_trace_sum_matches_total": true,
+    "first_inactive_steps_match_budget_successor": true,
+    "total_active_token_work": 21,
+    "total_inactive_token_work": 19,
+    "full_loop_token_work": 40,
+    "scheduled_work_saving": 19,
+    "scheduled_work_saving_accounting": true,
+    "active_inactive_work_accounting": true,
+    "scheduled_work_saving_matches_inactive_work": true,
+    "scheduled_work_saving_positive": true,
+    "active_work_below_full_loop_work": true,
+    "post_period_extension_horizon_steps": 6,
+    "post_period_extension_total_active_token_work": 21,
+    "post_period_extension_total_inactive_token_work": 27,
+    "post_period_extension_full_loop_token_work": 48,
+    "post_period_extension_scheduled_work_saving": 27,
+    "post_period_extension_active_work_unchanged": true,
+    "post_period_extension_saving_added_token_count": true,
+    "post_period_extra_steps": 3,
+    "post_period_multi_extension_horizon_steps": 8,
+    "post_period_multi_extension_total_active_token_work": 21,
+    "post_period_multi_extension_total_inactive_token_work": 43,
+    "post_period_multi_extension_full_loop_token_work": 64,
+    "post_period_multi_extension_scheduled_work_saving": 43,
+    "post_period_multi_extension_active_work_unchanged": true,
+    "post_period_multi_extension_saving_added_extra_token_count": true,
+    "periodic_shift_base_token": 7,
+    "periodic_shift_passes": 3,
+    "periodic_shift_amount": 15,
+    "periodic_shifted_token": 22,
+    "periodic_shift_required_steps_invariant": true,
+    "periodic_shift_recurrence_budget_invariant": true,
+    "periodic_shift_training_free_budget_invariant": true,
+    "periodic_shift_exit_step_invariant": true,
+    "periodic_shift_overthinking_boundary_invariant": true,
+    "periodic_shift_active_step": 2,
+    "periodic_shift_active_at_step_invariant": true
+  },
+  "accepted_receipt": {
+    "accepted": true,
+    "contract_id": "CC-AI-CONTRACT-RECURRENCE-001",
+    "kind": "recurrence_schedule",
+    "receipt_schema": "circle_calculus.ai_contract_acceptance_receipt.v0",
+    "schema_id": "circle_calculus.ai_contract_pack.v0",
+    "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+    "contract_content_fingerprint": "571edd5dce4f7b64441806de323295218a3e2293b3b540dd4772ba34b9371515",
+    "source_paper": "papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md",
+    "required_theorem_ids": [
+      "AIM-T0026",
+      "AIM-T0130",
+      "AIM-T0159"
+    ],
+    "required_recommendation_ids": [
+      "RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE",
+      "RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT"
+    ],
+    "theorem_count": 64,
+    "evidence_fields": {
+      "active_inactive_work_accounting": true,
+      "periodic_shift_active_at_step_invariant": true,
+      "periodic_shift_required_steps_invariant": true,
+      "post_period_multi_extension_scheduled_work_saving": 43,
+      "scheduled_work_saving": 19,
+      "scheduled_work_saving_accounting": true,
+      "scheduled_work_saving_positive": true,
+      "total_active_token_work": 21
+    },
+    "planner_recommendations": [
+      {
+        "recommendation_id": "RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE",
+        "action_kind": "use_active_token_work_schedule",
+        "coverage_scope": "finite_default_loop_schedule_fixture",
+        "loop_period": 5,
+        "token_count": 8,
+        "horizon_steps": 5,
+        "active_token_work": 21,
+        "inactive_token_work": 19,
+        "scheduled_work_saving": 19,
+        "post_period_multi_extension_scheduled_work_saving": 43,
+        "required_evidence_fields": [
+          "total_active_token_work",
+          "scheduled_work_saving",
+          "post_period_multi_extension_scheduled_work_saving"
+        ],
+        "required_theorem_ids": [
+          "AIM-T0130",
+          "AIM-T0159"
+        ],
+        "not_claimed": "not a runtime, memory, reasoning-quality, convergence, or model-quality proof"
+      },
+      {
+        "recommendation_id": "RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT",
+        "action_kind": "reuse_whole_period_shifted_schedule_index",
+        "coverage_scope": "whole_loop_period_token_shift_fixture",
+        "base_token": 7,
+        "shift_amount": 15,
+        "shifted_token": 22,
+        "required_evidence_fields": [
+          "periodic_shift_required_steps_invariant",
+          "periodic_shift_active_at_step_invariant"
+        ],
+        "required_theorem_ids": [
+          "AIM-T0026"
+        ],
+        "not_claimed": "not a proof that a real looped transformer reasons better, halts correctly, or can reuse implementation state safely without a separate system contract"
+      }
+    ]
+  },
+  "support_state_effect": "none",
+  "verification_result": "pass",
+  "residuals": [
+    "The external Circle checkout is not vendored into this public repository.",
+    "The result records local external-project commands and output digests, not a clean ASI-side CI replay of Circle.",
+    "The receipt concerns one recurrence-schedule structural fixture and does not generalize to deployed recurrence behavior, reasoning quality, memory savings, long-context utility, convergence, or model quality.",
+    "A future evidence transition would require a separate accepted review record."
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not create a support-state transition",
+    "does not prove deployed recurrence behavior, reasoning quality, retrieval quality, learned-memory behavior, convergence, model quality, context length, speed, memory savings, deployment safety, transfer, or ASI",
+    "does not prove deployed proof-contract transport inside The ASI Stack",
+    "does not reproduce Theseus, MoECOT, VCM, PlanForge, retrieval benchmarks, long-context benchmarks, policy-training, serving benchmarks, recurrence benchmarks, or simulation results",
+    "does not make the external Circle checkout a vendored public dependency"
+  ]
+}
