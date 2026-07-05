@@ -274,6 +274,10 @@
         "key_figure_epub_layout_failed_pairs",
         "key_figure_epub_layout_max_overflow",
         "key_figure_epub_layout_image_failures",
+        "epub_apple_books_review_manifest",
+        "epub_apple_books_review_status",
+        "epub_apple_books_review_sha256",
+        "epub_apple_books_cleared_blockers",
         "key_figure_pdf_layout_manifest",
         "key_figure_pdf_layout_caption_pages",
         "key_figure_pdf_layout_raster_pages",
@@ -382,6 +386,16 @@
         "key_figure_epub_layout_failed_pairs": { "type": "integer", "minimum": 0 },
         "key_figure_epub_layout_max_overflow": { "type": "integer", "minimum": 0 },
         "key_figure_epub_layout_image_failures": { "type": "integer", "minimum": 0 },
+        "epub_apple_books_review_manifest": { "type": "string", "minLength": 1 },
+        "epub_apple_books_review_status": {
+          "type": "string",
+          "enum": ["passed_apple_books_epub_application_review"]
+        },
+        "epub_apple_books_review_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "epub_apple_books_cleared_blockers": { "type": "integer", "minimum": 0 },
         "key_figure_pdf_layout_manifest": { "type": "string", "minLength": 1 },
         "key_figure_pdf_layout_caption_pages": { "type": "integer", "minimum": 0 },
         "key_figure_pdf_layout_raster_pages": { "type": "integer", "minimum": 0 },

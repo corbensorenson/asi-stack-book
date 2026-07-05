@@ -40,7 +40,7 @@
     },
     {
       "format": "ereader_application_review",
-      "status": "reviewed_local_application",
+      "status": "reviewed",
       "command_or_tool": "python3 scripts/validate_reader_epub_apple_books_review.py; Apple Books (com.apple.iBooksX) local application review via Computer Use",
       "path_or_uri": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
       "notes": "Apple Books application review passed for repaired curated EPUB digest 0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda. The review opened or retained The ASI Stack in Apple Books, rendered chapter 1 without the earlier XML error banner, advanced to a page containing the ASI Stack control-plane figure, caption, boundary text, and next section heading, and opened the table of contents. It clears only app_or_ereader_review_not_completed for the current repaired EPUB path. Blocked: this is not EPUB publication approval, not a full e-reader visual acceptance decision, not a reader release approval, and not an edition release record."
