@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-07-05 - Import Theseus project-registry health
+
+- Added `python3 scripts/validate_theseus_project_registry_import.py`,
+  `docs/theseus_project_registry_import.md`, the public-safe fixture set under
+  `experiments/theseus_project_registry_import/`, result artifact
+  `experiments/theseus_project_registry_import/results/2026-07-05-local.json`,
+  Lean bridge `lean:theseus.reference.project_registry_import.fixture_bridge`,
+  and accepted bounded transition
+  `evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json`.
+- The Theseus project-registry import records trigger state `GREEN`, 5,662
+  registered paths, 24 owned lifecycle surfaces, full registry coverage, 0
+  unregistered active sources, 0 stale or missing report outputs, 0 generated
+  source artifacts, 0 registry-governance violations, 0 external inference
+  calls, and nine expected-invalid controls for source-hash mismatch, private
+  payload copying, coverage gaps, unregistered active sources, unclassified
+  duplicate families, registry-governance violations, generated source
+  artifacts, clean-live-replay overclaim, and chapter-core promotion.
+- Updated the Project Theseus live and curated reader chapters, outline,
+  manifest proof/test hooks, non-core evidence ledger, active evidence-cycle
+  ledger, proof-adequacy review, roadmap, Project Theseus static import status
+  ledger generator, and full book validation wiring so
+  `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`
+  moves from `argument` to `prototype-backed`.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 206 proof
+  targets, 54 Lean modules, 1024 theorem declarations, 835
+  derived/decomposed, 185 direct/projection, 4 unknown/mixed, and 5/5
+  safety-critical chapter classifications present.
+- Boundary: this does not prove clean live Project Theseus replay, deployment,
+  model quality, benchmark performance, generation speed, self-evolution
+  safety, alignment, transfer, deployment readiness, ASI, or any chapter core
+  claim above `argument`.
+
 ## 2026-07-05 - Strengthen reader release-candidate bridge controls
 
 - Strengthened `python3 scripts/validate_reader_release_candidate_bridge.py`

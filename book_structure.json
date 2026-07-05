@@ -12457,6 +12457,13 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_module_definition_of_done_import.py`"
             },
             {
+              "name": "Theseus project-registry import validation",
+              "purpose": "Validate a sanitized public-safe Project Theseus project-registry import with source report digests, GREEN trigger state, 5,662 registered paths, 24 owned lifecycle surfaces, public-safety redaction boundary, accepted bounded non-core transition, and expected-invalid controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_project_registry_import.py`; result `theseus-project-registry-import-2026-07-05` checks 5,662 registered paths, 24 surfaces, full coverage, 0 unregistered active sources, 0 stale or missing report outputs, 0 generated source artifacts, 0 registry-governance violations, 9 expected-invalid controls, and bounded claim `project-theseus-as-report-first-implementation-reference.project_registry_reality_import` from `argument` to `prototype-backed`; does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, ASI, or chapter-core promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_project_registry_import.py`"
+            },
+            {
               "name": "Report-bundle completeness test",
               "purpose": "Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported.",
               "implementation_status": "implemented",
@@ -12606,6 +12613,12 @@
               "tag": "lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
               "module": "AsiStackProofs.TheseusReference",
               "target": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:theseus.reference.project_registry_import.fixture_bridge",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
               "status": "implemented"
             }
           ]

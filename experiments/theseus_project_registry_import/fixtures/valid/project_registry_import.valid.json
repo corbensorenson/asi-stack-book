@@ -1,0 +1,109 @@
+{
+  "schema_version": "asi_stack.theseus_project_registry_import.v0",
+  "import_id": "theseus-project-registry-import-2026-07-05",
+  "source_commit": "1ad88a22",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_report": "reports/theseus_project_registry_functional_promotion_gate.json",
+  "source_report_sha256": "7814b39a5ddcb191e7c35dea4309bee5738fe389e91af00702f57ef84cf8418b",
+  "source_report_stable_sha256": "215aeb759cfddabc8f7e66125b380d417fbf26a24169875bf92c148a5f716dfd",
+  "policy": "project_theseus_project_registry_v1",
+  "created_utc": "2026-06-22T08:00:20.592374Z",
+  "trigger_state": "GREEN",
+  "surface_count": 24,
+  "external_inference_calls": 0,
+  "summary": {
+    "active_source_surface_mib": 25.368,
+    "artifact_type_counts": {
+      "benchmark": 156,
+      "configuration": 34,
+      "control_plane": 34,
+      "data_governance": 119,
+      "deprecated": 57,
+      "documentation": 50,
+      "generated_artifact": 4432,
+      "governance": 96,
+      "memory": 41,
+      "product_surface": 134,
+      "runtime": 134,
+      "supporting_script": 296,
+      "training": 79
+    },
+    "classified_report_duplicate_family_count": 57,
+    "classified_source_duplicate_family_count": 10,
+    "coverage_ratio": 1.0,
+    "duplicate_family_count": 67,
+    "entry_count": 5662,
+    "generated_or_build_state_mib": 14193.374,
+    "generated_source_artifact_count": 0,
+    "missing_report_output_count": 0,
+    "registered_path_count": 5662,
+    "registry_governance_violation_count": 0,
+    "registry_hard_governance_violation_count": 0,
+    "report_duplicate_family_count": 57,
+    "runtime_ms": 3293,
+    "source_duplicate_family_count": 10,
+    "stale_report_output_count": 0,
+    "status_counts": {
+      "deprecated": 57,
+      "generated": 4432,
+      "live": 877,
+      "retained": 296
+    },
+    "thresholds": {
+      "red_unregistered_active_sources": 80,
+      "yellow_duplicate_families": 8,
+      "yellow_generated_source_artifacts": 1,
+      "yellow_stale_report_outputs": 8,
+      "yellow_unregistered_active_sources": 20
+    },
+    "unclassified_duplicate_family_count": 0,
+    "unclassified_report_duplicate_family_count": 0,
+    "unclassified_source_duplicate_family_count": 0,
+    "unregistered_active_source_count": 0
+  },
+  "registry_evolution_rules": [
+    "source_of_truth_config_defines_owned_lifecycle_surfaces",
+    "unregistered_active_sources_require_owner_deprecated_or_generated_status",
+    "duplicate_families_must_be_consolidated_or_registered",
+    "generated_artifacts_must_live_under_generated_roots_or_be_manifest_backed",
+    "public_benchmark_boundary_does_not_unlock_public_calibration_or_training_data"
+  ],
+  "surface_sample": [
+    "project_manifest_registry",
+    "core_control_plane",
+    "theseus_plan_compiler",
+    "deterministic_tool_substrate",
+    "candidate_integrity_harness",
+    "evidence_store",
+    "workspace_hygiene",
+    "attd_governance",
+    "autonomy_and_supervision",
+    "resource_and_acceleration",
+    "model_governance_gates",
+    "public_calibration_registry"
+  ],
+  "public_safety": {
+    "raw_report_copied": false,
+    "private_payload_copied": false,
+    "private_path_fields_redacted": true,
+    "sanitized_for_public_repo": true
+  },
+  "claim_boundary": {
+    "claim_id": "project-theseus-as-report-first-implementation-reference.project_registry_reality_import",
+    "old_support_state": "argument",
+    "new_support_state": "prototype-backed",
+    "support_state_effect": "eligible_for_bounded_evidence_review",
+    "chapter_id": "project-theseus-as-report-first-implementation-reference",
+    "chapter_core_claim_promotion": false,
+    "clean_live_replay_claim": false,
+    "deployment_claim": false,
+    "model_quality_claim": false,
+    "capability_claim": false
+  },
+  "non_claims": [
+    "Project Theseus project-registry health is repository-organization evidence only.",
+    "This import does not copy the raw Project Theseus registry report, private paths, private payloads, prompts, tests, solutions, candidate code, traces, checkpoints, or training rows into this public repository.",
+    "This import does not prove clean live Project Theseus replay, model quality, deployed Theseus behavior, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, self-evolution safety, or ASI.",
+    "This import does not promote any chapter core claim above argument."
+  ]
+}

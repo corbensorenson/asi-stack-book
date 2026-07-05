@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 205 |
+| Proof targets in manifest | 206 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 1019 |
+| Theorem declarations classified | 1024 |
 | Direct/projection-style theorem declarations | 185 |
-| Derived/decomposed theorem declarations | 830 |
+| Derived/decomposed theorem declarations | 835 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 106 |
 | Safety-critical direct/projection declarations | 11 |
@@ -100,7 +100,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 3 | 9 | 3 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 25 | 8 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 21 | 1 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 7 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 8 | 31 | 2 | 29 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 5 | 27 | 3 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -1035,6 +1035,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/TheseusReference.lean` | `theseus_module_definition_of_done_import_capability_overclaim_rejected` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TheseusReference.lean` | `theseus_module_definition_of_done_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TheseusReference.lean` | `theseus_module_definition_of_done_import_fixture_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_clean_replay_overclaim_rejected` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_core_promotion_rejected` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_fixture_valid` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_private_payload_rejected` | derived_or_decomposed | no | uses simp |
+| `lean/AsiStackProofs/TheseusReference.lean` | `theseus_project_registry_import_unregistered_sources_rejected` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TheseusReference.lean` | `theseus_public_task_bundle_import_clean_replay_overclaim_rejected` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TheseusReference.lean` | `theseus_public_task_bundle_import_fixture_gates_complete` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/TheseusReference.lean` | `theseus_public_task_bundle_import_fixture_preserves_no_promotion_boundary` | derived_or_decomposed | no | uses simp |

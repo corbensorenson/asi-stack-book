@@ -1005,4 +1005,152 @@ theorem theseus_module_definition_of_done_import_capability_overclaim_rejected :
     theseusModuleDefinitionOfDoneImportFixture,
   ] at valid
 
+structure TheseusProjectRegistryImportSummary where
+  entryCount : Nat
+  registeredPathCount : Nat
+  surfaceCount : Nat
+  coverageComplete : Bool
+  unregisteredActiveSources : Nat
+  unclassifiedDuplicateFamilies : Nat
+  staleReportOutputs : Nat
+  missingReportOutputs : Nat
+  generatedSourceArtifacts : Nat
+  registryGovernanceViolations : Nat
+  registryHardGovernanceViolations : Nat
+  externalInferenceCalls : Nat
+  rawReportCopied : Bool
+  privatePayloadCopied : Bool
+  pathFieldsRedacted : Bool
+  cleanLiveReplayClaimed : Bool
+  chapterCorePromotion : Bool
+  modelQualityClaim : Bool
+  deploymentClaim : Bool
+  capabilityClaim : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def TheseusProjectRegistryImportRegistryHealthy
+    (summary : TheseusProjectRegistryImportSummary) : Prop :=
+  summary.entryCount = 5662 ∧
+    summary.registeredPathCount = 5662 ∧
+      summary.surfaceCount = 24 ∧
+        summary.coverageComplete = true ∧
+          summary.unregisteredActiveSources = 0 ∧
+            summary.unclassifiedDuplicateFamilies = 0 ∧
+              summary.staleReportOutputs = 0 ∧
+                summary.missingReportOutputs = 0 ∧
+                  summary.generatedSourceArtifacts = 0 ∧
+                    summary.registryGovernanceViolations = 0 ∧
+                      summary.registryHardGovernanceViolations = 0
+
+def TheseusProjectRegistryImportPublicSafe
+    (summary : TheseusProjectRegistryImportSummary) : Prop :=
+  summary.externalInferenceCalls = 0 ∧
+    summary.rawReportCopied = false ∧
+      summary.privatePayloadCopied = false ∧
+        summary.pathFieldsRedacted = true ∧
+          summary.nonClaimBoundaryRecorded = true
+
+def TheseusProjectRegistryImportPreservesBoundaries
+    (summary : TheseusProjectRegistryImportSummary) : Prop :=
+  summary.cleanLiveReplayClaimed = false ∧
+    summary.chapterCorePromotion = false ∧
+      summary.modelQualityClaim = false ∧
+        summary.deploymentClaim = false ∧
+          summary.capabilityClaim = false
+
+def TheseusProjectRegistryImportValid
+    (summary : TheseusProjectRegistryImportSummary) : Prop :=
+  TheseusProjectRegistryImportRegistryHealthy summary ∧
+    TheseusProjectRegistryImportPublicSafe summary ∧
+      TheseusProjectRegistryImportPreservesBoundaries summary
+
+def theseusProjectRegistryImportFixture :
+    TheseusProjectRegistryImportSummary := {
+  entryCount := 5662
+  registeredPathCount := 5662
+  surfaceCount := 24
+  coverageComplete := true
+  unregisteredActiveSources := 0
+  unclassifiedDuplicateFamilies := 0
+  staleReportOutputs := 0
+  missingReportOutputs := 0
+  generatedSourceArtifacts := 0
+  registryGovernanceViolations := 0
+  registryHardGovernanceViolations := 0
+  externalInferenceCalls := 0
+  rawReportCopied := false
+  privatePayloadCopied := false
+  pathFieldsRedacted := true
+  cleanLiveReplayClaimed := false
+  chapterCorePromotion := false
+  modelQualityClaim := false
+  deploymentClaim := false
+  capabilityClaim := false
+  nonClaimBoundaryRecorded := true
+}
+
+theorem theseus_project_registry_import_fixture_valid :
+    TheseusProjectRegistryImportValid
+      theseusProjectRegistryImportFixture := by
+  simp [
+    TheseusProjectRegistryImportValid,
+    TheseusProjectRegistryImportRegistryHealthy,
+    TheseusProjectRegistryImportPublicSafe,
+    TheseusProjectRegistryImportPreservesBoundaries,
+    theseusProjectRegistryImportFixture,
+  ]
+
+theorem theseus_project_registry_import_unregistered_sources_rejected :
+    ¬ TheseusProjectRegistryImportValid
+      { theseusProjectRegistryImportFixture with
+        unregisteredActiveSources := 1 } := by
+  intro valid
+  simp [
+    TheseusProjectRegistryImportValid,
+    TheseusProjectRegistryImportRegistryHealthy,
+    TheseusProjectRegistryImportPublicSafe,
+    TheseusProjectRegistryImportPreservesBoundaries,
+    theseusProjectRegistryImportFixture,
+  ] at valid
+
+theorem theseus_project_registry_import_clean_replay_overclaim_rejected :
+    ¬ TheseusProjectRegistryImportValid
+      { theseusProjectRegistryImportFixture with
+        cleanLiveReplayClaimed := true } := by
+  intro valid
+  simp [
+    TheseusProjectRegistryImportValid,
+    TheseusProjectRegistryImportRegistryHealthy,
+    TheseusProjectRegistryImportPublicSafe,
+    TheseusProjectRegistryImportPreservesBoundaries,
+    theseusProjectRegistryImportFixture,
+  ] at valid
+
+theorem theseus_project_registry_import_core_promotion_rejected :
+    ¬ TheseusProjectRegistryImportValid
+      { theseusProjectRegistryImportFixture with
+        chapterCorePromotion := true } := by
+  intro valid
+  simp [
+    TheseusProjectRegistryImportValid,
+    TheseusProjectRegistryImportRegistryHealthy,
+    TheseusProjectRegistryImportPublicSafe,
+    TheseusProjectRegistryImportPreservesBoundaries,
+    theseusProjectRegistryImportFixture,
+  ] at valid
+
+theorem theseus_project_registry_import_private_payload_rejected :
+    ¬ TheseusProjectRegistryImportValid
+      { theseusProjectRegistryImportFixture with
+        privatePayloadCopied := true } := by
+  intro valid
+  simp [
+    TheseusProjectRegistryImportValid,
+    TheseusProjectRegistryImportRegistryHealthy,
+    TheseusProjectRegistryImportPublicSafe,
+    TheseusProjectRegistryImportPreservesBoundaries,
+    theseusProjectRegistryImportFixture,
+  ] at valid
+
 end AsiStackProofs.TheseusReference

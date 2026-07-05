@@ -106,6 +106,27 @@ MODULE_DOD_TRANSITION = (
     / "v1_x_measured"
     / "theseus_module_definition_of_done_import_prototype_backed.json"
 )
+PROJECT_REGISTRY_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_project_registry_import"
+    / "results"
+    / "2026-07-05-local.json"
+)
+PROJECT_REGISTRY_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_project_registry_import"
+    / "fixtures"
+    / "valid"
+    / "project_registry_import.valid.json"
+)
+PROJECT_REGISTRY_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_project_registry_import_prototype_backed.json"
+)
 
 DOCS = (
     "docs/theseus_report_import_slice.md",
@@ -116,6 +137,7 @@ DOCS = (
     "docs/theseus_governance_rights_receipt_suite_import.md",
     "docs/theseus_simulation_fidelity_receipt_suite_import.md",
     "docs/theseus_module_definition_of_done_import.md",
+    "docs/theseus_project_registry_import.md",
 )
 VALIDATORS = (
     "python3 scripts/validate_theseus_report.py",
@@ -127,6 +149,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py",
     "python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
     "python3 scripts/validate_theseus_module_definition_of_done_import.py",
+    "python3 scripts/validate_theseus_project_registry_import.py",
 )
 
 
@@ -156,6 +179,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['governance_rights_receipt_imports']} governance-rights receipt import, "
         f"{metrics['simulation_fidelity_receipt_imports']} simulation-fidelity receipt import, "
         f"{metrics['module_dod_imports']} module definition-of-done import, "
+        f"{metrics['project_registry_imports']} project-registry import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
         f"{metrics['public_training_rows']} public training rows, "
         f"{metrics['generation_mode_count']} generation modes, "
@@ -166,7 +190,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['artifact_upward_transitions']} accepted bounded artifact-retention transition, "
         f"{metrics['governance_rights_upward_transitions']} accepted bounded governance-rights transition, "
         f"{metrics['simulation_fidelity_upward_transitions']} accepted bounded simulation-fidelity transition, "
-        f"and {metrics['module_dod_upward_transitions']} accepted bounded module definition-of-done transition; "
+        f"{metrics['module_dod_upward_transitions']} accepted bounded module definition-of-done transition, "
+        f"and {metrics['project_registry_upward_transitions']} accepted bounded project-registry transition; "
         "clean live replay remains unclaimed. "
         "| `docs/project_theseus_static_import_status_ledger.md`; "
         "`python3 scripts/validate_project_theseus_static_import_status_ledger.py` |"
@@ -196,6 +221,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         MODULE_DOD_RESULT,
         MODULE_DOD_FIXTURE,
         MODULE_DOD_TRANSITION,
+        PROJECT_REGISTRY_RESULT,
+        PROJECT_REGISTRY_FIXTURE,
+        PROJECT_REGISTRY_TRANSITION,
         *(ROOT / path for path in DOCS),
     ]
     for path in required:
@@ -224,6 +252,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     module_dod_result = load_json(MODULE_DOD_RESULT)
     module_dod_fixture = load_json(MODULE_DOD_FIXTURE)
     module_dod_transition = load_json(MODULE_DOD_TRANSITION)
+    project_registry_result = load_json(PROJECT_REGISTRY_RESULT)
+    project_registry_fixture = load_json(PROJECT_REGISTRY_FIXTURE)
+    project_registry_transition = load_json(PROJECT_REGISTRY_TRANSITION)
 
     if arch_result.get("validation_result") != "pass":
         errors.append("architecture-gate import result must pass.")
@@ -517,6 +548,63 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if "does not prove clean live Project Theseus replay" not in module_dod_nonclaims:
         errors.append("Theseus module definition-of-done transition missing clean-live-replay non-claim.")
 
+    project_registry_summary = project_registry_fixture.get("summary", {})
+    project_registry_boundary = project_registry_fixture.get("claim_boundary", {})
+    project_registry_safety = project_registry_result.get("public_safety", {})
+    if project_registry_result.get("verification_result") != "pass":
+        errors.append("Theseus project-registry import result must pass.")
+    if project_registry_result.get("expected_invalid_control_count") != 9:
+        errors.append("Theseus project-registry import must keep nine expected-invalid controls.")
+    if project_registry_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus project-registry import must preserve dirty-at-import boundary.")
+    if project_registry_result.get("trigger_state") != "GREEN":
+        errors.append("Theseus project-registry import must keep GREEN trigger state.")
+    if project_registry_result.get("surface_count") != 24:
+        errors.append("Theseus project-registry import must keep 24 owned lifecycle surfaces.")
+    if project_registry_summary.get("entry_count") != 5662 or project_registry_summary.get("registered_path_count") != 5662:
+        errors.append("Theseus project-registry import must keep 5,662 registered paths.")
+    if project_registry_summary.get("coverage_ratio") != 1.0:
+        errors.append("Theseus project-registry import must keep full coverage ratio.")
+    for field in (
+        "unregistered_active_source_count",
+        "unclassified_duplicate_family_count",
+        "stale_report_output_count",
+        "missing_report_output_count",
+        "generated_source_artifact_count",
+        "registry_governance_violation_count",
+        "registry_hard_governance_violation_count",
+    ):
+        if project_registry_summary.get(field) != 0:
+            errors.append(f"Theseus project-registry import field drifted for {field}.")
+    if project_registry_result.get("support_state_effect") != "bounded_non_core_transition_only":
+        errors.append("Theseus project-registry import support_state_effect drifted.")
+    if project_registry_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus project-registry import must preserve chapter_core_support_effect none.")
+    for field in (
+        "chapter_core_claim_promotion",
+        "clean_live_replay_claim",
+        "deployment_claim",
+        "model_quality_claim",
+        "capability_claim",
+    ):
+        if project_registry_boundary.get(field) is not False:
+            errors.append(f"Theseus project-registry import must not overclaim {field}.")
+    if (
+        project_registry_safety.get("raw_report_copied") is not False
+        or project_registry_safety.get("private_payload_copied") is not False
+        or project_registry_safety.get("private_path_fields_redacted") is not True
+    ):
+        errors.append("Theseus project-registry import must keep raw-report/private-payload redaction boundary.")
+    if project_registry_transition.get("review_status") != "accepted":
+        errors.append("Theseus project-registry transition must remain accepted.")
+    if project_registry_transition.get("transition_effect") != "upward":
+        errors.append("Theseus project-registry transition_effect must remain upward.")
+    if project_registry_transition.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus project-registry transition must remain prototype-backed.")
+    project_registry_nonclaims = " ".join(str(item) for item in project_registry_transition.get("non_claims", []))
+    if "does not prove clean live Project Theseus replay" not in project_registry_nonclaims:
+        errors.append("Theseus project-registry transition missing clean-live-replay non-claim.")
+
     metrics = {
         "static_report_imports": 2,
         "support_replay_count": 1,
@@ -524,6 +612,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "governance_rights_receipt_imports": 1,
         "simulation_fidelity_receipt_imports": 1,
         "module_dod_imports": 1,
+        "project_registry_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
         "support_replay_tracked_artifacts": len(support_replay.get("tracked_artifacts", [])),
         "architecture_gate_count": arch_result.get("accepted_gate_count"),
@@ -584,13 +673,26 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "module_dod_warnings": module_dod_summary.get("warning_count"),
         "module_dod_source_backlog_work_cards": module_dod_summary.get("source_backlog_work_card_count"),
         "module_dod_upward_transitions": 1,
+        "project_registry_expected_invalid": project_registry_result.get("expected_invalid_control_count"),
+        "project_registry_registered_paths": project_registry_summary.get("registered_path_count"),
+        "project_registry_entry_count": project_registry_summary.get("entry_count"),
+        "project_registry_surface_count": project_registry_result.get("surface_count"),
+        "project_registry_unregistered_active_sources": project_registry_summary.get("unregistered_active_source_count"),
+        "project_registry_unclassified_duplicates": project_registry_summary.get("unclassified_duplicate_family_count"),
+        "project_registry_stale_report_outputs": project_registry_summary.get("stale_report_output_count"),
+        "project_registry_missing_report_outputs": project_registry_summary.get("missing_report_output_count"),
+        "project_registry_generated_source_artifacts": project_registry_summary.get("generated_source_artifact_count"),
+        "project_registry_governance_violations": project_registry_summary.get("registry_governance_violation_count"),
+        "project_registry_hard_governance_violations": project_registry_summary.get("registry_hard_governance_violation_count"),
+        "project_registry_upward_transitions": 1,
         "expected_invalid_total": arch_result.get("expected_invalid_count", 0)
         + gen_result.get("expected_invalid_count", 0)
         + task_result.get("expected_invalid_count", 0)
         + artifact_result.get("expected_invalid_count", 0)
         + governance_result.get("expected_invalid_count", 0)
         + simulation_result.get("expected_invalid_count", 0)
-        + module_dod_result.get("expected_invalid_control_count", 0),
+        + module_dod_result.get("expected_invalid_control_count", 0)
+        + project_registry_result.get("expected_invalid_control_count", 0),
         "no_promotion_decisions": 1,
         "source_commit_short": str(source_project.get("commit", ""))[:8],
     }
@@ -616,6 +718,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Artifact-retention replay imports | {metrics['artifact_retention_replay_imports']} |",
             f"| Governance-rights receipt imports | {metrics['governance_rights_receipt_imports']} |",
             f"| Simulation-fidelity receipt imports | {metrics['simulation_fidelity_receipt_imports']} |",
+            f"| Module definition-of-done imports | {metrics['module_dod_imports']} |",
+            f"| Project-registry imports | {metrics['project_registry_imports']} |",
             f"| Replayed validators in support probe | {metrics['support_replay_commands']} |",
             f"| Support replay tracked artifacts | {metrics['support_replay_tracked_artifacts']} |",
             f"| Architecture gates passed | {metrics['architecture_gate_passed']} / {metrics['architecture_gate_count']} |",
@@ -632,6 +736,9 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Accepted no-promotion decisions | {metrics['no_promotion_decisions']} |",
             f"| Accepted bounded artifact-retention transitions | {metrics['artifact_upward_transitions']} |",
             f"| Accepted bounded governance-rights transitions | {metrics['governance_rights_upward_transitions']} |",
+            f"| Accepted bounded simulation-fidelity transitions | {metrics['simulation_fidelity_upward_transitions']} |",
+            f"| Accepted bounded module definition-of-done transitions | {metrics['module_dod_upward_transitions']} |",
+            f"| Accepted bounded project-registry transitions | {metrics['project_registry_upward_transitions']} |",
             "",
             "## Status-Page Row",
             "",
@@ -650,6 +757,10 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, deployed governance, clean live Project Theseus replay, or any chapter core claim.",
             f"- `docs/theseus_simulation_fidelity_receipt_suite_import.md` records one sanitized simulation-fidelity receipt suite import with {metrics['simulation_fidelity_fixture_scenarios']} passed fixture scenarios, {metrics['simulation_fidelity_contract_records']} simulation contract records, {metrics['simulation_fidelity_world_adapter_receipts']} world-adapter receipts, {metrics['simulation_fidelity_evidence_transition_records']} evidence-transition records, {metrics['simulation_fidelity_failure_boundary_records']} failure-boundary records, {metrics['simulation_fidelity_blocked_transfers']} blocked transfer, {metrics['simulation_fidelity_downgraded_claims']} downgraded claim, and {metrics['simulation_fidelity_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `resource-economics.simulation_fidelity_receipt_suite_import`; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, model quality, economic outcome, clean live Project Theseus replay, or any chapter core claim.",
+            f"- `docs/theseus_module_definition_of_done_import.md` records one sanitized module definition-of-done gate import with {metrics['module_dod_ready_records']}/{metrics['module_dod_total_records']} ready module records, {metrics['module_dod_hard_gaps']} hard gaps, {metrics['module_dod_warnings']} warnings, {metrics['module_dod_source_backlog_work_cards']} source-backlog work cards, and {metrics['module_dod_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_module_definition_of_done_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import`; it does not prove module capability, clean live Project Theseus replay, deployed behavior, model quality, or any chapter core claim.",
+            f"- `docs/theseus_project_registry_import.md` records one sanitized project-registry import with {metrics['project_registry_registered_paths']} registered paths out of {metrics['project_registry_entry_count']} entries, {metrics['project_registry_surface_count']} surfaces, {metrics['project_registry_unregistered_active_sources']} unregistered active sources, {metrics['project_registry_unclassified_duplicates']} unclassified duplicate families, {metrics['project_registry_stale_report_outputs']} stale report outputs, {metrics['project_registry_missing_report_outputs']} missing report outputs, {metrics['project_registry_generated_source_artifacts']} generated source artifacts, {metrics['project_registry_governance_violations']} registry-governance violations, {metrics['project_registry_hard_governance_violations']} hard governance violations, and {metrics['project_registry_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`; it does not prove clean live Project Theseus replay, deployment, model quality, self-evolution safety, or any chapter core claim.",
             "",
             "## Non-Claim Boundary",
             "",
@@ -660,6 +771,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "- The artifact-retention replay import creates only a bounded non-core support transition; it does not prove deployed residual-ledger storage, deployed artifact-graph behavior, clean live Project Theseus replay, model quality, benchmark performance, safety, alignment, deployment readiness, or ASI.",
             "- The governance-rights receipt suite import creates only a bounded non-core support transition; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed governance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The simulation-fidelity receipt suite import creates only a bounded non-core support transition; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
+            "- The module definition-of-done import creates only a bounded non-core support transition; it does not prove module capability, deployed Theseus behavior, model quality, benchmark performance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
+            "- The project-registry import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, or any chapter core claim.",
             "",
             "## Validation Errors",
             "",
@@ -733,6 +846,7 @@ def main() -> None:
     print(
         f"Project Theseus static import status ledger {action}: "
         f"{metrics['static_report_imports']} static imports, "
+        f"{metrics['project_registry_imports']} project-registry imports, "
         f"{metrics['public_task_count']} public tasks, "
         f"{metrics['expected_invalid_total']} expected-invalid controls."
     )
