@@ -1,0 +1,101 @@
+{
+  "transition_id": "v1_x_measured.circle_kv_cache_receipt.no_change",
+  "claim_id": "circle-calculus.kv_cache_ring_buffer_receipt_slice",
+  "claim_surface_refs": [
+    "docs/circle_kv_cache_receipt_slice.md",
+    "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+    "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_kv_cache_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_kv_cache_receipt_slice.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe local external Circle KV-cache ring-buffer receipt import only. The slice records one pinned `CC-AI-CONTRACT-KV-001` structural fixture at Circle commit `63b0f511`, stale-token and sink-window fields, three required theorem IDs, contract fingerprint `bfebf150ce45d1eb124ea553bf2ba8c62008751ebec9f8600b83cc09e0526a46`, command-output digests, and a passing Circle CLI test summary. It does not prove deployed KV-cache behavior, serving throughput, memory savings, paging correctness, retrieval quality, context length, model quality, transfer, safety, ASI, or Coil chapter-core promotion.",
+  "evidence_roles": [
+    "external_project_receipt_import",
+    "kv_cache_ring_buffer_structural_fixture",
+    "stale_token_boundary",
+    "sink_window_policy_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The KV-cache receipt slice makes one Circle ring-buffer structural fixture concrete in the book and closes the stale 'no KV-cache receipt import' blocker for the Coil chapter. The evidence remains an external-project receipt import with no deployed ASI-side serving trace, no paging or throughput measurement, no retrieval-quality workload, no model-quality result, and no independent review, so it blocks promotion rather than moving support state.",
+  "required_artifacts": [
+    "fresh public Circle replay or archived public KV-cache contract pack",
+    "repository-owned command that reruns the relevant Circle KV-cache proof target or verifies an archived replay bundle",
+    "deployed or replayed ASI-side KV-cache serving trace",
+    "ordinary KV-cache and sink/rolling-window baselines with workload metrics",
+    "paging, throughput, memory-savings, retrieval-quality, and model-quality measurements for any promoted claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/circle_kv_cache_receipt_slice.md",
+    "experiments/circle_kv_cache_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_kv_cache_receipt_slice.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_kv_cache_receipt_slice.md",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#coil-attention-cyclic-memory-and-recurrence-contracts.core",
+    "docs/book_outline.md#coil-attention-cyclic-memory-and-recurrence-contracts"
+  ],
+  "verification_command": "python3 scripts/validate_circle_kv_cache_receipt_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "support state remains argument",
+    "support_state_effect remains blocks_promotion",
+    "no deployed KV-cache behavior is claimed",
+    "no serving throughput or memory-savings measurement is claimed",
+    "no paging correctness, retrieval-quality, model-quality, transfer, safety, or ASI claim is promoted",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_kv_cache_receipt_slice.md",
+    "experiments/circle_kv_cache_receipt_slice/results/2026-07-05-local.json"
+  ],
+  "downgrade_triggers": [
+    "KV-cache receipt-slice validator failure",
+    "receipt fingerprint drift",
+    "missing required theorem ID accepted",
+    "stale-token or sink-window evidence field drift",
+    "external-project receipt import described as deployed KV-cache behavior",
+    "serving throughput, memory-savings, paging, retrieval-quality, model-quality, transfer, safety, ASI, or support-state promotion claimed without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed KV-cache claim after a fresh public Circle replay or archived public contract pack, repository-owned proof/replay verification, deployed or replayed ASI-side serving traces, ordinary baselines, paging/throughput/memory/retrieval/model-quality measurements for the specific claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one pinned local external Circle receipt import",
+    "external Circle checkout is not vendored into this public repository",
+    "no clean ASI-side CI replay of Circle",
+    "no deployed KV-cache serving trace",
+    "no throughput, memory-savings, paging, retrieval-quality, model-quality, context-length, transfer, safety, or ASI measurement",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, KV-cache serving, paging, throughput, retrieval-quality, model-quality, transfer, benchmark, or safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no archived public Circle KV-cache contract pack",
+    "no deployed or replayed ASI-side KV-cache serving trace",
+    "no workload baselines or measurements",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-circle-kv-cache-receipt-slice",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Coil Attention or Circle KV-cache evidence above argument",
+    "does not prove deployed KV-cache behavior, serving throughput, memory savings, paging correctness, retrieval quality, reasoning ability, model quality, context length, speed, deployment safety, transfer, benchmark performance, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote the Coil Attention chapter core claim"
+  ]
+}

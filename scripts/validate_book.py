@@ -336,6 +336,7 @@ REQUIRED = [
     "scripts/validate_circle_public_replay.py",
     "scripts/validate_circle_concrete_evidence_surface.py",
     "scripts/validate_circle_cyclic_memory_receipt_slice.py",
+    "scripts/validate_circle_kv_cache_receipt_slice.py",
     "scripts/run_rankfold_public_safe_probe.py",
     "scripts/validate_rankfold_public_safe_probe.py",
     "scripts/validate_rankfold_artifact_import.py",
@@ -428,6 +429,7 @@ REQUIRED = [
     "docs/circle_external_receipt_slice.md",
     "docs/circle_public_replay_consumer_gate.md",
     "docs/circle_cyclic_memory_receipt_slice.md",
+    "docs/circle_kv_cache_receipt_slice.md",
     "docs/rankfold_public_safe_probe.md",
     "docs/rankfold_artifact_import.md",
     "docs/theseus_report_import_slice.md",
@@ -524,6 +526,8 @@ REQUIRED = [
     "experiments/circle_public_replay/results/2026-06-29-local.json",
     "experiments/circle_cyclic_memory_receipt_slice/README.md",
     "experiments/circle_cyclic_memory_receipt_slice/results/2026-07-02-local.json",
+    "experiments/circle_kv_cache_receipt_slice/README.md",
+    "experiments/circle_kv_cache_receipt_slice/results/2026-07-05-local.json",
     "experiments/rankfold_artifact_import/README.md",
     "experiments/rankfold_artifact_import/results/2026-07-02-local.json",
     "experiments/theseus_import/results/2026-06-29-local.json",
@@ -1171,6 +1175,7 @@ def main() -> None:
     run_validator("validate_circle_public_replay.py")
     run_validator("validate_circle_concrete_evidence_surface.py")
     run_validator("validate_circle_cyclic_memory_receipt_slice.py")
+    run_validator("validate_circle_kv_cache_receipt_slice.py")
     run_validator("validate_rankfold_public_safe_probe.py")
     run_validator("validate_rankfold_artifact_import.py")
     run_validator("validate_theseus_report.py")

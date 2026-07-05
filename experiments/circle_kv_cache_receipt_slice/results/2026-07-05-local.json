@@ -1,0 +1,175 @@
+{
+  "schema_version": "0.1",
+  "result_id": "2026-07-05-local-circle-kv-cache-receipt-slice",
+  "slice_id": "circle_kv_cache_receipt_slice",
+  "external_project": {
+    "name": "Circle Calculus",
+    "public_remote": "https://github.com/corbensorenson/circle-calculus",
+    "git_commit": "63b0f511",
+    "worktree_state": "clean_before_commands"
+  },
+  "environment": "local external Circle Calculus checkout; outputs recorded here as public-safe summaries without vendoring the external project",
+  "commands": [
+    {
+      "command": "PYTHONPATH=. python3 scripts/kv_cache_certify.py --cache-size 16 --current 31 --token 20 --batch-tokens 20,24,29,31 --sink-size 4 --format json",
+      "verification_result": "pass",
+      "observed_summary": "contract_passed true; cache_size 16; current 31; token 20; slot 4; lag 11; retained true; live_window tokens [16..31]; batch_tokens [20, 24, 29, 31]; all_non_future true; all_retained true; tokens_distinct true; slots_distinct true; sink_tokens [0, 1, 2, 3]; sink_tokens_retained_by_policy true; sink_tokens_outside_ordinary_rolling_window true",
+      "output_sha256": "0651d42d9b3c5d8820d747018faff75e83ecd97bc973ac384ae10d1e6ada40f1",
+      "output_bytes": 14268
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_certify.py kv-cache --cache-size 16 --current 31 --token 20 --batch-tokens 20,24,29,31 --sink-size 4 --format json",
+      "verification_result": "pass",
+      "observed_summary": "circle AI certifier accepted kv-cache request; contract_id CC-AI-CONTRACT-KV-001; kind kv_cache_ring_buffer; cache_size 16; current 31; token 20; batch_tokens [20, 24, 29, 31]; sink_size 4; theorem_count 54; planner recommendations KV-DROP-STALE-REQUEST-TOKEN and KV-USE-SINK-ROLLING-WINDOW-REQUEST",
+      "output_sha256": "169999b3c44aa082acf0cb8410ce3d921d16d20c486397a79197ae36c761ef4f",
+      "output_bytes": 28336
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind kv_cache_ring_buffer --digest --field stale_probe_first_stale_token --field sink_tokens_retained_by_policy --field sink_window_exact_policy --field sink_window_tokens_distinct --field sink_prefix_disjoint_from_live_window --field sink_tokens_outside_ordinary_rolling_window --include-recommendations",
+      "verification_result": "pass",
+      "observed_summary": "circle AI contract digest ok: kv_cache_ring_buffer; id=CC-AI-CONTRACT-KV-001 ready=True fields=6 missing=0 theorems=54; recommendations KV-DROP-STALE-REQUEST-TOKEN and KV-USE-SINK-ROLLING-WINDOW-REQUEST",
+      "output_sha256": "18dec02ed8d5f967f985ff0fc883cf90e0ee9b4d69d714fc4a8de84b07c69547",
+      "output_bytes": 3035
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind kv_cache_ring_buffer --receipt --format json --field stale_probe_first_stale_token --field sink_tokens_retained_by_policy --field sink_window_exact_policy --field sink_window_tokens_distinct --field sink_prefix_disjoint_from_live_window --field sink_tokens_outside_ordinary_rolling_window --require-theorem AIM-T0103 --require-theorem AIM-T0104 --require-theorem AIM-T0149 --require-recommendation KV-DROP-STALE-REQUEST-TOKEN --require-recommendation KV-USE-SINK-ROLLING-WINDOW-REQUEST --require-recommendation-evidence-field KV-DROP-STALE-REQUEST-TOKEN=stale_probe_first_stale_token --require-recommendation-evidence-field KV-USE-SINK-ROLLING-WINDOW-REQUEST=sink_tokens_retained_by_policy --require-recommendation-evidence-field KV-USE-SINK-ROLLING-WINDOW-REQUEST=sink_tokens_outside_ordinary_rolling_window --require-recommendation-theorem KV-DROP-STALE-REQUEST-TOKEN=AIM-T0103 --require-recommendation-theorem KV-USE-SINK-ROLLING-WINDOW-REQUEST=AIM-T0149 --require-recommendation-action-parameter KV-DROP-STALE-REQUEST-TOKEN=target_token --require-recommendation-action-parameter KV-USE-SINK-ROLLING-WINDOW-REQUEST=sink_size --require-recommendation-action-parameter-path KV-DROP-STALE-REQUEST-TOKEN=target_token --require-recommendation-action-parameter-path KV-USE-SINK-ROLLING-WINDOW-REQUEST=sink_size --require-recommendation-action-parameter-path KV-USE-SINK-ROLLING-WINDOW-REQUEST=request_token_count --require-recommendation-action-parameter-path KV-USE-SINK-ROLLING-WINDOW-REQUEST=request_token_count_bound --require-recommendation-action-parameter-path KV-USE-SINK-ROLLING-WINDOW-REQUEST=cache_size --require-recommendation-action-parameter-path KV-USE-SINK-ROLLING-WINDOW-REQUEST=current",
+      "verification_result": "pass",
+      "observed_summary": "accepted true; receipt_schema circle_calculus.ai_contract_acceptance_receipt.v0; contract_id CC-AI-CONTRACT-KV-001; kind kv_cache_ring_buffer; pack_content_fingerprint df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae; contract_content_fingerprint bfebf150ce45d1eb124ea553bf2ba8c62008751ebec9f8600b83cc09e0526a46; required theorem IDs AIM-T0103 AIM-T0104 AIM-T0149",
+      "output_sha256": "d75246f822d76c52d56521b7911e374f6f559526417b4857bea39da7cf89c100",
+      "output_bytes": 8266
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m pytest tests/test_kv_cache_certifier_cli.py -q",
+      "verification_result": "pass",
+      "observed_summary": "5 passed in 1.27s",
+      "output_sha256": "87fa9996a06e4107cc2e24a8aaa2f3681b65f05c9783972fe74cd0d508fab8fb",
+      "output_bytes": 98
+    }
+  ],
+  "accepted_receipt": {
+    "accepted": true,
+    "contract_id": "CC-AI-CONTRACT-KV-001",
+    "kind": "kv_cache_ring_buffer",
+    "receipt_schema": "circle_calculus.ai_contract_acceptance_receipt.v0",
+    "schema_id": "circle_calculus.ai_contract_pack.v0",
+    "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+    "contract_content_fingerprint": "bfebf150ce45d1eb124ea553bf2ba8c62008751ebec9f8600b83cc09e0526a46",
+    "source_paper": "papers/applications/PAPER_AI_02_COIL_ATTENTION_AND_MEMORY.md",
+    "required_theorem_ids": [
+      "AIM-T0103",
+      "AIM-T0104",
+      "AIM-T0149"
+    ],
+    "required_recommendation_ids": [
+      "KV-DROP-STALE-REQUEST-TOKEN",
+      "KV-USE-SINK-ROLLING-WINDOW-REQUEST"
+    ],
+    "theorem_count": 54,
+    "evidence_fields": {
+      "cache_size": 16,
+      "current": 31,
+      "token": 20,
+      "slot": 4,
+      "current_slot": 15,
+      "lag": 11,
+      "retained": true,
+      "next_overwrite_token": 36,
+      "next_overwrite_after_current": true,
+      "stale_by_next_overwrite_boundary": false,
+      "no_same_slot_overwrite_before_current": true,
+      "trace_fresh_iff_next_overwrite_boundary": true,
+      "batch_tokens": [
+        20,
+        24,
+        29,
+        31
+      ],
+      "batch_slots": [
+        4,
+        8,
+        13,
+        15
+      ],
+      "all_non_future": true,
+      "all_retained": true,
+      "tokens_distinct": true,
+      "slots_distinct": true,
+      "ordered_live_window_subrequest": true,
+      "duplicate_free_live_window_subrequest": true,
+      "stale_requested_count": 0,
+      "live_window_start": 16,
+      "live_window_length": 16,
+      "sink_tokens": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "sink_tokens_retained_by_policy": true,
+      "sink_window_exact_policy": true,
+      "sink_window_tokens_distinct": true,
+      "sink_prefix_disjoint_from_live_window": true,
+      "sink_tokens_outside_ordinary_rolling_window": true,
+      "request_token_count": 20,
+      "request_token_count_bound": 20,
+      "stale_probe_first_stale_token": 12
+    },
+    "planner_recommendations": [
+      {
+        "recommendation_id": "KV-DROP-STALE-REQUEST-TOKEN",
+        "target_token": 12,
+        "next_same_slot_overwrite_token": 28,
+        "stale_requested_count": 1,
+        "required_evidence_field": "stale_probe_first_stale_token",
+        "required_theorem_ids": [
+          "AIM-T0097",
+          "AIM-T0103"
+        ]
+      },
+      {
+        "recommendation_id": "KV-USE-SINK-ROLLING-WINDOW-REQUEST",
+        "cache_size": 16,
+        "current": 31,
+        "sink_size": 4,
+        "request_token_count": 20,
+        "request_token_count_bound": 20,
+        "required_evidence_fields": [
+          "sink_tokens_retained_by_policy",
+          "sink_tokens_outside_ordinary_rolling_window"
+        ],
+        "required_theorem_ids": [
+          "AIM-T0104",
+          "AIM-T0110",
+          "AIM-T0117",
+          "AIM-T0136",
+          "AIM-T0137",
+          "AIM-T0148",
+          "AIM-T0149"
+        ]
+      }
+    ]
+  },
+  "discarded_attempts": [
+    {
+      "command": "PYTHONPATH=. python3 scripts/kv_cache_certify.py --format json",
+      "outcome": "discarded_command_selection_error",
+      "reason": "The command omitted required --cache-size, --current, and --token arguments; rerun succeeded with explicit bounded fixture arguments."
+    }
+  ],
+  "support_state_effect": "none",
+  "verification_result": "pass",
+  "residuals": [
+    "The external Circle checkout is not vendored into this public repository.",
+    "The result records local external-project commands and output digests, not a clean ASI-side CI replay of Circle.",
+    "The receipt concerns one KV-cache ring-buffer structural fixture and does not generalize to deployed KV-cache behavior, serving throughput, memory savings, paging correctness, retrieval quality, long-context utility, or model quality.",
+    "A future evidence transition would require a separate accepted review record."
+  ],
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not create a support-state transition",
+    "does not prove deployed KV-cache behavior, serving throughput, memory savings, paging correctness, retrieval quality, reasoning quality, model quality, context length, speed, deployment safety, transfer, or ASI",
+    "does not prove deployed proof-contract transport inside The ASI Stack",
+    "does not reproduce Theseus, MoECOT, VCM, PlanForge, retrieval benchmarks, long-context benchmarks, policy-training, serving benchmarks, paging benchmarks, or simulation results",
+    "does not make the external Circle checkout a vendored public dependency"
+  ]
+}

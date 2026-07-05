@@ -1662,6 +1662,7 @@
       "what_would_move_this": "ASI validator accepts valid Circle receipt and rejects malformed ones.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
+        "evidence_transitions/v1_x_measured/circle_kv_cache_receipt_no_change.json",
         "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json"
       ]
     },
@@ -1701,7 +1702,9 @@
       "formal_or_prototype_work": "Add alias-boundary and recurrence-contract negative controls.",
       "human_reader_focus": "Make cyclic memory intuitive without claiming long-context performance.",
       "what_would_move_this": "Fixture proves structural recurrence boundary, not quality.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/v1_x_measured/circle_kv_cache_receipt_no_change.json"
+      ]
     },
     {
       "claim_id": "coilra-multicoil-rope-and-cyclic-mixers.core",
