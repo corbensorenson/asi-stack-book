@@ -79,14 +79,14 @@ After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_epub_links.py` to the ignored EPUB
 snapshot. That command rewrites Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` to the packaged EPUB spine
-target. The repaired EPUB package SHA-256 `34e41f9d3e33f6fda824d59a6da51dcf3308090a7ff7624b1742b9060cfc3d25`
-then passed an all-XHTML content and internal-link audit covering 49 packaged content XHTML entries and 0 unresolved internal hrefs.
+target. The repaired EPUB package SHA-256 `0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda`
+then passed an all-XHTML content, XML, and internal-link audit covering 49 packaged content XHTML entries and 0 unresolved internal hrefs.
 
 | Metric | Result |
 |---|---:|
 | XHTML entries checked | 52 |
 | Packaged content XHTML entries checked | 49 |
-| Text characters checked | 1,782,064 |
+| Text characters checked | 1,783,217 |
 | Navigation hrefs checked | 841 |
 | OPF item entries | 116 |
 | OPF spine itemrefs | 52 |
@@ -94,6 +94,9 @@ then passed an all-XHTML content and internal-link audit covering 49 packaged co
 | Live-marker leaks | 0 |
 | Raw core-claim marker leaks | 0 |
 | Unresolved internal hrefs | 0 |
+| Bare class attribute hits | 0 |
+| Paragraph-wrapped figure tag hits | 0 |
+| XML parse errors | 0 |
 
 Required text markers were present: `The ASI Stack`, `Reader Edition Draft`,
 `evidence boundary`, `Reader Source List`, and `External Citation Policy`.
@@ -121,9 +124,9 @@ content spine entry still has substantive body text.
 | Viewports checked | 2 |
 | Browser page-view pairs | 104 |
 | Failed page-view pairs | 0 |
-| Rendered images observed | 22 |
+| Rendered images observed | 122 |
 | Image load failures | 0 |
-| Maximum horizontal overflow | 10 px |
+| Maximum horizontal overflow | 0 px |
 | Minimum content body text characters | 1,225 |
 | Live-marker leaks | 0 |
 | Raw core-claim marker leaks | 0 |
@@ -370,15 +373,13 @@ release-preparation audits above. This is useful evidence for release
 preparation, dedicated e-reader testing, DOCX GUI/application review, PDF
 release approval, and figure conversion work.
 
-This does not clear release blockers. EPUB still needs dedicated e-reader
-device/app approval or an explicit release decision that accepts the Chromium
-XHTML review as sufficient for a named artifact. DOCX still needs
-application-level review in Word, LibreOffice GUI, or Google Docs; the
-headless LibreOffice review is recorded as preparation evidence only. The PDF
-page-by-page release-preparation review closes the current candidate's
-page-by-page PDF review blocker, but the PDF still needs final figure-artifact
-approval and reader release approval before it can be treated as a release
-artifact. Audio artifacts remain outside this probe.
+This does not clear release blockers. This format probe itself does not clear e-reader/application review; the separate Apple Books review records that
+application path for the current repaired EPUB digest. DOCX still needs
+application-level review in Word, LibreOffice GUI, or Google Docs; the headless
+LibreOffice review is recorded as preparation evidence only. The PDF
+page-by-page release-preparation review and final figure-artifact review are
+now recorded, but the PDF still needs reader release approval before it can be
+treated as a release artifact. Audio artifacts remain outside this probe.
 
 ## Residuals
 

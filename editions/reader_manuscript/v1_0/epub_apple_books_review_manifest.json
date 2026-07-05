@@ -1,0 +1,75 @@
+{
+  "schema_version": "asi_stack.reader_epub_apple_books_review.v0",
+  "status": "passed_apple_books_epub_application_review",
+  "reviewed_at_local": "2026-07-05",
+  "source_artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+  "source_sha256": "0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda",
+  "source_probe_manifest": "editions/reader_manuscript/v1_0/curated_format_probe_manifest.json",
+  "source_epub_content_audit_status": "passed_epub_package_content_navigation_probe",
+  "source_epub_browser_review_status": "passed_browser_xhtml_application_review",
+  "application": {
+    "name": "Apple Books",
+    "bundle_id": "com.apple.iBooksX",
+    "review_path": "Opened the repaired local curated-reader EPUB artifact in macOS Apple Books from the ignored build artifact path, then inspected the rendered reader window through Computer Use.",
+    "stateful_side_effect": "Apple Books imported or retained The ASI Stack in the local Books library during review; Codex did not delete that local library item."
+  },
+  "observations": [
+    {
+      "id": "library_opened",
+      "result": "pass",
+      "evidence": "Apple Books library displayed The ASI Stack by Corben Sorenson and opened it into a reader window.",
+      "xml_error_banner_visible": false
+    },
+    {
+      "id": "chapter_render_without_xml_error",
+      "result": "pass",
+      "evidence": "Chapter 1 rendered at page 22 with the heading ASI Is a Stack, Not a Model, body text, and figure accessibility value visible; the earlier XML error banner was absent.",
+      "xml_error_banner_visible": false
+    },
+    {
+      "id": "page_advance_to_figure",
+      "result": "pass",
+      "evidence": "A page advance rendered page 23 with the ASI Stack control-plane figure, caption, figure-boundary text, and Problem heading visible.",
+      "xml_error_banner_visible": false
+    },
+    {
+      "id": "table_of_contents_opened",
+      "result": "pass",
+      "evidence": "The Apple Books table-of-contents popover opened and listed front matter, chapter 1, and chapter 1 section entries with page targets.",
+      "xml_error_banner_visible": false
+    }
+  ],
+  "repairs_validated": [
+    "EPUB XHTML audit reports zero XML parse errors.",
+    "EPUB XHTML audit reports zero bare class attributes.",
+    "EPUB XHTML audit reports zero paragraph-wrapped figure tags.",
+    "EPUB browser review reports 104 page-view pairs and zero failed page-view pairs.",
+    "EPUB key-figure layout review reports 20 page-view pairs and zero failed page-view pairs."
+  ],
+  "cleared_blockers": [
+    "app_or_ereader_review_not_completed"
+  ],
+  "preserved_blockers": [
+    "reader_release_approval_not_created",
+    "reader_release_record_not_created",
+    "docx_application_review_not_completed",
+    "manual_keyboard_only_review_not_completed",
+    "screen_reader_review_not_completed",
+    "wcag_conformance_review_not_completed",
+    "narration_quality_review_not_completed",
+    "audio_files_not_generated",
+    "chapter_markers_not_timecoded",
+    "reviewed_reader_release_record_not_created_for_audio",
+    "audio_edition_release_record_not_created"
+  ],
+  "release_boundary": "This review clears only the current curated EPUB/e-reader application blocker `app_or_ereader_review_not_completed` for the repaired local EPUB digest. It does not approve the EPUB for publication, does not approve the curated reader edition, does not publish or archive an artifact, does not create an edition release record, and does not promote any claim support state.",
+  "non_claims": [
+    "does not approve the curated reader edition",
+    "does not approve the EPUB as a published artifact",
+    "does not create an edition release record",
+    "does not approve DOCX, PDF, audio, MP3, M4B, or audio-embedded EPUB artifacts",
+    "does not approve audio narration quality, chapter timing, or audiobook packaging",
+    "does not replace screen-reader review, WCAG conformance review, or manual keyboard-only review",
+    "does not promote any claim support state or chapter core claim"
+  ]
+}

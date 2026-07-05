@@ -61,6 +61,9 @@ REQUIRED = [
     "editions/reader_manuscript/v1_0/key_figure_raster_manifest.json",
     "docs/reader_key_figure_epub_layout_review.md",
     "editions/reader_manuscript/v1_0/key_figure_epub_layout_manifest.json",
+    "docs/reader_epub_apple_books_review.md",
+    "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json",
+    "scripts/validate_reader_epub_apple_books_review.py",
     "docs/reader_key_figure_pdf_layout_review.md",
     "editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json",
     "docs/reader_key_figure_docx_layout_review.md",
@@ -985,6 +988,7 @@ def main() -> None:
     run_validator("validate_reader_chapter_reconciliation_approval.py")
     run_validator("validate_reader_key_figure_raster_probe.py")
     run_validator("validate_reader_key_figure_epub_layout.py")
+    run_validator("validate_reader_epub_apple_books_review.py")
     run_validator("validate_reader_key_figure_pdf_layout.py")
     run_validator("validate_reader_key_figure_docx_layout.py")
     run_validator("validate_reader_key_figure_format_probe.py")

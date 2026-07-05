@@ -9,6 +9,7 @@ import json
 import posixpath
 import re
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 from zipfile import ZipFile
@@ -34,6 +35,8 @@ LIVE_ONLY_MARKERS = (
 )
 RAW_CORE_CLAIM_RE = re.compile(r"\[[A-Za-z0-9_-]+\.core,\s*label:\s*[^,\]]+,\s*support:\s*[^\]]+\]")
 HREF_RE = re.compile(r"""href=["']([^"']+)["']""")
+BARE_CLASS_ATTR_RE = re.compile(r"""<([A-Za-z][\w:.-]*)(?:[^<>]*?)\sclass(?=(?:\s|/|>))(?:[^<>]*?)>""")
+FIGURE_PARAGRAPH_WRAPPER_RE = re.compile(r"""<p>\s*</?figure[^>]*>\s*</p>""")
 
 
 def rel(path: Path) -> str:
@@ -85,11 +88,18 @@ def observe() -> dict[str, Any]:
         raw_claim_marker_hits: list[str] = []
         empty_xhtml_entries: list[str] = []
         unresolved_hrefs: list[str] = []
+        bare_class_attribute_hits: list[str] = []
+        figure_paragraph_wrapper_hits: list[str] = []
+        xml_parse_errors: list[str] = []
         required_marker_hits: dict[str, int] = {marker: 0 for marker in REQUIRED_MARKERS}
         total_text_chars = 0
 
         for name in xhtml_entries:
             text = archive.read(name).decode("utf-8", errors="replace")
+            try:
+                ET.fromstring(text)
+            except ET.ParseError as exc:
+                xml_parse_errors.append(f"{name}: {exc}")
             stripped_text = re.sub(r"<[^>]+>", " ", text)
             if not stripped_text.strip():
                 empty_xhtml_entries.append(name)
@@ -105,6 +115,10 @@ def observe() -> dict[str, Any]:
             for href in HREF_RE.findall(text):
                 if not href_target_exists(name_set, name, href):
                     unresolved_hrefs.append(f"{name} -> {href}")
+            for match in BARE_CLASS_ATTR_RE.finditer(text):
+                bare_class_attribute_hits.append(f"{name}: <{match.group(1)} class>")
+            for _match in FIGURE_PARAGRAPH_WRAPPER_RE.finditer(text):
+                figure_paragraph_wrapper_hits.append(name)
 
     return {
         "status": "passed_epub_package_content_navigation_probe",
@@ -120,12 +134,17 @@ def observe() -> dict[str, Any]:
         "live_marker_hits": len(live_marker_hits),
         "raw_core_claim_marker_hits": len(raw_claim_marker_hits),
         "unresolved_internal_hrefs": len(unresolved_hrefs),
+        "bare_class_attribute_hits": len(bare_class_attribute_hits),
+        "figure_paragraph_wrapper_hits": len(figure_paragraph_wrapper_hits),
+        "xml_parse_errors": len(xml_parse_errors),
         "required_text_markers_present": [
             marker for marker, count in required_marker_hits.items() if count > 0
         ],
         "review_boundary": (
             "All-XHTML EPUB package, content-marker, and internal-link checks are "
-            "stronger local EPUB evidence than container inspection alone, but this "
+            "stronger local EPUB evidence than container inspection alone, including "
+            "guards against Apple Books XML parse failures from bare class attributes and "
+            "paragraph-wrapped figure tags, but this "
             "is not e-reader application review and does not approve the EPUB artifact for release."
         ),
     }
@@ -139,7 +158,15 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         errors.append("EPUB audit must check exactly 49 packaged content XHTML entries.")
     if observed["total_text_characters_checked"] < 500_000:
         errors.append("EPUB audit text volume is unexpectedly small.")
-    for zero_key in ("empty_xhtml_entries", "live_marker_hits", "raw_core_claim_marker_hits", "unresolved_internal_hrefs"):
+    for zero_key in (
+        "empty_xhtml_entries",
+        "live_marker_hits",
+        "raw_core_claim_marker_hits",
+        "unresolved_internal_hrefs",
+        "bare_class_attribute_hits",
+        "figure_paragraph_wrapper_hits",
+        "xml_parse_errors",
+    ):
         if observed[zero_key] != 0:
             errors.append(f"EPUB audit expected {zero_key}=0, found {observed[zero_key]}.")
     missing = sorted(set(REQUIRED_MARKERS) - set(observed["required_text_markers_present"]))

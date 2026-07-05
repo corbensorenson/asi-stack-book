@@ -1,5 +1,28 @@
 # Changelog
 
+## 2026-07-05 - Clear curated EPUB Apple Books application blocker
+
+- Repaired the current curated-reader EPUB path after Apple Books exposed real
+  XHTML failures: bare `class` attributes and paragraph-wrapped figure tags.
+  `scripts/repair_curated_reader_epub_links.py` now removes those defects and
+  adds EPUB-only overflow/inline-code wrapping; `scripts/audit_curated_reader_epub_content.py`
+  now enforces XML parsing, zero bare class hits, and zero paragraph-wrapped
+  figure hits.
+- Added `scripts/validate_reader_epub_apple_books_review.py`,
+  `editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json`, and
+  `docs/reader_epub_apple_books_review.md` to record the local Apple Books
+  review of repaired EPUB digest
+  `0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda`.
+  Apple Books rendered chapter 1 without the earlier XML error banner,
+  advanced to a figure page, and opened the table of contents.
+- Updated the blocked curated-reader release record, format review matrix,
+  release-surface ledger/status row, roadmap, repository map, and
+  orchestrated validation so the current candidate clears only
+  `app_or_ereader_review_not_completed`.
+- Boundary: this does not approve EPUB publication, the curated reader
+  edition, refreshed reader HTML, DOCX, PDF, audio, accessibility conformance,
+  reader release, or any chapter support-state movement.
+
 ## 2026-07-05 - Approve curated reader chapter reconciliation source state
 
 - Added `scripts/validate_reader_chapter_reconciliation_approval.py`,

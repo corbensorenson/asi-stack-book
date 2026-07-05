@@ -32,6 +32,7 @@ ALLOWED_MANUAL_STATUS = {"not_started", "in_progress", "representative_spot_chec
 ALLOWED_CANDIDATE_REVIEW_STATUS = {
     "not_attempted",
     "passed_release_preparation_probe",
+    "passed_application_review",
     "partial_release_preparation_probe",
 }
 RELEASE_RECORD_BLOCKER = "reader_release_record_not_created"

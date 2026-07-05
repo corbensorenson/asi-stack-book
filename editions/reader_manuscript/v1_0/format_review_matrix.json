@@ -22,7 +22,9 @@
     "docs/reader_keyboard_navigation_review.md",
     "docs/reader_audio_script_probe_manifest.md",
     "release_records/2026-06-29-v1-reader-html-855dc277.json",
-    "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+    "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json",
+    "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json",
+    "docs/reader_epub_apple_books_review.md"
   ],
   "release_record_status": "created",
   "release_record_path": "release_records/2026-06-29-v1-reader-html-855dc277.json",
@@ -36,7 +38,6 @@
     "release_record_path": "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json",
     "scope": "Tracked curated reader manuscript rendered into ignored local HTML, EPUB, DOCX, and PDF review artifacts, plus e-reader and audio release-preparation lanes.",
     "release_blocker_counts": {
-      "app_or_ereader_review_not_completed": 2,
       "audio_edition_release_record_not_created": 1,
       "audio_files_not_generated": 1,
       "chapter_markers_not_timecoded": 1,
@@ -84,13 +85,14 @@
           "docs/curated_reader_format_artifact_probe.md#epub-content-and-navigation-audit",
           "docs/reader_key_figure_epub_layout_review.md#summary",
           "docs/reader_final_figure_artifact_review.md#summary",
-          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+          "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json",
+          "docs/reader_epub_apple_books_review.md#what-was-checked",
+          "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json"
         ],
         "release_blockers": [
-          "app_or_ereader_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated EPUB snapshot rendered locally, passed repaired-package content and internal-link checks, passed Chromium EPUB XHTML browser review, passed the automated key-figure XHTML layout probe, and is covered by the final figure-artifact review. It has not received dedicated e-reader application approval or release approval.",
+        "notes": "The curated EPUB snapshot rendered locally, passed repaired-package content and internal-link checks, passed XML parse validation with zero bare class attributes and zero paragraph-wrapped figure tags, passed Chromium EPUB XHTML browser review, passed the automated key-figure XHTML layout probe, opened in Apple Books without the earlier XML error banner, advanced to a figure page, and exposed the table of contents. It is covered by the final figure-artifact review. It has not received reader release approval.",
         "non_claims": [
           "This candidate row does not approve curated reader EPUB for release.",
           "This candidate row does not publish the ignored local EPUB artifact.",
@@ -147,20 +149,21 @@
       {
         "format": "ereader_application_review",
         "artifact_scope": "Dedicated e-reader or e-reader-application approval path for the current curated EPUB candidate.",
-        "render_status": "not_attempted",
-        "automated_review_status": "not_attempted",
+        "render_status": "rendered_local",
+        "automated_review_status": "passed_application_review",
         "release_approved": false,
         "evidence_refs": [
+          "docs/reader_epub_apple_books_review.md#what-was-checked",
+          "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json",
           "docs/reader_key_figure_epub_layout_review.md#summary",
           "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
         ],
         "release_blockers": [
-          "app_or_ereader_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The automated Chromium EPUB XHTML review and key-figure layout probe prepare the e-reader lane, but a dedicated e-reader device or application approval path has not been executed.",
+        "notes": "The current repaired curated EPUB digest was opened in macOS Apple Books after package repairs. Apple Books rendered chapter 1 without the earlier XML error banner, advanced to a figure page with caption and boundary text visible, and opened the table of contents. This clears the app/e-reader review blocker only; the curated reader edition still lacks release approval.",
         "non_claims": [
-          "This candidate row does not approve an e-reader artifact or e-reader experience.",
+          "This candidate row does not approve an e-reader artifact or e-reader experience for publication.",
           "This candidate row does not publish the ignored local EPUB artifact.",
           "This candidate row does not promote any claim support state."
         ]
@@ -190,7 +193,7 @@
         ]
       }
     ],
-    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence and exact blockers, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
+    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence and the Apple Books EPUB application review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
   },
   "records": [
     {

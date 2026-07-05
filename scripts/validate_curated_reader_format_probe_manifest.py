@@ -458,7 +458,15 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
             errors.append("epub_content_audit.opf_item_count must match inspection_summary.epub.opf_item_count.")
         if epub_content_audit.get("opf_itemref_count") != epub.get("opf_itemref_count"):
             errors.append("epub_content_audit.opf_itemref_count must match inspection_summary.epub.opf_itemref_count.")
-        for zero_key in ("empty_xhtml_entries", "live_marker_hits", "raw_core_claim_marker_hits", "unresolved_internal_hrefs"):
+        for zero_key in (
+            "empty_xhtml_entries",
+            "live_marker_hits",
+            "raw_core_claim_marker_hits",
+            "unresolved_internal_hrefs",
+            "bare_class_attribute_hits",
+            "figure_paragraph_wrapper_hits",
+            "xml_parse_errors",
+        ):
             if epub_content_audit.get(zero_key) != 0:
                 errors.append(f"epub_content_audit.{zero_key} must be 0.")
         markers = set(require_string_list("epub_content_audit", "required_text_markers_present", epub_content_audit.get("required_text_markers_present"), errors))
@@ -642,7 +650,7 @@ def validate_summary(errors: list[str]) -> None:
         "0 live-marker leaks",
         "0 raw core-claim marker leaks",
         "SHA-256 `049df485288e8f513d36212dc9c458e3815565677a62b1ba7ef61525359473d4`",
-        "repaired EPUB package SHA-256 `34e41f9d3e33f6fda824d59a6da51dcf3308090a7ff7624b1742b9060cfc3d25`",
+        "repaired EPUB package SHA-256 `0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda`",
         "SHA-256 `b6b719feeaf2e8195880b5ef89f355fb122d83b6c584d0b11242c67e669ed2f3`",
         "repaired DOCX package SHA-256 `d18fff6310c71b5a55ad97fcad1a8357d7d1c50480cb15d40f435d2e5e65309e`",
         "SHA-256 `491113418d68c6a830d6d194d4b0263a47f9dc994196cd62bb342773fc6f7078`",
@@ -670,6 +678,9 @@ def validate_summary(errors: list[str]) -> None:
         "52 XHTML entries",
         "49 packaged content XHTML entries",
         "0 unresolved internal hrefs",
+        "| XML parse errors | 0 |",
+        "| Bare class attribute hits | 0 |",
+        "| Paragraph-wrapped figure tag hits | 0 |",
         "EPUB Browser XHTML Application Review",
         "104 page-view pairs",
         "not dedicated e-reader device/app approval",

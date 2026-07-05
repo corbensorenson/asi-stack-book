@@ -207,7 +207,6 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         "viewport_count": 2,
         "page_view_pairs": 20,
         "failed_page_view_pairs": 0,
-        "maximum_horizontal_overflow_px": 10,
         "minimum_image_count": 1,
         "image_failure_count": 0,
         "figure_boundary_count": 10,
@@ -224,6 +223,9 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         observed = summary.get(key)
         if not isinstance(observed, (int, float)) or observed < threshold:
             errors.append(f"summary.{key} must be at least {threshold}; found {observed!r}.")
+    max_overflow = summary.get("maximum_horizontal_overflow_px")
+    if not isinstance(max_overflow, (int, float)) or max_overflow > 10:
+        errors.append(f"summary.maximum_horizontal_overflow_px must be no more than 10; found {max_overflow!r}.")
     figures = result.get("figures", [])
     if not isinstance(figures, list) or len(figures) != 10:
         errors.append("figures must contain 10 rows.")

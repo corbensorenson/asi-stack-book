@@ -252,6 +252,11 @@ async function inspectPage(page, root, item, viewportName, viewportSize) {
     const title = document.querySelector("h1, h2, title");
     const scrollWidth = Math.max(doc.scrollWidth, body ? body.scrollWidth : 0);
     const clientWidth = doc.clientWidth;
+    const visibleElements = Array.from(document.querySelectorAll("body, body *"))
+      .map((element) => element.getBoundingClientRect())
+      .filter((rect) => rect.width > 0 && rect.height > 0);
+    const maxVisibleRight = visibleElements.reduce((max, rect) => Math.max(max, rect.right), clientWidth);
+    const minVisibleLeft = visibleElements.reduce((min, rect) => Math.min(min, rect.left), 0);
     const images = Array.from(document.querySelectorAll("img")).map((img) => {
       const rect = img.getBoundingClientRect();
       return {
@@ -273,7 +278,8 @@ async function inspectPage(page, root, item, viewportName, viewportSize) {
       main_visible: Boolean(main && main.getBoundingClientRect().height > 0),
       scroll_width: scrollWidth,
       client_width: clientWidth,
-      horizontal_overflow_px: Math.max(0, scrollWidth - clientWidth),
+      raw_document_overflow_px: Math.max(0, scrollWidth - clientWidth),
+      horizontal_overflow_px: Math.max(0, Math.ceil(maxVisibleRight - clientWidth), Math.ceil(-minVisibleLeft)),
     };
   });
 

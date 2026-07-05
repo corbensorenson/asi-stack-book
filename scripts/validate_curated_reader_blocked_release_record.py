@@ -24,6 +24,8 @@ KEY_FIGURE_RASTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figu
 KEY_FIGURE_EPUB_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_epub_layout_manifest.json"
 KEY_FIGURE_PDF_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 KEY_FIGURE_DOCX_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
+EPUB_APP_REVIEW = ROOT / "editions" / "reader_manuscript" / "v1_0" / "epub_apple_books_review_manifest.json"
+EPUB_APP_REVIEW_DOC = ROOT / "docs" / "reader_epub_apple_books_review.md"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 CHAPTER_RECONCILIATION_APPROVAL = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapter_reconciliation_approval_manifest.json"
@@ -54,7 +56,6 @@ REQUIRED_BLOCKERS = {
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
-    "app_or_ereader_review_not_completed",
 }
 REQUIRED_COMMANDS = {
     "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
@@ -80,6 +81,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_keyboard_navigation.py",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
     "python3 scripts/validate_reader_key_figure_epub_layout.py",
+    "python3 scripts/validate_reader_epub_apple_books_review.py",
     "python3 scripts/validate_reader_key_figure_pdf_layout.py",
     "python3 scripts/validate_reader_key_figure_docx_layout.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
@@ -134,6 +136,8 @@ def main() -> None:
         KEY_FIGURE_EPUB_LAYOUT,
         KEY_FIGURE_PDF_LAYOUT,
         KEY_FIGURE_DOCX_LAYOUT,
+        EPUB_APP_REVIEW,
+        EPUB_APP_REVIEW_DOC,
         READER_MANIFEST,
         CHAPTER_RECONCILIATION_APPROVAL,
         CHAPTER_RECONCILIATION_APPROVAL_DOC,
@@ -162,6 +166,8 @@ def main() -> None:
     key_figure_epub_layout = load_json(KEY_FIGURE_EPUB_LAYOUT)
     key_figure_pdf_layout = load_json(KEY_FIGURE_PDF_LAYOUT)
     key_figure_docx_layout = load_json(KEY_FIGURE_DOCX_LAYOUT)
+    epub_app_review = load_json(EPUB_APP_REVIEW)
+    epub_app_review_doc = EPUB_APP_REVIEW_DOC.read_text(encoding="utf-8")
     reader_manifest = load_json(READER_MANIFEST)
     chapter_reconciliation_approval = load_json(CHAPTER_RECONCILIATION_APPROVAL)
     chapter_reconciliation_approval_doc = CHAPTER_RECONCILIATION_APPROVAL_DOC.read_text(encoding="utf-8")
@@ -192,6 +198,8 @@ def main() -> None:
         fail([f"{rel(KEY_FIGURE_PDF_LAYOUT)} must contain a JSON object."])
     if not isinstance(key_figure_docx_layout, dict):
         fail([f"{rel(KEY_FIGURE_DOCX_LAYOUT)} must contain a JSON object."])
+    if not isinstance(epub_app_review, dict):
+        fail([f"{rel(EPUB_APP_REVIEW)} must contain a JSON object."])
     if not isinstance(reader_manifest, dict):
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
     if not isinstance(chapter_reconciliation_approval, dict):
@@ -304,6 +312,42 @@ def main() -> None:
     if not isinstance(epub_browser, dict):
         errors.append("curated format epub_browser_review must be an object.")
         epub_browser = {}
+    if epub_app_review.get("status") != "passed_apple_books_epub_application_review":
+        errors.append("epub_apple_books_review_manifest status must be passed_apple_books_epub_application_review.")
+    if epub_app_review.get("source_sha256") != epub_audit.get("source_sha256"):
+        errors.append("epub_apple_books_review_manifest source_sha256 must match the repaired EPUB audit.")
+    if epub_app_review.get("source_epub_content_audit_status") != epub_audit.get("status"):
+        errors.append("epub_apple_books_review_manifest must name the current EPUB content-audit status.")
+    if epub_app_review.get("source_epub_browser_review_status") != epub_browser.get("status"):
+        errors.append("epub_apple_books_review_manifest must name the current EPUB browser-review status.")
+    if epub_app_review.get("cleared_blockers") != ["app_or_ereader_review_not_completed"]:
+        errors.append("epub_apple_books_review_manifest must clear only app_or_ereader_review_not_completed.")
+    observed_ids = {
+        item.get("id")
+        for item in epub_app_review.get("observations", [])
+        if isinstance(item, dict) and item.get("result") == "pass"
+    }
+    expected_observed_ids = {
+        "library_opened",
+        "chapter_render_without_xml_error",
+        "page_advance_to_figure",
+        "table_of_contents_opened",
+    }
+    if observed_ids != expected_observed_ids:
+        errors.append(f"epub_apple_books_review_manifest pass observations drifted: {sorted(observed_ids)}")
+    text_contains_all(
+        rel(EPUB_APP_REVIEW_DOC),
+        epub_app_review_doc,
+        [
+            "Reader EPUB Apple Books Review",
+            "passed_apple_books_epub_application_review",
+            str(epub_audit.get("source_sha256", "")),
+            "zero XML parse errors",
+            "clears only `app_or_ereader_review_not_completed`",
+            "does not approve the curated reader edition",
+        ],
+        errors,
+    )
     if not isinstance(docx_audit, dict):
         errors.append("curated format docx_content_audit must be an object.")
         docx_audit = {}
@@ -810,6 +854,12 @@ def main() -> None:
         "key_figure_epub_layout_image_failures": epub_layout_summary.get("image_failure_count")
         if isinstance(epub_layout_summary, dict)
         else None,
+        "epub_apple_books_review_manifest": "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json",
+        "epub_apple_books_review_status": epub_app_review.get("status"),
+        "epub_apple_books_review_sha256": epub_app_review.get("source_sha256"),
+        "epub_apple_books_cleared_blockers": len(epub_app_review.get("cleared_blockers", []))
+        if isinstance(epub_app_review.get("cleared_blockers"), list)
+        else None,
         "key_figure_pdf_layout_manifest": "editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json",
         "key_figure_pdf_layout_caption_pages": pdf_layout_summary.get("unique_caption_pages")
         if isinstance(pdf_layout_summary, dict)
@@ -881,6 +931,7 @@ def main() -> None:
         "epub key-figure layout",
         "pdf key-figure layout",
         "docx key-figure layout",
+        "apple books",
         "automated keyboard traversal",
         "pdf page-by-page release-preparation review",
         "final figure-artifact review",
@@ -905,6 +956,8 @@ def main() -> None:
         "10 key-figure XHTML entries",
         "20 key-figure page-view pairs",
         "0 key-figure browser failures",
+        "Apple Books",
+        "clears only the app/e-reader review blocker",
     ):
         if fragment and fragment not in epub_note:
             errors.append(f"curated_reader_epub notes missing repaired-audit fragment: {fragment}")
@@ -1123,6 +1176,7 @@ def main() -> None:
             "PDF page-by-page release-preparation review",
             "final figure-artifact review",
             "chapter reconciliation approval",
+            "Apple Books EPUB application review",
             "automated keyboard traversal review",
             "keyboard-only",
             "screen-reader",
@@ -1153,6 +1207,7 @@ def main() -> None:
             "does not clear manual aesthetic review",
             "Final figure-artifact review clears",
             "Chapter reconciliation approval clears",
+            "Apple Books EPUB application review clears",
             "EPUB key-figure layout review is recorded as preparation evidence only",
             "does not clear dedicated e-reader device review",
             "does not clear e-reader application approval",

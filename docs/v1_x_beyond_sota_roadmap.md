@@ -412,7 +412,7 @@ Do not reopen these unless a validator fails or a new change touches them:
 - the v1.0 generated-reader local HTML snapshot is the only release-approved
   human-consumption artifact; the newer curated-reader HTML browser review is a
   viability review only and is not a release record;
-- EPUB, DOCX, PDF, e-reader app review, audio, DOI/Zenodo, screen-reader pass,
+- EPUB publication approval, DOCX, PDF, audio, DOI/Zenodo, screen-reader pass,
   and manual keyboard pass remain unresolved.
 
 ## Keystone Set And Dependency Order
@@ -3705,11 +3705,16 @@ Current status:
   EPUB package audit now checks all 52 XHTML entries, 49 packaged content XHTML
   entries, OPF/nav counts, required reader text markers, live-marker leakage,
   raw core-claim marker leakage, and internal links with 0 unresolved internal
-  hrefs. The Chromium EPUB XHTML browser review now checks 104 page-view pairs
-  with 0 failures, and the EPUB key-figure layout probe checks 10 key-figure
-  XHTML entries, 20 desktop/e-reader-like page-view pairs, 0 key-figure browser
-  failures, 10 px maximum horizontal overflow, and 0 image failures while
-  preserving dedicated e-reader approval as a release blocker. The repaired DOCX package audit now checks document XML, required
+  hrefs, 0 XML parse errors, 0 bare class attributes, and 0
+  paragraph-wrapped figure tag hits. The Chromium EPUB XHTML browser review now
+  checks 104 page-view pairs with 0 failures and 0 px maximum element overflow,
+  and the EPUB key-figure layout probe checks 10 key-figure XHTML entries, 20
+  desktop/e-reader-like page-view pairs, 0 key-figure browser failures, 10 px
+  maximum horizontal overflow, and 0 image failures. The Apple Books EPUB
+  application review now opens the repaired EPUB digest, renders chapter 1
+  without the earlier XML error banner, advances to a figure page, opens the
+  table of contents, and clears only `app_or_ereader_review_not_completed`.
+  The repaired DOCX package audit now checks document XML, required
   reader text markers, media entries, relationship targets, live-marker
   leakage, raw core-claim marker leakage, and internal relationship targets with
   0 raw `.qmd` relationship targets and 0 unresolved internal relationship
@@ -3738,11 +3743,11 @@ Current status:
   pages, 10 caption-page rasters, 165.878 pt minimum caption margin, 3.36%
   minimum page ink, 0.0% maximum near-edge ink, and 14.2 minimum luminance
   standard deviation. The Chromium PDF viewer smoke review records 2 nonblank
-  viewer screenshots and 4.434% changed pixels after scroll. EPUB, DOCX, PDF, e-reader, and
-  audio artifacts still remain unapproved until dedicated e-reader approval,
-  Word/LibreOffice GUI/Google Docs DOCX review or an explicit release decision,
-  narration-quality/timecode/audio-generation review, and an edition release
-  record exist.
+  viewer screenshots and 4.434% changed pixels after scroll. EPUB publication,
+  DOCX, PDF, and audio artifacts still remain unapproved until reader release
+  approval, Word/LibreOffice GUI/Google Docs DOCX review or an explicit release
+  decision, narration-quality/timecode/audio-generation review, and an edition
+  release record exist.
 - Add a chapter-length and evidence-placement pass before Corben's human
   review. The biggest live chapters should keep evidence boundaries intact but
   move bulky tables, validator minutiae, or repeated caveats into appendices,
@@ -3775,7 +3780,8 @@ Tasks:
   reader-navigation burden. Use accessible HTML/SVG/Mermaid or generated
   bitmap figures only when they remain inspectable and have text equivalents.
 - For EPUB:
-  - inspect in at least one real e-reader app or device path;
+  - keep the Apple Books application review current for the exact repaired
+    EPUB digest, and rerun it after EPUB-affecting changes;
   - check navigation, source cards, images, tables, and long code/proof blocks;
   - record the exact artifact digest.
 - For PDF:
@@ -3865,7 +3871,7 @@ Current status:
   `draft_not_release_reviewed` with no new
   support-state, enforcement, security, proof, test, external-review, or
   artifact-release effect. Current blocker: manual aesthetic judgment, figure
-  polish, real e-reader/app inspection, dedicated e-reader device/application review, Word/LibreOffice GUI/Google Docs
+  polish, e-reader visual review beyond the Apple Books smoke/application path, Word/LibreOffice GUI/Google Docs
   review, final PDF figure/readability release review, and release review still
   need to happen before any approved reader-figure artifact claim.
 - `docs/reader_accessibility_navigation_review.md` and
@@ -3875,7 +3881,7 @@ Current status:
   sections, 10 draft figure alt texts, 10 figure boundary paragraphs, 0
   live-marker leaks, and 0 raw core-claim marker leaks. This is a source gate
   only; keyboard-only review, screen-reader review, WCAG conformance review,
-  real e-reader/app inspection, and release approval remain open.
+  and release approval remain open.
 - The generated audio workspace now includes `pronunciation_glossary.md` and
   `proof_equation_reading_rules.md`. The latter is a required review artifact
   for theorem IDs, equations, support states, proof statuses, schema fields,
@@ -4176,9 +4182,12 @@ validator-enforced status row that grows past compact status-summary size.
   Chromium EPUB XHTML browser review checks 104 page-view pairs with 0 failures,
   and its EPUB key-figure layout review checks 10 key-figure XHTML entries, 20
   desktop/e-reader-like page-view pairs, 0 key-figure browser failures, 10 px
-  maximum horizontal overflow, and 0 image failures, but EPUB still remains
-  probe-level until dedicated e-reader approval or an
-  explicit release decision and an edition release record exist. Its
+  maximum horizontal overflow, and 0 image failures. The Apple Books EPUB
+  application review opens the repaired EPUB digest, renders chapter 1 without
+  the earlier XML error banner, advances to a figure page, opens the table of
+  contents, and clears only `app_or_ereader_review_not_completed`; EPUB still
+  remains unreleased until reader release approval and an edition release
+  record exist. Its
   repaired-package DOCX audit checks document
   XML/media/relationships with 0 raw `.qmd` relationship targets, and its
   LibreOffice headless DOCX review converts 504 pages with 0 blank, 0 low-ink,
@@ -4215,16 +4224,16 @@ validator-enforced status row that grows past compact status-summary size.
   margin; source-level visual identity review now exists with 10 key figures,
   54 combined colors, 5 non-neutral color families, and minimum text contrast
   5.19, but visual identity remains blocked on manual rendered visual
-  inspection, manual aesthetic judgment, real e-reader/application review,
-  and reader release approval.
+  inspection, manual aesthetic judgment, e-reader visual review beyond the
+  Apple Books smoke/application path, and reader release approval.
   Source-level accessibility/navigation review now exists with 44 one-H1
   chapters, 44 handoff sections, 10 draft figure alt texts, 10 figure boundary
   paragraphs, 0 live-marker leaks, and 0 raw core-claim marker leaks, but it
   remains source-level. Automated Chromium keyboard traversal now exists with
   98 desktop/mobile page-view pairs, 98 skip-link activations, 98 main-content
   routes, and 0 keyboard-trap candidates, but it remains blocked on manual
-  keyboard-only review, screen-reader review, WCAG conformance review, real
-  e-reader/application review, audiobook review, and reader release approval.
+  keyboard-only review, screen-reader review, WCAG conformance review,
+  audiobook review, and reader release approval.
   Automated PNG raster fallback review now exists
   with 10 generated fallbacks, 10 standard 1200 x 760 canvases, 99.954%
   minimum opaque pixel coverage, 27.64 minimum luminance standard deviation,
@@ -4234,8 +4243,8 @@ validator-enforced status row that grows past compact status-summary size.
   `passed_final_figure_artifact_release_preparation_review`, covers all ten
   key figures, and clears only the current candidate's
   `final_figure_artifact_review_not_completed` blocker; manual aesthetic
-  judgment, real e-reader/application review, DOCX/PDF application review, and
-  reader release approval remain open.
+  judgment, e-reader visual review beyond the Apple Books smoke/application
+  path, DOCX/PDF application review, and reader release approval remain open.
 - Test 3: 6 accepted narrow transitions, including the finite synthetic
   load-smoothing selector transition and the local empirical scoped-route
   selector transition; most chapter evidence lanes have not yet executed.

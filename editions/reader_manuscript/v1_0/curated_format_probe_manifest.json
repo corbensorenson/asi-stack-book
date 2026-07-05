@@ -187,10 +187,10 @@
   "epub_content_audit": {
     "status": "passed_epub_package_content_navigation_probe",
     "source_artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
-    "source_sha256": "34e41f9d3e33f6fda824d59a6da51dcf3308090a7ff7624b1742b9060cfc3d25",
+    "source_sha256": "0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda",
     "xhtml_entries_checked": 52,
     "content_xhtml_entries_checked": 49,
-    "total_text_characters_checked": 1782064,
+    "total_text_characters_checked": 1783217,
     "nav_href_count": 841,
     "opf_item_count": 116,
     "opf_itemref_count": 52,
@@ -198,6 +198,9 @@
     "live_marker_hits": 0,
     "raw_core_claim_marker_hits": 0,
     "unresolved_internal_hrefs": 0,
+    "bare_class_attribute_hits": 0,
+    "figure_paragraph_wrapper_hits": 0,
+    "xml_parse_errors": 0,
     "required_text_markers_present": [
       "The ASI Stack",
       "Reader Edition Draft",
@@ -205,7 +208,7 @@
       "Reader Source List",
       "External Citation Policy"
     ],
-    "review_boundary": "All-XHTML EPUB package, content-marker, and internal-link checks are stronger local EPUB evidence than container inspection alone, but this is not e-reader application review and does not approve the EPUB artifact for release."
+    "review_boundary": "All-XHTML EPUB package, content-marker, and internal-link checks are stronger local EPUB evidence than container inspection alone, including guards against Apple Books XML parse failures from bare class attributes and paragraph-wrapped figure tags, but this is not e-reader application review and does not approve the EPUB artifact for release."
   },
   "docx_content_audit": {
     "status": "passed_docx_document_xml_relationship_probe",
@@ -268,7 +271,7 @@
   "epub_browser_review": {
     "status": "passed_browser_xhtml_application_review",
     "source_artifact": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
-    "source_sha256": "34e41f9d3e33f6fda824d59a6da51dcf3308090a7ff7624b1742b9060cfc3d25",
+    "source_sha256": "0cde00ffdb070b12884ae1d7400c4e7dcc4321e0141956c5d9d89b434463fbda",
     "report_ref": "build/curated_reader_edition/curated_reader_epub_browser_review_report.json",
     "review_command": "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
     "renderer": "Chromium via Playwright over unpacked EPUB spine XHTML",
@@ -277,9 +280,9 @@
     "viewport_count": 2,
     "page_view_pairs": 104,
     "failed_page_view_pairs": 0,
-    "rendered_image_count": 22,
+    "rendered_image_count": 122,
     "image_load_failures": 0,
-    "max_horizontal_overflow_px": 10,
+    "max_horizontal_overflow_px": 0,
     "min_body_text_chars": 0,
     "min_content_body_text_chars": 1225,
     "required_text_markers_present": [
@@ -458,7 +461,7 @@
       },
       {
         "appendix_letter": "B",
-        "title": "Corben\u2019s Own Sources, Papers, and Local Projects",
+        "title": "Corben’s Own Sources, Papers, and Local Projects",
         "text_offset": 939839,
         "pdf_text_page_index": 424
       },
