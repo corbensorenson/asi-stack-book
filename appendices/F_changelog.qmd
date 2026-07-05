@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-05 - Tighten Project Theseus reader projection
+
+- Moved the dense Project Theseus core-claim support inventory into an
+  AI-only block so the live Human view and generated reader projection keep the
+  standard core-claim marker pipeline while dropping a validator-dense reader
+  paragraph.
+- Added a reader-only Project Theseus `Concrete Theseus Evidence Surface`
+  overlay so the human-facing spine summarizes the public-safe import boundary
+  and non-claims without carrying the full evidence inventory.
+- Regenerated `docs/reader_continuity_audit.md`, `assets/reader-overlays.html`,
+  the reader chapter review matrix, the Live Human-view status ledger, release
+  surface ledger, README trust surface, landing-page trust surface, and roadmap
+  reader counts.
+- The reader projection now records 74 active/applied reader-overlay operations,
+  0 high-priority heuristic rows, 0 medium-priority heuristic rows, and 0
+  paragraphs at or above 160 words. This is a reader-continuity cleanup only;
+  it does not approve a reader release, publish EPUB/DOCX/PDF/audio artifacts,
+  change source evidence, or promote any support state.
+
 ## 2026-07-05 - Import Theseus module definition-of-done gate
 
 - Added `python3 scripts/validate_theseus_module_definition_of_done_import.py`,

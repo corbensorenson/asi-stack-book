@@ -9,8 +9,8 @@ This note records manual decisions made after reading medium-priority rows from 
 ## Source State
 
 - Generated reader source: `build/reader_edition/`
-- Reader overlay set: 73 active and 73 applied operations
-- Reader continuity audit: 44 chapters, 117,400 reader words, 0 high-priority heuristic rows, 0 medium-priority heuristic rows, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
+- Reader overlay set: 74 active and 74 applied operations
+- Reader continuity audit: 44 chapters, 117,713 reader words, 0 high-priority heuristic rows, 0 medium-priority heuristic rows, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words
 - Live source of truth: Quarto chapters plus `book_structure.json`, `docs/book_outline.md`, Appendix C, source appendices, proof/test records, implementation horizons, and release records
 
 ## Decision Rules

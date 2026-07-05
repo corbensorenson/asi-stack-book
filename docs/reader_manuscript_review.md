@@ -23,7 +23,7 @@ Generated workspace:
 - 44 raw core-claim markers removed
 - 39 repeated support-boilerplate passages humanized
 - 61 reader scaffold terms humanized
-- 73 active reader-overlay operations applied; 2 retired semantic-representation
+- 74 active reader-overlay operations applied; 2 retired semantic-representation
   operations skipped after the fold
 
 Generated review files inspected:
@@ -91,7 +91,7 @@ The current generated reader source now has a deterministic heuristic audit at `
 python3 scripts/audit_reader_continuity.py --write
 ```
 
-The audit currently measures 44 reader chapters, 49 generated files, 117,400 reader words, 73 active and applied reader-overlay operations, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority and 0 medium-priority heuristic review chapters; the remaining queue is low-priority continuity review, not release approval.
+The audit currently measures 44 reader chapters, 49 generated files, 117,713 reader words, 74 active and applied reader-overlay operations, 0 table rows, 53 Mermaid diagrams, 0 non-Mermaid code blocks, 0 paragraphs at or above 160 words, and 0 repeated first-sentence stems under the current eight-word heuristic. It identifies 0 high-priority and 0 medium-priority heuristic review chapters; the remaining queue is low-priority continuity review, not release approval.
 
 This is review triage, not manual review. It creates a queue for the chapter-by-chapter human pass and helps decide whether a finding should become a canonical prose edit, reader-only overlay, companion-note treatment, or no action.
 

@@ -22,6 +22,21 @@
         "",
         "The next stronger step is not better wording. It is a fresh replay or archived public release package with environment notes, publication permission, artifact digests, and review boundaries. Until then, Theseus remains implementation-reference evidence, not model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, or chapter-core-promotion evidence."
       ]
+    },
+    {
+      "id": "v1_0.project_theseus.concrete_evidence_surface_reader_replace",
+      "status": "active",
+      "action": "replace_section",
+      "section": {
+        "level": 3,
+        "title": "Concrete Theseus Evidence Surface"
+      },
+      "rationale": "Replace the reader-facing Theseus evidence inventory with a compact summary while preserving the public-safe import boundary and non-claims.",
+      "content_lines": [
+        "Theseus currently contributes a narrow public-safe evidence surface. The book has imported static architecture and generation summaries, replayed its own checks around those summaries, and added two sanitized import lanes for artifact retention and module definition of done. These pieces make the shape of a report-first implementation visible.",
+        "",
+        "Their value is negative as much as positive: they keep private payloads out, expose missing live replay, and block unsupported promotion. They do not establish model quality, generation speed, module capability, deployed behavior, safety, transfer, ASI, or any chapter-core promotion."
+      ]
     }
   ]
 }
