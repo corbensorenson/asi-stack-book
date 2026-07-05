@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-05 - Approve curated reader chapter reconciliation source state
+
+- Added `scripts/validate_reader_chapter_reconciliation_approval.py`,
+  `editions/reader_manuscript/v1_0/chapter_reconciliation_approval_manifest.json`,
+  and `docs/reader_chapter_reconciliation_approval.md` to make the current
+  44-chapter curated reader reconciliation state explicit and validator-backed.
+- Removed `curated_reconciliation_not_approved` from the current curated
+  chapter records, curated format probe, accessibility/navigation gate, and
+  human-consumption gate after the approval record verified 44 reconciled
+  chapter records, 44 full-review matrix rows, 44 curated files, 0 live-marker
+  leaks, and 0 raw core-claim marker leaks.
+- Updated the curation contract, blocked curated-reader release record,
+  release-surface ledger/status row, repository map, roadmap, and orchestrated
+  validation so the active release queue now focuses on format artifact review,
+  e-reader/application review, accessibility review, audio gates, and reader
+  release approval.
+- Boundary: this clears only `curated_reconciliation_not_approved`; it does
+  not approve HTML, EPUB, DOCX, PDF, e-reader, audio, publication, accessibility
+  conformance, or any chapter support-state movement.
+
 ## 2026-07-05 - Clear curated reader final figure-artifact blocker
 
 - Added `scripts/validate_reader_final_figure_artifact_review.py`,

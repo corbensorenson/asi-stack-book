@@ -139,7 +139,6 @@ REQUIRED_CURATED_CHAPTER_RECORD_FIELDS = {
 REQUIRED_CURATION_RELEASE_BLOCKERS = {
     "reader_release_record_not_created",
     "format_artifact_not_reviewed",
-    "curated_reconciliation_not_approved",
 }
 REQUIRED_ROUTING_RELEASE_BLOCKERS = {
     "reader_release_record_not_created",
@@ -165,6 +164,7 @@ REQUIRED_FIELDS = {
     "graduation_criteria",
     "companion_note_routing",
     "chapter_review_matrix",
+    "chapter_reconciliation_approval",
     "format_review_matrix",
     "curation_contract",
     "chapter_records",
@@ -396,6 +396,37 @@ def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
         policy = matrix.get("policy")
         if not isinstance(policy, str) or "book_structure.json" not in policy or "release blockers" not in policy:
             errors.append("chapter_review_matrix.policy must mention book_structure.json and release blockers.")
+
+    reconciliation_approval = data.get("chapter_reconciliation_approval")
+    if not isinstance(reconciliation_approval, dict):
+        errors.append("chapter_reconciliation_approval must be an object.")
+    else:
+        expected = {
+            "path": "editions/reader_manuscript/v1_0/chapter_reconciliation_approval_manifest.json",
+            "summary": "docs/reader_chapter_reconciliation_approval.md",
+            "write_command": "python3 scripts/validate_reader_chapter_reconciliation_approval.py --write-result",
+            "check_command": "python3 scripts/validate_reader_chapter_reconciliation_approval.py",
+            "status": "approved_source_reconciliation_not_release",
+        }
+        for key, expected_value in expected.items():
+            if reconciliation_approval.get(key) != expected_value:
+                errors.append(f"chapter_reconciliation_approval.{key} must be {expected_value}.")
+        for key in ("path", "summary"):
+            value = reconciliation_approval.get(key)
+            if isinstance(value, str):
+                require_existing_path(f"chapter_reconciliation_approval.{key}", value, errors)
+        policy = reconciliation_approval.get("policy")
+        if (
+            not isinstance(policy, str)
+            or "curated_reconciliation_not_approved" not in policy
+            or "does not approve" not in policy
+            or "format" not in policy
+            or "release" not in policy
+        ):
+            errors.append(
+                "chapter_reconciliation_approval.policy must name the cleared reconciliation blocker "
+                "and preserve format/release approval boundaries."
+            )
 
     format_matrix = data.get("format_review_matrix")
     if not isinstance(format_matrix, dict):
@@ -901,6 +932,7 @@ def validate_curation_contract(data: dict[str, Any], errors: list[str]) -> dict[
     )
     for command in (
         "python3 scripts/validate_reader_manuscript_manifest.py",
+        "python3 scripts/validate_reader_chapter_reconciliation_approval.py",
         "python3 scripts/validate_reader_spine.py --check",
         "python3 scripts/validate_reader_evidence_boundaries.py --check",
     ):

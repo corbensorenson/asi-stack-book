@@ -347,7 +347,6 @@ def inspect(root: Path) -> dict[str, object]:
             "pdf": pdf,
         },
         "release_blockers_preserved": [
-            "curated_reconciliation_not_approved",
             "format_artifact_not_reviewed",
             "reader_release_record_not_created",
             "full_format_artifact_review_not_completed",

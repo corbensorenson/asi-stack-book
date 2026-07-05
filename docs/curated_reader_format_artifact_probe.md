@@ -384,8 +384,8 @@ artifact. Audio artifacts remain outside this probe.
 
 - The rendered artifacts are ignored local build outputs, not committed release
   assets.
-- All 44 curated chapter records still carry
-  `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, and
+- All 44 curated chapter records now have source-level reconciliation approval;
+  they still carry `format_artifact_not_reviewed` and
   `reader_release_record_not_created`.
 - EPUB, DOCX, PDF, e-reader, MP3, M4B, and audio-embedded EPUB artifacts remain
   unapproved until exact artifacts, application-level review, and release

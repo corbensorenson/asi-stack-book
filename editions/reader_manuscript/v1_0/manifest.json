@@ -608,6 +608,14 @@
     "check_command": "python3 scripts/sync_reader_chapter_review_matrix.py --check",
     "policy": "Track chapter-by-chapter human-reader review status, overlay disposition, companion-note candidates, curated-manuscript candidates, and release blockers while keeping manifest chapter identity synced to book_structure.json."
   },
+  "chapter_reconciliation_approval": {
+    "path": "editions/reader_manuscript/v1_0/chapter_reconciliation_approval_manifest.json",
+    "summary": "docs/reader_chapter_reconciliation_approval.md",
+    "write_command": "python3 scripts/validate_reader_chapter_reconciliation_approval.py --write-result",
+    "check_command": "python3 scripts/validate_reader_chapter_reconciliation_approval.py",
+    "status": "approved_source_reconciliation_not_release",
+    "policy": "Clears only curated_reconciliation_not_approved for the current 44 reconciled curated reader chapter records; does not approve format artifacts, application reviews, accessibility reviews, audio, or reader release."
+  },
   "format_review_matrix": {
     "path": "editions/reader_manuscript/v1_0/format_review_matrix.json",
     "summary": "docs/reader_format_review_matrix.md",
@@ -659,8 +667,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -700,8 +707,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -740,8 +746,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -782,8 +787,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -824,8 +828,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -868,8 +871,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -910,8 +912,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -952,8 +953,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -995,8 +995,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1037,8 +1036,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1079,8 +1077,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1120,8 +1117,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1160,8 +1156,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1203,8 +1198,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1243,8 +1237,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1284,8 +1277,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1324,8 +1316,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1366,8 +1357,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1412,8 +1402,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1455,8 +1444,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1500,8 +1488,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1543,8 +1530,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1587,8 +1573,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1630,8 +1615,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1672,8 +1656,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1715,8 +1698,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1760,8 +1742,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1806,8 +1787,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1848,8 +1828,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1889,8 +1868,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1933,8 +1911,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -1975,8 +1952,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2017,8 +1993,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2057,8 +2032,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2098,8 +2072,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2139,8 +2112,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2181,8 +2153,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2222,8 +2193,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "Canonical chapter was updated by the 2026-06-30 intent/contracts merge; this reader source now follows that active boundary.",
@@ -2263,8 +2233,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2304,8 +2273,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2346,8 +2314,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2389,8 +2356,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2430,8 +2396,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2471,8 +2436,7 @@
       ],
       "release_blockers": [
         "reader_release_record_not_created",
-        "format_artifact_not_reviewed",
-        "curated_reconciliation_not_approved"
+        "format_artifact_not_reviewed"
       ],
       "canonical_change_required": false,
       "canonical_change_ref": "",
@@ -2482,7 +2446,7 @@
   "reconciliation_report": {
     "required_before_release": true,
     "path": "editions/reader_manuscript/v1_0/reconciliation_report.md",
-    "status": "not_started"
+    "status": "reconciled"
   },
   "non_claims": [
     "This manifest does not create a reviewed reader release.",

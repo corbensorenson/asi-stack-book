@@ -107,7 +107,7 @@ def inspect_readability(reader_manifest: dict[str, Any]) -> dict[str, Any]:
         live_marker_hits += len(live_hits)
         raw_core_claim_hits += int(bool(RAW_CORE_CLAIM_RE.search(text)))
         blockers = set(record.get("release_blockers", []))
-        if {"curated_reconciliation_not_approved", "format_artifact_not_reviewed", "reader_release_record_not_created"}.issubset(blockers):
+        if {"format_artifact_not_reviewed", "reader_release_record_not_created"}.issubset(blockers):
             release_blocker_records += 1
         if record.get("reconciliation_status") == "reconciled":
             reconciled_records += 1
@@ -366,7 +366,6 @@ def build_observed() -> dict[str, Any]:
             ),
         },
         "release_blockers_preserved": [
-            "curated_reconciliation_not_approved",
             "format_artifact_not_reviewed",
             "reader_release_record_not_created",
             "app_or_ereader_review_not_completed",

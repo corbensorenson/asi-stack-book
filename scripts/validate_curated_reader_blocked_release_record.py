@@ -25,6 +25,10 @@ KEY_FIGURE_EPUB_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key
 KEY_FIGURE_PDF_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_pdf_layout_manifest.json"
 KEY_FIGURE_DOCX_LAYOUT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_docx_layout_manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
+CHAPTER_RECONCILIATION_APPROVAL = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapter_reconciliation_approval_manifest.json"
+)
+CHAPTER_RECONCILIATION_APPROVAL_DOC = ROOT / "docs" / "reader_chapter_reconciliation_approval.md"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
 HUMAN_CONSUMPTION_GATE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
@@ -47,7 +51,6 @@ HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 EXPECTED_RELEASE_ID = "2026-07-04-v1-curated-reader-blocked-5dc1cd46"
 EXPECTED_SOURCE_COMMIT = "5dc1cd467543edc97b1517901529347a6ef40052"
 REQUIRED_BLOCKERS = {
-    "curated_reconciliation_not_approved",
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",
@@ -83,6 +86,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_reader_human_consumption_gate.py",
     "python3 scripts/validate_reader_final_figure_artifact_review.py",
+    "python3 scripts/validate_reader_chapter_reconciliation_approval.py",
     "python3 scripts/validate_release_surface_status_ledger.py",
 }
 
@@ -131,6 +135,8 @@ def main() -> None:
         KEY_FIGURE_PDF_LAYOUT,
         KEY_FIGURE_DOCX_LAYOUT,
         READER_MANIFEST,
+        CHAPTER_RECONCILIATION_APPROVAL,
+        CHAPTER_RECONCILIATION_APPROVAL_DOC,
         AUDIO_PROBE,
         HUMAN_CONSUMPTION_GATE,
         HUMAN_CONSUMPTION_REVIEW,
@@ -157,6 +163,8 @@ def main() -> None:
     key_figure_pdf_layout = load_json(KEY_FIGURE_PDF_LAYOUT)
     key_figure_docx_layout = load_json(KEY_FIGURE_DOCX_LAYOUT)
     reader_manifest = load_json(READER_MANIFEST)
+    chapter_reconciliation_approval = load_json(CHAPTER_RECONCILIATION_APPROVAL)
+    chapter_reconciliation_approval_doc = CHAPTER_RECONCILIATION_APPROVAL_DOC.read_text(encoding="utf-8")
     audio_probe = load_json(AUDIO_PROBE)
     human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
     human_consumption_review = HUMAN_CONSUMPTION_REVIEW.read_text(encoding="utf-8")
@@ -186,6 +194,8 @@ def main() -> None:
         fail([f"{rel(KEY_FIGURE_DOCX_LAYOUT)} must contain a JSON object."])
     if not isinstance(reader_manifest, dict):
         fail([f"{rel(READER_MANIFEST)} must contain a JSON object."])
+    if not isinstance(chapter_reconciliation_approval, dict):
+        fail([f"{rel(CHAPTER_RECONCILIATION_APPROVAL)} must contain a JSON object."])
     if not isinstance(audio_probe, dict):
         fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
     if not isinstance(human_consumption_gate, dict):
@@ -442,6 +452,68 @@ def main() -> None:
             "passed_final_figure_artifact_release_preparation_review",
             "final_figure_artifact_review_not_completed",
             "does not approve the curated reader edition",
+        ],
+        errors,
+    )
+    if chapter_reconciliation_approval.get("status") != "passed_curated_chapter_reconciliation_approval":
+        errors.append(
+            "chapter_reconciliation_approval manifest status must be "
+            "passed_curated_chapter_reconciliation_approval."
+        )
+    reconciliation_summary = chapter_reconciliation_approval.get("summary", {})
+    if not isinstance(reconciliation_summary, dict):
+        errors.append("chapter_reconciliation_approval summary must be an object.")
+        reconciliation_summary = {}
+    expected_reconciliation_summary = {
+        "chapter_count": 44,
+        "reader_manifest_records": 44,
+        "chapter_review_matrix_rows": 44,
+        "reconciled_records": 44,
+        "reviewed_matrix_rows": 44,
+        "full_chapter_review_rows": 44,
+        "curated_files_present": 44,
+        "passed_rows": 44,
+        "live_marker_hits": 0,
+        "raw_core_claim_marker_hits": 0,
+    }
+    for key, expected in expected_reconciliation_summary.items():
+        observed = reconciliation_summary.get(key)
+        if observed != expected:
+            errors.append(
+                f"chapter_reconciliation_approval summary.{key} must be "
+                f"{expected!r}; found {observed!r}."
+            )
+    if chapter_reconciliation_approval.get("cleared_blockers") != ["curated_reconciliation_not_approved"]:
+        errors.append("chapter_reconciliation_approval must clear only curated_reconciliation_not_approved.")
+    required_reconciliation_preserved = {
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created",
+        "reader_release_approval_not_created",
+        "app_or_ereader_review_not_completed",
+        "docx_application_review_not_completed",
+        "manual_keyboard_only_review_not_completed",
+        "screen_reader_review_not_completed",
+        "wcag_conformance_review_not_completed",
+        "audio_files_not_generated",
+    }
+    missing_reconciliation_preserved = sorted(
+        required_reconciliation_preserved
+        - set(chapter_reconciliation_approval.get("release_blockers_preserved", []))
+    )
+    if missing_reconciliation_preserved:
+        errors.append(
+            "chapter_reconciliation_approval missing preserved blockers: "
+            f"{missing_reconciliation_preserved}"
+        )
+    text_contains_all(
+        rel(CHAPTER_RECONCILIATION_APPROVAL_DOC),
+        chapter_reconciliation_approval_doc,
+        [
+            "Reader Chapter Reconciliation Approval",
+            "passed_curated_chapter_reconciliation_approval",
+            "curated_reconciliation_not_approved",
+            "does not clear format artifact review",
+            "does not promote any chapter core claim",
         ],
         errors,
     )
@@ -955,7 +1027,6 @@ def main() -> None:
                 f"human consumption gate {gate_name}.facts.{fact_name} must be {expected!r}; found {observed!r}."
             )
     required_human_blockers = {
-        "curated_reconciliation_not_approved",
         "format_artifact_not_reviewed",
         "reader_release_record_not_created",
         "app_or_ereader_review_not_completed",
@@ -1031,6 +1102,8 @@ def main() -> None:
             "0 out-of-bounds word-box pages",
             "final figure-artifact review",
             "passed_final_figure_artifact_release_preparation_review",
+            "chapter reconciliation approval",
+            "clears only the source-level reconciliation blocker",
         ],
         errors,
     )
@@ -1049,6 +1122,7 @@ def main() -> None:
             "DOCX key-figure layout review",
             "PDF page-by-page release-preparation review",
             "final figure-artifact review",
+            "chapter reconciliation approval",
             "automated keyboard traversal review",
             "keyboard-only",
             "screen-reader",
@@ -1078,6 +1152,7 @@ def main() -> None:
             "Automated PNG raster review is recorded as preparation evidence only",
             "does not clear manual aesthetic review",
             "Final figure-artifact review clears",
+            "Chapter reconciliation approval clears",
             "EPUB key-figure layout review is recorded as preparation evidence only",
             "does not clear dedicated e-reader device review",
             "does not clear e-reader application approval",
@@ -1107,7 +1182,7 @@ def main() -> None:
             errors.append(f"non_claims missing boundary fragment: {fragment}")
 
     if reader_manifest.get("status") != "drafting":
-        errors.append("curated reader manifest must remain drafting until approval exists.")
+        errors.append("curated reader manifest must remain drafting until release approval exists.")
     chapter_records = reader_manifest.get("chapter_records", [])
     if not isinstance(chapter_records, list) or len(chapter_records) != 44:
         errors.append("curated reader manifest must keep 44 chapter records.")
@@ -1116,12 +1191,12 @@ def main() -> None:
             record
             for record in chapter_records
             if isinstance(record, dict)
-            and {"curated_reconciliation_not_approved", "format_artifact_not_reviewed", "reader_release_record_not_created"}.issubset(
+            and {"format_artifact_not_reviewed", "reader_release_record_not_created"}.issubset(
                 set(record.get("release_blockers", []))
             )
         ]
         if len(blocker_rows) != 44:
-            errors.append("all 44 curated chapter records must preserve release blockers.")
+            errors.append("all 44 curated chapter records must preserve format/release blockers.")
 
     if errors:
         fail(errors)

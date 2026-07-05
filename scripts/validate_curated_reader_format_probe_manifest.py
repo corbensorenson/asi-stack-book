@@ -30,7 +30,6 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest",
 }
 REQUIRED_BLOCKERS = {
-    "curated_reconciliation_not_approved",
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
     "full_format_artifact_review_not_completed",

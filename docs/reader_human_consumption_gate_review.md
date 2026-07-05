@@ -22,7 +22,7 @@ transition.
 
 ## Preserved Blockers
 
-The following blockers remain active after this gate: `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, `reader_release_record_not_created`, `app_or_ereader_review_not_completed`, `manual_keyboard_only_review_not_completed`, `screen_reader_review_not_completed`, `wcag_conformance_review_not_completed`, `narration_quality_review_not_completed`, `audio_files_not_generated`.
+The following blockers remain active after this gate: `format_artifact_not_reviewed`, `reader_release_record_not_created`, `app_or_ereader_review_not_completed`, `manual_keyboard_only_review_not_completed`, `screen_reader_review_not_completed`, `wcag_conformance_review_not_completed`, `narration_quality_review_not_completed`, `audio_files_not_generated`.
 
 ## Non-Claims
 

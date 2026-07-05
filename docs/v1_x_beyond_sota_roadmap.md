@@ -3157,9 +3157,9 @@ Current status:
   build/curated_reader_edition/reader_manifest.json --report
   build/curated_reader_edition/curated_reader_html_browser_report.json` passed
   98 page-view pairs across 49 pages. The build report preserves
-  `review_required` status and all 44
-  `curated_reconciliation_not_approved`, `format_artifact_not_reviewed`, and
-  `reader_release_record_not_created` blockers.
+  `review_required` status and all 44 `format_artifact_not_reviewed` and
+  `reader_release_record_not_created` blockers after source-level
+  reconciliation approval.
 - The current curated set follows the consolidation-aware curation gate:
   protected standalone chapters may continue toward human-edit readiness;
   chapters inside remaining deferred merge/fold packages must keep scoped
@@ -3492,9 +3492,11 @@ Current status:
   policy, governance, implementation-reference, release, or non-claim limits
   out of the reader spine.
 - `editions/reader_manuscript/v1_0/reconciliation_report.md` records the
-  chapter-level reconciliation statuses and keeps `reader_release_record_not_created`,
-  `format_artifact_not_reviewed`, and
-  `curated_reconciliation_not_approved` blockers active.
+  chapter-level reconciliation statuses, and
+  `docs/reader_chapter_reconciliation_approval.md` records source-level
+  reconciliation approval for all 44 current curated chapters. The chapter
+  records still keep `reader_release_record_not_created` and
+  `format_artifact_not_reviewed` blockers active.
 - No curated reader chapter is release-approved, and generated reader HTML
   remains the only reviewed reader artifact. The curated reader manuscript now
   has a renderable local HTML review path, but that path is not a release
@@ -3591,9 +3593,9 @@ Current status:
   ignored-snapshot
   digest
   `4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a`, and
-  all 44 `curated_reconciliation_not_approved`,
-  `format_artifact_not_reviewed`, and `reader_release_record_not_created`
-  blockers preserved. This closes a render/browser-viability uncertainty for
+  all 44 `format_artifact_not_reviewed` and
+  `reader_release_record_not_created` blockers preserved after source-level
+  reconciliation approval. This closes a render/browser-viability uncertainty for
   the curated manuscript, not the release-quality continuity, format-review,
   figure-artifact, e-reader/audio, or edition-release gates.
 - The ten draft key figures are now embedded/adapted into the curated reader
@@ -4304,14 +4306,20 @@ validator-enforced status row that grows past compact status-summary size.
    records 10 key figures, 10 content-bound checks, 10 alt texts, 10 PNG
    fallbacks, 20 EPUB layout page-view pairs with 0 failures, 10 PDF
    caption/raster pages, and 10 DOCX title/raster pages, clearing only
-   `final_figure_artifact_review_not_completed`. The active release queue is
+   `final_figure_artifact_review_not_completed`. The chapter reconciliation
+   approval rung is closed by
+   `python3 scripts/validate_reader_chapter_reconciliation_approval.py`,
+   `editions/reader_manuscript/v1_0/chapter_reconciliation_approval_manifest.json`,
+   and `docs/reader_chapter_reconciliation_approval.md`: all 44 curated reader
+   chapter records are reconciled, full-review rows are present, curated files
+   exist, and the approval clears only `curated_reconciliation_not_approved`.
+   The active release queue is
    now: complete the dedicated e-reader review for EPUB (the Chromium XHTML
    review is explicitly not that); complete DOCX application-level review or
    record an explicit release decision accepting the available LibreOffice
    headless evidence; complete manual keyboard-only, screen-reader, and WCAG
-   review where release scope requires it; clear
-   `curated_reconciliation_not_approved` across the 44 curated chapter records
-   with an approval record; and issue the approved edition release record.
+   review where release scope requires it; and issue the approved edition
+   release record.
    Publication/tagging of the approved artifacts remains a user-triggered act,
    like DOI; producing the approved record does not wait on anyone.
 3. **Evidence ladder static at 6 for two decision-heavy rounds.** The 19 new

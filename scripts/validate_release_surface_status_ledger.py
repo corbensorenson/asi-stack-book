@@ -25,6 +25,9 @@ RELEASE_PROFILES = ROOT / "editions" / "release_profiles.json"
 READER_OVERLAY_MANIFEST = ROOT / "editions" / "reader_overlays" / "v1_0" / "manifest.json"
 READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 CHAPTER_REVIEW_MATRIX = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapter_review_matrix.json"
+CHAPTER_RECONCILIATION_APPROVAL = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapter_reconciliation_approval_manifest.json"
+)
 FORMAT_REVIEW_MATRIX = ROOT / "editions" / "reader_manuscript" / "v1_0" / "format_review_matrix.json"
 ARTIFACT_INSPECTION = ROOT / "editions" / "reader_manuscript" / "v1_0" / "artifact_inspection_manifest.json"
 CURATED_FORMAT_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
@@ -72,6 +75,7 @@ REVIEW_DOCS = {
     "reader_human_consumption": ROOT / "docs" / "reader_human_consumption_gate_review.md",
     "curated_pdf_page_review": ROOT / "docs" / "curated_reader_pdf_page_review.md",
     "reader_final_figure_artifact_review": ROOT / "docs" / "reader_final_figure_artifact_review.md",
+    "reader_chapter_reconciliation": ROOT / "docs" / "reader_chapter_reconciliation_approval.md",
     "reader_figures": ROOT / "docs" / "reader_key_figure_artifact_review.md",
     "reader_figure_format": ROOT / "docs" / "reader_key_figure_format_probe.md",
     "reader_figure_geometry": ROOT / "docs" / "reader_key_figure_geometry_review.md",
@@ -88,7 +92,6 @@ REVIEW_DOCS = {
 
 REQUIRED_PROFILE_IDS = {"live_book", "research_release", "reader_release", "audio_release"}
 REQUIRED_CURATED_BLOCKERS = {
-    "curated_reconciliation_not_approved",
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
 }
@@ -153,6 +156,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         READER_OVERLAY_MANIFEST,
         READER_MANIFEST,
         CHAPTER_REVIEW_MATRIX,
+        CHAPTER_RECONCILIATION_APPROVAL,
         FORMAT_REVIEW_MATRIX,
         ARTIFACT_INSPECTION,
         CURATED_FORMAT_PROBE,
@@ -186,6 +190,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     overlay_manifest = load_json(READER_OVERLAY_MANIFEST)
     reader_manifest = load_json(READER_MANIFEST)
     chapter_matrix = load_json(CHAPTER_REVIEW_MATRIX)
+    chapter_reconciliation_approval = load_json(CHAPTER_RECONCILIATION_APPROVAL)
     format_matrix = load_json(FORMAT_REVIEW_MATRIX)
     artifact_inspection = load_json(ARTIFACT_INSPECTION)
     curated_format = load_json(CURATED_FORMAT_PROBE)
@@ -257,6 +262,55 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         errors.append("reader handoff contract must keep ten signature ideas.")
     if len(handoff.get("part_arcs", [])) != 4:
         errors.append("reader handoff contract must keep four part arcs.")
+
+    if chapter_reconciliation_approval.get("status") != "passed_curated_chapter_reconciliation_approval":
+        errors.append(
+            "chapter reconciliation approval manifest must remain passed_curated_chapter_reconciliation_approval."
+        )
+    reconciliation_approval_summary = chapter_reconciliation_approval.get("summary", {})
+    if not isinstance(reconciliation_approval_summary, dict):
+        errors.append("chapter reconciliation approval summary must be an object.")
+        reconciliation_approval_summary = {}
+    expected_reconciliation_approval = {
+        "chapter_count": 44,
+        "reader_manifest_records": 44,
+        "chapter_review_matrix_rows": 44,
+        "reconciled_records": 44,
+        "reviewed_matrix_rows": 44,
+        "full_chapter_review_rows": 44,
+        "curated_files_present": 44,
+        "passed_rows": 44,
+        "live_marker_hits": 0,
+        "raw_core_claim_marker_hits": 0,
+    }
+    for key, expected in expected_reconciliation_approval.items():
+        observed = reconciliation_approval_summary.get(key)
+        if observed != expected:
+            errors.append(
+                f"chapter reconciliation approval summary.{key} must be {expected!r}; found {observed!r}."
+            )
+    if chapter_reconciliation_approval.get("cleared_blockers") != ["curated_reconciliation_not_approved"]:
+        errors.append("chapter reconciliation approval must clear only curated_reconciliation_not_approved.")
+    missing_reconciliation_preserved = sorted(
+        (
+            REQUIRED_CURATED_BLOCKERS
+            | {
+                "reader_release_approval_not_created",
+                "app_or_ereader_review_not_completed",
+                "docx_application_review_not_completed",
+                "manual_keyboard_only_review_not_completed",
+                "screen_reader_review_not_completed",
+                "wcag_conformance_review_not_completed",
+                "audio_files_not_generated",
+            }
+        )
+        - set(chapter_reconciliation_approval.get("release_blockers_preserved", []))
+    )
+    if missing_reconciliation_preserved:
+        errors.append(
+            "chapter reconciliation approval manifest missing preserved blockers: "
+            f"{missing_reconciliation_preserved}"
+        )
 
     chapters = chapter_matrix.get("chapters", [])
     if not isinstance(chapters, list):
@@ -953,6 +1007,13 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "does not approve the curated reader edition",
             "does not promote any chapter core claim",
         ],
+        "reader_chapter_reconciliation": [
+            "Reader Chapter Reconciliation Approval",
+            "passed_curated_chapter_reconciliation_approval",
+            "curated_reconciliation_not_approved",
+            "does not clear format artifact review",
+            "does not promote any chapter core claim",
+        ],
         "curated_pdf_page_review": [
             "Curated Reader PDF Page-By-Page Review",
             "passed_pdf_page_by_page_release_preparation_review",
@@ -1118,6 +1179,13 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "curated_record_count": len(chapter_records),
         "curated_reconciliation_counts": reconciliation_counts,
         "missing_curated_files": len(missing_curated_files),
+        "chapter_reconciliation_approval_status": chapter_reconciliation_approval.get("status"),
+        "chapter_reconciliation_approval_rows": reconciliation_approval_summary.get("passed_rows"),
+        "chapter_reconciliation_approval_cleared_blockers": len(
+            chapter_reconciliation_approval.get("cleared_blockers", [])
+        )
+        if isinstance(chapter_reconciliation_approval.get("cleared_blockers"), list)
+        else None,
         "voice_slot_count": len(handoff.get("corben_voice_pass_slots", [])),
         "signature_idea_count": len(handoff.get("signature_ideas", [])),
         "key_figure_target_count": len(handoff.get("key_figure_targets", [])),
@@ -1328,13 +1396,16 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['final_figure_review_figures']} figures; "
         f"the curated manuscript remains `{metrics['reader_manifest_status']}` with "
         f"{metrics['curated_record_count']} records ({reconciliation_counts.get('reconciled', 0)} reconciled); "
+        f"chapter reconciliation approval is `{metrics['chapter_reconciliation_approval_status']}`; "
         f"{metrics['overlay_operation_count']} overlay operations are tracked; "
         "EPUB, DOCX, PDF, e-reader, audio, and refreshed reader HTML remain unapproved. | "
         "`docs/release_surface_status_ledger.md`; `editions/release_profiles.json`; "
         "`editions/reader_overlays/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/manifest.json`; "
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`; "
+        "`editions/reader_manuscript/v1_0/chapter_reconciliation_approval_manifest.json`; "
         "`editions/reader_manuscript/v1_0/format_review_matrix.json`; "
-        "`docs/reader_chapter_review_matrix.md`; `docs/reader_format_review_matrix.md`; "
+        "`docs/reader_chapter_review_matrix.md`; `docs/reader_chapter_reconciliation_approval.md`; "
+        "`docs/reader_format_review_matrix.md`; "
         "`docs/reader_html_artifact_browser_review.md`; `docs/curated_reader_html_artifact_browser_review.md`; "
         "`docs/curated_reader_format_artifact_probe.md`; `docs/reader_epub_probe_manifest.md`; "
         "`docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; "
@@ -1354,6 +1425,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`python3 scripts/validate_curated_reader_pdf_page_review.py`; "
         "`python3 scripts/validate_reader_human_consumption_gate.py`; "
         "`python3 scripts/validate_reader_final_figure_artifact_review.py`; "
+        "`python3 scripts/validate_reader_chapter_reconciliation_approval.py`; "
         "`python3 scripts/validate_release_surface_status_ledger.py` |"
     )
 
@@ -1382,6 +1454,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Release profiles present | {metrics['profile_count']} |",
             f"| Curated reader chapter records | {metrics['curated_record_count']} |",
             f"| Curated reconciliation states | {qmd_escape(counter_phrase(reconciliation_counts))} |",
+            f"| Chapter reconciliation approval | `{metrics['chapter_reconciliation_approval_status']}`; {metrics['chapter_reconciliation_approval_rows']} rows, {metrics['chapter_reconciliation_approval_cleared_blockers']} blocker cleared |",
             f"| Missing curated chapter files | {metrics['missing_curated_files']} |",
             f"| Reader review rows | {metrics['chapter_review_count']} |",
             f"| Reader review states | {qmd_escape(counter_phrase(review_counts))} |",
@@ -1434,6 +1507,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "",
             f"- `editions/release_profiles.json` keeps the live, research, reader, and audio profiles present: {', '.join(metrics['profile_ids'])}.",
             f"- `editions/reader_manuscript/v1_0/manifest.json` remains `{metrics['reader_manifest_status']}` with {metrics['curated_record_count']} curated chapter records, {reconciliation_counts.get('reconciled', 0)} reconciled records, and {metrics['missing_curated_files']} missing curated chapter files.",
+            f"- `docs/reader_chapter_reconciliation_approval.md` records `{metrics['chapter_reconciliation_approval_status']}` for {metrics['chapter_reconciliation_approval_rows']} curated chapter rows and clears only `curated_reconciliation_not_approved`; format artifact review, reader release approval, application/accessibility review, and audio gates remain active.",
             f"- The reader handoff contract carries {metrics['part_arc_count']} part arcs, {metrics['signature_idea_count']} signature ideas, {metrics['key_figure_target_count']} key-figure targets, and {metrics['voice_slot_count']} voice-pass slots without release approval.",
             f"- `editions/reader_manuscript/v1_0/chapter_review_matrix.json` records {metrics['chapter_review_count']} reviewed rows, {disposition_counts.get('reader_overlay_active', 0)} active-overlay chapters, {metrics['overlay_operation_count']} active overlay operations, {disposition_counts.get('no_immediate_action', 0)} no-immediate-action decisions, {disposition_counts.get('companion_note_candidate', 0)} companion-note candidates, and {disposition_counts.get('curated_manuscript_candidate', 0)} curated-manuscript candidates.",
             "- Chapter-level release blockers remain active until future final reader-manuscript packaging, format review, and an edition release record explicitly clear them.",

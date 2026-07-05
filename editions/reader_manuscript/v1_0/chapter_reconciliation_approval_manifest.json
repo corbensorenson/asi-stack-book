@@ -1,0 +1,1023 @@
+{
+  "schema_version": "asi_stack.reader_chapter_reconciliation_approval.v0",
+  "result_id": "reader-chapter-reconciliation-approval-2026-07-05",
+  "status": "passed_curated_chapter_reconciliation_approval",
+  "command": "python3 scripts/validate_reader_chapter_reconciliation_approval.py",
+  "source_refs": [
+    "book_structure.json",
+    "editions/reader_manuscript/v1_0/manifest.json",
+    "editions/reader_manuscript/v1_0/chapter_review_matrix.json",
+    "editions/reader_manuscript/v1_0/reconciliation_report.md"
+  ],
+  "summary": {
+    "chapter_count": 44,
+    "reader_manifest_records": 44,
+    "chapter_review_matrix_rows": 44,
+    "reconciled_records": 44,
+    "reviewed_matrix_rows": 44,
+    "full_chapter_review_rows": 44,
+    "curated_files_present": 44,
+    "passed_rows": 44,
+    "live_marker_hits": 0,
+    "raw_core_claim_marker_hits": 0,
+    "remaining_chapter_release_blocker_counts": {
+      "format_artifact_not_reviewed": 44,
+      "reader_release_record_not_created": 44
+    }
+  },
+  "chapters": [
+    {
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "title": "ASI Is a Stack, Not a Model",
+      "file": "editions/reader_manuscript/v1_0/chapters/asi-is-a-stack-not-a-model.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "title": "The Efficient ASI Hypothesis",
+      "file": "editions/reader_manuscript/v1_0/chapters/the-efficient-asi-hypothesis.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "system-boundaries-and-authority",
+      "title": "System Boundaries and Authority",
+      "file": "editions/reader_manuscript/v1_0/chapters/system-boundaries-and-authority.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "title": "Failure Modes of Ungoverned Intelligence",
+      "file": "editions/reader_manuscript/v1_0/chapters/failure-modes-of-ungoverned-intelligence.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "title": "Evidence States and Claim Discipline",
+      "file": "editions/reader_manuscript/v1_0/chapters/evidence-states-and-claim-discipline.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "human-intent-as-a-formal-input",
+      "title": "Human Intent as a Formal Input",
+      "file": "editions/reader_manuscript/v1_0/chapters/human-intent-as-a-formal-input.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "constitutional-alignment-substrate",
+      "title": "Constitutional Alignment: Agency, Dignity, and Corrigibility",
+      "file": "editions/reader_manuscript/v1_0/chapters/constitutional-alignment-substrate.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
+      "file": "editions/reader_manuscript/v1_0/chapters/moral-uncertainty-and-value-conflict.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "stable-capability-fields",
+      "title": "Stable Capability Fields",
+      "file": "editions/reader_manuscript/v1_0/chapters/stable-capability-fields.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "capability-replacement-and-rollback",
+      "title": "Capability Replacement and Rollback",
+      "file": "editions/reader_manuscript/v1_0/chapters/capability-replacement-and-rollback.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "title": "Security Kernel and Digital SCIFs",
+      "file": "editions/reader_manuscript/v1_0/chapters/security-kernel-and-digital-scifs.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "title": "Recursive Self-Improvement Boundaries",
+      "file": "editions/reader_manuscript/v1_0/chapters/recursive-self-improvement-boundaries.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "intent-to-execution-contracts",
+      "title": "Command Contracts: From Intent to Executable Work",
+      "file": "editions/reader_manuscript/v1_0/chapters/intent-to-execution-contracts.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "planning-as-a-control-layer",
+      "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
+      "file": "editions/reader_manuscript/v1_0/chapters/planning-as-a-control-layer.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "title": "Cognitive Compilation and Semantic IR",
+      "file": "editions/reader_manuscript/v1_0/chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "virtual-context-abi",
+      "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
+      "file": "editions/reader_manuscript/v1_0/chapters/virtual-context-abi.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "title": "Context Transactions, Snapshots, Mounts, and Taint",
+      "file": "editions/reader_manuscript/v1_0/chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "title": "Verification Bandwidth and Context Adequacy",
+      "file": "editions/reader_manuscript/v1_0/chapters/verification-bandwidth-and-context-adequacy.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "title": "Claim Ledgers and Belief Revision",
+      "file": "editions/reader_manuscript/v1_0/chapters/claim-ledgers-and-belief-revision.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "title": "Proof-Carrying Claims and Adversarial Review",
+      "file": "editions/reader_manuscript/v1_0/chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "labor-os-and-typed-jobs",
+      "title": "Labor OS and Typed Jobs",
+      "file": "editions/reader_manuscript/v1_0/chapters/labor-os-and-typed-jobs.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "title": "Artifact Graphs, Audit Logs, and Replay",
+      "file": "editions/reader_manuscript/v1_0/chapters/artifact-graphs-audit-logs-and-replay.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "title": "Runtime Adapters, Tool Permissions, and Human Approval",
+      "file": "editions/reader_manuscript/v1_0/chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "title": "Procedural Memory and Cognitive Loop Closure",
+      "file": "editions/reader_manuscript/v1_0/chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "title": "Routing Heads and Specialist Cores",
+      "file": "editions/reader_manuscript/v1_0/chapters/routing-heads-and-specialist-cores.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "title": "Readiness Gates, Residual Escrow, and Quarantine",
+      "file": "editions/reader_manuscript/v1_0/chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "title": "Personal Compute Hives and Federated Edge Intelligence",
+      "file": "editions/reader_manuscript/v1_0/chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
+      "file": "editions/reader_manuscript/v1_0/chapters/compact-generative-systems-and-residual-honesty.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "fast-generation-architectures",
+      "title": "Fast Generation Architectures",
+      "file": "editions/reader_manuscript/v1_0/chapters/fast-generation-architectures.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "title": "RankFold, NeuralFold, and Artifact Compression",
+      "file": "editions/reader_manuscript/v1_0/chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "resource-economics-and-token-budgets",
+      "title": "Resource Economics and Token Budgets",
+      "file": "editions/reader_manuscript/v1_0/chapters/resource-economics-and-token-budgets.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "mathematical-and-search-substrates",
+      "title": "Mathematical and Search Substrates",
+      "file": "editions/reader_manuscript/v1_0/chapters/mathematical-and-search-substrates.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "title": "Circle Calculus and Proof-Carrying AI Contracts",
+      "file": "editions/reader_manuscript/v1_0/chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
+      "file": "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+      "file": "editions/reader_manuscript/v1_0/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "title": "Executable Specifications and Lean Proof Envelope",
+      "file": "editions/reader_manuscript/v1_0/chapters/executable-specifications-and-lean-proof-envelope.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
+      "file": "editions/reader_manuscript/v1_0/chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "title": "Policy Optimization and Learning from Feedback",
+      "file": "editions/reader_manuscript/v1_0/chapters/policy-optimization-and-learning-from-feedback.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "title": "Artifact Steward Agents and Living Project Governance",
+      "file": "editions/reader_manuscript/v1_0/chapters/artifact-steward-agents-and-living-project-governance.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "integrated-reference-architecture",
+      "title": "Integrated Reference Architecture",
+      "file": "editions/reader_manuscript/v1_0/chapters/integrated-reference-architecture.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "title": "Project Theseus as Report-First Implementation Reference",
+      "file": "editions/reader_manuscript/v1_0/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "prototype-roadmap",
+      "title": "Prototype Roadmap",
+      "file": "editions/reader_manuscript/v1_0/chapters/prototype-roadmap.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "title": "Living Book Methodology",
+      "file": "editions/reader_manuscript/v1_0/chapters/living-book-methodology.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    },
+    {
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "title": "Open Research Agenda and Bibliography Plan",
+      "file": "editions/reader_manuscript/v1_0/chapters/open-research-agenda-and-bibliography-plan.qmd",
+      "record_present": true,
+      "matrix_row_present": true,
+      "curated_file_exists": true,
+      "reconciliation_status": "reconciled",
+      "matrix_review_status": "reviewed",
+      "matrix_review_depth": "full_chapter_review",
+      "chapter_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "matrix_release_blockers": [
+        "format_artifact_not_reviewed",
+        "reader_release_record_not_created"
+      ],
+      "live_marker_hits": [],
+      "raw_core_claim_marker_leak": false,
+      "passed": true
+    }
+  ],
+  "cleared_blockers": [
+    "curated_reconciliation_not_approved"
+  ],
+  "release_blockers_preserved": [
+    "format_artifact_not_reviewed",
+    "reader_release_record_not_created",
+    "reader_release_approval_not_created",
+    "app_or_ereader_review_not_completed",
+    "docx_application_review_not_completed",
+    "manual_keyboard_only_review_not_completed",
+    "screen_reader_review_not_completed",
+    "wcag_conformance_review_not_completed",
+    "narration_quality_review_not_completed",
+    "audio_files_not_generated"
+  ],
+  "review_decision": "The tracked curated reader manuscript has 44 reconciled chapter records, 44 full-review chapter-matrix rows, 44 existing curated chapter files, no live-scaffold marker leakage, and no raw core-claim marker leakage. This source-level approval clears only the curated_reconciliation_not_approved blocker.",
+  "review_boundary": "This is a chapter-reconciliation approval for the curated reader source, not a reader release record. It does not approve HTML, EPUB, DOCX, PDF, e-reader, audio, or audio-embedded EPUB artifacts; does not clear format review; does not clear reader release approval; does not certify accessibility; and does not promote any claim support state.",
+  "non_claims": [
+    "does not approve, publish, tag, or archive any reader artifact",
+    "does not clear format artifact review or reader release approval",
+    "does not clear dedicated e-reader, DOCX application, manual keyboard-only, screen-reader, WCAG, narration, audio, or audio-embedded EPUB review",
+    "does not promote any chapter core claim or Appendix C support state",
+    "does not make the curated reader manuscript equal authority beside the live AI/research book"
+  ],
+  "errors": []
+}

@@ -501,7 +501,6 @@ def write_report(
         "format_results": render_records,
         "review_status": "review_required",
         "release_blockers_preserved": [
-            "curated_reconciliation_not_approved",
             "format_artifact_not_reviewed",
             "reader_release_record_not_created",
             "full_format_artifact_review_not_completed",

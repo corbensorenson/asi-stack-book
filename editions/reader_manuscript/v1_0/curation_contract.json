@@ -52,17 +52,17 @@
     "source boundary preserved or reconciled back to the live chapter",
     "proof/test status preserved without adding unrun results",
     "implementation horizon preserved without implying current implementation",
-    "release blocker status preserved until an edition release record clears it",
+    "release blocker status preserved until a scoped approval record or edition release record clears the specific blocker",
     "meaning-changing caveats either preserved or fixed in the live chapter"
   ],
   "required_release_blockers_before_release": [
     "reader_release_record_not_created",
-    "format_artifact_not_reviewed",
-    "curated_reconciliation_not_approved"
+    "format_artifact_not_reviewed"
   ],
   "required_commands": [
     "python3 scripts/build_reader_edition.py --check",
     "python3 scripts/validate_reader_manuscript_manifest.py",
+    "python3 scripts/validate_reader_chapter_reconciliation_approval.py",
     "python3 scripts/sync_reader_chapter_review_matrix.py --check",
     "python3 scripts/sync_reader_format_review_matrix.py --check",
     "python3 scripts/validate_reader_spine.py --check",
@@ -71,7 +71,7 @@
   "graduation_modes": [
     {
       "status": "drafting",
-      "meaning": "Curated chapter files may exist for prose work, individual chapter records may be drafting or reconciled, and every chapter keeps release blockers until format review and an edition release record clear them."
+      "meaning": "Curated chapter files may exist for prose work, individual chapter records may be drafting or reconciled, and every chapter keeps format/release blockers until format review and an edition release record clear them."
     },
     {
       "status": "reconciliation",
@@ -79,7 +79,7 @@
     },
     {
       "status": "release_candidate",
-      "meaning": "All curated chapters are reconciled and may be used as reader-release input only after format review and an edition release record exist."
+      "meaning": "All curated chapters are reconciled and source-level reconciliation is approval-recorded, but the manuscript may be used as reader-release input only after format review and an edition release record exist."
     }
   ],
   "non_claims": [

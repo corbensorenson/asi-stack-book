@@ -1,6 +1,6 @@
 # Curated Reader Source Contract
 
-Last updated: 2026-07-01
+Last updated: 2026-07-05
 
 This document explains the machine-readable contract in
 `editions/reader_manuscript/v1_0/curation_contract.json`. It is the rule for
@@ -93,5 +93,11 @@ approves it.
 ## Release Boundary
 
 The curation contract is not a reader release record. A curated manuscript can
-become release input only after reconciliation, format artifact review, and a
-specific edition release record exist.
+become release input only after reconciliation approval, format artifact
+review, and a specific edition release record exist.
+
+The current v1.0 curated reader source records reconciliation approval in
+`docs/reader_chapter_reconciliation_approval.md` and
+`editions/reader_manuscript/v1_0/chapter_reconciliation_approval_manifest.json`.
+That approval clears only `curated_reconciliation_not_approved`; it does not
+approve HTML, EPUB, DOCX, PDF, e-reader, audio, or reader release artifacts.

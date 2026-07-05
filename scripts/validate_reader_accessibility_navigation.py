@@ -29,7 +29,6 @@ RESULT_ID = "reader-accessibility-navigation-source-review-2026-07-04"
 EXPECTED_CHAPTERS = 44
 EXPECTED_KEY_FIGURES = 10
 REQUIRED_RELEASE_BLOCKERS = {
-    "curated_reconciliation_not_approved",
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
 }

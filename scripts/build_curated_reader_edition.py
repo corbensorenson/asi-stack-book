@@ -47,7 +47,6 @@ LIVE_ONLY_HEADINGS = {
 REQUIRED_RELEASE_BLOCKERS = {
     "reader_release_record_not_created",
     "format_artifact_not_reviewed",
-    "curated_reconciliation_not_approved",
 }
 
 
