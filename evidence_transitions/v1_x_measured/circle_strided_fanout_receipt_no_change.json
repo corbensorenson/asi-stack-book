@@ -1,0 +1,105 @@
+{
+  "transition_id": "v1_x_measured.circle_strided_fanout_receipt.no_change",
+  "claim_id": "circle-calculus.strided_fanout_receipt_slice",
+  "claim_surface_refs": [
+    "docs/circle_strided_fanout_receipt_slice.md",
+    "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+    "editions/reader_manuscript/v1_0/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_strided_fanout_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_strided_fanout_receipt_slice.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe local external Circle strided candidate-fanout receipt import only. The slice records one pinned `CC-AI-CONTRACT-FANOUT-001` structural fixture at Circle commit `63b0f511`, `context_length=12`, `stride=5`, `gcd=1`, `predicted_reach=12`, `full_coverage=true`, `candidate_budget=12`, `duplicate_count=0`, four required theorem IDs, two planner recommendations, contract fingerprint `d4c878563747da9c9f1f55cd689f04e2a0a8e31ce9429a138341ec4e27ee3799`, command-output digests, and passing targeted Circle CLI test summaries. It does not prove search quality, retrieval quality, routing quality, sparse-attention quality, long-context quality, model quality, speed, memory savings, transfer, safety, ASI, or Coil chapter-core promotion.",
+  "evidence_roles": [
+    "external_project_receipt_import",
+    "strided_candidate_fanout_fixture",
+    "finite_stride_coverage_boundary",
+    "duplicate_collapsed_budget_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The strided fanout receipt slice makes one Circle finite stride-coverage and duplicate-budget accounting fixture concrete in the book and closes the stale 'no fanout receipt import' blocker for the Coil chapter. The evidence remains an external-project receipt import with no deployed ASI-side fanout trace, no search, retrieval, or routing workload, no runtime or memory measurement, no model-quality result, no optimal-schedule result, and no independent review, so it blocks promotion rather than moving support state.",
+  "required_artifacts": [
+    "fresh public Circle replay or archived public strided-fanout contract pack",
+    "repository-owned command that reruns the relevant Circle fanout proof target or verifies an archived replay bundle",
+    "deployed or replayed ASI-side candidate-fanout trace",
+    "ordinary sequential, random, round-robin, local-window, dense-attention, retrieval, and learned-routing baselines with workload metrics",
+    "search-quality, retrieval-quality, routing-quality, long-context, runtime, memory, and model-quality measurements for any promoted claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/circle_strided_fanout_receipt_slice.md",
+    "experiments/circle_strided_fanout_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_strided_fanout_receipt_slice.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_strided_fanout_receipt_slice.md",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#coil-attention-cyclic-memory-and-recurrence-contracts.core",
+    "docs/book_outline.md#coil-attention-cyclic-memory-and-recurrence-contracts"
+  ],
+  "verification_command": "python3 scripts/validate_circle_strided_fanout_receipt_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "support state remains argument",
+    "support_state_effect remains blocks_promotion",
+    "does not create a support-state transition",
+    "no search quality, retrieval quality, routing quality, sparse-attention quality, or model quality is claimed",
+    "no throughput, latency, runtime, memory, safety, transfer, ASI, or optimal-schedule claim is promoted",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_strided_fanout_receipt_slice.md",
+    "experiments/circle_strided_fanout_receipt_slice/results/2026-07-05-local.json"
+  ],
+  "downgrade_triggers": [
+    "strided-fanout receipt-slice validator failure",
+    "receipt fingerprint drift",
+    "missing required theorem ID accepted",
+    "stride, reach, coverage, duplicate-count, candidate-budget, or recommendation evidence field drift",
+    "external-project receipt import described as deployed fanout, search, retrieval, or routing behavior",
+    "search-quality, retrieval-quality, routing-quality, sparse-attention-quality, model-quality, speed, memory-savings, transfer, safety, ASI, or support-state promotion claimed without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed fanout/search/routing claim after a fresh public Circle replay or archived public contract pack, repository-owned proof/replay verification, deployed or replayed ASI-side candidate-fanout traces, ordinary sequential, random, round-robin, local-window, dense-attention, retrieval, and learned-routing baselines, search/retrieval/routing/long-context/runtime/memory/model-quality measurements for the specific claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one pinned local external Circle receipt import",
+    "external Circle checkout is not vendored into this public repository",
+    "no clean ASI-side CI replay of Circle",
+    "no deployed candidate-fanout trace",
+    "no search-quality, retrieval-quality, routing-quality, long-context, runtime, memory, model-quality, transfer, safety, or ASI measurement",
+    "no optimal candidate schedule proof",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, search-quality, retrieval-quality, routing-quality, long-context, benchmark, model-quality, transfer, or safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no archived public Circle strided-fanout contract pack",
+    "no deployed or replayed ASI-side candidate-fanout trace",
+    "no workload baselines or measurements",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-circle-strided-fanout-receipt-slice",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Coil Attention or Circle fanout evidence above argument",
+    "does not create a support-state transition",
+    "does not create an upward support-state transition",
+    "does not prove deployed fanout behavior",
+    "does not prove search quality, retrieval quality, routing quality, sparse-attention quality, reasoning quality, long-context quality, model quality, context length, speed, memory savings, throughput, latency, deployment safety, transfer, benchmark performance, safety, or ASI",
+    "does not prove the recorded stride schedule is optimal",
+    "does not promote the Coil Attention chapter core claim"
+  ]
+}

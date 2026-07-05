@@ -144,13 +144,37 @@ and `AIT-T0172`, recommendations `SPARSE-LOCAL-FIRST-INTERVAL-REPAIR` and
 `c23809cef9b821b1e4f9cabf53fcac724a0757bf3f86594e1d12710fe0cd9ec1`, and Circle
 CLI output `10 passed in 1.87s`.
 
-That third receipt is valuable because it refuses to hide the miss. It does
+That sparse-attention receipt is valuable because it refuses to hide the miss. It does
 not prove sparse-attention coverage success, does not prove deployed
 sparse-attention behavior, does not create a support-state transition, and does
 not prove retrieval quality, long-context quality, model quality, speed, memory
 savings, deployment safety, transfer, or ASI.
 
-The third Circle receipt covers the recurrence-schedule side. It is for
+The strided fanout receipt adds the candidate-cycle side of the same boundary.
+It is for `CC-AI-CONTRACT-FANOUT-001`, kind `strided_candidate_fanout`, at
+Circle commit `63b0f511`. It records theorem IDs `AIT-T0001`, `AIT-T0002`,
+`AIT-T0003`, and `AIT-T0173`, `theorem_count=4`, recommendations
+`FANOUT-USE-FULL-COVERAGE-STRIDE-CYCLE` and
+`FANOUT-AUDIT-DUPLICATE-COLLAPSED-BUDGET`, and the fingerprint
+`d4c878563747da9c9f1f55cd689f04e2a0a8e31ce9429a138341ec4e27ee3799`. The
+fixture records a finite stride cycle with `context_length=12`, `stride=5`,
+`gcd=1`, `predicted_reach=12`, `full_coverage=true`, `candidate_budget=12`,
+`unique_candidate_count=12`, `effective_candidate_budget=12`,
+`duplicate_count=0`, `candidate_budget_shortfall=0`,
+`effective_budget_matches_unique_candidates=true`, and
+`effective_budget_reaches_predicted_reach=true`. Its Circle CLI test reported
+`3 passed in 4.65s`, and the contract-ready recommendation test reported
+`1 passed in 2.77s`.
+
+That strided fanout receipt makes finite candidate accounting concrete, but it
+keeps the same discipline. It does not promote any chapter core claim, does
+not create a support-state transition, and does not prove search quality,
+retrieval quality, routing quality, sparse-attention quality, reasoning
+quality, model quality, context length, throughput, latency, speed, memory
+savings, runtime speed, deployment readiness, deployment safety, transfer,
+benchmark performance, optimal scheduling, or ASI.
+
+The recurrence receipt covers the loop-schedule side. It is for
 `CC-AI-CONTRACT-RECURRENCE-001`, kind `recurrence_schedule`, at Circle commit
 `63b0f511`. It records theorem IDs `AIM-T0026`, `AIM-T0130`, and
 `AIM-T0159`, `theorem_count=64`, the required recommendations
@@ -395,6 +419,28 @@ structural sparse-attention traceability. It does not prove sparse-attention
 coverage success, deployed sparse-attention behavior, retrieval quality,
 long-context quality, model quality, speed, memory savings, deployment safety,
 transfer, or ASI.
+
+The Circle strided fanout receipt slice makes candidate-cycle accounting
+concrete. `python3 scripts/validate_circle_strided_fanout_receipt_slice.py`
+checks `CC-AI-CONTRACT-FANOUT-001`, kind `strided_candidate_fanout`, theorem
+IDs `AIT-T0001`, `AIT-T0002`, `AIT-T0003`, and `AIT-T0173`,
+`theorem_count=4`, recommendations
+`FANOUT-USE-FULL-COVERAGE-STRIDE-CYCLE` and
+`FANOUT-AUDIT-DUPLICATE-COLLAPSED-BUDGET`, strict receipt fingerprint
+`d4c878563747da9c9f1f55cd689f04e2a0a8e31ce9429a138341ec4e27ee3799`,
+`context_length=12`, `stride=5`, `gcd=1`, `predicted_reach=12`,
+`full_coverage=true`, `candidate_budget=12`, `unique_candidate_count=12`,
+`effective_candidate_budget=12`, `duplicate_count=0`,
+`candidate_budget_shortfall=0`,
+`effective_budget_matches_unique_candidates=true`,
+`effective_budget_reaches_predicted_reach=true`, Circle CLI output
+`3 passed in 4.65s`, contract-ready output `1 passed in 2.77s`, and
+no-promotion decision `circle_strided_fanout_receipt_no_change.json`. That is
+structural candidate-fanout traceability. It does not prove search quality,
+retrieval quality, routing quality, sparse-attention quality, model quality,
+throughput, latency, speed, runtime speed, memory savings, deployment
+readiness, deployment safety, transfer, benchmark performance, optimal
+scheduling, or ASI.
 
 The next honest minimum is a broader small trace set: stale reads blocked or
 residualized, sparse coverage gaps that trigger fallback, recurrence schedules

@@ -1,0 +1,211 @@
+{
+  "result_id": "2026-07-05-local-circle-strided-fanout-receipt-slice",
+  "slice_id": "circle_strided_fanout_receipt_slice",
+  "created_at": "2026-07-05",
+  "external_project": {
+    "name": "Circle Calculus",
+    "git_commit": "63b0f511",
+    "git_commit_full": "63b0f511d7a5bae4c6f2ab3e05fe9e793186bdf9",
+    "branch": "main",
+    "worktree_state": "clean_before_commands",
+    "public_safe_import": true
+  },
+  "fanout_fixture": {
+    "context_length": 12,
+    "stride": 5,
+    "start_index": 0,
+    "path_length": 12,
+    "gcd": 1,
+    "orbit": [
+      0,
+      5,
+      10,
+      3,
+      8,
+      1,
+      6,
+      11,
+      4,
+      9,
+      2,
+      7
+    ],
+    "candidate_path": [
+      7,
+      2,
+      9,
+      4,
+      11,
+      6,
+      1,
+      8,
+      3,
+      10,
+      5,
+      0
+    ],
+    "candidate_budget": 12,
+    "unique_candidate_count": 12,
+    "effective_candidate_budget": 12,
+    "duplicate_count": 0,
+    "candidate_budget_accounting": true,
+    "candidate_budget_shortfall": 0,
+    "effective_budget_matches_unique_candidates": true,
+    "effective_budget_reaches_predicted_reach": true,
+    "predicted_reach": 12,
+    "full_coverage": true,
+    "ordinary_baselines": [
+      "sequential_fanout",
+      "random_fanout",
+      "round_robin_fanout",
+      "local_window"
+    ],
+    "contract_ready_theorem_count": 4,
+    "circle_ai_receipt_theorem_count": 4
+  },
+  "accepted_receipt": {
+    "accepted": true,
+    "contract_id": "CC-AI-CONTRACT-FANOUT-001",
+    "kind": "strided_candidate_fanout",
+    "receipt_schema": "circle_calculus.ai_contract_acceptance_receipt.v0",
+    "schema_id": "circle_calculus.ai_contract_pack.v0",
+    "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+    "contract_content_fingerprint": "d4c878563747da9c9f1f55cd689f04e2a0a8e31ce9429a138341ec4e27ee3799",
+    "request_content_fingerprint": "b50f9e3be1ff6ffe3d182eb8f69bb181652d1223d5c3ec063a0dad584736b3e1",
+    "normalized_request_fingerprint": "d4be64f94f330accb4292486b7a7df865247849ead73435df524f15e674851ae",
+    "receipt_content_fingerprint": "8df401cbc35c6446adac27650a661cfb3e8dd55da5dd4a13065bbb1faa1c07d9",
+    "required_theorem_ids": [
+      "AIT-T0001",
+      "AIT-T0002",
+      "AIT-T0003",
+      "AIT-T0173"
+    ],
+    "required_recommendation_ids": [
+      "FANOUT-USE-FULL-COVERAGE-STRIDE-CYCLE",
+      "FANOUT-AUDIT-DUPLICATE-COLLAPSED-BUDGET"
+    ],
+    "required_recommendation_evidence_fields": [
+      "FANOUT-USE-FULL-COVERAGE-STRIDE-CYCLE=full_coverage",
+      "FANOUT-AUDIT-DUPLICATE-COLLAPSED-BUDGET=duplicate_count"
+    ],
+    "evidence_fields": {
+      "context_length": 12,
+      "stride": 5,
+      "predicted_reach": 12,
+      "full_coverage": true,
+      "duplicate_count": 0,
+      "effective_candidate_budget": 12
+    },
+    "planner_recommendations": [
+      {
+        "id": "FANOUT-USE-FULL-COVERAGE-STRIDE-CYCLE",
+        "action_kind": "use_full_coverage_stride_candidate_cycle",
+        "coverage_scope": "finite_coprime_stride_orbit_fixture",
+        "status": "theorem_backed_gcd_full_coverage_fixture",
+        "context_length": 12,
+        "stride": 5,
+        "gcd": 1,
+        "predicted_reach": 12,
+        "full_coverage": true,
+        "theorem_ids": [
+          "AIT-T0001",
+          "AIT-T0002",
+          "AIT-T0003"
+        ],
+        "not_claimed": "This recommendation identifies a finite stride cycle that covers the declared candidate context. It is not a search, retrieval, routing-quality, runtime, or model-quality proof."
+      },
+      {
+        "id": "FANOUT-AUDIT-DUPLICATE-COLLAPSED-BUDGET",
+        "action_kind": "audit_duplicate_collapsed_candidate_budget",
+        "coverage_scope": "declared_fixed_budget_candidate_path",
+        "status": "computed_from_finite_candidate_path_fixture_fields",
+        "candidate_budget": 12,
+        "unique_candidate_count": 12,
+        "effective_candidate_budget": 12,
+        "duplicate_count": 0,
+        "candidate_budget_shortfall": 0,
+        "theorem_ids": [
+          "AIT-T0001",
+          "AIT-T0002",
+          "AIT-T0173"
+        ],
+        "not_claimed": "This recommendation exposes finite duplicate-collapse accounting for the declared candidate path only. It is not a ranking, recall, retrieval-quality, throughput, or model-quality theorem."
+      }
+    ],
+    "theorem_count": 4
+  },
+  "circle_ai_certifier_boundary": {
+    "request_passed": true,
+    "decision_verdict": "passed",
+    "decision_assurance": "mixed_theorem_and_computation",
+    "claim_status": "proved",
+    "proof_layer_counts": {
+      "computed_fields": 4,
+      "numerical_only_fields": 0,
+      "proved_fields": 14,
+      "unsupported_fields": 4
+    },
+    "unsupported_fields": [
+      "model-quality improvement",
+      "search-quality improvement",
+      "throughput or latency",
+      "optimal candidate schedule"
+    ],
+    "boundary": "The passed receipt is a theorem-linked structural fanout certificate for one deterministic finite stride fixture. It is not search quality, retrieval quality, routing quality, sparse-attention quality, reasoning quality, model-quality, context-length, throughput, latency, runtime, memory-scaling, hardware-efficiency, deployment, transfer, benchmark, safety, or ASI evidence."
+  },
+  "commands": [
+    {
+      "command": "PYTHONPATH=. python3 scripts/strided_candidate_fanout_certify.py --context-length 12 --stride 5 --start-index 0 --path-length 12 --format json",
+      "verification_result": "pass",
+      "output_sha256": "5c80d5fdcb74cb80702d7881a554b34fcb8a9f79c1425e7047177afc8b7ea7db",
+      "output_bytes": 6554,
+      "summary": "deterministic strided candidate-fanout contract JSON emitted"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_certify.py strided-fanout --context-length 12 --stride 5 --start-index 0 --path-length 12 --format json",
+      "verification_result": "pass",
+      "output_sha256": "3b0f37ab709e889d2c0fe48658c118b6d1a8a6a61680dbbb2b99960a08c634f5",
+      "output_bytes": 14727,
+      "summary": "Circle AI strided-fanout receipt emitted with request_passed=true"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind strided_candidate_fanout --digest --include-recommendations --include-field-metadata",
+      "verification_result": "pass",
+      "output_sha256": "b42efb4930f735568765585283063ee713e940be7cf5ff65da185eaeaff75c5a",
+      "output_bytes": 2283,
+      "summary": "ready=True fields=12 missing=0 theorems=4 with two fanout recommendations"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind strided_candidate_fanout --receipt --field context_length --field stride --field predicted_reach --field full_coverage --field duplicate_count --field effective_candidate_budget --require-theorem AIT-T0001 --require-theorem AIT-T0002 --require-theorem AIT-T0003 --require-theorem AIT-T0173 --require-recommendation FANOUT-USE-FULL-COVERAGE-STRIDE-CYCLE --require-recommendation FANOUT-AUDIT-DUPLICATE-COLLAPSED-BUDGET --require-recommendation-evidence-field FANOUT-USE-FULL-COVERAGE-STRIDE-CYCLE=full_coverage --require-recommendation-evidence-field FANOUT-AUDIT-DUPLICATE-COLLAPSED-BUDGET=duplicate_count",
+      "verification_result": "pass",
+      "output_sha256": "fb0bc15ff5e6be109843aff1e8ea3bca0975c4c17162c6c2553629bd88b76515",
+      "output_bytes": 1519,
+      "summary": "strict strided fanout acceptance receipt accepted with six evidence fields, four theorem IDs, and two recommendations"
+    },
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=. python3 -m pytest tests/test_strided_candidate_fanout_certifier_cli.py -q",
+      "verification_result": "pass",
+      "output_sha256": "5e764caa97fd868cd3f2a2ed51ec2be309fe521a22c655d7a1c9aeb4dbd15f43",
+      "output_bytes": 98,
+      "summary": "3 passed in 4.65s"
+    },
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=. python3 -m pytest tests/test_circle_ai_contract_ready_cli.py::test_contract_ready_cli_emits_strided_fanout_digest_recommendations -q",
+      "verification_result": "pass",
+      "output_sha256": "2f1cb16c1dd9bb60a700a651b751ec6de3233db6bb10901b373ae4748a9f114f",
+      "output_bytes": 98,
+      "summary": "1 passed in 2.77s"
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not create a support-state transition",
+    "does not prove search quality, retrieval quality, routing quality, sparse-attention quality, reasoning quality, or model quality",
+    "does not prove context length, throughput, latency, runtime speed, memory scaling, hardware efficiency, deployment readiness, transfer, benchmark performance, safety, or ASI",
+    "does not prove that the recorded stride schedule is optimal or should replace sequential fanout, random fanout, round-robin fanout, local-window attention, dense attention, learned routing, retrieval systems, or ordinary baselines",
+    "does not prove deployed proof-contract transport inside The ASI Stack",
+    "does not reproduce Theseus, MoECOT, VCM, PlanForge, model training, serving benchmarks, hardware-kernel benchmarks, or simulation results",
+    "does not make the external Circle checkout a vendored public dependency"
+  ]
+}
