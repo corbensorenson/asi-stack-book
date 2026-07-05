@@ -439,6 +439,28 @@ theorem local_reader_artifacts_do_not_clear_missing_accessibility_review
   unfold ReaderReleaseCandidateRouteFor
   simp [noPromotion, localComplete, missingAccessibility]
 
+theorem reader_release_candidate_missing_screen_reader_routes_to_accessibility_review
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    review.screenReaderReviewed = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestAccessibilityReview := by
+  intro noPromotion localComplete missingScreenReader
+  unfold ReaderReleaseCandidateRouteFor ReaderReleaseCandidateAccessibilityComplete
+  simp [noPromotion, localComplete, missingScreenReader]
+
+theorem reader_release_candidate_missing_wcag_routes_to_accessibility_review
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    review.wcagConformanceReviewed = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestAccessibilityReview := by
+  intro noPromotion localComplete missingWcag
+  unfold ReaderReleaseCandidateRouteFor ReaderReleaseCandidateAccessibilityComplete
+  simp [noPromotion, localComplete, missingWcag]
+
 theorem reader_release_candidate_missing_audio_routes_to_audio_review
     {review : ReaderReleaseCandidateReview} :
     review.chapterSupportPromotionClaimed = false ->
@@ -450,6 +472,40 @@ theorem reader_release_candidate_missing_audio_routes_to_audio_review
   intro noPromotion localComplete accessibilityComplete missingAudio
   unfold ReaderReleaseCandidateRouteFor
   simp [noPromotion, localComplete, accessibilityComplete, missingAudio]
+
+theorem reader_release_candidate_missing_audio_files_routes_to_audio_review
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    ReaderReleaseCandidateAccessibilityComplete review = true ->
+    review.audioFilesGenerated = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestAudioArtifactReview := by
+  intro noPromotion localComplete accessibilityComplete missingAudioFiles
+  unfold ReaderReleaseCandidateRouteFor ReaderReleaseCandidateAudioComplete
+  simp [
+    noPromotion,
+    localComplete,
+    accessibilityComplete,
+    missingAudioFiles,
+  ]
+
+theorem reader_release_candidate_missing_chapter_markers_routes_to_audio_review
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    ReaderReleaseCandidateAccessibilityComplete review = true ->
+    review.chapterMarkersTimecoded = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestAudioArtifactReview := by
+  intro noPromotion localComplete accessibilityComplete missingChapterMarkers
+  unfold ReaderReleaseCandidateRouteFor ReaderReleaseCandidateAudioComplete
+  simp [
+    noPromotion,
+    localComplete,
+    accessibilityComplete,
+    missingChapterMarkers,
+  ]
 
 theorem reader_release_candidate_missing_approval_routes_to_release_approval
     {review : ReaderReleaseCandidateReview} :
@@ -468,6 +524,44 @@ theorem reader_release_candidate_missing_approval_routes_to_release_approval
     accessibilityComplete,
     audioComplete,
     missingApproval,
+  ]
+
+theorem reader_release_candidate_missing_reader_release_approval_routes_to_release_approval
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    ReaderReleaseCandidateAccessibilityComplete review = true ->
+    ReaderReleaseCandidateAudioComplete review = true ->
+    review.readerReleaseApprovalRecorded = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestReleaseApproval := by
+  intro noPromotion localComplete accessibilityComplete audioComplete missingApproval
+  unfold ReaderReleaseCandidateRouteFor ReaderReleaseCandidateApprovalComplete
+  simp [
+    noPromotion,
+    localComplete,
+    accessibilityComplete,
+    audioComplete,
+    missingApproval,
+  ]
+
+theorem reader_release_candidate_missing_approved_record_routes_to_release_approval
+    {review : ReaderReleaseCandidateReview} :
+    review.chapterSupportPromotionClaimed = false ->
+    ReaderReleaseCandidateLocalReviewComplete review = true ->
+    ReaderReleaseCandidateAccessibilityComplete review = true ->
+    ReaderReleaseCandidateAudioComplete review = true ->
+    review.approvedEditionReleaseRecordCreated = false ->
+      ReaderReleaseCandidateRouteFor review =
+        ReaderReleaseCandidateRoute.requestReleaseApproval := by
+  intro noPromotion localComplete accessibilityComplete audioComplete missingReleaseRecord
+  unfold ReaderReleaseCandidateRouteFor ReaderReleaseCandidateApprovalComplete
+  simp [
+    noPromotion,
+    localComplete,
+    accessibilityComplete,
+    audioComplete,
+    missingReleaseRecord,
   ]
 
 theorem reader_release_candidate_support_promotion_claim_rejected

@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-05 - Strengthen reader release-candidate bridge controls
+
+- Strengthened `python3 scripts/validate_reader_release_candidate_bridge.py`
+  and regenerated
+  `experiments/reader_release_candidate_bridge/results/2026-07-05-local.json`
+  so the invalid current-candidate approval control preserves the actual
+  screen-reader, WCAG, audio, and release-approval blocker list.
+- Added field-specific expected-invalid controls for missing screen-reader
+  review, WCAG conformance, audio-file generation, chapter-marker timecoding,
+  reader release approval, and approved release-record creation, bringing the
+  bridge to 4 valid route cases and 11 expected-invalid controls.
+- Extended `AsiStackProofs.LivingBook` with matching field-specific release
+  route theorems for the reader release-candidate bridge. Updated the bridge
+  note, outline, roadmap, proof-adequacy review, and generated test-spec row.
+- Current proof-depth snapshot: 205 proof targets, 54 Lean modules, 1019
+  theorem declarations, 830 derived/decomposed, 185 direct/projection, 4
+  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Refreshed the deterministic audio-script reading-flow digest to
+  `ac22cb80a702b3233dcbcb721134053c5d28a8d01905c56419fa9188c165fd54` after
+  the reader-manuscript proof-depth sentence changed, and updated the dependent
+  audio narration-treatment and audio metadata review manifests.
+- This remains release-boundary discipline only. It does not clear a release
+  blocker, approve curated reader HTML/EPUB/DOCX/PDF/e-reader/audio artifacts,
+  create a reader or audio release record, publish an artifact, or promote any
+  support state.
+
 ## 2026-07-05 - Tighten Project Theseus reader projection
 
 - Moved the dense Project Theseus core-claim support inventory into an

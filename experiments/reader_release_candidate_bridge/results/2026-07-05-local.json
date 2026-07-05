@@ -14,13 +14,17 @@
     "actual_candidate_routes_to_accessibility_review": true,
     "audio_blockers_visible": true,
     "audio_gate_required_after_accessibility": true,
+    "field_specific_accessibility_controls_rejected": true,
+    "field_specific_approval_controls_rejected": true,
+    "field_specific_audio_controls_rejected": true,
+    "invalid_current_candidate_preserves_visible_blockers": true,
     "no_chapter_core_support_effect": true,
     "release_approval_blockers_visible": true,
     "release_approval_required_after_audio": true,
     "support_promotion_rejected": true
   },
   "command": "python3 scripts/validate_reader_release_candidate_bridge.py",
-  "expected_invalid_control_count": 5,
+  "expected_invalid_control_count": 11,
   "lean_fixture_alignment": {
     "expected": {
       "actual_candidate_route": "request_accessibility_review",
@@ -33,8 +37,14 @@
     "theorem_refs": [
       "curated_reader_blocked_candidate_fixture_routes_to_accessibility_review",
       "local_reader_artifacts_do_not_clear_missing_accessibility_review",
+      "reader_release_candidate_missing_screen_reader_routes_to_accessibility_review",
+      "reader_release_candidate_missing_wcag_routes_to_accessibility_review",
       "reader_release_candidate_missing_audio_routes_to_audio_review",
+      "reader_release_candidate_missing_audio_files_routes_to_audio_review",
+      "reader_release_candidate_missing_chapter_markers_routes_to_audio_review",
       "reader_release_candidate_missing_approval_routes_to_release_approval",
+      "reader_release_candidate_missing_reader_release_approval_routes_to_release_approval",
+      "reader_release_candidate_missing_approved_record_routes_to_release_approval",
       "reader_release_candidate_support_promotion_claim_rejected"
     ]
   },
@@ -48,9 +58,24 @@
   "rejected_controls": [
     {
       "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
         "claimed_approve_release_but_route_is_request_accessibility_review"
       ],
       "scenario_id": "invalid_current_candidate_claimed_approved"
+    },
+    {
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_accessibility_review"
+      ],
+      "scenario_id": "invalid_screen_reader_missing_claimed_approved"
+    },
+    {
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_accessibility_review"
+      ],
+      "scenario_id": "invalid_wcag_conformance_missing_claimed_approved"
     },
     {
       "rejection_reasons": [
@@ -60,9 +85,37 @@
     },
     {
       "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_audio_artifact_review"
+      ],
+      "scenario_id": "invalid_audio_files_missing_claimed_approved"
+    },
+    {
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_audio_artifact_review"
+      ],
+      "scenario_id": "invalid_chapter_markers_missing_claimed_approved"
+    },
+    {
+      "rejection_reasons": [
         "claimed_approve_release_but_route_is_request_release_approval"
       ],
       "scenario_id": "invalid_release_approval_missing_claimed_approved"
+    },
+    {
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_release_approval"
+      ],
+      "scenario_id": "invalid_reader_release_approval_missing_claimed_approved"
+    },
+    {
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_release_approval"
+      ],
+      "scenario_id": "invalid_approved_release_record_missing_claimed_approved"
     },
     {
       "rejection_reasons": [
@@ -72,7 +125,11 @@
     },
     {
       "rejection_reasons": [
-        "claimed_approve_release_but_route_is_request_artifact_review"
+        "claimed_approve_release_but_route_is_request_artifact_review",
+        "missing_non_claim:does not approve curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, MP3, M4B, or audio-embedded EPUB artifacts",
+        "missing_non_claim:does not create a source tag, DOI, Zenodo archive, audiobook, or final reader release",
+        "missing_non_claim:does not promote any chapter core claim above argument",
+        "missing_non_claim:does not publish a reader artifact to GitHub Pages or an external archive"
       ],
       "scenario_id": "invalid_missing_non_claims_claimed_approved"
     }
@@ -152,10 +209,57 @@
       "expected_valid": false,
       "local_review_complete": true,
       "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
         "claimed_approve_release_but_route_is_request_accessibility_review"
       ],
-      "release_blockers": [],
+      "release_blockers": [
+        "audio_edition_release_record_not_created",
+        "audio_embedded_epub_not_packaged_or_checked",
+        "audio_files_not_generated",
+        "audio_spot_check_not_performed",
+        "chapter_markers_not_timecoded",
+        "reader_release_approval_not_created",
+        "reviewed_reader_release_record_not_created_for_audio",
+        "screen_reader_review_not_completed",
+        "wcag_conformance_review_not_completed"
+      ],
       "scenario_id": "invalid_current_candidate_claimed_approved"
+    },
+    {
+      "accessibility_complete": false,
+      "actual_route": "request_accessibility_review",
+      "actual_valid": false,
+      "approval_complete": true,
+      "audio_complete": true,
+      "claimed_route": "approve_release",
+      "expected_valid": false,
+      "local_review_complete": true,
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_accessibility_review"
+      ],
+      "release_blockers": [
+        "screen_reader_review_not_completed"
+      ],
+      "scenario_id": "invalid_screen_reader_missing_claimed_approved"
+    },
+    {
+      "accessibility_complete": false,
+      "actual_route": "request_accessibility_review",
+      "actual_valid": false,
+      "approval_complete": true,
+      "audio_complete": true,
+      "claimed_route": "approve_release",
+      "expected_valid": false,
+      "local_review_complete": true,
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_accessibility_review"
+      ],
+      "release_blockers": [
+        "wcag_conformance_review_not_completed"
+      ],
+      "scenario_id": "invalid_wcag_conformance_missing_claimed_approved"
     },
     {
       "accessibility_complete": true,
@@ -174,6 +278,42 @@
     },
     {
       "accessibility_complete": true,
+      "actual_route": "request_audio_artifact_review",
+      "actual_valid": false,
+      "approval_complete": true,
+      "audio_complete": false,
+      "claimed_route": "approve_release",
+      "expected_valid": false,
+      "local_review_complete": true,
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_audio_artifact_review"
+      ],
+      "release_blockers": [
+        "audio_files_not_generated"
+      ],
+      "scenario_id": "invalid_audio_files_missing_claimed_approved"
+    },
+    {
+      "accessibility_complete": true,
+      "actual_route": "request_audio_artifact_review",
+      "actual_valid": false,
+      "approval_complete": true,
+      "audio_complete": false,
+      "claimed_route": "approve_release",
+      "expected_valid": false,
+      "local_review_complete": true,
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_audio_artifact_review"
+      ],
+      "release_blockers": [
+        "chapter_markers_not_timecoded"
+      ],
+      "scenario_id": "invalid_chapter_markers_missing_claimed_approved"
+    },
+    {
+      "accessibility_complete": true,
       "actual_route": "request_release_approval",
       "actual_valid": false,
       "approval_complete": false,
@@ -186,6 +326,42 @@
       ],
       "release_blockers": [],
       "scenario_id": "invalid_release_approval_missing_claimed_approved"
+    },
+    {
+      "accessibility_complete": true,
+      "actual_route": "request_release_approval",
+      "actual_valid": false,
+      "approval_complete": false,
+      "audio_complete": true,
+      "claimed_route": "approve_release",
+      "expected_valid": false,
+      "local_review_complete": true,
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_release_approval"
+      ],
+      "release_blockers": [
+        "reader_release_approval_not_created"
+      ],
+      "scenario_id": "invalid_reader_release_approval_missing_claimed_approved"
+    },
+    {
+      "accessibility_complete": true,
+      "actual_route": "request_release_approval",
+      "actual_valid": false,
+      "approval_complete": false,
+      "audio_complete": true,
+      "claimed_route": "approve_release",
+      "expected_valid": false,
+      "local_review_complete": true,
+      "rejection_reasons": [
+        "claimed_approval_has_release_blockers",
+        "claimed_approve_release_but_route_is_request_release_approval"
+      ],
+      "release_blockers": [
+        "approved_edition_release_record_not_created"
+      ],
+      "scenario_id": "invalid_approved_release_record_missing_claimed_approved"
     },
     {
       "accessibility_complete": true,
@@ -212,7 +388,11 @@
       "expected_valid": false,
       "local_review_complete": false,
       "rejection_reasons": [
-        "claimed_approve_release_but_route_is_request_artifact_review"
+        "claimed_approve_release_but_route_is_request_artifact_review",
+        "missing_non_claim:does not approve curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, MP3, M4B, or audio-embedded EPUB artifacts",
+        "missing_non_claim:does not create a source tag, DOI, Zenodo archive, audiobook, or final reader release",
+        "missing_non_claim:does not promote any chapter core claim above argument",
+        "missing_non_claim:does not publish a reader artifact to GitHub Pages or an external archive"
       ],
       "release_blockers": [],
       "scenario_id": "invalid_missing_non_claims_claimed_approved"

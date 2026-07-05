@@ -13226,7 +13226,7 @@
               "name": "Reader release-candidate bridge",
               "purpose": "Check that the current blocked curated-reader release candidate and synthetic route controls cannot treat local reader format evidence as release approval while accessibility, audio, release-approval, or non-claim blockers remain.",
               "implementation_status": "implemented",
-              "result_status": "passes via `python3 scripts/validate_reader_release_candidate_bridge.py` with the current blocked candidate, 3 additional valid route cases, and 5 expected-invalid controls; release-boundary discipline only",
+              "result_status": "passes via `python3 scripts/validate_reader_release_candidate_bridge.py` with the current blocked candidate, 3 additional valid route cases, and 11 expected-invalid controls covering broad and field-specific accessibility/audio/approval overclaims; release-boundary discipline only",
               "status": "implemented; no reader artifact approval, audiobook approval, publication approval, or support-state promotion"
             },
             {

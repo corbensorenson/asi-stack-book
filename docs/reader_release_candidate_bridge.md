@@ -38,10 +38,18 @@ The bridge also checks synthetic controls for:
 - accessibility complete but audio artifacts still missing;
 - audio complete but release approval still missing;
 - all release gates complete;
-- `invalid_current_candidate_claimed_approved`, an invalid current candidate
-  claimed as approved;
-- invalid audio-missing, approval-missing, support-promotion, and missing
-  non-claim controls.
+- `invalid_current_candidate_claimed_approved`, an invalid copy of the
+  tracked current candidate claimed as approved while preserving the visible
+  screen-reader, WCAG, audio, and release-approval blocker list;
+- `invalid_screen_reader_missing_claimed_approved`;
+- `invalid_wcag_conformance_missing_claimed_approved`;
+- `invalid_audio_missing_claimed_approved`;
+- `invalid_audio_files_missing_claimed_approved`;
+- `invalid_chapter_markers_missing_claimed_approved`;
+- `invalid_release_approval_missing_claimed_approved`;
+- `invalid_reader_release_approval_missing_claimed_approved`;
+- `invalid_approved_release_record_missing_claimed_approved`;
+- invalid support-promotion and missing non-claim controls.
 
 ## Why It Matters
 

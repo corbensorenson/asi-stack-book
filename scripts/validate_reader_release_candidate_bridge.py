@@ -34,8 +34,14 @@ PROOF_TAG = "lean:living_book.methodology.reader_release_candidate_bridge"
 LEAN_THEOREMS = [
     "curated_reader_blocked_candidate_fixture_routes_to_accessibility_review",
     "local_reader_artifacts_do_not_clear_missing_accessibility_review",
+    "reader_release_candidate_missing_screen_reader_routes_to_accessibility_review",
+    "reader_release_candidate_missing_wcag_routes_to_accessibility_review",
     "reader_release_candidate_missing_audio_routes_to_audio_review",
+    "reader_release_candidate_missing_audio_files_routes_to_audio_review",
+    "reader_release_candidate_missing_chapter_markers_routes_to_audio_review",
     "reader_release_candidate_missing_approval_routes_to_release_approval",
+    "reader_release_candidate_missing_reader_release_approval_routes_to_release_approval",
+    "reader_release_candidate_missing_approved_record_routes_to_release_approval",
     "reader_release_candidate_support_promotion_claim_rejected",
 ]
 REQUIRED_NON_CLAIMS = [
@@ -235,7 +241,7 @@ def scenario(
         "release_blockers": [],
         "support_state_effect": "none",
         "chapter_core_support_effect": "none",
-        "non_claims": REQUIRED_NON_CLAIMS,
+        "non_claims": REQUIRED_NON_CLAIMS if non_claims else [],
     }
 
 
@@ -298,11 +304,19 @@ def route_for(record: dict[str, Any]) -> str:
     return "approve_release"
 
 
+def scenario_with_updates(record: dict[str, Any], **updates: Any) -> dict[str, Any]:
+    cloned = json.loads(json.dumps(record))
+    cloned.update(updates)
+    return cloned
+
+
 def scenario_rejection_reasons(record: dict[str, Any], actual_route: str) -> list[str]:
     reasons: list[str] = []
     claimed_route = str(record.get("claimed_route", ""))
     if claimed_route != actual_route:
         reasons.append(f"claimed_{claimed_route}_but_route_is_{actual_route}")
+    if claimed_route == "approve_release" and record.get("release_blockers"):
+        reasons.append("claimed_approval_has_release_blockers")
     if record.get("release_approved_rows"):
         reasons.append("release_approved_rows_present_in_blocked_candidate")
     if record.get("support_state_effect") != "none":
@@ -346,14 +360,29 @@ def build_result(errors: list[str]) -> dict[str, Any]:
             approval_complete=False,
         ),
         scenario("synthetic_all_release_gates_done", expect_valid=True, claimed_route="approve_release"),
-        scenario(
-            "invalid_current_candidate_claimed_approved",
+        scenario_with_updates(
+            actual,
+            scenario_id="invalid_current_candidate_claimed_approved",
             expect_valid=False,
             claimed_route="approve_release",
-            local_complete=True,
-            accessibility_complete=False,
-            audio_complete=False,
-            approval_complete=False,
+        ),
+        scenario_with_updates(
+            scenario(
+                "invalid_screen_reader_missing_claimed_approved",
+                expect_valid=False,
+                claimed_route="approve_release",
+            ),
+            screen_reader_reviewed=False,
+            release_blockers=["screen_reader_review_not_completed"],
+        ),
+        scenario_with_updates(
+            scenario(
+                "invalid_wcag_conformance_missing_claimed_approved",
+                expect_valid=False,
+                claimed_route="approve_release",
+            ),
+            wcag_conformance_reviewed=False,
+            release_blockers=["wcag_conformance_review_not_completed"],
         ),
         scenario(
             "invalid_audio_missing_claimed_approved",
@@ -361,11 +390,47 @@ def build_result(errors: list[str]) -> dict[str, Any]:
             claimed_route="approve_release",
             audio_complete=False,
         ),
+        scenario_with_updates(
+            scenario(
+                "invalid_audio_files_missing_claimed_approved",
+                expect_valid=False,
+                claimed_route="approve_release",
+            ),
+            audio_files_generated=False,
+            release_blockers=["audio_files_not_generated"],
+        ),
+        scenario_with_updates(
+            scenario(
+                "invalid_chapter_markers_missing_claimed_approved",
+                expect_valid=False,
+                claimed_route="approve_release",
+            ),
+            chapter_markers_timecoded=False,
+            release_blockers=["chapter_markers_not_timecoded"],
+        ),
         scenario(
             "invalid_release_approval_missing_claimed_approved",
             expect_valid=False,
             claimed_route="approve_release",
             approval_complete=False,
+        ),
+        scenario_with_updates(
+            scenario(
+                "invalid_reader_release_approval_missing_claimed_approved",
+                expect_valid=False,
+                claimed_route="approve_release",
+            ),
+            reader_release_approval_recorded=False,
+            release_blockers=["reader_release_approval_not_created"],
+        ),
+        scenario_with_updates(
+            scenario(
+                "invalid_approved_release_record_missing_claimed_approved",
+                expect_valid=False,
+                claimed_route="approve_release",
+            ),
+            approved_edition_release_record_created=False,
+            release_blockers=["approved_edition_release_record_not_created"],
         ),
         scenario(
             "invalid_support_promotion_claimed",
@@ -439,6 +504,49 @@ def build_result(errors: list[str]) -> dict[str, Any]:
             and row["actual_route"] == "reject_support_promotion"
             for row in rows
         ),
+        "invalid_current_candidate_preserves_visible_blockers": any(
+            row["scenario_id"] == "invalid_current_candidate_claimed_approved"
+            and ACCESSIBILITY_BLOCKERS.issubset(set(row["release_blockers"]))
+            and AUDIO_BLOCKERS.issubset(set(row["release_blockers"]))
+            and RELEASE_APPROVAL_BLOCKERS.issubset(set(row["release_blockers"]))
+            for row in rows
+        ),
+        "field_specific_accessibility_controls_rejected": all(
+            any(
+                row["scenario_id"] == scenario_id
+                and row["actual_route"] == "request_accessibility_review"
+                and row["actual_valid"] is False
+                for row in rows
+            )
+            for scenario_id in (
+                "invalid_screen_reader_missing_claimed_approved",
+                "invalid_wcag_conformance_missing_claimed_approved",
+            )
+        ),
+        "field_specific_audio_controls_rejected": all(
+            any(
+                row["scenario_id"] == scenario_id
+                and row["actual_route"] == "request_audio_artifact_review"
+                and row["actual_valid"] is False
+                for row in rows
+            )
+            for scenario_id in (
+                "invalid_audio_files_missing_claimed_approved",
+                "invalid_chapter_markers_missing_claimed_approved",
+            )
+        ),
+        "field_specific_approval_controls_rejected": all(
+            any(
+                row["scenario_id"] == scenario_id
+                and row["actual_route"] == "request_release_approval"
+                and row["actual_valid"] is False
+                for row in rows
+            )
+            for scenario_id in (
+                "invalid_reader_release_approval_missing_claimed_approved",
+                "invalid_approved_release_record_missing_claimed_approved",
+            )
+        ),
         "no_chapter_core_support_effect": all(
             scenario.get("chapter_core_support_effect") == "none" for scenario in scenarios
         ),
@@ -501,8 +609,8 @@ def validate_record(record: dict[str, Any], errors: list[str]) -> None:
         errors.append(f"{rel(RESULT)} command mismatch.")
     if record.get("valid_scenario_count") != 4:
         errors.append(f"{rel(RESULT)} valid_scenario_count must be 4.")
-    if record.get("expected_invalid_control_count") != 5:
-        errors.append(f"{rel(RESULT)} expected_invalid_control_count must be 5.")
+    if record.get("expected_invalid_control_count") != 11:
+        errors.append(f"{rel(RESULT)} expected_invalid_control_count must be 11.")
     assertions = record.get("bridge_assertions")
     if not isinstance(assertions, dict) or not all(value is True for value in assertions.values()):
         errors.append(f"{rel(RESULT)} bridge_assertions must all be true.")
@@ -551,6 +659,12 @@ def validate_surfaces(errors: list[str]) -> None:
             "actual_current_curated_candidate_blocked_by_accessibility",
             "request_accessibility_review",
             "invalid_current_candidate_claimed_approved",
+            "invalid_screen_reader_missing_claimed_approved",
+            "invalid_wcag_conformance_missing_claimed_approved",
+            "invalid_audio_files_missing_claimed_approved",
+            "invalid_chapter_markers_missing_claimed_approved",
+            "invalid_reader_release_approval_missing_claimed_approved",
+            "invalid_approved_release_record_missing_claimed_approved",
             "does not approve curated reader HTML, EPUB, DOCX, PDF, e-reader, audio",
         ],
         errors,
