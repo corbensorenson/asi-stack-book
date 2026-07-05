@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-07-05 - Import Circle seed-rule receipt slice
+
+- Added `python3 scripts/validate_circle_seed_rule_receipt_slice.py`,
+  `docs/circle_seed_rule_receipt_slice.md`, result artifact
+  `experiments/circle_seed_rule_receipt_slice/results/2026-07-05-local.json`,
+  experiment README, and accepted no-promotion transition
+  `evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json`.
+- The Circle seed-rule exact-regeneration structural receipt slice records local
+  external Circle commit `63b0f511`, `CC-AI-CONTRACT-SEED-RULE-001`, kind
+  `seed_rule_exact_regeneration`, theorem IDs `GEN-T0001`, `GEN-T0040`,
+  `GEN-T0041`, `GEN-T0046`, `GEN-T0048`, `GEN-T0050`, `theorem_count=32`,
+  planner recommendations `SEED-RULE-USE-EXACT-REGENERATION-RECIPE` and
+  `SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE`, contract fingerprint
+  `836594a5f1d448900797e595cb98f0e476c0b9cbd7365fe333cf7ae2622f13c5`,
+  `fixture_n=128`, `exact_regeneration=true`, `generator_length=383`,
+  `explicit_length=454`, `storage_saving=71`,
+  `bounded_search_candidate_count=3`,
+  `bounded_search_exact_candidate_count=2`,
+  `bounded_search_best_shorter_generator_shorter=true`, Circle CLI output
+  `2 passed in 4.52s`, and contract-ready output `1 passed in 2.80s`.
+- Updated the Compact Generative Systems live chapter, curated reader
+  manuscript, outline, non-core evidence ledger, v1 status snapshot, roadmap,
+  README, landing page, and Appendix E wiring so the no-promotion side-lane
+  count moves from 36 to 37 without changing any chapter-core support state.
+  The slice does not promote any chapter core claim, does not create a
+  support-state transition, and does not prove useful compression, codec
+  correctness, semantic utility, deployed generator behavior, fallback
+  execution, downstream utility, optimal search, model quality, context length,
+  runtime speed, memory scaling, benchmark performance, transfer, safety, or
+  ASI.
+
 ## 2026-07-05 - Import Circle strided fanout receipt slice
 
 - Added `python3 scripts/validate_circle_strided_fanout_receipt_slice.py`,

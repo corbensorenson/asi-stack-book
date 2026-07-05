@@ -1,0 +1,106 @@
+{
+  "transition_id": "v1_x_measured.circle_seed_rule_receipt.no_change",
+  "claim_id": "compact-generative-systems.seed_rule_exact_regeneration_receipt_slice",
+  "claim_surface_refs": [
+    "docs/circle_seed_rule_receipt_slice.md",
+    "chapters/compact-generative-systems-and-residual-honesty.qmd",
+    "editions/reader_manuscript/v1_0/chapters/compact-generative-systems-and-residual-honesty.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_seed_rule_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_seed_rule_receipt_slice.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe local external Circle seed-rule exact-regeneration receipt import only. The slice records one pinned `CC-AI-CONTRACT-SEED-RULE-001` structural fixture at Circle commit `63b0f511`, `fixture_n=128`, `exact_regeneration=true`, `generator_length=383`, `explicit_length=454`, `storage_saving=71`, `bounded_search_candidate_count=3`, `bounded_search_exact_candidate_count=2`, 32 theorem IDs, two planner recommendations, contract fingerprint `836594a5f1d448900797e595cb98f0e476c0b9cbd7365fe333cf7ae2622f13c5`, command-output digests, and passing targeted Circle CLI test summaries. It does not prove useful compression, codec correctness, semantic utility, useful generation, deployed generator behavior, optimal search, model quality, runtime, memory scaling, transfer, safety, ASI, or Compact Generative Systems chapter-core promotion.",
+  "evidence_roles": [
+    "external_project_receipt_import",
+    "seed_rule_exact_regeneration_fixture",
+    "storage_accounting_boundary",
+    "bounded_declared_candidate_search_boundary",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The seed-rule receipt slice makes one Circle exact-regeneration and storage-accounting fixture concrete in the Compact Generative Systems chapter and closes a narrow missing-evidence-surface blocker for compact seeds. The evidence remains an external-project finite fixture with no deployed generator, no codec benchmark, no downstream utility measurement, no arbitrary-artifact reconstruction test, no semantic-utility test, no fallback execution, no optimal-search proof, and no independent review, so it blocks promotion rather than moving support state.",
+  "required_artifacts": [
+    "fresh public Circle replay or archived public seed-rule contract pack",
+    "repository-owned command that reruns the relevant Circle seed-rule proof target or verifies an archived replay bundle",
+    "deployed or replayed ASI-side compact generator trace",
+    "ordinary literal, lossy, broken-generator, fallback, and verifier-independence baselines where relevant",
+    "useful-compression, reconstruction-quality, downstream-utility, fallback, runtime, memory, and model-quality measurements for any promoted claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/circle_seed_rule_receipt_slice.md",
+    "experiments/circle_seed_rule_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_seed_rule_receipt_slice.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_seed_rule_receipt_slice.md",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#compact-generative-systems-and-residual-honesty.core",
+    "docs/book_outline.md#compact-generative-systems-and-residual-honesty"
+  ],
+  "verification_command": "python3 scripts/validate_circle_seed_rule_receipt_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "support state remains argument",
+    "support_state_effect remains blocks_promotion",
+    "does not create a support-state transition",
+    "does not create an upward support-state transition",
+    "no useful compression, codec correctness, semantic utility, useful generation, deployed generator behavior, fallback execution, or downstream utility is claimed",
+    "no optimal search, model quality, runtime, memory scaling, safety, transfer, ASI, or chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_seed_rule_receipt_slice.md",
+    "experiments/circle_seed_rule_receipt_slice/results/2026-07-05-local.json"
+  ],
+  "downgrade_triggers": [
+    "seed-rule receipt-slice validator failure",
+    "receipt fingerprint drift",
+    "missing required theorem ID accepted",
+    "exact-regeneration, generator-length, explicit-length, storage-saving, bounded-search, or recommendation evidence field drift",
+    "external-project receipt import described as deployed compact generation, codec correctness, useful compression, semantic utility, or model behavior",
+    "useful-compression, codec-correctness, semantic-utility, model-quality, runtime, memory-scaling, transfer, safety, ASI, or support-state promotion claimed without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed compact-seed or exact-regeneration claim after a fresh public Circle replay or archived public contract pack, repository-owned proof/replay verification, deployed or replayed ASI-side compact-generation traces, ordinary literal/lossy/broken-generator/fallback/verifier baselines, reconstruction-quality, useful-compression, downstream-utility, fallback, runtime, memory, and model-quality measurements for the specific claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one pinned local external Circle receipt import",
+    "external Circle checkout is not vendored into this public repository",
+    "no clean ASI-side CI replay of Circle",
+    "no deployed compact generator trace",
+    "no arbitrary-artifact codec",
+    "no useful-compression, semantic-utility, downstream-utility, fallback-execution, runtime, memory, model-quality, transfer, safety, or ASI measurement",
+    "no optimal search proof",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, compression, codec, semantic-utility, runtime, benchmark, model-quality, transfer, or safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no archived public Circle seed-rule contract pack",
+    "no deployed or replayed ASI-side compact-generation trace",
+    "no workload baselines or measurements",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-circle-seed-rule-receipt-slice",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Compact Generative Systems or Circle seed-rule evidence above argument",
+    "does not create a support-state transition",
+    "does not create an upward support-state transition",
+    "does not prove deployed compact generator behavior",
+    "does not prove useful compression, codec correctness, semantic utility, downstream utility, fallback execution, model quality, context length, speed, memory scaling, deployment safety, transfer, benchmark performance, safety, or ASI",
+    "does not prove the recorded bounded search is globally optimal",
+    "does not promote the Compact Generative Systems chapter core claim"
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "result_id": "2026-07-05-local-circle-seed-rule-receipt-slice",
+  "slice_id": "circle_seed_rule_receipt_slice",
+  "created_at": "2026-07-05",
+  "external_project": {
+    "name": "Circle Calculus",
+    "git_commit": "63b0f511",
+    "git_commit_full": "63b0f511d7a5bae4c6f2ab3e05fe9e793186bdf9",
+    "branch": "main",
+    "worktree_state": "clean_before_commands",
+    "public_safe_import": true
+  },
+  "seed_rule_fixture": {
+    "artifact_id": "finite_circle",
+    "fixture_n": 128,
+    "exact_regeneration": true,
+    "generator_length": 383,
+    "explicit_length": 454,
+    "storage_saving": 71,
+    "storage_saving_positive": true,
+    "generator_shorter": true,
+    "generator_shorter_iff_positive_saving": true,
+    "storage_saving_add_generator_length_eq_explicit_length": true,
+    "closure_condition": "stop before node n, since nodes are residues modulo n",
+    "seed": [
+      [
+        "n",
+        128
+      ]
+    ],
+    "rules": [
+      {
+        "rule_id": "enumerate_nodes",
+        "parameters": [
+          [
+            "start",
+            0
+          ],
+          [
+            "stop",
+            128
+          ]
+        ]
+      }
+    ],
+    "generated_object_length": 128,
+    "generated_object_first": 0,
+    "generated_object_last": 127,
+    "regenerated_object_matches_generated_object": true,
+    "bounded_search_id": "public_seed_rule_finite_circle_search",
+    "bounded_search_candidate_count": 3,
+    "bounded_search_exact_candidate_count": 2,
+    "bounded_search_shorter_candidate_count": 1,
+    "bounded_search_has_best_exact": true,
+    "bounded_search_has_best_shorter": true,
+    "bounded_search_exact_candidate_count_le_candidate_count": true,
+    "bounded_search_best_exact_exists_iff_exact_count_positive": true,
+    "bounded_search_best_exact_implies_candidate_count_positive": true,
+    "bounded_search_best_exact_regenerates": true,
+    "bounded_search_best_shorter_generator_shorter": true,
+    "bounded_search_candidate_ids_by_generator_length": [
+      "finite_circle_unit_fixture",
+      "finite_circle_broken_fixture",
+      "finite_circle_public_fixture"
+    ],
+    "bounded_search_exact_candidate_ids_by_generator_length": [
+      "finite_circle_unit_fixture",
+      "finite_circle_public_fixture"
+    ],
+    "bounded_search_shorter_candidate_ids_by_generator_length": [
+      "finite_circle_public_fixture"
+    ],
+    "ordinary_baselines": [
+      "literal_explicit_artifact",
+      "broken_declared_generator",
+      "unit_fixture_exact_but_not_shorter"
+    ],
+    "contract_ready_theorem_count": 32,
+    "circle_ai_receipt_theorem_count": 32
+  },
+  "accepted_receipt": {
+    "accepted": true,
+    "contract_id": "CC-AI-CONTRACT-SEED-RULE-001",
+    "kind": "seed_rule_exact_regeneration",
+    "receipt_schema": "circle_calculus.ai_contract_acceptance_receipt.v0",
+    "circle_ai_receipt_schema": "circle_calculus.ai_contract_receipt.v0",
+    "schema_id": "circle_calculus.ai_contract_pack.v0",
+    "circle_ai_schema_id": "circle_calculus.ai_contract_compact_receipt.v0",
+    "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+    "contract_content_fingerprint": "836594a5f1d448900797e595cb98f0e476c0b9cbd7365fe333cf7ae2622f13c5",
+    "request_content_fingerprint": "484cac7427ad22174d64dbc9a7564e59dd35681bebe7c1aac59fc13a98cb637e",
+    "normalized_request_fingerprint": "501a27b8803a890be4ab91d5cadf2d958c303aa078c65ed6bcc525f6b7b36178",
+    "receipt_content_fingerprint": "f0087293579f743e2d78c9bb6a1b64f6a699a73ae36b279595c7b29334e46c14",
+    "required_theorem_ids": [
+      "GEN-T0001",
+      "GEN-T0040",
+      "GEN-T0041",
+      "GEN-T0046",
+      "GEN-T0048",
+      "GEN-T0050"
+    ],
+    "required_recommendation_ids": [
+      "SEED-RULE-USE-EXACT-REGENERATION-RECIPE",
+      "SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE"
+    ],
+    "required_recommendation_evidence_fields": [
+      "SEED-RULE-USE-EXACT-REGENERATION-RECIPE=exact_regeneration",
+      "SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE=generator_shorter"
+    ],
+    "required_recommendation_theorem_ids": [
+      "SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE=GEN-T0050"
+    ],
+    "evidence_fields": {
+      "fixture_n": 128,
+      "exact_regeneration": true,
+      "generator_length": 383,
+      "explicit_length": 454,
+      "storage_saving": 71,
+      "bounded_search_candidate_count": 3,
+      "bounded_search_exact_candidate_count": 2,
+      "bounded_search_best_shorter_generator_shorter": true,
+      "generator_shorter_iff_positive_saving": true
+    },
+    "planner_recommendations": [
+      {
+        "id": "SEED-RULE-USE-EXACT-REGENERATION-RECIPE",
+        "action_kind": "use_seed_rule_exact_regeneration_recipe",
+        "coverage_scope": "public_finite_circle_fixture",
+        "status": "theorem_backed_finite_generation_fixture",
+        "theorem_ids": [
+          "GEN-T0040",
+          "GEN-T0041",
+          "GEN-T0043"
+        ],
+        "pinned_evidence_field": "exact_regeneration",
+        "not_claimed": "This recommendation identifies a finite seed/rule exact-regeneration recipe for one declared fixture. It is not a codec, not compression utility, not semantic utility, not runtime evidence, and not model-quality proof."
+      },
+      {
+        "id": "SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE",
+        "action_kind": "select_bounded_exact_shorter_candidate",
+        "coverage_scope": "declared_finite_candidate_search",
+        "status": "theorem_backed_bounded_search_storage_fixture",
+        "theorem_ids": [
+          "GEN-T0037",
+          "GEN-T0044",
+          "GEN-T0045",
+          "GEN-T0046",
+          "GEN-T0047",
+          "GEN-T0048",
+          "GEN-T0049",
+          "GEN-T0050"
+        ],
+        "pinned_evidence_field": "generator_shorter",
+        "not_claimed": "This recommendation exposes finite declared candidate-search and storage-accounting fields only. It is not useful compression, not optimal search, not a deployed generator, not benchmark evidence, and not model-quality proof."
+      }
+    ],
+    "theorem_count": 32
+  },
+  "circle_ai_certifier_boundary": {
+    "request_passed": true,
+    "decision_verdict": "passed",
+    "decision_assurance": "mixed_theorem_and_computation",
+    "claim_status": "proved",
+    "proof_layer_counts": {
+      "computed_fields": 2,
+      "numerical_only_fields": 0,
+      "proved_fields": 36,
+      "unsupported_fields": 4
+    },
+    "unsupported_fields": [
+      "model quality",
+      "reasoning ability",
+      "context length",
+      "speed or memory scaling"
+    ],
+    "boundary": "The passed receipt is a theorem-linked structural exact-regeneration and storage-accounting certificate for one finite circle fixture. It is not compression utility, not codec correctness, not semantic utility, not deployed generator behavior, not optimal search, not runtime or memory-scaling evidence, not benchmark evidence, not safety evidence, not transfer evidence, and not ASI evidence."
+  },
+  "commands": [
+    {
+      "command": "PYTHONPATH=. python3 scripts/seed_rule_certify.py --format json",
+      "verification_result": "pass",
+      "output_sha256": "0f7f9f872d5aada01540380a5e8c18a0d61176b9de01707ee3e80b62fd7c855b",
+      "output_bytes": 21190,
+      "summary": "finite seed/rule exact-regeneration contract JSON emitted"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_certify.py seed-rule --format compact-json",
+      "verification_result": "pass",
+      "output_sha256": "1eda082a6f9d87e19e470e2046478f38b32deac8d1655f005a3de0d58add2b64",
+      "output_bytes": 4481,
+      "summary": "Circle AI seed-rule compact receipt emitted with request_passed=true"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind seed_rule_exact_regeneration --digest --include-recommendations --include-field-metadata",
+      "verification_result": "pass",
+      "output_sha256": "00023e90230fe8011f1457fcc3076dfac56f1c4a84a6162cd99d4e12a56398e5",
+      "output_bytes": 8074,
+      "summary": "ready=True fields=34 missing=0 theorems=32 with two seed-rule recommendations"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind seed_rule_exact_regeneration --receipt --field fixture_n --field exact_regeneration --field generator_length --field explicit_length --field storage_saving --field bounded_search_candidate_count --field bounded_search_exact_candidate_count --field bounded_search_best_shorter_generator_shorter --field generator_shorter_iff_positive_saving --require-theorem GEN-T0001 --require-theorem GEN-T0040 --require-theorem GEN-T0041 --require-theorem GEN-T0046 --require-theorem GEN-T0048 --require-theorem GEN-T0050 --require-recommendation SEED-RULE-USE-EXACT-REGENERATION-RECIPE --require-recommendation SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE --require-recommendation-evidence-field SEED-RULE-USE-EXACT-REGENERATION-RECIPE=exact_regeneration --require-recommendation-evidence-field SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE=generator_shorter --require-recommendation-theorem SEED-RULE-SELECT-BOUNDED-SHORTER-CANDIDATE=GEN-T0050",
+      "verification_result": "pass",
+      "output_sha256": "332824b14a1db65ddb4941f1dfbb570c5802e6bf59aa69977dd46aa97fbfe2be",
+      "output_bytes": 1813,
+      "summary": "strict seed-rule acceptance receipt accepted with nine evidence fields, six required theorem IDs, two recommendations, and one recommendation theorem pin"
+    },
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=. python3 -m pytest tests/test_seed_rule_certifier_cli.py -q",
+      "verification_result": "pass",
+      "output_sha256": "2913a9256c7c7676b44688501dcd29a9fc0b0a43324fd130eeecd61cde09a2da",
+      "output_bytes": 98,
+      "summary": "2 passed in 4.52s"
+    },
+    {
+      "command": "PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 PYTHONPATH=. python3 -m pytest tests/test_circle_ai_contract_ready_cli.py::test_contract_ready_cli_emits_seed_rule_digest_recommendations -q",
+      "verification_result": "pass",
+      "output_sha256": "e02723e582d6fd1e9e052b5f1c9ac4683c27236b02a035a5fb640e5b0ba8a4c6",
+      "output_bytes": 98,
+      "summary": "1 passed in 2.80s"
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not create a support-state transition",
+    "does not prove useful compression, compression utility, codec correctness, semantic utility, useful generation, deployed generator behavior, fallback execution, or downstream utility",
+    "does not prove optimal search, search quality, model quality, reasoning ability, context length, runtime speed, memory scaling, benchmark performance, deployment readiness, transfer, safety, or ASI",
+    "does not make the external Circle checkout a vendored public dependency"
+  ]
+}
