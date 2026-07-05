@@ -20,6 +20,8 @@
     "docs/reader_key_figure_pdf_layout_review.md",
     "docs/reader_final_figure_artifact_review.md",
     "docs/reader_keyboard_navigation_review.md",
+    "editions/reader_manuscript/v1_0/accessibility_tree_manifest.json",
+    "docs/reader_accessibility_tree_review.md",
     "docs/reader_audio_script_probe_manifest.md",
     "editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json",
     "docs/reader_audio_narration_treatment_review.md",
@@ -66,6 +68,8 @@
         "evidence_refs": [
           "docs/curated_reader_html_artifact_browser_review.md#browser-sweep",
           "docs/reader_keyboard_navigation_review.md#summary",
+          "editions/reader_manuscript/v1_0/accessibility_tree_manifest.json",
+          "docs/reader_accessibility_tree_review.md#summary",
           "docs/reader_final_figure_artifact_review.md#summary",
           "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
         ],
@@ -75,7 +79,7 @@
           "wcag_conformance_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated reader HTML snapshot rendered locally, passed the strict browser viability sweep across 98 page-view pairs, passed the automated keyboard traversal review across 98 page-view pairs, and is covered by the final figure-artifact review. It is a release-preparation artifact, not the 2026-06-29 generated reader HTML approval.",
+        "notes": "The curated reader HTML snapshot rendered locally, passed the strict browser viability sweep across 98 page-view pairs, passed the automated keyboard traversal review across 98 page-view pairs, passed the accessibility-tree release-preparation probe across 98 page-view pairs with 0 unnamed interactive elements and 0 duplicate-ID hits, and is covered by the final figure-artifact review. It is a release-preparation artifact, not the 2026-06-29 generated reader HTML approval.",
         "non_claims": [
           "This candidate row does not approve curated reader HTML for release.",
           "This candidate row does not publish the ignored local HTML artifact.",
@@ -209,7 +213,7 @@
         ]
       }
     ],
-    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, and the script-level audio narration treatment review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
+    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, the accessibility-tree release-preparation probe, and the script-level audio narration treatment review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
   },
   "records": [
     {

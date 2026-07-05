@@ -54,6 +54,7 @@ ACCESSIBILITY_NAVIGATION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
 )
 KEYBOARD_NAVIGATION = ROOT / "editions" / "reader_manuscript" / "v1_0" / "keyboard_navigation_manifest.json"
+ACCESSIBILITY_TREE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_tree_manifest.json"
 KEY_FIGURE_RASTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_raster_manifest.json"
 KEY_FIGURE_EPUB_LAYOUT = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_epub_layout_manifest.json"
@@ -90,6 +91,7 @@ REVIEW_DOCS = {
     "reader_visual_identity": ROOT / "docs" / "reader_visual_identity_review.md",
     "reader_accessibility_navigation": ROOT / "docs" / "reader_accessibility_navigation_review.md",
     "reader_keyboard_navigation": ROOT / "docs" / "reader_keyboard_navigation_review.md",
+    "reader_accessibility_tree": ROOT / "docs" / "reader_accessibility_tree_review.md",
     "reader_figure_raster": ROOT / "docs" / "reader_key_figure_raster_review.md",
     "reader_figure_epub_layout": ROOT / "docs" / "reader_key_figure_epub_layout_review.md",
     "reader_epub_apple_books": ROOT / "docs" / "reader_epub_apple_books_review.md",
@@ -194,6 +196,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         VISUAL_IDENTITY,
         ACCESSIBILITY_NAVIGATION,
         KEYBOARD_NAVIGATION,
+        ACCESSIBILITY_TREE,
         KEY_FIGURE_RASTER,
         KEY_FIGURE_EPUB_LAYOUT,
         KEY_FIGURE_PDF_LAYOUT,
@@ -231,6 +234,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     visual_identity = load_json(VISUAL_IDENTITY)
     accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
     keyboard_navigation = load_json(KEYBOARD_NAVIGATION)
+    accessibility_tree = load_json(ACCESSIBILITY_TREE)
     key_figure_raster = load_json(KEY_FIGURE_RASTER)
     key_figure_epub_layout = load_json(KEY_FIGURE_EPUB_LAYOUT)
     key_figure_pdf_layout = load_json(KEY_FIGURE_PDF_LAYOUT)
@@ -447,6 +451,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "clears the current final-figure blocker",
         "docx application-evidence decision",
         "docx_application_review_not_completed",
+        "accessibility-tree release-preparation probe",
         "audio narration treatment review",
         "narration_quality_review_not_completed",
         "audio file generation",
@@ -629,7 +634,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "chapter_marker_rows": 49,
         "chapter_marker_tbd_rows": 49,
         "narration_note_count": 66,
-        "text_characters_checked": 1069255,
+        "text_characters_checked": 1069266,
         "target_artifact_status": {
             "mp3": "target_not_generated",
             "m4b": "target_not_generated",
@@ -872,6 +877,62 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         if fragment not in keyboard_non_claims:
             errors.append(f"reader keyboard navigation non_claims missing {fragment!r}.")
 
+    if accessibility_tree.get("status") != "passed_accessibility_tree_release_preparation_probe":
+        errors.append("reader accessibility-tree manifest must remain passed_accessibility_tree_release_preparation_probe.")
+    accessibility_tree_summary = accessibility_tree.get("summary", {})
+    if not isinstance(accessibility_tree_summary, dict):
+        errors.append("reader accessibility-tree summary must be an object.")
+        accessibility_tree_summary = {}
+    expected_accessibility_tree_metrics = {
+        "pages_checked": 49,
+        "expected_pages": 49,
+        "viewport_count": 2,
+        "page_view_pairs": 98,
+        "chapter_page_view_pairs": 88,
+        "failed_page_view_pairs": 0,
+        "lang_en_us_pairs": 98,
+        "titled_pairs": 98,
+        "one_h1_pairs": 98,
+        "main_landmark_pairs": 98,
+        "navigation_landmark_pairs": 98,
+        "skip_link_pairs": 98,
+        "focus_visible_rule_pairs": 98,
+        "accessibility_tree_pairs": 98,
+        "unnamed_interactive_elements": 0,
+        "image_alt_failures": 0,
+        "table_header_failures": 0,
+        "duplicate_id_page_views": 0,
+        "live_marker_leak_pairs": 0,
+        "raw_core_claim_marker_leak_pairs": 0,
+    }
+    for key, expected in expected_accessibility_tree_metrics.items():
+        observed = accessibility_tree_summary.get(key)
+        if observed != expected:
+            errors.append(f"reader accessibility-tree summary.{key} must be {expected!r}; found {observed!r}.")
+    for key, minimum in {
+        "minimum_accessibility_tree_nodes": 20,
+        "minimum_named_accessibility_nodes": 10,
+        "visible_interactive_elements": 1,
+    }.items():
+        observed = accessibility_tree_summary.get(key)
+        if not isinstance(observed, (int, float)) or observed < minimum:
+            errors.append(f"reader accessibility-tree summary.{key} must be at least {minimum}; found {observed!r}.")
+    accessibility_tree_boundary = str(accessibility_tree.get("review_boundary", ""))
+    for fragment in (
+        "not manual keyboard-only review",
+        "not screen-reader review",
+        "not WCAG conformance",
+        "not e-reader review",
+        "not audiobook review",
+        "not reader release approval",
+    ):
+        if fragment not in accessibility_tree_boundary:
+            errors.append(f"reader accessibility-tree review_boundary missing {fragment!r}.")
+    accessibility_tree_non_claims = " ".join(str(item) for item in accessibility_tree.get("non_claims", [])).lower()
+    for fragment in ("does not certify wcag", "does not perform screen-reader review", "does not approve epub"):
+        if fragment not in accessibility_tree_non_claims:
+            errors.append(f"reader accessibility-tree non_claims missing {fragment!r}.")
+
     if key_figure_raster.get("status") != "passed_local_raster_artifact_probe":
         errors.append("reader key-figure raster manifest must remain passed_local_raster_artifact_probe.")
     raster_summary = key_figure_raster.get("summary", {})
@@ -1038,7 +1099,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "This review does not approve EPUB, DOCX, PDF, e-reader conversion, audio, or",
         ],
         "curated_html": [
-            "4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a",
+            "2ca82608207741a56a861da7d32f4d8c7e7a25dc390df3836dca11560b19ce34",
             "newer local viability",
             "EPUB, DOCX, PDF, e-reader, MP3, M4B, and audio-embedded EPUB artifacts remain",
         ],
@@ -1076,7 +1137,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "matches book-structure order",
             "49 ordered markers",
             "66 narration notes",
-            "1,069,255 text characters",
+            "1,069,266 text characters",
             "not narration quality review",
             "final figure-artifact approval, or evidence that audio files exist.",
             "| Draft figure summaries routed | 10 |",
@@ -1088,7 +1149,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "script-level narration treatment",
             "clears only `narration_quality_review_not_completed`",
             "66 narration notes",
-            "1,069,255 text characters",
+            "1,069,266 text characters",
             "10 draft key-figure spoken summaries",
             "does not approve pronunciation",
             "does not create MP3, M4B, or audio-embedded EPUB artifacts",
@@ -1199,6 +1260,20 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "Skip-link route activated | 98",
             "Main-content route available | 98",
             "Keyboard trap candidates | 0",
+            "does not perform manual keyboard-only review",
+            "does not perform screen-reader review",
+            "does not certify WCAG conformance",
+            "does not approve EPUB, DOCX, PDF, e-reader, audio, final figure art, or reader release artifacts",
+        ],
+        "reader_accessibility_tree": [
+            "Reader Accessibility Tree Review",
+            "automated browser review",
+            "Pages checked | 49",
+            "Page-view pairs | 98",
+            "Failed page-view pairs | 0",
+            "Accessibility-tree page-view pairs | 98",
+            "Unnamed interactive elements | 0",
+            "Duplicate-ID page-view hits | 0",
             "does not perform manual keyboard-only review",
             "does not perform screen-reader review",
             "does not certify WCAG conformance",
@@ -1330,7 +1405,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "curated_html_failures": curated_html_failures,
         "curated_key_figure_pairs": curated_key_figure_pairs,
         "curated_key_figure_failures": curated_key_figure_failures,
-        "curated_html_digest": "4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a",
+        "curated_html_digest": "2ca82608207741a56a861da7d32f4d8c7e7a25dc390df3836dca11560b19ce34",
         "curated_html_files": curated_inspection.get("html", {}).get("html_files"),
         "curated_epub_xhtml": curated_inspection.get("epub", {}).get("xhtml_entries"),
         "curated_epub_audit_xhtml": curated_epub_content_audit.get("xhtml_entries_checked"),
@@ -1475,6 +1550,15 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "reader_keyboard_navigation_nav_reached": keyboard_summary.get("navigation_focus_reached_pairs"),
         "reader_keyboard_navigation_search_reached": keyboard_summary.get("search_focus_reached_pairs"),
         "reader_keyboard_navigation_traps": keyboard_summary.get("keyboard_trap_candidates"),
+        "reader_accessibility_tree_status": accessibility_tree.get("status"),
+        "reader_accessibility_tree_pages": accessibility_tree_summary.get("pages_checked"),
+        "reader_accessibility_tree_pairs": accessibility_tree_summary.get("page_view_pairs"),
+        "reader_accessibility_tree_failures": accessibility_tree_summary.get("failed_page_view_pairs"),
+        "reader_accessibility_tree_ax_pairs": accessibility_tree_summary.get("accessibility_tree_pairs"),
+        "reader_accessibility_tree_unnamed": accessibility_tree_summary.get("unnamed_interactive_elements"),
+        "reader_accessibility_tree_image_alt_failures": accessibility_tree_summary.get("image_alt_failures"),
+        "reader_accessibility_tree_table_header_failures": accessibility_tree_summary.get("table_header_failures"),
+        "reader_accessibility_tree_duplicate_ids": accessibility_tree_summary.get("duplicate_id_page_views"),
         "key_figure_raster_status": key_figure_raster.get("status"),
         "key_figure_raster_count": raster_summary.get("raster_artifact_count"),
         "key_figure_raster_standard_dimensions": raster_summary.get("standard_dimension_count"),
@@ -1530,6 +1614,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"`docs/reader_format_review_matrix.md` tracks {metrics['curated_candidate_count']} current curated-candidate rows with release blockers; "
         f"automated keyboard traversal covers {metrics['reader_keyboard_navigation_pairs']} page-view pairs with "
         f"{metrics['reader_keyboard_navigation_failures']} failures; "
+        f"accessibility-tree release-preparation covers {metrics['reader_accessibility_tree_pairs']} page-view pairs with "
+        f"{metrics['reader_accessibility_tree_failures']} failures and {metrics['reader_accessibility_tree_unnamed']} unnamed interactive elements; "
         f"the human-consumption pre-release gate is `{metrics['human_consumption_gate_status']}`; "
         f"PDF page-by-page release-preparation review covers {metrics['curated_pdf_page_review_rows']} pages with "
         f"{metrics['curated_pdf_page_review_failed_pages']} failures; "
@@ -1557,7 +1643,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_final_figure_artifact_review.md`; "
         "`docs/reader_key_figure_geometry_review.md`; `docs/reader_visual_identity_review.md`; "
         "`docs/reader_accessibility_navigation_review.md`; `docs/reader_key_figure_raster_review.md`; "
-        "`docs/reader_keyboard_navigation_review.md`; "
+        "`docs/reader_keyboard_navigation_review.md`; `docs/reader_accessibility_tree_review.md`; "
         "`docs/reader_key_figure_epub_layout_review.md`; "
         "`docs/reader_epub_apple_books_review.md`; "
         "`docs/reader_docx_application_decision.md`; "
@@ -1619,6 +1705,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Reader source accessibility/navigation checks | {metrics['reader_accessibility_navigation_chapters']} chapters, {metrics['reader_accessibility_navigation_h1']} one-H1 chapters, {metrics['reader_accessibility_navigation_handoffs']} handoffs, {metrics['reader_accessibility_navigation_fig_alts']} figure alt texts |",
             f"| Reader automated keyboard traversal status | `{metrics['reader_keyboard_navigation_status']}` |",
             f"| Reader automated keyboard traversal checks | {metrics['reader_keyboard_navigation_pairs']} page-view pairs, {metrics['reader_keyboard_navigation_failures']} failures, {metrics['reader_keyboard_navigation_skip_activated']} skip-link activations, {metrics['reader_keyboard_navigation_traps']} trap candidates |",
+            f"| Reader accessibility-tree status | `{metrics['reader_accessibility_tree_status']}` |",
+            f"| Reader accessibility-tree checks | {metrics['reader_accessibility_tree_pairs']} page-view pairs, {metrics['reader_accessibility_tree_failures']} failures, {metrics['reader_accessibility_tree_ax_pairs']} accessibility-tree pairs, {metrics['reader_accessibility_tree_unnamed']} unnamed interactive elements, {metrics['reader_accessibility_tree_duplicate_ids']} duplicate-ID hits |",
             f"| Key-figure raster status | `{metrics['key_figure_raster_status']}` |",
             f"| Key-figure raster checks | {metrics['key_figure_raster_count']} PNGs, {metrics['key_figure_raster_standard_dimensions']} standard dimensions, min luminance std {metrics['key_figure_raster_min_luminance_std']}, min colors {metrics['key_figure_raster_min_colors']} |",
             f"| Key-figure EPUB layout status | `{metrics['key_figure_epub_layout_status']}` |",
@@ -1685,6 +1773,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_visual_identity_review.md` records a source-level visual identity review: {metrics['visual_identity_figure_count']} key figures, {metrics['visual_identity_color_count']} combined colors, {metrics['visual_identity_non_neutral_families']} non-neutral color families, and minimum text contrast {metrics['visual_identity_min_text_contrast']}; it is not manual aesthetic review, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_accessibility_navigation_review.md` records a source-level accessibility/navigation review: {metrics['reader_accessibility_navigation_chapters']} curated chapters, {metrics['reader_accessibility_navigation_h1']} one-H1 chapters, {metrics['reader_accessibility_navigation_handoffs']} handoff sections, {metrics['reader_accessibility_navigation_fig_alts']} draft figure alt texts, {metrics['reader_accessibility_navigation_boundaries']} figure boundary paragraphs, {metrics['reader_accessibility_navigation_live_marker_leaks']} live-marker leaks, and {metrics['reader_accessibility_navigation_raw_claim_leaks']} raw core-claim marker leaks; it is not keyboard-only review, screen-reader review, WCAG conformance, e-reader review, audiobook review, or reader release approval.",
             f"- `docs/reader_keyboard_navigation_review.md` records an automated Chromium keyboard traversal review over the ignored local curated-reader HTML artifact: {metrics['reader_keyboard_navigation_pages']} pages, {metrics['reader_keyboard_navigation_pairs']} desktop/mobile page-view pairs, {metrics['reader_keyboard_navigation_failures']} failed pairs, {metrics['reader_keyboard_navigation_skip_reached']} skip-link reach observations, {metrics['reader_keyboard_navigation_skip_activated']} skip-link activations, {metrics['reader_keyboard_navigation_main_route']} main-content routes, {metrics['reader_keyboard_navigation_nav_reached']} navigation reach observations, {metrics['reader_keyboard_navigation_search_reached']} search reach observations, and {metrics['reader_keyboard_navigation_traps']} keyboard-trap candidates; it is not manual keyboard-only review, screen-reader review, WCAG conformance, e-reader review, audiobook review, or reader release approval.",
+            f"- `docs/reader_accessibility_tree_review.md` records an automated Chromium accessibility-tree release-preparation probe over the ignored local curated-reader HTML artifact: {metrics['reader_accessibility_tree_pages']} pages, {metrics['reader_accessibility_tree_pairs']} desktop/mobile page-view pairs, {metrics['reader_accessibility_tree_failures']} failed pairs, {metrics['reader_accessibility_tree_ax_pairs']} accessibility-tree pairs, {metrics['reader_accessibility_tree_unnamed']} unnamed interactive elements, {metrics['reader_accessibility_tree_image_alt_failures']} image alt failures, {metrics['reader_accessibility_tree_table_header_failures']} table-header failures, and {metrics['reader_accessibility_tree_duplicate_ids']} duplicate-ID hits; it is not manual keyboard-only review, screen-reader review, WCAG conformance, e-reader review, audiobook review, or reader release approval.",
             f"- `docs/reader_key_figure_raster_review.md` records an automated PNG raster artifact review: {metrics['key_figure_raster_count']} generated fallbacks, {metrics['key_figure_raster_standard_dimensions']} standard 1200 x 760 canvases, {metrics['key_figure_raster_min_opaque_percent']}% minimum opaque pixel coverage, {metrics['key_figure_raster_min_luminance_std']} minimum luminance standard deviation, and {metrics['key_figure_raster_min_colors']} minimum quantized colors; it is not manual aesthetic review, e-reader visual review, DOCX/PDF application review, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_key_figure_epub_layout_review.md` records a local EPUB key-figure XHTML layout probe: {metrics['key_figure_epub_layout_entries']} XHTML entries, {metrics['key_figure_epub_layout_pairs']} desktop/e-reader-like browser page-view pairs, {metrics['key_figure_epub_layout_failures']} failed pairs, {metrics['key_figure_epub_layout_min_body_chars']} minimum body text characters, {metrics['key_figure_epub_layout_min_alt_words']} minimum alt-text words, {metrics['key_figure_epub_layout_max_overflow']} px maximum horizontal overflow, and {metrics['key_figure_epub_layout_image_failures']} image failures; it is not dedicated e-reader device review, e-reader application approval, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_key_figure_pdf_layout_review.md` records a local PDF key-figure caption-page layout probe: {metrics['key_figure_pdf_layout_caption_pages']} caption pages in a {metrics['key_figure_pdf_layout_pages']}-page PDF, {metrics['key_figure_pdf_layout_raster_pages']} raster pages, {metrics['key_figure_pdf_layout_min_caption_margin']} pt minimum caption margin, {metrics['key_figure_pdf_layout_min_page_ink']}% minimum page ink, {metrics['key_figure_pdf_layout_max_near_edge_ink']}% maximum near-edge ink, and {metrics['key_figure_pdf_layout_min_luminance_std']} minimum luminance standard deviation; it is not manual page-by-page PDF review, final figure-artifact approval, or reader release approval.",

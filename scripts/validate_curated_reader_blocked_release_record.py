@@ -55,6 +55,8 @@ ACCESSIBILITY_NAVIGATION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
 )
 KEYBOARD_NAVIGATION = ROOT / "editions" / "reader_manuscript" / "v1_0" / "keyboard_navigation_manifest.json"
+ACCESSIBILITY_TREE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_tree_manifest.json"
+ACCESSIBILITY_TREE_DOC = ROOT / "docs" / "reader_accessibility_tree_review.md"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 
@@ -87,6 +89,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_accessibility_navigation.py",
     "python3 scripts/validate_reader_keyboard_navigation.py",
+    "python3 scripts/validate_reader_accessibility_tree.py --tracked-only",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
     "python3 scripts/validate_reader_key_figure_epub_layout.py",
     "python3 scripts/validate_reader_epub_apple_books_review.py",
@@ -174,6 +177,8 @@ def main() -> None:
         VISUAL_IDENTITY,
         ACCESSIBILITY_NAVIGATION,
         KEYBOARD_NAVIGATION,
+        ACCESSIBILITY_TREE,
+        ACCESSIBILITY_TREE_DOC,
         HTML_REVIEW,
     ):
         if not path.exists():
@@ -208,6 +213,8 @@ def main() -> None:
     visual_identity = load_json(VISUAL_IDENTITY)
     accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
     keyboard_navigation = load_json(KEYBOARD_NAVIGATION)
+    accessibility_tree = load_json(ACCESSIBILITY_TREE)
+    accessibility_tree_doc = ACCESSIBILITY_TREE_DOC.read_text(encoding="utf-8")
     html_review = HTML_REVIEW.read_text(encoding="utf-8")
     if not isinstance(record, dict):
         fail([f"{rel(RECORD)} must contain a JSON object."])
@@ -249,6 +256,8 @@ def main() -> None:
         fail([f"{rel(ACCESSIBILITY_NAVIGATION)} must contain a JSON object."])
     if not isinstance(keyboard_navigation, dict):
         fail([f"{rel(KEYBOARD_NAVIGATION)} must contain a JSON object."])
+    if not isinstance(accessibility_tree, dict):
+        fail([f"{rel(ACCESSIBILITY_TREE)} must contain a JSON object."])
 
     if record.get("record_type") != "edition_release":
         errors.append("record_type must be edition_release.")
@@ -286,10 +295,17 @@ def main() -> None:
 
     digest_matches = HTML_DIGEST_RE.findall(html_review)
     html_digest = digest_matches[0] if digest_matches else ""
-    if html_digest != "4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a":
+    if html_digest != "2ca82608207741a56a861da7d32f4d8c7e7a25dc390df3836dca11560b19ce34":
         errors.append("curated HTML review digest changed or is missing.")
     html_note = str(artifacts.get("curated_reader_html", {}).get("notes", ""))
-    for fragment in (html_digest, "49 pages", "98 of 98", "not release-approved"):
+    for fragment in (
+        html_digest,
+        "49 pages",
+        "98 of 98",
+        "accessibility-tree release-preparation probe",
+        "0 unnamed interactive elements",
+        "not release-approved",
+    ):
         if fragment and fragment not in html_note:
             errors.append(f"curated_reader_html notes missing {fragment!r}.")
 
@@ -337,6 +353,7 @@ def main() -> None:
     visual_contrast = visual_identity.get("contrast_summary", {})
     accessibility_summary = accessibility_navigation.get("summary", {})
     keyboard_summary = keyboard_navigation.get("summary", {})
+    accessibility_tree_summary = accessibility_tree.get("summary", {})
     if not isinstance(epub_audit, dict):
         errors.append("curated format epub_content_audit must be an object.")
         epub_audit = {}
@@ -717,7 +734,7 @@ def main() -> None:
             "script-level narration treatment",
             "clears only `narration_quality_review_not_completed`",
             "66 narration notes",
-            "1,069,255 text characters",
+            "1,069,266 text characters",
             "does not approve pronunciation",
             "does not approve an audiobook",
         ],
@@ -819,6 +836,74 @@ def main() -> None:
     ):
         if fragment not in keyboard_boundary:
             errors.append(f"keyboard_navigation_manifest review_boundary missing {fragment!r}.")
+
+    if accessibility_tree.get("status") != "passed_accessibility_tree_release_preparation_probe":
+        errors.append("accessibility_tree_manifest status must remain passed_accessibility_tree_release_preparation_probe.")
+    if not isinstance(accessibility_tree_summary, dict):
+        errors.append("accessibility_tree_manifest summary must be an object.")
+        accessibility_tree_summary = {}
+    expected_accessibility_tree_metrics = {
+        "pages_checked": 49,
+        "expected_pages": 49,
+        "viewport_count": 2,
+        "page_view_pairs": 98,
+        "chapter_page_view_pairs": 88,
+        "failed_page_view_pairs": 0,
+        "lang_en_us_pairs": 98,
+        "titled_pairs": 98,
+        "one_h1_pairs": 98,
+        "main_landmark_pairs": 98,
+        "navigation_landmark_pairs": 98,
+        "skip_link_pairs": 98,
+        "focus_visible_rule_pairs": 98,
+        "accessibility_tree_pairs": 98,
+        "unnamed_interactive_elements": 0,
+        "image_alt_failures": 0,
+        "table_header_failures": 0,
+        "duplicate_id_page_views": 0,
+        "live_marker_leak_pairs": 0,
+        "raw_core_claim_marker_leak_pairs": 0,
+    }
+    for key, expected in expected_accessibility_tree_metrics.items():
+        observed = accessibility_tree_summary.get(key)
+        if observed != expected:
+            errors.append(f"accessibility_tree_manifest summary.{key} must be {expected!r}; found {observed!r}.")
+    for key, minimum in {
+        "minimum_accessibility_tree_nodes": 20,
+        "minimum_named_accessibility_nodes": 10,
+        "visible_interactive_elements": 1,
+    }.items():
+        observed = accessibility_tree_summary.get(key)
+        if not isinstance(observed, (int, float)) or observed < minimum:
+            errors.append(f"accessibility_tree_manifest summary.{key} must be at least {minimum}; found {observed!r}.")
+    accessibility_tree_boundary = str(accessibility_tree.get("review_boundary", ""))
+    for fragment in (
+        "not manual keyboard-only review",
+        "not screen-reader review",
+        "not WCAG conformance",
+        "not e-reader review",
+        "not audiobook review",
+        "not reader release approval",
+    ):
+        if fragment not in accessibility_tree_boundary:
+            errors.append(f"accessibility_tree_manifest review_boundary missing {fragment!r}.")
+    text_contains_all(
+        rel(ACCESSIBILITY_TREE_DOC),
+        accessibility_tree_doc,
+        [
+            "Reader Accessibility Tree Review",
+            "passed_accessibility_tree_release_preparation_probe",
+            "Page-view pairs | 98",
+            "Failed page-view pairs | 0",
+            "Accessibility-tree page-view pairs | 98",
+            "Unnamed interactive elements | 0",
+            "Duplicate-ID page-view hits | 0",
+            "does not perform manual keyboard-only review",
+            "does not perform screen-reader review",
+            "does not certify WCAG conformance",
+        ],
+        errors,
+    )
 
     key_figure_expected = {
         ("epub", "matched_source_svg_titles"): 10,
@@ -1080,6 +1165,15 @@ def main() -> None:
         "reader_keyboard_navigation_navigation_pairs": keyboard_summary.get("navigation_focus_reached_pairs"),
         "reader_keyboard_navigation_search_pairs": keyboard_summary.get("search_focus_reached_pairs"),
         "reader_keyboard_navigation_trap_candidates": keyboard_summary.get("keyboard_trap_candidates"),
+        "reader_accessibility_tree_manifest": rel(ACCESSIBILITY_TREE),
+        "reader_accessibility_tree_status": accessibility_tree.get("status"),
+        "reader_accessibility_tree_page_view_pairs": accessibility_tree_summary.get("page_view_pairs"),
+        "reader_accessibility_tree_failed_pairs": accessibility_tree_summary.get("failed_page_view_pairs"),
+        "reader_accessibility_tree_accessibility_tree_pairs": accessibility_tree_summary.get("accessibility_tree_pairs"),
+        "reader_accessibility_tree_unnamed_interactive": accessibility_tree_summary.get("unnamed_interactive_elements"),
+        "reader_accessibility_tree_image_alt_failures": accessibility_tree_summary.get("image_alt_failures"),
+        "reader_accessibility_tree_table_header_failures": accessibility_tree_summary.get("table_header_failures"),
+        "reader_accessibility_tree_duplicate_id_hits": accessibility_tree_summary.get("duplicate_id_page_views"),
         "audio_reading_flow_script_files": audio_reading_flow.get("script_files_checked"),
         "audio_reading_flow_ordered_markers": audio_reading_flow.get("chapter_marker_rows"),
         "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
@@ -1113,6 +1207,7 @@ def main() -> None:
         "docx application-evidence decision",
         "apple books",
         "automated keyboard traversal",
+        "accessibility-tree release-preparation probe",
         "pdf page-by-page release-preparation review",
         "final figure-artifact review",
         "audio narration treatment review",
@@ -1202,7 +1297,7 @@ def main() -> None:
         "49 scripts",
         "49 ordered markers",
         "66 narration notes",
-        "1,069,255 text characters",
+        "1,069,266 text characters",
         "script-level narration treatment review",
         "clears only narration_quality_review_not_completed",
         "no MP3, M4B, or audio-embedded EPUB artifact exists",

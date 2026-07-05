@@ -5,5 +5,30 @@
     if (skipLink && document.body && document.body.firstElementChild !== skipLink) {
       document.body.prepend(skipLink);
     }
+    const labelSearchInputs = () => {
+      document.querySelectorAll(".aa-Input, input[type='search']").forEach((input) => {
+        const labelledBy = input.getAttribute("aria-labelledby") || "";
+        const labelledText = labelledBy
+          .split(/\s+/)
+          .map((id) => document.getElementById(id)?.textContent?.trim() || "")
+          .filter(Boolean)
+          .join(" ");
+        const hasName =
+          input.getAttribute("aria-label") ||
+          labelledText ||
+          input.getAttribute("title") ||
+          input.getAttribute("placeholder");
+        if (!hasName) {
+          const labelTarget = labelledBy ? document.getElementById(labelledBy.split(/\s+/)[0]) : null;
+          if (labelTarget) labelTarget.textContent = "Search this book";
+          input.setAttribute("aria-label", "Search this book");
+        }
+      });
+    };
+    labelSearchInputs();
+    new MutationObserver(labelSearchInputs).observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
   })();
 </script>

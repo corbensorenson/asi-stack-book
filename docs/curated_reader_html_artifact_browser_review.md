@@ -1,6 +1,6 @@
 # Curated Reader HTML Artifact Browser Review
 
-Last updated: 2026-07-04
+Last updated: 2026-07-05
 
 This note records a full local browser review of the tracked curated reader
 manuscript rendered as local HTML. It is not an edition release record, a
@@ -30,7 +30,7 @@ Reviewed HTML root:
 
 Deterministic directory digest:
 
-`4d6851d11bcb1097925956c216937ebb65e1b51af9174009d0488b0eb36d955a`
+`2ca82608207741a56a861da7d32f4d8c7e7a25dc390df3836dca11560b19ce34`
 
 The digest is computed over 81 files by hashing each relative path and file
 content in sorted order. The rendered site is ignored local build output, not a

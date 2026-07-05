@@ -1018,7 +1018,7 @@ def stripped_heading_count(summary: dict[str, object]) -> int:
 def write_reader_index(output_dir: Path, structure: dict) -> None:
     title = structure.get("title", "The ASI Stack")
     subtitle = structure.get("subtitle", "")
-    text = f"""# {title} {{.unnumbered}}
+    text = f"""## Reader Edition Baseline {{.unnumbered}}
 
 **{title}: {subtitle}** is a reader edition draft derived from the living technical book by Corben Sorenson.
 

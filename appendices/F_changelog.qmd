@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-05 - Add curated reader accessibility-tree probe
+
+- Added `scripts/validate_curated_reader_accessibility_tree.js`,
+  `scripts/validate_reader_accessibility_tree.py`,
+  `editions/reader_manuscript/v1_0/accessibility_tree_manifest.json`, and
+  `docs/reader_accessibility_tree_review.md` to record an automated Chromium
+  accessibility-tree release-preparation probe for the current ignored curated
+  reader HTML artifact.
+- Fixed the rendered curated-reader accessibility surface by giving the reader
+  index a single H1, labeling generated Quarto search controls through the
+  shared skip-link asset, and making the compact-generation Mermaid node IDs
+  unique across live and curated chapters.
+- Recorded 49 checked pages, 98 desktop/mobile page-view pairs, 0 failures,
+  98 accessibility-tree page-view pairs, 0 unnamed interactive elements, 0
+  image-alt failures, 0 table-header failures, and 0 duplicate-ID hits; the
+  refreshed curated-reader HTML snapshot digest is
+  `2ca82608207741a56a861da7d32f4d8c7e7a25dc390df3836dca11560b19ce34`.
+- Updated the blocked curated-reader release record, format review matrix,
+  release-surface ledger/status row, roadmap, repository map, publication
+  readiness notes, release schema, and orchestrated validation around the new
+  probe.
+- Boundary: this does not approve curated reader HTML, EPUB, DOCX, PDF,
+  e-reader, audio, accessibility conformance, manual keyboard-only review,
+  screen-reader review, reader release, or any chapter support-state movement.
+
 ## 2026-07-05 - Clear audio narration-treatment blocker
 
 - Added `scripts/validate_reader_audio_narration_treatment.py`,
@@ -7,7 +32,7 @@
   and `docs/reader_audio_narration_treatment_review.md` to record the current
   curated-reader audio-script narration treatment review.
 - Accepted the existing audio-script reading-flow evidence, 49 ordered script
-  files, 66 narration notes, 1,069,255 checked text characters, and 10 draft
+  files, 66 narration notes, 1,069,266 checked text characters, and 10 draft
   key-figure spoken summaries as enough to clear only
   `narration_quality_review_not_completed` for the current blocked curated
   reader candidate.

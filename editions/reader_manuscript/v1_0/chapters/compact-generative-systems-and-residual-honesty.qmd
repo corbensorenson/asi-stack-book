@@ -117,17 +117,17 @@ A Compact Generative Record names what is compact, what is generated, whether ge
 
 ```{mermaid}
 flowchart LR
-A["Target system or task family"] --> B["Compact seed"]
-B --> C["Rule system + memory state"]
-C --> D["Generator / decoder / controller"]
-D --> E["Verifier or critic"]
-E --> F{"Adequate for use?"}
-F -- "yes" --> G["Governed interface"]
-F -- "no" --> H["Residual channel + correction"]
-H --> I["Fallback or ratchet pressure"]
-G --> J["Evidence + cost ledger"]
-I --> J
-J --> K["Residual burden audit"]
+CGR_target["Target system or task family"] --> CGR_seed["Compact seed"]
+CGR_seed --> CGR_rules["Rule system + memory state"]
+CGR_rules --> CGR_generator["Generator / decoder / controller"]
+CGR_generator --> CGR_verifier["Verifier or critic"]
+CGR_verifier --> CGR_gate{"Adequate for use?"}
+CGR_gate -- "yes" --> CGR_interface["Governed interface"]
+CGR_gate -- "no" --> CGR_residual["Residual channel + correction"]
+CGR_residual --> CGR_fallback["Fallback or ratchet pressure"]
+CGR_interface --> CGR_ledger["Evidence + cost ledger"]
+CGR_fallback --> CGR_ledger
+CGR_ledger --> CGR_audit["Residual burden audit"]
 ```
 
 **Reading the residual burden loop:** Compactness is useful only when the generator, verifier, residual channel, fallback path, and cost ledger remain visible together. The residual burden audit is the guard against treating a small seed or elegant rule system as if it had carried every hidden cost.
@@ -149,19 +149,19 @@ Generate/verify/repair is the stricter receipt lane. It starts with a reconstruc
 
 ```{mermaid}
 flowchart LR
-A["Reconstruction contract"] --> B["Generator or public law family"]
-A --> C["Artifact-specific seed"]
-B --> D["Generate candidate"]
-C --> D
-D --> E{"Verification passes?"}
-E -- "yes" --> F["Verified generated region"]
-E -- "repair" --> G["Exact repair residual"]
-E -- "no" --> H["Literal fallback or quarantine"]
-F --> I["Final rate and burden ledger"]
-G --> I
-H --> I
-I --> J["Consumer policy"]
-J --> K["Admit, scope, or reject"]
+GVR_contract["Reconstruction contract"] --> GVR_law["Generator or public law family"]
+GVR_contract --> GVR_seed["Artifact-specific seed"]
+GVR_law --> GVR_candidate["Generate candidate"]
+GVR_seed --> GVR_candidate
+GVR_candidate --> GVR_gate{"Verification passes?"}
+GVR_gate -- "yes" --> GVR_verified["Verified generated region"]
+GVR_gate -- "repair" --> GVR_repair["Exact repair residual"]
+GVR_gate -- "no" --> GVR_fallback["Literal fallback or quarantine"]
+GVR_verified --> GVR_rate["Final rate and burden ledger"]
+GVR_repair --> GVR_rate
+GVR_fallback --> GVR_rate
+GVR_rate --> GVR_policy["Consumer policy"]
+GVR_policy --> GVR_admission["Admit, scope, or reject"]
 ```
 
 **Reading the receipt lane:** Generated reconstruction is useful only when verification, repair, fallback, final-rate accounting, and consumer policy stay attached. A mismatch is not a defect to hide; it becomes a repair stream, declared loss, literal fallback, quarantine, or negative evidence for that representation.
@@ -182,15 +182,15 @@ A Semantic Node Record is a scoped representation lease, not a canonical ontolog
 
 ```{mermaid}
 flowchart LR
-A["Source or task evidence"] --> B["Semantic node"]
-B --> C["Provenance + relation refs"]
-B --> D["Grounding state + residual uncertainty"]
-C --> E{"Adequate for consumer?"}
-D --> E
-E -- "yes" --> F["VCM page / claim graph / IR atom / explanation"]
-E -- "no" --> G["Fallback, residual, or quarantine"]
-F --> H["Version and supersession ledger"]
-G --> H
+SNL_evidence["Source or task evidence"] --> SNL_node["Semantic node"]
+SNL_node --> SNL_provenance["Provenance + relation refs"]
+SNL_node --> SNL_grounding["Grounding state + residual uncertainty"]
+SNL_provenance --> SNL_gate{"Adequate for consumer?"}
+SNL_grounding --> SNL_gate
+SNL_gate -- "yes" --> SNL_consumer["VCM page / claim graph / IR atom / explanation"]
+SNL_gate -- "no" --> SNL_fallback["Fallback, residual, or quarantine"]
+SNL_consumer --> SNL_version["Version and supersession ledger"]
+SNL_fallback --> SNL_version
 ```
 
 **Reading the semantic lease gate:** A semantic node earns task-local use only when provenance, grounding, relation structure, residual uncertainty, and consumer policy are visible. If the node is not adequate for that consumer, the system falls back or records a residual instead of treating the graph as source authority.
