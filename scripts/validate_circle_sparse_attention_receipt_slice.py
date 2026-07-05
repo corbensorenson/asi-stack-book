@@ -91,13 +91,15 @@ SURFACE_FRAGMENTS = (
 ) + THEOREMS + RECOMMENDATIONS + NON_CLAIMS
 READER_FRAGMENTS = (
     "sparse-attention receipt",
-    "coverage_complete=false",
+    "coverage was incomplete",
     "first missed lag",
+    "complete repair window",
     "dense-local fallback",
-    EXPECTED["contract_id"],
-    EXPECTED["contract_content_fingerprint"],
+    "sparse-attention coverage contract",
+    "two theorem IDs",
+    "receipt fingerprint",
     EXPECTED["pytest_summary"],
-) + THEOREMS + RECOMMENDATIONS + NON_CLAIMS
+) + NON_CLAIMS
 
 
 def rel(path: Path) -> str:

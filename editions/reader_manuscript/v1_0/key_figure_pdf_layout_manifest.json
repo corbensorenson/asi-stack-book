@@ -4,17 +4,17 @@
   "command": "python3 scripts/validate_reader_key_figure_pdf_layout.py",
   "source_format_probe": "editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json",
   "pdf_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-  "pdf_sha256": "40620dcf56f207e87549eafd52b3178b36affc55732f02f8f6f57d33cc94ec54",
+  "pdf_sha256": "9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c",
   "summary": {
     "figure_count": 10,
-    "pdf_pages": 507,
+    "pdf_pages": 511,
     "unique_caption_pages": 10,
     "raster_pages_rendered": 10,
     "standard_page_size_count": 10,
     "minimum_caption_margin_pt": 165.878,
     "minimum_page_ink_percent": 3.36,
     "maximum_near_edge_ink_percent": 0.0,
-    "minimum_luminance_std": 14.21
+    "minimum_luminance_std": 14.2
   },
   "figures": [
     {
@@ -146,8 +146,8 @@
     {
       "id": "route_selection_budget_tradeoff",
       "caption_title": "Route selection budget tradeoff",
-      "caption_page": 298,
-      "expected_caption_page": 298,
+      "caption_page": 299,
+      "expected_caption_page": 299,
       "caption_bbox": {
         "x_min": 186.66,
         "y_min": 498.354,
@@ -188,8 +188,8 @@
     {
       "id": "cyclic_substrate_adoption_gate",
       "caption_title": "Cyclic substrate adoption gate",
-      "caption_page": 333,
-      "expected_caption_page": 333,
+      "caption_page": 337,
+      "expected_caption_page": 337,
       "caption_bbox": {
         "x_min": 188.16,
         "y_min": 498.354,
@@ -202,15 +202,15 @@
         "height": 792,
         "ink_percent": 3.36,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 14.21
+        "luminance_std": 14.2
       },
       "passed": true
     },
     {
       "id": "living_book_release_pipeline",
       "caption_title": "Living book release pipeline",
-      "caption_page": 406,
-      "expected_caption_page": 406,
+      "caption_page": 410,
+      "expected_caption_page": 410,
       "caption_bbox": {
         "x_min": 194.847,
         "y_min": 397.627,

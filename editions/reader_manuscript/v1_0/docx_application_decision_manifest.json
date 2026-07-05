@@ -3,8 +3,8 @@
   "status": "accepted_docx_application_evidence_for_release_preparation",
   "decision_date": "2026-07-05",
   "source_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-  "source_docx_sha256": "71ed95b7ded6f85ea94652d7c139cd1f68ed929632822d66d2db0f1b924797b8",
-  "repaired_docx_sha256": "12a33e1eb31b5e0147bc18c586b9b73b8d0b4f7bb3936aaf75dc471db78d4a14",
+  "source_docx_sha256": "e248469162e3a28c48a0c277980c59dc64396622b88cbc670ae8c9f6a94430c5",
+  "repaired_docx_sha256": "e5e70200ed19b58d232c315b5e6aa88a753fe95a01c6ec25e1abeede02ab2713",
   "docx_content_audit_status": "passed_docx_document_xml_relationship_probe",
   "docx_libreoffice_review_status": "passed_docx_libreoffice_headless_pdf_review",
   "key_figure_docx_layout_status": "passed_local_docx_key_figure_layout_probe",
@@ -13,7 +13,7 @@
   "pages_text_fallback_status": "passed_pages_open_text_fallback_probe",
   "evidence": {
     "document_xml_relationship_probe": {
-      "paragraph_markers": 17387,
+      "paragraph_markers": 17462,
       "relationship_count": 286,
       "raw_qmd_relationship_targets": 0,
       "unresolved_internal_relationship_targets": 0,
@@ -21,8 +21,8 @@
       "raw_core_claim_marker_hits": 0
     },
     "libreoffice_headless_writer_review": {
-      "converted_pdf_pages": 506,
-      "text_characters_checked": 1030310,
+      "converted_pdf_pages": 512,
+      "text_characters_checked": 1048398,
       "blank_pages": 0,
       "low_ink_pages": 0,
       "near_edge_content_pages": 0
@@ -38,7 +38,7 @@
       "cleared_blockers": 1
     },
     "pages_text_fallback_probe": {
-      "text_characters_checked": 1107976,
+      "text_characters_checked": 1126365,
       "media_entries": 0,
       "live_marker_hits": 0,
       "raw_core_claim_marker_hits": 0

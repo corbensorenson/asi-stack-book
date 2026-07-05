@@ -71,9 +71,9 @@ evidence, not manual figure, page-flow, or release approval.
 | Format | Status | Key facts |
 |---|---|---|
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
-| epub | passed | 8,665,577 bytes, SHA-256 `70c48a6a2a5fb76cebee86d6e2f8123e124d3f3f585c5da8915f8033819b2aaf`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
-| docx | passed | 8,324,296 bytes, SHA-256 `71ed95b7ded6f85ea94652d7c139cd1f68ed929632822d66d2db0f1b924797b8`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,387 paragraph markers, required Word package entries present. |
-| pdf | passed | 5,901,984 bytes, SHA-256 `40620dcf56f207e87549eafd52b3178b36affc55732f02f8f6f57d33cc94ec54`, 507 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| epub | passed | 8,670,899 bytes, SHA-256 `412fadecd308acfc966e624c17aece7cc53bc4ef9f818e4f865fdb2f0ed6be28`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
+| docx | passed | 8,331,414 bytes, SHA-256 `e248469162e3a28c48a0c277980c59dc64396622b88cbc670ae8c9f6a94430c5`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,462 paragraph markers, required Word package entries present. |
+| pdf | passed | 5,924,235 bytes, SHA-256 `9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c`, 511 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## EPUB Content And Navigation Audit
 
@@ -81,14 +81,14 @@ After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_epub_links.py` to the ignored EPUB
 snapshot. That command rewrites Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` to the packaged EPUB spine
-target. The repaired EPUB package SHA-256 `9b504375b67265c805734aee5f785ee2759401ea53de292fbd3370867ca6330f`
+target. The repaired EPUB package SHA-256 `bca694bc97bdfbc1757d58368df9d5d3f2e6152615938a80c7eab0b2a5519255`
 then passed an all-XHTML content, XML, and internal-link audit covering 49 packaged content XHTML entries and 0 unresolved internal hrefs.
 
 | Metric | Result |
 |---|---:|
 | XHTML entries checked | 52 |
 | Packaged content XHTML entries checked | 49 |
-| Text characters checked | 1,785,267 |
+| Text characters checked | 1,803,680 |
 | Navigation hrefs checked | 841 |
 | OPF item entries | 116 |
 | OPF spine itemrefs | 52 |
@@ -144,16 +144,16 @@ After the container inspection above, the probe applies
 `python3 scripts/repair_curated_reader_docx_links.py` to the ignored DOCX
 snapshot. That command removes Quarto's known forward-link leakage from the
 source appendix target `H_external_sources.qmd` by unwrapping the broken DOCX
-hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `12a33e1eb31b5e0147bc18c586b9b73b8d0b4f7bb3936aaf75dc471db78d4a14`
-then passed a document XML, media, and relationship audit with 17,387 paragraphs and 0 raw .qmd relationship targets.
+hyperlink while preserving the visible appendix text. The repaired DOCX package SHA-256 `e5e70200ed19b58d232c315b5e6aa88a753fe95a01c6ec25e1abeede02ab2713`
+then passed a document XML, media, and relationship audit with 17,462 paragraphs and 0 raw .qmd relationship targets.
 
 | Metric | Result |
 |---|---:|
 | ZIP entries checked | 77 |
-| Document XML characters checked | 2,805,994 |
-| Text characters checked | 1,200,650 |
-| Paragraph markers | 17,387 |
-| Run markers | 28,419 |
+| Document XML characters checked | 2,864,814 |
+| Text characters checked | 1,222,415 |
+| Paragraph markers | 17,462 |
+| Run markers | 29,453 |
 | Relationships checked | 286 |
 | Image relationships | 61 |
 | External hyperlink relationships | 217 |
@@ -185,14 +185,14 @@ It is application-engine evidence for the DOCX artifact because it exercises
 LibreOffice's document import and PDF layout path, not only the DOCX ZIP/XML
 container.
 
-The result records 506 converted pages, 1,030,310 text characters, and 0 blank converted-page rasters.
+The result records 512 converted pages, 1,048,398 text characters, and 0 blank converted-page rasters.
 
 | Metric | Result |
 |---|---:|
-| Converted PDF pages | 506 |
-| Converted PDF bytes | 8,559,969 |
-| Text characters checked | 1,030,310 |
-| Converted-page rasters checked | 506 |
+| Converted PDF pages | 512 |
+| Converted PDF bytes | 8,620,104 |
+| Text characters checked | 1,048,398 |
+| Converted-page rasters checked | 512 |
 | Blank converted-page rasters | 0 |
 | Low-ink converted-page rasters | 0 |
 | Near-edge converted-page rasters | 0 |
@@ -227,12 +227,12 @@ without the rich-DOCX read error.
 
 | Metric | Result |
 |---|---:|
-| Source DOCX SHA-256 | `12a33e1eb31b5e0147bc18c586b9b73b8d0b4f7bb3936aaf75dc471db78d4a14` |
-| Fallback DOCX SHA-256 | `240d5f6150b59da2c167c595855f241ab8604aca3bf9e359d1946c736b26fdb2` |
-| Fallback bytes | 339,985 |
+| Source DOCX SHA-256 | `e5e70200ed19b58d232c315b5e6aa88a753fe95a01c6ec25e1abeede02ab2713` |
+| Fallback DOCX SHA-256 | `7eee5765d1729399154c6bb6313f6756a050d3006a5dfafa9d64ca5da1068a06` |
+| Fallback bytes | 345,639 |
 | ZIP entries | 8 |
-| Text characters checked | 1,107,976 |
-| Paragraph markers | 11,594 |
+| Text characters checked | 1,126,365 |
+| Paragraph markers | 11,644 |
 | Media entries | 0 |
 | Live-marker leaks | 0 |
 | Raw core-claim marker leaks | 0 |
@@ -250,8 +250,8 @@ relaxed reader chapters.
 
 | Metric | Result |
 |---|---:|
-| Pages checked | 507 |
-| Word boxes checked | 170,463 |
+| Pages checked | 511 |
+| Word boxes checked | 172,699 |
 | Textless pages | 0 |
 | Out-of-bounds word boxes | 0 |
 | Layout lines over 160 characters | 0 |
@@ -274,7 +274,7 @@ as manual page-flow approval.
 
 | Metric | Result |
 |---|---:|
-| Pages raster-rendered | 507 |
+| Pages raster-rendered | 511 |
 | Raster DPI | 72 |
 | Page width in pixels | 612 |
 | Page height in pixels | 792 |
@@ -285,7 +285,7 @@ as manual page-flow approval.
 | Maximum nonwhite pixels | 143,139 |
 | Minimum left margin px | 82 |
 | Minimum top margin px | 71 |
-| Minimum right margin px | 47 |
+| Minimum right margin px | 15 |
 | Minimum bottom margin px | 92 |
 
 One low-ink raster page, page 24, remains recorded for inspection; no blank or
@@ -304,27 +304,27 @@ python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest
 
 That pass uses `pdftotext` and `pdfinfo` to check text volume, page text
 presence, required reader markers, live-marker leakage, chapter heading order,
-and appendix heading order in the current 507-page PDF.
+and appendix heading order in the current 511-page PDF.
 
-The result records 1,107,762 text characters, 44 chapter headings, 3 appendix headings, and 507 nonempty text pages; it is not manual PDF page-by-page reading-flow review.
+The result records 1,126,001 text characters, 44 chapter headings, 3 appendix headings, and 511 nonempty text pages; it is not manual PDF page-by-page reading-flow review.
 
 | Metric | Result |
 |---|---:|
-| PDF pages | 507 |
-| Text pages checked | 507 |
-| Nonempty text pages | 507 |
-| Text characters checked | 1,107,762 |
-| Word tokens checked | 169,937 |
+| PDF pages | 511 |
+| Text pages checked | 511 |
+| Nonempty text pages | 511 |
+| Text characters checked | 1,126,001 |
+| Word tokens checked | 172,146 |
 | Chapter headings checked | 44 |
 | Appendix headings checked | 3 |
 | First chapter text-page index | 28 |
-| Last chapter text-page index | 413 |
+| Last chapter text-page index | 417 |
 | Replacement characters | 0 |
 | Live-marker leaks | 0 |
 | Raw core-claim marker leaks | 0 |
 
 The extracted-text flow check found 44 chapter headings and 3 appendix headings
-in order, with 507 nonempty text pages. Required text markers were present:
+in order, with 511 nonempty text pages. Required text markers were present:
 `The ASI Stack`, `Reader Edition Draft`, `evidence boundary`, `Reader Source
 List`, and `External Citation Policy`. This is stronger than page-count and
 raster evidence alone, but it is not manual PDF page-by-page reading-flow
@@ -348,14 +348,14 @@ rendered pixels.
 
 | Metric | Result |
 |---|---:|
-| PDF pages reported by `pdfinfo` | 507 |
+| PDF pages reported by `pdfinfo` | 511 |
 | Viewer screenshots | 2 |
-| First screenshot bytes | 41,815 |
-| Second screenshot bytes | 92,836 |
-| First screenshot dark pixels | 34.096% |
-| First screenshot white pixels | 64.666% |
-| Second screenshot dark pixels | 34.9% |
-| Second screenshot white pixels | 62.325% |
+| First screenshot bytes | 41,640 |
+| Second screenshot bytes | 92,611 |
+| First screenshot dark pixels | 34.101% |
+| First screenshot white pixels | 64.662% |
+| Second screenshot dark pixels | 34.905% |
+| Second screenshot white pixels | 62.323% |
 | Scroll-changed pixels | 4.479% |
 
 This is real local PDF-viewer rendering evidence for the current ignored PDF
@@ -370,19 +370,19 @@ The refreshed PDF probe now records a page-by-page release-preparation review:
 python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest
 ```
 
-That pass checks every page in the current ignored 507-page PDF through text
-extraction, word-box extraction, and raster page rendering. It records 507 page
-rows, 507 text pages, 507 word-box pages, 507 raster pages, 0 failed pages,
+That pass checks every page in the current ignored 511-page PDF through text
+extraction, word-box extraction, and raster page rendering. It records 511 page
+rows, 511 text pages, 511 word-box pages, 511 raster pages, 0 failed pages,
 0 blank pages, 0 near-edge pages, 0 out-of-bounds word-box pages, and one
 accepted low-ink page.
 
 | Metric | Result |
 |---|---:|
-| PDF pages | 507 |
-| Page review rows | 507 |
-| Text pages checked | 507 |
-| Word-box pages checked | 507 |
-| Raster pages checked | 507 |
+| PDF pages | 511 |
+| Page review rows | 511 |
+| Text pages checked | 511 |
+| Word-box pages checked | 511 |
+| Raster pages checked | 511 |
 | Failed pages | 0 |
 | Blank raster pages | 0 |
 | Near-edge pages | 0 |

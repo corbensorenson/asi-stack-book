@@ -10,7 +10,7 @@ Status: `passed_apple_books_epub_application_review`
 
 Reviewed artifact: `build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub`
 
-Reviewed artifact SHA-256: `9b504375b67265c805734aee5f785ee2759401ea53de292fbd3370867ca6330f`
+Reviewed artifact SHA-256: `bca694bc97bdfbc1757d58368df9d5d3f2e6152615938a80c7eab0b2a5519255`
 
 Application path: Apple Books (`com.apple.iBooksX`) on macOS.
 

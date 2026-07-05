@@ -314,7 +314,7 @@ def validate_pdf_layout_probe(figures: list[dict[str, Any]], errors: list[str]) 
         summary = {}
     expected = {
         "figure_count": len(figures),
-        "pdf_pages": 507,
+        "pdf_pages": 511,
         "unique_caption_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -419,7 +419,7 @@ def validate_docx_layout_probe(figures: list[dict[str, Any]], errors: list[str])
         summary = {}
     expected = {
         "figure_count": len(figures),
-        "docx_converted_pdf_pages": 506,
+        "docx_converted_pdf_pages": 512,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,

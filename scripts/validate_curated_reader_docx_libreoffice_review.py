@@ -316,7 +316,7 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
     expected_exact = {
         "status": "passed_docx_libreoffice_headless_pdf_review",
         "source_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-        "converted_pdf_pages": 506,
+        "converted_pdf_pages": 512,
         "converted_pdf_title": "The ASI Stack",
         "converted_pdf_author": "Corben Sorenson",
         "converted_pdf_creator": "Writer",
@@ -327,7 +327,7 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "nonwhite_threshold": NONWHITE_THRESHOLD,
         "edge_margin_px": EDGE_MARGIN_PX,
         "low_ink_threshold": LOW_INK_THRESHOLD,
-        "pages_raster_rendered": 506,
+        "pages_raster_rendered": 512,
         "page_width_pixels": [612],
         "page_height_pixels": [792],
         "blank_pages": 0,

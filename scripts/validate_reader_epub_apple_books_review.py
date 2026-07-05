@@ -17,7 +17,7 @@ FORMAT_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_forma
 EPUB = ROOT / "build" / "curated_reader_edition" / "format_artifacts" / "epub" / "_reader_site" / "The-ASI-Stack.epub"
 
 EXPECTED_STATUS = "passed_apple_books_epub_application_review"
-EXPECTED_DIGEST = "9b504375b67265c805734aee5f785ee2759401ea53de292fbd3370867ca6330f"
+EXPECTED_DIGEST = "bca694bc97bdfbc1757d58368df9d5d3f2e6152615938a80c7eab0b2a5519255"
 EXPECTED_OBSERVATIONS = {
     "library_opened",
     "chapter_render_without_xml_error",

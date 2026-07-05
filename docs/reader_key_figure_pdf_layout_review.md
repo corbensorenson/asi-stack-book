@@ -15,14 +15,14 @@ This local probe inspects the current ignored curated-reader PDF for the ten dra
 | Metric | Value |
 |---|---:|
 | Status | `passed_local_pdf_key_figure_layout_probe` |
-| PDF pages | 507 |
+| PDF pages | 511 |
 | Key-figure caption pages | 10 |
 | Raster pages rendered | 10 |
 | Standard page size count | 10 |
 | Minimum caption margin | 165.878 pt |
 | Minimum page ink | 3.36% |
 | Maximum near-edge ink | 0.0% |
-| Minimum luminance standard deviation | 14.21 |
+| Minimum luminance standard deviation | 14.2 |
 
 ## Per-Figure Pages
 
@@ -34,10 +34,10 @@ This local probe inspects the current ignored curated-reader PDF for the ten dra
 | `intent_to_artifact_trace` | 130 | 206.083 pt | 5.43% | 0.0% | 16.03 |
 | `context_transaction_lifecycle` | 165 | 192.889 pt | 5.94% | 0.0% | 16.59 |
 | `readiness_residual_quarantine_map` | 244 | 178.243 pt | 6.23% | 0.0% | 16.79 |
-| `route_selection_budget_tradeoff` | 298 | 186.66 pt | 4.68% | 0.0% | 15.91 |
+| `route_selection_budget_tradeoff` | 299 | 186.66 pt | 4.68% | 0.0% | 15.91 |
 | `compression_and_generation_acceptance` | 265 | 165.878 pt | 9.22% | 0.0% | 28.69 |
-| `cyclic_substrate_adoption_gate` | 333 | 188.16 pt | 3.36% | 0.0% | 14.21 |
-| `living_book_release_pipeline` | 406 | 194.847 pt | 29.57% | 0.0% | 26.46 |
+| `cyclic_substrate_adoption_gate` | 337 | 188.16 pt | 3.36% | 0.0% | 14.2 |
+| `living_book_release_pipeline` | 410 | 194.847 pt | 29.57% | 0.0% | 26.46 |
 
 ## Residuals
 

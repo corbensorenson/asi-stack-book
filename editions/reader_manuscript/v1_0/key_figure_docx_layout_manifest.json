@@ -3,20 +3,20 @@
   "status": "passed_local_docx_key_figure_layout_probe",
   "command": "python3 scripts/validate_reader_key_figure_docx_layout.py",
   "source_docx_artifact": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
-  "source_docx_sha256": "12a33e1eb31b5e0147bc18c586b9b73b8d0b4f7bb3936aaf75dc471db78d4a14",
+  "source_docx_sha256": "e5e70200ed19b58d232c315b5e6aa88a753fe95a01c6ec25e1abeede02ab2713",
   "conversion_engine": "LibreOffice headless Writer PDF export",
   "converter_version": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5",
-  "converted_pdf_sha256": "5375bf0ada2327fc665173d9d82a661ace8f6e992f0f9d38ff5cf6b4520512c3",
+  "converted_pdf_sha256": "d482a8b345a5714d81fa59e829adef2919615cc1fd6f55d356e43ab34a1f5e0a",
   "summary": {
     "figure_count": 10,
-    "docx_converted_pdf_pages": 506,
+    "docx_converted_pdf_pages": 512,
     "unique_title_pages": 10,
     "raster_pages_rendered": 10,
     "standard_page_size_count": 10,
     "minimum_title_margin_pt": 72.1,
-    "minimum_page_ink_percent": 9.98,
+    "minimum_page_ink_percent": 9.92,
     "maximum_near_edge_ink_percent": 0.0,
-    "minimum_luminance_std": 38.17
+    "minimum_luminance_std": 38.23
   },
   "figures": [
     {
@@ -68,78 +68,78 @@
       "expected_title_page": 39,
       "title_bbox": {
         "x_min": 72.1,
-        "y_min": 348.022,
+        "y_min": 422.422,
         "x_max": 225.616,
-        "y_max": 364.366,
+        "y_max": 438.766,
         "margin_min_pt": 72.1
       },
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 11.61,
+        "ink_percent": 11.97,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 38.17
+        "luminance_std": 39.0
       },
       "passed": true
     },
     {
       "id": "intent_to_artifact_trace",
       "caption_title": "Intent to artifact trace",
-      "title_page": 106,
-      "expected_title_page": 106,
+      "title_page": 107,
+      "expected_title_page": 107,
       "title_bbox": {
         "x_min": 72.1,
-        "y_min": 629.272,
+        "y_min": 348.022,
         "x_max": 232.66,
-        "y_max": 645.616,
+        "y_max": 364.366,
         "margin_min_pt": 72.1
       },
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 12.09,
+        "ink_percent": 11.47,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 40.04
+        "luminance_std": 38.58
       },
       "passed": true
     },
     {
       "id": "context_transaction_lifecycle",
       "caption_title": "Context transaction lifecycle",
-      "title_page": 142,
-      "expected_title_page": 142,
+      "title_page": 143,
+      "expected_title_page": 143,
       "title_bbox": {
         "x_min": 72.1,
-        "y_min": 587.572,
+        "y_min": 348.022,
         "x_max": 264.34,
-        "y_max": 603.916,
+        "y_max": 364.366,
         "margin_min_pt": 72.1
       },
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 12.35,
+        "ink_percent": 11.68,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 39.76
+        "luminance_std": 38.24
       },
       "passed": true
     },
     {
       "id": "readiness_residual_quarantine_map",
       "caption_title": "Readiness residual quarantine map",
-      "title_page": 224,
-      "expected_title_page": 224,
+      "title_page": 225,
+      "expected_title_page": 225,
       "title_bbox": {
         "x_min": 72.1,
-        "y_min": 661.972,
+        "y_min": 464.122,
         "x_max": 302.152,
-        "y_max": 678.316,
+        "y_max": 480.466,
         "margin_min_pt": 72.1
       },
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 12.62,
+        "ink_percent": 12.65,
         "near_edge_ink_percent": 0.0,
         "luminance_std": 39.55
       },
@@ -148,21 +148,21 @@
     {
       "id": "route_selection_budget_tradeoff",
       "caption_title": "Route selection budget tradeoff",
-      "title_page": 284,
-      "expected_title_page": 284,
+      "title_page": 285,
+      "expected_title_page": 285,
       "title_bbox": {
         "x_min": 72.1,
-        "y_min": 538.522,
+        "y_min": 348.022,
         "x_max": 278.632,
-        "y_max": 554.866,
+        "y_max": 364.366,
         "margin_min_pt": 72.1
       },
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 10.93,
+        "ink_percent": 10.52,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 39.17
+        "luminance_std": 38.23
       },
       "passed": true
     },
@@ -190,29 +190,29 @@
     {
       "id": "cyclic_substrate_adoption_gate",
       "caption_title": "Cyclic substrate adoption gate",
-      "title_page": 321,
-      "expected_title_page": 321,
+      "title_page": 325,
+      "expected_title_page": 325,
       "title_bbox": {
         "x_min": 72.1,
-        "y_min": 348.022,
+        "y_min": 496.822,
         "x_max": 274.3,
-        "y_max": 364.366,
+        "y_max": 513.166,
         "margin_min_pt": 72.1
       },
       "raster": {
         "width": 612,
         "height": 792,
-        "ink_percent": 9.98,
+        "ink_percent": 9.92,
         "near_edge_ink_percent": 0.0,
-        "luminance_std": 38.65
+        "luminance_std": 38.44
       },
       "passed": true
     },
     {
       "id": "living_book_release_pipeline",
       "caption_title": "Living book release pipeline",
-      "title_page": 396,
-      "expected_title_page": 396,
+      "title_page": 402,
+      "expected_title_page": 402,
       "title_bbox": {
         "x_min": 72.1,
         "y_min": 348.022,

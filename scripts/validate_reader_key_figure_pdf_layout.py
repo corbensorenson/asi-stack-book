@@ -29,9 +29,9 @@ EXPECTED_CAPTION_PAGES = {
     "context_transaction_lifecycle": 165,
     "readiness_residual_quarantine_map": 244,
     "compression_and_generation_acceptance": 265,
-    "route_selection_budget_tradeoff": 298,
-    "cyclic_substrate_adoption_gate": 333,
-    "living_book_release_pipeline": 406,
+    "route_selection_budget_tradeoff": 299,
+    "cyclic_substrate_adoption_gate": 337,
+    "living_book_release_pipeline": 410,
 }
 
 
@@ -255,7 +255,7 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         summary = {}
     expected_summary = {
         "figure_count": 10,
-        "pdf_pages": 507,
+        "pdf_pages": 511,
         "unique_caption_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,

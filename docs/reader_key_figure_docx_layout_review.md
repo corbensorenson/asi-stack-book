@@ -15,14 +15,14 @@ This local probe converts the current ignored curated-reader DOCX through LibreO
 | Metric | Value |
 |---|---:|
 | Status | `passed_local_docx_key_figure_layout_probe` |
-| Converted PDF pages | 506 |
+| Converted PDF pages | 512 |
 | Key-figure title pages | 10 |
 | Raster pages rendered | 10 |
 | Standard page size count | 10 |
 | Minimum title margin | 72.1 pt |
-| Minimum page ink | 9.98% |
+| Minimum page ink | 9.92% |
 | Maximum near-edge ink | 0.0% |
-| Minimum luminance standard deviation | 38.17 |
+| Minimum luminance standard deviation | 38.23 |
 
 ## Per-Figure Pages
 
@@ -30,14 +30,14 @@ This local probe converts the current ignored curated-reader DOCX through LibreO
 |---|---:|---:|---:|---:|---:|
 | `asi_stack_control_plane` | 4 | 72.1 pt | 10.08% | 0.0% | 38.69 |
 | `authority_to_effect_path` | 21 | 72.1 pt | 10.42% | 0.0% | 39.33 |
-| `evidence_state_ladder` | 39 | 72.1 pt | 11.61% | 0.0% | 38.17 |
-| `intent_to_artifact_trace` | 106 | 72.1 pt | 12.09% | 0.0% | 40.04 |
-| `context_transaction_lifecycle` | 142 | 72.1 pt | 12.35% | 0.0% | 39.76 |
-| `readiness_residual_quarantine_map` | 224 | 72.1 pt | 12.62% | 0.0% | 39.55 |
-| `route_selection_budget_tradeoff` | 284 | 72.1 pt | 10.93% | 0.0% | 39.17 |
+| `evidence_state_ladder` | 39 | 72.1 pt | 11.97% | 0.0% | 39.0 |
+| `intent_to_artifact_trace` | 107 | 72.1 pt | 11.47% | 0.0% | 38.58 |
+| `context_transaction_lifecycle` | 143 | 72.1 pt | 11.68% | 0.0% | 38.24 |
+| `readiness_residual_quarantine_map` | 225 | 72.1 pt | 12.65% | 0.0% | 39.55 |
+| `route_selection_budget_tradeoff` | 285 | 72.1 pt | 10.52% | 0.0% | 38.23 |
 | `compression_and_generation_acceptance` | 248 | 72.1 pt | 11.4% | 0.0% | 39.97 |
-| `cyclic_substrate_adoption_gate` | 321 | 72.1 pt | 9.98% | 0.0% | 38.65 |
-| `living_book_release_pipeline` | 396 | 72.1 pt | 29.56% | 0.0% | 38.67 |
+| `cyclic_substrate_adoption_gate` | 325 | 72.1 pt | 9.92% | 0.0% | 38.44 |
+| `living_book_release_pipeline` | 402 | 72.1 pt | 29.56% | 0.0% | 38.67 |
 
 ## Residuals
 

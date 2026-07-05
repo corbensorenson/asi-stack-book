@@ -13,16 +13,16 @@ while keeping DOCX publication and reader release approval blocked.
 
 | Evidence lane | Recorded result |
 |---|---:|
-| Rich DOCX package SHA-256 | `71ed95b7ded6f85ea94652d7c139cd1f68ed929632822d66d2db0f1b924797b8` |
-| Repaired DOCX SHA-256 | `12a33e1eb31b5e0147bc18c586b9b73b8d0b4f7bb3936aaf75dc471db78d4a14` |
-| DOCX paragraph markers | 17,387 |
+| Rich DOCX package SHA-256 | `e248469162e3a28c48a0c277980c59dc64396622b88cbc670ae8c9f6a94430c5` |
+| Repaired DOCX SHA-256 | `e5e70200ed19b58d232c315b5e6aa88a753fe95a01c6ec25e1abeede02ab2713` |
+| DOCX paragraph markers | 17,462 |
 | DOCX relationships | 286 |
 | Raw `.qmd` relationship targets | 0 |
 | Unresolved internal relationship targets | 0 |
 | Live-marker leaks | 0 |
 | Raw core-claim marker leaks | 0 |
-| LibreOffice converted document | 506-page PDF |
-| LibreOffice text checked | 1,030,310 text characters |
+| LibreOffice converted document | 512-page PDF |
+| LibreOffice text checked | 1,048,398 text characters |
 | Blank converted-page rasters | 0 |
 | Low-ink converted-page rasters | 0 |
 | Near-edge converted-page rasters | 0 |
@@ -30,7 +30,7 @@ while keeping DOCX publication and reader release approval blocked.
 | DOCX title-page minimum margin | 72.1 pt |
 | DOCX title-page maximum near-edge ink | 0.0% |
 | Final figure-artifact review | 10 figures reviewed |
-| Pages-readable text fallback | 1,107,976 text characters, 0 media entries |
+| Pages-readable text fallback | 1,126,365 text characters, 0 media entries |
 
 ## Decision
 

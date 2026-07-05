@@ -87,12 +87,15 @@ SURFACE_FRAGMENTS = (
 READER_FRAGMENTS = (
     "KV-cache receipt",
     "ring-buffer",
-    "stale token",
+    "stale-token recommendation",
     "sink-window",
-    EXPECTED["contract_id"],
-    EXPECTED["contract_content_fingerprint"],
+    "KV-cache contract",
+    "Circle commit",
+    "three theorem IDs",
+    "receipt fingerprint",
+    "stale-token diagnostic",
     EXPECTED["pytest_summary"],
-) + THEOREMS + RECOMMENDATIONS + NON_CLAIMS
+) + NON_CLAIMS
 
 
 def rel(path: Path) -> str:

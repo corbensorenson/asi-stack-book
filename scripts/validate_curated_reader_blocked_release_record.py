@@ -346,9 +346,9 @@ def main() -> None:
         errors.append("curated format inspection_summary must be an object.")
         inspection = {}
     expected_artifacts = {
-        "curated_reader_epub": ("epub", "70c48a6a2a5fb76cebee86d6e2f8123e124d3f3f585c5da8915f8033819b2aaf"),
-        "curated_reader_docx": ("docx", "71ed95b7ded6f85ea94652d7c139cd1f68ed929632822d66d2db0f1b924797b8"),
-        "curated_reader_pdf": ("pdf", "40620dcf56f207e87549eafd52b3178b36affc55732f02f8f6f57d33cc94ec54"),
+        "curated_reader_epub": ("epub", "412fadecd308acfc966e624c17aece7cc53bc4ef9f818e4f865fdb2f0ed6be28"),
+        "curated_reader_docx": ("docx", "e248469162e3a28c48a0c277980c59dc64396622b88cbc670ae8c9f6a94430c5"),
+        "curated_reader_pdf": ("pdf", "9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c"),
     }
     for record_format, (manifest_format, expected_sha) in expected_artifacts.items():
         manifest_row = inspection.get(manifest_format, {})
@@ -453,14 +453,14 @@ def main() -> None:
         errors.append("pdf_page_review_manifest summary must be an object.")
         pdf_page_summary = {}
     expected_pdf_page_review_metrics = {
-        "pdf_pages": 507,
-        "page_review_rows": 507,
-        "text_pages_checked": 507,
-        "bbox_pages_checked": 507,
-        "raster_pages_checked": 507,
-        "pages_with_text": 507,
-        "pages_with_word_boxes": 507,
-        "pages_with_raster_content": 507,
+        "pdf_pages": 511,
+        "page_review_rows": 511,
+        "text_pages_checked": 511,
+        "bbox_pages_checked": 511,
+        "raster_pages_checked": 511,
+        "pages_with_text": 511,
+        "pages_with_word_boxes": 511,
+        "pages_with_raster_content": 511,
         "failed_pages": [],
         "blank_pages": [],
         "near_edge_pages": [],
@@ -636,8 +636,8 @@ def main() -> None:
             "Reader DOCX Application Evidence Decision",
             "accepted_docx_application_evidence_for_release_preparation",
             "clears only `docx_application_review_not_completed`",
-            "506-page PDF",
-            "1,030,310 text characters",
+            "512-page PDF",
+            "1,048,398 text characters",
             "does not claim Word, LibreOffice GUI, or Google Docs approval",
             "does not approve DOCX publication",
         ],
@@ -766,7 +766,7 @@ def main() -> None:
             "script-level narration treatment",
             "clears only `narration_quality_review_not_completed`",
             "66 narration notes",
-            "1,090,866 text characters",
+            "1,089,681 text characters",
             "does not approve pronunciation",
             "does not approve an audiobook",
         ],
@@ -1144,7 +1144,7 @@ def main() -> None:
         errors.append("key_figure_pdf_layout_manifest status must remain passed_local_pdf_key_figure_layout_probe.")
     expected_pdf_layout_metrics = {
         "figure_count": 10,
-        "pdf_pages": 507,
+        "pdf_pages": 511,
         "unique_caption_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -1167,7 +1167,7 @@ def main() -> None:
         errors.append("key_figure_docx_layout_manifest status must remain passed_local_docx_key_figure_layout_probe.")
     expected_docx_layout_metrics = {
         "figure_count": 10,
-        "docx_converted_pdf_pages": 506,
+        "docx_converted_pdf_pages": 512,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -1444,11 +1444,11 @@ def main() -> None:
     docx_note = str(artifacts.get("curated_reader_docx", {}).get("notes", ""))
     for fragment in (
         str(docx_audit.get("source_sha256", "")),
-        "17,387 paragraphs",
+        "17,462 paragraphs",
         "286 relationships",
         "0 raw .qmd relationship targets",
-        "506-page PDF",
-        "1,030,310 text characters",
+        "512-page PDF",
+        "1,048,398 text characters",
         "0 blank",
         "0 low-ink",
         "0 near-edge converted-page rasters",
@@ -1467,10 +1467,10 @@ def main() -> None:
     for fragment in (
         f"{pdf_layout.get('word_boxes_checked'):,} word boxes",
         "0 out-of-bounds word boxes",
-        "507 rendered pages",
+        "511 rendered pages",
         "0 blank pages",
         "0 near-edge pages",
-        "507 nonempty text pages",
+        "511 nonempty text pages",
         "44 ordered chapter headings",
         "3 ordered appendix headings",
         "0 replacement characters",
@@ -1480,7 +1480,7 @@ def main() -> None:
         "10 key-figure caption pages",
         "165.878 pt minimum caption margin",
         "page-by-page PDF release-preparation review",
-        "507 page rows",
+        "511 page rows",
         "0 failed pages",
         "0 blank pages",
         "0 near-edge pages",
@@ -1496,7 +1496,7 @@ def main() -> None:
         "49 scripts",
         "49 ordered markers",
         "66 narration notes",
-        "1,090,866 text characters",
+        "1,089,681 text characters",
         "script-level narration treatment review",
         "clears only narration_quality_review_not_completed",
         "audio metadata review",
