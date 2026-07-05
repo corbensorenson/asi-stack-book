@@ -1,0 +1,234 @@
+{
+  "result_id": "2026-07-05-local-circle-cyclic-mixer-receipt-slice",
+  "slice_id": "circle_cyclic_mixer_receipt_slice",
+  "created_at": "2026-07-05",
+  "external_project": {
+    "name": "Circle Calculus",
+    "git_commit": "63b0f511",
+    "git_commit_full": "63b0f511d7a5bae4c6f2ab3e05fe9e793186bdf9",
+    "branch": "main",
+    "worktree_state": "clean_before_commands",
+    "public_safe_import": true
+  },
+  "mixer_fixture": {
+    "period": 8,
+    "input_values": [
+      -2,
+      2,
+      1,
+      2,
+      -2,
+      3,
+      3,
+      -2
+    ],
+    "kernel_values": [
+      2,
+      -1,
+      1,
+      0,
+      -2,
+      0,
+      0,
+      0
+    ],
+    "circulant_output": [
+      5,
+      -2,
+      -8,
+      9,
+      -1,
+      6,
+      -1,
+      -8
+    ],
+    "dense_output": [
+      5,
+      -2,
+      -8,
+      9,
+      -1,
+      6,
+      -1,
+      -8
+    ],
+    "max_abs_dense_delta": 0,
+    "dense_parameters": 64,
+    "circulant_parameters": 8,
+    "circulant_parameter_ratio": 0.125,
+    "channel_count": 128,
+    "block_size": 8,
+    "block_loads": [
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16,
+      16
+    ],
+    "dense_adapter_parameters": 2048,
+    "lora_parameters": 576,
+    "block_cyclic_parameters": 128,
+    "block_to_dense_ratio": 0.0625,
+    "ordinary_baselines": [
+      "dense_mixer",
+      "low_rank_mixer",
+      "lora_adapter",
+      "no_mixer"
+    ],
+    "contract_ready_theorem_count": 7,
+    "circle_ai_receipt_theorem_count": 7
+  },
+  "accepted_receipt": {
+    "contract_id": "CC-AI-CONTRACT-MIXER-001",
+    "kind": "circulant_block_cyclic_mixer",
+    "receipt_schema": "circle_calculus.ai_contract_acceptance_receipt.v0",
+    "schema_id": "circle_calculus.ai_contract_pack.v0",
+    "pack_content_fingerprint": "df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae",
+    "contract_content_fingerprint": "b3e3e0cf420d9e8e79a28a55ef8322f9a214c8d5a957dd8b06e5e5373c684ea5",
+    "request_content_fingerprint": "86e330bc559bb7ebdbcc9df732ce55422204c78fa00d3cf8387b50fdb4d9c83f",
+    "receipt_content_fingerprint": "46ccd26c495445039fe58ec5207c56a621e8dcfed18b5b286aed4cb4c802639d",
+    "normalized_request_fingerprint": "46f9eeaeffb23f38771157f3aea74a1694b8b4b6ab1c55ab5295729cfe1692f0",
+    "accepted": true,
+    "request_passed": true,
+    "required_theorem_ids": [
+      "AIT-T0006",
+      "AIT-T0007",
+      "AIT-T0008",
+      "AIT-T0009",
+      "AIRA-T0001",
+      "AIRA-T0002",
+      "AIRA-T0004"
+    ],
+    "required_recommendation_ids": [
+      "MIXER-AUDIT-CIRCULANT-DENSE-PARITY",
+      "MIXER-AUDIT-BLOCK-CYCLIC-PARAMETER-BUDGET"
+    ],
+    "required_recommendation_evidence_fields": [
+      "MIXER-AUDIT-CIRCULANT-DENSE-PARITY=max_abs_dense_delta",
+      "MIXER-AUDIT-BLOCK-CYCLIC-PARAMETER-BUDGET=block_to_dense_ratio"
+    ],
+    "evidence_fields": {
+      "block_to_dense_ratio": 0.0625,
+      "max_abs_dense_delta": 0
+    },
+    "planner_recommendations": [
+      {
+        "id": "MIXER-AUDIT-CIRCULANT-DENSE-PARITY",
+        "action_kind": "audit_circulant_dense_reference_parity",
+        "coverage_scope": "deterministic_circulant_fixture",
+        "status": "theorem_backed_circulant_fixture_parity",
+        "period": 8,
+        "dense_parameters": 64,
+        "circulant_parameters": 8,
+        "circulant_parameter_ratio": 0.125,
+        "max_abs_dense_delta": 0,
+        "theorem_ids": [
+          "AIT-T0006",
+          "AIT-T0007",
+          "AIT-T0008",
+          "AIT-T0009"
+        ],
+        "not_claimed": "This recommendation audits exact dense-reference parity for one deterministic circulant fixture. It is not a speed, memory, hardware-efficiency, training-stability, or model-quality proof."
+      },
+      {
+        "id": "MIXER-AUDIT-BLOCK-CYCLIC-PARAMETER-BUDGET",
+        "action_kind": "audit_block_cyclic_parameter_budget",
+        "coverage_scope": "declared_block_cyclic_adapter_fixture",
+        "status": "theorem_backed_block_cyclic_accounting_fixture",
+        "channel_count": 128,
+        "block_size": 8,
+        "dense_adapter_parameters": 2048,
+        "lora_parameters": 576,
+        "block_cyclic_parameters": 128,
+        "block_to_dense_ratio": 0.0625,
+        "theorem_ids": [
+          "AIRA-T0001",
+          "AIRA-T0002",
+          "AIRA-T0004"
+        ],
+        "not_claimed": "This recommendation exposes finite block-cyclic adapter parameter accounting for the declared fixture. It is not a LoRA replacement theorem, memory-scaling proof, hardware-efficiency proof, or model-quality claim."
+      }
+    ],
+    "theorem_count": 7
+  },
+  "circle_ai_certifier_boundary": {
+    "request_passed": true,
+    "decision_verdict": "passed",
+    "decision_assurance": "mixed_theorem_and_computation",
+    "claim_status": "proved",
+    "proof_layer_counts": {
+      "computed_fields": 7,
+      "numerical_only_fields": 0,
+      "proved_fields": 11,
+      "unsupported_fields": 4
+    },
+    "unsupported_fields": [
+      "accuracy improvement over dense layers",
+      "training speed",
+      "hardware efficiency",
+      "optimal mixer architecture"
+    ],
+    "boundary": "The passed receipt is a theorem-linked structural/accounting certificate for one deterministic circulant and block-cyclic fixture. It is not model-quality, runtime, memory-scaling, hardware-efficiency, deployment, transfer, benchmark, or ASI evidence."
+  },
+  "commands": [
+    {
+      "command": "PYTHONPATH=. python3 scripts/circulant_block_cyclic_mixer_certify.py --format json",
+      "verification_result": "pass",
+      "output_sha256": "32802064ce7f2207f2e13b1b28acb75c6f80c900c334d092f5113f0173fc5ae4",
+      "output_bytes": 7224,
+      "summary": "deterministic circulant/block-cyclic mixer contract JSON emitted"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_certify.py cyclic-mixer --format json",
+      "verification_result": "pass",
+      "output_sha256": "8537b2fea1fea31ef3d8300c14232e4b11f24aa4c383488b2c3414c1b6bd0956",
+      "output_bytes": 15556,
+      "summary": "Circle AI cyclic-mixer receipt emitted with request_passed=true"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind circulant_block_cyclic_mixer --digest --include-recommendations --include-field-metadata",
+      "verification_result": "pass",
+      "output_sha256": "050b37495c4f4110c07416bec95599ab39e200caa6e8ddaa05603bb6df4bbbbb",
+      "output_bytes": 1950,
+      "summary": "ready=True fields=9 missing=0 theorems=7 with two mixer recommendations"
+    },
+    {
+      "command": "PYTHONPATH=. python3 scripts/circle_ai_contract_ready.py --kind circulant_block_cyclic_mixer --receipt --field max_abs_dense_delta --field block_to_dense_ratio --require-theorem AIT-T0006 --require-theorem AIT-T0007 --require-theorem AIT-T0008 --require-theorem AIT-T0009 --require-theorem AIRA-T0001 --require-theorem AIRA-T0002 --require-theorem AIRA-T0004 --require-recommendation MIXER-AUDIT-CIRCULANT-DENSE-PARITY --require-recommendation MIXER-AUDIT-BLOCK-CYCLIC-PARAMETER-BUDGET --require-recommendation-evidence-field MIXER-AUDIT-CIRCULANT-DENSE-PARITY=max_abs_dense_delta --require-recommendation-evidence-field MIXER-AUDIT-BLOCK-CYCLIC-PARAMETER-BUDGET=block_to_dense_ratio",
+      "verification_result": "pass",
+      "output_sha256": "11315c4e507c3563e99811cbd0f4bc65823113d9d7c07a7cf2f2090d81e1b61e",
+      "output_bytes": 1440,
+      "summary": "strict cyclic-mixer acceptance receipt accepted with two evidence fields, seven theorem IDs, and two recommendations"
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m pytest tests/test_circulant_block_cyclic_mixer_certifier_cli.py -q",
+      "verification_result": "pass",
+      "output_sha256": "541b0292a52421d8f7f1f102d89ef653da212dd58aaaa89746ab4c856b1f8d14",
+      "output_bytes": 98,
+      "summary": "3 passed in 2.49s"
+    },
+    {
+      "command": "PYTHONPATH=. python3 -m pytest tests/test_circle_ai_contract_ready_cli.py::test_contract_ready_cli_emits_circulant_mixer_digest_recommendations -q",
+      "verification_result": "pass",
+      "output_sha256": "6a188187cc4acf92013e1fe24b04baf7dba1edd907ad7d4feecc4ff2465c741f",
+      "output_bytes": 98,
+      "summary": "1 passed in 1.47s"
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "does not promote any chapter core claim",
+    "does not create a support-state transition",
+    "does not prove cyclic-mixer model quality",
+    "does not prove runtime speed",
+    "does not prove memory scaling",
+    "does not prove hardware efficiency",
+    "does not prove training stability",
+    "does not prove deployment readiness",
+    "does not prove transfer",
+    "does not prove benchmark performance",
+    "does not prove ASI"
+  ]
+}

@@ -24,7 +24,7 @@ declared model. A circulant mixer can expose a clean law. A block-cyclic route
 can reduce parameters. A MultiCoil feature can make winding visible. Those are
 real structural facts. They are also easy to overspend.
 
-The discipline of this chapter is simple: a cyclic substrate is allowed into
+The discipline is simple: a cyclic substrate is allowed into
 the architecture as a candidate, not as a victory. It may bring a structural
 receipt, a parameter ledger, an alias diagnostic, or a cleaner evaluation
 boundary. It does not bring better model quality, longer context, faster
@@ -247,7 +247,7 @@ mixer benchmark, MLX experiment, hardware-kernel benchmark, downstream quality
 evaluation, transfer consumer, or external Circle Lean build.
 
 The concrete RoPE boundary surface is already checkable through the public
-evidence-surface validator. For this chapter, that validator preserves the
+evidence-surface validator. In this lane, that validator preserves the
 imported Circle RoPE receipt facts as diagnostic structural evidence: Circle commit `63b0f511`,
 `CC-AI-CONTRACT-ROPE-001`, certifier `theorem_count 55`, ready digest
 `fields=31 missing=0 theorems=75`, `evidence.exact_discrete_pass=true`,
@@ -256,6 +256,22 @@ fingerprints, and the ASI consumer-gate boundary. That surface does not rerun
 Circle from this repository, vendor a contract pack, prove longer usable
 context, prove model quality, prove speed, prove memory savings, prove
 hardware efficiency, or promote the chapter core claim.
+
+The concrete cyclic-mixer boundary now has the same shape. The Circle
+cyclic-mixer receipt records Circle commit `63b0f511`,
+`CC-AI-CONTRACT-MIXER-001`, and contract fingerprint
+`b3e3e0cf420d9e8e79a28a55ef8322f9a214c8d5a957dd8b06e5e5373c684ea5`.
+Its first recommendation, `MIXER-AUDIT-CIRCULANT-DENSE-PARITY`, records
+dense-reference parity for one deterministic fixture: `max_abs_dense_delta=0`,
+with theorem IDs `AIT-T0006`, `AIT-T0007`, `AIT-T0008`, and `AIT-T0009`.
+Its second recommendation, `MIXER-AUDIT-BLOCK-CYCLIC-PARAMETER-BUDGET`,
+records block-cyclic parameter accounting: `block_to_dense_ratio=0.0625`,
+with theorem IDs `AIRA-T0001`, `AIRA-T0002`, and `AIRA-T0004`. The targeted
+Circle checks are recorded as `3 passed in 2.49s` and `1 passed in 1.47s`.
+That is useful structural evidence. It does not promote any chapter core claim,
+does not create a support-state transition, and does not prove cyclic-mixer
+model quality, does not prove runtime speed, memory scaling, hardware efficiency, training
+stability, deployment readiness, transfer, benchmark performance, or ASI.
 
 The next honest packet is small but concrete: one structural receipt accepted
 for diagnostics, one quality-promotion request rejected for missing baselines,
@@ -292,7 +308,7 @@ capability reviews. Until then, cyclic mixers stay candidates.
 
 ## Proof And Test Boundary
 
-The Lean hooks for this chapter live in `AsiStackProofs.CyclicMixers`. They
+The Lean hooks for this lane live in `AsiStackProofs.CyclicMixers`. They
 prove narrow finite-record gates: a cyclic mixer claim must keep structural
 invariants separate from quality, runtime, memory, and parameter claims, and a
 cyclic substrate cannot be promoted without ordinary baselines and recorded

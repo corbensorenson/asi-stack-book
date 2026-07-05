@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-07-05 - Import Circle cyclic-mixer receipt slice
+
+- Added `python3 scripts/validate_circle_cyclic_mixer_receipt_slice.py`,
+  `docs/circle_cyclic_mixer_receipt_slice.md`, result artifact
+  `experiments/circle_cyclic_mixer_receipt_slice/results/2026-07-05-local.json`,
+  and accepted no-promotion decision
+  `evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json`.
+- The Circle cyclic-mixer structural/accounting receipt slice records local
+  external Circle commit `63b0f511`, contract `CC-AI-CONTRACT-MIXER-001`,
+  kind `circulant_block_cyclic_mixer`, theorem IDs `AIT-T0006`, `AIT-T0007`,
+  `AIT-T0008`, `AIT-T0009`, `AIRA-T0001`, `AIRA-T0002`, and `AIRA-T0004`,
+  `theorem_count=7`, recommendations
+  `MIXER-AUDIT-CIRCULANT-DENSE-PARITY` and
+  `MIXER-AUDIT-BLOCK-CYCLIC-PARAMETER-BUDGET`, strict receipt fingerprint
+  `b3e3e0cf420d9e8e79a28a55ef8322f9a214c8d5a957dd8b06e5e5373c684ea5`,
+  `max_abs_dense_delta=0`, `dense_parameters=64`,
+  `circulant_parameters=8`, `circulant_parameter_ratio=0.125`,
+  `dense_adapter_parameters=2048`, `lora_parameters=576`,
+  `block_cyclic_parameters=128`, `block_to_dense_ratio=0.0625`,
+  command-output digests, targeted Circle CLI output `3 passed in 2.49s`,
+  and targeted contract-ready output `1 passed in 1.47s`.
+- Updated the CoilRA live chapter, curated reader chapter, outline, non-core
+  evidence ledger, Appendix E, roadmap burn-down, and book gate wiring so the
+  cyclic-mixer import is visible without claiming support-state movement.
+- Boundary: this does not promote any chapter core claim, does not create a
+  support-state transition, and does not prove cyclic-mixer model quality,
+  runtime speed, memory scaling, hardware efficiency, training stability,
+  deployment readiness, transfer, benchmark performance, or ASI.
+
 ## 2026-07-05 - Import Circle sparse-attention receipt slice
 
 - Added `python3 scripts/validate_circle_sparse_attention_receipt_slice.py`,

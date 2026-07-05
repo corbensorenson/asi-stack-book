@@ -1,0 +1,108 @@
+{
+  "transition_id": "v1_x_measured.circle_cyclic_mixer_receipt.no_change",
+  "claim_id": "circle-calculus.cyclic_mixer_receipt_slice",
+  "claim_surface_refs": [
+    "docs/circle_cyclic_mixer_receipt_slice.md",
+    "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+    "editions/reader_manuscript/v1_0/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_cyclic_mixer_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_cyclic_mixer_receipt_slice.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe local external Circle cyclic-mixer receipt import only. The slice records one pinned `CC-AI-CONTRACT-MIXER-001` structural/accounting fixture at Circle commit `63b0f511`, dense-reference parity with `max_abs_dense_delta=0`, block-cyclic parameter accounting with `block_to_dense_ratio=0.0625`, seven required theorem IDs, two planner recommendations, contract fingerprint `b3e3e0cf420d9e8e79a28a55ef8322f9a214c8d5a957dd8b06e5e5373c684ea5`, command-output digests, targeted Circle CLI test output `3 passed in 2.49s`, and targeted contract-ready recommendation test output `1 passed in 1.47s`. It does not prove cyclic-mixer model quality, speed, memory scaling, hardware efficiency, training stability, deployment readiness, transfer, benchmark performance, ASI, or CoilRA chapter-core promotion.",
+  "evidence_roles": [
+    "external_project_receipt_import",
+    "circulant_dense_reference_parity_fixture",
+    "block_cyclic_parameter_accounting_fixture",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The cyclic-mixer receipt slice makes one Circle circulant/block-cyclic structural fixture concrete in the book and closes one stale 'no cyclic mixer receipt import' blocker for the CoilRA chapter. The evidence remains an external-project receipt import with no ASI-side cyclic-mixer benchmark, no ordinary dense, LoRA, RoPE, learned, recurrent, or state-space baselines with workload metrics, no hardware-kernel measurement, no model-quality result, and no independent review, so it blocks promotion rather than moving support state.",
+  "required_artifacts": [
+    "fresh public Circle replay or archived public cyclic-mixer contract pack",
+    "repository-owned command that reruns the relevant Circle cyclic-mixer proof target or verifies an archived replay bundle",
+    "ordinary dense, LoRA, RoPE, learned, recurrent, or state-space baselines where relevant",
+    "quality, runtime, memory, hardware-efficiency, and training-stability measurements for any promoted claim",
+    "deployment, fallback, and canary-route traces for any adoption claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/circle_cyclic_mixer_receipt_slice.md",
+    "experiments/circle_cyclic_mixer_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_cyclic_mixer_receipt_slice.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_cyclic_mixer_receipt_slice.md",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#coilra-multicoil-rope-and-cyclic-mixers.core",
+    "docs/book_outline.md#coilra-multicoil-rope-and-cyclic-mixers"
+  ],
+  "verification_command": "python3 scripts/validate_circle_cyclic_mixer_receipt_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "support state remains argument",
+    "support_state_effect remains blocks_promotion",
+    "max_abs_dense_delta=0 is preserved as deterministic fixture parity only",
+    "block_to_dense_ratio=0.0625 is preserved as finite parameter accounting only",
+    "does not create a support-state transition",
+    "does not create an upward support-state transition",
+    "does not prove cyclic-mixer model quality",
+    "does not prove runtime speed, memory scaling, hardware efficiency, training stability, deployment readiness, transfer, benchmark performance, or ASI",
+    "does not promote the CoilRA chapter core claim"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_cyclic_mixer_receipt_slice.md",
+    "experiments/circle_cyclic_mixer_receipt_slice/results/2026-07-05-local.json"
+  ],
+  "downgrade_triggers": [
+    "cyclic-mixer receipt-slice validator failure",
+    "receipt fingerprint drift",
+    "missing required theorem ID accepted",
+    "dense-reference parity or parameter-accounting evidence field drift",
+    "external-project receipt import described as deployed cyclic-mixer behavior",
+    "model-quality, runtime, memory-scaling, hardware-efficiency, training-stability, deployment, transfer, benchmark, ASI, or support-state promotion claimed without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed cyclic-mixer claim after a fresh public Circle replay or archived public contract pack, repository-owned proof/replay verification, ordinary dense/LoRA/RoPE/learned/recurrent/state-space baselines where relevant, quality/runtime/memory/hardware/training-stability measurements for the specific claim, deployment and fallback traces for any adoption claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one pinned local external Circle receipt import",
+    "external Circle checkout is not vendored into this public repository",
+    "no clean ASI-side CI replay of Circle",
+    "no cyclic-mixer benchmark",
+    "no MLX model experiment",
+    "no hardware-kernel benchmark",
+    "no downstream quality evaluation",
+    "no model-quality, runtime, memory-scaling, hardware-efficiency, training-stability, transfer, benchmark, deployment, or ASI measurement",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, cyclic-mixer, model-quality, runtime, hardware, benchmark, transfer, or safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no archived public Circle cyclic-mixer contract pack",
+    "no ASI-side cyclic-mixer benchmark",
+    "no workload baselines or measurements",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-circle-cyclic-mixer-receipt-slice",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote CoilRA or Circle cyclic-mixer evidence above argument",
+    "does not create a support-state transition",
+    "does not prove cyclic-mixer model quality",
+    "does not prove runtime speed, memory scaling, hardware efficiency, training stability, deployment readiness, transfer, benchmark performance, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote the CoilRA chapter core claim"
+  ]
+}
