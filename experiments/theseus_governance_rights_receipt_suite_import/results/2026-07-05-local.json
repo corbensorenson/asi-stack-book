@@ -1,0 +1,76 @@
+{
+  "artifact_refs": [
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/valid/governance_rights_receipt_suite_import.valid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/results/2026-07-05-local.json",
+    "docs/theseus_governance_rights_receipt_suite_import.md",
+    "evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json",
+    "lean/AsiStackProofs/GovernanceRights.lean"
+  ],
+  "chapter_core_support_effect": "none",
+  "claim_id": "moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import",
+  "command": "python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py",
+  "constitutional_scenario_count": 4,
+  "expected_invalid_count": 7,
+  "fixture_sha256": "bc01aefec74e5bb99f74c014bdaecc70026d673edaf834f321748dd6f6825e02",
+  "governance_scenario_count": 4,
+  "import_id": "theseus-governance-rights-receipt-suite-import-2026-07-05",
+  "lean_alignment": {
+    "checked_theorem_names": [
+      "theseus_governance_rights_receipt_suite_import_fixture_valid",
+      "theseus_governance_rights_receipt_suite_import_core_promotion_rejected",
+      "theseus_governance_rights_receipt_suite_import_legal_rights_overclaim_rejected"
+    ],
+    "fixture_def": "theseusGovernanceRightsReceiptSuiteImportFixture",
+    "module": "AsiStackProofs.GovernanceRights",
+    "proof_tag": "lean:governance.rights.theseus_receipt_suite.fixture_bridge"
+  },
+  "new_support_state": "prototype-backed",
+  "non_claims": [
+    "Governance-right receipt fixtures prove material-usability protocol shape only.",
+    "Constitutional-predicate fixtures prove record-level control semantics only.",
+    "This is not institutional governance, legal compliance, moral correctness, public benchmark transfer, or learned-generation evidence.",
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove legal rights, institutional governance, reviewer independence, export usability, safe fork execution, moral correctness, deployed runtime enforcement, clean live Project Theseus replay, safety, alignment, transfer, deployment readiness, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "old_support_state": "argument",
+  "record_counts": {
+    "artifact_graph_records": 8,
+    "claim_records": 8,
+    "constitutional_predicate_records": 4,
+    "evidence_transition_records": 8,
+    "failure_boundary_records": 8,
+    "governance_right_records": 4
+  },
+  "result_id": "2026-07-05-theseus-governance-rights-receipt-suite-import",
+  "schema_version": "asi_stack.theseus_governance_rights_receipt_suite_import.result.v0",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_commit": "1ad88a22",
+  "source_report_sha256": "a3bf2de7469cf5c2eee8459a0fdd53e707c0f1b9104e96fa859633eddb4a5fb4",
+  "summary": {
+    "artifact_graph_record_count": 8,
+    "claim_record_count": 8,
+    "constitutional_fixture_count": 4,
+    "constitutional_predicate_record_count": 4,
+    "constitutional_predicate_scenario_count": 4,
+    "evidence_transition_record_count": 8,
+    "external_inference_calls": 0,
+    "failure_boundary_record_count": 8,
+    "fallback_return_count": 0,
+    "fixture_count": 4,
+    "fork_safety_scenario_count": 1,
+    "governance_right_record_count": 4,
+    "hard_gap_count": 0,
+    "material_audit_scenario_count": 2,
+    "passed_constitutional_fixture_count": 4,
+    "passed_fixture_count": 4,
+    "portable_exit_scenario_count": 1,
+    "public_training_rows_written": 0,
+    "required_constitutional_scenario_count": 4,
+    "required_scenario_count": 4,
+    "warning_count": 0
+  },
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "valid_fixture_count": 1,
+  "validation_result": "pass"
+}

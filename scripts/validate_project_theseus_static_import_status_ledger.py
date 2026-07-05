@@ -43,6 +43,27 @@ ARTIFACT_TRANSITION = (
     / "v1_x_measured"
     / "theseus_artifact_retention_replay_import_prototype_backed.json"
 )
+GOVERNANCE_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_governance_rights_receipt_suite_import"
+    / "results"
+    / "2026-07-05-local.json"
+)
+GOVERNANCE_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_governance_rights_receipt_suite_import"
+    / "fixtures"
+    / "valid"
+    / "governance_rights_receipt_suite_import.valid.json"
+)
+GOVERNANCE_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_governance_rights_receipt_suite_import_prototype_backed.json"
+)
 
 DOCS = (
     "docs/theseus_report_import_slice.md",
@@ -50,6 +71,7 @@ DOCS = (
     "docs/theseus_support_replay_probe.md",
     "docs/theseus_public_task_bundle_import.md",
     "docs/theseus_artifact_retention_replay_import.md",
+    "docs/theseus_governance_rights_receipt_suite_import.md",
 )
 VALIDATORS = (
     "python3 scripts/validate_theseus_report.py",
@@ -58,6 +80,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_support_replay_probe.py",
     "python3 scripts/validate_theseus_public_task_bundle_import.py",
     "python3 scripts/validate_theseus_artifact_retention_replay_import.py",
+    "python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py",
 )
 
 
@@ -84,6 +107,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['static_report_imports']} sanitized static report imports, "
         f"{metrics['support_replay_count']} support replay probe, "
         f"{metrics['artifact_retention_replay_imports']} artifact-retention replay import, "
+        f"{metrics['governance_rights_receipt_imports']} governance-rights receipt import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
         f"{metrics['public_training_rows']} public training rows, "
         f"{metrics['generation_mode_count']} generation modes, "
@@ -91,7 +115,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['promotable_comparison_count']} promotable comparisons, "
         f"{metrics['expected_invalid_total']} expected-invalid controls, "
         f"{metrics['no_promotion_decisions']} accepted no-promotion decision, "
-        f"and {metrics['artifact_upward_transitions']} accepted bounded artifact-retention transition; "
+        f"{metrics['artifact_upward_transitions']} accepted bounded artifact-retention transition, "
+        f"and {metrics['governance_rights_upward_transitions']} accepted bounded governance-rights transition; "
         "clean live replay remains unclaimed. "
         "| `docs/project_theseus_static_import_status_ledger.md`; "
         "`docs/theseus_report_import_slice.md`; "
@@ -99,7 +124,9 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/theseus_support_replay_probe.md`; "
         "`docs/theseus_public_task_bundle_import.md`; "
         "`docs/theseus_artifact_retention_replay_import.md`; "
+        "`docs/theseus_governance_rights_receipt_suite_import.md`; "
         "`evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json`; "
+        "`evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json`; "
         "`evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`; "
         "`python3 scripts/validate_project_theseus_static_import_status_ledger.py` |"
     )
@@ -119,6 +146,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         ARTIFACT_RESULT,
         ARTIFACT_FIXTURE,
         ARTIFACT_TRANSITION,
+        GOVERNANCE_RESULT,
+        GOVERNANCE_FIXTURE,
+        GOVERNANCE_TRANSITION,
         *(ROOT / path for path in DOCS),
     ]
     for path in required:
@@ -138,6 +168,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     artifact_result = load_json(ARTIFACT_RESULT)
     artifact_fixture = load_json(ARTIFACT_FIXTURE)
     artifact_transition = load_json(ARTIFACT_TRANSITION)
+    governance_result = load_json(GOVERNANCE_RESULT)
+    governance_fixture = load_json(GOVERNANCE_FIXTURE)
+    governance_transition = load_json(GOVERNANCE_TRANSITION)
 
     if arch_result.get("validation_result") != "pass":
         errors.append("architecture-gate import result must pass.")
@@ -271,10 +304,69 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     ):
         errors.append("Theseus artifact-retention replay transition missing clean-live-replay non-claim.")
 
+    governance_summary = governance_fixture.get("summary", {})
+    governance_counts = governance_result.get("record_counts", {})
+    governance_boundary = governance_fixture.get("claim_boundary", {})
+    governance_safety = governance_fixture.get("public_safety_boundary", {})
+    if governance_result.get("validation_result") != "pass":
+        errors.append("Theseus governance-rights receipt suite import result must pass.")
+    if governance_result.get("expected_invalid_count") != 7:
+        errors.append("Theseus governance-rights receipt suite import must keep seven expected-invalid controls.")
+    if governance_result.get("governance_scenario_count") != 4 or governance_summary.get("passed_fixture_count") != 4:
+        errors.append("Theseus governance-rights receipt suite import must keep 4/4 governance-right fixtures.")
+    if (
+        governance_result.get("constitutional_scenario_count") != 4
+        or governance_summary.get("passed_constitutional_fixture_count") != 4
+    ):
+        errors.append("Theseus governance-rights receipt suite import must keep 4/4 constitutional fixtures.")
+    if governance_result.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus governance-rights receipt suite import must remain prototype-backed.")
+    if governance_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus governance-rights receipt suite import must preserve chapter_core_support_effect none.")
+    if governance_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus governance-rights receipt suite import must preserve dirty-at-import boundary.")
+    for field in (
+        "chapter_core_promotion_claimed",
+        "constitutional_chapter_core_promotion_claimed",
+        "legal_rights_claimed",
+        "institutional_governance_claimed",
+        "moral_correctness_claimed",
+        "reviewer_independence_claimed",
+        "deployed_runtime_enforcement_claimed",
+        "clean_live_theseus_replay_claimed",
+    ):
+        if governance_boundary.get(field) is not False:
+            errors.append(f"Theseus governance-rights receipt suite import must not overclaim {field}.")
+    if (
+        governance_safety.get("public_training_rows_written") != 0
+        or governance_safety.get("external_inference_calls") != 0
+        or governance_safety.get("fallback_return_count") != 0
+    ):
+        errors.append("Theseus governance-rights receipt suite import must keep zero public training rows, external inference calls, and fallbacks.")
+    for field, expected in (
+        ("governance_right_records", 4),
+        ("constitutional_predicate_records", 4),
+        ("evidence_transition_records", 8),
+        ("artifact_graph_records", 8),
+        ("failure_boundary_records", 8),
+    ):
+        if governance_counts.get(field) != expected:
+            errors.append(f"Theseus governance-rights receipt suite import record count drifted for {field}.")
+    if governance_transition.get("review_status") != "accepted":
+        errors.append("Theseus governance-rights receipt suite transition must remain accepted.")
+    if governance_transition.get("transition_effect") != "upward":
+        errors.append("Theseus governance-rights receipt suite transition_effect must remain upward.")
+    if governance_transition.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus governance-rights receipt suite transition must remain prototype-backed.")
+    transition_nonclaims = " ".join(str(item) for item in governance_transition.get("non_claims", []))
+    if "does not prove legal rights" not in transition_nonclaims:
+        errors.append("Theseus governance-rights receipt suite transition missing legal-rights non-claim.")
+
     metrics = {
         "static_report_imports": 2,
         "support_replay_count": 1,
         "artifact_retention_replay_imports": 1,
+        "governance_rights_receipt_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
         "support_replay_tracked_artifacts": len(support_replay.get("tracked_artifacts", [])),
         "architecture_gate_count": arch_result.get("accepted_gate_count"),
@@ -310,10 +402,20 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "artifact_compression_ratio": artifact_result.get("compression_ratio_observed_not_benchmarked"),
         "artifact_expected_invalid": artifact_result.get("expected_invalid_count"),
         "artifact_upward_transitions": 1,
+        "governance_rights_expected_invalid": governance_result.get("expected_invalid_count"),
+        "governance_rights_scenarios": governance_result.get("governance_scenario_count"),
+        "governance_rights_constitutional_scenarios": governance_result.get("constitutional_scenario_count"),
+        "governance_rights_records": governance_counts.get("governance_right_records"),
+        "governance_rights_predicate_records": governance_counts.get("constitutional_predicate_records"),
+        "governance_rights_evidence_transition_records": governance_counts.get("evidence_transition_records"),
+        "governance_rights_artifact_graph_records": governance_counts.get("artifact_graph_records"),
+        "governance_rights_failure_boundary_records": governance_counts.get("failure_boundary_records"),
+        "governance_rights_upward_transitions": 1,
         "expected_invalid_total": arch_result.get("expected_invalid_count", 0)
         + gen_result.get("expected_invalid_count", 0)
         + task_result.get("expected_invalid_count", 0)
-        + artifact_result.get("expected_invalid_count", 0),
+        + artifact_result.get("expected_invalid_count", 0)
+        + governance_result.get("expected_invalid_count", 0),
         "no_promotion_decisions": 1,
         "source_commit_short": str(source_project.get("commit", ""))[:8],
     }
@@ -337,6 +439,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Sanitized static report imports | {metrics['static_report_imports']} |",
             f"| Support replay probes | {metrics['support_replay_count']} |",
             f"| Artifact-retention replay imports | {metrics['artifact_retention_replay_imports']} |",
+            f"| Governance-rights receipt imports | {metrics['governance_rights_receipt_imports']} |",
             f"| Replayed validators in support probe | {metrics['support_replay_commands']} |",
             f"| Support replay tracked artifacts | {metrics['support_replay_tracked_artifacts']} |",
             f"| Architecture gates passed | {metrics['architecture_gate_passed']} / {metrics['architecture_gate_count']} |",
@@ -352,6 +455,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Expected-invalid controls | {metrics['expected_invalid_total']} |",
             f"| Accepted no-promotion decisions | {metrics['no_promotion_decisions']} |",
             f"| Accepted bounded artifact-retention transitions | {metrics['artifact_upward_transitions']} |",
+            f"| Accepted bounded governance-rights transitions | {metrics['governance_rights_upward_transitions']} |",
             "",
             "## Status-Page Row",
             "",
@@ -366,6 +470,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json` is the accepted no-promotion decision: it blocks clean-live-replay, model-quality, benchmark-superiority, generation-speed, useful-solution-per-second, support-state, deployment, self-evolution, and chapter-core promotion claims.",
             f"- `docs/theseus_artifact_retention_replay_import.md` records one sanitized artifact-retention replay import with {metrics['artifact_payload_bytes']} replayed payload bytes, {metrics['artifact_archived_bytes']} archived bytes, observed ratio {metrics['artifact_compression_ratio']} not benchmarked, one compressed-artifact record, one proof-contract receipt, one artifact-graph record, one storage evidence-transition record, and {metrics['artifact_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import`; it does not prove clean live Project Theseus replay and does not promote the Project Theseus chapter core claim.",
+            f"- `docs/theseus_governance_rights_receipt_suite_import.md` records one sanitized governance-rights receipt suite import with {metrics['governance_rights_scenarios']} governance scenarios, {metrics['governance_rights_constitutional_scenarios']} constitutional-predicate scenarios, {metrics['governance_rights_records']} governance-right records, {metrics['governance_rights_predicate_records']} constitutional-predicate records, {metrics['governance_rights_evidence_transition_records']} evidence-transition records, {metrics['governance_rights_artifact_graph_records']} artifact-graph records, {metrics['governance_rights_failure_boundary_records']} failure-boundary records, and {metrics['governance_rights_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, deployed governance, clean live Project Theseus replay, or any chapter core claim.",
             "",
             "## Non-Claim Boundary",
             "",
@@ -374,6 +480,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "- This ledger does not copy private Project Theseus payloads, prompts, tests, solutions, candidate code, traces, score labels, checkpoints, or training rows into this repository.",
             "- This ledger does not promote any chapter core claim above `argument` and does not create a chapter-core upward support-state transition.",
             "- The artifact-retention replay import creates only a bounded non-core support transition; it does not prove deployed residual-ledger storage, deployed artifact-graph behavior, clean live Project Theseus replay, model quality, benchmark performance, safety, alignment, deployment readiness, or ASI.",
+            "- The governance-rights receipt suite import creates only a bounded non-core support transition; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed governance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "",
             "## Validation Errors",
             "",

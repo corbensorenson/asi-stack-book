@@ -1,0 +1,10 @@
+{
+  "case_id": "dirty_checkout_clean_overclaim",
+  "base_report": "experiments/theseus_governance_rights_receipt_suite_import/fixtures/valid/governance_rights_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "source_checkout_state",
+    "value": "clean"
+  },
+  "expected_error_fragment": "source_checkout_state must preserve dirty_at_import_review"
+}
+

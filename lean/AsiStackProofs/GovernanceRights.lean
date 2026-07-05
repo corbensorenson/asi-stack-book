@@ -577,4 +577,141 @@ theorem complete_governance_right_lifecycle_allows_transition :
     } = GovernanceRightLifecycleRoute.allowContestableTransition := by
   simp [GovernanceRightLifecycleRouteFor]
 
+structure TheseusGovernanceRightsReceiptSuiteSummary where
+  triggerGreen : Bool
+  governanceFixtureCount : Nat
+  governancePassedCount : Nat
+  constitutionalFixtureCount : Nat
+  constitutionalPassedCount : Nat
+  governanceRightRecordCount : Nat
+  constitutionalPredicateRecordCount : Nat
+  evidenceTransitionRecordCount : Nat
+  artifactGraphRecordCount : Nat
+  failureBoundaryRecordCount : Nat
+  publicTrainingRowsWritten : Nat
+  externalInferenceCalls : Nat
+  fallbackReturnCount : Nat
+  hardGapCount : Nat
+  warningCount : Nat
+  rawPrivatePayloadCopied : Bool
+  pathFieldsRedacted : Bool
+  chapterCorePromotionClaimed : Bool
+  constitutionalChapterCorePromotionClaimed : Bool
+  legalRightsClaimed : Bool
+  institutionalGovernanceClaimed : Bool
+  moralCorrectnessClaimed : Bool
+  reviewerIndependenceClaimed : Bool
+  deployedRuntimeEnforcementClaimed : Bool
+  cleanLiveTheseusReplayClaimed : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def TheseusGovernanceRightsReceiptSuiteCarriesRecords
+    (summary : TheseusGovernanceRightsReceiptSuiteSummary) : Prop :=
+  summary.triggerGreen = true ∧
+    summary.governanceFixtureCount = 4 ∧
+      summary.governancePassedCount = 4 ∧
+        summary.constitutionalFixtureCount = 4 ∧
+          summary.constitutionalPassedCount = 4 ∧
+            summary.governanceRightRecordCount = 4 ∧
+              summary.constitutionalPredicateRecordCount = 4 ∧
+                summary.evidenceTransitionRecordCount = 8 ∧
+                  summary.artifactGraphRecordCount = 8 ∧
+                    summary.failureBoundaryRecordCount = 8
+
+def TheseusGovernanceRightsReceiptSuitePublicSafe
+    (summary : TheseusGovernanceRightsReceiptSuiteSummary) : Prop :=
+  summary.publicTrainingRowsWritten = 0 ∧
+    summary.externalInferenceCalls = 0 ∧
+      summary.fallbackReturnCount = 0 ∧
+        summary.hardGapCount = 0 ∧
+          summary.warningCount = 0 ∧
+            summary.rawPrivatePayloadCopied = false ∧
+              summary.pathFieldsRedacted = true
+
+def TheseusGovernanceRightsReceiptSuitePreservesBoundaries
+    (summary : TheseusGovernanceRightsReceiptSuiteSummary) : Prop :=
+  summary.chapterCorePromotionClaimed = false ∧
+    summary.constitutionalChapterCorePromotionClaimed = false ∧
+      summary.legalRightsClaimed = false ∧
+        summary.institutionalGovernanceClaimed = false ∧
+          summary.moralCorrectnessClaimed = false ∧
+            summary.reviewerIndependenceClaimed = false ∧
+              summary.deployedRuntimeEnforcementClaimed = false ∧
+                summary.cleanLiveTheseusReplayClaimed = false ∧
+                  summary.nonClaimBoundaryRecorded = true
+
+def TheseusGovernanceRightsReceiptSuiteImportValid
+    (summary : TheseusGovernanceRightsReceiptSuiteSummary) : Prop :=
+  TheseusGovernanceRightsReceiptSuiteCarriesRecords summary ∧
+    TheseusGovernanceRightsReceiptSuitePublicSafe summary ∧
+      TheseusGovernanceRightsReceiptSuitePreservesBoundaries summary
+
+def theseusGovernanceRightsReceiptSuiteImportFixture :
+    TheseusGovernanceRightsReceiptSuiteSummary := {
+  triggerGreen := true
+  governanceFixtureCount := 4
+  governancePassedCount := 4
+  constitutionalFixtureCount := 4
+  constitutionalPassedCount := 4
+  governanceRightRecordCount := 4
+  constitutionalPredicateRecordCount := 4
+  evidenceTransitionRecordCount := 8
+  artifactGraphRecordCount := 8
+  failureBoundaryRecordCount := 8
+  publicTrainingRowsWritten := 0
+  externalInferenceCalls := 0
+  fallbackReturnCount := 0
+  hardGapCount := 0
+  warningCount := 0
+  rawPrivatePayloadCopied := false
+  pathFieldsRedacted := true
+  chapterCorePromotionClaimed := false
+  constitutionalChapterCorePromotionClaimed := false
+  legalRightsClaimed := false
+  institutionalGovernanceClaimed := false
+  moralCorrectnessClaimed := false
+  reviewerIndependenceClaimed := false
+  deployedRuntimeEnforcementClaimed := false
+  cleanLiveTheseusReplayClaimed := false
+  nonClaimBoundaryRecorded := true
+}
+
+theorem theseus_governance_rights_receipt_suite_import_fixture_valid :
+    TheseusGovernanceRightsReceiptSuiteImportValid
+      theseusGovernanceRightsReceiptSuiteImportFixture := by
+  simp [
+    TheseusGovernanceRightsReceiptSuiteImportValid,
+    TheseusGovernanceRightsReceiptSuiteCarriesRecords,
+    TheseusGovernanceRightsReceiptSuitePublicSafe,
+    TheseusGovernanceRightsReceiptSuitePreservesBoundaries,
+    theseusGovernanceRightsReceiptSuiteImportFixture,
+  ]
+
+theorem theseus_governance_rights_receipt_suite_import_core_promotion_rejected :
+    ¬ TheseusGovernanceRightsReceiptSuiteImportValid
+      { theseusGovernanceRightsReceiptSuiteImportFixture with
+        chapterCorePromotionClaimed := true } := by
+  intro valid
+  simp [
+    TheseusGovernanceRightsReceiptSuiteImportValid,
+    TheseusGovernanceRightsReceiptSuiteCarriesRecords,
+    TheseusGovernanceRightsReceiptSuitePublicSafe,
+    TheseusGovernanceRightsReceiptSuitePreservesBoundaries,
+    theseusGovernanceRightsReceiptSuiteImportFixture,
+  ] at valid
+
+theorem theseus_governance_rights_receipt_suite_import_legal_rights_overclaim_rejected :
+    ¬ TheseusGovernanceRightsReceiptSuiteImportValid
+      { theseusGovernanceRightsReceiptSuiteImportFixture with
+        legalRightsClaimed := true } := by
+  intro valid
+  simp [
+    TheseusGovernanceRightsReceiptSuiteImportValid,
+    TheseusGovernanceRightsReceiptSuiteCarriesRecords,
+    TheseusGovernanceRightsReceiptSuitePublicSafe,
+    TheseusGovernanceRightsReceiptSuitePreservesBoundaries,
+    theseusGovernanceRightsReceiptSuiteImportFixture,
+  ] at valid
+
 end AsiStackProofs.GovernanceRights

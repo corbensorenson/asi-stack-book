@@ -1,0 +1,106 @@
+{
+  "schema_version": "asi_stack.theseus_governance_rights_receipt_suite_import.v0",
+  "import_id": "theseus-governance-rights-receipt-suite-import-2026-07-05",
+  "source_project": "Project Theseus / Theseus-Hive",
+  "source_report": "reports/governance_rights_receipt_suite.json",
+  "source_report_created_utc": "2026-06-26T05:18:39.752187Z",
+  "source_commit": "1ad88a22",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_report_sha256": "a3bf2de7469cf5c2eee8459a0fdd53e707c0f1b9104e96fa859633eddb4a5fb4",
+  "raw_report_copied": false,
+  "private_payload_copied": false,
+  "private_path_fields_redacted": true,
+  "sanitized_for_public_repo": true,
+  "policy": "project_theseus_governance_rights_receipt_suite_v1",
+  "trigger_state": "GREEN",
+  "summary": {
+    "artifact_graph_record_count": 8,
+    "claim_record_count": 8,
+    "constitutional_fixture_count": 4,
+    "constitutional_predicate_record_count": 4,
+    "constitutional_predicate_scenario_count": 4,
+    "evidence_transition_record_count": 8,
+    "external_inference_calls": 0,
+    "failure_boundary_record_count": 8,
+    "fallback_return_count": 0,
+    "fixture_count": 4,
+    "fork_safety_scenario_count": 1,
+    "governance_right_record_count": 4,
+    "hard_gap_count": 0,
+    "material_audit_scenario_count": 2,
+    "passed_constitutional_fixture_count": 4,
+    "passed_fixture_count": 4,
+    "portable_exit_scenario_count": 1,
+    "public_training_rows_written": 0,
+    "required_constitutional_scenario_count": 4,
+    "required_scenario_count": 4,
+    "warning_count": 0
+  },
+  "record_counts": {
+    "artifact_graph_records": 8,
+    "claim_records": 8,
+    "constitutional_predicate_records": 4,
+    "evidence_transition_records": 8,
+    "failure_boundary_records": 8,
+    "governance_right_records": 4
+  },
+  "governance_right_scenarios": [
+    "complete_audit_response",
+    "justified_redaction_with_appeal",
+    "exit_export_with_portable_state",
+    "fork_denied_safety_obligations"
+  ],
+  "constitutional_predicate_scenarios": [
+    "least_sufficient_power_prefers_low_power_route",
+    "predicate_conflict_routes_to_review",
+    "constitutional_migration_requires_record",
+    "self_modification_weakening_rejected"
+  ],
+  "governance_right_types": [
+    "audit",
+    "audit_redaction",
+    "exit",
+    "fork"
+  ],
+  "constitutional_predicate_ids": [
+    "predicate.least_sufficient_power.v1",
+    "predicate.conflict_review.v1",
+    "predicate.constitutional_migration.v1",
+    "predicate.self_modification_freeze.v1"
+  ],
+  "claim_boundary": {
+    "claim_id": "moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import",
+    "old_support_state": "argument",
+    "new_support_state": "prototype-backed",
+    "transition_effect": "upward",
+    "chapter_core_support_effect": "none",
+    "support_state_effect": "eligible_for_bounded_evidence_review",
+    "chapter_core_promotion_claimed": false,
+    "constitutional_chapter_core_promotion_claimed": false,
+    "legal_rights_claimed": false,
+    "institutional_governance_claimed": false,
+    "moral_correctness_claimed": false,
+    "reviewer_independence_claimed": false,
+    "deployed_runtime_enforcement_claimed": false,
+    "clean_live_theseus_replay_claimed": false
+  },
+  "public_safety_boundary": {
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0,
+    "raw_private_payloads_exported": false,
+    "public_prompts_tests_solutions_traces_or_score_labels_exported": false,
+    "model_artifacts_or_checkpoints_exported": false
+  },
+  "hard_gaps": [],
+  "warnings": [],
+  "non_claims": [
+    "Governance-right receipt fixtures prove material-usability protocol shape only.",
+    "Constitutional-predicate fixtures prove record-level control semantics only.",
+    "This is not institutional governance, legal compliance, moral correctness, public benchmark transfer, or learned-generation evidence.",
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove legal rights, institutional governance, reviewer independence, export usability, safe fork execution, moral correctness, deployed runtime enforcement, clean live Project Theseus replay, safety, alignment, transfer, deployment readiness, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}
+

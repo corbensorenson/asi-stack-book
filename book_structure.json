@@ -1935,6 +1935,13 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean route theorems; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim",
               "status": "implemented in AsiStackProofs.GovernanceRights; no deployed governance-right behavior claim"
+            },
+            {
+              "name": "Theseus governance-rights receipt suite import",
+              "purpose": "Check a sanitized Project Theseus receipt-suite import for governance-right fixture counts, constitutional-predicate fixture counts, governance-right and constitutional-predicate record counts, public-safety boundaries, expected-invalid overclaim controls, and non-claims.",
+              "implementation_status": "implemented",
+              "result_status": "passing via python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py; narrow import claim only is prototype-backed; no legal-rights, institutional-governance, moral-correctness, reviewer-independence, export-usability, fork-safety, deployed-governance, clean-live-Theseus-replay, or chapter-core-promotion claim",
+              "status": "implemented by bounded Theseus governance-rights receipt suite import; no chapter-core support-state promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ValueConflict; AsiStackProofs.GovernanceRights",
@@ -1973,6 +1980,12 @@
               "tag": "lean:governance.rights.failure_blocks_promotion",
               "module": "AsiStackProofs.GovernanceRights",
               "target": "A transition that removes a protected right is rejected or marked invalid.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:governance.rights.theseus_receipt_suite.fixture_bridge",
+              "module": "AsiStackProofs.GovernanceRights",
+              "target": "A sanitized Project Theseus governance-rights receipt-suite import records fixture, predicate, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core and legal-rights overclaims.",
               "status": "implemented"
             }
           ],

@@ -1,0 +1,10 @@
+{
+  "case_id": "reviewer_independence_overclaim",
+  "base_report": "experiments/theseus_governance_rights_receipt_suite_import/fixtures/valid/governance_rights_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "claim_boundary.reviewer_independence_claimed",
+    "value": true
+  },
+  "expected_error_fragment": "reviewer_independence_claimed must remain false"
+}
+

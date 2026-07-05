@@ -31,6 +31,7 @@ EXPECTED_NON_CORE = {
     "circle-calculus.external_rope_receipt_replay": "prototype-backed",
     "compact-generative-systems.compact_gvr_receipt_slice": "synthetic-test-backed",
     "project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import": "prototype-backed",
+    "moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import": "prototype-backed",
 }
 
 REQUIRED_LINKS = [
@@ -166,7 +167,7 @@ def assert_surface(
         f"{sources} public-safe records",
         f"{chapters}/{chapters} chapters externally positioned",
         "0 explicit external-baseline exceptions",
-        "Seven narrow non-core transitions are accepted",
+        "Eight narrow non-core transitions are accepted",
         f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions",
         f"{high} high-priority",
         f"{medium} medium-priority",
@@ -191,8 +192,8 @@ def assert_surface(
         if phrase not in text:
             errors.append(f"{name} missing non-claim boundary: {phrase}")
 
-    if "seven narrow non-core transitions are accepted" not in text.lower():
-        errors.append(f"{name} missing current seven-transition count")
+    if "eight narrow non-core transitions are accepted" not in text.lower():
+        errors.append(f"{name} missing current eight-transition count")
     if f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions" not in text:
         errors.append(f"{name} missing current no-promotion side-lane count")
 

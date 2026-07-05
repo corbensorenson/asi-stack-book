@@ -12,13 +12,13 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 202 |
+| Proof targets in manifest | 203 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 1002 |
+| Theorem declarations classified | 1005 |
 | Direct/projection-style theorem declarations | 184 |
-| Derived/decomposed theorem declarations | 814 |
+| Derived/decomposed theorem declarations | 817 |
 | Unknown or mixed theorem declarations | 4 |
-| Safety-critical theorem declarations | 103 |
+| Safety-critical theorem declarations | 106 |
 | Safety-critical direct/projection declarations | 11 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -32,7 +32,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 |---|---|---:|---:|---:|---:|---:|---|
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 3 | 23 | 2 | 21 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
@@ -73,7 +73,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 5 | 38 | 7 | 31 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 4 | 25 | 2 | 23 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 4 | 12 | 3 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 15 | 3 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -529,6 +529,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernanceRights.lean` | `redaction_without_appeal_requests_redaction_appeal` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `replacement_without_rights_receipts_preserves_obligations` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `support_change_without_evidence_transition_requests_governance_evidence` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_core_promotion_rejected` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_fixture_valid` | derived_or_decomposed | yes | uses simp |
+| `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_legal_rights_overclaim_rejected` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `transition_removing_protected_right_is_rejected_or_invalid` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/IntentContracts.lean` | `ambiguous_intent_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `authority_widening_requests_review` | derived_or_decomposed | no | uses simp, unfold |

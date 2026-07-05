@@ -1,0 +1,110 @@
+{
+  "transition_id": "v1_x_measured.theseus_governance_rights_receipt_suite_import.prototype_backed",
+  "claim_id": "moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import",
+  "claim_surface_refs": [
+    "docs/theseus_governance_rights_receipt_suite_import.md",
+    "chapters/moral-uncertainty-and-value-conflict.qmd",
+    "editions/reader_manuscript/v1_0/chapters/moral-uncertainty-and-value-conflict.qmd",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/valid/governance_rights_receipt_suite_import.valid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_governance_rights_receipt_suite_import.py",
+    "lean/AsiStackProofs/GovernanceRights.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "prototype-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded Project Theseus governance-rights receipt-suite import moves to prototype-backed: a sanitized public-safe fixture records a GREEN local Theseus report with 4/4 passed governance fixtures, 4/4 passed constitutional-predicate fixtures, 4 governance-right records, 4 constitutional-predicate records, 8 evidence-transition records, 8 artifact-graph records, 8 failure-boundary records, zero public training rows, zero external inference calls, and seven expected-invalid controls. This does not promote the Moral Uncertainty and Contestable Governance chapter core claim, the Constitutional Alignment chapter core claim, legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed runtime enforcement, clean live Project Theseus replay, safety, alignment, transfer, deployment readiness, or ASI.",
+  "evidence_roles": [
+    "external_project_prototype_report_import",
+    "sanitized_public_fixture",
+    "governance_right_receipt_summary",
+    "constitutional_predicate_record_summary",
+    "artifact_graph_record_summary",
+    "expected_invalid_controls",
+    "lean_python_fixture_alignment",
+    "no_chapter_core_promotion_boundary"
+  ],
+  "transition_reason": "The imported Theseus report records a concrete governance-rights receipt suite rather than only a proposed governance vocabulary: audit, redaction appeal, exit, and fork-safety scenarios pass; constitutional-predicate scenarios for least sufficient power, conflict review, constitutional migration, and self-modification weakening are recorded; and the ASI Stack repository validates only a sanitized public-safe summary with overclaim controls. The support movement is therefore limited to this non-core import claim and remains prototype-backed rather than empirical-test-backed or chapter-core evidence.",
+  "required_artifacts": [
+    "sanitized public-safe Theseus governance-rights receipt fixture",
+    "source report digest",
+    "governance-right and constitutional-predicate scenario counts",
+    "public-safety redaction boundary",
+    "negative controls for source hash mismatch, private-payload copying, support promotion, legal-rights overclaim, reviewer-independence overclaim, training-row leakage, and clean-checkout overclaim",
+    "finite Lean fixture alignment",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/theseus_governance_rights_receipt_suite_import.md",
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/valid/governance_rights_receipt_suite_import.valid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_governance_rights_receipt_suite_import.py",
+    "lean/AsiStackProofs/GovernanceRights.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/theseus_governance_rights_receipt_suite_import.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/G_corben_source_corpus.qmd#field_of_god_ai_constitution",
+    "appendices/G_corben_source_corpus.qmd#coherence_exchange",
+    "docs/book_outline.md#moral-uncertainty-and-value-conflict"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "source report hash mismatch is rejected",
+    "private payload copying is rejected",
+    "chapter-core promotion overclaim is rejected",
+    "legal-rights overclaim is rejected",
+    "reviewer-independence overclaim is rejected",
+    "public training row leakage is rejected",
+    "clean-checkout overclaim is rejected",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/invalid/private_payload_copied.invalid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/invalid/support_promotion_overclaim.invalid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/invalid/legal_rights_overclaim.invalid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/invalid/reviewer_independence_overclaim.invalid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/invalid/training_rows_leak.invalid.json",
+    "experiments/theseus_governance_rights_receipt_suite_import/fixtures/invalid/dirty_checkout_clean_overclaim.invalid.json"
+  ],
+  "downgrade_triggers": [
+    "the sanitized fixture no longer validates against the recorded source report digest, source checkout boundary, scenario counts, record counts, redaction boundary, or public-safety counts",
+    "a source hash mismatch, private payload copy, support promotion, legal-rights overclaim, reviewer-independence overclaim, public training row leak, or clean-checkout overclaim is accepted as valid",
+    "the imported report is described as legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed runtime enforcement, clean live Project Theseus replay, safety, ASI, or chapter-core evidence",
+    "future public dependency policy requires archived raw report publication and this record remains a digest-only sanitized summary"
+  ],
+  "promotion_burden": "Move beyond this bounded prototype-backed import only after a public-safe archived Theseus report bundle or clean live replay is available, raw-private payload publication boundaries are resolved, governance-right user-facing artifacts can be externally inspected, reviewer independence is recorded, export and fork usability are tested separately, institutional/legal/moral claims are separately justified, residuals and non-claims are preserved, and independent review is recorded with a separate accepted transition.",
+  "limitations": [
+    "sanitized digest-and-count import only",
+    "raw Theseus report and private payloads are not copied into this public repository",
+    "source checkout was dirty at import review",
+    "local maintainer-agent review only",
+    "does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, or deployed runtime enforcement",
+    "does not prove clean live Project Theseus replay",
+    "does not prove safety, alignment, transfer, deployment readiness, benchmark performance, model quality, learned generation, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent external audit, Project Theseus reviewer, governance-rights reviewer, legal reviewer, institutional-governance reviewer, moral-philosophy reviewer, security auditor, or safety auditor",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-theseus-governance-rights-receipt-suite",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed runtime enforcement, clean live Project Theseus replay, safety, alignment, transfer, deployment readiness, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}
+

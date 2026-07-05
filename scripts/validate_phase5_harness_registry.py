@@ -162,9 +162,9 @@ def main() -> None:
     status_text = shared_text[STATUS]
     for fragment in (
         "docs/test_harness_status_ledger.md",
-        "68 wired checks",
+        "69 wired checks",
         "22 Phase 5 registry harnesses",
-        "46 chapter-specific/support book-gate checks",
+        "47 chapter-specific/support book-gate checks",
     ):
         if fragment not in status_text:
             errors.append(f"{rel(STATUS)} missing compact harness-ledger fragment: {fragment}")

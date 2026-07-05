@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-07-05 - Import Theseus governance-rights receipt suite
+
+- Added `python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py`,
+  `docs/theseus_governance_rights_receipt_suite_import.md`, the public-safe
+  fixture set under
+  `experiments/theseus_governance_rights_receipt_suite_import/`, result
+  artifact
+  `experiments/theseus_governance_rights_receipt_suite_import/results/2026-07-05-local.json`,
+  Lean bridge `lean:governance.rights.theseus_receipt_suite.fixture_bridge`,
+  and accepted bounded transition
+  `evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json`.
+- The Theseus governance-rights receipt suite import records 4/4
+  governance-right fixtures, 4/4 constitutional-predicate fixtures, four
+  governance-right records, four constitutional-predicate records, eight
+  evidence-transition records, eight artifact-graph records, eight
+  failure-boundary records, zero public training rows, zero external inference
+  calls, and seven expected-invalid controls for source hash mismatch, private
+  payload copying, support promotion, legal-rights overclaim,
+  reviewer-independence overclaim, training-row leakage, and clean-checkout
+  overclaim.
+- Updated the Moral Uncertainty and Contestable Governance live and curated
+  reader chapters, outline, manifest proof/test hooks, Appendix E, non-core
+  evidence ledger, Project Theseus static import status ledger, public trust
+  surfaces, accepted-transition audit, and book validation wiring so
+  `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`
+  moves from `argument` to `prototype-backed`.
+- Boundary: this does not prove legal rights, institutional governance, moral
+  correctness, reviewer independence, export usability, safe fork execution,
+  deployed runtime enforcement, clean live Project Theseus replay, safety,
+  alignment, transfer, deployment readiness, ASI, or any chapter core claim
+  above `argument`.
+
 ## 2026-07-05 - Archive Circle contract pack evidence slice
 
 - Added `python3 scripts/validate_circle_contract_pack_archive.py`,
@@ -288,8 +320,8 @@
   do not clear missing accessibility review, missing audio routes to audio
   review, missing approval routes to release approval, and support-promotion
   overclaims are rejected.
-- Current proof-depth snapshot: 202 proof targets, 54 Lean modules, 1002 theorem
-  declarations, 814 derived/decomposed, 184 direct/projection, 4 unknown/mixed,
+- Current proof-depth snapshot: 203 proof targets, 54 Lean modules, 1005 theorem
+  declarations, 817 derived/decomposed, 184 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 - Wired the bridge into `validate_book.py`, `docs/book_outline.md`,
   `book_structure.json`, and the v1.x roadmap so future proof/evidence runs see

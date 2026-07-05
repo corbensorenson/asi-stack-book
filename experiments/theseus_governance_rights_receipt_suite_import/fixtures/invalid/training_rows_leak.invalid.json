@@ -1,0 +1,10 @@
+{
+  "case_id": "training_rows_leak",
+  "base_report": "experiments/theseus_governance_rights_receipt_suite_import/fixtures/valid/governance_rights_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "public_safety_boundary.public_training_rows_written",
+    "value": 1
+  },
+  "expected_error_fragment": "public_training_rows_written must be 0"
+}
+

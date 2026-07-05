@@ -1,0 +1,10 @@
+{
+  "case_id": "legal_rights_overclaim",
+  "base_report": "experiments/theseus_governance_rights_receipt_suite_import/fixtures/valid/governance_rights_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "claim_boundary.legal_rights_claimed",
+    "value": true
+  },
+  "expected_error_fragment": "legal_rights_claimed must remain false"
+}
+

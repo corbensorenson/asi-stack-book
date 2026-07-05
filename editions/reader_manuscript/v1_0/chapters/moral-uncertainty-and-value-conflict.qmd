@@ -218,6 +218,18 @@ synthetic example; it does not prove moral correctness, legal rights, reviewer
 independence, export usability, fork safety, deployed governance, or support
 state promotion.
 
+There is also a narrow Project Theseus implementation-reference import for the
+same boundary. The Theseus governance-rights receipt suite import,
+`moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`,
+is validated by `python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py`.
+It records a public-safe summary of four governance-right fixtures, four
+constitutional-predicate fixtures, governance-right and predicate records,
+artifact-graph records, evidence-transition records, and seven rejected
+overclaim controls. That moves only the import claim to `prototype-backed`.
+It does not prove legal rights, institutional governance, moral correctness,
+reviewer independence, export usability, fork safety, deployed runtime
+enforcement, clean live Project Theseus replay, or the chapter core claim.
+
 ## Interfaces
 
 Moral uncertainty travels with the plan as a Value Conflict Record.

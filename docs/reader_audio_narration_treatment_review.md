@@ -31,8 +31,8 @@ This does not approve pronunciation, does not create MP3, M4B, or audio-embedded
 | Chapter-marker rows | 49 |
 | Untimecoded chapter-marker rows | 49 |
 | Narration notes | 66 narration notes |
-| Text characters checked | 1,079,841 text characters |
-| Word tokens checked | 144,553 |
+| Text characters checked | 1,086,253 text characters |
+| Word tokens checked | 145,418 |
 | Live-marker hits | 0 |
 | Raw core-claim marker hits | 0 |
 | Replacement characters | 0 |

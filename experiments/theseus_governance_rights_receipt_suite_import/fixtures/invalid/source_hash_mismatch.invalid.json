@@ -1,0 +1,10 @@
+{
+  "case_id": "source_hash_mismatch",
+  "base_report": "experiments/theseus_governance_rights_receipt_suite_import/fixtures/valid/governance_rights_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "source_report_sha256",
+    "value": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "expected_error_fragment": "source_report_sha256 mismatch"
+}
+

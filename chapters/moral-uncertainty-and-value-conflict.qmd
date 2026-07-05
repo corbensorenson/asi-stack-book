@@ -44,7 +44,9 @@ The consolidated layer combines two record families:
 Both record families remain visible in the test plan and
 formalization hooks.
 
-Source loading state: the assigned moral-uncertainty, contestability, audit, exit, fork, and governance comparator sources have source notes, exact claim-source mappings, passage-review references, folded source-history records, and external-comparator notes. The destination claim still remains at `argument` until a separate accepted evidence transition justifies movement.
+Source loading state: the assigned moral-uncertainty, contestability, audit, exit, fork, and governance comparator sources have source notes, exact claim-source mappings, passage-review references, folded source-history records, and external-comparator notes. The destination claim still remains at `argument`.
+
+One narrow non-core import has moved: the Theseus governance-rights receipt suite import, `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`, is `prototype-backed` through `python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py`. It records a public-safe digest-and-count summary of 4/4 governance-right fixtures, 4/4 constitutional-predicate fixtures, four governance-right records, four constitutional-predicate records, eight evidence-transition records, eight artifact-graph records, and seven expected-invalid controls. It does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed runtime enforcement, clean live Project Theseus replay, or any chapter-core support-state promotion.
 
 ## Drafting guardrail
 
@@ -425,6 +427,7 @@ the merged core claim at `argument`.
 | Governance-rights fixture validation | Check that rights records preserve audit material, appeal paths, exit/fork access, fork safety, preservation obligations, durable receipts, and non-claims. | implemented by protocol validation and current harnesses |
 | Rights preservation check | Check that audit, exit, fork, dissent, redaction, and appeal paths survive a governed transition. | modeled by finite Lean and synthetic fixtures; real interface usability not run |
 | Governance rights lifecycle route envelope | Check that finite governance-right lifecycle records route missing governance records, audit material gaps, redaction appeal gaps, exit/export gaps, unsafe forks, missing fork obligations, protected-right removal, unrecorded dissent, replacement receipt loss, missing durable receipts, evidence-transition gaps, and complete contestable transitions to explicit outcomes. | implemented in `AsiStackProofs.GovernanceRights`; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim |
+| Theseus governance-rights receipt suite import | Check a sanitized Project Theseus receipt-suite import for 4/4 governance-right fixtures, 4/4 constitutional-predicate fixtures, governance-right and constitutional-predicate record counts, public-safety boundaries, seven expected-invalid overclaim controls, and non-claims. | implemented by `python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py`; narrow claim `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import` is `prototype-backed`; no legal-rights, institutional-governance, moral-correctness, reviewer-independence, export-usability, fork-safety, deployed-governance, clean-live-Theseus-replay, or chapter-core-promotion claim |
 | Replacement-preservation check | Check that capability replacement does not drop unresolved conflict residuals or rights receipts. | planned integration path; no deployed SCF replacement run is claimed |
 
 ## Formalization hooks
@@ -437,6 +440,7 @@ the merged core claim at `argument`.
 | `lean:values.conflict.contestability_example_bridge` | `AsiStackProofs.ValueConflict` | A synthetic contestability worked-example summary preserves conflict residuals, audit receipts, scoped exit, fork-safety boundaries, redaction appeal, replacement-preserved receipts, rejected mutation controls, no support-state effect, and non-claim boundaries. | implemented |
 | `lean:governance.rights.operational_invariant` | `AsiStackProofs.GovernanceRights` | A governance transition preserves required audit and exit capabilities. | implemented |
 | `lean:governance.rights.failure_blocks_promotion` | `AsiStackProofs.GovernanceRights` | A transition that removes a protected right is rejected or marked invalid. | implemented |
+| `lean:governance.rights.theseus_receipt_suite.fixture_bridge` | `AsiStackProofs.GovernanceRights` | A sanitized Project Theseus governance-rights receipt-suite import records fixture, predicate, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core and legal-rights overclaims. | implemented |
 
 The consolidated proof boundary preserves the limitation boundary from both
 source manuscripts. These Lean modules prove small finite-record properties,

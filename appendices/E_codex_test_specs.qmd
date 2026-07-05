@@ -67,6 +67,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Exit-path preservation test | implemented | passing via synthetic governance rights harness; no runtime portability or deployed exit-right claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Fork-right safety test | implemented | passing via synthetic governance rights harness; no deployed fork enforcement or legal-rights claim |
 | `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Governance rights lifecycle route envelope | implemented | passes via Lean route theorems; no legal-rights, institutional-adequacy, export-usability, fork-safety, redaction-quality, SCF replacement, deployed-governance, or support-state-promotion claim |
+| `moral-uncertainty-and-value-conflict` | Moral Uncertainty, Value Conflict, and Contestable Governance | Theseus governance-rights receipt suite import | implemented | passing via python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py; narrow import claim only is prototype-backed; no legal-rights, institutional-governance, moral-correctness, reviewer-independence, export-usability, fork-safety, deployed-governance, clean-live-Theseus-replay, or chapter-core-promotion claim |
 | `stable-capability-fields` | Stable Capability Fields | Qualification predicate test | implemented | validated locally by synthetic fixtures; runtime route quality not run |
 | `stable-capability-fields` | Stable Capability Fields | Route validity test | implemented | validated locally by synthetic fixtures |
 | `stable-capability-fields` | Stable Capability Fields | Authority non-escalation test | implemented | validated locally by synthetic fixtures; deployed authority enforcement not run |
@@ -502,16 +503,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 202 |
+| Proof targets covered by triage | 203 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 202 |
+| implemented | 203 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 202 |
+| implemented | formal-invariant | lean-candidate | 203 |
