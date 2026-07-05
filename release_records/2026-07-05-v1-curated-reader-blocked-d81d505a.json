@@ -1,14 +1,14 @@
 {
   "record_type": "edition_release",
-  "release_id": "2026-07-04-v1-curated-reader-blocked-5dc1cd46",
+  "release_id": "2026-07-05-v1-curated-reader-blocked-d81d505a",
   "major_version": "v1.0",
-  "source_commit": "5dc1cd467543edc97b1517901529347a6ef40052",
-  "source_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-04",
+  "source_commit": "d81d505acd5866aec6def5419a68ab2c53978b2d",
+  "source_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-05",
   "edition_profile": "reader_release",
   "primary_audiences": [
     "interested_humans"
   ],
-  "derivation_source": "Blocked release-candidate record for the tracked curated reader manuscript at source commit 5dc1cd467543edc97b1517901529347a6ef40052. The artifacts named here are ignored local review outputs from `python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf`, not approved release artifacts.",
+  "derivation_source": "Blocked release-candidate record for the tracked curated reader manuscript at source commit d81d505acd5866aec6def5419a68ab2c53978b2d. The artifacts named here are ignored local review outputs from `python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf`, not approved release artifacts.",
   "artifact_formats": [
     {
       "format": "curated_reader_html",

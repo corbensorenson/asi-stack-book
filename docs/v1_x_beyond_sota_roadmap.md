@@ -4356,7 +4356,7 @@ validator-enforced status row that grows past compact status-summary size.
    Audit future curated prose passes for the same polish-versus-evidence
    collision before treating a green gate as release evidence.
 2. **Release unblock ladder.** The blocked curated-reader release candidate
-   (`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`) is
+   (`release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`) is
    the close-out queue; work it in order and flip the record from blocked to
    approved when it empties. The first preparation rung is closed by
    `python3 scripts/validate_reader_human_consumption_gate.py`,

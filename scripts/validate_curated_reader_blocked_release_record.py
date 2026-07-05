@@ -16,7 +16,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-d81d505a.json"
 CURATED_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
 KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 KEY_FIGURE_GEOMETRY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_geometry_manifest.json"
@@ -64,8 +64,8 @@ ACCESSIBILITY_TREE_DOC = ROOT / "docs" / "reader_accessibility_tree_review.md"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 
-EXPECTED_RELEASE_ID = "2026-07-04-v1-curated-reader-blocked-5dc1cd46"
-EXPECTED_SOURCE_COMMIT = "5dc1cd467543edc97b1517901529347a6ef40052"
+EXPECTED_RELEASE_ID = "2026-07-05-v1-curated-reader-blocked-d81d505a"
+EXPECTED_SOURCE_COMMIT = "d81d505acd5866aec6def5419a68ab2c53978b2d"
 REQUIRED_BLOCKERS = {
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
@@ -276,7 +276,7 @@ def main() -> None:
         errors.append(f"release_id must be {EXPECTED_RELEASE_ID}.")
     if record.get("source_commit") != EXPECTED_SOURCE_COMMIT:
         errors.append(f"source_commit must remain {EXPECTED_SOURCE_COMMIT}.")
-    if record.get("source_tag") != "not_tagged_curated_reader_blocked_candidate_2026-07-04":
+    if record.get("source_tag") != "not_tagged_curated_reader_blocked_candidate_2026-07-05":
         errors.append("source_tag must explicitly remain not tagged.")
     if record.get("edition_profile") != "reader_release":
         errors.append("edition_profile must be reader_release.")

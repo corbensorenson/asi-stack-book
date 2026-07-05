@@ -73,7 +73,7 @@ DOCX_APPLICATION_DECISION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "docx_application_decision_manifest.json"
 )
 HTML_RELEASE_RECORD = ROOT / "release_records" / "2026-06-29-v1-reader-html-855dc277.json"
-CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
+CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-d81d505a.json"
 
 REVIEW_DOCS = {
     "reader_html": ROOT / "docs" / "reader_html_artifact_browser_review.md",
@@ -415,7 +415,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
 
     if curated_blocked_record.get("record_type") != "edition_release":
         errors.append("curated blocked release-candidate record must use record_type edition_release.")
-    if curated_blocked_record.get("release_id") != "2026-07-04-v1-curated-reader-blocked-5dc1cd46":
+    if curated_blocked_record.get("release_id") != "2026-07-05-v1-curated-reader-blocked-d81d505a":
         errors.append("curated blocked release-candidate record release_id drifted.")
     if curated_blocked_record.get("validation_status") != "partial":
         errors.append("curated blocked release-candidate record must remain validation_status partial.")
@@ -1715,7 +1715,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_key_figure_pdf_layout_review.md`; "
         "`docs/reader_key_figure_docx_layout_review.md`; "
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`; "
-        "`release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json`; "
+        "`release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`; "
         "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
         "`python3 scripts/validate_curated_reader_pdf_page_review.py`; "
         "`python3 scripts/validate_reader_human_consumption_gate.py`; "
