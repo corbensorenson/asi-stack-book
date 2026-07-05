@@ -100,6 +100,7 @@ REQUIRED = [
     "scripts/validate_reader_pdf_probe_manifest.py",
     "scripts/validate_reader_audio_script_probe_manifest.py",
     "scripts/validate_reader_audio_script_reading_flow.py",
+    "scripts/validate_reader_audio_narration_treatment.py",
     "scripts/validate_reader_human_consumption_gate.py",
     "scripts/validate_reader_final_figure_artifact_review.py",
     "scripts/validate_curated_reader_blocked_release_record.py",
@@ -531,6 +532,7 @@ REQUIRED = [
     "editions/reader_manuscript/v1_0/docx_probe_manifest.json",
     "editions/reader_manuscript/v1_0/pdf_probe_manifest.json",
     "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
+    "editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json",
     "editions/reader_manuscript/v1_0/chapter_review_matrix.json",
     "editions/reader_manuscript/v1_0/format_review_matrix.json",
     "editions/reader_manuscript/v1_0/companion_note_routing.json",
@@ -543,6 +545,7 @@ REQUIRED = [
     "docs/reader_docx_probe_manifest.md",
     "docs/reader_pdf_probe_manifest.md",
     "docs/reader_audio_script_probe_manifest.md",
+    "docs/reader_audio_narration_treatment_review.md",
     "docs/reader_companion_note_routing_review.md",
     "assets/reader-overlays.html",
     "proofs/proof_manifest.json",
@@ -1007,6 +1010,7 @@ def main() -> None:
     run_validator("validate_reader_pdf_probe_manifest.py")
     run_validator("validate_reader_audio_script_reading_flow.py")
     run_validator("validate_reader_audio_script_probe_manifest.py")
+    run_validator("validate_reader_audio_narration_treatment.py")
     run_validator("validate_reader_human_consumption_gate.py")
     run_validator("validate_reader_final_figure_artifact_review.py")
     run_validator("validate_curated_reader_blocked_release_record.py")

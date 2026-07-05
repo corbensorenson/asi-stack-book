@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-05 - Clear audio narration-treatment blocker
+
+- Added `scripts/validate_reader_audio_narration_treatment.py`,
+  `editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json`,
+  and `docs/reader_audio_narration_treatment_review.md` to record the current
+  curated-reader audio-script narration treatment review.
+- Accepted the existing audio-script reading-flow evidence, 49 ordered script
+  files, 66 narration notes, 1,069,255 checked text characters, and 10 draft
+  key-figure spoken summaries as enough to clear only
+  `narration_quality_review_not_completed` for the current blocked curated
+  reader candidate.
+- Updated the blocked curated-reader release record, format review matrix,
+  release-surface ledger/status row, roadmap, repository map, publication
+  readiness notes, release schema, and orchestrated validation around that
+  decision.
+- Boundary: this does not create MP3, M4B, or audio-embedded EPUB artifacts;
+  does not approve pronunciation, recorded-audio listening quality,
+  timecoded chapter markers, metadata, an audiobook, audio publication, or the
+  curated reader edition; and does not move any chapter support state.
+
 ## 2026-07-05 - Clear curated DOCX application-evidence blocker
 
 - Added `scripts/validate_reader_docx_application_decision.py`,

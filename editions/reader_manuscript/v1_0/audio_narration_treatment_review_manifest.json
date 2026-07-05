@@ -1,0 +1,54 @@
+{
+  "schema_version": "asi_stack.reader_audio_narration_treatment_review.v0",
+  "status": "accepted_audio_script_narration_treatment_for_release_preparation",
+  "decision_date": "2026-07-05",
+  "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
+  "key_figure_companion_note": "editions/reader_manuscript/v1_0/companion_notes/key-figures.md",
+  "reading_flow_status": "passed_audio_script_reading_flow_review",
+  "combined_script_sha256": "3ceedadd78384856ef4774ec5691d6506741d810f703aacb5d4b9d1a4d26a03c",
+  "script_files_checked": 49,
+  "chapter_scripts_checked": 44,
+  "appendix_scripts_checked": 3,
+  "chapter_marker_rows": 49,
+  "chapter_marker_tbd_rows": 49,
+  "narration_note_count": 66,
+  "companion_treatment_totals": {
+    "tables": 5,
+    "mermaid_diagrams": 50,
+    "code_or_schema_blocks": 0,
+    "images": 11
+  },
+  "text_characters_checked": 1069255,
+  "word_tokens_checked": 143684,
+  "live_marker_hits": 0,
+  "raw_core_claim_marker_hits": 0,
+  "replacement_character_count": 0,
+  "target_artifact_status": {
+    "mp3": "target_not_generated",
+    "m4b": "target_not_generated",
+    "audio-embedded-epub": "target_not_generated"
+  },
+  "key_figure_spoken_summaries": 10,
+  "decision": "The generated curated-reader audio-script workspace has enough script-level narration treatment for release preparation: it is ordered, includes 66 narration notes for tables, diagrams, and images, preserves implementation-horizon sections, strips live scaffolding markers, and routes the ten key-figure spoken summaries. This script-level narration treatment clears only `narration_quality_review_not_completed` for the current blocked release-candidate record. It does not approve pronunciation, does not approve recorded audio, does not timecode chapter markers, and does not approve an audiobook.",
+  "cleared_blockers": [
+    "narration_quality_review_not_completed"
+  ],
+  "preserved_blockers": [
+    "reviewed_reader_release_record_not_created_for_audio",
+    "audio_files_not_generated",
+    "audio_spot_check_not_performed",
+    "chapter_markers_not_timecoded",
+    "audio_metadata_not_reviewed",
+    "audio_embedded_epub_not_packaged_or_checked",
+    "audio_edition_release_record_not_created"
+  ],
+  "release_boundary": "This review clears only `narration_quality_review_not_completed` because it reviews script-level narration treatment in the generated workspace. It does not create MP3, M4B, or audio-embedded EPUB artifacts, does not approve an audiobook, does not create an audio edition release record, does not timecode chapter markers, does not approve pronunciation or listening quality, and does not promote any claim support state.",
+  "non_claims": [
+    "This manifest does not approve pronunciation quality.",
+    "This manifest does not approve recorded audio.",
+    "This manifest does not create MP3, M4B, or audio-embedded EPUB artifacts.",
+    "This manifest does not timecode chapter markers.",
+    "This manifest does not approve an audiobook.",
+    "This manifest does not promote any chapter core claim or support state."
+  ]
+}

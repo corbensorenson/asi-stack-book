@@ -36,6 +36,10 @@ CHAPTER_RECONCILIATION_APPROVAL = (
 )
 CHAPTER_RECONCILIATION_APPROVAL_DOC = ROOT / "docs" / "reader_chapter_reconciliation_approval.md"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
+AUDIO_NARRATION_TREATMENT_REVIEW = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_narration_treatment_review_manifest.json"
+)
+AUDIO_NARRATION_TREATMENT_REVIEW_DOC = ROOT / "docs" / "reader_audio_narration_treatment_review.md"
 HUMAN_CONSUMPTION_GATE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
 )
@@ -90,12 +94,24 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_key_figure_docx_layout.py",
     "python3 scripts/validate_reader_docx_application_decision.py",
     "python3 scripts/validate_reader_audio_script_probe_manifest.py",
+    "python3 scripts/validate_reader_audio_narration_treatment.py",
     "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "python3 scripts/validate_reader_human_consumption_gate.py",
     "python3 scripts/validate_reader_final_figure_artifact_review.py",
     "python3 scripts/validate_reader_chapter_reconciliation_approval.py",
     "python3 scripts/validate_release_surface_status_ledger.py",
 }
+AUDIO_NARRATION_TREATMENT_STATUS = "accepted_audio_script_narration_treatment_for_release_preparation"
+AUDIO_NARRATION_TREATMENT_CLEARED = ["narration_quality_review_not_completed"]
+AUDIO_NARRATION_TREATMENT_PRESERVED = [
+    "reviewed_reader_release_record_not_created_for_audio",
+    "audio_files_not_generated",
+    "audio_spot_check_not_performed",
+    "chapter_markers_not_timecoded",
+    "audio_metadata_not_reviewed",
+    "audio_embedded_epub_not_packaged_or_checked",
+    "audio_edition_release_record_not_created",
+]
 
 
 def fail(errors: list[str]) -> None:
@@ -147,6 +163,8 @@ def main() -> None:
         CHAPTER_RECONCILIATION_APPROVAL,
         CHAPTER_RECONCILIATION_APPROVAL_DOC,
         AUDIO_PROBE,
+        AUDIO_NARRATION_TREATMENT_REVIEW,
+        AUDIO_NARRATION_TREATMENT_REVIEW_DOC,
         HUMAN_CONSUMPTION_GATE,
         HUMAN_CONSUMPTION_REVIEW,
         FINAL_FIGURE_REVIEW,
@@ -179,6 +197,8 @@ def main() -> None:
     chapter_reconciliation_approval = load_json(CHAPTER_RECONCILIATION_APPROVAL)
     chapter_reconciliation_approval_doc = CHAPTER_RECONCILIATION_APPROVAL_DOC.read_text(encoding="utf-8")
     audio_probe = load_json(AUDIO_PROBE)
+    audio_narration_treatment_review = load_json(AUDIO_NARRATION_TREATMENT_REVIEW)
+    audio_narration_treatment_review_doc = AUDIO_NARRATION_TREATMENT_REVIEW_DOC.read_text(encoding="utf-8")
     human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
     human_consumption_review = HUMAN_CONSUMPTION_REVIEW.read_text(encoding="utf-8")
     final_figure_review = load_json(FINAL_FIGURE_REVIEW)
@@ -215,6 +235,8 @@ def main() -> None:
         fail([f"{rel(CHAPTER_RECONCILIATION_APPROVAL)} must contain a JSON object."])
     if not isinstance(audio_probe, dict):
         fail([f"{rel(AUDIO_PROBE)} must contain a JSON object."])
+    if not isinstance(audio_narration_treatment_review, dict):
+        fail([f"{rel(AUDIO_NARRATION_TREATMENT_REVIEW)} must contain a JSON object."])
     if not isinstance(human_consumption_gate, dict):
         fail([f"{rel(HUMAN_CONSUMPTION_GATE)} must contain a JSON object."])
     if not isinstance(final_figure_review, dict):
@@ -637,6 +659,70 @@ def main() -> None:
     if not isinstance(audio_reading_flow, dict):
         errors.append("audio_script_probe_manifest audio_script_reading_flow_review must be an object.")
         audio_reading_flow = {}
+    expected_audio_treatment = {
+        "status": AUDIO_NARRATION_TREATMENT_STATUS,
+        "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
+        "key_figure_companion_note": "editions/reader_manuscript/v1_0/companion_notes/key-figures.md",
+        "reading_flow_status": audio_reading_flow.get("status"),
+        "combined_script_sha256": audio_reading_flow.get("combined_script_sha256"),
+        "script_files_checked": audio_reading_flow.get("script_files_checked"),
+        "chapter_scripts_checked": audio_reading_flow.get("chapter_scripts_checked"),
+        "appendix_scripts_checked": audio_reading_flow.get("appendix_scripts_checked"),
+        "chapter_marker_rows": audio_reading_flow.get("chapter_marker_rows"),
+        "chapter_marker_tbd_rows": audio_reading_flow.get("chapter_marker_tbd_rows"),
+        "narration_note_count": audio_reading_flow.get("narration_note_count"),
+        "text_characters_checked": audio_reading_flow.get("text_characters_checked"),
+        "word_tokens_checked": audio_reading_flow.get("word_tokens_checked"),
+        "live_marker_hits": audio_reading_flow.get("live_marker_hits"),
+        "raw_core_claim_marker_hits": audio_reading_flow.get("raw_core_claim_marker_hits"),
+        "replacement_character_count": audio_reading_flow.get("replacement_character_count"),
+        "target_artifact_status": {
+            "mp3": "target_not_generated",
+            "m4b": "target_not_generated",
+            "audio-embedded-epub": "target_not_generated",
+        },
+        "key_figure_spoken_summaries": 10,
+    }
+    for key, expected in expected_audio_treatment.items():
+        if audio_narration_treatment_review.get(key) != expected:
+            errors.append(
+                f"audio_narration_treatment_review.{key} must be "
+                f"{expected!r}; found {audio_narration_treatment_review.get(key)!r}."
+            )
+    if audio_narration_treatment_review.get("cleared_blockers") != AUDIO_NARRATION_TREATMENT_CLEARED:
+        errors.append(
+            "audio_narration_treatment_review must clear only narration_quality_review_not_completed."
+        )
+    if audio_narration_treatment_review.get("preserved_blockers") != AUDIO_NARRATION_TREATMENT_PRESERVED:
+        errors.append("audio_narration_treatment_review preserved blockers drifted.")
+    audio_treatment_boundary = str(audio_narration_treatment_review.get("release_boundary", ""))
+    text_contains_all(
+        "audio_narration_treatment_review.release_boundary",
+        audio_treatment_boundary,
+        [
+            "clears only `narration_quality_review_not_completed`",
+            "does not create MP3, M4B, or audio-embedded EPUB artifacts",
+            "does not approve an audiobook",
+            "does not create an audio edition release record",
+            "does not promote any claim support state",
+        ],
+        errors,
+    )
+    text_contains_all(
+        rel(AUDIO_NARRATION_TREATMENT_REVIEW_DOC),
+        audio_narration_treatment_review_doc,
+        [
+            "Reader Audio Narration Treatment Review",
+            AUDIO_NARRATION_TREATMENT_STATUS,
+            "script-level narration treatment",
+            "clears only `narration_quality_review_not_completed`",
+            "66 narration notes",
+            "1,069,255 text characters",
+            "does not approve pronunciation",
+            "does not approve an audiobook",
+        ],
+        errors,
+    )
     if key_figure_geometry.get("status") != "passed_source_geometry_review":
         errors.append("key_figure_geometry_manifest status must remain passed_source_geometry_review.")
     expected_geometry_metrics = {
@@ -998,6 +1084,18 @@ def main() -> None:
         "audio_reading_flow_ordered_markers": audio_reading_flow.get("chapter_marker_rows"),
         "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
         "audio_reading_flow_text_characters": audio_reading_flow.get("text_characters_checked"),
+        "audio_narration_treatment_review_manifest": rel(AUDIO_NARRATION_TREATMENT_REVIEW),
+        "audio_narration_treatment_review_status": audio_narration_treatment_review.get("status"),
+        "audio_narration_treatment_cleared_blockers": len(
+            audio_narration_treatment_review.get("cleared_blockers", [])
+        )
+        if isinstance(audio_narration_treatment_review.get("cleared_blockers"), list)
+        else None,
+        "audio_narration_treatment_preserved_blockers": len(
+            audio_narration_treatment_review.get("preserved_blockers", [])
+        )
+        if isinstance(audio_narration_treatment_review.get("preserved_blockers"), list)
+        else None,
     }
     for key, expected in expected_closure.items():
         if closure.get(key) != expected:
@@ -1017,11 +1115,15 @@ def main() -> None:
         "automated keyboard traversal",
         "pdf page-by-page release-preparation review",
         "final figure-artifact review",
+        "audio narration treatment review",
         "clears the current final-figure blocker",
         "docx_application_review_not_completed",
+        "narration_quality_review_not_completed",
         "manual keyboard-only",
         "screen-reader",
         "wcag",
+        "audio file generation",
+        "chapter timecoding",
         "do not approve epub",
         "curated reader edition",
     ):
@@ -1101,8 +1203,13 @@ def main() -> None:
         "49 ordered markers",
         "66 narration notes",
         "1,069,255 text characters",
-        "not narration quality review",
+        "script-level narration treatment review",
+        "clears only narration_quality_review_not_completed",
         "no MP3, M4B, or audio-embedded EPUB artifact exists",
+        "not pronunciation review",
+        "not recorded-audio spot check",
+        "not chapter timecoding",
+        "not audio release approval",
     ):
         if fragment not in audio_note:
             errors.append(f"audio notes missing audio reading-flow fragment: {fragment}")
@@ -1268,6 +1375,12 @@ def main() -> None:
             "chapter reconciliation approval",
             "Apple Books EPUB application review",
             "automated keyboard traversal review",
+            "audio narration treatment review",
+            "audio file generation",
+            "audio pronunciation/listening review",
+            "chapter-marker timecoding",
+            "audio metadata review",
+            "audio release approval",
             "keyboard-only",
             "screen-reader",
             "manual aesthetic",
@@ -1306,6 +1419,8 @@ def main() -> None:
             "PDF page-by-page release-preparation review closes",
             "DOCX application-evidence decision clears",
             "does not clear Word/LibreOffice GUI/Google Docs approval",
+            "audio narration treatment review clears",
+            "does not clear Word/LibreOffice GUI/Google Docs approval, pronunciation/listening review, audio generation",
             "DOCX key-figure layout review is recorded as preparation evidence only",
             "does not clear Word review",
             "does not clear LibreOffice GUI review",

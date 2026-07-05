@@ -35,6 +35,9 @@ EPUB_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "epub_probe_mani
 DOCX_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "docx_probe_manifest.json"
 PDF_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "pdf_probe_manifest.json"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
+AUDIO_NARRATION_TREATMENT_REVIEW = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_narration_treatment_review_manifest.json"
+)
 HUMAN_CONSUMPTION_GATE = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "human_consumption_gate_manifest.json"
 )
@@ -76,6 +79,7 @@ REVIEW_DOCS = {
     "reader_docx": ROOT / "docs" / "reader_docx_probe_manifest.md",
     "reader_pdf": ROOT / "docs" / "reader_pdf_probe_manifest.md",
     "reader_audio": ROOT / "docs" / "reader_audio_script_probe_manifest.md",
+    "reader_audio_narration_treatment": ROOT / "docs" / "reader_audio_narration_treatment_review.md",
     "reader_human_consumption": ROOT / "docs" / "reader_human_consumption_gate_review.md",
     "curated_pdf_page_review": ROOT / "docs" / "curated_reader_pdf_page_review.md",
     "reader_final_figure_artifact_review": ROOT / "docs" / "reader_final_figure_artifact_review.md",
@@ -95,6 +99,17 @@ REVIEW_DOCS = {
     "reader_chapter_matrix": ROOT / "docs" / "reader_chapter_review_matrix.md",
     "reader_format_matrix": ROOT / "docs" / "reader_format_review_matrix.md",
 }
+AUDIO_NARRATION_TREATMENT_STATUS = "accepted_audio_script_narration_treatment_for_release_preparation"
+AUDIO_NARRATION_TREATMENT_CLEARED = ["narration_quality_review_not_completed"]
+AUDIO_NARRATION_TREATMENT_PRESERVED = [
+    "reviewed_reader_release_record_not_created_for_audio",
+    "audio_files_not_generated",
+    "audio_spot_check_not_performed",
+    "chapter_markers_not_timecoded",
+    "audio_metadata_not_reviewed",
+    "audio_embedded_epub_not_packaged_or_checked",
+    "audio_edition_release_record_not_created",
+]
 
 REQUIRED_PROFILE_IDS = {"live_book", "research_release", "reader_release", "audio_release"}
 REQUIRED_CURATED_BLOCKERS = {
@@ -170,6 +185,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         DOCX_PROBE,
         PDF_PROBE,
         AUDIO_PROBE,
+        AUDIO_NARRATION_TREATMENT_REVIEW,
         HUMAN_CONSUMPTION_GATE,
         PDF_PAGE_REVIEW,
         FINAL_FIGURE_REVIEW,
@@ -206,6 +222,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     docx_probe = load_json(DOCX_PROBE)
     pdf_probe = load_json(PDF_PROBE)
     audio_probe = load_json(AUDIO_PROBE)
+    audio_narration_treatment_review = load_json(AUDIO_NARRATION_TREATMENT_REVIEW)
     human_consumption_gate = load_json(HUMAN_CONSUMPTION_GATE)
     pdf_page_review = load_json(PDF_PAGE_REVIEW)
     final_figure_review = load_json(FINAL_FIGURE_REVIEW)
@@ -430,6 +447,10 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "clears the current final-figure blocker",
         "docx application-evidence decision",
         "docx_application_review_not_completed",
+        "audio narration treatment review",
+        "narration_quality_review_not_completed",
+        "audio file generation",
+        "chapter timecoding",
         "curated reader edition",
     ):
         if fragment not in release_boundary:
@@ -618,6 +639,42 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     for key, expected in expected_audio_reading_flow.items():
         if audio_reading_flow.get(key) != expected:
             errors.append(f"audio_script_reading_flow_review.{key} must be {expected!r}.")
+    expected_audio_narration_treatment = {
+        "status": AUDIO_NARRATION_TREATMENT_STATUS,
+        "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
+        "reading_flow_status": audio_reading_flow.get("status"),
+        "combined_script_sha256": audio_reading_flow.get("combined_script_sha256"),
+        "script_files_checked": audio_reading_flow.get("script_files_checked"),
+        "chapter_scripts_checked": audio_reading_flow.get("chapter_scripts_checked"),
+        "appendix_scripts_checked": audio_reading_flow.get("appendix_scripts_checked"),
+        "chapter_marker_rows": audio_reading_flow.get("chapter_marker_rows"),
+        "chapter_marker_tbd_rows": audio_reading_flow.get("chapter_marker_tbd_rows"),
+        "narration_note_count": audio_reading_flow.get("narration_note_count"),
+        "text_characters_checked": audio_reading_flow.get("text_characters_checked"),
+        "word_tokens_checked": audio_reading_flow.get("word_tokens_checked"),
+        "live_marker_hits": audio_reading_flow.get("live_marker_hits"),
+        "raw_core_claim_marker_hits": audio_reading_flow.get("raw_core_claim_marker_hits"),
+        "replacement_character_count": audio_reading_flow.get("replacement_character_count"),
+        "target_artifact_status": {
+            "mp3": "target_not_generated",
+            "m4b": "target_not_generated",
+            "audio-embedded-epub": "target_not_generated",
+        },
+        "key_figure_spoken_summaries": 10,
+    }
+    for key, expected in expected_audio_narration_treatment.items():
+        if audio_narration_treatment_review.get(key) != expected:
+            errors.append(f"audio_narration_treatment_review.{key} must be {expected!r}.")
+    if audio_narration_treatment_review.get("cleared_blockers") != AUDIO_NARRATION_TREATMENT_CLEARED:
+        errors.append("audio narration treatment review must clear only narration_quality_review_not_completed.")
+    if audio_narration_treatment_review.get("preserved_blockers") != AUDIO_NARRATION_TREATMENT_PRESERVED:
+        errors.append("audio narration treatment review preserved blockers drifted.")
+    if blocked_probe_closure.get("audio_narration_treatment_review_status") != AUDIO_NARRATION_TREATMENT_STATUS:
+        errors.append("blocked release closure must record the audio narration treatment review status.")
+    if blocked_probe_closure.get("audio_narration_treatment_cleared_blockers") != 1:
+        errors.append("blocked release closure must record one cleared audio narration blocker.")
+    if blocked_probe_closure.get("audio_narration_treatment_preserved_blockers") != 7:
+        errors.append("blocked release closure must record seven preserved audio blockers.")
 
     if key_figure_format_probe.get("status") != "passed_local_format_package_probe":
         errors.append("key-figure format probe must remain passed_local_format_package_probe.")
@@ -1025,6 +1082,18 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "| Draft figure summaries routed | 10 |",
             "This manifest does not approve EPUB, DOCX, PDF, HTML, e-reader, document, audio, MP3, M4B, or audio-embedded EPUB artifacts",
         ],
+        "reader_audio_narration_treatment": [
+            "Reader Audio Narration Treatment Review",
+            AUDIO_NARRATION_TREATMENT_STATUS,
+            "script-level narration treatment",
+            "clears only `narration_quality_review_not_completed`",
+            "66 narration notes",
+            "1,069,255 text characters",
+            "10 draft key-figure spoken summaries",
+            "does not approve pronunciation",
+            "does not create MP3, M4B, or audio-embedded EPUB artifacts",
+            "does not approve an audiobook",
+        ],
         "reader_human_consumption": [
             "Reader Human-Consumption Gate Review",
             "pass_pre_release_review",
@@ -1340,6 +1409,17 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "audio_reading_flow_tbd_rows": audio_reading_flow.get("chapter_marker_tbd_rows"),
         "audio_targets": audio_targets,
         "audio_key_figure_count": audio_key_figures.get("figure_count"),
+        "audio_narration_treatment_status": audio_narration_treatment_review.get("status"),
+        "audio_narration_treatment_cleared_blockers": len(
+            audio_narration_treatment_review.get("cleared_blockers", [])
+        )
+        if isinstance(audio_narration_treatment_review.get("cleared_blockers"), list)
+        else None,
+        "audio_narration_treatment_preserved_blockers": len(
+            audio_narration_treatment_review.get("preserved_blockers", [])
+        )
+        if isinstance(audio_narration_treatment_review.get("preserved_blockers"), list)
+        else None,
         "human_consumption_gate_status": human_consumption_gate.get("status"),
         "human_consumption_gate_statuses": human_gate_statuses,
         "human_consumption_epub_pairs": human_ebook_facts.get("epub_key_figure_page_view_pairs"),
@@ -1459,7 +1539,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['curated_record_count']} records ({reconciliation_counts.get('reconciled', 0)} reconciled); "
         f"chapter reconciliation approval is `{metrics['chapter_reconciliation_approval_status']}`; "
         f"{metrics['overlay_operation_count']} overlay operations are tracked; "
-        "Apple Books EPUB application review and the DOCX application-evidence decision are passed, while EPUB publication, DOCX publication, PDF, audio, and refreshed reader HTML remain unapproved. | "
+        "Apple Books EPUB application review, the DOCX application-evidence decision, and script-level audio narration treatment review are passed, while EPUB publication, DOCX publication, PDF, audio files, chapter timing, listening review, and refreshed reader HTML remain unapproved. | "
         "`docs/release_surface_status_ledger.md`; `editions/release_profiles.json`; "
         "`editions/reader_overlays/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/manifest.json`; "
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`; "
@@ -1470,7 +1550,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_html_artifact_browser_review.md`; `docs/curated_reader_html_artifact_browser_review.md`; "
         "`docs/curated_reader_format_artifact_probe.md`; `docs/reader_epub_probe_manifest.md`; "
         "`docs/reader_docx_probe_manifest.md`; `docs/reader_pdf_probe_manifest.md`; "
-        "`docs/reader_audio_script_probe_manifest.md`; `docs/reader_key_figure_format_probe.md`; "
+        "`docs/reader_audio_script_probe_manifest.md`; `docs/reader_audio_narration_treatment_review.md`; "
+        "`docs/reader_key_figure_format_probe.md`; "
         "`docs/reader_human_consumption_gate_review.md`; "
         "`docs/curated_reader_pdf_page_review.md`; "
         "`docs/reader_final_figure_artifact_review.md`; "
@@ -1490,6 +1571,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`python3 scripts/validate_reader_final_figure_artifact_review.py`; "
         "`python3 scripts/validate_reader_chapter_reconciliation_approval.py`; "
         "`python3 scripts/validate_reader_docx_application_decision.py`; "
+        "`python3 scripts/validate_reader_audio_narration_treatment.py`; "
         "`python3 scripts/validate_release_surface_status_ledger.py` |"
     )
 
@@ -1559,6 +1641,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| DOCX application-evidence decision | `{metrics['docx_application_decision_status']}`; {metrics['docx_application_decision_cleared_blockers']} blocker cleared, {metrics['docx_application_decision_preserved_blockers']} blockers preserved |",
             f"| Curated PDF page-by-page review | `{metrics['curated_pdf_page_review_status']}`; {metrics['curated_pdf_page_review_rows']} rows, {metrics['curated_pdf_page_review_failed_pages']} failed, {metrics['curated_pdf_page_review_blank_pages']} blank, {metrics['curated_pdf_page_review_near_edge_pages']} near-edge, {metrics['curated_pdf_page_review_out_of_bounds_pages']} out-of-bounds word-box pages, {metrics['curated_pdf_page_review_low_ink_pages']} accepted low-ink page |",
             f"| Final figure-artifact review | `{metrics['final_figure_review_status']}`; {metrics['final_figure_review_figures']} figures, {metrics['final_figure_review_cleared_blockers']} blocker cleared |",
+            f"| Audio narration treatment review | `{metrics['audio_narration_treatment_status']}`; {metrics['audio_narration_treatment_cleared_blockers']} blocker cleared, {metrics['audio_narration_treatment_preserved_blockers']} blockers preserved |",
             f"| Human-consumption pre-release gate | `{metrics['human_consumption_gate_status']}` |",
             f"| Human-consumption gate statuses | {qmd_escape(counter_phrase(Counter(metrics['human_consumption_gate_statuses'].values())))} |",
             f"| Human-consumption ebook checks | {metrics['human_consumption_epub_pairs']} EPUB key-figure pairs, {metrics['human_consumption_epub_failures']} failures, {metrics['human_consumption_pdf_caption_pages']} PDF caption pages, {metrics['human_consumption_docx_title_pages']} DOCX title pages |",
@@ -1583,7 +1666,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- Generated reader HTML is the only release-approved reader format row, backed by `{metrics['release_record']}`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, or audio.",
             f"- `docs/reader_format_review_matrix.md` distinguishes the historical generated-reader format queue from the current curated-reader candidate queue: {metrics['curated_candidate_count']} current candidate rows remain `{metrics['curated_candidate_status']}` with blocker counts {counter_phrase(metrics['curated_candidate_blocker_counts'])}.",
             f"- `{metrics['curated_blocked_record']}` records the current curated-reader HTML/EPUB/DOCX/PDF/e-reader/audio candidate as `partial` and blocked. It names exact local artifacts and blockers but does not approve, publish, tag, or archive any curated-reader artifact.",
-            f"- The blocked candidate also records `{metrics['curated_blocked_probe_status']}` for the automated package, link, raster, key-figure, browser, Apple Books application probe, and DOCX application-evidence decision; this is release-preparation evidence only and does not clear reader release approval.",
+            f"- The blocked candidate also records `{metrics['curated_blocked_probe_status']}` for the automated package, link, raster, key-figure, browser, Apple Books application probe, DOCX application-evidence decision, and script-level audio narration treatment review; this is release-preparation evidence only and does not clear reader release approval.",
             f"- `docs/reader_html_artifact_browser_review.md` records {metrics['generated_html_pages']} generated reader HTML pages, {metrics['generated_html_pairs']} page-view pairs, and {metrics['generated_html_failures']} failed page-view pairs.",
             f"- `docs/curated_reader_html_artifact_browser_review.md` records {metrics['curated_html_pages']} curated reader HTML pages, {metrics['curated_html_pairs']} page-view pairs, {metrics['curated_html_failures']} failed page-view pairs, {metrics['curated_key_figure_pairs']} key-figure page-view pairs, {metrics['curated_key_figure_failures']} key-figure failures, and ignored snapshot digest `{metrics['curated_html_digest']}`.",
             f"- `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: {metrics['curated_html_files']} HTML files, {metrics['curated_epub_xhtml']} EPUB XHTML entries, {metrics['curated_docx_png']} DOCX PNG media entries, {metrics['curated_docx_svg']} DOCX SVG media entries, and {metrics['curated_pdf_pages']} PDF pages. Its repaired-package EPUB audit checks {metrics['curated_epub_audit_xhtml']} XHTML entries, {metrics['curated_epub_audit_content_xhtml']} packaged content XHTML entries, and {metrics['curated_epub_audit_unresolved']} unresolved internal hrefs, with repaired artifact SHA `{metrics['curated_epub_audit_sha']}`. Its Chromium EPUB XHTML browser review checks {metrics['curated_epub_browser_pairs']} page-view pairs with {metrics['curated_epub_browser_failures']} failures and {metrics['curated_epub_browser_max_overflow']} px maximum overflow. Its repaired-package DOCX audit checks {metrics['curated_docx_audit_paragraphs']} paragraphs, {metrics['curated_docx_audit_relationships']} relationships, and {metrics['curated_docx_audit_raw_qmd']} raw .qmd relationship targets, with repaired artifact SHA `{metrics['curated_docx_audit_sha']}`. Its LibreOffice headless DOCX review checks {metrics['curated_docx_libreoffice_pages']} converted pages, {metrics['curated_docx_libreoffice_text_chars']:,} text characters, {metrics['curated_docx_libreoffice_blank_pages']} blank converted-page rasters, {metrics['curated_docx_libreoffice_low_ink_pages']} low-ink converted-page rasters, and {metrics['curated_docx_libreoffice_near_edge_pages']} near-edge converted-page rasters. Its all-page PDF raster audit checks {metrics['curated_pdf_raster_pages']} pages, {metrics['curated_pdf_raster_blank_pages']} blank pages, {metrics['curated_pdf_raster_low_ink_pages']} low-ink pages, and {metrics['curated_pdf_raster_near_edge_pages']} near-edge pages. Its PDF extracted-text reading-flow review checks {metrics['curated_pdf_reading_flow_text_pages']} text pages, {metrics['curated_pdf_reading_flow_nonempty_pages']} nonempty text pages, {metrics['curated_pdf_reading_flow_chapters']} chapter headings, {metrics['curated_pdf_reading_flow_appendices']} appendix headings, and {metrics['curated_pdf_reading_flow_replacement_chars']} replacement characters. Its Chromium PDF viewer smoke review records {metrics['curated_pdf_viewer_screenshots']} viewer screenshots and {metrics['curated_pdf_viewer_scroll_changed_pixels']}% changed pixels after scroll. It preserves release blockers.",
@@ -1595,7 +1678,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_docx_probe_manifest.md` records the generated reader DOCX conversion probe: {metrics['reader_docx_pages']} pages and {metrics['reader_docx_bytes']:,} bytes, with full-format review still active.",
             f"- `docs/reader_pdf_probe_manifest.md` records the generated reader PDF probe: {metrics['reader_pdf_pages']} pages and {metrics['reader_pdf_bytes']:,} bytes, with full PDF layout review still active.",
             f"- `docs/reader_audio_script_probe_manifest.md` records {metrics['audio_script_files']} audio-script workspace files, a reading-flow review with {metrics['audio_reading_flow_markers']} ordered chapter-marker rows, {metrics['audio_reading_flow_tbd_rows']} untimecoded marker rows, {metrics['audio_reading_flow_narration_notes']} narration notes, and {metrics['audio_reading_flow_text_chars']:,} text characters, plus {metrics['audio_key_figure_count']} draft key-figure spoken summaries routed into the generated audio companion workspace; target artifact states remain {qmd_escape(', '.join(f'{key}: {value}' for key, value in sorted(audio_targets.items())))}.",
-            f"- `docs/reader_human_consumption_gate_review.md` records the current pre-release human-consumption gate as `{metrics['human_consumption_gate_status']}`: ebook layout, diagram/image readiness, bedtime readability, and companion-note routing are `pass_pre_release_review`; the separate final figure-artifact review, Apple Books EPUB application review, and DOCX application-evidence decision are passed, while accessibility, audio, and release-approval blockers remain active.",
+            f"- `docs/reader_audio_narration_treatment_review.md` records `{metrics['audio_narration_treatment_status']}` and clears only `narration_quality_review_not_completed`; {metrics['audio_narration_treatment_preserved_blockers']} audio blockers remain preserved, including audio files, chapter-marker timecoding, metadata, spot check, audio-embedded EPUB packaging, and audio edition release record.",
+            f"- `docs/reader_human_consumption_gate_review.md` records the current pre-release human-consumption gate as `{metrics['human_consumption_gate_status']}`: ebook layout, diagram/image readiness, bedtime readability, and companion-note routing are `pass_pre_release_review`; the separate final figure-artifact review, Apple Books EPUB application review, DOCX application-evidence decision, and script-level audio narration treatment review are passed, while accessibility, audio artifact, and release-approval blockers remain active.",
             f"- `docs/reader_key_figure_artifact_review.md` keeps the ten key figures as draft reader aids, not final figure-artifact approval; `docs/reader_key_figure_format_probe.md` records package/text survival with {metrics['key_figure_epub_svg_entries']} EPUB SVG entries, {metrics['key_figure_epub_matched_titles']} matched EPUB SVG titles, {metrics['key_figure_docx_matched_stems']} DOCX figure stems, and {metrics['key_figure_pdf_matched_captions']} PDF draft-caption matches while preserving final-art, e-reader, application, PDF-layout, and release blockers.",
             f"- `docs/reader_key_figure_geometry_review.md` records a source-geometry review for {metrics['key_figure_geometry_count']} key figures: {metrics['key_figure_geometry_content_bounds']} content-bound checks, {metrics['key_figure_geometry_text_anchor_bounds']} text-anchor checks, and {metrics['key_figure_geometry_min_edge_margin']} px minimum content edge margin; it is not raster review, final figure-artifact approval, or reader release approval.",
             f"- `docs/reader_visual_identity_review.md` records a source-level visual identity review: {metrics['visual_identity_figure_count']} key figures, {metrics['visual_identity_color_count']} combined colors, {metrics['visual_identity_non_neutral_families']} non-neutral color families, and minimum text contrast {metrics['visual_identity_min_text_contrast']}; it is not manual aesthetic review, final figure-artifact approval, or reader release approval.",
