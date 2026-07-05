@@ -1841,6 +1841,16 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture bridge for the sanitized Theseus artifact-retention replay import: accepted summaries require exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and no clean-live-replay, no deployed-ledger, no artifact-graph, no model-quality, no benchmark, and no chapter-core-promotion boundaries. It proves only record-level import discipline and rejection of hash mismatch or chapter-core promotion overclaim, not clean live Project Theseus replay, deployed residual-ledger storage, deployed artifact-graph behavior, model quality, benchmark performance, safety, alignment, transfer, deployment readiness, ASI, or the Project Theseus chapter core claim."
     },
     {
+      "tag": "lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture bridge for the sanitized Theseus module definition-of-done import: accepted summaries require trigger state GREEN, 22 of 22 major module records ready, zero hard gaps, zero warnings, source-backlog route smoke passing, public-safe redaction, no chapter-core promotion, and no capability claim. It proves only record-level import discipline and rejection of chapter-core promotion or capability overclaim, not clean live Project Theseus replay, deployed Theseus behavior, module capability, model quality, benchmark performance, safety, alignment, transfer, deployment readiness, ASI, or the Project Theseus chapter core claim."
+    },
+    {
       "tag": "lean:roadmap.phases.operational_invariant",
       "chapter_id": "prototype-roadmap",
       "module": "AsiStackProofs.PrototypeRoadmap",
@@ -2051,5 +2061,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 204
+  "record_count": 205
 }

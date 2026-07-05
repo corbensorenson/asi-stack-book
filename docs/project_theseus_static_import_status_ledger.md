@@ -25,14 +25,14 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 | Operator gates passed | 12 / 12 |
 | Benchmark gates passed | 18 / 18 |
 | Residuals / artifact gaps | 19 / 5 |
-| Expected-invalid controls | 37 |
+| Expected-invalid controls | 44 |
 | Accepted no-promotion decisions | 1 |
 | Accepted bounded artifact-retention transitions | 1 |
 | Accepted bounded governance-rights transitions | 1 |
 
 ## Status-Page Row
 
-| Project Theseus static import lane | Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: 2 sanitized static report imports, 1 support replay probe, 1 artifact-retention replay import, 1 governance-rights receipt import, 1 simulation-fidelity receipt import, 64 metadata-only public tasks, 0 public training rows, 18 generation modes, 13 comparisons, 0 promotable comparisons, 37 expected-invalid controls, 1 accepted no-promotion decision, 1 accepted bounded artifact-retention transition, 1 accepted bounded governance-rights transition, and 1 accepted bounded simulation-fidelity transition; clean live replay remains unclaimed. | `docs/project_theseus_static_import_status_ledger.md`; `python3 scripts/validate_project_theseus_static_import_status_ledger.py` |
+| Project Theseus static import lane | Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: 2 sanitized static report imports, 1 support replay probe, 1 artifact-retention replay import, 1 governance-rights receipt import, 1 simulation-fidelity receipt import, 1 module definition-of-done import, 64 metadata-only public tasks, 0 public training rows, 18 generation modes, 13 comparisons, 0 promotable comparisons, 44 expected-invalid controls, 1 accepted no-promotion decision, 1 accepted bounded artifact-retention transition, 1 accepted bounded governance-rights transition, 1 accepted bounded simulation-fidelity transition, and 1 accepted bounded module definition-of-done transition; clean live replay remains unclaimed. | `docs/project_theseus_static_import_status_ledger.md`; `python3 scripts/validate_project_theseus_static_import_status_ledger.py` |
 
 ## Imported Evidence Surfaces
 

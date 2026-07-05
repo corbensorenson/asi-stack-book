@@ -1,0 +1,67 @@
+{
+  "schema_version": "asi_stack.theseus_module_definition_of_done_import.v0",
+  "import_id": "theseus-module-definition-of-done-import-2026-07-05",
+  "source_commit": "1ad88a22",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_config_sha256": "116833d9a771ee768d67fe794111eda25c6d76fcaddbc3ee013e1f9b7e8963fc",
+  "source_gate_script_sha256": "43d54cbde5b2aaad48c6a5ba32fec983e7c54fe3430b3be3d502e74a6aa2d5ef",
+  "source_report_sha256": "efd0897b0a4e0158166398177c76df2c9ca3f79eed0956c253f4572cd852a0f2",
+  "module_records_sha256": "e0199864080c2e391ad24b1a46e35bc6941699c8a4f1d17eb46720ef1e07ce38",
+  "source_backlog_work_cards_sha256": "d6b6d639bffd18bd1be491a7ad8bf3b978bde526e4fe816331e92653ccb58fdf",
+  "policy": "project_theseus_module_definition_of_done_gate_v1",
+  "trigger_state": "GREEN",
+  "raw_report_copied": false,
+  "private_payload_copied": false,
+  "private_path_fields_redacted": true,
+  "sanitized_for_public_repo": true,
+  "summary": {
+    "book_standard_source_count": 7,
+    "book_standard_source_present_count": 7,
+    "cleanup_queue_count": 0,
+    "hard_gap_count": 0,
+    "major_surface_count": 22,
+    "major_surface_coverage_ratio": 1.0,
+    "module_record_count": 22,
+    "module_records_ready": 22,
+    "negative_evidence_linked": true,
+    "source_backlog_item_count": 20,
+    "source_backlog_route_smoke_passed": true,
+    "source_backlog_steward_decision_candidate_count": 20,
+    "source_backlog_work_card_count": 20,
+    "stale_latest_view_count": 0,
+    "steward_decision_count": 8,
+    "surfaces_over_report_cap": 0,
+    "warning_count": 0
+  },
+  "module_surface_sample": [
+    "project_manifest_registry",
+    "project_steward_records",
+    "core_control_plane",
+    "theseus_plan_compiler",
+    "deterministic_tool_substrate",
+    "model_governance_gates",
+    "theseus_assistant_runtime",
+    "benchmark_cards"
+  ],
+  "required_rules": [
+    "module_card",
+    "source_crosswalk",
+    "non_claim",
+    "retirement"
+  ],
+  "claim_boundary": {
+    "claim_id": "project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import",
+    "old_support_state": "argument",
+    "new_support_state": "prototype-backed",
+    "support_state_effect": "eligible_for_bounded_evidence_review",
+    "chapter_id": "project-theseus-as-report-first-implementation-reference",
+    "chapter_core_claim_promotion": false,
+    "capability_claim": false
+  },
+  "non_claims": [
+    "Project Theseus module definition-of-done gate health is repository-quality evidence only.",
+    "This import does not copy the raw Project Theseus report, module cards, backlog work cards, private payloads, prompts, tests, solutions, candidate code, traces, checkpoints, or training rows into this public repository.",
+    "This import does not prove clean live Project Theseus replay, model quality, deployed Theseus behavior, module capability, benchmark performance, safety, alignment, deployment readiness, transfer, or ASI.",
+    "This import does not promote any chapter core claim above argument."
+  ]
+}

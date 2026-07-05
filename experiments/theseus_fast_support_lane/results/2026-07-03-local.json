@@ -60,11 +60,11 @@
   ],
   "pass": true,
   "record_kind": "theseus_fast_support_lane",
-  "recorded_at_utc": "2026-07-05T10:47:55Z",
+  "recorded_at_utc": "2026-07-05T18:41:30Z",
   "replay_commands": [
     {
       "command": "python3 scripts/validate_theseus_generation_mode_import.py",
-      "elapsed_ms": 37.666,
+      "elapsed_ms": 33.0,
       "evidence_surface": "Project Theseus public-safe generation-mode import plus Fast Generation Lean bridge",
       "exit_code": 0,
       "id": "theseus_generation_mode_import",
@@ -75,7 +75,7 @@
     },
     {
       "command": "python3 scripts/validate_theseus_support_replay_probe.py",
-      "elapsed_ms": 138.73,
+      "elapsed_ms": 135.415,
       "evidence_surface": "ASI-side replay of the two Project Theseus static import validators",
       "exit_code": 0,
       "id": "theseus_support_replay_probe",
@@ -86,7 +86,7 @@
     },
     {
       "command": "python3 scripts/validate_theseus_public_task_bundle_import.py",
-      "elapsed_ms": 44.668,
+      "elapsed_ms": 48.686,
       "evidence_surface": "bounded Project Theseus public task-bundle import and no-promotion decision",
       "exit_code": 0,
       "id": "theseus_public_task_bundle_import",
@@ -97,7 +97,7 @@
     },
     {
       "command": "python3 scripts/validate_fast_generation_task_bundle.py",
-      "elapsed_ms": 32.706,
+      "elapsed_ms": 34.55,
       "evidence_surface": "local Fast Generation public-safe task bundle and no-promotion decision",
       "exit_code": 0,
       "id": "fast_generation_task_bundle",
@@ -181,10 +181,10 @@
       "sha256": "09baff821e03972eefb0d73c6db00187564c9cd5b02d61e837da418b91a865cb"
     },
     {
-      "bytes": 36728,
-      "lines": 895,
+      "bytes": 40970,
+      "lines": 1008,
       "path": "lean/AsiStackProofs/TheseusReference.lean",
-      "sha256": "211ff95a292f38ce6906f7472eefea04d2c68d5cb5eddf017c2dda18a13957b9"
+      "sha256": "a2ddb7c842ef7864da993a34c1349aa5804d29dc2b9edf853e201657f667b880"
     },
     {
       "bytes": 21679,

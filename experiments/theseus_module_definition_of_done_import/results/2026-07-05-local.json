@@ -1,0 +1,117 @@
+{
+  "chapter_core_support_effect": "none",
+  "claim_boundary": {
+    "capability_claim": false,
+    "chapter_core_claim_promotion": false,
+    "chapter_id": "project-theseus-as-report-first-implementation-reference",
+    "claim_id": "project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import",
+    "new_support_state": "prototype-backed",
+    "old_support_state": "argument",
+    "support_state_effect": "eligible_for_bounded_evidence_review"
+  },
+  "command": "python3 scripts/validate_theseus_module_definition_of_done_import.py",
+  "expected_invalid_control_count": 7,
+  "expected_invalid_controls": [
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_module_definition_of_done_import/fixtures/invalid/capability_claim_overclaim.invalid.json",
+      "mutation": "module-card health treated as capability evidence",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_module_definition_of_done_import/fixtures/invalid/clean_checkout_overclaim.invalid.json",
+      "mutation": "dirty checkout boundary erased",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_module_definition_of_done_import/fixtures/invalid/hard_gap_erasure.invalid.json",
+      "mutation": "hard gap count introduced",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_module_definition_of_done_import/fixtures/invalid/missing_module_coverage.invalid.json",
+      "mutation": "major module coverage reduced",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_module_definition_of_done_import/fixtures/invalid/private_payload_copied.invalid.json",
+      "mutation": "private payload copied flag set",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_module_definition_of_done_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+      "mutation": "source_config_sha256 changed from the reviewed source digest",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_module_definition_of_done_import/fixtures/invalid/support_promotion_overclaim.invalid.json",
+      "mutation": "chapter core promotion claimed",
+      "rejected": true
+    }
+  ],
+  "lean_fixture_alignment": {
+    "expected": {
+      "capability_claim": false,
+      "chapter_core_promotion": false,
+      "hard_gap_count": 0,
+      "major_surface_count": 22,
+      "module_records_ready": 22,
+      "source_backlog_route_smoke_passed": true,
+      "trigger_green": true,
+      "warning_count": 0
+    },
+    "module": "AsiStackProofs.TheseusReference",
+    "proof_tag": "lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
+    "theorem_refs": [
+      "theseus_module_definition_of_done_import_fixture_valid",
+      "theseus_module_definition_of_done_import_core_promotion_rejected",
+      "theseus_module_definition_of_done_import_capability_overclaim_rejected"
+    ]
+  },
+  "non_claims": [
+    "Project Theseus module definition-of-done gate health is repository-quality evidence only.",
+    "This import does not copy the raw Project Theseus report, module cards, backlog work cards, private payloads, prompts, tests, solutions, candidate code, traces, checkpoints, or training rows into this public repository.",
+    "This import does not prove clean live Project Theseus replay, model quality, deployed Theseus behavior, module capability, benchmark performance, safety, alignment, deployment readiness, transfer, or ASI.",
+    "This import does not promote any chapter core claim above argument."
+  ],
+  "policy": "project_theseus_module_definition_of_done_gate_v1",
+  "public_safety": {
+    "private_path_fields_redacted": true,
+    "private_payload_copied": false,
+    "raw_report_copied": false,
+    "sanitized_for_public_repo": true
+  },
+  "result_id": "theseus-module-definition-of-done-import-2026-07-05",
+  "schema_version": "asi_stack.theseus_module_definition_of_done_import_result.v0",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_commit": "1ad88a22",
+  "summary": {
+    "book_standard_source_count": 7,
+    "book_standard_source_present_count": 7,
+    "cleanup_queue_count": 0,
+    "hard_gap_count": 0,
+    "major_surface_count": 22,
+    "major_surface_coverage_ratio": 1.0,
+    "module_record_count": 22,
+    "module_records_ready": 22,
+    "negative_evidence_linked": true,
+    "source_backlog_item_count": 20,
+    "source_backlog_route_smoke_passed": true,
+    "source_backlog_steward_decision_candidate_count": 20,
+    "source_backlog_work_card_count": 20,
+    "stale_latest_view_count": 0,
+    "steward_decision_count": 8,
+    "surfaces_over_report_cap": 0,
+    "warning_count": 0
+  },
+  "support_state_effect": "bounded_non_core_transition_only",
+  "trigger_state": "GREEN",
+  "valid_fixture_hash": "ee4fc3369fb2ad0ca1b43ef5ad78391e40e4911f263b8055e8cbb9de3c8eebb2",
+  "verification_result": "pass"
+}

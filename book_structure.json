@@ -12450,6 +12450,13 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_artifact_retention_replay_import.py`"
             },
             {
+              "name": "Theseus module definition-of-done import validation",
+              "purpose": "Validate a sanitized public-safe Project Theseus module definition-of-done gate import with source/report digests, GREEN trigger state, 22 ready module records, public-safety redaction boundary, accepted bounded non-core transition, and expected-invalid controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_module_definition_of_done_import.py`; result `theseus-module-definition-of-done-import-2026-07-05` checks 22 of 22 major module records ready, 0 hard gaps, 0 warnings, 20 source-backlog work cards, 7 expected-invalid controls, and bounded claim `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import` from `argument` to `prototype-backed`; does not prove clean live Project Theseus replay, module capability, deployed behavior, model quality, benchmark performance, safety, alignment, ASI, or chapter-core promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_module_definition_of_done_import.py`"
+            },
+            {
               "name": "Report-bundle completeness test",
               "purpose": "Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported.",
               "implementation_status": "implemented",
@@ -12593,6 +12600,12 @@
               "tag": "lean:theseus.reference.artifact_retention_replay_import.fixture_bridge",
               "module": "AsiStackProofs.TheseusReference",
               "target": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
               "status": "implemented"
             }
           ]

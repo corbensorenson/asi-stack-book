@@ -892,4 +892,117 @@ theorem theseus_artifact_retention_replay_import_core_promotion_rejected :
     theseusArtifactRetentionReplayImportFixture,
   ] at valid
 
+structure TheseusModuleDefinitionOfDoneImportSummary where
+  triggerGreen : Bool
+  moduleRecordsReady : Nat
+  moduleRecordCount : Nat
+  majorSurfaceCount : Nat
+  hardGapCount : Nat
+  warningCount : Nat
+  bookStandardSourcesPresent : Nat
+  bookStandardSourceCount : Nat
+  sourceBacklogWorkCardCount : Nat
+  sourceBacklogRouteSmokePassed : Bool
+  negativeEvidenceLinked : Bool
+  privatePayloadCopied : Bool
+  rawReportCopied : Bool
+  pathFieldsRedacted : Bool
+  chapterCorePromotion : Bool
+  capabilityClaim : Bool
+  cleanLiveReplayClaimed : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def TheseusModuleDefinitionOfDoneImportRecordsReady
+    (summary : TheseusModuleDefinitionOfDoneImportSummary) : Prop :=
+  summary.triggerGreen = true ∧
+    summary.moduleRecordsReady = 22 ∧
+      summary.moduleRecordCount = 22 ∧
+        summary.majorSurfaceCount = 22 ∧
+          summary.hardGapCount = 0 ∧
+            summary.warningCount = 0 ∧
+              summary.bookStandardSourcesPresent = 7 ∧
+                summary.bookStandardSourceCount = 7 ∧
+                  summary.sourceBacklogWorkCardCount = 20 ∧
+                    summary.sourceBacklogRouteSmokePassed = true ∧
+                      summary.negativeEvidenceLinked = true
+
+def TheseusModuleDefinitionOfDoneImportPublicSafe
+    (summary : TheseusModuleDefinitionOfDoneImportSummary) : Prop :=
+  summary.privatePayloadCopied = false ∧
+    summary.rawReportCopied = false ∧
+      summary.pathFieldsRedacted = true ∧
+        summary.nonClaimBoundaryRecorded = true
+
+def TheseusModuleDefinitionOfDoneImportPreservesBoundaries
+    (summary : TheseusModuleDefinitionOfDoneImportSummary) : Prop :=
+  summary.chapterCorePromotion = false ∧
+    summary.capabilityClaim = false ∧
+      summary.cleanLiveReplayClaimed = false
+
+def TheseusModuleDefinitionOfDoneImportValid
+    (summary : TheseusModuleDefinitionOfDoneImportSummary) : Prop :=
+  TheseusModuleDefinitionOfDoneImportRecordsReady summary ∧
+    TheseusModuleDefinitionOfDoneImportPublicSafe summary ∧
+      TheseusModuleDefinitionOfDoneImportPreservesBoundaries summary
+
+def theseusModuleDefinitionOfDoneImportFixture :
+    TheseusModuleDefinitionOfDoneImportSummary := {
+  triggerGreen := true
+  moduleRecordsReady := 22
+  moduleRecordCount := 22
+  majorSurfaceCount := 22
+  hardGapCount := 0
+  warningCount := 0
+  bookStandardSourcesPresent := 7
+  bookStandardSourceCount := 7
+  sourceBacklogWorkCardCount := 20
+  sourceBacklogRouteSmokePassed := true
+  negativeEvidenceLinked := true
+  privatePayloadCopied := false
+  rawReportCopied := false
+  pathFieldsRedacted := true
+  chapterCorePromotion := false
+  capabilityClaim := false
+  cleanLiveReplayClaimed := false
+  nonClaimBoundaryRecorded := true
+}
+
+theorem theseus_module_definition_of_done_import_fixture_valid :
+    TheseusModuleDefinitionOfDoneImportValid
+      theseusModuleDefinitionOfDoneImportFixture := by
+  simp [
+    TheseusModuleDefinitionOfDoneImportValid,
+    TheseusModuleDefinitionOfDoneImportRecordsReady,
+    TheseusModuleDefinitionOfDoneImportPublicSafe,
+    TheseusModuleDefinitionOfDoneImportPreservesBoundaries,
+    theseusModuleDefinitionOfDoneImportFixture,
+  ]
+
+theorem theseus_module_definition_of_done_import_core_promotion_rejected :
+    ¬ TheseusModuleDefinitionOfDoneImportValid
+      { theseusModuleDefinitionOfDoneImportFixture with
+        chapterCorePromotion := true } := by
+  intro valid
+  simp [
+    TheseusModuleDefinitionOfDoneImportValid,
+    TheseusModuleDefinitionOfDoneImportRecordsReady,
+    TheseusModuleDefinitionOfDoneImportPublicSafe,
+    TheseusModuleDefinitionOfDoneImportPreservesBoundaries,
+    theseusModuleDefinitionOfDoneImportFixture,
+  ] at valid
+
+theorem theseus_module_definition_of_done_import_capability_overclaim_rejected :
+    ¬ TheseusModuleDefinitionOfDoneImportValid
+      { theseusModuleDefinitionOfDoneImportFixture with
+        capabilityClaim := true } := by
+  intro valid
+  simp [
+    TheseusModuleDefinitionOfDoneImportValid,
+    TheseusModuleDefinitionOfDoneImportRecordsReady,
+    TheseusModuleDefinitionOfDoneImportPublicSafe,
+    TheseusModuleDefinitionOfDoneImportPreservesBoundaries,
+    theseusModuleDefinitionOfDoneImportFixture,
+  ] at valid
+
 end AsiStackProofs.TheseusReference

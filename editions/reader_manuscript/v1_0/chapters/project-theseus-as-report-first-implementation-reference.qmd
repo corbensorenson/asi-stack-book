@@ -228,6 +228,24 @@ deployment readiness, ASI, or the Project Theseus chapter core claim. The
 replay import is useful precisely because it demonstrates a small piece of
 report-first machinery without relaxing the chapter boundary.
 
+The module definition-of-done gate adds a second kind of discipline. It asks
+whether the project can say what each major surface is for before anyone treats
+that surface as progress. The sanitized import records a local Theseus gate run
+with `GREEN` status, 22 of 22 major module records ready, no hard gaps, no
+warnings, all seven book-standard sources present, negative evidence linked,
+and 20 source-backlog work cards routed through a passing smoke check.
+
+That is not a clean live Theseus replay, and it is not capability evidence. It
+is a bounded sign that Theseus has a checkable definition of done for its own
+registry surfaces: problem, interface, invariants, failure modes, minimal
+implementation, validation commands, evidence references, non-claims, and
+deprecation route. The ASI Stack validator rejects source hash drift, copied
+private payloads, clean-checkout overclaim, chapter-core promotion, missing
+module coverage, hard-gap erasure, and the mistake of treating module-card
+health as model capability. Only the narrow import claim
+`project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import`
+moves to `prototype-backed`.
+
 The whole surface is narrow. It does not rerun Project Theseus. It does not
 prove that the current checkout is clean. It does not reproduce a benchmark. It
 does not inspect a live dashboard. It does not authorize training. It does not

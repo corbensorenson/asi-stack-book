@@ -85,6 +85,27 @@ SIMULATION_TRANSITION = (
     / "v1_x_measured"
     / "theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json"
 )
+MODULE_DOD_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_module_definition_of_done_import"
+    / "results"
+    / "2026-07-05-local.json"
+)
+MODULE_DOD_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_module_definition_of_done_import"
+    / "fixtures"
+    / "valid"
+    / "module_definition_of_done_import.valid.json"
+)
+MODULE_DOD_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_module_definition_of_done_import_prototype_backed.json"
+)
 
 DOCS = (
     "docs/theseus_report_import_slice.md",
@@ -94,6 +115,7 @@ DOCS = (
     "docs/theseus_artifact_retention_replay_import.md",
     "docs/theseus_governance_rights_receipt_suite_import.md",
     "docs/theseus_simulation_fidelity_receipt_suite_import.md",
+    "docs/theseus_module_definition_of_done_import.md",
 )
 VALIDATORS = (
     "python3 scripts/validate_theseus_report.py",
@@ -104,6 +126,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_artifact_retention_replay_import.py",
     "python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py",
     "python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
+    "python3 scripts/validate_theseus_module_definition_of_done_import.py",
 )
 
 
@@ -132,6 +155,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['artifact_retention_replay_imports']} artifact-retention replay import, "
         f"{metrics['governance_rights_receipt_imports']} governance-rights receipt import, "
         f"{metrics['simulation_fidelity_receipt_imports']} simulation-fidelity receipt import, "
+        f"{metrics['module_dod_imports']} module definition-of-done import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
         f"{metrics['public_training_rows']} public training rows, "
         f"{metrics['generation_mode_count']} generation modes, "
@@ -141,7 +165,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['no_promotion_decisions']} accepted no-promotion decision, "
         f"{metrics['artifact_upward_transitions']} accepted bounded artifact-retention transition, "
         f"{metrics['governance_rights_upward_transitions']} accepted bounded governance-rights transition, "
-        f"and {metrics['simulation_fidelity_upward_transitions']} accepted bounded simulation-fidelity transition; "
+        f"{metrics['simulation_fidelity_upward_transitions']} accepted bounded simulation-fidelity transition, "
+        f"and {metrics['module_dod_upward_transitions']} accepted bounded module definition-of-done transition; "
         "clean live replay remains unclaimed. "
         "| `docs/project_theseus_static_import_status_ledger.md`; "
         "`python3 scripts/validate_project_theseus_static_import_status_ledger.py` |"
@@ -168,6 +193,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         SIMULATION_RESULT,
         SIMULATION_FIXTURE,
         SIMULATION_TRANSITION,
+        MODULE_DOD_RESULT,
+        MODULE_DOD_FIXTURE,
+        MODULE_DOD_TRANSITION,
         *(ROOT / path for path in DOCS),
     ]
     for path in required:
@@ -193,6 +221,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     simulation_result = load_json(SIMULATION_RESULT)
     simulation_fixture = load_json(SIMULATION_FIXTURE)
     simulation_transition = load_json(SIMULATION_TRANSITION)
+    module_dod_result = load_json(MODULE_DOD_RESULT)
+    module_dod_fixture = load_json(MODULE_DOD_FIXTURE)
+    module_dod_transition = load_json(MODULE_DOD_TRANSITION)
 
     if arch_result.get("validation_result") != "pass":
         errors.append("architecture-gate import result must pass.")
@@ -443,12 +474,56 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if "does not prove simulator adequacy" not in simulation_nonclaims:
         errors.append("Theseus simulation-fidelity receipt suite transition missing simulator-adequacy non-claim.")
 
+    module_dod_summary = module_dod_fixture.get("summary", {})
+    module_dod_boundary = module_dod_fixture.get("claim_boundary", {})
+    module_dod_safety = module_dod_result.get("public_safety", {})
+    if module_dod_result.get("verification_result") != "pass":
+        errors.append("Theseus module definition-of-done import result must pass.")
+    if module_dod_result.get("expected_invalid_control_count") != 7:
+        errors.append("Theseus module definition-of-done import must keep seven expected-invalid controls.")
+    if module_dod_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus module definition-of-done import must preserve dirty-at-import boundary.")
+    if module_dod_result.get("trigger_state") != "GREEN":
+        errors.append("Theseus module definition-of-done import must keep GREEN trigger state.")
+    if module_dod_summary.get("module_records_ready") != 22 or module_dod_summary.get("module_record_count") != 22:
+        errors.append("Theseus module definition-of-done import must keep 22/22 ready module records.")
+    if module_dod_summary.get("hard_gap_count") != 0 or module_dod_summary.get("warning_count") != 0:
+        errors.append("Theseus module definition-of-done import must keep zero hard gaps and warnings.")
+    if module_dod_summary.get("source_backlog_work_card_count") != 20:
+        errors.append("Theseus module definition-of-done import must keep 20 source-backlog work cards.")
+    if module_dod_summary.get("source_backlog_route_smoke_passed") is not True:
+        errors.append("Theseus module definition-of-done import must keep route smoke pass.")
+    if module_dod_result.get("support_state_effect") != "bounded_non_core_transition_only":
+        errors.append("Theseus module definition-of-done import support_state_effect drifted.")
+    if module_dod_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus module definition-of-done import must preserve chapter_core_support_effect none.")
+    if module_dod_boundary.get("chapter_core_claim_promotion") is not False:
+        errors.append("Theseus module definition-of-done import must not claim chapter-core promotion.")
+    if module_dod_boundary.get("capability_claim") is not False:
+        errors.append("Theseus module definition-of-done import must not claim module capability.")
+    if (
+        module_dod_safety.get("raw_report_copied") is not False
+        or module_dod_safety.get("private_payload_copied") is not False
+        or module_dod_safety.get("private_path_fields_redacted") is not True
+    ):
+        errors.append("Theseus module definition-of-done import must keep raw-report/private-payload redaction boundary.")
+    if module_dod_transition.get("review_status") != "accepted":
+        errors.append("Theseus module definition-of-done transition must remain accepted.")
+    if module_dod_transition.get("transition_effect") != "upward":
+        errors.append("Theseus module definition-of-done transition_effect must remain upward.")
+    if module_dod_transition.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus module definition-of-done transition must remain prototype-backed.")
+    module_dod_nonclaims = " ".join(str(item) for item in module_dod_transition.get("non_claims", []))
+    if "does not prove clean live Project Theseus replay" not in module_dod_nonclaims:
+        errors.append("Theseus module definition-of-done transition missing clean-live-replay non-claim.")
+
     metrics = {
         "static_report_imports": 2,
         "support_replay_count": 1,
         "artifact_retention_replay_imports": 1,
         "governance_rights_receipt_imports": 1,
         "simulation_fidelity_receipt_imports": 1,
+        "module_dod_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
         "support_replay_tracked_artifacts": len(support_replay.get("tracked_artifacts", [])),
         "architecture_gate_count": arch_result.get("accepted_gate_count"),
@@ -502,12 +577,20 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "simulation_fidelity_blocked_transfers": simulation_summary.get("blocked_transfer_count"),
         "simulation_fidelity_downgraded_claims": simulation_summary.get("downgraded_claim_count"),
         "simulation_fidelity_upward_transitions": 1,
+        "module_dod_expected_invalid": module_dod_result.get("expected_invalid_control_count"),
+        "module_dod_ready_records": module_dod_summary.get("module_records_ready"),
+        "module_dod_total_records": module_dod_summary.get("module_record_count"),
+        "module_dod_hard_gaps": module_dod_summary.get("hard_gap_count"),
+        "module_dod_warnings": module_dod_summary.get("warning_count"),
+        "module_dod_source_backlog_work_cards": module_dod_summary.get("source_backlog_work_card_count"),
+        "module_dod_upward_transitions": 1,
         "expected_invalid_total": arch_result.get("expected_invalid_count", 0)
         + gen_result.get("expected_invalid_count", 0)
         + task_result.get("expected_invalid_count", 0)
         + artifact_result.get("expected_invalid_count", 0)
         + governance_result.get("expected_invalid_count", 0)
-        + simulation_result.get("expected_invalid_count", 0),
+        + simulation_result.get("expected_invalid_count", 0)
+        + module_dod_result.get("expected_invalid_control_count", 0),
         "no_promotion_decisions": 1,
         "source_commit_short": str(source_project.get("commit", ""))[:8],
     }

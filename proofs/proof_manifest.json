@@ -1,9 +1,9 @@
 {
   "generated_from": "docs/book_outline.md",
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
-  "proof_target_count": 204,
+  "proof_target_count": 205,
   "status_counts": {
-    "implemented": 204
+    "implemented": 205
   },
   "chapter_counts": {
     "artifact-graphs-audit-logs-and-replay": 10,
@@ -35,7 +35,7 @@
     "planning-as-a-control-layer": 7,
     "policy-optimization-and-learning-from-feedback": 4,
     "procedural-memory-and-cognitive-loop-closure": 2,
-    "project-theseus-as-report-first-implementation-reference": 6,
+    "project-theseus-as-report-first-implementation-reference": 7,
     "prototype-roadmap": 3,
     "rankfold-neuralfold-and-artifact-compression": 3,
     "readiness-gates-residual-escrow-and-quarantine": 3,
@@ -1949,7 +1949,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
       "status": "implemented",
-      "outline_line": 3299,
+      "outline_line": 3301,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1959,7 +1959,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
       "status": "implemented",
-      "outline_line": 3300,
+      "outline_line": 3302,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1969,7 +1969,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.",
       "status": "implemented",
-      "outline_line": 3301,
+      "outline_line": 3303,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1979,7 +1979,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
       "status": "implemented",
-      "outline_line": 3302,
+      "outline_line": 3304,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1989,7 +1989,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
       "status": "implemented",
-      "outline_line": 3303,
+      "outline_line": 3305,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -1999,7 +1999,17 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
       "status": "implemented",
-      "outline_line": 3304,
+      "outline_line": 3306,
+      "module_path": "lean/AsiStackProofs/TheseusReference.lean"
+    },
+    {
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "chapter_title": "Project Theseus as Report-First Implementation Reference",
+      "tag": "lean:theseus.reference.module_definition_of_done_import.fixture_bridge",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
+      "status": "implemented",
+      "outline_line": 3307,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2009,7 +2019,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
       "status": "implemented",
-      "outline_line": 3363,
+      "outline_line": 3366,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -2019,7 +2029,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A phase milestone cannot promote a claim without evidence artifacts.",
       "status": "implemented",
-      "outline_line": 3364,
+      "outline_line": 3367,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -2029,7 +2039,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
       "status": "implemented",
-      "outline_line": 3365,
+      "outline_line": 3368,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -2039,7 +2049,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
       "status": "implemented",
-      "outline_line": 3437,
+      "outline_line": 3440,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -2049,7 +2059,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
       "status": "implemented",
-      "outline_line": 3438,
+      "outline_line": 3441,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -2059,7 +2069,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
       "status": "implemented",
-      "outline_line": 3439,
+      "outline_line": 3442,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -2069,7 +2079,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A current reader release-candidate route cannot treat local format evidence as approval while accessibility, audio, release-approval, or non-claim blockers remain.",
       "status": "implemented",
-      "outline_line": 3440,
+      "outline_line": 3443,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -2079,7 +2089,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
       "status": "implemented",
-      "outline_line": 3500,
+      "outline_line": 3503,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -2089,7 +2099,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
       "status": "implemented",
-      "outline_line": 3501,
+      "outline_line": 3504,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

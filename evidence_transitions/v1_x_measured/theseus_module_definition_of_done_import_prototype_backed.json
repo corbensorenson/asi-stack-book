@@ -1,0 +1,95 @@
+{
+  "transition_id": "theseus-module-definition-of-done-import-prototype-backed-2026-07-05",
+  "claim_id": "project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import",
+  "claim_surface_refs": [
+    "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "editions/reader_manuscript/v1_0/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "docs/theseus_module_definition_of_done_import.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_module_definition_of_done_import/fixtures/valid/module_definition_of_done_import.valid.json",
+    "experiments/theseus_module_definition_of_done_import/results/2026-07-05-local.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "prototype-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "bounded non-core Project Theseus module definition-of-done gate import only",
+  "evidence_roles": [
+    "sanitized Project Theseus module-definition-of-done gate summary",
+    "expected-invalid mutation controls",
+    "finite Lean bridge over summarized import facts"
+  ],
+  "transition_reason": "The imported sanitized gate run records a GREEN module definition-of-done result with 22 of 22 major module records ready, 0 hard gaps, 0 warnings, 20 source-backlog work cards, source/backlog route smoke passing, and explicit non-claims; the accepted transition is limited to the narrow import claim.",
+  "required_artifacts": [
+    "sanitized public-safe fixture",
+    "validator result artifact",
+    "expected-invalid controls",
+    "chapter and reader boundary prose",
+    "non-core evidence ledger row"
+  ],
+  "artifact_refs": [
+    "docs/theseus_module_definition_of_done_import.md",
+    "experiments/theseus_module_definition_of_done_import/fixtures/valid/module_definition_of_done_import.valid.json",
+    "experiments/theseus_module_definition_of_done_import/results/2026-07-05-local.json",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/theseus_module_definition_of_done_import.md",
+    "experiments/theseus_module_definition_of_done_import/results/2026-07-05-local.json",
+    "docs/project_theseus_static_import_status_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/G_corben_source_corpus.qmd#project_theseus_whitepaper",
+    "appendices/G_corben_source_corpus.qmd#theseus_operator_os",
+    "docs/book_outline.md#project-theseus-as-report-first-implementation-reference"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_module_definition_of_done_import.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "source hash mismatch rejected",
+    "private payload copy rejected",
+    "clean checkout overclaim rejected",
+    "chapter-core support promotion rejected",
+    "missing module coverage rejected",
+    "hard gap erasure rejected",
+    "capability-evidence overclaim rejected"
+  ],
+  "negative_evidence_refs": [
+    "experiments/theseus_module_definition_of_done_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+    "experiments/theseus_module_definition_of_done_import/fixtures/invalid/private_payload_copied.invalid.json",
+    "experiments/theseus_module_definition_of_done_import/fixtures/invalid/clean_checkout_overclaim.invalid.json",
+    "experiments/theseus_module_definition_of_done_import/fixtures/invalid/support_promotion_overclaim.invalid.json",
+    "experiments/theseus_module_definition_of_done_import/fixtures/invalid/missing_module_coverage.invalid.json",
+    "experiments/theseus_module_definition_of_done_import/fixtures/invalid/hard_gap_erasure.invalid.json",
+    "experiments/theseus_module_definition_of_done_import/fixtures/invalid/capability_claim_overclaim.invalid.json"
+  ],
+  "downgrade_triggers": [
+    "source digest or reviewed summary changes without a refreshed import",
+    "raw private payload or private path is copied into the public fixture",
+    "module-card health is described as learned capability, model quality, deployment, or chapter-core support evidence",
+    "clean live Theseus replay is claimed from this dirty-checkout import"
+  ],
+  "promotion_burden": "A stronger claim would need a clean public Theseus replay or archived public fixture with environment notes, exact commands, published module-card artifacts, independent review, and no private-payload leakage.",
+  "limitations": [
+    "The source checkout was dirty at import review.",
+    "The raw Project Theseus report, module cards, backlog rows, and private paths are not copied into this repository.",
+    "The import checks module definition-of-done gate summary shape and public-safety boundaries only.",
+    "The import does not prove module capability, model quality, deployed Theseus behavior, clean live replay, or chapter-core support."
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "local Codex validation run on 2026-07-05"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no independent external human review",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-theseus-module-definition-of-done-gate",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not prove clean live Project Theseus replay.",
+    "Does not prove model quality, deployed Theseus behavior, module capability, benchmark performance, safety, alignment, transfer, deployment readiness, or ASI.",
+    "Does not copy private Project Theseus payloads, prompts, tests, solutions, candidate code, traces, checkpoints, or training rows into this repository.",
+    "does not promote any chapter core claim above argument."
+  ]
+}

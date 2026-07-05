@@ -1,5 +1,36 @@
 # Changelog
 
+## 2026-07-05 - Import Theseus module definition-of-done gate
+
+- Added `python3 scripts/validate_theseus_module_definition_of_done_import.py`,
+  `docs/theseus_module_definition_of_done_import.md`, the public-safe fixture
+  set under `experiments/theseus_module_definition_of_done_import/`, result
+  artifact
+  `experiments/theseus_module_definition_of_done_import/results/2026-07-05-local.json`,
+  Lean bridge `lean:theseus.reference.module_definition_of_done_import.fixture_bridge`,
+  and accepted bounded transition
+  `evidence_transitions/v1_x_measured/theseus_module_definition_of_done_import_prototype_backed.json`.
+- The Theseus module definition-of-done import records trigger state `GREEN`,
+  22 of 22 major module records ready, 0 hard gaps, 0 warnings, all seven
+  book-standard sources present, negative evidence linked, 20 source-backlog
+  work cards, eight steward decisions, and seven expected-invalid controls for
+  source-hash mismatch, private-payload copying, clean-checkout overclaim,
+  support-promotion overclaim, missing module coverage, hard-gap erasure, and
+  capability overclaim.
+- Current proof-depth snapshot: 205 proof targets, 54 Lean modules, 1013
+  theorem declarations, 824 derived/decomposed, 185 direct/projection, 4
+  unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Updated the Project Theseus live and curated reader chapters, outline,
+  manifest proof/test hooks, non-core evidence ledger, Project Theseus static
+  import status ledger, public trust surfaces, accepted-transition audit, and
+  book validation wiring so
+  `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import`
+  moves from `argument` to `prototype-backed`.
+- Boundary: this does not prove clean live Project Theseus replay, module
+  capability, deployed Theseus behavior, model quality, benchmark performance,
+  safety, alignment, transfer, deployment readiness, ASI, or any chapter core
+  claim above `argument`.
+
 ## 2026-07-05 - Import Theseus simulation-fidelity receipt suite
 
 - Added `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`,

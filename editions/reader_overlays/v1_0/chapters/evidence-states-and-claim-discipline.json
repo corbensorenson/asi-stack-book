@@ -48,7 +48,7 @@
       "content_lines": [
         "The smallest honest version is a working claim ledger, a working transition ledger, and a rule that neither can silently change the other. Appendix C supplies the public claim surface. The schema examples and Lean module supply a narrow local model of the rule. The support-state harness checks synthetic no-change, upward, downward, and terminal cases.",
         "",
-        "Three current audits make the rule harder to blur. The evidence-bundle probe checks two valid synthetic bundles and seven invalid controls. The claim-ledger audit checks all 44 manifest core claims against Appendix C and rejects seven mutation controls. The accepted-transition audit checks 73 accepted transition records, nine bounded non-core upward transitions, the no-promotion ledger, and seven invalid controls.",
+        "Three current audits make the rule harder to blur. The evidence-bundle probe checks two valid synthetic bundles and seven invalid controls. The claim-ledger audit checks all 44 manifest core claims against Appendix C and rejects seven mutation controls. The accepted-transition audit checks 74 accepted transition records, ten bounded non-core upward transitions, the no-promotion ledger, and seven invalid controls.",
         "",
         "Those artifacts are useful because they make bookkeeping failures visible. They do not prove any chapter core claim, and they do not prove that the mapped sources are interpreted correctly. A stronger exercise would include one lineage-only source, one direct-support source, one failed verification, one shape-only check, one finite formal predicate, and one benchmark result whose scope is deliberately narrower than the tempting prose claim."
       ]

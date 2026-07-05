@@ -33,6 +33,7 @@ EXPECTED_NON_CORE = {
     "project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import": "prototype-backed",
     "moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import": "prototype-backed",
     "resource-economics.simulation_fidelity_receipt_suite_import": "prototype-backed",
+    "project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import": "prototype-backed",
 }
 
 REQUIRED_LINKS = [
@@ -158,6 +159,7 @@ def assert_surface(
     dispositions: dict[str, int],
     no_promotion_decisions: int,
 ) -> None:
+    paragraph_word = "paragraph" if str(long_paragraphs) == "1" else "paragraphs"
     required = [
         "60-Second Trust Surface",
         f"{chapters} chapter core claims remain at `argument`",
@@ -168,11 +170,11 @@ def assert_surface(
         f"{sources} public-safe records",
         f"{chapters}/{chapters} chapters externally positioned",
         "0 explicit external-baseline exceptions",
-        "Nine narrow non-core transitions are accepted",
+        "Ten narrow non-core transitions are accepted",
         f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions",
         f"{high} high-priority",
         f"{medium} medium-priority",
-        f"{long_paragraphs} paragraphs at or above 160 words",
+        f"{long_paragraphs} {paragraph_word} at or above 160 words",
         f"{active_overlays} active/applied reader-overlay operations",
     ]
     for needle in required:
@@ -193,8 +195,8 @@ def assert_surface(
         if phrase not in text:
             errors.append(f"{name} missing non-claim boundary: {phrase}")
 
-    if "nine narrow non-core transitions are accepted" not in text.lower():
-        errors.append(f"{name} missing current nine-transition count")
+    if "ten narrow non-core transitions are accepted" not in text.lower():
+        errors.append(f"{name} missing current ten-transition count")
     if f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions" not in text:
         errors.append(f"{name} missing current no-promotion side-lane count")
 

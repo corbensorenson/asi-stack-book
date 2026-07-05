@@ -20,7 +20,7 @@ EXPECTED_STATUS = "accepted_audio_metadata_for_release_preparation"
 EXPECTED_RELEASE_ID = "2026-07-05-v1-curated-reader-blocked-3e59bde3"
 EXPECTED_SOURCE_COMMIT = "3e59bde35f4aa5147017ddab3159cfeffddc9ee7"
 EXPECTED_SOURCE_TAG = "not_tagged_curated_reader_blocked_candidate_2026-07-05"
-EXPECTED_SCRIPT_DIGEST = "66d78ff80b2b2577782fdfd41a59ba43c07179095b43a2dc3ca82de5d9938f2e"
+EXPECTED_SCRIPT_DIGEST = "4b071c312beadf8fa0e2ef6af23e533f9e28bcbbd1a49f6f6ac87ae5da159224"
 EXPECTED_CLEARED = ["audio_metadata_not_reviewed"]
 EXPECTED_PRESERVED = [
     "reviewed_reader_release_record_not_created_for_audio",
@@ -214,7 +214,7 @@ def validate() -> list[str]:
         EXPECTED_STATUS,
         "clears only `audio_metadata_not_reviewed`",
         "Source candidate | `2026-07-05-v1-curated-reader-blocked-3e59bde3`",
-        "Audio script digest | `66d78ff80b2b2577782fdfd41a59ba43c07179095b43a2dc3ca82de5d9938f2e`",
+        "Audio script digest | `4b071c312beadf8fa0e2ef6af23e533f9e28bcbbd1a49f6f6ac87ae5da159224`",
         "Script files checked | 49",
         "Chapter-marker rows | 49",
         "does not create MP3",
