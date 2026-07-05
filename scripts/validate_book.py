@@ -38,6 +38,7 @@ REQUIRED = [
     "scripts/validate_reader_visual_identity.py",
     "scripts/validate_reader_accessibility_navigation.py",
     "scripts/validate_reader_keyboard_navigation.py",
+    "scripts/validate_reader_keyboard_only_decision.py",
     "scripts/validate_reader_accessibility_tree.py",
     "scripts/validate_curated_reader_accessibility_tree.js",
     "scripts/validate_reader_chapter_reconciliation_approval.py",
@@ -56,6 +57,8 @@ REQUIRED = [
     "editions/reader_manuscript/v1_0/accessibility_navigation_manifest.json",
     "docs/reader_keyboard_navigation_review.md",
     "editions/reader_manuscript/v1_0/keyboard_navigation_manifest.json",
+    "docs/reader_keyboard_only_decision.md",
+    "editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json",
     "docs/reader_accessibility_tree_review.md",
     "editions/reader_manuscript/v1_0/accessibility_tree_manifest.json",
     "docs/reader_chapter_reconciliation_approval.md",
@@ -998,6 +1001,7 @@ def main() -> None:
     run_validator("validate_reader_visual_identity.py")
     run_validator("validate_reader_accessibility_navigation.py")
     run_validator("validate_reader_keyboard_navigation.py", "--tracked-only")
+    run_validator("validate_reader_keyboard_only_decision.py")
     run_validator("validate_reader_accessibility_tree.py", "--tracked-only")
     run_validator("validate_reader_chapter_reconciliation_approval.py")
     run_validator("validate_reader_key_figure_raster_probe.py")

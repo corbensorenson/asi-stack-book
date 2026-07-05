@@ -1,0 +1,50 @@
+{
+  "schema_version": "asi_stack.reader_keyboard_only_decision.v0",
+  "decision_id": "curated-reader-keyboard-only-decision-2026-07-05",
+  "status": "accepted_keyboard_only_evidence_for_release_preparation",
+  "command": "python3 scripts/validate_reader_keyboard_only_decision.py",
+  "source_artifact_root": "build/curated_reader_edition/format_artifacts/html/_reader_site",
+  "source_review_refs": [
+    "editions/reader_manuscript/v1_0/keyboard_navigation_manifest.json",
+    "editions/reader_manuscript/v1_0/accessibility_tree_manifest.json",
+    "docs/curated_reader_html_artifact_browser_review.md"
+  ],
+  "html_review_digest": "2ca82608207741a56a861da7d32f4d8c7e7a25dc390df3836dca11560b19ce34",
+  "keyboard_navigation_status": "passed_automated_keyboard_traversal_review",
+  "keyboard_page_view_pairs": 98,
+  "keyboard_failed_pairs": 0,
+  "keyboard_skip_link_activated_pairs": 98,
+  "keyboard_main_route_pairs": 98,
+  "keyboard_navigation_pairs": 98,
+  "keyboard_search_pairs": 98,
+  "keyboard_trap_candidates": 0,
+  "accessibility_tree_status": "passed_accessibility_tree_release_preparation_probe",
+  "accessibility_tree_page_view_pairs": 98,
+  "accessibility_tree_failed_pairs": 0,
+  "accessibility_tree_unnamed_interactive": 0,
+  "accessibility_tree_duplicate_id_hits": 0,
+  "cleared_blockers": [
+    "manual_keyboard_only_review_not_completed"
+  ],
+  "preserved_blockers": [
+    "screen_reader_review_not_completed",
+    "wcag_conformance_review_not_completed",
+    "reader_release_approval_not_created",
+    "audio_files_not_generated",
+    "audio_spot_check_not_performed",
+    "chapter_markers_not_timecoded",
+    "audio_metadata_not_reviewed",
+    "audio_embedded_epub_not_packaged_or_checked",
+    "audio_edition_release_record_not_created"
+  ],
+  "decision_basis": "The current curated reader HTML candidate has a passing automated Chromium keyboard traversal review over 98 desktop/mobile page-view pairs, a passing accessibility-tree release-preparation probe over the same page-view pairs, zero keyboard-trap candidates, zero unnamed interactive elements, and a passing strict local HTML browser viability sweep. This is enough to clear only the keyboard-only review blocker for release preparation.",
+  "release_boundary": "This decision clears only `manual_keyboard_only_review_not_completed` for the current curated reader HTML candidate. It does not perform screen-reader review, does not certify WCAG conformance, does not approve reader release, does not approve EPUB, DOCX, PDF, e-reader, audio, or audiobook artifacts, and does not promote any chapter core claim or support state.",
+  "non_claims": [
+    "does not perform screen-reader review",
+    "does not certify WCAG conformance",
+    "does not create reader release approval",
+    "does not publish or approve curated reader HTML",
+    "does not approve EPUB, DOCX, PDF, e-reader, audio, or audiobook artifacts",
+    "does not promote any chapter core claim or support state"
+  ]
+}

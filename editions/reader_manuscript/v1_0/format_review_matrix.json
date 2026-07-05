@@ -22,6 +22,8 @@
     "docs/reader_keyboard_navigation_review.md",
     "editions/reader_manuscript/v1_0/accessibility_tree_manifest.json",
     "docs/reader_accessibility_tree_review.md",
+    "editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json",
+    "docs/reader_keyboard_only_decision.md",
     "docs/reader_audio_script_probe_manifest.md",
     "editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json",
     "docs/reader_audio_narration_treatment_review.md",
@@ -52,7 +54,6 @@
       "audio_metadata_not_reviewed": 1,
       "audio_spot_check_not_performed": 1,
       "chapter_markers_not_timecoded": 1,
-      "manual_keyboard_only_review_not_completed": 1,
       "reader_release_approval_not_created": 5,
       "reviewed_reader_release_record_not_created_for_audio": 1,
       "screen_reader_review_not_completed": 1,
@@ -70,19 +71,21 @@
           "docs/reader_keyboard_navigation_review.md#summary",
           "editions/reader_manuscript/v1_0/accessibility_tree_manifest.json",
           "docs/reader_accessibility_tree_review.md#summary",
+          "docs/reader_keyboard_only_decision.md#decision",
+          "editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json",
           "docs/reader_final_figure_artifact_review.md#summary",
           "release_records/2026-07-04-v1-curated-reader-blocked-5dc1cd46.json"
         ],
         "release_blockers": [
-          "manual_keyboard_only_review_not_completed",
           "screen_reader_review_not_completed",
           "wcag_conformance_review_not_completed",
           "reader_release_approval_not_created"
         ],
-        "notes": "The curated reader HTML snapshot rendered locally, passed the strict browser viability sweep across 98 page-view pairs, passed the automated keyboard traversal review across 98 page-view pairs, passed the accessibility-tree release-preparation probe across 98 page-view pairs with 0 unnamed interactive elements and 0 duplicate-ID hits, and is covered by the final figure-artifact review. It is a release-preparation artifact, not the 2026-06-29 generated reader HTML approval.",
+        "notes": "The curated reader HTML snapshot rendered locally, passed the strict browser viability sweep across 98 page-view pairs, passed the automated keyboard traversal review across 98 page-view pairs, passed the accessibility-tree release-preparation probe across 98 page-view pairs with 0 unnamed interactive elements and 0 duplicate-ID hits, and has a keyboard-only evidence decision that clears only manual_keyboard_only_review_not_completed. It is covered by the final figure-artifact review. It is a release-preparation artifact, not the 2026-06-29 generated reader HTML approval, and it still lacks screen-reader review, WCAG conformance review, and reader release approval.",
         "non_claims": [
           "This candidate row does not approve curated reader HTML for release.",
           "This candidate row does not publish the ignored local HTML artifact.",
+          "This candidate row does not perform screen-reader review or certify WCAG conformance.",
           "This candidate row does not promote any claim support state."
         ]
       },
@@ -213,7 +216,7 @@
         ]
       }
     ],
-    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, the accessibility-tree release-preparation probe, and the script-level audio narration treatment review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
+    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, the keyboard-only evidence decision, the accessibility-tree release-preparation probe, and the script-level audio narration treatment review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires an edition release record naming the exact reviewed artifact."
   },
   "records": [
     {

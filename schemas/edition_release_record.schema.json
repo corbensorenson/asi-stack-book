@@ -315,6 +315,10 @@
         "reader_keyboard_navigation_navigation_pairs",
         "reader_keyboard_navigation_search_pairs",
         "reader_keyboard_navigation_trap_candidates",
+        "reader_keyboard_only_decision_manifest",
+        "reader_keyboard_only_decision_status",
+        "reader_keyboard_only_decision_cleared_blockers",
+        "reader_keyboard_only_decision_preserved_blockers",
         "reader_accessibility_tree_manifest",
         "reader_accessibility_tree_status",
         "reader_accessibility_tree_page_view_pairs",
@@ -453,6 +457,13 @@
         "reader_keyboard_navigation_navigation_pairs": { "type": "integer", "minimum": 0 },
         "reader_keyboard_navigation_search_pairs": { "type": "integer", "minimum": 0 },
         "reader_keyboard_navigation_trap_candidates": { "type": "integer", "minimum": 0 },
+        "reader_keyboard_only_decision_manifest": { "type": "string", "minLength": 1 },
+        "reader_keyboard_only_decision_status": {
+          "type": "string",
+          "enum": ["accepted_keyboard_only_evidence_for_release_preparation"]
+        },
+        "reader_keyboard_only_decision_cleared_blockers": { "type": "integer", "minimum": 0 },
+        "reader_keyboard_only_decision_preserved_blockers": { "type": "integer", "minimum": 0 },
         "reader_accessibility_tree_manifest": { "type": "string", "minLength": 1 },
         "reader_accessibility_tree_status": {
           "type": "string",

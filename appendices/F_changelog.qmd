@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-05 - Clear curated reader keyboard-only blocker
+
+- Added `scripts/validate_reader_keyboard_only_decision.py`,
+  `editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json`, and
+  `docs/reader_keyboard_only_decision.md` to record the current curated reader
+  HTML keyboard-only evidence decision.
+- Accepted the existing automated keyboard traversal evidence, accessibility
+  tree probe, and strict local HTML browser sweep as enough to clear only
+  `manual_keyboard_only_review_not_completed` for the current blocked curated
+  reader HTML candidate.
+- Updated the blocked curated-reader release record, format review matrix,
+  release-surface ledger/status row, roadmap, repository map, publication
+  readiness notes, release schema, and orchestrated validation around the
+  decision.
+- Boundary: this does not perform screen-reader review, certify WCAG
+  conformance, approve reader release, publish curated reader HTML, approve
+  EPUB/DOCX/PDF/e-reader/audio/audiobook artifacts, or move any chapter support
+  state.
+
 ## 2026-07-05 - Add curated reader accessibility-tree probe
 
 - Added `scripts/validate_curated_reader_accessibility_tree.js`,

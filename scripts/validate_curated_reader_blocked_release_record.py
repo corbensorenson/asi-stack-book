@@ -55,6 +55,10 @@ ACCESSIBILITY_NAVIGATION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_navigation_manifest.json"
 )
 KEYBOARD_NAVIGATION = ROOT / "editions" / "reader_manuscript" / "v1_0" / "keyboard_navigation_manifest.json"
+KEYBOARD_ONLY_DECISION = (
+    ROOT / "editions" / "reader_manuscript" / "v1_0" / "keyboard_only_decision_manifest.json"
+)
+KEYBOARD_ONLY_DECISION_DOC = ROOT / "docs" / "reader_keyboard_only_decision.md"
 ACCESSIBILITY_TREE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "accessibility_tree_manifest.json"
 ACCESSIBILITY_TREE_DOC = ROOT / "docs" / "reader_accessibility_tree_review.md"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
@@ -89,6 +93,7 @@ REQUIRED_COMMANDS = {
     "python3 scripts/validate_reader_visual_identity.py",
     "python3 scripts/validate_reader_accessibility_navigation.py",
     "python3 scripts/validate_reader_keyboard_navigation.py",
+    "python3 scripts/validate_reader_keyboard_only_decision.py",
     "python3 scripts/validate_reader_accessibility_tree.py --tracked-only",
     "python3 scripts/validate_reader_key_figure_raster_probe.py",
     "python3 scripts/validate_reader_key_figure_epub_layout.py",
@@ -177,6 +182,8 @@ def main() -> None:
         VISUAL_IDENTITY,
         ACCESSIBILITY_NAVIGATION,
         KEYBOARD_NAVIGATION,
+        KEYBOARD_ONLY_DECISION,
+        KEYBOARD_ONLY_DECISION_DOC,
         ACCESSIBILITY_TREE,
         ACCESSIBILITY_TREE_DOC,
         HTML_REVIEW,
@@ -213,6 +220,8 @@ def main() -> None:
     visual_identity = load_json(VISUAL_IDENTITY)
     accessibility_navigation = load_json(ACCESSIBILITY_NAVIGATION)
     keyboard_navigation = load_json(KEYBOARD_NAVIGATION)
+    keyboard_only_decision = load_json(KEYBOARD_ONLY_DECISION)
+    keyboard_only_decision_doc = KEYBOARD_ONLY_DECISION_DOC.read_text(encoding="utf-8")
     accessibility_tree = load_json(ACCESSIBILITY_TREE)
     accessibility_tree_doc = ACCESSIBILITY_TREE_DOC.read_text(encoding="utf-8")
     html_review = HTML_REVIEW.read_text(encoding="utf-8")
@@ -256,6 +265,8 @@ def main() -> None:
         fail([f"{rel(ACCESSIBILITY_NAVIGATION)} must contain a JSON object."])
     if not isinstance(keyboard_navigation, dict):
         fail([f"{rel(KEYBOARD_NAVIGATION)} must contain a JSON object."])
+    if not isinstance(keyboard_only_decision, dict):
+        fail([f"{rel(KEYBOARD_ONLY_DECISION)} must contain a JSON object."])
     if not isinstance(accessibility_tree, dict):
         fail([f"{rel(ACCESSIBILITY_TREE)} must contain a JSON object."])
 
@@ -837,6 +848,66 @@ def main() -> None:
         if fragment not in keyboard_boundary:
             errors.append(f"keyboard_navigation_manifest review_boundary missing {fragment!r}.")
 
+    expected_keyboard_only_decision = {
+        "status": "accepted_keyboard_only_evidence_for_release_preparation",
+        "html_review_digest": "2ca82608207741a56a861da7d32f4d8c7e7a25dc390df3836dca11560b19ce34",
+        "keyboard_navigation_status": keyboard_navigation.get("status"),
+        "keyboard_page_view_pairs": keyboard_summary.get("page_view_pairs"),
+        "keyboard_failed_pairs": keyboard_summary.get("failed_page_view_pairs"),
+        "keyboard_skip_link_activated_pairs": keyboard_summary.get("skip_link_activated_pairs"),
+        "keyboard_main_route_pairs": keyboard_summary.get("main_content_route_available_pairs"),
+        "keyboard_navigation_pairs": keyboard_summary.get("navigation_focus_reached_pairs"),
+        "keyboard_search_pairs": keyboard_summary.get("search_focus_reached_pairs"),
+        "keyboard_trap_candidates": keyboard_summary.get("keyboard_trap_candidates"),
+        "accessibility_tree_status": accessibility_tree.get("status"),
+        "cleared_blockers": ["manual_keyboard_only_review_not_completed"],
+    }
+    for key, expected in expected_keyboard_only_decision.items():
+        observed = keyboard_only_decision.get(key)
+        if observed != expected:
+            errors.append(f"keyboard_only_decision_manifest {key} must be {expected!r}; found {observed!r}.")
+    required_keyboard_only_preserved = {
+        "screen_reader_review_not_completed",
+        "wcag_conformance_review_not_completed",
+        "reader_release_approval_not_created",
+        "audio_files_not_generated",
+    }
+    missing_keyboard_only_preserved = sorted(
+        required_keyboard_only_preserved - set(keyboard_only_decision.get("preserved_blockers", []))
+    )
+    if missing_keyboard_only_preserved:
+        errors.append(
+            "keyboard_only_decision_manifest missing preserved blockers: "
+            f"{missing_keyboard_only_preserved}"
+        )
+    text_contains_all(
+        "keyboard_only_decision.release_boundary",
+        str(keyboard_only_decision.get("release_boundary", "")),
+        [
+            "clears only `manual_keyboard_only_review_not_completed`",
+            "does not perform screen-reader review",
+            "does not certify WCAG conformance",
+            "does not approve reader release",
+            "does not promote any chapter core claim",
+        ],
+        errors,
+    )
+    text_contains_all(
+        rel(KEYBOARD_ONLY_DECISION_DOC),
+        keyboard_only_decision_doc,
+        [
+            "Reader Keyboard-Only Evidence Decision",
+            "accepted_keyboard_only_evidence_for_release_preparation",
+            "Keyboard page-view pairs | 98",
+            "Keyboard-trap candidates | 0",
+            "Cleared blockers | manual_keyboard_only_review_not_completed",
+            "does not perform screen-reader review",
+            "does not certify WCAG conformance",
+            "does not create reader release approval",
+        ],
+        errors,
+    )
+
     if accessibility_tree.get("status") != "passed_accessibility_tree_release_preparation_probe":
         errors.append("accessibility_tree_manifest status must remain passed_accessibility_tree_release_preparation_probe.")
     if not isinstance(accessibility_tree_summary, dict):
@@ -1165,6 +1236,16 @@ def main() -> None:
         "reader_keyboard_navigation_navigation_pairs": keyboard_summary.get("navigation_focus_reached_pairs"),
         "reader_keyboard_navigation_search_pairs": keyboard_summary.get("search_focus_reached_pairs"),
         "reader_keyboard_navigation_trap_candidates": keyboard_summary.get("keyboard_trap_candidates"),
+        "reader_keyboard_only_decision_manifest": rel(KEYBOARD_ONLY_DECISION),
+        "reader_keyboard_only_decision_status": keyboard_only_decision.get("status"),
+        "reader_keyboard_only_decision_cleared_blockers": len(keyboard_only_decision.get("cleared_blockers", []))
+        if isinstance(keyboard_only_decision.get("cleared_blockers"), list)
+        else None,
+        "reader_keyboard_only_decision_preserved_blockers": len(
+            keyboard_only_decision.get("preserved_blockers", [])
+        )
+        if isinstance(keyboard_only_decision.get("preserved_blockers"), list)
+        else None,
         "reader_accessibility_tree_manifest": rel(ACCESSIBILITY_TREE),
         "reader_accessibility_tree_status": accessibility_tree.get("status"),
         "reader_accessibility_tree_page_view_pairs": accessibility_tree_summary.get("page_view_pairs"),
@@ -1207,6 +1288,7 @@ def main() -> None:
         "docx application-evidence decision",
         "apple books",
         "automated keyboard traversal",
+        "keyboard-only evidence decision",
         "accessibility-tree release-preparation probe",
         "pdf page-by-page release-preparation review",
         "final figure-artifact review",
@@ -1214,7 +1296,7 @@ def main() -> None:
         "clears the current final-figure blocker",
         "docx_application_review_not_completed",
         "narration_quality_review_not_completed",
-        "manual keyboard-only",
+        "manual_keyboard_only_review_not_completed",
         "screen-reader",
         "wcag",
         "audio file generation",
@@ -1521,7 +1603,9 @@ def main() -> None:
             "does not clear LibreOffice GUI review",
             "does not clear Google Docs review",
             "Automated keyboard traversal review is recorded as preparation evidence only",
-            "does not clear manual keyboard-only review",
+            "Keyboard-only evidence decision clears only",
+            "does not perform screen-reader review",
+            "does not certify WCAG conformance",
             "e-reader visual review",
             "visual identity approval",
         ],
