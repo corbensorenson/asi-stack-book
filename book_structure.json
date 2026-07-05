@@ -4373,17 +4373,17 @@
               "implementation_status": "implemented",
               "result_status": "passes via Lean build; finite verification-adequacy route coverage only"
             },
-                {
-                  "name": "Verification bandwidth contradiction probe",
-                  "implementation_status": "implemented",
-                  "result_status": "passes via deterministic synthetic contradiction and adequacy fixture at experiments/verification_bandwidth/results/2026-07-02-local.json: two valid synthetic adequacy traces and seven expected-invalid controls; no model-verification-bandwidth, contradiction-rate-performance, distractor-resistance, adequacy-classifier, deployed-claim-ledger, escalation-service, support-state-promotion, or evidence-transition claim"
-                },
-                {
-                  "name": "Verification bandwidth capacity model",
-                  "implementation_status": "implemented",
-                  "result_status": "passes via deterministic synthetic record-level capacity model at experiments/verification_bandwidth_capacity/results/2026-07-03-local.json: three valid capacity traces, five expected-invalid controls, a 12-unit all-pairwise obligation model with 66 obligations, 18 checked obligations, and 48 residual obligations, plus a named-decomposition trace; no model-verification-bandwidth law, contradiction-rate-performance, adequacy-classifier, deployed-long-context-failure, support-state-promotion, or evidence-transition claim"
-                }
-              ],
+            {
+              "name": "Verification bandwidth contradiction probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic contradiction and adequacy fixture at experiments/verification_bandwidth/results/2026-07-02-local.json: two valid synthetic adequacy traces and seven expected-invalid controls; no model-verification-bandwidth, contradiction-rate-performance, distractor-resistance, adequacy-classifier, deployed-claim-ledger, escalation-service, support-state-promotion, or evidence-transition claim"
+            },
+            {
+              "name": "Verification bandwidth capacity model",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic record-level capacity model at experiments/verification_bandwidth_capacity/results/2026-07-03-local.json: three valid capacity traces, five expected-invalid controls, a 12-unit all-pairwise obligation model with 66 obligations, 18 checked obligations, and 48 residual obligations, plus a named-decomposition trace; no model-verification-bandwidth law, contradiction-rate-performance, adequacy-classifier, deployed-long-context-failure, support-state-promotion, or evidence-transition claim"
+            }
+          ],
           "lean_module": "AsiStackProofs.VerificationBandwidth",
           "proof_targets": [
             {
@@ -5348,26 +5348,26 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_receipt_repository_challenge.py`; deterministic challenge over the prior repository audit accepts 3 tracked digest challenges and 1 Circle external fingerprint challenge while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion controls; no support-state promotion"
             },
-        {
-          "name": "Artifact live attestation probe",
-          "implementation_status": "implemented",
-          "result_status": "passing via `python3 scripts/validate_artifact_live_attestation_probe.py`; local live repository attestation over one produced artifact checks filesystem bytes, git object bytes, command replay, independent observer routes, a wrong-digest trap receipt, attestation limits, and 7 mutation controls; no support-state promotion"
-        },
-        {
-          "name": "Artifact randomized attestation audit",
-          "implementation_status": "implemented",
-          "result_status": "passing via `python3 scripts/validate_artifact_randomized_attestation_audit.py`; deterministic pseudo-random sample over 4 selected public-safe repository artifacts checks filesystem bytes, git object bytes, command replay, trap receipts, attestation limits, and 8 mutation controls; no support-state promotion"
-        },
-        {
-          "name": "Artifact public deployed-site attestation",
-          "implementation_status": "implemented",
-          "result_status": "passing via `python3 scripts/validate_artifact_public_site_attestation.py`; public GitHub Pages Artifact Graphs chapter fetch checks served HTML digest plus record-reality, epistemic-TCB, attestation, and non-claim fragments; no support-state promotion"
-        },
-        {
-          "name": "Epistemic trusted computing base fixture",
-          "implementation_status": "implemented",
-          "result_status": "passing via `python3 scripts/validate_epistemic_trusted_computing_base.py`; accepts 3 bounded trust-base records and rejects 6 expected-invalid controls for missing root of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residuals, and support promotion from trust-base shape; no support-state promotion"
-        }
+            {
+              "name": "Artifact live attestation probe",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_artifact_live_attestation_probe.py`; local live repository attestation over one produced artifact checks filesystem bytes, git object bytes, command replay, independent observer routes, a wrong-digest trap receipt, attestation limits, and 7 mutation controls; no support-state promotion"
+            },
+            {
+              "name": "Artifact randomized attestation audit",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_artifact_randomized_attestation_audit.py`; deterministic pseudo-random sample over 4 selected public-safe repository artifacts checks filesystem bytes, git object bytes, command replay, trap receipts, attestation limits, and 8 mutation controls; no support-state promotion"
+            },
+            {
+              "name": "Artifact public deployed-site attestation",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_artifact_public_site_attestation.py`; public GitHub Pages Artifact Graphs chapter fetch checks served HTML digest plus record-reality, epistemic-TCB, attestation, and non-claim fragments; no support-state promotion"
+            },
+            {
+              "name": "Epistemic trusted computing base fixture",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_epistemic_trusted_computing_base.py`; accepts 3 bounded trust-base records and rejects 6 expected-invalid controls for missing root of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residuals, and support promotion from trust-base shape; no support-state promotion"
+            }
           ],
           "lean_module": "AsiStackProofs.ArtifactGraph",
           "proof_targets": [
@@ -5413,23 +5413,23 @@
               "target": "A deterministic receipt-reality challenge accepts three sampled tracked-digest responses and one Circle external fingerprint response over the prior repository audit while rejecting digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support-promotion overclaim controls.",
               "status": "implemented"
             },
-        {
-          "tag": "lean:artifacts.graph.live_attestation_probe_bridge",
-          "module": "AsiStackProofs.ArtifactGraph",
-          "target": "A live repository artifact-attestation probe accepts one produced artifact only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries all align.",
-          "status": "implemented"
-        },
-        {
-          "tag": "lean:artifacts.graph.randomized_attestation_audit_bridge",
-          "module": "AsiStackProofs.ArtifactGraph",
-          "target": "A deterministic pseudo-random repository attestation audit accepts a multi-artifact sample only when filesystem bytes, git object bytes, command replay, trap receipts, independent observer routes, attestation limits, no upward transition, and non-claim boundaries all align.",
-          "status": "implemented"
-        },
-        {
-          "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
-          "module": "AsiStackProofs.ArtifactGraph",
-          "target": "An epistemic trusted-computing-base fixture accepts bounded minimal, delegated, and blocked trust-base records while rejecting missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.",
-          "status": "implemented"
+            {
+              "tag": "lean:artifacts.graph.live_attestation_probe_bridge",
+              "module": "AsiStackProofs.ArtifactGraph",
+              "target": "A live repository artifact-attestation probe accepts one produced artifact only when filesystem bytes, git object bytes, command replay, independent observer routes, trap-receipt rejection, attestation limits, no upward transition, and non-claim boundaries all align.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifacts.graph.randomized_attestation_audit_bridge",
+              "module": "AsiStackProofs.ArtifactGraph",
+              "target": "A deterministic pseudo-random repository attestation audit accepts a multi-artifact sample only when filesystem bytes, git object bytes, command replay, trap receipts, independent observer routes, attestation limits, no upward transition, and non-claim boundaries all align.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:artifacts.graph.epistemic_tcb_fixture_bridge",
+              "module": "AsiStackProofs.ArtifactGraph",
+              "target": "An epistemic trusted-computing-base fixture accepts bounded minimal, delegated, and blocked trust-base records while rejecting missing roots of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.",
+              "status": "implemented"
             }
           ]
         },
@@ -5698,23 +5698,23 @@
               "implementation_status": "implemented",
               "result_status": "passes via valid_low_impact_local_write_effect_replay with rollback-exact temp-file restoration and missing-permission and expired-approval no-mutation controls; no deployed-adapter, sandbox, approval-service, secret-handle, rollback-service, policy-enforcement, benchmark, or support-state-promotion claim"
             },
-                {
-                  "name": "Runtime adapter adversarial boundary probe",
-                  "implementation_status": "implemented",
-                  "result_status": "passes via deterministic synthetic runtime-adapter adversarial boundary fixture at experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json: two valid synthetic adapter boundary reviews and twelve expected-invalid controls for confused-deputy parent mismatch, authority ceiling overrun, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundaries; no deployed-adapter, sandbox, approval-service, secret-handle, policy-enforcement, rollback-service, revocation-propagation, security-review, or support-state-promotion claim"
-                },
-                {
-                  "name": "Runtime adapter revocation route proof",
-                  "implementation_status": "implemented",
-                  "result_status": "passes via Lean build; finite revocation-route predicates for revoked approvals, revoked leases, revoked authority receipts, no-mutation denial evidence, receipt/audit boundaries, and non-promotion boundaries only; no deployed revocation propagation claim"
-                },
-                {
-                  "name": "Human oversight degradation fixture",
-                  "implementation_status": "implemented",
-                  "result_status": "passes via python3 scripts/validate_human_oversight_degradation.py over experiments/human_oversight_degradation/results/2026-07-03-local.json: three valid finite records and seven expected-invalid controls for approval fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer qualification, support-state promotion, and non-claim boundaries; no support-state promotion, approval-service quality, reviewer-correctness, deployed human-factors behavior, or support-state-promotion claim"
-                }
-              ],
-              "lean_module": "AsiStackProofs.RuntimeAdapters",
+            {
+              "name": "Runtime adapter adversarial boundary probe",
+              "implementation_status": "implemented",
+              "result_status": "passes via deterministic synthetic runtime-adapter adversarial boundary fixture at experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json: two valid synthetic adapter boundary reviews and twelve expected-invalid controls for confused-deputy parent mismatch, authority ceiling overrun, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundaries; no deployed-adapter, sandbox, approval-service, secret-handle, policy-enforcement, rollback-service, revocation-propagation, security-review, or support-state-promotion claim"
+            },
+            {
+              "name": "Runtime adapter revocation route proof",
+              "implementation_status": "implemented",
+              "result_status": "passes via Lean build; finite revocation-route predicates for revoked approvals, revoked leases, revoked authority receipts, no-mutation denial evidence, receipt/audit boundaries, and non-promotion boundaries only; no deployed revocation propagation claim"
+            },
+            {
+              "name": "Human oversight degradation fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_human_oversight_degradation.py over experiments/human_oversight_degradation/results/2026-07-03-local.json: three valid finite records and seven expected-invalid controls for approval fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer qualification, support-state promotion, and non-claim boundaries; no support-state promotion, approval-service quality, reviewer-correctness, deployed human-factors behavior, or support-state-promotion claim"
+            }
+          ],
+          "lean_module": "AsiStackProofs.RuntimeAdapters",
           "proof_targets": [
             {
               "tag": "lean:runtime.adapters.operational_invariant",
@@ -5734,25 +5734,25 @@
               "target": "A modeled runtime-adapter effect replay routes missing permission, expired approval, missing no-mutation evidence, inexact rollback, missing receipts, repository/network side effects, and support-state effects away from accepted replay while admitting a public-safe rollback-exact replay.",
               "status": "implemented"
             },
-                {
-                  "tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
-                  "module": "AsiStackProofs.RuntimeAdapters",
-                  "target": "A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records.",
-                  "status": "implemented"
-                },
-                {
-                  "tag": "lean:runtime.adapters.revocation_route_bridge",
-                  "module": "AsiStackProofs.RuntimeAdapters",
-                  "target": "A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries.",
-                  "status": "implemented"
-                },
-                {
-                  "tag": "lean:runtime.adapters.human_oversight_degradation_fixture_bridge",
-                  "module": "AsiStackProofs.RuntimeAdapters",
-                  "target": "A modeled human-oversight degradation fixture accepts scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases, and rejects missing qualifications, rubber-stamped approvals, alarm-fatigue acceptance, support-state promotion, and missing non-claim boundaries.",
-                  "status": "implemented"
-                }
-              ],
+            {
+              "tag": "lean:runtime.adapters.adversarial_boundary_probe_bridge",
+              "module": "AsiStackProofs.RuntimeAdapters",
+              "target": "A modeled runtime-adapter adversarial boundary review routes confused-deputy parent mismatches, authority ceiling overruns, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback, missing receipts, missing audits, support-state effects, and missing non-claim boundaries away from dispatch while admitting complete low-impact and scoped high-impact records.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:runtime.adapters.revocation_route_bridge",
+              "module": "AsiStackProofs.RuntimeAdapters",
+              "target": "A modeled runtime-adapter revocation review routes revoked approvals, revoked leases, and revoked authority receipts away from dispatch unless no-mutation denial evidence exists, while complete non-revoked records preserve receipt, audit, support-state, and non-claim boundaries.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:runtime.adapters.human_oversight_degradation_fixture_bridge",
+              "module": "AsiStackProofs.RuntimeAdapters",
+              "target": "A modeled human-oversight degradation fixture accepts scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases, and rejects missing qualifications, rubber-stamped approvals, alarm-fatigue acceptance, support-state promotion, and missing non-claim boundaries.",
+              "status": "implemented"
+            }
+          ],
           "open_evidence_gaps": []
         },
         {
@@ -9845,6 +9845,13 @@
               "result_status": "passing via `python3 scripts/validate_circle_cyclic_mixer_receipt_slice.py` for Circle commit `63b0f511`, `CC-AI-CONTRACT-MIXER-001`, kind `circulant_block_cyclic_mixer`, theorem IDs `AIT-T0006`, `AIT-T0007`, `AIT-T0008`, `AIT-T0009`, `AIRA-T0001`, `AIRA-T0002`, `AIRA-T0004`, `theorem_count=7`, recommendations `MIXER-AUDIT-CIRCULANT-DENSE-PARITY` and `MIXER-AUDIT-BLOCK-CYCLIC-PARAMETER-BUDGET`, fingerprint `b3e3e0cf420d9e8e79a28a55ef8322f9a214c8d5a957dd8b06e5e5373c684ea5`, `max_abs_dense_delta=0`, `dense_parameters=64`, `circulant_parameters=8`, `circulant_parameter_ratio=0.125`, `dense_adapter_parameters=2048`, `lora_parameters=576`, `block_cyclic_parameters=128`, `block_to_dense_ratio=0.0625`, `3 passed in 2.49s`, `1 passed in 1.47s`, and `circle_cyclic_mixer_receipt_no_change.json`; structural external-project receipt only; does not prove cyclic-mixer model quality; does not prove runtime speed; no memory scaling, hardware efficiency, training stability, deployment readiness, transfer, ASI, or support-state-transition claim.",
               "status": "implemented; passing via `python3 scripts/validate_circle_cyclic_mixer_receipt_slice.py`; does not prove cyclic-mixer model quality; does not prove runtime speed; no memory scaling, hardware efficiency, training stability, deployment readiness, transfer, ASI, or support-state-transition claim"
             },
+            {
+              "name": "Circle MultiCoil phase receipt-slice validation",
+              "purpose": "Check that the recorded Circle MultiCoil phase receipt slice surfaces finite phase-feature and relative-phase fixture facts only, with model-quality, attention-quality, retrieval, context-length, runtime, memory, hardware, deployment, transfer, ASI, and support-state non-claims preserved.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_circle_multicoil_phase_receipt_slice.py` for Circle commit `63b0f511`, `CC-AI-CONTRACT-PHASE-FEATURE-001`, kind `multicoil_phase_feature`, theorem IDs `AIA-T0001`, `AIA-T0002`, `AIA-T0004`, `AIT-T0004`, `AIT-T0005`, `theorem_count=5`, recommendations `PHASE-USE-JOINT-REPEAT-HORIZON` and `PHASE-AUDIT-RELATIVE-SHIFT-INVARIANT`, fingerprint `4b562beab64ec863903e4267f50c90049f0d3fa612f6c1bb2f06ad07e821ffd7`, `periods=[5, 7]`, `phase_tuple=[2, 2]`, `shifted_phase_tuple=[2, 2]`, `joint_repeat_horizon=35`, `relative_phase=3`, `shifted_relative_phase=3`, `relative_phase_invariant=true`, `3 passed in 2.99s`, `1 passed in 1.76s`, and `circle_multicoil_phase_receipt_no_change.json`; structural external-project receipt only; does not prove MultiCoil, RoPE, attention, retrieval, or model quality, context length, runtime speed, memory scaling, hardware efficiency, training stability, deployment readiness, transfer, ASI, or support-state-transition claim.",
+              "status": "implemented; passing via `python3 scripts/validate_circle_multicoil_phase_receipt_slice.py`; does not prove MultiCoil, RoPE, attention, retrieval, or model-quality, context length, runtime, memory scaling, hardware efficiency, training stability, deployment, transfer, ASI, or support-state-transition claim"
+            },
             "RoPE receipt boundary test",
             "Cyclic mixer baseline matrix test",
             "Residue/winding alias diagnostic",
@@ -9854,7 +9861,7 @@
           "open_evidence_gaps": [
             "Appendix C now records exact passage-reviewed mappings for all five assigned CoilRA/MultiCoil/RoPE/cyclic-mixer sources; support remains at argument until local RoPE certifier runs, cyclic mixer benchmarks, MLX experiments, hardware-kernel tests, downstream quality evaluations, Circle contract commands, Theseus transfer consumers, or accepted evidence transitions exist.",
             "The cyclic_mixer_evaluation_record fixture validates schema/example consistency and AsiStackProofs.CyclicMixers implements finite-record structural separation and baseline/tradeoff gates plus bounded negative cases for missing claim partitions, missing baselines or tradeoff metrics, residue/winding alias gaps, incomplete tradeoff packets, and hardware mismatches without refusal paths; scripts/validate_circle_concrete_evidence_surface.py checks that the recorded Circle RoPE receipt boundary is surfaced only as structural diagnostic evidence; no RoPE certifier command rerun, sidecar regeneration, Circle contract-pack generation, cyclic mixer benchmark, MLX model experiment, hardware-kernel benchmark, downstream quality evaluation, or external Circle Lean build has been run from this repo.",
-            "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, and the separate public-safe Circle receipt lanes now give this chapter one concrete RoPE receipt boundary plus one cyclic-mixer structural/accounting receipt boundary. The cyclic-mixer slice records Circle commit 63b0f511, CC-AI-CONTRACT-MIXER-001, max_abs_dense_delta=0, block_to_dense_ratio=0.0625, seven theorem IDs, two planner recommendations, targeted Circle CLI outputs 3 passed in 2.49s and 1 passed in 1.47s, and no support-state transition; this ASI Stack repo still did not import a generated Circle contract pack, validate external Circle Lean proofs locally, run a cyclic mixer benchmark, run an MLX model experiment, run a hardware-kernel benchmark, or produce a quality/context-length/runtime result. Remaining blockers include no cyclic mixer benchmark, no model-quality result, and no support-state transition.",
+            "Pinned Circle project references support structural-contract, receipt, theorem-id, baseline, and non-claim discussion, and the separate public-safe Circle receipt lanes now give this chapter one concrete RoPE receipt boundary, one cyclic-mixer structural/accounting receipt boundary, and one MultiCoil phase-feature receipt boundary. The cyclic-mixer slice records Circle commit 63b0f511, CC-AI-CONTRACT-MIXER-001, max_abs_dense_delta=0, block_to_dense_ratio=0.0625, seven theorem IDs, two planner recommendations, targeted Circle CLI outputs 3 passed in 2.49s and 1 passed in 1.47s. The MultiCoil phase slice records Circle commit 63b0f511, CC-AI-CONTRACT-PHASE-FEATURE-001, joint_repeat_horizon=35, relative_phase=3, shifted_relative_phase=3, five theorem IDs, two planner recommendations, targeted Circle CLI outputs 3 passed in 2.99s and 1 passed in 1.76s, and no support-state transition; this ASI Stack repo still did not import a generated Circle contract pack, validate external Circle Lean proofs locally, run a cyclic mixer benchmark, run a MultiCoil phase benchmark, run an MLX model experiment, run a hardware-kernel benchmark, or produce a quality/context-length/runtime result. Remaining blockers include no cyclic mixer benchmark, no MultiCoil phase benchmark, no model-quality result, and no support-state transition.",
             "Theseus transfer material is used only as source-reported experiment-design and claim-boundary context; no private Theseus payloads, scored benchmark artifacts, transfer reports, router-head traces, runtime/memory measurements, or promotion evidence were imported or reproduced here.",
             "No support-state promotion, raw source publication, CoilRA quality result, RoPE context-length result, cyclic mixer speed/runtime result, memory-savings result, training-stability result, hardware-efficiency result, deployment-readiness result, or transfer-result claim is implied by this drafting pass."
           ],

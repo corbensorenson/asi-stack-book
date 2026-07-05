@@ -337,6 +337,7 @@ REQUIRED = [
     "scripts/validate_circle_concrete_evidence_surface.py",
     "scripts/validate_circle_cyclic_memory_receipt_slice.py",
     "scripts/validate_circle_cyclic_mixer_receipt_slice.py",
+    "scripts/validate_circle_multicoil_phase_receipt_slice.py",
     "scripts/validate_circle_kv_cache_receipt_slice.py",
     "scripts/validate_circle_recurrence_receipt_slice.py",
     "scripts/validate_circle_sparse_attention_receipt_slice.py",
@@ -433,6 +434,7 @@ REQUIRED = [
     "docs/circle_public_replay_consumer_gate.md",
     "docs/circle_cyclic_memory_receipt_slice.md",
     "docs/circle_cyclic_mixer_receipt_slice.md",
+    "docs/circle_multicoil_phase_receipt_slice.md",
     "docs/circle_kv_cache_receipt_slice.md",
     "docs/circle_recurrence_receipt_slice.md",
     "docs/circle_sparse_attention_receipt_slice.md",
@@ -534,6 +536,8 @@ REQUIRED = [
     "experiments/circle_cyclic_memory_receipt_slice/results/2026-07-02-local.json",
     "experiments/circle_cyclic_mixer_receipt_slice/README.md",
     "experiments/circle_cyclic_mixer_receipt_slice/results/2026-07-05-local.json",
+    "experiments/circle_multicoil_phase_receipt_slice/README.md",
+    "experiments/circle_multicoil_phase_receipt_slice/results/2026-07-05-local.json",
     "experiments/circle_kv_cache_receipt_slice/README.md",
     "experiments/circle_kv_cache_receipt_slice/results/2026-07-05-local.json",
     "experiments/circle_recurrence_receipt_slice/README.md",
@@ -1188,6 +1192,7 @@ def main() -> None:
     run_validator("validate_circle_concrete_evidence_surface.py")
     run_validator("validate_circle_cyclic_memory_receipt_slice.py")
     run_validator("validate_circle_cyclic_mixer_receipt_slice.py")
+    run_validator("validate_circle_multicoil_phase_receipt_slice.py")
     run_validator("validate_circle_kv_cache_receipt_slice.py")
     run_validator("validate_circle_recurrence_receipt_slice.py")
     run_validator("validate_circle_sparse_attention_receipt_slice.py")

@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-07-05 - Import Circle MultiCoil phase receipt slice
+
+- Added `python3 scripts/validate_circle_multicoil_phase_receipt_slice.py`,
+  `docs/circle_multicoil_phase_receipt_slice.md`, result artifact
+  `experiments/circle_multicoil_phase_receipt_slice/results/2026-07-05-local.json`,
+  and accepted no-promotion decision
+  `evidence_transitions/v1_x_measured/circle_multicoil_phase_receipt_no_change.json`.
+- The Circle MultiCoil phase-feature structural receipt slice records local
+  external Circle commit `63b0f511`, contract
+  `CC-AI-CONTRACT-PHASE-FEATURE-001`, kind `multicoil_phase_feature`, theorem
+  IDs `AIA-T0001`, `AIA-T0002`, `AIA-T0004`, `AIT-T0004`, and `AIT-T0005`,
+  `theorem_count=5`, recommendations `PHASE-USE-JOINT-REPEAT-HORIZON` and
+  `PHASE-AUDIT-RELATIVE-SHIFT-INVARIANT`, strict receipt fingerprint
+  `4b562beab64ec863903e4267f50c90049f0d3fa612f6c1bb2f06ad07e821ffd7`,
+  `periods=[5, 7]`, `phase_tuple=[2, 2]`,
+  `shifted_phase_tuple=[2, 2]`, `joint_repeat_horizon=35`,
+  `relative_phase=3`, `shifted_relative_phase=3`,
+  `relative_phase_invariant=true`, command-output digests, targeted Circle CLI
+  output `3 passed in 2.99s`, and targeted contract-ready output
+  `1 passed in 1.76s`.
+- Updated the CoilRA live chapter, curated reader chapter, outline, non-core
+  evidence ledger, Appendix E, roadmap burn-down, and book gate wiring so the
+  MultiCoil phase import is visible without claiming support-state movement.
+- Boundary: this does not promote any chapter core claim, does not create a
+  support-state transition, and does not prove MultiCoil, RoPE, attention,
+  retrieval, model quality, context length, runtime speed, memory scaling,
+  hardware efficiency, training stability, deployment readiness, transfer,
+  benchmark performance, or ASI.
+
 ## 2026-07-05 - Import Circle cyclic-mixer receipt slice
 
 - Added `python3 scripts/validate_circle_cyclic_mixer_receipt_slice.py`,

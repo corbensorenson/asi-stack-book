@@ -1,0 +1,108 @@
+{
+  "transition_id": "v1_x_measured.circle_multicoil_phase_receipt.no_change",
+  "claim_id": "circle-calculus.multicoil_phase_receipt_slice",
+  "claim_surface_refs": [
+    "docs/circle_multicoil_phase_receipt_slice.md",
+    "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+    "editions/reader_manuscript/v1_0/chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/circle_multicoil_phase_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_multicoil_phase_receipt_slice.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe local external Circle MultiCoil phase-feature receipt import only. The slice records one pinned `CC-AI-CONTRACT-PHASE-FEATURE-001` structural phase fixture at Circle commit `63b0f511`, `joint_repeat_horizon=35`, `relative_phase=3`, `shifted_relative_phase=3`, five required theorem IDs, two planner recommendations, contract fingerprint `4b562beab64ec863903e4267f50c90049f0d3fa612f6c1bb2f06ad07e821ffd7`, command-output digests, targeted Circle CLI test output `3 passed in 2.99s`, and targeted contract-ready recommendation test output `1 passed in 1.76s`. It does not prove MultiCoil, RoPE, attention, retrieval, model quality, context length, runtime speed, memory scaling, hardware efficiency, training stability, deployment readiness, transfer, benchmark performance, ASI, or CoilRA chapter-core promotion.",
+  "evidence_roles": [
+    "external_project_receipt_import",
+    "multicoil_phase_feature_fixture",
+    "relative_phase_shift_invariance_fixture",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The MultiCoil phase receipt slice makes one Circle phase-feature structural fixture concrete in the book and closes one stale 'no MultiCoil phase receipt import' blocker for the CoilRA chapter. The evidence remains an external-project receipt import with no ASI-side RoPE or MultiCoil benchmark, no ordinary position-bucket, learned-position, RoPE, dense-attention, recurrent, or state-space baselines with workload metrics, no hardware-kernel measurement, no attention/retrieval/model-quality result, and no independent review, so it blocks promotion rather than moving support state.",
+  "required_artifacts": [
+    "fresh public Circle replay or archived public MultiCoil phase contract pack",
+    "repository-owned command that reruns the relevant Circle MultiCoil proof target or verifies an archived replay bundle",
+    "ordinary position-bucket, learned-position, RoPE, dense-attention, recurrent, or state-space baselines where relevant",
+    "quality, retrieval, attention-quality, context-length, runtime, memory, hardware-efficiency, and training-stability measurements for any promoted claim",
+    "deployment, fallback, and canary-route traces for any adoption claim",
+    "accepted evidence-transition record for any narrowed upward support movement",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/circle_multicoil_phase_receipt_slice.md",
+    "experiments/circle_multicoil_phase_receipt_slice/results/2026-07-05-local.json",
+    "scripts/validate_circle_multicoil_phase_receipt_slice.py"
+  ],
+  "evidence_packet_refs": [
+    "docs/circle_multicoil_phase_receipt_slice.md",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/E_codex_test_specs.qmd"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#coilra-multicoil-rope-and-cyclic-mixers.core",
+    "docs/book_outline.md#coilra-multicoil-rope-and-cyclic-mixers"
+  ],
+  "verification_command": "python3 scripts/validate_circle_multicoil_phase_receipt_slice.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "support state remains argument",
+    "support_state_effect remains blocks_promotion",
+    "joint_repeat_horizon=35 is preserved as finite phase-feature structure only",
+    "relative_phase=3 and shifted_relative_phase=3 are preserved as finite relative-phase fixture facts only",
+    "does not create a support-state transition",
+    "does not create an upward support-state transition",
+    "does not prove MultiCoil, RoPE, attention, retrieval, or model quality",
+    "does not prove context length, runtime speed, memory scaling, hardware efficiency, training stability, deployment readiness, transfer, benchmark performance, or ASI",
+    "does not promote the CoilRA chapter core claim"
+  ],
+  "negative_evidence_refs": [
+    "docs/circle_multicoil_phase_receipt_slice.md",
+    "experiments/circle_multicoil_phase_receipt_slice/results/2026-07-05-local.json"
+  ],
+  "downgrade_triggers": [
+    "MultiCoil phase receipt-slice validator failure",
+    "receipt fingerprint drift",
+    "missing required theorem ID accepted",
+    "phase-feature or relative-phase evidence field drift",
+    "external-project receipt import described as deployed model behavior",
+    "model-quality, attention-quality, retrieval, context-length, runtime, memory-scaling, hardware-efficiency, training-stability, deployment, transfer, benchmark, ASI, or support-state promotion claimed without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed MultiCoil phase-feature claim after a fresh public Circle replay or archived public contract pack, repository-owned proof/replay verification, ordinary position-bucket/learned-position/RoPE/dense-attention/recurrent/state-space baselines where relevant, quality/retrieval/attention/context-length/runtime/memory/hardware/training-stability measurements for the specific claim, deployment and fallback traces for any adoption claim, and independent review are recorded with a separate accepted upward transition.",
+  "limitations": [
+    "one pinned local external Circle receipt import",
+    "external Circle checkout is not vendored into this public repository",
+    "no clean ASI-side CI replay of Circle",
+    "no MultiCoil phase benchmark",
+    "no RoPE or model experiment",
+    "no hardware-kernel benchmark",
+    "no downstream quality evaluation",
+    "no attention-quality, retrieval, model-quality, context-length, runtime, memory-scaling, hardware-efficiency, training-stability, transfer, benchmark, deployment, or ASI measurement",
+    "no independent review",
+    "does not promote any chapter core claim"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Circle Calculus, MultiCoil, RoPE, model-quality, attention, retrieval, runtime, hardware, benchmark, transfer, or safety audit",
+  "acceptance_blockers": [
+    "no fresh public Circle replay inside this repository",
+    "no archived public Circle MultiCoil phase contract pack",
+    "no ASI-side MultiCoil or RoPE benchmark",
+    "no workload baselines or measurements",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-circle-multicoil-phase-receipt-slice",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote CoilRA, MultiCoil, RoPE, or Circle phase-feature evidence above argument",
+    "does not create a support-state transition",
+    "does not prove MultiCoil, RoPE, attention, retrieval, or model quality",
+    "does not prove context length, runtime speed, memory scaling, hardware efficiency, training stability, deployment readiness, transfer, benchmark performance, or ASI",
+    "does not create an upward support-state transition",
+    "does not promote the CoilRA chapter core claim"
+  ]
+}

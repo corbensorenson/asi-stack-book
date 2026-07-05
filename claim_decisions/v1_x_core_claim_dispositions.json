@@ -1664,6 +1664,7 @@
         "evidence_transitions/v1_0_measured/circle_external_rope_receipt_prototype_backed.json",
         "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json",
         "evidence_transitions/v1_x_measured/circle_kv_cache_receipt_no_change.json",
+        "evidence_transitions/v1_x_measured/circle_multicoil_phase_receipt_no_change.json",
         "evidence_transitions/v1_x_measured/circle_public_consumer_gate_no_change.json",
         "evidence_transitions/v1_x_measured/circle_recurrence_receipt_no_change.json",
         "evidence_transitions/v1_x_measured/circle_sparse_attention_receipt_no_change.json"
@@ -1748,7 +1749,8 @@
       "human_reader_focus": "Show what cyclic position evidence can and cannot say.",
       "what_would_move_this": "Receipt validates distinguishability boundary and rejects performance overclaim.",
       "relevant_non_core_transition_refs": [
-        "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json"
+        "evidence_transitions/v1_x_measured/circle_cyclic_mixer_receipt_no_change.json",
+        "evidence_transitions/v1_x_measured/circle_multicoil_phase_receipt_no_change.json"
       ]
     },
     {
