@@ -309,6 +309,10 @@ REQUIRED = [
     "docs/theseus_governance_rights_receipt_suite_import.md",
     "experiments/theseus_governance_rights_receipt_suite_import/results/2026-07-05-local.json",
     "evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json",
+    "scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
+    "docs/theseus_simulation_fidelity_receipt_suite_import.md",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json",
+    "evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json",
     "scripts/validate_compact_gvr_slice.py",
     "scripts/validate_residual_honesty_conservation.py",
     "scripts/validate_residual_ledger_trace.py",
@@ -1223,6 +1227,7 @@ def main() -> None:
     run_validator("validate_theseus_public_task_bundle_import.py")
     run_validator("validate_theseus_artifact_retention_replay_import.py")
     run_validator("validate_theseus_governance_rights_receipt_suite_import.py")
+    run_validator("validate_theseus_simulation_fidelity_receipt_suite_import.py")
     run_validator("validate_theseus_concrete_evidence_surface.py")
     run_validator("validate_prototype_phase_gates.py")
     run_validator("validate_phase5_harness_registry.py")

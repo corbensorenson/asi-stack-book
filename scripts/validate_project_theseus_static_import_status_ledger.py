@@ -64,6 +64,27 @@ GOVERNANCE_TRANSITION = (
     / "v1_x_measured"
     / "theseus_governance_rights_receipt_suite_import_prototype_backed.json"
 )
+SIMULATION_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_simulation_fidelity_receipt_suite_import"
+    / "results"
+    / "2026-07-05-local.json"
+)
+SIMULATION_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_simulation_fidelity_receipt_suite_import"
+    / "fixtures"
+    / "valid"
+    / "simulation_fidelity_receipt_suite_import.valid.json"
+)
+SIMULATION_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json"
+)
 
 DOCS = (
     "docs/theseus_report_import_slice.md",
@@ -72,6 +93,7 @@ DOCS = (
     "docs/theseus_public_task_bundle_import.md",
     "docs/theseus_artifact_retention_replay_import.md",
     "docs/theseus_governance_rights_receipt_suite_import.md",
+    "docs/theseus_simulation_fidelity_receipt_suite_import.md",
 )
 VALIDATORS = (
     "python3 scripts/validate_theseus_report.py",
@@ -81,6 +103,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_public_task_bundle_import.py",
     "python3 scripts/validate_theseus_artifact_retention_replay_import.py",
     "python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py",
+    "python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
 )
 
 
@@ -108,6 +131,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['support_replay_count']} support replay probe, "
         f"{metrics['artifact_retention_replay_imports']} artifact-retention replay import, "
         f"{metrics['governance_rights_receipt_imports']} governance-rights receipt import, "
+        f"{metrics['simulation_fidelity_receipt_imports']} simulation-fidelity receipt import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
         f"{metrics['public_training_rows']} public training rows, "
         f"{metrics['generation_mode_count']} generation modes, "
@@ -116,18 +140,10 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['expected_invalid_total']} expected-invalid controls, "
         f"{metrics['no_promotion_decisions']} accepted no-promotion decision, "
         f"{metrics['artifact_upward_transitions']} accepted bounded artifact-retention transition, "
-        f"and {metrics['governance_rights_upward_transitions']} accepted bounded governance-rights transition; "
+        f"{metrics['governance_rights_upward_transitions']} accepted bounded governance-rights transition, "
+        f"and {metrics['simulation_fidelity_upward_transitions']} accepted bounded simulation-fidelity transition; "
         "clean live replay remains unclaimed. "
         "| `docs/project_theseus_static_import_status_ledger.md`; "
-        "`docs/theseus_report_import_slice.md`; "
-        "`docs/theseus_generation_mode_import_slice.md`; "
-        "`docs/theseus_support_replay_probe.md`; "
-        "`docs/theseus_public_task_bundle_import.md`; "
-        "`docs/theseus_artifact_retention_replay_import.md`; "
-        "`docs/theseus_governance_rights_receipt_suite_import.md`; "
-        "`evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json`; "
-        "`evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json`; "
-        "`evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`; "
         "`python3 scripts/validate_project_theseus_static_import_status_ledger.py` |"
     )
 
@@ -149,6 +165,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         GOVERNANCE_RESULT,
         GOVERNANCE_FIXTURE,
         GOVERNANCE_TRANSITION,
+        SIMULATION_RESULT,
+        SIMULATION_FIXTURE,
+        SIMULATION_TRANSITION,
         *(ROOT / path for path in DOCS),
     ]
     for path in required:
@@ -171,6 +190,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     governance_result = load_json(GOVERNANCE_RESULT)
     governance_fixture = load_json(GOVERNANCE_FIXTURE)
     governance_transition = load_json(GOVERNANCE_TRANSITION)
+    simulation_result = load_json(SIMULATION_RESULT)
+    simulation_fixture = load_json(SIMULATION_FIXTURE)
+    simulation_transition = load_json(SIMULATION_TRANSITION)
 
     if arch_result.get("validation_result") != "pass":
         errors.append("architecture-gate import result must pass.")
@@ -362,11 +384,71 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if "does not prove legal rights" not in transition_nonclaims:
         errors.append("Theseus governance-rights receipt suite transition missing legal-rights non-claim.")
 
+    simulation_summary = simulation_fixture.get("summary", {})
+    simulation_counts = simulation_result.get("record_counts", {})
+    simulation_boundary = simulation_fixture.get("claim_boundary", {})
+    simulation_safety = simulation_fixture.get("public_safety_boundary", {})
+    if simulation_result.get("validation_result") != "pass":
+        errors.append("Theseus simulation-fidelity receipt suite import result must pass.")
+    if simulation_result.get("expected_invalid_count") != 7:
+        errors.append("Theseus simulation-fidelity receipt suite import must keep seven expected-invalid controls.")
+    if simulation_result.get("fixture_scenario_count") != 5 or simulation_summary.get("passed_fixture_count") != 5:
+        errors.append("Theseus simulation-fidelity receipt suite import must keep 5/5 fixture scenarios.")
+    if simulation_result.get("world_adapter_receipt_count") != 6 or simulation_summary.get("world_adapter_receipt_count") != 6:
+        errors.append("Theseus simulation-fidelity receipt suite import must keep six world-adapter receipts.")
+    if simulation_result.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus simulation-fidelity receipt suite import must remain prototype-backed.")
+    if simulation_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus simulation-fidelity receipt suite import must preserve chapter_core_support_effect none.")
+    if simulation_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus simulation-fidelity receipt suite import must preserve dirty-at-import boundary.")
+    for field in (
+        "chapter_core_promotion_claimed",
+        "simulation_adequacy_claimed",
+        "physical_feasibility_claimed",
+        "benchmark_transfer_claimed",
+        "native_kv_parity_claimed",
+        "deployment_claimed",
+        "live_simulator_claimed",
+        "learned_generation_claimed",
+        "model_quality_claimed",
+        "economic_outcome_claimed",
+        "clean_live_theseus_replay_claimed",
+    ):
+        if simulation_boundary.get(field) is not False:
+            errors.append(f"Theseus simulation-fidelity receipt suite import must not overclaim {field}.")
+    if (
+        simulation_safety.get("public_training_rows_written") != 0
+        or simulation_safety.get("external_inference_calls") != 0
+        or simulation_safety.get("fallback_return_count") != 0
+    ):
+        errors.append("Theseus simulation-fidelity receipt suite import must keep zero public training rows, external inference calls, and fallbacks.")
+    for field, expected in (
+        ("claim_records", 6),
+        ("simulation_contract_records", 6),
+        ("fidelity_records", 6),
+        ("world_adapter_receipts", 6),
+        ("evidence_transition_records", 6),
+        ("failure_boundary_records", 6),
+    ):
+        if simulation_counts.get(field) != expected:
+            errors.append(f"Theseus simulation-fidelity receipt suite import record count drifted for {field}.")
+    if simulation_transition.get("review_status") != "accepted":
+        errors.append("Theseus simulation-fidelity receipt suite transition must remain accepted.")
+    if simulation_transition.get("transition_effect") != "upward":
+        errors.append("Theseus simulation-fidelity receipt suite transition_effect must remain upward.")
+    if simulation_transition.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus simulation-fidelity receipt suite transition must remain prototype-backed.")
+    simulation_nonclaims = " ".join(str(item) for item in simulation_transition.get("non_claims", []))
+    if "does not prove simulator adequacy" not in simulation_nonclaims:
+        errors.append("Theseus simulation-fidelity receipt suite transition missing simulator-adequacy non-claim.")
+
     metrics = {
         "static_report_imports": 2,
         "support_replay_count": 1,
         "artifact_retention_replay_imports": 1,
         "governance_rights_receipt_imports": 1,
+        "simulation_fidelity_receipt_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
         "support_replay_tracked_artifacts": len(support_replay.get("tracked_artifacts", [])),
         "architecture_gate_count": arch_result.get("accepted_gate_count"),
@@ -411,11 +493,21 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "governance_rights_artifact_graph_records": governance_counts.get("artifact_graph_records"),
         "governance_rights_failure_boundary_records": governance_counts.get("failure_boundary_records"),
         "governance_rights_upward_transitions": 1,
+        "simulation_fidelity_expected_invalid": simulation_result.get("expected_invalid_count"),
+        "simulation_fidelity_fixture_scenarios": simulation_result.get("fixture_scenario_count"),
+        "simulation_fidelity_contract_records": simulation_counts.get("simulation_contract_records"),
+        "simulation_fidelity_world_adapter_receipts": simulation_counts.get("world_adapter_receipts"),
+        "simulation_fidelity_evidence_transition_records": simulation_counts.get("evidence_transition_records"),
+        "simulation_fidelity_failure_boundary_records": simulation_counts.get("failure_boundary_records"),
+        "simulation_fidelity_blocked_transfers": simulation_summary.get("blocked_transfer_count"),
+        "simulation_fidelity_downgraded_claims": simulation_summary.get("downgraded_claim_count"),
+        "simulation_fidelity_upward_transitions": 1,
         "expected_invalid_total": arch_result.get("expected_invalid_count", 0)
         + gen_result.get("expected_invalid_count", 0)
         + task_result.get("expected_invalid_count", 0)
         + artifact_result.get("expected_invalid_count", 0)
-        + governance_result.get("expected_invalid_count", 0),
+        + governance_result.get("expected_invalid_count", 0)
+        + simulation_result.get("expected_invalid_count", 0),
         "no_promotion_decisions": 1,
         "source_commit_short": str(source_project.get("commit", ""))[:8],
     }
@@ -440,6 +532,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Support replay probes | {metrics['support_replay_count']} |",
             f"| Artifact-retention replay imports | {metrics['artifact_retention_replay_imports']} |",
             f"| Governance-rights receipt imports | {metrics['governance_rights_receipt_imports']} |",
+            f"| Simulation-fidelity receipt imports | {metrics['simulation_fidelity_receipt_imports']} |",
             f"| Replayed validators in support probe | {metrics['support_replay_commands']} |",
             f"| Support replay tracked artifacts | {metrics['support_replay_tracked_artifacts']} |",
             f"| Architecture gates passed | {metrics['architecture_gate_passed']} / {metrics['architecture_gate_count']} |",
@@ -472,6 +565,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import`; it does not prove clean live Project Theseus replay and does not promote the Project Theseus chapter core claim.",
             f"- `docs/theseus_governance_rights_receipt_suite_import.md` records one sanitized governance-rights receipt suite import with {metrics['governance_rights_scenarios']} governance scenarios, {metrics['governance_rights_constitutional_scenarios']} constitutional-predicate scenarios, {metrics['governance_rights_records']} governance-right records, {metrics['governance_rights_predicate_records']} constitutional-predicate records, {metrics['governance_rights_evidence_transition_records']} evidence-transition records, {metrics['governance_rights_artifact_graph_records']} artifact-graph records, {metrics['governance_rights_failure_boundary_records']} failure-boundary records, and {metrics['governance_rights_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, deployed governance, clean live Project Theseus replay, or any chapter core claim.",
+            f"- `docs/theseus_simulation_fidelity_receipt_suite_import.md` records one sanitized simulation-fidelity receipt suite import with {metrics['simulation_fidelity_fixture_scenarios']} passed fixture scenarios, {metrics['simulation_fidelity_contract_records']} simulation contract records, {metrics['simulation_fidelity_world_adapter_receipts']} world-adapter receipts, {metrics['simulation_fidelity_evidence_transition_records']} evidence-transition records, {metrics['simulation_fidelity_failure_boundary_records']} failure-boundary records, {metrics['simulation_fidelity_blocked_transfers']} blocked transfer, {metrics['simulation_fidelity_downgraded_claims']} downgraded claim, and {metrics['simulation_fidelity_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `resource-economics.simulation_fidelity_receipt_suite_import`; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, model quality, economic outcome, clean live Project Theseus replay, or any chapter core claim.",
             "",
             "## Non-Claim Boundary",
             "",
@@ -481,6 +576,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "- This ledger does not promote any chapter core claim above `argument` and does not create a chapter-core upward support-state transition.",
             "- The artifact-retention replay import creates only a bounded non-core support transition; it does not prove deployed residual-ledger storage, deployed artifact-graph behavior, clean live Project Theseus replay, model quality, benchmark performance, safety, alignment, deployment readiness, or ASI.",
             "- The governance-rights receipt suite import creates only a bounded non-core support transition; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed governance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
+            "- The simulation-fidelity receipt suite import creates only a bounded non-core support transition; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "",
             "## Validation Errors",
             "",

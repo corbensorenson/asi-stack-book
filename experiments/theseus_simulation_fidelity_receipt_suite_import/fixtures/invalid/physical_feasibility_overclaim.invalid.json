@@ -1,0 +1,9 @@
+{
+  "case_id": "physical_feasibility_overclaim",
+  "base_report": "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/valid/simulation_fidelity_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "claim_boundary.physical_feasibility_claimed",
+    "value": true
+  },
+  "expected_error_fragment": "physical_feasibility_claimed must remain false"
+}

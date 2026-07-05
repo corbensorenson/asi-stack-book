@@ -265,6 +265,17 @@ That makes the flagship evidence lane easier to rerun and harder to quietly
 reinterpret, while leaving production scheduler logs, workload-quality review,
 physical-feasibility review, and measured simulation outputs as real blockers.
 
+The Theseus simulation-fidelity receipt suite import,
+`resource-economics.simulation_fidelity_receipt_suite_import`, adds a narrow
+prototype-backed receipt for claim transport itself. It is validated by
+`python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`
+and records five passed simulation-fidelity fixture scenarios, six contract
+records, six world-adapter receipts, one blocked transfer, one downgraded
+claim, and one scenario-only boundary. It does not prove simulator adequacy,
+physical feasibility, benchmark transfer, native KV parity, deployment, model
+quality, economic outcome, clean live Theseus replay, or the Resource
+Economics core claim.
+
 The workflow trace adds a second kind of proof bridge for the reader to notice.
 Instead of only naming the selected route, it carries three dispatch events:
 high-risk release review, source-crosswalk refresh, and low-risk index cleanup.

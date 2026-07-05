@@ -1,0 +1,108 @@
+{
+  "transition_id": "v1_x_measured.theseus_simulation_fidelity_receipt_suite_import.prototype_backed",
+  "claim_id": "resource-economics.simulation_fidelity_receipt_suite_import",
+  "claim_surface_refs": [
+    "docs/theseus_simulation_fidelity_receipt_suite_import.md",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "editions/reader_manuscript/v1_0/chapters/resource-economics-and-token-budgets.qmd",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/valid/simulation_fidelity_receipt_suite_import.valid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
+    "lean/AsiStackProofs/SimulationFidelity.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "prototype-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded Project Theseus simulation-fidelity receipt-suite import moves to prototype-backed: a sanitized public-safe fixture records a GREEN local Theseus report with 5/5 passed simulation-fidelity fixtures, 6 simulation contract records, 6 fidelity records, 6 world-adapter receipts, 6 evidence-transition records, 6 failure-boundary records, 1 blocked transfer, 1 downgraded claim, 1 scenario-only record, zero public training rows, zero external inference calls, and seven expected-invalid controls. This does not promote the Resource Economics chapter core claim, simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment readiness, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, safety, alignment, transfer, or ASI.",
+  "evidence_roles": [
+    "external_project_prototype_report_import",
+    "sanitized_public_fixture",
+    "simulation_contract_record_summary",
+    "world_adapter_receipt_summary",
+    "failure_boundary_record_summary",
+    "expected_invalid_controls",
+    "lean_python_fixture_alignment",
+    "no_chapter_core_promotion_boundary"
+  ],
+  "transition_reason": "The imported Theseus report records a concrete simulation-fidelity receipt suite rather than only a proposed simulation-fidelity vocabulary: it distinguishes narrow invariant support, benchmark-adapter limits, scenario-only support, blocked native-KV transfer, downgraded route-shape evidence, and a bounded compile-time planning world adapter. The support movement is therefore limited to this non-core import claim and remains prototype-backed rather than empirical-test-backed or chapter-core evidence.",
+  "required_artifacts": [
+    "sanitized public-safe Theseus simulation-fidelity receipt fixture",
+    "source report digest",
+    "simulation fixture, contract, adapter, transition, and failure-boundary counts",
+    "public-safety redaction boundary",
+    "negative controls for source hash mismatch, private-payload copying, support promotion, physical-feasibility overclaim, benchmark-transfer overclaim, native-KV parity overclaim, and training-row leakage",
+    "finite Lean fixture alignment",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/theseus_simulation_fidelity_receipt_suite_import.md",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/valid/simulation_fidelity_receipt_suite_import.valid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
+    "lean/AsiStackProofs/SimulationFidelity.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/theseus_simulation_fidelity_receipt_suite_import.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/G_corben_source_corpus.qmd#tokenmana",
+    "appendices/G_corben_source_corpus.qmd#planforge",
+    "docs/book_outline.md#resource-economics-and-token-budgets"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "source report hash mismatch is rejected",
+    "private payload copying is rejected",
+    "chapter-core promotion overclaim is rejected",
+    "physical-feasibility overclaim is rejected",
+    "benchmark-transfer overclaim is rejected",
+    "native-KV parity overclaim is rejected",
+    "public training row leakage is rejected",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/invalid/private_payload_copied.invalid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/invalid/support_promotion_overclaim.invalid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/invalid/physical_feasibility_overclaim.invalid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/invalid/benchmark_transfer_overclaim.invalid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/invalid/native_kv_parity_overclaim.invalid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/invalid/training_rows_leak.invalid.json"
+  ],
+  "downgrade_triggers": [
+    "the sanitized fixture no longer validates against the recorded source report digest, source checkout boundary, scenario counts, record counts, redaction boundary, or public-safety counts",
+    "a source hash mismatch, private payload copy, support promotion, physical-feasibility overclaim, benchmark-transfer overclaim, native-KV parity overclaim, or public training row leak is accepted as valid",
+    "the imported report is described as simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment readiness, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, safety, ASI, or chapter-core evidence",
+    "future public dependency policy requires archived raw report publication and this record remains a digest-only sanitized summary"
+  ],
+  "promotion_burden": "Move beyond this bounded prototype-backed import only after a public-safe archived Theseus report bundle or clean live replay is available, raw-private payload publication boundaries are resolved, the adapter scenarios can be independently replayed, benchmark-transfer and physical-feasibility claims are separately tested, native-KV parity is checked by backend lifecycle evidence, residuals and non-claims are preserved, and independent review is recorded with a separate accepted transition.",
+  "limitations": [
+    "sanitized digest-and-count import only",
+    "raw Theseus report and private payloads are not copied into this public repository",
+    "source checkout was dirty at import review",
+    "local maintainer-agent review only",
+    "does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment readiness, live simulator behavior, model quality, economic outcome, learned generation, or clean live Project Theseus replay",
+    "does not prove safety, alignment, transfer, deployment readiness, benchmark performance, model quality, learned generation, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent external audit, Project Theseus reviewer, simulation-fidelity reviewer, simulator reviewer, benchmark reviewer, physical-systems reviewer, backend-runtime reviewer, security auditor, or safety auditor",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-theseus-simulation-fidelity-receipt-suite",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment readiness, live simulator behavior, clean live Project Theseus replay, model quality, economic outcome, learned generation, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}

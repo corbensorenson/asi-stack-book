@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 203 |
+| Proof targets in manifest | 204 |
 | Lean modules scanned | 54 |
-| Theorem declarations classified | 1005 |
-| Direct/projection-style theorem declarations | 184 |
-| Derived/decomposed theorem declarations | 817 |
+| Theorem declarations classified | 1010 |
+| Direct/projection-style theorem declarations | 185 |
+| Derived/decomposed theorem declarations | 821 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 106 |
 | Safety-critical direct/projection declarations | 11 |
@@ -97,7 +97,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 3 | 9 | 3 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 25 | 8 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 21 | 1 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 6 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -957,6 +957,11 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `promoted_experiment_result_cannot_exceed_declared_fidelity_support` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `promoted_result_above_declared_fidelity_rejected` | derived_or_decomposed | no | uses have |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | `simulation_claim_used_as_evidence_includes_scope_fidelity_and_bounds` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_benchmark_transfer_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_core_promotion_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_fixture_valid` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_native_kv_parity_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | `theseus_simulation_fidelity_receipt_suite_import_physical_feasibility_overclaim_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `allowed_transition_must_be_forward_or_quarantine` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `allowed_transition_preserves_field_identity` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | `authority_expanding_replacement_without_grant_rejected` | derived_or_decomposed | no | uses cases, rw, unfold |

@@ -23,11 +23,11 @@
     "This workload-quality probe does not prove stable speedup, deployed scheduler behavior, TokenMana behavior, PlanForge behavior, model quality, economic outcomes, physical feasibility, simulator adequacy, or workload-quality improvement outside this local repository task.",
     "The selected route is scoped to Resource workflow trace review only and does not replace the full book gate, release gate, production scheduler logs, human-repair measurement, or external review."
   ],
-  "observed_selected_vs_baseline_elapsed_reduction_percent": 83.454,
+  "observed_selected_vs_baseline_elapsed_reduction_percent": 85.032,
   "pass": true,
   "probe_id": "resource-workload-quality-probe-2026-07-01-local",
   "record_kind": "resource_workload_quality_probe",
-  "recorded_at_utc": "2026-07-04T02:53:52Z",
+  "recorded_at_utc": "2026-07-05T17:58:19Z",
   "residuals": [
     "The selected scoped validator does not check unrelated Resource Economics artifacts that the baseline live probe checks.",
     "The elapsed-time comparison is a local five-sample median measurement and remains vulnerable to machine load, cache state, and process scheduling noise.",
@@ -36,9 +36,9 @@
   "routes": [
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 172.851,
-      "elapsed_ms_max": 184.457,
-      "elapsed_ms_min": 165.82,
+      "elapsed_ms": 176.987,
+      "elapsed_ms_max": 190.149,
+      "elapsed_ms_min": 161.736,
       "eligible": true,
       "exit_code": 0,
       "exit_codes": [
@@ -66,11 +66,11 @@
       "route_id": "route://baseline-full-resource-lane-replay",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        184.457,
-        165.82,
-        167.491,
-        173.227,
-        172.851
+        190.149,
+        176.987,
+        180.047,
+        172.096,
+        161.736
       ],
       "sample_quality_passes": [
         true,
@@ -82,9 +82,9 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 28.6,
-      "elapsed_ms_max": 57.686,
-      "elapsed_ms_min": 27.726,
+      "elapsed_ms": 26.492,
+      "elapsed_ms_max": 27.023,
+      "elapsed_ms_min": 25.157,
       "eligible": true,
       "exit_code": 0,
       "exit_codes": [
@@ -112,11 +112,11 @@
       "route_id": "route://selected-scoped-workflow-trace-validator",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        28.6,
-        28.446,
-        27.726,
-        34.8,
-        57.686
+        25.691,
+        25.157,
+        26.492,
+        26.623,
+        27.023
       ],
       "sample_quality_passes": [
         true,
@@ -128,9 +128,9 @@
     },
     {
       "command": "/bin/echo skipped resource workflow trace validator",
-      "elapsed_ms": 4.052,
-      "elapsed_ms_max": 8.689,
-      "elapsed_ms_min": 3.512,
+      "elapsed_ms": 1.891,
+      "elapsed_ms_max": 2.543,
+      "elapsed_ms_min": 1.683,
       "eligible": false,
       "exit_code": 0,
       "exit_codes": [
@@ -158,11 +158,11 @@
       "route_id": "route://negative-no-op-success-text",
       "sample_count": 5,
       "sample_elapsed_ms": [
-        8.689,
-        6.77,
-        3.589,
-        3.512,
-        4.052
+        2.2,
+        1.773,
+        1.683,
+        1.891,
+        2.543
       ],
       "sample_quality_passes": [
         false,
@@ -210,10 +210,10 @@
       "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
     },
     {
-      "bytes": 7895,
+      "bytes": 7898,
       "lines": 185,
       "path": "experiments/resource_live_probe/results/2026-07-01-local.json",
-      "sha256": "5a7391c2760eed76e9a9f3de3bf93baf72038ebf6db27ba678b24583ad5230a5"
+      "sha256": "4b812d9fc0a330d8f903fea3b40aa11580cf228a5bb8eabc29f4ae327466a102"
     },
     {
       "bytes": 31878,

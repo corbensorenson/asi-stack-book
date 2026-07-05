@@ -1,0 +1,9 @@
+{
+  "case_id": "private_payload_copied",
+  "base_report": "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/valid/simulation_fidelity_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "private_payload_copied",
+    "value": true
+  },
+  "expected_error_fragment": "private_payload_copied must remain false"
+}

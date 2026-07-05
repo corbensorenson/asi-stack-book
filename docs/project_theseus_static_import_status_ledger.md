@@ -12,6 +12,7 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 | Support replay probes | 1 |
 | Artifact-retention replay imports | 1 |
 | Governance-rights receipt imports | 1 |
+| Simulation-fidelity receipt imports | 1 |
 | Replayed validators in support probe | 2 |
 | Support replay tracked artifacts | 10 |
 | Architecture gates passed | 14 / 14 |
@@ -24,14 +25,14 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 | Operator gates passed | 12 / 12 |
 | Benchmark gates passed | 18 / 18 |
 | Residuals / artifact gaps | 19 / 5 |
-| Expected-invalid controls | 30 |
+| Expected-invalid controls | 37 |
 | Accepted no-promotion decisions | 1 |
 | Accepted bounded artifact-retention transitions | 1 |
 | Accepted bounded governance-rights transitions | 1 |
 
 ## Status-Page Row
 
-| Project Theseus static import lane | Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: 2 sanitized static report imports, 1 support replay probe, 1 artifact-retention replay import, 1 governance-rights receipt import, 64 metadata-only public tasks, 0 public training rows, 18 generation modes, 13 comparisons, 0 promotable comparisons, 30 expected-invalid controls, 1 accepted no-promotion decision, 1 accepted bounded artifact-retention transition, and 1 accepted bounded governance-rights transition; clean live replay remains unclaimed. | `docs/project_theseus_static_import_status_ledger.md`; `docs/theseus_report_import_slice.md`; `docs/theseus_generation_mode_import_slice.md`; `docs/theseus_support_replay_probe.md`; `docs/theseus_public_task_bundle_import.md`; `docs/theseus_artifact_retention_replay_import.md`; `docs/theseus_governance_rights_receipt_suite_import.md`; `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json`; `evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json`; `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json`; `python3 scripts/validate_project_theseus_static_import_status_ledger.py` |
+| Project Theseus static import lane | Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: 2 sanitized static report imports, 1 support replay probe, 1 artifact-retention replay import, 1 governance-rights receipt import, 1 simulation-fidelity receipt import, 64 metadata-only public tasks, 0 public training rows, 18 generation modes, 13 comparisons, 0 promotable comparisons, 37 expected-invalid controls, 1 accepted no-promotion decision, 1 accepted bounded artifact-retention transition, 1 accepted bounded governance-rights transition, and 1 accepted bounded simulation-fidelity transition; clean live replay remains unclaimed. | `docs/project_theseus_static_import_status_ledger.md`; `python3 scripts/validate_project_theseus_static_import_status_ledger.py` |
 
 ## Imported Evidence Surfaces
 
@@ -44,6 +45,8 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 - `evidence_transitions/v1_x_measured/theseus_artifact_retention_replay_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.artifact_retention_replay_gate_import`; it does not prove clean live Project Theseus replay and does not promote the Project Theseus chapter core claim.
 - `docs/theseus_governance_rights_receipt_suite_import.md` records one sanitized governance-rights receipt suite import with 4 governance scenarios, 4 constitutional-predicate scenarios, 4 governance-right records, 4 constitutional-predicate records, 8 evidence-transition records, 8 artifact-graph records, 8 failure-boundary records, and 7 expected-invalid controls.
 - `evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, deployed governance, clean live Project Theseus replay, or any chapter core claim.
+- `docs/theseus_simulation_fidelity_receipt_suite_import.md` records one sanitized simulation-fidelity receipt suite import with 5 passed fixture scenarios, 6 simulation contract records, 6 world-adapter receipts, 6 evidence-transition records, 6 failure-boundary records, 1 blocked transfer, 1 downgraded claim, and 7 expected-invalid controls.
+- `evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `resource-economics.simulation_fidelity_receipt_suite_import`; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, model quality, economic outcome, clean live Project Theseus replay, or any chapter core claim.
 
 ## Non-Claim Boundary
 
@@ -53,6 +56,7 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 - This ledger does not promote any chapter core claim above `argument` and does not create a chapter-core upward support-state transition.
 - The artifact-retention replay import creates only a bounded non-core support transition; it does not prove deployed residual-ledger storage, deployed artifact-graph behavior, clean live Project Theseus replay, model quality, benchmark performance, safety, alignment, deployment readiness, or ASI.
 - The governance-rights receipt suite import creates only a bounded non-core support transition; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed governance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.
+- The simulation-fidelity receipt suite import creates only a bounded non-core support transition; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.
 
 ## Validation Errors
 

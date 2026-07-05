@@ -1551,6 +1551,16 @@
       "rationale": "Implemented in AsiStackProofs.SimulationFidelity as a finite fidelity-support predicate: promoted experiment results cannot exceed declared support level. Folded into Resource Economics and Token Budgets on 2026-06-30 as the Simulation Fidelity and Claim Transport proof lane."
     },
     {
+      "tag": "lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "module": "AsiStackProofs.SimulationFidelity",
+      "formal_target": "A sanitized Project Theseus simulation-fidelity receipt-suite import records fixture, contract, adapter, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core, physical-feasibility, benchmark-transfer, and native-KV-parity overclaims.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SimulationFidelity as a finite import-fixture bridge over the sanitized Project Theseus simulation-fidelity receipt suite: it aligns fixture, contract, adapter, transition, failure-boundary, public-safety, and no-promotion counts while rejecting chapter-core, physical-feasibility, benchmark-transfer, and native-KV-parity overclaims. It does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, clean live Project Theseus replay, or chapter-core support-state promotion."
+    },
+    {
       "tag": "lean:substrates.search.operational_invariant",
       "chapter_id": "mathematical-and-search-substrates",
       "module": "AsiStackProofs.SearchSubstrates",
@@ -2041,5 +2051,5 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     }
   ],
-  "record_count": 203
+  "record_count": 204
 }

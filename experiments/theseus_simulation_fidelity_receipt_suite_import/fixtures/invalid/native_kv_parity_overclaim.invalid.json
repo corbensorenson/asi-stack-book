@@ -1,0 +1,9 @@
+{
+  "case_id": "native_kv_parity_overclaim",
+  "base_report": "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/valid/simulation_fidelity_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "claim_boundary.native_kv_parity_claimed",
+    "value": true
+  },
+  "expected_error_fragment": "native_kv_parity_claimed must remain false"
+}

@@ -1,5 +1,41 @@
 # Changelog
 
+## 2026-07-05 - Import Theseus simulation-fidelity receipt suite
+
+- Added `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`,
+  `docs/theseus_simulation_fidelity_receipt_suite_import.md`, the public-safe
+  fixture set under
+  `experiments/theseus_simulation_fidelity_receipt_suite_import/`, result
+  artifact
+  `experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json`,
+  Lean bridge
+  `lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge`,
+  and accepted bounded transition
+  `evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json`.
+- The Theseus simulation-fidelity receipt suite import records 5/5 passed
+  fixture scenarios, six simulation contract records, six fidelity records,
+  six world-adapter receipts, six evidence-transition records, six
+  failure-boundary records, one blocked transfer, one downgraded claim, one
+  scenario-only record, zero public training rows, zero external inference
+  calls, and seven expected-invalid controls for source hash mismatch, private
+  payload copying, support promotion, physical-feasibility overclaim,
+  benchmark-transfer overclaim, native-KV parity overclaim, and training-row
+  leakage.
+- Current proof-depth snapshot: 204 proof targets, 54 Lean modules, 1010 theorem
+  declarations, 821 derived/decomposed, 185 direct/projection, 4 unknown/mixed,
+  and 5/5 safety-critical chapter classifications present.
+- Updated the Resource Economics live and curated reader chapters, outline,
+  manifest proof/test hooks, non-core evidence ledger, Project Theseus static
+  import status ledger, public trust surfaces, accepted-transition audit, and
+  book validation wiring so
+  `resource-economics.simulation_fidelity_receipt_suite_import` moves from
+  `argument` to `prototype-backed`.
+- Boundary: this does not prove simulator adequacy, physical feasibility,
+  benchmark transfer, native KV parity, deployment readiness, live simulator
+  behavior, clean live Project Theseus replay, model quality, economic outcome,
+  learned generation, safety, alignment, transfer, ASI, or any chapter core
+  claim above `argument`.
+
 ## 2026-07-05 - Import Theseus governance-rights receipt suite
 
 - Added `python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py`,
@@ -320,8 +356,8 @@
   do not clear missing accessibility review, missing audio routes to audio
   review, missing approval routes to release approval, and support-promotion
   overclaims are rejected.
-- Current proof-depth snapshot: 203 proof targets, 54 Lean modules, 1005 theorem
-  declarations, 817 derived/decomposed, 184 direct/projection, 4 unknown/mixed,
+- Current proof-depth snapshot: 204 proof targets, 54 Lean modules, 1010 theorem
+  declarations, 821 derived/decomposed, 185 direct/projection, 4 unknown/mixed,
   and 5/5 safety-critical chapter classifications present.
 - Wired the bridge into `validate_book.py`, `docs/book_outline.md`,
   `book_structure.json`, and the v1.x roadmap so future proof/evidence runs see

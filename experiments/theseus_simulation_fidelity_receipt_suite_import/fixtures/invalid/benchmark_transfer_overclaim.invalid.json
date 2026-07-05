@@ -1,0 +1,9 @@
+{
+  "case_id": "benchmark_transfer_overclaim",
+  "base_report": "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/valid/simulation_fidelity_receipt_suite_import.valid.json",
+  "mutation": {
+    "path": "claim_boundary.benchmark_transfer_claimed",
+    "value": true
+  },
+  "expected_error_fragment": "benchmark_transfer_claimed must remain false"
+}

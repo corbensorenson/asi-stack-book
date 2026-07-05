@@ -1,0 +1,163 @@
+{
+  "schema_version": "asi_stack.theseus_simulation_fidelity_receipt_suite_import.v0",
+  "import_id": "theseus-simulation-fidelity-receipt-suite-import-2026-07-05",
+  "source_project": "Project Theseus / Theseus-Hive",
+  "source_report": "reports/simulation_fidelity_receipt_suite.json",
+  "source_report_created_utc": "2026-06-26T06:13:11.092874Z",
+  "source_commit": "1ad88a22",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_report_sha256": "913f4aba6a8fbd3986e8f6005261b60a2cb976b2b1c78c0123ac763707097a6b",
+  "raw_report_copied": false,
+  "private_payload_copied": false,
+  "private_path_fields_redacted": true,
+  "sanitized_for_public_repo": true,
+  "policy": "project_theseus_simulation_fidelity_receipt_suite_v1",
+  "trigger_state": "GREEN",
+  "summary": {
+    "blocked_transfer_count": 1,
+    "claim_record_count": 6,
+    "counterfactual_trace_count": 6,
+    "downgraded_claim_count": 1,
+    "evidence_transition_record_count": 6,
+    "external_inference_calls": 0,
+    "failure_boundary_record_count": 6,
+    "fallback_return_count": 0,
+    "fidelity_record_count": 6,
+    "fixture_count": 5,
+    "hard_gap_count": 0,
+    "passed_fixture_count": 5,
+    "planning_adapter_edge_count": 3,
+    "planning_adapter_goal_id": "plan_compiler_bootstrap",
+    "planning_adapter_node_count": 4,
+    "planning_adapter_passed": true,
+    "public_training_rows_written": 0,
+    "real_planning_adapter_count": 1,
+    "required_scenario_count": 5,
+    "scenario_only_count": 1,
+    "simulation_contract_record_count": 6,
+    "warning_count": 0,
+    "world_adapter_receipt_count": 6
+  },
+  "record_counts": {
+    "claim_records": 6,
+    "counterfactual_trace_records": 6,
+    "evidence_transition_records": 6,
+    "failure_boundary_records": 6,
+    "fidelity_records": 6,
+    "simulation_contract_records": 6,
+    "world_adapter_receipts": 6
+  },
+  "fixture_scenarios": [
+    "unit_invariant_result",
+    "benchmark_with_approximation_limits",
+    "scenario_only_result",
+    "blocked_transfer_missing_bottleneck",
+    "downgraded_claim_after_instrumentation_cost"
+  ],
+  "transfer_decisions": [
+    "allow_narrow_invariant",
+    "allow_benchmark_limited",
+    "scenario_only_no_promotion",
+    "block_transfer",
+    "downgrade_claim"
+  ],
+  "fidelity_standards": [
+    "schema_and_record_family_exact",
+    "declared_approximations_required",
+    "scenario_only",
+    "requires_exact_backend_lifecycle",
+    "instrumentation_cost_visible"
+  ],
+  "world_adapter_receipts": [
+    {
+      "scenario": "unit_invariant_result",
+      "simulation_id": "sim.unit.route_shape.v1",
+      "adapter_id": "fixture.local.schema",
+      "allowed_claim_boundary": "can support record-shape readiness only",
+      "support_state": "SUPPORTED"
+    },
+    {
+      "scenario": "benchmark_with_approximation_limits",
+      "simulation_id": "sim.benchmark.adapter_limits.v1",
+      "adapter_id": "fixture.local.benchmark_adapter",
+      "allowed_claim_boundary": "can support adapter readiness, not public score",
+      "support_state": "SUPPORTED"
+    },
+    {
+      "scenario": "scenario_only_result",
+      "simulation_id": "sim.scenario.voice_following_route.v1",
+      "adapter_id": "fixture.local.scenario",
+      "allowed_claim_boundary": "can support roadmap scenario only",
+      "support_state": "SUPPORTED"
+    },
+    {
+      "scenario": "blocked_transfer_missing_bottleneck",
+      "simulation_id": "sim.blocked.native_kv_claim.v1",
+      "adapter_id": "fixture.local.runtime_boundary",
+      "allowed_claim_boundary": "cannot support native KV parity",
+      "support_state": "SUPPORTED"
+    },
+    {
+      "scenario": "downgraded_claim_after_instrumentation_cost",
+      "simulation_id": "sim.downgrade.instrumentation_cost.v1",
+      "adapter_id": "fixture.local.scheduler_trace",
+      "allowed_claim_boundary": "downgrade to route-shape evidence",
+      "support_state": "SUPPORTED"
+    },
+    {
+      "scenario": "real_bounded_planning_world_adapter",
+      "simulation_id": "31139978808654e0",
+      "adapter_id": "planforge_compiled_dag_resource_world_adapter_v1",
+      "allowed_claim_boundary": "plan shape, declared dependencies, route-local resource estimate, and evidence-presence accounting only",
+      "support_state": "SUPPORTED",
+      "goal_id": "plan_compiler_bootstrap",
+      "evidence_ref": "reports/theseus_plan_compiled_dags.json"
+    }
+  ],
+  "planning_adapter": {
+    "scenario": "real_bounded_planning_world_adapter",
+    "goal_id": "plan_compiler_bootstrap",
+    "node_count": 4,
+    "edge_count": 3,
+    "passed": true,
+    "claim_boundary": "plan shape, declared dependencies, route-local resource estimate, and evidence-presence accounting only",
+    "evidence_ref": "reports/theseus_plan_compiled_dags.json"
+  },
+  "claim_boundary": {
+    "claim_id": "resource-economics.simulation_fidelity_receipt_suite_import",
+    "old_support_state": "argument",
+    "new_support_state": "prototype-backed",
+    "transition_effect": "upward",
+    "chapter_core_support_effect": "none",
+    "support_state_effect": "eligible_for_bounded_evidence_review",
+    "chapter_core_promotion_claimed": false,
+    "simulation_adequacy_claimed": false,
+    "physical_feasibility_claimed": false,
+    "benchmark_transfer_claimed": false,
+    "native_kv_parity_claimed": false,
+    "deployment_claimed": false,
+    "live_simulator_claimed": false,
+    "learned_generation_claimed": false,
+    "model_quality_claimed": false,
+    "economic_outcome_claimed": false,
+    "clean_live_theseus_replay_claimed": false
+  },
+  "public_safety_boundary": {
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0,
+    "raw_private_payloads_exported": false,
+    "public_prompts_tests_solutions_traces_or_score_labels_exported": false,
+    "model_artifacts_or_checkpoints_exported": false
+  },
+  "hard_gaps": [],
+  "warnings": [],
+  "non_claims": [
+    "Simulation receipt fixtures prove claim-boundary accounting only.",
+    "The planning world adapter proves bounded compile-time plan/resource/fidelity accounting only.",
+    "This is not a physical feasibility result, benchmark-transfer result, live simulator result, deployment result, or learned-generation claim.",
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment readiness, live simulator behavior, clean live Project Theseus replay, model quality, economic outcome, learned generation, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}

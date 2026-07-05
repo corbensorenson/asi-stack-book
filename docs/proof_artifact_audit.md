@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 203 |
-| Manifest status counts | {"implemented": 203} |
-| Triage class counts | {"formal-invariant": 203} |
+| Proof targets audited | 204 |
+| Manifest status counts | {"implemented": 204} |
+| Triage class counts | {"formal-invariant": 204} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -76,7 +76,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 5 | 6 |
 | `lean/AsiStackProofs/SelfImprovement.lean` | 3 | 21 | 7 | 5 |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 4 | 3 | 2 |
-| `lean/AsiStackProofs/SimulationFidelity.lean` | 2 | 4 | 4 | 2 |
+| `lean/AsiStackProofs/SimulationFidelity.lean` | 3 | 9 | 5 | 4 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 25 | 16 | 5 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 21 | 6 | 5 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 6 | 23 | 24 | 9 |
@@ -124,7 +124,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 3 | 3 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
-| `resource-economics-and-token-budgets` | 11 | 11 | 0 | 0 |
+| `resource-economics-and-token-budgets` | 12 | 12 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 6 | 6 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 4 | 4 | 0 | 0 |
@@ -299,6 +299,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:resource.governance_tax.tradeoff_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.ResourceEconomics` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:simulation.fidelity.operational_invariant` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:simulation.fidelity.failure_blocks_promotion` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge` | `resource-economics-and-token-budgets` | `AsiStackProofs.SimulationFidelity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.operational_invariant` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.failure_blocks_promotion` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:substrates.search.adoption_trace_bridge` | `mathematical-and-search-substrates` | `AsiStackProofs.SearchSubstrates` | triage ok; module ok; chapter tag ok; limitation ok |

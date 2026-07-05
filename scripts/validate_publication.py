@@ -190,10 +190,12 @@ FORBIDDEN_PUBLIC_STALE_STRINGS = [
     "147 proof targets",
     "168 proof targets",
     "177 proof targets",
+    "203 proof targets",
     "Thirty-five synthetic",
     "Forty-one synthetic",
     "Forty-seven synthetic",
     "Forty-eight synthetic",
+    "Sixty-four synthetic",
     "Four narrow non-core evidence transitions accepted",
     "Four narrow non-core transitions",
     "four accepted non-core upward transitions",
@@ -206,6 +208,9 @@ FORBIDDEN_PUBLIC_STALE_STRINGS = [
     "Seven narrow non-core evidence transitions accepted",
     "Seven narrow non-core transitions",
     "seven accepted non-core upward transitions",
+    "Eight narrow non-core evidence transitions accepted",
+    "Eight narrow non-core transitions",
+    "eight accepted non-core upward transitions",
 ]
 
 
@@ -291,13 +296,13 @@ def main() -> None:
             f"{source_count} public-safe records",
             f"{chapter_count}/{chapter_count} chapters externally positioned",
             "0 explicit external-baseline exceptions",
-            "Eight narrow non-core evidence transitions accepted",
-            "Eight narrow non-core transitions are accepted",
+            "Nine narrow non-core evidence transitions accepted",
+            "Nine narrow non-core transitions are accepted",
         ],
         "README.md": [
             f"all {chapter_count} chapters have source-noted external positioning records",
             "0 explicit external-baseline exceptions",
-            "Eight narrow non-core transitions are accepted",
+            "Nine narrow non-core transitions are accepted",
             f"{chapter_count} of {chapter_count} chapters currently have in-prose `ext_*` positioning",
             "0 carry explicit exceptions",
         ],
@@ -306,9 +311,9 @@ def main() -> None:
             "0 have explicit external-baseline exceptions",
             f"{chapter_count} source-noted chapters",
             "0 explicit exceptions",
-            "eight accepted non-core upward transitions",
-            "203 proof targets",
-            "Sixty-four synthetic",
+            "nine accepted non-core upward transitions",
+            "204 proof targets",
+            "Seventy synthetic",
         ],
     }
     for path, needles in public_requirements.items():

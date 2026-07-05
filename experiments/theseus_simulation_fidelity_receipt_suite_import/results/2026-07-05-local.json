@@ -1,0 +1,81 @@
+{
+  "artifact_refs": [
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/fixtures/valid/simulation_fidelity_receipt_suite_import.valid.json",
+    "experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json",
+    "docs/theseus_simulation_fidelity_receipt_suite_import.md",
+    "evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json",
+    "lean/AsiStackProofs/SimulationFidelity.lean"
+  ],
+  "chapter_core_support_effect": "none",
+  "claim_id": "resource-economics.simulation_fidelity_receipt_suite_import",
+  "command": "python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
+  "expected_invalid_count": 7,
+  "fixture_scenario_count": 5,
+  "fixture_sha256": "9810b8bdad18baaa0d50fe76676f01573ffe4479a24a321b184e1b468a305b9a",
+  "import_id": "theseus-simulation-fidelity-receipt-suite-import-2026-07-05",
+  "lean_alignment": {
+    "checked_theorem_names": [
+      "theseus_simulation_fidelity_receipt_suite_import_fixture_valid",
+      "theseus_simulation_fidelity_receipt_suite_import_core_promotion_rejected",
+      "theseus_simulation_fidelity_receipt_suite_import_physical_feasibility_overclaim_rejected",
+      "theseus_simulation_fidelity_receipt_suite_import_benchmark_transfer_overclaim_rejected",
+      "theseus_simulation_fidelity_receipt_suite_import_native_kv_parity_overclaim_rejected"
+    ],
+    "fixture_def": "theseusSimulationFidelityReceiptSuiteImportFixture",
+    "module": "AsiStackProofs.SimulationFidelity",
+    "proof_tag": "lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge"
+  },
+  "new_support_state": "prototype-backed",
+  "non_claims": [
+    "Simulation receipt fixtures prove claim-boundary accounting only.",
+    "The planning world adapter proves bounded compile-time plan/resource/fidelity accounting only.",
+    "This is not a physical feasibility result, benchmark-transfer result, live simulator result, deployment result, or learned-generation claim.",
+    "does not copy the raw Project Theseus report or private payloads into this public repository",
+    "does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment readiness, live simulator behavior, clean live Project Theseus replay, model quality, economic outcome, learned generation, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "old_support_state": "argument",
+  "record_counts": {
+    "claim_records": 6,
+    "counterfactual_trace_records": 6,
+    "evidence_transition_records": 6,
+    "failure_boundary_records": 6,
+    "fidelity_records": 6,
+    "simulation_contract_records": 6,
+    "world_adapter_receipts": 6
+  },
+  "result_id": "2026-07-05-theseus-simulation-fidelity-receipt-suite-import",
+  "schema_version": "asi_stack.theseus_simulation_fidelity_receipt_suite_import.result.v0",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_commit": "1ad88a22",
+  "source_report_sha256": "913f4aba6a8fbd3986e8f6005261b60a2cb976b2b1c78c0123ac763707097a6b",
+  "summary": {
+    "blocked_transfer_count": 1,
+    "claim_record_count": 6,
+    "counterfactual_trace_count": 6,
+    "downgraded_claim_count": 1,
+    "evidence_transition_record_count": 6,
+    "external_inference_calls": 0,
+    "failure_boundary_record_count": 6,
+    "fallback_return_count": 0,
+    "fidelity_record_count": 6,
+    "fixture_count": 5,
+    "hard_gap_count": 0,
+    "passed_fixture_count": 5,
+    "planning_adapter_edge_count": 3,
+    "planning_adapter_goal_id": "plan_compiler_bootstrap",
+    "planning_adapter_node_count": 4,
+    "planning_adapter_passed": true,
+    "public_training_rows_written": 0,
+    "real_planning_adapter_count": 1,
+    "required_scenario_count": 5,
+    "scenario_only_count": 1,
+    "simulation_contract_record_count": 6,
+    "warning_count": 0,
+    "world_adapter_receipt_count": 6
+  },
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "valid_fixture_count": 1,
+  "validation_result": "pass",
+  "world_adapter_receipt_count": 6
+}
