@@ -29,7 +29,7 @@ DOC = ROOT / "docs" / "curated_reader_pdf_page_review.md"
 COMMAND = "python3 scripts/validate_curated_reader_pdf_page_review.py"
 RESULT_ID = "curated-reader-pdf-page-review-2026-07-05"
 
-EXPECTED_PAGES = 506
+EXPECTED_PAGES = 507
 NONWHITE_THRESHOLD = 245
 LOW_INK_THRESHOLD = 1_000
 EDGE_MARGIN_PX = 2
@@ -346,7 +346,7 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         rows = []
     observed_pages = [row.get("page") for row in rows if isinstance(row, dict)]
     if observed_pages != list(range(1, EXPECTED_PAGES + 1)):
-        errors.append("page_rows must be ordered pages 1 through 506.")
+        errors.append(f"page_rows must be ordered pages 1 through {EXPECTED_PAGES}.")
     for row in rows:
         if not isinstance(row, dict):
             errors.append("page_rows entries must be objects.")

@@ -9,14 +9,14 @@ This review inspects every page in the current ignored curated-reader PDF throug
 | Metric | Value |
 |---|---:|
 | Status | `passed_pdf_page_by_page_release_preparation_review` |
-| PDF pages | 506 |
-| Page review rows | 506 |
-| Text pages checked | 506 |
-| Word-box pages checked | 506 |
-| Raster pages checked | 506 |
-| Pages with text | 506 |
-| Pages with word boxes | 506 |
-| Pages with raster content | 506 |
+| PDF pages | 507 |
+| Page review rows | 507 |
+| Text pages checked | 507 |
+| Word-box pages checked | 507 |
+| Raster pages checked | 507 |
+| Pages with text | 507 |
+| Pages with word boxes | 507 |
+| Pages with raster content | 507 |
 | Failed pages | 0 |
 | Blank raster pages | 0 |
 | Near-edge pages | 0 |
@@ -24,7 +24,7 @@ This review inspects every page in the current ignored curated-reader PDF throug
 | Low-ink page numbers accepted | 24 |
 | Minimum text characters on a page | 44 |
 | Minimum word boxes on a page | 6 |
-| Minimum nonwhite pixels on a page | 695 |
+| Minimum nonwhite pixels on a page | 681 |
 
 ## Blocker Decision
 

@@ -11,7 +11,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 RESULT = ROOT / "experiments" / "reader_release_candidate_bridge" / "results" / "2026-07-05-local.json"
 DOC = ROOT / "docs" / "reader_release_candidate_bridge.md"
-RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-d81d505a.json"
+RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-3e59bde3.json"
 FORMAT_MATRIX = ROOT / "editions" / "reader_manuscript" / "v1_0" / "format_review_matrix.json"
 FINAL_FIGURE_REVIEW = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "final_figure_artifact_review_manifest.json"

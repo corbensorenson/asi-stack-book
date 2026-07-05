@@ -8,12 +8,12 @@ This note records a local text-oriented DOCX fallback probe for the curated read
 
 | Metric | Value |
 |---|---:|
-| Source DOCX SHA-256 | `ff045865d1d10a002f24835867f96262844d2d8916fe7882c565d95f7b4275bf` |
-| Fallback DOCX SHA-256 | `1566f3686ac8369b4d337b6757178c3e292aca85fd77563676f43d648117036a` |
-| Fallback bytes | 339628 |
+| Source DOCX SHA-256 | `12a33e1eb31b5e0147bc18c586b9b73b8d0b4f7bb3936aaf75dc471db78d4a14` |
+| Fallback DOCX SHA-256 | `240d5f6150b59da2c167c595855f241ab8604aca3bf9e359d1946c736b26fdb2` |
+| Fallback bytes | 339985 |
 | ZIP entries | 8 |
-| Text characters checked | 1106715 |
-| Paragraph markers | 11590 |
+| Text characters checked | 1107976 |
+| Paragraph markers | 11594 |
 | Media entries | 0 |
 | Live-marker hits | 0 |
 | Raw core-claim marker hits | 0 |

@@ -25,8 +25,8 @@ record explicitly grants it.
 
 | Check | Recorded value |
 |---|---:|
-| Source candidate | `2026-07-05-v1-curated-reader-blocked-d81d505a` |
-| Source commit | `d81d505acd5866aec6def5419a68ab2c53978b2d` |
+| Source candidate | `2026-07-05-v1-curated-reader-blocked-3e59bde3` |
+| Source commit | `3e59bde35f4aa5147017ddab3159cfeffddc9ee7` |
 | Audio script digest | `6958f3861721f60beeac0754664a5b48c053441b4d4567175c64c032452ece37` |
 | Script files checked | 49 |
 | Chapter scripts checked | 44 |

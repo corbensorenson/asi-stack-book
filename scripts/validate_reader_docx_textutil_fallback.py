@@ -233,6 +233,19 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     return errors
 
 
+def stable_current_snapshot(manifest: dict[str, Any]) -> dict[str, Any]:
+    """Keep --check-current focused on artifact content, not review metadata."""
+    snapshot = dict(manifest)
+    snapshot.pop("last_updated", None)
+    snapshot.pop("textutil_path", None)
+    pages = snapshot.get("pages_application_review")
+    if isinstance(pages, dict):
+        pages = dict(pages)
+        pages.pop("review_date", None)
+        snapshot["pages_application_review"] = pages
+    return snapshot
+
+
 def write_doc(manifest: dict[str, Any]) -> None:
     pages = manifest["pages_application_review"]
     lines = [
@@ -307,7 +320,7 @@ def main() -> None:
         errors = validate_manifest(manifest)
         if args.check_current:
             observed = inspect_fallback()
-            if observed != manifest:
+            if stable_current_snapshot(observed) != stable_current_snapshot(manifest):
                 errors.append("tracked manifest does not match the current ignored textutil fallback artifact.")
         if not DOC.exists():
             errors.append(f"Missing documentation file: {rel(DOC)}")

@@ -33,7 +33,7 @@ EXPECTED_TITLE_PAGES = {
     "compression_and_generation_acceptance": 248,
     "route_selection_budget_tradeoff": 284,
     "cyclic_substrate_adoption_gate": 321,
-    "living_book_release_pipeline": 395,
+    "living_book_release_pipeline": 396,
 }
 
 
@@ -186,7 +186,7 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         summary = {}
     expected_summary = {
         "figure_count": 10,
-        "docx_converted_pdf_pages": 505,
+        "docx_converted_pdf_pages": 506,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -248,7 +248,7 @@ def write_doc(result: dict[str, Any]) -> None:
     lines = [
         "# Reader Key-Figure DOCX Layout Review",
         "",
-        "Last checked: 2026-07-04",
+        "Last checked: 2026-07-05",
         "",
         "Command:",
         "",

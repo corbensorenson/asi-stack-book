@@ -74,7 +74,7 @@ DOCX_APPLICATION_DECISION = (
     ROOT / "editions" / "reader_manuscript" / "v1_0" / "docx_application_decision_manifest.json"
 )
 HTML_RELEASE_RECORD = ROOT / "release_records" / "2026-06-29-v1-reader-html-855dc277.json"
-CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-d81d505a.json"
+CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-3e59bde3.json"
 
 REVIEW_DOCS = {
     "reader_html": ROOT / "docs" / "reader_html_artifact_browser_review.md",
@@ -428,7 +428,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
 
     if curated_blocked_record.get("record_type") != "edition_release":
         errors.append("curated blocked release-candidate record must use record_type edition_release.")
-    if curated_blocked_record.get("release_id") != "2026-07-05-v1-curated-reader-blocked-d81d505a":
+    if curated_blocked_record.get("release_id") != "2026-07-05-v1-curated-reader-blocked-3e59bde3":
         errors.append("curated blocked release-candidate record release_id drifted.")
     if curated_blocked_record.get("validation_status") != "partial":
         errors.append("curated blocked release-candidate record must remain validation_status partial.")
@@ -566,14 +566,14 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         errors.append("PDF page-review manifest summary must be an object.")
         pdf_page_summary = {}
     expected_pdf_page_review = {
-        "pdf_pages": 506,
-        "page_review_rows": 506,
-        "text_pages_checked": 506,
-        "bbox_pages_checked": 506,
-        "raster_pages_checked": 506,
-        "pages_with_text": 506,
-        "pages_with_word_boxes": 506,
-        "pages_with_raster_content": 506,
+        "pdf_pages": 507,
+        "page_review_rows": 507,
+        "text_pages_checked": 507,
+        "bbox_pages_checked": 507,
+        "raster_pages_checked": 507,
+        "pages_with_text": 507,
+        "pages_with_word_boxes": 507,
+        "pages_with_raster_content": 507,
         "failed_pages": [],
         "blank_pages": [],
         "near_edge_pages": [],
@@ -710,7 +710,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "decision_date": "2026-07-05",
         "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
         "source_release_profiles": "editions/release_profiles.json",
-        "source_blocked_release_record": "release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json",
+        "source_blocked_release_record": "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
         "source_candidate_release_id": curated_blocked_record.get("release_id"),
         "source_candidate_commit": curated_blocked_record.get("source_commit"),
         "source_candidate_tag": curated_blocked_record.get("source_tag"),
@@ -1136,7 +1136,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         pdf_layout_summary = {}
     expected_pdf_layout_metrics = {
         "figure_count": 10,
-        "pdf_pages": 506,
+        "pdf_pages": 507,
         "unique_caption_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -1174,7 +1174,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         docx_layout_summary = {}
     expected_docx_layout_metrics = {
         "figure_count": 10,
-        "docx_converted_pdf_pages": 505,
+        "docx_converted_pdf_pages": 506,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -1234,13 +1234,13 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
             "104 page-view pairs",
             "0 raw .qmd relationship targets",
             "DOCX LibreOffice Headless Review",
-            "505 converted pages",
+            "506 converted pages",
             "0 blank converted-page rasters",
             "not Word review",
             "PDF Extracted Text Reading-Flow Review",
             "44 chapter headings",
             "3 appendix headings",
-            "506 nonempty text pages",
+            "507 nonempty text pages",
             "PDF Chromium Viewer Smoke Review",
             "Scroll-changed pixels",
             "Near-edge raster pages",
@@ -1821,7 +1821,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_key_figure_pdf_layout_review.md`; "
         "`docs/reader_key_figure_docx_layout_review.md`; "
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`; "
-        "`release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`; "
+        "`release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`; "
         "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
         "`python3 scripts/validate_curated_reader_pdf_page_review.py`; "
         "`python3 scripts/validate_reader_human_consumption_gate.py`; "
@@ -1933,7 +1933,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `docs/reader_html_artifact_browser_review.md` records {metrics['generated_html_pages']} generated reader HTML pages, {metrics['generated_html_pairs']} page-view pairs, and {metrics['generated_html_failures']} failed page-view pairs.",
             f"- `docs/curated_reader_html_artifact_browser_review.md` records {metrics['curated_html_pages']} curated reader HTML pages, {metrics['curated_html_pairs']} page-view pairs, {metrics['curated_html_failures']} failed page-view pairs, {metrics['curated_key_figure_pairs']} key-figure page-view pairs, {metrics['curated_key_figure_failures']} key-figure failures, and ignored snapshot digest `{metrics['curated_html_digest']}`.",
             f"- `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: {metrics['curated_html_files']} HTML files, {metrics['curated_epub_xhtml']} EPUB XHTML entries, {metrics['curated_docx_png']} DOCX PNG media entries, {metrics['curated_docx_svg']} DOCX SVG media entries, and {metrics['curated_pdf_pages']} PDF pages. Its repaired-package EPUB audit checks {metrics['curated_epub_audit_xhtml']} XHTML entries, {metrics['curated_epub_audit_content_xhtml']} packaged content XHTML entries, and {metrics['curated_epub_audit_unresolved']} unresolved internal hrefs, with repaired artifact SHA `{metrics['curated_epub_audit_sha']}`. Its Chromium EPUB XHTML browser review checks {metrics['curated_epub_browser_pairs']} page-view pairs with {metrics['curated_epub_browser_failures']} failures and {metrics['curated_epub_browser_max_overflow']} px maximum overflow. Its repaired-package DOCX audit checks {metrics['curated_docx_audit_paragraphs']} paragraphs, {metrics['curated_docx_audit_relationships']} relationships, and {metrics['curated_docx_audit_raw_qmd']} raw .qmd relationship targets, with repaired artifact SHA `{metrics['curated_docx_audit_sha']}`. Its LibreOffice headless DOCX review checks {metrics['curated_docx_libreoffice_pages']} converted pages, {metrics['curated_docx_libreoffice_text_chars']:,} text characters, {metrics['curated_docx_libreoffice_blank_pages']} blank converted-page rasters, {metrics['curated_docx_libreoffice_low_ink_pages']} low-ink converted-page rasters, and {metrics['curated_docx_libreoffice_near_edge_pages']} near-edge converted-page rasters. Its all-page PDF raster audit checks {metrics['curated_pdf_raster_pages']} pages, {metrics['curated_pdf_raster_blank_pages']} blank pages, {metrics['curated_pdf_raster_low_ink_pages']} low-ink pages, and {metrics['curated_pdf_raster_near_edge_pages']} near-edge pages. Its PDF extracted-text reading-flow review checks {metrics['curated_pdf_reading_flow_text_pages']} text pages, {metrics['curated_pdf_reading_flow_nonempty_pages']} nonempty text pages, {metrics['curated_pdf_reading_flow_chapters']} chapter headings, {metrics['curated_pdf_reading_flow_appendices']} appendix headings, and {metrics['curated_pdf_reading_flow_replacement_chars']} replacement characters. Its Chromium PDF viewer smoke review records {metrics['curated_pdf_viewer_screenshots']} viewer screenshots and {metrics['curated_pdf_viewer_scroll_changed_pixels']}% changed pixels after scroll. It preserves release blockers.",
-            f"- `docs/reader_epub_apple_books_review.md` records `{metrics['epub_app_review_status']}` for repaired EPUB digest `{metrics['epub_app_review_sha']}`: Apple Books rendered chapter 1 without the earlier XML error banner, advanced to a figure page, opened the table of contents, and clears only `app_or_ereader_review_not_completed`. It does not approve EPUB publication or the curated reader edition.",
+            f"- `docs/reader_epub_apple_books_review.md` records `{metrics['epub_app_review_status']}` for repaired EPUB digest `{metrics['epub_app_review_sha']}`: Apple Books rendered the Reader Edition Baseline page and chapter 1 without the earlier XML error banner, exposed the ASI Stack control-plane figure and descriptive alt text, opened the table of contents, and clears only `app_or_ereader_review_not_completed`. It does not approve EPUB publication or the curated reader edition.",
             f"- `docs/reader_docx_application_decision.md` records `{metrics['docx_application_decision_status']}` and clears only `docx_application_review_not_completed`; {metrics['docx_application_decision_preserved_blockers']} blockers remain preserved, including reader release approval, manual keyboard-only review, screen-reader review, WCAG conformance, and audio gates. It does not claim Word, LibreOffice GUI, or Google Docs approval and does not approve DOCX publication.",
             f"- `docs/curated_reader_pdf_page_review.md` records a local page-by-page PDF release-preparation review: {metrics['curated_pdf_page_review_rows']} page rows, {metrics['curated_pdf_page_review_failed_pages']} failed pages, {metrics['curated_pdf_page_review_blank_pages']} blank pages, {metrics['curated_pdf_page_review_near_edge_pages']} near-edge pages, {metrics['curated_pdf_page_review_out_of_bounds_pages']} out-of-bounds word-box pages, and {metrics['curated_pdf_page_review_low_ink_pages']} accepted low-ink page. It clears only the current candidate's `manual_pdf_page_by_page_review_not_completed` blocker and does not approve the PDF artifact or reader release.",
             f"- `docs/reader_final_figure_artifact_review.md` records the aggregate final figure-artifact release-preparation review as `{metrics['final_figure_review_status']}` for {metrics['final_figure_review_figures']} key figures and clears only `final_figure_artifact_review_not_completed`. It does not approve the curated reader edition, e-reader/application review, accessibility compliance, audio, or release.",

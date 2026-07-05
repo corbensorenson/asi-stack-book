@@ -16,7 +16,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-d81d505a.json"
+RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-3e59bde3.json"
 CURATED_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "curated_format_probe_manifest.json"
 KEY_FIGURE_FORMAT = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_format_probe_manifest.json"
 KEY_FIGURE_GEOMETRY = ROOT / "editions" / "reader_manuscript" / "v1_0" / "key_figure_geometry_manifest.json"
@@ -68,8 +68,8 @@ ACCESSIBILITY_TREE_DOC = ROOT / "docs" / "reader_accessibility_tree_review.md"
 HTML_REVIEW = ROOT / "docs" / "curated_reader_html_artifact_browser_review.md"
 HTML_DIGEST_RE = re.compile(r"`([0-9a-f]{64})`")
 
-EXPECTED_RELEASE_ID = "2026-07-05-v1-curated-reader-blocked-d81d505a"
-EXPECTED_SOURCE_COMMIT = "d81d505acd5866aec6def5419a68ab2c53978b2d"
+EXPECTED_RELEASE_ID = "2026-07-05-v1-curated-reader-blocked-3e59bde3"
+EXPECTED_SOURCE_COMMIT = "3e59bde35f4aa5147017ddab3159cfeffddc9ee7"
 REQUIRED_BLOCKERS = {
     "format_artifact_not_reviewed",
     "reader_release_record_not_created",
@@ -346,9 +346,9 @@ def main() -> None:
         errors.append("curated format inspection_summary must be an object.")
         inspection = {}
     expected_artifacts = {
-        "curated_reader_epub": ("epub", "7484f0e903cd7e6f6f56918a58f51c0149a0cf191c0cd3d53aed203a4c23fbf4"),
-        "curated_reader_docx": ("docx", "ff045865d1d10a002f24835867f96262844d2d8916fe7882c565d95f7b4275bf"),
-        "curated_reader_pdf": ("pdf", "e6eeeacd839d353bc267d58932645c537c3001419df7f31be889625506ffdf48"),
+        "curated_reader_epub": ("epub", "70c48a6a2a5fb76cebee86d6e2f8123e124d3f3f585c5da8915f8033819b2aaf"),
+        "curated_reader_docx": ("docx", "71ed95b7ded6f85ea94652d7c139cd1f68ed929632822d66d2db0f1b924797b8"),
+        "curated_reader_pdf": ("pdf", "40620dcf56f207e87549eafd52b3178b36affc55732f02f8f6f57d33cc94ec54"),
     }
     for record_format, (manifest_format, expected_sha) in expected_artifacts.items():
         manifest_row = inspection.get(manifest_format, {})
@@ -453,14 +453,14 @@ def main() -> None:
         errors.append("pdf_page_review_manifest summary must be an object.")
         pdf_page_summary = {}
     expected_pdf_page_review_metrics = {
-        "pdf_pages": 506,
-        "page_review_rows": 506,
-        "text_pages_checked": 506,
-        "bbox_pages_checked": 506,
-        "raster_pages_checked": 506,
-        "pages_with_text": 506,
-        "pages_with_word_boxes": 506,
-        "pages_with_raster_content": 506,
+        "pdf_pages": 507,
+        "page_review_rows": 507,
+        "text_pages_checked": 507,
+        "bbox_pages_checked": 507,
+        "raster_pages_checked": 507,
+        "pages_with_text": 507,
+        "pages_with_word_boxes": 507,
+        "pages_with_raster_content": 507,
         "failed_pages": [],
         "blank_pages": [],
         "near_edge_pages": [],
@@ -636,8 +636,8 @@ def main() -> None:
             "Reader DOCX Application Evidence Decision",
             "accepted_docx_application_evidence_for_release_preparation",
             "clears only `docx_application_review_not_completed`",
-            "505-page PDF",
-            "1,029,074 text characters",
+            "506-page PDF",
+            "1,030,310 text characters",
             "does not claim Word, LibreOffice GUI, or Google Docs approval",
             "does not approve DOCX publication",
         ],
@@ -775,7 +775,7 @@ def main() -> None:
     expected_audio_metadata = {
         "status": AUDIO_METADATA_STATUS,
         "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
-        "source_blocked_release_record": "release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json",
+        "source_blocked_release_record": "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
         "source_candidate_release_id": EXPECTED_RELEASE_ID,
         "source_candidate_commit": EXPECTED_SOURCE_COMMIT,
         "source_candidate_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-05",
@@ -1144,7 +1144,7 @@ def main() -> None:
         errors.append("key_figure_pdf_layout_manifest status must remain passed_local_pdf_key_figure_layout_probe.")
     expected_pdf_layout_metrics = {
         "figure_count": 10,
-        "pdf_pages": 506,
+        "pdf_pages": 507,
         "unique_caption_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -1167,7 +1167,7 @@ def main() -> None:
         errors.append("key_figure_docx_layout_manifest status must remain passed_local_docx_key_figure_layout_probe.")
     expected_docx_layout_metrics = {
         "figure_count": 10,
-        "docx_converted_pdf_pages": 505,
+        "docx_converted_pdf_pages": 506,
         "unique_title_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -1444,11 +1444,11 @@ def main() -> None:
     docx_note = str(artifacts.get("curated_reader_docx", {}).get("notes", ""))
     for fragment in (
         str(docx_audit.get("source_sha256", "")),
-        "17,381 paragraphs",
+        "17,387 paragraphs",
         "286 relationships",
         "0 raw .qmd relationship targets",
-        "505-page PDF",
-        "1,029,074 text characters",
+        "506-page PDF",
+        "1,030,310 text characters",
         "0 blank",
         "0 low-ink",
         "0 near-edge converted-page rasters",
@@ -1467,10 +1467,10 @@ def main() -> None:
     for fragment in (
         f"{pdf_layout.get('word_boxes_checked'):,} word boxes",
         "0 out-of-bounds word boxes",
-        "506 rendered pages",
+        "507 rendered pages",
         "0 blank pages",
         "0 near-edge pages",
-        "506 nonempty text pages",
+        "507 nonempty text pages",
         "44 ordered chapter headings",
         "3 ordered appendix headings",
         "0 replacement characters",
@@ -1480,7 +1480,7 @@ def main() -> None:
         "10 key-figure caption pages",
         "165.878 pt minimum caption margin",
         "page-by-page PDF release-preparation review",
-        "506 page rows",
+        "507 page rows",
         "0 failed pages",
         "0 blank pages",
         "0 near-edge pages",

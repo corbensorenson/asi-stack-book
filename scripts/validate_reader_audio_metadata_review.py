@@ -14,11 +14,11 @@ MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_metadata_re
 DOC = ROOT / "docs" / "reader_audio_metadata_review.md"
 AUDIO_PROBE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "audio_script_probe_manifest.json"
 RELEASE_PROFILES = ROOT / "editions" / "release_profiles.json"
-BLOCKED_RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-d81d505a.json"
+BLOCKED_RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-3e59bde3.json"
 
 EXPECTED_STATUS = "accepted_audio_metadata_for_release_preparation"
-EXPECTED_RELEASE_ID = "2026-07-05-v1-curated-reader-blocked-d81d505a"
-EXPECTED_SOURCE_COMMIT = "d81d505acd5866aec6def5419a68ab2c53978b2d"
+EXPECTED_RELEASE_ID = "2026-07-05-v1-curated-reader-blocked-3e59bde3"
+EXPECTED_SOURCE_COMMIT = "3e59bde35f4aa5147017ddab3159cfeffddc9ee7"
 EXPECTED_SOURCE_TAG = "not_tagged_curated_reader_blocked_candidate_2026-07-05"
 EXPECTED_SCRIPT_DIGEST = "6958f3861721f60beeac0754664a5b48c053441b4d4567175c64c032452ece37"
 EXPECTED_CLEARED = ["audio_metadata_not_reviewed"]
@@ -213,7 +213,7 @@ def validate() -> list[str]:
         "Reader Audio Metadata Review",
         EXPECTED_STATUS,
         "clears only `audio_metadata_not_reviewed`",
-        "Source candidate | `2026-07-05-v1-curated-reader-blocked-d81d505a`",
+        "Source candidate | `2026-07-05-v1-curated-reader-blocked-3e59bde3`",
         "Audio script digest | `6958f3861721f60beeac0754664a5b48c053441b4d4567175c64c032452ece37`",
         "Script files checked | 49",
         "Chapter-marker rows | 49",

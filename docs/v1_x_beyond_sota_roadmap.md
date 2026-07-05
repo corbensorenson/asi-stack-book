@@ -3740,7 +3740,7 @@ Current status:
   record that the tracked curated reader manuscript rendered locally to HTML,
   EPUB, DOCX, and PDF and passed structural inspection: 49 HTML files, 44
   chapter HTML files, 52 EPUB XHTML entries, 61 DOCX PNG media entries, and a
-  506-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
+  507-page PDF with sample pages rendered to PNG. The curated DOCX/PDF renderer
   now generates ten temporary PNG fallbacks from the tracked SVG key figures
   inside the ignored build workspace, and the PDF renderer also generates 50
   temporary Chrome-screenshot Mermaid fallbacks from the rendered HTML pages.
@@ -3763,20 +3763,20 @@ Current status:
   leakage, raw core-claim marker leakage, and internal relationship targets with
   0 raw `.qmd` relationship targets and 0 unresolved internal relationship
   targets. The LibreOffice headless DOCX review now converts the repaired DOCX
-  to a 504-page tagged PDF, checks 1,028,304 extracted text characters,
-  raster-checks 504 converted pages, and records 0 blank, 0 low-ink, and 0
+  to a 506-page tagged PDF, checks 1,030,310 extracted text characters,
+  raster-checks 506 converted pages, and records 0 blank, 0 low-ink, and 0
   near-edge converted-page rasters while preserving Word, LibreOffice GUI, or
   Google Docs review as release blockers. The DOCX key-figure layout probe
   checks 10 title pages, 10 title-page rasters, 72.1 pt minimum title margin,
-  9.53% minimum page ink, 0.0% maximum near-edge ink, and 37.95 minimum
+  9.98% minimum page ink, 0.0% maximum near-edge ink, and 38.17 minimum
   luminance standard deviation while still preserving Word, LibreOffice GUI,
   Google Docs, and manual document review as release blockers. The PDF visual raster audit now
-  renders all 506 pages at 72 dpi with
+  renders all 507 pages at 72 dpi with
   0 blank pages, 1 low-ink page, and 0 near-edge pages. The PDF extracted-text
-  reading-flow review now checks 506 text pages, 506 nonempty text pages, 44
+  reading-flow review now checks 507 text pages, 507 nonempty text pages, 44
   ordered chapter headings, 3 ordered appendix headings, and 0 replacement
-  characters. The PDF page-by-page release-preparation review now checks 506
-  page rows, 506 text pages, 506 word-box pages, 506 raster pages, 0 failed
+  characters. The PDF page-by-page release-preparation review now checks 507
+  page rows, 507 text pages, 507 word-box pages, 507 raster pages, 0 failed
   pages, 0 blank pages, 0 near-edge pages, 0 out-of-bounds word-box pages, and
   one accepted low-ink page, closing the current candidate's
   `manual_pdf_page_by_page_review_not_completed` blocker while preserving
@@ -4250,7 +4250,7 @@ validator-enforced status row that grows past compact status-summary size.
   publishing artifacts. The current curated reader manuscript now has a
   refreshed local HTML/EPUB/DOCX/PDF structural probe with 49 HTML files, 52
   EPUB XHTML entries, 61 DOCX PNG media entries, 0 SVG conversion warnings, and
-  a 506-page PDF sample-page render with 50 Chrome-screenshot Mermaid
+  a 507-page PDF sample-page render with 50 Chrome-screenshot Mermaid
   fallbacks. Its repaired-package EPUB audit checks all
   XHTML content/navigation links with 0 unresolved internal hrefs, and its
   Chromium EPUB XHTML browser review checks 104 page-view pairs with 0 failures,
@@ -4264,23 +4264,23 @@ validator-enforced status row that grows past compact status-summary size.
   record exist. Its
   repaired-package DOCX audit checks document
   XML/media/relationships with 0 raw `.qmd` relationship targets, and its
-  LibreOffice headless DOCX review converts 504 pages with 0 blank, 0 low-ink,
+  LibreOffice headless DOCX review converts 506 pages with 0 blank, 0 low-ink,
   and 0 near-edge converted-page rasters, but DOCX still remains probe-level
   until Word, LibreOffice GUI, Google Docs review, or an explicit release
   decision and an edition release record exist. Its DOCX key-figure layout
   review checks 10 title pages, 10 title-page rasters, 72.1 pt minimum title
-  margin, 9.53% minimum page ink, 0.0% maximum near-edge ink, and 37.95
+  margin, 9.98% minimum page ink, 0.0% maximum near-edge ink, and 38.17
   minimum luminance standard deviation while preserving Word, LibreOffice GUI,
   Google Docs, and manual document review as release blockers. Its PDF visual raster audit
-  renders all 506 pages with 0 blank pages, 1 low-ink page, and 0 near-edge
-  pages; its PDF extracted-text reading-flow review checks 506 nonempty text
+  renders all 507 pages with 0 blank pages, 1 low-ink page, and 0 near-edge
+  pages; its PDF extracted-text reading-flow review checks 507 nonempty text
   pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0
   replacement characters. Its PDF key-figure layout review checks 10
   key-figure caption pages, 10 caption-page rasters, 165.878 pt minimum
   caption margin, 3.36% minimum page ink, 0.0% maximum near-edge ink, and 14.2
   minimum luminance standard deviation. Its Chromium PDF viewer smoke review
   records 2 nonblank viewer screenshots and 4.479% changed pixels after scroll.
-  Its PDF page-by-page release-preparation review checks 506 page rows, 0
+  Its PDF page-by-page release-preparation review checks 507 page rows, 0
   failed pages, 0 blank pages, 0 near-edge pages, 0 out-of-bounds word-box
   pages, and one accepted low-ink page, closing the current candidate's
   `manual_pdf_page_by_page_review_not_completed` blocker while preserving
@@ -4380,7 +4380,7 @@ validator-enforced status row that grows past compact status-summary size.
    Audit future curated prose passes for the same polish-versus-evidence
    collision before treating a green gate as release evidence.
 2. **Release unblock ladder.** The blocked curated-reader release candidate
-   (`release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`) is
+   (`release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`) is
    the close-out queue; work it in order and flip the record from blocked to
    approved when it empties. The first preparation rung is closed by
    `python3 scripts/validate_reader_human_consumption_gate.py`,
@@ -4391,7 +4391,7 @@ validator-enforced status row that grows past compact status-summary size.
    page-by-page preparation rung is closed by
    `python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest`,
    `editions/reader_manuscript/v1_0/pdf_page_review_manifest.json`, and
-   `docs/curated_reader_pdf_page_review.md`: all 506 pages have text,
+   `docs/curated_reader_pdf_page_review.md`: all 507 pages have text,
    word-box, and raster rows, with 0 failed pages, 0 blank pages, 0 near-edge
    pages, 0 out-of-bounds word-box pages, and one accepted low-ink page. This
    clears only the current candidate's

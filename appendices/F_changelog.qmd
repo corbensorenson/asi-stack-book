@@ -66,8 +66,11 @@
   DOCX application, human-consumption, release-surface, and blocked-release
   records around the new artifact digests.
 - Recorded the current EPUB digest
-  `7484f0e903cd7e6f6f56918a58f51c0149a0cf191c0cd3d53aed203a4c23fbf4` as
-  opened in Apple Books without the prior XML error banner.
+  `9b504375b67265c805734aee5f785ee2759401ea53de292fbd3370867ca6330f` as
+  opened in Apple Books without the prior XML error banner, and rebound the
+  blocked candidate record to source commit
+  `3e59bde35f4aa5147017ddab3159cfeffddc9ee7` with 507 PDF page rows and 506
+  LibreOffice-converted DOCX pages.
 - Boundary: this keeps the curated reader candidate blocked, not
   release-approved, and does not publish, tag, archive, approve audio,
   certify screen-reader/WCAG conformance, or move any chapter support state.
@@ -127,7 +130,7 @@
 ## 2026-07-05 - Re-identify current blocked reader candidate
 
 - Renamed the active blocked curated-reader release-candidate record to
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json` and
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json` and
   aligned its `source_commit`, `release_id`, derivation text, validators, format
   review matrix, release-surface ledger, release appendix, roadmap, repository
   map, and README references with the current exact artifact evidence.
@@ -518,7 +521,7 @@
   `scripts/validate_curated_reader_blocked_release_record.py`,
   `schemas/edition_release_record.schema.json`,
   `docs/reader_key_figure_artifact_review.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`,
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`,
   `docs/repository_map.md`, and `docs/v1_x_beyond_sota_roadmap.md` so
   reader-release status now distinguishes EPUB package survival, all-XHTML
   Chromium browser review, and key-figure XHTML layout preparation.
@@ -546,7 +549,7 @@
   `scripts/validate_curated_reader_blocked_release_record.py`,
   `schemas/edition_release_record.schema.json`,
   `docs/reader_key_figure_artifact_review.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`,
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`,
   `docs/repository_map.md`, and `docs/v1_x_beyond_sota_roadmap.md` so
   reader-release status now distinguishes DOCX package survival, DOCX
   application-engine conversion, and DOCX key-figure converted-layout
@@ -574,7 +577,7 @@
   `scripts/validate_curated_reader_blocked_release_record.py`,
   `schemas/edition_release_record.schema.json`,
   `docs/reader_key_figure_artifact_review.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`, and
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`, and
   `docs/v1_x_beyond_sota_roadmap.md` so reader-release status now
   distinguishes all-page PDF probes from key-figure caption-page layout
   preparation.
@@ -601,7 +604,7 @@
   `scripts/validate_curated_reader_blocked_release_record.py`,
   `schemas/edition_release_record.schema.json`,
   `docs/reader_key_figure_artifact_review.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`, and
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`, and
   `docs/v1_x_beyond_sota_roadmap.md` so reader-release status now distinguishes
   source geometry, source contrast, source visual identity, DOM/browser layout,
   EPUB/DOCX/PDF package survival, and automated PNG raster fallback review.
@@ -626,7 +629,7 @@
   `scripts/validate_release_surface_status_ledger.py`,
   `scripts/validate_curated_reader_blocked_release_record.py`,
   `schemas/edition_release_record.schema.json`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`, and
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`, and
   `docs/v1_x_beyond_sota_roadmap.md` so the reader release surface now tracks
   source-level accessibility/navigation preparation alongside HTML, format,
   geometry, visual identity, and audio-script probes.
@@ -652,7 +655,7 @@
   `scripts/validate_curated_reader_blocked_release_record.py`,
   `schemas/edition_release_record.schema.json`,
   `docs/reader_key_figure_artifact_review.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`, and
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`, and
   `docs/v1_x_beyond_sota_roadmap.md` so release-preparation status now
   distinguishes source geometry, source contrast, source visual identity,
   package/text survival, rendered HTML layout, and final artifact approval.
@@ -677,7 +680,7 @@
   `scripts/validate_release_surface_status_ledger.py`,
   `scripts/validate_curated_reader_blocked_release_record.py`,
   `docs/reader_key_figure_artifact_review.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`, and
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`, and
   `docs/v1_x_beyond_sota_roadmap.md` so future release status checks preserve
   the exact metrics and non-claim boundary.
 - Boundary: this is a source-level visual-identity review only. It is not
@@ -703,7 +706,7 @@
   marker hits.
 - Updated `docs/reader_audio_script_probe_manifest.md`,
   `docs/release_surface_status_ledger.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`,
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`,
   `docs/v1_x_beyond_sota_roadmap.md`, and the release-record schema/validators
   so the audio-script reading-flow evidence is required and visible.
 - Boundary: this is automated narration-source ordering and reading-flow
@@ -723,7 +726,7 @@
   pages, 1,102,861 text characters, 169,232 word tokens, 44 ordered chapter
   headings, 3 ordered appendix headings, and 0 replacement characters.
 - Updated `docs/curated_reader_format_artifact_probe.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`,
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`,
   `docs/release_surface_status_ledger.md`,
   `docs/v1_x_beyond_sota_roadmap.md`, and release-record validators/schema so
   the PDF reading-flow evidence is required and visible.
@@ -743,7 +746,7 @@
   raster-checks 503 converted pages, and reports 0 blank, 0 low-ink, and 0
   near-edge converted-page rasters.
 - Updated `docs/curated_reader_format_artifact_probe.md`,
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`,
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`,
   `docs/release_surface_status_ledger.md`,
   `docs/v1_x_beyond_sota_roadmap.md`, and the release-record schema/validators
   so the DOCX application-engine evidence is required and visible.
@@ -794,7 +797,7 @@
 - Refreshed `editions/reader_manuscript/v1_0/curated_format_probe_manifest.json`,
   `docs/curated_reader_format_artifact_probe.md`,
   `editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json`, and
-  `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`: that
+  `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`: that
   ignored curated-reader PDF was 505 pages, had 169,762 checked word
   boxes, 0 out-of-bounds word boxes, 0 blank raster pages, 0 low-ink pages, and
   0 near-edge raster pages.
@@ -816,7 +819,7 @@
 
 ## 2026-07-04 - Tighten curated-reader blocked release record
 
-- Updated `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`
+- Updated `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`
   so the blocked curated-reader candidate now records the repaired EPUB package
   audit, repaired DOCX relationship audit, all-page PDF raster probe, key-figure
   EPUB/DOCX/PDF package survival, and generated audio-script release-surface
@@ -1130,7 +1133,7 @@
 
 ## 2026-07-04 - Record blocked curated reader release candidate
 
-- Added `release_records/2026-07-05-v1-curated-reader-blocked-d81d505a.json`
+- Added `release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`
   as a schema-validated partial edition-release candidate for the current
   curated reader manuscript, naming exact local HTML, EPUB, DOCX, PDF,
   e-reader, and audio blockers without approving or publishing artifacts.

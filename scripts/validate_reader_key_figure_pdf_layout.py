@@ -31,7 +31,7 @@ EXPECTED_CAPTION_PAGES = {
     "compression_and_generation_acceptance": 265,
     "route_selection_budget_tradeoff": 298,
     "cyclic_substrate_adoption_gate": 333,
-    "living_book_release_pipeline": 405,
+    "living_book_release_pipeline": 406,
 }
 
 
@@ -255,7 +255,7 @@ def validate_result(result: dict[str, Any]) -> list[str]:
         summary = {}
     expected_summary = {
         "figure_count": 10,
-        "pdf_pages": 506,
+        "pdf_pages": 507,
         "unique_caption_pages": 10,
         "raster_pages_rendered": 10,
         "standard_page_size_count": 10,
@@ -308,7 +308,7 @@ def write_doc(result: dict[str, Any]) -> None:
     lines = [
         "# Reader Key-Figure PDF Layout Review",
         "",
-        "Last checked: 2026-07-04",
+        "Last checked: 2026-07-05",
         "",
         "Command:",
         "",

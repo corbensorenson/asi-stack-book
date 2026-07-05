@@ -1,6 +1,6 @@
 # Reader Key-Figure DOCX Layout Review
 
-Last checked: 2026-07-04
+Last checked: 2026-07-05
 
 Command:
 
@@ -15,14 +15,14 @@ This local probe converts the current ignored curated-reader DOCX through LibreO
 | Metric | Value |
 |---|---:|
 | Status | `passed_local_docx_key_figure_layout_probe` |
-| Converted PDF pages | 505 |
+| Converted PDF pages | 506 |
 | Key-figure title pages | 10 |
 | Raster pages rendered | 10 |
 | Standard page size count | 10 |
 | Minimum title margin | 72.1 pt |
 | Minimum page ink | 9.98% |
 | Maximum near-edge ink | 0.0% |
-| Minimum luminance standard deviation | 37.11 |
+| Minimum luminance standard deviation | 38.17 |
 
 ## Per-Figure Pages
 
@@ -37,7 +37,7 @@ This local probe converts the current ignored curated-reader DOCX through LibreO
 | `route_selection_budget_tradeoff` | 284 | 72.1 pt | 10.93% | 0.0% | 39.17 |
 | `compression_and_generation_acceptance` | 248 | 72.1 pt | 11.4% | 0.0% | 39.97 |
 | `cyclic_substrate_adoption_gate` | 321 | 72.1 pt | 9.98% | 0.0% | 38.65 |
-| `living_book_release_pipeline` | 395 | 72.1 pt | 29.02% | 0.0% | 37.11 |
+| `living_book_release_pipeline` | 396 | 72.1 pt | 29.56% | 0.0% | 38.67 |
 
 ## Residuals
 
