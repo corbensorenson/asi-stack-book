@@ -156,7 +156,8 @@ prevents stronger claims.
 The ASI Stack repository currently contains two public-safe Project Theseus
 static report import lanes, one support replay probe, one report-bundle audit,
 one public task-bundle summary import, one selected Theseus/Fast support-lane
-aggregate, and three bounded non-core Project Theseus imports.
+aggregate, three bounded non-core Project Theseus imports, plus one
+pointer-only book-to-Theseus crosswalk import.
 
 The first import is a sanitized architecture-gate summary. It records a
 checkpointed 14 of 14 gate summary with zero external inference calls, verifies
@@ -269,6 +270,17 @@ source artifacts, clean-live-replay overclaim, and chapter-core promotion. Only
 the narrow import claim
 `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`
 moves to `prototype-backed`.
+
+The book-to-Theseus crosswalk import adds a different kind of evidence:
+cross-project accountability. It records 53 public-safe pointer rows, 20
+backlog cards, 134 source-sync review decisions, and 9 changed AI-book source
+files from a sanitized Theseus crosswalk report. It copies no raw report,
+private path, dogfood record, checkpoint, prompt, test, solution, candidate
+code, or training row into the public book. Its no-promotion decision keeps the
+pointer claim at `argument`: the row shows that Theseus can point back to this
+book and its backlog, not that the referenced rows are true, replayed,
+externally reviewed, or strong enough to promote the Project Theseus core
+claim. It does not prove clean live Project Theseus replay.
 
 The whole surface is narrow. It does not rerun Project Theseus. It does not
 prove that the current checkout is clean. It does not reproduce a benchmark. It

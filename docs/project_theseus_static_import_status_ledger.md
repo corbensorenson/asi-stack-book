@@ -15,6 +15,7 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 | Simulation-fidelity receipt imports | 1 |
 | Module definition-of-done imports | 1 |
 | Project-registry imports | 1 |
+| Book-to-Theseus crosswalk pointer imports | 1 |
 | Replayed validators in support probe | 2 |
 | Support replay tracked artifacts | 10 |
 | Architecture gates passed | 14 / 14 |
@@ -27,17 +28,18 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 | Operator gates passed | 12 / 12 |
 | Benchmark gates passed | 18 / 18 |
 | Residuals / artifact gaps | 19 / 5 |
-| Expected-invalid controls | 53 |
-| Accepted no-promotion decisions | 1 |
+| Expected-invalid controls | 63 |
+| Accepted no-promotion decisions | 2 |
 | Accepted bounded artifact-retention transitions | 1 |
 | Accepted bounded governance-rights transitions | 1 |
 | Accepted bounded simulation-fidelity transitions | 1 |
 | Accepted bounded module definition-of-done transitions | 1 |
 | Accepted bounded project-registry transitions | 1 |
+| Book-to-Theseus public-safe pointer rows | 53 |
 
 ## Status-Page Row
 
-| Project Theseus static import lane | Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: 2 sanitized static report imports, 1 support replay probe, 1 artifact-retention replay import, 1 governance-rights receipt import, 1 simulation-fidelity receipt import, 1 module definition-of-done import, 1 project-registry import, 64 metadata-only public tasks, 0 public training rows, 18 generation modes, 13 comparisons, 0 promotable comparisons, 53 expected-invalid controls, 1 accepted no-promotion decision, 1 accepted bounded artifact-retention transition, 1 accepted bounded governance-rights transition, 1 accepted bounded simulation-fidelity transition, 1 accepted bounded module definition-of-done transition, and 1 accepted bounded project-registry transition; clean live replay remains unclaimed. | `docs/project_theseus_static_import_status_ledger.md`; `python3 scripts/validate_project_theseus_static_import_status_ledger.py` |
+| Project Theseus static import lane | Project Theseus detail is generated in `docs/project_theseus_static_import_status_ledger.md`: 2 sanitized static report imports, 1 support replay probe, 1 artifact-retention replay import, 1 governance-rights receipt import, 1 simulation-fidelity receipt import, 1 module definition-of-done import, 1 project-registry import, 1 book-to-Theseus crosswalk pointer import, 64 metadata-only public tasks, 0 public training rows, 18 generation modes, 13 comparisons, 0 promotable comparisons, 63 expected-invalid controls, 2 accepted no-promotion decisions, 1 accepted bounded artifact-retention transition, 1 accepted bounded governance-rights transition, 1 accepted bounded simulation-fidelity transition, 1 accepted bounded module definition-of-done transition, and 1 accepted bounded project-registry transition; 53 public-safe pointer rows; clean live replay remains unclaimed. | `docs/project_theseus_static_import_status_ledger.md`; `python3 scripts/validate_project_theseus_static_import_status_ledger.py` |
 
 ## Imported Evidence Surfaces
 
@@ -56,6 +58,8 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 - `evidence_transitions/v1_x_measured/theseus_module_definition_of_done_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import`; it does not prove module capability, clean live Project Theseus replay, deployed behavior, model quality, or any chapter core claim.
 - `docs/theseus_project_registry_import.md` records one sanitized project-registry import with 5662 registered paths out of 5662 entries, 24 surfaces, 0 unregistered active sources, 0 unclassified duplicate families, 0 stale report outputs, 0 missing report outputs, 0 generated source artifacts, 0 registry-governance violations, 0 hard governance violations, and 9 expected-invalid controls.
 - `evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`; it does not prove clean live Project Theseus replay, deployment, model quality, self-evolution safety, or any chapter core claim.
+- `docs/theseus_book_crosswalk_import.md` records one sanitized book-to-Theseus crosswalk pointer import with 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, 9 changed AI-book source files, and 10 expected-invalid controls.
+- `evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json` is the accepted no-promotion decision for `project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer`; it keeps the crosswalk pointer at `argument` and blocks clean-live-replay, model-quality, deployment, support-state, and chapter-core promotion claims.
 
 ## Non-Claim Boundary
 
@@ -68,6 +72,7 @@ This ledger replaces the former long `Project Theseus static import lane` cell i
 - The simulation-fidelity receipt suite import creates only a bounded non-core support transition; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.
 - The module definition-of-done import creates only a bounded non-core support transition; it does not prove module capability, deployed Theseus behavior, model quality, benchmark performance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.
 - The project-registry import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, or any chapter core claim.
+- The book-to-Theseus crosswalk import is pointer-only and creates no upward support-state transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, artifact truth for referenced rows, or any chapter core claim.
 
 ## Validation Errors
 

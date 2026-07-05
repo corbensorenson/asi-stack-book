@@ -1,0 +1,116 @@
+{
+  "transition_id": "v1_x_measured.theseus_book_crosswalk_import.no_change",
+  "claim_id": "project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer",
+  "claim_surface_refs": [
+    "docs/theseus_book_crosswalk_import.md",
+    "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "editions/reader_manuscript/v1_0/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_book_crosswalk_import/results/2026-07-05-local.json",
+    "experiments/theseus_book_crosswalk_import/fixtures/valid/book_to_theseus_crosswalk_import.valid.json",
+    "scripts/validate_theseus_book_crosswalk_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe Project Theseus book-to-Theseus crosswalk pointer import only. The sanitized fixture records a pinned dirty-checkout report digest, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, 9 changed AI-book source files, 0 removed source files, 0 stale phases, 0 missing source-basis rows, 0 done phases missing evidence, 0 public training rows, 0 external inference calls, 0 fallback returns, and ten expected-invalid controls. It does not copy the raw crosswalk report or private paths, does not rerun Project Theseus, does not prove clean live Project Theseus replay, and does not create an upward support-state transition.",
+  "evidence_roles": [
+    "public_safe_static_import",
+    "pointer_only_cross_project_crosswalk",
+    "dirty_checkout_boundary",
+    "source_sync_smoke_boundary",
+    "expected_invalid_overclaim_controls",
+    "lean_python_fixture_alignment",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The crosswalk import is useful because it makes the two-way book/Theseus parity surface reviewable by digest, counts, smoke-gate fields, and negative controls. It remains pointer-only: it records that Theseus has a public-safe crosswalk report pointing back to the book and backlog cards, not that any referenced Theseus result is cleanly replayed, independently reviewed, or strong enough to promote the Project Theseus chapter core claim.",
+  "required_artifacts": [
+    "clean Project Theseus replay from a public-safe checkout or archived public release fixture",
+    "environment notes and exact replay command for any stronger crosswalk lane",
+    "publication permission or redaction record for any raw crosswalk artifact",
+    "artifact-truth review for referenced Theseus evidence rows",
+    "missing-artifact closure or durable gap ledger with reviewer acceptance",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/theseus_book_crosswalk_import.md",
+    "experiments/theseus_book_crosswalk_import/results/2026-07-05-local.json",
+    "experiments/theseus_book_crosswalk_import/fixtures/valid/book_to_theseus_crosswalk_import.valid.json",
+    "scripts/validate_theseus_book_crosswalk_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/v1_x_active_evidence_cycle.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/theseus_public_task_bundle_import.md",
+    "docs/theseus_project_registry_import.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#project-theseus-as-report-first-implementation-reference.core",
+    "docs/book_outline.md#project-theseus-as-report-first-implementation-reference"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_book_crosswalk_import.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "clean live Project Theseus replay remains unclaimed",
+    "source checkout was dirty at import time",
+    "raw Project Theseus crosswalk report is not copied into this repository",
+    "private paths and private payloads remain redacted",
+    "all imported support rows stay pointer-only",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted",
+    "no upward support-state transition is created"
+  ],
+  "negative_evidence_refs": [
+    "docs/theseus_book_crosswalk_import.md",
+    "experiments/theseus_book_crosswalk_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_book_crosswalk_import.py"
+  ],
+  "downgrade_triggers": [
+    "book-crosswalk import validator failure",
+    "source report digest mismatch",
+    "raw report, private payload, private path, dogfood trace, checkpoint, prompt, test, solution, candidate-code, or training-row leakage",
+    "source-sync or public-safe evidence smoke failure",
+    "missing source basis accepted",
+    "clean-live-replay overclaim accepted",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Project Theseus implementation-reference claim after a clean public-safe replay or archived public fixture, environment notes, publication-permission closure, artifact-truth review for referenced rows, missing-artifact closure, independent review, and a separate accepted upward transition. Pointer-only crosswalk evidence by itself blocks promotion.",
+  "limitations": [
+    "static summary import only",
+    "dirty local source checkout at import time",
+    "pointer-only public-safe evidence boundary",
+    "raw crosswalk report not copied into the public repository",
+    "no clean live Project Theseus replay",
+    "no benchmark reproduction",
+    "no model-quality result",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Project Theseus, benchmark, model-quality, verifier-quality, source-interpretation, artifact-truth, or external safety audit",
+  "acceptance_blockers": [
+    "no clean public-safe Theseus replay",
+    "no archived public release fixture",
+    "dirty source checkout at import time",
+    "pointer-only evidence rows",
+    "no raw-report publication permission",
+    "no artifact-truth review",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-theseus-book-to-theseus-crosswalk-pointer",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Project Theseus above argument",
+    "does not prove clean live Project Theseus replay, deployed Theseus behavior, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, support-state movement, or self-evolution safety",
+    "does not create an upward support-state transition",
+    "does not promote the Project Theseus chapter core claim",
+    "does not promote any chapter core claim"
+  ]
+}

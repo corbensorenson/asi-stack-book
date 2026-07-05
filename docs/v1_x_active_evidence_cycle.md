@@ -47,6 +47,18 @@ for them here. A selected-lane import may name a planned-only chapter as a
 connected boundary, but that does not make the planned-only chapter selected or
 move its support state.
 
+Implementation note: the Project Theseus selected lane also carries the
+book-to-Theseus crosswalk import recorded in
+`docs/theseus_book_crosswalk_import.md`,
+`experiments/theseus_book_crosswalk_import/results/2026-07-05-local.json`,
+`scripts/validate_theseus_book_crosswalk_import.py`, and
+`evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json`.
+It records 53 public-safe pointer rows, 20 backlog cards, 134 source-sync
+review decisions, and ten expected-invalid controls. It is pointer-only
+implementation-reference evidence: it does not prove clean live Project
+Theseus replay, artifact truth for referenced rows, model quality, deployment,
+self-evolution safety, support-state promotion, or chapter-core promotion.
+
 - `asi-is-a-stack-not-a-model`
 - `the-efficient-asi-hypothesis`
 - `system-boundaries-and-authority`

@@ -1,0 +1,167 @@
+{
+  "chapter_core_support_effect": "none",
+  "claim_boundary": {
+    "capability_claim": false,
+    "chapter_core_claim_promotion": false,
+    "chapter_id": "project-theseus-as-report-first-implementation-reference",
+    "claim_id": "project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer",
+    "clean_live_replay_claim": false,
+    "deployment_claim": false,
+    "model_quality_claim": false,
+    "new_support_state": "argument",
+    "old_support_state": "argument",
+    "pointer_only_evidence_claim": true,
+    "support_state_effect": "blocks_promotion"
+  },
+  "command": "python3 scripts/validate_theseus_book_crosswalk_import.py",
+  "created_utc": "2026-07-04T11:18:22.401681+00:00",
+  "expected_invalid_control_count": 10,
+  "expected_invalid_controls": [
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/chapter_core_promotion.invalid.json",
+      "mutation": "chapter-core promotion claimed from pointer-only crosswalk import",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/clean_live_replay_overclaim.invalid.json",
+      "mutation": "clean live replay claimed from a dirty pointer-only import",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/missing_source_basis.invalid.json",
+      "mutation": "missing source basis count introduced",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/private_payload_copied.invalid.json",
+      "mutation": "private payload copied flag set",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/public_safe_evidence_smoke_failure.invalid.json",
+      "mutation": "public-safe evidence smoke failed",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/public_training_rows.invalid.json",
+      "mutation": "public training rows leaked into pointer-only import",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/raw_report_copied.invalid.json",
+      "mutation": "raw Project Theseus crosswalk report copied",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+      "mutation": "source report hash changed from the reviewed source digest",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/source_sync_smoke_failure.invalid.json",
+      "mutation": "source sync smoke failed",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_book_crosswalk_import/fixtures/invalid/support_promotion_overclaim.invalid.json",
+      "mutation": "pointer-only crosswalk promoted to prototype-backed",
+      "rejected": true
+    }
+  ],
+  "lean_fixture_alignment": {
+    "expected": {
+      "chapter_core_promotion": false,
+      "clean_live_replay_claimed": false,
+      "external_inference_calls": 0,
+      "fallback_return_count": 0,
+      "missing_source_basis_count": 0,
+      "pointer_only_rows": 53,
+      "public_safe_evidence_smoke_passed": true,
+      "public_training_rows_written": 0,
+      "roadmap_backlog_item_count": 20,
+      "source_sync_smoke_passed": true,
+      "theseus_to_book_evidence_count": 53,
+      "trigger_green": true
+    },
+    "module": "AsiStackProofs.TheseusReference",
+    "proof_tag": "lean:theseus.reference.book_crosswalk.pointer_boundary",
+    "theorem_refs": [
+      "theseus_book_crosswalk_import_fixture_valid",
+      "theseus_book_crosswalk_import_pointer_only_preserves_argument",
+      "theseus_book_crosswalk_import_source_sync_failure_rejected",
+      "theseus_book_crosswalk_import_public_safety_failure_rejected",
+      "theseus_book_crosswalk_import_core_promotion_rejected",
+      "theseus_book_crosswalk_import_clean_replay_overclaim_rejected"
+    ]
+  },
+  "non_claims": [
+    "Project Theseus book-to-book crosswalk import is pointer-only implementation-reference evidence.",
+    "This import does not copy the raw Project Theseus crosswalk report, private paths, private payloads, prompts, tests, solutions, candidate code, traces, checkpoints, dogfood records, or training rows into this public repository.",
+    "This import does not prove clean live Project Theseus replay, model quality, deployed Theseus behavior, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, self-evolution safety, or ASI.",
+    "This import does not create an upward support-state transition.",
+    "This import does not promote any chapter core claim above argument."
+  ],
+  "pointer_state_counts": {
+    "PUBLIC_SAFE_REPORT_POINTER": 46,
+    "PUBLIC_SAFE_SOURCE_OR_CONFIG_POINTER": 7
+  },
+  "policy": "project_theseus_book_to_theseus_crosswalk_v1",
+  "public_safety_boundary": {
+    "external_inference_calls": 0,
+    "fallback_return_count": 0,
+    "private_path_fields_redacted": true,
+    "private_payload_copied": false,
+    "public_training_rows_written": 0,
+    "raw_report_copied": false,
+    "sanitized_for_public_repo": true
+  },
+  "result_id": "theseus-book-crosswalk-import-2026-07-05",
+  "rules_present": [
+    "source_basis",
+    "evidence_sync",
+    "no_bloat",
+    "source_sync",
+    "theseus_to_book_evidence"
+  ],
+  "schema_version": "asi_stack.theseus_book_crosswalk_import_result.v0",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_commit": "1ad88a22",
+  "source_report": "reports/book_to_theseus_crosswalk.json",
+  "source_report_sha256": "76f28eab4f1ffba860bedcb41327191060bee9eab3dcf18739f3b2355128dd4b",
+  "source_report_stable_sha256": "d1ffd02d10682214bb28a6023196c46a899f1b132305ee7b9c0943f0b56c86c9",
+  "summary": {
+    "ai_book_root_redacted": true,
+    "ai_book_source_file_count": 1474,
+    "ai_book_source_manifest_hash": "74e960bd50da56136881997996e130b4ece150c99f1eb93ddd223ade701b3cd5",
+    "changed_source_file_count": 9,
+    "cleared_roadmap_backlog_item_count": 0,
+    "crosswalk_item_count": 20,
+    "done_phase_missing_evidence_count": 0,
+    "missing_source_basis_count": 0,
+    "previous_source_inventory_available": true,
+    "public_safe_evidence_smoke_passed": true,
+    "removed_source_file_count": 0,
+    "roadmap_backlog_item_count": 20,
+    "source_sync_review_decision_count": 134,
+    "source_sync_smoke_passed": true,
+    "stale_phase_count": 0,
+    "theseus_to_book_evidence_count": 53
+  },
+  "support_state_counts": {
+    "PUBLIC_SAFE_POINTER_ONLY": 53
+  },
+  "support_state_effect": "blocks_promotion",
+  "trigger_state": "GREEN",
+  "valid_fixture_hash": "92253731d270b7f29a493dd00debfdc5b506a2e93e7d4828c281387a8c1a8ae1",
+  "verification_result": "pass"
+}

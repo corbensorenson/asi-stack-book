@@ -325,6 +325,10 @@ REQUIRED = [
     "docs/theseus_project_registry_import.md",
     "experiments/theseus_project_registry_import/results/2026-07-05-local.json",
     "evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json",
+    "scripts/validate_theseus_book_crosswalk_import.py",
+    "docs/theseus_book_crosswalk_import.md",
+    "experiments/theseus_book_crosswalk_import/results/2026-07-05-local.json",
+    "evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json",
     "scripts/validate_compact_gvr_slice.py",
     "scripts/validate_residual_honesty_conservation.py",
     "scripts/validate_residual_ledger_trace.py",
@@ -1243,6 +1247,7 @@ def main() -> None:
     run_validator("validate_theseus_simulation_fidelity_receipt_suite_import.py")
     run_validator("validate_theseus_module_definition_of_done_import.py")
     run_validator("validate_theseus_project_registry_import.py")
+    run_validator("validate_theseus_book_crosswalk_import.py")
     run_validator("validate_theseus_concrete_evidence_surface.py")
     run_validator("validate_prototype_phase_gates.py")
     run_validator("validate_phase5_harness_registry.py")

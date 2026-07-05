@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-05 - Import Theseus book-to-Theseus crosswalk pointer
+
+- Added a sanitized Project Theseus book-to-Theseus crosswalk import with 53
+  public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions,
+  and ten expected-invalid controls.
+- Added `scripts/validate_theseus_book_crosswalk_import.py`, result
+  `experiments/theseus_book_crosswalk_import/results/2026-07-05-local.json`,
+  and no-promotion decision
+  `evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json`.
+- Added a finite Lean boundary bridge in `AsiStackProofs.TheseusReference`; no
+  clean live Theseus replay, artifact-truth, model-quality, deployment,
+  self-evolution, ASI, support-state promotion, or chapter-core support-state
+  promotion is claimed.
+
 ## 2026-07-05 - Add curated reader WCAG-preparation gate
 
 - Added `scripts/validate_curated_reader_wcag_preparation.js`,
@@ -66,7 +80,7 @@
   `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`
   moves from `argument` to `prototype-backed`.
 - Proof-depth surface synchronization: Current proof-depth snapshot: 206 proof
-  targets, 54 Lean modules, 1024 theorem declarations, 835
+  targets, 54 Lean modules, 1030 theorem declarations, 841
   derived/decomposed, 185 direct/projection, 4 unknown/mixed, and 5/5
   safety-critical chapter classifications present.
 - Boundary: this does not prove clean live Project Theseus replay, deployment,

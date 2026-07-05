@@ -1153,4 +1153,176 @@ theorem theseus_project_registry_import_private_payload_rejected :
     theseusProjectRegistryImportFixture,
   ] at valid
 
+structure TheseusBookCrosswalkImportSummary where
+  triggerGreen : Bool
+  sourceSyncSmokePassed : Bool
+  publicSafeEvidenceSmokePassed : Bool
+  theseusToBookEvidenceCount : Nat
+  roadmapBacklogItemCount : Nat
+  sourceSyncReviewDecisionCount : Nat
+  changedSourceFileCount : Nat
+  removedSourceFileCount : Nat
+  stalePhaseCount : Nat
+  publicReportPointerRows : Nat
+  publicSourceOrConfigPointerRows : Nat
+  pointerOnlySupportRows : Nat
+  missingSourceBasisCount : Nat
+  donePhaseMissingEvidenceCount : Nat
+  publicTrainingRowsWritten : Nat
+  externalInferenceCalls : Nat
+  fallbackReturnCount : Nat
+  rawReportCopied : Bool
+  privatePayloadCopied : Bool
+  pathFieldsRedacted : Bool
+  chapterCorePromotion : Bool
+  cleanLiveReplayClaimed : Bool
+  deploymentClaim : Bool
+  modelQualityClaim : Bool
+  capabilityClaim : Bool
+  newSupportStateArgument : Bool
+  supportStateBlocksPromotion : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def TheseusBookCrosswalkImportPointerOnly
+    (summary : TheseusBookCrosswalkImportSummary) : Prop :=
+  summary.triggerGreen = true ∧
+    summary.sourceSyncSmokePassed = true ∧
+      summary.publicSafeEvidenceSmokePassed = true ∧
+        summary.theseusToBookEvidenceCount = 53 ∧
+          summary.roadmapBacklogItemCount = 20 ∧
+            summary.sourceSyncReviewDecisionCount = 134 ∧
+              summary.publicReportPointerRows = 46 ∧
+                summary.publicSourceOrConfigPointerRows = 7 ∧
+                  summary.pointerOnlySupportRows = 53 ∧
+                    summary.missingSourceBasisCount = 0 ∧
+                      summary.donePhaseMissingEvidenceCount = 0 ∧
+                        summary.newSupportStateArgument = true ∧
+                          summary.supportStateBlocksPromotion = true
+
+def TheseusBookCrosswalkImportPublicSafe
+    (summary : TheseusBookCrosswalkImportSummary) : Prop :=
+  summary.rawReportCopied = false ∧
+    summary.privatePayloadCopied = false ∧
+      summary.pathFieldsRedacted = true ∧
+        summary.publicTrainingRowsWritten = 0 ∧
+          summary.externalInferenceCalls = 0 ∧
+            summary.fallbackReturnCount = 0
+
+def TheseusBookCrosswalkImportPreservesBoundaries
+    (summary : TheseusBookCrosswalkImportSummary) : Prop :=
+  summary.chapterCorePromotion = false ∧
+    summary.cleanLiveReplayClaimed = false ∧
+      summary.deploymentClaim = false ∧
+        summary.modelQualityClaim = false ∧
+          summary.capabilityClaim = false ∧
+            summary.nonClaimBoundaryRecorded = true
+
+def TheseusBookCrosswalkImportValid
+    (summary : TheseusBookCrosswalkImportSummary) : Prop :=
+  TheseusBookCrosswalkImportPointerOnly summary ∧
+    TheseusBookCrosswalkImportPublicSafe summary ∧
+      TheseusBookCrosswalkImportPreservesBoundaries summary
+
+def theseusBookCrosswalkImportFixture :
+    TheseusBookCrosswalkImportSummary := {
+  triggerGreen := true
+  sourceSyncSmokePassed := true
+  publicSafeEvidenceSmokePassed := true
+  theseusToBookEvidenceCount := 53
+  roadmapBacklogItemCount := 20
+  sourceSyncReviewDecisionCount := 134
+  changedSourceFileCount := 9
+  removedSourceFileCount := 0
+  stalePhaseCount := 0
+  publicReportPointerRows := 46
+  publicSourceOrConfigPointerRows := 7
+  pointerOnlySupportRows := 53
+  missingSourceBasisCount := 0
+  donePhaseMissingEvidenceCount := 0
+  publicTrainingRowsWritten := 0
+  externalInferenceCalls := 0
+  fallbackReturnCount := 0
+  rawReportCopied := false
+  privatePayloadCopied := false
+  pathFieldsRedacted := true
+  chapterCorePromotion := false
+  cleanLiveReplayClaimed := false
+  deploymentClaim := false
+  modelQualityClaim := false
+  capabilityClaim := false
+  newSupportStateArgument := true
+  supportStateBlocksPromotion := true
+  nonClaimBoundaryRecorded := true
+}
+
+theorem theseus_book_crosswalk_import_fixture_valid :
+    TheseusBookCrosswalkImportValid
+      theseusBookCrosswalkImportFixture := by
+  simp [
+    TheseusBookCrosswalkImportValid,
+    TheseusBookCrosswalkImportPointerOnly,
+    TheseusBookCrosswalkImportPublicSafe,
+    TheseusBookCrosswalkImportPreservesBoundaries,
+    theseusBookCrosswalkImportFixture,
+  ]
+
+theorem theseus_book_crosswalk_import_pointer_only_preserves_argument :
+    theseusBookCrosswalkImportFixture.pointerOnlySupportRows = 53 ∧
+      theseusBookCrosswalkImportFixture.newSupportStateArgument = true ∧
+      theseusBookCrosswalkImportFixture.supportStateBlocksPromotion = true := by
+  simp [theseusBookCrosswalkImportFixture]
+
+theorem theseus_book_crosswalk_import_source_sync_failure_rejected :
+    ¬ TheseusBookCrosswalkImportValid
+      { theseusBookCrosswalkImportFixture with
+        sourceSyncSmokePassed := false } := by
+  intro valid
+  simp [
+    TheseusBookCrosswalkImportValid,
+    TheseusBookCrosswalkImportPointerOnly,
+    TheseusBookCrosswalkImportPublicSafe,
+    TheseusBookCrosswalkImportPreservesBoundaries,
+    theseusBookCrosswalkImportFixture,
+  ] at valid
+
+theorem theseus_book_crosswalk_import_public_safety_failure_rejected :
+    ¬ TheseusBookCrosswalkImportValid
+      { theseusBookCrosswalkImportFixture with
+        publicTrainingRowsWritten := 1 } := by
+  intro valid
+  simp [
+    TheseusBookCrosswalkImportValid,
+    TheseusBookCrosswalkImportPointerOnly,
+    TheseusBookCrosswalkImportPublicSafe,
+    TheseusBookCrosswalkImportPreservesBoundaries,
+    theseusBookCrosswalkImportFixture,
+  ] at valid
+
+theorem theseus_book_crosswalk_import_core_promotion_rejected :
+    ¬ TheseusBookCrosswalkImportValid
+      { theseusBookCrosswalkImportFixture with
+        chapterCorePromotion := true } := by
+  intro valid
+  simp [
+    TheseusBookCrosswalkImportValid,
+    TheseusBookCrosswalkImportPointerOnly,
+    TheseusBookCrosswalkImportPublicSafe,
+    TheseusBookCrosswalkImportPreservesBoundaries,
+    theseusBookCrosswalkImportFixture,
+  ] at valid
+
+theorem theseus_book_crosswalk_import_clean_replay_overclaim_rejected :
+    ¬ TheseusBookCrosswalkImportValid
+      { theseusBookCrosswalkImportFixture with
+        cleanLiveReplayClaimed := true } := by
+  intro valid
+  simp [
+    TheseusBookCrosswalkImportValid,
+    TheseusBookCrosswalkImportPointerOnly,
+    TheseusBookCrosswalkImportPublicSafe,
+    TheseusBookCrosswalkImportPreservesBoundaries,
+    theseusBookCrosswalkImportFixture,
+  ] at valid
+
 end AsiStackProofs.TheseusReference

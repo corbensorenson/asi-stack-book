@@ -127,6 +127,27 @@ PROJECT_REGISTRY_TRANSITION = (
     / "v1_x_measured"
     / "theseus_project_registry_import_prototype_backed.json"
 )
+BOOK_CROSSWALK_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_book_crosswalk_import"
+    / "results"
+    / "2026-07-05-local.json"
+)
+BOOK_CROSSWALK_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_book_crosswalk_import"
+    / "fixtures"
+    / "valid"
+    / "book_to_theseus_crosswalk_import.valid.json"
+)
+BOOK_CROSSWALK_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_book_crosswalk_import_no_change.json"
+)
 
 DOCS = (
     "docs/theseus_report_import_slice.md",
@@ -138,6 +159,7 @@ DOCS = (
     "docs/theseus_simulation_fidelity_receipt_suite_import.md",
     "docs/theseus_module_definition_of_done_import.md",
     "docs/theseus_project_registry_import.md",
+    "docs/theseus_book_crosswalk_import.md",
 )
 VALIDATORS = (
     "python3 scripts/validate_theseus_report.py",
@@ -150,6 +172,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
     "python3 scripts/validate_theseus_module_definition_of_done_import.py",
     "python3 scripts/validate_theseus_project_registry_import.py",
+    "python3 scripts/validate_theseus_book_crosswalk_import.py",
 )
 
 
@@ -180,18 +203,20 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['simulation_fidelity_receipt_imports']} simulation-fidelity receipt import, "
         f"{metrics['module_dod_imports']} module definition-of-done import, "
         f"{metrics['project_registry_imports']} project-registry import, "
+        f"{metrics['book_crosswalk_imports']} book-to-Theseus crosswalk pointer import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
         f"{metrics['public_training_rows']} public training rows, "
         f"{metrics['generation_mode_count']} generation modes, "
         f"{metrics['generation_comparison_count']} comparisons, "
         f"{metrics['promotable_comparison_count']} promotable comparisons, "
         f"{metrics['expected_invalid_total']} expected-invalid controls, "
-        f"{metrics['no_promotion_decisions']} accepted no-promotion decision, "
+        f"{metrics['no_promotion_decisions']} accepted no-promotion decisions, "
         f"{metrics['artifact_upward_transitions']} accepted bounded artifact-retention transition, "
         f"{metrics['governance_rights_upward_transitions']} accepted bounded governance-rights transition, "
         f"{metrics['simulation_fidelity_upward_transitions']} accepted bounded simulation-fidelity transition, "
         f"{metrics['module_dod_upward_transitions']} accepted bounded module definition-of-done transition, "
         f"and {metrics['project_registry_upward_transitions']} accepted bounded project-registry transition; "
+        f"{metrics['book_crosswalk_pointer_rows']} public-safe pointer rows; "
         "clean live replay remains unclaimed. "
         "| `docs/project_theseus_static_import_status_ledger.md`; "
         "`python3 scripts/validate_project_theseus_static_import_status_ledger.py` |"
@@ -224,6 +249,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         PROJECT_REGISTRY_RESULT,
         PROJECT_REGISTRY_FIXTURE,
         PROJECT_REGISTRY_TRANSITION,
+        BOOK_CROSSWALK_RESULT,
+        BOOK_CROSSWALK_FIXTURE,
+        BOOK_CROSSWALK_TRANSITION,
         *(ROOT / path for path in DOCS),
     ]
     for path in required:
@@ -255,6 +283,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     project_registry_result = load_json(PROJECT_REGISTRY_RESULT)
     project_registry_fixture = load_json(PROJECT_REGISTRY_FIXTURE)
     project_registry_transition = load_json(PROJECT_REGISTRY_TRANSITION)
+    book_crosswalk_result = load_json(BOOK_CROSSWALK_RESULT)
+    book_crosswalk_fixture = load_json(BOOK_CROSSWALK_FIXTURE)
+    book_crosswalk_transition = load_json(BOOK_CROSSWALK_TRANSITION)
 
     if arch_result.get("validation_result") != "pass":
         errors.append("architecture-gate import result must pass.")
@@ -605,6 +636,66 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if "does not prove clean live Project Theseus replay" not in project_registry_nonclaims:
         errors.append("Theseus project-registry transition missing clean-live-replay non-claim.")
 
+    book_crosswalk_summary = book_crosswalk_fixture.get("summary", {})
+    book_crosswalk_boundary = book_crosswalk_fixture.get("claim_boundary", {})
+    book_crosswalk_safety = book_crosswalk_fixture.get("public_safety_boundary", {})
+    if book_crosswalk_result.get("verification_result") != "pass":
+        errors.append("Theseus book-to-Theseus crosswalk import result must pass.")
+    if book_crosswalk_result.get("expected_invalid_control_count") != 10:
+        errors.append("Theseus book-to-Theseus crosswalk import must keep ten expected-invalid controls.")
+    if book_crosswalk_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus book-to-Theseus crosswalk import must preserve dirty-at-import boundary.")
+    if book_crosswalk_result.get("trigger_state") != "GREEN":
+        errors.append("Theseus book-to-Theseus crosswalk import must keep GREEN trigger state.")
+    if book_crosswalk_summary.get("theseus_to_book_evidence_count") != 53:
+        errors.append("Theseus book-to-Theseus crosswalk import must keep 53 public-safe pointer rows.")
+    if book_crosswalk_summary.get("roadmap_backlog_item_count") != 20:
+        errors.append("Theseus book-to-Theseus crosswalk import must keep 20 backlog cards.")
+    if book_crosswalk_summary.get("source_sync_review_decision_count") != 134:
+        errors.append("Theseus book-to-Theseus crosswalk import must keep 134 source-sync review decisions.")
+    for field in (
+        "removed_source_file_count",
+        "stale_phase_count",
+        "missing_source_basis_count",
+        "done_phase_missing_evidence_count",
+    ):
+        if book_crosswalk_summary.get(field) != 0:
+            errors.append(f"Theseus book-to-Theseus crosswalk import field drifted for {field}.")
+    if book_crosswalk_result.get("support_state_effect") != "blocks_promotion":
+        errors.append("Theseus book-to-Theseus crosswalk import support_state_effect must remain blocks_promotion.")
+    if book_crosswalk_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus book-to-Theseus crosswalk import must preserve chapter_core_support_effect none.")
+    for field in (
+        "chapter_core_claim_promotion",
+        "clean_live_replay_claim",
+        "deployment_claim",
+        "model_quality_claim",
+        "capability_claim",
+    ):
+        if book_crosswalk_boundary.get(field) is not False:
+            errors.append(f"Theseus book-to-Theseus crosswalk import must not overclaim {field}.")
+    if book_crosswalk_boundary.get("new_support_state") != "argument":
+        errors.append("Theseus book-to-Theseus crosswalk import must remain argument support.")
+    if (
+        book_crosswalk_safety.get("raw_report_copied") is not False
+        or book_crosswalk_safety.get("private_payload_copied") is not False
+        or book_crosswalk_safety.get("private_path_fields_redacted") is not True
+        or book_crosswalk_safety.get("public_training_rows_written") != 0
+        or book_crosswalk_safety.get("external_inference_calls") != 0
+    ):
+        errors.append("Theseus book-to-Theseus crosswalk import must keep raw-report/private-payload/public-safety boundary.")
+    if book_crosswalk_transition.get("review_status") != "accepted":
+        errors.append("Theseus book-to-Theseus crosswalk no-promotion decision must remain accepted.")
+    if book_crosswalk_transition.get("transition_effect") != "no_change":
+        errors.append("Theseus book-to-Theseus crosswalk transition_effect must remain no_change.")
+    if book_crosswalk_transition.get("new_support_state") != "argument":
+        errors.append("Theseus book-to-Theseus crosswalk transition must remain argument.")
+    if book_crosswalk_transition.get("support_state_effect") != "blocks_promotion":
+        errors.append("Theseus book-to-Theseus crosswalk transition must keep blocks_promotion.")
+    book_crosswalk_nonclaims = " ".join(str(item) for item in book_crosswalk_transition.get("non_claims", []))
+    if "does not prove clean live Project Theseus replay" not in book_crosswalk_nonclaims:
+        errors.append("Theseus book-to-Theseus crosswalk transition missing clean-live-replay non-claim.")
+
     metrics = {
         "static_report_imports": 2,
         "support_replay_count": 1,
@@ -613,6 +704,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "simulation_fidelity_receipt_imports": 1,
         "module_dod_imports": 1,
         "project_registry_imports": 1,
+        "book_crosswalk_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
         "support_replay_tracked_artifacts": len(support_replay.get("tracked_artifacts", [])),
         "architecture_gate_count": arch_result.get("accepted_gate_count"),
@@ -685,6 +777,12 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "project_registry_governance_violations": project_registry_summary.get("registry_governance_violation_count"),
         "project_registry_hard_governance_violations": project_registry_summary.get("registry_hard_governance_violation_count"),
         "project_registry_upward_transitions": 1,
+        "book_crosswalk_expected_invalid": book_crosswalk_result.get("expected_invalid_control_count"),
+        "book_crosswalk_pointer_rows": book_crosswalk_summary.get("theseus_to_book_evidence_count"),
+        "book_crosswalk_backlog_cards": book_crosswalk_summary.get("roadmap_backlog_item_count"),
+        "book_crosswalk_source_sync_decisions": book_crosswalk_summary.get("source_sync_review_decision_count"),
+        "book_crosswalk_changed_source_files": book_crosswalk_summary.get("changed_source_file_count"),
+        "book_crosswalk_no_promotion_decisions": 1,
         "expected_invalid_total": arch_result.get("expected_invalid_count", 0)
         + gen_result.get("expected_invalid_count", 0)
         + task_result.get("expected_invalid_count", 0)
@@ -692,8 +790,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         + governance_result.get("expected_invalid_count", 0)
         + simulation_result.get("expected_invalid_count", 0)
         + module_dod_result.get("expected_invalid_control_count", 0)
-        + project_registry_result.get("expected_invalid_control_count", 0),
-        "no_promotion_decisions": 1,
+        + project_registry_result.get("expected_invalid_control_count", 0)
+        + book_crosswalk_result.get("expected_invalid_control_count", 0),
+        "no_promotion_decisions": 2,
         "source_commit_short": str(source_project.get("commit", ""))[:8],
     }
     return metrics, errors
@@ -720,6 +819,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Simulation-fidelity receipt imports | {metrics['simulation_fidelity_receipt_imports']} |",
             f"| Module definition-of-done imports | {metrics['module_dod_imports']} |",
             f"| Project-registry imports | {metrics['project_registry_imports']} |",
+            f"| Book-to-Theseus crosswalk pointer imports | {metrics['book_crosswalk_imports']} |",
             f"| Replayed validators in support probe | {metrics['support_replay_commands']} |",
             f"| Support replay tracked artifacts | {metrics['support_replay_tracked_artifacts']} |",
             f"| Architecture gates passed | {metrics['architecture_gate_passed']} / {metrics['architecture_gate_count']} |",
@@ -739,6 +839,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Accepted bounded simulation-fidelity transitions | {metrics['simulation_fidelity_upward_transitions']} |",
             f"| Accepted bounded module definition-of-done transitions | {metrics['module_dod_upward_transitions']} |",
             f"| Accepted bounded project-registry transitions | {metrics['project_registry_upward_transitions']} |",
+            f"| Book-to-Theseus public-safe pointer rows | {metrics['book_crosswalk_pointer_rows']} |",
             "",
             "## Status-Page Row",
             "",
@@ -761,6 +862,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `evidence_transitions/v1_x_measured/theseus_module_definition_of_done_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import`; it does not prove module capability, clean live Project Theseus replay, deployed behavior, model quality, or any chapter core claim.",
             f"- `docs/theseus_project_registry_import.md` records one sanitized project-registry import with {metrics['project_registry_registered_paths']} registered paths out of {metrics['project_registry_entry_count']} entries, {metrics['project_registry_surface_count']} surfaces, {metrics['project_registry_unregistered_active_sources']} unregistered active sources, {metrics['project_registry_unclassified_duplicates']} unclassified duplicate families, {metrics['project_registry_stale_report_outputs']} stale report outputs, {metrics['project_registry_missing_report_outputs']} missing report outputs, {metrics['project_registry_generated_source_artifacts']} generated source artifacts, {metrics['project_registry_governance_violations']} registry-governance violations, {metrics['project_registry_hard_governance_violations']} hard governance violations, and {metrics['project_registry_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`; it does not prove clean live Project Theseus replay, deployment, model quality, self-evolution safety, or any chapter core claim.",
+            f"- `docs/theseus_book_crosswalk_import.md` records one sanitized book-to-Theseus crosswalk pointer import with {metrics['book_crosswalk_pointer_rows']} public-safe pointer rows, {metrics['book_crosswalk_backlog_cards']} backlog cards, {metrics['book_crosswalk_source_sync_decisions']} source-sync review decisions, {metrics['book_crosswalk_changed_source_files']} changed AI-book source files, and {metrics['book_crosswalk_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json` is the accepted no-promotion decision for `project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer`; it keeps the crosswalk pointer at `argument` and blocks clean-live-replay, model-quality, deployment, support-state, and chapter-core promotion claims.",
             "",
             "## Non-Claim Boundary",
             "",
@@ -773,6 +876,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "- The simulation-fidelity receipt suite import creates only a bounded non-core support transition; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The module definition-of-done import creates only a bounded non-core support transition; it does not prove module capability, deployed Theseus behavior, model quality, benchmark performance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The project-registry import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, or any chapter core claim.",
+            "- The book-to-Theseus crosswalk import is pointer-only and creates no upward support-state transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, artifact truth for referenced rows, or any chapter core claim.",
             "",
             "## Validation Errors",
             "",

@@ -2872,7 +2872,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 206 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 206 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 206 proof targets, 54 Lean modules, 1024 theorem declarations, 835 derived/decomposed, 185 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 206 proof targets, 54 Lean modules, 1030 theorem declarations, 841 derived/decomposed, 185 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -2881,7 +2881,7 @@ Draft deliverables:
 - Implemented Codex test: External theorem reference boundary negative case.
 - Implemented Codex test: Proof artifact traceability audit.
 - Implemented Codex test: Proof-depth surface synchronization, via `python3 scripts/validate_proof_depth_surface.py`, so the live chapter, reader chapter, outline, and roadmap expose the current proof-depth classification counts and direct/projection versus derived/decomposed distinction without promoting proof-envelope support.
-- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 204 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
+- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 206 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
 
 Lean proof targets:
 

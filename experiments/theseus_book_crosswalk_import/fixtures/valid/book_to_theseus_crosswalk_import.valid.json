@@ -1,0 +1,73 @@
+{
+  "schema_version": "asi_stack.theseus_book_crosswalk_import.v0",
+  "import_id": "theseus-book-crosswalk-import-2026-07-05",
+  "source_commit": "1ad88a22",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_report": "reports/book_to_theseus_crosswalk.json",
+  "source_report_sha256": "76f28eab4f1ffba860bedcb41327191060bee9eab3dcf18739f3b2355128dd4b",
+  "source_report_stable_sha256": "d1ffd02d10682214bb28a6023196c46a899f1b132305ee7b9c0943f0b56c86c9",
+  "policy": "project_theseus_book_to_theseus_crosswalk_v1",
+  "created_utc": "2026-07-04T11:18:22.401681+00:00",
+  "trigger_state": "GREEN",
+  "summary": {
+    "ai_book_root_redacted": true,
+    "ai_book_source_file_count": 1474,
+    "ai_book_source_manifest_hash": "74e960bd50da56136881997996e130b4ece150c99f1eb93ddd223ade701b3cd5",
+    "previous_source_inventory_available": true,
+    "changed_source_file_count": 9,
+    "removed_source_file_count": 0,
+    "stale_phase_count": 0,
+    "roadmap_backlog_item_count": 20,
+    "source_sync_review_decision_count": 134,
+    "cleared_roadmap_backlog_item_count": 0,
+    "theseus_to_book_evidence_count": 53,
+    "public_safe_evidence_smoke_passed": true,
+    "source_sync_smoke_passed": true,
+    "crosswalk_item_count": 20,
+    "missing_source_basis_count": 0,
+    "done_phase_missing_evidence_count": 0
+  },
+  "pointer_state_counts": {
+    "PUBLIC_SAFE_REPORT_POINTER": 46,
+    "PUBLIC_SAFE_SOURCE_OR_CONFIG_POINTER": 7
+  },
+  "support_state_counts": {
+    "PUBLIC_SAFE_POINTER_ONLY": 53
+  },
+  "rules_present": [
+    "source_basis",
+    "evidence_sync",
+    "no_bloat",
+    "source_sync",
+    "theseus_to_book_evidence"
+  ],
+  "public_safety_boundary": {
+    "raw_report_copied": false,
+    "private_payload_copied": false,
+    "private_path_fields_redacted": true,
+    "sanitized_for_public_repo": true,
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0
+  },
+  "claim_boundary": {
+    "claim_id": "project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer",
+    "old_support_state": "argument",
+    "new_support_state": "argument",
+    "support_state_effect": "blocks_promotion",
+    "chapter_id": "project-theseus-as-report-first-implementation-reference",
+    "chapter_core_claim_promotion": false,
+    "clean_live_replay_claim": false,
+    "deployment_claim": false,
+    "model_quality_claim": false,
+    "capability_claim": false,
+    "pointer_only_evidence_claim": true
+  },
+  "non_claims": [
+    "Project Theseus book-to-book crosswalk import is pointer-only implementation-reference evidence.",
+    "This import does not copy the raw Project Theseus crosswalk report, private paths, private payloads, prompts, tests, solutions, candidate code, traces, checkpoints, dogfood records, or training rows into this public repository.",
+    "This import does not prove clean live Project Theseus replay, model quality, deployed Theseus behavior, benchmark performance, generation speed, safety, alignment, transfer, deployment readiness, self-evolution safety, or ASI.",
+    "This import does not create an upward support-state transition.",
+    "This import does not promote any chapter core claim above argument."
+  ]
+}
