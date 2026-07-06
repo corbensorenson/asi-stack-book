@@ -1,0 +1,119 @@
+{
+  "transition_id": "v1_x_measured.theseus_work_board_import.no_change",
+  "claim_id": "project-theseus-as-report-first-implementation-reference.work_board_currentness_import",
+  "claim_surface_refs": [
+    "docs/theseus_work_board_import.md",
+    "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "editions/reader_manuscript/v1_0/chapters/project-theseus-as-report-first-implementation-reference.qmd",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_work_board_import/results/2026-07-06-local.json",
+    "experiments/theseus_work_board_import/fixtures/valid/work_board_import.valid.json",
+    "scripts/validate_theseus_work_board_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Public-safe Project Theseus work-board metadata import only. The sanitized fixture records a pinned dirty-checkout work-board executor snapshot with 130 durable task rows, 412 event rows, 133 evidence rows, 5 SQLite tables, 1 execution-ledger row, 4 unattended-improvement rows, 72 feedback rows, zero public training rows, zero external inference calls, ten expected-invalid controls, and a stale-snapshot boundary. It does not copy raw reports, SQLite rows, task payloads, private paths, prompts, tests, solutions, score labels, candidate code, checkpoints, dogfood traces, or training rows into the public book. It does not rerun Project Theseus, execute a board step, prove clean live Project Theseus replay, or create an upward support-state transition.",
+  "evidence_roles": [
+    "public_safe_static_import",
+    "metadata_only_work_board_boundary",
+    "dirty_checkout_boundary",
+    "stale_snapshot_boundary",
+    "expected_invalid_overclaim_controls",
+    "lean_python_fixture_alignment",
+    "no_promotion_boundary"
+  ],
+  "transition_reason": "The work-board import is useful because it makes the durable task/state substrate reviewable by digest, aggregate counts, SQLite table counts, ledger counts, public-data rules, currentness limits, and negative controls. It remains a stale metadata-only snapshot from a dirty checkout, so it blocks promotion for clean live Theseus replay, current dashboard state, current board state, deployed behavior, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, unattended safety, self-evolution safety, support-state movement, ASI, or chapter-core claims.",
+  "required_artifacts": [
+    "clean Project Theseus replay from a public-safe checkout or archived public release fixture",
+    "fresh work-board status refresh with environment notes and exact command",
+    "publication permission or redaction record for any broader work-board artifact",
+    "artifact-truth review for referenced board rows and ledgers",
+    "missing-artifact closure or durable gap ledger with reviewer acceptance",
+    "independent review"
+  ],
+  "artifact_refs": [
+    "docs/theseus_work_board_import.md",
+    "experiments/theseus_work_board_import/results/2026-07-06-local.json",
+    "experiments/theseus_work_board_import/fixtures/valid/work_board_import.valid.json",
+    "scripts/validate_theseus_work_board_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/v1_x_active_evidence_cycle.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/non_core_evidence_ledger.md",
+    "docs/theseus_project_registry_import.md",
+    "docs/theseus_book_crosswalk_import.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#project-theseus-as-report-first-implementation-reference.core",
+    "docs/book_outline.md#project-theseus-as-report-first-implementation-reference"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_work_board_import.py && python3 scripts/validate_evidence_transitions.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "clean live Project Theseus replay remains unclaimed",
+    "fresh currentness remains unclaimed because the imported status is a stale snapshot",
+    "source checkout was dirty at import time",
+    "raw reports, SQLite rows, task payloads, private paths, prompts, tests, solutions, score labels, candidate code, checkpoints, dogfood traces, and training rows are not copied into this repository",
+    "0 public training rows are recorded",
+    "0 external inference calls are recorded",
+    "chapter core support remains argument",
+    "no chapter core claim is promoted",
+    "no upward support-state transition is created"
+  ],
+  "negative_evidence_refs": [
+    "docs/theseus_work_board_import.md",
+    "experiments/theseus_work_board_import/results/2026-07-06-local.json",
+    "scripts/validate_theseus_work_board_import.py"
+  ],
+  "downgrade_triggers": [
+    "work-board import validator failure",
+    "source report digest mismatch",
+    "raw report, SQLite row, task payload, private path, prompt, test, solution, score label, candidate-code, checkpoint, dogfood trace, or training-row leakage",
+    "clean-live-replay overclaim accepted",
+    "fresh-currentness overclaim accepted from stale snapshot",
+    "support-state promotion without a separate accepted transition"
+  ],
+  "promotion_burden": "Move above argument only for a narrowed Project Theseus work-board claim after a clean public-safe replay or archived public fixture, fresh status refresh, environment notes, publication-permission closure, artifact-truth review for referenced rows and ledgers, missing-artifact closure, independent review, and a separate accepted upward transition. Metadata-only work-board evidence by itself blocks promotion.",
+  "limitations": [
+    "static summary import only",
+    "dirty local source checkout at import time",
+    "stale work-board status snapshot",
+    "metadata-only public boundary",
+    "raw reports and SQLite/task payloads not copied into the public repository",
+    "no clean live Project Theseus replay",
+    "no current dashboard or current board-state proof",
+    "no benchmark reproduction",
+    "no model-quality result",
+    "no independent review"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Project Theseus, benchmark, model-quality, verifier-quality, source-interpretation, artifact-truth, dashboard-state, work-board-state, or external safety audit",
+  "acceptance_blockers": [
+    "no clean public-safe Theseus replay",
+    "no archived public release fixture",
+    "dirty source checkout at import time",
+    "stale status snapshot",
+    "no raw-report or SQLite-row publication permission",
+    "no artifact-truth review",
+    "no independent review"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-06---import-theseus-work-board-metadata-boundary",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote Project Theseus above argument",
+    "does not prove clean live Project Theseus replay, current dashboard state, current board state, deployed Theseus behavior, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, support-state movement, unattended safety, self-evolution safety, deployment readiness, ASI, or chapter-core promotion",
+    "does not create an upward support-state transition",
+    "does not promote the Project Theseus chapter core claim",
+    "does not promote any chapter core claim"
+  ]
+}

@@ -12484,6 +12484,13 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_book_crosswalk_import.py`"
             },
             {
+              "name": "Theseus work-board metadata import validation",
+              "purpose": "Validate a sanitized public-safe Project Theseus work-board metadata import with 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot boundary, public-safety redaction boundary, accepted no-promotion decision, and expected-invalid controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_work_board_import.py`; result `theseus-work-board-import-2026-07-06` checks 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, one execution-ledger row, four unattended-improvement rows, 72 feedback rows, ten expected-invalid controls, and accepted no-promotion decision `theseus_work_board_import_no_change.json`; does not prove clean live Project Theseus replay, current board state, current dashboard state, deployment, model quality, unattended safety, self-evolution safety, ASI, support-state promotion, or chapter-core promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_work_board_import.py`"
+            },
+            {
               "name": "Report-bundle completeness test",
               "purpose": "Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported.",
               "implementation_status": "implemented",

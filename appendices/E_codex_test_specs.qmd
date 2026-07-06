@@ -424,6 +424,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus module definition-of-done import validation | implemented | passes via `python3 scripts/validate_theseus_module_definition_of_done_import.py`; result `theseus-module-definition-of-done-import-2026-07-05` checks 22 of 22 major module records ready, 0 hard gaps, 0 warnings, 20 source-backlog work cards, 7 expected-invalid controls, and bounded claim `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import` from `argument` to `prototype-backed`; does not prove clean live Project Theseus replay, module capability, deployed behavior, model quality, benchmark performance, safety, alignment, ASI, or chapter-core promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus project-registry import validation | implemented | passes via `python3 scripts/validate_theseus_project_registry_import.py`; result `theseus-project-registry-import-2026-07-05` checks 5,662 registered paths, 24 surfaces, full coverage, 0 unregistered active sources, 0 stale or missing report outputs, 0 generated source artifacts, 0 registry-governance violations, 9 expected-invalid controls, and bounded claim `project-theseus-as-report-first-implementation-reference.project_registry_reality_import` from `argument` to `prototype-backed`; does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, ASI, or chapter-core promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus book-to-Theseus crosswalk import validation | implemented | passes via `python3 scripts/validate_theseus_book_crosswalk_import.py`; result `theseus-book-crosswalk-import-2026-07-05` checks 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, ten expected-invalid controls, and accepted no-promotion decision `theseus_book_crosswalk_import_no_change.json`; does not prove clean live Project Theseus replay, artifact truth for referenced rows, deployment, model quality, self-evolution safety, ASI, support-state promotion, or chapter-core promotion |
+| `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus work-board metadata import validation | implemented | passes via `python3 scripts/validate_theseus_work_board_import.py`; result `theseus-work-board-import-2026-07-06` checks 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, one execution-ledger row, four unattended-improvement rows, 72 feedback rows, ten expected-invalid controls, and accepted no-promotion decision `theseus_work_board_import_no_change.json`; does not prove clean live Project Theseus replay, current board state, current dashboard state, deployment, model quality, unattended safety, self-evolution safety, ASI, support-state promotion, or chapter-core promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Report-bundle completeness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; repository fixture only; no live report-bundle import |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Replay-readiness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; no replay execution beyond existing ASI-side validators |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report crosswalk completeness test | implemented | passes via `python3 scripts/validate_theseus_report_bundle_audit.py`; public-safe repository fixture only; no clean live Theseus bundle |
@@ -508,16 +509,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 207 |
+| Proof targets covered by triage | 209 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 207 |
+| implemented | 209 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 207 |
+| implemented | formal-invariant | lean-candidate | 209 |

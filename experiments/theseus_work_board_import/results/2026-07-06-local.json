@@ -1,0 +1,239 @@
+{
+  "board_rules_present": [
+    "durable",
+    "public_data",
+    "status"
+  ],
+  "chapter_core_support_effect": "none",
+  "claim_boundary": {
+    "benchmark_quality_claim": false,
+    "capability_claim": false,
+    "chapter_core_claim_promotion": false,
+    "chapter_id": "project-theseus-as-report-first-implementation-reference",
+    "claim_id": "project-theseus-as-report-first-implementation-reference.work_board_currentness_import",
+    "clean_live_replay_claim": false,
+    "deployment_claim": false,
+    "fresh_currentness_claim": false,
+    "model_quality_claim": false,
+    "new_support_state": "argument",
+    "old_support_state": "argument",
+    "self_evolution_safety_claim": false,
+    "support_state_effect": "blocks_promotion",
+    "unattended_safety_claim": false,
+    "work_board_reality_claim": true
+  },
+  "command": "python3 scripts/validate_theseus_work_board_import.py",
+  "currentness_boundary": {
+    "board_step_executed_by_import": false,
+    "fresh_replay_claimed": false,
+    "source_snapshot_status": "stale_snapshot_import",
+    "source_status_age_days_at_review": 6,
+    "stale_status_blocks_currentness_claim": true
+  },
+  "expected_invalid_control_count": 10,
+  "expected_invalid_controls": [
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/chapter_core_promotion.invalid.json",
+      "mutation": "chapter-core promotion claimed from a metadata-only work-board import",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/clean_live_replay_overclaim.invalid.json",
+      "mutation": "clean live replay claimed from a dirty work-board snapshot import",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/external_inference_calls.invalid.json",
+      "mutation": "external inference calls credited inside the work-board import",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/fresh_currentness_overclaim.invalid.json",
+      "mutation": "fresh currentness claimed from the stale imported snapshot",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/private_payload_copied.invalid.json",
+      "mutation": "private payload copied flag set",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/public_training_rows.invalid.json",
+      "mutation": "public training rows leaked into work-board import",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+      "mutation": "executor report digest changed from the reviewed source digest",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/sqlite_evidence_count_mismatch.invalid.json",
+      "mutation": "SQLite evidence row count drifted from the reviewed durable board",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/task_count_mismatch.invalid.json",
+      "mutation": "executor task count drifted from the reviewed summary",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_work_board_import/fixtures/invalid/task_payloads_copied.invalid.json",
+      "mutation": "task payloads copied into public import",
+      "rejected": true
+    }
+  ],
+  "lean_fixture_alignment": {
+    "expected": {
+      "chapter_core_promotion": false,
+      "clean_live_replay_claimed": false,
+      "event_rows": 412,
+      "evidence_rows": 133,
+      "external_inference_calls": 0,
+      "fresh_currentness_claimed": false,
+      "private_payload_copied": false,
+      "public_training_rows_written": 0,
+      "raw_reports_copied": false,
+      "sqlite_payload_copied": false,
+      "sqlite_tables": 5,
+      "stale_status_blocks_currentness_claim": true,
+      "task_payloads_copied": false,
+      "task_rows": 130
+    },
+    "module": "AsiStackProofs.TheseusReference",
+    "proof_tag": "lean:theseus.reference.work_board_import.metadata_boundary",
+    "theorem_refs": [
+      "theseus_work_board_import_fixture_valid",
+      "theseus_work_board_import_stale_snapshot_blocks_currentness",
+      "theseus_work_board_import_clean_replay_overclaim_rejected",
+      "theseus_work_board_import_private_payload_rejected",
+      "theseus_work_board_import_core_promotion_rejected",
+      "theseus_work_board_import_public_training_rows_rejected"
+    ]
+  },
+  "non_claims": [
+    "Project Theseus work-board import evidence is a metadata-only, stale-snapshot implementation-reference boundary.",
+    "It does not copy raw reports, raw SQLite rows, task payloads, private paths, prompts, tests, solutions, score labels, candidate code, checkpoints, dogfood traces, or training rows into this public repository.",
+    "It does not prove clean live Project Theseus replay, current dashboard state, current board state, deployed Theseus behavior, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, unattended safety, self-evolution safety, support-state movement, ASI, or any chapter core claim.",
+    "It does not create an upward support-state transition and does not promote any chapter core claim above argument."
+  ],
+  "policy": "project_theseus_hive_work_board_executor_v1",
+  "public_safety_boundary": {
+    "external_inference_calls": 0,
+    "fallback_return_count": 0,
+    "private_path_fields_redacted": true,
+    "private_payload_copied": false,
+    "public_training_rows_written": 0,
+    "raw_reports_copied": false,
+    "sanitized_for_public_repo": true,
+    "sqlite_payload_copied": false,
+    "task_payloads_copied": false
+  },
+  "result_id": "theseus-work-board-import-2026-07-06",
+  "review_created_utc": "2026-07-06T02:19:48Z",
+  "rules_present": [
+    "execution",
+    "public_data",
+    "receiver_calibration",
+    "remote_control",
+    "retry",
+    "source_of_truth"
+  ],
+  "schema_version": "asi_stack.theseus_work_board_import_result.v0",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_commit": "1ad88a22",
+  "source_reports": {
+    "board_report": {
+      "created_utc": "2026-06-29T23:57:28Z",
+      "path": "reports/hive_work_board.json",
+      "sha256": "67cc5a91573ee9cc6ac62bcf92ad353f66c93697fe0bda3402c9a397b00eea50",
+      "trigger_state": "GREEN"
+    },
+    "execution_ledger": {
+      "path": "reports/hive_work_board_execution_ledger.jsonl",
+      "sha256": "e9a0fb96b3424ec8a5d1e870d61211e55b22bd6aa6d49e3b3766244b7f18699a"
+    },
+    "executor_doc": {
+      "path": "docs/HIVE_WORK_BOARD_EXECUTOR.md",
+      "sha256": "2e18d705ae262ed38250ca9948710451bef1eb622598e2641e6aae27d26bdf23"
+    },
+    "executor_report": {
+      "created_utc": "2026-06-29T23:57:30Z",
+      "path": "reports/hive_work_board_executor.json",
+      "sha256": "8602bef9d22c1a73aa9751a4b6e035f7587bfb8b5e8a3e9ba72a38d41348ade2",
+      "trigger_state": "GREEN"
+    },
+    "executor_script": {
+      "path": "scripts/hive_work_board_executor.py",
+      "sha256": "e49f7096400577f97560fa8b39f0050ec172e3080e66c2402e0387b1c8be8383"
+    },
+    "feedback_ledger": {
+      "path": "reports/hive_work_board_feedback.jsonl",
+      "sha256": "4faeef351436e0dc4ed08f2d5580fe736e1ba6866c2fe997616fd2d3cac335a0"
+    },
+    "sqlite_board": {
+      "path": "reports/hive_work_board.sqlite",
+      "sha256": "1894d453d31ef0a0706a0bcbd72e05989cc251d7a977d2bf7edd95994f817869",
+      "size_bytes": 1015808
+    },
+    "unattended_improvement_ledger": {
+      "path": "reports/hive_unattended_improvement_ledger.jsonl",
+      "sha256": "f72641395533c1bc5ff9df5a13e20ab7ffb166f0377740d763b6ae0dc83b07e6"
+    }
+  },
+  "source_status_age_days_at_review": 6,
+  "source_status_created_utc": "2026-06-29T23:57:30Z",
+  "sqlite_task_status_counts": {
+    "active": 22,
+    "blocked": 8,
+    "done": 64,
+    "ready": 36
+  },
+  "summary": {
+    "board_blocked_tasks": 8,
+    "board_done_tasks": 65,
+    "board_event_count": 412,
+    "board_evidence_count": 133,
+    "board_failed_tasks": 0,
+    "board_ingested_source_rows": 48,
+    "board_ready_or_active_tasks": 22,
+    "board_source_count": 9,
+    "board_total_tasks": 130,
+    "execution_ledger_rows": 1,
+    "executor_active_tasks": 22,
+    "executor_blocked_tasks": 8,
+    "executor_completed_this_run": 0,
+    "executor_done_tasks": 64,
+    "executor_executed_tasks": 0,
+    "executor_failed_this_run": 0,
+    "executor_ready_tasks": 36,
+    "executor_runtime_ms": 2057,
+    "executor_selected_tasks": 1,
+    "executor_total_tasks": 130,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0,
+    "feedback_rows": 72,
+    "public_training_rows_written": 0,
+    "sqlite_comment_rows": 0,
+    "sqlite_dependency_rows": 0,
+    "sqlite_event_rows": 412,
+    "sqlite_evidence_rows": 133,
+    "sqlite_table_count": 5,
+    "sqlite_task_rows": 130,
+    "trigger_state": "GREEN",
+    "unattended_improvement_rows": 4
+  },
+  "support_state_effect": "blocks_promotion",
+  "valid_fixture_hash": "61f02de630cff29290c8d4e50480f2f543048706f51ffe5499c2fc456c5027f8",
+  "verification_result": "pass"
+}

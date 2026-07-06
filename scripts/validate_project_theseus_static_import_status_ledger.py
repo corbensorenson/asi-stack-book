@@ -169,6 +169,27 @@ BOOK_CROSSWALK_TRANSITION = (
     / "v1_x_measured"
     / "theseus_book_crosswalk_import_no_change.json"
 )
+WORK_BOARD_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_work_board_import"
+    / "results"
+    / "2026-07-06-local.json"
+)
+WORK_BOARD_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_work_board_import"
+    / "fixtures"
+    / "valid"
+    / "work_board_import.valid.json"
+)
+WORK_BOARD_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_work_board_import_no_change.json"
+)
 
 DOCS = (
     "docs/theseus_report_import_slice.md",
@@ -182,6 +203,7 @@ DOCS = (
     "docs/theseus_module_definition_of_done_import.md",
     "docs/theseus_project_registry_import.md",
     "docs/theseus_book_crosswalk_import.md",
+    "docs/theseus_work_board_import.md",
 )
 VALIDATORS = (
     "python3 scripts/validate_theseus_report.py",
@@ -196,6 +218,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_module_definition_of_done_import.py",
     "python3 scripts/validate_theseus_project_registry_import.py",
     "python3 scripts/validate_theseus_book_crosswalk_import.py",
+    "python3 scripts/validate_theseus_work_board_import.py",
 )
 
 
@@ -228,6 +251,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['module_dod_imports']} module definition-of-done import, "
         f"{metrics['project_registry_imports']} project-registry import, "
         f"{metrics['book_crosswalk_imports']} book-to-Theseus crosswalk pointer import, "
+        f"{metrics['work_board_imports']} work-board metadata import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
         f"{metrics['public_training_rows']} public training rows, "
         f"{metrics['generation_mode_count']} generation modes, "
@@ -242,6 +266,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['module_dod_upward_transitions']} accepted bounded module definition-of-done transition, "
         f"and {metrics['project_registry_upward_transitions']} accepted bounded project-registry transition; "
         f"{metrics['book_crosswalk_pointer_rows']} public-safe pointer rows; "
+        f"{metrics['work_board_task_rows']} durable work-board task rows; "
         "clean live replay remains unclaimed. "
         "| `docs/project_theseus_static_import_status_ledger.md`; "
         "`python3 scripts/validate_project_theseus_static_import_status_ledger.py` |"
@@ -280,6 +305,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         BOOK_CROSSWALK_RESULT,
         BOOK_CROSSWALK_FIXTURE,
         BOOK_CROSSWALK_TRANSITION,
+        WORK_BOARD_RESULT,
+        WORK_BOARD_FIXTURE,
+        WORK_BOARD_TRANSITION,
         *(ROOT / path for path in DOCS),
     ]
     for path in required:
@@ -317,6 +345,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     book_crosswalk_result = load_json(BOOK_CROSSWALK_RESULT)
     book_crosswalk_fixture = load_json(BOOK_CROSSWALK_FIXTURE)
     book_crosswalk_transition = load_json(BOOK_CROSSWALK_TRANSITION)
+    work_board_result = load_json(WORK_BOARD_RESULT)
+    work_board_fixture = load_json(WORK_BOARD_FIXTURE)
+    work_board_transition = load_json(WORK_BOARD_TRANSITION)
 
     if arch_result.get("validation_result") != "pass":
         errors.append("architecture-gate import result must pass.")
@@ -782,6 +813,76 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if "does not prove clean live Project Theseus replay" not in book_crosswalk_nonclaims:
         errors.append("Theseus book-to-Theseus crosswalk transition missing clean-live-replay non-claim.")
 
+    work_board_summary = work_board_fixture.get("summary", {})
+    work_board_boundary = work_board_fixture.get("claim_boundary", {})
+    work_board_safety = work_board_fixture.get("public_safety_boundary", {})
+    work_board_currentness = work_board_fixture.get("currentness_boundary", {})
+    if work_board_result.get("verification_result") != "pass":
+        errors.append("Theseus work-board import result must pass.")
+    if work_board_result.get("expected_invalid_control_count") != 10:
+        errors.append("Theseus work-board import must keep ten expected-invalid controls.")
+    if work_board_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus work-board import must preserve dirty-at-import boundary.")
+    if work_board_result.get("source_status_age_days_at_review") != 6:
+        errors.append("Theseus work-board import must preserve stale six-day status boundary.")
+    for field, expected in (
+        ("sqlite_task_rows", 130),
+        ("sqlite_event_rows", 412),
+        ("sqlite_evidence_rows", 133),
+        ("sqlite_table_count", 5),
+        ("execution_ledger_rows", 1),
+        ("unattended_improvement_rows", 4),
+        ("feedback_rows", 72),
+        ("public_training_rows_written", 0),
+        ("external_inference_calls", 0),
+    ):
+        if work_board_summary.get(field) != expected:
+            errors.append(f"Theseus work-board import field drifted for {field}.")
+    if work_board_result.get("support_state_effect") != "blocks_promotion":
+        errors.append("Theseus work-board import support_state_effect must remain blocks_promotion.")
+    if work_board_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus work-board import must preserve chapter_core_support_effect none.")
+    for field in (
+        "chapter_core_claim_promotion",
+        "clean_live_replay_claim",
+        "fresh_currentness_claim",
+        "deployment_claim",
+        "model_quality_claim",
+        "benchmark_quality_claim",
+        "capability_claim",
+        "unattended_safety_claim",
+        "self_evolution_safety_claim",
+    ):
+        if work_board_boundary.get(field) is not False:
+            errors.append(f"Theseus work-board import must not overclaim {field}.")
+    if work_board_boundary.get("new_support_state") != "argument":
+        errors.append("Theseus work-board import must remain argument support.")
+    if work_board_currentness.get("stale_status_blocks_currentness_claim") is not True:
+        errors.append("Theseus work-board import must keep stale-status currentness blocker.")
+    if work_board_currentness.get("fresh_replay_claimed") is not False:
+        errors.append("Theseus work-board import must not claim fresh replay.")
+    if (
+        work_board_safety.get("raw_reports_copied") is not False
+        or work_board_safety.get("sqlite_payload_copied") is not False
+        or work_board_safety.get("task_payloads_copied") is not False
+        or work_board_safety.get("private_payload_copied") is not False
+        or work_board_safety.get("private_path_fields_redacted") is not True
+        or work_board_safety.get("public_training_rows_written") != 0
+        or work_board_safety.get("external_inference_calls") != 0
+    ):
+        errors.append("Theseus work-board import must keep raw-report/SQLite/task/private-payload/public-safety boundary.")
+    if work_board_transition.get("review_status") != "accepted":
+        errors.append("Theseus work-board no-promotion decision must remain accepted.")
+    if work_board_transition.get("transition_effect") != "no_change":
+        errors.append("Theseus work-board transition_effect must remain no_change.")
+    if work_board_transition.get("new_support_state") != "argument":
+        errors.append("Theseus work-board transition must remain argument.")
+    if work_board_transition.get("support_state_effect") != "blocks_promotion":
+        errors.append("Theseus work-board transition must keep blocks_promotion.")
+    work_board_nonclaims = " ".join(str(item) for item in work_board_transition.get("non_claims", []))
+    if "does not prove clean live Project Theseus replay" not in work_board_nonclaims:
+        errors.append("Theseus work-board transition missing clean-live-replay non-claim.")
+
     metrics = {
         "static_report_imports": 2,
         "support_replay_count": 1,
@@ -792,6 +893,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "module_dod_imports": 1,
         "project_registry_imports": 1,
         "book_crosswalk_imports": 1,
+        "work_board_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
         "support_replay_tracked_artifacts": len(support_replay.get("tracked_artifacts", [])),
         "architecture_gate_count": arch_result.get("accepted_gate_count"),
@@ -879,6 +981,16 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "book_crosswalk_source_sync_decisions": book_crosswalk_summary.get("source_sync_review_decision_count"),
         "book_crosswalk_changed_source_files": book_crosswalk_summary.get("changed_source_file_count"),
         "book_crosswalk_no_promotion_decisions": 1,
+        "work_board_expected_invalid": work_board_result.get("expected_invalid_control_count"),
+        "work_board_task_rows": work_board_summary.get("sqlite_task_rows"),
+        "work_board_event_rows": work_board_summary.get("sqlite_event_rows"),
+        "work_board_evidence_rows": work_board_summary.get("sqlite_evidence_rows"),
+        "work_board_sqlite_tables": work_board_summary.get("sqlite_table_count"),
+        "work_board_execution_ledger_rows": work_board_summary.get("execution_ledger_rows"),
+        "work_board_unattended_improvement_rows": work_board_summary.get("unattended_improvement_rows"),
+        "work_board_feedback_rows": work_board_summary.get("feedback_rows"),
+        "work_board_status_age_days": work_board_fixture.get("source_status_age_days_at_review"),
+        "work_board_no_promotion_decisions": 1,
         "expected_invalid_total": arch_result.get("expected_invalid_count", 0)
         + gen_result.get("expected_invalid_count", 0)
         + task_result.get("expected_invalid_count", 0)
@@ -888,8 +1000,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         + rlds_minari_result.get("expected_invalid_control_count", 0)
         + module_dod_result.get("expected_invalid_control_count", 0)
         + project_registry_result.get("expected_invalid_control_count", 0)
-        + book_crosswalk_result.get("expected_invalid_control_count", 0),
-        "no_promotion_decisions": 2,
+        + book_crosswalk_result.get("expected_invalid_control_count", 0)
+        + work_board_result.get("expected_invalid_control_count", 0),
+        "no_promotion_decisions": 3,
         "source_commit_short": str(source_project.get("commit", ""))[:8],
     }
     return metrics, errors
@@ -918,6 +1031,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Module definition-of-done imports | {metrics['module_dod_imports']} |",
             f"| Project-registry imports | {metrics['project_registry_imports']} |",
             f"| Book-to-Theseus crosswalk pointer imports | {metrics['book_crosswalk_imports']} |",
+            f"| Work-board metadata imports | {metrics['work_board_imports']} |",
             f"| Replayed validators in support probe | {metrics['support_replay_commands']} |",
             f"| Support replay tracked artifacts | {metrics['support_replay_tracked_artifacts']} |",
             f"| Architecture gates passed | {metrics['architecture_gate_passed']} / {metrics['architecture_gate_count']} |",
@@ -939,6 +1053,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Accepted bounded module definition-of-done transitions | {metrics['module_dod_upward_transitions']} |",
             f"| Accepted bounded project-registry transitions | {metrics['project_registry_upward_transitions']} |",
             f"| Book-to-Theseus public-safe pointer rows | {metrics['book_crosswalk_pointer_rows']} |",
+            f"| Work-board durable task rows | {metrics['work_board_task_rows']} |",
             "",
             "## Status-Page Row",
             "",
@@ -965,6 +1080,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`; it does not prove clean live Project Theseus replay, deployment, model quality, self-evolution safety, or any chapter core claim.",
             f"- `docs/theseus_book_crosswalk_import.md` records one sanitized book-to-Theseus crosswalk pointer import with {metrics['book_crosswalk_pointer_rows']} public-safe pointer rows, {metrics['book_crosswalk_backlog_cards']} backlog cards, {metrics['book_crosswalk_source_sync_decisions']} source-sync review decisions, {metrics['book_crosswalk_changed_source_files']} changed AI-book source files, and {metrics['book_crosswalk_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json` is the accepted no-promotion decision for `project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer`; it keeps the crosswalk pointer at `argument` and blocks clean-live-replay, model-quality, deployment, support-state, and chapter-core promotion claims.",
+            f"- `docs/theseus_work_board_import.md` records one sanitized work-board metadata import with {metrics['work_board_task_rows']} durable task rows, {metrics['work_board_event_rows']} event rows, {metrics['work_board_evidence_rows']} evidence rows, {metrics['work_board_sqlite_tables']} SQLite tables, {metrics['work_board_execution_ledger_rows']} execution-ledger row, {metrics['work_board_unattended_improvement_rows']} unattended-improvement rows, {metrics['work_board_feedback_rows']} feedback rows, a {metrics['work_board_status_age_days']}-day stale-snapshot boundary, zero public training rows, zero external inference calls, and {metrics['work_board_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_work_board_import_no_change.json` is the accepted no-promotion decision for `project-theseus-as-report-first-implementation-reference.work_board_currentness_import`; it keeps the work-board metadata claim at `argument` and blocks clean-live-replay, fresh-currentness, current-dashboard, deployment, model-quality, unattended-safety, self-evolution-safety, support-state, and chapter-core promotion claims.",
             "",
             "## Non-Claim Boundary",
             "",
@@ -979,6 +1096,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "- The module definition-of-done import creates only a bounded non-core support transition; it does not prove module capability, deployed Theseus behavior, model quality, benchmark performance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The project-registry import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, or any chapter core claim.",
             "- The book-to-Theseus crosswalk import is pointer-only and creates no upward support-state transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, artifact truth for referenced rows, or any chapter core claim.",
+            "- The work-board metadata import is a stale snapshot and creates no upward support-state transition; it does not prove clean live Project Theseus replay, current board state, current dashboard state, deployment, model quality, unattended safety, self-evolution safety, or any chapter core claim.",
             "",
             "## Validation Errors",
             "",
@@ -1053,6 +1171,7 @@ def main() -> None:
         f"Project Theseus static import status ledger {action}: "
         f"{metrics['static_report_imports']} static imports, "
         f"{metrics['project_registry_imports']} project-registry imports, "
+        f"{metrics['work_board_imports']} work-board imports, "
         f"{metrics['public_task_count']} public tasks, "
         f"{metrics['expected_invalid_total']} expected-invalid controls."
     )

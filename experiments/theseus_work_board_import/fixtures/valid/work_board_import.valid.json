@@ -1,0 +1,163 @@
+{
+  "schema_version": "asi_stack.theseus_work_board_import.v0",
+  "import_id": "theseus-work-board-import-2026-07-06",
+  "source_commit": "1ad88a22",
+  "source_checkout_state": "dirty_at_import_review",
+  "review_created_utc": "2026-07-06T02:19:48Z",
+  "source_status_created_utc": "2026-06-29T23:57:30Z",
+  "source_status_age_days_at_review": 6,
+  "policy": "project_theseus_hive_work_board_executor_v1",
+  "source_reports": {
+    "executor_doc": {
+      "path": "docs/HIVE_WORK_BOARD_EXECUTOR.md",
+      "sha256": "2e18d705ae262ed38250ca9948710451bef1eb622598e2641e6aae27d26bdf23"
+    },
+    "executor_report": {
+      "created_utc": "2026-06-29T23:57:30Z",
+      "path": "reports/hive_work_board_executor.json",
+      "sha256": "8602bef9d22c1a73aa9751a4b6e035f7587bfb8b5e8a3e9ba72a38d41348ade2",
+      "trigger_state": "GREEN"
+    },
+    "board_report": {
+      "created_utc": "2026-06-29T23:57:28Z",
+      "path": "reports/hive_work_board.json",
+      "sha256": "67cc5a91573ee9cc6ac62bcf92ad353f66c93697fe0bda3402c9a397b00eea50",
+      "trigger_state": "GREEN"
+    },
+    "sqlite_board": {
+      "path": "reports/hive_work_board.sqlite",
+      "sha256": "1894d453d31ef0a0706a0bcbd72e05989cc251d7a977d2bf7edd95994f817869",
+      "size_bytes": 1015808
+    },
+    "execution_ledger": {
+      "path": "reports/hive_work_board_execution_ledger.jsonl",
+      "sha256": "e9a0fb96b3424ec8a5d1e870d61211e55b22bd6aa6d49e3b3766244b7f18699a"
+    },
+    "unattended_improvement_ledger": {
+      "path": "reports/hive_unattended_improvement_ledger.jsonl",
+      "sha256": "f72641395533c1bc5ff9df5a13e20ab7ffb166f0377740d763b6ae0dc83b07e6"
+    },
+    "feedback_ledger": {
+      "path": "reports/hive_work_board_feedback.jsonl",
+      "sha256": "4faeef351436e0dc4ed08f2d5580fe736e1ba6866c2fe997616fd2d3cac335a0"
+    },
+    "executor_script": {
+      "path": "scripts/hive_work_board_executor.py",
+      "sha256": "e49f7096400577f97560fa8b39f0050ec172e3080e66c2402e0387b1c8be8383"
+    }
+  },
+  "summary": {
+    "trigger_state": "GREEN",
+    "executor_total_tasks": 130,
+    "executor_ready_tasks": 36,
+    "executor_active_tasks": 22,
+    "executor_blocked_tasks": 8,
+    "executor_done_tasks": 64,
+    "executor_selected_tasks": 1,
+    "executor_executed_tasks": 0,
+    "executor_completed_this_run": 0,
+    "executor_failed_this_run": 0,
+    "executor_runtime_ms": 2057,
+    "board_total_tasks": 130,
+    "board_done_tasks": 65,
+    "board_ready_or_active_tasks": 22,
+    "board_blocked_tasks": 8,
+    "board_failed_tasks": 0,
+    "board_event_count": 412,
+    "board_evidence_count": 133,
+    "board_source_count": 9,
+    "board_ingested_source_rows": 48,
+    "sqlite_table_count": 5,
+    "sqlite_task_rows": 130,
+    "sqlite_event_rows": 412,
+    "sqlite_evidence_rows": 133,
+    "sqlite_comment_rows": 0,
+    "sqlite_dependency_rows": 0,
+    "execution_ledger_rows": 1,
+    "unattended_improvement_rows": 4,
+    "feedback_rows": 72,
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0
+  },
+  "sqlite_task_status_counts": {
+    "active": 22,
+    "blocked": 8,
+    "done": 64,
+    "ready": 36
+  },
+  "sqlite_task_kind_counts": {
+    "broad_transfer_closure": 2,
+    "expand_public_adapter_clean_slice": 4,
+    "high_transfer_concept_pressure": 70,
+    "mlx_eval_chunk": 1,
+    "mlx_rollout_chunk": 1,
+    "mlx_training_chunk": 19,
+    "persistent_goal": 1,
+    "promote_regression_surface": 1,
+    "refresh_symliquid_state_engine": 1,
+    "renew_useful_tool": 8,
+    "request_teacher_architecture_diagnosis": 3,
+    "resource_probe": 1,
+    "run_private_gate_before_public_calibration": 1,
+    "run_same_seed_sts_repair_ablation": 5,
+    "train_private_semantic_residual_family": 8,
+    "train_repo_repair_trace_checkpoint": 1,
+    "training_round": 2,
+    "write_repo_repair_tasks": 1
+  },
+  "rules_present": [
+    "execution",
+    "public_data",
+    "receiver_calibration",
+    "remote_control",
+    "retry",
+    "source_of_truth"
+  ],
+  "board_rules_present": [
+    "durable",
+    "public_data",
+    "status"
+  ],
+  "currentness_boundary": {
+    "board_step_executed_by_import": false,
+    "fresh_replay_claimed": false,
+    "source_snapshot_status": "stale_snapshot_import",
+    "source_status_age_days_at_review": 6,
+    "stale_status_blocks_currentness_claim": true
+  },
+  "public_safety_boundary": {
+    "raw_reports_copied": false,
+    "sqlite_payload_copied": false,
+    "task_payloads_copied": false,
+    "private_payload_copied": false,
+    "private_path_fields_redacted": true,
+    "sanitized_for_public_repo": true,
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0
+  },
+  "claim_boundary": {
+    "claim_id": "project-theseus-as-report-first-implementation-reference.work_board_currentness_import",
+    "old_support_state": "argument",
+    "new_support_state": "argument",
+    "support_state_effect": "blocks_promotion",
+    "chapter_id": "project-theseus-as-report-first-implementation-reference",
+    "work_board_reality_claim": true,
+    "chapter_core_claim_promotion": false,
+    "clean_live_replay_claim": false,
+    "fresh_currentness_claim": false,
+    "deployment_claim": false,
+    "model_quality_claim": false,
+    "benchmark_quality_claim": false,
+    "capability_claim": false,
+    "unattended_safety_claim": false,
+    "self_evolution_safety_claim": false
+  },
+  "non_claims": [
+    "Project Theseus work-board import evidence is a metadata-only, stale-snapshot implementation-reference boundary.",
+    "It does not copy raw reports, raw SQLite rows, task payloads, private paths, prompts, tests, solutions, score labels, candidate code, checkpoints, dogfood traces, or training rows into this public repository.",
+    "It does not prove clean live Project Theseus replay, current dashboard state, current board state, deployed Theseus behavior, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, unattended safety, self-evolution safety, support-state movement, ASI, or any chapter core claim.",
+    "It does not create an upward support-state transition and does not promote any chapter core claim above argument."
+  ]
+}

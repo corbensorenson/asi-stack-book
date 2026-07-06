@@ -2079,7 +2079,27 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
+    },
+    {
+      "tag": "lean:theseus.reference.book_crosswalk.pointer_boundary",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite pointer-only fixture bridge: it preserves the public-safe crosswalk counts, source-sync and public-safety gates, argument-only support state, and no-clean-live-replay/no-chapter-core-promotion boundaries."
+    },
+    {
+      "tag": "lean:theseus.reference.work_board_import.metadata_boundary",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite metadata-only fixture bridge: it preserves durable work-board row counts, stale-snapshot currentness blocking, zero public training rows, zero external inference calls, no raw-report or SQLite/task payload copy, and no clean-live-replay or chapter-core promotion boundaries."
     }
   ],
-  "record_count": 207
+  "record_count": 209
 }

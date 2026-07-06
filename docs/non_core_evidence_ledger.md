@@ -1,6 +1,6 @@
 # Non-Core Evidence Ledger
 
-Last updated: 2026-07-05
+Last updated: 2026-07-06
 
 This ledger makes the currently accepted non-core evidence transitions visible
 without promoting any chapter core claim. It is a public trust surface for
@@ -12,11 +12,11 @@ readers, reviewers, and future writing agents.
 |---|---|
 | Chapter core claims | All 44 remain at `argument`. |
 | Accepted non-core upward transitions | 12 narrow transitions. |
-| Accepted no-promotion side-lane decisions | 39 accepted `blocks_promotion` decisions; no support-state movement. |
+| Accepted no-promotion side-lane decisions | 40 accepted `blocks_promotion` decisions; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
 | Chapter-core promotion effect | None. |
 | External review status | Public review request opened in GitHub issue #1; no independent external human review record yet. |
-| No-promotion side-lane record coverage | The 39 accepted no-promotion records cover Circle consumer checking, Circle contract-pack archive verification, Circle seed-rule exact-regeneration, Circle KV-cache, recurrence, sparse-attention, strided fanout, cyclic-mixer, and MultiCoil phase receipt checking, Planning scheduler-state and runtime-replan delta reviews, System Boundaries authority revocation propagation, Runtime Adapter effect replay, adversarial boundary review, oversight degradation, partitioned authority, readiness lifecycle routing, Labor OS durable lifecycle routing, residual-ledger replay, Artifact Graphs record-reality, receipt faithfulness, receipt repository audit/challenge, epistemic-TCB, local attestation, randomized attestation, GitHub Pages CI attestation, and public deployed-site attestation lanes, Fast Generation task accounting, RankFold replay/import evidence, Resource workflow/live/workload/load/CI sublanes, Routing lease checks, Security Kernel SCIF commit replay, Project Theseus public task-bundle import, and Project Theseus book-to-Theseus crosswalk pointer. They are blocking decisions, not upward support-state transitions. None promotes a chapter core claim, deployment claim, benchmark claim, model-quality claim, safety claim, security claim, or ASI claim. |
+| No-promotion side-lane record coverage | The 40 accepted no-promotion records cover Circle consumer checking, Circle contract-pack archive verification, Circle seed-rule exact-regeneration, Circle KV-cache, recurrence, sparse-attention, strided fanout, cyclic-mixer, and MultiCoil phase receipt checking, Planning scheduler-state and runtime-replan delta reviews, System Boundaries authority revocation propagation, Runtime Adapter effect replay, adversarial boundary review, oversight degradation, partitioned authority, readiness lifecycle routing, Labor OS durable lifecycle routing, residual-ledger replay, Artifact Graphs record-reality, receipt faithfulness, receipt repository audit/challenge, epistemic-TCB, local attestation, randomized attestation, GitHub Pages CI attestation, and public deployed-site attestation lanes, Fast Generation task accounting, RankFold replay/import evidence, Resource workflow/live/workload/load/CI sublanes, Routing lease checks, Security Kernel SCIF commit replay, Project Theseus public task-bundle import, Project Theseus book-to-Theseus crosswalk pointer, and Project Theseus work-board metadata import. They are blocking decisions, not upward support-state transitions. None promotes a chapter core claim, deployment claim, benchmark claim, model-quality claim, safety claim, security claim, or ASI claim. |
 
 ## Accepted Non-Core Transitions
 
@@ -78,6 +78,7 @@ readers, reviewers, and future writing agents.
 | `security-kernel.scif_sanitized_commit_replay` | `blocks_promotion` | `docs/security_scif_commit_probe.md`; `evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json` | The SCIF sanitized commit replay probe records two valid local synthetic routes and six expected-invalid controls for secret canary leakage, live handle leakage, missing zeroization, overbroad context admission, unapproved destination or inactive approval, and missing residual ownership. | Deployed-kernel behavior, sandbox isolation, side-channel safety, prompt-injection containment, secret-handle safety, approval-service behavior, least-privilege context behavior, privacy, security, and Security Kernel chapter-core promotion stay blocked. |
 | `project-theseus-as-report-first-implementation-reference.public_task_bundle_import_summary` | `blocks_promotion` | `docs/theseus_public_task_bundle_import.md`; `evidence_transitions/v1_x_measured/theseus_public_task_bundle_import_no_change.json` | The public task-bundle import preserves metadata-only task counts, gate counts, residuals, artifact gaps, dirty-checkout boundaries, and expected-invalid controls while rejecting clean-live-replay and model-quality overclaims. | Clean live Project Theseus replay, deployed Theseus behavior, model quality, benchmark superiority, generation speed, useful-solution-per-second improvement, self-evolution safety, and Project Theseus chapter-core promotion stay blocked. |
 | `project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer` | `blocks_promotion` | `docs/theseus_book_crosswalk_import.md`; `evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json` | The sanitized book-to-Theseus crosswalk import records 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, 9 changed AI-book source files, zero private/raw payload exports, zero public training rows, zero external inference calls, and ten expected-invalid controls. | Clean live Project Theseus replay, artifact truth for referenced rows, deployment, model quality, benchmark performance, self-evolution safety, and Project Theseus chapter-core promotion stay blocked. |
+| `project-theseus-as-report-first-implementation-reference.work_board_currentness_import` | `blocks_promotion` | `docs/theseus_work_board_import.md`; `evidence_transitions/v1_x_measured/theseus_work_board_import_no_change.json` | The sanitized work-board metadata import records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, one execution-ledger row, four unattended-improvement rows, 72 feedback rows, a stale-snapshot boundary, zero public training rows, zero external inference calls, and ten expected-invalid controls. | Clean live Project Theseus replay, current board state, current dashboard state, deployment, model quality, benchmark performance, unattended safety, self-evolution safety, support-state movement, and Project Theseus chapter-core promotion stay blocked. |
 
 ## Live Claim-Surface Narrowing Records
 
@@ -99,7 +100,7 @@ The ledger is checked by `scripts/validate_non_core_evidence_ledger.py`. That
 validator reads the accepted transition records under
 `evidence_transitions/v1_0_measured/` and `evidence_transitions/v1_x_measured/`,
 checks that all 12 current non-core upward claims are listed here, derives and
-checks all 39 accepted `blocks_promotion` side-lane decisions, checks the live
+checks all 40 accepted `blocks_promotion` side-lane decisions, checks the live
 claim-surface narrowing record, checks the chapter-core non-promotion boundary,
 and checks that the public entry surfaces link to this ledger. The live
 revision record is also checked by `scripts/validate_claim_revision_records.py`.

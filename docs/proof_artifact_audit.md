@@ -10,9 +10,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 207 |
-| Manifest status counts | {"implemented": 207} |
-| Triage class counts | {"formal-invariant": 207} |
+| Proof targets audited | 209 |
+| Manifest status counts | {"implemented": 209} |
+| Triage class counts | {"formal-invariant": 209} |
 | Lean modules referenced | 54 |
 | Chapters with proof targets | 44 |
 | Validation errors | 0 |
@@ -79,7 +79,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 4 | 13 | 6 | 6 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 25 | 16 | 5 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 21 | 6 | 5 |
-| `lean/AsiStackProofs/TheseusReference.lean` | 8 | 37 | 39 | 12 |
+| `lean/AsiStackProofs/TheseusReference.lean` | 10 | 43 | 44 | 13 |
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 13 | 6 | 6 |
 | `lean/AsiStackProofs/TypedJobs.lean` | 5 | 27 | 7 | 7 |
 | `lean/AsiStackProofs/ValueConflict.lean` | 4 | 23 | 11 | 6 |
@@ -119,7 +119,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `planning-as-a-control-layer` | 7 | 7 | 0 | 0 |
 | `policy-optimization-and-learning-from-feedback` | 4 | 4 | 0 | 0 |
 | `procedural-memory-and-cognitive-loop-closure` | 2 | 2 | 0 | 0 |
-| `project-theseus-as-report-first-implementation-reference` | 8 | 8 | 0 | 0 |
+| `project-theseus-as-report-first-implementation-reference` | 10 | 10 | 0 | 0 |
 | `prototype-roadmap` | 3 | 3 | 0 | 0 |
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 3 | 3 | 0 | 0 |
@@ -337,6 +337,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:theseus.reference.artifact_retention_replay_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.module_definition_of_done_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.project_registry_import.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:theseus.reference.book_crosswalk.pointer_boundary` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:theseus.reference.work_board_import.metadata_boundary` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:roadmap.phases.operational_invariant` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:roadmap.phases.failure_blocks_promotion` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:roadmap.phases.fixture_gate_bridge` | `prototype-roadmap` | `AsiStackProofs.PrototypeRoadmap` | triage ok; module ok; chapter tag ok; limitation ok |

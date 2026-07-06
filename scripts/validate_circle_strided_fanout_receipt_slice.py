@@ -342,7 +342,7 @@ def validate_surfaces(errors: list[str]) -> None:
         OUTLINE: SURFACE_FRAGMENTS,
         APPENDIX_E: ("Circle strided fanout receipt-slice validation", EXPECTED["contract_id"], "circle_strided_fanout_receipt_no_change.json"),
         LEDGER: (
-            "Accepted no-promotion side-lane decisions | 39 accepted `blocks_promotion` decisions; no support-state movement.",
+            "Accepted no-promotion side-lane decisions | 40 accepted `blocks_promotion` decisions; no support-state movement.",
             EXPECTED["claim_id"],
             rel(SUMMARY),
             rel(TRANSITION),
@@ -351,10 +351,10 @@ def validate_surfaces(errors: list[str]) -> None:
             "duplicate_count=0",
             "does not promote any chapter core claim",
         ),
-        README_ROOT: ("39 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
-        INDEX: ("39 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
-        STATUS: ("39 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
-        ROADMAP: (EXPECTED["contract_id"], "strided candidate-fanout", "circle_strided_fanout_receipt_no_change.json", "39 accepted"),
+        README_ROOT: ("40 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
+        INDEX: ("40 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
+        STATUS: ("40 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
+        ROADMAP: (EXPECTED["contract_id"], "strided candidate-fanout", "circle_strided_fanout_receipt_no_change.json", "40 accepted"),
         CHANGELOG: ("Import Circle strided fanout receipt slice", EXPECTED["contract_id"], "3 passed in 4.65s", "1 passed in 2.77s"),
     }
     for path, fragments in surface_requirements.items():

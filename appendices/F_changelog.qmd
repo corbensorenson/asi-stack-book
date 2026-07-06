@@ -1,5 +1,30 @@
 # Changelog
 
+## 2026-07-06 - Import Theseus work-board metadata boundary
+
+- Added a sanitized Project Theseus work-board metadata import with 130 durable
+  task rows, 412 event rows, 133 evidence rows, five SQLite tables, one
+  execution-ledger row, four unattended-improvement rows, 72 feedback rows,
+  zero public training rows, zero external inference calls, and a stale
+  currentness boundary.
+- Added `scripts/validate_theseus_work_board_import.py`, result
+  `experiments/theseus_work_board_import/results/2026-07-06-local.json`,
+  fixture artifacts under `experiments/theseus_work_board_import/`, Lean bridge
+  `lean:theseus.reference.work_board_import.metadata_boundary`, and accepted
+  no-promotion decision
+  `evidence_transitions/v1_x_measured/theseus_work_board_import_no_change.json`.
+- Updated the live and reader Project Theseus chapter, outline, non-core
+  evidence ledger, active evidence cycle, Project Theseus static-import ledger,
+  roadmap, generated Codex test appendix, proof manifest, and main validation
+  suite to surface the work-board metadata boundary.
+- Boundary: this is a metadata-only stale snapshot from a dirty Theseus
+  checkout. It does not copy raw reports, SQLite rows, task payloads, private
+  paths, prompts, tests, solutions, score labels, candidate code, checkpoints,
+  dogfood traces, or training rows into the public book. It does not prove clean
+  live Project Theseus replay, current board state, current dashboard state,
+  deployment, model quality, unattended safety, self-evolution safety, ASI,
+  support-state promotion, or any chapter-core claim.
+
 ## 2026-07-06 - Record blocked curated reader text-edition decision
 
 - Added `release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json`
@@ -58,10 +83,10 @@
 - Updated `docs/v1_x_beyond_sota_roadmap.md` so its current-state text matches
   the generated proof-depth, non-core evidence, Project Theseus static-import,
   and accepted-transition audit ledgers.
-- The roadmap now reports 207 proof targets, 54 Lean modules, 1034 theorem
-  declarations, 844 derived/decomposed declarations, 186 direct/projection
+- The roadmap now reports 209 proof targets, 54 Lean modules, 1040 theorem
+  declarations, 850 derived/decomposed declarations, 186 direct/projection
   declarations, 77 accepted transition records, twelve accepted narrow
-  non-core upward transitions, and 39 accepted `blocks_promotion` side-lane
+  non-core upward transitions, and 40 accepted `blocks_promotion` side-lane
   decisions.
 - Added a roadmap implementation note for the sanitized Project Theseus
   RLDS/Minari trace-export import and refreshed the Project Theseus roadmap row
@@ -89,7 +114,7 @@
   rows, zero external inference calls, source-digest continuity, and seven
   expected-invalid overclaim controls for
   `resource-economics.theseus_rlds_minari_trace_export_import`.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 207 proof targets, 54 Lean modules, 1034 theorem declarations, 844 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 209 proof targets, 54 Lean modules, 1040 theorem declarations, 850 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Boundary: this does not prove RLDS dataset correctness, Minari dataset
   quality, simulator adequacy, replay success, physical feasibility, clean live
   Project Theseus replay, model quality, economic outcome, deployment

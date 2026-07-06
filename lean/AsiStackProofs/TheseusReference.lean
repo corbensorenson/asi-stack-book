@@ -1325,4 +1325,179 @@ theorem theseus_book_crosswalk_import_clean_replay_overclaim_rejected :
     theseusBookCrosswalkImportFixture,
   ] at valid
 
+structure TheseusWorkBoardImportSummary where
+  taskRows : Nat
+  eventRows : Nat
+  evidenceRows : Nat
+  sqliteTables : Nat
+  executionLedgerRows : Nat
+  unattendedImprovementRows : Nat
+  feedbackRows : Nat
+  externalInferenceCalls : Nat
+  publicTrainingRowsWritten : Nat
+  rawReportsCopied : Bool
+  sqlitePayloadCopied : Bool
+  taskPayloadsCopied : Bool
+  privatePayloadCopied : Bool
+  pathFieldsRedacted : Bool
+  staleSnapshotImport : Bool
+  staleStatusBlocksCurrentnessClaim : Bool
+  boardStepExecutedByImport : Bool
+  cleanLiveReplayClaimed : Bool
+  freshCurrentnessClaimed : Bool
+  chapterCorePromotion : Bool
+  modelQualityClaim : Bool
+  deploymentClaim : Bool
+  capabilityClaim : Bool
+  unattendedSafetyClaim : Bool
+  selfEvolutionSafetyClaim : Bool
+  newSupportStateArgument : Bool
+  supportStateBlocksPromotion : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def TheseusWorkBoardImportMetadataOnly
+    (summary : TheseusWorkBoardImportSummary) : Prop :=
+  summary.taskRows = 130 ∧
+    summary.eventRows = 412 ∧
+      summary.evidenceRows = 133 ∧
+        summary.sqliteTables = 5 ∧
+          summary.executionLedgerRows = 1 ∧
+            summary.unattendedImprovementRows = 4 ∧
+              summary.feedbackRows = 72 ∧
+                summary.staleSnapshotImport = true ∧
+                  summary.staleStatusBlocksCurrentnessClaim = true ∧
+                    summary.boardStepExecutedByImport = false ∧
+                      summary.newSupportStateArgument = true ∧
+                        summary.supportStateBlocksPromotion = true
+
+def TheseusWorkBoardImportPublicSafe
+    (summary : TheseusWorkBoardImportSummary) : Prop :=
+  summary.externalInferenceCalls = 0 ∧
+    summary.publicTrainingRowsWritten = 0 ∧
+      summary.rawReportsCopied = false ∧
+        summary.sqlitePayloadCopied = false ∧
+          summary.taskPayloadsCopied = false ∧
+            summary.privatePayloadCopied = false ∧
+              summary.pathFieldsRedacted = true
+
+def TheseusWorkBoardImportPreservesBoundaries
+    (summary : TheseusWorkBoardImportSummary) : Prop :=
+  summary.cleanLiveReplayClaimed = false ∧
+    summary.freshCurrentnessClaimed = false ∧
+      summary.chapterCorePromotion = false ∧
+        summary.modelQualityClaim = false ∧
+          summary.deploymentClaim = false ∧
+            summary.capabilityClaim = false ∧
+              summary.unattendedSafetyClaim = false ∧
+                summary.selfEvolutionSafetyClaim = false ∧
+                  summary.nonClaimBoundaryRecorded = true
+
+def TheseusWorkBoardImportValid
+    (summary : TheseusWorkBoardImportSummary) : Prop :=
+  TheseusWorkBoardImportMetadataOnly summary ∧
+    TheseusWorkBoardImportPublicSafe summary ∧
+      TheseusWorkBoardImportPreservesBoundaries summary
+
+def theseusWorkBoardImportFixture :
+    TheseusWorkBoardImportSummary := {
+  taskRows := 130
+  eventRows := 412
+  evidenceRows := 133
+  sqliteTables := 5
+  executionLedgerRows := 1
+  unattendedImprovementRows := 4
+  feedbackRows := 72
+  externalInferenceCalls := 0
+  publicTrainingRowsWritten := 0
+  rawReportsCopied := false
+  sqlitePayloadCopied := false
+  taskPayloadsCopied := false
+  privatePayloadCopied := false
+  pathFieldsRedacted := true
+  staleSnapshotImport := true
+  staleStatusBlocksCurrentnessClaim := true
+  boardStepExecutedByImport := false
+  cleanLiveReplayClaimed := false
+  freshCurrentnessClaimed := false
+  chapterCorePromotion := false
+  modelQualityClaim := false
+  deploymentClaim := false
+  capabilityClaim := false
+  unattendedSafetyClaim := false
+  selfEvolutionSafetyClaim := false
+  newSupportStateArgument := true
+  supportStateBlocksPromotion := true
+  nonClaimBoundaryRecorded := true
+}
+
+theorem theseus_work_board_import_fixture_valid :
+    TheseusWorkBoardImportValid
+      theseusWorkBoardImportFixture := by
+  simp [
+    TheseusWorkBoardImportValid,
+    TheseusWorkBoardImportMetadataOnly,
+    TheseusWorkBoardImportPublicSafe,
+    TheseusWorkBoardImportPreservesBoundaries,
+    theseusWorkBoardImportFixture,
+  ]
+
+theorem theseus_work_board_import_stale_snapshot_blocks_currentness :
+    theseusWorkBoardImportFixture.staleSnapshotImport = true ∧
+      theseusWorkBoardImportFixture.staleStatusBlocksCurrentnessClaim = true ∧
+      theseusWorkBoardImportFixture.freshCurrentnessClaimed = false := by
+  simp [theseusWorkBoardImportFixture]
+
+theorem theseus_work_board_import_clean_replay_overclaim_rejected :
+    ¬ TheseusWorkBoardImportValid
+      { theseusWorkBoardImportFixture with
+        cleanLiveReplayClaimed := true } := by
+  intro valid
+  simp [
+    TheseusWorkBoardImportValid,
+    TheseusWorkBoardImportMetadataOnly,
+    TheseusWorkBoardImportPublicSafe,
+    TheseusWorkBoardImportPreservesBoundaries,
+    theseusWorkBoardImportFixture,
+  ] at valid
+
+theorem theseus_work_board_import_private_payload_rejected :
+    ¬ TheseusWorkBoardImportValid
+      { theseusWorkBoardImportFixture with
+        privatePayloadCopied := true } := by
+  intro valid
+  simp [
+    TheseusWorkBoardImportValid,
+    TheseusWorkBoardImportMetadataOnly,
+    TheseusWorkBoardImportPublicSafe,
+    TheseusWorkBoardImportPreservesBoundaries,
+    theseusWorkBoardImportFixture,
+  ] at valid
+
+theorem theseus_work_board_import_core_promotion_rejected :
+    ¬ TheseusWorkBoardImportValid
+      { theseusWorkBoardImportFixture with
+        chapterCorePromotion := true } := by
+  intro valid
+  simp [
+    TheseusWorkBoardImportValid,
+    TheseusWorkBoardImportMetadataOnly,
+    TheseusWorkBoardImportPublicSafe,
+    TheseusWorkBoardImportPreservesBoundaries,
+    theseusWorkBoardImportFixture,
+  ] at valid
+
+theorem theseus_work_board_import_public_training_rows_rejected :
+    ¬ TheseusWorkBoardImportValid
+      { theseusWorkBoardImportFixture with
+        publicTrainingRowsWritten := 1 } := by
+  intro valid
+  simp [
+    TheseusWorkBoardImportValid,
+    TheseusWorkBoardImportMetadataOnly,
+    TheseusWorkBoardImportPublicSafe,
+    TheseusWorkBoardImportPreservesBoundaries,
+    theseusWorkBoardImportFixture,
+  ] at valid
+
 end AsiStackProofs.TheseusReference
