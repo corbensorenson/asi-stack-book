@@ -60,7 +60,7 @@ entries. The PDF render also produced zero SVG conversion warnings. This
 removes the previous conversion-warning blocker; it does not approve the DOCX
 or PDF artifact.
 
-The PDF render also generates 50 temporary Chrome-screenshot Mermaid fallbacks
+The PDF render also generates 50 temporary sips-rendered Mermaid fallbacks
 from the rendered HTML pages before running Pandoc. This keeps browser-rendered
 Mermaid labels visible in the PDF and prevents the previously observed diagram
 clipping in the ignored PDF artifact. It remains automated format-preparation
@@ -73,7 +73,7 @@ evidence, not manual figure, page-flow, or release approval.
 | html | passed | 49 total HTML files, 44 chapter HTML files, 0 live-marker leaks, 0 raw core-claim marker leaks. |
 | epub | passed | 8,670,899 bytes, SHA-256 `412fadecd308acfc966e624c17aece7cc53bc4ef9f818e4f865fdb2f0ed6be28`, 120 zip entries, 52 XHTML entries, 62 image entries, OPF title `The ASI Stack`, creator `Corben Sorenson`, language `en-US`. |
 | docx | passed | 8,331,414 bytes, SHA-256 `e248469162e3a28c48a0c277980c59dc64396622b88cbc670ae8c9f6a94430c5`, 77 zip entries, 61 PNG media entries, 0 SVG media entries, 17,462 paragraph markers, required Word package entries present. |
-| pdf | passed | 5,924,235 bytes, SHA-256 `9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c`, 511 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
+| pdf | passed | 4,907,422 bytes, SHA-256 `2018ac24619d3166580ffa10a988976dd61e4cc3e2ae84b8ffd882c789ae5768`, 513 pages, title `The ASI Stack`, author `Corben Sorenson`, unencrypted letter pages, required text markers present, and sample pages 1, 2, 25, 300, and 500 rendered to PNG. |
 
 ## EPUB Content And Navigation Audit
 
@@ -250,8 +250,8 @@ relaxed reader chapters.
 
 | Metric | Result |
 |---|---:|
-| Pages checked | 511 |
-| Word boxes checked | 172,699 |
+| Pages checked | 513 |
+| Word boxes checked | 173,154 |
 | Textless pages | 0 |
 | Out-of-bounds word boxes | 0 |
 | Layout lines over 160 characters | 0 |
@@ -274,15 +274,15 @@ as manual page-flow approval.
 
 | Metric | Result |
 |---|---:|
-| Pages raster-rendered | 511 |
+| Pages raster-rendered | 513 |
 | Raster DPI | 72 |
 | Page width in pixels | 612 |
 | Page height in pixels | 792 |
 | Blank raster pages | 0 |
 | Low-ink raster pages | 1 |
 | Near-edge raster pages | 0 |
-| Minimum nonwhite pixels | 681 |
-| Maximum nonwhite pixels | 143,139 |
+| Minimum nonwhite pixels | 683 |
+| Maximum nonwhite pixels | 143,121 |
 | Minimum left margin px | 82 |
 | Minimum top margin px | 71 |
 | Minimum right margin px | 15 |
@@ -304,27 +304,27 @@ python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest
 
 That pass uses `pdftotext` and `pdfinfo` to check text volume, page text
 presence, required reader markers, live-marker leakage, chapter heading order,
-and appendix heading order in the current 511-page PDF.
+and appendix heading order in the current 513-page PDF.
 
-The result records 1,126,001 text characters, 44 chapter headings, 3 appendix headings, and 511 nonempty text pages; it is not manual PDF page-by-page reading-flow review.
+The result records 1,129,226 text characters, 44 chapter headings, 3 appendix headings, and 513 nonempty text pages; it is not manual PDF page-by-page reading-flow review.
 
 | Metric | Result |
 |---|---:|
-| PDF pages | 511 |
-| Text pages checked | 511 |
-| Nonempty text pages | 511 |
-| Text characters checked | 1,126,001 |
-| Word tokens checked | 172,146 |
+| PDF pages | 513 |
+| Text pages checked | 513 |
+| Nonempty text pages | 513 |
+| Text characters checked | 1,129,226 |
+| Word tokens checked | 172,600 |
 | Chapter headings checked | 44 |
 | Appendix headings checked | 3 |
-| First chapter text-page index | 28 |
-| Last chapter text-page index | 417 |
+| First chapter text-page index | 29 |
+| Last chapter text-page index | 419 |
 | Replacement characters | 0 |
 | Live-marker leaks | 0 |
 | Raw core-claim marker leaks | 0 |
 
 The extracted-text flow check found 44 chapter headings and 3 appendix headings
-in order, with 511 nonempty text pages. Required text markers were present:
+in order, with 513 nonempty text pages. Required text markers were present:
 `The ASI Stack`, `Reader Edition Draft`, `evidence boundary`, `Reader Source
 List`, and `External Citation Policy`. This is stronger than page-count and
 raster evidence alone, but it is not manual PDF page-by-page reading-flow
@@ -348,15 +348,15 @@ rendered pixels.
 
 | Metric | Result |
 |---|---:|
-| PDF pages reported by `pdfinfo` | 511 |
+| PDF pages reported by `pdfinfo` | 513 |
 | Viewer screenshots | 2 |
-| First screenshot bytes | 41,640 |
-| Second screenshot bytes | 92,611 |
-| First screenshot dark pixels | 34.101% |
+| First screenshot bytes | 41,829 |
+| Second screenshot bytes | 93,242 |
+| First screenshot dark pixels | 34.099% |
 | First screenshot white pixels | 64.662% |
-| Second screenshot dark pixels | 34.905% |
-| Second screenshot white pixels | 62.323% |
-| Scroll-changed pixels | 4.479% |
+| Second screenshot dark pixels | 34.902% |
+| Second screenshot white pixels | 62.319% |
+| Scroll-changed pixels | 4.485% |
 
 This is real local PDF-viewer rendering evidence for the current ignored PDF
 artifact, but it is not manual page-by-page PDF review, not PDF content
@@ -370,19 +370,19 @@ The refreshed PDF probe now records a page-by-page release-preparation review:
 python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest
 ```
 
-That pass checks every page in the current ignored 511-page PDF through text
-extraction, word-box extraction, and raster page rendering. It records 511 page
-rows, 511 text pages, 511 word-box pages, 511 raster pages, 0 failed pages,
+That pass checks every page in the current ignored 513-page PDF through text
+extraction, word-box extraction, and raster page rendering. It records 513 page
+rows, 513 text pages, 513 word-box pages, 513 raster pages, 0 failed pages,
 0 blank pages, 0 near-edge pages, 0 out-of-bounds word-box pages, and one
 accepted low-ink page.
 
 | Metric | Result |
 |---|---:|
-| PDF pages | 511 |
-| Page review rows | 511 |
-| Text pages checked | 511 |
-| Word-box pages checked | 511 |
-| Raster pages checked | 511 |
+| PDF pages | 513 |
+| Page review rows | 513 |
+| Text pages checked | 513 |
+| Word-box pages checked | 513 |
+| Raster pages checked | 513 |
 | Failed pages | 0 |
 | Blank raster pages | 0 |
 | Near-edge pages | 0 |

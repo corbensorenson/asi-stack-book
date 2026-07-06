@@ -271,6 +271,14 @@ def render_svg_to_png_with_chrome(chrome_binary: str, svg: str, png_path: Path) 
     return "chrome-screenshot"
 
 
+def render_mermaid_svg_to_png(chrome_binary: str, svg_path: Path, svg: str, png_path: Path) -> str:
+    """Render a browser-extracted Mermaid SVG into a PDF-safe PNG fallback."""
+    try:
+        return convert_svg_to_png(svg_path, png_path)
+    except (RuntimeError, subprocess.CalledProcessError):
+        return render_svg_to_png_with_chrome(chrome_binary, svg, png_path)
+
+
 @contextmanager
 def pdf_mermaid_static_fallbacks(output_dir: Path) -> Iterator[dict[str, object]]:
     """Temporarily replace Mermaid fences with browser-rendered PNGs for PDF."""
@@ -330,7 +338,7 @@ def pdf_mermaid_static_fallbacks(output_dir: Path) -> Iterator[dict[str, object]
                 png_path = output_dir / png_rel
                 svg_path.parent.mkdir(parents=True, exist_ok=True)
                 svg_path.write_text(svg, encoding="utf-8")
-                converter = render_svg_to_png_with_chrome(chrome_binary, svg, png_path)
+                converter = render_mermaid_svg_to_png(chrome_binary, svg_path, svg, png_path)
                 fallback_refs.append(str(png_rel))
                 image_ref = os.path.relpath(png_path, start=qmd_path.parent).replace(os.sep, "/")
                 replacements.append(f"![]({image_ref}){{{mermaid_image_attrs(svg)}}}")

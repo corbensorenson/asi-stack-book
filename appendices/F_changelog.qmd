@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-06 - Refresh curated reader PDF evidence
+
+- Updated `scripts/render_curated_reader_formats.py` so curated-reader PDF
+  Mermaid fallbacks prefer deterministic local SVG-to-PNG conversion before
+  falling back to a headed Chrome screenshot path.
+- Refreshed the tracked curated-reader PDF structural evidence to 513 pages,
+  173,154 extracted word boxes, 513 page-by-page review rows, 0 failed pages,
+  and a Chromium PDF viewer smoke review with 4.485% changed pixels after
+  scroll, while keeping the existing EPUB/DOCX reviewed-digest evidence pinned.
+- Updated the current release-surface ledger, candidate status row, repository
+  map, release-editions plan, and v1.x roadmap current-state text to match the
+  refreshed format evidence while preserving the historical blocked release
+  record as a prior artifact snapshot.
+- Boundary: this is local format-preparation and release-evidence maintenance
+  only. It does not approve EPUB, DOCX, PDF, e-reader, audio, publication,
+  reader release, final claim support, or any support-state promotion.
+
 ## 2026-07-05 - Tighten roadmap release stop rule
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after review of the latest

@@ -65,7 +65,7 @@
       "png_fallback_count": 10,
       "png_fallback_converter": "sips",
       "pdf_mermaid_fallback_count": 50,
-      "pdf_mermaid_fallback_converter": "chrome-screenshot",
+      "pdf_mermaid_fallback_converter": "sips",
       "pdf_mermaid_rewritten_files": 44
     }
   },
@@ -119,9 +119,9 @@
     },
     "pdf": {
       "status": "passed",
-      "bytes": 5924235,
-      "sha256": "9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c",
-      "pages": 511,
+      "bytes": 4907422,
+      "sha256": "2018ac24619d3166580ffa10a988976dd61e4cc3e2ae84b8ffd882c789ae5768",
+      "pages": 513,
       "title": "The ASI Stack",
       "author": "Corben Sorenson",
       "producer": "LuaTeX-1.24.0",
@@ -153,9 +153,9 @@
   "pdf_layout_audit": {
     "status": "passed_full_text_bbox_probe",
     "source_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-    "source_sha256": "9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c",
-    "pages_checked": 511,
-    "word_boxes_checked": 172699,
+    "source_sha256": "2018ac24619d3166580ffa10a988976dd61e4cc3e2ae84b8ffd882c789ae5768",
+    "pages_checked": 513,
+    "word_boxes_checked": 173154,
     "textless_pages": 0,
     "out_of_bounds_word_boxes": 0,
     "min_word_box_height": 14.531,
@@ -176,7 +176,7 @@
     "full_format_artifact_review_not_completed",
     "app_or_ereader_review_not_completed"
   ],
-  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, DOCX, and PDF and passes structural artifact inspection. The DOCX and PDF renders use ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, and the PDF render now also uses 50 temporary Chrome-screenshot Mermaid fallbacks so browser-rendered diagram labels survive without clipping. The refreshed PDF all-page text/bounding-box audit checked 511 pages, 172699 word boxes, 0 textless pages, 0 out-of-bounds word boxes, 0 layout lines over 160 characters, and required text markers; the all-page raster audit reports 0 blank pages, 1 low-ink page, and 0 near-edge pages. EPUB also has a Chromium XHTML browser review with 104 page-view pairs and 0 failures. The PDF extracted-text reading-flow review checks 511 text pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0 replacement characters; the headed Chromium PDF viewer smoke review records 2 nonblank viewer screenshots and 4.479% changed pixels after scroll. EPUB, DOCX, and PDF remain unapproved because release approval and an edition release record do not yet exist; application, DOCX-engine, and PDF page-review evidence are release-preparation evidence only.",
+  "review_decision": "The tracked curated reader manuscript renders locally to HTML, EPUB, DOCX, and PDF and passes structural artifact inspection. The DOCX and PDF renders use ten temporary PNG fallbacks generated from the tracked SVG key figures inside the ignored build workspace, and the PDF render now also uses 50 temporary sips-rendered Mermaid fallbacks so browser-rendered diagram labels survive without clipping. The refreshed PDF all-page text/bounding-box audit checked 513 pages, 173154 word boxes, 0 textless pages, 0 out-of-bounds word boxes, 0 layout lines over 160 characters, and required text markers; the all-page raster audit reports 0 blank pages, 1 low-ink page, and 0 near-edge pages. EPUB also has a Chromium XHTML browser review with 104 page-view pairs and 0 failures. The PDF extracted-text reading-flow review checks 513 text pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0 replacement characters; the headed Chromium PDF viewer smoke review records 2 nonblank viewer screenshots and 4.485% changed pixels after scroll. EPUB, DOCX, and PDF remain unapproved because release approval and an edition release record do not yet exist; application, DOCX-engine, and PDF page-review evidence are release-preparation evidence only.",
   "non_claims": [
     "This manifest records local structural inspection of ignored curated-reader snapshots only.",
     "This manifest is not a reader release, ebook release, document release, PDF release, edition release record, or artifact approval.",
@@ -241,12 +241,12 @@
   "pdf_visual_raster_audit": {
     "status": "passed_all_page_pdf_raster_probe",
     "source_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-    "source_sha256": "9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c",
+    "source_sha256": "2018ac24619d3166580ffa10a988976dd61e4cc3e2ae84b8ffd882c789ae5768",
     "raster_dpi": 72,
     "nonwhite_threshold": 245,
     "edge_margin_px": 2,
     "low_ink_threshold": 1000,
-    "pages_rendered": 511,
+    "pages_rendered": 513,
     "page_width_pixels": [
       612
     ],
@@ -256,8 +256,8 @@
     "blank_pages": 0,
     "low_ink_pages": 1,
     "near_edge_content_pages": 0,
-    "min_nonwhite_pixels": 672,
-    "max_nonwhite_pixels": 143124,
+    "min_nonwhite_pixels": 683,
+    "max_nonwhite_pixels": 143121,
     "min_left_margin_px": 82,
     "min_top_margin_px": 71,
     "min_right_margin_px": 15,
@@ -368,34 +368,34 @@
   "pdf_reading_flow_review": {
     "status": "passed_pdf_extracted_text_reading_flow_review",
     "source_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-    "source_sha256": "9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c",
+    "source_sha256": "2018ac24619d3166580ffa10a988976dd61e4cc3e2ae84b8ffd882c789ae5768",
     "report_ref": "build/curated_reader_edition/curated_reader_pdf_reading_flow_report.json",
     "review_command": "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
     "text_extractor": "pdftotext",
-    "pdfinfo_pages": 511,
+    "pdfinfo_pages": 513,
     "pdfinfo_title": "The ASI Stack",
     "pdfinfo_author": "Corben Sorenson",
     "pdfinfo_encrypted": "no",
     "pdfinfo_page_size": "612 x 792 pts (letter)",
-    "text_characters_checked": 1126001,
-    "word_tokens_checked": 172146,
-    "form_feed_count": 511,
-    "text_pages_checked": 511,
-    "nonempty_text_pages": 511,
+    "text_characters_checked": 1129226,
+    "word_tokens_checked": 172600,
+    "form_feed_count": 513,
+    "text_pages_checked": 513,
+    "nonempty_text_pages": 513,
     "min_page_text_characters": 44,
     "max_page_text_characters": 3828,
     "pages_under_300_text_characters": 17,
     "sample_pages_under_300_text_characters": [
       1,
       24,
-      28,
-      30,
-      33,
-      46,
-      64,
-      128,
-      130,
-      148
+      29,
+      31,
+      34,
+      47,
+      65,
+      129,
+      131,
+      149
     ],
     "max_word_characters": 93,
     "replacement_character_count": 0,
@@ -410,44 +410,44 @@
     "raw_core_claim_marker_hits": 0,
     "chapter_headings_checked": 44,
     "chapter_heading_errors": [],
-    "first_chapter_pdf_text_page_index": 28,
-    "last_chapter_pdf_text_page_index": 417,
+    "first_chapter_pdf_text_page_index": 29,
+    "last_chapter_pdf_text_page_index": 419,
     "chapter_heading_samples": [
       {
         "chapter_number": 1,
         "title": "ASI Is a Stack, Not a Model",
-        "text_offset": 80529,
-        "pdf_text_page_index": 28
+        "text_offset": 82440,
+        "pdf_text_page_index": 29
       },
       {
         "chapter_number": 2,
         "title": "The Efficient ASI Hypothesis",
-        "text_offset": 98525,
-        "pdf_text_page_index": 37
+        "text_offset": 100436,
+        "pdf_text_page_index": 38
       },
       {
         "chapter_number": 3,
         "title": "System Boundaries and Authority",
-        "text_offset": 115397,
-        "pdf_text_page_index": 44
+        "text_offset": 117308,
+        "pdf_text_page_index": 45
       },
       {
         "chapter_number": 42,
         "title": "Prototype Roadmap",
-        "text_offset": 903127,
-        "pdf_text_page_index": 401
+        "text_offset": 906352,
+        "pdf_text_page_index": 403
       },
       {
         "chapter_number": 43,
         "title": "Living Book Methodology",
-        "text_offset": 918743,
-        "pdf_text_page_index": 408
+        "text_offset": 921968,
+        "pdf_text_page_index": 410
       },
       {
         "chapter_number": 44,
         "title": "Open Research Agenda and Bibliography Plan",
-        "text_offset": 938931,
-        "pdf_text_page_index": 417
+        "text_offset": 942156,
+        "pdf_text_page_index": 419
       }
     ],
     "appendix_headings_checked": 3,
@@ -456,20 +456,20 @@
       {
         "appendix_letter": "A",
         "title": "Glossary",
-        "text_offset": 957637,
-        "pdf_text_page_index": 426
+        "text_offset": 960862,
+        "pdf_text_page_index": 428
       },
       {
         "appendix_letter": "B",
         "title": "Corben\u2019s Own Sources, Papers, and Local Projects",
-        "text_offset": 961485,
-        "pdf_text_page_index": 429
+        "text_offset": 964710,
+        "pdf_text_page_index": 431
       },
       {
         "appendix_letter": "C",
         "title": "External Sources by Other Authors",
-        "text_offset": 1010054,
-        "pdf_text_page_index": 454
+        "text_offset": 1013279,
+        "pdf_text_page_index": 456
       }
     ],
     "review_boundary": "This pdftotext reading-flow review checks extracted text volume, page text presence, chapter heading order, appendix heading order, reader markers, and live-marker leakage. It is not manual PDF page-by-page reading-flow review, not PDF viewer approval, and does not approve the PDF artifact.",
@@ -485,13 +485,13 @@
   "pdf_viewer_review": {
     "status": "passed_chromium_pdf_viewer_smoke_review",
     "source_artifact": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
-    "source_sha256": "9c90de1072432368d7fef41d38edefae82e431c992bb9c7a8441a7571e81ac7c",
+    "source_sha256": "2018ac24619d3166580ffa10a988976dd61e4cc3e2ae84b8ffd882c789ae5768",
     "report_ref": "build/curated_reader_edition/curated_reader_pdf_viewer_review_report.json",
     "review_command": "python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest",
     "renderer": "Google Chrome PDF viewer through headed Playwright",
     "viewport_width": 1280,
     "viewport_height": 900,
-    "pdfinfo_pages": 511,
+    "pdfinfo_pages": 513,
     "viewer_url_scheme": "file",
     "viewer_shell_detected": true,
     "viewer_dom_body_text_characters": 0,
@@ -500,24 +500,24 @@
     "screenshots": [
       {
         "path": "build/curated_reader_edition/pdf_viewer_review/page-1-viewer.png",
-        "bytes": 41640,
+        "bytes": 41829,
         "width": 1280,
         "height": 900,
-        "dark_pixel_percent": 34.101,
+        "dark_pixel_percent": 34.099,
         "white_pixel_percent": 64.662,
         "luminance_variation_proxy": 100.128
       },
       {
         "path": "build/curated_reader_edition/pdf_viewer_review/page-down-viewer.png",
-        "bytes": 92611,
+        "bytes": 93242,
         "width": 1280,
         "height": 900,
-        "dark_pixel_percent": 34.905,
-        "white_pixel_percent": 62.323,
-        "luminance_variation_proxy": 100.825
+        "dark_pixel_percent": 34.902,
+        "white_pixel_percent": 62.319,
+        "luminance_variation_proxy": 100.823
       }
     ],
-    "page_down_changed_pixel_percent": 4.479,
+    "page_down_changed_pixel_percent": 4.485,
     "review_boundary": "This headed Chromium PDF viewer smoke review verifies that the ignored local PDF opens in a real PDF viewer surface and produces nonblank viewer screenshots before and after navigation. It is not manual page-by-page PDF review, not PDF content approval, and does not approve the PDF artifact.",
     "non_claims": [
       "does not approve the PDF artifact for release",
