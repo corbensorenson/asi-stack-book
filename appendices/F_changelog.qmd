@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-05 - Refresh v1.x roadmap current-state counters
+
+- Updated `docs/v1_x_beyond_sota_roadmap.md` so its current-state text matches
+  the generated proof-depth, non-core evidence, Project Theseus static-import,
+  and accepted-transition audit ledgers.
+- The roadmap now reports 207 proof targets, 54 Lean modules, 1034 theorem
+  declarations, 844 derived/decomposed declarations, 186 direct/projection
+  declarations, 77 accepted transition records, twelve accepted narrow
+  non-core upward transitions, and 39 accepted `blocks_promotion` side-lane
+  decisions.
+- Added a roadmap implementation note for the sanitized Project Theseus
+  RLDS/Minari trace-export import and refreshed the Project Theseus roadmap row
+  to point at the generated static-import status ledger.
+- This is a roadmap truth-maintenance update only; it does not add a new test,
+  proof, evidence transition, source interpretation, release approval, or
+  chapter-core support-state promotion.
+
 ## 2026-07-05 - Import Theseus RLDS/Minari trace export boundary
 
 - Added `scripts/validate_theseus_rlds_minari_trace_export_import.py`,
