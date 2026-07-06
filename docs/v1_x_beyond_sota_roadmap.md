@@ -354,20 +354,21 @@ state.
 | Engineering / tooling / discipline | A | Gates stay green, fast, and drift-proof while the surface grows; no new ledgers unless a validator or release record requires them. | Maintenance only. Keep the full gate under a small time budget; keep validator-coverage and scaffold-drift checks green; resist probe sprawl (prefer deepening an existing lane over adding a new shape probe). |
 | Epistemic honesty | A+ | Already at bar. | Preserve it through every change below; no-promotion decisions and negative results stay first-class. |
 | Formal layer | A− | Executable-model depth, not count: properties over *sequences* of transitions, Lean/Python fixture equivalence on shared fixtures, and adversarial negative cases tied to live evidence lanes; projection bridges stay labeled. | The Capability replacement identity-sequence bridge, Context Transaction sequence bridge, and Resource CI failure-classification bridge are the current concrete movements from trace-summary alignment toward executable evidence invariants: Python fixtures and Lean summaries now agree on bounded canary/rollback identity, bounded ordered context read/write/taint sequences, and finite CI publication-metadata failure classification with no-promotion boundaries. Next cycles should deepen one of these toward live/external replay, real regression or memory-store evidence, monitor-window evidence, rollback dry-run evidence, external attestation, or stronger Theseus/Circle public fixtures rather than adding another field-presence bridge. |
-| Evidence / validated substance | B+ | A steady cadence of *accepted* narrow transitions earned by real measurements and imports — refusals recorded honestly, but the ladder visibly climbs; every chapter's named evidence lane eventually executes. | Strengthen one selected measured, replay, or import lane per cycle to an accepted narrow transition or explicit no-promotion decision. Load-stability and workload-quality now have accepted narrow transitions, including the first empirical-test-backed local selector transition, so the next cycle should either deepen them toward live/external review or select the next public-safe Circle/Theseus/fixture lane. Keep the flagship-first pacing (one flagship, at most two supporting lanes) so the 44-lane plan never becomes a breadth trap. |
+| Evidence / validated substance | A− | A steady cadence of *accepted* narrow transitions earned by real measurements and imports — refusals recorded honestly, but the ladder visibly climbs; every chapter's named evidence lane eventually executes. | The ledger now records 12 accepted narrow non-core upward transitions: 1 empirical, 4 synthetic, and 7 prototype-backed transitions across the Circle rope replay and bounded Project Theseus imports. Keep climbing through one selected measured, replay, or import lane per cycle; the next high-leverage move is a Theseus-sourced or live/external replay transition with baseline, negative controls, residuals, and non-claims, not another preparation-only audit. |
 | External grounding | A− | 44/44 positioned with genuine depth everywhere: each load-bearing chapter names its comparators in prose and its `ext_` records carry source notes; no chapter reads as self-coined nomenclature. | Continue the per-chapter grounding lane through the burn-down; when a chapter's comparator set is thin, mine its linked Corben papers' bibliographies first, then add vetted third-party records through the inventory and Appendix H. |
 | Writing / craft (live edition) | A− | Every part carries at least one showpiece-caliber section; the largest chapters carry their evidence without sprawl; zero template residue or merge seams anywhere. | Execute the chapter-length watchlist (move bulky tables, validator minutiae, and repeated caveats to companion/live-only surfaces where evidence boundaries allow). Extend the showpiece-trace standard to one anchor section per part. |
-| Human reader edition | A− | Every one of the 44 reader chapters reads at the level of the current best ones; thesis, part arcs, and signature ideas are realized in the prose itself (not only in the handoff manifest); figures are polished per format; the edition is built, format-validated, and release-recorded. **This is the largest single gap and the first priority.** | Convert chapter-level reconciliation progress into release-quality reader artifacts: all 44 curated reader records are now reconciled for prose meaning and the legacy voice slots are sidecar-only, but release approval, format review, edition release records, figure artifact review, visual identity, and book-level final polish remain open. Keep the reader-continuity queue at 0 high-priority and 0 medium-priority rows through reviewed decisions or artifact-backed edits, and keep the 74 active overlay operations synchronized across live Human view and generated reader editions. Realize the thesis and part arcs in actual openings, endings, and transitions. Then build HTML/EPUB/DOCX (PDF where local dependencies allow), run the format validators and application-level checks the format-review matrix already defines, including its six current blocked curated-candidate rows, and produce an edition release record. "Drafting" must become reviewed release artifacts or stay visibly blocked. |
+| Human reader edition | A− | Every one of the 44 reader chapters reads at the level of the current best ones; thesis, part arcs, and signature ideas are realized in the prose itself (not only in the handoff manifest); figures are polished per format; the edition is built, format-validated, and release-recorded. **This is the largest single gap and the first priority.** | Chapter-level prose reconciliation is approved for the tracked curated source, the human-consumption gate passes for release preparation, and local HTML/EPUB/DOCX/PDF artifacts have digest-backed preparation evidence. The remaining gap is a release decision, not another generic review: either issue a text-edition release record that scopes audio and unperformed screen-reader work out as explicit residuals, or keep the release blocked with a dated blocker naming the exact uncleared gate. Do not approve audio, screen-reader conformance, publication, or artifact quality that has not actually been checked. When the text-edition record is honest and exact, update the reader manifest's top-level `status` out of `drafting`; the audiobook remains a separate future release lane until audio files, timecodes, listening checks, packaging, and an audio release record exist. |
 | Ideas / synthesis | A− | Every signature idea meets the four-part criterion (crisp statement, audited prior-art delta, one non-obvious consequence, strongest objection answered in place); the missing keystone concepts exist in the corpus; the governance pattern is named once as the core contribution; a contribution ledger audits novelty claims like evidence claims. | Execute the **Idea Depth Program** section as an artifact gate, not as another report: verification bandwidth, residual honesty, receipt faithfulness, epistemic trusted computing base, human oversight degradation, and verification-tax/governance economics now have first bounded closures, and pattern-language integration now has the owner spine, first control-boundary local-delta slice, and broader local-delta slice across planning, context, routing, compression, and self-improvement. The current validator-checked contribution novelty ledger has 9 signature-idea rows; nested keystones advance those rows unless a future validator-backed ledger expansion admits a distinct new contribution. Next, preserve local-delta discipline while pursuing live or externally reviewable residual-ledger storage/replay, receipt attestation/audit evidence, approval-workflow reviewer-degradation evidence, live or externally reviewable governance-tax workload evidence, and source-noted prior-art or external review before stronger pattern-language novelty language. Add keystone concepts only through the normal manifest/outline/evidence-lane process, with chapter-ownership tests before any new chapter. Maintain `docs/contribution_novelty_ledger.md` / `.json` as the novelty-positioning gate. |
 
 Priority order when a run cannot do everything:
 
-1. Human reader edition to finished and release-recorded (largest gap).
+1. Human reader text edition to an honest approved-or-still-blocked release
+   record, with audio split into its own downstream lane.
 2. Record-reality / receipt faithfulness: strengthen the existing Artifact
    Graphs owner section into a showpiece argument and pursue live/external
    attestation or a dated split decision if ownership fails the split test.
 3. Evidence cadence: one accepted narrow transition plus the next real
-   Circle/Theseus import.
+   Theseus, live replay, or externally reviewable import lane.
 4. One executable-model proof bridge tied to a live evidence lane.
 5. Burn-down truth maintenance: reconcile Milestone 2.5 rows against artifacts
    that already exist, in both directions, before starting new rows.
@@ -4336,6 +4337,72 @@ and `docs/non_core_evidence_ledger.md`. These ledgers are enforced through
 `validate_v1_status_snapshot.py` plus
 `validate_book.py`. Continue applying this pattern to any future
 validator-enforced status row that grows past compact status-summary size.
+
+### 2026-07-05 review addendum - release stop rule and next actions
+
+The evening review had three findings with teeth. Two are closed enough to
+maintain rather than reopen:
+
+- Validator execution coverage is now a guarded CI property:
+  `python3 scripts/validate_validator_coverage.py` reports 214
+  `validate_*.py` scripts covered by the workflow, `validate_book.py`, or a
+  two-entry allow-list, and `python3 scripts/validate_prototype_phase_gates.py`
+  passes standalone.
+- The evidence ladder has climbed to 12 accepted narrow non-core upward
+  transitions: 1 empirical, 4 synthetic, and 7 prototype-backed transitions
+  across the Circle rope replay and bounded Project Theseus imports. The
+  structural Circle KV-cache, recurrence, sparse-attention, strided-fanout,
+  cyclic-mixer, MultiCoil, seed-rule, and contract-pack slices remain accepted
+  `blocks_promotion` side-lane decisions, not upward transitions.
+
+The remaining issue is the reader-release stop rule. The project must avoid an
+infinite preparation loop where every new artifact is recorded as
+`pre_release_review` but no exact edition is ever approved or explicitly kept
+blocked. The stop rule is:
+
+1. **Approve only the scoped artifact, never the wish list.** A Codex-issued
+   text-edition release record may approve only the exact HTML/EPUB/DOCX/PDF
+   artifacts named by path and digest, with the commands, validators,
+   application probes, known residuals, and non-claims recorded. It must not
+   claim screen-reader review, third-party/legal WCAG certification, manual
+   aesthetic approval, publication, DOI/archive, audiobook quality, or audio
+   packaging unless those checks or artifacts actually exist.
+2. **Split text and audio.** Audio is genuinely incomplete: no MP3/M4B files,
+   no recorded-audio listening spot check, no chapter timecodes, and no
+   audio-embedded EPUB package exist. Audio must be its own future release
+   record. It should not keep an otherwise scoped text-edition candidate
+   blocked unless that candidate claims to include audio.
+3. **Convert blockers by scope, not by relabeling.** If a blocker is outside
+   the scoped text release, move it into residuals with explicit non-claims. If
+   it is inside the scoped release, either run a real check that clears it or
+   keep the release record blocked with a dated blocker. Do not redefine
+   unperformed manual, screen-reader, application, listening, or publication
+   review as completed automation.
+4. **Make the manifest agree with the release record.** The top-level
+   `editions/reader_manuscript/v1_0/manifest.json` field is `status:
+   drafting`. Change it only after an approved text-edition release record
+   exists, and use a state that makes the scope explicit, such as
+   `text_release_recorded_audio_deferred`. If the record stays blocked, keep
+   `status: drafting` or change only to an explicitly blocked candidate state.
+
+After the text-edition stop rule is executed, keep the evidence ladder moving:
+the next preferred accepted-transition candidates are a public-safe Theseus
+parity export such as a reference-trace export or governance-tax measurement,
+and live or externally reviewable residual-ledger storage/replay. One accepted
+transition sourced from real Theseus or live replay evidence is higher leverage
+than another preparation-only review.
+
+Immediate next three actions, in order:
+
+1. Issue an honest approved-or-still-blocked text-edition release record for
+   the current curated HTML/EPUB/DOCX/PDF artifacts, split audio out, and update
+   the reader manifest only if the record actually approves the scoped text
+   edition.
+2. Import one public-safe Theseus parity export or live replay lane as an
+   accepted transition or an explicit no-promotion decision.
+3. Execute one Idea-Depth artifact-gate cycle, starting with residual honesty's
+   live storage/replay if the required artifact is available; otherwise record
+   the exact dated blocker and move to the next selected signature idea.
 
 ### Remaining distance as of 2026-07-04
 

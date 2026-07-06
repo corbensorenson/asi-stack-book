@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-05 - Tighten roadmap release stop rule
+
+- Updated `docs/v1_x_beyond_sota_roadmap.md` after review of the latest
+  roadmap critique and local ledgers.
+- Promoted the evidence-dimension roadmap grade from `B+` to `A-` in the
+  execution compass, matching the current non-core evidence ledger: 12 accepted
+  narrow upward transitions, including 1 empirical, 4 synthetic, and 7
+  prototype-backed transitions.
+- Replaced the uncommitted reader-release addendum with a stricter stop rule:
+  the next reader step is an honest approved-or-still-blocked text-edition
+  release record for exact HTML/EPUB/DOCX/PDF artifacts, while audio remains a
+  separate future release lane until audio files, listening checks, timecodes,
+  packaging, and an audio release record exist.
+- Boundary: this roadmap update does not approve reader artifacts, publish
+  files, clear screen-reader/audio work, create a release record, or change any
+  claim support state.
+
 ## 2026-07-05 - Refresh v1.x roadmap current-state counters
 
 - Updated `docs/v1_x_beyond_sota_roadmap.md` so its current-state text matches
