@@ -1,0 +1,120 @@
+{
+  "transition_id": "v1_x_measured.theseus_assistant_reference_trace_import.prototype_backed",
+  "claim_id": "project-theseus-as-report-first-implementation-reference.assistant_reference_trace_import",
+  "claim_surface_refs": [
+    "docs/theseus_assistant_reference_trace_import.md",
+    "docs/non_core_evidence_ledger.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_assistant_reference_trace_import/fixtures/valid/assistant_reference_trace_import.valid.json",
+    "experiments/theseus_assistant_reference_trace_import/results/2026-07-06-local.json",
+    "scripts/validate_theseus_assistant_reference_trace_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "prototype-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded Project Theseus assistant reference-trace import moves to prototype-backed: a sanitized public-safe fixture records source digests, 19 required reference-trace record types, 27/27 gates, 2,203 VIEA view records, four route-validator required groups, 12 selected VCM pages, zero public training rows, zero external inference calls, no copied raw report, raw VIEA trace, raw assistant text, raw prompt, or private payload, and 11 expected-invalid controls. This does not promote the Project Theseus chapter core claim, prove clean live Project Theseus replay, current runtime state, deployed behavior, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, learned generation, safety, alignment, transfer, or ASI.",
+  "evidence_roles": [
+    "external_project_prototype_report_import",
+    "sanitized_public_fixture",
+    "reference_trace_record_type_export",
+    "route_validator_receipt_summary",
+    "vcm_context_packet_summary",
+    "public_safety_boundary",
+    "expected_invalid_controls",
+    "lean_python_fixture_alignment",
+    "no_chapter_core_promotion_boundary"
+  ],
+  "transition_reason": "The imported Theseus assistant runtime report has enough public-safe structure to be treated as a bounded prototype-backed reference-trace import rather than a plan or dashboard impression: it preserves a concrete source digest, a 19-record trace skeleton, 27 passing gates, route-validator counts, VCM context counts, public-safety zeros, benchmark-diagnostic blockers, and negative controls for source mismatch, raw/private payload leakage, missing trace records, hidden gate failure, clean-live-replay overclaim, model-quality overclaim, benchmark-headline overclaim, public training rows, external inference calls, and chapter-core promotion. The accepted transition applies only to this import object.",
+  "required_artifacts": [
+    "sanitized public-safe Theseus assistant reference-trace fixture",
+    "source report and trace digests",
+    "reference-trace record-type list",
+    "gate and route-validator counts",
+    "VCM context summary",
+    "benchmark-diagnostic non-claim boundary",
+    "public-safety redaction boundary",
+    "negative controls for source hash mismatch, raw assistant text copying, private-payload copying, missing required trace record, hidden gate failure, clean-live-replay overclaim, model-quality overclaim, benchmark-headline overclaim, public training rows, external inference calls, and chapter-core promotion",
+    "finite Lean fixture alignment",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/theseus_assistant_reference_trace_import.md",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/valid/assistant_reference_trace_import.valid.json",
+    "experiments/theseus_assistant_reference_trace_import/results/2026-07-06-local.json",
+    "scripts/validate_theseus_assistant_reference_trace_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/theseus_assistant_reference_trace_import.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/non_core_evidence_ledger.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/G_corben_source_corpus.qmd#project_theseus_whitepaper",
+    "docs/book_outline.md#project-theseus-as-report-first-implementation-reference"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_assistant_reference_trace_import.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "source report hash mismatch is rejected",
+    "raw assistant text copying is rejected",
+    "private payload copying is rejected",
+    "missing required reference-trace record types are rejected",
+    "hidden gate failure is rejected",
+    "clean-live-replay overclaim is rejected",
+    "model-quality overclaim is rejected",
+    "benchmark-headline or benchmark-superiority overclaim is rejected",
+    "public training rows are rejected",
+    "external inference calls are rejected",
+    "chapter-core promotion overclaim is rejected"
+  ],
+  "negative_evidence_refs": [
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/raw_assistant_text_copied.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/private_payload_copied.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/missing_required_trace_record.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/gate_failure_hidden.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/clean_live_replay_overclaim.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/model_quality_overclaim.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/benchmark_headline_overclaim.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/public_training_rows.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/external_inference_calls.invalid.json",
+    "experiments/theseus_assistant_reference_trace_import/fixtures/invalid/chapter_core_promotion.invalid.json"
+  ],
+  "downgrade_triggers": [
+    "the sanitized fixture no longer validates against the recorded source digests, trace-record list, gate counts, route-validator counts, VCM context counts, public-safety boundary, or non-claim boundary",
+    "a source mismatch, raw assistant text copy, private-payload copy, missing trace record, hidden gate failure, clean-live-replay overclaim, model-quality overclaim, benchmark-headline overclaim, public training row, external inference call, or chapter-core promotion is accepted as valid",
+    "the import is described as clean live Project Theseus replay, current runtime state, deployment evidence, route-quality evidence, private verifier-quality evidence, model-quality evidence, benchmark superiority, useful-solution-per-second evidence, learned-generation evidence, safety evidence, alignment evidence, transfer evidence, ASI evidence, or chapter-core evidence",
+    "future public dependency policy requires archived raw report publication and this record remains a digest-only sanitized summary"
+  ],
+  "promotion_burden": "Move beyond this bounded prototype-backed import only after a public-safe archived Theseus report bundle or clean live replay is available, the raw/private publication boundary is resolved, every trace hop can be externally inspected or replayed, route and verifier quality are separately evaluated, benchmark measurements are headline-eligible rather than diagnostic, residuals and non-claims are preserved, and independent review is recorded with a separate accepted transition.",
+  "limitations": [
+    "sanitized digest-and-count import only",
+    "raw Theseus report, raw VIEA trace, raw assistant text, raw prompts, private paths, checkpoints, candidate code, score labels, and training rows are not copied into this public repository",
+    "source checkout was dirty at import review",
+    "source report was created on 2026-06-29 and is not a current runtime-state proof",
+    "local maintainer-agent review only",
+    "latest benchmark value is a partial diagnostic surface, not a headline benchmark claim",
+    "does not prove clean live Project Theseus replay, current runtime state, deployed behavior, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, learned generation, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Project Theseus reviewer, route-quality reviewer, verifier-quality reviewer, benchmark reviewer, safety auditor, or deployment reviewer",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-06---import-theseus-assistant-reference-trace",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not copy the raw Project Theseus report, raw VIEA trace, raw assistant text, raw prompts, private payloads, private paths, checkpoints, tests, solutions, score labels, candidate code, or training rows into this public repository",
+    "does not prove clean live Project Theseus replay, current runtime state, deployed Theseus behavior, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, learned generation, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}

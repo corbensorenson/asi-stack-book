@@ -1500,4 +1500,150 @@ theorem theseus_work_board_import_public_training_rows_rejected :
     theseusWorkBoardImportFixture,
   ] at valid
 
+structure TheseusAssistantReferenceTraceImport where
+  recordTypeCount : Nat
+  requiredHopsPresent : Bool
+  gatesPassed : Nat
+  gatesTotal : Nat
+  routeValidatorRecordCount : Nat
+  vcmSelectedPageCount : Nat
+  publicTrainingRowsWritten : Nat
+  externalInferenceCalls : Nat
+  rawReportCopied : Bool
+  rawTraceCopied : Bool
+  rawAssistantTextCopied : Bool
+  rawPromptCopied : Bool
+  privatePayloadCopied : Bool
+  cleanLiveReplayClaimed : Bool
+  modelQualityClaimed : Bool
+  benchmarkHeadlineClaimed : Bool
+  chapterCorePromotion : Bool
+deriving DecidableEq, Repr
+
+def TheseusAssistantReferenceTraceComplete
+    (summary : TheseusAssistantReferenceTraceImport) : Prop :=
+  summary.recordTypeCount = 19 ∧
+    summary.requiredHopsPresent = true ∧
+      summary.gatesPassed = 27 ∧
+        summary.gatesTotal = 27 ∧
+          summary.routeValidatorRecordCount = 2203 ∧
+            summary.vcmSelectedPageCount = 12
+
+def TheseusAssistantReferenceTracePublicSafe
+    (summary : TheseusAssistantReferenceTraceImport) : Prop :=
+  summary.publicTrainingRowsWritten = 0 ∧
+    summary.externalInferenceCalls = 0 ∧
+      summary.rawReportCopied = false ∧
+        summary.rawTraceCopied = false ∧
+          summary.rawAssistantTextCopied = false ∧
+            summary.rawPromptCopied = false ∧
+              summary.privatePayloadCopied = false
+
+def TheseusAssistantReferenceTracePreservesBoundaries
+    (summary : TheseusAssistantReferenceTraceImport) : Prop :=
+  summary.cleanLiveReplayClaimed = false ∧
+    summary.modelQualityClaimed = false ∧
+      summary.benchmarkHeadlineClaimed = false ∧
+        summary.chapterCorePromotion = false
+
+def TheseusAssistantReferenceTraceImportValid
+    (summary : TheseusAssistantReferenceTraceImport) : Prop :=
+  TheseusAssistantReferenceTraceComplete summary ∧
+    TheseusAssistantReferenceTracePublicSafe summary ∧
+      TheseusAssistantReferenceTracePreservesBoundaries summary
+
+def theseusAssistantReferenceTraceImportFixture :
+    TheseusAssistantReferenceTraceImport :=
+  { recordTypeCount := 19,
+    requiredHopsPresent := true,
+    gatesPassed := 27,
+    gatesTotal := 27,
+    routeValidatorRecordCount := 2203,
+    vcmSelectedPageCount := 12,
+    publicTrainingRowsWritten := 0,
+    externalInferenceCalls := 0,
+    rawReportCopied := false,
+    rawTraceCopied := false,
+    rawAssistantTextCopied := false,
+    rawPromptCopied := false,
+    privatePayloadCopied := false,
+    cleanLiveReplayClaimed := false,
+    modelQualityClaimed := false,
+    benchmarkHeadlineClaimed := false,
+    chapterCorePromotion := false }
+
+theorem theseus_assistant_reference_trace_import_fixture_valid :
+    TheseusAssistantReferenceTraceImportValid
+      theseusAssistantReferenceTraceImportFixture := by
+  simp [
+    TheseusAssistantReferenceTraceImportValid,
+    TheseusAssistantReferenceTraceComplete,
+    TheseusAssistantReferenceTracePublicSafe,
+    TheseusAssistantReferenceTracePreservesBoundaries,
+    theseusAssistantReferenceTraceImportFixture,
+  ]
+
+theorem theseus_assistant_reference_trace_import_requires_all_hops
+    {summary : TheseusAssistantReferenceTraceImport} :
+    TheseusAssistantReferenceTraceImportValid summary ->
+      summary.recordTypeCount = 19 ∧ summary.requiredHopsPresent = true := by
+  intro valid
+  unfold TheseusAssistantReferenceTraceImportValid at valid
+  cases valid with
+  | intro complete _ =>
+      unfold TheseusAssistantReferenceTraceComplete at complete
+      exact And.intro complete.left complete.right.left
+
+theorem theseus_assistant_reference_trace_import_private_payload_rejected :
+    ¬ TheseusAssistantReferenceTraceImportValid
+      { theseusAssistantReferenceTraceImportFixture with
+        privatePayloadCopied := true } := by
+  intro valid
+  simp [
+    TheseusAssistantReferenceTraceImportValid,
+    TheseusAssistantReferenceTraceComplete,
+    TheseusAssistantReferenceTracePublicSafe,
+    TheseusAssistantReferenceTracePreservesBoundaries,
+    theseusAssistantReferenceTraceImportFixture,
+  ] at valid
+
+theorem theseus_assistant_reference_trace_import_core_promotion_rejected :
+    ¬ TheseusAssistantReferenceTraceImportValid
+      { theseusAssistantReferenceTraceImportFixture with
+        chapterCorePromotion := true } := by
+  intro valid
+  simp [
+    TheseusAssistantReferenceTraceImportValid,
+    TheseusAssistantReferenceTraceComplete,
+    TheseusAssistantReferenceTracePublicSafe,
+    TheseusAssistantReferenceTracePreservesBoundaries,
+    theseusAssistantReferenceTraceImportFixture,
+  ] at valid
+
+theorem theseus_assistant_reference_trace_import_model_quality_overclaim_rejected :
+    ¬ TheseusAssistantReferenceTraceImportValid
+      { theseusAssistantReferenceTraceImportFixture with
+        modelQualityClaimed := true } := by
+  intro valid
+  simp [
+    TheseusAssistantReferenceTraceImportValid,
+    TheseusAssistantReferenceTraceComplete,
+    TheseusAssistantReferenceTracePublicSafe,
+    TheseusAssistantReferenceTracePreservesBoundaries,
+    theseusAssistantReferenceTraceImportFixture,
+  ] at valid
+
+theorem theseus_assistant_reference_trace_import_clean_replay_overclaim_rejected :
+    ¬ TheseusAssistantReferenceTraceImportValid
+      { theseusAssistantReferenceTraceImportFixture with
+        cleanLiveReplayClaimed := true } := by
+  intro valid
+  simp [
+    TheseusAssistantReferenceTraceImportValid,
+    TheseusAssistantReferenceTraceComplete,
+    TheseusAssistantReferenceTracePublicSafe,
+    TheseusAssistantReferenceTracePreservesBoundaries,
+    theseusAssistantReferenceTraceImportFixture,
+  ] at valid
+
 end AsiStackProofs.TheseusReference

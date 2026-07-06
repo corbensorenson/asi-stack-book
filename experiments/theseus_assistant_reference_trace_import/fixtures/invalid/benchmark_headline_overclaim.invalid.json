@@ -1,0 +1,14 @@
+{
+  "invalid_id": "benchmark_headline_overclaim",
+  "mutations": [
+    {
+      "path": "benchmark_boundary.headline_claim_allowed",
+      "value": true
+    },
+    {
+      "path": "claim_boundary.benchmark_headline_claimed",
+      "value": true
+    }
+  ],
+  "expected_error": "benchmark_headline"
+}

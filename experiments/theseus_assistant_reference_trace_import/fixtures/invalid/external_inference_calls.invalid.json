@@ -1,0 +1,14 @@
+{
+  "invalid_id": "external_inference_calls",
+  "mutations": [
+    {
+      "path": "summary.external_inference_calls",
+      "value": 1
+    },
+    {
+      "path": "public_safety_boundary.external_inference_calls",
+      "value": 1
+    }
+  ],
+  "expected_error": "external_inference_calls"
+}

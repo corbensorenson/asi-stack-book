@@ -67,7 +67,7 @@ EXPECTED_READING_FLOW_EXACT = {
     "appendix_scripts_checked": 3,
     "script_file_order_status": "matches_book_structure",
     "script_file_order_errors": [],
-    "combined_script_sha256": "bf592791444ea0ff24991c43088148ac72b858f40a4861a1cf60de4ab1f0aa47",
+    "combined_script_sha256": "9fc36701275754d9d24df605ac7fedff11271d38127f04b5898718742b6960ec",
     "text_characters_checked": 1093838,
     "word_tokens_checked": 146573,
     "release_note_count": 49,

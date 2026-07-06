@@ -1,0 +1,10 @@
+{
+  "invalid_id": "clean_live_replay_overclaim",
+  "mutations": [
+    {
+      "path": "claim_boundary.clean_live_theseus_replay_claimed",
+      "value": true
+    }
+  ],
+  "expected_error": "clean_live_theseus_replay_claimed"
+}

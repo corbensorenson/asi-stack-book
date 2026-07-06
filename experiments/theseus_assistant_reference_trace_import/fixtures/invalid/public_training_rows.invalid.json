@@ -1,0 +1,14 @@
+{
+  "invalid_id": "public_training_rows",
+  "mutations": [
+    {
+      "path": "summary.public_training_rows_written",
+      "value": 1
+    },
+    {
+      "path": "public_safety_boundary.public_training_rows_written",
+      "value": 1
+    }
+  ],
+  "expected_error": "public_training_rows_written"
+}

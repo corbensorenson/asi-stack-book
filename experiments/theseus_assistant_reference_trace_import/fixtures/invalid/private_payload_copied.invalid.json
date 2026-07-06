@@ -1,0 +1,14 @@
+{
+  "invalid_id": "private_payload_copied",
+  "mutations": [
+    {
+      "path": "private_payload_copied",
+      "value": true
+    },
+    {
+      "path": "public_safety_boundary.private_payload_copied",
+      "value": true
+    }
+  ],
+  "expected_error": "private_payload_copied"
+}

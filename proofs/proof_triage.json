@@ -2081,6 +2081,16 @@
       "rationale": "Implemented in AsiStackProofs.RuntimeAdapters as a finite fixture-summary bridge over the human oversight degradation fixture: it preserves the accepted scoped-approval, reviewer-rotation, automation-bias blocking, rubber-stamp rejection, alarm-fatigue escalation, no-support-state, and non-claim boundaries without claiming reviewer correctness or deployed approval-service behavior."
     },
     {
+      "tag": "lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture bridge for the sanitized Theseus assistant reference-trace import: accepted summaries require 19 trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, no raw report, raw trace, raw assistant text, raw prompt, or private payload copy, and no clean-live-replay, model-quality, benchmark-headline, or chapter-core promotion boundaries."
+    },
+    {
       "tag": "lean:theseus.reference.book_crosswalk.pointer_boundary",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "module": "AsiStackProofs.TheseusReference",
@@ -2101,5 +2111,5 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite metadata-only fixture bridge: it preserves durable work-board row counts, stale-snapshot currentness blocking, zero public training rows, zero external inference calls, no raw-report or SQLite/task payload copy, and no clean-live-replay or chapter-core promotion boundaries."
     }
   ],
-  "record_count": 209
+  "record_count": 210
 }

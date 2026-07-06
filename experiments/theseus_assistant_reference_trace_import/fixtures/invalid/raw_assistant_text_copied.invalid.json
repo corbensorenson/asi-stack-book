@@ -1,0 +1,14 @@
+{
+  "invalid_id": "raw_assistant_text_copied",
+  "mutations": [
+    {
+      "path": "raw_assistant_text_copied",
+      "value": true
+    },
+    {
+      "path": "public_safety_boundary.raw_assistant_text_copied",
+      "value": true
+    }
+  ],
+  "expected_error": "raw_assistant_text_copied"
+}

@@ -148,6 +148,27 @@ PROJECT_REGISTRY_TRANSITION = (
     / "v1_x_measured"
     / "theseus_project_registry_import_prototype_backed.json"
 )
+ASSISTANT_TRACE_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_assistant_reference_trace_import"
+    / "results"
+    / "2026-07-06-local.json"
+)
+ASSISTANT_TRACE_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_assistant_reference_trace_import"
+    / "fixtures"
+    / "valid"
+    / "assistant_reference_trace_import.valid.json"
+)
+ASSISTANT_TRACE_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_assistant_reference_trace_import_prototype_backed.json"
+)
 BOOK_CROSSWALK_RESULT = (
     ROOT
     / "experiments"
@@ -202,6 +223,7 @@ DOCS = (
     "docs/theseus_rlds_minari_trace_export_import.md",
     "docs/theseus_module_definition_of_done_import.md",
     "docs/theseus_project_registry_import.md",
+    "docs/theseus_assistant_reference_trace_import.md",
     "docs/theseus_book_crosswalk_import.md",
     "docs/theseus_work_board_import.md",
 )
@@ -217,6 +239,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_rlds_minari_trace_export_import.py",
     "python3 scripts/validate_theseus_module_definition_of_done_import.py",
     "python3 scripts/validate_theseus_project_registry_import.py",
+    "python3 scripts/validate_theseus_assistant_reference_trace_import.py",
     "python3 scripts/validate_theseus_book_crosswalk_import.py",
     "python3 scripts/validate_theseus_work_board_import.py",
 )
@@ -250,6 +273,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['rlds_minari_trace_export_imports']} RLDS/Minari trace-export import, "
         f"{metrics['module_dod_imports']} module definition-of-done import, "
         f"{metrics['project_registry_imports']} project-registry import, "
+        f"{metrics['assistant_reference_trace_imports']} assistant reference-trace import, "
         f"{metrics['book_crosswalk_imports']} book-to-Theseus crosswalk pointer import, "
         f"{metrics['work_board_imports']} work-board metadata import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
@@ -264,7 +288,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['simulation_fidelity_upward_transitions']} accepted bounded simulation-fidelity transition, "
         f"{metrics['rlds_minari_upward_transitions']} accepted bounded RLDS/Minari trace-export transition, "
         f"{metrics['module_dod_upward_transitions']} accepted bounded module definition-of-done transition, "
-        f"and {metrics['project_registry_upward_transitions']} accepted bounded project-registry transition; "
+        f"{metrics['project_registry_upward_transitions']} accepted bounded project-registry transition, "
+        f"and {metrics['assistant_reference_trace_upward_transitions']} accepted bounded assistant reference-trace transition; "
         f"{metrics['book_crosswalk_pointer_rows']} public-safe pointer rows; "
         f"{metrics['work_board_task_rows']} durable work-board task rows; "
         "clean live replay remains unclaimed. "
@@ -302,6 +327,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         PROJECT_REGISTRY_RESULT,
         PROJECT_REGISTRY_FIXTURE,
         PROJECT_REGISTRY_TRANSITION,
+        ASSISTANT_TRACE_RESULT,
+        ASSISTANT_TRACE_FIXTURE,
+        ASSISTANT_TRACE_TRANSITION,
         BOOK_CROSSWALK_RESULT,
         BOOK_CROSSWALK_FIXTURE,
         BOOK_CROSSWALK_TRANSITION,
@@ -342,6 +370,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     project_registry_result = load_json(PROJECT_REGISTRY_RESULT)
     project_registry_fixture = load_json(PROJECT_REGISTRY_FIXTURE)
     project_registry_transition = load_json(PROJECT_REGISTRY_TRANSITION)
+    assistant_trace_result = load_json(ASSISTANT_TRACE_RESULT)
+    assistant_trace_fixture = load_json(ASSISTANT_TRACE_FIXTURE)
+    assistant_trace_transition = load_json(ASSISTANT_TRACE_TRANSITION)
     book_crosswalk_result = load_json(BOOK_CROSSWALK_RESULT)
     book_crosswalk_fixture = load_json(BOOK_CROSSWALK_FIXTURE)
     book_crosswalk_transition = load_json(BOOK_CROSSWALK_TRANSITION)
@@ -753,6 +784,68 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if "does not prove clean live Project Theseus replay" not in project_registry_nonclaims:
         errors.append("Theseus project-registry transition missing clean-live-replay non-claim.")
 
+    assistant_trace_summary = assistant_trace_fixture.get("summary", {})
+    assistant_trace_boundary = assistant_trace_fixture.get("claim_boundary", {})
+    assistant_trace_safety = assistant_trace_fixture.get("public_safety_boundary", {})
+    assistant_trace_reference = assistant_trace_fixture.get("reference_trace", {})
+    if assistant_trace_result.get("verification_result") != "pass":
+        errors.append("Theseus assistant reference-trace import result must pass.")
+    if assistant_trace_result.get("expected_invalid_control_count") != 11:
+        errors.append("Theseus assistant reference-trace import must keep eleven expected-invalid controls.")
+    if assistant_trace_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus assistant reference-trace import must preserve dirty-at-import boundary.")
+    if assistant_trace_summary.get("trigger_state") != "GREEN":
+        errors.append("Theseus assistant reference-trace import must keep GREEN trigger state.")
+    if assistant_trace_result.get("trace_record_type_count") != 19:
+        errors.append("Theseus assistant reference-trace import must keep 19 trace record types.")
+    if assistant_trace_result.get("gate_count") != 27 or assistant_trace_result.get("passed_gate_count") != 27:
+        errors.append("Theseus assistant reference-trace import must keep 27/27 gates.")
+    if assistant_trace_result.get("route_validator_record_count") != 2203:
+        errors.append("Theseus assistant reference-trace import must keep 2,203 VIEA view records.")
+    if assistant_trace_result.get("vcm_selected_page_count") != 12:
+        errors.append("Theseus assistant reference-trace import must keep 12 selected VCM pages.")
+    if assistant_trace_reference.get("required_hops_present") is not True:
+        errors.append("Theseus assistant reference-trace import must keep required hops present.")
+    if assistant_trace_result.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus assistant reference-trace import must remain prototype-backed.")
+    if assistant_trace_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus assistant reference-trace import must preserve chapter_core_support_effect none.")
+    for field in (
+        "chapter_core_promotion_claimed",
+        "clean_live_theseus_replay_claimed",
+        "current_runtime_state_claimed",
+        "deployment_claimed",
+        "model_quality_claimed",
+        "benchmark_headline_claimed",
+        "useful_solution_per_second_claimed",
+        "route_quality_claimed",
+        "private_verifier_quality_claimed",
+        "learned_generation_claimed",
+        "safety_claimed",
+        "asi_claimed",
+    ):
+        if assistant_trace_boundary.get(field) is not False:
+            errors.append(f"Theseus assistant reference-trace import must not overclaim {field}.")
+    if (
+        assistant_trace_safety.get("public_training_rows_written") != 0
+        or assistant_trace_safety.get("external_inference_calls") != 0
+        or assistant_trace_safety.get("raw_report_copied") is not False
+        or assistant_trace_safety.get("raw_viea_trace_copied") is not False
+        or assistant_trace_safety.get("raw_assistant_text_copied") is not False
+        or assistant_trace_safety.get("raw_prompt_copied") is not False
+        or assistant_trace_safety.get("private_payload_copied") is not False
+    ):
+        errors.append("Theseus assistant reference-trace import must keep raw/private payload and public-safety boundary.")
+    if assistant_trace_transition.get("review_status") != "accepted":
+        errors.append("Theseus assistant reference-trace transition must remain accepted.")
+    if assistant_trace_transition.get("transition_effect") != "upward":
+        errors.append("Theseus assistant reference-trace transition_effect must remain upward.")
+    if assistant_trace_transition.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus assistant reference-trace transition must remain prototype-backed.")
+    assistant_trace_nonclaims = " ".join(str(item) for item in assistant_trace_transition.get("non_claims", []))
+    if "does not prove clean live Project Theseus replay" not in assistant_trace_nonclaims:
+        errors.append("Theseus assistant reference-trace transition missing clean-live-replay non-claim.")
+
     book_crosswalk_summary = book_crosswalk_fixture.get("summary", {})
     book_crosswalk_boundary = book_crosswalk_fixture.get("claim_boundary", {})
     book_crosswalk_safety = book_crosswalk_fixture.get("public_safety_boundary", {})
@@ -892,6 +985,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "rlds_minari_trace_export_imports": 1,
         "module_dod_imports": 1,
         "project_registry_imports": 1,
+        "assistant_reference_trace_imports": 1,
         "book_crosswalk_imports": 1,
         "work_board_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
@@ -975,6 +1069,15 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "project_registry_governance_violations": project_registry_summary.get("registry_governance_violation_count"),
         "project_registry_hard_governance_violations": project_registry_summary.get("registry_hard_governance_violation_count"),
         "project_registry_upward_transitions": 1,
+        "assistant_reference_trace_expected_invalid": assistant_trace_result.get("expected_invalid_control_count"),
+        "assistant_reference_trace_record_types": assistant_trace_result.get("trace_record_type_count"),
+        "assistant_reference_trace_gate_count": assistant_trace_result.get("gate_count"),
+        "assistant_reference_trace_gates_passed": assistant_trace_result.get("passed_gate_count"),
+        "assistant_reference_trace_viea_records": assistant_trace_result.get("route_validator_record_count"),
+        "assistant_reference_trace_vcm_pages": assistant_trace_result.get("vcm_selected_page_count"),
+        "assistant_reference_trace_public_training_rows": assistant_trace_summary.get("public_training_rows_written"),
+        "assistant_reference_trace_external_inference_calls": assistant_trace_summary.get("external_inference_calls"),
+        "assistant_reference_trace_upward_transitions": 1,
         "book_crosswalk_expected_invalid": book_crosswalk_result.get("expected_invalid_control_count"),
         "book_crosswalk_pointer_rows": book_crosswalk_summary.get("theseus_to_book_evidence_count"),
         "book_crosswalk_backlog_cards": book_crosswalk_summary.get("roadmap_backlog_item_count"),
@@ -1000,6 +1103,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         + rlds_minari_result.get("expected_invalid_control_count", 0)
         + module_dod_result.get("expected_invalid_control_count", 0)
         + project_registry_result.get("expected_invalid_control_count", 0)
+        + assistant_trace_result.get("expected_invalid_control_count", 0)
         + book_crosswalk_result.get("expected_invalid_control_count", 0)
         + work_board_result.get("expected_invalid_control_count", 0),
         "no_promotion_decisions": 3,
@@ -1030,6 +1134,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| RLDS/Minari trace-export imports | {metrics['rlds_minari_trace_export_imports']} |",
             f"| Module definition-of-done imports | {metrics['module_dod_imports']} |",
             f"| Project-registry imports | {metrics['project_registry_imports']} |",
+            f"| Assistant reference-trace imports | {metrics['assistant_reference_trace_imports']} |",
             f"| Book-to-Theseus crosswalk pointer imports | {metrics['book_crosswalk_imports']} |",
             f"| Work-board metadata imports | {metrics['work_board_imports']} |",
             f"| Replayed validators in support probe | {metrics['support_replay_commands']} |",
@@ -1052,6 +1157,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Accepted bounded RLDS/Minari trace-export transitions | {metrics['rlds_minari_upward_transitions']} |",
             f"| Accepted bounded module definition-of-done transitions | {metrics['module_dod_upward_transitions']} |",
             f"| Accepted bounded project-registry transitions | {metrics['project_registry_upward_transitions']} |",
+            f"| Accepted bounded assistant reference-trace transitions | {metrics['assistant_reference_trace_upward_transitions']} |",
             f"| Book-to-Theseus public-safe pointer rows | {metrics['book_crosswalk_pointer_rows']} |",
             f"| Work-board durable task rows | {metrics['work_board_task_rows']} |",
             "",
@@ -1078,6 +1184,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `evidence_transitions/v1_x_measured/theseus_module_definition_of_done_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import`; it does not prove module capability, clean live Project Theseus replay, deployed behavior, model quality, or any chapter core claim.",
             f"- `docs/theseus_project_registry_import.md` records one sanitized project-registry import with {metrics['project_registry_registered_paths']} registered paths out of {metrics['project_registry_entry_count']} entries, {metrics['project_registry_surface_count']} surfaces, {metrics['project_registry_unregistered_active_sources']} unregistered active sources, {metrics['project_registry_unclassified_duplicates']} unclassified duplicate families, {metrics['project_registry_stale_report_outputs']} stale report outputs, {metrics['project_registry_missing_report_outputs']} missing report outputs, {metrics['project_registry_generated_source_artifacts']} generated source artifacts, {metrics['project_registry_governance_violations']} registry-governance violations, {metrics['project_registry_hard_governance_violations']} hard governance violations, and {metrics['project_registry_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`; it does not prove clean live Project Theseus replay, deployment, model quality, self-evolution safety, or any chapter core claim.",
+            f"- `docs/theseus_assistant_reference_trace_import.md` records one sanitized assistant reference-trace import with {metrics['assistant_reference_trace_record_types']} required trace record types, {metrics['assistant_reference_trace_gates_passed']}/{metrics['assistant_reference_trace_gate_count']} gates, {metrics['assistant_reference_trace_viea_records']} VIEA view records, {metrics['assistant_reference_trace_vcm_pages']} selected VCM pages, {metrics['assistant_reference_trace_public_training_rows']} public training rows, {metrics['assistant_reference_trace_external_inference_calls']} external inference calls, and {metrics['assistant_reference_trace_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_assistant_reference_trace_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.assistant_reference_trace_import`; it does not prove clean live Project Theseus replay, current runtime state, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, safety, ASI, or any chapter core claim.",
             f"- `docs/theseus_book_crosswalk_import.md` records one sanitized book-to-Theseus crosswalk pointer import with {metrics['book_crosswalk_pointer_rows']} public-safe pointer rows, {metrics['book_crosswalk_backlog_cards']} backlog cards, {metrics['book_crosswalk_source_sync_decisions']} source-sync review decisions, {metrics['book_crosswalk_changed_source_files']} changed AI-book source files, and {metrics['book_crosswalk_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json` is the accepted no-promotion decision for `project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer`; it keeps the crosswalk pointer at `argument` and blocks clean-live-replay, model-quality, deployment, support-state, and chapter-core promotion claims.",
             f"- `docs/theseus_work_board_import.md` records one sanitized work-board metadata import with {metrics['work_board_task_rows']} durable task rows, {metrics['work_board_event_rows']} event rows, {metrics['work_board_evidence_rows']} evidence rows, {metrics['work_board_sqlite_tables']} SQLite tables, {metrics['work_board_execution_ledger_rows']} execution-ledger row, {metrics['work_board_unattended_improvement_rows']} unattended-improvement rows, {metrics['work_board_feedback_rows']} feedback rows, a {metrics['work_board_status_age_days']}-day stale-snapshot boundary, zero public training rows, zero external inference calls, and {metrics['work_board_expected_invalid']} expected-invalid controls.",
@@ -1095,6 +1203,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "- The RLDS/Minari trace-export import creates only a bounded non-core support transition; it does not prove RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, model quality, economic outcome, clean live Project Theseus replay, deployment readiness, safety, alignment, transfer, or ASI.",
             "- The module definition-of-done import creates only a bounded non-core support transition; it does not prove module capability, deployed Theseus behavior, model quality, benchmark performance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The project-registry import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, or any chapter core claim.",
+            "- The assistant reference-trace import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, current runtime state, deployed behavior, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, safety, alignment, deployment readiness, or ASI.",
             "- The book-to-Theseus crosswalk import is pointer-only and creates no upward support-state transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, artifact truth for referenced rows, or any chapter core claim.",
             "- The work-board metadata import is a stale snapshot and creates no upward support-state transition; it does not prove clean live Project Theseus replay, current board state, current dashboard state, deployment, model quality, unattended safety, self-evolution safety, or any chapter core claim.",
             "",

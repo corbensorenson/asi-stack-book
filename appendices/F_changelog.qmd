@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-06 - Import Theseus assistant reference trace
+
+- Added a sanitized Project Theseus assistant reference-trace import with source
+  digests, 19 required trace record types, 27/27 gates, 2,203 VIEA view
+  records, 12 selected VCM pages, zero public training rows, zero external
+  inference calls, and 11 expected-invalid controls.
+- Added `scripts/validate_theseus_assistant_reference_trace_import.py`,
+  fixture/result artifacts under
+  `experiments/theseus_assistant_reference_trace_import/`, Lean bridge
+  `lean:theseus.reference.assistant_reference_trace_import.fixture_bridge`, and
+  accepted bounded transition
+  `evidence_transitions/v1_x_measured/theseus_assistant_reference_trace_import_prototype_backed.json`
+  for
+  `project-theseus-as-report-first-implementation-reference.assistant_reference_trace_import`.
+- Updated the outline, manifest, non-core evidence ledger, active evidence
+  cycle, Project Theseus static-import ledger, roadmap, generated Codex test
+  appendix, proof manifest, proof triage, and validation suite so the
+  reference-trace import is first-class evidence rather than a dashboard note.
+- Boundary: this is a sanitized digest-and-count import from a dirty Theseus
+  checkout. It does not copy raw reports, raw VIEA traces, raw assistant text,
+  raw prompts, private paths, checkpoints, tests, solutions, score labels,
+  candidate code, or training rows into the public book. It does not prove clean
+  live Project Theseus replay, current runtime state, route quality, private
+  verifier quality, model quality, benchmark superiority, useful-solution-per-
+  second improvement, safety, ASI, or chapter-core promotion.
+
 ## 2026-07-06 - Import Theseus work-board metadata boundary
 
 - Added a sanitized Project Theseus work-board metadata import with 130 durable
@@ -66,9 +92,9 @@
 - Updated `docs/v1_x_beyond_sota_roadmap.md` after review of the latest
   roadmap critique and local ledgers.
 - Promoted the evidence-dimension roadmap grade from `B+` to `A-` in the
-  execution compass, matching the current non-core evidence ledger: 12 accepted
-  narrow upward transitions, including 1 empirical, 4 synthetic, and 7
-  prototype-backed transitions.
+  execution compass, matching the then-current non-core evidence ledger: 12
+  accepted narrow upward transitions, including 1 empirical, 4 synthetic, and
+  7 prototype-backed transitions.
 - Replaced the uncommitted reader-release addendum with a stricter stop rule:
   the next reader step is an honest approved-or-still-blocked text-edition
   release record for exact HTML/EPUB/DOCX/PDF artifacts, while audio remains a
@@ -85,7 +111,7 @@
   and accepted-transition audit ledgers.
 - The roadmap now reports 209 proof targets, 54 Lean modules, 1040 theorem
   declarations, 850 derived/decomposed declarations, 186 direct/projection
-  declarations, 77 accepted transition records, twelve accepted narrow
+  declarations, 77 accepted transition records, then-twelve accepted narrow
   non-core upward transitions, and 40 accepted `blocks_promotion` side-lane
   decisions.
 - Added a roadmap implementation note for the sanitized Project Theseus
@@ -114,7 +140,7 @@
   rows, zero external inference calls, source-digest continuity, and seven
   expected-invalid overclaim controls for
   `resource-economics.theseus_rlds_minari_trace_export_import`.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 209 proof targets, 54 Lean modules, 1040 theorem declarations, 850 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 210 proof targets, 54 Lean modules, 1046 theorem declarations, 856 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Boundary: this does not prove RLDS dataset correctness, Minari dataset
   quality, simulator adequacy, replay success, physical feasibility, clean live
   Project Theseus replay, model quality, economic outcome, deployment

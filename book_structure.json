@@ -12491,6 +12491,13 @@
               "status": "implemented; passing via `python3 scripts/validate_theseus_work_board_import.py`"
             },
             {
+              "name": "Theseus assistant reference-trace import validation",
+              "purpose": "Validate a sanitized public-safe Project Theseus assistant reference-trace import with source digests, 19 required reference-trace record types, 27/27 gates, 2,203 VIEA view records, 12 selected VCM pages, public-safety redaction boundary, accepted bounded non-core transition, and expected-invalid controls.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_theseus_assistant_reference_trace_import.py`; result `theseus-assistant-reference-trace-import-2026-07-06` checks 19 required trace record types, 27/27 gates, 2,203 VIEA view records, 11 expected-invalid controls, and bounded claim `project-theseus-as-report-first-implementation-reference.assistant_reference_trace_import` from `argument` to `prototype-backed`; does not prove clean live Project Theseus replay, current runtime state, deployment, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second, safety, ASI, or chapter-core promotion",
+              "status": "implemented; passing via `python3 scripts/validate_theseus_assistant_reference_trace_import.py`"
+            },
+            {
               "name": "Report-bundle completeness test",
               "purpose": "Check that a public-safe bundle contains a goal contract, plan/compiler artifact, work-board item, gate record, residual, non-claim, review note, and publication boundary before being cited as imported.",
               "implementation_status": "implemented",
@@ -12646,6 +12653,12 @@
               "tag": "lean:theseus.reference.project_registry_import.fixture_bridge",
               "module": "AsiStackProofs.TheseusReference",
               "target": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
+              "module": "AsiStackProofs.TheseusReference",
+              "target": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
               "status": "implemented"
             }
           ]

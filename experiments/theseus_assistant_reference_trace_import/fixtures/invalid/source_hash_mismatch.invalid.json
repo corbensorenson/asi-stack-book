@@ -1,0 +1,10 @@
+{
+  "invalid_id": "source_hash_mismatch",
+  "mutations": [
+    {
+      "path": "source_reports.assistant_runtime_report.sha256",
+      "value": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "expected_error": "source_reports.assistant_runtime_report.sha256"
+}

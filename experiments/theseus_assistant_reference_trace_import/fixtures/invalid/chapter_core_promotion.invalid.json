@@ -1,0 +1,14 @@
+{
+  "invalid_id": "chapter_core_promotion",
+  "mutations": [
+    {
+      "path": "claim_boundary.chapter_core_promotion_claimed",
+      "value": true
+    },
+    {
+      "path": "chapter_core_support_effect",
+      "value": "promotes"
+    }
+  ],
+  "expected_error": "chapter_core"
+}

@@ -36,6 +36,7 @@ EXPECTED_NON_CORE = {
     "resource-economics.theseus_rlds_minari_trace_export_import": "prototype-backed",
     "project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import": "prototype-backed",
     "project-theseus-as-report-first-implementation-reference.project_registry_reality_import": "prototype-backed",
+    "project-theseus-as-report-first-implementation-reference.assistant_reference_trace_import": "prototype-backed",
 }
 
 REQUIRED_LINKS = [
@@ -172,7 +173,7 @@ def assert_surface(
         f"{sources} public-safe records",
         f"{chapters}/{chapters} chapters externally positioned",
         "0 explicit external-baseline exceptions",
-        "Twelve narrow non-core transitions are accepted",
+        "Thirteen narrow non-core transitions are accepted",
         f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions",
         f"{high} high-priority",
         f"{medium} medium-priority",
@@ -197,8 +198,8 @@ def assert_surface(
         if phrase not in text:
             errors.append(f"{name} missing non-claim boundary: {phrase}")
 
-    if "twelve narrow non-core transitions are accepted" not in text.lower():
-        errors.append(f"{name} missing current twelve-transition count")
+    if "thirteen narrow non-core transitions are accepted" not in text.lower():
+        errors.append(f"{name} missing current thirteen-transition count")
     if f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions" not in text:
         errors.append(f"{name} missing current no-promotion side-lane count")
 

@@ -1,0 +1,10 @@
+{
+  "invalid_id": "model_quality_overclaim",
+  "mutations": [
+    {
+      "path": "claim_boundary.model_quality_claimed",
+      "value": true
+    }
+  ],
+  "expected_error": "model_quality_claimed"
+}
