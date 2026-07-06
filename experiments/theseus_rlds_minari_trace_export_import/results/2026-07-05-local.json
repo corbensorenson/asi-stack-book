@@ -1,0 +1,36 @@
+{
+  "chapter_core_support_effect": "none",
+  "claim_id": "resource-economics.theseus_rlds_minari_trace_export_import",
+  "expected_invalid_control_count": 7,
+  "export_count": 1,
+  "field_count": 7,
+  "fixture_sha256": "f306619fc3a69b7f82de36f8b004d4d1fc3b428235f6bbb6ad1fe58224b01469",
+  "format_count": 3,
+  "import_id": "theseus-rlds-minari-trace-export-import-2026-07-05",
+  "license_metadata_required": true,
+  "manifest_count": 1,
+  "new_support_state": "prototype-backed",
+  "non_claims": [
+    "does not copy the raw Project Theseus report, episode payload, private traces, checkpoints, prompts, tests, solutions, score labels, or training rows into this public repository",
+    "does not prove RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, model quality, economic outcome, clean live Project Theseus replay, deployment readiness, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "public_safety": {
+    "external_inference_calls": 0,
+    "fallback_return_count": 0,
+    "public_training_rows_written": 0,
+    "raw_episode_payload_copied": false,
+    "training_rows_published": false
+  },
+  "ready_count": 1,
+  "ready_manifest_count": 1,
+  "replay_smoke_required": true,
+  "schema_version": "asi_stack.theseus_rlds_minari_trace_export_import.result.v0",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_commit": "1ad88a22",
+  "source_policy": "trainer_rlds_minari_trace_export_v0",
+  "source_report_sha256": "989b413f887d76e29bb0b57f0656e670c2e6bb9657603aa7f5545b26f5936ccc",
+  "source_status": "READY",
+  "support_state_effect": "bounded_non_core_transition_only",
+  "validation_result": "pass"
+}

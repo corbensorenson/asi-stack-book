@@ -1,0 +1,109 @@
+{
+  "transition_id": "v1_x_measured.theseus_rlds_minari_trace_export_import.prototype_backed",
+  "claim_id": "resource-economics.theseus_rlds_minari_trace_export_import",
+  "claim_surface_refs": [
+    "docs/theseus_rlds_minari_trace_export_import.md",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "editions/reader_manuscript/v1_0/chapters/resource-economics-and-token-budgets.qmd",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/valid/rlds_minari_trace_export_import.valid.json",
+    "experiments/theseus_rlds_minari_trace_export_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_rlds_minari_trace_export_import.py",
+    "lean/AsiStackProofs/SimulationFidelity.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "prototype-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded Project Theseus RLDS/Minari trace-export import moves to prototype-backed: a sanitized public-safe fixture records one READY export manifest with three declared formats, seven declared fields, required license metadata, required replay smoke, zero public training rows, zero external inference calls, no copied episode payload, and seven expected-invalid controls. This does not promote the Resource Economics chapter core claim, prove RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, model quality, economic outcome, clean live Project Theseus replay, deployment readiness, safety, alignment, transfer, or ASI.",
+  "evidence_roles": [
+    "external_project_prototype_report_import",
+    "sanitized_public_fixture",
+    "trace_export_readiness_summary",
+    "license_metadata_gate",
+    "replay_smoke_gate",
+    "expected_invalid_controls",
+    "lean_python_fixture_alignment",
+    "no_chapter_core_promotion_boundary"
+  ],
+  "transition_reason": "The imported Theseus report records a concrete trace-export readiness boundary rather than only a proposed simulation-data vocabulary: the source report is READY, the public-safe fixture preserves the exact source digest, one export id, RLDS/Minari-oriented formats, seven required episode fields, license-metadata and replay-smoke requirements, and explicit public-safety/non-claim boundaries. That is enough to accept the narrow import claim as prototype-backed while keeping dataset correctness, replay success, simulator adequacy, model quality, and chapter-core claims at argument.",
+  "required_artifacts": [
+    "sanitized public-safe Theseus RLDS/Minari trace-export fixture",
+    "source report digest",
+    "export readiness counts",
+    "declared format and field list",
+    "license metadata and replay-smoke gate fields",
+    "public-safety redaction boundary",
+    "negative controls for source hash mismatch, private-payload copying, not-ready status, missing license metadata, missing replay-smoke requirement, support-promotion overclaim, and dataset-quality overclaim",
+    "finite Lean fixture alignment",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/theseus_rlds_minari_trace_export_import.md",
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/valid/rlds_minari_trace_export_import.valid.json",
+    "experiments/theseus_rlds_minari_trace_export_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_rlds_minari_trace_export_import.py",
+    "lean/AsiStackProofs/SimulationFidelity.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/theseus_rlds_minari_trace_export_import.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/G_corben_source_corpus.qmd#project_theseus_whitepaper",
+    "docs/book_outline.md#resource-economics-and-token-budgets"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_rlds_minari_trace_export_import.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_non_core_evidence_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "source report hash mismatch is rejected",
+    "private payload or episode payload copying is rejected",
+    "not-ready export status is rejected",
+    "missing license metadata requirement is rejected",
+    "missing replay-smoke requirement is rejected",
+    "chapter-core support-promotion overclaim is rejected",
+    "dataset-quality, simulator-adequacy, and replay-success overclaims are rejected",
+    "no chapter core claim is promoted"
+  ],
+  "negative_evidence_refs": [
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/invalid/private_payload_copied.invalid.json",
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/invalid/not_ready_status.invalid.json",
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/invalid/missing_license_metadata.invalid.json",
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/invalid/missing_replay_smoke.invalid.json",
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/invalid/support_promotion_overclaim.invalid.json",
+    "experiments/theseus_rlds_minari_trace_export_import/fixtures/invalid/dataset_quality_overclaim.invalid.json"
+  ],
+  "downgrade_triggers": [
+    "the sanitized fixture no longer validates against the recorded source report digest, source checkout boundary, export count, format list, field list, license metadata requirement, replay-smoke requirement, public-safety boundary, or non-claim boundary",
+    "a source hash mismatch, private payload copy, not-ready export, missing license metadata requirement, missing replay-smoke requirement, support promotion overclaim, or dataset-quality overclaim is accepted as valid",
+    "the imported report is described as RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, model quality, economic outcome, clean live Project Theseus replay, deployment readiness, safety, ASI, or chapter-core evidence",
+    "future public dependency policy requires archived raw report publication and this record remains a digest-only sanitized summary"
+  ],
+  "promotion_burden": "Move beyond this bounded prototype-backed import only after a public-safe archived Theseus report bundle or clean live replay is available, raw/private trace publication boundaries are resolved, exported RLDS/Minari artifacts can be externally inspected, replay smoke is executed and recorded, dataset-quality and simulator-adequacy checks are separately reviewed, residuals and non-claims are preserved, and independent review is recorded with a separate accepted transition.",
+  "limitations": [
+    "sanitized digest-and-count import only",
+    "raw Theseus report and episode payloads are not copied into this public repository",
+    "source checkout was dirty at import review",
+    "local maintainer-agent review only",
+    "records that replay smoke is required, not that replay smoke passed",
+    "does not prove RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, model quality, economic outcome, clean live Project Theseus replay, deployment readiness, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent RLDS reviewer, Minari reviewer, simulator reviewer, dataset-quality reviewer, benchmark reviewer, safety auditor, or Project Theseus reviewer",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-05---import-theseus-rldsminari-trace-export",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not copy the raw Project Theseus report, episode payload, private traces, checkpoints, prompts, tests, solutions, score labels, or training rows into this public repository",
+    "does not prove RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, model quality, economic outcome, clean live Project Theseus replay, deployment readiness, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}

@@ -312,6 +312,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Resource-bound simulation sanity check | implemented | passing via `python3 scripts/validate_simulation_transfer_boundaries.py`; deterministic fixture discipline only |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Simulation approximation audit | implemented | passing via `python3 scripts/validate_simulation_transfer_boundaries.py`; no support-state promotion |
 | `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Theseus simulation-fidelity receipt suite import | implemented | passing via `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`; narrow import claim `resource-economics.simulation_fidelity_receipt_suite_import` only is prototype-backed; no simulator-adequacy, physical-feasibility, benchmark-transfer, native-KV-parity, deployment, model-quality, economic-outcome, clean-live-Theseus-replay, or chapter-core-promotion claim |
+| `resource-economics-and-token-budgets` | Resource Economics and Token Budgets | Theseus RLDS/Minari trace export import | implemented | passing via `python3 scripts/validate_theseus_rlds_minari_trace_export_import.py`; narrow import claim `resource-economics.theseus_rlds_minari_trace_export_import` only is prototype-backed; no RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, model-quality, clean-live-Theseus-replay, or chapter-core-promotion claim |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Required-field negative case | implemented | passes via Lean negative case; no substrate-quality claim |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Unproven qualified-state negative case | implemented | passes via Lean negative case; no core-substrate promotion claim |
 | `mathematical-and-search-substrates` | Mathematical and Search Substrates | Qualified-without-evidence negative case | implemented | passes via Lean negative case; no empirical substrate result |
@@ -507,16 +508,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 206 |
+| Proof targets covered by triage | 207 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 206 |
+| implemented | 207 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 206 |
+| implemented | formal-invariant | lean-candidate | 207 |

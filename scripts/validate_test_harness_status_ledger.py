@@ -220,6 +220,13 @@ BOOK_GATE_CHECKS = [
         "boundary": "No simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, model quality, clean live replay, safety, ASI, or chapter-core claim.",
     },
     {
+        "name": "Theseus RLDS/Minari trace export import",
+        "doc": "docs/theseus_rlds_minari_trace_export_import.md",
+        "script": "scripts/validate_theseus_rlds_minari_trace_export_import.py",
+        "summary": "Sanitized RLDS/Minari trace-export readiness import with one READY export, format and field checks, license/replay gates, public-safety checks, and seven controls.",
+        "boundary": "No RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, model quality, clean live replay, ASI, or chapter-core claim.",
+    },
+    {
         "name": "Compact GVR synthetic slice",
         "doc": "docs/compact_gvr_slice.md",
         "script": "scripts/validate_compact_gvr_slice.py",
@@ -391,6 +398,7 @@ BOOK_GATE_RESULTS_BY_SCRIPT = {
     "scripts/validate_theseus_artifact_retention_replay_import.py": "experiments/theseus_artifact_retention_replay_import/results/2026-07-05-local.json",
     "scripts/validate_theseus_governance_rights_receipt_suite_import.py": "experiments/theseus_governance_rights_receipt_suite_import/results/2026-07-05-local.json",
     "scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py": "experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json",
+    "scripts/validate_theseus_rlds_minari_trace_export_import.py": "experiments/theseus_rlds_minari_trace_export_import/results/2026-07-05-local.json",
     "scripts/validate_compact_gvr_slice.py": "experiments/compact_gvr_slice/results/2026-07-01-local.json",
     "scripts/validate_residual_ledger_storage_replay.py": "experiments/residual_ledger_storage_replay/results/2026-07-04-local.json",
     "scripts/validate_hive_admission.py": "experiments/hive_admission/results/2026-07-01-local.md",
@@ -543,8 +551,8 @@ def validate(args: argparse.Namespace) -> list[str]:
         return ["experiments/phase5_harness_registry.json must contain a list."]
     if len(registry) != 22:
         errors.append(f"Expected 22 Phase 5 registry harnesses, found {len(registry)}.")
-    if len(BOOK_GATE_CHECKS) != 48:
-        errors.append(f"Expected 48 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
+    if len(BOOK_GATE_CHECKS) != 49:
+        errors.append(f"Expected 49 book-gate checks, found {len(BOOK_GATE_CHECKS)}.")
 
     names = [check["name"] for check in BOOK_GATE_CHECKS]
     duplicates = sorted({name for name in names if names.count(name) > 1})

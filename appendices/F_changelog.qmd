@@ -1,5 +1,31 @@
 # Changelog
 
+## 2026-07-05 - Import Theseus RLDS/Minari trace export boundary
+
+- Added `scripts/validate_theseus_rlds_minari_trace_export_import.py`,
+  `docs/theseus_rlds_minari_trace_export_import.md`, fixture/result artifacts,
+  `experiments/theseus_rlds_minari_trace_export_import/results/2026-07-05-local.json`,
+  and accepted bounded transition
+  `evidence_transitions/v1_x_measured/theseus_rlds_minari_trace_export_import_prototype_backed.json`.
+- Added the Lean bridge
+  `lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge`
+  in `AsiStackProofs.SimulationFidelity` and wired it through the outline,
+  proof manifest, proof triage, Resource Economics chapter hooks, Appendix E,
+  non-core evidence ledger, Project Theseus static-import ledger, test-harness
+  ledger, and publication validation.
+- The import records a sanitized READY Project Theseus RLDS/Minari export
+  summary with three declared formats, seven declared fields,
+  license-metadata and replay-smoke requirements, zero copied public training
+  rows, zero external inference calls, source-digest continuity, and seven
+  expected-invalid overclaim controls for
+  `resource-economics.theseus_rlds_minari_trace_export_import`.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 207 proof targets, 54 Lean modules, 1034 theorem declarations, 844 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Boundary: this does not prove RLDS dataset correctness, Minari dataset
+  quality, simulator adequacy, replay success, physical feasibility, clean live
+  Project Theseus replay, model quality, economic outcome, deployment
+  readiness, ASI, support-state promotion, or any Resource Economics chapter
+  core claim above `argument`.
+
 ## 2026-07-05 - Import Theseus book-to-Theseus crosswalk pointer
 
 - Added a sanitized Project Theseus book-to-Theseus crosswalk import with 53

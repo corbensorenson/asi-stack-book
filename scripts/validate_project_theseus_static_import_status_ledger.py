@@ -85,6 +85,27 @@ SIMULATION_TRANSITION = (
     / "v1_x_measured"
     / "theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json"
 )
+RLDS_MINARI_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_rlds_minari_trace_export_import"
+    / "results"
+    / "2026-07-05-local.json"
+)
+RLDS_MINARI_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_rlds_minari_trace_export_import"
+    / "fixtures"
+    / "valid"
+    / "rlds_minari_trace_export_import.valid.json"
+)
+RLDS_MINARI_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_rlds_minari_trace_export_import_prototype_backed.json"
+)
 MODULE_DOD_RESULT = (
     ROOT
     / "experiments"
@@ -157,6 +178,7 @@ DOCS = (
     "docs/theseus_artifact_retention_replay_import.md",
     "docs/theseus_governance_rights_receipt_suite_import.md",
     "docs/theseus_simulation_fidelity_receipt_suite_import.md",
+    "docs/theseus_rlds_minari_trace_export_import.md",
     "docs/theseus_module_definition_of_done_import.md",
     "docs/theseus_project_registry_import.md",
     "docs/theseus_book_crosswalk_import.md",
@@ -170,6 +192,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_artifact_retention_replay_import.py",
     "python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py",
     "python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py",
+    "python3 scripts/validate_theseus_rlds_minari_trace_export_import.py",
     "python3 scripts/validate_theseus_module_definition_of_done_import.py",
     "python3 scripts/validate_theseus_project_registry_import.py",
     "python3 scripts/validate_theseus_book_crosswalk_import.py",
@@ -201,6 +224,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['artifact_retention_replay_imports']} artifact-retention replay import, "
         f"{metrics['governance_rights_receipt_imports']} governance-rights receipt import, "
         f"{metrics['simulation_fidelity_receipt_imports']} simulation-fidelity receipt import, "
+        f"{metrics['rlds_minari_trace_export_imports']} RLDS/Minari trace-export import, "
         f"{metrics['module_dod_imports']} module definition-of-done import, "
         f"{metrics['project_registry_imports']} project-registry import, "
         f"{metrics['book_crosswalk_imports']} book-to-Theseus crosswalk pointer import, "
@@ -214,6 +238,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['artifact_upward_transitions']} accepted bounded artifact-retention transition, "
         f"{metrics['governance_rights_upward_transitions']} accepted bounded governance-rights transition, "
         f"{metrics['simulation_fidelity_upward_transitions']} accepted bounded simulation-fidelity transition, "
+        f"{metrics['rlds_minari_upward_transitions']} accepted bounded RLDS/Minari trace-export transition, "
         f"{metrics['module_dod_upward_transitions']} accepted bounded module definition-of-done transition, "
         f"and {metrics['project_registry_upward_transitions']} accepted bounded project-registry transition; "
         f"{metrics['book_crosswalk_pointer_rows']} public-safe pointer rows; "
@@ -243,6 +268,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         SIMULATION_RESULT,
         SIMULATION_FIXTURE,
         SIMULATION_TRANSITION,
+        RLDS_MINARI_RESULT,
+        RLDS_MINARI_FIXTURE,
+        RLDS_MINARI_TRANSITION,
         MODULE_DOD_RESULT,
         MODULE_DOD_FIXTURE,
         MODULE_DOD_TRANSITION,
@@ -277,6 +305,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     simulation_result = load_json(SIMULATION_RESULT)
     simulation_fixture = load_json(SIMULATION_FIXTURE)
     simulation_transition = load_json(SIMULATION_TRANSITION)
+    rlds_minari_result = load_json(RLDS_MINARI_RESULT)
+    rlds_minari_fixture = load_json(RLDS_MINARI_FIXTURE)
+    rlds_minari_transition = load_json(RLDS_MINARI_TRANSITION)
     module_dod_result = load_json(MODULE_DOD_RESULT)
     module_dod_fixture = load_json(MODULE_DOD_FIXTURE)
     module_dod_transition = load_json(MODULE_DOD_TRANSITION)
@@ -536,6 +567,61 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if "does not prove simulator adequacy" not in simulation_nonclaims:
         errors.append("Theseus simulation-fidelity receipt suite transition missing simulator-adequacy non-claim.")
 
+    rlds_minari_summary = rlds_minari_fixture.get("summary", {})
+    rlds_minari_export = rlds_minari_fixture.get("export_manifest", {})
+    rlds_minari_boundary = rlds_minari_fixture.get("claim_boundary", {})
+    rlds_minari_safety = rlds_minari_fixture.get("public_safety_boundary", {})
+    if rlds_minari_result.get("validation_result") != "pass":
+        errors.append("Theseus RLDS/Minari trace-export import result must pass.")
+    if rlds_minari_result.get("expected_invalid_control_count") != 7:
+        errors.append("Theseus RLDS/Minari trace-export import must keep seven expected-invalid controls.")
+    if rlds_minari_result.get("export_count") != 1 or rlds_minari_summary.get("export_count") != 1:
+        errors.append("Theseus RLDS/Minari trace-export import must keep one export.")
+    if rlds_minari_result.get("ready_count") != 1 or rlds_minari_summary.get("ready_count") != 1:
+        errors.append("Theseus RLDS/Minari trace-export import must keep one READY export.")
+    if rlds_minari_result.get("format_count") != 3 or len(rlds_minari_export.get("formats", [])) != 3:
+        errors.append("Theseus RLDS/Minari trace-export import must keep three formats.")
+    if rlds_minari_result.get("field_count") != 7 or len(rlds_minari_export.get("fields", [])) != 7:
+        errors.append("Theseus RLDS/Minari trace-export import must keep seven fields.")
+    if rlds_minari_result.get("license_metadata_required") is not True:
+        errors.append("Theseus RLDS/Minari trace-export import must require license metadata.")
+    if rlds_minari_result.get("replay_smoke_required") is not True:
+        errors.append("Theseus RLDS/Minari trace-export import must require replay smoke.")
+    if rlds_minari_result.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus RLDS/Minari trace-export import must remain prototype-backed.")
+    if rlds_minari_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus RLDS/Minari trace-export import must preserve chapter_core_support_effect none.")
+    if rlds_minari_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus RLDS/Minari trace-export import must preserve dirty-at-import boundary.")
+    for field in (
+        "chapter_core_promotion_claimed",
+        "rlds_dataset_correctness_claimed",
+        "minari_dataset_quality_claimed",
+        "simulator_adequacy_claimed",
+        "replay_success_claimed",
+        "training_data_publication_claimed",
+        "model_quality_claimed",
+        "economic_outcome_claimed",
+        "clean_live_theseus_replay_claimed",
+    ):
+        if rlds_minari_boundary.get(field) is not False:
+            errors.append(f"Theseus RLDS/Minari trace-export import must not overclaim {field}.")
+    if (
+        rlds_minari_safety.get("public_training_rows_written") != 0
+        or rlds_minari_safety.get("external_inference_calls") != 0
+        or rlds_minari_safety.get("raw_episode_payload_copied") is not False
+    ):
+        errors.append("Theseus RLDS/Minari trace-export import must keep zero public training rows, external inference calls, and copied episode payloads.")
+    if rlds_minari_transition.get("review_status") != "accepted":
+        errors.append("Theseus RLDS/Minari trace-export transition must remain accepted.")
+    if rlds_minari_transition.get("transition_effect") != "upward":
+        errors.append("Theseus RLDS/Minari trace-export transition_effect must remain upward.")
+    if rlds_minari_transition.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus RLDS/Minari trace-export transition must remain prototype-backed.")
+    rlds_minari_nonclaims = " ".join(str(item) for item in rlds_minari_transition.get("non_claims", []))
+    if "does not prove RLDS dataset correctness" not in rlds_minari_nonclaims:
+        errors.append("Theseus RLDS/Minari trace-export transition missing dataset-correctness non-claim.")
+
     module_dod_summary = module_dod_fixture.get("summary", {})
     module_dod_boundary = module_dod_fixture.get("claim_boundary", {})
     module_dod_safety = module_dod_result.get("public_safety", {})
@@ -702,6 +788,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "artifact_retention_replay_imports": 1,
         "governance_rights_receipt_imports": 1,
         "simulation_fidelity_receipt_imports": 1,
+        "rlds_minari_trace_export_imports": 1,
         "module_dod_imports": 1,
         "project_registry_imports": 1,
         "book_crosswalk_imports": 1,
@@ -758,6 +845,15 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "simulation_fidelity_blocked_transfers": simulation_summary.get("blocked_transfer_count"),
         "simulation_fidelity_downgraded_claims": simulation_summary.get("downgraded_claim_count"),
         "simulation_fidelity_upward_transitions": 1,
+        "rlds_minari_expected_invalid": rlds_minari_result.get("expected_invalid_control_count"),
+        "rlds_minari_export_count": rlds_minari_result.get("export_count"),
+        "rlds_minari_ready_count": rlds_minari_result.get("ready_count"),
+        "rlds_minari_manifest_count": rlds_minari_result.get("manifest_count"),
+        "rlds_minari_format_count": rlds_minari_result.get("format_count"),
+        "rlds_minari_field_count": rlds_minari_result.get("field_count"),
+        "rlds_minari_license_metadata_required": rlds_minari_result.get("license_metadata_required"),
+        "rlds_minari_replay_smoke_required": rlds_minari_result.get("replay_smoke_required"),
+        "rlds_minari_upward_transitions": 1,
         "module_dod_expected_invalid": module_dod_result.get("expected_invalid_control_count"),
         "module_dod_ready_records": module_dod_summary.get("module_records_ready"),
         "module_dod_total_records": module_dod_summary.get("module_record_count"),
@@ -789,6 +885,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         + artifact_result.get("expected_invalid_count", 0)
         + governance_result.get("expected_invalid_count", 0)
         + simulation_result.get("expected_invalid_count", 0)
+        + rlds_minari_result.get("expected_invalid_control_count", 0)
         + module_dod_result.get("expected_invalid_control_count", 0)
         + project_registry_result.get("expected_invalid_control_count", 0)
         + book_crosswalk_result.get("expected_invalid_control_count", 0),
@@ -817,6 +914,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Artifact-retention replay imports | {metrics['artifact_retention_replay_imports']} |",
             f"| Governance-rights receipt imports | {metrics['governance_rights_receipt_imports']} |",
             f"| Simulation-fidelity receipt imports | {metrics['simulation_fidelity_receipt_imports']} |",
+            f"| RLDS/Minari trace-export imports | {metrics['rlds_minari_trace_export_imports']} |",
             f"| Module definition-of-done imports | {metrics['module_dod_imports']} |",
             f"| Project-registry imports | {metrics['project_registry_imports']} |",
             f"| Book-to-Theseus crosswalk pointer imports | {metrics['book_crosswalk_imports']} |",
@@ -837,6 +935,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Accepted bounded artifact-retention transitions | {metrics['artifact_upward_transitions']} |",
             f"| Accepted bounded governance-rights transitions | {metrics['governance_rights_upward_transitions']} |",
             f"| Accepted bounded simulation-fidelity transitions | {metrics['simulation_fidelity_upward_transitions']} |",
+            f"| Accepted bounded RLDS/Minari trace-export transitions | {metrics['rlds_minari_upward_transitions']} |",
             f"| Accepted bounded module definition-of-done transitions | {metrics['module_dod_upward_transitions']} |",
             f"| Accepted bounded project-registry transitions | {metrics['project_registry_upward_transitions']} |",
             f"| Book-to-Theseus public-safe pointer rows | {metrics['book_crosswalk_pointer_rows']} |",
@@ -858,6 +957,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `evidence_transitions/v1_x_measured/theseus_governance_rights_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `moral-uncertainty-and-value-conflict.theseus_governance_rights_receipt_suite_import`; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, deployed governance, clean live Project Theseus replay, or any chapter core claim.",
             f"- `docs/theseus_simulation_fidelity_receipt_suite_import.md` records one sanitized simulation-fidelity receipt suite import with {metrics['simulation_fidelity_fixture_scenarios']} passed fixture scenarios, {metrics['simulation_fidelity_contract_records']} simulation contract records, {metrics['simulation_fidelity_world_adapter_receipts']} world-adapter receipts, {metrics['simulation_fidelity_evidence_transition_records']} evidence-transition records, {metrics['simulation_fidelity_failure_boundary_records']} failure-boundary records, {metrics['simulation_fidelity_blocked_transfers']} blocked transfer, {metrics['simulation_fidelity_downgraded_claims']} downgraded claim, and {metrics['simulation_fidelity_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json` is the accepted bounded upward transition for `resource-economics.simulation_fidelity_receipt_suite_import`; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, model quality, economic outcome, clean live Project Theseus replay, or any chapter core claim.",
+            f"- `docs/theseus_rlds_minari_trace_export_import.md` records one sanitized RLDS/Minari trace-export import with {metrics['rlds_minari_export_count']} READY export, {metrics['rlds_minari_manifest_count']} manifest, {metrics['rlds_minari_format_count']} declared formats, {metrics['rlds_minari_field_count']} declared fields, license metadata required `{metrics['rlds_minari_license_metadata_required']}`, replay smoke required `{metrics['rlds_minari_replay_smoke_required']}`, and {metrics['rlds_minari_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_rlds_minari_trace_export_import_prototype_backed.json` is the accepted bounded upward transition for `resource-economics.theseus_rlds_minari_trace_export_import`; it does not prove RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, model quality, economic outcome, clean live Project Theseus replay, or any chapter core claim.",
             f"- `docs/theseus_module_definition_of_done_import.md` records one sanitized module definition-of-done gate import with {metrics['module_dod_ready_records']}/{metrics['module_dod_total_records']} ready module records, {metrics['module_dod_hard_gaps']} hard gaps, {metrics['module_dod_warnings']} warnings, {metrics['module_dod_source_backlog_work_cards']} source-backlog work cards, and {metrics['module_dod_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_module_definition_of_done_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import`; it does not prove module capability, clean live Project Theseus replay, deployed behavior, model quality, or any chapter core claim.",
             f"- `docs/theseus_project_registry_import.md` records one sanitized project-registry import with {metrics['project_registry_registered_paths']} registered paths out of {metrics['project_registry_entry_count']} entries, {metrics['project_registry_surface_count']} surfaces, {metrics['project_registry_unregistered_active_sources']} unregistered active sources, {metrics['project_registry_unclassified_duplicates']} unclassified duplicate families, {metrics['project_registry_stale_report_outputs']} stale report outputs, {metrics['project_registry_missing_report_outputs']} missing report outputs, {metrics['project_registry_generated_source_artifacts']} generated source artifacts, {metrics['project_registry_governance_violations']} registry-governance violations, {metrics['project_registry_hard_governance_violations']} hard governance violations, and {metrics['project_registry_expected_invalid']} expected-invalid controls.",
@@ -874,6 +975,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "- The artifact-retention replay import creates only a bounded non-core support transition; it does not prove deployed residual-ledger storage, deployed artifact-graph behavior, clean live Project Theseus replay, model quality, benchmark performance, safety, alignment, deployment readiness, or ASI.",
             "- The governance-rights receipt suite import creates only a bounded non-core support transition; it does not prove legal rights, institutional governance, moral correctness, reviewer independence, export usability, safe fork execution, deployed governance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The simulation-fidelity receipt suite import creates only a bounded non-core support transition; it does not prove simulator adequacy, physical feasibility, benchmark transfer, native KV parity, deployment, live simulator behavior, model quality, economic outcome, learned generation, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
+            "- The RLDS/Minari trace-export import creates only a bounded non-core support transition; it does not prove RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, model quality, economic outcome, clean live Project Theseus replay, deployment readiness, safety, alignment, transfer, or ASI.",
             "- The module definition-of-done import creates only a bounded non-core support transition; it does not prove module capability, deployed Theseus behavior, model quality, benchmark performance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The project-registry import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, or any chapter core claim.",
             "- The book-to-Theseus crosswalk import is pointer-only and creates no upward support-state transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, artifact truth for referenced rows, or any chapter core claim.",

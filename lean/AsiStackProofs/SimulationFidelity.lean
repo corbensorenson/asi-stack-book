@@ -216,4 +216,143 @@ theorem theseus_simulation_fidelity_receipt_suite_import_native_kv_parity_overcl
   rw [claimed] at notClaimed
   cases notClaimed
 
+structure TheseusRldsMinariTraceExportImportSummary where
+  sourceDigestMatched : Bool
+  sourceCheckoutDirtyAtImport : Bool
+  sourceStatusReady : Bool
+  exportCount : Nat
+  readyExportCount : Nat
+  manifestCount : Nat
+  readyManifestCount : Nat
+  formatCount : Nat
+  fieldCount : Nat
+  licenseMetadataRequired : Bool
+  replaySmokeRequired : Bool
+  publicTrainingRowsWritten : Nat
+  externalInferenceCalls : Nat
+  fallbackReturnCount : Nat
+  rawReportCopied : Bool
+  episodePayloadCopied : Bool
+  privatePayloadCopied : Bool
+  privatePathFieldsRedacted : Bool
+  chapterCorePromotionClaimed : Bool
+  rldsDatasetCorrectnessClaimed : Bool
+  minariDatasetQualityClaimed : Bool
+  simulatorAdequacyClaimed : Bool
+  replaySuccessClaimed : Bool
+  modelQualityClaimed : Bool
+  cleanLiveTheseusReplayClaimed : Bool
+deriving DecidableEq, Repr
+
+structure TheseusRldsMinariTraceExportImportValid
+    (summary : TheseusRldsMinariTraceExportImportSummary) : Prop where
+  sourceBoundary :
+    summary.sourceDigestMatched = true ∧
+      summary.sourceCheckoutDirtyAtImport = true ∧
+        summary.sourceStatusReady = true
+  exportBoundary :
+    summary.exportCount = 1 ∧
+      summary.readyExportCount = 1 ∧
+        summary.manifestCount = 1 ∧
+          summary.readyManifestCount = 1 ∧
+            summary.formatCount = 3 ∧
+              summary.fieldCount = 7 ∧
+                summary.licenseMetadataRequired = true ∧
+                  summary.replaySmokeRequired = true
+  publicSafety :
+    summary.publicTrainingRowsWritten = 0 ∧
+      summary.externalInferenceCalls = 0 ∧
+        summary.fallbackReturnCount = 0 ∧
+          summary.rawReportCopied = false ∧
+            summary.episodePayloadCopied = false ∧
+              summary.privatePayloadCopied = false ∧
+                summary.privatePathFieldsRedacted = true
+  noCorePromotion : summary.chapterCorePromotionClaimed = false
+  noRldsDatasetCorrectnessClaim : summary.rldsDatasetCorrectnessClaimed = false
+  noMinariDatasetQualityClaim : summary.minariDatasetQualityClaimed = false
+  noSimulatorAdequacyClaim : summary.simulatorAdequacyClaimed = false
+  noReplaySuccessClaim : summary.replaySuccessClaimed = false
+  noModelQualityClaim : summary.modelQualityClaimed = false
+  noCleanLiveTheseusReplayClaim : summary.cleanLiveTheseusReplayClaimed = false
+
+def theseusRldsMinariTraceExportImportFixture :
+    TheseusRldsMinariTraceExportImportSummary :=
+  {
+    sourceDigestMatched := true,
+    sourceCheckoutDirtyAtImport := true,
+    sourceStatusReady := true,
+    exportCount := 1,
+    readyExportCount := 1,
+    manifestCount := 1,
+    readyManifestCount := 1,
+    formatCount := 3,
+    fieldCount := 7,
+    licenseMetadataRequired := true,
+    replaySmokeRequired := true,
+    publicTrainingRowsWritten := 0,
+    externalInferenceCalls := 0,
+    fallbackReturnCount := 0,
+    rawReportCopied := false,
+    episodePayloadCopied := false,
+    privatePayloadCopied := false,
+    privatePathFieldsRedacted := true,
+    chapterCorePromotionClaimed := false,
+    rldsDatasetCorrectnessClaimed := false,
+    minariDatasetQualityClaimed := false,
+    simulatorAdequacyClaimed := false,
+    replaySuccessClaimed := false,
+    modelQualityClaimed := false,
+    cleanLiveTheseusReplayClaimed := false
+  }
+
+theorem theseus_rlds_minari_trace_export_import_fixture_valid :
+    TheseusRldsMinariTraceExportImportValid
+      theseusRldsMinariTraceExportImportFixture := by
+  exact {
+    sourceBoundary := by decide,
+    exportBoundary := by decide,
+    publicSafety := by decide,
+    noCorePromotion := by decide,
+    noRldsDatasetCorrectnessClaim := by decide,
+    noMinariDatasetQualityClaim := by decide,
+    noSimulatorAdequacyClaim := by decide,
+    noReplaySuccessClaim := by decide,
+    noModelQualityClaim := by decide,
+    noCleanLiveTheseusReplayClaim := by decide
+  }
+
+theorem theseus_rlds_minari_trace_export_import_core_promotion_rejected
+    {summary : TheseusRldsMinariTraceExportImportSummary} :
+    summary.chapterCorePromotionClaimed = true ->
+    ¬ TheseusRldsMinariTraceExportImportValid summary := by
+  intro claimed valid
+  have notClaimed := valid.noCorePromotion
+  rw [claimed] at notClaimed
+  cases notClaimed
+
+theorem theseus_rlds_minari_trace_export_import_dataset_quality_overclaim_rejected
+    {summary : TheseusRldsMinariTraceExportImportSummary} :
+    summary.rldsDatasetCorrectnessClaimed = true ∨
+      summary.minariDatasetQualityClaimed = true ->
+    ¬ TheseusRldsMinariTraceExportImportValid summary := by
+  intro claimed valid
+  cases claimed with
+  | inl rldsClaimed =>
+      have notClaimed := valid.noRldsDatasetCorrectnessClaim
+      rw [rldsClaimed] at notClaimed
+      cases notClaimed
+  | inr minariClaimed =>
+      have notClaimed := valid.noMinariDatasetQualityClaim
+      rw [minariClaimed] at notClaimed
+      cases notClaimed
+
+theorem theseus_rlds_minari_trace_export_import_replay_success_overclaim_rejected
+    {summary : TheseusRldsMinariTraceExportImportSummary} :
+    summary.replaySuccessClaimed = true ->
+    ¬ TheseusRldsMinariTraceExportImportValid summary := by
+  intro claimed valid
+  have notClaimed := valid.noReplaySuccessClaim
+  rw [claimed] at notClaimed
+  cases notClaimed
+
 end AsiStackProofs.SimulationFidelity

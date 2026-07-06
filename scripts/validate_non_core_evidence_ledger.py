@@ -56,9 +56,17 @@ EXPECTED = {
         "state": "prototype-backed",
         "transition": "evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json",
     },
+    "resource-economics.theseus_rlds_minari_trace_export_import": {
+        "state": "prototype-backed",
+        "transition": "evidence_transitions/v1_x_measured/theseus_rlds_minari_trace_export_import_prototype_backed.json",
+    },
     "project-theseus-as-report-first-implementation-reference.module_definition_of_done_gate_import": {
         "state": "prototype-backed",
         "transition": "evidence_transitions/v1_x_measured/theseus_module_definition_of_done_import_prototype_backed.json",
+    },
+    "project-theseus-as-report-first-implementation-reference.project_registry_reality_import": {
+        "state": "prototype-backed",
+        "transition": "evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json",
     },
 }
 
@@ -66,7 +74,7 @@ NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
 
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
-    "Accepted non-core upward transitions | 10 narrow transitions.",
+    "Accepted non-core upward transitions | 12 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Accepted No-Promotion Side-Lane Decisions",
@@ -247,9 +255,9 @@ def main() -> None:
             errors.append(f"{name} does not reference {ref}")
 
     surface_counts = [
-        ("README.md", readme, "Ten narrow non-core transitions are accepted"),
-        ("index.qmd", index, "Ten narrow non-core evidence transitions accepted"),
-        ("index.qmd", index, "Ten narrow non-core transitions are accepted"),
+        ("README.md", readme, "Twelve narrow non-core transitions are accepted"),
+        ("index.qmd", index, "Twelve narrow non-core evidence transitions accepted"),
+        ("index.qmd", index, "Twelve narrow non-core transitions are accepted"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():

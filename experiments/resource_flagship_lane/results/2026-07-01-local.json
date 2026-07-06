@@ -63,7 +63,7 @@
   "command_records": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 33.662,
+      "elapsed_ms": 75.434,
       "exit_code": 0,
       "id": "costed_route_resource_slice",
       "output_excerpt": [
@@ -74,7 +74,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 32.097,
+      "elapsed_ms": 40.357,
       "exit_code": 0,
       "id": "resource_workflow_trace",
       "output_excerpt": [
@@ -85,7 +85,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 42.413,
+      "elapsed_ms": 27.599,
       "exit_code": 0,
       "id": "resource_budget_ledgers",
       "output_excerpt": [
@@ -96,7 +96,7 @@
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 72.212,
+      "elapsed_ms": 26.334,
       "exit_code": 0,
       "id": "capacity_smoothing",
       "output_excerpt": [
@@ -107,7 +107,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 197.033,
+      "elapsed_ms": 176.46,
       "exit_code": 0,
       "id": "resource_live_probe",
       "output_excerpt": [
@@ -118,7 +118,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workload_quality_probe.py",
-      "elapsed_ms": 1202.639,
+      "elapsed_ms": 1023.597,
       "exit_code": 0,
       "id": "resource_workload_quality_probe",
       "output_excerpt": [
@@ -129,7 +129,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_load_stability_probe.py",
-      "elapsed_ms": 80.462,
+      "elapsed_ms": 34.988,
       "exit_code": 0,
       "id": "resource_load_stability_probe",
       "output_excerpt": [
@@ -140,7 +140,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_ci_cost_profile.py",
-      "elapsed_ms": 53.248,
+      "elapsed_ms": 40.666,
       "exit_code": 0,
       "id": "resource_ci_cost_profile",
       "output_excerpt": [
@@ -151,7 +151,7 @@
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 26.576,
+      "elapsed_ms": 24.919,
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
       "output_excerpt": [
@@ -162,13 +162,13 @@
     },
     {
       "command": "python3 scripts/validate_evidence_transitions.py",
-      "elapsed_ms": 91.415,
+      "elapsed_ms": 41.807,
       "exit_code": 0,
       "id": "evidence_transitions",
       "output_excerpt": [
-        "Evidence transition validation passed: 76 record(s)."
+        "Evidence transition validation passed: 77 record(s)."
       ],
-      "output_sha256": "1b47307807ab60bb9e62b0fc1bd152fa3aedb2dcdf512bb8d6858f1e6b8ab3ce",
+      "output_sha256": "d0cbaf90db72e52d60a59c09b718c44683a72e6eda0782b5d77ee8ec2071ed6f",
       "role": "support_state_transition_boundary"
     }
   ],
@@ -290,20 +290,20 @@
       "claim_id": "resource-economics.scoped_workflow_trace_route_selector",
       "negative_control_route_id": "route://negative-no-op-success-text",
       "new_support_state": "empirical-test-backed",
-      "observed_selected_vs_baseline_elapsed_reduction_percent": 85.032,
+      "observed_selected_vs_baseline_elapsed_reduction_percent": 84.421,
       "selected_route_id": "route://selected-scoped-workflow-trace-validator",
       "support_state_effect": "eligible_for_bounded_evidence_review",
       "transition_validity_state": "review_accepted"
     },
     "workload_quality_probe": {
-      "baseline_elapsed_ms": 176.987,
+      "baseline_elapsed_ms": 205.083,
       "baseline_route_id": "route://baseline-full-resource-lane-replay",
-      "negative_control_elapsed_ms": 1.891,
+      "negative_control_elapsed_ms": 2.608,
       "negative_control_rejected": true,
       "negative_control_route_id": "route://negative-no-op-success-text",
-      "observed_selected_vs_baseline_elapsed_reduction_percent": 85.032,
+      "observed_selected_vs_baseline_elapsed_reduction_percent": 84.421,
       "probe_id": "resource-workload-quality-probe-2026-07-01-local",
-      "selected_elapsed_ms": 26.492,
+      "selected_elapsed_ms": 31.949,
       "selected_route_id": "route://selected-scoped-workflow-trace-validator",
       "support_state_effect": "none"
     }
@@ -327,7 +327,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "resource_flagship_lane_replay",
-  "recorded_at_utc": "2026-07-05T23:11:25Z",
+  "recorded_at_utc": "2026-07-05T23:56:20Z",
   "residuals": [
     "Accepted upward transitions remain scoped to non-core Resource claims: costed-route selection, finite synthetic load-smoothing selection, and local scoped workflow-trace route selection, not the chapter core claim.",
     "Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.",
@@ -455,16 +455,16 @@
       "sha256": "2e1a75f81f10c044287269fd9757110186da31b8b9877f0891d8f407aab17355"
     },
     {
-      "bytes": 7898,
+      "bytes": 7900,
       "lines": 185,
       "path": "experiments/resource_live_probe/results/2026-07-01-local.json",
-      "sha256": "4b812d9fc0a330d8f903fea3b40aa11580cf228a5bb8eabc29f4ae327466a102"
+      "sha256": "14cb60d1aaa1a8fef2ba001618cf64724ff205c6ec45d6ceba2b28ce401c9c9d"
     },
     {
-      "bytes": 8663,
+      "bytes": 8665,
       "lines": 225,
       "path": "experiments/resource_workload_quality_probe/results/2026-07-01-local.json",
-      "sha256": "382bf7c724be573af67bbae7460c9430a24dcca23080fcddbdb845bf153f987f"
+      "sha256": "c6392320e2518a5f1777cd91e1569bc48dea8926596e09356c0c19fa93d2ea10"
     },
     {
       "bytes": 19062,
@@ -491,10 +491,10 @@
       "sha256": "f5d768de3853d3479e2042aeb1d210a7e6f69776ec14975c03824e0f930bab86"
     },
     {
-      "bytes": 8507,
-      "lines": 219,
+      "bytes": 13715,
+      "lines": 358,
       "path": "lean/AsiStackProofs/SimulationFidelity.lean",
-      "sha256": "6db713ac8587380488ad14248f11d34a1e8af492e4d3502bc9657940b2a504c3"
+      "sha256": "7a66136e717937c44872fae66d3066693f87340108115626bfec77a7e5e6afcf"
     }
   ]
 }

@@ -8700,6 +8700,13 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_theseus_simulation_fidelity_receipt_suite_import.py`; narrow import claim `resource-economics.simulation_fidelity_receipt_suite_import` only is prototype-backed; no simulator-adequacy, physical-feasibility, benchmark-transfer, native-KV-parity, deployment, model-quality, economic-outcome, clean-live-Theseus-replay, or chapter-core-promotion claim",
               "status": "implemented by bounded Theseus simulation-fidelity receipt suite import; no chapter-core support-state promotion"
+            },
+            {
+              "name": "Theseus RLDS/Minari trace export import",
+              "purpose": "Check a sanitized Project Theseus RLDS/Minari trace-export readiness summary for one READY export manifest, three declared formats, seven declared fields, license-metadata and replay-smoke requirements, public-safety counts, seven expected-invalid overclaim controls, and non-claims.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_theseus_rlds_minari_trace_export_import.py`; narrow import claim `resource-economics.theseus_rlds_minari_trace_export_import` only is prototype-backed; no RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, model-quality, clean-live-Theseus-replay, or chapter-core-promotion claim",
+              "status": "implemented by bounded Theseus RLDS/Minari trace-export import; no chapter-core support-state promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ResourceEconomics",
@@ -8762,6 +8769,12 @@
               "tag": "lean:resource.simulation_fidelity.theseus_receipt_suite.fixture_bridge",
               "module": "AsiStackProofs.SimulationFidelity",
               "target": "A sanitized Project Theseus simulation-fidelity receipt-suite import records fixture, contract, adapter, record-count, public-safety, and non-promotion boundaries while rejecting chapter-core, physical-feasibility, benchmark-transfer, and native-KV-parity overclaims.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:resource.simulation_fidelity.theseus_rlds_minari_trace_export.fixture_bridge",
+              "module": "AsiStackProofs.SimulationFidelity",
+              "target": "A sanitized Project Theseus RLDS/Minari trace-export import records export readiness, format and field counts, license-metadata and replay-smoke requirements, public-safety boundaries, and no-promotion boundaries while rejecting chapter-core, dataset-quality, and replay-success overclaims.",
               "status": "implemented"
             }
           ],

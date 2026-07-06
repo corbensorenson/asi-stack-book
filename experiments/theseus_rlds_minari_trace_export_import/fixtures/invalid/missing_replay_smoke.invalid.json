@@ -1,0 +1,76 @@
+{
+  "schema_version": "asi_stack.theseus_rlds_minari_trace_export_import.v0",
+  "import_id": "theseus-rlds-minari-trace-export-import-2026-07-05",
+  "source_report_sha256": "989b413f887d76e29bb0b57f0656e670c2e6bb9657603aa7f5545b26f5936ccc",
+  "source_commit": "1ad88a22",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_report_path": "reports/rlds_minari_trace_export.json",
+  "source_policy": "trainer_rlds_minari_trace_export_v0",
+  "source_created_utc": "2026-06-18T21:58:35.101322+00:00",
+  "source_status": "READY",
+  "raw_report_copied": false,
+  "episode_payload_copied": false,
+  "private_payload_copied": false,
+  "private_path_fields_redacted": true,
+  "sanitized_for_public_repo": true,
+  "summary": {
+    "export_count": 1,
+    "ready_count": 1,
+    "manifest_count": 1,
+    "ready_manifest_count": 1,
+    "required_format_count": 3,
+    "required_field_count": 7,
+    "expected_invalid_control_count": 7
+  },
+  "export_manifest": {
+    "episode_source_report": "reports/pressure_source_gym_pybullet_drones_seed1.json",
+    "export_id": "rlds_8e527a30014ee580",
+    "formats": [
+      "theseus_episode_jsonl",
+      "rlds_manifest",
+      "minari_manifest"
+    ],
+    "fields": [
+      "observation_ref",
+      "action",
+      "reward",
+      "done",
+      "truncated",
+      "info",
+      "seed"
+    ],
+    "license_metadata_required": true,
+    "replay_smoke_required": false,
+    "ready": true
+  },
+  "public_safety_boundary": {
+    "public_training_rows_written": 0,
+    "external_inference_calls": 0,
+    "fallback_return_count": 0,
+    "raw_episode_payload_copied": false,
+    "training_rows_published": false
+  },
+  "claim_boundary": {
+    "chapter_core_promotion_claimed": false,
+    "rlds_dataset_correctness_claimed": false,
+    "minari_dataset_quality_claimed": false,
+    "simulator_adequacy_claimed": false,
+    "replay_success_claimed": false,
+    "training_data_publication_claimed": false,
+    "physical_feasibility_claimed": false,
+    "benchmark_transfer_claimed": false,
+    "deployment_claimed": false,
+    "model_quality_claimed": false,
+    "economic_outcome_claimed": false,
+    "clean_live_theseus_replay_claimed": false,
+    "safety_claimed": false,
+    "asi_claimed": false
+  },
+  "support_state_effect": "bounded_non_core_transition_only",
+  "chapter_core_support_effect": "none",
+  "non_claims": [
+    "does not copy the raw Project Theseus report, episode payload, private traces, checkpoints, prompts, tests, solutions, score labels, or training rows into this public repository",
+    "does not prove RLDS dataset correctness, Minari dataset quality, simulator adequacy, replay success, physical feasibility, benchmark transfer, model quality, economic outcome, clean live Project Theseus replay, deployment readiness, safety, alignment, transfer, or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}

@@ -317,6 +317,10 @@ REQUIRED = [
     "docs/theseus_simulation_fidelity_receipt_suite_import.md",
     "experiments/theseus_simulation_fidelity_receipt_suite_import/results/2026-07-05-local.json",
     "evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json",
+    "scripts/validate_theseus_rlds_minari_trace_export_import.py",
+    "docs/theseus_rlds_minari_trace_export_import.md",
+    "experiments/theseus_rlds_minari_trace_export_import/results/2026-07-05-local.json",
+    "evidence_transitions/v1_x_measured/theseus_rlds_minari_trace_export_import_prototype_backed.json",
     "scripts/validate_theseus_module_definition_of_done_import.py",
     "docs/theseus_module_definition_of_done_import.md",
     "experiments/theseus_module_definition_of_done_import/results/2026-07-05-local.json",
@@ -1245,6 +1249,7 @@ def main() -> None:
     run_validator("validate_theseus_artifact_retention_replay_import.py")
     run_validator("validate_theseus_governance_rights_receipt_suite_import.py")
     run_validator("validate_theseus_simulation_fidelity_receipt_suite_import.py")
+    run_validator("validate_theseus_rlds_minari_trace_export_import.py")
     run_validator("validate_theseus_module_definition_of_done_import.py")
     run_validator("validate_theseus_project_registry_import.py")
     run_validator("validate_theseus_book_crosswalk_import.py")

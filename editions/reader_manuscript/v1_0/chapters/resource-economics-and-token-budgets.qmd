@@ -276,6 +276,15 @@ physical feasibility, benchmark transfer, native KV parity, deployment, model
 quality, economic outcome, clean live Theseus replay, or the Resource
 Economics core claim.
 
+The Theseus RLDS/Minari trace-export import,
+`resource-economics.theseus_rlds_minari_trace_export_import`, is narrower
+still: one READY export manifest can be publicly summarized with three declared
+formats, seven declared fields, license metadata required, replay smoke
+required, zero external inference calls, and no copied episode payload. That is
+useful trace-export plumbing, not dataset quality, replay success, simulator
+adequacy, model quality, or evidence that the Resource Economics core claim is
+implemented.
+
 The workflow trace adds a second kind of proof bridge for the reader to notice.
 Instead of only naming the selected route, it carries three dispatch events:
 high-risk release review, source-crosswalk refresh, and low-risk index cleanup.
