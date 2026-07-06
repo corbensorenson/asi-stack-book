@@ -2,8 +2,8 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "pre_release_review_matrix",
-  "last_updated": "2026-07-05",
-  "purpose": "Track human-reader format artifact review separately from generated-reader chapter-text review and separately from edition release records, including the approved generated-reader HTML row and the current blocked curated-reader candidate.",
+  "last_updated": "2026-07-06",
+  "purpose": "Track human-reader format artifact review separately from generated-reader chapter-text review and separately from edition release records, including the approved generated-reader HTML row, the current blocked curated-reader text-edition decision, and the deferred audio lane.",
   "source_docs": [
     "docs/reader_format_dry_run.md",
     "docs/reader_artifact_inspection_manifest.md",
@@ -31,6 +31,7 @@
     "docs/reader_audio_narration_treatment_review.md",
     "release_records/2026-06-29-v1-reader-html-855dc277.json",
     "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
+    "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json",
     "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json",
     "docs/reader_epub_apple_books_review.md",
     "docs/reader_docx_text_fallback_review.md",
@@ -47,8 +48,8 @@
   },
   "current_curated_candidate": {
     "status": "partial_release_candidate_blocked",
-    "release_record_path": "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
-    "scope": "Tracked curated reader manuscript rendered into ignored local HTML, EPUB, DOCX, and PDF review artifacts, plus e-reader and audio release-preparation lanes.",
+    "release_record_path": "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json",
+    "scope": "Tracked curated reader manuscript rendered into ignored local HTML, EPUB, DOCX, and PDF review artifacts, plus e-reader application evidence. Audio is tracked as a separate deferred release lane and is not bundled into the text-edition release decision.",
     "release_blocker_counts": {
       "audio_edition_release_record_not_created": 1,
       "audio_embedded_epub_not_packaged_or_checked": 1,
@@ -76,7 +77,7 @@
           "docs/reader_final_figure_artifact_review.md#summary",
           "editions/reader_manuscript/v1_0/wcag_preparation_manifest.json",
           "docs/reader_wcag_preparation_review.md#decision",
-          "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json"
+          "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json"
         ],
         "release_blockers": [
           "screen_reader_review_not_completed",
@@ -100,7 +101,7 @@
           "docs/curated_reader_format_artifact_probe.md#epub-content-and-navigation-audit",
           "docs/reader_key_figure_epub_layout_review.md#summary",
           "docs/reader_final_figure_artifact_review.md#summary",
-          "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
+          "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json",
           "docs/reader_epub_apple_books_review.md#what-was-checked",
           "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json"
         ],
@@ -124,7 +125,7 @@
           "docs/curated_reader_format_artifact_probe.md#docx-libreoffice-headless-review",
           "docs/reader_key_figure_docx_layout_review.md#summary",
           "docs/reader_final_figure_artifact_review.md#summary",
-          "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
+          "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json",
           "docs/reader_docx_text_fallback_review.md#pages-observation",
           "editions/reader_manuscript/v1_0/docx_text_fallback_manifest.json",
           "docs/reader_docx_application_decision.md#decision",
@@ -153,7 +154,7 @@
           "docs/curated_reader_format_artifact_probe.md#pdf-chromium-viewer-smoke-review",
           "docs/reader_key_figure_pdf_layout_review.md#summary",
           "docs/reader_final_figure_artifact_review.md#summary",
-          "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json"
+          "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json"
         ],
         "release_blockers": [
           "reader_release_approval_not_created"
@@ -175,7 +176,7 @@
           "docs/reader_epub_apple_books_review.md#what-was-checked",
           "editions/reader_manuscript/v1_0/epub_apple_books_review_manifest.json",
           "docs/reader_key_figure_epub_layout_review.md#summary",
-          "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json"
+          "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json"
         ],
         "release_blockers": [
           "reader_release_approval_not_created"
@@ -195,7 +196,7 @@
         "release_approved": false,
         "evidence_refs": [
           "docs/reader_audio_script_probe_manifest.md#audio-script-reading-flow-review",
-          "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
+          "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json",
           "docs/reader_audio_narration_treatment_review.md#decision",
           "editions/reader_manuscript/v1_0/audio_narration_treatment_review_manifest.json",
           "docs/reader_audio_metadata_review.md#decision",
@@ -209,7 +210,7 @@
           "audio_embedded_epub_not_packaged_or_checked",
           "audio_edition_release_record_not_created"
         ],
-        "notes": "The audio-script workspace has automated reading-flow and marker-order checks, the script-level narration treatment review accepts the current script treatment for release preparation, clearing only narration_quality_review_not_completed, and the audio metadata review accepts the title, version, source commit/tag, script digest, narrator/tooling boundary, and rights-statement fields for release preparation, clearing only audio_metadata_not_reviewed. No audio files, pronunciation review, recorded-audio spot check, chapter timing, MP3, M4B, audio-embedded EPUB, or audio release record exists.",
+        "notes": "The audio-script workspace has automated reading-flow and marker-order checks, the script-level narration treatment review accepts the current script treatment for release preparation, clearing only narration_quality_review_not_completed, and the audio metadata review accepts the title, version, source commit/tag, script digest, narrator/tooling boundary, and rights-statement fields for release preparation, clearing only audio_metadata_not_reviewed. The current text-edition release decision explicitly defers this row to a separate future audio_release record. No audio files, pronunciation review, recorded-audio spot check, chapter timing, MP3, M4B, audio-embedded EPUB, or audio release record exists.",
         "non_claims": [
           "This candidate row does not approve audio, MP3, M4B, or audio-embedded EPUB artifacts.",
           "This candidate row does not publish any audio artifact.",
@@ -218,7 +219,7 @@
         ]
       }
     ],
-    "release_boundary": "The current curated candidate is not release-approved. It records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, the keyboard-only evidence decision, the accessibility-tree release-preparation probe, the automated WCAG-preparation decision, and the script-level audio narration treatment review, but it does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires screen-reader review where release scope demands it and an edition release record naming the exact reviewed artifact."
+    "release_boundary": "The current curated candidate is not release-approved. The text-edition release decision records automated preparation evidence, the Apple Books EPUB application review, the DOCX application-evidence decision, the keyboard-only evidence decision, the accessibility-tree release-preparation probe, and the automated WCAG-preparation decision for HTML, EPUB, DOCX, PDF, and e-reader preparation only. Audio remains a separate deferred release lane with script-level narration treatment and metadata preparation evidence only. This matrix does not approve any curated HTML, EPUB, DOCX, PDF, e-reader, audio, or final figure artifact; future approval still requires screen-reader review where release scope demands it and an edition release record naming the exact reviewed artifact."
   },
   "records": [
     {

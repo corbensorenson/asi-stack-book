@@ -76,6 +76,9 @@ DOCX_APPLICATION_DECISION = (
 )
 HTML_RELEASE_RECORD = ROOT / "release_records" / "2026-06-29-v1-reader-html-855dc277.json"
 CURATED_BLOCKED_RECORD = ROOT / "release_records" / "2026-07-05-v1-curated-reader-blocked-3e59bde3.json"
+CURATED_TEXT_RELEASE_RECORD = (
+    ROOT / "release_records" / "2026-07-06-v1-curated-reader-text-blocked-923108ee.json"
+)
 
 REVIEW_DOCS = {
     "reader_html": ROOT / "docs" / "reader_html_artifact_browser_review.md",
@@ -224,6 +227,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         DOCX_APPLICATION_DECISION,
         HTML_RELEASE_RECORD,
         CURATED_BLOCKED_RECORD,
+        CURATED_TEXT_RELEASE_RECORD,
         *REVIEW_DOCS.values(),
     ]
     for path in required_paths:
@@ -264,6 +268,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     epub_app_review = load_json(EPUB_APP_REVIEW)
     docx_application_decision = load_json(DOCX_APPLICATION_DECISION)
     curated_blocked_record = load_json(CURATED_BLOCKED_RECORD)
+    curated_text_record = load_json(CURATED_TEXT_RELEASE_RECORD)
 
     profile_ids = {profile.get("id") for profile in release_profiles.get("profiles", []) if isinstance(profile, dict)}
     missing_profiles = sorted(REQUIRED_PROFILE_IDS - profile_ids)
@@ -428,6 +433,45 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         errors.append("current curated candidate must track exactly six rows.")
     if curated_candidate.get("release_blocker_counts") != dict(sorted(curated_candidate_blocker_counts.items())):
         errors.append("current curated candidate blocker counts drifted from candidate rows.")
+    if curated_candidate.get("release_record_path") != rel(CURATED_TEXT_RELEASE_RECORD):
+        errors.append(
+            "current curated candidate must point at the current blocked text-edition release decision: "
+            f"{rel(CURATED_TEXT_RELEASE_RECORD)}"
+        )
+
+    if curated_text_record.get("record_type") != "edition_release":
+        errors.append("curated text-edition release decision must use record_type edition_release.")
+    if curated_text_record.get("release_id") != "2026-07-06-v1-curated-reader-text-blocked-923108ee":
+        errors.append("curated text-edition release decision release_id drifted.")
+    if curated_text_record.get("source_commit") != "923108ee0e15d4f6c755e060efeb0904f47dcad1":
+        errors.append("curated text-edition release decision source_commit drifted.")
+    if curated_text_record.get("validation_status") != "partial":
+        errors.append("curated text-edition release decision must remain validation_status partial.")
+    text_artifacts = {
+        artifact.get("format"): artifact
+        for artifact in curated_text_record.get("artifact_formats", [])
+        if isinstance(artifact, dict)
+    }
+    required_text_artifacts = {
+        "curated_reader_html",
+        "curated_reader_epub",
+        "curated_reader_docx",
+        "curated_reader_pdf",
+        "ereader_application_review",
+        "audio_deferred",
+    }
+    if set(text_artifacts) != required_text_artifacts:
+        errors.append("curated text-edition release decision must name text artifacts plus audio_deferred.")
+    if text_artifacts.get("audio_deferred", {}).get("status") != "not_applicable":
+        errors.append("curated text-edition release decision must mark audio_deferred not_applicable.")
+    text_non_claim_text = " ".join(str(item) for item in curated_text_record.get("non_claims", [])).lower()
+    for fragment in ("does not approve", "does not publish", "does not perform screen-reader review", "does not promote"):
+        if fragment not in text_non_claim_text:
+            errors.append(f"curated text-edition release decision non_claims missing {fragment!r}.")
+    text_residual_text = " ".join(str(item) for item in curated_text_record.get("residuals", [])).lower()
+    for fragment in ("reader_release_approval_not_created", "screen_reader_review_not_completed", "audio_release"):
+        if fragment not in text_residual_text:
+            errors.append(f"curated text-edition release decision residuals missing {fragment!r}.")
 
     if curated_blocked_record.get("record_type") != "edition_release":
         errors.append("curated blocked release-candidate record must use record_type edition_release.")
@@ -1596,6 +1640,8 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "curated_blocked_record": rel(CURATED_BLOCKED_RECORD),
         "curated_blocked_record_status": curated_blocked_record.get("validation_status"),
         "curated_blocked_probe_status": blocked_probe_closure.get("status"),
+        "curated_text_record": rel(CURATED_TEXT_RELEASE_RECORD),
+        "curated_text_record_status": curated_text_record.get("validation_status"),
         "generated_html_pages": generated_html_pages,
         "generated_html_pairs": generated_html_pairs,
         "generated_html_failures": generated_html_failures,
@@ -1835,7 +1881,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
     return (
         "| Release surfaces | Live, research, reader, and audio profiles exist. "
         "Release detail is generated in `docs/release_surface_status_ledger.md`: generated-reader HTML remains the only approved reader artifact; "
-        f"`{metrics['curated_blocked_record']}` records the current curated-reader candidate as partial and blocked; "
+        f"`{metrics['curated_text_record']}` records the current curated-reader text-edition decision as partial and blocked; "
+        f"`{metrics['curated_blocked_record']}` remains the historical all-surface blocked candidate record; "
         f"`docs/reader_format_review_matrix.md` tracks {metrics['curated_candidate_count']} current curated-candidate rows with release blockers; "
         f"automated keyboard traversal covers {metrics['reader_keyboard_navigation_pairs']} page-view pairs with "
         f"{metrics['reader_keyboard_navigation_failures']} failures; "
@@ -1856,7 +1903,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['curated_record_count']} records ({reconciliation_counts.get('reconciled', 0)} reconciled); "
         f"chapter reconciliation approval is `{metrics['chapter_reconciliation_approval_status']}`; "
         f"{metrics['overlay_operation_count']} overlay operations are tracked; "
-        "Apple Books EPUB application review, the DOCX application-evidence decision, keyboard-only evidence decision, automated WCAG-preparation decision, script-level audio narration treatment review, and audio metadata review are passed, while screen-reader review, EPUB publication, DOCX publication, PDF, audio files, chapter timing, listening review, and refreshed reader HTML remain unapproved. | "
+        "Apple Books EPUB application review, the DOCX application-evidence decision, keyboard-only evidence decision, and automated WCAG-preparation decision are passed for text release preparation; script-level audio narration treatment review and audio metadata review are passed for the deferred audio lane, while screen-reader review, EPUB publication, DOCX publication, PDF, audio files, chapter timing, listening review, and refreshed reader HTML remain unapproved. | "
         "`docs/release_surface_status_ledger.md`; `editions/release_profiles.json`; "
         "`editions/reader_overlays/v1_0/manifest.json`; `editions/reader_manuscript/v1_0/manifest.json`; "
         "`editions/reader_manuscript/v1_0/chapter_review_matrix.json`; "
@@ -1884,7 +1931,9 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         "`docs/reader_key_figure_docx_layout_review.md`; "
         "`release_records/2026-06-29-v1-reader-html-855dc277.json`; "
         "`release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json`; "
+        "`release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json`; "
         "`python3 scripts/validate_curated_reader_blocked_release_record.py`; "
+        "`python3 scripts/validate_curated_reader_text_release_record.py`; "
         "`python3 scripts/validate_curated_reader_pdf_page_review.py`; "
         "`python3 scripts/validate_reader_human_consumption_gate.py`; "
         "`python3 scripts/validate_reader_final_figure_artifact_review.py`; "
@@ -1962,7 +2011,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Current curated candidate rows | {metrics['curated_candidate_count']} |",
             f"| Current curated candidate status | `{qmd_escape(metrics['curated_candidate_status'])}` |",
             f"| Current curated candidate blocker counts | {qmd_escape(counter_phrase(metrics['curated_candidate_blocker_counts']))} |",
-            f"| Blocked curated reader candidate record | {metrics['curated_blocked_record_status']} |",
+            f"| Current blocked curated text-edition record | {metrics['curated_text_record_status']} |",
+            f"| Historical all-surface blocked candidate record | {metrics['curated_blocked_record_status']} |",
             f"| Blocked curated format-probe closure | {metrics['curated_blocked_probe_status']} |",
             f"| EPUB Apple Books application review | `{metrics['epub_app_review_status']}`; {metrics['epub_app_review_observations']} observations, {metrics['epub_app_review_cleared_blockers']} blocker cleared, digest `{metrics['epub_app_review_sha']}` |",
             f"| DOCX application-evidence decision | `{metrics['docx_application_decision_status']}`; {metrics['docx_application_decision_cleared_blockers']} blocker cleared, {metrics['docx_application_decision_preserved_blockers']} blockers preserved |",
@@ -1993,8 +2043,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "",
             f"- Generated reader HTML is the only release-approved reader format row, backed by `{metrics['release_record']}`. That approval does not extend to current curated reader HTML, EPUB, DOCX, PDF, e-reader, or audio.",
             f"- `docs/reader_format_review_matrix.md` distinguishes the historical generated-reader format queue from the current curated-reader candidate queue: {metrics['curated_candidate_count']} current candidate rows remain `{metrics['curated_candidate_status']}` with blocker counts {counter_phrase(metrics['curated_candidate_blocker_counts'])}.",
-            f"- `{metrics['curated_blocked_record']}` records the current curated-reader HTML/EPUB/DOCX/PDF/e-reader/audio candidate as `partial` and blocked. It names exact local artifacts and blockers but does not approve, publish, tag, or archive any curated-reader artifact.",
-            f"- The blocked candidate also records `{metrics['curated_blocked_probe_status']}` for the automated package, link, raster, key-figure, browser, Apple Books application probe, DOCX application-evidence decision, keyboard-only evidence decision, automated WCAG-preparation gate, script-level audio narration treatment review, and audio metadata review; this is release-preparation evidence only and does not clear screen-reader review, assistive-technology review, third-party/legal WCAG certification, audio artifact generation, pronunciation/listening review, chapter-marker timecoding, audio publication-rights approval, audio release approval, or reader release approval.",
+            f"- `{metrics['curated_text_record']}` records the current curated-reader HTML/EPUB/DOCX/PDF/e-reader text-edition decision as `partial` and blocked. It names exact current local text artifacts, keeps audio as `audio_deferred`, and does not approve, publish, tag, or archive any curated-reader artifact.",
+            f"- `{metrics['curated_blocked_record']}` remains the historical all-surface blocked candidate record and records `{metrics['curated_blocked_probe_status']}` for the automated package, link, raster, key-figure, browser, Apple Books application probe, DOCX application-evidence decision, keyboard-only evidence decision, automated WCAG-preparation gate, script-level audio narration treatment review, and audio metadata review; this is release-preparation evidence only and does not clear screen-reader review, assistive-technology review, third-party/legal WCAG certification, audio artifact generation, pronunciation/listening review, chapter-marker timecoding, audio publication-rights approval, audio release approval, or reader release approval.",
             f"- `docs/reader_html_artifact_browser_review.md` records {metrics['generated_html_pages']} generated reader HTML pages, {metrics['generated_html_pairs']} page-view pairs, and {metrics['generated_html_failures']} failed page-view pairs.",
             f"- `docs/curated_reader_html_artifact_browser_review.md` records {metrics['curated_html_pages']} curated reader HTML pages, {metrics['curated_html_pairs']} page-view pairs, {metrics['curated_html_failures']} failed page-view pairs, {metrics['curated_key_figure_pairs']} key-figure page-view pairs, {metrics['curated_key_figure_failures']} key-figure failures, and ignored snapshot digest `{metrics['curated_html_digest']}`.",
             f"- `docs/curated_reader_format_artifact_probe.md` records the tracked curated-reader structural probe: {metrics['curated_html_files']} HTML files, {metrics['curated_epub_xhtml']} EPUB XHTML entries, {metrics['curated_docx_png']} DOCX PNG media entries, {metrics['curated_docx_svg']} DOCX SVG media entries, and {metrics['curated_pdf_pages']} PDF pages. Its repaired-package EPUB audit checks {metrics['curated_epub_audit_xhtml']} XHTML entries, {metrics['curated_epub_audit_content_xhtml']} packaged content XHTML entries, and {metrics['curated_epub_audit_unresolved']} unresolved internal hrefs, with repaired artifact SHA `{metrics['curated_epub_audit_sha']}`. Its Chromium EPUB XHTML browser review checks {metrics['curated_epub_browser_pairs']} page-view pairs with {metrics['curated_epub_browser_failures']} failures and {metrics['curated_epub_browser_max_overflow']} px maximum overflow. Its repaired-package DOCX audit checks {metrics['curated_docx_audit_paragraphs']} paragraphs, {metrics['curated_docx_audit_relationships']} relationships, and {metrics['curated_docx_audit_raw_qmd']} raw .qmd relationship targets, with repaired artifact SHA `{metrics['curated_docx_audit_sha']}`. Its LibreOffice headless DOCX review checks {metrics['curated_docx_libreoffice_pages']} converted pages, {metrics['curated_docx_libreoffice_text_chars']:,} text characters, {metrics['curated_docx_libreoffice_blank_pages']} blank converted-page rasters, {metrics['curated_docx_libreoffice_low_ink_pages']} low-ink converted-page rasters, and {metrics['curated_docx_libreoffice_near_edge_pages']} near-edge converted-page rasters. Its all-page PDF raster audit checks {metrics['curated_pdf_raster_pages']} pages, {metrics['curated_pdf_raster_blank_pages']} blank pages, {metrics['curated_pdf_raster_low_ink_pages']} low-ink pages, and {metrics['curated_pdf_raster_near_edge_pages']} near-edge pages. Its PDF extracted-text reading-flow review checks {metrics['curated_pdf_reading_flow_text_pages']} text pages, {metrics['curated_pdf_reading_flow_nonempty_pages']} nonempty text pages, {metrics['curated_pdf_reading_flow_chapters']} chapter headings, {metrics['curated_pdf_reading_flow_appendices']} appendix headings, and {metrics['curated_pdf_reading_flow_replacement_chars']} replacement characters. Its Chromium PDF viewer smoke review records {metrics['curated_pdf_viewer_screenshots']} viewer screenshots and {metrics['curated_pdf_viewer_scroll_changed_pixels']}% changed pixels after scroll. It preserves release blockers.",

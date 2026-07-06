@@ -1,0 +1,144 @@
+{
+  "record_type": "edition_release",
+  "release_id": "2026-07-06-v1-curated-reader-text-blocked-923108ee",
+  "major_version": "v1.0",
+  "source_commit": "923108ee0e15d4f6c755e060efeb0904f47dcad1",
+  "source_tag": "not_tagged_curated_reader_text_blocked_candidate_2026-07-06",
+  "edition_profile": "reader_release",
+  "primary_audiences": [
+    "interested_humans"
+  ],
+  "derivation_source": "Blocked text-edition release decision for the tracked curated reader manuscript at evidence commit 923108ee0e15d4f6c755e060efeb0904f47dcad1. The decision covers local ignored HTML, EPUB, DOCX, PDF, and Apple Books EPUB application-review evidence only. Audio is explicitly deferred to a separate future audio_release record and is not part of this text-edition release decision.",
+  "artifact_formats": [
+    {
+      "format": "curated_reader_html",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json; node scripts/validate_curated_reader_wcag_preparation.js --write-manifest",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/html/_reader_site",
+      "notes": "Rendered local curated reader HTML review tree with 49 pages, 98 of 98 browser page-view pairs passing, 20 of 20 key-figure page-view pairs passing, and tracked review digest 2ca82608207741a56a861da7d32f4d8c7e7a25dc390df3836dca11560b19ce34. Automated keyboard traversal records 98 page-view pairs, 98 skip-link activations, 98 main-content routes, and 0 keyboard-trap candidates; the keyboard-only evidence decision clears only manual_keyboard_only_review_not_completed. The accessibility-tree probe records 98 page-view pairs, 0 failures, 98 accessibility-tree page-view pairs, 0 unnamed interactive elements, 0 image alt failures, 0 table header failures, and 0 duplicate-ID hits. The automated WCAG-preparation gate records 98 page-view pairs, 0 failures, 3,523 rendered text contrast samples, 0 contrast failures, and 4.69 minimum contrast ratio, clearing only wcag_conformance_review_not_completed. Blocked: the HTML is not release-approved, not published, not screen-reader reviewed, and not third-party or legal WCAG certified."
+    },
+    {
+      "format": "curated_reader_epub",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py; python3 scripts/repair_curated_reader_epub_links.py; python3 scripts/audit_curated_reader_epub_content.py; node scripts/validate_curated_reader_epub_browser_review.js --write-manifest; python3 scripts/validate_reader_epub_apple_books_review.py",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+      "notes": "Rendered and structurally inspected local EPUB review artifact: raw EPUB 8,670,899 bytes, SHA-256 412fadecd308acfc966e624c17aece7cc53bc4ef9f818e4f865fdb2f0ed6be28, 52 XHTML entries, 62 image entries, OPF title The ASI Stack, creator Corben Sorenson, and language en-US. The repaired EPUB package audit records SHA-256 bca694bc97bdfbc1757d58368df9d5d3f2e6152615938a80c7eab0b2a5519255, 52 XHTML entries checked, 49 packaged content XHTML entries checked, 0 unresolved internal hrefs, 0 XML parse errors, 0 bare class attribute hits, and 0 paragraph-wrapped figure tag hits. Chromium EPUB XHTML browser review records 104 browser page-view pairs, 0 browser failures, 0 px maximum element overflow, and 0 image load failures. Apple Books opened repaired digest bca694bc97bdfbc1757d58368df9d5d3f2e6152615938a80c7eab0b2a5519255, rendered the Reader Edition Baseline page and chapter 1 without the earlier XML error banner, exposed the ASI Stack control-plane figure and alt text, and opened the table of contents. Blocked: the EPUB is not release-approved and not published."
+    },
+    {
+      "format": "curated_reader_docx",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py; python3 scripts/repair_curated_reader_docx_links.py; python3 scripts/audit_curated_reader_docx_content.py; python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest; python3 scripts/validate_reader_docx_application_decision.py",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/docx/_reader_site/The-ASI-Stack.docx",
+      "notes": "Rendered and structurally inspected local DOCX review artifact: raw DOCX 8,331,414 bytes, SHA-256 e248469162e3a28c48a0c277980c59dc64396622b88cbc670ae8c9f6a94430c5, 77 zip entries, 61 PNG media entries, 0 SVG media entries, and 17,462 paragraph markers. The repaired DOCX package audit records SHA-256 e5e70200ed19b58d232c315b5e6aa88a753fe95a01c6ec25e1abeede02ab2713, 17,462 paragraphs, 286 relationships, 0 raw .qmd relationship targets, 0 unresolved internal relationship targets, and 10 matched key-figure stems. LibreOffice headless Writer review converted the repaired DOCX to a 512-page PDF, checked 1,048,398 text characters, raster-checked 512 converted pages, and found 0 blank, 0 low-ink, and 0 near-edge converted-page rasters. The DOCX application-evidence decision status is accepted_docx_application_evidence_for_release_preparation and clears only docx_application_review_not_completed. Blocked: the DOCX is not release-approved, not published, and Word, LibreOffice GUI, Google Docs, and manual document approval are not claimed."
+    },
+    {
+      "format": "curated_reader_pdf",
+      "status": "rendered",
+      "command_or_tool": "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf; python3 scripts/inspect_curated_reader_format_artifacts.py; python3 scripts/audit_curated_reader_pdf_layout.py; python3 scripts/audit_curated_reader_pdf_visual_raster.py; python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest; python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest; python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/pdf/_reader_site/The-ASI-Stack.pdf",
+      "notes": "Rendered and structurally inspected local PDF review artifact from the refreshed text-edition evidence commit: 4,907,422 bytes, SHA-256 2018ac24619d3166580ffa10a988976dd61e4cc3e2ae84b8ffd882c789ae5768, 513 pages, title The ASI Stack, author Corben Sorenson, unencrypted letter pages, and LuaTeX producer LuaTeX-1.24.0. The all-page text and bounding-box probe checked 513 pages, 173,154 word boxes, 0 textless pages, 0 out-of-bounds word boxes, and 0 layout lines over 160 characters. The all-page raster probe records 513 rendered pages, 0 blank pages, 1 accepted low-ink page, 0 near-edge pages, 683 minimum nonwhite pixels, and 143,121 maximum nonwhite pixels. The extracted-text reading-flow review records 1,129,226 text characters, 172,600 word tokens, 513 nonempty text pages, 44 ordered chapter headings, 3 ordered appendix headings, and 0 replacement characters. The page-by-page release-preparation review records 513 page rows, 0 failed pages, 0 blank pages, 0 near-edge pages, 0 out-of-bounds word-box pages, and low-ink page 24 as the only accepted low-ink page. The headed Chromium PDF viewer smoke review records 2 nonblank viewer screenshots and 4.485% changed pixels after scroll. Blocked: the PDF is not release-approved and not published."
+    },
+    {
+      "format": "ereader_application_review",
+      "status": "reviewed",
+      "command_or_tool": "python3 scripts/validate_reader_epub_apple_books_review.py; Apple Books (com.apple.iBooksX) local application review via Computer Use",
+      "path_or_uri": "build/curated_reader_edition/format_artifacts/epub/_reader_site/The-ASI-Stack.epub",
+      "notes": "Apple Books application review passed for repaired curated EPUB digest bca694bc97bdfbc1757d58368df9d5d3f2e6152615938a80c7eab0b2a5519255. The review opened the current local EPUB in Apple Books, rendered the Reader Edition Baseline page and chapter 1 without the earlier XML error banner, exposed the ASI Stack control-plane figure and descriptive alt text, and opened the table of contents. It clears only app_or_ereader_review_not_completed for the current repaired EPUB path. Blocked: this is not EPUB publication approval, not a full e-reader visual acceptance decision, not a reader release approval, and not an edition release approval."
+    },
+    {
+      "format": "audio_deferred",
+      "status": "not_applicable",
+      "command_or_tool": "not run for this text-edition release decision",
+      "path_or_uri": "",
+      "notes": "Audio is intentionally out of scope for this text-edition release decision. MP3, M4B, audio-embedded EPUB, pronunciation review, recorded-audio spot check, timecoded chapter markers, audio publication-rights approval, and audio release approval are deferred to a separate future audio_release record. The presence of reader text artifacts does not imply that any audio artifact exists."
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/render_curated_reader_formats.py --formats html epub docx --include-pdf",
+    "python3 scripts/inspect_curated_reader_format_artifacts.py",
+    "python3 scripts/sync_curated_reader_format_probe_manifest.py",
+    "python3 scripts/repair_curated_reader_epub_links.py",
+    "python3 scripts/repair_curated_reader_docx_links.py",
+    "python3 scripts/audit_curated_reader_epub_content.py",
+    "node scripts/validate_curated_reader_epub_browser_review.js --write-manifest",
+    "python3 scripts/audit_curated_reader_docx_content.py",
+    "python3 scripts/validate_curated_reader_docx_libreoffice_review.py --write-manifest",
+    "python3 scripts/audit_curated_reader_pdf_layout.py",
+    "python3 scripts/audit_curated_reader_pdf_visual_raster.py",
+    "python3 scripts/validate_curated_reader_pdf_reading_flow.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_viewer_review.py --write-manifest",
+    "python3 scripts/validate_curated_reader_pdf_page_review.py --write-manifest",
+    "node scripts/validate_reader_html_artifact_browser.js --strict --site build/curated_reader_edition/format_artifacts/html/_reader_site --manifest build/curated_reader_edition/reader_manifest.json --report build/curated_reader_edition/curated_reader_html_browser_report.json",
+    "python3 scripts/validate_curated_reader_format_probe_manifest.py",
+    "python3 scripts/validate_reader_epub_apple_books_review.py",
+    "python3 scripts/validate_reader_docx_application_decision.py",
+    "python3 scripts/validate_reader_keyboard_only_decision.py",
+    "python3 scripts/validate_reader_accessibility_tree.py --tracked-only",
+    "python3 scripts/validate_reader_wcag_preparation.py --tracked-only",
+    "python3 scripts/validate_reader_human_consumption_gate.py",
+    "python3 scripts/validate_reader_final_figure_artifact_review.py",
+    "python3 scripts/validate_reader_chapter_reconciliation_approval.py",
+    "python3 scripts/validate_curated_reader_text_release_record.py",
+    "python3 scripts/sync_reader_format_review_matrix.py --check",
+    "python3 scripts/validate_release_surface_status_ledger.py"
+  ],
+  "validation_status": "partial",
+  "review_status": {
+    "reader_continuity_review": "pass",
+    "source_scaffold_removed": "pass",
+    "audio_script_review": "not_required",
+    "notes": "The tracked curated reader manuscript has 44 reconciled chapters and current local HTML, EPUB, DOCX, PDF, Apple Books, DOCX application-evidence, keyboard-only, accessibility-tree, automated WCAG-preparation, human-consumption, PDF page-by-page, and final figure-artifact release-preparation evidence. The decision remains blocked because reader release approval has not been issued and screen-reader or assistive-technology review is not complete. Audio is not required for this text-edition decision and remains a separate future release lane."
+  },
+  "reader_manuscript": {
+    "source_dir": "editions/reader_manuscript/v1_0",
+    "status": "reviewed",
+    "review_notes": "The tracked curated reader manuscript has 44 reconciled chapter records, no missing curated chapter files, and a chapter reconciliation approval record that clears only curated_reconciliation_not_approved. The manuscript is reviewed for text-edition preparation but remains in drafting until a future approval record explicitly clears release blockers."
+  },
+  "audio_package": {
+    "script_dir": "build/audio_script",
+    "status": "not_required",
+    "review_notes": "Audio is out of scope for this text-edition release decision. Existing audio-script preparation evidence does not create MP3, M4B, audio-embedded EPUB, listening-check, chapter-timecode, or audio-release approval."
+  },
+  "companion_material": {
+    "path_or_uri": "editions/reader_manuscript/v1_0/companion_notes",
+    "status": "generated",
+    "review_notes": "Companion notes support reader, e-reader, and future audio preparation, but they are not standalone release artifacts and do not replace meaning-critical prose."
+  },
+  "human_consumption_gate": {
+    "reader_spine_review": "pass",
+    "ebook_layout_review": "pass_pre_release_review",
+    "diagram_image_review": "pass_pre_release_review",
+    "bedtime_readability_review": "pass_pre_release_review",
+    "companion_notes_status": "pass_pre_release_review",
+    "notes": "The human-consumption pre-release gate is passed for release preparation only. It records a coherent reader spine, ebook layout preparation, diagram/image preparation, bedtime readability preparation, and companion-note routing, but it does not approve HTML, EPUB, DOCX, PDF, e-reader, audio, or publication."
+  },
+  "audiobook_gate": {
+    "script_review": "not_required",
+    "spoken_treatment_review": "not_required",
+    "metadata_review": "not_required",
+    "chapter_marker_review": "not_required",
+    "audio_spot_check": "not_required",
+    "embedded_epub_check": "not_required",
+    "status": "not_required",
+    "notes": "Audiobook checks are not part of this text-edition release decision. They must be recorded in a separate audio_release record before any audio artifact, audiobook, or audio-embedded EPUB can be claimed."
+  },
+  "release_notes": "Blocked current text-edition release decision for the curated reader manuscript. It records current local HTML, EPUB, DOCX, PDF, and Apple Books EPUB application-review evidence from commit 923108ee0e15d4f6c755e060efeb0904f47dcad1 while explicitly deferring audio to a separate future audio_release lane. It does not approve, publish, archive, or tag any curated reader artifact.",
+  "residuals": [
+    "reader_release_approval_not_created remains active; this record is explicitly partial and blocked.",
+    "screen_reader_review_not_completed remains active for the current curated reader HTML candidate.",
+    "Automated keyboard, accessibility-tree, and WCAG-preparation evidence are release-preparation evidence only; they do not perform screen-reader review, assistive-technology review, or third-party/legal WCAG certification.",
+    "Apple Books review clears only app_or_ereader_review_not_completed for the repaired EPUB digest; it does not approve EPUB publication or the full e-reader experience.",
+    "The DOCX application-evidence decision clears only docx_application_review_not_completed; Word, LibreOffice GUI, Google Docs, manual document approval, and DOCX publication approval are not claimed.",
+    "The PDF page-by-page review and PDF viewer smoke review are release-preparation evidence only and do not approve PDF publication.",
+    "Audio artifacts, audio timecodes, recorded listening checks, pronunciation review, audio publication-rights approval, and audio release approval are deferred to a separate future audio_release record.",
+    "The reader manuscript manifest must remain drafting until a future approval record explicitly clears the remaining release blockers."
+  ],
+  "non_claims": [
+    "does not approve curated reader HTML, EPUB, DOCX, PDF, e-reader, audio, MP3, M4B, or audio-embedded EPUB artifacts",
+    "does not publish a reader artifact to GitHub Pages or an external archive",
+    "does not create a source tag, DOI, Zenodo archive, audiobook, or final reader release",
+    "does not perform screen-reader review, assistive-technology review, or third-party/legal WCAG certification",
+    "does not promote any chapter core claim above argument",
+    "does not prove ASI capability, model quality, deployment readiness, runtime safety, benchmark performance, source interpretation, or proof adequacy"
+  ]
+}

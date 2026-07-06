@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-06 - Record blocked curated reader text-edition decision
+
+- Added `release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json`
+  as the current blocked text-edition release decision for the curated reader
+  manuscript, naming local HTML, EPUB, DOCX, PDF, and Apple Books evidence
+  from source commit `923108ee0e15d4f6c755e060efeb0904f47dcad1`.
+- Added `scripts/validate_curated_reader_text_release_record.py` and wired it
+  into `scripts/validate_book.py`, with checks that the record matches tracked
+  HTML/EPUB/DOCX/PDF manifests, keeps `audio_deferred`, and preserves
+  reader-release approval plus screen-reader review as active blockers.
+- Updated the reader format matrix, release-surface ledger, v1 candidate
+  status row, v1.x roadmap, repository map, release-editions plan, and release
+  records README so the July 6 text decision is current and the July 5
+  all-surface blocked record is historical.
+- Boundary: this is a blocked release decision, not approval. It does not
+  publish or approve HTML, EPUB, DOCX, PDF, e-reader, audio, screen-reader
+  conformance, WCAG certification, audiobook artifacts, or any support-state
+  promotion.
+
 ## 2026-07-06 - Refresh curated reader PDF evidence
 
 - Updated `scripts/render_curated_reader_formats.py` so curated-reader PDF
