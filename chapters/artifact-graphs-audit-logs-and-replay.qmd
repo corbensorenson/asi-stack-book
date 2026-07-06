@@ -248,7 +248,7 @@ receipt that cannot answer them can still be stored; it should not move a
 claim, qualify a release, bless a benchmark, or teach a future agent as if it
 were evidence-ready.
 
-The repository now carries four bounded answers to that objection. The
+The repository now carries a bounded answer ladder for that objection. The
 receipt-faithfulness fixture rejects shape-valid but reality-false records,
 ignored trap receipts, missing independent cross-checks, same-component
 self-check laundering, unbounded attestation, and promotion from receipt
@@ -257,7 +257,10 @@ against artifact references, tracked digests, command status, external
 fingerprints, and non-claim boundaries. The deterministic challenge samples
 that audit and asks particular files and a Circle fingerprint to answer. The
 live artifact attestation probe then makes one produced artifact answer through
-filesystem bytes, git object bytes, and command replay.
+filesystem bytes, git object bytes, and command replay. The randomized
+attestation audit widens the same bounded question across a deterministic
+pseudo-random sample of public-safe repository artifacts so a single handpicked
+artifact cannot carry the whole record-reality story.
 
 The GitHub Pages CI attestation adds one externally hosted service route to the
 same ladder. `python3 scripts/validate_artifact_github_pages_ci_attestation.py`
@@ -290,13 +293,16 @@ correctness, independent external human review, reader release approval, or
 Artifact Graphs chapter-core support.
 
 That chain is a showpiece for the argument, not a victory lap. It demonstrates
-a bounded route from record shape toward record reality inside this repository.
-It does not prove deployed attestation behavior, verifier correctness,
-complete provenance, external-project truth, model quality, audit-service
-correctness, or open-world receipt faithfulness. The epistemic trusted
-computing base fixture adds the companion limit: a verifier is only useful
-inside a named trust path, and trust does not propagate indefinitely just
-because downstream records cite the verifier.
+a bounded route from record shape toward record reality inside this repository:
+syntactic receipt checks, adversarial receipt traps, selected repository
+audits, deterministic challenges, one live local produced-artifact probe, a
+deterministic multi-artifact audit, an externally hosted CI-service record,
+and a public served-page observation. It does not prove deployed attestation
+behavior, verifier correctness, complete provenance, external-project truth,
+model quality, audit-service correctness, or open-world receipt faithfulness.
+The epistemic trusted computing base fixture adds the companion limit: a
+verifier is only useful inside a named trust path, and trust does not propagate
+indefinitely just because downstream records cite the verifier.
 
 The weakening condition is therefore explicit. If the observer, verifier,
 producer, or approval path collapses into one untrusted component, or if a

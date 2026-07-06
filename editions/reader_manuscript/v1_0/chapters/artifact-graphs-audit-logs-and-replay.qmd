@@ -364,9 +364,13 @@ audit checks selected receipts against actual files, digests, commands, and
 external fingerprints. The deterministic challenge makes sampled records answer
 specific digest and fingerprint questions. The live attestation probe takes one
 current produced artifact and checks it through filesystem bytes, git object
-bytes, and command replay. None of that proves deployed attestation. It shows
-what the book means by refusing to let a receipt become evidence merely because
-it has the right shape.
+bytes, and command replay. The randomized artifact audit widens that local
+question across a deterministic sample of public-safe repository artifacts, so
+the argument does not rest on one handpicked object. GitHub Pages CI and the
+public served-page check add two narrow public-facing observations: one hosted
+workflow record and one fetched chapter page. None of that proves deployed
+attestation or open-world truth. It shows what the book means by refusing to
+let a receipt become evidence merely because it has the right shape.
 
 This is the difference between bookkeeping and governance. Bookkeeping says
 the paperwork exists. Governance asks what the paperwork is allowed to do. The
@@ -461,24 +465,33 @@ value must remain bounded until the graph records what happened.
 ## Minimum Viable Implementation
 
 The minimum viable implementation is an `artifact_graph_record` schema, public
-fixtures, finite provenance predicates, and one tiny replay packet.
+fixtures, finite provenance predicates, a replay packet, and bounded
+record-reality checks over actual repository artifacts.
 
-The current repository has the schema and fixture surface. It validates parent
-job, source refs, context refs, context transaction refs, semantic certificate
-refs, tool refs, claim/test refs, audit events, replay metadata, replay grade,
-environment assumptions, provenance status, replay limits, evidence gate,
-residuals, and non-claims. `AsiStackProofs.ArtifactGraph` proves finite
-predicates that a produced artifact record exposes parent-job and
-source/context references, and that missing required provenance blocks
-promoted-claim support.
+The current repository has crossed the line from schema-only discipline into
+bounded local artifact discipline. It validates parent job, source refs,
+context refs, context transaction refs, semantic certificate refs, tool refs,
+claim/test refs, audit events, replay metadata, replay grade, environment
+assumptions, provenance status, replay limits, evidence gate, residuals, and
+non-claims. `AsiStackProofs.ArtifactGraph` proves finite predicates that a
+produced artifact record exposes parent-job and source/context references, and
+that missing required provenance blocks promoted-claim support.
 
-That is record discipline. It is not replay. The next honest implementation
-slice would be one produced artifact with a parent job, source/context set,
-context transaction, semantic certificate, tool path, replay declaration,
-residual declaration, evidence gate, claim/test link, independent observation
-route, and challenge response. That packet would show the practical difference
-between stored work and evidence-ready work without implying a general
-artifact-graph service.
+The current minimum slice also includes receipt-faithfulness traps, selected
+repository receipt audits, deterministic digest and fingerprint challenges, a
+live local probe over one produced artifact, a deterministic multi-artifact
+repository audit, a GitHub Pages CI-service attestation, and a public served
+chapter-page check. That is enough to demonstrate the difference between a
+stored record, an inspectable artifact, a bounded review object, and an
+overclaim blocker. It is not enough to claim a deployed artifact-graph service,
+open-world receipt faithfulness, verifier correctness, external human review,
+or chapter-core support.
+
+The next honest implementation slice is a live or externally reviewable
+attestation and audit service with durable trust-base storage, independent
+verifier-quality review, randomized external challenge inputs, and replayable
+claim/test links. Until that exists, the artifact graph should keep treating
+record-reality as a bounded authority ladder rather than a solved problem.
 
 ## Beyond the State of the Art
 
@@ -506,10 +519,14 @@ The artifact-continuity layer remains an argument. It does not claim that a
 complete artifact graph has been deployed.
 
 The current evidence is source synthesis, a public artifact record schema,
-fixtures, and finite Lean predicates. Those artifacts support the shape of the
-control surface. They do not prove replay correctness, audit reconstruction,
-artifact completeness, provenance completeness, runtime execution quality,
-benchmark performance, security behavior, or MoECOT runtime reproduction.
+fixtures, finite Lean predicates, bounded receipt-reality traps, selected
+repository audits and challenges, local artifact attestations, one hosted CI
+service record, and one public served-page observation. Those artifacts support
+the shape of the control surface and the local record-reality discipline. They
+do not prove replay correctness, audit reconstruction, artifact completeness,
+provenance completeness, open-world receipt faithfulness, verifier
+correctness, runtime execution quality, benchmark performance, security
+behavior, or MoECOT runtime reproduction.
 
 This boundary is part of the design. The artifact graph exists to stop useful
 work from becoming unearned evidence. The reader prose should not make
