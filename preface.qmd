@@ -1,25 +1,84 @@
 # Preface {.unnumbered}
 
-This book is a unification pass across AI architecture papers and prototypes. It is not intended to be a pasted anthology. The goal is to treat the papers as fragments of one proposed architecture for governed, efficient, self-improving AI.
+This book argues that advanced AI should be built as a governed stack rather
+than trusted as a single opaque model. The stack is not a metaphor for a table
+of contents. It is a proposed systems architecture: human intent is bounded
+before action, authority is explicit before delegation, context carries
+provenance, work becomes typed artifacts, claims move through evidence states,
+and self-improvement proceeds only through reviewable change records.
 
-The current manuscript is a v0.2 living draft. It is written as one architecture, but its evidence discipline is intentionally conservative: source-derived support, prototype support, benchmark support, and proof support are recorded only when the corresponding artifact exists in the repository.
+The project began as a unification pass across AI papers, local prototypes,
+conversation-mined design notes, and implementation references. It is not a
+static anthology. The source material is treated as fragments of one
+architecture for governed, efficient, self-improving AI: alignment,
+governance, planning, memory, reasoning, execution, routing, compression,
+evidence, and recursive improvement are separate layers with explicit
+interfaces between them.
+
+This repository is now a tagged v1.0.0 living-book baseline with v1.x evidence
+and reader-quality work active. That status matters. The book is complete
+enough to read as one argument, but its evidence discipline remains
+conservative by design: source-derived support, prototype support, benchmark
+support, proof support, and release approval are recorded only when the
+corresponding artifact exists and the relevant validation or review record
+passes.
 
 ## What this book is
 
-It is a living technical book organized around stack layers: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive improvement.
+It is a living technical book for three audiences.
 
-It is also a working systems-engineering notebook. Chapters define interfaces, invariants, failure modes, minimal implementation targets, source queues, proof hooks, and test plans so the book can keep changing without losing its architecture.
+AI systems and research agents get the full live surface: source maps, claim
+states, Lean hooks, schema fixtures, test plans, evidence transitions,
+non-claim boundaries, implementation horizons, and release records. Human
+researchers get a coherent architecture they can audit, challenge, extend, or
+map against adjacent literature. Interested human readers get a reader edition
+and Human view that preserve the core argument while removing much of the
+machine-facing scaffolding.
+
+It is also a working systems-engineering notebook. Chapters define interfaces,
+invariants, failure modes, minimum viable implementation targets,
+beyond-state-of-the-art endpoints, source queues, proof hooks, and test plans
+so the book can change without losing its architecture.
+
+The strongest current claim of the project is not that the ASI Stack is
+already proven. The strongest current claim is methodological: a technical book
+about powerful AI can make its own claims, evidence, proofs, tests, residuals,
+and release artifacts auditable as first-class system objects.
 
 ## What this book is not
 
-It is not a claim that the architecture is complete, proven, or safe in every domain. It is not a benchmark report unless tests are explicitly recorded as run. It is not a replacement for source documents.
+It is not a claim that the architecture is complete, deployed, benchmark-proven,
+or safe in every domain. It is not a benchmark report unless tests are
+explicitly recorded as run. It is not a replacement for the source documents,
+papers, proof artifacts, local project records, or external literature it cites.
+
+It is also not a permission slip for evidence laundering. A polished chapter,
+a green validator, a source note, or a formal predicate does not by itself
+promote a chapter core claim. Claims move only through the support-state
+process recorded in the appendices and evidence-transition records.
 
 ## Claim labels
 
 Claims use explicit support states: `unsupported`, `argument`, `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, and `external-literature-backed`.
 
-The default support state is `argument`. That label is not a weakness; it is a promise that the manuscript is not pretending to have evidence it has not yet recorded.
+The default support state is `argument`. That label is not a weakness; it is a
+promise that the manuscript is not pretending to have evidence it has not yet
+recorded.
+
+Claim labels and support states are separate. A chapter can make a design
+rationale claim with argument-level support, a measured subclaim with a
+synthetic or empirical fixture, a prototype-backed import claim, or a
+mechanized finite-record invariant without implying that the broader chapter
+thesis has moved. This distinction is the book's central honesty mechanism.
 
 ## Why Codex tests matter
 
-The living format is meant to support evidence ratchets. Codex test specs identify what would support or falsify claims, but no test result should be recorded until the test has actually run.
+The living format is meant to support evidence ratchets. Codex test specs
+identify what would support, falsify, narrow, or block claims, but no test
+result should be recorded until the test has actually run.
+
+The same rule applies to proofs, source ingestion, reader releases, and audio
+or ebook artifacts. If an artifact exists, the book should name it. If it does
+not exist, the book should say so. The purpose is not to make the architecture
+look finished before it is finished; the purpose is to make progress
+impossible to confuse with unsupported confidence.
