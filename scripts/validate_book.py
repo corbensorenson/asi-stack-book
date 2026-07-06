@@ -334,6 +334,10 @@ REQUIRED = [
     "docs/theseus_assistant_reference_trace_import.md",
     "experiments/theseus_assistant_reference_trace_import/results/2026-07-06-local.json",
     "evidence_transitions/v1_x_measured/theseus_assistant_reference_trace_import_prototype_backed.json",
+    "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+    "docs/theseus_accelerator_parity_manifest_import.md",
+    "experiments/theseus_accelerator_parity_manifest_import/results/2026-07-06-local.json",
+    "evidence_transitions/v1_x_measured/theseus_accelerator_parity_manifest_import_prototype_backed.json",
     "scripts/validate_theseus_book_crosswalk_import.py",
     "docs/theseus_book_crosswalk_import.md",
     "experiments/theseus_book_crosswalk_import/results/2026-07-05-local.json",
@@ -1263,6 +1267,7 @@ def main() -> None:
     run_validator("validate_theseus_module_definition_of_done_import.py")
     run_validator("validate_theseus_project_registry_import.py")
     run_validator("validate_theseus_assistant_reference_trace_import.py")
+    run_validator("validate_theseus_accelerator_parity_manifest_import.py")
     run_validator("validate_theseus_book_crosswalk_import.py")
     run_validator("validate_theseus_work_board_import.py")
     run_validator("validate_theseus_concrete_evidence_surface.py")

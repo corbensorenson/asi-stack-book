@@ -157,7 +157,7 @@ prevents stronger claims.
 The ASI Stack repository currently contains two public-safe Project Theseus
 static report import lanes, one support replay probe, one report-bundle audit,
 one public task-bundle summary import, one selected Theseus/Fast support-lane
-aggregate, three bounded non-core Project Theseus imports, plus one
+aggregate, four bounded non-core Project Theseus imports, plus one
 pointer-only book-to-Theseus crosswalk import.
 
 The first import is a sanitized architecture-gate summary. It records a
@@ -272,6 +272,19 @@ the narrow import claim
 `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`
 moves to `prototype-backed`.
 
+The accelerator parity manifest adds a fourth kind of discipline: substrate
+portability without parity theater. The sanitized import records `GREEN`
+status, 7 of 7 surfaces, seven MLX report summaries, four Metal report
+summaries, four artifact manifests, four scheduler-canary surfaces, no hard
+failures, no public training rows, no external inference calls, no teacher use,
+and locked model-promotion and production-routing guardrails. That is not full
+CUDA, MLX, or Metal parity, and it is not production scheduler evidence. It is
+a bounded sign that the project can expose an accelerator-portability audit
+manifest while still refusing the stronger claims readers might be tempted to
+infer. Only the narrow import claim
+`project-theseus-as-report-first-implementation-reference.accelerator_parity_manifest_import`
+moves to `prototype-backed`.
+
 The book-to-Theseus crosswalk import adds a different kind of evidence:
 cross-project accountability. It records 53 public-safe pointer rows, 20
 backlog cards, 134 source-sync review decisions, and 9 changed AI-book source
@@ -297,7 +310,8 @@ self-evolution safety, support-state promotion, or the chapter core claim.
 The whole surface is narrow. It does not rerun Project Theseus. It does not
 prove that the current checkout is clean. It does not reproduce a benchmark. It
 does not inspect a live dashboard. It does not authorize training. It does not
-prove deployed Theseus runtime behavior, generation speed,
+prove deployed Theseus runtime behavior, full accelerator parity, production
+scheduler routing, model promotion, generation speed,
 useful-solution-per-second improvement, model quality, routing quality,
 benchmark quality, safety, alignment, transfer, or ASI. It does not move the
 Project Theseus core claim above `argument`.
@@ -447,10 +461,10 @@ their committed fixtures. The public task-bundle import shows how a richer
 public calibration summary can keep 64 public BigCodeBench metadata-only tasks,
 0 public training rows, 0 task-level regressions, and artifact gaps visible
 without becoming capability evidence. The artifact-retention,
-module-definition-of-done, project-registry, and work-board metadata imports
-show small public-safe
-pieces of report-first machinery without turning them into deployment,
-model-quality, currentness, unattended-safety, or self-evolution safety claims.
+module-definition-of-done, project-registry, accelerator parity manifest, and
+work-board metadata imports show small public-safe pieces of report-first
+machinery without turning them into deployment, model-quality, accelerator
+parity, currentness, unattended-safety, or self-evolution safety claims.
 None of that becomes a clean live replay, benchmark result, current dashboard
 inspection, current board-state proof, deployment claim, training
 authorization, or chapter-core support-state promotion.

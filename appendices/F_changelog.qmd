@@ -1,5 +1,38 @@
 # Changelog
 
+## 2026-07-06 - Import Theseus accelerator parity manifest
+
+- Added a sanitized Project Theseus accelerator parity manifest import with
+  source digest
+  `80574979f333c209e5419ee61182bfef1954e5844b107a5dc76f9155b60b1ca7`,
+  trigger state `GREEN`, 7 of 7 surfaces OK, seven MLX report summaries, four
+  Metal report summaries, four artifact manifests, four scheduler-canary
+  surfaces, zero hard failures, zero explicit guardrail gaps, zero public
+  training rows, zero external inference calls, no teacher use, no
+  model-promotion allowance, no production-routing allowance, and nine
+  expected-invalid controls.
+- Added `scripts/validate_theseus_accelerator_parity_manifest_import.py`,
+  result
+  `experiments/theseus_accelerator_parity_manifest_import/results/2026-07-06-local.json`,
+  fixture artifacts under
+  `experiments/theseus_accelerator_parity_manifest_import/`, Lean bridge
+  `lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge`,
+  and accepted bounded transition
+  `evidence_transitions/v1_x_measured/theseus_accelerator_parity_manifest_import_prototype_backed.json`
+  for
+  `project-theseus-as-report-first-implementation-reference.accelerator_parity_manifest_import`.
+- Updated the live and reader Project Theseus chapter, outline, non-core
+  evidence ledger, Project Theseus static-import ledger generator, proof
+  surface, and main validation suite so the accelerator parity manifest is a
+  bounded audit-manifest import rather than a dashboard or parity claim.
+- Boundary: this is a sanitized digest-and-count import from a dirty Theseus
+  checkout. It does not copy raw reports, private paths, private payloads,
+  checkpoints, prompts, tests, solutions, score labels, candidate code, metrics
+  payloads, or training rows into the public book. It does not prove full
+  CUDA/MLX/Metal parity, production scheduler routing, model promotion,
+  benchmark performance, model quality, clean live Project Theseus replay,
+  safety, ASI, support-state promotion, or chapter-core promotion.
+
 ## 2026-07-06 - Align Artifact Graphs record-reality prose with completed slices
 
 - Updated the live Artifact Graphs strongest-objection section so the
@@ -159,7 +192,7 @@
   rows, zero external inference calls, source-digest continuity, and seven
   expected-invalid overclaim controls for
   `resource-economics.theseus_rlds_minari_trace_export_import`.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 210 proof targets, 54 Lean modules, 1046 theorem declarations, 856 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 211 proof targets, 54 Lean modules, 1051 theorem declarations, 861 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Boundary: this does not prove RLDS dataset correctness, Minari dataset
   quality, simulator adequacy, replay success, physical feasibility, clean live
   Project Theseus replay, model quality, economic outcome, deployment

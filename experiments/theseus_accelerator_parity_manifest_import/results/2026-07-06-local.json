@@ -1,0 +1,145 @@
+{
+  "chapter_core_support_effect": "none",
+  "claim_boundary": {
+    "asi_claimed": false,
+    "benchmark_performance_claimed": false,
+    "chapter_core_promotion_claimed": false,
+    "clean_live_theseus_replay_claimed": false,
+    "deployment_claimed": false,
+    "external_inference_claimed": false,
+    "full_parity_claimed": false,
+    "model_promotion_claimed": false,
+    "model_quality_claimed": false,
+    "production_scheduler_routing_claimed": false,
+    "public_calibration_claimed": false,
+    "public_training_rows_claimed": false,
+    "safety_claimed": false,
+    "teacher_use_claimed": false
+  },
+  "command": "python3 scripts/validate_theseus_accelerator_parity_manifest_import.py",
+  "expected_invalid_control_count": 9,
+  "expected_invalid_controls": [
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/chapter_core_promotion.invalid.json",
+      "mutation": "chapter-core support promotion was claimed from the audit manifest",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/full_parity_overclaim.invalid.json",
+      "mutation": "full accelerator parity was claimed from the audit manifest",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/hard_failure_hidden.invalid.json",
+      "mutation": "hard failures were present in the imported summary",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/model_promotion_overclaim.invalid.json",
+      "mutation": "model promotion was claimed from the audit manifest",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/production_routing_overclaim.invalid.json",
+      "mutation": "production scheduler routing was claimed from the audit manifest",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/raw_report_copied.invalid.json",
+      "mutation": "raw report copying was allowed",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+      "mutation": "source report hash changed from the reviewed source digest",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/source_trigger_not_green.invalid.json",
+      "mutation": "source trigger state was no longer GREEN",
+      "rejected": true
+    },
+    {
+      "error_count": 1,
+      "fixture": "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/surface_count_mismatch.invalid.json",
+      "mutation": "surface count no longer matches the reviewed manifest",
+      "rejected": true
+    }
+  ],
+  "guardrails": {
+    "external_inference_calls": 0,
+    "full_parity_claim_allowed": false,
+    "model_promotion_allowed": false,
+    "production_scheduler_routing_enabled": false,
+    "public_calibration_run": false,
+    "public_training_rows": 0,
+    "teacher_used": false
+  },
+  "lean_fixture_alignment": {
+    "expected": {
+      "artifact_manifest_count": 4,
+      "chapter_core_promotion": false,
+      "full_parity_claimed": false,
+      "hard_failure_count": 0,
+      "metal_report_count": 4,
+      "mlx_report_count": 7,
+      "model_promotion_claimed": false,
+      "production_routing_claimed": false,
+      "scheduler_canary_count": 4,
+      "surface_count": 7
+    },
+    "module": "AsiStackProofs.TheseusReference",
+    "proof_tag": "lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
+    "theorem_refs": [
+      "theseus_accelerator_parity_manifest_import_fixture_valid",
+      "theseus_accelerator_parity_manifest_import_full_parity_overclaim_rejected",
+      "theseus_accelerator_parity_manifest_import_production_routing_overclaim_rejected",
+      "theseus_accelerator_parity_manifest_import_model_promotion_overclaim_rejected",
+      "theseus_accelerator_parity_manifest_import_core_promotion_rejected"
+    ]
+  },
+  "new_support_state": "prototype-backed",
+  "non_claims": [
+    "does not copy the raw Project Theseus accelerator parity report, private paths, private payloads, checkpoints, prompts, tests, solutions, score labels, candidate code, metrics payloads, or training rows into this public repository",
+    "does not prove full CUDA, MLX, or Metal parity; production scheduler routing; model promotion; benchmark performance; model quality; deployment readiness; safety; alignment; transfer; clean live Project Theseus replay; or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "result_id": "theseus-accelerator-parity-manifest-import-2026-07-06",
+  "schema_version": "asi_stack.theseus_accelerator_parity_manifest_import_result.v0",
+  "source_checkout_state": "dirty_at_import_review",
+  "source_commit": "1ad88a22",
+  "source_created_utc": "2026-06-15T05:45:50Z",
+  "source_ok": true,
+  "source_policy": "project_theseus_accelerator_parity_manifest_v0",
+  "source_report_sha256": "80574979f333c209e5419ee61182bfef1954e5844b107a5dc76f9155b60b1ca7",
+  "source_trigger_state": "GREEN",
+  "summary": {
+    "artifact_manifest_count": 4,
+    "expected_invalid_control_count": 9,
+    "explicit_guardrail_gap_count": 0,
+    "external_inference_calls": 0,
+    "hard_failure_count": 0,
+    "metal_report_count": 4,
+    "metal_report_ok_count": 4,
+    "mlx_report_count": 7,
+    "mlx_report_ok_count": 7,
+    "model_promotion_allowed_count": 0,
+    "production_routing_enabled_count": 0,
+    "public_training_rows": 0,
+    "scheduler_canary_count": 4,
+    "surface_count": 7,
+    "surface_ok_count": 7,
+    "teacher_used_count": 0
+  },
+  "support_state_effect": "bounded_non_core_transition_only",
+  "valid_fixture_hash": "4439492de75f85c4cef808e06e7e3ad32a55079ecc395f9deb74c23c779c8e26",
+  "validation_result": "pass"
+}

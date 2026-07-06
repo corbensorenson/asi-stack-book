@@ -72,13 +72,17 @@ EXPECTED = {
         "state": "prototype-backed",
         "transition": "evidence_transitions/v1_x_measured/theseus_assistant_reference_trace_import_prototype_backed.json",
     },
+    "project-theseus-as-report-first-implementation-reference.accelerator_parity_manifest_import": {
+        "state": "prototype-backed",
+        "transition": "evidence_transitions/v1_x_measured/theseus_accelerator_parity_manifest_import_prototype_backed.json",
+    },
 }
 
 NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
 
 REQUIRED_LEDGER_STRINGS = [
     "All 44 remain at `argument`.",
-    "Accepted non-core upward transitions | 13 narrow transitions.",
+    "Accepted non-core upward transitions | 14 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Accepted No-Promotion Side-Lane Decisions",
@@ -259,9 +263,9 @@ def main() -> None:
             errors.append(f"{name} does not reference {ref}")
 
     surface_counts = [
-        ("README.md", readme, "Thirteen narrow non-core transitions are accepted"),
-        ("index.qmd", index, "Thirteen narrow non-core evidence transitions accepted"),
-        ("index.qmd", index, "Thirteen narrow non-core transitions are accepted"),
+        ("README.md", readme, "Fourteen narrow non-core transitions are accepted"),
+        ("index.qmd", index, "Fourteen narrow non-core evidence transitions accepted"),
+        ("index.qmd", index, "Fourteen narrow non-core transitions are accepted"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():

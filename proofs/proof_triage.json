@@ -2091,6 +2091,16 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture bridge for the sanitized Theseus assistant reference-trace import: accepted summaries require 19 trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, no raw report, raw trace, raw assistant text, raw prompt, or private payload copy, and no clean-live-replay, model-quality, benchmark-headline, or chapter-core promotion boundaries."
     },
     {
+      "tag": "lean:theseus.reference.accelerator_parity_manifest_import.fixture_bridge",
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "module": "AsiStackProofs.TheseusReference",
+      "formal_target": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite fixture bridge for the sanitized Theseus accelerator parity manifest import: accepted summaries require 7 of 7 surfaces, MLX and Metal report-summary counts, artifact-manifest and scheduler-canary counts, zero hard failures, zero public training rows, zero external inference calls, no teacher use, no raw report copy, no model promotion, no production routing, and no full CUDA, MLX, or Metal parity claim. It proves only record-level import discipline and overclaim rejection, not accelerator parity, deployed scheduler behavior, model quality, benchmark performance, clean live Project Theseus replay, or the Project Theseus chapter core claim."
+    },
+    {
       "tag": "lean:theseus.reference.book_crosswalk.pointer_boundary",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "module": "AsiStackProofs.TheseusReference",
@@ -2111,5 +2121,5 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite metadata-only fixture bridge: it preserves durable work-board row counts, stale-snapshot currentness blocking, zero public training rows, zero external inference calls, no raw-report or SQLite/task payload copy, and no clean-live-replay or chapter-core promotion boundaries."
     }
   ],
-  "record_count": 210
+  "record_count": 211
 }

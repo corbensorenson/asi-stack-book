@@ -169,6 +169,27 @@ ASSISTANT_TRACE_TRANSITION = (
     / "v1_x_measured"
     / "theseus_assistant_reference_trace_import_prototype_backed.json"
 )
+ACCELERATOR_PARITY_RESULT = (
+    ROOT
+    / "experiments"
+    / "theseus_accelerator_parity_manifest_import"
+    / "results"
+    / "2026-07-06-local.json"
+)
+ACCELERATOR_PARITY_FIXTURE = (
+    ROOT
+    / "experiments"
+    / "theseus_accelerator_parity_manifest_import"
+    / "fixtures"
+    / "valid"
+    / "accelerator_parity_manifest_import.valid.json"
+)
+ACCELERATOR_PARITY_TRANSITION = (
+    ROOT
+    / "evidence_transitions"
+    / "v1_x_measured"
+    / "theseus_accelerator_parity_manifest_import_prototype_backed.json"
+)
 BOOK_CROSSWALK_RESULT = (
     ROOT
     / "experiments"
@@ -224,6 +245,7 @@ DOCS = (
     "docs/theseus_module_definition_of_done_import.md",
     "docs/theseus_project_registry_import.md",
     "docs/theseus_assistant_reference_trace_import.md",
+    "docs/theseus_accelerator_parity_manifest_import.md",
     "docs/theseus_book_crosswalk_import.md",
     "docs/theseus_work_board_import.md",
 )
@@ -240,6 +262,7 @@ VALIDATORS = (
     "python3 scripts/validate_theseus_module_definition_of_done_import.py",
     "python3 scripts/validate_theseus_project_registry_import.py",
     "python3 scripts/validate_theseus_assistant_reference_trace_import.py",
+    "python3 scripts/validate_theseus_accelerator_parity_manifest_import.py",
     "python3 scripts/validate_theseus_book_crosswalk_import.py",
     "python3 scripts/validate_theseus_work_board_import.py",
 )
@@ -274,6 +297,7 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['module_dod_imports']} module definition-of-done import, "
         f"{metrics['project_registry_imports']} project-registry import, "
         f"{metrics['assistant_reference_trace_imports']} assistant reference-trace import, "
+        f"{metrics['accelerator_parity_manifest_imports']} accelerator parity manifest import, "
         f"{metrics['book_crosswalk_imports']} book-to-Theseus crosswalk pointer import, "
         f"{metrics['work_board_imports']} work-board metadata import, "
         f"{metrics['public_task_count']} metadata-only public tasks, "
@@ -289,7 +313,8 @@ def compact_status_row(metrics: dict[str, Any] | None = None) -> str:
         f"{metrics['rlds_minari_upward_transitions']} accepted bounded RLDS/Minari trace-export transition, "
         f"{metrics['module_dod_upward_transitions']} accepted bounded module definition-of-done transition, "
         f"{metrics['project_registry_upward_transitions']} accepted bounded project-registry transition, "
-        f"and {metrics['assistant_reference_trace_upward_transitions']} accepted bounded assistant reference-trace transition; "
+        f"{metrics['assistant_reference_trace_upward_transitions']} accepted bounded assistant reference-trace transition, "
+        f"and {metrics['accelerator_parity_upward_transitions']} accepted bounded accelerator parity manifest transition; "
         f"{metrics['book_crosswalk_pointer_rows']} public-safe pointer rows; "
         f"{metrics['work_board_task_rows']} durable work-board task rows; "
         "clean live replay remains unclaimed. "
@@ -330,6 +355,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         ASSISTANT_TRACE_RESULT,
         ASSISTANT_TRACE_FIXTURE,
         ASSISTANT_TRACE_TRANSITION,
+        ACCELERATOR_PARITY_RESULT,
+        ACCELERATOR_PARITY_FIXTURE,
+        ACCELERATOR_PARITY_TRANSITION,
         BOOK_CROSSWALK_RESULT,
         BOOK_CROSSWALK_FIXTURE,
         BOOK_CROSSWALK_TRANSITION,
@@ -373,6 +401,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     assistant_trace_result = load_json(ASSISTANT_TRACE_RESULT)
     assistant_trace_fixture = load_json(ASSISTANT_TRACE_FIXTURE)
     assistant_trace_transition = load_json(ASSISTANT_TRACE_TRANSITION)
+    accelerator_parity_result = load_json(ACCELERATOR_PARITY_RESULT)
+    accelerator_parity_fixture = load_json(ACCELERATOR_PARITY_FIXTURE)
+    accelerator_parity_transition = load_json(ACCELERATOR_PARITY_TRANSITION)
     book_crosswalk_result = load_json(BOOK_CROSSWALK_RESULT)
     book_crosswalk_fixture = load_json(BOOK_CROSSWALK_FIXTURE)
     book_crosswalk_transition = load_json(BOOK_CROSSWALK_TRANSITION)
@@ -846,6 +877,74 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
     if "does not prove clean live Project Theseus replay" not in assistant_trace_nonclaims:
         errors.append("Theseus assistant reference-trace transition missing clean-live-replay non-claim.")
 
+    accelerator_summary = accelerator_parity_fixture.get("summary", {})
+    accelerator_boundary = accelerator_parity_fixture.get("claim_boundary", {})
+    accelerator_guardrails = accelerator_parity_fixture.get("guardrails", {})
+    if accelerator_parity_result.get("validation_result") != "pass":
+        errors.append("Theseus accelerator parity manifest import result must pass.")
+    if accelerator_parity_result.get("expected_invalid_control_count") != 9:
+        errors.append("Theseus accelerator parity manifest import must keep nine expected-invalid controls.")
+    if accelerator_parity_fixture.get("source_checkout_state") != "dirty_at_import_review":
+        errors.append("Theseus accelerator parity manifest import must preserve dirty-at-import boundary.")
+    if accelerator_parity_result.get("source_trigger_state") != "GREEN":
+        errors.append("Theseus accelerator parity manifest import must keep GREEN trigger state.")
+    for field, expected in (
+        ("surface_count", 7),
+        ("surface_ok_count", 7),
+        ("mlx_report_count", 7),
+        ("mlx_report_ok_count", 7),
+        ("metal_report_count", 4),
+        ("metal_report_ok_count", 4),
+        ("artifact_manifest_count", 4),
+        ("scheduler_canary_count", 4),
+        ("hard_failure_count", 0),
+        ("explicit_guardrail_gap_count", 0),
+        ("external_inference_calls", 0),
+        ("teacher_used_count", 0),
+        ("public_training_rows", 0),
+        ("model_promotion_allowed_count", 0),
+        ("production_routing_enabled_count", 0),
+    ):
+        if accelerator_summary.get(field) != expected:
+            errors.append(f"Theseus accelerator parity manifest field drifted for {field}.")
+    if accelerator_parity_result.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus accelerator parity manifest import must remain prototype-backed.")
+    if accelerator_parity_result.get("chapter_core_support_effect") != "none":
+        errors.append("Theseus accelerator parity manifest import must preserve chapter_core_support_effect none.")
+    for field in (
+        "chapter_core_promotion_claimed",
+        "full_parity_claimed",
+        "production_scheduler_routing_claimed",
+        "model_promotion_claimed",
+        "benchmark_performance_claimed",
+        "model_quality_claimed",
+        "clean_live_theseus_replay_claimed",
+        "safety_claimed",
+        "asi_claimed",
+    ):
+        if accelerator_boundary.get(field) is not False:
+            errors.append(f"Theseus accelerator parity manifest import must not overclaim {field}.")
+    for field, expected in (
+        ("full_parity_claim_allowed", False),
+        ("production_scheduler_routing_enabled", False),
+        ("model_promotion_allowed", False),
+        ("public_calibration_run", False),
+        ("external_inference_calls", 0),
+        ("public_training_rows", 0),
+        ("teacher_used", False),
+    ):
+        if accelerator_guardrails.get(field) != expected:
+            errors.append(f"Theseus accelerator parity manifest guardrail drifted for {field}.")
+    if accelerator_parity_transition.get("review_status") != "accepted":
+        errors.append("Theseus accelerator parity manifest transition must remain accepted.")
+    if accelerator_parity_transition.get("transition_effect") != "upward":
+        errors.append("Theseus accelerator parity manifest transition_effect must remain upward.")
+    if accelerator_parity_transition.get("new_support_state") != "prototype-backed":
+        errors.append("Theseus accelerator parity manifest transition must remain prototype-backed.")
+    accelerator_nonclaims = " ".join(str(item) for item in accelerator_parity_transition.get("non_claims", []))
+    if "does not prove full CUDA, MLX, or Metal parity" not in accelerator_nonclaims:
+        errors.append("Theseus accelerator parity manifest transition missing full-parity non-claim.")
+
     book_crosswalk_summary = book_crosswalk_fixture.get("summary", {})
     book_crosswalk_boundary = book_crosswalk_fixture.get("claim_boundary", {})
     book_crosswalk_safety = book_crosswalk_fixture.get("public_safety_boundary", {})
@@ -986,6 +1085,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "module_dod_imports": 1,
         "project_registry_imports": 1,
         "assistant_reference_trace_imports": 1,
+        "accelerator_parity_manifest_imports": 1,
         "book_crosswalk_imports": 1,
         "work_board_imports": 1,
         "support_replay_commands": len(support_replay.get("replay_commands", [])),
@@ -1078,6 +1178,19 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "assistant_reference_trace_public_training_rows": assistant_trace_summary.get("public_training_rows_written"),
         "assistant_reference_trace_external_inference_calls": assistant_trace_summary.get("external_inference_calls"),
         "assistant_reference_trace_upward_transitions": 1,
+        "accelerator_parity_expected_invalid": accelerator_parity_result.get("expected_invalid_control_count"),
+        "accelerator_parity_surface_count": accelerator_summary.get("surface_count"),
+        "accelerator_parity_surface_ok_count": accelerator_summary.get("surface_ok_count"),
+        "accelerator_parity_mlx_report_count": accelerator_summary.get("mlx_report_count"),
+        "accelerator_parity_metal_report_count": accelerator_summary.get("metal_report_count"),
+        "accelerator_parity_artifact_manifest_count": accelerator_summary.get("artifact_manifest_count"),
+        "accelerator_parity_scheduler_canary_count": accelerator_summary.get("scheduler_canary_count"),
+        "accelerator_parity_hard_failures": accelerator_summary.get("hard_failure_count"),
+        "accelerator_parity_guardrail_gaps": accelerator_summary.get("explicit_guardrail_gap_count"),
+        "accelerator_parity_public_training_rows": accelerator_summary.get("public_training_rows"),
+        "accelerator_parity_external_inference_calls": accelerator_summary.get("external_inference_calls"),
+        "accelerator_parity_teacher_used_count": accelerator_summary.get("teacher_used_count"),
+        "accelerator_parity_upward_transitions": 1,
         "book_crosswalk_expected_invalid": book_crosswalk_result.get("expected_invalid_control_count"),
         "book_crosswalk_pointer_rows": book_crosswalk_summary.get("theseus_to_book_evidence_count"),
         "book_crosswalk_backlog_cards": book_crosswalk_summary.get("roadmap_backlog_item_count"),
@@ -1104,6 +1217,7 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         + module_dod_result.get("expected_invalid_control_count", 0)
         + project_registry_result.get("expected_invalid_control_count", 0)
         + assistant_trace_result.get("expected_invalid_control_count", 0)
+        + accelerator_parity_result.get("expected_invalid_control_count", 0)
         + book_crosswalk_result.get("expected_invalid_control_count", 0)
         + work_board_result.get("expected_invalid_control_count", 0),
         "no_promotion_decisions": 3,
@@ -1135,6 +1249,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Module definition-of-done imports | {metrics['module_dod_imports']} |",
             f"| Project-registry imports | {metrics['project_registry_imports']} |",
             f"| Assistant reference-trace imports | {metrics['assistant_reference_trace_imports']} |",
+            f"| Accelerator parity manifest imports | {metrics['accelerator_parity_manifest_imports']} |",
             f"| Book-to-Theseus crosswalk pointer imports | {metrics['book_crosswalk_imports']} |",
             f"| Work-board metadata imports | {metrics['work_board_imports']} |",
             f"| Replayed validators in support probe | {metrics['support_replay_commands']} |",
@@ -1158,6 +1273,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"| Accepted bounded module definition-of-done transitions | {metrics['module_dod_upward_transitions']} |",
             f"| Accepted bounded project-registry transitions | {metrics['project_registry_upward_transitions']} |",
             f"| Accepted bounded assistant reference-trace transitions | {metrics['assistant_reference_trace_upward_transitions']} |",
+            f"| Accepted bounded accelerator parity manifest transitions | {metrics['accelerator_parity_upward_transitions']} |",
             f"| Book-to-Theseus public-safe pointer rows | {metrics['book_crosswalk_pointer_rows']} |",
             f"| Work-board durable task rows | {metrics['work_board_task_rows']} |",
             "",
@@ -1186,6 +1302,8 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             f"- `evidence_transitions/v1_x_measured/theseus_project_registry_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.project_registry_reality_import`; it does not prove clean live Project Theseus replay, deployment, model quality, self-evolution safety, or any chapter core claim.",
             f"- `docs/theseus_assistant_reference_trace_import.md` records one sanitized assistant reference-trace import with {metrics['assistant_reference_trace_record_types']} required trace record types, {metrics['assistant_reference_trace_gates_passed']}/{metrics['assistant_reference_trace_gate_count']} gates, {metrics['assistant_reference_trace_viea_records']} VIEA view records, {metrics['assistant_reference_trace_vcm_pages']} selected VCM pages, {metrics['assistant_reference_trace_public_training_rows']} public training rows, {metrics['assistant_reference_trace_external_inference_calls']} external inference calls, and {metrics['assistant_reference_trace_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_assistant_reference_trace_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.assistant_reference_trace_import`; it does not prove clean live Project Theseus replay, current runtime state, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, safety, ASI, or any chapter core claim.",
+            f"- `docs/theseus_accelerator_parity_manifest_import.md` records one sanitized accelerator parity manifest import with {metrics['accelerator_parity_surface_ok_count']}/{metrics['accelerator_parity_surface_count']} surfaces OK, {metrics['accelerator_parity_mlx_report_count']} MLX report summaries, {metrics['accelerator_parity_metal_report_count']} Metal report summaries, {metrics['accelerator_parity_artifact_manifest_count']} artifact manifests, {metrics['accelerator_parity_scheduler_canary_count']} scheduler-canary surfaces, {metrics['accelerator_parity_hard_failures']} hard failures, {metrics['accelerator_parity_guardrail_gaps']} guardrail gaps, {metrics['accelerator_parity_public_training_rows']} public training rows, {metrics['accelerator_parity_external_inference_calls']} external inference calls, and {metrics['accelerator_parity_expected_invalid']} expected-invalid controls.",
+            f"- `evidence_transitions/v1_x_measured/theseus_accelerator_parity_manifest_import_prototype_backed.json` is the accepted bounded upward transition for `project-theseus-as-report-first-implementation-reference.accelerator_parity_manifest_import`; it does not prove full CUDA/MLX/Metal parity, production scheduler routing, model promotion, benchmark performance, model quality, clean live Project Theseus replay, safety, ASI, or any chapter core claim.",
             f"- `docs/theseus_book_crosswalk_import.md` records one sanitized book-to-Theseus crosswalk pointer import with {metrics['book_crosswalk_pointer_rows']} public-safe pointer rows, {metrics['book_crosswalk_backlog_cards']} backlog cards, {metrics['book_crosswalk_source_sync_decisions']} source-sync review decisions, {metrics['book_crosswalk_changed_source_files']} changed AI-book source files, and {metrics['book_crosswalk_expected_invalid']} expected-invalid controls.",
             f"- `evidence_transitions/v1_x_measured/theseus_book_crosswalk_import_no_change.json` is the accepted no-promotion decision for `project-theseus-as-report-first-implementation-reference.book_to_theseus_crosswalk_pointer`; it keeps the crosswalk pointer at `argument` and blocks clean-live-replay, model-quality, deployment, support-state, and chapter-core promotion claims.",
             f"- `docs/theseus_work_board_import.md` records one sanitized work-board metadata import with {metrics['work_board_task_rows']} durable task rows, {metrics['work_board_event_rows']} event rows, {metrics['work_board_evidence_rows']} evidence rows, {metrics['work_board_sqlite_tables']} SQLite tables, {metrics['work_board_execution_ledger_rows']} execution-ledger row, {metrics['work_board_unattended_improvement_rows']} unattended-improvement rows, {metrics['work_board_feedback_rows']} feedback rows, a {metrics['work_board_status_age_days']}-day stale-snapshot boundary, zero public training rows, zero external inference calls, and {metrics['work_board_expected_invalid']} expected-invalid controls.",
@@ -1204,6 +1322,7 @@ def build_report(metrics: dict[str, Any], errors: list[str]) -> str:
             "- The module definition-of-done import creates only a bounded non-core support transition; it does not prove module capability, deployed Theseus behavior, model quality, benchmark performance, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The project-registry import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, or any chapter core claim.",
             "- The assistant reference-trace import creates only a bounded non-core support transition; it does not prove clean live Project Theseus replay, current runtime state, deployed behavior, route quality, private verifier quality, model quality, benchmark superiority, useful-solution-per-second improvement, safety, alignment, deployment readiness, or ASI.",
+            "- The accelerator parity manifest import creates only a bounded non-core support transition; it does not prove full CUDA/MLX/Metal parity, production scheduler routing, model promotion, benchmark performance, model quality, clean live Project Theseus replay, safety, alignment, deployment readiness, or ASI.",
             "- The book-to-Theseus crosswalk import is pointer-only and creates no upward support-state transition; it does not prove clean live Project Theseus replay, deployment, model quality, generation speed, self-evolution safety, artifact truth for referenced rows, or any chapter core claim.",
             "- The work-board metadata import is a stale snapshot and creates no upward support-state transition; it does not prove clean live Project Theseus replay, current board state, current dashboard state, deployment, model quality, unattended safety, self-evolution safety, or any chapter core claim.",
             "",

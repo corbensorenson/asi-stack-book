@@ -1646,4 +1646,166 @@ theorem theseus_assistant_reference_trace_import_clean_replay_overclaim_rejected
     theseusAssistantReferenceTraceImportFixture,
   ] at valid
 
+structure TheseusAcceleratorParityManifestImport where
+  surfaceCount : Nat
+  surfaceOkCount : Nat
+  mlxReportCount : Nat
+  mlxReportOkCount : Nat
+  metalReportCount : Nat
+  metalReportOkCount : Nat
+  artifactManifestCount : Nat
+  schedulerCanaryCount : Nat
+  hardFailureCount : Nat
+  explicitGuardrailGapCount : Nat
+  externalInferenceCalls : Nat
+  teacherUsedCount : Nat
+  publicTrainingRows : Nat
+  modelPromotionAllowedCount : Nat
+  productionRoutingEnabledCount : Nat
+  rawReportCopied : Bool
+  privatePayloadCopied : Bool
+  pathFieldsRedacted : Bool
+  publicCalibrationClaimed : Bool
+  fullParityClaimed : Bool
+  productionRoutingClaimed : Bool
+  modelPromotionClaimed : Bool
+  benchmarkPerformanceClaimed : Bool
+  cleanLiveReplayClaimed : Bool
+  chapterCorePromotion : Bool
+  nonClaimBoundaryRecorded : Bool
+deriving DecidableEq, Repr
+
+def TheseusAcceleratorParityManifestComplete
+    (summary : TheseusAcceleratorParityManifestImport) : Prop :=
+  summary.surfaceCount = 7 ∧
+    summary.surfaceOkCount = 7 ∧
+      summary.mlxReportCount = 7 ∧
+        summary.mlxReportOkCount = 7 ∧
+          summary.metalReportCount = 4 ∧
+            summary.metalReportOkCount = 4 ∧
+              summary.artifactManifestCount = 4 ∧
+                summary.schedulerCanaryCount = 4 ∧
+                  summary.hardFailureCount = 0 ∧
+                    summary.explicitGuardrailGapCount = 0
+
+def TheseusAcceleratorParityManifestPublicSafe
+    (summary : TheseusAcceleratorParityManifestImport) : Prop :=
+  summary.externalInferenceCalls = 0 ∧
+    summary.teacherUsedCount = 0 ∧
+      summary.publicTrainingRows = 0 ∧
+        summary.modelPromotionAllowedCount = 0 ∧
+          summary.productionRoutingEnabledCount = 0 ∧
+            summary.rawReportCopied = false ∧
+              summary.privatePayloadCopied = false ∧
+                summary.pathFieldsRedacted = true ∧
+                  summary.nonClaimBoundaryRecorded = true
+
+def TheseusAcceleratorParityManifestPreservesBoundaries
+    (summary : TheseusAcceleratorParityManifestImport) : Prop :=
+  summary.publicCalibrationClaimed = false ∧
+    summary.fullParityClaimed = false ∧
+      summary.productionRoutingClaimed = false ∧
+        summary.modelPromotionClaimed = false ∧
+          summary.benchmarkPerformanceClaimed = false ∧
+            summary.cleanLiveReplayClaimed = false ∧
+              summary.chapterCorePromotion = false
+
+def TheseusAcceleratorParityManifestImportValid
+    (summary : TheseusAcceleratorParityManifestImport) : Prop :=
+  TheseusAcceleratorParityManifestComplete summary ∧
+    TheseusAcceleratorParityManifestPublicSafe summary ∧
+      TheseusAcceleratorParityManifestPreservesBoundaries summary
+
+def theseusAcceleratorParityManifestImportFixture :
+    TheseusAcceleratorParityManifestImport :=
+  { surfaceCount := 7,
+    surfaceOkCount := 7,
+    mlxReportCount := 7,
+    mlxReportOkCount := 7,
+    metalReportCount := 4,
+    metalReportOkCount := 4,
+    artifactManifestCount := 4,
+    schedulerCanaryCount := 4,
+    hardFailureCount := 0,
+    explicitGuardrailGapCount := 0,
+    externalInferenceCalls := 0,
+    teacherUsedCount := 0,
+    publicTrainingRows := 0,
+    modelPromotionAllowedCount := 0,
+    productionRoutingEnabledCount := 0,
+    rawReportCopied := false,
+    privatePayloadCopied := false,
+    pathFieldsRedacted := true,
+    publicCalibrationClaimed := false,
+    fullParityClaimed := false,
+    productionRoutingClaimed := false,
+    modelPromotionClaimed := false,
+    benchmarkPerformanceClaimed := false,
+    cleanLiveReplayClaimed := false,
+    chapterCorePromotion := false,
+    nonClaimBoundaryRecorded := true }
+
+theorem theseus_accelerator_parity_manifest_import_fixture_valid :
+    TheseusAcceleratorParityManifestImportValid
+      theseusAcceleratorParityManifestImportFixture := by
+  simp [
+    TheseusAcceleratorParityManifestImportValid,
+    TheseusAcceleratorParityManifestComplete,
+    TheseusAcceleratorParityManifestPublicSafe,
+    TheseusAcceleratorParityManifestPreservesBoundaries,
+    theseusAcceleratorParityManifestImportFixture,
+  ]
+
+theorem theseus_accelerator_parity_manifest_import_full_parity_overclaim_rejected :
+    ¬ TheseusAcceleratorParityManifestImportValid
+      { theseusAcceleratorParityManifestImportFixture with
+        fullParityClaimed := true } := by
+  intro valid
+  simp [
+    TheseusAcceleratorParityManifestImportValid,
+    TheseusAcceleratorParityManifestComplete,
+    TheseusAcceleratorParityManifestPublicSafe,
+    TheseusAcceleratorParityManifestPreservesBoundaries,
+    theseusAcceleratorParityManifestImportFixture,
+  ] at valid
+
+theorem theseus_accelerator_parity_manifest_import_production_routing_overclaim_rejected :
+    ¬ TheseusAcceleratorParityManifestImportValid
+      { theseusAcceleratorParityManifestImportFixture with
+        productionRoutingClaimed := true } := by
+  intro valid
+  simp [
+    TheseusAcceleratorParityManifestImportValid,
+    TheseusAcceleratorParityManifestComplete,
+    TheseusAcceleratorParityManifestPublicSafe,
+    TheseusAcceleratorParityManifestPreservesBoundaries,
+    theseusAcceleratorParityManifestImportFixture,
+  ] at valid
+
+theorem theseus_accelerator_parity_manifest_import_model_promotion_overclaim_rejected :
+    ¬ TheseusAcceleratorParityManifestImportValid
+      { theseusAcceleratorParityManifestImportFixture with
+        modelPromotionClaimed := true } := by
+  intro valid
+  simp [
+    TheseusAcceleratorParityManifestImportValid,
+    TheseusAcceleratorParityManifestComplete,
+    TheseusAcceleratorParityManifestPublicSafe,
+    TheseusAcceleratorParityManifestPreservesBoundaries,
+    theseusAcceleratorParityManifestImportFixture,
+  ] at valid
+
+theorem theseus_accelerator_parity_manifest_import_core_promotion_rejected :
+    ¬ TheseusAcceleratorParityManifestImportValid
+      { theseusAcceleratorParityManifestImportFixture with
+        chapterCorePromotion := true } := by
+  intro valid
+  simp [
+    TheseusAcceleratorParityManifestImportValid,
+    TheseusAcceleratorParityManifestComplete,
+    TheseusAcceleratorParityManifestPublicSafe,
+    TheseusAcceleratorParityManifestPreservesBoundaries,
+    theseusAcceleratorParityManifestImportFixture,
+  ] at valid
+
 end AsiStackProofs.TheseusReference

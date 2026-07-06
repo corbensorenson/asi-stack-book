@@ -1,0 +1,113 @@
+{
+  "transition_id": "v1_x_measured.theseus_accelerator_parity_manifest_import.prototype_backed",
+  "claim_id": "project-theseus-as-report-first-implementation-reference.accelerator_parity_manifest_import",
+  "claim_surface_refs": [
+    "docs/theseus_accelerator_parity_manifest_import.md",
+    "docs/non_core_evidence_ledger.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "claim_record_refs": [
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/valid/accelerator_parity_manifest_import.valid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/results/2026-07-06-local.json",
+    "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "prototype-backed",
+  "transition_effect": "upward",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Only the bounded Project Theseus accelerator parity manifest import moves to prototype-backed: a sanitized public-safe fixture records one digest-pinned audit manifest with seven surfaces, seven MLX report summaries, four Metal report summaries, four artifact manifests, four scheduler-canary surfaces, zero hard failures, zero guardrail gaps, zero public training rows, zero external inference calls, no teacher use, no model-promotion allowance, no production-routing allowance, and nine expected-invalid controls. This does not promote the Project Theseus chapter core claim, prove full CUDA/MLX/Metal parity, production scheduler routing, model promotion, benchmark performance, model quality, deployment readiness, clean live Project Theseus replay, safety, alignment, transfer, or ASI.",
+  "evidence_roles": [
+    "external_project_prototype_report_import",
+    "sanitized_public_fixture",
+    "accelerator_parity_audit_manifest",
+    "public_safety_boundary",
+    "expected_invalid_controls",
+    "lean_python_fixture_alignment",
+    "no_chapter_core_promotion_boundary"
+  ],
+  "transition_reason": "The imported Theseus accelerator parity manifest has enough public-safe structure to be treated as a bounded prototype-backed audit-manifest import rather than a plan or dashboard impression: it preserves a concrete source digest, trigger state GREEN, seven surface rows, all MLX summaries present, four Metal summaries present, four artifact manifests, four scheduler-canary surfaces, public-safety zeros, model-promotion and production-routing locks, and negative controls for source mismatch, raw-report copying, non-GREEN source state, count drift, hidden hard failures, full-parity overclaim, production-routing overclaim, model-promotion overclaim, and chapter-core promotion. The accepted transition applies only to this import object.",
+  "required_artifacts": [
+    "sanitized public-safe Theseus accelerator parity manifest fixture",
+    "source report digest",
+    "surface-count and report-count summary",
+    "guardrail summary",
+    "public-safety redaction boundary",
+    "negative controls for source hash mismatch, raw-report copying, non-GREEN trigger state, surface-count drift, hidden hard failure, full-parity overclaim, production-routing overclaim, model-promotion overclaim, and chapter-core promotion",
+    "finite Lean fixture alignment",
+    "accepted bounded evidence-transition record"
+  ],
+  "artifact_refs": [
+    "docs/theseus_accelerator_parity_manifest_import.md",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/valid/accelerator_parity_manifest_import.valid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/results/2026-07-06-local.json",
+    "scripts/validate_theseus_accelerator_parity_manifest_import.py",
+    "lean/AsiStackProofs/TheseusReference.lean"
+  ],
+  "evidence_packet_refs": [
+    "docs/theseus_accelerator_parity_manifest_import.md",
+    "docs/project_theseus_static_import_status_ledger.md",
+    "docs/non_core_evidence_ledger.md",
+    "docs/v1_x_active_evidence_cycle.md"
+  ],
+  "source_mapping_refs": [
+    "appendices/G_corben_source_corpus.qmd#project_theseus_whitepaper",
+    "appendices/G_corben_source_corpus.qmd#theseus_architecture_gate",
+    "docs/book_outline.md#project-theseus-as-report-first-implementation-reference"
+  ],
+  "verification_command": "python3 scripts/validate_theseus_accelerator_parity_manifest_import.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "source report hash mismatch is rejected",
+    "raw report copying is rejected",
+    "non-GREEN source trigger state is rejected",
+    "surface-count drift is rejected",
+    "hidden hard failure count is rejected",
+    "full accelerator parity overclaim is rejected",
+    "production scheduler routing overclaim is rejected",
+    "model-promotion overclaim is rejected",
+    "chapter-core promotion overclaim is rejected"
+  ],
+  "negative_evidence_refs": [
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/source_hash_mismatch.invalid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/raw_report_copied.invalid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/source_trigger_not_green.invalid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/surface_count_mismatch.invalid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/hard_failure_hidden.invalid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/full_parity_overclaim.invalid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/production_routing_overclaim.invalid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/model_promotion_overclaim.invalid.json",
+    "experiments/theseus_accelerator_parity_manifest_import/fixtures/invalid/chapter_core_promotion.invalid.json"
+  ],
+  "downgrade_triggers": [
+    "the sanitized fixture no longer validates against the recorded source digest, trigger state, count summary, surface rows, public-safety boundary, or non-claim boundary",
+    "a source mismatch, raw-report copy, non-GREEN trigger state, count drift, hard failure, full-parity overclaim, production-routing overclaim, model-promotion overclaim, or chapter-core promotion is accepted as valid",
+    "the import is described as full CUDA/MLX/Metal parity, production scheduler routing, model promotion, benchmark performance, model quality, deployment evidence, clean live Project Theseus replay, safety evidence, alignment evidence, transfer evidence, ASI evidence, or chapter-core evidence",
+    "future public dependency policy requires archived raw report publication and this record remains a digest-only sanitized summary"
+  ],
+  "promotion_burden": "Move beyond this bounded prototype-backed import only after a public-safe archived Theseus report bundle or clean live replay is available, raw/private publication boundaries are resolved, accelerator command replays and environment notes are published or independently checked, benchmark and model-quality claims are separately evaluated, scheduler routing and model-promotion decisions have operator-reviewed enablement records, residuals and non-claims are preserved, and independent review is recorded with a separate accepted transition.",
+  "limitations": [
+    "sanitized digest-and-count import only",
+    "raw Theseus report, raw paths, metrics payloads, private payloads, prompts, tests, solutions, checkpoints, candidate code, score labels, and training rows are not copied into this public repository",
+    "source checkout was dirty at import review",
+    "source report was created on 2026-06-15 and is not a current runtime-state proof",
+    "local maintainer-agent review only",
+    "manifest score semantics are audit-only and explicitly block public calibration spending, teacher calls, production scheduler routing, model promotion, and full parity claims",
+    "does not prove full CUDA, MLX, or Metal parity; production scheduler routing; model promotion; benchmark performance; model quality; deployment readiness; clean live Project Theseus replay; safety; alignment; transfer; or ASI",
+    "does not promote any chapter core claim above argument"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Codex v1.x roadmap run"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; not an independent Project Theseus accelerator reviewer, scheduler reviewer, model-quality reviewer, benchmark reviewer, safety auditor, or deployment reviewer",
+  "acceptance_blockers": [],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-06---import-theseus-accelerator-parity-manifest",
+  "support_state_effect": "eligible_for_bounded_evidence_review",
+  "non_claims": [
+    "does not copy the raw Project Theseus accelerator parity report, private paths, private payloads, checkpoints, prompts, tests, solutions, score labels, candidate code, metrics payloads, or training rows into this public repository",
+    "does not prove full CUDA, MLX, or Metal parity; production scheduler routing; model promotion; benchmark performance; model quality; deployment readiness; safety; alignment; transfer; clean live Project Theseus replay; or ASI",
+    "does not promote any chapter core claim above argument"
+  ]
+}
