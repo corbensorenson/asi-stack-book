@@ -1,0 +1,115 @@
+{
+  "non_claims": [
+    "This public-safe Theseus weekly-focus trace fixture does not promote support state or any chapter core claim.",
+    "This fixture does not prove model quality, public benchmark performance, learned generation, deployed runtime behavior, or ASI.",
+    "This fixture imports only a digest-and-summary reference trace; it does not copy raw Theseus reports, prompts, traces, private data, checkpoints, benchmark payloads, or training rows."
+  ],
+  "reference_trace_record": {
+    "artifacts": [
+      "assistant_runtime_report:reports/theseus_assistant_product_spine_smoke.json:sha256:060a9b9597edb1232339d782425eb4cb86b69859287bba844618bd5fe653d21a",
+      "assistant_viea_trace:reports/theseus_assistant_product_spine_trace.jsonl:sha256:4af4534a9ced206f76a0174356c8106e3859c463abf33780587bed0d603f4a84",
+      "assistant_trace_schema:configs/assistant_trace_schema.json:sha256:7f16d13d71f5ebe1df2d2bd4e2765e4b632329aa89998746415589fd4cf6cef2",
+      "viea_spine_materialized_view:reports/viea_spine_materialized_view.json:sha256:067545dabead41300e94a1efc974b867284bb7c8d0fd439f711665d8aeac78c0",
+      "private_verifier_spine:reports/private_verifier_spine_smoke.json:sha256:6f59bba7400df4dd62b1ee2983eaaead304b684409837e2db9bae2ef485bfb0c",
+      "deterministic_tool_substrate:reports/deterministic_tool_substrate.json:sha256:3ea57413155e3b6c0188b0483384deafed051f5fe8dfc7240112180c46b1973f",
+      "book_to_theseus_crosswalk:reports/book_to_theseus_crosswalk.json:sha256:eab2bfa452dabdc9aa633e31b697f038eefc7b4c1f5fdf1d8f3690e0f1b7af6c",
+      "weekly_focus_report:reports/theseus_weekly_focus_20260706.json:sha256:e46e8e99d69453231e4af70a61f160767f64fd58e381f389e5df6df4cc1e93fb",
+      "public_safe_reference_trace_export:reports/theseus_public_safe_reference_trace_20260706.json:sha256:358c935957dfc85b0fd74047c00f66eca05f09021ed7c2ade8c594f42ea5dfc8",
+      "book_importable_evidence_packs_export:reports/theseus_book_importable_evidence_packs_20260706.json:sha256:6664dac0117c7694a8ab7c10e87f5e3b675ee1329222c8ad3a6999ceeb4a073c"
+    ],
+    "authority_chain": [
+      "AGENTS.md hard rules and anti-cheating guardrail",
+      "configs/project_manifest_registry.json registered surfaces",
+      "configs/roadmap_implementation_matrix.json weekly_focus_decision",
+      "reports/viea_spine_materialized_view.json authority records",
+      "reports/private_verifier_spine_smoke.json verifier receipt"
+    ],
+    "authority_deltas": [
+      "assistant route used local VCM/tools/planning/verifier evidence only",
+      "raw prompt persisted as hash-only trace metadata",
+      "public benchmark training remains forbidden",
+      "external inference runtime remains forbidden"
+    ],
+    "evidence_deltas": [
+      "public-safe reference trace exported from current assistant product-spine run",
+      "book-importable evidence pack standard applied to selected GREEN evidence surfaces",
+      "receipt faithfulness, residual conservation, verifier capacity, governance tax, claim disposition, and book schema conformance audits materialized"
+    ],
+    "evidence_updates": [
+      "assistant_trigger_state=GREEN",
+      "assistant_viea_trace_complete=True",
+      "assistant_viea_trace_record_count=18",
+      "dogfood_event_written=True",
+      "weekly_focus_trigger_state=GREEN",
+      "weekly_focus_report_sha256=e46e8e99d69453231e4af70a61f160767f64fd58e381f389e5df6df4cc1e93fb",
+      "public_safe_reference_trace_export=reports/theseus_public_safe_reference_trace_20260706.json",
+      "book_importable_evidence_packs_export=reports/theseus_book_importable_evidence_packs_20260706.json",
+      "book_importable_evidence_pack_count=10",
+      "weekly_focus_expected_invalid_controls=7",
+      "weekly_focus_residual_conservation=GREEN",
+      "weekly_focus_verifier_capacity=GREEN",
+      "weekly_focus_governance_tax_measured=True",
+      "weekly_focus_capability_claim_dispositions=6",
+      "record_types=artifact_graph_record,authority_transition,authority_use_receipt,claim_record,command_contract,context_abi_record,context_adequacy,context_transaction,evidence_transition_record,failure_boundary,generation_mode,intent_contract,planforge_dag,policy_optimization_record,residual_record,resource_budget,runtime_adapter_invocation,typed_job"
+    ],
+    "execution_boundary": "runtime_trace",
+    "intent_ref": "prompt_sha256:f2cbfb29ba1f90fec1d8ace53df7a0274a0ba0998cf39a46ed5f715342d31a8f",
+    "layer_handoffs": [
+      "intent -> command contract: assistant runtime classified weekly-focus request and emitted hash-bound intent/command records",
+      "plan -> context: planning route selected VCM task family and context packet",
+      "context -> route: VCM context, deterministic tool evidence, and resource route records entered the assistant trace",
+      "route -> verification: private verifier and VIEA materialized view receipts bounded the route",
+      "verification -> execution: local assistant runtime produced report, markdown, event, and trace artifacts",
+      "execution -> evidence: artifact graph, claim record, evidence transition, residual record, and policy optimization records were emitted",
+      "evidence -> scf improvement gate: report remains record-shape evidence with explicit promotion blockers"
+    ],
+    "missing_contracts": [
+      "AI_book import acceptance is not claimed until book-side validators ingest this exact public-safe export",
+      "clean release/publication review is not claimed from this local dirty-worktree trace"
+    ],
+    "non_claims": [
+      "This trace does not promote any ASI Stack chapter core claim.",
+      "This trace does not prove model quality, public benchmark performance, or learned-generation capability.",
+      "This trace does not copy raw private prompts, raw assistant text, private training rows, checkpoint payloads, or benchmark payloads.",
+      "This trace does not prove deployed or clean-release readiness."
+    ],
+    "parent_artifact_refs": [
+      "roadmap_weekly_focus:roadmap.md:sha256:0b58c8288371029efdf82caa1d12665cdcb230d82ccf660b0d813177d7a09600",
+      "operating_charter:AGENTS.md:sha256:a26268c837c7e81dd507a24821fddfd5008d3de97896aa216eb189344d4de469",
+      "roadmap_matrix:configs/roadmap_implementation_matrix.json:sha256:a97f2afe493f73abe4e8271cf6c4ce815f0b9763f1020f27b58514bf0578a1fd"
+    ],
+    "promotion_blockers": [
+      "reference trace supports implementation-reference review only",
+      "learned-generation claims still require independent candidate integrity and behavioral evidence",
+      "book support-state movement requires AI_book import/review records"
+    ],
+    "residual_deltas": [
+      "learned-generation/public-transfer quality remains a separate blocker",
+      "Hive live reachable-peer proof remains outside this local weekly-focus trace",
+      "book import remains support-state review work, not automatic promotion"
+    ],
+    "source_refs": [
+      "AGENTS.md",
+      "roadmap.md",
+      "configs/roadmap_implementation_matrix.json",
+      "configs/project_manifest_registry.json",
+      "sources/source_notes/project_theseus_whitepaper.md"
+    ],
+    "stop_conditions": [
+      "public benchmark payloads must not become training rows",
+      "tools/templates/routers/fallbacks must not count as learned generation",
+      "schema-valid reference trace must not be read as model-quality evidence"
+    ],
+    "support_state_effect": "record_shape_only",
+    "trace_id": "theseus_reference_trace-ddaa0157bd375da3",
+    "trace_state": "replayed",
+    "validation_commands": [
+      "python3 scripts/theseus_assistant_runtime.py --prompt ... --intent tool --feedback completed --session-id weekly_focus_20260706_reference_trace --out reports/theseus_assistant_product_spine_smoke.json --markdown-out reports/theseus_assistant_product_spine_smoke.md --events-out reports/theseus_assistant_product_spine_events.jsonl --viea-trace-out reports/theseus_assistant_product_spine_trace.jsonl",
+      "python3 scripts/theseus_weekly_focus_20260706.py --gate",
+      "python3 scripts/viea_spine_record_gate.py --gate",
+      "python3 scripts/roadmap_implementation_gate.py --gate",
+      "python3 scripts/validate_reference_trace.py"
+    ]
+  },
+  "scenario_id": "theseus_weekly_focus_20260706_runtime_trace_import"
+}

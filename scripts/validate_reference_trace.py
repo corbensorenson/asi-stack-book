@@ -25,6 +25,21 @@ REQUIRED_TRACE_TERMS = {
 }
 NON_PROMOTING_SUPPORT_EFFECTS = {"record_shape_only", "argument_only", "blocks_promotion"}
 PROMOTION_TERMS = {"promoted", "promotion", "prototype-backed", "synthetic-test-backed", "empirical-test-backed"}
+THESEUS_WEEKLY_FOCUS_SCENARIO = "theseus_weekly_focus_20260706_runtime_trace_import"
+THESEUS_WEEKLY_FOCUS_REQUIRED_ARTIFACTS = {
+    "weekly_focus_report:reports/theseus_weekly_focus_20260706.json:sha256:e46e8e99d69453231e4af70a61f160767f64fd58e381f389e5df6df4cc1e93fb",
+    "public_safe_reference_trace_export:reports/theseus_public_safe_reference_trace_20260706.json:sha256:358c935957dfc85b0fd74047c00f66eca05f09021ed7c2ade8c594f42ea5dfc8",
+    "book_importable_evidence_packs_export:reports/theseus_book_importable_evidence_packs_20260706.json:sha256:6664dac0117c7694a8ab7c10e87f5e3b675ee1329222c8ad3a6999ceeb4a073c",
+}
+THESEUS_WEEKLY_FOCUS_REQUIRED_TERMS = {
+    "weekly_focus_trigger_state=green",
+    "book_importable_evidence_pack_count=10",
+    "weekly_focus_expected_invalid_controls=7",
+    "weekly_focus_residual_conservation=green",
+    "weekly_focus_verifier_capacity=green",
+    "weekly_focus_governance_tax_measured=true",
+    "weekly_focus_capability_claim_dispositions=6",
+}
 
 
 def load_json(path: Path) -> Any:
@@ -127,6 +142,26 @@ def semantic_errors(value: dict[str, Any], relative: str) -> list[str]:
         errors.append(f"{relative}: non_claims must deny stronger proof.")
     if "runtime" not in non_claim_text and "deployed" not in non_claim_text:
         errors.append(f"{relative}: non_claims must deny runtime or deployed-system claims.")
+
+    if value.get("scenario_id") == THESEUS_WEEKLY_FOCUS_SCENARIO:
+        artifact_set = {str(item) for item in artifacts}
+        missing_artifacts = sorted(THESEUS_WEEKLY_FOCUS_REQUIRED_ARTIFACTS - artifact_set)
+        if missing_artifacts:
+            errors.append(
+                f"{relative}: Theseus weekly-focus fixture missing required import artifact(s): "
+                + ", ".join(missing_artifacts)
+            )
+        weekly_text = text_blob(record.get("evidence_updates", []), evidence_deltas, record.get("non_claims", []))
+        missing_weekly_terms = sorted(term for term in THESEUS_WEEKLY_FOCUS_REQUIRED_TERMS if term not in weekly_text)
+        if missing_weekly_terms:
+            errors.append(
+                f"{relative}: Theseus weekly-focus fixture missing required evidence term(s): "
+                + ", ".join(missing_weekly_terms)
+            )
+        if not any(str(command) == "python3 scripts/theseus_weekly_focus_20260706.py --gate" for command in validation_commands):
+            errors.append(f"{relative}: Theseus weekly-focus fixture must cite the Theseus weekly-focus gate command.")
+        if "raw theseus reports" not in non_claim_text or "training rows" not in non_claim_text:
+            errors.append(f"{relative}: Theseus weekly-focus fixture must deny raw-report and training-row import.")
 
     return errors
 

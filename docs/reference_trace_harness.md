@@ -24,7 +24,7 @@ Result record: `experiments/reference_trace/results/2026-06-30-local.md`
 
 Expected command output:
 
-`Reference trace harness passed: 2 valid fixture(s), 6 expected-invalid fixture(s).`
+`Reference trace harness passed: 3 valid fixture(s), 6 expected-invalid fixture(s).`
 
 ## Reference Trace Replay
 

@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-06 - Import Theseus weekly-focus reference trace fixture
+
+- Added a public-safe Project Theseus weekly-focus reference trace fixture to
+  the generic reference-trace harness. The imported record covers the current
+  implementation-reference path from intent through command contract, plan, VCM
+  context packet, route, verification, execution, evidence, and SCF improvement
+  gate.
+- The imported fixture records the Theseus weekly-focus report digest, ten
+  book-importable evidence packs, seven expected-invalid receipt controls,
+  residual-conservation and verifier-capacity checks, governance-tax accounting,
+  six capability-claim dispositions, and one preregistered correctness-in-the-
+  loop generator experiment.
+- Boundary: this is a sanitized reference-trace fixture import only. It does
+  not copy raw Theseus reports, private payloads, prompts, traces, checkpoints,
+  tests, solutions, score labels, candidate code, or training rows into the
+  public book. It does not prove model quality, benchmark performance, clean
+  public release readiness, ASI, or chapter-core support-state promotion.
+
 ## 2026-07-06 - Import Theseus accelerator parity manifest
 
 - Added a sanitized Project Theseus accelerator parity manifest import with
