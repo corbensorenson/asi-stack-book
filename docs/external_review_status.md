@@ -48,9 +48,9 @@ truthfully records the earlier state: there was no named independent reviewer re
 being rewritten. The author-only completion policy supersedes that blocker as
 a release gate; it does not transform the blocker into a review result.
 
-The public issue is to be closed as superseded by the no-prepublication-
-outreach decision. Its URLs and structured request-update records remain
-lineage evidence only.
+The public issue was closed as `not_planned` on 2026-07-10, superseded by the
+no-prepublication-outreach decision. Its URLs and structured request-update
+records remain lineage evidence only.
 
 ## AI-assisted critique intake
 

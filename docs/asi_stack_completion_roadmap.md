@@ -366,10 +366,11 @@ source inventory has 271 records. All 54 chapter-core claims remain at
 repository-change slice, five trace invariants, a declarative validation
 registry, content-addressed tested-site bundling, and a clean local render.
 
-The immediate action is Workstream A: publish the current coherent source
-through the new tested-artifact workflow and accept closure only after the live
-attestation agrees. The next content action is the first six packets in
-Workstream C. No new planning document should displace these actions.
+Workstream A's first coherence release closed on 2026-07-10: build run
+`29108462406` and deploy/attest run `29108700945` agreed on clean merge commit
+`68b0902ea1b3...`, 54 chapters, 271 sources, `/latest/`, the version index, and
+all three product routes. The immediate content action is now the first six
+packets in Workstream C. No new planning document should displace them.
 
 ## Non-claims
 
