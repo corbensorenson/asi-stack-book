@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 45 |
+| Manifest chapter core claims | 46 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 23 |
+| Accepted explicit no-promotion decisions | 24 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -47,6 +47,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 
 | Claim ID | Chapter | Decision | Primary blockers |
 |---|---|---|---|
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | `argument_only` | no local deceptive-model or detector result; no cross-context workload or independent replay; finite theorem does not establish sandbagging resistance or evaluator correctness |
 | `artifact-graphs-audit-logs-and-replay.core` | Artifact Graphs, Audit Logs, and Replay | `argument_only` | no artifact graph implementation; no replay metadata validation over real outputs; no audit reconstruction benchmark |
 | `artifact-steward-agents-and-living-project-governance.core` | Artifact Steward Agents and Living Project Governance | `argument_only` | no steward-agent runtime; no governed treasury action; no release-gate execution over a real artifact |
 | `asi-is-a-stack-not-a-model.core` | ASI Is a Stack, Not a Model | `argument_only` | no deployed or replayed stack run; finite proofs do not establish whole-stack behavior; no independent architecture review |

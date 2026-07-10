@@ -1,11 +1,12 @@
 {
   "generated_from": "docs/book_outline.md",
   "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
-  "proof_target_count": 214,
+  "proof_target_count": 215,
   "status_counts": {
-    "implemented": 214
+    "implemented": 215
   },
   "chapter_counts": {
+    "adversarial-evaluation-sandbagging-and-training-time-deception": 1,
     "artifact-graphs-audit-logs-and-replay": 10,
     "artifact-steward-agents-and-living-project-governance": 7,
     "asi-is-a-stack-not-a-model": 3,
@@ -1824,13 +1825,23 @@
       "module_path": "lean/AsiStackProofs/BenchmarkRatchets.lean"
     },
     {
+      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "chapter_title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
+      "tag": "lean:adversarial_evaluation.selection_context.failure_blocks_promotion",
+      "module": "AsiStackProofs.PolicyOptimization",
+      "formal_target": "A finite evaluation-integrity record with missing selection context or independent evaluation blocks requested promotion without inferring deception, capability, safety, or intent.",
+      "status": "implemented",
+      "outline_line": 3004,
+      "module_path": "lean/AsiStackProofs/PolicyOptimization.lean"
+    },
+    {
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "chapter_title": "Policy Optimization and Learning from Feedback",
       "tag": "lean:policy_optimization.update.operational_invariant",
       "module": "AsiStackProofs.PolicyOptimization",
       "formal_target": "An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan.",
       "status": "implemented",
-      "outline_line": 3051,
+      "outline_line": 3084,
       "module_path": "lean/AsiStackProofs/PolicyOptimization.lean"
     },
     {
@@ -1840,7 +1851,7 @@
       "module": "AsiStackProofs.PolicyOptimization",
       "formal_target": "A policy update with unverified reward or missing governance gate cannot be promoted.",
       "status": "implemented",
-      "outline_line": 3052,
+      "outline_line": 3085,
       "module_path": "lean/AsiStackProofs/PolicyOptimization.lean"
     },
     {
@@ -1850,7 +1861,7 @@
       "module": "AsiStackProofs.PolicyOptimization",
       "formal_target": "A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion.",
       "status": "implemented",
-      "outline_line": 3053,
+      "outline_line": 3086,
       "module_path": "lean/AsiStackProofs/PolicyOptimization.lean"
     },
     {
@@ -1860,7 +1871,7 @@
       "module": "AsiStackProofs.PolicyOptimization",
       "formal_target": "The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary.",
       "status": "implemented",
-      "outline_line": 3054,
+      "outline_line": 3087,
       "module_path": "lean/AsiStackProofs/PolicyOptimization.lean"
     },
     {
@@ -1870,7 +1881,7 @@
       "module": "AsiStackProofs.DataEngines",
       "formal_target": "Missing provenance or authority routes a finite data-admission review to block.",
       "status": "implemented",
-      "outline_line": 3160,
+      "outline_line": 3193,
       "module_path": "lean/AsiStackProofs/DataEngines.lean"
     },
     {
@@ -1880,7 +1891,7 @@
       "module": "AsiStackProofs.DataEngines",
       "formal_target": "Missing split exclusions or contamination checks routes a finite data-admission review to quarantine.",
       "status": "implemented",
-      "outline_line": 3161,
+      "outline_line": 3194,
       "module_path": "lean/AsiStackProofs/DataEngines.lean"
     },
     {
@@ -1890,7 +1901,7 @@
       "module": "AsiStackProofs.DataEngines",
       "formal_target": "A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified.",
       "status": "implemented",
-      "outline_line": 3162,
+      "outline_line": 3195,
       "module_path": "lean/AsiStackProofs/DataEngines.lean"
     },
     {
@@ -1900,7 +1911,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward-managed work contract records objective, authority, allowed tools, forbidden tools, verification requirements, budget, and non-claims before dispatch.",
       "status": "implemented",
-      "outline_line": 3251,
+      "outline_line": 3284,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1910,7 +1921,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward action that exceeds treasury policy, changes governance rules, or touches protected assets cannot execute without explicit approval evidence.",
       "status": "implemented",
-      "outline_line": 3252,
+      "outline_line": 3285,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1920,7 +1931,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A stewarded release publication requires test, evidence, changelog, residual, and approval records.",
       "status": "implemented",
-      "outline_line": 3253,
+      "outline_line": 3286,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1930,7 +1941,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "When sunset criteria are met, ordinary work generation is blocked until a sunset review is opened.",
       "status": "implemented",
-      "outline_line": 3254,
+      "outline_line": 3287,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1940,7 +1951,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward lifecycle route sends tainted unreviewed events to quarantine, sunset criteria without review to sunset review, autonomy escalation without charter approval to approval, and over-policy treasury spend to approval.",
       "status": "implemented",
-      "outline_line": 3255,
+      "outline_line": 3288,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1950,7 +1961,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward contribution ledger keeps authorship, review, evidence, compensation, reputation, governance effect, and conflicts separated; collapsed governance scoring is rejected and support-state changes require evidence-transition records.",
       "status": "implemented",
-      "outline_line": 3256,
+      "outline_line": 3289,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1960,7 +1971,7 @@
       "module": "AsiStackProofs.ArtifactStewardAgents",
       "formal_target": "A steward federation contract requires scoped work contracts, bounded worker authority, tool/data/budget gates, external-spend approval, and evidence-bundle requirements before dispatch.",
       "status": "implemented",
-      "outline_line": 3257,
+      "outline_line": 3290,
       "module_path": "lean/AsiStackProofs/ArtifactStewardAgents.lean"
     },
     {
@@ -1970,7 +1981,7 @@
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "An end-to-end trace contains required artifacts for each layer handoff.",
       "status": "implemented",
-      "outline_line": 3320,
+      "outline_line": 3353,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
     {
@@ -1980,7 +1991,7 @@
       "module": "AsiStackProofs.ReferenceArchitecture",
       "formal_target": "A trace with a missing governance gate cannot be marked valid.",
       "status": "implemented",
-      "outline_line": 3321,
+      "outline_line": 3354,
       "module_path": "lean/AsiStackProofs/ReferenceArchitecture.lean"
     },
     {
@@ -1990,7 +2001,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "An implementation-reference claim names the report, config, or tool surface and does not rely on dashboard prose alone.",
       "status": "implemented",
-      "outline_line": 3424,
+      "outline_line": 3457,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2000,7 +2011,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A capability or self-evolution promotion is blocked when required gate reports are absent or failing.",
       "status": "implemented",
-      "outline_line": 3425,
+      "outline_line": 3458,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2010,7 +2021,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A public-safe Theseus report-bundle audit fixture is accepted only when bundle components, replay-readiness rows, crosswalk rows, gate mappings, work-board contract fields, visible artifact gaps, intervention-ladder ordering, and no-promotion boundaries are complete.",
       "status": "implemented",
-      "outline_line": 3426,
+      "outline_line": 3459,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2020,7 +2031,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A public-safe Theseus public task-bundle import fixture is accepted only when source reports, metadata-only public task boundaries, zero public training rows, zero exported prompts/tests/solutions/traces/scores/candidate code, operator and benchmark gates, visible artifact gaps, no clean-live-replay claim, and no-promotion boundaries are complete.",
       "status": "implemented",
-      "outline_line": 3427,
+      "outline_line": 3460,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2030,7 +2041,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "The selected Theseus/Fast support-lane aggregate carries 4 command replays, 16 tracked artifacts, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, the four included support surfaces, and explicit no-clean-live-replay, no-model-quality, no-generation-speed, no-useful-solution-model, no-chapter-core-promotion, and no-support-state-promotion boundaries.",
       "status": "implemented",
-      "outline_line": 3428,
+      "outline_line": 3461,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2040,7 +2051,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A sanitized Project Theseus artifact-retention replay import fixture records exact-hash retained-artifact replay, public-safe redaction, zero public training rows, zero external inference calls, required record counts, and rejects hash mismatch or chapter-core promotion overclaim.",
       "status": "implemented",
-      "outline_line": 3429,
+      "outline_line": 3462,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2050,7 +2061,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A sanitized Project Theseus module definition-of-done import fixture records a GREEN gate, 22 ready module records, 0 hard gaps, 0 warnings, source-backlog routing, public-safety boundaries, and rejects chapter-core promotion or capability overclaim.",
       "status": "implemented",
-      "outline_line": 3430,
+      "outline_line": 3463,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2060,7 +2071,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A sanitized Project Theseus project-registry import fixture records 5,662 registered paths, 24 owned lifecycle surfaces, complete registry coverage, zero unregistered active sources, zero stale or missing report outputs, zero generated source artifacts, zero registry-governance violations, public-safety boundaries, and rejects unregistered-source, clean-live-replay, private-payload, and chapter-core-promotion overclaims.",
       "status": "implemented",
-      "outline_line": 3431,
+      "outline_line": 3464,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2070,7 +2081,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A sanitized Project Theseus assistant reference-trace import fixture records 19 required trace record types, 27/27 gates, 2,203 route-validator view records, 12 selected VCM pages, zero public training rows, zero external inference calls, public-safety boundaries, and rejects missing-hop, private-payload, clean-live-replay, model-quality, benchmark-headline, and chapter-core-promotion overclaims.",
       "status": "implemented",
-      "outline_line": 3432,
+      "outline_line": 3465,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2080,7 +2091,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A sanitized Project Theseus accelerator parity manifest import fixture records 7 surfaces, 7 MLX report summaries, 4 Metal report summaries, 4 artifact manifests, 4 scheduler-canary surfaces, zero hard failures, zero public training rows, zero external inference calls, no teacher use, locked model promotion and production routing, public-safety boundaries, and rejects full-parity, production-routing, model-promotion, and chapter-core-promotion overclaims.",
       "status": "implemented",
-      "outline_line": 3433,
+      "outline_line": 3466,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2090,7 +2101,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A sanitized Project Theseus book-to-Theseus crosswalk import fixture records trigger state `GREEN`, 53 public-safe pointer rows, 20 backlog cards, 134 source-sync review decisions, public-safety boundaries, and rejects source-sync failure, public-safety failure, clean-live-replay overclaim, and chapter-core-promotion overclaim.",
       "status": "implemented",
-      "outline_line": 3434,
+      "outline_line": 3467,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2100,7 +2111,7 @@
       "module": "AsiStackProofs.TheseusReference",
       "formal_target": "A sanitized Project Theseus work-board metadata import fixture records 130 durable task rows, 412 event rows, 133 evidence rows, five SQLite tables, stale-snapshot currentness blocking, public-safety boundaries, and rejects clean-live-replay, private-payload, public-training-row, and chapter-core-promotion overclaims.",
       "status": "implemented",
-      "outline_line": 3435,
+      "outline_line": 3468,
       "module_path": "lean/AsiStackProofs/TheseusReference.lean"
     },
     {
@@ -2110,7 +2121,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A roadmap phase can unlock a dependent phase only after acceptance gates pass.",
       "status": "implemented",
-      "outline_line": 3494,
+      "outline_line": 3527,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -2120,7 +2131,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A phase milestone cannot promote a claim without evidence artifacts.",
       "status": "implemented",
-      "outline_line": 3495,
+      "outline_line": 3528,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -2130,7 +2141,7 @@
       "module": "AsiStackProofs.PrototypeRoadmap",
       "formal_target": "A modeled prototype phase-gate fixture bridge accepts only the complete public-safe fixture summary and rejects missing non-claim boundaries while preserving no support-state promotion and no phase-completion claim.",
       "status": "implemented",
-      "outline_line": 3496,
+      "outline_line": 3529,
       "module_path": "lean/AsiStackProofs/PrototypeRoadmap.lean"
     },
     {
@@ -2140,7 +2151,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "Every chapter in the manifest has outline proof targets and generated claim placeholders.",
       "status": "implemented",
-      "outline_line": 3568,
+      "outline_line": 3601,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -2150,7 +2161,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A structural update without regenerated scaffold/proof manifest is invalid.",
       "status": "implemented",
-      "outline_line": 3569,
+      "outline_line": 3602,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -2160,7 +2171,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A public-surface change packet requires validation, changelog, support-state, non-claim, derivative-boundary, and evidence-transition discipline.",
       "status": "implemented",
-      "outline_line": 3570,
+      "outline_line": 3603,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -2170,7 +2181,7 @@
       "module": "AsiStackProofs.LivingBook",
       "formal_target": "A current reader release-candidate route cannot treat local format evidence as approval while accessibility, audio, release-approval, or non-claim blockers remain.",
       "status": "implemented",
-      "outline_line": 3571,
+      "outline_line": 3604,
       "module_path": "lean/AsiStackProofs/LivingBook.lean"
     },
     {
@@ -2180,7 +2191,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A source-derived claim requires a source note or equivalent ingested-source artifact.",
       "status": "implemented",
-      "outline_line": 3631,
+      "outline_line": 3664,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     },
     {
@@ -2190,7 +2201,7 @@
       "module": "AsiStackProofs.BibliographyPlan",
       "formal_target": "A new source cannot be assigned to a non-existent chapter id.",
       "status": "implemented",
-      "outline_line": 3632,
+      "outline_line": 3665,
       "module_path": "lean/AsiStackProofs/BibliographyPlan.lean"
     }
   ]

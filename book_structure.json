@@ -47,14 +47,14 @@
           "status": "conceptual",
           "evidence_level": "argument",
           "claim_label": "Design rationale",
-        "source_ids": [
-          "viea",
-          "beastbrain",
-          "aletheia",
-          "talos",
-          "moecot",
-          "scf",
-          "ext_drexler_cais_2019"
+          "source_ids": [
+            "viea",
+            "beastbrain",
+            "aletheia",
+            "talos",
+            "moecot",
+            "scf",
+            "ext_drexler_cais_2019"
           ],
           "source_queue": {
             "primary": [
@@ -1512,15 +1512,15 @@
           "status": "conceptual",
           "evidence_level": "argument",
           "claim_label": "Design rationale",
-        "source_ids": [
-          "alignment_field",
-          "field_of_god",
-          "ethica_mechanica",
-          "eternal_code",
-          "coherence_exchange",
-          "spinoza",
-          "field_of_god_ai_constitution",
-          "ext_drexler_cais_2019"
+          "source_ids": [
+            "alignment_field",
+            "field_of_god",
+            "ethica_mechanica",
+            "eternal_code",
+            "coherence_exchange",
+            "spinoza",
+            "field_of_god_ai_constitution",
+            "ext_drexler_cais_2019"
           ],
           "source_queue": {
             "primary": [
@@ -2786,10 +2786,10 @@
             "viea",
             "talos",
             "moecot",
-          "field_of_god_ai_constitution",
-          "theseus_self_evolution_system",
-          "theseus_architecture_gate",
-          "ext_drexler_cais_2019"
+            "field_of_god_ai_constitution",
+            "theseus_self_evolution_system",
+            "theseus_architecture_gate",
+            "ext_drexler_cais_2019"
           ],
           "source_queue": {
             "primary": [
@@ -6292,14 +6292,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },
@@ -10756,6 +10756,107 @@
           ]
         },
         {
+          "id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+          "title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
+          "file": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "benchmaxxing",
+            "rmi",
+            "ext_alignment_faking_2024",
+            "ext_ai_sandbagging_2024",
+            "ext_emergent_misalignment_reward_hacking_2025"
+          ],
+          "source_queue": {
+            "primary": [
+              "benchmaxxing",
+              "rmi",
+              "ext_alignment_faking_2024",
+              "ext_ai_sandbagging_2024",
+              "ext_emergent_misalignment_reward_hacking_2025"
+            ],
+            "supporting": [
+              "ext_rlhf_limitations_2023",
+              "ext_concrete_ai_safety_2016"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Source-setting experiments ground threat models only; no local deception, detector, mitigation, or support-state result is imported."
+            ]
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_alignment_faking_2024",
+              "mapped_support": "Supports disclosed-condition alignment-faking threat-model context and the need to retain selection context.",
+              "limits": "Does not show that any ASI Stack model or deployment is deceptive.",
+              "passage_refs": ["sources/source_notes/ext_alignment_faking_2024.md:12-40"],
+              "passage_review_note": "Reviewed primary-paper metadata and abstract as recorded in the source note; no local experiment or mitigation was run.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_ai_sandbagging_2024",
+              "mapped_support": "Supports strategic-underperformance and evaluation-context threat-model context.",
+              "limits": "Does not establish sandbagging in this repository or validate a detector.",
+              "passage_refs": ["sources/source_notes/ext_ai_sandbagging_2024.md:12-39"],
+              "passage_review_note": "Reviewed primary-paper metadata and abstract as recorded in the source note; no benchmark was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_emergent_misalignment_reward_hacking_2025",
+              "mapped_support": "Supports source-setting reward-hacking and training-time misaligned-generalization threat-model context.",
+              "limits": "Does not establish a local reward-hacking, monitor-interference, safety, or causal result.",
+              "passage_refs": ["sources/source_notes/ext_emergent_misalignment_reward_hacking_2025.md:12-40"],
+              "passage_review_note": "Reviewed primary-paper passages as recorded in the source note; no environment, model, or mitigation was reproduced.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "problem": "Evaluation, training, and deployment can select for behavior that looks good to the current observer without reliably measuring capability, intent, or future behavior.",
+          "insufficient": "Benchmarks and rewards are often treated as static signals even though elicitation, monitoring, and selection context can change what the observed behavior means.",
+          "core_claim": "A governed stack treats evaluation and training observations as context-bound evidence: it records elicitation, monitor, reward, and selection conditions; probes cross-context discrepancies and interference; and blocks capability, safety, or promotion conclusions when the observation cannot support them.",
+          "mechanism": [
+            "Bind each evaluation or update to task, model/version, prompt or interface, tool authority, monitor visibility, selection context, reward source, benchmark split, and evaluator identity.",
+            "Compare declared baselines with justified cross-context probes, alternative evaluators, held-out tasks, and negative controls.",
+            "Route unresolved discrepancies, missing monitor provenance, and interference findings to quarantine, narrower claims, review, or no-promotion decisions."
+          ],
+          "interfaces": [
+            "Benchmark Ratchets owns frozen tasks and anti-Goodhart controls; this chapter owns context-conditioned observations.",
+            "Policy Optimization consumes only integrity-bounded evaluation records and owns updates and rollback.",
+            "Artifact Graphs retain evaluator, monitor, prompt, trace, and result lineage.",
+            "SCF and Evidence States retain promotion and quarantine authority."
+          ],
+          "invariants": [
+            "A score is not a capability or safety conclusion without elicitation and selection context.",
+            "A reward, monitor, or trace is not independent evidence merely because it was present during training or evaluation.",
+            "Cross-context disagreement, missing monitor provenance, or untested interference blocks promotion until recorded and reviewed.",
+            "A mitigation result is scoped to its tested setting."
+          ],
+          "failure_modes": [
+            "Sandbagging that causes a capability threshold to be missed or delayed.",
+            "Reward hacking that improves an outcome metric while eroding task fidelity.",
+            "Monitor interference, evaluation awareness, or selection-context adaptation.",
+            "Detector or mitigation laundering into a safety guarantee."
+          ],
+          "minimal_implementation": "A versioned evaluation-integrity record with elicitation, selection, reward, monitor, held-out/cross-context probe, discrepancy, residual, and no-promotion fields, plus finite routing for missing controls and interference findings.",
+          "beyond_state_of_art": "The mature system continuously tests how its own evidence depends on observation through diversified evaluators, context perturbations, trusted and untrusted monitor separation, blinded holdouts where feasible, independent replay, countercases, and assurance-state handoff into training leases and deployment gates. This is a target architecture, not a claim of complete deception detection, universal evaluator trust, or safety.",
+          "codex_tests": [
+            "Evaluation-integrity record fixture",
+            "Cross-context discrepancy probe",
+            "Training-time deception boundary review"
+          ],
+          "lean_module": "AsiStackProofs.PolicyOptimization",
+          "proof_targets": [
+            {
+              "tag": "lean:adversarial_evaluation.selection_context.failure_blocks_promotion",
+              "module": "AsiStackProofs.PolicyOptimization",
+              "target": "A finite evaluation-integrity record with missing selection context or independent evaluation blocks requested promotion without inferring deception, capability, safety, or intent.",
+              "status": "implemented"
+            }
+          ]
+        },
+        {
           "id": "policy-optimization-and-learning-from-feedback",
           "title": "Policy Optimization and Learning from Feedback",
           "file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
@@ -12053,10 +12154,10 @@
             "project_theseus_whitepaper",
             "theseus_plan_compiler",
             "theseus_self_evolution_system",
-          "theseus_architecture_gate",
-          "theseus_operator_os",
-          "theseus_circle_transfer",
-          "ext_drexler_cais_2019"
+            "theseus_architecture_gate",
+            "theseus_operator_os",
+            "theseus_circle_transfer",
+            "ext_drexler_cais_2019"
           ],
           "source_queue": {
             "primary": [

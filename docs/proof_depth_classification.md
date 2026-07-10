@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 214 |
+| Proof targets in manifest | 215 |
 | Lean modules scanned | 55 |
-| Theorem declarations classified | 1054 |
+| Theorem declarations classified | 1055 |
 | Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 864 |
+| Derived/decomposed theorem declarations | 865 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 106 |
 | Safety-critical direct/projection declarations | 11 |
@@ -82,7 +82,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | personal-compute-hives-and-federated-edge-intelligence | 6 | 26 | 4 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/PlanForge.lean` | planning-as-a-control-layer | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Planning.lean` | planning-as-a-control-layer | 5 | 29 | 8 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | policy-optimization-and-learning-from-feedback | 4 | 18 | 7 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/PolicyOptimization.lean` | adversarial-evaluation-sandbagging-and-training-time-deception, policy-optimization-and-learning-from-feedback | 5 | 19 | 7 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | procedural-memory-and-cognitive-loop-closure | 2 | 19 | 2 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | spinoza-verification-and-proof-carrying-claims | 3 | 8 | 6 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | circle-calculus-and-proof-carrying-ai-contracts | 3 | 10 | 3 | 7 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -662,6 +662,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `authority_expanding_policy_update_requires_approval_and_rollback` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `authority_expanding_policy_update_without_approval_or_rollback_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `inadmissible_feedback_rejects_policy_promotion` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/PolicyOptimization.lean` | `missing_selection_context_or_independent_evaluation_blocks_promotion` | derived_or_decomposed | no | uses rcases, simp |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_promotion_with_governance_or_authority_gap_routes_to_governance` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_promotion_with_regression_or_residual_gap_records_residual` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/PolicyOptimization.lean` | `policy_promotion_without_holdout_or_contamination_check_routes_to_review` | derived_or_decomposed | no | uses simp, unfold |

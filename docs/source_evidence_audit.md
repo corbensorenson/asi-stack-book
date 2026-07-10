@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 45 |
-| Assigned source/chapter pairs | 445 |
-| Exact claim-source mappings | 443 |
-| Unmapped assigned pairs | 2 |
-| Source notes present for assigned pairs | 445 |
-| Source notes listing assigned chapter | 445 |
-| Passage-reviewed mappings recorded | 443 |
-| Support-state counts | {"argument": 45} |
+| Chapters audited | 46 |
+| Assigned source/chapter pairs | 450 |
+| Exact claim-source mappings | 446 |
+| Unmapped assigned pairs | 4 |
+| Source notes present for assigned pairs | 450 |
+| Source notes listing assigned chapter | 450 |
+| Passage-reviewed mappings recorded | 446 |
+| Support-state counts | {"argument": 46} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -70,6 +70,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
+| `adversarial-evaluation-sandbagging-and-training-time-deception` | 5 | 3 | 5 | 5 | 3 | argument | passage review required before source-derived promotion |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 27 | argument | eligible for support review |
 | `data-engines-continual-learning-and-unlearning` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
@@ -89,9 +90,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `talos` | 22 | yes |
 | `moecot` | 22 | yes |
 | `scf` | 15 | yes |
+| `rmi` | 15 | yes |
 | `spinoza` | 15 | yes |
-| `rmi` | 14 | yes |
-| `benchmaxxing` | 14 | yes |
+| `benchmaxxing` | 15 | yes |
 | `vcm_public` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
 | `coherence_exchange` | 11 | yes |
@@ -177,6 +178,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_reluplex_2017` | 1 | yes |
 | `temporal_coil_research` | 1 | yes |
 | `coil_attention_memory` | 1 | yes |
+| `ext_alignment_faking_2024` | 1 | yes |
+| `ext_ai_sandbagging_2024` | 1 | yes |
+| `ext_emergent_misalignment_reward_hacking_2025` | 1 | yes |
 | `ext_trpo_2015` | 1 | yes |
 | `ext_ppo_2017` | 1 | yes |
 | `ext_remax_2023` | 1 | yes |
@@ -524,6 +528,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `benchmaxxing` | unmapped | note present | chapter listed | not passage-reviewed |
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `rmi` | unmapped | note present | chapter listed | not passage-reviewed |
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_alignment_faking_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_ai_sandbagging_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_emergent_misalignment_reward_hacking_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |

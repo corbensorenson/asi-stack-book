@@ -391,4 +391,29 @@ theorem policy_update_lease_probe_preserves_rollback_boundary :
         policyUpdateLeaseProbeFixture.nonClaimBoundary = true := by
   exact And.intro rfl (And.intro rfl rfl)
 
+structure EvaluationIntegrityPromotionRecord where
+  selectionContextRecorded : Bool
+  independentEvaluationRecorded : Bool
+  monitorInterferenceDetected : Bool
+  promotionRequested : Bool
+deriving DecidableEq, Repr
+
+def EvaluationIntegrityPromotionAllowed
+    (record : EvaluationIntegrityPromotionRecord) : Prop :=
+  record.selectionContextRecorded = true ∧
+    record.independentEvaluationRecorded = true ∧
+      record.monitorInterferenceDetected = false
+
+theorem missing_selection_context_or_independent_evaluation_blocks_promotion
+    {record : EvaluationIntegrityPromotionRecord} :
+    record.promotionRequested = true ->
+    (record.selectionContextRecorded = false ∨
+      record.independentEvaluationRecorded = false) ->
+    ¬ EvaluationIntegrityPromotionAllowed record := by
+  intro requested missing allowed
+  rcases allowed with ⟨selection, independent, _⟩
+  rcases missing with missingSelection | missingIndependent
+  · simp [missingSelection] at selection
+  · simp [missingIndependent] at independent
+
 end AsiStackProofs.PolicyOptimization

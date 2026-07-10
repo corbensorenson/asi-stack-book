@@ -2149,7 +2149,17 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite metadata-only fixture bridge: it preserves durable work-board row counts, stale-snapshot currentness blocking, zero public training rows, zero external inference calls, no raw-report or SQLite/task payload copy, and no clean-live-replay or chapter-core promotion boundaries."
+    },
+    {
+      "tag": "lean:adversarial_evaluation.selection_context.failure_blocks_promotion",
+      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "module": "AsiStackProofs.PolicyOptimization",
+      "formal_target": "A finite evaluation-integrity record with missing selection context or independent evaluation blocks requested promotion without inferring deception, capability, safety, or intent.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite promotion-boundary theorem for missing selection context or independent evaluation. It does not detect sandbagging, infer model intent, establish evaluator correctness, or prove capability or safety."
     }
   ],
-  "record_count": 214
+  "record_count": 215
 }

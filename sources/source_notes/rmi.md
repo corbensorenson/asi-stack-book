@@ -47,6 +47,7 @@ Ratcheting Modular Intelligence, or RMI, argues that AI systems should improve b
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems and Residual Honesty)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `adversarial-evaluation-sandbagging-and-training-time-deception` (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)
 - `integrated-reference-architecture` (Integrated Reference Architecture)

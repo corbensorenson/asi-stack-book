@@ -10,7 +10,7 @@ readers, reviewers, and future writing agents.
 
 | Field | Status |
 |---|---|
-| Chapter core claims | All 45 remain at `argument`. |
+| Chapter core claims | All 46 remain at `argument`. |
 | Accepted non-core upward transitions | 14 narrow transitions. |
 | Accepted no-promotion side-lane decisions | 40 accepted `blocks_promotion` decisions; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |

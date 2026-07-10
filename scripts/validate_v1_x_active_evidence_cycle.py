@@ -19,7 +19,7 @@ EXPECTED_SELECTED = {
     "fast-generation-architectures",
 }
 STATIC_REQUIRED_FRAGMENTS = (
-    "Last updated: 2026-07-04",
+    "Last updated: 2026-07-09",
     "Selected chapter lanes | 3",
     "Lane cap | 1 flagship measured lane plus at most 2 direct support lanes per v1.x cycle",
     "Flagship measured lane | `resource-economics-and-token-budgets`",

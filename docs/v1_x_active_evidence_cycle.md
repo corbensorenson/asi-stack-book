@@ -1,11 +1,11 @@
 # v1.x Active Evidence Cycle
 
-Last updated: 2026-07-04
+Last updated: 2026-07-09
 
 This ledger names the current v1.x evidence-cycle chapter lanes selected from
 `docs/per_chapter_evidence_plan.md`. It exists to enforce the lane cap: this
 cycle selects one flagship measured lane plus two direct support lanes and
-leaves the other forty-two chapter lanes planned-only. It is a planning and
+leaves the other forty-three chapter lanes planned-only. It is a planning and
 release-control record, not a support-state transition.
 
 The selected lanes sit inside a wider defended-contribution pool where the
@@ -22,13 +22,13 @@ promotion.
 | Field | Value |
 |---|---|
 | Selected chapter lanes | 3 |
-| Planned-only chapter lanes | 42 |
+| Planned-only chapter lanes | 43 |
 | Lane cap | 1 flagship measured lane plus at most 2 direct support lanes per v1.x cycle |
 | Flagship measured lane | `resource-economics-and-token-budgets` |
 | Direct support lanes | `project-theseus-as-report-first-implementation-reference`; `fast-generation-architectures` |
-| Chapter core support effect | None; all 45 chapter core claims remain `argument`. |
+| Chapter core support effect | None; all 46 chapter core claims remain `argument`. |
 | Non-core support effect | Existing non-core transitions remain scoped to their accepted records. |
-| No-sweep rule | No 45-lane fixture sweep is claimed or implied. |
+| No-sweep rule | No 46-lane fixture sweep is claimed or implied. |
 
 ## Selected Lanes
 
@@ -105,6 +105,7 @@ promotion.
 - `coilra-multicoil-rope-and-cyclic-mixers`
 - `executable-specifications-and-lean-proof-envelope`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
+- `adversarial-evaluation-sandbagging-and-training-time-deception`
 - `policy-optimization-and-learning-from-feedback`
 - `data-engines-continual-learning-and-unlearning`
 - `artifact-steward-agents-and-living-project-governance`

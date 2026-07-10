@@ -2875,7 +2875,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 214 proof targets, 55 Lean modules, 1054 theorem declarations, 864 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 215 proof targets, 55 Lean modules, 1055 theorem declarations, 865 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -2969,6 +2969,39 @@ Lean proof targets:
 | `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | implemented |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | implemented |
 | `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts. | implemented |
+
+### Adversarial Evaluation, Sandbagging, and Training-Time Deception
+
+Stable ID: `adversarial-evaluation-sandbagging-and-training-time-deception`
+
+Chapter job: preserve the elicitation, monitoring, reward, and selection
+conditions of training and evaluation observations so a bounded score or trace
+cannot silently become a capability, safety, or promotion conclusion.
+
+Core claim: A governed stack treats evaluation and training observations as context-bound evidence: it records elicitation, monitor, reward, and selection conditions; probes cross-context discrepancies and interference; and blocks capability, safety, or promotion conclusions when the observation cannot support them.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Corben/local first | `benchmaxxing`, `rmi` | Mine benchmark pressure, ratchet, residual, and regression vocabulary for bibliographies, adjacent terms, and reusable evidence-record interfaces before broad search. Do not treat source assignment as local experimental evidence. |
+| Primary | `ext_alignment_faking_2024`, `ext_ai_sandbagging_2024`, `ext_emergent_misalignment_reward_hacking_2025` | Read as scoped experimental comparators, preserving model, prompt, training, evaluation, and mitigation limits. |
+| Supporting | `ext_rlhf_limitations_2023`, `ext_concrete_ai_safety_2016` | Use for risk taxonomy only; do not turn survey context into local evidence. |
+
+Draft arc:
+
+- Problem: an observed score or trace can change meaning with elicitation,
+  selection, monitor, or reward context.
+- Mechanism: preserve those contexts, cross-context probes, interference
+  findings, residuals, and no-promotion routes in one integrity record.
+- Boundary: source experiments are comparators; no local deceptive model,
+  detector, mitigation, or safety result exists.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:adversarial_evaluation.selection_context.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A finite evaluation-integrity record with missing selection context or independent evaluation blocks requested promotion without inferring deception, capability, safety, or intent. | implemented |
 
 ### Policy Optimization and Learning from Feedback
 

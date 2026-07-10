@@ -3586,7 +3586,9 @@
     "title": "Alignment Faking in Large Language Models",
     "priority": "external_literature",
     "layer": "training_time_deception",
-    "chapter_targets": [],
+    "chapter_targets": [
+      "adversarial-evaluation-sandbagging-and-training-time-deception"
+    ],
     "url": "https://arxiv.org/abs/2412.14093",
     "notes": "Primary experimental comparator for context-dependent alignment faking under disclosed training conditions; does not establish that an ASI Stack model, evaluator, or training process is deceptive.",
     "source_type": "preprint",
@@ -3600,7 +3602,9 @@
     "title": "AI Sandbagging: Language Models Can Strategically Underperform on Evaluations",
     "priority": "external_literature",
     "layer": "evaluation_integrity",
-    "chapter_targets": [],
+    "chapter_targets": [
+      "adversarial-evaluation-sandbagging-and-training-time-deception"
+    ],
     "url": "https://arxiv.org/abs/2406.07358",
     "notes": "Primary experimental comparator for strategic evaluation underperformance, prompted and password-locked capability hiding, and limits of capability-evaluation trustworthiness; does not show sandbagging in this repository.",
     "source_type": "preprint",
@@ -3614,7 +3618,9 @@
     "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
     "priority": "external_literature",
     "layer": "training_time_deception",
-    "chapter_targets": [],
+    "chapter_targets": [
+      "adversarial-evaluation-sandbagging-and-training-time-deception"
+    ],
     "url": "https://arxiv.org/abs/2511.18397",
     "notes": "Primary experimental comparator for reward-hacking-induced misaligned generalization in a specified production-RL research setting, including reported mitigation conditions; it is not evidence of local model behavior or a general causal law.",
     "source_type": "preprint",

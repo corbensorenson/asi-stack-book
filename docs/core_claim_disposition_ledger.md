@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 45 |
+| Manifest chapter core claims | 46 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 23 |
+| Accepted no-promotion dispositions | 24 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 45 |
+| Core claims remaining at `argument` | 46 |
 
 ## Dispositions
 
@@ -56,6 +56,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `coilra-multicoil-rope-and-cyclic-mixers.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Receipt validates distinguishability boundary and rejects performance overclaim. |
 | `executable-specifications-and-lean-proof-envelope.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/proof_envelope_no_change.json` | Proof matrix distinguishes finite-record proof, derived invariant, and executable behavior. |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/benchmark_ratchets_no_change.json` | Ratchet fixture blocks promotion on contaminated or saturated benchmark. |
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed, workload-scoped cross-context comparison with declared baselines, negative controls, provenance, residuals, and independent review; no local deception, general capability, or safety claim. |
 | `policy-optimization-and-learning-from-feedback.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Policy update cannot treat reward as truth without evidence boundary. |
 | `data-engines-continual-learning-and-unlearning.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed, workload-scoped comparison with heldout contamination controls, negative cases, descendant-scope report, residuals, and independent review; no general unlearning, safety, or model-quality claim. |
 | `artifact-steward-agents-and-living-project-governance.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Steward action fixture validates governance, treasury, release, and sunset boundaries. |

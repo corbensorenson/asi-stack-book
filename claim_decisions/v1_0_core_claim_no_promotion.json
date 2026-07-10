@@ -651,6 +651,34 @@
         "chapters/prototype-roadmap.qmd",
         "appendices/C_claim_evidence_matrix.qmd#prototype-roadmap.core"
       ]
+    },
+    {
+      "claim_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core",
+      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "chapter_title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-noted threat-model comparators and a finite promotion-blocking theorem, but no local deceptive-model evaluation, integrity-record fixture, detector, mitigation, cross-context workload, or independent replay has been accepted as evidence for the broad claim.",
+      "required_evidence": [
+        "public-safe evaluation-integrity record with negative controls",
+        "cross-context workload with held-out controls and independent replay",
+        "accepted transition for a narrowed evaluation-integrity claim"
+      ],
+      "blockers": [
+        "no local deceptive-model or detector result",
+        "no cross-context workload or independent replay",
+        "finite theorem does not establish sandbagging resistance or evaluator correctness"
+      ],
+      "non_claims": [
+        "does not prove a model is deceptive",
+        "does not prove resistance to sandbagging or reward hacking",
+        "does not prove evaluator correctness or safety"
+      ],
+      "refs": [
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#adversarial-evaluation-sandbagging-and-training-time-deception.core"
+      ]
     }
   ]
 }

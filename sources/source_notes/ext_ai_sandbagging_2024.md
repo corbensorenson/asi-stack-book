@@ -40,7 +40,8 @@ settings. Evaluation integrity cannot be inferred from one score alone.
 
 ## Book Chapters Supported
 
-None assigned until the controlled ownership decision accepts a host chapter.
+- `adversarial-evaluation-sandbagging-and-training-time-deception`
+  (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
 
 ## Claims To Add Or Update
 

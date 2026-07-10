@@ -43,7 +43,8 @@ neither a task-success proof nor a guarantee of safe generalization.
 
 ## Book Chapters Supported
 
-None assigned until the controlled ownership decision accepts a host chapter.
+- `adversarial-evaluation-sandbagging-and-training-time-deception`
+  (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
 
 ## Claims To Add Or Update
 
