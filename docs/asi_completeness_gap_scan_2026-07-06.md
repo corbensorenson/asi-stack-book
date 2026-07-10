@@ -666,3 +666,260 @@ and the thesis's novelty claim must be audited first.
 5. Non-claims: this scan asserts gaps in *coverage*, not truths about the
    external works cited; nothing here is evidence, and no support state
    moves because a concept was added.
+
+## Codex independent fifth sweep (2026-07-10)
+
+Corben explicitly reopened the completeness search and asked Codex to conduct
+an independent online sweep. This is a user-directed exception to the earlier
+sweep-closure note, not a return to indefinite panoramic scanning. Codex ran
+ten search groups containing forty targeted queries across perception,
+embodiment, robotics safety, operational resilience, incident response,
+AI supply-chain security, privacy, distribution shift, causal reasoning,
+runtime monitoring, self-replication, dangerous capabilities, autonomous
+science, human-AI teaming, and lifecycle provenance. Candidate findings were
+then checked against the current chapter prose, outline, four earlier sweeps,
+and the 2026-07-09 ownership table.
+
+The same evidence boundary applies: papers were inspected at abstract/search
+result depth and official standards at published-page or extracted-document
+depth. This pass establishes candidate relevance and local coverage gaps, not
+paper-depth source notes, reproduced results, or support-state movement.
+
+### Tier 1 (continued)
+
+#### 17. Perception, grounding, and observation trust
+
+The current stack begins with intent and context but lacks the boundary that
+turns observations into governed state. Runtime adapters mention sensors and
+robotics, while semantic-representation material carries grounding fields, but
+no owner specifies active sensing, multimodal fusion, observation provenance,
+sensor disagreement, confidence/calibration, spoofing/occlusion, stale-world
+state, or the right to spend resources gathering another observation. That is
+not merely a world-model detail: perception decides what may enter the model of
+the world in the first place. Candidate anchors include the broad embodied-AI
+safety taxonomy in [Safety in Embodied AI](https://arxiv.org/abs/2605.02900),
+the POMDP-style observation-action loop in [Native Active Perception as
+Reasoning](https://arxiv.org/abs/2606.19341), and perception-trace monitoring in
+[Embedding Temporal Logic](https://arxiv.org/abs/2605.12651).
+
+Routing: new chapter candidate in Part II before Planning, paired with the
+world-model chapter. It owns observation contracts, sensor and modality
+identities, provenance/taint, fusion and contradiction records, active
+perception budgets, uncertainty, refresh/expiry, and observation-to-world-state
+handoff. World Models owns prediction; this chapter owns admissible evidence
+from the environment.
+
+#### 18. Embodied execution and physical-world safety
+
+The book treats physical tools as high-risk runtime adapters but does not own
+closed-loop physical control. Digital rollback and receipt semantics are not
+enough when actions have inertia, latency, irreversible side effects, human
+proximity, or safety-envelope constraints. A complete stack needs motion/action
+contracts, interlocks, real-time deadlines, safe fallback controllers,
+simulation-before-actuation, stop authority, degraded modes, and explicit
+sim-to-real residuals. Candidate anchors include executable runtime safeguards
+in [RoboSafe](https://arxiv.org/abs/2512.21220), deterministic interlock and
+fallback routing in [LLM Agents for Fault-Tolerant
+Control](https://arxiv.org/abs/2606.28011), and the design-for-assurance framing
+for robotics and autonomous systems in
+[Abeywickrama et al.](https://arxiv.org/abs/2501.18448).
+
+Routing: new chapter candidate in Part II after Runtime Adapters. Runtime
+Adapters continues to own permissioned effects across all tools; this chapter
+owns physical state, control periods, hazard envelopes, interlocks, fallback
+controllers, human-presence rules, and evidence that an action remained inside
+its physical safety contract.
+
+#### 19. Operational resilience, incident response, and decommissioning
+
+The stack has rollback, quarantine, audit logs, and readiness states but no
+end-to-end operational doctrine for severe disruption after deployment. It
+needs service criticality, dependency maps, impact tolerances, monitoring and
+alert ownership, incident classification, containment, failover, manual
+fallback, recovery objectives, evidence preservation, public/affected-party
+notification, post-incident learning, and secure retirement. NIST's Generative
+AI Profile explicitly calls for rehearsed incident-response plans, continuous
+third-party monitoring, redundancy, rollover/fallback, and responsibility
+assignment ([NIST AI 600-1](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence));
+NIST's 2026 monitoring work treats post-deployment monitoring as a distinct
+practice ([CAISI monitoring report](https://www.nist.gov/news-events/news/2026/03/new-report-challenges-monitoring-deployed-ai-systems)); and the recent
+[AI Resilience Gap](https://arxiv.org/abs/2607.07359) separates trustworthiness
+from continuity, substitutability, and provider-concentration risk.
+
+Routing: new chapter candidate in Part IV beside Safety Cases and the Integrated
+Reference Architecture. Readiness owns admission and quarantine; Artifact
+Graphs owns records; this chapter owns continuity under disruption and the
+incident-to-recovery-to-retirement lifecycle.
+
+#### 20. AI supply-chain integrity and lifecycle provenance
+
+Model-weight custody protects a deployed asset, and the proposed Data Engine
+governs training inputs, but no owner binds the full lineage of hardware,
+firmware, code, dependencies, base models, adapters, datasets, transformations,
+training environments, evaluators, and deployment packages. This leaves a gap
+for poisoned traces, compromised base models, dependency substitution,
+tampered artifacts, and unreviewed derivatives. NIST SP 800-218A explicitly
+extends secure-development practice to AI models, training pipelines, data,
+model provenance, and supply-chain attacks ([SP
+800-218A](https://csrc.nist.gov/pubs/sp/800/218/a/final)). Agent-specific
+backdoor work shows why interaction-generated training traces belong in the
+threat model ([Malice in Agentland](https://arxiv.org/abs/2510.05159)). AI Bill
+of Materials work proposes signed model/data/environment manifests
+([AIBoMGen](https://arxiv.org/abs/2601.05703); [SPDX AI
+BOM](https://arxiv.org/abs/2504.16743)).
+
+Routing: new chapter candidate in Part I beside Security Kernel and Model-Weight
+Custody. It owns the AI bill of materials, signed build/training attestations,
+dependency and dataset lineage, provenance continuity across fine-tunes and
+merges, vulnerability/advisory intake, reproducible rebuild, revocation, and
+supplier/derivative trust decisions.
+
+#### 21. Privacy, data rights, and multi-agent memory
+
+Privacy appears as fields and cautions across VCM, Hives, Human Intent, and the
+Security Kernel, but no chapter owns the lifecycle of a data subject's rights
+through a persistent, self-improving, multi-agent stack. The missing control
+plane includes purpose binding, minimization, consent and lawful-use records,
+retention, access, correction, export, revocation, deletion and unlearning,
+privacy budgets, inference attacks, cross-user memory, internal-channel
+leakage, and proof that policy changes propagate to derived context and models.
+Candidate anchors include NIST's guidance for evaluating differential-privacy
+guarantees ([SP 800-226](https://www.nist.gov/publications/guidelines-evaluating-differential-privacy-guarantees)), dynamic multi-user
+memory permissions ([Collaborative Memory](https://arxiv.org/abs/2505.18279)),
+full-stack internal-channel leakage evaluation
+([AgentLeak](https://arxiv.org/abs/2602.11510)), and black-box memory extraction
+([MEXTRA](https://arxiv.org/abs/2502.13172)).
+
+Routing: new chapter candidate in Part I beside Human Intent and the Security
+Kernel. Context Transactions continues to own transactional memory mechanics;
+the Data Engine owns training-data admission; this chapter owns subject rights,
+purpose and use limitation, privacy accounting, cross-agent disclosure, and
+deletion closure across all representations.
+
+#### 22. Autonomous replication, proliferation, and containment
+
+Open-ended improvement governs how systems generate better artifacts, and
+Model-Weight Custody governs weight exfiltration, but neither owns a system's
+ability to acquire resources, copy code or weights, provision compute, persist,
+evade shutdown, or create descendants under another principal. The capability
+has a concrete decomposition and is already part of frontier-policy evaluation.
+[RepliBench](https://arxiv.org/abs/2504.18565) decomposes autonomous replication
+into resource acquisition, weight exfiltration, compute replication, and
+persistence; METR's [Common Elements](https://metr.org/common-elements.pdf)
+tracks autonomous replication and adaptation alongside long-range autonomy and
+sandbagging. Conflicting replication studies should be treated as an evaluation
+quality problem, not averaged into a capability claim.
+
+Routing: new chapter candidate in Part I beside Recursive Self-Improvement,
+Open-Ended Improvement Engines, and Capability Thresholds. It owns descendant
+identity, replication authority, resource-acquisition ceilings, copy and
+deployment receipts, lineage, principal binding, persistence limits, network
+and credential containment, shutdown resistance tests, and threshold-triggered
+responses.
+
+#### 23. Scientific discovery and experimental governance
+
+The book has search, proofs, self-improvement, and evidence discipline but no
+owner for the external scientific loop: hypothesis formation, literature and
+prior-result grounding, experiment design, instrument or simulator control,
+data capture, statistical analysis, replication, negative-result retention,
+peer/adversarial review, and dual-use constraints. This is not merely an
+application chapter. An ASI architecture needs a governed mechanism for
+learning new facts about the world without letting the same system propose the
+hypothesis, choose the measurement, grade the result, and promote the claim
+without independent checks. Recent primary demonstrations include
+[end-to-end automated AI research](https://www.nature.com/articles/s41586-026-10265-5),
+an [agentic X-ray scientist](https://www.nature.com/articles/s42256-026-01261-5),
+and self-correcting multi-agent laboratory execution in
+[AutoLabs](https://www.nature.com/articles/s41598-026-45593-z).
+
+Routing: new chapter candidate in Part IV beside Policy Optimization, Safety
+Cases, and the Open Research Agenda. It owns experiment contracts, hypothesis
+and objective provenance, independent measurement and analysis roles,
+instrument authority, preregistration, replication, statistical and causal
+claims, dual-use review, and evidence handoff into the claim ledger.
+
+### Tier 2 (continued)
+
+26. **Goal continuity under inherited trajectory pressure** → Human Intent,
+    Context Transactions, and Planning: record objective fingerprints,
+    trajectory provenance, inherited-policy pressure, periodic recontracting,
+    and drift tests. Candidate: [Inherited Goal
+    Drift](https://arxiv.org/abs/2603.03258).
+27. **Causal and counterfactual reasoning** → World Models and Planning:
+    distinguish observational prediction from intervention and counterfactual
+    claims; require causal-model provenance and falsification routes. Candidate:
+    [CausalARC](https://arxiv.org/abs/2509.03636).
+28. **Distribution shift, OOD detection, and runtime uncertainty** → Perception,
+    Readiness, and Benchmark Ratchets: separate in-distribution confidence from
+    deployment novelty and route uncertain states to abstention, observation,
+    fallback, or quarantine.
+29. **Temporal-logic runtime monitoring and physical safety envelopes** →
+    Embodied Execution, Runtime Adapters, and Executable Specifications:
+    monitor bounded traces and multiple temporal properties instead of checking
+    action records one at a time. Candidates: [ETL](https://arxiv.org/abs/2605.12651)
+    and [multi-property monitoring](https://arxiv.org/abs/2605.13668).
+30. **Human-AI delegation calibration** → Scalable Oversight and Human Intent:
+    delegation can preserve component calibration while moving the burden to
+    an inadequately calibrated rejector/router. Candidate: [Human-AI Teaming
+    Through the Lens of Calibration](https://arxiv.org/abs/2606.10906).
+31. **Evaluator-access levels and evaluation-environment custody** → Safety
+    Cases, Benchmark Ratchets, and Model-Weight Custody: record black/grey/white
+    box access, model information, time budget, security controls, and false-
+    negative residuals for external dangerous-capability evaluations.
+32. **Domain-specific dangerous-capability profiles** → Capability Thresholds:
+    cyber, biological/chemical, critical-infrastructure, and autonomy measures
+    need domain owners, misuse safeguards, elicitation budgets, and explicit
+    cross-domain non-equivalence. Candidate anchor: [AISI Frontier AI Trends
+    Report](https://www.aisi.gov.uk/frontier-ai-trends-report).
+33. **Post-deployment monitoring and incident disclosure** → Operational
+    Resilience and Safety Cases: connect field telemetry, user reports, near
+    misses, privacy-preserving disclosure, regulator/affected-party routes, and
+    safety-case invalidation.
+34. **AIBOM, model/data/pipeline lineage, and signed build attestations** → AI
+    Supply-Chain Integrity and Artifact Graphs: bind descriptive provenance to
+    reproducible artifacts and verification routes rather than treating a bill
+    of materials as proof of integrity.
+35. **Purpose limitation, privacy budgets, multi-user access, and internal-
+    channel leakage** → Privacy, Data Engine, VCM, and Inter-Stack Protocols:
+    apply privacy policy to messages, memories, tool arguments, derived
+    artifacts, and training traces, not only final outputs.
+36. **The unlearning privacy paradox** → Data Engine and Privacy: verify both
+    deletion efficacy and whether before/after model differences expose retained
+    or forgotten membership. Candidate: [privacy leakage after
+    unlearning](https://arxiv.org/abs/2605.01129).
+37. **Provider concentration, substitutability, and impact tolerances** →
+    Operational Resilience, Personal Compute Hives, and Resource Economics:
+    record critical third-party dependencies, exit/failover paths, data and
+    model portability, degraded operation, and concentration residuals.
+
+### Independent-sweep deduplication decisions
+
+- Causal reasoning stays inside the World Models chapter rather than becoming
+  another substrate chapter.
+- Goal drift strengthens Human Intent, Context Transactions, and Planning; it
+  does not need a separate chapter unless future evidence shows a distinct
+  lifecycle that those owners cannot express.
+- OOD robustness and calibration are evidence and routing obligations across
+  Perception, Readiness, and Benchmark Ratchets, not a generic "robust AI"
+  chapter.
+- Cyber, biological/chemical, and other dangerous-capability domains are
+  profiles under Capability Thresholds; one chapter per hazard domain would
+  turn the architecture into a policy encyclopedia.
+- External-evaluator access belongs in Safety Cases and Benchmark Ratchets.
+- Runtime temporal logic is an implementation/proof family shared by Embodied
+  Execution and Operational Resilience, not a chapter about a notation.
+
+### Updated sweep closure
+
+The combined scan now contains **23 Tier-1 items and 37 Tier-2 insertions**.
+The independent pass changes the shape of the intake in one important way: the
+original book and Claude sweeps were strongest on cognition, governance, and
+evidence, while the remaining omissions were mainly at the system boundary and
+over the deployed lifecycle — observation, physical action, privacy, supply
+chain, resilience, proliferation, and experimental contact with the world.
+
+This is again a declared stopping point for broad search. Future additions
+should arrive through event-driven paper intake or through implementation and
+reader findings. None of the seven new chapter candidates enters the manifest
+until the source-verification and ownership gates in the roadmap pass.
