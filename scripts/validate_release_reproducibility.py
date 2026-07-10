@@ -18,9 +18,9 @@ LEAN_TOOLCHAIN = ROOT / "lean" / "lean-toolchain"
 
 
 REQUIRED_WORKFLOW_FRAGMENTS = [
-    "uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5",
+    "uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0",
     'python-version: "3.11"',
-    "uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4",
+    "uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0",
     'node-version: "22"',
     "uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2",
     'version: "1.9.38"',

@@ -19,6 +19,9 @@
 - Declined a v1.0.0 full-site archive backfill because the exact historical
   tested bundle was not preserved; future immutable site archives begin with
   the next eligible clean tag-bound release.
+- Responded to the first PR runner's Node 20 deprecation warning by reviewing
+  official releases and repinning checkout, setup-python, setup-node,
+  upload-artifact, and download-artifact to their current Node 24 commits.
 - Preserved all chapter-core claims at `argument`; editorial, licensing,
   archive, and review-policy decisions do not create technical evidence.
 

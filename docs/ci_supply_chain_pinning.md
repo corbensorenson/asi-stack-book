@@ -8,14 +8,14 @@ were resolved from the official GitHub repositories:
 
 | Component | Pinned commit | Tag context |
 |---|---|---|
-| `actions/checkout` | `34e114876b0b11c390a56381ad16ebd13914f8d5` | `v4` |
-| `actions/setup-python` | `a26af69be951a213d495a4c3e4e4022e16d87065` | `v5` |
-| `actions/setup-node` | `49933ea5288caeca8642d1e84afbd3f7d6820020` | `v4` |
+| `actions/checkout` | `9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0` | `v7.0.0`; Node 24 |
+| `actions/setup-python` | `ece7cb06caefa5fff74198d8649806c4678c61a1` | `v6.3.0`; Node 24 |
+| `actions/setup-node` | `48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e` | `v6.4.0`; Node 24 |
 | `quarto-dev/quarto-actions/setup` | `8a96df13519ee81fd526f2dfca5962811136661b` | repository tag `v2` |
 | `actions/upload-pages-artifact` | `fc324d3547104276b827a68afc52ff2a11cc49c9` | `v5` |
 | `actions/deploy-pages` | `cd2ce8fcbc39b97be8ca5fce6e763baed58fa128` | `v5` |
-| `actions/upload-artifact` | `ea165f8d65b6e75b540449e92b4886f43607fa02` | `v4` |
-| `actions/download-artifact` | `634f93cb2916e3fdff6788551b99b062d0335ce0` | `v5` |
+| `actions/upload-artifact` | `043fb46d1a93c77aae656e7c1c64a875d1fc6a0a` | `v7.0.1`; Node 24 |
+| `actions/download-artifact` | `3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c` | `v8.0.1`; Node 24 |
 | `leanprover/elan` installer | `6737edca3d2ca3dbaa1b47b87769b48b420633ae` | `master` snapshot resolved on 2026-07-10 |
 
 The Elan installer is downloaded from the commit-specific raw URL, stored as a
@@ -30,6 +30,12 @@ authority, and residual trusted-computing-base boundary. Reviews expire after
 90 days and fail closed; the current inventory is due on 2026-10-08. CI uses
 the UTC system date unless `ASI_PIN_REVIEW_AS_OF=YYYY-MM-DD` supplies an
 explicit audit date for deterministic replay.
+
+The first remote PR gate exposed GitHub's Node 20 deprecation shim on the
+former action majors. The reviewed pins above move checkout, setup-python,
+setup-node, upload-artifact, and download-artifact to their official Node 24
+releases. Pages upload/deploy and Quarto setup were already on their current
+reviewed releases.
 
 `scripts/validate_ci_supply_chain_pins.py` scans every workflow, rejects remote
 actions that are not full-SHA pinned, requires the reviewed commits above,
