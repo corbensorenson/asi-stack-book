@@ -2422,6 +2422,83 @@ Lean proof targets:
 
 Cross-chapter aggregate proof note: the selected Theseus/Fast support-lane aggregate is implemented under `AsiStackProofs.TheseusReference` as `lean:theseus.reference.fast_support_aggregate.fixture_bridge`, not duplicated in the Fast Generation proof table. It keeps Fast Generation's support lane synchronized with Project Theseus while preserving no clean live Project Theseus replay, no model quality, no generation speed, no useful-solution model claim, no support-state promotion, and no chapter-core promotion.
 
+### Governed Deliberation and Test-Time Scaling
+
+Stable ID: `governed-deliberation-and-test-time-scaling`
+
+Chapter job: The stack needs a control plane for inference-time search,
+revision, verifier use, and stopping that does not mistake extra computation or
+model self-evaluation for evidence or execution authority.
+
+Core claim: A governed stack treats test-time deliberation as a bounded, risk-tiered inference campaign: it records the request, search or revision mode, think budget, verifier scope and independence, stop condition, candidate and cost history, unresolved constraints, residual owner, and downstream handoff; additional inference may produce a candidate for planning but cannot by itself establish correctness, safety, capability, or authority to execute.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024` | Read first for verification-limited reasoning, explicit search/backtracking, verifier-guided search, proposal refinement, and difficulty-dependent allocation. |
+| Supporting | `ext_deepseek_r1_2025`, `ext_s_grpo_2025` | Mine after primary sources for reasoning-RL and stopping-policy comparators; do not import their reported behavior as local evidence. |
+
+Draft arc:
+
+- Problem: Extra inference can change a system's behavior through branches,
+  revisions, search, and selection without a declared evidence or authority
+  boundary.
+- Insufficiency: Fast Generation owns low latency and Planning owns executable
+  decomposition, but neither owns the decision to spend more inference or stop
+  before a reasoning result affects a plan.
+- Mechanism: Record objective, risk tier, allowed mode, time/token/branch/cost
+  budget, verifier scope, stop condition, and permitted downstream consumer.
+- Mechanism: Separate generation, selection, verification, planning, and
+  execution; a self-score is not an independent review.
+- Mechanism: Retain proposed/rejected/selected candidates, model and verifier
+  versions, resource bill, unresolved constraints, and residual owner.
+- Mechanism: Route high-risk execution requests without independent verification
+  to review; route budget exhaustion to residual escrow or abstention.
+- Interface: Fast Generation remains the low-latency dual; Verification
+  Bandwidth constrains what a verifier can actually check; Resource Economics
+  accounts for the cost; Planning receives only a bounded candidate.
+
+Primary invariants:
+
+- Extra tokens, branches, revisions, traces, and self-scores are not correctness,
+  safety, capability, or authority evidence.
+- Every request exposes risk tier, mode, budget, verifier scope, stop condition,
+  and residual owner before a result reaches planning.
+- High-risk execution without an independent verifier routes to review.
+- Exhaustion produces a residual or abstention, never a silent budget increase.
+
+Failure modes to cover:
+
+- Verifier capture or self-score laundering.
+- Overthinking pressure and verifier bottlenecks.
+- Early exit that removes required checks.
+- Budget laundering and archive survivorship.
+- Persuasive trace treated as planning or execution authority.
+- Parallel deliberation exceeding reviewer capacity.
+
+Draft deliverables:
+
+- A versioned deliberation record with request/risk, mode, budgets, verifier
+  identity/version/scope/independence, candidate/rejection references, stop
+  reason, unresolved constraints, residual owner, and handoff state.
+- Implemented Lean boundary: `AsiStackProofs.Deliberation` routes a finite
+  high-risk execution request with a missing independent verifier to review and
+  an otherwise complete exhausted budget to residual escrow. It is record
+  routing only; no reasoning model, verifier, workload, execution, quality,
+  safety, or ASI result exists.
+- Planned Codex test: public-safe deliberation workload comparison across direct,
+  revision, and search modes with quality, verifier cost, branch, latency,
+  residual, and negative-control records.
+- Planned Codex test: trace-to-action consistency probe that rejects authority
+  inherited from an unverified reasoning trace.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `AsiStackProofs.Deliberation` | A finite high-risk deliberation record with a requested execution handoff and no independent verifier routes to review rather than release to planning, without inferring evaluator correctness, reasoning quality, safety, model quality, or ASI. | implemented |
+
 ### RankFold, NeuralFold, and Artifact Compression
 
 Stable ID: `rankfold-neuralfold-and-artifact-compression`
@@ -2956,7 +3033,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 216 proof targets, 55 Lean modules, 1056 theorem declarations, 866 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 217 proof targets, 56 Lean modules, 1058 theorem declarations, 868 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

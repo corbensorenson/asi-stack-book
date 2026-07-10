@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-10 - Add Governed Deliberation and Test-Time Scaling
+
+- Added the manifest-driven **Governed Deliberation and Test-Time Scaling**
+  chapter after Fast Generation, with live and Human Reading Path prose, a
+  deliberation-control diagram, source crosswalk, implementation horizons,
+  evidence-plan row, claim disposition, and burn-down entry.
+- Added a source note for Snell et al.'s verifier-guided test-time compute work
+  and extended the Tree of Thoughts, DeepSeek-R1, S-GRPO, and Verification
+  Bandwidth notes. They provide bounded comparator context, not locally
+  reproduced search, reasoning, verifier, or efficiency results.
+- Added the finite `AsiStackProofs.Deliberation` routes that block a requested
+  high-risk execution handoff lacking an independent verifier and escrow a
+  completed but exhausted deliberation budget.
+- Boundary: the chapter and proof do not establish verifier independence or
+  correctness, reasoning quality, trace faithfulness, test-time efficiency,
+  safety, model quality, ASI, or a chapter-core support-state transition.
+
 ## 2026-07-10 - Add Open-Ended Improvement Engines
 
 - Added the manifest-driven **Open-Ended Improvement Engines** chapter with
@@ -38,7 +55,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 216 proof targets, 55 Lean modules, 1056 theorem declarations, 866 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 217 proof targets, 56 Lean modules, 1058 theorem declarations, 868 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

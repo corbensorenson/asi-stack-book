@@ -352,9 +352,10 @@
     "title": "Verification Bandwidth in Bounded Contexts",
     "priority": "strong_support",
     "layer": "context_verification_theory",
-    "chapter_targets": [
-      "07",
-      "09"
+  "chapter_targets": [
+    "07",
+    "09",
+    "governed-deliberation-and-test-time-scaling"
     ],
     "url": "https://docs.google.com/document/d/1T34n1Ya6_joaAD8ZxygOpiEuNzEVj3G8_nf0xZuFL2U",
     "notes": "Generation vs verification; long context is not automatically long-range reasoning."
@@ -1092,10 +1093,11 @@
     "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
     "priority": "external_literature",
     "layer": "planning_search",
-    "chapter_targets": [
-      "planning-as-a-control-layer",
-      "cognitive-compilation-and-semantic-ir",
-      "benchmark-ratchets-and-anti-goodhart-evidence"
+  "chapter_targets": [
+    "planning-as-a-control-layer",
+    "cognitive-compilation-and-semantic-ir",
+    "benchmark-ratchets-and-anti-goodhart-evidence",
+    "governed-deliberation-and-test-time-scaling"
     ],
     "url": "https://arxiv.org/abs/2305.10601",
     "notes": "External planning/search source for exploring, evaluating, and backtracking over multiple reasoning paths rather than left-to-right token continuation alone.",
@@ -2547,7 +2549,9 @@
     "title": "Trust Region Policy Optimization",
     "priority": "external_literature",
     "layer": "policy_optimization",
-    "chapter_targets": [],
+  "chapter_targets": [
+    "governed-deliberation-and-test-time-scaling"
+  ],
     "url": "https://arxiv.org/abs/1502.05477",
     "notes": "Primary external source for trust-region policy-gradient updates and bounded update-size discipline.",
     "source_type": "arxiv",
@@ -2562,7 +2566,9 @@
     "title": "Proximal Policy Optimization Algorithms",
     "priority": "external_literature",
     "layer": "policy_optimization",
-    "chapter_targets": [],
+  "chapter_targets": [
+    "governed-deliberation-and-test-time-scaling"
+  ],
     "url": "https://arxiv.org/abs/1707.06347",
     "notes": "Primary external source for PPO-style online policy-gradient updates and proximal surrogate objectives.",
     "source_type": "arxiv",
@@ -3661,5 +3667,22 @@
     "updated": "2024-01-17",
     "citation_label": "Romera-Paredes et al. (2024), Mathematical Discoveries from Program Search with Large Language Models",
     "doi": "10.1038/s41586-023-06924-6"
+  },
+  {
+    "id": "ext_test_time_compute_scaling_2024",
+    "title": "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters",
+    "priority": "external_literature",
+    "layer": "test_time_compute_allocation",
+    "chapter_targets": [
+      "governed-deliberation-and-test-time-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2408.03314",
+    "notes": "Primary test-time-compute comparator for verifier-guided search, proposal refinement, difficulty-dependent compute allocation, and the limits of extra inference; it does not establish local reasoning improvement, verifier correctness, safety, or an ASI Stack result.",
+    "source_type": "preprint",
+    "arxiv_id": "2408.03314",
+    "published": "2024-08-06",
+    "updated": "2024-08-06",
+    "citation_label": "Snell et al. (2024), Scaling LLM Test-Time Compute Optimally",
+    "doi": "10.48550/arXiv.2408.03314"
   }
 ]

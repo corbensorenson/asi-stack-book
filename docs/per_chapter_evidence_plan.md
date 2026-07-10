@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-09
 
-This file is the active 47-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the active 48-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ most two direct support lanes. The remaining lanes stay `planned, not
 executed`; they must not receive synthetic fixtures, pass/fail status, or
 support-state pressure merely for coverage. The active cycle selection is
 recorded in `docs/v1_x_active_evidence_cycle.md`: three lanes are selected and
-the other 44 remain planned-only.
+the other 45 remain planned-only.
 
 Selection criteria:
 
@@ -74,6 +74,7 @@ support-state transition by itself.
 | III | `personal-compute-hives-and-federated-edge-intelligence` | Theseus operator OS plus external distributed-systems baselines | Add lease, approval, runner, and federation negative controls. | Make the chapter useful to people imagining home and edge compute. | Lease fixture proves bounded compute delegation and revocation. |
 | III | `compact-generative-systems-and-residual-honesty` | Compression metrics, residual ledger, generate/verify/repair harness, semantic-node fixture, and folded semantic-leasing source lane | Add compression failure residuals, repair loop traces, failed-verification preservation, semantic preservation, hierarchy-supersession, consumer-policy, mismatch cases, and quality baseline separation. | Explain compactness, repair, and semantic leasing as accountable loss rather than magic or clean ontology. | Fixture records what is compressed, represented, lost, checked, repaired, residualized, superseded, quarantined, or rejected before any compactness or semantic-representation claim promotes. |
 | III | `fast-generation-architectures` | Generation-mode baseline harness, static Theseus generation-mode import, and external inference literature | Use the new Theseus import as negative promotion evidence, then add a public-safe task bundle with quality-adjusted useful-solution-per-second, verifier cost, residuals, and negative controls. | Explain speed as useful verified output, not latency alone. | Faster mode cannot promote on latency-only metrics; stronger support needs a clean replay or public task bundle with quality/residual review. |
+| III | `governed-deliberation-and-test-time-scaling` | Source-noted test-time search, compute-allocation, reasoning-RL, and early-exit comparators plus finite admission routing | Build a public-safe deliberation workload record with request/risk, mode, budget, verifier scope/independence, candidate/rejection history, stop reason, residuals, and trace-to-action negative controls. | Explain the difference between spending more time thinking and earning permission to act. | A replayed workload comparison with quality, verifier-cost, branch, latency, residual, and independent-review records; no general reasoning, verifier-correctness, model-quality, safety, or ASI claim. |
 | III | `rankfold-neuralfold-and-artifact-compression` | Artifact compression experiment | Add small public-safe artifact compression benchmark with quality checks. | Show the reader what folded artifacts look like before and after. | Compression ratio and quality/residual metrics are recorded separately. |
 | III | `resource-economics-and-token-budgets` | Costed-route slice, deterministic resource-workflow trace, resource-budget ledger, folded simulation harness, and external verification baselines | Extend budget records from deterministic fixtures toward live or externally reviewable workflow quality, scheduler logs, displaced-cost measurements, fidelity boundaries, physical constraints, and invalid extrapolation cases. | Explain resource economics as finite attention, finite money, and claim transport through named simulation envelopes. | Multi-step budget fixture rejects hidden or displaced cost, latency-only selection, low-risk starvation of protected high-risk work, and physical-feasibility overclaim; stronger support still needs live scheduler or externally reviewable workload evidence. |
 | III | `mathematical-and-search-substrates` | Circle/Theseus transfer plus search fixtures | Import or define public-safe search/proof-contract trace. | Give readers a clear bridge between math substrate and AI behavior. | Trace separates search legality from performance or intelligence claims. |

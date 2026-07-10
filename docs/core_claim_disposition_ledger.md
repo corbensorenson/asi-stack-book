@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 47 |
+| Manifest chapter core claims | 48 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 25 |
+| Accepted no-promotion dispositions | 26 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 47 |
+| Core claims remaining at `argument` | 48 |
 
 ## Dispositions
 
@@ -49,6 +49,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Lease fixture proves bounded compute delegation and revocation. |
 | `compact-generative-systems-and-residual-honesty.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Fixture records what is compressed, represented, lost, checked, repaired, residualized, superseded, quarantined, or rejected before any compactness or semantic-representation claim promotes. |
 | `fast-generation-architectures.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/fast_generation_no_change.json` | Faster mode cannot promote on latency-only metrics; stronger support needs a clean replay or public task bundle with quality/residual review. |
+| `governed-deliberation-and-test-time-scaling.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed workload comparison with quality, verifier-cost, branch, latency, residual, and independent-review records; no general reasoning, verifier-correctness, model-quality, safety, or ASI claim. |
 | `rankfold-neuralfold-and-artifact-compression.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Compression ratio and quality/residual metrics are recorded separately. |
 | `resource-economics-and-token-budgets.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/resource_economics_no_change.json` | Multi-step budget fixture rejects hidden or displaced cost, latency-only selection, low-risk starvation of protected high-risk work, and physical-feasibility overclaim; stronger support still needs live scheduler or externally reviewable workload evidence. |
 | `mathematical-and-search-substrates.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Trace separates search legality from performance or intelligence claims. |

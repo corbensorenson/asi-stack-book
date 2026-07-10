@@ -8417,6 +8417,133 @@
           ]
         },
         {
+          "id": "governed-deliberation-and-test-time-scaling",
+          "title": "Governed Deliberation and Test-Time Scaling",
+          "file": "chapters/governed-deliberation-and-test-time-scaling.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "verification_bandwidth",
+            "ext_tree_of_thoughts_2023",
+            "ext_test_time_compute_scaling_2024",
+            "ext_deepseek_r1_2025",
+            "ext_s_grpo_2025"
+          ],
+          "source_queue": {
+            "primary": [
+              "verification_bandwidth",
+              "ext_tree_of_thoughts_2023",
+              "ext_test_time_compute_scaling_2024"
+            ],
+            "supporting": [
+              "ext_deepseek_r1_2025",
+              "ext_s_grpo_2025"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Tree of Thoughts, test-time compute scaling, DeepSeek-R1, and S-GRPO are scoped source comparators. No ASI Stack model, search process, verifier, test-time budget policy, workload result, or reasoning trace has been run."
+            ]
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_tree_of_thoughts_2023",
+              "mapped_support": "Supports a source-setting comparator for explicit intermediate states, candidate-path exploration, evaluation, lookahead, and backtracking in bounded inference tasks.",
+              "limits": "Does not establish local search quality, self-evaluation reliability, verifier correctness, reasoning quality, safety, or deployment readiness.",
+              "passage_refs": [
+                "sources/source_notes/ext_tree_of_thoughts_2023.md:14-47"
+              ],
+              "passage_review_note": "Reviewed primary arXiv paper mechanisms and selected task scope as recorded in the source note; no prompt, search procedure, model, task, or result was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_test_time_compute_scaling_2024",
+              "mapped_support": "Supports a scoped comparator for verifier-guided search, proposal refinement, difficulty-dependent inference allocation, and limits of extra test-time computation.",
+              "limits": "Does not establish a local verifier, compute-optimal policy, cost efficiency, reasoning improvement, model quality, safety, or ASI Stack result.",
+              "passage_refs": [
+                "sources/source_notes/ext_test_time_compute_scaling_2024.md:14-51"
+              ],
+              "passage_review_note": "Reviewed primary arXiv article mechanisms, compute-accounting framing, task dependence, and stated limits as recorded in the source note; no model, search, verifier, workload, or result was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_deepseek_r1_2025",
+              "mapped_support": "Supports a source-setting reasoning-RL comparator for reported self-reflection, verification, and dynamic strategy adaptation under the paper's training and evaluation conditions.",
+              "limits": "Does not establish an independent verifier, local reasoning model, reasoning quality, trace faithfulness, safety, or deployment result.",
+              "passage_refs": [
+                "sources/source_notes/ext_deepseek_r1_2025.md:14-43"
+              ],
+              "passage_review_note": "Reviewed primary arXiv metadata and abstract as recorded in the source note; no training, evaluator, model, trace, or benchmark was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_s_grpo_2025",
+              "mapped_support": "Supports a source-setting comparator for early-exit reasoning policy and the tradeoff between shorter reasoning and task performance.",
+              "limits": "Does not establish local stopping-policy quality, verifier adequacy, reasoning efficiency, safety, or model quality.",
+              "passage_refs": [
+                "sources/source_notes/ext_s_grpo_2025.md:14-43"
+              ],
+              "passage_review_note": "Reviewed primary arXiv metadata and abstract as recorded in the source note; no reasoning policy, reward, evaluator, or benchmark was reproduced.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "problem": "A system can spend additional inference on search, revisions, candidate aggregation, or verifier calls without a clear rule for which work merits that budget, what the verifier establishes, when to stop, or whether a resulting trace may influence planning or action.",
+          "insufficient": "Fast generation governs low-latency output and Planning governs executable decomposition, but neither owns the test-time deliberation campaign that changes behavior through additional branches, reasoning tokens, search, revision, and selection pressure.",
+          "core_claim": "A governed stack treats test-time deliberation as a bounded, risk-tiered inference campaign: it records the request, search or revision mode, think budget, verifier scope and independence, stop condition, candidate and cost history, unresolved constraints, residual owner, and downstream handoff; additional inference may produce a candidate for planning but cannot by itself establish correctness, safety, capability, or authority to execute.",
+          "mechanism": [
+            "Represent every deliberation request with an objective, risk tier, allowed search or revision mode, time/token/branch/cost budget, verifier scope, stop condition, and permitted downstream consumer.",
+            "Separate candidate generation, selection, verification, planning, and execution so a model's own trace or score cannot become an independent review or an authority decision.",
+            "Retain proposed, rejected, selected, and abstained candidates with branch counts, verifier/model versions, resource bill, rejection reason, unresolved constraints, and residual owner.",
+            "Route a high-risk request without independent verification to review and route an exhausted budget to residual escrow rather than silent continuation or automatic execution."
+          ],
+          "interfaces": [
+            "Fast Generation owns low-latency generation modes; this chapter owns extra inference, search, revision, selection, and stopping discipline.",
+            "Verification Bandwidth owns whether relevant constraints fit the verifier's effective workspace.",
+            "Resource Economics owns cost, displaced work, and protected review capacity.",
+            "Planning receives a bounded candidate or abstention record, never hidden trace content as implicit permission.",
+            "Artifact Graphs, Evidence States, Runtime Adapters, and Readiness Gates own receipts, claim effects, execution authority, and release decisions after deliberation ends."
+          ],
+          "invariants": [
+            "Extra tokens, branches, revisions, reasoning traces, and self-scores are not proof of correctness, safety, capability, or authority.",
+            "Every deliberation request declares its risk tier, mode, budget, verifier scope, stop condition, and residual owner before its result reaches planning.",
+            "A high-risk execution request without an independent verifier routes to review, not direct execution.",
+            "An exhausted budget records residual or abstention rather than silently widening the budget or treating the best candidate as accepted.",
+            "Candidate selection and verifier evidence remain distinct from downstream authority, readiness, and action decisions."
+          ],
+          "failure_modes": [
+            "Verifier capture or self-score laundering turns a correlated evaluator into independent support.",
+            "Overthinking pressure optimizes token or branch count while useful verification stalls.",
+            "Early exit removes necessary checking and hides unresolved constraints.",
+            "Budget laundering silently extends a search or reports only the winning candidate.",
+            "A persuasive trace becomes implied planning, evidence, or execution authority.",
+            "Parallel deliberation outruns available reviewer or verifier capacity."
+          ],
+          "minimal_implementation": "A versioned deliberation record with request/risk tier, selected mode, time/token/branch/cost budget, verifier identity/version/scope/independence, candidate and rejection references, stop reason, unresolved constraints, residual owner, and downstream handoff. A finite fixture routes a high-risk execution request without independent verification to review and an exhausted budget to residual escrow.",
+          "beyond_state_of_art": "A mature deliberation control plane chooses direct generation, bounded revision, candidate search, or abstention by risk, expected verification value, budget, and independent-check availability. It measures quality, verifier cost, branch count, latency, residuals, and counterexamples without turning a trace or benchmark score into authority. This is a target architecture, not a claim of local reasoning quality, reliable test-time scaling, safe self-reflection, or autonomous general intelligence.",
+          "codex_tests": [
+            "High-risk independent-verifier admission fixture",
+            "Budget-exhaustion residual fixture",
+            "Deliberation workload comparison",
+            "Trace-to-action consistency probe"
+          ],
+          "lean_module": "AsiStackProofs.Deliberation",
+          "proof_targets": [
+            {
+              "tag": "lean:deliberation.high_risk.missing_independent_verifier_blocks_execution",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "A finite high-risk deliberation record with a requested execution handoff and no independent verifier routes to review rather than release to planning, without inferring evaluator correctness, reasoning quality, safety, model quality, or ASI.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "v0.1 chapter draft",
+          "open_evidence_gaps": [
+            "No ASI Stack reasoning model, search procedure, verifier, difficulty estimator, test-time-compute policy, workload, or measured result has been run.",
+            "The cited external systems remain source-setting comparators with their own models, prompts, tasks, evaluators, training conditions, and budgets; none is local implementation evidence.",
+            "The finite Lean routes establish only record-routing consequences for missing independent verification and exhausted budgets; they do not establish verifier independence, correctness, reasoning quality, trace faithfulness, safety, model quality, or ASI."
+          ]
+        },
+        {
           "id": "rankfold-neuralfold-and-artifact-compression",
           "title": "RankFold, NeuralFold, and Artifact Compression",
           "file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",

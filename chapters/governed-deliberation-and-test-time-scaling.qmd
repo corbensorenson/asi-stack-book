@@ -1,0 +1,330 @@
+---
+title: "Governed Deliberation and Test-Time Scaling"
+chapter_id: "governed-deliberation-and-test-time-scaling"
+part_id: "routing-compression-representation-substrates"
+status: "conceptual"
+draft_maturity: "v0.1 chapter draft"
+last_updated: "2026-07-10"
+primary_sources:
+  - "verification_bandwidth"
+  - "ext_tree_of_thoughts_2023"
+  - "ext_test_time_compute_scaling_2024"
+  - "ext_deepseek_r1_2025"
+  - "ext_s_grpo_2025"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack reasoning model, search procedure, verifier, difficulty estimator, or test-time-compute policy has been run."
+  - "No local result establishes better reasoning, verifier correctness, efficient inference, safety, trace faithfulness, or model quality."
+  - "The cited systems are source-setting comparators with their own models, tasks, prompts, evaluators, and budgets; they are not reproduced implementation evidence."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `governed-deliberation-and-test-time-scaling` |
+| Part | Part III - Routing, Compression, Representation, and Substrates |
+| Status | conceptual |
+| Last updated | 2026-07-10 |
+| Primary source records | `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024`, `ext_deepseek_r1_2025`, `ext_s_grpo_2025` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Primary test-time search, compute-allocation, reasoning-RL, and early-exit comparators are source-noted. No source system has been reproduced. |
+| Test state | A finite high-risk verifier and budget-routing theorem is implemented. No deliberation engine, workload, verifier, or measured result has run. |
+
+## Drafting guardrail
+
+This layer owns additional inference as a bounded deliberation campaign, not as
+an assertion that more tokens are better thought. It does not treat a long
+trace, a branch count, a high self-score, a process reward, or an elapsed-time
+budget as proof of correctness, safety, capability, or readiness. Deliberation
+may propose a better candidate for planning; existing verification, authority,
+and readiness layers decide whether any candidate may matter operationally.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Some requests deserve an immediate answer with uncertainty visible up front.
+Others deserve careful checks and permission to stop. An
+intelligent system needs to know the difference. Spending more computation can
+produce alternative plans, catch an obvious error, or explore a difficult
+problem. It can also produce a longer, more convincing mistake.
+
+What matters is not whether a system can think for longer. It is what it is
+allowed to spend, what kind of search it is running, who can check the result,
+and what happens when the budget ends without an answer. A high-risk request
+cannot inherit authority from model confidence or a private score. It needs a
+declared verifier, a known limit on that verifier, and a route that records what
+remains unresolved.
+
+Governed deliberation turns extra thinking into an accountable work order. The
+system may branch, revise, compare, or stop. It must keep the cost, rejected
+candidates, verifier limits, and residual questions visible. A thoughtful
+draft can then help a planner, but it never becomes permission to act merely
+because it took a long time to produce.
+:::
+
+## Problem
+
+Fast generation makes an answer arrive sooner. Deliberation does the opposite:
+it spends additional inference on candidate generation, search, revision,
+aggregation, checking, or a more selective stopping rule. The distinction
+matters because test-time computation is increasingly a capability lever. A
+system that can allocate branches, verifier calls, and sequential revisions can
+change its behavior without changing its weights, its tool set, or its stated
+task.
+
+That capability introduces a control problem. A search method needs an
+objective; a verifier has a scope; a difficulty estimate can be wrong; a
+reasoning trace can be incomplete or unfaithful; and a stopping rule can reward
+brevity, persistence, or a proxy score instead of an adequate answer. When the
+result feeds a plan, an approval, or a claim, the stack must distinguish a
+candidate produced by extra inference from a result that has passed the
+separate checks required for operational use.
+
+The operational question is therefore: what was this deliberation allowed to
+try, what budget did it consume, what verifier or selection rule judged it,
+what did that judge actually establish, and what residual uncertainty remains?
+Without those records, a system can turn token expenditure into implied
+competence and self-evaluation into implied authority.
+
+## Why existing approaches are insufficient
+
+Tree of Thoughts provides a useful source-setting pattern for exploring and
+evaluating multiple intermediate paths with lookahead and backtracking. The
+2024 test-time-compute study distinguishes verifier-guided search from proposal
+refinement and reports that the useful allocation varies with task difficulty.
+DeepSeek-R1 and S-GRPO provide related reasoning-RL and stopping-policy context.
+These are mechanisms, not a common admission rule. Their reported results use
+their own models, tasks, prompts, evaluators, training conditions, and budgets.
+
+The existing stack already owns adjacent obligations. Fast Generation owns the
+low-latency generation-mode choice. Verification Bandwidth owns the fact that a
+system cannot check every constraint merely because it can read or generate
+more text. Resource Economics owns cost and displaced-work accounting. Planning
+owns executable decomposition. None owns the request-level decision to spend
+additional inference, preserve its candidate history, state a verifier's
+limits, stop before unbounded search, and hand a bounded result to planning
+without letting it bypass authority.
+
+## Core Claim
+
+[governed-deliberation-and-test-time-scaling.core, label: Design rationale, support: argument] A governed stack treats test-time deliberation as a bounded, risk-tiered inference campaign: it records the request, search or revision mode, think budget, verifier scope and independence, stop condition, candidate and cost history, unresolved constraints, residual owner, and downstream handoff; additional inference may produce a candidate for planning but cannot by itself establish correctness, safety, capability, or authority to execute.
+
+## Mechanism
+
+- Start with a deliberation request that declares the objective, risk tier,
+  allowed search or revision mode, token/time/branch budget, verifier scope,
+  stop condition, and permitted downstream consumer.
+- Keep candidate generation, selection, verification, planning, and execution
+  distinct. A model may generate or rank its own candidates, but that does not
+  make its score an independent review.
+- Record proposed and retained candidates, branch or revision counts, verifier
+  and model versions, resource bill, rejection reason, unresolved constraints,
+  and residual owner.
+- Route high-risk results with no independent verifier to review; route an
+  exhausted budget to a residual record rather than silently extending search
+  or treating the best available trace as sufficient.
+- Hand a bounded candidate to Planning only after its stated evidence and
+  authority constraints are visible. Planning, Runtime Adapters, and Readiness
+  Gates retain their own refusal and approval powers.
+
+```{mermaid}
+flowchart LR
+  R["Request, risk tier, and objective"] --> B["Think, time, branch, and cost budget"]
+  B --> M["Declared mode: revise, sample, or search"]
+  M --> C["Candidate and branch record"]
+  C --> V["Scoped verifier or selection rule"]
+  V --> Q{"Independent review adequate for risk?"}
+  Q -->|"no or unknown"| I["Review, abstain, or residual escrow"]
+  Q -->|"bounded pass"| P["Planning and authority checks"]
+  B --> S{"Budget or stop condition reached?"}
+  S -->|"yes"| I
+  S -->|"no"| M
+  I --> L["Candidate, cost, and unresolved-constraint ledger"]
+  P --> L
+```
+
+**What the deliberation flow shows:** more inference is a work budget, not an
+authority budget. Candidate generation and a scoped verifier can create a
+reviewable record. Independent review, planning, and execution controls remain
+separate, while an exhausted search leaves a residual instead of an implied
+answer.
+
+The first mechanism is request classification. A low-risk drafting request can
+use a narrow budget and a weak selection rule without pretending that it is an
+independent assessment. A high-risk request needs a clearer objective,
+constraint set, verifier boundary, cost ceiling, stop condition, and escalation
+path. Risk changes the evidence burden; it does not make an expensive trace
+safe.
+
+The second mechanism is verifier discipline. A verifier can check a bounded
+property, rank candidates, or flag an obvious contradiction. The record must
+say which. A self-evaluator can be productive for filtering but cannot silently
+be relabeled as an independent adjudicator. When its scope is inadequate or its
+independence is missing, the system routes the result to review, abstention, or
+a more limited claim.
+
+The third mechanism is stop and residual discipline. A budget may end because
+the task is too hard, the verifier is too weak, the search is cycling, or the
+remaining work exceeds the available resource envelope. The correct result is
+not always another branch. It may be an unresolved-constraint record, a
+request for better evidence, or a refusal to hand the draft to an action layer.
+
+## Interfaces
+
+- **Fast Generation Architectures** owns low-latency generation modes; this
+  chapter owns extra test-time inference, search, revisions, selection, and
+  stopping discipline.
+- **Verification Bandwidth and Context Adequacy** owns whether the relevant
+  constraints fit the verifier's effective workspace.
+- **Resource Economics and Token Budgets** owns resource accounting,
+  displaced work, and protected review capacity.
+- **Planning as a Control Layer** receives a bounded candidate or abstention
+  record, never a hidden reasoning trace as implicit permission.
+- **Evidence States, Artifact Graphs, and Runtime Adapters** own claim effects,
+  durable receipts, and execution authority after deliberation ends.
+
+The division is intentionally practical. A latency-sensitive service can choose
+Fast Generation without pretending it has reasoned deeply. A deliberation lane
+can explore alternatives without issuing a tool call. Verification Bandwidth can
+refuse an overlarge checking task, Resource Economics can charge the work, and
+Planning can accept only the bounded candidate plus its limits. Each handoff
+keeps extra inference visible as work that still needs governance.
+
+## Invariants
+
+- Extra tokens, branches, revisions, a reasoning trace, or a self-score are
+  not proof of correctness, safety, capability, or authority.
+- Every deliberation request declares a risk tier, mode, budget, verifier
+  scope, stop condition, and residual owner before a result reaches planning.
+- A high-risk execution request without an independent verifier routes to
+  review, not direct execution.
+- An exhausted budget records a residual or abstention; it does not silently
+  widen the budget or convert the best candidate into an accepted answer.
+- Candidate selection and verifier evidence remain distinguishable from the
+  downstream authority, readiness, and action decision.
+
+Together these rules preserve a useful middle state between instant answer and
+approved action. The system can retain promising drafts, say which constraint
+it could not check, and ask for a better verifier or a smaller problem. It does
+not have to discard all uncertain work, but it cannot convert uncertainty into
+permission merely by spending more inference before the handoff.
+
+## Failure modes
+
+- **Verifier capture:** a generator's self-score or a correlated evaluator is
+  mistaken for independent support.
+- **Overthinking pressure:** a policy rewards token count, branch count, or
+  trace length while useful verification stalls.
+- **Premature stopping:** an early-exit rule removes necessary checking and
+  hides the unresolved constraint it left behind.
+- **Budget laundering:** an exhausted or overrun search quietly receives more
+  resources or reports only the winning candidate.
+- **Trace authority:** a persuasive chain of thought is treated as an approved
+  plan, evidence artifact, or execution permission.
+- **Latency exploitation:** many parallel deliberations outrun the available
+  reviewer or verifier capacity.
+
+These failures need different responses. A weak verifier calls for an
+independent check or a narrower claim; a stalled search calls for a stop record;
+an overloaded review queue calls for capacity limits rather than more hidden
+parallelism. The common repair is not to suppress deliberation but to make the
+reason for stopping, escalating, or refusing visible to the next control layer.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a versioned deliberation record. It
+contains a request and risk tier; a selected search, sampling, or revision mode;
+time, token, branch, and cost budget; verifier identity, version, scope, and
+independence status; candidate and rejection references; a stop reason;
+unresolved constraints; residual owner; and a downstream handoff state. A
+finite fixture can route a high-risk execution request without independent
+verification to review and route an exhausted budget to residual escrow with
+explicit non-claims.
+
+That fixture does not need a language model. Hand-authored candidates and a toy
+verifier are enough to test whether the record refuses authority laundering.
+They are not enough to establish reasoning quality, calibrated difficulty,
+search efficiency, verifier accuracy, trace faithfulness, model quality, or
+safe agent behavior.
+
+## Beyond the State of the Art
+
+The mature control plane allocates a portfolio of deliberation modes: direct
+generation for routine work, bounded revision for locally checkable artifacts,
+candidate search where a well-scoped verifier exists, and abstention or human
+review where it does not. Each mode has risk-sensitive budgets, a costed
+resource envelope, an explicit stopping policy, a verifier or evidence contract,
+and a record of what was not verified.
+
+It can compare deliberation strategies on a declared workload without turning
+benchmark reward into a deployment right. It recognizes that the best strategy
+may vary by task and that a longer chain is not automatically a better answer.
+It keeps independent evaluators, counterexamples, trace/action comparisons,
+and downstream authority checks available for review. This is a target
+architecture, not a claim of a locally implemented reasoning system, reliable
+test-time scaling, safe self-reflection, or autonomous general intelligence. It
+is not a current result about any deployed reasoning system.
+
+The controller also treats abstention as an output with operational value. It
+can return a short answer with a clear uncertainty boundary, ask for a narrower
+objective, or reserve a difficult task for a separately approved investigation.
+That avoids a common failure of reasoning systems: presenting the most polished
+available continuation as though it were the best verified resolution.
+
+No single verifier receives unlimited trust. The mature design rotates or
+cross-checks evaluators where the risk warrants it, retains negative evidence,
+and limits the cost of contested deliberation. Its promise is legibility under
+pressure, not unlimited thought, universal correctness, or a substitute for
+independent human and domain-specific review.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| High-risk independent-verifier admission fixture | Block an execution handoff when a high-risk deliberation record lacks an independent verifier. | implemented only as a finite Lean route; no model, verifier, or execution run |
+| Budget-exhaustion residual fixture | Route an exhausted declared budget to residual escrow rather than silent continuation. | implemented only as a finite Lean route; no workload or cost measurement |
+| Deliberation workload comparison | Compare direct, revision, and search modes with task quality, verifier cost, branches, latency, residuals, and negative controls. | planned; requires a public-safe workload and independent replay |
+| Trace-to-action consistency probe | Check that an action plan does not receive authority from an unverified trace. | planned; requires a public-safe planning/action fixture |
+
+## Formalization hooks
+
+- `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution`
+  (`AsiStackProofs.Deliberation`, implemented): a finite high-risk request with
+  all ordinary campaign fields but no independent verifier routes to review
+  rather than release to planning. It does not prove evaluator independence,
+  verifier correctness, reasoning quality, trace faithfulness, safety, model
+  quality, or ASI.
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `verification_bandwidth` | Verification Bandwidth in Bounded Contexts | Bound extra reasoning by effective verification workspace and unresolved constraints; conceptual local source, not a measured result. |
+| `ext_tree_of_thoughts_2023` | Tree of Thoughts: Deliberate Problem Solving with Large Language Models | Comparator for bounded branch generation, intermediate states, evaluation, lookahead, and backtracking; not a local search result. |
+| `ext_test_time_compute_scaling_2024` | Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters | Comparator for verifier-guided search, proposal refinement, difficulty-dependent allocation, and test-time compute limits; not a local efficiency result. |
+| `ext_deepseek_r1_2025` | DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning | Comparator for reasoning-RL, self-reflection, verification, and dynamic strategy adaptation in the source setting; not an independent verifier or local model result. |
+| `ext_s_grpo_2025` | S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models | Comparator for reasoning-stop policy and early-exit tradeoffs; not evidence that shorter reasoning is adequate. |
+
+## Summary
+
+Deliberation is valuable when it creates a better bounded candidate, not when it
+creates an aura of thoughtfulness. A governed architecture needs a place to decide when extra
+inference is worth spending and when a result must remain a draft, a residual,
+or a request for review. That decision is neither fast decoding nor planning
+nor execution.
+
+The discipline is straightforward: treat inference time as a budget, treat
+verifier scope as a stated limit, and treat unresolved work as a durable result.
+This makes a system free to search and revise without granting its reasoning
+trace the power to authorize itself.
+
+That is the difference between a capable scratchpad and an unaccountable
+decision-maker: the former leaves a record of its limits; the latter hides them
+when a confident answer is convenient.
+
+## Handoff
+
+Governed Deliberation supplies a bounded candidate, abstention, or residual record to Artifact Compression and Resource Economics. RankFold, NeuralFold, and Artifact Compression examine how durable artifacts may become smaller without hiding what is lost, verified, or still unresolved. That successor carries forward the same requirement: an efficient representation must preserve enough provenance and fallback information for a later reviewer to understand what the system did not retain.

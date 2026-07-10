@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 47 |
-| Assigned source/chapter pairs | 456 |
-| Exact claim-source mappings | 449 |
-| Unmapped assigned pairs | 7 |
-| Source notes present for assigned pairs | 456 |
-| Source notes listing assigned chapter | 456 |
-| Passage-reviewed mappings recorded | 449 |
-| Support-state counts | {"argument": 47} |
+| Chapters audited | 48 |
+| Assigned source/chapter pairs | 461 |
+| Exact claim-source mappings | 453 |
+| Unmapped assigned pairs | 8 |
+| Source notes present for assigned pairs | 461 |
+| Source notes listing assigned chapter | 461 |
+| Passage-reviewed mappings recorded | 453 |
+| Support-state counts | {"argument": 48} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -63,6 +63,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `personal-compute-hives-and-federated-edge-intelligence` | 23 | 22 | 23 | 23 | 22 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 15 | 15 | 15 | 15 | 15 | argument | eligible for support review |
 | `fast-generation-architectures` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
+| `governed-deliberation-and-test-time-scaling` | 5 | 4 | 5 | 5 | 4 | argument | passage review required before source-derived promotion |
 | `rankfold-neuralfold-and-artifact-compression` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `resource-economics-and-token-budgets` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `mathematical-and-search-substrates` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
@@ -100,7 +101,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `coherence_exchange` | 11 | yes |
 | `genesiscode` | 10 | yes |
 | `planforge` | 10 | yes |
-| `verification_bandwidth` | 8 | yes |
+| `verification_bandwidth` | 9 | yes |
 | `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
 | `cgs` | 7 | yes |
@@ -144,6 +145,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_github_self_hosted_runners_docs` | 2 | yes |
 | `ext_pagedattention_vllm_2023` | 2 | yes |
 | `ext_mamba_2023` | 2 | yes |
+| `ext_deepseek_r1_2025` | 2 | yes |
+| `ext_s_grpo_2025` | 2 | yes |
 | `coilmoecot` | 2 | yes |
 | `ext_concrete_ai_safety_2016` | 1 | yes |
 | `ext_goal_misgeneralization_2022` | 1 | yes |
@@ -178,6 +181,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_layerskip_2024` | 1 | yes |
 | `ext_llada_2025` | 1 | yes |
 | `ext_scaling_dllms_2026` | 1 | yes |
+| `ext_tree_of_thoughts_2023` | 1 | yes |
+| `ext_test_time_compute_scaling_2024` | 1 | yes |
 | `rankfold_compressor` | 1 | yes |
 | `ext_reluplex_2017` | 1 | yes |
 | `temporal_coil_research` | 1 | yes |
@@ -194,10 +199,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_kto_2024` | 1 | yes |
 | `ext_simpo_2024` | 1 | yes |
 | `ext_reinforce_style_rlhf_2024` | 1 | yes |
-| `ext_deepseek_r1_2025` | 1 | yes |
 | `ext_dapo_2025` | 1 | yes |
 | `ext_gspo_2025` | 1 | yes |
-| `ext_s_grpo_2025` | 1 | yes |
 | `ext_longrlvr_2026` | 1 | yes |
 | `ext_rlhf_limitations_2023` | 1 | yes |
 | `ext_bourtoule_machine_unlearning_2021` | 1 | yes |
@@ -475,6 +478,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_mamba_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_llada_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_scaling_dllms_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `verification_bandwidth` | unmapped | note present | chapter listed | not passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_tree_of_thoughts_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_test_time_compute_scaling_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_deepseek_r1_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_s_grpo_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_compressor` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |

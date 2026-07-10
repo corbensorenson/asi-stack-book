@@ -50,6 +50,7 @@ Verification Bandwidth argues that long context should not be confused with long
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
+- `governed-deliberation-and-test-time-scaling` (Governed Deliberation and Test-Time Scaling)
 
 ## Claims To Add Or Update
 
@@ -58,6 +59,8 @@ Verification Bandwidth argues that long context should not be confused with long
 - Use this source to bound context-policy and reasoning-budget rewards: longer context or shorter reasoning is not a valid reward unless verification adequacy and contradiction pressure are measured.
 - Treat verification capacity as a scarce resource that must be budgeted, measured, and surfaced in claim ledgers.
 - Require summaries, context cells, and semantic pages to expose coverage and compression loss rather than pretending to preserve all source constraints.
+- Treat deliberation time as a verification-limited budget: additional branches,
+  revisions, or tokens cannot substitute for an adequate independent check.
 
 ## Open Questions
 

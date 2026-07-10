@@ -39,12 +39,15 @@ Tree of Thoughts belongs in the planning chapters as an external reference for d
 - `planning-as-a-control-layer` (Planning as a Control Layer: DAGs and Intelligence Arbitrage)
 - `cognitive-compilation-and-semantic-ir` (Cognitive Compilation and Semantic IR)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `governed-deliberation-and-test-time-scaling` (Governed Deliberation and Test-Time Scaling)
 
 ## Claims To Add Or Update
 
 - Use this note to source external planning/search vocabulary.
 - Do not claim the ASI Stack implements Tree of Thoughts or reproduces its results.
 - Keep support state at `argument` until deterministic plan-graph tests or accepted transitions exist.
+- Use this source to distinguish a bounded search procedure from an authority,
+  correctness, safety, or deployment decision.
 
 ## Open Questions
 

@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 47 |
+| Manifest chapter core claims | 48 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 25 |
+| Accepted explicit no-promotion decisions | 26 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -59,6 +59,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `context-transactions-snapshots-mounts-and-taint.core` | Context Transactions, Snapshots, Mounts, and Taint | `argument_only` | no memory-store runtime; finite deletion-closure and bounded synthetic memory-store fixture/proof coverage only; no deployed deletion-closure, side-channel, or branch-isolation review |
 | `data-engines-continual-learning-and-unlearning.core` | Data Engines, Continual Learning, and Unlearning | `argument_only` | no local data engine or dataset admission runtime; no measured data quality, coverage, model quality, privacy, or synthetic-data result; no verified deletion across checkpoints, adapters, caches, retrieval stores, distilled models, or published artifacts |
 | `failure-modes-of-ungoverned-intelligence.core` | Failure Modes of Ungoverned Intelligence | `argument_only` | no system-level red-team result yet; no empirical failure corpus evaluation; no deployed monitor or detector trace |
+| `governed-deliberation-and-test-time-scaling.core` | Governed Deliberation and Test-Time Scaling | `argument_only` | no local deliberation engine, verifier, or workload; no measured quality, cost, or stopping-policy result; finite theorems do not establish verifier correctness, reasoning quality, safety, or generality |
 | `human-intent-as-a-formal-input.core` | Human Intent as a Formal Input | `argument_only` | no parser or compiler benchmark; no user-intent interpretation review; no accepted execution trace |
 | `integrated-reference-architecture.core` | Integrated Reference Architecture | `argument_only` | no whole-stack trace kernel; no cross-layer runtime replay; no system-level adversarial review yet |
 | `labor-os-and-typed-jobs.core` | Labor OS and Typed Jobs | `argument_only` | no deployed job lifecycle; no live approval service; no command-to-effect replay |

@@ -37,12 +37,15 @@ S-GRPO is useful for the book's reasoning-budget boundary: RL can be aimed at wh
 ## Book Chapters Supported
 
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
+- `governed-deliberation-and-test-time-scaling` (Governed Deliberation and Test-Time Scaling)
 
 ## Claims To Add Or Update
 
 - Use this note to source-note early-exit/reasoning-budget RL. Do not claim a local reasoning-budget policy exists.
 - Keep support state at `argument` unless later passage review, implemented experiments, proof artifacts, or accepted evidence transitions justify a narrower promotion.
 - Record negative, inconclusive, or failed local training results if any future experiment is attempted.
+- Use the source to ground stop-policy tradeoffs while preserving the boundary
+  that early exit cannot erase required verification or residual ownership.
 
 ## Open Questions
 

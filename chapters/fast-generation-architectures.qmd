@@ -365,4 +365,4 @@ The Project Theseus public task-bundle import now adds an implementation-referen
 
 ## Handoff
 
-Fast generation reduces time pressure at the output boundary, but stored and routed artifacts still need compression contracts of their own. RankFold, NeuralFold, and Artifact Compression narrows the focus to reusable artifacts: how archive forms, deterministic decode checks, probes, fallback, utility, and cost accounting decide whether a compressed artifact can safely replace or accompany its fuller source.
+Fast generation reduces time pressure at the output boundary, but the stack must also decide when spending *more* time is warranted. Governed Deliberation and Test-Time Scaling takes that dual: it records search, revision, verifier scope, budget, stopping, and residual discipline before a slower reasoning result can reach planning. Only after that control plane has produced a bounded candidate does RankFold, NeuralFold, and Artifact Compression ask how reusable artifacts may become smaller without hiding loss, verification, fallback, utility, or cost.

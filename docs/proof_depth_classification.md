@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 216 |
-| Lean modules scanned | 55 |
-| Theorem declarations classified | 1056 |
+| Proof targets in manifest | 217 |
+| Lean modules scanned | 56 |
+| Theorem declarations classified | 1058 |
 | Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 866 |
+| Derived/decomposed theorem declarations | 868 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 107 |
 | Safety-critical direct/projection declarations | 11 |
@@ -69,6 +69,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/DataEngines.lean` | data-engines-continual-learning-and-unlearning | 3 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/Deliberation.lean` | governed-deliberation-and-test-time-scaling | 1 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 31 | 9 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -394,6 +395,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/DataEngines.lean` | `complete_data_record_routes_to_eligible` | derived_or_decomposed | no | uses rcases, simp |
 | `lean/AsiStackProofs/DataEngines.lean` | `missing_provenance_or_authority_blocks_data_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/DataEngines.lean` | `missing_split_exclusion_or_contamination_check_quarantines_data` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Deliberation.lean` | `exhausted_deliberation_budget_escrows_residual` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/Deliberation.lean` | `missing_independent_verifier_blocks_high_risk_execution` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Efficiency.lean` | `authority_bypass_blocks_efficiency_claim` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `complete_efficiency_claim_admission_allows_claim_record` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `efficiency_claim_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |

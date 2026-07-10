@@ -707,6 +707,34 @@
         "chapters/open-ended-improvement-engines.qmd",
         "appendices/C_claim_evidence_matrix.qmd#open-ended-improvement-engines.core"
       ]
+    },
+    {
+      "claim_id": "governed-deliberation-and-test-time-scaling.core",
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "chapter_title": "Governed Deliberation and Test-Time Scaling",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-noted deliberation comparators and finite routing theorems, but no local reasoning model, search, verifier, test-time budget policy, workload, independent review, execution trace, or measured result has been accepted as evidence for the broad claim.",
+      "required_evidence": [
+        "public-safe deliberation workload with baselines and negative controls",
+        "independent verifier and trace-to-action review with cost and residual records",
+        "accepted transition for a narrowed deliberation-admission claim"
+      ],
+      "blockers": [
+        "no local deliberation engine, verifier, or workload",
+        "no measured quality, cost, or stopping-policy result",
+        "finite theorems do not establish verifier correctness, reasoning quality, safety, or generality"
+      ],
+      "non_claims": [
+        "does not prove test-time reasoning improvement or efficiency",
+        "does not prove verifier correctness, trace faithfulness, or safe self-reflection",
+        "does not prove model quality, safety, authority enforcement, or ASI"
+      ],
+      "refs": [
+        "chapters/governed-deliberation-and-test-time-scaling.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#governed-deliberation-and-test-time-scaling.core"
+      ]
     }
   ]
 }

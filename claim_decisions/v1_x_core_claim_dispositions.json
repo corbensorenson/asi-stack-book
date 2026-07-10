@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 47 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 48 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 47,
+    "manifest_chapter_core_claims": 48,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 25,
+    "accepted_no_promotion_dispositions": 26,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 47
+    "chapter_core_claims_remaining_at_argument": 48
   },
   "dispositions": [
     {
@@ -1498,6 +1498,45 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/v1_x_measured/fast_generation_task_bundle_no_change.json"
       ]
+    },
+    {
+      "claim_id": "governed-deliberation-and-test-time-scaling.core",
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "chapter_title": "Governed Deliberation and Test-Time Scaling",
+      "part_id": "routing-compression-representation-substrates",
+      "part_title": "Part III - Routing, Compression, Representation, and Substrates",
+      "chapter_file": "chapters/governed-deliberation-and-test-time-scaling.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A governed stack treats test-time deliberation as a bounded, risk-tiered inference campaign: it records the request, search or revision mode, think budget, verifier scope and independence, stop condition, candidate and cost history, unresolved constraints, residual owner, and downstream handoff; additional inference may produce a candidate for planning but cannot by itself establish correctness, safety, capability, or authority to execute.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "public-safe deliberation workload with baselines and negative controls",
+        "independent verifier and trace-to-action review with cost and residual records",
+        "accepted transition for a narrowed deliberation-admission claim"
+      ],
+      "blockers": [
+        "no local deliberation engine, verifier, or workload",
+        "no measured quality, cost, or stopping-policy result",
+        "finite theorems do not establish verifier correctness, reasoning quality, safety, or generality"
+      ],
+      "promotion_burden": "The chapter has source-noted deliberation comparators and finite routing theorems, but no local reasoning model, search, verifier, test-time budget policy, workload, independent review, execution trace, or measured result has been accepted as evidence for the broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove test-time reasoning improvement or efficiency",
+        "does not prove verifier correctness, trace faithfulness, or safe self-reflection",
+        "does not prove model quality, safety, authority enforcement, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 5 assigned sources; 4 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-noted test-time search, compute-allocation, reasoning-RL, and early-exit comparators plus finite admission routing",
+      "formal_or_prototype_work": "Build a public-safe deliberation workload record with request/risk, mode, budget, verifier scope/independence, candidate/rejection history, stop reason, residuals, and trace-to-action negative controls.",
+      "human_reader_focus": "Explain the difference between spending more time thinking and earning permission to act.",
+      "what_would_move_this": "A replayed workload comparison with quality, verifier-cost, branch, latency, residual, and independent-review records; no general reasoning, verifier-correctness, model-quality, safety, or ASI claim.",
+      "relevant_non_core_transition_refs": []
     },
     {
       "claim_id": "rankfold-neuralfold-and-artifact-compression.core",

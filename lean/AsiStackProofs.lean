@@ -15,6 +15,7 @@ import AsiStackProofs.Corrigibility
 import AsiStackProofs.CoilAttentionMemory
 import AsiStackProofs.CyclicMixers
 import AsiStackProofs.DataEngines
+import AsiStackProofs.Deliberation
 import AsiStackProofs.Efficiency
 import AsiStackProofs.EvidenceStates
 import AsiStackProofs.FastGeneration

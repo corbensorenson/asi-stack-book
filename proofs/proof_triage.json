@@ -2169,7 +2169,17 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.SelfImprovement as a finite campaign-admission routing theorem for a missing independent evaluation. It does not establish campaign quality, evaluator correctness, autonomous discovery, self-improvement safety, model quality, or ASI."
+    },
+    {
+      "tag": "lean:deliberation.high_risk.missing_independent_verifier_blocks_execution",
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "module": "AsiStackProofs.Deliberation",
+      "formal_target": "A finite high-risk deliberation record with a requested execution handoff and no independent verifier routes to review rather than release to planning, without inferring evaluator correctness, reasoning quality, safety, model quality, or ASI.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.Deliberation as a finite high-risk handoff boundary. It routes missing independent verification to review and does not establish verifier independence, verifier correctness, reasoning quality, trace faithfulness, safety, model quality, or ASI."
     }
   ],
-  "record_count": 216
+  "record_count": 217
 }

@@ -37,12 +37,16 @@ DeepSeek-R1 belongs in the policy chapter as a reasoning-RL reference: reinforce
 ## Book Chapters Supported
 
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
+- `governed-deliberation-and-test-time-scaling` (Governed Deliberation and Test-Time Scaling)
 
 ## Claims To Add Or Update
 
 - Use this note to source-note reasoning-RL as an external method family. Do not use it to claim local reasoning-model capability.
 - Keep support state at `argument` unless later passage review, implemented experiments, proof artifacts, or accepted evidence transitions justify a narrower promotion.
 - Record negative, inconclusive, or failed local training results if any future experiment is attempted.
+- Treat reported self-reflection and verification behavior as source-setting
+  reasoning-RL context, not as an independent verifier or local deliberation
+  result.
 
 ## Open Questions
 
