@@ -1,5 +1,33 @@
 # Changelog
 
+## 2026-07-10 - Separate current audio probes from historical review snapshots
+
+- Made the current audio-script reading-flow probe derive active file and
+  chapter counts from the manifest and retain the current generated-script
+  digest and text statistics in its tracked probe record, rather than pinning
+  prose-dependent values in validator code.
+- Preserved the July 5 narration-treatment and metadata reviews as explicit
+  historical blocked-candidate snapshots, so later manuscript changes cannot
+  make them appear to approve later generated scripts or alter the historical
+  release record.
+- Boundary: the current probe is still only a script-workspace integrity check;
+  it does not generate audio, approve narration, timecode chapters, or approve
+  an audiobook or audio release.
+
+## 2026-07-10 - Establish learning-integrity intake anchors
+
+- Added four source-noted, no-promotion anchors for the first controlled
+  expansion wave: Bourtoule et al. on machine unlearning; Shumailov et al. on
+  recursive generated-data feedback; Gerstgrasser et al. on the distinction
+  between replacement and accumulation; and a pinned Project Theseus synthetic
+  data-curation implementation record.
+- Regenerated the public source appendices and reconciled the trust surfaces to
+  222 public-safe records.
+- Boundary: this is an intake packet, not an admitted chapter, a reproduced
+  result, a local data-quality finding, or a change to any chapter-core support
+  state. The upcoming ownership and admission work must still supply a finished
+  chapter in both editions, its evidence/proof route, and release validation.
+
 ## 2026-07-10 - Position the stack thesis against CAIS
 
 - Added the primary technical-report record and source note

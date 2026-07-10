@@ -61,17 +61,8 @@ EXPECTED_READING_FLOW_EXACT = {
     "requested_source_mode": "curated_reader_manuscript",
     "report_ref": "build/audio_script/audio_script_reading_flow_report.json",
     "review_command": "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
-    "script_files_checked": 49,
-    "front_matter_scripts_checked": 2,
-    "chapter_scripts_checked": 44,
-    "appendix_scripts_checked": 3,
     "script_file_order_status": "matches_book_structure",
     "script_file_order_errors": [],
-    "combined_script_sha256": "cd7c39c3a8d6a775db3876e7c81beec3923651ca9fbdcdddb2eb764ff2c6354d",
-    "text_characters_checked": 1096067,
-    "word_tokens_checked": 146860,
-    "release_note_count": 49,
-    "review_frontmatter_count": 49,
     "narration_note_count": 66,
     "table_narration_notes": 5,
     "diagram_narration_notes": 50,
@@ -83,12 +74,8 @@ EXPECTED_READING_FLOW_EXACT = {
         "code_or_schema_blocks": 0,
         "images": 11,
     },
-    "chapter_marker_rows": 49,
     "chapter_marker_order_status": "matches_script_file_order",
     "chapter_marker_order_errors": [],
-    "chapter_marker_tbd_rows": 49,
-    "implementation_horizon_chapter_scripts": 44,
-    "chapter_scripts_with_evidence_boundary_phrase": 26,
     "live_marker_hits": 0,
     "raw_core_claim_marker_hits": 0,
     "replacement_character_count": 0,
@@ -418,25 +405,38 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
     for key, expected in EXPECTED_READING_FLOW_EXACT.items():
         if reading_flow.get(key) != expected:
             errors.append(f"audio_script_reading_flow_review.{key} must be {expected!r}.")
+    expected_order = expected_script_order()
+    expected_chapter_scripts = sum(1 for item in expected_order if item.startswith("chapters/"))
+    expected_front_matter_scripts = sum(1 for item in expected_order if item in {"index.md", "preface.md"})
+    for key, expected in {
+        "script_files_checked": len(expected_order),
+        "front_matter_scripts_checked": expected_front_matter_scripts,
+        "chapter_scripts_checked": expected_chapter_scripts,
+        "appendix_scripts_checked": 3,
+        "release_note_count": len(expected_order),
+        "review_frontmatter_count": len(expected_order),
+        "chapter_marker_rows": len(expected_order),
+        "chapter_marker_tbd_rows": len(expected_order),
+        "implementation_horizon_chapter_scripts": expected_chapter_scripts,
+    }.items():
+        if reading_flow.get(key) != expected:
+            errors.append(f"audio_script_reading_flow_review.{key} must be {expected!r}.")
+    for key in ("combined_script_sha256",):
+        value = reading_flow.get(key)
+        if not isinstance(value, str) or len(value) != 64:
+            errors.append(f"audio_script_reading_flow_review.{key} must be a SHA-256 digest.")
+    for key in ("text_characters_checked", "word_tokens_checked"):
+        require_int("audio_script_reading_flow_review", key, reading_flow.get(key), errors, minimum=1)
+    evidence_boundary_scripts = reading_flow.get("chapter_scripts_with_evidence_boundary_phrase")
+    if not isinstance(evidence_boundary_scripts, int) or not 0 <= evidence_boundary_scripts <= expected_chapter_scripts:
+        errors.append("audio_script_reading_flow_review.chapter_scripts_with_evidence_boundary_phrase must be within the active chapter count.")
     samples = reading_flow.get("ordered_script_file_samples", {})
     if not isinstance(samples, dict):
         errors.append("audio_script_reading_flow_review.ordered_script_file_samples must be an object.")
     else:
-        if samples.get("first_five") != [
-            "index.md",
-            "preface.md",
-            "chapters/asi-is-a-stack-not-a-model.md",
-            "chapters/the-efficient-asi-hypothesis.md",
-            "chapters/system-boundaries-and-authority.md",
-        ]:
+        if samples.get("first_five") != expected_order[:5]:
             errors.append("audio_script_reading_flow_review first_five sample must show the reader opening order.")
-        if samples.get("last_five") != [
-            "chapters/living-book-methodology.md",
-            "chapters/open-research-agenda-and-bibliography-plan.md",
-            "appendices/B_glossary.md",
-            "appendices/G_corben_source_corpus.md",
-            "appendices/H_external_sources.md",
-        ]:
+        if samples.get("last_five") != expected_order[-5:]:
             errors.append("audio_script_reading_flow_review last_five sample must show the appendix closing order.")
     boundary = require_string(
         "audio_script_reading_flow_review",
@@ -488,8 +488,11 @@ def validate_summary(manifest: dict[str, Any], errors: list[str]) -> None:
     text = SUMMARY.read_text(encoding="utf-8")
     summary = manifest.get("script_workspace_summary", {})
     totals = manifest.get("companion_treatment_totals", {})
+    reading_flow = manifest.get("audio_script_reading_flow_review", {})
     script_files = summary.get("script_files") if isinstance(summary, dict) else None
     mermaid_diagrams = totals.get("mermaid_diagrams") if isinstance(totals, dict) else None
+    chapter_markers = reading_flow.get("chapter_marker_rows") if isinstance(reading_flow, dict) else None
+    narration_notes = reading_flow.get("narration_note_count") if isinstance(reading_flow, dict) else None
     required_fragments = [
         "Reader Audio-Script Probe Manifest",
         "tracked curated reader manuscript",
@@ -500,9 +503,9 @@ def validate_summary(manifest: dict[str, Any], errors: list[str]) -> None:
         f"| Mermaid diagrams | {mermaid_diagrams} |",
         "Audio Script Reading-Flow Review",
         "matches book-structure order",
-        "49 ordered markers",
-        "66 narration notes",
-        "1,096,067 text characters",
+        f"{chapter_markers} ordered markers",
+        f"{narration_notes} narration notes",
+        "Current digest and text statistics are recorded in the tracked audio-script probe manifest.",
         "not narration quality review",
         "| MP3 | `target_not_generated` |",
         "Key-figure companion note |",

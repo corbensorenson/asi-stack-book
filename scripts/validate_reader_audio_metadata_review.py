@@ -89,14 +89,8 @@ def validate() -> list[str]:
         return errors
 
     manifest = require_dict(rel(MANIFEST), load_json(MANIFEST), errors)
-    audio_probe = require_dict(rel(AUDIO_PROBE), load_json(AUDIO_PROBE), errors)
     release_profiles = require_dict(rel(RELEASE_PROFILES), load_json(RELEASE_PROFILES), errors)
     blocked_record = require_dict(rel(BLOCKED_RECORD), load_json(BLOCKED_RECORD), errors)
-    reading_flow = require_dict(
-        "audio_probe.audio_script_reading_flow_review",
-        audio_probe.get("audio_script_reading_flow_review"),
-        errors,
-    )
     profile = audio_profile(release_profiles)
     if not profile:
         errors.append("editions/release_profiles.json must contain the audio_release profile.")
@@ -110,6 +104,8 @@ def validate() -> list[str]:
         errors.append(f"status must be {EXPECTED_STATUS}.")
     if manifest.get("decision_date") != "2026-07-05":
         errors.append("decision_date must remain 2026-07-05 for this recorded review.")
+    if manifest.get("review_scope") != "historical_blocked_candidate_snapshot":
+        errors.append("review_scope must preserve the historical blocked-candidate snapshot boundary.")
     if manifest.get("source_audio_probe_manifest") != rel(AUDIO_PROBE):
         errors.append("source_audio_probe_manifest must point to the tracked audio probe manifest.")
     if manifest.get("source_release_profiles") != rel(RELEASE_PROFILES):
@@ -130,10 +126,10 @@ def validate() -> list[str]:
         errors.append("metadata_fields.source_tag drifted.")
 
     expected_top_level = {
-        "source_audio_script_sha256": reading_flow.get("combined_script_sha256"),
-        "script_files_checked": reading_flow.get("script_files_checked"),
-        "chapter_scripts_checked": reading_flow.get("chapter_scripts_checked"),
-        "chapter_marker_rows": reading_flow.get("chapter_marker_rows"),
+        "source_audio_script_sha256": EXPECTED_SCRIPT_DIGEST,
+        "script_files_checked": 49,
+        "chapter_scripts_checked": 44,
+        "chapter_marker_rows": 49,
         "audio_profile": "audio_release",
     }
     for key, expected in expected_top_level.items():
@@ -177,6 +173,7 @@ def validate() -> list[str]:
     decision = require_text("decision", manifest.get("decision"), errors, min_words=35)
     for fragment in (
         "clears only `audio_metadata_not_reviewed`",
+        "historical snapshot",
         "no narrator",
         "audio artifact",
         "distribution right",
@@ -204,6 +201,7 @@ def validate() -> list[str]:
         "does not timecode chapter markers",
         "does not approve audio publication",
         "does not approve an audiobook",
+        "does not approve later generated scripts",
         "does not promote any chapter core claim",
     ):
         if phrase not in non_claim_text:

@@ -56,8 +56,7 @@ script order.
 | Image narration notes | 11 |
 | Code/schema narration notes | 0 |
 | Implementation-horizon chapter scripts | 44 |
-| Text checked | 1,096,067 text characters |
-| Word tokens checked | 146,573 |
+| Script statistics | Current digest and text statistics are recorded in the tracked audio-script probe manifest. |
 | Replacement characters | 0 |
 | Live/research marker hits | 0 |
 | Raw core-claim marker hits | 0 |

@@ -2,6 +2,7 @@
   "schema_version": "asi_stack.reader_audio_metadata_review.v0",
   "status": "accepted_audio_metadata_for_release_preparation",
   "decision_date": "2026-07-05",
+  "review_scope": "historical_blocked_candidate_snapshot",
   "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
   "source_release_profiles": "editions/release_profiles.json",
   "source_blocked_release_record": "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
@@ -32,7 +33,7 @@
     "narrator/tooling note",
     "license or rights statement"
   ],
-  "decision": "The current curated-reader audio lane now has complete pre-release metadata fields for title, subtitle, author, major version, language, source commit, source tag, script digest, narrator/tooling note, and rights statement. This clears only `audio_metadata_not_reviewed` for the blocked candidate. The metadata deliberately records that no narrator, synthesis tool, audio artifact, distribution right, or audio release approval exists yet.",
+  "decision": "The 2026-07-05 historical snapshot of the curated-reader audio lane had complete pre-release metadata fields for title, subtitle, author, major version, language, source commit, source tag, script digest, narrator/tooling note, and rights statement. This clears only `audio_metadata_not_reviewed` for that blocked candidate. The metadata deliberately records that no narrator, synthesis tool, audio artifact, distribution right, or audio release approval exists yet.",
   "cleared_blockers": [
     "audio_metadata_not_reviewed"
   ],
@@ -44,8 +45,9 @@
     "audio_embedded_epub_not_packaged_or_checked",
     "audio_edition_release_record_not_created"
   ],
-  "release_boundary": "This metadata review clears only `audio_metadata_not_reviewed` because the required audio metadata fields have been specified for the current blocked candidate. It does not create MP3, M4B, or audio-embedded EPUB artifacts, does not approve a narrator or synthesis tool, does not timecode chapter markers, does not perform a pronunciation or listening spot check, does not approve audio publication rights, does not create an audio edition release record, and does not promote any claim support state.",
+  "release_boundary": "This historical snapshot metadata review clears only `audio_metadata_not_reviewed` because the required audio metadata fields were specified for the recorded blocked candidate. It does not approve later generated scripts, does not create MP3, M4B, or audio-embedded EPUB artifacts, does not approve a narrator or synthesis tool, does not timecode chapter markers, does not perform a pronunciation or listening spot check, does not approve audio publication rights, does not create an audio edition release record, and does not promote any claim support state.",
   "non_claims": [
+    "This historical snapshot manifest does not approve later generated scripts.",
     "This manifest does not create MP3, M4B, or audio-embedded EPUB artifacts.",
     "This manifest does not approve a narrator, voice, synthesis tool, pronunciation, or recorded listening quality.",
     "This manifest does not timecode chapter markers.",

@@ -3501,5 +3501,80 @@
     "updated": "2010",
     "citation_label": "Parasuraman and Manzey (2010), Complacency and Bias in Human Use of Automation",
     "doi": "10.1177/0018720810376055"
+  },
+  {
+    "id": "ext_bourtoule_machine_unlearning_2021",
+    "title": "Machine Unlearning",
+    "priority": "external_literature",
+    "layer": "machine_unlearning_data_governance",
+    "chapter_targets": [
+      "policy-optimization-and-learning-from-feedback",
+      "procedural-memory-and-cognitive-loop-closure",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "https://doi.org/10.1109/SP40001.2021.00019",
+    "notes": "Primary machine-unlearning comparator for deletion-path architecture, checkpointed training, bounded retraining, accuracy-cost trade-offs, and the boundary between deletion requests and verified removal.",
+    "source_type": "conference_paper",
+    "published": "2021-05-24",
+    "updated": "2021-05-24",
+    "citation_label": "Bourtoule et al. (2021), Machine Unlearning",
+    "doi": "10.1109/SP40001.2021.00019"
+  },
+  {
+    "id": "ext_shumailov_model_collapse_2023",
+    "title": "The Curse of Recursion: Training on Generated Data Makes Models Forget",
+    "priority": "external_literature",
+    "layer": "synthetic_data_feedback_model_collapse",
+    "chapter_targets": [
+      "policy-optimization-and-learning-from-feedback",
+      "procedural-memory-and-cognitive-loop-closure",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "https://arxiv.org/abs/2305.17493",
+    "notes": "Primary preprint comparator for generated-data feedback, provenance, distribution-tail loss, and model-collapse risk under specified recursive-training assumptions; not a universal synthetic-data safety result.",
+    "source_type": "preprint",
+    "published": "2023-05-27",
+    "updated": "2024-04-14",
+    "citation_label": "Shumailov et al. (2023), The Curse of Recursion",
+    "doi": "10.48550/arXiv.2305.17493"
+  },
+  {
+    "id": "ext_gerstgrasser_data_accumulation_2024",
+    "title": "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data",
+    "priority": "external_literature",
+    "layer": "synthetic_data_retention_policy",
+    "chapter_targets": [
+      "policy-optimization-and-learning-from-feedback",
+      "procedural-memory-and-cognitive-loop-closure",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "https://arxiv.org/abs/2404.01413",
+    "notes": "Primary empirical and analytical comparator that distinguishes replacement from accumulation of real and synthetic data; gives a counterweight to blanket model-collapse claims without resolving deletion, privacy, provenance, or poisoning risk.",
+    "source_type": "workshop_paper",
+    "published": "2024-04-01",
+    "updated": "2024-07-01",
+    "citation_label": "Gerstgrasser et al. (2024), Is Model Collapse Inevitable?",
+    "doi": "10.48550/arXiv.2404.01413"
+  },
+  {
+    "id": "theseus_synthetic_data_curation",
+    "title": "Theseus Synthetic Data Curation",
+    "priority": "implementation_reference",
+    "layer": "governed_synthetic_data_admission",
+    "chapter_targets": [
+      "policy-optimization-and-learning-from-feedback",
+      "procedural-memory-and-cognitive-loop-closure",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "project-theseus-as-report-first-implementation-reference"
+    ],
+    "url": "local-project:Theseus-Hive@09ecbd8cff4a:docs/SYNTHETIC_DATA_CURATION.md",
+    "notes": "Pinned Project Theseus implementation-reference record for residual-targeted synthetic-data admission, provenance, leakage checks, ratio caps, governed teacher handling, and source-reported promotion gates; no ASI Stack replay or model-quality import.",
+    "source_type": "local_project_record",
+    "published": "2026-05-12",
+    "updated": "2026-05-12",
+    "citation_label": "Project Theseus, Synthetic Data Curation (pinned local source)"
   }
 ]

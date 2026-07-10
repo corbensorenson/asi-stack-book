@@ -261,6 +261,18 @@ movement, evidence and residual custody, reversibility, and release records.
 This source note does not prove that the delta is novel, implemented, safe, or
 effective, and it does not move any chapter-core support state.
 
+2026-07-10 learning-integrity intake state: four source records are now
+source-noted before any prose or manifest admission: machine unlearning
+(`ext_bourtoule_machine_unlearning_2021`), recursive generated-data feedback
+(`ext_shumailov_model_collapse_2023`), replacement-versus-accumulation
+(`ext_gerstgrasser_data_accumulation_2024`), and a pinned Project Theseus
+synthetic-data-curation implementation reference
+(`theseus_synthetic_data_curation`). The external sources establish scoped
+comparators and the Theseus record establishes source-reported prototype
+context; neither is a reproduced ASI Stack result. The Data Engines chapter is
+not yet admitted: its ownership decision, source mappings, live and reader
+prose, figure, proof/evidence route, and release coverage remain required.
+
 ### Provisional ownership decisions
 
 These dispositions replace the scan's implicit assumption that every Tier-1

@@ -4,16 +4,14 @@ Last updated: 2026-07-05
 
 Status: `accepted_audio_script_narration_treatment_for_release_preparation`
 
-This note records a script-level narration treatment review for the generated
-curated-reader audio-script workspace. It reviews whether the available script
-preparation is coherent enough for release preparation, not whether an
-audiobook exists.
+This note records a script-level narration treatment review for the 2026-07-05
+historical snapshot of the generated curated-reader audio-script workspace. It
+does not describe or approve later generated scripts, and it does not claim
+that an audiobook exists.
 
 ## Decision
 
-The current generated audio-script workspace has enough script-level narration
-treatment and clears only `narration_quality_review_not_completed` for the
-blocked curated-reader candidate. The review is based on the existing
+The historical snapshot had enough script-level narration treatment and clears only `narration_quality_review_not_completed` for the blocked curated-reader candidate. The review is based on the recorded
 audio-script reading-flow manifest and the key-figure companion note: the script
 set is ordered, chapter markers are present, implementation-horizon sections
 survive, live scaffolding markers are absent, and the companion material routes

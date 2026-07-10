@@ -4,15 +4,14 @@ Last updated: 2026-07-05
 
 Status: `accepted_audio_metadata_for_release_preparation`
 
-This note records a metadata-only release-preparation review for the generated
-curated-reader audio lane. It verifies that required audiobook metadata fields
-exist for the current blocked candidate; it does not claim that audio files
-exist.
+This note records a metadata-only release-preparation review for the
+2026-07-05 historical snapshot of the curated-reader audio lane. It does not
+describe or approve later generated scripts, and it does not claim that audio
+files exist.
 
 ## Decision
 
-The current audio lane now has enough metadata for release preparation and
-clears only `audio_metadata_not_reviewed`. The reviewed fields are title,
+The historical snapshot had enough metadata for release preparation and clears only `audio_metadata_not_reviewed`. The reviewed fields are title,
 subtitle, author, major version, language, source commit, source tag, script
 digest, narrator/tooling note, and rights statement.
 

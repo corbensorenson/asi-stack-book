@@ -94,29 +94,12 @@ def validate() -> list[str]:
     if manifest.get("key_figure_companion_note") != rel(KEY_FIGURE_COMPANION):
         errors.append("key_figure_companion_note must point to the tracked key-figure companion note.")
 
-    expected_top_level = {
-        "reading_flow_status": reading_flow.get("status"),
-        "combined_script_sha256": reading_flow.get("combined_script_sha256"),
-        "script_files_checked": reading_flow.get("script_files_checked"),
-        "chapter_scripts_checked": reading_flow.get("chapter_scripts_checked"),
-        "appendix_scripts_checked": reading_flow.get("appendix_scripts_checked"),
-        "chapter_marker_rows": reading_flow.get("chapter_marker_rows"),
-        "chapter_marker_tbd_rows": reading_flow.get("chapter_marker_tbd_rows"),
-        "narration_note_count": reading_flow.get("narration_note_count"),
-        "text_characters_checked": reading_flow.get("text_characters_checked"),
-        "word_tokens_checked": reading_flow.get("word_tokens_checked"),
-        "live_marker_hits": reading_flow.get("live_marker_hits"),
-        "raw_core_claim_marker_hits": reading_flow.get("raw_core_claim_marker_hits"),
-        "replacement_character_count": reading_flow.get("replacement_character_count"),
-        "target_artifact_status": EXPECTED_TARGET_STATUS,
-        "key_figure_spoken_summaries": key_figure_note.get("figure_count"),
-    }
-    for key, expected in expected_top_level.items():
-        if manifest.get(key) != expected:
-            errors.append(f"{key} must be {expected!r}; found {manifest.get(key)!r}.")
+    if manifest.get("review_scope") != "historical_blocked_candidate_snapshot":
+        errors.append("review_scope must preserve the historical blocked-candidate snapshot boundary.")
 
     expected_exact = {
         "reading_flow_status": "passed_audio_script_reading_flow_review",
+        "combined_script_sha256": "cd7c39c3a8d6a775db3876e7c81beec3923651ca9fbdcdddb2eb764ff2c6354d",
         "script_files_checked": 49,
         "chapter_scripts_checked": 44,
         "appendix_scripts_checked": 3,
@@ -159,6 +142,7 @@ def validate() -> list[str]:
         "does not approve pronunciation",
         "does not approve recorded audio",
         "does not timecode chapter markers",
+        "historical snapshot",
     ):
         if fragment not in decision:
             errors.append(f"decision missing required fragment: {fragment!r}.")
@@ -170,6 +154,7 @@ def validate() -> list[str]:
         "does not approve an audiobook",
         "does not create an audio edition release record",
         "does not promote any claim support state",
+        "does not approve later generated scripts",
     ):
         if fragment not in boundary:
             errors.append(f"release_boundary missing required fragment: {fragment!r}.")
@@ -194,6 +179,7 @@ def validate() -> list[str]:
         "66 narration notes",
         "1,096,067 text characters",
         "10 draft key-figure spoken summaries",
+        "historical snapshot",
         "does not approve pronunciation",
         "does not create MP3, M4B, or audio-embedded EPUB artifacts",
         "does not approve an audiobook",
