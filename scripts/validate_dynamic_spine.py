@@ -181,6 +181,8 @@ def main() -> None:
             assert_fixture_surfaces(workspace, fixture_count)
             run(workspace, "scripts/build_reader_edition.py", "--check")
             run(workspace, "scripts/validate_reader_manuscript_manifest.py")
+            run(workspace, "scripts/sync_reader_chapter_review_matrix.py", "--check")
+            run(workspace, "scripts/validate_reader_chapter_reconciliation_approval.py")
             historical_check = run(workspace, "scripts/build_curated_reader_edition.py", "--check")
             if "frozen chapters remain valid" not in historical_check:
                 raise AssertionError(
@@ -198,6 +200,8 @@ def main() -> None:
                 raise AssertionError(f"generated surfaces did not return to baseline: {', '.join(drift)}")
             run(workspace, "scripts/build_reader_edition.py", "--check")
             run(workspace, "scripts/validate_reader_manuscript_manifest.py")
+            run(workspace, "scripts/sync_reader_chapter_review_matrix.py", "--check")
+            run(workspace, "scripts/validate_reader_chapter_reconciliation_approval.py")
     except (AssertionError, FileNotFoundError, OSError, RuntimeError, TypeError, ValueError) as exc:
         fail(str(exc))
 

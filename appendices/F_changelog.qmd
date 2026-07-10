@@ -16,6 +16,17 @@
   expansion safety. It does not approve the v1.0 reader edition or artifacts,
   add a chapter, or promote a claim support state.
 
+## 2026-07-10 - Keep historical reader review controls out of active-spine growth
+
+- Made the v1.0 chapter-review matrix and chapter-reconciliation approval use
+  the recorded historical chapter snapshot rather than the current live
+  manifest.
+- Extended the dynamic-spine fixture so a temporary active insertion validates
+  the frozen review queue, reconciliation approval, and curated-source boundary
+  as well as generated reader derivation.
+- Boundary: this changes no historical prose, review result, release blocker,
+  artifact approval, or support state.
+
 ## 2026-07-10 - Separate current audio probes from historical review snapshots
 
 - Made the current audio-script reading-flow probe derive active file and

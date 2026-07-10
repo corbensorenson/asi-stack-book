@@ -4,7 +4,7 @@ Last updated: 2026-07-04
 
 This document is generated from `editions/reader_manuscript/v1_0/chapter_review_matrix.json` by `python3 scripts/sync_reader_chapter_review_matrix.py --write`.
 
-It is a Phase 2 review-control surface for the normal human-reader manuscript. It is not a reader release, not an ebook/document/PDF/audio release, and not a support-state promotion.
+It is a Phase 2 review-control surface for the frozen v1.0 human-reader manuscript. Its chapter order comes from the v1.0 historical spine snapshot, not a later active manifest. It is not a reader release, not an ebook/document/PDF/audio release, and not a support-state promotion.
 
 Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0/format_review_matrix.json`; chapter rows cannot clear `format_artifact_not_reviewed` while reader formats or the edition release record remain blocked.
 

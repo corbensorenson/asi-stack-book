@@ -23,6 +23,7 @@ MATRIX_PATH = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapter_review
 DOC_PATH = ROOT / "docs" / "reader_chapter_review_matrix.md"
 FORMAT_MATRIX_PATH = ROOT / "editions" / "reader_manuscript" / "v1_0" / "format_review_matrix.json"
 STRUCTURE_PATH = ROOT / "book_structure.json"
+READER_MANIFEST_PATH = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 OVERLAY_CHAPTER_DIR = ROOT / "editions" / "reader_overlays" / "v1_0" / "chapters"
 MANUSCRIPT_REVIEW = ROOT / "docs" / "reader_manuscript_review.md"
 CONTINUITY_REVIEW = ROOT / "docs" / "reader_continuity_review.md"
@@ -469,7 +470,25 @@ def flatten_manifest() -> list[dict[str, str]]:
                     "generated_reader_file": f"build/reader_edition/{file_path}",
                 }
             )
-    return rows
+    reader_manifest = load_json(READER_MANIFEST_PATH, {})
+    if not isinstance(reader_manifest, dict):
+        raise SystemExit("v1.0 reader manuscript manifest must contain an object.")
+    if reader_manifest.get("edition_scope") != "historical_release_snapshot":
+        return rows
+    snapshot = reader_manifest.get("historical_spine_snapshot")
+    if not isinstance(snapshot, dict):
+        raise SystemExit("historical v1.0 reader manuscript is missing historical_spine_snapshot.")
+    chapter_ids = snapshot.get("chapter_ids")
+    if not isinstance(chapter_ids, list) or not all(isinstance(value, str) for value in chapter_ids):
+        raise SystemExit("historical v1.0 reader snapshot chapter_ids must be a string list.")
+    rows_by_id = {row["chapter_id"]: row for row in rows}
+    missing = [chapter_id for chapter_id in chapter_ids if chapter_id not in rows_by_id]
+    if missing:
+        raise SystemExit(
+            "historical v1.0 reader review queue cannot resolve snapshot chapter(s) "
+            f"from the active manifest: {missing}"
+        )
+    return [rows_by_id[chapter_id] for chapter_id in chapter_ids]
 
 
 def active_overlay_counts() -> Counter[str]:
@@ -620,7 +639,7 @@ def build_matrix() -> dict[str, object]:
         "major_version": "v1.0",
         "status": "active_review_queue",
         "last_updated": last_updated,
-        "source_of_truth": "book_structure.json",
+        "source_of_truth": "historical_spine_snapshot",
         "generated_reader_baseline": {
             "command": "python3 scripts/build_reader_edition.py",
             "workspace": "build/reader_edition",
@@ -663,8 +682,8 @@ def validate_matrix(matrix: dict[str, object]) -> list[str]:
         errors.append("chapter_review_matrix.major_version must be v1.0.")
     if matrix.get("status") != "active_review_queue":
         errors.append("chapter_review_matrix.status must be active_review_queue.")
-    if matrix.get("source_of_truth") != "book_structure.json":
-        errors.append("chapter_review_matrix.source_of_truth must be book_structure.json.")
+    if matrix.get("source_of_truth") != "historical_spine_snapshot":
+        errors.append("chapter_review_matrix.source_of_truth must be historical_spine_snapshot.")
     format_ref = matrix.get("format_review_matrix")
     if not isinstance(format_ref, dict):
         errors.append("chapter_review_matrix.format_review_matrix must be an object.")
@@ -786,7 +805,7 @@ def markdown_table(matrix: dict[str, object]) -> str:
         "",
         "This document is generated from `editions/reader_manuscript/v1_0/chapter_review_matrix.json` by `python3 scripts/sync_reader_chapter_review_matrix.py --write`.",
         "",
-        "It is a Phase 2 review-control surface for the normal human-reader manuscript. It is not a reader release, not an ebook/document/PDF/audio release, and not a support-state promotion.",
+        "It is a Phase 2 review-control surface for the frozen v1.0 human-reader manuscript. Its chapter order comes from the v1.0 historical spine snapshot, not a later active manifest. It is not a reader release, not an ebook/document/PDF/audio release, and not a support-state promotion.",
         "",
         "Format-artifact blockers are reconciled against `editions/reader_manuscript/v1_0/format_review_matrix.json`; chapter rows cannot clear `format_artifact_not_reviewed` while reader formats or the edition release record remain blocked.",
         "",

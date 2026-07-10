@@ -348,7 +348,9 @@ insertion and confirms that the historical builder refuses to render a mixed
 historical/current spine. `v1_0/manifest.json` records the blocked-candidate
 commit, chapter-ID digest, and part snapshot; the historical audio reviews are
 validated against their recorded snapshot rather than the mutable current
-audio probe. It deliberately does not treat the fixture as an accepted chapter
+audio probe. The historical chapter-review matrix and reconciliation approval
+also derive their fixed v1.0 queue from that snapshot rather than the active
+manifest. It deliberately does not treat the fixture as an accepted chapter
 or prove that a real addition has source notes, outline/proof rows,
 evidence-plan coverage, a later reader-edition directory, release approval, or
 a support-state move. Those remain admission gates for the first real chapter.

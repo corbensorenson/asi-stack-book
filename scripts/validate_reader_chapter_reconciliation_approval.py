@@ -77,6 +77,27 @@ def flatten_chapters(structure: dict[str, Any]) -> list[dict[str, Any]]:
     return chapters
 
 
+def historical_reader_chapters(
+    structure: dict[str, Any], reader_manifest: dict[str, Any]
+) -> list[dict[str, Any]]:
+    """Resolve the frozen v1.0 reader review set without inheriting new chapters."""
+
+    chapters = flatten_chapters(structure)
+    if reader_manifest.get("edition_scope") != "historical_release_snapshot":
+        return chapters
+    snapshot = reader_manifest.get("historical_spine_snapshot")
+    if not isinstance(snapshot, dict):
+        fail(["historical reader manuscript is missing historical_spine_snapshot."])
+    chapter_ids = snapshot.get("chapter_ids")
+    if not isinstance(chapter_ids, list) or not all(isinstance(value, str) for value in chapter_ids):
+        fail(["historical reader snapshot chapter_ids must be a string list."])
+    by_chapter_id = {str(chapter.get("id", "")): chapter for chapter in chapters}
+    missing = [chapter_id for chapter_id in chapter_ids if chapter_id not in by_chapter_id]
+    if missing:
+        fail([f"historical reader snapshot chapter(s) missing from active manifest: {missing}"])
+    return [by_chapter_id[chapter_id] for chapter_id in chapter_ids]
+
+
 def by_id(rows: list[Any], key: str) -> dict[str, dict[str, Any]]:
     result: dict[str, dict[str, Any]] = {}
     for row in rows:
@@ -169,7 +190,7 @@ def build_observed() -> dict[str, Any]:
     if not isinstance(chapter_matrix, dict):
         fail([f"{rel(CHAPTER_MATRIX)} must contain an object."])
 
-    chapters = flatten_chapters(structure)
+    chapters = historical_reader_chapters(structure, reader_manifest)
     records = reader_manifest.get("chapter_records", [])
     matrix_rows = chapter_matrix.get("chapters", [])
     if not isinstance(records, list):
