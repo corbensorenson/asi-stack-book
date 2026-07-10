@@ -1,5 +1,18 @@
 # Changelog
 
+## 2026-07-10 - Add a bounded data-admission proof and schema foundation
+
+- Added `DataAdmissionReview` and a finite admission-routing model in
+  `AsiStackProofs.DataEngines`, with explicit routes for missing provenance or
+  authority, missing split-exclusion or contamination controls, incomplete
+  retention/deletion/evaluation/residual records, and complete fixture records.
+- Added the `data_admission_receipt` schema and one public-safe fixture that
+  remains `experimental_only` and names semantic leakage, missing training
+  evaluation, and absent parametric-unlearning verification as residuals.
+- Boundary: these artifacts prove only finite record-routing and schema shape.
+  They do not admit training data, run a training loop, measure data quality,
+  establish leakage absence, verify unlearning, or promote a chapter core claim.
+
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 
 - Added an explicit historical v1.0 reader snapshot with its blocked-candidate

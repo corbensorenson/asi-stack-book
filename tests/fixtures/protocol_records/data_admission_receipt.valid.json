@@ -1,0 +1,23 @@
+{
+  "receipt_id": "data-admission-demo-001",
+  "dataset_ref": "dataset://public-safe-synthetic-data-engine-fixture",
+  "provenance_class": "synthetic-template-mutation",
+  "origin_refs": ["sources/source_notes/theseus_synthetic_data_curation.md"],
+  "license_or_authority_ref": "fixture-only; do not use for training or serving",
+  "admission_mode": "synthetic",
+  "synthetic_lineage_refs": ["generator://template-mutation-demo", "seed://public-safe-rule-family"],
+  "split_exclusion_refs": ["holdout://fixture-exclusion", "benchmark://fixture-exclusion"],
+  "contamination_check_refs": ["check://exact-overlap-negative-control"],
+  "retention_policy": "retain only for the declared fixture review; no training admission",
+  "deletion_scope": "fixture file and derived review references only; parameter deletion is not claimed",
+  "evaluation_refs": ["tests/fixtures/protocol_records/data_admission_receipt.valid.json"],
+  "residuals": ["semantic leakage is unmeasured", "no training run or distributional evaluation exists"],
+  "promotion_decision": "experimental_only",
+  "support_state_effect": "keeps chapter-level support at argument",
+  "non_claims": [
+    "does not prove data quality",
+    "does not prove leakage absence",
+    "does not verify parametric unlearning",
+    "does not promote any chapter core claim"
+  ]
+}

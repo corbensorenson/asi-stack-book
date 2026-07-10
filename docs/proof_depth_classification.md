@@ -13,10 +13,10 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 | Metric | Value |
 |---|---:|
 | Proof targets in manifest | 211 |
-| Lean modules scanned | 54 |
-| Theorem declarations classified | 1051 |
+| Lean modules scanned | 55 |
+| Theorem declarations classified | 1054 |
 | Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 861 |
+| Derived/decomposed theorem declarations | 864 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 106 |
 | Safety-critical direct/projection declarations | 11 |
@@ -68,6 +68,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 31 | 9 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -390,6 +391,9 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_requires_baselines_and_tradeoff_metrics` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `cyclic_substrate_promotion_without_baselines_or_tradeoffs_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/CyclicMixers.lean` | `hardware_mismatch_without_refusal_path_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/DataEngines.lean` | `complete_data_record_routes_to_eligible` | derived_or_decomposed | no | uses rcases, simp |
+| `lean/AsiStackProofs/DataEngines.lean` | `missing_provenance_or_authority_blocks_data_admission` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/DataEngines.lean` | `missing_split_exclusion_or_contamination_check_quarantines_data` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/Efficiency.lean` | `authority_bypass_blocks_efficiency_claim` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `complete_efficiency_claim_admission_allows_claim_record` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/Efficiency.lean` | `efficiency_claim_without_nonclaim_boundary_preserves_boundary` | derived_or_decomposed | no | uses simp |

@@ -20,7 +20,7 @@ SOURCE_MATRIX = ROOT / "appendices" / "A_source_matrix.qmd"
 OUTLINE = ROOT / "docs" / "book_outline.md"
 CHAPTER = ROOT / "chapters" / "asi-is-a-stack-not-a-model.qmd"
 
-EXPECTED_SOURCE_IDS = {"viea", "beastbrain", "aletheia", "talos", "moecot", "scf"}
+REQUIRED_LOCAL_SOURCE_IDS = {"viea", "beastbrain", "aletheia", "talos", "moecot", "scf"}
 EXPECTED_IMPLEMENTED_TESTS = {
     "Layer-boundary audit",
     "Source-to-layer traceability review",
@@ -131,8 +131,22 @@ def validate_opener_manifest(structure: dict[str, Any], errors: list[str]) -> No
         errors.append(f"{CHAPTER_ID}: evidence_level must remain argument.")
 
     source_ids = set(map(str, chapter.get("source_ids", [])))
-    if source_ids != EXPECTED_SOURCE_IDS:
-        errors.append(f"{CHAPTER_ID}: source_ids must be {sorted(EXPECTED_SOURCE_IDS)}, got {sorted(source_ids)}.")
+    missing_local_sources = REQUIRED_LOCAL_SOURCE_IDS - source_ids
+    unsupported_source_ids = {
+        source_id
+        for source_id in source_ids - REQUIRED_LOCAL_SOURCE_IDS
+        if not source_id.startswith("ext_")
+    }
+    if missing_local_sources:
+        errors.append(
+            f"{CHAPTER_ID}: source_ids must retain local architecture sources "
+            f"{sorted(REQUIRED_LOCAL_SOURCE_IDS)}; missing {sorted(missing_local_sources)}."
+        )
+    if unsupported_source_ids:
+        errors.append(
+            f"{CHAPTER_ID}: non-local positioning additions must use source-noted ext_ IDs; "
+            f"got {sorted(unsupported_source_ids)}."
+        )
 
     mappings = chapter.get("claim_source_mappings", [])
     mapped_sources = {str(mapping.get("source_id")) for mapping in mappings if isinstance(mapping, dict)}
@@ -221,7 +235,7 @@ def validate_claim_support_labels(structure: dict[str, Any], errors: list[str]) 
         errors.append(f"{CLAIM_ID}: Appendix C claim label must be Design rationale.")
     if fields[4] != "argument":
         errors.append(f"{CLAIM_ID}: Appendix C support state must remain argument.")
-    for source_id in sorted(EXPECTED_SOURCE_IDS):
+    for source_id in sorted(REQUIRED_LOCAL_SOURCE_IDS):
         if f"`{source_id}`" not in opener_rows[0]:
             errors.append(f"{CLAIM_ID}: Appendix C row missing assigned source {source_id}.")
     if "support remains" not in opener_rows[0].lower():
@@ -281,7 +295,8 @@ def main() -> None:
             print(f" - {error}")
         sys.exit(1)
 
-    mapped_sources = len(EXPECTED_SOURCE_IDS)
+    opener = next(chapter for chapter in flatten_chapters(structure) if chapter.get("id") == CHAPTER_ID)
+    mapped_sources = len(opener.get("source_ids", []))
     claim_rows = len(
         [
             line
