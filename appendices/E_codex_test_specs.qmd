@@ -35,6 +35,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim ledger completeness audit | implemented | validated locally at experiments/claim_ledger_completeness/results/2026-07-02-local.json; Appendix C completeness only; no claim-truth, source-interpretation, promotion-readiness, external-review-quality, or support-state-promotion claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Accepted live transition review audit | implemented | validated locally at experiments/accepted_transition_review/results/2026-07-02-local.json; audit of existing records only; no evidence-truth, reviewer-independence, source-interpretation, external-review-quality, new-transition-approval, or chapter-core-promotion claim |
 | `evidence-states-and-claim-discipline` | Evidence States and Claim Discipline | Claim-state transition bridge | implemented | validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; synthetic-record and finite-Lean bridge only; no live claim demotion, deprecation, refutation, reviewer-correctness, source-interpretation, deployed belief-revision, or support-state-promotion claim |
+| `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | High-risk outcome-audit admission fixture | planned | not run |
+| `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Baseline and task-envelope completeness fixture | planned | not run |
+| `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Correlated-reviewer negative control | planned | not run |
+| `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Oversight protocol workload comparison | planned | not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent resolution route proof | implemented | passes via Lean build; finite structured-record route only |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent-origin preservation fixture | implemented | passes via synthetic plan-execution contract harness; no natural-language parser or authority-extraction claim |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Ambiguity dispatch block fixture | implemented | passes via synthetic plan-execution contract harness; no parser-quality claim |
@@ -524,16 +528,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 217 |
+| Proof targets covered by triage | 218 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 217 |
+| implemented | 218 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 217 |
+| implemented | formal-invariant | lean-candidate | 218 |

@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 48 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 49 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 48,
+    "manifest_chapter_core_claims": 49,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 26,
+    "accepted_no_promotion_dispositions": 27,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 48
+    "chapter_core_claims_remaining_at_argument": 49
   },
   "dispositions": [
     {
@@ -240,6 +240,45 @@
       "formal_or_prototype_work": "Surface non-core transitions and enforce no-promotion decisions.",
       "human_reader_focus": "Turn support states into plain-language reader promises.",
       "what_would_move_this": "Appendix C/sibling ledger validates transitions without core-claim promotion.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "scalable-oversight-and-adversarial-ai-control.core",
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "chapter_title": "Scalable Oversight and Adversarial AI Control",
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_file": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A governed stack treats scalable oversight as a falsifiable protocol rather than a vote: it records the task and authority scope, supervisor and system capability envelopes, information access, protocol roles and incentives, direct-review baseline, independent outcome audit, correlation and persuasion risks, residual, and escalation owner; a protocol result may inform a bounded review or training decision only at its declared scope and cannot by itself establish reliable supervision, correctness, safety, or execution authority.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "public-safe matched oversight workload with direct-review baseline and negative controls",
+        "independent outcome audit with correlation, calibration, cost, disagreement, and residual records",
+        "accepted transition for a narrowed oversight-admission claim"
+      ],
+      "blockers": [
+        "no local supervision protocol, evaluator, or outcome workload",
+        "no measured reviewer calibration, independence, or protocol comparison",
+        "finite theorems do not establish reviewer correctness, debate efficacy, weak-to-strong generalization, alignment, safety, or generality"
+      ],
+      "promotion_burden": "The chapter has source-noted weak-supervision and weak-judge protocol comparators plus finite routing theorems, but no local oversight protocol, weak judge, human study, outcome audit, calibration result, training signal, or workload has been accepted as evidence for the broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove reliable supervision or evaluator independence",
+        "does not prove debate or consultancy efficacy, training safety, or execution authority",
+        "does not prove model quality, alignment, safety, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 3 assigned sources; 3 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-noted weak-to-strong and weak-judge protocol comparators plus a finite admission boundary",
+      "formal_or_prototype_work": "Build a public-safe oversight-protocol record with task/risk/authority scope, supervisor/system envelopes, information access, role incentives, shared-dependency risk, direct-review baseline, independent outcome audit, residuals, escalation, and requested downstream handoff.",
+      "human_reader_focus": "Explain why helpful review is not the same as a universal judge, and why a system must preserve what its supervisor could not check.",
+      "what_would_move_this": "A replayed matched direct-review, assisted-review, and abstention workload with held-out outcome reference, baseline, correlation negatives, cost, disagreement, residuals, and accountable escalation; no local supervisor calibration, debate efficacy, weak-to-strong generalization, alignment, safety, execution-authority, or ASI claim.",
       "relevant_non_core_transition_refs": []
     },
     {

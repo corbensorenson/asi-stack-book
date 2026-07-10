@@ -2179,7 +2179,17 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.Deliberation as a finite high-risk handoff boundary. It routes missing independent verification to review and does not establish verifier independence, verifier correctness, reasoning quality, trace faithfulness, safety, model quality, or ASI."
+    },
+    {
+      "tag": "lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "module": "AsiStackProofs.ScalableOversight",
+      "formal_target": "A finite high-risk oversight record with a requested downstream admission and no independent outcome audit routes to accountable escalation rather than bounded admission, without inferring supervisor quality, protocol efficacy, alignment, safety, or ASI.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ScalableOversight as a finite high-risk admission boundary, with a companion baseline-completeness route. It does not establish reviewer independence, supervisor calibration, debate or consultancy efficacy, training safety, execution authority, model quality, safety, or ASI."
     }
   ],
-  "record_count": 217
+  "record_count": 218
 }

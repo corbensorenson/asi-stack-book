@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 48 |
+| Manifest chapter core claims | 49 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 26 |
+| Accepted explicit no-promotion decisions | 27 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -72,6 +72,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `prototype-roadmap.core` | Prototype Roadmap | `argument_only` | no prototype phase acceptance record; no implementation benchmark; no governed replacement run |
 | `rankfold-neuralfold-and-artifact-compression.core` | RankFold, NeuralFold, and Artifact Compression | `argument_only` | no compression ratio result; no utility benchmark; no baseline-symmetric comparison |
 | `routing-heads-and-specialist-cores.core` | Routing Heads and Specialist Cores | `argument_only` | no real routing trace; no capability-quality measurement; no authority-enforced specialist lease; no imported MoECOT orchestration benchmark or replay artifact |
+| `scalable-oversight-and-adversarial-ai-control.core` | Scalable Oversight and Adversarial AI Control | `argument_only` | no local supervision protocol, evaluator, or outcome workload; no measured reviewer calibration, independence, or protocol comparison; finite theorems do not establish reviewer correctness, debate efficacy, weak-to-strong generalization, alignment, safety, or generality |
 | `verification-bandwidth-and-context-adequacy.core` | Verification Bandwidth and Context Adequacy | `argument_only` | no adequacy classifier run; no contradiction-rate measurement; no verification-bandwidth benchmark |
 
 ## Non-Claims

@@ -51,6 +51,7 @@ Verification Bandwidth argues that long context should not be confused with long
 - `compact-generative-systems-and-residual-honesty` (Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty)
 - `open-research-agenda-and-bibliography-plan` (Open Research Agenda and Bibliography Plan)
 - `governed-deliberation-and-test-time-scaling` (Governed Deliberation and Test-Time Scaling)
+- `scalable-oversight-and-adversarial-ai-control` (Scalable Oversight and Adversarial AI Control)
 
 ## Claims To Add Or Update
 
@@ -61,6 +62,10 @@ Verification Bandwidth argues that long context should not be confused with long
 - Require summaries, context cells, and semantic pages to expose coverage and compression loss rather than pretending to preserve all source constraints.
 - Treat deliberation time as a verification-limited budget: additional branches,
   revisions, or tokens cannot substitute for an adequate independent check.
+- Treat scalable oversight as verification-limited: a supervisor or outcome
+  auditor must declare what evidence it can jointly check, what it cannot, and
+  who owns escalation or residuals when the protocol's review workspace is
+  inadequate.
 
 ## Open Questions
 

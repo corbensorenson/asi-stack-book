@@ -1,0 +1,338 @@
+---
+title: "Scalable Oversight and Adversarial AI Control"
+chapter_id: "scalable-oversight-and-adversarial-ai-control"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.1 chapter draft"
+last_updated: "2026-07-10"
+primary_sources:
+  - "ext_weak_to_strong_generalization_2023"
+  - "ext_scalable_oversight_weak_llms_2024"
+  - "verification_bandwidth"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack oversight protocol, weak judge, debater, human study, training signal, or outcome workload has been run."
+  - "No local result establishes supervisor calibration, evaluator independence, debate efficacy, weak-to-strong generalization, alignment, safety, model quality, or execution authority."
+  - "The cited systems are source-setting comparators with their own models, tasks, evaluators, prompts, information access, and outcome measures; they are not reproduced implementation evidence."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `scalable-oversight-and-adversarial-ai-control` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-07-10 |
+| Primary source records | `ext_weak_to_strong_generalization_2023`, `ext_scalable_oversight_weak_llms_2024`, `verification_bandwidth` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Primary weak-to-strong and weak-judge protocol comparators are source-noted; no source protocol has been reproduced. |
+| Test state | A finite high-risk outcome-audit admission theorem is implemented. No protocol, workload, human study, supervisor, or measured outcome has run. |
+
+## Drafting guardrail
+
+This chapter owns the supervision protocol that sits between a limited reviewer
+and a more capable or less transparent system. It does not say that two agents
+arguing, a model judging another model, an ensemble voting, or a human clicking
+approval has made the result true or safe. Oversight can reduce uncertainty only
+within the task, information access, reviewer capability, baseline, outcome
+audit, and escalation path it records. It never supplies execution authority
+by itself.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Oversight is not simply finding someone willing to review a system. It is
+deciding what that reviewer can actually know. A specialist may have less time
+than the system had to produce an answer. A human may not see the same evidence.
+A group of models may sound independent while sharing the same blind spot. An
+argument can be persuasive without being right.
+
+Review needs a protocol. It says what question is being judged, what each
+participant can see, what disagreement matters, what baseline counts as help,
+how the outcome will be checked, and who takes responsibility when there is no
+adequate answer. It keeps assisted review useful without treating confidence,
+vote count, or a polished transcript as a substitute for evidence.
+
+A weaker judge can sort questions, surface counterarguments, and send a problem
+to the right expert. It cannot quietly become a universal proof of correctness.
+At high stakes, the system must retain the ability to abstain, escalate, and
+record what the supervisor could not verify or safely decide.
+:::
+
+## Problem
+
+Advanced systems will often be asked to reason or act in settings where an
+ordinary human reviewer, a smaller model, or a narrow evaluator cannot directly
+reproduce the full work. That creates a genuine governance problem. A supervisor
+may be able to ask questions, compare arguments, check a source passage, or
+spot a familiar failure. It may not be able to evaluate the objective, evidence,
+hidden assumptions, or downstream consequences that determined the answer.
+
+The failure is easy to hide because it can look like process. A system labels
+one model the critic and another the judge. It produces a long debate transcript
+or an approval button. It repeats the result across several agents. None of
+those facts establishes that the reviewer had the access, capability,
+independence, incentives, outcome reference, or authority to perform the stated
+oversight role.
+
+Scalable oversight asks a narrower and more useful question: under what
+declared conditions can limited supervision inform a decision about a stronger
+system? The answer is not a universal score. It is a protocol record that names
+the task, capability and access asymmetry, participants, evidence path,
+comparison baseline, independent outcome audit, residual uncertainty, and the
+accountable escalation path.
+
+## Why existing approaches are insufficient
+
+The source literature supplies useful but conditional comparators. The
+weak-to-strong study evaluates strong students trained on weak supervision
+against defined task outcomes and strong ceilings, while also naming important
+disanalogies to the target problem. The weak-judge study compares direct
+question answering, consultancy, and debate under particular task and
+information-access conditions; its reported comparisons are not uniform across
+task types, and its inference-only results are not direct evidence for a safe
+training protocol. Those studies show why protocol details and outcome audits
+matter. They do not give this stack a working oversight system.
+
+Existing ASI Stack layers own adjacent but different decisions. Evidence States
+controls whether an artifact may change a claim. Verification Bandwidth explains
+why a reviewer cannot check every relevant constraint merely because more text
+is available. Proof-Carrying Claims and Adversarial Review controls bounded
+dossiers and verdict constraints. Policy Optimization controls an approved
+behavior-update lease. Human Intent constrains the principal's goal and stop
+conditions. None of these layers alone decides whether a weak-supervision
+protocol had adequate access, a relevant direct-review comparison, an
+independent outcome audit, and an accountable route when it does not.
+
+The missing layer is therefore not "more reviewers." It is a contract for when
+assisted oversight is informative, when it remains a draft, and when a gap in
+supervision must remain visible instead of being smoothed into a positive vote.
+
+## Core Claim
+
+[scalable-oversight-and-adversarial-ai-control.core, label: Design rationale, support: argument] A governed stack treats scalable oversight as a falsifiable protocol rather than a vote: it records the task and authority scope, supervisor and system capability envelopes, information access, protocol roles and incentives, direct-review baseline, independent outcome audit, correlation and persuasion risks, residual, and escalation owner; a protocol result may inform a bounded review or training decision only at its declared scope and cannot by itself establish reliable supervision, correctness, safety, or execution authority.
+
+## Mechanism
+
+Start with an oversight request, not a debate. The request states the task,
+risk tier, intended downstream use, evidence available to each role, time and
+turn budget, supervisor limitations, declared system assumptions, and stop
+condition. A protocol can then select direct review, assisted consultation,
+structured adversarial review, or abstention. The choice is conditional: a
+protocol that helps a weaker judge on one information-asymmetric task is not
+automatically appropriate for a hidden-safety constraint, a training signal, or
+a high-consequence action.
+
+The second object is the comparison. A useful oversight record retains the
+direct-review baseline, the assisted protocol outcome, outcome-audit method,
+task cohort, failures, disagreement, and uncertainty. An assisted protocol may
+be better than a weak unaided reviewer, no better than an informed reviewer, or
+look better only because it was evaluated on a selected easy cohort. Without a
+declared comparison and a pre-specified failure condition, a more elaborate
+transcript is evidence of activity, not protocol improvement.
+
+The third object is independence. Roles can be different while their errors are
+correlated. A critic sharing the same model family, prompt, retrieval corpus,
+reward, tool access, or hidden objective with a proposer is not automatically an
+independent check. The record names known shared dependencies and does not
+collapse a correlated ensemble into an independent audit. When independence or
+an outcome reference is unavailable, the protocol can preserve a useful draft,
+but it routes high-risk interpretation to accountable review or residual
+escrow.
+
+```{mermaid}
+flowchart LR
+  R["Oversight request and risk tier"] --> T["Task and authority scope"]
+  T --> A["Supervisor access and capability envelope"]
+  A --> P["Protocol: direct, consult, debate, or abstain"]
+  P --> I["Role, incentive, and shared-dependency record"]
+  I --> B["Direct-review baseline"]
+  P --> O["Protocol outcome and disagreement"]
+  B --> C{"Independent outcome audit available?"}
+  O --> C
+  C -->|"no or incomplete"| E["Accountable escalation or residual escrow"]
+  C -->|"bounded audit"| S{"Outcome within declared scope?"}
+  S -->|"no"| E
+  S -->|"yes"| D["Bounded review or training decision"]
+  D --> G["Existing authority and readiness gates"]
+  E --> L["Protocol, baseline, and residual ledger"]
+  G --> L
+```
+
+**What the oversight flow shows:** a protocol result is an input to a bounded
+decision, not the decision's authority source. The outcome audit checks a
+declared task cohort against a declared baseline; it does not turn the reviewer
+into a universal judge. Missing audit, scope, or escalation conditions preserve
+the record but block high-risk admission.
+
+The final object is escalation. High-risk work needs a named human or
+institutional authority able to reduce the scope, request a stronger audit,
+refuse the handoff, or own the residual. This is where scalable oversight must
+bottom out. The system may use AI to make review more legible or to surface
+counterarguments. It may not hide the absence of an accountable decision-maker
+behind an elaborate protocol.
+
+## Interfaces
+
+- **Evidence States and Claim Discipline** controls claim movement. An
+  oversight result adds a bounded evidence artifact; it does not promote a
+  claim without the separate evidence-transition gate.
+- **Human Intent as a Formal Input** supplies principal, authority, stop,
+  re-contract, and unacceptable-means constraints for the oversight request.
+- **Verification Bandwidth and Context Adequacy** checks whether the supervisor
+  and outcome auditor have the workspace and evidence access their role claims.
+- **Proof-Carrying Claims and Adversarial Review** uses an admitted oversight
+  protocol as one source of bounded dossier material; it still owns verdict
+  constraints, dissent, and claim-level review.
+- **Policy Optimization and Learning from Feedback** may consume only an
+  approved, scoped supervision signal under a separate update lease.
+- **Runtime Adapters, Readiness Gates, and Residual Escrow** retain action,
+  release, quarantine, and refusal authority after the protocol ends.
+
+These interfaces prevent a familiar collapse: using an oversight artifact as if
+it were an authorization artifact. The protocol can reveal disagreement and
+identify a bounded outcome. The authority layers still decide whether a human,
+an approved learning process, or a runtime may consume that outcome, and they
+retain the right to refuse it when its evidence envelope is inadequate.
+
+## Invariants
+
+- A role label, vote count, long transcript, or self-score is not independent
+  oversight.
+- Every high-risk protocol records task and authority scope, supervisor access
+  and capability envelope, baseline, independent outcome-audit requirement,
+  residual owner, and escalation owner before downstream interpretation.
+- A high-risk protocol without an independent outcome audit cannot directly
+  admit a training or action handoff.
+- A comparison without a task cohort, direct-review baseline, or failure
+  criterion cannot be read as an oversight improvement.
+- A favorable protocol outcome does not supply execution authority, release
+  readiness, or a support-state transition.
+
+These invariants do not require every question to be judged by a human expert.
+They require the system to say what kind of help it has, how that help was
+checked, and where it stops. That makes smaller, honest uses of assistance
+possible without inflating them into a general solution to supervision.
+
+## Failure modes
+
+- **Persuasion theater:** an articulate advocate wins a weak judge while the
+  answer remains wrong or out of scope.
+- **Correlated review:** multiple nominal roles share model, prompt, retrieval,
+  reward, or information failures and are counted as independent agreement.
+- **Baseline laundering:** a protocol is compared only with an artificially weak
+  review path and not with an informed direct-review alternative.
+- **Audit selection:** evaluation samples easy, clean, or favorable cases and
+  hides the capability gap, calibration error, or distribution shift that
+  matters operationally.
+- **Escalation collapse:** high review volume, latency pressure, or operator
+  fatigue turns the escalation owner into a rubber stamp.
+- **Authority laundering:** a verdict becomes a training reward, claim update,
+  release clearance, or tool permission without the separate owner deciding it.
+
+Each failure is a different diagnostic, not a reason to abandon assisted
+oversight wholesale. A persuasive transcript calls for an outcome audit; shared
+dependencies call for correlation disclosure or a different reviewer; a weak
+baseline calls for redesign; and a saturated escalation path calls for delay,
+scope reduction, or abstention. The record makes those responses inspectable.
+
+## Minimum Viable Implementation
+
+The smallest honest artifact is a versioned oversight-protocol record. It names
+the request, task/risk/authority scope, supervisor and system envelopes,
+information access, protocol roles and incentives, shared-dependency risks,
+direct-review baseline, independent outcome-audit status, stop condition,
+residual owner, escalation owner, and permitted downstream handoff. A finite
+route must send a high-risk record without an independent outcome audit to
+accountable escalation rather than downstream admission.
+
+This is a record and routing foundation, not a debate engine. It does not train
+agents, recruit human reviewers, measure calibration, prove an auditor
+independent, compare model quality, or authorize a real action. A public-safe
+next slice would add matched direct-review and assisted-review fixtures with a
+held-out reference, intentionally correlated-reviewer negatives, pre-declared
+failure conditions, and visible residuals.
+
+## Beyond the State of the Art
+
+The mature endpoint is an oversight control plane, not an automated jury. It
+chooses direct review, consultation, adversarial review, structured abstention,
+or escalation based on task risk, evidence access, supervisor envelope,
+correlation risk, expected verification value, and available accountable
+capacity. It measures protocol performance against held-out outcomes and
+informed baselines; preserves dissent, selected failures, calibration drift,
+operator load, and residual risk; and refuses to let training, release, or
+execution inherit authority from a favorable verdict.
+
+At that endpoint, AI assistance can make difficult work more inspectable while
+the authority architecture remains explicit. An oversight protocol would be
+continuously challenged by counterexamples, audit independence checks,
+information-asymmetry variants, and escalation simulations. It would identify
+which task families it can assist and which must remain outside its envelope.
+
+Its public evidence would distinguish protocol activity from protocol value:
+matched task cohorts, direct-review baselines, held-out outcomes, calibration
+and disagreement reports, shared-dependency disclosures, operator-load costs,
+and preserved failures would travel with every claimed benefit. That evidence
+could support a narrow scoped conclusion only after the separate evidence and
+authority layers accept it.
+
+This is a target architecture, not a claim that this repository has achieved
+reliable weak-to-strong supervision, safe debate, alignment, or AI control.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| High-risk outcome-audit admission route | Ensure a requested high-risk handoff with no independent outcome audit routes to accountable escalation. | Implemented as a finite Lean theorem only. |
+| Baseline and task-envelope completeness fixture | Reject a protocol result that has no direct-review baseline, task cohort, or declared failure criterion. | Planned. |
+| Correlated-reviewer negative control | Reject independence language when roles share a declared dependency. | Planned. |
+| Matched oversight workload | Compare direct review, assisted review, and abstention against a held-out outcome reference with cost and residual records. | Planned; no workload has run. |
+
+## Formalization hooks
+
+| Tag | Status | Scope |
+|---|---|---|
+| `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | implemented | Finite high-risk oversight records with no independent outcome audit route to accountable escalation rather than bounded admission. |
+
+The formal route does not prove a reviewer independent or correct. It does not
+model human competence, model behavior, persuasion, a debate game, training,
+calibration, safety, or execution. It preserves the narrower rule that a
+required audit cannot be missing while the record is interpreted as a high-risk
+admission.
+
+## Source crosswalk
+
+| Source | Chapter use | Boundary |
+|---|---|---|
+| `ext_weak_to_strong_generalization_2023` | Capability-envelope, strong-ceiling, held-out outcome-audit, and disanalogy vocabulary. | No local weak-to-strong training, elicitation, calibration, alignment, safety, or model-quality result. |
+| `ext_scalable_oversight_weak_llms_2024` | Protocol-specific debate/consultancy comparator, baseline discipline, information-access variation, and persuasion-risk vocabulary. | No local judge, debater, consultancy, debate, passage verifier, human study, training signal, or protocol result. |
+| `verification_bandwidth` | Verification-workspace and residual boundary for what a supervisor or auditor can jointly check. | No local capacity measurement, reviewer-independence result, contradiction-rate test, or oversight workload. |
+
+## Summary
+
+Scalable oversight is an interface problem between limited supervisors and
+systems whose work may be difficult to inspect. A governed stack handles that
+problem with a protocol record: scope, access, roles, incentives, baseline,
+outcome audit, correlation risk, residual, and accountable escalation. It can
+use assistance to surface questions and counterarguments without treating an
+agent role or a polished transcript as a proof.
+
+The same record also protects the ordinary reviewer. It permits a supervisor to
+say "I cannot decide this from the evidence available" without converting that
+honest limit into a hidden failure or an automatic approval. That preserves a
+useful intermediate state: a candidate remains available for a better audit,
+but it cannot silently advance toward an action.
+
+The next layer makes the accountable principal explicit. Human Intent as a
+Formal Input defines the goals, constraints, authority, stop conditions, and
+re-contract triggers that supervision is meant to protect. Oversight can only
+be meaningful when the system knows whose objective it is reviewing and what
+the supervisor is not allowed to decide.
+
+## Handoff
+
+Scalable Oversight and Adversarial AI Control constrains how a limited supervisor may interpret stronger-system behavior, retain its residuals, and escalate uncertain outcomes; Human Intent as a Formal Input now defines the principal, goal, means, authority ceiling, stop conditions, and ambiguity rules that give each supervision request a legitimate object and a bounded purpose.

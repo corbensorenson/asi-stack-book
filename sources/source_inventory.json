@@ -1,5 +1,39 @@
 [
   {
+    "id": "ext_weak_to_strong_generalization_2023",
+    "title": "Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision",
+    "priority": "external_literature",
+    "layer": "weak_supervision",
+    "chapter_targets": [
+      "scalable-oversight-and-adversarial-ai-control"
+    ],
+    "url": "https://arxiv.org/abs/2312.09390",
+    "notes": "Primary weak-to-strong-supervision comparator for a capability-gap envelope, held-out outcome audit, ceiling comparison, and explicit disanalogies between current weak-model studies and superhuman oversight; it does not establish local supervision quality, reliable elicitation, alignment, safety, or an ASI Stack result.",
+    "source_type": "preprint",
+    "arxiv_id": "2312.09390",
+    "published": "2023-12-14",
+    "updated": "2023-12-14",
+    "citation_label": "Burns et al. (2023), Weak-to-Strong Generalization",
+    "doi": "10.48550/arXiv.2312.09390"
+  },
+  {
+    "id": "ext_scalable_oversight_weak_llms_2024",
+    "title": "On scalable oversight with weak LLMs judging strong LLMs",
+    "priority": "external_literature",
+    "layer": "scalable_oversight",
+    "chapter_targets": [
+      "scalable-oversight-and-adversarial-ai-control"
+    ],
+    "url": "https://arxiv.org/abs/2407.04622",
+    "notes": "Primary scalable-oversight comparator for protocol-specific weak-judge evaluations, debate and consultancy baselines, information-asymmetry limits, and open-role persuasion risks; it does not establish local judge calibration, debate efficacy, training safety, execution authority, or an ASI Stack result.",
+    "source_type": "preprint",
+    "arxiv_id": "2407.04622",
+    "published": "2024-07-05",
+    "updated": "2024-07-12",
+    "citation_label": "Kenton et al. (2024), On scalable oversight with weak LLMs judging strong LLMs",
+    "doi": "10.48550/arXiv.2407.04622"
+  },
+  {
     "id": "viea",
     "title": "Verified Intent-to-Execution Architecture",
     "priority": "must_use",
@@ -352,10 +386,11 @@
     "title": "Verification Bandwidth in Bounded Contexts",
     "priority": "strong_support",
     "layer": "context_verification_theory",
-  "chapter_targets": [
-    "07",
-    "09",
-    "governed-deliberation-and-test-time-scaling"
+    "chapter_targets": [
+      "07",
+      "09",
+      "governed-deliberation-and-test-time-scaling",
+      "scalable-oversight-and-adversarial-ai-control"
     ],
     "url": "https://docs.google.com/document/d/1T34n1Ya6_joaAD8ZxygOpiEuNzEVj3G8_nf0xZuFL2U",
     "notes": "Generation vs verification; long context is not automatically long-range reasoning."

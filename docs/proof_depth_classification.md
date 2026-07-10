@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 217 |
-| Lean modules scanned | 56 |
-| Theorem declarations classified | 1058 |
+| Proof targets in manifest | 218 |
+| Lean modules scanned | 57 |
+| Theorem declarations classified | 1060 |
 | Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 868 |
+| Derived/decomposed theorem declarations | 870 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 107 |
 | Safety-critical direct/projection declarations | 11 |
@@ -95,6 +95,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ResourceEconomics.lean` | resource-economics-and-token-budgets | 9 | 45 | 15 | 27 | 3 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Routing.lean` | routing-heads-and-specialist-cores | 3 | 16 | 1 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 49 | 5 | 44 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/ScalableOversight.lean` | scalable-oversight-and-adversarial-ai-control | 1 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SelfImprovement.lean` | open-ended-improvement-engines, recursive-self-improvement-boundaries | 4 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
@@ -909,6 +910,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `unsandboxed_effect_lease_rejected` | derived_or_decomposed | no | uses cases, have, rw |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `valid_invocation_has_required_permission` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | `valid_leased_invocation_has_active_scoped_sandbox` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/ScalableOversight.lean` | `missing_baseline_requires_protocol_redesign` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/ScalableOversight.lean` | `missing_outcome_audit_blocks_high_risk_admission` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `canary_substrate_without_complete_evidence_packet_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | `qualified_substrate_requires_passing_evidence` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

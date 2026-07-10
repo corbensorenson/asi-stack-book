@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 48 |
-| Assigned source/chapter pairs | 461 |
-| Exact claim-source mappings | 453 |
+| Chapters audited | 49 |
+| Assigned source/chapter pairs | 464 |
+| Exact claim-source mappings | 456 |
 | Unmapped assigned pairs | 8 |
-| Source notes present for assigned pairs | 461 |
-| Source notes listing assigned chapter | 461 |
-| Passage-reviewed mappings recorded | 453 |
-| Support-state counts | {"argument": 48} |
+| Source notes present for assigned pairs | 464 |
+| Source notes listing assigned chapter | 464 |
+| Passage-reviewed mappings recorded | 456 |
+| Support-state counts | {"argument": 49} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -38,6 +38,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `failure-modes-of-ungoverned-intelligence` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `scalable-oversight-and-adversarial-ai-control` | 3 | 3 | 3 | 3 | 3 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `constitutional-alignment-substrate` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
@@ -100,8 +101,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `project_theseus_whitepaper` | 12 | yes |
 | `coherence_exchange` | 11 | yes |
 | `genesiscode` | 10 | yes |
+| `verification_bandwidth` | 10 | yes |
 | `planforge` | 10 | yes |
-| `verification_bandwidth` | 9 | yes |
 | `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
 | `cgs` | 7 | yes |
@@ -153,6 +154,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_learned_optimization_risks_2019` | 1 | yes |
 | `ext_optimal_policies_power_2019` | 1 | yes |
 | `ext_goodhart_variants_2018` | 1 | yes |
+| `ext_weak_to_strong_generalization_2023` | 1 | yes |
+| `ext_scalable_oversight_weak_llms_2024` | 1 | yes |
 | `eternal_code` | 1 | yes |
 | `ext_poet_2019` | 1 | yes |
 | `ext_funsearch_2024` | 1 | yes |
@@ -261,6 +264,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `uat` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
+| `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_weak_to_strong_generalization_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_scalable_oversight_weak_llms_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `planforge` | mapped | note present | chapter listed | passage-reviewed |

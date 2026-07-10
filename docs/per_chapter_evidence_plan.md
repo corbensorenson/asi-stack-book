@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-09
 
-This file is the active 48-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the active 49-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ most two direct support lanes. The remaining lanes stay `planned, not
 executed`; they must not receive synthetic fixtures, pass/fail status, or
 support-state pressure merely for coverage. The active cycle selection is
 recorded in `docs/v1_x_active_evidence_cycle.md`: three lanes are selected and
-the other 45 remain planned-only.
+the other 46 remain planned-only.
 
 Selection criteria:
 
@@ -49,6 +49,7 @@ support-state transition by itself.
 | I | `system-boundaries-and-authority` | Lean authority transitions | Connect authority ceiling, denial receipt, and confused-deputy harnesses. | Make authority boundaries feel like operating-system permissions. | Derived theorem or harness showing escalation blocked across handoff paths. |
 | I | `failure-modes-of-ungoverned-intelligence` | Red-team scenarios plus Lean invariant violation | Add composed failure cases spanning authority, context, and evaluator capture. | Use a small number of memorable failure stories. | Replayed red-team fixture routes residuals to claims/tests/proofs. |
 | I | `evidence-states-and-claim-discipline` | Claim ledger harness and evidence-transition ledger | Surface non-core transitions and enforce no-promotion decisions. | Turn support states into plain-language reader promises. | Appendix C/sibling ledger validates transitions without core-claim promotion. |
+| I | `scalable-oversight-and-adversarial-ai-control` | Source-noted weak-to-strong and weak-judge protocol comparators plus a finite admission boundary | Build a public-safe oversight-protocol record with task/risk/authority scope, supervisor/system envelopes, information access, role incentives, shared-dependency risk, direct-review baseline, independent outcome audit, residuals, escalation, and requested downstream handoff. | Explain why helpful review is not the same as a universal judge, and why a system must preserve what its supervisor could not check. | A replayed matched direct-review, assisted-review, and abstention workload with held-out outcome reference, baseline, correlation negatives, cost, disagreement, residuals, and accountable escalation; no local supervisor calibration, debate efficacy, weak-to-strong generalization, alignment, safety, execution-authority, or ASI claim. |
 | I | `human-intent-as-a-formal-input` | Lean intent contract plus command-contract fixtures | Add intent ambiguity, delegation, and approval cases. | Ground formal intent in everyday instruction failures. | Intent fixture rejects underspecified or authority-widening execution. |
 | I | `constitutional-alignment-substrate` | Safety-critical Lean plus agency-right harness | Deepen protected predicate, migration, self-modification, review, appeal, high-impact approval, and interruption semantics. | Explain a constitution as a change-control surface that keeps dignity concrete through usable refusal, audit, appeal, rollback, and correction paths. | Nontrivial theorem plus harness case showing protected predicates and high-impact human-control paths survive transition or block action. |
 | I | `moral-uncertainty-and-value-conflict` | Safety-critical Lean plus value-conflict and governance-right harnesses | Deepen uncertainty residuals, dissent, revisit conditions, fork/exit/audit preservation, redaction, and appeal obligations. | Show value conflict as engineering for unresolved disagreement with usable governance handles. | High-stakes unresolved conflict cannot become unconditional promotion, and proof or fixture shows redaction/fork still preserves audit and safety obligations. |

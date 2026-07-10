@@ -42,6 +42,7 @@ import AsiStackProofs.ResourceEconomics
 import AsiStackProofs.RuntimeAdapters
 import AsiStackProofs.Routing
 import AsiStackProofs.SecurityKernel
+import AsiStackProofs.ScalableOversight
 import AsiStackProofs.SemanticRepresentation
 import AsiStackProofs.SearchSubstrates
 import AsiStackProofs.SelfImprovement

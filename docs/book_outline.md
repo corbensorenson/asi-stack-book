@@ -453,6 +453,113 @@ Lean proof targets:
 | `lean:evidence.accepted_transition.review_audit_bridge` | `AsiStackProofs.EvidenceStates` | An accepted-transition review audit records accepted transition presence, bounded non-core upward transitions, no chapter-core promotion, no-promotion decisions, changelog refs, rejected mutation controls, bounded support-state effects, and non-claim boundaries. | implemented |
 | `lean:evidence.claim_state.transition_bridge` | `AsiStackProofs.EvidenceStates` | A synthetic claim-state transition bridge records claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries. | implemented |
 
+### Scalable Oversight and Adversarial AI Control
+
+Stable ID: `scalable-oversight-and-adversarial-ai-control`
+
+Chapter job: Define how limited human or AI supervision can inspect a stronger
+or less transparent system without treating a role label, vote, transcript, or
+favorable protocol score as proof, training authority, or permission to act.
+
+Core claim: A governed stack treats scalable oversight as a falsifiable protocol rather than a vote: it records the task and authority scope, supervisor and system capability envelopes, information access, protocol roles and incentives, direct-review baseline, independent outcome audit, correlation and persuasion risks, residual, and escalation owner; a protocol result may inform a bounded review or training decision only at its declared scope and cannot by itself establish reliable supervision, correctness, safety, or execution authority.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_weak_to_strong_generalization_2023`, `ext_scalable_oversight_weak_llms_2024` | Read first for weak/strong supervisor envelopes, outcome and ceiling comparisons, protocol-specific debate/consultancy evaluation, information-access variation, and stated disanalogies or limits. Preserve each paper's task, model, baseline, and inference-versus-training boundary. |
+| Supporting | `verification_bandwidth` | Mine after the primary sources for verification-workspace, residual, and independent-audit limits; do not treat its conceptual framework as a local supervisor-capacity result. |
+| External lineage not yet chapter-owning | `ext_ai_safety_debate_2018`, `ext_gpqa_2023` | Use only after fuller source review for debate lineage and hard-question benchmark pressure. Do not promote either into local debate efficacy, human-review quality, or oversight claims. |
+
+Draft arc:
+
+- Problem: A limited reviewer may be asked to judge stronger or less transparent
+  system behavior without enough access, time, calibration, outcome reference,
+  independence, or authority to perform the asserted oversight role.
+- Insufficiency: Evidence States controls claim movement; Proof-Carrying Claims
+  controls bounded dossiers; Policy Optimization controls update leases; Human
+  Intent controls principal constraints. None owns the protocol that transforms
+  limited supervision into a scoped review or training signal while preserving
+  the supervisor's limits.
+- Mechanism: Declare task/risk/authority scope, supervisor and system
+  capability envelopes, information access, roles, incentives, shared
+  dependencies, time/turn budget, direct-review baseline, outcome-audit method,
+  stop condition, residual owner, escalation owner, and permitted downstream
+  consumer before the protocol begins.
+- Mechanism: Compare direct review, assisted consultation, structured
+  adversarial review, and abstention against a declared outcome audit. Retain
+  task cohort, disagreement, calibration, selected failures, and baseline rather
+  than interpreting a verdict count or transcript length as protocol quality.
+- Mechanism: Keep proposer, critic/debater, judge, outcome auditor, authority
+  holder, and escalation owner separate. A shared model family, prompt,
+  retrieval corpus, reward, tool access, or hidden objective is a correlation
+  risk, not evidence of independence.
+- Mechanism: Route high-risk outcomes with missing independent outcome audit to
+  accountable escalation or residual escrow. A protocol outcome may inform a
+  bounded review or approved learning lane, but it cannot authorize execution,
+  release, or support-state movement by itself.
+- Interface: Evidence States consumes a scoped oversight artifact but retains
+  claim-transition authority. Verification Bandwidth checks the review
+  workspace. Human Intent supplies principal constraints. Proof-Carrying Claims
+  owns dossier and verdict constraints. Policy Optimization owns behavior-update
+  leases. Runtime Adapters and Readiness Gates retain effect and release power.
+
+Primary invariants:
+
+- A role label, vote count, long transcript, or self-score is not independent
+  oversight.
+- Every high-risk protocol declares task and authority scope, supervisor access
+  and capability envelope, baseline, independent outcome-audit requirement,
+  residual owner, and escalation owner before it informs downstream work.
+- A high-risk protocol without an independent outcome audit cannot directly
+  admit a training or action handoff.
+- A comparison without a task cohort, direct-review baseline, or failure
+  criterion cannot be interpreted as a scalable-oversight improvement.
+- Training and execution authority remain separate from protocol verdicts.
+
+Failure modes to cover:
+
+- Persuasion theater and weak-judge capture.
+- Correlated model, prompt, retrieval, reward, tool, or information-access
+  failure falsely counted as independent agreement.
+- Weak-baseline laundering and selected-cohort outcome audits.
+- Capability-gap, calibration, or distribution-shift failure hidden by an
+  aggregate protocol score.
+- Fleet-scale review latency, operator overload, and escalation collapse.
+- Verdict laundering into a training reward, claim transition, deployment
+  clearance, or tool permission.
+
+Draft deliverables:
+
+- A versioned oversight-protocol record with task/risk/authority scope,
+  supervisor/system envelopes, information access, role and incentive
+  configuration, shared-dependency risk, direct-review baseline, outcome-audit
+  status, stop condition, residual/escalation owner, and allowed downstream
+  handoff.
+- Source-noted primary comparator records for weak-to-strong supervision and
+  weak LLM judges, preserving their specified task, model, baseline, outcome,
+  and inference/training limits. No local weak supervisor, strong student,
+  debate, consultancy, human study, protocol workload, calibration result,
+  training result, safety result, or support-state promotion is claimed.
+- Implemented Lean boundary: `AsiStackProofs.ScalableOversight` routes a finite
+  high-risk downstream-admission request with no independent outcome audit to
+  accountable escalation and routes a requested admission with no baseline to
+  protocol redesign. This is record routing only; it does not establish that a
+  reviewer is independent, capable, calibrated, or correct.
+- Planned Codex test: matched direct-review, assisted-review, and abstention
+  workload with held-out outcome reference, cost, task-cohort, disagreement,
+  correlation, calibration, and residual records.
+- Planned Codex test: correlated-reviewer negative controls that distinguish
+  nominal role separation from genuinely independent outcome auditing.
+- Planned Codex test: fleet-scale review-window and escalation drill with
+  operator-load residuals, no authority change, and no safety claim.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | `AsiStackProofs.ScalableOversight` | A finite high-risk oversight record with a requested downstream admission and no independent outcome audit routes to accountable escalation rather than bounded admission, without inferring supervisor quality, protocol efficacy, alignment, safety, or ASI. | implemented |
+
 ### Human Intent as a Formal Input
 
 Stable ID: `human-intent-as-a-formal-input`
@@ -3033,7 +3140,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 217 proof targets, 56 Lean modules, 1058 theorem declarations, 868 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 218 proof targets, 57 Lean modules, 1060 theorem declarations, 870 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

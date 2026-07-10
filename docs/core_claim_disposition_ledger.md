@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 48 |
+| Manifest chapter core claims | 49 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 26 |
+| Accepted no-promotion dispositions | 27 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 48 |
+| Core claims remaining at `argument` | 49 |
 
 ## Dispositions
 
@@ -24,6 +24,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `system-boundaries-and-authority.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/system_boundaries_no_change.json` | Derived theorem or harness showing escalation blocked across handoff paths. |
 | `failure-modes-of-ungoverned-intelligence.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Replayed red-team fixture routes residuals to claims/tests/proofs. |
 | `evidence-states-and-claim-discipline.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/evidence_states_no_change.json` | Appendix C/sibling ledger validates transitions without core-claim promotion. |
+| `scalable-oversight-and-adversarial-ai-control.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed matched direct-review, assisted-review, and abstention workload with held-out outcome reference, baseline, correlation negatives, cost, disagreement, residuals, and accountable escalation; no local supervisor calibration, debate efficacy, weak-to-strong generalization, alignment, safety, execution-authority, or ASI claim. |
 | `human-intent-as-a-formal-input.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Intent fixture rejects underspecified or authority-widening execution. |
 | `constitutional-alignment-substrate.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/constitutional_alignment_no_change.json` | Nontrivial theorem plus harness case showing protected predicates and high-impact human-control paths survive transition or block action. |
 | `moral-uncertainty-and-value-conflict.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/moral_uncertainty_no_change.json` | High-stakes unresolved conflict cannot become unconditional promotion, and proof or fixture shows redaction/fork still preserves audit and safety obligations. |
