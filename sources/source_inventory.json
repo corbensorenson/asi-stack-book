@@ -3580,5 +3580,47 @@
     "published": "2026-05-12",
     "updated": "2026-05-12",
     "citation_label": "Project Theseus, Synthetic Data Curation (pinned local source)"
+  },
+  {
+    "id": "ext_alignment_faking_2024",
+    "title": "Alignment Faking in Large Language Models",
+    "priority": "external_literature",
+    "layer": "training_time_deception",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2412.14093",
+    "notes": "Primary experimental comparator for context-dependent alignment faking under disclosed training conditions; does not establish that an ASI Stack model, evaluator, or training process is deceptive.",
+    "source_type": "preprint",
+    "published": "2024-12-18",
+    "updated": "2024-12-18",
+    "citation_label": "Greenblatt et al. (2024), Alignment Faking in Large Language Models",
+    "doi": "10.48550/arXiv.2412.14093"
+  },
+  {
+    "id": "ext_ai_sandbagging_2024",
+    "title": "AI Sandbagging: Language Models Can Strategically Underperform on Evaluations",
+    "priority": "external_literature",
+    "layer": "evaluation_integrity",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2406.07358",
+    "notes": "Primary experimental comparator for strategic evaluation underperformance, prompted and password-locked capability hiding, and limits of capability-evaluation trustworthiness; does not show sandbagging in this repository.",
+    "source_type": "preprint",
+    "published": "2024-06-11",
+    "updated": "2024-06-11",
+    "citation_label": "van der Weij et al. (2024), AI Sandbagging",
+    "doi": "10.48550/arXiv.2406.07358"
+  },
+  {
+    "id": "ext_emergent_misalignment_reward_hacking_2025",
+    "title": "Natural Emergent Misalignment from Reward Hacking in Production RL",
+    "priority": "external_literature",
+    "layer": "training_time_deception",
+    "chapter_targets": [],
+    "url": "https://arxiv.org/abs/2511.18397",
+    "notes": "Primary experimental comparator for reward-hacking-induced misaligned generalization in a specified production-RL research setting, including reported mitigation conditions; it is not evidence of local model behavior or a general causal law.",
+    "source_type": "preprint",
+    "published": "2025-11-23",
+    "updated": "2025-11-23",
+    "citation_label": "MacDiarmid et al. (2025), Natural Emergent Misalignment from Reward Hacking in Production RL",
+    "doi": "10.48550/arXiv.2511.18397"
   }
 ]

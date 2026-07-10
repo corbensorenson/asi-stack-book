@@ -21,6 +21,30 @@ horizons, and release records. The normal reader manuscript may become a
 curated parallel derivative prose source, but it is not equal authority for
 evidence or claims.
 
+## 2026-07-10 Streamlined Delivery Direction
+
+Until an explicit major-version candidate is declared, the development loop is
+for **content, source grounding, evidence, proofs, live-site human prose, and
+chapter continuity**. Do not spend ordinary chapter cycles generating,
+reviewing, or refreshing EPUB, DOCX, PDF, audiobook, narration, or
+release-candidate artifacts that will be overwritten by later manuscript work.
+Do not treat stale release-only manifests as a content blocker.
+
+`python3 scripts/validate_book.py` is the default content-focused gate. It
+validates canonical chapters, sources, claims, proof/evidence surfaces, live
+reader projection, and HTML-facing accessibility, while skipping release-only
+format and audio validation. `python3 scripts/validate_book.py --major-release`
+is the explicit major-edition gate: it additionally runs EPUB/DOCX/PDF,
+audio/narration, release-record, and format-review validators. HTML rendering
+remains appropriate after a coherent public content increment, not after every
+source-note or ledger-only change.
+
+The priority order is: complete the controlled chapter intake; make live and
+human prose coherent and edited; deepen source, proof, and executable evidence;
+then declare a major version and do one deliberate format/audio pass over stable
+content. Do not create interim e-reader or audio artifacts merely to keep
+development validators green.
+
 ## Purpose
 
 The v1.0.0 release proved that the repository can function as a public living
