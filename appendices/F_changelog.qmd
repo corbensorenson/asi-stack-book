@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-07-10 - Add a finite Data-admission receipt probe
+
+- Added `python3 scripts/validate_data_admission_receipt_probe.py` and
+  `experiments/data_admission_receipt_probe/results/2026-07-10-local.json`.
+  The deterministic probe exercises block, quarantine, experimental-only, and
+  receipt-eligible routes with four expected-invalid controls.
+- Boundary: the probe does not load data, train or evaluate a model, detect
+  semantic contamination, verify deletion from descendants, or create a
+  support-state transition. It is finite receipt routing, not a continual-
+  learning or unlearning result.
+
 ## 2026-07-10 - Add a bounded data-admission proof and schema foundation
 
 - Added `DataAdmissionReview` and a finite admission-routing model in

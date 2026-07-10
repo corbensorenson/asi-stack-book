@@ -1,0 +1,66 @@
+{
+  "schema_version": "asi_stack.data_admission_receipt_probe.v0",
+  "result_id": "data-admission-receipt-probe-2026-07-10-local",
+  "recorded_date": "2026-07-10",
+  "command": "python3 scripts/validate_data_admission_receipt_probe.py",
+  "result_kind": "deterministic_finite_data_admission_receipt_probe",
+  "scenario_count": 4,
+  "route_summaries": [
+    {
+      "scenario_id": "receipt://missing-provenance-blocked",
+      "expected_route": "block",
+      "actual_route": "block",
+      "route_matches": true
+    },
+    {
+      "scenario_id": "receipt://missing-contamination-quarantined",
+      "expected_route": "quarantine",
+      "actual_route": "quarantine",
+      "route_matches": true
+    },
+    {
+      "scenario_id": "receipt://missing-deletion-scope-experimental",
+      "expected_route": "experimental_only",
+      "actual_route": "experimental_only",
+      "route_matches": true
+    },
+    {
+      "scenario_id": "receipt://complete-record-eligible",
+      "expected_route": "eligible",
+      "actual_route": "eligible",
+      "route_matches": true
+    }
+  ],
+  "negative_controls": {
+    "missing_provenance_cannot_be_eligible": true,
+    "missing_contamination_cannot_be_eligible": true,
+    "missing_deletion_scope_stays_experimental": true,
+    "support_promotion_overclaim_rejected": true
+  },
+  "fixture_ref": "tests/fixtures/protocol_records/data_admission_receipt.valid.json",
+  "lean_fixture_alignment": {
+    "module": "AsiStackProofs.DataEngines",
+    "theorem_refs": [
+      "missing_provenance_or_authority_blocks_data_admission",
+      "missing_split_exclusion_or_contamination_check_quarantines_data",
+      "complete_data_record_routes_to_eligible"
+    ]
+  },
+  "support_state_effect": "none",
+  "chapter_core_support_effect": "none",
+  "evidence_transition_created": false,
+  "verification_result": "pass",
+  "residuals": [
+    "The contamination field records only the presence of a check, not semantic-contamination detection or a measured coverage result.",
+    "The deletion-scope field records an obligation only; it does not verify removal from any downstream model, cache, retrieval store, or publication.",
+    "Eligibility is a finite receipt route, not a dataset-quality, privacy, training, continual-learning, or capability result."
+  ],
+  "non_claims": [
+    "does not load or evaluate a dataset",
+    "does not train, update, or evaluate a model",
+    "does not verify semantic contamination absence",
+    "does not verify deletion from checkpoints, adapters, caches, retrieval stores, or published artifacts",
+    "does not promote the Data Engines chapter core claim",
+    "does not create a support-state transition"
+  ]
+}

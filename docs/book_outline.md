@@ -3134,6 +3134,11 @@ Draft deliverables:
   unlearning limits without importing a training dataset.
 - `AsiStackProofs.DataEngines` finite routing model for block, quarantine,
   experimental-only, and eligibility outcomes.
+- `data_admission_receipt_probe` with four finite routes and four
+  expected-invalid controls; it validates record routing only and does not
+  load data, train a model, detect semantic contamination, or verify deletion.
+- Data-admission lifecycle probe result:
+  `experiments/data_admission_receipt_probe/results/2026-07-10-local.json`.
 - Planned public-safe workload comparing replacement, accumulation, replay,
   quarantine, and retraining under frozen baselines, heldout contamination
   checks, negative controls, and independently replayed deletion scopes.

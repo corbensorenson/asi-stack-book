@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | Four reviewed source notes: three primary-paper records and one pinned Theseus implementation-reference record. No source code, dataset, training run, or reported result was imported. |
-| Test state | `data_admission_receipt.valid.json` passes schema validation, and `AsiStackProofs.DataEngines` proves finite routing branches. Neither artifact measures data quality, trains a model, or verifies unlearning. |
+| Test state | The schema fixture, `AsiStackProofs.DataEngines`, and the four-scenario `data_admission_receipt_probe` validate finite routing boundaries. None measures data quality, trains a model, detects semantic contamination, or verifies unlearning. |
 
 ## Drafting guardrail
 
@@ -273,6 +273,17 @@ and declared finite branch selection, not the truth of provenance, safety of a
 source, absence of contamination, useful learning, or deletion propagation
 through a real system.
 
+`data_admission_receipt_probe` makes the boundary executable across four
+finite public-safe scenarios: block for missing provenance, quarantine for a
+missing contamination record, experimental-only handling for a missing
+deletion scope, and receipt eligibility only when the recorded controls are
+complete. Its expected-invalid controls reject promotion laundering as well as
+incomplete records treated as eligible. It does not train or evaluate a model,
+load a dataset, detect semantic contamination, or verify deletion from
+descendants; those remain workload and replay obligations.
+The deterministic result is recorded at
+`experiments/data_admission_receipt_probe/results/2026-07-10-local.json`.
+
 The next implementation increment needs a small public-safe workload with a
 frozen baseline, declared data versions, heldout semantic and exact
 contamination controls, a replacement-versus-accumulation comparison, and a
@@ -317,6 +328,7 @@ and deletion verification are independently replayed and accepted.
 |---|---|---|
 | Data-admission receipt schema fixture | Validate provenance, authority, lineage, exclusions, contamination checks, lifecycle fields, residuals, non-claims, and an experimental-only decision in a public-safe record. | implemented by `python3 scripts/validate_schemas.py`; no dataset, training run, or data-quality result |
 | Data-admission route proof | Prove finite routing for missing provenance or authority, missing split exclusions or contamination checks, and complete record eligibility. | implemented in `AsiStackProofs.DataEngines`; no corpus inspection, training, inference, or deletion |
+| Data-admission lifecycle probe | Exercise block, quarantine, experimental-only, and eligible receipt routes with four expected-invalid controls. | implemented by `python3 scripts/validate_data_admission_receipt_probe.py`; no dataset, model, semantic-contamination, deletion, or support-state result |
 | Continual-learning policy comparison | Compare replacement, accumulation, replay, quarantine, and retraining under frozen baselines and heldout contamination controls. | planned; requires a scoped public-safe workload, negative controls, and independent replay |
 | Descendant-deletion trace | Distinguish source removal, retraining, checkpoint invalidation, cache invalidation, retrieval deletion, and unverified paths. | planned; no deletion path has been run or verified |
 | Semantic-overlap adversary | Falsify an exact-overlap-only assurance before an admission path can feed a learning run. | planned; no semantic-leakage detector or adversarial corpus exists |

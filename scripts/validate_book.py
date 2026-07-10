@@ -301,6 +301,9 @@ REQUIRED = [
     "scripts/validate_benchmark_antigoodhart.py",
     "scripts/validate_benchmark_fixture_bridge.py",
     "scripts/validate_policy_update_lease_probe.py",
+    "scripts/validate_data_admission_receipt_probe.py",
+    "docs/data_admission_receipt_probe.md",
+    "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
     "scripts/validate_generation_mode_baselines.py",
     "scripts/run_fast_generation_task_bundle.py",
     "scripts/validate_fast_generation_task_bundle.py",
@@ -1222,6 +1225,7 @@ def main() -> None:
     run_validator("validate_benchmark_antigoodhart.py")
     run_validator("validate_benchmark_fixture_bridge.py")
     run_validator("validate_policy_update_lease_probe.py")
+    run_validator("validate_data_admission_receipt_probe.py")
     run_validator("validate_generation_mode_baselines.py")
     run_validator("validate_fast_generation_task_bundle.py")
     run_validator("validate_theseus_fast_support_lane.py")

@@ -11418,6 +11418,13 @@
               "result_status": "validated locally by `AsiStackProofs.DataEngines`; no corpus, model, or capability result"
             },
             {
+              "name": "Data-admission lifecycle probe",
+              "purpose": "Exercise the finite block, quarantine, experimental-only, and eligible receipt routes with expected-invalid controls for incomplete records and promotion laundering.",
+              "status": "implemented as a deterministic public-safe receipt-routing probe; it does not load data, train a model, detect semantic contamination, or verify deletion",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `experiments/data_admission_receipt_probe/results/2026-07-10-local.json`; no data-quality, model, unlearning, or support-state result"
+            },
+            {
               "name": "Continual-learning and deletion workload",
               "purpose": "Compare declared replacement, accumulation, replay, quarantine, and retraining policies on a public-safe workload with heldout contamination and descendant-deletion checks.",
               "status": "planned; requires a scoped dataset, baseline, negative controls, and independent replay",
