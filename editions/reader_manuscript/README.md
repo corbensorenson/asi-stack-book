@@ -3,10 +3,11 @@
 This directory is the tracked home for manually edited human-reader manuscript
 work when generated reader source plus semantic overlays are no longer enough.
 
-The current v1.0 state is `drafting`. `v1_0/manifest.json` records forty-four
-curated chapter records: zero drafting and forty-four reconciled for prose
-meaning, with no active manifest chapter missing a curated reader file. It also
-records a machine-checked reader handoff contract: one book-level thesis, four
+The current v1.0 state is `drafting`. `v1_0/manifest.json` records a frozen
+forty-four-chapter historical snapshot at its blocked-candidate source commit,
+plus forty-four curated chapter records: zero drafting and forty-four
+reconciled for prose meaning. It also records a machine-checked reader handoff
+contract: one book-level thesis, four
 part arcs, ten recurring signature ideas, ten key-figure targets with
 validator-checked draft assets and placements, twelve optional Corben author-enrichment prompts converted into
 `v1_0/author_enrichment_queue.json`, and per-chapter stakes/payoff fields. None are release-approved, and none are
@@ -14,6 +15,10 @@ equal authority beside the live book. The live Quarto book, generated reader
 edition, and reader overlays remain the active release path until format artifact
 review and an edition release record actually exist; curated-reader prose
 reconciliation is complete at the chapter level but not release-approved.
+The historical snapshot remains source-valid if the live book later gains,
+removes, or merges chapters, but it must not be rendered from a divergent live
+spine. A later active reader edition needs its own tracked directory and
+release record.
 The curated manuscript now has a tracked local format probe manifest at
 `v1_0/curated_format_probe_manifest.json`: HTML, EPUB, and DOCX render and pass
 structural inspection, while EPUB/DOCX release approval remains blocked and the

@@ -10,6 +10,7 @@ states.
 
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -25,6 +26,7 @@ ALLOWED_CURATION_CONTRACT_STATUS = {"active_contract"}
 ALLOWED_READER_HANDOFF_STATUS = {"drafting_handoff_ready"}
 ALLOWED_FIGURE_TARGET_STATUS = {"target_defined_not_final_art"}
 ALLOWED_DRAFT_ARTIFACT_STATUS = {"draft_not_release_reviewed"}
+ALLOWED_EDITION_SCOPE = {"active_reader_draft", "historical_release_snapshot"}
 ALLOWED_ROUTING_STATUS = {
     "retain_in_reader_spine_with_companion_note",
     "future_curated_review_with_companion_note",
@@ -155,6 +157,8 @@ REQUIRED_FIELDS = {
     "schema_version",
     "major_version",
     "status",
+    "edition_scope",
+    "historical_spine_snapshot",
     "canonical_relationship",
     "live_sources_of_truth",
     "generated_baseline",
@@ -172,6 +176,14 @@ REQUIRED_FIELDS = {
     "author_enrichment_queue",
     "reconciliation_report",
     "non_claims",
+}
+REQUIRED_HISTORICAL_SNAPSHOT_FIELDS = {
+    "source_commit",
+    "release_record",
+    "parts",
+    "chapter_ids",
+    "chapter_ids_sha256",
+    "regeneration_policy",
 }
 
 
@@ -299,6 +311,112 @@ def flatten_parts(structure: dict[str, Any]) -> list[dict[str, Any]]:
     return parts
 
 
+def chapter_ids_digest(chapter_ids: list[str]) -> str:
+    encoded = json.dumps(chapter_ids, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def effective_reader_structure(
+    data: dict[str, Any],
+    active_parts: list[dict[str, Any]],
+    active_chapters: dict[str, dict[str, Any]],
+    errors: list[str],
+) -> tuple[list[dict[str, Any]], dict[str, dict[str, Any]]]:
+    """Return the authority used to validate this reader-manuscript directory.
+
+    A historical manuscript must remain valid as its recorded edition even after
+    the active living-book spine grows. A future active draft instead follows
+    the current manifest directly.
+    """
+
+    scope = data.get("edition_scope")
+    if scope == "active_reader_draft":
+        return active_parts, active_chapters
+    if scope != "historical_release_snapshot":
+        return active_parts, active_chapters
+
+    snapshot = data.get("historical_spine_snapshot")
+    if not isinstance(snapshot, dict):
+        errors.append("historical_release_snapshot requires historical_spine_snapshot object.")
+        return active_parts, active_chapters
+    missing = sorted(REQUIRED_HISTORICAL_SNAPSHOT_FIELDS - set(snapshot))
+    if missing:
+        errors.append(f"historical_spine_snapshot missing required fields: {missing}")
+        return active_parts, active_chapters
+
+    source_commit = snapshot.get("source_commit")
+    if not isinstance(source_commit, str) or not re.fullmatch(r"[0-9a-f]{40}", source_commit):
+        errors.append("historical_spine_snapshot.source_commit must be a 40-character commit digest.")
+    release_record = snapshot.get("release_record")
+    if not isinstance(release_record, str) or not release_record.startswith("release_records/"):
+        errors.append("historical_spine_snapshot.release_record must reference release_records/.")
+    elif not (ROOT / release_record).exists():
+        errors.append(f"historical_spine_snapshot release record does not exist: {release_record}")
+    elif isinstance(source_commit, str):
+        release_data = load_json(ROOT / release_record)
+        if not isinstance(release_data, dict) or release_data.get("source_commit") != source_commit:
+            errors.append(
+                "historical_spine_snapshot.source_commit must match its recorded release source_commit."
+            )
+
+    chapter_ids = snapshot.get("chapter_ids")
+    if not isinstance(chapter_ids, list) or not chapter_ids or not all(
+        isinstance(chapter_id, str) and chapter_id.strip() for chapter_id in chapter_ids
+    ):
+        errors.append("historical_spine_snapshot.chapter_ids must be a non-empty list of chapter IDs.")
+        chapter_ids = []
+    elif len(chapter_ids) != len(set(chapter_ids)):
+        errors.append("historical_spine_snapshot.chapter_ids must not contain duplicates.")
+    if isinstance(chapter_ids, list):
+        expected_digest = chapter_ids_digest(chapter_ids)
+        if snapshot.get("chapter_ids_sha256") != expected_digest:
+            errors.append(
+                "historical_spine_snapshot.chapter_ids_sha256 must match the canonical chapter_ids digest."
+            )
+        records = data.get("chapter_records")
+        record_ids = {
+            record.get("chapter_id")
+            for record in records
+            if isinstance(record, dict) and isinstance(record.get("chapter_id"), str)
+        } if isinstance(records, list) else set()
+        if set(chapter_ids) != record_ids:
+            errors.append(
+                "historical_spine_snapshot.chapter_ids must match the historical curated chapter records."
+            )
+
+    snapshot_parts = snapshot.get("parts")
+    if not isinstance(snapshot_parts, list) or not snapshot_parts:
+        errors.append("historical_spine_snapshot.parts must be a non-empty list.")
+        snapshot_parts = []
+    effective_parts: list[dict[str, Any]] = []
+    seen_part_ids: set[str] = set()
+    for index, part in enumerate(snapshot_parts):
+        owner = f"historical_spine_snapshot.parts[{index}]"
+        if not isinstance(part, dict):
+            errors.append(f"{owner} must be an object.")
+            continue
+        part_id = part.get("id")
+        title = part.get("title")
+        if not isinstance(part_id, str) or not part_id.strip() or part_id in seen_part_ids:
+            errors.append(f"{owner}.id must be a unique non-empty string.")
+            continue
+        if not isinstance(title, str) or len(title.split()) < 3:
+            errors.append(f"{owner}.title must be substantive.")
+            continue
+        seen_part_ids.add(part_id)
+        effective_parts.append({"id": part_id, "title": title})
+
+    effective_chapters: dict[str, dict[str, Any]] = {}
+    for chapter_id in chapter_ids:
+        current = active_chapters.get(chapter_id, {})
+        effective_chapters[chapter_id] = {
+            "id": chapter_id,
+            "title": current.get("title"),
+            "file": current.get("file"),
+        }
+    return effective_parts, effective_chapters
+
+
 def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
     missing = sorted(REQUIRED_FIELDS - set(data))
     if missing:
@@ -311,6 +429,24 @@ def validate_manifest(data: dict[str, Any], errors: list[str]) -> None:
         errors.append("major_version must be v1.0.")
     if data.get("status") not in ALLOWED_STATUS:
         errors.append(f"status must be one of {sorted(ALLOWED_STATUS)}.")
+    if data.get("edition_scope") not in ALLOWED_EDITION_SCOPE:
+        errors.append(f"edition_scope must be one of {sorted(ALLOWED_EDITION_SCOPE)}.")
+    if data.get("edition_scope") == "historical_release_snapshot":
+        snapshot = data.get("historical_spine_snapshot")
+        if not isinstance(snapshot, dict):
+            errors.append("historical_release_snapshot requires historical_spine_snapshot object.")
+        else:
+            policy = snapshot.get("regeneration_policy")
+            if (
+                not isinstance(policy, str)
+                or "must not be rendered" not in policy
+                or "later reader-edition" not in policy
+            ):
+                errors.append(
+                    "historical_spine_snapshot.regeneration_policy must preserve the frozen-render boundary."
+                )
+    elif data.get("historical_spine_snapshot") is not None:
+        errors.append("active_reader_draft must set historical_spine_snapshot to null.")
     if data.get("canonical_relationship") != "parallel_derivative_not_equal_authority":
         errors.append("canonical_relationship must be parallel_derivative_not_equal_authority.")
 
@@ -1055,7 +1191,7 @@ def validate_companion_note_routing(
             errors.append(f"{owner}: {chapter_id} is not marked companion_note_candidate in the review matrix.")
 
         expected_title = chapters[chapter_id].get("title")
-        if record.get("title") != expected_title:
+        if expected_title and record.get("title") != expected_title:
             errors.append(f"{owner}: title must match book_structure.json title {expected_title!r}.")
         if record.get("routing_decision") not in ALLOWED_ROUTING_STATUS:
             errors.append(f"{owner}: routing_decision must be one of {sorted(ALLOWED_ROUTING_STATUS)}.")
@@ -1151,7 +1287,7 @@ def validate_chapter_records(
         seen.add(chapter_id)
 
         expected_title = chapters[chapter_id].get("title")
-        if record.get("title") != expected_title:
+        if expected_title and record.get("title") != expected_title:
             errors.append(f"{owner}: title must match book_structure.json title {expected_title!r}.")
 
         file_path = record.get("file")
@@ -1309,10 +1445,11 @@ def main() -> None:
         errors.append(f"{rel(MANIFEST)} must contain an object.")
         data = {}
     structure = load_json(ROOT / "book_structure.json")
-    parts = flatten_parts(structure if isinstance(structure, dict) else {})
-    chapters = flatten_chapters(structure if isinstance(structure, dict) else {})
+    active_parts = flatten_parts(structure if isinstance(structure, dict) else {})
+    active_chapters = flatten_chapters(structure if isinstance(structure, dict) else {})
 
     validate_manifest(data, errors)
+    parts, chapters = effective_reader_structure(data, active_parts, active_chapters, errors)
     curation_contract = validate_curation_contract(data, errors)
     voice_slot_ids = validate_reader_handoff_contract(data, parts, chapters, errors)
     validate_author_enrichment_queue(data, voice_slot_ids, chapters, errors)

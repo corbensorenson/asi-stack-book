@@ -2,6 +2,77 @@
   "schema_version": "0.1",
   "major_version": "v1.0",
   "status": "drafting",
+  "edition_scope": "historical_release_snapshot",
+  "historical_spine_snapshot": {
+    "source_commit": "3e59bde35f4aa5147017ddab3159cfeffddc9ee7",
+    "release_record": "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
+    "parts": [
+      {
+        "id": "foundations-alignment-governance",
+        "title": "Part I - Foundations, Alignment, and Governance"
+      },
+      {
+        "id": "planning-memory-reasoning-execution",
+        "title": "Part II - Planning, Memory, Reasoning, and Execution"
+      },
+      {
+        "id": "routing-compression-representation-substrates",
+        "title": "Part III - Routing, Compression, Representation, and Substrates"
+      },
+      {
+        "id": "evidence-implementation-living-book",
+        "title": "Part IV - Evidence, Implementation, and the Living Book"
+      }
+    ],
+    "chapter_ids": [
+      "asi-is-a-stack-not-a-model",
+      "the-efficient-asi-hypothesis",
+      "system-boundaries-and-authority",
+      "failure-modes-of-ungoverned-intelligence",
+      "evidence-states-and-claim-discipline",
+      "human-intent-as-a-formal-input",
+      "constitutional-alignment-substrate",
+      "moral-uncertainty-and-value-conflict",
+      "stable-capability-fields",
+      "capability-replacement-and-rollback",
+      "security-kernel-and-digital-scifs",
+      "recursive-self-improvement-boundaries",
+      "intent-to-execution-contracts",
+      "planning-as-a-control-layer",
+      "cognitive-compilation-and-semantic-ir",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "verification-bandwidth-and-context-adequacy",
+      "claim-ledgers-and-belief-revision",
+      "spinoza-verification-and-proof-carrying-claims",
+      "labor-os-and-typed-jobs",
+      "artifact-graphs-audit-logs-and-replay",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "procedural-memory-and-cognitive-loop-closure",
+      "routing-heads-and-specialist-cores",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "compact-generative-systems-and-residual-honesty",
+      "fast-generation-architectures",
+      "rankfold-neuralfold-and-artifact-compression",
+      "resource-economics-and-token-budgets",
+      "mathematical-and-search-substrates",
+      "circle-calculus-and-proof-carrying-ai-contracts",
+      "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "coilra-multicoil-rope-and-cyclic-mixers",
+      "executable-specifications-and-lean-proof-envelope",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "policy-optimization-and-learning-from-feedback",
+      "artifact-steward-agents-and-living-project-governance",
+      "integrated-reference-architecture",
+      "project-theseus-as-report-first-implementation-reference",
+      "prototype-roadmap",
+      "living-book-methodology",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "chapter_ids_sha256": "82f39af053e94a1b7c5c530c41487f2c735335ee8b0a906cc49689cf087db74d",
+    "regeneration_policy": "This historical blocked candidate may be source-validated after the active spine changes, but it must not be rendered from a divergent active manifest. Create a later reader-edition directory and release record for new active chapters."
+  },
   "canonical_relationship": "parallel_derivative_not_equal_authority",
   "live_sources_of_truth": [
     "book_structure.json",

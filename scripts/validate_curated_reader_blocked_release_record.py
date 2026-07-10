@@ -138,6 +138,21 @@ AUDIO_METADATA_PRESERVED = [
     "audio_embedded_epub_not_packaged_or_checked",
     "audio_edition_release_record_not_created",
 ]
+HISTORICAL_AUDIO_SNAPSHOT = {
+    "reading_flow_status": "passed_audio_script_reading_flow_review",
+    "combined_script_sha256": "cd7c39c3a8d6a775db3876e7c81beec3923651ca9fbdcdddb2eb764ff2c6354d",
+    "script_files_checked": 49,
+    "chapter_scripts_checked": 44,
+    "appendix_scripts_checked": 3,
+    "chapter_marker_rows": 49,
+    "chapter_marker_tbd_rows": 49,
+    "narration_note_count": 66,
+    "text_characters_checked": 1096067,
+    "word_tokens_checked": 146860,
+    "live_marker_hits": 0,
+    "raw_core_claim_marker_hits": 0,
+    "replacement_character_count": 0,
+}
 
 
 def fail(errors: list[str]) -> None:
@@ -727,26 +742,12 @@ def main() -> None:
         ],
         errors,
     )
-    if not isinstance(audio_reading_flow, dict):
-        errors.append("audio_script_probe_manifest audio_script_reading_flow_review must be an object.")
-        audio_reading_flow = {}
     expected_audio_treatment = {
         "status": AUDIO_NARRATION_TREATMENT_STATUS,
+        "review_scope": "historical_blocked_candidate_snapshot",
         "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
         "key_figure_companion_note": "editions/reader_manuscript/v1_0/companion_notes/key-figures.md",
-        "reading_flow_status": audio_reading_flow.get("status"),
-        "combined_script_sha256": audio_reading_flow.get("combined_script_sha256"),
-        "script_files_checked": audio_reading_flow.get("script_files_checked"),
-        "chapter_scripts_checked": audio_reading_flow.get("chapter_scripts_checked"),
-        "appendix_scripts_checked": audio_reading_flow.get("appendix_scripts_checked"),
-        "chapter_marker_rows": audio_reading_flow.get("chapter_marker_rows"),
-        "chapter_marker_tbd_rows": audio_reading_flow.get("chapter_marker_tbd_rows"),
-        "narration_note_count": audio_reading_flow.get("narration_note_count"),
-        "text_characters_checked": audio_reading_flow.get("text_characters_checked"),
-        "word_tokens_checked": audio_reading_flow.get("word_tokens_checked"),
-        "live_marker_hits": audio_reading_flow.get("live_marker_hits"),
-        "raw_core_claim_marker_hits": audio_reading_flow.get("raw_core_claim_marker_hits"),
-        "replacement_character_count": audio_reading_flow.get("replacement_character_count"),
+        **HISTORICAL_AUDIO_SNAPSHOT,
         "target_artifact_status": {
             "mp3": "target_not_generated",
             "m4b": "target_not_generated",
@@ -796,15 +797,16 @@ def main() -> None:
     )
     expected_audio_metadata = {
         "status": AUDIO_METADATA_STATUS,
+        "review_scope": "historical_blocked_candidate_snapshot",
         "source_audio_probe_manifest": "editions/reader_manuscript/v1_0/audio_script_probe_manifest.json",
         "source_blocked_release_record": "release_records/2026-07-05-v1-curated-reader-blocked-3e59bde3.json",
         "source_candidate_release_id": EXPECTED_RELEASE_ID,
         "source_candidate_commit": EXPECTED_SOURCE_COMMIT,
         "source_candidate_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-05",
-        "source_audio_script_sha256": audio_reading_flow.get("combined_script_sha256"),
-        "script_files_checked": audio_reading_flow.get("script_files_checked"),
-        "chapter_scripts_checked": audio_reading_flow.get("chapter_scripts_checked"),
-        "chapter_marker_rows": audio_reading_flow.get("chapter_marker_rows"),
+        "source_audio_script_sha256": HISTORICAL_AUDIO_SNAPSHOT["combined_script_sha256"],
+        "script_files_checked": HISTORICAL_AUDIO_SNAPSHOT["script_files_checked"],
+        "chapter_scripts_checked": HISTORICAL_AUDIO_SNAPSHOT["chapter_scripts_checked"],
+        "chapter_marker_rows": HISTORICAL_AUDIO_SNAPSHOT["chapter_marker_rows"],
         "audio_profile": "audio_release",
     }
     for key, expected in expected_audio_metadata.items():
@@ -825,7 +827,7 @@ def main() -> None:
         "language": "en-US",
         "source_commit": EXPECTED_SOURCE_COMMIT,
         "source_tag": "not_tagged_curated_reader_blocked_candidate_2026-07-05",
-        "script_digest": audio_reading_flow.get("combined_script_sha256"),
+        "script_digest": HISTORICAL_AUDIO_SNAPSHOT["combined_script_sha256"],
     }
     for key, expected in expected_metadata_fields.items():
         if metadata_fields.get(key) != expected:
@@ -1457,10 +1459,10 @@ def main() -> None:
         "reader_wcag_preparation_preserved_blockers": len(wcag_preparation.get("preserved_blockers", []))
         if isinstance(wcag_preparation.get("preserved_blockers"), list)
         else None,
-        "audio_reading_flow_script_files": audio_reading_flow.get("script_files_checked"),
-        "audio_reading_flow_ordered_markers": audio_reading_flow.get("chapter_marker_rows"),
-        "audio_reading_flow_narration_notes": audio_reading_flow.get("narration_note_count"),
-        "audio_reading_flow_text_characters": audio_reading_flow.get("text_characters_checked"),
+        "audio_reading_flow_script_files": HISTORICAL_AUDIO_SNAPSHOT["script_files_checked"],
+        "audio_reading_flow_ordered_markers": HISTORICAL_AUDIO_SNAPSHOT["chapter_marker_rows"],
+        "audio_reading_flow_narration_notes": HISTORICAL_AUDIO_SNAPSHOT["narration_note_count"],
+        "audio_reading_flow_text_characters": HISTORICAL_AUDIO_SNAPSHOT["text_characters_checked"],
         "audio_narration_treatment_review_manifest": rel(AUDIO_NARRATION_TREATMENT_REVIEW),
         "audio_narration_treatment_review_status": audio_narration_treatment_review.get("status"),
         "audio_narration_treatment_cleared_blockers": len(

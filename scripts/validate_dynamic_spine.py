@@ -2,10 +2,11 @@
 """Prove that the active book spine can grow and return without manual renumbering.
 
 The historical v1.0 reader/release records intentionally retain their recorded
-44-chapter snapshot. This validator exercises only the active manifest in a
-disposable workspace: it inserts a cloned fixture chapter, regenerates the
-live scaffold, checks the reader derivation, removes the fixture, and verifies
-that the generated active surfaces return to their original bytes.
+44-chapter snapshot. This validator exercises both boundaries in a disposable
+workspace: it inserts a cloned fixture chapter, regenerates the live scaffold,
+checks the active reader derivation and frozen-reader validation, confirms that
+the historical candidate refuses a mixed-spine render, removes the fixture,
+and verifies that generated active surfaces return to their original bytes.
 """
 
 from __future__ import annotations
@@ -179,6 +180,12 @@ def main() -> None:
             run(workspace, "scripts/sync_scaffold.py")
             assert_fixture_surfaces(workspace, fixture_count)
             run(workspace, "scripts/build_reader_edition.py", "--check")
+            run(workspace, "scripts/validate_reader_manuscript_manifest.py")
+            historical_check = run(workspace, "scripts/build_curated_reader_edition.py", "--check")
+            if "frozen chapters remain valid" not in historical_check:
+                raise AssertionError(
+                    "historical reader check did not preserve the frozen snapshot after active insertion"
+                )
 
             (workspace / "book_structure.json").write_bytes(original_manifest)
             (workspace / FIXTURE_FILE).unlink()
@@ -190,6 +197,7 @@ def main() -> None:
                 )
                 raise AssertionError(f"generated surfaces did not return to baseline: {', '.join(drift)}")
             run(workspace, "scripts/build_reader_edition.py", "--check")
+            run(workspace, "scripts/validate_reader_manuscript_manifest.py")
     except (AssertionError, FileNotFoundError, OSError, RuntimeError, TypeError, ValueError) as exc:
         fail(str(exc))
 

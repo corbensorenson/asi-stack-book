@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
+
+- Added an explicit historical v1.0 reader snapshot with its blocked-candidate
+  commit, part order, chapter IDs, and canonical ID digest. The reader-manifest
+  validator now uses that snapshot rather than the current live manifest when
+  checking the historical candidate.
+- Updated the curated-reader builder to copy tracked assets, render the frozen
+  v1.0 source only when the active spine still matches, and source-validate it
+  without rendering after the active spine changes. The dynamic-spine fixture
+  now verifies that separation during a disposable `44 -> 45 -> 44` run.
+- Corrected the blocked-candidate release validator to compare the July 5 audio
+  review to its recorded script snapshot, not a later current audio probe.
+- Boundary: this preserves historical release-preparation evidence and future
+  expansion safety. It does not approve the v1.0 reader edition or artifacts,
+  add a chapter, or promote a claim support state.
+
 ## 2026-07-10 - Separate current audio probes from historical review snapshots
 
 - Made the current audio-script reading-flow probe derive active file and

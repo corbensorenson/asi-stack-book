@@ -343,10 +343,15 @@ exercises the active manifest in a disposable workspace through a `44 -> 45 ->
 44` fixture insertion/removal. It proves that scaffold generation, the
 generated claim and implementation-horizon surfaces, and the generated reader
 derivation return to baseline without manual chapter-number or active-count
-edits. It deliberately does not treat the fixture as an accepted chapter or
-prove that a real addition has source notes, outline/proof rows, evidence-plan
-coverage, reader-curation records, release approval, or a support-state move.
-Those remain admission gates for the first real chapter.
+edits. It also validates the frozen v1.0 curated-reader snapshot after active
+insertion and confirms that the historical builder refuses to render a mixed
+historical/current spine. `v1_0/manifest.json` records the blocked-candidate
+commit, chapter-ID digest, and part snapshot; the historical audio reviews are
+validated against their recorded snapshot rather than the mutable current
+audio probe. It deliberately does not treat the fixture as an accepted chapter
+or prove that a real addition has source notes, outline/proof rows,
+evidence-plan coverage, a later reader-edition directory, release approval, or
+a support-state move. Those remain admission gates for the first real chapter.
 
 - audit scripts, CI, reader manifests, evidence plans, release gates, and docs
   for hard-coded active chapter counts or ID lists;

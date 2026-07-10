@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 from datetime import datetime, timezone
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -79,6 +80,65 @@ def manifest_chapters(structure: dict[str, Any]) -> list[dict[str, str]]:
             if isinstance(chapter_id, str) and isinstance(file_path, str) and isinstance(title, str):
                 chapters.append({"chapter_id": chapter_id, "file": file_path, "title": title})
     return chapters
+
+
+def historical_snapshot_ids(manifest: dict[str, Any]) -> list[str] | None:
+    """Return the frozen chapter order for a historical reader candidate."""
+
+    if manifest.get("edition_scope") != "historical_release_snapshot":
+        return None
+    snapshot = manifest.get("historical_spine_snapshot")
+    if not isinstance(snapshot, dict):
+        raise ValueError("historical reader manifest is missing historical_spine_snapshot")
+    chapter_ids = snapshot.get("chapter_ids")
+    if not isinstance(chapter_ids, list) or not chapter_ids or not all(
+        isinstance(chapter_id, str) and chapter_id.strip() for chapter_id in chapter_ids
+    ):
+        raise ValueError("historical reader snapshot chapter_ids must be a non-empty string list")
+    if len(chapter_ids) != len(set(chapter_ids)):
+        raise ValueError("historical reader snapshot chapter_ids contains duplicates")
+    expected_digest = hashlib.sha256(
+        json.dumps(chapter_ids, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+    ).hexdigest()
+    if snapshot.get("chapter_ids_sha256") != expected_digest:
+        raise ValueError("historical reader snapshot chapter_ids_sha256 does not match chapter_ids")
+    return chapter_ids
+
+
+def historical_snapshot_chapters(
+    chapter_ids: list[str],
+    records: dict[str, dict[str, Any]],
+    active_chapters: list[dict[str, str]] | None = None,
+) -> list[dict[str, str]]:
+    """Build source-validation records from immutable reader metadata.
+
+    Curated record paths identify tracked source. Generated workspaces retain
+    the active Quarto-relative target paths while the active spine still
+    exactly matches the frozen snapshot.
+    """
+
+    active_by_id = {
+        chapter["chapter_id"]: chapter for chapter in active_chapters or []
+    }
+    chapters: list[dict[str, str]] = []
+    for chapter_id in chapter_ids:
+        record = records.get(chapter_id)
+        if not isinstance(record, dict):
+            continue
+        active = active_by_id.get(chapter_id, {})
+        title = active.get("title", record.get("title"))
+        file_path = active.get("file", record.get("file"))
+        if isinstance(title, str) and isinstance(file_path, str):
+            chapters.append({"chapter_id": chapter_id, "title": title, "file": file_path})
+    return chapters
+
+
+def active_chapter_ids(chapters: list[dict[str, str]]) -> list[str]:
+    return [chapter["chapter_id"] for chapter in chapters]
+
+
+def missing_snapshot_records(chapter_ids: list[str], records: dict[str, dict[str, Any]]) -> list[str]:
+    return [chapter_id for chapter_id in chapter_ids if chapter_id not in records]
 
 
 def curated_record_map(manifest: dict[str, Any]) -> dict[str, dict[str, Any]]:
@@ -174,6 +234,16 @@ def copy_curated_chapters(
             }
         )
     return copied
+
+
+def copy_reader_assets(output_dir: Path) -> None:
+    """Make tracked diagram/image references renderable in the derived workspace."""
+
+    source_assets = ROOT / "assets"
+    target_assets = output_dir / "assets"
+    if not source_assets.exists():
+        raise FileNotFoundError("tracked assets directory is missing")
+    shutil.copytree(source_assets, target_assets, dirs_exist_ok=True)
 
 
 def write_curated_checklist(output_dir: Path, copied: list[dict[str, str]]) -> str:
@@ -316,13 +386,27 @@ def generate(output_dir: Path, profile_id: str = "reader_release") -> dict[str, 
     if not isinstance(structure, dict) or not isinstance(manifest, dict):
         raise TypeError("book_structure.json and curated reader manifest must contain objects")
 
-    chapters = manifest_chapters(structure)
+    active_chapters = manifest_chapters(structure)
     records = curated_record_map(manifest)
+    snapshot_ids = historical_snapshot_ids(manifest)
+    chapters = active_chapters
+    if snapshot_ids is not None:
+        missing_records = missing_snapshot_records(snapshot_ids, records)
+        if missing_records:
+            fail(f"historical reader snapshot missing curated record(s): {missing_records}")
+        chapters = historical_snapshot_chapters(snapshot_ids, records, active_chapters)
     errors = validate_curated_sources(chapters, records)
     if errors:
         fail(errors)
 
+    if snapshot_ids is not None and active_chapter_ids(active_chapters) != snapshot_ids:
+        fail(
+            "historical reader snapshot cannot be rendered from a divergent active spine; "
+            "create a later reader-edition directory and release record for the active chapters"
+        )
+
     baseline_summary = build_reader_edition.generate(output_dir, profile_id)
+    copy_reader_assets(output_dir)
     copied = copy_curated_chapters(output_dir, chapters, records)
     write_curated_checklist(output_dir, copied)
     report = write_report(output_dir, baseline_summary, copied, records)
@@ -345,6 +429,26 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     if args.check:
+        manifest = load_json(MANIFEST_PATH)
+        structure = load_json(STRUCTURE_PATH)
+        if not isinstance(manifest, dict) or not isinstance(structure, dict):
+            fail("book_structure.json and curated reader manifest must contain objects")
+        records = curated_record_map(manifest)
+        snapshot_ids = historical_snapshot_ids(manifest)
+        active_chapters = manifest_chapters(structure)
+        if snapshot_ids is not None and active_chapter_ids(active_chapters) != snapshot_ids:
+            missing_records = missing_snapshot_records(snapshot_ids, records)
+            if missing_records:
+                fail(f"historical reader snapshot missing curated record(s): {missing_records}")
+            errors = validate_curated_sources(historical_snapshot_chapters(snapshot_ids, records), records)
+            if errors:
+                fail(errors)
+            print(
+                "Curated historical reader source check passed: "
+                f"{len(snapshot_ids)} frozen chapters remain valid while the active spine has "
+                f"{len(active_chapters)} chapters; no historical workspace was rendered."
+            )
+            return
         with tempfile.TemporaryDirectory(prefix="asi-curated-reader-") as temp_dir:
             report = generate(Path(temp_dir), args.profile)
             print(
