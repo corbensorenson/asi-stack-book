@@ -2,7 +2,7 @@
 
 Date: 2026-07-10
 
-Project: `/Users/corbensorenson/Documents/old projects to mine/corbens-trainer`
+Project: local historical project `Corben's Trainer` (private source checkout; path intentionally omitted)
 
 Pinned revision: `59a57333b819a64f2ed70c077c4dbdb917337b1c`
 

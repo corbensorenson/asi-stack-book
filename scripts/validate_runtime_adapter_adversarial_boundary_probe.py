@@ -25,7 +25,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "RuntimeAdapters.lean"
 
 COMMAND = "python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py"
@@ -476,11 +476,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "no support-state promotion",
         ],
         CHANGELOG: ["Runtime adapter adversarial boundary probe", rel(RESULT)],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_runtime_adapter_adversarial_boundary_probe.py",
             "docs/runtime_adapter_adversarial_boundary_probe.md",
             "experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json",
-            'run_validator("validate_runtime_adapter_adversarial_boundary_probe.py")',
+            '"script": "validate_runtime_adapter_adversarial_boundary_probe.py"',
         ],
     }
     for path, phrases in required.items():

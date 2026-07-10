@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/reviewer_capacity_registry.schema.json",
+  "title": "Reviewer Capacity Registry",
+  "type": "object",
+  "required": ["schema_version", "policy", "records", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.reviewer_capacity_registry.v0"] },
+    "policy": { "type": "object", "additionalProperties": true },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role_id", "assignment_state", "principal_ref", "decision_classes", "competence", "independence", "conflicts", "load", "response", "escalation_substitute", "review_quality", "authority_ceiling", "unavailable_behavior", "support_state_effect", "non_claims"],
+        "properties": {
+          "role_id": { "type": "string", "minLength": 1 },
+          "assignment_state": { "type": "string", "enum": ["assigned_internal", "assigned_external", "unassigned_required", "deferred_postpublication", "backup_only"] },
+          "principal_ref": { "type": "string" },
+          "decision_classes": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "competence": { "type": "object", "additionalProperties": true },
+          "independence": { "type": "object", "additionalProperties": true },
+          "conflicts": { "type": "object", "additionalProperties": true },
+          "load": { "type": "object", "additionalProperties": true },
+          "response": { "type": "object", "additionalProperties": true },
+          "escalation_substitute": { "type": "object", "additionalProperties": true },
+          "review_quality": { "type": "object", "additionalProperties": true },
+          "authority_ceiling": { "type": "string", "minLength": 1 },
+          "unavailable_behavior": { "type": "string", "minLength": 1 },
+          "support_state_effect": { "type": "string", "enum": ["none"] },
+          "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": { "type": "string", "enum": ["none"] },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

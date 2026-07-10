@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/evidence_quality_vector_registry.schema.json",
+  "title": "Evidence Quality Vector Registry",
+  "type": "object",
+  "required": ["schema_version", "policy_ref", "snapshot_date", "scope", "summary", "vectors", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.evidence_quality_vector_registry.v0"] },
+    "policy_ref": { "type": "string", "minLength": 1 },
+    "snapshot_date": { "type": "string", "minLength": 1 },
+    "scope": { "type": "string", "minLength": 1 },
+    "summary": { "type": "object", "additionalProperties": true },
+    "vectors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["vector_id", "claim_id", "chapter_id", "chapter_file", "summary_support_state", "summary_source", "dimensions", "aggregation", "support_state_effect", "non_claims"],
+        "properties": {
+          "vector_id": { "type": "string", "minLength": 1 },
+          "claim_id": { "type": "string", "minLength": 1 },
+          "chapter_id": { "type": "string", "minLength": 1 },
+          "chapter_file": { "type": "string", "minLength": 1 },
+          "summary_support_state": { "type": "string", "minLength": 1 },
+          "summary_source": { "type": "string", "minLength": 1 },
+          "dimensions": { "type": "object", "additionalProperties": true },
+          "aggregation": {
+            "type": "object",
+            "required": ["policy", "scalar_score", "automatic_support_state_derivation"],
+            "properties": {
+              "policy": { "type": "string", "enum": ["non_aggregating"] },
+              "scalar_score": { "type": "string", "enum": ["prohibited"] },
+              "automatic_support_state_derivation": { "type": "string", "enum": ["prohibited"] }
+            },
+            "additionalProperties": false
+          },
+          "support_state_effect": { "type": "string", "enum": ["none"] },
+          "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": { "type": "string", "enum": ["none"] },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

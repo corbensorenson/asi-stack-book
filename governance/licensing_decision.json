@@ -1,0 +1,83 @@
+{
+  "schema_version": "asi_stack.author_decision_packet.v0",
+  "decision_id": "split-licensing-2026-07-10",
+  "status": "decided",
+  "decision_authority": "author:corben-sorenson; selected publishing policy, not qualified legal advice",
+  "current_state": {
+    "license": "all_rights_reserved_during_active_drafting",
+    "license_file": "LICENSE.md",
+    "scope": "book text, source corpus metadata, code, proofs, schemas, scripts, and assets",
+    "reuse_effect": "No present license is granted without separate written permission.",
+    "selected_policy": "delayed_opening",
+    "decision_date": "2026-07-10",
+    "opening_trigger": "first author-declared completed major release after record-level rights routing",
+    "planned_completed_release_split": {
+      "cleared_author_owned_prose_and_figures": "CC BY 4.0",
+      "cleared_author_owned_software_proofs_schemas_scripts": "Apache License 2.0",
+      "mixed_imported_private_local_project_trademark_endorsement_or_third_party_material": "excluded unless separately cleared and named",
+      "public_metadata": "remain reserved unless record-level review selects and records a compatible license"
+    },
+    "technical_provenance_audit": "complete_path_classification_with_no_ownership_clearance",
+    "provenance_inventory": "licensing/provenance_inventory.json",
+    "inventoried_candidate_paths": 2219,
+    "provenance_cleared_paths": 0
+  },
+  "provisional_rule": "Keep the active drafting repository all-rights-reserved. Do not add SPDX, Creative Commons, or Apache grant signals until the completed-release rights review resolves every included path and the exact release installs its license texts and notices.",
+  "recommendation_for_consideration": "Decision implemented: delayed opening best matches the author-only drafting phase and future adoption goals. The final cleared split is CC BY 4.0 for author-owned prose/figures and Apache-2.0 for author-owned software-like artifacts; metadata and mixed material remain reserved unless separately cleared.",
+  "options": [
+    {
+      "id": "retain_all_rights_reserved",
+      "label": "Retain all rights reserved",
+      "description": "Keep the current no-reuse default and grant permissions case by case.",
+      "benefits": ["Maximum control over derivatives, commercial use, and source-material boundaries.", "No immediate provenance classification or contribution-policy migration."],
+      "risks": ["Strongest adoption, collaboration, quotation, teaching, implementation, and derivative-use friction.", "Public code and schemas cannot be safely reused despite being inspectable."],
+      "affected_surfaces": ["LICENSE.md", "CONTRIBUTING.md", "README.md"],
+      "reversal_cost": "Low to open later for author-owned material; prior permissions remain separately governed.",
+      "external_input_needed": ["author product strategy"],
+      "details": {"prose_figures": "all rights reserved", "code_proofs_schemas_scripts": "all rights reserved", "metadata": "all rights reserved", "contributions": "repository-purpose permission only"}
+    },
+    {
+      "id": "permissive_split",
+      "label": "Permissive split",
+      "description": "License author-owned prose/figures under CC BY 4.0, software-like artifacts under Apache-2.0, and author-owned public metadata under CC0 1.0, with explicit exclusions.",
+      "benefits": ["Maximizes legitimate reuse, translation, teaching, implementation, standards work, and citation.", "Apache-2.0 supplies an explicit patent grant for software contributions.", "Clear asset classes reduce ambiguity."],
+      "risks": ["Allows commercial and modified reuse with attribution.", "Irrevocable grants for released material require a careful ownership and third-party audit.", "Mixed files and generated outputs need deterministic license routing."],
+      "affected_surfaces": ["LICENSE.md", "LICENSES/", "file headers or REUSE metadata", "README.md", "CONTRIBUTING.md", "source inventory", "figure manifests", "release records"],
+      "reversal_cost": "High for already released material because open licenses are generally irrevocable for compliant recipients.",
+      "external_input_needed": ["qualified legal review", "third-party and local-project provenance audit", "author commercial/reuse preference", "contribution policy decision"],
+      "details": {"prose_figures": "CC BY 4.0 when solely author-owned", "code_proofs_schemas_scripts": "Apache License 2.0", "metadata": "CC0 1.0 when solely author-owned", "excluded": ["third-party quotations and assets", "source exports", "private or local-project material without explicit permission", "trademarks and personal endorsements"], "contributions": "Developer Certificate of Origin or explicit inbound-equals-outbound certification"}
+    },
+    {
+      "id": "controlled_split",
+      "label": "Controlled split",
+      "description": "Use CC BY-NC 4.0 or a custom prose license, Apache-2.0 for code-like artifacts, and a separate commercial-permission path.",
+      "benefits": ["Enables many educational and research derivatives while reserving commercial use.", "Software and schemas can still be adopted permissively."],
+      "risks": ["NonCommercial is ambiguous at institutional and platform boundaries and is not considered open by common open-definition standards.", "Custom terms increase compatibility and enforcement complexity.", "Commercial permission workflow creates ongoing administrative load."],
+      "affected_surfaces": ["LICENSE.md", "LICENSES/", "commercial permission policy", "CONTRIBUTING.md", "release records"],
+      "reversal_cost": "High for released grants and ongoing dual-permission obligations.",
+      "external_input_needed": ["qualified legal review", "author commercial strategy", "open-education compatibility review"],
+      "details": {"prose_figures": "CC BY-NC 4.0 or counsel-drafted terms", "code_proofs_schemas_scripts": "Apache License 2.0", "metadata": "CC BY 4.0 or CC0 1.0 after audit", "commercial_use": "separate written license", "contributions": "CLA likely required for relicensing flexibility"}
+    },
+    {
+      "id": "delayed_opening",
+      "label": "Delayed opening",
+      "description": "Keep prose reserved during active drafting, open code/schemas now, and apply a predefined open prose license to frozen major versions after an embargo.",
+      "benefits": ["Allows implementation adoption immediately while preserving editorial control over the moving manuscript.", "Creates a predictable path to open major-version archives."],
+      "risks": ["Most complex version/license matrix.", "Readers may confuse latest and archived permissions.", "Requires exact release manifests and license snapshots per artifact."],
+      "affected_surfaces": ["LICENSE.md", "versioned release policy", "release records", "file manifests", "site notices", "CONTRIBUTING.md"],
+      "reversal_cost": "Medium to high; requires durable per-version license records.",
+      "external_input_needed": ["qualified legal review", "versioned artifact implementation", "author embargo duration decision"],
+      "details": {"live_prose": "all rights reserved during embargo", "frozen_prose": "CC BY 4.0 after declared delay", "code_proofs_schemas_scripts": "Apache License 2.0 immediately", "metadata": "audit-dependent", "contributions": "terms must cover both current and future release licenses"}
+    }
+  ],
+  "selected_option_id": "delayed_opening",
+  "implementation_gate": [
+    "The author selected delayed_opening on 2026-07-10; the active drafting repository remains all-rights-reserved.",
+    "Before the completed major release, use the deterministic path inventory to obtain author ownership assertions, inspect mixed/imported material, quarantine unresolved exceptions, and record the limits of any legal or provenance review; technical classification alone clears no path.",
+    "Keep prepublication contributions closed; define compatible inbound terms before any future contribution is accepted.",
+    "At the opening trigger, add exact CC BY 4.0 and Apache-2.0 texts, notices, deterministic file routing, exclusions, and a release-record license snapshot atomically.",
+    "Validate that rendered pages and generated artifacts carry the correct release-specific notices without licensing excluded material by implication."
+  ],
+  "support_state_effect": "none",
+  "non_claims": ["This packet is not legal advice or qualified legal review.", "The selected delayed-opening policy is not a present open-license grant; LICENSE.md remains operative during drafting.", "A public repository does not imply open-source or open-content rights."]
+}

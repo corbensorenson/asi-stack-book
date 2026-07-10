@@ -34,7 +34,7 @@ MANIFEST = ROOT / "book_structure.json"
 PROOF_MANIFEST = ROOT / "proofs" / "proof_manifest.json"
 PROOF_TRIAGE = ROOT / "proofs" / "proof_triage.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "TheseusReference.lean"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 
 COMMAND = "python3 scripts/validate_theseus_assistant_reference_trace_import.py"
 IMPORT_ID = "theseus-assistant-reference-trace-import-2026-07-06"
@@ -583,9 +583,9 @@ def validate_surfaces(errors: list[str]) -> None:
             "Import Theseus assistant reference trace",
             CLAIM_ID,
         ],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_theseus_assistant_reference_trace_import.py",
-            'run_validator("validate_theseus_assistant_reference_trace_import.py")',
+            '"script": "validate_theseus_assistant_reference_trace_import.py"',
         ],
         LEAN_FILE: [*EXPECTED_THEOREMS],
     }

@@ -1,76 +1,83 @@
 # External Review Status
 
-Last updated: 2026-07-01
+Last updated: 2026-07-10
 
-This ledger records the early external-review state for the v1.x roadmap. It is
-a review-control surface, not evidence and not a support-state transition.
+This ledger records review history and the author's current publication policy.
+It is not evidence and does not change a support state.
 
-## Current Status
+## Current policy
 
-| Field | Status |
-|---|---|
-| Public review request | Opened: <https://github.com/corbensorenson/asi-stack-book/issues/1> |
-| Supplemental consolidation request | Posted: <https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101> |
-| Full consolidation queue request | Posted: <https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4837313658> |
-| Review packet | `docs/external_review_packet.md` |
-| Supplemental consolidation packet | `docs/chapter_consolidation_external_review_packet.md` |
-| Full consolidation packet | `docs/chapter_consolidation_full_review_packet.md` |
-| Structured request-update records | `external_reviews/request_updates/consolidation_review_request_2026-06-29.json`; `external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json` |
-| Dated outreach blocker | `external_reviews/blockers/no_named_external_reviewer_2026-07-01.json` |
-| Intake validation | `python3 scripts/validate_external_review_intake.py` |
-| Review state | Requested publicly; no independent external review has been accepted yet. Dated outreach blocker: no named independent reviewer response or approved direct outreach target. |
-| Review scope requested | Safety-critical Lean limitations, Appendix C support states, non-core evidence ledger, v1.x Beyond-SOTA roadmap, one representative Human view chapter, the two Part I consolidation destination drafts, the five non-pilot review-ready consolidation packages, and the three fold-disposition packages. |
-| Support-state effect | None. |
-| Artifact-release effect | None. |
+Corben Sorenson has decided that **no external-human review, outreach, or reader approval is a prepublication gate**. The book will be completed through
+the author-controlled source, evidence, proof, validation, render, and release
+process. Other people may read or critique the work after the author declares
+it complete; any later finding can reopen the affected living-book artifact.
 
-## Routing Rules
+The three specialist packets remain preserved for optional post-publication
+use:
 
-- Reviewer input is recorded as review input, not source evidence.
-- Actionable findings should become GitHub issues, roadmap tasks, source
-  candidates, proof targets, chapter rewrite tasks, evidence-lane tasks,
-  demotions, or blockers with acceptance criteria.
-- If a reviewer says a thesis is wrong, already solved, too weakly sourced, or
-  not novel, record the finding explicitly before continuing the affected lane.
-- Do not treat reviewer comments as proof, citation, support-state evidence, or
-  artifact approval unless independently backed by source-noted material,
-  accepted evidence transitions, replay artifacts, proof results, or validated
-  review records.
-- Record public request updates, accepted reviews, blockers, rejected reviews,
-  or superseded review requests as structured intake records under
-  `external_reviews/`; keep request-update records at no support-state,
-  artifact-release, or evidence effect.
+- `docs/reviews/formal_methods_review_packet.md`;
+- `docs/reviews/safety_governance_review_packet.md`; and
+- `docs/reviews/systems_editorial_review_packet.md`.
 
-## Pending Review Inputs
+Their reviewer-capacity roles are `deferred_postpublication` in
+`governance/reviewer_capacity_registry.json`. Packet existence does not create
+reviewer competence, availability, independence, review quality, evidence, or
+approval.
 
-No independent external human review response has been accepted into the
-repository yet.
+The machine policy is `governance/external_review_program.json`; capacity is
+`governance/reviewer_capacity_registry.json`; structured record validation is
+`scripts/validate_external_review_intake.py`.
 
-The current structured request-update records preserve the public supplemental
-consolidation-review solicitations only. They record no reviewer finding and no
-reviewer decision.
+## Historical request state
 
-The current dated blocker records that the public request is open, but no named
-independent reviewer with relevant safety, formal-methods, governance,
-AI-systems, evaluation, or technical-publishing expertise has provided an
-accepted response or been authorized for direct outreach. The blocker is a
-process state, not review input and not evidence.
+Before this policy decision, the repository opened a generic public request at
+<https://github.com/corbensorenson/asi-stack-book/issues/1>, followed by the
+supplemental consolidation request at
+<https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4835627101>
+and the full consolidation queue request at
+<https://github.com/corbensorenson/asi-stack-book/issues/1#issuecomment-4837313658>.
+No independent external review was accepted.
 
-## Acceptance Criteria For A Future Review Record
+The historical request updates are
+`external_reviews/request_updates/consolidation_review_request_2026-06-29.json`
+and
+`external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json`.
 
-A future review record should name:
+`external_reviews/blockers/no_named_external_reviewer_2026-07-01.json`
+truthfully records the earlier state: there was no named independent reviewer response or approved direct outreach target. It remains historical rather than
+being rewritten. The author-only completion policy supersedes that blocker as
+a release gate; it does not transform the blocker into a review result.
 
-- reviewer background or anonymized expertise area;
-- review scope and date;
-- reviewed files, chapters, appendices, rendered pages, or artifacts;
-- findings by severity;
-- claims challenged as wrong, already solved, too weakly sourced, or not novel;
-- recommended source, proof, test, chapter, reader, or roadmap follow-ups;
-- attribution and publication boundary;
-- exact non-claims and support-state effect.
+The public issue is to be closed as superseded by the no-prepublication-
+outreach decision. Its URLs and structured request-update records remain
+lineage evidence only.
 
-## Non-Claims
+## AI-assisted critique intake
 
-- This ledger does not create an independent review result.
-- This ledger does not create external evidence, source-derived support, proof
-  results, test results, or artifact approval.
-- This ledger does not promote any chapter core claim above `argument`.
+A user-supplied browser-assisted ChatGPT review was audited on 2026-07-10 and
+routed to `docs/external_ai_review_remediation_program.md`. It is machine-
+assisted review input, not an accepted independent human review, source
+evidence, proof, or support-state transition.
+
+## Routing for any later post-publication review
+
+If the author elects to ingest a post-publication review, record:
+
+- reviewer capacity or anonymized expertise;
+- reviewed artifacts and date;
+- independence, conflicts, attribution, and publication boundary;
+- findings and severity;
+- counterexample, objection, or adequacy argument;
+- recommended disposition; and
+- exact claim, evidence, proof, chapter, source, or release artifact reopened.
+
+Review input remains separate from evidence. It may create a task, blocker,
+demotion, narrowing, or explicit rejection, but cannot by itself promote a claim or approve a release.
+
+## Non-claims
+
+- The repository records that no independent external review has been accepted yet.
+- No external-human review is required for prepublication completion.
+- The author-only policy does not create independent review, external evidence,
+  legal review, proof adequacy, reader approval, or support-state movement.
+- All chapter-core claims remain at their separately recorded support states.

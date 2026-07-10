@@ -28,7 +28,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "Replacement.lean"
 
 COMMAND = "python3 scripts/validate_capability_replacement_trace_probe.py"
@@ -544,11 +544,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "no support-state promotion",
         ],
         CHANGELOG: ["Capability replacement identity sequence bridge", rel(RESULT)],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_capability_replacement_trace_probe.py",
             "docs/capability_replacement_trace_probe.md",
             "experiments/capability_replacement_trace/results/2026-07-02-local.json",
-            'run_validator("validate_capability_replacement_trace_probe.py")',
+            '"script": "validate_capability_replacement_trace_probe.py"',
         ],
     }
     for path, phrases in required.items():

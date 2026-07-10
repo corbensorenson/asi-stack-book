@@ -43,6 +43,7 @@ VCM treats the context window as a compiled working cache over a larger versione
 - Coil Attention, Cyclic Memory, and Recurrence Contracts
 - Policy Optimization and Learning from Feedback
 - Personal Compute Hives and Federated Edge Intelligence
+- `inter-stack-protocols-identity-and-economic-exchange` (Inter-Stack Protocols, Identity, and Economic Exchange)
 - Artifact Steward Agents and Living Project Governance
 - Integrated Reference Architecture
 - Prototype Roadmap

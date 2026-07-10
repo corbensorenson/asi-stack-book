@@ -25,13 +25,31 @@ reports, or benchmark-shaped files exist.
 | `moecot-manifest/` | populated Git worktree; pinned at `8398335bd01569d4bce7bc4ca2792d3ef48832f9` | about 29.3 GiB after verified cleanup and lossless flood-log archival | deep architecture/research dossier and source note recorded; contract/symbol and cross-project provenance passes remain |
 | `BeastBrain/` | extracted source worktree; root Git history is unborn, so pinned by deterministic tree digest `60aa8121...` | about 0.5 GiB after rebuildable target cleanup | deep architecture, implementation-reality, failure-log, source-note, and provisional chapter-boundary dossier recorded; symbol-level cross-project provenance remains |
 | `BugBrain/` | extracted Git worktree; content pinned at `d5ddd37966e2057e8b5ee7fa7bd8f4c833a30dc5` with extraction-induced mode-only drift | about 9.7 GiB after rebuildable/staging cleanup | deep architecture, implementation-reality, security, readiness, retained-report, and host-test dossier recorded; cross-project provenance remains |
-| `corbens best model possible/` | extracted Git worktree | about 8.5 GiB after rebuildable/cache cleanup | ready; deep mining pending |
+| `corbens best model possible/` | extracted Git worktree; pinned at `c61288685ca05ba773402d4a7495cfbba22c2c20`, with 8,286 cleanup-induced deleted tracked artifact paths | about 8.5 GiB after rebuildable/cache cleanup | deep recurrent-model, adapter-bank, architecture-search, compiler, memory, router, governance, verification, tool, speech, metric-provenance, and implementation-reality dossier recorded; cross-project provenance remains |
 | `corbens-trainer/` | clean extracted Git worktree; pinned at `59a57333b819a64f2ed70c077c4dbdb917337b1c` | about 0.8 GiB after rebuildable target cleanup | deep control-plane, retained-artifact, failure, dataset, benchmark-authenticity, promotion-revocation, and checkpoint dossier recorded; Best Model and cross-project provenance remain |
 
 All six currently visible projects are extracted. No further cleanup is in
 scope after the user's 2026-07-10 direction to prioritize idea mining. The
 intake directory should be rescanned before the program is closed because
 additional archives may still be unzipping outside this task.
+
+The first deep mining pass is complete for all six visible projects. The
+[cross-project synthesis](cross-project-synthesis.md) deduplicates them into one
+local architecture lineage, records exact chapter insertions, and keeps the
+candidate Durable Semantic Memory and Knowledge Lattices chapter deferred
+pending independent literature and final intake review.
+
+The active fold-first execution plan is the
+[Historical Project Incorporation Roadmap](../historical_project_incorporation_roadmap.md).
+It improves existing chapter owners in evidence, architecture, execution,
+memory, routing, learning, resources, and governance before the deferred
+durable-memory chapter receives an add-or-reject decision.
+
+A closing intake rescan on 2026-07-10 found exactly those six project
+directories, each with a Git directory, plus `.DS_Store`. It found no remaining
+archive file and no seventh extracted project. This closes the first mining
+wave; a later project can be appended without changing the evidence posture of
+the completed records.
 
 ## Mining completeness gate
 
@@ -84,5 +102,6 @@ history-rewriting actions.
 - [MoECOT Manifest](moecot-manifest.md)
 - [BeastBrain](beastbrain.md)
 - [BugBrain](bugbrain.md)
-- Corben's Best Model Possible — pending deep mining
+- [Corben's Best Model Possible](corbens-best-model-possible.md)
 - [Corben's Trainer](corbens-trainer.md)
+- [Cross-project ASI Stack synthesis](cross-project-synthesis.md)

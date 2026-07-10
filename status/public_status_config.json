@@ -1,0 +1,53 @@
+{
+  "schema_version": "0.1",
+  "active_version": "v1.x-development",
+  "baseline_release": "v1.0.0",
+  "release_profile": "live_book",
+  "deployment_channel": "latest",
+  "site_url": "https://corbensorenson.github.io/asi-stack-book/",
+  "canonical_status_path": "status/canonical-public-status.json",
+  "immutable_release_prefix": "versions/",
+  "latest_release_prefix": "latest/",
+  "active_source_surfaces": [
+    {
+      "path": "README.md",
+      "required_metrics": [
+        "chapter_count",
+        "source_count",
+        "core_claim_count",
+        "external_positioning_count"
+      ]
+    },
+    {
+      "path": "index.qmd",
+      "required_metrics": [
+        "chapter_count",
+        "source_count",
+        "core_claim_count",
+        "external_positioning_count"
+      ]
+    },
+    {
+      "path": "docs/v1_0_candidate_status.md",
+      "required_metrics": [
+        "chapter_count",
+        "source_count",
+        "core_claim_count",
+        "external_positioning_count"
+      ]
+    },
+    {
+      "path": "docs/publication_readiness.md",
+      "required_metrics": [
+        "chapter_count",
+        "core_claim_count",
+        "external_positioning_count"
+      ]
+    }
+  ],
+  "historical_scope_markers": {
+    "begin": "<!-- canonical-status:historical-begin -->",
+    "end": "<!-- canonical-status:historical-end -->",
+    "line": "<!-- canonical-status:historical -->"
+  }
+}

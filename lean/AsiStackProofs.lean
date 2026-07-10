@@ -23,8 +23,10 @@ import AsiStackProofs.FastGeneration
 import AsiStackProofs.FailureModes
 import AsiStackProofs.GenerateVerifyRepair
 import AsiStackProofs.GovernanceRights
+import AsiStackProofs.GovernedRepositoryTrace
 import AsiStackProofs.IntentContracts
 import AsiStackProofs.IntentToExecution
+import AsiStackProofs.InterStackProtocols
 import AsiStackProofs.LivingBook
 import AsiStackProofs.MoECOTRuntime
 import AsiStackProofs.ModelWeightCustody

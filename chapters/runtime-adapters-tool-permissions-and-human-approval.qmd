@@ -340,6 +340,7 @@ These proof hooks are implemented as finite-record predicates plus negative-case
 | `ext_levels_automation_2000` | A Model for Types and Levels of Human Interaction with Automation | human_factors_automation | External comparator for separating approval by information acquisition, analysis, decision/action selection, and action implementation levels. | source note available; comparator only |
 | `ext_complacency_bias_automation_2010` | Complacency and Bias in Human Use of Automation: An Attentional Integration | human_factors_automation | External comparator for automation complacency, automation bias, omission and commission errors, workload, attention, and imperfect decision aids. | source note available; comparator only |
 | `ext_cap_theorem_gilbert_lynch_2002` | Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services | distributed_systems_consistency | External comparator for CAP-style safety/liveness and partition-tolerance pressure at the adapter authority boundary: stale grants, revocation delay, fresh receipt requirements, and no-mutation evidence. | source note available; comparator only |
+| `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | Inspect AI, AgentDojo, CaMeL, and OWASP Agentic Top 10 | agent_tool_security | Current comparators for agent/tool evaluation, indirect injection, capability-secure data flow, and agentic-risk coverage. | source notes available; no local adapter robustness, approval quality, or safety result |
 
 The source set anchors the effects boundary: authority handles, approval gates, tool permissions, operator-visible control surfaces, human oversight degradation, and partitioned authority. Five Google Docs raw-cache sources, two local public-project sources, four external human-factors comparators, and one distributed-systems comparator now have passage-reviewed Appendix C mappings or source-note records. `moecot` remains connector/source-note mapped until runtime artifacts, approval traces, sandbox records, benchmark/replay logs, or external corroboration are imported and inspected. The crosswalk does not claim safe tool execution, reviewer correctness, deployed approval-service behavior, distributed consensus, partition tolerance, or revocation propagation has been demonstrated here.
 
@@ -353,4 +354,9 @@ That conservative boundary is what lets execution become useful without becoming
 
 ## Handoff
 
-Runtime receipts create the evidence needed to decide whether repeated work should become reusable procedure. Procedural Memory and Cognitive Loop Closure takes those traces and asks which loops can be safely abstracted, parameterized, verified, registered, monitored, and retired. The boundary prevents habit from masquerading as learning: a pattern becomes memory only when its scope, failures, regressions, and retirement triggers are visible.
+Runtime Adapters owns the local effect lease, but remote tasks, tools, identities,
+credentials, and value-bearing requests need a governed handoff before they can
+reach that lease. Inter-Stack Protocols, Identity, and Economic Exchange now
+binds protocol version, peers, principal, delegation, credential, budget,
+receipt, revocation, dispute, and residual records across that boundary before
+Procedural Memory decides whether any completed trace is reusable.

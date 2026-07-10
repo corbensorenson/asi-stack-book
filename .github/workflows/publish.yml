@@ -1,11 +1,12 @@
-name: Publish Quarto site
+name: Deploy tested Quarto site
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["Build tested Pages artifact"]
+    types: [completed]
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -15,101 +16,71 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        with:
-          version: "1.9.38"
-
-      - name: Install Lean
-        run: |
-          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y --default-toolchain "$(cat lean/lean-toolchain)"
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
-
-      - name: Check generated scaffold
-        run: |
-          python3 scripts/sync_scaffold.py
-          git diff --exit-code
-
-      - name: Validate book source
-        run: |
-          python3 scripts/sync_proof_manifest.py --check
-          python3 scripts/validate_validator_coverage.py
-          python3 scripts/validate_proof_depth.py
-          python3 scripts/validate_architecture_red_team.py
-          python3 scripts/validate_release_reproducibility.py
-          python3 scripts/validate_chapter_dod.py
-          python3 scripts/validate_publication.py
-          python3 scripts/validate_release_profiles.py
-          python3 scripts/validate_reading_mode_toggle.py
-          python3 scripts/validate_human_reading_paths.py
-          python3 scripts/validate_reader_evidence_boundaries.py --check
-          python3 scripts/sync_reader_overlay_asset.py --check
-          python3 scripts/validate_reader_overlays.py --check
-          python3 scripts/validate_source_appendices.py
-          python3 scripts/validate_v1_status_snapshot.py
-          python3 scripts/validate_outline_consistency.py
-          python3 scripts/validate_implementation_horizons.py
-          python3 scripts/validate_reader_spine.py --check
-          python3 scripts/build_reader_edition.py --check
-          python3 scripts/render_reader_formats.py --check
-          python3 scripts/build_audio_script.py --check
-          python3 scripts/validate_book.py
-          python3 scripts/validate_visual_coverage.py
-          python3 scripts/validate_proof_artifact_audit.py
-          python3 scripts/validate_protocol_crosswalk.py
-          python3 scripts/validate_source_evidence_audit.py
-          python3 scripts/validate_schemas.py
-          python3 scripts/validate_protocol_examples.py
-          python3 scripts/validate_core_claim_decisions.py
-          python3 scripts/validate_external_sota_positioning.py
-          python3 scripts/validate_repeated_prose.py
-
-      - name: Build Lean proofs
-        run: cd lean && lake build
-
-      - name: Render HTML
-        env:
-          LANG: C.UTF-8
-          LC_ALL: C.UTF-8
-        run: quarto render --to html
-
-      - name: Validate live Human view
-        run: python3 scripts/validate_live_human_view.py
-
-      - name: Browser-smoke live Human view
-        run: node scripts/validate_live_human_view_browser.js
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: _site
-
   deploy:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    needs: build
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Check out tested source
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.11"
+
+      - name: Download successful tested artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: pages-tested-${{ github.event.workflow_run.head_sha }}
+          path: build/pages-tested
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify commit-bound artifact without rebuilding
+        run: python3 scripts/validate_tested_site_bundle.py --bundle build/pages-tested --expected-commit "${{ github.event.workflow_run.head_sha }}"
+
+      - name: Upload already-tested Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: build/pages-tested/site
+
+      - name: Deploy already-tested artifact
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5
         with:
           timeout: 600000
+
+  attest:
+    name: Attest deployed Pages site
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Check out tested source
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
+        with:
+          python-version: "3.11"
+
+      - name: Crawl deployed status and chapter graph
+        env:
+          GITHUB_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          python3 scripts/validate_public_status_consistency.py \
+            --url "${{ needs.deploy.outputs.page_url }}" \
+            --require-clean \
+            --attempts 12 \
+            --retry-delay 10

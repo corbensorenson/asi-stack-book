@@ -9,6 +9,7 @@ the cleaned Quarto source needed for those later release steps.
 from __future__ import annotations
 
 import argparse
+import copy
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -21,6 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE_PATH = ROOT / "book_structure.json"
 PROFILES_PATH = ROOT / "editions" / "release_profiles.json"
 DEFAULT_OUTPUT = ROOT / "build" / "reader_edition"
+DEFAULT_NARRATIVE_SPINE = ROOT / "products" / "narrative_product_spine.json"
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 FRONTMATTER_RE = re.compile(r"\A---\n(.*?)\n---\n?", re.DOTALL)
@@ -122,9 +124,9 @@ def strip_sections(text: str, strip_headings: set[tuple[int, str]]) -> tuple[str
             continue
 
         open_match = FENCED_DIV_OPEN_RE.match(line)
-        if skip_level is not None and open_match:
+        if open_match:
             classes = fenced_div_classes(open_match.group(2))
-            if HUMAN_ONLY_CLASS in classes:
+            if AI_ONLY_CLASS in classes or HUMAN_ONLY_CLASS in classes:
                 preserved_block_fence = len(open_match.group(1))
                 output.append(line)
                 continue
@@ -355,6 +357,115 @@ def flatten_parts(structure: dict) -> list[dict]:
             continue
         parts.append(part)
     return parts
+
+
+def load_narrative_spine(path: Path | None) -> dict[str, object] | None:
+    if path is None:
+        return None
+    resolved = path if path.is_absolute() else ROOT / path
+    data = load_json(resolved)
+    if not isinstance(data, dict):
+        raise TypeError(f"{resolved}: narrative spine must contain an object")
+    if data.get("schema_version") != "asi_stack.narrative_product_spine.v0":
+        raise ValueError(f"{resolved}: unsupported narrative spine schema_version")
+    chapters = data.get("chapters")
+    if not isinstance(chapters, list) or not 12 <= len(chapters) <= 15:
+        raise ValueError(f"{resolved}: narrative spine must select 12 to 15 chapters")
+    return data
+
+
+def filter_structure_for_narrative_spine(
+    structure: dict,
+    spine: dict[str, object] | None,
+) -> tuple[dict, list[str]]:
+    if spine is None:
+        return structure, []
+    chapter_records = spine.get("chapters", [])
+    if not isinstance(chapter_records, list):
+        raise TypeError("narrative spine chapters must be a list")
+    selected_ids = [str(record.get("chapter_id", "")) for record in chapter_records if isinstance(record, dict)]
+    if len(selected_ids) != len(chapter_records) or len(set(selected_ids)) != len(selected_ids):
+        raise ValueError("narrative spine chapter IDs must be non-empty and unique")
+    selected_set = set(selected_ids)
+    filtered = copy.deepcopy(structure)
+    canonical_ids: list[str] = []
+    retained_parts: list[dict] = []
+    for part in filtered.get("parts", []):
+        chapters = []
+        for chapter in part.get("chapters", []):
+            chapter_id = str(chapter.get("chapter_id") or chapter.get("id") or "")
+            if chapter_id in selected_set:
+                chapters.append(chapter)
+                canonical_ids.append(chapter_id)
+        if chapters:
+            part["chapters"] = chapters
+            retained_parts.append(part)
+    missing = sorted(selected_set - set(canonical_ids))
+    if missing:
+        raise ValueError(f"narrative spine references unknown canonical chapters: {missing}")
+    if canonical_ids != selected_ids:
+        raise ValueError("narrative spine must preserve canonical manifest order")
+    filtered["parts"] = retained_parts
+    return filtered, selected_ids
+
+
+def filter_overlay_context_for_structure(context: dict[str, object], structure: dict) -> None:
+    if not context.get("configured"):
+        return
+    included_files = {
+        str(chapter.get("file", ""))
+        for part in flatten_parts(structure)
+        for chapter in part.get("chapters", [])
+    }
+    included_files.update(str(path) for path in structure.get("front_matter", []))
+    operations = context.get("operations", [])
+    if not isinstance(operations, list):
+        return
+    retained: list[dict[str, object]] = []
+    skipped = context.get("skipped_records")
+    if not isinstance(skipped, list):
+        skipped = []
+        context["skipped_records"] = skipped
+    for operation in operations:
+        if not isinstance(operation, dict):
+            continue
+        if str(operation.get("target_file", "")) in included_files:
+            retained.append(operation)
+            continue
+        skipped.append({
+            "id": operation.get("id"),
+            "status": "excluded_by_narrative_spine",
+            "target_file": operation.get("target_file"),
+            "action": operation.get("action"),
+            "section": operation.get("section"),
+            "source_path": operation.get("source_path"),
+        })
+    context["operations"] = retained
+
+
+def inject_narrative_orientation(path: Path, record: dict[str, object]) -> None:
+    text = path.read_text(encoding="utf-8")
+    first_break = text.find("\n")
+    if first_break < 0:
+        raise ValueError(f"{path}: generated narrative chapter is missing an H1")
+    lines = [
+        "",
+        "::: {.callout-note title=\"Narrative orientation\"}",
+        f"**Question.** {record['reader_question']}",
+        "",
+        f"**Running example.** {record['running_example']}",
+        "",
+        f"**Strongest objection.** {record['strongest_objection']}",
+        "",
+        f"**Failure story.** {record['failure_story']}",
+        "",
+        f"**What would change the conclusion.** {record['evidence_that_would_change_the_conclusion']}",
+        "",
+        f"Canonical core claim: `{record['core_claim_ref']}`. This orientation adds no evidence and changes no support state.",
+        ":::",
+        "",
+    ]
+    path.write_text(text[: first_break + 1] + "\n".join(lines) + text[first_break + 1 :].lstrip(), encoding="utf-8")
 
 
 def profile_strip_headings(profile: dict) -> set[tuple[int, str]]:
@@ -1394,6 +1505,9 @@ def write_reader_manifest(
             for fmt in reader_policy.get("optional_downstream_formats", [])
         },
         "chapters": summary["chapters"],
+        "narrative_product_spine": summary.get("narrative_product_spine"),
+        "selected_chapter_ids": summary.get("selected_chapter_ids", []),
+        "omitted_canonical_chapter_count": summary.get("omitted_canonical_chapter_count", 0),
         "files": summary["files"],
         "content_layer_policy": profile.get("content_layer_policy", {}),
         "stripped_heading_policy": profile.get("strip_headings", []),
@@ -1458,10 +1572,25 @@ def remove_tree(path: Path) -> None:
         shutil.rmtree(path)
 
 
-def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
+def generate(
+    output_dir: Path,
+    profile_id: str,
+    narrative_spine_path: Path | None = None,
+) -> dict[str, object]:
     structure = load_json(STRUCTURE_PATH)
     if not isinstance(structure, dict):
         raise TypeError("book_structure.json must contain an object")
+    canonical_chapter_count = sum(
+        len(part.get("chapters", []))
+        for part in flatten_parts(structure)
+    )
+    narrative_spine = load_narrative_spine(narrative_spine_path)
+    structure, selected_chapter_ids = filter_structure_for_narrative_spine(structure, narrative_spine)
+    narrative_records = {
+        str(record["chapter_id"]): record
+        for record in (narrative_spine or {}).get("chapters", [])
+        if isinstance(record, dict)
+    }
     profile_data = load_release_profiles()
     reader_policy = profile_data.get("reader_manuscript_policy", {})
     if not isinstance(reader_policy, dict):
@@ -1478,6 +1607,8 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
     profile = find_profile(profile_id)
     strip_headings = profile_strip_headings(profile)
     overlay_context = load_reader_overlay_context(profile)
+    if narrative_spine is not None:
+        filter_overlay_context_for_structure(overlay_context, structure)
 
     if output_dir.exists():
         remove_tree(output_dir)
@@ -1512,6 +1643,9 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
             src = ROOT / chapter["file"]
             removed = clean_file(src, output_dir / chapter["file"], strip_headings, str(chapter["title"]))
             apply_reader_overlay_to_file(output_dir / chapter["file"], chapter["file"], overlay_context)
+            chapter_id = str(chapter.get("chapter_id") or chapter.get("id") or "")
+            if narrative_spine is not None:
+                inject_narrative_orientation(output_dir / chapter["file"], narrative_records[chapter_id])
             copied_files += 1
             chapter_count += 1
             for key, count in removed.items():
@@ -1548,6 +1682,17 @@ def generate(output_dir: Path, profile_id: str) -> dict[str, object]:
         "output_dir": str(output_dir),
         "profile": profile_id,
         "chapters": chapter_count,
+        "narrative_product_spine": (
+            narrative_spine_path.as_posix()
+            if narrative_spine_path is not None and not narrative_spine_path.is_absolute()
+            else (
+                str(narrative_spine_path.relative_to(ROOT))
+                if narrative_spine_path is not None and narrative_spine_path.is_relative_to(ROOT)
+                else str(narrative_spine_path) if narrative_spine_path is not None else None
+            )
+        ),
+        "selected_chapter_ids": selected_chapter_ids,
+        "omitted_canonical_chapter_count": canonical_chapter_count - chapter_count,
         "files": copied_files,
         "removed_sections": removed_totals,
         "stripped_heading_count": sum(
@@ -1630,6 +1775,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", default="reader_release", help="edition profile id to generate")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT), help="output directory for generated Quarto source")
+    parser.add_argument(
+        "--narrative-spine",
+        type=Path,
+        help="optional 12-to-15 chapter narrative product spine; preserves canonical order",
+    )
     parser.add_argument("--check", action="store_true", help="generate into a temporary directory and verify stripped headings")
     return parser.parse_args()
 
@@ -1642,7 +1792,7 @@ def main() -> None:
     if args.check:
         with tempfile.TemporaryDirectory(prefix="asi-reader-edition-") as temp_dir:
             output_dir = Path(temp_dir)
-            summary = generate(output_dir, args.profile)
+            summary = generate(output_dir, args.profile, args.narrative_spine)
             violations = scan_for_stripped_headings(output_dir, strip_headings)
             violations.extend(scan_for_view_block_markers(output_dir))
             violations.extend(scan_for_reader_scaffold_terms(output_dir))
@@ -1706,7 +1856,7 @@ def main() -> None:
             return
 
     output_dir = Path(args.output)
-    summary = generate(output_dir, args.profile)
+    summary = generate(output_dir, args.profile, args.narrative_spine)
     print(
         "Reader edition generated: "
         f"{summary['output_dir']} "

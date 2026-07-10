@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/ci_dependency_pin_inventory.schema.json",
+  "title": "ASI Stack CI Dependency Pin Inventory",
+  "type": "object",
+  "required": ["schema_version", "review_policy", "pins", "non_claims"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["asi_stack.ci_dependency_pin_inventory.v0"]
+    },
+    "review_policy": {
+      "type": "object",
+      "required": ["max_review_age_days", "warning_age_days", "fail_closed_after_due", "as_of_source"],
+      "properties": {
+        "max_review_age_days": { "type": "integer", "minimum": 1, "maximum": 365 },
+        "warning_age_days": { "type": "integer", "minimum": 1, "maximum": 364 },
+        "fail_closed_after_due": { "type": "boolean", "const": true },
+        "as_of_source": {
+          "type": "string",
+          "const": "UTC system date unless ASI_PIN_REVIEW_AS_OF supplies an explicit YYYY-MM-DD audit date"
+        }
+      },
+      "additionalProperties": false
+    },
+    "pins": {
+      "type": "array",
+      "minItems": 9,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "repository",
+          "pin",
+          "tag_context",
+          "reviewed_on",
+          "review_due_on",
+          "review_method",
+          "update_authority",
+          "residual"
+        ],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "kind": { "type": "string", "enum": ["github_action", "commit_url_installer"] },
+          "repository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)?$" },
+          "pin": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+          "tag_context": { "type": "string", "minLength": 1 },
+          "artifact_url": { "type": "string", "pattern": "^https://" },
+          "artifact_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "reviewed_on": { "type": "string", "format": "date" },
+          "review_due_on": { "type": "string", "format": "date" },
+          "review_method": { "type": "string", "minLength": 24 },
+          "update_authority": { "type": "string", "minLength": 24 },
+          "residual": { "type": "string", "minLength": 24 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "additionalProperties": false
+}

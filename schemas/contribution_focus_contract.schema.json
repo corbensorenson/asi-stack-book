@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/contribution_focus_contract.schema.json",
+  "title": "Contribution Focus Contract",
+  "type": "object",
+  "required": ["schema_version", "program_rule", "contributions", "chapter_assignments", "summary", "non_claims"],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.contribution_focus_contract.v0"] },
+    "program_rule": { "type": "string", "minLength": 1 },
+    "contributions": { "type": "array", "minItems": 3, "items": { "type": "object", "additionalProperties": true } },
+    "chapter_assignments": { "type": "array", "minItems": 1, "items": { "type": "object", "additionalProperties": true } },
+    "summary": { "type": "object", "additionalProperties": true },
+    "non_claims": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

@@ -310,6 +310,7 @@ only preserves the modeled consequence of a required invalid attestation.
 | `ext_nvidia_confidential_model_lifecycle_2026` | Vendor-specific comparator for encrypted weights outside a confidential workload, policy-sensitive attestation, and key-release lifecycle. | No local NVIDIA stack, confidential workload, host-secrecy assessment, deployment, safety, readiness, or authority result. |
 | `ext_provable_model_weight_release_2025` | Comparator for explicit attacker/security-property definitions, extraction analysis, and the irreversibility boundary of weight release. | No local release scheme, extraction result, protected distribution, safety, readiness, authority, or ASI result. |
 | `cca_project` | Bounded local implementation-reference comparator for protected governance state, mutable capability state, and device-mesh role separation. | No weight custody, attestation, confidential inference, security effectiveness, readiness, deployment authority, or ASI result. |
+| `ext_in_toto_2019` | Cryptographic supply-chain step and functionary attestation comparator for custody-adjacent lifecycle verification. | Valid attestations do not prove artifact correctness, uncompromised authorized actors, model safety, or release merit. |
 
 ## Summary
 

@@ -1,0 +1,73 @@
+{
+  "schema_version": "asi_stack.product_contracts.v0",
+  "canonical_source_tree": "book_structure.json plus canonical chapter, source, evidence, proof, and release records",
+  "products": [
+    {
+      "id": "narrative_book",
+      "label": "Narrative technical book",
+      "primary_audience": "interested technical readers",
+      "reader_question": "What is the architecture, why does it matter, and how do its pieces fit together?",
+      "entry_points": [
+        "products/narrative-book/index.html",
+        "index.html?view=human",
+        "products/narrative_product_spine.json",
+        "docs/release_editions_plan.md",
+        "docs/reader_continuity_audit.md"
+      ],
+      "source_layers": ["reader_spine", "companion_material"],
+      "navigation_contract": "Part and chapter progression, Human Reading Path bridges, summaries, handoffs, glossary, and selected source appendices.",
+      "density_contract": "Hide live status, test, proof-hook, source-crosswalk, and repeated support boilerplate; retain meaning-changing uncertainty and plain-language evidence boundaries.",
+      "release_profile": "reader_release",
+      "current_status": "generated_15_chapter_candidate_route_and_live_human_projection_available_but_not_a_reviewed_reader_release",
+      "review_gate": "Chapter continuity, editorial review, format-specific review, accessibility, figures, and an edition release record.",
+      "forbidden_inference": "Human view convenience does not mean a reviewed reader artifact exists."
+    },
+    {
+      "id": "architecture_reference",
+      "label": "Architecture reference specification",
+      "primary_audience": "system designers, implementers, and technical reviewers",
+      "reader_question": "What are the responsibilities, interfaces, states, invariants, failure routes, and implementation horizons?",
+      "entry_points": [
+        "products/architecture-reference/index.html",
+        "chapters/integrated-reference-architecture.html?view=ai",
+        "appendices/D_protocol_schemas.html",
+        "appendices/K_implementation_horizons.html"
+      ],
+      "source_layers": ["reader_spine", "live_research_scaffold", "machine_contracts"],
+      "navigation_contract": "Layer and interface lookup through the AI/research view, integrated reference trace, protocol schemas, implementation horizons, and glossary.",
+      "density_contract": "Retain mechanisms, interfaces, invariants, failure modes, formal hooks, test plans, schemas, and implementation horizons; route evidence totals to the registry instead of repeating them as architecture prose.",
+      "release_profile": "research_release",
+      "current_status": "generated_54_chapter_reference_index_available_but_not_a_deployed_system_or_approved_release",
+      "review_gate": "Interface consistency, schema/examples, trace coverage, proof-scope review, implementation-horizon review, and a research release record.",
+      "forbidden_inference": "A complete reference record does not establish deployed enforcement or system quality."
+    },
+    {
+      "id": "evidence_registry",
+      "label": "Evidence, proof, and release registry",
+      "primary_audience": "auditors, reviewers, researchers, and maintenance agents",
+      "reader_question": "What is actually supported, by which source or artifact, under what scope, and with which residuals?",
+      "entry_points": [
+        "products/evidence-registry/index.html",
+        "status/canonical-public-status.json",
+        "evidence_quality/core_claim_vectors.json",
+        "appendices/C_claim_evidence_matrix.html",
+        "appendices/E_codex_test_specs.html",
+        "docs/v1_0_candidate_status.md"
+      ],
+      "source_layers": ["evidence_matrices", "machine_contracts", "release_derivatives"],
+      "navigation_contract": "Canonical status first, then claim/evidence matrix, source ownership appendices, test/proof ledgers, release records, changelog, and residual-specific reports.",
+      "density_contract": "Prefer structured records, exact IDs, digests, commands, support-state effects, negative controls, and non-claims over narrative repetition.",
+      "release_profile": "live_book",
+      "current_status": "generated_content_addressed_registry_route_available_with_no_independent_review_claim",
+      "review_gate": "Schema and ledger validation, source ownership, artifact/reality checks, clean commit-bound status, deployment attestation, and independent review where claimed.",
+      "forbidden_inference": "Record count, schema validity, or validator success does not prove the underlying architecture or chapter claims."
+    }
+  ],
+  "shared_rules": [
+    "All three products derive from one canonical source tree; none may become an untracked parallel manuscript or evidence ledger.",
+    "A product projection may omit detail but may not omit uncertainty that changes claim meaning.",
+    "Product availability, artifact approval, and support-state evidence are separate states.",
+    "Navigation labels must identify the product question instead of presenting all technical surfaces as one reading path.",
+    "No product contract promotes a chapter-core support state."
+  ]
+}

@@ -114,9 +114,9 @@ def validate_entry(entry: dict[str, Any], chapter_ids: set[str], shared_text: di
     require_text(doc, [entry["command"], entry["result_record"], entry["result_summary"], "Boundary"], errors)
     require_text(result_record, [entry["command"], entry["result_summary"], "Non-claims"], errors)
 
-    validate_book_text = shared_text[ROOT / "scripts" / "validate_book.py"]
-    if Path(entry["script"]).name not in validate_book_text:
-        errors.append(f"{entry_id}: {entry['script']} is not wired into scripts/validate_book.py.")
+    validation_registry_text = shared_text[ROOT / "validation" / "registry.json"]
+    if Path(entry["script"]).name not in validation_registry_text:
+        errors.append(f"{entry_id}: {entry['script']} is not wired into validation/registry.json.")
 
     appendix_text = shared_text[ROOT / "appendices" / "E_codex_test_specs.qmd"]
     if entry["command"] not in appendix_text:
@@ -152,7 +152,7 @@ def main() -> None:
     structure = load_json(ROOT / "book_structure.json")
     chapter_ids = flatten_chapters(structure if isinstance(structure, dict) else {})
     shared_paths = [
-        ROOT / "scripts" / "validate_book.py",
+        ROOT / "validation" / "registry.json",
         ROOT / "appendices" / "E_codex_test_specs.qmd",
         STATUS,
         *PUBLIC_SURFACES,

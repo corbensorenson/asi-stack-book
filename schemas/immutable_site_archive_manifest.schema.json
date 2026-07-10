@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/immutable_site_archive_manifest.schema.json",
+  "title": "ASI Stack Immutable Site Archive Candidate",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "candidate_state",
+    "version",
+    "source_commit",
+    "source_tree_state",
+    "build_context",
+    "release_policy",
+    "archive",
+    "source_bundle",
+    "publication",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["asi_stack.immutable_site_archive_candidate.v0"]
+    },
+    "candidate_state": {
+      "type": "string",
+      "enum": ["publishable_clean_candidate", "diagnostic_dirty_local_candidate"]
+    },
+    "version": { "type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "source_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "source_tree_state": { "type": "string", "enum": ["clean", "dirty"] },
+    "build_context": { "type": "string", "enum": ["tested_commit", "local_worktree"] },
+    "release_policy": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "archive": {
+      "type": "object",
+      "required": ["filename", "root_directory", "media_type", "size", "sha256", "member_count", "timestamp_epoch"],
+      "properties": {
+        "filename": { "type": "string", "minLength": 1 },
+        "root_directory": { "type": "string", "minLength": 1 },
+        "media_type": { "type": "string", "const": "application/gzip" },
+        "size": { "type": "integer", "minimum": 1 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "member_count": { "type": "integer", "minimum": 2 },
+        "timestamp_epoch": { "type": "integer", "const": 0 }
+      },
+      "additionalProperties": false
+    },
+    "source_bundle": {
+      "type": "object",
+      "required": ["manifest_filename", "manifest_sha256", "site_file_count", "site_total_bytes", "site_tree_sha256"],
+      "properties": {
+        "manifest_filename": { "type": "string", "const": "tested-site-bundle.json" },
+        "manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "site_file_count": { "type": "integer", "minimum": 1 },
+        "site_total_bytes": { "type": "integer", "minimum": 1 },
+        "site_tree_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "publication": {
+      "type": "object",
+      "required": ["state", "storage_authority", "release_record", "url", "authorization_required"],
+      "properties": {
+        "state": { "type": "string", "const": "local_candidate_not_published" },
+        "storage_authority": { "type": "string", "minLength": 1 },
+        "release_record": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "maxLength": 0 },
+        "authorization_required": { "type": "boolean", "const": true }
+      },
+      "additionalProperties": false
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "additionalProperties": false
+}

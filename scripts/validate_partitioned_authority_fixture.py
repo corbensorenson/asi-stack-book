@@ -33,7 +33,7 @@ RUNTIME_READER = (
 OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "PersonalComputeHives.lean"
 SOURCE_INVENTORY = ROOT / "sources" / "source_inventory.json"
@@ -324,13 +324,13 @@ def validate_surfaces(errors: list[str]) -> None:
                 "does not create a support-state transition",
             ],
         ),
-        rel(VALIDATE_BOOK): (
-            VALIDATE_BOOK,
+        rel(VALIDATION_REGISTRY): (
+            VALIDATION_REGISTRY,
             [
                 "scripts/validate_partitioned_authority_fixture.py",
                 "docs/partitioned_authority_fixture.md",
                 rel(RESULT),
-                'run_validator("validate_partitioned_authority_fixture.py")',
+                '"script": "validate_partitioned_authority_fixture.py"',
             ],
         ),
         rel(LEAN_FILE): (

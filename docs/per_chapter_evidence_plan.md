@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-09
 
-This file is the active 53-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the active 54-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ most two direct support lanes. The remaining lanes stay `planned, not
 executed`; they must not receive synthetic fixtures, pass/fail status, or
 support-state pressure merely for coverage. The active cycle selection is
 recorded in `docs/v1_x_active_evidence_cycle.md`: three lanes are selected and
-the other 50 remain planned-only.
+the other 51 remain planned-only.
 
 Selection criteria:
 
@@ -71,6 +71,7 @@ support-state transition by itself.
 | II | `labor-os-and-typed-jobs` | Theseus operator OS plus typed-job fixtures | Import a public-safe job lifecycle trace. | Make agent labor feel like accountable work tickets. | Job cannot dispatch without requirements, permissions, and receipt path. |
 | II | `artifact-graphs-audit-logs-and-replay` | Artifact graph replay harness plus Theseus report | Add graph integrity, provenance mismatch, and replay failure cases. | Show artifacts as memory the system can audit. | Replay reproduces expected graph or records exact divergence. |
 | II | `runtime-adapters-tool-permissions-and-human-approval` | Runtime adapter harness plus Theseus operator OS | Add approval expiry, rollback handles, irreversible residuals, and authority receipts. | Make tool use feel like bounded action with human checkpoints. | High-impact adapter call fails without current approval and receipt. |
+| II | `inter-stack-protocols-identity-and-economic-exchange` | Source-noted MCP, A2A, DID/VC, and Interledger comparators plus finite credential/budget dispatch routes | Build a public-safe exchange-contract workload with protocol/schema, endpoint/capability, sender/receiver/principal, delegation, credential, audience/scope/expiry, consideration/reservation, receipt, dispute, revocation, and residual controls. | Explain why a remote message, identity, credential, or value packet is not an automatic delegation, authorization, settlement, or truth claim. | A replayed bounded exchange workload rejects missing identity, audience mismatch, expired/revoked/invalid credentials, missing reservation, disputed receipt, and missing residual owner; no peer trust, task truth, effect safety, payment, settlement, privacy, authorization, or deployment claim. |
 | II | `procedural-memory-and-cognitive-loop-closure` | Theseus self-evolution/operator traces plus loop harness | Add policy update, regression, and rollback memory traces. | Explain learning as disciplined update of procedures, not vague improvement. | Memory update fixture preserves failed attempts and rollback path. |
 | III | `routing-heads-and-specialist-cores` | Routing harness plus MoE literature and folded MoECOT runtime crosswalk | Extend route-quality, specialist-readiness, and public-safe orchestration-record fixtures without treating MoECOT source reports as reproduced runtime evidence. | Explain routing as an operations problem, not only a neural layer, and show the MoECOT Runtime Crosswalk as a receipt shape rather than a standalone proof. | Route selection balances cost, adequacy, residuals, fallback, source-state partitions, and replay blockers without model-quality or runtime-execution claims. |
 | III | `readiness-gates-residual-escrow-and-quarantine` | Readiness/residual harness plus Theseus architecture gate | Add quarantine release, residual custody, expired evidence, and fallback cases. | Make readiness gates read like release engineering for intelligence. | Promotion blocked on expired evidence or uncustodied residuals. |

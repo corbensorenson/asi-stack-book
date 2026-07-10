@@ -30,7 +30,7 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactGraph.lean"
 
@@ -459,12 +459,12 @@ def validate_surfaces(errors: list[str]) -> None:
                 "repository_receipt_challenge_backed_not_open_world",
             ],
         ),
-        rel(VALIDATE_BOOK): (
-            VALIDATE_BOOK,
+        rel(VALIDATION_REGISTRY): (
+            VALIDATION_REGISTRY,
             [
                 "scripts/validate_receipt_repository_challenge.py",
                 rel(RESULT),
-                'run_validator("validate_receipt_repository_challenge.py")',
+                '"script": "validate_receipt_repository_challenge.py"',
             ],
         ),
         rel(LEAN_FILE): (

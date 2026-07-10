@@ -36,7 +36,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 
 COMMAND = "python3 scripts/validate_alignment_metaphysics_boundary.py"
 TEST_NAME = "Metaphysics lineage boundary audit"
@@ -123,11 +123,11 @@ SURFACE_REQUIREMENTS = {
         TEST_NAME,
         str(RESULT.relative_to(ROOT)),
     ],
-    VALIDATE_BOOK: [
+    VALIDATION_REGISTRY: [
         "scripts/validate_alignment_metaphysics_boundary.py",
         "docs/alignment_metaphysics_boundary_audit.md",
         "experiments/constitutional_alignment_metaphysics_boundary/results/2026-07-02-local.json",
-        'run_validator("validate_alignment_metaphysics_boundary.py")',
+        '"script": "validate_alignment_metaphysics_boundary.py"',
     ],
 }
 

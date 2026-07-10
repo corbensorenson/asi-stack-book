@@ -18,7 +18,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ValueConflict.lean"
 
 COMMAND = "python3 scripts/validate_contestability_worked_example.py"
@@ -345,7 +345,7 @@ def required_surface_errors() -> list[str]:
         ROADMAP: [CODEX_TEST_NAME, "care-memory export"],
         CHANGELOG: ["Add contestability worked example fixture", PROOF_TAG],
         MANIFEST: [CODEX_TEST_NAME, PROOF_TAG],
-        VALIDATE_BOOK: ["validate_contestability_worked_example.py"],
+        VALIDATION_REGISTRY: ["validate_contestability_worked_example.py"],
         LEAN_FILE: ["ContestabilityWorkedExampleSummary", "contestability_worked_example_bridge"],
     }
     for path, fragments in required.items():

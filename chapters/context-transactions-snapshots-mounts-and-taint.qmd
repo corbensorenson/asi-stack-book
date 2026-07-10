@@ -272,6 +272,7 @@ These proof hooks are implemented only over finite Lean event/snapshot, taint, m
 | `context_engineer` | Context Engineer / Manhattan Protocol | memory_context_lineage | Context as supply chain; compartmentalized information logistics. | source note available; local raw cache passage-reviewed |
 | `black_hole_context_manager` | Black Hole Context Manager | memory_context_lineage | Earlier context management spec with lazy evaluation, batching, drift checks, security hardening. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
+| `ext_graphrag_2024`, `ext_mem0_2025` | GraphRAG and Mem0 | derived_and_persistent_memory | Comparators for derived graph/community state and cross-session memory extraction/consolidation under version, taint, revocation, deletion, and provenance pressure. | source notes available; no local transaction, memory, or correctness result |
 
 The transaction and taint sources carry the runtime semantics for context state, memory budgets, and deletion obligations. Four mappings have passage review, but the core claim stays at `argument` because `vcm_editable` remains connector/source-note mapped and memory-store behavior, mount visibility, branch isolation, deletion closure, side-channel validation, context-manager execution, and benchmark claims remain unpromoted.
 

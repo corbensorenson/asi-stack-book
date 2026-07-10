@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "title": "The ASI Stack",
-  "subtitle": "A Systems Architecture for Governed, Efficient, Self-Improving AI",
+  "subtitle": "A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case",
   "author": "Corben Sorenson",
   "site_url": "https://corbensorenson.github.io/asi-stack-book/",
   "repo_url": "https://github.com/corbensorenson/asi-stack-book",
@@ -541,7 +541,9 @@
             "talos",
             "ladon_manhattan",
             "genesiscode",
-            "moecot"
+            "moecot",
+            "ext_camel_prompt_injection_2025",
+            "ext_owasp_agentic_top_10_2026"
           ],
           "source_queue": {
             "primary": [
@@ -1089,7 +1091,8 @@
             "viea",
             "uat",
             "coherence_exchange",
-            "verification_bandwidth"
+            "verification_bandwidth",
+            "ext_w3c_prov_o_2013"
           ],
           "source_queue": {
             "primary": [
@@ -2706,7 +2709,10 @@
             "context_engineer",
             "talos",
             "alignment_field",
-            "coherence_exchange"
+            "coherence_exchange",
+            "ext_agentdojo_2024",
+            "ext_camel_prompt_injection_2025",
+            "ext_owasp_agentic_top_10_2026"
           ],
           "source_queue": {
             "primary": [
@@ -2897,7 +2903,8 @@
             "ext_nist_confidential_computing_2026",
             "ext_nvidia_confidential_model_lifecycle_2026",
             "ext_provable_model_weight_release_2025",
-            "cca_project"
+            "cca_project",
+            "ext_in_toto_2019"
           ],
           "source_queue": {
             "primary": [
@@ -3035,7 +3042,11 @@
             "ext_spdx_ai_profile_3_0_1",
             "cca_project",
             "moecot_manifest_project",
-            "corbens_trainer_project"
+            "corbens_trainer_project",
+            "ext_w3c_prov_o_2013",
+            "ext_mlcommons_croissant_1_1_2026",
+            "ext_in_toto_2019",
+            "ext_owasp_agentic_top_10_2026"
           ],
           "source_queue": {
             "primary": [
@@ -3200,7 +3211,9 @@
             "field_of_god_ai_constitution",
             "theseus_self_evolution_system",
             "theseus_architecture_gate",
-            "ext_drexler_cais_2019"
+            "ext_drexler_cais_2019",
+            "ext_darwin_godel_machine_2025",
+            "ext_adas_2024"
           ],
           "source_queue": {
             "primary": [
@@ -3490,7 +3503,9 @@
             "benchmaxxing",
             "ext_poet_2019",
             "ext_funsearch_2024",
-            "ext_voyager_2023"
+            "ext_voyager_2023",
+            "ext_darwin_godel_machine_2025",
+            "ext_adas_2024"
           ],
           "source_queue": {
             "primary": [
@@ -3641,7 +3656,8 @@
             "software_magic_grimoire",
             "genesiscode",
             "moecot",
-            "cognitive_compilation"
+            "cognitive_compilation",
+            "ext_camel_prompt_injection_2025"
           ],
           "source_queue": {
             "primary": [
@@ -4396,7 +4412,11 @@
             "viea",
             "vcm_editable",
             "moecot",
-            "spinoza"
+            "spinoza",
+            "ext_graphrag_2024",
+            "ext_hipporag_2024",
+            "ext_raptor_2024",
+            "ext_mem0_2025"
           ],
           "source_queue": {
             "primary": [
@@ -4687,7 +4707,9 @@
             "ladon_manhattan",
             "context_engineer",
             "black_hole_context_manager",
-            "vcm_editable"
+            "vcm_editable",
+            "ext_graphrag_2024",
+            "ext_mem0_2025"
           ],
           "source_queue": {
             "primary": [
@@ -4891,7 +4913,10 @@
             "vcm_public",
             "spinoza",
             "treellm",
-            "vcm_editable"
+            "vcm_editable",
+            "ext_graphrag_2024",
+            "ext_hipporag_2024",
+            "ext_raptor_2024"
           ],
           "source_queue": {
             "primary": [
@@ -5079,7 +5104,8 @@
             "viea",
             "coherence_exchange",
             "aletheia",
-            "uat"
+            "uat",
+            "ext_w3c_prov_o_2013"
           ],
           "source_queue": {
             "primary": [
@@ -5738,7 +5764,10 @@
             "spinoza_composer",
             "genesiscode",
             "cognitive_loop_closure",
-            "moecot"
+            "moecot",
+            "ext_w3c_prov_o_2013",
+            "ext_mlcommons_croissant_1_1_2026",
+            "ext_in_toto_2019"
           ],
           "source_queue": {
             "primary": [
@@ -6030,7 +6059,11 @@
             "ext_ironies_automation_1983",
             "ext_levels_automation_2000",
             "ext_complacency_bias_automation_2010",
-            "ext_cap_theorem_gilbert_lynch_2002"
+            "ext_cap_theorem_gilbert_lynch_2002",
+            "ext_inspect_ai_2024",
+            "ext_agentdojo_2024",
+            "ext_camel_prompt_injection_2025",
+            "ext_owasp_agentic_top_10_2026"
           ],
           "source_queue": {
             "primary": [
@@ -6333,6 +6366,187 @@
           "open_evidence_gaps": []
         },
         {
+          "id": "inter-stack-protocols-identity-and-economic-exchange",
+          "title": "Inter-Stack Protocols, Identity, and Economic Exchange",
+          "file": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_mcp_protocol_2025_06_18",
+            "ext_a2a_protocol_0_3_0",
+            "ext_w3c_did_core_1_0_2022",
+            "ext_w3c_vc_data_model_2_0_2025",
+            "ext_interledger_protocol_v4",
+            "talos",
+            "vcm_public",
+            "tokenmana",
+            "ext_owasp_agentic_top_10_2026"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_mcp_protocol_2025_06_18",
+              "ext_a2a_protocol_0_3_0",
+              "ext_w3c_did_core_1_0_2022",
+              "ext_w3c_vc_data_model_2_0_2025",
+              "ext_interledger_protocol_v4"
+            ],
+            "supporting": [
+              "talos",
+              "vcm_public",
+              "tokenmana"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "These sources define scoped communication, identity, credential, and value-transfer comparators. No ASI Stack protocol endpoint, peer discovery, identity resolution, credential issuance or verification, delegated authority, payment, settlement, dispute, or cross-stack dispatch has run."
+            ]
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_mcp_protocol_2025_06_18",
+              "mapped_support": "Supports a scoped comparator for schema-defined messages, lifecycle management, capability negotiation, session control, and modular agent-to-tool protocol features.",
+              "limits": "Does not establish a local MCP implementation, peer identity, authorization, task truth, effect safety, payment, deployment, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_mcp_protocol_2025_06_18.md:14-65"
+              ],
+              "passage_review_note": "Reviewed the official MCP specification framing as recorded in the source note; no local MCP client, server, session, authorization flow, or tool action was exercised.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_a2a_protocol_0_3_0",
+              "mapped_support": "Supports a scoped comparator for Agent Cards, agent discovery, delegated tasks, exchanged artifacts, and transport choices between opaque agent systems.",
+              "limits": "Does not establish a local A2A peer, verified identity, delegated authority, task correctness, payment, safety, deployment, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_a2a_protocol_0_3_0.md:14-67"
+              ],
+              "passage_review_note": "Reviewed the official A2A specification framing as recorded in the source note; no local A2A agent, task, credential, transport, payment, or effect was exercised.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_w3c_did_core_1_0_2022",
+              "mapped_support": "Supports a scoped comparator for identifiers, controllers, verification methods, service endpoints, resolution, and privacy vocabulary.",
+              "limits": "Does not establish a local DID, resolver, controller trust, authorization, revocation, safety, deployment, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_w3c_did_core_1_0_2022.md:14-68"
+              ],
+              "passage_review_note": "Reviewed the W3C DID Core scope as recorded in the source note; no identifier, resolver, controller, key, revocation, or policy route was exercised.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_w3c_vc_data_model_2_0_2025",
+              "mapped_support": "Supports a scoped comparator for issuer, holder, verifier, credential, presentation, validity, status, evidence, securing-mechanism, and authorization-limit vocabulary.",
+              "limits": "Does not establish a local credential, issuer, verifier, trust decision, authorization framework, delegation validity, payment, safety, deployment, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_w3c_vc_data_model_2_0_2025.md:14-69"
+              ],
+              "passage_review_note": "Reviewed the W3C VC Data Model scope and explicit authorization boundary as recorded in the source note; no local credential or authorization workflow was exercised.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_interledger_protocol_v4",
+              "mapped_support": "Supports a scoped comparator for packetized cross-network value exchange, connector obligations, account/balance vocabulary, and end-to-end separation between transport and application policy.",
+              "limits": "Does not establish a local payment, account, settlement, delegated authority, economic fairness, legal transfer, safety, deployment, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_interledger_protocol_v4.md:14-67"
+              ],
+              "passage_review_note": "Reviewed the official Interledger protocol framing as recorded in the source note; no packet, connector, account, payment, settlement, dispute, or refund was exercised.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "talos",
+              "mapped_support": "Supports bounded local source context for typed jobs, contract locks, controlled handoffs, audit, replay, delivery, and residual feedback.",
+              "limits": "Does not establish a local peer exchange, protocol, identity, credential, payment, settlement, delegated authority, deployment, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/talos.md:14-83"
+              ],
+              "passage_review_note": "Reviewed the local raw-cache Talos source note for typed contract and evidence-handoff context; no peer, protocol, identity, credential, payment, or deployment workflow was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "vcm_public",
+              "mapped_support": "Supports bounded local source context for source and authority binding, context references, adequacy/admission separation, revocation, invalidation, and non-success states.",
+              "limits": "Does not establish a local cross-stack identity, credential verification, delegated authority, peer trust, payment, deployment, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/vcm_public.md:14-63"
+              ],
+              "passage_review_note": "Reviewed the local raw-cache VCM source note for bounded authority, revocation, and admission context; no cross-stack protocol or identity workflow was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "tokenmana",
+              "mapped_support": "Supports bounded local source context for capacity stocks, bounded bursts, resource pressure, pricing hypotheses, and human/resource constraints around an economic request.",
+              "limits": "Does not establish a local price, payment, settlement, delegated authority, economic fairness, welfare outcome, deployment, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/tokenmana.md:14-72"
+              ],
+              "passage_review_note": "Reviewed the local raw-cache TokenMana source note for bounded capacity and economic-record context; no pricing, payment, settlement, or economic study was run.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "problem": "Local planning, context, artifact, and runtime contracts lose their binding when a request crosses to an independently operated protocol endpoint, agent, service, or value network without a record that separates peer identity, delegated authority, economic commitment, result evidence, revocation, and residual ownership.",
+          "insufficient": "Runtime Adapters own local effects, Artifact Graphs own generic provenance and replay, Resource Economics owns local budget policy, Personal Compute Hives owns federation topology, and Security Kernel owns protected handles, but none owns the cross-stack contract that binds protocol structure, identities, credentials, delegation, consideration, receipts, disputes, and revocation before a remote handoff reaches local dispatch.",
+          "core_claim": "A governed stack routes each cross-stack request through a versioned exchange contract that binds protocol and schema version, sender and receiver identities, endpoint and capability declaration, requested task or artifact, principal and delegated authority, credential verification, audience, scope, expiry, budget or consideration, expected receipt, dispute and revocation paths, and residual owner; an absent, mismatched, expired, revoked, unverified, or budget-unreserved required record blocks dispatch or routes accountable review, but does not itself establish peer trustworthiness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, authorization correctness, or ASI.",
+          "mechanism": [
+            "Record a versioned exchange contract that binds protocol/schema revision, endpoint/capability declaration, sender, receiver, principal, delegated authority, requested task or artifact, credential requirements/results, audience, scope, expiry, budget or consideration, expected receipt, dispute, revocation, and residual ownership.",
+            "Keep protocol parsing, identity resolution, credential verification, delegated-authority policy, economic reservation, local dispatch authorization, remote declared completion, independent result review, and settlement as distinct record states with separate owners.",
+            "Route a missing, mismatched, expired, revoked, unverified, or budget-unreserved required field to repair, accountable review, dispute, denial, or the appropriate existing local owner rather than ordinary dispatch.",
+            "Bind a response to the request and contract version, responding peer, artifact references, declared completion, economic outcome, residuals, and revocation/re-review path without promoting the response to a truth or authority claim."
+          ],
+          "interfaces": [
+            "Runtime Adapters, Tool Permissions, and Human Approval owns local effects; this chapter supplies a bounded remote request, not an effect lease.",
+            "Intent-to-Execution Contracts owns the originating intent and task contract; this chapter preserves principal, scope, and accepted task boundaries across a peer handoff.",
+            "Virtual Context ABI owns context provenance, admission, and taint; this chapter carries only a bounded context/artifact reference across the exchange.",
+            "Artifact Graphs, Audit Logs, and Replay owns generic provenance, receipts, and replay; this chapter owns cross-stack identity, delegation, consideration, and completeness policy.",
+            "Resource Economics and Token Budgets owns local capacity and cost policy; this chapter binds a remote consideration or reservation without claiming settlement or fairness.",
+            "Personal Compute Hives and Federated Edge Intelligence owns federation topology, while Security Kernel and Digital SCIFs owns protected secrets and handles."
+          ],
+          "invariants": [
+            "A requested cross-stack dispatch records its protocol/schema version, endpoint/capability declaration, sender, receiver, originating principal, requested task or artifact, and affected local owner.",
+            "Delegated authority remains bound to principal, audience, capability, scope, expiry, policy, and revocation state; protocol forwarding cannot widen it.",
+            "Identity and credential results retain verifier, policy scope, freshness, and limitation and cannot silently become local authorization or proof of peer trustworthiness.",
+            "A value-bearing request records reservation or consideration scope, expected receipt, dispute, revocation, and residual path before it can reach a local effect boundary.",
+            "A remote response remains a declared result until an independent owner checks the evidence required for the intended use.",
+            "A missing, mismatched, expired, revoked, unverified, or budget-unreserved required record routes the request to repair, accountable review, dispute, or denial rather than ordinary dispatch."
+          ],
+          "failure_modes": [
+            "Capability-card theater treats a self-described endpoint as a trusted, competent, authorized, or safe peer.",
+            "Deputy laundering reuses a forwarded credential or approval outside the originating principal's audience, scope, or expiry.",
+            "Identity conflation treats an endpoint, owner, agent, user, delegated principal, and credential subject as one actor.",
+            "Result laundering turns a valid response shape, completion state, or artifact receipt into proof of task truth or permission to act.",
+            "Economic commitment laundering turns a budget reservation or routed value packet into settlement, consent, fair price, or legal authorization.",
+            "Revocation races or residual loss leave a changed credential, endpoint, policy, budget, timeout, partial delivery, dispute, refund, or remote failure without accountable local handling."
+          ],
+          "minimal_implementation": "A public-safe exchange record with protocol/schema revision, endpoint/capability declaration, sender/receiver/principal identities, task or artifact reference, delegated-authority scope, credential requirement/result, audience, expiry, budget reservation, expected receipt, dispute/revocation path, residual owner, and requested dispatch. Finite Lean routes deny a requested dispatch with a required invalid credential and route a value-bearing requested dispatch without a reserved budget to budget repair.",
+          "beyond_state_of_art": "A mature stack exposes a protocol-neutral exchange control plane that maps tool requests, agent tasks, federated service calls, identity presentations, and value-bearing requests into bounded local contracts. It tracks discovery separately from trust, credentials separately from authorization, reservations separately from settlement, and declared results separately from independently reviewed evidence; it propagates expiry, revocation, endpoint change, budget release, dispute, and residual ownership to affected requests before existing local owners permit the next effect. This is a target architecture, not a claim of a local protocol, identity system, credential framework, payment network, peer-trust model, authorization service, task verifier, settlement system, privacy program, safe distributed deployment, or ASI.",
+          "codex_tests": [
+            "Required-invalid-credential dispatch denial route",
+            "Missing-reserved-budget value-bearing dispatch repair route",
+            "Public-safe exchange contract workload with identity, delegation, expiry, revocation, budget, receipt, dispute, and residual negative controls"
+          ],
+          "lean_module": "AsiStackProofs.InterStackProtocols",
+          "proof_targets": [
+            {
+              "tag": "lean:inter_stack.invalid_credential.blocks_dispatch",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "A finite requested cross-stack exchange with required invalid credential verification routes to denial rather than ordinary local dispatch, without inferring identity trust, task truth, authorization correctness, payment settlement, or ASI.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "A finite value-bearing requested cross-stack exchange with all required identity and authority records but no reserved budget routes to budget repair rather than ordinary local dispatch, without inferring payment, settlement, economic fairness, authority correctness, or ASI.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "v0.1 chapter draft",
+          "open_evidence_gaps": [
+            "No ASI Stack protocol endpoint, peer discovery service, identity resolver, credential issuer or verifier, delegated-authority chain, payment connector, settlement workflow, dispute workflow, or cross-stack dispatch has run.",
+            "No local result establishes peer trustworthiness, identity binding, authorization correctness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, or ASI.",
+            "The finite Lean routes establish only modeled record consequences for invalid credentials and missing reserved budgets; they do not establish any real protocol, identity, credential, policy, receipt, payment, or peer result."
+          ]
+        },
+        {
           "id": "procedural-memory-and-cognitive-loop-closure",
           "title": "Procedural Memory and Cognitive Loop Closure",
           "file": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
@@ -6348,7 +6562,8 @@
             "moecot",
             "project_theseus_whitepaper",
             "theseus_self_evolution_system",
-            "theseus_operator_os"
+            "theseus_operator_os",
+            "ext_mem0_2025"
           ],
           "source_queue": {
             "primary": [
@@ -6629,7 +6844,8 @@
             "moecot",
             "project_theseus_whitepaper",
             "theseus_operator_os",
-            "theseus_architecture_gate"
+            "theseus_architecture_gate",
+            "ext_hipporag_2024"
           ],
           "source_queue": {
             "primary": [
@@ -7007,7 +7223,8 @@
             "moecot",
             "project_theseus_whitepaper",
             "theseus_architecture_gate",
-            "theseus_self_evolution_system"
+            "theseus_self_evolution_system",
+            "ext_darwin_godel_machine_2025"
           ],
           "source_queue": {
             "primary": [
@@ -7856,7 +8073,8 @@
             "verification_bandwidth",
             "cognitive_compilation",
             "circle_ai_architectures",
-            "coilra_multicoil_rope"
+            "coilra_multicoil_rope",
+            "ext_raptor_2024"
           ],
           "source_queue": {
             "primary": [
@@ -8391,7 +8609,8 @@
             "ext_pagedattention_vllm_2023",
             "ext_mamba_2023",
             "ext_llada_2025",
-            "ext_scaling_dllms_2026"
+            "ext_scaling_dllms_2026",
+            "ext_recurrent_transformer_2026"
           ],
           "source_queue": {
             "primary": [
@@ -8839,7 +9058,9 @@
             "ext_tree_of_thoughts_2023",
             "ext_test_time_compute_scaling_2024",
             "ext_deepseek_r1_2025",
-            "ext_s_grpo_2025"
+            "ext_s_grpo_2025",
+            "ext_universal_transformer_2019",
+            "ext_dynamic_compute_recurrent_transformers_2026"
           ],
           "source_queue": {
             "primary": [
@@ -8966,7 +9187,8 @@
             "rankfold_compressor",
             "bbvca_v9",
             "cgs",
-            "bugbrain"
+            "bugbrain",
+            "ext_raptor_2024"
           ],
           "source_queue": {
             "primary": [
@@ -9181,7 +9403,10 @@
             "rankfold_neuralfold",
             "alignment_field",
             "ext_pagedattention_vllm_2023",
-            "ext_reluplex_2017"
+            "ext_reluplex_2017",
+            "ext_mem0_2025",
+            "ext_recurrent_transformer_2026",
+            "ext_dynamic_compute_recurrent_transformers_2026"
           ],
           "source_queue": {
             "primary": [
@@ -9695,7 +9920,9 @@
             "circle_ai_architectures",
             "proof_carrying_circular_computation",
             "theseus_circle_transfer",
-            "ext_mamba_2023"
+            "ext_mamba_2023",
+            "ext_universal_transformer_2019",
+            "ext_recurrent_transformer_2026"
           ],
           "source_queue": {
             "primary": [
@@ -10258,7 +10485,10 @@
             "coil_attention_memory",
             "circle_ai_contract_suite",
             "theseus_circle_transfer",
-            "vcm_public"
+            "vcm_public",
+            "ext_universal_transformer_2019",
+            "ext_recurrent_transformer_2026",
+            "ext_dynamic_compute_recurrent_transformers_2026"
           ],
           "problem": "Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.",
           "insufficient": "Long context, sparse attention, ring buffers, and recursive loops can silently hide stale reads, uncovered lags, duplicate slots, alias collisions, or unbounded work.",
@@ -11110,7 +11340,14 @@
             "project_theseus_whitepaper",
             "theseus_architecture_gate",
             "theseus_self_evolution_system",
-            "theseus_circle_transfer"
+            "theseus_circle_transfer",
+            "ext_mem0_2025",
+            "ext_mlcommons_croissant_1_1_2026",
+            "ext_inspect_ai_2024",
+            "ext_agentdojo_2024",
+            "ext_darwin_godel_machine_2025",
+            "ext_adas_2024",
+            "ext_dynamic_compute_recurrent_transformers_2026"
           ],
           "source_queue": {
             "primary": [
@@ -11420,7 +11657,8 @@
             "ext_anthropic_rsp_2026",
             "ext_openai_preparedness_framework_2025",
             "benchmaxxing",
-            "theseus_architecture_gate"
+            "theseus_architecture_gate",
+            "ext_inspect_ai_2024"
           ],
           "source_queue": {
             "primary": [
@@ -11558,7 +11796,10 @@
             "rmi",
             "ext_alignment_faking_2024",
             "ext_ai_sandbagging_2024",
-            "ext_emergent_misalignment_reward_hacking_2025"
+            "ext_emergent_misalignment_reward_hacking_2025",
+            "ext_inspect_ai_2024",
+            "ext_agentdojo_2024",
+            "ext_owasp_agentic_top_10_2026"
           ],
           "source_queue": {
             "primary": [
@@ -12348,7 +12589,9 @@
             "ext_bourtoule_machine_unlearning_2021",
             "ext_shumailov_model_collapse_2023",
             "ext_gerstgrasser_data_accumulation_2024",
-            "theseus_synthetic_data_curation"
+            "theseus_synthetic_data_curation",
+            "ext_w3c_prov_o_2013",
+            "ext_mlcommons_croissant_1_1_2026"
           ],
           "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record.",
           "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
@@ -13080,7 +13323,8 @@
             "theseus_architecture_gate",
             "theseus_operator_os",
             "theseus_circle_transfer",
-            "ext_drexler_cais_2019"
+            "ext_drexler_cais_2019",
+            "ext_adas_2024"
           ],
           "source_queue": {
             "primary": [
@@ -13471,6 +13715,13 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_reference_trace_replay.py`; local validator replay only, no deployed runtime trace or support-state promotion",
               "status": "implemented as a local validator replay harness; no live runtime integration, external replay, deployed authority-stop behavior, model-quality result, benchmark result, or support-state promotion exists"
+            },
+            {
+              "name": "Governed cross-stack trace invariants test",
+              "purpose": "Derive authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed local repository-change log.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_governed_trace_invariants.py`; finite logical-time model over one executed local fixture workload",
+              "status": "implemented as a Python/Lean trace bridge; no distributed-runtime, service-enforcement, completeness, safety, or support-state-promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.ReferenceArchitecture",
@@ -13485,6 +13736,12 @@
               "tag": "lean:reference_architecture.trace.failure_blocks_promotion",
               "module": "AsiStackProofs.ReferenceArchitecture",
               "target": "A trace with a missing governance gate cannot be marked valid.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:reference_architecture.governed_trace.four_invariants",
+              "module": "AsiStackProofs.GovernedRepositoryTrace",
+              "target": "The bounded executed repository-change trace satisfies authority monotonicity, revocation-before-effect, evidence-transition integrity, and residual conservation, and rejects one mutation per invariant.",
               "status": "implemented"
             }
           ]
@@ -14627,7 +14884,9 @@
             "project_theseus_whitepaper",
             "circle_calculus_core",
             "circle_ai_contract_suite",
-            "theseus_circle_transfer"
+            "theseus_circle_transfer",
+            "ext_graphrag_2024",
+            "ext_hipporag_2024"
           ],
           "source_queue": {
             "primary": [

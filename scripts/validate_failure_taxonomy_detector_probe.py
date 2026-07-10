@@ -18,7 +18,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "FailureModes.lean"
 
 COMMAND = "python3 scripts/validate_failure_taxonomy_detector_probe.py"
@@ -421,11 +421,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "no support-state promotion",
         ],
         CHANGELOG: ["Failure taxonomy detector and mitigation-boundary probe", rel(RESULT), "Tighten Failure Modes taxonomy bridge"],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_failure_taxonomy_detector_probe.py",
             "docs/failure_taxonomy_detector_probe.md",
             "experiments/failure_taxonomy_detector/results/2026-07-02-local.json",
-            'run_validator("validate_failure_taxonomy_detector_probe.py")',
+            '"script": "validate_failure_taxonomy_detector_probe.py"',
         ],
     }
     for path, phrases in required.items():

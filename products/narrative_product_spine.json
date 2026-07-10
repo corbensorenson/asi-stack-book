@@ -1,0 +1,187 @@
+{
+  "schema_version": "asi_stack.narrative_product_spine.v0",
+  "product_id": "narrative_book",
+  "status": "generated_candidate_spine_not_a_reviewed_reader_release",
+  "selection_rule": "A fifteen-chapter thesis-to-method route through the canonical manifest. It keeps the architecture thesis, efficiency and authority boundaries, failure and evidence discipline, oversight, governed improvement, the intent-to-effect trace, verification and artifact continuity, governance economics, integrated synthesis, and the living-book method. Specialized mechanisms remain available in the architecture reference.",
+  "chapters": [
+    {
+      "order": 1,
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "core_claim_ref": "asi-is-a-stack-not-a-model.core",
+      "reader_question": "What changes when advanced AI is treated as a governed system of responsibilities instead of one opaque model?",
+      "running_example": "Follow one repository change from a human request through planning, verification, authorized execution, evidence capture, and possible refusal.",
+      "strongest_objection": "A sufficiently capable single model may perform every cognitive role internally, making a layered stack look like unnecessary bureaucracy.",
+      "failure_story": "The repository change succeeds, but nobody can reconstruct who authorized it, which source constrained it, or how to reverse it.",
+      "evidence_that_would_change_the_conclusion": "Matched deployments showing that uncontracted monolithic operation is as controllable, inspectable, and recoverable as enforced responsibility boundaries would narrow the thesis.",
+      "handoff": "The next chapter asks whether those boundaries can improve capability without spending maximal cognition on every step."
+    },
+    {
+      "order": 2,
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "core_claim_ref": "the-efficient-asi-hypothesis.core",
+      "reader_question": "Can capability grow through governed routing and reuse without hiding the costs and failures displaced by cheaper cognition?",
+      "running_example": "Compare a frontier-model-only repository change with a routed change that reuses context, specialists, tests, and independent verification.",
+      "strongest_objection": "The verification and accounting needed to govern cheaper routes may cost more than simply using the strongest model throughout.",
+      "failure_story": "A cheap route looks efficient because repair time, reviewer attention, and a missed constraint were excluded from its ledger.",
+      "evidence_that_would_change_the_conclusion": "Matched workloads showing no risk-adjusted cost or quality advantage after full verification, repair, and human burden would reject or sharply narrow the efficiency hypothesis.",
+      "handoff": "Efficiency becomes safe only after the architecture separates the ability to propose work from permission to create effects."
+    },
+    {
+      "order": 3,
+      "chapter_id": "system-boundaries-and-authority",
+      "core_claim_ref": "system-boundaries-and-authority.core",
+      "reader_question": "How should the stack represent who may read, propose, approve, execute, deploy, revoke, or refuse?",
+      "running_example": "The repository-change planner may draft a patch, but only a bounded adapter with a current grant may alter the working tree.",
+      "strongest_objection": "Typed authority records can become ceremonial metadata if the runtime can ignore, forge, or bypass them.",
+      "failure_story": "A low-authority planner persuades a broadly privileged tool to apply a change after the original grant has expired.",
+      "evidence_that_would_change_the_conclusion": "Runtime traces showing that simpler session-level permission systems resist confused-deputy, stale-grant, and revocation attacks equally well would weaken the need for richer typed authority.",
+      "handoff": "Once authority is explicit, the book can classify the quieter stack failures that occur before catastrophic scenarios."
+    },
+    {
+      "order": 4,
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "core_claim_ref": "failure-modes-of-ungoverned-intelligence.core",
+      "reader_question": "Which ordinary contract failures reveal ungoverned intelligence before a dramatic system-level disaster occurs?",
+      "running_example": "Diagnose whether a bad repository change came from poisoned context, authority creep, verifier correlation, hidden residuals, or self-ratifying evidence.",
+      "strongest_objection": "A broad failure taxonomy may explain every incident after the fact while predicting or preventing very little.",
+      "failure_story": "A fluent postmortem labels the incident but assigns no detector, containment route, owner, or residual, so the same defect returns.",
+      "evidence_that_would_change_the_conclusion": "Prospective evaluations showing that the taxonomy does not improve detection, containment, or recovery over a simpler incident model would require consolidation or rejection.",
+      "handoff": "A failure taxonomy can govern decisions only if claims about failures and controls carry explicit evidence boundaries."
+    },
+    {
+      "order": 5,
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "core_claim_ref": "evidence-states-and-claim-discipline.core",
+      "reader_question": "How can a living technical work improve its explanations without silently making its claims sound better supported?",
+      "running_example": "The repository-change experiment may strengthen a narrow attack-resistance result while the chapter-level architecture claim remains an argument.",
+      "strongest_objection": "Support labels can create a false aura of rigor when the underlying evidence is stale, narrow, dependent, or poorly measured.",
+      "failure_story": "A passing schema check is cited as if it proved runtime safety, and repeated prose gradually turns that narrow receipt into a broad claim.",
+      "evidence_that_would_change_the_conclusion": "Independent audits showing that the transition system fails to prevent overclaiming, or that a simpler review protocol performs as well, would force redesign of the evidence model.",
+      "handoff": "Claim discipline becomes operationally difficult when limited reviewers must judge stronger systems under time and access constraints."
+    },
+    {
+      "order": 6,
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "core_claim_ref": "scalable-oversight-and-adversarial-ai-control.core",
+      "reader_question": "What must an oversight protocol record when reviewers have less capability, time, context, or independence than the system they judge?",
+      "running_example": "An independent verifier reviews the repository patch with bounded context while an outcome audit checks the actual tree and test effects.",
+      "strongest_objection": "Model debate, voting, or human approval may merely correlate errors and move responsibility without making judgments more reliable.",
+      "failure_story": "Two nominally independent reviewers share the same poisoned context and approve a forged receipt with high confidence.",
+      "evidence_that_would_change_the_conclusion": "Controlled oversight studies measuring no advantage over direct review, or showing worse correlated failure and operator burden, would narrow the proposed protocol family.",
+      "handoff": "Oversight must remain effective when the system proposes changes to its own capabilities, evaluators, or governance machinery."
+    },
+    {
+      "order": 7,
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "core_claim_ref": "recursive-self-improvement-boundaries.core",
+      "reader_question": "Which changes may a capable system propose about itself, and which evidence and authority gates must remain outside that proposal?",
+      "running_example": "The repository-change system proposes modifying its verifier, validation policy, or deployment workflow rather than an ordinary chapter file.",
+      "strongest_objection": "A sufficiently capable optimizer may shape the tests, evidence, and reviewers used to approve its own improvement while satisfying every recorded field.",
+      "failure_story": "A faster verifier is promoted using benchmarks it helped select, then silently stops detecting the attack that motivated the old verifier.",
+      "evidence_that_would_change_the_conclusion": "Longitudinal governed-improvement trials showing that simpler change control prevents evaluator capture and preserves rollback equally well would reduce the need for specialized self-improvement gates.",
+      "handoff": "The operational half of the book begins by compiling human intent into an executable contract that still carries those ceilings."
+    },
+    {
+      "order": 8,
+      "chapter_id": "intent-to-execution-contracts",
+      "core_claim_ref": "intent-to-execution-contracts.core",
+      "reader_question": "How does an ambiguous human request become bounded work without inventing authority, success criteria, or hidden assumptions?",
+      "running_example": "Translate a request to improve a book chapter into target files, allowed operations, evidence obligations, stop conditions, and approval requirements.",
+      "strongest_objection": "Formal command contracts may give precise shape to a misunderstood intent and make a bad interpretation harder to notice.",
+      "failure_story": "The system completes the literal patch while violating the user's actual constraint because uncertainty was converted into an unstated default.",
+      "evidence_that_would_change_the_conclusion": "User studies and task evaluations showing that lighter conversational clarification produces fewer intent failures at lower burden would require a smaller contract surface.",
+      "handoff": "A valid command still needs a plan whose dependencies, alternatives, verification points, and replan conditions remain inspectable."
+    },
+    {
+      "order": 9,
+      "chapter_id": "planning-as-a-control-layer",
+      "core_claim_ref": "planning-as-a-control-layer.core",
+      "reader_question": "How can a plan coordinate work while remaining a revisable proposal rather than becoming implicit permission to act?",
+      "running_example": "Represent the repository change as a DAG of source inspection, patch generation, independent verification, tests, rollback preparation, and release or refusal.",
+      "strongest_objection": "Detailed plans can be expensive, brittle, and misleading when the environment changes faster than the plan can be validated.",
+      "failure_story": "A stale plan executes a now-invalid step because its context and authorization dependencies were not rechecked at runtime.",
+      "evidence_that_would_change_the_conclusion": "Matched dynamic-task studies showing that direct reactive control is safer and more efficient than explicit dependency plans would narrow when the planning layer should activate.",
+      "handoff": "Planning quality is bounded by whether the system has enough context and verification capacity for the claims its steps depend on."
+    },
+    {
+      "order": 10,
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "core_claim_ref": "verification-bandwidth-and-context-adequacy.core",
+      "reader_question": "When does having relevant context fail to provide enough comparison and review capacity to verify a risky claim?",
+      "running_example": "The verifier sees the patch and tests but lacks the policy history needed to notice that a removed check was a deliberate security boundary.",
+      "strongest_objection": "Context-adequacy labels may be subjective gates that add delay without reliably predicting missed contradictions.",
+      "failure_story": "A concise summary preserves topic coverage but drops the single constraint that should have blocked deployment.",
+      "evidence_that_would_change_the_conclusion": "Benchmarks showing no relationship between declared adequacy, review allocation, and contradiction detection would require replacing or sharply simplifying the adequacy model.",
+      "handoff": "Verified work must then become durable enough that later reviewers can inspect its causes, effects, limits, and replay conditions."
+    },
+    {
+      "order": 11,
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "core_claim_ref": "artifact-graphs-audit-logs-and-replay.core",
+      "reader_question": "What must survive after a task so another person can reconstruct, challenge, reuse, or roll back the work?",
+      "running_example": "Connect the request, source snapshot, plan, patch, verifier decision, test output, rollback result, and final disposition in one artifact graph.",
+      "strongest_objection": "A complete-looking graph can still preserve fabricated lineage or overwhelm reviewers with records that nobody checks.",
+      "failure_story": "The patch passes, but its test receipt belongs to a different commit and the mismatch remains hidden inside an unchallenged audit bundle.",
+      "evidence_that_would_change_the_conclusion": "Challenge-sampling studies showing no improvement in fault discovery or replay over simpler provenance records would justify reducing graph scope.",
+      "handoff": "The graph reaches its highest-risk edge when an authorized runtime adapter turns a proposed change into an external effect."
+    },
+    {
+      "order": 12,
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "core_claim_ref": "runtime-adapters-tool-permissions-and-human-approval.core",
+      "reader_question": "Which narrow boundary should turn a plan into filesystem, network, deployment, financial, or physical effects?",
+      "running_example": "A sandboxed adapter applies the verified patch only while its grant is current, records pre/post state, and retains an executable rollback handle.",
+      "strongest_objection": "Approval and sandbox layers may encourage rubber-stamping while sophisticated tool chains find effect paths outside the declared adapter.",
+      "failure_story": "A human approves a narrow file edit, but the adapter reuses the approval for a broader deployment and reports tool success as task success.",
+      "evidence_that_would_change_the_conclusion": "Production traces showing that simpler least-privilege tool wrappers achieve equal revocation, rollback, and effect-observation performance would narrow the adapter contract.",
+      "handoff": "Every control consumes compute, latency, attention, and reviewer capacity, so the architecture must account for governance rather than assume it is free."
+    },
+    {
+      "order": 13,
+      "chapter_id": "resource-economics-and-token-budgets",
+      "core_claim_ref": "resource-economics-and-token-budgets.core",
+      "reader_question": "When does governance reduce risk enough to justify its cost, and when does it merely add burden that operators will bypass?",
+      "running_example": "Compare governed and simpler repository-change routes on success, false accepts and rejects, latency, compute, reviewer work, rollback, and hidden residuals.",
+      "strongest_objection": "Accounting can be manipulated by excluding hard-to-measure human burden, rare losses, transfer risk, or the cost of maintaining the governance system itself.",
+      "failure_story": "A route wins on token cost while review queues grow, operators bypass gates, and an uncounted rollback failure moves the burden downstream.",
+      "evidence_that_would_change_the_conclusion": "Representative workloads showing governance costs exceed avoided losses across risk tiers, or that routing cannot classify those tiers reliably, would require material simplification.",
+      "handoff": "The integrated reference chapter now reconnects authority, plans, context, verification, effects, evidence, residuals, and improvement in one trace."
+    },
+    {
+      "order": 14,
+      "chapter_id": "integrated-reference-architecture",
+      "core_claim_ref": "integrated-reference-architecture.core",
+      "reader_question": "Do the separate controls compose into one trace whose allowed, blocked, failed, and rolled-back paths remain intelligible?",
+      "running_example": "Replay the complete governed repository change and its attacks from human intent through final release or refusal.",
+      "strongest_objection": "A reference trace can be internally coherent while omitting the open-world behavior, concurrency, institutions, and adversaries that break a real deployment.",
+      "failure_story": "Every component passes its local check, yet a stale authorization and mismatched receipt cross the handoffs and produce an unsafe release.",
+      "evidence_that_would_change_the_conclusion": "End-to-end implementations showing persistent composition failures despite locally valid contracts would falsify specific interface assumptions and force architectural revision.",
+      "handoff": "The final chapter applies the same trace discipline to the book itself so publication claims cannot outrun source, validation, and release reality."
+    },
+    {
+      "order": 15,
+      "chapter_id": "living-book-methodology",
+      "core_claim_ref": "living-book-methodology.core",
+      "reader_question": "Can the manuscript demonstrate governed improvement by keeping its sources, claims, tests, releases, and public artifact mutually accountable?",
+      "running_example": "Treat this critique remediation as a change trace with findings, controls, mutation tests, residuals, release gates, and explicit non-claims.",
+      "strongest_objection": "The book's elaborate self-governance may optimize records about research rather than produce stronger research or a better reading experience.",
+      "failure_story": "Local ledgers declare coherence while the deployed site exposes stale counts, proving that record quality did not control public reality.",
+      "evidence_that_would_change_the_conclusion": "Independent editorial and research comparisons showing that the method adds maintenance cost without improving correction rate, reproducibility, or reader trust would require a smaller methodology.",
+      "handoff": "The narrative route ends with open residuals: deployment attestation, immutable release publication, independent review, and continued empirical pressure on the three defended contributions."
+    }
+  ],
+  "omission_policy": "The remaining canonical chapters are not deleted, demoted, or treated as unimportant. They remain full architecture-reference material and are routed from the closest selected narrative owner. A future reader release may merge or summarize their mechanisms only through reviewed derivative prose with preserved uncertainty and source boundaries.",
+  "review_gate": [
+    "Generate the derivative from the current canonical manifest rather than copying a parallel manuscript.",
+    "Verify that every selected chapter exists, remains in canonical order, and carries its current core-claim reference.",
+    "Verify that every omitted chapter remains discoverable through the architecture-reference route.",
+    "Complete human continuity, repetition, accessibility, figure, and format review before calling the derivative a reader release.",
+    "Create an edition release record only for artifacts that were actually rendered and reviewed."
+  ],
+  "non_claims": [
+    "Selection for the narrative spine does not promote a chapter-core support state.",
+    "Omission from the narrative spine does not reject, deprecate, or remove a canonical chapter.",
+    "A generated candidate is not a reviewed reader release, publication artifact, or independent editorial approval.",
+    "The orientation fields are editorial navigation, not new evidence or replacements for canonical claims."
+  ]
+}

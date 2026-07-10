@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Validate external-review request/status surfaces.
+"""Validate deferred external-review history and no-prepublication-outreach policy.
 
 This check is local-only. It does not call GitHub and does not claim an
 independent review exists; it verifies that the public request and status
-records preserve the review-is-not-evidence boundary.
+records preserve the review-is-not-evidence boundary without soliciting review.
 """
 
 from __future__ import annotations
@@ -23,7 +23,6 @@ REQUIRED_FILES = [
     "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json",
     "external_reviews/blockers/no_named_external_reviewer_2026-07-01.json",
     "scripts/validate_external_review_intake.py",
-    ".github/ISSUE_TEMPLATE/external-review.yml",
 ]
 
 ISSUE_URL = "https://github.com/corbensorenson/asi-stack-book/issues/1"
@@ -41,15 +40,14 @@ REQUIRED_STATUS_STRINGS = [
     "external_reviews/request_updates/consolidation_review_request_2026-06-29.json",
     "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json",
     "external_reviews/blockers/no_named_external_reviewer_2026-07-01.json",
-    "docs/chapter_consolidation_full_review_packet.md",
-    "scripts/validate_external_review_intake.py",
-    "Requested publicly; no independent external review has been accepted yet.",
-    "Dated outreach blocker",
+    "governance/external_review_program.json",
+    "governance/reviewer_capacity_registry.json",
+    "no external-human review, outreach, or reader approval is a prepublication gate",
+    "deferred_postpublication",
+    "no independent external review has been accepted yet",
     "no named independent reviewer response or approved direct outreach target",
-    "Support-state effect | None.",
-    "Artifact-release effect | None.",
-    "review input, not source evidence",
-    "does not promote any chapter core claim above `argument`",
+    "Review input remains separate from evidence.",
+    "cannot by itself promote a claim",
 ]
 
 REQUIRED_PACKET_STRINGS = [
@@ -73,20 +71,11 @@ REQUIRED_FULL_PACKET_STRINGS = [
     "This packet does not change `book_structure.json`.",
 ]
 
-REQUIRED_TEMPLATE_STRINGS = [
-    "name: External review",
-    "Reviewer background",
-    "Review scope",
-    "Strongest issue",
-    "Recommended actions",
-    "I understand this review is not itself source evidence",
-]
-
 PUBLIC_SURFACE_REFS = [
     ("README.md", "docs/external_review_status.md"),
     ("README.md", "docs/chapter_consolidation_full_review_packet.md"),
     ("README.md", "external_reviews/request_updates/full_consolidation_review_request_2026-06-29.json"),
-    ("index.qmd", ISSUE_URL),
+    ("index.qmd", "docs/external_review_status.md"),
     ("docs/publication_readiness.md", "docs/external_review_status.md"),
     ("docs/publication_readiness.md", "docs/chapter_consolidation_full_review_packet.md"),
     ("docs/repository_map.md", "docs/external_review_packet.md"),
@@ -126,7 +115,6 @@ def main() -> None:
     status = read("docs/external_review_status.md")
     packet = read("docs/external_review_packet.md")
     full_packet = read("docs/chapter_consolidation_full_review_packet.md")
-    template = read(".github/ISSUE_TEMPLATE/external-review.yml")
 
     for needle in REQUIRED_STATUS_STRINGS:
         if needle not in status:
@@ -137,11 +125,7 @@ def main() -> None:
     for needle in REQUIRED_FULL_PACKET_STRINGS:
         if needle not in full_packet:
             errors.append(f"full consolidation review packet missing: {needle}")
-    for needle in REQUIRED_TEMPLATE_STRINGS:
-        if needle not in template:
-            errors.append(f"external review issue template missing: {needle}")
-
-    combined = "\n".join([status, packet, full_packet, template])
+    combined = "\n".join([status, packet, full_packet])
     for forbidden in FORBIDDEN_STRINGS:
         if forbidden in combined:
             errors.append(f"external-review surfaces contain overclaim: {forbidden}")
@@ -154,7 +138,7 @@ def main() -> None:
     if errors:
         fail(errors)
 
-    print("External review status validation passed: public request recorded, no accepted external review claimed.")
+    print("External review status validation passed: historical request preserved, no prepublication outreach, and no accepted independent review claimed.")
 
 
 if __name__ == "__main__":

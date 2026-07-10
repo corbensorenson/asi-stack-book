@@ -35,7 +35,7 @@ READER = (
 OUTLINE = ROOT / "docs" / "book_outline.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "SimulationFidelity.lean"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 NON_CORE = ROOT / "docs" / "non_core_evidence_ledger.md"
 PROJECT_THESEUS_LEDGER = ROOT / "docs" / "project_theseus_static_import_status_ledger.md"
 TEST_LEDGER = ROOT / "docs" / "test_harness_status_ledger.md"
@@ -367,11 +367,11 @@ def validate_surfaces(errors: list[str]) -> None:
         NON_CORE: [CLAIM_ID, "docs/theseus_rlds_minari_trace_export_import.md", "14 narrow transitions"],
         PROJECT_THESEUS_LEDGER: ["RLDS/Minari trace-export imports", "docs/theseus_rlds_minari_trace_export_import.md"],
         TEST_LEDGER: ["Theseus RLDS/Minari trace export import", "scripts/validate_theseus_rlds_minari_trace_export_import.py"],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_theseus_rlds_minari_trace_export_import.py",
             "docs/theseus_rlds_minari_trace_export_import.md",
             rel(RESULT),
-            'run_validator("validate_theseus_rlds_minari_trace_export_import.py")',
+            '"script": "validate_theseus_rlds_minari_trace_export_import.py"',
         ],
     }
     for path, phrases in required.items():

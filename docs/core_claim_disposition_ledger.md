@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 53 |
+| Manifest chapter core claims | 54 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 31 |
+| Accepted no-promotion dispositions | 32 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 53 |
+| Core claims remaining at `argument` | 54 |
 
 ## Dispositions
 
@@ -46,6 +46,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `labor-os-and-typed-jobs.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Job cannot dispatch without requirements, permissions, and receipt path. |
 | `artifact-graphs-audit-logs-and-replay.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Replay reproduces expected graph or records exact divergence. |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/runtime_adapters_no_change.json` | High-impact adapter call fails without current approval and receipt. |
+| `inter-stack-protocols-identity-and-economic-exchange.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed bounded exchange workload rejects missing identity, audience mismatch, expired/revoked/invalid credentials, missing reservation, disputed receipt, and missing residual owner; no peer trust, task truth, effect safety, payment, settlement, privacy, authorization, or deployment claim. |
 | `procedural-memory-and-cognitive-loop-closure.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Memory update fixture preserves failed attempts and rollback path. |
 | `routing-heads-and-specialist-cores.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Route selection balances cost, adequacy, residuals, fallback, source-state partitions, and replay blockers without model-quality or runtime-execution claims. |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/readiness_residual_no_change.json` | Promotion blocked on expired evidence or uncustodied residuals. |

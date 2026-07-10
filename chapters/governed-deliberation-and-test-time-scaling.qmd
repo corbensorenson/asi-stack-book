@@ -307,6 +307,7 @@ independent human and domain-specific review.
 | `ext_test_time_compute_scaling_2024` | Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters | Comparator for verifier-guided search, proposal refinement, difficulty-dependent allocation, and test-time compute limits; not a local efficiency result. |
 | `ext_deepseek_r1_2025` | DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning | Comparator for reasoning-RL, self-reflection, verification, and dynamic strategy adaptation in the source setting; not an independent verifier or local model result. |
 | `ext_s_grpo_2025` | S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models | Comparator for reasoning-stop policy and early-exit tradeoffs; not evidence that shorter reasoning is adequate. |
+| `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026` | Shared-weight recurrence and complexity-controlled adaptive compute | Comparators for per-position halting, allocation timing, and the negative boundary that difficulty-aligned compute need not yield algorithmic generalization or local reasoning improvement. |
 
 ## Summary
 

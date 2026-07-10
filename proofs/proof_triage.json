@@ -2211,6 +2211,26 @@
       "rationale": "Implemented in AsiStackProofs.SupplyChainIntegrity as a finite advisory/signature admission boundary. It does not establish advisory accuracy, signature genuineness, inventory completeness, artifact integrity, absence of compromise, data fitness, supplier trustworthiness, legal compliance, model safety, readiness, authority, deployment, or ASI."
     },
     {
+      "tag": "lean:inter_stack.invalid_credential.blocks_dispatch",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "A finite requested cross-stack exchange with required invalid credential verification routes to denial rather than ordinary local dispatch, without inferring identity trust, task truth, authorization correctness, payment settlement, or ASI.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.InterStackProtocols as a finite credential-required dispatch boundary. It does not establish a real identity, credential, verifier, authorization framework, peer trust relationship, task truth, payment settlement, safety, deployment, or ASI."
+    },
+    {
+      "tag": "lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "A finite value-bearing requested cross-stack exchange with all required identity and authority records but no reserved budget routes to budget repair rather than ordinary local dispatch, without inferring payment, settlement, economic fairness, authority correctness, or ASI.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.InterStackProtocols as a finite reservation-required value-bearing dispatch boundary. It does not establish a payment, account, connector, settlement, legal transfer, economic fairness, authority correctness, safety, deployment, or ASI."
+    },
+    {
       "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "module": "AsiStackProofs.CapabilityThresholds",
@@ -2229,7 +2249,17 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.ScalableOversight as a finite high-risk admission boundary, with a companion baseline-completeness route. It does not establish reviewer independence, supervisor calibration, debate or consultancy efficacy, training safety, execution authority, model quality, safety, or ASI."
+    },
+    {
+      "tag": "lean:reference_architecture.governed_trace.four_invariants",
+      "chapter_id": "integrated-reference-architecture",
+      "module": "AsiStackProofs.GovernedRepositoryTrace",
+      "formal_target": "The bounded executed repository-change trace satisfies authority monotonicity, revocation-before-effect, evidence-transition integrity, and residual conservation, and rejects one mutation per invariant.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a finite Python/Lean bridge over one executed local repository-change log with logical-time tie precedence, bounded authority scopes, explicit no-transition evidence events, residual accounting, and one negative control per invariant. It does not establish distributed timing, deployed enforcement, evidence-pipeline correctness, residual completeness, safety, security, or ASI."
     }
   ],
-  "record_count": 222
+  "record_count": 225
 }

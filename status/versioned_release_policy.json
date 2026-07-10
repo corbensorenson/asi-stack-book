@@ -1,0 +1,44 @@
+{
+  "schema_version": "asi_stack.versioned_release_policy.v0",
+  "root_compatibility_url": "https://corbensorenson.github.io/asi-stack-book/",
+  "latest_channel": {
+    "url": "https://corbensorenson.github.io/asi-stack-book/latest/",
+    "mutable": "yes",
+    "artifact_source": "commit-bound tested site bundle",
+    "pages_behavior": "full byte-equivalent mirror of the tested root site"
+  },
+  "immutable_channel": {
+    "index_url": "https://corbensorenson.github.io/asi-stack-book/versions/index.json",
+    "storage_authority": "GitHub Release assets attached to an exact version tag",
+    "tag_pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$",
+    "artifact_name_template": "asi-stack-site-{version}-{source_commit}.tar.gz",
+    "required_digest": "sha256",
+    "candidate_manifest_schema": "schemas/immutable_site_archive_manifest.schema.json",
+    "candidate_builder": "scripts/build_immutable_site_archive.py",
+    "candidate_validator": "scripts/validate_immutable_site_archive.py --self-test",
+    "publication_transaction_doc": "docs/immutable_site_archive_pipeline.md",
+    "release_record_required": "yes",
+    "pages_prefix_role": "metadata index only; it is not an immutable archive by itself"
+  },
+  "known_releases": [
+    {
+      "version": "v1.0.0",
+      "source_commit": "96d0ca3c6b62f3530202535573941b1f6e50a83d",
+      "release_record": "release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json",
+      "source_release_url": "https://github.com/corbensorenson/asi-stack-book/releases/tag/v1.0.0",
+      "site_artifact_state": "not_published",
+      "site_artifact_url": "",
+      "site_artifact_sha256": "",
+      "archive_backfill_decision": "declined_historical_render_not_available",
+      "archive_backfill_decision_date": "2026-07-10",
+      "archive_backfill_rationale": "The exact tested v1.0.0 site bundle was not preserved. Re-rendering the old source with a later toolchain would fabricate historical artifact identity, so no full-site backfill will be published.",
+      "non_claim": "The immutable source tag and release exist; no full immutable v1.0.0 site bundle is claimed or planned for backfill."
+    }
+  ],
+  "non_claims": [
+    "A moving latest mirror is not an immutable release.",
+    "A Pages versions index is metadata, not durable artifact storage.",
+    "An immutable site artifact exists only when a release record names its exact URL and SHA-256.",
+    "A later render of an old source tag is not represented as the historical tested site."
+  ]
+}

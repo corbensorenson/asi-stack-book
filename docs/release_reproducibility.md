@@ -43,7 +43,7 @@ The HTML book currently relies on Quarto's generated site assets, the repository
 
 ## Citation Boundary
 
-`CITATION.cff` now identifies the public book as version `1.0.0` with date `2026-06-29`. The exact source state is tag `v1.0.0` at commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`. The tracked living-book release record is `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`, and the GitHub Release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v1.0.0>.
+`citations/v1.0.0.cff` preserves the former-title release citation as version `1.0.0` with date `2026-06-29`. The exact source state is tag `v1.0.0` at commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`. The tracked living-book release record is `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`, and the GitHub Release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v1.0.0>. Root `CITATION.cff` describes the active v1.x development line under the reframed subtitle; it does not rewrite the tagged v1.0.0 citation.
 
 How to cite v1.0.0:
 

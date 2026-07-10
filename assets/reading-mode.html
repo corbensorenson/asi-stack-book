@@ -88,6 +88,20 @@
     });
   }
 
+  function adjacentViewHeadingIds() {
+    const ids = { human: new Set(), ai: new Set() };
+    document.querySelectorAll(".asi-human-only, .asi-ai-only, .asi-live-only").forEach((block) => {
+      const heading = block.previousElementSibling;
+      if (!heading || !/^H[1-6]$/.test(heading.tagName)) return;
+      const isHuman = block.classList.contains("asi-human-only");
+      const modeClass = isHuman ? "asi-human-only" : "asi-ai-only";
+      heading.classList.add(modeClass);
+      const anchorId = heading.getAttribute("data-anchor-id") || heading.id;
+      if (anchorId) ids[isHuman ? "human" : "ai"].add(anchorId);
+    });
+    return ids;
+  }
+
   function idsForSections(selector) {
     const ids = new Set();
     document.querySelectorAll(selector).forEach((section) => {
@@ -100,10 +114,10 @@
     return ids;
   }
 
-  function markViewModeTocLinks() {
+  function markViewModeTocLinks(adjacentIds) {
     const markerMap = [
-      [idsForSections(".asi-human-only"), "data-asi-human-toc-link"],
-      [idsForSections(".asi-ai-only, .asi-live-only"), "data-asi-ai-toc-link"]
+      [new Set([...idsForSections(".asi-human-only"), ...(adjacentIds ? adjacentIds.human : [])]), "data-asi-human-toc-link"],
+      [new Set([...idsForSections(".asi-ai-only, .asi-live-only"), ...(adjacentIds ? adjacentIds.ai : [])]), "data-asi-ai-toc-link"]
     ];
     document.querySelectorAll('#TOC a[href^="#"], #TOC a[data-scroll-target^="#"]').forEach((link) => {
       const targetId = targetIdFromHash(link.getAttribute("data-scroll-target") || link.getAttribute("href") || "");
@@ -452,8 +466,9 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const liveIds = markLiveSections();
+    const adjacentIds = adjacentViewHeadingIds();
     markLiveTocLinks(liveIds);
-    markViewModeTocLinks();
+    markViewModeTocLinks(adjacentIds);
     markCoreClaimMarkers();
     markSupportBoundaryPhrases();
     applyReaderOverlays();

@@ -275,9 +275,9 @@ def main() -> None:
             errors.append(f"{name} does not reference {ref}")
 
     surface_counts = [
-        ("README.md", readme, "Fourteen narrow non-core transitions are accepted"),
+        ("README.md", readme, "Fourteen narrow non-core transitions are recorded in"),
         ("index.qmd", index, "Fourteen narrow non-core evidence transitions accepted"),
-        ("index.qmd", index, "Fourteen narrow non-core transitions are accepted"),
+        ("index.qmd", index, "Fourteen narrow non-core transitions are recorded in"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():

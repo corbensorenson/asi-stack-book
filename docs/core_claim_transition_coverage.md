@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 53 |
+| Manifest chapter core claims | 54 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 31 |
+| Accepted explicit no-promotion decisions | 32 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -64,6 +64,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `governed-deliberation-and-test-time-scaling.core` | Governed Deliberation and Test-Time Scaling | `argument_only` | no local deliberation engine, verifier, or workload; no measured quality, cost, or stopping-policy result; finite theorems do not establish verifier correctness, reasoning quality, safety, or generality |
 | `human-intent-as-a-formal-input.core` | Human Intent as a Formal Input | `argument_only` | no parser or compiler benchmark; no user-intent interpretation review; no accepted execution trace |
 | `integrated-reference-architecture.core` | Integrated Reference Architecture | `argument_only` | no whole-stack trace kernel; no cross-layer runtime replay; no system-level adversarial review yet |
+| `inter-stack-protocols-identity-and-economic-exchange.core` | Inter-Stack Protocols, Identity, and Economic Exchange | `argument_only` | no local protocol endpoint, peer discovery, resolver, credential issuer or verifier, delegated-authority service, payment connector, settlement, dispute, or cross-stack dispatch; no peer-trust, task-truth, authorization, privacy, payment, legal, fairness, or effect-safety evaluation; finite theorems do not establish identity binding, credential validity, authorization correctness, payment settlement, economic fairness, peer trustworthiness, task or artifact truth, safety, or generality |
 | `labor-os-and-typed-jobs.core` | Labor OS and Typed Jobs | `argument_only` | no deployed job lifecycle; no live approval service; no command-to-effect replay |
 | `mathematical-and-search-substrates.core` | Mathematical and Search Substrates | `argument_only` | no substrate benchmark; no baseline comparison; no measured adoption benefit |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | Model-Weight Custody and Hardware Roots of Trust | `argument_only` | no local weight store, encrypted artifact, key service, TEE, hardware attestation, custody audit, or model load; no adversarial security assessment, extraction test, incident exercise, or release-policy evaluation; finite theorems do not establish hardware trustworthiness, confidentiality, extraction resistance, model safety, readiness, authority, or generality |

@@ -46,6 +46,7 @@ Talos treats AI work as a labor operating system: typed jobs, deterministic cont
 - Labor OS and Typed Jobs
 - Artifact Graphs, Audit Logs, and Replay
 - Runtime Adapters, Tool Permissions, and Human Approval
+- `inter-stack-protocols-identity-and-economic-exchange` (Inter-Stack Protocols, Identity, and Economic Exchange)
 - Procedural Memory and Cognitive Loop Closure
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - Personal Compute Hives and Federated Edge Intelligence

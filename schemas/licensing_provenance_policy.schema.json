@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/licensing_provenance_policy.schema.json",
+  "title": "ASI Stack Licensing Provenance Policy",
+  "type": "object",
+  "required": ["schema_version", "operative_license", "file_set_command", "rules", "default_rule", "non_claims"],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.licensing_provenance_policy.v0"] },
+    "operative_license": { "type": "string", "const": "all_rights_reserved_no_permission_granted" },
+    "file_set_command": { "type": "string", "minLength": 1 },
+    "rules": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["id", "path_regex", "artifact_class", "provenance_status", "candidate_lane", "blocking_reason"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "path_regex": { "type": "string", "minLength": 1 },
+          "artifact_class": { "type": "string", "minLength": 1 },
+          "provenance_status": { "type": "string", "minLength": 1 },
+          "candidate_lane": { "type": "string", "minLength": 1 },
+          "blocking_reason": { "type": "string", "minLength": 24 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "default_rule": {
+      "$ref": "#/properties/rules/items"
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "additionalProperties": false
+}

@@ -386,8 +386,6 @@ def validate_surfaces(errors: list[str]) -> None:
         ROADMAP,
         STATUS,
         APPENDIX_E,
-        README_ROOT,
-        INDEX,
         CIRCLE_CHAPTER,
         CIRCLE_READER,
         CHANGELOG,

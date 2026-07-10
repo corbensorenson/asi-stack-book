@@ -275,6 +275,7 @@ These Lean hooks are implemented as finite-record predicates over context-packet
 | `spinoza` | Proof of Belief / The Spinoza Architecture | reasoning_epistemology | Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | source note available; local raw cache passage-reviewed |
 | `treellm` | TreeLLM | semantic_representation | Hierarchical semantic token system for grounded, efficient, explainable language modeling. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
+| `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024` | GraphRAG, HippoRAG, and RAPTOR | retrieval_and_memory | Comparators for global summaries, associative navigation, and multi-resolution retrieval while keeping retrieval quality separate from evidential adequacy. | source notes available; no local QA, adequacy, or verification result |
 
 The assigned sources supply the context-adequacy and verification-capacity vocabulary. Four local mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped. The crosswalk does not claim the proposed contradiction-rate experiment has been run.
 

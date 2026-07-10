@@ -27,7 +27,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "PolicyOptimization.lean"
 
 COMMAND = "python3 scripts/validate_policy_update_lease_probe.py"
@@ -468,11 +468,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "Policy update lease probe",
             rel(RESULT),
         ],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_policy_update_lease_probe.py",
             "docs/policy_update_lease_probe.md",
             "experiments/policy_update_lease/results/2026-07-02-local.json",
-            'run_validator("validate_policy_update_lease_probe.py")',
+            '"script": "validate_policy_update_lease_probe.py"',
         ],
     }
     for path, phrases in required.items():

@@ -31,7 +31,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEDGER = ROOT / "docs" / "contribution_novelty_ledger.md"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "VerificationBandwidth.lean"
 
 COMMAND = "python3 scripts/validate_verification_bandwidth_capacity_model.py"
@@ -421,11 +421,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "record-level capacity model",
             "contradiction-rate",
         ],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_verification_bandwidth_capacity_model.py",
             "docs/verification_bandwidth_capacity_model.md",
             "experiments/verification_bandwidth_capacity/results/2026-07-03-local.json",
-            'run_validator("validate_verification_bandwidth_capacity_model.py")',
+            '"script": "validate_verification_bandwidth_capacity_model.py"',
         ],
     }
     for path, phrases in required.items():

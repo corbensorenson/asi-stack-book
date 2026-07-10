@@ -98,7 +98,7 @@ def main() -> None:
             f"{rel(CORE_COVERAGE)} must contain current manifest count fragment: "
             f"{required_coverage_fragment}"
         )
-    for stale in ("All 54 remain at `argument`.", "All 46 chapter core claims"):
+    for stale in ("All 44 remain at `argument`.", "All 46 chapter core claims"):
         if stale in ledger_text:
             errors.append(f"{rel(NON_CORE_LEDGER)} contains stale count text: {stale}")
 

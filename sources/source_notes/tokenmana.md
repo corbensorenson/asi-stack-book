@@ -43,6 +43,7 @@ TokenMana proposes regenerative capacity mechanisms for AI usage pricing and res
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets)
 - `resource-economics-and-token-budgets` (Resource Economics and Token Budgets; includes Simulation Fidelity and Claim Transport)
+- `inter-stack-protocols-identity-and-economic-exchange` (Inter-Stack Protocols, Identity, and Economic Exchange)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `personal-compute-hives-and-federated-edge-intelligence` (Personal Compute Hives and Federated Edge Intelligence)

@@ -6,7 +6,7 @@ roadmap-driven v1.x goal in `docs/v1_0_roadmap.md`.
 
 ## Recommended Goal
 
-Run an extended end-to-end improvement pass on **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI** to advance the tagged v1.0.0 living book into a stronger v1.x release candidate while preserving the v1.0.0 release record, source tag, claim boundaries, artifact boundaries, and DOI-pending state.
+Run an extended end-to-end improvement pass on **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case** to advance the tagged v1.0.0 living-book baseline into a stronger v1.x release candidate while preserving the v1.0.0 former-title release record, source tag, claim boundaries, artifact boundaries, and DOI-pending state. The canonical current goal and finish line now live in `docs/asi_stack_completion_roadmap.md`; this older work plan is subordinate.
 
 Treat `docs/v1_0_roadmap.md` as the current execution roadmap, `docs/v1_0_focus_audit.md` as the current-state audit, `docs/book_outline.md` as the source of truth for parts, chapters, source queues, proof targets, and drafting jobs, and `book_structure.json` as the source of truth for part/chapter order, stable chapter IDs, and the first-build/mature-endpoint fields published into Appendix K, `Implementation Horizons`. Use the `asi-stack-book` skill and follow the living-book workflow.
 

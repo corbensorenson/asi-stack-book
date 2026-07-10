@@ -53,7 +53,7 @@ READER_CHAPTER = (
 OUTLINE = ROOT / "docs" / "book_outline.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "GovernanceRights.lean"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 
 COMMAND = "python3 scripts/validate_theseus_governance_rights_receipt_suite_import.py"
 IMPORT_ID = "theseus-governance-rights-receipt-suite-import-2026-07-05"
@@ -436,7 +436,7 @@ def validate_surfaces(errors: list[str]) -> None:
         errors,
     )
     require_text(
-        VALIDATE_BOOK,
+        VALIDATION_REGISTRY,
         [
             "scripts/validate_theseus_governance_rights_receipt_suite_import.py",
             "docs/theseus_governance_rights_receipt_suite_import.md",
@@ -489,4 +489,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

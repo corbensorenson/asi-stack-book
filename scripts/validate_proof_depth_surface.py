@@ -25,7 +25,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 
 CODEX_TEST_NAME = "Proof-depth surface synchronization"
 COMMAND = "python3 scripts/validate_proof_depth_surface.py"
@@ -206,10 +206,10 @@ def main() -> None:
         errors,
     )
     validate_surface(
-        VALIDATE_BOOK,
+        VALIDATION_REGISTRY,
         [
             "scripts/validate_proof_depth_surface.py",
-            'run_validator("validate_proof_depth_surface.py")',
+            '"script": "validate_proof_depth_surface.py"',
         ],
         errors,
     )

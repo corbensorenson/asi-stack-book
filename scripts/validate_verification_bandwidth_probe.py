@@ -25,7 +25,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "VerificationBandwidth.lean"
 
 COMMAND = "python3 scripts/validate_verification_bandwidth_probe.py"
@@ -455,11 +455,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "Verification bandwidth contradiction probe",
             rel(RESULT),
         ],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_verification_bandwidth_probe.py",
             "docs/verification_bandwidth_probe.md",
             "experiments/verification_bandwidth/results/2026-07-02-local.json",
-            'run_validator("validate_verification_bandwidth_probe.py")',
+            '"script": "validate_verification_bandwidth_probe.py"',
         ],
     }
     for path, phrases in required.items():

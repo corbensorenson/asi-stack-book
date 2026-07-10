@@ -18,7 +18,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "TypedJobs.lean"
 
 COMMAND = "python3 scripts/validate_typed_job_delivery_probe.py"
@@ -438,11 +438,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "no support-state promotion",
         ],
         CHANGELOG: ["Typed job delivery and evidence-readiness probe", rel(RESULT)],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_typed_job_delivery_probe.py",
             "docs/typed_job_delivery_probe.md",
             "experiments/typed_job_delivery/results/2026-07-02-local.json",
-            'run_validator("validate_typed_job_delivery_probe.py")',
+            '"script": "validate_typed_job_delivery_probe.py"',
         ],
     }
     for path, phrases in required.items():

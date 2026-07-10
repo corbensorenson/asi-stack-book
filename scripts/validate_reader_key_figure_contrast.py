@@ -17,7 +17,7 @@ REVIEW = ROOT / "docs" / "reader_key_figure_contrast_review.md"
 ARTIFACT_REVIEW = ROOT / "docs" / "reader_key_figure_artifact_review.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 
 COMMAND = "python3 scripts/validate_reader_key_figure_contrast.py"
 RESULT_ID = "reader-key-figure-contrast-2026-07-04"
@@ -388,8 +388,8 @@ def validate_surfaces(expected: dict[str, Any], errors: list[str]) -> None:
                 result_path,
             ],
         ),
-        rel(VALIDATE_BOOK): (
-            VALIDATE_BOOK,
+        rel(VALIDATION_REGISTRY): (
+            VALIDATION_REGISTRY,
             [
                 "validate_reader_key_figure_contrast.py",
                 result_path,

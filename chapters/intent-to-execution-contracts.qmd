@@ -496,6 +496,9 @@ The external-source crosswalk stays comparator-only:
 - `ext_tla_plus_home_docs` for high-level system-modeling and state-transition
   discipline;
 - `ext_dafny_2010` for specification and verification-condition discipline.
+- `ext_camel_prompt_injection_2025` for trusted-query control-flow extraction,
+  untrusted-data separation, and capability enforcement at tool calls, without
+  claiming local intent extraction or universal prompt-injection resistance.
 
 The adjacent human-intent chapter keeps its own comparator family:
 `ext_goal_oriented_requirements_engineering_2001`,

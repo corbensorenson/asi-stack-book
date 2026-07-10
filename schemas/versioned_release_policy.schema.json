@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/versioned_release_policy.schema.json",
+  "title": "Versioned Release Policy",
+  "type": "object",
+  "required": ["schema_version", "root_compatibility_url", "latest_channel", "immutable_channel", "known_releases", "non_claims"],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.versioned_release_policy.v0"] },
+    "root_compatibility_url": { "type": "string", "minLength": 1 },
+    "latest_channel": {
+      "type": "object",
+      "required": ["url", "mutable", "artifact_source", "pages_behavior"],
+      "properties": {
+        "url": { "type": "string", "minLength": 1 },
+        "mutable": { "type": "string", "enum": ["yes"] },
+        "artifact_source": { "type": "string", "minLength": 1 },
+        "pages_behavior": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "immutable_channel": {
+      "type": "object",
+      "required": ["index_url", "storage_authority", "tag_pattern", "artifact_name_template", "required_digest", "candidate_manifest_schema", "candidate_builder", "candidate_validator", "publication_transaction_doc", "release_record_required", "pages_prefix_role"],
+      "properties": {
+        "index_url": { "type": "string", "minLength": 1 },
+        "storage_authority": { "type": "string", "minLength": 1 },
+        "tag_pattern": { "type": "string", "minLength": 1 },
+        "artifact_name_template": { "type": "string", "minLength": 1 },
+        "required_digest": { "type": "string", "enum": ["sha256"] },
+        "candidate_manifest_schema": { "type": "string", "minLength": 1 },
+        "candidate_builder": { "type": "string", "minLength": 1 },
+        "candidate_validator": { "type": "string", "minLength": 1 },
+        "publication_transaction_doc": { "type": "string", "minLength": 1 },
+        "release_record_required": { "type": "string", "enum": ["yes"] },
+        "pages_prefix_role": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "known_releases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["version", "source_commit", "release_record", "source_release_url", "site_artifact_state", "site_artifact_url", "site_artifact_sha256", "archive_backfill_decision", "archive_backfill_decision_date", "archive_backfill_rationale", "non_claim"],
+        "properties": {
+          "version": { "type": "string", "minLength": 1 },
+          "source_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+          "release_record": { "type": "string", "minLength": 1 },
+          "source_release_url": { "type": "string", "minLength": 1 },
+          "site_artifact_state": { "type": "string", "enum": ["not_published", "published"] },
+          "site_artifact_url": { "type": "string" },
+          "site_artifact_sha256": { "type": "string" },
+          "archive_backfill_decision": { "type": "string", "enum": ["declined_historical_render_not_available", "not_applicable_archive_expected", "completed"] },
+          "archive_backfill_decision_date": { "type": "string", "minLength": 1 },
+          "archive_backfill_rationale": { "type": "string", "minLength": 1 },
+          "non_claim": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

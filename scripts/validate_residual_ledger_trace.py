@@ -35,7 +35,7 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerativeSystems.lean"
 
@@ -365,13 +365,13 @@ def validate_surfaces(errors: list[str]) -> None:
                 rel(RESULT),
             ],
         ),
-        rel(VALIDATE_BOOK): (
-            VALIDATE_BOOK,
+        rel(VALIDATION_REGISTRY): (
+            VALIDATION_REGISTRY,
             [
                 "scripts/validate_residual_ledger_trace.py",
                 "docs/residual_ledger_trace.md",
                 rel(RESULT),
-                'run_validator("validate_residual_ledger_trace.py")',
+                '"script": "validate_residual_ledger_trace.py"',
             ],
         ),
         rel(LEAN_FILE): (

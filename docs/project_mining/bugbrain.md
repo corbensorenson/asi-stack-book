@@ -2,7 +2,7 @@
 
 Date: 2026-07-10
 
-Project: `/Users/corbensorenson/Documents/old projects to mine/BugBrain`
+Project: local historical project `BugBrain` (private source checkout; path intentionally omitted)
 
 Pinned revision: `d5ddd37966e2057e8b5ee7fa7bd8f4c833a30dc5`
 

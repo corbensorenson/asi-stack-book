@@ -30,7 +30,7 @@ CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 TRANSITION = ROOT / "evidence_transitions" / "v1_x_measured" / "artifact_live_attestation_no_change.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ArtifactGraph.lean"
 
@@ -537,12 +537,12 @@ def validate_surfaces(errors: list[str]) -> None:
                 "live_artifact_attestation_backed_not_open_world",
             ],
         ),
-        rel(VALIDATE_BOOK): (
-            VALIDATE_BOOK,
+        rel(VALIDATION_REGISTRY): (
+            VALIDATION_REGISTRY,
             [
                 "scripts/validate_artifact_live_attestation_probe.py",
                 rel(RESULT),
-                'run_validator("validate_artifact_live_attestation_probe.py")',
+                '"script": "validate_artifact_live_attestation_probe.py"',
             ],
         ),
         rel(LEAN_FILE): (

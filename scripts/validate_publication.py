@@ -96,7 +96,6 @@ REQUIRED_FILES = [
     "assets/reading-mode.html",
     ".github/pull_request_template.md",
     ".github/ISSUE_TEMPLATE/config.yml",
-    ".github/ISSUE_TEMPLATE/external-review.yml",
     ".github/workflows/publish.yml",
 ]
 
@@ -310,12 +309,12 @@ def main() -> None:
             f"{chapter_count}/{chapter_count} chapters externally positioned",
             "0 explicit external-baseline exceptions",
             "Fourteen narrow non-core evidence transitions accepted",
-            "Fourteen narrow non-core transitions are accepted",
+            "Fourteen narrow non-core transitions are recorded in",
         ],
         "README.md": [
             f"all {chapter_count} chapters have source-noted external positioning records",
             "0 explicit external-baseline exceptions",
-            "Fourteen narrow non-core transitions are accepted",
+            "Fourteen narrow non-core transitions are recorded in",
             f"{chapter_count} of {chapter_count} chapters currently have in-prose `ext_*` positioning",
             "0 carry explicit exceptions",
         ],

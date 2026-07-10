@@ -30,7 +30,7 @@ LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
 NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
 V1_PROGRESS = ROOT / "docs" / "v1_progress_ledger.md"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerativeSystems.lean"
 TRANSITION = (
@@ -355,12 +355,12 @@ def validate_surfaces(errors: list[str]) -> None:
                 "no support-state promotion",
             ],
         ),
-        rel(VALIDATE_BOOK): (
-            VALIDATE_BOOK,
+        rel(VALIDATION_REGISTRY): (
+            VALIDATION_REGISTRY,
             [
                 "scripts/validate_residual_ledger_storage_replay.py",
                 rel(RESULT),
-                'run_validator("validate_residual_ledger_storage_replay.py")',
+                '"script": "validate_residual_ledger_storage_replay.py"',
             ],
         ),
         rel(LEAN_FILE): (

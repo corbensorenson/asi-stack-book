@@ -14,6 +14,7 @@ import json
 import re
 import shutil
 import tempfile
+import textwrap
 from pathlib import Path
 
 import build_curated_reader_edition
@@ -25,6 +26,7 @@ DEFAULT_READER_TEMP_NAME = "reader_source"
 DEFAULT_SOURCE_MODE = "generated_reader_edition"
 KEY_FIGURE_COMPANION_NOTE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "companion_notes" / "key-figures.md"
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]+\).*")
+INLINE_LINK_RE = re.compile(r"(?<!!)\[([^\]]+)\]\([^)]+\)")
 IMPLEMENTATION_HORIZON_HEADINGS = (
     "## Minimum Viable Implementation",
     "## Beyond the State of the Art",
@@ -150,7 +152,21 @@ def qmd_to_audio_markdown(text: str) -> str:
             output.append(narration_note("Image retained in companion text; add a short verbal description if it carries meaning."))
             continue
 
-        output.append(line)
+        spoken_line = INLINE_LINK_RE.sub(r"\1", line)
+        if len(spoken_line) <= 1000:
+            output.append(spoken_line)
+            continue
+        prefix_match = re.match(r"^(\s*(?:(?:[-*+]|\d+\.)\s+|>\s+))", spoken_line)
+        subsequent = " " * len(prefix_match.group(1)) if prefix_match else ""
+        output.extend(
+            textwrap.wrap(
+                spoken_line,
+                width=1000,
+                subsequent_indent=subsequent,
+                break_long_words=False,
+                break_on_hyphens=False,
+            )
+        )
 
     header = [
         "---",

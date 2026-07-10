@@ -26,7 +26,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "LivingBook.lean"
 
 COMMAND = "python3 scripts/validate_reader_release_candidate_bridge.py"
@@ -703,12 +703,12 @@ def validate_surfaces(errors: list[str]) -> None:
         errors,
     )
     require_text(
-        VALIDATE_BOOK,
+        VALIDATION_REGISTRY,
         [
             "scripts/validate_reader_release_candidate_bridge.py",
             "docs/reader_release_candidate_bridge.md",
             "experiments/reader_release_candidate_bridge/results/2026-07-05-local.json",
-            'run_validator("validate_reader_release_candidate_bridge.py")',
+            '"script": "validate_reader_release_candidate_bridge.py"',
         ],
         errors,
     )

@@ -2,7 +2,7 @@
 
 You are helping produce Corben Sorenson's living book:
 
-**The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI**
+**The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
 Your job is to build and maintain a Quarto-based living book, not a static anthology.
 

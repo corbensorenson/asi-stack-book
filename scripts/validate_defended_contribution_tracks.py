@@ -27,11 +27,15 @@ MAX_DEEP_WORK = 3
 MIN_TRACKS = 3
 MAX_TRACKS = 5
 REQUIRED_FRAGMENTS = (
-    "Selected contribution tracks | 5",
+    "Selected subordinate work tracks | 5",
+    "Program-level defended contributions | 3",
     "Deep-work tracks this cycle | 3",
     "Deep-work cap | At most 3 tracks per v1.x cycle",
-    "3 selected chapter lanes, 41 planned-only lanes",
-    "all 44 chapter core claims remain `argument`",
+    "3 selected chapter lanes, 51 planned-only lanes",
+    "all 54 chapter core claims remain `argument`",
+    "three program-level defended contributions",
+    "five subordinate work tracks",
+    "products/contribution_focus_contract.json",
     "does not promote any chapter core claim above `argument`",
     "does not claim selected tracks are complete at A+ depth",
     "docs/v1_x_active_evidence_cycle.md",

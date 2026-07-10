@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 222 |
-| Manifest status counts | {"implemented": 222} |
-| Triage class counts | {"formal-invariant": 222} |
-| Lean modules referenced | 61 |
-| Chapters with proof targets | 53 |
+| Proof targets audited | 225 |
+| Manifest status counts | {"implemented": 225} |
+| Triage class counts | {"formal-invariant": 225} |
+| Lean modules referenced | 63 |
+| Chapters with proof targets | 54 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -56,8 +56,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/FastGeneration.lean` | 5 | 38 | 21 | 8 |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/GovernanceRights.lean` | 3 | 21 | 14 | 6 |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | 1 | 9 | 17 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 4 | 25 | 8 | 5 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 4 | 12 | 4 | 4 |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | 2 | 2 | 1 | 1 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 21 | 11 | 6 |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 4 | 2 | 2 |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | 1 | 2 | 1 | 1 |
@@ -120,8 +122,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `fast-generation-architectures` | 5 | 5 | 0 | 0 |
 | `governed-deliberation-and-test-time-scaling` | 1 | 1 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
-| `integrated-reference-architecture` | 2 | 2 | 0 | 0 |
+| `integrated-reference-architecture` | 3 | 3 | 0 | 0 |
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
+| `inter-stack-protocols-identity-and-economic-exchange` | 2 | 2 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 5 | 5 | 0 | 0 |
 | `living-book-methodology` | 4 | 4 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
@@ -275,6 +278,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:runtime.adapters.adversarial_boundary_probe_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.revocation_route_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:runtime.adapters.human_oversight_degradation_fixture_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.invalid_credential.blocks_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.operational_invariant` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:routing.specialists.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -356,6 +361,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:artifact_stewards.federation_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:reference_architecture.trace.operational_invariant` | `integrated-reference-architecture` | `AsiStackProofs.ReferenceArchitecture` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:reference_architecture.trace.failure_blocks_promotion` | `integrated-reference-architecture` | `AsiStackProofs.ReferenceArchitecture` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:reference_architecture.governed_trace.four_invariants` | `integrated-reference-architecture` | `AsiStackProofs.GovernedRepositoryTrace` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.report_contract.operational_invariant` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.gate_before_promotion.failure_blocks_promotion` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:theseus.reference.report_bundle_audit.fixture_bridge` | `project-theseus-as-report-first-implementation-reference` | `AsiStackProofs.TheseusReference` | triage ok; module ok; chapter tag ok; limitation ok |

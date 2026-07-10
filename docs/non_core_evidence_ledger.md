@@ -10,7 +10,7 @@ readers, reviewers, and future writing agents.
 
 | Field | Status |
 |---|---|
-| Chapter core claims | All 53 remain at `argument`. |
+| Chapter core claims | All 54 remain at `argument`. |
 | Accepted non-core upward transitions | 14 narrow transitions. |
 | Accepted no-promotion side-lane decisions | 40 accepted `blocks_promotion` decisions; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
@@ -86,7 +86,7 @@ readers, reviewers, and future writing agents.
 
 | Claim surface | Record | What narrowed | Support-state effect |
 |---|---|---|---|
-| `non-core-evidence-ledger.chapter-core-count-surface` | `claim_revisions/v1_x/manifest_core_claim_count_narrowing.json` | The obsolete public count phrase "All 54 remain at `argument`" was narrowed to the then-current 44-chapter manifest state; the active manifest now has 53 core claims, all at `argument`, and current counts are regenerated from `book_structure.json` and `docs/core_claim_transition_coverage.md`. | None; this is a count-surface correction, not a demotion, refutation, or promotion. |
+| `non-core-evidence-ledger.chapter-core-count-surface` | `claim_revisions/v1_x/manifest_core_claim_count_narrowing.json` | The obsolete public count phrase "All 54 remain at `argument`" was narrowed to the then-current 44-chapter manifest state; the active manifest now has 54 core claims, all at `argument`, and current counts are regenerated from `book_structure.json` and `docs/core_claim_transition_coverage.md`. | None; this is a count-surface correction, not a demotion, refutation, or promotion. |
 
 ## How To Promote Anything Later
 

@@ -68,6 +68,9 @@
     "required_artifacts": { "type": "array", "items": { "type": "string" } },
     "artifact_refs": { "type": "array", "items": { "type": "string" } },
     "evidence_packet_refs": { "type": "array", "items": { "type": "string" } },
+    "evidence_quality_before_refs": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "evidence_quality_after_refs": { "type": "array", "items": { "type": "string" }, "default": [] },
+    "evidence_quality_dimension_deltas": { "type": "object", "additionalProperties": { "type": "string" }, "default": {} },
     "source_mapping_refs": { "type": "array", "items": { "type": "string" } },
     "verification_command": { "type": "string", "minLength": 1 },
     "verification_result": {
@@ -84,6 +87,7 @@
       "enum": ["open", "accepted", "rejected", "needs_review"]
     },
     "reviewer_refs": { "type": "array", "items": { "type": "string" } },
+    "reviewer_capacity_refs": { "type": "array", "items": { "type": "string" }, "default": [] },
     "reviewer_independence": { "type": "string", "minLength": 1 },
     "acceptance_blockers": { "type": "array", "items": { "type": "string" } },
     "changelog_ref": { "type": "string", "minLength": 1 },

@@ -793,6 +793,34 @@
       ]
     },
     {
+      "claim_id": "inter-stack-protocols-identity-and-economic-exchange.core",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "chapter_title": "Inter-Stack Protocols, Identity, and Economic Exchange",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-noted protocol, identity, credential, and value-transfer comparators plus finite invalid-credential and missing-reserved-budget routes, but no ASI Stack protocol endpoint, peer discovery, identity resolution, credential issuance or verification, delegated-authority chain, payment, settlement, dispute, revocation, or cross-stack dispatch has been accepted as evidence for the broad claim.",
+      "required_evidence": [
+        "public-safe exchange-contract workload with bounded valid, missing-identity, audience-mismatch, expired or revoked credential, missing-reserved-budget, disputed-receipt, and residual controls",
+        "independent review of a bounded peer-identity, delegation, authorization, consideration, receipt, dispute, and revocation policy",
+        "accepted transition for a narrowed exchange-routing, credential-policy, or budget-reservation claim"
+      ],
+      "blockers": [
+        "no local protocol endpoint, peer discovery, resolver, credential issuer or verifier, delegated-authority service, payment connector, settlement, dispute, or cross-stack dispatch",
+        "no peer-trust, task-truth, authorization, privacy, payment, legal, fairness, or effect-safety evaluation",
+        "finite theorems do not establish identity binding, credential validity, authorization correctness, payment settlement, economic fairness, peer trustworthiness, task or artifact truth, safety, or generality"
+      ],
+      "non_claims": [
+        "does not prove a local protocol, interoperable peer, trusted identity, valid credential, or authorized delegation",
+        "does not prove task truth, artifact truth, effect safety, payment, settlement, legal validity, economic fairness, or privacy",
+        "does not prove readiness, authority, deployment, or ASI"
+      ],
+      "refs": [
+        "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#inter-stack-protocols-identity-and-economic-exchange.core"
+      ]
+    },
+    {
       "claim_id": "safety-cases-and-structured-assurance.core",
       "chapter_id": "safety-cases-and-structured-assurance",
       "chapter_title": "Safety Cases and Structured Assurance",

@@ -1,0 +1,126 @@
+{
+  "schema_version": "asi_stack.ci_dependency_pin_inventory.v0",
+  "review_policy": {
+    "max_review_age_days": 90,
+    "warning_age_days": 75,
+    "fail_closed_after_due": true,
+    "as_of_source": "UTC system date unless ASI_PIN_REVIEW_AS_OF supplies an explicit YYYY-MM-DD audit date"
+  },
+  "pins": [
+    {
+      "id": "github-action:actions/checkout",
+      "kind": "github_action",
+      "repository": "actions/checkout",
+      "pin": "9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0",
+      "tag_context": "v7.0.0; Node 24 runtime",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Resolve the intended tag in the official repository, inspect release notes and the pin delta, then run all governed tiers.",
+      "update_authority": "A reviewed pull request must update workflows, this inventory, the prose ledger, negative controls, and rollback notes together.",
+      "residual": "A commit identity does not establish action correctness, maintainer integrity, runner integrity, or immutable transitive dependencies."
+    },
+    {
+      "id": "github-action:actions/setup-python",
+      "kind": "github_action",
+      "repository": "actions/setup-python",
+      "pin": "ece7cb06caefa5fff74198d8649806c4678c61a1",
+      "tag_context": "v6.3.0; Node 24 runtime",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Resolve the intended tag in the official repository, inspect release notes and the pin delta, then run all governed tiers.",
+      "update_authority": "A reviewed pull request must update workflows, this inventory, the prose ledger, negative controls, and rollback notes together.",
+      "residual": "A commit identity does not establish action correctness, maintainer integrity, runner integrity, or immutable transitive dependencies."
+    },
+    {
+      "id": "github-action:actions/setup-node",
+      "kind": "github_action",
+      "repository": "actions/setup-node",
+      "pin": "48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e",
+      "tag_context": "v6.4.0; Node 24 runtime",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Resolve the intended tag in the official repository, inspect release notes and the pin delta, then run all governed tiers.",
+      "update_authority": "A reviewed pull request must update workflows, this inventory, the prose ledger, negative controls, and rollback notes together.",
+      "residual": "A commit identity does not establish action correctness, maintainer integrity, runner integrity, or immutable transitive dependencies."
+    },
+    {
+      "id": "github-action:quarto-dev/quarto-actions/setup",
+      "kind": "github_action",
+      "repository": "quarto-dev/quarto-actions/setup",
+      "pin": "8a96df13519ee81fd526f2dfca5962811136661b",
+      "tag_context": "repository tag v2",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Resolve the intended tag in the official repository, inspect release notes and the pin delta, then run all governed tiers.",
+      "update_authority": "A reviewed pull request must update workflows, this inventory, the prose ledger, negative controls, and rollback notes together.",
+      "residual": "A commit identity does not establish action correctness, maintainer integrity, runner integrity, or immutable transitive dependencies."
+    },
+    {
+      "id": "github-action:actions/upload-pages-artifact",
+      "kind": "github_action",
+      "repository": "actions/upload-pages-artifact",
+      "pin": "fc324d3547104276b827a68afc52ff2a11cc49c9",
+      "tag_context": "v5",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Resolve the intended tag in the official repository, inspect release notes and the pin delta, then run all governed tiers.",
+      "update_authority": "A reviewed pull request must update workflows, this inventory, the prose ledger, negative controls, and rollback notes together.",
+      "residual": "A commit identity does not establish action correctness, maintainer integrity, runner integrity, or immutable transitive dependencies."
+    },
+    {
+      "id": "github-action:actions/deploy-pages",
+      "kind": "github_action",
+      "repository": "actions/deploy-pages",
+      "pin": "cd2ce8fcbc39b97be8ca5fce6e763baed58fa128",
+      "tag_context": "v5",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Resolve the intended tag in the official repository, inspect release notes and the pin delta, then run all governed tiers.",
+      "update_authority": "A reviewed pull request must update workflows, this inventory, the prose ledger, negative controls, and rollback notes together.",
+      "residual": "A commit identity does not establish action correctness, maintainer integrity, runner integrity, or immutable transitive dependencies."
+    },
+    {
+      "id": "github-action:actions/upload-artifact",
+      "kind": "github_action",
+      "repository": "actions/upload-artifact",
+      "pin": "043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+      "tag_context": "v7.0.1; Node 24 runtime",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Resolve the intended tag in the official repository, inspect release notes and the pin delta, then run all governed tiers.",
+      "update_authority": "A reviewed pull request must update workflows, this inventory, the prose ledger, negative controls, and rollback notes together.",
+      "residual": "A commit identity does not establish action correctness, maintainer integrity, runner integrity, or immutable transitive dependencies."
+    },
+    {
+      "id": "github-action:actions/download-artifact",
+      "kind": "github_action",
+      "repository": "actions/download-artifact",
+      "pin": "3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c",
+      "tag_context": "v8.0.1; Node 24 runtime",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Resolve the intended tag in the official repository, inspect release notes and the pin delta, then run all governed tiers.",
+      "update_authority": "A reviewed pull request must update workflows, this inventory, the prose ledger, negative controls, and rollback notes together.",
+      "residual": "A commit identity does not establish action correctness, maintainer integrity, runner integrity, or immutable transitive dependencies."
+    },
+    {
+      "id": "commit-url-installer:leanprover/elan",
+      "kind": "commit_url_installer",
+      "repository": "leanprover/elan",
+      "pin": "6737edca3d2ca3dbaa1b47b87769b48b420633ae",
+      "tag_context": "master snapshot resolved 2026-07-10",
+      "artifact_url": "https://raw.githubusercontent.com/leanprover/elan/6737edca3d2ca3dbaa1b47b87769b48b420633ae/elan-init.sh",
+      "artifact_sha256": "a620ff1641616222c8d37c54845492004bb84d6877cdbc944dd65c1aa685bf53",
+      "reviewed_on": "2026-07-10",
+      "review_due_on": "2026-10-08",
+      "review_method": "Review the official installer source at the selected commit, independently calculate its SHA-256, and rerun Lean plus release gates.",
+      "update_authority": "A reviewed pull request must update the commit URL, digest, workflow, this inventory, prose ledger, and rollback notes atomically.",
+      "residual": "The installer digest identifies downloaded bytes but does not prove those bytes benign or pin the packages, runner, network, and toolchain beneath them."
+    }
+  ],
+  "non_claims": [
+    "A current review date does not prove a dependency is safe, correct, or uncompromised.",
+    "Age-based failure forces reconsideration; it does not determine whether an upstream update should be adopted.",
+    "Runner images, transitive packages, hosted infrastructure, and network services remain residual trusted computing base."
+  ]
+}

@@ -120,6 +120,7 @@
       "additionalProperties": false,
       "default": {}
     },
+    "evidence_quality_vector_refs": { "type": "array", "items": { "type": "string" }, "default": [] },
     "contradictions": { "type": "array", "items": { "type": "string" }, "default": [] },
     "contradiction_state": {
       "type": "string",

@@ -1,0 +1,120 @@
+{
+  "schema_version": "asi_stack.reviewer_capacity_registry.v0",
+  "policy": {
+    "admission_rule": "A reviewer reference is insufficient. A decision that relies on human oversight must resolve an assigned capacity record whose competence covers the decision, independence is adequate, conflicts are disclosed, load is measured and within limit, response window is live, and escalation substitute is available.",
+    "fail_closed_rule": "Missing, unassigned, expired, conflicted, over-capacity, unmeasured-load, or out-of-scope review capacity blocks the dependent decision or narrows it to a non-promoting internal note.",
+    "quality_rule": "Completion is not review quality. Quality may be claimed only from recorded samples, defect detection or agreement criteria, misses, and a measurement method.",
+    "separation_rule": "The proposer, operational verifier, evidence-transition approver, and external reviewer are distinct roles unless a bounded record discloses and accepts the reduced independence.",
+    "current_program_state": "Internal ownership is assigned. By author decision, external review is not a prepublication completion gate; all three external roles are deferred until after the author declares the book complete and remain unavailable for any claim of independent review."
+  },
+  "records": [
+    {
+      "role_id": "program_owner",
+      "assignment_state": "assigned_internal",
+      "principal_ref": "author:corben-sorenson",
+      "decision_classes": ["roadmap prioritization", "scope control", "authorial disposition", "release recommendation"],
+      "competence": {
+        "state": "self_attested_internal_scope",
+        "required_scope": ["book architecture", "project lineage", "claim/evidence workflow"],
+        "evidence_refs": ["CITATION.cff", "docs/project_mining/cross-project-synthesis.md"],
+        "boundary": "No independent credential or external competence assessment is claimed."
+      },
+      "independence": {
+        "class": "proposer_and_owner_not_independent",
+        "from_author": "no",
+        "from_project": "no",
+        "shared_incentive_risk": "high"
+      },
+      "conflicts": {
+        "disclosure_state": "disclosed_structural_conflict",
+        "items": ["authorial ownership", "project success incentive", "title and licensing decision authority"]
+      },
+      "load": {
+        "measurement_state": "unmeasured",
+        "open_review_items": -1,
+        "maximum_parallel_reviews": -1,
+        "within_limit": "unknown",
+        "observed_at": "2026-07-10",
+        "source_refs": ["docs/external_ai_review_remediation_program.md"]
+      },
+      "response": {
+        "state": "not_committed",
+        "target_hours": -1,
+        "hard_expiry_hours": -1,
+        "last_observed_response_at": ""
+      },
+      "escalation_substitute": {
+        "role_id": "systems_editorial_reviewer",
+        "activation": "Optional after the author declares completion; it cannot be used as a prepublication gate or represented as already available."
+      },
+      "review_quality": {
+        "measurement_state": "not_measured",
+        "sample_count": 0,
+        "defects_detected": 0,
+        "known_misses": 0,
+        "method": "none"
+      },
+      "authority_ceiling": "May make authorial and roadmap decisions; may not self-certify independent review, external validity, legal advice, or support-state promotion evidence.",
+      "unavailable_behavior": "Pause authorial decision if required input is missing; never substitute internal ownership for an independent-review claim.",
+      "support_state_effect": "none",
+      "non_claims": ["Assignment does not establish availability, independence, qualification, or measured review quality."]
+    },
+    {
+      "role_id": "formal_methods_reviewer",
+      "assignment_state": "deferred_postpublication",
+      "principal_ref": "",
+      "decision_classes": ["Lean semantic adequacy", "trace invariant scope", "proof/prose correspondence"],
+      "competence": {"state": "requirement_only", "required_scope": ["Lean 4 or comparable proof assistant", "formal specification", "concurrency or trace semantics"], "evidence_refs": [], "boundary": "No person has been assessed or assigned."},
+      "independence": {"class": "required_independent_external", "from_author": "required", "from_project": "required", "shared_incentive_risk": "must_be_disclosed"},
+      "conflicts": {"disclosure_state": "no_principal_to_assess", "items": []},
+      "load": {"measurement_state": "not_assigned", "open_review_items": -1, "maximum_parallel_reviews": -1, "within_limit": "unknown", "observed_at": "2026-07-10", "source_refs": ["docs/external_review_status.md"]},
+      "response": {"state": "not_available", "target_hours": -1, "hard_expiry_hours": -1, "last_observed_response_at": ""},
+      "escalation_substitute": {"role_id": "program_owner", "activation": "May record a blocker or narrow an internal claim, but cannot grant independent formal-methods acceptance."},
+      "review_quality": {"measurement_state": "not_measured", "sample_count": 0, "defects_detected": 0, "known_misses": 0, "method": "none"},
+      "authority_ceiling": "May assess finite proof adequacy and proof/prose scope when assigned; may not certify runtime enforcement or empirical safety.",
+      "unavailable_behavior": "Do not solicit before completion and do not claim independent formal-methods acceptance. Optional post-publication review may reopen affected work.",
+      "support_state_effect": "none",
+      "non_claims": ["This record is a role requirement, not an assigned or qualified reviewer."]
+    },
+    {
+      "role_id": "safety_governance_reviewer",
+      "assignment_state": "deferred_postpublication",
+      "principal_ref": "",
+      "decision_classes": ["authority and revocation design", "human oversight", "contestability", "governance failure analysis"],
+      "competence": {"state": "requirement_only", "required_scope": ["AI safety or control", "sociotechnical governance", "human oversight and contestability"], "evidence_refs": [], "boundary": "No person has been assessed or assigned."},
+      "independence": {"class": "required_independent_external", "from_author": "required", "from_project": "required", "shared_incentive_risk": "must_be_disclosed"},
+      "conflicts": {"disclosure_state": "no_principal_to_assess", "items": []},
+      "load": {"measurement_state": "not_assigned", "open_review_items": -1, "maximum_parallel_reviews": -1, "within_limit": "unknown", "observed_at": "2026-07-10", "source_refs": ["docs/external_review_status.md"]},
+      "response": {"state": "not_available", "target_hours": -1, "hard_expiry_hours": -1, "last_observed_response_at": ""},
+      "escalation_substitute": {"role_id": "program_owner", "activation": "May preserve a blocker or narrow a claim, but cannot grant independent safety/governance acceptance."},
+      "review_quality": {"measurement_state": "not_measured", "sample_count": 0, "defects_detected": 0, "known_misses": 0, "method": "none"},
+      "authority_ceiling": "May assess governance assumptions and failure routes when assigned; may not certify deployed safety, alignment, or legal compliance.",
+      "unavailable_behavior": "Do not solicit before completion and do not claim independent safety/governance acceptance. Optional post-publication review may reopen affected work.",
+      "support_state_effect": "none",
+      "non_claims": ["This record is a role requirement, not an assigned or qualified reviewer."]
+    },
+    {
+      "role_id": "systems_editorial_reviewer",
+      "assignment_state": "deferred_postpublication",
+      "principal_ref": "",
+      "decision_classes": ["systems architecture", "empirical design", "reader coherence", "product separation"],
+      "competence": {"state": "requirement_only", "required_scope": ["AI systems", "experimental methodology", "technical editing or publishing"], "evidence_refs": [], "boundary": "No person has been assessed or assigned."},
+      "independence": {"class": "required_independent_external", "from_author": "required", "from_project": "required", "shared_incentive_risk": "must_be_disclosed"},
+      "conflicts": {"disclosure_state": "no_principal_to_assess", "items": []},
+      "load": {"measurement_state": "not_assigned", "open_review_items": -1, "maximum_parallel_reviews": -1, "within_limit": "unknown", "observed_at": "2026-07-10", "source_refs": ["docs/external_review_status.md"]},
+      "response": {"state": "not_available", "target_hours": -1, "hard_expiry_hours": -1, "last_observed_response_at": ""},
+      "escalation_substitute": {"role_id": "program_owner", "activation": "May fix internal editorial defects, but cannot grant independent systems/editorial acceptance."},
+      "review_quality": {"measurement_state": "not_measured", "sample_count": 0, "defects_detected": 0, "known_misses": 0, "method": "none"},
+      "authority_ceiling": "May assess systems claims, experiment design, and reader/product coherence when assigned; may not change title, license, or support state unilaterally.",
+      "unavailable_behavior": "Do not solicit before completion and do not claim independent systems/editorial or reader-release approval. Optional post-publication review may reopen affected work.",
+      "support_state_effect": "none",
+      "non_claims": ["This record is a role requirement, not an assigned or qualified reviewer."]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "Role definitions do not prove reviewer competence, availability, independence, or quality.",
+    "Deferred roles cannot satisfy or create review claims, and they are not prepublication gates.",
+    "Internal ownership cannot be relabeled as independent external review."
+  ]
+}
