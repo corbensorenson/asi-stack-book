@@ -1,0 +1,77 @@
+{
+  "record_id": "historical-project-lineage.artifact-projection-revocation.v1",
+  "canonical_artifact": {
+    "artifact_id": "artifact://trainer-run-evidence",
+    "content_digest": "sha256:6f91a85a9648f80c6f2e8f0e3d4968846c25d5b0b0ce17d767d8f97b8fa6813d",
+    "storage_ref": "local-lineage://public-safe-note-only",
+    "state": "quarantined",
+    "authority": "canonical_manifest"
+  },
+  "projections": [
+    {
+      "projection_id": "projection://claim-evaluation",
+      "projection_type": "report",
+      "source_artifact_id": "artifact://trainer-run-evidence",
+      "source_digest": "sha256:6f91a85a9648f80c6f2e8f0e3d4968846c25d5b0b0ce17d767d8f97b8fa6813d",
+      "projection_digest": "sha256:bca4606803f88c10e04c6f2d7a3d12f0b8256d404c2da0e580c2b2ae46fa8591",
+      "refresh_state": "blocked",
+      "revocation_state": "invalidated"
+    },
+    {
+      "projection_id": "projection://candidate-current",
+      "projection_type": "public_claim_surface",
+      "source_artifact_id": "artifact://trainer-run-evidence",
+      "source_digest": "sha256:6f91a85a9648f80c6f2e8f0e3d4968846c25d5b0b0ce17d767d8f97b8fa6813d",
+      "projection_digest": "sha256:3f8db90cd825b8157a52f8cc30ecf4c52f6fd22342eec840d209227a89d43217",
+      "refresh_state": "blocked",
+      "revocation_state": "revoked"
+    }
+  ],
+  "dependencies": [
+    {"upstream_id":"artifact://trainer-run-evidence","downstream_id":"projection://claim-evaluation","relation":"supports","alternate_derivation_refs":[]},
+    {"upstream_id":"projection://claim-evaluation","downstream_id":"projection://candidate-current","relation":"promotes","alternate_derivation_refs":[]}
+  ],
+  "quarantine_event": {
+    "event_ref": "sources/source_notes/corbens_trainer_project.md#promotion-and-revocation",
+    "upstream_id": "artifact://trainer-run-evidence",
+    "reason": "retained benchmark inputs were quarantined as synthetic placeholder fixtures",
+    "required_downstream_ids": ["projection://claim-evaluation", "projection://candidate-current"],
+    "invalidated_downstream_ids": ["projection://claim-evaluation", "projection://candidate-current"],
+    "alternate_derivation_ids": [],
+    "unresolved_ids": []
+  },
+  "replay_classification": {
+    "grade": "playback",
+    "input_refs": ["sources/source_notes/corbens_best_model_possible_project.md#verification-tool-and-replay-truth"],
+    "environment_ref": "",
+    "observed_output_ref": "retained payload playback only",
+    "comparison_or_semantic_validator_ref": "",
+    "limits": ["not deterministic re-execution", "not semantic replay", "no live tool effect"]
+  },
+  "async_completion": {
+    "request_id": "checkpoint://trainer-request",
+    "queued_ref": "sources/source_notes/corbens_trainer_project.md#checkpoint-durability",
+    "terminal_state": "unknown",
+    "terminal_receipt_ref": "",
+    "restart_reconciliation_ref": ""
+  },
+  "relocation_identity": {
+    "identity_authority": "content_digest",
+    "content_digest": "sha256:6f91a85a9648f80c6f2e8f0e3d4968846c25d5b0b0ce17d767d8f97b8fa6813d",
+    "original_path_ref": "historical absolute path redacted",
+    "relocated_path_ref": "public-safe content-addressed identity only",
+    "digest_verified": true
+  },
+  "support_state_effect": "blocks_promotion",
+  "promotion_blockers": [
+    "project artifacts were not imported or replayed by the book repository",
+    "replay evidence is playback only",
+    "asynchronous checkpoint completion lacks an acknowledged terminal receipt",
+    "the five projects form one local lineage rather than independent replication"
+  ],
+  "non_claims": [
+    "does not prove transitive revocation in the historical project runtime",
+    "does not establish deterministic re-execution or semantic replay",
+    "does not establish artifact portability or support-state promotion"
+  ]
+}

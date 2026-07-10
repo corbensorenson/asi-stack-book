@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["containment"],
+  "value": {"previous_state": "quarantined", "next_state": "limited", "next_allowed_routes": ["route://diagnostic", "route://shadow", "route://default"]},
+  "expected_error": "containment cannot weaken while an invalidating dependency remains"
+}

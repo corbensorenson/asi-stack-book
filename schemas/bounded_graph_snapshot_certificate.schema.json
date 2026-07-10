@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/bounded_graph_snapshot_certificate.schema.json",
+  "title": "Bounded Graph Snapshot Certificate",
+  "type": "object",
+  "required": ["certificate_id", "source_ids", "recorded_at", "durable_memory", "graph_snapshot", "bounded_selection", "context_handle", "revalidation", "context_materialization", "decision", "promotion_blockers", "non_claims"],
+  "properties": {
+    "certificate_id": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "durable_memory": {
+      "type": "object",
+      "required": ["memory_object_ref", "snapshot_id", "snapshot_digest", "generation", "revocation_epoch", "persistence_state"],
+      "properties": {
+        "memory_object_ref": {"type": "string", "minLength": 1},
+        "snapshot_id": {"type": "string", "minLength": 1},
+        "snapshot_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "generation": {"type": "integer", "minimum": 1},
+        "revocation_epoch": {"type": "integer", "minimum": 0},
+        "persistence_state": {"enum": ["durable_snapshot_observed", "declared_only", "unknown"]}
+      },
+      "additionalProperties": false
+    },
+    "graph_snapshot": {
+      "type": "object",
+      "required": ["graph_root_digest", "nodes", "edges", "node_count", "edge_count"],
+      "properties": {
+        "graph_root_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "nodes": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["node_id", "depth", "content_digest", "provenance_refs"], "properties": {"node_id": {"type": "string", "minLength": 1}, "depth": {"type": "integer", "minimum": 0}, "content_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"}, "provenance_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}}, "additionalProperties": false}},
+        "edges": {"type": "array", "items": {"type": "object", "required": ["from", "to", "relation"], "properties": {"from": {"type": "string", "minLength": 1}, "to": {"type": "string", "minLength": 1}, "relation": {"type": "string", "minLength": 1}}, "additionalProperties": false}},
+        "node_count": {"type": "integer", "minimum": 1},
+        "edge_count": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "bounded_selection": {
+      "type": "object",
+      "required": ["root_node_id", "selected_node_ids", "omitted_frontier_node_ids", "max_depth", "node_budget", "selection_policy"],
+      "properties": {
+        "root_node_id": {"type": "string", "minLength": 1},
+        "selected_node_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "omitted_frontier_node_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "max_depth": {"type": "integer", "minimum": 0},
+        "node_budget": {"type": "integer", "minimum": 1},
+        "selection_policy": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "context_handle": {
+      "type": "object",
+      "required": ["handle_id", "semantic_address", "generation", "bound_snapshot_id", "bound_snapshot_digest", "policy_version", "issued_at", "expires_at", "provenance_refs", "authority_ceiling", "permitted_uses", "revocation_state", "revocation_epoch", "revalidation_required"],
+      "properties": {
+        "handle_id": {"type": "string", "minLength": 1},
+        "semantic_address": {"type": "string", "minLength": 1},
+        "generation": {"type": "integer", "minimum": 1},
+        "bound_snapshot_id": {"type": "string", "minLength": 1},
+        "bound_snapshot_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "policy_version": {"type": "string", "minLength": 1},
+        "issued_at": {"type": "string", "format": "date-time"},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "provenance_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "authority_ceiling": {"type": "string", "minLength": 1},
+        "permitted_uses": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "revocation_state": {"enum": ["active", "revoked", "stale", "unknown"]},
+        "revocation_epoch": {"type": "integer", "minimum": 0},
+        "revalidation_required": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "revalidation": {
+      "type": "object",
+      "required": ["state", "checked_at", "policy_version", "snapshot_digest", "evidence_refs"],
+      "properties": {
+        "state": {"enum": ["passed", "failed", "not_run", "expired"]},
+        "checked_at": {"type": "string", "format": "date-time"},
+        "policy_version": {"type": "string", "minLength": 1},
+        "snapshot_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "context_materialization": {
+      "type": "object",
+      "required": ["materialization_ref", "derived_from_snapshot_id", "state", "durable_write_authorized", "loss_contract", "residuals"],
+      "properties": {
+        "materialization_ref": {"type": "string", "minLength": 1},
+        "derived_from_snapshot_id": {"type": "string", "minLength": 1},
+        "state": {"enum": ["materialized_bounded_context", "faulted", "denied"]},
+        "durable_write_authorized": {"type": "boolean"},
+        "loss_contract": {"type": "string", "minLength": 1},
+        "residuals": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": ["state", "ordinary_use_allowed", "support_state_effect"],
+      "properties": {
+        "state": {"enum": ["admitted_for_bounded_context", "blocked", "quarantined"]},
+        "ordinary_use_allowed": {"type": "boolean"},
+        "support_state_effect": {"enum": ["none", "blocks_promotion", "eligible_for_bounded_evidence_review"]}
+      },
+      "additionalProperties": false
+    },
+    "promotion_blockers": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "non_claims": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

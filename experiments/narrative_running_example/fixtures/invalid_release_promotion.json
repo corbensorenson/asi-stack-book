@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["decision"],
+  "value": {"support_state_effect": "promoted", "release_approved": true},
+  "expected_error": "editorial continuity cannot promote support or approve a reader release"
+}

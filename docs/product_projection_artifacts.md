@@ -25,8 +25,33 @@ python3 scripts/build_reader_edition.py \
 The generated orientation is derivative editorial navigation. It adds no
 evidence and changes no support state. The other 39 chapters remain visible in
 the architecture reference and are not rejected or deleted. The candidate is
-not a reviewed reader release; continuity, repetition, accessibility, figure,
-format, and independent editorial review still apply.
+not a reviewed reader release; here, "reviewed" means that the final artifact
+gates have not yet been run, not that external-human review is required.
+Final-candidate continuity, repetition, accessibility, figure, and format
+gates still apply. No external-human review is a prepublication requirement.
+
+`products/narrative_running_example_trace.json` makes the running example
+cumulative rather than thematic. It begins with one human repository-change
+request and adds one distinct artifact at each selected chapter: responsibility
+map, cost/quality ledger, authority grant, failure classification, claim-state
+record, oversight dossier, protected mutation boundary, command contract, plan
+DAG, context-adequacy decision, artifact graph, effect/rollback receipt,
+governance benefit/tax report, integrated reference trace, and book change/
+release record. Every step consumes only artifacts already carried forward and
+hands off to the next selected chapter.
+
+`python3 scripts/validate_narrative_running_example.py` checks all 15 editorial
+contracts, canonical selection order, scenario continuity, 16 cumulative
+artifact identities, prior causes, handoffs, and the no-promotion/no-release
+boundary. Six controls reject order drift, cumulative-state reset, an unknown
+consumed artifact, a skipped handoff, duplicate output identity, and editorial
+continuity presented as support or release approval.
+
+The bounded candidate was generated into an ignored build workspace, rendered
+as 20 HTML pages, and inspected with
+`node scripts/validate_reader_html_artifact_browser.js --strict` across 40
+desktop/mobile page-view pairs. That is current HTML candidate evidence, not a
+final release record or approval of EPUB, DOCX, PDF, or audio.
 
 ## Architecture reference specification
 

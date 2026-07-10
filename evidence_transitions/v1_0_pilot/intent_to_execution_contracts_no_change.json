@@ -5,7 +5,8 @@
     "chapters/intent-to-execution-contracts.qmd",
     "appendices/C_claim_evidence_matrix.qmd",
     "docs/plan_execution_contract_harness.md",
-    "docs/proof_adequacy_review.md"
+    "docs/proof_adequacy_review.md",
+    "schemas/one_shot_privileged_action_record.schema.json"
   ],
   "claim_record_refs": [
     "book_structure.json",
@@ -17,30 +18,32 @@
     "tests/fixtures/protocol_records/plan_graph.valid.json",
     "tests/fixtures/protocol_records/typed_job.valid.json",
     "experiments/plan_execution_contracts/results/2026-06-28-local.md",
-    "lean/AsiStackProofs/IntentToExecution.lean"
+    "lean/AsiStackProofs/IntentToExecution.lean",
+    "tests/fixtures/protocol_records/one_shot_privileged_action_record.valid.json"
   ],
   "old_support_state": "argument",
   "new_support_state": "argument",
   "transition_effect": "no_change",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "synthetic command-contract, plan-graph, and typed-job record discipline plus finite Lean predicates only; no deployed execution, planner quality, semantic-parser quality, runtime adapter behavior, artifact acceptance, source interpretation, or source-derived support-state promotion",
+  "scope_boundary": "synthetic command/plan/job discipline, finite Lean predicates, and one hand-authored one-shot privileged-action lifecycle only; no deployed approval service, privileged effect, OS enforcement, planner or parser quality, runtime-adapter behavior, historical-project replay, or support promotion",
   "evidence_roles": [
     "synthetic_harness",
     "schema_fixture",
     "finite_record_lean_predicate",
     "proof_adequacy_review",
+    "one_shot_privileged_action_fixture",
     "chapter_limitations",
     "source_evidence_audit"
   ],
-  "transition_reason": "The repository has command-contract, plan-graph, and typed-job schemas, protocol fixtures, finite IntentToExecution Lean predicates, exact source mappings for the Intent-to-Execution Contracts chapter, and a synthetic plan-execution contract harness. Those artifacts make contract completeness, constraint preservation, artifact traceability, dispatch receipts, and approval-gated job state executable at the record level. They still do not establish deployed runtime execution, planner quality, semantic-parser quality, tool-effect correctness, artifact acceptance, source interpretation adequacy, or model behavior.",
+  "transition_reason": "The repository has command-contract, plan-graph, and typed-job schemas, protocol fixtures, finite IntentToExecution Lean predicates, exact source mappings, synthetic plan/handoff/bridge probes, and one hand-authored five-project privileged-action record with ten rejecting mutations. Those artifacts exercise exact approval binding, TTL, nonce consumption, acknowledgement rejection, effect-receipt presence, and replay denial at the record level. They still do not establish a deployed approval service, real privileged effect, OS enforcement, planner or parser quality, tool-effect correctness, artifact acceptance, historical-project behavior, or model behavior.",
   "required_artifacts": [
     "replayed intent-to-execution vertical slice with real command contracts, jobs, effects, receipts, and accepted artifacts",
     "runtime adapter trace showing approved effects and denied effects",
     "semantic parser or command-extraction evaluation over real tasks",
     "artifact acceptance or verification trace over actual outputs",
     "tool-execution replay with failure and recovery paths",
-    "independent review of contract completeness and constraint preservation",
-    "source interpretation review for intent-to-execution source mappings",
+    "observed approval-service and OS-enforcement traces over disposable privileged effects with mismatch, expiry, revocation, replay, and rollback controls",
+    "matched simpler baseline reporting unsafe effects, false accepts/rejects, latency, operator burden, and recovery cost; independent specialist review, if later pursued, is postpublication and not a completion gate",
     "accepted upward evidence-transition review for any narrowed stronger claim"
   ],
   "artifact_refs": [
@@ -53,6 +56,9 @@
     "tests/fixtures/protocol_records/command_contract.valid.json",
     "tests/fixtures/protocol_records/plan_graph.valid.json",
     "tests/fixtures/protocol_records/typed_job.valid.json",
+    "schemas/one_shot_privileged_action_record.schema.json",
+    "tests/fixtures/protocol_records/one_shot_privileged_action_record.valid.json",
+    "scripts/validate_one_shot_privileged_action.py",
     "docs/proof_adequacy_review.md",
     "lean/AsiStackProofs/IntentToExecution.lean"
   ],
@@ -66,11 +72,12 @@
     "appendices/C_claim_evidence_matrix.qmd#intent-to-execution-contracts.core",
     "docs/source_evidence_audit.md#intent-to-execution-contracts.core"
   ],
-  "verification_command": "python3 scripts/validate_plan_execution_contracts.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_command": "python3 scripts/validate_plan_execution_contracts.py && python3 scripts/validate_one_shot_privileged_action.py && python3 scripts/validate_evidence_transitions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
   "verification_result": "pass",
   "negative_results": [
     "Intent-to-Execution Contracts remains at argument",
     "plan-execution fixtures are synthetic",
+    "one-shot privileged-action fixture is hand-authored and executes no effect",
     "schema validation checks record shape rather than deployed execution",
     "finite Lean predicates remain useful but too narrow for runtime execution, parser quality, tool-effect correctness, artifact acceptance, or scheduler-quality claims",
     "source interpretation review and model behavior are not implemented"
@@ -89,14 +96,14 @@
     "finite Lean predicates treated as deployed runtime behavior",
     "support-state promotion without accepted transition"
   ],
-  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after replayed intent-to-execution vertical slices, real command contracts and typed jobs, runtime adapter traces, artifact verification traces, tool-effect receipts, recovery-path replays, semantic-parser evaluation, independent contract review, and source-interpretation review are recorded with accepted evidence-transition records.",
+  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after replayed intent-to-execution vertical slices, real command contracts and typed jobs, approval and runtime-adapter traces, exact tool-effect and post-state receipts, mismatch/expiry/revocation/replay controls, recovery replays, semantic-parser evaluation, and an accepted evidence-transition record.",
   "limitations": [
     "synthetic fixtures do not prove deployed execution",
     "schema validation does not prove semantic-parser quality",
     "finite Lean predicates do not implement a runtime dispatcher",
     "dispatch receipt strings do not prove tool-effect correctness",
     "artifact refs do not prove artifact acceptance",
-    "no independent runtime, parser-quality, tool-effect, artifact-review, or source-interpretation review has been recorded"
+    "no deployed runtime, parser-quality, approval-service, tool-effect, OS-enforcement, or artifact-acceptance evidence has been recorded"
   ],
   "review_status": "accepted",
   "reviewer_refs": [
@@ -109,7 +116,7 @@
     "no semantic-parser evaluation",
     "no artifact acceptance trace",
     "no runtime adapter trace over real jobs",
-    "no independent source-interpretation review"
+    "no observed one-shot privileged effect with replay and rollback controls"
   ],
   "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-contract-layer-evidence-transitions-no-change",
   "support_state_effect": "argument_only",

@@ -1,0 +1,64 @@
+{
+  "record_id": "historical-lineage-authority-tuple-001",
+  "source_ids": ["cca_project", "moecot_manifest_project", "beastbrain_project", "bugbrain_project", "corbens_trainer_project", "corbens_best_model_possible_project"],
+  "authority_tuple": {
+    "principal_id": "principal://book-maintainer",
+    "execution_domain_id": "domain://book-worktree",
+    "operation": "validate bounded authority fixture",
+    "target_ref": "schemas/authority_tuple_lifecycle_record.schema.json",
+    "permission_class": "execute",
+    "scope": ["read:schemas", "execute:fixture-validator"],
+    "budget_account_id": "budget://book-validation",
+    "trace_id": "trace://authority-tuple-001",
+    "replay_identity": "replay://authority-tuple-001@book-fixture@epoch-4",
+    "grant_id": "grant://book-fixture",
+    "policy_version": "policy://book-maintenance-v1",
+    "revocation_epoch": 4,
+    "expires_at": "2026-07-11T00:00:00Z"
+  },
+  "domain_ownership": {
+    "execution_domain_id": "domain://book-worktree",
+    "domain_owner_id": "owner://book-repository",
+    "executor_id": "executor://local-python",
+    "budget_owner_id": "owner://book-validation-budget",
+    "trace_owner_id": "owner://book-audit-ledger",
+    "revocation_authority_id": "authority://book-governance"
+  },
+  "delegation": {
+    "delegator_id": "principal://book-maintainer",
+    "delegate_id": "executor://local-python",
+    "parent_grant_id": "grant://book-fixture",
+    "delegated_scope": ["read:schemas", "execute:fixture-validator"],
+    "delegated_budget_account_id": "budget://book-validation",
+    "delegated_trace_id": "trace://authority-tuple-001",
+    "delegated_revocation_epoch": 4
+  },
+  "lifecycle_events": [
+    {"state": "requested", "principal_id": "principal://book-maintainer", "execution_domain_id": "domain://book-worktree", "grant_id": "grant://book-fixture", "trace_id": "trace://authority-tuple-001", "revocation_epoch": 4, "effect_permitted": false},
+    {"state": "granted", "principal_id": "principal://book-maintainer", "execution_domain_id": "domain://book-worktree", "grant_id": "grant://book-fixture", "trace_id": "trace://authority-tuple-001", "revocation_epoch": 4, "effect_permitted": true},
+    {"state": "delegated", "principal_id": "executor://local-python", "execution_domain_id": "domain://book-worktree", "grant_id": "grant://book-fixture", "trace_id": "trace://authority-tuple-001", "revocation_epoch": 4, "effect_permitted": true},
+    {"state": "receipted", "principal_id": "executor://local-python", "execution_domain_id": "domain://book-worktree", "grant_id": "grant://book-fixture", "trace_id": "trace://authority-tuple-001", "revocation_epoch": 4, "effect_permitted": false}
+  ],
+  "cross_domain_handoff": {
+    "source_domain_id": "domain://book-worktree",
+    "target_domain_id": "domain://validation-process",
+    "target_domain_owner_id": "owner://validation-process",
+    "target_owner_approval_ref": "approval://validation-process-fixture-only",
+    "handoff_receipt_ref": "receipt://cross-domain-validation-001",
+    "decision": "allow"
+  },
+  "security_boundary": {
+    "protocol_security_controls": ["scoped opaque grant", "trace-bound replay identity", "revocation epoch check"],
+    "hardware_root_state": "absent",
+    "hardware_root_evidence_refs": [],
+    "hardware_root_claim_allowed": false
+  },
+  "decision": {
+    "outcome": "allow",
+    "effect_receipt_ref": "receipt://fixture-validation-effect-001",
+    "denial_or_revocation_receipt_ref": null,
+    "support_state_effect": "blocks_promotion"
+  },
+  "promotion_blockers": ["fixture-only lifecycle", "no OS-enforced execution domain", "no hardware root", "no historical-project runtime replay"],
+  "non_claims": ["does not prove deployed authority enforcement", "does not establish protocol security", "does not establish a hardware root of trust", "does not promote the chapter core claim"]
+}

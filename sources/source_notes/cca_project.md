@@ -100,6 +100,7 @@ proxy, adapter, lineage, and closure metrics can disagree.
 - `virtual-context-abi`
 - `context-transactions-snapshots-mounts-and-taint`
 - `claim-ledgers-and-belief-revision`
+- `spinoza-verification-and-proof-carrying-claims`
 - `artifact-graphs-audit-logs-and-replay`
 - `procedural-memory-and-cognitive-loop-closure`
 - `routing-heads-and-specialist-cores`

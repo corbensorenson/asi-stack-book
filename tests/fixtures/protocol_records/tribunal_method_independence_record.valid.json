@@ -1,0 +1,16 @@
+{
+  "record_id":"tribunal-method-independence-2026-07-10","source_ids":["cca_project","moecot_manifest_project","beastbrain_project","bugbrain_project","corbens_best_model_possible_project"],"target_ref":"claim:memory-replay-equivalence",
+  "methods":[
+    {"method_id":"method:proof","method_label":"formal_proof","independence_group":"group:formal","evidence_refs":["proof:finite-route"],"result":"pass","vote":"accept","veto_exercised":false,"veto_reason":""},
+    {"method_id":"method:citation","method_label":"citation_check","independence_group":"group:sources","evidence_refs":["source:public-note"],"result":"pass","vote":"accept","veto_exercised":false,"veto_reason":""},
+    {"method_id":"method:replay","method_label":"procedural_replay","independence_group":"group:runtime","evidence_refs":["replay:bounded"],"result":"unknown","vote":"revise","veto_exercised":false,"veto_reason":""},
+    {"method_id":"method:adversary","method_label":"adversarial_probe","independence_group":"group:red-team","evidence_refs":["probe:playback-laundering"],"result":"fail","vote":"reject","veto_exercised":true,"veto_reason":"live effect not established"},
+    {"method_id":"method:falsification","method_label":"falsification","independence_group":"group:falsification","evidence_refs":["counterexample:playback-only"],"result":"fail","vote":"revise","veto_exercised":false,"veto_reason":""},
+    {"method_id":"method:abstention","method_label":"abstention","independence_group":"group:scope","evidence_refs":[],"result":"abstain","vote":"abstain","veto_exercised":false,"veto_reason":"insufficient deployed evidence"}
+  ],
+  "independence_edges":[{"from":"method:replay","to":"method:proof","relation":"depends_on"},{"from":"method:adversary","to":"method:replay","relation":"shares_evidence_with"}],
+  "case_results":[{"case_id":"case:ordinary","case_kind":"ordinary","evidence_present":true,"verdict":"revise"},{"case_id":"case:empty","case_kind":"empty_case","evidence_present":false,"verdict":"abstain"},{"case_id":"case:falsify","case_kind":"falsification_target","evidence_present":true,"verdict":"reject"}],
+  "dissent":{"present":true,"method_ids":["method:adversary","method:abstention"],"text":"bounded proof and citations do not establish live replay","preserved_in_verdict":true},
+  "verdict":{"state":"revise","independent_group_count":6,"default_approval_used":false,"unresolved_refs":["residual:no-live-replay"],"required_actions":["run deployed independent replay before promotion"]},
+  "decision":{"ordinary_promotion_allowed":false,"support_state_effect":"blocks_promotion"},"promotion_blockers":["falsification failed","dissent unresolved","no deployed replay"],"non_claims":["not reviewer independence proof","not verdict correctness","not deployed runtime evidence","no support promotion"]
+}

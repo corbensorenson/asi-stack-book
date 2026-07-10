@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["preservation_obligations", 1],
+  "value": {"status": "violated", "target_field": "target.objective"},
+  "expected_error": "every source requirement to remain semantically preserved"
+}

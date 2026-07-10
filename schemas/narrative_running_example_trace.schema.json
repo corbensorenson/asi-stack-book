@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/narrative_running_example_trace.schema.json",
+  "title": "Narrative Running Example Trace",
+  "type": "object",
+  "required": ["schema_version", "trace_id", "narrative_spine_ref", "scenario", "initial_artifact_refs", "steps", "decision", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.narrative_running_example_trace.v0"},
+    "trace_id": {"type": "string", "minLength": 1},
+    "narrative_spine_ref": {"const": "products/narrative_product_spine.json"},
+    "scenario": {"type": "string", "minLength": 24},
+    "initial_artifact_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "steps": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "required": ["order", "chapter_id", "consumes", "produces", "cumulative_artifact_refs", "failure_pressure", "handoff_to"],
+        "properties": {
+          "order": {"type": "integer", "minimum": 1, "maximum": 15},
+          "chapter_id": {"type": "string", "minLength": 1},
+          "consumes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "produces": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "cumulative_artifact_refs": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "failure_pressure": {"type": "string", "minLength": 16},
+          "handoff_to": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": ["status", "support_state_effect", "release_approved"],
+      "properties": {
+        "status": {"const": "editorially_complete_candidate_not_release"},
+        "support_state_effect": {"const": "none"},
+        "release_approved": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

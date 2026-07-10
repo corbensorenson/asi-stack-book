@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["steps", 9, "consumes"],
+  "value": ["artifact://never-produced-context"],
+  "expected_error": "consumes an artifact not carried from prior chapters"
+}

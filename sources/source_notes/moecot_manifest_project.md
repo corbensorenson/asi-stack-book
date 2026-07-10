@@ -170,16 +170,22 @@ Primary destinations:
 - `open-ended-improvement-engines`
 - `recursive-self-improvement-boundaries`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
+- `readiness-gates-residual-escrow-and-quarantine`
 - `artifact-steward-agents-and-living-project-governance`
 
 Secondary destinations:
 
+- `evidence-states-and-claim-discipline`
 - `human-intent-as-a-formal-input`
 - `intent-to-execution-contracts`
+- `runtime-adapters-tool-permissions-and-human-approval`
+- `security-kernel-and-digital-scifs`
 - `planning-as-a-control-layer`
+- `virtual-context-abi`
 - `context-transactions-snapshots-mounts-and-taint`
 - `procedural-memory-and-cognitive-loop-closure`
 - `claim-ledgers-and-belief-revision`
+- `spinoza-verification-and-proof-carrying-claims`
 - `system-boundaries-and-authority`
 - `governed-deliberation-and-test-time-scaling`
 - `resource-economics-and-token-budgets`
@@ -187,6 +193,19 @@ Secondary destinations:
 - `data-engines-continual-learning-and-unlearning`
 - `capability-thresholds-and-deployment-commitments`
 - `safety-cases-and-structured-assurance`
+- `executable-specifications-and-lean-proof-envelope`
+
+### Formal semantic-depth boundary
+
+- The project contains abundant contracts, builders, gates, and typed records,
+  but their presence is a shallower evidence lane than a finite route, a
+  derived invariant, or an executable-model bridge.
+- Pass hashes, legality rules, reproducer bundles, and localized-repair receipts
+  help bind an executable model to artifacts; they do not by themselves bind
+  that model to deployed runtime behavior.
+- The negative external-capability record is a useful proof-envelope warning:
+  broad internal contract coverage and coherent architecture can coexist with
+  weak behavior outside the modeled or internally tested boundary.
 
 No new chapter is recommended. The project is a convergence reference whose
 mechanisms already have layer owners.

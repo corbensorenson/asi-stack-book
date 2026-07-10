@@ -1,0 +1,70 @@
+{
+  "record_id": "historical-lineage-readiness-check-001",
+  "source_ids": ["cca_project", "moecot_manifest_project", "beastbrain_project", "bugbrain_project", "corbens_trainer_project", "corbens_best_model_possible_project"],
+  "target_id": "runtime-lane://historical-lineage-candidate",
+  "gate_identity": {
+    "gate_id": "gate://historical-readiness-001",
+    "policy_version": "policy://readiness-check-lifecycle-v1",
+    "authority_ref": "authority://book-fixture-only",
+    "evaluated_at": "2026-07-10T18:00:00Z",
+    "expires_at": "2026-07-17T18:00:00Z"
+  },
+  "checks": [
+    {
+      "check_id": "check://artifact-manifest-present",
+      "applicability": "applicable",
+      "required": true,
+      "attempt": "skipped",
+      "result": "unknown",
+      "waiver_ref": null,
+      "evidence_refs": [],
+      "observed_at": null,
+      "expires_at": null
+    },
+    {
+      "check_id": "check://benchmark-floor",
+      "applicability": "applicable",
+      "required": true,
+      "attempt": "attempted",
+      "result": "fail",
+      "waiver_ref": null,
+      "evidence_refs": ["evidence://historical-floor-failure"],
+      "observed_at": "2026-07-10T17:30:00Z",
+      "expires_at": "2026-07-17T17:30:00Z"
+    },
+    {
+      "check_id": "check://hardware-root",
+      "applicability": "not_applicable",
+      "required": false,
+      "attempt": "not_attempted",
+      "result": "not_applicable",
+      "waiver_ref": null,
+      "evidence_refs": [],
+      "observed_at": null,
+      "expires_at": null
+    }
+  ],
+  "stale_dependencies": [
+    {"dependency_ref": "promotion://candidate-current", "state": "quarantined", "invalidates_promotion": true}
+  ],
+  "containment": {
+    "previous_state": "limited",
+    "next_state": "quarantined",
+    "previous_allowed_routes": ["route://diagnostic", "route://shadow"],
+    "next_allowed_routes": ["route://diagnostic"]
+  },
+  "quarantine": {
+    "active": true,
+    "reason_refs": ["check://artifact-manifest-present", "check://benchmark-floor", "promotion://candidate-current"],
+    "owner_ref": "owner://readiness-maintainer",
+    "affected_descendant_refs": ["claim://candidate-current", "report://candidate-dashboard"],
+    "disposition_ref": "disposition://rerun-required-before-promotion"
+  },
+  "decision": {
+    "state": "quarantined",
+    "ordinary_routing_allowed": false,
+    "support_state_effect": "blocks_promotion"
+  },
+  "promotion_blockers": ["required applicable check skipped", "benchmark floor failed", "linked promotion is quarantined", "fixture only"],
+  "non_claims": ["does not reproduce historical readiness behavior", "does not deploy quarantine routing", "does not establish target readiness", "does not promote the chapter core claim"]
+}

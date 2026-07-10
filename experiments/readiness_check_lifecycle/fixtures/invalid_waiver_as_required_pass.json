@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["checks", 0],
+  "value": {"attempt": "attempted", "result": "pass", "waiver_ref": "waiver://skip-manifest", "evidence_refs": ["evidence://waiver-only"], "observed_at": "2026-07-10T17:00:00Z", "expires_at": "2026-07-17T17:00:00Z"},
+  "expected_error": "a waiver cannot substitute for a passing required check"
+}

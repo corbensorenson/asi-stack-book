@@ -1,0 +1,15 @@
+{
+  "record_id":"contradiction-revision-five-project-2026-07-10","source_ids":["cca_project","moecot_manifest_project","beastbrain_project","bugbrain_project","corbens_best_model_possible_project"],
+  "claim_identity":{"claim_id":"claim:memory-replay-equivalence","claim_text_digest":"sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","ontology_id":"ontology:claim-ledger","ontology_version":"v2"},
+  "separated_states":{"justification_state":"contested","justification_refs":["evidence:weak","evidence:medium","evidence:strong"],"lifecycle_state":"superseded","commitment_state":"withheld","authority_state":"no_action_authority"},
+  "contradiction_sequence":[
+    {"event_id":"contradiction:weak","strength":"weak","strength_rank":1,"evidence_ref":"evidence:weak","response":"annotate","response_rank":1,"unresolved_residual_ref":"residual:weak-transfer"},
+    {"event_id":"contradiction:medium","strength":"medium","strength_rank":2,"evidence_ref":"evidence:medium","response":"block_promotion","response_rank":2,"unresolved_residual_ref":"residual:medium-causal-gap"},
+    {"event_id":"contradiction:strong","strength":"strong","strength_rank":3,"evidence_ref":"evidence:strong","response":"downgrade_or_split","response_rank":3,"unresolved_residual_ref":"residual:strong-replay-gap"}
+  ],
+  "revision":{"revision_id":"revision:memory-replay-split-v2","action":"split","superseded_claim_id":"claim:memory-replay-equivalence","successor_claim_ids":["claim:record-playback","claim:live-reexecution"],"prior_history_refs":["history:claim-v1"],"unresolved_residual_refs":["residual:weak-transfer","residual:medium-causal-gap","residual:strong-replay-gap"]},
+  "dependency_repair":{"seed_claim_id":"claim:memory-replay-equivalence","declared_affected_claim_ids":["claim:runtime-replay","claim:artifact-replay"],"repaired_claim_ids":["claim:runtime-replay","claim:artifact-replay"],"repair_budget":2,"repair_count":2},
+  "ontology_migration":{"prior_version":"v1","new_version":"v2","migration_ref":"migration:replay-grade-split","identity_preserved":true},
+  "restart_persistence":{"restart_generation":4,"visible_claim_ids":["claim:memory-replay-equivalence","claim:record-playback","claim:live-reexecution"],"visible_revision_ids":["revision:memory-replay-split-v2"],"visible_residual_refs":["residual:weak-transfer","residual:medium-causal-gap","residual:strong-replay-gap"],"observation_ref":"fixture:restart-ledger-read"},
+  "decision":{"state":"revised_with_residual","promotion_allowed":false,"support_state_effect":"blocks_promotion"},"promotion_blockers":["unresolved strong contradiction","hand-authored restart observation","historical projects not replayed"],"non_claims":["not open-domain contradiction detection","not a deployed belief engine","not independent replication","no support promotion"]
+}

@@ -1,0 +1,69 @@
+{
+  "record_id": "historical-lineage-semantic-preservation-001",
+  "source_ids": ["cca_project", "moecot_manifest_project", "corbens_best_model_possible_project"],
+  "source_contract": {
+    "contract_id": "contract://bounded-book-repair",
+    "fields": ["objective", "authority", "acceptance", "non_goal"],
+    "requirements": ["req://preserve-authority", "req://preserve-non-goal", "req://validate-target"],
+    "authority_refs": ["authority://book-maintenance-only"]
+  },
+  "ambiguity_ledger": [
+    {"ambiguity_id": "ambiguity://meaning-of-local", "source_field": "objective", "state": "resolved", "resolution_ref": "resolution://local-means-book-worktree", "strict_compile_effect": "allow"}
+  ],
+  "field_lineage": [
+    {"source_field": "objective", "ir_field": "ir.objective", "target_field": "target.objective", "transform": "normalized", "authority_refs": ["authority://book-maintenance-only"], "ambiguity_refs": ["ambiguity://meaning-of-local"]},
+    {"source_field": "authority", "ir_field": "ir.authority", "target_field": "target.authority", "transform": "identity", "authority_refs": ["authority://book-maintenance-only"], "ambiguity_refs": []},
+    {"source_field": "acceptance", "ir_field": "ir.acceptance", "target_field": "target.acceptance", "transform": "split", "authority_refs": ["authority://book-maintenance-only"], "ambiguity_refs": []},
+    {"source_field": "non_goal", "ir_field": "ir.non_goal", "target_field": "target.non_goal", "transform": "identity", "authority_refs": ["authority://book-maintenance-only"], "ambiguity_refs": []}
+  ],
+  "semantic_ir": {
+    "ir_id": "ir://bounded-book-repair",
+    "node_ids": ["node://objective", "node://authority", "node://acceptance", "node://non-goal"],
+    "obligation_refs": ["req://preserve-authority", "req://preserve-non-goal", "req://validate-target"],
+    "authority_refs": ["authority://book-maintenance-only"],
+    "ambiguity_refs": ["ambiguity://meaning-of-local"]
+  },
+  "pass_bundle": {
+    "pass_id": "pass://semantic-lowering-001",
+    "input_ref": "ir://bounded-book-repair",
+    "output_ref": "target://chapter-patch-contract",
+    "input_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "output_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "semantic_validator_ref": "validator://contract-preservation",
+    "validator_result": "pass",
+    "failure_refs": ["failure://initial-acceptance-field-omission"],
+    "authority_preserved": true
+  },
+  "target_contract": {
+    "target_id": "target://chapter-patch-contract",
+    "fields": ["target.objective", "target.authority", "target.acceptance", "target.non_goal"],
+    "requirement_refs": ["req://preserve-authority", "req://preserve-non-goal", "req://validate-target"],
+    "authority_refs": ["authority://book-maintenance-only"],
+    "artifact_ref": "artifact://chapter-patch-contract"
+  },
+  "preservation_obligations": [
+    {"requirement_ref": "req://preserve-authority", "ir_node_ref": "node://authority", "target_field": "target.authority", "semantic_validator_ref": "validator://authority-preservation", "status": "preserved"},
+    {"requirement_ref": "req://preserve-non-goal", "ir_node_ref": "node://non-goal", "target_field": "target.non_goal", "semantic_validator_ref": "validator://non-goal-preservation", "status": "preserved"},
+    {"requirement_ref": "req://validate-target", "ir_node_ref": "node://acceptance", "target_field": "target.acceptance", "semantic_validator_ref": "validator://target-acceptance", "status": "preserved"}
+  ],
+  "repair": {
+    "failed_node_refs": ["node://acceptance"],
+    "declared_scope": ["node://acceptance", "target.acceptance"],
+    "actual_mutation_refs": ["node://acceptance", "target.acceptance"],
+    "blast_radius_refs": ["node://acceptance", "target.acceptance"],
+    "repair_receipt_ref": "receipt://localized-acceptance-repair",
+    "post_repair_validator_result": "pass"
+  },
+  "digest_parity": {
+    "digest_equal": false,
+    "semantic_preservation_claim_allowed": true,
+    "semantic_validator_ref": "validator://contract-preservation"
+  },
+  "decision": {
+    "compile_state": "accepted",
+    "strict_execution_allowed": false,
+    "support_state_effect": "blocks_promotion"
+  },
+  "promotion_blockers": ["fixture-only lowering", "no source-plan parser", "no real target backend", "no measured repair-locality comparison"],
+  "non_claims": ["does not prove semantic compiler correctness", "does not prove arbitrary paraphrase preservation", "does not reproduce historical-project behavior", "does not promote the chapter core claim"]
+}

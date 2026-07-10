@@ -4,7 +4,7 @@ chapter_id: "evidence-states-and-claim-discipline"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-04"
+last_updated: "2026-07-10"
 primary_sources:
   - "benchmaxxing"
   - "spinoza"
@@ -92,7 +92,7 @@ Scope drift is the evidence failure this layer blocks. A source may support term
 
 [evidence-states-and-claim-discipline.core, label: Design rationale, support: argument] Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition.
 
-The claim remains at `argument` support. Appendix C now records a claim-level source-note map for support drawn from Benchmaxxing, Spinoza, VIEA, UAT, Coherence Exchange, and Verification Bandwidth, along with the limits of each mapping. Five mappings now have reviewed local raw-cache passage references in the manifest. Coherence Exchange remains connector-only and source-note mapped. The map and partial passage review make the evidence bridge more inspectable, but they do not by themselves promote the claim. Promotion still requires stronger recoverable passage support for the connector-only mapping, an accepted evidence transition, or an executed test/proof artifact with declared scope.
+The claim remains at `argument` support. Appendix C records claim-level source-note mappings for the original sources and for the six historical projects as one related local implementation lineage. Those mappings make the evidence bridge more inspectable, but they do not promote the claim. Promotion still requires an accepted evidence transition with evidence whose method, independence, causal effect, and scope match the claim.
 
 ### Source contribution boundaries
 
@@ -104,6 +104,7 @@ The claim remains at `argument` support. Appendix C now records a claim-level so
 | `uat` | Retrieval-bounded dossiers, proposition states, adversarial review, SME checkpoints, and sign-off support review-aware proposition states. | UAT is not treated as a validated truth-discovery system. |
 | `coherence_exchange` | Verified Epistemic Units, verification supply chains, contestability, fork, exit, and audit support structured claim/evidence objects. | Speculative epistemic-liquidity framing is not implementation evidence. |
 | `verification_bandwidth` | The gap between context length and verification workspace supports the rule that source ingestion or context loading is not claim verification. | Contradiction-rate tests and proposed theory remain unrun here. |
+| Six-project local lineage | CCA, MoECOT Manifest, BeastBrain, BugBrain, Corben's Trainer, and Corben's Best Model Possible expose recurring gaps between declared architecture and observed effects: fixed versus updated state, internal versus independent checks, queued versus completed work, ownership versus capability, and reports versus causal receipts. | The projects share authorship and mechanisms, were not reproduced as one controlled workload here, and are not six independent confirmations. They supply design and negative-case lineage only. |
 
 ## Draft Key Figure: Evidence State Ladder
 
@@ -153,6 +154,38 @@ Interpretability evidence lives inside that separation. A circuit trace, activat
 The layer also preserves negative information. A failed proof attempt, benchmark wall, contradiction, missing source, or invalid fixture is not clutter. It is the information that prevents the stack from ratcheting in the wrong direction.
 
 Promotion should therefore be treated as a burden, not a reward. The default move is to leave support unchanged until the exact claim, artifact, command, review status, and limitations align. Downgrade requires less ceremony: contradiction, missing support, scope mismatch, or failed verification is enough to move a claim downward or into residual status.
+
+### The evidence cell
+
+The evidence-state layer owns the **evidence cell** because adjacent layers produce evidence, evaluate benchmarks, or retain artifacts, while this layer decides what those records are allowed to do to a claim. An evidence cell is not another confidence score. It is a non-aggregating record of origin, method, independence, demonstrated effect, missing links, and claim boundary. The same passing result can therefore remain a dependent fixture, become a reproduced mechanism check, or block promotion, depending on how it was produced and what causal link it actually observed.
+
+The six-project lineage supplies the motivating failure case. Corben's Best Model Possible contains a first-party recurrent-model surface, lane-specific adaptors, verification rows, and a response path. Inspection nevertheless found a generated or frozen trunk, adaptor-only updates, explicit rather than autonomous lane selection, dependent or shape-based checks, and responses not generally caused by a checkpoint-driven decoder. Corben's Trainer separately shows that typed runs, content-addressed artifacts, and promotion records can coexist with null seed/code identity and promotions whose inputs were later quarantined. The non-obvious consequence is that implementation ownership, interface presence, and green records may all be true while the capability proposition remains unsupported.
+
+An evidence cell therefore carries five coupled controls:
+
+1. A **causal capability chain** binds data, objective, code, actually updated state, runtime output, independent evaluation, and the exact claim. A missing link is recorded rather than inferred from neighboring links.
+2. A **trainable-state manifest** distinguishes generated, frozen, pretrained, trainable, optimizer-only, and actually updated state. “Trainable” without an update receipt is not “trained.”
+3. A **response-causality receipt** binds checkpoint, request, decode path, tool substitutions, and final response. A metric on an adaptor or helper component cannot support returned-answer capability when the runtime bypasses it.
+4. **Honest missingness** classifies absent evidence as `unknown`, `not_attempted`, `not_required`, or `waived`, with a blocker or waiver authority. Missing evidence cannot default to passed, independent, hardware-observed, or real.
+5. **Ownership/capability separation** records whether a component is first-party, third-party, mixed, or unknown separately from whether its mechanism was exercised, produced an observed runtime effect, or was independently evaluated.
+
+```{mermaid}
+flowchart LR
+  D["Data + objective + code"] --> U["Actually updated state"]
+  U --> R["Runtime output"]
+  R --> V["Evaluation"]
+  V --> C["Exact claim binding"]
+  M["Missing link"] -. "unknown / not attempted / not required / waived" .-> C
+  O["Ownership record"] -. "never substitutes for" .-> V
+  I["Method + independence"] --> V
+  C --> E{"Evidence-cell disposition"}
+  E -->|"scope complete"| T["eligible for transition review"]
+  E -->|"lineage / dependent / incomplete"| B["argument only or blocks promotion"]
+```
+
+**How to read the evidence cell:** the solid path is deliberately conjunctive. A source tree, loss curve, checkpoint, runtime answer, or evaluator row is only one link. The dotted paths preserve honest absence and ownership without letting either masquerade as evaluation. The cell does not promote a claim; it makes the promotion burden inspectable.
+
+The strongest objection is record proliferation: sufficiently elaborate metadata can consume verification bandwidth while creating a false feeling of rigor. The answer is to keep the cell claim-scoped and sparse. It records only distinctions capable of changing a transition decision, requires artifact references for positive causal links, and permits an exact blocker instead of demanding fabricated completeness. If a simpler baseline reaches the same claim decision without a field, that field should be removed.
 
 ## Interfaces
 
@@ -239,6 +272,9 @@ Promotion records also preserve downgraded and rejected transitions, so failed e
 - Support-state inflation.
 - Citation laundering.
 - Silent removal of failed claims.
+- Ownership laundering: first-party or locally executed components are described as capable without a task-relevant effect.
+- Causal-chain splicing: data, updates, outputs, and evaluations from different runs or lineages are narrated as one experiment.
+- Missingness laundering: skipped, absent, or inapplicable evidence is serialized as green.
 
 Citation laundering is the common failure: a nearby source is used to make an unsupported claim feel sourced. Benchmark laundering is the analogous measurement failure: a run result is generalized beyond its scope. Proof laundering happens when a small formal invariant is rhetorically expanded into a whole-system guarantee. The correction is scope discipline. The evidence artifact says exactly what it supports and exactly what it does not support.
 
@@ -246,7 +282,9 @@ Evidence smoothing is a prose-quality failure with epistemic consequences. A rev
 
 ## Minimum Viable Implementation
 
-The minimal evidence-control surface is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, Appendix C, one valid claim fixture, one valid transition fixture, the support-state transition harness, and the Lean evidence-state proof module. Schema validation checks claim shape, source-mapping status, evidence-readiness state, required next evidence, transition shape, claim surface refs, claim-record refs, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, downgrade triggers, promotion burden, reviewer refs, acceptance blockers, reviewer independence, changelog linkage, support-state effect, and non-claims.
+The minimal evidence-control surface is `schemas/claim_record.schema.json`, `schemas/evidence_transition_record.schema.json`, `schemas/evidence_cell.schema.json`, Appendix C, one valid evidence cell, five expected-invalid mutations, the transition harnesses, and the Lean evidence-state proof module. The evidence-cell fixture records the six projects as one lineage, leaves the incomplete checkpoint-to-response chain visible, distinguishes generated from actually updated state, labels verification independence, separates component ownership from capability evidence, and fixes the support-state effect at `argument_only`.
+
+`python3 scripts/validate_evidence_cells.py` rejects a missing causal stage, missingness serialized as passed, ownership used as capability, an updated tensor without a trainable classification and update receipt, and an independence claim whose producer and verifier are the same component. It validates record semantics only. It does not reproduce the projects, establish that their source notes are complete, prove model capability, or move the core claim.
 
 The support-state harness exercises synthetic no-change, upward, downward, and terminal refutation transitions, including invalid controls for unreviewed promotion, failed verification, reasonless demotion, and unsupported refutation. The evidence-bundle probe adds two valid synthetic evidence bundles for no-change and blocked promotion, plus seven expected-invalid controls for missing claim IDs, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, and fixture overclaiming. The claim-ledger audit checks the real Appendix C table against all 44 manifest chapter core claims and rejects seven synthetic mutations that would hide missing, duplicate, unknown, mislabeled, support-mismatched, open-gap-missing, or promotion-path-missing rows. The accepted-transition audit checks the existing 77 accepted transition records, the twelve bounded non-core upward transitions, the accepted no-promotion ledger, and seven mutation controls for core promotion, missing review artifacts, unresolved blockers, support movement, and no-promotion drift. The claim-state transition bridge adds the first bounded negative-evidence lifecycle fixture: one synthetic claim narrowing after failed mapping, one synthetic support downgrade after failed replay, and one synthetic terminal refutation after a counterexample, plus six expected-invalid controls for missing negative evidence, missing downgrade trigger, missing terminal effect, support-promotion laundering, erased non-claims, and claimed live-core movement. The Lean module proves narrow support-state invariants in this repository, including that terminal states are not promotion targets, that a finite transition-lifecycle route sends missing claim records and transition gaps to explicit modeled outcomes, and that the claim-state transition bridge fixture requires negative evidence, keeps live core claims unchanged, and preserves non-claim boundaries. These artifacts leave chapter core claims unchanged unless claim-specific evidence and accepted review exist.
 
@@ -270,6 +308,7 @@ This ledger is a proposed evidence-control system for the book and stack. Its su
 |---|---|---|
 | Claim record validation | Check that the claim fixture records source mapping status, source mapping refs, evidence readiness state, required next evidence, promotion blockers, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
 | Evidence transition record validation | Check that the transition fixture records support states, claim surface refs, claim record refs, transition effect, transition validity state, scope boundary, evidence roles, evidence packet refs, source mapping refs, negative evidence refs, verification result, downgrade triggers, promotion burden, limitations, reviewer refs, reviewer independence, acceptance blockers, changelog ref, support-state effect, and non-claims. | implemented by protocol validation; validated locally |
+| Historical-project evidence cell | Check one valid six-project lineage cell plus expected-invalid mutations for causal-chain gaps, dishonest missingness, ownership/capability conflation, unsupported trainable-state updates, and false verifier independence. | implemented by `python3 scripts/validate_evidence_cells.py`; record semantics only; no project reproduction or support-state promotion |
 | Support-state transition test | Check synthetic no-change, upward, downward, and terminal refutation evidence-transition records, including invalid controls for unreviewed promotion, failed verification, reasonless demotion, and unsupported refutation. | implemented; validated locally |
 | Evidence transition lifecycle route | Check that modeled evidence-transition requests route no-change, missing claim record, scope-boundary gaps, support-effect gaps, support-effect mismatch, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatch, missing changelog refs, missing non-claim boundaries, and complete transitions to explicit finite outcomes. | implemented in `AsiStackProofs.EvidenceStates`; no live support-state movement, reviewer-quality, evidence-bundle-completeness, source-interpretation, or runtime-behavior claim |
 | Evidence bundle completeness and changelog-consistency probe | Check two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition. Result: `experiments/evidence_bundle_completeness/results/2026-07-02-local.json`. | implemented by `python3 scripts/validate_evidence_bundle_completeness_probe.py`; synthetic-record and finite-Lean bridge only; no live evidence-truth, artifact-correctness, source-interpretation, release-governance, or support-state-promotion claim |
@@ -306,6 +345,12 @@ These evidence-state hooks are implemented in the local Lean workspace. The modu
 | `ext_ml_reproducibility_program_2021` | Improving Reproducibility in Machine Learning Research | ml_reproducibility_reporting | External comparator for checklists, code submission, reproducibility reports, artifact review, and reviewer-readable replay expectations. | source note available; comparator only |
 | `ext_proof_carrying_code_1997` | Proof-Carrying Code | formal_methods | External comparator for pairing artifacts with machine-checkable evidence scoped to a declared host policy. | source note available; comparator only |
 | `ext_w3c_prov_o_2013` | PROV-O: The PROV Ontology | interoperable_provenance_model | Interoperable vocabulary for entity/activity/agent provenance, derivation, attribution, revision, delegation, and invalidation. | source note available; asserted provenance is not evidential truth or support promotion |
+| `cca_project` | Compiled Cognitive Architecture project | local_project_lineage | Closure-authority inheritance, optimizer-to-capability trace discipline, and failure retention. | public-safe source note; no local reproduction or promotion |
+| `moecot_manifest_project` | MoECOT Manifest compiler-era project | local_project_lineage | Contract breadth versus external-holdout reality, evidence/promotion states, and execution-versus-mutation authority. | public-safe source note; project-reported results only |
+| `beastbrain_project` | BeastBrain historical AI system project | local_project_lineage | Simulated-versus-measured separation, non-updating routers, default-success tribunals, and interface/capability separation. | public-safe source note; no capability reproduction |
+| `bugbrain_project` | BugBrain bare-metal neuro-symbolic intelligence project | local_project_lineage | Capacity-versus-active-state separation, skipped-as-green readiness, trace-loss failures, and authority/effect gaps. | public-safe source note; bounded host tests do not establish cognition |
+| `corbens_trainer_project` | Corben's Trainer epistemic training and evaluation control plane | local_project_lineage | Learning-truth records, seed/code identity gaps, quarantine inheritance, and report/canonical-state separation. | public-safe source note; no external benchmark claim |
+| `corbens_best_model_possible_project` | Corben's Best Model Possible recurrent-model and mechanism laboratory | local_project_lineage | Trainable-state manifest, response-causality receipt, verification independence, ownership/capability separation, and mixed metric provenance. | public-safe source note; incomplete artifact corpus and no reproduced general model capability |
 
 The crosswalk names the evidence vocabulary loaded for the evidence-state layer. The external comparators position the method against known reporting, reproducibility, and proof-carrying practices. They do not assert a local model-card workflow, datasheet workflow, external reproducibility review, proof-carrying-code implementation, or support-state promotion. Support movement still requires an exact transition record, source mapping, proof, test, or external-literature citation.
 
@@ -313,7 +358,7 @@ The crosswalk names the evidence vocabulary loaded for the evidence-state layer.
 
 Evidence States and Claim Discipline is the book's anti-inflation layer and one half of its methodological contribution with Living Book Methodology. It lets the manuscript be ambitious without pretending that design rationales, source notes, schemas, Lean proofs, benchmarks, and empirical results are the same thing.
 
-The layer is deliberately conservative. Source-note coverage improves drafting readiness, but claim support rises only after exact mappings or artifacts exist. That discipline is what allows the living book to keep improving all night without quietly manufacturing evidence along the way. The path now tests the same discipline where it becomes operationally difficult: whether a limited supervisor may interpret stronger system behavior without a protocol record, an outcome audit, or an escalation route.
+The layer is deliberately conservative. Source-note coverage improves drafting readiness, but claim support rises only after exact mappings or artifacts exist. The evidence cell now makes that rule concrete for the mined project lineage: architecture ownership, trainable interfaces, internal checks, and durable records remain separate from an observed end-to-end capability chain. The path next tests the same discipline where it becomes operationally difficult: whether a limited supervisor may interpret stronger system behavior without a protocol record, an outcome audit, or an escalation route.
 
 A reader should be able to ask "why is this claim allowed to sound this strong?" and find a precise answer. If the answer is only confidence, fluency, or proximity to a source, the claim is speaking past its evidence.
 

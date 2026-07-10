@@ -255,6 +255,8 @@ device latency.
 ## Book Chapters Supported
 
 - `routing-heads-and-specialist-cores`
+- `system-boundaries-and-authority`
+- `security-kernel-and-digital-scifs`
 - `governed-deliberation-and-test-time-scaling`
 - `cognitive-compilation-and-semantic-ir`
 - `integrated-reference-architecture`
@@ -265,9 +267,12 @@ device latency.
 - `artifact-graphs-audit-logs-and-replay`
 - `ai-supply-chain-integrity-and-lifecycle-provenance`
 - `claim-ledgers-and-belief-revision`
+- `spinoza-verification-and-proof-carrying-claims`
 - `context-transactions-snapshots-mounts-and-taint`
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `readiness-gates-residual-escrow-and-quarantine`
+- `executable-specifications-and-lean-proof-envelope`
+- `intent-to-execution-contracts`
 
 No project-specific chapter is recommended. A separate metric-provenance or
 causal-capability-receipt boundary remains deferred until cross-project
@@ -302,6 +307,7 @@ deduplication.
 ## Book Chapters Supported
 
 - `routing-heads-and-specialist-cores`
+- `system-boundaries-and-authority`
 - `governed-deliberation-and-test-time-scaling`
 - `cognitive-compilation-and-semantic-ir`
 - `integrated-reference-architecture`
@@ -315,6 +321,8 @@ deduplication.
 - `context-transactions-snapshots-mounts-and-taint`
 - `runtime-adapters-tool-permissions-and-human-approval`
 - `readiness-gates-residual-escrow-and-quarantine`
+- `executable-specifications-and-lean-proof-envelope`
+- `intent-to-execution-contracts`
 
 ## Claims To Add Or Update
 
@@ -340,6 +348,18 @@ empirical support:
    measured resource counterfactuals.
 10. First-party ownership and local execution do not establish semantic task
     capability.
+
+## Formal semantic-depth boundary
+
+- Named proof or tribunal rows, schema presence, shape validation, fixture
+  playback, live executable replay, and a causally bound implementation are
+  distinct depth lanes.
+- Vacuous or empty-case checks are an attractive invalid proof surface: a green
+  verifier row is not semantically adequate when the modeled case cannot fail
+  or does not bind the runtime path being claimed.
+- The project's offline build failures and missing dependencies preserve an
+  implementation-binding residual; source structure cannot substitute for a
+  current executable observation.
 
 ## Open Questions
 

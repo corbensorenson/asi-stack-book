@@ -21,14 +21,14 @@ The three projections share one source of truth but have different density and r
 ## 60-Second Trust Surface
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **54 manifest chapters; 271 public-safe records; 54 chapter-core claims; 54/54 chapters externally positioned; 0 promoted core claims.**_
+_Current canonical metrics (generated from machine records): **54 manifest chapters; 273 public-safe records; 54 chapter-core claims; 54/54 chapters externally positioned; 0 promoted core claims.**_
 <!-- canonical-status:generated-end -->
 
 **What this is:** a public living-book research program and evidence system for governed advanced-AI systems, using ASI as the extreme stress case. The strongest current contribution is the manifest-driven, CI-validated method for keeping claims, sources, proofs, tests, reader editions, and non-claims explicit.
 
 **What this is not:** not a validated ASI implementation, not a deployed safety system, not a benchmark-proven architecture, and not a claim that all chapter theses are externally proven.
 
-**Auditable current state:** the inventory has 271 public-safe records; 54/54 chapters are externally positioned with 0 explicit external-baseline exceptions. All 54 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 54 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 32 accepted no-promotion dispositions, and 0 promoted core claims. Fourteen narrow non-core transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), and 40 accepted `blocks_promotion` decisions are recorded there; there is no chapter-core promotion.
+**Auditable current state:** the inventory has 273 public-safe records; 54/54 chapters are externally positioned with 0 explicit external-baseline exceptions. All 54 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 54 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 32 accepted no-promotion dispositions, and 0 promoted core claims. Fourteen narrow non-core transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), and 40 accepted `blocks_promotion` decisions are recorded there; there is no chapter-core promotion.
 
 **Reader and source boundaries:** [Appendix C](appendices/C_claim_evidence_matrix.qmd) is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored, Corben-supplied, and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which holds external literature; external positioning is not exhaustive literature synthesis. [Novelty positioning](docs/contribution_novelty_ledger.md) is not proof of novelty. Human view is a convenience projection, not a reviewed reader-release manuscript; its current heuristic queue is in [the reader continuity audit](docs/reader_continuity_audit.md). By author decision, no external-human review or outreach is a prepublication gate; the preserved specialist packets may be used only after the author declares the book complete, and no independent review is claimed in [the review ledger](docs/external_review_status.md).
 
@@ -36,7 +36,7 @@ Fast audit path: [the canonical completion roadmap](docs/asi_stack_completion_ro
 
 ## Current Status
 
-The project has moved beyond the initial v0.2 manuscript baseline into a tagged `v1.0.0` living-book release, but it is not yet a stronger v1.x evidence release with broad chapter-core support-state promotions or reviewed EPUB/DOCX/PDF/audio artifacts.
+The source is frozen as a `v2.0.0` completed-major-release candidate for the canonical live/research HTML book. The historical `v1.0.0` release remains intact. The v2 tag, tested bundle, deployment, immutable archive, public checksum, and final release record are created only by the final release transaction; EPUB/DOCX/PDF/audio and the divergent historical curated-reader workspace are explicitly outside the v2.0.0 format scope. No chapter-core support state is promoted.
 
 - Quarto book structure is initialized and renders to HTML.
 - All 54 manifest chapters exist as manuscript drafts across four manifest-driven parts.
@@ -541,4 +541,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). The short version:
 
 ## Rights
 
-See [LICENSE.md](LICENSE.md). This public repository is available for reading and review, but no reuse license is granted unless Corben Sorenson provides one separately.
+See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and the path-level release routing ledger. At exact tag `v2.0.0`, cleared author-owned prose/figures are routed to CC BY 4.0 and cleared software-like artifacts to Apache-2.0; excluded paths and untagged or later drafting changes receive no grant.

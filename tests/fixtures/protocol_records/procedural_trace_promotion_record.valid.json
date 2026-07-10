@@ -1,0 +1,27 @@
+{
+  "record_id": "procedure-promotion://historical-project-lineage/v1",
+  "source_ids": ["cca_project", "moecot_manifest_project", "beastbrain_project", "corbens_trainer_project"],
+  "memory_domains": {
+    "semantic_fact_refs": ["fact://procedure-policy/qualification-v1"],
+    "procedural_trace_refs": ["trace://cca/compile-1", "trace://moecot/route-1", "trace://beast/verify-1", "trace://trainer/failure-1"],
+    "domains_conflated": false
+  },
+  "candidate_traces": [
+    {"trace_id": "trace://cca/compile-1", "source_id": "cca_project", "outcome": "success", "source_receipt_ref": "receipt://source/cca-compile-1", "effect_receipt_ref": "receipt://effect/cca-compile-1", "procedure_shape_digest": "sha256:bounded-procedure-shape-v1"},
+    {"trace_id": "trace://moecot/route-1", "source_id": "moecot_manifest_project", "outcome": "success", "source_receipt_ref": "receipt://source/moecot-route-1", "effect_receipt_ref": "receipt://effect/moecot-route-1", "procedure_shape_digest": "sha256:bounded-procedure-shape-v1"},
+    {"trace_id": "trace://beast/verify-1", "source_id": "beastbrain_project", "outcome": "success", "source_receipt_ref": "receipt://source/beast-verify-1", "effect_receipt_ref": "receipt://effect/beast-verify-1", "procedure_shape_digest": "sha256:bounded-procedure-shape-v1"},
+    {"trace_id": "trace://trainer/failure-1", "source_id": "corbens_trainer_project", "outcome": "failure", "source_receipt_ref": "receipt://source/trainer-failure-1", "effect_receipt_ref": "receipt://effect/trainer-failure-1", "procedure_shape_digest": "sha256:bounded-procedure-shape-v1"}
+  ],
+  "promotion_gate": {
+    "requested_state": "routable", "minimum_successes": 3, "observed_successes": 3,
+    "negative_example_trace_ids": ["trace://trainer/failure-1"], "regression_suite_ref": "regression://bounded-procedure/v1",
+    "regression_passed": true, "failed_tests": [], "rollback_plan_ref": "rollback://bounded-procedure/v1"
+  },
+  "rollback": {"prepromotion_snapshot_ref": "snapshot://procedure-registry/pre-v1", "restore_route_ref": "route://procedure-registry/restore-pre-v1", "rehearsal_observed": true},
+  "retirement": {
+    "criteria": ["regression floor fails", "source contract changes", "effect receipt becomes unverifiable"],
+    "lifecycle_path": ["candidate", "verified", "routable", "quarantined", "retired"],
+    "retirement_receipt_ref": "receipt://procedure-retirement/v1"
+  },
+  "decision": {"procedure_state": "routable", "support_state_effect": "none", "historical_runtime_claimed": false}
+}

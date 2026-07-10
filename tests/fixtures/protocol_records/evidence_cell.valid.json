@@ -1,0 +1,84 @@
+{
+  "evidence_cell_id": "historical-project-lineage.evidence-cell.v1",
+  "claim_id": "evidence-states-and-claim-discipline.core",
+  "source_refs": [
+    "cca_project",
+    "moecot_manifest_project",
+    "beastbrain_project",
+    "bugbrain_project",
+    "corbens_trainer_project",
+    "corbens_best_model_possible_project"
+  ],
+  "origin_class": "local_project_lineage",
+  "method": "public-safe source-note synthesis over six related local implementation snapshots",
+  "independence": "producer_self_check",
+  "demonstrated_effect": "lineage_only",
+  "causal_capability_chain": {
+    "data": { "status": "not_observed", "artifact_ref": "sources/source_notes/corbens_trainer_project.md#dataset-verification" },
+    "objective": { "status": "observed", "artifact_ref": "docs/project_mining/cross-project-synthesis.md" },
+    "code": { "status": "observed", "artifact_ref": "sources/source_notes/corbens_best_model_possible_project.md#primary-material-inspected" },
+    "updated_state": { "status": "not_observed", "artifact_ref": "sources/source_notes/corbens_best_model_possible_project.md#model-and-training-truth" },
+    "runtime_output": { "status": "not_observed", "artifact_ref": "sources/source_notes/corbens_best_model_possible_project.md#integration-truth" },
+    "independent_evaluation": { "status": "not_observed", "artifact_ref": "docs/historical_project_incorporation_roadmap.md#one-local-lineage-not-independent-replication" },
+    "claim_binding": { "status": "observed", "artifact_ref": "chapters/evidence-states-and-claim-discipline.qmd#the-evidence-cell" }
+  },
+  "trainable_state_manifest": [
+    {
+      "state_id": "best-model.generated-trunk",
+      "state_class": "generated",
+      "updated": false,
+      "identity_ref": "sources/source_notes/corbens_best_model_possible_project.md#model-and-training-truth",
+      "update_receipt_ref": ""
+    },
+    {
+      "state_id": "best-model.low-rank-adaptor",
+      "state_class": "trainable",
+      "updated": true,
+      "identity_ref": "sources/source_notes/corbens_best_model_possible_project.md#trainable-state-and-specialists",
+      "update_receipt_ref": "sources/source_notes/corbens_best_model_possible_project.md#adapter-bank-truth"
+    }
+  ],
+  "response_causality_receipt": {
+    "checkpoint_ref": "",
+    "request_ref": "sources/source_notes/corbens_best_model_possible_project.md#integration-truth",
+    "decode_path_ref": "",
+    "tool_substitution_refs": [],
+    "final_response_ref": "",
+    "complete": false
+  },
+  "missingness": [
+    {
+      "field": "general checkpoint-to-response causal chain",
+      "disposition": "not_attempted",
+      "reason": "the inspected runtime response path was not a general checkpoint-driven decoder",
+      "blocker_or_authority_ref": "sources/source_notes/corbens_best_model_possible_project.md#model-and-training-truth"
+    }
+  ],
+  "ownership_capability_separation": {
+    "component_ref": "Corben's Best Model Possible local speech and model surfaces",
+    "ownership_state": "first_party",
+    "capability_evidence_state": "interface_present",
+    "conflated": false
+  },
+  "verification_methods": [
+    {
+      "method_id": "historical-project-public-safe-note-review",
+      "producer_id": "corben-local-project-lineage",
+      "verifier_id": "asi-stack-maintainer-agent",
+      "method_class": "semantic_review",
+      "independence": "same_team_separate_path",
+      "independence_basis_refs": ["docs/project_mining/cross-project-synthesis.md"]
+    }
+  ],
+  "support_state_effect": "argument_only",
+  "promotion_blockers": [
+    "raw project experiments were not reproduced by the book repository",
+    "the six projects form one local lineage rather than independent replications",
+    "a complete checkpoint-to-response causal receipt is absent"
+  ],
+  "non_claims": [
+    "does not establish model capability or benchmark performance",
+    "does not establish independent external review",
+    "does not promote the chapter core claim above argument"
+  ]
+}

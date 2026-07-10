@@ -1,0 +1,29 @@
+{
+  "record_id": "proof-depth-lineage-2026-07-10",
+  "source_ids": ["cca_project", "moecot_manifest_project", "corbens_best_model_possible_project"],
+  "claim_boundary": {"claim_id": "proof-envelope.finite-revocation-route", "prose_predicate": "a modeled revoked grant cannot authorize a later modeled effect", "formal_predicate": "revokedBeforeEffect trace grant effect = true -> route trace = deny", "scope": "finite totally ordered trace records"},
+  "abstraction_map": [
+    {"prose_term": "grant", "formal_symbol": "GrantEvent", "representation": "finite event constructor with principal, operation, target, epoch", "losses": ["no cryptographic identity validation", "no distributed observation"]},
+    {"prose_term": "revoked before effect", "formal_symbol": "revokedBeforeEffect", "representation": "index order over a finite list", "losses": ["no wall-clock semantics", "no concurrency"]},
+    {"prose_term": "deny", "formal_symbol": "Route.deny", "representation": "finite routing output", "losses": ["no deployed enforcement"]}
+  ],
+  "assumptions": [
+    {"assumption_id": "A-clock", "class": "clock", "statement": "list order is the only modeled time", "discharge_state": "modeled"},
+    {"assumption_id": "A-concurrency", "class": "concurrency", "statement": "concurrent events are pre-linearized", "discharge_state": "externally_required"},
+    {"assumption_id": "A-events", "class": "event_completeness", "statement": "all relevant events are present in the input trace", "discharge_state": "externally_required"},
+    {"assumption_id": "A-log", "class": "adversarial_log", "statement": "the theorem does not detect omitted or forged events", "discharge_state": "unresolved"}
+  ],
+  "depth_lanes": [
+    {"lane": "field_presence", "artifact_refs": ["schemas/authority_transition_record.schema.json"], "verifier_ref": "python3 scripts/validate_protocol_examples.py", "result": "passed", "semantic_binding": "partial", "authorized_statement": "the fixture contains the required revocation fields"},
+    {"lane": "finite_route", "artifact_refs": ["lean/AsiStackProofs/Authority.lean"], "verifier_ref": "cd lean && lake build", "result": "passed", "semantic_binding": "present", "authorized_statement": "the finite record route denies the modeled revoked-before-effect case"},
+    {"lane": "derived_invariant", "artifact_refs": ["lean/AsiStackProofs/Authority.lean"], "verifier_ref": "cd lean && lake build", "result": "passed", "semantic_binding": "present", "authorized_statement": "the derived finite invariant follows from the modeled route predicates"},
+    {"lane": "executable_model_bridge", "artifact_refs": ["scripts/validate_authority_revocation_trace.py", "experiments/authority_revocation_trace/results/2026-07-03-local.json"], "verifier_ref": "python3 scripts/validate_authority_revocation_trace.py", "result": "passed", "semantic_binding": "partial", "authorized_statement": "the tracked executable trace uses the mapped finite event vocabulary"},
+    {"lane": "implementation_binding", "artifact_refs": [], "verifier_ref": null, "result": "absent", "semantic_binding": "absent", "authorized_statement": "no deployed authorization service is bound or observed"}
+  ],
+  "by_construction_properties": ["finite route cannot return allow for the modeled revoked-before-effect predicate", "depth lanes remain distinct"],
+  "excluded_runtime_behavior": ["distributed clocks", "concurrent revocation races", "log completeness", "cryptographic identity", "deployed denial", "side effects outside the trace"],
+  "implementation_binding": {"state": "unbound", "artifact_refs": [], "verifier_ref": null, "observed_runtime_refs": [], "limitations": ["no deployed service", "no runtime effect observation"]},
+  "consumer_decision": {"semantic_adequacy": "adequate_for_finite_predicate", "runtime_claim_allowed": false, "support_state_effect": "blocks_promotion"},
+  "promotion_blockers": ["implementation binding absent", "runtime behavior excluded", "historical projects not replayed"],
+  "non_claims": ["not a deployed revocation proof", "not a distributed-systems proof", "not an independent review", "no chapter support promotion"]
+}

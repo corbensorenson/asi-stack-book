@@ -1,0 +1,38 @@
+{
+  "record_id": "supply-chain-affected-path-2026-07-10",
+  "source_ids": ["cca_project", "moecot_manifest_project", "corbens_trainer_project"],
+  "requested_artifact": {"node_id": "release:assistant-v4", "declared_name": "assistant-v4", "digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "requested_scope": "bounded-canary"},
+  "nodes": [
+    {"node_id": "dependency:tokenizer-2", "kind": "dependency", "declared_name": "tokenizer", "digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "version": "2.0", "scope": "training-and-inference", "owner_ref": "team:dependencies", "freshness": "current", "state": "revoked"},
+    {"node_id": "training:run-44", "kind": "training_run", "declared_name": "run-44", "digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "version": "44", "scope": "assistant-v4", "owner_ref": "team:training", "freshness": "current", "state": "declared"},
+    {"node_id": "model:assistant-v4-base", "kind": "model", "declared_name": "assistant-v4-base", "digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc", "version": "4.0", "scope": "bounded-canary", "owner_ref": "team:model", "freshness": "current", "state": "declared"},
+    {"node_id": "derivative:assistant-v4-policy", "kind": "derivative", "declared_name": "assistant-v4-policy", "digest": "sha256:dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd", "version": "4.0.1", "scope": "bounded-canary", "owner_ref": "team:alignment", "freshness": "current", "state": "declared"},
+    {"node_id": "release:assistant-v4", "kind": "release", "declared_name": "assistant-v4", "digest": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", "version": "4.0.1-canary", "scope": "bounded-canary", "owner_ref": "team:release", "freshness": "current", "state": "declared"},
+    {"node_id": "signer:release-1", "kind": "signer", "declared_name": "release-signer", "digest": "sha256:ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff", "version": "1", "scope": "release-signing", "owner_ref": "team:keys", "freshness": "current", "state": "verified"}
+  ],
+  "edges": [
+    {"from_node": "dependency:tokenizer-2", "to_node": "training:run-44", "relation": "used_by", "recorded_at": "2026-07-10T12:00:00Z"},
+    {"from_node": "training:run-44", "to_node": "model:assistant-v4-base", "relation": "trained_into", "recorded_at": "2026-07-10T12:01:00Z"},
+    {"from_node": "model:assistant-v4-base", "to_node": "derivative:assistant-v4-policy", "relation": "derived_into", "recorded_at": "2026-07-10T12:02:00Z"},
+    {"from_node": "derivative:assistant-v4-policy", "to_node": "release:assistant-v4", "relation": "released_as", "recorded_at": "2026-07-10T12:03:00Z"},
+    {"from_node": "signer:release-1", "to_node": "release:assistant-v4", "relation": "signed", "recorded_at": "2026-07-10T12:04:00Z"}
+  ],
+  "assurance_references": [
+    {"reference_id": "bom:assistant-v4:1", "kind": "bom", "subject_node": "release:assistant-v4", "policy_scope": "bounded-canary", "verifier_ref": "verifier:bom", "state": "verified", "observed_at": "2026-07-10T12:05:00Z", "expires_at": "2026-08-10T12:05:00Z", "limitations": ["declared components only", "not artifact correctness"]},
+    {"reference_id": "provenance:run-44:1", "kind": "provenance", "subject_node": "training:run-44", "policy_scope": "assistant-v4", "verifier_ref": "verifier:provenance", "state": "verified", "observed_at": "2026-07-10T12:05:00Z", "expires_at": "2026-08-10T12:05:00Z", "limitations": ["declared inputs only", "not dataset fitness"]},
+    {"reference_id": "signature:assistant-v4:1", "kind": "signature", "subject_node": "release:assistant-v4", "policy_scope": "bounded-canary", "verifier_ref": "verifier:signature", "state": "verified", "observed_at": "2026-07-10T12:05:00Z", "expires_at": "2026-08-10T12:05:00Z", "limitations": ["bundle binding only", "not safe behavior"]}
+  ],
+  "invalidation_event": {"event_id": "event:dependency-revoked:2", "prior_event_ref": "event:dependency-admitted:1", "event_type": "dependency_change", "subject_node": "dependency:tokenizer-2", "observed_at": "2026-07-10T13:00:00Z", "authority_ref": "authority:supply-chain-policy-v3", "invalidates_admission": true, "reason_ref": "advisory:TOK-2026-7"},
+  "declared_affected_closure": ["dependency:tokenizer-2", "training:run-44", "model:assistant-v4-base", "derivative:assistant-v4-policy", "release:assistant-v4"],
+  "response_routes": [
+    {"node_id": "dependency:tokenizer-2", "route": "repair", "owner_ref": "team:dependencies", "re_review_trigger": "replacement digest and advisory disposition", "ordinary_use_allowed": false},
+    {"node_id": "training:run-44", "route": "review", "owner_ref": "team:training", "re_review_trigger": "dependency impact determination", "ordinary_use_allowed": false},
+    {"node_id": "model:assistant-v4-base", "route": "quarantine", "owner_ref": "team:model", "re_review_trigger": "retrained or impact-cleared model", "ordinary_use_allowed": false},
+    {"node_id": "derivative:assistant-v4-policy", "route": "quarantine", "owner_ref": "team:alignment", "re_review_trigger": "upstream model disposition", "ordinary_use_allowed": false},
+    {"node_id": "release:assistant-v4", "route": "quarantine", "owner_ref": "team:release", "re_review_trigger": "fresh affected-path admission", "ordinary_use_allowed": false}
+  ],
+  "admission": {"decision": "quarantined", "custody_review_allowed": false, "readiness_review_allowed": false, "support_state_effect": "blocks_promotion"},
+  "lifecycle_closure": {"residual_owner_ref": "team:supply-chain", "retention_until": "2027-07-10T13:00:00Z", "disposal_or_retirement_ref": "policy:artifact-retention-v2", "next_review_trigger": "replacement dependency or resolved advisory"},
+  "promotion_blockers": ["dependency revoked", "affected closure quarantined", "historical projects not replayed"],
+  "non_claims": ["hand-authored fixture only", "no real artifact or supplier data", "no security or safety result", "no chapter support promotion"]
+}

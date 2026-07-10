@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/metric_provenance_record.schema.json",
+  "title": "Metric Provenance Record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "claim_id",
+    "benchmark_ref",
+    "metric",
+    "closure_inheritance",
+    "retry_lineage",
+    "checkpoint_output_binding",
+    "support_state_effect",
+    "promotion_blockers",
+    "non_claims"
+  ],
+  "properties": {
+    "record_id": { "type": "string", "minLength": 1 },
+    "claim_id": { "type": "string", "minLength": 1 },
+    "benchmark_ref": { "type": "string", "minLength": 1 },
+    "metric": {
+      "type": "object",
+      "required": [
+        "metric_id",
+        "origin_class",
+        "formula_ref",
+        "input_refs",
+        "evaluator_ref",
+        "observation_ref",
+        "target_construct",
+        "target_capacity",
+        "contamination_state",
+        "admissibility"
+      ],
+      "properties": {
+        "metric_id": { "type": "string", "minLength": 1 },
+        "origin_class": {
+          "type": "string",
+          "enum": ["measured", "derived", "recomputed", "modeled", "fixture", "constant", "declared", "proxy", "vacuous", "source_reported", "unknown"]
+        },
+        "formula_ref": { "type": "string" },
+        "input_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "evaluator_ref": { "type": "string" },
+        "observation_ref": { "type": "string" },
+        "target_construct": { "type": "string", "minLength": 1 },
+        "target_capacity": {
+          "type": "object",
+          "required": ["status", "evidence_refs", "reason"],
+          "properties": {
+            "status": { "type": "string", "enum": ["expressible", "not_expressible", "unknown"] },
+            "evidence_refs": { "type": "array", "items": { "type": "string" } },
+            "reason": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        },
+        "contamination_state": { "type": "string", "enum": ["clean_checked", "contaminated", "suspected", "unknown"] },
+        "admissibility": { "type": "string", "enum": ["admissible", "regression_only", "blocked", "unknown"] }
+      },
+      "additionalProperties": false
+    },
+    "closure_inheritance": {
+      "type": "object",
+      "required": ["parent_ratchet_refs", "inherited_regression_refs", "inherited_exclusion_refs", "override_refs"],
+      "properties": {
+        "parent_ratchet_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "inherited_regression_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "inherited_exclusion_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "override_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      },
+      "additionalProperties": false
+    },
+    "retry_lineage": {
+      "type": "object",
+      "required": ["lineage_id", "attempt_index", "retry_ceiling", "prior_attempt_refs", "stop_condition", "override_ref"],
+      "properties": {
+        "lineage_id": { "type": "string", "minLength": 1 },
+        "attempt_index": { "type": "number" },
+        "retry_ceiling": { "type": "number" },
+        "prior_attempt_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "stop_condition": { "type": "string", "minLength": 1 },
+        "override_ref": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "checkpoint_output_binding": {
+      "type": "object",
+      "required": ["checkpoint_ref", "tokenizer_ref", "runtime_path_ref", "raw_output_ref", "evaluator_output_ref", "claim_ref", "complete"],
+      "properties": {
+        "checkpoint_ref": { "type": "string" },
+        "tokenizer_ref": { "type": "string" },
+        "runtime_path_ref": { "type": "string" },
+        "raw_output_ref": { "type": "string" },
+        "evaluator_output_ref": { "type": "string" },
+        "claim_ref": { "type": "string", "minLength": 1 },
+        "complete": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "support_state_effect": { "type": "string", "enum": ["none", "record_shape_only", "argument_only", "eligible_for_bounded_evidence_review", "blocks_promotion"] },
+    "promotion_blockers": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

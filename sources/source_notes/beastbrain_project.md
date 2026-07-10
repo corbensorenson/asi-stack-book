@@ -170,11 +170,13 @@ Primary destinations:
 - `planning-as-a-control-layer`
 - `resource-economics-and-token-budgets`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
+- `readiness-gates-residual-escrow-and-quarantine`
 - `security-kernel-and-digital-scifs`
 - `artifact-steward-agents-and-living-project-governance`
 
 Secondary destinations:
 
+- `system-boundaries-and-authority`
 - `virtual-context-abi`
 - `context-transactions-snapshots-mounts-and-taint`
 - `claim-ledgers-and-belief-revision`

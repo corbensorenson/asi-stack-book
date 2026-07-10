@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["digest_parity"],
+  "value": {"digest_equal": true, "semantic_preservation_claim_allowed": true, "semantic_validator_ref": null},
+  "expected_error": "digest parity cannot establish semantic preservation"
+}

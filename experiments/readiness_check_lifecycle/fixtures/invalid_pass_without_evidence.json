@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["checks", 0],
+  "value": {"attempt": "attempted", "result": "pass", "evidence_refs": [], "observed_at": null, "expires_at": null},
+  "expected_error": "passing checks require evidence identity, observation time, and expiry"
+}

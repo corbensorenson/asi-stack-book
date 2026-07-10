@@ -4,10 +4,10 @@
   "status": "decided",
   "decision_authority": "author:corben-sorenson; selected publishing policy, not qualified legal advice",
   "current_state": {
-    "license": "all_rights_reserved_during_active_drafting",
+    "license": "conditional_v2.0.0_path_routed_split_otherwise_all_rights_reserved",
     "license_file": "LICENSE.md",
     "scope": "book text, source corpus metadata, code, proofs, schemas, scripts, and assets",
-    "reuse_effect": "No present license is granted without separate written permission.",
+    "reuse_effect": "At exact tag v2.0.0, CC BY 4.0 and Apache-2.0 apply only to paths assigned those routes; excluded paths and untagged/later drafting changes receive no grant.",
     "selected_policy": "delayed_opening",
     "decision_date": "2026-07-10",
     "opening_trigger": "first author-declared completed major release after record-level rights routing",
@@ -17,12 +17,15 @@
       "mixed_imported_private_local_project_trademark_endorsement_or_third_party_material": "excluded unless separately cleared and named",
       "public_metadata": "remain reserved unless record-level review selects and records a compatible license"
     },
-    "technical_provenance_audit": "complete_path_classification_with_no_ownership_clearance",
+    "technical_provenance_audit": "complete_record_level_internal_authorship_and_provenance_routing_for_v2.0.0_candidate",
     "provenance_inventory": "licensing/provenance_inventory.json",
-    "inventoried_candidate_paths": 2219,
-    "provenance_cleared_paths": 0
+    "final_release_routing": "licensing/final_release_rights_routing.json",
+    "inventoried_candidate_paths": 2449,
+    "provenance_cleared_paths": 1095,
+    "excluded_or_no_grant_paths": 1354,
+    "selected_release_formats": ["html-live-book"]
   },
-  "provisional_rule": "Keep the active drafting repository all-rights-reserved. Do not add SPDX, Creative Commons, or Apache grant signals until the completed-release rights review resolves every included path and the exact release installs its license texts and notices.",
+  "provisional_rule": "The split grant activates only for exact tag v2.0.0 and only through the deterministic path routing ledger; all pre-tag, later, excluded, mixed, imported, raw, local-project, and derivative paths remain reserved unless a later exact ledger grants rights.",
   "recommendation_for_consideration": "Decision implemented: delayed opening best matches the author-only drafting phase and future adoption goals. The final cleared split is CC BY 4.0 for author-owned prose/figures and Apache-2.0 for author-owned software-like artifacts; metadata and mixed material remain reserved unless separately cleared.",
   "options": [
     {
@@ -72,12 +75,12 @@
   ],
   "selected_option_id": "delayed_opening",
   "implementation_gate": [
-    "The author selected delayed_opening on 2026-07-10; the active drafting repository remains all-rights-reserved.",
-    "Before the completed major release, use the deterministic path inventory to obtain author ownership assertions, inspect mixed/imported material, quarantine unresolved exceptions, and record the limits of any legal or provenance review; technical classification alone clears no path.",
+    "The author selected delayed_opening on 2026-07-10; v2.0.0 is the opening trigger and untagged/later drafting changes remain all-rights-reserved.",
+    "The deterministic inventory and final routing ledger resolve every included path into CC BY 4.0, Apache-2.0, or excluded-no-grant, with mixed/imported material excluded and internal review limits recorded.",
     "Keep prepublication contributions closed; define compatible inbound terms before any future contribution is accepted.",
-    "At the opening trigger, add exact CC BY 4.0 and Apache-2.0 texts, notices, deterministic file routing, exclusions, and a release-record license snapshot atomically.",
+    "Exact CC BY 4.0 and Apache-2.0 texts, NOTICE.md, deterministic file routing, and exclusions are installed; the final tag-bound release record must snapshot their digests and counts.",
     "Validate that rendered pages and generated artifacts carry the correct release-specific notices without licensing excluded material by implication."
   ],
   "support_state_effect": "none",
-  "non_claims": ["This packet is not legal advice or qualified legal review.", "The selected delayed-opening policy is not a present open-license grant; LICENSE.md remains operative during drafting.", "A public repository does not imply open-source or open-content rights."]
+  "non_claims": ["This packet is not legal advice or qualified legal review.", "The split grant applies only at exact tag v2.0.0 and only to paths routed by the final release ledger.", "A public repository does not imply rights for excluded paths or later drafting changes."]
 }

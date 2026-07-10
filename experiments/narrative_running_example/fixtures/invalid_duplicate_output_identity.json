@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["steps", 12, "produces"],
+  "value": ["artifact://routed-cost-quality-ledger"],
+  "expected_error": "reuses an existing artifact identity as new output"
+}

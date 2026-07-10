@@ -542,6 +542,12 @@
             "ladon_manhattan",
             "genesiscode",
             "moecot",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_trainer_project",
+            "corbens_best_model_possible_project",
             "ext_camel_prompt_injection_2025",
             "ext_owasp_agentic_top_10_2026"
           ],
@@ -553,7 +559,13 @@
             "supporting": [
               "talos",
               "ladon_manhattan",
-              "genesiscode"
+              "genesiscode",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_trainer_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -659,12 +671,63 @@
               ],
               "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports protected governance versus mutable capability state, typed compiler/runtime authority, closure authority, and bounded self-modification identity.",
+              "limits": "The historical project was not rerun; its types and formal surfaces do not prove runtime enforcement, bypass absence, safety, or capability.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/cca_project.md:13-45", "sources/source_notes/cca_project.md:124-145"],
+              "passage_review_note": "Reviewed the public-safe note for authority-bearing state separation, typed execution lineage, closure authority, replayable bounded mutation, and runtime/formal non-claims."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports agent identity, scoped delegation, revocation, trust decay, effect logs, runtime-bundle identity, and separation of execution authority from mutation authority.",
+              "limits": "The project was not compiled or deployed here; contract presence does not establish enforcement, secure delegation, or safe self-improvement.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:39-89", "sources/source_notes/moecot_manifest_project.md:144-159"],
+              "passage_review_note": "Reviewed the public-safe note for compiler-era authority chain, runtime identity, scoped delegation and revocation, effect logs, and execution-versus-mutation authority."
+            },
+            {
+              "source_id": "beastbrain_project",
+              "mapped_support": "Supplies the negative boundary between security handles or permission metadata and demonstrated broker enforcement, process isolation, content admission, or trusted identity.",
+              "limits": "The source note does not establish secret isolation, secure federation, hard isolation, hardware roots, or deployed constitutional enforcement.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/beastbrain_project.md:71-83", "sources/source_notes/beastbrain_project.md:107-115", "sources/source_notes/beastbrain_project.md:152-159"],
+              "passage_review_note": "Reviewed the public-safe note for blind-handle design, permission-metadata and SCIF-isolation gaps, trusted-identity gaps, and the requirement to separate handles from enforcement."
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supports one authority identity across principal, run, target state, parameters, policy, budget, ledger, trace, replay, expiry, and one-shot effect receipts, with explicit protocol-security versus hardware-root separation.",
+              "limits": "Protocol controls, device binding, and key derivation do not establish a secret hardware root, secure boot, attestation, or comprehensive security effectiveness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/bugbrain_project.md:77-95", "sources/source_notes/bugbrain_project.md:120-137", "sources/source_notes/bugbrain_project.md:175-202"],
+              "passage_review_note": "Reviewed the public-safe note for authority/action governance, approval/budget/trace/replay identity gaps, protocol controls, hardware-root caveats, and the proposed unified authority tuple."
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Supports typed control-plane identity, exact artifact binding, fixed budgets, content-addressed lineage, revocable promotion leases, quarantine propagation, and acknowledged terminal outcomes.",
+              "limits": "No trainer workspace, external backend, checkpoint lifecycle, or revocation propagation was reproduced here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:52-104", "sources/source_notes/corbens_trainer_project.md:163-190", "sources/source_notes/corbens_trainer_project.md:209-230"],
+              "passage_review_note": "Reviewed the public-safe note for versioned assets, budgets, exact artifact identity, revocable leases, stale promotion after quarantine, and acknowledged asynchronous completion."
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supplies negative cases for capability declarations without OS enforcement, recreated caller budgets, playback-only replay, default/empty ordinary paths, and interface presence without material authority effects.",
+              "limits": "The historical model and tool paths were not rerun; local ownership, capability declarations, and interface presence do not establish enforcement or useful capability.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:188-209", "sources/source_notes/corbens_best_model_possible_project.md:245-253", "sources/source_notes/corbens_best_model_possible_project.md:288-299"],
+              "passage_review_note": "Reviewed the public-safe note for persistent budget ownership, capability-envelope enforcement gaps, playback versus live replay, and ordinary-path defaulting."
             }
           ],
           "mechanism": [
             "Define principals, authorities, ceilings, grants, revocations, and handoff contracts.",
             "Separate knowledge access from action authority.",
-            "Represent missing authority as a detectable failure rather than implicit permission."
+            "Represent missing authority as a detectable failure rather than implicit permission.",
+            "Bind principal, execution domain, operation, target, permission class, scope, budget account, trace, replay identity, grant, policy version, revocation epoch, and expiry in one authority tuple.",
+            "Name execution-domain, budget, trace, and revocation owners and require target-owner approval for cross-domain handoffs.",
+            "Keep protocol-security controls separate from hardware-root evidence and claims."
           ],
           "interfaces": [
             "Governance issues ceilings.",
@@ -674,14 +737,20 @@
           "invariants": [
             "Authority never expands silently.",
             "Read permission is not write permission.",
-            "Tool execution requires an explicit grant."
+            "Tool execution requires an explicit grant.",
+            "Delegated authority preserves grant, budget, trace, replay, and revocation identity while narrowing scope.",
+            "Cross-domain authority requires target-domain owner approval.",
+            "Protocol security does not establish a hardware root of trust."
           ],
           "failure_modes": [
             "Authority creep.",
             "Confused-deputy tool calls.",
-            "Memory access treated as action approval."
+            "Memory access treated as action approval.",
+            "Authority identity forks across budget, trace, replay, or revocation.",
+            "Cross-domain authority laundering or revoked-epoch replay.",
+            "Protocol-security controls promoted into hardware-root claims."
           ],
-          "minimal_implementation": "A small authority schema and transition table used by chapter examples and future Lean proofs.",
+          "minimal_implementation": "An authority-transition schema plus a unified authority-tuple lifecycle that binds execution-domain ownership, scope, budget, trace, replay, grant, revocation, cross-domain approval, receipts, and protocol-versus-hardware-root boundaries.",
           "beyond_state_of_art": "System authority needs a type system for the stack. Every model, tool, memory cell, field, artifact, human, project, and runtime route would carry explicit capability bounds so the architecture can distinguish what a component can do from what it may do. In the mature authority architecture, authority becomes typed, bounded, revocable, and attached to concrete principals, layers, fields, tools, artifacts, and routes.",
           "codex_tests": [
             {
@@ -713,6 +782,11 @@
               "name": "Authority revocation propagation trace",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_authority_revocation_trace.py`; cross-artifact repository trace covers over-ceiling denial, revoked authority receipt blocking, expired approval no-mutation, SCIF inactive approval blocking, and reference-trace authority blockers; no deployed revocation propagation or support-state promotion claim"
+            },
+            {
+              "name": "Historical-project authority-tuple lifecycle",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_authority_tuple_lifecycle.py`; accepts one blocked six-project lineage record and rejects nine identity, ownership, cross-domain, delegation, revocation, and hardware-root mutations; no deployed enforcement or support-state promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.Authority",
@@ -1092,7 +1166,13 @@
             "uat",
             "coherence_exchange",
             "verification_bandwidth",
-            "ext_w3c_prov_o_2013"
+            "ext_w3c_prov_o_2013",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_trainer_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -1103,7 +1183,13 @@
             "supporting": [
               "uat",
               "coherence_exchange",
-              "verification_bandwidth"
+              "verification_bandwidth",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_trainer_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -1186,13 +1272,85 @@
                 "sources/raw/google_docs/verification_bandwidth.txt:74-85"
               ],
               "passage_review_note": "Reviewed local raw cache for context-window/storage distinction, effective verification workspace, pairwise constraint checking, probabilistic loss under compression, and proposed falsifiability test; no contradiction-rate experiment is claimed."
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Provides local-lineage negative cases for optimizer-to-capability trace discipline, canonical closure authority, retry ceilings, and keeping failed or proxy evidence visible.",
+              "limits": "One private local implementation lineage only; expensive training and benchmarks were not reproduced and no capability or support-state claim is promoted.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:13-82",
+                "sources/source_notes/cca_project.md:122-145"
+              ],
+              "passage_review_note": "Reviewed the public-safe source note for project mechanisms, retained negative reports, trace gaps, and non-claims; raw private project material is not published."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Provides local-lineage contrast between extensive typed evidence and promotion contracts and weak external task performance, motivating method/effect separation and an end-to-end causal chain.",
+              "limits": "Project-reported results and contract presence are not reproduced capability evidence, independent replication, or deployed enforcement.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:13-140",
+                "sources/source_notes/moecot_manifest_project.md:205-242"
+              ],
+              "passage_review_note": "Reviewed the public-safe source note for compiler/evidence mechanisms, reported holdout gaps, contract-versus-effect limits, and non-claims."
+            },
+            {
+              "source_id": "beastbrain_project",
+              "mapped_support": "Provides local-lineage negative cases in which trainable routers did not update, simulations resembled measurements, tribunal paths defaulted to success, and interface breadth exceeded demonstrated integration.",
+              "limits": "Source inspection and project-reported negatives do not establish general capability, current build state, or independent reproduction.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:37-137",
+                "sources/source_notes/beastbrain_project.md:139-162"
+              ],
+              "passage_review_note": "Reviewed the public-safe source note for simulated-versus-measured, updated-state, verifier, and interface/capability distinctions."
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Provides local-lineage negative cases for declared capacity versus active state, skipped-as-green readiness, dropped audit effects, fixed-weight learning labels, and narrative reports contradicting machine-readable gates.",
+              "limits": "Bounded host tests and retained reports do not establish Pi cognition, secure execution, model learning, or complete runtime integration.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:106-171",
+                "sources/source_notes/bugbrain_project.md:173-203"
+              ],
+              "passage_review_note": "Reviewed the public-safe source note for capacity, missingness, observed-effect, and report/canonical-state failures."
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Provides local-lineage mechanisms for learning-truth records and negative cases for null seed/code identity, declaration-only data pins, stale promotions, quarantined evidence, and unacknowledged asynchronous completion.",
+              "limits": "The current workspace was not reproduced, benchmark-labelled runs are not accepted as external results, and the project is not independent evidence for the chapter claim.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:124-207",
+                "sources/source_notes/corbens_trainer_project.md:209-230"
+              ],
+              "passage_review_note": "Reviewed the public-safe source note for experiment identity, learning truth, quarantine, artifact, and completion-receipt boundaries."
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Provides the direct local-lineage motivation for trainable-state manifests, response-causality receipts, verification-method and independence labels, honest missingness, and ownership/capability separation.",
+              "limits": "The artifact corpus is incomplete; the trunk is generated or frozen, runtime answers are not generally checkpoint-decoded, and no model capability, autonomous routing, natural speech, or support-state promotion is established.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:123-228",
+                "sources/source_notes/corbens_best_model_possible_project.md:229-253",
+                "sources/source_notes/corbens_best_model_possible_project.md:319-342"
+              ],
+              "passage_review_note": "Reviewed the public-safe source note for fixed/generated/trainable/updated state, response causality, verifier dependence, ownership/capability, metric origin, and non-claims."
             }
           ],
           "mechanism": [
             "Use Appendix C as the claim ledger.",
             "Separate claim label from support state so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed.",
             "Require source notes before promoting claims to source-derived.",
-            "Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels."
+            "Require evidence bundles, including negative or inconclusive results, before promoting test-backed labels.",
+            "Classify evidence by origin, method, independence, demonstrated effect, and missing causal links in a non-aggregating evidence cell.",
+            "Require a same-lineage causal capability chain from data, objective, and code through actually updated state, runtime output, independent evaluation, and exact claim binding.",
+            "Separate generated, frozen, pretrained, trainable, optimizer-only, and actually updated state, and bind checkpoint/request/decode/tool substitutions to the final response.",
+            "Represent absent evidence as unknown, not attempted, not required, or explicitly waived rather than silently passed.",
+            "Record component ownership separately from task-relevant capability evidence."
           ],
           "interfaces": [
             "Drafting updates claims.",
@@ -1202,14 +1360,19 @@
           "invariants": [
             "No fabricated source support.",
             "No fabricated test results.",
-            "Negative and inconclusive results remain visible."
+            "Negative and inconclusive results remain visible.",
+            "A capability claim cannot splice causal-chain links across incompatible runs or lineages.",
+            "First-party ownership, interface presence, and trainable declarations cannot substitute for an observed task-relevant effect."
           ],
           "failure_modes": [
             "Support-state inflation.",
             "Citation laundering.",
-            "Silent removal of failed claims."
+            "Silent removal of failed claims.",
+            "Ownership laundering.",
+            "Causal-chain splicing.",
+            "Missingness serialized as passed evidence."
           ],
-          "minimal_implementation": "A claim record schema, claim-label table, support-state transition table, evidence-bundle template, and validation check.",
+          "minimal_implementation": "A claim record, evidence transition record, evidence-cell schema, one valid six-project lineage cell, five expected-invalid mutations, claim/support tables, and validation harnesses that leave the chapter core claim at argument.",
           "beyond_state_of_art": "Evidence discipline matures into the book's claim-accounting system. It gives every important sentence a governed path from unsupported idea to source-derived, test-backed, mechanized, deprecated, or refuted status without letting polish, enthusiasm, or release hygiene stand in for truth. In the mature evidence ledger, every major claim carries both a claim label and a support state, and movement requires source ingestion, prototype inspection, proof/spec evidence, benchmark evidence, or actual tests appropriate to the transition.",
           "codex_tests": [
             {
@@ -1248,6 +1411,12 @@
               "purpose": "Check synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries.",
               "implementation_status": "implemented",
               "result_status": "validated locally by `python3 scripts/validate_claim_state_transition_bridge.py` at experiments/claim_state_transition_bridge/results/2026-07-04-local.json; synthetic-record and finite-Lean bridge only; no live claim demotion, deprecation, refutation, reviewer-correctness, source-interpretation, deployed belief-revision, or support-state-promotion claim"
+            },
+            {
+              "name": "Historical-project evidence-cell harness",
+              "purpose": "Check one valid six-project lineage cell and expected-invalid mutations for missing causal stages, dishonest missingness, ownership/capability conflation, unsupported updated-state claims, and false verifier independence.",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `python3 scripts/validate_evidence_cells.py`; record semantics only; no raw-project reproduction, capability result, independent review, or support-state promotion"
             }
           ],
           "lean_module": "AsiStackProofs.EvidenceStates",
@@ -2712,7 +2881,12 @@
             "coherence_exchange",
             "ext_agentdojo_2024",
             "ext_camel_prompt_injection_2025",
-            "ext_owasp_agentic_top_10_2026"
+            "ext_owasp_agentic_top_10_2026",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_trainer_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -3146,7 +3320,8 @@
             "Record typed identities and relationships for model, dataset, code, dependency, build or training run, signer, supplier, distributor, advisory, derivative, release, revocation, and disposal events rather than inferring lineage from a model name.",
             "Evaluate an admission policy over declared artifact identity/digest, provenance/build or training statement, signer or verifier result, component inventory, supplier/distributor scope, advisory state, revocation path, residual owner, and requested downstream use.",
             "Preserve signature, provenance, BOM, supplier, and advisory artifacts as bounded references: each can establish only the stated record property and cannot become an implicit conclusion about model behavior, security, or authority.",
-            "Propagate an advisory, revoked signer, changed dependency, discovered derivative, or stale inventory to affected graph nodes and existing custody, readiness, and release records so the system can quarantine, repair, or re-review a bounded path."
+            "Propagate an advisory, revoked signer, changed dependency, discovered derivative, or stale inventory to affected graph nodes and existing custody, readiness, and release records so the system can quarantine, repair, or re-review a bounded path.",
+            "Append invalidation as a distinct event linked to the prior decision, compute the exact declared downstream closure, and assign every affected node one owned non-ordinary response without treating declared-graph completeness as world completeness."
           ],
           "interfaces": [
             "Artifact Graphs, Audit Logs, and Replay owns generic provenance storage and replay; this chapter owns AI supply-chain completeness, integrity policy, and affected-path routing.",
@@ -3160,6 +3335,8 @@
             "A required provenance or signature result is bound to the declared artifact and policy scope; a missing, stale, mismatched, or unverified result cannot be silently accepted.",
             "A component inventory and supplier/distributor record retain their version, scope, source, freshness, and unresolved gaps rather than claiming completeness by default.",
             "An unresolved critical advisory, revoked signer, or invalidated lineage record propagates to affected derivatives and routes the requested artifact path to quarantine, repair, or accountable review.",
+            "Invalidation appends rather than overwrites history; its declared affected closure equals every graph-reachable downstream node and each member has exactly one owned non-ordinary response route.",
+            "Lifecycle closure retains residual ownership, a retention horizon, a disposal-or-retirement reference, and a re-review trigger.",
             "A BOM, signature, provenance statement, or conformance label cannot establish artifact correctness, absence of compromise, data fitness, legal compliance, model safety, readiness, authority, or ASI."
           ],
           "failure_modes": [
@@ -3167,7 +3344,8 @@
             "BOM theater presents a well-formed but incomplete, stale, or unverified inventory as an integrity guarantee.",
             "Signature or provenance laundering turns a bounded integrity statement into a claim of secure development, safe data, safe model behavior, or deployment permission.",
             "An upstream advisory, compromised signer, revoked supplier, or derivative relationship fails to reach affected custody, readiness, or release decisions.",
-            "A supplier, build, training, distribution, or disposal handoff loses the residual owner or re-review trigger needed after a change or incident."
+            "A supplier, build, training, distribution, or disposal handoff loses the residual owner or re-review trigger needed after a change or incident.",
+            "A mutable incident row overwrites the prior admission history or a partial closure quarantines the direct component while leaving a declared derivative on an ordinary route."
           ],
           "minimal_implementation": "A versioned supply-chain admission record with artifact identity and digest, lineage reference, supplier/distributor scope, build or training provenance reference, signature requirement/result, component inventory reference/freshness, advisory state, revocation path, residual owner, and requested artifact admission. A finite Lean route quarantines a requested artifact with an unresolved critical advisory and blocks a requested artifact with a required but unverified signature.",
           "beyond_state_of_art": "A mature AI supply-chain control plane maintains a continuously updated graph across data acquisition, curation, code and dependency changes, build and training runs, model and derivative artifacts, signing and verification, suppliers and distributors, deployment packages, vulnerability and advisory feeds, incident response, revocation, retention, and disposal. It can identify affected downstream paths, preserve decision history, request bounded re-review, and exchange interoperable BOM and provenance references without conflating transparency with security or safety. This is a target architecture, not a claim that this repository has complete lineage, a secure training or build pipeline, trustworthy suppliers, verified signatures, effective revocation, compliant distribution, safe models, or authorized deployment.",
@@ -3175,7 +3353,14 @@
             "Unresolved-critical-advisory quarantine route",
             "Required-but-unverified signature admission block",
             "Stale AI BOM and derivative-propagation negative controls",
-            "Public-safe supply-chain admission-record workload"
+            "Public-safe supply-chain admission-record workload",
+            {
+              "name": "Historical-project affected-path closure",
+              "purpose": "Check digest binding, append-only invalidation, exact transitive downstream closure, owned non-ordinary responses, custody/readiness blocking, lifecycle residual/disposal closure, and no-promotion boundaries over one three-project lineage record and ten mutations.",
+              "status": "implemented by supply-chain affected-path harness; validated locally for one hand-authored record and ten expected-invalid mutations; no real supply-chain system or historical project was replayed",
+              "implementation_status": "implemented",
+              "result_status": "validated locally for one hand-authored record and ten expected-invalid mutations; no deployed propagation, quarantine, signing, supplier, build, training, or advisory behavior run"
+            }
           ],
           "lean_module": "AsiStackProofs.SupplyChainIntegrity",
           "proof_targets": [
@@ -3188,7 +3373,7 @@
           ],
           "draft_maturity": "v0.1 chapter draft",
           "open_evidence_gaps": [
-            "No ASI Stack AI BOM, supplier assessment, build or training provenance, signature, verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, or deployment has been run.",
+            "One hand-authored three-project affected-path fixture and ten deterministic mutations have run; no real ASI Stack AI BOM, supplier assessment, build or training provenance, signature, verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, or deployment has run.",
             "No local result establishes complete inventory, artifact integrity, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or ASI.",
             "The finite Lean route establishes only a structured record consequence for a modeled unresolved critical advisory or required unverified signature; it does not establish whether any artifact, source, signature, advisory, policy, reviewer, or supplier record is correct."
           ]
@@ -3657,7 +3842,12 @@
             "genesiscode",
             "moecot",
             "cognitive_compilation",
-            "ext_camel_prompt_injection_2025"
+            "ext_camel_prompt_injection_2025",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -3667,7 +3857,12 @@
             "supporting": [
               "talos",
               "genesiscode",
-              "cognitive_compilation"
+              "cognitive_compilation",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -3683,7 +3878,8 @@
           "mechanism": [
             "Receive an accepted intent receipt and bind objective, constraints, authority, artifacts, evidence requirements, stop conditions, and re-contract triggers into a command contract.",
             "Give command fields provenance and confidence so context can inform work without overriding explicit constraints or authority.",
-            "Record handoff receipts, dispatch receipts, job refs, artifact refs, verifier decisions, feedback, residuals, stop/fault states, and non-claims."
+            "Record handoff receipts, dispatch receipts, job refs, artifact refs, verifier decisions, feedback, residuals, stop/fault states, and non-claims.",
+            "For each privileged effect, bind one short-lived approval to exact principal, operation, target identity and pre-state digest, parameter digest, policy version, TTL, nonce, authority, effect receipt, post-state, and single-use consumption; acknowledgement alone cannot authorize."
           ],
           "interfaces": [
             "Human Intent intake supplies raw request context, bounded defaults, unauthorized means, required approvals, and re-contract triggers.",
@@ -3699,7 +3895,9 @@
             "Field provenance and confidence remain visible to planning and verification.",
             "Inferred or defaulted authority cannot authorize side effects.",
             "Re-contracting is required when downstream work changes allowed means, authority ceiling, affected parties, evidence requirements, publication surface, or stop conditions.",
-            "A missing dispatch receipt blocks execution."
+            "A missing dispatch receipt blocks execution.",
+            "A privileged effect matches every approval binding at dispatch, occurs inside its TTL, records an observed effect and post-state, and consumes its nonce before any replay.",
+            "Scenario or test acknowledgement, prior familiarity, and role membership cannot substitute for explicit approval or a scoped delegated-authority receipt."
           ],
           "failure_modes": [
             "Response mistaken for completed work.",
@@ -3709,7 +3907,9 @@
             "Prompt or context override.",
             "Unspecified output contract.",
             "Field laundering, where vague prose is moved into a formal field without becoming testable.",
-            "Authority inference, where a likely means is treated as if the human granted it."
+            "Authority inference, where a likely means is treated as if the human granted it.",
+            "Approval drift after principal, target state, parameters, policy, nonce, or TTL changes.",
+            "Scenario acknowledgement or a consumed approval is laundered into authorization for a privileged effect."
           ],
           "minimal_implementation": "Intent-contract, command-contract, intent-execution-trace, and intent-origin fixtures plus a synthetic plan-execution harness with valid and expected-invalid authority, receipt, mismatch, requirement-loss, cycle, ambiguity, hidden-override, authority-widening, field-confidence, and inferred-authority cases.",
           "beyond_state_of_art": "A mature command-contract spine gives humans, planners, verifiers, job runners, policy layers, runtime adapters, and later AI agents one semantic control language for executable work. Every serious request would enter as a durable intake object, receive an explicit authority envelope, lower through command, plan, job, artifact, verification, delivery, feedback, and residual records, and remain inspectable after the work is done. Every field would carry provenance and confidence; every side-effect route would have an authority basis; every plan node would trace back to the contract it serves; every job would have a dispatch receipt; every artifact would have an identity, verifier, delivery record, feedback state, and residual ledger. This endpoint remains speculative architecture until parser tests, dispatch enforcement, approval-path checks, tool-effect controls, replayed vertical traces, negative controls, and accepted evidence-transition records exist.",
@@ -3793,6 +3993,11 @@
               "name": "Intent-governed replacement bridge",
               "implementation_status": "implemented",
               "result_status": "passes via deterministic synthetic bridge at experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json: two valid bridge traces and six expected-invalid controls for command-authorized replacement canary admission, blocked default without approval, missing intent ref, authority widening, stop-condition erasure, missing rollback owner, and support-promotion overclaim; no parser, deployed dispatcher, approval service, replacement execution, rollback execution, support-state promotion, or evidence transition claim"
+            },
+            {
+              "name": "Historical-project one-shot privileged-action lifecycle",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_one_shot_privileged_action.py` for one consumed five-project record and ten expected-invalid mutations covering target-state mismatch, stale approval, wrong principal, altered parameters, policy/nonce swap, acknowledgement substitution, replay, missing effect receipt, and support overclaim; no deployed approval service, effect, OS enforcement, or historical-project replay"
             }
           ],
           "lean_module": "AsiStackProofs.IntentToExecution",
@@ -3944,6 +4149,46 @@
                 "sources/raw/google_docs/cognitive_compilation.txt:540-555"
               ],
               "passage_review_note": "Reviewed local raw cache for source-plan contracts, explicit goals/inputs/outputs/constraints/acceptance tests/resources/risk flags, typed semantic atoms, input/output shape checks, dependency DAGs, compilation/linting passes, backend lowering, trace verification, localized repair, explicit-interface caveats, and target artifacts; no compiler, parser, trace suite, or ablation result is promoted."
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports bounded local-lineage context for typed requests, explicit authority/policy boundaries, proposal-to-effect records, receipts, and replay discipline used to motivate exact one-shot approval binding.",
+              "limits": "Does not establish approval correctness, privileged-effect enforcement, replay resistance, parser behavior, deployed authority, historical-project behavior, or chapter support.",
+              "passage_refs": ["sources/source_notes/cca_project.md:14-111"],
+              "passage_review_note": "Reviewed the public-safe pinned source note for typed request/effect and authority-record context; no CCA compiler, runtime, approval, or effect was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports bounded local-lineage context for policy-bound manifests, effect logs, replay checks, signed or revocable authority records, and exact artifact identity.",
+              "limits": "Does not establish a deployed approval service, cryptographic authorization, effect enforcement, replay resistance, project behavior, or support movement.",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:14-85", "sources/source_notes/moecot_manifest_project.md:194-230"],
+              "passage_review_note": "Reviewed the public-safe pinned source note for policy, effect-log, replay, and authority-record context; no MoECOT command or privileged effect was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "beastbrain_project",
+              "mapped_support": "Supports local negative-case context for distinguishing nominal or simulated state transitions, acknowledgement, and interface presence from material authorized effects.",
+              "limits": "Does not establish live effect causality, approval enforcement, runtime safety, project capability, or independent confirmation.",
+              "passage_refs": ["sources/source_notes/beastbrain_project.md:14-205"],
+              "passage_review_note": "Reviewed the public-safe pinned source note for simulated/nominal transition and effect-boundary negative cases; no BeastBrain action or runtime was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supports local negative-case context for privileged-action lifecycle, target identity, state changes, skipped checks, and the gap between scenario acknowledgement and authority to act.",
+              "limits": "Does not establish hardware enforcement, approval correctness, cryptographic roots, privileged effects, replay resistance, or project capability.",
+              "passage_refs": ["sources/source_notes/bugbrain_project.md:14-238"],
+              "passage_review_note": "Reviewed the public-safe pinned source note for privileged-action, state, identity, and skipped-check boundaries; no BugBrain hardware or action was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supports local negative-case context for checkpoint/parameter/runtime/output causality, named transitions without durable effects, digest-parity laundering, and playback versus live execution.",
+              "limits": "Does not establish a working privileged-action path, approval service, causal runtime binding, effect safety, project capability, or support promotion.",
+              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:14-360"],
+              "passage_review_note": "Reviewed the public-safe pinned source note for parameter, runtime, effect, digest, and replay negative cases; no build, model, tool, or privileged effect was replayed.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -4245,7 +4490,10 @@
             "planforge_compiler_arch",
             "genesiscode",
             "treellm",
-            "viea"
+            "viea",
+            "cca_project",
+            "moecot_manifest_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -4255,7 +4503,10 @@
               "planforge_compiler_arch",
               "genesiscode",
               "treellm",
-              "viea"
+              "viea",
+              "cca_project",
+              "moecot_manifest_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -4265,9 +4516,10 @@
           "insufficient": "Generate-from-prompt workflows entangle requirements and implementation, drift over long contexts, and make incremental repair fragile.",
           "core_claim": "Cognitive compilation should transform goals into semantic intermediate representations that can be optimized, verified, repaired, and targeted.",
           "mechanism": [
-            "Represent requirements, semantics, dependencies, artifacts, and target constraints explicitly.",
-            "Perform incremental repair over IR rather than re-prompting from scratch.",
-            "Compile IR into jobs, code, schemas, or documents."
+            "Represent requirements, semantics, dependencies, artifacts, authority, ambiguity, and target constraints explicitly.",
+            "Carry every source field through source-to-IR-to-target lineage with requirement-specific semantic validators and retained pass/failure bundles.",
+            "Perform incremental repair over stable IR identities and compare declared scope with the observed mutation blast radius.",
+            "Compile IR into jobs, code, schemas, or documents without treating digest parity as semantic preservation."
           ],
           "interfaces": [
             "Planning produces or consumes IR.",
@@ -4277,12 +4529,20 @@
           "invariants": [
             "IR preserves declared requirements.",
             "Repair changes are localized and auditable.",
-            "Target compilation records assumptions."
+            "Target compilation records assumptions.",
+            "Authority and non-goals cannot be widened, invented, or silently erased by lowering.",
+            "Every source field retains explicit source-to-IR-to-target lineage.",
+            "Unresolved ambiguity blocks or escalates strict compilation.",
+            "Semantic preservation requires requirement-specific validators rather than digest equality."
           ],
           "failure_modes": [
             "IR drift.",
             "Compiler hallucination.",
-            "Repair that breaks earlier requirements."
+            "Repair that breaks earlier requirements.",
+            "Authority or non-goal loss during lowering.",
+            "Adversarial paraphrase or field omission that keeps a fluent target while deleting an obligation.",
+            "Positional insertion that orphans repair identity or widens observed mutations.",
+            "Failure-bundle erasure or digest-parity laundering."
           ],
           "minimal_implementation": "A semantic IR sketch and compile/verify/repair loop for one artifact type.",
           "beyond_state_of_art": "The mature version is a compiler toolchain for cognitive work. It turns goals, command contracts, plans, and source context into semantic intermediate representations before producing code, prose, schemas, proof targets, experiments, or tool jobs. The central product is not the generated artifact; it is the obligation-preserving build graph that explains why the artifact should exist and what it must continue to satisfy. In a cognitive compiler, every important artifact has a lowering receipt. The receipt names the source plan, semantic atoms, obligations, assumptions, validators, target constraints, authority requirements, repair scope, support-state effect, and residuals that produced it. A later writer, model, compiler pass, or reviewer can change one node without erasing unrelated obligations or pretending that a syntactic pass is semantic acceptance.",
@@ -4306,6 +4566,11 @@
               "name": "Target compilation audit",
               "implementation_status": "implemented",
               "result_status": "passes via `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only"
+            },
+            {
+              "name": "Historical-project semantic contract preservation",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_semantic_contract_preservation.py`; accepts one blocked three-project fixture and rejects nine paraphrase, omission, insertion, authority, repair-scope, ambiguity, failure-retention, and digest-parity mutations; no parser, backend, execution authority, measured locality, or support promotion"
             }
           ],
           "lean_module": "AsiStackProofs.CognitiveCompilation",
@@ -4395,6 +4660,42 @@
                 "sources/raw/google_docs/viea.txt:1477-1543"
               ],
               "passage_review_note": "Reviewed local raw cache for intent-to-execution architecture, structured command contracts, artifact graphs, specialist routing, verification, workflow-to-tool compilation, repeated-work closure, claim and verification ledgers, residuals, runtime adapters, benchmark ratchets, and feedback loops; no completed deployment, working cognitive compiler, execution log, or reproduced benchmark is promoted."
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports authority-bearing semantic representation through typed primitives, relations, explicit ambiguity, invocation effects, runtime bindings and receipts, plus a five-stage compiler with typed semantic atoms, pass hashes, verification, bounded repair, target IR, and trace bundles.",
+              "limits": "Pinned-project implementation context only; project artifacts were not replayed from the book, and source hashing or theorem counts do not establish semantic preservation, runtime correctness, or compiler quality.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:24-37",
+                "sources/source_notes/cca_project.md:49-65",
+                "sources/source_notes/cca_project.md:67-76"
+              ],
+              "passage_review_note": "Reviewed the public-safe pinned-project note for Semantic Base Language fields, explicit ambiguity, deterministic encoding, invocation effects, runtime bindings, five-stage compilation, typed atoms, pass hashes, bounded repair, target IR, trace bundles, finite proof limits, and negative evidence boundaries; no project runtime, benchmark, or semantic-equivalence result is promoted."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports compilation all the way down: authority-bearing semantic and target IR, explicit ambiguity debt, field and provenance retention, pass schemas, strict failure, reproducer bundles, applied localized-repair receipts, semantic portability, and separation of execution from mutation authority.",
+              "limits": "Pinned-project architecture and implementation context only; compilers, holdouts, and deployments were not rerun, and declared repair scope does not prove actual mutation locality.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:35-55",
+                "sources/source_notes/moecot_manifest_project.md:56-68",
+                "sources/source_notes/moecot_manifest_project.md:135-151"
+              ],
+              "passage_review_note": "Reviewed the public-safe pinned-project note for goals-to-semantic-compiler authority, semantic-description IR, ambiguity slots, goal/plan and target surfaces, pass contracts, strict failure, reproducer bundles, localized-repair receipts, portability, ambiguity debt, and execution-versus-mutation authority; no compiler correctness or deployment result is promoted."
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Provides a negative implementation record: rich Task spell, semantic/target IR, compiler-pass, and repair interfaces coexist with keyword-driven parsing, mostly linear plans, digest equality mislabeled as semantic parity, positional repair identities, and ordinary-path defaults.",
+              "limits": "The project does not establish semantic compilation correctness, arbitrary paraphrase preservation, repair locality, or causal runtime effect; interface and artifact presence remain distinct from behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:79-94",
+                "sources/source_notes/corbens_best_model_possible_project.md:181-190",
+                "sources/source_notes/corbens_best_model_possible_project.md:212-225"
+              ],
+              "passage_review_note": "Reviewed the public-safe pinned-project note for Task spell fields, compiler passes, semantic and target IR, localized repair, compiler-truth negative cases, digest-parity laundering, positional identity, and interface-versus-effect distinctions; no semantic compiler correctness or capability result is promoted."
             }
           ]
         },
@@ -4416,7 +4717,11 @@
             "ext_graphrag_2024",
             "ext_hipporag_2024",
             "ext_raptor_2024",
-            "ext_mem0_2025"
+            "ext_mem0_2025",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project"
           ],
           "source_queue": {
             "primary": [
@@ -4426,7 +4731,11 @@
               "context_engineer",
               "verification_bandwidth",
               "viea",
-              "spinoza"
+              "spinoza",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -4442,7 +4751,8 @@
             "Resolve context requests through addresses, versions, mounts, snapshots, representation needs, authority ceilings, adequacy targets, leases, and typed fault behavior.",
             "Represent materialized context as typed pages or cells such as constraints, claims, decisions, corrections, exact excerpts, summaries, redactions, abstractions, translations, or derived inferences.",
             "Attach representation certificates with source refs, omissions, loss contracts, permitted uses, authority ceilings, validity state, revocation state, transaction refs, artifact refs, and residuals.",
-            "Hand off admitted context to verification-bandwidth checks without treating admission as adequacy for a target claim."
+            "Hand off admitted context to verification-bandwidth checks without treating admission as adequacy for a target claim.",
+            "Bind bounded graph materializations to a durable snapshot digest, generation, policy, revocation epoch, provenance, expiry, revalidation receipt, finite selection budget, and exact omitted frontier while keeping materialized context distinct from durable memory."
           ],
           "interfaces": [
             "Planning requests context by task, address, authority, representation need, and adequacy target.",
@@ -4458,7 +4768,10 @@
             "Context admission and context adequacy remain distinct.",
             "Mandatory context misses produce typed faults rather than best-effort packets.",
             "Summaries cannot increase the authority ceiling of their source cells.",
-            "Revoked or stale certificates cannot be treated as current support."
+            "Revoked or stale certificates cannot be treated as current support.",
+            "A context handle binds one current snapshot identity and digest, generation, policy, revocation epoch, expiry, provenance, and revalidation receipt.",
+            "Bounded selections remain inside declared depth and node budgets and disclose their exact omitted frontier.",
+            "Materialized context remains distinct from durable memory and gains no durable-write authority."
           ],
           "failure_modes": [
             "Flat transcript memory.",
@@ -4467,7 +4780,10 @@
             "Provenance loss.",
             "Authority escalation through compression.",
             "Unsafe fit.",
-            "Adequacy laundering."
+            "Adequacy laundering.",
+            "Handle laundering through stale generation, expiry, revocation, policy mismatch, or unvalidated slices.",
+            "Graph-completeness laundering through an undisclosed omitted frontier.",
+            "Durable-memory and materialized-context conflation."
           ],
           "minimal_implementation": "A context ABI record plus semantic-page certificate fixtures validated by the context admission/adequacy harness, covering address, version, mount, snapshot, representation, source refs, authority ceiling, loss/use contract, adequacy state, residuals, and fault behavior.",
           "beyond_state_of_art": "A mature Virtual Context ABI is the memory syscall layer for long-horizon AI work: planners, verifiers, workers, claim ledgers, reader editions, and auditors request typed context objects by stable address, version, mount, snapshot, representation need, authority label, adequacy target, certificate, lease, and residual boundary. The endpoint is a governed context fabric where exact source excerpts, summaries, redactions, planning briefs, claim cells, contradiction pairs, reader paraphrases, and execution packets can derive from shared sources without pretending they have the same authority or evidential role.",
@@ -4545,6 +4861,12 @@
               "implementation_status": "implemented",
               "result_status": "passes via deterministic public-safe VCM resolver/certificate probe; no deployed-resolver, memory-store, context-compiler, open-domain-summary-fidelity, certificate-truthfulness, transaction-isolation, deletion-enforcement, model-facing-context-quality, VCM-Bench, leak-prevention, or support-state-promotion claim",
               "status": "implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; generated public-safe source/derived cells only"
+            },
+            {
+              "name": "Historical-project bounded graph-snapshot certificate",
+              "purpose": "Check durable snapshot identity, finite graph bounds, exact omitted frontier, handle provenance/generation/policy/expiry/revocation, revalidation, memory/context separation, and no fixture promotion.",
+              "implementation_status": "implemented",
+              "result_status": "passes via one bounded four-project certificate and eleven expected-invalid mutations; no deployed resolver, durable-store correctness, graph completeness, historical runtime behavior, or support promotion"
             }
           ],
           "lean_module": "AsiStackProofs.VirtualContextABI",
@@ -4692,6 +5014,38 @@
                 "sources/raw/google_docs/spinoza.txt:1397-1401"
               ],
               "passage_review_note": "Reviewed local raw cache for proof-carrying and citation/procedure-carrying belief graphs, proposition-node metadata, justification edges, tier labels, bounded formal scope, proof/citation/procedure artifacts, dependency tracing, contradiction revision, tier non-upgrade rules, certified-delusion limits, semantic-isolation risk controls, and audit-trail expectations; no open-domain autoformalization, arbitrary theorem validity, whole-system epistemic correctness, or certificate truthfulness result is promoted."
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports the boundary between durable semantic memory and bounded context materialization, with explicit artifact identity, provenance, and governed compilation pressure.",
+              "limits": "Does not establish a durable memory store, resolver correctness, snapshot completeness, restart persistence, model-facing context quality, or support promotion.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/cca_project.md:14-158"],
+              "passage_review_note": "Reviewed the public-safe pinned note for durable-memory/context separation, artifact/provenance discipline, and the deferred dedicated-memory boundary; no CCA memory runtime was replayed."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports frozen-basis and hot/warm/cold context slices, TTL and token bounds, deterministic freeze/thaw, graph-overlay world state, contradiction recovery, and promotion-boundary discipline.",
+              "limits": "Does not establish a deployed context store, correct freeze/thaw behavior, graph completeness, expiry enforcement, resolver correctness, or support promotion.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:42-102"],
+              "passage_review_note": "Reviewed the public-safe pinned note for frozen snapshots, bounded context slices, freeze/thaw, persistence, graph overlays, and contradiction handling; no MoECOT memory runtime was replayed."
+            },
+            {
+              "source_id": "beastbrain_project",
+              "mapped_support": "Supports typed graph-plus-vector durable objects, provenance-bearing bounded graph snapshots, explicit node/depth/edge/weight limits, reasoning-path traces, lifecycle states, and a durable-memory/context boundary.",
+              "limits": "Does not establish graph correctness, populated capacity, retrieval quality, persistence, snapshot completeness, memory safety, or support promotion.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/beastbrain_project.md:39-51", "sources/source_notes/beastbrain_project.md:141-145"],
+              "passage_review_note": "Reviewed the public-safe pinned note for durable graph objects, bounded snapshot limits, provenance, lifecycle states, and certified-snapshot recommendations; no BeastBrain memory or retrieval result was replayed."
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supports immutable context handles, virtual slices, IDs, checksums, generation-leased read snapshots, bounded ingress, expiry/revocation revalidation, and negative cases for unchecked offsets and fresh-looking reused IDs.",
+              "limits": "Does not establish handle safety, cryptographic security, correct restore, durable persistence, context quality, graph completeness, or support promotion.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/bugbrain_project.md:65-75", "sources/source_notes/bugbrain_project.md:115-118", "sources/source_notes/bugbrain_project.md:181-183"],
+              "passage_review_note": "Reviewed the public-safe pinned note for generation-leased context handles, snapshot/slice identity, expiry/revocation restore checks, and unchecked-slice negative cases; no BugBrain runtime or handle implementation was replayed."
             }
           ]
         },
@@ -4709,7 +5063,12 @@
             "black_hole_context_manager",
             "vcm_editable",
             "ext_graphrag_2024",
-            "ext_mem0_2025"
+            "ext_mem0_2025",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -4718,7 +5077,12 @@
             "supporting": [
               "ladon_manhattan",
               "context_engineer",
-              "black_hole_context_manager"
+              "black_hole_context_manager",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -4732,7 +5096,8 @@
           "mechanism": [
             "Record immutable memory events.",
             "Compile task snapshots with mounts and copy-on-write branches.",
-            "Propagate taint and deletion obligations through derived context."
+            "Propagate taint and deletion obligations through derived context.",
+            "Bind freeze, thaw, rebalance, promotion, no-loss compaction, partial-write recovery, and restart into one observed and acknowledged causal state chain with atomic index/content epochs."
           ],
           "interfaces": [
             "Planning receives consistent views.",
@@ -4742,12 +5107,16 @@
           "invariants": [
             "Snapshots are consistent.",
             "Taint propagates to derivatives.",
-            "Deletion closure is enforced or faulted."
+            "Deletion closure is enforced or faulted.",
+            "No-loss material transitions preserve every authoritative item identity.",
+            "Index/content divergence blocks ordinary commit and recovers before restart visibility is accepted."
           ],
           "failure_modes": [
             "Memory poisoning.",
             "Stale or contradictory reads.",
-            "Deleted data reappearing in derived summaries."
+            "Deleted data reappearing in derived summaries.",
+            "Lifecycle theater without observed postconditions.",
+            "Partial-write laundering or restart amnesia."
           ],
           "minimal_implementation": "A transaction model for context reads, writes, branches, and deletion closure.",
           "beyond_state_of_art": "The mature version is a transactional memory substrate for AI context. It does not treat memory as a vector store with annotations. It treats every context view as the product of committed events, versioned pages, mount policies, snapshots, branch rules, taint propagation, deletion obligations, declassification decisions, and replay boundaries. Under transactional context memory, every materialized context view can explain itself. It can show which immutable events were visible, which branch was used, which mounts were readable or writable, which cells were actually read, which derivatives were created, which taint labels propagated, which deletion obligations closed, which contradictions were recorded, and why a view was allowed to feed a job, artifact, claim, or release.",
@@ -4791,6 +5160,11 @@
               "name": "Context transaction sequence bridge",
               "implementation_status": "implemented",
               "result_status": "passes via synthetic sequence fixtures and finite Lean summary for 2 valid sequences, 4 expected-invalid controls, read-after-write checks, replay-boundary checks, taint-blocking checks, invalid-control rejection, and no chapter-core support promotion"
+            },
+            {
+              "name": "Historical-project restart/recovery lifecycle",
+              "implementation_status": "implemented",
+              "result_status": "passes via one bounded five-project lifecycle and ten expected-invalid mutations; no deployed store, process restart, filesystem atomicity, historical runtime behavior, or support promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ContextTransactions",
@@ -4898,6 +5272,21 @@
               ],
               "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, external-literature candidates, and citation-normalization warnings; no VCM-Bench or model-facing result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cca_project", "mapped_support": "Supports durable-memory/context separation, artifact identity, and governed material transitions.", "limits": "No deployed store, crash recovery, persistence, or support promotion.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/cca_project.md:14-158"], "passage_review_note": "Reviewed public-safe pinned note; no CCA memory runtime replayed."
+            },
+            {
+              "source_id": "moecot_manifest_project", "mapped_support": "Supports deterministic freeze/thaw, tiered context persistence, graph-overlay state, promotion gates, and acknowledged transitions.", "limits": "No deployed store, process restart, or persistence result.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/moecot_manifest_project.md:91-102"], "passage_review_note": "Reviewed public-safe pinned note; no MoECOT memory runtime replayed."
+            },
+            {
+              "source_id": "beastbrain_project", "mapped_support": "Supports hot/cold/archive memory lifecycles, background decay, bounded graph snapshots, merge and pruning pressure.", "limits": "No deployed persistence, merge correctness, compaction, or recovery result.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/beastbrain_project.md:39-51", "sources/source_notes/beastbrain_project.md:94-102"], "passage_review_note": "Reviewed public-safe pinned note; no BeastBrain memory runtime replayed."
+            },
+            {
+              "source_id": "bugbrain_project", "mapped_support": "Supports generation-leased snapshots, tier movement, restore revalidation, integrity and deterministic replay pressure.", "limits": "No deployed restore, atomic update, cryptographic, or persistence result.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/bugbrain_project.md:65-75", "sources/source_notes/bugbrain_project.md:181-183"], "passage_review_note": "Reviewed public-safe pinned note; no BugBrain restart was replayed."
+            },
+            {
+              "source_id": "corbens_best_model_possible_project", "mapped_support": "Supplies negative cases for named memory transitions without durable effects, absolute-path state, playback-only replay, and nominal runtime surfaces.", "limits": "No deployed store, process restart, causal memory effect, or support promotion.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:250-335"], "passage_review_note": "Reviewed public-safe pinned note for memory-effect and replay negative cases; no Best Model memory runtime replayed."
             }
           ]
         },
@@ -5105,7 +5494,12 @@
             "coherence_exchange",
             "aletheia",
             "uat",
-            "ext_w3c_prov_o_2013"
+            "ext_w3c_prov_o_2013",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -5115,7 +5509,12 @@
             "supporting": [
               "coherence_exchange",
               "aletheia",
-              "uat"
+              "uat",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -5196,12 +5595,28 @@
                 "sources/raw/google_docs/uat.txt:400-453"
               ],
               "passage_review_note": "Reviewed local raw cache for UAT as a human-in-the-loop SME force multiplier, every claim tied to retrieval source, atomic proposition decomposition, verified/inferred/unsupported states, dossier-bounded verifier checks, SME_REVIEW handling, adversarial logic/citation/omission review, stability and hard-cycle caps, compression that preserves verified proposition counts, final SME sign-off, correlated-hallucination risk, and decomposition-loss risk; no tribunal threshold proof, reviewer-independence result, autonomous truth-machine claim, novel-truth discovery, or implemented benchmark is promoted."
+            },
+            {
+              "source_id":"cca_project","mapped_support":"Supports separated epistemic state, durable claim identity, dependency-aware revision, and non-overwriting histories.","limits":"No open-domain contradiction detector, belief engine, or ontology correctness result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/cca_project.md:14-158"],"passage_review_note":"Reviewed public-safe pinned note; no CCA belief runtime replayed."
+            },
+            {
+              "source_id":"moecot_manifest_project","mapped_support":"Supports canonical claim/evidence graphs, contradiction recovery, bounded repair, readiness blocking, and persistent control-plane state.","limits":"No deployed contradiction or durable-belief behavior result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/moecot_manifest_project.md:48-102"],"passage_review_note":"Reviewed public-safe pinned note; no MoECOT belief runtime replayed."
+            },
+            {
+              "source_id":"beastbrain_project","mapped_support":"Supports durable semantic objects, provenance, unresolved-outcome retention, and contradiction-aware memory pressure.","limits":"No belief-engine, ontology, or revision-quality result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/beastbrain_project.md:39-55"],"passage_review_note":"Reviewed public-safe pinned note; no BeastBrain belief runtime replayed."
+            },
+            {
+              "source_id":"bugbrain_project","mapped_support":"Supports generation/version identity, restore discipline, graph dependencies, and negative cases for nominal integrity or replay.","limits":"No contradiction-quality, persistence, or ontology result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/bugbrain_project.md:65-75", "sources/source_notes/bugbrain_project.md:115-131"],"passage_review_note":"Reviewed public-safe pinned note; no BugBrain belief runtime replayed."
+            },
+            {
+              "source_id":"corbens_best_model_possible_project","mapped_support":"Supplies negative cases for nonmonotone contradiction response, vacuous verification, playback-only persistence, and named state without causal effect.","limits":"No deployed belief engine, causal revision, or ontology correctness result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/corbens_best_model_possible_project.md:250-335"],"passage_review_note":"Reviewed public-safe pinned note; no Best Model belief runtime replayed."
             }
           ],
           "mechanism": [
             "Extract claims into structured records.",
             "Attach evidence tier, provenance, and uncertainty.",
-            "Revise beliefs when contradictions or stronger evidence appear."
+            "Revise beliefs when contradictions or stronger evidence appear.",
+            "Separate justification, lifecycle, commitment, and authority; apply monotone contradiction responses, exact bounded dependency repair, versioned ontology migration, residual conservation, and restart persistence."
           ],
           "interfaces": [
             "VCM supplies source context.",
@@ -5211,12 +5626,15 @@
           "invariants": [
             "Claims are separable from prose.",
             "Contradictions remain linked.",
-            "Revision history is not overwritten."
+            "Revision history is not overwritten.",
+            "Stronger recorded contradictions never receive weaker responses.",
+            "Dependency repair is exact and bounded, and ontology/restart transitions preserve claim, revision, successor, and residual identity."
           ],
           "failure_modes": [
             "Untracked assumptions.",
             "Belief inertia.",
-            "Contradiction deletion."
+            "Contradiction deletion.",
+            "Monotonicity inversion, repair sprawl, ontology drift, or restart amnesia."
           ],
           "minimal_implementation": "A claim-record schema and belief-revision transition example.",
           "beyond_state_of_art": "The mature version is an epistemic version-control system. It does not merely annotate chapters with confidence labels. It gives every material claim a durable identity, provenance, support state, uncertainty record, contradiction state, surface references, revision history, promotion blockers, and escalation path. With a claim ledger in force, prose is a view over the ledger rather than the source of belief. A claim can appear in a chapter, diagram, appendix, release note, reader edition, benchmark report, or runtime artifact without losing its identity. If new evidence weakens it, every surface that depends on the claim can be found. If a contradiction appears, the ledger can downgrade, split, merge, deprecate, residualize, or route the claim to Spinoza, UAT, or human review.",
@@ -5241,6 +5659,9 @@
               "name": "Claim ledger semantic and assumption fixture",
               "implementation_status": "implemented",
               "result_status": "passes via expanded synthetic claim ledger revision harness at experiments/claim_ledger_revision/results/2026-07-02-local.md: 5 valid fixture(s), 7 expected-invalid fixture(s), semantic-variant merge boundaries, assumption-context dependency preservation, unsynced-variant rejection, no semantic-equivalence proof, no assumption-context completeness proof, and no support-state promotion"
+            },
+            {
+              "name":"Historical-project contradiction/revision lifecycle","implementation_status":"implemented","result_status":"passes via one bounded five-project record and eleven expected-invalid mutations; no open-domain detector, deployed belief engine, ontology correctness, historical runtime behavior, or support promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ClaimLedger",
@@ -5285,7 +5706,12 @@
             "verification_bandwidth",
             "treellm",
             "uat",
-            "talos"
+            "talos",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -5297,7 +5723,12 @@
               "verification_bandwidth",
               "treellm",
               "uat",
-              "talos"
+              "talos",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -5411,13 +5842,29 @@
                 "sources/raw/google_docs/talos.txt:6507-6535"
               ],
               "passage_review_note": "Reviewed local raw cache for Talos as a deterministic, auditable, job-based cognitive-manufacturing model, conversion of untrusted generative outputs into structured evidence-bound uncertainty-aware artifacts, typed atomic claims, immutable content-addressed evidence, verified/uncertain/refuted claim states, fixed job pipelines, raw prompt shielding from verification agents, machine-readable claim graphs, evidence-set world boundaries, independent adversarial agents seeking contradictions/counterexamples/missing dependencies, threshold failure and retrieval re-entry, proof bundles, logged/hashed/auditable I/O, replay/re-verification/evidence audit, human adjudication in job runs, residual-risk logging, and explicit cost/certainty tradeoffs; no Talos tribunal pipeline, security result, replay log, benchmark, or proof bundle has been reproduced."
+            },
+            {
+              "source_id":"cca_project","mapped_support":"Supports explicit verifier boundaries, proof/runtime separation, failure preservation, and bounded review artifacts.","limits":"No reviewer-independence, method-adequacy, or verdict-correctness result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/cca_project.md:14-158"],"passage_review_note":"Reviewed public-safe pinned note; no CCA tribunal runtime replayed."
+            },
+            {
+              "source_id":"moecot_manifest_project","mapped_support":"Supports fail-closed verification routes, replay and readiness gates, bounded specialist lanes, and explicit promotion blockers.","limits":"No deployed tribunal, independent reviewers, or verdict-quality result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/moecot_manifest_project.md:42-140"],"passage_review_note":"Reviewed public-safe pinned note; no MoECOT tribunal runtime replayed."
+            },
+            {
+              "source_id":"beastbrain_project","mapped_support":"Supports tribunal and verifier concepts plus negative evidence about stubs, correlated review, simulated states, and readiness overclaim.","limits":"No reviewer-independence, tribunal-quality, or live adjudication result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/beastbrain_project.md:79-110", "sources/source_notes/beastbrain_project.md:141-160"],"passage_review_note":"Reviewed public-safe pinned note; no BeastBrain tribunal runtime replayed."
+            },
+            {
+              "source_id":"bugbrain_project","mapped_support":"Supports explicit check identity, deterministic replay pressure, privileged review boundaries, and negative cases for skipped or nominal checks.","limits":"No proof of verifier competence, independence, security, or verdict correctness.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/bugbrain_project.md:41-55", "sources/source_notes/bugbrain_project.md:115-140"],"passage_review_note":"Reviewed public-safe pinned note; no BugBrain tribunal runtime replayed."
+            },
+            {
+              "source_id":"corbens_best_model_possible_project","mapped_support":"Supplies negative cases for vacuous verification, playback-only evidence, dependent checks, default states, and nominal subsystems without causal effect.","limits":"No deployed tribunal, reviewer independence, method adequacy, or verdict-correctness result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/corbens_best_model_possible_project.md:250-335"],"passage_review_note":"Reviewed public-safe pinned note; no Best Model tribunal runtime replayed."
             }
           ],
           "mechanism": [
             "Select a verification route for each high-value claim or high-risk artifact: formal proof, citation dossier, executable procedure, replay log, benchmark artifact, tribunal review, downgrade, block, or escalation.",
             "Record interpretation mapping, justification artifact, verifier result, failed attempts, limitations, semantic adequacy, and support-state effect before any stronger claim standing is allowed.",
             "Escalate contested, high-risk, or mismatched cases into tribunal records with bounded dossiers, reviewer roles, adversarial probes, dissent, verdict constraints, and required actions.",
-            "Write bounded effects back to the claim ledger and execution layers: no change, downgrade, block, revise, scoped accept, dispatch blocker, authority narrowing, human sign-off, or residual work."
+            "Write bounded effects back to the claim ledger and execution layers: no change, downgrade, block, revise, scoped accept, dispatch blocker, authority narrowing, human sign-off, or residual work.",
+            "Label proof, citation, replay, adversarial, falsification, and abstention methods; disclose independence groups and dependencies; reject vacuous cases; preserve veto/dissent; and forbid default approval."
           ],
           "interfaces": [
             "Claim ledgers supply stable claim identity and receive bounded verification outcomes.",
@@ -5433,7 +5880,9 @@
             "Narrow passes cannot promote broader natural-language claims without semantic adequacy review.",
             "Dissent remains visible.",
             "High-risk artifacts cannot bypass required tribunal review.",
-            "Prior review over unchanged evidence cannot quietly reverse a rejection into acceptance."
+            "Prior review over unchanged evidence cannot quietly reverse a rejection into acceptance.",
+            "Dependent methods cannot inflate the independent-group count, empty cases cannot pass, and falsification, abstention, veto, and dissent remain explicit.",
+            "Default approval is forbidden."
           ],
           "failure_modes": [
             "Certified delusion.",
@@ -5443,7 +5892,8 @@
             "Reviewer collusion.",
             "Consensus theater.",
             "Critique without action.",
-            "Repeated-review laundering."
+            "Repeated-review laundering.",
+            "Independence laundering, vacuous-pass laundering, silent veto, abstention erasure, or default approval."
           ],
           "minimal_implementation": "A proof-carrying-claim schema and tribunal-review schema with synthetic valid and expected-invalid fixtures for narrow formal passes, citation no-change, mismatch escalation, missing artifacts, failed verification, high-risk review, dissent, and prior-review laundering.",
           "beyond_state_of_art": "The product-level endpoint is a verification operating system that routes each high-value claim or high-risk artifact to the cheapest adequate verifier or review process, records interpretation mappings, failed attempts, timeouts, dissent, required actions, and non-claims, then writes bounded effects back to claim ledgers and execution constraints without confusing artifact validity, verdict scope, semantic adequacy, or support-state movement.",
@@ -5510,6 +5960,11 @@
               "name": "Adversarial review dossier and verdict-quality probe",
               "implementation_status": "implemented",
               "result_status": "passes via deterministic synthetic review-dossier fixture at experiments/adversarial_review_dossier/results/2026-07-02-local.json: two valid synthetic review dossiers and seven expected-invalid controls; no semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, LLM-judge, debate-system, support-state-promotion, or evidence-transition claim"
+            },
+            {
+              "name":"Historical-project tribunal method/independence fixture",
+              "implementation_status":"implemented",
+              "result_status":"passes via one bounded five-project record and eleven expected-invalid mutations; no reviewer-independence, method-adequacy, verdict-correctness, deployed-tribunal, historical runtime behavior, or support promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ProofCarryingClaims; AsiStackProofs.Tribunal",
@@ -5767,7 +6222,12 @@
             "moecot",
             "ext_w3c_prov_o_2013",
             "ext_mlcommons_croissant_1_1_2026",
-            "ext_in_toto_2019"
+            "ext_in_toto_2019",
+            "cca_project",
+            "moecot_manifest_project",
+            "bugbrain_project",
+            "corbens_trainer_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -5778,7 +6238,12 @@
               "cognitive_compilation",
               "spinoza_composer",
               "genesiscode",
-              "cognitive_loop_closure"
+              "cognitive_loop_closure",
+              "cca_project",
+              "moecot_manifest_project",
+              "bugbrain_project",
+              "corbens_trainer_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -5884,12 +6349,74 @@
               ],
               "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports a canonical closure authority with append-only supersession and invalidation, trace bundles, and transitive claim/evidence consequences when upstream artifacts are revoked.",
+              "limits": "The historical project was mined as design evidence only; its runtime closure, replay behavior, and support transitions were not reproduced or promoted here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:23-82",
+                "sources/source_notes/cca_project.md:122-145"
+              ],
+              "passage_review_note": "Reviewed the historical-project note for canonical closure, append-only supersession/invalidation, trace bundles, proxy/benchmark divergence, and downstream claim effects; only bounded design lessons are imported."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports separating canonical events, graph state, claims, and evidence from disposable read models and watermark caches, with immutable digests, provenance, effect logs, and replay metadata.",
+              "limits": "The historical Registry V2 architecture was not deployed or replayed in this repository, so it supplies design constraints rather than operational evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:35-89",
+                "sources/source_notes/moecot_manifest_project.md:205-232"
+              ],
+              "passage_review_note": "Reviewed the historical-project note for canonical-versus-projection separation, cache watermarks, immutable identity, provenance, effects, replay, and attestation boundaries."
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supplies concrete failure cases for narrative/report divergence, silently ignored audit writes, non-tamper-evident JSONL, non-cryptographic replay, and path/storage identity confusion.",
+              "limits": "The mined defects are historical local observations, not a security audit or a claim that every BugBrain execution exhibited them.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:106-171",
+                "sources/source_notes/bugbrain_project.md:173-203"
+              ],
+              "passage_review_note": "Reviewed the historical-project note for record-reality divergence, failed audit persistence, replay and hash limitations, and relocation/storage failures."
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Supports content-addressed lineage, transitive invalidation after quarantine, stale-promotion prevention, and acknowledged asynchronous completion through durable terminal receipts rather than queue idleness.",
+              "limits": "The historical trainer was not executed here; the chapter imports its failure pattern and design constraints without asserting deployed closure or worker correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:78-95",
+                "sources/source_notes/corbens_trainer_project.md:124-207",
+                "sources/source_notes/corbens_trainer_project.md:209-230"
+              ],
+              "passage_review_note": "Reviewed the historical-project note for content-addressed artifacts, quarantined upstreams with stale downstream promotions, reverse-dependency closure, discarded asynchronous results, and queue-versus-terminal-state separation."
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supports explicit replay grades by separating playback from live re-execution and semantic validation, while exposing trace-only transitions and absolute checkpoint paths as false durability and relocation hazards.",
+              "limits": "No historical model run or checkpoint was reproduced; these are bounded architecture and failure lessons only.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:153-228",
+                "sources/source_notes/corbens_best_model_possible_project.md:229-253",
+                "sources/source_notes/corbens_best_model_possible_project.md:319-342"
+              ],
+              "passage_review_note": "Reviewed the historical-project note for playback-versus-re-execution distinctions, transitions named without durable effects, and non-relocatable path identity."
             }
           ],
           "mechanism": [
             "Record artifacts as nodes with source, job, context, tool, and evidence links.",
             "Capture replay metadata and environment assumptions.",
-            "Use artifacts as memory and improvement substrate."
+            "Use artifacts as memory and improvement substrate.",
+            "Separate canonical artifact truth from projections such as caches, indexes, reports, dashboards, claim views, promotion records, and public pages.",
+            "Maintain reverse dependency closure so quarantine or revocation invalidates every affected projection transitively.",
+            "Grade replay as playback, deterministic re-execution, semantic replay, partial re-execution, non-replayable, or not attempted.",
+            "Require durable terminal receipts for asynchronous completion; queue acceptance or idleness is not completion.",
+            "Use content digests as relocation-safe identity while treating filesystem paths as mutable storage locations."
           ],
           "interfaces": [
             "VCM references artifacts.",
@@ -5899,14 +6426,24 @@
           "invariants": [
             "Artifacts have stable identities.",
             "Audit logs are append-only or versioned.",
-            "Replay limits are declared."
+            "Replay limits are declared.",
+            "Canonical state and projections remain distinguishable.",
+            "Upstream quarantine closes over all known reverse dependencies before reuse or promotion.",
+            "Playback is never reported as deterministic or semantic re-execution.",
+            "Asynchronous completion requires an acknowledged terminal receipt.",
+            "Relocation preserves content identity without granting authority to a path."
           ],
           "failure_modes": [
             "Untraceable output.",
             "Non-replayable workflow.",
-            "Provenance gaps."
+            "Provenance gaps.",
+            "Projection laundering, where a stale cache, report, or promotion view overrides canonical state.",
+            "Incomplete revocation closure leaves downstream claims or promotions active after an upstream quarantine.",
+            "Replay-grade inflation treats playback as live re-execution or semantic validation.",
+            "Queue-success laundering treats accepted work or an idle queue as terminal completion.",
+            "Path-authority failure makes artifacts non-relocatable or changes identity when storage moves."
           ],
-          "minimal_implementation": "An artifact graph schema with job, source, context, and evidence edges.",
+          "minimal_implementation": "An artifact graph schema with job, source, context, and evidence edges plus a projection/revocation record that checks canonical-versus-projection state, reverse-dependency closure, replay grade, acknowledged terminal completion, and relocation-safe identity.",
           "beyond_state_of_art": "The mature version is an evidence graph for work products. It does not merely store files. It records the lineage, role, provenance, replay grade, environment assumptions, context transactions, semantic certificates, audit events, claim links, test links, residuals, and evidence gate for every artifact that the stack may later reuse. Inside an evidence graph, artifacts can become context, evidence, regression cases, release inputs, compression targets, procedural-memory traces, or reader-edition material only through declared gates. A path on disk is not enough. The artifact node must say what created it, what sources and context shaped it, what can be replayed, what cannot be replayed, and which claims or tests it is allowed to affect.",
           "codex_tests": [
             {
@@ -5973,6 +6510,11 @@
               "name": "Epistemic trusted computing base fixture",
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_epistemic_trusted_computing_base.py`; accepts 3 bounded trust-base records and rejects 6 expected-invalid controls for missing root of trust, verifier-trust laundering, unbounded trust propagation, missing recursion stop, erased outside-TCB residuals, and support promotion from trust-base shape; no support-state promotion"
+            },
+            {
+              "name": "Artifact projection/revocation closure harness",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_artifact_projection_revocation.py`; accepts 1 bounded five-project lineage record and rejects 10 expected-invalid controls for stale projection digests, incomplete or unknown revocation closure, replay-grade inflation, missing semantic validators, unacknowledged asynchronous completion, path authority, relocation mismatch, unverified relocation, and playback-based support promotion; no runtime or support-state claim"
             }
           ],
           "lean_module": "AsiStackProofs.ArtifactGraph",
@@ -6063,7 +6605,12 @@
             "ext_inspect_ai_2024",
             "ext_agentdojo_2024",
             "ext_camel_prompt_injection_2025",
-            "ext_owasp_agentic_top_10_2026"
+            "ext_owasp_agentic_top_10_2026",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_trainer_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -6075,7 +6622,12 @@
               "software_magic_grimoire",
               "genesiscode",
               "field_of_god_ai_constitution",
-              "theseus_operator_os"
+              "theseus_operator_os",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_trainer_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [
               "ext_cap_theorem_gilbert_lynch_2002"
@@ -6242,13 +6794,55 @@
                 "sources/source_notes/ext_complacency_bias_automation_2010.md:30-43"
               ],
               "passage_review_note": "Reviewed source note for complacency, automation bias, omission and commission errors, workload, attention, independent-evidence checking, and template-only approval risks. This grounds the fixture's failure modes but does not prove real reviewer correctness."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports bounded local-lineage context for typed runtime manifests, effect records, replay checks, target portability, scoped resources, and revocable authority artifacts.",
+              "limits": "Does not establish OS sandbox enforcement, network isolation, live adapter safety, secret-handle safety, deployed replay, or support promotion.",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:14-230"],
+              "passage_review_note": "Reviewed the public-safe pinned note for runtime manifest, replay, portability, and authority-record boundaries; no MoECOT adapter or sandbox was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "beastbrain_project",
+              "mapped_support": "Supports local negative-case context for declared interfaces, simulations, and nominal security/tool states that must not be described as enforced external-effect boundaries.",
+              "limits": "Does not establish process confinement, OS enforcement, adapter effects, tool safety, runtime capability, or independent confirmation.",
+              "passage_refs": ["sources/source_notes/beastbrain_project.md:14-205"],
+              "passage_review_note": "Reviewed the public-safe pinned note for simulated/declared versus observed enforcement boundaries; no BeastBrain adapter or effect was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supports local negative-case context for executable and path identity, protocol security versus enforcement, privileged action scope, skipped checks, and report/canonical-state drift.",
+              "limits": "Does not establish a hardware or OS sandbox, network isolation, approval correctness, adapter safety, or deployed replay.",
+              "passage_refs": ["sources/source_notes/bugbrain_project.md:14-238"],
+              "passage_review_note": "Reviewed the public-safe pinned note for path, privilege, check, and enforcement-boundary failures; no BugBrain hardware or adapter action was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Supports bounded local-lineage context for typed backend manifests, artifact quarantine, content-addressed execution records, revocable promotion, and stale-evidence invalidation.",
+              "limits": "Does not establish a sandboxed trainer backend, OS enforcement, live adapter effect, network isolation, replay equivalence, or support movement.",
+              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:14-250"],
+              "passage_review_note": "Reviewed the public-safe pinned note for backend, quarantine, lineage, and revocation boundaries; no trainer backend or adapter was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supports local negative-case context for playback versus live replay, absolute-path and relocation failures, default or empty tool paths, digest-parity laundering, and missing runtime causality.",
+              "limits": "Does not establish live tool execution, sandbox isolation, causal adapter binding, network or secret safety, model capability, or support promotion.",
+              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:14-360"],
+              "passage_review_note": "Reviewed the public-safe pinned note for replay, path, digest, tool, and runtime-causality boundaries; no project build, tool call, or adapter effect was replayed.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
             "Map jobs to runtime adapters with declared capabilities.",
             "Cover document/software, API/service, firmware/hardware, CAD/fabrication, robotics, and organizational workflow targets where source support exists.",
             "Require permission checks and approval gates for high-impact actions.",
-            "Record deployment evidence and rollback handles."
+            "Record deployment evidence and rollback handles.",
+            "Represent executable, read, write, network, clock, randomness, environment, and secret-handle scopes separately; compare observed probes to those scopes; and distinguish declaration, simulation, process observation, and OS-enforced observation.",
+            "Grade replay as record playback, deterministic simulation, bounded live reexecution, or deployed live reexecution without allowing a lower grade to borrow a higher grade's authority."
           ],
           "interfaces": [
             "Execution owns adapters.",
@@ -6258,12 +6852,16 @@
           "invariants": [
             "No adapter executes beyond granted scope.",
             "High-impact actions require approval.",
-            "Rollback handles are captured when available."
+            "Rollback handles are captured when available.",
+            "Process observation cannot establish OS enforcement without an identified observed sandbox instance.",
+            "Playback and bounded live reexecution remain distinct, and irreversible residuals keep an explicit state, owner, and review trigger."
           ],
           "failure_modes": [
             "Tool overreach.",
             "Approval bypass.",
-            "Irreversible deployment without rollback."
+            "Irreversible deployment without rollback.",
+            "Sandbox theater from declared scopes or cooperative behavior without OS-enforcement evidence.",
+            "Replay laundering from playback to live reexecution or from a disposable bounded probe to deployed replay."
           ],
           "minimal_implementation": "A runtime-adapter contract with permissions, approval requirements, result evidence, finite route predicates, a synthetic permission harness, a public-safe local effect replay, and an adversarial boundary probe for parentage, authority, approval, sandbox, secret, rollback, receipt, audit, support-state, and non-claim controls.",
           "beyond_state_of_art": "The mature version is a capability firewall for external effects. It does not expose tools as ambient functions. It grants scoped, expiring effect leases to typed jobs after checking target, capability, sandbox, authority handle, approval requirement, risk tier, pre-state, post-state expectations, rollback path, and evidence obligations. With capability adapters, a successful tool response is not the end of the story. The adapter returns an effect receipt that separates request, approval, execution, verification, rollback, irreversible residuals, incident refs, audit refs, and support-state effect. Approval is also scoped: approving one deployment, file edit, message, payment, hardware action, or credential use does not authorize every similar future action.",
@@ -6322,6 +6920,11 @@
               "name": "Human oversight degradation fixture",
               "implementation_status": "implemented",
               "result_status": "passes via python3 scripts/validate_human_oversight_degradation.py over experiments/human_oversight_degradation/results/2026-07-03-local.json: three valid finite records and seven expected-invalid controls for approval fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer qualification, support-state promotion, and non-claim boundaries; no support-state promotion, approval-service quality, reviewer-correctness, deployed human-factors behavior, or support-state-promotion claim"
+            },
+            {
+              "name": "Historical-project adapter capability-envelope and replay-grade fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_sandboxed_adapter_capability.py` for one bounded five-project record and ten expected-invalid mutations covering executable/path/network/clock/randomness scope, OS-enforcement overclaim, playback/live-replay distinction, irreversible residuals, dispatch, and support-state boundaries; no OS sandbox or deployed adapter claim"
             }
           ],
           "lean_module": "AsiStackProofs.RuntimeAdapters",
@@ -6363,7 +6966,10 @@
               "status": "implemented"
             }
           ],
-          "open_evidence_gaps": []
+          "open_evidence_gaps": [
+            "One hand-authored five-project capability-envelope record is linked to the existing temp-file replay and rejects ten scope/replay/overclaim mutations; it does not observe an OS-enforced sandbox or deployed adapter.",
+            "No local result establishes production process confinement, network isolation, secret-handle safety, live approval-service quality, target-service rollback, deployed revocation propagation, or deployed replay equivalence."
+          ]
         },
         {
           "id": "inter-stack-protocols-identity-and-economic-exchange",
@@ -6373,8 +6979,8 @@
           "evidence_level": "argument",
           "claim_label": "Design rationale",
           "source_ids": [
-            "ext_mcp_protocol_2025_06_18",
-            "ext_a2a_protocol_0_3_0",
+            "ext_mcp_protocol_2025_11_25",
+            "ext_a2a_protocol_1_0_0",
             "ext_w3c_did_core_1_0_2022",
             "ext_w3c_vc_data_model_2_0_2025",
             "ext_interledger_protocol_v4",
@@ -6385,8 +6991,8 @@
           ],
           "source_queue": {
             "primary": [
-              "ext_mcp_protocol_2025_06_18",
-              "ext_a2a_protocol_0_3_0",
+              "ext_mcp_protocol_2025_11_25",
+              "ext_a2a_protocol_1_0_0",
               "ext_w3c_did_core_1_0_2022",
               "ext_w3c_vc_data_model_2_0_2025",
               "ext_interledger_protocol_v4"
@@ -6404,23 +7010,23 @@
           },
           "claim_source_mappings": [
             {
-              "source_id": "ext_mcp_protocol_2025_06_18",
-              "mapped_support": "Supports a scoped comparator for schema-defined messages, lifecycle management, capability negotiation, session control, and modular agent-to-tool protocol features.",
-              "limits": "Does not establish a local MCP implementation, peer identity, authorization, task truth, effect safety, payment, deployment, or ASI.",
+              "source_id": "ext_mcp_protocol_2025_11_25",
+              "mapped_support": "Supports the latest released MCP comparator for versioned messages, lifecycle, capability negotiation, authorization/discovery, elicitation, tasks, and modular agent-to-tool protocol features.",
+              "limits": "The 2026-07-28 revision remains a release candidate; this source does not establish a local MCP implementation, authorization, task truth, effect safety, payment, deployment, or ASI.",
               "passage_refs": [
-                "sources/source_notes/ext_mcp_protocol_2025_06_18.md:14-65"
+                "sources/source_notes/ext_mcp_protocol_2025_11_25.md:13-55"
               ],
-              "passage_review_note": "Reviewed the official MCP specification framing as recorded in the source note; no local MCP client, server, session, authorization flow, or tool action was exercised.",
+              "passage_review_note": "Reviewed the official released revision and release-candidate status as recorded in the source note; no local MCP client, server, authorization flow, elicitation, task, or tool action was exercised.",
               "passage_review_state": "reviewed"
             },
             {
-              "source_id": "ext_a2a_protocol_0_3_0",
-              "mapped_support": "Supports a scoped comparator for Agent Cards, agent discovery, delegated tasks, exchanged artifacts, and transport choices between opaque agent systems.",
-              "limits": "Does not establish a local A2A peer, verified identity, delegated authority, task correctness, payment, safety, deployment, or ASI.",
+              "source_id": "ext_a2a_protocol_1_0_0",
+              "mapped_support": "Supports the latest released A2A comparator for canonical objects, version negotiation, Agent Cards, tasks/messages/artifacts, multiple bindings, authorization scoping, interoperability testing, and security considerations.",
+              "limits": "Does not establish a local A2A peer, verified identity, delegated authority, task correctness, binding interoperability, payment, safety, deployment, or ASI.",
               "passage_refs": [
-                "sources/source_notes/ext_a2a_protocol_0_3_0.md:14-67"
+                "sources/source_notes/ext_a2a_protocol_1_0_0.md:13-53"
               ],
-              "passage_review_note": "Reviewed the official A2A specification framing as recorded in the source note; no local A2A agent, task, credential, transport, payment, or effect was exercised.",
+              "passage_review_note": "Reviewed the official 1.0.0 specification framing as recorded in the source note; no local A2A agent, card, task, binding, credential, interoperability test, payment, or effect was exercised.",
               "passage_review_state": "reviewed"
             },
             {
@@ -6563,6 +7169,10 @@
             "project_theseus_whitepaper",
             "theseus_self_evolution_system",
             "theseus_operator_os",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "corbens_trainer_project",
             "ext_mem0_2025"
           ],
           "source_queue": {
@@ -6576,7 +7186,11 @@
               "talos",
               "project_theseus_whitepaper",
               "theseus_self_evolution_system",
-              "theseus_operator_os"
+              "theseus_operator_os",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "corbens_trainer_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -6713,12 +7327,45 @@
                 "local-project:Theseus-Hive@1ad88a22:docs/HIVE_OPERATOR_OS.md:123-152"
               ],
               "passage_review_note": "Reviewed local public-project source for command vocabulary, durable SQLite work board, persistent goals, skill registry, tool hooks, feedback routing, dependencies/events, node registry, and safety-visible operator surfaces; no Hive board, node registry, command channel, database, or dashboard run is promoted."
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports compiled-procedure lineage, durable trace identity, and separation of semantic knowledge from reusable execution structure.",
+              "limits": "No CCA procedure-mining run, tool promotion, or historical runtime behavior is reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/cca_project.md:70-105"],
+              "passage_review_note": "Reviewed the pinned local-project note for bounded procedural-memory lineage and negative implementation evidence; no runtime or capability result is promoted."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports manifest-bound procedure identity, source/effect receipts, qualification gates, rollback, and registry lifecycle discipline.",
+              "limits": "No MoECOT Manifest compiler, runtime, regression suite, or rollback execution is reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:140-186"],
+              "passage_review_note": "Reviewed the pinned local-project note for compiler/control-plane lifecycle context; no historical runtime behavior is promoted."
+            },
+            {
+              "source_id": "beastbrain_project",
+              "mapped_support": "Supports durable semantic-memory pressure, procedure/tool separation, failure retention, and explicit lifecycle state.",
+              "limits": "No BeastBrain memory store, loop detector, or tool-promotion behavior is reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/beastbrain_project.md:140-183"],
+              "passage_review_note": "Reviewed the pinned local-project note for memory-boundary and failure-retention lineage; no capability result is promoted."
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Supports regression evidence, failed-attempt retention, checkpoint/effect acknowledgement, quarantine, and revocable promotion.",
+              "limits": "No trainer run, regression-quality result, checkpoint effect, or model capability is reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:110-155"],
+              "passage_review_note": "Reviewed the pinned local-project note for experiment-gate, acknowledgement, quarantine, and revocation lineage; no training result is promoted."
             }
           ],
           "mechanism": [
             "Log safe execution traces.",
             "Detect recurring loops.",
-            "Abstract invariant structure, discover parameters, verify, and publish tools."
+            "Abstract invariant structure, discover parameters, verify, and publish tools.",
+            "Separate semantic facts from procedural traces, bind source/effect receipts, retain failures, and require regression-backed promotion with rollback and retirement."
           ],
           "interfaces": [
             "Artifact graph supplies traces.",
@@ -6728,12 +7375,20 @@
           "invariants": [
             "Only verified loops become tools.",
             "Parameters and assumptions are explicit.",
-            "Tool promotion records residuals and regressions."
+            "Tool promotion records residuals and regressions.",
+            "Semantic facts cannot substitute for observed procedural traces.",
+            "Every promoted trace retains source and effect receipts, including failures.",
+            "Routable promotion requires passing regressions and rehearsed rollback.",
+            "Quarantine and retirement remain reachable after promotion."
           ],
           "failure_modes": [
             "Premature toolification.",
             "Hidden assumptions.",
-            "Procedural memory poisoning."
+            "Procedural memory poisoning.",
+            "Memory-domain laundering.",
+            "Success-only promotion.",
+            "Receipt laundering.",
+            "Immortal promotion."
           ],
           "minimal_implementation": "A loop closure pipeline from trace detection to verified tool record.",
           "beyond_state_of_art": "The mature version is a procedure foundry for verified reusable cognition. It does not merely cache prompts or scripts. It mines artifact traces, clusters comparable work, preserves failures and near misses, abstracts the invariant structure, discovers parameters, synthesizes candidate procedures, verifies regressions, attaches monitoring and retirement rules, and then offers qualified tools to Part III routing. In procedural memory, reusable cognition has states rather than vibes: candidate trace, loop cluster, tool candidate, verified reuse, routable tool, quarantined tool, retired tool. A trace cannot jump straight into routable behavior because it looks elegant. The procedure card must carry source traces, rejected traces, near misses, abstraction rationale, preconditions, postconditions, SCF target, benchmark floor, authority requirement, monitoring signal, retirement trigger, and non-claims.",
@@ -6757,6 +7412,11 @@
               "name": "Procedure lifecycle route proof",
               "implementation_status": "implemented",
               "result_status": "passes via Lean lifecycle route proof and fixture-shaped bridge records for valid routable, quarantined, and retired synthetic scenarios; no deployed loop-detector, tool-synthesis, routing, regression-quality, or retirement-automation claim"
+            },
+            {
+              "name": "Historical-project trace-promotion test",
+              "implementation_status": "implemented",
+              "result_status": "passes via python3 scripts/validate_procedural_trace_promotion.py; bounded four-project record only, with no deployed trace mining, tool synthesis, regression-quality, rollback-execution, retirement-automation, historical-runtime, or support-promotion claim"
             }
           ],
           "lean_module": "AsiStackProofs.ProceduralMemory",
@@ -7224,6 +7884,12 @@
             "project_theseus_whitepaper",
             "theseus_architecture_gate",
             "theseus_self_evolution_system",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_trainer_project",
+            "corbens_best_model_possible_project",
             "ext_darwin_godel_machine_2025"
           ],
           "source_queue": {
@@ -7237,7 +7903,13 @@
               "cognitive_loop_closure",
               "project_theseus_whitepaper",
               "theseus_architecture_gate",
-              "theseus_self_evolution_system"
+              "theseus_self_evolution_system",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_trainer_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -7384,12 +8056,62 @@
                 "local-project:Theseus-Hive@1ad88a22:docs/SELF_EVOLUTION_SYSTEM.md:190-218"
               ],
               "passage_review_note": "Reviewed local public-project source for evidence-first self-evolution, intervention ladder, zero-param/smallest-architecture-change discipline, lifecycle-governed cells, ATTD GREEN/YELLOW/RED gate states, guarded teacher branch/check workflow, outcome ledgers, loop-closure candidate requirements, and machine-readable source-of-truth reports; no scripts, ATTD reports, branch flow, teacher runner, ledger, dashboard endpoint, or autonomous-improvement result is promoted."
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports readiness as an evidence-gated lifecycle through promotion states, quarantine, rollback, contamination controls, canonical closure authority, and fail-closed benchmark truth contracts.",
+              "limits": "Pinned-project implementation context only; project training, benchmark, quarantine, and promotion artifacts were not replayed from this book.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/cca_project.md:35-43", "sources/source_notes/cca_project.md:53-76"],
+              "passage_review_note": "Reviewed the public-safe source note for lifecycle states, quarantine, promotion, rollback, benchmark closure, and the negative boundary between project records and reproduced readiness."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports explicit promotion states, immutable evidence identities, residuals, replay, holdout separation, fail-closed gates, and maintenance/growth stops when architecture debt remains red.",
+              "limits": "Pinned-project architecture context only; promotion, holdout, deployment, and readiness behavior was not rerun here.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:61-84", "sources/source_notes/moecot_manifest_project.md:110-120", "sources/source_notes/moecot_manifest_project.md:142-155"],
+              "passage_review_note": "Reviewed the public-safe source note for locality before promotion, promotion states, evidence and residual records, candidate gates, holdouts, and growth guards; no live readiness result is promoted."
+            },
+            {
+              "source_id": "beastbrain_project",
+              "mapped_support": "Provides a readiness-overclaim negative record: extensive interfaces, simulations, feature counts, and checklists coexisted with open compiler, integration, hardware, security, and benchmark gates.",
+              "limits": "The pinned snapshot does not establish production readiness, capability, secure autonomy, or live quarantine behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/beastbrain_project.md:17-21", "sources/source_notes/beastbrain_project.md:47-52", "sources/source_notes/beastbrain_project.md:94-100", "sources/source_notes/beastbrain_project.md:218-222"],
+              "passage_review_note": "Reviewed the public-safe source note for readiness-interface overclaim, memory lifecycle labels, incomplete semantic applicability, non-mutating router training, and percentage-readiness failure."
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Provides the exact skipped-as-green negative case and motivates per-check applicability, requiredness, attempt, result, waiver, evidence identity, and policy-version fields.",
+              "limits": "Historical reports and current code differ; the book does not reproduce BugBrain readiness, hardware, bridge, training, or deployment behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/bugbrain_project.md:19-20", "sources/source_notes/bugbrain_project.md:146-152", "sources/source_notes/bugbrain_project.md:196-203", "sources/source_notes/bugbrain_project.md:260-265"],
+              "passage_review_note": "Reviewed the public-safe source note for green reports that counted missing artifact manifests as skipped successes, insufficient policy identity, and the explicit readiness-check lifecycle recommendation."
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Supports transitive quarantine and promotion-lease invalidation through retained cases where promoted claim records survived later quarantine of every contributing run.",
+              "limits": "The retained snapshot is local-project evidence only; external dependencies, training, benchmarks, and end-to-end capability were not reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:92-96", "sources/source_notes/corbens_trainer_project.md:108-122", "sources/source_notes/corbens_trainer_project.md:163-170", "sources/source_notes/corbens_trainer_project.md:217-224"],
+              "passage_review_note": "Reviewed the public-safe source note for authenticity states, active quarantines, stale candidate labels, report/claim divergence, revocable promotion leases, and transitive invalidation."
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supports quarantine, rollback, fallback-route, and material-postcondition boundaries while warning that named transitions, defaults, and interface presence may lack durable runtime effect.",
+              "limits": "The project does not establish target readiness, semantic capability, durable transitions, autonomous routing, or promotion quality.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:108-111", "sources/source_notes/corbens_best_model_possible_project.md:133-138", "sources/source_notes/corbens_best_model_possible_project.md:187-192", "sources/source_notes/corbens_best_model_possible_project.md:335-342"],
+              "passage_review_note": "Reviewed the public-safe source note for routing/fallback reasons, fail-closed trainable-state requirements, quarantine/rollback surfaces, non-durable named transitions, and material postcondition requirements."
             }
           ],
           "mechanism": [
             "Maintain readiness states and promotion gates.",
+            "Represent each check through applicability, requiredness, attempt, result, waiver, evidence identity, observation time, and expiry.",
             "Record residual failures in escrow.",
-            "Quarantine modules with safety, regression, or scope failures."
+            "Invalidate stale promotions transitively and tighten containment while upstream dependencies remain stale, quarantined, revoked, or unknown.",
+            "Quarantine modules with safety, regression, or scope failures while preserving owner, affected descendants, disposition, and diagnostic routes."
           ],
           "interfaces": [
             "Routing reads readiness.",
@@ -7398,13 +8120,19 @@
           ],
           "invariants": [
             "Promotion requires gate evidence.",
+            "Skipped, unattempted, unknown-applicability, waived, or expired required checks cannot be represented as passing readiness.",
             "Residuals are not deleted on promotion.",
-            "Quarantine blocks ordinary routing."
+            "Containment cannot weaken or gain routes while an invalidating dependency remains.",
+            "Quarantine blocks ordinary routing and retains an owner, descendant closure, and disposition."
           ],
           "failure_modes": [
             "Premature promotion.",
             "Residual hiding.",
-            "Untracked regression after merge."
+            "Untracked regression after merge.",
+            "Skipped-as-green readiness reporting.",
+            "Waiver substitution for a required passing check.",
+            "Stale promotion that survives upstream quarantine.",
+            "Orphaned quarantine without owner, descendant closure, or recovery disposition."
           ],
           "minimal_implementation": "A module lifecycle state machine and residual escrow ledger.",
           "beyond_state_of_art": "Readiness is the lifecycle control plane for every routable or replaceable capability in the stack. It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use. In the mature readiness control plane, readiness is a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, rollback consequences, and review ownership.",
@@ -7491,6 +8219,13 @@
               "implementation_status": "implemented",
               "result_status": "validated locally at `experiments/readiness_lifecycle_probe/results/2026-07-02-local.json`; deterministic synthetic readiness lifecycle fixture only; no deployed readiness engine or support-state promotion",
               "status": "implemented by `python3 scripts/validate_readiness_lifecycle_probe.py`; no readiness-engine, residual-ledger, live-routing, benchmark-quality, MoECOT-replay, or support-state-promotion claim"
+            },
+            {
+              "name": "Historical-project readiness check lifecycle",
+              "purpose": "Check applicability, requiredness, attempt, result, waiver, evidence, expiry, stale-promotion invalidation, monotone containment, quarantine ownership, descendant closure, and route blocking against nine mutations.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_readiness_check_lifecycle.py`; accepts one quarantined six-project lineage record and rejects nine skipped-as-green, stale, waiver, evidence, containment, quarantine, route, and support-promotion mutations; no deployed readiness or support-state promotion",
+              "status": "bounded historical-project record discipline only"
             }
           ],
           "lean_module": "AsiStackProofs.ReadinessGates",
@@ -11024,7 +11759,10 @@
             "circle_calculus_core",
             "circle_ai_contract_suite",
             "rope_position_certifier",
-            "proof_carrying_circular_computation"
+            "proof_carrying_circular_computation",
+            "cca_project",
+            "moecot_manifest_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -11038,7 +11776,10 @@
               "circle_calculus_core",
               "circle_ai_contract_suite",
               "rope_position_certifier",
-              "proof_carrying_circular_computation"
+              "proof_carrying_circular_computation",
+              "cca_project",
+              "moecot_manifest_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -11202,12 +11943,37 @@
               ],
               "passage_review_note": "Reviewed pinned local proof-carrying circular computation paper for cyclic-address seed, elementary address-safety theorem scope, stride-coverage boundary, Lean/Python sidecar distinction, backend proof-plus-benchmark program, and dense/direct/baseline guardrail; the separate Circle rope receipt slice does not promote a cyclic-compute performance result.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports bounded local implementation-reference context for typed formal abstractions, explicit contract fields, by-construction constraints, proof obligations, and the need to separate structural presence from broader semantics.",
+              "limits": "Does not validate the new abstraction map, prove arbitrary semantic adequacy, reproduce CCA, bind a deployed implementation, establish runtime enforcement, or promote support.",
+              "passage_refs": ["sources/source_notes/cca_project.md:14-111"],
+              "passage_review_note": "Reviewed the public-safe pinned source note for formal/contract structure and explicit limitations; no CCA proof, compiler, runtime, or deployment was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports bounded local implementation-reference context for pass hashes, legality rules, reproducer bundles, typed contracts, executable artifacts, and the negative gap between internal contract breadth and external behavior.",
+              "limits": "Does not validate arbitrary theorem adequacy, reproduce MoECOT, establish external capability, bind a deployed implementation, or promote support.",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:14-85", "sources/source_notes/moecot_manifest_project.md:194-230"],
+              "passage_review_note": "Reviewed the public-safe pinned source note for formal artifact lanes, reproducer/legality boundaries, and internal-versus-external evidence limits; no compiler, proof, runtime, or benchmark was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supports bounded local negative-case context for named checks versus semantic adequacy, vacuous verification, playback versus live execution, source structure versus current builds, and missing implementation binding.",
+              "limits": "Does not validate the new depth classifier, reproduce the project, establish proof correctness or runtime behavior, bind a deployed implementation, or promote support.",
+              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:14-260"],
+              "passage_review_note": "Reviewed the public-safe pinned source note for verification, execution, and implementation-binding negative cases; no build, proof, model, tribunal, runtime, or deployment was replayed.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
             "Translate mechanisms into predicates and transition rules.",
             "Keep proof manifest generated from the outline.",
-            "Distinguish scaffolded, implemented, blocked, and retired proof targets."
+            "Distinguish scaffolded, implemented, blocked, and retired proof targets.",
+            "Classify field presence, finite route, derived invariant, executable-model bridge, and implementation binding as separate semantic-depth lanes with an abstraction map, explicit assumptions, by-construction properties, runtime exclusions, and consumer-language boundaries."
           ],
           "interfaces": [
             "Outline defines proof scope.",
@@ -11217,12 +11983,14 @@
           "invariants": [
             "No theorem is claimed proven without `lake build`.",
             "Proof tags remain stable.",
-            "Broad claims are decomposed before formalization."
+            "Broad claims are decomposed before formalization.",
+            "Every abstraction mapping discloses semantic losses; finite invariants expose clock, concurrency, completeness, and adversarial-log assumptions; an unbound implementation cannot authorize runtime claims."
           ],
           "failure_modes": [
             "Formalization theater.",
             "Unstable proof target names.",
-            "Claiming proof from prose."
+            "Claiming proof from prose.",
+            "Presenting field presence as a derived invariant, a finite route as deployed enforcement, or an executable bridge as implementation binding."
           ],
           "minimal_implementation": "A proof manifest, proof target schema and fixture, Lean workspace, proof-readiness validator, and proof artifact traceability audit report for all implemented finite-record targets.",
           "beyond_state_of_art": "The formal-methods endpoint is a claims control plane for the whole stack. It does not try to prove \"ASI safety\" or \"alignment\" as one grand theorem. It maintains a live registry of every formal-looking promise, routes each promise to the right artifact lane, and refuses to let a passed artifact support a broader claim than it actually checks. A mature proof envelope makes every chapter, protocol, release, and runtime module consume proof only through a typed Proof Target Record. The record would name the exact predicate, source claim, artifact lane, verifier command, verifier result, semantic adequacy review, consumer requirements, support-state effect, limitations, and non-claims. A Lean predicate, JSON Schema, process validator, behavior test, benchmark, external theorem reference, and research backlog item would remain different objects with different authority.",
@@ -11303,6 +12071,13 @@
               "implementation_status": "implemented",
               "result_status": "passes via `python3 scripts/validate_proof_adequacy_review.py`; table/count consistency and no-promotion review only",
               "status": "implemented; semantic adequacy classification audit only"
+            },
+            {
+              "name": "Historical-project formal semantic-depth fixture",
+              "purpose": "Distinguish field presence, finite route, derived invariant, executable-model bridge, and implementation binding while requiring abstraction losses, assumptions, runtime exclusions, and consumer-language boundaries.",
+              "implementation_status": "implemented",
+              "result_status": "passes via `python3 scripts/validate_formal_semantic_depth.py` for one blocked three-project record and ten expected-invalid mutations; no arbitrary adequacy or deployed-enforcement result",
+              "status": "implemented; bounded depth-classification fixture only"
             }
           ],
           "lean_module": "AsiStackProofs.ProofEnvelope",
@@ -11347,7 +12122,13 @@
             "ext_agentdojo_2024",
             "ext_darwin_godel_machine_2025",
             "ext_adas_2024",
-            "ext_dynamic_compute_recurrent_transformers_2026"
+            "ext_dynamic_compute_recurrent_transformers_2026",
+            "cca_project",
+            "moecot_manifest_project",
+            "beastbrain_project",
+            "bugbrain_project",
+            "corbens_trainer_project",
+            "corbens_best_model_possible_project"
           ],
           "source_queue": {
             "primary": [
@@ -11362,7 +12143,13 @@
               "project_theseus_whitepaper",
               "theseus_architecture_gate",
               "theseus_self_evolution_system",
-              "theseus_circle_transfer"
+              "theseus_circle_transfer",
+              "cca_project",
+              "moecot_manifest_project",
+              "beastbrain_project",
+              "bugbrain_project",
+              "corbens_trainer_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -11568,13 +12355,66 @@
               ],
               "passage_review_note": "Reviewed pinned local transfer-lane note for report-only bridge, consumer/smoke/proxy commands, output reports, contract families, claim axes, not-measured/planned-private-eval status, structural-smoke boundaries, benchmark-design-only caveat, allowed claim, disallowed quality/runtime/context/speed/ASI-progress claims, and next private attachment requirements; no transfer consumer or benchmark is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Provides local-lineage negative cases for proxy-to-benchmark divergence, canonical closure authority, retry ceilings, and optimizer/checkpoint/tokenizer/runtime/output trace discipline.",
+              "limits": "Project-reported training and benchmark artifacts were not replayed by the book; no capability, benchmark, safety, or support-state result is accepted.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/cca_project.md:53-82", "sources/source_notes/cca_project.md:122-145"],
+              "passage_review_note": "Reviewed the public-safe source note for loss/proxy/closure disagreement, retry-lineage pressure, and capability-trace requirements."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Provides local-lineage separation between internal contract scores and external holdouts, including negative cases where architecture coherence coexisted with weak external task results.",
+              "limits": "Internal ablations and holdout numbers are project-reported only and do not establish independent reproduction or book benchmark evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:23-140", "sources/source_notes/moecot_manifest_project.md:205-232"],
+              "passage_review_note": "Reviewed the public-safe source note for internal/external scoreboard separation, holdout reality, harness failures, and promotion limits."
+            },
+            {
+              "source_id": "beastbrain_project",
+              "mapped_support": "Provides local-lineage negative cases for simulated loss, gradients, cache hits, latency, placeholder parameter counts, non-updating routers, and dependent/default-success evaluators.",
+              "limits": "Simulations, project-reported scores, and retained logs are not reproduced model or hardware benchmark results.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/beastbrain_project.md:87-137", "sources/source_notes/beastbrain_project.md:139-162"],
+              "passage_review_note": "Reviewed the public-safe source note for simulated/declared/measured separation, target-capacity gaps, and evaluator dependence."
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Provides local-lineage negative cases for declared capacity versus active state, fixed-random model paths, constant objective terms, host/Pi identity drift, status workloads, and stale green readiness reports.",
+              "limits": "Reproduced host tests do not establish Pi cognition, model learning, benchmark performance, or hardware capability.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/bugbrain_project.md:106-171", "sources/source_notes/bugbrain_project.md:173-203"],
+              "passage_review_note": "Reviewed the public-safe source note for capacity, workload, origin, evaluator, and report/canonical-state failures."
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Provides local-lineage benchmark authenticity states, seed identity, content-pin and decontamination limits, quarantined-run inheritance, stale promotion, and checkpoint-completion failures.",
+              "limits": "Benchmark-labelled retained runs include synthetic placeholders and are not accepted as external or model-quality results.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:124-207", "sources/source_notes/corbens_trainer_project.md:209-230"],
+              "passage_review_note": "Reviewed the public-safe source note for benchmark authenticity, promotion/revocation, seed identity, and acknowledged completion."
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Provides the direct local-lineage motivation for metric-origin algebra, representation-capacity gates, retry discipline, and checkpoint/tokenizer/runtime/raw-output/evaluator claim binding.",
+              "limits": "The retained paths include generated/frozen state, explicit lane binding, proxy or constant metrics, and incomplete runtime causality; no general capability or benchmark result is established.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:123-228", "sources/source_notes/corbens_best_model_possible_project.md:229-253", "sources/source_notes/corbens_best_model_possible_project.md:319-342"],
+              "passage_review_note": "Reviewed the public-safe source note for metric provenance, target expressibility, checkpoint/output causality, and promotion blockers."
             }
           ],
           "mechanism": [
             "Track benchmark mastery thresholds and saturation.",
             "Generate regressions and hidden checks.",
             "Move residual failures into escrow and new frontier tasks.",
-            "Record negative and inconclusive results as evidence, not cleanup."
+            "Record negative and inconclusive results as evidence, not cleanup.",
+            "Classify every metric as measured, derived, recomputed, modeled, fixture, constant, declared, proxy, vacuous, source-reported, or unknown.",
+            "Require descendant frontiers to inherit prior regression floors, exclusions, contamination findings, and residuals.",
+            "Block metrics whose target construct is not expressible by the evaluated architecture.",
+            "Bind materially equivalent retries to a lineage ceiling and require an explicit intervention or override beyond it.",
+            "Bind checkpoint, tokenizer, runtime path, raw output, evaluator output, and exact claim before admitting a capability metric."
           ],
           "interfaces": [
             "Routing and SCFs use readiness gates.",
@@ -11584,14 +12424,22 @@
           "invariants": [
             "No test success is claimed without execution.",
             "Synthetic and empirical evidence remain distinct.",
-            "Regressions are preserved."
+            "Regressions are preserved.",
+            "Metric origin cannot be widened through reporting.",
+            "A descendant benchmark cannot silently shed inherited floors or exclusions.",
+            "Architecture-inexpressible targets and checkpoint/output disconnects block metric admission.",
+            "Equivalent retries cannot escape their ceiling through renamed runs."
           ],
           "failure_modes": [
             "Benchmark overfitting.",
             "Hidden regression deletion.",
-            "Claim support inflation."
+            "Claim support inflation.",
+            "Metric-origin laundering.",
+            "Architecture-inexpressible evaluation.",
+            "Retry-lineage laundering.",
+            "Checkpoint/output disconnect."
           ],
-          "minimal_implementation": "A benchmark ratchet record with frontier, mastery, residuals, regressions, and anti-Goodhart checks.",
+          "minimal_implementation": "A benchmark ratchet record plus a metric-provenance record that preserves origin class, closure inheritance, target capacity, retry lineage, checkpoint/output binding, blockers, and non-claims, with one blocked lineage fixture and rejecting mutations.",
           "beyond_state_of_art": "The benchmark endpoint is an operating system for evaluation, not a leaderboard appendix. Every evaluation would become a governed evidence packet with enough history to tell whether the system learned a capability, learned a test, leaked a public calibration surface, or merely improved a proxy. A mature benchmark OS manages benchmarks as instruments with lifecycle state. A task can begin as a candidate metric, become a frontier probe, graduate into a regression floor, enter contamination review, be retired, or remain blocked. Success would never move a claim by itself; it would open a promotion review that compares baselines, residuals, negative results, holdouts, transfer checks, mutation checks, public-calibration limits, and the exact claim being considered.",
           "codex_tests": [
             {
@@ -11621,6 +12469,13 @@
               "status": "implemented by `python3 scripts/validate_benchmark_fixture_bridge.py`; result record `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json`; no empirical benchmark or policy run",
               "implementation_status": "implemented",
               "result_status": "passes via deterministic Python fixture recomputation plus `AsiStackProofs.BenchmarkRatchets` finite fixture bridge; no benchmark-quality, hidden-holdout, policy-training, steward-execution, release-safety, support-transition, or chapter-core promotion claim"
+            },
+            {
+              "name": "Metric-provenance and closure harness",
+              "purpose": "Check a blocked six-project lineage record and reject measured-without-observation, source-reported/constant/proxy/vacuous laundering, contamination, architecture-inexpressible targets, retry-ceiling escape, incomplete checkpoint/output binding, and erased inherited regressions.",
+              "status": "implemented by `python3 scripts/validate_metric_provenance.py`; record semantics only",
+              "implementation_status": "implemented",
+              "result_status": "validated locally with one blocked record and ten expected-invalid mutations; no benchmark reproduction, model capability, independent review, or support-state promotion"
             }
           ],
           "lean_module": "AsiStackProofs.BenchmarkRatchets",
@@ -13323,6 +14178,11 @@
             "theseus_architecture_gate",
             "theseus_operator_os",
             "theseus_circle_transfer",
+            "cca_project",
+            "moecot_manifest_project",
+            "bugbrain_project",
+            "corbens_trainer_project",
+            "corbens_best_model_possible_project",
             "ext_drexler_cais_2019",
             "ext_adas_2024"
           ],
@@ -13347,7 +14207,12 @@
               "theseus_self_evolution_system",
               "theseus_architecture_gate",
               "theseus_operator_os",
-              "theseus_circle_transfer"
+              "theseus_circle_transfer",
+              "cca_project",
+              "moecot_manifest_project",
+              "bugbrain_project",
+              "corbens_trainer_project",
+              "corbens_best_model_possible_project"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -13651,6 +14516,46 @@
               "passage_review_state": "reviewed"
             },
             {
+              "source_id": "cca_project",
+              "mapped_support": "Supports the name-to-effect spine through typed intent lowering, canonical closure authority, trace bundles, and explicit separation between optimizer/proxy activity and claim-bearing effects.",
+              "limits": "The historical project was not rerun; architecture and negative-case lessons do not establish integrated runtime, semantic preservation, capability, or safety.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/cca_project.md:13-39", "sources/source_notes/cca_project.md:41-65", "sources/source_notes/cca_project.md:122-145"],
+              "passage_review_note": "Reviewed the public-safe historical-project note for compiler/control-plane lineage, canonical closure, trace bundles, and proxy-to-claim gaps; treated as one related local lineage only."
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports canonical-state versus projection boundaries, compilation from semantic inputs to effect graphs and target bundles, immutable provenance, and the distinction between internal contract breadth and external effect.",
+              "limits": "The pinned project was not compiled, deployed, or benchmarked here; contract and builder presence are not runtime or capability evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:31-89", "sources/source_notes/moecot_manifest_project.md:205-232"],
+              "passage_review_note": "Reviewed the public-safe historical-project note for compiler-to-effect lineage, Registry V2 canonical truth versus read models, provenance, replay, and external-holdout reality."
+            },
+            {
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supplies interface-theater failure cases where success-shaped IDs, ignored audit writes, unreachable lifecycle states, and narrative summaries can diverge from material state and effects.",
+              "limits": "The negative observations are bounded to inspected historical surfaces; they are not a full security audit, deployed integration test, or broad BugBrain runtime claim.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/bugbrain_project.md:106-171", "sources/source_notes/bugbrain_project.md:173-203"],
+              "passage_review_note": "Reviewed the public-safe historical-project note for record/effect divergence, silently lost audit writes, success-shaped missing state, and report-versus-machine-readable disagreement."
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Supports request-to-effect binding through typed plans, content-addressed lineage, claim evaluation, quarantine closure, and acknowledged asynchronous terminal outcomes.",
+              "limits": "No trainer run, checkpoint workflow, or benchmark was reproduced; the fixture imports design and failure constraints without asserting runtime completion or capability.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:52-95", "sources/source_notes/corbens_trainer_project.md:124-207", "sources/source_notes/corbens_trainer_project.md:209-230"],
+              "passage_review_note": "Reviewed the public-safe historical-project note for typed epistemic transactions, stale promotion after quarantine, discarded async results, queue-idle versus terminal-state separation, and exact artifact lineage."
+            },
+            {
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supports the distinction between named architecture surfaces and their ordinary-path causal effect, including default/empty integrations, checkpoint-to-response gaps, playback versus live effect, and claim-boundary discipline.",
+              "limits": "The historical model and retained artifacts were not reproduced; interface presence, first-party ownership, and local execution do not establish useful capability or integrated behavior.",
+              "passage_review_state": "reviewed",
+              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:153-228", "sources/source_notes/corbens_best_model_possible_project.md:229-253", "sources/source_notes/corbens_best_model_possible_project.md:319-342"],
+              "passage_review_note": "Reviewed the public-safe historical-project note for interface-versus-effect separation, ordinary-path defaulting, checkpoint/response causality, playback-only replay, and claim boundaries."
+            },
+            {
               "source_id": "ext_drexler_cais_2019",
               "mapped_support": "Provides the closest broad comparator for composed services and R&D automation; supports the claim that broad capability composition and an integrated agent are distinct framings, leaving the book's typed trace and interface-governance contract as the narrower target.",
               "limits": "Does not implement, validate, or prove the ASI Stack reference trace, authority stops, evidence updates, residual custody, or release governance.",
@@ -13668,7 +14573,9 @@
             "Trace user intent through constitution, governance, planning, VCM, routing, verification, execution, evidence, and improvement.",
             "Show the compression loop embedded inside the broader governance, memory, routing, and verification stack.",
             "Show which artifact each layer emits.",
-            "Identify where authority can stop or reroute the process."
+            "Identify where authority can stop or reroute the process.",
+            "Join request-derived input, policy, canonical state selection, observed effect, acknowledged receipt, evaluator result, and claim boundary in a name-to-effect map.",
+            "Keep canonical state authoritative over projections and bind request, policy, state, effect, and terminal acknowledgement in a request-to-effect receipt."
           ],
           "interfaces": [
             "All stack layers participate.",
@@ -13678,14 +14585,21 @@
           "invariants": [
             "No layer bypasses governance.",
             "Artifacts remain traceable.",
-            "Self-improvement follows evidence and authority gates."
+            "Self-improvement follows evidence and authority gates.",
+            "Every named integration stage joins to the material output it claims to own.",
+            "Canonical state remains authoritative over projections.",
+            "The request-to-effect receipt binds request, policy, canonical state, observed effect, and acknowledged terminal state.",
+            "Evaluator identity and method remain visible before a result reaches a claim boundary."
           ],
           "failure_modes": [
             "Untraceable handoffs.",
             "Planning/execution collapse.",
-            "Self-improvement without evaluator integrity."
+            "Self-improvement without evaluator integrity.",
+            "Interface theater: named layers or green projections without a joined material effect.",
+            "Receipt drift across request, policy, state, effect, or terminal outcome.",
+            "Projection authority or evaluator-independence laundering."
           ],
-          "minimal_implementation": "A reference flow diagram, interface table, and deterministic reference-trace fixture set that validates record shape, parent artifacts, authority/evidence/residual deltas, blocked-path stop conditions, validation commands, support-state non-promotion, and explicit non-claims without claiming an integrated runtime.",
+          "minimal_implementation": "A reference flow diagram, interface table, deterministic reference-trace fixtures, and a seven-stage name-to-effect trace that binds request-derived input, policy, canonical state, observed effect, acknowledged receipt, evaluator, and claim boundary while preserving blockers and non-claims.",
           "beyond_state_of_art": "The integration endpoint is a trace kernel for the whole ASI Stack. The stack would not be a diagram of cooperating layers; it would be an inspectable machine that can explain what authority entered, which artifacts were produced, what evidence changed, which residuals survived, and why a path was promoted, blocked, narrowed, rolled back, or escalated. A mature reference trace kernel would make every significant run emit a Reference Trace Record. The record would connect human intent, constitutional authority, command contracts, plan DAGs, VCM packets, route decisions, claim envelopes, work orders, execution logs, proof/spec receipts, benchmark ratchets, policy-update leases, steward decisions, SCF transitions, release notes, and residual ledgers. The reference architecture would be judged by whether those records survive happy paths and blocked paths, not by how coherent the diagram looks.",
           "codex_tests": [
             {
@@ -13722,6 +14636,13 @@
               "implementation_status": "implemented",
               "result_status": "passing via `python3 scripts/validate_governed_trace_invariants.py`; finite logical-time model over one executed local fixture workload",
               "status": "implemented as a Python/Lean trace bridge; no distributed-runtime, service-enforcement, completeness, safety, or support-state-promotion claim"
+            },
+            {
+              "name": "Historical-project name-to-effect trace",
+              "purpose": "Join request-derived input, policy, canonical state, observed effect, acknowledged receipt, evaluator, and claim boundary while rejecting interface-theater mutations.",
+              "implementation_status": "implemented",
+              "result_status": "passing via `python3 scripts/validate_name_to_effect_trace.py`; accepts one blocked five-project lineage trace and rejects eight expected-invalid controls",
+              "status": "bounded fixture only; no deployed runtime, historical-project reproduction, open-world joinability, or chapter-core promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ReferenceArchitecture",

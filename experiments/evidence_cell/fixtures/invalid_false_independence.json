@@ -1,0 +1,11 @@
+{
+  "operation": "merge",
+  "path": ["verification_methods", 0],
+  "value": {
+    "producer_id": "same-component",
+    "verifier_id": "same-component",
+    "independence": "independent_external",
+    "independence_basis_refs": []
+  },
+  "expected_error": "independent verification requires a distinct verifier and basis"
+}

@@ -4,7 +4,7 @@ chapter_id: "intent-to-execution-contracts"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+last_updated: "2026-07-10"
 primary_sources:
   - "viea"
   - "talos"
@@ -12,11 +12,17 @@ primary_sources:
   - "genesiscode"
   - "moecot"
   - "cognitive_compilation"
+  - "cca_project"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
+  - "corbens_best_model_possible_project"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Executed consolidation of `intent-to-execution-contracts` and `command-contracts-and-semantic-interfaces`; the old command-contract slug is preserved by a static redirect and the source chapter is archived for lineage."
   - "Source notes, schemas, fixtures, a synthetic plan-execution harness, the Intent-to-execution handoff probe, the Intent-governed replacement bridge, and finite Lean predicates including a dispatch-route envelope, a handoff-probe bridge, and command-contract negative cases support record discipline only; they do not prove parser correctness, semantic extraction quality, prompt-injection resistance, approval enforcement, runtime dispatcher behavior, tool-effect control, replacement execution, artifact satisfaction, or deployed execution safety."
+  - "One hand-authored five-project one-shot privileged-action record and ten deterministic mutations exercise principal, target-state, parameter, policy, TTL, nonce, effect-receipt, and replay semantics only; no approval service, privileged effect, OS enforcement, or historical project was replayed."
   - "External grounding now includes source-noted comparators for reasoning/action loops, planning languages, HTN planning, durable workflows, DAG orchestration, process notation, high-level system modeling, and program verification; these are comparator records only, not command-contract implementation evidence."
   - "All chapter-core support remains at `argument`; no support-state promotion is implied by this consolidation."
 ---
@@ -29,13 +35,13 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-02 |
-| Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`, `cognitive_compilation` |
+| Last updated | 2026-07-10 |
+| Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`, `cognitive_compilation`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `viea`, `software_magic_grimoire`; supporting: `talos`, `genesiscode`, `cognitive_compilation`; connector/recovery: `moecot` |
+| Source queue | primary: `viea`, `software_magic_grimoire`; supporting: `talos`, `genesiscode`, `cognitive_compilation`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`; connector/recovery: `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `cognitive_compilation`; connector/source-note only: `moecot` |
-| Test state | `intent_contract.valid.json`, `command_contract.valid.json`, and `intent_execution_trace.valid.json` pass protocol fixture validation; `python3 scripts/validate_plan_execution_contracts.py` passes 3 valid and 10 expected-invalid synthetic plan-execution contract checks, including unresolved-ambiguity dispatch blocking, unrejected-hidden-override blocking, intent-authority-ceiling preservation, inferred-field dispatch blocking, a valid blocked inferred-authority residual path, and inferred-authority dispatch blocking; `python3 scripts/validate_intent_execution_handoff_probe.py` passes two valid synthetic handoff traces and seven expected-invalid controls, producing `experiments/intent_execution_handoff/results/2026-07-02-local.json`; `python3 scripts/validate_intent_governed_replacement_bridge.py` passes two valid synthetic bridge traces and six expected-invalid controls, producing `experiments/intent_governed_replacement_bridge/results/2026-07-02-local.json`; `AsiStackProofs.IntentToExecution`, `AsiStackProofs.CommandContracts`, and the downstream `AsiStackProofs.Replacement` bridge implement finite record predicates including a dispatch-route envelope, a handoff-probe bridge, replacement-admission bridge, missing-field negative case, hidden-override precedence negative case, and field-confidence route. Behavioral parser, dispatcher, approval-enforcement, tool-effect, prompt-injection, authority-extraction, replacement-execution, artifact-satisfaction, and runtime execution tests remain planned. |
+| Test state | Existing protocol, plan-execution, handoff, replacement-bridge, and Lean checks remain in force. `python3 scripts/validate_one_shot_privileged_action.py` additionally passes one consumed five-project record and ten expected-invalid mutations for target-state mismatch, stale approval, wrong principal, altered parameters, policy/nonce swaps, scenario-acknowledgement substitution, replay, missing effect receipt, and support overclaim. No parser, approval service, deployed dispatcher, privileged effect, OS enforcement, or historical project was exercised. |
 
 The executed merge combines two current record families:
 
@@ -222,6 +228,52 @@ verifier was absent rather than because the model was unwilling. The same
 record therefore supports progress, refusal, and accountability without making
 any layer infer hidden permission.
 
+### One-shot privileged action binding
+
+A general command contract is still too broad for a privileged effect. The
+effect approval must be a one-shot capability that binds the exact principal,
+operation, target identity, pre-effect target-state digest, parameter digest,
+policy version, issuance time, expiry, nonce, and authority reference. At
+dispatch, the observed principal, operation, target, state, parameters, policy,
+and nonce must match byte-for-byte. After an effect receipt and post-state are
+recorded, the nonce becomes consumed and every replay attempt is denied.
+
+The five historical projects supply one local lineage of positive and negative
+design pressure. CCA and MoECOT Manifest motivate typed request/effect records,
+policy identity, and replayable receipts. BeastBrain and BugBrain expose the
+danger of acknowledgement, simulated success, or a nominal state transition
+standing in for an authorized material effect. Corben's Best Model Possible
+adds the runtime-causality boundary: a named tool, transition, or digest is not
+enough unless the exact authorized parameters reach the observed effect. These
+are source-note and roadmap inputs, not five replications or evidence that any
+historical implementation enforced the protocol.
+
+```{mermaid}
+stateDiagram-v2
+  [*] --> Requested
+  Requested --> Resolved: exact target and parameters
+  Resolved --> Approved: principal + policy + TTL + nonce
+  Approved --> Dispatched: all bindings still match
+  Dispatched --> EffectObserved: effect receipt + post-state
+  EffectObserved --> Consumed: nonce burned
+  Approved --> Expired: TTL elapsed
+  Approved --> Revoked: authority revoked
+  Requested --> Denied: acknowledgement substituted
+  Consumed --> Denied: replay attempted
+```
+
+**Reading the one-shot lifecycle:** approval is neither a reusable role nor a
+scenario checkbox. It is a short-lived capability for one exact state
+transition. Any identity, state, parameter, policy, time, or nonce mismatch
+routes to denial before effect; successful observation consumes the nonce.
+
+The strongest objection is that exact digests and a nonce can make an unsafe
+action perfectly replay-resistant. That is correct. Binding proves neither
+that the policy is wise nor that the approver understood the consequence. It
+prevents an approval for one principal, state, parameter set, and policy from
+being silently reused for another. Policy quality, interface comprehension,
+OS enforcement, and effect safety remain separate owners and residuals.
+
 ### Command contract validation states
 
 Command contracts move through explicit validation states:
@@ -295,6 +347,14 @@ This metadata keeps field confidence from becoming hidden evidence. A field can 
   authority ceiling, affected parties, evidence requirements, publication
   surface, or stop conditions.
 - A missing dispatch receipt blocks execution.
+- A privileged effect approval binds principal, operation, target identity,
+  pre-state digest, parameter digest, policy version, TTL, nonce, and authority
+  reference to the observed dispatch.
+- Scenario acknowledgement, test acknowledgement, prior familiarity, and role
+  membership cannot substitute for explicit approval or a scoped delegated
+  authority receipt.
+- A consumed one-shot nonce cannot authorize a second effect, and a consumed
+  action requires an effect receipt plus observed post-state.
 
 These invariants are deliberately narrow. They do not say that the request was
 wise, that the parser understood every nuance, or that the resulting artifact
@@ -327,6 +387,17 @@ becoming testable.
 Authority inference happens when a likely means is treated as if the human
 granted it.
 
+Approval drift happens when the target changed after review, parameters were
+edited, policy advanced, the principal changed, or the TTL expired while the
+old approval still dispatches.
+
+Scenario-acknowledgement substitution happens when a person or test merely
+confirms that a scenario was seen and that acknowledgement is then treated as
+permission for the privileged effect.
+
+Replay laundering happens when a successful one-shot approval or effect
+receipt is reused for a second state transition.
+
 ## Minimum Viable Implementation
 
 The smallest honest implementation is the existing synthetic plan-execution
@@ -347,6 +418,15 @@ authority widening from accepted intent. Passing the harness validates
 synthetic record discipline. It does not validate parser quality,
 prompt-injection defense, authority-extraction quality, human approval
 behavior, tool-effect enforcement, or runtime execution.
+
+The historical-project packet adds
+`schemas/one_shot_privileged_action_record.schema.json`, one consumed
+five-project lifecycle, and ten expected-invalid mutations. It rejects a
+target-state mismatch, stale approval, wrong principal, altered parameters,
+policy or nonce substitution, scenario acknowledgement presented as approval,
+replay of a consumed nonce, missing effect receipt, and fixture-based support
+promotion. The fixture is hand-authored and does not perform the privileged
+effect it records.
 
 A useful first implementation would expose the command contract as a small
 JSON-backed object with validators, fixtures, and a blocking dispatcher stub.
@@ -403,6 +483,7 @@ letting prose style alter the permitted action surface.
 | Authority-inference block test | Check that inferred means, tools, disclosure, publication, or side effects route to draft-only or re-contract states. | implemented by synthetic plan-execution contract harness; no deployed authority-extraction, approval-service, or runtime side-effect claim |
 | Intent-to-execution handoff probe | Check that a synthetic vertical trace preserves accepted intent, command contract, plan, typed job, dispatch receipt, adapter receipt, artifact link, verification reference, feedback, residuals, and a missing-approval blocked path while rejecting approval bypass, authority widening, hidden override application, missing dispatch receipt, side effect without adapter receipt, residual erasure, and missing artifact-to-parent links. | implemented by `python3 scripts/validate_intent_execution_handoff_probe.py` with two valid synthetic handoff traces and seven expected-invalid controls; no parser, deployed dispatcher, approval-service, runtime-adapter, artifact-satisfaction, support-state-promotion, or evidence-transition claim |
 | Intent-governed replacement bridge | Check that command-contract authority can feed a replacement transaction only when intent refs, command refs, authority ceiling, stop conditions, forbidden means, evidence requirements, canary scope, monitor window, rollback owner, residuals, and non-claims survive; also check that default replacement without approval is blocked. | implemented by `python3 scripts/validate_intent_governed_replacement_bridge.py` with two valid synthetic bridge traces and six expected-invalid controls; does not parse natural-language intent, execute a deployed dispatcher, prove approval-service behavior, execute replacement, execute rollback, promote support state, or create an evidence transition |
+| One-shot privileged-action lifecycle | Bind approval to principal, exact target state, parameter digest, policy version, TTL, nonce, observed effect, post-state, and single-use replay denial; reject scenario acknowledgement as approval. | implemented by `python3 scripts/validate_one_shot_privileged_action.py` with one consumed five-project record and ten expected-invalid mutations; no approval service, privileged effect, OS enforcement, or support promotion |
 
 The current repository state supports synthetic plan-execution contract
 validation, a deterministic synthetic vertical handoff fixture, and finite
@@ -484,6 +565,11 @@ The Corben/local source crosswalk is organized by lane:
   `software_magic_grimoire`, `genesiscode`, and `moecot`;
 - semantic-interface lineage: `software_magic_grimoire`, `viea`,
   `genesiscode`, `cognitive_compilation`, and `talos`.
+- one-shot privileged-action lineage: `cca_project`,
+  `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, and
+  `corbens_best_model_possible_project`, treated as one related local lineage
+  for exact approval/effect binding and negative cases rather than independent
+  confirmation.
 
 The external-source crosswalk stays comparator-only:
 

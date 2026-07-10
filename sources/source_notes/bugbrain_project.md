@@ -218,11 +218,14 @@ Primary destinations:
 - `readiness-gates-residual-escrow-and-quarantine`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
 - `ai-supply-chain-integrity-and-lifecycle-provenance`
+- `integrated-reference-architecture`
 
 Secondary destinations:
 
+- `evidence-states-and-claim-discipline`
 - `constitutional-alignment-substrate`
 - `claim-ledgers-and-belief-revision`
+- `spinoza-verification-and-proof-carrying-claims`
 - `procedural-memory-and-cognitive-loop-closure`
 - `routing-heads-and-specialist-cores`
 - `personal-compute-hives-and-federated-edge-intelligence`

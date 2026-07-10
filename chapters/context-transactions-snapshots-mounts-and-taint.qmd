@@ -4,13 +4,18 @@ chapter_id: "context-transactions-snapshots-mounts-and-taint"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-10"
 primary_sources:
   - "vcm_public"
   - "ladon_manhattan"
   - "context_engineer"
   - "black_hole_context_manager"
   - "vcm_editable"
+  - "cca_project"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
+  - "corbens_best_model_possible_project"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -28,11 +33,11 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
-| Primary source records | `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable` |
+| Last updated | 2026-07-10 |
+| Primary source records | `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
+| Source queue | primary: `vcm_public`; supporting: `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`; connector/recovery: `vcm_editable` |
 | Source loading state | source notes: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`; passage-reviewed local raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/source-note only: `vcm_editable` |
 | Test state | Context transaction fixture validation now includes transaction state, transaction validity state, snapshot boundary, mount policy, isolation state, taint propagation, rollback/deletion closure, declassification refs, derivative refs, materialization state, consumer policy, verification refs, promotion blockers, replay boundary, context ABI refs, source refs, support-state effect, and non-claims; `AsiStackProofs.ContextTransactions` finite-record proofs now cover snapshot reads, taint propagation, unclosed deletion-obligation materialization blocking, and a transaction route envelope for missing or stale snapshots, branch leaks, mount faults, taint without declassification, deleted-cell materialization without closure, invisible committed reads, missing replay boundaries, unsupported support promotion, missing non-claim boundaries, and complete committed-read admission; `python3 scripts/validate_context_admission_adequacy.py` synthetic deletion-closure and transaction-reference gates are implemented; `python3 scripts/validate_context_transaction_memory_store.py` checks bounded synthetic memory-event scenarios for read visibility, mount faults, branch isolation, deletion/materialization blocking, taint/declassification, replay boundaries, and support-state non-promotion, and requires a finite Lean summary bridge with 3 valid fixtures, 6 expected-invalid controls, invalid-control rejection flags, and no chapter-core support promotion; `python3 scripts/validate_context_transaction_sequence_bridge.py` now checks 2 valid ordered sequence fixtures and 4 expected-invalid controls for read-after-write discipline, replay boundaries, taint materialization blocking, invalid-control rejection, and support-state non-promotion, with a matching finite Lean summary bridge. |
 
@@ -94,6 +99,15 @@ Appendix C maps this transaction claim to all assigned source notes. Four local 
 | `black_hole_context_manager` | Passage-reviewed: chunk records, embeddings, entropy, cached mass, timestamps, goal-vector state, lazy reweighting under goal drift, HMAC and multi-confirmation promotion gates, dormant cluster freezing, disk swap/thaw, tiered cache budgeting, mass-based eviction, TTL downgrade, hot/warm/cold cache framing, and a proposed drifting-needle scenario. | No package, local test run, freeze/evict fixture, benchmark, or production-behavior evidence exists here. |
 | `vcm_editable` | Connector/source-note mapped: stable addresses, mounts, snapshots, materializations, semantic paging, protected compilation, authority non-escalation, and transactional/governed memory vocabulary. | Connector-readable variant only; no local VCM-Bench, deployed memory-store conformance run, or model-facing result exists; the bounded synthetic memory-store fixtures do not validate this source variant. |
 
+### Strongest objection
+
+A perfect transaction log can describe a memory system that never persisted
+correctly. Freeze, thaw, promotion, compaction, and restart labels are not
+material effects; index and content records can agree inside the log while the
+store loses data. This design therefore requires observed postconditions and
+restart visibility in its bounded fixture, but keeps the result at record-level
+support until a real process and durable store are crashed and recovered.
+
 ## Draft Key Figure: Context Transaction Lifecycle
 
 ::: {.asi-key-figure}
@@ -137,6 +151,17 @@ A context transaction record distinguishes view construction from view use. View
 Immutable events make audit and replay possible. Versioned pages make supersession explicit. Snapshots give a task a coherent read view. Mounts define what can be seen and written. Copy-on-write branches let the system test alternate summaries, repairs, or plans without mutating the committed memory space.
 
 Taint should propagate through derived cells unless authorized declassification occurs. Deletion should close over derivatives or fault when closure cannot be proven. Contradictions should become evidence records, not overwritten memory.
+
+### Material transitions and restart recovery
+
+The historical-project packet makes seven state changes explicit: freeze,
+thaw, rebalance, tier promotion, no-loss compaction, partial-write recovery,
+and restart. Every transition binds a pre-state to an observed and acknowledged
+post-state. Authoritative item identities survive every no-loss operation.
+Index and content epochs advance atomically; a detected partial write blocks
+ordinary commit and rolls back to the last shared epoch. Restart then proves
+only that the hand-authored committed set is visible again—not that a deployed
+store, filesystem, or compactor behaves this way.
 
 ## Interfaces
 
@@ -192,6 +217,11 @@ The record also tells downstream artifacts what kind of memory they inherited. A
 - Taint propagates to derivatives.
 - Deletion closure is enforced or faulted.
 - Materialization state is explicit before a view is used by a downstream artifact or job.
+- Freeze, thaw, rebalance, promotion, compaction, and recovery have observed,
+  acknowledged postconditions and one causal state chain.
+- No-loss transitions preserve every authoritative item identity.
+- Ordinary committed states keep index and content epochs equal; divergence
+  routes to recovery before restart or use.
 
 The deletion invariant is strict: deleted or revoked source material cannot reappear through derived summaries unless a policy explicitly says what remains permitted. If closure cannot be established, the system should fault rather than materialize the view.
 
@@ -211,6 +241,11 @@ Context laundering is the memory-side failure. A sensitive or unsupported source
 
 Snapshot fiction makes the problem operational. The system behaves as if it read one coherent context view, but the answer actually blends stale pages, live edits, unauthorized mounts, and summaries with different loss profiles. That makes replay impossible and can make contradiction handling look arbitrary. A context transaction should either produce a coherent view with declared faults or refuse to materialize as ordinary working memory.
 
+Lifecycle theater labels a requested freeze, thaw, rebalance, promotion, or
+compaction as complete without observing the postcondition. Partial-write
+laundering admits a new index over old content. Restart amnesia returns a
+healthy status while committed item identities are missing.
+
 ## Minimum Viable Implementation
 
 A transaction model for context reads, writes, branches, and deletion closure.
@@ -220,6 +255,11 @@ Transactional context starts as a `context_transaction_record` schema and fixtur
 The context-transaction fixture checks the record surface rather than a deployed memory service. The Lean transaction-route review checks the finite receipt logic, not a running store. Read-your-writes consistency across a store, runtime branch isolation, deployed mount repair, deployed deletion closure, and poisoning resistance remain future implementation and test claims beyond the finite transaction predicates.
 
 The first bounded memory-store fixture set gives the transaction model its first behavioral rehearsal: one coherent snapshot read, one branch that cannot merge because taint remains, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact replay reference that records the replay boundary. The set tests synthetic transaction semantics while leaving production memory behavior unclaimed.
+
+`schemas/context_restart_recovery_record.schema.json`, its five-project
+lifecycle fixture, and ten rejecting mutations add the material-transition
+surface for freeze/thaw, tier movement, no-loss compaction, partial-write
+rollback, atomic index/content epochs, and exact restart visibility.
 
 ## Beyond the State of the Art
 
@@ -249,6 +289,7 @@ This governable-memory state layer is still an architectural target. Keep the me
 | Bounded memory-store conformance harness | Check synthetic memory-event fixtures for committed-read visibility, mount faults, branch isolation, deletion/materialization blocking, taint/declassification, replay boundaries, and support-state non-promotion. | implemented in `python3 scripts/validate_context_transaction_memory_store.py`; no deployed memory-store claim |
 | Memory-store harness fixture bridge | Check that the bounded memory-store harness summary preserves 3 valid fixtures, 6 expected-invalid controls, read/mount/branch/deletion/taint/replay checks, invalid-control rejection flags, and no chapter-core support promotion. | implemented in `AsiStackProofs.ContextTransactions` and required by `python3 scripts/validate_context_transaction_memory_store.py`; no deployed memory-store claim |
 | Context transaction sequence bridge | Check that bounded ordered transaction sequences preserve read-after-write discipline, artifact replay boundaries, taint materialization blocking, invalid-control rejection, and support-state non-promotion. | implemented in `python3 scripts/validate_context_transaction_sequence_bridge.py` and `AsiStackProofs.ContextTransactions`; no deployed transactional memory-store claim |
+| Historical-project restart/recovery lifecycle | Check the seven material transitions, causal chaining, observed/acknowledged effects, no-loss identity, partial-write quarantine, atomic epochs, restart visibility, and no fixture promotion. | implemented by `python3 scripts/validate_context_restart_recovery.py` with one bounded five-project lifecycle and ten expected-invalid mutations; no deployed store, process restart, filesystem atomicity, or support claim |
 
 The fixture-shape check, finite-record proof predicates, synthetic deletion-closure harness, bounded synthetic memory-store harness, and bounded sequence bridge are implemented. The transaction route proof keeps unclosed deletion obligations from being modeled as allowed materializations, rejects stale or absent snapshots before read admission, routes branch leaks and unrepaired mount faults away from materialization, requires review for tainted context without declassification, blocks invisible committed reads, and preserves replay, evidence-transition, and non-claim boundaries. The memory-event harness rejects expected-invalid cases for uncommitted reads, deleted-source materialization, unauthorized mounts, leaked tainted branches, missing replay boundaries, and support-promotion attempts. The sequence bridge adds ordered write/read and tainted-derivative sequences, then rejects read-before-write ordering, missing replay boundaries, undeclassified taint materialization, and support-promotion controls. Deployed store consistency, runtime branch isolation, deployed deletion closure, side-channel behavior, VCM conformance, and benchmark behavior remain untested.
 
@@ -273,6 +314,7 @@ These proof hooks are implemented only over finite Lean event/snapshot, taint, m
 | `black_hole_context_manager` | Black Hole Context Manager | memory_context_lineage | Earlier context management spec with lazy evaluation, batching, drift checks, security hardening. | source note available; local raw cache passage-reviewed |
 | `vcm_editable` | Virtual_Context_Memory_v1.0_Editable | memory_context | Editable version with evidence-carrying planner-guided context compiler framing. | source note available; connector or recovery required |
 | `ext_graphrag_2024`, `ext_mem0_2025` | GraphRAG and Mem0 | derived_and_persistent_memory | Comparators for derived graph/community state and cross-session memory extraction/consolidation under version, taint, revocation, deletion, and provenance pressure. | source notes available; no local transaction, memory, or correctness result |
+| `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` | Historical project lineage | local_transaction_and_recovery_lineage | Freeze/thaw, tier persistence, graph/context state, generation and restart discipline, no-loss compaction, atomic index/content updates, and negative cases for simulated or nominal state transitions. | public-safe pinned notes reviewed; one hand-authored lifecycle only, no historical runtime replay or independent replication |
 
 The transaction and taint sources carry the runtime semantics for context state, memory budgets, and deletion obligations. Four mappings have passage review, but the core claim stays at `argument` because `vcm_editable` remains connector/source-note mapped and memory-store behavior, mount visibility, branch isolation, deletion closure, side-channel validation, context-manager execution, and benchmark claims remain unpromoted.
 

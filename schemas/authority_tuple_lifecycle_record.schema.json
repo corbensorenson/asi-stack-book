@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/authority_tuple_lifecycle_record.schema.json",
+  "title": "Authority Tuple Lifecycle Record",
+  "type": "object",
+  "required": ["record_id", "source_ids", "authority_tuple", "domain_ownership", "delegation", "lifecycle_events", "cross_domain_handoff", "security_boundary", "decision", "promotion_blockers", "non_claims"],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "authority_tuple": {
+      "type": "object",
+      "required": ["principal_id", "execution_domain_id", "operation", "target_ref", "permission_class", "scope", "budget_account_id", "trace_id", "replay_identity", "grant_id", "policy_version", "revocation_epoch", "expires_at"],
+      "properties": {
+        "principal_id": {"type": "string", "minLength": 1},
+        "execution_domain_id": {"type": "string", "minLength": 1},
+        "operation": {"type": "string", "minLength": 1},
+        "target_ref": {"type": "string", "minLength": 1},
+        "permission_class": {"enum": ["read", "transform", "disclose", "write", "execute", "approve", "deploy", "self_modify"]},
+        "scope": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "budget_account_id": {"type": "string", "minLength": 1},
+        "trace_id": {"type": "string", "minLength": 1},
+        "replay_identity": {"type": "string", "minLength": 1},
+        "grant_id": {"type": "string", "minLength": 1},
+        "policy_version": {"type": "string", "minLength": 1},
+        "revocation_epoch": {"type": "integer", "minimum": 0},
+        "expires_at": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "domain_ownership": {
+      "type": "object",
+      "required": ["execution_domain_id", "domain_owner_id", "executor_id", "budget_owner_id", "trace_owner_id", "revocation_authority_id"],
+      "properties": {
+        "execution_domain_id": {"type": "string", "minLength": 1},
+        "domain_owner_id": {"type": "string", "minLength": 1},
+        "executor_id": {"type": "string", "minLength": 1},
+        "budget_owner_id": {"type": "string", "minLength": 1},
+        "trace_owner_id": {"type": "string", "minLength": 1},
+        "revocation_authority_id": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "delegation": {
+      "type": "object",
+      "required": ["delegator_id", "delegate_id", "parent_grant_id", "delegated_scope", "delegated_budget_account_id", "delegated_trace_id", "delegated_revocation_epoch"],
+      "properties": {
+        "delegator_id": {"type": "string", "minLength": 1},
+        "delegate_id": {"type": "string", "minLength": 1},
+        "parent_grant_id": {"type": "string", "minLength": 1},
+        "delegated_scope": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "delegated_budget_account_id": {"type": "string", "minLength": 1},
+        "delegated_trace_id": {"type": "string", "minLength": 1},
+        "delegated_revocation_epoch": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "lifecycle_events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["state", "principal_id", "execution_domain_id", "grant_id", "trace_id", "revocation_epoch", "effect_permitted"],
+        "properties": {
+          "state": {"enum": ["requested", "granted", "delegated", "used", "receipted", "denied", "expired", "revoked"]},
+          "principal_id": {"type": "string", "minLength": 1},
+          "execution_domain_id": {"type": "string", "minLength": 1},
+          "grant_id": {"type": "string", "minLength": 1},
+          "trace_id": {"type": "string", "minLength": 1},
+          "revocation_epoch": {"type": "integer", "minimum": 0},
+          "effect_permitted": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "cross_domain_handoff": {
+      "type": "object",
+      "required": ["source_domain_id", "target_domain_id", "target_domain_owner_id", "target_owner_approval_ref", "handoff_receipt_ref", "decision"],
+      "properties": {
+        "source_domain_id": {"type": "string", "minLength": 1},
+        "target_domain_id": {"type": "string", "minLength": 1},
+        "target_domain_owner_id": {"type": "string", "minLength": 1},
+        "target_owner_approval_ref": {"type": ["string", "null"]},
+        "handoff_receipt_ref": {"type": "string", "minLength": 1},
+        "decision": {"enum": ["allow", "deny", "escalate"]}
+      },
+      "additionalProperties": false
+    },
+    "security_boundary": {
+      "type": "object",
+      "required": ["protocol_security_controls", "hardware_root_state", "hardware_root_evidence_refs", "hardware_root_claim_allowed"],
+      "properties": {
+        "protocol_security_controls": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "hardware_root_state": {"enum": ["absent", "declared", "attested"]},
+        "hardware_root_evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "hardware_root_claim_allowed": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": ["outcome", "effect_receipt_ref", "denial_or_revocation_receipt_ref", "support_state_effect"],
+      "properties": {
+        "outcome": {"enum": ["allow", "deny", "escalate", "revoked"]},
+        "effect_receipt_ref": {"type": ["string", "null"]},
+        "denial_or_revocation_receipt_ref": {"type": ["string", "null"]},
+        "support_state_effect": {"enum": ["none", "blocks_promotion", "eligible_for_bounded_evidence_review"]}
+      },
+      "additionalProperties": false
+    },
+    "promotion_blockers": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "non_claims": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

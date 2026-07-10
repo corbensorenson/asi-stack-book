@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+last_updated: "2026-07-10"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -87,11 +87,11 @@ This also protects the reader. A living book can accumulate validation badges, g
 
 [benchmark-ratchets-and-anti-goodhart-evidence.core, label: Design rationale, support: argument] Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure.
 
-The claim remains at `argument` support. The assigned sources support design discussion of benchmark lifecycle, anti-Goodhart controls, residual escrow, regression floors, and readiness gates. They do not prove benchmark gains in this repo.
+The claim remains at `argument` support. The assigned sources support design discussion of benchmark lifecycle, anti-Goodhart controls, residual escrow, regression floors, readiness gates, and the mined distinction between metrics that were measured, derived, modeled, fixed, proxied, or never causally connected to a returned output. They do not prove benchmark gains in this repository.
 
 ### Claim-source mapping status
 
-Appendix C now records twelve passage-reviewed mappings for the benchmark-ratchet claim. Those mappings make the source map traceable enough for drafting and support review, but they do not move the claim above `argument` support. They also do not convert source-reported benchmark commands, local-project status notes, schemas, fixtures, or finite Lean predicates into benchmark evidence.
+Appendix C now records eighteen passage-reviewed mappings for the benchmark-ratchet claim, including the six historical projects as one related local implementation lineage. Those mappings make the source map traceable enough for drafting and support review, but they do not move the claim above `argument` support. They also do not convert source-reported benchmark commands, local-project status notes, schemas, fixtures, or finite Lean predicates into benchmark evidence.
 
 | Source ID | Reviewed support | Boundary |
 |---|---|---|
@@ -107,6 +107,7 @@ Appendix C now records twelve passage-reviewed mappings for the benchmark-ratche
 | `theseus_architecture_gate` | Pre-training gate checks, failed-gate residual rules, rerun triggers, and necessary-not-sufficient caveat. | The reported snapshot was not regenerated and is not current readiness, deployment, safety, or heavy-training evidence. |
 | `theseus_self_evolution_system` | Intervention ladder, ATTD health gate, guarded teacher flow, architecture experiment governance, outcome ledgers, and loop-closure design. | No self-evolution scripts, ATTD reports, teacher runner, benchmark adapter flow, dashboard endpoints, or outcome ledgers were executed or inspected. |
 | `theseus_circle_transfer` | Report-only bridge, structural smoke/proxy boundaries, claim axes, allowed structural claim, and disallowed quality/runtime/context/speed claims. | No Circle-to-Theseus consumer, structural smoke workload, proxy benchmark, private benchmark, model-quality evaluation, runtime measurement, or memory measurement. |
+| Six-project local lineage | CCA, MoECOT Manifest, BeastBrain, BugBrain, Corben's Trainer, and Corben's Best Model Possible expose proxy/closure divergence, internal/external split failures, simulated metrics, stale promotions, constant or vacuous evaluators, retry pressure, architecture-inexpressible targets, and checkpoint/output disconnects. | One evolving local lineage, not six independent experiments; project-reported metrics and bounded host checks are not reproduced benchmark evidence for the book. |
 
 ## Mechanism
 
@@ -140,6 +141,39 @@ A benchmark ratchet record tracks benchmark state, baseline, command, environmen
 In practice, this means benchmark work should leave behind enough material for a future reader or agent to reconstruct the decision. If a model clears a threshold but fails a neighboring task family, the residual belongs beside the result. If a benchmark is useful only as a smoke test, the record should say so. If a source reports a command that this repository has not rerun, the record should preserve that boundary instead of laundering it into local evidence. Benchmark evidence discipline depends on this mundane bookkeeping.
 
 The ratchet should also name the capability field it pressures. Without an SCF boundary, benchmark success can attach to a vague product, model, or agent identity and then survive migrations it was never meant to cover. With an SCF boundary, the benchmark can preserve a regression floor for the specific capability that earned it.
+
+### Metric provenance and closure inheritance
+
+Benchmark Ratchets owns metric admissibility because Evidence States decides whether support may move, while this layer decides whether a result is a valid measurement input at all. The **Metric Provenance Record** sits beneath the ratchet and names the metric's origin as `measured`, `derived`, `recomputed`, `modeled`, `fixture`, `constant`, `declared`, `proxy`, `vacuous`, `source_reported`, or `unknown`. The class is not decorative. A source-reported number stays source-reported; a constant bonus stays constant; a proxy cannot be narrated as the target; and a fixture can preserve a regression without becoming empirical capability evidence.
+
+The record also installs four inherited gates:
+
+1. **Benchmark closure inheritance.** A descendant frontier inherits prior regression floors, exclusions, contamination findings, and residuals. Renaming a suite, checkpoint, model family, or report cannot shed them without an explicit override record.
+2. **Representation-capacity gate.** A metric is inadmissible when the evaluated architecture cannot express the target class. A repeated-token adaptor cannot be judged as a general sequence generator; a status-polling workload cannot establish cognitive throughput; a tone codec cannot establish ordinary speech recognition.
+3. **Retry-lineage ceiling.** Materially equivalent retries share one lineage and a declared ceiling. Once the ceiling is crossed, another attempt requires a new intervention, transfer-distance change, or authorized override; favorable-number search is not evidence accumulation.
+4. **Checkpoint-to-output binding.** A capability metric binds checkpoint, tokenizer, runtime path, raw output, evaluator output, and exact claim. If the runtime bypasses the trained component, an adaptor score cannot support the returned answer.
+
+The historical projects make all four gates concrete. CCA records falling loss without honest benchmark lift and canonical closure that can disagree with partial score surfaces. Corben's Trainer records quarantined fixture runs that had already influenced claim and promotion records. Corben's Best Model Possible contains constants, formulas, proxies, vacuous passes, explicit lane binding, and a runtime answer path not generally driven by the trained adaptor. BeastBrain and BugBrain contain simulated I/O, fixed random paths, and status workloads that resemble stronger evaluations. MoECOT Manifest records the useful opposite discipline—separate internal contracts and external holdouts—while also showing that strong internal scores can coexist with weak external performance.
+
+```{mermaid}
+flowchart LR
+  M["Metric value"] --> O{"Origin class"}
+  O -->|"measured / recomputed"| C["Observation + evaluator"]
+  O -->|"source / fixture / constant / proxy / vacuous"| B["Block or regression-only"]
+  C --> R{"Target representable?"}
+  R -->|"no / unknown"| B
+  R -->|"yes"| L["Inherit floors, exclusions, residuals"]
+  L --> T{"Retry ceiling intact?"}
+  T -->|"no"| B
+  T -->|"yes"| K{"Checkpoint-to-output binding complete?"}
+  K -->|"no"| B
+  K -->|"yes"| A["Admissible ratchet input"]
+  A --> P["Claim-specific promotion review"]
+```
+
+**How to read the provenance gate:** the number enters from the left, but its origin and causal route determine whether it can reach a promotion review. A blocked metric may still be valuable as a regression, negative case, or residual. The figure does not report a benchmark result.
+
+The strongest objection is that metric provenance can become paperwork around bad constructs. That objection is correct when fields are filled without changing a decision. The gate therefore rejects records that cannot name a target construct, representation-capacity basis, observation, evaluator, inherited floor, retry lineage, and causal output binding. An exact blocker is preferable to a complete-looking but meaningless packet.
 
 ## Interfaces
 
@@ -177,6 +211,10 @@ Procedural memory consumes benchmark ratchets as retirement pressure. If a gener
 - Negative and inconclusive results remain visible.
 - Source-reported, synthetic, fixture, reproduced, and empirical results never collapse into one evidence class.
 - Public-calibration boundaries are preserved even when a benchmark is useful for orientation.
+- Every metric exposes its origin class; measured, derived, modeled, fixed, proxy, vacuous, and unknown values remain distinct.
+- Descendant benchmarks inherit prior floors, exclusions, contamination findings, and residuals unless an explicit override is recorded.
+- A metric cannot be admitted when the architecture cannot express the target or the evaluated checkpoint cannot be bound to the output.
+- Equivalent retries cannot escape a lineage ceiling through renamed runs.
 
 Claim specificity is the benchmark ratchet's strongest invariant. A benchmark can support only the claim it actually measured, under the recorded conditions. Broader readiness, deployment safety, model quality, or ASI-progress claims require their own evidence.
 
@@ -193,6 +231,10 @@ Evaluator updates also need versioned admission rules before old scores and new 
 - Public-calibration leakage.
 - Evidence-class collapse, where a schema fixture, book-build check, synthetic probe, or source-reported command is narrated like empirical capability evidence.
 - Floor/frontier inversion, where a saturated regression floor is used to justify broad readiness while the new frontier remains untested.
+- Metric-origin laundering, where a constant, formula, fixture, proxy, source-reported, or vacuous value is presented as measured.
+- Architecture-inexpressible evaluation, where the scoring target is impossible for the evaluated output path.
+- Retry laundering, where materially identical failed runs are renamed until a favorable number appears.
+- Checkpoint/output disconnect, where a trained artifact is scored but the returned behavior bypasses it.
 
 Each failure blocks promotion or downgrades support state until the evidence boundary is repaired.
 
@@ -201,6 +243,8 @@ A subtler failure is benchmark nostalgia. A once-useful benchmark may remain in 
 ## Minimum Viable Implementation
 
 A benchmark ratchet starts as a benchmark-evidence decision record. The repository fixture captures the fields a later benchmark must supply before it can affect support state, while making clear that no benchmark result is being reported here.
+
+The mined-project minimum adds `schemas/metric_provenance_record.schema.json`, one blocked six-project lineage record, and ten expected-invalid mutations. `python3 scripts/validate_metric_provenance.py` rejects source-reported, constant, proxy, and vacuous metrics marked admissible; measured metrics without observations; contaminated or architecture-inexpressible metrics; retry-ceiling violations; complete-looking checkpoint bindings with missing refs; and closure records that drop inherited regressions. The valid record remains `blocks_promotion` because its metrics were not reproduced and its checkpoint/output route is incomplete.
 
 A toy ratchet ledger is the smallest concrete extension: one passing run record, one failed neighboring case, one saturated benchmark moved to regression, and one blocked promotion. Such a ledger would demonstrate support-state restraint while leaving empirical capability unclaimed.
 
@@ -236,6 +280,7 @@ The completed evaluation surface would not call a capability "better" because a 
 | Test | Purpose | Status |
 |---|---|---|
 | Benchmark ratchet record fixture validation | Validate that a ratchet record names benchmark state, run refs, baselines, saturation, residual escrow, anti-Goodhart checks, promotion decision, support effect, and negative results. | implemented; passing via `python3 scripts/validate_protocol_examples.py` |
+| Metric-provenance and closure harness | Validate one blocked six-project lineage record and reject measured-without-observation, source-reported/constant/proxy/vacuous laundering, contamination, architecture-inexpressible targets, retry-ceiling escape, incomplete checkpoint/output binding, and erased inherited regressions. | implemented by `python3 scripts/validate_metric_provenance.py`; record semantics only; no benchmark reproduction or support-state promotion |
 | Saturation detection test | Check that saturated benchmarks move to regression rather than broad promotion. | implemented by benchmark anti-Goodhart harness for synthetic saturated/regression-only records; no benchmark run |
 | Hidden benchmark transfer test | Check that transfer and contamination fields exist before support promotion. | implemented by benchmark anti-Goodhart harness for synthetic holdout, contamination, and mutation-or-transfer gates; no hidden benchmark run |
 | Benchmark anti-Goodhart fixture bridge | Check that the synthetic harness result record, 2 valid fixtures, 5 expected-invalid controls, and Lean fixture mirror agree without creating benchmark or policy evidence. | implemented by `python3 scripts/validate_benchmark_fixture_bridge.py`; no empirical benchmark, policy-training run, steward release, support-state transition, or chapter-core promotion |
@@ -269,6 +314,12 @@ These Lean hooks are implemented as finite-record predicates over capability-pro
 | `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Gate snapshot and architecture promotion checks; not rerun here. | source note available |
 | `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane and outcome ledgers. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Structural fixture transfer with explicit non-claims. | source note available |
+| `cca_project` | Compiled Cognitive Architecture project | local_project_lineage | Closure-authority inheritance, proxy/benchmark divergence, retry-lineage ceilings, and checkpoint/tokenizer/runtime trace discipline. | public-safe source note; project results not reproduced |
+| `moecot_manifest_project` | MoECOT Manifest compiler-era project | local_project_lineage | Internal/external scoreboard separation, contamination boundaries, and external-holdout reality. | public-safe source note; source-reported results only |
+| `beastbrain_project` | BeastBrain historical AI system project | local_project_lineage | Simulated metrics, non-updating routers, placeholder counts, and evaluator-dependence failures. | public-safe source note; no capability reproduction |
+| `bugbrain_project` | BugBrain bare-metal neuro-symbolic intelligence project | local_project_lineage | Capacity versus active state, fixed-weight cognitive paths, status workloads, host/Pi identity, and stale green reports. | public-safe source note; bounded host tests only |
+| `corbens_trainer_project` | Corben's Trainer epistemic training and evaluation control plane | local_project_lineage | Metric authenticity, seed identity, quarantined-run inheritance, stale promotion, and checkpoint completion. | public-safe source note; no external benchmark claim |
+| `corbens_best_model_possible_project` | Corben's Best Model Possible recurrent-model and mechanism laboratory | local_project_lineage | Metric-origin algebra, representation-capacity gate, retry discipline, and checkpoint-to-output binding. | public-safe source note; no reproduced general model capability |
 | `ext_mem0_2025`, `ext_mlcommons_croissant_1_1_2026`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_dynamic_compute_recurrent_transformers_2026` | Current memory, dataset, evaluation, security, self-improvement, architecture-search, and adaptive-compute comparators | external_benchmark_infrastructure | Use to expand benchmark/version/evaluator/adaptive-attack and complexity-controlled ratchets while preserving judge, contamination, evaluator-capture, transfer, and generalization limits. | source notes available; no local reproduction or benchmark promotion |
 
 ### Manifest source assignment reconciliation
@@ -282,7 +333,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 <!-- manifest-source-reconciliation:end -->
 ## Summary
 
-Benchmarks are pressure surfaces, not truth machines. They become useful when every result has a run record, baseline, residuals, regressions, anti-Goodhart checks, and a conservative support-state effect.
+Benchmarks are pressure surfaces, not truth machines. They become useful when every result has a run record, baseline, origin class, target-capacity check, inherited floors, retry lineage, checkpoint/output binding, residuals, regressions, anti-Goodhart checks, and a conservative support-state effect.
 
 That pressure changes future behavior only if policy optimization preserves provenance, rollback, and governance gates while learning from rewards, preferences, verifier outputs, and benchmark signals.
 

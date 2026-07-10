@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/procedural_trace_promotion_record.schema.json",
+  "title": "Procedural Trace Promotion Record",
+  "type": "object",
+  "required": ["record_id", "source_ids", "memory_domains", "candidate_traces", "promotion_gate", "rollback", "retirement", "decision"],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "minItems": 4, "uniqueItems": true, "items": {"type": "string"}},
+    "memory_domains": {
+      "type": "object",
+      "required": ["semantic_fact_refs", "procedural_trace_refs", "domains_conflated"],
+      "properties": {
+        "semantic_fact_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "procedural_trace_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "domains_conflated": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "candidate_traces": {
+      "type": "array", "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["trace_id", "source_id", "outcome", "source_receipt_ref", "effect_receipt_ref", "procedure_shape_digest"],
+        "properties": {
+          "trace_id": {"type": "string", "minLength": 1}, "source_id": {"type": "string", "minLength": 1},
+          "outcome": {"enum": ["success", "failure", "near_miss"]},
+          "source_receipt_ref": {"type": "string", "minLength": 1}, "effect_receipt_ref": {"type": "string", "minLength": 1},
+          "procedure_shape_digest": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "promotion_gate": {
+      "type": "object",
+      "required": ["requested_state", "minimum_successes", "observed_successes", "negative_example_trace_ids", "regression_suite_ref", "regression_passed", "failed_tests", "rollback_plan_ref"],
+      "properties": {
+        "requested_state": {"const": "routable"}, "minimum_successes": {"type": "integer", "minimum": 1},
+        "observed_successes": {"type": "integer", "minimum": 0},
+        "negative_example_trace_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "regression_suite_ref": {"type": "string", "minLength": 1}, "regression_passed": {"type": "boolean"},
+        "failed_tests": {"type": "array", "items": {"type": "string"}}, "rollback_plan_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "rollback": {
+      "type": "object", "required": ["prepromotion_snapshot_ref", "restore_route_ref", "rehearsal_observed"],
+      "properties": {"prepromotion_snapshot_ref": {"type": "string", "minLength": 1}, "restore_route_ref": {"type": "string", "minLength": 1}, "rehearsal_observed": {"const": true}},
+      "additionalProperties": false
+    },
+    "retirement": {
+      "type": "object", "required": ["criteria", "lifecycle_path", "retirement_receipt_ref"],
+      "properties": {
+        "criteria": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "lifecycle_path": {"type": "array", "minItems": 5, "items": {"type": "string"}},
+        "retirement_receipt_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object", "required": ["procedure_state", "support_state_effect", "historical_runtime_claimed"],
+      "properties": {"procedure_state": {"const": "routable"}, "support_state_effect": {"const": "none"}, "historical_runtime_claimed": {"const": false}},
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

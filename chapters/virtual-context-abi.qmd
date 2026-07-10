@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-03"
+last_updated: "2026-07-10"
 primary_sources:
   - "vcm_public"
   - "context_engineer"
@@ -13,6 +13,10 @@ primary_sources:
   - "vcm_editable"
   - "moecot"
   - "spinoza"
+  - "cca_project"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -29,11 +33,11 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-06-30 |
-| Primary source records | `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`, `spinoza` |
+| Last updated | 2026-07-10 |
+| Primary source records | `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`, `spinoza`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/recovery: `vcm_editable`, `moecot` |
+| Source queue | primary: `vcm_public`; supporting: `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`; connector/recovery: `vcm_editable`, `moecot` |
 | Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/source-note only: `vcm_editable`, `moecot` |
 | Test state | `context_abi_record.valid.json`, `semantic_page_certificate.valid.json`, and related context packet/adequacy/transaction fixtures pass protocol validation; `python3 scripts/validate_context_admission_adequacy.py` passes synthetic admission/adequacy, certificate-use, stale-certificate, deletion-closure, and mode-confusion checks; `python3 scripts/validate_vcm_resolver_certificate_probe.py` validates the VCM resolver/certificate probe over `valid_resolver_materialization_receipt`, `valid_mandatory_miss_typed_fault`, and nine expected-invalid controls; `AsiStackProofs.VirtualContextABI` and `AsiStackProofs.ContextCertificates` implement finite record predicates including a context-admission route envelope. Deployed resolver, context compiler, open-domain summary-fidelity, certificate-truthfulness, deletion-closure, transaction-isolation, model-facing memory, VCM-Bench, and leak-prevention tests remain unproven. |
 
@@ -155,6 +159,18 @@ context should be represented as typed semantic pages or cells with
 evidence-carrying representation certificates that preserve source bindings,
 omissions, authority ceilings, loss contracts, and permitted uses.
 
+### Strongest objection
+
+A bounded graph snapshot and a richly typed handle can still be elaborate
+wrapping around the wrong memory. A certificate may bind every field and remain
+semantically incomplete, stale relative to an unobserved store update, or
+misleading about graph completeness. The answer is deliberately narrow: this
+chapter can require identity, boundedness, omission, lifecycle, authority, and
+revalidation discipline, but it cannot certify open-world completeness or
+truthfulness. Those stronger claims require a deployed resolver, durable-store
+recovery tests, paired source/derived evaluation, and an accepted evidence
+transition.
+
 ## Mechanism
 
 The ABI begins with a context request that names the task, address or address
@@ -188,11 +204,38 @@ materializing best-effort prompt text. It can also say that a packet is
 admitted for use while leaving adequacy for a target claim to the
 verification-bandwidth layer.
 
+Resolution therefore produces two linked facts before any downstream use: the
+durable object and snapshot that were consulted, and the bounded context object
+that was actually emitted. A consumer can reject either side independently.
+The store may be current while the handle is expired, or the handle may be
+well-formed while the selected representation is inadequate, over-authorized,
+or missing a declared frontier.
+
+### Certified bounded graph snapshots
+
+The historical-project lineage sharpens the static ABI at one seam: a context
+handle should not mean “whatever the graph returns now.” It binds one durable
+snapshot identity and digest, a monotone generation, a policy version, a
+revocation epoch, issuance and expiry, provenance, authority ceiling,
+permitted uses, and a revalidation receipt. Materialization selects a finite
+subgraph under explicit depth and node budgets and records the exact omitted
+frontier. The materialized context remains a derived, lossy consumer object;
+it is not the durable memory object and cannot silently write back to it.
+
+`schemas/bounded_graph_snapshot_certificate.schema.json` and its bounded
+four-project fixture exercise this contract. CCA motivates the durable-memory
+versus context-materialization boundary; MoECOT contributes frozen slices,
+TTL-bounded context, graph overlays, and freeze/thaw discipline; BeastBrain
+contributes certified bounded graph snapshots; and BugBrain contributes
+generation-leased handles plus expiry, revocation, restore, and slice-validation
+negative cases. They are one local design lineage, not four replications.
+
 ```{mermaid}
 flowchart LR
   Request["Context request"] -- "asks by task, address, version" --> ABI["Virtual Context ABI"]
   ABI -- "resolves static handle" --> Address["Address, version, mount, snapshot"]
-  ABI -- "materializes typed object" --> Cell["Typed page or context cell"]
+  Address -- "binds digest, generation, policy, epoch" --> Snapshot["Certified bounded graph snapshot"]
+  Snapshot -- "selects within depth and node budgets" --> Cell["Typed page or context cell"]
   Cell -- "carries source and loss record" --> Cert["Representation certificate"]
   Cert -- "permits bounded use" --> Packet["Materialized context packet"]
   Packet -- "orients work" --> Plan["Planning or execution use"]
@@ -283,6 +326,12 @@ Minimum ABI and certificate fields include:
   packets.
 - Summaries cannot increase the authority ceiling of their source cells.
 - Revoked or stale certificates cannot be treated as current support.
+- A handle binds one snapshot identity and digest, current generation, policy
+  version, revocation epoch, expiry, provenance, and revalidation evidence.
+- A bounded graph selection stays inside its declared depth and node budgets
+  and discloses every unselected snapshot node in its omitted frontier.
+- Materialized context remains distinct from durable memory and cannot acquire
+  durable-write authority through materialization.
 
 Together, these invariants keep memory from turning into an untyped prompt
 append. A context packet may be useful, but usefulness is not enough. The stack
@@ -315,6 +364,17 @@ authority, clearance, loss, or adequacy record should have blocked use.
 Adequacy laundering happens when a context packet adequate for orientation or
 drafting is reused as if it were adequate for claim support.
 
+Handle laundering happens when a fresh-looking address reuses an old
+generation, expired lease, revoked epoch, mismatched policy, or unvalidated
+slice.
+
+Graph-completeness laundering happens when a bounded selection hides its
+omitted frontier and is narrated as the whole durable memory graph.
+
+Memory/context conflation happens when a derived packet is treated as the
+durable source of truth or is allowed to write back without a separate
+transaction authority.
+
 ## Minimum Viable Implementation
 
 The minimum viable implementation is not a full memory system. It is a public
@@ -328,6 +388,12 @@ The implementation preserves:
 - `schemas/context_packet.schema.json`;
 - `schemas/context_adequacy_record.schema.json`;
 - `schemas/context_transaction_record.schema.json`;
+- `schemas/bounded_graph_snapshot_certificate.schema.json`;
+- `tests/fixtures/protocol_records/bounded_graph_snapshot_certificate.valid.json`;
+- eleven mutations under
+  `experiments/bounded_graph_snapshot_certificate/fixtures/` covering digest,
+  generation, expiry, revocation, policy, provenance, bounds, omissions,
+  revalidation, memory/context separation, and support-promotion failures;
 - `experiments/context_admission_adequacy/fixtures/valid_local_check_public_context.json`;
 - `experiments/context_admission_adequacy/fixtures/valid_admitted_but_inadequate.json`;
 - `experiments/context_admission_adequacy/fixtures/valid_conflict_escalation.json`;
@@ -410,6 +476,7 @@ adequacy handoff, and typed refusal path.
 | Resolver conformance test | Check that resolver-style fixture records reject invalid addresses, versions, mounts, snapshots, and expired leases before materialization. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; synthetic fixture-pair check only, no deployed resolver |
 | Certificate truthfulness test | Check that certificate declarations match paired source and derived cells for source binding, omissions, authority ceiling, and representation claim. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; synthetic fixture-pair check only, no open-domain certificate truthfulness |
 | VCM resolver/certificate probe | Check `valid_resolver_materialization_receipt`, `valid_mandatory_miss_typed_fault`, and nine expected-invalid controls across address, version, snapshot, mount policy, lease expiry, certificate source binding, authority escalation, truthfulness overclaim, and summary omission boundaries. | implemented by `python3 scripts/validate_vcm_resolver_certificate_probe.py`; no deployed-resolver, memory-store, context-compiler, open-domain-summary-fidelity, certificate-truthfulness, transaction-isolation, deletion-enforcement, model-facing-context-quality, VCM-Bench, leak-prevention, or support-state-promotion claim |
+| Historical-project bounded graph-snapshot certificate | Check snapshot/digest identity, finite graph selection, exact omitted frontier, handle provenance/generation/policy/expiry/revocation, required revalidation, durable-memory/context separation, and no fixture promotion. | implemented by `python3 scripts/validate_bounded_graph_snapshot_certificate.py` with one bounded four-project record and eleven expected-invalid mutations; no deployed resolver, store, graph-completeness, or support claim |
 
 ### Formalization hooks
 
@@ -464,6 +531,7 @@ boundary that keeps those context objects from becoming anonymous prompt mass.
 | `vcm_editable` | Connector-readable refinement for stable addresses, mounts, snapshots, task-relative representation graphs, certificates, protected compilation, and planner-guided semantic paging. | source note available; connector/source-note mapped |
 | `moecot` | Runtime-reference context for governed orchestration, fail-closed ledgers, replay, handoffs, readiness gates, promotion blockers, and residual tracking. | source note available; connector/source-note mapped |
 | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025` | External comparators for graph/community sensemaking, associative graph retrieval, hierarchical abstraction, and persistent conversational memory; use to sharpen typed representation, provenance, loss, update, poisoning, and adequacy boundaries. | source notes available; no local memory, benchmark, or production-readiness result |
+| `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project` | One historical-project lineage for durable-memory/context separation, frozen and TTL-bounded slices, bounded graph snapshots, generation-leased handles, provenance, expiry, revocation, restore revalidation, and invalid-slice controls. | public-safe pinned notes reviewed; one hand-authored bounded certificate and mutations only, with no historical runtime replay or independent replication |
 
 The mappings support static context ABI and certificate vocabulary. They do not
 support claims of resolver correctness, summary fidelity, certificate

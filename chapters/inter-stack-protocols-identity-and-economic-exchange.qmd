@@ -6,8 +6,8 @@ status: "conceptual"
 draft_maturity: "v0.1 chapter draft"
 last_updated: "2026-07-10"
 primary_sources:
-  - "ext_mcp_protocol_2025_06_18"
-  - "ext_a2a_protocol_0_3_0"
+  - "ext_mcp_protocol_2025_11_25"
+  - "ext_a2a_protocol_1_0_0"
   - "ext_w3c_did_core_1_0_2022"
   - "ext_w3c_vc_data_model_2_0_2025"
   - "ext_interledger_protocol_v4"
@@ -30,7 +30,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Last updated | 2026-07-10 |
-| Primary source records | `ext_mcp_protocol_2025_06_18`, `ext_a2a_protocol_0_3_0`, `ext_w3c_did_core_1_0_2022`, `ext_w3c_vc_data_model_2_0_2025`, `ext_interledger_protocol_v4`, `talos`, `vcm_public`, `tokenmana` |
+| Primary source records | `ext_mcp_protocol_2025_11_25`, `ext_a2a_protocol_1_0_0`, `ext_w3c_did_core_1_0_2022`, `ext_w3c_vc_data_model_2_0_2025`, `ext_interledger_protocol_v4`, `talos`, `vcm_public`, `tokenmana` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | MCP, A2A, DID Core, VC Data Model, and Interledger comparators are source-noted; Talos, VCM, and TokenMana provide scoped local source context. No protocol, identity, credential, settlement, or peer workflow ran. |
@@ -355,8 +355,8 @@ credential is valid or that any cross-stack dispatch is authorized.
 ::: {.asi-ai-only}
 | Source | Role in this chapter | Boundary |
 |---|---|---|
-| `ext_mcp_protocol_2025_06_18` | Comparator for schema-defined messages, lifecycle, capability negotiation, session control, and agent-to-tool protocol structure. | No local MCP implementation, peer identity, authorization, task truth, effect safety, payment, or deployment result. |
-| `ext_a2a_protocol_0_3_0` | Comparator for Agent Cards, discovery, remote tasks, exchanged artifacts, and transport choices across opaque agent systems. | No local A2A peer, identity verification, delegated-authority result, task correctness, payment, or safety result. |
+| `ext_mcp_protocol_2025_11_25` | Latest released MCP comparator for versioned messages, lifecycle, capability negotiation, authorization/discovery, elicitation, tasks, and agent-to-tool protocol structure; the 2026-07-28 revision remains release-candidate context. | No local MCP implementation, peer identity, authorization, task truth, effect safety, payment, or deployment result. |
+| `ext_a2a_protocol_1_0_0` | Latest released A2A comparator for canonical objects, version negotiation, Agent Cards, remote tasks, exchanged artifacts, multiple bindings, authorization scoping, and interoperability testing. | No local A2A peer, identity verification, delegated-authority result, task correctness, payment, or safety result. |
 | `ext_w3c_did_core_1_0_2022` | Comparator for identity, controller, verification-method, service-endpoint, resolution, and privacy vocabulary. | No local DID, resolver, controller trust, authorization, revocation, or safety result. |
 | `ext_w3c_vc_data_model_2_0_2025` | Comparator for issuer/holder/verifier roles, credential/presentation fields, validity, status, evidence, and explicit authorization limits. | No local credential, trust decision, authorization framework, delegation validation, payment, or safety result. |
 | `ext_interledger_protocol_v4` | Comparator for packetized cross-network value exchange, connector obligations, and end-to-end separation between transport and policy. | No local payment, account, settlement, economic fairness, legal transfer, delegated authority, or safety result. |

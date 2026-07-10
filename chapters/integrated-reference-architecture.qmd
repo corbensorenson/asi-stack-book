@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-02"
+last_updated: "2026-07-10"
 primary_sources:
   - "viea"
   - "scf"
@@ -26,6 +26,11 @@ primary_sources:
   - "theseus_architecture_gate"
   - "theseus_operator_os"
   - "theseus_circle_transfer"
+  - "cca_project"
+  - "moecot_manifest_project"
+  - "bugbrain_project"
+  - "corbens_trainer_project"
+  - "corbens_best_model_possible_project"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -103,7 +108,7 @@ The claim remains at `argument` support. The source notes support architecture s
 
 ### Claim-source mapping status
 
-Appendix C now records twenty passage-reviewed mappings for this synthesis. The review makes the source map traceable enough for drafting and later support review, but it does not move the core claim above `argument` support. It also does not convert Project Theseus reports, MoECOT connector context, VCM Editable terminology, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
+Appendix C now records twenty-five passage-reviewed mappings for this synthesis. The five historical-project records count as one related implementation lineage, not five independent confirmations. The review makes the source map traceable enough for drafting and later support review, but it does not move the core claim above `argument` support. It also does not convert Project Theseus reports, historical-project notes, MoECOT connector context, VCM Editable terminology, schemas, fixtures, or finite Lean predicates into an integrated runtime result.
 
 | Mapping group | Reviewed support | Boundary |
 |---|---|---|
@@ -111,6 +116,7 @@ Appendix C now records twenty passage-reviewed mappings for this synthesis. The 
 | Normative and compression sources | Alignment Field as bounded normative/governance context; CGS as compact seed/rule/state/residual/verification/governance framing; Cognitive Loop Closure as procedural-memory handoff context. | No empirical consciousness, moral-status, alignment, compactness, procedural-memory, or safety result. |
 | Connector/recovery sources | MoECOT and VCM Editable source notes for runtime orchestration and richer VCM terminology. | Source-note only; raw connector text is not published here and no runtime, VCM-Bench, model-facing, or context-policy result is promoted. |
 | Pinned Theseus project files | Whitepaper, plan compiler, self-evolution system, architecture gate, operator OS/work board, and Circle transfer lane as report-first implementation references. | No current reports, commands, dashboards, board steps, compiler proof, transfer consumer, benchmark ledger, or model artifact was rerun or independently inspected here. |
+| Historical-project lineage | CCA, MoECOT Manifest, BugBrain, Corben's Trainer, and Corben's Best Model Possible expose compiler/control-plane breadth together with canonical/projection drift, silently lost effects, stale promotion state, incomplete completion acknowledgement, and interface-without-causal-effect failures. | Public-safe source notes only; the projects were not rerun, repeated mechanisms are not independent evidence, and the fixture does not establish an integrated runtime or capability result. |
 | Formal and fixture artifacts | `reference_trace_record.valid.json` and finite Lean predicates define record-level handoff and gate expectations. | They prove record-shape gates only, not deployed layer behavior, artifact continuity, authority-stop behavior, or stack safety. |
 
 ## Mechanism
@@ -154,6 +160,34 @@ sequenceDiagram
 ```
 
 **What the reference trace shows:** The reference trace is an end-to-end logical handoff chain, not a claim about physical module count and not a single agent loop with hidden role changes. Each participant receives and emits a typed artifact, and the final SCF gate can still promote, roll back, quarantine, or require review based on evidence and authority.
+
+### The name-to-effect spine
+
+The historical projects reveal a stricter integration test than the presence of named layers. A system can expose a planner, registry, router, memory store, verifier, trainer, and dashboard while its ordinary request path still uses defaults, silently drops writes, leaves stale promotion records active, or reports queue idleness as completion. A name in an architecture diagram therefore has no evidential authority until it is joined to the material effect it owns.
+
+The **name-to-effect map** is a seven-stage join: request-derived input, policy decision, canonical state selection, observed effect, acknowledged receipt, evaluator result, and claim boundary. Every stage names its owner, inputs, output, and authority class. The map is deliberately narrower than the full reference trace. It answers one falsifiable question: did the request actually reach the state and effect claimed by the final narrative?
+
+Canonical state and projections must remain separate inside that chain. A dashboard, report, cache, index, claim view, or promotion label may summarize the canonical record, but it cannot become the authority merely because it is newer or easier to query. State selection records the canonical reference and digest, while projections remain named secondary views. The request-to-effect receipt then binds the request identity and digest, policy decision, selected canonical-state digest, observed effect identity and digest, and acknowledged terminal state. Without those bindings, a locally valid receipt can describe the wrong request, stale state, or orphaned effect.
+
+```{mermaid}
+flowchart LR
+  R["Request-derived input<br/>request id + digest"] --> P["Policy decision<br/>authority + decision id"]
+  P --> S["Canonical state selection<br/>digest-bound; projections secondary"]
+  S --> E["Observed effect<br/>target + terminal state + digest"]
+  E --> C["Request-to-effect receipt<br/>request + policy + state + effect"]
+  C --> V["Evaluator<br/>method + route independence"]
+  V --> B["Claim boundary<br/>allowed statement + blockers"]
+
+  H["CCA / MoECOT / BugBrain / Trainer / Best Model<br/>one related historical lineage"] -. design lessons .-> R
+  H -. negative cases .-> S
+  H -. causal gaps .-> E
+```
+
+**What the lineage trace shows:** The five projects contribute one bounded family of design lessons, not independent replication. The chain makes canonical state, material effect, evaluator route, and permitted claim joinable while preserving a blocking boundary around project capability and runtime claims.
+
+The strongest objection is that a complete receipt can still be false because one compromised system may manufacture every record in the chain. That objection is correct. This fixture checks cross-record consistency and a separate verifier identity only; it does not prove verifier independence, observation truth, causal completeness, or open-world enforcement. Those residuals stay explicit, and the claim boundary remains `blocks_promotion`.
+
+The concrete negative case is **interface theater**. A named component emits a shape-valid or dashboard-visible projection, but the material effect is missing, stale, unacknowledged, or unrelated to the request. BugBrain's ignored audit I/O, Trainer's discarded asynchronous checkpoint result and stale quarantine-dependent promotion, and Best Model's default/empty ordinary path are different instances of the same failure. The name-to-effect harness rejects stage omission, projection authority, state/effect digest mismatch, unacknowledged terminal effects, false evaluator independence, orphaned effect mappings, and fixture-based claim promotion.
 
 The important feature is that every participant emits something durable enough for another participant to inspect. If the planner fails, the plan DAG should show where. If memory fails, the context packet should expose stale, missing, or unauthorized material. If routing fails, the residual record should survive. If execution fails, the audit log should make the failure replayable. If improvement is proposed, the SCF gate should decide whether the evidence supports promotion, rollback, quarantine, or human review.
 
@@ -236,6 +270,9 @@ The reference-architecture invariants keep an end-to-end trace from becoming a s
 - No layer bypasses governance.
 - Artifacts remain traceable.
 - Self-improvement follows evidence and authority gates.
+- Every named integration stage joins to the material output it claims to own.
+- Canonical state remains authoritative over projections, and the request-to-effect receipt binds request, policy, state, effect, and terminal acknowledgement.
+- Evaluator identity and method remain visible before a result can reach the claim boundary.
 
 Continuity under authority is the strongest integration invariant. A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.
 
@@ -246,6 +283,9 @@ Completeness is also an invariant. A blank field in the trace must mean "not app
 - Untraceable handoffs.
 - Planning/execution collapse.
 - Self-improvement without evaluator integrity.
+- Interface theater: named layers or green projections without a joined material effect.
+- Receipt drift: a receipt binds the wrong request, policy decision, canonical state, effect, or terminal outcome.
+- Projection authority and evaluator-independence laundering.
 
 Untraceable handoffs should create missing-contract records. Planning/execution collapse should preserve the failed plan, runtime artifact, and residual. Self-improvement without evaluator integrity should stop at the SCF gate.
 
@@ -256,6 +296,8 @@ Trace fragmentation is the companion failure, where each layer records locally v
 ## Minimum Viable Implementation
 
 A minimum integrated architecture first exists as the reference flow diagram plus the `reference_trace_record` schema and deterministic fixture set. The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
+
+The historical-project packet adds the smaller `name_to_effect_trace_record` contract and `python3 scripts/validate_name_to_effect_trace.py`. One blocked five-project lineage trace carries the seven ordered stages and one request-to-effect receipt; eight mutations attack stage closure, canonical-state authority, digest binding, terminal acknowledgement, evaluator independence, effect lineage, and support promotion. This is fixture-level joinability only, not a deployed runtime or reproduction of the projects.
 
 That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. A first actual command replay exists as a local Resource flagship validator trace with an artifact bundle, output digest, and attached blocked-path stop conditions. The governed repository-change slice now adds an executed local Git workflow with code mutation, tests, independent byte-and-behavior observation, matched baseline accounting, release/refusal decisions, exact and failed rollback, and quarantine. A live or external runtime trace remains stronger and still needs comparable records from real deployed layer handoffs.
 
@@ -352,6 +394,7 @@ When the trace kernel works, a future implementation could be evaluated by trace
 | Actual command replay trace | Record one actual repository validator command as a Reference Trace Record with output digest, artifact bundle, and blocked-path stop conditions. | implemented by `python3 scripts/run_reference_trace_replay.py --write-result` and `python3 scripts/validate_reference_trace_replay.py`; local replay only, no deployed runtime trace |
 | Governed repository-change slice | Execute intent, authority, plan, context, route, local code effect, independent observation, receipt reconciliation, evidence gate, release/refusal, rollback, and quarantine against a simpler matched baseline and eight adversarial cases. | implemented by `python3 scripts/run_governed_repository_change_slice.py --write-result` and `python3 scripts/validate_governed_repository_change_slice.py`; bounded disposable Git repositories only, no deployed runtime or chapter-core promotion |
 | Governed cross-stack trace invariants test | Derive authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed repository-change log. | implemented by `python3 scripts/run_governed_trace_invariants.py --write-result`, `python3 scripts/validate_governed_trace_invariants.py`, and `AsiStackProofs.GovernedRepositoryTrace`; finite local trace only |
+| Historical-project name-to-effect trace | Join request-derived input, policy, canonical state, observed effect, acknowledged receipt, evaluator, and claim boundary while rejecting eight interface-theater mutations. | implemented by `python3 scripts/validate_name_to_effect_trace.py`; one bounded five-project lineage fixture only, no deployed runtime or chapter-core promotion |
 
 The implemented rows validate deterministic fixture behavior, one local command replay, and one executed local repository-change workflow. They do not replay a deployed demo with independently operated services across layers. A future runtime integration test still needs deployed or external layer-handoff records, environment notes, runtime trace artifacts, and independent result review.
 
@@ -389,6 +432,11 @@ These Lean hooks are implemented as finite-record predicates over layer-handoff,
 | `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | source note available |
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
+| `cca_project` | Compiled Cognitive Architecture project | compiled_cognitive_architecture | Canonical closure, typed lowering, trace bundles, and explicit effect/claim boundaries. | public-safe source note available; historical project not rerun |
+| `moecot_manifest_project` | MoECOT Manifest compiler-era project | compiler_first_ai_systems | Canonical registry state versus disposable projections, compilation-to-effect lineage, and external-holdout reality. | public-safe source note available; historical project not rerun |
+| `bugbrain_project` | BugBrain bare-metal neuro-symbolic intelligence project | hardware_explicit_neurosymbolic_stack | Negative cases for silently ignored audit writes, success-shaped missing state, and narrative/report divergence. | public-safe source note available; historical project not rerun |
+| `corbens_trainer_project` | Corben's Trainer epistemic training and evaluation control plane | epistemic_training_control_plane | Request/effect lineage, stale promotion after quarantine, and acknowledged asynchronous completion. | public-safe source note available; historical project not rerun |
+| `corbens_best_model_possible_project` | Corben's Best Model Possible recurrent-model and mechanism laboratory | recurrent_model_mechanism_lab | Interface-versus-effect separation, ordinary-path defaulting, live effect versus playback, and claim causality. | public-safe source note available; historical project not rerun |
 | `ext_drexler_cais_2019` | Reframing Superintelligence: Comprehensive AI Services as General Intelligence | ai_services_r_and_d_automation | External comparator for service-centered general intelligence, R&D automation, and structured component composition. | source note available; relevant primary-report passages reviewed; comparator only |
 | `ext_adas_2024` | Automated Design of Agentic Systems | automated_agent_architecture_search | External comparator for code-defined search across prompts, tools, workflows, and agent designs under empirical selection. | source note available; no local search, transfer, superiority, or autonomous promotion claim |
 

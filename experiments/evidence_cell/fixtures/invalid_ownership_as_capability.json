@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["ownership_capability_separation", "conflated"],
+  "value": true,
+  "expected_error": "ownership must not be treated as capability evidence"
+}

@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["decision", "ordinary_routing_allowed"],
+  "value": true,
+  "expected_error": "active quarantine cannot allow ordinary routing"
+}

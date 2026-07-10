@@ -1,9 +1,53 @@
-# Rights and Selected Release Policy
+# License and Rights Routing
 
-Copyright (c) 2026 Corben Sorenson. All rights reserved.
+Copyright (c) 2026 Corben Sorenson.
 
-This repository is public for transparency and publication of the rendered living book. During active drafting, no license is granted for copying, redistribution, modification, sublicensing, or reuse of the book text, source corpus metadata, code, proofs, schemas, scripts, or assets unless Corben Sorenson provides a separate written license.
+The path-level authority for the completed `v2.0.0` release is
+`licensing/final_release_rights_routing.json`. The grants below apply only to
+the exact files at that tag and only when the ledger assigns the corresponding
+`license_route`.
 
-The author has selected a delayed-opening policy for the first author-declared completed major release. That future release is intended to apply CC BY 4.0 to cleared author-owned prose and figures and Apache License 2.0 to cleared author-owned software, proofs, schemas, and scripts, with exact release-specific notices and routing. This paragraph records future publishing intent; it is not a present license grant, does not automatically relicense any file, and does not include mixed, imported, private, local-project, trademark, endorsement, or third-party material unless it is separately cleared and named.
+## Cleared prose and figures
 
-Prepublication contributions are closed. Opening an issue, pull request, or sending material does not transfer ownership, create a license, or authorize incorporation. A later contribution policy must be deliberately opened and must match the operative outbound licenses.
+Files routed to `CC-BY-4.0` are licensed under the Creative Commons
+Attribution 4.0 International Public License. The exact legal text is in
+`licenses/CC-BY-4.0.txt` and the canonical source is
+https://creativecommons.org/licenses/by/4.0/legalcode.txt.
+
+Required attribution: “The ASI Stack: A Governed Systems Architecture for
+Advanced AI, with ASI as the Stress Case,” Corben Sorenson, version 2.0.0,
+licensed CC BY 4.0. Include the version/tag and a link to the license.
+
+## Cleared software-like artifacts
+
+Files routed to `Apache-2.0` are licensed under the Apache License, Version
+2.0. The exact legal text is in `licenses/Apache-2.0.txt` and the canonical
+source is https://www.apache.org/licenses/LICENSE-2.0.txt.
+
+## Excluded material
+
+Files routed to `excluded-no-grant` receive no license grant from this
+document. This includes mixed, imported, raw, private, local-project,
+third-party, historical-derivative, and review material unless a later release
+ledger explicitly clears it. Third-party license texts remain under their own
+terms. Facts and bibliographic metadata may have separate legal treatment, but
+this document does not grant rights in third-party content.
+
+No trademark, endorsement, privacy, publicity, or other third-party right is
+granted. Patent rights apply only where the Apache License 2.0 expressly says
+so. The names “The ASI Stack” and “Corben Sorenson” may be used for attribution
+but not to imply endorsement.
+
+## Drafting states and later changes
+
+Before the `v2.0.0` tag exists, and for later files or revisions not covered by
+an exact release routing ledger, all rights are reserved unless another written
+grant applies. `/latest/` is a mutable publication surface and does not itself
+expand the license beyond the tagged files named by a routing ledger.
+
+All rights reserved for every excluded, untagged, or later-drafting path. Before
+the exact opening tag exists, no license is granted by the conditional split;
+the prepared routing is not a present license grant for the drafting worktree.
+
+Prepublication contributions remain closed. Opening an issue, pull request, or
+sending material does not transfer ownership or authorize incorporation.

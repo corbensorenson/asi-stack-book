@@ -16,7 +16,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "No ASI Stack AI BOM, supplier assessment, build or training provenance, signature, verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, or deployment has been run."
+  - "One hand-authored three-project affected-path fixture and ten deterministic mutations have run; no real AI BOM, supplier assessment, build or training provenance, signature, verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, or deployment has run."
   - "No local result establishes complete inventory, artifact integrity, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or ASI."
   - "The finite Lean route establishes only a structured record consequence for a modeled unresolved critical advisory or required unverified signature; it does not establish whether any artifact, source, signature, advisory, policy, reviewer, or supplier record is correct."
 ---
@@ -33,7 +33,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | NIST, SLSA, OpenSSF, and SPDX comparators are source-noted. No local AI BOM, provenance, signer, verifier, supplier review, advisory feed, or incident workflow has run. |
-| Test state | Finite supply-chain routes are implemented in Lean. No artifact, dataset, build, training run, signature, supplier, advisory, or revocation record was exercised. |
+| Test state | Finite supply-chain routes are implemented in Lean. One hand-authored affected-path record and ten deterministic mutations exercise graph closure and record semantics only; no real artifact, dataset, build, training run, signature, supplier, advisory, or revocation workflow was exercised. |
 
 ## Drafting guardrail
 
@@ -186,6 +186,43 @@ advisories are inputs to an accountable route. They can identify which stated
 artifact path needs attention, but they do not collapse security, quality,
 fairness, legality, safety, and deployment authority into one metadata check.
 
+### Append-only invalidation and affected-path closure
+
+The historical-project lineage sharpens the propagation step. CCA contributes
+append-only supersession and invalidation: a new warning becomes a distinct
+event linked to the prior decision rather than an edit that erases what was
+previously believed. MoECOT Manifest contributes digest-bound artifacts,
+attestation scope, and revocable records: a valid statement must name the exact
+subject and policy scope it covers. Corben's Trainer contributes quarantine and
+revocable promotion: when upstream evidence is invalidated, downstream claims
+and candidates cannot remain green merely because their own rows did not
+change. These are design inputs from one local lineage, not independent
+replications or evidence that any historical implementation enforced the rule.
+
+For a bounded graph, an invalidation event names one subject node. The affected
+closure is that node plus every declared downstream node reachable through the
+typed edges. Each member receives exactly one owned repair, review, quarantine,
+or retirement route, and no member retains ordinary use while the invalidation
+is active. This makes a newly revoked dependency operationally different from a
+free-floating advisory note: the record identifies which training run, model,
+derivative, and release must be reconsidered.
+
+The typed input is a digest-bound graph, scoped assurance references, one
+append-only invalidation event, and a requested artifact admission. The typed
+output is the exact declared affected closure, one owned response per member, a
+custody/readiness admission result, and lifecycle closure containing residual,
+retention, disposal, and re-review ownership. Hidden copies and undeclared
+edges remain outside the computed closure and therefore remain explicit
+residuals.
+
+The strongest objection is that exact propagation over a declared graph can
+create false confidence in an incomplete graph. That objection holds. Closure
+correctness is conditional on recorded identities and edges; it does not show
+that the inventory is complete, the advisory is accurate, the signer is honest,
+or the artifact is uncompromised. The mechanism improves response
+accountability after a known change. It cannot guarantee discovery of unknown
+relationships.
+
 ## Interfaces
 
 The supply-chain layer governs the integrity policy across lifecycle artifacts.
@@ -223,6 +260,13 @@ owners without rewriting their distinct approval criteria.
 - An unresolved critical advisory, revoked signer, or invalidated lineage record
   propagates to affected derivatives and routes the requested path to quarantine,
   repair, or accountable review.
+- Invalidation appends a new event linked to the prior event; it does not
+  overwrite the decision history it is revising.
+- The declared affected closure equals every node reachable downstream from the
+  invalidated subject in the declared graph, and every member has exactly one
+  owned non-ordinary response route.
+- Lifecycle closure preserves a residual owner, retention horizon,
+  disposal-or-retirement reference, and re-review trigger.
 - A BOM, signature, provenance statement, or conformance label cannot establish
   artifact correctness, absence of compromise, data fitness, legal compliance,
   model safety, readiness, authority, or ASI.
@@ -232,6 +276,12 @@ does not. The record can state that an expected field is missing, a verifier did
 not accept a declared bundle, an advisory remains unresolved, or a derivative
 relationship requires re-review. It cannot turn an exhaustive-looking graph
 into evidence that the world outside the graph is complete or benign.
+
+The guarantees weaken at every observation boundary. An omitted edge narrows
+the computed closure; a stale verifier weakens an assurance reference; a hidden
+copy defeats local revocation; and an unowned route turns quarantine into an
+orphaned label. Those conditions do not silently relax admission. They remain
+blockers or residuals until a new scoped record resolves them.
 
 ## Failure modes
 
@@ -247,6 +297,10 @@ into evidence that the world outside the graph is complete or benign.
   paths.
 - **Lifecycle orphaning:** a handoff loses its residual owner, freshness rule,
   disposal record, or re-review trigger when a component changes or retires.
+- **History overwrite:** a mutable incident row replaces the earlier admission
+  record, making it impossible to reconstruct which assurance was relied upon.
+- **Partial closure:** the directly affected component is quarantined while a
+  declared model derivative or release remains on an ordinary route.
 
 The repair path depends on the error. Identity or lineage gaps need discovery
 and correction; a stale inventory needs a scoped refresh; a failed signature
@@ -264,6 +318,14 @@ component inventory reference and freshness, advisory state, revocation path,
 residual owner, and requested artifact admission. A finite Lean route sends a
 requested artifact with an unresolved critical advisory to quarantine and sends
 a requested artifact with a required but unverified signature to the same route.
+
+The repository now includes
+`schemas/supply_chain_affected_path_record.schema.json`, one quarantined
+three-project record, and ten expected-invalid mutations. The harness rejects
+artifact-digest substitution, incomplete downstream closure, missing response
+ownership, ordinary use after invalidation, overwritten history, a revoked path
+that avoids quarantine, stale assurance admitted as current, custody after
+invalidation, missing disposal closure, and fixture-based support promotion.
 
 This is not an AI BOM service, vulnerability feed, supplier-assessment program,
 reproducible build system, secure training platform, signing service, incident
@@ -304,8 +366,8 @@ can be insufficient for a high-consequence deployment. This remains a target arc
 |---|---|---|
 | Unresolved-critical-advisory route | Ensure a requested artifact with a recorded unresolved critical advisory quarantines rather than reaching custody review. | Implemented as a finite Lean theorem only. |
 | Required-but-unverified signature control | Ensure required signing does not become a pass-through when verification is absent or fails. | Implemented as a finite Lean theorem only. |
-| Stale BOM and derivative-propagation controls | Route a stale inventory or affected derivative to refresh, repair, or accountable review. | Planned. |
-| Public-safe supply-chain workload | Exercise synthetic identities, provenance, signing, advisory, revocation, and residual records without real artifacts or supplier data. | Planned; no supply-chain system has run. |
+| Stale BOM and derivative-propagation controls | Route a stale inventory or affected derivative to refresh, repair, or accountable review. | Implemented for one hand-authored graph and deterministic mutations; no inventory service or live propagation ran. |
+| Public-safe supply-chain workload | Exercise synthetic identities, provenance, signing, advisory, revocation, and residual records without real artifacts or supplier data. | Implemented as `python3 scripts/validate_supply_chain_affected_paths.py`: one bounded record and ten expected-invalid mutations; no supply-chain system has run. |
 
 ## Formalization hooks
 

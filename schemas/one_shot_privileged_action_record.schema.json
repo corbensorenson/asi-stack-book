@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/one_shot_privileged_action_record.schema.json",
+  "title": "One-Shot Privileged Action Record",
+  "type": "object",
+  "required": ["record_id", "source_ids", "intent_ref", "approval", "state_history", "execution_observation", "replay_control", "decision", "promotion_blockers", "non_claims"],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "intent_ref": {"type": "string", "minLength": 1},
+    "approval": {
+      "type": "object",
+      "required": ["approval_id", "approval_kind", "principal_id", "operation", "target_id", "target_state_digest", "parameter_digest", "policy_version", "issued_at", "expires_at", "nonce", "authority_ref"],
+      "properties": {
+        "approval_id": {"type": "string", "minLength": 1},
+        "approval_kind": {"enum": ["explicit_human_approval", "delegated_authority_receipt", "scenario_acknowledgement", "test_fixture_acknowledgement"]},
+        "principal_id": {"type": "string", "minLength": 1},
+        "operation": {"type": "string", "minLength": 1},
+        "target_id": {"type": "string", "minLength": 1},
+        "target_state_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "parameter_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "policy_version": {"type": "string", "minLength": 1},
+        "issued_at": {"type": "string", "format": "date-time"},
+        "expires_at": {"type": "string", "format": "date-time"},
+        "nonce": {"type": "string", "minLength": 16},
+        "authority_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "state_history": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["state", "observed_at", "receipt_ref"],
+        "properties": {
+          "state": {"enum": ["requested", "resolved", "approved", "dispatched", "effect_observed", "consumed", "denied", "expired", "revoked"]},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "receipt_ref": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "execution_observation": {
+      "type": "object",
+      "required": ["principal_id", "operation", "target_id", "pre_state_digest", "parameter_digest", "policy_version", "nonce", "dispatched_at", "effect_observed", "effect_receipt_ref", "post_state_digest"],
+      "properties": {
+        "principal_id": {"type": "string", "minLength": 1},
+        "operation": {"type": "string", "minLength": 1},
+        "target_id": {"type": "string", "minLength": 1},
+        "pre_state_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "parameter_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "policy_version": {"type": "string", "minLength": 1},
+        "nonce": {"type": "string", "minLength": 16},
+        "dispatched_at": {"type": "string", "format": "date-time"},
+        "effect_observed": {"type": "boolean"},
+        "effect_receipt_ref": {"type": ["string", "null"]},
+        "post_state_digest": {"type": ["string", "null"], "pattern": "^sha256:[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "replay_control": {
+      "type": "object",
+      "required": ["single_use", "consumed_nonce_refs", "replay_attempts", "replay_decision"],
+      "properties": {
+        "single_use": {"type": "boolean"},
+        "consumed_nonce_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 16}},
+        "replay_attempts": {"type": "integer", "minimum": 0},
+        "replay_decision": {"enum": ["not_attempted", "denied", "allowed"]}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": ["state", "privileged_effect_authorized", "support_state_effect"],
+      "properties": {
+        "state": {"enum": ["consumed", "denied", "expired", "revoked", "blocked"]},
+        "privileged_effect_authorized": {"type": "boolean"},
+        "support_state_effect": {"enum": ["none", "blocks_promotion", "eligible_for_bounded_evidence_review"]}
+      },
+      "additionalProperties": false
+    },
+    "promotion_blockers": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "non_claims": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["repair", "actual_mutation_refs"],
+  "value": ["node://objective", "node://authority", "node://acceptance", "node://non-goal"],
+  "expected_error": "mutated outside its declared scope"
+}

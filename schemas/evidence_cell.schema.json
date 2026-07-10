@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/evidence_cell.schema.json",
+  "title": "Evidence Cell",
+  "type": "object",
+  "required": [
+    "evidence_cell_id",
+    "claim_id",
+    "source_refs",
+    "origin_class",
+    "method",
+    "independence",
+    "demonstrated_effect",
+    "causal_capability_chain",
+    "trainable_state_manifest",
+    "response_causality_receipt",
+    "missingness",
+    "ownership_capability_separation",
+    "verification_methods",
+    "support_state_effect",
+    "promotion_blockers",
+    "non_claims"
+  ],
+  "properties": {
+    "evidence_cell_id": { "type": "string", "minLength": 1 },
+    "claim_id": { "type": "string", "minLength": 1 },
+    "source_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "origin_class": {
+      "type": "string",
+      "enum": [
+        "external_literature",
+        "local_project_lineage",
+        "repository_fixture",
+        "formal_model",
+        "local_empirical_run",
+        "external_empirical_run",
+        "review_record",
+        "unknown"
+      ]
+    },
+    "method": { "type": "string", "minLength": 1 },
+    "independence": {
+      "type": "string",
+      "enum": ["producer_self_check", "dependent_cross_check", "independent_reproduction", "independent_external_review", "unknown"]
+    },
+    "demonstrated_effect": {
+      "type": "string",
+      "enum": ["lineage_only", "record_shape_only", "mechanism_exercised", "runtime_effect_observed", "direct_support", "contradiction", "failed_support", "unknown"]
+    },
+    "causal_capability_chain": {
+      "type": "object",
+      "required": ["data", "objective", "code", "updated_state", "runtime_output", "independent_evaluation", "claim_binding"],
+      "properties": {
+        "data": { "$ref": "#/$defs/chainStage" },
+        "objective": { "$ref": "#/$defs/chainStage" },
+        "code": { "$ref": "#/$defs/chainStage" },
+        "updated_state": { "$ref": "#/$defs/chainStage" },
+        "runtime_output": { "$ref": "#/$defs/chainStage" },
+        "independent_evaluation": { "$ref": "#/$defs/chainStage" },
+        "claim_binding": { "$ref": "#/$defs/chainStage" }
+      },
+      "additionalProperties": false
+    },
+    "trainable_state_manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["state_id", "state_class", "updated", "identity_ref", "update_receipt_ref"],
+        "properties": {
+          "state_id": { "type": "string", "minLength": 1 },
+          "state_class": { "type": "string", "enum": ["generated", "frozen", "pretrained", "trainable", "optimizer_only", "unknown"] },
+          "updated": { "type": "boolean" },
+          "identity_ref": { "type": "string", "minLength": 1 },
+          "update_receipt_ref": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "response_causality_receipt": {
+      "type": "object",
+      "required": ["checkpoint_ref", "request_ref", "decode_path_ref", "tool_substitution_refs", "final_response_ref", "complete"],
+      "properties": {
+        "checkpoint_ref": { "type": "string" },
+        "request_ref": { "type": "string" },
+        "decode_path_ref": { "type": "string" },
+        "tool_substitution_refs": { "type": "array", "items": { "type": "string" } },
+        "final_response_ref": { "type": "string" },
+        "complete": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "missingness": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "disposition", "reason", "blocker_or_authority_ref"],
+        "properties": {
+          "field": { "type": "string", "minLength": 1 },
+          "disposition": { "type": "string", "enum": ["unknown", "not_attempted", "not_required", "waived"] },
+          "reason": { "type": "string", "minLength": 1 },
+          "blocker_or_authority_ref": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "ownership_capability_separation": {
+      "type": "object",
+      "required": ["component_ref", "ownership_state", "capability_evidence_state", "conflated"],
+      "properties": {
+        "component_ref": { "type": "string", "minLength": 1 },
+        "ownership_state": { "type": "string", "enum": ["first_party", "third_party", "mixed", "unknown"] },
+        "capability_evidence_state": { "type": "string", "enum": ["none", "interface_present", "mechanism_exercised", "runtime_effect_observed", "independently_evaluated", "unknown"] },
+        "conflated": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "verification_methods": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["method_id", "producer_id", "verifier_id", "method_class", "independence", "independence_basis_refs"],
+        "properties": {
+          "method_id": { "type": "string", "minLength": 1 },
+          "producer_id": { "type": "string", "minLength": 1 },
+          "verifier_id": { "type": "string", "minLength": 1 },
+          "method_class": { "type": "string", "enum": ["shape_check", "deterministic_fixture", "semantic_review", "reexecution", "counterfactual", "formal_check", "measurement", "unknown"] },
+          "independence": { "type": "string", "enum": ["same_component", "same_team_separate_path", "independent_local", "independent_external", "unknown"] },
+          "independence_basis_refs": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": { "type": "string", "enum": ["none", "argument_only", "blocks_promotion"] },
+    "promotion_blockers": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "$defs": {
+    "chainStage": {
+      "type": "object",
+      "required": ["status", "artifact_ref"],
+      "properties": {
+        "status": { "type": "string", "enum": ["observed", "not_observed", "not_applicable", "unknown"] },
+        "artifact_ref": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

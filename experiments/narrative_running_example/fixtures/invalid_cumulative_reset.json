@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["steps", 8, "cumulative_artifact_refs"],
+  "value": ["artifact://human-repository-change-request", "artifact://governed-plan-dag"],
+  "expected_error": "cumulative running-example state reset or drifted"
+}

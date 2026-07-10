@@ -1,0 +1,154 @@
+{
+  "schema_version": "asi_stack.narrative_running_example_trace.v0",
+  "trace_id": "narrative://governed-repository-change-v0",
+  "narrative_spine_ref": "products/narrative_product_spine.json",
+  "scenario": "One bounded repository change moves from a human request through governed planning, effect observation, evidence, and release or refusal.",
+  "initial_artifact_refs": ["artifact://human-repository-change-request"],
+  "steps": [
+    {
+      "order": 1,
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "consumes": ["artifact://human-repository-change-request"],
+      "produces": ["artifact://responsibility-boundary-map"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map"],
+      "failure_pressure": "A successful change has no reconstructible authority or rollback path.",
+      "handoff_to": "the-efficient-asi-hypothesis"
+    },
+    {
+      "order": 2,
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "consumes": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map"],
+      "produces": ["artifact://routed-cost-quality-ledger"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger"],
+      "failure_pressure": "The cheaper route hides verification, repair, and reviewer burden.",
+      "handoff_to": "system-boundaries-and-authority"
+    },
+    {
+      "order": 3,
+      "chapter_id": "system-boundaries-and-authority",
+      "consumes": ["artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger"],
+      "produces": ["artifact://scoped-authority-grant"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant"],
+      "failure_pressure": "A low-authority planner borrows a broader expired tool grant.",
+      "handoff_to": "failure-modes-of-ungoverned-intelligence"
+    },
+    {
+      "order": 4,
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "consumes": ["artifact://scoped-authority-grant"],
+      "produces": ["artifact://failure-classification-and-owner"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner"],
+      "failure_pressure": "A fluent taxonomy assigns no detector, containment route, or residual owner.",
+      "handoff_to": "evidence-states-and-claim-discipline"
+    },
+    {
+      "order": 5,
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "consumes": ["artifact://failure-classification-and-owner", "artifact://routed-cost-quality-ledger"],
+      "produces": ["artifact://bounded-claim-state-record"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record"],
+      "failure_pressure": "A schema receipt is laundered into a runtime-safety claim.",
+      "handoff_to": "scalable-oversight-and-adversarial-ai-control"
+    },
+    {
+      "order": 6,
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "consumes": ["artifact://bounded-claim-state-record", "artifact://failure-classification-and-owner"],
+      "produces": ["artifact://independent-oversight-dossier"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier"],
+      "failure_pressure": "Nominally independent reviewers share the same poisoned context.",
+      "handoff_to": "recursive-self-improvement-boundaries"
+    },
+    {
+      "order": 7,
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "consumes": ["artifact://independent-oversight-dossier", "artifact://scoped-authority-grant"],
+      "produces": ["artifact://protected-mutation-boundary"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary"],
+      "failure_pressure": "A candidate shapes the evaluator used to approve its own verifier change.",
+      "handoff_to": "intent-to-execution-contracts"
+    },
+    {
+      "order": 8,
+      "chapter_id": "intent-to-execution-contracts",
+      "consumes": ["artifact://human-repository-change-request", "artifact://protected-mutation-boundary"],
+      "produces": ["artifact://validated-command-contract"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary", "artifact://validated-command-contract"],
+      "failure_pressure": "An ambiguous intent becomes a precise but incorrect default.",
+      "handoff_to": "planning-as-a-control-layer"
+    },
+    {
+      "order": 9,
+      "chapter_id": "planning-as-a-control-layer",
+      "consumes": ["artifact://validated-command-contract", "artifact://scoped-authority-grant"],
+      "produces": ["artifact://governed-plan-dag"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary", "artifact://validated-command-contract", "artifact://governed-plan-dag"],
+      "failure_pressure": "A stale plan runs after its context and authorization assumptions change.",
+      "handoff_to": "verification-bandwidth-and-context-adequacy"
+    },
+    {
+      "order": 10,
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "consumes": ["artifact://governed-plan-dag", "artifact://validated-command-contract"],
+      "produces": ["artifact://context-adequacy-decision"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary", "artifact://validated-command-contract", "artifact://governed-plan-dag", "artifact://context-adequacy-decision"],
+      "failure_pressure": "A concise context summary drops the constraint that should block deployment.",
+      "handoff_to": "artifact-graphs-audit-logs-and-replay"
+    },
+    {
+      "order": 11,
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "consumes": ["artifact://governed-plan-dag", "artifact://context-adequacy-decision", "artifact://bounded-claim-state-record"],
+      "produces": ["artifact://repository-change-artifact-graph"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary", "artifact://validated-command-contract", "artifact://governed-plan-dag", "artifact://context-adequacy-decision", "artifact://repository-change-artifact-graph"],
+      "failure_pressure": "The test receipt belongs to a different commit inside a plausible graph.",
+      "handoff_to": "runtime-adapters-tool-permissions-and-human-approval"
+    },
+    {
+      "order": 12,
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "consumes": ["artifact://repository-change-artifact-graph", "artifact://scoped-authority-grant", "artifact://governed-plan-dag"],
+      "produces": ["artifact://observed-effect-and-rollback-receipt"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary", "artifact://validated-command-contract", "artifact://governed-plan-dag", "artifact://context-adequacy-decision", "artifact://repository-change-artifact-graph", "artifact://observed-effect-and-rollback-receipt"],
+      "failure_pressure": "A narrow approval is reused for a broader deployment effect.",
+      "handoff_to": "resource-economics-and-token-budgets"
+    },
+    {
+      "order": 13,
+      "chapter_id": "resource-economics-and-token-budgets",
+      "consumes": ["artifact://routed-cost-quality-ledger", "artifact://observed-effect-and-rollback-receipt"],
+      "produces": ["artifact://governance-benefit-tax-report"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary", "artifact://validated-command-contract", "artifact://governed-plan-dag", "artifact://context-adequacy-decision", "artifact://repository-change-artifact-graph", "artifact://observed-effect-and-rollback-receipt", "artifact://governance-benefit-tax-report"],
+      "failure_pressure": "Token savings hide queues, operator bypass, and rollback burden.",
+      "handoff_to": "integrated-reference-architecture"
+    },
+    {
+      "order": 14,
+      "chapter_id": "integrated-reference-architecture",
+      "consumes": ["artifact://validated-command-contract", "artifact://governed-plan-dag", "artifact://repository-change-artifact-graph", "artifact://observed-effect-and-rollback-receipt", "artifact://governance-benefit-tax-report"],
+      "produces": ["artifact://end-to-end-reference-trace"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary", "artifact://validated-command-contract", "artifact://governed-plan-dag", "artifact://context-adequacy-decision", "artifact://repository-change-artifact-graph", "artifact://observed-effect-and-rollback-receipt", "artifact://governance-benefit-tax-report", "artifact://end-to-end-reference-trace"],
+      "failure_pressure": "Locally valid components compose into a stale-authority unsafe release.",
+      "handoff_to": "living-book-methodology"
+    },
+    {
+      "order": 15,
+      "chapter_id": "living-book-methodology",
+      "consumes": ["artifact://end-to-end-reference-trace", "artifact://bounded-claim-state-record", "artifact://governance-benefit-tax-report"],
+      "produces": ["artifact://book-change-and-release-record"],
+      "cumulative_artifact_refs": ["artifact://human-repository-change-request", "artifact://responsibility-boundary-map", "artifact://routed-cost-quality-ledger", "artifact://scoped-authority-grant", "artifact://failure-classification-and-owner", "artifact://bounded-claim-state-record", "artifact://independent-oversight-dossier", "artifact://protected-mutation-boundary", "artifact://validated-command-contract", "artifact://governed-plan-dag", "artifact://context-adequacy-decision", "artifact://repository-change-artifact-graph", "artifact://observed-effect-and-rollback-receipt", "artifact://governance-benefit-tax-report", "artifact://end-to-end-reference-trace", "artifact://book-change-and-release-record"],
+      "failure_pressure": "Local records claim coherence while the deployed book remains stale.",
+      "handoff_to": null
+    }
+  ],
+  "decision": {
+    "status": "editorially_complete_candidate_not_release",
+    "support_state_effect": "none",
+    "release_approved": false
+  },
+  "non_claims": [
+    "the trace is an editorial continuity contract, not evidence that the architecture works",
+    "the rendered narrative candidate is not a final reader release",
+    "the trace does not promote any chapter claim or approve omitted reference chapters for deletion"
+  ]
+}

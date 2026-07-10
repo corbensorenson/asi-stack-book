@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["target_contract", "authority_refs"],
+  "value": ["authority://unbound"],
+  "expected_error": "lost source authority"
+}

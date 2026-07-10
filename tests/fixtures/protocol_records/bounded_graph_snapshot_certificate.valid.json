@@ -1,0 +1,29 @@
+{
+  "certificate_id": "bounded-graph-snapshot-vcm-2026-07-10",
+  "source_ids": ["cca_project", "moecot_manifest_project", "beastbrain_project", "bugbrain_project"],
+  "recorded_at": "2026-07-10T18:00:00Z",
+  "durable_memory": {"memory_object_ref": "memory://project-lineage/graph", "snapshot_id": "snapshot://project-lineage/generation-7", "snapshot_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "generation": 7, "revocation_epoch": 3, "persistence_state": "durable_snapshot_observed"},
+  "graph_snapshot": {
+    "graph_root_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "nodes": [
+      {"node_id": "node:root", "depth": 0, "content_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111", "provenance_refs": ["sources/source_notes/cca_project.md"]},
+      {"node_id": "node:policy", "depth": 1, "content_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222", "provenance_refs": ["sources/source_notes/moecot_manifest_project.md"]},
+      {"node_id": "node:failure", "depth": 1, "content_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333", "provenance_refs": ["sources/source_notes/bugbrain_project.md"]},
+      {"node_id": "node:deferred", "depth": 2, "content_digest": "sha256:4444444444444444444444444444444444444444444444444444444444444444", "provenance_refs": ["sources/source_notes/beastbrain_project.md"]}
+    ],
+    "edges": [
+      {"from": "node:root", "to": "node:policy", "relation": "constrained_by"},
+      {"from": "node:root", "to": "node:failure", "relation": "challenged_by"},
+      {"from": "node:policy", "to": "node:deferred", "relation": "defers"}
+    ],
+    "node_count": 4,
+    "edge_count": 3
+  },
+  "bounded_selection": {"root_node_id": "node:root", "selected_node_ids": ["node:root", "node:policy", "node:failure"], "omitted_frontier_node_ids": ["node:deferred"], "max_depth": 1, "node_budget": 3, "selection_policy": "policy:vcm-bounded-snapshot-v1"},
+  "context_handle": {"handle_id": "handle://vcm/project-lineage/7", "semantic_address": "vcm://project-lineage/root", "generation": 7, "bound_snapshot_id": "snapshot://project-lineage/generation-7", "bound_snapshot_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "policy_version": "policy:vcm-bounded-snapshot-v1", "issued_at": "2026-07-10T17:00:00Z", "expires_at": "2026-07-11T17:00:00Z", "provenance_refs": ["snapshot://project-lineage/generation-7", "sources/source_notes/cca_project.md"], "authority_ceiling": "read_for_argument_drafting_only", "permitted_uses": ["chapter_argument_drafting", "source_crosswalk_review"], "revocation_state": "active", "revocation_epoch": 3, "revalidation_required": true},
+  "revalidation": {"state": "passed", "checked_at": "2026-07-10T17:55:00Z", "policy_version": "policy:vcm-bounded-snapshot-v1", "snapshot_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "evidence_refs": ["fixture:bounded-snapshot-revalidation"]},
+  "context_materialization": {"materialization_ref": "context://project-lineage/bounded-7", "derived_from_snapshot_id": "snapshot://project-lineage/generation-7", "state": "materialized_bounded_context", "durable_write_authorized": false, "loss_contract": "node:deferred omitted beyond depth and node budget; omission retained in frontier", "residuals": ["graph digest is hand-authored", "historical project runtime not replayed"]},
+  "decision": {"state": "admitted_for_bounded_context", "ordinary_use_allowed": true, "support_state_effect": "blocks_promotion"},
+  "promotion_blockers": ["hand-authored snapshot", "no deployed resolver", "no restart persistence replay"],
+  "non_claims": ["not a deployed memory store", "not resolver correctness", "not graph completeness", "no support promotion"]
+}

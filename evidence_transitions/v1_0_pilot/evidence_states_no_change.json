@@ -9,63 +9,96 @@
   "claim_record_refs": [
     "book_structure.json",
     "schemas/claim_record.schema.json",
-    "schemas/evidence_transition_record.schema.json"
+    "schemas/evidence_transition_record.schema.json",
+    "schemas/evidence_cell.schema.json",
+    "tests/fixtures/protocol_records/evidence_cell.valid.json"
   ],
   "old_support_state": "argument",
   "new_support_state": "argument",
   "transition_effect": "no_change",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "repository claim/evidence mechanics only; no AI capability, source-interpretation, or test-backed claim is promoted",
+  "scope_boundary": "Repository claim/evidence mechanics plus one public-safe synthesis of six related local historical projects as a single implementation lineage. No project capability path was reproduced, no independent confirmation is created, and no AI capability, source-interpretation, benchmark, safety, or test-backed chapter-core claim is promoted.",
   "evidence_roles": [
     "claim_matrix",
     "source_evidence_audit",
     "schema_fixture",
-    "validator"
+    "validator",
+    "local_project_lineage",
+    "negative_case_analysis",
+    "promotion_blocker"
   ],
-  "transition_reason": "The repository demonstrates claim labels, support states, source mappings, passage-reviewed mapping counts, and validators. That supports a process review, but it does not prove semantic adequacy of source interpretation or justify moving the chapter core claim above argument.",
+  "transition_reason": "The repository demonstrates claim labels, support states, source mappings, passage-reviewed mapping counts, validators, and now an evidence-cell record that exposes origin, method, independence, causal-chain state, trainable-state identity, response causality, honest missingness, and ownership/capability separation across one six-project local lineage. That improves the argument and its negative controls, but it does not reproduce the projects, complete a checkpoint-to-response causal chain, prove semantic adequacy, or justify moving the chapter core claim above argument.",
   "required_artifacts": [
     "accepted claim-specific evidence-transition review",
     "independent review of source interpretation adequacy",
-    "recorded proof/test/source artifacts for any stronger support state"
+    "recorded proof/test/source artifacts for any stronger support state",
+    "a claim-scoped same-lineage causal chain with actually updated state, runtime output, and outcome-linked independent evaluation"
   ],
   "artifact_refs": [
     "appendices/C_claim_evidence_matrix.qmd",
     "docs/source_evidence_audit.md",
     "scripts/validate_source_evidence_audit.py",
-    "scripts/validate_v1_status_snapshot.py"
+    "scripts/validate_v1_status_snapshot.py",
+    "schemas/evidence_cell.schema.json",
+    "tests/fixtures/protocol_records/evidence_cell.valid.json",
+    "experiments/evidence_cell/fixtures",
+    "scripts/validate_evidence_cells.py"
   ],
   "evidence_packet_refs": [
     "docs/source_evidence_audit.md",
-    "docs/v1_0_candidate_status.md"
+    "docs/v1_0_candidate_status.md",
+    "docs/historical_project_incorporation_roadmap.md",
+    "docs/project_mining/cross-project-synthesis.md",
+    "sources/source_notes/cca_project.md",
+    "sources/source_notes/moecot_manifest_project.md",
+    "sources/source_notes/beastbrain_project.md",
+    "sources/source_notes/bugbrain_project.md",
+    "sources/source_notes/corbens_trainer_project.md",
+    "sources/source_notes/corbens_best_model_possible_project.md"
   ],
   "source_mapping_refs": [
     "appendices/C_claim_evidence_matrix.qmd#evidence-states-and-claim-discipline.core"
   ],
-  "verification_command": "python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_command": "python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py && python3 scripts/validate_evidence_cells.py && python3 scripts/validate_evidence_transitions.py",
   "verification_result": "pass",
   "negative_results": [
     "all 54 chapter core claims remain at argument",
-    "no support-state promotion is accepted by this pilot"
+    "no support-state promotion is accepted by this pilot",
+    "a missing causal stage is rejected",
+    "missing evidence labeled passed is rejected",
+    "ownership used as capability is rejected",
+    "updated state without a trainable classification and receipt is rejected",
+    "false verifier independence is rejected",
+    "the six-project fixture records an incomplete checkpoint-to-response chain"
   ],
   "negative_evidence_refs": [
     "docs/v1_0_candidate_status.md",
-    "appendices/C_claim_evidence_matrix.qmd"
+    "appendices/C_claim_evidence_matrix.qmd",
+    "experiments/evidence_cell/fixtures",
+    "sources/source_notes/corbens_best_model_possible_project.md",
+    "sources/source_notes/corbens_trainer_project.md"
   ],
   "downgrade_triggers": [
     "source-mapping validator failure",
     "claim matrix drift",
     "unsupported support-state promotion",
-    "missing evidence-transition record for a moved claim"
+    "missing evidence-transition record for a moved claim",
+    "local project lineage described as independent replication",
+    "ownership or interface presence described as task capability",
+    "missing causal links omitted or serialized as passed"
   ],
   "promotion_burden": "Move above argument only after claim-specific review shows that the support-state discipline is not merely present as a repository process but accepted as evidence for the exact scoped claim.",
   "limitations": [
     "process mechanics do not prove source interpretation adequacy",
     "passage-reviewed mappings do not by themselves promote claims",
-    "schema and validator passes are not behavioral tests of an AI system"
+    "schema and validator passes are not behavioral tests of an AI system",
+    "the six projects share lineage and were not independently reproduced",
+    "the fixture does not complete the checkpoint-to-response causal chain"
   ],
   "review_status": "accepted",
   "reviewer_refs": [
-    "Codex v1.0 roadmap run"
+    "Codex v1.0 roadmap run",
+    "Codex canonical completion roadmap run"
   ],
   "reviewer_independence": "local maintainer-agent review only; not an independent external audit",
   "acceptance_blockers": [
@@ -73,11 +106,13 @@
     "no accepted semantic adequacy finding",
     "no claim-specific upward transition approved"
   ],
-  "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-phase-3-evidence-transition-pilot",
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-10---historical-project-evidence-cell-packet",
   "support_state_effect": "argument_only",
   "non_claims": [
     "does not promote any chapter claim",
     "does not prove source interpretation is correct",
-    "does not prove any AI capability or safety property"
+    "does not prove any AI capability or safety property",
+    "does not turn six related local projects into independent confirmations",
+    "does not authorize publication of raw private project material"
   ]
 }

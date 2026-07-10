@@ -1,0 +1,66 @@
+{
+  "trace_id": "historical-lineage-name-to-effect-001",
+  "source_ids": ["cca_project", "moecot_manifest_project", "bugbrain_project", "corbens_trainer_project", "corbens_best_model_possible_project"],
+  "request": {
+    "request_id": "request://book-lineage-maintenance-001",
+    "derived_input_ref": "input://bounded-artifact-lineage-repair",
+    "request_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "authority_ref": "authority://book-maintenance-only"
+  },
+  "policy_decision": {
+    "policy_ref": "policy://no-runtime-or-support-promotion",
+    "decision_id": "decision://bounded-maintenance-allow",
+    "decision": "allow",
+    "request_id": "request://book-lineage-maintenance-001"
+  },
+  "state_selection": {
+    "canonical_state_ref": "artifact://canonical-source-note-set",
+    "canonical_state_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "projection_refs": ["projection://chapter-crosswalk", "projection://claim-ledger-view"],
+    "selection_receipt_ref": "receipt://state-selection-001"
+  },
+  "name_to_effect_map": [
+    {"stage": "request_derived_input", "owner": "intent-contract", "input_refs": ["request://book-lineage-maintenance-001"], "output_ref": "input://bounded-artifact-lineage-repair", "authority": "canonical"},
+    {"stage": "policy", "owner": "authority-kernel", "input_refs": ["input://bounded-artifact-lineage-repair"], "output_ref": "decision://bounded-maintenance-allow", "authority": "canonical"},
+    {"stage": "canonical_state_selection", "owner": "artifact-graph", "input_refs": ["decision://bounded-maintenance-allow"], "output_ref": "artifact://canonical-source-note-set", "authority": "canonical"},
+    {"stage": "effect", "owner": "execution-adapter", "input_refs": ["artifact://canonical-source-note-set"], "output_ref": "effect://chapter-crosswalk-update", "authority": "observed_effect"},
+    {"stage": "receipt", "owner": "receipt-ledger", "input_refs": ["effect://chapter-crosswalk-update"], "output_ref": "receipt://request-to-effect-001", "authority": "canonical"},
+    {"stage": "evaluator", "owner": "separate-validation-route", "input_refs": ["receipt://request-to-effect-001"], "output_ref": "evaluation://fixture-pass-001", "authority": "evaluation"},
+    {"stage": "claim_boundary", "owner": "evidence-ledger", "input_refs": ["evaluation://fixture-pass-001"], "output_ref": "integrated-reference-architecture.core", "authority": "claim_gate"}
+  ],
+  "effect": {
+    "effect_id": "effect://chapter-crosswalk-update",
+    "target_ref": "chapters/integrated-reference-architecture.qmd",
+    "effect_type": "write",
+    "observed_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+    "terminal_state": "completed"
+  },
+  "receipt": {
+    "receipt_id": "receipt://request-to-effect-001",
+    "request_id": "request://book-lineage-maintenance-001",
+    "request_digest": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "decision_id": "decision://bounded-maintenance-allow",
+    "canonical_state_digest": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "effect_id": "effect://chapter-crosswalk-update",
+    "effect_digest": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+    "acknowledged_terminal_state": true
+  },
+  "evaluator": {
+    "evaluation_id": "evaluation://fixture-pass-001",
+    "effect_id": "effect://chapter-crosswalk-update",
+    "receipt_id": "receipt://request-to-effect-001",
+    "method": "schema plus semantic negative-control validation",
+    "producer_id": "producer://fixture-author",
+    "verifier_id": "verifier://separate-script-route",
+    "independence": "separate_route",
+    "result": "pass"
+  },
+  "claim_boundary": {
+    "claim_ref": "integrated-reference-architecture.core",
+    "current_support_state": "argument",
+    "support_state_effect": "blocks_promotion",
+    "allowed_statement": "The bounded fixture joins request, policy, canonical state, observed effect, receipt, evaluator, and claim boundary."
+  },
+  "promotion_blockers": ["fixture-only effect", "no deployed cross-layer runtime", "no independent external replay"],
+  "non_claims": ["does not prove an integrated AI runtime", "does not reproduce historical-project capability", "does not promote the chapter core claim"]
+}

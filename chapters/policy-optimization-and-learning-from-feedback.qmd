@@ -100,6 +100,14 @@ The stack therefore needs policy optimization to be governed by the same evidenc
 
 Reward substitution is the policy-learning failure. A reward, preference label, verifier score, latency metric, or benchmark result stands in for the actual claim: safer routing, better context, truthful answers, lower cost, or stronger reasoning. The update record must keep the proxy and the target claim separate.
 
+### Strongest objection
+
+Governance can constrain an update record without making the feedback signal
+truthful. Correlated evaluators, strategic behavior, and distribution shift can
+all produce a clean causal chain from reward to checkpoint to output while the
+target capability worsens. These contracts prevent proxy/claim
+conflation; they do not prove reward adequacy or policy improvement.
+
 ## Core Claim
 
 [policy-optimization-and-learning-from-feedback.core, label: Design rationale, support: argument] Policy optimization is the stack's learning actuator: it can update planners, routers, context selectors, verifiers, execution policies, and generators, but governance decides which feedback is admissible and whether any update may be promoted.

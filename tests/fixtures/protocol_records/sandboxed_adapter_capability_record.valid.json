@@ -1,0 +1,33 @@
+{
+  "record_id": "sandboxed-adapter-bounded-probe-2026-07-10",
+  "source_ids": ["moecot_manifest_project", "beastbrain_project", "bugbrain_project", "corbens_trainer_project", "corbens_best_model_possible_project"],
+  "adapter_identity": {"adapter_id": "adapter:temp-file-write", "executable_path": "/usr/bin/python3", "executable_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "parent_job_ref": "job:bounded-temp-write", "authority_ref": "authority:local-temp-workspace"},
+  "capability_envelope": {
+    "executable_allowlist": ["/usr/bin/python3"],
+    "read_path_prefixes": ["/tmp/asi-adapter-probe/input"],
+    "write_path_prefixes": ["/tmp/asi-adapter-probe/output"],
+    "network": {"mode": "denied", "allowed_endpoints": []},
+    "clock": "monotonic_only",
+    "randomness": "deterministic_seeded",
+    "environment_keys": ["LANG"],
+    "secret_handle_refs": []
+  },
+  "enforcement_observation": {
+    "claim": "process_observed",
+    "sandbox_instance_ref": null,
+    "observer_ref": "scripts/validate_runtime_adapter_effect_probe.py",
+    "probe_results": [
+      {"probe": "executable", "requested_value": "/usr/bin/python3", "allowed": true, "evidence_ref": "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json"},
+      {"probe": "write_path", "requested_value": "/tmp/asi-adapter-probe/output/result.txt", "allowed": true, "evidence_ref": "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json"},
+      {"probe": "network", "requested_value": "none", "allowed": false, "evidence_ref": "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json"},
+      {"probe": "clock", "requested_value": "monotonic", "allowed": true, "evidence_ref": "fixture:declared-clock-scope"},
+      {"probe": "randomness", "requested_value": "seed:17", "allowed": true, "evidence_ref": "fixture:declared-randomness-scope"}
+    ],
+    "os_enforcement_claim_allowed": false
+  },
+  "replay_grade": {"grade": "bounded_live_reexecution", "artifact_refs": ["experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json"], "same_executable_digest": false, "same_inputs": true, "effect_reobserved": true, "rollback_reobserved": true, "playback_only": false},
+  "irreversible_residuals": {"state": "none_observed_in_bounded_probe", "items": [], "owner_ref": "owner:runtime-adapter-packet", "review_trigger": "any external effect or broader capability envelope"},
+  "decision": {"state": "bounded_probe_only", "ordinary_dispatch_allowed": false, "sandbox_claim_allowed": false, "support_state_effect": "blocks_promotion"},
+  "promotion_blockers": ["no OS sandbox observation", "executable digest not independently bound", "historical projects not replayed"],
+  "non_claims": ["not an OS-enforced sandbox", "not a deployed adapter", "not network isolation proof", "no support promotion"]
+}

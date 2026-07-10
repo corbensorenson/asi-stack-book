@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/sandboxed_adapter_capability_record.schema.json",
+  "title": "Sandboxed Adapter Capability Record",
+  "type": "object",
+  "required": ["record_id", "source_ids", "adapter_identity", "capability_envelope", "enforcement_observation", "replay_grade", "irreversible_residuals", "decision", "promotion_blockers", "non_claims"],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "adapter_identity": {
+      "type": "object",
+      "required": ["adapter_id", "executable_path", "executable_digest", "parent_job_ref", "authority_ref"],
+      "properties": {
+        "adapter_id": {"type": "string", "minLength": 1},
+        "executable_path": {"type": "string", "minLength": 1},
+        "executable_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "parent_job_ref": {"type": "string", "minLength": 1},
+        "authority_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "capability_envelope": {
+      "type": "object",
+      "required": ["executable_allowlist", "read_path_prefixes", "write_path_prefixes", "network", "clock", "randomness", "environment_keys", "secret_handle_refs"],
+      "properties": {
+        "executable_allowlist": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "read_path_prefixes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "write_path_prefixes": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "network": {
+          "type": "object", "required": ["mode", "allowed_endpoints"],
+          "properties": {
+            "mode": {"enum": ["denied", "allowlist", "unrestricted"]},
+            "allowed_endpoints": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+          }, "additionalProperties": false
+        },
+        "clock": {"enum": ["denied", "monotonic_only", "wall_clock"]},
+        "randomness": {"enum": ["denied", "deterministic_seeded", "os_random"]},
+        "environment_keys": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "secret_handle_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    },
+    "enforcement_observation": {
+      "type": "object",
+      "required": ["claim", "sandbox_instance_ref", "observer_ref", "probe_results", "os_enforcement_claim_allowed"],
+      "properties": {
+        "claim": {"enum": ["declared_only", "simulated_policy", "process_observed", "os_enforced_observed"]},
+        "sandbox_instance_ref": {"type": ["string", "null"]},
+        "observer_ref": {"type": "string", "minLength": 1},
+        "probe_results": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "object", "required": ["probe", "requested_value", "allowed", "evidence_ref"],
+            "properties": {
+              "probe": {"enum": ["executable", "read_path", "write_path", "network", "clock", "randomness"]},
+              "requested_value": {"type": "string", "minLength": 1},
+              "allowed": {"type": "boolean"},
+              "evidence_ref": {"type": "string", "minLength": 1}
+            }, "additionalProperties": false
+          }
+        },
+        "os_enforcement_claim_allowed": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "replay_grade": {
+      "type": "object",
+      "required": ["grade", "artifact_refs", "same_executable_digest", "same_inputs", "effect_reobserved", "rollback_reobserved", "playback_only"],
+      "properties": {
+        "grade": {"enum": ["record_playback", "deterministic_simulation", "bounded_live_reexecution", "deployed_live_reexecution"]},
+        "artifact_refs": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "same_executable_digest": {"type": "boolean"},
+        "same_inputs": {"type": "boolean"},
+        "effect_reobserved": {"type": "boolean"},
+        "rollback_reobserved": {"type": "boolean"},
+        "playback_only": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "irreversible_residuals": {
+      "type": "object",
+      "required": ["state", "items", "owner_ref", "review_trigger"],
+      "properties": {
+        "state": {"enum": ["none_observed_in_bounded_probe", "present", "unknown"]},
+        "items": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "owner_ref": {"type": "string", "minLength": 1},
+        "review_trigger": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": ["state", "ordinary_dispatch_allowed", "sandbox_claim_allowed", "support_state_effect"],
+      "properties": {
+        "state": {"enum": ["bounded_probe_only", "eligible_for_scoped_dispatch", "blocked", "quarantined"]},
+        "ordinary_dispatch_allowed": {"type": "boolean"},
+        "sandbox_claim_allowed": {"type": "boolean"},
+        "support_state_effect": {"enum": ["none", "blocks_promotion", "eligible_for_bounded_evidence_review"]}
+      },
+      "additionalProperties": false
+    },
+    "promotion_blockers": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "non_claims": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

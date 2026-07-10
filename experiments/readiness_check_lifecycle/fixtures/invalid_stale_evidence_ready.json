@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["decision"],
+  "value": {"state": "ready", "ordinary_routing_allowed": true},
+  "expected_error": "every applicable required check must be attempted and pass before readiness"
+}

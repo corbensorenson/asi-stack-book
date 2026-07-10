@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/supply_chain_affected_path_record.schema.json",
+  "title": "Supply-Chain Affected-Path Record",
+  "type": "object",
+  "required": ["record_id", "source_ids", "requested_artifact", "nodes", "edges", "assurance_references", "invalidation_event", "declared_affected_closure", "response_routes", "admission", "lifecycle_closure", "promotion_blockers", "non_claims"],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "requested_artifact": {
+      "type": "object",
+      "required": ["node_id", "declared_name", "digest", "requested_scope"],
+      "properties": {
+        "node_id": {"type": "string", "minLength": 1},
+        "declared_name": {"type": "string", "minLength": 1},
+        "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "requested_scope": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "nodes": {
+      "type": "array", "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["node_id", "kind", "declared_name", "digest", "version", "scope", "owner_ref", "freshness", "state"],
+        "properties": {
+          "node_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["dataset", "code", "dependency", "build_run", "training_run", "model", "derivative", "release", "signer", "supplier"]},
+          "declared_name": {"type": "string", "minLength": 1},
+          "digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+          "version": {"type": "string", "minLength": 1},
+          "scope": {"type": "string", "minLength": 1},
+          "owner_ref": {"type": "string", "minLength": 1},
+          "freshness": {"enum": ["current", "stale", "unknown"]},
+          "state": {"enum": ["declared", "verified", "invalidated", "revoked", "retired"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "edges": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["from_node", "to_node", "relation", "recorded_at"],
+        "properties": {
+          "from_node": {"type": "string", "minLength": 1},
+          "to_node": {"type": "string", "minLength": 1},
+          "relation": {"enum": ["used_by", "built_into", "trained_into", "signed", "supplied", "derived_into", "released_as"]},
+          "recorded_at": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "assurance_references": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["reference_id", "kind", "subject_node", "policy_scope", "verifier_ref", "state", "observed_at", "expires_at", "limitations"],
+        "properties": {
+          "reference_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["bom", "provenance", "signature", "supplier_declaration", "advisory"]},
+          "subject_node": {"type": "string", "minLength": 1},
+          "policy_scope": {"type": "string", "minLength": 1},
+          "verifier_ref": {"type": "string", "minLength": 1},
+          "state": {"enum": ["verified", "unverified", "stale", "revoked", "unresolved"]},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "expires_at": {"type": "string", "format": "date-time"},
+          "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        },
+        "additionalProperties": false
+      }
+    },
+    "invalidation_event": {
+      "type": "object",
+      "required": ["event_id", "prior_event_ref", "event_type", "subject_node", "observed_at", "authority_ref", "invalidates_admission", "reason_ref"],
+      "properties": {
+        "event_id": {"type": "string", "minLength": 1},
+        "prior_event_ref": {"type": "string", "minLength": 1},
+        "event_type": {"enum": ["advisory", "revoked_signer", "supplier_incident", "dependency_change", "dataset_change", "discovered_derivative", "stale_inventory"]},
+        "subject_node": {"type": "string", "minLength": 1},
+        "observed_at": {"type": "string", "format": "date-time"},
+        "authority_ref": {"type": "string", "minLength": 1},
+        "invalidates_admission": {"type": "boolean"},
+        "reason_ref": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "declared_affected_closure": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "response_routes": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["node_id", "route", "owner_ref", "re_review_trigger", "ordinary_use_allowed"],
+        "properties": {
+          "node_id": {"type": "string", "minLength": 1},
+          "route": {"enum": ["repair", "review", "quarantine", "retire"]},
+          "owner_ref": {"type": "string", "minLength": 1},
+          "re_review_trigger": {"type": "string", "minLength": 1},
+          "ordinary_use_allowed": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "admission": {
+      "type": "object",
+      "required": ["decision", "custody_review_allowed", "readiness_review_allowed", "support_state_effect"],
+      "properties": {
+        "decision": {"enum": ["eligible_for_custody_review", "repair", "review", "quarantined", "blocked"]},
+        "custody_review_allowed": {"type": "boolean"},
+        "readiness_review_allowed": {"type": "boolean"},
+        "support_state_effect": {"enum": ["none", "blocks_promotion", "eligible_for_bounded_evidence_review"]}
+      },
+      "additionalProperties": false
+    },
+    "lifecycle_closure": {
+      "type": "object",
+      "required": ["residual_owner_ref", "retention_until", "disposal_or_retirement_ref", "next_review_trigger"],
+      "properties": {
+        "residual_owner_ref": {"type": "string", "minLength": 1},
+        "retention_until": {"type": "string", "format": "date-time"},
+        "disposal_or_retirement_ref": {"type": "string", "minLength": 1},
+        "next_review_trigger": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "promotion_blockers": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "non_claims": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "asi_stack.licensing_provenance_policy.v0",
-  "operative_license": "all_rights_reserved_no_permission_granted",
+  "operative_license": "conditional_v2.0.0_path_routed_split_otherwise_all_rights_reserved",
   "file_set_command": "git ls-files --cached --others --exclude-standard -z",
   "rules": [
     {
@@ -10,6 +10,14 @@
       "provenance_status": "operative_policy_not_relicensed",
       "candidate_lane": "reserved_operative",
       "blocking_reason": "This is the only operative rights grant surface and must remain authoritative until an explicit author decision is implemented."
+    },
+    {
+      "id": "third-party-license-texts",
+      "path_regex": "^licenses/(CC-BY-4\\.0|Apache-2\\.0)\\.txt$",
+      "artifact_class": "third_party_license_text",
+      "provenance_status": "verbatim_official_license_text",
+      "candidate_lane": "license_text_excluded",
+      "blocking_reason": "Official license legal text is reproduced verbatim for the routed grant and is not itself relicensed by the project."
     },
     {
       "id": "nonrelease-markers",

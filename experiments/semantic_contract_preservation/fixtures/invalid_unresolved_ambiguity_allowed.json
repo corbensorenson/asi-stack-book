@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["ambiguity_ledger", 0],
+  "value": {"state": "unresolved", "resolution_ref": null, "strict_compile_effect": "allow"},
+  "expected_error": "unresolved ambiguity cannot allow strict compilation"
+}

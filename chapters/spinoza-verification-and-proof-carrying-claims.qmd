@@ -4,7 +4,7 @@ chapter_id: "spinoza-verification-and-proof-carrying-claims"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-10"
 primary_sources:
   - "spinoza"
   - "genesiscode"
@@ -13,6 +13,11 @@ primary_sources:
   - "treellm"
   - "uat"
   - "talos"
+  - "cca_project"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
+  - "corbens_best_model_possible_project"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -30,11 +35,11 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-01 |
-| Primary source records | `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos` |
+| Last updated | 2026-07-10 |
+| Primary source records | `spinoza`, `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos`; external comparators: `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` |
+| Source queue | primary: `spinoza`; supporting: `genesiscode`, `coherence_exchange`, `verification_bandwidth`, `treellm`, `uat`, `talos`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`; external comparators: `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` |
 | Source loading state | passage-reviewed local raw cache: `spinoza`, `genesiscode`, `verification_bandwidth`, `treellm`, `uat`, `talos`; connector/source-note mapped: `coherence_exchange`; source notes: `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` |
 | Test state | `proof_carrying_claim` and `tribunal_review_record` fixture validation are implemented; `python3 scripts/validate_proof_carrying_claims.py` and `python3 scripts/validate_tribunal_review.py` pass bounded synthetic record checks; `AsiStackProofs.ProofCarryingClaims` now includes finite record predicates plus negative-case theorems rejecting passed verifier records without artifact refs and negative verifier results that try to produce scoped updates; `AsiStackProofs.Tribunal` implements finite record predicates, bounded negative-case theorems, and a finite lifecycle route function for missing review, high-risk probe/independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review; theorem-validity, citation-accuracy, semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, runtime, and deployed-review tests remain unimplemented. |
 
@@ -176,6 +181,16 @@ behavior.
 | Tribunal review | `uat`, `spinoza`, `talos`, `verification_bandwidth`, `coherence_exchange` | Retrieval-bounded dossiers, atomic proposition states, adversarial probes, reviewer roles, dissent, cycle caps, SME checkpoints, constraint effects, and action-linked review artifacts. | No multi-reviewer tribunal run, reviewer-independence audit, adversarial-probe-quality result, consensus-quality result, or verdict-correctness result exists here. |
 | External comparators | `ext_proof_carrying_code_1997`, `ext_lean4_theorem_proving`, `ext_autoformalization_llms_2022`, `ext_ai_safety_debate_2018`, `ext_llm_as_judge_mt_bench_2023`, `ext_contestable_ai_design_2022` | Position machine-checkable evidence, dependent-type proof practice, informal-to-formal translation, adversarial debate, model-graded review, and contestable review surfaces. | Comparator status only; no local reproduction, autoformalizer, debate run, judge-calibration result, tribunal-quality result, or support-state promotion. |
 
+### Strongest objection
+
+Method diversity can be theater. Six differently named checks may share the
+same evidence, prompt, implementation, evaluator, or blind spot. An
+independence graph can disclose those dependencies, but it cannot prove that
+the remaining groups are substantively independent or competent. The protocol
+therefore treats method labels and independence groups as accounting inputs,
+not reviewer-quality evidence; verdict correctness still requires empirical
+calibration beyond the fixture.
+
 ## Mechanism
 
 The verification event begins with route selection. A claim or artifact enters
@@ -232,6 +247,18 @@ claim can ask for a formal tier and receive only a citation dossier; a tribunal
 can produce dissent without acceptance; a replay can show procedure adherence
 without proving the surrounding interpretation. Those mismatches become
 recorded blockers or residuals rather than editorial discretion.
+
+### Method labels, independence, and refusal
+
+The historical-project packet requires each tribunal route to name its method:
+formal proof, citation check, procedural replay, adversarial probe,
+falsification, or abstention. Each method has an independence group and a
+bounded dependency graph, so dependent duplicates cannot inflate the
+independent-method count. An empty dossier cannot pass by vacuity;
+falsification must be attempted; abstention remains an explicit non-approval
+result; every veto carries a reason and appears in preserved dissent; and no
+default approval is allowed. These are record semantics, not evidence that the
+methods are adequate or the reviewers independent.
 
 ```{mermaid}
 flowchart LR
@@ -306,6 +333,12 @@ Minimum proof-carrying and tribunal fields include:
 - High-risk artifacts cannot bypass required tribunal review.
 - Prior review over unchanged evidence cannot quietly reverse a rejection into
   acceptance.
+- Proof, citation, replay, adversarial, falsification, and abstention methods
+  are labeled explicitly and counted by distinct independence groups.
+- Empty or vacuous cases abstain or block rather than pass.
+- Falsification and abstention remain visible, and every veto or dissent is
+  preserved in the verdict instead of becoming a silent override.
+- Default approval is forbidden.
 
 Together, these invariants keep verification from becoming ceremony. A strong
 label is not enough. The stack must know which tier was requested, which
@@ -340,6 +373,12 @@ effect, required action, blocker, downgrade, or residual.
 Repeated-review laundering happens when unchanged evidence is reviewed until a
 desired answer appears.
 
+Independence laundering counts correlated methods as separate reviewers.
+Vacuous-pass laundering accepts an empty case because no counterexample was
+present. Silent-veto laundering blocks or shapes a verdict without recording
+who objected and why. Abstention erasure converts “insufficient evidence” into
+agreement, while default approval treats missing review as acceptance.
+
 ## Minimum Viable Implementation
 
 The minimum viable implementation is not an open-domain verifier or tribunal.
@@ -350,6 +389,7 @@ The implementation preserves:
 
 - `schemas/proof_carrying_claim.schema.json`;
 - `schemas/tribunal_review_record.schema.json`;
+- `schemas/tribunal_method_independence_record.schema.json`;
 - `schemas/claim_record.schema.json`;
 - `schemas/belief_revision_record.schema.json`;
 - `experiments/proof_carrying_claims/fixtures/valid_formal_narrow_pass.json`;
@@ -370,6 +410,9 @@ The implementation preserves:
 - `experiments/tribunal_review/fixtures/invalid_weak_non_claims.json`;
 - `python3 scripts/validate_proof_carrying_claims.py`;
 - `python3 scripts/validate_tribunal_review.py`;
+- `tests/fixtures/protocol_records/tribunal_method_independence_record.valid.json`;
+- eleven mutations under `experiments/tribunal_method_independence/fixtures/`;
+- `python3 scripts/validate_tribunal_method_independence.py`;
 - `python3 scripts/validate_adversarial_review_dossier_probe.py`;
 - `docs/adversarial_review_dossier_probe.md`;
 - `experiments/adversarial_review_dossier/results/2026-07-02-local.json`.
@@ -437,6 +480,7 @@ behavior rather than only schema-shaped discipline.
 | Action verdict negative case | Check that a finite action-requiring verdict rejects the action/constraint predicate when required actions or constraint effects are missing. | implemented in `AsiStackProofs.Tribunal.action_verdict_without_actions_or_constraints_rejected`; no deployed enforcement or verdict-correctness claim |
 | Tribunal lifecycle route envelope | Check that finite tribunal review lifecycle records route missing review, high-risk probe and independence gaps, changed-evidence reuse, unrecorded dissent, action constraints, missing evidence-transition records, and complete bounded review to distinct modeled outcomes. | implemented in `AsiStackProofs.Tribunal`; no tribunal runtime, reviewer-quality, probe-quality, verdict-correctness, action-enforcement, or support-state-promotion claim |
 | Adversarial review dossier and verdict-quality probe | Check that a deterministic synthetic review-dossier fixture includes scoped acceptance with dissent preserved, semantic-mismatch rejection, rejected negative controls, rejected LLM-judge-only acceptance, no support-state effect, and explicit non-claim boundaries. | implemented by `python3 scripts/validate_adversarial_review_dossier_probe.py`; two valid synthetic review dossiers and seven expected-invalid controls; no semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, LLM-judge, debate-system, or support-state-promotion claim |
+| Historical-project tribunal method/independence fixture | Check six method labels, distinct independence groups, bounded dependencies, vacuous-case refusal, substantive falsification, explicit abstention, visible veto/dissent, no default approval, and no fixture promotion. | implemented by `python3 scripts/validate_tribunal_method_independence.py` with one bounded five-project record and eleven expected-invalid mutations; no reviewer-independence, method-adequacy, verdict-correctness, deployed-tribunal, or support claim |
 | Tier assignment over real verifier outputs | Check that support tiers match verifier result and limitations over actual verifier outputs and interpretation examples. | planned; not run |
 | Real adversarial review quality test | Check reviewer routing, probe coverage, consensus quality, and action-linked verdict traces over reproducible dossiers. | planned; not run |
 
@@ -494,6 +538,7 @@ deployed review behavior.
 | `ext_ai_safety_debate_2018` | AI safety via debate | adversarial_review | Comparator for adversarial agents plus human judge review when direct human judgment is difficult. | source note available |
 | `ext_llm_as_judge_mt_bench_2023` | Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena | model_evaluation | Comparator for model-graded evaluation, human-preference agreement, and judge bias limits. | source note available |
 | `ext_contestable_ai_design_2022` | Contestable AI design literature | external_literature | Comparator for challenge, review, appeal, dissent, and contestable decision surfaces. | source note available |
+| `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project` | Historical project lineage | local_verification_and_tribunal_lineage | Method labeling, verifier/tribunal boundaries, dependence disclosure, dissent, falsification, abstention, vacuous-pass detection, replay limits, and negative cases for nominal review. | public-safe pinned notes reviewed; one hand-authored tribunal fixture only, no historical runtime replay or independent replication |
 
 No listed external source is local reproduction evidence. The records orient
 readers around proof-carrying code, theorem-proving practice,

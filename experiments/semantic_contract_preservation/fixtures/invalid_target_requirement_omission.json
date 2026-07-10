@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["target_contract", "requirement_refs"],
+  "value": ["req://preserve-authority", "req://validate-target"],
+  "expected_error": "target contract must retain every source requirement"
+}

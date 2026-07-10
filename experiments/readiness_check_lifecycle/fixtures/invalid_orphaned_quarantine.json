@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["quarantine"],
+  "value": {"owner_ref": null, "affected_descendant_refs": [], "disposition_ref": null},
+  "expected_error": "active quarantine requires reasons, owner, affected descendants, and disposition"
+}

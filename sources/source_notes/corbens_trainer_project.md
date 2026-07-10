@@ -231,16 +231,22 @@ closed.
 
 ## Book Chapters Supported
 
+- `runtime-adapters-tool-permissions-and-human-approval`
+
 Primary existing routes:
 
 - `evidence-states-and-claim-discipline`
 - `artifact-graphs-audit-logs-and-replay`
+- `integrated-reference-architecture`
 - `benchmark-ratchets-and-anti-goodhart-evidence`
 - `ai-supply-chain-integrity-and-lifecycle-provenance`
 - `recursive-self-improvement-boundaries`
 - `open-ended-improvement-engines`
 - `system-boundaries-and-authority`
+- `security-kernel-and-digital-scifs`
 - `resource-economics-and-token-budgets`
+- `readiness-gates-residual-escrow-and-quarantine`
+- `procedural-memory-and-cognitive-loop-closure`
 - `artifact-steward-agents-and-living-project-governance`
 
 No new chapter is proposed yet. The epistemic-control-plane concept should be

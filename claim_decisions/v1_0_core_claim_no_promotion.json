@@ -105,23 +105,28 @@
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and finite obligation-preservation hooks, but no compiler implementation, lowering trace, repair benchmark, or semantic-equivalence review has been accepted.",
+      "decision_reason": "The chapter now has eight reviewed source mappings, finite obligation-preservation hooks, synthetic compilation traces, and a three-project contract-preservation fixture that rejects nine semantic-laundering mutations. Those artifacts improve record discipline but do not implement a source parser or target backend, inspect generated artifact semantics, measure repair locality, or justify promotion.",
       "required_evidence": [
-        "semantic IR compiler trace",
-        "repair and lowering regression tests",
-        "semantic-equivalence review"
+        "source-plan-to-generated-artifact compiler trace",
+        "artifact-aware semantic preservation validators",
+        "measured localized-repair and direct-generation comparison"
       ],
       "blockers": [
-        "no compiler run",
-        "no artifact-generation benchmark",
-        "no accepted semantic repair evidence"
+        "fixture is hand-authored rather than emitted by a compiler",
+        "no generated target-artifact semantic validation",
+        "no measured repair-locality or artifact-quality comparison"
       ],
       "non_claims": [
         "does not prove cognitive compiler correctness",
-        "does not prove artifact quality improvement"
+        "does not prove arbitrary paraphrase equivalence",
+        "does not prove artifact quality improvement or repair locality",
+        "does not reproduce the mined historical projects"
       ],
       "refs": [
         "chapters/cognitive-compilation-and-semantic-ir.qmd",
+        "schemas/semantic_contract_preservation_record.schema.json",
+        "tests/fixtures/protocol_records/semantic_contract_preservation_record.valid.json",
+        "scripts/validate_semantic_contract_preservation.py",
         "appendices/C_claim_evidence_matrix.qmd#cognitive-compilation-and-semantic-ir.core"
       ]
     },
@@ -213,23 +218,32 @@
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source mappings and finite artifact-provenance hooks, but no artifact graph service, replay engine, audit reconstruction run, or completeness checker has been accepted.",
+      "decision_reason": "The chapter now has source mappings, finite artifact-provenance hooks, and a bounded five-project projection/revocation harness covering canonical truth, transitive closure, replay grades, terminal receipts, and relocation identity, but no deployed artifact graph service, real-work replay engine, audit reconstruction benchmark, or open-world completeness checker has been accepted.",
       "required_evidence": [
-        "artifact graph replay",
-        "audit-log reconstruction test",
-        "missing-provenance negative cases"
+        "deployed artifact graph replay over real work",
+        "audit-log reconstruction benchmark",
+        "open-world provenance and revocation-completeness evaluation"
       ],
       "blockers": [
-        "no artifact graph implementation",
-        "no replay metadata validation over real outputs",
-        "no audit reconstruction benchmark"
+        "no deployed artifact graph implementation",
+        "no replay validation over real historical-project outputs",
+        "no audit reconstruction or revocation-completeness benchmark"
       ],
       "non_claims": [
         "does not prove replayability of real work",
-        "does not prove audit-log completeness"
+        "does not prove audit-log or reverse-dependency completeness",
+        "does not reproduce any historical-project capability or runtime result"
       ],
       "refs": [
         "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+        "schemas/artifact_projection_revocation_record.schema.json",
+        "tests/fixtures/protocol_records/artifact_projection_revocation_record.valid.json",
+        "scripts/validate_artifact_projection_revocation.py",
+        "sources/source_notes/cca_project.md",
+        "sources/source_notes/moecot_manifest_project.md",
+        "sources/source_notes/bugbrain_project.md",
+        "sources/source_notes/corbens_trainer_project.md",
+        "sources/source_notes/corbens_best_model_possible_project.md",
         "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core"
       ]
     },
@@ -577,23 +591,32 @@
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter integrates the architecture and has finite reference-trace hooks, but no end-to-end reference trace, cross-layer runtime replay, architecture red-team, or external review has been accepted.",
+      "decision_reason": "The chapter integrates the architecture, finite reference traces, an executed governed repository-change slice, and a bounded five-project name-to-effect fixture, but no deployed whole-stack trace kernel, cross-layer runtime replay, or open-world joinability/completeness evaluation has been accepted.",
       "required_evidence": [
-        "end-to-end reference trace",
-        "blocked-path and happy-path replays",
-        "architecture-level red-team review"
+        "deployed or externally observable end-to-end reference trace",
+        "matched blocked-path and happy-path cross-layer runtime replays",
+        "open-world artifact, authority, receipt, evaluator, and claim-boundary completeness evaluation"
       ],
       "blockers": [
-        "no whole-stack trace kernel",
+        "no deployed whole-stack trace kernel",
         "no cross-layer runtime replay",
-        "no system-level adversarial review yet"
+        "finite fixtures cannot prove observation truth, causal completeness, or service enforcement"
       ],
       "non_claims": [
         "does not prove integrated ASI behavior",
-        "does not prove cross-layer safety"
+        "does not prove cross-layer safety or open-world joinability",
+        "does not reproduce any historical-project capability or runtime result"
       ],
       "refs": [
         "chapters/integrated-reference-architecture.qmd",
+        "schemas/name_to_effect_trace_record.schema.json",
+        "tests/fixtures/protocol_records/name_to_effect_trace_record.valid.json",
+        "scripts/validate_name_to_effect_trace.py",
+        "sources/source_notes/cca_project.md",
+        "sources/source_notes/moecot_manifest_project.md",
+        "sources/source_notes/bugbrain_project.md",
+        "sources/source_notes/corbens_trainer_project.md",
+        "sources/source_notes/corbens_best_model_possible_project.md",
         "appendices/C_claim_evidence_matrix.qmd#integrated-reference-architecture.core"
       ]
     },
@@ -771,10 +794,10 @@
       "decision": "no_promotion",
       "current_support_state": "argument",
       "support_state_effect": "argument_only",
-      "decision_reason": "The chapter has source-noted C-SCRM, build-provenance, model-signing, and AI BOM comparators plus finite advisory/signature quarantine routes, but no ASI Stack AI BOM, supplier assessment, build or training provenance, signing/verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, readiness decision, or deployment result has been accepted as evidence for the broad claim.",
+      "decision_reason": "The chapter has source-noted C-SCRM, build-provenance, model-signing, and AI BOM comparators, finite advisory/signature quarantine routes, and one hand-authored affected-path fixture with ten rejecting mutations. That fixture checks declared graph closure and record semantics only; no real AI BOM, supplier assessment, build or training provenance, signing/verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, readiness decision, or deployment result has been accepted as evidence for the broad claim.",
       "required_evidence": [
-        "public-safe synthetic supply-chain workload with bounded valid, missing-lineage, stale-BOM, unverified-signature, unresolved-critical-advisory, revoked-signer, changed-derivative, revocation, and residual controls",
-        "independent review of a bounded supply-chain threat model, provenance/signature verification policy, inventory freshness, advisory-routing, and affected-release record",
+        "replayed supply-chain operation over tracked disposable artifacts with observed lineage, BOM/provenance/signature state, an injected upstream invalidation, complete declared affected-path propagation, quarantine or repair effects, and rollback or retirement receipts",
+        "matched simpler baseline reporting propagation misses, false accepts/rejects, latency, operator burden, and residual discovery; any independent specialist review is postpublication and is not a completion gate",
         "accepted transition for a narrowed supply-chain admission-routing or re-review-propagation claim"
       ],
       "blockers": [
@@ -789,7 +812,10 @@
       ],
       "refs": [
         "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
-        "appendices/C_claim_evidence_matrix.qmd#ai-supply-chain-integrity-and-lifecycle-provenance.core"
+        "appendices/C_claim_evidence_matrix.qmd#ai-supply-chain-integrity-and-lifecycle-provenance.core",
+        "schemas/supply_chain_affected_path_record.schema.json",
+        "tests/fixtures/protocol_records/supply_chain_affected_path_record.valid.json",
+        "scripts/validate_supply_chain_affected_paths.py"
       ]
     },
     {

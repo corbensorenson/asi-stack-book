@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["trainable_state_manifest", 0, "updated"],
+  "value": true,
+  "expected_error": "updated state requires trainable classification and an update receipt"
+}

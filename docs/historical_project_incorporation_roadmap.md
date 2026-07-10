@@ -238,6 +238,18 @@ If these conditions do not hold, reject the new chapter and distribute the
 remaining material as sections in the five existing owners. Do not create a
 stub to reserve the topic.
 
+Current decision (2026-07-10): **reject a separate chapter for the current
+incorporation program**. The ownership test is not met strongly enough to
+justify a sixth memory chapter: durable object identity and bounded
+materialization remain with the Virtual Context ABI; transactional persistence,
+taint, and restart behavior remain with Context Transactions; belief support
+and revision remain with Claim Ledgers; reusable execution trajectories remain
+with Procedural Memory; and generic lineage remains with Artifact Graphs. The
+topic may be reconsidered only if independent literature plus a distinct
+interface, invariant family, public-safe artifact, and failure family remain
+unowned after those five chapters are re-audited. No placeholder chapter is
+added and no support state changes.
+
 ### Wave 5 — Reconcile the architecture and roadmap
 
 Purpose: ensure the final book reads as one architecture rather than a series of

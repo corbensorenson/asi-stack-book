@@ -1,0 +1,70 @@
+{
+  "record_id": "historical-project-lineage.metric-provenance.v1",
+  "claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
+  "benchmark_ref": "local-lineage://six-historical-projects",
+  "metric": {
+    "metric_id": "source-reported-project-score",
+    "origin_class": "source_reported",
+    "formula_ref": "",
+    "input_refs": [
+      "sources/source_notes/cca_project.md#evidence-reviewed",
+      "sources/source_notes/moecot_manifest_project.md#evidence",
+      "sources/source_notes/beastbrain_project.md#evidence",
+      "sources/source_notes/bugbrain_project.md#evidence",
+      "sources/source_notes/corbens_trainer_project.md#evidence",
+      "sources/source_notes/corbens_best_model_possible_project.md#metric-provenance-truth"
+    ],
+    "evaluator_ref": "local maintainer source-note review",
+    "observation_ref": "",
+    "target_construct": "general task capability",
+    "target_capacity": {
+      "status": "unknown",
+      "evidence_refs": ["docs/project_mining/cross-project-synthesis.md"],
+      "reason": "the book repository did not reproduce a common workload and several project paths could not represent the claimed target"
+    },
+    "contamination_state": "unknown",
+    "admissibility": "blocked"
+  },
+  "closure_inheritance": {
+    "parent_ratchet_refs": ["docs/historical_project_incorporation_roadmap.md#wave-1--harden-the-evidence-spine"],
+    "inherited_regression_refs": [
+      "sources/source_notes/cca_project.md#failure-modes",
+      "sources/source_notes/corbens_trainer_project.md#promotion-and-revocation",
+      "sources/source_notes/corbens_best_model_possible_project.md#failure-modes"
+    ],
+    "inherited_exclusion_refs": [
+      "sources/source_notes/beastbrain_project.md#non-claims",
+      "sources/source_notes/bugbrain_project.md#non-claims"
+    ],
+    "override_refs": []
+  },
+  "retry_lineage": {
+    "lineage_id": "historical-project-score-review",
+    "attempt_index": 1,
+    "retry_ceiling": 2,
+    "prior_attempt_refs": [],
+    "stop_condition": "stop when retained inputs cannot support a common replay or when another retry cannot change transfer distance, independence, or causal binding",
+    "override_ref": ""
+  },
+  "checkpoint_output_binding": {
+    "checkpoint_ref": "",
+    "tokenizer_ref": "",
+    "runtime_path_ref": "",
+    "raw_output_ref": "",
+    "evaluator_output_ref": "",
+    "claim_ref": "benchmark-ratchets-and-anti-goodhart-evidence.core",
+    "complete": false
+  },
+  "support_state_effect": "blocks_promotion",
+  "promotion_blockers": [
+    "source-reported metrics were not reproduced on a shared workload",
+    "metric origin and contamination are not uniformly recoverable",
+    "checkpoint-to-output causal binding is incomplete",
+    "the six projects are one local lineage rather than independent replications"
+  ],
+  "non_claims": [
+    "does not establish benchmark performance or model capability",
+    "does not treat source-reported, proxy, constant, or fixture metrics as measured results",
+    "does not promote the chapter core claim"
+  ]
+}

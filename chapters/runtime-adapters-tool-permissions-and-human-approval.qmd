@@ -4,7 +4,7 @@ chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-03"
+last_updated: "2026-07-10"
 primary_sources:
   - "talos"
   - "viea"
@@ -15,11 +15,17 @@ primary_sources:
   - "field_of_god_ai_constitution"
   - "theseus_operator_os"
   - "ext_cap_theorem_gilbert_lynch_2002"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
+  - "corbens_trainer_project"
+  - "corbens_best_model_possible_project"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact claim-source mappings with passage-reviewed references for five local raw-cache sources plus two local public-project sources; `moecot` remains connector/source-note mapped."
   - "Protocol schema/fixture validation, finite Lean permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates, Runtime Adapters negative-case theorems, a synthetic runtime-adapter permission harness, a public-safe Runtime adapter effect replay probe, a deterministic Runtime adapter adversarial boundary probe, a deterministic Human oversight degradation fixture, an accepted human-oversight no-promotion decision, and the cross-boundary partitioned-authority fixture are implemented; the effect probe performs one generated temp-file write, the adversarial probe covers two valid synthetic adapter boundary reviews plus twelve expected-invalid controls, the oversight fixture covers three valid finite records plus seven expected-invalid controls, the no-promotion decision blocks approval-workflow and deployed-human-factors promotion, and the partitioned-authority fixture covers stale grants, revocation-delay quarantine, fresh authority receipt requirements, grant/effect race residual ownership, no-mutation evidence, and CAP-style authority consistency boundaries. No deployed adapter execution, real sandbox, approval service, secret-handle mediation, deployed partition tolerance, distributed consensus, revocation propagation, policy-enforcement correctness, rollback service, reviewer-correctness result, deployed human-factors result, or security review has been run for the runtime-adapter layer."
+  - "One hand-authored five-project capability-envelope record and ten deterministic mutations now distinguish executable/path/network/write/clock/randomness scopes, process observation, OS enforcement, playback, bounded live reexecution, irreversible residuals, and ordinary dispatch; no OS-enforced sandbox or deployed adapter is claimed."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -31,11 +37,11 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-04 |
-| Primary source records | `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`, `ext_cap_theorem_gilbert_lynch_2002` |
+| Last updated | 2026-07-10 |
+| Primary source records | `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`, `ext_cap_theorem_gilbert_lynch_2002`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`; external comparator: `ext_cap_theorem_gilbert_lynch_2002`; connector/recovery: `moecot` |
+| Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`; external comparator: `ext_cap_theorem_gilbert_lynch_2002`; connector/recovery: `moecot` |
 | Source loading state | passage-reviewed local raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; passage-reviewed local public-project source: `field_of_god_ai_constitution`, `theseus_operator_os`; connector/source-note mapped: `moecot` |
 | Test state | Runtime adapter fixture validation now includes invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, non-claims, and authority probes; finite permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates plus negative-case theorems are implemented in `AsiStackProofs.RuntimeAdapters` for missing parent-job permission, high-impact unapproved adapter calls that try to remain unrejected, missing scoped approval, mismatched effect leases, expired leases, revoked leases, unsandboxed leases, over-ceiling requested authority, confused-deputy attempts, sandbox-escape attempts, high-impact rollback-required calls without rollback handles, revoked approvals and authority receipts without no-mutation denial evidence, missing effect receipts, missing no-mutation evidence, inexact rollback, repository/network side effects, support-state effects, parentage mismatch, approval expiry, sandbox path escape, secret materialization, missing audit refs, missing non-claim boundaries, reviewer overload, rubber-stamped approval, alarm fatigue, and automation-bias contradictions; `python3 scripts/validate_runtime_adapter_permissions.py` checks 2 valid and 7 expected-invalid synthetic typed-job, adapter-invocation, authority-use-receipt, and authority-probe scenarios; the Runtime adapter effect replay probe (`python3 scripts/validate_runtime_adapter_effect_probe.py`) checks `valid_low_impact_local_write_effect_replay`, a rollback-exact temp-file restoration, `invalid_missing_permission_no_mutation`, and `invalid_expired_approval_no_mutation`; the Runtime adapter adversarial boundary probe (`python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`) checks two valid synthetic adapter boundary reviews and twelve expected-invalid controls without support-state promotion; the Human oversight degradation fixture (`python3 scripts/validate_human_oversight_degradation.py`) writes `experiments/human_oversight_degradation/results/2026-07-03-local.json`; `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json` records an accepted `blocks_promotion` no-change decision for approval-workflow, reviewer-correctness, alert-quality, deployed-human-factors, runtime-adapter-safety, and chapter-core promotion claims; and the partitioned authority fixture (`python3 scripts/validate_partitioned_authority_fixture.py`) writes `experiments/partitioned_authority/results/2026-07-03-local.json` with stale-grant, fresh authority receipt, grant/effect race, no-mutation evidence, and CAP-style authority consistency checks. Deployed adapter execution, sandbox isolation, approval-service behavior, reviewer correctness, deployed human-factors behavior, secret-handle safety, rollback-service behavior, deployed partition tolerance, distributed consensus, revocation propagation, policy-enforcement correctness, and security review remain untested. |
 
@@ -141,6 +147,41 @@ High-impact actions include irreversible deployments, external messages, monetar
 
 The adapter's evidence is as important as the effect. A successful call should leave enough receipt material for replay, review, or incident response. A failed call should leave the denied capability, policy reason, residual, and recovery path. A partially reversible call should say which part can be rolled back and which part becomes an external residual. That discipline lets procedural-memory chapters later learn from tool use without turning every successful-looking action into a reusable procedure.
 
+### Capability envelope and replay grade
+
+The word `sandboxed` is too coarse to carry authority. A capability envelope
+names the exact executable and digest, readable prefixes, writable prefixes,
+network mode and endpoints, clock mode, randomness mode, environment keys, and
+secret-handle references. Each observed probe is compared against that
+envelope. A path prefix does not imply network denial; a deterministic random
+seed does not imply wall-clock denial; and a process that happened to stay
+inside its declared paths does not establish that the operating system forced
+it to do so.
+
+Replay also needs a grade. Record playback reads an old receipt. Deterministic
+simulation reruns a model of the effect. Bounded live reexecution performs and
+reobserves the effect in a disposable scope. Deployed live reexecution further
+binds the same executable digest and an observed enforcement environment. The
+existing temp-file probe reaches only bounded live reexecution: it reobserves a
+write and rollback, but it does not independently bind the executable digest or
+observe an OS sandbox.
+
+The historical-project lineage sharpens the boundary. MoECOT Manifest supplies
+typed effect, manifest, and replay records; BeastBrain and BugBrain supply
+negative cases where interface declarations or simulated checks can look like
+enforcement; Corben's Trainer supplies quarantine and revocable evidence
+pressure; and Corben's Best Model Possible supplies playback/live-replay and
+runtime-causality failures. They are one related local lineage, not independent
+replications or proof that a sandbox existed.
+
+The strongest objection is that an exact envelope can be perfectly specified
+and still be ignored by the process or kernel. That is correct. The envelope is
+a policy and observation contract, not enforcement evidence. The record may
+authorize an OS-enforcement claim only when an identified sandbox instance and
+its probes were observed. Until then, it remains a bounded probe, ordinary
+dispatch stays blocked, and irreversible residuals remain explicit even when
+none were observed in the toy run.
+
 The invocation lifecycle is:
 
 ```{mermaid}
@@ -229,6 +270,14 @@ This receipt structure keeps "tool call succeeded" from becoming a broad evidenc
 - Revoked approval, lease, or authority receipt records block dispatch unless denial-before-mutation and unchanged-state evidence are recorded.
 - Partitioned authority or a possible stale grant blocks high-impact dispatch until a fresh authority receipt or quarantine/no-mutation evidence exists.
 - Effect receipts separate request, approval, execution, verification, and rollback state.
+- Executable, read-path, write-path, network, clock, randomness, environment,
+  and secret-handle scopes remain independently declared and checked.
+- Process observation, simulated policy, and declared scope cannot be labeled
+  OS enforcement without an identified observed sandbox instance.
+- Playback, deterministic simulation, bounded live reexecution, and deployed
+  live reexecution remain distinct replay grades.
+- Irreversible residuals have an explicit state, owner, and review trigger even
+  when the bounded probe observed none.
 
 No adapter invocation is valid unless the parent job permissions include the adapter capability. A high-impact adapter call without approval is rejected before the tool receives authority.
 
@@ -242,6 +291,12 @@ The adapter boundary must preserve separation between request, approval, executi
 - Irreversible deployment without rollback.
 - Approval laundering, where a narrow human approval is reused as broad authorization.
 - Receipt laundering, where a successful tool response is treated as verified task success.
+- Sandbox theater, where declared paths or a cooperative process are described
+  as OS-enforced confinement.
+- Replay laundering, where receipt playback is described as live effect
+  reexecution or a bounded disposable probe is described as deployed replay.
+- Capability aliasing, where one executable, path, network, clock, or randomness
+  grant silently authorizes another.
 
 Tool overreach means the adapter performed beyond granted scope. Approval bypass means governance was skipped. Irreversible deployment without rollback means a failed action cannot be repaired. These failures should produce effect residuals and block future route promotion.
 
@@ -266,6 +321,16 @@ The Runtime adapter adversarial boundary probe adds breadth rather than runtime 
 The Human oversight degradation fixture adds a source-grounded reviewer-quality boundary. `python3 scripts/validate_human_oversight_degradation.py --write-result` records `experiments/human_oversight_degradation/results/2026-07-03-local.json` with three valid finite records and seven expected-invalid controls. It admits scoped low-fatigue approval, routes overloaded reviewers to delay or rotation, blocks automation-bias cases with visible contradiction and no independent evidence check, rejects missing reviewer qualifications, rejects template-only rubber-stamp approvals, escalates alarm fatigue, blocks support-state promotion from approval shape, and requires non-claim boundaries. The fixture is aligned to `lean:runtime.adapters.human_oversight_degradation_fixture_bridge`; `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json` records the accepted `blocks_promotion` decision that keeps approval-service quality, reviewer correctness, alert quality, deployed human-factors behavior, runtime-adapter safety, and the chapter core claim at `argument` until public-safe deployed or externally reviewable workflow traces exist. This remains finite synthetic record-gate evidence, not an approval-service result, reviewer-correctness result, deployed human-factors result, or support-state transition.
 
 The partitioned authority fixture adds the cross-boundary stale-authority case. `python3 scripts/validate_partitioned_authority_fixture.py --write-result` records `experiments/partitioned_authority/results/2026-07-03-local.json` with three valid finite records and six expected-invalid controls for partitioned revocation quarantine, healed-partition fresh authority receipt requirements, bounded fresh-receipt dispatch, stale-grant dispatch rejection, grant/effect race residual ownership, no-mutation evidence, support-state non-promotion, and non-claim boundaries. The fixture is aligned to `lean:personal_hives.partitioned_authority.fixture_bridge`; it is a hives/runtime boundary fixture, not deployed adapter execution, distributed consensus, partition tolerance, availability, revocation propagation, approval-service behavior, or evidence-transition support.
+
+The historical-project capability packet adds
+`schemas/sandboxed_adapter_capability_record.schema.json`, one bounded record
+linked to the existing temp-file replay, and ten expected-invalid mutations.
+It rejects executable and write-path escape, network use under denial,
+wall-clock or OS-random scope widening, process observation mislabeled as OS
+enforcement, playback mislabeled as live reexecution, missing irreversible
+residual detail, ordinary dispatch from a bounded probe, and fixture-based
+support promotion. The record says `sandbox_claim_allowed=false` and does not
+retroactively turn the temp-file probe into a sandbox test.
 
 ## Beyond the State of the Art
 
@@ -307,6 +372,7 @@ This lease-bound action surface is still proposed architecture. Tool-use support
 | Runtime adapter adversarial boundary probe | Check two valid synthetic adapter boundary reviews and twelve expected-invalid controls for parentage, authority, approval, sandbox, secret, rollback, receipt, audit, support-state, and non-claim boundaries. | implemented in `python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`; deterministic synthetic record gate only |
 | Human oversight degradation fixture and no-promotion decision | Check three valid finite records and seven expected-invalid controls for approval fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer qualification, support-state promotion, and non-claim boundaries; record a `blocks_promotion` decision for approval-workflow, reviewer-correctness, alert-quality, deployed-human-factors, runtime-adapter-safety, and chapter-core claims. | implemented in `python3 scripts/validate_human_oversight_degradation.py` and `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json`; deterministic synthetic record gate plus no-promotion decision only |
 | Partitioned authority fixture | Check stale grants, revocation-delay quarantine, fresh authority receipt requirements, grant/effect race residual ownership, no-mutation evidence, CAP-style authority consistency boundaries, and no support-state promotion at the hives/runtime boundary. | implemented in `python3 scripts/validate_partitioned_authority_fixture.py`; deterministic synthetic record gate only, no deployed partition tolerance or revocation propagation claim |
+| Historical-project capability-envelope and replay-grade fixture | Check executable/read/write/network/clock/randomness scopes, enforcement-observation truthfulness, playback versus bounded live reexecution, irreversible-residual disclosure, ordinary-dispatch blocking, and no sandbox/support overclaim. | implemented in `python3 scripts/validate_sandboxed_adapter_capability.py` with one bounded five-project record and ten expected-invalid mutations; no OS sandbox or deployed adapter claim |
 
 Fixture-shape validation, bounded Lean theorem declarations over finite permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates, the synthetic runtime-adapter permission harness, one public-safe temp-file Runtime adapter effect replay probe, one deterministic Runtime adapter adversarial boundary probe, one deterministic Human oversight degradation fixture, and one partitioned authority fixture are implemented. The remaining tests require a deployed adapter harness, real sandbox isolation, parent job permission lookup against real jobs, high-impact classification against policy, live approval decisions, live reviewer-quality checks, live effect receipts, rollback execution in target services, deployed revocation propagation, live partition traces, and secret-handle safety checks.
 
@@ -341,6 +407,7 @@ These proof hooks are implemented as finite-record predicates plus negative-case
 | `ext_complacency_bias_automation_2010` | Complacency and Bias in Human Use of Automation: An Attentional Integration | human_factors_automation | External comparator for automation complacency, automation bias, omission and commission errors, workload, attention, and imperfect decision aids. | source note available; comparator only |
 | `ext_cap_theorem_gilbert_lynch_2002` | Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services | distributed_systems_consistency | External comparator for CAP-style safety/liveness and partition-tolerance pressure at the adapter authority boundary: stale grants, revocation delay, fresh receipt requirements, and no-mutation evidence. | source note available; comparator only |
 | `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | Inspect AI, AgentDojo, CaMeL, and OWASP Agentic Top 10 | agent_tool_security | Current comparators for agent/tool evaluation, indirect injection, capability-secure data flow, and agentic-risk coverage. | source notes available; no local adapter robustness, approval quality, or safety result |
+| `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Historical-project runtime lineage | local implementation-reference and negative-case lineage | Exact capability scopes, effect/replay records, declared-versus-enforced boundaries, quarantine, irreversible residuals, and playback/live-replay distinctions. | public-safe source notes available; projects not replayed; one related lineage, not independent confirmation |
 
 The source set anchors the effects boundary: authority handles, approval gates, tool permissions, operator-visible control surfaces, human oversight degradation, and partitioned authority. Five Google Docs raw-cache sources, two local public-project sources, four external human-factors comparators, and one distributed-systems comparator now have passage-reviewed Appendix C mappings or source-note records. `moecot` remains connector/source-note mapped until runtime artifacts, approval traces, sandbox records, benchmark/replay logs, or external corroboration are imported and inspected. The crosswalk does not claim safe tool execution, reviewer correctness, deployed approval-service behavior, distributed consensus, partition tolerance, or revocation propagation has been demonstrated here.
 

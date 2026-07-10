@@ -1,0 +1,44 @@
+{
+  "record_id": "one-shot-action-2026-07-10",
+  "source_ids": ["cca_project", "moecot_manifest_project", "beastbrain_project", "bugbrain_project", "corbens_best_model_possible_project"],
+  "intent_ref": "intent://rotate-bounded-policy",
+  "approval": {
+    "approval_id": "approval://rotate-policy/1",
+    "approval_kind": "explicit_human_approval",
+    "principal_id": "principal:operator-17",
+    "operation": "replace-policy-file",
+    "target_id": "target:policy/bounded.json",
+    "target_state_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "parameter_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "policy_version": "policy-v7",
+    "issued_at": "2026-07-10T16:00:00Z",
+    "expires_at": "2026-07-10T16:05:00Z",
+    "nonce": "nonce-rotate-policy-0001",
+    "authority_ref": "authority://operator/change-bounded-policy"
+  },
+  "state_history": [
+    {"state": "requested", "observed_at": "2026-07-10T15:59:50Z", "receipt_ref": "receipt://request"},
+    {"state": "resolved", "observed_at": "2026-07-10T15:59:55Z", "receipt_ref": "receipt://resolution"},
+    {"state": "approved", "observed_at": "2026-07-10T16:00:00Z", "receipt_ref": "approval://rotate-policy/1"},
+    {"state": "dispatched", "observed_at": "2026-07-10T16:01:00Z", "receipt_ref": "receipt://dispatch"},
+    {"state": "effect_observed", "observed_at": "2026-07-10T16:01:01Z", "receipt_ref": "receipt://effect"},
+    {"state": "consumed", "observed_at": "2026-07-10T16:01:02Z", "receipt_ref": "receipt://nonce-consumed"}
+  ],
+  "execution_observation": {
+    "principal_id": "principal:operator-17",
+    "operation": "replace-policy-file",
+    "target_id": "target:policy/bounded.json",
+    "pre_state_digest": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "parameter_digest": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "policy_version": "policy-v7",
+    "nonce": "nonce-rotate-policy-0001",
+    "dispatched_at": "2026-07-10T16:01:00Z",
+    "effect_observed": true,
+    "effect_receipt_ref": "receipt://effect",
+    "post_state_digest": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+  },
+  "replay_control": {"single_use": true, "consumed_nonce_refs": ["nonce-rotate-policy-0001"], "replay_attempts": 1, "replay_decision": "denied"},
+  "decision": {"state": "consumed", "privileged_effect_authorized": true, "support_state_effect": "blocks_promotion"},
+  "promotion_blockers": ["hand-authored fixture", "no deployed approval service", "historical projects not replayed"],
+  "non_claims": ["no deployed privileged action", "no parser correctness", "no OS enforcement", "no support promotion"]
+}

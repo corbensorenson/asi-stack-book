@@ -16,15 +16,15 @@ This ledger replaces the former long `Live Human view` cell in `docs/v1_0_candid
 | Human bridge minimum opening-sentence words | 11 |
 | Human bridge minimum closing-sentence words | 11 |
 | Targeted template-phrase hits | 0 |
-| Active reader-overlay operations | 74 |
-| Active reader-overlay chapters | 30 |
-| Overlay operations embedded in live asset | 74 |
+| Active reader-overlay operations | 75 |
+| Active reader-overlay chapters | 31 |
+| Overlay operations embedded in live asset | 75 |
 | Post-render static pages expected | 67 |
 | Browser page-view pairs expected with all chapters/viewports | 112 |
 
 ## Status-Page Row
 
-| Live Human view | Live/Human-view detail is generated in `docs/live_human_view_status_ledger.md`: 67 expected book pages, 54 manifest chapters with one Human Reading Path each, 74 active reader-overlay operations across 30 chapters, bridge minima 170/11/11 words with 0 template hits, and post-render static/browser gates remain required for hiding, restoration, overlay processing, and overflow checks. | `docs/live_human_view_status_ledger.md`; `assets/reader-overlays.html`; `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_live_human_view_status_ledger.py`; `python3 scripts/validate_live_human_view.py`; `node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports` |
+| Live Human view | Live/Human-view detail is generated in `docs/live_human_view_status_ledger.md`: 67 expected book pages, 54 manifest chapters with one Human Reading Path each, 75 active reader-overlay operations across 31 chapters, bridge minima 170/11/11 words with 0 template hits, and post-render static/browser gates remain required for hiding, restoration, overlay processing, and overflow checks. | `docs/live_human_view_status_ledger.md`; `assets/reader-overlays.html`; `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_live_human_view_status_ledger.py`; `python3 scripts/validate_live_human_view.py`; `node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports` |
 
 ## Source Contract
 

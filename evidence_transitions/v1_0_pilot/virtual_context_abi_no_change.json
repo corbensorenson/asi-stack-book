@@ -5,29 +5,32 @@
     "chapters/virtual-context-abi.qmd",
     "appendices/C_claim_evidence_matrix.qmd",
     "docs/context_admission_adequacy_harness.md",
-    "docs/external_literature_backfill_phase6.md"
+    "docs/external_literature_backfill_phase6.md",
+    "schemas/bounded_graph_snapshot_certificate.schema.json"
   ],
   "claim_record_refs": [
     "book_structure.json",
     "appendices/E_codex_test_specs.qmd",
     "schemas/context_abi_record.schema.json",
     "schemas/context_packet.schema.json",
-    "experiments/context_admission_adequacy/results/2026-06-28-local.md"
+    "experiments/context_admission_adequacy/results/2026-06-28-local.md",
+    "tests/fixtures/protocol_records/bounded_graph_snapshot_certificate.valid.json"
   ],
   "old_support_state": "argument",
   "new_support_state": "argument",
   "transition_effect": "no_change",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "synthetic context-record gate behavior and external context-management vocabulary only; no VCM resolver, context compiler, memory-store behavior, certificate-truthfulness checker, model-facing context run, summary-fidelity result, or context-adequacy benchmark is promoted",
+  "scope_boundary": "synthetic context-record gate behavior, one hand-authored bounded four-project graph-snapshot certificate, and external context-management vocabulary only; no VCM resolver, context compiler, durable-store behavior, restart persistence, graph completeness, certificate-truthfulness checker, model-facing context run, summary-fidelity result, or context-adequacy benchmark is promoted",
   "evidence_roles": [
     "synthetic_harness",
     "schema_fixture",
+    "bounded_graph_snapshot_fixture",
     "source_inventory",
     "source_notes",
     "chapter_limitations",
     "source_evidence_audit"
   ],
-  "transition_reason": "The repository now has exact source mappings for the merged Virtual Context ABI claim, public schemas for context ABI, context packet, and semantic-page certificate records, a synthetic context admission/adequacy harness with valid and expected-invalid fixtures, finite ABI/certificate proof hooks, and external source notes for RAG, Lost in the Middle, MemGPT, LongBench, and RULER. Those artifacts support the design discipline around admission/adequacy separation, typed page and cell records, stale certificate rejection, conflict blocking, deletion closure, escalation, and mode-confusion prevention, but they do not establish VCM resolver behavior, context compiler behavior, memory-store correctness, certificate truthfulness, summary fidelity, contradiction-rate performance, distractor resistance, model verification bandwidth, or runtime context adequacy.",
+  "transition_reason": "The repository now has exact source mappings for the merged Virtual Context ABI claim, public schemas for context ABI, context packet, semantic-page certificate, and bounded graph-snapshot certificate records, a synthetic context admission/adequacy harness, one bounded four-project snapshot certificate with eleven rejecting mutations, finite ABI/certificate proof hooks, and external source notes for RAG, Lost in the Middle, MemGPT, LongBench, and RULER. The new certificate binds snapshot identity/digest, finite selection and exact omission frontier, handle provenance/generation/policy/expiry/revocation, revalidation evidence, and the durable-memory/context boundary. These artifacts still do not establish resolver behavior, context compiler behavior, durable-store correctness, restart persistence, graph completeness, certificate truthfulness, summary fidelity, contradiction-rate performance, distractor resistance, model verification bandwidth, or runtime context adequacy.",
   "required_artifacts": [
     "VCM resolver trace with admitted, rejected, stale, and conflict-bearing context requests",
     "context compiler or memory-store behavior test with source provenance and taint propagation",
@@ -35,7 +38,7 @@
     "summary-fidelity and omission-accounting tests for lossy context packets",
     "long-context adequacy benchmark run with distractor and position-sensitivity controls",
     "runtime context transaction replay with deletion closure and snapshot invariants",
-    "independent review of source interpretation adequacy",
+    "restart/recovery and matched-baseline test of durable-store snapshot identity, generation, expiry, revocation, revalidation, selection omissions, and materialization behavior; any independent specialist review is postpublication and not a completion gate",
     "accepted upward evidence-transition review for any narrowed stronger claim"
   ],
   "artifact_refs": [
@@ -45,6 +48,9 @@
     "schemas/context_abi_record.schema.json",
     "schemas/context_packet.schema.json",
     "schemas/semantic_page_certificate.schema.json",
+    "schemas/bounded_graph_snapshot_certificate.schema.json",
+    "tests/fixtures/protocol_records/bounded_graph_snapshot_certificate.valid.json",
+    "scripts/validate_bounded_graph_snapshot_certificate.py",
     "sources/source_notes/ext_rag_2020.md",
     "sources/source_notes/ext_lost_in_middle_2023.md",
     "sources/source_notes/ext_memgpt_2023.md",
@@ -60,12 +66,13 @@
     "appendices/C_claim_evidence_matrix.qmd#virtual-context-abi.core",
     "docs/source_evidence_audit.md#virtual-context-abi.core"
   ],
-  "verification_command": "python3 scripts/validate_context_admission_adequacy.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_source_notes.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_command": "python3 scripts/validate_context_admission_adequacy.py && python3 scripts/validate_vcm_resolver_certificate_probe.py && python3 scripts/validate_bounded_graph_snapshot_certificate.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_source_notes.py && python3 scripts/validate_v1_status_snapshot.py",
   "verification_result": "pass",
   "negative_results": [
     "Virtual Context ABI remains at argument",
     "context admission/adequacy fixtures are synthetic",
     "external context sources are comparison vocabulary only",
+    "the bounded graph snapshot is hand-authored and does not prove durable-store or resolver behavior",
     "VCM resolver, context compiler, memory-store behavior, certificate truthfulness, summary fidelity, and long-context adequacy benchmarks are not implemented"
   ],
   "negative_evidence_refs": [
@@ -83,12 +90,12 @@
     "claim text interpreted as resolver or model-facing context evidence",
     "support-state promotion without accepted transition"
   ],
-  "promotion_burden": "Move above argument only after the claim is narrowed to the specific synthetic record-gate behavior that passed, or after resolver traces, context compiler behavior, memory-store correctness, certificate-truthfulness checks, summary-fidelity tests, long-context adequacy benchmarks, and source-interpretation review are recorded with accepted evidence-transition records.",
+  "promotion_burden": "Move above argument only after the claim is narrowed to the specific synthetic record-gate behavior that passed, or after resolver traces, context compiler behavior, durable-store correctness and restart persistence, graph-completeness limits, certificate-truthfulness checks, summary-fidelity tests, and long-context adequacy benchmarks are recorded with accepted evidence-transition records.",
   "limitations": [
     "synthetic fixtures do not prove deployed VCM behavior",
     "schemas validate record shape rather than resolver semantics",
     "external context literature is not a local reproduction or context adequacy result",
-    "no independent context-system or source-interpretation review has been recorded"
+    "the hand-authored bounded snapshot does not establish store persistence, resolver correctness, or graph completeness"
   ],
   "review_status": "accepted",
   "reviewer_refs": [
@@ -101,7 +108,7 @@
     "no certificate truthfulness evaluation",
     "no summary-fidelity benchmark",
     "no long-context adequacy benchmark run",
-    "no independent review"
+    "no durable-store restart/recovery trace"
   ],
   "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-virtual-context-abi-evidence-transition-no-change",
   "support_state_effect": "argument_only",

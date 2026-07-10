@@ -1,0 +1,6 @@
+{
+  "operation": "merge",
+  "path": ["checks", 0],
+  "value": {"applicability": "unknown", "attempt": "attempted", "result": "pass", "evidence_refs": ["evidence://shallow-pass"], "observed_at": "2026-07-10T17:00:00Z", "expires_at": "2026-07-17T17:00:00Z"},
+  "expected_error": "unknown applicability cannot be recorded as pass"
+}

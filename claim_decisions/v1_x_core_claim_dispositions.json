@@ -128,30 +128,32 @@
         "runtime adapter enforcement traces",
         "revocation propagation tests across delegated and replacement contexts",
         "adversarial confused-deputy probes against live tool wrappers",
-        "independent review of source interpretation adequacy",
+        "cross-domain runtime traces with independently observed effects and target-owner authentication",
         "accepted upward evidence-transition review for any narrowed stronger claim"
       ],
       "blockers": [
         "no deployed authorization enforcement trace",
         "no revocation propagation test",
         "no live confused-deputy probe",
-        "no independent review"
+        "no cross-domain target-owner authentication or hardware-root evidence"
       ],
       "promotion_burden": "Move above argument only after the claim is narrowed to the specific artifact lane that actually passed, or after deployed permission enforcement, revocation propagation, and confused-deputy behavior are tested and reviewed with accepted evidence-transition records.",
       "limitations": [
         "finite Lean records do not prove runtime enforcement",
         "synthetic fixtures do not prove deployed tool-wrapper behavior",
         "source mappings support architectural discussion but do not by themselves promote support state",
-        "no independent security or source-interpretation review has been recorded"
+        "no deployed cross-domain enforcement, authenticated target-owner service, or hardware-root evidence has been recorded"
       ],
       "non_claims": [
         "does not promote System Boundaries above argument",
         "does not prove deployed authorization enforcement",
         "does not prove runtime adapter safety",
         "does not prove revocation propagation",
-        "does not prove confused-deputy resistance in a live system"
+        "does not prove confused-deputy resistance in a live system",
+        "does not establish protocol security or a hardware root of trust",
+        "does not reproduce historical-project behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 8 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 14 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Lean authority transitions",
       "formal_or_prototype_work": "Connect authority ceiling, denial receipt, and confused-deputy harnesses.",
@@ -216,7 +218,8 @@
       "required_evidence": [
         "accepted claim-specific evidence-transition review",
         "independent review of source interpretation adequacy",
-        "recorded proof/test/source artifacts for any stronger support state"
+        "recorded proof/test/source artifacts for any stronger support state",
+        "a claim-scoped same-lineage causal chain with actually updated state, runtime output, and outcome-linked independent evaluation"
       ],
       "blockers": [
         "no independent review",
@@ -227,14 +230,18 @@
       "limitations": [
         "process mechanics do not prove source interpretation adequacy",
         "passage-reviewed mappings do not by themselves promote claims",
-        "schema and validator passes are not behavioral tests of an AI system"
+        "schema and validator passes are not behavioral tests of an AI system",
+        "the six projects share lineage and were not independently reproduced",
+        "the fixture does not complete the checkpoint-to-response causal chain"
       ],
       "non_claims": [
         "does not promote any chapter claim",
         "does not prove source interpretation is correct",
-        "does not prove any AI capability or safety property"
+        "does not prove any AI capability or safety property",
+        "does not turn six related local projects into independent confirmations",
+        "does not authorize publication of raw private project material"
       ],
-      "current_evidence_summary": "Source notes available for all 7 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 13 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Claim ledger harness and evidence-transition ledger",
       "formal_or_prototype_work": "Surface non-core transitions and enforce no-promotion decisions.",
@@ -602,7 +609,7 @@
         "does not prove least-privilege context behavior or runtime policy behavior",
         "does not prove source interpretation"
       ],
-      "current_evidence_summary": "Source notes available for all 8 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 13 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Security-kernel harness plus external security baselines",
       "formal_or_prototype_work": "Add SCIF lifecycle, revocation, sanitization, and prompt-injection negative controls.",
@@ -666,8 +673,8 @@
       "coverage_type": "accepted_no_promotion_decision",
       "support_state_effect": "argument_only",
       "required_evidence": [
-        "public-safe synthetic supply-chain workload with bounded valid, missing-lineage, stale-BOM, unverified-signature, unresolved-critical-advisory, revoked-signer, changed-derivative, revocation, and residual controls",
-        "independent review of a bounded supply-chain threat model, provenance/signature verification policy, inventory freshness, advisory-routing, and affected-release record",
+        "replayed supply-chain operation over tracked disposable artifacts with observed lineage, BOM/provenance/signature state, an injected upstream invalidation, complete declared affected-path propagation, quarantine or repair effects, and rollback or retirement receipts",
+        "matched simpler baseline reporting propagation misses, false accepts/rejects, latency, operator burden, and residual discovery; any independent specialist review is postpublication and is not a completion gate",
         "accepted transition for a narrowed supply-chain admission-routing or re-review-propagation claim"
       ],
       "blockers": [
@@ -675,7 +682,7 @@
         "no reproducible rebuild, supplier review, incident exercise, vulnerability/advisory evaluation, or inventory-completeness assessment",
         "finite theorems do not establish artifact correctness, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or generality"
       ],
-      "promotion_burden": "The chapter has source-noted C-SCRM, build-provenance, model-signing, and AI BOM comparators plus finite advisory/signature quarantine routes, but no ASI Stack AI BOM, supplier assessment, build or training provenance, signing/verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, readiness decision, or deployment result has been accepted as evidence for the broad claim.",
+      "promotion_burden": "The chapter has source-noted C-SCRM, build-provenance, model-signing, and AI BOM comparators, finite advisory/signature quarantine routes, and one hand-authored affected-path fixture with ten rejecting mutations. That fixture checks declared graph closure and record semantics only; no real AI BOM, supplier assessment, build or training provenance, signing/verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, readiness decision, or deployment result has been accepted as evidence for the broad claim.",
       "limitations": [],
       "non_claims": [
         "does not prove complete lineage, an AI BOM, artifact integrity, absence of compromise, or trustworthy suppliers",
@@ -814,8 +821,8 @@
         "semantic parser or command-extraction evaluation over real tasks",
         "artifact acceptance or verification trace over actual outputs",
         "tool-execution replay with failure and recovery paths",
-        "independent review of contract completeness and constraint preservation",
-        "source interpretation review for intent-to-execution source mappings",
+        "observed approval-service and OS-enforcement traces over disposable privileged effects with mismatch, expiry, revocation, replay, and rollback controls",
+        "matched simpler baseline reporting unsafe effects, false accepts/rejects, latency, operator burden, and recovery cost; independent specialist review, if later pursued, is postpublication and not a completion gate",
         "accepted upward evidence-transition review for any narrowed stronger claim"
       ],
       "blockers": [
@@ -824,16 +831,16 @@
         "no semantic-parser evaluation",
         "no artifact acceptance trace",
         "no runtime adapter trace over real jobs",
-        "no independent source-interpretation review"
+        "no observed one-shot privileged effect with replay and rollback controls"
       ],
-      "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after replayed intent-to-execution vertical slices, real command contracts and typed jobs, runtime adapter traces, artifact verification traces, tool-effect receipts, recovery-path replays, semantic-parser evaluation, independent contract review, and source-interpretation review are recorded with accepted evidence-transition records.",
+      "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after replayed intent-to-execution vertical slices, real command contracts and typed jobs, approval and runtime-adapter traces, exact tool-effect and post-state receipts, mismatch/expiry/revocation/replay controls, recovery replays, semantic-parser evaluation, and an accepted evidence-transition record.",
       "limitations": [
         "synthetic fixtures do not prove deployed execution",
         "schema validation does not prove semantic-parser quality",
         "finite Lean predicates do not implement a runtime dispatcher",
         "dispatch receipt strings do not prove tool-effect correctness",
         "artifact refs do not prove artifact acceptance",
-        "no independent runtime, parser-quality, tool-effect, artifact-review, or source-interpretation review has been recorded"
+        "no deployed runtime, parser-quality, approval-service, tool-effect, OS-enforcement, or artifact-acceptance evidence has been recorded"
       ],
       "non_claims": [
         "does not promote Intent-to-Execution Contracts above argument",
@@ -842,7 +849,7 @@
         "does not prove tool-effect correctness or artifact acceptance",
         "does not prove source interpretation"
       ],
-      "current_evidence_summary": "Source notes available for all 7 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 12 assigned sources; 11 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Command-contract fixtures plus Lean semantic-interface crosswalk",
       "formal_or_prototype_work": "Connect accepted intent, command fields, authority, receipts, artifacts, and residuals across typed execution records.",
@@ -918,22 +925,24 @@
       "coverage_type": "accepted_no_promotion_decision",
       "support_state_effect": "argument_only",
       "required_evidence": [
-        "semantic IR compiler trace",
-        "repair and lowering regression tests",
-        "semantic-equivalence review"
+        "source-plan-to-generated-artifact compiler trace",
+        "artifact-aware semantic preservation validators",
+        "measured localized-repair and direct-generation comparison"
       ],
       "blockers": [
-        "no compiler run",
-        "no artifact-generation benchmark",
-        "no accepted semantic repair evidence"
+        "fixture is hand-authored rather than emitted by a compiler",
+        "no generated target-artifact semantic validation",
+        "no measured repair-locality or artifact-quality comparison"
       ],
-      "promotion_burden": "The chapter has source mappings and finite obligation-preservation hooks, but no compiler implementation, lowering trace, repair benchmark, or semantic-equivalence review has been accepted.",
+      "promotion_burden": "The chapter now has eight reviewed source mappings, finite obligation-preservation hooks, synthetic compilation traces, and a three-project contract-preservation fixture that rejects nine semantic-laundering mutations. Those artifacts improve record discipline but do not implement a source parser or target backend, inspect generated artifact semantics, measure repair locality, or justify promotion.",
       "limitations": [],
       "non_claims": [
         "does not prove cognitive compiler correctness",
-        "does not prove artifact quality improvement"
+        "does not prove arbitrary paraphrase equivalence",
+        "does not prove artifact quality improvement or repair locality",
+        "does not reproduce the mined historical projects"
       ],
-      "current_evidence_summary": "Source notes available for all 5 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 8 assigned sources; 8 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Compiler IR fixtures plus external program-synthesis baselines",
       "formal_or_prototype_work": "Add semantic atom lowering and failed-preservation cases.",
@@ -962,7 +971,7 @@
         "summary-fidelity and omission-accounting tests for lossy context packets",
         "long-context adequacy benchmark run with distractor and position-sensitivity controls",
         "runtime context transaction replay with deletion closure and snapshot invariants",
-        "independent review of source interpretation adequacy",
+        "restart/recovery and matched-baseline test of durable-store snapshot identity, generation, expiry, revocation, revalidation, selection omissions, and materialization behavior; any independent specialist review is postpublication and not a completion gate",
         "accepted upward evidence-transition review for any narrowed stronger claim"
       ],
       "blockers": [
@@ -971,14 +980,14 @@
         "no certificate truthfulness evaluation",
         "no summary-fidelity benchmark",
         "no long-context adequacy benchmark run",
-        "no independent review"
+        "no durable-store restart/recovery trace"
       ],
-      "promotion_burden": "Move above argument only after the claim is narrowed to the specific synthetic record-gate behavior that passed, or after resolver traces, context compiler behavior, memory-store correctness, certificate-truthfulness checks, summary-fidelity tests, long-context adequacy benchmarks, and source-interpretation review are recorded with accepted evidence-transition records.",
+      "promotion_burden": "Move above argument only after the claim is narrowed to the specific synthetic record-gate behavior that passed, or after resolver traces, context compiler behavior, durable-store correctness and restart persistence, graph-completeness limits, certificate-truthfulness checks, summary-fidelity tests, and long-context adequacy benchmarks are recorded with accepted evidence-transition records.",
       "limitations": [
         "synthetic fixtures do not prove deployed VCM behavior",
         "schemas validate record shape rather than resolver semantics",
         "external context literature is not a local reproduction or context adequacy result",
-        "no independent context-system or source-interpretation review has been recorded"
+        "the hand-authored bounded snapshot does not establish store persistence, resolver correctness, or graph completeness"
       ],
       "non_claims": [
         "does not promote Virtual Context ABI above argument",
@@ -989,7 +998,7 @@
         "does not prove summary fidelity",
         "does not prove long-context adequacy or model verification bandwidth"
       ],
-      "current_evidence_summary": "Source notes available for all 11 assigned sources; 7 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 15 assigned sources; 11 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Context admission harness, certificate fixtures, Lean hooks, and VCM source notes",
       "formal_or_prototype_work": "Add admission, mount, capability, typed page/cell, certificate-truthfulness, authority-ceiling, loss-contract, permitted-use, and context-window negative controls.",
@@ -1027,7 +1036,7 @@
         "does not prove context memory correctness",
         "does not prove taint isolation in a deployed system"
       ],
-      "current_evidence_summary": "Source notes available for all 7 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 12 assigned sources; 10 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Context transaction harness",
       "formal_or_prototype_work": "Add deletion closure, mount taint, snapshot conflict, and rollback cases.",
@@ -1121,7 +1130,7 @@
         "does not prove verifier quality",
         "does not prove deployed belief revision or runtime behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 6 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 11 assigned sources; 10 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Claim-ledger harness plus Lean",
       "formal_or_prototype_work": "Add revision-history preservation, contradiction quarantine, and split claims.",
@@ -1177,7 +1186,7 @@
         "does not prove verifier quality",
         "does not prove runtime behavior or open-domain formalization"
       ],
-      "current_evidence_summary": "Source notes available for all 7 assigned sources; 7 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 12 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Proof-carrying claim and tribunal review harnesses plus Circle lane and external review baselines",
       "formal_or_prototype_work": "Add verifier mismatch, tier downgrade, reviewer capture, dissent, unchanged-evidence, and required-action cases.",
@@ -1240,22 +1249,23 @@
       "coverage_type": "accepted_no_promotion_decision",
       "support_state_effect": "argument_only",
       "required_evidence": [
-        "artifact graph replay",
-        "audit-log reconstruction test",
-        "missing-provenance negative cases"
+        "deployed artifact graph replay over real work",
+        "audit-log reconstruction benchmark",
+        "open-world provenance and revocation-completeness evaluation"
       ],
       "blockers": [
-        "no artifact graph implementation",
-        "no replay metadata validation over real outputs",
-        "no audit reconstruction benchmark"
+        "no deployed artifact graph implementation",
+        "no replay validation over real historical-project outputs",
+        "no audit reconstruction or revocation-completeness benchmark"
       ],
-      "promotion_burden": "The chapter has source mappings and finite artifact-provenance hooks, but no artifact graph service, replay engine, audit reconstruction run, or completeness checker has been accepted.",
+      "promotion_burden": "The chapter now has source mappings, finite artifact-provenance hooks, and a bounded five-project projection/revocation harness covering canonical truth, transitive closure, replay grades, terminal receipts, and relocation identity, but no deployed artifact graph service, real-work replay engine, audit reconstruction benchmark, or open-world completeness checker has been accepted.",
       "limitations": [],
       "non_claims": [
         "does not prove replayability of real work",
-        "does not prove audit-log completeness"
+        "does not prove audit-log or reverse-dependency completeness",
+        "does not reproduce any historical-project capability or runtime result"
       ],
-      "current_evidence_summary": "Source notes available for all 10 assigned sources; 7 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 15 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Artifact graph replay harness plus Theseus report",
       "formal_or_prototype_work": "Add graph integrity, provenance mismatch, and replay failure cases.",
@@ -1292,24 +1302,23 @@
         "approval-service tests covering expiry, revocation, escalation, and denial receipts",
         "secret-handle safety tests that avoid raw secret exposure in logs and artifacts",
         "rollback execution tests for reversible effects and residual capture for irreversible effects",
-        "independent review of source interpretation adequacy",
+        "matched simpler baseline reporting denied/unsafe effects, false accepts/rejects, latency, operator burden, rollback cost, and residual discovery; any independent specialist review is postpublication and not a completion gate",
         "accepted upward evidence-transition review for any narrowed stronger claim"
       ],
       "blockers": [
         "no deployed adapter trace",
-        "no sandbox isolation test",
+        "no observed OS sandbox isolation test",
         "no approval-service behavior test",
         "no secret-handle safety test",
-        "no rollback execution test",
-        "no independent review"
+        "no target-service rollback execution test"
       ],
-      "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record-gate behavior that passed, or after deployed adapter traces, sandbox tests, approval-service behavior, secret-handle safety, rollback execution, and real effect receipt validity are recorded with accepted evidence-transition records.",
+      "promotion_burden": "Move above argument only after the claim is narrowed to the bounded record/effect behavior that passed, or after deployed adapter traces bind exact executable and capability scopes to observed OS enforcement, approval behavior, secret-handle safety, target-service rollback, irreversible residuals, and accepted evidence-transition records.",
       "limitations": [
         "synthetic fixtures do not prove deployed adapter behavior",
         "schemas validate record shape rather than permission enforcement",
         "approval expiry markers in fixtures do not prove an approval service exists",
-        "rollback handles and residual fields in fixtures do not prove rollback execution",
-        "no independent runtime-security or source-interpretation review has been recorded"
+        "the temp-file rollback proves only exact restoration in that disposable probe",
+        "process observation and declared scopes do not prove OS confinement"
       ],
       "non_claims": [
         "does not promote Runtime Adapters above argument",
@@ -1319,7 +1328,7 @@
         "does not prove secret-handle safety",
         "does not prove rollback execution or runtime safety"
       ],
-      "current_evidence_summary": "Source notes available for all 17 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 22 assigned sources; 17 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Runtime adapter harness plus Theseus operator OS",
       "formal_or_prototype_work": "Add approval expiry, rollback handles, irreversible residuals, and authority receipts.",
@@ -1401,7 +1410,7 @@
         "does not prove reusable cognition quality",
         "does not prove safe tool promotion"
       ],
-      "current_evidence_summary": "Source notes available for all 10 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 14 assigned sources; 13 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Theseus self-evolution/operator traces plus loop harness",
       "formal_or_prototype_work": "Add policy update, regression, and rollback memory traces.",
@@ -1474,7 +1483,6 @@
         "quarantine execution trace for failed selected routes with fallback preservation",
         "rollback execution and monitor-status tests beyond dry-run receipt fields",
         "MoECOT or prototype replay packet only if runtime-readiness claims are made",
-        "independent review of source interpretation adequacy",
         "accepted upward evidence-transition review for any narrowed stronger claim"
       ],
       "blockers": [
@@ -1483,8 +1491,7 @@
         "no residual-ledger storage or replay test",
         "no deployed quarantine trace",
         "no rollback execution test",
-        "no runtime-monitoring trace",
-        "no independent review"
+        "no runtime-monitoring trace"
       ],
       "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record-gate behavior that passed, or after route-selection traces, readiness-engine behavior, residual-ledger replay, deployed quarantine, rollback execution, runtime monitoring, and any MoECOT replay claims are recorded with accepted evidence-transition records.",
       "limitations": [
@@ -1492,7 +1499,7 @@
         "schemas validate record shape rather than readiness-engine behavior",
         "residual escrow fields do not prove a residual ledger stores or replays obligations",
         "rollback dry-run receipt fields do not prove rollback execution",
-        "no independent routing, runtime, or source-interpretation review has been recorded"
+        "historical-project behavior was not reproduced"
       ],
       "non_claims": [
         "does not promote Readiness Gates above argument",
@@ -1502,7 +1509,7 @@
         "does not prove deployed quarantine or rollback execution",
         "does not prove runtime monitoring, MoECOT replay, benchmark performance, or runtime safety"
       ],
-      "current_evidence_summary": "Source notes available for all 10 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 16 assigned sources; 15 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Readiness/residual harness plus Theseus architecture gate",
       "formal_or_prototype_work": "Add quarantine release, residual custody, expired evidence, and fallback cases.",
@@ -2010,16 +2017,16 @@
       "coverage_type": "accepted_core_transition",
       "support_state_effect": "argument_only",
       "required_evidence": [
-        "semantic proof adequacy review for all proof targets",
-        "classification of targets as adequate, too narrow, requiring tests first, or research agenda",
-        "chapter updates for any stronger proof interpretation"
+        "tracked executable-model bridges for any finite predicate proposed to support behavior",
+        "artifact-bound and independently observed implementation effects before runtime language is allowed",
+        "accepted evidence transition for any narrower statement proposed above argument"
       ],
       "blockers": [
-        "no semantic proof adequacy review",
-        "no independent proof review",
-        "claim text remains broader than proof wiring"
+        "no proof that the hand-authored abstraction map is generally correct",
+        "no deployed implementation binding or observed enforcement effect",
+        "claim text remains broader than the bounded proof and depth fixtures"
       ],
-      "promotion_burden": "Move above argument only after proof adequacy review accepts a tightly scoped claim about proof wiring or formalized finite-record invariants and the claim text is narrowed accordingly.",
+      "promotion_burden": "Move above argument only for a narrowed statement whose abstraction map, assumptions, executable bridge, implementation binding, observed effect, limitations, and accepted evidence transition match the exact consumer claim.",
       "limitations": [
         "Lean proves only the imported finite predicates",
         "schemas validate shape and tests validate behavior in separate lanes",
@@ -2030,7 +2037,7 @@
         "does not claim the Lean targets are semantically adequate",
         "does not promote any chapter claim"
       ],
-      "current_evidence_summary": "Source notes available for all 9 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 12 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Lean proof-depth work plus schema crosswalk",
       "formal_or_prototype_work": "Keep proof adequacy, proof-depth, and protocol crosswalk current.",
@@ -2060,7 +2067,8 @@
         "negative-result retention and stale-score invalidation workflow",
         "policy-training or steward-action traces only when those claims are made",
         "independent review of source interpretation adequacy",
-        "accepted upward evidence-transition review for any narrowed stronger claim"
+        "accepted upward evidence-transition review for any narrowed stronger claim",
+        "metric observation, evaluator, target-capacity, retry-lineage, closure-inheritance, and checkpoint/output records for any admitted capability metric"
       ],
       "blockers": [
         "no live benchmark run",
@@ -2074,7 +2082,9 @@
         "synthetic fixtures do not prove benchmark quality",
         "schemas validate record shape rather than benchmark validity",
         "external benchmark literature is not a local reproduction or model result",
-        "no independent benchmark or source-interpretation review has been recorded"
+        "no independent benchmark or source-interpretation review has been recorded",
+        "the six historical projects are one local lineage and were not reproduced on a shared workload",
+        "the blocked metric record does not establish an empirical result"
       ],
       "non_claims": [
         "does not promote Benchmark Ratchets above argument",
@@ -2082,9 +2092,11 @@
         "does not prove hidden-holdout integrity",
         "does not prove contamination detection",
         "does not prove policy-training quality",
-        "does not prove steward-agent release safety or model behavior"
+        "does not prove steward-agent release safety or model behavior",
+        "does not treat six related local projects as independent confirmations",
+        "does not authorize publication of raw private project material"
       ],
-      "current_evidence_summary": "Source notes available for all 19 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 25 assigned sources; 18 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Benchmark anti-Goodhart harness plus external benchmarks",
       "formal_or_prototype_work": "Add contamination, saturation, and transfer negative controls.",
@@ -2341,22 +2353,23 @@
       "coverage_type": "accepted_no_promotion_decision",
       "support_state_effect": "argument_only",
       "required_evidence": [
-        "end-to-end reference trace",
-        "blocked-path and happy-path replays",
-        "architecture-level red-team review"
+        "deployed or externally observable end-to-end reference trace",
+        "matched blocked-path and happy-path cross-layer runtime replays",
+        "open-world artifact, authority, receipt, evaluator, and claim-boundary completeness evaluation"
       ],
       "blockers": [
-        "no whole-stack trace kernel",
+        "no deployed whole-stack trace kernel",
         "no cross-layer runtime replay",
-        "no system-level adversarial review yet"
+        "finite fixtures cannot prove observation truth, causal completeness, or service enforcement"
       ],
-      "promotion_burden": "The chapter integrates the architecture and has finite reference-trace hooks, but no end-to-end reference trace, cross-layer runtime replay, architecture red-team, or external review has been accepted.",
+      "promotion_burden": "The chapter integrates the architecture, finite reference traces, an executed governed repository-change slice, and a bounded five-project name-to-effect fixture, but no deployed whole-stack trace kernel, cross-layer runtime replay, or open-world joinability/completeness evaluation has been accepted.",
       "limitations": [],
       "non_claims": [
         "does not prove integrated ASI behavior",
-        "does not prove cross-layer safety"
+        "does not prove cross-layer safety or open-world joinability",
+        "does not reproduce any historical-project capability or runtime result"
       ],
-      "current_evidence_summary": "Source notes available for all 22 assigned sources; 21 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 27 assigned sources; 26 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "End-to-end Theseus report plus architecture trace",
       "formal_or_prototype_work": "Build a public-safe thin vertical slice through several layers.",

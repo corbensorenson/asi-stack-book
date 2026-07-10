@@ -4,7 +4,7 @@ chapter_id: "readiness-gates-residual-escrow-and-quarantine"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-03"
+last_updated: "2026-07-10"
 primary_sources:
   - "rmi"
   - "benchmaxxing"
@@ -15,11 +15,17 @@ primary_sources:
   - "project_theseus_whitepaper"
   - "theseus_architecture_gate"
   - "theseus_self_evolution_system"
+  - "cca_project"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
+  - "corbens_trainer_project"
+  - "corbens_best_model_possible_project"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
   - "Appendix C now records exact passage-reviewed mappings for eight assigned sources; `moecot` remains connector/source-note mapped only until runtime/source artifacts, readiness records, ledgers, replay logs, benchmark records, or external corroboration are imported and inspected."
-  - "Protocol schema/fixture validation, narrow Lean gate/quarantine predicates plus negative cases for failed promoted gates, stronger transitions missing freshness/residual/fallback/expiry records, quarantined ordinary routing or diagnostic routing without fallback, stale-gate reuse without rerun/residual records, finite lifecycle transitions missing regression/authority/supersession/retirement records, the readiness/residual gate harness's synthetic transition/residual/quarantine checks, and the readiness lifecycle probe's six valid synthetic transitions plus twelve expected-invalid controls are implemented; no deployed readiness engine, residual-ledger storage, benchmark harness, live quarantine routing, or MoECOT replay has been run for the readiness layer."
+  - "Protocol schema/fixture validation, narrow Lean gate/quarantine predicates, the readiness/residual gate harness, the six-transition lifecycle probe, and the historical-project readiness-check lifecycle harness are implemented. The new harness records applicability, requiredness, attempt, result, waiver, evidence, expiry, stale dependencies, monotone containment, and quarantine ownership, then rejects nine skipped-as-green, stale, waiver, missing-evidence, non-monotone, orphaned-quarantine, route, and support-promotion mutations. No deployed readiness engine, residual-ledger storage, benchmark harness, live quarantine routing, or historical-project replay has been run."
   - "No support-state promotion is implied by this drafting pass."
 ---
 
@@ -31,13 +37,13 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-03 |
-| Primary source records | `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system` |
+| Last updated | 2026-07-10 |
+| Primary source records | `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`, `moecot`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; connector/recovery: `moecot` |
-| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`; passage-reviewed local public-project sources: `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; connector/source-note only: `moecot` |
-| Test state | Readiness gate fixture validation includes field identity, workload family, freshness window, inherited residuals, route permissions, fallback path, expiry, and non-claims; finite gate/quarantine predicates, stale-gate predicates, and lifecycle-transition predicates are implemented in `AsiStackProofs.ReadinessGates` for failed promoted gates, incomplete stronger transitions, quarantined route misuse, stale-gate reuse, default promotion without regression/authority, quarantined lifecycle transitions with ordinary routing, supersession without a record, retirement without a receipt, and transition from retired state; `python3 scripts/validate_readiness_residual_gates.py` validates synthetic transition, residual-escrow, quarantine, expired-rerun, fallback, and rollback-readiness checks; `python3 scripts/validate_readiness_lifecycle_probe.py` validates six valid synthetic readiness lifecycle transitions and twelve expected-invalid controls at `experiments/readiness_lifecycle_probe/results/2026-07-02-local.json`. Readiness-engine behavior, residual-ledger storage, benchmark evidence, live quarantine routing, terminal-state governance, and MoECOT replay remain planned. |
+| Source queue | primary: `rmi`, `benchmaxxing`, `scf`; supporting: `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`; connector/recovery: `moecot` |
+| Source loading state | source notes: all assigned sources; passage-reviewed local raw cache: `rmi`, `benchmaxxing`, `scf`, `octopus_router`, `cognitive_loop_closure`; passage-reviewed local public-project sources: `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`; public-safe pinned-project notes: `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`; connector/source-note only: `moecot` |
+| Test state | Existing readiness fixture, Lean, residual-gate, and six-transition lifecycle probes remain. `python3 scripts/validate_readiness_check_lifecycle.py` additionally accepts one quarantined six-project lineage record and rejects nine mutations covering skipped-as-green, ready-with-failed checks, non-monotone containment, orphaned quarantine, waiver substitution, unknown applicability, pass without evidence, ordinary routing under quarantine, and fixture-based support promotion. It is record discipline only, not deployed quarantine or readiness evidence. |
 
 ## Drafting guardrail
 
@@ -87,7 +93,7 @@ The claim remains at `argument` support. The assigned sources support the design
 
 ### Claim-source mapping status
 
-Appendix C now maps this readiness-gate claim to all assigned source notes and records exact passage-reviewed references for eight of the nine assigned sources. Those mappings support promotion gates, residual escrow, quarantine, regression-floor preservation, lifecycle governance, and stale-gate discipline, not current readiness of any specific module. MoECOT remains connector/source-note mapped only until runtime artifacts, source text, readiness records, ledgers, replay logs, benchmark records, or external corroboration are imported and inspected.
+Appendix C now maps this readiness-gate claim to all fifteen assigned source notes: nine established readiness sources plus six public-safe historical-project notes. Those mappings support promotion gates, check lifecycle, residual escrow, quarantine, regression-floor preservation, transitive invalidation, and stale-gate discipline, not current readiness of any specific module. The older `moecot` record remains connector/source-note mapped only; the pinned `moecot_manifest_project` note is local-project architecture context, not runtime reproduction.
 
 | Source | What it supports | Review state | Limit |
 |---|---|---|---|
@@ -100,6 +106,12 @@ Appendix C now maps this readiness-gate claim to all assigned source notes and r
 | `project_theseus_whitepaper` | Residual escrow, benchmark floors, frontier/diagnostic/regression/public-calibration/retired benchmark states, specialist lifecycle, safety-visible gates, and report-first implementation discipline. | passage-reviewed local public-project source | Current machine-readable reports and benchmark ledgers were not rerun or verified from this repo. |
 | `theseus_architecture_gate` | Pre-training checks for ratchet completeness, router readiness, safety ledger, regression suite, public calibration, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, external-inference zero, and the imported static architecture-gate summary verified by ASI-side digest. | passage-reviewed local public-project source plus static import fixture | The reported green snapshot is represented only by the digest-verified fixture in `docs/theseus_report_import_slice.md`; no clean live Theseus command, current dashboard, or benchmark environment was rerun here. |
 | `theseus_self_evolution_system` | Intervention ladders, ATTD repo-health gates, guarded teacher edits, architecture experiment governance, outcome ledgers, lifecycle-governed cells, and loop closure into local tools. | passage-reviewed local public-project source | No Theseus scripts, ATTD reports, branch flow, teacher runner, outcome ledger, dashboard endpoint, or autonomous-improvement result was executed. |
+| `cca_project` | Promotion states, quarantine, rollback, contamination controls, canonical closure authority, and fail-closed benchmark truth contracts. | public-safe pinned-project note | Project training, benchmark, quarantine, and promotion artifacts were not replayed. |
+| `moecot_manifest_project` | Promotion locality, immutable evidence identities, residuals, replay, holdout separation, fail-closed gates, and growth stops. | public-safe pinned-project note | Promotion, holdout, deployment, and readiness behavior was not rerun. |
+| `beastbrain_project` | Negative case where interfaces, simulations, feature counts, and checklists coexisted with open compiler, integration, hardware, security, and benchmark gates. | public-safe pinned-project note | Does not establish production readiness, capability, secure autonomy, or live quarantine. |
+| `bugbrain_project` | Exact skipped-as-green case and the applicability/requiredness/attempt/result/waiver/evidence lifecycle recommendation. | public-safe pinned-project note | Historical reports and current code differ; hardware, bridge, training, and deployment behavior was not reproduced. |
+| `corbens_trainer_project` | Transitive quarantine and promotion-lease invalidation where a promoted label survived later quarantine of every contributing run. | public-safe pinned-project note | Training, external benchmarks, and end-to-end capability were not reproduced. |
+| `corbens_best_model_possible_project` | Quarantine, rollback, fallback, and material-postcondition boundaries; named transitions and interfaces may lack durable effect. | public-safe pinned-project note | Does not establish target readiness, autonomous routing, durable transitions, or promotion quality. |
 
 ## Draft Key Figure: Readiness, Residual, Quarantine Map
 
@@ -137,6 +149,33 @@ flowchart LR
 ```
 
 **Reading the readiness gate:** The gate changes routability without changing the underlying capability identity. Evidence, regressions, residual escrow, authority, scope, lifecycle state, monitoring, and requalification all have to line up before a module becomes ordinary route material.
+
+Those inputs answer different questions and should not be collapsed into one readiness score. Gate evidence asks what was actually checked. Regression preservation asks what must remain true after change. Residual escrow asks what is still unresolved and who must carry it. A target can improve on new work while failing its old floor, or pass every measured case while a required check was never attempted. The lifecycle must preserve both distinctions before it changes routability.
+
+### Check lifecycle and monotone containment
+
+A gate-level state is too coarse unless each contributing check exposes how it reached that state. Every check therefore records applicability, requiredness, attempt, result, waiver, evidence identity, observation time, and expiry. These fields prevent three attractive substitutions: not applicable for not attempted, skipped for passed, and waived for satisfied. A required applicable check can support readiness only when it was attempted, passed, and carries fresh evidence. Unknown applicability is itself a blocker until resolved.
+
+BugBrain supplies the sharpest local negative case: retained green reports counted missing artifact manifests as skipped successes. Corben's Trainer supplies the downstream failure: claim and candidate records survived after all contributing evidence runs were quarantined. Together they imply that readiness is not merely a row of checks. It is a dependency-sensitive lease. When a required check fails or an upstream artifact becomes stale, quarantined, revoked, or unknown, the promotion lease invalidates and containment must stay the same or tighten.
+
+```{mermaid}
+flowchart LR
+  A["Check applicability"] --> B{"Required?"}
+  B -- "no / not applicable" --> C["Explicit not-applicable record"]
+  B -- "yes" --> D["Attempt + result"]
+  D --> E["Evidence identity + observed time + expiry"]
+  E --> F{"Fresh passing evidence?"}
+  F -- "yes" --> G["Contribute to scoped readiness"]
+  F -- "no" --> H["Block or quarantine"]
+  H --> I["Owner + affected descendants + disposition"]
+  I --> J["Same or tighter route set"]
+```
+
+**Reading the check lifecycle:** readiness is allowed to strengthen only through fresh passing evidence or narrower scope. Failure, missingness, waiver, expiry, or upstream invalidation routes to a named quarantine closure and cannot add ordinary routes.
+
+The strongest objection is that a detailed lifecycle can still validate the wrong checks. That is correct. Completeness of check metadata does not establish benchmark adequacy, evaluator independence, or real enforcement. The lifecycle is a truthfulness boundary: it stops missing, stale, waived, or quarantined evidence from being mislabeled as green while leaving check quality and deployed containment as explicit residuals.
+
+The earlier deterministic lifecycle probe remains part of that boundary rather than being superseded by the six-project contract. Its recorded result at `experiments/readiness_lifecycle_probe/results/2026-07-02-local.json` contains six valid synthetic readiness lifecycle transitions plus twelve expected-invalid controls. The newer check-lifecycle fixture narrows a different seam: whether each contributing check can be truthfully promoted and whether dependency invalidation forces monotone containment. Neither synthetic trace demonstrates a deployed readiness engine, live router enforcement, or current module readiness.
 
 Readiness has three inputs. Gate evidence names the source notes, test records, benchmark results, proof artifacts, review records, or operator reports that are allowed to bear on the decision. Regression preservation protects a floor that should not be lost while the frontier moves. Residual escrow keeps named failures, edge cases, uncertainties, and blocked obligations attached to the target even when some narrower promotion is allowed.
 
@@ -188,8 +227,12 @@ The lifecycle states should be explicit enough for routers and auditors to consu
 ## Invariants
 
 - Promotion requires gate evidence.
+- Every required applicable check is attempted, passes, carries evidence identity, and remains unexpired before it can contribute to readiness.
+- Not-applicable, unknown, skipped, unattempted, waived, failed, errored, and expired states remain distinct.
 - Residuals are not deleted on promotion.
 - Quarantine blocks ordinary routing.
+- Containment cannot weaken or add routes while an invalidating dependency remains.
+- Active quarantine retains reasons, owner, affected descendants, and a recovery or retirement disposition.
 - A saturated benchmark cannot be the sole basis for higher readiness.
 - A stale gate must be rerun after architecture, frontier, authority, or lifecycle changes.
 - Inherited residuals survive rename, wrapper, split, merge, retirement, and retraining unless an explicit retirement record closes them.
@@ -205,6 +248,10 @@ Transition monotonicity over evidence keeps readiness from being laundered. A ta
 - Untracked regression after merge.
 - Stale gate reuse after architecture change.
 - Over-quarantine that prevents useful diagnosis.
+- Skipped-as-green reporting.
+- Waiver-as-pass substitution.
+- Stale promotion that survives upstream quarantine or revocation.
+- Orphaned quarantine without an owner, descendant closure, or disposition.
 
 Premature promotion should create a rollback or quarantine transaction. Residual hiding should create a belief-revision or tribunal-review issue. Regression after merge should preserve the old floor as a regression benchmark. Stale gate reuse should block promotion until the relevant checks are rerun. Over-quarantine should be reviewed because excessive blockage can hide the difference between unsafe execution and safe diagnostic use.
 
@@ -215,6 +262,8 @@ Gate laundering is the readiness failure that defeats quarantine. A target fails
 Readiness can start with a schema and fixture. It does not need a full benchmark harness to be valuable; it needs to make readiness, residuals, quarantine, decision, and review triggers explicit.
 
 The `readiness_gate_record` schema validates the shape of that record, including field identity, workload family, freshness window, evidence state, floor evidence, frontier evidence, inherited residuals, allowed and blocked routes, diagnostic permissions, fallback path, expiry, closure conditions, and non-claims. Passing validation leaves module readiness unproved; it gives the book a public, executable contract for what a readiness decision must name before stronger tests exist.
+
+The historical-project packet adds `schemas/readiness_check_lifecycle_record.schema.json` and `python3 scripts/validate_readiness_check_lifecycle.py`. One quarantined six-project lineage record makes a skipped required artifact-manifest check, a failed benchmark floor, a not-applicable hardware-root check, an invalidated promotion dependency, tighter routes, quarantine ownership, descendant closure, and rerun disposition explicit. Nine mutations reject skipped-as-green, ready-with-failed checks, non-monotone containment, orphaned quarantine, waiver substitution, unknown applicability labeled pass, pass without evidence, ordinary routing during quarantine, and fixture-based support promotion.
 
 `AsiStackProofs.ReadinessGates` adds a bounded promotion predicate requiring promoted decisions to have all required gates passed, a bounded quarantine predicate blocking ordinary route selection for quarantined targets, and a finite lifecycle-transition relation over candidate, shadow, canary, qualified, default-ready, quarantined, retired, and superseded states. That relation requires fresh evidence, residual escrow, fallback paths, expiry records, regression floors, authority scope, route permissions, supersession records, and retirement receipts where applicable. The `readiness_lifecycle_probe` result replays the relation against six valid synthetic state moves and twelve expected-invalid controls for non-forward jumps, missing evidence, missing escrow, unsafe default routing, quarantine leakage, missing terminal records, retired-state reuse, missing non-claims, and support-promotion overclaim. The executable boundary is still the decision record; benchmark evaluation, residual escrow storage, lifecycle execution, terminal-state governance, and routing enforcement remain separate implementation surfaces.
 
@@ -247,6 +296,7 @@ This readiness lifecycle is still a design target. Readiness remains at `argumen
 | Readiness transition enforcement test | Check that a target cannot enter a stronger state unless the gate decision permits it in an executable lifecycle harness. | implemented by readiness/residual gate harness for synthetic canary, default, quarantine, and expired-rerun scenarios; deployed readiness engine not run |
 | Residual escrow integrity test | Check that residuals remain attached after canary or promotion decisions. | implemented by readiness/residual gate harness for route residual obligations and inherited residual custody; residual-ledger storage not run |
 | Quarantine routing harness test | Check that quarantined targets are unavailable for ordinary routing but remain visible for diagnosis. | implemented by readiness/residual gate harness for blocked selected routes and preserved fallback routes; live quarantine routing not run |
+| Historical-project readiness check lifecycle | Check applicability, requiredness, attempt, result, waiver, evidence identity, expiry, invalidating dependencies, monotone containment, quarantine ownership, descendant closure, and route blocking against nine mutations. | implemented by `python3 scripts/validate_readiness_check_lifecycle.py`; one quarantined six-project fixture only, no deployed readiness or support-state promotion |
 
 Fixture-shape validation, bounded Lean predicates, finite lifecycle-transition theorems, and the readiness/residual synthetic harness are implemented. Remaining tests require a deployed lifecycle transition checker, residual ledger, benchmark harness, terminal-state governance surface, and routing harness that respects quarantine state.
 
@@ -273,9 +323,15 @@ These proof hooks are implemented as finite-record predicates over gate decision
 | `project_theseus_whitepaper` | Project Theseus Whitepaper | report_first_rmi_prototype | Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | passage-reviewed local public-project source |
 | `theseus_architecture_gate` | Theseus Architecture Gate | readiness_gate_governance | Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero. | passage-reviewed local public-project source |
 | `theseus_self_evolution_system` | Theseus Self-Evolution System | recursive_self_improvement_governance | Evidence-first self-evolution lane with intervention ladder, ATTD repo-health gate, guarded teacher self-edit, architecture experiment governance, loop closure, and outcome ledger. | passage-reviewed local public-project source |
+| `cca_project` | Compiled Cognitive Architecture project | historical_project_lineage | Promotion, quarantine, rollback, closure authority, and fail-closed benchmark gates. | public-safe pinned-project note; not replayed here |
+| `moecot_manifest_project` | MoECOT Manifest compiler-era project | historical_project_lineage | Promotion locality, evidence identity, residuals, holdouts, and growth guards. | public-safe pinned-project note; readiness behavior not rerun |
+| `beastbrain_project` | BeastBrain historical AI system project | historical_project_negative_case | Readiness-overclaim boundary between interfaces/checklists and open implementation gates. | public-safe pinned-project note; no readiness claim |
+| `bugbrain_project` | BugBrain bare-metal neuro-symbolic intelligence project | historical_project_negative_case | Skipped-as-green reports and explicit check-lifecycle fields. | public-safe pinned-project note; no hardware/runtime reproduction |
+| `corbens_trainer_project` | Corben's Trainer epistemic training and evaluation control plane | historical_project_negative_case | Transitive quarantine and stale promotion-lease invalidation. | public-safe pinned-project note; no training reproduction |
+| `corbens_best_model_possible_project` | Corben's Best Model Possible recurrent-model and mechanism laboratory | historical_project_negative_case | Material postconditions, quarantine, rollback, and interface-without-effect. | public-safe pinned-project note; no readiness claim |
 | `ext_darwin_godel_machine_2025` | Darwin Godel Machine | empirical_recursive_agent_improvement | External comparator for archive-based self-modifying candidates, benchmark selection, sandboxing, and human oversight. | source note available; benchmark gains are not readiness, monotonic safety, or promotion authority |
 
-The readiness sources support gate state, residual escrow, regression preservation, and quarantine. Eight mappings now have a narrower source-to-claim trace, and the Project Theseus architecture-gate lane has one static digest-verified report import. The book still has not run a live readiness gate, inspected a current Theseus dashboard, imported MoECOT runtime artifacts, or proved that any current Theseus, MoECOT, or book module passes readiness gates.
+The readiness sources support gate state, per-check lifecycle, residual escrow, regression preservation, transitive invalidation, and quarantine. Fifteen mappings now have a source-to-claim trace, and the Project Theseus architecture-gate lane has one static digest-verified report import. The new six-project fixture adds negative-case record discipline only. The book still has not run a live readiness gate, inspected a current Theseus dashboard, imported MoECOT runtime artifacts, or proved that any current project or book module passes readiness gates.
 
 ## Summary
 

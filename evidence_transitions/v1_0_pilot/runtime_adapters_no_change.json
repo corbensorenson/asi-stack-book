@@ -5,35 +5,40 @@
     "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
     "appendices/C_claim_evidence_matrix.qmd",
     "docs/runtime_adapter_permission_harness.md",
-    "docs/proof_adequacy_review.md"
+    "docs/proof_adequacy_review.md",
+    "schemas/sandboxed_adapter_capability_record.schema.json"
   ],
   "claim_record_refs": [
     "book_structure.json",
     "appendices/E_codex_test_specs.qmd",
     "schemas/runtime_adapter_invocation.schema.json",
     "schemas/authority_use_receipt.schema.json",
-    "experiments/runtime_adapter_permissions/results/2026-06-28-local.md"
+    "experiments/runtime_adapter_permissions/results/2026-06-28-local.md",
+    "tests/fixtures/protocol_records/sandboxed_adapter_capability_record.valid.json",
+    "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json"
   ],
   "old_support_state": "argument",
   "new_support_state": "argument",
   "transition_effect": "no_change",
   "transition_validity_state": "review_accepted",
-  "scope_boundary": "synthetic runtime-adapter permission, approval, receipt, and rollback/residual fixture behavior only; no deployed adapter behavior, sandbox isolation, secret-handle safety, approval-service quality, rollback execution, real effect receipt validity, or source-derived support-state promotion",
+  "scope_boundary": "synthetic adapter records plus one bounded live temp-file effect/rollback replay and one hand-authored capability-envelope classification; no OS-enforced sandbox, deployed adapter, network isolation, secret-handle safety, approval-service quality, target-service rollback, or support promotion",
   "evidence_roles": [
     "synthetic_harness",
     "schema_fixture",
+    "bounded_live_effect_replay",
+    "capability_envelope_fixture",
     "proof_adequacy_review",
     "chapter_limitations",
     "source_evidence_audit"
   ],
-  "transition_reason": "The repository now has exact source mappings for the Runtime Adapters claim, public schemas for runtime adapter invocations and authority-use receipts, a synthetic runtime-adapter permission harness with valid and expected-invalid fixtures, and proof adequacy follow-through that moves the chapter from executable-tests-needed to useful-but-too-narrow. Those artifacts support the design discipline around permission coverage, high-impact approval gates, approval expiry markers, effect receipt presence, rollback handles or irreversible residual capture, and authority receipt alignment. They still do not establish deployed adapter behavior, sandbox isolation, approval-service quality, secret-handle safety, rollback execution, real effect receipt validity, or runtime safety.",
+  "transition_reason": "The repository has exact source mappings, invocation and authority schemas, synthetic permission/adversarial/human-oversight/partition fixtures, one bounded temp-file write with exact rollback restoration, and one five-project capability-envelope record with ten rejecting mutations. The new record separates executable/path/network/clock/randomness scopes, process observation from OS enforcement, playback from bounded live reexecution, irreversible-residual disclosure, and ordinary-dispatch authority. These artifacts still do not establish an OS-enforced sandbox, deployed adapter, network isolation, approval-service quality, secret-handle safety, target-service rollback, historical-project behavior, or runtime safety.",
   "required_artifacts": [
     "deployed adapter traces across at least one real tool or runtime target",
     "sandbox isolation tests with attempted forbidden effects",
     "approval-service tests covering expiry, revocation, escalation, and denial receipts",
     "secret-handle safety tests that avoid raw secret exposure in logs and artifacts",
     "rollback execution tests for reversible effects and residual capture for irreversible effects",
-    "independent review of source interpretation adequacy",
+    "matched simpler baseline reporting denied/unsafe effects, false accepts/rejects, latency, operator burden, rollback cost, and residual discovery; any independent specialist review is postpublication and not a completion gate",
     "accepted upward evidence-transition review for any narrowed stronger claim"
   ],
   "artifact_refs": [
@@ -42,6 +47,10 @@
     "experiments/runtime_adapter_permissions/results/2026-06-28-local.md",
     "schemas/runtime_adapter_invocation.schema.json",
     "schemas/authority_use_receipt.schema.json",
+    "schemas/sandboxed_adapter_capability_record.schema.json",
+    "tests/fixtures/protocol_records/sandboxed_adapter_capability_record.valid.json",
+    "scripts/validate_sandboxed_adapter_capability.py",
+    "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
     "docs/proof_adequacy_review.md"
   ],
   "evidence_packet_refs": [
@@ -53,13 +62,15 @@
     "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
     "docs/source_evidence_audit.md#runtime-adapters-tool-permissions-and-human-approval.core"
   ],
-  "verification_command": "python3 scripts/validate_runtime_adapter_permissions.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
+  "verification_command": "python3 scripts/validate_runtime_adapter_permissions.py && python3 scripts/validate_runtime_adapter_effect_probe.py && python3 scripts/validate_sandboxed_adapter_capability.py && python3 scripts/validate_source_evidence_audit.py && python3 scripts/validate_v1_status_snapshot.py",
   "verification_result": "pass",
   "negative_results": [
     "Runtime Adapters remains at argument",
     "runtime adapter permission fixtures are synthetic",
+    "the live effect is a disposable temp-file probe and not a deployed adapter",
+    "process observation did not establish OS sandbox enforcement",
     "schemas validate record shape rather than deployed adapter enforcement",
-    "deployed adapter traces, sandbox isolation tests, approval-service tests, secret-handle tests, and rollback execution tests are not implemented"
+    "deployed adapter traces, OS sandbox isolation tests, approval-service tests, secret-handle tests, and target-service rollback tests are not implemented"
   ],
   "negative_evidence_refs": [
     "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
@@ -74,13 +85,13 @@
     "effect receipt validity claimed without real effect trace",
     "support-state promotion without accepted transition"
   ],
-  "promotion_burden": "Move above argument only after the claim is narrowed to the synthetic record-gate behavior that passed, or after deployed adapter traces, sandbox tests, approval-service behavior, secret-handle safety, rollback execution, and real effect receipt validity are recorded with accepted evidence-transition records.",
+  "promotion_burden": "Move above argument only after the claim is narrowed to the bounded record/effect behavior that passed, or after deployed adapter traces bind exact executable and capability scopes to observed OS enforcement, approval behavior, secret-handle safety, target-service rollback, irreversible residuals, and accepted evidence-transition records.",
   "limitations": [
     "synthetic fixtures do not prove deployed adapter behavior",
     "schemas validate record shape rather than permission enforcement",
     "approval expiry markers in fixtures do not prove an approval service exists",
-    "rollback handles and residual fields in fixtures do not prove rollback execution",
-    "no independent runtime-security or source-interpretation review has been recorded"
+    "the temp-file rollback proves only exact restoration in that disposable probe",
+    "process observation and declared scopes do not prove OS confinement"
   ],
   "review_status": "accepted",
   "reviewer_refs": [
@@ -89,11 +100,10 @@
   "reviewer_independence": "local maintainer-agent review only; not an independent runtime-security, formal-methods, or source-interpretation audit",
   "acceptance_blockers": [
     "no deployed adapter trace",
-    "no sandbox isolation test",
+    "no observed OS sandbox isolation test",
     "no approval-service behavior test",
     "no secret-handle safety test",
-    "no rollback execution test",
-    "no independent review"
+    "no target-service rollback execution test"
   ],
   "changelog_ref": "appendices/F_changelog.qmd#2026-06-28---v10-runtime-adapter-evidence-transition-no-change",
   "support_state_effect": "argument_only",

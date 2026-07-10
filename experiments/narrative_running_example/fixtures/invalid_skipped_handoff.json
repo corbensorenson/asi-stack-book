@@ -1,0 +1,6 @@
+{
+  "operation": "set",
+  "path": ["steps", 10, "handoff_to"],
+  "value": "resource-economics-and-token-budgets",
+  "expected_error": "handoff does not point to the next narrative chapter"
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/artifact_projection_revocation_record.schema.json",
+  "title": "Artifact Projection and Revocation Record",
+  "type": "object",
+  "required": [
+    "record_id",
+    "canonical_artifact",
+    "projections",
+    "dependencies",
+    "quarantine_event",
+    "replay_classification",
+    "async_completion",
+    "relocation_identity",
+    "support_state_effect",
+    "promotion_blockers",
+    "non_claims"
+  ],
+  "properties": {
+    "record_id": { "type": "string", "minLength": 1 },
+    "canonical_artifact": {
+      "type": "object",
+      "required": ["artifact_id", "content_digest", "storage_ref", "state", "authority"],
+      "properties": {
+        "artifact_id": { "type": "string", "minLength": 1 },
+        "content_digest": { "type": "string", "minLength": 1 },
+        "storage_ref": { "type": "string", "minLength": 1 },
+        "state": { "type": "string", "enum": ["active", "quarantined", "revoked", "superseded", "retired"] },
+        "authority": { "type": "string", "enum": ["canonical_manifest", "canonical_event_log", "canonical_artifact_store"] }
+      },
+      "additionalProperties": false
+    },
+    "projections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["projection_id", "projection_type", "source_artifact_id", "source_digest", "projection_digest", "refresh_state", "revocation_state"],
+        "properties": {
+          "projection_id": { "type": "string", "minLength": 1 },
+          "projection_type": { "type": "string", "enum": ["cache", "report", "dashboard", "index", "public_claim_surface", "derived_artifact"] },
+          "source_artifact_id": { "type": "string", "minLength": 1 },
+          "source_digest": { "type": "string", "minLength": 1 },
+          "projection_digest": { "type": "string", "minLength": 1 },
+          "refresh_state": { "type": "string", "enum": ["fresh", "stale", "blocked", "unknown"] },
+          "revocation_state": { "type": "string", "enum": ["active", "invalidated", "revoked", "superseded"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["upstream_id", "downstream_id", "relation", "alternate_derivation_refs"],
+        "properties": {
+          "upstream_id": { "type": "string", "minLength": 1 },
+          "downstream_id": { "type": "string", "minLength": 1 },
+          "relation": { "type": "string", "enum": ["derived_from", "supports", "promotes", "readiness_depends_on", "published_from"] },
+          "alternate_derivation_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        },
+        "additionalProperties": false
+      }
+    },
+    "quarantine_event": {
+      "type": "object",
+      "required": ["event_ref", "upstream_id", "reason", "required_downstream_ids", "invalidated_downstream_ids", "alternate_derivation_ids", "unresolved_ids"],
+      "properties": {
+        "event_ref": { "type": "string", "minLength": 1 },
+        "upstream_id": { "type": "string", "minLength": 1 },
+        "reason": { "type": "string", "minLength": 1 },
+        "required_downstream_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "invalidated_downstream_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "alternate_derivation_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "unresolved_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      },
+      "additionalProperties": false
+    },
+    "replay_classification": {
+      "type": "object",
+      "required": ["grade", "input_refs", "environment_ref", "observed_output_ref", "comparison_or_semantic_validator_ref", "limits"],
+      "properties": {
+        "grade": { "type": "string", "enum": ["playback", "deterministic_reexecution", "semantic_replay", "partial_reexecution", "non_replayable", "not_attempted"] },
+        "input_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "environment_ref": { "type": "string" },
+        "observed_output_ref": { "type": "string" },
+        "comparison_or_semantic_validator_ref": { "type": "string" },
+        "limits": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      },
+      "additionalProperties": false
+    },
+    "async_completion": {
+      "type": "object",
+      "required": ["request_id", "queued_ref", "terminal_state", "terminal_receipt_ref", "restart_reconciliation_ref"],
+      "properties": {
+        "request_id": { "type": "string", "minLength": 1 },
+        "queued_ref": { "type": "string", "minLength": 1 },
+        "terminal_state": { "type": "string", "enum": ["completed", "failed", "cancelled", "unknown"] },
+        "terminal_receipt_ref": { "type": "string" },
+        "restart_reconciliation_ref": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "relocation_identity": {
+      "type": "object",
+      "required": ["identity_authority", "content_digest", "original_path_ref", "relocated_path_ref", "digest_verified"],
+      "properties": {
+        "identity_authority": { "type": "string", "enum": ["content_digest", "compound_digest_and_policy", "path"] },
+        "content_digest": { "type": "string", "minLength": 1 },
+        "original_path_ref": { "type": "string", "minLength": 1 },
+        "relocated_path_ref": { "type": "string", "minLength": 1 },
+        "digest_verified": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "support_state_effect": { "type": "string", "enum": ["none", "record_shape_only", "argument_only", "eligible_for_bounded_evidence_review", "blocks_promotion"] },
+    "promotion_blockers": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}
