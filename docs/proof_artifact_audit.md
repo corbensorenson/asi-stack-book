@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 220 |
-| Manifest status counts | {"implemented": 220} |
-| Triage class counts | {"formal-invariant": 220} |
-| Lean modules referenced | 59 |
-| Chapters with proof targets | 51 |
+| Proof targets audited | 221 |
+| Manifest status counts | {"implemented": 221} |
+| Triage class counts | {"formal-invariant": 221} |
+| Lean modules referenced | 60 |
+| Chapters with proof targets | 52 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -60,6 +60,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/IntentToExecution.lean` | 4 | 12 | 4 | 4 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 21 | 11 | 6 |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 4 | 2 | 2 |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | 1 | 2 | 1 | 1 |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | 6 | 26 | 8 | 7 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 11 | 8 |
@@ -122,6 +123,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `labor-os-and-typed-jobs` | 5 | 5 | 0 | 0 |
 | `living-book-methodology` | 4 | 4 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
+| `model-weight-custody-and-hardware-roots-of-trust` | 1 | 1 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 0 | 0 |
 | `open-ended-improvement-engines` | 1 | 1 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
@@ -204,6 +206,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:security.scif.failure_blocks_promotion` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.route_envelope` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.commit_probe_bridge` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.transition_route_envelope` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |

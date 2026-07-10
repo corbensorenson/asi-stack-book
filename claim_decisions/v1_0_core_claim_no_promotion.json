@@ -737,6 +737,34 @@
       ]
     },
     {
+      "claim_id": "model-weight-custody-and-hardware-roots-of-trust.core",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "chapter_title": "Model-Weight Custody and Hardware Roots of Trust",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-noted model-weight security, confidential-computing, vendor lifecycle, and release-scheme comparators plus a finite invalid-attestation load route, but no ASI Stack weight store, encrypted artifact, TEE, key service, attestation, custody audit, extraction test, release decision, readiness decision, or deployment result has been accepted as evidence for the broad claim.",
+      "required_evidence": [
+        "public-safe synthetic custody workload with bounded valid and stale/invalid-attestation, changed-policy, widened-scope, release, revocation, and lineage controls",
+        "independent review of a bounded custody threat model, key-release policy, measurement/verifier scope, and release residual record",
+        "accepted transition for a narrowed custody-record or key-release-routing claim"
+      ],
+      "blockers": [
+        "no local weight store, encrypted artifact, key service, TEE, hardware attestation, custody audit, or model load",
+        "no adversarial security assessment, extraction test, incident exercise, or release-policy evaluation",
+        "finite theorems do not establish hardware trustworthiness, confidentiality, extraction resistance, model safety, readiness, authority, or generality"
+      ],
+      "non_claims": [
+        "does not prove that any weight is protected, confidential, secure, or resistant to extraction",
+        "does not prove hardware, vendor, operator, software, key-service, or attestation trustworthiness",
+        "does not prove model safety, release desirability, readiness, authority, deployment, or ASI"
+      ],
+      "refs": [
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#model-weight-custody-and-hardware-roots-of-trust.core"
+      ]
+    },
+    {
       "claim_id": "safety-cases-and-structured-assurance.core",
       "chapter_id": "safety-cases-and-structured-assurance",
       "chapter_title": "Safety Cases and Structured Assurance",

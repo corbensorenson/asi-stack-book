@@ -1,0 +1,337 @@
+---
+title: "Model-Weight Custody and Hardware Roots of Trust"
+chapter_id: "model-weight-custody-and-hardware-roots-of-trust"
+part_id: "foundations-alignment-governance"
+status: "conceptual"
+draft_maturity: "v0.1 chapter draft"
+last_updated: "2026-07-10"
+primary_sources:
+  - "ext_rand_model_weight_security_2024"
+  - "ext_nist_confidential_computing_2026"
+  - "ext_nvidia_confidential_model_lifecycle_2026"
+  - "ext_provable_model_weight_release_2025"
+  - "cca_project"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack weight store, encrypted weight artifact, key release, TEE, hardware attestation, custody audit, open-weight release, or deployment result has been run."
+  - "No local result establishes hardware trustworthiness, weight confidentiality, extraction resistance, release desirability, model safety, readiness, authority, or ASI."
+  - "The finite Lean route establishes only a record consequence for a required invalid attestation; it does not establish whether any environment, token, hardware, weight, policy, or reviewer is correct."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `model-weight-custody-and-hardware-roots-of-trust` |
+| Part | Part I - Foundations, Alignment, and Governance |
+| Status | conceptual |
+| Last updated | 2026-07-10 |
+| Primary source records | `ext_rand_model_weight_security_2024`, `ext_nist_confidential_computing_2026`, `ext_nvidia_confidential_model_lifecycle_2026`, `ext_provable_model_weight_release_2025`, `cca_project` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | RAND, NIST, NVIDIA, and formal-release comparators are source-noted. No local custody, confidential-computing, key-release, or extraction test has run. |
+| Test state | A finite invalid-attestation load block is implemented in Lean. No hardware, encrypted artifact, attestation verifier, key service, or model load was exercised. |
+
+## Drafting guardrail
+
+Model-weight custody is a security and governance design layer, not proof that
+weights are safe, secret, controlled, or appropriate to release. A record can
+make its assumptions, scope, and missing conditions visible. It cannot establish
+that a chip, firmware chain, vendor, operator, policy, key service, model, or
+deployment deserves trust.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+A model's weights are the artifact that makes a particular trained capability
+portable. They can be copied into backups, deployment images, and recipient
+environments before anyone decides what each copy means. A system may correctly
+refuse a tool call while the model artifact that produces the request has
+already escaped its declared boundary.
+
+Custody treats the weights as a named asset with a history. Which
+model and artifact are these? Who may hold them? Where may they be stored or
+loaded? What policy releases a decryption key? Which measured environment is
+being asked to receive it? What happens when a copy, credential, configuration,
+or host is suspected of compromise? And what remains possible after a broad
+release can no longer be recalled?
+
+Hardware attestation can contribute to this process by reporting a limited
+measurement about a stated environment. It cannot turn a difficult security,
+safety, or release decision into a token check. A narrower rule applies:
+when a required custody condition is absent or invalid, the requested load does
+not proceed as though nothing happened.
+:::
+
+## Problem
+
+The Security Kernel governs runtime secrets, privileged context, and action
+authority. That boundary is necessary but incomplete. A model artifact may be
+copied, encrypted, decrypted, moved, loaded, backed up, revoked, or distributed
+under a different lifecycle. Without an explicit owner for that lifecycle, an
+organization can secure the visible tool path while losing control of the model
+that exercises it.
+
+The custody boundary is larger than storage encryption. A custody decision needs a
+stable model and artifact identity; a lineage; the authorized holder and access
+scope; the encrypted-storage and transfer record; the key-release policy; the
+measured execution environment; the attestation requirement and verification
+result; incident and revocation paths; residual ownership; and the kind of
+release being considered. A load event is meaningful only in the context of
+those linked decisions.
+
+This matters especially for a high-capability system because weight access can
+be both a security concern and an irreversible governance transition. A broad
+recipient distribution, an open-weight release, and a local confidential load
+are not variants of one ordinary deployment toggle. They have different
+recall, derivative-copy, monitoring, and residual properties.
+
+## Why existing approaches are insufficient
+
+RAND's model-weight-security work is a useful comparator because it treats
+weights as a high-value asset exposed through many technical, operational,
+physical, and organizational paths. Its defense-in-depth and graduated-security
+framing resists the claim that one storage control settles custody. It does not,
+however, assess this repository's weights, adversaries, controls, or incident
+response.
+
+Confidential-computing guidance adds another bounded comparator. NIST's draft
+describes hardware-enabled trust domains, encrypted model memory, attestation,
+and key-release conditions. NVIDIA documents a vendor-specific lifecycle in
+which encrypted weights remain outside a confidential workload until a
+policy-sensitive attestation decision permits access. Neither description makes
+an attestation a universal security proof; each depends on stated hardware,
+software, policy, and operator assumptions.
+
+Release mechanisms require a separate objection. Formal work on model-weight
+release schemes shows why informal assurances about restricted distribution can
+fail under a specified extraction attack. This does not mean every release
+scheme fails. It means a release claim needs an attacker model, stated property,
+scope, and residuals, particularly when redistributed or extracted artifacts
+cannot realistically be recalled.
+
+Existing ASI Stack layers deliberately retain different jobs. Artifact Graphs
+record provenance; Security Kernel controls runtime secrets and authority;
+Capability Thresholds bind observations to commitments; Runtime Adapters govern
+actions; Readiness Gates decide bounded admission. None should silently inherit
+responsibility for the identity, custody, measurement, key-release, and
+irreversibility history of the model artifact itself.
+
+## Core Claim
+
+[model-weight-custody-and-hardware-roots-of-trust.core, label: Design rationale, support: argument] A governed stack treats model weights as a distinct high-value mutable asset: it records model and artifact identity, lineage, authorized custody state, encrypted storage and transfer, key-release policy, attestation requirements and verification result, authorized execution environment, access and release scope, revocation and incident path, residual owner, and irreversible release decision; a failed, absent, stale, or out-of-policy custody or attestation record blocks loading or routes accountable review, but cannot itself establish hardware trustworthiness, weight confidentiality, model safety, release desirability, readiness, or authority to deploy.
+
+## Mechanism
+
+The first object is a versioned custody record. It binds a model identity and
+artifact digest to lineage, custody authority, encrypted-storage reference,
+transfer record, named access scope, intended environment, key-release policy,
+and affected release path. A record must distinguish a proposed load from an
+actual load. It must also retain the revocation and incident route rather than
+implying that an access-control decision can erase copied artifacts.
+
+The second object is a scoped key-release decision. Before a decryption key is
+considered for release, the policy names the requesting environment, required
+measurement, verifier, freshness window, approved code and configuration scope,
+recipient, and residual owner. If attestation is required and missing, stale,
+unverifiable, or invalid, the path blocks or goes to accountable review. The
+result is a bounded precondition for a load, not permission to use tools,
+deploy a model, or make a safety claim.
+
+The third object is a release classification. A local load, a managed transfer,
+a partner distribution, and an open-weight release have different recipient,
+copy, revocation, disclosure, and residual conditions. An open or
+recipient-distributed release receives a separate authority decision and an
+explicit irreversibility record. The record cannot make an irreversible action
+reversible; it makes the residual visible before a decision is laundered into a
+routine deployment event.
+
+The separation matters because the favorable state of one record cannot repair
+the missing state of another. Encrypted storage says nothing about whether a
+recipient is authorized; an approved recipient says nothing about the measured
+environment; a current measurement says nothing about the artifact's lineage;
+and a successful load says nothing about runtime action authority. Keeping each
+link explicit makes it possible to identify the failed condition, retain the
+resulting residual, and send the affected decision to the owner that can repair
+or reject it.
+
+```{mermaid}
+flowchart LR
+  I["Model identity and lineage"] --> C["Custody and encrypted-artifact record"]
+  C --> P["Key-release policy and access scope"]
+  E["Requested measured environment"] --> A["Attestation verification"]
+  P --> D{"Custody conditions current?"}
+  A --> D
+  D -->|"no, missing, stale, or invalid"| B["Block load or route accountable review"]
+  D -->|"bounded policy conditions met"| R["Existing readiness review"]
+  R --> X["Runtime authority remains separately governed"]
+  C --> O["Release classification, incident, revocation, residual"]
+  B --> O
+  R --> O
+```
+
+**What the custody flow shows:** a successful measurement is only one input to
+a narrow load decision. The artifact's identity, policy, recipient scope,
+residuals, runtime authority, readiness, and release decision remain separate
+objects with separate owners.
+
+## Interfaces
+
+The ownership split prevents a custody receipt from becoming an all-purpose
+approval. Each neighboring layer may consume a narrow artifact reference or
+blocker, but it retains its own decision rule and cannot outsource its
+responsibility to an encrypted file, a key service, or a measurement token.
+
+- **Security Kernel and Digital SCIFs** owns runtime secrets and action
+  authority. The custody layer owns the model artifact and the precondition for
+  loading it; neither an encrypted weight nor an attested load grants a tool
+  permission.
+- **Artifact Graphs, Audit Logs, and Replay** owns immutable provenance and
+  replay. Custody records point to artifact and measurement identities rather
+  than recreating a second provenance ledger.
+- **Capability Thresholds and Deployment Commitments** owns what an observed
+  capability commits a path to do. Custody may be a required safeguard but does
+  not decide whether a threshold has been crossed.
+- **Runtime Adapters, Tool Permissions, and Human Approval** owns post-load
+  execution permission. Possession or loading is not authority to act.
+- **Readiness Gates, Residual Escrow, and Quarantine** owns bounded admission,
+  quarantine, and residual custody after a policy permits readiness review.
+
+## Invariants
+
+- A weight identity, lineage, custody authority, access scope, and release path
+  are recorded before a custody claim or key-release decision.
+- A decryption key is not released to a missing, stale, unverifiable,
+  out-of-policy, or unapproved environment record.
+- An attestation is scoped evidence about a stated measurement and verifier,
+  not proof of hardware, vendor, operator, software, model safety, or
+  deployment safety.
+- Open-weight release records its irreversibility and cannot be silently treated
+  as a reversible runtime deployment.
+- A custody incident or revocation path preserves affected identities, scopes,
+  residuals, decision owner, and re-review trigger.
+
+Together, these rules preserve an honest distinction between evidence about a
+bounded load condition and a broader assurance claim. They make a missing or
+invalid custody input operationally visible without pretending that a complete
+set of fields discovers every copy, defeats every attacker, or resolves the
+judgment involved in a release decision.
+
+## Failure modes
+
+- **Weight sprawl:** backups, checkpoints, developer copies, logs, caches, or
+  derivative artifacts escape the declared custody inventory.
+- **Attestation laundering:** a token is presented as proof that all hardware,
+  firmware, software, policy, vendor, operator, or model behavior is safe.
+- **Key-release drift:** a stale measurement, modified policy, widened scope,
+  or changed environment is accepted as though the former decision still held.
+- **Open-release laundering:** irreversible distribution is described as a
+  reversible deployment or a generic safety measure.
+- **Autonomous-insider capture:** a system uses legitimately available model
+  access, keys, tools, or copies to bypass the declared custody boundary.
+
+These failures call for different repairs. Inventory gaps require discovery and
+incident handling; an invalid measurement requires repair or review; a widened
+scope needs a new policy decision; an irreversible release needs explicit
+authority and residual acceptance; an insider path needs separation of duties
+and monitoring beyond the model's own stated intentions.
+
+## Minimum Viable Implementation
+
+The smallest honest artifact is a versioned weight-custody record with a model
+and artifact identity, lineage, encrypted-storage reference, custody authority,
+key-release policy, attestation requirement and result, environment identity,
+access scope, revocation path, residual owner, and requested-load field. The
+finite Lean route blocks a requested load whose required attestation is invalid
+and routes missing lineage to custody repair.
+
+This is not a confidential-computing implementation, key-management service,
+model registry, secure distribution mechanism, adversarial assessment, or
+release program. A public-safe next slice would exercise synthetic custody
+records for a valid bounded request, invalid and stale attestations, missing
+lineage, altered key policy, widened recipient scope, an open-release residual,
+and revocation review without using real model weights, secrets, credentials, or
+access tokens.
+
+## Beyond the State of the Art
+
+A mature custody control plane continuously inventories models and derivative
+artifacts; binds encrypted storage and transfer to named identities; releases
+keys only to independently verified current trust domains; tracks measurement
+and policy lineage; supports scoped revocation and incident response; and
+treats recipient distribution as a separately governed decision. It joins
+hardware and firmware assumptions, vendor and operator boundaries, runtime
+authority, monitoring, and residual risk without collapsing them into one
+security score.
+
+At this endpoint, a security incident can identify which artifact versions,
+recipient scopes, key policies, measurements, and readiness paths are affected
+and can trigger re-review without rewriting history. A release decision can
+state which copies cannot be recalled and which risks persist after disclosure.
+The system remains able to say no: a valid attestation can be insufficient for
+the intended scope, and an otherwise useful weight can remain ineligible for a
+particular release.
+
+Its most important property is reversibility of deliberation, not a promise
+that every artifact decision or distribution can be undone after the fact. It
+therefore preserves decision history even when artifact recall is unavailable.
+
+This is a target architecture, not a claim that this repository operates a
+custody system, protected hardware environment, effective weight-security
+program, confidential inference deployment, or authorized release process.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Required invalid-attestation load block | Ensure a requested load with a required invalid attestation cannot route directly to readiness review. | Implemented as a finite Lean theorem only. |
+| Stale-attestation and key-policy negative controls | Reject a stale measurement or altered policy before a requested key release. | Planned. |
+| Open-weight irreversibility record fixture | Require recipient scope, authority, no-rollback status, and residual ownership for a distribution decision. | Planned. |
+| Public-safe custody-record workload | Exercise synthetic custody records and decision receipts without real weights, secrets, keys, or hardware. | Planned; no custody service has run. |
+
+## Formalization hooks
+
+| Tag | Status | Scope |
+|---|---|---|
+| `lean:model_weight_custody.required.invalid_attestation_blocks_load` | implemented | A finite requested load with a required invalid attestation routes to block rather than readiness review. |
+
+This finite route does not prove that an attestation is genuine, that an
+environment is safe, that a weight is confidential, that a release mechanism
+resists extraction, that a model is safe, or that a deployment may proceed. It
+only preserves the modeled consequence of a required invalid attestation.
+
+## Source crosswalk
+
+| Source | Chapter use | Boundary |
+|---|---|---|
+| `ext_rand_model_weight_security_2024` | Comparator for weight threat surfaces, graduated security posture, defense in depth, custody, access, and incident-response vocabulary. | No local security level, protected store, theft resistance, confidentiality, safe deployment, or ASI result. |
+| `ext_nist_confidential_computing_2026` | Comparator for trust domains, encrypted model memory, attestation-gated key release, and explicit hardware-trust assumptions. | Draft guidance; no local TEE, attestation, hardware root of trust, key release, confidentiality, safety, or readiness result. |
+| `ext_nvidia_confidential_model_lifecycle_2026` | Vendor-specific comparator for encrypted weights outside a confidential workload, policy-sensitive attestation, and key-release lifecycle. | No local NVIDIA stack, confidential workload, host-secrecy assessment, deployment, safety, readiness, or authority result. |
+| `ext_provable_model_weight_release_2025` | Comparator for explicit attacker/security-property definitions, extraction analysis, and the irreversibility boundary of weight release. | No local release scheme, extraction result, protected distribution, safety, readiness, authority, or ASI result. |
+| `cca_project` | Bounded local implementation-reference comparator for protected governance state, mutable capability state, and device-mesh role separation. | No weight custody, attestation, confidential inference, security effectiveness, readiness, deployment authority, or ASI result. |
+
+## Summary
+
+Model weights are not merely files to load. They are a high-value, mutable
+artifact whose identity, custody, access, environment, release scope, incident
+path, and irreversibility affect what a governed system can honestly say about
+its boundary. The practical discipline is to make these states explicit before
+key release or loading, and to keep an invalid or stale condition from being
+silently bypassed.
+
+This discipline is deliberately narrower than a promise of secure hardware or
+safe models. It gives a reviewer a place to find the assumptions and residuals
+of an artifact decision. It does not make the artifact's behavior trustworthy,
+give it runtime authority, or answer whether it should be deployed.
+
+Its value is traceable refusal as much as controlled access: a missing custody
+condition stays visible until an accountable owner addresses it.
+
+## Handoff
+
+Model-Weight Custody and Hardware Roots of Trust governs the artifact and the
+conditions for a bounded load. Recursive Self-Improvement Boundaries now owns
+proposed changes to the system that might alter the model, custody policy,
+security boundary, evaluators, or rollback conditions; it must treat each of
+those changes as a governed transition rather than an implementation detail.

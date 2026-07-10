@@ -962,6 +962,99 @@ Lean proof targets:
 | `lean:security.scif.route_envelope` | `AsiStackProofs.SecurityKernel` | A structured authority-use review routes missing handles, inactive leases, missing approvals, unauthorized boundaries, missing substitution permission, insufficient clearance, prompt injection, missing SCIFs, unsanitized output, residual leak risk, revocation requests, and clean authorized use into explicit security-kernel outcomes. | implemented |
 | `lean:security.scif.commit_probe_bridge` | `AsiStackProofs.SecurityKernel` | A structured SCIF commit review routes secret output, handle output, missing lifecycle zeroization, overbroad context, inactive approval, missing residual boundaries, prompt-injection sanitized refusal, and clean sanitized commits into explicit outcomes matching the SCIF sanitized commit replay probe. | implemented |
 
+### Model-Weight Custody and Hardware Roots of Trust
+
+Stable ID: `model-weight-custody-and-hardware-roots-of-trust`
+
+Chapter job: Treat model weights as a distinct high-value mutable asset whose
+identity, custody, key release, loading environment, release scope, incident
+path, and irreversibility require a separate governed lifecycle.
+
+Core claim: A governed stack treats model weights as a distinct high-value mutable asset: it records model and artifact identity, lineage, authorized custody state, encrypted storage and transfer, key-release policy, attestation requirements and verification result, authorized execution environment, access and release scope, revocation and incident path, residual owner, and irreversible release decision; a failed, absent, stale, or out-of-policy custody or attestation record blocks loading or routes accountable review, but cannot itself establish hardware trustworthiness, weight confidentiality, model safety, release desirability, readiness, or authority to deploy.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_rand_model_weight_security_2024`, `ext_nist_confidential_computing_2026`, `ext_provable_model_weight_release_2025` | Read for threat surfaces, defense in depth, trust-domain and attestation limits, key release, attacker definitions, extraction objections, and irreversible-release boundaries. |
+| Supporting | `ext_nvidia_confidential_model_lifecycle_2026`, `cca_project` | Use NVIDIA only as a vendor-specific lifecycle comparator and CCA only for protected-state/role-separation implementation context; neither is local custody or security evidence. |
+
+Draft arc:
+
+- Problem: Runtime secret and action controls leave the model artifact itself
+  copied, loaded, released, or revoked without a named custody owner.
+- Insufficiency: Storage encryption, a valid-looking attestation token, or an
+  ordinary deployment record cannot by themselves establish a secure model
+  lifecycle, weight confidentiality, model safety, or release merit.
+- Mechanism: Bind model and artifact identity, lineage, custody authority,
+  encrypted storage/transfer, recipient scope, key-release policy, environment
+  measurement, attestation requirement/result, incident path, residual owner,
+  and affected release path into a versioned custody record.
+- Mechanism: Release a decryption key only after a current policy verifies its
+  stated environment, measurement, scope, verifier, and residual owner; block
+  or route accountable review on missing, stale, unverifiable, or invalid input.
+- Mechanism: Treat a local load, managed transfer, recipient distribution, and
+  open-weight release as distinct transitions with separate authority,
+  derivative-copy, recall, incident, and residual conditions.
+- Interface: Security Kernel owns runtime secret and action authority; model
+  custody owns the artifact and the precondition for a bounded load.
+- Interface: Artifact Graphs owns immutable provenance and replay; custody
+  points to artifact and measurement identities rather than duplicating it.
+- Interface: Capability Thresholds, Runtime Adapters, and Readiness retain
+  commitment, execution permission, and admission decisions respectively.
+
+Primary invariants:
+
+- A weight identity, lineage, custody authority, access scope, and release path
+  are recorded before a custody claim or key-release decision.
+- A key is not released to a missing, stale, unverifiable, out-of-policy, or
+  unapproved environment record.
+- Attestation is scoped evidence about a stated measurement and verifier, not a
+  proof of hardware, vendor, operator, software, model safety, or deployment
+  safety.
+- Open-weight release records irreversibility and cannot be silently treated as
+  a reversible runtime deployment.
+- A custody incident or revocation record retains affected identities, scopes,
+  residuals, decision owner, and re-review trigger.
+
+Failure modes to cover:
+
+- Weight sprawl through backups, checkpoints, developer copies, logs, caches,
+  or derivative artifacts.
+- Attestation laundering from a bounded measurement into a universal trust
+  claim.
+- Key-release drift through stale measurement, altered policy, widened scope,
+  or unrecorded environment changes.
+- Open-release laundering that presents irreversible distribution as a routine
+  and reversible deployment.
+- Autonomous-insider capture through legitimate but overbroad model access,
+  keys, tools, or copies.
+
+Draft deliverables:
+
+- A custody-flow diagram separating model identity, encrypted artifact,
+  attestation verification, key-release policy, readiness review, runtime
+  authority, and release residuals.
+- Source-noted external positioning through RAND's model-weight security
+  analysis, NIST's draft confidential-computing guidance, NVIDIA's
+  vendor-specific confidential lifecycle, and formal release-scheme analysis;
+  none establishes local weight protection, confidential inference, safety,
+  readiness, or authority.
+- Implemented proof-backed check: finite `WeightLoadRouteFor` routes a requested
+  load with a required invalid attestation to block and a missing lineage to
+  custody repair; this is structured-record coverage only, not hardware,
+  key-service, confidentiality, extraction-resistance, or deployment evidence.
+- Planned Codex test: public-safe synthetic custody records for valid bounded
+  request, stale/invalid attestation, missing lineage, altered key policy,
+  widened recipient scope, open-release residual, and revocation review, with
+  no real weights, keys, secrets, hardware, or deployment.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `AsiStackProofs.ModelWeightCustody` | A finite weight-custody record with a requested load, required attestation, and invalid attestation routes to block rather than readiness review, without inferring hardware compromise, weight confidentiality, safety, or ASI. | implemented |
+
 ### Recursive Self-Improvement Boundaries
 
 Stable ID: `recursive-self-improvement-boundaries`
@@ -3140,7 +3233,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 220 proof targets, 59 Lean modules, 1064 theorem declarations, 874 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 221 proof targets, 60 Lean modules, 1066 theorem declarations, 876 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

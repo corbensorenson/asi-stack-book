@@ -90,6 +90,7 @@ proxy, adapter, lineage, and closure metrics can disagree.
 - `scalable-oversight-and-adversarial-ai-control`
 - `stable-capability-fields`
 - `capability-replacement-and-rollback`
+- `model-weight-custody-and-hardware-roots-of-trust`
 - `recursive-self-improvement-boundaries`
 - `human-intent-as-a-formal-input`
 - `intent-to-execution-contracts`
@@ -130,6 +131,10 @@ proxy, adapter, lineage, and closure metrics can disagree.
 - Add semantic-depth and abstraction-map fields to proof/runtime coupling.
 - Add durable semantic-memory versus context-materialization separation; defer
   the new-chapter decision until BeastBrain is mined.
+- Use protected governance state and role separation only as bounded
+  implementation-reference context for weight-custody records; do not treat CCA
+  as evidence of weight custody, attestation, confidential inference, or
+  security effectiveness.
 - Use CCA as a convergence implementation reference without treating its
   benchmark, efficiency, safety, or AGI/ASI claims as book-verified results.
 

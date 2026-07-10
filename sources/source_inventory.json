@@ -632,6 +632,7 @@
     "chapter_targets": [
       "cognitive-compilation-and-semantic-ir",
       "claim-ledgers-and-belief-revision",
+      "model-weight-custody-and-hardware-roots-of-trust",
       "recursive-self-improvement-boundaries",
       "governed-deliberation-and-test-time-scaling",
       "benchmark-ratchets-and-anti-goodhart-evidence",
@@ -3821,6 +3822,68 @@
     "published": "2024",
     "updated": "2024",
     "citation_label": "AI Safety Institute (2024), Safety Cases at AISI"
+  },
+  {
+    "id": "ext_rand_model_weight_security_2024",
+    "title": "Securing AI Model Weights: Preventing Theft and Misuse of Frontier Models",
+    "priority": "external_literature",
+    "layer": "model_weight_custody",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://www.rand.org/content/dam/rand/pubs/research_reports/RRA2800/RRA2849-1/RAND_RRA2849-1.pdf",
+    "notes": "Primary RAND analysis of frontier-model-weight theft/misuse threat surfaces, security levels, defense-in-depth, access control, physical and organizational controls; it does not establish local protection or safety.",
+    "source_type": "research_report",
+    "published": "2024-06-12",
+    "updated": "2024-06-12",
+    "citation_label": "Nevo et al. (2024), Securing AI Model Weights"
+  },
+  {
+    "id": "ext_nist_confidential_computing_2026",
+    "title": "Hardware-Enabled Security: Confidential Computing of Data in Cloud Workloads",
+    "priority": "external_literature",
+    "layer": "hardware_root_attestation",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://nvlpubs.nist.gov/nistpubs/ir/2026/NIST.IR.8320E.ipd.pdf",
+    "notes": "NIST initial-public-draft comparator for hardware-enabled confidential computing, memory protection, trust domains, attestation-gated key release, and AI model/data protection; it is draft guidance, not a local TEE result.",
+    "source_type": "draft_standard",
+    "published": "2026-05",
+    "updated": "2026-05",
+    "citation_label": "NIST (2026), IR 8320E Initial Public Draft"
+  },
+  {
+    "id": "ext_nvidia_confidential_model_lifecycle_2026",
+    "title": "Workload and Model Lifecycle: Deploying Proprietary Models Securely with NVIDIA Confidential Computing",
+    "priority": "external_literature",
+    "layer": "attestation_gated_model_loading",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://docs.nvidia.com/enterprise-reference-architectures/deploying-proprietary-models-confidential-compute-self-hosted-kubernetes/latest/workload-and-model-lifecycle.html",
+    "notes": "Official vendor implementation-reference comparator for encrypted weights outside a confidential pod, policy-sensitive attestation evidence, and key-release decisions; it does not establish a local confidential deployment or attestation result.",
+    "source_type": "official_technical_documentation",
+    "published": "2026",
+    "updated": "2026",
+    "citation_label": "NVIDIA (2026), Confidential Model Lifecycle"
+  },
+  {
+    "id": "ext_provable_model_weight_release_2025",
+    "title": "Towards Provable (In)Secure Model Weight Release Schemes",
+    "priority": "external_literature",
+    "layer": "open_weight_release_security",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust"
+    ],
+    "url": "https://arxiv.org/abs/2506.19874",
+    "notes": "Primary formal-security comparator for evaluating claimed secure model-weight release schemes and parameter-extraction failure modes; it does not establish an ASI Stack release scheme or release decision.",
+    "source_type": "preprint",
+    "arxiv_id": "2506.19874",
+    "published": "2025-06-23",
+    "updated": "2025-06-23",
+    "citation_label": "Yang et al. (2025), Provable (In)Secure Model Weight Release Schemes",
+    "doi": "10.48550/arXiv.2506.19874"
   },
   {
     "id": "ext_test_time_compute_scaling_2024",

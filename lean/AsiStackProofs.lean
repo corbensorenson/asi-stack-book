@@ -27,6 +27,7 @@ import AsiStackProofs.IntentContracts
 import AsiStackProofs.IntentToExecution
 import AsiStackProofs.LivingBook
 import AsiStackProofs.MoECOTRuntime
+import AsiStackProofs.ModelWeightCustody
 import AsiStackProofs.PolicyOptimization
 import AsiStackProofs.Planning
 import AsiStackProofs.PlanForge

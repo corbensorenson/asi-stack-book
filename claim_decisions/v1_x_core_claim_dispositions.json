@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 51 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 52 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 51,
+    "manifest_chapter_core_claims": 52,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 29,
+    "accepted_no_promotion_dispositions": 30,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 51
+    "chapter_core_claims_remaining_at_argument": 52
   },
   "dispositions": [
     {
@@ -611,6 +611,45 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json"
       ]
+    },
+    {
+      "claim_id": "model-weight-custody-and-hardware-roots-of-trust.core",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "chapter_title": "Model-Weight Custody and Hardware Roots of Trust",
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A governed stack treats model weights as a distinct high-value mutable asset: it records model and artifact identity, lineage, authorized custody state, encrypted storage and transfer, key-release policy, attestation requirements and verification result, authorized execution environment, access and release scope, revocation and incident path, residual owner, and irreversible release decision; a failed, absent, stale, or out-of-policy custody or attestation record blocks loading or routes accountable review, but cannot itself establish hardware trustworthiness, weight confidentiality, model safety, release desirability, readiness, or authority to deploy.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "public-safe synthetic custody workload with bounded valid and stale/invalid-attestation, changed-policy, widened-scope, release, revocation, and lineage controls",
+        "independent review of a bounded custody threat model, key-release policy, measurement/verifier scope, and release residual record",
+        "accepted transition for a narrowed custody-record or key-release-routing claim"
+      ],
+      "blockers": [
+        "no local weight store, encrypted artifact, key service, TEE, hardware attestation, custody audit, or model load",
+        "no adversarial security assessment, extraction test, incident exercise, or release-policy evaluation",
+        "finite theorems do not establish hardware trustworthiness, confidentiality, extraction resistance, model safety, readiness, authority, or generality"
+      ],
+      "promotion_burden": "The chapter has source-noted model-weight security, confidential-computing, vendor lifecycle, and release-scheme comparators plus a finite invalid-attestation load route, but no ASI Stack weight store, encrypted artifact, TEE, key service, attestation, custody audit, extraction test, release decision, readiness decision, or deployment result has been accepted as evidence for the broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove that any weight is protected, confidential, secure, or resistant to extraction",
+        "does not prove hardware, vendor, operator, software, key-service, or attestation trustworthiness",
+        "does not prove model safety, release desirability, readiness, authority, deployment, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 5 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-noted weight-security, confidential-computing, and release-scheme comparators plus a finite invalid-attestation block",
+      "formal_or_prototype_work": "Build a public-safe custody record with model/artifact identity, lineage, encrypted-storage reference, key-release policy, environment measurement, attestation result, access scope, revocation, release classification, and residual ownership.",
+      "human_reader_focus": "Explain why a model artifact needs its own custody history, and why a hardware token is not a safety certificate.",
+      "what_would_move_this": "A replayed synthetic custody workload with stale/invalid-attestation, changed-policy, widened-scope, open-release, revocation, and missing-lineage controls; no local weights, keys, hardware, confidentiality, security, safety, readiness, authority, or deployment claim.",
+      "relevant_non_core_transition_refs": []
     },
     {
       "claim_id": "recursive-self-improvement-boundaries.core",

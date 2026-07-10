@@ -2191,6 +2191,16 @@
       "rationale": "Implemented in AsiStackProofs.SafetyCases as a finite unresolved-defeater and countercase-review boundary. It does not establish defeater correctness, argument validity, evidence adequacy, hazard-model completeness, control efficacy, safety, readiness, authority, or ASI."
     },
     {
+      "tag": "lean:model_weight_custody.required.invalid_attestation_blocks_load",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "formal_target": "A finite weight-custody record with a requested load, required attestation, and invalid attestation routes to block rather than readiness review, without inferring hardware compromise, weight confidentiality, safety, or ASI.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.ModelWeightCustody as a finite required-invalid-attestation load boundary, with a companion missing-lineage custody-repair route. It does not establish hardware trustworthiness, attestation genuineness, weight confidentiality, extraction resistance, key-service behavior, model safety, readiness, authority, deployment, or ASI."
+    },
+    {
       "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "module": "AsiStackProofs.CapabilityThresholds",
@@ -2211,5 +2221,5 @@
       "rationale": "Implemented in AsiStackProofs.ScalableOversight as a finite high-risk admission boundary, with a companion baseline-completeness route. It does not establish reviewer independence, supervisor calibration, debate or consultancy efficacy, training safety, execution authority, model quality, safety, or ASI."
     }
   ],
-  "record_count": 220
+  "record_count": 221
 }

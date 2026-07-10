@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 51 |
-| Assigned source/chapter pairs | 473 |
-| Exact claim-source mappings | 465 |
+| Chapters audited | 52 |
+| Assigned source/chapter pairs | 478 |
+| Exact claim-source mappings | 470 |
 | Unmapped assigned pairs | 8 |
-| Source notes present for assigned pairs | 473 |
-| Source notes listing assigned chapter | 473 |
-| Passage-reviewed mappings recorded | 465 |
-| Support-state counts | {"argument": 51} |
+| Source notes present for assigned pairs | 478 |
+| Source notes listing assigned chapter | 478 |
+| Passage-reviewed mappings recorded | 470 |
+| Support-state counts | {"argument": 52} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -45,6 +45,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `stable-capability-fields` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `model-weight-custody-and-hardware-roots-of-trust` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `recursive-self-improvement-boundaries` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
 | `open-ended-improvement-engines` | 6 | 3 | 6 | 6 | 3 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
@@ -159,6 +160,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_weak_to_strong_generalization_2023` | 1 | yes |
 | `ext_scalable_oversight_weak_llms_2024` | 1 | yes |
 | `eternal_code` | 1 | yes |
+| `ext_rand_model_weight_security_2024` | 1 | yes |
+| `ext_nist_confidential_computing_2026` | 1 | yes |
+| `ext_nvidia_confidential_model_lifecycle_2026` | 1 | yes |
+| `ext_provable_model_weight_release_2025` | 1 | yes |
+| `cca_project` | 1 | yes |
 | `ext_poet_2019` | 1 | yes |
 | `ext_funsearch_2024` | 1 | yes |
 | `ext_voyager_2023` | 1 | yes |
@@ -311,6 +317,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
+| `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_rand_model_weight_security_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_nist_confidential_computing_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_nvidia_confidential_model_lifecycle_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_provable_model_weight_release_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `cca_project` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `rmi` | mapped | note present | chapter listed | passage-reviewed |

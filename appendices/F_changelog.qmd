@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-07-10 - Add Model-Weight Custody and Hardware Roots of Trust
+
+- Added the manifest-driven **Model-Weight Custody and Hardware Roots of Trust**
+  chapter after Security Kernel, with live and Human Reading Path prose, a
+  custody-flow diagram, source crosswalk, implementation horizons, evidence-plan
+  row, no-promotion disposition, and burn-down entry.
+- Added source notes for RAND's model-weight security report, NIST's draft
+  confidential-computing guidance, NVIDIA's vendor-specific confidential model
+  lifecycle, and formal release-scheme analysis. They are scoped comparators for
+  custody, attestation, key release, and irreversibility, not a local protected
+  weight store, hardware-trust, confidentiality, security, safety, readiness,
+  release, or deployment result.
+- Added `AsiStackProofs.ModelWeightCustody` finite routes that block a requested
+  load with required invalid attestation and route missing lineage to custody
+  repair.
+- Boundary: the chapter and proof do not establish hardware trustworthiness,
+  weight confidentiality, extraction resistance, security effectiveness, model
+  safety, release desirability, readiness, authority, ASI, or a chapter-core
+  support-state transition.
+
 ## 2026-07-10 - Begin historical AI project mining
 
 - Established a persistent, public-safe mining ledger for the historical AI
@@ -133,7 +153,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 220 proof targets, 59 Lean modules, 1064 theorem declarations, 874 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 221 proof targets, 60 Lean modules, 1066 theorem declarations, 876 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

@@ -2886,6 +2886,142 @@
           ]
         },
         {
+          "id": "model-weight-custody-and-hardware-roots-of-trust",
+          "title": "Model-Weight Custody and Hardware Roots of Trust",
+          "file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_rand_model_weight_security_2024",
+            "ext_nist_confidential_computing_2026",
+            "ext_nvidia_confidential_model_lifecycle_2026",
+            "ext_provable_model_weight_release_2025",
+            "cca_project"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_rand_model_weight_security_2024",
+              "ext_nist_confidential_computing_2026",
+              "ext_nvidia_confidential_model_lifecycle_2026",
+              "ext_provable_model_weight_release_2025"
+            ],
+            "supporting": [
+              "cca_project"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "The sources are source-setting comparators. No ASI Stack weight store, encrypted weight artifact, key release, TEE, hardware attestation, custody audit, open-weight release, or deployment result has been run."
+            ]
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_rand_model_weight_security_2024",
+              "mapped_support": "Supports a scoped comparator for model-weight attack surfaces, graduated security posture, defense in depth, custody, access, and incident-response vocabulary.",
+              "limits": "Does not establish local protection, confidentiality, safety, readiness, release authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_rand_model_weight_security_2024.md:14-65"
+              ],
+              "passage_review_note": "Reviewed the primary RAND report's custody threat, attack-vector, security-level, and defense-in-depth framing as recorded in the source note; no local security assessment was performed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_nist_confidential_computing_2026",
+              "mapped_support": "Supports a scoped comparator for hardware trust domains, encrypted model memory, attestation-gated key release, and explicit trust assumptions.",
+              "limits": "Draft guidance; does not establish local TEE behavior, hardware trustworthiness, confidentiality, safety, readiness, deployment authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_confidential_computing_2026.md:14-64"
+              ],
+              "passage_review_note": "Reviewed the primary NIST initial-public-draft framing for AI model memory, attestation, and key access as recorded in the source note; no local confidential-computing environment ran.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_nvidia_confidential_model_lifecycle_2026",
+              "mapped_support": "Supports a vendor-specific comparator for encrypted weights outside a confidential pod, policy-sensitive attestation, and key-release decisions.",
+              "limits": "Does not establish local NVIDIA hardware, pod behavior, token verification, host secrecy, confidential deployment, safety, readiness, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_nvidia_confidential_model_lifecycle_2026.md:14-61"
+              ],
+              "passage_review_note": "Reviewed official lifecycle documentation for encrypted artifact, measurement, and key-release framing; no vendor stack was configured or audited locally.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_provable_model_weight_release_2025",
+              "mapped_support": "Supports a scoped comparator for explicit attacker/security-property definitions, extraction analysis, and the irreversibility boundary of weight release.",
+              "limits": "Does not establish a local release scheme, extraction resistance, open-weight policy, safety, readiness, release authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_provable_model_weight_release_2025.md:14-60"
+              ],
+              "passage_review_note": "Reviewed the primary paper abstract and formal-critique scope as recorded in the source note; no release or extraction test was performed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports a bounded local implementation-reference comparator for protected governance state, mutable capability state, and device-mesh role separation.",
+              "limits": "Does not establish weight custody, hardware attestation, confidential inference, security effectiveness, safety, readiness, deployment authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:14-111"
+              ],
+              "passage_review_note": "Reviewed the public-safe pinned local-project source note; no CCA runtime, device mesh, weight store, key service, or attestation was replayed.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "problem": "Runtime secret handling can be governed while the model artifact itself remains copied, loaded, released, or revoked without an explicit custody, key-release, attestation, or incident record.",
+          "insufficient": "Security Kernel owns runtime authority and secret boundaries, Artifact Graphs owns provenance, Capability Thresholds owns precommitments, and Runtime Adapters own execution permission, but none owns the model-weight lifecycle from identity and encrypted custody through measured loading, release scope, revocation, and irreversible distribution.",
+          "core_claim": "A governed stack treats model weights as a distinct high-value mutable asset: it records model and artifact identity, lineage, authorized custody state, encrypted storage and transfer, key-release policy, attestation requirements and verification result, authorized execution environment, access and release scope, revocation and incident path, residual owner, and irreversible release decision; a failed, absent, stale, or out-of-policy custody or attestation record blocks loading or routes accountable review, but cannot itself establish hardware trustworthiness, weight confidentiality, model safety, release desirability, readiness, or authority to deploy.",
+          "mechanism": [
+            "Bind a versioned weight identity and lineage to each custody state, encrypted artifact, recipient/access scope, and affected release path.",
+            "Separate encrypted storage/transfer, key-release policy, environment measurement, attestation verification, decryption/load event, runtime authority, and output controls so one favorable token cannot become a universal security claim.",
+            "Release a decryption key only after the declared policy verifies a current measured environment, authorized scope, residual owner, and revocation/incident path; retain the decision and limits.",
+            "Treat open-weight or recipient-distributed release as a distinct potentially irreversible transition with explicit authority, threat model, disclosure, derivative-copy, revocation-limit, and residual records."
+          ],
+          "interfaces": [
+            "Security Kernel and Digital SCIFs own runtime secrets and authority; this chapter owns the model artifact and the precondition for its loading.",
+            "Artifact Graphs owns immutable provenance and replay; custody records point to artifacts and measurements rather than duplicate them.",
+            "Capability Thresholds owns what capability observation commits a deployment path to do; custody may be one required safeguard, not a threshold conclusion.",
+            "Runtime Adapters own post-load execution permission; possession of an attested weight-load record does not grant tool or action authority.",
+            "Readiness Gates, Residual Escrow, and Quarantine own admission and residual custody after a weight policy allows a bounded readiness review."
+          ],
+          "invariants": [
+            "A weight identity, lineage, custody authority, access scope, and release path are recorded before a custody claim or key-release decision.",
+            "A decryption key is not released to a missing, stale, unverifiable, out-of-policy, or unapproved environment record.",
+            "An attestation is scoped evidence about a stated measurement and verifier, not proof of hardware, vendor, operator, software, model safety, or deployment safety.",
+            "Open-weight release records its irreversibility and cannot be silently treated as a reversible runtime deployment.",
+            "A custody incident or revocation path preserves affected identities, scopes, residuals, decision owner, and re-review trigger."
+          ],
+          "failure_modes": [
+            "Weight sprawl through backups, checkpoints, developer copies, logs, caches, or derivative artifacts.",
+            "Attestation laundering turns a token into a claim that all hardware, firmware, software, policy, or model behavior is trustworthy.",
+            "Key-release drift uses stale measurement, modified policy, widened recipient scope, or unrecorded environment changes.",
+            "Open-release laundering frames an irreversible distribution as a reversible deployment or a generic safety measure.",
+            "Autonomous-insider capture uses legitimate model access, keys, or tools to bypass the declared custody boundary."
+          ],
+          "minimal_implementation": "A versioned weight-custody record with model/artifact identity, lineage, encrypted-storage reference, custody authority, key-release policy, attestation requirement/result, environment identity, access scope, revocation path, residual owner, and requested load. A finite Lean route blocks a requested load with required but invalid attestation.",
+          "beyond_state_of_art": "A mature custody control plane continuously inventories model and derivative artifacts, binds encrypted storage and transfer to named identities, releases keys only to independently verified current trust domains, captures measurement/policy lineage, tracks copies and recipient scopes, supports scoped revocation and incident response, and treats open-weight distribution as a separately governed irreversible release. It integrates hardware/firmware trust assumptions, vendor and operator boundaries, runtime authority, monitoring, and residual risk without claiming any attestation proves the model safe or the system trustworthy. This is a target architecture, not a claim that the repository has a custody system, confidential environment, effective weight security, or authorized deployment.",
+          "codex_tests": [
+            "Required invalid-attestation load block",
+            "Stale-attestation and key-policy negative control",
+            "Open-weight irreversibility record fixture",
+            "Public-safe custody-record workload"
+          ],
+          "lean_module": "AsiStackProofs.ModelWeightCustody",
+          "proof_targets": [
+            {
+              "tag": "lean:model_weight_custody.required.invalid_attestation_blocks_load",
+              "module": "AsiStackProofs.ModelWeightCustody",
+              "target": "A finite weight-custody record with a requested load, required attestation, and invalid attestation routes to block rather than readiness review, without inferring hardware compromise, weight confidentiality, safety, or ASI.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "v0.1 chapter draft",
+          "open_evidence_gaps": [
+            "No ASI Stack weight store, encrypted weight artifact, key release, TEE, attestation, custody audit, open-weight release, or deployment has been run.",
+            "No local result establishes hardware trustworthiness, confidentiality, extraction resistance, release desirability, model safety, readiness, authority, or ASI.",
+            "The finite Lean route establishes only a structured record consequence for a required invalid attestation; it does not establish whether any environment, token, hardware, weight, policy, or reviewer is correct."
+          ]
+        },
+        {
           "id": "recursive-self-improvement-boundaries",
           "title": "Recursive Self-Improvement Boundaries",
           "file": "chapters/recursive-self-improvement-boundaries.qmd",
@@ -11357,130 +11493,130 @@
           ]
         },
         {
-  "id": "safety-cases-and-structured-assurance",
-  "title": "Safety Cases and Structured Assurance",
-  "file": "chapters/safety-cases-and-structured-assurance.qmd",
-  "status": "conceptual",
-  "evidence_level": "argument",
-  "claim_label": "Design rationale",
-  "source_ids": [
-    "ext_gsn_community_standard_2011",
-    "ext_evaluations_safety_cases_scheming_2024",
-    "ext_aisi_safety_cases_2024",
-    "benchmaxxing"
-  ],
-  "source_queue": {
-    "primary": [
-      "ext_gsn_community_standard_2011",
-      "ext_evaluations_safety_cases_scheming_2024",
-      "ext_aisi_safety_cases_2024"
-    ],
-    "supporting": [
-      "benchmaxxing"
-    ],
-    "variants": [],
-    "connector_or_recovery": [],
-    "handoff_or_recovery_notes": [
-      "The sources are source-setting comparators for structured assurance and its limits. No ASI Stack safety case, threat model, control evaluation, independent review, risk estimate, readiness decision, or deployment result has been run."
-    ]
-  },
-  "claim_source_mappings": [
-    {
-      "source_id": "ext_gsn_community_standard_2011",
-      "mapped_support": "Supports a scoped comparator for explicit goals, strategies, evidence references, context, assumptions, justifications, and declared support relations in an assurance graph.",
-      "limits": "Does not establish that any ASI Stack claim is true, that evidence is adequate, that a threat model is complete, or that a system is safe, ready, or authorized to deploy.",
-      "passage_refs": [
-        "sources/source_notes/ext_gsn_community_standard_2011.md:14-69"
-      ],
-      "passage_review_note": "Reviewed the primary GSN standard definitions and its explicit boundary that notation documents an asserted argument rather than establishing truth; no GSN case, tool, or review was run locally.",
-      "passage_review_state": "reviewed"
-    },
-    {
-      "source_id": "ext_evaluations_safety_cases_scheming_2024",
-      "mapped_support": "Supports a scoped comparator for threat-model-specific incapability, harm, control, and alignment argument families, evaluation dependencies, assumptions, and open research gaps.",
-      "limits": "Does not establish local scheming absence, alignment, control effectiveness, safety, readiness, deployment authorization, or ASI.",
-      "passage_refs": [
-        "sources/source_notes/ext_evaluations_safety_cases_scheming_2024.md:15-70"
-      ],
-      "passage_review_note": "Reviewed the primary arXiv paper's abstract, safety-case framing, argument families, empirical-evaluation dependencies, and stated unresolved assumptions as recorded in the source note; no evaluation or case was reproduced.",
-      "passage_review_state": "reviewed"
-    },
-    {
-      "source_id": "ext_aisi_safety_cases_2024",
-      "mapped_support": "Supports a scoped comparator for positive and negative evidence, countercase searches, uncertainty, disagreement, and limits on confidence in frontier-AI safety-case sketches.",
-      "limits": "Does not establish local countercase adequacy, review independence, safety-case confidence, control efficacy, safety, readiness, or deployment authorization.",
-      "passage_refs": [
-        "sources/source_notes/ext_aisi_safety_cases_2024.md:15-68"
-      ],
-      "passage_review_note": "Reviewed the official AISI methodology page for structured-case, counterevidence, uncertainty, and confidence-limit framing as recorded in the source note; no AISI process or result was reproduced.",
-      "passage_review_state": "reviewed"
-    },
-    {
-      "source_id": "benchmaxxing",
-      "mapped_support": "Supports a local conceptual comparator for preserving benchmark lifecycle, baseline, regression, residual, and anti-Goodhart records that a compiled case may reference without owning their measurement truth conditions.",
-      "limits": "Does not establish a safety case, hazard model, evidence adequacy, safety, readiness, deployment authority, or ASI.",
-      "passage_refs": [
-        "sources/source_notes/benchmaxxing.md:11-73"
-      ],
-      "passage_review_note": "Reviewed the local raw-cache-backed source note for benchmark lifecycle, regression, residual, and anti-Goodhart vocabulary; no case compilation, benchmark, safety evaluation, or release decision was performed.",
-      "passage_review_state": "reviewed"
-    }
-  ],
-  "problem": "The stack has claim, source, proof, evaluation, threshold, safeguard, readiness, and residual records, but no bounded compilation surface that makes their dependencies, assumptions, countercases, and unresolved defeaters reviewable as one deployment-context argument.",
-  "insufficient": "Evidence States owns support movement, Benchmark Ratchets owns measurement integrity, Adversarial Evaluation owns observation integrity, Capability Thresholds owns precommitted response, Readiness owns admission, and Artifact Graphs owns provenance, but none owns the structured assurance argument that can expose how those records jointly support or fail a scoped claim.",
-  "core_claim": "A governed stack compiles a safety case as a versioned, reviewable graph of scoped claims, argument strategies, evidence references, assumptions, defeaters, hazards, deployment context, acceptance criteria, authority, and residual ownership; a rendered or structurally complete graph can expose dependencies and block an affected release when required hazards, countercase review, acceptance criteria, or residuals are unresolved, but cannot itself establish safety, correct threat modeling, evidence adequacy, control effectiveness, readiness, or authority to deploy.",
-  "mechanism": [
-    "Declare a case boundary before compilation: deployment context, top claim, threat and hazard model, affected release path, decision authority, acceptance criteria, and review deadline.",
-    "Compile versioned claim, argument, evidence, context, assumption, safeguard, evaluation, threshold, readiness, and residual references into a graph whose edges state a bounded support or challenge relation rather than silently copying prose.",
-    "Represent defeaters, countercase-search scope, disagreement, stale evidence, missing review, and unresolved residuals as first-class case nodes that can block, narrow, or route the affected decision.",
-    "Keep compilation, independent review, acceptance, and release as separate records: a graph can be structurally complete while its evidence remains inadequate or its deployment path remains blocked."
-  ],
-  "interfaces": [
-    "Evidence States and Claim Discipline owns support-state movement and the claim ledger; the safety case consumes references and cannot promote claims by rendering them.",
-    "Benchmark Ratchets and Anti-Goodhart Evidence plus Adversarial Evaluation, Sandbagging, and Training-Time Deception own measurement and observation integrity; their evidence and defeaters enter the case as bounded inputs.",
-    "Capability Thresholds and Deployment Commitments owns threshold response; a safety case can state which commitment is affected but cannot set or waive it.",
-    "Readiness Gates, Residual Escrow, and Quarantine owns operational admission, quarantine, and residual custody; the case routes unresolved material to those gates.",
-    "Artifact Graphs, Audit Logs, and Replay owns provenance and replay handles; the case records pointers rather than becoming an alternate evidence store.",
-    "Security Kernel and Runtime Adapters own technical controls and action authority; the case can require their evidence but cannot implement or authorize them."
-  ],
-  "invariants": [
-    "Every top claim is bound to a deployment context, hazard/threat scope, case version, acceptance criterion, decision authority, and affected release path.",
-    "A support edge identifies the claim property, evidence reference, strategy, and scope it is asserted to support; graph connectivity alone is not evidence adequacy.",
-    "An unresolved defeater, missing countercase review, missing acceptance criterion, or missing residual owner cannot silently become a favorable case conclusion or release clearance.",
-    "A rendered, complete, or notation-conformant graph does not change support state, establish safety, or supply authority to deploy.",
-    "Case changes preserve prior version, change rationale, reviewer, affected claims, and re-review trigger."
-  ],
-  "failure_modes": [
-    "Argument theater presents a polished graph with unsupported edges, stale evidence, or omitted assumptions.",
-    "Defeater laundering records only evidence for a preferred conclusion and hides countercases, dissent, or failed evaluations.",
-    "Scope drift reuses a case outside its named deployment context, hazard model, model version, or access conditions.",
-    "Evidence aliasing cites a receipt or metric as if it directly established a broader safety or control claim.",
-    "Authority laundering treats case acceptance or graph completeness as release permission.",
-    "Maintenance rot leaves a structurally complete case connected to superseded policies, evaluations, safeguards, or residuals."
-  ],
-  "minimal_implementation": "A versioned assurance-case record with one scoped top claim, deployment and hazard context, argument/evidence references, assumptions, defeaters, countercase-review state, acceptance criterion, residual owner, decision authority, and affected release path. A finite Lean route sends a requested release with an unresolved defeater to accountable review rather than readiness release.",
-  "beyond_state_of_art": "A mature assurance compiler continuously builds auditable, versioned cases from the book's evidence, evaluation, threshold, safeguard, readiness, provenance, and residual records; it highlights stale dependencies, missing countercase searches, evidence-scope mismatch, contradiction, and changed deployment conditions; requests independent review; and feeds only a bounded case status to existing release and authority gates. It preserves dissent and failure history, supports multiple threat-model arguments without combining them into a single confidence score, and makes a case revision a reviewable deployment event. This is a target architecture, not a claim that this repository has a complete case, valid threat model, adequate evidence, effective controls, safe system, or authorized deployment.",
-  "codex_tests": [
-    "Unresolved-defeater safety-case route",
-    "Missing acceptance-criterion negative control",
-    "Stale case-dependency and re-review fixture",
-    "Public-safe assurance-graph compilation workload"
-  ],
-  "lean_module": "AsiStackProofs.SafetyCases",
-  "proof_targets": [
-    {
-      "tag": "lean:safety_cases.unresolved_defeater.blocks_affected_release",
-      "module": "AsiStackProofs.SafetyCases",
-      "target": "A finite assurance-case record with a requested affected release and an unresolved defeater routes to accountable review rather than readiness release, without inferring that the defeater is correct, the case is false, the system is unsafe, or ASI.",
-      "status": "implemented"
-    }
-  ],
-  "draft_maturity": "v0.1 chapter draft",
-  "open_evidence_gaps": [
-    "No ASI Stack safety case, hazard analysis, threat model, countercase search, independent review, acceptance decision, readiness decision, release decision, or deployment result has been run.",
-    "No local result establishes a case's completeness, evidence adequacy, threat-model correctness, countercase quality, control effectiveness, safety, readiness, authority, or ASI.",
-    "The finite Lean route establishes only a record consequence for an unresolved defeater; it does not establish whether the defeater, case, evidence, reviewer, hazard model, or release decision is correct."
-  ]
+          "id": "safety-cases-and-structured-assurance",
+          "title": "Safety Cases and Structured Assurance",
+          "file": "chapters/safety-cases-and-structured-assurance.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_gsn_community_standard_2011",
+            "ext_evaluations_safety_cases_scheming_2024",
+            "ext_aisi_safety_cases_2024",
+            "benchmaxxing"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_gsn_community_standard_2011",
+              "ext_evaluations_safety_cases_scheming_2024",
+              "ext_aisi_safety_cases_2024"
+            ],
+            "supporting": [
+              "benchmaxxing"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "The sources are source-setting comparators for structured assurance and its limits. No ASI Stack safety case, threat model, control evaluation, independent review, risk estimate, readiness decision, or deployment result has been run."
+            ]
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_gsn_community_standard_2011",
+              "mapped_support": "Supports a scoped comparator for explicit goals, strategies, evidence references, context, assumptions, justifications, and declared support relations in an assurance graph.",
+              "limits": "Does not establish that any ASI Stack claim is true, that evidence is adequate, that a threat model is complete, or that a system is safe, ready, or authorized to deploy.",
+              "passage_refs": [
+                "sources/source_notes/ext_gsn_community_standard_2011.md:14-69"
+              ],
+              "passage_review_note": "Reviewed the primary GSN standard definitions and its explicit boundary that notation documents an asserted argument rather than establishing truth; no GSN case, tool, or review was run locally.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_evaluations_safety_cases_scheming_2024",
+              "mapped_support": "Supports a scoped comparator for threat-model-specific incapability, harm, control, and alignment argument families, evaluation dependencies, assumptions, and open research gaps.",
+              "limits": "Does not establish local scheming absence, alignment, control effectiveness, safety, readiness, deployment authorization, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_evaluations_safety_cases_scheming_2024.md:15-70"
+              ],
+              "passage_review_note": "Reviewed the primary arXiv paper's abstract, safety-case framing, argument families, empirical-evaluation dependencies, and stated unresolved assumptions as recorded in the source note; no evaluation or case was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_aisi_safety_cases_2024",
+              "mapped_support": "Supports a scoped comparator for positive and negative evidence, countercase searches, uncertainty, disagreement, and limits on confidence in frontier-AI safety-case sketches.",
+              "limits": "Does not establish local countercase adequacy, review independence, safety-case confidence, control efficacy, safety, readiness, or deployment authorization.",
+              "passage_refs": [
+                "sources/source_notes/ext_aisi_safety_cases_2024.md:15-68"
+              ],
+              "passage_review_note": "Reviewed the official AISI methodology page for structured-case, counterevidence, uncertainty, and confidence-limit framing as recorded in the source note; no AISI process or result was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports a local conceptual comparator for preserving benchmark lifecycle, baseline, regression, residual, and anti-Goodhart records that a compiled case may reference without owning their measurement truth conditions.",
+              "limits": "Does not establish a safety case, hazard model, evidence adequacy, safety, readiness, deployment authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/benchmaxxing.md:11-73"
+              ],
+              "passage_review_note": "Reviewed the local raw-cache-backed source note for benchmark lifecycle, regression, residual, and anti-Goodhart vocabulary; no case compilation, benchmark, safety evaluation, or release decision was performed.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "problem": "The stack has claim, source, proof, evaluation, threshold, safeguard, readiness, and residual records, but no bounded compilation surface that makes their dependencies, assumptions, countercases, and unresolved defeaters reviewable as one deployment-context argument.",
+          "insufficient": "Evidence States owns support movement, Benchmark Ratchets owns measurement integrity, Adversarial Evaluation owns observation integrity, Capability Thresholds owns precommitted response, Readiness owns admission, and Artifact Graphs owns provenance, but none owns the structured assurance argument that can expose how those records jointly support or fail a scoped claim.",
+          "core_claim": "A governed stack compiles a safety case as a versioned, reviewable graph of scoped claims, argument strategies, evidence references, assumptions, defeaters, hazards, deployment context, acceptance criteria, authority, and residual ownership; a rendered or structurally complete graph can expose dependencies and block an affected release when required hazards, countercase review, acceptance criteria, or residuals are unresolved, but cannot itself establish safety, correct threat modeling, evidence adequacy, control effectiveness, readiness, or authority to deploy.",
+          "mechanism": [
+            "Declare a case boundary before compilation: deployment context, top claim, threat and hazard model, affected release path, decision authority, acceptance criteria, and review deadline.",
+            "Compile versioned claim, argument, evidence, context, assumption, safeguard, evaluation, threshold, readiness, and residual references into a graph whose edges state a bounded support or challenge relation rather than silently copying prose.",
+            "Represent defeaters, countercase-search scope, disagreement, stale evidence, missing review, and unresolved residuals as first-class case nodes that can block, narrow, or route the affected decision.",
+            "Keep compilation, independent review, acceptance, and release as separate records: a graph can be structurally complete while its evidence remains inadequate or its deployment path remains blocked."
+          ],
+          "interfaces": [
+            "Evidence States and Claim Discipline owns support-state movement and the claim ledger; the safety case consumes references and cannot promote claims by rendering them.",
+            "Benchmark Ratchets and Anti-Goodhart Evidence plus Adversarial Evaluation, Sandbagging, and Training-Time Deception own measurement and observation integrity; their evidence and defeaters enter the case as bounded inputs.",
+            "Capability Thresholds and Deployment Commitments owns threshold response; a safety case can state which commitment is affected but cannot set or waive it.",
+            "Readiness Gates, Residual Escrow, and Quarantine owns operational admission, quarantine, and residual custody; the case routes unresolved material to those gates.",
+            "Artifact Graphs, Audit Logs, and Replay owns provenance and replay handles; the case records pointers rather than becoming an alternate evidence store.",
+            "Security Kernel and Runtime Adapters own technical controls and action authority; the case can require their evidence but cannot implement or authorize them."
+          ],
+          "invariants": [
+            "Every top claim is bound to a deployment context, hazard/threat scope, case version, acceptance criterion, decision authority, and affected release path.",
+            "A support edge identifies the claim property, evidence reference, strategy, and scope it is asserted to support; graph connectivity alone is not evidence adequacy.",
+            "An unresolved defeater, missing countercase review, missing acceptance criterion, or missing residual owner cannot silently become a favorable case conclusion or release clearance.",
+            "A rendered, complete, or notation-conformant graph does not change support state, establish safety, or supply authority to deploy.",
+            "Case changes preserve prior version, change rationale, reviewer, affected claims, and re-review trigger."
+          ],
+          "failure_modes": [
+            "Argument theater presents a polished graph with unsupported edges, stale evidence, or omitted assumptions.",
+            "Defeater laundering records only evidence for a preferred conclusion and hides countercases, dissent, or failed evaluations.",
+            "Scope drift reuses a case outside its named deployment context, hazard model, model version, or access conditions.",
+            "Evidence aliasing cites a receipt or metric as if it directly established a broader safety or control claim.",
+            "Authority laundering treats case acceptance or graph completeness as release permission.",
+            "Maintenance rot leaves a structurally complete case connected to superseded policies, evaluations, safeguards, or residuals."
+          ],
+          "minimal_implementation": "A versioned assurance-case record with one scoped top claim, deployment and hazard context, argument/evidence references, assumptions, defeaters, countercase-review state, acceptance criterion, residual owner, decision authority, and affected release path. A finite Lean route sends a requested release with an unresolved defeater to accountable review rather than readiness release.",
+          "beyond_state_of_art": "A mature assurance compiler continuously builds auditable, versioned cases from the book's evidence, evaluation, threshold, safeguard, readiness, provenance, and residual records; it highlights stale dependencies, missing countercase searches, evidence-scope mismatch, contradiction, and changed deployment conditions; requests independent review; and feeds only a bounded case status to existing release and authority gates. It preserves dissent and failure history, supports multiple threat-model arguments without combining them into a single confidence score, and makes a case revision a reviewable deployment event. This is a target architecture, not a claim that this repository has a complete case, valid threat model, adequate evidence, effective controls, safe system, or authorized deployment.",
+          "codex_tests": [
+            "Unresolved-defeater safety-case route",
+            "Missing acceptance-criterion negative control",
+            "Stale case-dependency and re-review fixture",
+            "Public-safe assurance-graph compilation workload"
+          ],
+          "lean_module": "AsiStackProofs.SafetyCases",
+          "proof_targets": [
+            {
+              "tag": "lean:safety_cases.unresolved_defeater.blocks_affected_release",
+              "module": "AsiStackProofs.SafetyCases",
+              "target": "A finite assurance-case record with a requested affected release and an unresolved defeater routes to accountable review rather than readiness release, without inferring that the defeater is correct, the case is false, the system is unsafe, or ASI.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "v0.1 chapter draft",
+          "open_evidence_gaps": [
+            "No ASI Stack safety case, hazard analysis, threat model, countercase search, independent review, acceptance decision, readiness decision, release decision, or deployment result has been run.",
+            "No local result establishes a case's completeness, evidence adequacy, threat-model correctness, countercase quality, control effectiveness, safety, readiness, authority, or ASI.",
+            "The finite Lean route establishes only a record consequence for an unresolved defeater; it does not establish whether the defeater, case, evidence, reviewer, hazard model, or release decision is correct."
+          ]
         },
         {
           "id": "policy-optimization-and-learning-from-feedback",

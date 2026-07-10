@@ -94,6 +94,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security-overhead budget preservation test | implemented | passing via Resource Budget Ledger synthetic security-overhead erasure negative fixture; no runtime budget enforcement, deployed security-kernel behavior, or security-economics claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Prompt-injection containment scenario | implemented | passing via synthetic security kernel harness; no runtime prompt-injection containment claim |
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security kernel route proof | implemented | passes via Lean build; finite authority-use route coverage only |
+| `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Required invalid-attestation load block | planned | not run |
+| `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Stale-attestation and key-policy negative control | planned | not run |
+| `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Open-weight irreversibility record fixture | planned | not run |
+| `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Public-safe custody-record workload | planned | not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Protected-invariant preservation test | implemented | validated locally by 3 valid and 10 expected-invalid synthetic fixtures; deployed recursive self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Evaluator independence test | implemented | validated locally by synthetic fixtures; broader self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement rollback scenario | implemented | validated locally by synthetic fixtures; live self-improvement rollback not run |
@@ -536,16 +540,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 220 |
+| Proof targets covered by triage | 221 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 220 |
+| implemented | 221 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 220 |
+| implemented | formal-invariant | lean-candidate | 221 |
