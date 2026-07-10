@@ -26,6 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_ID = "dynamic-spine-fixture"
 FIXTURE_TITLE = "Dynamic Spine Fixture"
 FIXTURE_FILE = Path("chapters") / f"{FIXTURE_ID}.qmd"
+DISPOSITIONS = Path("claim_decisions") / "v1_x_core_claim_dispositions.json"
 GENERATED_PATHS = (
     Path("_quarto.yml"),
     Path("appendices/A_source_matrix.qmd"),
@@ -133,7 +134,58 @@ def insert_fixture(workspace: Path) -> int:
     fixture_path = workspace / FIXTURE_FILE
     fixture_path.parent.mkdir(parents=True, exist_ok=True)
     shutil.copyfile(source_path, fixture_path)
+    add_fixture_disposition(workspace, template, fixture)
     return len(flatten_chapters(structure))
+
+
+def add_fixture_disposition(
+    workspace: Path, template: dict[str, Any], fixture: dict[str, Any]
+) -> None:
+    """Clone the companion core-claim record for the disposable spine fixture."""
+    path = workspace / DISPOSITIONS
+    data = load_json(path)
+    dispositions = data.get("dispositions")
+    if not isinstance(dispositions, list):
+        raise TypeError("core-claim disposition set must contain dispositions")
+    source = next(
+        (
+            record
+            for record in dispositions
+            if isinstance(record, dict) and record.get("chapter_id") == template["id"]
+        ),
+        None,
+    )
+    if not isinstance(source, dict):
+        raise ValueError("dynamic-spine fixture source chapter lacks a disposition record")
+
+    record = copy.deepcopy(source)
+    record.update(
+        {
+            "claim_id": f"{FIXTURE_ID}.core",
+            "chapter_id": FIXTURE_ID,
+            "chapter_title": FIXTURE_TITLE,
+            "chapter_file": str(FIXTURE_FILE),
+            "core_claim": fixture["core_claim"],
+            "current_evidence_summary": (
+                "Disposable dynamic-spine fixture only; this record exists to exercise "
+                "manifest-derived claim bookkeeping and makes no support-state claim."
+            ),
+        }
+    )
+    dispositions.append(record)
+    summary = data.get("summary")
+    if not isinstance(summary, dict):
+        raise TypeError("core-claim disposition set must contain a summary")
+    summary["manifest_chapter_core_claims"] = len(dispositions)
+    summary["chapter_core_claims_remaining_at_argument"] = len(dispositions)
+    if record.get("coverage_type") == "accepted_core_transition":
+        summary["accepted_core_transition_dispositions"] = int(
+            summary.get("accepted_core_transition_dispositions", 0)
+        ) + 1
+    else:
+        summary["accepted_no_promotion_dispositions"] = int(
+            summary.get("accepted_no_promotion_dispositions", 0)) + 1
+    path.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
 
 
 def assert_fixture_surfaces(workspace: Path, expected_chapter_count: int) -> None:
@@ -170,6 +222,7 @@ def main() -> None:
             run(workspace, "scripts/sync_scaffold.py")
             baseline = snapshot(workspace)
             original_manifest = (workspace / "book_structure.json").read_bytes()
+            original_dispositions = (workspace / DISPOSITIONS).read_bytes()
             original_count = len(flatten_chapters(load_json(workspace / "book_structure.json")))
 
             fixture_count = insert_fixture(workspace)
@@ -190,6 +243,7 @@ def main() -> None:
                 )
 
             (workspace / "book_structure.json").write_bytes(original_manifest)
+            (workspace / DISPOSITIONS).write_bytes(original_dispositions)
             (workspace / FIXTURE_FILE).unlink()
             run(workspace, "scripts/sync_scaffold.py")
             restored = snapshot(workspace)

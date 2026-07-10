@@ -43,6 +43,7 @@ Cognitive Loop Closure argues that repeated AI reasoning/action trajectories sho
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `open-ended-improvement-engines` (Open-Ended Improvement Engines)
 - `fast-generation-architectures` (Fast Generation Architectures)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and Learning from Feedback)
 - `artifact-steward-agents-and-living-project-governance` (Artifact Steward Agents and Living Project Governance)

@@ -8,6 +8,7 @@ not strengthen any chapter core claim.
 
 from __future__ import annotations
 
+import argparse
 from collections import Counter
 import json
 import re
@@ -104,6 +105,44 @@ def section(text: str, start: str, end: str) -> str:
     return body
 
 
+def sync_dynamic_table_rows(status_text: str, expected_fragments: list[str]) -> str:
+    """Replace calculated count cells without disturbing static evidence cells."""
+    dynamic_labels = {
+        "Book structure",
+        "Manifest claim contract",
+        "Manuscript scale",
+        "Source inventory",
+        "Claim/source traceability",
+        "Support states",
+        "External SOTA positioning",
+        "Proof envelope",
+        "Implementation horizons",
+        "Chapter handoffs",
+        "Live Human view",
+    }
+    updated = status_text
+    for fragment in expected_fragments:
+        if not fragment.startswith("|"):
+            continue
+        cells = table_cells(fragment)
+        if len(cells) < 2:
+            continue
+        label = cells[0]
+        if label not in dynamic_labels:
+            continue
+        state = cells[1]
+        pattern = re.compile(
+            rf"^(\|\s*{re.escape(label)}\s*\|)\s*[^|]*(\|.*)$",
+            re.MULTILINE,
+        )
+        updated, count = pattern.subn(rf"\1 {state} \2", updated, count=1)
+        if count != 1:
+            raise ValueError(
+                f"{STATUS.relative_to(ROOT)}: expected one dynamic table state cell labelled {label!r}, found {count}"
+            )
+    return updated
+
+
 def parse_proof_adequacy_counts() -> Counter[str]:
     text = (ROOT / "docs" / "proof_adequacy_review.md").read_text(encoding="utf-8")
     counts: Counter[str] = Counter()
@@ -161,6 +200,13 @@ def human_bridge_metrics(chapters: list[dict]) -> tuple[int, int, int, int]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--write",
+        action="store_true",
+        help="refresh calculated dynamic table rows in the public status snapshot",
+    )
+    args = parser.parse_args()
     errors: list[str] = []
     status_text = STATUS.read_text(encoding="utf-8")
     structure = load_json(ROOT / "book_structure.json")
@@ -643,6 +689,10 @@ def main() -> None:
             "`python3 scripts/validate_live_human_view_status_ledger.py`",
         ]
         expected_fragments = expected_fragments[:live_human_index] + current_live_human_fragments
+
+    if args.write:
+        status_text = sync_dynamic_table_rows(status_text, expected_fragments)
+        STATUS.write_text(status_text, encoding="utf-8")
 
     if len(chapters) != chapter_file_count:
         errors.append(f"Manifest has {len(chapters)} chapters but chapters/ has {chapter_file_count} .qmd files.")

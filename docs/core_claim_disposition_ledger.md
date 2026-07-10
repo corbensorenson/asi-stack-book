@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 46 |
+| Manifest chapter core claims | 47 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 24 |
+| Accepted no-promotion dispositions | 25 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 46 |
+| Core claims remaining at `argument` | 47 |
 
 ## Dispositions
 
@@ -31,6 +31,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `capability-replacement-and-rollback.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/capability_replacement_no_change.json` | Valid replacement transaction and invalid promotion fixture both replay. |
 | `security-kernel-and-digital-scifs.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/security_kernel_no_change.json` | Receipt fixture proves handle-mediated use and rejects leak paths. |
 | `recursive-self-improvement-boundaries.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/recursive_self_improvement_no_change.json` | Accepted transition cannot widen authority or weaken protected invariants without review. |
+| `open-ended-improvement-engines.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed, bounded campaign-record comparison with evaluator-scope and archive negative controls, resource/residual records, independent review, and stop authority; no autonomous discovery, campaign quality, safe self-improvement, evaluator correctness, model-quality, or ASI claim. |
 | `intent-to-execution-contracts.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/intent_to_execution_contracts_no_change.json` | Invalid intent-to-action mismatch, missing receipt, prompt/context override, or inferred-authority case is rejected with a receipt or residual. |
 | `planning-as-a-control-layer.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/planning_control_no_change.json` | Public-safe DAG replay validates, invalid DAG fails, and route selection passes only when adequacy and cost constraints both hold without displaced verification or cleanup. |
 | `cognitive-compilation-and-semantic-ir.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | IR translation preserves required fields and rejects lossy lowering. |

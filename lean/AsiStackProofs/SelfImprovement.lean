@@ -537,4 +537,52 @@ theorem complete_promotion_review_promotes
     resourceStable, governanceApproval, rollbackAvailable, freshGate,
     residualEscrow, noCanary, promotionRequested]
 
+inductive ImprovementCampaignAdmissionRoute where
+  | retainResearchOnly
+  | requireIndependentReview
+  | admitCandidate
+deriving DecidableEq, Repr
+
+structure ImprovementCampaignAdmissionRecord where
+  campaignDeclared : Bool
+  candidateGenerated : Bool
+  evaluatorScopeDeclared : Bool
+  independentEvaluationRecorded : Bool
+  residualOwnerRecorded : Bool
+  stopAuthorityRecorded : Bool
+  admissionRequested : Bool
+deriving DecidableEq, Repr
+
+def ImprovementCampaignAdmissionRouteFor
+    (record : ImprovementCampaignAdmissionRecord) :
+    ImprovementCampaignAdmissionRoute :=
+  if record.campaignDeclared = false then
+    ImprovementCampaignAdmissionRoute.requireIndependentReview
+  else if record.candidateGenerated = false then
+    ImprovementCampaignAdmissionRoute.retainResearchOnly
+  else if record.evaluatorScopeDeclared = false then
+    ImprovementCampaignAdmissionRoute.requireIndependentReview
+  else if record.independentEvaluationRecorded = false then
+    ImprovementCampaignAdmissionRoute.requireIndependentReview
+  else if record.residualOwnerRecorded = false then
+    ImprovementCampaignAdmissionRoute.requireIndependentReview
+  else if record.stopAuthorityRecorded = false then
+    ImprovementCampaignAdmissionRoute.requireIndependentReview
+  else if record.admissionRequested = true then
+    ImprovementCampaignAdmissionRoute.admitCandidate
+  else
+    ImprovementCampaignAdmissionRoute.retainResearchOnly
+
+theorem missing_independent_evaluation_blocks_campaign_admission
+    {record : ImprovementCampaignAdmissionRecord} :
+    record.campaignDeclared = true ->
+    record.candidateGenerated = true ->
+    record.evaluatorScopeDeclared = true ->
+    record.independentEvaluationRecorded = false ->
+    ImprovementCampaignAdmissionRouteFor record =
+      ImprovementCampaignAdmissionRoute.requireIndependentReview := by
+  intro campaignDeclared candidateGenerated evaluatorScope missingIndependent
+  unfold ImprovementCampaignAdmissionRouteFor
+  simp [campaignDeclared, candidateGenerated, evaluatorScope, missingIndependent]
+
 end AsiStackProofs.SelfImprovement

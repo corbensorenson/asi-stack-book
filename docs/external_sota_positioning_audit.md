@@ -8,8 +8,8 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 
 | Metric | Count |
 |---|---:|
-| Manifest chapters | 46 |
-| Chapters with `ext_*` positioning before Source crosswalk | 46 |
+| Manifest chapters | 47 |
+| Chapters with `ext_*` positioning before Source crosswalk | 47 |
 | Chapters with explicit external-baseline exceptions | 0 |
 | Chapters with source-noted external targets but no in-prose positioning yet | 0 |
 | Chapters needing an exception or additional external source assignment | 0 |
@@ -31,6 +31,7 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 | `capability-replacement-and-rollback` | `positioned` | `ext_argo_rollouts_docs`, `ext_corrigibility_2015`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs` | `ext_argo_rollouts_docs`, `ext_corrigibility_2015`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs` | Keep source-note boundary and support-state language honest. |
 | `security-kernel-and-digital-scifs` | `positioned` | `ext_nist_zero_trust_architecture_2020`, `ext_owasp_llm_top_10_2025`, `ext_saltzer_schroeder_protection_1975` | `ext_nist_zero_trust_architecture_2020`, `ext_owasp_llm_top_10_2025`, `ext_saltzer_schroeder_protection_1975` | Keep source-note boundary and support-state language honest. |
 | `recursive-self-improvement-boundaries` | `positioned` | `ext_corrigibility_2015`, `ext_drexler_cais_2019`, `ext_model_evaluation_extreme_risks_2023`, `ext_off_switch_game_2016`, `ext_optimal_policies_power_2019` | `ext_corrigibility_2015`, `ext_drexler_cais_2019`, `ext_learned_optimization_risks_2019`, `ext_model_evaluation_extreme_risks_2023`, `ext_off_switch_game_2016`, `ext_optimal_policies_power_2019` | Keep source-note boundary and support-state language honest. |
+| `open-ended-improvement-engines` | `positioned` | `ext_funsearch_2024`, `ext_poet_2019`, `ext_voyager_2023` | `ext_funsearch_2024`, `ext_poet_2019`, `ext_voyager_2023` | Keep source-note boundary and support-state language honest. |
 | `intent-to-execution-contracts` | `positioned` | `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_dafny_2010`, `ext_pddl_1998`, `ext_react_2022`, `ext_shop2_2003`, `ext_temporal_docs`, `ext_tla_plus_home_docs` | `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_dafny_2010`, `ext_pddl_1998`, `ext_react_2022`, `ext_shop2_2003`, `ext_temporal_docs`, `ext_tla_plus_home_docs` | Keep source-note boundary and support-state language honest. |
 | `planning-as-a-control-layer` | `positioned` | `ext_autogen_2023`, `ext_behavior_trees_robotics_ai_2017`, `ext_integrated_tamp_2020`, `ext_pddl_1998`, `ext_react_2022`, `ext_shop2_2003`, `ext_three_states_plan_fear_2006`, `ext_tla_plus_home_docs`, `ext_tree_of_thoughts_2023` | `ext_autogen_2023`, `ext_behavior_trees_robotics_ai_2017`, `ext_integrated_tamp_2020`, `ext_pddl_1998`, `ext_react_2022`, `ext_shop2_2003`, `ext_three_states_plan_fear_2006`, `ext_tla_plus_home_docs`, `ext_tree_of_thoughts_2023` | Keep source-note boundary and support-state language honest. |
 | `cognitive-compilation-and-semantic-ir` | `positioned` | `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_translation_validation_1998`, `ext_tree_of_thoughts_2023` | `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_translation_validation_1998`, `ext_tree_of_thoughts_2023` | Keep source-note boundary and support-state language honest. |

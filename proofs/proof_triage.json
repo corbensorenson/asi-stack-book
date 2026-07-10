@@ -2159,7 +2159,17 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite promotion-boundary theorem for missing selection context or independent evaluation. It does not detect sandbagging, infer model intent, establish evaluator correctness, or prove capability or safety."
+    },
+    {
+      "tag": "lean:open_ended_improvement.generation_governance.missing_independent_evaluation_blocks_admission",
+      "chapter_id": "open-ended-improvement-engines",
+      "module": "AsiStackProofs.SelfImprovement",
+      "formal_target": "A finite improvement-campaign record with a requested artifact admission and missing independent evaluation routes to review without inferring that the candidate is unsafe, ineffective, or generally deceptive.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SelfImprovement as a finite campaign-admission routing theorem for a missing independent evaluation. It does not establish campaign quality, evaluator correctness, autonomous discovery, self-improvement safety, model quality, or ASI."
     }
   ],
-  "record_count": 215
+  "record_count": 216
 }

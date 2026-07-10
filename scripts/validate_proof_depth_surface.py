@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -28,6 +29,12 @@ VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
 
 CODEX_TEST_NAME = "Proof-depth surface synchronization"
 COMMAND = "python3 scripts/validate_proof_depth_surface.py"
+SNAPSHOT_RE = re.compile(
+    r"Current proof-depth snapshot:\s*\d+\s+proof targets,\s*\d+\s+Lean modules,\s*"
+    r"\d+\s+theorem declarations,\s*\d+\s+derived/decomposed,\s*"
+    r"\d+\s+direct/projection,\s*\d+\s+unknown/mixed,\s+and\s+"
+    r"\d+/\d+\s+safety-critical chapter classifications present\."
+)
 
 
 def rel(path: Path) -> str:
@@ -122,12 +129,34 @@ def validate_surface(path: Path, phrases: list[str], errors: list[str]) -> None:
             errors.append(f"{rel(path)} missing required phrase {phrase!r}.")
 
 
+def write_current_snapshot(path: Path, fragment: str) -> None:
+    text = path.read_text(encoding="utf-8")
+    updated, count = SNAPSHOT_RE.subn(fragment, text, count=1)
+    if count != 1:
+        raise ValueError(f"{rel(path)}: expected one current proof-depth snapshot, found {count}.")
+    path.write_text(updated, encoding="utf-8")
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--write",
+        action="store_true",
+        help="refresh the current proof-depth snapshot on validator-owned public surfaces",
+    )
+    args = parser.parse_args()
     errors: list[str] = []
     try:
         fragment = proof_depth_fragment()
     except ValueError as exc:
         fail([str(exc)])
+
+    if args.write:
+        try:
+            for path in (CHAPTER, OUTLINE, ROADMAP, CHANGELOG):
+                write_current_snapshot(path, fragment)
+        except ValueError as exc:
+            fail([str(exc)])
 
     validate_manifest(fragment, errors)
     shared = [

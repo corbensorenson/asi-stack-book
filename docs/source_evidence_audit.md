@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 46 |
-| Assigned source/chapter pairs | 450 |
-| Exact claim-source mappings | 446 |
-| Unmapped assigned pairs | 4 |
-| Source notes present for assigned pairs | 450 |
-| Source notes listing assigned chapter | 450 |
-| Passage-reviewed mappings recorded | 446 |
-| Support-state counts | {"argument": 46} |
+| Chapters audited | 47 |
+| Assigned source/chapter pairs | 456 |
+| Exact claim-source mappings | 449 |
+| Unmapped assigned pairs | 7 |
+| Source notes present for assigned pairs | 456 |
+| Source notes listing assigned chapter | 456 |
+| Passage-reviewed mappings recorded | 449 |
+| Support-state counts | {"argument": 47} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -45,6 +45,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `recursive-self-improvement-boundaries` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
+| `open-ended-improvement-engines` | 6 | 3 | 6 | 6 | 3 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `planning-as-a-control-layer` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -89,14 +90,14 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `viea` | 23 | yes |
 | `talos` | 22 | yes |
 | `moecot` | 22 | yes |
+| `rmi` | 16 | yes |
+| `benchmaxxing` | 16 | yes |
 | `scf` | 15 | yes |
-| `rmi` | 15 | yes |
 | `spinoza` | 15 | yes |
-| `benchmaxxing` | 15 | yes |
 | `vcm_public` | 12 | yes |
+| `cognitive_loop_closure` | 12 | yes |
 | `project_theseus_whitepaper` | 12 | yes |
 | `coherence_exchange` | 11 | yes |
-| `cognitive_loop_closure` | 11 | yes |
 | `genesiscode` | 10 | yes |
 | `planforge` | 10 | yes |
 | `verification_bandwidth` | 8 | yes |
@@ -150,6 +151,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_optimal_policies_power_2019` | 1 | yes |
 | `ext_goodhart_variants_2018` | 1 | yes |
 | `eternal_code` | 1 | yes |
+| `ext_poet_2019` | 1 | yes |
+| `ext_funsearch_2024` | 1 | yes |
+| `ext_voyager_2023` | 1 | yes |
 | `black_hole_context_manager` | 1 | yes |
 | `talos_md` | 1 | yes |
 | `spinoza_composer` | 1 | yes |
@@ -301,6 +305,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `rmi` | unmapped | note present | chapter listed | not passage-reviewed |
+| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `cognitive_loop_closure` | unmapped | note present | chapter listed | not passage-reviewed |
+| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `benchmaxxing` | unmapped | note present | chapter listed | not passage-reviewed |
+| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_poet_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_funsearch_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_voyager_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |

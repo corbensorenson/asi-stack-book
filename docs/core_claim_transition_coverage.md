@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 46 |
+| Manifest chapter core claims | 47 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 24 |
+| Accepted explicit no-promotion decisions | 25 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -63,6 +63,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `integrated-reference-architecture.core` | Integrated Reference Architecture | `argument_only` | no whole-stack trace kernel; no cross-layer runtime replay; no system-level adversarial review yet |
 | `labor-os-and-typed-jobs.core` | Labor OS and Typed Jobs | `argument_only` | no deployed job lifecycle; no live approval service; no command-to-effect replay |
 | `mathematical-and-search-substrates.core` | Mathematical and Search Substrates | `argument_only` | no substrate benchmark; no baseline comparison; no measured adoption benefit |
+| `open-ended-improvement-engines.core` | Open-Ended Improvement Engines | `argument_only` | no local generation campaign or candidate archive; no evaluator or independent-review replay; finite theorem does not establish discovery quality, evaluator correctness, safe self-improvement, or generality |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | Personal Compute Hives and Federated Edge Intelligence | `argument_only` | no personal hive implementation; no federation runtime; no compute-market or edge benchmark |
 | `policy-optimization-and-learning-from-feedback.core` | Policy Optimization and Learning from Feedback | `argument_only` | no local policy optimization run; no update-quality measurement; no deployment or rollback trace |
 | `procedural-memory-and-cognitive-loop-closure.core` | Procedural Memory and Cognitive Loop Closure | `argument_only` | no loop-closure implementation; no reusable tool regression evidence; no deployed procedural-memory route |

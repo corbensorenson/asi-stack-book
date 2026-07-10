@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 46 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 47 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 46,
+    "manifest_chapter_core_claims": 47,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 24,
+    "accepted_no_promotion_dispositions": 25,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 46
+    "chapter_core_claims_remaining_at_argument": 47
   },
   "dispositions": [
     {
@@ -636,6 +636,45 @@
       "formal_or_prototype_work": "Deepen accepted/rejected change model, evaluator separation, monitor window, and rollback.",
       "human_reader_focus": "Present RSI as controlled maintenance, not runaway mythology.",
       "what_would_move_this": "Accepted transition cannot widen authority or weaken protected invariants without review.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "open-ended-improvement-engines.core",
+      "chapter_id": "open-ended-improvement-engines",
+      "chapter_title": "Open-Ended Improvement Engines",
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_file": "chapters/open-ended-improvement-engines.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A governed stack treats open-ended improvement as a separate, bounded generation campaign: it records objective and task-generator constraints, candidate provenance, evaluator scope and independence, resources, failures, residuals, archive status, and admission decisions; it allows no generated artifact to widen authority, alter protected policy, or enter a live capability field without independent qualification and the existing improvement governor.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "public-safe improvement-campaign record with negative controls",
+        "independent evaluation and archive/residual replay for a bounded workload",
+        "accepted transition for a narrowed campaign-admission claim"
+      ],
+      "blockers": [
+        "no local generation campaign or candidate archive",
+        "no evaluator or independent-review replay",
+        "finite theorem does not establish discovery quality, evaluator correctness, safe self-improvement, or generality"
+      ],
+      "promotion_burden": "The chapter has source-noted comparators and a finite admission-routing theorem, but no local improvement campaign, task generator, candidate archive, evaluator, independent review, resource measurement, stop-boundary fixture, or replay has been accepted as evidence for the broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove autonomous discovery or R&D",
+        "does not prove safe or open-ended self-improvement",
+        "does not prove evaluator correctness, model quality, safety, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 6 assigned sources; 3 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-noted POET, FunSearch, Voyager, and local campaign-governance sources plus a finite admission boundary",
+      "formal_or_prototype_work": "Build a public-safe improvement-campaign record that preserves task-generator bounds, evaluator version/scope, independent-review state, resource bill, archive disposition, residual ownership, stop authority, and rejected admission cases.",
+      "human_reader_focus": "Explain the difference between a workshop that may generate candidates and a release gate that may let one affect a system.",
+      "what_would_move_this": "A replayed, bounded campaign-record comparison with evaluator-scope and archive negative controls, resource/residual records, independent review, and stop authority; no autonomous discovery, campaign quality, safe self-improvement, evaluator correctness, model-quality, or ASI claim.",
       "relevant_non_core_transition_refs": []
     },
     {

@@ -2026,7 +2026,8 @@
     "chapter_targets": [
       "procedural-memory-and-cognitive-loop-closure",
       "routing-heads-and-specialist-cores",
-      "benchmark-ratchets-and-anti-goodhart-evidence"
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "open-ended-improvement-engines"
     ],
     "url": "https://arxiv.org/abs/2305.16291",
     "notes": "External lifelong-agent source for automatic curriculum, executable-code skill libraries, iterative environment-feedback prompting, self-verification, and skill-library transfer in Minecraft.",
@@ -3628,5 +3629,37 @@
     "updated": "2025-11-23",
     "citation_label": "MacDiarmid et al. (2025), Natural Emergent Misalignment from Reward Hacking in Production RL",
     "doi": "10.48550/arXiv.2511.18397"
+  },
+  {
+    "id": "ext_poet_2019",
+    "title": "Paired Open-Ended Trailblazer (POET): Endlessly Generating Increasingly Complex and Diverse Learning Environments and Their Solutions",
+    "priority": "external_literature",
+    "layer": "open_ended_environment_solution_generation",
+    "chapter_targets": [
+      "open-ended-improvement-engines"
+    ],
+    "url": "https://arxiv.org/abs/1901.01753",
+    "notes": "Primary open-ended-learning comparator for paired environment generation, agent optimization, and cross-environment solution transfer in a specified BipedalWalker setting; it does not establish a general improvement engine, evaluator soundness, or ASI Stack result.",
+    "source_type": "preprint",
+    "published": "2019-01-07",
+    "updated": "2019-02-21",
+    "citation_label": "Wang et al. (2019), Paired Open-Ended Trailblazer",
+    "doi": "10.48550/arXiv.1901.01753"
+  },
+  {
+    "id": "ext_funsearch_2024",
+    "title": "Mathematical Discoveries from Program Search with Large Language Models",
+    "priority": "external_literature",
+    "layer": "evaluator_bounded_program_search",
+    "chapter_targets": [
+      "open-ended-improvement-engines"
+    ],
+    "url": "https://doi.org/10.1038/s41586-023-06924-6",
+    "notes": "Primary program-search comparator for a fixed pretrained LLM, user-provided evaluation function, candidate program archive, and iterative search over a bounded specification; it does not establish open-ended general intelligence, self-modification, evaluator correctness, or an ASI Stack result.",
+    "source_type": "journal_article",
+    "published": "2024-01-17",
+    "updated": "2024-01-17",
+    "citation_label": "Romera-Paredes et al. (2024), Mathematical Discoveries from Program Search with Large Language Models",
+    "doi": "10.1038/s41586-023-06924-6"
   }
 ]

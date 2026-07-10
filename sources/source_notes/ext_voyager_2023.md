@@ -39,11 +39,13 @@ Voyager belongs in the procedural-memory comparison set as an external reference
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and Cognitive Loop Closure)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `open-ended-improvement-engines` (Open-Ended Improvement Engines)
 
 ## Claims To Add Or Update
 
 - Use Voyager to compare the ASI Stack procedure-foundry target against external skill-library and embodied lifelong-learning work.
 - Keep support at `argument` unless local trace mining, tool synthesis, regression checks, routing receipts, or accepted evidence transitions exist.
+- Use Voyager as a scoped comparator for curriculum, skill-library, and iterative-improvement interfaces; do not treat its self-verification as independent evaluation of a governed improvement engine.
 - Do not claim local Voyager reproduction, Minecraft performance, skill-library transfer, autonomous discovery, model-quality improvement, or deployed procedural memory.
 
 ## Open Questions

@@ -13,6 +13,8 @@ import json
 from collections import Counter
 from pathlib import Path
 
+from sync_public_trust_metrics import sync_public_trust_metrics
+
 ROOT = Path(__file__).resolve().parents[1]
 TODAY = "2026-06-24"
 
@@ -1033,6 +1035,7 @@ def main() -> None:
     ensure_glossary()
     ensure_protocol_schemas()
     write_test_specs(structure)
+    sync_public_trust_metrics()
     print(f"Synchronized book structure: {len(flatten_chapters(structure))} chapters, {written} chapter files written.")
 
 

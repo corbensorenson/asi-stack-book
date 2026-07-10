@@ -679,6 +679,34 @@
         "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
         "appendices/C_claim_evidence_matrix.qmd#adversarial-evaluation-sandbagging-and-training-time-deception.core"
       ]
+    },
+    {
+      "claim_id": "open-ended-improvement-engines.core",
+      "chapter_id": "open-ended-improvement-engines",
+      "chapter_title": "Open-Ended Improvement Engines",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-noted comparators and a finite admission-routing theorem, but no local improvement campaign, task generator, candidate archive, evaluator, independent review, resource measurement, stop-boundary fixture, or replay has been accepted as evidence for the broad claim.",
+      "required_evidence": [
+        "public-safe improvement-campaign record with negative controls",
+        "independent evaluation and archive/residual replay for a bounded workload",
+        "accepted transition for a narrowed campaign-admission claim"
+      ],
+      "blockers": [
+        "no local generation campaign or candidate archive",
+        "no evaluator or independent-review replay",
+        "finite theorem does not establish discovery quality, evaluator correctness, safe self-improvement, or generality"
+      ],
+      "non_claims": [
+        "does not prove autonomous discovery or R&D",
+        "does not prove safe or open-ended self-improvement",
+        "does not prove evaluator correctness, model quality, safety, or ASI"
+      ],
+      "refs": [
+        "chapters/open-ended-improvement-engines.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#open-ended-improvement-engines.core"
+      ]
     }
   ]
 }

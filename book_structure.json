@@ -3065,6 +3065,121 @@
               "passage_review_note": "Reviewed primary-report passages on R&D automation and structured development. It is used to separate improvement capability from a product's authority to promote itself."
             }
           ]
+        },
+        {
+          "id": "open-ended-improvement-engines",
+          "title": "Open-Ended Improvement Engines",
+          "file": "chapters/open-ended-improvement-engines.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "rmi",
+            "cognitive_loop_closure",
+            "benchmaxxing",
+            "ext_poet_2019",
+            "ext_funsearch_2024",
+            "ext_voyager_2023"
+          ],
+          "source_queue": {
+            "primary": [
+              "rmi",
+              "cognitive_loop_closure",
+              "ext_poet_2019",
+              "ext_funsearch_2024",
+              "ext_voyager_2023"
+            ],
+            "supporting": [
+              "benchmaxxing",
+              "theseus_self_evolution_system",
+              "scf",
+              "ext_drexler_cais_2019"
+            ],
+            "variants": [],
+            "connector_or_recovery": [
+              "moecot"
+            ],
+            "handoff_or_recovery_notes": [
+              "POET, FunSearch, and Voyager are scoped external comparators. No local environment generator, program-search engine, candidate archive, evaluator, improvement campaign, or self-modifying runtime has been run."
+            ]
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_poet_2019",
+              "mapped_support": "Supports a scoped comparator for co-generating environment challenges and optimized solutions with transfer between retained environments.",
+              "limits": "Does not establish safe, general, local, or indefinitely open-ended improvement.",
+              "passage_refs": [
+                "sources/source_notes/ext_poet_2019.md:14-46"
+              ],
+              "passage_review_note": "Reviewed primary paper mechanisms and stated experimental scope as recorded in the source note; no environment, agent, transfer process, or result was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_funsearch_2024",
+              "mapped_support": "Supports a bounded generator-evaluator-archive comparator with an explicit user-provided evaluation function and a fixed pretrained generator.",
+              "limits": "Does not establish evaluator correctness, autonomous R&D, model self-modification, general improvement, safety, or a local result.",
+              "passage_refs": [
+                "sources/source_notes/ext_funsearch_2024.md:14-46"
+              ],
+              "passage_review_note": "Reviewed primary article mechanisms and task-bound evaluation scope as recorded in the source note; no program-search loop or reported result was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_voyager_2023",
+              "mapped_support": "Supports an external comparator for automatic curriculum, executable-code skill library, environment feedback, execution errors, and source-setting self-verification.",
+              "limits": "Does not establish independent evaluator quality, local lifelong learning, model improvement, safety, or deployment readiness.",
+              "passage_refs": [
+                "sources/source_notes/ext_voyager_2023.md:18-36"
+              ],
+              "passage_review_note": "Reviewed primary arXiv source note with its Minecraft-specific mechanism and limits; no code, environment, prompt, or evaluation was imported or reproduced.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "problem": "An improvement system can generate tasks, candidates, curricula, tools, or designs faster than an organization can determine what they optimize, whether their evaluator is independent, or whether a retained artifact should ever affect a live capability.",
+          "insufficient": "Recursive-self-improvement boundaries govern changes once proposed, but they do not own the generator-evaluator-archive loop that creates the proposals, selects task pressure, retains failures, and can distort the evidence presented to the governor.",
+          "core_claim": "A governed stack treats open-ended improvement as a separate, bounded generation campaign: it records objective and task-generator constraints, candidate provenance, evaluator scope and independence, resources, failures, residuals, archive status, and admission decisions; it allows no generated artifact to widen authority, alter protected policy, or enter a live capability field without independent qualification and the existing improvement governor.",
+          "mechanism": [
+            "Represent each campaign with an objective, allowed generator actions, task or environment policy, fixed evaluation contract, resource budget, archive policy, residual register, and stop conditions.",
+            "Separate candidate generation, task generation, evaluation, archive retention, and governance admission so a search engine cannot treat its own output or score as a promotion decision.",
+            "Retain accepted, rejected, quarantined, and superseded candidates with evaluator/version provenance, failure reasons, costs, authority envelope, and replay references.",
+            "Route an otherwise promising candidate through independent qualification, readiness, rollback, monitoring, and authority checks before any canary or field replacement."
+          ],
+          "interfaces": [
+            "Data Engines owns the provenance and admissibility of examples, traces, and training inputs used by a campaign.",
+            "Benchmark Ratchets owns benchmark integrity and regression floors; this chapter owns generator pressure, candidate archive, and campaign stop conditions.",
+            "Procedural Memory owns routable procedures after qualification; this chapter owns their generation and pre-admission history.",
+            "Policy Optimization owns an approved update lease; this chapter supplies bounded candidate evidence and cannot authorize the update itself.",
+            "Recursive Self-Improvement Boundaries, Stable Capability Fields, and Readiness Gates own promotion, authority, rollback, and monitoring decisions."
+          ],
+          "invariants": [
+            "A generated task, candidate, score, novelty metric, or self-verification trace is not an admission or promotion decision.",
+            "Every campaign declares evaluator scope, resource budget, task-generator constraints, stop conditions, and residual custody before generated artifacts are considered for reuse.",
+            "A candidate cannot widen authority, alter protected policy, or replace a live capability field without independent qualification and the existing governor.",
+            "Rejected, quarantined, and superseded candidates retain enough provenance to explain selection bias, resource cost, and failure rather than disappearing from the archive."
+          ],
+          "failure_modes": [
+            "Objective or task-generator drift that makes proxy novelty look like valuable improvement.",
+            "Evaluator capture, self-verification laundering, or selection pressure that turns a search score into a safety or capability conclusion.",
+            "Archive survivorship that erases failed, costly, unsafe, or overprivileged candidates.",
+            "Generated artifacts entering a procedure library, model update, or capability field without authority, regression, rollback, or monitor checks.",
+            "Open-ended search consuming unbounded budget or generating dual-use artifacts without stop authority or residual ownership."
+          ],
+          "minimal_implementation": "A versioned improvement-campaign record containing objective, generator and task-policy bounds, candidate identifier, evaluator/version, independent-review flag, resource bill, failure or residual record, archive disposition, and a route that blocks admission when independent evaluation or a stop boundary is absent.",
+          "beyond_state_of_art": "The mature system runs multiple constrained discovery campaigns across simulations, program spaces, data curation, and tools while preserving evaluator separation, challenge provenance, counterexamples, resource economics, sandbox limits, dual-use review, reproducibility, and campaign stop authority. It uses generated discoveries only through qualified capability fields and governed replacement, rather than granting a search process the power to promote itself. This is a target architecture, not a claim of autonomous scientific discovery, safe recursive self-improvement, or open-ended general intelligence.",
+          "codex_tests": [
+            "Improvement-campaign admission fixture",
+            "Generator-evaluator separation probe",
+            "Candidate archive and stop-boundary review"
+          ],
+          "lean_module": "AsiStackProofs.SelfImprovement",
+          "proof_targets": [
+            {
+              "tag": "lean:open_ended_improvement.generation_governance.missing_independent_evaluation_blocks_admission",
+              "module": "AsiStackProofs.SelfImprovement",
+              "target": "A finite improvement-campaign record with a requested artifact admission and missing independent evaluation routes to review without inferring that the candidate is unsafe, ineffective, or generally deceptive.",
+              "status": "implemented"
+            }
+          ]
         }
       ]
     },
@@ -10792,7 +10907,9 @@
               "source_id": "ext_alignment_faking_2024",
               "mapped_support": "Supports disclosed-condition alignment-faking threat-model context and the need to retain selection context.",
               "limits": "Does not show that any ASI Stack model or deployment is deceptive.",
-              "passage_refs": ["sources/source_notes/ext_alignment_faking_2024.md:12-40"],
+              "passage_refs": [
+                "sources/source_notes/ext_alignment_faking_2024.md:12-40"
+              ],
               "passage_review_note": "Reviewed primary-paper metadata and abstract as recorded in the source note; no local experiment or mitigation was run.",
               "passage_review_state": "reviewed"
             },
@@ -10800,7 +10917,9 @@
               "source_id": "ext_ai_sandbagging_2024",
               "mapped_support": "Supports strategic-underperformance and evaluation-context threat-model context.",
               "limits": "Does not establish sandbagging in this repository or validate a detector.",
-              "passage_refs": ["sources/source_notes/ext_ai_sandbagging_2024.md:12-39"],
+              "passage_refs": [
+                "sources/source_notes/ext_ai_sandbagging_2024.md:12-39"
+              ],
               "passage_review_note": "Reviewed primary-paper metadata and abstract as recorded in the source note; no benchmark was reproduced.",
               "passage_review_state": "reviewed"
             },
@@ -10808,7 +10927,9 @@
               "source_id": "ext_emergent_misalignment_reward_hacking_2025",
               "mapped_support": "Supports source-setting reward-hacking and training-time misaligned-generalization threat-model context.",
               "limits": "Does not establish a local reward-hacking, monitor-interference, safety, or causal result.",
-              "passage_refs": ["sources/source_notes/ext_emergent_misalignment_reward_hacking_2025.md:12-40"],
+              "passage_refs": [
+                "sources/source_notes/ext_emergent_misalignment_reward_hacking_2025.md:12-40"
+              ],
               "passage_review_note": "Reviewed primary-paper passages as recorded in the source note; no environment, model, or mitigation was reproduced.",
               "passage_review_state": "reviewed"
             }

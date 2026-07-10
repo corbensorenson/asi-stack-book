@@ -926,6 +926,87 @@ Lean proof targets:
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `AsiStackProofs.SelfImprovement` | A proposal evaluated only by the component being replaced cannot be promoted. | implemented |
 | `lean:self_improvement.boundary.transition_route_envelope` | `AsiStackProofs.SelfImprovement` | A structured self-improvement transition review routes missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing approval, missing rollback, stale gates, missing residual escrow, canary monitor failures, complete canary reviews, and complete promotion reviews into explicit outcomes. | implemented |
 
+### Open-Ended Improvement Engines
+
+Stable ID: `open-ended-improvement-engines`
+
+Chapter job: Govern the generator-evaluator-archive campaigns that propose
+tasks, tools, programs, curricula, designs, or other candidate improvements so
+search pressure cannot become its own admission authority.
+
+Core claim: A governed stack treats open-ended improvement as a separate, bounded generation campaign: it records objective and task-generator constraints, candidate provenance, evaluator scope and independence, resources, failures, residuals, archive status, and admission decisions; it allows no generated artifact to widen authority, alter protected policy, or enter a live capability field without independent qualification and the existing improvement governor.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `rmi`, `cognitive_loop_closure`, `ext_poet_2019`, `ext_funsearch_2024`, `ext_voyager_2023` | Read first for ratchet/residual vocabulary, qualification of repeated procedures, paired task-solution generation, bounded generator-evaluator-program search, and automatic curriculum/skill-library patterns. Preserve each source's task and evaluator scope. |
+| Supporting | `benchmaxxing`, `theseus_self_evolution_system`, `scf`, `ext_drexler_cais_2019` | Mine after primary sources for regression floors, source-reported governance context, stable capability admission, and the distinction between R&D automation and a self-transforming agent. |
+| Connector or recovery required | `moecot` | Use only as implementation-reference context unless public-safe artifacts are imported or reproduced. |
+
+Draft arc:
+
+- Problem: A generator can create tasks, candidates, curricula, tools, or
+  designs faster than evaluators and governors can determine what they
+  optimize, what failed, and whether any result may affect a live capability.
+- Insufficiency: Recursive Self-Improvement Boundaries governs proposed
+  transitions but does not own the generator-evaluator-archive loop that shapes
+  the proposals and evidence offered to the governor.
+- Mechanism: Declare campaign objective, generator and task-policy bounds,
+  evaluator contract, resource budget, archive policy, residual register, and
+  stop conditions before candidates are considered for reuse.
+- Mechanism: Separate task generation, candidate generation, evaluation,
+  archive retention, and governance admission; a generator score is not a
+  promotion decision.
+- Mechanism: Preserve accepted, rejected, quarantined, and superseded
+  candidates with evaluator/version provenance, costs, failure reasons,
+  authority envelope, residuals, and replay references.
+- Mechanism: Send a promising candidate through independent qualification,
+  readiness, rollback, monitor, and authority gates before any canary or field
+  replacement.
+- Interface: Data Engines owns campaign input provenance; Benchmark Ratchets
+  owns benchmark integrity; Procedural Memory owns qualified procedures; Policy
+  Optimization owns approved update leases; RSI, Stable Capability Fields, and
+  Readiness Gates own promotion, authority, rollback, and monitoring.
+
+Primary invariants:
+
+- A generated task, candidate, score, novelty metric, or self-verification
+  trace is not an admission or promotion decision.
+- Campaigns declare evaluator scope, resource budget, task-generator
+  constraints, stop conditions, and residual custody before reuse.
+- A candidate cannot widen authority, alter protected policy, or replace a live
+  field without independent qualification and the existing governor.
+- Rejected, quarantined, and superseded candidates retain provenance rather
+  than disappearing from the archive.
+
+Failure modes to cover:
+
+- Objective or task-generator drift.
+- Evaluator capture or self-verification laundering.
+- Archive survivorship and erased failed candidates.
+- Unauthorized generated-artifact admission.
+- Unbounded resource or dual-use search without stop authority.
+
+Draft deliverables:
+
+- A versioned improvement-campaign record with objective, generator/task
+  policy, evaluator/version, independent-review state, resource bill, archive
+  disposition, residual ownership, stop authority, and requested admission.
+- Planned public-safe fixture: requested admission with missing independent
+  evaluation, residual owner, or stop authority routes to review without
+  inferring a candidate quality or safety result.
+- Explicit source boundary: POET, FunSearch, and Voyager are primary comparators
+  in specified source settings; no local environment generation, program
+  search, campaign engine, candidate archive, evaluator, autonomous discovery,
+  self-improvement, model-quality, safety, or support-state result is claimed.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:open_ended_improvement.generation_governance.missing_independent_evaluation_blocks_admission` | `AsiStackProofs.SelfImprovement` | A finite improvement-campaign record with a requested artifact admission and missing independent evaluation routes to review without inferring that the candidate is unsafe, ineffective, or generally deceptive. | implemented |
+
 ## Part II - Planning, Memory, Reasoning, and Execution
 
 Part job: Specify the operational middle of the stack: intent contracts, planning/control, semantic compilation, memory/context, verification, tribunals, typed work, artifact production, runtime adapters, procedural memory, audit, and replay.
@@ -2875,7 +2956,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 215 proof targets, 55 Lean modules, 1055 theorem declarations, 865 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 216 proof targets, 55 Lean modules, 1056 theorem declarations, 866 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

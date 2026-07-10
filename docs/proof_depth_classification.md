@@ -12,13 +12,13 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 215 |
+| Proof targets in manifest | 216 |
 | Lean modules scanned | 55 |
-| Theorem declarations classified | 1055 |
+| Theorem declarations classified | 1056 |
 | Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 865 |
+| Derived/decomposed theorem declarations | 866 |
 | Unknown or mixed theorem declarations | 4 |
-| Safety-critical theorem declarations | 106 |
+| Safety-critical theorem declarations | 107 |
 | Safety-critical direct/projection declarations | 11 |
 | Safety-critical chapter classifications present | 5/5 |
 | Validation errors | 0 |
@@ -33,7 +33,7 @@ The v1.0 roadmap prioritizes these modules because projection-style hooks in ali
 | `lean/AsiStackProofs/Alignment.lean` | constitutional-alignment-substrate | 3 | 23 | 2 | 21 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
-| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/SelfImprovement.lean` | open-ended-improvement-engines, recursive-self-improvement-boundaries | 4 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/ValueConflict.lean` | moral-uncertainty-and-value-conflict | 4 | 23 | 3 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 
 ## Safety-Critical Chapter Classification
@@ -96,7 +96,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | runtime-adapters-tool-permissions-and-human-approval | 6 | 49 | 5 | 44 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | mathematical-and-search-substrates | 3 | 11 | 3 | 8 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SecurityKernel.lean` | security-kernel-and-digital-scifs | 4 | 22 | 1 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/SelfImprovement.lean` | recursive-self-improvement-boundaries | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/SelfImprovement.lean` | open-ended-improvement-engines, recursive-self-improvement-boundaries | 4 | 22 | 2 | 20 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 4 | 13 | 4 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 25 | 8 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -948,6 +948,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SelfImprovement.lean` | `improvement_transition_preserves_all_protected_invariants` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_evidence_bundle_requires_evidence` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_governance_approval_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
+| `lean/AsiStackProofs/SelfImprovement.lean` | `missing_independent_evaluation_blocks_campaign_admission` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_independent_evaluator_routes_to_review` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_proposal_rejects_self_improvement_transition` | derived_or_decomposed | yes | uses simp, unfold |
 | `lean/AsiStackProofs/SelfImprovement.lean` | `missing_protected_invariant_declaration_requires_evidence` | derived_or_decomposed | yes | uses simp, unfold |

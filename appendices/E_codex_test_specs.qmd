@@ -97,6 +97,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Verification-budget preservation test | implemented | validated locally by synthetic fixtures; actual verification-budget measurement not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Stale-gate replay test | implemented | validated locally by synthetic fixtures; fresh Theseus/current-readiness gate replay not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement transition route proof | implemented | passes via Lean build; finite transition-route coverage only |
+| `open-ended-improvement-engines` | Open-Ended Improvement Engines | Improvement-campaign admission fixture | planned | not run |
+| `open-ended-improvement-engines` | Open-Ended Improvement Engines | Generator-evaluator separation probe | planned | not run |
+| `open-ended-improvement-engines` | Open-Ended Improvement Engines | Candidate archive and stop-boundary review | planned | not run |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent and trace fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Contract field completeness test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Constraint preservation test | implemented | passes via synthetic plan-execution contract harness |
@@ -517,16 +520,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 215 |
+| Proof targets covered by triage | 216 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 215 |
+| implemented | 216 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 215 |
+| implemented | formal-invariant | lean-candidate | 216 |
