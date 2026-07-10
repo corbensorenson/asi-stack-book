@@ -33,7 +33,7 @@ PROJECT_LEDGER = ROOT / "docs" / "project_theseus_static_import_status_ledger.md
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 APPENDIX_E = ROOT / "appendices" / "E_codex_test_specs.qmd"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "TheseusReference.lean"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 
 COMMAND = "python3 scripts/validate_theseus_work_board_import.py"
 IMPORT_ID = "theseus-work-board-import-2026-07-06"
@@ -437,11 +437,11 @@ def validate_surfaces(errors: list[str]) -> None:
             rel(RESULT),
             rel(TRANSITION),
         ],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_theseus_work_board_import.py",
             "docs/theseus_work_board_import.md",
             "experiments/theseus_work_board_import/results/2026-07-06-local.json",
-            'run_validator("validate_theseus_work_board_import.py")',
+            '"script": "validate_theseus_work_board_import.py"',
         ],
     }
     for path, phrases in required.items():

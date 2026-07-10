@@ -73,6 +73,8 @@ The missing piece is not intelligence in the narrow sense. It is system accounta
 
 The ASI Stack treats those missing contracts as first-class design objects. It does not reject powerful models; it puts them in the right place. A model may be a generator, compressor, critic, planner, router, simulator, or verifier. It should not silently become the constitution, the memory authority, the deployment authority, the approval body, and the evidence registry at the same time.
 
+A layer is a logical responsibility and authority boundary, not a required process, service, model, or physical module. One model may implement several roles if their typed handoffs, authority checks, evidence duties, and failure routes remain externally enforceable. Several models, tools, or people may also implement one role behind the same contract. Physical isolation can strengthen a high-risk boundary, but it is a deployment choice justified by the threat model; the stack claim itself is substrate-neutral.
+
 That is the delta beyond generic decomposition. A modular system has parts; a governed-cognition pattern gives those parts record identity, state, authority, evidence, receipts, and reversal behavior. The claim is still architectural and remains at `argument` support, but the pattern makes the book's repeated structure intentional instead of accidental.
 
 External positioning: the opening stack frame is still a synthetic orientation claim over this book's internal architecture, but it now has source-noted architecture comparators. Drexler's CAIS report (`ext_drexler_cais_2019`) already argues for composed AI services and R&D automation rather than a single self-transforming agent. MRKL Systems (`ext_mrkl_systems_2022`) show model-plus-expert-module decomposition, the LLM-agent survey (`ext_llm_agents_survey_2023`) organizes language-model agents around memory, planning, and action components, the Standard Model of the Mind (`ext_standard_model_mind_2017`) supplies cognitive-architecture lineage, and Brooks' layered robot-control work (`ext_subsumption_architecture_1986`) gives a historical layered-control comparator. The narrower ASI Stack candidate delta is operational governance at each interface: typed handoffs, authority ceilings, claim/support-state transitions, evidence and residual custody, rollback or quarantine routes, and release records. None of these comparators validates that contract here.
@@ -104,7 +106,7 @@ Appendix C now records exact source-note mappings for this core claim across all
 ![Draft ASI Stack control plane.](../assets/diagrams/asi-stack-control-plane.svg){#fig-asi-stack-control-plane fig-alt="Draft ASI Stack control plane figure showing inputs, governed stack layers, an authority rail, an evidence rail, and an improvement loop. The figure frames the architecture as accountable handoffs among intent, planning, memory, claims, execution, routing, evidence, release records, residuals, and rollback paths."}
 :::
 
-**How to read the ASI stack control-plane figure:** Treat the figure as the book's thesis in one systems view. Human intent, policy constraints, sources, and compute enter only through the stack contract. The middle layers transform work, context, claims, jobs, routes, and evidence, while the side rails keep authority ceilings, support states, residual ownership, and rollback visible. The figure is a draft reader aid, not proof that the architecture is implemented, benchmarked, externally reviewed, or release-approved.
+**How to read the ASI stack control-plane figure:** Treat the figure as the book's thesis in one systems view. Its boxes are logical responsibility boundaries, not a requirement for one model or process per box. Human intent, policy constraints, sources, and compute enter only through the stack contract. The middle layers transform work, context, claims, jobs, routes, and evidence, while the side rails keep authority ceilings, support states, residual ownership, and rollback visible. The figure is a draft reader aid, not proof that the architecture is implemented, benchmarked, externally reviewed, or release-approved.
 
 ## Stack Map
 
@@ -140,7 +142,7 @@ flowchart TB
   Memory -. "source-bound context" .-> Reasoning
 ```
 
-**How to read the stack map:** Read this stack map as a responsibility loop, not a capability ladder. Self-improvement is not outside the stack; it returns to governance, where new capabilities must be qualified, bounded, and made reversible before they become defaults.
+**How to read the stack map:** Read this stack map as a substrate-neutral responsibility loop, not a capability ladder or a physical topology. A monolithic model, modular service graph, hybrid system, or human/AI process can instantiate it only to the extent that the named interfaces and authority boundaries remain enforceable. Self-improvement is not outside the stack; it returns to governance, where new capabilities must be qualified, bounded, and made reversible before they become defaults.
 
 ## Mechanism
 

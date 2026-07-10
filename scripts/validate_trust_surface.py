@@ -22,6 +22,7 @@ READER_AUDIT = ROOT / "docs" / "reader_continuity_audit.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 CORE_DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
 NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
+NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
 
 EXPECTED_NON_CORE = {
     "living-book-methodology.phase5_harness_registry_runner": "synthetic-test-backed",
@@ -51,6 +52,7 @@ REQUIRED_LINKS = [
     "docs/external_review_status.md",
     "docs/reader_continuity_audit.md",
     "docs/v1_x_beyond_sota_roadmap.md",
+    "docs/product_contracts.md",
 ]
 
 REQUIRED_NON_CLAIMS = [
@@ -163,7 +165,6 @@ def assert_surface(
     dispositions: dict[str, int],
     no_promotion_decisions: int,
 ) -> None:
-    paragraph_word = "paragraph" if str(long_paragraphs) == "1" else "paragraphs"
     required = [
         "60-Second Trust Surface",
         f"{chapters} chapter core claims remain at `argument`",
@@ -172,14 +173,12 @@ def assert_surface(
         f"{dispositions['accepted_no_promotion_dispositions']} accepted no-promotion dispositions",
         f"{dispositions['promoted_core_claims']} promoted core claims",
         f"{sources} public-safe records",
-        f"{chapters}/{chapters} chapters externally positioned",
+        f"{chapters}/{chapters} chapters",
+        "externally positioned",
         "0 explicit external-baseline exceptions",
-        "Fourteen narrow non-core transitions are accepted",
-        f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions",
-        f"{high} high-priority",
-        f"{medium} medium-priority",
-        f"{long_paragraphs} {paragraph_word} at or above 160 words",
-        f"{active_overlays} active/applied reader-overlay operations",
+        "Fourteen narrow non-core transitions are recorded in",
+        f"{no_promotion_decisions} accepted `blocks_promotion` decisions are recorded there",
+        "Choose the product you need",
     ]
     for needle in required:
         if needle not in text:
@@ -189,20 +188,9 @@ def assert_surface(
         if link not in text:
             errors.append(f"{name} missing trust-surface link: {link}")
 
-    for claim_id, state in EXPECTED_NON_CORE.items():
-        if claim_id not in text:
-            errors.append(f"{name} missing non-core transition id: {claim_id}")
-        if state not in text:
-            errors.append(f"{name} missing non-core transition state: {state}")
-
     for phrase in REQUIRED_NON_CLAIMS:
         if phrase not in text:
             errors.append(f"{name} missing non-claim boundary: {phrase}")
-
-    if "fourteen narrow non-core transitions are accepted" not in text.lower():
-        errors.append(f"{name} missing current fourteen-transition count")
-    if f"{no_promotion_decisions} accepted `blocks_promotion` no-promotion side-lane decisions" not in text:
-        errors.append(f"{name} missing current no-promotion side-lane count")
 
     lowered = text.lower()
     for phrase in FORBIDDEN_OVERCLAIMS:
@@ -226,6 +214,7 @@ def main() -> None:
     index = read_text(INDEX)
     status = read_text(STATUS)
     publication = read_text(PUBLICATION)
+    non_core_ledger = read_text(NON_CORE_LEDGER)
 
     for name, text in {
         "README.md": readme,
@@ -244,6 +233,16 @@ def main() -> None:
             dispositions=dispositions,
             no_promotion_decisions=no_promotion_decisions,
         )
+
+    for claim_id, state in EXPECTED_NON_CORE.items():
+        if claim_id not in non_core_ledger:
+            errors.append(f"docs/non_core_evidence_ledger.md missing non-core transition id: {claim_id}")
+        if state not in non_core_ledger:
+            errors.append(f"docs/non_core_evidence_ledger.md missing non-core transition state: {state}")
+    if f"| Accepted non-core upward transitions | {len(EXPECTED_NON_CORE)} narrow transitions. |" not in non_core_ledger:
+        errors.append("docs/non_core_evidence_ledger.md missing fourteen-transition boundary")
+    if f"| Accepted no-promotion side-lane decisions | {no_promotion_decisions} accepted `blocks_promotion` decisions; no support-state movement. |" not in non_core_ledger:
+        errors.append("docs/non_core_evidence_ledger.md missing current blocks-promotion count")
 
     public_status_needles = [
         "The live Human view is a convenience projection, not a reviewed reader-release manuscript",

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/versioned_release_index.schema.json",
+  "title": "Versioned Release Index",
+  "type": "object",
+  "required": ["schema_version", "latest", "immutable_storage_authority", "releases", "non_claims"],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.versioned_release_index.v0"] },
+    "latest": {
+      "type": "object",
+      "required": ["url", "source_commit", "status_id", "mutable"],
+      "properties": {
+        "url": { "type": "string", "minLength": 1 },
+        "source_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "status_id": { "type": "string", "minLength": 1 },
+        "mutable": { "type": "string", "enum": ["yes"] }
+      },
+      "additionalProperties": false
+    },
+    "immutable_storage_authority": { "type": "string", "minLength": 1 },
+    "releases": { "type": "array", "items": { "$ref": "https://corbensorenson.github.io/asi-stack-book/schemas/versioned_release_policy.schema.json#/properties/known_releases/items" } },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

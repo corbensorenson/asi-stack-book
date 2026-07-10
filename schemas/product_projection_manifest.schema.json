@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/product_projection_manifest.schema.json",
+  "title": "ASI Stack Product Projection Manifest",
+  "type": "object",
+  "required": ["schema_version", "generated_from", "products", "non_claims"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["asi_stack.product_projection_manifest.v0"]
+    },
+    "generated_from": {
+      "type": "object",
+      "required": [
+        "canonical_status_id",
+        "source_commit",
+        "chapter_count",
+        "source_count",
+        "structure_sha256",
+        "contract_sha256",
+        "narrative_spine_sha256"
+      ],
+      "properties": {
+        "canonical_status_id": { "type": "string", "minLength": 1 },
+        "source_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "chapter_count": { "type": "integer", "minimum": 1 },
+        "source_count": { "type": "integer", "minimum": 0 },
+        "structure_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "contract_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "narrative_spine_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "products": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "entry_path", "manifest_path", "entry_count"],
+        "properties": {
+          "id": { "type": "string", "enum": ["narrative_book", "architecture_reference", "evidence_registry"] },
+          "status": { "type": "string", "minLength": 1 },
+          "entry_path": { "type": "string", "minLength": 1 },
+          "manifest_path": { "type": "string", "minLength": 1 },
+          "entry_count": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "additionalProperties": false
+}

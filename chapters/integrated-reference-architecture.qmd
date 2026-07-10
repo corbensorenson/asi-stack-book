@@ -117,6 +117,8 @@ Appendix C now records twenty passage-reviewed mappings for this synthesis. The 
 
 The reference architecture is a trace contract. A request enters through human intent and constitutional authority, then passes through planning, context compilation, routing, verification, execution, evidence update, and capability governance. At each boundary the next layer receives a typed artifact rather than an informal summary: command contract, plan DAG, context packet, route decision, claim envelope, work order, audit log, benchmark ledger, or SCF transition.
 
+The participants in that trace are logical roles. They do not imply one model, process, machine, vendor, or physically separate cognitive module per lane. A single model can serve several roles when independent policy, state, and verification surfaces enforce the handoffs; one role can also be implemented by several models, deterministic tools, or human reviewers. The reference architecture is therefore substrate-neutral while remaining strict about responsibilities and authority.
+
 At trace scale, the governed-cognition pattern shifts from local boundary ownership to cross-layer composition. A layer-local record says what one boundary owns. A Reference Trace Record says whether those local records still compose after handoff, denial, residualization, or proposed improvement. That is why the trace carries parent artifacts, authority deltas, evidence deltas, residual deltas, stop conditions, and non-claims together.
 
 This is where the earlier layers compose. VIEA supplies the intent-to-execution spine, VCM supplies source-bound working memory, PlanForge and Talos supply planning and work contracts, Spinoza supplies claim discipline, Octopus/RMI/Benchmaxxing supply routing and ratchet pressure, CGS and loop closure supply compression pressure, and SCF supplies the replacement gate. Project Theseus and MoECOT remain implementation-reference context until their artifacts are imported or rerun here.
@@ -151,7 +153,7 @@ sequenceDiagram
   S->>G: promote, rollback, quarantine, or require review
 ```
 
-**What the reference trace shows:** The reference trace is an end-to-end handoff chain, not a single agent loop. Each participant receives and emits a typed artifact, and the final SCF gate can still promote, roll back, quarantine, or require review based on evidence and authority.
+**What the reference trace shows:** The reference trace is an end-to-end logical handoff chain, not a claim about physical module count and not a single agent loop with hidden role changes. Each participant receives and emits a typed artifact, and the final SCF gate can still promote, roll back, quarantine, or require review based on evidence and authority.
 
 The important feature is that every participant emits something durable enough for another participant to inspect. If the planner fails, the plan DAG should show where. If memory fails, the context packet should expose stale, missing, or unauthorized material. If routing fails, the residual record should survive. If execution fails, the audit log should make the failure replayable. If improvement is proposed, the SCF gate should decide whether the evidence supports promotion, rollback, quarantine, or human review.
 
@@ -255,7 +257,7 @@ Trace fragmentation is the companion failure, where each layer records locally v
 
 A minimum integrated architecture first exists as the reference flow diagram plus the `reference_trace_record` schema and deterministic fixture set. The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
 
-That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. A first actual command replay now exists as a local Resource flagship validator trace with an artifact bundle, output digest, and attached blocked-path stop conditions. The next minimum slice is stronger: a live or external runtime trace that produces comparable records from real layer handoffs while preserving the same non-claim boundaries.
+That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. A first actual command replay exists as a local Resource flagship validator trace with an artifact bundle, output digest, and attached blocked-path stop conditions. The governed repository-change slice now adds an executed local Git workflow with code mutation, tests, independent byte-and-behavior observation, matched baseline accounting, release/refusal decisions, exact and failed rollback, and quarantine. A live or external runtime trace remains stronger and still needs comparable records from real deployed layer handoffs.
 
 ## Beyond the State of the Art
 
@@ -290,6 +292,53 @@ non-claims that make the verifier route consumable. The epistemic-TCB fixture
 rejects verifier-trust laundering and ambient trust propagation in finite
 records; it does not prove a deployed trust base or verifier correctness.
 
+### Governed repository-change slice
+
+The local governed repository-change slice turns the abstract trace into one
+actual disposable Git effect path. Nine matched scenarios receive the same
+budget-clamp request. The simple baseline releases all nine after public smoke
+tests and produces eight false accepts. The governed route binds one allowed
+path, quarantines retrieved-context instructions, rechecks authority before
+effect, rejects correlated review, verifies claimed file hashes against
+observed bytes in a separate process, runs stronger behavior probes, discovers
+undeclared files, and distinguishes exact rollback from incomplete rollback.
+It records three safe local releases, five refusals, one quarantine, three
+rollback attempts, two exact rollbacks, one failed rollback, zero false
+accepts, and zero unsafe releases.
+
+That result makes overhead visible too: the governed route uses 66 versus 27
+deterministic cost units, 89 versus 27 trace steps, and nine versus zero review
+steps. These are fixture accounting units, not production latency or economic
+measurements. The slice is validated by
+`scripts/validate_governed_repository_change_slice.py` and documented in
+`docs/governed_repository_change_slice.md`. It executes a bounded local
+repository workflow, but it creates no chapter-core support-state transition
+and does not prove a deployed authorization, sandbox, verifier, rollback,
+security, safety, software-quality, or ASI system.
+
+### Four trace invariants over one executed log
+
+The repository-change event log now feeds one shared finite trace model rather
+than four unrelated record examples. Authority monotonicity checks that each
+child scope stays within its parent and each request stays within the child.
+Revocation-before-effect attaches logical times to revocation and effect and
+gives revocation precedence when the two tie. Evidence-transition integrity
+requires unchanged support when no transition exists and accepted review,
+matching artifact bytes, plus independent effect observation when a transition
+does exist. Residual conservation requires created residuals to equal
+discharged residuals plus the final open inventory.
+
+The executed local trace has three authority handoffs, three timed effect attempts,
+nine evidence events, two residuals created, one discharged, and one final open
+residual preserved by quarantine. Four mutations try to widen authority, allow
+an effect at revocation time, change support without a transition, and erase
+the open residual; all are rejected by
+`scripts/validate_governed_trace_invariants.py`. Lean target
+`lean:reference_architecture.governed_trace.four_invariants` proves the same
+finite values in `AsiStackProofs.GovernedRepositoryTrace`. These are bounded
+trace semantics connected to an executed local log, not a distributed-runtime,
+service-enforcement, completeness, safety, or chapter-core promotion claim.
+
 When the trace kernel works, a future implementation could be evaluated by trace quality before anyone argues about intelligence. If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture. The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.
 
 ## Codex test plan
@@ -301,8 +350,10 @@ When the trace kernel works, a future implementation could be evaluated by trace
 | Artifact continuity audit | Check deterministic reference-trace fixtures for parent artifact refs, authority-chain/delta visibility, artifact count, and residual preservation. | implemented by `python3 scripts/validate_reference_trace.py`; no live artifact-continuity audit exists |
 | Authority stop-condition test | Check deterministic blocked reference-trace fixtures for stop conditions and promotion blockers when execution authority is missing. | implemented by `python3 scripts/validate_reference_trace.py`; no deployed authority stop-condition checker exists |
 | Actual command replay trace | Record one actual repository validator command as a Reference Trace Record with output digest, artifact bundle, and blocked-path stop conditions. | implemented by `python3 scripts/run_reference_trace_replay.py --write-result` and `python3 scripts/validate_reference_trace_replay.py`; local replay only, no deployed runtime trace |
+| Governed repository-change slice | Execute intent, authority, plan, context, route, local code effect, independent observation, receipt reconciliation, evidence gate, release/refusal, rollback, and quarantine against a simpler matched baseline and eight adversarial cases. | implemented by `python3 scripts/run_governed_repository_change_slice.py --write-result` and `python3 scripts/validate_governed_repository_change_slice.py`; bounded disposable Git repositories only, no deployed runtime or chapter-core promotion |
+| Governed cross-stack trace invariants test | Derive authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed repository-change log. | implemented by `python3 scripts/run_governed_trace_invariants.py --write-result`, `python3 scripts/validate_governed_trace_invariants.py`, and `AsiStackProofs.GovernedRepositoryTrace`; finite local trace only |
 
-The implemented rows validate deterministic fixture behavior and one local command replay only. They do not execute the architecture or replay a deployed demo with typed artifacts across layers. A future runtime integration test still needs real layer handoff records, environment notes, runtime trace artifacts, and result summary for an actual deployed or externally replayed run.
+The implemented rows validate deterministic fixture behavior, one local command replay, and one executed local repository-change workflow. They do not replay a deployed demo with independently operated services across layers. A future runtime integration test still needs deployed or external layer-handoff records, environment notes, runtime trace artifacts, and independent result review.
 
 ### Formalization hooks
 
@@ -310,6 +361,7 @@ The implemented rows validate deterministic fixture behavior and one local comma
 |---|---|---|---|
 | `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | implemented |
 | `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | implemented |
+| `lean:reference_architecture.governed_trace.four_invariants` | `AsiStackProofs.GovernedRepositoryTrace` | The bounded executed repository-change trace satisfies authority monotonicity, revocation-before-effect, evidence-transition integrity, and residual conservation, and rejects one mutation per invariant. | implemented |
 
 These Lean hooks are implemented as finite-record predicates over layer-handoff, governance-gate, and trace-route reviews. They prove only the record-level gates: a declared handoff has its required artifact, a trace missing a required governance gate cannot be marked valid, and modeled traces with missing parent artifacts, missing authority deltas, missing residual deltas, missing required governance gates, or missing validation commands route to repair, blocking, or validation rather than accepted trace status. The deterministic reference-trace harness adds fixture-level checks for parentage, layer coverage, authority deltas, residuals, blocked-path stop conditions, validation commands, and support-state non-promotion. Together these checks do not prove an implemented ASI runtime, real layer enforcement, artifact continuity across a deployed trace, authority stop-condition behavior, or runtime replay.
 
@@ -338,6 +390,7 @@ These Lean hooks are implemented as finite-record predicates over layer-handoff,
 | `theseus_operator_os` | Hive Operator OS and Work Board | labor_os_operator_surface | Shared command vocabulary, durable SQLite work board, node registry, background/watch/wake contracts, skill registry, tool hooks, feedback routing, and safety-visible operator surface. | source note available |
 | `theseus_circle_transfer` | Theseus Circle Calculus Transfer Lane | proof_contract_transfer | Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | source note available |
 | `ext_drexler_cais_2019` | Reframing Superintelligence: Comprehensive AI Services as General Intelligence | ai_services_r_and_d_automation | External comparator for service-centered general intelligence, R&D automation, and structured component composition. | source note available; relevant primary-report passages reviewed; comparator only |
+| `ext_adas_2024` | Automated Design of Agentic Systems | automated_agent_architecture_search | External comparator for code-defined search across prompts, tools, workflows, and agent designs under empirical selection. | source note available; no local search, transfer, superiority, or autonomous promotion claim |
 
 The crosswalk is the architecture spine. VIEA supplies intent-to-execution flow, SCF supplies bounded replacement, VCM supplies governed context, PlanForge and Talos supply planning/execution contracts, Spinoza supplies proof-carrying claims, Octopus/RMI/Benchmaxxing supply routing and ratchets, and Project Theseus supplies report-first implementation context. CAIS supplies the closest broad service-composition comparator but not an implementation of this trace contract. Connector-readable MoECOT and VCM-editable sources remain planning context until artifacts are imported or rerun.
 

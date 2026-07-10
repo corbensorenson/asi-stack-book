@@ -47,6 +47,7 @@ project:
     - chapters/labor-os-and-typed-jobs.qmd
     - chapters/artifact-graphs-audit-logs-and-replay.qmd
     - chapters/runtime-adapters-tool-permissions-and-human-approval.qmd
+    - chapters/inter-stack-protocols-identity-and-economic-exchange.qmd
     - chapters/procedural-memory-and-cognitive-loop-closure.qmd
     - chapters/routing-heads-and-specialist-cores.qmd
     - chapters/readiness-gates-residual-escrow-and-quarantine.qmd
@@ -89,7 +90,7 @@ lang: en-US
 
 book:
   title: "The ASI Stack"
-  subtitle: "A Systems Architecture for Governed, Efficient, Self-Improving AI"
+  subtitle: "A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case"
   author: "Corben Sorenson"
   site-url: "https://corbensorenson.github.io/asi-stack-book/"
   repo-url: "https://github.com/corbensorenson/asi-stack-book"
@@ -128,6 +129,7 @@ book:
         - chapters/labor-os-and-typed-jobs.qmd
         - chapters/artifact-graphs-audit-logs-and-replay.qmd
         - chapters/runtime-adapters-tool-permissions-and-human-approval.qmd
+        - chapters/inter-stack-protocols-identity-and-economic-exchange.qmd
         - chapters/procedural-memory-and-cognitive-loop-closure.qmd
     - part: "Part III - Routing, Compression, Representation, and Substrates"
       chapters:

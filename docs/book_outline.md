@@ -1,14 +1,19 @@
 # Cohesive Book Outline
 
-Working title: **The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI**
+Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: expanded source-of-truth drafting outline, updated 2026-06-25 after adding Personal Compute Hives and Artifact Steward Agents from public-safe browser-note triage. `book_structure.json` remains the ordering source of truth; Quarto generates displayed chapter numbers from the manifest.
+Status: expanded source-of-truth drafting outline, updated 2026-07-10 after the
+six-project historical mining and incorporation-roadmap reconciliation.
+`book_structure.json` remains the ordering source of truth; Quarto generates
+displayed chapter numbers from the manifest.
 
 ## Drafting Thesis
 
 The book argues that advanced AI should not be understood as one larger model, one agent loop, or one benchmark ladder. It should be specified as a governed stack whose layers transform intent into action through explicit boundaries: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive self-improvement.
 
 The stack is efficient because it routes work, compiles context, reuses artifacts, compresses representations, escalates only when needed, and records residual uncertainty. It is governable because each layer has an authority ceiling, an interface, an invariant set, a failure model, and an evidence record. It is self-improving only when replacement is bounded by stable capability fields, readiness gates, rollback paths, and evaluator integrity.
+
+Throughout the outline, `layer` means a logical responsibility and authority boundary, not one required model, service, process, machine, or physical cognitive module. One implementation may place several roles around a monolithic model, split one role across specialists and deterministic tools, or use a hybrid human/AI service graph. The architecture is substrate-neutral; the typed handoffs, authority ceilings, evidence duties, and failure routes are the invariant commitments.
 
 ## How Future Writing Runs Should Use This Outline
 
@@ -22,9 +27,49 @@ The stack is efficient because it routes work, compiles context, reuses artifact
 - Use drafting annotations in private notes when helpful: `[SOURCE]`, `[AUTHOR INTENT]`, `[SYNTHESIS]`, `[EXPERIMENT]`, and `[OPEN]`.
 - Keep chapter IDs and filenames stable; Quarto handles displayed chapter numbering.
 
+## Historical Project Incorporation Overlay
+
+The detailed execution order is
+`docs/historical_project_incorporation_roadmap.md`. Use it when folding the
+pinned CCA, MoECOT Manifest, BeastBrain, BugBrain, Corben's Trainer, and
+Corben's Best Model Possible source records into chapters.
+
+Drafting rules:
+
+- Treat the six projects as one evolving local implementation lineage, not six
+  independent supports.
+- Improve existing chapter owners before proposing a new chapter.
+- Begin with Evidence States, Benchmark Ratchets, Artifact Graphs, Integrated
+  Reference Architecture, System Boundaries, and Cognitive Compilation.
+- Add a project source ID to a chapter only when the corresponding chapter
+  packet updates its source crosswalk and reader-facing mechanism or failure
+  analysis.
+- Prefer one concise mechanism or negative-case box over project-by-project
+  narration. The architecture remains the subject; project names establish
+  lineage and implementation context.
+- Preserve distinctions between generated/frozen/trainable/updated model
+  state, specialist bank/oracle routing/autonomous routing, declaration/receipt,
+  playback/re-execution, and durable memory/context/procedural memory.
+- Keep chapter core support states unchanged unless a separate accepted
+  evidence transition exists.
+- The only provisional new chapter is
+  `durable-semantic-memory-and-knowledge-lattices`. It remains deferred until
+  independent literature is source-noted and the improved Virtual Context ABI,
+  context transactions, claim ledgers, procedural memory, and artifact graph
+  chapters still leave a distinct durable semantic-state owner missing.
+- Execute one complete chapter packet at a time: prose, Human Reading Path,
+  source mapping, interface/invariant updates, negative controls, minimum
+  artifact or exact blocker, proof/evidence route, visual treatment, handoff,
+  changelog, validation, and HTML render when public prose changes.
+
+This overlay changes future drafting priority and source routing. It does not
+add the provisional chapter, publish private project material, or promote any
+claim.
+
 ## Reader Promise
 
 - Why ASI should be treated as a systems architecture, not a monolithic model.
+- Why the stack is substrate-neutral: responsibility separation does not require one model or physical module per layer.
 - How each layer constrains the others without erasing its separate responsibilities.
 - Which sources should be mined for each chapter and part.
 - Which claims should become Lean proofs, executable specs, or tests.
@@ -255,6 +300,7 @@ Source loading queue:
 | Primary | `viea`, `scf` | Read first for chapter claims and mechanisms. |
 | Supporting | `talos`, `ladon_manhattan`, `genesiscode` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_saltzer_schroeder_protection_1975`, `ext_capability_based_computer_systems_1984`, `ext_confused_deputy_hardy_1988` | Load after internal authority sources to position the chapter against least-privilege/complete-mediation principles, capability-system authority boundaries, and confused-deputy authority laundering. Treat them as comparators, not proof of deployed ASI Stack enforcement. |
+| Current agent-security comparators | `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | Use for control/data-flow separation, capability enforcement, and the current agentic-risk taxonomy. Do not treat framework alignment or source-reported results as local enforcement, robustness, or safety. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -395,6 +441,7 @@ Source loading queue:
 | Primary | `benchmaxxing`, `spinoza`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `uat`, `coherence_exchange`, `verification_bandwidth` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_model_cards_2019`, `ext_datasheets_datasets_2021`, `ext_ml_reproducibility_program_2021`, `ext_proof_carrying_code_1997`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023` | Use source-noted records to position evidence states against structured reporting, dataset documentation, reproducibility-review practice, proof-carrying-code lineage, and scoped mechanistic-interpretability evidence; do not treat them as local implementation, external review, model transparency, model safety, or support-state promotion. |
+| Provenance interoperability | `ext_w3c_prov_o_2013` | Use PROV-O for entity/activity/agent, derivation, attribution, revision, delegation, and invalidation vocabulary. A provenance assertion is not evidential truth, completeness, authority, or support-state promotion. |
 
 Draft arc:
 
@@ -905,6 +952,7 @@ Source loading queue:
 | Primary | `ladon_manhattan`, `context_engineer` | Read first for chapter claims and mechanisms. |
 | Supporting | `talos`, `alignment_field`, `coherence_exchange` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_owasp_llm_top_10_2025`, `ext_nist_zero_trust_architecture_2020`, `ext_saltzer_schroeder_protection_1975` | Use after source notes for prompt-injection, excessive-agency, zero-trust, least-privilege, and complete-mediation positioning; do not treat these sources as evidence of ASI Stack security, compliance, or runtime containment. |
+| Current agent-security comparators | `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | Load for tool-over-untrusted-data evaluation, control/data-flow capability defenses, and the 2026 agentic-risk taxonomy. Preserve benchmark, proof-scope, coverage, and local-reproduction limits. |
 
 Draft arc:
 
@@ -978,6 +1026,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `ext_rand_model_weight_security_2024`, `ext_nist_confidential_computing_2026`, `ext_provable_model_weight_release_2025` | Read for threat surfaces, defense in depth, trust-domain and attestation limits, key release, attacker definitions, extraction objections, and irreversible-release boundaries. |
 | Supporting | `ext_nvidia_confidential_model_lifecycle_2026`, `cca_project` | Use NVIDIA only as a vendor-specific lifecycle comparator and CCA only for protected-state/role-separation implementation context; neither is local custody or security evidence. |
+| Supply-chain attestation comparator | `ext_in_toto_2019` | Use for cryptographically authorized lifecycle-step attestations and their limits. Valid process metadata does not prove model correctness, safe behavior, trustworthy authorized actors, or release merit. |
 
 Draft arc:
 
@@ -1072,6 +1121,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `ext_nist_cscrm_2022`, `ext_slsa_build_track_1_2`, `ext_openssf_model_signing_spec_2025`, `ext_spdx_ai_profile_3_0_1` | Read for lifecycle C-SCRM, build provenance and its limits, model/dataset signing and its non-guarantees, and interoperable AI BOM relationships. |
 | Supporting | `cca_project`, `moecot_manifest_project`, `corbens_trainer_project` | Mine CCA and MoECOT for public-safe provenance, supersession/invalidation, pass-hash, trace-bundle, source-hash, closure/lineage, attestation, digest, replay, and revocation-record context; mine Corben's Trainer for typed experiment manifests, artifact lineage, benchmark authenticity, quarantine, and revocable-promotion context. Do not treat any as local supply-chain, signing, verification, supplier, security, or deployment evidence. |
+| Interoperable provenance and current risk comparators | `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019`, `ext_owasp_agentic_top_10_2026` | Use for provenance graphs, machine-readable dataset metadata, signed lifecycle steps, and agentic supply-chain risk. Conformance or taxonomy alignment does not prove completeness, integrity, data fitness, safety, or local adoption. |
 
 Draft arc:
 
@@ -1170,6 +1220,7 @@ Source loading queue:
 | Primary | `scf`, `benchmaxxing`, `rmi` | Read first for chapter claims and mechanisms. |
 | Supporting | `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_drexler_cais_2019` | Use for CAIS's distinction between R&D automation and self-transforming agents; do not treat it as evidence that this stack can safely improve itself or that its gates are sufficient. |
+| Empirical improvement comparators | `ext_darwin_godel_machine_2025`, `ext_adas_2024` | Use for archive-based code self-modification and meta-agent architecture search. Require sandbox, evaluator, benchmark, mutation-scope, lineage, and human-promotion boundaries; do not infer safe recursive improvement. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1242,6 +1293,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `rmi`, `cognitive_loop_closure`, `ext_poet_2019`, `ext_funsearch_2024`, `ext_voyager_2023` | Read first for ratchet/residual vocabulary, qualification of repeated procedures, paired task-solution generation, bounded generator-evaluator-program search, and automatic curriculum/skill-library patterns. Preserve each source's task and evaluator scope. |
 | Supporting | `benchmaxxing`, `theseus_self_evolution_system`, `scf`, `ext_drexler_cais_2019` | Mine after primary sources for regression floors, source-reported governance context, stable capability admission, and the distinction between R&D automation and a self-transforming agent. |
+| Current empirical comparators | `ext_darwin_godel_machine_2025`, `ext_adas_2024` | Compare branching archives, empirical candidate selection, and code-defined agent search. Treat reported gains as source-scoped results, not local reproduction, general improvement, or autonomous promotion authority. |
 | Connector or recovery required | `moecot` | Use only as implementation-reference context unless public-safe artifacts are imported or reproduced. |
 
 Draft arc:
@@ -1334,6 +1386,7 @@ Source loading queue:
 | Primary | `viea`, `software_magic_grimoire` | Read first for the intent-to-execution spine and command-field vocabulary. |
 | Supporting | `talos`, `genesiscode`, `cognitive_compilation` | Mine for typed-job, proposal/effect, protocol-shape, and semantic-lowering connections. |
 | External comparators | `ext_react_2022`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_temporal_docs`, `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_tla_plus_home_docs`, `ext_dafny_2010` | Load after internal command-contract sources to position the chapter against reasoning/action traces, planning-domain/problem notation, HTN decomposition, durable workflows, DAG orchestration, process notation, high-level system modeling, and specification/verification-condition discipline. Treat as comparators only; do not claim parser correctness, PDDL/SHOP2 translation, Temporal/Airflow/BPMN execution, TLA+ checking, Dafny-style verification, or deployed dispatch behavior. |
+| Capability-secure execution comparator | `ext_camel_prompt_injection_2025` | Use for trusted-query control-flow extraction, untrusted-data separation, and tool-call capability enforcement. Do not claim correct local intent extraction, universal injection resistance, or deployed policy enforcement. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived runtime claims. |
 
 Draft arc:
@@ -1582,6 +1635,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `vcm_public` | Read first for the ABI, semantic-page, certificate, admission, adequacy, and typed-fault vocabulary. |
 | Supporting | `context_engineer`, `verification_bandwidth`, `viea`, `spinoza` | Mine after primary sources for context supply-chain pressure, verification-capacity limits, execution-spine connections, and claim/evidence cell boundaries. |
+| External memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025` | Compare graph/community, associative-graph, hierarchical-abstraction, and persistent conversational memory. Type every derived representation and preserve provenance, loss, poisoning, update, and local-reproduction limits. |
 | Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
 
 Draft arc:
@@ -1664,6 +1718,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `vcm_public` | Read first for chapter claims and mechanisms. |
 | Supporting | `ladon_manhattan`, `context_engineer`, `black_hole_context_manager` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External memory comparators | `ext_graphrag_2024`, `ext_mem0_2025` | Use for derived graph/community state and cross-session memory extraction/consolidation. Require version, taint, revocation, deletion, provenance, and authority boundaries; do not inherit production-readiness claims. |
 | Connector or recovery required | `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1731,6 +1786,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `verification_bandwidth`, `vcm_public` | Read first for chapter claims and mechanisms. |
 | Supporting | `spinoza`, `treellm` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External retrieval comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024` | Compare global graph summaries, associative navigation, and multi-resolution retrieval. Retrieval quality and source-reported QA gains remain distinct from claim adequacy, evidence truth, and local reproduction. |
 | Connector or recovery required | `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -1799,6 +1855,7 @@ Source loading queue:
 | Primary | `spinoza`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `coherence_exchange`, `aletheia`, `uat` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` | Load after internal claim-ledger sources to position the chapter against formal belief revision, truth maintenance, assumption-based truth maintenance, citation support, retrieval critique, and behavioral testing. Treat these as lineage/comparators, not evidence that the ASI Stack implements belief revision. |
+| Provenance interoperability | `ext_w3c_prov_o_2013` | Use for derivation, attribution, revision, quotation, primary-source, delegation, and invalidation relations. Do not equate an asserted provenance graph with a justified belief or accepted support transition. |
 
 Draft arc:
 
@@ -2015,6 +2072,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `talos`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External provenance comparators | `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019` | Use for interoperable entity/activity/agent provenance, dataset structure and derivation, and signed supply-chain steps. Keep replay, attestation, byte identity, semantic correctness, and authority separate. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2112,6 +2170,7 @@ Source loading queue:
 | Primary | `talos`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_cap_theorem_gilbert_lynch_2002` | Load after internal approval and adapter sources to ground human oversight degradation, automation irony, approval fatigue, rubber-stamping, alarm fatigue, automation bias, and CAP-style partition pressure on authority consistency. Treat them as comparators only; do not claim deployed reviewer correctness, approval-service quality, partition tolerance, revocation propagation, distributed consensus, or support-state promotion. |
+| Current evaluation and security comparators | `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | Use for agent/tool evaluation, indirect-injection tasks, capability-secure data flow, and modern agent-risk coverage. Framework presence, benchmark scores, or taxonomy mapping do not prove adapter security or safe approval. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2179,6 +2238,97 @@ Lean proof targets:
 
 Cross-chapter partitioned-authority proof note: the partitioned-authority fixture is implemented under `AsiStackProofs.PersonalComputeHives` as `lean:personal_hives.partitioned_authority.fixture_bridge`, not duplicated in the Runtime Adapters proof table. It keeps the hives/runtime grant-effect boundary synchronized while preserving no deployed partition tolerance, distributed consensus, availability, revocation propagation, runtime adapter enforcement, support-state promotion, or chapter-core promotion.
 
+### Inter-Stack Protocols, Identity, and Economic Exchange
+
+Stable ID: `inter-stack-protocols-identity-and-economic-exchange`
+
+Chapter job: Govern the versioned contract that lets an intent, task, artifact,
+identity, credential, delegation, economic commitment, receipt, dispute,
+revocation, and residual record cross an independently operated protocol
+boundary without turning a message or peer declaration into ambient authority.
+
+Core claim: A governed stack routes each cross-stack request through a versioned exchange contract that binds protocol and schema version, sender and receiver identities, endpoint and capability declaration, requested task or artifact, principal and delegated authority, credential verification, audience, scope, expiry, budget or consideration, expected receipt, dispute and revocation paths, and residual owner; an absent, mismatched, expired, revoked, unverified, or budget-unreserved required record blocks dispatch or routes accountable review, but does not itself establish peer trustworthiness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, authorization correctness, or ASI.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_mcp_protocol_2025_06_18`, `ext_a2a_protocol_0_3_0`, `ext_w3c_did_core_1_0_2022`, `ext_w3c_vc_data_model_2_0_2025`, `ext_interledger_protocol_v4` | Read for protocol/schema/lifecycle boundaries, agent discovery and delegated task records, identity resolution, credential roles/status/authorization limits, and packetized value-transfer boundaries. Keep each at its stated scope. |
+| Supporting | `talos`, `vcm_public`, `tokenmana` | Mine Talos for typed job/contract/audit/replay handoffs, VCM for source-authority binding/revocation/non-success states, and TokenMana for bounded-capacity/economic-pressure context. Do not treat them as local protocol, identity, credential, payment, settlement, or deployment evidence. |
+| Current agentic-risk comparator | `ext_owasp_agentic_top_10_2026` | Use for identity/privilege abuse, insecure inter-agent communication, cascading failures, and agentic supply-chain risks. Taxonomy coverage is not protocol security, peer trust, authorization, or safety. |
+
+Draft arc:
+
+- Problem: A local task contract loses its binding when it reaches another agent,
+  tool, service, federation, or value network as an API call plus informal trust.
+- Insufficiency: MCP-like and A2A-like messages establish structured interaction;
+  DIDs and credentials establish scoped identity/claim fields; payment protocols
+  establish bounded transfer mechanisms. None alone establishes local
+  authorization, task truth, effect safety, settlement, fairness, or consent.
+- Mechanism: Bind protocol/schema revision, endpoint/capability declaration,
+  sender/receiver/principal, task/artifact reference, delegation, credential,
+  audience, scope, expiry, budget/consideration, receipt, dispute, revocation,
+  residual owner, and requested dispatch in one versioned exchange contract.
+- Mechanism: Keep parser, resolver, credential verifier, local policy,
+  reservation, local adapter lease, remote declared completion, independent
+  evidence review, and settlement as separate record states with separate owners.
+- Mechanism: Route missing identity, audience/scope mismatch, expired or revoked
+  authority, invalid credential, missing reservation, disputed receipt, or
+  missing residual owner to repair, review, dispute, denial, or an existing
+  local owner rather than ordinary dispatch.
+- Interface: Runtime Adapters owns a local effect lease; Artifact Graphs owns
+  generic receipts/replay; Resource Economics owns local capacity; Personal
+  Compute Hives owns federation; Security Kernel owns protected handles.
+
+Primary invariants:
+
+- Every requested dispatch names protocol/schema version, endpoint/capability,
+  sender, receiver, originating principal, requested task/artifact, and affected
+  local owner.
+- Delegated authority remains bound to principal, audience, capability, scope,
+  expiry, policy, and revocation state; forwarding cannot widen it.
+- Identity and credential verification records retain verifier, policy scope,
+  freshness, and limitations and do not become authorization or peer-trust
+  proof by themselves.
+- Value-bearing work records reservation/consideration scope, expected receipt,
+  dispute/revocation path, and residual owner before it can reach a local effect.
+- Remote responses remain declared results until an independent owner checks the
+  evidence required for their intended use.
+
+Failure modes to cover:
+
+- Capability-card theater and identity conflation.
+- Deputy laundering through forwarded credentials, approvals, or delegated tasks.
+- Result laundering from response shape, completion status, or artifact receipt.
+- Economic-commitment laundering from reservation or packet routing to
+  settlement, consent, fairness, or legal authorization.
+- Revocation races and residual loss across endpoint, credential, policy,
+  budget, timeout, partial-delivery, dispute, refund, and remote-failure paths.
+
+Draft deliverables:
+
+- A cross-stack exchange diagram that separates protocol shape, identity,
+  credential verification, local policy, reservation, local dispatch, declared
+  response, receipt, dispute, revocation, and residual ownership.
+- Source-noted positioning through MCP, A2A, DID Core, VC Data Model, and
+  Interledger comparators, plus scoped Talos, VCM, and TokenMana context; none
+  demonstrates a local peer, identity, credential, payment, settlement, task,
+  authorization, privacy, or safety result.
+- Implemented proof-backed routes: a required invalid credential denies finite
+  requested dispatch, and a value-bearing request without a reserved budget
+  routes to repair; each is structured-record coverage only.
+- Planned Codex test: a public-safe exchange workload with valid bounded
+  contract, missing identity, audience mismatch, expiry, revoked credential,
+  missing budget, disputed receipt, and missing-residual-owner controls, using
+  no real endpoint, identity, credential, payment, account, or remote effect.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:inter_stack.invalid_credential.blocks_dispatch` | `AsiStackProofs.InterStackProtocols` | A finite requested cross-stack exchange with required invalid credential verification routes to denial rather than ordinary local dispatch, without inferring identity trust, task truth, authorization correctness, payment settlement, or ASI. | implemented |
+| `lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch` | `AsiStackProofs.InterStackProtocols` | A finite value-bearing requested cross-stack exchange with all required identity and authority records but no reserved budget routes to budget repair rather than ordinary local dispatch, without inferring payment, settlement, economic fairness, authority correctness, or ASI. | implemented |
+
 ### Procedural Memory and Cognitive Loop Closure
 
 Stable ID: `procedural-memory-and-cognitive-loop-closure`
@@ -2194,6 +2344,7 @@ Source loading queue:
 | Primary | `cognitive_loop_closure` | Read first for chapter claims and mechanisms. |
 | Supporting | `rmi`, `rgs`, `benchmaxxing`, `talos`, `project_theseus_whitepaper`, `theseus_self_evolution_system`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_memgpt_2023`, `ext_toolformer_2023`, `ext_voyager_2023`, `ext_dreamcoder_2020` | Use after source notes to ground memory-management, learned-tool-use, skill-library, and library-learning comparators; do not treat reported results as local reproduction or support-state promotion. |
+| Persistent-memory comparator | `ext_mem0_2025` | Compare extraction, consolidation, graph linkage, cross-session retrieval, latency, and token cost while keeping conversational/episodic memory distinct from procedural lessons and governed belief revision. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2276,6 +2427,7 @@ Source loading queue:
 | Primary | `octopus_router`, `rmi`, `benchmaxxing` | Read first for chapter claims, routing mechanisms, and runtime-promotion pressure. |
 | Supporting | `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate` | Mine after primary sources for cross-layer connections, variants, runtime packet boundaries, and failure modes. |
 | Variants / alternate releases | `moecot_md` | Use only to compare versions or recover missing detail. |
+| Associative-routing comparator | `ext_hipporag_2024` | Use Personalized PageRank retrieval as a graph-navigation comparator. Relevance scores do not establish evidential adequacy, routing safety, update correctness, or local performance. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2360,6 +2512,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `rmi`, `benchmaxxing`, `scf` | Read first for chapter claims and mechanisms. |
 | Supporting | `octopus_router`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Self-improvement comparator | `ext_darwin_godel_machine_2025` | Use for archive-based candidate generation and benchmark-selected descendants under stated sandbox/human oversight. Do not treat benchmark improvement as readiness, monotonic safety, or promotion authority. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -2526,6 +2679,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `cgs`, `rgs`, `bbvca_v9`, `bbvca_main`, `treellm` | Read first for compact-system, generate/verify/repair, and semantic-representation claims and mechanisms. |
 | Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` | Mine after primary sources for edge/resource constraints, ratcheting, implementation lineage, artifact-compression comparison, semantic-IR pressure, proof-carrying claim graphs, optional cyclic substrate guardrails, and failure modes. |
+| Hierarchical-compression comparator | `ext_raptor_2024` | Use for recursively clustered and summarized retrieval trees. Require source bindings, loss contracts, reversibility limits, and residuals; do not infer local summary fidelity or benchmark gains. |
 
 Draft arc:
 
@@ -2643,6 +2797,7 @@ Source loading queue:
 | Primary | `cgs`, `cognitive_loop_closure`, `benchmaxxing` | Read first for the compact-generation loop, procedural chunking intuition, and measurement discipline. |
 | Supporting | `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi` | Mine after primary sources for planner selection, verifier capacity, budget accounting, artifactization, context packets, repair, and readiness routing. |
 | External literature variants | `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026` | Read after internal sources to ground the method taxonomy; treat reported results as source-reported until reproduced or independently checked. |
+| Current recurrent-decoding comparator | `ext_recurrent_transformer_2026` | Use for layerwise recurrent KV memory, exact tiling, effective-depth/width tradeoffs, and cache pressure. Treat small-model and asymptotic claims as source-scoped until measured locally. |
 | Handoff or recovery notes | `sources/inbox/fast_generation_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
 
 External literature queue:
@@ -2738,6 +2893,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024` | Read first for verification-limited reasoning, explicit search/backtracking, verifier-guided search, proposal refinement, and difficulty-dependent allocation. |
 | Supporting | `ext_deepseek_r1_2025`, `ext_s_grpo_2025` | Mine after primary sources for reasoning-RL and stopping-policy comparators; do not import their reported behavior as local evidence. |
+| Recurrent adaptive-depth comparators | `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026` | Use for shared-weight recurrence, per-position halting, complexity-controlled allocation, and the negative boundary that difficulty-aligned compute need not generalize. Do not infer adaptive reasoning or local efficiency. |
 
 Draft arc:
 
@@ -2813,6 +2969,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `rankfold_neuralfold`, `rankfold_compressor` | Read first for chapter claims and mechanisms. |
 | Supporting | `bbvca_v9`, `cgs`, `bugbrain` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Hierarchical-retrieval comparator | `ext_raptor_2024` | Compare multi-level recursive summaries with artifact compression. Keep benchmark improvement separate from fidelity, source preservation, reversibility, and local RankFold/NeuralFold evidence. |
 
 Draft arc:
 
@@ -2885,6 +3042,7 @@ Source loading queue:
 | Primary | `tokenmana`, `planforge` | Read first for budget, scheduler, and scarcity framing. |
 | Supporting | `coherence_exchange`, `simulation_scaling`, `viea`, `project_theseus_whitepaper`, `coilra_multicoil_rope`, `cgs`, `rankfold_neuralfold`, `alignment_field` | Mine after primary sources for cross-layer budget pressure, simulation fidelity, hidden residual burden, execution/report discipline, normative boundaries, and failure modes. |
 | External literature variants | `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` | Read for serving-memory economics and scoped property-verification comparison; treat reported results as source-reported until reproduced. |
+| Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 Draft arc:
 
@@ -2984,6 +3142,7 @@ Source loading queue:
 | Primary | `genesiscode`, `temporal_coil_research` | Read first for chapter claims and mechanisms. |
 | Supporting | `cognitive_compilation`, `treellm`, `simulation_scaling`, `circle_calculus_core`, `circle_ai_architectures`, `proof_carrying_circular_computation`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External literature variants | `ext_mamba_2023` | Read for state-space/recurrent sequence-substrate context; treat reported model results as source-reported until reproduced. |
+| Recurrent-transformer comparators | `ext_universal_transformer_2019`, `ext_recurrent_transformer_2026` | Use for shared-weight depth recurrence, adaptive halting, recurrent KV state, and effective-depth tradeoffs. Preserve theoretical-assumption, scale, kernel, and local-reproduction limits. |
 | Connector or recovery required | `coilmoecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -3135,6 +3294,7 @@ Source loading queue:
 | Primary | `coil_attention_memory`, `circle_ai_contract_suite` | Read first for chapter claims and mechanisms. |
 | Supporting | `theseus_circle_transfer`, `vcm_public`, `verification_bandwidth` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External literature variants | `ext_transformer_xl_2019`, `ext_compressive_transformer_2019`, `ext_retnet_2023` | Use as recurrence, compressed-memory, long-range sequence, and attention/recurrence comparators; treat reported results as source-reported until reproduced. |
+| Foundational and current recurrence comparators | `ext_universal_transformer_2019`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Position coil contracts against shared-weight recurrence, recurrent KV memory, and complexity-controlled adaptive depth. Do not equate recurrence, extra compute, or allocation with cyclic-memory correctness or algorithmic extrapolation. |
 
 Draft arc:
 
@@ -3333,7 +3493,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 222 proof targets, 61 Lean modules, 1068 theorem declarations, 878 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 225 proof targets, 63 Lean modules, 1079 theorem declarations, 880 derived/decomposed, 187 direct/projection, 12 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3374,7 +3534,9 @@ Source loading queue:
 |---|---|---|
 | Primary | `benchmaxxing`, `rmi` | Read first for chapter claims and mechanisms. |
 | Supporting | `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Current benchmark and infrastructure comparators | `ext_mem0_2025`, `ext_mlcommons_croissant_1_1_2026`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_dynamic_compute_recurrent_transformers_2026` | Use for memory evaluation, dataset metadata/versioning, composable evals, adaptive security tests, self-improvement selection, architecture search, and complexity-controlled adaptive compute. Preserve contamination, judge, evaluator-capture, transfer, and local-reproduction limits. |
 | Connector or recovery required | `moecot`, `road_to_agi` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+
 
 Draft arc:
 
@@ -3445,7 +3607,9 @@ Source loading queue:
 |---|---|---|
 | Primary | `ext_metr_time_horizons_2025`, `ext_anthropic_rsp_2026`, `ext_openai_preparedness_framework_2025` | Read first for scoped measurement, policy-commitment, safeguard, report, reassessment, and limitation vocabulary. |
 | Supporting | `benchmaxxing`, `theseus_architecture_gate` | Use for baseline, coverage, residual, regression, gate-version, and re-evaluation connections without treating either as a local threshold or deployment result. |
+| Evaluation-framework comparator | `ext_inspect_ai_2024` | Use for versioned tasks, datasets, solvers/agents, scorers, tools, sandboxes, and logs. Framework availability or passing tasks do not define a threshold or authorize deployment. |
 | Source-setting boundary | all listed sources | No ASI Stack assessment, time horizon, threshold crossing, safeguard verification, exception, release decision, readiness result, or deployment result has been run. |
+
 
 Draft arc:
 
@@ -3500,6 +3664,8 @@ Source loading queue:
 | Corben/local first | `benchmaxxing`, `rmi` | Mine benchmark pressure, ratchet, residual, and regression vocabulary for bibliographies, adjacent terms, and reusable evidence-record interfaces before broad search. Do not treat source assignment as local experimental evidence. |
 | Primary | `ext_alignment_faking_2024`, `ext_ai_sandbagging_2024`, `ext_emergent_misalignment_reward_hacking_2025` | Read as scoped experimental comparators, preserving model, prompt, training, evaluation, and mitigation limits. |
 | Supporting | `ext_rlhf_limitations_2023`, `ext_concrete_ai_safety_2016` | Use for risk taxonomy only; do not turn survey context into local evidence. |
+| Current agent-evaluation and risk comparators | `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_owasp_agentic_top_10_2026` | Use for composable agent/tool evaluations, dynamic prompt-injection attacks/defenses, and current agentic-risk coverage. Do not claim complete adversarial coverage, deployed robustness, or safety. |
+
 
 Draft arc:
 
@@ -3671,9 +3837,11 @@ Source loading queue:
 |---|---|---|
 | Primary | `ext_bourtoule_machine_unlearning_2021`, `theseus_synthetic_data_curation` | Read first for deletion-path structure, bounded retraining trade-offs, and the pinned source-reported synthetic-curation control pattern. Do not represent either source as a local execution. |
 | Supporting | `ext_shumailov_model_collapse_2023`, `ext_gerstgrasser_data_accumulation_2024` | Mine for the tension between recursive synthetic-data replacement and accumulation, provenance, coverage, retention, and stated limits; retain workload-specific boundaries. |
+| Data interoperability and provenance | `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026` | Use for entity/activity/agent derivation and machine-readable dataset/resource/field metadata. Conformance does not prove fitness, legality, representativeness, deletion, or safe continual learning. |
 | Variants | none assigned | Add additional unlearning, provenance, contamination, or continual-learning literature only after a source note identifies its distinct decision surface. |
 | Connector or recovery required | none assigned | No connector source is required for the first chapter draft. |
 | Handoff or recovery notes | `schemas/data_admission_receipt.schema.json`, `lean/AsiStackProofs/DataEngines.lean`, `tests/fixtures/protocol_records/data_admission_receipt.valid.json` | These are local finite-record artifacts, not a data engine, dataset, training run, or deletion result. |
+
 
 Draft arc:
 
@@ -3872,7 +4040,9 @@ Source loading queue:
 | Primary | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
 | Supporting | `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | External comparators | `ext_drexler_cais_2019` | Use for service-centered composition, R&D automation, and the need to distinguish a broad capability architecture from the governance of its handoffs; do not treat CAIS as an integrated ASI Stack implementation or safety result. |
+| Automated-architecture comparator | `ext_adas_2024` | Use for code-defined agent-system search across prompts, tools, and workflows. Require typed interfaces, authority-diff evidence, isolated candidates, and explicit promotion; do not infer local search or general architecture superiority. |
 | Connector or recovery required | `moecot`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+
 
 Draft arc:
 
@@ -3913,6 +4083,7 @@ Draft deliverables:
 - Implemented Codex test: Artifact continuity audit as deterministic fixture coverage only; no live artifact-continuity audit exists.
 - Implemented Codex test: Authority stop-condition test as deterministic blocked-trace fixture coverage only; no deployed authority stop-condition checker exists.
 - Implemented Codex test: Actual command replay trace as a local Resource flagship validator replay with command output digest, tracked artifact bundle, and blocked-path stop-condition attachment only; no live runtime integration, external replay, model-quality result, benchmark result, or support-state promotion exists.
+- Implemented Codex test: Governed cross-stack trace invariants test derives authority monotonicity, revocation-before-effect with tie precedence, evidence-transition integrity, residual conservation, causal order, and four mutation controls from the executed local repository-change log; finite local trace only.
 
 Lean proof targets:
 
@@ -3920,6 +4091,7 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:reference_architecture.trace.operational_invariant` | `AsiStackProofs.ReferenceArchitecture` | An end-to-end trace contains required artifacts for each layer handoff. | implemented |
 | `lean:reference_architecture.trace.failure_blocks_promotion` | `AsiStackProofs.ReferenceArchitecture` | A trace with a missing governance gate cannot be marked valid. | implemented |
+| `lean:reference_architecture.governed_trace.four_invariants` | `AsiStackProofs.GovernedRepositoryTrace` | The bounded executed repository-change trace satisfies authority monotonicity, revocation-before-effect, evidence-transition integrity, and residual conservation, and rejects one mutation per invariant. | implemented |
 
 ### Project Theseus as Report-First Implementation Reference
 
@@ -4185,7 +4357,9 @@ Source loading queue:
 |---|---|---|
 | Primary | `verification_bandwidth`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
 | Supporting | `alignment_field`, `scf`, `planforge`, `vcm_public`, `spinoza`, `talos`, `rmi`, `cgs`, `genesiscode`, `simulation_scaling`, `field_of_god_ai_constitution`, `project_theseus_whitepaper`, `circle_calculus_core`, `circle_ai_contract_suite`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| Durable-semantic-memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024` | Use to test whether global graph sensemaking and associative graph navigation close the provisional durable-semantic-memory gap after existing chapters are improved. Preserve truth, update, poisoning, provenance, and local-reproduction limits. |
 | Connector or recovery required | `moecot`, `coilmoecot`, `road_to_agi`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
+
 
 Draft arc:
 

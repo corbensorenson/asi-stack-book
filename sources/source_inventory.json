@@ -145,7 +145,8 @@
     "priority": "must_use",
     "layer": "labor_execution_os",
     "chapter_targets": [
-      "08"
+      "08",
+      "inter-stack-protocols-identity-and-economic-exchange"
     ],
     "url": "https://docs.google.com/document/d/1IRHwojXgcGx4INJsVx8uMYu4vJGl6H5O9w_l_01VcyU",
     "notes": "AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation."
@@ -167,7 +168,8 @@
     "priority": "must_use",
     "layer": "memory_context",
     "chapter_targets": [
-      "07"
+      "07",
+      "inter-stack-protocols-identity-and-economic-exchange"
     ],
     "url": "https://docs.google.com/document/d/1fid_RDNJcY3gM5WfqTpz5RABpzzoehWU4QKGhurRyJM",
     "notes": "Public VCM release. Governed protocol for compiled working context."
@@ -584,7 +586,8 @@
     "layer": "resource_economics",
     "chapter_targets": [
       "13",
-      "appendix"
+      "appendix",
+      "inter-stack-protocols-identity-and-economic-exchange"
     ],
     "url": "https://docs.google.com/document/d/1dGOlGPZi6byTwRUbHQt40OSErBnQ4j6G_BZvA-oJRM8",
     "notes": "Regenerative capacity mechanisms for load-stable token pricing."
@@ -743,6 +746,34 @@
     "published": "2026-07",
     "updated": "2026-07-10",
     "citation_label": "Sorenson (2026), Corben's Trainer (pinned local project snapshot)"
+  },
+  {
+    "id": "corbens_best_model_possible_project",
+    "title": "Corben's Best Model Possible recurrent-model and mechanism laboratory",
+    "priority": "implementation_reference",
+    "layer": "recurrent_model_mechanisms_and_capability_evidence",
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "governed-deliberation-and-test-time-scaling",
+      "cognitive-compilation-and-semantic-ir",
+      "integrated-reference-architecture",
+      "open-ended-improvement-engines",
+      "recursive-self-improvement-boundaries",
+      "evidence-states-and-claim-discipline",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "artifact-graphs-audit-logs-and-replay",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "claim-ledgers-and-belief-revision",
+      "context-transactions-snapshots-mounts-and-taint",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "readiness-gates-residual-escrow-and-quarantine"
+    ],
+    "url": "local-project:corbens-best-model-possible@c61288685ca05ba773402d4a7495cfbba22c2c20",
+    "notes": "Pinned local-project implementation and negative-case reference for shared-weight recurrence, fixed-feature adapter learning, specialist checkpoint banks, architecture-search discipline, semantic compilation, memory, routing, governance, verification, tools, speech, and metric provenance; public-safe source note only, with no reproduced trained-foundation-model, general-generation, external-capability, or safety result.",
+    "source_type": "local_project_snapshot",
+    "published": "2026-04",
+    "updated": "2026-07-10",
+    "citation_label": "Sorenson (2026), Corben's Best Model Possible (pinned local project snapshot)"
   },
   {
     "id": "project_theseus_whitepaper",
@@ -4043,6 +4074,79 @@
     "citation_label": "SPDX (2024), Specification 3.0.1 AI Profile"
   },
   {
+    "id": "ext_mcp_protocol_2025_06_18",
+    "title": "Model Context Protocol Specification, revision 2025-06-18",
+    "priority": "external_literature",
+    "layer": "agent_tool_protocol",
+    "chapter_targets": [
+      "inter-stack-protocols-identity-and-economic-exchange"
+    ],
+    "url": "https://modelcontextprotocol.io/specification/2025-06-18/basic/index",
+    "notes": "Official Model Context Protocol comparator for JSON-RPC message shape, lifecycle management, capability negotiation, session control, schema-defined interactions, and modular tool/client/server features; it does not establish a local protocol implementation, peer identity, authorization, message truth, task completion, payment, or deployment safety.",
+    "source_type": "technical_specification",
+    "published": "2025-06-18",
+    "updated": "2025-06-18",
+    "citation_label": "Model Context Protocol (2025), Specification revision 2025-06-18"
+  },
+  {
+    "id": "ext_a2a_protocol_0_3_0",
+    "title": "Agent2Agent Protocol Specification, version 0.3.0",
+    "priority": "external_literature",
+    "layer": "agent_to_agent_protocol",
+    "chapter_targets": [
+      "inter-stack-protocols-identity-and-economic-exchange"
+    ],
+    "url": "https://a2a-protocol.org/v0.3.0/specification/",
+    "notes": "Official A2A comparator for agent discovery, agent cards, delegated tasks, artifact/message exchange, transport choices, and interoperability between opaque agent systems; it does not establish a local A2A deployment, verified identity, delegated authority, task truth, secure execution, payment, or safety.",
+    "source_type": "technical_specification",
+    "updated": "2026-07-10",
+    "citation_label": "A2A Protocol (v0.3.0), Specification"
+  },
+  {
+    "id": "ext_w3c_did_core_1_0_2022",
+    "title": "Decentralized Identifiers (DIDs) v1.0",
+    "priority": "external_literature",
+    "layer": "decentralized_identity",
+    "chapter_targets": [
+      "inter-stack-protocols-identity-and-economic-exchange"
+    ],
+    "url": "https://www.w3.org/TR/did-core/",
+    "notes": "W3C DID Core comparator for decentralized identifier syntax, data model, controller-related metadata, resolution, and privacy considerations; it does not establish an ASI Stack identity system, controller trust, authorization, non-repudiation, revocation effectiveness, or safety.",
+    "source_type": "standard",
+    "published": "2022-07-19",
+    "updated": "2022-07-19",
+    "citation_label": "W3C (2022), Decentralized Identifiers v1.0"
+  },
+  {
+    "id": "ext_w3c_vc_data_model_2_0_2025",
+    "title": "Verifiable Credentials Data Model v2.0",
+    "priority": "external_literature",
+    "layer": "verifiable_credentials",
+    "chapter_targets": [
+      "inter-stack-protocols-identity-and-economic-exchange"
+    ],
+    "url": "https://www.w3.org/TR/vc-data-model/",
+    "notes": "W3C Verifiable Credentials comparator for issuer/holder/verifier roles, credential and presentation fields, validity/status, evidence, securing mechanisms, and explicit authorization limitations; it does not establish an ASI Stack credential, trust decision, authorization framework, delegation validity, payment, or safety.",
+    "source_type": "standard",
+    "published": "2025-05-15",
+    "updated": "2025-05-15",
+    "citation_label": "W3C (2025), Verifiable Credentials Data Model v2.0"
+  },
+  {
+    "id": "ext_interledger_protocol_v4",
+    "title": "Interledger Protocol V4",
+    "priority": "external_literature",
+    "layer": "interledger_value_transfer",
+    "chapter_targets": [
+      "inter-stack-protocols-identity-and-economic-exchange"
+    ],
+    "url": "https://interledger.org/developers/rfcs/interledger-protocol/",
+    "notes": "Official Interledger comparator for neutral packetized value transfer across independent ledgers, connector obligations, balances, and end-to-end boundary design; it does not establish an ASI Stack payment route, settlement, accounting correctness, legal transfer, economic fairness, delegated authority, or safety.",
+    "source_type": "technical_specification",
+    "updated": "2026-07-10",
+    "citation_label": "Interledger (2026), Interledger Protocol V4"
+  },
+  {
     "id": "ext_test_time_compute_scaling_2024",
     "title": "Scaling LLM Test-Time Compute Optimally can be More Effective than Scaling Model Parameters",
     "priority": "external_literature",
@@ -4058,5 +4162,313 @@
     "updated": "2024-08-06",
     "citation_label": "Snell et al. (2024), Scaling LLM Test-Time Compute Optimally",
     "doi": "10.48550/arXiv.2408.03314"
+  },
+  {
+    "id": "ext_graphrag_2024",
+    "title": "From Local to Global: A Graph RAG Approach to Query-Focused Summarization",
+    "priority": "external_literature",
+    "layer": "graph_based_retrieval_and_global_sensemaking",
+    "chapter_targets": [
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "verification-bandwidth-and-context-adequacy",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "https://arxiv.org/abs/2404.16130",
+    "notes": "Primary GraphRAG comparator for LLM-derived entity graphs, community summaries, and global corpus questions; generated graph and summary layers remain fallible derived representations and do not establish truth, complete coverage, local adequacy, or an ASI Stack memory result.",
+    "source_type": "preprint",
+    "arxiv_id": "2404.16130",
+    "published": "2024-04-24",
+    "updated": "2025-02-19",
+    "citation_label": "Edge et al. (2024), From Local to Global: A Graph RAG Approach",
+    "doi": "10.48550/arXiv.2404.16130"
+  },
+  {
+    "id": "ext_hipporag_2024",
+    "title": "HippoRAG: Neurobiologically Inspired Long-Term Memory for Large Language Models",
+    "priority": "external_literature",
+    "layer": "associative_long_term_memory",
+    "chapter_targets": [
+      "virtual-context-abi",
+      "verification-bandwidth-and-context-adequacy",
+      "routing-heads-and-specialist-cores",
+      "open-research-agenda-and-bibliography-plan"
+    ],
+    "url": "https://papers.nips.cc/paper_files/paper/2024/hash/6ddc001d07ca4f319af96a3024f6dbd1-Abstract-Conference.html",
+    "notes": "Primary NeurIPS comparator for knowledge-graph retrieval with Personalized PageRank and single-step associative navigation; reported multi-hop QA gains do not establish durable truth, update correctness, resistance to poisoning, local reproduction, or a general memory system.",
+    "source_type": "conference_paper",
+    "published": "2024",
+    "updated": "2024",
+    "citation_label": "Gutiérrez et al. (2024), HippoRAG",
+    "doi": "10.52202/079017-1902"
+  },
+  {
+    "id": "ext_raptor_2024",
+    "title": "RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval",
+    "priority": "external_literature",
+    "layer": "hierarchical_retrieval_and_abstraction",
+    "chapter_targets": [
+      "virtual-context-abi",
+      "verification-bandwidth-and-context-adequacy",
+      "compact-generative-systems-and-residual-honesty",
+      "rankfold-neuralfold-and-artifact-compression"
+    ],
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2024/hash/8a2acd174940dbca361a6398a4f9df91-Abstract-Conference.html",
+    "notes": "Primary ICLR comparator for recursive clustering, summarization, and retrieval across multiple abstraction levels; source-reported QA gains do not prove summary fidelity, provenance preservation, local reproduction, or safe compression for ASI Stack claims.",
+    "source_type": "conference_paper",
+    "published": "2024",
+    "updated": "2024",
+    "citation_label": "Sarthi et al. (2024), RAPTOR"
+  },
+  {
+    "id": "ext_mem0_2025",
+    "title": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+    "priority": "external_literature",
+    "layer": "agent_long_term_memory",
+    "chapter_targets": [
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "procedural-memory-and-cognitive-loop-closure",
+      "resource-economics-and-token-budgets",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/2504.19413",
+    "notes": "Primary preprint comparator for extracting, consolidating, retrieving, and graph-linking conversational memory under latency and token-cost constraints; LOCOMO and LLM-judge results do not establish fact correctness, poisoning resistance, general memory, local reproduction, or production readiness here.",
+    "source_type": "preprint",
+    "arxiv_id": "2504.19413",
+    "published": "2025-04-28",
+    "updated": "2025-04-28",
+    "citation_label": "Chhikara et al. (2025), Mem0",
+    "doi": "10.48550/arXiv.2504.19413"
+  },
+  {
+    "id": "ext_w3c_prov_o_2013",
+    "title": "PROV-O: The PROV Ontology",
+    "priority": "external_literature",
+    "layer": "interoperable_provenance_model",
+    "chapter_targets": [
+      "evidence-states-and-claim-discipline",
+      "claim-ledgers-and-belief-revision",
+      "artifact-graphs-audit-logs-and-replay",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "data-engines-continual-learning-and-unlearning"
+    ],
+    "url": "https://www.w3.org/TR/prov-o/",
+    "notes": "W3C Recommendation comparator for interoperable provenance over entities, activities, agents, derivation, attribution, delegation, revision, and invalidation; a PROV-O graph records asserted provenance and does not by itself prove assertion truth, completeness, integrity, authority, or safety.",
+    "source_type": "standard",
+    "published": "2013-04-30",
+    "updated": "2013-04-30",
+    "citation_label": "W3C (2013), PROV-O: The PROV Ontology"
+  },
+  {
+    "id": "ext_mlcommons_croissant_1_1_2026",
+    "title": "Croissant Format Specification, version 1.1",
+    "priority": "external_literature",
+    "layer": "machine_readable_dataset_metadata",
+    "chapter_targets": [
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "artifact-graphs-audit-logs-and-replay",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "data-engines-continual-learning-and-unlearning"
+    ],
+    "url": "https://docs.mlcommons.org/croissant/docs/croissant-spec-1.1.html",
+    "notes": "Current MLCommons specification comparator for JSON-LD dataset structure, resources, checksums, record fields, machine-readable provenance, usage conditions, and portability across ML tooling; metadata conformance does not prove dataset integrity, fitness, legality, representativeness, or safe use.",
+    "source_type": "technical_specification",
+    "published": "2026-01-29",
+    "updated": "2026-01-29",
+    "citation_label": "MLCommons (2026), Croissant Format Specification v1.1"
+  },
+  {
+    "id": "ext_inspect_ai_2024",
+    "title": "Inspect AI: Framework for Large Language Model Evaluations",
+    "priority": "external_literature",
+    "layer": "model_and_agent_evaluation_framework",
+    "chapter_targets": [
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "capability-thresholds-and-deployment-commitments",
+      "adversarial-evaluation-sandbagging-and-training-time-deception"
+    ],
+    "url": "https://inspect.aisi.org.uk/",
+    "notes": "Official UK AI Security Institute framework comparator for composable evaluation tasks, datasets, solvers, scorers, agents, tools, logs, and sandboxes; framework availability or a passing task does not establish benchmark validity, coverage, local execution, safety, or deployment readiness.",
+    "source_type": "official_docs",
+    "published": "2024-05",
+    "updated": "2026-07-10",
+    "citation_label": "UK AI Security Institute (2024), Inspect AI"
+  },
+  {
+    "id": "ext_in_toto_2019",
+    "title": "in-toto: Providing farm-to-table guarantees for bits and bytes",
+    "priority": "external_literature",
+    "layer": "software_supply_chain_attestation",
+    "chapter_targets": [
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "artifact-graphs-audit-logs-and-replay"
+    ],
+    "url": "https://www.usenix.org/conference/usenixsecurity19/presentation/torres-arias",
+    "notes": "Primary USENIX comparator for cryptographically verifying authorized software-supply-chain steps from source through deployment; valid attestations do not prove artifact correctness, uncompromised authorized actors, model safety, data fitness, or deployment merit.",
+    "source_type": "conference_paper",
+    "published": "2019-08",
+    "updated": "2019-08",
+    "citation_label": "Torres-Arias et al. (2019), in-toto"
+  },
+  {
+    "id": "ext_agentdojo_2024",
+    "title": "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents",
+    "priority": "external_literature",
+    "layer": "agent_prompt_injection_evaluation",
+    "chapter_targets": [
+      "security-kernel-and-digital-scifs",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "adversarial-evaluation-sandbagging-and-training-time-deception"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/97091a5177d8dc64b1da8bf3e1f6fb54-Abstract-Datasets_and_Benchmarks_Track.html",
+    "notes": "Primary NeurIPS benchmark comparator for agents executing tools over untrusted data, with realistic tasks, security test cases, attacks, and defenses; benchmark results do not establish complete attack coverage, deployed robustness, safe authority handling, or local reproduction.",
+    "source_type": "conference_paper",
+    "published": "2024",
+    "updated": "2024",
+    "citation_label": "Debenedetti et al. (2024), AgentDojo",
+    "doi": "10.52202/079017-2636"
+  },
+  {
+    "id": "ext_camel_prompt_injection_2025",
+    "title": "Defeating Prompt Injections by Design",
+    "priority": "external_literature",
+    "layer": "capability_secure_agent_control_flow",
+    "chapter_targets": [
+      "system-boundaries-and-authority",
+      "security-kernel-and-digital-scifs",
+      "intent-to-execution-contracts",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://arxiv.org/abs/2503.18813",
+    "notes": "Primary CaMeL comparator for separating trusted control flow from untrusted data and enforcing capability policies at tool calls; source-reported AgentDojo results do not establish universal prompt-injection resistance, correct policy extraction, local implementation, or safe deployment.",
+    "source_type": "preprint",
+    "arxiv_id": "2503.18813",
+    "published": "2025-03-24",
+    "updated": "2025-06-24",
+    "citation_label": "Debenedetti et al. (2025), Defeating Prompt Injections by Design",
+    "doi": "10.48550/arXiv.2503.18813"
+  },
+  {
+    "id": "ext_owasp_agentic_top_10_2026",
+    "title": "OWASP Top 10 for Agentic Applications for 2026",
+    "priority": "external_literature",
+    "layer": "agentic_application_security_taxonomy",
+    "chapter_targets": [
+      "system-boundaries-and-authority",
+      "security-kernel-and-digital-scifs",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "adversarial-evaluation-sandbagging-and-training-time-deception"
+    ],
+    "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/",
+    "notes": "Current OWASP community taxonomy comparator for goal hijacking, tool misuse, identity abuse, agentic supply chains, code execution, memory poisoning, inter-agent communication, cascading failures, human trust exploitation, and rogue agents; a risk list is not a proof of completeness, control effectiveness, local testing, or system safety.",
+    "source_type": "official_guidance",
+    "published": "2025-12-09",
+    "updated": "2026-07-10",
+    "citation_label": "OWASP (2025), Top 10 for Agentic Applications for 2026"
+  },
+  {
+    "id": "ext_darwin_godel_machine_2025",
+    "title": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+    "priority": "external_literature",
+    "layer": "empirical_recursive_agent_improvement",
+    "chapter_targets": [
+      "recursive-self-improvement-boundaries",
+      "open-ended-improvement-engines",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/2505.22954",
+    "notes": "Primary preprint comparator for archive-based open-ended code self-modification selected by empirical coding benchmarks under sandboxing and human oversight; reported benchmark gains do not establish monotonic general improvement, safe recursive self-improvement, local reproduction, or permission to self-modify.",
+    "source_type": "preprint",
+    "arxiv_id": "2505.22954",
+    "published": "2025-05-29",
+    "updated": "2026-03-12",
+    "citation_label": "Zhang et al. (2025), Darwin Godel Machine",
+    "doi": "10.48550/arXiv.2505.22954"
+  },
+  {
+    "id": "ext_adas_2024",
+    "title": "Automated Design of Agentic Systems",
+    "priority": "external_literature",
+    "layer": "automated_agent_architecture_search",
+    "chapter_targets": [
+      "recursive-self-improvement-boundaries",
+      "open-ended-improvement-engines",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "integrated-reference-architecture"
+    ],
+    "url": "https://arxiv.org/abs/2408.08435",
+    "notes": "Primary ADAS comparator for a meta-agent that searches a growing archive of code-defined agent designs across prompts, tools, and workflows; reported transfer results do not establish unrestricted generality, safe architecture search, local reproduction, or automatic promotion authority.",
+    "source_type": "preprint",
+    "arxiv_id": "2408.08435",
+    "published": "2024-08-15",
+    "updated": "2025-03-02",
+    "citation_label": "Hu et al. (2024), Automated Design of Agentic Systems",
+    "doi": "10.48550/arXiv.2408.08435"
+  },
+  {
+    "id": "ext_universal_transformer_2019",
+    "title": "Universal Transformers",
+    "priority": "external_literature",
+    "layer": "shared_weight_recurrence_and_adaptive_depth",
+    "chapter_targets": [
+      "governed-deliberation-and-test-time-scaling",
+      "mathematical-and-search-substrates",
+      "coil-attention-cyclic-memory-and-recurrence-contracts"
+    ],
+    "url": "https://arxiv.org/abs/1807.03819",
+    "notes": "Primary ICLR comparator for shared-weight depth recurrence, parallel self-attention, and per-position dynamic halting; benchmark results and theoretical expressivity do not establish stable deep recurrence, efficient scaling, local reproduction, or the book's cyclic-memory claims.",
+    "source_type": "conference_paper",
+    "arxiv_id": "1807.03819",
+    "published": "2019",
+    "updated": "2019-03-05",
+    "citation_label": "Dehghani et al. (2019), Universal Transformers",
+    "doi": "10.48550/arXiv.1807.03819"
+  },
+  {
+    "id": "ext_recurrent_transformer_2026",
+    "title": "The Recurrent Transformer: Greater Effective Depth and Efficient Decoding",
+    "priority": "external_literature",
+    "layer": "layerwise_recurrent_transformer_memory",
+    "chapter_targets": [
+      "fast-generation-architectures",
+      "resource-economics-and-token-budgets",
+      "mathematical-and-search-substrates",
+      "coil-attention-cyclic-memory-and-recurrence-contracts"
+    ],
+    "url": "https://arxiv.org/abs/2604.21215",
+    "notes": "Current preprint comparator for layerwise recurrent key-value memory, exact tiling, effective-depth/width tradeoffs, and standard autoregressive decoding cost; small-model C4 results do not establish broad capability gains, production efficiency, local reproduction, or cyclic-memory correctness.",
+    "source_type": "preprint",
+    "arxiv_id": "2604.21215",
+    "published": "2026-04-23",
+    "updated": "2026-04-23",
+    "citation_label": "Oncescu et al. (2026), The Recurrent Transformer",
+    "doi": "10.48550/arXiv.2604.21215"
+  },
+  {
+    "id": "ext_dynamic_compute_recurrent_transformers_2026",
+    "title": "Understanding Dynamic Compute Allocation in Recurrent Transformers",
+    "priority": "external_literature",
+    "layer": "adaptive_recurrent_compute_evaluation",
+    "chapter_targets": [
+      "governed-deliberation-and-test-time-scaling",
+      "resource-economics-and-token-budgets",
+      "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/2602.08864",
+    "notes": "Current preprint comparator for complexity-controlled tests of token-level variable-depth compute and online halting; its negative result that difficulty-aligned compute need not generalize is a boundary against equating adaptive depth with algorithmic extrapolation or local capability.",
+    "source_type": "preprint",
+    "arxiv_id": "2602.08864",
+    "published": "2026-02-09",
+    "updated": "2026-02-09",
+    "citation_label": "Moosa et al. (2026), Understanding Dynamic Compute Allocation in Recurrent Transformers",
+    "doi": "10.48550/arXiv.2602.08864"
   }
 ]

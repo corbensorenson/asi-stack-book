@@ -160,7 +160,7 @@ def main() -> None:
         "human TOC link marker": "data-asi-human-toc-link",
         "AI TOC link marker": "data-asi-ai-toc-link",
         "view-mode TOC marker function": "function markViewModeTocLinks",
-        "view-mode TOC marker call": "markViewModeTocLinks()",
+        "view-mode TOC marker call": "markViewModeTocLinks(adjacentIds)",
         "core claim marker regex": "const coreClaimMarkerPattern",
         "core claim marker function": "function markCoreClaimMarkers",
         "core claim marker call": "markCoreClaimMarkers()",

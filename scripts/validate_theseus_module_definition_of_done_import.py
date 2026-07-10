@@ -22,7 +22,7 @@ READER_CHAPTER = ROOT / "editions" / "reader_manuscript" / "v1_0" / "chapters" /
 OUTLINE = ROOT / "docs" / "book_outline.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "TheseusReference.lean"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 
 COMMAND = "python3 scripts/validate_theseus_module_definition_of_done_import.py"
 IMPORT_ID = "theseus-module-definition-of-done-import-2026-07-05"
@@ -302,11 +302,11 @@ def validate_surfaces(errors: list[str]) -> None:
             rel(RESULT),
             rel(TRANSITION),
         ],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_theseus_module_definition_of_done_import.py",
             "docs/theseus_module_definition_of_done_import.md",
             "experiments/theseus_module_definition_of_done_import/results/2026-07-05-local.json",
-            'run_validator("validate_theseus_module_definition_of_done_import.py")',
+            '"script": "validate_theseus_module_definition_of_done_import.py"',
         ],
     }
     for path, phrases in required.items():

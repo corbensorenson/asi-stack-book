@@ -1,0 +1,72 @@
+{
+  "schema_version": "asi_stack.author_decision_packet.v0",
+  "decision_id": "title-positioning-2026-07-10",
+  "status": "decided",
+  "decision_authority": "author:corben-sorenson",
+  "current_state": {
+    "title": "The ASI Stack",
+    "subtitle": "A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case",
+    "positioning": "governed advanced-AI systems architecture; ASI is the extreme stress case rather than an achieved state",
+    "former_title": "The ASI Stack: A Systems Architecture for Governed, Efficient, Self-Improving AI",
+    "effective_line": "v1.x-development",
+    "decision_date": "2026-07-10",
+    "credibility_risk": "ASI remains prominent in the brand, so all public framing must preserve the stress-case boundary and current argument-level support state."
+  },
+  "provisional_rule": "The reframed subtitle is canonical for the active v1.x development line. Historical v1.0.0 release records retain the former subtitle and must not be rewritten.",
+  "recommendation_for_consideration": "Decision implemented: retain The ASI Stack and reframe the subtitle so governed advanced-AI systems are the subject and ASI is the stress case.",
+  "options": [
+    {
+      "id": "retain_current",
+      "label": "Retain current title",
+      "description": "Keep The ASI Stack and the current subtitle, relying on the compact trust surface and non-claims to manage interpretation.",
+      "benefits": ["Maximum continuity with v1.0.0 citations, URLs, figures, issue history, and existing recognition.", "No migration or alias burden."],
+      "risks": ["Highest credibility tax with skeptical technical audiences.", "Readers may infer implemented ASI capability before reaching the evidence boundary."],
+      "affected_surfaces": ["none beyond continued scope framing"],
+      "reversal_cost": "Low now; grows as citations and releases accumulate.",
+      "external_input_needed": ["systems/editorial reviewer reaction", "reader comprehension test"],
+      "details": {"main_title": "The ASI Stack", "subtitle": "A Systems Architecture for Governed, Efficient, Self-Improving AI", "asi_role": "primary product claim"}
+    },
+    {
+      "id": "retain_brand_reframe_subtitle",
+      "label": "Retain brand, reframe",
+      "description": "Keep The ASI Stack but use a subtitle that names governed advanced-AI systems and presents ASI as the stress case.",
+      "benefits": ["Preserves the distinctive project identity and v1.0 lineage.", "Moves the operational subject from achieved ASI toward governed systems architecture.", "Can be introduced as a major-version positioning change with citation aliases."],
+      "risks": ["ASI remains prominent and may still dominate first impressions.", "Subtitle migration must be exact across source, citation, metadata, figures, releases, and external listings."],
+      "affected_surfaces": ["book_structure.json", "CITATION.cff", "README.md", "index.qmd", "release metadata", "figure titles and alt text", "repository description"],
+      "reversal_cost": "Medium; requires one governed metadata migration and preserved former-title citation note.",
+      "external_input_needed": ["systems/editorial review", "author brand preference", "citation continuity check"],
+      "details": {"main_title": "The ASI Stack", "candidate_subtitle": "A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case", "asi_role": "stress case rather than achieved state"}
+    },
+    {
+      "id": "rename_governed_ai_stack",
+      "label": "Rename governed AI stack",
+      "description": "Rename the work The Governed AI Stack and retain ASI as a motivating limit case inside the book.",
+      "benefits": ["Most precise match to implemented artifacts and current evidence.", "Lower barrier for systems, governance, and safety readers who reject ASI framing.", "Makes applicability to current agentic systems immediate."],
+      "risks": ["Loses distinctive ASI-first brand and creates citation/title discontinuity.", "May understate the long-horizon self-improvement and capability stress case."],
+      "affected_surfaces": ["all title metadata", "repository and site branding", "release/citation aliases", "figures", "chapter references", "external links and descriptions"],
+      "reversal_cost": "High after publication; requires former-title aliases and a major-version record.",
+      "external_input_needed": ["author decision", "systems/editorial review", "citation and discoverability assessment"],
+      "details": {"candidate_main_title": "The Governed AI Stack", "candidate_subtitle": "A Systems Architecture for Advanced, Efficient, Self-Improving AI", "asi_role": "internal motivating stress case"}
+    },
+    {
+      "id": "rename_governed_intelligence_systems",
+      "label": "Rename as systems book",
+      "description": "Use a conventional systems title and treat The ASI Stack as a historical/project-series label.",
+      "benefits": ["Lowest hype exposure and strongest conventional technical positioning.", "Leaves room for broader current-system examples and external adoption."],
+      "risks": ["Largest identity loss and migration burden.", "Generic title may reduce discoverability and understate the unifying architectural thesis."],
+      "affected_surfaces": ["all public and release metadata", "repository identity", "site URL strategy", "citations", "figures", "issue and review language"],
+      "reversal_cost": "Very high; should occur only at a clearly recorded major-version boundary.",
+      "external_input_needed": ["author decision", "editorial/market assessment", "citation migration plan"],
+      "details": {"candidate_main_title": "Governed Intelligence Systems", "candidate_subtitle": "Contracts, Evidence, and Control for Advanced AI", "asi_role": "historical project label and stress case"}
+    }
+  ],
+  "selected_option_id": "retain_brand_reframe_subtitle",
+  "implementation_gate": [
+    "Selection is recorded as retain_brand_reframe_subtitle for v1.x-development.",
+    "book_structure.json is the active title source; Quarto, README, landing, prompt, outline, and current citation metadata must agree.",
+    "Historical v1.0.0 release records and reader artifacts preserve the former title as version history.",
+    "Clean render, canonical-status, link, title-consistency, build, deployment, and public attestation gates must pass before this migration is called deployed."
+  ],
+  "support_state_effect": "none",
+  "non_claims": ["The author selected positioning; this packet does not claim that a deployment or immutable release has already completed.", "Positioning does not prove the architecture, ASI, novelty, safety, or readiness."]
+}

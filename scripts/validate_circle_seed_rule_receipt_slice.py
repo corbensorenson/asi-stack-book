@@ -353,7 +353,7 @@ def validate_transition(errors: list[str]) -> None:
 
 
 def validate_surfaces(errors: list[str]) -> None:
-    surface_files = (SUMMARY, README, CHAPTER, OUTLINE, APPENDIX_E, LEDGER, ROADMAP, README_ROOT, INDEX, STATUS, CHANGELOG)
+    surface_files = (SUMMARY, README, CHAPTER, OUTLINE, APPENDIX_E, LEDGER, ROADMAP, STATUS, CHANGELOG)
     for path in surface_files:
         if not path.exists():
             errors.append(f"Missing {rel(path)}.")

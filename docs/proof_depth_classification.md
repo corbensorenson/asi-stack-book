@@ -12,12 +12,12 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 222 |
-| Lean modules scanned | 61 |
-| Theorem declarations classified | 1068 |
-| Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 878 |
-| Unknown or mixed theorem declarations | 4 |
+| Proof targets in manifest | 225 |
+| Lean modules scanned | 63 |
+| Theorem declarations classified | 1079 |
+| Direct/projection-style theorem declarations | 187 |
+| Derived/decomposed theorem declarations | 880 |
+| Unknown or mixed theorem declarations | 12 |
 | Safety-critical theorem declarations | 107 |
 | Safety-critical direct/projection declarations | 11 |
 | Safety-critical chapter classifications present | 5/5 |
@@ -77,8 +77,10 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/FastGeneration.lean` | fast-generation-architectures | 5 | 38 | 7 | 31 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GenerateVerifyRepair.lean` | compact-generative-systems-and-residual-honesty | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/GovernanceRights.lean` | moral-uncertainty-and-value-conflict | 3 | 21 | 2 | 19 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | integrated-reference-architecture | 1 | 9 | 1 | 0 | 8 | traceability hook unless adequacy review narrows claim |
 | `lean/AsiStackProofs/IntentContracts.lean` | human-intent-as-a-formal-input | 4 | 25 | 2 | 23 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/IntentToExecution.lean` | intent-to-execution-contracts | 4 | 12 | 3 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | inter-stack-protocols-identity-and-economic-exchange | 2 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/LivingBook.lean` | living-book-methodology | 4 | 21 | 3 | 18 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | routing-heads-and-specialist-cores | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ModelWeightCustody.lean` | model-weight-custody-and-hardware-roots-of-trust | 1 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
@@ -547,6 +549,15 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_fixture_valid` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `theseus_governance_rights_receipt_suite_import_legal_rights_overclaim_rejected` | derived_or_decomposed | yes | uses simp |
 | `lean/AsiStackProofs/GovernanceRights.lean` | `transition_removing_protected_right_is_rejected_or_invalid` | direct_or_projection | yes | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `authority_widening_negative_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `effect_at_revocation_time_negative_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `erased_open_residual_negative_rejected` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_fixture_authority_monotone` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_fixture_evidence_integrity` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_fixture_residual_conserved` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_fixture_revocation_before_effect` | unknown_or_mixed | no | no recognized depth pattern |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `governed_repository_trace_four_invariants` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
+| `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | `unrecorded_promotion_negative_rejected` | unknown_or_mixed | no | no recognized depth pattern |
 | `lean/AsiStackProofs/IntentContracts.lean` | `ambiguous_intent_routes_to_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `authority_widening_requests_review` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentContracts.lean` | `compiled_constraint_gap_blocks_admission` | derived_or_decomposed | no | uses simp, unfold |
@@ -584,6 +595,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/IntentToExecution.lean` | `missing_objective_requests_execution_clarification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `missing_verification_plan_routes_to_verification` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/IntentToExecution.lean` | `required_approval_missing_routes_to_approval` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `invalid_credential_blocks_dispatch` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | `missing_reserved_budget_blocks_economic_dispatch` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_public_surface_records_required_boundaries` | derived_or_decomposed | no | uses cases, have |
 | `lean/AsiStackProofs/LivingBook.lean` | `change_packet_without_validation_changelog_support_or_nonclaims_rejected` | derived_or_decomposed | no | uses cases, contradiction, have, rw |
 | `lean/AsiStackProofs/LivingBook.lean` | `curated_reader_blocked_candidate_fixture_routes_to_accessibility_review` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

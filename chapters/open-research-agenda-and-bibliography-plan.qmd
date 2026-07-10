@@ -259,6 +259,10 @@ Priority backlog:
 - Reproduction or import of any benchmark artifacts before support promotion.
 - Lean triage for proof targets that are currently schema or process contracts.
 - New-paper triage rules for dynamic chapter insertion.
+- Durable-semantic-memory overlap testing against `ext_graphrag_2024` and
+  `ext_hipporag_2024`, including global sensemaking, associative navigation,
+  provenance, contradiction, update, deletion, and poisoning boundaries before
+  the provisional chapter can pass its add-or-reject gate.
 
 Recovery boundaries:
 
@@ -266,6 +270,35 @@ Recovery boundaries:
 - Private empirical results must stay out of public claims until artifact, command, environment, and publication permission are recorded.
 - External references named inside source documents must be verified directly before becoming bibliography citations.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `verification_bandwidth` | Metadata-first comparator: Verification Bandwidth in Bounded Contexts. Generation vs verification; long context is not automatically long-range reasoning. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `benchmaxxing` | Metadata-first comparator: Benchmaxxing: The Performance Ratchet. Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `alignment_field` | Metadata-first comparator: Field of God / Alignment Field family. Primary Alignment Field draft found. Use with Ethica Mechanica and Eternal Code. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `scf` | Metadata-first comparator: Stable Capability Fields. Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `planforge` | Metadata-first comparator: PlanForge. Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `vcm_public` | Metadata-first comparator: Virtual_Context_Memory_v1. Public VCM release. Governed protocol for compiled working context. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `spinoza` | Metadata-first comparator: Proof of Belief / The Spinoza Architecture. Neurosymbolic belief, transparent axiomatic AI belief systems, verification, belief revision. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `talos` | Metadata-first comparator: Talos Protocol. AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `rmi` | Metadata-first comparator: Ratcheting Modular Intelligence. Benchmark pressure, residual escrow, verified modular capability, regression preservation. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `cgs` | Metadata-first comparator: Compact Generative Systems. Smallest adequate structure that can generate/govern target without hiding residual complexity. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `genesiscode` | Metadata-first comparator: GenesisCode. Tiny pure calculus + obligations + provenance for auditable AI-symbiotic programming. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `simulation_scaling` | Metadata-first comparator: Simulation Scaling Law. Resource constraints on scope, clockspeed, and fidelity in simulations. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `moecot` | Metadata-first comparator: MoECOT-Agent Architecture Whitepaper. Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `coilmoecot` | Metadata-first comparator: CoilMoECOT Whitepaper v2.0. Prime-temporal coil networks as governed specialist cores in MoECOT runtime. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `road_to_agi` | Metadata-first comparator: Road To AGI. Remaining work / roadmap context. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `vcm_editable` | Metadata-first comparator: Virtual_Context_Memory_v1.0_Editable. Editable version with evidence-carrying planner-guided context compiler framing. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `field_of_god_ai_constitution` | Metadata-first comparator: Field of God AI Constitution. Recovered in the Project Theseus repository. Constitutional alignment core for truth alignment, agency preservation, consent, non-domination, consciousness caution, least sufficient power, auditability, self-authorization limits, and runtime checks; use as source material only after source-note creation, not as proof or test evidence. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `project_theseus_whitepaper` | Metadata-first comparator: Project Theseus Whitepaper. Local-first report-driven RMI implementation reference: SymLiquid, SparkStream, Octopus Router, residual escrow, self-evolution gates, Hive runtime, observability. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `circle_calculus_core` | Metadata-first comparator: Circle Calculus. Proof-carrying finite cyclic mathematics project with Lean proofs, Python reference models, Rust utilities, theorem manifests, papers, and Quarto living book. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `circle_ai_contract_suite` | Metadata-first comparator: Circle Calculus AI Contract Suite. Theorem-linked AI contract families for RoPE, KV-cache freshness, sparse attention, recurrence schedules, strided fanout, cyclic memory, multicoil phase, cyclic mixers, and seed-rule regeneration. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `theseus_circle_transfer` | Metadata-first comparator: Theseus Circle Calculus Transfer Lane. Report-only bridge from Circle finite fixtures into private Theseus benchmark design with explicit quality/runtime/memory/transfer/failure-case claim boundaries. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 The research agenda is the book's backlog discipline. It keeps source ingestion, bibliography, proof targets, experiments, missing evidence, and chapter insertion rules visible so the living book can grow without losing evidence control.

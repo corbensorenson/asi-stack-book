@@ -33,7 +33,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FIXTURE = ROOT / "lean" / "AsiStackProofs" / "BenchmarkRatchets.lean"
 
 COMMAND = "python3 scripts/validate_benchmark_fixture_bridge.py"
@@ -325,7 +325,7 @@ def validate_surfaces(errors: list[str]) -> None:
             rel(RESULT),
             COMMAND,
         ],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_benchmark_fixture_bridge.py",
             "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
             "validate_benchmark_fixture_bridge.py",

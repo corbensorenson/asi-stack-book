@@ -13,6 +13,8 @@ import json
 import re
 from pathlib import Path
 
+from build_canonical_public_status import build_status, public_status_summary_block
+
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -166,10 +168,23 @@ def sync_evidence_lane_counts(ids: list[str]) -> None:
 
 
 def sync_public_trust_metrics() -> None:
+    if (ROOT / ".git").exists():
+        status = build_status()
+    else:
+        # Dynamic-spine fixtures copy the source tree without Git metadata.
+        # The generated prose block consumes content metrics only; a zero SHA
+        # and dirty state cannot be mistaken for release/deployment identity.
+        status = build_status(
+            source_commit_override="0" * 40,
+            source_tree_state_override="dirty",
+        )
     ids = chapter_ids()
-    chapters = len(ids)
-    sources = source_count()
-    disposition_chapters, transitions, no_promotions = disposition_counts()
+    chapters = int(status["counts"]["chapters"])
+    sources = int(status["counts"]["sources"])
+    externally_positioned = int(status["counts"]["externally_positioned_chapters"])
+    disposition_chapters = chapters
+    transitions = int(status["transition_counts"]["core_no_change_dispositions"])
+    no_promotions = int(status["transition_counts"]["core_no_promotion_dispositions"])
     side_lane_no_promotions = no_promotion_side_lane_count()
     if disposition_chapters != chapters:
         raise ValueError(
@@ -204,14 +219,14 @@ def sync_public_trust_metrics() -> None:
     readme = readme_path.read_text(encoding="utf-8")
     readme = replace_once(
         readme,
-        r"the source inventory has \d+ public-safe records, and \d+/\d+ chapters externally positioned",
-        f"the source inventory has {sources} public-safe records, and {chapters}/{chapters} chapters externally positioned",
+        r"the inventory has \d+ public-safe records; \d+/\d+ chapters are externally positioned",
+        f"the inventory has {sources} public-safe records; {externally_positioned}/{chapters} chapters are externally positioned",
         readme_path,
     )
     readme = replace_once(
         readme,
-        r"All \d+ chapter core claims remain at `argument`; \[docs/core_claim_disposition_ledger\.md\]\(docs/core_claim_disposition_ledger\.md\) records \d+ per-chapter core-claim dispositions, with \d+ accepted no-change transition dispositions, \d+ accepted no-promotion dispositions",
-        f"All {chapters} chapter core claims remain at `argument`; [docs/core_claim_disposition_ledger.md](docs/core_claim_disposition_ledger.md) records {disposition_chapters} per-chapter core-claim dispositions, with {transitions} accepted no-change transition dispositions, {no_promotions} accepted no-promotion dispositions",
+        r"All \d+ chapter core claims remain at `argument`; \[the core-claim disposition ledger\]\(docs/core_claim_disposition_ledger\.md\) records \d+ per-chapter core-claim dispositions, \d+ accepted no-change transition dispositions, \d+ accepted no-promotion dispositions",
+        f"All {chapters} chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records {disposition_chapters} per-chapter core-claim dispositions, {transitions} accepted no-change transition dispositions, {no_promotions} accepted no-promotion dispositions",
         readme_path,
     )
     readme = replace_once(
@@ -223,13 +238,13 @@ def sync_public_trust_metrics() -> None:
     readme = replace_once(
         readme,
         r"\d+ of \d+ chapters currently have in-prose `ext_\*` positioning",
-        f"{chapters} of {chapters} chapters currently have in-prose `ext_*` positioning",
+        f"{externally_positioned} of {chapters} chapters currently have in-prose `ext_*` positioning",
         readme_path,
     )
     readme = replace_once(
         readme,
         r"turn that placement audit into a \d+-chapter grounding ledger: all \d+ chapters have source-noted external positioning records",
-        f"turn that placement audit into a {chapters}-chapter grounding ledger: all {chapters} chapters have source-noted external positioning records",
+        f"turn that placement audit into a {chapters}-chapter grounding ledger: all {externally_positioned} chapters have source-noted external positioning records",
         readme_path,
     )
     readme = replace_once(
@@ -245,19 +260,19 @@ def sync_public_trust_metrics() -> None:
     index = replace_once(
         index,
         r"\d+ public-safe records; \d+/\d+ chapters externally positioned",
-        f"{sources} public-safe records; {chapters}/{chapters} chapters externally positioned",
+        f"{sources} public-safe records; {externally_positioned}/{chapters} chapters externally positioned",
         index_path,
     )
     index = replace_once(
         index,
-        r"The public source inventory has \d+ public-safe records, and \d+/\d+ chapters externally positioned",
-        f"The public source inventory has {sources} public-safe records, and {chapters}/{chapters} chapters externally positioned",
+        r"The inventory has \d+ public-safe records; \d+/\d+ chapters are externally positioned",
+        f"The inventory has {sources} public-safe records; {externally_positioned}/{chapters} chapters are externally positioned",
         index_path,
     )
     index = replace_once(
         index,
-        r"All \d+ chapter core claims remain at `argument`; \[`docs/core_claim_disposition_ledger\.md`\]\(docs/core_claim_disposition_ledger\.md\) records \d+ per-chapter core-claim dispositions, with \d+ accepted no-change transition dispositions, \d+ accepted no-promotion dispositions",
-        f"All {chapters} chapter core claims remain at `argument`; [`docs/core_claim_disposition_ledger.md`](docs/core_claim_disposition_ledger.md) records {disposition_chapters} per-chapter core-claim dispositions, with {transitions} accepted no-change transition dispositions, {no_promotions} accepted no-promotion dispositions",
+        r"All \d+ chapter core claims remain at `argument`; \[`the core-claim disposition ledger`\]\(docs/core_claim_disposition_ledger\.md\) records \d+ per-chapter core-claim dispositions, \d+ accepted no-change transition dispositions, \d+ accepted no-promotion dispositions",
+        f"All {chapters} chapter core claims remain at `argument`; [`the core-claim disposition ledger`](docs/core_claim_disposition_ledger.md) records {disposition_chapters} per-chapter core-claim dispositions, {transitions} accepted no-change transition dispositions, {no_promotions} accepted no-promotion dispositions",
         index_path,
     )
     index_path.write_text(index, encoding="utf-8")
@@ -267,7 +282,7 @@ def sync_public_trust_metrics() -> None:
     publication = replace_once(
         publication,
         r"\d+ of \d+ chapters currently have in-prose `ext_\*` positioning",
-        f"{chapters} of {chapters} chapters currently have in-prose `ext_*` positioning",
+        f"{externally_positioned} of {chapters} chapters currently have in-prose `ext_*` positioning",
         publication_path,
     )
     publication = replace_once(
@@ -277,6 +292,22 @@ def sync_public_trust_metrics() -> None:
         publication_path,
     )
     publication_path.write_text(publication, encoding="utf-8")
+
+    block = public_status_summary_block(status)
+    for surface in (
+        ROOT / "README.md",
+        ROOT / "index.qmd",
+        ROOT / "docs" / "v1_0_candidate_status.md",
+        ROOT / "docs" / "publication_readiness.md",
+    ):
+        text = surface.read_text(encoding="utf-8")
+        pattern = r"<!-- canonical-status:generated-begin -->.*?<!-- canonical-status:generated-end -->"
+        updated, count = re.subn(pattern, lambda _: block, text, flags=re.DOTALL)
+        if count != 1:
+            raise ValueError(
+                f"{surface.relative_to(ROOT)}: expected one canonical generated-status block, found {count}"
+            )
+        surface.write_text(updated, encoding="utf-8")
 
     print(
         "Synchronized public trust metrics: "

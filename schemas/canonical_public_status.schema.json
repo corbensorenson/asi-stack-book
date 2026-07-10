@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/canonical_public_status.schema.json",
+  "title": "Canonical Public Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status_id",
+    "active_version",
+    "baseline_release",
+    "release_profile",
+    "deployment_channel",
+    "site_url",
+    "source_commit",
+    "source_tree_state",
+    "build_context",
+    "build_timestamp",
+    "counts",
+    "claim_state_distribution",
+    "transition_counts",
+    "digests",
+    "chapter_order",
+    "appendix_order",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "status_id": { "type": "string", "minLength": 1 },
+    "active_version": { "type": "string", "minLength": 1 },
+    "baseline_release": { "type": "string", "minLength": 1 },
+    "release_profile": { "type": "string", "minLength": 1 },
+    "deployment_channel": { "type": "string", "minLength": 1 },
+    "site_url": { "type": "string", "minLength": 1 },
+    "source_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "source_tree_state": { "type": "string", "enum": ["clean", "dirty"] },
+    "build_context": { "type": "string", "enum": ["tested_commit", "local_worktree"] },
+    "build_timestamp": { "type": "string", "minLength": 1 },
+    "counts": {
+      "type": "object",
+      "required": [
+        "parts",
+        "chapters",
+        "sources",
+        "appendices",
+        "expected_book_pages",
+        "externally_positioned_chapters"
+      ],
+      "properties": {
+        "parts": { "type": "integer", "minimum": 1 },
+        "chapters": { "type": "integer", "minimum": 1 },
+        "sources": { "type": "integer", "minimum": 1 },
+        "appendices": { "type": "integer", "minimum": 1 },
+        "expected_book_pages": { "type": "integer", "minimum": 1 },
+        "externally_positioned_chapters": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "claim_state_distribution": {
+      "type": "object",
+      "required": ["claim_labels", "support_states"],
+      "properties": {
+        "claim_labels": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "support_states": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+      },
+      "additionalProperties": false
+    },
+    "transition_counts": {
+      "type": "object",
+      "required": [
+        "core_no_change_dispositions",
+        "core_no_promotion_dispositions",
+        "promoted_core_claims",
+        "accepted_non_core_upward_transitions",
+        "accepted_blocks_promotion_decisions"
+      ],
+      "properties": {
+        "core_no_change_dispositions": { "type": "integer", "minimum": 0 },
+        "core_no_promotion_dispositions": { "type": "integer", "minimum": 0 },
+        "promoted_core_claims": { "type": "integer", "minimum": 0 },
+        "accepted_non_core_upward_transitions": { "type": "integer", "minimum": 0 },
+        "accepted_blocks_promotion_decisions": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "digests": {
+      "type": "object",
+      "required": ["book_structure_sha256", "source_inventory_sha256", "claim_dispositions_sha256", "release_profiles_sha256", "chapter_order_sha256"],
+      "properties": {
+        "book_structure_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "source_inventory_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "claim_dispositions_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "release_profiles_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "chapter_order_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "chapter_order": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["position", "id", "title", "source_path", "public_path"],
+        "properties": {
+          "position": { "type": "integer", "minimum": 1 },
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "source_path": { "type": "string", "minLength": 1 },
+          "public_path": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "appendix_order": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["position", "id", "title", "source_path", "public_path"],
+        "properties": {
+          "position": { "type": "integer", "minimum": 1 },
+          "id": { "type": "string", "minLength": 1 },
+          "title": { "type": "string", "minLength": 1 },
+          "source_path": { "type": "string", "minLength": 1 },
+          "public_path": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

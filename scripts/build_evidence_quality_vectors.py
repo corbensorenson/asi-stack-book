@@ -1,0 +1,137 @@
+#!/usr/bin/env python3
+"""Generate non-aggregating evidence-quality vectors for all chapter-core claims."""
+
+from __future__ import annotations
+
+from collections import Counter
+import json
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+POLICY = ROOT / "evidence_quality" / "vector_policy.json"
+DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
+OUTPUT = ROOT / "evidence_quality" / "core_claim_vectors.json"
+SNAPSHOT_DATE = "2026-07-10"
+
+
+def load(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def dimension(state: str, rationale: str, refs: list[str], residual: str) -> dict[str, Any]:
+    return {"state": state, "rationale": rationale, "evidence_refs": refs, "residuals": [residual]}
+
+
+def build_registry() -> dict[str, Any]:
+    policy = load(POLICY)
+    dispositions = load(DISPOSITIONS)
+    vectors: list[dict[str, Any]] = []
+    for row in dispositions["dispositions"]:
+        claim_id = row["claim_id"]
+        chapter_file = row["chapter_file"]
+        transition_refs = list(row.get("relevant_non_core_transition_refs", []))
+        adjacent = bool(transition_refs)
+        common_refs = [chapter_file, "appendices/C_claim_evidence_matrix.qmd", str(DISPOSITIONS.relative_to(ROOT))]
+        vector = {
+            "vector_id": f"{claim_id}.quality.{SNAPSHOT_DATE}",
+            "claim_id": claim_id,
+            "chapter_id": row["chapter_id"],
+            "chapter_file": chapter_file,
+            "summary_support_state": row["current_support_state"],
+            "summary_source": str(DISPOSITIONS.relative_to(ROOT)),
+            "dimensions": {
+                "independence": dimension(
+                    "internal_only",
+                    "The book, mappings, checks, and disposition were produced inside the author/AI project; no accepted independent human review is recorded.",
+                    ["docs/external_review_status.md", *common_refs],
+                    "Shared project incentives and correlated review remain unresolved.",
+                ),
+                "reproducibility": dimension(
+                    "adjacent_local_replay" if adjacent else "not_demonstrated_for_claim",
+                    "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim." if adjacent else "No accepted replay directly reproduces this chapter-core architectural claim.",
+                    [*transition_refs, *common_refs],
+                    "Direct independent reproduction of the claim-bounded result is absent.",
+                ),
+                "recency": dimension(
+                    "repository_snapshot_current",
+                    f"The vector and active disposition were regenerated for the {SNAPSHOT_DATE} repository snapshot.",
+                    common_refs,
+                    "Repository freshness does not establish empirical recency or protect against future drift.",
+                ),
+                "coverage": dimension(
+                    "claim_scope_unmeasured",
+                    f"The recorded lane is {row.get('primary_evidence_lane', 'unspecified')}; current artifacts do not cover the broad chapter-core claim population.",
+                    [*transition_refs, *common_refs],
+                    row.get("promotion_burden", "Claim-bounded coverage remains open."),
+                ),
+                "adversarial_strength": dimension(
+                    "adjacent_bounded_controls" if adjacent else "not_demonstrated_for_claim",
+                    "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim." if adjacent else "No accepted adversarial program directly tests the chapter-core claim.",
+                    [*transition_refs, *common_refs],
+                    "Adaptive and independent claim-bounded red-team evidence is absent.",
+                ),
+                "validity": dimension(
+                    "not_independently_assessed",
+                    "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
+                    common_refs,
+                    "Construct and criterion validity require independent, claim-specific assessment.",
+                ),
+                "artifact_access": dimension(
+                    "public_claim_records_partial_evidence",
+                    "The chapter, Appendix C row, disposition, and public-safe references are accessible, while complete claim-bounded evidence is not available because it has not been produced.",
+                    common_refs,
+                    "Public metadata and partial artifacts are not a complete reproducibility bundle.",
+                ),
+                "transfer_distance": dimension(
+                    "not_established",
+                    "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
+                    [*transition_refs, *common_refs],
+                    "External-context and deployed-context transfer remain unknown.",
+                ),
+            },
+            "aggregation": {
+                "policy": "non_aggregating",
+                "scalar_score": "prohibited",
+                "automatic_support_state_derivation": "prohibited",
+            },
+            "support_state_effect": "none",
+            "non_claims": [
+                "This vector does not promote the chapter-core claim.",
+                "Current, public, or locally replayed records do not imply independent validity or transfer.",
+            ],
+        }
+        vectors.append(vector)
+
+    state_counts = {
+        dimension_id: dict(sorted(Counter(row["dimensions"][dimension_id]["state"] for row in vectors).items()))
+        for dimension_id in policy["dimension_order"]
+    }
+    return {
+        "schema_version": "asi_stack.evidence_quality_vector_registry.v0",
+        "policy_ref": str(POLICY.relative_to(ROOT)),
+        "snapshot_date": SNAPSHOT_DATE,
+        "scope": "All active chapter-core claims; vectors expose quality dimensions without changing the authoritative support summary.",
+        "summary": {
+            "vector_count": len(vectors),
+            "dimension_count": len(policy["dimension_order"]),
+            "summary_support_states": dict(sorted(Counter(row["summary_support_state"] for row in vectors).items())),
+            "dimension_state_counts": state_counts,
+            "numeric_aggregate_count": 0,
+            "automatic_support_state_changes": 0,
+        },
+        "vectors": vectors,
+        "support_state_effect": "none",
+        "non_claims": policy["non_claims"],
+    }
+
+
+def main() -> None:
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(json.dumps(build_registry(), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"Wrote {OUTPUT.relative_to(ROOT)} with 54 non-aggregating claim vectors.")
+
+
+if __name__ == "__main__":
+    main()

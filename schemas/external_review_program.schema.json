@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/external_review_program.schema.json",
+  "title": "External Review Program",
+  "type": "object",
+  "required": ["schema_version", "program_state", "tracks", "intake_schema", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.external_review_program.v0"] },
+    "program_state": { "type": "string", "enum": ["deferred_until_author_declared_complete"] },
+    "tracks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "capacity_role", "packet", "solicitation_state", "public_request_ref", "scope_refs", "required_output_fields", "acceptance_route", "support_state_effect", "non_claim"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "capacity_role": { "type": "string", "minLength": 1 },
+          "packet": { "type": "string", "minLength": 1 },
+          "solicitation_state": { "type": "string", "enum": ["no_prepublication_outreach_packets_preserved_for_optional_postpublication_use"] },
+          "public_request_ref": { "type": "string", "minLength": 1 },
+          "scope_refs": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "required_output_fields": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "acceptance_route": { "type": "string", "minLength": 1 },
+          "support_state_effect": { "type": "string", "enum": ["none"] },
+          "non_claim": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "intake_schema": { "type": "string", "minLength": 1 },
+    "support_state_effect": { "type": "string", "enum": ["none"] },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

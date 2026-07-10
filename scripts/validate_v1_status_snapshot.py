@@ -116,6 +116,7 @@ def sync_dynamic_table_rows(status_text: str, expected_fragments: list[str]) -> 
         "Support states",
         "External SOTA positioning",
         "Proof envelope",
+        "Schemas and fixtures",
         "Implementation horizons",
         "Chapter handoffs",
         "Live Human view",

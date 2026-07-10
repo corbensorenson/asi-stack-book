@@ -24,7 +24,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "EvidenceStates.lean"
 
 COMMAND = "python3 scripts/validate_claim_state_transition_bridge.py"
@@ -517,12 +517,12 @@ def validate_surfaces(errors: list[str]) -> None:
         errors,
     )
     require_text(
-        VALIDATE_BOOK,
+        VALIDATION_REGISTRY,
         [
             "scripts/validate_claim_state_transition_bridge.py",
             "docs/claim_state_transition_bridge.md",
             "experiments/claim_state_transition_bridge/results/2026-07-04-local.json",
-            'run_validator("validate_claim_state_transition_bridge.py")',
+            '"script": "validate_claim_state_transition_bridge.py"',
         ],
         errors,
     )

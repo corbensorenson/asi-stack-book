@@ -289,6 +289,7 @@ These proof targets are implemented only over finite Lean records in `AsiStackPr
 | `ext_saltzer_schroeder_protection_1975` | The Protection of Information in Computer Systems | security_principles | External comparator for least privilege, complete mediation, fail-safe defaults, and related protection principles. | source note available; comparator only |
 | `ext_capability_based_computer_systems_1984` | Capability-Based Computer Systems | capability_security | External comparator for authority-bearing capabilities, protection domains, delegation, and permission boundaries. | source note available; comparator only |
 | `ext_confused_deputy_hardy_1988` | The Confused Deputy | capability_security | External comparator for authority laundering when a deputy uses its broader authority for a lower-authority requester. | source note available; comparator only |
+| `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | CaMeL and OWASP Agentic Top 10 | agent_control_and_security | Current comparators for control/data-flow separation, capability enforcement, and agentic authority risks. | source notes available; no local enforcement, robustness, or safety result |
 
 The crosswalk names the source family for authority control, but it is not itself a grant, proof, or reproduced implementation. External rows provide comparator vocabulary only; no object-capability system, confused-deputy exploit, runtime adapter denial, or deployed authorization service has been reproduced here.
 

@@ -35,7 +35,7 @@ READER = (
 OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "Authority.lean"
 STATUS = ROOT / "docs" / "test_harness_status_ledger.md"
@@ -398,13 +398,13 @@ def validate_surfaces(errors: list[str]) -> None:
                 rel(RESULT),
             ],
         ),
-        rel(VALIDATE_BOOK): (
-            VALIDATE_BOOK,
+        rel(VALIDATION_REGISTRY): (
+            VALIDATION_REGISTRY,
             [
                 "scripts/validate_authority_revocation_trace.py",
                 "docs/authority_revocation_trace.md",
                 rel(RESULT),
-                'run_validator("validate_authority_revocation_trace.py")',
+                '"script": "validate_authority_revocation_trace.py"',
             ],
         ),
         rel(LEAN_FILE): (

@@ -19,7 +19,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 TRANSITION_DIR = ROOT / "evidence_transitions"
 NO_PROMOTION_LEDGER = ROOT / "claim_decisions" / "v1_0_core_claim_no_promotion.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "EvidenceStates.lean"
@@ -437,11 +437,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "no support-state promotion",
         ],
         CHANGELOG: ["Accepted live transition review audit", rel(RESULT)],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_accepted_transition_review_audit.py",
             "docs/accepted_transition_review_audit.md",
             "experiments/accepted_transition_review/results/2026-07-02-local.json",
-            'run_validator("validate_accepted_transition_review_audit.py")',
+            '"script": "validate_accepted_transition_review_audit.py"',
         ],
     }
     for path, phrases in required.items():

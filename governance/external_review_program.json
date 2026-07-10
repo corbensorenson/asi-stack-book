@@ -1,0 +1,49 @@
+{
+  "schema_version": "asi_stack.external_review_program.v0",
+  "program_state": "deferred_until_author_declared_complete",
+  "tracks": [
+    {
+      "id": "formal_methods",
+      "capacity_role": "formal_methods_reviewer",
+      "packet": "docs/reviews/formal_methods_review_packet.md",
+      "solicitation_state": "no_prepublication_outreach_packets_preserved_for_optional_postpublication_use",
+      "public_request_ref": "https://github.com/corbensorenson/asi-stack-book/issues/1",
+      "scope_refs": ["lean/AsiStackProofs/GovernedRepositoryTrace.lean", "docs/governed_trace_invariants.md", "docs/proof_adequacy_review.md", "proofs/proof_manifest.json"],
+      "required_output_fields": ["reviewer capacity", "reviewed artifacts", "finding severity", "counterexample or adequacy argument", "recommended disposition", "attribution boundary"],
+      "acceptance_route": "Create an external_review_intake_record accepted_review only after capacity and attribution checks; route findings to proof tasks, claim narrowing, blockers, or explicit rejection. Review input alone cannot promote support.",
+      "support_state_effect": "none",
+      "non_claim": "Packet readiness is not formal-methods review or proof adequacy."
+    },
+    {
+      "id": "safety_governance",
+      "capacity_role": "safety_governance_reviewer",
+      "packet": "docs/reviews/safety_governance_review_packet.md",
+      "solicitation_state": "no_prepublication_outreach_packets_preserved_for_optional_postpublication_use",
+      "public_request_ref": "https://github.com/corbensorenson/asi-stack-book/issues/1",
+      "scope_refs": ["docs/governed_repository_change_slice.md", "docs/governed_trace_invariants.md", "docs/reviewer_capacity_and_oversight.md", "docs/evidence_quality_vectors.md"],
+      "required_output_fields": ["reviewer capacity", "reviewed artifacts", "finding severity", "governance failure or counterexample", "recommended disposition", "attribution boundary"],
+      "acceptance_route": "Record accepted review input separately from evidence; route governance failures to architecture changes, adversarial cases, residuals, blockers, or explicit rejection. No automatic support movement.",
+      "support_state_effect": "none",
+      "non_claim": "Packet readiness is not a safety audit, governance approval, or deployed control evidence."
+    },
+    {
+      "id": "systems_editorial",
+      "capacity_role": "systems_editorial_reviewer",
+      "packet": "docs/reviews/systems_editorial_review_packet.md",
+      "solicitation_state": "no_prepublication_outreach_packets_preserved_for_optional_postpublication_use",
+      "public_request_ref": "https://github.com/corbensorenson/asi-stack-book/issues/1",
+      "scope_refs": ["products/product_contracts.json", "products/narrative_product_spine.json", "products/contribution_focus_contract.json", "docs/product_projection_artifacts.md", "docs/governed_repository_change_slice.md", "docs/reader_continuity_audit.md", "index.qmd"],
+      "required_output_fields": ["reviewer capacity", "reviewed artifacts", "finding severity", "systems or reader failure", "recommended disposition", "attribution boundary"],
+      "acceptance_route": "Record systems/editorial findings as review input, then route to experiment design, product contract, chapter revision, reader review, release blocker, or explicit rejection. No automatic artifact approval.",
+      "support_state_effect": "none",
+      "non_claim": "Packet readiness is not systems validation, publication approval, or reader-release approval."
+    }
+  ],
+  "intake_schema": "schemas/external_review_intake_record.schema.json",
+  "support_state_effect": "none",
+  "non_claims": [
+    "No named specialist reviewer is assigned or required for prepublication completion.",
+    "No specialist packet will be delivered through prepublication outreach; packets are preserved for optional post-publication use.",
+    "No independent review result, evidence transition, or artifact approval exists."
+  ]
+}

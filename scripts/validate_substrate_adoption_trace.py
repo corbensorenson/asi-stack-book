@@ -25,7 +25,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "SearchSubstrates.lean"
 
 COMMAND = "python3 scripts/validate_substrate_adoption_trace.py"
@@ -467,7 +467,7 @@ def validate_surfaces(errors: list[str]) -> None:
     require_text(OUTLINE, [PROOF_TAG, CODEX_TEST_NAME], errors)
     require_text(ROADMAP, ["Substrate adoption trace", "valid_negative_control_retirement"], errors)
     require_text(CHANGELOG, [COMMAND, PROOF_TAG], errors)
-    require_text(VALIDATE_BOOK, [rel(RESULT), "validate_substrate_adoption_trace.py"], errors)
+    require_text(VALIDATION_REGISTRY, [rel(RESULT), "validate_substrate_adoption_trace.py"], errors)
 
     manifest_text = MANIFEST.read_text(encoding="utf-8", errors="ignore")
     for snippet in (CODEX_TEST_NAME, PROOF_TAG):

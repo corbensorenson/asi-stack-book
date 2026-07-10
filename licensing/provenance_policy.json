@@ -1,0 +1,108 @@
+{
+  "schema_version": "asi_stack.licensing_provenance_policy.v0",
+  "operative_license": "all_rights_reserved_no_permission_granted",
+  "file_set_command": "git ls-files --cached --others --exclude-standard -z",
+  "rules": [
+    {
+      "id": "operative-license",
+      "path_regex": "^LICENSE\\.md$",
+      "artifact_class": "operative_license_document",
+      "provenance_status": "operative_policy_not_relicensed",
+      "candidate_lane": "reserved_operative",
+      "blocking_reason": "This is the only operative rights grant surface and must remain authoritative until an explicit author decision is implemented."
+    },
+    {
+      "id": "nonrelease-markers",
+      "path_regex": "(^|/)(\\.gitkeep|\\.DS_Store)$",
+      "artifact_class": "nonrelease_repository_marker",
+      "provenance_status": "nonrelease_exclusion",
+      "candidate_lane": "nonrelease_excluded",
+      "blocking_reason": "Repository markers and operating-system metadata are not intended publication or reuse artifacts and should be excluded from releases."
+    },
+    {
+      "id": "external-source-commentary",
+      "path_regex": "^(sources/source_notes/ext_|appendices/H_external_sources\\.qmd$)",
+      "artifact_class": "external_source_commentary_or_compilation",
+      "provenance_status": "third_party_or_mixed_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
+    },
+    {
+      "id": "local-and-author-source-corpus",
+      "path_regex": "^(sources/|appendices/G_corben_source_corpus\\.qmd$|docs/project_mining/|new_paper_triage_scenarios/|research_backlog_records/)",
+      "artifact_class": "source_metadata_commentary_or_local_project_record",
+      "provenance_status": "author_assertion_and_local_project_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "blocking_reason": "Authorship, supplied-source permissions, local-project ownership, quotations, and third-party metadata boundaries require record-level review before any outbound grant."
+    },
+    {
+      "id": "historical-and-derived-editions",
+      "path_regex": "^(_?archive/|editions/|chapters/[^/]+\\.html$)",
+      "artifact_class": "historical_or_generated_derivative",
+      "provenance_status": "generated_derivative_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "blocking_reason": "Historical and generated derivatives may embed earlier rights states, assets, or transformed source material and require version-specific routing."
+    },
+    {
+      "id": "experiment-fixtures-and-results",
+      "path_regex": "^(experiments/|evidence_transitions/|external_reviews/)",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "candidate_lane": "software_or_metadata_after_review",
+      "blocking_reason": "Local fixtures may be author-created while imported results or reviewer material may carry separate rights; provenance must be checked before lane assignment."
+    },
+    {
+      "id": "software-proofs-schemas",
+      "path_regex": "^(scripts/|schemas/|lean/|tests/|protocols/|skills/|\\.github/)|\\.(py|js|lean|lua|tex|scss|css|sh)$",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "id": "figures-and-assets",
+      "path_regex": "^assets/|\\.(svg|png|jpg|jpeg|webp|gif|pdf|epub|docx)$",
+      "artifact_class": "figure_or_binary_asset",
+      "provenance_status": "author_assertion_and_embedded_asset_review_required",
+      "candidate_lane": "prose_or_figures_candidate",
+      "blocking_reason": "Creation history, fonts, icons, source references, AI-generation terms, and embedded third-party material require asset-level review before licensing."
+    },
+    {
+      "id": "book-and-project-prose",
+      "path_regex": "^(chapters/|appendices/|docs/|prompts/|README\\.md$|CONTRIBUTING\\.md$|index\\.qmd$|preface\\.qmd$)|\\.(qmd|md)$",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "prose_or_figures_candidate",
+      "blocking_reason": "The prose appears project-authored but ownership, quotations, contributed passages, and imported local-project text require author assertion and review."
+    },
+    {
+      "id": "public-metadata-and-governance-records",
+      "path_regex": "^(claim_|governance/|products/|proofs/|release_records/|status/|validation/|licensing/|ci/)|\\.(json|ya?ml|toml|cff|bib)$",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "metadata_candidate",
+      "blocking_reason": "Facts may be uncopyrightable, but selection, descriptions, imported fields, and contributed records still require ownership and scope review before a public-domain dedication."
+    },
+    {
+      "id": "root-build-configuration",
+      "path_regex": "^(\\.gitignore|_quarto\\.yml|book_structure\\.json|CITATION\\.cff)$",
+      "artifact_class": "build_or_citation_configuration",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_or_metadata_after_review",
+      "blocking_reason": "Build and citation configuration is reusable only after ownership, generated-content, and embedded metadata boundaries are reviewed."
+    }
+  ],
+  "default_rule": {
+    "id": "unknown-quarantine",
+    "path_regex": ".*",
+    "artifact_class": "unknown_or_unclassified",
+    "provenance_status": "unknown_quarantine",
+    "candidate_lane": "quarantine",
+    "blocking_reason": "No declarative rule classified this path, so it remains all-rights-reserved and quarantined from any prospective split license."
+  },
+  "non_claims": [
+    "A candidate lane is not a license grant, ownership finding, or legal conclusion.",
+    "No path is provenance-cleared by this rule-based inventory.",
+    "The author and qualified legal reviewer must resolve ownership, quotations, assets, imports, and contribution rights before implementation."
+  ]
+}

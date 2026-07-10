@@ -13,6 +13,8 @@ import json
 from collections import Counter
 from pathlib import Path
 
+from sync_chapter_source_crosswalks import synchronize_chapter_source_crosswalks
+from sync_outline_source_queues import synchronize_outline_source_queues
 from sync_public_trust_metrics import sync_public_trust_metrics
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -497,6 +499,14 @@ def is_external_literature(record: dict) -> bool:
     return record.get("priority") == "external_literature"
 
 
+def public_source_ref(record: dict, label: str = "source") -> str:
+    """Render public links while keeping local project locators non-clickable."""
+    url = str(record.get("url", ""))
+    if url.startswith("local-project:"):
+        return "local project reference (not publicly linked)"
+    return f"[{label}]({qmd_escape(url)})"
+
+
 def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
     assignments = chapter_assignments(structure)
     chapter_titles = {
@@ -524,13 +534,13 @@ def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
                 current_targets = "Unassigned in current structure"
         doi = record.get("doi", "")
         if citation and arxiv_id:
-            record_ref = f"{qmd_escape(citation)}; [arXiv:{qmd_escape(arxiv_id)}]({qmd_escape(record.get('url', ''))})"
+            record_ref = f"{qmd_escape(citation)}; {public_source_ref(record, f'arXiv:{qmd_escape(arxiv_id)}')}"
         elif citation:
-            record_ref = f"{qmd_escape(citation)}; [source]({qmd_escape(record.get('url', ''))})"
+            record_ref = f"{qmd_escape(citation)}; {public_source_ref(record)}"
         elif arxiv_id:
-            record_ref = f"[arXiv:{qmd_escape(arxiv_id)}]({qmd_escape(record.get('url', ''))})"
+            record_ref = public_source_ref(record, f"arXiv:{qmd_escape(arxiv_id)}")
         else:
-            record_ref = f"[source]({qmd_escape(record.get('url', ''))})"
+            record_ref = public_source_ref(record)
         if doi:
             record_ref = f"{record_ref}; DOI `{qmd_escape(doi)}`"
         note_status = "source note available" if (SOURCE_NOTES / f"{record['id']}.md").exists() else "source note pending"
@@ -558,14 +568,14 @@ def write_source_matrix(records: list[dict], structure: dict) -> None:
         current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
         status = source_status(record, connector_records, cache_records)
         rows.append(
-            "| `{id}` | {title} | `{priority}` | `{layer}` | {current_targets} | {original_targets} | [source]({url}) | {status} | {notes} |".format(
+            "| `{id}` | {title} | `{priority}` | `{layer}` | {current_targets} | {original_targets} | {source_ref} | {status} | {notes} |".format(
                 id=qmd_escape(record.get("id", "")),
                 title=qmd_escape(record.get("title", "")),
                 priority=qmd_escape(record.get("priority", "")),
                 layer=qmd_escape(record.get("layer", "")),
                 current_targets=qmd_escape(current_targets),
                 original_targets=qmd_escape(original_targets),
-                url=qmd_escape(record.get("url", "")),
+                source_ref=public_source_ref(record),
                 status=qmd_escape(status),
                 notes=qmd_escape(record.get("notes", "")),
             )
@@ -594,12 +604,12 @@ def write_bibliography(records: list[dict], structure: dict) -> None:
         current_targets = "; ".join(assignments.get(record["id"], [])) or "Unassigned in current structure"
         status = bibliography_status(record, connector_records, cache_records)
         rows.append(
-            "| `{id}` | {title} | `{priority}` | `{layer}` | [source]({url}) | {current_targets} | {status} |".format(
+            "| `{id}` | {title} | `{priority}` | `{layer}` | {source_ref} | {current_targets} | {status} |".format(
                 id=qmd_escape(record.get("id", "")),
                 title=qmd_escape(record.get("title", "")),
                 priority=qmd_escape(record.get("priority", "")),
                 layer=qmd_escape(record.get("layer", "")),
-                url=qmd_escape(record.get("url", "")),
+                source_ref=public_source_ref(record),
                 current_targets=qmd_escape(current_targets),
                 status=qmd_escape(status),
             )
@@ -828,6 +838,8 @@ def write_claim_matrix(structure: dict) -> None:
     text = f"""# Claim/Evidence Matrix
 
 This matrix contains one core claim per dynamic chapter and records the conservative evidence state used by the current manuscript.
+
+The support state is the compact authoritative summary, not a complete quality score. The separate [evidence-quality vector contract](../docs/evidence_quality_vectors.md) tracks independence, reproducibility, recency, coverage, adversarial strength, validity, artifact access, and transfer distance for every chapter-core claim without aggregating them or changing support.
 
 Each claim has two separate classifications: a claim label that describes what kind of statement it is, and a support state that describes what currently supports it.
 
@@ -1069,8 +1081,14 @@ def main() -> None:
     ensure_glossary()
     ensure_protocol_schemas()
     write_test_specs(structure)
+    source_queue_rows = synchronize_outline_source_queues(write=True)
+    source_crosswalk_files = synchronize_chapter_source_crosswalks(write=True)
     sync_public_trust_metrics()
-    print(f"Synchronized book structure: {len(flatten_chapters(structure))} chapters, {written} chapter files written.")
+    print(
+        f"Synchronized book structure: {len(flatten_chapters(structure))} chapters, "
+        f"{written} chapter files written, {source_queue_rows} source-queue row(s) updated, "
+        f"{source_crosswalk_files} source-crosswalk file(s) updated."
+    )
 
 
 if __name__ == "__main__":

@@ -18,7 +18,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "ProofCarryingClaims.lean"
 
 COMMAND = "python3 scripts/validate_adversarial_review_dossier_probe.py"
@@ -477,11 +477,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "no support-state promotion",
         ],
         CHANGELOG: ["Adversarial review dossier and verdict-quality probe", rel(RESULT)],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_adversarial_review_dossier_probe.py",
             "docs/adversarial_review_dossier_probe.md",
             "experiments/adversarial_review_dossier/results/2026-07-02-local.json",
-            'run_validator("validate_adversarial_review_dossier_probe.py")',
+            '"script": "validate_adversarial_review_dossier_probe.py"',
         ],
     }
     for path, phrases in required.items():

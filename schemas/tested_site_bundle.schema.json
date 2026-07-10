@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/tested_site_bundle.schema.json",
+  "title": "Tested Pages Site Bundle",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "artifact_name",
+    "source_commit",
+    "source_tree_state",
+    "build_context",
+    "canonical_status",
+    "site",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.tested_site_bundle.v0"] },
+    "artifact_name": { "type": "string", "minLength": 1 },
+    "source_commit": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "source_tree_state": { "type": "string", "enum": ["clean", "dirty"] },
+    "build_context": { "type": "string", "enum": ["tested_commit", "local_worktree"] },
+    "canonical_status": {
+      "type": "object",
+      "required": ["path", "status_id", "sha256"],
+      "properties": {
+        "path": { "type": "string", "enum": ["status/canonical-public-status.json"] },
+        "status_id": { "type": "string", "minLength": 1 },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      },
+      "additionalProperties": false
+    },
+    "site": {
+      "type": "object",
+      "required": ["file_count", "total_bytes", "tree_sha256", "files"],
+      "properties": {
+        "file_count": { "type": "integer", "minimum": 1 },
+        "total_bytes": { "type": "integer", "minimum": 1 },
+        "tree_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "size", "sha256"],
+            "properties": {
+              "path": { "type": "string", "minLength": 1 },
+              "size": { "type": "integer", "minimum": 0 },
+              "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

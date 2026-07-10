@@ -350,6 +350,7 @@ These Lean hooks are implemented as finite-record predicates over promotion fiel
 | `ext_mamba_2023` | Source-note state-space/recurrent sequence substrates. | source note available; reported results not reproduced |
 | `ext_llada_2025` | Source-note large masked-diffusion language modeling. | source note available; reported results not reproduced |
 | `ext_scaling_dllms_2026` | Source-note diffusion LLM speed-quality evaluation. | source note available; reported results not reproduced |
+| `ext_recurrent_transformer_2026` | Current comparator for layerwise recurrent KV memory, exact tiling, effective depth, cache pressure, and standard autoregressive decoding cost. | source note available; small-model and asymptotic results not reproduced |
 
 The external literature queue is now partially mined for the selected primary papers. It is still not complete: code artifacts, exact experimental sections, later variants, and implementation-specific claims must be inspected before the book can summarize reported speedups in detail or promote support beyond `argument`.
 

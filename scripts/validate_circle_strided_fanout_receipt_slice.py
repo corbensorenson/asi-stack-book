@@ -351,8 +351,6 @@ def validate_surfaces(errors: list[str]) -> None:
             "duplicate_count=0",
             "does not promote any chapter core claim",
         ),
-        README_ROOT: ("40 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
-        INDEX: ("40 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
         STATUS: ("40 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
         ROADMAP: (EXPECTED["contract_id"], "strided candidate-fanout", "circle_strided_fanout_receipt_no_change.json", "40 accepted"),
         CHANGELOG: ("Import Circle strided fanout receipt slice", EXPECTED["contract_id"], "3 passed in 4.65s", "1 passed in 2.77s"),

@@ -217,6 +217,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Runtime adapter adversarial boundary probe | implemented | passes via deterministic synthetic runtime-adapter adversarial boundary fixture at experiments/runtime_adapter_adversarial_boundary/results/2026-07-02-local.json: two valid synthetic adapter boundary reviews and twelve expected-invalid controls for confused-deputy parent mismatch, authority ceiling overrun, approval scope mismatch, expired approval, sandbox escape, secret materialization, missing rollback handle, missing effect receipt, missing audit refs, support-state promotion, and missing non-claim boundaries; no deployed-adapter, sandbox, approval-service, secret-handle, policy-enforcement, rollback-service, revocation-propagation, security-review, or support-state-promotion claim |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Runtime adapter revocation route proof | implemented | passes via Lean build; finite revocation-route predicates for revoked approvals, revoked leases, revoked authority receipts, no-mutation denial evidence, receipt/audit boundaries, and non-promotion boundaries only; no deployed revocation propagation claim |
 | `runtime-adapters-tool-permissions-and-human-approval` | Runtime Adapters, Tool Permissions, and Human Approval | Human oversight degradation fixture | implemented | passes via python3 scripts/validate_human_oversight_degradation.py over experiments/human_oversight_degradation/results/2026-07-03-local.json: three valid finite records and seven expected-invalid controls for approval fatigue, rubber-stamping, alarm fatigue, automation bias, reviewer qualification, support-state promotion, and non-claim boundaries; no support-state promotion, approval-service quality, reviewer-correctness, deployed human-factors behavior, or support-state-promotion claim |
+| `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Required-invalid-credential dispatch denial route | planned | not run |
+| `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Missing-reserved-budget value-bearing dispatch repair route | planned | not run |
+| `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Public-safe exchange contract workload with identity, delegation, expiry, revocation, budget, receipt, dispute, and residual negative controls | planned | not run |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Loop detection test | implemented | passes via synthetic procedural memory loop harness; no deployed loop detector or tool-synthesis claim |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Tool abstraction test | implemented | passes via synthetic procedural memory loop harness; no generated-tool correctness claim |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Verified tool regression test | implemented | passes via synthetic procedural memory loop harness; no deployed regression-quality or routing claim |
@@ -446,6 +449,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `integrated-reference-architecture` | Integrated Reference Architecture | Artifact continuity audit | implemented | passing via `python3 scripts/validate_reference_trace.py` |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Authority stop-condition test | implemented | passing via `python3 scripts/validate_reference_trace.py` |
 | `integrated-reference-architecture` | Integrated Reference Architecture | Actual command replay trace | implemented | passing via `python3 scripts/validate_reference_trace_replay.py`; local validator replay only, no deployed runtime trace or support-state promotion |
+| `integrated-reference-architecture` | Integrated Reference Architecture | Governed cross-stack trace invariants test | implemented | passing via `python3 scripts/validate_governed_trace_invariants.py`; finite logical-time model over one executed local fixture workload |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Theseus report crosswalk fixture validation | implemented | passes via `python3 scripts/validate_protocol_examples.py`; schema/fixture consistency only |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Static architecture-gate import validation | implemented | passes via `python3 scripts/validate_theseus_report.py`; no live replay or support-state promotion |
 | `project-theseus-as-report-first-implementation-reference` | Project Theseus as Report-First Implementation Reference | Static generation-mode gate import validation | implemented | passes via `python3 scripts/validate_theseus_generation_mode_import.py`; no live replay, generation-speed claim, model-quality claim, or support-state promotion |
@@ -544,16 +548,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 222 |
+| Proof targets covered by triage | 225 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 222 |
+| implemented | 225 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 222 |
+| implemented | formal-invariant | lean-candidate | 225 |

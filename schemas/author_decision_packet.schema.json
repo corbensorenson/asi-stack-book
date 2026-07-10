@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/author_decision_packet.schema.json",
+  "title": "Author Decision Packet",
+  "type": "object",
+  "required": ["schema_version", "decision_id", "status", "decision_authority", "current_state", "provisional_rule", "recommendation_for_consideration", "options", "selected_option_id", "implementation_gate", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": { "type": "string", "enum": ["asi_stack.author_decision_packet.v0"] },
+    "decision_id": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["awaiting_author_decision", "decided", "superseded"] },
+    "decision_authority": { "type": "string", "minLength": 1 },
+    "current_state": { "type": "object", "additionalProperties": true },
+    "provisional_rule": { "type": "string", "minLength": 1 },
+    "recommendation_for_consideration": { "type": "string", "minLength": 1 },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "description", "benefits", "risks", "affected_surfaces", "reversal_cost", "external_input_needed", "details"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "label": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "benefits": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "risks": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "affected_surfaces": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "reversal_cost": { "type": "string", "minLength": 1 },
+          "external_input_needed": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "details": { "type": "object", "additionalProperties": true }
+        },
+        "additionalProperties": false
+      }
+    },
+    "selected_option_id": { "type": "string" },
+    "implementation_gate": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "support_state_effect": { "type": "string", "enum": ["none"] },
+    "non_claims": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "additionalProperties": false
+}

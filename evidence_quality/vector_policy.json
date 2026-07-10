@@ -1,0 +1,69 @@
+{
+  "schema_version": "asi_stack.evidence_quality_policy.v0",
+  "dimension_order": [
+    "independence",
+    "reproducibility",
+    "recency",
+    "coverage",
+    "adversarial_strength",
+    "validity",
+    "artifact_access",
+    "transfer_distance"
+  ],
+  "dimensions": [
+    {
+      "id": "independence",
+      "states": ["unknown", "internal_only", "separated_internal_review", "external_nonindependent", "independent_external"],
+      "question": "Who produced and who challenged the evidence, with what conflicts or shared incentives?"
+    },
+    {
+      "id": "reproducibility",
+      "states": ["unknown", "not_demonstrated_for_claim", "adjacent_local_replay", "direct_local_replay", "independent_replay", "multi_site_replay"],
+      "question": "Can the claim-bounded result be reproduced from identified artifacts and environment records?"
+    },
+    {
+      "id": "recency",
+      "states": ["unknown", "dated_stale", "dated_current", "repository_snapshot_current", "continuously_rechecked"],
+      "question": "When was the evidence generated or rechecked, and what expiry or drift boundary applies?"
+    },
+    {
+      "id": "coverage",
+      "states": ["unknown", "claim_scope_unmeasured", "single_case", "bounded_fixture", "matched_workload_slice", "multi_workload", "deployed_population"],
+      "question": "Which cases, workloads, environments, and failure regions were actually covered?"
+    },
+    {
+      "id": "adversarial_strength",
+      "states": ["unknown", "not_demonstrated_for_claim", "adjacent_bounded_controls", "direct_static_controls", "adaptive_red_team", "independent_red_team"],
+      "question": "How strongly was the claim challenged, and were attacks direct, adaptive, and independent?"
+    },
+    {
+      "id": "validity",
+      "states": ["unknown", "not_independently_assessed", "face_reviewed", "construct_reviewed", "criterion_validated", "externally_validated"],
+      "question": "Does the artifact measure or establish the construct the prose actually claims?"
+    },
+    {
+      "id": "artifact_access",
+      "states": ["unknown", "unavailable", "metadata_only", "private_reviewed", "public_claim_records_partial_evidence", "public_complete_evidence_bundle"],
+      "question": "Can another reviewer access the exact evidence, code, logs, environment, and negative results?"
+    },
+    {
+      "id": "transfer_distance",
+      "states": ["unknown", "not_established", "same_fixture", "same_workload_new_seed", "adjacent_workload", "external_context", "deployed_context"],
+      "question": "How far is the demonstrated setting from the setting named by the claim?"
+    }
+  ],
+  "aggregation_rules": [
+    "Dimension states are not a total order and must not be averaged, summed, weighted, or collapsed into a numeric quality score.",
+    "The support state remains the public summary and is authoritative only through the accepted evidence-transition process.",
+    "A strong dimension cannot compensate automatically for a weak or unknown dimension.",
+    "Every proposed support transition must identify before/after vector refs, changed dimensions, unchanged residual dimensions, and the claim-bounded reason for movement.",
+    "Unknown, unavailable, not demonstrated, and not established are valid information states and must not be silently omitted."
+  ],
+  "migration_scope": "all 54 active chapter-core claims",
+  "support_state_effect": "none",
+  "non_claims": [
+    "The vector does not prove claim truth or evidence quality.",
+    "The vector does not create an ordinal ranking across dimensions.",
+    "The vector does not promote any chapter-core support state."
+  ]
+}

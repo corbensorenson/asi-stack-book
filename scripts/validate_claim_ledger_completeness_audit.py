@@ -21,7 +21,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "EvidenceStates.lean"
 
 COMMAND = "python3 scripts/validate_claim_ledger_completeness_audit.py"
@@ -381,11 +381,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "no support-state promotion",
         ],
         CHANGELOG: ["Claim ledger completeness audit", rel(RESULT)],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_claim_ledger_completeness_audit.py",
             "docs/claim_ledger_completeness_audit.md",
             "experiments/claim_ledger_completeness/results/2026-07-02-local.json",
-            'run_validator("validate_claim_ledger_completeness_audit.py")',
+            '"script": "validate_claim_ledger_completeness_audit.py"',
         ],
     }
     for path, phrases in required.items():

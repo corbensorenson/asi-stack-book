@@ -25,7 +25,7 @@ OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 MANIFEST = ROOT / "book_structure.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "Planning.lean"
 
 COMMAND = "python3 scripts/validate_planning_scheduler_state_probe.py"
@@ -598,11 +598,11 @@ def validate_surfaces(errors: list[str]) -> None:
             "Planning scheduler-state probe",
             rel(RESULT),
         ],
-        VALIDATE_BOOK: [
+        VALIDATION_REGISTRY: [
             "scripts/validate_planning_scheduler_state_probe.py",
             "docs/planning_scheduler_state_probe.md",
             "experiments/planning_scheduler_state/results/2026-07-02-local.json",
-            'run_validator("validate_planning_scheduler_state_probe.py")',
+            '"script": "validate_planning_scheduler_state_probe.py"',
         ],
     }
     for path, phrases in required.items():

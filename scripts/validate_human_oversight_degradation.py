@@ -29,7 +29,7 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 BOOK_STRUCTURE = ROOT / "book_structure.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "RuntimeAdapters.lean"
 
@@ -328,13 +328,13 @@ def validate_surfaces(errors: list[str]) -> None:
                 "approval fatigue",
             ],
         ),
-        rel(VALIDATE_BOOK): (
-            VALIDATE_BOOK,
+        rel(VALIDATION_REGISTRY): (
+            VALIDATION_REGISTRY,
             [
                 "scripts/validate_human_oversight_degradation.py",
                 "docs/human_oversight_degradation_fixture.md",
                 rel(RESULT),
-                'run_validator("validate_human_oversight_degradation.py")',
+                '"script": "validate_human_oversight_degradation.py"',
             ],
         ),
         rel(LEAN_FILE): (

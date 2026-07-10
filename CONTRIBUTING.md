@@ -1,6 +1,8 @@
 # Contributing
 
-This repository is the canonical source for a living technical book. Contributions should improve the book without weakening its evidence discipline.
+This repository is the canonical source for a living technical book. The manuscript is in an author-only prepublication phase: external contributions, review requests, unsolicited patches, and manuscript submissions are not being accepted before the author declares the book complete.
+
+Issues and pull requests may be closed without incorporation during this phase. Public visibility is not an invitation to contribute and does not grant reuse rights. The technical rules below document the repository's internal discipline and the standard a future contribution policy would inherit; they are not current contribution acceptance terms.
 
 ## Ground Rules
 
@@ -12,7 +14,7 @@ This repository is the canonical source for a living technical book. Contributio
 - Keep speculative claims explicitly labeled.
 - Update `appendices/F_changelog.qmd` for meaningful structural, source, evidence, proof, or publication changes.
 
-## Before Opening a Pull Request
+## Internal change gate
 
 Run:
 

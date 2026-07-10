@@ -27,7 +27,7 @@ ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
 LEDGER_MD = ROOT / "docs" / "contribution_novelty_ledger.md"
 LEDGER_JSON = ROOT / "docs" / "contribution_novelty_ledger.json"
-VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
+VALIDATION_REGISTRY = ROOT / "validation" / "registry.json"
 LEAN_FILE = ROOT / "lean" / "AsiStackProofs" / "CompactGenerativeSystems.lean"
 
 COMMAND = "python3 scripts/validate_residual_honesty_conservation.py"
@@ -383,10 +383,10 @@ def validate_surfaces(errors: list[str]) -> None:
         if rel(RESULT) not in text_blob(row):
             errors.append(f"{rel(LEDGER_JSON)} residual_honesty row must reference {rel(RESULT)}.")
     require_surface(
-        VALIDATE_BOOK,
+        VALIDATION_REGISTRY,
         [
             "scripts/validate_residual_honesty_conservation.py",
-            'run_validator("validate_residual_honesty_conservation.py")',
+            '"script": "validate_residual_honesty_conservation.py"',
         ],
         errors,
     )
