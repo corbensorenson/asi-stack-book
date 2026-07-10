@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 49 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 50 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 49,
+    "manifest_chapter_core_claims": 50,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 27,
+    "accepted_no_promotion_dispositions": 28,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 49
+    "chapter_core_claims_remaining_at_argument": 50
   },
   "dispositions": [
     {
@@ -1973,6 +1973,45 @@
       "formal_or_prototype_work": "Add contamination, saturation, and transfer negative controls.",
       "human_reader_focus": "Explain why benchmark gains can become a trap.",
       "what_would_move_this": "Ratchet fixture blocks promotion on contaminated or saturated benchmark.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "capability-thresholds-and-deployment-commitments.core",
+      "chapter_id": "capability-thresholds-and-deployment-commitments",
+      "chapter_title": "Capability Thresholds and Deployment Commitments",
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_file": "chapters/capability-thresholds-and-deployment-commitments.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A governed stack treats capability thresholds as versioned commitments rather than headline scores: it records the capability domain, threat model, task and evaluation envelope, elicitation and access conditions, threshold definition and uncertainty, baseline and coverage date, required safeguards and verification criteria, deadline, exception authority, residual owner, and release decision; a crossing or non-crossing can alter only the explicitly governed deployment path and cannot by itself establish general capability, safeguard sufficiency, safety, readiness, or authority to deploy.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "public-safe domain-scoped threshold-commitment workload with baselines, coverage, uncertainty, and negative controls",
+        "independent safeguard-verification and exception-review records with residual and release-path outcomes",
+        "accepted transition for a narrowed threshold-commitment routing claim"
+      ],
+      "blockers": [
+        "no local capability assessment, threshold system, safeguard verification, or deployment process",
+        "no measured threshold validity, metric comparability, safeguard efficacy, or residual-risk result",
+        "finite theorems do not establish assessment correctness, threshold adequacy, safety, readiness, authority, or generality"
+      ],
+      "promotion_burden": "The chapter has source-noted scoped measurement and published-policy comparators plus finite routing theorems, but no ASI Stack capability assessment, time-horizon task suite, threshold determination, safeguard verification, exception review, release decision, or deployment result has been accepted as evidence for the broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove a local capability threshold, time horizon, autonomy level, or dangerous capability",
+        "does not prove safeguard efficacy, exception quality, readiness, release authority, or safe deployment",
+        "does not prove model quality, safety, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 5 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-noted time-horizon and threshold-commitment comparators plus a finite safeguard-block route",
+      "formal_or_prototype_work": "Build a public-safe threshold-commitment record with domain, threat, evaluation envelope, baseline, coverage, uncertainty, safeguards, verification, exception, residual, and affected release-path fields.",
+      "human_reader_focus": "Explain a threshold as a promise made before a result, rather than a score that retroactively clears deployment.",
+      "what_would_move_this": "A replayed domain-scoped commitment workload with stale-coverage, incomparable-elicitation, expired-exception, missing-verification, and attempted-release controls; no local threshold, capability, safeguard, readiness, safety, or deployment claim.",
       "relevant_non_core_transition_refs": []
     },
     {

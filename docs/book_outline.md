@@ -3140,7 +3140,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 218 proof targets, 57 Lean modules, 1060 theorem declarations, 870 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 219 proof targets, 58 Lean modules, 1062 theorem declarations, 872 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3234,6 +3234,61 @@ Lean proof targets:
 | `lean:benchmarks.ratchet.operational_invariant` | `AsiStackProofs.BenchmarkRatchets` | A capability promotion requires benchmark evidence and preserved regression records. | implemented |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `AsiStackProofs.BenchmarkRatchets` | A saturated benchmark cannot be the sole basis for higher readiness promotion. | implemented |
 | `lean:benchmarks.ratchet.fixture_bridge` | `AsiStackProofs.BenchmarkRatchets` | The benchmark anti-Goodhart fixture bridge mirrors 2 valid fixtures, 5 expected-invalid controls, promotion-ready, regression-floor, missing-checks, blocked-ratchet policy, reward-as-truth, saturated-promotion, release-approval, no-support-promotion, and non-claim-boundary facts. | implemented |
+
+### Capability Thresholds and Deployment Commitments
+
+Stable ID: `capability-thresholds-and-deployment-commitments`
+
+Chapter job: bind a scoped capability assessment to a versioned, predeclared
+deployment response without converting a score, a time-horizon estimate, a
+crossing, or a non-crossing into a general capability, safety, readiness, or
+authority conclusion.
+
+Core claim: A governed stack treats capability thresholds as versioned commitments rather than headline scores: it records the capability domain, threat model, task and evaluation envelope, elicitation and access conditions, threshold definition and uncertainty, baseline and coverage date, required safeguards and verification criteria, deadline, exception authority, residual owner, and release decision; a crossing or non-crossing can alter only the explicitly governed deployment path and cannot by itself establish general capability, safeguard sufficiency, safety, readiness, or authority to deploy.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_metr_time_horizons_2025`, `ext_anthropic_rsp_2026`, `ext_openai_preparedness_framework_2025` | Read first for scoped measurement, policy-commitment, safeguard, report, reassessment, and limitation vocabulary. |
+| Supporting | `benchmaxxing`, `theseus_architecture_gate` | Use for baseline, coverage, residual, regression, gate-version, and re-evaluation connections without treating either as a local threshold or deployment result. |
+| Source-setting boundary | all listed sources | No ASI Stack assessment, time horizon, threshold crossing, safeguard verification, exception, release decision, readiness result, or deployment result has been run. |
+
+Draft arc:
+
+- Problem: a scoped score or evaluation result can silently become deployment clearance when no prior record says what the result is allowed to change.
+- Insufficiency: benchmark integrity, evaluation integrity, readiness, technical safeguards, and evidence states each own adjacent decisions; none owns the versioned if-then deployment commitment.
+- Mechanism: record capability domain, threat model, evaluation envelope, elicitation/access conditions, threshold rule, uncertainty, baseline, coverage date, safeguards, verification criteria, deadline, exception authority, re-evaluation triggers, residual owner, and affected release path before interpretation.
+- Mechanism: retain assessment, threshold-decision, safeguard-verification, residual-review, and release-authority records separately so a favorable score cannot inherit authority from another layer.
+- Mechanism: version commitments prospectively; preserve change rationale, authority, scope, timing, exception expiry, compensating controls, and residual ownership.
+- Mechanism: route stale, incomparable, under-elicited, unclear, or out-of-scope assessment to re-evaluation, escalation, or residual escrow, and block a crossed threshold with missing verified safeguards.
+
+Primary invariants:
+
+- A threshold is bound to named domain, threat model, evaluation envelope, policy version, coverage date, and affected deployment path.
+- A score, estimate, benchmark result, crossing, or non-crossing does not establish general autonomy, safety, readiness, or deployment clearance.
+- Required safeguards are separately completed and verified before a crossed threshold can release its affected path.
+- Exceptions preserve scope, rationale, approver, review trigger, compensating controls, and residual owner.
+
+Failure modes to cover:
+
+- Metric laundering and cross-domain collapse.
+- Retroactive commitment drift and threshold gaming.
+- Safeguard theater and exception laundering.
+- Stale, under-elicited, incomparable, or out-of-scope assessment interpreted as clearance.
+
+Draft deliverables:
+
+- A versioned threshold-commitment record with its assessment, safeguard, exception, residual, and release-path boundaries.
+- Source notes for the time-horizon and published-policy comparators plus supporting benchmark and gate connections.
+- Implemented Lean routing target for missing verified safeguards after a crossed scoped threshold; it is not a capability, safety, readiness, or deployment proof.
+- Planned public-safe synthetic commitment workload with stale-coverage, incomparable-elicitation, expired-exception, missing-verification, and attempted-release fixtures.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `AsiStackProofs.CapabilityThresholds` | A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI. | implemented |
 
 ### Adversarial Evaluation, Sandbagging, and Training-Time Deception
 

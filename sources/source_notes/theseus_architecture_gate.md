@@ -42,6 +42,7 @@ The Theseus architecture gate is a pre-training promotion check. It prevents hea
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `capability-thresholds-and-deployment-commitments` (Capability Thresholds and Deployment Commitments)
 - `integrated-reference-architecture` (Integrated Reference Architecture)
 - `project-theseus-as-report-first-implementation-reference` (Project Theseus as Report-First Implementation Reference)
 - `prototype-roadmap` (Prototype Roadmap)
@@ -49,6 +50,7 @@ The Theseus architecture gate is a pre-training promotion check. It prevents hea
 ## Claims To Add Or Update
 
 - The source can support source-derived discussion of readiness gates as pre-training controls and residual-producing promotion checks.
+- Use its versioned gate, residual, and rerun vocabulary as an implementation-reference comparator for threshold re-evaluation; it does not establish a threshold, crossing, safeguard verification, release decision, or current readiness result.
 - It should not be used to claim current readiness unless the latest report artifacts are inspected or regenerated; the static ASI-side import supports only bounded implementation-reference discussion.
 
 ## Open Questions

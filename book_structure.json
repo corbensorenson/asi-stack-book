@@ -11112,6 +11112,144 @@
           ]
         },
         {
+          "id": "capability-thresholds-and-deployment-commitments",
+          "title": "Capability Thresholds and Deployment Commitments",
+          "file": "chapters/capability-thresholds-and-deployment-commitments.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_metr_time_horizons_2025",
+            "ext_anthropic_rsp_2026",
+            "ext_openai_preparedness_framework_2025",
+            "benchmaxxing",
+            "theseus_architecture_gate"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_metr_time_horizons_2025",
+              "ext_anthropic_rsp_2026",
+              "ext_openai_preparedness_framework_2025"
+            ],
+            "supporting": [
+              "benchmaxxing",
+              "theseus_architecture_gate"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "The external policies and time-horizon paper are source-setting comparators. No ASI Stack capability assessment, time horizon, threshold crossing, safeguard verification, exception, release decision, or deployment result has been run."
+            ]
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_metr_time_horizons_2025",
+              "mapped_support": "Supports a scoped comparator for a capability measurement envelope with task family, success definition, human baseline, agent scaffold, uncertainty, coverage, and external-validity limits.",
+              "limits": "Does not establish a local time horizon, general autonomy, dangerous capability, deployment threshold, safeguard sufficiency, safety, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_metr_time_horizons_2025.md:14-67"
+              ],
+              "passage_review_note": "Reviewed primary arXiv HTML paper metric definition, task/baseline framing, and stated limitations as recorded in the source note; no task, agent, human baseline, estimate, or result was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_anthropic_rsp_2026",
+              "mapped_support": "Supports a scoped comparator for versioned capability thresholds, threshold-linked safeguards, risk-report records, policy revisions, and explicit change-control obligations.",
+              "limits": "Does not establish ASI Stack threshold adequacy, policy compliance, safeguard implementation or effectiveness, deployment readiness, safety, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_anthropic_rsp_2026.md:14-67"
+              ],
+              "passage_review_note": "Reviewed official policy page for version history, capability-threshold and safeguard language, report obligations, and revision framing as recorded in the source note; no policy or safeguard was implemented or audited locally.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openai_preparedness_framework_2025",
+              "mapped_support": "Supports a scoped comparator for threshold-linked operational commitments, distinct capability and safeguards reports, residual-risk review, and reassessment before deployment decisions.",
+              "limits": "Does not establish ASI Stack threshold adequacy, policy compliance, safeguard implementation or effectiveness, deployment readiness, safety, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_openai_preparedness_framework_2025.md:14-67"
+              ],
+              "passage_review_note": "Reviewed official framework page for risk-category selection, threshold-linked commitments, report roles, residual-risk review, and reassessment as recorded in the source note; no framework process or result was reproduced locally.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "benchmaxxing",
+              "mapped_support": "Supports retaining benchmark lifecycle, baseline, coverage, regression, holdout, and residual records rather than treating an isolated score as a readiness or threshold decision.",
+              "limits": "Does not establish capability measurement quality, a local threshold, threshold crossing, safeguard effectiveness, safety, or a deployment result.",
+              "passage_refs": [
+                "sources/source_notes/benchmaxxing.md:11-30"
+              ],
+              "passage_review_note": "Reviewed local raw-cache-backed source note; no benchmark run, threshold evaluation, or deployment decision was performed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "theseus_architecture_gate",
+              "mapped_support": "Supports a local implementation-reference comparator for versioned pre-training gates, residual-producing failures, re-run triggers, and the distinction between a green gate and sufficient deployment evidence.",
+              "limits": "Does not establish a current Theseus gate rerun, local threshold system, safeguard effectiveness, readiness, deployment, safety, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/theseus_architecture_gate.md:11-30"
+              ],
+              "passage_review_note": "Reviewed local project source note and its bounded static import context; no clean current Theseus replay or threshold decision was run.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "problem": "A system can collect a capability score, a time-horizon estimate, or a risk-evaluation result without recording which future safeguard, release constraint, exception authority, or re-evaluation obligation that result is meant to trigger.",
+          "insufficient": "Benchmark Ratchets owns measurement integrity and regression pressure, Adversarial Evaluation owns elicitation and observation integrity, Readiness Gates owns technical admission, and Recursive Self-Improvement owns bounded system change, but none owns the versioned if-then commitment that connects a scoped capability assessment to a predeclared deployment response.",
+          "core_claim": "A governed stack treats capability thresholds as versioned commitments rather than headline scores: it records the capability domain, threat model, task and evaluation envelope, elicitation and access conditions, threshold definition and uncertainty, baseline and coverage date, required safeguards and verification criteria, deadline, exception authority, residual owner, and release decision; a crossing or non-crossing can alter only the explicitly governed deployment path and cannot by itself establish general capability, safeguard sufficiency, safety, readiness, or authority to deploy.",
+          "mechanism": [
+            "Create a threshold contract before interpreting the assessment: it names a capability domain and threat model, task/evaluation envelope, success or elicitation conditions, threshold rule, uncertainty treatment, coverage date, required safeguard package, verification criteria, exception authority, re-evaluation triggers, residual owner, and affected release path.",
+            "Keep the capability result, threshold decision, safeguard-completion evidence, residual-risk review, and release authority in separate records so a favorable score or a threshold non-crossing cannot become automatic clearance.",
+            "Version every commitment and make changes prospective and reviewable: preserve the policy version, prior obligation, change rationale, authority, scope, and whether an evaluation began before or after the change.",
+            "Route a crossed threshold without verified safeguards to block or escalation; route an unclear, stale, incomparable, or under-elicited assessment to re-evaluation or residual escrow rather than a convenient non-crossing."
+          ],
+          "interfaces": [
+            "Benchmark Ratchets and Anti-Goodhart Evidence owns measurement integrity, baselines, holdouts, saturation, and regression; this chapter owns what a scoped result commits the organization to do before a named release path may continue.",
+            "Adversarial Evaluation, Sandbagging, and Training-Time Deception owns whether an observation was elicited and selected under trustworthy conditions; its integrity findings constrain threshold interpretation.",
+            "Readiness Gates, Residual Escrow, and Quarantine owns operational admission, quarantine, and residual custody after a threshold contract has declared the deployment constraint.",
+            "Security Kernel, Model-Weight Custody, and Runtime Adapters own the technical safeguards and authority boundaries a threshold may require; this chapter does not implement them.",
+            "Evidence States and Claim Discipline owns support-state movement; a threshold record changes a bounded release path, not the support state of a broad claim.",
+            "Recursive Self-Improvement and Open-Ended Improvement Engines consume threshold commitments for self-improvement or automation-related risk conditions but retain their independent promotion and rollback gates."
+          ],
+          "invariants": [
+            "A threshold is bound to a named capability domain, threat model, evaluation envelope, policy version, coverage date, and affected deployment path.",
+            "A capability score, time-horizon estimate, benchmark result, or non-crossing is not a general autonomy, safety, readiness, or deployment-clearance claim.",
+            "A crossed threshold cannot release the affected path until its required safeguards have separately recorded their completion and verification criteria.",
+            "An unclear, stale, under-elicited, incomparable, or out-of-scope assessment routes to re-evaluation, escalation, or residual escrow rather than an implied non-crossing.",
+            "An exception cannot silently weaken a commitment: it records scope, rationale, approver, expiry or review trigger, compensating controls, and residual owner."
+          ],
+          "failure_modes": [
+            "Metric laundering treats one benchmark or time-horizon headline as a general capability or dangerousness threshold.",
+            "Retroactive commitment drift changes the applicable safeguard after an evaluation begins or a threshold is crossed.",
+            "Threshold gaming narrows tasks, access, prompts, or elicitation to manufacture a non-crossing.",
+            "Safeguard theater records a required control without a completion, verification, or residual-risk record.",
+            "Exception laundering lets competitive pressure or schedule pressure bypass the commitment without named authority, expiry, or compensating controls.",
+            "Cross-domain collapse treats cyber, biological, autonomy, replication, and other profiles as interchangeable because they share an aggregate score."
+          ],
+          "minimal_implementation": "A versioned threshold-commitment record with capability domain and threat model, evaluation envelope and coverage date, threshold rule and uncertainty, baseline/elicitation/access references, required safeguards and verification criteria, deadline, exception authority, re-evaluation triggers, residual owner, and affected release path. A finite Lean route blocks a requested release when a crossed threshold lacks verified safeguards.",
+          "beyond_state_of_art": "A mature capability-commitment control plane maintains a versioned portfolio of domain-specific thresholds with public or reviewable evaluation envelopes, uncertainty and coverage records, precommitted safeguards, independent verification, residual-risk review, prospective exception governance, and automatic re-evaluation when models, scaffolds, elicitation, or threat models change. It coordinates release, security, monitoring, access, rollback, and disclosure obligations without reducing diverse dangerous-capability profiles to one autonomy scalar. This is a target architecture, not a claim that this repository has measured capability, set an adequate threshold, verified safeguards, or achieved safe deployment.",
+          "codex_tests": [
+            "Crossed-threshold safeguard-completeness route",
+            "Stale or incomparable assessment residual fixture",
+            "Exception-expiry and compensating-control negative control",
+            "Matched threshold-commitment workload"
+          ],
+          "lean_module": "AsiStackProofs.CapabilityThresholds",
+          "proof_targets": [
+            {
+              "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
+              "module": "AsiStackProofs.CapabilityThresholds",
+              "target": "A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "v0.1 chapter draft",
+          "open_evidence_gaps": [
+            "No ASI Stack capability assessment, time-horizon task suite, human baseline, dangerous-capability profile, threshold crossing, safeguard verification, exception review, release decision, or deployment result has been run.",
+            "No local result establishes threshold validity, metric comparability, capability level, time horizon, general autonomy, safeguard efficacy, residual-risk reduction, readiness, safety, or authority to deploy.",
+            "The finite Lean route establishes only structured-record consequences of a crossed threshold with missing verified safeguards; it does not establish that the threshold, assessment, safeguard, exception, or reviewer is correct."
+          ]
+        },
+        {
           "id": "adversarial-evaluation-sandbagging-and-training-time-deception",
           "title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
           "file": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",

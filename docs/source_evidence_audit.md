@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 49 |
-| Assigned source/chapter pairs | 464 |
-| Exact claim-source mappings | 456 |
+| Chapters audited | 50 |
+| Assigned source/chapter pairs | 469 |
+| Exact claim-source mappings | 461 |
 | Unmapped assigned pairs | 8 |
-| Source notes present for assigned pairs | 464 |
-| Source notes listing assigned chapter | 464 |
-| Passage-reviewed mappings recorded | 456 |
-| Support-state counts | {"argument": 49} |
+| Source notes present for assigned pairs | 469 |
+| Source notes listing assigned chapter | 469 |
+| Passage-reviewed mappings recorded | 461 |
+| Support-state counts | {"argument": 50} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -73,6 +73,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
+| `capability-thresholds-and-deployment-commitments` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 5 | 3 | 5 | 5 | 3 | argument | passage review required before source-derived promotion |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 27 | argument | eligible for support review |
 | `data-engines-continual-learning-and-unlearning` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
@@ -92,8 +93,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `viea` | 23 | yes |
 | `talos` | 22 | yes |
 | `moecot` | 22 | yes |
+| `benchmaxxing` | 17 | yes |
 | `rmi` | 16 | yes |
-| `benchmaxxing` | 16 | yes |
 | `scf` | 15 | yes |
 | `spinoza` | 15 | yes |
 | `vcm_public` | 12 | yes |
@@ -103,6 +104,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `genesiscode` | 10 | yes |
 | `verification_bandwidth` | 10 | yes |
 | `planforge` | 10 | yes |
+| `theseus_architecture_gate` | 8 | yes |
 | `theseus_operator_os` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
 | `cgs` | 7 | yes |
@@ -111,7 +113,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `alignment_field` | 7 | yes |
 | `field_of_god_ai_constitution` | 7 | yes |
 | `theseus_self_evolution_system` | 7 | yes |
-| `theseus_architecture_gate` | 7 | yes |
 | `tokenmana` | 7 | yes |
 | `simulation_scaling` | 6 | yes |
 | `vcm_editable` | 6 | yes |
@@ -190,6 +191,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_reluplex_2017` | 1 | yes |
 | `temporal_coil_research` | 1 | yes |
 | `coil_attention_memory` | 1 | yes |
+| `ext_metr_time_horizons_2025` | 1 | yes |
+| `ext_anthropic_rsp_2026` | 1 | yes |
+| `ext_openai_preparedness_framework_2025` | 1 | yes |
 | `ext_alignment_faking_2024` | 1 | yes |
 | `ext_ai_sandbagging_2024` | 1 | yes |
 | `ext_emergent_misalignment_reward_hacking_2025` | 1 | yes |
@@ -552,6 +556,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
+| `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_metr_time_horizons_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_anthropic_rsp_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_openai_preparedness_framework_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
+| `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `benchmaxxing` | unmapped | note present | chapter listed | not passage-reviewed |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `rmi` | unmapped | note present | chapter listed | not passage-reviewed |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_alignment_faking_2024` | mapped | note present | chapter listed | passage-reviewed |

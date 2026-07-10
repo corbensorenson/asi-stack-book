@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 218 |
-| Manifest status counts | {"implemented": 218} |
-| Triage class counts | {"formal-invariant": 218} |
-| Lean modules referenced | 57 |
-| Chapters with proof targets | 49 |
+| Proof targets audited | 219 |
+| Manifest status counts | {"implemented": 219} |
+| Triage class counts | {"formal-invariant": 219} |
+| Lean modules referenced | 58 |
+| Chapters with proof targets | 50 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -38,6 +38,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Authority.lean` | 4 | 29 | 10 | 6 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 8 | 5 | 4 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 4 | 2 | 2 |
+| `lean/AsiStackProofs/CapabilityThresholds.lean` | 1 | 2 | 1 | 1 |
 | `lean/AsiStackProofs/ClaimLedger.lean` | 4 | 20 | 7 | 5 |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | 3 | 14 | 3 | 3 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 6 | 4 | 4 |
@@ -99,6 +100,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 3 | 3 | 0 | 0 |
 | `capability-replacement-and-rollback` | 6 | 6 | 0 | 0 |
+| `capability-thresholds-and-deployment-commitments` | 1 | 1 | 0 | 0 |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 3 | 3 | 0 | 0 |
 | `claim-ledgers-and-belief-revision` | 4 | 4 | 0 | 0 |
 | `cognitive-compilation-and-semantic-ir` | 3 | 3 | 0 | 0 |
@@ -327,6 +329,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:benchmarks.ratchet.operational_invariant` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:benchmarks.ratchet.fixture_bridge` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:adversarial_evaluation.selection_context.failure_blocks_promotion` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |

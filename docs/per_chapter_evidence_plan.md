@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-09
 
-This file is the active 49-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the active 50-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ most two direct support lanes. The remaining lanes stay `planned, not
 executed`; they must not receive synthetic fixtures, pass/fail status, or
 support-state pressure merely for coverage. The active cycle selection is
 recorded in `docs/v1_x_active_evidence_cycle.md`: three lanes are selected and
-the other 46 remain planned-only.
+the other 47 remain planned-only.
 
 Selection criteria:
 
@@ -84,6 +84,7 @@ support-state transition by itself.
 | III | `coilra-multicoil-rope-and-cyclic-mixers` | Circle/Coil RoPE receipt lane | Extend rope certificate replay and structural-not-quality boundaries. | Show what cyclic position evidence can and cannot say. | Receipt validates distinguishability boundary and rejects performance overclaim. |
 | IV | `executable-specifications-and-lean-proof-envelope` | Lean proof-depth work plus schema crosswalk | Keep proof adequacy, proof-depth, and protocol crosswalk current. | Teach readers how to read proofs without overstating them. | Proof matrix distinguishes finite-record proof, derived invariant, and executable behavior. |
 | IV | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark anti-Goodhart harness plus external benchmarks | Add contamination, saturation, and transfer negative controls. | Explain why benchmark gains can become a trap. | Ratchet fixture blocks promotion on contaminated or saturated benchmark. |
+| IV | `capability-thresholds-and-deployment-commitments` | Source-noted time-horizon and threshold-commitment comparators plus a finite safeguard-block route | Build a public-safe threshold-commitment record with domain, threat, evaluation envelope, baseline, coverage, uncertainty, safeguards, verification, exception, residual, and affected release-path fields. | Explain a threshold as a promise made before a result, rather than a score that retroactively clears deployment. | A replayed domain-scoped commitment workload with stale-coverage, incomparable-elicitation, expired-exception, missing-verification, and attempted-release controls; no local threshold, capability, safeguard, readiness, safety, or deployment claim. |
 | IV | `adversarial-evaluation-sandbagging-and-training-time-deception` | Source-noted primary experiments plus a finite selection-context and independent-evaluation promotion boundary | Build a public-safe evaluation-integrity record with baseline and altered selection/monitor contexts, held-out controls, a monitor-interference negative case, residuals, and independent replay. | Explain why an evaluation is an observation made under conditions, not a complete statement of ability or safety. | A replayed, workload-scoped cross-context comparison with declared baselines, negative controls, provenance, residuals, and independent review; no local deception, general capability, or safety claim. |
 | IV | `policy-optimization-and-learning-from-feedback` | Policy-optimization fixtures plus external RLHF/RL literature | Add reward-boundary, verifier reward, and no-reward-as-truth cases. | Explain policy optimization as governance of learning signals. | Policy update cannot treat reward as truth without evidence boundary. |
 | IV | `data-engines-continual-learning-and-unlearning` | Public-safe data-admission receipt plus source-noted unlearning and synthetic-data literature | Build a frozen-baseline workload that compares replacement, accumulation, replay, quarantine, retraining, and descendant-deletion routes with contamination controls. | Explain how learning inputs acquire history, and why deleting a row is not the same as proving its effects are gone. | A replayed, workload-scoped comparison with heldout contamination controls, negative cases, descendant-scope report, residuals, and independent review; no general unlearning, safety, or model-quality claim. |

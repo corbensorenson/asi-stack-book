@@ -737,6 +737,34 @@
       ]
     },
     {
+      "claim_id": "capability-thresholds-and-deployment-commitments.core",
+      "chapter_id": "capability-thresholds-and-deployment-commitments",
+      "chapter_title": "Capability Thresholds and Deployment Commitments",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-noted scoped measurement and published-policy comparators plus finite routing theorems, but no ASI Stack capability assessment, time-horizon task suite, threshold determination, safeguard verification, exception review, release decision, or deployment result has been accepted as evidence for the broad claim.",
+      "required_evidence": [
+        "public-safe domain-scoped threshold-commitment workload with baselines, coverage, uncertainty, and negative controls",
+        "independent safeguard-verification and exception-review records with residual and release-path outcomes",
+        "accepted transition for a narrowed threshold-commitment routing claim"
+      ],
+      "blockers": [
+        "no local capability assessment, threshold system, safeguard verification, or deployment process",
+        "no measured threshold validity, metric comparability, safeguard efficacy, or residual-risk result",
+        "finite theorems do not establish assessment correctness, threshold adequacy, safety, readiness, authority, or generality"
+      ],
+      "non_claims": [
+        "does not prove a local capability threshold, time horizon, autonomy level, or dangerous capability",
+        "does not prove safeguard efficacy, exception quality, readiness, release authority, or safe deployment",
+        "does not prove model quality, safety, or ASI"
+      ],
+      "refs": [
+        "chapters/capability-thresholds-and-deployment-commitments.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#capability-thresholds-and-deployment-commitments.core"
+      ]
+    },
+    {
       "claim_id": "scalable-oversight-and-adversarial-ai-control.core",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
       "chapter_title": "Scalable Oversight and Adversarial AI Control",

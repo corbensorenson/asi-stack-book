@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-10 - Add Capability Thresholds and Deployment Commitments
+
+- Added the manifest-driven **Capability Thresholds and Deployment Commitments**
+  chapter after Benchmark Ratchets, with live and Human Reading Path prose, a
+  commitment-flow diagram, source crosswalk, implementation horizons,
+  evidence-plan row, no-promotion disposition, and burn-down entry.
+- Added source notes for METR's scoped time-horizon measure and public
+  Responsible Scaling/Preparedness policy comparators. They do not provide a
+  local time horizon, capability assessment, threshold, safeguard verification,
+  exception, readiness, release, safety, or deployment result.
+- Added `AsiStackProofs.CapabilityThresholds` finite routes that block an
+  affected requested release when a crossed scoped threshold lacks verified
+  safeguards and route a record missing its evaluation envelope to
+  re-evaluation.
+- Boundary: the chapter and proof do not establish assessment correctness,
+  threshold adequacy, metric comparability, capability level, safeguard
+  efficacy, readiness, release authority, safety, ASI, or a chapter-core
+  support-state transition.
+
 ## 2026-07-10 - Add Scalable Oversight and Adversarial AI Control
 
 - Added the manifest-driven **Scalable Oversight and Adversarial AI Control**
@@ -73,7 +92,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 218 proof targets, 57 Lean modules, 1060 theorem declarations, 870 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 219 proof targets, 58 Lean modules, 1062 theorem declarations, 872 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

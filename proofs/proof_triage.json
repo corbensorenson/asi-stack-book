@@ -2181,6 +2181,16 @@
       "rationale": "Implemented in AsiStackProofs.Deliberation as a finite high-risk handoff boundary. It routes missing independent verification to review and does not establish verifier independence, verifier correctness, reasoning quality, trace faithfulness, safety, model quality, or ASI."
     },
     {
+      "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
+      "chapter_id": "capability-thresholds-and-deployment-commitments",
+      "module": "AsiStackProofs.CapabilityThresholds",
+      "formal_target": "A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.CapabilityThresholds as a finite safeguard-completeness boundary, with a companion missing-evaluation-envelope route. It does not establish assessment correctness, threshold adequacy, safeguard efficacy, reviewer correctness, capability level, readiness, safety, authority, or ASI."
+    },
+    {
       "tag": "lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
       "module": "AsiStackProofs.ScalableOversight",
@@ -2191,5 +2201,5 @@
       "rationale": "Implemented in AsiStackProofs.ScalableOversight as a finite high-risk admission boundary, with a companion baseline-completeness route. It does not establish reviewer independence, supervisor calibration, debate or consultancy efficacy, training safety, execution authority, model quality, safety, or ASI."
     }
   ],
-  "record_count": 218
+  "record_count": 219
 }

@@ -1,7 +1,7 @@
 {
   "actual_command_record": {
     "command": "python3 scripts/validate_resource_flagship_lane.py",
-    "elapsed_ms": 1547.451,
+    "elapsed_ms": 1418.726,
     "exit_code": 0,
     "output_excerpt": [
       "Resource flagship lane validation passed: 10 command replay(s), 26 tracked artifact digest(s), support-state effect none."
@@ -43,7 +43,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "reference_trace_replay",
-  "recorded_at_utc": "2026-07-10T05:58:10Z",
+  "recorded_at_utc": "2026-07-10T06:27:40Z",
   "reference_trace_record": {
     "artifacts": [
       "command://validate-resource-flagship-lane",
@@ -158,7 +158,7 @@
       "bytes": 22822,
       "lines": 500,
       "path": "experiments/resource_flagship_lane/results/2026-07-01-local.json",
-      "sha256": "6c952c870923ff834a1df1f04c3cd1610a0d52975b2d16d0e3acd9325db5db6d"
+      "sha256": "72ad2e8b6f4f020441a05cd92e667112ef8212b994968f754b519a12b233b6b4"
     },
     {
       "bytes": 19931,

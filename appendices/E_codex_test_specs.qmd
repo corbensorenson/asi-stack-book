@@ -390,6 +390,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Hidden benchmark transfer test | implemented | validated locally by synthetic fixtures; no hidden benchmark run |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Regression preservation test | implemented | validated locally by synthetic fixtures; no empirical regression suite run |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | Benchmark Ratchets and Anti-Goodhart Evidence | Benchmark anti-Goodhart fixture bridge | implemented | passes via deterministic Python fixture recomputation plus `AsiStackProofs.BenchmarkRatchets` finite fixture bridge; no benchmark-quality, hidden-holdout, policy-training, steward-execution, release-safety, support-transition, or chapter-core promotion claim |
+| `capability-thresholds-and-deployment-commitments` | Capability Thresholds and Deployment Commitments | Crossed-threshold safeguard-completeness route | planned | not run |
+| `capability-thresholds-and-deployment-commitments` | Capability Thresholds and Deployment Commitments | Stale or incomparable assessment residual fixture | planned | not run |
+| `capability-thresholds-and-deployment-commitments` | Capability Thresholds and Deployment Commitments | Exception-expiry and compensating-control negative control | planned | not run |
+| `capability-thresholds-and-deployment-commitments` | Capability Thresholds and Deployment Commitments | Matched threshold-commitment workload | planned | not run |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Evaluation-integrity record fixture | planned | not run |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Cross-context discrepancy probe | planned | not run |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Training-time deception boundary review | planned | not run |
@@ -528,16 +532,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 218 |
+| Proof targets covered by triage | 219 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 218 |
+| implemented | 219 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 218 |
+| implemented | formal-invariant | lean-candidate | 219 |

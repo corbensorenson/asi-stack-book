@@ -43,6 +43,7 @@ Benchmaxxing frames AI development as a performance ratchet: evaluate against a 
 - `readiness-gates-residual-escrow-and-quarantine` (Readiness Gates, Residual Escrow, and Quarantine)
 - `routing-heads-and-specialist-cores` (Routing Heads and Specialist Cores; includes folded MoECOT Runtime Crosswalk)
 - `benchmark-ratchets-and-anti-goodhart-evidence` (Benchmark Ratchets and Anti-Goodhart Evidence)
+- `capability-thresholds-and-deployment-commitments` (Capability Thresholds and Deployment Commitments)
 - `adversarial-evaluation-sandbagging-and-training-time-deception` (Adversarial Evaluation, Sandbagging, and Training-Time Deception)
 - `open-ended-improvement-engines` (Open-Ended Improvement Engines)
 - `fast-generation-architectures` (Fast Generation Architectures)
@@ -58,6 +59,7 @@ Benchmaxxing frames AI development as a performance ratchet: evaluate against a 
 - Benchmaxxing can support source-derived claims about benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, and architecture-change discipline after specific claims are mapped.
 - Use Benchmaxxing to require accepted-output, task-success, repair-cost, regression, and holdout measurements before any fast-generation mode is treated as an improvement.
 - Use Benchmaxxing to define benchmark, regression, holdout, saturation, and anti-Goodhart inputs for policy-update evaluation records; do not treat benchmark pressure itself as proof of reward quality.
+- Use its baseline, coverage, regression, and residual vocabulary for a threshold commitment's assessment inputs; it does not set a threshold, establish a crossing, verify a safeguard, or authorize deployment.
 - It should not be used to claim that any particular model, prototype, or chapter benchmark has passed unless the benchmark run is recorded separately.
 
 ## Open Questions

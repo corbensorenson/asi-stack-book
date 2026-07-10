@@ -5,6 +5,7 @@ import AsiStackProofs.ArtifactGraph
 import AsiStackProofs.ArtifactStewardAgents
 import AsiStackProofs.BibliographyPlan
 import AsiStackProofs.BenchmarkRatchets
+import AsiStackProofs.CapabilityThresholds
 import AsiStackProofs.ClaimLedger
 import AsiStackProofs.CognitiveCompilation
 import AsiStackProofs.CommandContracts

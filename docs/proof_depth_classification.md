@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 218 |
-| Lean modules scanned | 57 |
-| Theorem declarations classified | 1060 |
+| Proof targets in manifest | 219 |
+| Lean modules scanned | 58 |
+| Theorem declarations classified | 1062 |
 | Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 870 |
+| Derived/decomposed theorem declarations | 872 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 107 |
 | Safety-critical direct/projection declarations | 11 |
@@ -59,6 +59,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/Authority.lean` | system-boundaries-and-authority | 4 | 29 | 1 | 28 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | benchmark-ratchets-and-anti-goodhart-evidence | 3 | 8 | 2 | 6 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | open-research-agenda-and-bibliography-plan | 2 | 4 | 2 | 2 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CapabilityThresholds.lean` | capability-thresholds-and-deployment-commitments | 1 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ClaimLedger.lean` | claim-ledgers-and-belief-revision | 4 | 20 | 5 | 15 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | cognitive-compilation-and-semantic-ir | 3 | 14 | 2 | 12 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 2 | 6 | 2 | 4 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -256,6 +257,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `new_source_cannot_be_assigned_to_nonexistent_chapter` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_requires_source_note_or_ingested_source_artifact` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | `source_derived_claim_without_source_record_rejected` | derived_or_decomposed | no | uses cases, have, rw |
+| `lean/AsiStackProofs/CapabilityThresholds.lean` | `crossed_threshold_without_verified_safeguards_blocks_release` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/CapabilityThresholds.lean` | `missing_evaluation_envelope_requires_reevaluation` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `accepted_belief_revision_promotion_requires_evidence_handled_contradiction_and_increase` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `claim_update_preserves_prior_evidence_and_revision_history` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |
 | `lean/AsiStackProofs/ClaimLedger.lean` | `complete_claim_ledger_revision_accepts` | derived_or_decomposed | no | uses simp |

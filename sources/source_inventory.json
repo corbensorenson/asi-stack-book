@@ -1,5 +1,52 @@
 [
   {
+    "id": "ext_metr_time_horizons_2025",
+    "title": "Measuring AI Ability to Complete Long Software Tasks",
+    "priority": "external_literature",
+    "layer": "capability_measurement",
+    "chapter_targets": [
+      "capability-thresholds-and-deployment-commitments"
+    ],
+    "url": "https://arxiv.org/abs/2503.14499",
+    "notes": "Primary time-horizon comparator for an evaluation-specific, human-baselined capability metric and its external-validity limits; it does not establish local autonomy, general capability, a deployment threshold, safety, or an ASI Stack result.",
+    "source_type": "preprint",
+    "arxiv_id": "2503.14499",
+    "published": "2025-03-18",
+    "updated": "2026-02-25",
+    "citation_label": "Kwa et al. (2025), Measuring AI Ability to Complete Long Software Tasks",
+    "doi": "10.48550/arXiv.2503.14499"
+  },
+  {
+    "id": "ext_anthropic_rsp_2026",
+    "title": "Anthropic's Responsible Scaling Policy",
+    "priority": "external_literature",
+    "layer": "capability_commitments",
+    "chapter_targets": [
+      "capability-thresholds-and-deployment-commitments"
+    ],
+    "url": "https://www.anthropic.com/responsible-scaling-policy",
+    "notes": "Official policy comparator for capability thresholds, required safeguards, versioned commitments, safeguard upgrades, risk reports, and change control; it does not establish ASI Stack threshold accuracy, safeguard effectiveness, policy compliance, safety, or deployment readiness.",
+    "source_type": "official_docs",
+    "published": "2023-09-19",
+    "updated": "2026-07-08",
+    "citation_label": "Anthropic (2026), Responsible Scaling Policy v3.4"
+  },
+  {
+    "id": "ext_openai_preparedness_framework_2025",
+    "title": "Our updated Preparedness Framework",
+    "priority": "external_literature",
+    "layer": "capability_commitments",
+    "chapter_targets": [
+      "capability-thresholds-and-deployment-commitments"
+    ],
+    "url": "https://openai.com/index/updating-our-preparedness-framework/",
+    "notes": "Official framework comparator for threshold-linked operational commitments, capability and safeguards reports, residual-risk review, and reassessment; it does not establish ASI Stack threshold accuracy, safeguard effectiveness, policy compliance, safety, or deployment readiness.",
+    "source_type": "official_docs",
+    "published": "2025-04-15",
+    "updated": "2025-04-15",
+    "citation_label": "OpenAI (2025), Updated Preparedness Framework"
+  },
+  {
     "id": "ext_weak_to_strong_generalization_2023",
     "title": "Weak-to-Strong Generalization: Eliciting Strong Capabilities With Weak Supervision",
     "priority": "external_literature",
@@ -225,9 +272,10 @@
     "title": "Benchmaxxing: The Performance Ratchet",
     "priority": "must_use",
     "layer": "benchmarks_evidence",
-    "chapter_targets": [
-      "13"
-    ],
+  "chapter_targets": [
+    "13",
+    "capability-thresholds-and-deployment-commitments"
+  ],
     "url": "https://docs.google.com/document/d/1m1EycQk56VDh1Rg3IY8GYwkebIVn3bGAWIHs93a3628",
     "notes": "Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards."
   },
@@ -619,11 +667,12 @@
     "title": "Theseus Architecture Gate",
     "priority": "implementation_reference",
     "layer": "readiness_gate_governance",
-    "chapter_targets": [
-      "governance",
-      "benchmarking",
-      "prototype"
-    ],
+  "chapter_targets": [
+    "governance",
+    "benchmarking",
+    "prototype",
+    "capability-thresholds-and-deployment-commitments"
+  ],
     "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/ARCHITECTURE_GATE.md",
     "notes": "Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero."
   },
