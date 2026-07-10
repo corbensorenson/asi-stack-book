@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 50 |
-| Assigned source/chapter pairs | 469 |
-| Exact claim-source mappings | 461 |
+| Chapters audited | 51 |
+| Assigned source/chapter pairs | 473 |
+| Exact claim-source mappings | 465 |
 | Unmapped assigned pairs | 8 |
-| Source notes present for assigned pairs | 469 |
-| Source notes listing assigned chapter | 469 |
-| Passage-reviewed mappings recorded | 461 |
-| Support-state counts | {"argument": 50} |
+| Source notes present for assigned pairs | 473 |
+| Source notes listing assigned chapter | 473 |
+| Passage-reviewed mappings recorded | 465 |
+| Support-state counts | {"argument": 51} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -75,6 +75,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 5 | 3 | 5 | 5 | 3 | argument | passage review required before source-derived promotion |
+| `safety-cases-and-structured-assurance` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 27 | argument | eligible for support review |
 | `data-engines-continual-learning-and-unlearning` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
@@ -93,7 +94,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `viea` | 23 | yes |
 | `talos` | 22 | yes |
 | `moecot` | 22 | yes |
-| `benchmaxxing` | 17 | yes |
+| `benchmaxxing` | 18 | yes |
 | `rmi` | 16 | yes |
 | `scf` | 15 | yes |
 | `spinoza` | 15 | yes |
@@ -197,6 +198,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_alignment_faking_2024` | 1 | yes |
 | `ext_ai_sandbagging_2024` | 1 | yes |
 | `ext_emergent_misalignment_reward_hacking_2025` | 1 | yes |
+| `ext_gsn_community_standard_2011` | 1 | yes |
+| `ext_evaluations_safety_cases_scheming_2024` | 1 | yes |
+| `ext_aisi_safety_cases_2024` | 1 | yes |
 | `ext_trpo_2015` | 1 | yes |
 | `ext_ppo_2017` | 1 | yes |
 | `ext_remax_2023` | 1 | yes |
@@ -566,6 +570,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_alignment_faking_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_ai_sandbagging_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_emergent_misalignment_reward_hacking_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `ext_gsn_community_standard_2011` | mapped | note present | chapter listed | passage-reviewed |
+| `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `ext_evaluations_safety_cases_scheming_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `ext_aisi_safety_cases_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |

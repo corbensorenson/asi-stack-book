@@ -301,7 +301,4 @@ embarrassing exception to a previous deployment or research decision.
 
 ## Handoff
 
-Adversarial evaluation determines whether a learning signal is trustworthy
-enough to enter an update decision. Policy Optimization and Learning from Feedback owns the update lease, rollback, target policy, and reward boundary once the integrity record has preserved the evaluation-integrity residuals. It must
-carry forward the elicitation, monitor, selection, and cross-context limits
-rather than treating a passed record as authority to retrain or deploy.
+Adversarial Evaluation, Sandbagging, and Training-Time Deception determines whether an observation is trustworthy enough to support a bounded argument; Safety Cases and Structured Assurance now compiles those integrity limits with claims, evidence, assumptions, countercases, residuals, and authority boundaries before any later learning or release path can treat a passed evaluation as permission.

@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 219 |
-| Manifest status counts | {"implemented": 219} |
-| Triage class counts | {"formal-invariant": 219} |
-| Lean modules referenced | 58 |
-| Chapters with proof targets | 50 |
+| Proof targets audited | 220 |
+| Manifest status counts | {"implemented": 220} |
+| Triage class counts | {"formal-invariant": 220} |
+| Lean modules referenced | 59 |
+| Chapters with proof targets | 51 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -75,6 +75,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ResourceEconomics.lean` | 9 | 45 | 31 | 13 |
 | `lean/AsiStackProofs/Routing.lean` | 3 | 16 | 4 | 2 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 49 | 13 | 9 |
+| `lean/AsiStackProofs/SafetyCases.lean` | 1 | 2 | 1 | 1 |
 | `lean/AsiStackProofs/ScalableOversight.lean` | 1 | 2 | 1 | 1 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 11 | 8 | 5 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 5 | 6 |
@@ -136,6 +137,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `resource-economics-and-token-budgets` | 13 | 13 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 6 | 6 | 0 | 0 |
+| `safety-cases-and-structured-assurance` | 1 | 1 | 0 | 0 |
 | `scalable-oversight-and-adversarial-ai-control` | 1 | 1 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 4 | 4 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 0 | 0 |
@@ -331,6 +333,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:benchmarks.ratchet.fixture_bridge` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:adversarial_evaluation.selection_context.failure_blocks_promotion` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |

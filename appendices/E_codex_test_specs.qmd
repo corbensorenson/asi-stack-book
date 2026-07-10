@@ -397,6 +397,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Evaluation-integrity record fixture | planned | not run |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Cross-context discrepancy probe | planned | not run |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Training-time deception boundary review | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Unresolved-defeater safety-case route | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Missing acceptance-criterion negative control | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Stale case-dependency and re-review fixture | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Public-safe assurance-graph compilation workload | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | DPO/offline preference baseline test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | PPO online RL baseline test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | GRPO/RLOO toy math reward test | planned | not run |
@@ -532,16 +536,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 219 |
+| Proof targets covered by triage | 220 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 219 |
+| implemented | 220 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 219 |
+| implemented | formal-invariant | lean-candidate | 220 |

@@ -1,5 +1,46 @@
 # Changelog
 
+## 2026-07-10 - Begin historical AI project mining
+
+- Established a persistent, public-safe mining ledger for the historical AI
+  projects staged under the local old-project intake directory, including
+  extraction state, pinned project snapshots, completeness gates, and storage
+  classifications.
+- Added the first deep dossier and source note for the Compiled Cognitive
+  Architecture project at pinned commit `bd9afd16...`, covering durable
+  semantic memory, SBL/cognitive compilation, epistemic revision, tribunal and
+  no-silent-veto rules, self-modification boundaries, proof/runtime coupling,
+  benchmark truth, retry lineage, sovereign mesh design, and negative transfer
+  lessons.
+- Added real backlog and triage records. CCA is routed to existing chapters as
+  an implementation reference; a possible durable-semantic-memory chapter is
+  deferred until BeastBrain primary provenance is mined.
+- Recorded storage findings without deleting anything: CCA is 64.45 GiB, of
+  which 41.63 GiB is the canonical Rust target and 2.81 GiB is virtual
+  environments; its reachable Git history also contains generated binaries and
+  requires a backed-up rewrite or clean mirror for meaningful history shrink.
+- Boundary: no project training, benchmark, proof-to-runtime, deployment,
+  capability, safety, AGI, or ASI result was reproduced or promoted, and no
+  destructive cleanup was performed.
+
+## 2026-07-10 - Add Safety Cases and Structured Assurance
+
+- Added the manifest-driven **Safety Cases and Structured Assurance** chapter
+  after Adversarial Evaluation, with live and Human Reading Path prose, an
+  assurance-flow diagram, source crosswalk, implementation horizons,
+  evidence-plan row, no-promotion disposition, and burn-down entry.
+- Added source notes for the GSN Community Standard, evaluations-based safety
+  cases for AI scheming, and AISI's safety-case methodology. They are argument
+  structure and limitation comparators, not a local threat model, safety case,
+  countercase search, independent review, safety, readiness, or release result.
+- Added `AsiStackProofs.SafetyCases` finite routes that send an affected release
+  with an unresolved defeater to accountable review and route a missing
+  countercase review to a dedicated review state.
+- Boundary: the chapter and proof do not establish defeater correctness,
+  argument validity, evidence adequacy, hazard-model completeness, control
+  efficacy, safety, readiness, authority, ASI, or a chapter-core support-state
+  transition.
+
 ## 2026-07-10 - Add Capability Thresholds and Deployment Commitments
 
 - Added the manifest-driven **Capability Thresholds and Deployment Commitments**
@@ -92,7 +133,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 219 proof targets, 58 Lean modules, 1062 theorem declarations, 872 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 220 proof targets, 59 Lean modules, 1064 theorem declarations, 874 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

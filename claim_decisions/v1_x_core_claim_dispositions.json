@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 50 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 51 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 50,
+    "manifest_chapter_core_claims": 51,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 28,
+    "accepted_no_promotion_dispositions": 29,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 50
+    "chapter_core_claims_remaining_at_argument": 51
   },
   "dispositions": [
     {
@@ -2051,6 +2051,45 @@
       "formal_or_prototype_work": "Build a public-safe evaluation-integrity record with baseline and altered selection/monitor contexts, held-out controls, a monitor-interference negative case, residuals, and independent replay.",
       "human_reader_focus": "Explain why an evaluation is an observation made under conditions, not a complete statement of ability or safety.",
       "what_would_move_this": "A replayed, workload-scoped cross-context comparison with declared baselines, negative controls, provenance, residuals, and independent review; no local deception, general capability, or safety claim.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "safety-cases-and-structured-assurance.core",
+      "chapter_id": "safety-cases-and-structured-assurance",
+      "chapter_title": "Safety Cases and Structured Assurance",
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_file": "chapters/safety-cases-and-structured-assurance.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A governed stack compiles a safety case as a versioned, reviewable graph of scoped claims, argument strategies, evidence references, assumptions, defeaters, hazards, deployment context, acceptance criteria, authority, and residual ownership; a rendered or structurally complete graph can expose dependencies and block an affected release when required hazards, countercase review, acceptance criteria, or residuals are unresolved, but cannot itself establish safety, correct threat modeling, evidence adequacy, control effectiveness, readiness, or authority to deploy.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "public-safe scoped assurance-case compilation workload with explicit support, challenge, residual, and negative-control records",
+        "independent review of a bounded threat-model, evidence-adequacy, countercase, and acceptance-decision artifact",
+        "accepted transition for a narrowed assurance-routing or case-maintenance claim"
+      ],
+      "blockers": [
+        "no local safety case, threat model, hazard analysis, countercase search, or review workflow",
+        "no measured evidence adequacy, countercase quality, control efficacy, risk, readiness, or deployment result",
+        "finite theorems do not establish defeater correctness, case truth, safety, readiness, authority, or generality"
+      ],
+      "promotion_burden": "The chapter has source-noted assurance-notation and AI safety-case comparators plus a finite unresolved-defeater route, but no ASI Stack hazard analysis, threat model, safety case, countercase search, independent review, acceptance decision, readiness decision, release decision, or deployment result has been accepted as evidence for the broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove a complete safety case, adequate threat model, or adequate evidence",
+        "does not prove control effectiveness, safety, readiness, release authority, or safe deployment",
+        "does not prove model quality, safety, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 4 assigned sources; 4 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-noted GSN and AI safety-case comparators plus a finite unresolved-defeater route",
+      "formal_or_prototype_work": "Build a public-safe assurance-case record with scoped claim, hazard/deployment context, support/challenge references, assumptions, acceptance criterion, authority, residuals, and affected release path.",
+      "human_reader_focus": "Explain why a map of evidence is not evidence of safety, and why a recorded countercase should change what a team may do next.",
+      "what_would_move_this": "A replayed scoped case-compilation workload with support, stale dependency, unresolved-defeater, missing-acceptance, missing-residual, and affected-release controls; no local threat model, safety case, safety, readiness, authority, or deployment claim.",
       "relevant_non_core_transition_refs": []
     },
     {

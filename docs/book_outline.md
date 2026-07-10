@@ -3140,7 +3140,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 219 proof targets, 58 Lean modules, 1062 theorem declarations, 872 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 220 proof targets, 59 Lean modules, 1064 theorem declarations, 874 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3322,6 +3322,61 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:adversarial_evaluation.selection_context.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A finite evaluation-integrity record with missing selection context or independent evaluation blocks requested promotion without inferring deception, capability, safety, or intent. | implemented |
+
+### Safety Cases and Structured Assurance
+
+Stable ID: `safety-cases-and-structured-assurance`
+
+Chapter job: compile the stack's scoped claims, evidence, evaluation,
+threshold, safeguard, readiness, provenance, and residual references into a
+versioned assurance argument that exposes dependencies, assumptions,
+countercases, and decision boundaries without claiming the argument establishes
+safety.
+
+Core claim: A governed stack compiles a safety case as a versioned, reviewable graph of scoped claims, argument strategies, evidence references, assumptions, defeaters, hazards, deployment context, acceptance criteria, authority, and residual ownership; a rendered or structurally complete graph can expose dependencies and block an affected release when required hazards, countercase review, acceptance criteria, or residuals are unresolved, but cannot itself establish safety, correct threat modeling, evidence adequacy, control effectiveness, readiness, or authority to deploy.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_gsn_community_standard_2011`, `ext_evaluations_safety_cases_scheming_2024`, `ext_aisi_safety_cases_2024` | Read first for argument syntax, scoped safety-case methodology, evaluation dependencies, countercase search, uncertainty, and explicit limitations. |
+| Supporting | `benchmaxxing`; existing evidence, evaluation, threshold, readiness, provenance, and residual chapters | Mine Benchmaxxing's benchmark/regression/residual lineage first, then reference owned records by stable pointer; do not duplicate their truth conditions or use compilation to promote their claims. |
+| Source-setting boundary | all listed sources | No ASI Stack case, threat model, countercase search, control evaluation, independent review, acceptance, readiness, release, or deployment result has been run. |
+
+Draft arc:
+
+- Problem: the stack has many locally governed evidence and decision artifacts but no single argument surface that shows how a bounded release conclusion depends on them.
+- Insufficiency: a graph can document an asserted argument while still having weak evidence, an incomplete threat model, unresolved countercases, stale dependencies, or no authority to deploy.
+- Mechanism: declare deployment context, top claim, threat/hazard model, affected release path, decision authority, acceptance criterion, review deadline, and case version before compilation.
+- Mechanism: compile typed claim, strategy, evidence-reference, context, assumption, justification, defeater, countercase, safeguard, threshold, readiness, provenance, and residual nodes with explicit bounded relations.
+- Mechanism: treat active defeaters, stale evidence, missing countercase review, unresolved residuals, and scope mismatch as first-class nodes that route to repair, accountable review, or affected-path block.
+- Mechanism: keep compilation, independent review, case acceptance, readiness, and release as separate records; a complete graph is not a safety, readiness, or authority conclusion.
+
+Primary invariants:
+
+- Each top claim records context, hazard/threat scope, case version, acceptance criterion, authority, and affected release path.
+- Each support edge records the claimed property, evidence reference, strategy, and scope; graph connectivity is not adequacy.
+- An unresolved defeater, missing countercase review, missing acceptance criterion, or missing residual owner cannot silently clear a release path.
+- A rendered or notation-conformant graph cannot move support state, establish safety, or supply authority to deploy.
+- Case changes preserve prior version, rationale, reviewer, affected claims, and re-review trigger.
+
+Failure modes to cover:
+
+- Argument theater, defeater laundering, scope drift, evidence aliasing,
+  authority laundering, and maintenance rot.
+
+Draft deliverables:
+
+- A versioned assurance-case record with scoped claim, deployment/hazard context, support and challenge references, assumptions, acceptance criterion, authority, residuals, and affected release path.
+- Source notes for the GSN standard, evaluations-based scheming safety cases, and AISI safety-case methodology.
+- Implemented finite Lean route for unresolved-defeater review; it is not a safety case, risk analysis, evidence-adequacy proof, or release decision.
+- Planned public-safe compilation workload with accepted bounded support, stale dependency, unresolved defeater, missing acceptance, missing residual owner, and attempted-release cases.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `AsiStackProofs.SafetyCases` | A finite assurance-case record with a requested affected release and an unresolved defeater routes to accountable review rather than readiness release, without inferring that the defeater is correct, the case is false, the system is unsafe, or ASI. | implemented |
 
 ### Policy Optimization and Learning from Feedback
 

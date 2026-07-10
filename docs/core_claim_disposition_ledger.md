@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 50 |
+| Manifest chapter core claims | 51 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 28 |
+| Accepted no-promotion dispositions | 29 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 50 |
+| Core claims remaining at `argument` | 51 |
 
 ## Dispositions
 
@@ -61,6 +61,7 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/benchmark_ratchets_no_change.json` | Ratchet fixture blocks promotion on contaminated or saturated benchmark. |
 | `capability-thresholds-and-deployment-commitments.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed domain-scoped commitment workload with stale-coverage, incomparable-elicitation, expired-exception, missing-verification, and attempted-release controls; no local threshold, capability, safeguard, readiness, safety, or deployment claim. |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed, workload-scoped cross-context comparison with declared baselines, negative controls, provenance, residuals, and independent review; no local deception, general capability, or safety claim. |
+| `safety-cases-and-structured-assurance.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed scoped case-compilation workload with support, stale dependency, unresolved-defeater, missing-acceptance, missing-residual, and affected-release controls; no local threat model, safety case, safety, readiness, authority, or deployment claim. |
 | `policy-optimization-and-learning-from-feedback.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Policy update cannot treat reward as truth without evidence boundary. |
 | `data-engines-continual-learning-and-unlearning.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A replayed, workload-scoped comparison with heldout contamination controls, negative cases, descendant-scope report, residuals, and independent review; no general unlearning, safety, or model-quality claim. |
 | `artifact-steward-agents-and-living-project-governance.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Steward action fixture validates governance, treasury, release, and sunset boundaries. |

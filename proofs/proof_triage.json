@@ -2181,6 +2181,16 @@
       "rationale": "Implemented in AsiStackProofs.Deliberation as a finite high-risk handoff boundary. It routes missing independent verification to review and does not establish verifier independence, verifier correctness, reasoning quality, trace faithfulness, safety, model quality, or ASI."
     },
     {
+      "tag": "lean:safety_cases.unresolved_defeater.blocks_affected_release",
+      "chapter_id": "safety-cases-and-structured-assurance",
+      "module": "AsiStackProofs.SafetyCases",
+      "formal_target": "A finite assurance-case record with a requested affected release and an unresolved defeater routes to accountable review rather than readiness release, without inferring that the defeater is correct, the case is false, the system is unsafe, or ASI.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SafetyCases as a finite unresolved-defeater and countercase-review boundary. It does not establish defeater correctness, argument validity, evidence adequacy, hazard-model completeness, control efficacy, safety, readiness, authority, or ASI."
+    },
+    {
       "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "module": "AsiStackProofs.CapabilityThresholds",
@@ -2201,5 +2211,5 @@
       "rationale": "Implemented in AsiStackProofs.ScalableOversight as a finite high-risk admission boundary, with a companion baseline-completeness route. It does not establish reviewer independence, supervisor calibration, debate or consultancy efficacy, training safety, execution authority, model quality, safety, or ASI."
     }
   ],
-  "record_count": 219
+  "record_count": 220
 }

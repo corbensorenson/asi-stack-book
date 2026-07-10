@@ -274,7 +274,8 @@
     "layer": "benchmarks_evidence",
   "chapter_targets": [
     "13",
-    "capability-thresholds-and-deployment-commitments"
+    "capability-thresholds-and-deployment-commitments",
+    "safety-cases-and-structured-assurance"
   ],
     "url": "https://docs.google.com/document/d/1m1EycQk56VDh1Rg3IY8GYwkebIVn3bGAWIHs93a3628",
     "notes": "Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards."
@@ -622,6 +623,28 @@
     ],
     "url": "https://docs.google.com/document/d/1XR716XCo-WmvOpvGTGDmh9zbv44oiyjfcVDVQ1YibIc",
     "notes": "Edge/resource-aware implementation context."
+  },
+  {
+    "id": "cca_project",
+    "title": "Compiled Cognitive Architecture project",
+    "priority": "implementation_reference",
+    "layer": "compiled_cognitive_architecture",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir",
+      "claim-ledgers-and-belief-revision",
+      "recursive-self-improvement-boundaries",
+      "governed-deliberation-and-test-time-scaling",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "executable-specifications-and-lean-proof-envelope",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "integrated-reference-architecture"
+    ],
+    "url": "local-project:cca@bd9afd16fe5b11c68f8c495f85ad117cc61ccfc8",
+    "notes": "Pinned local-project convergence reference for external semantic memory, semantic compilation, epistemic governance, bounded self-modification, proof/runtime coupling, benchmark truth, and negative transfer evidence; public-safe source note only, with no reproduced capability or safety result.",
+    "source_type": "local_project_snapshot",
+    "published": "2026-03",
+    "updated": "2026-05-12",
+    "citation_label": "Dredge (2026), Compiled Cognitive Architecture (pinned local project snapshot)"
   },
   {
     "id": "project_theseus_whitepaper",
@@ -3751,6 +3774,53 @@
     "updated": "2024-01-17",
     "citation_label": "Romera-Paredes et al. (2024), Mathematical Discoveries from Program Search with Large Language Models",
     "doi": "10.1038/s41586-023-06924-6"
+  },
+  {
+    "id": "ext_gsn_community_standard_2011",
+    "title": "GSN Community Standard Version 1",
+    "priority": "external_literature",
+    "layer": "structured_assurance_argumentation",
+    "chapter_targets": [
+      "safety-cases-and-structured-assurance"
+    ],
+    "url": "https://www.faa.gov/about/office_org/headquarters_offices/ang/redac/redac-sas-201503-gsn-community-standard-v1.pdf",
+    "notes": "Primary notation standard comparator for explicit goals, strategies, solutions, context, assumptions, justifications, and relationships in structured assurance arguments; the notation documents asserted support but does not establish claim truth.",
+    "source_type": "technical_standard",
+    "published": "2011-11-16",
+    "updated": "2011-11-16",
+    "citation_label": "Assurance Case Working Group (2011), GSN Community Standard v1"
+  },
+  {
+    "id": "ext_evaluations_safety_cases_scheming_2024",
+    "title": "Towards Evaluations-Based Safety Cases for AI Scheming",
+    "priority": "external_literature",
+    "layer": "ai_safety_case_methodology",
+    "chapter_targets": [
+      "safety-cases-and-structured-assurance"
+    ],
+    "url": "https://arxiv.org/abs/2411.03336",
+    "notes": "Primary safety-case comparator for scoped scheming inability, harm inability, harm control, alignment arguments, empirical evaluation dependencies, and acknowledged unresolved assumptions; it does not establish any ASI Stack safety case or safety result.",
+    "source_type": "preprint",
+    "arxiv_id": "2411.03336",
+    "published": "2024-10-29",
+    "updated": "2024-10-29",
+    "citation_label": "Balesni et al. (2024), Evaluations-Based Safety Cases for AI Scheming",
+    "doi": "10.48550/arXiv.2411.03336"
+  },
+  {
+    "id": "ext_aisi_safety_cases_2024",
+    "title": "Safety Cases at AISI",
+    "priority": "external_literature",
+    "layer": "ai_safety_case_methodology",
+    "chapter_targets": [
+      "safety-cases-and-structured-assurance"
+    ],
+    "url": "https://www.aisi.gov.uk/blog/safety-cases-at-aisi",
+    "notes": "Official AI Safety Institute methodology comparator for structured safety-case sketches, positive and negative evidence, countercases, open scientific uncertainty, and limits on confidence; it is not evidence that this book has a complete safety case.",
+    "source_type": "official_technical_note",
+    "published": "2024",
+    "updated": "2024",
+    "citation_label": "AI Safety Institute (2024), Safety Cases at AISI"
   },
   {
     "id": "ext_test_time_compute_scaling_2024",

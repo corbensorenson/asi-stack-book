@@ -5,7 +5,83 @@ project:
   type: book
   output-dir: _site
   resources:
-    - chapters/*.html
+    - "!chapters/*.html"
+    - "!appendices/*.html"
+    - chapters/agency-dignity-and-corrigibility.html
+    - chapters/governance-rights-fork-exit-and-audit.html
+    - chapters/generate-verify-repair-compression.html
+    - chapters/command-contracts-and-semantic-interfaces.html
+    - chapters/moecot-runtime-and-multi-core-orchestration.html
+    - chapters/simulation-fidelity-and-physical-constraints.html
+    - chapters/semantic-pages-context-cells-and-certificates.html
+    - chapters/unified-adaptive-tribunal-and-adversarial-review.html
+    - chapters/planforge-dags-and-intelligence-arbitrage.html
+    - chapters/semantic-representation-and-tree-structured-models.html
+  render:
+    - index.qmd
+    - preface.qmd
+    - chapters/asi-is-a-stack-not-a-model.qmd
+    - chapters/the-efficient-asi-hypothesis.qmd
+    - chapters/system-boundaries-and-authority.qmd
+    - chapters/failure-modes-of-ungoverned-intelligence.qmd
+    - chapters/evidence-states-and-claim-discipline.qmd
+    - chapters/scalable-oversight-and-adversarial-ai-control.qmd
+    - chapters/human-intent-as-a-formal-input.qmd
+    - chapters/constitutional-alignment-substrate.qmd
+    - chapters/moral-uncertainty-and-value-conflict.qmd
+    - chapters/stable-capability-fields.qmd
+    - chapters/capability-replacement-and-rollback.qmd
+    - chapters/security-kernel-and-digital-scifs.qmd
+    - chapters/recursive-self-improvement-boundaries.qmd
+    - chapters/open-ended-improvement-engines.qmd
+    - chapters/intent-to-execution-contracts.qmd
+    - chapters/planning-as-a-control-layer.qmd
+    - chapters/cognitive-compilation-and-semantic-ir.qmd
+    - chapters/virtual-context-abi.qmd
+    - chapters/context-transactions-snapshots-mounts-and-taint.qmd
+    - chapters/verification-bandwidth-and-context-adequacy.qmd
+    - chapters/claim-ledgers-and-belief-revision.qmd
+    - chapters/spinoza-verification-and-proof-carrying-claims.qmd
+    - chapters/labor-os-and-typed-jobs.qmd
+    - chapters/artifact-graphs-audit-logs-and-replay.qmd
+    - chapters/runtime-adapters-tool-permissions-and-human-approval.qmd
+    - chapters/procedural-memory-and-cognitive-loop-closure.qmd
+    - chapters/routing-heads-and-specialist-cores.qmd
+    - chapters/readiness-gates-residual-escrow-and-quarantine.qmd
+    - chapters/personal-compute-hives-and-federated-edge-intelligence.qmd
+    - chapters/compact-generative-systems-and-residual-honesty.qmd
+    - chapters/fast-generation-architectures.qmd
+    - chapters/governed-deliberation-and-test-time-scaling.qmd
+    - chapters/rankfold-neuralfold-and-artifact-compression.qmd
+    - chapters/resource-economics-and-token-budgets.qmd
+    - chapters/mathematical-and-search-substrates.qmd
+    - chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd
+    - chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd
+    - chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd
+    - chapters/executable-specifications-and-lean-proof-envelope.qmd
+    - chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd
+    - chapters/capability-thresholds-and-deployment-commitments.qmd
+    - chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd
+    - chapters/safety-cases-and-structured-assurance.qmd
+    - chapters/policy-optimization-and-learning-from-feedback.qmd
+    - chapters/data-engines-continual-learning-and-unlearning.qmd
+    - chapters/artifact-steward-agents-and-living-project-governance.qmd
+    - chapters/integrated-reference-architecture.qmd
+    - chapters/project-theseus-as-report-first-implementation-reference.qmd
+    - chapters/prototype-roadmap.qmd
+    - chapters/living-book-methodology.qmd
+    - chapters/open-research-agenda-and-bibliography-plan.qmd
+    - appendices/A_source_matrix.qmd
+    - appendices/B_glossary.qmd
+    - appendices/C_claim_evidence_matrix.qmd
+    - appendices/D_protocol_schemas.qmd
+    - appendices/E_codex_test_specs.qmd
+    - appendices/F_changelog.qmd
+    - appendices/G_corben_source_corpus.qmd
+    - appendices/H_external_sources.qmd
+    - appendices/I_author_intent_and_lineage.qmd
+    - appendices/J_release_editions.qmd
+    - appendices/K_implementation_horizons.qmd
 
 lang: en-US
 
@@ -69,6 +145,7 @@ book:
         - chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd
         - chapters/capability-thresholds-and-deployment-commitments.qmd
         - chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd
+        - chapters/safety-cases-and-structured-assurance.qmd
         - chapters/policy-optimization-and-learning-from-feedback.qmd
         - chapters/data-engines-continual-learning-and-unlearning.qmd
         - chapters/artifact-steward-agents-and-living-project-governance.qmd
