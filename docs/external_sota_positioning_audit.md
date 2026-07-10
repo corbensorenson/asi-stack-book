@@ -8,8 +8,8 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 
 | Metric | Count |
 |---|---:|
-| Manifest chapters | 52 |
-| Chapters with `ext_*` positioning before Source crosswalk | 52 |
+| Manifest chapters | 53 |
+| Chapters with `ext_*` positioning before Source crosswalk | 53 |
 | Chapters with explicit external-baseline exceptions | 0 |
 | Chapters with source-noted external targets but no in-prose positioning yet | 0 |
 | Chapters needing an exception or additional external source assignment | 0 |
@@ -32,6 +32,7 @@ This generated audit tracks the Phase 6 release blocker: each chapter should nam
 | `capability-replacement-and-rollback` | `positioned` | `ext_argo_rollouts_docs`, `ext_corrigibility_2015`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs` | `ext_argo_rollouts_docs`, `ext_corrigibility_2015`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs` | Keep source-note boundary and support-state language honest. |
 | `security-kernel-and-digital-scifs` | `positioned` | `ext_nist_zero_trust_architecture_2020`, `ext_owasp_llm_top_10_2025`, `ext_saltzer_schroeder_protection_1975` | `ext_nist_zero_trust_architecture_2020`, `ext_owasp_llm_top_10_2025`, `ext_saltzer_schroeder_protection_1975` | Keep source-note boundary and support-state language honest. |
 | `model-weight-custody-and-hardware-roots-of-trust` | `positioned` | `ext_nist_confidential_computing_2026`, `ext_nvidia_confidential_model_lifecycle_2026`, `ext_provable_model_weight_release_2025`, `ext_rand_model_weight_security_2024` | `ext_nist_confidential_computing_2026`, `ext_nvidia_confidential_model_lifecycle_2026`, `ext_provable_model_weight_release_2025`, `ext_rand_model_weight_security_2024` | Keep source-note boundary and support-state language honest. |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | `positioned` | `ext_nist_cscrm_2022`, `ext_openssf_model_signing_spec_2025`, `ext_slsa_build_track_1_2`, `ext_spdx_ai_profile_3_0_1` | `ext_nist_cscrm_2022`, `ext_openssf_model_signing_spec_2025`, `ext_slsa_build_track_1_2`, `ext_spdx_ai_profile_3_0_1` | Keep source-note boundary and support-state language honest. |
 | `recursive-self-improvement-boundaries` | `positioned` | `ext_corrigibility_2015`, `ext_drexler_cais_2019`, `ext_model_evaluation_extreme_risks_2023`, `ext_off_switch_game_2016`, `ext_optimal_policies_power_2019` | `ext_corrigibility_2015`, `ext_drexler_cais_2019`, `ext_learned_optimization_risks_2019`, `ext_model_evaluation_extreme_risks_2023`, `ext_off_switch_game_2016`, `ext_optimal_policies_power_2019` | Keep source-note boundary and support-state language honest. |
 | `open-ended-improvement-engines` | `positioned` | `ext_funsearch_2024`, `ext_poet_2019`, `ext_voyager_2023` | `ext_funsearch_2024`, `ext_poet_2019`, `ext_voyager_2023` | Keep source-note boundary and support-state language honest. |
 | `intent-to-execution-contracts` | `positioned` | `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_dafny_2010`, `ext_pddl_1998`, `ext_react_2022`, `ext_shop2_2003`, `ext_temporal_docs`, `ext_tla_plus_home_docs` | `ext_airflow_dag_docs`, `ext_bpmn_2_0_2_spec`, `ext_dafny_2010`, `ext_pddl_1998`, `ext_react_2022`, `ext_shop2_2003`, `ext_temporal_docs`, `ext_tla_plus_home_docs` | Keep source-note boundary and support-state language honest. |

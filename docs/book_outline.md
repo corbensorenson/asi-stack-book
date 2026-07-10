@@ -1055,6 +1055,106 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `AsiStackProofs.ModelWeightCustody` | A finite weight-custody record with a requested load, required attestation, and invalid attestation routes to block rather than readiness review, without inferring hardware compromise, weight confidentiality, safety, or ASI. | implemented |
 
+### AI Supply-Chain Integrity and Lifecycle Provenance
+
+Stable ID: `ai-supply-chain-integrity-and-lifecycle-provenance`
+
+Chapter job: Govern the cross-lifecycle integrity and re-review policy that
+connects AI data, code, dependencies, build/training runs, artifact derivatives,
+signing, suppliers, advisories, releases, revocation, and disposal before a
+bounded artifact path reaches custody or readiness review.
+
+Core claim: A governed stack maintains a versioned AI supply-chain graph that binds each admitted model, dataset, code dependency, build or training run, signer or provenance statement, supplier or distributor, advisory and vulnerability state, derivative relationship, release scope, revocation path, residual owner, and retention or disposal event; a missing, inconsistent, unverified, revoked, or unresolved-critical component record blocks affected artifact admission or routes accountable review, but does not itself establish artifact correctness, absence of compromise, dataset fitness, model safety, legal compliance, readiness, authority, or ASI.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_nist_cscrm_2022`, `ext_slsa_build_track_1_2`, `ext_openssf_model_signing_spec_2025`, `ext_spdx_ai_profile_3_0_1` | Read for lifecycle C-SCRM, build provenance and its limits, model/dataset signing and its non-guarantees, and interoperable AI BOM relationships. |
+| Supporting | `cca_project`, `moecot_manifest_project`, `corbens_trainer_project` | Mine CCA and MoECOT for public-safe provenance, supersession/invalidation, pass-hash, trace-bundle, source-hash, closure/lineage, attestation, digest, replay, and revocation-record context; mine Corben's Trainer for typed experiment manifests, artifact lineage, benchmark authenticity, quarantine, and revocable-promotion context. Do not treat any as local supply-chain, signing, verification, supplier, security, or deployment evidence. |
+
+Draft arc:
+
+- Problem: A named model can have a custody record while data, code,
+  dependencies, training/build runs, suppliers, signatures, advisories, and
+  derivatives remain unbound or unreviewable.
+- Insufficiency: A final model digest, an inventory export, build provenance, or
+  a valid signature cannot by itself establish complete lineage, artifact
+  correctness, absence of compromise, data fitness, model safety, compliance,
+  or deployment merit.
+- Mechanism: Maintain a typed graph across model, dataset, code, dependency,
+  build/training run, configuration, signer, supplier, distributor, advisory,
+  derivative, release, revocation, and disposal nodes, with version, scope,
+  source, freshness, owner, and affected-path edges.
+- Mechanism: Evaluate a supply-chain admission record over artifact
+  identity/digest, lineage, supplier scope, provenance, signature, BOM,
+  advisory, revocation, residual, and requested-use fields before moving to
+  custody review.
+- Mechanism: Preserve new advisories, revoked signers, supplier incidents,
+  dependency changes, discovered derivatives, and stale inventories as versioned
+  events that route declared affected paths to repair, review, quarantine, or
+  re-review.
+- Mechanism: Treat BOMs, provenance, signatures, and supplier declarations as
+  bounded references with their own verifier and limitation, not a universal
+  trust label.
+- Interface: Artifact Graphs stores provenance/replay; this chapter owns the AI
+  supply-chain integrity policy and affected-path routing.
+- Interface: Model-Weight Custody owns loading conditions for a known artifact;
+  this chapter supplies upstream lineage and advisory preconditions.
+- Interface: Data Engines owns learning-data admission/deletion mechanics;
+  Security Kernel and Runtime Adapters retain runtime authority; Readiness
+  retains bounded admission.
+
+Primary invariants:
+
+- An admitted artifact has recorded identity/digest, upstream lineage, requested
+  scope, and affected decision path.
+- A required provenance or signature result is bound to its artifact and policy
+  scope; missing, stale, mismatched, or unverified results do not silently pass.
+- BOM and supplier/distributor records preserve version, scope, source,
+  freshness, and gaps rather than claiming completeness by default.
+- An unresolved critical advisory, revoked signer, or invalidated lineage record
+  routes declared derivatives and affected paths to quarantine, repair, or
+  accountable review.
+- BOM, signature, provenance, and conformance labels do not establish artifact
+  correctness, absence of compromise, data fitness, legal compliance, model
+  safety, readiness, authority, or ASI.
+
+Failure modes to cover:
+
+- Dependency, dataset, model, or build substitution behind an unchanged name.
+- BOM theater through incomplete, stale, unverified, or underscoped inventory.
+- Provenance/signature laundering into claims of secure development, safe data,
+  safe behavior, or deployment permission.
+- Failure to propagate upstream advisory, revoked signer, supplier incident, or
+  newly discovered derivative to affected downstream paths.
+- Lost residual owner, freshness rule, disposal record, or re-review trigger at
+  a supplier, build, training, distribution, or retirement handoff.
+
+Draft deliverables:
+
+- A supply-chain flow diagram separating upstream inputs, artifact graph,
+  provenance/signing, BOM/advisory state, admission, custody, readiness, runtime
+  authority, residuals, and re-review.
+- Source-noted positioning through NIST C-SCRM, SLSA Build Track, OpenSSF Model
+  Signing, and SPDX AI Profile comparators; none demonstrates local inventory,
+  provenance, signing, supplier trust, integrity, safety, readiness, authority,
+  or deployment.
+- Implemented proof-backed check: finite supply-chain admission routes quarantine
+  a requested artifact with an unresolved critical advisory or required but
+  unverified signature; this is structured-record coverage only, not a real
+  advisory, signer, BOM, supplier, artifact, security, or safety result.
+- Planned Codex test: public-safe synthetic records for complete bounded path,
+  missing lineage, stale BOM, unverified signature, critical advisory, revoked
+  signer, changed derivative, revocation gap, and missing residual owner, using
+  no real artifacts, supplier data, build inputs, models, or credentials.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact` | `AsiStackProofs.SupplyChainIntegrity` | A finite AI supply-chain record with a requested artifact admission, complete required lineage fields, and an unresolved critical advisory routes to quarantine rather than custody review, without inferring compromise, artifact correctness, data fitness, safety, or ASI. | implemented |
+
 ### Recursive Self-Improvement Boundaries
 
 Stable ID: `recursive-self-improvement-boundaries`
@@ -3233,7 +3333,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 221 proof targets, 60 Lean modules, 1066 theorem declarations, 876 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 222 proof targets, 61 Lean modules, 1068 theorem declarations, 878 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

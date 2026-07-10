@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 221 |
-| Manifest status counts | {"implemented": 221} |
-| Triage class counts | {"formal-invariant": 221} |
-| Lean modules referenced | 60 |
-| Chapters with proof targets | 52 |
+| Proof targets audited | 222 |
+| Manifest status counts | {"implemented": 222} |
+| Triage class counts | {"formal-invariant": 222} |
+| Lean modules referenced | 61 |
+| Chapters with proof targets | 53 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -85,6 +85,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 4 | 13 | 6 | 6 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 25 | 16 | 5 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 21 | 6 | 5 |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 1 | 2 | 1 | 1 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 12 | 54 | 54 | 15 |
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 13 | 6 | 6 |
 | `lean/AsiStackProofs/TypedJobs.lean` | 5 | 27 | 7 | 7 |
@@ -97,6 +98,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | Chapter ID | Tags present | Limitation references | Missing tags | Missing limitation references |
 |---|---:|---:|---:|---:|
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 1 | 1 | 0 | 0 |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | 1 | 1 | 0 | 0 |
 | `artifact-graphs-audit-logs-and-replay` | 10 | 10 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
@@ -207,6 +209,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:security.scif.route_envelope` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.commit_probe_bridge` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.transition_route_envelope` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |

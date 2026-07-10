@@ -2201,6 +2201,16 @@
       "rationale": "Implemented in AsiStackProofs.ModelWeightCustody as a finite required-invalid-attestation load boundary, with a companion missing-lineage custody-repair route. It does not establish hardware trustworthiness, attestation genuineness, weight confidentiality, extraction resistance, key-service behavior, model safety, readiness, authority, deployment, or ASI."
     },
     {
+      "tag": "lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "module": "AsiStackProofs.SupplyChainIntegrity",
+      "formal_target": "A finite AI supply-chain record with a requested artifact admission, complete required lineage fields, and an unresolved critical advisory routes to quarantine rather than custody review, without inferring compromise, artifact correctness, data fitness, safety, or ASI.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.SupplyChainIntegrity as a finite advisory/signature admission boundary. It does not establish advisory accuracy, signature genuineness, inventory completeness, artifact integrity, absence of compromise, data fitness, supplier trustworthiness, legal compliance, model safety, readiness, authority, deployment, or ASI."
+    },
+    {
       "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "module": "AsiStackProofs.CapabilityThresholds",
@@ -2221,5 +2231,5 @@
       "rationale": "Implemented in AsiStackProofs.ScalableOversight as a finite high-risk admission boundary, with a companion baseline-completeness route. It does not establish reviewer independence, supervisor calibration, debate or consultancy efficacy, training safety, execution authority, model quality, safety, or ASI."
     }
   ],
-  "record_count": 221
+  "record_count": 222
 }

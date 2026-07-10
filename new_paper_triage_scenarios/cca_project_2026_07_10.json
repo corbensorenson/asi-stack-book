@@ -1,0 +1,77 @@
+{
+  "scenario_id": "cca-local-project-triage-2026-07-10",
+  "scenario_scope": "Real local-project intake decision for the pinned CCA project snapshot.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "cca-convergence-reference",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "integrated-reference-architecture",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "CCA composes existing stack layers and supplies implementation-reference and negative-result patterns; it does not require a second integrated-architecture chapter.",
+      "required_before_drafting": [
+        "complete exact claim mappings",
+        "deduplicate inherited mechanisms against predecessor projects",
+        "keep source-reported benchmark and proof status bounded"
+      ],
+      "evidence_transition_preconditions": [
+        "review exact project surfaces",
+        "record limitations and non-claims",
+        "accept a claim-specific evidence transition before promotion"
+      ],
+      "promotion_blockers": [
+        "cross-project provenance incomplete",
+        "project results not reproduced by the book repository"
+      ],
+      "non_claims": [
+        "does not establish a deployed integrated stack",
+        "does not establish CCA capability, safety, or ASI"
+      ]
+    },
+    {
+      "case_id": "cca-durable-semantic-memory-boundary",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "not_checked",
+      "candidate_decision": "defer",
+      "chapter_manifest_action": "defer_to_backlog",
+      "existing_chapter_id": "virtual-context-abi",
+      "proposed_chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "decision_rationale": "Durable typed semantic state and learned lattice navigation appear distinct from context materialization, but CCA names BeastBrain as the primary implementation lineage and that project is not yet extracted or mined.",
+      "required_before_drafting": [
+        "mine BeastBrain lattice and Portia sources",
+        "compare against Virtual Context ABI and context transaction ownership",
+        "identify primary versus inherited mechanisms"
+      ],
+      "evidence_transition_preconditions": [
+        "primary source note available",
+        "chapter boundary review completed",
+        "manifest decision validated"
+      ],
+      "promotion_blockers": [
+        "BeastBrain archive not yet extracted",
+        "primary provenance unresolved",
+        "no reproduced retrieval or navigation result"
+      ],
+      "non_claims": [
+        "does not add the proposed chapter",
+        "does not claim knowledge-lattice or Portia performance"
+      ]
+    }
+  ],
+  "validation_boundary": "Records the reviewed CCA intake and one explicitly deferred chapter-boundary decision. It does not validate project results, source publication rights, or a support-state transition.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not publish private source material",
+    "does not promote any claim"
+  ]
+}

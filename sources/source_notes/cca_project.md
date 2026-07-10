@@ -90,6 +90,7 @@ proxy, adapter, lineage, and closure metrics can disagree.
 - `scalable-oversight-and-adversarial-ai-control`
 - `stable-capability-fields`
 - `capability-replacement-and-rollback`
+- `ai-supply-chain-integrity-and-lifecycle-provenance`
 - `model-weight-custody-and-hardware-roots-of-trust`
 - `recursive-self-improvement-boundaries`
 - `human-intent-as-a-formal-input`
@@ -135,6 +136,11 @@ proxy, adapter, lineage, and closure metrics can disagree.
   implementation-reference context for weight-custody records; do not treat CCA
   as evidence of weight custody, attestation, confidential inference, or
   security effectiveness.
+- Use typed provenance, append-only supersession/invalidation, source hashes,
+  pass hashes, trace bundles, and closure/lineage discipline only as bounded
+  implementation-reference context for AI supply-chain records; do not treat CCA
+  as evidence of AI BOM completeness, artifact integrity, supplier trust,
+  signing, verification, revocation, security effectiveness, or compliance.
 - Use CCA as a convergence implementation reference without treating its
   benchmark, efficiency, safety, or AGI/ASI claims as book-verified results.
 

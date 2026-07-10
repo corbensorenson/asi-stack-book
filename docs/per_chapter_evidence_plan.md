@@ -2,7 +2,7 @@
 
 Last updated: 2026-07-09
 
-This file is the active 52-chapter evidence-lane backlog for **The ASI Stack**. It is
+This file is the active 53-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
@@ -12,7 +12,7 @@ most two direct support lanes. The remaining lanes stay `planned, not
 executed`; they must not receive synthetic fixtures, pass/fail status, or
 support-state pressure merely for coverage. The active cycle selection is
 recorded in `docs/v1_x_active_evidence_cycle.md`: three lanes are selected and
-the other 49 remain planned-only.
+the other 50 remain planned-only.
 
 Selection criteria:
 
@@ -57,6 +57,7 @@ support-state transition by itself.
 | I | `capability-replacement-and-rollback` | Replacement transaction harness | Connect replacement evidence, rollback, monitor state, and residual escrow. | Use product-upgrade analogies without losing safety constraints. | Valid replacement transaction and invalid promotion fixture both replay. |
 | I | `security-kernel-and-digital-scifs` | Security-kernel harness plus external security baselines | Add SCIF lifecycle, revocation, sanitization, and prompt-injection negative controls. | Make SCIFs feel like controlled rooms and handles, not jargon. | Receipt fixture proves handle-mediated use and rejects leak paths. |
 | I | `model-weight-custody-and-hardware-roots-of-trust` | Source-noted weight-security, confidential-computing, and release-scheme comparators plus a finite invalid-attestation block | Build a public-safe custody record with model/artifact identity, lineage, encrypted-storage reference, key-release policy, environment measurement, attestation result, access scope, revocation, release classification, and residual ownership. | Explain why a model artifact needs its own custody history, and why a hardware token is not a safety certificate. | A replayed synthetic custody workload with stale/invalid-attestation, changed-policy, widened-scope, open-release, revocation, and missing-lineage controls; no local weights, keys, hardware, confidentiality, security, safety, readiness, authority, or deployment claim. |
+| I | `ai-supply-chain-integrity-and-lifecycle-provenance` | Source-noted lifecycle C-SCRM, build provenance, model signing, and AI BOM comparators plus finite advisory/signature quarantine routes | Build a public-safe supply-chain admission record with artifact identity/digest, lineage, supplier scope, build/training provenance, signature result, BOM freshness, advisory state, derivative links, revocation, residual ownership, and requested use. | Explain how a model's data, code, build, signer, supplier, and derivatives form a traceable chain without making metadata a safety certificate. | A replayed synthetic supply-chain workload with missing lineage, stale BOM, unverified signature, unresolved critical advisory, revoked signer, changed derivative, missing revocation, and missing-residual controls; no local AI BOM, provenance, signer, supplier assessment, artifact integrity, data fitness, safety, readiness, authority, or deployment claim. |
 | I | `recursive-self-improvement-boundaries` | Safety-critical Lean plus Theseus self-evolution gate | Deepen accepted/rejected change model, evaluator separation, monitor window, and rollback. | Present RSI as controlled maintenance, not runaway mythology. | Accepted transition cannot widen authority or weaken protected invariants without review. |
 | I | `open-ended-improvement-engines` | Source-noted POET, FunSearch, Voyager, and local campaign-governance sources plus a finite admission boundary | Build a public-safe improvement-campaign record that preserves task-generator bounds, evaluator version/scope, independent-review state, resource bill, archive disposition, residual ownership, stop authority, and rejected admission cases. | Explain the difference between a workshop that may generate candidates and a release gate that may let one affect a system. | A replayed, bounded campaign-record comparison with evaluator-scope and archive negative controls, resource/residual records, independent review, and stop authority; no autonomous discovery, campaign quality, safe self-improvement, evaluator correctness, model-quality, or ASI claim. |
 | II | `intent-to-execution-contracts` | Command-contract fixtures plus Lean semantic-interface crosswalk | Connect accepted intent, command fields, authority, receipts, artifacts, and residuals across typed execution records. | Show the path from "what I meant" to "what the system may do" without making prompt prose into permission. | Invalid intent-to-action mismatch, missing receipt, prompt/context override, or inferred-authority case is rejected with a receipt or residual. |

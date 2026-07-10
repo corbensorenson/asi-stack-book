@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 52 |
-| Assigned source/chapter pairs | 478 |
-| Exact claim-source mappings | 470 |
+| Chapters audited | 53 |
+| Assigned source/chapter pairs | 485 |
+| Exact claim-source mappings | 477 |
 | Unmapped assigned pairs | 8 |
-| Source notes present for assigned pairs | 478 |
-| Source notes listing assigned chapter | 478 |
-| Passage-reviewed mappings recorded | 470 |
-| Support-state counts | {"argument": 52} |
+| Source notes present for assigned pairs | 485 |
+| Source notes listing assigned chapter | 485 |
+| Passage-reviewed mappings recorded | 477 |
+| Support-state counts | {"argument": 53} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -46,6 +46,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `model-weight-custody-and-hardware-roots-of-trust` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `recursive-self-improvement-boundaries` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
 | `open-ended-improvement-engines` | 6 | 3 | 6 | 6 | 3 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
@@ -142,6 +143,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `beastbrain_timeless` | 2 | yes |
 | `field_of_god` | 2 | yes |
 | `ethica_mechanica` | 2 | yes |
+| `cca_project` | 2 | yes |
 | `planforge_compiler_arch` | 2 | yes |
 | `ext_cap_theorem_gilbert_lynch_2002` | 2 | yes |
 | `ext_akash_docs_2026` | 2 | yes |
@@ -164,7 +166,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_nist_confidential_computing_2026` | 1 | yes |
 | `ext_nvidia_confidential_model_lifecycle_2026` | 1 | yes |
 | `ext_provable_model_weight_release_2025` | 1 | yes |
-| `cca_project` | 1 | yes |
+| `ext_nist_cscrm_2022` | 1 | yes |
+| `ext_slsa_build_track_1_2` | 1 | yes |
+| `ext_openssf_model_signing_spec_2025` | 1 | yes |
+| `ext_spdx_ai_profile_3_0_1` | 1 | yes |
+| `moecot_manifest_project` | 1 | yes |
+| `corbens_trainer_project` | 1 | yes |
 | `ext_poet_2019` | 1 | yes |
 | `ext_funsearch_2024` | 1 | yes |
 | `ext_voyager_2023` | 1 | yes |
@@ -322,6 +329,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_nvidia_confidential_model_lifecycle_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_provable_model_weight_release_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `cca_project` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_nist_cscrm_2022` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_slsa_build_track_1_2` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_openssf_model_signing_spec_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_spdx_ai_profile_3_0_1` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `cca_project` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `moecot_manifest_project` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `corbens_trainer_project` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `rmi` | mapped | note present | chapter listed | passage-reviewed |

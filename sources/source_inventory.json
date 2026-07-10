@@ -632,6 +632,7 @@
     "chapter_targets": [
       "cognitive-compilation-and-semantic-ir",
       "claim-ledgers-and-belief-revision",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
       "model-weight-custody-and-hardware-roots-of-trust",
       "recursive-self-improvement-boundaries",
       "governed-deliberation-and-test-time-scaling",
@@ -646,6 +647,102 @@
     "published": "2026-03",
     "updated": "2026-05-12",
     "citation_label": "Dredge (2026), Compiled Cognitive Architecture (pinned local project snapshot)"
+  },
+  {
+    "id": "moecot_manifest_project",
+    "title": "MoECOT Manifest compiler-era project",
+    "priority": "implementation_reference",
+    "layer": "compiler_first_ai_systems",
+    "chapter_targets": [
+      "integrated-reference-architecture",
+      "cognitive-compilation-and-semantic-ir",
+      "artifact-graphs-audit-logs-and-replay",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "routing-heads-and-specialist-cores",
+      "open-ended-improvement-engines",
+      "recursive-self-improvement-boundaries",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
+    "url": "local-project:moecot-manifest@8398335bd01569d4bce7bc4ca2792d3ef48832f9",
+    "notes": "Pinned local-project compiler/control-plane reference for semantic IR, manifest compilation, registry truth, context and memory governance, target portability, provenance, multi-agent training, bounded self-improvement, and the negative gap between internal contracts and external holdout capability; public-safe source note only, with no reproduced capability or safety result.",
+    "source_type": "local_project_snapshot",
+    "published": "2026-03",
+    "updated": "2026-04-13",
+    "citation_label": "Sorenson (2026), MoECOT Manifest (pinned local project snapshot)"
+  },
+  {
+    "id": "beastbrain_project",
+    "title": "BeastBrain historical AI system project",
+    "priority": "implementation_reference",
+    "layer": "durable_semantic_memory_and_system_architecture",
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "planning-as-a-control-layer",
+      "virtual-context-abi",
+      "claim-ledgers-and-belief-revision",
+      "procedural-memory-and-cognitive-loop-closure",
+      "resource-economics-and-token-budgets",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "security-kernel-and-digital-scifs",
+      "personal-compute-hives-and-federated-edge-intelligence",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
+    "url": "local-project:BeastBrain@sha256:60aa8121c11deabf98ff71d848d6709d7208a38be6e2b8789de5a0337f1ef684",
+    "notes": "Hashed local-project primary lineage for DKL, Portia, semantic coordinates, bounded knowledge snapshots, PlanForge, SSD-first memory, and organism-style cognition, plus negative implementation evidence on simulations, router effects, security handles, tribunal stubs, ontology drift, compile history, and readiness overclaim; public-safe source note only, with no reproduced capability or safety result.",
+    "source_type": "local_project_snapshot",
+    "published": "2026-02",
+    "updated": "2026-07-10",
+    "citation_label": "BeastBrain (2026), pinned local project snapshot"
+  },
+  {
+    "id": "bugbrain_project",
+    "title": "BugBrain bare-metal neuro-symbolic intelligence project",
+    "priority": "implementation_reference",
+    "layer": "hardware_explicit_governed_cognition",
+    "chapter_targets": [
+      "system-boundaries-and-authority",
+      "model-weight-custody-and-hardware-roots-of-trust",
+      "security-kernel-and-digital-scifs",
+      "virtual-context-abi",
+      "context-transactions-snapshots-mounts-and-taint",
+      "intent-to-execution-contracts",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "artifact-graphs-audit-logs-and-replay",
+      "resource-economics-and-token-budgets",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "ai-supply-chain-integrity-and-lifecycle-provenance"
+    ],
+    "url": "local-project:BugBrain@d5ddd37966e2057e8b5ee7fa7bd8f4c833a30dc5",
+    "notes": "Pinned local-project bare-metal implementation reference for explicit core ownership, compact typed graphs, signed tiered context, privileged-action lifecycle, protocol security, artifact replay, and readiness, plus negative evidence on capacity/residency arithmetic, theory-labelled proxies, fixed random cognitive modules, root-of-trust assumptions, skipped checks, and narrative/report divergence; public-safe source note only, with no reproduced hardware capability or safety result.",
+    "source_type": "local_project_snapshot",
+    "published": "2026-02",
+    "updated": "2026-07-10",
+    "citation_label": "Sorenson (2026), BugBrain (pinned local project snapshot)"
+  },
+  {
+    "id": "corbens_trainer_project",
+    "title": "Corben's Trainer epistemic training and evaluation control plane",
+    "priority": "implementation_reference",
+    "layer": "epistemic_training_and_evaluation_control_plane",
+    "chapter_targets": [
+      "evidence-states-and-claim-discipline",
+      "artifact-graphs-audit-logs-and-replay",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "recursive-self-improvement-boundaries",
+      "open-ended-improvement-engines",
+      "system-boundaries-and-authority",
+      "resource-economics-and-token-budgets",
+      "artifact-steward-agents-and-living-project-governance"
+    ],
+    "url": "local-project:corbens-trainer@59a57333b819a64f2ed70c077c4dbdb917337b1c",
+    "notes": "Pinned local-project implementation reference for typed experiment manifests, trainer/backend separation, artifact lineage, learning-truth gates, benchmark authenticity, quarantine, claim derivation, and revocable promotion boundaries, plus negative implementation evidence on seed identity, content pinning, decontamination, transitive revocation, checkpoint acknowledgement, and report divergence; public-safe source note only, with no reproduced model capability or safety result.",
+    "source_type": "local_project_snapshot",
+    "published": "2026-07",
+    "updated": "2026-07-10",
+    "citation_label": "Sorenson (2026), Corben's Trainer (pinned local project snapshot)"
   },
   {
     "id": "project_theseus_whitepaper",
@@ -3884,6 +3981,66 @@
     "updated": "2025-06-23",
     "citation_label": "Yang et al. (2025), Provable (In)Secure Model Weight Release Schemes",
     "doi": "10.48550/arXiv.2506.19874"
+  },
+  {
+    "id": "ext_nist_cscrm_2022",
+    "title": "Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations",
+    "priority": "external_literature",
+    "layer": "ai_supply_chain_governance",
+    "chapter_targets": [
+      "ai-supply-chain-integrity-and-lifecycle-provenance"
+    ],
+    "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-161r1-upd1.pdf",
+    "notes": "Primary NIST C-SCRM standard comparator for lifecycle-wide risk framing, supplier/component inventory, assessment, response, monitoring, and incident communication; it does not establish a local supply-chain program or AI artifact integrity.",
+    "source_type": "standard",
+    "published": "2022-05",
+    "updated": "2022-05",
+    "citation_label": "NIST (2022), SP 800-161r1"
+  },
+  {
+    "id": "ext_slsa_build_track_1_2",
+    "title": "SLSA Build Track Basics, version 1.2",
+    "priority": "external_literature",
+    "layer": "build_provenance",
+    "chapter_targets": [
+      "ai-supply-chain-integrity-and-lifecycle-provenance"
+    ],
+    "url": "https://slsa.dev/spec/v1.2/build-track-basics",
+    "notes": "Official SLSA specification comparator for build provenance, signed hosted builds, verification, and graduated assurance; provenance quality and SLSA level do not establish local artifact correctness, data quality, model safety, or deployment authority.",
+    "source_type": "technical_specification",
+    "published": "2025",
+    "updated": "2026-07-10",
+    "citation_label": "SLSA (2025), Build Track Basics v1.2"
+  },
+  {
+    "id": "ext_openssf_model_signing_spec_2025",
+    "title": "OpenSSF Model Signing Specification",
+    "priority": "external_literature",
+    "layer": "ai_artifact_signing",
+    "chapter_targets": [
+      "ai-supply-chain-integrity-and-lifecycle-provenance"
+    ],
+    "url": "https://github.com/ossf/model-signing-spec",
+    "notes": "Official OpenSSF AI/ML working-group specification comparator for signed model/dataset bundles, verification, provenance metadata, and explicit limits of model signing; it does not establish local signing, verification, integrity, confidentiality, safety, or release authority.",
+    "source_type": "technical_specification",
+    "published": "2025",
+    "updated": "2026-07-10",
+    "citation_label": "OpenSSF (2025), Model Signing Specification"
+  },
+  {
+    "id": "ext_spdx_ai_profile_3_0_1",
+    "title": "SPDX Specification 3.0.1 AI Profile",
+    "priority": "external_literature",
+    "layer": "ai_bill_of_materials",
+    "chapter_targets": [
+      "ai-supply-chain-integrity-and-lifecycle-provenance"
+    ],
+    "url": "https://spdx.github.io/spdx-spec/v3.0.1/model/AI/AI/",
+    "notes": "Official SPDX specification comparator for interoperable AI system/model, dataset, build, supplier, provenance, integrity, relationship, and lifecycle metadata; a conformant BOM is not proof of complete inventory, artifact security, data fitness, model safety, or compliance.",
+    "source_type": "technical_specification",
+    "published": "2024-12",
+    "updated": "2024-12",
+    "citation_label": "SPDX (2024), Specification 3.0.1 AI Profile"
   },
   {
     "id": "ext_test_time_compute_scaling_2024",

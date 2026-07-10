@@ -3022,6 +3022,167 @@
           ]
         },
         {
+          "id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+          "title": "AI Supply-Chain Integrity and Lifecycle Provenance",
+          "file": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_nist_cscrm_2022",
+            "ext_slsa_build_track_1_2",
+            "ext_openssf_model_signing_spec_2025",
+            "ext_spdx_ai_profile_3_0_1",
+            "cca_project",
+            "moecot_manifest_project",
+            "corbens_trainer_project"
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_nist_cscrm_2022",
+              "ext_slsa_build_track_1_2",
+              "ext_openssf_model_signing_spec_2025",
+              "ext_spdx_ai_profile_3_0_1"
+            ],
+            "supporting": [
+              "cca_project",
+              "moecot_manifest_project",
+              "corbens_trainer_project"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "The sources are source-setting comparators. No ASI Stack AI BOM, supplier assessment, build or training provenance, signature, verification, advisory feed, revocation action, reproducible rebuild, incident exercise, or deployment result has been run."
+            ]
+          },
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_nist_cscrm_2022",
+              "mapped_support": "Supports a scoped comparator for lifecycle-wide supply-chain risk framing, supplier/component inventory, assessment, response, monitoring, incident communication, and disposal vocabulary.",
+              "limits": "Does not establish a local C-SCRM program, supplier trustworthiness, inventory completeness, artifact integrity, data fitness, safety, readiness, authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_nist_cscrm_2022.md:14-72"
+              ],
+              "passage_review_note": "Reviewed primary NIST lifecycle and risk-management framing as recorded in the source note; no local supply-chain assessment, supplier review, inventory, incident exercise, or control evaluation ran.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_slsa_build_track_1_2",
+              "mapped_support": "Supports a scoped comparator for build provenance, builder/process/input records, verification, signed hosted builds, and graduated assurance limits.",
+              "limits": "Does not establish a local SLSA level, build platform, provenance statement, artifact correctness, data fitness, safety, readiness, authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_slsa_build_track_1_2.md:14-69"
+              ],
+              "passage_review_note": "Reviewed official SLSA build-track requirements and lower-level limitations as recorded in the source note; no local build provenance or verification ran.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openssf_model_signing_spec_2025",
+              "mapped_support": "Supports a scoped comparator for signed model/dataset bundles, artifact hashes, provenance metadata, lifecycle verification points, and explicit non-guarantees.",
+              "limits": "Does not establish local signing, verification, integrity, confidentiality, data fitness, safety, readiness, authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_openssf_model_signing_spec_2025.md:14-72"
+              ],
+              "passage_review_note": "Reviewed the official OpenSSF model-signing specification framing and explicit non-guarantees as recorded in the source note; no signer, verifier, model, dataset, or key service ran locally.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_spdx_ai_profile_3_0_1",
+              "mapped_support": "Supports a scoped comparator for interoperable AI/model, dataset, build, supplier, provenance, integrity, relationship, and lifecycle BOM metadata.",
+              "limits": "Does not establish a local AI BOM, SPDX conformance, complete inventory, artifact security, data fitness, legal compliance, safety, readiness, authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/ext_spdx_ai_profile_3_0_1.md:14-69"
+              ],
+              "passage_review_note": "Reviewed official SPDX AI-profile and BOM-scope framing as recorded in the source note; no local AI BOM, export, conformance check, or provenance audit ran.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "cca_project",
+              "mapped_support": "Supports bounded local implementation-reference context for typed provenance, append-only supersession/invalidation, pass hashes, trace bundles, source hashing, and closure/lineage discipline.",
+              "limits": "Does not establish local AI supply-chain integrity, inventory completeness, artifact integrity, data fitness, supplier trust, signing, verification, revocation, safety, readiness, authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:14-111"
+              ],
+              "passage_review_note": "Reviewed the public-safe pinned local-project source note for bounded provenance, lineage, and trace-record context; no CCA runtime, AI BOM, supplier review, signing, verification, advisory, or revocation workflow was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports bounded local implementation-reference context for internal provenance packs, SLSA or DSSE-compatible attestations, immutable artifact digests, replay checks, effect logs, semantic patches, obligation bundles, and revocable signed authority records.",
+              "limits": "Does not establish local AI supply-chain integrity, inventory completeness, artifact integrity, data fitness, supplier trust, signing or verification effectiveness, revocation effectiveness, security, compliance, safety, readiness, authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:75-85",
+                "sources/source_notes/moecot_manifest_project.md:194-230"
+              ],
+              "passage_review_note": "Reviewed the public-safe pinned local-project source note for bounded provenance, attestation, digest, replay, and revocation-record context; no MoECOT build, training, signing, verification, advisory, revocation, or deployment workflow was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "corbens_trainer_project",
+              "mapped_support": "Supports bounded local implementation-reference context for typed experiment manifests, content-addressed artifact lineage, benchmark authenticity, integrity quarantine, claim derivation, and revocable promotion boundaries.",
+              "limits": "Does not establish local AI supply-chain integrity, inventory completeness, supplier trust, signing or verification effectiveness, secure build or training, transitive revocation effectiveness, safety, readiness, authority, or ASI.",
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:14-250"
+              ],
+              "passage_review_note": "Reviewed the public-safe pinned local-project source note for bounded experiment-manifest, lineage, quarantine, and promotion-revocation context; no trainer backend, build, training, signing, verification, supplier, advisory, or deployment workflow was replayed.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "problem": "A model artifact can have a custody record while the data, code, dependencies, build or training run, supplier, signer, advisory state, derivative path, and retirement conditions that produced or surround it remain unbound or unreviewable.",
+          "insufficient": "Artifact Graphs record provenance, Model-Weight Custody controls a known artifact's loading conditions, Data Engines controls admission of learning inputs, and Security Kernel controls runtime authority, but none owns the cross-lifecycle integrity and re-review policy for the AI supply chain from inputs and build/training statements through derivative distribution, advisory, revocation, and disposal.",
+          "core_claim": "A governed stack maintains a versioned AI supply-chain graph that binds each admitted model, dataset, code dependency, build or training run, signer or provenance statement, supplier or distributor, advisory and vulnerability state, derivative relationship, release scope, revocation path, residual owner, and retention or disposal event; a missing, inconsistent, unverified, revoked, or unresolved-critical component record blocks affected artifact admission or routes accountable review, but does not itself establish artifact correctness, absence of compromise, dataset fitness, model safety, legal compliance, readiness, authority, or ASI.",
+          "mechanism": [
+            "Record typed identities and relationships for model, dataset, code, dependency, build or training run, signer, supplier, distributor, advisory, derivative, release, revocation, and disposal events rather than inferring lineage from a model name.",
+            "Evaluate an admission policy over declared artifact identity/digest, provenance/build or training statement, signer or verifier result, component inventory, supplier/distributor scope, advisory state, revocation path, residual owner, and requested downstream use.",
+            "Preserve signature, provenance, BOM, supplier, and advisory artifacts as bounded references: each can establish only the stated record property and cannot become an implicit conclusion about model behavior, security, or authority.",
+            "Propagate an advisory, revoked signer, changed dependency, discovered derivative, or stale inventory to affected graph nodes and existing custody, readiness, and release records so the system can quarantine, repair, or re-review a bounded path."
+          ],
+          "interfaces": [
+            "Artifact Graphs, Audit Logs, and Replay owns generic provenance storage and replay; this chapter owns AI supply-chain completeness, integrity policy, and affected-path routing.",
+            "Model-Weight Custody and Hardware Roots of Trust owns encrypted custody and attestation-gated loading of a known weight artifact; this chapter supplies the upstream lineage and advisory preconditions for that custody decision.",
+            "Data Engines, Continual Learning, and Unlearning owns learning-data admission, contamination, retention, and deletion mechanics; this chapter links datasets to cross-lifecycle lineage without deciding semantic fitness or unlearning success.",
+            "Security Kernel and Runtime Adapters own runtime secrets and action authority; a verified supply-chain record does not grant a tool, credential, network, or deployment permission.",
+            "Readiness Gates, Residual Escrow, and Quarantine owns bounded admission and residual custody after the supply-chain policy allows a path to be considered."
+          ],
+          "invariants": [
+            "An admitted artifact has a recorded identity and digest, declared upstream lineage, requested scope, and affected decision path.",
+            "A required provenance or signature result is bound to the declared artifact and policy scope; a missing, stale, mismatched, or unverified result cannot be silently accepted.",
+            "A component inventory and supplier/distributor record retain their version, scope, source, freshness, and unresolved gaps rather than claiming completeness by default.",
+            "An unresolved critical advisory, revoked signer, or invalidated lineage record propagates to affected derivatives and routes the requested artifact path to quarantine, repair, or accountable review.",
+            "A BOM, signature, provenance statement, or conformance label cannot establish artifact correctness, absence of compromise, data fitness, legal compliance, model safety, readiness, authority, or ASI."
+          ],
+          "failure_modes": [
+            "Dependency, dataset, model, or build substitution occurs behind an unchanged product or model name.",
+            "BOM theater presents a well-formed but incomplete, stale, or unverified inventory as an integrity guarantee.",
+            "Signature or provenance laundering turns a bounded integrity statement into a claim of secure development, safe data, safe model behavior, or deployment permission.",
+            "An upstream advisory, compromised signer, revoked supplier, or derivative relationship fails to reach affected custody, readiness, or release decisions.",
+            "A supplier, build, training, distribution, or disposal handoff loses the residual owner or re-review trigger needed after a change or incident."
+          ],
+          "minimal_implementation": "A versioned supply-chain admission record with artifact identity and digest, lineage reference, supplier/distributor scope, build or training provenance reference, signature requirement/result, component inventory reference/freshness, advisory state, revocation path, residual owner, and requested artifact admission. A finite Lean route quarantines a requested artifact with an unresolved critical advisory and blocks a requested artifact with a required but unverified signature.",
+          "beyond_state_of_art": "A mature AI supply-chain control plane maintains a continuously updated graph across data acquisition, curation, code and dependency changes, build and training runs, model and derivative artifacts, signing and verification, suppliers and distributors, deployment packages, vulnerability and advisory feeds, incident response, revocation, retention, and disposal. It can identify affected downstream paths, preserve decision history, request bounded re-review, and exchange interoperable BOM and provenance references without conflating transparency with security or safety. This is a target architecture, not a claim that this repository has complete lineage, a secure training or build pipeline, trustworthy suppliers, verified signatures, effective revocation, compliant distribution, safe models, or authorized deployment.",
+          "codex_tests": [
+            "Unresolved-critical-advisory quarantine route",
+            "Required-but-unverified signature admission block",
+            "Stale AI BOM and derivative-propagation negative controls",
+            "Public-safe supply-chain admission-record workload"
+          ],
+          "lean_module": "AsiStackProofs.SupplyChainIntegrity",
+          "proof_targets": [
+            {
+              "tag": "lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact",
+              "module": "AsiStackProofs.SupplyChainIntegrity",
+              "target": "A finite AI supply-chain record with a requested artifact admission, complete required lineage fields, and an unresolved critical advisory routes to quarantine rather than custody review, without inferring compromise, artifact correctness, data fitness, safety, or ASI.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "v0.1 chapter draft",
+          "open_evidence_gaps": [
+            "No ASI Stack AI BOM, supplier assessment, build or training provenance, signature, verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, or deployment has been run.",
+            "No local result establishes complete inventory, artifact integrity, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or ASI.",
+            "The finite Lean route establishes only a structured record consequence for a modeled unresolved critical advisory or required unverified signature; it does not establish whether any artifact, source, signature, advisory, policy, reviewer, or supplier record is correct."
+          ]
+        },
+        {
           "id": "recursive-self-improvement-boundaries",
           "title": "Recursive Self-Improvement Boundaries",
           "file": "chapters/recursive-self-improvement-boundaries.qmd",

@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 52 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 53 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 52,
+    "manifest_chapter_core_claims": 53,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 30,
+    "accepted_no_promotion_dispositions": 31,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 52
+    "chapter_core_claims_remaining_at_argument": 53
   },
   "dispositions": [
     {
@@ -649,6 +649,45 @@
       "formal_or_prototype_work": "Build a public-safe custody record with model/artifact identity, lineage, encrypted-storage reference, key-release policy, environment measurement, attestation result, access scope, revocation, release classification, and residual ownership.",
       "human_reader_focus": "Explain why a model artifact needs its own custody history, and why a hardware token is not a safety certificate.",
       "what_would_move_this": "A replayed synthetic custody workload with stale/invalid-attestation, changed-policy, widened-scope, open-release, revocation, and missing-lineage controls; no local weights, keys, hardware, confidentiality, security, safety, readiness, authority, or deployment claim.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "chapter_title": "AI Supply-Chain Integrity and Lifecycle Provenance",
+      "part_id": "foundations-alignment-governance",
+      "part_title": "Part I - Foundations, Alignment, and Governance",
+      "chapter_file": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A governed stack maintains a versioned AI supply-chain graph that binds each admitted model, dataset, code dependency, build or training run, signer or provenance statement, supplier or distributor, advisory and vulnerability state, derivative relationship, release scope, revocation path, residual owner, and retention or disposal event; a missing, inconsistent, unverified, revoked, or unresolved-critical component record blocks affected artifact admission or routes accountable review, but does not itself establish artifact correctness, absence of compromise, dataset fitness, model safety, legal compliance, readiness, authority, or ASI.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "public-safe synthetic supply-chain workload with bounded valid, missing-lineage, stale-BOM, unverified-signature, unresolved-critical-advisory, revoked-signer, changed-derivative, revocation, and residual controls",
+        "independent review of a bounded supply-chain threat model, provenance/signature verification policy, inventory freshness, advisory-routing, and affected-release record",
+        "accepted transition for a narrowed supply-chain admission-routing or re-review-propagation claim"
+      ],
+      "blockers": [
+        "no local AI BOM, supplier assessment, build or training provenance, signer, verifier, advisory feed, derivative graph, revocation action, or model artifact admission",
+        "no reproducible rebuild, supplier review, incident exercise, vulnerability/advisory evaluation, or inventory-completeness assessment",
+        "finite theorems do not establish artifact correctness, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or generality"
+      ],
+      "promotion_burden": "The chapter has source-noted C-SCRM, build-provenance, model-signing, and AI BOM comparators plus finite advisory/signature quarantine routes, but no ASI Stack AI BOM, supplier assessment, build or training provenance, signing/verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, readiness decision, or deployment result has been accepted as evidence for the broad claim.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove complete lineage, an AI BOM, artifact integrity, absence of compromise, or trustworthy suppliers",
+        "does not prove data fitness, legal compliance, secure training/build behavior, signature effectiveness, or effective revocation",
+        "does not prove model safety, readiness, authority, deployment, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 7 assigned sources; 7 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Source-noted lifecycle C-SCRM, build provenance, model signing, and AI BOM comparators plus finite advisory/signature quarantine routes",
+      "formal_or_prototype_work": "Build a public-safe supply-chain admission record with artifact identity/digest, lineage, supplier scope, build/training provenance, signature result, BOM freshness, advisory state, derivative links, revocation, residual ownership, and requested use.",
+      "human_reader_focus": "Explain how a model's data, code, build, signer, supplier, and derivatives form a traceable chain without making metadata a safety certificate.",
+      "what_would_move_this": "A replayed synthetic supply-chain workload with missing lineage, stale BOM, unverified signature, unresolved critical advisory, revoked signer, changed derivative, missing revocation, and missing-residual controls; no local AI BOM, provenance, signer, supplier assessment, artifact integrity, data fitness, safety, readiness, authority, or deployment claim.",
       "relevant_non_core_transition_refs": []
     },
     {

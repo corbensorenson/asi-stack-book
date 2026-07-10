@@ -98,6 +98,10 @@ No result is recorded here unless a test has actually been implemented and run.
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Stale-attestation and key-policy negative control | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Open-weight irreversibility record fixture | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Public-safe custody-record workload | planned | not run |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | AI Supply-Chain Integrity and Lifecycle Provenance | Unresolved-critical-advisory quarantine route | planned | not run |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | AI Supply-Chain Integrity and Lifecycle Provenance | Required-but-unverified signature admission block | planned | not run |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | AI Supply-Chain Integrity and Lifecycle Provenance | Stale AI BOM and derivative-propagation negative controls | planned | not run |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | AI Supply-Chain Integrity and Lifecycle Provenance | Public-safe supply-chain admission-record workload | planned | not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Protected-invariant preservation test | implemented | validated locally by 3 valid and 10 expected-invalid synthetic fixtures; deployed recursive self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Evaluator independence test | implemented | validated locally by synthetic fixtures; broader self-improvement behavior not run |
 | `recursive-self-improvement-boundaries` | Recursive Self-Improvement Boundaries | Self-improvement rollback scenario | implemented | validated locally by synthetic fixtures; live self-improvement rollback not run |
@@ -540,16 +544,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 221 |
+| Proof targets covered by triage | 222 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 221 |
+| implemented | 222 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 221 |
+| implemented | formal-invariant | lean-candidate | 222 |

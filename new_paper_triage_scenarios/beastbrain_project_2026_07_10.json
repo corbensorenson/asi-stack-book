@@ -1,0 +1,77 @@
+{
+  "scenario_id": "beastbrain-local-project-triage-2026-07-10",
+  "scenario_scope": "Real local-project intake decision for the hashed BeastBrain historical project snapshot.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "beastbrain-durable-semantic-memory-boundary",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "defer",
+      "chapter_manifest_action": "defer_to_backlog",
+      "existing_chapter_id": "virtual-context-abi",
+      "proposed_chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "decision_rationale": "BeastBrain establishes primary DKL/Portia provenance and a distinct durable-memory substrate spanning typed semantic objects, ontology, graph/vector retrieval, navigation, lifecycle, and certified snapshots. The manifest action remains deferred until all old projects and independent comparators are mined.",
+      "required_before_drafting": [
+        "complete remaining project mining and symbol-level provenance",
+        "ingest independent knowledge-graph, graph-RAG, learned-navigation, and agent-memory sources",
+        "write a chapter-boundary review against Virtual Context ABI, claim ledgers, and procedural memory"
+      ],
+      "evidence_transition_preconditions": [
+        "primary and inherited mechanisms distinguished",
+        "source note and exact claim mapping available",
+        "manifest change validated before chapter insertion"
+      ],
+      "promotion_blockers": [
+        "remaining projects not yet mined",
+        "no reproduced DKL retrieval or Portia navigation result",
+        "independent external literature not yet ingested"
+      ],
+      "non_claims": [
+        "does not add the proposed chapter",
+        "does not claim DKL or Portia novelty, quality, or performance"
+      ]
+    },
+    {
+      "case_id": "beastbrain-interface-effect-and-simulation-lessons",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The project provides concrete negative cases for trainable routers without parameter updates, simulated training curves, synthetic inference benchmarks, toy scoring, filtered-test overreach, tensor-layout failures, and readiness claims that outrun build/integration evidence.",
+      "required_before_drafting": [
+        "map each negative case to an exact source surface",
+        "label historical versus current source state",
+        "avoid reproducing private raw logs in public prose"
+      ],
+      "evidence_transition_preconditions": [
+        "claim-specific source mapping",
+        "implementation-reference limitation included",
+        "accepted transition required for any support-state change"
+      ],
+      "promotion_blockers": [
+        "current full compile not completed",
+        "project metrics not independently reproduced"
+      ],
+      "non_claims": [
+        "does not establish current compiler failure for every historical log",
+        "does not establish model, benchmark, hardware, security, or safety performance"
+      ]
+    }
+  ],
+  "validation_boundary": "Records a provisional new-chapter boundary and a reviewed existing-chapter negative-evidence route. It does not validate project results, source-publication rights, or a support-state transition.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not publish private source material",
+    "does not promote any claim"
+  ]
+}

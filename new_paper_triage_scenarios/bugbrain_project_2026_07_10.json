@@ -1,0 +1,109 @@
+{
+  "scenario_id": "bugbrain-local-project-triage-2026-07-10",
+  "scenario_scope": "Real local-project intake decision for the pinned BugBrain bare-metal AI system snapshot.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "bugbrain-hardware-context-and-action-governance",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "system-boundaries-and-authority",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "BugBrain makes physical-core ownership, bounded context persistence, privileged-action lifecycle, resource admission, and deployment state concrete enough to strengthen existing authority, context, execution, resource, security, and readiness chapters.",
+      "required_before_drafting": [
+        "complete cross-project symbol provenance",
+        "map each mechanism to its exact chapter owner",
+        "preserve host/emulator/hardware and interface/effect distinctions"
+      ],
+      "evidence_transition_preconditions": [
+        "claim-specific source mapping",
+        "implementation-reference limitation included",
+        "accepted transition required for any support-state change"
+      ],
+      "promotion_blockers": [
+        "Pi hardware and bridge suites not reproduced",
+        "complete trained artifact lineage not established",
+        "independent security and embedded-runtime literature not yet ingested"
+      ],
+      "non_claims": [
+        "does not establish intelligence, safety, security, efficiency, or production readiness",
+        "does not treat source-file presence as integrated capability"
+      ]
+    },
+    {
+      "case_id": "bugbrain-capacity-metric-readiness-and-root-negative-evidence",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The project provides concrete negative cases for capacity/residency conflation, mismatched memory arithmetic, theory-name laundering, fixed random cognitive modules, objective terms without decision effect, skipped checks marked green, host/status workloads overextended to target claims, narrative/machine-report contradiction, and protocol security overextended to hardware-root claims.",
+      "required_before_drafting": [
+        "cite machine-readable artifacts and exact code behavior",
+        "separate historical report state from current source state",
+        "avoid reproducing private raw logs or credentials"
+      ],
+      "evidence_transition_preconditions": [
+        "exact implementation and report references available",
+        "negative-case wording does not generalize beyond the pinned snapshot",
+        "accepted transition required for any support-state change"
+      ],
+      "promotion_blockers": [
+        "no independent hardware/security/scientific validation",
+        "bridge and HIL reproduction incomplete"
+      ],
+      "non_claims": [
+        "does not prove the whole system or cryptographic implementation insecure",
+        "does not establish that every historical readiness claim is false"
+      ]
+    },
+    {
+      "case_id": "bugbrain-durable-memory-boundary-contribution",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "defer",
+      "chapter_manifest_action": "defer_to_backlog",
+      "existing_chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "proposed_chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "decision_rationale": "Context Horizon and the compiled typed graph add a hardware-bounded persistence, tiering, journaling, tagging, generation-lease, and ontology-compilation implementation to BeastBrain's broader DKL lineage. This strengthens but does not yet resolve the provisional chapter boundary.",
+      "required_before_drafting": [
+        "mine Trainer and Best Model plus any new projects",
+        "ingest independent durable-memory and crash-consistency sources",
+        "complete boundary review against VCA, context transactions, claim ledgers, and procedural memory"
+      ],
+      "evidence_transition_preconditions": [
+        "primary versus inherited mechanisms distinguished",
+        "restore/revocation/compaction limitations retained",
+        "manifest change validated before insertion"
+      ],
+      "promotion_blockers": [
+        "remaining projects not mined",
+        "independent literature not ingested",
+        "no end-to-end durable-memory retrieval quality result reproduced"
+      ],
+      "non_claims": [
+        "does not add the proposed chapter",
+        "does not establish Context Horizon retrieval quality or novelty"
+      ]
+    }
+  ],
+  "validation_boundary": "Records reviewed existing-chapter routes and a deferred durable-memory boundary contribution. It does not validate project capability, hardware performance, security, scientific metrics, publication rights, or a support-state transition.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not publish private source material",
+    "does not promote any claim"
+  ]
+}

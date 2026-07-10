@@ -12,11 +12,11 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 221 |
-| Lean modules scanned | 60 |
-| Theorem declarations classified | 1066 |
+| Proof targets in manifest | 222 |
+| Lean modules scanned | 61 |
+| Theorem declarations classified | 1068 |
 | Direct/projection-style theorem declarations | 186 |
-| Derived/decomposed theorem declarations | 876 |
+| Derived/decomposed theorem declarations | 878 |
 | Unknown or mixed theorem declarations | 4 |
 | Safety-critical theorem declarations | 107 |
 | Safety-critical direct/projection declarations | 11 |
@@ -106,6 +106,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/SimulationFidelity.lean` | resource-economics-and-token-budgets | 4 | 13 | 4 | 9 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | stable-capability-fields | 4 | 25 | 8 | 17 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/StackBoundaries.lean` | asi-is-a-stack-not-a-model | 3 | 21 | 1 | 20 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | ai-supply-chain-integrity-and-lifecycle-provenance | 1 | 2 | 0 | 2 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/TheseusReference.lean` | project-theseus-as-report-first-implementation-reference | 12 | 54 | 2 | 52 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Tribunal.lean` | spinoza-verification-and-proof-carrying-claims | 2 | 13 | 2 | 11 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/TypedJobs.lean` | labor-os-and-typed-jobs | 5 | 27 | 3 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
@@ -1039,6 +1040,8 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/StackBoundaries.lean` | `possible_external_action_without_authority_or_handoff_blocks_contract` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `promotion_request_without_stack_evidence_transition_requests_transition` | derived_or_decomposed | no | uses simp |
 | `lean/AsiStackProofs/StackBoundaries.lean` | `valid_stack_trace_rejects_unauthorized_external_handoff` | derived_or_decomposed | no | uses contradiction, have, rw, unfold |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `required_unverified_signature_quarantines_artifact` | derived_or_decomposed | no | uses simp, unfold |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | `unresolved_critical_advisory_quarantines_requested_artifact` | derived_or_decomposed | no | uses simp, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `accepted_promotion_with_missing_or_failing_gate_reports_rejected` | derived_or_decomposed | no | uses contradiction, have, rw |
 | `lean/AsiStackProofs/TheseusReference.lean` | `accepted_theseus_report_bundle_audit_preserves_public_boundaries` | derived_or_decomposed | no | uses cases, simp, unfold |
 | `lean/AsiStackProofs/TheseusReference.lean` | `capability_or_self_evolution_promotion_blocked_without_passing_gate_reports` | direct_or_projection | no | only direct intro/exact/assumption/rfl-style steps detected |

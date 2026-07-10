@@ -765,6 +765,34 @@
       ]
     },
     {
+      "claim_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "chapter_title": "AI Supply-Chain Integrity and Lifecycle Provenance",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has source-noted C-SCRM, build-provenance, model-signing, and AI BOM comparators plus finite advisory/signature quarantine routes, but no ASI Stack AI BOM, supplier assessment, build or training provenance, signing/verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, readiness decision, or deployment result has been accepted as evidence for the broad claim.",
+      "required_evidence": [
+        "public-safe synthetic supply-chain workload with bounded valid, missing-lineage, stale-BOM, unverified-signature, unresolved-critical-advisory, revoked-signer, changed-derivative, revocation, and residual controls",
+        "independent review of a bounded supply-chain threat model, provenance/signature verification policy, inventory freshness, advisory-routing, and affected-release record",
+        "accepted transition for a narrowed supply-chain admission-routing or re-review-propagation claim"
+      ],
+      "blockers": [
+        "no local AI BOM, supplier assessment, build or training provenance, signer, verifier, advisory feed, derivative graph, revocation action, or model artifact admission",
+        "no reproducible rebuild, supplier review, incident exercise, vulnerability/advisory evaluation, or inventory-completeness assessment",
+        "finite theorems do not establish artifact correctness, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or generality"
+      ],
+      "non_claims": [
+        "does not prove complete lineage, an AI BOM, artifact integrity, absence of compromise, or trustworthy suppliers",
+        "does not prove data fitness, legal compliance, secure training/build behavior, signature effectiveness, or effective revocation",
+        "does not prove model safety, readiness, authority, deployment, or ASI"
+      ],
+      "refs": [
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#ai-supply-chain-integrity-and-lifecycle-provenance.core"
+      ]
+    },
+    {
       "claim_id": "safety-cases-and-structured-assurance.core",
       "chapter_id": "safety-cases-and-structured-assurance",
       "chapter_title": "Safety Cases and Structured Assurance",

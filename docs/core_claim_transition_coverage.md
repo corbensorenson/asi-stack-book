@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 52 |
+| Manifest chapter core claims | 53 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 30 |
+| Accepted explicit no-promotion decisions | 31 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -48,6 +48,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | Claim ID | Chapter | Decision | Primary blockers |
 |---|---|---|---|
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | `argument_only` | no local deceptive-model or detector result; no cross-context workload or independent replay; finite theorem does not establish sandbagging resistance or evaluator correctness |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | AI Supply-Chain Integrity and Lifecycle Provenance | `argument_only` | no local AI BOM, supplier assessment, build or training provenance, signer, verifier, advisory feed, derivative graph, revocation action, or model artifact admission; no reproducible rebuild, supplier review, incident exercise, vulnerability/advisory evaluation, or inventory-completeness assessment; finite theorems do not establish artifact correctness, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or generality |
 | `artifact-graphs-audit-logs-and-replay.core` | Artifact Graphs, Audit Logs, and Replay | `argument_only` | no artifact graph implementation; no replay metadata validation over real outputs; no audit reconstruction benchmark |
 | `artifact-steward-agents-and-living-project-governance.core` | Artifact Steward Agents and Living Project Governance | `argument_only` | no steward-agent runtime; no governed treasury action; no release-gate execution over a real artifact |
 | `asi-is-a-stack-not-a-model.core` | ASI Is a Stack, Not a Model | `argument_only` | no deployed or replayed stack run; finite proofs do not establish whole-stack behavior; no independent architecture review |

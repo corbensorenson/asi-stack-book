@@ -1,0 +1,172 @@
+{
+  "scenario_id": "corbens-trainer-local-project-triage-2026-07-10",
+  "scenario_scope": "Real local-project intake decision for the pinned Corben's Trainer training, evaluation, artifact, and promotion control-plane snapshot.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "trainer-epistemic-control-plane-and-learning-truth",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "evidence-states-and-claim-discipline",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Typed experiment assets, trainer/backend separation, retained learning-evidence failures, and the distinction between stage completion and parameter-changing learning strengthen the existing evidence discipline and self-improvement boundaries.",
+      "required_before_drafting": [
+        "trace the Best Model backend contract",
+        "map each learning-truth requirement to exact source and retained failure artifacts",
+        "separate backend declarations from independently verified effects"
+      ],
+      "evidence_transition_preconditions": [
+        "current tests reproduced",
+        "claim-specific artifact mapping complete",
+        "accepted transition required for any support-state change"
+      ],
+      "promotion_blockers": [
+        "workspace tests not reproduced",
+        "real training effect and independent checkpoint-delta verification not reproduced"
+      ],
+      "non_claims": [
+        "does not establish model learning quality or production training reliability",
+        "does not treat a backend-authored truth Boolean as independent proof"
+      ]
+    },
+    {
+      "case_id": "trainer-artifact-graph-campaign-and-checkpoint-durability",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Content-addressed blobs, role bindings, lineage edges, immutable journals, durable campaign state, backup recovery, and async checkpoint staging are concrete implementation references; discarded worker results, whole-file append rewrites, weak hash chains, and null promotion artifacts define the required failure closure.",
+      "required_before_drafting": [
+        "preserve crash-consistency and cryptographic-threat-model caveats",
+        "test terminal acknowledgement for every checkpoint request",
+        "review database relationship constraints"
+      ],
+      "evidence_transition_preconditions": [
+        "forced-failure and restart fixtures pass",
+        "artifact identity and promotion role are exact",
+        "accepted transition required for any support-state change"
+      ],
+      "promotion_blockers": [
+        "checkpoint failures before the inner persistence branch may be unrecorded",
+        "queue idle is not checkpoint success",
+        "journal chain and compaction are not cryptographically anchored"
+      ],
+      "non_claims": [
+        "does not establish crash safety, tamper resistance, or complete replay",
+        "does not establish database referential integrity under all mutations"
+      ]
+    },
+    {
+      "case_id": "trainer-benchmark-authenticity-seeds-and-revocation",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The snapshot supplies both strong interfaces—asset/rule/mode/claim separation, authenticity states, quarantine, intervals, and holdout watchdogs—and a concrete negative case where run-ID hashes count as seeds and later-quarantined placeholder evidence leaves stale claims and a stale promotion pointer.",
+      "required_before_drafting": [
+        "cite exact code behavior and retained claim/quarantine states",
+        "word external-labelled results only as quarantined negative evidence",
+        "design transitive invalidation and real seed identity contracts"
+      ],
+      "evidence_transition_preconditions": [
+        "authentic benchmark provenance and official harness established",
+        "actual experimental interventions recorded",
+        "automatic revocation closure tested"
+      ],
+      "promotion_blockers": [
+        "all retained typed run seeds are null",
+        "three external-looking promoted claims rely entirely on quarantined runs",
+        "candidate.current remains stale and lacks an artifact ID"
+      ],
+      "non_claims": [
+        "does not accept any retained external benchmark score",
+        "does not infer independent repetitions from filenames or run IDs"
+      ]
+    },
+    {
+      "case_id": "trainer-dataset-provenance-decontamination-and-resource-receipts",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Dataset governance, real corpus digesting, resource profiles, and accelerator resolution are useful interfaces, while the ID-hash checksum, declaration-only overlap scan, constructed contamination fields, template-adjacent split, and absolute source paths show the difference between metadata completeness and verified provenance.",
+      "required_before_drafting": [
+        "separate content digest, identifier fingerprint, declaration coverage, and empirical scan",
+        "redact private machine paths",
+        "map requested, resolved, and observed resource identities"
+      ],
+      "evidence_transition_preconditions": [
+        "preflight verifies the actual bytes consumed",
+        "sample-level overlap method and residual are recorded",
+        "split independence and resource receipts are claim-scoped"
+      ],
+      "promotion_blockers": [
+        "generic preflight does not verify content bytes",
+        "overlap scan does not inspect sample contents",
+        "validation split is not demonstrably source or generator disjoint"
+      ],
+      "non_claims": [
+        "does not establish decontamination, semantic diversity, or independent validation",
+        "does not establish accelerator comparability or efficiency"
+      ]
+    },
+    {
+      "case_id": "trainer-epistemic-control-plane-new-chapter-boundary",
+      "intake_kind": "local_project_artifact",
+      "access_state": "source_note_available",
+      "source_storage_policy": "local_private_cache",
+      "public_safety_state": "needs_redaction",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "defer",
+      "chapter_manifest_action": "defer_to_backlog",
+      "existing_chapter_id": "recursive-self-improvement-boundaries",
+      "proposed_chapter_id": "epistemic-control-planes-for-model-development",
+      "decision_rationale": "The trainer provides a coherent control-plane concept, but the mechanisms currently distribute cleanly across evidence, artifact, benchmark, supply-chain, self-improvement, resource, and governance chapters. The backend/kernel project and remaining intake must be mined before a distinct boundary can be justified.",
+      "required_before_drafting": [
+        "mine Corben's Best Model Possible",
+        "complete cross-project and chapter-spine deduplication",
+        "ingest independent training-control-plane literature"
+      ],
+      "evidence_transition_preconditions": [
+        "unique chapter thesis established",
+        "manifest change reviewed and validated",
+        "support state remains unchanged without accepted evidence"
+      ],
+      "promotion_blockers": [
+        "remaining backend project not mined",
+        "concept substantially overlaps existing chapter owners"
+      ],
+      "non_claims": [
+        "does not add the proposed chapter",
+        "does not claim the local architecture is novel"
+      ]
+    }
+  ],
+  "validation_boundary": "Records existing-chapter routes and a deferred epistemic-control-plane boundary. It does not validate training quality, external benchmark performance, decontamination, checkpoint durability, evaluator independence, publication rights, or a support-state transition.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter order",
+    "does not publish private source or artifact material",
+    "does not promote any claim"
+  ]
+}
