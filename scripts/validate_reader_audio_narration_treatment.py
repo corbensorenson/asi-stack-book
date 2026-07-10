@@ -66,20 +66,13 @@ def require_text(owner: str, value: Any, errors: list[str], *, min_words: int = 
 
 def validate() -> list[str]:
     errors: list[str] = []
-    for path in (MANIFEST, DOC, AUDIO_PROBE, KEY_FIGURE_COMPANION):
+    for path in (MANIFEST, DOC, KEY_FIGURE_COMPANION):
         if not path.exists():
             errors.append(f"required path missing: {rel(path)}")
     if errors:
         return errors
 
     manifest = require_dict(rel(MANIFEST), load_json(MANIFEST), errors)
-    audio_probe = require_dict(rel(AUDIO_PROBE), load_json(AUDIO_PROBE), errors)
-    reading_flow = require_dict(
-        "audio_probe.audio_script_reading_flow_review",
-        audio_probe.get("audio_script_reading_flow_review"),
-        errors,
-    )
-    key_figure_note = require_dict("audio_probe.key_figure_companion_note", audio_probe.get("key_figure_companion_note"), errors)
     doc_text = DOC.read_text(encoding="utf-8")
     companion_text = KEY_FIGURE_COMPANION.read_text(encoding="utf-8")
 
@@ -118,10 +111,8 @@ def validate() -> list[str]:
             errors.append(f"{key} must remain {expected!r}; found {manifest.get(key)!r}.")
 
     treatment_totals = require_dict("companion_treatment_totals", manifest.get("companion_treatment_totals"), errors)
-    if treatment_totals != reading_flow.get("companion_treatment_totals"):
-        errors.append("companion_treatment_totals must match the audio reading-flow review.")
     if treatment_totals != {"tables": 5, "mermaid_diagrams": 50, "code_or_schema_blocks": 0, "images": 11}:
-        errors.append("companion_treatment_totals drifted from the tracked narration-note counts.")
+        errors.append("companion_treatment_totals drifted from the recorded historical narration-note counts.")
 
     if "## Audio Treatment" not in companion_text:
         errors.append("key-figure companion note must contain an Audio Treatment section.")

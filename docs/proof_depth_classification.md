@@ -12,7 +12,7 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 211 |
+| Proof targets in manifest | 214 |
 | Lean modules scanned | 55 |
 | Theorem declarations classified | 1054 |
 | Direct/projection-style theorem declarations | 186 |
@@ -68,7 +68,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ContextTransactions.lean` | context-transactions-snapshots-mounts-and-taint | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/Corrigibility.lean` | constitutional-alignment-substrate | 2 | 18 | 2 | 16 | 0 | v1-blocking: upgrade or keep explicitly classified as projection-only traceability |
 | `lean/AsiStackProofs/CyclicMixers.lean` | coilra-multicoil-rope-and-cyclic-mixers | 2 | 7 | 2 | 5 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
-| `lean/AsiStackProofs/DataEngines.lean` | unmapped | 0 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/DataEngines.lean` | data-engines-continual-learning-and-unlearning | 3 | 3 | 0 | 3 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/Efficiency.lean` | the-efficient-asi-hypothesis | 4 | 26 | 2 | 24 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/EvidenceStates.lean` | evidence-states-and-claim-discipline | 7 | 31 | 9 | 22 | 0 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/FailureModes.lean` | failure-modes-of-ungoverned-intelligence | 4 | 23 | 2 | 21 | 0 | mixed: preserve limitation prose and prioritize projection replacements |

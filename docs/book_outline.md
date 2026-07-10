@@ -2873,9 +2873,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 206 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 206 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 211 proof targets, 54 Lean modules, 1051 theorem declarations, 861 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 214 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 214 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 214 proof targets, 55 Lean modules, 1054 theorem declarations, 864 derived/decomposed, 186 direct/projection, 4 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3052,6 +3052,109 @@ Lean proof targets:
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A policy update with unverified reward or missing governance gate cannot be promoted. | implemented |
 | `lean:policy_optimization.promotion_route.failure_routes` | `AsiStackProofs.PolicyOptimization` | A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion. | implemented |
 | `lean:policy_optimization.lease_probe_fixture_bridge` | `AsiStackProofs.PolicyOptimization` | The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary. | implemented |
+
+### Data Engines, Continual Learning, and Unlearning
+
+Stable ID: `data-engines-continual-learning-and-unlearning`
+
+Chapter job: Give a self-improving stack one governed lifecycle for learning
+inputs, synthetic descendants, replay, retention, evaluation exclusions, and
+deletion requests without confusing receipt completeness with model quality,
+privacy compliance, verified forgetting, or capability promotion.
+
+Core claim: A governed data engine treats learning inputs as versioned, provenance- and evaluation-bound artifacts, deciding admission, quarantine, retention, replay, and deletion separately from capability promotion.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `ext_bourtoule_machine_unlearning_2021`, `theseus_synthetic_data_curation` | Read first for deletion-path structure, bounded retraining trade-offs, and the pinned source-reported synthetic-curation control pattern. Do not represent either source as a local execution. |
+| Supporting | `ext_shumailov_model_collapse_2023`, `ext_gerstgrasser_data_accumulation_2024` | Mine for the tension between recursive synthetic-data replacement and accumulation, provenance, coverage, retention, and stated limits; retain workload-specific boundaries. |
+| Variants | none assigned | Add additional unlearning, provenance, contamination, or continual-learning literature only after a source note identifies its distinct decision surface. |
+| Connector or recovery required | none assigned | No connector source is required for the first chapter draft. |
+| Handoff or recovery notes | `schemas/data_admission_receipt.schema.json`, `lean/AsiStackProofs/DataEngines.lean`, `tests/fixtures/protocol_records/data_admission_receipt.valid.json` | These are local finite-record artifacts, not a data engine, dataset, training run, or deletion result. |
+
+Draft arc:
+
+- Problem: Learning inputs become transformed, mixed, replayed, indexed,
+  distilled, and published; the stack needs to preserve their authority and
+  descendant scope rather than losing that history in a training pipeline.
+- Insufficiency: Isolated ingestion, training, evaluation, retention, and
+  privacy processes do not jointly state what an input affected, which
+  exclusions were checked, or what remains after a deletion request.
+- Mechanism: Issue a versioned receipt with origin, authority, provenance,
+  synthetic lineage, split exclusions, contamination checks, retention,
+  deletion scope, evaluation refs, residuals, bounded decision, and non-claims.
+- Mechanism: Block missing provenance or authority; quarantine missing split or
+  contamination controls; retain incomplete lifecycle records in a bounded
+  experimental lane; separate eligibility from training, deployment, and claim
+  promotion.
+- Mechanism: Treat replacement, accumulation, replay, quarantine, and
+  retraining as competing workload-specific policies with visible coverage,
+  privacy, deletion, poisoning, freshness, cost, and utility trade-offs.
+- Mechanism: Represent deletion as a descendant-closure obligation, not a
+  completed state inferred from a request; distinguish source removal,
+  retraining, checkpoint and cache invalidation, retrieval deletion, withdrawal,
+  and unverified scope.
+- Interface: Policy optimization may consume only receipt-bound feedback;
+  artifact graphs retain lineage; benchmark ratchets supply exclusions and
+  regressions; SCF and claim ledgers retain promotion authority.
+
+Primary invariants:
+
+- No ordinary eligibility without recorded provenance, authority, split
+  exclusions, contamination checks, retention policy, deletion scope,
+  evaluation references, and residuals.
+- Synthetic lineage and retention/replacement policy remain visible through
+  later decisions.
+- A deletion request is not verified forgetting until affected descendants and
+  verification scope are recorded.
+- Data admission cannot itself promote data quality, learning, benchmark,
+  privacy, safety, or capability claims.
+
+Failure modes to cover:
+
+- Provenance laundering through transformations, distillation, mixtures, or
+  synthetic rewrites.
+- Exact-overlap checks that miss semantic leakage, memorization, or
+  distributional contamination.
+- Recursive replacement tail loss and indiscriminate accumulation of private,
+  poisoned, stale, or revoked records.
+- Deletion theater across checkpoints, adapters, caches, retrieval stores,
+  distilled models, exports, and reports.
+- Promotion laundering from a well-formed receipt to a quality, safety, or
+  unlearning claim.
+
+Draft deliverables:
+
+- Live and generated-reader chapter with a human reading path and source-noted
+  external positioning before the source crosswalk.
+- `data_admission_receipt.schema.json` plus a public-safe
+  `experimental_only` fixture that records residual semantic-leakage and
+  unlearning limits without importing a training dataset.
+- `AsiStackProofs.DataEngines` finite routing model for block, quarantine,
+  experimental-only, and eligibility outcomes.
+- Planned public-safe workload comparing replacement, accumulation, replay,
+  quarantine, and retraining under frozen baselines, heldout contamination
+  checks, negative controls, and independently replayed deletion scopes.
+
+Reader direction:
+
+- Open with the ordinary question of what it means for a system to learn from
+  an example, then use deletion and synthetic-data trade-offs to show why the
+  history must stay visible.
+- Keep the distinction between removing a row and proving removal from a
+  model's descendants concrete and non-alarmist.
+- Treat source results as comparative evidence with stated conditions, never as
+  proof of a local pipeline or a blanket claim about synthetic data.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:data_engines.provenance_authority.failure_blocks_admission` | `AsiStackProofs.DataEngines` | Missing provenance or authority routes a finite data-admission review to block. | implemented |
+| `lean:data_engines.contamination.failure_routes` | `AsiStackProofs.DataEngines` | Missing split exclusions or contamination checks routes a finite data-admission review to quarantine. | implemented |
+| `lean:data_engines.complete_receipt.eligibility_invariant` | `AsiStackProofs.DataEngines` | A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified. | implemented |
 
 ### Artifact Steward Agents and Living Project Governance
 

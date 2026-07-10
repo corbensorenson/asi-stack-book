@@ -1751,6 +1751,36 @@
       "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite synthetic lease-probe summary: it mirrors sample/candidate counts, expected-invalid control rejection, rollback dry-run presence, no-support-effect status, and non-claim boundary only, without proving optimizer behavior, reward quality, route quality, live canary behavior, live rollback behavior, or chapter-core support movement."
     },
     {
+      "tag": "lean:data_engines.provenance_authority.failure_blocks_admission",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "module": "AsiStackProofs.DataEngines",
+      "formal_target": "Missing provenance or authority routes a finite data-admission review to block.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.DataEngines as a finite admission-route predicate: a declared missing provenance or authority field routes the review to block, without inspecting source truth, dataset contents, or downstream artifacts."
+    },
+    {
+      "tag": "lean:data_engines.contamination.failure_routes",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "module": "AsiStackProofs.DataEngines",
+      "formal_target": "Missing split exclusions or contamination checks routes a finite data-admission review to quarantine.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.DataEngines as a finite admission-route predicate: a declared missing split-exclusion or contamination-check field routes the review to quarantine, without detecting leakage or validating a heldout corpus."
+    },
+    {
+      "tag": "lean:data_engines.complete_receipt.eligibility_invariant",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "module": "AsiStackProofs.DataEngines",
+      "formal_target": "A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented in AsiStackProofs.DataEngines as a finite completeness route: declared control fields yield eligibility for bounded use only, without establishing provenance truth, data quality, training value, deletion propagation, or chapter-core support movement."
+    },
+    {
       "tag": "lean:artifact_stewards.work_contract.operational_invariant",
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "module": "AsiStackProofs.ArtifactStewardAgents",
@@ -2121,5 +2151,5 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite metadata-only fixture bridge: it preserves durable work-board row counts, stale-snapshot currentness blocking, zero public training rows, zero external inference calls, no raw-report or SQLite/task payload copy, and no clean-live-replay or chapter-core promotion boundaries."
     }
   ],
-  "record_count": 211
+  "record_count": 214
 }

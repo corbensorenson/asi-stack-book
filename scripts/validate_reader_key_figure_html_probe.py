@@ -23,6 +23,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
+BOOK_STRUCTURE = ROOT / "book_structure.json"
 RESULT = ROOT / "experiments" / "reader_key_figure_html_probe" / "results" / "2026-07-02-local.json"
 DOC = ROOT / "docs" / "reader_key_figure_html_probe.md"
 EXPECTED_COUNT = 10
@@ -46,6 +47,25 @@ def words(text: str) -> list[str]:
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def active_spine_differs_from_historical_snapshot() -> bool:
+    manifest = load_json(MANIFEST)
+    structure = load_json(BOOK_STRUCTURE)
+    if not isinstance(manifest, dict) or not isinstance(structure, dict):
+        fail(["reader manifest and book structure must be objects."])
+    snapshot = manifest.get("historical_spine_snapshot", {})
+    snapshot_ids = snapshot.get("chapter_ids", []) if isinstance(snapshot, dict) else []
+    active_ids = [
+        str(chapter.get("id", ""))
+        for part in structure.get("parts", [])
+        if isinstance(part, dict)
+        for chapter in part.get("chapters", [])
+        if isinstance(chapter, dict)
+    ]
+    if not isinstance(snapshot_ids, list) or not all(isinstance(item, str) for item in snapshot_ids):
+        fail(["historical_spine_snapshot.chapter_ids must be a list of chapter IDs."])
+    return active_ids != snapshot_ids
 
 
 def fail(errors: list[str]) -> None:
@@ -181,6 +201,16 @@ def inspect_figure(site: Path, figure: dict[str, Any]) -> tuple[dict[str, Any], 
 
 
 def current_probe_result() -> dict[str, Any]:
+    # A historical reader artifact must not be rebuilt from a changed active spine.
+    # The active generated reader has separate spine and Human-view validators.
+    if active_spine_differs_from_historical_snapshot():
+        if not RESULT.exists():
+            fail([f"Missing frozen historical result: {rel(RESULT)}."])
+        stored = load_json(RESULT)
+        if not isinstance(stored, dict):
+            fail([f"{rel(RESULT)} must contain an object."])
+        return stored
+
     manifest = load_json(MANIFEST)
     figures = manifest.get("reader_handoff_contract", {}).get("key_figure_targets", [])
     if not isinstance(figures, list) or len(figures) != EXPECTED_COUNT:
@@ -244,11 +274,13 @@ def write_doc(result: dict[str, Any]) -> None:
         "python3 scripts/validate_reader_key_figure_html_probe.py --write-result",
         "```",
         "",
-        "This probe builds the tracked curated reader manuscript into a temporary",
-        "Quarto workspace, renders HTML, and inspects the rendered HTML DOM for the",
-        "ten draft key figures. It checks image references, copied SVG assets, alt",
-        "text, captions, responsive image classes, and visible non-claim boundary",
-        "paragraphs. It is not a release approval and not final figure-artifact review.",
+        "This probe records a rendered HTML structural review of the frozen v1.0 curated",
+        "reader snapshot. When the active book spine differs from that snapshot, the",
+        "validator preserves this historical result rather than rebuilding the curated",
+        "manuscript from newer chapters. The active generated reader has separate spine",
+        "and Human-view validation. The recorded probe checks image references, copied SVG",
+        "assets, alt text, captions, responsive image classes, and visible non-claim",
+        "boundary paragraphs. It is not a release approval and not final figure-artifact review.",
         "",
         "## Result",
         "",

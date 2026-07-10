@@ -704,7 +704,9 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "script_files_checked": audio_workspace.get("script_files"),
         "chapter_marker_rows": audio_workspace.get("script_files"),
         "chapter_marker_tbd_rows": audio_workspace.get("script_files"),
-        "narration_note_count": 66,
+        "narration_note_count": sum(
+            int(value) for value in audio_probe.get("companion_treatment_totals", {}).values()
+        ),
         "target_artifact_status": {
             "mp3": "target_not_generated",
             "m4b": "target_not_generated",
@@ -1343,8 +1345,8 @@ def collect_metrics() -> tuple[dict[str, Any], list[str]]:
         "reader_audio": [
             "Audio Script Reading-Flow Review",
             "matches book-structure order",
-            "49 ordered markers",
-            "66 narration notes",
+            f"{audio_reading_flow.get('chapter_marker_rows')} ordered markers",
+            f"{audio_reading_flow.get('narration_note_count')} narration notes",
             "Current digest and text statistics are recorded in the tracked audio-script probe manifest.",
             "not narration quality review",
             "final figure-artifact approval, or evidence that audio files exist.",

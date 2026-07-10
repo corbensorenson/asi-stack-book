@@ -52,6 +52,8 @@ changes the observed behavior and can bound error in their analytical model.
 
 ## Book Chapters Supported
 
+- `data-engines-continual-learning-and-unlearning` (Data Engines, Continual
+  Learning, and Unlearning)
 - `policy-optimization-and-learning-from-feedback` (Policy Optimization and
   Learning from Feedback)
 - `procedural-memory-and-cognitive-loop-closure` (Procedural Memory and

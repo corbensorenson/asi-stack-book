@@ -14,6 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
+BOOK_STRUCTURE = ROOT / "book_structure.json"
 CLAIM_REVISION = ROOT / "claim_revisions" / "v1_x" / "manifest_core_claim_count_narrowing.json"
 APPENDIX_C = ROOT / "appendices" / "C_claim_evidence_matrix.qmd"
 README = ROOT / "README.md"
@@ -81,7 +82,6 @@ EXPECTED = {
 NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
 
 REQUIRED_LEDGER_STRINGS = [
-    "All 44 remain at `argument`.",
     "Accepted non-core upward transitions | 14 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
@@ -119,6 +119,17 @@ def load_transition(path: Path) -> dict:
     return data
 
 
+def manifest_chapter_count() -> int:
+    structure = json.loads(BOOK_STRUCTURE.read_text(encoding="utf-8"))
+    if not isinstance(structure, dict):
+        raise TypeError("book_structure.json must contain an object")
+    return sum(
+        len(part.get("chapters", []))
+        for part in structure.get("parts", [])
+        if isinstance(part, dict)
+    )
+
+
 def accepted_no_promotion_records(errors: list[str]) -> dict[str, dict[str, object]]:
     records: dict[str, dict[str, object]] = {}
     for path in sorted(NO_PROMOTION_DIR.glob("*.json")):
@@ -149,6 +160,7 @@ def main() -> None:
     no_promotion_expected = accepted_no_promotion_records(errors)
 
     dynamic_required_ledger_strings = [
+        f"All {manifest_chapter_count()} remain at `argument`.",
         (
             "Accepted no-promotion side-lane decisions | "
             f"{len(no_promotion_expected)} accepted `blocks_promotion` decisions; "

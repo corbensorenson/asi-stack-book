@@ -57,30 +57,17 @@ EXPECTED_READING_FLOW_EXACT = {
     "status": "passed_audio_script_reading_flow_review",
     "source_workspace": "build/audio_script",
     "source_generator": "scripts/build_audio_script.py",
-    "source_mode": "tracked_curated_reader_manuscript",
-    "requested_source_mode": "curated_reader_manuscript",
+    "source_mode": "generated_reader_edition",
+    "requested_source_mode": "generated_reader_edition",
     "report_ref": "build/audio_script/audio_script_reading_flow_report.json",
     "review_command": "python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest",
     "script_file_order_status": "matches_book_structure",
     "script_file_order_errors": [],
-    "narration_note_count": 66,
-    "table_narration_notes": 5,
-    "diagram_narration_notes": 50,
-    "image_narration_notes": 11,
-    "code_schema_narration_notes": 0,
-    "companion_treatment_totals": {
-        "tables": 5,
-        "mermaid_diagrams": 50,
-        "code_or_schema_blocks": 0,
-        "images": 11,
-    },
     "chapter_marker_order_status": "matches_script_file_order",
     "chapter_marker_order_errors": [],
     "live_marker_hits": 0,
     "raw_core_claim_marker_hits": 0,
     "replacement_character_count": 0,
-    "max_line_characters": 1800,
-    "max_word_characters": 143,
     "target_artifact_status": EXPECTED_TARGET_STATUS,
 }
 
@@ -326,12 +313,12 @@ def validate_manifest(manifest: dict[str, Any]) -> list[str]:
         errors.append("script_workspace_summary.status must be generated_in_temp_and_checked.")
     if summary.get("source_profile") != "reader_release":
         errors.append("script_workspace_summary.source_profile must be reader_release.")
-    if summary.get("source_mode") != "tracked_curated_reader_manuscript":
-        errors.append("script_workspace_summary.source_mode must be tracked_curated_reader_manuscript.")
-    if summary.get("requested_source_mode") != "curated_reader_manuscript":
-        errors.append("script_workspace_summary.requested_source_mode must be curated_reader_manuscript.")
-    if summary.get("source_generator") != "scripts/build_curated_reader_edition.py":
-        errors.append("script_workspace_summary.source_generator must be scripts/build_curated_reader_edition.py.")
+    if summary.get("source_mode") != "generated_reader_edition":
+        errors.append("script_workspace_summary.source_mode must be generated_reader_edition.")
+    if summary.get("requested_source_mode") != "generated_reader_edition":
+        errors.append("script_workspace_summary.requested_source_mode must be generated_reader_edition.")
+    if summary.get("source_generator") != "scripts/build_reader_edition.py":
+        errors.append("script_workspace_summary.source_generator must be scripts/build_reader_edition.py.")
     if summary.get("audio_profile") != "audio_release":
         errors.append("script_workspace_summary.audio_profile must be audio_release.")
     require_int("script_workspace_summary", "script_files", summary.get("script_files"), errors, minimum=1)
@@ -495,9 +482,9 @@ def validate_summary(manifest: dict[str, Any], errors: list[str]) -> None:
     narration_notes = reading_flow.get("narration_note_count") if isinstance(reading_flow, dict) else None
     required_fragments = [
         "Reader Audio-Script Probe Manifest",
-        "tracked curated reader manuscript",
+        "active generated reader edition",
         "python3 scripts/build_audio_script.py --check",
-        "| Source mode | `tracked_curated_reader_manuscript` |",
+        "| Source mode | `generated_reader_edition` |",
         f"| Script files | {script_files} |",
         "| Implementation-horizon script status | pass |",
         f"| Mermaid diagrams | {mermaid_diagrams} |",

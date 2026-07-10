@@ -63,7 +63,7 @@
   "command_records": [
     {
       "command": "python3 scripts/validate_costed_route_resource_slice.py",
-      "elapsed_ms": 63.55,
+      "elapsed_ms": 27.815,
       "exit_code": 0,
       "id": "costed_route_resource_slice",
       "output_excerpt": [
@@ -74,7 +74,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workflow_trace.py",
-      "elapsed_ms": 32.963,
+      "elapsed_ms": 28.404,
       "exit_code": 0,
       "id": "resource_workflow_trace",
       "output_excerpt": [
@@ -85,7 +85,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_budget_ledgers.py",
-      "elapsed_ms": 32.455,
+      "elapsed_ms": 27.212,
       "exit_code": 0,
       "id": "resource_budget_ledgers",
       "output_excerpt": [
@@ -96,7 +96,7 @@
     },
     {
       "command": "python3 scripts/validate_capacity_smoothing.py",
-      "elapsed_ms": 31.161,
+      "elapsed_ms": 26.947,
       "exit_code": 0,
       "id": "capacity_smoothing",
       "output_excerpt": [
@@ -107,7 +107,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_live_probe.py",
-      "elapsed_ms": 198.489,
+      "elapsed_ms": 183.189,
       "exit_code": 0,
       "id": "resource_live_probe",
       "output_excerpt": [
@@ -118,7 +118,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_workload_quality_probe.py",
-      "elapsed_ms": 1367.492,
+      "elapsed_ms": 1090.927,
       "exit_code": 0,
       "id": "resource_workload_quality_probe",
       "output_excerpt": [
@@ -129,7 +129,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_load_stability_probe.py",
-      "elapsed_ms": 33.861,
+      "elapsed_ms": 32.178,
       "exit_code": 0,
       "id": "resource_load_stability_probe",
       "output_excerpt": [
@@ -140,7 +140,7 @@
     },
     {
       "command": "python3 scripts/validate_resource_ci_cost_profile.py",
-      "elapsed_ms": 41.493,
+      "elapsed_ms": 38.931,
       "exit_code": 0,
       "id": "resource_ci_cost_profile",
       "output_excerpt": [
@@ -151,7 +151,7 @@
     },
     {
       "command": "python3 scripts/validate_simulation_transfer_boundaries.py",
-      "elapsed_ms": 25.565,
+      "elapsed_ms": 25.181,
       "exit_code": 0,
       "id": "simulation_transfer_boundaries",
       "output_excerpt": [
@@ -162,7 +162,7 @@
     },
     {
       "command": "python3 scripts/validate_evidence_transitions.py",
-      "elapsed_ms": 44.248,
+      "elapsed_ms": 59.928,
       "exit_code": 0,
       "id": "evidence_transitions",
       "output_excerpt": [
@@ -327,7 +327,7 @@
   "pass": true,
   "public_safe": true,
   "record_kind": "resource_flagship_lane_replay",
-  "recorded_at_utc": "2026-07-06T04:46:01Z",
+  "recorded_at_utc": "2026-07-10T03:10:04Z",
   "residuals": [
     "Accepted upward transitions remain scoped to non-core Resource claims: costed-route selection, finite synthetic load-smoothing selection, and local scoped workflow-trace route selection, not the chapter core claim.",
     "Workload-quality timing is a local repository-task measurement and remains machine-load sensitive.",
@@ -383,10 +383,10 @@
       "sha256": "37af7b112e9f8db7af53ff977af32b6e0a04cee9d2890fd5937c2c2f06ca46f6"
     },
     {
-      "bytes": 23867,
-      "lines": 122,
+      "bytes": 23918,
+      "lines": 123,
       "path": "docs/v1_x_active_evidence_cycle.md",
-      "sha256": "f704baf0295cbe6b10f3612677ba690ce2bbc71610fab0cd306b88896f1f54ec"
+      "sha256": "e9a1c4d631c94e5f28aa0cc14ed5a120dae8b8981f989a2a4ad97285ce3abe1b"
     },
     {
       "bytes": 7354,

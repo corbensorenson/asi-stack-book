@@ -59,6 +59,12 @@ REQUIRED_IDS = {
     "living-book-methodology",
 }
 
+# The consolidation program established a 44-chapter historical release
+# baseline. The living manifest can grow through the separate source/ownership
+# intake, so this validator protects that completed baseline without turning it
+# into a cap on later, independently owned chapters.
+HISTORICAL_BASELINE_CHAPTER_COUNT = 44
+
 REQUIRED_FRAGMENTS = (
     "planning and release-control artifact plus an execution ledger",
     "not a support-state transition",
@@ -950,8 +956,12 @@ def main() -> None:
         sys.exit(1)
 
     ids = manifest_chapter_ids()
-    if len(ids) != 44:
-        errors.append("Consolidation sequence expects the current manifest to have 44 chapters after the semantic-representation fold.")
+    if len(ids) < HISTORICAL_BASELINE_CHAPTER_COUNT:
+        errors.append(
+            "Consolidation sequence requires at least "
+            f"{HISTORICAL_BASELINE_CHAPTER_COUNT} active chapters so the historical "
+            "semantic-representation fold baseline is preserved."
+        )
 
     for chapter_id in sorted(REQUIRED_IDS):
         if chapter_id not in ids:
@@ -1506,7 +1516,13 @@ def main() -> None:
 
     print(
         "Chapter consolidation sequence validation passed: "
-        "44-chapter manifest, executed Part I pilot, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, executed simulation-fidelity fold, executed static context ABI merge, executed verification/adversarial-review merge, executed planning/DAG consolidation, and executed semantic-representation fold recorded with remaining candidate sequence."
+        f"{len(ids)}-chapter active manifest with the 44-chapter historical baseline, "
+        "executed Part I pilot, executed conservative compression merge, executed "
+        "intent/contracts merge, executed MoECOT runtime fold, executed "
+        "simulation-fidelity fold, executed static context ABI merge, executed "
+        "verification/adversarial-review merge, executed planning/DAG consolidation, "
+        "and executed semantic-representation fold recorded with remaining candidate "
+        "sequence."
     )
 
 

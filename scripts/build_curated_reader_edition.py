@@ -59,7 +59,9 @@ def rel(path: Path) -> str:
     return str(path.relative_to(ROOT))
 
 
-def fail(errors: list[str]) -> None:
+def fail(errors: list[str] | str) -> None:
+    if isinstance(errors, str):
+        errors = [errors]
     print("Curated reader edition build failed:")
     for error in errors:
         print(f" - {error}")

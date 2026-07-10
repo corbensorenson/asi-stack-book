@@ -11314,6 +11314,162 @@
           ]
         },
         {
+          "id": "data-engines-continual-learning-and-unlearning",
+          "title": "Data Engines, Continual Learning, and Unlearning",
+          "file": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+          "source_ids": [
+            "ext_bourtoule_machine_unlearning_2021",
+            "ext_shumailov_model_collapse_2023",
+            "ext_gerstgrasser_data_accumulation_2024",
+            "theseus_synthetic_data_curation"
+          ],
+          "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record.",
+          "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
+          "core_claim": "A governed data engine treats learning inputs as versioned, provenance- and evaluation-bound artifacts, deciding admission, quarantine, retention, replay, and deletion separately from capability promotion.",
+          "claim_source_mappings": [
+            {
+              "source_id": "ext_bourtoule_machine_unlearning_2021",
+              "mapped_support": "Supports treating deletion as a lifecycle with training-time structure, affected-artifact scope, retraining cost, accuracy trade-offs, and residual boundaries rather than as a bare forget command.",
+              "limits": "Does not prove deletion from this repository's models, checkpoints, adapters, caches, retrieval stores, distilled artifacts, or published outputs; it does not establish privacy compliance or generic unlearning.",
+              "passage_refs": [
+                "sources/source_notes/ext_bourtoule_machine_unlearning_2021.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-paper summary for SISA's sharding, isolation, slicing, aggregation, evaluation trade-offs, and stated limitations. No SISA code, checkpoint, training run, or deletion request was reproduced here.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_shumailov_model_collapse_2023",
+              "mapped_support": "Supports treating recursively generated data as provenance-bearing input with coverage and tail-loss residuals, rather than assuming every synthetic-data loop is harmless or every synthetic sample is unsafe.",
+              "limits": "The source's theoretical and experimental settings do not establish model collapse in this repository or a universal rule for mixed real and synthetic training pipelines.",
+              "passage_refs": [
+                "sources/source_notes/ext_shumailov_model_collapse_2023.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-paper summary for recursive-data assumptions, finite-sampling and approximation error, language-model proof-of-concept, provenance safeguards, and limits. No recursive training sequence or coverage metric was run here.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_gerstgrasser_data_accumulation_2024",
+              "mapped_support": "Supports making replacement, accumulation, retention, and deletion explicit competing policies in a synthetic-data loop rather than collapsing them into one generic anti-collapse rule.",
+              "limits": "Its source-setting analytical and experimental results do not prove that accumulation is safe, optimal, private, or effective for this stack or for modern foundation-model training generally.",
+              "passage_refs": [
+                "sources/source_notes/ext_gerstgrasser_data_accumulation_2024.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-paper summary for replacement-versus-accumulation experiments, analytical assumptions, data-retention policy, and countervailing deletion and privacy risks. No source workload or ablation was reproduced here.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "theseus_synthetic_data_curation",
+              "mapped_support": "Supports a source-reported implementation pattern for residual-targeted synthetic-data curation with provenance, exact-overlap exclusions, quality and diversity gates, ratio caps, governed teacher handling, and blocked promotion paths.",
+              "limits": "This is pinned implementation-reference context only. The ASI Stack repository has not run its curator, inspected generated rows, replayed digests, imported a dataset, or measured data or model quality.",
+              "passage_refs": [
+                "sources/source_notes/theseus_synthetic_data_curation.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the pinned-source note for the Theseus curation policy, gate categories, source-reported curator result, and named residuals. No Theseus command, dataset, comparator, or promotion record was rerun here.",
+              "passage_review_state": "reviewed"
+            }
+          ],
+          "mechanism": [
+            "Issue a data-admission receipt before an input is eligible for a declared learning or evaluation lane.",
+            "Bind origin, authority, provenance class, synthetic lineage, split exclusions, contamination checks, retention policy, deletion scope, evaluation references, residuals, and a bounded admission decision.",
+            "Quarantine missing provenance or authority; quarantine missing split-exclusion or contamination records; keep incomplete lifecycle records experimental rather than treating them as ordinary data admission.",
+            "Represent replacement, accumulation, replay, and deletion as explicit competing policies with workload-specific measurements and unresolved trade-offs.",
+            "Propagate deletion and revocation requests through declared descendants while retaining the residual boundary where parameter, cache, checkpoint, retrieval, or publication removal has not been verified.",
+            "Keep data admission distinct from training success, benchmark improvement, capability readiness, privacy compliance, and support-state promotion."
+          ],
+          "interfaces": [
+            "Policy optimization consumes only receipt-bound feedback and data candidates, never an undocumented corpus mutation.",
+            "Artifact graphs bind datasets, generators, evaluations, checkpoints, derived artifacts, and deletion requests into replayable lineage records.",
+            "Benchmark ratchets supply split exclusions, contamination probes, regressions, and promotion blockers.",
+            "Procedural memory and VCM receive governed artifacts with provenance, permitted-use, retention, and revocation boundaries rather than free-floating examples.",
+            "SCF and evidence ledgers retain authority over deployment and claim promotion after a data-engine decision."
+          ],
+          "invariants": [
+            "No input is eligible without recorded provenance, authority, split exclusions, contamination checks, retention policy, deletion scope, evaluation references, and residuals.",
+            "A synthetic-data lineage, replacement-or-accumulation policy, and residual boundary remain visible through every later admission decision.",
+            "A deletion request is not represented as verified forgetting until affected descendants and verification scope are recorded.",
+            "Data admission cannot by itself promote a learning, benchmark, privacy, safety, or capability claim.",
+            "Missing controls route to block, quarantine, or experimental-only handling rather than silent ordinary admission."
+          ],
+          "failure_modes": [
+            "Provenance laundering through transformed, distilled, or mixed synthetic examples.",
+            "Exact-overlap checks that miss semantic leakage, benchmark memorization, or distributional shift.",
+            "Recursive synthetic-data replacement that loses tail coverage, or indiscriminate accumulation that retains poisoned, private, obsolete, or revoked data.",
+            "Deletion theater in which a request is logged while downstream checkpoints, adapters, caches, retrieval stores, and published artifacts remain unverified.",
+            "Promotion laundering in which a well-formed receipt is mistaken for evidence of model quality, safety, or unlearning."
+          ],
+          "minimal_implementation": "A viable first slice is a versioned data-admission receipt, a public-safe synthetic fixture, deterministic routing for missing controls, and a lineage ledger that keeps every candidate experimental until an independently evaluated training or deletion path is accepted.",
+          "beyond_state_of_art": "The mature target is a stack-wide data governance plane that treats every learning input, synthetic descendant, replay item, deletion request, evaluation split, and derived model artifact as an auditable lifecycle object. It measures workload-specific coverage, contamination, utility, cost, privacy, freshness, and deletion propagation; compares replacement, accumulation, replay, quarantine, and retraining policies; and requires a verifier-backed lineage closure before a result can affect deployment or belief. This is a target architecture, not a current system result: support remains argument until scoped intake, training, unlearning, and descendant-verification evidence is independently replayed and accepted.",
+          "codex_tests": [
+            {
+              "name": "Data-admission receipt schema fixture",
+              "purpose": "Check that a public-safe receipt records provenance, authority, lineage, exclusions, contamination checks, lifecycle fields, residuals, non-claims, and an experimental-only decision.",
+              "status": "implemented through repository schema and fixture validation; no dataset or training run is admitted",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `tests/fixtures/protocol_records/data_admission_receipt.valid.json`; no data-quality, training, or unlearning result"
+            },
+            {
+              "name": "Data-admission route proof",
+              "purpose": "Check finite routing for missing provenance or authority, missing split exclusion or contamination controls, and complete record eligibility.",
+              "status": "implemented as finite Lean routing only; it does not inspect data or perform deletion",
+              "implementation_status": "implemented",
+              "result_status": "validated locally by `AsiStackProofs.DataEngines`; no corpus, model, or capability result"
+            },
+            {
+              "name": "Continual-learning and deletion workload",
+              "purpose": "Compare declared replacement, accumulation, replay, quarantine, and retraining policies on a public-safe workload with heldout contamination and descendant-deletion checks.",
+              "status": "planned; requires a scoped dataset, baseline, negative controls, and independent replay",
+              "implementation_status": "planned",
+              "result_status": "not run"
+            }
+          ],
+          "source_queue": {
+            "primary": [
+              "ext_bourtoule_machine_unlearning_2021",
+              "theseus_synthetic_data_curation"
+            ],
+            "supporting": [
+              "ext_shumailov_model_collapse_2023",
+              "ext_gerstgrasser_data_accumulation_2024"
+            ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Source notes record reviewed primary-paper or pinned-local-source context only; no training, data admission, or deletion result is imported."
+            ]
+          },
+          "lean_module": "AsiStackProofs.DataEngines",
+          "proof_targets": [
+            {
+              "tag": "lean:data_engines.provenance_authority.failure_blocks_admission",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing provenance or authority routes a finite data-admission review to block.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.contamination.failure_routes",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing split exclusions or contamination checks routes a finite data-admission review to quarantine.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.complete_receipt.eligibility_invariant",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified.",
+              "status": "implemented"
+            }
+          ],
+          "draft_maturity": "v0.1 chapter draft",
+          "open_evidence_gaps": [
+            "No ASI Stack data-admission runtime, dataset import, training run, continual-learning comparison, or model-quality evaluation exists.",
+            "No semantic-leakage, coverage, poisoning, privacy, or benchmark-contamination guarantee has been established.",
+            "No deletion request has been propagated or verified across model parameters, checkpoints, adapters, caches, retrieval stores, distilled models, or published artifacts.",
+            "The finite schema and Lean routing model prove record-shape and branch behavior only; they do not validate the truth of receipt fields or promote the core claim."
+          ]
+        },
+        {
           "id": "artifact-steward-agents-and-living-project-governance",
           "title": "Artifact Steward Agents and Living Project Governance",
           "file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",

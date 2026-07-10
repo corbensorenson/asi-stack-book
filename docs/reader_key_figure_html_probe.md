@@ -8,11 +8,13 @@ Command:
 python3 scripts/validate_reader_key_figure_html_probe.py --write-result
 ```
 
-This probe builds the tracked curated reader manuscript into a temporary
-Quarto workspace, renders HTML, and inspects the rendered HTML DOM for the
-ten draft key figures. It checks image references, copied SVG assets, alt
-text, captions, responsive image classes, and visible non-claim boundary
-paragraphs. It is not a release approval and not final figure-artifact review.
+This probe records a rendered HTML structural review of the frozen v1.0 curated
+reader snapshot. When the active book spine differs from that snapshot, the
+validator preserves this historical result rather than rebuilding the curated
+manuscript from newer chapters. The active generated reader has separate spine
+and Human-view validation. The recorded probe checks image references, copied
+SVG assets, alt text, captions, responsive image classes, and visible non-claim
+boundary paragraphs. It is not a release approval and not final figure-artifact review.
 
 ## Result
 

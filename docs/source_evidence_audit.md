@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 44 |
-| Assigned source/chapter pairs | 441 |
-| Exact claim-source mappings | 439 |
+| Chapters audited | 45 |
+| Assigned source/chapter pairs | 445 |
+| Exact claim-source mappings | 443 |
 | Unmapped assigned pairs | 2 |
-| Source notes present for assigned pairs | 441 |
-| Source notes listing assigned chapter | 441 |
-| Passage-reviewed mappings recorded | 439 |
-| Support-state counts | {"argument": 44} |
+| Source notes present for assigned pairs | 445 |
+| Source notes listing assigned chapter | 445 |
+| Passage-reviewed mappings recorded | 443 |
+| Support-state counts | {"argument": 45} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -71,6 +71,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `executable-specifications-and-lean-proof-envelope` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 27 | argument | eligible for support review |
+| `data-engines-continual-learning-and-unlearning` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
 | `integrated-reference-architecture` | 21 | 21 | 21 | 21 | 21 | argument | eligible for support review |
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
@@ -191,6 +192,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_s_grpo_2025` | 1 | yes |
 | `ext_longrlvr_2026` | 1 | yes |
 | `ext_rlhf_limitations_2023` | 1 | yes |
+| `ext_bourtoule_machine_unlearning_2021` | 1 | yes |
+| `ext_shumailov_model_collapse_2023` | 1 | yes |
+| `ext_gerstgrasser_data_accumulation_2024` | 1 | yes |
+| `theseus_synthetic_data_curation` | 1 | yes |
 | `ext_github_webhooks_docs` | 1 | yes |
 | `ext_openzeppelin_governor_docs` | 1 | yes |
 | `ext_open_collective_docs` | 1 | yes |
@@ -546,6 +551,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_s_grpo_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_longrlvr_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_rlhf_limitations_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_bourtoule_machine_unlearning_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_shumailov_model_collapse_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_gerstgrasser_data_accumulation_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `theseus_synthetic_data_curation` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `planforge` | mapped | note present | chapter listed | passage-reviewed |

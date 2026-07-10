@@ -514,6 +514,36 @@
       ]
     },
     {
+      "claim_id": "data-engines-continual-learning-and-unlearning.core",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "chapter_title": "Data Engines, Continual Learning, and Unlearning",
+      "decision": "no_promotion",
+      "current_support_state": "argument",
+      "support_state_effect": "argument_only",
+      "decision_reason": "The chapter has four reviewed source notes plus a finite public-safe receipt schema and admission-routing proof, but no ASI Stack data-admission runtime, dataset import, training run, continual-learning comparison, contamination measurement, deletion propagation trace, or independently replayed evaluation.",
+      "required_evidence": [
+        "public-safe workload with frozen baseline and declared data versions",
+        "heldout exact and semantic contamination controls plus negative cases",
+        "workload-scoped replacement, accumulation, replay, quarantine, retraining, and residual comparison",
+        "descendant-deletion scope report with independently replayed verification"
+      ],
+      "blockers": [
+        "no local data engine or dataset admission runtime",
+        "no measured data quality, coverage, model quality, privacy, or synthetic-data result",
+        "no verified deletion across checkpoints, adapters, caches, retrieval stores, distilled models, or published artifacts"
+      ],
+      "non_claims": [
+        "does not prove data quality or contamination absence",
+        "does not prove synthetic-data safety or model-collapse avoidance",
+        "does not prove machine unlearning, privacy compliance, or verified forgetting",
+        "does not promote any learning, benchmark, safety, or capability claim"
+      ],
+      "refs": [
+        "chapters/data-engines-continual-learning-and-unlearning.qmd",
+        "appendices/C_claim_evidence_matrix.qmd#data-engines-continual-learning-and-unlearning.core"
+      ]
+    },
+    {
       "claim_id": "artifact-steward-agents-and-living-project-governance.core",
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "chapter_title": "Artifact Steward Agents and Living Project Governance",

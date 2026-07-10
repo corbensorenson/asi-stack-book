@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 211 |
-| Manifest status counts | {"implemented": 211} |
-| Triage class counts | {"formal-invariant": 211} |
-| Lean modules referenced | 54 |
-| Chapters with proof targets | 44 |
+| Proof targets audited | 214 |
+| Manifest status counts | {"implemented": 214} |
+| Triage class counts | {"formal-invariant": 214} |
+| Lean modules referenced | 55 |
+| Chapters with proof targets | 45 |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -47,6 +47,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ContextTransactions.lean` | 4 | 23 | 11 | 8 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 5 | 5 |
+| `lean/AsiStackProofs/DataEngines.lean` | 3 | 3 | 2 | 1 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 9 | 4 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 7 | 31 | 17 | 7 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 6 | 4 |
@@ -103,6 +104,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
 | `constitutional-alignment-substrate` | 5 | 5 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
+| `data-engines-continual-learning-and-unlearning` | 3 | 3 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 7 | 7 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
@@ -320,6 +322,9 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.lease_probe_fixture_bridge` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.provenance_authority.failure_blocks_admission` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.contamination.failure_routes` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.complete_receipt.eligibility_invariant` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.work_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.release_gate.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |

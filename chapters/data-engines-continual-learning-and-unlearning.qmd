@@ -1,0 +1,380 @@
+---
+title: "Data Engines, Continual Learning, and Unlearning"
+chapter_id: "data-engines-continual-learning-and-unlearning"
+part_id: "evidence-implementation-living-book"
+status: "conceptual"
+draft_maturity: "v0.1 chapter draft"
+last_updated: "2026-07-10"
+primary_sources:
+  - "ext_bourtoule_machine_unlearning_2021"
+  - "ext_shumailov_model_collapse_2023"
+  - "ext_gerstgrasser_data_accumulation_2024"
+  - "theseus_synthetic_data_curation"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No ASI Stack data-admission runtime, dataset import, training run, continual-learning comparison, or model-quality evaluation exists."
+  - "No semantic-leakage, coverage, poisoning, privacy, or benchmark-contamination guarantee has been established."
+  - "No deletion request has been propagated or verified across model parameters, checkpoints, adapters, caches, retrieval stores, distilled models, or published artifacts."
+  - "The finite schema and Lean routing model prove record-shape and branch behavior only; they do not validate receipt fields or promote the core claim."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `data-engines-continual-learning-and-unlearning` |
+| Part | Part IV - Evidence, Implementation, and the Living Book |
+| Status | conceptual |
+| Manuscript maturity | v0.1 chapter draft |
+| Last updated | 2026-07-10 |
+| Primary source records | `ext_bourtoule_machine_unlearning_2021`, `ext_shumailov_model_collapse_2023`, `ext_gerstgrasser_data_accumulation_2024`, and `theseus_synthetic_data_curation` |
+| Claim label | Design rationale |
+| Evidence level | argument |
+| Source loading state | Four reviewed source notes: three primary-paper records and one pinned Theseus implementation-reference record. No source code, dataset, training run, or reported result was imported. |
+| Test state | `data_admission_receipt.valid.json` passes schema validation, and `AsiStackProofs.DataEngines` proves finite routing branches. Neither artifact measures data quality, trains a model, or verifies unlearning. |
+
+## Drafting guardrail
+
+A data engine is a governed lifecycle for learning inputs, not a synonym for a
+larger training corpus. The useful unit is a receipt-bound candidate: where it
+came from, what authority permits its use, whether it is real or synthetic,
+which splits exclude it, which contamination checks ran, how long it may be
+retained, what deletion must reach, which evaluations are relevant, and what
+remains unresolved.
+
+The literature anchors make the boundary concrete. `ext_bourtoule_machine_unlearning_2021`
+shows why deletion paths depend on training-time structure and carry accuracy,
+storage, and retraining trade-offs. `ext_shumailov_model_collapse_2023` and
+`ext_gerstgrasser_data_accumulation_2024` make replacement, accumulation, and
+provenance competing policies rather than slogans about synthetic data.
+`theseus_synthetic_data_curation` supplies source-reported governance patterns,
+not a reproduced result. None of those sources establishes a local data engine,
+data quality, privacy compliance, safe synthetic data, or verified forgetting.
+
+::: {.asi-human-only}
+## Human Reading Path
+
+Learning systems depend on decisions about what gets to count as experience.
+Those decisions can disappear inside an import script, replay buffer, or
+synthetic-example generator, even though they determine which history will
+influence later behavior and which claims later appear plausible.
+
+The question is not whether a source is real, synthetic, old, or new. It is
+whether anyone can explain why it entered the learning path, what it was
+allowed to influence, and what evidence would require it to leave or quarantine
+it.
+
+Deletion makes the gap visible. Removing a row from a table does not show that
+its effects are gone from checkpoints, caches, retrieval stores, distilled
+artifacts, or published results. An honest system names the paths it checked,
+the descendants it can identify, and the paths it still cannot verify.
+
+Synthetic data creates the converse tension: retaining real material can
+protect coverage, while retention can conflict with privacy, freshness,
+poisoning response, or revocation. A careful admissions record keeps those
+trade-offs visible and grants only bounded learning authority rather than
+making a safe default out of an unresolved conflict.
+:::
+
+## Problem
+
+A self-improving system has to learn from something: observations, human
+feedback, task traces, benchmark failures, tool results, retrieved documents,
+generated examples, replayed trajectories, or curated datasets. Each input can
+carry rights, provenance, contamination, quality, privacy, safety, freshness,
+and distributional consequences. When those consequences remain implicit, the
+learning loop can change because of data that nobody can later justify,
+reproduce, revoke, or distinguish from its descendants.
+
+The operational difficulty compounds over time. A generated example can be
+mixed with real material, transformed into a summary, used to train a model,
+captured in a checkpoint, copied into a retrieval store, distilled into another
+model, and cited as evidence of a later improvement. A deletion request can
+arrive after each of those steps. A benchmark item can leak through either a
+raw source or a semantically similar synthetic one. A data policy that looks
+helpful for distributional coverage can be harmful for minimization, poisoning
+response, cost, or revocation. The architecture requires a lifecycle that
+exposes those conflicts before they become invisible training history.
+
+## Why existing approaches are insufficient
+
+Many pipelines divide responsibility by tool: ingestion validates a file,
+training consumes a dataset, evaluation holds out examples, storage applies a
+retention rule, and a later privacy process receives deletion requests. That
+division makes local operations easier but fails to express a single answer to
+the most important questions: what did the input affect, why was it admitted,
+which exclusions were checked, and which descendants remain after a change in
+authority or policy?
+
+Machine-unlearning methods can improve the cost of retraining selected paths,
+but a request route is not a proof that every downstream representation has
+been erased. Synthetic-data research likewise does not support a universal
+rule. Recursive replacement can lose distributional support under its stated
+conditions, while accumulation can produce different behavior in other stated
+conditions. Neither observation resolves provenance spoofing, semantic
+leakage, privacy, poisoning, legal authority, or task-specific utility. A
+governed stack needs those concerns in one record and must preserve the
+residuals when available evidence cannot settle them.
+
+## Core Claim
+
+[data-engines-continual-learning-and-unlearning.core, label: Design rationale, support: argument] A governed data engine treats learning inputs as versioned, provenance- and evaluation-bound artifacts, deciding admission, quarantine, retention, replay, and deletion separately from capability promotion.
+
+The claim remains at `argument` support. The in-prose external anchors
+`ext_bourtoule_machine_unlearning_2021`, `ext_shumailov_model_collapse_2023`,
+and `ext_gerstgrasser_data_accumulation_2024` provide source-noted method and
+risk context. `theseus_synthetic_data_curation` is a pinned implementation
+reference. No assigned source has been reproduced in this repository, and no
+receipt, proof, or source note turns an intake decision into evidence of model
+quality, privacy, safety, deletion completeness, or capability improvement.
+
+## Mechanism
+
+The data engine begins with a data-admission receipt before a candidate may
+enter a declared learning or evaluation lane. The receipt identifies the
+candidate and its origin, names an authority or license reference, classifies
+provenance, records real and synthetic lineage, identifies the relevant
+holdout and benchmark exclusions, records contamination checks, declares
+retention and deletion scope, links evaluation references, names residuals,
+and records an admission decision plus non-claims. The receipt is not a claim
+that its fields are true. It is the minimum shape needed to make a later review
+possible.
+
+The first routing rule is deliberately conservative. Missing provenance or
+authority blocks ordinary admission. Missing split exclusions or contamination
+controls routes the candidate to quarantine. Missing retention, deletion,
+evaluation, or residual records leaves it experimental rather than making it
+ordinary training input. The finite version of those rules is mechanized in
+`AsiStackProofs.DataEngines`; its scope is branch behavior over declared fields,
+not inspection of a corpus or validation of a data source.
+
+```{mermaid}
+flowchart LR
+  A["Candidate data or feedback"] --> B["Receipt: origin, authority, lineage"]
+  B --> C{"Provenance and authority recorded?"}
+  C -- "no" --> X["Block and retain reason"]
+  C -- "yes" --> D{"Split exclusions and contamination checks recorded?"}
+  D -- "no" --> Q["Quarantine for review"]
+  D -- "yes" --> E["Retention, deletion scope, evaluation refs, residuals"]
+  E --> F{"Lifecycle record complete?"}
+  F -- "no" --> R["Experimental-only lane"]
+  F -- "yes" --> G["Eligible for a declared bounded use"]
+  G --> H["Independent training or evaluation evidence"]
+  H --> I["Separate governance and claim-promotion decision"]
+```
+
+**What the data-admission route shows:** provenance and authority precede
+ordinary handling; exclusion and contamination gaps do not disappear into a
+generic queue; and even a complete record establishes only bounded eligibility
+for a declared use. It does not show that a model should train, that the data
+are high quality, or that any resulting capability deserves promotion.
+
+Synthetic-data candidates add two required choices. First, the receipt records
+the generation lineage and the policy under consideration: replacement,
+accumulation, targeted replay, quarantine, or retraining. Second, it records
+the metric that could expose a failure in the declared workload, such as heldout
+task retention, tail coverage, calibration, contamination, or a regression
+suite. The policy has competing costs. Accumulation may retain useful real-data
+support while preserving poisonous, private, stale, or revoked material.
+Replacement may limit retention while destroying coverage. A receipt makes the
+tradeoff inspectable instead of silently selecting one side.
+
+Deletion and revocation are lifecycle events, not a completed state inferred
+from a request. The engine records the affected source and version, the method
+chosen, the declared downstream scope, the evaluation planned, and every
+unverified descendant class. That makes it possible to say "request received,
+checkpoint path rerun, retrieval cache unverified" without pretending that a
+single verb, *unlearn*, settled the matter.
+
+## Interfaces
+
+Policy Optimization and Learning from Feedback can consume only receipt-bound
+feedback candidates. A reward or trajectory without declared provenance,
+exclusions, evaluation scope, and residuals may be useful for investigation,
+but it cannot silently become ordinary learning material. This keeps the
+learning actuator from manufacturing its own training authority.
+
+Artifact graphs give the engine its lineage substrate. They connect source
+versions, generator versions, transformation jobs, evaluation splits,
+checkpoints, retrieval indexes, reports, and deletion requests. Virtual Context
+ABI and procedural memory may then receive a governed artifact with permitted
+use and revocation boundaries rather than a detached snippet whose origin has
+already been lost.
+
+Benchmark Ratchets provides heldout exclusions, contamination probes,
+regression records, and the evidence boundary for claims about a changed
+system. SCF, readiness gates, and the claim ledger remain downstream
+authorities: a data-admission decision may authorize a bounded experiment, but
+only independent measurement and governance can authorize deployment or a
+support-state change. Project Theseus supplies a source-reported curation
+pattern to compare against this boundary; it is not a local runtime dependency.
+
+## Invariants
+
+- Ordinary eligibility requires recorded provenance, authority, split
+  exclusions, contamination checks, retention policy, deletion scope,
+  evaluation references, and residuals.
+- Synthetic lineage and the selected replacement, accumulation, replay, or
+  quarantine policy remain visible through later decisions.
+- A deletion request is never labeled verified forgetting until the declared
+  descendant scope and verification result are recorded.
+- Data admission does not independently promote a learning, benchmark,
+  privacy, safety, or capability claim.
+- Missing controls route to block, quarantine, or experimental-only treatment;
+  they do not become defaults through omission.
+- Every route preserves the reason for its decision and the unresolved
+  verification scope, so a later reviewer can distinguish a blocked candidate
+  from a bounded experiment and a declared cleanup action from evidence that
+  the cleanup reached every affected descendant.
+
+These invariants make the data path legible at the point where learning is most
+tempted to hide its assumptions. They require the record to preserve both what
+the system was permitted to do and what it has not established, so that a later
+evaluation, revocation, or incident review can reopen the correct decision
+instead of inheriting a claim that was never earned.
+
+## Failure modes
+
+Provenance laundering occurs when transformations, distillation, mixtures, or
+synthetic rewrites remove the ability to say where an example came from.
+Contamination can be exact, semantic, temporal, or distributional, so an
+exact-overlap check alone cannot establish a clean holdout. Recursive-data
+failure is also not one phenomenon: a pipeline can lose tail coverage through
+replacement while another retains harmful material through accumulation.
+
+Deletion theater is the most tempting false completion. The system records a
+request, deletes a convenient source file, and describes the result as
+unlearning while checkpoints, adapters, caches, retrieval stores, distilled
+models, exports, or reports have no verified disposition. Promotion laundering
+is adjacent: a well-formed receipt gets described as data quality, model
+improvement, privacy compliance, or safety evidence. The receipt must carry
+non-claims and residuals precisely because its value is governance visibility,
+not a shortcut around empirical work.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is the public-safe
+`data_admission_receipt` schema, one experimental-only fixture, deterministic
+validation, and a finite Lean route model. The fixture records a synthetic
+template-mutation candidate, source-note lineage, split and benchmark
+exclusions, an exact-overlap negative control, a retention boundary, limited
+deletion scope, residual semantic-leakage uncertainty, and the absence of any
+training or parametric-unlearning result. It is intentionally not a hidden
+dataset or a training recipe.
+
+`DataAdmissionReview` encodes the minimum control fields, while
+`DataAdmissionRouteFor` makes missing provenance or authority block, missing
+exclusions or contamination checks quarantine, incomplete lifecycle evidence
+remain experimental, and a complete finite review eligible for a declared
+bounded use. The proof and fixture should be used as contract tests when a
+future ingestion path is built. The checked artifacts establish record shape
+and declared finite branch selection, not the truth of provenance, safety of a
+source, absence of contamination, useful learning, or deletion propagation
+through a real system.
+
+The next implementation increment needs a small public-safe workload with a
+frozen baseline, declared data versions, heldout semantic and exact
+contamination controls, a replacement-versus-accumulation comparison, and a
+negative deletion-propagation case. Until that exists and is independently
+replayed, the architecture remains an argument and the fixture remains a
+boundary artifact.
+
+## Beyond the State of the Art
+
+The mature target is a data governance plane spanning the entire stack. Every
+learning input, synthetic descendant, replay item, deletion request, evaluation
+split, checkpoint, adapter, cache, retrieval index, distilled model, and
+published artifact has a versioned lineage and a declared permitted use. A
+policy compiler can compare replacement, accumulation, replay, quarantine, and
+retraining under a workload-specific objective that includes utility, coverage,
+calibration, safety, privacy, freshness, deletion cost, and compute cost rather
+than optimizing a single training score.
+
+At that logical end state, the engine does more than record inputs. It runs
+independent contamination and semantic-overlap checks, retains negative
+results, detects distributional drift, tracks synthetic generations, declares
+where human data remain necessary, and exposes the conflict between preserving
+coverage and honoring revocation. Deletion creates a closure obligation over
+all declared descendants. The system can then produce a verifier-backed report
+that distinguishes "removed from source store," "retrained affected shard,"
+"invalidated retrieval index," "published artifact withdrawn," and "scope
+unverified." It still cannot compress those statements into a universal claim
+of forgetting.
+
+The final product would also connect evidence to learning without allowing
+learning to rewrite evidence. A data candidate becomes eligible for a bounded
+experiment; the experiment produces measurements and negative controls; an
+independent evaluator determines whether those measurements support a scoped
+claim; governance decides whether a result changes deployment. That separation
+is the architectural endpoint. It is not a current-result claim: support must
+stay at `argument` until controlled ingestion, training, descendant tracing,
+and deletion verification are independently replayed and accepted.
+
+## Codex test plan
+
+| Test | Purpose | Status |
+|---|---|---|
+| Data-admission receipt schema fixture | Validate provenance, authority, lineage, exclusions, contamination checks, lifecycle fields, residuals, non-claims, and an experimental-only decision in a public-safe record. | implemented by `python3 scripts/validate_schemas.py`; no dataset, training run, or data-quality result |
+| Data-admission route proof | Prove finite routing for missing provenance or authority, missing split exclusions or contamination checks, and complete record eligibility. | implemented in `AsiStackProofs.DataEngines`; no corpus inspection, training, inference, or deletion |
+| Continual-learning policy comparison | Compare replacement, accumulation, replay, quarantine, and retraining under frozen baselines and heldout contamination controls. | planned; requires a scoped public-safe workload, negative controls, and independent replay |
+| Descendant-deletion trace | Distinguish source removal, retraining, checkpoint invalidation, cache invalidation, retrieval deletion, and unverified paths. | planned; no deletion path has been run or verified |
+| Semantic-overlap adversary | Falsify an exact-overlap-only assurance before an admission path can feed a learning run. | planned; no semantic-leakage detector or adversarial corpus exists |
+
+The two implemented checks are deliberately narrow. Schema validation cannot
+tell whether a provenance statement is true, and a finite Lean route cannot
+tell whether a real source, model, or descendant obeyed that route. The planned
+workload and deletion trace must remain separate evidence lanes with their own
+baselines, controls, residuals, and replay records.
+
+### Formalization hooks
+
+| Tag | Module | Target | Status |
+|---|---|---|---|
+| `lean:data_engines.provenance_authority.failure_blocks_admission` | `AsiStackProofs.DataEngines` | Missing provenance or authority routes a finite data-admission review to block. | implemented |
+| `lean:data_engines.contamination.failure_routes` | `AsiStackProofs.DataEngines` | Missing split exclusions or contamination checks routes a finite data-admission review to quarantine. | implemented |
+| `lean:data_engines.complete_receipt.eligibility_invariant` | `AsiStackProofs.DataEngines` | A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified. | implemented |
+
+The Lean module formalizes only finite-record Boolean routing. It does not
+inspect a dataset, establish the truth of provenance, detect semantic leakage,
+train a model, or demonstrate deletion from parameters or descendant systems.
+It does not prove an empirical unlearning or continual-learning result; the
+formalization remains a bounded control-plane boundary.
+
+## Source crosswalk
+
+| Source | Role in the argument | Boundary |
+|---|---|---|
+| `ext_bourtoule_machine_unlearning_2021` | SISA-style deletion-path structure, bounded retraining, and trade-off vocabulary. | No local SISA run, deletion verification, privacy result, or general forgetting claim. |
+| `ext_shumailov_model_collapse_2023` | Recursive generated-data risks, provenance, and distributional-tail residuals under stated assumptions. | No local recursive-training result or universal synthetic-data claim. |
+| `ext_gerstgrasser_data_accumulation_2024` | Replacement-versus-accumulation policy contrast and its stated experimental and analytical limits. | No local accumulation result or safety, privacy, or optimality conclusion. |
+| `theseus_synthetic_data_curation` | Source-reported curation gates for residual-targeted synthetic data. | No curator execution, dataset import, model-quality result, or promoted Theseus claim. |
+
+## Summary
+
+A system that learns without a data lifecycle gradually loses the ability to
+say why it changed. Provenance, authority, exclusions, contamination controls,
+retention, deletion scope, evaluation references, and residuals give each
+learning input a history that can be inspected before it becomes ordinary
+infrastructure. The point is not to make every candidate impossible to use; it
+is to give uncertain candidates honest lanes such as quarantine or bounded
+experimentation.
+
+That discipline also prevents two dangerous shortcuts. A deletion request is
+not verified forgetting, and a complete receipt is not model-quality evidence.
+Synthetic-data choices likewise need measurements and trade-offs, not generic
+optimism or generic prohibition. The governed path makes the decision visible,
+keeps its unresolved descendants visible, and sends capability claims back
+through independent evaluation and authority gates. Learning can therefore be
+continuous without becoming historically opaque.
+
+## Handoff
+
+Data decisions create durable obligations: datasets, evaluation slices,
+deletion requests, residuals, and derived artifacts must remain intelligible
+through many work cycles. **Artifact Steward Agents and Living Project Governance**
+takes that lifecycle perspective from learning inputs to the projects that
+create, review, fund, retain, publish, and retire such artifacts.
+It asks who carries the records forward, how governance remains replayable, and
+how a living system preserves its mission while its evidence and implementation
+continue to change.

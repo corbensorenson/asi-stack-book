@@ -3506,9 +3506,10 @@
     "id": "ext_bourtoule_machine_unlearning_2021",
     "title": "Machine Unlearning",
     "priority": "external_literature",
-    "layer": "machine_unlearning_data_governance",
-    "chapter_targets": [
-      "policy-optimization-and-learning-from-feedback",
+  "layer": "machine_unlearning_data_governance",
+  "chapter_targets": [
+    "data-engines-continual-learning-and-unlearning",
+    "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "open-research-agenda-and-bibliography-plan"
@@ -3525,9 +3526,10 @@
     "id": "ext_shumailov_model_collapse_2023",
     "title": "The Curse of Recursion: Training on Generated Data Makes Models Forget",
     "priority": "external_literature",
-    "layer": "synthetic_data_feedback_model_collapse",
-    "chapter_targets": [
-      "policy-optimization-and-learning-from-feedback",
+  "layer": "synthetic_data_feedback_model_collapse",
+  "chapter_targets": [
+    "data-engines-continual-learning-and-unlearning",
+    "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "open-research-agenda-and-bibliography-plan"
@@ -3544,9 +3546,10 @@
     "id": "ext_gerstgrasser_data_accumulation_2024",
     "title": "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data",
     "priority": "external_literature",
-    "layer": "synthetic_data_retention_policy",
-    "chapter_targets": [
-      "policy-optimization-and-learning-from-feedback",
+  "layer": "synthetic_data_retention_policy",
+  "chapter_targets": [
+    "data-engines-continual-learning-and-unlearning",
+    "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "open-research-agenda-and-bibliography-plan"
@@ -3563,9 +3566,10 @@
     "id": "theseus_synthetic_data_curation",
     "title": "Theseus Synthetic Data Curation",
     "priority": "implementation_reference",
-    "layer": "governed_synthetic_data_admission",
-    "chapter_targets": [
-      "policy-optimization-and-learning-from-feedback",
+  "layer": "governed_synthetic_data_admission",
+  "chapter_targets": [
+    "data-engines-continual-learning-and-unlearning",
+    "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "project-theseus-as-report-first-implementation-reference"

@@ -94,7 +94,7 @@ def marker_rows(text: str) -> list[tuple[int, str]]:
 
 
 def generate_observation() -> dict[str, Any]:
-    generated = build_audio_script.generate(BUILD_DIR, "curated_reader_manuscript")
+    generated = build_audio_script.generate(BUILD_DIR, "generated_reader_edition")
     if not isinstance(generated, dict):
         fail(["build_audio_script.generate must return an object."])
     script_files = generated.get("script_files")
@@ -205,8 +205,8 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "status": "passed_audio_script_reading_flow_review",
         "source_workspace": "build/audio_script",
         "source_generator": "scripts/build_audio_script.py",
-        "source_mode": "tracked_curated_reader_manuscript",
-        "requested_source_mode": "curated_reader_manuscript",
+        "source_mode": "generated_reader_edition",
+        "requested_source_mode": "generated_reader_edition",
         "script_files_checked": len(expected_files),
         "front_matter_scripts_checked": expected_front_matter_scripts,
         "chapter_scripts_checked": expected_chapter_scripts,
@@ -215,17 +215,6 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "script_file_order_errors": [],
         "release_note_count": len(expected_files),
         "review_frontmatter_count": len(expected_files),
-        "narration_note_count": 66,
-        "table_narration_notes": 5,
-        "diagram_narration_notes": 50,
-        "image_narration_notes": 11,
-        "code_schema_narration_notes": 0,
-        "companion_treatment_totals": {
-            "tables": 5,
-            "mermaid_diagrams": 50,
-            "code_or_schema_blocks": 0,
-            "images": 11,
-        },
         "chapter_marker_rows": len(expected_files),
         "chapter_marker_order_status": "matches_script_file_order",
         "chapter_marker_order_errors": [],
@@ -234,13 +223,37 @@ def validate_observed(observed: dict[str, Any]) -> list[str]:
         "live_marker_hits": 0,
         "raw_core_claim_marker_hits": 0,
         "replacement_character_count": 0,
-        "max_line_characters": 1800,
-        "max_word_characters": 143,
         "target_artifact_status": EXPECTED_TARGET_STATUS,
     }
     for key, expected in expected_exact.items():
         if observed.get(key) != expected:
             errors.append(f"audio script reading-flow expected {key}={expected!r}, found {observed.get(key)!r}.")
+    treatment_counts = {
+        "tables": "table_narration_notes",
+        "mermaid_diagrams": "diagram_narration_notes",
+        "code_or_schema_blocks": "code_schema_narration_notes",
+        "images": "image_narration_notes",
+    }
+    for total_key, note_key in treatment_counts.items():
+        total = observed.get("companion_treatment_totals", {}).get(total_key) if isinstance(observed.get("companion_treatment_totals"), dict) else None
+        notes = observed.get(note_key)
+        if not isinstance(total, int) or total < 0:
+            errors.append(f"audio script reading-flow {total_key} treatment total must be a non-negative integer.")
+        if not isinstance(notes, int) or notes < 0:
+            errors.append(f"audio script reading-flow {note_key} must be a non-negative integer.")
+        elif total != notes:
+            errors.append(f"audio script reading-flow {total_key} total must match {note_key}.")
+    narration_notes = observed.get("narration_note_count")
+    if not isinstance(narration_notes, int) or narration_notes < 0:
+        errors.append("audio script reading-flow narration_note_count must be a non-negative integer.")
+    elif isinstance(observed.get("companion_treatment_totals"), dict) and narration_notes != sum(
+        int(observed["companion_treatment_totals"].get(key, 0)) for key in treatment_counts
+    ):
+        errors.append("audio script reading-flow narration_note_count must equal the treatment total.")
+    for key, maximum in (("max_line_characters", 1800), ("max_word_characters", 143)):
+        value = observed.get(key)
+        if not isinstance(value, int) or value < 1 or value > maximum:
+            errors.append(f"audio script reading-flow {key} must be between 1 and {maximum}.")
     evidence_boundary_scripts = observed.get("chapter_scripts_with_evidence_boundary_phrase")
     if not isinstance(evidence_boundary_scripts, int) or not 0 <= evidence_boundary_scripts <= expected_chapter_scripts:
         errors.append("audio script reading-flow evidence-boundary script count must be within the active chapter count.")
@@ -311,6 +324,10 @@ def main() -> None:
         summary = manifest.setdefault("script_workspace_summary", {})
         if isinstance(summary, dict):
             summary["script_files"] = observed["script_files_checked"]
+            summary["source_mode"] = observed["source_mode"]
+            summary["requested_source_mode"] = observed["requested_source_mode"]
+            summary["source_generator"] = "scripts/build_reader_edition.py"
+        manifest["companion_treatment_totals"] = observed["companion_treatment_totals"]
         MANIFEST.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
     elif manifest.get("audio_script_reading_flow_review") != observed:
         fail(

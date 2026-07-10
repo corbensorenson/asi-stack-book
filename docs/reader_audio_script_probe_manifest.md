@@ -4,14 +4,16 @@ Last updated: 2026-07-05
 
 This summary is synced from
 `editions/reader_manuscript/v1_0/audio_script_probe_manifest.json`. It records
-the latest tracked local audio-script review-workspace facts for the tracked curated reader manuscript. It is not an audiobook, not narration approval, not
-an audio release, and not a support-state promotion.
+the current active generated reader edition audio-script review workspace. The
+frozen v1.0 curated-reader audio review remains historical evidence and is not
+regenerated from a later active spine. Neither record is an audiobook,
+narration approval, audio release, or support-state promotion.
 
 ## Commands
 
 ```bash
 python3 scripts/build_audio_script.py --check
-python3 scripts/build_audio_script.py --source-mode curated_reader_manuscript
+python3 scripts/build_audio_script.py --source-mode generated_reader_edition
 python3 - <<'PY' ... import scripts/build_audio_script.py and inspect audio_manifest.json in a temporary workspace ...
 python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest
 ```
@@ -21,10 +23,10 @@ python3 scripts/validate_reader_audio_script_reading_flow.py --write-manifest
 | Field | Value |
 |---|---:|
 | Source profile | `reader_release` |
-| Source mode | `tracked_curated_reader_manuscript` |
-| Source generator | `scripts/build_curated_reader_edition.py` |
+| Source mode | `generated_reader_edition` |
+| Source generator | `scripts/build_reader_edition.py` |
 | Audio profile | `audio_release` |
-| Script files | 49 |
+| Script files | 50 |
 | Implementation-horizon script status | pass |
 | Review status | review_required |
 
@@ -36,26 +38,26 @@ Required review files are generated in the ignored workspace:
 ## Audio Script Reading-Flow Review
 
 The generated script workspace now has an automated reading-flow review. It
-checks that `index.md`, `preface.md`, the 44 chapter scripts, and the included
+checks that `index.md`, `preface.md`, the 45 active chapter scripts, and the included
 appendix scripts follow `book_structure.json` order instead of alphabetical
 filesystem order. It also checks that `chapter_markers.md` follows the same
 script order.
 
 | Metric | Value |
 |---|---:|
-| Script files checked | 49 |
+| Script files checked | 50 |
 | Front-matter scripts checked | 2 |
-| Chapter scripts checked | 44 |
+| Chapter scripts checked | 45 |
 | Appendix scripts checked | 3 |
 | Script order | matches book-structure order |
-| Ordered chapter markers | 49 ordered markers |
-| Chapter-marker timecodes | 49 `TBD` rows |
-| Narration notes | 66 narration notes |
+| Ordered chapter markers | 50 ordered markers |
+| Chapter-marker timecodes | 50 `TBD` rows |
+| Narration notes | 70 narration notes |
 | Table narration notes | 5 |
-| Diagram narration notes | 50 |
+| Diagram narration notes | 54 |
 | Image narration notes | 11 |
 | Code/schema narration notes | 0 |
-| Implementation-horizon chapter scripts | 44 |
+| Implementation-horizon chapter scripts | 45 |
 | Script statistics | Current digest and text statistics are recorded in the tracked audio-script probe manifest. |
 | Replacement characters | 0 |
 | Live/research marker hits | 0 |
@@ -79,7 +81,7 @@ timecoding, not an audiobook, not audio generation, and not release approval.
 | Material | Count |
 |---|---:|
 | Tables | 5 |
-| Mermaid diagrams | 50 |
+| Mermaid diagrams | 54 |
 | Code/schema blocks | 0 |
 | Images | 11 |
 

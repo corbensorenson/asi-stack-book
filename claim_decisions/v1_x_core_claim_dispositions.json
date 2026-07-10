@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-03",
-  "scope_boundary": "Standing per-chapter disposition record for the 44 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 45 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 44,
+    "manifest_chapter_core_claims": 45,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 22,
+    "accepted_no_promotion_dispositions": 23,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 44
+    "chapter_core_claims_remaining_at_argument": 45
   },
   "dispositions": [
     {
@@ -1894,6 +1894,47 @@
       "formal_or_prototype_work": "Add reward-boundary, verifier reward, and no-reward-as-truth cases.",
       "human_reader_focus": "Explain policy optimization as governance of learning signals.",
       "what_would_move_this": "Policy update cannot treat reward as truth without evidence boundary.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
+      "claim_id": "data-engines-continual-learning-and-unlearning.core",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "chapter_title": "Data Engines, Continual Learning, and Unlearning",
+      "part_id": "evidence-implementation-living-book",
+      "part_title": "Part IV - Evidence, Implementation, and the Living Book",
+      "chapter_file": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A governed data engine treats learning inputs as versioned, provenance- and evaluation-bound artifacts, deciding admission, quarantine, retention, replay, and deletion separately from capability promotion.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "public-safe workload with frozen baseline and declared data versions",
+        "heldout exact and semantic contamination controls plus negative cases",
+        "workload-scoped replacement, accumulation, replay, quarantine, retraining, and residual comparison",
+        "descendant-deletion scope report with independently replayed verification"
+      ],
+      "blockers": [
+        "no local data engine or dataset admission runtime",
+        "no measured data quality, coverage, model quality, privacy, or synthetic-data result",
+        "no verified deletion across checkpoints, adapters, caches, retrieval stores, distilled models, or published artifacts"
+      ],
+      "promotion_burden": "The chapter has four reviewed source notes plus a finite public-safe receipt schema and admission-routing proof, but no ASI Stack data-admission runtime, dataset import, training run, continual-learning comparison, contamination measurement, deletion propagation trace, or independently replayed evaluation.",
+      "limitations": [],
+      "non_claims": [
+        "does not prove data quality or contamination absence",
+        "does not prove synthetic-data safety or model-collapse avoidance",
+        "does not prove machine unlearning, privacy compliance, or verified forgetting",
+        "does not promote any learning, benchmark, safety, or capability claim"
+      ],
+      "current_evidence_summary": "Source notes available for all 4 assigned sources; 4 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Public-safe data-admission receipt plus source-noted unlearning and synthetic-data literature",
+      "formal_or_prototype_work": "Build a frozen-baseline workload that compares replacement, accumulation, replay, quarantine, retraining, and descendant-deletion routes with contamination controls.",
+      "human_reader_focus": "Explain how learning inputs acquire history, and why deleting a row is not the same as proving its effects are gone.",
+      "what_would_move_this": "A replayed, workload-scoped comparison with heldout contamination controls, negative cases, descendant-scope report, residuals, and independent review; no general unlearning, safety, or model-quality claim.",
       "relevant_non_core_transition_refs": []
     },
     {

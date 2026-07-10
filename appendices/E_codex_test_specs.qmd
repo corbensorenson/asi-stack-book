@@ -395,6 +395,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Reasoning-budget penalty test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Rollback and promotion gate test | implemented | validated locally by synthetic fixtures; no live rollback or policy canary run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | Policy update lease probe | implemented | validated locally by `experiments/policy_update_lease/results/2026-07-02-local.json`; no policy-improvement, reward-quality, route-quality, deployed rollback, or support-state claim |
+| `data-engines-continual-learning-and-unlearning` | Data Engines, Continual Learning, and Unlearning | Data-admission receipt schema fixture | implemented | validated locally by `tests/fixtures/protocol_records/data_admission_receipt.valid.json`; no data-quality, training, or unlearning result |
+| `data-engines-continual-learning-and-unlearning` | Data Engines, Continual Learning, and Unlearning | Data-admission route proof | implemented | validated locally by `AsiStackProofs.DataEngines`; no corpus, model, or capability result |
+| `data-engines-continual-learning-and-unlearning` | Data Engines, Continual Learning, and Unlearning | Continual-learning and deletion workload | planned | not run |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Project steward manifest fixture validation | implemented | passes via protocol fixture validation |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Treasury policy and event-taint fixture validation | implemented | passes via protocol fixture validation |
 | `artifact-steward-agents-and-living-project-governance` | Artifact Steward Agents and Living Project Governance | Work contract authority denial test | implemented | passes via Lean build |
@@ -510,16 +513,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 211 |
+| Proof targets covered by triage | 214 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 211 |
+| implemented | 214 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 211 |
+| implemented | formal-invariant | lean-candidate | 214 |

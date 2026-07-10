@@ -19,6 +19,7 @@ READER = (
     / "chapters"
     / "executable-specifications-and-lean-proof-envelope.qmd"
 )
+READER_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 OUTLINE = ROOT / "docs" / "book_outline.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
@@ -73,6 +74,25 @@ def text_blob(value: Any) -> str:
     return str(value).lower()
 
 
+def active_spine_differs_from_reader_snapshot() -> bool:
+    reader_manifest = load_json(READER_MANIFEST)
+    structure = load_json(MANIFEST)
+    if not isinstance(reader_manifest, dict) or not isinstance(structure, dict):
+        return False
+    snapshot = reader_manifest.get("historical_spine_snapshot")
+    snapshot_ids = snapshot.get("chapter_ids") if isinstance(snapshot, dict) else None
+    if not isinstance(snapshot_ids, list):
+        return False
+    active_ids = [
+        str(chapter.get("id", ""))
+        for part in structure.get("parts", [])
+        if isinstance(part, dict)
+        for chapter in part.get("chapters", [])
+        if isinstance(chapter, dict)
+    ]
+    return active_ids != snapshot_ids
+
+
 def validate_manifest(fragment: str, errors: list[str]) -> None:
     value = load_json(MANIFEST)
     chapter = None
@@ -118,17 +138,18 @@ def main() -> None:
         "does not prove semantic adequacy",
     ]
     validate_surface(CHAPTER, shared, errors)
-    validate_surface(
-        READER,
-        [
-            fragment,
-            "derived/decomposed",
-            "direct/projection",
-            "proof etiquette",
-            "not a proof of semantic adequacy",
-        ],
-        errors,
-    )
+    if not active_spine_differs_from_reader_snapshot():
+        validate_surface(
+            READER,
+            [
+                fragment,
+                "derived/decomposed",
+                "direct/projection",
+                "proof etiquette",
+                "not a proof of semantic adequacy",
+            ],
+            errors,
+        )
     validate_surface(
         OUTLINE,
         [

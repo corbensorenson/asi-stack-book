@@ -22,7 +22,7 @@ import build_reader_edition
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "build" / "audio_script"
 DEFAULT_READER_TEMP_NAME = "reader_source"
-DEFAULT_SOURCE_MODE = "curated_reader_manuscript"
+DEFAULT_SOURCE_MODE = "generated_reader_edition"
 KEY_FIGURE_COMPANION_NOTE = ROOT / "editions" / "reader_manuscript" / "v1_0" / "companion_notes" / "key-figures.md"
 IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]+\).*")
 IMPLEMENTATION_HORIZON_HEADINGS = (
