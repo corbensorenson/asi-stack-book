@@ -217,7 +217,9 @@ def build_expected() -> tuple[dict[str, Any], str, list[str]]:
     promoted_count = 0
 
     if set(plan_rows) != {str(chapter["id"]) for chapter in chapters}:
-        errors.append("per-chapter evidence plan must cover the active 44-chapter manifest exactly")
+        errors.append(
+            "per-chapter evidence plan must cover the active manifest chapter set exactly"
+        )
 
     for chapter in chapters:
         chapter_id = str(chapter.get("id"))
@@ -322,7 +324,8 @@ def build_expected() -> tuple[dict[str, Any], str, list[str]]:
         "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
         "date": "2026-07-03",
         "scope_boundary": (
-            "Standing per-chapter disposition record for the 44 active manifest chapter core claims. "
+            f"Standing per-chapter disposition record for the {len(chapters)} active manifest "
+            "chapter core claims. "
             "It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C "
             "open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement."
         ),
@@ -422,9 +425,12 @@ def validate_ledger_shape(ledger: Any, expected: dict[str, Any]) -> list[str]:
         )
     summary = ledger.get("summary") if isinstance(ledger, dict) else {}
     if isinstance(summary, dict):
-        if summary.get("manifest_chapter_core_claims") != 44:
-            errors.append("disposition ledger must cover 44 manifest chapter core claims")
-        if summary.get("chapter_core_claims_remaining_at_argument") != 44:
+        expected_chapter_count = len(expected.get("dispositions", []))
+        if summary.get("manifest_chapter_core_claims") != expected_chapter_count:
+            errors.append(
+                "disposition ledger must cover the current active manifest chapter core claims"
+            )
+        if summary.get("chapter_core_claims_remaining_at_argument") != expected_chapter_count:
             errors.append("all current chapter core claims must remain at argument")
         if summary.get("promoted_core_claims") != 0:
             errors.append("current v1.x disposition ledger must not record promoted core claims")

@@ -36,6 +36,7 @@ python3 scripts/add_chapter.py \
 
 python3 scripts/chapter_adjacency_report.py --chapter new-ai-topic
 python3 scripts/sync_scaffold.py
+python3 scripts/validate_dynamic_spine.py
 python3 scripts/validate_chapter_handoffs.py
 python3 scripts/validate_book.py
 ```

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-10 - Make active-spine growth executable
+
+- Added `scripts/validate_dynamic_spine.py`, a disposable-workspace regression
+  gate that inserts a fixture chapter into `book_structure.json`, regenerates
+  active scaffold surfaces, checks reader derivation, removes the fixture, and
+  verifies the generated active surfaces return to their baseline without
+  manual chapter-number or active-count edits.
+- Wired the gate into `scripts/validate_book.py`, and removed the remaining
+  hard-coded active 44-chapter assumption from the v1.x core-claim disposition
+  validator. Historical v1.0 release snapshots remain version-scoped records.
+- Boundary: this fixture proves manifest/scaffold/reader derivation behavior in
+  a disposable local workspace only. It adds no active chapter, source,
+  evidence transition, proof result, release artifact, support-state movement,
+  or claim about the quality or safety of a future expanded book spine.
+
 ## 2026-07-10 - Extend completeness intake with an independent frontier sweep
 
 - Ran an independent online completeness sweep across ten architectural domain
