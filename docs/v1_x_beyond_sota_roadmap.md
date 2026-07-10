@@ -1,6 +1,6 @@
 # v1.x Beyond-SOTA Roadmap
 
-Last updated: 2026-07-06
+Last updated: 2026-07-09
 
 This roadmap is the post-`v1.0.0` long-term plan for turning **The ASI
 Stack** from a tagged living-book release into a stronger evidence-and-reader
@@ -9,7 +9,8 @@ program. It should be read with `docs/v1_0_candidate_status.md`,
 `docs/proof_depth_classification.md`, `docs/proof_adequacy_review.md`,
 `docs/external_sota_positioning_audit.md`,
 `docs/a_plus_quality_scorecard.md`, and
-`docs/local_project_mining_theseus_circle.md`. The full per-chapter evidence
+`docs/local_project_mining_theseus_circle.md`. The controlled frontier-completeness
+intake is recorded in `docs/asi_completeness_gap_scan_2026-07-06.md`. The full per-chapter evidence
 backlog lives in `docs/per_chapter_evidence_plan.md`, and the v1.0
 Beyond-SOTA reference map in `docs/v1_0_roadmap.md` remains the baseline for
 measuring movement relative to external state of the art.
@@ -42,9 +43,10 @@ It should retire the important IOUs:
 - every chapter needs a real external-grounding pass so Corben-originated
   nomenclature is related to known papers, standards, benchmarks, and adjacent
   systems before readers are asked to accept the stack vocabulary;
-- the executed 44-chapter spine should remain stable unless new source,
-  evidence, reviewer, or reader-edit findings expose a concrete duplicate
-  artifact boundary;
+- the executed 44-chapter spine is the current release baseline, not a permanent
+  cap: it remains stable unless source-verified completeness findings pass the
+  chapter-ownership gate, while historical 44-chapter release records remain
+  immutable;
 - Project Theseus and Circle evidence need public-safe replay paths rather than
   local-only summaries;
 - the human-reader edition needs to become a true edited book, not only a strip
@@ -144,6 +146,11 @@ This roadmap reconciles:
   idea analytically load-bearing": crisp statement, closest-prior-art delta,
   non-obvious consequence, strongest objection, and an artifact-backed answer
   path;
+- the four-sweep frontier-completeness scan supplied by Corben on 2026-07-09,
+  recorded in `docs/asi_completeness_gap_scan_2026-07-06.md`, which proposes 16
+  Tier-1 gaps, 25 Tier-2 insertions, and explicit Tier-3 boundary decisions but
+  labels every external anchor as search-result-depth intake rather than
+  evidence;
 - Codex verification of Claude's claims against the local tree;
 - `book_structure.json`, which currently defines four parts, 44 chapters, and
   11 appendices;
@@ -172,6 +179,9 @@ not be quoted in the book as an external authority.
 | P0 | The chapter-by-chapter review should become a burn-down queue, not another grade sheet. | `docs/CHAPTER_REVIEWS.md` identifies concrete per-chapter weaknesses after self-auditing its proxies. Codex verified the two manifest proof-mapping bugs: `personal-compute-hives-and-federated-edge-intelligence` and `artifact-steward-agents-and-living-project-governance` had missing chapter-level `lean_module` values despite on-disk Lean modules with 22 and 16 theorem/lemma declarations. | Keep the review as planning input only, track every chapter weakness in the roadmap burn-down below, and execute fixes as proof, source-note, evidence-import, reader-prose, or manifest changes. The two `lean_module` mappings are fixed in `book_structure.json` in the current workset; no support state moves. |
 | P0 | The project needs one real measured result more than another internal sweep. | The current thirteen upward transitions are narrow non-core lanes. The first bounded empirical local selector lane now exists for `resource-economics.scoped_workflow_trace_route_selector`, with a baseline, negative control, residuals, and an accepted transition; no 44 chapter core claims have moved above `argument`, and no deployed or externally reviewed architecture claim has moved. | Keep deepening evidence through one selected lane per cycle: either move another narrow lane through accepted transition review or record an explicit no-promotion decision, then pursue live/external replay before any chapter-core support-state movement. |
 | P0 | Chapter credibility requires external grounding, not only Corben-side source synthesis. | Appendix H already contains source-noted external literature, but the roadmap does not yet force every chapter to mine external comparators from the Corben papers it already cites. | Add a chapter-by-chapter external-grounding milestone: mine each chapter's linked Corben sources for bibliographies and adjacent work first, then add vetted third-party records to Appendix H through `sources/source_inventory.json` and source notes. |
+| P0 | The present 44-chapter spine omits several load-bearing control planes. | The completeness scan maps against the current manifest and identifies real architectural gaps around inference-time deliberation, learning-data governance, adversarial oversight/evaluation, capability-triggered commitments, safety-case compilation, weight custody, inter-stack operation, population dynamics, world models, and open-ended improvement. The scan itself is not evidence and does not settle chapter ownership. | Execute the controlled completeness intake below. Preserve the current 44-chapter release as a historical baseline, but allow the active manifest to expand only after source verification and ownership tests. |
+| P0 | Hard-coded chapter counts conflict with the book's dynamic-structure promise. | The manifest is dynamic, but validators, reader manifests, evidence plans, release text, and roadmap language still contain current-edition `44` assumptions. Adding a valid chapter before separating live-manifest counts from historical-release snapshot counts would break gates or silently validate the wrong set. | Before the first spine expansion, make active-surface checks derive chapter identity and count from `book_structure.json`; keep versioned 44-chapter release records immutable and validate them against their own snapshot. |
+| P0 | The frontier scan contains discovery-grade anchors and at least one material claim-to-source mismatch. | Primary-source spot checks confirm several lanes are real, but the scan did not read the papers at source-note depth. The cited persuasion abstract supports taxonomy and dataset work, not by itself the stronger parity/scaling wording; CAIS still lacks a source-noted primary technical anchor in the repository; several other candidates are blogs, collections, or vendor explainers. | Apply a source-quality gate before inventory or prose use: primary paper, official standard/evaluation, or original technical report first; full-text source note; exact supported/unsupported claims; version and publication status; replacement of weak discovery links when stronger anchors exist. |
 | P1 | Appendix C hides the earned non-core transitions too well. | Appendix C correctly says all 44 chapter core claims remain `argument`, but it does not make the thirteen non-core upward transitions headline-visible. | Keep the separate non-core evidence ledger visible so readers can see what is actually measured without mistaking it for chapter-core promotion. |
 | P1 | External-SOTA placement is technically closed but intellectually thin in places. | `docs/external_sota_positioning_audit.md` records 44 positioned chapters, 0 explicit exceptions, 0 open placement rows, and 0 missing targeted source notes after the current grounding cycle. | Keep the external-grounding records live: future chapter splits, merges, or new claims must preserve fair external baselines or record a deliberate exception. |
 | P1 | Circle evidence is real but not yet a clean upstream replay. | `docs/circle_external_receipt_slice.md` records a local clean checkout and accepted rope receipt, `docs/circle_public_replay_consumer_gate.md` adds a CI-verifiable ASI-side consumer gate with negative controls, `docs/circle_contract_pack_archive.md` now archives a public-safe Circle contract pack from commit `63b0f511` with 9 archived contracts, 4 acceptance-policy receipts, `public_safe_fixture` status, pack fingerprint `df673f8a661fc89a26372685986c92f2221aaa617d6738fce5c2a76bd5d0eeae`, and no-promotion decision `circle_contract_pack_archive_no_change.json`, and the Circle seed-rule exact-regeneration, KV-cache, recurrence, sparse-attention, strided candidate-fanout, cyclic-mixer, and MultiCoil phase receipt slices now record pinned public-safe structural/accounting imports with accepted `blocks_promotion` no-change decisions. The ASI repo still does not rerun the external checkout in CI or prove deployed proof-contract transport. | Treat the consumer gate, archived pack, and no-promotion decisions as accountability closure, then pursue a clean replay, transport trace, workload baseline, or independent review before stronger claims. |
@@ -207,6 +217,158 @@ model quality, context length, runtime speed, memory scaling, benchmark
 performance, transfer, safety, ASI, or any Compact Generative Systems chapter
 core claim.
 
+## 2026-07-09 Controlled ASI Completeness Intake
+
+The frontier scan has teeth, but it does not justify sixteen automatic chapter
+insertions. The correct unit of work is an owned architectural boundary backed
+by source-noted external context, a distinct mechanism, explicit interfaces and
+invariants, a proof/evidence lane, and complete live and reader prose. The
+current 44 chapters remain the current-edition baseline while this intake is
+executed. Once an addition passes the gate, the active manifest count becomes
+the new truth; no roadmap or validator may keep treating 44 as a universal
+constant.
+
+### Source-verification preflight
+
+Before a candidate can alter `book_structure.json`, chapter prose, Appendix C,
+or the novelty ledger:
+
+1. Locate the primary paper, official standard, official evaluation, or
+   original technical report. Use blogs, collections, summaries, and vendor
+   pages only for discovery or clearly scoped practice context.
+2. Read the full source and create an `ext_` inventory record plus source note
+   recording thesis, method, evidence, limitations, exact relevant passages,
+   chapter routes, and claims the source does not support.
+3. Verify title, authors, version, publication date, venue/status, URL/DOI, and
+   whether a later version supersedes the candidate link.
+4. Require at least one strong anchor for an ownership decision and a minimum
+   two-source family before drafting a new chapter; a single survey, blog, or
+   speculative position paper cannot carry a new chapter's core claim.
+5. Keep support at `argument` unless a normal evidence-transition record
+   justifies movement. Coverage, citation count, and conceptual affinity are
+   not evidence transitions.
+
+The first verification packet is the stack thesis against Comprehensive AI
+Services. It must locate the strongest primary Drexler source available,
+separate CAIS's service-composition thesis from later summaries, and rewrite
+the contribution-novelty row as a precise delta or a narrowing. "CAIS reframes;
+the ASI Stack operationalizes" is a hypothesis to test, not a result already
+earned.
+
+### Provisional ownership decisions
+
+These dispositions replace the scan's implicit assumption that every Tier-1
+heading is a chapter. They remain provisional until the source-verification
+preflight passes, but they give execution a concrete destination.
+
+| Scan item | Provisional owner | Disposition and required boundary |
+|---|---|---|
+| 1. Deliberation and test-time compute | Part III, beside Fast Generation | **New chapter candidate:** Governed Deliberation and Test-Time Scaling. Own think budgets, search/aggregation modes, verifier selection, stopping rules, diminishing returns, and residuals; Fast Generation remains the low-latency dual. |
+| 2. Learning loop and data engine | Part IV, beside Policy Optimization | **New chapter candidate:** Data Engines, Continual Learning, and Unlearning. Own provenance, curation, contamination, synthetic-data recursion, replay/consolidation, forgetting, parametric deletion, and update-data receipts. |
+| 3. Scalable oversight and AI control | Part I, after Evidence States | **New chapter candidate:** Scalable Oversight and Adversarial AI Control. Own weak-supervisor limits, debate/amplification, trusted and untrusted monitoring, fleet-scale oversight, collusion resistance, and where the oversight recursion bottoms out. |
+| 4 and 12. Evaluation- and training-time deception | Part IV, beside Benchmark Ratchets and Policy Optimization | **One new chapter candidate, not two:** Adversarial Evaluation, Sandbagging, and Training-Time Deception. Own elicitation state, evaluation awareness, exploration hacking, reward-hack generalization, monitor sabotage, mitigation evidence, and promotion blockers. Policy Optimization keeps update mechanics; Benchmark Ratchets keeps test design. |
+| 5. Capability thresholds and commitments | Part IV, after Benchmark Ratchets | **New chapter candidate:** Capability Thresholds and Deployment Commitments. Own threshold records, if-then safeguards, autonomy/time-horizon measures and limitations, automated-R&D acceleration share, open-weight release decisions, and pre-commitment enforcement. |
+| 6. Reasoning-trace faithfulness | Artifact Graphs, the deception chapter, and Policy Optimization | **Cross-cutting major section:** distinguish reasoning traces from receipts, test trace/action consistency, preserve monitorability where possible, and state when hidden computation makes the trace non-authoritative. Split only if a later evidence lane has no coherent owner. |
+| 7. Inter-stack protocols, identity, and economics | Part II, after Runtime Adapters | **New chapter candidate:** Inter-Stack Protocols, Identity, and Economic Exchange. Crosswalk command contracts, VCM, permissions, receipts, and non-claims against MCP/A2A/ACP/ANP, verifiable identity, credentials, and payment protocols. |
+| 8 and 16. World models, JEPA, and energy-based substrates | Part III, beside Mathematical and Search Substrates | **One new chapter candidate:** World Models and Model-Based Cognition. Own learned prediction, model-predictive control, imagination/search interfaces, version/error ledgers, sim-to-real boundaries, and substrate-family adoption tests; JEPA/energy-based models are a section, not another chapter. |
+| 9. Safety cases | Part IV, after Evidence States/Benchmark Ratchets material | **New chapter candidate:** Safety Cases and Structured Assurance. Compile claims, arguments, evidence, assumptions, defeaters, hazards, and deployment context into a generated reviewable assurance artifact; never equate a complete argument graph with demonstrated safety. |
+| 10. Model-weight custody and hardware trust | Part I, beside Security Kernel | **New chapter candidate:** Model-Weight Custody and Hardware Roots of Trust. Own weight exfiltration, autonomous-insider risk, key release, attestation-gated loading, TEE/GPU limits, confidential inference, and open-weight custody decisions. |
+| 11. Multi-agent systemic risk | Part I, after Failure Modes | **New chapter candidate:** Multi-Agent Systemic Risk and Agent Economies. Own population-level conflict, miscoordination, collusion, cascades, market behavior, governance graphs, and gradual disempowerment; the protocol chapter owns message and trust interfaces, not emergent dynamics. |
+| 13. Persuasion and epistemic security | Part I, beside Human Intent | **New chapter candidate, contingent on stronger empirical anchors:** Persuasion, Epistemic Security, and Human Agency. Own approver-directed influence, consent/disclosure boundaries, trusted-interface laundering, persuasion thresholds, and society-scale epistemic effects. Do not use `2505.12248` alone for human-parity or compute-scaling claims. |
+| 14. Open-ended self-improvement engines | Part I, beside Recursive Self-Improvement | **New chapter candidate:** Open-Ended Improvement Engines. Own self-play, automatic curricula, environment generation, propose-solve-verify loops, evolutionary artifact search, evaluator capture, novelty/coverage accounting, and shutdown/rollback handoff. RSI Boundaries remains the governor; this chapter owns the generator. |
+| 15. CAIS, embedded agency, and corrigibility foundations | Opener, Constitutional Alignment, RSI Boundaries, Integrated Reference, and novelty ledger | **Mandatory prior-art/foundations pass before a chapter decision.** CAIS is positioning, not a chapter. Embedded agency and formal corrigibility limits begin as substantial sections that explain the scope of record-level guarantees; create a foundations chapter only if full-source review exposes a distinct mechanism and proof program that cannot be owned without duplication. |
+
+This provisional routing yields twelve new-chapter candidates, including the
+source-contingent persuasion candidate, plus one possible foundations candidate,
+and three deliberately section-level routes. That is a dynamic expansion plan,
+not a promised final count.
+
+### Tier-2 host queue
+
+The 25 section-level findings travel with their owners instead of becoming a
+second parallel roadmap:
+
+| Host surfaces | Batched additions |
+|---|---|
+| Artifact Graphs and Claim Ledgers | C2PA/content provenance; calibration, selective prediction, conformal or bounded uncertainty where justified, and abstention; reasoning-trace versus action consistency; unwarranted trust crossing privileged interfaces. |
+| Data Engine and Procedural Memory | episodic-to-semantic-to-parametric consolidation, sleep/replay cycles, forgetting budgets, contamination, model collapse, and verifiable unlearning. |
+| Security Kernel, Runtime Adapters, and Scalable Oversight | prompt-injection impossibility/limits as the strongest objection; autonomous-insider threat; hardware attestation; collusion resistance; randomized monitor assignment; oversight latency and fleet-scale approval windows. |
+| Failure Modes, Multi-Agent Risk, and Safety Cases | STPA-style hazard analysis; gradual disempowerment; scheming-oriented safety cases; countercases and argument defeaters; agent-hijacking cascades. |
+| Capability Thresholds and Resource Economics | METR-style time-horizon scope and limitations; automated-AI-R&D acceleration share; governance/control tax; compute-governance feasibility; open-weight commitments; energy and scaling-law boundary decisions. |
+| Personal Compute Hives and Inter-Stack Protocols | the distributed-training/governance-evasion dual; identity and attestation across nodes; public governance graphs; agent payments and economic receipts. |
+| Executable Specifications, Proof-Carrying Claims, and Circle | guaranteed-safe-AI positioning; record/spec versus neural-network verification boundary; formal-mathematics agents as proof producers and consumers; no claim that record proofs establish model safety. |
+| Constitutional Alignment and Human Intent | behavior-specification styles; deliberative alignment as a training-time comparator; non-agentic/Scientist-AI routes expressible through zero execution authority; model-welfare and moral-status caution as a watchlist. |
+| Governed Deliberation and Cognitive Compilation | ARC-style program synthesis, test-time adaptation, verifier-guided search, and semantic-IR handoffs. |
+| World Models and Mathematical Substrates | JEPA/energy-based families; structural-identifiability versus capability evidence; prediction-error and sim-to-real records. |
+
+### Dynamic-spine preflight
+
+Before adding the first accepted chapter:
+
+- audit scripts, CI, reader manifests, evidence plans, release gates, and docs
+  for hard-coded active chapter counts or ID lists;
+- derive active identity/order/count from `book_structure.json` and generated
+  scaffold artifacts;
+- keep historical release records and their 44-chapter snapshots immutable,
+  validating them against their recorded manifest digest/version rather than
+  the current live manifest;
+- regenerate per-chapter evidence, claim-disposition, reader, proof, figure,
+  and source-coverage surfaces from the active manifest;
+- add a fixture that inserts a temporary chapter in a disposable workspace and
+  proves scaffold, validators, reader generation, and removal do not require
+  manual renumbering or stale-count edits.
+
+### Intake execution waves
+
+1. **Step zero:** source-note and position the stack thesis against CAIS; make
+   the active/historical chapter-count distinction executable.
+2. **Learning integrity:** Data Engines; Open-Ended Improvement Engines; the
+   combined adversarial-evaluation/training-deception chapter; attached
+   consolidation, unlearning, monitorability, and reward-hacking sections.
+3. **Capability and assurance:** Governed Deliberation; Scalable Oversight;
+   Capability Thresholds; Safety Cases; attached time-horizon, control-tax,
+   GSA, and formal-math-agent sections.
+4. **Security and distributed society:** Model-Weight Custody; Inter-Stack
+   Protocols; Multi-Agent Systemic Risk; source-contingent Persuasion and
+   Epistemic Security; attached injection, attestation, identity, payment,
+   collusion, and compute-governance sections.
+5. **Cognitive foundations:** World Models; embedded-agency/corrigibility
+   foundations ownership decision; attached JEPA, Scientist-AI, behavior-spec,
+   and program-synthesis sections.
+
+One wave may contain multiple closely coupled chapters, but only one chapter
+enters the manifest at a time. Each chapter must leave the repository with its
+live prose, finished reader prose, source queue, source notes, core claim and
+non-claims, Lean/schema/test targets, evidence lane, Mermaid figure, Appendix C
+and H updates, reader overlay/delta record, changelog entry, and passing render.
+No stub-only expansion is allowed.
+
+### Completeness-intake acceptance gate
+
+This intake is complete only when:
+
+- all sixteen Tier-1 items and all twenty-five Tier-2 items have an artifact-
+  backed disposition of accepted chapter, accepted section, deliberate
+  exclusion, watchlist, duplicate, or rejected-after-source-review;
+- every accepted external anchor has a full-text source note and every weak or
+  mismatched discovery anchor is replaced, narrowed, or explicitly retained
+  only as non-evidentiary context;
+- every accepted chapter and section is complete in both editions and has the
+  same claim meaning across them;
+- each new chapter has at least one meaningful proof, schema, executable test,
+  Theseus/Circle bridge, or explicit research blocker appropriate to its claim;
+- the active manifest, outline, source inventory, proof manifest, Appendix C,
+  Appendix H, reader manifests, evidence plan, claim dispositions, release
+  profiles, and public navigation agree exactly;
+- the current historical 44-chapter edition remains reproducible while the
+  expanded edition has its own release record and artifact digests;
+- no source summary, novelty claim, proof result, implementation claim,
+  support-state movement, or release approval is inferred from the scan itself.
+
+## Findings With Teeth (continued)
+
+| Priority | Finding | Verified state | Roadmap consequence |
+|---|---|---|---|
 | P1 | Project Theseus is the right implementation reference; the first imports are intentionally narrow. | `docs/local_project_mining_theseus_circle.md` records public-safe Theseus mining and source notes; `docs/theseus_report_import_slice.md` records one static digest-verified architecture-gate report import; `docs/theseus_generation_mode_import_slice.md` records one static digest-verified generation-mode import; `docs/theseus_support_replay_probe.md` records a local replay of both ASI-side validators with command-output and artifact digests; `docs/theseus_public_task_bundle_import.md` records one bounded public task-bundle summary import with 64 public BigCodeBench metadata-only tasks, 0 public training rows, 0 task-level regressions, visible artifact gaps, and seven expected-invalid controls; `docs/theseus_fast_support_lane_run.md` records the selected Theseus/Fast support-lane aggregate `theseus-fast-support-lane-2026-07-03-local` with 4 command replays, 16 tracked artifact digests, 68 public task records, 14 expected-invalid or rejected controls, 2 accepted no-promotion decisions, and `theseusFastSupportAggregateFixture`; `docs/theseus_artifact_retention_replay_import.md`, `docs/theseus_governance_rights_receipt_suite_import.md`, `docs/theseus_simulation_fidelity_receipt_suite_import.md`, `docs/theseus_rlds_minari_trace_export_import.md`, `docs/theseus_module_definition_of_done_import.md`, `docs/theseus_project_registry_import.md`, `docs/theseus_assistant_reference_trace_import.md`, `docs/theseus_book_crosswalk_import.md`, and `docs/theseus_work_board_import.md` add bounded non-core Project Theseus imports, public-safe pointer evidence, assistant reference-trace evidence, and work-board metadata evidence; `docs/project_theseus_static_import_status_ledger.md` summarizes the lane with 2 sanitized static report imports, 1 support replay probe, 1 artifact-retention replay import, 1 governance-rights receipt import, 1 simulation-fidelity receipt import, 1 RLDS/Minari trace-export import, 1 module definition-of-done import, 1 project-registry import, 1 assistant reference-trace import, 1 book-to-Theseus crosswalk pointer import, 1 work-board metadata import, 91 expected-invalid controls, and seven accepted bounded Project Theseus upward transitions. The local checkout still had private/dirty surfaces, the work-board import is a stale metadata snapshot, and the assistant import is a sanitized reference-trace boundary only, so no clean live Theseus replay, current board-state proof, current dashboard proof, current assistant runtime proof, route-quality proof, private-verifier-quality proof, or chapter-core upward support-state transition exists; accepted upward transitions are bounded to narrow non-core imports and do not prove model quality, deployment, self-evolution safety, or any chapter core claim. | Keep the static imports, support probe, public task-bundle import, selected support-lane aggregate, artifact-retention import, governance-rights receipt import, simulation-fidelity receipt import, RLDS/Minari trace-export import, module definition-of-done import, project-registry import, assistant reference-trace import, book crosswalk, and work-board metadata import as implementation-reference evidence only, keep no-promotion decisions visible, then pursue a clean replay or archived public fixture with environment notes, publication permission, missing-artifact closure, artifact-truth review, fresh work-board status refresh, route/verifier-quality review, and external review before any stronger transition. |
 | P2 | The reader edition is structurally mature but not yet a true human book. | Human view, reader overlays, reader spine checks, companion-note routing, and HTML artifact review exist; the current reader projection has 74 active/applied overlay operations across 30 chapters, 0 high-priority and 0 medium-priority heuristic review rows, and 0 generated-reader paragraphs at or above 160 words. The curated manuscript path is still overall `drafting`, but now has 44 active curated chapter records with 0 drafting and 44 reconciled for prose meaning, no active manifest chapter missing a curated reader file, a validated reader handoff contract for thesis/arcs/signature ideas/voice slots, and all ten current key-figure targets backed by draft live-chapter assets, text-equivalent chapter anchors, curated reader-manuscript placements, rendered curated-reader HTML DOM checks with captions, alt text, responsive classes, copied SVGs, non-claim boundaries checked by `scripts/validate_reader_key_figures.py` and `scripts/validate_reader_key_figure_html_probe.py`, a measured contrast/readability gate checked by `python3 scripts/validate_reader_key_figure_contrast.py` with result `editions/reader_manuscript/v1_0/key_figure_contrast_manifest.json`, a source-geometry review checked by `python3 scripts/validate_reader_key_figure_geometry.py` with result `editions/reader_manuscript/v1_0/key_figure_geometry_manifest.json`, a source-level visual identity review checked by `python3 scripts/validate_reader_visual_identity.py` with result `editions/reader_manuscript/v1_0/visual_identity_manifest.json`, a source-level accessibility/navigation review checked by `python3 scripts/validate_reader_accessibility_navigation.py` with result `editions/reader_manuscript/v1_0/accessibility_navigation_manifest.json`, an automated curated-reader HTML keyboard traversal review checked by `python3 scripts/validate_reader_keyboard_navigation.py` with result `editions/reader_manuscript/v1_0/keyboard_navigation_manifest.json`, a keyboard-only evidence decision checked by `python3 scripts/validate_reader_keyboard_only_decision.py` with result `editions/reader_manuscript/v1_0/keyboard_only_decision_manifest.json`, an automated curated-reader HTML accessibility-tree release-preparation probe checked by `python3 scripts/validate_reader_accessibility_tree.py` with result `editions/reader_manuscript/v1_0/accessibility_tree_manifest.json`, an automated curated-reader HTML WCAG-preparation gate checked by `python3 scripts/validate_reader_wcag_preparation.py` with result `editions/reader_manuscript/v1_0/wcag_preparation_manifest.json`, a local EPUB/DOCX/PDF package/text probe checked by `python3 scripts/validate_reader_key_figure_format_probe.py` with result `editions/reader_manuscript/v1_0/key_figure_format_probe_manifest.json`, an automated PNG raster fallback probe checked by `python3 scripts/validate_reader_key_figure_raster_probe.py` with result `editions/reader_manuscript/v1_0/key_figure_raster_manifest.json`, an EPUB key-figure XHTML layout probe checked by `python3 scripts/validate_reader_key_figure_epub_layout.py` with result `editions/reader_manuscript/v1_0/key_figure_epub_layout_manifest.json`, a PDF key-figure caption-page layout probe checked by `python3 scripts/validate_reader_key_figure_pdf_layout.py` with result `editions/reader_manuscript/v1_0/key_figure_pdf_layout_manifest.json`, a DOCX-to-PDF key-figure title-page layout probe checked by `python3 scripts/validate_reader_key_figure_docx_layout.py` with result `editions/reader_manuscript/v1_0/key_figure_docx_layout_manifest.json`, a shared live/curated presentation layer in `assets/styles.scss` with `assets/skip-link.html`, and draft spoken/e-reader summaries in `editions/reader_manuscript/v1_0/companion_notes/key-figures.md` now routed into generated audio companion notes by `scripts/build_audio_script.py`. `docs/curated_reader_html_artifact_browser_review.md` now records a full local browser viability review of the tracked curated-reader HTML workspace with 98 of 98 page-view pairs passing, including 10 rendered key figures across 20 desktop/mobile figure page-view pairs with 0 failures, and all curated release blockers preserved. The format probe records 10 matched EPUB SVG titles, 10 DOCX figure stems, and 10 PDF draft-caption matches; the geometry review records 10 content-bound checks, 10 text-anchor checks, and 22.0 px minimum content edge margin; the visual identity review records 10 key figures, 54 combined colors, 5 non-neutral color families, and minimum text contrast ratio 5.19; the accessibility/navigation review records 44 one-H1 chapters, 44 handoff sections, 10 draft figure alt texts, 10 figure boundary paragraphs, 0 live-marker leaks, and 0 raw core-claim marker leaks; the keyboard traversal review records 49 pages, 98 desktop/mobile page-view pairs, 0 failed pairs, 98 skip-link activations, 98 main-content routes, and 0 keyboard-trap candidates; the keyboard-only evidence decision records `accepted_keyboard_only_evidence_for_release_preparation`, clears only `manual_keyboard_only_review_not_completed`, and preserves 9 blockers including screen-reader review, WCAG conformance, reader release approval, and audio gates; the accessibility-tree probe records 49 pages, 98 desktop/mobile page-view pairs, 0 failed pairs, 98 accessibility-tree page-view pairs, 0 unnamed interactive elements, 0 image alt failures, 0 table header failures, and 0 duplicate-ID hits; the automated WCAG-preparation gate records `accepted_wcag_automation_evidence_for_release_preparation`, clears only `wcag_conformance_review_not_completed`, and records 98 page-view pairs, 3,523 text contrast samples, 0 contrast failures, and 4.69 minimum contrast ratio; the raster review records 10 generated PNG fallbacks, 10 standard 1200 x 760 canvases, 99.954% minimum opaque pixel coverage, 27.64 minimum luminance standard deviation, and 116 minimum quantized colors; the EPUB key-figure layout review records 10 XHTML entries, 20 desktop/e-reader-like browser page-view pairs, 0 failures, 5,476 minimum body text characters, 23 minimum alt-text words, 10 px maximum horizontal overflow, and 0 image failures; the PDF key-figure layout review records 10 caption pages, 10 caption-page rasters, 165.878 pt minimum caption margin, 3.36% minimum page ink, 0.0% maximum near-edge ink, and 14.2 minimum luminance standard deviation; the Chromium PDF viewer smoke review records 2 nonblank viewer screenshots and 4.485% changed pixels after scroll; the DOCX key-figure layout review records 10 title pages, 10 title-page rasters, 72.1 pt minimum title margin, 9.53% minimum page ink, 0.0% maximum near-edge ink, and 37.95 minimum luminance standard deviation. The figures remain draft reader aids, the measured SVG contrast/readability gate is not final-art approval, the source-geometry review is not raster review, the curated HTML review is not a release record, the shared figure styling, browser layout checks, source-level visual identity review, source-level accessibility/navigation review, automated keyboard traversal review, accessibility-tree release-preparation probe, automated WCAG-preparation gate, automated PNG raster review, EPUB key-figure layout review, PDF key-figure layout review, Chromium PDF viewer smoke review, and DOCX key-figure layout review are not final-art approval, manual aesthetic review, dedicated e-reader device review, e-reader application approval, final PDF figure/readability release review, Word review, LibreOffice GUI review, Google Docs review, screen-reader review, e-reader/app review, or reader release approval, the automated WCAG-preparation gate is not screen-reader review, assistive-technology review, third-party/legal WCAG certification, e-reader/app review, or reader release approval, the keyboard-only evidence decision clears only `manual_keyboard_only_review_not_completed` and is not screen-reader review, WCAG conformance, e-reader/app review, or reader release approval, the format-package probe is not EPUB/DOCX/PDF approval, the companion note is not narration or e-reader approval, the generated audio companion routing is not audiobook approval, and there is still no release approval. | Treat chapter-level prose reconciliation as complete, then focus on release-quality artifact work: book-level continuity, format-specific review, manual figure-artifact polish, audio/e-reader flow, screen-reader review where release scope demands it, and an edition release record. Keep the human-reader book as a parallel derivative manuscript for pacing, examples, visual aids, and audio flow. |
 | P2 | Aesthetic craft is still mostly "clean Quarto," not a designed artifact. | The site, diagrams, and format paths are functional and validated; ten reader-handoff key figures now have draft SVG assets, accessibility-oriented prose equivalents, validator-checked placements, rendered browser checks, audio/e-reader companion summaries, a measured contrast/readability gate with minimum text contrast ratio 5.19, minimum flow-line contrast ratio 3.96, minimum marker contrast ratio 3.96, minimum SVG text size 15 px, a source-geometry review with 10 content-bound checks, 10 text-anchor checks, and 22.0 px minimum content edge margin, a source-level visual identity review with 54 combined colors and 5 non-neutral color families, a local EPUB/DOCX/PDF package/text survival probe, an automated PNG raster fallback probe with 10 standard 1200 x 760 rendered fallbacks, 27.64 minimum luminance standard deviation, and 116 minimum quantized colors, a local EPUB key-figure XHTML layout probe with 10 XHTML entries, 20 desktop/e-reader-like browser page-view pairs, 0 failures, 10 px maximum horizontal overflow, and 0 image failures, a local PDF key-figure layout probe with 10 caption pages, 165.878 pt minimum caption margin, 3.36% minimum page ink, 0.0% maximum near-edge ink, and 14.2 minimum luminance standard deviation, a Chromium PDF viewer smoke review with 2 nonblank screenshots and 4.485% changed pixels after scroll, and a local DOCX key-figure layout probe with 10 title pages, 72.1 pt minimum title margin, 9.53% minimum page ink, 0.0% maximum near-edge ink, and 37.95 minimum luminance standard deviation. They remain draft reader aids rather than release-reviewed art. | Fold visual identity and figure craft into the reader-artifact milestone: key figures should be intentional, accessible, stable across web, EPUB, PDF, DOCX, and audio companion treatment, and reviewed as artifacts before reader release. The remaining figure blockers are manual aesthetic judgment, real e-reader/app/PDF/DOCX inspection, dedicated e-reader device/application review, Word/LibreOffice GUI/Google Docs review, final PDF figure/readability release review, and release-record approval, not source-level contrast, source-geometry review, source-level visual identity review, automated raster fallback smoke review, EPUB XHTML key-figure browser-report probe, PDF caption-page layout probe, Chromium PDF viewer smoke review, DOCX converted-layout probe, or package/text survival. |
@@ -2486,6 +2648,66 @@ Acceptance bar:
 - the per-chapter evidence plan names proof/evidence routes rather than leaving
   claims as pure prose.
 
+### Milestone 5.75 - Controlled Frontier Completeness Expansion
+
+Goal: absorb the source-verified architectural gaps from
+`docs/asi_completeness_gap_scan_2026-07-06.md` without turning discovery notes
+into evidence, breaking historical releases, or creating stub-only breadth.
+
+Tasks:
+
+- Execute the source-verification preflight and provisional ownership table in
+  the 2026-07-09 Controlled ASI Completeness Intake.
+- Complete the CAIS prior-art packet first and update the opener, Integrated
+  Reference Architecture, and contribution novelty ledger with a supported
+  delta, a narrower delta, or an explicit no-novelty decision.
+- Make all active chapter-count and chapter-ID checks manifest-derived before
+  the first addition. Preserve versioned 44-chapter release snapshots by
+  manifest digest instead of treating them as the live count.
+- Work the four intake waves in order. Add one chapter to the manifest only
+  after its minimum source family and ownership decision exist, then finish its
+  live and reader artifacts before adding the next chapter.
+- Batch the 25 Tier-2 findings into their named host chapters during the same
+  wave; do not create a parallel checklist or a separate chapter for every
+  external term.
+- Give each accepted new chapter a core claim, explicit non-claims, source
+  queue, proof tags, at least one executable evidence/proof route or exact
+  blocker, a technical Mermaid figure, reader overlay/delta treatment, and
+  release-profile coverage.
+- Reject, narrow, or replace weak discovery anchors. In particular, do not use
+  the current persuasion candidate to support human-parity or compute-scaling
+  claims without a source that actually reports those results, and do not make
+  a CAIS novelty delta from summaries alone.
+- Keep Project Theseus as the preferred implementation reference for the data
+  engine, open-ended improvement, deception, capability-threshold, and
+  end-to-end trace lanes; import only public-safe evidence packs through the
+  normal transition gates.
+
+Acceptance bar:
+
+- every Tier-1 and Tier-2 item has an artifact-backed disposition and no item
+  remains accepted merely because it appeared in the scan;
+- every accepted external source has a full-text source note and generated
+  Appendix H entry before prose citation;
+- every accepted chapter is complete in both editions at the same standard as
+  the current active chapters, not a stub awaiting a later pass;
+- `book_structure.json`, `docs/book_outline.md`, source inventory, proof
+  manifest, claim/evidence surfaces, reader manifests, evidence plan, release
+  profiles, and public navigation agree on the expanded active spine;
+- a disposable-workspace insertion/removal test demonstrates that adding or
+  removing a chapter requires no manual renumbering and no hard-coded count
+  repair;
+- the historical 44-chapter edition remains reproducible from its recorded
+  manifest while the expanded edition has a distinct release record;
+- the full validation gate and HTML render pass, with Lean/schema/protocol and
+  reader checks run whenever their owned surfaces change;
+- no support-state promotion, novelty proof, external review, model quality,
+  safety, or ASI claim is inferred from coverage expansion.
+
+Current state: open. The scan and routing decision exist; no candidate source
+has yet passed the full source-note preflight, no active chapter has been added,
+and the hard-coded-count audit has not yet executed.
+
 ### Milestone 6 - External-SOTA Exception Replacement
 
 Goal: move from "placement gate passes" to "external engagement is strong
@@ -4221,6 +4443,12 @@ five tests below. When all five pass, the project has reached its logical
 conclusion and transitions to maintenance cadence; until then, the remaining
 distance is the backlog.
 
+In these tests, "all 44" names the current historical release baseline. After
+Milestone 5.75 accepts a chapter, completion means **all chapters in the active
+`book_structure.json` manifest**, while historical 44-chapter records continue
+to validate against their own versioned manifest. No accepted addition is
+outside the completion bar.
+
 ### Test 1 - Complete chapters (both editions, all 44)
 
 Every chapter — not a subset — has:
@@ -4686,10 +4914,11 @@ Immediate next three actions, in order:
 | `v1.3` | Moves formal layer from finite-record routing toward executable-model practice. | One selected proof/evidence lane has a transition-system invariant, trace property, or Lean/Python fixture-equivalence check; theorem-count growth alone does not satisfy the target. |
 | `v1.4` | Moves reader surface from generated projection to a finished human manuscript. | Curated reader manuscript follows the stable 44-chapter table of contents; every reader chapter reads at the level of the current best ones; the book-level thesis, part arcs, signature ideas, and chapter stakes/payoffs are realized in the prose itself; key figures are placed with text equivalents and validator-checked placements; the optional enrichment queue is a sidecar with zero manuscript gaps; reader HTML remains validated; and the edition is built and release-recorded with EPUB/DOCX/PDF blockers reduced to format-review items only (2026-07-02 direction: nothing waits on Corben). |
 | `v1.5` | Moves the human edition from clean technical prose toward a crafted artifact. | Key figures have moved beyond draft coverage into visual review, visual identity, EPUB/DOCX/PDF layout probes, audio-script treatment, and companion-note routing are reviewed enough to show exactly what remains before a polished major reader release. |
+| `v1.6` | Converts the completeness scan into source-verified, dynamically structured book coverage. | CAIS positioning is source-noted; active chapter-count checks are manifest-derived; every Tier-1/Tier-2 finding has a disposition; each accepted chapter or section is complete in both editions with proof/evidence routing; the historical 44-chapter release remains reproducible; and the expanded edition is release-recorded without support-state inflation. |
 | `v1.x evidence release` | Becomes stronger than v1.0.0 by evidence depth, not by blanket coverage. | The v1.x release gate passes; one flagship measured lane has executed evidence or an explicit no-promotion decision; every chapter has external-grounding status; core claims promote only where evidence-transition records justify it. |
-| `v2.0` | Becomes a public research program with external scrutiny, archived artifacts, and reproducible evidence packs. | External review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger executable-model proofs, prior-art-reviewed preprints, and DOI/archive metadata exist. |
+| `v2.0` | Becomes a public research program with externally grounded architecture coverage, archived artifacts, and reproducible evidence packs. | The controlled completeness intake is closed; accepted spine additions are source-noted and complete in both editions; external review, archived release, polished human editions, reproducible Theseus/Circle evidence packs, stronger executable-model proofs, prior-art-reviewed preprints, and DOI/archive metadata exist. |
 | `v2.x` | Operates as a living research program on steady cadence. | Each cycle executes flagship-paced evidence lanes toward Test 3 completion, deepens formal backing toward Test 4, absorbs new sources through the intake loop, keeps both editions release-current, and keeps the burn-down truthful under the standing rule; no cycle ships planning surfaces without executed change. |
-| `v3.0 complete book` | Reaches the project's logical conclusion as defined above. | All five Logical Conclusion tests pass: every chapter complete in both editions, all editions and artifacts release-recorded, all 44 evidence lanes executed with explicit core-claim dispositions, the formal program complete, and the steady operating state documented — after which the project runs in maintenance cadence and major releases are archived as they occur. |
+| `v3.0 complete book` | Reaches the project's logical conclusion as defined above. | All five Logical Conclusion tests pass: every active-manifest chapter is complete in both editions, all editions and artifacts are release-recorded, every active evidence lane has an explicit core-claim disposition, the formal program is complete, and the steady operating state is documented — after which the project runs in maintenance cadence and major releases are archived as they occur. |
 
 ## Suggested Long-Running Goal
 
@@ -4701,7 +4930,12 @@ governance-economics movement must be live or externally reviewable workload
 evidence, a source-noted economic comparator pack, or a dated blocker with the
 missing artifact named.
 
-> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode with the Grade-To-A-Plus Map as the priority compass, the Logical Conclusion section as the completion compass, and the A+ Completion Execution Lattice as the anti-diffusion rule: the target is A+ on every graded dimension for both editions of every chapter, the end state is the five Logical Conclusion tests, and per the 2026-07-02 direction nothing waits on Corben — his editing pass comes last, over a finished book. Standing first action of every run, before any new work: reconcile the Milestone 2.5 burn-down against artifacts that already exist, in both directions — any batch whose closure classes all have named artifacts must be marked closed by artifact in that same run, or carry a dated blocker naming the one remaining closure class. First priority: finish the human-reader edition. Treat chapter-level prose reconciliation and legacy voice-pass conversion as artifact-backed, then move to release-quality continuity polish, table-density/long-paragraph cleanup, figure polish, audio/e-reader flow, and exact format review so all 44 reader chapters read at the level of the current best ones; realize the thesis, part arcs, and 8-12 signature ideas in the prose itself (openings, endings, transitions), writing conviction and stakes to finished quality in third person; never invent first-person experience, personal conviction, or authorial lessons. Then build the edition — HTML, EPUB, DOCX, and PDF where local dependencies allow — run the format validators and application-level checks the format-review matrix defines, including the current six-row curated-candidate blocker queue, and produce an edition release record so "drafting" becomes a release state. Second priority: evidence cadence. Strengthen one selected measured, replay, or import lane per cycle to an accepted narrow non-core transition or explicit no-promotion decision; accepted no-promotion records over existing planned-only fixtures may reduce ambiguity, but they must not be counted as active-lane selection or upward support movement. Load-stability and workload-quality already have accepted narrow transitions, so the next cycle should either deepen them toward live/external review or select the next public-safe Circle/Theseus/fixture lane. Import the next public-safe Circle or Theseus result CI-verifiable by digest or replay, record demotions, rejections, and no-promotion decisions honestly, and keep `claim_decisions/v1_x_core_claim_dispositions.json` current so core-claim dispositions are now recorded per chapter rather than inferred from scattered surfaces. Third: build one executable-model proof bridge tied to a live evidence lane — a transition-system invariant, trace property, or Lean/Python fixture-equivalence check — instead of chasing theorem count; do not redo the Capability replacement identity-sequence bridge, which already covers the first bounded field-identity canary/rollback sequence, unless the next change brings live/external replay, real regression-floor evidence, monitor-window evidence, rollback dry-run evidence, or a stronger Theseus/Circle public fixture. Fourth: advance the Idea Depth Program as an artifact gate, not a planning lane — do not redo the verification-bandwidth capacity model, residual-conservation fixture, residual-ledger storage/replay fixture, receipt-faithfulness fixture, epistemic-TCB fixture, human-oversight degradation fixture, partitioned-authority fixture, owner-spine pattern-language integration, first control-boundary pattern-language slice, broader planning/context/routing/compression/self-improvement local-delta slice, or bounded stable-identity sequence bridge already implemented; next preserve local-delta discipline and work the next signature ideas one execution state to the right, preferring receipt faithfulness / record-reality gap, residual honesty, human oversight degradation, verification tax / governance economics, support-state ladder / evidence-state soundness, then stable identity and bounded self-improvement unless an earlier lane records a dated public-safety or missing-artifact blocker. Move from owned argument or bounded fixture toward live/external residual-ledger storage and replay, live/external receipt attestation and audit behavior, live/external approval-workflow reviewer-degradation evidence, live/external governance-tax workload evidence, true demotion/refutation/narrowing cases or claim-state transition bridges, live/external replacement replay, live/external partitioned-authority grant/revocation traces, source-noted prior-art/external review for pattern-language novelty, or a dated blocker naming the exact missing artifact. Each closure requires live prose, reader prose, source-noted prior-art delta, contribution-ledger update, analytic consequence with weakening condition, strongest objection answered in chapter prose, proof/evidence artifact or dated blocker, and explicit non-claims. For receipt faithfulness/record-reality, treat Artifact Graphs as the current owner: strengthen it into the showpiece record-reality section in both editions, then split into a new manifest-backed chapter only if the section-level treatment fails the split test by creating duplication, burying a distinct evidence lane, or making adjacent chapters less clear. Route the epistemic trusted computing base, human oversight degradation, and the remaining section-level additions through the normal manifest/outline/evidence-lane process, creating a new chapter only when the ownership test is passed and the addition shortens, absorbs, or disambiguates existing material rather than adding another skeleton. Fifth: execute the live-edition craft watchlist — move bulky tables, validator minutiae, and repeated caveats to companion or live-only surfaces where evidence boundaries allow, and bring one anchor section per part to showpiece-trace caliber. Close lattice lanes through existing artifacts whenever possible: contribution-track records, contribution novelty ledger rows, source notes, Appendix H, proof adequacy, evidence transitions, reader manifests, format-review matrices, release records, figure reviews, and trust surfaces. Keep the executed 44-chapter spine stable and retired URLs stub-guarded; keep the sixty-second trust surface and non-core evidence ledger accurate; keep the external-review lane parked as user-owned (the dated blocker is the standing record — schedule no outreach and gate nothing on it); do not create new planning/report surfaces unless a validator, release record, or executed change requires them; continue the status-surface sprawl rule only when a validator-enforced cell grows beyond compact status-summary size, moving that detail into a generated ledger in the same implementation commit. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
+Standing evidence-state reminder: the next support-state-soundness movement
+should be a **true demotion/refutation/narrowing** case caused by evidence,
+prior art, or review, not another synthetic no-promotion record over the same
+surface.
+
+> Execute the v1.x roadmap for **The ASI Stack** in implementation-first mode with the Grade-To-A-Plus Map as the priority compass, the Logical Conclusion section as the completion compass, and the A+ Completion Execution Lattice as the anti-diffusion rule: the target is A+ on every graded dimension for both editions of every chapter, the end state is the five Logical Conclusion tests, and per the 2026-07-02 direction nothing waits on Corben — his editing pass comes last, over a finished book. Standing first action of every run, before any new work: reconcile the Milestone 2.5 burn-down against artifacts that already exist, in both directions — any batch whose closure classes all have named artifacts must be marked closed by artifact in that same run, or carry a dated blocker naming the one remaining closure class. First priority: finish and release-record the current 44-chapter human-reader edition as a historical baseline. Treat chapter-level prose reconciliation and legacy voice-pass conversion as artifact-backed, then move to release-quality continuity polish, table-density/long-paragraph cleanup, figure polish, audio/e-reader flow, and exact format review so all current reader chapters read at the level of the best ones; realize the thesis, part arcs, and 8-12 signature ideas in the prose itself, writing conviction and stakes to finished quality in third person; never invent first-person experience, personal conviction, or authorial lessons. Build HTML, EPUB, DOCX, and PDF where local dependencies allow, run the format validators and application-level checks defined by the format-review matrix, and produce an edition release record so "drafting" becomes a release state. Second priority: execute Milestone 5.75, Controlled Frontier Completeness Expansion. Source-note and position the stack thesis against CAIS first; make active chapter identity and count manifest-derived while preserving versioned 44-chapter records; then work the four intake waves in order, adding one accepted chapter at a time and finishing its live prose, reader prose, sources, proof/evidence route, figure, ledgers, release coverage, validation, and render before adding the next. Treat the eleven clear new-chapter candidates, the source-contingent persuasion candidate, the possible foundations candidate, and all section-level routes as provisional until their source and ownership gates pass. Reject, narrow, or replace weak discovery anchors and never infer evidence or novelty from the scan. Third priority: evidence cadence. Strengthen one selected measured, replay, or import lane per cycle to an accepted narrow non-core transition or explicit no-promotion decision; accepted no-promotion records over existing planned-only fixtures may reduce ambiguity, but they must not be counted as active-lane selection or upward support movement. Load-stability and workload-quality already have accepted narrow transitions, so the next cycle should either deepen them toward live/external review or select the next public-safe Circle/Theseus/fixture lane. Import the next public-safe Circle or Theseus result CI-verifiable by digest or replay, record demotions, rejections, and no-promotion decisions honestly, and keep `claim_decisions/v1_x_core_claim_dispositions.json` current so core-claim dispositions are now recorded per chapter in the active manifest rather than inferred from scattered surfaces. Fourth: build one executable-model proof bridge tied to a live evidence lane — a transition-system invariant, trace property, or Lean/Python fixture-equivalence check — instead of chasing theorem count; do not redo the Capability replacement identity-sequence bridge unless the next change brings live/external replay, real regression-floor evidence, monitor-window evidence, rollback dry-run evidence, or a stronger Theseus/Circle public fixture. Fifth: advance the Idea Depth Program as an artifact gate, not a planning lane — do not redo already implemented bounded fixtures or pattern-language integration; move the next signature ideas one execution state to the right through live/external replay, source-noted prior-art, a true claim-state change, or a dated blocker naming the exact missing artifact. Each closure requires live prose, reader prose, source-noted prior-art delta, contribution-ledger update, analytic consequence with weakening condition, strongest objection answered in chapter prose, proof/evidence artifact or dated blocker, and explicit non-claims. Sixth: execute the live-edition craft watchlist — move bulky tables, validator minutiae, and repeated caveats to companion or live-only surfaces where evidence boundaries allow, and bring one anchor section per part to showpiece-trace caliber. Keep the historical 44-chapter release snapshot and retired URLs stable; let the active spine expand only through Milestone 5.75 and derive all active surfaces from `book_structure.json`; keep the sixty-second trust surface and non-core evidence ledger accurate; keep the external-review lane parked as user-owned; do not create new planning/report surfaces unless a validator, release record, or executed change requires them. Before every commit, check the latest completed GitHub Pages run; run the relevant local validation gate, Lean build when proof code changes, and Quarto render for changed public surfaces; commit and push coherent increments. Never fabricate source content, citations, proof results, test results, support-state promotions, external-review records, authorial voice, personal experience, artifact approvals, deployment readiness, model quality, benchmark performance, or completed ebook/PDF/DOCX/audio artifacts.
 
 ## Non-Claims
 
@@ -4712,6 +4946,9 @@ missing artifact named.
 - This roadmap does not add new external sources, prove every argument, or
   promote citation candidates into evidence before source notes and transition
   records exist.
+- This roadmap does not accept the completeness scan's source summaries as
+  evidence, add a manifest chapter, or promise a final chapter count. Every
+  candidate remains subject to full-source review and the ownership gate.
 - This roadmap now records the first public-safe Project Theseus static import,
   but it does not create a clean live Theseus replay, public Circle replay pack,
   EPUB, PDF, DOCX, audio artifact, DOI, Zenodo archive, external review record,

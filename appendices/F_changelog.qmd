@@ -1,5 +1,27 @@
 # Changelog
 
+## 2026-07-09 - Reconcile frontier completeness scan into the roadmap
+
+- Added the four-sweep ASI completeness scan as an explicitly non-evidentiary
+  planning intake and recorded a primary-source spot-check boundary, including
+  a persuasion claim/source mismatch and the still-missing primary CAIS
+  treatment.
+- Updated the v1.x roadmap with source-quality gates, provisional ownership for
+  all 16 Tier-1 findings, host routing for all 25 Tier-2 findings, four intake
+  waves, and a completion gate that requires finished live and reader artifacts
+  rather than stub-only chapter growth.
+- Added Milestone 5.75 for controlled frontier-completeness expansion and made
+  the current 44 chapters a historical release baseline rather than a permanent
+  cap on the active manifest.
+- Added a dynamic-spine preflight requiring active validators, reader manifests,
+  evidence plans, and release gates to derive chapter identity/count from
+  `book_structure.json`, while preserving historical release snapshots by
+  versioned manifest digest.
+- Boundary: this roadmap update adds no external source record or source note,
+  changes no chapter structure or support state, and does not establish any
+  source interpretation, novelty, proof, implementation, safety, model-quality,
+  deployment, or ASI result.
+
 ## 2026-07-06 - Import Theseus weekly-focus reference trace fixture
 
 - Added a public-safe Project Theseus weekly-focus reference trace fixture to
