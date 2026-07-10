@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 44 |
-| Assigned source/chapter pairs | 437 |
-| Exact claim-source mappings | 435 |
+| Assigned source/chapter pairs | 441 |
+| Exact claim-source mappings | 439 |
 | Unmapped assigned pairs | 2 |
-| Source notes present for assigned pairs | 437 |
-| Source notes listing assigned chapter | 437 |
-| Passage-reviewed mappings recorded | 435 |
+| Source notes present for assigned pairs | 441 |
+| Source notes listing assigned chapter | 441 |
+| Passage-reviewed mappings recorded | 439 |
 | Support-state counts | {"argument": 44} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -33,18 +33,18 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Chapter ID | Assigned pairs | Claim-source mappings | Source notes present | Source notes listing chapter | Passage-reviewed mappings | Support state | Next action |
 |---|---:|---:|---:|---:|---:|---|---|
-| `asi-is-a-stack-not-a-model` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `asi-is-a-stack-not-a-model` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `system-boundaries-and-authority` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `failure-modes-of-ungoverned-intelligence` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `evidence-states-and-claim-discipline` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `constitutional-alignment-substrate` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
+| `constitutional-alignment-substrate` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `stable-capability-fields` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `capability-replacement-and-rollback` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `security-kernel-and-digital-scifs` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `recursive-self-improvement-boundaries` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
+| `recursive-self-improvement-boundaries` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
 | `intent-to-execution-contracts` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `planning-as-a-control-layer` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
@@ -72,7 +72,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 27 | 27 | 27 | 27 | 27 | argument | eligible for support review |
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
-| `integrated-reference-architecture` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
+| `integrated-reference-architecture` | 21 | 21 | 21 | 21 | 21 | argument | eligible for support review |
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `prototype-roadmap` | 19 | 19 | 19 | 19 | 19 | argument | eligible for support review |
 | `living-book-methodology` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
@@ -116,6 +116,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `treellm` | 5 | yes |
 | `octopus_router` | 5 | yes |
 | `beastbrain` | 4 | yes |
+| `ext_drexler_cais_2019` | 4 | yes |
 | `rankfold_neuralfold` | 4 | yes |
 | `bugbrain` | 4 | yes |
 | `circle_ai_architectures` | 4 | yes |
@@ -207,6 +208,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `scf` | mapped | note present | chapter listed | passage-reviewed |
+| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
@@ -255,6 +257,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
+| `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
@@ -288,6 +291,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
@@ -585,6 +589,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_architecture_gate` | mapped | note present | chapter listed | passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `theseus_circle_transfer` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_plan_compiler` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |

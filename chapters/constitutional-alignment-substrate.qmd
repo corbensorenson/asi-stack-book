@@ -159,8 +159,11 @@ invariants and rejection cases. They do not show that a deployed system is
 aligned, that human dignity is preserved, that reviewers are independent, or
 that runtime correction paths are usable under pressure.
 
-External positioning is comparator-only. `ext_constitutional_ai_2022` and
-`ext_collective_constitutional_ai_2024` position the predicate-constitution
+External positioning is comparator-only. Drexler's CAIS framing
+(`ext_drexler_cais_2019`) supports service composition and structural control
+affordances, but it does not specify this architecture's protected predicates,
+rights-usability tests, or constitutional migration rules. `ext_constitutional_ai_2022`
+and `ext_collective_constitutional_ai_2024` position the predicate-constitution
 side of this boundary, while `ext_corrigibility_2015` and
 `ext_off_switch_game_2016` position the correction and shutdown-incentive
 side. Those references explain where the merged boundary sits relative to
@@ -431,6 +434,7 @@ whole-system safety.
 | `coherence_exchange` | Fork, exit, audit, contestability, review-market, and governance-interface framing. | Connector-only/source-note mapped; not an implemented governance market or mechanism. |
 | `spinoza` | Protected axioms, contradiction handling, proof/citation/procedure-carrying claims, and governance-controlled axiom evolution. | Does not solve verifier quality, autoformalization, or whole-system epistemic correctness. |
 | `field_of_god_ai_constitution` | Truth/relation/task alignment, least sufficient power, non-domination, consent, reversibility, auditability, tool-risk tiers, and self-authorization limits. | Specification source only; no runtime policy engine, red-team suite, moral-correctness proof, or system-prompt evaluation is claimed. |
+| `ext_drexler_cais_2019` | Comparator for task-focused service composition, structured development, and structural safety affordances. | Does not specify constitutional predicate content, rights usability, institutional legitimacy, or runtime enforcement. |
 | `ext_constitutional_ai_2022` | Comparator for constitutional principles shaping model behavior. | Comparator only; no reproduced training or ASI Stack validation. |
 | `ext_collective_constitutional_ai_2024` | Comparator for public-input constitutional shaping. | Comparator only; no proof of governance adequacy or runtime enforcement. |
 | `ext_corrigibility_2015` | Comparator for operator correction and intervention tolerance. | Comparator only; no deployed corrigibility result. |

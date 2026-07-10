@@ -94,7 +94,10 @@ future implementation can emit enough record structure for a skeptical reader,
 reviewer, or downstream machine to reconstruct what happened and why it was
 allowed.
 
-External systems help orient the problem. Task-and-motion planning and
+External systems help orient the problem. Drexler's Comprehensive AI Services
+framework is the closest broad precursor: it treats capable AI as a composition
+of services and R&D automation. The ASI Stack adds a stricter question about
+how those services are joined and governed. Task-and-motion planning and
 behavior trees name planning/execution interfaces. Distributed conditional
 computation names routing and specialization pressure. TLA+, PRISM, and
 runtime assurance work name formal and runtime control lanes. The ASI Stack's

@@ -249,12 +249,17 @@ or the novelty ledger:
    justifies movement. Coverage, citation count, and conceptual affinity are
    not evidence transitions.
 
-The first verification packet is the stack thesis against Comprehensive AI
-Services. It must locate the strongest primary Drexler source available,
-separate CAIS's service-composition thesis from later summaries, and rewrite
-the contribution-novelty row as a precise delta or a narrowing. "CAIS reframes;
-the ASI Stack operationalizes" is a hypothesis to test, not a result already
-earned.
+2026-07-10 implementation state: the first verification packet is complete.
+`ext_drexler_cais_2019` now records reviewed primary-report passages from
+Drexler's CAIS technical report; the opener, Constitutional Alignment, RSI Boundaries,
+Integrated Reference Architecture, both reader derivatives, and the
+governed-cognition novelty row now position against it. The result is a
+narrowing, not a novelty finding: CAIS already provides the broad
+service-composition and R&D-automation framing. The ASI Stack's candidate local
+delta is the explicit interface contract for authority, claim/support-state
+movement, evidence and residual custody, reversibility, and release records.
+This source note does not prove that the delta is novel, implemented, safe, or
+effective, and it does not move any chapter-core support state.
 
 ### Provisional ownership decisions
 

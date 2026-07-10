@@ -47,13 +47,14 @@
           "status": "conceptual",
           "evidence_level": "argument",
           "claim_label": "Design rationale",
-          "source_ids": [
-            "viea",
-            "beastbrain",
-            "aletheia",
-            "talos",
-            "moecot",
-            "scf"
+        "source_ids": [
+          "viea",
+          "beastbrain",
+          "aletheia",
+          "talos",
+          "moecot",
+          "scf",
+          "ext_drexler_cais_2019"
           ],
           "source_queue": {
             "primary": [
@@ -161,6 +162,18 @@
                 "sources/raw/google_docs/scf.txt:302-310"
               ],
               "passage_review_note": "Reviewed local raw cache for stable field identity, replaceable machinery, contracts/artifacts/evidence/qualification/routing/authority/lifecycle/recovery, content-bound qualification, defeasible evidence, witnessed transfer, and lifecycle evidence boundaries; no production-safety or reversibility claim is promoted."
+            },
+            {
+              "source_id": "ext_drexler_cais_2019",
+              "mapped_support": "Provides prior-art context that broad AI can be framed as composed services and R&D automation rather than a unitary self-transforming agent, motivating the narrower distinction between service composition and explicit interface governance.",
+              "limits": "Conceptual technical-report framing only; does not establish that the ASI Stack interface contract is novel, implemented, safe, efficient, or reproduced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "Oxford University Research Archive primary PDF, Drexler (2019), Section I.5, PDF p. 21",
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 1.4-1.5, PDF pp. 35-36",
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 12.7-12.10, PDF pp. 77-78"
+              ],
+              "passage_review_note": "Reviewed primary-report passages on service composition, R&D automation, and structural safety framing. It is used as prior-art context only and does not promote the stack claim."
             }
           ],
           "mechanism": [
@@ -1499,14 +1512,15 @@
           "status": "conceptual",
           "evidence_level": "argument",
           "claim_label": "Design rationale",
-          "source_ids": [
-            "alignment_field",
-            "field_of_god",
-            "ethica_mechanica",
-            "eternal_code",
-            "coherence_exchange",
-            "spinoza",
-            "field_of_god_ai_constitution"
+        "source_ids": [
+          "alignment_field",
+          "field_of_god",
+          "ethica_mechanica",
+          "eternal_code",
+          "coherence_exchange",
+          "spinoza",
+          "field_of_god_ai_constitution",
+          "ext_drexler_cais_2019"
           ],
           "source_queue": {
             "primary": [
@@ -1809,6 +1823,18 @@
                 "local-project:Theseus-Hive@e3d77b49:personality-documents/field_of_god_ai_constitution_v1.md:958-971"
               ],
               "passage_review_note": "Destination mapping: Reviewed tracked local-project source for non-executable/non-religious status, truth/relation/task alignment, agency/consent/power definitions, non-domination, least sufficient power, tool and memory governance, self-modification limits, runtime decision procedure, evaluation scenarios, and constitutional articles; specification only, no runtime policy or moral-correctness proof promoted. Folded source-chapter mapping: Reviewed tracked local-project source for non-executable constitutional status, consent and power definitions, agency-preserving relational alignment, non-domination, reversibility, least sufficient power, help-without-capture, refusal/resistance, contestable power, rollback/shutdown paths, memory privacy, self-modification review, runtime agency checks, evaluation scenarios, and corrigibility articles; specification only, no deployed behavior or approval-gate result promoted."
+            },
+            {
+              "source_id": "ext_drexler_cais_2019",
+              "mapped_support": "Provides comparator context that structured, task-focused components can create control affordances; helps distinguish system structure from the separate work of specifying and preserving constitutional predicates and usable correction paths.",
+              "limits": "Does not specify constitutional content, rights usability, institutional legitimacy, deployed alignment, or runtime enforcement.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "Oxford University Research Archive primary PDF, Drexler (2019), Section I.5, PDF p. 21",
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 12.7-12.10, PDF pp. 77-78",
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 13.3-13.5, PDF pp. 81-82"
+              ],
+              "passage_review_note": "Reviewed primary-report passages on structure-based control affordances and independent checking. It does not provide a constitutional predicate or correction-right implementation."
             }
           ]
         },
@@ -2760,9 +2786,10 @@
             "viea",
             "talos",
             "moecot",
-            "field_of_god_ai_constitution",
-            "theseus_self_evolution_system",
-            "theseus_architecture_gate"
+          "field_of_god_ai_constitution",
+          "theseus_self_evolution_system",
+          "theseus_architecture_gate",
+          "ext_drexler_cais_2019"
           ],
           "source_queue": {
             "primary": [
@@ -3025,6 +3052,17 @@
               ],
               "passage_review_note": "Reviewed pinned local architecture-gate note for pre-training gate purpose, direct and compiled-ratchet commands, source-reported snapshot, failed-gate residuals, rerun triggers, necessary-not-sufficient caveat, and stale-gate risks; no current gate report or readiness result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_drexler_cais_2019",
+              "mapped_support": "Provides comparator context that AI R&D automation can drive recursive technology improvement without making a self-transforming agent the necessary engine, supporting the chapter's separation of a governed improvement system from a product-level promotion decision.",
+              "limits": "Does not establish evaluator independence, protected-invariant preservation, rollback reliability, safe self-improvement, or deployed governance.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 1.4-1.5, PDF pp. 35-36",
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 15.3-15.6, PDF pp. 86-88"
+              ],
+              "passage_review_note": "Reviewed primary-report passages on R&D automation and structured development. It is used to separate improvement capability from a product's authority to promote itself."
             }
           ]
         }
@@ -11852,9 +11890,10 @@
             "project_theseus_whitepaper",
             "theseus_plan_compiler",
             "theseus_self_evolution_system",
-            "theseus_architecture_gate",
-            "theseus_operator_os",
-            "theseus_circle_transfer"
+          "theseus_architecture_gate",
+          "theseus_operator_os",
+          "theseus_circle_transfer",
+          "ext_drexler_cais_2019"
           ],
           "source_queue": {
             "primary": [
@@ -12179,6 +12218,19 @@
               ],
               "passage_review_note": "Reviewed pinned local transfer-lane note for report-only bridge, consumer/smoke/proxy commands, contract families, claim axes, structural-smoke boundaries, benchmark-design-only caveat, allowed structural claim, disallowed quality/runtime/context/speed claims, and next private attachment requirements; no transfer consumer or benchmark is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_drexler_cais_2019",
+              "mapped_support": "Provides the closest broad comparator for composed services and R&D automation; supports the claim that broad capability composition and an integrated agent are distinct framings, leaving the book's typed trace and interface-governance contract as the narrower target.",
+              "limits": "Does not implement, validate, or prove the ASI Stack reference trace, authority stops, evidence updates, residual custody, or release governance.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "Oxford University Research Archive primary PDF, Drexler (2019), Section I.5, PDF p. 21",
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 1.4-1.5, PDF pp. 35-36",
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 12.7-12.10, PDF pp. 77-78",
+                "Oxford University Research Archive primary PDF, Drexler (2019), Sections 15.3-15.6, PDF pp. 86-88"
+              ],
+              "passage_review_note": "Reviewed primary-report passages on service composition, R&D automation, independent checking, and structured development. It is a broad comparator, not implementation or validation evidence for this reference architecture."
             }
           ],
           "mechanism": [

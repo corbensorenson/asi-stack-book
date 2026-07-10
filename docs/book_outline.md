@@ -121,7 +121,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `viea`, `beastbrain`, `aletheia` | Read first for chapter claims and mechanisms. |
 | Supporting | `talos`, `moecot`, `scf` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
-| External comparators | `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986` | Load after internal stack sources to position the opener against modular neuro-symbolic systems, LLM-agent architectures, cognitive-architecture lineage, and layered robot-control architecture. Treat them as comparators, not proof that the ASI Stack works. |
+| External comparators | `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986` | Load after internal stack sources to position the opener against CAIS service composition and R&D automation, modular neuro-symbolic systems, LLM-agent architectures, cognitive-architecture lineage, and layered robot-control architecture. Treat them as comparators, not proof that the ASI Stack works. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -156,7 +156,7 @@ Failure modes to cover:
 Draft deliverables:
 
 - A stack map, layer boundary record schema and fixture, source crosswalk, and claim ledger that make the architecture navigable before prose is complete.
-- Source-noted external comparator rows for `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, and `ext_subsumption_architecture_1986`, without treating those records as reproduced systems, benchmark results, or support-state promotion.
+- Source-noted external comparator rows for `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, and `ext_subsumption_architecture_1986`, without treating those records as reproduced systems, benchmark results, or support-state promotion.
 - Beyond-SOTA endpoint should explicitly contrast the stack frame with scale-only systems, generic agent loops, and compound/modular AI systems: each contributes useful architecture vocabulary, but none by itself supplies authority ceilings, evidence states, rollback ownership, replacement transactions, or recursive-improvement boundaries.
 - Implemented repository-level fixture: `layer_boundary_record.valid.json` validates lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims only.
 - Implemented Lean proof target: finite layer-contract admission lifecycle route for missing layer identity, lifecycle state, owner, responsibility, input artifacts, output artifacts, authority ceilings, handoff protocols, invariants, failure modes, evidence gates, external-action authority or handoff boundaries, source mappings, support-state boundaries, evidence-transition gaps, and non-claim-boundary gaps.
@@ -536,7 +536,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `alignment_field`, `ethica_mechanica`, `field_of_god`, `eternal_code` | Read first for constitutional lineage, agency/dignity/corrigibility constraints, non-domination, and rights-usability vocabulary. |
 | Supporting | `coherence_exchange`, `spinoza`, `field_of_god_ai_constitution` | Mine for contestability, proof/citation/procedure-carrying claim limits, protected predicate migration, runtime checks, least sufficient power, and self-authorization boundaries. |
-| External comparators | `ext_constitutional_ai_2022`, `ext_collective_constitutional_ai_2024`, `ext_corrigibility_2015`, `ext_off_switch_game_2016` | Use after source notes for Constitutional AI, public-input constitutional AI, corrigibility, and off-switch positioning; do not treat them as evidence of ASI Stack runtime predicate enforcement or support-state promotion. |
+| External comparators | `ext_drexler_cais_2019`, `ext_constitutional_ai_2022`, `ext_collective_constitutional_ai_2024`, `ext_corrigibility_2015`, `ext_off_switch_game_2016` | Use after source notes for CAIS structural-control affordances, Constitutional AI, public-input constitutional AI, corrigibility, and off-switch positioning; do not treat them as evidence of ASI Stack runtime predicate enforcement or support-state promotion. |
 | Folded history | `agency-dignity-and-corrigibility` | Folded into this destination on 2026-06-30; preserve agency, dignity, corrigibility, material-usability, refusal, review, appeal, rollback, exit, audit, accountability, source mappings, tests, and proof hooks as subclaims and history. |
 
 Draft arc:
@@ -869,6 +869,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `scf`, `benchmaxxing`, `rmi` | Read first for chapter claims and mechanisms. |
 | Supporting | `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_drexler_cais_2019` | Use for CAIS's distinction between R&D automation and self-transforming agents; do not treat it as evidence that this stack can safely improve itself or that its gates are sufficient. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:
@@ -3161,6 +3162,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `viea`, `scf`, `vcm_public`, `planforge`, `talos`, `spinoza`, `octopus_router`, `rmi`, `benchmaxxing` | Read first for chapter claims and mechanisms. |
 | Supporting | `alignment_field`, `cgs`, `cognitive_loop_closure`, `project_theseus_whitepaper`, `theseus_plan_compiler`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `theseus_operator_os`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
+| External comparators | `ext_drexler_cais_2019` | Use for service-centered composition, R&D automation, and the need to distinguish a broad capability architecture from the governance of its handoffs; do not treat CAIS as an integrated ASI Stack implementation or safety result. |
 | Connector or recovery required | `moecot`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 Draft arc:

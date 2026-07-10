@@ -4,7 +4,7 @@ chapter_id: "asi-is-a-stack-not-a-model"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-01"
+last_updated: "2026-07-10"
 primary_sources:
   - "viea"
   - "beastbrain"
@@ -33,8 +33,8 @@ open_evidence_gaps:
 | Primary source records | `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf` |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `viea`, `beastbrain`, `aletheia`; supporting: `talos`, `moecot`, `scf`; external comparators: `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986`; connector/recovery: `moecot` |
-| Source loading state | source notes: `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986`; passage-reviewed local raw cache: `viea`, `beastbrain`, `aletheia`, `talos`, `scf`; connector-only/source-note mapped: `moecot` |
+| Source queue | primary: `viea`, `beastbrain`, `aletheia`; supporting: `talos`, `moecot`, `scf`; external comparators: `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986`; connector/recovery: `moecot` |
+| Source loading state | source notes: `viea`, `beastbrain`, `aletheia`, `talos`, `moecot`, `scf`, `ext_drexler_cais_2019`, `ext_mrkl_systems_2022`, `ext_llm_agents_survey_2023`, `ext_standard_model_mind_2017`, `ext_subsumption_architecture_1986`; passage-reviewed local raw cache: `viea`, `beastbrain`, `aletheia`, `talos`, `scf`; primary-report passages reviewed: `ext_drexler_cais_2019`; connector-only/source-note mapped: `moecot` |
 | Test state | `layer_boundary_record.valid.json` passes protocol fixture validation for lifecycle state, owner, chapter refs, traceability state, handoff protocol, contract refs, change policy, integration decision, promotion blockers, source refs, support-state effect, and non-claims; stack-boundary Lean hooks build locally, including a finite trace theorem that rejects an external-action step when the layer lacks external authority and the handoff is unauthorized, plus a finite layer-contract admission lifecycle route; `python3 scripts/validate_stack_layer_traceability.py` checks the opener's layer-boundary fixture, six assigned source mappings, Appendix A source-to-layer visibility, Appendix C claim/support labels, and no-promotion markers. Contract-change triage remains planned. |
 
 ## Drafting guardrail
@@ -75,13 +75,13 @@ The ASI Stack treats those missing contracts as first-class design objects. It d
 
 That is the delta beyond generic decomposition. A modular system has parts; a governed-cognition pattern gives those parts record identity, state, authority, evidence, receipts, and reversal behavior. The claim is still architectural and remains at `argument` support, but the pattern makes the book's repeated structure intentional instead of accidental.
 
-External positioning: the opening stack frame is still a synthetic orientation claim over this book's internal architecture, but it now has source-noted architecture comparators. MRKL Systems (`ext_mrkl_systems_2022`) show model-plus-expert-module decomposition, the LLM-agent survey (`ext_llm_agents_survey_2023`) organizes language-model agents around memory, planning, and action components, the Standard Model of the Mind (`ext_standard_model_mind_2017`) supplies cognitive-architecture lineage, and Brooks' layered robot-control work (`ext_subsumption_architecture_1986`) gives a historical layered-control comparator. The ASI Stack uses those sources only for positioning: it adds governance, authority ceilings, claim states, proof hooks, rollback, and recursive-improvement boundaries that the comparator sources do not validate here.
+External positioning: the opening stack frame is still a synthetic orientation claim over this book's internal architecture, but it now has source-noted architecture comparators. Drexler's CAIS report (`ext_drexler_cais_2019`) already argues for composed AI services and R&D automation rather than a single self-transforming agent. MRKL Systems (`ext_mrkl_systems_2022`) show model-plus-expert-module decomposition, the LLM-agent survey (`ext_llm_agents_survey_2023`) organizes language-model agents around memory, planning, and action components, the Standard Model of the Mind (`ext_standard_model_mind_2017`) supplies cognitive-architecture lineage, and Brooks' layered robot-control work (`ext_subsumption_architecture_1986`) gives a historical layered-control comparator. The narrower ASI Stack candidate delta is operational governance at each interface: typed handoffs, authority ceilings, claim/support-state transitions, evidence and residual custody, rollback or quarantine routes, and release records. None of these comparators validates that contract here.
 
 ## Core Claim
 
 [asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
 
-The claim remains at `argument` support. VIEA supports the intent-to-execution spine, BeastBrain supports the local stateful stack vocabulary, Aletheia supports the trusted-output and verification boundary, Talos supports the labor/execution layer, SCF supports governed replacement, and MoECOT remains implementation-reference context rather than reproduced evidence. External architecture sources now ground the surrounding vocabulary for modular systems, LLM agents, cognitive architectures, and layered control, but they do not reproduce or validate the ASI Stack.
+The claim remains at `argument` support. VIEA supports the intent-to-execution spine, BeastBrain supports the local stateful stack vocabulary, Aletheia supports the trusted-output and verification boundary, Talos supports the labor/execution layer, SCF supports governed replacement, and MoECOT remains implementation-reference context rather than reproduced evidence. CAIS grounds service-centered composition and R&D automation, while the other external architecture sources ground surrounding vocabulary for modular systems, LLM agents, cognitive architectures, and layered control. None reproduces or validates the ASI Stack.
 
 The argument is that decomposition is both a governance device and an efficiency device. A stack can route the smallest adequate capability to a subtask, preserve context only where it is useful, compile repeated work into tools, and test the exact boundary that changed. A monolith can still be powerful, but it has fewer places to attach evidence, rollback, permissions, and replacement rules.
 
@@ -275,12 +275,13 @@ These stack-boundary hooks are implemented in the local Lean workspace. The modu
 | `talos` | Talos Protocol | labor_execution_os | AI labor OS. Deterministic cognitive manufacturing, typed jobs, control planes, auditability, tool isolation. | source note available; local raw cache available |
 | `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
 | `scf` | Stable Capability Fields | governance_recursive_self_improvement | Use public release v1.0 when available. Stable boundaries, replacement, bounded authority, recoverable evolution. | source note available; local raw cache available |
+| `ext_drexler_cais_2019` | Reframing Superintelligence: Comprehensive AI Services as General Intelligence | ai_services_r_and_d_automation | External comparator for service-centered general intelligence, R&D automation, structured development, and the distinction between capability composition and interface governance. | source note available; relevant primary-report passages reviewed; comparator only |
 | `ext_mrkl_systems_2022` | MRKL Systems | neuro_symbolic_modular_architecture | External comparator for modular neuro-symbolic systems that combine LLMs, external knowledge sources, expert modules, and routing. | source note available; comparator only |
 | `ext_llm_agents_survey_2023` | A Survey on Large Language Model based Autonomous Agents | llm_agent_architecture | External comparator for LLM-agent decomposition into profile, memory, planning, and action components. | source note available; comparator only |
 | `ext_standard_model_mind_2017` | A Standard Model of the Mind | cognitive_architecture | External comparator for integrated cognitive architecture across memory, procedural control, perception/action, learning, and deliberation. | source note available; comparator only |
 | `ext_subsumption_architecture_1986` | A Robust Layered Control System for a Mobile Robot | layered_robot_control_architecture | External comparator for layered behavior/control architecture rather than one monolithic controller. | source note available; comparator only |
 
-The crosswalk is a loading map for future drafting. It does not promote the chapter claim until exact claim-to-source mappings or validated artifacts are recorded. The external rows provide architecture-positioning vocabulary only; no MRKL system, surveyed LLM-agent benchmark, cognitive architecture, or layered robot controller has been reproduced here.
+The crosswalk is a loading map for future drafting. It does not promote the chapter claim until exact claim-to-source mappings or validated artifacts are recorded. The external rows provide architecture-positioning vocabulary only; no CAIS, MRKL system, surveyed LLM-agent benchmark, cognitive architecture, or layered robot controller has been reproduced here.
 
 ## Summary
 
