@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_routing_deliberation_result.schema.json",
+  "type": "object",
+  "required": ["schema_version", "program_id", "recorded_date", "execution_state", "corpus_ref", "corpus_sha256", "environment", "seeds", "routing", "deliberation", "program_wall_seconds", "claim_dispositions", "support_state_effect", "non_claims", "bundle_sha256"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_routing_deliberation_result.v0"},
+    "program_id": {"const": "matched_routing_and_deliberation"},
+    "recorded_date": {"type": "string"},
+    "execution_state": {"const": "completed_exact_preregistered_test_runs"},
+    "corpus_ref": {"type": "string"},
+    "corpus_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "environment": {"type": "object"},
+    "seeds": {"const": [17, 29, 43]},
+    "routing": {"type": "object", "required": ["arms", "records", "summary", "interference_counterfactuals"]},
+    "deliberation": {"type": "object", "required": ["arms", "records", "summary"]},
+    "program_wall_seconds": {"type": "number", "minimum": 0},
+    "claim_dispositions": {"type": "array", "minItems": 2, "maxItems": 2},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4},
+    "bundle_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

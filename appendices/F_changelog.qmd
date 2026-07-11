@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-10 - Matched routing and deliberation outcomes
+
+- Executed all frozen test examples across three seeds: 900 routing decisions,
+  180 specialist-interference counterfactuals, and 540 deliberation decisions.
+  Specialist routing produced 162/180 correct answers versus 130/180 for the
+  single generalist, but oracle, learned, rule, and fallback arms were
+  indistinguishable because routes were too separable; zero fallback and
+  abstention activations remain an explicit coverage gap.
+- Adaptive verifier stopping produced 179/180 correct answers in 236 candidate
+  operations. Fixed three-step deliberation produced 154/180 in 540 operations
+  and harmed 15 answers that were initially correct; no deliberation produced
+  130/180 in 180 operations. The result retains first/last hits, stops, branch
+  credit, dissent, answer changes, and seed sensitivity.
+- Issued independent `no_change` decisions for Routing Heads and Governed
+  Deliberation. Added deterministic replay and seven rejecting mutations for
+  digest, seed, retry, oracle, fallback, harm, and promotion erasure.
+
 ## 2026-07-10 - Frozen routing and deliberation workload
 
 - Froze a content-addressed 300-example four-family corpus with balanced
