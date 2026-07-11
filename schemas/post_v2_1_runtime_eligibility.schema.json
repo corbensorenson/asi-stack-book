@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_1_runtime_eligibility.schema.json",
+  "title": "Post-v2.1 Runtime Eligibility Plan or Result",
+  "type": "object",
+  "required": ["schema_version", "record_type"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_1_runtime_eligibility.v0"},
+    "record_type": {"enum": ["eligibility_plan", "eligibility_result"]}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"record_type": {"const": "eligibility_plan"}}},
+      "then": {
+        "required": ["plan_id", "recorded_date", "roadmap_ref", "state", "authorization", "host", "software", "resource_budget", "candidates", "development_tasks", "contamination_boundary", "eligibility_interpretation", "non_claims"],
+        "properties": {
+          "state": {"const": "frozen_before_model_download_and_eligibility_observation"},
+          "candidates": {"type": "array", "minItems": 2, "maxItems": 2},
+          "development_tasks": {"type": "array", "minItems": 4, "maxItems": 4}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"record_type": {"const": "eligibility_result"}}},
+      "then": {
+        "required": ["plan_id", "recorded_at", "environment", "candidate_results", "aggregate", "support_state_effect", "non_claims"],
+        "properties": {
+          "candidate_results": {"type": "array", "minItems": 1, "maxItems": 2},
+          "support_state_effect": {"const": "none"}
+        }
+      }
+    }
+  ],
+  "additionalProperties": true
+}

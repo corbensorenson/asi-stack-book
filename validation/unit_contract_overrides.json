@@ -495,6 +495,17 @@
       "negative_controls": "validator_owned", "negative_control_cases": ["stale version", "stale roadmap", "wrong commit", "false archive state", "wrong rights tag", "invented format approval"],
       "prohibited_inference": "Public-truth coherence does not execute the roadmap, validate chapter claims, establish model safety or transfer, approve optional formats, or provide external review.",
       "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "script": "validate_post_v2_1_runtime_eligibility.py", "args": [],
+      "input_contract": "Frozen stronger-model eligibility plan, exact revisions/licenses, MPS abort, two rejected full-precision candidates, versioned single-candidate amendment, MLX result, snapshot manifests, budget/cache disposition, readable report, and runner code.",
+      "input_artifacts": ["experiments/post_v2_1_evidence_program/runtime_eligibility_plan.json", "schemas/post_v2_1_runtime_eligibility.schema.json", "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility.json", "experiments/post_v2_1_evidence_program/attempts/2026-07-10-mps-runtime-abort.json", "experiments/post_v2_1_evidence_program/amendments/runtime_candidate_v1.json", "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility-amendment-v1.json", "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json", "docs/post_v2_1_runtime_eligibility.md", "scripts/run_post_v2_1_runtime_eligibility.py", "scripts/run_post_v2_1_runtime_eligibility_mlx.py", "scripts/validate_post_v2_1_runtime_eligibility.py"],
+      "output_contract": "Reject erased or laundered failed candidates, answer/exactness drift, weakened thresholds, model revision drift, invented MPS outputs, support promotion, or call/token/cache/spend budget overrun.",
+      "output_assertions": ["initial candidates remain rejected at 2/4 and 1/4", "MPS abort retains zero completed calls", "amended MLX candidate is sole eligible runtime at 3/4", "snapshot manifests are content-addressed", "zero retries and service spend", "retained cache stays within ceiling"],
+      "claim_scope": "Development-only local runtime eligibility and resource discipline before empirical preregistration.",
+      "negative_controls": "validator_owned", "negative_control_cases": ["false initial eligibility", "erased failed candidate", "threshold weakening", "revision drift", "invented MPS answer", "support promotion", "budget overrun"],
+      "prohibited_inference": "Eligibility does not prove model quality, safety, useful throughput, routing validity, deliberation benefit, transfer, independence, or any chapter claim.",
+      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "non_claims": [

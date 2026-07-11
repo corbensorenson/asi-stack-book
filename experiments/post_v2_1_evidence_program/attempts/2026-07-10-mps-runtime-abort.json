@@ -1,0 +1,21 @@
+{
+  "record_type": "non_evidentiary_runtime_attempt",
+  "attempt_id": "post-v2-1-runtime-mps-abort-2026-07-10",
+  "plan_ref": "experiments/post_v2_1_evidence_program/runtime_eligibility_plan.json",
+  "candidate_id": "coder-1p5b",
+  "model_id": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+  "device": "mps",
+  "state": "aborted_before_any_completed_task_observation",
+  "error_type": "process_abort_mps_ndarray_limit",
+  "error_fragment": "total bytes of NDArray > 2**32",
+  "completed_model_calls": 0,
+  "observed_answers": [],
+  "disposition": "Use the preregistered CPU fallback once with unchanged tasks, thresholds, revisions, and budgets.",
+  "support_state_effect": "none",
+  "non_claims": [
+    "This failed MPS attempt is not an empirical outcome.",
+    "The failure does not establish that every MPS configuration is infeasible.",
+    "No answer key or model output was observed before fallback."
+  ]
+}

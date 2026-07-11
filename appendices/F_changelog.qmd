@@ -41,6 +41,14 @@
   both canonical status objects, the versions index, and the immutable v2.1.0
   archive. This publication closure creates no empirical or support-state
   movement.
+- Began M2 runtime eligibility under a frozen zero-service-spend plan. Preserved
+  an MPS pre-observation abort, rejected 1.5B and 1.7B candidates at 2/4 and
+  1/4, and used one versioned development-only amendment to test a pinned 4-bit
+  Qwen3 4B MLX conversion. It passed the unchanged 3/4 threshold with four
+  calls, 36 approximate output tokens, about 2.44 GB peak memory, and no retry.
+  Recorded exact snapshot manifests and bounded cache cleanup; registered a
+  seven-mutation validator. This establishes feasibility only, leaves M2 in
+  progress, and creates no model-quality or support-state claim.
 
 ## 2026-07-10 - v2.1.0 evidence release
 

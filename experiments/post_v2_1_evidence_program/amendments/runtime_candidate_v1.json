@@ -1,0 +1,53 @@
+{
+  "schema_version": "asi_stack.post_v2_1_runtime_eligibility_amendment.v0",
+  "amendment_id": "post-v2-1-runtime-candidate-v1-2026-07-10",
+  "recorded_date": "2026-07-10",
+  "parent_plan": "experiments/post_v2_1_evidence_program/runtime_eligibility_plan.json",
+  "trigger": "Both preregistered full-precision candidates failed the unchanged development eligibility threshold; coder-1p5b scored 2/4 and general-1p7b scored 1/4.",
+  "outcome_visibility": "Development-only eligibility outputs are visible. No P1, P2, or P3 calibration, validation, or held-out outcome exists.",
+  "preserved_records": [
+    "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility.json",
+    "experiments/post_v2_1_evidence_program/attempts/2026-07-10-mps-runtime-abort.json"
+  ],
+  "changes": {
+    "added_candidate": {
+      "candidate_id": "general-4b-mlx4",
+      "model_id": "mlx-community/Qwen3-4B-4bit",
+      "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+      "upstream_family": "Qwen/Qwen3-4B",
+      "license": "apache-2.0",
+      "quantization": "4-bit MLX community conversion",
+      "runtime": "mlx-lm 0.29.1 on Apple M1",
+      "intended_roles": ["P1 proposer", "P2 candidate generator"],
+      "selection_threshold": "unchanged: at least 3 of 4 exact development-only tasks and no runtime boundary violation"
+    },
+    "unchanged_fields": [
+      "four prompts and answer keys",
+      "exact parsing rule",
+      "3-of-4 threshold",
+      "zero external inference and zero service spend",
+      "no retries",
+      "no hidden chain-of-thought",
+      "held-out contamination boundary"
+    ]
+  },
+  "budget_impact": {
+    "additional_model_calls": 4,
+    "additional_generated_token_ceiling": 384,
+    "additional_download_gib_ceiling": 3,
+    "total_eligibility_wall_time_minutes_ceiling": 120,
+    "retained_model_cache_gib_ceiling": 12,
+    "storage_action": "After exact snapshot manifests and failed outputs are retained, remove the two rejected full-precision caches through the Hugging Face cache manager before downloading the amendment candidate.",
+    "external_service_spend_usd": 0
+  },
+  "invalidated_descendants": [],
+  "rationale": "The original gate was designed to reject weak runtimes before empirical preregistration. Testing one stronger, quantized, local-only model is an eligibility repair, not an outcome-driven empirical arm addition. The failed candidates remain negative knowledge.",
+  "stop_rule": "If general-4b-mlx4 fails the unchanged threshold or cannot run inside the amended budgets, record a P1/P2 runtime activation blocker and do not add another candidate in this M2 cycle.",
+  "support_state_effect": "none",
+  "non_claims": [
+    "The amendment does not erase or reinterpret the two failed candidates.",
+    "Quantization and parameter count do not establish quality or safety.",
+    "Eligibility remains development-only and cannot promote a chapter claim.",
+    "No held-out program outcome informed this amendment."
+  ]
+}

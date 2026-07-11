@@ -1,0 +1,59 @@
+{
+  "record_type": "post_v2_1_runtime_eligibility_disposition",
+  "disposition_id": "post-v2-1-runtime-eligibility-disposition-2026-07-10",
+  "recorded_date": "2026-07-10",
+  "plan_ref": "experiments/post_v2_1_evidence_program/runtime_eligibility_plan.json",
+  "amendment_ref": "experiments/post_v2_1_evidence_program/amendments/runtime_candidate_v1.json",
+  "initial_result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility.json",
+  "amended_result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility-amendment-v1.json",
+  "failed_attempt_ref": "experiments/post_v2_1_evidence_program/attempts/2026-07-10-mps-runtime-abort.json",
+  "initial_dispositions": [
+    {"candidate_id": "coder-1p5b", "exact_count": 2, "task_count": 4, "state": "rejected_below_frozen_threshold"},
+    {"candidate_id": "general-1p7b", "exact_count": 1, "task_count": 4, "state": "rejected_below_frozen_threshold"}
+  ],
+  "selected_runtime": {
+    "candidate_id": "general-4b-mlx4",
+    "model_id": "mlx-community/Qwen3-4B-4bit",
+    "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+    "license": "apache-2.0",
+    "runtime": "mlx-lm 0.29.1 with mlx 0.29.3",
+    "quantization": "4-bit",
+    "exact_count": 3,
+    "task_count": 4,
+    "state": "eligible_for_preregistration_feasibility_work_only",
+    "snapshot_manifest_sha256": "5b81f6587e028f2226521cfd1bbc8d900ac299410d781228b55026e5392cb6ea"
+  },
+  "role_boundary": {
+    "P1": "May be preregistered as the proposer after P1 setup artifacts pass; it is not its own verifier or promotion authority.",
+    "P2": "May generate observable candidates. The evaluator must remain a separately implemented route and may not consume hidden reasoning or answer-key metadata.",
+    "P3": "Not selected; P3 uses a disposable trainable state-complete workload rather than this frozen inference model."
+  },
+  "cache_retention": {
+    "rejected_repo_cache_bytes_freed": 7178378902,
+    "rejected_weight_availability": "rehydratable from exact public revisions; exact local snapshot manifests retained in initial_result_ref",
+    "xet_transfer_cache_disposition": "redundant transfer chunks and staging removed after snapshot manifests were recorded",
+    "selected_model_cache_state": "retained locally outside Git",
+    "selected_model_repo_cache_gib_rounded": 2.1,
+    "final_total_huggingface_cache_bytes": 3278643200,
+    "retained_model_cache_ceiling_bytes": 12884901888,
+    "within_retention_ceiling": true
+  },
+  "aggregate_budget": {
+    "completed_model_calls": 12,
+    "generated_tokens_or_approx": 128,
+    "external_inference_calls": 0,
+    "external_service_spend_usd": 0,
+    "retries": 0,
+    "initial_elapsed_seconds": 1413.573297,
+    "amendment_elapsed_seconds": 279.453432,
+    "within_amended_wall_time_minutes": true
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "Eligibility does not prove general model quality, safety, coding ability, reasoning quality, or transfer.",
+    "The selected model failed one of four development tasks.",
+    "The two rejected candidates and MPS abort remain part of the negative-knowledge record.",
+    "The selected runtime does not execute P1 or P2 and does not complete M2.",
+    "Model-role separation remains internal and is not external independence."
+  ]
+}
