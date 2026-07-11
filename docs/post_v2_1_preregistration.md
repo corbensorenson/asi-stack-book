@@ -24,6 +24,15 @@ prompts and task IDs are excluded from the P1/P2 corpora. P2 routers cannot see
 gold action, answer key, specialist-competence, or global split statistics. P3
 test, deletion, and probe splits cannot select checkpoints or hyperparameters.
 
+A pre-outcome semantic audit found three setup defects in the first frozen
+draft: P1 held-out routes were imbalanced and its family prompts were
+semantically collapsed; P2 mixed arbitrary and marker-trivial route targets;
+and P3 did not explicitly bind the deletion cohort into initial training. The
+versioned `preregistration_inputs_v1.json` amendment corrects those defects,
+preserves commit `52925c426` as the superseded draft, and invalidates no
+outcomes because no development, calibration, validation, or test result had
+been opened.
+
 ## Shared decision discipline
 
 The programs report finite-workload counts and paired effects. If uncertainty
@@ -46,10 +55,12 @@ erasure as four different claims.
 
 ## Remaining M2 blockers
 
-The preregistration is not yet final. Exact runner, observer, and evaluator code
-must be installed and content-addressed; the setup commit must be bound; and the
-combined setup validator plus rejecting mutations must pass. Until then P1–P3
-remain pending and no outcome execution is authorized.
+The runner, observer, and evaluator implementations are now installed,
+content-addressed, and passing their combined preflight and mutation gate. The
+focused source-gap scan is reconciled and changed interpretation boundaries but
+no endpoint, arm, threshold, or budget. The preregistration is not yet final
+because the exact setup commit must still be bound. Until that freeze commit
+exists, P1–P3 remain pending and no outcome execution is authorized.
 
 ## Non-claims
 

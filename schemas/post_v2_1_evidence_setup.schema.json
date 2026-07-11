@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_1_evidence_setup.schema.json",
+  "title": "Post-v2.1 Executable Evidence Setup",
+  "type": "object",
+  "required": ["schema_version", "setup_id", "state", "parent_input_commit", "setup_commit", "amendment_ref", "preregistration_ref", "runtime_authority_ref", "source_gap_scan_ref", "implementation_files", "programs", "role_interfaces", "execution_guard", "preflight_commands", "combined_budget", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_1_evidence_setup.v0"},
+    "setup_id": {"type": "string", "minLength": 1},
+    "state": {"enum": ["implementations_installed_setup_commit_pending", "frozen_before_outcome_runs"]},
+    "parent_input_commit": {"type": "string", "minLength": 9},
+    "setup_commit": {"type": ["string", "null"]},
+    "amendment_ref": {"type": "string"},
+    "preregistration_ref": {"type": "string"},
+    "runtime_authority_ref": {"type": "string"},
+    "source_gap_scan_ref": {"const": "docs/post_v2_1_focused_source_gap_scan.md"},
+    "implementation_files": {"type": "array", "minItems": 9, "items": {"type": "object", "required": ["path", "sha256"]}},
+    "programs": {"type": "array", "minItems": 3, "maxItems": 3},
+    "role_interfaces": {"type": "object"},
+    "execution_guard": {"type": "object"},
+    "preflight_commands": {"type": "array", "minItems": 3, "maxItems": 3},
+    "combined_budget": {"type": "object", "required": ["model_calls", "generated_tokens", "global_call_ceiling", "global_token_ceiling"]},
+    "support_state_effect": {"const": "none_before_accepted_post_run_dispositions"},
+    "non_claims": {"type": "array", "minItems": 4}
+  },
+  "additionalProperties": false
+}

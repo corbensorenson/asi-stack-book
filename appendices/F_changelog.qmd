@@ -57,6 +57,30 @@
   boundary report, deterministic builder, and a nine-mutation validator.
   Outcomes remain unopened and M2 remains in progress until the runner,
   evaluator, observer, setup commit, and their exact digests are bound.
+- Amended that draft before any outcome visibility after a semantic setup audit
+  caught three weaknesses hidden by the count checks: P1's test split lacked
+  two decision routes and reused one task template, P2 mixed arbitrary and
+  marker-trivial route targets, and P3 had not bound deletion members into
+  initial training. The v1 inputs now cover all four P1 held-out decisions,
+  use distinct family semantics and overlapping P2 features, and mark all 80
+  deletion examples as initial-training members. Commit `52925c426` preserves
+  the superseded inputs; the amendment spent no calls, opened no outcomes, and
+  moved no support state.
+- Installed exact, non-overwriting executable setups for all three programs.
+  P1 and P2 use the pinned local-only 4B MLX snapshot and separate observer or
+  evaluator subprocesses; P3 uses deterministic PyTorch mutation plus a
+  separate observer over all 24 state surfaces. The phased schedule composes to
+  332 calls and at most 59,960 generated tokens. Three outcome-free preflights
+  and ten setup mutations pass/reject as intended. Setup commit binding and the
+  focused source-gap reconciliation remain, so outcomes are still unauthorized.
+- Completed the roadmap-required focused primary-source scan without changing
+  an endpoint, arm, threshold, or budget. Re-audited existing AgentDojo and
+  RouteLLM and compute-optimal-scaling records and added six chapter-targeted
+  sources covering current
+  coding-agent harness/cost evaluation, transactional filesystems, adaptive
+  test-time compute, abstention, six-way unlearning evaluation, benchmark
+  weakness, and metric meta-evaluation. Each new record has a full source note
+  and appears in Appendix H; no external result is represented as local.
 
 ## 2026-07-10 - v2.1.0 evidence release
 

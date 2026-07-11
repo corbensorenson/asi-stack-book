@@ -4,6 +4,11 @@
   "recorded_date": "2026-07-11",
   "roadmap_ref": "docs/post_v2_1_residual_and_transfer_roadmap.md",
   "state": "draft_inputs_frozen_outcomes_unopened",
+  "amendment_refs": [
+    "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json"
+  ],
+  "setup_manifest_ref": "experiments/post_v2_1_evidence_program/setup_manifest.json",
+  "source_gap_scan_ref": "docs/post_v2_1_focused_source_gap_scan.md",
   "completion_blockers": [
     "bind the final setup commit and exact runner/evaluator/observer digests",
     "pass the combined setup validator and all rejecting mutations",
@@ -70,7 +75,7 @@
       "residual_ids": ["GW-01", "GW-02", "GW-03"],
       "state": "inputs_frozen_runner_pending",
       "corpus_ref": "experiments/post_v2_1_evidence_program/p1/input/corpus.json",
-      "corpus_sha256": "9942f3c9287c96531cf3f2cd05798a3e271ca01a4980031fd08b1733eb23df60",
+      "corpus_sha256": "1614c7a0ef2e6412e6941c403b6e3f02180b2c2df3a7f93b753c3df1c27e27f0",
       "experimental_unit": "task-seed candidate transaction",
       "unit_of_analysis": "registered task paired across arms; seed sensitivity reported separately",
       "seeds": [1701, 2903],
@@ -117,7 +122,7 @@
       "residual_ids": ["RD-01", "RD-02", "RD-03", "RD-04"],
       "state": "inputs_frozen_runner_pending",
       "corpus_ref": "experiments/post_v2_1_evidence_program/p2/input/corpus.json",
-      "corpus_sha256": "399a0a212c7900e24f95e1d91ea3ebcae17cc078d4391894da4d41891e308a80",
+      "corpus_sha256": "675da018e871f295c45ca3aa3ebc5eabd58ffe099c99ed22216a1ef40068e857",
       "known_harm_ref": "experiments/post_v2_1_evidence_program/p2/input/known_harm_regression.json",
       "known_harm_count": 15,
       "experimental_unit": "held-out request-route or request-deliberation transaction",
@@ -150,7 +155,7 @@
       "residual_ids": ["UU-01", "UU-02", "UU-03", "UU-04"],
       "state": "inputs_frozen_runner_pending",
       "corpus_ref": "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
-      "corpus_sha256": "bf48bff84801f534c72e7e0b38a59d1749e3af31bdd44ea6acc8a1a6bba8293c",
+      "corpus_sha256": "f31ea84bdee6092875bbd85a36300f559bdac4420711cce3daa88b56693e74e4",
       "state_inventory_ref": "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
       "state_inventory_sha256": "feb9e26dbbaa222d6b39d20775adc7ee0a6c9ac38a8a7489dbd5dd3a0028d624",
       "experimental_unit": "seed-arm update transaction",

@@ -1,0 +1,154 @@
+{
+  "schema_version": "asi_stack.post_v2_1_evidence_setup.v0",
+  "setup_id": "post-v2-1-three-program-executable-setup-2026-07-11",
+  "state": "implementations_installed_setup_commit_pending",
+  "parent_input_commit": "52925c426",
+  "setup_commit": null,
+  "amendment_ref": "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
+  "preregistration_ref": "experiments/post_v2_1_evidence_program/preregistration.json",
+  "runtime_authority_ref": "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json",
+  "source_gap_scan_ref": "docs/post_v2_1_focused_source_gap_scan.md",
+  "implementation_files": [
+    {
+      "path": "scripts/post_v2_1_p1_observer.py",
+      "sha256": "c8bc21ef62865ae77705ad2d74434d37b5e52c9f672485b251f0bee022092a71"
+    },
+    {
+      "path": "scripts/run_post_v2_1_p1.py",
+      "sha256": "87818a744e8aeb9758aa8dcfed9bd1186511d5090f5489c2f4f657a366c8bd99"
+    },
+    {
+      "path": "scripts/post_v2_1_p2_evaluator.py",
+      "sha256": "c6da4442db062925ba3302de428f44ea2145b2fb342f412a5489e148eaa3eafc"
+    },
+    {
+      "path": "scripts/run_post_v2_1_p2.py",
+      "sha256": "b7dc4bb6dfe9b02c0cfc3753ea39bb31197b08f1c9e1e52951efb1954576a6f6"
+    },
+    {
+      "path": "scripts/post_v2_1_p3_observer.py",
+      "sha256": "f98b60e5a62b5c686b3e3105037cefa4641af27ad07e7e4abd9d955e35541e7f"
+    },
+    {
+      "path": "scripts/run_post_v2_1_p3.py",
+      "sha256": "a8f7511c629494a8f2c0946def0f75f49f2a78d0961be10489c830cdaf245432"
+    },
+    {
+      "path": "scripts/build_post_v2_1_setup_manifest.py",
+      "sha256": "c594c596ccdf5b6416a3bb10de0549d682b08c66b5cbc49abf44fc870d1d403d"
+    },
+    {
+      "path": "scripts/validate_post_v2_1_evidence_setup.py",
+      "sha256": "f73013038e1dad169f2ed65ef09ed3a6570b8a5349ffb773697e414a8e43ca24"
+    },
+    {
+      "path": "schemas/post_v2_1_evidence_setup.schema.json",
+      "sha256": "dbccba905f97d1849ebb9485ec3f8725cd5b2ff29bcab1cbcb14279f99736e0f"
+    }
+  ],
+  "programs": [
+    {
+      "priority": "P1",
+      "runner": "scripts/run_post_v2_1_p1.py",
+      "observer": "scripts/post_v2_1_p1_observer.py",
+      "execution_order": [
+        "development",
+        "calibration",
+        "test"
+      ],
+      "phase_calls": {
+        "development": 12,
+        "calibration": 24,
+        "test": 36
+      },
+      "model_calls": 72,
+      "generated_token_ceiling": 18360,
+      "seeds": [
+        1701,
+        2903
+      ],
+      "outcome_outputs": [
+        "experiments/post_v2_1_evidence_program/p1/results/development.json",
+        "experiments/post_v2_1_evidence_program/p1/results/calibration.json",
+        "experiments/post_v2_1_evidence_program/p1/results/test.json"
+      ]
+    },
+    {
+      "priority": "P2",
+      "runner": "scripts/run_post_v2_1_p2.py",
+      "evaluator": "scripts/post_v2_1_p2_evaluator.py",
+      "execution_order": [
+        "validation",
+        "test"
+      ],
+      "phase_calls": {
+        "validation": 20,
+        "test": 240
+      },
+      "model_calls": 260,
+      "generated_token_ceiling": 41600,
+      "seeds": [
+        1701
+      ],
+      "outcome_outputs": [
+        "experiments/post_v2_1_evidence_program/p2/results/validation.json",
+        "experiments/post_v2_1_evidence_program/p2/results/test.json"
+      ]
+    },
+    {
+      "priority": "P3",
+      "runner": "scripts/run_post_v2_1_p3.py",
+      "observer": "scripts/post_v2_1_p3_observer.py",
+      "execution_order": [
+        "three_seed_five_arm_campaign"
+      ],
+      "model_calls": 0,
+      "generated_token_ceiling": 0,
+      "seeds": [
+        1701,
+        2903,
+        4307
+      ],
+      "state_surfaces": 24,
+      "outcome_outputs": [
+        "experiments/post_v2_1_evidence_program/p3/results/result.json"
+      ]
+    }
+  ],
+  "role_interfaces": {
+    "P1_proposer": "pinned MLX model in run_post_v2_1_p1.py",
+    "P1_effect_observer": "separate post_v2_1_p1_observer.py subprocess",
+    "P2_candidate_generator": "pinned MLX model in run_post_v2_1_p2.py",
+    "P2_evaluator": "separate post_v2_1_p2_evaluator.py subprocess with evaluator-only answer keys",
+    "P3_trainer": "run_post_v2_1_p3.py",
+    "P3_state_observer": "separate post_v2_1_p3_observer.py subprocess",
+    "promotion_authority": "post-run disposition validator not present in any proposer/trainer"
+  },
+  "execution_guard": {
+    "outcomes_must_be_absent_at_freeze": true,
+    "runners_require_final_preregistration_state": true,
+    "overwrite_or_retry_flag": false,
+    "network_after_freeze": false,
+    "model_snapshot_local_only": true,
+    "hidden_chain_of_thought_retained": false,
+    "external_service_spend_usd": 0
+  },
+  "preflight_commands": [
+    "python3 scripts/run_post_v2_1_p1.py --preflight",
+    "python3 scripts/run_post_v2_1_p2.py --preflight",
+    "python3 scripts/run_post_v2_1_p3.py --preflight"
+  ],
+  "combined_budget": {
+    "model_calls": 332,
+    "generated_tokens": 59960,
+    "global_call_ceiling": 340,
+    "global_token_ceiling": 60000
+  },
+  "support_state_effect": "none_before_accepted_post_run_dispositions",
+  "non_claims": [
+    "Installed runners and passing preflights are not empirical outcomes.",
+    "Separate local processes are implementation separation, not external independence.",
+    "The criterion evaluators are bounded to the synthetic registered tasks.",
+    "No support state or residual closes through setup binding."
+  ]
+}

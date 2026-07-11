@@ -1,0 +1,50 @@
+{
+  "schema_version": "asi_stack.post_v2_1_preregistration_amendment.v0",
+  "amendment_id": "post-v2-1-preregistration-inputs-v1",
+  "recorded_date": "2026-07-11",
+  "state": "accepted_before_any_outcome_visibility",
+  "superseded_setup_commit": "52925c426",
+  "trigger": "Internal semantic setup audit after the count-level freeze and before runner binding found three design defects that would weaken the registered research questions.",
+  "defects": [
+    "P1 test contained release/refuse only and all six task families shared one arithmetic implementation template.",
+    "P2 route targets combined arbitrary specialist labels with near-direct fallback, abstention, and clarification markers.",
+    "P3 deletion members were not explicitly declared initial-training members, making causal removal ambiguous."
+  ],
+  "changed_fields": [
+    "P1 route allocation across development/calibration/test and family-specific release semantics",
+    "P2 overlapping allowed route features, specialist competence, and action-grounded request wording",
+    "P3 initial_training_member flag for train and deletion cohorts",
+    "the three affected corpus schema versions, identifiers, and content digests"
+  ],
+  "unchanged_fields": [
+    "task/request/example counts and split counts",
+    "P1 six families, nine effect surfaces, two seeds, calls, arms, endpoints, thresholds, and stop rules",
+    "P2 four families, six held-out actions with ten each, fifteen-case separate harm set, calls, arms, endpoints, thresholds, and stop rules",
+    "P3 six splits, five arms, three seeds, 24-state inventory, checkpoint authority, endpoints, thresholds, and stop rules",
+    "global budgets, support-state boundary, role separation, and non-claims"
+  ],
+  "affected_residuals": ["GW-02", "RD-01", "RD-02", "UU-03"],
+  "budget_impact": {
+    "model_calls": 0,
+    "generated_tokens": 0,
+    "external_service_spend_usd": 0,
+    "amendment_reruns": 0
+  },
+  "outcome_visibility": {
+    "development": false,
+    "calibration": false,
+    "validation": false,
+    "test": false,
+    "model_calls_completed": 0,
+    "training_runs_completed": 0
+  },
+  "invalidated_descendants": [],
+  "preservation": "The exact superseded inputs and preregistration remain recoverable at commit 52925c426; their digests remain in that commit and no empirical result depended on them.",
+  "authorization": "Allowed by the roadmap pre-outcome amendment rule; final preregistration remains blocked on code/setup binding.",
+  "support_state_effect": "none",
+  "non_claims": [
+    "This amendment is design repair, not a favorable result.",
+    "Balanced forced coverage does not estimate natural prevalence.",
+    "No support state, residual, chapter, release, or format changes here."
+  ]
+}

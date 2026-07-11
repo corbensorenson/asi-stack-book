@@ -6,44 +6,44 @@
     "policy": "licensing/provenance_policy.json",
     "policy_sha256": "6140007432d916d34155bcabd1bf60103ecc07170f96153f618e02f6380e68b4",
     "file_set_command": "git ls-files --cached --others --exclude-standard -z",
-    "path_set_sha256": "320d345f514c813b7cf34c7eeb027bb73a154e3d7f779065899b6ccf693580b3"
+    "path_set_sha256": "51e16f31e8a833c477009d40689d7a24667694feaf6c089a24d472197f38234a"
   },
   "summary": {
-    "file_count": 2636,
+    "file_count": 2655,
     "by_artifact_class": {
-      "book_or_project_prose": 441,
+      "book_or_project_prose": 443,
       "build_or_citation_configuration": 1,
-      "experiment_fixture_result_or_review_record": 1013,
-      "external_source_commentary_or_compilation": 208,
+      "experiment_fixture_result_or_review_record": 1015,
+      "external_source_commentary_or_compilation": 214,
       "figure_or_binary_asset": 15,
       "historical_or_generated_derivative": 160,
       "nonrelease_repository_marker": 2,
       "operative_license_document": 1,
       "public_metadata_or_governance_record": 37,
-      "software_proof_schema_or_automation": 657,
+      "software_proof_schema_or_automation": 666,
       "source_metadata_commentary_or_local_project_record": 99,
       "third_party_license_text": 2
     },
     "by_provenance_status": {
       "author_assertion_and_embedded_asset_review_required": 15,
       "author_assertion_and_local_project_review_required": 99,
-      "author_assertion_or_import_review_required": 1013,
-      "author_ownership_assertion_required": 1136,
+      "author_assertion_or_import_review_required": 1015,
+      "author_ownership_assertion_required": 1147,
       "generated_derivative_review_required": 160,
       "nonrelease_exclusion": 2,
       "operative_policy_not_relicensed": 1,
-      "third_party_or_mixed_review_required": 208,
+      "third_party_or_mixed_review_required": 214,
       "verbatim_official_license_text": 2
     },
     "by_candidate_lane": {
       "license_text_excluded": 2,
       "metadata_candidate": 37,
-      "mixed_or_excluded": 467,
+      "mixed_or_excluded": 473,
       "nonrelease_excluded": 2,
-      "prose_or_figures_candidate": 456,
+      "prose_or_figures_candidate": 458,
       "reserved_operative": 1,
-      "software_candidate": 657,
-      "software_or_metadata_after_review": 1014
+      "software_candidate": 666,
+      "software_or_metadata_after_review": 1016
     },
     "unknown_quarantine_count": 0
   },
@@ -2984,6 +2984,24 @@
     },
     {
       "path": "docs/policy_update_lease_probe.md",
+      "rule_id": "book-and-project-prose",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "prose_or_figures_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The prose appears project-authored but ownership, quotations, contributed passages, and imported local-project text require author assertion and review."
+    },
+    {
+      "path": "docs/post_v2_1_evidence_setup.md",
+      "rule_id": "book-and-project-prose",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "prose_or_figures_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The prose appears project-authored but ownership, quotations, contributed passages, and imported local-project text require author assertion and review."
+    },
+    {
+      "path": "docs/post_v2_1_focused_source_gap_scan.md",
       "rule_id": "book-and-project-prose",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
@@ -9976,6 +9994,15 @@
       "blocking_reason": "Local fixtures may be author-created while imported results or reviewer material may carry separate rights; provenance must be checked before lane assignment."
     },
     {
+      "path": "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
+      "rule_id": "experiment-fixtures-and-results",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "candidate_lane": "software_or_metadata_after_review",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Local fixtures may be author-created while imported results or reviewer material may carry separate rights; provenance must be checked before lane assignment."
+    },
+    {
       "path": "experiments/post_v2_1_evidence_program/amendments/runtime_candidate_v1.json",
       "rule_id": "experiment-fixtures-and-results",
       "artifact_class": "experiment_fixture_result_or_review_record",
@@ -10076,6 +10103,15 @@
     },
     {
       "path": "experiments/post_v2_1_evidence_program/runtime_eligibility_plan.json",
+      "rule_id": "experiment-fixtures-and-results",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "candidate_lane": "software_or_metadata_after_review",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Local fixtures may be author-created while imported results or reviewer material may carry separate rights; provenance must be checked before lane assignment."
+    },
+    {
+      "path": "experiments/post_v2_1_evidence_program/setup_manifest.json",
       "rule_id": "experiment-fixtures-and-results",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
@@ -16672,6 +16708,15 @@
       "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
     },
     {
+      "path": "schemas/post_v2_1_evidence_setup.schema.json",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
       "path": "schemas/post_v2_1_residual_transfer_status.schema.json",
       "rule_id": "software-proofs-schemas",
       "artifact_class": "software_proof_schema_or_automation",
@@ -17311,6 +17356,15 @@
       "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
     },
     {
+      "path": "scripts/build_post_v2_1_setup_manifest.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
       "path": "scripts/build_post_v2_empirical_dispositions.py",
       "rule_id": "software-proofs-schemas",
       "artifact_class": "software_proof_schema_or_automation",
@@ -17473,6 +17527,33 @@
       "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
     },
     {
+      "path": "scripts/post_v2_1_p1_observer.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "scripts/post_v2_1_p2_evaluator.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "scripts/post_v2_1_p3_observer.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
       "path": "scripts/post_v2_governed_work_observer.py",
       "rule_id": "software-proofs-schemas",
       "artifact_class": "software_proof_schema_or_automation",
@@ -17573,6 +17654,33 @@
     },
     {
       "path": "scripts/run_phase5_harnesses.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "scripts/run_post_v2_1_p1.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "scripts/run_post_v2_1_p2.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "scripts/run_post_v2_1_p3.py",
       "rule_id": "software-proofs-schemas",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -18968,6 +19076,15 @@
     },
     {
       "path": "scripts/validate_policy_update_lease_probe.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "scripts/validate_post_v2_1_evidence_setup.py",
       "rule_id": "software-proofs-schemas",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -20983,6 +21100,15 @@
       "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
     },
     {
+      "path": "sources/source_notes/ext_claw_swe_bench_2026.md",
+      "rule_id": "external-source-commentary",
+      "artifact_class": "external_source_commentary_or_compilation",
+      "provenance_status": "third_party_or_mixed_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
+    },
+    {
       "path": "sources/source_notes/ext_codebleu_2020.md",
       "rule_id": "external-source-commentary",
       "artifact_class": "external_source_commentary_or_compilation",
@@ -21146,6 +21272,15 @@
     },
     {
       "path": "sources/source_notes/ext_deepseek_r1_2025.md",
+      "rule_id": "external-source-commentary",
+      "artifact_class": "external_source_commentary_or_compilation",
+      "provenance_status": "third_party_or_mixed_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
+    },
+    {
+      "path": "sources/source_notes/ext_dont_hallucinate_abstain_2024.md",
       "rule_id": "external-source-commentary",
       "artifact_class": "external_source_commentary_or_compilation",
       "provenance_status": "third_party_or_mixed_review_required",
@@ -21901,6 +22036,15 @@
       "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
     },
     {
+      "path": "sources/source_notes/ext_muse_unlearning_2025.md",
+      "rule_id": "external-source-commentary",
+      "artifact_class": "external_source_commentary_or_compilation",
+      "provenance_status": "third_party_or_mixed_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
+    },
+    {
       "path": "sources/source_notes/ext_nist_ai_rmf_1_0_2023.md",
       "rule_id": "external-source-commentary",
       "artifact_class": "external_source_commentary_or_compilation",
@@ -21983,6 +22127,15 @@
     },
     {
       "path": "sources/source_notes/ext_openssf_model_signing_spec_2025.md",
+      "rule_id": "external-source-commentary",
+      "artifact_class": "external_source_commentary_or_compilation",
+      "provenance_status": "third_party_or_mixed_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
+    },
+    {
+      "path": "sources/source_notes/ext_openunlearning_2025.md",
       "rule_id": "external-source-commentary",
       "artifact_class": "external_source_commentary_or_compilation",
       "provenance_status": "third_party_or_mixed_review_required",
@@ -22531,7 +22684,25 @@
       "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
     },
     {
+      "path": "sources/source_notes/ext_txfs_2018.md",
+      "rule_id": "external-source-commentary",
+      "artifact_class": "external_source_commentary_or_compilation",
+      "provenance_status": "third_party_or_mixed_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
+    },
+    {
       "path": "sources/source_notes/ext_universal_transformer_2019.md",
+      "rule_id": "external-source-commentary",
+      "artifact_class": "external_source_commentary_or_compilation",
+      "provenance_status": "third_party_or_mixed_review_required",
+      "candidate_lane": "mixed_or_excluded",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Author commentary is interleaved with third-party titles, descriptions, quotations, or source boundaries and cannot receive a blanket outbound license without review."
+    },
+    {
+      "path": "sources/source_notes/ext_unlearning_benchmarks_weak_2024.md",
       "rule_id": "external-source-commentary",
       "artifact_class": "external_source_commentary_or_compilation",
       "provenance_status": "third_party_or_mixed_review_required",

@@ -4536,5 +4536,118 @@
     "updated": "2026-02-09",
     "citation_label": "Moosa et al. (2026), Understanding Dynamic Compute Allocation in Recurrent Transformers",
     "doi": "10.48550/arXiv.2602.08864"
+  },
+  {
+    "id": "ext_claw_swe_bench_2026",
+    "title": "Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks",
+    "priority": "external_literature",
+    "layer": "coding_agent_harness_and_cost_evaluation",
+    "chapter_targets": [
+      "artifact-graphs-audit-logs-and-replay",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "resource-economics-and-token-budgets",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/2606.12344",
+    "notes": "Current preprint comparator for fixed workspace, patch, evaluator, and budget contracts across coding-agent harnesses; reported accuracy and cost differences are not reproduced here and do not validate the post-v2.1 synthetic repository corpus.",
+    "source_type": "preprint",
+    "arxiv_id": "2606.12344",
+    "published": "2026-06-10",
+    "updated": "2026-06-10",
+    "citation_label": "Zheng et al. (2026), Claw-SWE-Bench",
+    "doi": "10.48550/arXiv.2606.12344"
+  },
+  {
+    "id": "ext_txfs_2018",
+    "title": "TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions",
+    "priority": "external_literature",
+    "layer": "transactional_filesystem_rollback_boundary",
+    "chapter_targets": [
+      "capability-replacement-and-rollback",
+      "artifact-graphs-audit-logs-and-replay",
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://www.usenix.org/conference/atc18/presentation/hu",
+    "notes": "Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result.",
+    "source_type": "conference_paper",
+    "published": "2018-07-11",
+    "updated": "2018-07-11",
+    "citation_label": "Hu et al. (2018), TxFS",
+    "doi": ""
+  },
+  {
+    "id": "ext_dont_hallucinate_abstain_2024",
+    "title": "Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration",
+    "priority": "external_literature",
+    "layer": "llm_abstention_and_knowledge_gaps",
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores",
+      "readiness-gates-residual-escrow-and-quarantine",
+      "verification-bandwidth-and-context-adequacy"
+    ],
+    "url": "https://aclanthology.org/2024.acl-long.786/",
+    "notes": "Primary ACL comparator for knowledge-gap detection, abstention, calibration/self-reflection limitations, and multi-model probing; reported abstention improvements are task- and model-bounded and do not validate the local router or evaluator.",
+    "source_type": "conference_paper",
+    "published": "2024-08",
+    "updated": "2024-08",
+    "citation_label": "Feng et al. (2024), Don't Hallucinate, Abstain",
+    "doi": "10.18653/v1/2024.acl-long.786"
+  },
+  {
+    "id": "ext_muse_unlearning_2025",
+    "title": "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+    "priority": "external_literature",
+    "layer": "llm_unlearning_multidimensional_evaluation",
+    "chapter_targets": [
+      "data-engines-continual-learning-and-unlearning",
+      "policy-optimization-and-learning-from-feedback",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/4556f5398bd2c61bd7500e306b4e560a-Abstract-Conference.html",
+    "notes": "Primary ICLR benchmark comparator separating verbatim and knowledge memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability; none of its 7B-language-model results are reproduced by the local policy network.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2407.06460",
+    "published": "2025",
+    "updated": "2025",
+    "citation_label": "Shi et al. (2025), MUSE",
+    "doi": "10.48550/arXiv.2407.06460"
+  },
+  {
+    "id": "ext_unlearning_benchmarks_weak_2024",
+    "title": "Position: LLM Unlearning Benchmarks are Weak Measures of Progress",
+    "priority": "external_literature",
+    "layer": "unlearning_benchmark_validity",
+    "chapter_targets": [
+      "data-engines-continual-learning-and-unlearning",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "evidence-states-and-claim-discipline"
+    ],
+    "url": "https://arxiv.org/abs/2410.02879",
+    "notes": "Primary critical comparator showing that benign benchmark modifications, forget/retain dependencies, and ambiguous targets can make unlearning scores optimistic; it strengthens the book's prohibition on turning toy behavioral change into influence, privacy, or storage claims.",
+    "source_type": "position_paper",
+    "arxiv_id": "2410.02879",
+    "published": "2024-10-03",
+    "updated": "2024-10-03",
+    "citation_label": "Thaker et al. (2024), LLM Unlearning Benchmarks are Weak Measures",
+    "doi": "10.48550/arXiv.2410.02879"
+  },
+  {
+    "id": "ext_openunlearning_2025",
+    "title": "OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics",
+    "priority": "external_literature",
+    "layer": "unlearning_method_and_metric_meta_evaluation",
+    "chapter_targets": [
+      "data-engines-continual-learning-and-unlearning",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "living-book-methodology"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/3e4a38f228427ab819ba7899003a44b1-Abstract-Datasets_and_Benchmarks_Track.html",
+    "notes": "Primary NeurIPS 2025 benchmark-framework comparator for unified algorithms, diverse evaluations, public checkpoints, and meta-evaluation of metric faithfulness; it reinforces evaluator-quality residuals rather than establishing local unlearning.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2506.12618",
+    "published": "2025",
+    "updated": "2025",
+    "citation_label": "Dorna et al. (2025), OpenUnlearning",
+    "doi": "10.48550/arXiv.2506.12618"
   }
 ]
