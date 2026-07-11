@@ -37,5 +37,6 @@ release-record gates pass.
 - Historical title lineage: v1.0.0 used *The ASI Stack: A Systems Architecture
   for Governed, Efficient, Self-Improving AI*.
 - License routing: `licensing/final_release_rights_routing.json`.
-- Immutable archive: created only from the exact tested tag-bound bundle; no
-  v1.0.0 site archive is backfilled.
+- Immutable archive: published from the exact tested tag-bound bundle at
+  SHA-256 `5772aa8e47df279bbb38e38b2a3564489f6b3f3f65f8ff2df373f318e2c9eaf9`;
+  no v1.0.0 site archive is backfilled.

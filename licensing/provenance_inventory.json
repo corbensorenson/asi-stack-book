@@ -6,12 +6,12 @@
     "policy": "licensing/provenance_policy.json",
     "policy_sha256": "889924650e50f0cfefb48a6383c2a7f9639fb278b6f311227e3d0724e432d28f",
     "file_set_command": "git ls-files --cached --others --exclude-standard -z",
-    "path_set_sha256": "0c3e725adec71144698b75e4f8c489f5ae87946a00b5707290496ecff3a33ecd"
+    "path_set_sha256": "3cf0317d366391ca3654b033287d8be17d82b24e0819025fc4b518e96f7a8957"
   },
   "summary": {
-    "file_count": 2449,
+    "file_count": 2451,
     "by_artifact_class": {
-      "book_or_project_prose": 427,
+      "book_or_project_prose": 428,
       "build_or_citation_configuration": 1,
       "experiment_fixture_result_or_review_record": 881,
       "external_source_commentary_or_compilation": 208,
@@ -19,7 +19,7 @@
       "historical_or_generated_derivative": 160,
       "nonrelease_repository_marker": 2,
       "operative_license_document": 1,
-      "public_metadata_or_governance_record": 32,
+      "public_metadata_or_governance_record": 33,
       "software_proof_schema_or_automation": 621,
       "source_metadata_commentary_or_local_project_record": 99,
       "third_party_license_text": 2
@@ -28,7 +28,7 @@
       "author_assertion_and_embedded_asset_review_required": 15,
       "author_assertion_and_local_project_review_required": 99,
       "author_assertion_or_import_review_required": 881,
-      "author_ownership_assertion_required": 1081,
+      "author_ownership_assertion_required": 1083,
       "generated_derivative_review_required": 160,
       "nonrelease_exclusion": 2,
       "operative_policy_not_relicensed": 1,
@@ -37,10 +37,10 @@
     },
     "by_candidate_lane": {
       "license_text_excluded": 2,
-      "metadata_candidate": 32,
+      "metadata_candidate": 33,
       "mixed_or_excluded": 467,
       "nonrelease_excluded": 2,
-      "prose_or_figures_candidate": 442,
+      "prose_or_figures_candidate": 443,
       "reserved_operative": 1,
       "software_candidate": 621,
       "software_or_metadata_after_review": 882
@@ -4406,6 +4406,15 @@
     },
     {
       "path": "docs/v1_x_beyond_sota_roadmap.md",
+      "rule_id": "book-and-project-prose",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "prose_or_figures_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The prose appears project-authored but ownership, quotations, contributed passages, and imported local-project text require author assertion and review."
+    },
+    {
+      "path": "docs/v2_0_completion_declaration.md",
       "rule_id": "book-and-project-prose",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
@@ -14585,6 +14594,15 @@
     },
     {
       "path": "release_records/2026-07-06-v1-curated-reader-text-blocked-923108ee.json",
+      "rule_id": "public-metadata-and-governance-records",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "metadata_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Facts may be uncopyrightable, but selection, descriptions, imported fields, and contributed records still require ownership and scope review before a public-domain dedication."
+    },
+    {
+      "path": "release_records/2026-07-10-v2.0.0-research-52e54b71.json",
       "rule_id": "public-metadata-and-governance-records",
       "artifact_class": "public_metadata_or_governance_record",
       "provenance_status": "author_ownership_assertion_required",

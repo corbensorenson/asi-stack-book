@@ -359,18 +359,19 @@ release record.
 
 ## Current baseline and immediate next action
 
-At this roadmap's adoption, the active manifest has 54 chapters and the public
-source inventory has 271 records. All 54 chapter-core claims remain at
-`argument`. Local remediation has a 15-chapter narrative projection, a
-54-chapter reference projection, a 17-route evidence registry, a governed
-repository-change slice, five trace invariants, a declarative validation
-registry, content-addressed tested-site bundling, and a clean local render.
+The roadmap completed on 2026-07-10 for tag `v2.0.0` and source commit
+`52e54b71681f3d04644a4142875718d7b55f6dbd`. Build run `29131665495` and
+deploy/attest run `29131819091` agree on the exact clean tested bundle. The
+immutable rendered-site archive was published to the exact-tag GitHub Release,
+redownloaded, and verified at SHA-256
+`5772aa8e47df279bbb38e38b2a3564489f6b3f3f65f8ff2df373f318e2c9eaf9`.
+The completion evidence ledger and `docs/v2_0_completion_declaration.md` bind
+the final title, citation, license snapshot, products, residuals, and
+non-claims to that artifact state.
 
-Workstream A's first coherence release closed on 2026-07-10: build run
-`29108462406` and deploy/attest run `29108700945` agreed on clean merge commit
-`68b0902ea1b3...`, 54 chapters, 271 sources, `/latest/`, the version index, and
-all three product routes. The immediate content action is now the first six
-packets in Workstream C. No new planning document should displace them.
+There is no remaining action in this roadmap. Future living-book work starts a
+new post-v2 update cycle and reopens only affected contracts; it must not
+rewrite this historical completion state.
 
 ## Non-claims
 

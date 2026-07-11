@@ -33,6 +33,19 @@
       "archive_backfill_decision_date": "2026-07-10",
       "archive_backfill_rationale": "The exact tested v1.0.0 site bundle was not preserved. Re-rendering the old source with a later toolchain would fabricate historical artifact identity, so no full-site backfill will be published.",
       "non_claim": "The immutable source tag and release exist; no full immutable v1.0.0 site bundle is claimed or planned for backfill."
+    },
+    {
+      "version": "v2.0.0",
+      "source_commit": "52e54b71681f3d04644a4142875718d7b55f6dbd",
+      "release_record": "release_records/2026-07-10-v2.0.0-research-52e54b71.json",
+      "source_release_url": "https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.0.0",
+      "site_artifact_state": "published",
+      "site_artifact_url": "https://github.com/corbensorenson/asi-stack-book/releases/download/v2.0.0/asi-stack-site-v2.0.0-52e54b71681f3d04644a4142875718d7b55f6dbd.tar.gz",
+      "site_artifact_sha256": "5772aa8e47df279bbb38e38b2a3564489f6b3f3f65f8ff2df373f318e2c9eaf9",
+      "archive_backfill_decision": "completed",
+      "archive_backfill_decision_date": "2026-07-10",
+      "archive_backfill_rationale": "Published from the exact clean CI-tested v2.0.0 site bundle, then redownloaded from the public GitHub Release and verified against the recorded SHA-256.",
+      "non_claim": "The archive preserves the tested rendered site bytes; it does not prove chapter claims, runtime safety, model capability, independent review, or future storage durability."
     }
   ],
   "non_claims": [

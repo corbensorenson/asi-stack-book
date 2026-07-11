@@ -1,0 +1,92 @@
+{
+  "record_type": "edition_release",
+  "release_id": "2026-07-10-v2.0.0-research-52e54b71",
+  "major_version": "2",
+  "source_commit": "52e54b71681f3d04644a4142875718d7b55f6dbd",
+  "source_tag": "v2.0.0",
+  "edition_profile": "research_release",
+  "primary_audiences": [
+    "ai_agents",
+    "human_researchers",
+    "interested_humans"
+  ],
+  "derivation_source": "Exact clean commit-bound tested-site bundle from GitHub Actions build run 29131665495; deployed and attested by run 29131819091 without rebuilding.",
+  "artifact_formats": [
+    {
+      "format": "canonical_live_html",
+      "status": "published",
+      "command_or_tool": "GitHub Actions Build tested Pages artifact -> Deploy tested Quarto site",
+      "path_or_uri": "https://corbensorenson.github.io/asi-stack-book/",
+      "notes": "Mutable live channel deployed from the exact tested v2.0.0 bundle and attested against source commit 52e54b71681f3d04644a4142875718d7b55f6dbd in run 29131819091."
+    },
+    {
+      "format": "immutable_html_site_archive",
+      "status": "published",
+      "command_or_tool": "python3 scripts/build_immutable_site_archive.py and python3 scripts/validate_immutable_site_archive.py",
+      "path_or_uri": "https://github.com/corbensorenson/asi-stack-book/releases/download/v2.0.0/asi-stack-site-v2.0.0-52e54b71681f3d04644a4142875718d7b55f6dbd.tar.gz",
+      "notes": "18,842,778 bytes; 262 regular-file members; SHA-256 5772aa8e47df279bbb38e38b2a3564489f6b3f3f65f8ff2df373f318e2c9eaf9; public redownload verified byte-for-byte."
+    },
+    {
+      "format": "epub_docx_pdf_audio_and_curated_reader",
+      "status": "not_applicable",
+      "command_or_tool": "docs/v2_0_release_scope.md",
+      "path_or_uri": "",
+      "notes": "These formats and editions are explicitly outside the v2.0.0 release scope and are neither generated nor approved by this record."
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/run_validation_registry.py --tier deep",
+    "cd lean && lake build",
+    "quarto render --to html",
+    "node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports",
+    "python3 scripts/validate_tested_site_bundle.py --bundle build/ci-pages-tested-52e54b7 --expected-commit 52e54b71681f3d04644a4142875718d7b55f6dbd",
+    "python3 scripts/validate_immutable_site_archive.py --bundle build/ci-pages-tested-52e54b7 --candidate build/immutable-site-archive-v2 --version v2.0.0 --policy build/v2-prepublication-policy.json",
+    "gh release download v2.0.0 and sha256sum public archive",
+    "python3 scripts/validate_public_status_consistency.py --url https://corbensorenson.github.io/asi-stack-book/ --require-clean"
+  ],
+  "validation_status": "pass",
+  "review_status": {
+    "reader_continuity_review": "pass",
+    "source_scaffold_removed": "pass",
+    "audio_script_review": "not_required",
+    "notes": "Internal final-candidate structural, continuity, rendering, browser, proof, source, evidence, rights, and artifact-integrity checks passed. No external-human prepublication review was requested or claimed."
+  },
+  "companion_material": {
+    "path_or_uri": "",
+    "status": "not_required",
+    "review_notes": "No companion edition is part of this release."
+  },
+  "human_consumption_gate": {
+    "reader_spine_review": "pass",
+    "ebook_layout_review": "not_required",
+    "diagram_image_review": "pass",
+    "bedtime_readability_review": "not_required",
+    "companion_notes_status": "not_required",
+    "notes": "The selected canonical HTML surface passed internal continuity, live-view, accessibility, and desktop/mobile browser checks; unselected formats remain outside scope."
+  },
+  "audiobook_gate": {
+    "script_review": "not_required",
+    "spoken_treatment_review": "not_required",
+    "metadata_review": "not_required",
+    "chapter_marker_review": "not_required",
+    "audio_spot_check": "not_required",
+    "embedded_epub_check": "not_required",
+    "status": "not_required",
+    "notes": "Audio is outside the v2.0.0 research-release scope."
+  },
+  "release_notes": "The ASI Stack v2.0.0 is the completed canonical research/live HTML book under the reframed title. The exact tagged source, CI-tested bundle, deployed site, immutable site archive, citation metadata, and conditional path-level license snapshot are bound to commit 52e54b71681f3d04644a4142875718d7b55f6dbd. Rights routing snapshot SHA-256: 9e9b06191d8af9c8c89126ad21a61fa4fcd54d23818d0aa8e62074d6f7ba263f. CC BY 4.0 text SHA-256: 9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94. Apache-2.0 text SHA-256: cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30.",
+  "residuals": [
+    "All 54 chapter-core claims remain at argument support; this release transaction creates no support-state promotion.",
+    "The governed repository-change slice retains one explicitly recorded open residual and finite-model limits.",
+    "The live root and /latest/ channels are mutable; the GitHub Release archive is the immutable v2.0.0 rendered-site artifact.",
+    "EPUB, DOCX, PDF, audio, and curated-reader editions remain outside this release.",
+    "No external-human prepublication review, independent audit, DOI, or external peer review is claimed."
+  ],
+  "non_claims": [
+    "does not prove ASI or AGI capability, production readiness, deployment safety, economic value, or universal governance correctness",
+    "does not promote any chapter-core claim above its recorded evidence state",
+    "does not turn finite Lean models, fixtures, synthetic attacks, or one disposable-Git slice into open-world runtime evidence",
+    "does not claim released EPUB, DOCX, PDF, audio, or curated-reader artifacts",
+    "does not claim independent legal review, third-party ownership clearance, external audit, or external-human peer review"
+  ]
+}

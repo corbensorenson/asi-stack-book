@@ -19,22 +19,21 @@ Status vocabulary:
 - `complete`: all cited evidence closes the criterion for the same final
   artifact state.
 
-No workstream or whole-book definition-of-done criterion is `complete` at this
-audit. Individual historical-project packets may close locally, but final
-completion remains unproven until one frozen candidate passes the whole
-definition of done on one commit.
+All workstreams and whole-book definition-of-done criteria are `complete` for
+the frozen v2.0.0 artifact state. Later living-book changes reopen only the
+affected criteria and do not alter this historical completion record.
 
 ## Workstream closure ledger
 
 | Workstream | Current evidence | Status | Missing closure evidence |
 |---|---|---|---|
-| A — Coherent public release | The roadmap records a successful build/deploy/attest chain for an earlier clean coherence commit; the current repository has since advanced and this packet changes public source again. | proven-baseline | Rebuild, deploy, and attest the exact final candidate without rebuilding or status disagreement. |
-| B — Narrative book completion | The 15-chapter spine has complete question/example/objection/failure/evidence-change/handoff fields; a cumulative 15-stage running-example trace carries 16 artifacts and rejects six continuity mutations; the generated bounded candidate rendered as 20 HTML pages and passed 40 strict desktop/mobile browser page-view checks; the global continuity audit has 0 high-priority rows. | proven-baseline | Rebuild and recheck the frozen final narrative candidate after later reference edits; inspect only the final formats actually selected for release. |
-| C — Architecture reference completion | Manifest contains 54 active chapters. All seven P0 and all nine P1 historical-project packets have passed their local packet gates. All thirteen P2/P3 packets have explicit machine-checked completed, deferred, or superseded dispositions. The separate Durable Semantic Memory chapter is rejected for the current program with ownership distributed across five existing chapters. The 54-row packet-contract audit passes every active chapter. | proven-local | Reopen only if a chapter, packet disposition, ownership boundary, source/proof/test route, diagram, weakening condition, or handoff changes; final-candidate rebuild remains part of Workstream G. |
-| D — Evidence and empirical depth | The tracked disposable-Git slice re-executes nine governed scenarios and eight attacks against the same simpler baseline, reports benefit and governance tax together, preserves rollback/quarantine and one open residual, and feeds five trace invariants with four rejecting mutations. All 54 core claims have explicit dispositions and the rerun creates no transition. | proven-local | Reopen only if the workload, baseline, metrics, event vocabulary, residual state, mutation suite, or affected claim dispositions change. |
-| E — Formal depth | The 225-target proof manifest covers all 54 chapters; every target has an adequacy class and next action, prose/Lean traceability has zero audit errors, fixture bridges and proof-depth checks pass, and the governed-trace module shares Workstream D's event vocabulary and explicit finite-time/tie assumptions. | proven-local | Reopen on proof/prose/manifest drift or failed final-candidate Lean build; finite models do not become runtime-safety claims. |
-| F — Sources, prior art, and terminology | Source inventory contains 273 records and notes; all 54 chapters are externally positioned; five defended tracks are compared with 20 source-noted comparators; 21 glossary terms have 15 active owners; and the 2026-07-10 refresh routes MCP 2025-11-25 and A2A 1.0.0 while preserving volatile/revision boundaries. | proven-local | Reopen on new time-sensitive releases, source/claim changes, terminology ownership drift, or prior-art changes. |
-| G — Release, archive, license, and citation | Reframed title, v1.0.0 no-backfill decision, v2.0.0 HTML-only scope, conditional tag-bound split license, official CC BY 4.0 and Apache-2.0 texts, NOTICE, and 2,449-path routing ledger are prepared with 0 unresolved paths. CITATION identifies 2.0.0. | pending-final-transaction | Freeze and commit; build/test the clean tag commit; tag/push; upload the exact immutable archive/checksum without overwrite; redownload/verify; update release policy/record/index; deploy and attest the same artifact state. |
+| A — Coherent public release | Final source commit `52e54b71...` passed build run `29131665495`; deploy/attest run `29131819091` published the same tested bundle without rebuilding and passed the public status/chapter-graph crawl. | complete | Reopen only for post-v2 source, build, deployment, or public-status drift. |
+| B — Narrative book completion | The frozen 15-chapter spine and cumulative running example retain complete contracts, six rejecting continuity mutations, 0 high-priority continuity rows, and final clean render/browser coverage. | complete | Reopen only when narrative source, projection logic, or released format changes. |
+| C — Architecture reference completion | The frozen manifest has 54 active chapters; every P0/P1 packet is closed, every P2/P3 packet has a checked disposition, and all 54 chapters pass the packet contract. | complete | Reopen only on chapter, disposition, ownership, interface, source/proof/test, visual, weakening, or handoff change. |
+| D — Evidence and empirical depth | The final tracked slice reproduces nine scenarios and eight attacks against its baseline, reports benefit and governance tax, preserves rollback/quarantine and the open residual, and feeds five invariants with four rejecting mutations. All core-claim dispositions remain explicit. | complete | Reopen on empirical input, metric, residual, mutation, or claim-disposition change. |
+| E — Formal depth | The final 225-target manifest covers all 54 chapters, proof/prose traceability passes, and all 66 Lean jobs build at the tagged commit with finite-scope boundaries intact. | complete | Reopen on proof, prose, manifest, assumption, or implementation-binding change. |
+| F — Sources, prior art, and terminology | The final inventory has 273 public records/notes, every chapter is externally positioned, defended tracks retain comparator coverage, terminology ownership is unique, and volatile official sources were refreshed on 2026-07-10. | complete | Reopen on time-sensitive release, source/claim, terminology, or prior-art change. |
+| G — Release, archive, license, and citation | Tag `v2.0.0`, commit `52e54b71...`, reframed title, CITATION 2.0.0, HTML-only scope, 2,449-path rights snapshot, official licenses, tested bundle, deployed site, immutable archive, public redownload digest, release policy, release record, and completion declaration agree. | complete | Reopen only for a later release; v2.0.0 remains immutable history. |
 
 ## First-six historical-project packets
 
@@ -66,19 +65,19 @@ definition of done on one commit.
 
 | Criterion | Status | Required final evidence |
 |---|---|---|
-| Manifest, outline, chapters, appendices, products, status, and deployed site agree. | unproven | Cross-surface validators plus fresh public attestation for the same clean commit. |
-| All active chapters satisfy the reference packet contract. | unproven | 54-row packet audit with no missing or competing ownership. |
-| Narrative is coherent and has no open high-priority continuity defect. | unproven | Editorial contract and continuity audit of the frozen narrative projection. |
-| Three defended contributions have prior-art, argument, mechanism, objection, evidence, and residual records. | unproven | Contribution-specific closure records and source/evidence crosswalks. |
-| Flagship slice and invariant suite reproduce with benefit and governance tax. | unproven | Fresh tracked run, matched baseline, attacks, costs, residuals, and dispositions. |
-| Every core claim has an evidence-quality vector and final disposition. | unproven | Complete generated ledger and accepted no-change/promote/narrow/demote/refute records. |
-| Proof summaries match finite scope and Lean builds. | unproven | Adequacy/prose correspondence audit plus clean final build. |
-| Validators, schemas, fixtures, controls, render, browser, and public attestation pass together. | unproven | Full validation registry and public chain on the final commit. |
-| Title and historical-title lineage are consistent. | proven-baseline | Recheck final source/site/citation/release records. |
-| Rights routing is resolved for every released file. | pending-final-candidate | File-level clearance/exclusion ledger and installed operative license texts. |
-| Every format and archive is byte-bound with checksums. | pending-final-candidate | Inspected rendered files, immutable archive, redownload verification, and release record. |
-| No private material, fabricated evidence, unearned review, or overclaim appears. | unproven | Final privacy/source/evidence/review-language audit. |
-| Final declaration and residuals are recorded. | pending-final-candidate | Author completion declaration tied to the final tag, commit, artifacts, and residual ledger. |
+| Manifest, outline, chapters, appendices, products, status, and deployed site agree. | complete | Frozen cross-surface validation and public attestation. |
+| All active chapters satisfy the reference packet contract. | complete | Final 54-row packet audit with no missing or competing ownership. |
+| Narrative is coherent and has no open high-priority continuity defect. | complete | Frozen editorial contract, running-example trace, and continuity audit. |
+| Three defended contributions have prior-art, argument, mechanism, objection, evidence, and residual records. | complete | Final contribution records and source/evidence crosswalks. |
+| Flagship slice and invariant suite reproduce with benefit and governance tax. | complete | Fresh matched run, attacks, costs, residuals, and dispositions. |
+| Every core claim has an evidence-quality vector and final disposition. | complete | Complete ledger; all 54 chapter-core claims remain argument/no-change. |
+| Proof summaries match finite scope and Lean builds. | complete | Adequacy/prose correspondence plus 66-job clean Lean build. |
+| Validators, schemas, fixtures, controls, render, browser, and public attestation pass together. | complete | Full registry and public chain for tagged commit `52e54b71...`. |
+| Title and historical-title lineage are consistent. | complete | Final source, site, citation, release notes, and v1 history agree. |
+| Rights routing is resolved for every released file. | complete | 2,449-path snapshot, zero unresolved, exact license texts and NOTICE. |
+| Every format and archive is byte-bound with checksums. | complete | Selected HTML bundle/archive and public redownload SHA-256 are recorded. |
+| No private material, fabricated evidence, unearned review, or overclaim appears. | complete | Final privacy/source/evidence/review-language audits and explicit non-claims pass. |
+| Final declaration and residuals are recorded. | complete | `docs/v2_0_completion_declaration.md` and the v2 release record. |
 
 ## Current packet non-claims
 

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-07-10 - v2.0.0 roadmap completion and immutable release
+
+- Completed every workstream and definition-of-done criterion in the ASI Stack
+  completion roadmap for tag `v2.0.0` at source commit
+  `52e54b71681f3d04644a4142875718d7b55f6dbd`.
+- GitHub Actions build run `29131665495` passed the deep registry, 66 Lean jobs,
+  the 67-page render, 112 browser page-view checks, and commit-bound bundle
+  validation. Deploy/attest run `29131819091` published that exact tested
+  bundle without rebuilding and passed the public status/chapter-graph crawl.
+- Published the deterministic 18,842,778-byte, 262-member immutable site
+  archive on the exact-tag GitHub Release, then redownloaded it publicly and
+  verified SHA-256
+  `5772aa8e47df279bbb38e38b2a3564489f6b3f3f65f8ff2df373f318e2c9eaf9`.
+- Added the v2 research-release record, public version-policy row, and final
+  completion declaration. The release remains HTML-only; all 54 chapter-core
+  claims remain at argument; finite-model, empirical-residual, mutable-live-
+  channel, unselected-format, legal-review, and external-review boundaries are
+  preserved.
+
 ## 2026-07-10 - Workstreams D–F closure and v2.0.0 release scope
 
 - Re-executed the disposable Git vertical slice and derived trace invariants,
