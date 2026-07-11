@@ -35,6 +35,12 @@
   Added `docs/post_v2_1_public_truth_audit.md` and an exact registered validator
   with six rejecting identity mutations. Machine state records P0 as running
   and M1 as in progress until clean deployment and public attestation pass.
+- Closed P0 and M1 after commit `bee209ad57c5181ffb1d63f6f22831e04364042f`
+  passed build run 29139819267, deploy/attest run 29139918614, and an independent
+  nine-surface public read covering root, `/latest/`, all three product routes,
+  both canonical status objects, the versions index, and the immutable v2.1.0
+  archive. This publication closure creates no empirical or support-state
+  movement.
 
 ## 2026-07-10 - v2.1.0 evidence release
 

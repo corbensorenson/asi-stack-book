@@ -4,8 +4,8 @@ Audit date: 2026-07-10
 
 Roadmap priority: P0 — Public truth reconciliation
 
-State: local reconciliation complete; clean tested deployment and public
-attestation pending
+State: complete; local reconciliation, clean tested deployment, and public
+attestation passed
 
 ## Canonical identity
 
@@ -53,14 +53,31 @@ active roadmap headers, and current-count drift. Its six required mutations
 cover stale version, stale roadmap, wrong commit, false archive state, wrong
 rights tag, and invented format approval.
 
-## Deployment closure still required
+## Deployment and attestation closure
 
-P0 does not close from this local audit alone. The exact source state must pass
-the complete registry, Lean, HTML, and all-page/all-viewport browser gates; the
-tested artifact must deploy without rebuilding; and the public root, `/latest/`,
-canonical status object, product routes, and v2.1.0 release/archive links must
-be re-read and attested. Until that happens, roadmap status remains active and
-M1 remains in progress.
+Reconciliation source commit:
+`bee209ad57c5181ffb1d63f6f22831e04364042f`.
+
+- Build run
+  [29139819267](https://github.com/corbensorenson/asi-stack-book/actions/runs/29139819267)
+  passed the generated-scaffold check, deep 270-unit registry, 66-job Lean
+  build, clean 67-page render, canonical-status build, Human-view validation,
+  browser smoke, tested-artifact verification, and commit-bound upload.
+- Deployment run
+  [29139918614](https://github.com/corbensorenson/asi-stack-book/actions/runs/29139918614)
+  downloaded and verified that successful artifact without rebuilding, deployed
+  it, and passed the commit-bound public status/chapter-graph attestation.
+- An independent public read returned HTTP 200 and the expected identity for
+  nine surfaces: root, `/latest/`, Narrative, Architecture Reference, Evidence
+  Registry, root canonical status, `/latest/` canonical status,
+  `/versions/index.json`, and the immutable v2.1.0 archive.
+- Both public status objects named source commit
+  `bee209ad57c5181ffb1d63f6f22831e04364042f` and active version `v2.1.0`.
+- The versions index retained the immutable v2.1.0 source commit and archive
+  identity; it did not represent `/latest/` as immutable.
+
+This closes P0 and M1. The roadmap as a whole remains active, and no empirical
+program, residual, chapter claim, or optional format is completed by this gate.
 
 ## Non-claims
 
@@ -68,4 +85,4 @@ M1 remains in progress.
 - Publication consistency does not prove model quality, safety, transfer, or
   the truth of any chapter claim.
 - Internal validation is not external-human or institutional review.
-- Local reconciliation is not deployment or public attestation.
+- P0 publication attestation is not evidence for an empirical program.

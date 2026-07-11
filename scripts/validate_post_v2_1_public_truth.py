@@ -184,8 +184,21 @@ def validate(data: dict[str, object]) -> list[str]:
     if ROADMAP not in str(data["completion"]):
         errors.append("v2.1 completion declaration does not point to successor")
 
+    priorities = status.get("priorities", [])
+    p0 = next((row for row in priorities if isinstance(row, dict) and row.get("id") == "P0"), {})
     audit = str(data["audit"])
-    for fragment in [VERSION, COMMIT, DIGEST, "local reconciliation complete", "attestation pending", "six required mutations"]:
+    audit_fragments = [VERSION, COMMIT, DIGEST, "local reconciliation", "six required mutations"]
+    if p0.get("state") == "completed":
+        audit_fragments.extend([
+            "State: complete",
+            "29139819267",
+            "29139918614",
+            "PUBLIC_ATTESTATION_OK" if "PUBLIC_ATTESTATION_OK" in audit else "nine surfaces",
+            "This closes P0 and M1",
+        ])
+    else:
+        audit_fragments.append("attestation pending")
+    for fragment in audit_fragments:
         if fragment not in audit:
             errors.append(f"public-truth audit missing: {fragment}")
     return errors
