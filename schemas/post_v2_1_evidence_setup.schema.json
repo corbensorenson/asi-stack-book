@@ -3,7 +3,7 @@
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_1_evidence_setup.schema.json",
   "title": "Post-v2.1 Executable Evidence Setup",
   "type": "object",
-  "required": ["schema_version", "setup_id", "state", "parent_input_commit", "setup_commit", "amendment_ref", "preregistration_ref", "runtime_authority_ref", "source_gap_scan_ref", "implementation_files", "programs", "role_interfaces", "execution_guard", "preflight_commands", "combined_budget", "support_state_effect", "non_claims"],
+  "required": ["schema_version", "setup_id", "state", "parent_input_commit", "setup_commit", "amendment_ref", "setup_amendment_ref", "preregistration_ref", "runtime_authority_ref", "source_gap_scan_ref", "implementation_files", "programs", "role_interfaces", "execution_guard", "preflight_commands", "combined_budget", "support_state_effect", "non_claims"],
   "properties": {
     "schema_version": {"const": "asi_stack.post_v2_1_evidence_setup.v0"},
     "setup_id": {"type": "string", "minLength": 1},
@@ -11,6 +11,7 @@
     "parent_input_commit": {"type": "string", "minLength": 9},
     "setup_commit": {"type": ["string", "null"]},
     "amendment_ref": {"type": "string"},
+    "setup_amendment_ref": {"const": "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json"},
     "preregistration_ref": {"type": "string"},
     "runtime_authority_ref": {"type": "string"},
     "source_gap_scan_ref": {"const": "docs/post_v2_1_focused_source_gap_scan.md"},

@@ -5,13 +5,14 @@
   "roadmap_ref": "docs/post_v2_1_residual_and_transfer_roadmap.md",
   "state": "draft_inputs_frozen_outcomes_unopened",
   "amendment_refs": [
-    "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json"
+    "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
+    "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json"
   ],
   "setup_manifest_ref": "experiments/post_v2_1_evidence_program/setup_manifest.json",
   "source_gap_scan_ref": "docs/post_v2_1_focused_source_gap_scan.md",
   "completion_blockers": [
-    "bind the final setup commit and exact runner/evaluator/observer digests",
-    "pass the combined setup validator and all rejecting mutations",
+    "bind the corrected final setup commit and exact runner/evaluator/observer digests",
+    "pass the combined setup validator and all rejecting mutations in final state",
     "record P1, P2, and P3 as preregistered in the roadmap status sidecar"
   ],
   "runtime_authority": {

@@ -37,6 +37,7 @@ def build(state: str, setup_commit: str | None) -> dict:
         "parent_input_commit": "52925c426",
         "setup_commit": setup_commit if frozen else None,
         "amendment_ref": "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
+        "setup_amendment_ref": "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
         "preregistration_ref": "experiments/post_v2_1_evidence_program/preregistration.json",
         "runtime_authority_ref": "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json",
         "source_gap_scan_ref": "docs/post_v2_1_focused_source_gap_scan.md",

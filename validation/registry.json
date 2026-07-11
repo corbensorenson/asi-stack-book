@@ -1079,6 +1079,7 @@
     "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
     "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
     "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
+    "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
     "docs/post_v2_1_preregistration.md",
     "scripts/validate_post_v2_1_preregistration_inputs.py",
     "scripts/post_v2_1_p1_observer.py",
@@ -6156,6 +6157,7 @@
         "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
         "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
         "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
+        "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
         "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json",
         "docs/post_v2_1_preregistration.md",
         "scripts/validate_post_v2_1_preregistration_inputs.py"
@@ -6171,7 +6173,7 @@
         "full-state inventory contains 24 surfaces",
         "outcomes remain unopened and final setup blockers remain visible"
       ],
-      "claim_scope": "Frozen deterministic inputs and draft decision rules before executable setup binding and outcome observation.",
+      "claim_scope": "Frozen deterministic inputs and decision rules before corrected executable setup binding and outcome observation.",
       "negative_controls": "validator_owned",
       "negative_control_cases": [
         "duplicate P1 identity",
@@ -6186,7 +6188,7 @@
         "support promotion",
         "threshold erasure"
       ],
-      "prohibited_inference": "Frozen inputs and draft rules do not constitute final preregistration, execute a model call or update, reveal outcomes, establish safety or benefit, close a residual, or move a support state.",
+      "prohibited_inference": "Frozen inputs and draft rules do not execute a model call or update, reveal outcomes, establish safety or benefit, close a residual, or move a support state.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
@@ -6204,6 +6206,7 @@
         "scripts/post_v2_1_p3_observer.py", "scripts/run_post_v2_1_p3.py",
         "scripts/build_post_v2_1_setup_manifest.py", "scripts/validate_post_v2_1_evidence_setup.py",
         "schemas/post_v2_1_evidence_setup.schema.json", "experiments/post_v2_1_evidence_program/setup_manifest.json",
+        "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
         "experiments/post_v2_1_evidence_program/preregistration.json", "experiments/post_v2_1_evidence_program/p1/input/corpus.json",
         "experiments/post_v2_1_evidence_program/p2/input/corpus.json", "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
         "experiments/post_v2_1_evidence_program/p3/state_inventory.json", "docs/post_v2_1_evidence_setup.md",
@@ -6220,7 +6223,7 @@
         "combined ceiling is 332 calls and 59960 generated tokens",
         "P3 maps all 24 surfaces and selects authority without test/deletion/probe outcomes",
         "three preflights execute no registered outcomes",
-        "setup commit remains pending until a later exact binding"
+        "setup commit remains pending until a corrected exact binding"
       ],
       "claim_scope": "Executable setup identity, outcome guards, role interfaces, held-out boundaries, and resource arithmetic before empirical execution.",
       "negative_controls": "validator_owned",
@@ -6231,7 +6234,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 1054,
+    "required_artifact_count": 1055,
     "unit_count": 273
   },
   "non_claims": [

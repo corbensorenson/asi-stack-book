@@ -128,11 +128,22 @@ def validate(data: dict[str, object]) -> list[str]:
         errors.append("program maximum generated tokens exceed global budget")
     if prereg.get("shared_governance", {}).get("support_state_effect") != "none_before_accepted_post_run_dispositions":
         errors.append("preregistration launders support state")
-    if prereg.get("state") != "draft_inputs_frozen_outcomes_unopened" or len(prereg.get("completion_blockers", [])) != 3:
+    setup = data["setup"]
+    if prereg.get("state") == "frozen_before_outcome_runs":
+        if prereg.get("completion_blockers") != [] or setup.get("state") != "frozen_before_outcome_runs":
+            errors.append("final preregistration/setup freeze is incomplete")
+        if not isinstance(setup.get("setup_commit"), str) or len(setup["setup_commit"]) != 40:
+            errors.append("final preregistration lacks exact setup commit")
+        if [row.get("state") for row in prereg.get("programs", [])] != ["preregistered"] * 3:
+            errors.append("final preregistration program states drifted")
+    elif prereg.get("state") != "draft_inputs_frozen_outcomes_unopened" or len(prereg.get("completion_blockers", [])) != 3:
         errors.append("draft preregistration state/blockers are dishonest")
-    expected_amendment = f"{BASE}/amendments/preregistration_inputs_v1.json"
-    if prereg.get("amendment_refs") != [expected_amendment]:
-        errors.append("pre-outcome semantic amendment is not bound")
+    expected_amendments = [
+        f"{BASE}/amendments/preregistration_inputs_v1.json",
+        f"{BASE}/amendments/setup_validator_v1.json",
+    ]
+    if prereg.get("amendment_refs") != expected_amendments:
+        errors.append("pre-outcome amendments are not bound")
     if amendment.get("state") != "accepted_before_any_outcome_visibility":
         errors.append("input amendment outcome boundary drifted")
     visibility = amendment.get("outcome_visibility", {})
@@ -140,6 +151,11 @@ def validate(data: dict[str, object]) -> list[str]:
         errors.append("input amendment does not preserve the zero-outcome boundary")
     if amendment.get("support_state_effect") != "none":
         errors.append("input amendment launders support state")
+    setup_amendment = data["setup_amendment"]
+    if setup_amendment.get("state") != "accepted_before_any_outcome_visibility" or setup_amendment.get("support_state_effect") != "none":
+        errors.append("setup-validator amendment boundary drifted")
+    if any(value for value in setup_amendment.get("outcome_visibility", {}).values()):
+        errors.append("setup-validator amendment opens outcomes")
     selected_source_ids = {
         "ext_agentdojo_2024", "ext_claw_swe_bench_2026", "ext_txfs_2018",
         "ext_routellm_2024", "ext_test_time_compute_scaling_2024",
@@ -172,6 +188,8 @@ def main() -> None:
         "p3": load(f"{BASE}/p3/input/corpus.json"),
         "inventory": load(f"{BASE}/p3/state_inventory.json"),
         "amendment": load(f"{BASE}/amendments/preregistration_inputs_v1.json"),
+        "setup_amendment": load(f"{BASE}/amendments/setup_validator_v1.json"),
+        "setup": load(f"{BASE}/setup_manifest.json"),
         "source_inventory": load("sources/source_inventory.json"),
         "source_scan": (ROOT / "docs/post_v2_1_focused_source_gap_scan.md").read_text(encoding="utf-8"),
         "eligibility": load(f"{BASE}/runtime_eligibility_plan.json"),

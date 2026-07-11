@@ -1,0 +1,26 @@
+{
+  "schema_version": "asi_stack.post_v2_1_preregistration_amendment.v0",
+  "amendment_id": "post-v2-1-setup-validator-v1",
+  "recorded_date": "2026-07-11",
+  "state": "accepted_before_any_outcome_visibility",
+  "superseded_setup_commit": "0f259710c15ec1b4c982b878bef325f0c6712b02",
+  "trigger": "The separate final-binding step exposed that the installed-state non-null setup-commit mutation became a valid-shaped 40-character value after the manifest legitimately entered final state, so that mutation no longer rejected when Git lookup was intentionally disabled inside the mutation loop.",
+  "changed_fields": [
+    "rename the negative control to setup commit shape",
+    "mutate the commit field to 39 rather than 40 characters so both installed and final states reject it",
+    "bind this amendment into preregistration and setup lineage"
+  ],
+  "unchanged_fields": [
+    "all runners, observers, evaluators, corpora, arms, endpoints, thresholds, budgets, and stop rules",
+    "the setup validator's production Git blob checks",
+    "the three preflight commands and all other mutation controls"
+  ],
+  "affected_residuals": [],
+  "budget_impact": {"model_calls": 0, "generated_tokens": 0, "external_service_spend_usd": 0, "amendment_reruns": 0},
+  "outcome_visibility": {"development": false, "calibration": false, "validation": false, "test": false, "model_calls_completed": 0, "training_runs_completed": 0},
+  "invalidated_descendants": ["setup authority 0f259710c15ec1b4c982b878bef325f0c6712b02"],
+  "preservation": "The superseded setup commit remains immutable Git history and contains no registered result path.",
+  "authorization": "Pre-outcome validator repair under the roadmap amendment rule; a new setup commit and separate binding are required.",
+  "support_state_effect": "none",
+  "non_claims": ["This repair does not improve an empirical result.", "The superseded setup commit is not outcome evidence.", "No residual, support state, chapter, release, or format changes here."]
+}

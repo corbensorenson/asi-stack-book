@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 2655,
+    "path_count": 2656,
     "by_license_route": {
       "Apache-2.0": 647,
       "CC-BY-4.0": 486,
-      "excluded-no-grant": 1522
+      "excluded-no-grant": 1523
     },
     "unresolved_count": 0
   },
@@ -7771,6 +7771,13 @@
     },
     {
       "path": "experiments/post_v2_1_evidence_program/amendments/runtime_candidate_v1.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
+      "path": "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",

@@ -81,6 +81,11 @@
   test-time compute, abstention, six-way unlearning evaluation, benchmark
   weakness, and metric meta-evaluation. Each new record has a full source note
   and appears in Appendix H; no external result is represented as local.
+- Preserved setup commit `0f259710c15ec1b4c982b878bef325f0c6712b02` as a
+  superseded pre-outcome attempt after the separate final-binding step exposed
+  one mutation that no longer rejected in final state. No result path existed,
+  no call or training run occurred, and M2 remained open while the validator
+  received a versioned correction.
 
 ## 2026-07-10 - v2.1.0 evidence release
 

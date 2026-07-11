@@ -6,14 +6,14 @@
     "policy": "licensing/provenance_policy.json",
     "policy_sha256": "6140007432d916d34155bcabd1bf60103ecc07170f96153f618e02f6380e68b4",
     "file_set_command": "git ls-files --cached --others --exclude-standard -z",
-    "path_set_sha256": "51e16f31e8a833c477009d40689d7a24667694feaf6c089a24d472197f38234a"
+    "path_set_sha256": "d8085d6947cd1f764ae3941ec2b8003a4d006a6d00106751a6b7231b958ad57c"
   },
   "summary": {
-    "file_count": 2655,
+    "file_count": 2656,
     "by_artifact_class": {
       "book_or_project_prose": 443,
       "build_or_citation_configuration": 1,
-      "experiment_fixture_result_or_review_record": 1015,
+      "experiment_fixture_result_or_review_record": 1016,
       "external_source_commentary_or_compilation": 214,
       "figure_or_binary_asset": 15,
       "historical_or_generated_derivative": 160,
@@ -27,7 +27,7 @@
     "by_provenance_status": {
       "author_assertion_and_embedded_asset_review_required": 15,
       "author_assertion_and_local_project_review_required": 99,
-      "author_assertion_or_import_review_required": 1015,
+      "author_assertion_or_import_review_required": 1016,
       "author_ownership_assertion_required": 1147,
       "generated_derivative_review_required": 160,
       "nonrelease_exclusion": 2,
@@ -43,7 +43,7 @@
       "prose_or_figures_candidate": 458,
       "reserved_operative": 1,
       "software_candidate": 666,
-      "software_or_metadata_after_review": 1016
+      "software_or_metadata_after_review": 1017
     },
     "unknown_quarantine_count": 0
   },
@@ -10004,6 +10004,15 @@
     },
     {
       "path": "experiments/post_v2_1_evidence_program/amendments/runtime_candidate_v1.json",
+      "rule_id": "experiment-fixtures-and-results",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "candidate_lane": "software_or_metadata_after_review",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "Local fixtures may be author-created while imported results or reviewer material may carry separate rights; provenance must be checked before lane assignment."
+    },
+    {
+      "path": "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
       "rule_id": "experiment-fixtures-and-results",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",

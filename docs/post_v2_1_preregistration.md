@@ -2,7 +2,7 @@
 
 Recorded: 2026-07-11
 
-State: inputs frozen and outcomes unopened; final runner/code binding pending
+State: inputs frozen and outcomes unopened; corrected setup binding pending
 
 This record translates the active roadmap into three finite programs without
 claiming that any result exists. The selected 4B MLX runtime is restricted to
@@ -53,14 +53,14 @@ by validation subject to a forgetting bound, inventories full state, and keeps
 behavioral change, influence reduction, lineage propagation, and storage
 erasure as four different claims.
 
-## Remaining M2 blockers
+## Remaining M2 blocker
 
-The runner, observer, and evaluator implementations are now installed,
-content-addressed, and passing their combined preflight and mutation gate. The
-focused source-gap scan is reconciled and changed interpretation boundaries but
-no endpoint, arm, threshold, or budget. The preregistration is not yet final
-because the exact setup commit must still be bound. Until that freeze commit
-exists, P1–P3 remain pending and no outcome execution is authorized.
+The runner, observer, and evaluator implementations are installed and
+content-addressed. The focused source-gap scan changed interpretation
+boundaries but no endpoint, arm, threshold, or budget. The first setup commit
+`0f259710c15ec1b4c982b878bef325f0c6712b02` exposed a final-state mutation that
+was no longer rejecting; it is preserved as a superseded pre-outcome attempt.
+A corrected setup commit must be bound before P1–P3 become preregistered.
 
 ## Non-claims
 

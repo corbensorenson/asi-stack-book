@@ -2,8 +2,7 @@
 
 Recorded: 2026-07-11
 
-State: implementations installed and outcomes unopened; setup commit binding
-pending
+State: corrected implementation pending a new setup commit; outcomes unopened
 
 The three active empirical programs now have executable, non-overwriting local
 runners. P1 and P2 use the pinned eligible Qwen3 4B MLX snapshot with local-only
@@ -46,14 +45,14 @@ token arithmetic, local-only runtime, role interfaces, overwrite/retry absence,
 P2 learned-feature boundary, P3 selection boundary, and outcome absence. Ten
 mutations are rejected.
 
-## Remaining freeze blockers
+## Corrected freeze blocker
 
-1. Commit this exact implementation state.
-2. Rebuild the manifest in final mode with that 40-character setup commit.
-3. Move the shared preregistration and P1–P3 machine states to
-   `frozen_before_outcome_runs` / `preregistered` in a later commit.
-4. Re-run the combined validator against the committed blobs and verify that
-   the setup commit contains none of the registered outcome paths.
+Commit `0f259710c15ec1b4c982b878bef325f0c6712b02` contains the first exact
+implementation state and none of the six registered outcome files. During the
+separate final binding, its commit-shape mutation ceased to reject because the
+manifest had legitimately entered final state. That setup authority is
+superseded before outcomes. The corrected validator must be committed, rebound,
+and passed in final state before M3 is permitted.
 
 ## Non-claims
 

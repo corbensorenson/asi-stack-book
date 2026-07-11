@@ -5,6 +5,7 @@
   "parent_input_commit": "52925c426",
   "setup_commit": null,
   "amendment_ref": "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
+  "setup_amendment_ref": "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
   "preregistration_ref": "experiments/post_v2_1_evidence_program/preregistration.json",
   "runtime_authority_ref": "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json",
   "source_gap_scan_ref": "docs/post_v2_1_focused_source_gap_scan.md",
@@ -35,15 +36,15 @@
     },
     {
       "path": "scripts/build_post_v2_1_setup_manifest.py",
-      "sha256": "c594c596ccdf5b6416a3bb10de0549d682b08c66b5cbc49abf44fc870d1d403d"
+      "sha256": "3dfff06a083f486b896f5121c26ca8c63523a4a534b081fe75f687a04687b68b"
     },
     {
       "path": "scripts/validate_post_v2_1_evidence_setup.py",
-      "sha256": "f73013038e1dad169f2ed65ef09ed3a6570b8a5349ffb773697e414a8e43ca24"
+      "sha256": "c0b287c28139b7abce4a4d44d52a9dc64e3182761a0912f8e5d84e1355c37ae1"
     },
     {
       "path": "schemas/post_v2_1_evidence_setup.schema.json",
-      "sha256": "dbccba905f97d1849ebb9485ec3f8725cd5b2ff29bcab1cbcb14279f99736e0f"
+      "sha256": "949b0e2ed3fcd64165c7f198c426314be960ada7bef210b4dd2a573f28e5f5c5"
     }
   ],
   "programs": [

@@ -87,6 +87,8 @@ def validate(data: dict, check_git: bool = True) -> list[str]:
         errors.append("setup launders support state")
     if manifest.get("parent_input_commit") != "52925c426" or manifest.get("amendment_ref") != f"{BASE}/amendments/preregistration_inputs_v1.json":
         errors.append("input-freeze lineage drifted")
+    if manifest.get("setup_amendment_ref") != f"{BASE}/amendments/setup_validator_v1.json":
+        errors.append("setup-validator amendment lineage drifted")
     if manifest.get("source_gap_scan_ref") != "docs/post_v2_1_focused_source_gap_scan.md" or prereg.get("source_gap_scan_ref") != manifest.get("source_gap_scan_ref"):
         errors.append("focused source-gap scan is not bound")
     state, setup_commit = manifest.get("state"), manifest.get("setup_commit")
@@ -147,7 +149,7 @@ def main() -> None:
             errors.append(f"preflight failed: {command}: {process.stdout}{process.stderr}")
     mutations = [
         "implementation digest", "program order", "P1 calls", "P2 calls", "P3 surface count",
-        "token budget", "observer collapse", "outcome guard", "support promotion", "premature setup commit",
+        "token budget", "observer collapse", "outcome guard", "support promotion", "setup commit shape",
     ]
     for name in mutations:
         mutant = copy.deepcopy(data)
@@ -160,7 +162,7 @@ def main() -> None:
         elif name == "observer collapse": mutant["manifest"]["role_interfaces"]["P1_effect_observer"] = "same proposer"
         elif name == "outcome guard": mutant["manifest"]["execution_guard"]["outcomes_must_be_absent_at_freeze"] = False
         elif name == "support promotion": mutant["manifest"]["support_state_effect"] = "promote"
-        elif name == "premature setup commit": mutant["manifest"]["setup_commit"] = "0" * 40
+        elif name == "setup commit shape": mutant["manifest"]["setup_commit"] = "0" * 39
         if not validate(mutant, check_git=False):
             errors.append(f"setup mutation accepted: {name}")
     if errors:
