@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-10 - Frozen real update-causality campaign
+
+- Froze a content-addressed 1,200-example nonlinear policy corpus with
+  independent 720/240/240 train/validation/test splits, 480 base-training
+  members, 240 update members, a 60-member poisoned deletion cohort, and 40
+  fixed held-out probes before update outcomes.
+- Registered three seeds and four exact arms: no update, bounded fine-tune,
+  regularized challenger, and deletion-aware retraining. The runner retains
+  best and final checkpoints, selects only by validation, records real parameter
+  deltas and output digests, measures forgetting/deletion/nonmember effects,
+  and verifies rollback plus descendant invalidation.
+- Added a setup schema and validator with six rejecting controls for identity
+  overlap, split drift, deletion erasure, probe leakage, test selection, and
+  missing no-update baseline. No campaign outcome is recorded by this setup.
+
 ## 2026-07-10 - Matched routing and deliberation outcomes
 
 - Executed all frozen test examples across three seeds: 900 routing decisions,

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_update_causality_corpus.schema.json",
+  "type": "object",
+  "required": ["schema_version", "corpus_id", "generation_seed", "frozen_before_update_outcomes", "split_counts", "train_role_counts", "deletion_cohort_count", "fixed_probe_count", "campaign_contract", "examples", "corpus_sha256"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_update_causality_corpus.v0"},
+    "corpus_id": {"type": "string"},
+    "generation_seed": {"const": 20260710},
+    "frozen_before_update_outcomes": {"const": true},
+    "split_counts": {"const": {"train": 720, "validation": 240, "test": 240}},
+    "train_role_counts": {"const": {"base_train": 480, "update": 240}},
+    "deletion_cohort_count": {"const": 60},
+    "fixed_probe_count": {"const": 40},
+    "campaign_contract": {"type": "object"},
+    "examples": {"type": "array", "minItems": 1200, "maxItems": 1200},
+    "corpus_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}
