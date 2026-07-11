@@ -2,18 +2,27 @@
 
 Last updated: 2026-07-01
 
+Status: completed historical v1.0 roadmap
+
+Active successor: `docs/post_v2_evidence_roadmap.md`
+
 This roadmap records the v1.0 release path for **The ASI Stack**. The current
 v1.0.0 release state is tagged at source commit
 `96d0ca3c6b62f3530202535573941b1f6e50a83d`, with a tracked living-book release
 record at `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`.
 
-For post-`v1.0.0` work, use `docs/v1_x_beyond_sota_roadmap.md` as the active
+For current work, use `docs/post_v2_evidence_roadmap.md` as the active
 execution target. This file remains the v1.0 release-path and gate-history
-record.
+record; `docs/v1_x_beyond_sota_roadmap.md` remains the historical post-v1
+technical backlog.
 
 The live AI/research book remains the canonical architecture, evidence, source, proof, schema, and release-control source. The normal reader manuscript can eventually become a curated parallel derivative source for prose, pacing, chapter flow, and human-consumption packaging. It is parallel but not equal: it may diverge from the live/research text for readability, but it must inherit claim text, support states, source boundaries, proof/test status, implementation horizons, and release records from the live book unless a deliberate reconciliation step updates both surfaces.
 
-Use this file as the v1.0 release-path record. Use `docs/v1_x_beyond_sota_roadmap.md` as the goal target for new long-running v1.x improvement work, `book_structure.json` for ordering, `docs/book_outline.md` for drafting/proof/source scope, and `docs/v1_0_focus_audit.md` for the historical current-state audit that led into v1.0.0.
+Use this file as the v1.0 release-path record. Use
+`docs/post_v2_evidence_roadmap.md` as the goal target for new long-running
+work, `book_structure.json` for ordering, `docs/book_outline.md` for
+drafting/proof/source scope, and `docs/v1_0_focus_audit.md` for the historical
+current-state audit that led into v1.0.0.
 
 ## Inputs Reconciled
 
@@ -129,7 +138,10 @@ to strengthen the claim.
 
 ## Phase 0 - Operating Discipline [v1.0-blocking]
 
-Status: active and ongoing. The initial validator-coverage meta-check is implemented in `scripts/validate_validator_coverage.py`, wired into `.github/workflows/publish.yml`, and called by `scripts/validate_book.py`.
+Historical status: active and ongoing during the v1.0 program; now completed
+and superseded by the post-v2 maintenance rules. The initial validator-coverage
+meta-check is implemented in `scripts/validate_validator_coverage.py`, wired
+into `.github/workflows/publish.yml`, and called by `scripts/validate_book.py`.
 
 Purpose: keep the repo honest while work continues.
 

@@ -2,8 +2,11 @@
 
 Last updated: 2026-07-10
 
-Status: active chapter-improvement roadmap; planning and source-routing only;
-no support-state promotion
+Status: completed historical incorporation roadmap; packet results and exact
+deferred conditions are preserved in
+`docs/historical_project_p2_p3_dispositions.json`
+
+Active successor: `docs/post_v2_evidence_roadmap.md`
 
 ## Outcome
 

@@ -2,12 +2,10 @@
 
 Last updated: 2026-07-10
 
-> **Execution authority:** `docs/asi_stack_completion_roadmap.md` is now the
-> canonical completion goal, workstream order, stop rule, and definition of
-> done. This document remains the detailed historical and technical backlog.
-> Where the two differ, the completion roadmap controls. In particular,
-> external-human review is deferred until after author-declared completion and
-> is not a prepublication gate.
+> **Historical backlog:** `docs/asi_stack_completion_roadmap.md` completed the
+> v2.0.0 program. `docs/post_v2_evidence_roadmap.md` is the active execution
+> authority. This document remains a detailed historical and technical backlog;
+> where it differs from the post-v2 roadmap, the post-v2 roadmap controls.
 
 This roadmap is the post-`v1.0.0` long-term plan for turning **The ASI
 Stack** from a tagged living-book release into a stronger evidence-and-reader
@@ -5077,10 +5075,10 @@ Immediate next three actions, in order:
 
 ## Suggested Long-Running Goal
 
-Use the canonical goal block in `docs/asi_stack_completion_roadmap.md` when it
-is time to start the next large autonomous work run. The text below is retained
-as historical detail and must not override the canonical workstream order,
-stop rules, or no-prepublication-external-review policy.
+Use the canonical goal block in `docs/post_v2_evidence_roadmap.md` when it is
+time to start the next large autonomous work run. The text below is retained
+as historical detail and must not override the post-v2 workstream order, stop
+rules, or no-required-external-review policy.
 
 2026-07-03 goal note: the Idea Depth clause below is read together with the
 dispatch table above. Do not redo the bounded governance-tax model; the next

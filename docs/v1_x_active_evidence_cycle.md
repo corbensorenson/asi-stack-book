@@ -2,6 +2,10 @@
 
 Last updated: 2026-07-09
 
+Status: completed historical evidence cycle
+
+Active successor: `docs/post_v2_evidence_roadmap.md`
+
 This ledger names the current v1.x evidence-cycle chapter lanes selected from
 `docs/per_chapter_evidence_plan.md`. It exists to enforce the lane cap: this
 cycle selects one flagship measured lane plus two direct support lanes and

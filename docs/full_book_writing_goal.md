@@ -1,14 +1,21 @@
 # Full Book Writing Goal Template
 
-Use this when starting or resuming a long-running goal to improve the whole book
-after the tagged v1.0.0 release. For the current next run, prefer the
-roadmap-driven v1.x goal in `docs/v1_0_roadmap.md`.
+Status: historical pre-v2 template. For current work, use the goal block in
+`docs/post_v2_evidence_roadmap.md`.
 
 ## Recommended Goal
 
-Run an extended end-to-end improvement pass on **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case** to advance the tagged v1.0.0 living-book baseline into a stronger v1.x release candidate while preserving the v1.0.0 former-title release record, source tag, claim boundaries, artifact boundaries, and DOI-pending state. The canonical current goal and finish line now live in `docs/asi_stack_completion_roadmap.md`; this older work plan is subordinate.
+The text below is the historical whole-book writing goal that preceded v2.0.0.
+The canonical current goal and finish line now live in
+`docs/post_v2_evidence_roadmap.md`; this older work plan is subordinate.
 
-Treat `docs/v1_0_roadmap.md` as the current execution roadmap, `docs/v1_0_focus_audit.md` as the current-state audit, `docs/book_outline.md` as the source of truth for parts, chapters, source queues, proof targets, and drafting jobs, and `book_structure.json` as the source of truth for part/chapter order, stable chapter IDs, and the first-build/mature-endpoint fields published into Appendix K, `Implementation Horizons`. Use the `asi-stack-book` skill and follow the living-book workflow.
+Treat `docs/post_v2_evidence_roadmap.md` as the current execution roadmap,
+`docs/v1_0_focus_audit.md` as historical context, `docs/book_outline.md` as the
+source of truth for parts, chapters, source queues, proof targets, and drafting
+jobs, and `book_structure.json` as the source of truth for part/chapter order,
+stable chapter IDs, and the first-build/mature-endpoint fields published into
+Appendix K, `Implementation Horizons`. Use the `asi-stack-book` skill and
+follow the living-book workflow.
 
 For every chapter in scope, produce cohesive systems-architecture prose rather than a paper-by-paper anthology. Preserve the required chapter contract: problem, insufficiency of existing approaches, core claim, mechanism, interfaces, invariants, failure modes, minimum viable implementation, beyond-state-of-the-art end state, Codex test plan, source crosswalk, and summary. The minimum viable implementation must name the smallest honest artifact or validated slice that can start the idea without promoting the chapter claim. The beyond-SOTA section must name the mature product-level logical conclusion without claiming it already exists: final product surface, operational contract, evidence flow, governance boundary, failure closure, and composition with the rest of the stack. Mine the assigned source notes and available raw/cache/connector sources before making source-derived claims. Create missing source notes when a chapter depends on a source that has not yet been mined.
 

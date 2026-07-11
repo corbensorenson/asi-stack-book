@@ -1,6 +1,7 @@
 # External AI Review Remediation Program
 
-Status: coherence remediation release completed 2026-07-10; remaining book-depth work is governed by `docs/asi_stack_completion_roadmap.md`.
+Status: remediation program completed 2026-07-10; current evidence work is
+governed by `docs/post_v2_evidence_roadmap.md`.
 
 This document converts a user-supplied, browser-assisted ChatGPT review into a
 bounded remediation program. The review is useful review input. It is not an

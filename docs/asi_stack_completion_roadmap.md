@@ -4,7 +4,9 @@ Roadmap ID: `asi-stack-completion-2026-07-10`
 
 Authority: Corben Sorenson
 
-Status: active canonical completion goal
+Status: completed historical v2.0.0 roadmap
+
+Active successor: `docs/post_v2_evidence_roadmap.md`
 
 Supersedes for execution priority: the open-ended sequencing in
 `docs/v1_x_beyond_sota_roadmap.md`
@@ -30,8 +32,8 @@ Preserves as subordinate workstreams:
 > exit criterion in this roadmap is either passed or explicitly rejected with a
 > durable reason.
 
-This paragraph is the canonical long-running goal. Later task prompts should
-point here rather than copy and gradually mutate it.
+This paragraph is the preserved historical goal that governed v2.0.0. New
+post-v2 task prompts should point to `docs/post_v2_evidence_roadmap.md`.
 
 ## Product decision
 
