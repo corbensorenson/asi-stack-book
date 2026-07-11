@@ -14,8 +14,8 @@
         "internal_only": 54
       },
       "reproducibility": {
-        "adjacent_local_replay": 19,
-        "not_demonstrated_for_claim": 35
+        "adjacent_local_replay": 25,
+        "not_demonstrated_for_claim": 29
       },
       "recency": {
         "repository_snapshot_current": 54
@@ -24,8 +24,8 @@
         "claim_scope_unmeasured": 54
       },
       "adversarial_strength": {
-        "adjacent_bounded_controls": 19,
-        "not_demonstrated_for_claim": 35
+        "adjacent_bounded_controls": 25,
+        "not_demonstrated_for_claim": 29
       },
       "validity": {
         "not_independently_assessed": 54
@@ -1713,9 +1713,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1738,8 +1739,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Safety-critical Lean plus Theseus self-evolution gate; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Safety-critical Lean/Theseus gates plus post-v2 real checkpoint mutation, exact rollback, and descendant invalidation at the transaction boundary; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1749,9 +1751,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1788,6 +1791,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1830,9 +1834,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1855,8 +1860,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Source-noted POET, FunSearch, Voyager, and local campaign-governance sources plus a finite admission boundary; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Open-ended-improvement sources plus the post-v2 fixed stopped four-arm mutation campaign; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1866,9 +1872,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1905,6 +1912,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1947,9 +1955,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1972,8 +1981,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Command-contract fixtures plus Lean semantic-interface crosswalk; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Command-contract fixtures, Lean semantic-interface crosswalk, and the post-v2 model-generated governed-work replay; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -1983,9 +1993,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -2022,6 +2033,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -3015,6 +3027,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -3045,8 +3058,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Artifact graph replay harness plus Theseus report; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Artifact graph harnesses, Theseus reports, and post-v2 content-addressed model/worktree route replays; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -3067,6 +3081,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -3111,6 +3126,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -3531,6 +3547,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/routing_deliberation_no_change.json",
             "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -3554,8 +3571,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Routing harness plus MoE literature and folded MoECOT runtime crosswalk; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Routing harness, MoE/MoECOT crosswalk, and post-v2 three-seed held-out specialist/generalist comparison; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/routing_deliberation_no_change.json",
             "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -3569,6 +3587,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/routing_deliberation_no_change.json",
             "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -3606,6 +3625,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/routing_deliberation_no_change.json",
             "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4141,9 +4161,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/routing_deliberation_no_change.json",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4166,8 +4187,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Source-noted test-time search, compute-allocation, reasoning-RL, and early-exit comparators plus finite admission routing; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Test-time-compute sources plus post-v2 adaptive/fixed/no-deliberation comparison with first/last hits and extra-compute harm; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/routing_deliberation_no_change.json",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4177,9 +4199,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/routing_deliberation_no_change.json",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4216,6 +4239,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/routing_deliberation_no_change.json",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -4386,6 +4410,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4418,8 +4443,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Costed-route slice, deterministic resource-workflow trace, resource-budget ledger, folded simulation harness, and external verification baselines; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Costed-route/resource fixtures plus post-v2 wall-time, token, candidate-operation, usefulness, harm, and governance-tax measurements; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4442,6 +4468,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4488,6 +4515,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -5653,9 +5681,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5678,8 +5707,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Policy-optimization fixtures plus external RLHF/RL literature; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Policy-optimization fixtures/literature plus post-v2 three-seed real parameter/checkpoint/output-causality campaign; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5689,9 +5719,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5728,6 +5759,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5770,9 +5802,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5795,8 +5828,9 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Public-safe data-admission receipt plus source-noted unlearning and synthetic-data literature; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Data-admission/unlearning sources plus post-v2 real checkpoint mutation, poisoned-cohort exclusion, forgetting, and rollback campaign; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5806,9 +5840,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -5845,6 +5880,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2/update_causality_no_change.json",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"

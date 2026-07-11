@@ -4,7 +4,8 @@ Roadmap ID: `asi-stack-post-v2-evidence-2026-07-10`
 
 Authority: Corben Sorenson
 
-Status: active canonical post-v2 execution roadmap
+Status: active canonical post-v2 execution roadmap; all empirical priorities
+complete, reconciliation and release gate in progress
 
 Predecessor: `docs/asi_stack_completion_roadmap.md`, completed for v2.0.0 and
 retained as immutable release history
@@ -73,6 +74,21 @@ model runtime, workloads, matched baselines, arms, metrics, controls, stop
 rules, allowed dispositions, and conditional deferrals. Changing those fields
 after an outcome is visible requires a versioned amendment that preserves the
 original record.
+
+## Execution status
+
+| Priority | State | Accepted result | Core disposition |
+|---|---|---|---|
+| Realistic governed work | complete | `experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json` | Three `no_change` decisions; zero core support movement. |
+| Routing and deliberation | complete | `experiments/post_v2_routing_deliberation/results/2026-07-10-local.json` | Two independent `no_change` decisions; zero core support movement. |
+| Real update causality | complete | `experiments/post_v2_update_causality/results/2026-07-10-local.json` | Four `no_change` decisions; zero core support movement. |
+
+The nine decisions are consolidated in
+`claim_decisions/post_v2_empirical_dispositions.json`. Three accepted non-core
+`blocks_promotion` transition records preserve the bounded evidence and its
+negative results without laundering it into chapter-core support. The
+hardware-custody, federation, and Circle/Coil model-quality lanes remain
+deferred because their activation conditions are still absent.
 
 ## Priority 1 — Realistic governed-work flagship
 

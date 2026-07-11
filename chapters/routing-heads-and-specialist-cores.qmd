@@ -360,6 +360,22 @@ These proof hooks are implemented as finite-record predicates plus negative-case
 
 The routing sources support specialist selection, lifecycle state, residual-aware fallback, operator-visible control, and a runtime evidence-packet crosswalk. The folded MoECOT mappings now point to reviewed source notes and connector extracts, but they still do not claim local routing accuracy, runtime safety, replay correctness, benchmark reproduction, or MoECOT execution.
 
+## Post-v2 matched routing result
+
+The frozen 300-example routing/deliberation program trained a multinomial
+router only on the 180-example training split and evaluated 60 held-out tasks
+at three seeds. Across 180 seeded decisions, oracle, learned, rule, and
+fallback/abstention routes each produced 162 correct answers; the single
+general specialist produced 130. Every route used the registered
+two-operation budget, and wrong-specialist counterfactuals were retained.
+
+The equality among oracle, learned, and rule routing is a limitation, not a
+victory: request features made this corpus too separable, and fallback and
+abstention activated zero times. The experiment therefore does not establish
+fallback calibration, model-scale routing, trained-specialist interference,
+or production transfer. `routing-heads-and-specialist-cores.core` remains
+`argument` through an independent `no_change` disposition.
+
 ## Summary
 
 Routing makes modular intelligence governable only when it is recorded as a bounded decision. The head selects; the specialist acts within a local envelope; evidence updates readiness; residuals become future pressure. The folded MoECOT material adds the runtime packet shape that a concrete orchestrator would need to emit. The present evidence stops before route quality and runtime behavior: the sources, fixtures, Lean predicates, readiness/residual harness, and route-lease harness define the decision surface, while local router runs, specialist-selection benchmarks, MoECOT replay packets, residual-routing traces, and safety evaluations remain future work.

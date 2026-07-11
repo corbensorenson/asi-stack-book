@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_governed_work_result.schema.json",
+  "title": "Post-v2 Governed-Work Flagship Result",
   "type": "object",
   "required": ["schema_version", "program_id", "recorded_date", "execution_state", "preregistration_ref", "amendment_ref", "task_corpus_ref", "task_corpus_sha256", "environment", "run_count", "runs", "summary", "claim_dispositions", "support_state_effect", "non_claims", "bundle_sha256"],
   "properties": {

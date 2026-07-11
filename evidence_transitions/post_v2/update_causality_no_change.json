@@ -1,0 +1,117 @@
+{
+  "transition_id": "post_v2.update_causality.no_change",
+  "claim_id": "post_v2_update_causality.bounded_real_mutation_result",
+  "claim_surface_refs": [
+    "docs/post_v2_update_causality.md",
+    "chapters/data-engines-continual-learning-and-unlearning.qmd",
+    "chapters/policy-optimization-and-learning-from-feedback.qmd",
+    "chapters/open-ended-improvement-engines.qmd",
+    "chapters/recursive-self-improvement-boundaries.qmd",
+    "docs/post_v2_evidence_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+    "scripts/validate_post_v2_update_causality.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Three seeds and four arms establish real local parameter/checkpoint/output causality, best/final authority, forgetting, deletion-cohort differences, rollback identity, and descendant invalidation, while modest utility and synthetic scope block production learning, unlearning, open-ended improvement, or recursive-improvement claims.",
+  "evidence_roles": [
+    "bounded_local_experiment",
+    "matched_baseline",
+    "negative_result_archive",
+    "content_addressed_result",
+    "no_core_promotion_boundary"
+  ],
+  "transition_reason": "Three seeds and four arms establish real local parameter/checkpoint/output causality, best/final authority, forgetting, deletion-cohort differences, rollback identity, and descendant invalidation, while modest utility and synthetic scope block production learning, unlearning, open-ended improvement, or recursive-improvement claims.",
+  "required_artifacts": [
+    "production-scale continual-learning and feedback-update traces",
+    "verified deletion propagation across descendants and storage",
+    "independent evaluator and privacy assessment",
+    "deployed canary, rollback, invalidation, and monitor evidence",
+    "open-ended or recursive campaign evidence if those claims are pursued"
+  ],
+  "artifact_refs": [
+    "docs/post_v2_update_causality.md",
+    "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+    "scripts/validate_post_v2_update_causality.py"
+  ],
+  "evidence_packet_refs": [
+    "chapters/data-engines-continual-learning-and-unlearning.qmd",
+    "chapters/policy-optimization-and-learning-from-feedback.qmd",
+    "chapters/open-ended-improvement-engines.qmd",
+    "chapters/recursive-self-improvement-boundaries.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_before_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_after_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "adjacent local replay added",
+    "adversarial_strength": "adjacent bounded controls added",
+    "validity": "still internally assessed",
+    "transfer_distance": "still not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#data-engines-continual-learning-and-unlearning.core",
+    "appendices/C_claim_evidence_matrix.qmd#policy-optimization-and-learning-from-feedback.core",
+    "appendices/C_claim_evidence_matrix.qmd#open-ended-improvement-engines.core",
+    "appendices/C_claim_evidence_matrix.qmd#recursive-self-improvement-boundaries.core"
+  ],
+  "verification_command": "python3 scripts/validate_post_v2_update_causality.py && python3 scripts/validate_post_v2_empirical_reconciliation.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "challenger utility gains were modest and seed-sensitive",
+    "bounded and regularized updates reduced retained-base accuracy on average",
+    "best and final challenger checkpoints disagreed on 62 test decisions",
+    "deletion-aware retraining does not prove storage erasure or verified forgetting"
+  ],
+  "negative_evidence_refs": [
+    "docs/post_v2_update_causality.md",
+    "experiments/post_v2_update_causality/results/2026-07-10-local.json"
+  ],
+  "downgrade_triggers": [
+    "result validator failure",
+    "raw artifact or checkpoint digest mismatch",
+    "negative result erased",
+    "core support promoted without a separate accepted upward transition",
+    "bounded local result described as production or open-world evidence"
+  ],
+  "promotion_burden": "production-scale continual-learning and feedback-update traces; verified deletion propagation across descendants and storage; independent evaluator and privacy assessment; deployed canary, rollback, invalidation, and monitor evidence; open-ended or recursive campaign evidence if those claims are pursued",
+  "limitations": [
+    "small synthetic policy network",
+    "poisoned-cohort exclusion is not production unlearning",
+    "no human or model feedback",
+    "fixed stopped campaign is not open-ended",
+    "rollback covers recorded checkpoints only",
+    "no recursive self-proposed update"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2 empirical cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "production-scale continual-learning and feedback-update traces",
+    "verified deletion propagation across descendants and storage",
+    "independent evaluator and privacy assessment",
+    "deployed canary, rollback, invalidation, and monitor evidence",
+    "open-ended or recursive campaign evidence if those claims are pursued"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-10---post-v2-empirical-reconciliation",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any affected chapter-core claim above argument",
+    "does not establish production transfer, external independence, open-world safety, or ASI capability",
+    "does not promote data-engines-continual-learning-and-unlearning.core",
+    "does not promote policy-optimization-and-learning-from-feedback.core",
+    "does not promote open-ended-improvement-engines.core",
+    "does not promote recursive-self-improvement-boundaries.core"
+  ]
+}

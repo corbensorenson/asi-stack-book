@@ -363,6 +363,23 @@ formalization remains a bounded control-plane boundary.
 | `theseus_synthetic_data_curation` | Source-reported curation gates for residual-targeted synthetic data. | No curator execution, dataset import, model-quality result, or promoted Theseus claim. |
 | `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026` | Interoperable derivation/invalidation and machine-readable dataset/resource/field metadata for training, evaluation, synthetic, and deletion records. | No local conformance, dataset fitness, legal clearance, representativeness, deletion, or safe continual-learning result. |
 
+## Post-v2 update and deletion result
+
+The update-causality campaign trains real small PyTorch policy networks across
+three seeds. It preserves zero-delta no-update checkpoints, three mutated
+challenger families, independent validation/test splits, 40 fixed probes, a
+60-member poisoned deletion cohort, best and final checkpoints, forgetting,
+nonmember utility, deletion responses, rollback, and descendant invalidation.
+Deletion-aware retraining excluded the cohort and reached mean true-label
+accuracy 0.8222 on its members versus 0.7944 for final bounded fine-tuning and
+0.7833 for the base.
+
+That difference is causal evidence about this frozen cohort, not verified
+forgetting. It does not show that member influence, stored rows, caches,
+backups, adapters, or derived artifacts were erased. The core claim remains
+`argument` via `no_change`; production unlearning and deletion propagation
+remain open.
+
 ## Summary
 
 A system that learns without a data lifecycle gradually loses the ability to

@@ -309,6 +309,22 @@ independent human and domain-specific review.
 | `ext_s_grpo_2025` | S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models | Comparator for reasoning-stop policy and early-exit tradeoffs; not evidence that shorter reasoning is adequate. |
 | `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026` | Shared-weight recurrence and complexity-controlled adaptive compute | Comparators for per-position halting, allocation timing, and the negative boundary that difficulty-aligned compute need not yield algorithmic generalization or local reasoning improvement. |
 
+## Post-v2 matched deliberation result
+
+On the same held-out workload and three seeds, adaptive verifier stopping
+produced 179/180 correct final answers in 236 candidate operations. Fixed
+three-step deliberation produced 154/180 in 540 operations and made 15 answers
+wrong after the first candidate had been correct. No deliberation produced
+130/180 in 180 operations. The record preserves first and last correct steps,
+stop reasons, branch credit, dissent, answer changes, verifier identity, and
+the one adaptive case that exhausted its budget without a verified candidate.
+
+This supports a bounded lesson—more computation can harm, and verifier-gated
+stopping can dominate fixed extra work on a known task family—but the verifier
+is deterministic task recomputation and candidates are not language-model
+reasoning traces. The core claim remains `argument` via `no_change`, separately
+from the routing disposition.
+
 ## Summary
 
 Deliberation is valuable when it creates a better bounded candidate, not when it

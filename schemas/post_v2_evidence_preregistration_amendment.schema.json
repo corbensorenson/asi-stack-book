@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_evidence_preregistration_amendment.schema.json",
+  "title": "Post-v2 Evidence Preregistration Amendment",
   "type": "object",
   "required": ["schema_version", "amendment_id", "recorded_date", "state", "program_id", "original_preregistration_ref", "preserved_pilot_ref", "reason", "unchanged_fields", "amended_protocol", "stop_rule", "pilot_support_state_effect"],
   "properties": {

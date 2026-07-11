@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_governed_work_tasks.schema.json",
+  "title": "Post-v2 Governed-Work Task Corpus",
   "type": "object",
   "required": ["schema_version", "corpus_id", "frozen_before_generation", "task_count", "public_safety_boundary", "tasks"],
   "properties": {

@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_update_causality_corpus.schema.json",
+  "title": "Post-v2 Update-Causality Corpus",
   "type": "object",
   "required": ["schema_version", "corpus_id", "generation_seed", "frozen_before_update_outcomes", "split_counts", "train_role_counts", "deletion_cohort_count", "fixed_probe_count", "campaign_contract", "examples", "corpus_sha256"],
   "properties": {

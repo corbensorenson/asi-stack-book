@@ -1,0 +1,106 @@
+{
+  "transition_id": "post_v2.routing_deliberation.no_change",
+  "claim_id": "post_v2_routing_deliberation.bounded_matched_local_result",
+  "claim_surface_refs": [
+    "docs/post_v2_routing_deliberation.md",
+    "chapters/routing-heads-and-specialist-cores.qmd",
+    "chapters/governed-deliberation-and-test-time-scaling.qmd",
+    "docs/post_v2_evidence_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+    "scripts/validate_post_v2_routing_deliberation.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "The frozen three-seed held-out study measures specialist routing, generalist baselines, matched operation caps, adaptive/fixed/no-deliberation arms, and extra-compute harm, while route separability and zero fallback activation block broader routing claims and deterministic verification blocks model-scale deliberation claims.",
+  "evidence_roles": [
+    "bounded_local_experiment",
+    "matched_baseline",
+    "negative_result_archive",
+    "content_addressed_result",
+    "no_core_promotion_boundary"
+  ],
+  "transition_reason": "The frozen three-seed held-out study measures specialist routing, generalist baselines, matched operation caps, adaptive/fixed/no-deliberation arms, and extra-compute harm, while route separability and zero fallback activation block broader routing claims and deterministic verification blocks model-scale deliberation claims.",
+  "required_artifacts": [
+    "harder ambiguous routing workload with exercised fallback and abstention",
+    "trained specialists and interference measurements",
+    "language-model deliberation with independent verifier-quality assessment",
+    "production latency, cost, safety, and transfer evidence"
+  ],
+  "artifact_refs": [
+    "docs/post_v2_routing_deliberation.md",
+    "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+    "scripts/validate_post_v2_routing_deliberation.py"
+  ],
+  "evidence_packet_refs": [
+    "chapters/routing-heads-and-specialist-cores.qmd",
+    "chapters/governed-deliberation-and-test-time-scaling.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_before_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_after_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "adjacent local replay added",
+    "adversarial_strength": "adjacent bounded controls added",
+    "validity": "still internally assessed",
+    "transfer_distance": "still not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#routing-heads-and-specialist-cores.core",
+    "appendices/C_claim_evidence_matrix.qmd#governed-deliberation-and-test-time-scaling.core"
+  ],
+  "verification_command": "python3 scripts/validate_post_v2_routing_deliberation.py && python3 scripts/validate_post_v2_empirical_reconciliation.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "fallback and abstention activated zero times",
+    "oracle, learned, and rule routing were indistinguishable on an overly separable corpus",
+    "fixed three-step deliberation harmed 15 initially correct answers",
+    "one adaptive case exhausted its budget without a verified candidate"
+  ],
+  "negative_evidence_refs": [
+    "docs/post_v2_routing_deliberation.md",
+    "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json"
+  ],
+  "downgrade_triggers": [
+    "result validator failure",
+    "raw artifact or checkpoint digest mismatch",
+    "negative result erased",
+    "core support promoted without a separate accepted upward transition",
+    "bounded local result described as production or open-world evidence"
+  ],
+  "promotion_burden": "harder ambiguous routing workload with exercised fallback and abstention; trained specialists and interference measurements; language-model deliberation with independent verifier-quality assessment; production latency, cost, safety, and transfer evidence",
+  "limitations": [
+    "synthetic four-family workload",
+    "deterministic specialists and task verifier",
+    "no language-model reasoning traces",
+    "no trained-specialist interference or production fallback calibration",
+    "no model-scale transfer"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2 empirical cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "harder ambiguous routing workload with exercised fallback and abstention",
+    "trained specialists and interference measurements",
+    "language-model deliberation with independent verifier-quality assessment",
+    "production latency, cost, safety, and transfer evidence"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-10---post-v2-empirical-reconciliation",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any affected chapter-core claim above argument",
+    "does not establish production transfer, external independence, open-world safety, or ASI capability",
+    "does not promote routing-heads-and-specialist-cores.core",
+    "does not promote governed-deliberation-and-test-time-scaling.core"
+  ]
+}

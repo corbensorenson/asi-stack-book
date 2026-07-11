@@ -1012,7 +1012,45 @@
     "schemas/post_v2_evidence_preregistration.schema.json",
     "experiments/post_v2_evidence_program/preregistration.json",
     "docs/post_v2_evidence_preregistration.md",
-    "scripts/validate_post_v2_evidence_preregistration.py"
+    "scripts/validate_post_v2_evidence_preregistration.py",
+    "experiments/post_v2_governed_work_flagship/tasks.json",
+    "experiments/post_v2_evidence_program/amendments/governed_work_v1.json",
+    "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/result.json",
+    "schemas/post_v2_governed_work_tasks.schema.json",
+    "schemas/post_v2_evidence_preregistration_amendment.schema.json",
+    "scripts/run_post_v2_governed_work_flagship.py",
+    "scripts/post_v2_governed_work_observer.py",
+    "scripts/validate_post_v2_governed_work_setup.py",
+    "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+    "experiments/post_v2_governed_work_flagship/artifacts/model_outputs",
+    "schemas/post_v2_governed_work_result.schema.json",
+    "docs/post_v2_governed_work_flagship.md",
+    "scripts/validate_post_v2_governed_work_flagship.py",
+    "experiments/post_v2_routing_deliberation/input/corpus.json",
+    "schemas/post_v2_routing_deliberation_corpus.schema.json",
+    "scripts/run_post_v2_routing_deliberation.py",
+    "scripts/validate_post_v2_routing_deliberation_setup.py",
+    "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+    "schemas/post_v2_routing_deliberation_result.schema.json",
+    "docs/post_v2_routing_deliberation.md",
+    "scripts/validate_post_v2_routing_deliberation.py",
+    "experiments/post_v2_update_causality/input/corpus.json",
+    "schemas/post_v2_update_causality_corpus.schema.json",
+    "scripts/run_post_v2_update_causality.py",
+    "scripts/validate_post_v2_update_causality_setup.py",
+    "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+    "experiments/post_v2_update_causality/checkpoints",
+    "schemas/post_v2_update_causality_result.schema.json",
+    "docs/post_v2_update_causality.md",
+    "scripts/validate_post_v2_update_causality.py",
+    "claim_decisions/post_v2_empirical_dispositions.json",
+    "schemas/post_v2_empirical_dispositions.schema.json",
+    "evidence_transitions/post_v2",
+    "docs/post_v2_empirical_reconciliation.md",
+    "docs/post_v2_residual_ledger.md",
+    "docs/post_v2_evidence_roadmap.md",
+    "docs/per_chapter_evidence_plan.md",
+    "scripts/validate_post_v2_empirical_reconciliation.py"
   ],
   "units": [
     {
@@ -5425,9 +5463,32 @@
       "claim_scope": "Roadmap decision completeness for the thirteen P2/P3 historical-project packets.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "A disposition does not prove chapter claims, historical-project behavior, empirical adequacy, safety, or implementation completeness.",
-      "input_artifacts": ["docs/historical_project_p2_p3_dispositions.json", "docs/historical_project_p2_p3_dispositions.md", "docs/historical_project_incorporation_roadmap.md", "scripts/validate_historical_project_dispositions.py"],
-      "output_assertions": ["thirteen packet IDs exact", "P2/P3 only", "owner explicit", "completed deferred or superseded", "concrete reason", "reopen condition", "evidence route", "roadmap presence", "readable definitions", "no support promotion"],
-      "negative_control_cases": ["missing packet", "duplicate packet", "invalid status", "owner drift", "missing blocker", "support promotion"],
+      "input_artifacts": [
+        "docs/historical_project_p2_p3_dispositions.json",
+        "docs/historical_project_p2_p3_dispositions.md",
+        "docs/historical_project_incorporation_roadmap.md",
+        "scripts/validate_historical_project_dispositions.py"
+      ],
+      "output_assertions": [
+        "thirteen packet IDs exact",
+        "P2/P3 only",
+        "owner explicit",
+        "completed deferred or superseded",
+        "concrete reason",
+        "reopen condition",
+        "evidence route",
+        "roadmap presence",
+        "readable definitions",
+        "no support promotion"
+      ],
+      "negative_control_cases": [
+        "missing packet",
+        "duplicate packet",
+        "invalid status",
+        "owner drift",
+        "missing blocker",
+        "support promotion"
+      ],
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
@@ -5443,9 +5504,35 @@
       "claim_scope": "Structural and bounded semantic completeness of active chapter packet surfaces.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "A complete packet surface does not prove prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.",
-      "input_artifacts": ["book_structure.json", "chapters", "docs/chapter_packet_contract_audit.md", "scripts/validate_chapter_packet_contract.py"],
-      "output_assertions": ["54 chapters exact", "required headings", "problem and insufficiency", "core claim", "mechanism interfaces invariants failures", "objection route", "authority state lifecycle boundary", "source proof test routes", "Mermaid visual", "weakening condition", "substantive handoff"],
-      "negative_control_cases": ["missing heading", "thin manifest field", "missing objection route", "missing source route", "missing proof/test route", "missing diagram", "thin handoff", "stale report"],
+      "input_artifacts": [
+        "book_structure.json",
+        "chapters",
+        "docs/chapter_packet_contract_audit.md",
+        "scripts/validate_chapter_packet_contract.py"
+      ],
+      "output_assertions": [
+        "54 chapters exact",
+        "required headings",
+        "problem and insufficiency",
+        "core claim",
+        "mechanism interfaces invariants failures",
+        "objection route",
+        "authority state lifecycle boundary",
+        "source proof test routes",
+        "Mermaid visual",
+        "weakening condition",
+        "substantive handoff"
+      ],
+      "negative_control_cases": [
+        "missing heading",
+        "thin manifest field",
+        "missing objection route",
+        "missing source route",
+        "missing proof/test route",
+        "missing diagram",
+        "thin handoff",
+        "stale report"
+      ],
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
@@ -5461,9 +5548,26 @@
       "claim_scope": "Ownership and status discipline for the public glossary's working architectural terms.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Terminology ownership does not prove novelty, source truth, mechanism validity, implementation, or support.",
-      "input_artifacts": ["appendices/B_glossary.qmd", "book_structure.json", "scripts/validate_terminology_ownership.py"],
-      "output_assertions": ["unique terms", "active chapter owner", "substantive definition", "no provisional status", "lineage label explicit", "coverage retained"],
-      "negative_control_cases": ["duplicate term", "inactive owner", "thin definition", "provisional status", "hidden lineage label"],
+      "input_artifacts": [
+        "appendices/B_glossary.qmd",
+        "book_structure.json",
+        "scripts/validate_terminology_ownership.py"
+      ],
+      "output_assertions": [
+        "unique terms",
+        "active chapter owner",
+        "substantive definition",
+        "no provisional status",
+        "lineage label explicit",
+        "coverage retained"
+      ],
+      "negative_control_cases": [
+        "duplicate term",
+        "inactive owner",
+        "thin definition",
+        "provisional status",
+        "hidden lineage label"
+      ],
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
@@ -5479,9 +5583,42 @@
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
-      "input_artifacts": ["experiments/governed_repository_change_slice/results/2026-07-10-local.json", "experiments/governed_trace_invariants/results/2026-07-10-local.json", "claim_decisions/v1_x_core_claim_dispositions.json", "proofs/proof_manifest.json", "docs/proof_adequacy_review.md", "docs/proof_artifact_audit.md", "sources/source_inventory.json", "book_structure.json", "docs/time_sensitive_source_refresh_2026_07_10.md", "docs/workstreams_d_e_f_closure_audit.md", "scripts/validate_workstreams_d_e_f_closure.py"],
-      "output_assertions": ["nine scenarios and eight attacks", "matched governance benefit and tax", "rollback and residual honesty", "five invariants and four mutations", "54 no-promotion-aware core dispositions", "225 proof targets", "adequacy classes and zero audit errors", "latest released MCP/A2A routing", "volatile-source boundaries", "no support promotion"],
-      "negative_control_cases": ["metric drift", "hidden governance tax", "invariant failure", "residual erasure", "core promotion", "proof-count drift", "missing adequacy class", "stale protocol routing", "release candidate called released"],
+      "input_artifacts": [
+        "experiments/governed_repository_change_slice/results/2026-07-10-local.json",
+        "experiments/governed_trace_invariants/results/2026-07-10-local.json",
+        "claim_decisions/v1_x_core_claim_dispositions.json",
+        "proofs/proof_manifest.json",
+        "docs/proof_adequacy_review.md",
+        "docs/proof_artifact_audit.md",
+        "sources/source_inventory.json",
+        "book_structure.json",
+        "docs/time_sensitive_source_refresh_2026_07_10.md",
+        "docs/workstreams_d_e_f_closure_audit.md",
+        "scripts/validate_workstreams_d_e_f_closure.py"
+      ],
+      "output_assertions": [
+        "nine scenarios and eight attacks",
+        "matched governance benefit and tax",
+        "rollback and residual honesty",
+        "five invariants and four mutations",
+        "54 no-promotion-aware core dispositions",
+        "225 proof targets",
+        "adequacy classes and zero audit errors",
+        "latest released MCP/A2A routing",
+        "volatile-source boundaries",
+        "no support promotion"
+      ],
+      "negative_control_cases": [
+        "metric drift",
+        "hidden governance tax",
+        "invariant failure",
+        "residual erasure",
+        "core promotion",
+        "proof-count drift",
+        "missing adequacy class",
+        "stale protocol routing",
+        "release candidate called released"
+      ],
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
@@ -5497,9 +5634,37 @@
       "claim_scope": "Internal record-level rights routing and selected-format control for the v2.0.0 candidate.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Internal rights routing is not legal advice, third-party clearance, trademark permission, endorsement, privacy/publicity clearance, or a grant for excluded/untagged/later files.",
-      "input_artifacts": ["licensing/provenance_inventory.json", "licensing/final_release_rights_routing.json", "licenses/CC-BY-4.0.txt", "licenses/Apache-2.0.txt", "LICENSE.md", "NOTICE.md", "docs/v2_0_release_scope.md", "scripts/build_final_release_rights_routing.py", "scripts/validate_final_release_rights_routing.py"],
-      "output_assertions": ["every inventoried path exactly once", "CC Apache or excluded only", "zero unresolved", "official normalized legal-text digests", "mixed/imported/source/derivative exclusion", "author-classified grant lanes", "conditional tag boundary", "HTML-only scope"],
-      "negative_control_cases": ["missing route", "duplicate route", "unknown route", "license-text self grant", "mixed source grant", "unowned Apache/CC grant", "legal-text digest drift", "format overclaim"],
+      "input_artifacts": [
+        "licensing/provenance_inventory.json",
+        "licensing/final_release_rights_routing.json",
+        "licenses/CC-BY-4.0.txt",
+        "licenses/Apache-2.0.txt",
+        "LICENSE.md",
+        "NOTICE.md",
+        "docs/v2_0_release_scope.md",
+        "scripts/build_final_release_rights_routing.py",
+        "scripts/validate_final_release_rights_routing.py"
+      ],
+      "output_assertions": [
+        "every inventoried path exactly once",
+        "CC Apache or excluded only",
+        "zero unresolved",
+        "official normalized legal-text digests",
+        "mixed/imported/source/derivative exclusion",
+        "author-classified grant lanes",
+        "conditional tag boundary",
+        "HTML-only scope"
+      ],
+      "negative_control_cases": [
+        "missing route",
+        "duplicate route",
+        "unknown route",
+        "license-text self grant",
+        "mixed source grant",
+        "unowned Apache/CC grant",
+        "legal-text digest drift",
+        "format overclaim"
+      ],
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
@@ -5542,11 +5707,254 @@
       ],
       "contract_precision": "class_level",
       "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_governed_work_setup:262",
+      "order": 262,
+      "script": "validate_post_v2_governed_work_setup.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "schema_or_structure",
+      "input_contract": "Frozen governed-work corpus, amendment, pilot boundary, pinned model, plan-to-code protocol, fresh Git worktree semantics, and setup mutations.",
+      "output_contract": "Reject task/attack/split drift, holdout leakage, mutable model or seeds, pilot promotion, or removal of real-worktree/plan surfaces.",
+      "claim_scope": "Pre-outcome protocol integrity for the realistic governed-work flagship.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Setup validity does not establish any outcome, model quality, safety, transfer, or support movement.",
+      "input_artifacts": [
+        "experiments/post_v2_governed_work_flagship/tasks.json",
+        "experiments/post_v2_evidence_program/amendments/governed_work_v1.json",
+        "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/result.json",
+        "schemas/post_v2_governed_work_tasks.schema.json",
+        "schemas/post_v2_evidence_preregistration_amendment.schema.json",
+        "scripts/run_post_v2_governed_work_flagship.py",
+        "scripts/post_v2_governed_work_observer.py",
+        "scripts/validate_post_v2_governed_work_setup.py"
+      ],
+      "output_assertions": [
+        "frozen scope",
+        "complete registered runs",
+        "negative outcomes retained",
+        "no chapter-core support movement"
+      ],
+      "negative_control_cases": [
+        "scope drift",
+        "result erasure",
+        "false promotion",
+        "boundary laundering"
+      ],
+      "contract_precision": "class_level",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_governed_work_flagship:263",
+      "order": 263,
+      "script": "validate_post_v2_governed_work_flagship.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Sixteen retained plan/code runs, matched baseline/governed decisions, independent observations, real Git effect replay, hashes, residuals, rollbacks, costs, dispositions, and outcome mutations.",
+      "output_contract": "Reject artifact/hash drift, observer or worktree replay mismatch, erased unsafe release/residual/failed rollback, missing run, or core promotion.",
+      "claim_scope": "Bounded local evidence for governed work, record/reality reconciliation, and measured governance cost.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Does not establish production transfer, external independence, open-world safety, model quality, deployed services, or chapter-core promotion.",
+      "input_artifacts": [
+        "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+        "experiments/post_v2_governed_work_flagship/artifacts/model_outputs",
+        "schemas/post_v2_governed_work_result.schema.json",
+        "docs/post_v2_governed_work_flagship.md",
+        "scripts/validate_post_v2_governed_work_flagship.py"
+      ],
+      "output_assertions": [
+        "frozen scope",
+        "complete registered runs",
+        "negative outcomes retained",
+        "no chapter-core support movement"
+      ],
+      "negative_control_cases": [
+        "scope drift",
+        "result erasure",
+        "false promotion",
+        "boundary laundering"
+      ],
+      "contract_precision": "class_level",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_routing_deliberation_setup:264",
+      "order": 264,
+      "script": "validate_post_v2_routing_deliberation_setup.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "schema_or_structure",
+      "input_contract": "Frozen 300-example balanced corpus, split isolation, route families, operation caps, comparator-only oracle, leakage boundary, runner arms, digest, and setup mutations.",
+      "output_contract": "Reject example overlap, split drift, compute inflation, oracle laundering, mutable corpus, or missing registered arms.",
+      "claim_scope": "Pre-outcome protocol integrity for matched routing and deliberation.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Does not establish routing quality, deliberation benefit, verifier correctness, transfer, or support movement.",
+      "input_artifacts": [
+        "experiments/post_v2_routing_deliberation/input/corpus.json",
+        "schemas/post_v2_routing_deliberation_corpus.schema.json",
+        "scripts/run_post_v2_routing_deliberation.py",
+        "scripts/validate_post_v2_routing_deliberation_setup.py"
+      ],
+      "output_assertions": [
+        "frozen scope",
+        "complete registered runs",
+        "negative outcomes retained",
+        "no chapter-core support movement"
+      ],
+      "negative_control_cases": [
+        "scope drift",
+        "result erasure",
+        "false promotion",
+        "boundary laundering"
+      ],
+      "contract_precision": "class_level",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_routing_deliberation:265",
+      "order": 265,
+      "script": "validate_post_v2_routing_deliberation.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Three-seed held-out routing and deliberation records, matched caps, interference, fallback/abstention, candidate histories, stops, harms, dispositions, deterministic recomputation, and mutations.",
+      "output_contract": "Reject selective seeds, retry inflation, oracle laundering, fallback erasure, extra-compute-harm erasure, record/summary mismatch, or core promotion.",
+      "claim_scope": "Bounded synthetic evidence for routing and deliberation comparisons.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Does not establish production routing, fallback calibration, trained-specialist interference, language-model deliberation, verifier correctness, or transfer.",
+      "input_artifacts": [
+        "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+        "schemas/post_v2_routing_deliberation_result.schema.json",
+        "docs/post_v2_routing_deliberation.md",
+        "scripts/validate_post_v2_routing_deliberation.py"
+      ],
+      "output_assertions": [
+        "frozen scope",
+        "complete registered runs",
+        "negative outcomes retained",
+        "no chapter-core support movement"
+      ],
+      "negative_control_cases": [
+        "scope drift",
+        "result erasure",
+        "false promotion",
+        "boundary laundering"
+      ],
+      "contract_precision": "class_level",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_update_causality_setup:266",
+      "order": 266,
+      "script": "validate_post_v2_update_causality_setup.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "schema_or_structure",
+      "input_contract": "Frozen 1,200-example corpus, independent splits, base/update roles, deletion cohort, probes, seeds, arms, validation-only selection, digest, and setup mutations.",
+      "output_contract": "Reject identity/split drift, deletion or probe erasure, test selection, missing no-update baseline, or mutable campaign fields.",
+      "claim_scope": "Pre-outcome protocol integrity for the real update-causality campaign.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Does not establish learning quality, unlearning, feedback optimization, open-endedness, recursion, or support movement.",
+      "input_artifacts": [
+        "experiments/post_v2_update_causality/input/corpus.json",
+        "schemas/post_v2_update_causality_corpus.schema.json",
+        "scripts/run_post_v2_update_causality.py",
+        "scripts/validate_post_v2_update_causality_setup.py"
+      ],
+      "output_assertions": [
+        "frozen scope",
+        "complete registered runs",
+        "negative outcomes retained",
+        "no chapter-core support movement"
+      ],
+      "negative_control_cases": [
+        "scope drift",
+        "result erasure",
+        "false promotion",
+        "boundary laundering"
+      ],
+      "contract_precision": "class_level",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_update_causality:267",
+      "order": 267,
+      "script": "validate_post_v2_update_causality.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Three seeds, four arms, base/best/final checkpoint bytes and tensor states, output causality, parameter deltas, forgetting, deletion, nonmember utility, rollback, invalidation, dispositions, and mutations.",
+      "output_contract": "Reject checkpoint/output mismatch, no-update laundering, test-selected best substitution, erased forgetting/deletion, false rollback, invalidation erasure, or core promotion.",
+      "claim_scope": "Bounded local real-mutation evidence at learning, deletion, campaign, and rollback transaction boundaries.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Does not establish production learning/unlearning, storage erasure, feedback optimization, open-ended improvement, recursive improvement, or transfer.",
+      "input_artifacts": [
+        "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+        "experiments/post_v2_update_causality/checkpoints",
+        "schemas/post_v2_update_causality_result.schema.json",
+        "docs/post_v2_update_causality.md",
+        "scripts/validate_post_v2_update_causality.py"
+      ],
+      "output_assertions": [
+        "frozen scope",
+        "complete registered runs",
+        "negative outcomes retained",
+        "no chapter-core support movement"
+      ],
+      "negative_control_cases": [
+        "scope drift",
+        "result erasure",
+        "false promotion",
+        "boundary laundering"
+      ],
+      "contract_precision": "class_level",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_empirical_reconciliation:268",
+      "order": 268,
+      "script": "validate_post_v2_empirical_reconciliation.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Three accepted non-core no-change transitions, nine core no-change decisions, nine updated chapters/vectors/Appendix C/evidence-plan rows, residuals, conditional deferrals, roadmap status, and reconciliation mutations.",
+      "output_contract": "Reject missing/positive dispositions, vector laundering, residual erasure, chapter-count drift, missing transition routing, or conditional-lane closure by fixture.",
+      "claim_scope": "Repository-wide reconciliation of all completed post-v2 empirical results without core support movement.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Does not add a chapter, Lean theorem, external review, production transfer, or chapter-core promotion.",
+      "input_artifacts": [
+        "claim_decisions/post_v2_empirical_dispositions.json",
+        "schemas/post_v2_empirical_dispositions.schema.json",
+        "evidence_transitions/post_v2",
+        "docs/post_v2_empirical_reconciliation.md",
+        "docs/post_v2_residual_ledger.md",
+        "docs/post_v2_evidence_roadmap.md",
+        "evidence_quality/core_claim_vectors.json",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "docs/per_chapter_evidence_plan.md",
+        "scripts/validate_post_v2_empirical_reconciliation.py"
+      ],
+      "output_assertions": [
+        "frozen scope",
+        "complete registered runs",
+        "negative outcomes retained",
+        "no chapter-core support movement"
+      ],
+      "negative_control_cases": [
+        "scope drift",
+        "result erasure",
+        "false promotion",
+        "boundary laundering"
+      ],
+      "contract_precision": "class_level",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 968,
-    "unit_count": 261
+    "required_artifact_count": 1006,
+    "unit_count": 268
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

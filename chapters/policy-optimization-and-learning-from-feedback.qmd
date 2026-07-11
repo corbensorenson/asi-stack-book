@@ -372,6 +372,21 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 | `ext_rlhf_limitations_2023` | Metadata-first comparator: Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback. External survey source for RLHF limitations, reward hacking, evaluator limits, and complementary safeguards. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
+## Post-v2 real policy-update result
+
+Every bounded fine-tune, regularized challenger, and deletion-aware retrain in
+the three-seed campaign had a nonzero parameter delta and changed held-out
+decisions; every no-update arm remained bit-identical. Mean final test accuracy
+moved only from 0.7722 for no update to 0.7792, 0.7778, and 0.7778 for the three
+challengers. Bounded and regularized updates slightly reduced retained-base
+accuracy, and validation-selected best checkpoints disagreed with final
+checkpoints on 62 test decisions across challenger runs.
+
+This establishes local checkpoint/output causality and preserves modest gains,
+forgetting, and best/final disagreement. It does not test human or model
+feedback, reward hacking, deployment canaries, or production optimization.
+The broad core claim remains `argument` via `no_change`.
+
 ## Summary
 
 Policy optimization is the learning actuator. Benchmarks and verifiers create pressure, policy optimization proposes behavior changes, and SCF governance decides whether those changes survive.

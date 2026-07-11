@@ -303,6 +303,21 @@ These Lean hooks still include projection-only traceability for v1.0 and must re
 
 The crosswalk distinguishes source-reported readiness and self-evolution design from local validation. CAIS and Theseus reports are planning or comparator context here, not reproduced evidence.
 
+## Post-v2 mutation, rollback, and invalidation result
+
+The update-causality campaign exercises the transaction boundary with actual
+model state. Across three seeds, it retains three base checkpoints and 24 best
+or final arm checkpoints, records tensor and output digests, and performs three
+exact rollbacks to the base state. Those rollbacks invalidate nine descendant
+challenger arms. No-update arms remain zero-delta, preventing an evaluation
+change from being mislabeled as learning.
+
+This closes a narrow local mutation/rollback record gap, but it is not recursive
+self-improvement: no model proposes its own update, widens authority, changes
+the evaluator, or operates through a deployed canary. The core claim remains
+`argument` through `no_change`; the result applies only at the transaction
+boundary.
+
 ## Summary
 
 Recursive self-improvement is allowed only through stable fields, replacement transactions, independent evaluators, protected invariants, governance approval, monitoring, and rollback. Improvement is not a special exemption from the stack's rules; it is the hardest case for those rules.

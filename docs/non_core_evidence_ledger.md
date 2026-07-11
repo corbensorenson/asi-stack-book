@@ -107,6 +107,14 @@ claim-surface narrowing record, checks the chapter-core non-promotion boundary,
 and checks that the public entry surfaces link to this ledger. The live
 revision record is also checked by `scripts/validate_claim_revision_records.py`.
 
+## Accepted Post-v2 No-Change Programs
+
+| Claim ID | Support-state effect | Evidence packet | What the decision records | What stays blocked |
+|---|---|---|---|---|
+| `post_v2_governed_work_flagship.bounded_matched_local_result` | `blocks_promotion` | `docs/post_v2_governed_work_flagship.md`; `evidence_transitions/post_v2/governed_work_flagship_no_change.json` | Sixteen retained model plan/code runs, matched Git worktrees, independent subprocess probes, receipt/path checks, residuals, ten rollbacks, eight exact and two failed, zero governed releases. | Production transfer, deployed service behavior, external independence, verifier correctness, production economics, and all three affected core promotions. |
+| `post_v2_routing_deliberation.bounded_matched_local_result` | `blocks_promotion` | `docs/post_v2_routing_deliberation.md`; `evidence_transitions/post_v2/routing_deliberation_no_change.json` | Three-seed held-out routing and deliberation records, matched caps, 15 fixed-step harms, and explicit zero-use fallback/abstention. | Ambiguous-route validity, fallback calibration, trained-specialist interference, language-model deliberation, verifier correctness, transfer, and both core promotions. |
+| `post_v2_update_causality.bounded_real_mutation_result` | `blocks_promotion` | `docs/post_v2_update_causality.md`; `evidence_transitions/post_v2/update_causality_no_change.json` | Real parameter/checkpoint/output changes, forgetting, deletion-cohort differences, best/final authority, three exact rollbacks, and nine invalidated descendant arms. | Production learning/unlearning, storage erasure, feedback optimization, open-ended improvement, recursive improvement, external independence, and four core promotions. |
+
 ## Non-Claims
 
 - This ledger does not create new evidence.

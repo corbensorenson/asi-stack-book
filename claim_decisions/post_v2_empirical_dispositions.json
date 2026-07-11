@@ -1,0 +1,185 @@
+{
+  "schema_version": "asi_stack.post_v2_empirical_dispositions.v0",
+  "decision_set_id": "post-v2-empirical-dispositions-2026-07-10",
+  "recorded_date": "2026-07-10",
+  "review_status": "accepted_internal_no_external_human_review",
+  "program_count": 3,
+  "affected_core_claim_count": 9,
+  "transition_refs": [
+    "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+    "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+    "evidence_transitions/post_v2/update_causality_no_change.json"
+  ],
+  "decisions": [
+    {
+      "claim_id": "intent-to-execution-contracts.core",
+      "chapter_id": "intent-to-execution-contracts",
+      "program_id": "governed_work_flagship",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+      "basis": "Sixteen model-generated plan/code runs provide bounded local comparative evidence for authority, effect observation, receipt/path reconciliation, residuals, rollback, quarantine, and measured cost, while zero governed releases and two failed rollbacks block broader promotion.",
+      "remaining_burden": [
+        "deployed or externally reviewable governed-work traces",
+        "broader natural workloads and models",
+        "independent verifier-quality assessment",
+        "production cost, throughput, rollback, and residual evidence"
+      ]
+    },
+    {
+      "claim_id": "artifact-graphs-audit-logs-and-replay.core",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "program_id": "governed_work_flagship",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+      "basis": "Sixteen model-generated plan/code runs provide bounded local comparative evidence for authority, effect observation, receipt/path reconciliation, residuals, rollback, quarantine, and measured cost, while zero governed releases and two failed rollbacks block broader promotion.",
+      "remaining_burden": [
+        "deployed or externally reviewable governed-work traces",
+        "broader natural workloads and models",
+        "independent verifier-quality assessment",
+        "production cost, throughput, rollback, and residual evidence"
+      ]
+    },
+    {
+      "claim_id": "resource-economics-and-token-budgets.core",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "program_id": "governed_work_flagship",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+      "basis": "Sixteen model-generated plan/code runs provide bounded local comparative evidence for authority, effect observation, receipt/path reconciliation, residuals, rollback, quarantine, and measured cost, while zero governed releases and two failed rollbacks block broader promotion.",
+      "remaining_burden": [
+        "deployed or externally reviewable governed-work traces",
+        "broader natural workloads and models",
+        "independent verifier-quality assessment",
+        "production cost, throughput, rollback, and residual evidence"
+      ]
+    },
+    {
+      "claim_id": "routing-heads-and-specialist-cores.core",
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "program_id": "routing_deliberation",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+      "basis": "The frozen three-seed held-out study measures specialist routing, generalist baselines, matched operation caps, adaptive/fixed/no-deliberation arms, and extra-compute harm, while route separability and zero fallback activation block broader routing claims and deterministic verification blocks model-scale deliberation claims.",
+      "remaining_burden": [
+        "harder ambiguous routing workload with exercised fallback and abstention",
+        "trained specialists and interference measurements",
+        "language-model deliberation with independent verifier-quality assessment",
+        "production latency, cost, safety, and transfer evidence"
+      ]
+    },
+    {
+      "claim_id": "governed-deliberation-and-test-time-scaling.core",
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "program_id": "routing_deliberation",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+      "basis": "The frozen three-seed held-out study measures specialist routing, generalist baselines, matched operation caps, adaptive/fixed/no-deliberation arms, and extra-compute harm, while route separability and zero fallback activation block broader routing claims and deterministic verification blocks model-scale deliberation claims.",
+      "remaining_burden": [
+        "harder ambiguous routing workload with exercised fallback and abstention",
+        "trained specialists and interference measurements",
+        "language-model deliberation with independent verifier-quality assessment",
+        "production latency, cost, safety, and transfer evidence"
+      ]
+    },
+    {
+      "claim_id": "data-engines-continual-learning-and-unlearning.core",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "program_id": "update_causality",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/update_causality_no_change.json",
+      "basis": "Three seeds and four arms establish real local parameter/checkpoint/output causality, best/final authority, forgetting, deletion-cohort differences, rollback identity, and descendant invalidation, while modest utility and synthetic scope block production learning, unlearning, open-ended improvement, or recursive-improvement claims.",
+      "remaining_burden": [
+        "production-scale continual-learning and feedback-update traces",
+        "verified deletion propagation across descendants and storage",
+        "independent evaluator and privacy assessment",
+        "deployed canary, rollback, invalidation, and monitor evidence",
+        "open-ended or recursive campaign evidence if those claims are pursued"
+      ]
+    },
+    {
+      "claim_id": "policy-optimization-and-learning-from-feedback.core",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "program_id": "update_causality",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/update_causality_no_change.json",
+      "basis": "Three seeds and four arms establish real local parameter/checkpoint/output causality, best/final authority, forgetting, deletion-cohort differences, rollback identity, and descendant invalidation, while modest utility and synthetic scope block production learning, unlearning, open-ended improvement, or recursive-improvement claims.",
+      "remaining_burden": [
+        "production-scale continual-learning and feedback-update traces",
+        "verified deletion propagation across descendants and storage",
+        "independent evaluator and privacy assessment",
+        "deployed canary, rollback, invalidation, and monitor evidence",
+        "open-ended or recursive campaign evidence if those claims are pursued"
+      ]
+    },
+    {
+      "claim_id": "open-ended-improvement-engines.core",
+      "chapter_id": "open-ended-improvement-engines",
+      "program_id": "update_causality",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/update_causality_no_change.json",
+      "basis": "Three seeds and four arms establish real local parameter/checkpoint/output causality, best/final authority, forgetting, deletion-cohort differences, rollback identity, and descendant invalidation, while modest utility and synthetic scope block production learning, unlearning, open-ended improvement, or recursive-improvement claims.",
+      "remaining_burden": [
+        "production-scale continual-learning and feedback-update traces",
+        "verified deletion propagation across descendants and storage",
+        "independent evaluator and privacy assessment",
+        "deployed canary, rollback, invalidation, and monitor evidence",
+        "open-ended or recursive campaign evidence if those claims are pursued"
+      ]
+    },
+    {
+      "claim_id": "recursive-self-improvement-boundaries.core",
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "program_id": "update_causality",
+      "decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+      "transition_ref": "evidence_transitions/post_v2/update_causality_no_change.json",
+      "basis": "Three seeds and four arms establish real local parameter/checkpoint/output causality, best/final authority, forgetting, deletion-cohort differences, rollback identity, and descendant invalidation, while modest utility and synthetic scope block production learning, unlearning, open-ended improvement, or recursive-improvement claims.",
+      "remaining_burden": [
+        "production-scale continual-learning and feedback-update traces",
+        "verified deletion propagation across descendants and storage",
+        "independent evaluator and privacy assessment",
+        "deployed canary, rollback, invalidation, and monitor evidence",
+        "open-ended or recursive campaign evidence if those claims are pursued"
+      ]
+    }
+  ],
+  "summary": {
+    "no_change": 9,
+    "promote": 0,
+    "narrow": 0,
+    "demote": 0,
+    "refute": 0,
+    "support_state_changes": 0
+  },
+  "non_claims": [
+    "No chapter-core claim moves above argument.",
+    "Internal replay and review do not establish external independence or transfer.",
+    "A non-core transition reference cannot be counted as chapter-core promotion evidence."
+  ]
+}

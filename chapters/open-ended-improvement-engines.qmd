@@ -314,6 +314,20 @@ cannot ensure the campaign's goal remains socially legitimate.
 | `ext_voyager_2023` | Voyager: An Open-Ended Embodied Agent with Large Language Models | Comparator for curriculum, skill-library, feedback, execution-error, and self-verification mechanisms in Minecraft; not evidence of independent evaluation or local learning. |
 | `ext_darwin_godel_machine_2025`, `ext_adas_2024` | Current empirical self-improvement and architecture-search comparators | Compare branching archives, code-defined candidates, benchmark selection, and transfer claims without treating source-reported gains as safe general improvement or local evidence. |
 
+## Post-v2 stopped campaign result
+
+The update-causality program supplies a real but deliberately closed campaign:
+one base and three challenger axes, three seeds, fixed budgets, validation-only
+selection, retained best/final checkpoints, negative knowledge, and an exact
+stop after the registered arms. It demonstrates how candidate lineage,
+evaluation, failure retention, and rollback can be recorded when parameters
+actually change.
+
+It does not test task generation, open-ended discovery, evaluator evolution,
+or autonomous campaign expansion. A fixed four-arm campaign is evidence for a
+bounded transaction record, not for open-ended improvement quality. The core
+claim therefore remains `argument` through `no_change`.
+
 ## Summary
 
 Open-ended improvement needs a control plane of its own. It is not enough to

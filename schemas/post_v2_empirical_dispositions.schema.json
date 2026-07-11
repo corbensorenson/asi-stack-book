@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_empirical_dispositions.schema.json",
+  "title": "Post-v2 Empirical Core Dispositions",
+  "type": "object",
+  "required": ["schema_version", "decision_set_id", "recorded_date", "review_status", "program_count", "affected_core_claim_count", "transition_refs", "decisions", "summary", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_empirical_dispositions.v0"},
+    "decision_set_id": {"type": "string"},
+    "recorded_date": {"type": "string"},
+    "review_status": {"const": "accepted_internal_no_external_human_review"},
+    "program_count": {"const": 3},
+    "affected_core_claim_count": {"const": 9},
+    "transition_refs": {"type": "array", "minItems": 3, "maxItems": 3},
+    "decisions": {"type": "array", "minItems": 9, "maxItems": 9},
+    "summary": {"type": "object"},
+    "non_claims": {"type": "array", "minItems": 3}
+  },
+  "additionalProperties": false
+}

@@ -744,6 +744,16 @@ def write_claim_matrix(structure: dict) -> None:
     }
     source_note_ids = set(source_note_texts)
     rows = []
+    post_v2_path = ROOT / "claim_decisions" / "post_v2_empirical_dispositions.json"
+    post_v2_by_chapter = {}
+    if post_v2_path.exists():
+        post_v2_data = read_json(post_v2_path)
+        if isinstance(post_v2_data, dict):
+            post_v2_by_chapter = {
+                str(row.get("chapter_id")): row
+                for row in post_v2_data.get("decisions", [])
+                if isinstance(row, dict) and row.get("chapter_id")
+            }
     chapters = flatten_chapters(structure)
     total_claim_mappings = sum(len(chapter.get("claim_source_mappings", [])) for chapter in chapters)
     total_passage_reviewed = sum(
@@ -808,6 +818,15 @@ def write_claim_matrix(structure: dict) -> None:
                 open_gap = "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state."
             else:
                 open_gap = "Map the exact claim text to specific source-note mechanisms/evidence and define or run tests before raising support state."
+        post_v2 = post_v2_by_chapter.get(chapter["id"])
+        if post_v2:
+            current_evidence = (
+                "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted "
+                f"no-change transition; core support remains argument. Result: `{post_v2.get('result_ref')}`."
+            )
+            remaining = post_v2.get("remaining_burden", [])
+            if isinstance(remaining, list) and remaining:
+                open_gap = "; ".join(str(item) for item in remaining)
         claim_id = f"{chapter['id']}.core"
         claim_label = chapter.get("claim_label", "Design rationale")
         claim_mapping = claim_source_mapping_text(chapter)

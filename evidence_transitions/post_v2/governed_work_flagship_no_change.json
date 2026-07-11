@@ -1,0 +1,110 @@
+{
+  "transition_id": "post_v2.governed_work_flagship.no_change",
+  "claim_id": "post_v2_governed_work_flagship.bounded_matched_local_result",
+  "claim_surface_refs": [
+    "docs/post_v2_governed_work_flagship.md",
+    "chapters/intent-to-execution-contracts.qmd",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "docs/post_v2_evidence_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+    "scripts/validate_post_v2_governed_work_flagship.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Sixteen model-generated plan/code runs provide bounded local comparative evidence for authority, effect observation, receipt/path reconciliation, residuals, rollback, quarantine, and measured cost, while zero governed releases and two failed rollbacks block broader promotion.",
+  "evidence_roles": [
+    "bounded_local_experiment",
+    "matched_baseline",
+    "negative_result_archive",
+    "content_addressed_result",
+    "no_core_promotion_boundary"
+  ],
+  "transition_reason": "Sixteen model-generated plan/code runs provide bounded local comparative evidence for authority, effect observation, receipt/path reconciliation, residuals, rollback, quarantine, and measured cost, while zero governed releases and two failed rollbacks block broader promotion.",
+  "required_artifacts": [
+    "deployed or externally reviewable governed-work traces",
+    "broader natural workloads and models",
+    "independent verifier-quality assessment",
+    "production cost, throughput, rollback, and residual evidence"
+  ],
+  "artifact_refs": [
+    "docs/post_v2_governed_work_flagship.md",
+    "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+    "scripts/validate_post_v2_governed_work_flagship.py"
+  ],
+  "evidence_packet_refs": [
+    "chapters/intent-to-execution-contracts.qmd",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_before_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_after_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "adjacent local replay added",
+    "adversarial_strength": "adjacent bounded controls added",
+    "validity": "still internally assessed",
+    "transfer_distance": "still not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#intent-to-execution-contracts.core",
+    "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core"
+  ],
+  "verification_command": "python3 scripts/validate_post_v2_governed_work_flagship.py && python3 scripts/validate_post_v2_empirical_reconciliation.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "governed route released zero useful candidates",
+    "two governed rollbacks remained inexact and quarantined",
+    "four governed residuals were discovered and two remained open",
+    "the prevalidation pilot was preserved as non-evidentiary after protocol defects"
+  ],
+  "negative_evidence_refs": [
+    "docs/post_v2_governed_work_flagship.md",
+    "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json"
+  ],
+  "downgrade_triggers": [
+    "result validator failure",
+    "raw artifact or checkpoint digest mismatch",
+    "negative result erased",
+    "core support promoted without a separate accepted upward transition",
+    "bounded local result described as production or open-world evidence"
+  ],
+  "promotion_burden": "deployed or externally reviewable governed-work traces; broader natural workloads and models; independent verifier-quality assessment; production cost, throughput, rollback, and residual evidence",
+  "limitations": [
+    "eight disposable local tasks",
+    "one small local coder model",
+    "internal subprocess observer only",
+    "no deployed authorization, sandbox, verifier, rollback, or release service",
+    "no production transfer or economics"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2 empirical cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "deployed or externally reviewable governed-work traces",
+    "broader natural workloads and models",
+    "independent verifier-quality assessment",
+    "production cost, throughput, rollback, and residual evidence"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-10---post-v2-empirical-reconciliation",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any affected chapter-core claim above argument",
+    "does not establish production transfer, external independence, open-world safety, or ASI capability",
+    "does not promote intent-to-execution-contracts.core",
+    "does not promote artifact-graphs-audit-logs-and-replay.core",
+    "does not promote resource-economics-and-token-budgets.core"
+  ]
+}

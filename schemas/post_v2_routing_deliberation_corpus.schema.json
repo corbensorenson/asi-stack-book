@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_routing_deliberation_corpus.schema.json",
+  "title": "Post-v2 Routing and Deliberation Corpus",
   "type": "object",
   "required": ["schema_version", "corpus_id", "generation_seed", "frozen_before_test_outcomes", "families", "split_counts", "compute_contract", "examples", "corpus_sha256"],
   "properties": {

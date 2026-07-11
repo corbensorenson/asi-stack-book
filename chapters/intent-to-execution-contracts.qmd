@@ -593,6 +593,24 @@ The adjacent human-intent chapter keeps its own comparator family:
 
 No listed external source is local reproduction evidence.
 
+## Post-v2 governed-work result
+
+The post-v2 flagship adds a bounded local trace that was previously absent. A
+pinned 0.5B coder model generated a plan and candidate for eight public-safe
+Python tasks at two seeds. The identical candidate bytes entered a
+visible-test-only baseline and a governed route in fresh Git worktrees. The
+baseline released five candidates, including two holdout failures and five
+governance-unsafe releases. The governed route released none, attempted ten
+rollbacks, completed eight exactly, and kept two sabotaged rollbacks in
+quarantine. See `docs/post_v2_governed_work_flagship.md` and
+`python3 scripts/validate_post_v2_governed_work_flagship.py`.
+
+This result supports the usefulness of binding authority, observed effects,
+receipts, residuals, and rollback to a command trace, but it also records a
+zero-throughput failure. It therefore leaves the core claim at `argument` via
+an accepted `no_change` decision. Eight local tasks do not establish deployed
+intent parsing, approval enforcement, sandboxing, or production transfer.
+
 ## Summary
 
 The merged destination chapter makes executable work depend on explicit
