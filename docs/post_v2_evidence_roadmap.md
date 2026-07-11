@@ -4,8 +4,9 @@ Roadmap ID: `asi-stack-post-v2-evidence-2026-07-10`
 
 Authority: Corben Sorenson
 
-Status: active canonical post-v2 execution roadmap; all empirical priorities
-complete, reconciliation complete, v2.1.0 release gate in progress
+Status: completed 2026-07-10; retained as the canonical historical execution
+record for the v2.1.0 evidence release; all empirical priorities complete,
+reconciliation complete, and the release/deploy/archive gate complete
 
 Predecessor: `docs/asi_stack_completion_roadmap.md`, completed for v2.0.0 and
 retained as immutable release history
@@ -25,6 +26,11 @@ retained as immutable release history
 > empirical work.
 
 This paragraph is the canonical long-running post-v2 goal.
+
+Completion: all three empirical programs, reconciliation, release, deployment,
+attestation, and immutable-archive gates are complete. The exact completion
+record is `docs/v2_1_completion_declaration.md`. There is no active successor
+roadmap; future work begins only through a new author-approved goal.
 
 ## Why this is the next direction
 

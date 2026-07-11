@@ -46,6 +46,19 @@
       "archive_backfill_decision_date": "2026-07-10",
       "archive_backfill_rationale": "Published from the exact clean CI-tested v2.0.0 site bundle, then redownloaded from the public GitHub Release and verified against the recorded SHA-256.",
       "non_claim": "The archive preserves the tested rendered site bytes; it does not prove chapter claims, runtime safety, model capability, independent review, or future storage durability."
+    },
+    {
+      "version": "v2.1.0",
+      "source_commit": "cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5",
+      "release_record": "release_records/2026-07-10-v2.1.0-evidence-cb3b8605.json",
+      "source_release_url": "https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.1.0",
+      "site_artifact_state": "published",
+      "site_artifact_url": "https://github.com/corbensorenson/asi-stack-book/releases/download/v2.1.0/asi-stack-site-v2.1.0-cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5.tar.gz",
+      "site_artifact_sha256": "c70534db9ffed722f33227b191930781b2daf1058d949b90d803bca9a47e375c",
+      "archive_backfill_decision": "completed",
+      "archive_backfill_decision_date": "2026-07-10",
+      "archive_backfill_rationale": "Published from the exact clean CI-tested v2.1.0 site bundle, then redownloaded from the public GitHub Release and verified byte-for-byte against the recorded SHA-256.",
+      "non_claim": "The archive preserves the tested rendered site bytes; it does not prove chapter claims, production transfer, runtime safety, model capability, independent review, or future storage durability."
     }
   ],
   "non_claims": [

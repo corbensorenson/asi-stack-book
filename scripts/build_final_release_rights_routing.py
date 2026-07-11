@@ -5,6 +5,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 INVENTORY = ROOT / "licensing/provenance_inventory.json"
@@ -14,10 +15,30 @@ APACHE = "Apache-2.0"
 EXCLUDED = "excluded-no-grant"
 
 
-def route(record: dict) -> tuple[str, str]:
+def exact_release_paths() -> set[str] | None:
+    """Return the tagged v2.1.0 tree once it exists, else prepublication mode."""
+    check = subprocess.run(
+        ["git", "rev-parse", "-q", "--verify", "refs/tags/v2.1.0^{commit}"],
+        cwd=ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if check.returncode != 0:
+        return None
+    body = subprocess.check_output(
+        ["git", "ls-tree", "-r", "--name-only", "v2.1.0"],
+        cwd=ROOT,
+        text=True,
+    )
+    return {line for line in body.splitlines() if line}
+
+
+def route(record: dict, release_paths: set[str] | None) -> tuple[str, str]:
     path = record["path"]
     lane = record["candidate_lane"]
     provenance = record["provenance_status"]
+    if release_paths is not None and path not in release_paths:
+        return EXCLUDED, "post-tag path; not present in the exact v2.1.0 release tree"
     if path == "LICENSE.md":
         return EXCLUDED, "operative routing document; not self-licensed"
     if path.startswith("licenses/"):
@@ -35,9 +56,10 @@ def route(record: dict) -> tuple[str, str]:
 
 def build() -> dict:
     inventory = json.loads(INVENTORY.read_text(encoding="utf-8"))
+    release_paths = exact_release_paths()
     records = []
     for item in inventory["files"]:
-        license_id, basis = route(item)
+        license_id, basis = route(item, release_paths)
         records.append({
             "path": item["path"],
             "artifact_class": item["artifact_class"],
