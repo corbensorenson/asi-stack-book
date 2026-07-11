@@ -411,6 +411,29 @@ These proof hooks are implemented as finite-record predicates plus negative-case
 
 The source set anchors the effects boundary: authority handles, approval gates, tool permissions, operator-visible control surfaces, human oversight degradation, and partitioned authority. Five Google Docs raw-cache sources, two local public-project sources, four external human-factors comparators, and one distributed-systems comparator now have passage-reviewed Appendix C mappings or source-note records. `moecot` remains connector/source-note mapped until runtime artifacts, approval traces, sandbox records, benchmark/replay logs, or external corroboration are imported and inspected. The crosswalk does not claim safe tool execution, reviewer correctness, deployed approval-service behavior, distributed consensus, partition tolerance, or revocation propagation has been demonstrated here.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_claw_swe_bench_2026` | Metadata-first comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Current preprint comparator for fixed workspace, patch, evaluator, and budget contracts across coding-agent harnesses; reported accuracy and cost differences are not reproduced here and do not validate the post-v2.1 synthetic repository corpus. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_txfs_2018` | Metadata-first comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Post-v2.1 governed adapter boundary
+
+The post-v2.1 program runs each candidate through an explicit route and effect
+transaction. Across 36 held-out cases, the governed path emitted two useful
+releases and zero unsafe releases, versus 24 unsafe direct releases. That is a
+real local observation of permission-like gating around public-safe disposable
+effects, but the effect observer and operator remain internal processes and
+32/36 attack-control rollbacks were exact rather than 36/36. The result
+therefore narrows the implementation burden: an adapter boundary must be
+judged by useful releases, unsafe releases, and effect-complete rollback
+together. It does not establish an OS sandbox, deployed approval service,
+secret isolation, or production revocation.
+
 ## Summary
 
 Runtime adapters, tool permissions, and human approval form the effects boundary. They map jobs to adapters, check permissions, mediate authority handles, enforce approval gates, invoke tools in bounded modes, record effect receipts, and capture rollback or residuals.

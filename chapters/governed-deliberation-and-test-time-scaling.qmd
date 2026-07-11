@@ -325,6 +325,20 @@ is deterministic task recomputation and candidates are not language-model
 reasoning traces. The core claim remains `argument` via `no_change`, separately
 from the routing disposition.
 
+## Post-v2.1 real-model deliberation result
+
+The successor replaces scripted candidates with observable outputs from the
+frozen local model. On all 60 held-out requests, no-deliberation,
+fixed-three-candidate, adaptive stopping, overcompute-five, and
+verifier-disabled arms each finish at 0/60 correct. Adaptive stopping exhausts
+five candidates every time, consuming 300 candidate operations without a
+single early verified hit. Because no first candidate is correct, corruption
+reduction cannot be estimated on this workload; the fifteen earlier
+extra-compute harms remain regression-only knowledge rather than new evidence.
+The deliberation disposition is `no_change`. Real model traces alone are not a
+benefit: candidate quality and evaluator validity are prerequisites for useful
+test-time scaling.
+
 ## Summary
 
 Deliberation is valuable when it creates a better bounded candidate, not when it

@@ -360,6 +360,15 @@ These proof hooks are implemented as finite-record predicates plus negative-case
 
 The routing sources support specialist selection, lifecycle state, residual-aware fallback, operator-visible control, and a runtime evidence-packet crosswalk. The folded MoECOT mappings now point to reviewed source notes and connector extracts, but they still do not claim local routing accuracy, runtime safety, replay correctness, benchmark reproduction, or MoECOT execution.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_dont_hallucinate_abstain_2024` | Metadata-first comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Primary ACL comparator for knowledge-gap detection, abstention, calibration/self-reflection limitations, and multi-model probing; reported abstention improvements are task- and model-bounded and do not validate the local router or evaluator. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result
 
 The frozen 300-example routing/deliberation program trained a multinomial
@@ -375,6 +384,23 @@ abstention activated zero times. The experiment therefore does not establish
 fallback calibration, model-scale routing, trained-specialist interference,
 or production transfer. `routing-heads-and-specialist-cores.core` remains
 `argument` through an independent `no_change` disposition.
+
+## Post-v2.1 ambiguous routing result
+
+The successor workload deliberately includes ten held-out requests for each of
+six actions. The learned router selects 59/60 correct routes, the oracle 60/60,
+the rule route 41/60, and the generalist 10/60; fallback, abstention, and
+clarification all activate. This resolves the earlier “indistinguishable
+policies” defect only within the frozen finite set. All 360 generated
+substantive candidates are wrong, so the learned policy's 20 correct outcomes
+come entirely from correct fallback/abstention/clarification behavior. The
+routing disposition is `narrow`: route discrimination and selective non-answer
+coverage are established locally, while specialist answer utility,
+interference, calibration, and transfer are not.
+
+| Source | Title | Use and boundary |
+|---|---|---|
+| `ext_dont_hallucinate_abstain_2024` | Don’t Hallucinate, Abstain | Comparator for selective prediction and abstention; it motivates measuring coverage with utility rather than treating abstention activation as sufficient. |
 
 ## Summary
 

@@ -1110,7 +1110,14 @@
     "experiments/post_v2_1_evidence_program/p3/results/result.json",
     "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state",
     "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
-    "docs/post_v2_1_empirical_results.md"
+    "docs/post_v2_1_empirical_results.md",
+    "scripts/validate_post_v2_1_empirical_reconciliation.py",
+    "scripts/integrate_post_v2_1_manifest_sources.py",
+    "scripts/build_post_v2_1_empirical_dispositions.py",
+    "claim_decisions/post_v2_1_empirical_dispositions.json",
+    "schemas/post_v2_1_empirical_dispositions.schema.json",
+    "evidence_transitions/post_v2_1",
+    "docs/post_v2_1_empirical_reconciliation.md"
   ],
   "units": [
     {
@@ -6315,11 +6322,70 @@
       "prohibited_inference": "Passing this gate does not establish population validity, production transfer, external independence, generated-answer utility, influence/privacy/storage erasure, external-system rollback, or chapter-core promotion.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_1_empirical_reconciliation:275",
+      "order": 275,
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "script": "validate_post_v2_1_empirical_reconciliation.py",
+      "args": [],
+      "input_contract": "Exact outcome ledger, six accepted component transitions, fourteen core decisions/chapter owners, source manifest/inventory/notes, Appendix C/H, quality vectors, eleven residuals, evidence plan, proof manifest, roadmap status, reconciliation report, and changelog.",
+      "input_artifacts": [
+        "scripts/validate_post_v2_1_empirical_reconciliation.py",
+        "scripts/integrate_post_v2_1_manifest_sources.py",
+        "scripts/build_post_v2_1_empirical_dispositions.py",
+        "claim_decisions/post_v2_1_empirical_dispositions.json",
+        "schemas/post_v2_1_empirical_dispositions.schema.json",
+        "evidence_transitions/post_v2_1",
+        "docs/post_v2_1_empirical_reconciliation.md",
+        "docs/post_v2_1_empirical_results.md",
+        "docs/post_v2_residual_ledger.md",
+        "docs/per_chapter_evidence_plan.md",
+        "roadmap_records/post_v2_1_residual_and_transfer_status.json",
+        "book_structure.json",
+        "chapters",
+        "sources/source_inventory.json",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/H_external_sources.qmd",
+        "appendices/F_changelog.qmd",
+        "evidence_quality/core_claim_vectors.json",
+        "proofs/proof_manifest.json"
+      ],
+      "output_contract": "Reject missing or positive dispositions, new chapter/proof invention, chapter/result drift, vector promotion or false independence/transfer, residual laundering, source-route erasure, generated appendix drift, or reconciliation/changelog omission.",
+      "output_assertions": [
+        "six bounded transitions",
+        "fourteen core no-change decisions and chapter owners",
+        "eleven exact residual dispositions",
+        "nineteen current external-source routes",
+        "54 argument-state vectors",
+        "no new chapter or Lean target",
+        "M4 reconciliation surfaces agree"
+      ],
+      "claim_scope": "Repository-wide reconciliation of the completed post-v2.1 finite local results without chapter-core support movement.",
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "core promotion",
+        "decision erasure",
+        "transition promotion",
+        "chapter addition",
+        "chapter-result erasure",
+        "vector promotion",
+        "false independence",
+        "residual laundering",
+        "source-target erasure",
+        "Appendix H erasure",
+        "proof invention",
+        "changelog erasure"
+      ],
+      "prohibited_inference": "Reconciliation does not establish population validity, external independence, production transfer, generated-answer utility, influence/privacy/storage erasure, external-system rollback, optional-format approval, or chapter-core promotion.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 1066,
-    "unit_count": 274
+    "required_artifact_count": 1073,
+    "unit_count": 275
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

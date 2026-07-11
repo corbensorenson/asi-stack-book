@@ -1,18 +1,17 @@
 # Per-Chapter Evidence Plan
 
-Last updated: 2026-07-09
+Last updated: 2026-07-11
 
 This file is the active 54-chapter evidence-lane backlog for **The ASI Stack**. It is
 an execution menu, not a checklist. It names plausible next evidence moves so a
 future goal can choose a small number of high-payoff lanes without inventing a
 fresh plan from scratch.
 
-Execution rule: a v1.x cycle should execute one flagship measured lane plus at
-most two direct support lanes. The remaining lanes stay `planned, not
-executed`; they must not receive synthetic fixtures, pass/fail status, or
-support-state pressure merely for coverage. The active cycle selection is
-recorded in `docs/v1_x_active_evidence_cycle.md`: three lanes are selected and
-the other 51 remain planned-only.
+Execution rule: completed cycle rows remain historical evidence plans. New
+work must begin from the post-v2.1 residual-transfer burdens below, select a
+small number of high-information lanes, preregister any outcome-bearing work,
+and preserve negative results. Unselected lanes do not receive fixtures or
+support pressure merely for coverage.
 
 Selection criteria:
 
@@ -41,6 +40,28 @@ must enter through `sources/source_inventory.json`, receive a source note, and
 then appear in generated Appendix H. External citation can contextualize an
 argument, but it is not a Lean proof, Project Theseus replay, Circle receipt, or
 support-state transition by itself.
+
+## Post-v2.1 residual-transfer burdens
+
+All affected chapter-core claims remain at `argument`. “Narrow” below describes
+the empirical component, not a core support promotion.
+
+| Chapter | Accepted empirical component | Remaining burden before broader support |
+|---|---|---|
+| `intent-to-execution-contracts` | Governance `narrow`: unsafe 24/36 to 0/36, useful 2/36. | Natural intent-to-effect workloads with useful throughput, exact rollback, independent criterion assessment, and deployed transfer. |
+| `runtime-adapters-tool-permissions-and-human-approval` | Governance `narrow`; internal disposable effect transaction only. | OS/deployed adapter enforcement, approval/revocation quality, external effects, and effect-complete recovery. |
+| `artifact-graphs-audit-logs-and-replay` | Effect replay `narrow`; full-state replay `narrow`. | Heterogeneous and external-system replay, durable audit, storage receipts, and independently assessed record/reality validity. |
+| `capability-replacement-and-rollback` | Full-state rollback `narrow`: 15/15 exact over 24 local surfaces. | Remote stores, services, external effects, production recovery objectives, and independent replay. |
+| `readiness-gates-residual-escrow-and-quarantine` | Governance/routing `narrow`; fallback/abstention activation criterion closed. | Joint useful answer, unsafe release, calibration, rollback, latency, residual, and production-readiness evidence. |
+| `security-kernel-and-digital-scifs` | Governance `narrow`; zero registered governed unsafe releases. | Kernel/SCIF isolation, adaptive attack coverage, independent assurance, external effects, and production security transfer. |
+| `resource-economics-and-token-budgets` | Joint local accounting `narrow`; 332 exact calls and zero retries. | Quality-adjusted production throughput, governance and verification tax, latency, review capacity, residuals, and displaced work. |
+| `routing-heads-and-specialist-cores` | Routing `narrow`: policies separate and fallback/abstention activate. | Nonzero specialist answer utility, trained-specialist interference, calibrated natural workloads, multiple models/seeds, and deployment transfer. |
+| `governed-deliberation-and-test-time-scaling` | Deliberation `no_change`: every arm 0/60. | Useful initially-correct and incorrect candidates, matched-budget adaptive benefit, replicated corruption reduction, and independent evaluator validity. |
+| `verification-bandwidth-and-context-adequacy` | Routing/evaluator `narrow`; 0/360 generated candidates correct. | Criterion-valid and independently assessed evaluator, candidate/context adequacy comparisons, and natural long-context transfer. |
+| `data-engines-continual-learning-and-unlearning` | Update `no_change`; unlearning and rollback `narrow`. | Utility gain, causal influence removal, privacy, descendant-wide propagation, and separately verified storage/backup erasure. |
+| `policy-optimization-and-learning-from-feedback` | Update `no_change`; prospective authority and rollback observed. | Real feedback/reward learning, reward-hacking controls, useful held-out gain, canary monitoring, and production rollback. |
+| `open-ended-improvement-engines` | Update `no_change`; fixed campaign stops honestly. | Task generation, evolving archive, evaluator evolution, useful discovery, bounded autonomy, and open-ended transfer. |
+| `recursive-self-improvement-boundaries` | Update `no_change`; authority-preserving rollback `narrow`. | Self-proposed change, stable authority, independent evaluator, protected-invariant evidence, useful gain, canary, and production recovery. |
 
 | Part | Chapter | Primary evidence lane | Formal/prototype work | Human-reader focus | Acceptance bar before support-state change |
 |---|---|---|---|---|---|

@@ -1,5 +1,37 @@
 # Changelog
 
+## 2026-07-11 - Post-v2.1 empirical execution and reconciliation
+
+- Executed the exact frozen P1–P3 programs once from setup commit
+  `707fc10969b04bd31e135c8a711b33e9505e0d87`: 332/332 registered model
+  calls, zero retries, zero outcome-driven arm expansion, and all retained
+  public-safe outputs and state trees.
+- Narrowed governed usefulness/rollback: registered unsafe releases fell from
+  24/36 direct to 0/36 governed, but useful releases remained 2/36 and exact
+  attack-control rollback was 32/36, below both registered thresholds.
+- Narrowed routing while keeping deliberation `no_change`: the learned policy
+  selected 59/60 correct routes and activated fallback, abstention, and
+  clarification, but all 360 generated substantive candidates were wrong and
+  every deliberation arm finished 0/60.
+- Kept update utility `no_change` while narrowing full-state rollback and
+  unlearning: all 15 seed-arm transactions exactly restored 24 declared state
+  surfaces, no eligible challenger met the 0.05 utility-gain threshold, and
+  deletion-aware behavior/lineage evidence did not establish influence or
+  storage erasure.
+- Added one content-addressed outcome ledger, six accepted claim-bounded
+  transitions, fourteen chapter-core `no_change` decisions, eleven explicit
+  residual dispositions, a readable result/reconciliation pair, and an exact
+  validator that replays the retained artifacts and rejects twelve laundering
+  mutations.
+- Folded the results into fourteen existing chapter owners, Appendix C,
+  evidence vectors, residuals, and per-chapter burden plans. Added no chapter,
+  no Lean theorem, no core support promotion, and no external-independence or
+  production-transfer claim.
+- Routed six current external primary sources through the manifest, source
+  notes, affected chapter crosswalks, Appendix C, Appendix H, and the source
+  matrix for coding-agent harnesses, transactional filesystems, abstention,
+  multi-dimensional unlearning, benchmark weakness, and metric faithfulness.
+
 ## 2026-07-10 - Post-v2.1 residual and transfer roadmap
 
 - Installed `docs/post_v2_1_residual_and_transfer_roadmap.md` as the active

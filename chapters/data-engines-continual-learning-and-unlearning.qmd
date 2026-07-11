@@ -363,6 +363,17 @@ formalization remains a bounded control-plane boundary.
 | `theseus_synthetic_data_curation` | Source-reported curation gates for residual-targeted synthetic data. | No curator execution, dataset import, model-quality result, or promoted Theseus claim. |
 | `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026` | Interoperable derivation/invalidation and machine-readable dataset/resource/field metadata for training, evaluation, synthetic, and deletion records. | No local conformance, dataset fitness, legal clearance, representativeness, deletion, or safe continual-learning result. |
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_muse_unlearning_2025` | Metadata-first comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Primary ICLR benchmark comparator separating verbatim and knowledge memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability; none of its 7B-language-model results are reproduced by the local policy network. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_unlearning_benchmarks_weak_2024` | Metadata-first comparator: Position: LLM Unlearning Benchmarks are Weak Measures of Progress. Primary critical comparator showing that benign benchmark modifications, forget/retain dependencies, and ambiguous targets can make unlearning scores optimistic; it strengthens the book's prohibition on turning toy behavioral change into influence, privacy, or storage claims. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openunlearning_2025` | Metadata-first comparator: OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics. Primary NeurIPS 2025 benchmark-framework comparator for unified algorithms, diverse evaluations, public checkpoints, and meta-evaluation of metric faithfulness; it reinforces evaluator-quality residuals rather than establishing local unlearning. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Post-v2 update and deletion result
 
 The update-causality campaign trains real small PyTorch policy networks across
@@ -379,6 +390,24 @@ forgetting. It does not show that member influence, stored rows, caches,
 backups, adapters, or derived artifacts were erased. The core claim remains
 `argument` via `no_change`; production unlearning and deletion propagation
 remain open.
+
+## Post-v2.1 full-state and unlearning result
+
+The successor campaign expands the state boundary to 24 declared surfaces and
+restores all of them exactly in 15/15 seed-arm transactions. No eligible
+challenger, however, reaches the registered 0.05 target-utility gain.
+Deletion-aware retraining changes 4, 0, and 1 cohort decisions across three
+seeds and propagates descendant invalidation, while influence reduction remains
+a confidence proxy and storage erasure remains false. A governed account must
+keep four claims separate: behavioral cohort change, influence removal, lineage
+propagation, and storage erasure. Only the first and third receive bounded local
+evidence here; `UU-03` persists.
+
+| Source | Use and boundary |
+|---|---|
+| `ext_muse_unlearning_2025` | Multi-dimensional unlearning evaluation comparator; no local 7B-scale, privacy, or sequential-sustainability result. |
+| `ext_unlearning_benchmarks_weak_2024` | Comparator for weak benchmark validity; reinforces that behavioral scores alone do not establish forgetting. |
+| `ext_openunlearning_2025` | Reproducible unlearning framework comparator; no reproduced method, privacy guarantee, influence proof, or storage erasure here. |
 
 ## Summary
 

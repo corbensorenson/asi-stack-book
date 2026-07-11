@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.evidence_quality_vector_registry.v0",
   "policy_ref": "evidence_quality/vector_policy.json",
-  "snapshot_date": "2026-07-10",
+  "snapshot_date": "2026-07-11",
   "scope": "All active chapter-core claims; vectors expose quality dimensions without changing the authoritative support summary.",
   "summary": {
     "vector_count": 54,
@@ -14,8 +14,8 @@
         "internal_only": 54
       },
       "reproducibility": {
-        "adjacent_local_replay": 25,
-        "not_demonstrated_for_claim": 29
+        "adjacent_local_replay": 27,
+        "not_demonstrated_for_claim": 27
       },
       "recency": {
         "repository_snapshot_current": 54
@@ -24,8 +24,8 @@
         "claim_scope_unmeasured": 54
       },
       "adversarial_strength": {
-        "adjacent_bounded_controls": 25,
-        "not_demonstrated_for_claim": 29
+        "adjacent_bounded_controls": 27,
+        "not_demonstrated_for_claim": 27
       },
       "validity": {
         "not_independently_assessed": 54
@@ -42,7 +42,7 @@
   },
   "vectors": [
     {
-      "vector_id": "asi-is-a-stack-not-a-model.core.quality.2026-07-10",
+      "vector_id": "asi-is-a-stack-not-a-model.core.quality.2026-07-11",
       "claim_id": "asi-is-a-stack-not-a-model.core",
       "chapter_id": "asi-is-a-stack-not-a-model",
       "chapter_file": "chapters/asi-is-a-stack-not-a-model.qmd",
@@ -76,7 +76,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/asi-is-a-stack-not-a-model.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -159,7 +159,7 @@
       ]
     },
     {
-      "vector_id": "the-efficient-asi-hypothesis.core.quality.2026-07-10",
+      "vector_id": "the-efficient-asi-hypothesis.core.quality.2026-07-11",
       "claim_id": "the-efficient-asi-hypothesis.core",
       "chapter_id": "the-efficient-asi-hypothesis",
       "chapter_file": "chapters/the-efficient-asi-hypothesis.qmd",
@@ -193,7 +193,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/the-efficient-asi-hypothesis.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -276,7 +276,7 @@
       ]
     },
     {
-      "vector_id": "system-boundaries-and-authority.core.quality.2026-07-10",
+      "vector_id": "system-boundaries-and-authority.core.quality.2026-07-11",
       "claim_id": "system-boundaries-and-authority.core",
       "chapter_id": "system-boundaries-and-authority",
       "chapter_file": "chapters/system-boundaries-and-authority.qmd",
@@ -311,7 +311,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/system-boundaries-and-authority.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -397,7 +397,7 @@
       ]
     },
     {
-      "vector_id": "failure-modes-of-ungoverned-intelligence.core.quality.2026-07-10",
+      "vector_id": "failure-modes-of-ungoverned-intelligence.core.quality.2026-07-11",
       "claim_id": "failure-modes-of-ungoverned-intelligence.core",
       "chapter_id": "failure-modes-of-ungoverned-intelligence",
       "chapter_file": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
@@ -431,7 +431,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/failure-modes-of-ungoverned-intelligence.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -514,7 +514,7 @@
       ]
     },
     {
-      "vector_id": "evidence-states-and-claim-discipline.core.quality.2026-07-10",
+      "vector_id": "evidence-states-and-claim-discipline.core.quality.2026-07-11",
       "claim_id": "evidence-states-and-claim-discipline.core",
       "chapter_id": "evidence-states-and-claim-discipline",
       "chapter_file": "chapters/evidence-states-and-claim-discipline.qmd",
@@ -548,7 +548,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/evidence-states-and-claim-discipline.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -631,7 +631,7 @@
       ]
     },
     {
-      "vector_id": "scalable-oversight-and-adversarial-ai-control.core.quality.2026-07-10",
+      "vector_id": "scalable-oversight-and-adversarial-ai-control.core.quality.2026-07-11",
       "claim_id": "scalable-oversight-and-adversarial-ai-control.core",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
       "chapter_file": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
@@ -665,7 +665,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -748,7 +748,7 @@
       ]
     },
     {
-      "vector_id": "human-intent-as-a-formal-input.core.quality.2026-07-10",
+      "vector_id": "human-intent-as-a-formal-input.core.quality.2026-07-11",
       "claim_id": "human-intent-as-a-formal-input.core",
       "chapter_id": "human-intent-as-a-formal-input",
       "chapter_file": "chapters/human-intent-as-a-formal-input.qmd",
@@ -782,7 +782,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/human-intent-as-a-formal-input.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -865,7 +865,7 @@
       ]
     },
     {
-      "vector_id": "constitutional-alignment-substrate.core.quality.2026-07-10",
+      "vector_id": "constitutional-alignment-substrate.core.quality.2026-07-11",
       "claim_id": "constitutional-alignment-substrate.core",
       "chapter_id": "constitutional-alignment-substrate",
       "chapter_file": "chapters/constitutional-alignment-substrate.qmd",
@@ -899,7 +899,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/constitutional-alignment-substrate.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -982,7 +982,7 @@
       ]
     },
     {
-      "vector_id": "moral-uncertainty-and-value-conflict.core.quality.2026-07-10",
+      "vector_id": "moral-uncertainty-and-value-conflict.core.quality.2026-07-11",
       "claim_id": "moral-uncertainty-and-value-conflict.core",
       "chapter_id": "moral-uncertainty-and-value-conflict",
       "chapter_file": "chapters/moral-uncertainty-and-value-conflict.qmd",
@@ -1017,7 +1017,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/moral-uncertainty-and-value-conflict.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -1103,7 +1103,7 @@
       ]
     },
     {
-      "vector_id": "stable-capability-fields.core.quality.2026-07-10",
+      "vector_id": "stable-capability-fields.core.quality.2026-07-11",
       "claim_id": "stable-capability-fields.core",
       "chapter_id": "stable-capability-fields",
       "chapter_file": "chapters/stable-capability-fields.qmd",
@@ -1137,7 +1137,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/stable-capability-fields.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -1220,7 +1220,7 @@
       ]
     },
     {
-      "vector_id": "capability-replacement-and-rollback.core.quality.2026-07-10",
+      "vector_id": "capability-replacement-and-rollback.core.quality.2026-07-11",
       "claim_id": "capability-replacement-and-rollback.core",
       "chapter_id": "capability-replacement-and-rollback",
       "chapter_file": "chapters/capability-replacement-and-rollback.qmd",
@@ -1234,19 +1234,23 @@
             "docs/external_review_status.md",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -1254,11 +1258,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -1268,21 +1273,27 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Replacement transaction harness; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after deployed replacement implementation traces, accepted/rejected/canaried/committed/rolled-back transaction replays, independent evaluator-integrity review, authority-enforcement traces, rollback dry runs or rollback execution over actual state, regression suites over real implementations, monitor-window results, and source-interpretation review are recorded with accepted evidence-transition records."
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -1294,7 +1305,8 @@
           "evidence_refs": [
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -1306,7 +1318,8 @@
           "evidence_refs": [
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -1316,9 +1329,12 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -1337,7 +1353,7 @@
       ]
     },
     {
-      "vector_id": "security-kernel-and-digital-scifs.core.quality.2026-07-10",
+      "vector_id": "security-kernel-and-digital-scifs.core.quality.2026-07-11",
       "claim_id": "security-kernel-and-digital-scifs.core",
       "chapter_id": "security-kernel-and-digital-scifs",
       "chapter_file": "chapters/security-kernel-and-digital-scifs.qmd",
@@ -1351,7 +1367,8 @@
             "docs/external_review_status.md",
             "chapters/security-kernel-and-digital-scifs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -1361,10 +1378,12 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json",
             "chapters/security-kernel-and-digital-scifs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -1372,11 +1391,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/security-kernel-and-digital-scifs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -1386,10 +1406,12 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Security-kernel harness plus external security baselines; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json",
             "chapters/security-kernel-and-digital-scifs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Move above argument only after the claim is narrowed to the synthetic receipt discipline that passed, or after deployed handle mediation, sandbox or compartment isolation review, side-channel and logging threat-model review, prompt-injection containment tests over real adversarial prompts, least-privilege context traces, runtime revocation tests, and independent security, runtime, formal-methods, or source-interpretation review are recorded with accepted evidence-transition records."
@@ -1399,10 +1421,12 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json",
             "chapters/security-kernel-and-digital-scifs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -1414,7 +1438,8 @@
           "evidence_refs": [
             "chapters/security-kernel-and-digital-scifs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -1426,7 +1451,8 @@
           "evidence_refs": [
             "chapters/security-kernel-and-digital-scifs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -1436,10 +1462,12 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json",
             "chapters/security-kernel-and-digital-scifs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -1458,7 +1486,7 @@
       ]
     },
     {
-      "vector_id": "model-weight-custody-and-hardware-roots-of-trust.core.quality.2026-07-10",
+      "vector_id": "model-weight-custody-and-hardware-roots-of-trust.core.quality.2026-07-11",
       "claim_id": "model-weight-custody-and-hardware-roots-of-trust.core",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
       "chapter_file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
@@ -1492,7 +1520,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -1575,7 +1603,7 @@
       ]
     },
     {
-      "vector_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core.quality.2026-07-10",
+      "vector_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core.quality.2026-07-11",
       "claim_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
       "chapter_file": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
@@ -1609,7 +1637,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -1692,7 +1720,7 @@
       ]
     },
     {
-      "vector_id": "recursive-self-improvement-boundaries.core.quality.2026-07-10",
+      "vector_id": "recursive-self-improvement-boundaries.core.quality.2026-07-11",
       "claim_id": "recursive-self-improvement-boundaries.core",
       "chapter_id": "recursive-self-improvement-boundaries",
       "chapter_file": "chapters/recursive-self-improvement-boundaries.qmd",
@@ -1706,7 +1734,8 @@
             "docs/external_review_status.md",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -1717,9 +1746,11 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -1727,11 +1758,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -1742,9 +1774,11 @@
           "rationale": "The recorded lane is Safety-critical Lean/Theseus gates plus post-v2 real checkpoint mutation, exact rollback, and descendant invalidation at the transaction boundary; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after deployed self-improvement implementation traces, proposed/rejected/quarantined/canaried/promoted/rolled-back transition replays, independent evaluator-integrity review, authority-enforcement traces, security and resource boundary-delta tests, stale-gate replays, rollback dry runs or rollback execution over actual state, regression suites over real implementations, monitor-window results, and source-interpretation review are recorded with accepted evidence-transition records."
@@ -1755,9 +1789,11 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -1769,7 +1805,8 @@
           "evidence_refs": [
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -1781,7 +1818,8 @@
           "evidence_refs": [
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -1792,9 +1830,11 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/recursive-self-improvement-boundaries.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -1813,7 +1853,7 @@
       ]
     },
     {
-      "vector_id": "open-ended-improvement-engines.core.quality.2026-07-10",
+      "vector_id": "open-ended-improvement-engines.core.quality.2026-07-11",
       "claim_id": "open-ended-improvement-engines.core",
       "chapter_id": "open-ended-improvement-engines",
       "chapter_file": "chapters/open-ended-improvement-engines.qmd",
@@ -1827,7 +1867,8 @@
             "docs/external_review_status.md",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -1838,9 +1879,11 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -1848,11 +1891,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -1863,9 +1907,11 @@
           "rationale": "The recorded lane is Open-ended-improvement sources plus the post-v2 fixed stopped four-arm mutation campaign; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "The chapter has source-noted comparators and a finite admission-routing theorem, but no local improvement campaign, task generator, candidate archive, evaluator, independent review, resource measurement, stop-boundary fixture, or replay has been accepted as evidence for the broad claim."
@@ -1876,9 +1922,11 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -1890,7 +1938,8 @@
           "evidence_refs": [
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -1902,7 +1951,8 @@
           "evidence_refs": [
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -1913,9 +1963,11 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/open-ended-improvement-engines.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -1934,7 +1986,7 @@
       ]
     },
     {
-      "vector_id": "intent-to-execution-contracts.core.quality.2026-07-10",
+      "vector_id": "intent-to-execution-contracts.core.quality.2026-07-11",
       "claim_id": "intent-to-execution-contracts.core",
       "chapter_id": "intent-to-execution-contracts",
       "chapter_file": "chapters/intent-to-execution-contracts.qmd",
@@ -1948,7 +2000,8 @@
             "docs/external_review_status.md",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -1959,9 +2012,11 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -1969,11 +2024,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -1984,9 +2040,11 @@
           "rationale": "The recorded lane is Command-contract fixtures, Lean semantic-interface crosswalk, and the post-v2 model-generated governed-work replay; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Move above argument only after the claim is narrowed to the synthetic record discipline that passed, or after replayed intent-to-execution vertical slices, real command contracts and typed jobs, approval and runtime-adapter traces, exact tool-effect and post-state receipts, mismatch/expiry/revocation/replay controls, recovery replays, semantic-parser evaluation, and an accepted evidence-transition record."
@@ -1997,9 +2055,11 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -2011,7 +2071,8 @@
           "evidence_refs": [
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -2023,7 +2084,8 @@
           "evidence_refs": [
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -2034,9 +2096,11 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -2055,7 +2119,7 @@
       ]
     },
     {
-      "vector_id": "planning-as-a-control-layer.core.quality.2026-07-10",
+      "vector_id": "planning-as-a-control-layer.core.quality.2026-07-11",
       "claim_id": "planning-as-a-control-layer.core",
       "chapter_id": "planning-as-a-control-layer",
       "chapter_file": "chapters/planning-as-a-control-layer.qmd",
@@ -2091,7 +2155,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/planning-as-a-control-layer.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -2180,7 +2244,7 @@
       ]
     },
     {
-      "vector_id": "cognitive-compilation-and-semantic-ir.core.quality.2026-07-10",
+      "vector_id": "cognitive-compilation-and-semantic-ir.core.quality.2026-07-11",
       "claim_id": "cognitive-compilation-and-semantic-ir.core",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "chapter_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
@@ -2214,7 +2278,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/cognitive-compilation-and-semantic-ir.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -2297,7 +2361,7 @@
       ]
     },
     {
-      "vector_id": "virtual-context-abi.core.quality.2026-07-10",
+      "vector_id": "virtual-context-abi.core.quality.2026-07-11",
       "claim_id": "virtual-context-abi.core",
       "chapter_id": "virtual-context-abi",
       "chapter_file": "chapters/virtual-context-abi.qmd",
@@ -2331,7 +2395,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/virtual-context-abi.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -2414,7 +2478,7 @@
       ]
     },
     {
-      "vector_id": "context-transactions-snapshots-mounts-and-taint.core.quality.2026-07-10",
+      "vector_id": "context-transactions-snapshots-mounts-and-taint.core.quality.2026-07-11",
       "claim_id": "context-transactions-snapshots-mounts-and-taint.core",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "chapter_file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
@@ -2448,7 +2512,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -2531,7 +2595,7 @@
       ]
     },
     {
-      "vector_id": "verification-bandwidth-and-context-adequacy.core.quality.2026-07-10",
+      "vector_id": "verification-bandwidth-and-context-adequacy.core.quality.2026-07-11",
       "claim_id": "verification-bandwidth-and-context-adequacy.core",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "chapter_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
@@ -2545,19 +2609,23 @@
             "docs/external_review_status.md",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+            "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -2565,11 +2633,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -2579,21 +2648,27 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Adequacy harness plus external context-eval literature; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+            "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "The chapter has source mappings and finite adequacy hooks, but no contradiction-rate result, distractor-resistance test, adequacy classifier evaluation, or verification-bandwidth benchmark has been accepted."
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+            "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -2605,7 +2680,8 @@
           "evidence_refs": [
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -2617,7 +2693,8 @@
           "evidence_refs": [
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -2627,9 +2704,12 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+            "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
             "chapters/verification-bandwidth-and-context-adequacy.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -2648,7 +2728,7 @@
       ]
     },
     {
-      "vector_id": "claim-ledgers-and-belief-revision.core.quality.2026-07-10",
+      "vector_id": "claim-ledgers-and-belief-revision.core.quality.2026-07-11",
       "claim_id": "claim-ledgers-and-belief-revision.core",
       "chapter_id": "claim-ledgers-and-belief-revision",
       "chapter_file": "chapters/claim-ledgers-and-belief-revision.qmd",
@@ -2682,7 +2762,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/claim-ledgers-and-belief-revision.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -2765,7 +2845,7 @@
       ]
     },
     {
-      "vector_id": "spinoza-verification-and-proof-carrying-claims.core.quality.2026-07-10",
+      "vector_id": "spinoza-verification-and-proof-carrying-claims.core.quality.2026-07-11",
       "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "chapter_file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
@@ -2799,7 +2879,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -2882,7 +2962,7 @@
       ]
     },
     {
-      "vector_id": "labor-os-and-typed-jobs.core.quality.2026-07-10",
+      "vector_id": "labor-os-and-typed-jobs.core.quality.2026-07-11",
       "claim_id": "labor-os-and-typed-jobs.core",
       "chapter_id": "labor-os-and-typed-jobs",
       "chapter_file": "chapters/labor-os-and-typed-jobs.qmd",
@@ -2917,7 +2997,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/labor-os-and-typed-jobs.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -3003,7 +3083,7 @@
       ]
     },
     {
-      "vector_id": "artifact-graphs-audit-logs-and-replay.core.quality.2026-07-10",
+      "vector_id": "artifact-graphs-audit-logs-and-replay.core.quality.2026-07-11",
       "claim_id": "artifact-graphs-audit-logs-and-replay.core",
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "chapter_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
@@ -3017,7 +3097,8 @@
             "docs/external_review_status.md",
             "chapters/artifact-graphs-audit-logs-and-replay.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -3028,6 +3109,9 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -3038,7 +3122,8 @@
             "evidence_transitions/v1_x_measured/artifact_record_reality_sequence_no_change.json",
             "chapters/artifact-graphs-audit-logs-and-replay.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -3046,11 +3131,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/artifact-graphs-audit-logs-and-replay.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -3061,6 +3147,9 @@
           "rationale": "The recorded lane is Artifact graph harnesses, Theseus reports, and post-v2 content-addressed model/worktree route replays; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -3071,7 +3160,8 @@
             "evidence_transitions/v1_x_measured/artifact_record_reality_sequence_no_change.json",
             "chapters/artifact-graphs-audit-logs-and-replay.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "The chapter now has source mappings, finite artifact-provenance hooks, and a bounded five-project projection/revocation harness covering canonical truth, transitive closure, replay grades, terminal receipts, and relocation identity, but no deployed artifact graph service, real-work replay engine, audit reconstruction benchmark, or open-world completeness checker has been accepted."
@@ -3082,6 +3172,9 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -3092,7 +3185,8 @@
             "evidence_transitions/v1_x_measured/artifact_record_reality_sequence_no_change.json",
             "chapters/artifact-graphs-audit-logs-and-replay.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -3104,7 +3198,8 @@
           "evidence_refs": [
             "chapters/artifact-graphs-audit-logs-and-replay.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -3116,7 +3211,8 @@
           "evidence_refs": [
             "chapters/artifact-graphs-audit-logs-and-replay.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -3127,6 +3223,9 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
             "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -3137,7 +3236,8 @@
             "evidence_transitions/v1_x_measured/artifact_record_reality_sequence_no_change.json",
             "chapters/artifact-graphs-audit-logs-and-replay.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -3156,7 +3256,7 @@
       ]
     },
     {
-      "vector_id": "runtime-adapters-tool-permissions-and-human-approval.core.quality.2026-07-10",
+      "vector_id": "runtime-adapters-tool-permissions-and-human-approval.core.quality.2026-07-11",
       "claim_id": "runtime-adapters-tool-permissions-and-human-approval.core",
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "chapter_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
@@ -3170,7 +3270,8 @@
             "docs/external_review_status.md",
             "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -3180,13 +3281,15 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_effect_probe_no_change.json",
             "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -3194,11 +3297,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -3208,13 +3312,15 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Runtime adapter harness plus Theseus operator OS; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_effect_probe_no_change.json",
             "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Move above argument only after the claim is narrowed to the bounded record/effect behavior that passed, or after deployed adapter traces bind exact executable and capability scopes to observed OS enforcement, approval behavior, secret-handle safety, target-service rollback, irreversible residuals, and accepted evidence-transition records."
@@ -3224,13 +3330,15 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_effect_probe_no_change.json",
             "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -3242,7 +3350,8 @@
           "evidence_refs": [
             "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -3254,7 +3363,8 @@
           "evidence_refs": [
             "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -3264,13 +3374,15 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_effect_probe_no_change.json",
             "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -3289,7 +3401,7 @@
       ]
     },
     {
-      "vector_id": "inter-stack-protocols-identity-and-economic-exchange.core.quality.2026-07-10",
+      "vector_id": "inter-stack-protocols-identity-and-economic-exchange.core.quality.2026-07-11",
       "claim_id": "inter-stack-protocols-identity-and-economic-exchange.core",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
       "chapter_file": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
@@ -3323,7 +3435,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -3406,7 +3518,7 @@
       ]
     },
     {
-      "vector_id": "procedural-memory-and-cognitive-loop-closure.core.quality.2026-07-10",
+      "vector_id": "procedural-memory-and-cognitive-loop-closure.core.quality.2026-07-11",
       "claim_id": "procedural-memory-and-cognitive-loop-closure.core",
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "chapter_file": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
@@ -3440,7 +3552,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -3523,7 +3635,7 @@
       ]
     },
     {
-      "vector_id": "routing-heads-and-specialist-cores.core.quality.2026-07-10",
+      "vector_id": "routing-heads-and-specialist-cores.core.quality.2026-07-11",
       "claim_id": "routing-heads-and-specialist-cores.core",
       "chapter_id": "routing-heads-and-specialist-cores",
       "chapter_file": "chapters/routing-heads-and-specialist-cores.qmd",
@@ -3537,7 +3649,8 @@
             "docs/external_review_status.md",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -3548,10 +3661,12 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -3559,11 +3674,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -3574,10 +3690,12 @@
           "rationale": "The recorded lane is Routing harness, MoE/MoECOT crosswalk, and post-v2 three-seed held-out specialist/generalist comparison; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "The chapter has source mappings, finite routing hooks, and a folded MoECOT runtime-crosswalk hook set, but no router run, specialist-core benchmark, runtime replay, orchestration artifact, fallback trace, or route-quality measurement has been accepted."
@@ -3588,10 +3706,12 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -3603,7 +3723,8 @@
           "evidence_refs": [
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -3615,7 +3736,8 @@
           "evidence_refs": [
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -3626,10 +3748,12 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
             "chapters/routing-heads-and-specialist-cores.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -3648,7 +3772,7 @@
       ]
     },
     {
-      "vector_id": "readiness-gates-residual-escrow-and-quarantine.core.quality.2026-07-10",
+      "vector_id": "readiness-gates-residual-escrow-and-quarantine.core.quality.2026-07-11",
       "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "chapter_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
@@ -3662,7 +3786,8 @@
             "docs/external_review_status.md",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -3672,10 +3797,13 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -3683,11 +3811,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -3697,10 +3826,13 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Readiness/residual harness plus Theseus architecture gate; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Move above argument only after the claim is narrowed to the synthetic record-gate behavior that passed, or after route-selection traces, readiness-engine behavior, residual-ledger replay, deployed quarantine, rollback execution, runtime monitoring, and any MoECOT replay claims are recorded with accepted evidence-transition records."
@@ -3710,10 +3842,13 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -3725,7 +3860,8 @@
           "evidence_refs": [
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -3737,7 +3873,8 @@
           "evidence_refs": [
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -3747,10 +3884,13 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -3769,7 +3909,7 @@
       ]
     },
     {
-      "vector_id": "personal-compute-hives-and-federated-edge-intelligence.core.quality.2026-07-10",
+      "vector_id": "personal-compute-hives-and-federated-edge-intelligence.core.quality.2026-07-11",
       "claim_id": "personal-compute-hives-and-federated-edge-intelligence.core",
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
       "chapter_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
@@ -3804,7 +3944,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -3890,7 +4030,7 @@
       ]
     },
     {
-      "vector_id": "compact-generative-systems-and-residual-honesty.core.quality.2026-07-10",
+      "vector_id": "compact-generative-systems-and-residual-honesty.core.quality.2026-07-11",
       "claim_id": "compact-generative-systems-and-residual-honesty.core",
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "chapter_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
@@ -3927,7 +4067,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/compact-generative-systems-and-residual-honesty.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4019,7 +4159,7 @@
       ]
     },
     {
-      "vector_id": "fast-generation-architectures.core.quality.2026-07-10",
+      "vector_id": "fast-generation-architectures.core.quality.2026-07-11",
       "claim_id": "fast-generation-architectures.core",
       "chapter_id": "fast-generation-architectures",
       "chapter_file": "chapters/fast-generation-architectures.qmd",
@@ -4054,7 +4194,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/fast-generation-architectures.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4140,7 +4280,7 @@
       ]
     },
     {
-      "vector_id": "governed-deliberation-and-test-time-scaling.core.quality.2026-07-10",
+      "vector_id": "governed-deliberation-and-test-time-scaling.core.quality.2026-07-11",
       "claim_id": "governed-deliberation-and-test-time-scaling.core",
       "chapter_id": "governed-deliberation-and-test-time-scaling",
       "chapter_file": "chapters/governed-deliberation-and-test-time-scaling.qmd",
@@ -4154,7 +4294,8 @@
             "docs/external_review_status.md",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -4165,9 +4306,11 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+            "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -4175,11 +4318,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -4190,9 +4334,11 @@
           "rationale": "The recorded lane is Test-time-compute sources plus post-v2 adaptive/fixed/no-deliberation comparison with first/last hits and extra-compute harm; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+            "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "The chapter has source-noted deliberation comparators and finite routing theorems, but no local reasoning model, search, verifier, test-time budget policy, workload, independent review, execution trace, or measured result has been accepted as evidence for the broad claim."
@@ -4203,9 +4349,11 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+            "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -4217,7 +4365,8 @@
           "evidence_refs": [
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -4229,7 +4378,8 @@
           "evidence_refs": [
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -4240,9 +4390,11 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+            "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
             "chapters/governed-deliberation-and-test-time-scaling.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -4261,7 +4413,7 @@
       ]
     },
     {
-      "vector_id": "rankfold-neuralfold-and-artifact-compression.core.quality.2026-07-10",
+      "vector_id": "rankfold-neuralfold-and-artifact-compression.core.quality.2026-07-11",
       "claim_id": "rankfold-neuralfold-and-artifact-compression.core",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "chapter_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
@@ -4297,7 +4449,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4386,7 +4538,7 @@
       ]
     },
     {
-      "vector_id": "resource-economics-and-token-budgets.core.quality.2026-07-10",
+      "vector_id": "resource-economics-and-token-budgets.core.quality.2026-07-11",
       "claim_id": "resource-economics-and-token-budgets.core",
       "chapter_id": "resource-economics-and-token-budgets",
       "chapter_file": "chapters/resource-economics-and-token-budgets.qmd",
@@ -4400,7 +4552,8 @@
             "docs/external_review_status.md",
             "chapters/resource-economics-and-token-budgets.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -4411,6 +4564,7 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4423,7 +4577,8 @@
             "evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json",
             "chapters/resource-economics-and-token-budgets.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -4431,11 +4586,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/resource-economics-and-token-budgets.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -4446,6 +4602,7 @@
           "rationale": "The recorded lane is Costed-route/resource fixtures plus post-v2 wall-time, token, candidate-operation, usefulness, harm, and governance-tax measurements; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4458,7 +4615,8 @@
             "evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json",
             "chapters/resource-economics-and-token-budgets.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Move above argument only after the claim is narrowed to deterministic accounting, workflow-trace, toy-trace, local route-selection behavior, or local synthetic workload behavior that passed, or after budget-allocation runs, production scheduler logs, externally reviewable workload-quality reviews, review-capacity allocation traces, live or externally reviewed load-stability scenarios, cost-quality-residual measurements, serving-memory or KV-cache measurements, verification-tax experiments, and independent source-interpretation review are recorded with accepted evidence-transition records. The local five-sample workload-quality probe can support only a narrowed repository-task route-selection claim unless live or externally reviewed evidence justifies more. The local synthetic load-stability probe can support only a narrowed finite-workload accounting claim unless live or externally reviewed queue evidence justifies more. Folded simulation-fidelity claims also require simulation-transfer reviews, physical-computation audits, fidelity calibration, benchmark-transfer negative cases, measured simulation outputs, and accepted evidence-transition records before any stronger resource or simulation claim is promoted."
@@ -4469,6 +4627,7 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4481,7 +4640,8 @@
             "evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json",
             "chapters/resource-economics-and-token-budgets.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -4493,7 +4653,8 @@
           "evidence_refs": [
             "chapters/resource-economics-and-token-budgets.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -4505,7 +4666,8 @@
           "evidence_refs": [
             "chapters/resource-economics-and-token-budgets.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -4516,6 +4678,7 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+            "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4528,7 +4691,8 @@
             "evidence_transitions/v1_x_measured/theseus_simulation_fidelity_receipt_suite_import_prototype_backed.json",
             "chapters/resource-economics-and-token-budgets.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -4547,7 +4711,7 @@
       ]
     },
     {
-      "vector_id": "mathematical-and-search-substrates.core.quality.2026-07-10",
+      "vector_id": "mathematical-and-search-substrates.core.quality.2026-07-11",
       "claim_id": "mathematical-and-search-substrates.core",
       "chapter_id": "mathematical-and-search-substrates",
       "chapter_file": "chapters/mathematical-and-search-substrates.qmd",
@@ -4581,7 +4745,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/mathematical-and-search-substrates.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4664,7 +4828,7 @@
       ]
     },
     {
-      "vector_id": "circle-calculus-and-proof-carrying-ai-contracts.core.quality.2026-07-10",
+      "vector_id": "circle-calculus-and-proof-carrying-ai-contracts.core.quality.2026-07-11",
       "claim_id": "circle-calculus-and-proof-carrying-ai-contracts.core",
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "chapter_file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
@@ -4707,7 +4871,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4817,7 +4981,7 @@
       ]
     },
     {
-      "vector_id": "coil-attention-cyclic-memory-and-recurrence-contracts.core.quality.2026-07-10",
+      "vector_id": "coil-attention-cyclic-memory-and-recurrence-contracts.core.quality.2026-07-11",
       "claim_id": "coil-attention-cyclic-memory-and-recurrence-contracts.core",
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "chapter_file": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
@@ -4855,7 +5019,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4950,7 +5114,7 @@
       ]
     },
     {
-      "vector_id": "coilra-multicoil-rope-and-cyclic-mixers.core.quality.2026-07-10",
+      "vector_id": "coilra-multicoil-rope-and-cyclic-mixers.core.quality.2026-07-11",
       "claim_id": "coilra-multicoil-rope-and-cyclic-mixers.core",
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "chapter_file": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
@@ -4986,7 +5150,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -5075,7 +5239,7 @@
       ]
     },
     {
-      "vector_id": "executable-specifications-and-lean-proof-envelope.core.quality.2026-07-10",
+      "vector_id": "executable-specifications-and-lean-proof-envelope.core.quality.2026-07-11",
       "claim_id": "executable-specifications-and-lean-proof-envelope.core",
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "chapter_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
@@ -5109,7 +5273,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/executable-specifications-and-lean-proof-envelope.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -5192,7 +5356,7 @@
       ]
     },
     {
-      "vector_id": "benchmark-ratchets-and-anti-goodhart-evidence.core.quality.2026-07-10",
+      "vector_id": "benchmark-ratchets-and-anti-goodhart-evidence.core.quality.2026-07-11",
       "claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "chapter_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
@@ -5226,7 +5390,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -5309,7 +5473,7 @@
       ]
     },
     {
-      "vector_id": "capability-thresholds-and-deployment-commitments.core.quality.2026-07-10",
+      "vector_id": "capability-thresholds-and-deployment-commitments.core.quality.2026-07-11",
       "claim_id": "capability-thresholds-and-deployment-commitments.core",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "chapter_file": "chapters/capability-thresholds-and-deployment-commitments.qmd",
@@ -5343,7 +5507,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/capability-thresholds-and-deployment-commitments.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -5426,7 +5590,7 @@
       ]
     },
     {
-      "vector_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core.quality.2026-07-10",
+      "vector_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core.quality.2026-07-11",
       "claim_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
       "chapter_file": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
@@ -5460,7 +5624,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -5543,7 +5707,7 @@
       ]
     },
     {
-      "vector_id": "safety-cases-and-structured-assurance.core.quality.2026-07-10",
+      "vector_id": "safety-cases-and-structured-assurance.core.quality.2026-07-11",
       "claim_id": "safety-cases-and-structured-assurance.core",
       "chapter_id": "safety-cases-and-structured-assurance",
       "chapter_file": "chapters/safety-cases-and-structured-assurance.qmd",
@@ -5577,7 +5741,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/safety-cases-and-structured-assurance.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -5660,7 +5824,7 @@
       ]
     },
     {
-      "vector_id": "policy-optimization-and-learning-from-feedback.core.quality.2026-07-10",
+      "vector_id": "policy-optimization-and-learning-from-feedback.core.quality.2026-07-11",
       "claim_id": "policy-optimization-and-learning-from-feedback.core",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "chapter_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
@@ -5674,7 +5838,8 @@
             "docs/external_review_status.md",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -5685,9 +5850,11 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -5695,11 +5862,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -5710,9 +5878,11 @@
           "rationale": "The recorded lane is Policy-optimization fixtures/literature plus post-v2 three-seed real parameter/checkpoint/output-causality campaign; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "The chapter has extensive external-literature source notes and finite policy-update hooks, but no local training run, policy update, reward-hacking probe, holdout evaluation, or governed deployment canary has been accepted."
@@ -5723,9 +5893,11 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -5737,7 +5909,8 @@
           "evidence_refs": [
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -5749,7 +5922,8 @@
           "evidence_refs": [
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -5760,9 +5934,11 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "chapters/policy-optimization-and-learning-from-feedback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -5781,7 +5957,7 @@
       ]
     },
     {
-      "vector_id": "data-engines-continual-learning-and-unlearning.core.quality.2026-07-10",
+      "vector_id": "data-engines-continual-learning-and-unlearning.core.quality.2026-07-11",
       "claim_id": "data-engines-continual-learning-and-unlearning.core",
       "chapter_id": "data-engines-continual-learning-and-unlearning",
       "chapter_file": "chapters/data-engines-continual-learning-and-unlearning.qmd",
@@ -5795,7 +5971,8 @@
             "docs/external_review_status.md",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Shared project incentives and correlated review remain unresolved."
@@ -5806,9 +5983,12 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
+            "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Direct independent reproduction of the claim-bounded result is absent."
@@ -5816,11 +5996,12 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Repository freshness does not establish empirical recency or protect against future drift."
@@ -5831,9 +6012,12 @@
           "rationale": "The recorded lane is Data-admission/unlearning sources plus post-v2 real checkpoint mutation, poisoned-cohort exclusion, forgetting, and rollback campaign; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
+            "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "The chapter has four reviewed source notes plus a finite public-safe receipt schema and admission-routing proof, but no ASI Stack data-admission runtime, dataset import, training run, continual-learning comparison, contamination measurement, deletion propagation trace, or independently replayed evaluation."
@@ -5844,9 +6028,12 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
+            "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Adaptive and independent claim-bounded red-team evidence is absent."
@@ -5858,7 +6045,8 @@
           "evidence_refs": [
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Construct and criterion validity require independent, claim-specific assessment."
@@ -5870,7 +6058,8 @@
           "evidence_refs": [
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "Public metadata and partial artifacts are not a complete reproducibility bundle."
@@ -5881,9 +6070,12 @@
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
+            "evidence_transitions/post_v2_1/full_state_update_no_change.json",
+            "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
             "chapters/data-engines-continual-learning-and-unlearning.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
-            "claim_decisions/v1_x_core_claim_dispositions.json"
+            "claim_decisions/v1_x_core_claim_dispositions.json",
+            "claim_decisions/post_v2_1_empirical_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."
@@ -5902,7 +6094,7 @@
       ]
     },
     {
-      "vector_id": "artifact-steward-agents-and-living-project-governance.core.quality.2026-07-10",
+      "vector_id": "artifact-steward-agents-and-living-project-governance.core.quality.2026-07-11",
       "claim_id": "artifact-steward-agents-and-living-project-governance.core",
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "chapter_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
@@ -5936,7 +6128,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/artifact-steward-agents-and-living-project-governance.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -6019,7 +6211,7 @@
       ]
     },
     {
-      "vector_id": "integrated-reference-architecture.core.quality.2026-07-10",
+      "vector_id": "integrated-reference-architecture.core.quality.2026-07-11",
       "claim_id": "integrated-reference-architecture.core",
       "chapter_id": "integrated-reference-architecture",
       "chapter_file": "chapters/integrated-reference-architecture.qmd",
@@ -6053,7 +6245,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/integrated-reference-architecture.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -6136,7 +6328,7 @@
       ]
     },
     {
-      "vector_id": "project-theseus-as-report-first-implementation-reference.core.quality.2026-07-10",
+      "vector_id": "project-theseus-as-report-first-implementation-reference.core.quality.2026-07-11",
       "claim_id": "project-theseus-as-report-first-implementation-reference.core",
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "chapter_file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
@@ -6178,7 +6370,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/project-theseus-as-report-first-implementation-reference.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -6285,7 +6477,7 @@
       ]
     },
     {
-      "vector_id": "prototype-roadmap.core.quality.2026-07-10",
+      "vector_id": "prototype-roadmap.core.quality.2026-07-11",
       "claim_id": "prototype-roadmap.core",
       "chapter_id": "prototype-roadmap",
       "chapter_file": "chapters/prototype-roadmap.qmd",
@@ -6319,7 +6511,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/prototype-roadmap.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -6402,7 +6594,7 @@
       ]
     },
     {
-      "vector_id": "living-book-methodology.core.quality.2026-07-10",
+      "vector_id": "living-book-methodology.core.quality.2026-07-11",
       "claim_id": "living-book-methodology.core",
       "chapter_id": "living-book-methodology",
       "chapter_file": "chapters/living-book-methodology.qmd",
@@ -6437,7 +6629,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/living-book-methodology.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -6523,7 +6715,7 @@
       ]
     },
     {
-      "vector_id": "open-research-agenda-and-bibliography-plan.core.quality.2026-07-10",
+      "vector_id": "open-research-agenda-and-bibliography-plan.core.quality.2026-07-11",
       "claim_id": "open-research-agenda-and-bibliography-plan.core",
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "chapter_file": "chapters/open-research-agenda-and-bibliography-plan.qmd",
@@ -6557,7 +6749,7 @@
         },
         "recency": {
           "state": "repository_snapshot_current",
-          "rationale": "The vector and active disposition were regenerated for the 2026-07-10 repository snapshot.",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-11 repository snapshot.",
           "evidence_refs": [
             "chapters/open-research-agenda-and-bibliography-plan.qmd",
             "appendices/C_claim_evidence_matrix.qmd",

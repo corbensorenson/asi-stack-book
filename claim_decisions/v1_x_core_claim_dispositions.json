@@ -241,7 +241,7 @@
         "does not turn six related local projects into independent confirmations",
         "does not authorize publication of raw private project material"
       ],
-      "current_evidence_summary": "Source notes available for all 13 assigned sources; 12 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 14 assigned sources; 13 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Claim ledger harness and evidence-transition ledger",
       "formal_or_prototype_work": "Surface non-core transitions and enforce no-promotion decisions.",
@@ -551,13 +551,16 @@
         "does not prove rollback execution or regression quality",
         "does not prove source interpretation"
       ],
-      "current_evidence_summary": "Source notes available for all 6 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
-      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "effect-complete rollback beyond the local inventory; external effect and remote backup recovery; independent replay; independently assessed verifier quality; production recovery objectives and monitoring; production transfer and governance-cost evidence; replication across heterogeneous runtimes; useful governed throughput at the registered frontier",
       "primary_evidence_lane": "Replacement transaction harness",
       "formal_or_prototype_work": "Connect replacement evidence, rollback, monitor state, and residual escrow.",
       "human_reader_focus": "Use product-upgrade analogies without losing safety constraints.",
       "what_would_move_this": "Valid replacement transaction and invalid promotion fixture both replay.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json"
+      ]
     },
     {
       "claim_id": "security-kernel-and-digital-scifs.core",
@@ -609,13 +612,14 @@
         "does not prove least-privilege context behavior or runtime policy behavior",
         "does not prove source interpretation"
       ],
-      "current_evidence_summary": "Source notes available for all 13 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
-      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "effect-complete rollback beyond the local inventory; independently assessed verifier quality; production transfer and governance-cost evidence; useful governed throughput at the registered frontier",
       "primary_evidence_lane": "Security-kernel harness plus external security baselines",
       "formal_or_prototype_work": "Add SCIF lifecycle, revocation, sanitization, and prompt-injection negative controls.",
       "human_reader_focus": "Make SCIFs feel like controlled rooms and handles, not jargon.",
       "what_would_move_this": "Receipt fixture proves handle-mediated use and rejects leak paths.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
         "evidence_transitions/v1_x_measured/security_scif_commit_probe_no_change.json"
       ]
     },
@@ -754,14 +758,15 @@
         "does not prove rollback execution, regression quality, or recursive self-improvement safety",
         "does not prove source interpretation"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_update_causality/results/2026-07-10-local.json`.",
-      "open_gap": "production-scale continual-learning and feedback-update traces; verified deletion propagation across descendants and storage; independent evaluator and privacy assessment; deployed canary, rollback, invalidation, and monitor evidence; open-ended or recursive campaign evidence if those claims are pursued",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "independent validity assessment; production-scale update and monitoring traces; replicated target gain at the retained-task bound; separate evidence for feedback learning, open-endedness, or recursion if claimed",
       "primary_evidence_lane": "Safety-critical Lean/Theseus gates plus post-v2 real checkpoint mutation, exact rollback, and descendant invalidation at the transaction boundary",
       "formal_or_prototype_work": "Extend exact local rollback/invalidation toward self-proposed changes, protected-invariant deltas, independent evaluators, authority enforcement, canaries, monitor windows, and deployed recovery.",
       "human_reader_focus": "Present RSI as controlled maintenance, not runaway mythology.",
       "what_would_move_this": "A self-proposed real implementation change cannot widen authority or weaken protected invariants, and failed canaries roll back exact state while invalidating descendants under independent evaluation.",
       "relevant_non_core_transition_refs": [
-        "evidence_transitions/post_v2/update_causality_no_change.json"
+        "evidence_transitions/post_v2/update_causality_no_change.json",
+        "evidence_transitions/post_v2_1/full_state_update_no_change.json"
       ]
     },
     {
@@ -795,14 +800,15 @@
         "does not prove safe or open-ended self-improvement",
         "does not prove evaluator correctness, model quality, safety, or ASI"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_update_causality/results/2026-07-10-local.json`.",
-      "open_gap": "production-scale continual-learning and feedback-update traces; verified deletion propagation across descendants and storage; independent evaluator and privacy assessment; deployed canary, rollback, invalidation, and monitor evidence; open-ended or recursive campaign evidence if those claims are pursued",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "independent validity assessment; production-scale update and monitoring traces; replicated target gain at the retained-task bound; separate evidence for feedback learning, open-endedness, or recursion if claimed",
       "primary_evidence_lane": "Open-ended-improvement sources plus the post-v2 fixed stopped four-arm mutation campaign",
       "formal_or_prototype_work": "Move from a fixed campaign to bounded task/candidate generation with evaluator evolution controls, archive diversity, independent qualification, stop authority, resources, failures, and admission decisions.",
       "human_reader_focus": "Explain the difference between a workshop that may generate candidates and a release gate that may let one affect a system.",
       "what_would_move_this": "A bounded open-ended campaign demonstrates useful novelty and transfer while preserving evaluator scope, archive negatives, resource limits, stop authority, and independent admission.",
       "relevant_non_core_transition_refs": [
-        "evidence_transitions/post_v2/update_causality_no_change.json"
+        "evidence_transitions/post_v2/update_causality_no_change.json",
+        "evidence_transitions/post_v2_1/full_state_update_no_change.json"
       ]
     },
     {
@@ -853,14 +859,15 @@
         "does not prove tool-effect correctness or artifact acceptance",
         "does not prove source interpretation"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json`.",
-      "open_gap": "deployed or externally reviewable governed-work traces; broader natural workloads and models; independent verifier-quality assessment; production cost, throughput, rollback, and residual evidence",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "effect-complete rollback beyond the local inventory; independently assessed verifier quality; production transfer and governance-cost evidence; useful governed throughput at the registered frontier",
       "primary_evidence_lane": "Command-contract fixtures, Lean semantic-interface crosswalk, and the post-v2 model-generated governed-work replay",
       "formal_or_prototype_work": "Extend the 16-run local plan/code and Git-worktree comparison toward deployed approval, sandbox, effect, and rollback services while preserving the zero-release and failed-rollback results.",
       "human_reader_focus": "Show the path from \"what I meant\" to \"what the system may do\" without making prompt prose into permission.",
       "what_would_move_this": "A broader deployed or externally reviewable intent-to-effect comparison preserves authority, observed effects, receipt/path reconciliation, residuals, useful throughput, and rollback under natural workloads.",
       "relevant_non_core_transition_refs": [
-        "evidence_transitions/post_v2/governed_work_flagship_no_change.json"
+        "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json"
       ]
     },
     {
@@ -1080,13 +1087,16 @@
         "does not prove context adequacy detection",
         "does not prove source interpretation quality"
       ],
-      "current_evidence_summary": "Source notes available for all 8 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
-      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "a workload with correct and incorrect initial candidates; adaptive benefit at a matched real budget; independently assessed evaluator and production transfer; independently assessed evaluator validity; multiple models, seeds, and natural workloads; nonzero substantive answer utility; production routing safety, latency, cost, and transfer; replicated corruption reduction",
       "primary_evidence_lane": "Adequacy harness plus external context-eval literature",
       "formal_or_prototype_work": "Add verifier-capacity constraints and escalation paths.",
       "human_reader_focus": "Explain why a model cannot verify everything it can read.",
       "what_would_move_this": "Adequacy record rejects context that exceeds verifier bandwidth.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+        "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json"
+      ]
     },
     {
       "claim_id": "claim-ledgers-and-belief-revision.core",
@@ -1271,14 +1281,17 @@
         "does not prove audit-log or reverse-dependency completeness",
         "does not reproduce any historical-project capability or runtime result"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json`.",
-      "open_gap": "deployed or externally reviewable governed-work traces; broader natural workloads and models; independent verifier-quality assessment; production cost, throughput, rollback, and residual evidence",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "causal influence-removal evidence; descendant-wide propagation receipts; effect-complete rollback beyond the local inventory; external effect and remote backup recovery; independent replay; independently assessed verifier quality; privacy and member/nonmember assessment; production recovery objectives and monitoring; production transfer and governance-cost evidence; replication across heterogeneous runtimes; useful governed throughput at the registered frontier; verified storage and backup erasure where claimed",
       "primary_evidence_lane": "Artifact graph harnesses, Theseus reports, and post-v2 content-addressed model/worktree route replays",
       "formal_or_prototype_work": "Extend the 16 content-addressed runs, observed paths, effect digests, residuals, and rollback records toward deployed audit reconstruction, verifier-quality, durability, and open-world revocation completeness.",
       "human_reader_focus": "Show artifacts as memory the system can audit.",
       "what_would_move_this": "A deployed or externally reviewable artifact service reconstructs real work and revocation effects without erasing verifier limits, failed rollback, or residuals.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+        "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
         "evidence_transitions/v1_x_measured/artifact_epistemic_tcb_fixture_no_change.json",
         "evidence_transitions/v1_x_measured/artifact_github_pages_ci_attestation_no_change.json",
         "evidence_transitions/v1_x_measured/artifact_live_attestation_no_change.json",
@@ -1335,13 +1348,14 @@
         "does not prove secret-handle safety",
         "does not prove rollback execution or runtime safety"
       ],
-      "current_evidence_summary": "Source notes available for all 22 assigned sources; 17 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
-      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "effect-complete rollback beyond the local inventory; independently assessed verifier quality; production transfer and governance-cost evidence; useful governed throughput at the registered frontier",
       "primary_evidence_lane": "Runtime adapter harness plus Theseus operator OS",
       "formal_or_prototype_work": "Add approval expiry, rollback handles, irreversible residuals, and authority receipts.",
       "human_reader_focus": "Make tool use feel like bounded action with human checkpoints.",
       "what_would_move_this": "High-impact adapter call fails without current approval and receipt.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
         "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
         "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
         "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
@@ -1459,14 +1473,15 @@
         "does not prove MoECOT runtime behavior",
         "does not prove low-parameter ASI performance"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_routing_deliberation/results/2026-07-10-local.json`.",
-      "open_gap": "harder ambiguous routing workload with exercised fallback and abstention; trained specialists and interference measurements; language-model deliberation with independent verifier-quality assessment; production latency, cost, safety, and transfer evidence",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "independently assessed evaluator validity; multiple models, seeds, and natural workloads; nonzero substantive answer utility; production routing safety, latency, cost, and transfer",
       "primary_evidence_lane": "Routing harness, MoE/MoECOT crosswalk, and post-v2 three-seed held-out specialist/generalist comparison",
       "formal_or_prototype_work": "Build a harder ambiguous workload that exercises fallback and abstention, trained-specialist interference, authority leases, and model-scale transfer; preserve the current zero-fallback coverage gap.",
       "human_reader_focus": "Explain routing as an operations problem, not only a neural layer, and show the MoECOT Runtime Crosswalk as a receipt shape rather than a standalone proof.",
       "what_would_move_this": "Learned, rule, specialist, generalist, fallback, and abstention routes separate under ambiguous held-out work with matched cost, calibration, interference, residual, and authority records.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+        "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
         "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json"
       ]
     },
@@ -1517,13 +1532,15 @@
         "does not prove deployed quarantine or rollback execution",
         "does not prove runtime monitoring, MoECOT replay, benchmark performance, or runtime safety"
       ],
-      "current_evidence_summary": "Source notes available for all 16 assigned sources; 15 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
-      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "effect-complete rollback beyond the local inventory; independently assessed evaluator validity; independently assessed verifier quality; multiple models, seeds, and natural workloads; nonzero substantive answer utility; production routing safety, latency, cost, and transfer; production transfer and governance-cost evidence; useful governed throughput at the registered frontier",
       "primary_evidence_lane": "Readiness/residual harness plus Theseus architecture gate",
       "formal_or_prototype_work": "Add quarantine release, residual custody, expired evidence, and fallback cases.",
       "human_reader_focus": "Make readiness gates read like release engineering for intelligence.",
       "what_would_move_this": "Promotion blocked on expired evidence or uncustodied residuals.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
         "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json"
       ]
     },
@@ -1701,14 +1718,15 @@
         "does not prove verifier correctness, trace faithfulness, or safe self-reflection",
         "does not prove model quality, safety, authority enforcement, or ASI"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_routing_deliberation/results/2026-07-10-local.json`.",
-      "open_gap": "harder ambiguous routing workload with exercised fallback and abstention; trained specialists and interference measurements; language-model deliberation with independent verifier-quality assessment; production latency, cost, safety, and transfer evidence",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "a workload with correct and incorrect initial candidates; adaptive benefit at a matched real budget; independently assessed evaluator and production transfer; replicated corruption reduction",
       "primary_evidence_lane": "Test-time-compute sources plus post-v2 adaptive/fixed/no-deliberation comparison with first/last hits and extra-compute harm",
       "formal_or_prototype_work": "Repeat the matched stopping study with language-model candidates, independent verifier-quality assessment, safety failures, latency, and transfer while retaining fixed-step harms.",
       "human_reader_focus": "Explain the difference between spending more time thinking and earning permission to act.",
       "what_would_move_this": "A language-model workload shows when verifier-gated stopping helps or harms relative to fixed and no deliberation under matched budgets and independently assessed verification.",
       "relevant_non_core_transition_refs": [
-        "evidence_transitions/post_v2/routing_deliberation_no_change.json"
+        "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+        "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json"
       ]
     },
     {
@@ -1823,14 +1841,15 @@
         "does not prove simulation results transfer",
         "does not prove physical feasibility or simulator adequacy"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json`.",
-      "open_gap": "deployed or externally reviewable governed-work traces; broader natural workloads and models; independent verifier-quality assessment; production cost, throughput, rollback, and residual evidence",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "effect-complete rollback beyond the local inventory; independently assessed verifier quality; production transfer and governance-cost evidence; useful governed throughput at the registered frontier",
       "primary_evidence_lane": "Costed-route/resource fixtures plus post-v2 wall-time, token, candidate-operation, usefulness, harm, and governance-tax measurements",
       "formal_or_prototype_work": "Extend local Apple M1 and synthetic candidate-operation measurements toward production scheduler, serving, review-capacity, verification-tax, and cost-quality evidence.",
       "human_reader_focus": "Explain resource economics as finite attention, finite money, and claim transport through named simulation envelopes.",
       "what_would_move_this": "Production or externally reviewable workloads jointly report useful output, unsafe release, verification cost, latency, review burden, residuals, and displaced work.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
         "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
         "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
         "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -2107,7 +2126,7 @@
         "does not treat six related local projects as independent confirmations",
         "does not authorize publication of raw private project material"
       ],
-      "current_evidence_summary": "Source notes available for all 25 assigned sources; 18 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 29 assigned sources; 22 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Benchmark anti-Goodhart harness plus external benchmarks",
       "formal_or_prototype_work": "Add contamination, saturation, and transfer negative controls.",
@@ -2262,14 +2281,15 @@
         "does not prove any RL or preference method improves the stack",
         "does not prove reward safety"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_update_causality/results/2026-07-10-local.json`.",
-      "open_gap": "production-scale continual-learning and feedback-update traces; verified deletion propagation across descendants and storage; independent evaluator and privacy assessment; deployed canary, rollback, invalidation, and monitor evidence; open-ended or recursive campaign evidence if those claims are pursued",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "independent validity assessment; production-scale update and monitoring traces; replicated target gain at the retained-task bound; separate evidence for feedback learning, open-endedness, or recursion if claimed",
       "primary_evidence_lane": "Policy-optimization fixtures/literature plus post-v2 three-seed real parameter/checkpoint/output-causality campaign",
       "formal_or_prototype_work": "Add actual human/model feedback, reward-hacking probes, evaluator separation, deployment canaries, rollback, and retained-task measurement beyond the synthetic policy labels.",
       "human_reader_focus": "Explain policy optimization as governance of learning signals.",
       "what_would_move_this": "A feedback-driven policy update improves held-out utility without reward laundering or hidden forgetting and survives independent evaluation, canary, rollback, and residual review.",
       "relevant_non_core_transition_refs": [
-        "evidence_transitions/post_v2/update_causality_no_change.json"
+        "evidence_transitions/post_v2/update_causality_no_change.json",
+        "evidence_transitions/post_v2_1/full_state_update_no_change.json"
       ]
     },
     {
@@ -2305,14 +2325,16 @@
         "does not prove machine unlearning, privacy compliance, or verified forgetting",
         "does not promote any learning, benchmark, safety, or capability claim"
       ],
-      "current_evidence_summary": "Post-v2 adjacent local evidence is recorded in the affected chapter and accepted no-change transition; core support remains argument. Result: `experiments/post_v2_update_causality/results/2026-07-10-local.json`.",
-      "open_gap": "production-scale continual-learning and feedback-update traces; verified deletion propagation across descendants and storage; independent evaluator and privacy assessment; deployed canary, rollback, invalidation, and monitor evidence; open-ended or recursive campaign evidence if those claims are pursued",
+      "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
+      "open_gap": "causal influence-removal evidence; descendant-wide propagation receipts; independent validity assessment; privacy and member/nonmember assessment; production-scale update and monitoring traces; replicated target gain at the retained-task bound; separate evidence for feedback learning, open-endedness, or recursion if claimed; verified storage and backup erasure where claimed",
       "primary_evidence_lane": "Data-admission/unlearning sources plus post-v2 real checkpoint mutation, poisoned-cohort exclusion, forgetting, and rollback campaign",
       "formal_or_prototype_work": "Extend the 1,200-example local policy workload toward real data admission, continual-learning comparisons, deletion propagation through checkpoints/adapters/caches/derivatives, privacy tests, and independent replay.",
       "human_reader_focus": "Explain how learning inputs acquire history, and why deleting a row is not the same as proving its effects are gone.",
       "what_would_move_this": "A real governed data pipeline traces deletion and retained utility through every affected descendant and storage surface with contamination, privacy, rollback, and independent verification.",
       "relevant_non_core_transition_refs": [
-        "evidence_transitions/post_v2/update_causality_no_change.json"
+        "evidence_transitions/post_v2/update_causality_no_change.json",
+        "evidence_transitions/post_v2_1/full_state_update_no_change.json",
+        "evidence_transitions/post_v2_1/unlearning_causality_narrow.json"
       ]
     },
     {
@@ -2514,7 +2536,7 @@
         "does not claim reader artifacts exist",
         "does not prove any ASI runtime behavior"
       ],
-      "current_evidence_summary": "Source notes available for all 7 assigned sources; 7 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 8 assigned sources; 8 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
       "primary_evidence_lane": "Harness registry plus release/reproducibility records",
       "formal_or_prototype_work": "Surface phase-runner evidence and add no-ledger-sprawl rule.",

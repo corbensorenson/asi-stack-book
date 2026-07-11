@@ -370,6 +370,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 | `ext_s_grpo_2025` | Metadata-first comparator: S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models. External source for early-exit reinforcement learning and overthinking control in reasoning models. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_longrlvr_2026` | Metadata-first comparator: LongRLVR: Long-Context Reinforcement Learning Requires Verifiable Context Rewards. External source for long-context RLVR and verifiable context-grounding rewards. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_rlhf_limitations_2023` | Metadata-first comparator: Open Problems and Fundamental Limitations of Reinforcement Learning from Human Feedback. External survey source for RLHF limitations, reward hacking, evaluator limits, and complementary safeguards. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_muse_unlearning_2025` | Metadata-first comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Primary ICLR benchmark comparator separating verbatim and knowledge memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability; none of its 7B-language-model results are reproduced by the local policy network. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 real policy-update result
@@ -386,6 +387,20 @@ This establishes local checkpoint/output causality and preserves modest gains,
 forgetting, and best/final disagreement. It does not test human or model
 feedback, reward hacking, deployment canaries, or production optimization.
 The broad core claim remains `argument` via `no_change`.
+
+## Post-v2.1 prospective update authority
+
+The successor campaign prospectively selects the best validation-eligible
+checkpoint subject to a retained-task bound, always preserves the final
+checkpoint, and forbids test outcomes from choosing either. Six of fifteen
+seed-arm transactions expose best/final disagreement; three authorized-data
+comparators cross the safety bound after one epoch and remain ineligible. None
+of nine eligible challengers reaches the 0.05 target-utility gain, although all
+15 declared state trees roll back exactly. This is evidence that update
+authority, utility, retained behavior, and recovery can be measured in one
+transaction. It is not feedback learning, reward-model validation, policy
+improvement, or deployment evidence, so the core disposition remains
+`no_change`.
 
 ## Summary
 

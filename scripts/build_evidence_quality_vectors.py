@@ -13,7 +13,8 @@ ROOT = Path(__file__).resolve().parents[1]
 POLICY = ROOT / "evidence_quality" / "vector_policy.json"
 DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
 OUTPUT = ROOT / "evidence_quality" / "core_claim_vectors.json"
-SNAPSHOT_DATE = "2026-07-10"
+POST_V2_1_DISPOSITIONS = ROOT / "claim_decisions" / "post_v2_1_empirical_dispositions.json"
+SNAPSHOT_DATE = "2026-07-11"
 
 
 def load(path: Path) -> Any:
@@ -27,13 +28,20 @@ def dimension(state: str, rationale: str, refs: list[str], residual: str) -> dic
 def build_registry() -> dict[str, Any]:
     policy = load(POLICY)
     dispositions = load(DISPOSITIONS)
+    post_v2_1 = load(POST_V2_1_DISPOSITIONS) if POST_V2_1_DISPOSITIONS.exists() else {"decisions": []}
+    post_v2_1_by_claim = {row["claim_id"]: row for row in post_v2_1.get("decisions", [])}
     vectors: list[dict[str, Any]] = []
     for row in dispositions["dispositions"]:
         claim_id = row["claim_id"]
         chapter_file = row["chapter_file"]
         transition_refs = list(row.get("relevant_non_core_transition_refs", []))
+        post_v2_1_row = post_v2_1_by_claim.get(claim_id)
+        if post_v2_1_row:
+            transition_refs.extend(ref for ref in post_v2_1_row.get("transition_refs", []) if ref not in transition_refs)
         adjacent = bool(transition_refs)
         common_refs = [chapter_file, "appendices/C_claim_evidence_matrix.qmd", str(DISPOSITIONS.relative_to(ROOT))]
+        if post_v2_1_row:
+            common_refs.append(str(POST_V2_1_DISPOSITIONS.relative_to(ROOT)))
         vector = {
             "vector_id": f"{claim_id}.quality.{SNAPSHOT_DATE}",
             "claim_id": claim_id,

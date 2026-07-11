@@ -333,6 +333,31 @@ These proof hooks are implemented as finite-record predicates over gate decision
 
 The readiness sources support gate state, per-check lifecycle, residual escrow, regression preservation, transitive invalidation, and quarantine. Fifteen mappings now have a source-to-claim trace, and the Project Theseus architecture-gate lane has one static digest-verified report import. The new six-project fixture adds negative-case record discipline only. The book still has not run a live readiness gate, inspected a current Theseus dashboard, imported MoECOT runtime artifacts, or proved that any current project or book module passes readiness gates.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_dont_hallucinate_abstain_2024` | Metadata-first comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Primary ACL comparator for knowledge-gap detection, abstention, calibration/self-reflection limitations, and multi-model probing; reported abstention improvements are task- and model-bounded and do not validate the local router or evaluator. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Post-v2.1 readiness calibration
+
+The governed program shows why “safe” and “ready” cannot be synonyms: it
+eliminated registered unsafe releases but released only 2/36 useful candidates
+and missed the rollback threshold. The routing program adds a second
+calibration warning. A learned policy reached 59/60 correct routes and
+activated fallback, abstention, and clarification, yet every one of 360
+substantive generated candidates was wrong. A readiness gate must therefore
+separate route correctness, useful non-answer behavior, substantive answer
+utility, and rollback completeness. `RD-02` closes at its narrow activation
+criterion; the broader routing and production-readiness residuals remain.
+
+| Source | Title | Use and boundary |
+|---|---|---|
+| `ext_dont_hallucinate_abstain_2024` | Don’t Hallucinate, Abstain | Selective-prediction comparator for abstention utility and calibration; not evidence that the local router is calibrated beyond its frozen workload. |
+
 ## Summary
 
 Readiness is the stack's refusal to confuse availability with qualification. Gates decide when a module can move from experiment to route, residual escrow keeps unsolved cases alive, and quarantine turns failure into governed learning rather than hidden state.

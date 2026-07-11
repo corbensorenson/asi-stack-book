@@ -81,8 +81,8 @@ def main() -> None:
         if transition_ref not in v1_by_claim.get(claim_id, {}).get("relevant_non_core_transition_refs", []):
             errors.append(f"{claim_id}: derived disposition lacks post-v2 transition side reference")
     appendix = APPENDIX.read_text(encoding="utf-8")
-    if appendix.count("Post-v2 adjacent local evidence is recorded") != 9:
-        errors.append("Appendix C must contain nine updated post-v2 evidence summaries")
+    if appendix.count("Current adjacent local evidence is recorded") != 14:
+        errors.append("Appendix C must retain current evidence summaries for all fourteen successor-affected claims")
     plan = PLAN.read_text(encoding="utf-8")
     for phrase in ("post-v2 model-generated governed-work replay", "post-v2 three-seed held-out", "post-v2 real checkpoint mutation"):
         if phrase not in plan:
@@ -117,7 +117,7 @@ def main() -> None:
             errors.append("a post-v2 reconciliation negative control was accepted")
     if errors:
         raise SystemExit("Post-v2 empirical reconciliation failed:\n - " + "\n - ".join(errors))
-    print("Post-v2 empirical reconciliation passed: 3 accepted non-core no-change transitions, 9 core no-change decisions, 9 updated chapters/vectors/Appendix C/evidence-plan rows, 14 retained residual lanes, 3 honest conditional deferrals, 54 chapters, zero support-state changes, no new Lean claim, and 5 rejecting controls.")
+    print("Post-v2 empirical reconciliation passed: 3 historical accepted non-core no-change transitions, 9 historical core no-change decisions, preserved chapter/vector/evidence-plan routing, 14 current Appendix C summaries, 14 retained residual lanes, 3 honest conditional deferrals, 54 chapters, zero support-state changes, no new Lean claim, and 5 rejecting controls.")
 
 
 if __name__ == "__main__":

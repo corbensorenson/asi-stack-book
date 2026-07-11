@@ -279,6 +279,27 @@ These Lean hooks are implemented as finite-record predicates over context-packet
 
 The assigned sources supply the context-adequacy and verification-capacity vocabulary. Four local mappings are passage-reviewed, while `vcm_editable` remains connector/source-note mapped. The crosswalk does not claim the proposed contradiction-rate experiment has been run.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_dont_hallucinate_abstain_2024` | Metadata-first comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Primary ACL comparator for knowledge-gap detection, abstention, calibration/self-reflection limitations, and multi-model probing; reported abstention improvements are task- and model-bounded and do not validate the local router or evaluator. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Post-v2.1 evaluator adequacy result
+
+The routing/deliberation evaluator receives only the request, public candidate,
+and answer criterion; it sees neither gold route nor router score. That
+implementation boundary is useful, but its outcome is stark: zero of 360
+substantive candidates satisfy the criterion, while route-level policy actions
+can still score as correct. The result separates evaluator bandwidth from
+candidate adequacy and from route adequacy. It does not independently validate
+the criterion, establish that a richer context would repair the answers, or
+show that five low-quality candidates provide more verifiable information than
+one. `RD-03` therefore narrows rather than closes.
+
 ## Summary
 
 Verification Bandwidth and Context Adequacy is the stack's refusal to equate access with understanding. A system may hold the right documents, have enough context length, and still lack the time, comparison method, tool support, or reviewer bandwidth needed to verify the claim it is about to make.

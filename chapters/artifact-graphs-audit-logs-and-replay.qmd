@@ -453,6 +453,16 @@ These proof hooks are implemented as finite-record predicates plus route, replay
 
 The assigned sources support the artifact-provenance, audit, replay, and loop-closure vocabulary. Six local-cache mappings are reviewed at passage level; MoECOT remains a connector/source-note mapping. This does not claim local replayability until a replay record exists.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_claw_swe_bench_2026` | Metadata-first comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Current preprint comparator for fixed workspace, patch, evaluator, and budget contracts across coding-agent harnesses; reported accuracy and cost differences are not reproduced here and do not validate the post-v2.1 synthetic repository corpus. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_txfs_2018` | Metadata-first comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Post-v2 record/reality result
 
 The governed-work flagship now contributes 16 content-addressed plan/code run
@@ -467,6 +477,20 @@ but it remains a bounded disposable workload operated inside one project. It
 does not establish open-world provenance completeness, verifier correctness,
 deployed audit durability, or external institutional independence. The core
 claim remains `argument`; the transition is `no_change`.
+
+## Post-v2.1 state and effect replay
+
+Two successor results sharpen record/reality scope. The governed-work arm
+retains all candidate bytes, route decisions, observations, and pre/post-effect
+digests, but four of 36 attack-control rollback receipts fail exact replay.
+The update campaign separately re-observes fifteen complete state trees and
+restores all 24 declared surfaces in every seed-arm transaction. It also
+records lineage propagation for deletion-aware retraining while explicitly
+retaining the immutable source corpus. The artifact graph must therefore name
+which inventory a receipt covers: exact local state replay can coexist with
+inexact repository-effect rollback, persistent storage, and no external
+transfer. The accepted transitions are bounded `narrow` results, not evidence
+of open-world provenance or storage erasure.
 
 ## Summary
 

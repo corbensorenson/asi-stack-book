@@ -161,7 +161,7 @@ that names its artifacts, result, residuals, and disposition.
 The 2026-07-11 outcome checkpoint is recorded in
 `docs/post_v2_1_empirical_results.md`, the content-addressed outcome ledger,
 six accepted claim-bounded transitions, and fourteen chapter-core `no_change`
-decisions. M4 book reconciliation and M5 release remain active.
+decisions. M4 book reconciliation is complete; M5 release is active.
 
 ### Machine-readable state
 

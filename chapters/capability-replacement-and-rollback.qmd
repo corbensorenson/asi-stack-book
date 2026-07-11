@@ -293,6 +293,34 @@ promotion.
 
 The crosswalk gives the source basis for transaction vocabulary. It does not treat source-reported ratchets, tool lifecycles, audit pipelines, or replacement designs as local results.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_txfs_2018` | Metadata-first comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Post-v2.1 full-state rollback result
+
+The update campaign makes rollback authority prospective and inventories 24
+surfaces spanning model, optimizer, scheduler, RNG, caches, checkpoints,
+backups, and descendant lineage. All fifteen seed-arm transactions return that
+declared tree to its exact pre-update digest. Six arms nevertheless show that
+the validation-selected checkpoint differs from the final checkpoint, and the
+three unsafe comparator arms remain ineligible after crossing their retained-
+task bound. This closes `UU-04` only for the declared local inventory. It does
+not establish recovery of remote stores, external effects, live services, or
+semantic behavior after production rollback. The separate governed-work
+result, where only 32/36 attack-control rollbacks were exact, is the reminder
+that completeness is inventory-specific rather than inherited from the word
+“rollback.”
+
+| Source | Title | Use and boundary |
+|---|---|---|
+| `ext_txfs_2018` | TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions | Transactional-filesystem comparator for write-set, recovery, and crash-consistency boundaries; not evidence that ASI Stack external effects are transactional. |
+
 ## Summary
 
 Capability Replacement and Rollback turns improvement into a transaction. It preserves the prior state, candidate evidence, regressions, residuals, approval, monitor window, and rollback path.

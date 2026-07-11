@@ -452,6 +452,8 @@ Source loading queue:
 | Provenance interoperability | `ext_w3c_prov_o_2013` | Use PROV-O for entity/activity/agent, derivation, attribution, revision, delegation, and invalidation vocabulary. A provenance assertion is not evidential truth, completeness, authority, or support-state promotion. |
 | Historical-project lineage | `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Use the six public-safe source notes as one related local implementation lineage for the evidence cell, causal capability chain, trainable-state manifest, response-causality receipt, honest missingness, verification independence, and ownership/capability separation. Do not count repeated mechanisms as independent confirmation or publish raw private project material. |
 
+
+| Manifest assignment reconciliation | `ext_unlearning_benchmarks_weak_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The living book needs a shared language for what kind of claim is being made and what currently supports it.
@@ -894,6 +896,8 @@ Source loading queue:
 | External comparators | `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs` | Use only for progressive-delivery, feature-flag, model-delivery, rollout-history, and rollback vocabulary; do not treat as evidence that ASI replacement or production model rollout has been implemented. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `ext_txfs_2018` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Recursive improvement requires a safe procedure for replacing components while preserving identity, regression history, and recovery paths.
@@ -1855,6 +1859,8 @@ Source loading queue:
 | External retrieval comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024` | Compare global graph summaries, associative navigation, and multi-resolution retrieval. Retrieval quality and source-reported QA gains remain distinct from claim adequacy, evidence truth, and local reproduction. |
 | Connector or recovery required | `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Long context does not automatically provide long-range reasoning or enough verification capacity.
@@ -2150,6 +2156,8 @@ Source loading queue:
 | External provenance comparators | `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019` | Use for interoperable entity/activity/agent provenance, dataset structure and derivation, and signed supply-chain steps. Keep replay, attestation, byte identity, semantic correctness, and authority separate. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
@@ -2259,6 +2267,8 @@ Source loading queue:
 | Current evaluation and security comparators | `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026` | Use for agent/tool evaluation, indirect-injection tasks, capability-secure data flow, and modern agent-risk coverage. Framework presence, benchmark scores, or taxonomy mapping do not prove adapter security or safe approval. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
@@ -2541,6 +2551,8 @@ Source loading queue:
 | Associative-routing comparator | `ext_hipporag_2024` | Use Personalized PageRank retrieval as a graph-navigation comparator. Relevance scores do not establish evidential adequacy, routing safety, update correctness, or local performance. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -2626,6 +2638,8 @@ Source loading queue:
 | Self-improvement comparator | `ext_darwin_godel_machine_2025` | Use for archive-based candidate generation and benchmark-selected descendants under stated sandbox/human oversight. Do not treat benchmark improvement as readiness, monotonic safety, or promotion authority. |
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
+
+| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking.
@@ -3166,6 +3180,8 @@ Source loading queue:
 | External literature variants | `ext_pagedattention_vllm_2023`, `ext_reluplex_2017` | Read for serving-memory economics and scoped property-verification comparison; treat reported results as source-reported until reproduced. |
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
+
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
@@ -3676,6 +3692,8 @@ Source loading queue:
 | Historical-project lineage | `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Use as one related local lineage for metric-origin algebra, closure inheritance, representation-capacity gates, retry ceilings, checkpoint/output binding, and negative cases. Do not count project-reported metrics as reproduced results or repeated mechanisms as independent confirmation. |
 
 
+
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
@@ -3898,6 +3916,8 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Use only as implementation-reference context unless artifacts are imported or reproduced. |
 | Handoff or recovery notes | `sources/inbox/policy_optimization_browser_note_2026-06-24/` | Local-only author-intent and external-literature queue context. Do not quote verbatim or promote claims from this packet. |
 
+
+| Manifest assignment reconciliation | `ext_muse_unlearning_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Feedback, verification, benchmark pressure, and failures need a governed path into future behavior.
@@ -3986,6 +4006,8 @@ Source loading queue:
 | Handoff or recovery notes | `schemas/data_admission_receipt.schema.json`, `lean/AsiStackProofs/DataEngines.lean`, `tests/fixtures/protocol_records/data_admission_receipt.valid.json` | These are local finite-record artifacts, not a data engine, dataset, training run, or deletion result. |
 
 
+
+| Manifest assignment reconciliation | `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Learning inputs become transformed, mixed, replayed, indexed,
@@ -4436,6 +4458,8 @@ Source loading queue:
 | Connector or recovery required | `moecot`, `moecot_md`, `road_to_agi` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 | External comparators | `ext_literate_programming_1984`, `ext_jupyter_book_docs`, `ext_quarto_books_docs`, `ext_nist_ai_rmf_1_0_2023`, `ext_frontier_ai_regulation_2023`, `ext_helm_2022`, `ext_livebench_2024`, `ext_benchmark_contamination_2023` | Use source-noted records to position living-book methodology against literate programming, executable/computational books, Quarto book publishing, governance lifecycle reporting, transparent evaluation reporting, and living benchmark practice; do not treat them as external review, manuscript-quality evidence, or support-state promotion. |
 
+
+| Manifest assignment reconciliation | `ext_openunlearning_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The book itself must remain a living technical system rather than a static anthology.

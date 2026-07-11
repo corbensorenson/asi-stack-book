@@ -318,6 +318,18 @@ the evaluator, or operates through a deployed canary. The core claim remains
 `argument` through `no_change`; the result applies only at the transaction
 boundary.
 
+## Post-v2.1 authority-preserving update result
+
+The successor binds model, optimizer, scheduler, RNG, cache, checkpoint,
+backup, and descendant state before any update. Prospective checkpoint
+authority is honored, six best/final disagreements remain visible, unsafe
+comparators stay ineligible, and all fifteen transactions restore their
+declared 24-surface trees exactly. Yet no eligible challenger meets the utility
+threshold, and no model proposes or governs its own change. This strengthens
+the bounded transaction boundary while leaving recursive improvement entirely
+unestablished. Exact rollback cannot substitute for evaluator independence,
+useful gain, stable authority, or evidence that a self-proposed update is safe.
+
 ## Summary
 
 Recursive self-improvement is allowed only through stable fields, replacement transactions, independent evaluators, protected invariants, governance approval, monitoring, and rollback. Improvement is not a special exemption from the stack's rules; it is the hardest case for those rules.

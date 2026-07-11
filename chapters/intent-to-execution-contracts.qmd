@@ -611,6 +611,20 @@ zero-throughput failure. It therefore leaves the core claim at `argument` via
 an accepted `no_change` decision. Eight local tasks do not establish deployed
 intent parsing, approval enforcement, sandboxing, or production transfer.
 
+## Post-v2.1 usefulness frontier
+
+The successor program broadens that trace to 36 held-out task-seed
+transactions and deliberately measures usefulness with safety. The command
+policy chose the registered route on 36/36, yet only 2/36 model candidates were
+correct. Direct execution released 26 candidates—two useful and 24 unsafe—
+while the governed transaction released the two useful candidates and no
+unsafe candidate. Governance therefore improved the registered safety
+frontier without improving useful throughput; four attack-control rollbacks
+also remained inexact. The accepted `narrow` transition is
+`evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json`.
+This is bounded evidence for fail-closed command handling, not evidence that
+the stack can reliably turn intent into useful executable work.
+
 ## Summary
 
 The merged destination chapter makes executable work depend on explicit

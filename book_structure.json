@@ -677,7 +677,10 @@
               "mapped_support": "Supports protected governance versus mutable capability state, typed compiler/runtime authority, closure authority, and bounded self-modification identity.",
               "limits": "The historical project was not rerun; its types and formal surfaces do not prove runtime enforcement, bypass absence, safety, or capability.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/cca_project.md:13-45", "sources/source_notes/cca_project.md:124-145"],
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:13-45",
+                "sources/source_notes/cca_project.md:124-145"
+              ],
               "passage_review_note": "Reviewed the public-safe note for authority-bearing state separation, typed execution lineage, closure authority, replayable bounded mutation, and runtime/formal non-claims."
             },
             {
@@ -685,7 +688,10 @@
               "mapped_support": "Supports agent identity, scoped delegation, revocation, trust decay, effect logs, runtime-bundle identity, and separation of execution authority from mutation authority.",
               "limits": "The project was not compiled or deployed here; contract presence does not establish enforcement, secure delegation, or safe self-improvement.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:39-89", "sources/source_notes/moecot_manifest_project.md:144-159"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:39-89",
+                "sources/source_notes/moecot_manifest_project.md:144-159"
+              ],
               "passage_review_note": "Reviewed the public-safe note for compiler-era authority chain, runtime identity, scoped delegation and revocation, effect logs, and execution-versus-mutation authority."
             },
             {
@@ -693,7 +699,11 @@
               "mapped_support": "Supplies the negative boundary between security handles or permission metadata and demonstrated broker enforcement, process isolation, content admission, or trusted identity.",
               "limits": "The source note does not establish secret isolation, secure federation, hard isolation, hardware roots, or deployed constitutional enforcement.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/beastbrain_project.md:71-83", "sources/source_notes/beastbrain_project.md:107-115", "sources/source_notes/beastbrain_project.md:152-159"],
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:71-83",
+                "sources/source_notes/beastbrain_project.md:107-115",
+                "sources/source_notes/beastbrain_project.md:152-159"
+              ],
               "passage_review_note": "Reviewed the public-safe note for blind-handle design, permission-metadata and SCIF-isolation gaps, trusted-identity gaps, and the requirement to separate handles from enforcement."
             },
             {
@@ -701,7 +711,11 @@
               "mapped_support": "Supports one authority identity across principal, run, target state, parameters, policy, budget, ledger, trace, replay, expiry, and one-shot effect receipts, with explicit protocol-security versus hardware-root separation.",
               "limits": "Protocol controls, device binding, and key derivation do not establish a secret hardware root, secure boot, attestation, or comprehensive security effectiveness.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/bugbrain_project.md:77-95", "sources/source_notes/bugbrain_project.md:120-137", "sources/source_notes/bugbrain_project.md:175-202"],
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:77-95",
+                "sources/source_notes/bugbrain_project.md:120-137",
+                "sources/source_notes/bugbrain_project.md:175-202"
+              ],
               "passage_review_note": "Reviewed the public-safe note for authority/action governance, approval/budget/trace/replay identity gaps, protocol controls, hardware-root caveats, and the proposed unified authority tuple."
             },
             {
@@ -709,7 +723,11 @@
               "mapped_support": "Supports typed control-plane identity, exact artifact binding, fixed budgets, content-addressed lineage, revocable promotion leases, quarantine propagation, and acknowledged terminal outcomes.",
               "limits": "No trainer workspace, external backend, checkpoint lifecycle, or revocation propagation was reproduced here.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:52-104", "sources/source_notes/corbens_trainer_project.md:163-190", "sources/source_notes/corbens_trainer_project.md:209-230"],
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:52-104",
+                "sources/source_notes/corbens_trainer_project.md:163-190",
+                "sources/source_notes/corbens_trainer_project.md:209-230"
+              ],
               "passage_review_note": "Reviewed the public-safe note for versioned assets, budgets, exact artifact identity, revocable leases, stale promotion after quarantine, and acknowledged asynchronous completion."
             },
             {
@@ -717,7 +735,11 @@
               "mapped_support": "Supplies negative cases for capability declarations without OS enforcement, recreated caller budgets, playback-only replay, default/empty ordinary paths, and interface presence without material authority effects.",
               "limits": "The historical model and tool paths were not rerun; local ownership, capability declarations, and interface presence do not establish enforcement or useful capability.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:188-209", "sources/source_notes/corbens_best_model_possible_project.md:245-253", "sources/source_notes/corbens_best_model_possible_project.md:288-299"],
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:188-209",
+                "sources/source_notes/corbens_best_model_possible_project.md:245-253",
+                "sources/source_notes/corbens_best_model_possible_project.md:288-299"
+              ],
               "passage_review_note": "Reviewed the public-safe note for persistent budget ownership, capability-envelope enforcement gaps, playback versus live replay, and ordinary-path defaulting."
             }
           ],
@@ -1172,7 +1194,8 @@
             "beastbrain_project",
             "bugbrain_project",
             "corbens_trainer_project",
-            "corbens_best_model_possible_project"
+            "corbens_best_model_possible_project",
+            "ext_unlearning_benchmarks_weak_2024"
           ],
           "source_queue": {
             "primary": [
@@ -1339,6 +1362,16 @@
                 "sources/source_notes/corbens_best_model_possible_project.md:319-342"
               ],
               "passage_review_note": "Reviewed the public-safe source note for fixed/generated/trainable/updated state, response causality, verifier dependence, ownership/capability, metric origin, and non-claims."
+            },
+            {
+              "source_id": "ext_unlearning_benchmarks_weak_2024",
+              "mapped_support": "Supports treating unlearning benchmark validity, target ambiguity, forget/retain dependence, and benign perturbation robustness as separate evidence burdens.",
+              "limits": "The position paper raises the interpretation standard but does not validate the local workload or establish influence, privacy, legal erasure, or storage erasure.",
+              "passage_refs": [
+                "sources/source_notes/ext_unlearning_benchmarks_weak_2024.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-paper summary for optimistic scores under benign changes, target ambiguity, query overfitting, hidden retained effects, and residual accessibility.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -2644,7 +2677,8 @@
             "benchmaxxing",
             "cognitive_loop_closure",
             "talos",
-            "moecot"
+            "moecot",
+            "ext_txfs_2018"
           ],
           "source_queue": {
             "primary": [
@@ -2862,6 +2896,16 @@
                 "sources/source_notes/moecot.md:61-68"
               ],
               "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_txfs_2018",
+              "mapped_support": "Supports distinguishing declared effect-inventory restoration from ACID filesystem transactions, conflict isolation, crash consistency, durability, and bounded transaction capacity.",
+              "limits": "TxFS was not installed or reproduced; the local directory and state-tree snapshots do not establish filesystem transactions, crash safety, process recovery, service recovery, or external-effect atomicity.",
+              "passage_refs": [
+                "sources/source_notes/ext_txfs_2018.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary USENIX summary for journaling-backed transactions, isolation, conflict handling, transaction bounds, Git/SQLite evaluation, and the gap between byte restoration and broader recovery.",
               "passage_review_state": "reviewed"
             }
           ]
@@ -4154,7 +4198,9 @@
               "source_id": "cca_project",
               "mapped_support": "Supports bounded local-lineage context for typed requests, explicit authority/policy boundaries, proposal-to-effect records, receipts, and replay discipline used to motivate exact one-shot approval binding.",
               "limits": "Does not establish approval correctness, privileged-effect enforcement, replay resistance, parser behavior, deployed authority, historical-project behavior, or chapter support.",
-              "passage_refs": ["sources/source_notes/cca_project.md:14-111"],
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:14-111"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned source note for typed request/effect and authority-record context; no CCA compiler, runtime, approval, or effect was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -4162,7 +4208,10 @@
               "source_id": "moecot_manifest_project",
               "mapped_support": "Supports bounded local-lineage context for policy-bound manifests, effect logs, replay checks, signed or revocable authority records, and exact artifact identity.",
               "limits": "Does not establish a deployed approval service, cryptographic authorization, effect enforcement, replay resistance, project behavior, or support movement.",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:14-85", "sources/source_notes/moecot_manifest_project.md:194-230"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:14-85",
+                "sources/source_notes/moecot_manifest_project.md:194-230"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned source note for policy, effect-log, replay, and authority-record context; no MoECOT command or privileged effect was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -4170,7 +4219,9 @@
               "source_id": "beastbrain_project",
               "mapped_support": "Supports local negative-case context for distinguishing nominal or simulated state transitions, acknowledgement, and interface presence from material authorized effects.",
               "limits": "Does not establish live effect causality, approval enforcement, runtime safety, project capability, or independent confirmation.",
-              "passage_refs": ["sources/source_notes/beastbrain_project.md:14-205"],
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:14-205"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned source note for simulated/nominal transition and effect-boundary negative cases; no BeastBrain action or runtime was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -4178,7 +4229,9 @@
               "source_id": "bugbrain_project",
               "mapped_support": "Supports local negative-case context for privileged-action lifecycle, target identity, state changes, skipped checks, and the gap between scenario acknowledgement and authority to act.",
               "limits": "Does not establish hardware enforcement, approval correctness, cryptographic roots, privileged effects, replay resistance, or project capability.",
-              "passage_refs": ["sources/source_notes/bugbrain_project.md:14-238"],
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:14-238"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned source note for privileged-action, state, identity, and skipped-check boundaries; no BugBrain hardware or action was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -4186,7 +4239,9 @@
               "source_id": "corbens_best_model_possible_project",
               "mapped_support": "Supports local negative-case context for checkpoint/parameter/runtime/output causality, named transitions without durable effects, digest-parity laundering, and playback versus live execution.",
               "limits": "Does not establish a working privileged-action path, approval service, causal runtime binding, effect safety, project capability, or support promotion.",
-              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:14-360"],
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:14-360"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned source note for parameter, runtime, effect, digest, and replay negative cases; no build, model, tool, or privileged effect was replayed.",
               "passage_review_state": "reviewed"
             }
@@ -5020,7 +5075,9 @@
               "mapped_support": "Supports the boundary between durable semantic memory and bounded context materialization, with explicit artifact identity, provenance, and governed compilation pressure.",
               "limits": "Does not establish a durable memory store, resolver correctness, snapshot completeness, restart persistence, model-facing context quality, or support promotion.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/cca_project.md:14-158"],
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:14-158"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for durable-memory/context separation, artifact/provenance discipline, and the deferred dedicated-memory boundary; no CCA memory runtime was replayed."
             },
             {
@@ -5028,7 +5085,9 @@
               "mapped_support": "Supports frozen-basis and hot/warm/cold context slices, TTL and token bounds, deterministic freeze/thaw, graph-overlay world state, contradiction recovery, and promotion-boundary discipline.",
               "limits": "Does not establish a deployed context store, correct freeze/thaw behavior, graph completeness, expiry enforcement, resolver correctness, or support promotion.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:42-102"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:42-102"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for frozen snapshots, bounded context slices, freeze/thaw, persistence, graph overlays, and contradiction handling; no MoECOT memory runtime was replayed."
             },
             {
@@ -5036,7 +5095,10 @@
               "mapped_support": "Supports typed graph-plus-vector durable objects, provenance-bearing bounded graph snapshots, explicit node/depth/edge/weight limits, reasoning-path traces, lifecycle states, and a durable-memory/context boundary.",
               "limits": "Does not establish graph correctness, populated capacity, retrieval quality, persistence, snapshot completeness, memory safety, or support promotion.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/beastbrain_project.md:39-51", "sources/source_notes/beastbrain_project.md:141-145"],
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:39-51",
+                "sources/source_notes/beastbrain_project.md:141-145"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for durable graph objects, bounded snapshot limits, provenance, lifecycle states, and certified-snapshot recommendations; no BeastBrain memory or retrieval result was replayed."
             },
             {
@@ -5044,7 +5106,11 @@
               "mapped_support": "Supports immutable context handles, virtual slices, IDs, checksums, generation-leased read snapshots, bounded ingress, expiry/revocation revalidation, and negative cases for unchecked offsets and fresh-looking reused IDs.",
               "limits": "Does not establish handle safety, cryptographic security, correct restore, durable persistence, context quality, graph completeness, or support promotion.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/bugbrain_project.md:65-75", "sources/source_notes/bugbrain_project.md:115-118", "sources/source_notes/bugbrain_project.md:181-183"],
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:65-75",
+                "sources/source_notes/bugbrain_project.md:115-118",
+                "sources/source_notes/bugbrain_project.md:181-183"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for generation-leased context handles, snapshot/slice identity, expiry/revocation restore checks, and unchecked-slice negative cases; no BugBrain runtime or handle implementation was replayed."
             }
           ]
@@ -5274,19 +5340,56 @@
               "passage_review_state": "reviewed"
             },
             {
-              "source_id": "cca_project", "mapped_support": "Supports durable-memory/context separation, artifact identity, and governed material transitions.", "limits": "No deployed store, crash recovery, persistence, or support promotion.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/cca_project.md:14-158"], "passage_review_note": "Reviewed public-safe pinned note; no CCA memory runtime replayed."
+              "source_id": "cca_project",
+              "mapped_support": "Supports durable-memory/context separation, artifact identity, and governed material transitions.",
+              "limits": "No deployed store, crash recovery, persistence, or support promotion.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:14-158"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no CCA memory runtime replayed."
             },
             {
-              "source_id": "moecot_manifest_project", "mapped_support": "Supports deterministic freeze/thaw, tiered context persistence, graph-overlay state, promotion gates, and acknowledged transitions.", "limits": "No deployed store, process restart, or persistence result.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/moecot_manifest_project.md:91-102"], "passage_review_note": "Reviewed public-safe pinned note; no MoECOT memory runtime replayed."
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports deterministic freeze/thaw, tiered context persistence, graph-overlay state, promotion gates, and acknowledged transitions.",
+              "limits": "No deployed store, process restart, or persistence result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:91-102"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no MoECOT memory runtime replayed."
             },
             {
-              "source_id": "beastbrain_project", "mapped_support": "Supports hot/cold/archive memory lifecycles, background decay, bounded graph snapshots, merge and pruning pressure.", "limits": "No deployed persistence, merge correctness, compaction, or recovery result.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/beastbrain_project.md:39-51", "sources/source_notes/beastbrain_project.md:94-102"], "passage_review_note": "Reviewed public-safe pinned note; no BeastBrain memory runtime replayed."
+              "source_id": "beastbrain_project",
+              "mapped_support": "Supports hot/cold/archive memory lifecycles, background decay, bounded graph snapshots, merge and pruning pressure.",
+              "limits": "No deployed persistence, merge correctness, compaction, or recovery result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:39-51",
+                "sources/source_notes/beastbrain_project.md:94-102"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no BeastBrain memory runtime replayed."
             },
             {
-              "source_id": "bugbrain_project", "mapped_support": "Supports generation-leased snapshots, tier movement, restore revalidation, integrity and deterministic replay pressure.", "limits": "No deployed restore, atomic update, cryptographic, or persistence result.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/bugbrain_project.md:65-75", "sources/source_notes/bugbrain_project.md:181-183"], "passage_review_note": "Reviewed public-safe pinned note; no BugBrain restart was replayed."
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supports generation-leased snapshots, tier movement, restore revalidation, integrity and deterministic replay pressure.",
+              "limits": "No deployed restore, atomic update, cryptographic, or persistence result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:65-75",
+                "sources/source_notes/bugbrain_project.md:181-183"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no BugBrain restart was replayed."
             },
             {
-              "source_id": "corbens_best_model_possible_project", "mapped_support": "Supplies negative cases for named memory transitions without durable effects, absolute-path state, playback-only replay, and nominal runtime surfaces.", "limits": "No deployed store, process restart, causal memory effect, or support promotion.", "passage_review_state": "reviewed", "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:250-335"], "passage_review_note": "Reviewed public-safe pinned note for memory-effect and replay negative cases; no Best Model memory runtime replayed."
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supplies negative cases for named memory transitions without durable effects, absolute-path state, playback-only replay, and nominal runtime surfaces.",
+              "limits": "No deployed store, process restart, causal memory effect, or support promotion.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:250-335"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note for memory-effect and replay negative cases; no Best Model memory runtime replayed."
             }
           ]
         },
@@ -5305,7 +5408,8 @@
             "vcm_editable",
             "ext_graphrag_2024",
             "ext_hipporag_2024",
-            "ext_raptor_2024"
+            "ext_raptor_2024",
+            "ext_dont_hallucinate_abstain_2024"
           ],
           "source_queue": {
             "primary": [
@@ -5478,6 +5582,16 @@
               ],
               "passage_review_note": "Reviewed source note only for editable VCM context: virtual context ABI, stable addresses, mounts, snapshots, materializations, task-relative representation graphs, certificates, protected compilation, planner-guided paging, external-literature candidates, and citation-normalization warnings; no VCM-Bench or model-facing result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_dont_hallucinate_abstain_2024",
+              "mapped_support": "Supports measuring abstention with coverage, accuracy, calibration, and useful response behavior while treating self-reflection and model agreement as fallible evidence.",
+              "limits": "The ACL models, prompts, domains, collaboration schemes, and reported gains were not reproduced; the local single-model router is not an independent multi-model panel.",
+              "passage_refs": [
+                "sources/source_notes/ext_dont_hallucinate_abstain_2024.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary ACL summary for knowledge-gap detection, abstention calibration, cooperative and competitive probing, shared blind spots, over-refusal, and extra-call cost.",
+              "passage_review_state": "reviewed"
             }
           ]
         },
@@ -5597,19 +5711,55 @@
               "passage_review_note": "Reviewed local raw cache for UAT as a human-in-the-loop SME force multiplier, every claim tied to retrieval source, atomic proposition decomposition, verified/inferred/unsupported states, dossier-bounded verifier checks, SME_REVIEW handling, adversarial logic/citation/omission review, stability and hard-cycle caps, compression that preserves verified proposition counts, final SME sign-off, correlated-hallucination risk, and decomposition-loss risk; no tribunal threshold proof, reviewer-independence result, autonomous truth-machine claim, novel-truth discovery, or implemented benchmark is promoted."
             },
             {
-              "source_id":"cca_project","mapped_support":"Supports separated epistemic state, durable claim identity, dependency-aware revision, and non-overwriting histories.","limits":"No open-domain contradiction detector, belief engine, or ontology correctness result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/cca_project.md:14-158"],"passage_review_note":"Reviewed public-safe pinned note; no CCA belief runtime replayed."
+              "source_id": "cca_project",
+              "mapped_support": "Supports separated epistemic state, durable claim identity, dependency-aware revision, and non-overwriting histories.",
+              "limits": "No open-domain contradiction detector, belief engine, or ontology correctness result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:14-158"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no CCA belief runtime replayed."
             },
             {
-              "source_id":"moecot_manifest_project","mapped_support":"Supports canonical claim/evidence graphs, contradiction recovery, bounded repair, readiness blocking, and persistent control-plane state.","limits":"No deployed contradiction or durable-belief behavior result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/moecot_manifest_project.md:48-102"],"passage_review_note":"Reviewed public-safe pinned note; no MoECOT belief runtime replayed."
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports canonical claim/evidence graphs, contradiction recovery, bounded repair, readiness blocking, and persistent control-plane state.",
+              "limits": "No deployed contradiction or durable-belief behavior result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:48-102"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no MoECOT belief runtime replayed."
             },
             {
-              "source_id":"beastbrain_project","mapped_support":"Supports durable semantic objects, provenance, unresolved-outcome retention, and contradiction-aware memory pressure.","limits":"No belief-engine, ontology, or revision-quality result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/beastbrain_project.md:39-55"],"passage_review_note":"Reviewed public-safe pinned note; no BeastBrain belief runtime replayed."
+              "source_id": "beastbrain_project",
+              "mapped_support": "Supports durable semantic objects, provenance, unresolved-outcome retention, and contradiction-aware memory pressure.",
+              "limits": "No belief-engine, ontology, or revision-quality result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:39-55"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no BeastBrain belief runtime replayed."
             },
             {
-              "source_id":"bugbrain_project","mapped_support":"Supports generation/version identity, restore discipline, graph dependencies, and negative cases for nominal integrity or replay.","limits":"No contradiction-quality, persistence, or ontology result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/bugbrain_project.md:65-75", "sources/source_notes/bugbrain_project.md:115-131"],"passage_review_note":"Reviewed public-safe pinned note; no BugBrain belief runtime replayed."
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supports generation/version identity, restore discipline, graph dependencies, and negative cases for nominal integrity or replay.",
+              "limits": "No contradiction-quality, persistence, or ontology result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:65-75",
+                "sources/source_notes/bugbrain_project.md:115-131"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no BugBrain belief runtime replayed."
             },
             {
-              "source_id":"corbens_best_model_possible_project","mapped_support":"Supplies negative cases for nonmonotone contradiction response, vacuous verification, playback-only persistence, and named state without causal effect.","limits":"No deployed belief engine, causal revision, or ontology correctness result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/corbens_best_model_possible_project.md:250-335"],"passage_review_note":"Reviewed public-safe pinned note; no Best Model belief runtime replayed."
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supplies negative cases for nonmonotone contradiction response, vacuous verification, playback-only persistence, and named state without causal effect.",
+              "limits": "No deployed belief engine, causal revision, or ontology correctness result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:250-335"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no Best Model belief runtime replayed."
             }
           ],
           "mechanism": [
@@ -5661,7 +5811,9 @@
               "result_status": "passes via expanded synthetic claim ledger revision harness at experiments/claim_ledger_revision/results/2026-07-02-local.md: 5 valid fixture(s), 7 expected-invalid fixture(s), semantic-variant merge boundaries, assumption-context dependency preservation, unsynced-variant rejection, no semantic-equivalence proof, no assumption-context completeness proof, and no support-state promotion"
             },
             {
-              "name":"Historical-project contradiction/revision lifecycle","implementation_status":"implemented","result_status":"passes via one bounded five-project record and eleven expected-invalid mutations; no open-domain detector, deployed belief engine, ontology correctness, historical runtime behavior, or support promotion"
+              "name": "Historical-project contradiction/revision lifecycle",
+              "implementation_status": "implemented",
+              "result_status": "passes via one bounded five-project record and eleven expected-invalid mutations; no open-domain detector, deployed belief engine, ontology correctness, historical runtime behavior, or support promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ClaimLedger",
@@ -5844,19 +5996,56 @@
               "passage_review_note": "Reviewed local raw cache for Talos as a deterministic, auditable, job-based cognitive-manufacturing model, conversion of untrusted generative outputs into structured evidence-bound uncertainty-aware artifacts, typed atomic claims, immutable content-addressed evidence, verified/uncertain/refuted claim states, fixed job pipelines, raw prompt shielding from verification agents, machine-readable claim graphs, evidence-set world boundaries, independent adversarial agents seeking contradictions/counterexamples/missing dependencies, threshold failure and retrieval re-entry, proof bundles, logged/hashed/auditable I/O, replay/re-verification/evidence audit, human adjudication in job runs, residual-risk logging, and explicit cost/certainty tradeoffs; no Talos tribunal pipeline, security result, replay log, benchmark, or proof bundle has been reproduced."
             },
             {
-              "source_id":"cca_project","mapped_support":"Supports explicit verifier boundaries, proof/runtime separation, failure preservation, and bounded review artifacts.","limits":"No reviewer-independence, method-adequacy, or verdict-correctness result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/cca_project.md:14-158"],"passage_review_note":"Reviewed public-safe pinned note; no CCA tribunal runtime replayed."
+              "source_id": "cca_project",
+              "mapped_support": "Supports explicit verifier boundaries, proof/runtime separation, failure preservation, and bounded review artifacts.",
+              "limits": "No reviewer-independence, method-adequacy, or verdict-correctness result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:14-158"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no CCA tribunal runtime replayed."
             },
             {
-              "source_id":"moecot_manifest_project","mapped_support":"Supports fail-closed verification routes, replay and readiness gates, bounded specialist lanes, and explicit promotion blockers.","limits":"No deployed tribunal, independent reviewers, or verdict-quality result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/moecot_manifest_project.md:42-140"],"passage_review_note":"Reviewed public-safe pinned note; no MoECOT tribunal runtime replayed."
+              "source_id": "moecot_manifest_project",
+              "mapped_support": "Supports fail-closed verification routes, replay and readiness gates, bounded specialist lanes, and explicit promotion blockers.",
+              "limits": "No deployed tribunal, independent reviewers, or verdict-quality result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:42-140"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no MoECOT tribunal runtime replayed."
             },
             {
-              "source_id":"beastbrain_project","mapped_support":"Supports tribunal and verifier concepts plus negative evidence about stubs, correlated review, simulated states, and readiness overclaim.","limits":"No reviewer-independence, tribunal-quality, or live adjudication result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/beastbrain_project.md:79-110", "sources/source_notes/beastbrain_project.md:141-160"],"passage_review_note":"Reviewed public-safe pinned note; no BeastBrain tribunal runtime replayed."
+              "source_id": "beastbrain_project",
+              "mapped_support": "Supports tribunal and verifier concepts plus negative evidence about stubs, correlated review, simulated states, and readiness overclaim.",
+              "limits": "No reviewer-independence, tribunal-quality, or live adjudication result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:79-110",
+                "sources/source_notes/beastbrain_project.md:141-160"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no BeastBrain tribunal runtime replayed."
             },
             {
-              "source_id":"bugbrain_project","mapped_support":"Supports explicit check identity, deterministic replay pressure, privileged review boundaries, and negative cases for skipped or nominal checks.","limits":"No proof of verifier competence, independence, security, or verdict correctness.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/bugbrain_project.md:41-55", "sources/source_notes/bugbrain_project.md:115-140"],"passage_review_note":"Reviewed public-safe pinned note; no BugBrain tribunal runtime replayed."
+              "source_id": "bugbrain_project",
+              "mapped_support": "Supports explicit check identity, deterministic replay pressure, privileged review boundaries, and negative cases for skipped or nominal checks.",
+              "limits": "No proof of verifier competence, independence, security, or verdict correctness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:41-55",
+                "sources/source_notes/bugbrain_project.md:115-140"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no BugBrain tribunal runtime replayed."
             },
             {
-              "source_id":"corbens_best_model_possible_project","mapped_support":"Supplies negative cases for vacuous verification, playback-only evidence, dependent checks, default states, and nominal subsystems without causal effect.","limits":"No deployed tribunal, reviewer independence, method adequacy, or verdict-correctness result.","passage_review_state":"reviewed","passage_refs":["sources/source_notes/corbens_best_model_possible_project.md:250-335"],"passage_review_note":"Reviewed public-safe pinned note; no Best Model tribunal runtime replayed."
+              "source_id": "corbens_best_model_possible_project",
+              "mapped_support": "Supplies negative cases for vacuous verification, playback-only evidence, dependent checks, default states, and nominal subsystems without causal effect.",
+              "limits": "No deployed tribunal, reviewer independence, method adequacy, or verdict-correctness result.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:250-335"
+              ],
+              "passage_review_note": "Reviewed public-safe pinned note; no Best Model tribunal runtime replayed."
             }
           ],
           "mechanism": [
@@ -5962,9 +6151,9 @@
               "result_status": "passes via deterministic synthetic review-dossier fixture at experiments/adversarial_review_dossier/results/2026-07-02-local.json: two valid synthetic review dossiers and seven expected-invalid controls; no semantic-equivalence, reviewer-independence, adversarial-probe-quality, verdict-correctness, LLM-judge, debate-system, support-state-promotion, or evidence-transition claim"
             },
             {
-              "name":"Historical-project tribunal method/independence fixture",
-              "implementation_status":"implemented",
-              "result_status":"passes via one bounded five-project record and eleven expected-invalid mutations; no reviewer-independence, method-adequacy, verdict-correctness, deployed-tribunal, historical runtime behavior, or support promotion"
+              "name": "Historical-project tribunal method/independence fixture",
+              "implementation_status": "implemented",
+              "result_status": "passes via one bounded five-project record and eleven expected-invalid mutations; no reviewer-independence, method-adequacy, verdict-correctness, deployed-tribunal, historical runtime behavior, or support promotion"
             }
           ],
           "lean_module": "AsiStackProofs.ProofCarryingClaims; AsiStackProofs.Tribunal",
@@ -6227,7 +6416,9 @@
             "moecot_manifest_project",
             "bugbrain_project",
             "corbens_trainer_project",
-            "corbens_best_model_possible_project"
+            "corbens_best_model_possible_project",
+            "ext_claw_swe_bench_2026",
+            "ext_txfs_2018"
           ],
           "source_queue": {
             "primary": [
@@ -6406,6 +6597,26 @@
                 "sources/source_notes/corbens_best_model_possible_project.md:319-342"
               ],
               "passage_review_note": "Reviewed the historical-project note for playback-versus-re-execution distinctions, transitions named without durable effects, and non-relocatable path identity."
+            },
+            {
+              "source_id": "ext_claw_swe_bench_2026",
+              "mapped_support": "Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone.",
+              "limits": "Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/ext_claw_swe_bench_2026.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-preprint summary for harness/model effects, fixed evaluation surfaces, cost comparisons, contamination pressure, and governance omissions.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_txfs_2018",
+              "mapped_support": "Supports distinguishing declared effect-inventory restoration from ACID filesystem transactions, conflict isolation, crash consistency, durability, and bounded transaction capacity.",
+              "limits": "TxFS was not installed or reproduced; the local directory and state-tree snapshots do not establish filesystem transactions, crash safety, process recovery, service recovery, or external-effect atomicity.",
+              "passage_refs": [
+                "sources/source_notes/ext_txfs_2018.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary USENIX summary for journaling-backed transactions, isolation, conflict handling, transaction bounds, Git/SQLite evaluation, and the gap between byte restoration and broader recovery.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -6610,7 +6821,9 @@
             "beastbrain_project",
             "bugbrain_project",
             "corbens_trainer_project",
-            "corbens_best_model_possible_project"
+            "corbens_best_model_possible_project",
+            "ext_claw_swe_bench_2026",
+            "ext_txfs_2018"
           ],
           "source_queue": {
             "primary": [
@@ -6799,7 +7012,9 @@
               "source_id": "moecot_manifest_project",
               "mapped_support": "Supports bounded local-lineage context for typed runtime manifests, effect records, replay checks, target portability, scoped resources, and revocable authority artifacts.",
               "limits": "Does not establish OS sandbox enforcement, network isolation, live adapter safety, secret-handle safety, deployed replay, or support promotion.",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:14-230"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:14-230"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for runtime manifest, replay, portability, and authority-record boundaries; no MoECOT adapter or sandbox was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -6807,7 +7022,9 @@
               "source_id": "beastbrain_project",
               "mapped_support": "Supports local negative-case context for declared interfaces, simulations, and nominal security/tool states that must not be described as enforced external-effect boundaries.",
               "limits": "Does not establish process confinement, OS enforcement, adapter effects, tool safety, runtime capability, or independent confirmation.",
-              "passage_refs": ["sources/source_notes/beastbrain_project.md:14-205"],
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:14-205"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for simulated/declared versus observed enforcement boundaries; no BeastBrain adapter or effect was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -6815,7 +7032,9 @@
               "source_id": "bugbrain_project",
               "mapped_support": "Supports local negative-case context for executable and path identity, protocol security versus enforcement, privileged action scope, skipped checks, and report/canonical-state drift.",
               "limits": "Does not establish a hardware or OS sandbox, network isolation, approval correctness, adapter safety, or deployed replay.",
-              "passage_refs": ["sources/source_notes/bugbrain_project.md:14-238"],
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:14-238"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for path, privilege, check, and enforcement-boundary failures; no BugBrain hardware or adapter action was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -6823,7 +7042,9 @@
               "source_id": "corbens_trainer_project",
               "mapped_support": "Supports bounded local-lineage context for typed backend manifests, artifact quarantine, content-addressed execution records, revocable promotion, and stale-evidence invalidation.",
               "limits": "Does not establish a sandboxed trainer backend, OS enforcement, live adapter effect, network isolation, replay equivalence, or support movement.",
-              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:14-250"],
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:14-250"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for backend, quarantine, lineage, and revocation boundaries; no trainer backend or adapter was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -6831,8 +7052,30 @@
               "source_id": "corbens_best_model_possible_project",
               "mapped_support": "Supports local negative-case context for playback versus live replay, absolute-path and relocation failures, default or empty tool paths, digest-parity laundering, and missing runtime causality.",
               "limits": "Does not establish live tool execution, sandbox isolation, causal adapter binding, network or secret safety, model capability, or support promotion.",
-              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:14-360"],
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:14-360"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned note for replay, path, digest, tool, and runtime-causality boundaries; no project build, tool call, or adapter effect was replayed.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_claw_swe_bench_2026",
+              "mapped_support": "Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone.",
+              "limits": "Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/ext_claw_swe_bench_2026.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-preprint summary for harness/model effects, fixed evaluation surfaces, cost comparisons, contamination pressure, and governance omissions.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_txfs_2018",
+              "mapped_support": "Supports distinguishing declared effect-inventory restoration from ACID filesystem transactions, conflict isolation, crash consistency, durability, and bounded transaction capacity.",
+              "limits": "TxFS was not installed or reproduced; the local directory and state-tree snapshots do not establish filesystem transactions, crash safety, process recovery, service recovery, or external-effect atomicity.",
+              "passage_refs": [
+                "sources/source_notes/ext_txfs_2018.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary USENIX summary for journaling-backed transactions, isolation, conflict handling, transaction bounds, Git/SQLite evaluation, and the gap between byte restoration and broader recovery.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -7333,7 +7576,9 @@
               "mapped_support": "Supports compiled-procedure lineage, durable trace identity, and separation of semantic knowledge from reusable execution structure.",
               "limits": "No CCA procedure-mining run, tool promotion, or historical runtime behavior is reproduced.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/cca_project.md:70-105"],
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:70-105"
+              ],
               "passage_review_note": "Reviewed the pinned local-project note for bounded procedural-memory lineage and negative implementation evidence; no runtime or capability result is promoted."
             },
             {
@@ -7341,7 +7586,9 @@
               "mapped_support": "Supports manifest-bound procedure identity, source/effect receipts, qualification gates, rollback, and registry lifecycle discipline.",
               "limits": "No MoECOT Manifest compiler, runtime, regression suite, or rollback execution is reproduced.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:140-186"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:140-186"
+              ],
               "passage_review_note": "Reviewed the pinned local-project note for compiler/control-plane lifecycle context; no historical runtime behavior is promoted."
             },
             {
@@ -7349,7 +7596,9 @@
               "mapped_support": "Supports durable semantic-memory pressure, procedure/tool separation, failure retention, and explicit lifecycle state.",
               "limits": "No BeastBrain memory store, loop detector, or tool-promotion behavior is reproduced.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/beastbrain_project.md:140-183"],
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:140-183"
+              ],
               "passage_review_note": "Reviewed the pinned local-project note for memory-boundary and failure-retention lineage; no capability result is promoted."
             },
             {
@@ -7357,7 +7606,9 @@
               "mapped_support": "Supports regression evidence, failed-attempt retention, checkpoint/effect acknowledgement, quarantine, and revocable promotion.",
               "limits": "No trainer run, regression-quality result, checkpoint effect, or model capability is reproduced.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:110-155"],
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:110-155"
+              ],
               "passage_review_note": "Reviewed the pinned local-project note for experiment-gate, acknowledgement, quarantine, and revocation lineage; no training result is promoted."
             }
           ],
@@ -7505,7 +7756,8 @@
             "project_theseus_whitepaper",
             "theseus_operator_os",
             "theseus_architecture_gate",
-            "ext_hipporag_2024"
+            "ext_hipporag_2024",
+            "ext_dont_hallucinate_abstain_2024"
           ],
           "source_queue": {
             "primary": [
@@ -7694,14 +7946,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },
@@ -7760,6 +8012,16 @@
                 "local-project:Theseus-Hive@1ad88a22:docs/ARCHITECTURE_GATE.md:49-59"
               ],
               "passage_review_note": "Reviewed local Theseus architecture-gate source at commit 1ad88a22 for pre-training promotion checks, direct and ratchet-run commands, reported current gate fields, 14 gate predicates, external-inference-zero requirement, residual handling, rerun conditions, and necessary-not-sufficient boundary; no gate report was regenerated or independently verified here."
+            },
+            {
+              "source_id": "ext_dont_hallucinate_abstain_2024",
+              "mapped_support": "Supports measuring abstention with coverage, accuracy, calibration, and useful response behavior while treating self-reflection and model agreement as fallible evidence.",
+              "limits": "The ACL models, prompts, domains, collaboration schemes, and reported gains were not reproduced; the local single-model router is not an independent multi-model panel.",
+              "passage_refs": [
+                "sources/source_notes/ext_dont_hallucinate_abstain_2024.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary ACL summary for knowledge-gap detection, abstention calibration, cooperative and competitive probing, shared blind spots, over-refusal, and extra-call cost.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -7890,7 +8152,8 @@
             "bugbrain_project",
             "corbens_trainer_project",
             "corbens_best_model_possible_project",
-            "ext_darwin_godel_machine_2025"
+            "ext_darwin_godel_machine_2025",
+            "ext_dont_hallucinate_abstain_2024"
           ],
           "source_queue": {
             "primary": [
@@ -8062,7 +8325,10 @@
               "mapped_support": "Supports readiness as an evidence-gated lifecycle through promotion states, quarantine, rollback, contamination controls, canonical closure authority, and fail-closed benchmark truth contracts.",
               "limits": "Pinned-project implementation context only; project training, benchmark, quarantine, and promotion artifacts were not replayed from this book.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/cca_project.md:35-43", "sources/source_notes/cca_project.md:53-76"],
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:35-43",
+                "sources/source_notes/cca_project.md:53-76"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for lifecycle states, quarantine, promotion, rollback, benchmark closure, and the negative boundary between project records and reproduced readiness."
             },
             {
@@ -8070,7 +8336,11 @@
               "mapped_support": "Supports explicit promotion states, immutable evidence identities, residuals, replay, holdout separation, fail-closed gates, and maintenance/growth stops when architecture debt remains red.",
               "limits": "Pinned-project architecture context only; promotion, holdout, deployment, and readiness behavior was not rerun here.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:61-84", "sources/source_notes/moecot_manifest_project.md:110-120", "sources/source_notes/moecot_manifest_project.md:142-155"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:61-84",
+                "sources/source_notes/moecot_manifest_project.md:110-120",
+                "sources/source_notes/moecot_manifest_project.md:142-155"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for locality before promotion, promotion states, evidence and residual records, candidate gates, holdouts, and growth guards; no live readiness result is promoted."
             },
             {
@@ -8078,7 +8348,12 @@
               "mapped_support": "Provides a readiness-overclaim negative record: extensive interfaces, simulations, feature counts, and checklists coexisted with open compiler, integration, hardware, security, and benchmark gates.",
               "limits": "The pinned snapshot does not establish production readiness, capability, secure autonomy, or live quarantine behavior.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/beastbrain_project.md:17-21", "sources/source_notes/beastbrain_project.md:47-52", "sources/source_notes/beastbrain_project.md:94-100", "sources/source_notes/beastbrain_project.md:218-222"],
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:17-21",
+                "sources/source_notes/beastbrain_project.md:47-52",
+                "sources/source_notes/beastbrain_project.md:94-100",
+                "sources/source_notes/beastbrain_project.md:218-222"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for readiness-interface overclaim, memory lifecycle labels, incomplete semantic applicability, non-mutating router training, and percentage-readiness failure."
             },
             {
@@ -8086,7 +8361,12 @@
               "mapped_support": "Provides the exact skipped-as-green negative case and motivates per-check applicability, requiredness, attempt, result, waiver, evidence identity, and policy-version fields.",
               "limits": "Historical reports and current code differ; the book does not reproduce BugBrain readiness, hardware, bridge, training, or deployment behavior.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/bugbrain_project.md:19-20", "sources/source_notes/bugbrain_project.md:146-152", "sources/source_notes/bugbrain_project.md:196-203", "sources/source_notes/bugbrain_project.md:260-265"],
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:19-20",
+                "sources/source_notes/bugbrain_project.md:146-152",
+                "sources/source_notes/bugbrain_project.md:196-203",
+                "sources/source_notes/bugbrain_project.md:260-265"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for green reports that counted missing artifact manifests as skipped successes, insufficient policy identity, and the explicit readiness-check lifecycle recommendation."
             },
             {
@@ -8094,7 +8374,12 @@
               "mapped_support": "Supports transitive quarantine and promotion-lease invalidation through retained cases where promoted claim records survived later quarantine of every contributing run.",
               "limits": "The retained snapshot is local-project evidence only; external dependencies, training, benchmarks, and end-to-end capability were not reproduced.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:92-96", "sources/source_notes/corbens_trainer_project.md:108-122", "sources/source_notes/corbens_trainer_project.md:163-170", "sources/source_notes/corbens_trainer_project.md:217-224"],
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:92-96",
+                "sources/source_notes/corbens_trainer_project.md:108-122",
+                "sources/source_notes/corbens_trainer_project.md:163-170",
+                "sources/source_notes/corbens_trainer_project.md:217-224"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for authenticity states, active quarantines, stale candidate labels, report/claim divergence, revocable promotion leases, and transitive invalidation."
             },
             {
@@ -8102,8 +8387,23 @@
               "mapped_support": "Supports quarantine, rollback, fallback-route, and material-postcondition boundaries while warning that named transitions, defaults, and interface presence may lack durable runtime effect.",
               "limits": "The project does not establish target readiness, semantic capability, durable transitions, autonomous routing, or promotion quality.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:108-111", "sources/source_notes/corbens_best_model_possible_project.md:133-138", "sources/source_notes/corbens_best_model_possible_project.md:187-192", "sources/source_notes/corbens_best_model_possible_project.md:335-342"],
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:108-111",
+                "sources/source_notes/corbens_best_model_possible_project.md:133-138",
+                "sources/source_notes/corbens_best_model_possible_project.md:187-192",
+                "sources/source_notes/corbens_best_model_possible_project.md:335-342"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for routing/fallback reasons, fail-closed trainable-state requirements, quarantine/rollback surfaces, non-durable named transitions, and material postcondition requirements."
+            },
+            {
+              "source_id": "ext_dont_hallucinate_abstain_2024",
+              "mapped_support": "Supports measuring abstention with coverage, accuracy, calibration, and useful response behavior while treating self-reflection and model agreement as fallible evidence.",
+              "limits": "The ACL models, prompts, domains, collaboration schemes, and reported gains were not reproduced; the local single-model router is not an independent multi-model panel.",
+              "passage_refs": [
+                "sources/source_notes/ext_dont_hallucinate_abstain_2024.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary ACL summary for knowledge-gap detection, abstention calibration, cooperative and competitive probing, shared blind spots, over-refusal, and extra-call cost.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -10141,7 +10441,8 @@
             "ext_reluplex_2017",
             "ext_mem0_2025",
             "ext_recurrent_transformer_2026",
-            "ext_dynamic_compute_recurrent_transformers_2026"
+            "ext_dynamic_compute_recurrent_transformers_2026",
+            "ext_claw_swe_bench_2026"
           ],
           "source_queue": {
             "primary": [
@@ -10625,6 +10926,16 @@
                 "sources/source_notes/ext_reluplex_2017.md:35-54"
               ],
               "passage_review_note": "Reviewed public arXiv abstract/metadata and local source note for SMT-style ReLU-network property verification, counterexample discipline, safety-critical property scope, and limits; no local verification run, ACAS Xu reproduction, ASI Stack model guarantee, broad safety proof, or simulation-transfer result is reproduced."
+            },
+            {
+              "source_id": "ext_claw_swe_bench_2026",
+              "mapped_support": "Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone.",
+              "limits": "Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/ext_claw_swe_bench_2026.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-preprint summary for harness/model effects, fixed evaluation surfaces, cost comparisons, contamination pressure, and governance omissions.",
+              "passage_review_state": "reviewed"
             }
           ],
           "draft_maturity": "v0.2 manuscript draft",
@@ -11948,7 +12259,9 @@
               "source_id": "cca_project",
               "mapped_support": "Supports bounded local implementation-reference context for typed formal abstractions, explicit contract fields, by-construction constraints, proof obligations, and the need to separate structural presence from broader semantics.",
               "limits": "Does not validate the new abstraction map, prove arbitrary semantic adequacy, reproduce CCA, bind a deployed implementation, establish runtime enforcement, or promote support.",
-              "passage_refs": ["sources/source_notes/cca_project.md:14-111"],
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:14-111"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned source note for formal/contract structure and explicit limitations; no CCA proof, compiler, runtime, or deployment was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -11956,7 +12269,10 @@
               "source_id": "moecot_manifest_project",
               "mapped_support": "Supports bounded local implementation-reference context for pass hashes, legality rules, reproducer bundles, typed contracts, executable artifacts, and the negative gap between internal contract breadth and external behavior.",
               "limits": "Does not validate arbitrary theorem adequacy, reproduce MoECOT, establish external capability, bind a deployed implementation, or promote support.",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:14-85", "sources/source_notes/moecot_manifest_project.md:194-230"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:14-85",
+                "sources/source_notes/moecot_manifest_project.md:194-230"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned source note for formal artifact lanes, reproducer/legality boundaries, and internal-versus-external evidence limits; no compiler, proof, runtime, or benchmark was replayed.",
               "passage_review_state": "reviewed"
             },
@@ -11964,7 +12280,9 @@
               "source_id": "corbens_best_model_possible_project",
               "mapped_support": "Supports bounded local negative-case context for named checks versus semantic adequacy, vacuous verification, playback versus live execution, source structure versus current builds, and missing implementation binding.",
               "limits": "Does not validate the new depth classifier, reproduce the project, establish proof correctness or runtime behavior, bind a deployed implementation, or promote support.",
-              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:14-260"],
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:14-260"
+              ],
               "passage_review_note": "Reviewed the public-safe pinned source note for verification, execution, and implementation-binding negative cases; no build, proof, model, tribunal, runtime, or deployment was replayed.",
               "passage_review_state": "reviewed"
             }
@@ -12128,7 +12446,11 @@
             "beastbrain_project",
             "bugbrain_project",
             "corbens_trainer_project",
-            "corbens_best_model_possible_project"
+            "corbens_best_model_possible_project",
+            "ext_claw_swe_bench_2026",
+            "ext_muse_unlearning_2025",
+            "ext_unlearning_benchmarks_weak_2024",
+            "ext_openunlearning_2025"
           ],
           "source_queue": {
             "primary": [
@@ -12361,7 +12683,10 @@
               "mapped_support": "Provides local-lineage negative cases for proxy-to-benchmark divergence, canonical closure authority, retry ceilings, and optimizer/checkpoint/tokenizer/runtime/output trace discipline.",
               "limits": "Project-reported training and benchmark artifacts were not replayed by the book; no capability, benchmark, safety, or support-state result is accepted.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/cca_project.md:53-82", "sources/source_notes/cca_project.md:122-145"],
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:53-82",
+                "sources/source_notes/cca_project.md:122-145"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for loss/proxy/closure disagreement, retry-lineage pressure, and capability-trace requirements."
             },
             {
@@ -12369,7 +12694,10 @@
               "mapped_support": "Provides local-lineage separation between internal contract scores and external holdouts, including negative cases where architecture coherence coexisted with weak external task results.",
               "limits": "Internal ablations and holdout numbers are project-reported only and do not establish independent reproduction or book benchmark evidence.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:23-140", "sources/source_notes/moecot_manifest_project.md:205-232"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:23-140",
+                "sources/source_notes/moecot_manifest_project.md:205-232"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for internal/external scoreboard separation, holdout reality, harness failures, and promotion limits."
             },
             {
@@ -12377,7 +12705,10 @@
               "mapped_support": "Provides local-lineage negative cases for simulated loss, gradients, cache hits, latency, placeholder parameter counts, non-updating routers, and dependent/default-success evaluators.",
               "limits": "Simulations, project-reported scores, and retained logs are not reproduced model or hardware benchmark results.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/beastbrain_project.md:87-137", "sources/source_notes/beastbrain_project.md:139-162"],
+              "passage_refs": [
+                "sources/source_notes/beastbrain_project.md:87-137",
+                "sources/source_notes/beastbrain_project.md:139-162"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for simulated/declared/measured separation, target-capacity gaps, and evaluator dependence."
             },
             {
@@ -12385,7 +12716,10 @@
               "mapped_support": "Provides local-lineage negative cases for declared capacity versus active state, fixed-random model paths, constant objective terms, host/Pi identity drift, status workloads, and stale green readiness reports.",
               "limits": "Reproduced host tests do not establish Pi cognition, model learning, benchmark performance, or hardware capability.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/bugbrain_project.md:106-171", "sources/source_notes/bugbrain_project.md:173-203"],
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:106-171",
+                "sources/source_notes/bugbrain_project.md:173-203"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for capacity, workload, origin, evaluator, and report/canonical-state failures."
             },
             {
@@ -12393,7 +12727,10 @@
               "mapped_support": "Provides local-lineage benchmark authenticity states, seed identity, content-pin and decontamination limits, quarantined-run inheritance, stale promotion, and checkpoint-completion failures.",
               "limits": "Benchmark-labelled retained runs include synthetic placeholders and are not accepted as external or model-quality results.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:124-207", "sources/source_notes/corbens_trainer_project.md:209-230"],
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:124-207",
+                "sources/source_notes/corbens_trainer_project.md:209-230"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for benchmark authenticity, promotion/revocation, seed identity, and acknowledged completion."
             },
             {
@@ -12401,8 +12738,52 @@
               "mapped_support": "Provides the direct local-lineage motivation for metric-origin algebra, representation-capacity gates, retry discipline, and checkpoint/tokenizer/runtime/raw-output/evaluator claim binding.",
               "limits": "The retained paths include generated/frozen state, explicit lane binding, proxy or constant metrics, and incomplete runtime causality; no general capability or benchmark result is established.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:123-228", "sources/source_notes/corbens_best_model_possible_project.md:229-253", "sources/source_notes/corbens_best_model_possible_project.md:319-342"],
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:123-228",
+                "sources/source_notes/corbens_best_model_possible_project.md:229-253",
+                "sources/source_notes/corbens_best_model_possible_project.md:319-342"
+              ],
               "passage_review_note": "Reviewed the public-safe source note for metric provenance, target expressibility, checkpoint/output causality, and promotion blockers."
+            },
+            {
+              "source_id": "ext_claw_swe_bench_2026",
+              "mapped_support": "Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone.",
+              "limits": "Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here.",
+              "passage_refs": [
+                "sources/source_notes/ext_claw_swe_bench_2026.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-preprint summary for harness/model effects, fixed evaluation surfaces, cost comparisons, contamination pressure, and governance omissions.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_muse_unlearning_2025",
+              "mapped_support": "Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score.",
+              "limits": "No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network.",
+              "passage_refs": [
+                "sources/source_notes/ext_muse_unlearning_2025.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary ICLR summary for six-way owner/deployer evaluation, verbatim and knowledge memory, privacy, utility, scale, and repeated-request failure modes.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_unlearning_benchmarks_weak_2024",
+              "mapped_support": "Supports treating unlearning benchmark validity, target ambiguity, forget/retain dependence, and benign perturbation robustness as separate evidence burdens.",
+              "limits": "The position paper raises the interpretation standard but does not validate the local workload or establish influence, privacy, legal erasure, or storage erasure.",
+              "passage_refs": [
+                "sources/source_notes/ext_unlearning_benchmarks_weak_2024.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-paper summary for optimistic scores under benign changes, target ambiguity, query overfitting, hidden retained effects, and residual accessibility.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openunlearning_2025",
+              "mapped_support": "Supports versioned unlearning methods, standardized execution interfaces, public checkpoints, diverse evaluations, and meta-evaluation of metric faithfulness.",
+              "limits": "The framework, methods, checkpoints, evaluations, and meta-evaluations were not run; standardized record shape does not establish semantic validity or erasure.",
+              "passage_refs": [
+                "sources/source_notes/ext_openunlearning_2025.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary NeurIPS summary for unified method and metric execution, public checkpoints, comparative evaluation, metric faithfulness, and standardization failure modes.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -12909,7 +13290,8 @@
             "ext_gspo_2025",
             "ext_s_grpo_2025",
             "ext_longrlvr_2026",
-            "ext_rlhf_limitations_2023"
+            "ext_rlhf_limitations_2023",
+            "ext_muse_unlearning_2025"
           ],
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
@@ -13267,6 +13649,16 @@
               ],
               "passage_review_note": "Reviewed public arXiv abstract/metadata and source note for RLHF limitation categories, feedback/evaluator/reward-model risks, reward hacking, and mitigation-boundary cautions; no local mitigation or reward-process safety result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_muse_unlearning_2025",
+              "mapped_support": "Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score.",
+              "limits": "No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network.",
+              "passage_refs": [
+                "sources/source_notes/ext_muse_unlearning_2025.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary ICLR summary for six-way owner/deployer evaluation, verbatim and knowledge memory, privacy, utility, scale, and repeated-request failure modes.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -13446,7 +13838,10 @@
             "ext_gerstgrasser_data_accumulation_2024",
             "theseus_synthetic_data_curation",
             "ext_w3c_prov_o_2013",
-            "ext_mlcommons_croissant_1_1_2026"
+            "ext_mlcommons_croissant_1_1_2026",
+            "ext_muse_unlearning_2025",
+            "ext_unlearning_benchmarks_weak_2024",
+            "ext_openunlearning_2025"
           ],
           "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record.",
           "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
@@ -13490,6 +13885,36 @@
                 "sources/source_notes/theseus_synthetic_data_curation.md:12-42"
               ],
               "passage_review_note": "Reviewed the pinned-source note for the Theseus curation policy, gate categories, source-reported curator result, and named residuals. No Theseus command, dataset, comparator, or promotion record was rerun here.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_muse_unlearning_2025",
+              "mapped_support": "Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score.",
+              "limits": "No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network.",
+              "passage_refs": [
+                "sources/source_notes/ext_muse_unlearning_2025.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary ICLR summary for six-way owner/deployer evaluation, verbatim and knowledge memory, privacy, utility, scale, and repeated-request failure modes.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_unlearning_benchmarks_weak_2024",
+              "mapped_support": "Supports treating unlearning benchmark validity, target ambiguity, forget/retain dependence, and benign perturbation robustness as separate evidence burdens.",
+              "limits": "The position paper raises the interpretation standard but does not validate the local workload or establish influence, privacy, legal erasure, or storage erasure.",
+              "passage_refs": [
+                "sources/source_notes/ext_unlearning_benchmarks_weak_2024.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary-paper summary for optimistic scores under benign changes, target ambiguity, query overfitting, hidden retained effects, and residual accessibility.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openunlearning_2025",
+              "mapped_support": "Supports versioned unlearning methods, standardized execution interfaces, public checkpoints, diverse evaluations, and meta-evaluation of metric faithfulness.",
+              "limits": "The framework, methods, checkpoints, evaluations, and meta-evaluations were not run; standardized record shape does not establish semantic validity or erasure.",
+              "passage_refs": [
+                "sources/source_notes/ext_openunlearning_2025.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary NeurIPS summary for unified method and metric execution, public checkpoints, comparative evaluation, metric faithfulness, and standardization failure modes.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -14520,7 +14945,11 @@
               "mapped_support": "Supports the name-to-effect spine through typed intent lowering, canonical closure authority, trace bundles, and explicit separation between optimizer/proxy activity and claim-bearing effects.",
               "limits": "The historical project was not rerun; architecture and negative-case lessons do not establish integrated runtime, semantic preservation, capability, or safety.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/cca_project.md:13-39", "sources/source_notes/cca_project.md:41-65", "sources/source_notes/cca_project.md:122-145"],
+              "passage_refs": [
+                "sources/source_notes/cca_project.md:13-39",
+                "sources/source_notes/cca_project.md:41-65",
+                "sources/source_notes/cca_project.md:122-145"
+              ],
               "passage_review_note": "Reviewed the public-safe historical-project note for compiler/control-plane lineage, canonical closure, trace bundles, and proxy-to-claim gaps; treated as one related local lineage only."
             },
             {
@@ -14528,7 +14957,10 @@
               "mapped_support": "Supports canonical-state versus projection boundaries, compilation from semantic inputs to effect graphs and target bundles, immutable provenance, and the distinction between internal contract breadth and external effect.",
               "limits": "The pinned project was not compiled, deployed, or benchmarked here; contract and builder presence are not runtime or capability evidence.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/moecot_manifest_project.md:31-89", "sources/source_notes/moecot_manifest_project.md:205-232"],
+              "passage_refs": [
+                "sources/source_notes/moecot_manifest_project.md:31-89",
+                "sources/source_notes/moecot_manifest_project.md:205-232"
+              ],
               "passage_review_note": "Reviewed the public-safe historical-project note for compiler-to-effect lineage, Registry V2 canonical truth versus read models, provenance, replay, and external-holdout reality."
             },
             {
@@ -14536,7 +14968,10 @@
               "mapped_support": "Supplies interface-theater failure cases where success-shaped IDs, ignored audit writes, unreachable lifecycle states, and narrative summaries can diverge from material state and effects.",
               "limits": "The negative observations are bounded to inspected historical surfaces; they are not a full security audit, deployed integration test, or broad BugBrain runtime claim.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/bugbrain_project.md:106-171", "sources/source_notes/bugbrain_project.md:173-203"],
+              "passage_refs": [
+                "sources/source_notes/bugbrain_project.md:106-171",
+                "sources/source_notes/bugbrain_project.md:173-203"
+              ],
               "passage_review_note": "Reviewed the public-safe historical-project note for record/effect divergence, silently lost audit writes, success-shaped missing state, and report-versus-machine-readable disagreement."
             },
             {
@@ -14544,7 +14979,11 @@
               "mapped_support": "Supports request-to-effect binding through typed plans, content-addressed lineage, claim evaluation, quarantine closure, and acknowledged asynchronous terminal outcomes.",
               "limits": "No trainer run, checkpoint workflow, or benchmark was reproduced; the fixture imports design and failure constraints without asserting runtime completion or capability.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_trainer_project.md:52-95", "sources/source_notes/corbens_trainer_project.md:124-207", "sources/source_notes/corbens_trainer_project.md:209-230"],
+              "passage_refs": [
+                "sources/source_notes/corbens_trainer_project.md:52-95",
+                "sources/source_notes/corbens_trainer_project.md:124-207",
+                "sources/source_notes/corbens_trainer_project.md:209-230"
+              ],
               "passage_review_note": "Reviewed the public-safe historical-project note for typed epistemic transactions, stale promotion after quarantine, discarded async results, queue-idle versus terminal-state separation, and exact artifact lineage."
             },
             {
@@ -14552,7 +14991,11 @@
               "mapped_support": "Supports the distinction between named architecture surfaces and their ordinary-path causal effect, including default/empty integrations, checkpoint-to-response gaps, playback versus live effect, and claim-boundary discipline.",
               "limits": "The historical model and retained artifacts were not reproduced; interface presence, first-party ownership, and local execution do not establish useful capability or integrated behavior.",
               "passage_review_state": "reviewed",
-              "passage_refs": ["sources/source_notes/corbens_best_model_possible_project.md:153-228", "sources/source_notes/corbens_best_model_possible_project.md:229-253", "sources/source_notes/corbens_best_model_possible_project.md:319-342"],
+              "passage_refs": [
+                "sources/source_notes/corbens_best_model_possible_project.md:153-228",
+                "sources/source_notes/corbens_best_model_possible_project.md:229-253",
+                "sources/source_notes/corbens_best_model_possible_project.md:319-342"
+              ],
               "passage_review_note": "Reviewed the public-safe historical-project note for interface-versus-effect separation, ordinary-path defaulting, checkpoint/response causality, playback-only replay, and claim boundaries."
             },
             {
@@ -15519,7 +15962,8 @@
             "cognitive_loop_closure",
             "moecot",
             "moecot_md",
-            "road_to_agi"
+            "road_to_agi",
+            "ext_openunlearning_2025"
           ],
           "source_queue": {
             "primary": [
@@ -15649,6 +16093,16 @@
                 "sources/source_notes/road_to_agi.md:42-46"
               ],
               "passage_review_note": "Reviewed source note only for remaining-work/status context, source-reported commands/results caveat, promotion blockers, implementation sequencing, and conservative support-state rule; no reported result is promoted.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_openunlearning_2025",
+              "mapped_support": "Supports versioned unlearning methods, standardized execution interfaces, public checkpoints, diverse evaluations, and meta-evaluation of metric faithfulness.",
+              "limits": "The framework, methods, checkpoints, evaluations, and meta-evaluations were not run; standardized record shape does not establish semantic validity or erasure.",
+              "passage_refs": [
+                "sources/source_notes/ext_openunlearning_2025.md:12-42"
+              ],
+              "passage_review_note": "Reviewed the source note's primary NeurIPS summary for unified method and metric execution, public checkpoints, comparative evaluation, metric faithfulness, and standardization failure modes.",
               "passage_review_state": "reviewed"
             }
           ],

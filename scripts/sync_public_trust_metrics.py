@@ -102,12 +102,15 @@ def sync_evidence_lane_counts(ids: list[str]) -> None:
         f"active {len(ids)}-chapter evidence-lane backlog",
         EVIDENCE_PLAN,
     )
-    plan = replace_once(
-        plan,
-        r"the other (?:[a-z-]+|\d+) remain planned-only",
-        f"the other {len(ids) - 3} remain planned-only",
-        EVIDENCE_PLAN,
-    )
+    if re.search(r"the other (?:[a-z-]+|\d+) remain planned-only", plan):
+        plan = replace_once(
+            plan,
+            r"the other (?:[a-z-]+|\d+) remain planned-only",
+            f"the other {len(ids) - 3} remain planned-only",
+            EVIDENCE_PLAN,
+        )
+    elif "Unselected lanes do not receive fixtures or" not in plan:
+        raise ValueError(f"{EVIDENCE_PLAN.relative_to(ROOT)}: missing current unselected-lane boundary")
     EVIDENCE_PLAN.write_text(plan, encoding="utf-8")
 
     cycle = ACTIVE_CYCLE.read_text(encoding="utf-8")
