@@ -1,5 +1,21 @@
 # Changelog
 
+## 2026-07-10 - Post-v2 empirical preregistration and runtime verification
+
+- Froze one machine-readable preregistration for the three active post-v2
+  empirical programs before outcome runs, including workloads, matched
+  baselines, candidate arms, metrics, negative controls, stop rules, allowed
+  dispositions, and conditional infrastructure deferrals.
+- Verified a fully local authorized model runtime using
+  `Qwen/Qwen2.5-Coder-0.5B-Instruct` at pinned revision
+  `ea3f2471cf1b1f0db85067f1ef93848e38e88c25`; the smoke generation establishes
+  runtime availability only and the approximately 953 MB model cache remains
+  outside the repository and release artifacts.
+- Added a preregistration schema and validator with five rejecting mutations
+  for a missing baseline, premature outcome, mutable model revision, forced
+  positive result, and fixture-based hardware-lane closure. No experiment
+  result, evidence transition, or chapter support change is claimed.
+
 ## 2026-07-10 - Post-v2 evidence direction
 
 - Preserved the completed v2.0.0 completion roadmap as historical release

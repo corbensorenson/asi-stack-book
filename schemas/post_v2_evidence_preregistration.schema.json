@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_evidence_preregistration.schema.json",
+  "title": "Post-v2 Evidence Program Preregistration",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "preregistration_id",
+    "recorded_date",
+    "roadmap_ref",
+    "state",
+    "environment",
+    "programs",
+    "conditional_lanes",
+    "allowed_outcomes",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_evidence_preregistration.v0"},
+    "preregistration_id": {"type": "string", "minLength": 1},
+    "recorded_date": {"type": "string", "format": "date"},
+    "roadmap_ref": {"const": "docs/post_v2_evidence_roadmap.md"},
+    "state": {"const": "frozen_before_outcome_runs"},
+    "environment": {
+      "type": "object",
+      "required": ["hardware", "software", "model_runtime"],
+      "properties": {
+        "hardware": {"type": "object"},
+        "software": {"type": "object"},
+        "model_runtime": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "programs": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "program_id",
+          "priority",
+          "state",
+          "claim_scope",
+          "workload",
+          "simpler_baseline",
+          "governed_or_candidate_routes",
+          "metrics",
+          "negative_controls",
+          "stop_rule",
+          "disposition_rule"
+        ],
+        "properties": {
+          "program_id": {"type": "string", "minLength": 1},
+          "priority": {"type": "integer", "minimum": 1, "maximum": 3},
+          "state": {"const": "preregistered_not_executed"},
+          "claim_scope": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "workload": {"type": "object"},
+          "simpler_baseline": {"type": "object"},
+          "governed_or_candidate_routes": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "metrics": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "negative_controls": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "stop_rule": {"type": "string", "minLength": 1},
+          "disposition_rule": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": true
+      }
+    },
+    "conditional_lanes": {"type": "array", "minItems": 3, "items": {"type": "object"}},
+    "allowed_outcomes": {
+      "type": "array",
+      "contains": {"const": "refute"},
+      "items": {"type": "string"}
+    },
+    "support_state_effect": {"const": "none_before_results"},
+    "non_claims": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

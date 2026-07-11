@@ -66,6 +66,14 @@ document as the only active execution roadmap, while the v1, v1.x, historical-
 project, remediation, and v2 completion roadmaps remain available as evidence.
 It is recorded here for provenance and is not active work.
 
+The three active programs are frozen before outcome runs in
+`experiments/post_v2_evidence_program/preregistration.json` and summarized in
+`docs/post_v2_evidence_preregistration.md`. The preregistration pins the local
+model runtime, workloads, matched baselines, arms, metrics, controls, stop
+rules, allowed dispositions, and conditional deferrals. Changing those fields
+after an outcome is visible requires a versioned amendment that preserves the
+original record.
+
 ## Priority 1 — Realistic governed-work flagship
 
 Outcome: test the book's strongest cross-stack contribution on realistic work,

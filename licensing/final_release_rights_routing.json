@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 2452,
+    "path_count": 2456,
     "by_license_route": {
-      "Apache-2.0": 621,
-      "CC-BY-4.0": 477,
-      "excluded-no-grant": 1354
+      "Apache-2.0": 623,
+      "CC-BY-4.0": 478,
+      "excluded-no-grant": 1355
     },
     "unresolved_count": 0
   },
@@ -2297,6 +2297,13 @@
     },
     {
       "path": "docs/policy_update_lease_probe.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/post_v2_evidence_preregistration.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
@@ -7630,6 +7637,13 @@
       "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
+      "path": "experiments/post_v2_evidence_program/preregistration.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
       "path": "experiments/procedural_memory_loop/README.md",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
@@ -11914,6 +11928,13 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "schemas/post_v2_evidence_preregistration.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
       "path": "schemas/procedural_tool_record.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -13539,6 +13560,13 @@
     },
     {
       "path": "scripts/validate_policy_update_lease_probe.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_evidence_preregistration.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",

@@ -1008,7 +1008,11 @@
     "licensing/final_release_rights_routing.json",
     "docs/v2_0_release_scope.md",
     "scripts/build_final_release_rights_routing.py",
-    "scripts/validate_final_release_rights_routing.py"
+    "scripts/validate_final_release_rights_routing.py",
+    "schemas/post_v2_evidence_preregistration.schema.json",
+    "experiments/post_v2_evidence_program/preregistration.json",
+    "docs/post_v2_evidence_preregistration.md",
+    "scripts/validate_post_v2_evidence_preregistration.py"
   ],
   "units": [
     {
@@ -5498,11 +5502,51 @@
       "negative_control_cases": ["missing route", "duplicate route", "unknown route", "license-text self grant", "mixed source grant", "unowned Apache/CC grant", "legal-text digest drift", "format overclaim"],
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_evidence_preregistration:261",
+      "order": 261,
+      "script": "validate_post_v2_evidence_preregistration.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The active post-v2 roadmap, frozen three-program preregistration, pinned verified local model-runtime record, workload/baseline/metric/control/stop/disposition fields, three conditional-lane activation decisions, readable summary, and five adversarial mutations.",
+      "output_contract": "Reject a missing or extra program, unfrozen priority, absent simpler baseline, mutable model revision, forced positive outcome, premature result, or fixture-based closure of an infrastructure-dependent lane.",
+      "claim_scope": "Preregistration discipline and executable prerequisite availability for the three post-v2 evidence programs before outcome runs.",
+      "negative_controls": "validator_owned",
+      "prohibited_inference": "Preregistration and one model smoke generation do not establish program execution, model quality, code quality, safety, transfer, chapter support, or independent review.",
+      "input_artifacts": [
+        "docs/post_v2_evidence_roadmap.md",
+        "schemas/post_v2_evidence_preregistration.schema.json",
+        "experiments/post_v2_evidence_program/preregistration.json",
+        "docs/post_v2_evidence_preregistration.md",
+        "scripts/validate_post_v2_evidence_preregistration.py"
+      ],
+      "output_assertions": [
+        "three active programs exact",
+        "priorities one through three",
+        "frozen before outcomes",
+        "simpler baselines present",
+        "metrics and controls present",
+        "model revision pinned",
+        "negative outcomes allowed",
+        "three honest conditional deferrals",
+        "no support effect"
+      ],
+      "negative_control_cases": [
+        "missing baseline",
+        "outcome before execution",
+        "mutable model revision",
+        "forced positive result",
+        "fixture closes hardware lane"
+      ],
+      "contract_precision": "class_level",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 964,
-    "unit_count": 260
+    "required_artifact_count": 968,
+    "unit_count": 261
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
