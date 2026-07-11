@@ -1,0 +1,15 @@
+def choose_reviewer(proposer, reviewers):
+    """
+    Selects the first reviewer not equal to the given proposer from the list of reviewers.
+    
+    Parameters:
+    - proposer (str): The name of the person proposing the review.
+    - reviewers (list): A list of potential reviewers.
+    
+    Returns:
+    - str or None: The name of the first reviewer who is not the proposer, or None if no such reviewer exists.
+    """
+    for reviewer in reviewers:
+        if reviewer != proposer:
+            return reviewer
+    return None

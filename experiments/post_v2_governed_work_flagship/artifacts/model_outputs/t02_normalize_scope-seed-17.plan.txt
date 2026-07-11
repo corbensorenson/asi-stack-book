@@ -1,0 +1,9 @@
+To implement the `normalize_scope` function in Python, we need to follow these steps:
+
+1. **Normalize Paths**: Remove absolute paths and any path containing a '..', ensuring that only relative paths are considered.
+
+2. **Sort Unique Paths**: Sort the unique relative paths alphabetically.
+
+Here's the implementation:
+
+```python

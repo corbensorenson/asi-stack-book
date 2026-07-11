@@ -1,0 +1,17 @@
+def receipt_matches(claimed, observed):
+    """
+    Check if both 'claimed' and 'observed' are strings and are exactly equal.
+
+    Parameters:
+    claimed (str): The first string to compare.
+    observed (str): The second string to compare.
+
+    Returns:
+    bool: True if both strings are equal, False otherwise.
+    """
+    # Check if both strings are strings
+    if not isinstance(claimed, str) or not isinstance(observed, str):
+        return False
+    
+    # Check if both strings are equal
+    return claimed == observed

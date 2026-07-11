@@ -1,0 +1,5 @@
+To implement the `normalize_scope` function, we need to follow these steps:
+
+1. **Filter out Absolute Paths**: Remove any paths that start with a dot (`.`).
+2. **Filter out Paths Containing ".." Segments**: Remove any paths that contain a ".." segment.
+3. **Sort the Remaining

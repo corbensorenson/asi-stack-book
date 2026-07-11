@@ -1,0 +1,21 @@
+```python
+def clamp_budget(value, ceiling):
+    """
+    Clamp the given value to the inclusive integer range [0, ceiling].
+
+    Parameters:
+    - value (int): The value to be clamped.
+    - ceiling (int): The upper limit of the inclusive range.
+
+    Returns:
+    - int: The clamped value.
+    """
+    # Check if the value is non-negative
+    if value < 0:
+        raise ValueError("Value must be non-negative.")
+    
+    # Ensure the value is within the inclusive range
+    if value > ceiling:
+        raise ValueError("Value exceeds the ceiling.")
+    
+    #

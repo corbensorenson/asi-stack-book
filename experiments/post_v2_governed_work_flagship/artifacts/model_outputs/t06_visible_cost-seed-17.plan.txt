@@ -1,0 +1,4 @@
+To implement the `total_visible_cost` function, we need to iterate over the list of items, check if each item's `visible` value is `True`, and then sum up the costs of the items that meet this condition. Here's how you can do it:
+
+```python
+def total_visible_cost(items):

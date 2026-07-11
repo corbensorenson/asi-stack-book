@@ -1,0 +1,6 @@
+To implement the `restore_snapshot` function in Python, we need to create a deep copy of the original dictionary. This involves using the `copy.deepcopy()` function from the `copy` module. The function should ignore any changes made to the `changed` dictionary.
+
+Here's the implementation:
+
+```python
+import copy

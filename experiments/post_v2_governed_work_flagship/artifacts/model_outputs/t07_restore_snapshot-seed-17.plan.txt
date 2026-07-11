@@ -1,0 +1,3 @@
+To implement the `restore_snapshot` function in Python, we need to create a deep copy of the original dictionary or list, ignoring any changes made during the snapshot process. Here's a step-by-step implementation:
+
+1. **Check if the input is a dictionary or list**: If not, return an empty dictionary or list

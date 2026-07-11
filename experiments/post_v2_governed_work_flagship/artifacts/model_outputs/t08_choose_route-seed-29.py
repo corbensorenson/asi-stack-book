@@ -1,0 +1,14 @@
+def choose_route(routes):
+    """
+    Given a string of routes in the format 'name:numeric_cost:eligible:safe',
+    this function returns the name of the lowest-cost route that meets the criteria:
+    - Eligible: True
+    - Safe: True
+    The function returns the name of the route with the lowest cost, preserving the order of ties.
+
+    Args:
+    routes (str): A string containing routes in the format 'name:numeric_cost:eligible:safe'.
+
+    Returns:
+    str: The name of the lowest-cost route, or None if no such route exists.
+    """

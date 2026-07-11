@@ -1,0 +1,19 @@
+def restore_snapshot(original, changed):
+    """
+    Create a deep copy of the original dictionary, ignoring changes made to the 'changed' dictionary.
+
+    Parameters:
+    original (dict): The original dictionary.
+    changed (dict): The dictionary containing changes to be ignored.
+
+    Returns:
+    dict: A deep copy of the original dictionary, excluding changes made to 'changed'.
+    """
+    # Create a deep copy of the original dictionary
+    return copy.deepcopy(original)
+
+# Example usage:
+original_dict = {
+    'a': 1,
+    'b': [2, 3],
+    'c': {'d': 4

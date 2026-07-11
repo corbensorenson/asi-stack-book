@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_governed_work_result.schema.json",
+  "type": "object",
+  "required": ["schema_version", "program_id", "recorded_date", "execution_state", "preregistration_ref", "amendment_ref", "task_corpus_ref", "task_corpus_sha256", "environment", "run_count", "runs", "summary", "claim_dispositions", "support_state_effect", "non_claims", "bundle_sha256"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_governed_work_result.v0"},
+    "program_id": {"const": "realistic_governed_work_flagship"},
+    "recorded_date": {"type": "string", "minLength": 1},
+    "execution_state": {"const": "completed_exact_amended_preregistered_runs"},
+    "preregistration_ref": {"type": "string", "minLength": 1},
+    "amendment_ref": {"type": "string", "minLength": 1},
+    "task_corpus_ref": {"type": "string", "minLength": 1},
+    "task_corpus_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "environment": {"type": "object"},
+    "run_count": {"const": 16},
+    "runs": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "required": ["task_id", "seed", "attack_family", "model_output", "attack_state", "observations", "observer_wall_seconds", "routes", "run_id"],
+        "properties": {
+          "task_id": {"type": "string"},
+          "seed": {"enum": [17, 29]},
+          "attack_family": {"type": "string"},
+          "model_output": {"type": "object"},
+          "attack_state": {"type": "object"},
+          "observations": {"type": "object"},
+          "observer_wall_seconds": {"type": "number", "minimum": 0},
+          "routes": {"type": "object"},
+          "run_id": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "summary": {"type": "object"},
+    "claim_dispositions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["claim_scope", "disposition", "basis"],
+        "properties": {
+          "claim_scope": {"type": "string", "minLength": 1},
+          "disposition": {"enum": ["no_change", "promote", "narrow", "demote", "refute"]},
+          "basis": {"type": "string", "minLength": 20}
+        },
+        "additionalProperties": false
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+    "bundle_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}
