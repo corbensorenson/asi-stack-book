@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_update_causality_result.schema.json",
+  "type": "object",
+  "required": ["schema_version", "program_id", "recorded_date", "execution_state", "corpus_ref", "corpus_sha256", "environment", "seed_records", "program_wall_seconds", "claim_dispositions", "support_state_effect", "non_claims", "bundle_sha256"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_update_causality_result.v0"},
+    "program_id": {"const": "real_update_causality_campaign"},
+    "recorded_date": {"type": "string"},
+    "execution_state": {"const": "completed_exact_preregistered_campaign"},
+    "corpus_ref": {"type": "string"},
+    "corpus_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "environment": {"type": "object"},
+    "seed_records": {"type": "array", "minItems": 3, "maxItems": 3},
+    "program_wall_seconds": {"type": "number", "minimum": 0},
+    "claim_dispositions": {"type": "array", "minItems": 4, "maxItems": 4},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5},
+    "bundle_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

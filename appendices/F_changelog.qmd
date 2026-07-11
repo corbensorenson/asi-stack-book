@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-07-10 - Real update-causality outcomes
+
+- Executed three seeds across no-update, bounded fine-tune, regularized, and
+  deletion-aware retraining arms. Retained three base checkpoints plus 24 best
+  and final checkpoints with byte/tensor digests and replayed output metrics.
+  Every challenger had a nonzero parameter delta and changed held-out outputs;
+  every no-update arm remained bit-identical.
+- Preserved modest, seed-sensitive utility, retained-task forgetting, deletion-
+  cohort true/flipped-label behavior, nonmember utility, fixed-probe changes,
+  and 62 best/final test-decision disagreements. Deletion-aware retraining is a
+  bounded causal exclusion result, not proof of storage erasure, privacy, legal
+  compliance, or production unlearning.
+- Verified three exact base-checkpoint rollbacks and nine invalidated descendant
+  arms. Issued four independent chapter-core `no_change` dispositions and
+  added eight rejecting mutations for digest, no-update laundering, selection,
+  forgetting, deletion, rollback, invalidation, and promotion erasure.
+
 ## 2026-07-10 - Frozen real update-causality campaign
 
 - Froze a content-addressed 1,200-example nonlinear policy corpus with
