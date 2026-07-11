@@ -86,6 +86,12 @@
   one mutation that no longer rejected in final state. No result path existed,
   no call or training run occurred, and M2 remained open while the validator
   received a versioned correction.
+- Closed M2 against corrected setup commit
+  `707fc10969b04bd31e135c8a711b33e9505e0d87`. The final manifest verifies exact
+  committed blobs and absence of all registered outcome paths; all ten setup
+  mutations reject in final state. P1–P3 are now `preregistered`. This
+  authorizes only the frozen M3 sequence and creates no empirical result or
+  support-state movement.
 
 ## 2026-07-10 - v2.1.0 evidence release
 

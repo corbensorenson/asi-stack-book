@@ -115,6 +115,14 @@ def semantic_errors(
             errors.append(f"{row.get('id')}: residual priority owner is wrong")
         if row.get("state") != "actionable_open" and not row.get("evidence_refs"):
             errors.append(f"{row.get('id')}: changed residual state lacks evidence")
+    residual_state = {row.get("id"): row.get("state") for row in residual_rows}
+    for priority_id in ("P1", "P2", "P3"):
+        priority = by_priority.get(priority_id, {})
+        if priority.get("state") == "completed" and any(
+            residual_state.get(residual_id) == "actionable_open"
+            for residual_id in EXPECTED_PRIORITY_RESIDUALS[priority_id]
+        ):
+            errors.append(f"{priority_id}: completed while owned residuals remain actionable_open")
 
     conditional = status.get("conditional_lanes", [])
     if [row.get("id") for row in conditional] != EXPECTED_CONDITIONAL:

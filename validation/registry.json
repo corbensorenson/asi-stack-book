@@ -6171,9 +6171,9 @@
         "P3 contains 1600 examples with independent deletion and probe cohorts",
         "all 80 deletion members are bound into initial training",
         "full-state inventory contains 24 surfaces",
-        "outcomes remain unopened and final setup blockers remain visible"
+        "outcomes remain unopened and the corrected setup commit is exact-bound"
       ],
-      "claim_scope": "Frozen deterministic inputs and decision rules before corrected executable setup binding and outcome observation.",
+      "claim_scope": "Frozen deterministic inputs, decision rules, and corrected exact setup binding before outcome observation.",
       "negative_controls": "validator_owned",
       "negative_control_cases": [
         "duplicate P1 identity",
@@ -6188,7 +6188,7 @@
         "support promotion",
         "threshold erasure"
       ],
-      "prohibited_inference": "Frozen inputs and draft rules do not execute a model call or update, reveal outcomes, establish safety or benefit, close a residual, or move a support state.",
+      "prohibited_inference": "Final preregistration does not execute a model call or update, reveal outcomes, establish safety or benefit, close a residual, or move a support state.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
@@ -6223,7 +6223,7 @@
         "combined ceiling is 332 calls and 59960 generated tokens",
         "P3 maps all 24 surfaces and selects authority without test/deletion/probe outcomes",
         "three preflights execute no registered outcomes",
-        "setup commit remains pending until a corrected exact binding"
+        "corrected setup commit is exact-blob bound and contains no registered outcome path"
       ],
       "claim_scope": "Executable setup identity, outcome guards, role interfaces, held-out boundaries, and resource arithmetic before empirical execution.",
       "negative_controls": "validator_owned",

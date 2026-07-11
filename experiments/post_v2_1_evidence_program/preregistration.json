@@ -3,18 +3,14 @@
   "preregistration_id": "post-v2-1-evidence-program-2026-07-11",
   "recorded_date": "2026-07-11",
   "roadmap_ref": "docs/post_v2_1_residual_and_transfer_roadmap.md",
-  "state": "draft_inputs_frozen_outcomes_unopened",
+  "state": "frozen_before_outcome_runs",
   "amendment_refs": [
     "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
     "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json"
   ],
   "setup_manifest_ref": "experiments/post_v2_1_evidence_program/setup_manifest.json",
   "source_gap_scan_ref": "docs/post_v2_1_focused_source_gap_scan.md",
-  "completion_blockers": [
-    "bind the corrected final setup commit and exact runner/evaluator/observer digests",
-    "pass the combined setup validator and all rejecting mutations in final state",
-    "record P1, P2, and P3 as preregistered in the roadmap status sidecar"
-  ],
+  "completion_blockers": [],
   "runtime_authority": {
     "disposition_ref": "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json",
     "model_id": "mlx-community/Qwen3-4B-4bit",
@@ -74,7 +70,7 @@
       "program_id": "P1-governed-usefulness-effect-complete-rollback",
       "priority": "P1",
       "residual_ids": ["GW-01", "GW-02", "GW-03"],
-      "state": "inputs_frozen_runner_pending",
+      "state": "preregistered",
       "corpus_ref": "experiments/post_v2_1_evidence_program/p1/input/corpus.json",
       "corpus_sha256": "1614c7a0ef2e6412e6941c403b6e3f02180b2c2df3a7f93b753c3df1c27e27f0",
       "experimental_unit": "task-seed candidate transaction",
@@ -121,7 +117,7 @@
       "program_id": "P2-ambiguous-routing-real-model-deliberation",
       "priority": "P2",
       "residual_ids": ["RD-01", "RD-02", "RD-03", "RD-04"],
-      "state": "inputs_frozen_runner_pending",
+      "state": "preregistered",
       "corpus_ref": "experiments/post_v2_1_evidence_program/p2/input/corpus.json",
       "corpus_sha256": "675da018e871f295c45ca3aa3ebc5eabd58ffe099c99ed22216a1ef40068e857",
       "known_harm_ref": "experiments/post_v2_1_evidence_program/p2/input/known_harm_regression.json",
@@ -154,7 +150,7 @@
       "program_id": "P3-full-state-update-unlearning-causality",
       "priority": "P3",
       "residual_ids": ["UU-01", "UU-02", "UU-03", "UU-04"],
-      "state": "inputs_frozen_runner_pending",
+      "state": "preregistered",
       "corpus_ref": "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
       "corpus_sha256": "f31ea84bdee6092875bbd85a36300f559bdac4420711cce3daa88b56693e74e4",
       "state_inventory_ref": "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
