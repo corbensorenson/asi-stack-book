@@ -11,7 +11,8 @@
     "torch": "2.7.1",
     "numpy": "1.26.4",
     "deterministic_algorithms": true,
-    "threads": 1
+    "threads": 1,
+    "parameter_delta_accumulator": "math.fsum_fixed_tensor_and_element_order"
   },
   "seed_records": [
     {
@@ -352,7 +353,7 @@
             "file_sha256": "9ce7b1115945fecf298895022b25ed8b0e0da02b45effc6822caa7f342a21ae8",
             "metrics": {
               "state_sha256": "2a49e69bb620f9613c51d7abe35d5a391847616fdae029b80ef1735583cf4295",
-              "parameter_delta_l2": 0.042654638,
+              "parameter_delta_l2": 0.0426546373,
               "validation_accuracy": 0.74166667,
               "test_accuracy": 0.77083333,
               "retained_base_accuracy": 0.73958333,
@@ -377,7 +378,7 @@
             "file_sha256": "e2dbf82d576cd7e9872f19896d504064c7d8650c3b3478a2f97e754eadd9ab7d",
             "metrics": {
               "state_sha256": "3485a19dcff5210bafc7b1bd8df6dbd0637a6ade2f8e57aa43a6d07b858bc261",
-              "parameter_delta_l2": 0.1464548004,
+              "parameter_delta_l2": 0.1464547992,
               "validation_accuracy": 0.7375,
               "test_accuracy": 0.7875,
               "retained_base_accuracy": 0.75,
@@ -470,7 +471,7 @@
             "file_sha256": "f9a78db863f7f19775d6fcaed5e7cac403d0420c2dc94cf3b5270cdd7f26d010",
             "metrics": {
               "state_sha256": "9943c6de4d260049a73b8fd509f281b6c927c06e42bda8bf2ec22c3dec3176e4",
-              "parameter_delta_l2": 0.0425167007,
+              "parameter_delta_l2": 0.042516699,
               "validation_accuracy": 0.74166667,
               "test_accuracy": 0.77083333,
               "retained_base_accuracy": 0.73958333,
@@ -495,7 +496,7 @@
             "file_sha256": "07f4fadc4774526d0608d89bd16ede15dcaf588cc15a7d7d8bf6fda3d8af5a23",
             "metrics": {
               "state_sha256": "29a8276bac0f853eac57eeb2813dc849c491243c308d6c1b62da1f94f9effe27",
-              "parameter_delta_l2": 0.1440137003,
+              "parameter_delta_l2": 0.1440136998,
               "validation_accuracy": 0.7375,
               "test_accuracy": 0.7875,
               "retained_base_accuracy": 0.75208333,
@@ -728,7 +729,7 @@
             "file_sha256": "20cd4cc060841ac87260a188adadd0580432d83903fbec58da93f9653ac7aebb",
             "metrics": {
               "state_sha256": "deb83eeeeeee4247d69d09a0359e3fa0a6c8ba3b255c2bd4b209bceafe82f6f9",
-              "parameter_delta_l2": 0.1015275286,
+              "parameter_delta_l2": 0.1015275296,
               "validation_accuracy": 0.74583333,
               "test_accuracy": 0.775,
               "retained_base_accuracy": 0.74583333,
@@ -753,7 +754,7 @@
             "file_sha256": "e727c098baf9b230d4639bd1535ce6f6dcceb428b2b81116d678fd624126d895",
             "metrics": {
               "state_sha256": "1de935d35338923b02872e425cd5a3cecbb34025f09eb1bb6a0f4482dfdcdfbd",
-              "parameter_delta_l2": 0.0968961622,
+              "parameter_delta_l2": 0.0968961624,
               "validation_accuracy": 0.74583333,
               "test_accuracy": 0.775,
               "retained_base_accuracy": 0.75,
@@ -1122,7 +1123,7 @@
             "file_sha256": "7d17077db2b2647c367386f280348585e708edd3cad6474dbaca3931a06f361a",
             "metrics": {
               "state_sha256": "dc105f5ac0b8b096a45f3cc842cac2594d24208c028198b119fe16add2ae6b15",
-              "parameter_delta_l2": 0.0116636982,
+              "parameter_delta_l2": 0.0116636984,
               "validation_accuracy": 0.77083333,
               "test_accuracy": 0.77083333,
               "retained_base_accuracy": 0.75208333,
@@ -1147,7 +1148,7 @@
             "file_sha256": "3a6a4ad97423889be076aacc423fefd5abf7e5f2628d6ec5ce5e466ecd70e368",
             "metrics": {
               "state_sha256": "2d49d61ed132178d3a75cbc163fc1ca6ece6110df2359b26debd77b8187d17eb",
-              "parameter_delta_l2": 0.1182297251,
+              "parameter_delta_l2": 0.1182297266,
               "validation_accuracy": 0.76666667,
               "test_accuracy": 0.775,
               "retained_base_accuracy": 0.74166667,
@@ -1240,7 +1241,7 @@
             "file_sha256": "1193c0925785345cf2525cee02b66af3002205011f715e4d42f3f0767b184932",
             "metrics": {
               "state_sha256": "dc105f5ac0b8b096a45f3cc842cac2594d24208c028198b119fe16add2ae6b15",
-              "parameter_delta_l2": 0.0116636982,
+              "parameter_delta_l2": 0.0116636984,
               "validation_accuracy": 0.77083333,
               "test_accuracy": 0.77083333,
               "retained_base_accuracy": 0.75208333,
@@ -1265,7 +1266,7 @@
             "file_sha256": "4ab6e8cbe17586cb5e7ec36d0f2796fc35e73510ee5ec9f6fa22c6a099ee95eb",
             "metrics": {
               "state_sha256": "e28e90c67e8457710e36f70731b019084364233d4400c608b476756297eae5c4",
-              "parameter_delta_l2": 0.1162482888,
+              "parameter_delta_l2": 0.1162482874,
               "validation_accuracy": 0.76666667,
               "test_accuracy": 0.77083333,
               "retained_base_accuracy": 0.74166667,
@@ -1498,7 +1499,7 @@
             "file_sha256": "7a34589c46ed83b812815f0cd4738b35065ca24972efd989d04e7825201b3750",
             "metrics": {
               "state_sha256": "397f311fe67816f543c5714863092fc035bf9ce15f4c1fdc41166031eaf75cca",
-              "parameter_delta_l2": 0.0809886431,
+              "parameter_delta_l2": 0.0809886437,
               "validation_accuracy": 0.77083333,
               "test_accuracy": 0.7875,
               "retained_base_accuracy": 0.75416667,
@@ -1523,7 +1524,7 @@
             "file_sha256": "8f8bb5e9a1cf43c71c064e0506f80ccc13fc240e36b655f2fc9f25ec48711f97",
             "metrics": {
               "state_sha256": "51ea31e91f218278839c2181e8170c41de23f6736da2c96be4377083183b2039",
-              "parameter_delta_l2": 0.0768186931,
+              "parameter_delta_l2": 0.0768186937,
               "validation_accuracy": 0.7625,
               "test_accuracy": 0.775,
               "retained_base_accuracy": 0.75416667,
@@ -1892,7 +1893,7 @@
             "file_sha256": "8801c8551644d524f61d8ae9ac45334e341010aeca79d7b73873baf65117d798",
             "metrics": {
               "state_sha256": "0c64519467a96ce02780e57d99b487488ea6f622ca906d2f3b8b364167723686",
-              "parameter_delta_l2": 0.1155286183,
+              "parameter_delta_l2": 0.1155286157,
               "validation_accuracy": 0.7875,
               "test_accuracy": 0.7875,
               "retained_base_accuracy": 0.77291667,
@@ -1917,7 +1918,7 @@
             "file_sha256": "a4b8a5efbad047e591d7b31e0892f0770b5b8af3d42beb5a34f5d1251936030c",
             "metrics": {
               "state_sha256": "68fc3d15aa12c2eb9c7616b65e31c502100c75d375cbbf637246992a68af8efa",
-              "parameter_delta_l2": 0.1822457914,
+              "parameter_delta_l2": 0.1822457891,
               "validation_accuracy": 0.77916667,
               "test_accuracy": 0.775,
               "retained_base_accuracy": 0.77083333,
@@ -2010,7 +2011,7 @@
             "file_sha256": "af0ac8386c0d5dba51d6e865998eb2f31c03ef89b2f91d56c27211ab4c9df3e3",
             "metrics": {
               "state_sha256": "7eaf6c1a124b2b1f167a815960aeebcb5ea01c086b3f32521fac255a0ce5b3f0",
-              "parameter_delta_l2": 0.1144393745,
+              "parameter_delta_l2": 0.1144393746,
               "validation_accuracy": 0.7875,
               "test_accuracy": 0.7875,
               "retained_base_accuracy": 0.77291667,
@@ -2035,7 +2036,7 @@
             "file_sha256": "4c550afcda570ae4987bac0c1be7ebee550a2456b02b2130cedc7fa81c1cb125",
             "metrics": {
               "state_sha256": "c8150b7e2b900c4f17081a719ea750d922d18f518cf79671a523607a0f9df027",
-              "parameter_delta_l2": 0.1792035016,
+              "parameter_delta_l2": 0.179203501,
               "validation_accuracy": 0.77916667,
               "test_accuracy": 0.775,
               "retained_base_accuracy": 0.77083333,
@@ -2268,7 +2269,7 @@
             "file_sha256": "ef580d867469dd93a3d968af6a387720f1bc48513603be6065e85b99885e1127",
             "metrics": {
               "state_sha256": "646b138a23ea0ef29515212314f1ea788da00dcdb4bbbfaf0b5c69dd3addeb09",
-              "parameter_delta_l2": 0.0770837891,
+              "parameter_delta_l2": 0.07708379,
               "validation_accuracy": 0.775,
               "test_accuracy": 0.78333333,
               "retained_base_accuracy": 0.775,
@@ -2293,7 +2294,7 @@
             "file_sha256": "f5499520f6e4561bc8c4969ef2c1ab8d8d44be1ab25d5484b66ed346c5eeede5",
             "metrics": {
               "state_sha256": "646b138a23ea0ef29515212314f1ea788da00dcdb4bbbfaf0b5c69dd3addeb09",
-              "parameter_delta_l2": 0.0770837891,
+              "parameter_delta_l2": 0.07708379,
               "validation_accuracy": 0.775,
               "test_accuracy": 0.78333333,
               "retained_base_accuracy": 0.775,
@@ -2356,5 +2357,5 @@
     "Rollback digest equality does not prove deletion from storage outside the recorded checkpoint set.",
     "No chapter-core support state changes."
   ],
-  "bundle_sha256": "cf063c61e1ddf9fd0877cbce5e2575da98704c75c3eb120ec89335fd94e5da1f"
+  "bundle_sha256": "f38c7b3d28642c64b40cc4871623699328f464b0b4c23debaeba6b0343829356"
 }

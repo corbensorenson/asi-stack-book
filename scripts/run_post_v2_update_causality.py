@@ -65,6 +65,28 @@ def accuracy(preds: list[int], rows: list[dict], label_key: str = "true_label") 
     return sum(pred == row[label_key] for pred, row in zip(preds, rows)) / len(rows)
 
 
+def parameter_delta_l2(state: dict[str, torch.Tensor], base_state: dict[str, torch.Tensor]) -> float:
+    """Compute a replay-stable norm from the stored float32 tensor values.
+
+    Torch's parallel reduction kernels may accumulate the same tensor values in
+    a different order across CPU architectures.  ``math.fsum`` over a fixed
+    name/element order makes this recorded audit metric portable without
+    changing the trained checkpoints or their output decisions.
+    """
+    squares = (
+        difference * difference
+        for name in sorted(state)
+        for difference in (
+            float(value) - float(base)
+            for value, base in zip(
+                state[name].detach().cpu().contiguous().view(-1).tolist(),
+                base_state[name].detach().cpu().contiguous().view(-1).tolist(),
+            )
+        )
+    )
+    return math.sqrt(math.fsum(squares))
+
+
 def train_model(model: PolicyNet, rows: list[dict], validation: list[dict], epochs: int, lr: float, base_state: dict[str, torch.Tensor] | None = None, regularization: float = 0.0) -> tuple[dict[str, torch.Tensor], dict[str, torch.Tensor], list[dict]]:
     x_train, y_train = tensor_rows(rows, "training_label")
     optimizer = torch.optim.SGD(model.parameters(), lr=lr)
@@ -101,7 +123,7 @@ def load_state(path: Path) -> dict[str, torch.Tensor]:
 def evaluate_checkpoint(path: Path, rows: dict[str, list[dict]], base_state: dict[str, torch.Tensor], base_predictions: dict[str, list[int]]) -> dict:
     model = PolicyNet(); state = load_state(path); model.load_state_dict(state)
     output = {name: predictions(model, values) for name, values in rows.items()}
-    delta = math.sqrt(sum(float((state[name] - base_state[name]).pow(2).sum()) for name in state))
+    delta = parameter_delta_l2(state, base_state)
     return {
         "state_sha256": state_sha(state),
         "parameter_delta_l2": round(delta, 10),
@@ -118,8 +140,60 @@ def evaluate_checkpoint(path: Path, rows: dict[str, list[dict]], base_state: dic
     }
 
 
+def refresh_existing_metrics() -> None:
+    """Refresh portable derived metrics without retraining or replacing checkpoints."""
+    result = json.loads(RESULT.read_text(encoding="utf-8"))
+    corpus = json.loads(CORPUS.read_text(encoding="utf-8"))
+    examples = corpus["examples"]
+    rows = {
+        "base_train": [row for row in examples if row["train_role"] == "base_train"],
+        "update": [row for row in examples if row["train_role"] == "update"],
+        "deletion": [row for row in examples if row["deletion_cohort"]],
+        "validation": [row for row in examples if row["split"] == "validation"],
+        "test": [row for row in examples if row["split"] == "test"],
+        "probes": [row for row in examples if row["fixed_probe"]],
+    }
+    for seed_row in result["seed_records"]:
+        base = seed_row["base_checkpoint"]
+        base_path = ROOT / base["path"]
+        base_state = load_state(base_path)
+        base_model = PolicyNet(); base_model.load_state_dict(base_state)
+        base_predictions = {name: predictions(base_model, values) for name, values in rows.items()}
+        base["test_accuracy"] = round(accuracy(base_predictions["test"], rows["test"]), 8)
+        for arm in seed_row["arms"]:
+            for checkpoint_name in ("best_checkpoint", "final_checkpoint"):
+                checkpoint = arm[checkpoint_name]
+                checkpoint["metrics"] = evaluate_checkpoint(
+                    ROOT / checkpoint["path"], rows, base_state, base_predictions
+                )
+            best_model = PolicyNet(); best_model.load_state_dict(load_state(ROOT / arm["best_checkpoint"]["path"]))
+            final_model = PolicyNet(); final_model.load_state_dict(load_state(ROOT / arm["final_checkpoint"]["path"]))
+            arm["best_final_test_disagreement"] = sum(
+                left != right
+                for left, right in zip(
+                    predictions(best_model, rows["test"]),
+                    predictions(final_model, rows["test"]),
+                )
+            )
+            arm["actual_parameter_mutation"] = arm["final_checkpoint"]["metrics"]["parameter_delta_l2"] > 0
+    result["environment"]["parameter_delta_accumulator"] = "math.fsum_fixed_tensor_and_element_order"
+    result.pop("bundle_sha256", None)
+    result["bundle_sha256"] = canonical_sha(result)
+    RESULT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(f"refreshed {RESULT.relative_to(ROOT)} bundle_sha256={result['bundle_sha256']}")
+
+
 def main() -> None:
-    parser = argparse.ArgumentParser(); parser.add_argument("--force", action="store_true"); args = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--force", action="store_true")
+    parser.add_argument("--refresh-existing-metrics", action="store_true")
+    args = parser.parse_args()
+    if args.refresh_existing_metrics:
+        if not RESULT.is_file():
+            raise SystemExit(f"result does not exist: {RESULT.relative_to(ROOT)}")
+        torch.set_num_threads(1); torch.use_deterministic_algorithms(True)
+        refresh_existing_metrics()
+        return
     if RESULT.exists() and not args.force:
         raise SystemExit(f"result already exists: {RESULT.relative_to(ROOT)}")
     torch.set_num_threads(1); torch.use_deterministic_algorithms(True)
