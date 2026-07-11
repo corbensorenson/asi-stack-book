@@ -1,0 +1,3 @@
+def restore_snapshot(original, changed):
+    # Create a deep copy of the original dictionary
+    return original.copy()

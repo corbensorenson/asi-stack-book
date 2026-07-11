@@ -1,0 +1,7 @@
+```python
+def restore_snapshot(original, changed):
+    # Create a deep copy of the original dictionary
+    return {k: v for k, v in original.items() if k not in changed}
+```
+
+PLAN: To restore a snapshot of a nested dictionary or list, we need to create a new dictionary that excludes any keys present in the `changed` dictionary. This ensures that any modifications made to the `changed` dictionary do not affect the original dictionary.

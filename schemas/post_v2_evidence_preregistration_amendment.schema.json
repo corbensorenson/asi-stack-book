@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_evidence_preregistration_amendment.schema.json",
+  "type": "object",
+  "required": ["schema_version", "amendment_id", "recorded_date", "state", "program_id", "original_preregistration_ref", "preserved_pilot_ref", "reason", "unchanged_fields", "amended_protocol", "stop_rule", "pilot_support_state_effect"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_evidence_preregistration_amendment.v0"},
+    "amendment_id": {"type": "string", "minLength": 1},
+    "recorded_date": {"type": "string", "minLength": 1},
+    "state": {"const": "frozen_before_amended_outcome_run"},
+    "program_id": {"const": "realistic_governed_work_flagship"},
+    "original_preregistration_ref": {"type": "string", "minLength": 1},
+    "preserved_pilot_ref": {"type": "string", "minLength": 1},
+    "reason": {"type": "string", "minLength": 40},
+    "unchanged_fields": {"type": "object"},
+    "amended_protocol": {"type": "object"},
+    "stop_rule": {"type": "string", "minLength": 40},
+    "pilot_support_state_effect": {"const": "none"}
+  },
+  "additionalProperties": false
+}

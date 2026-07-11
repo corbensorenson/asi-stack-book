@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.post_v2_evidence_preregistration_amendment.v0",
+  "amendment_id": "realistic-governed-work-v1-2026-07-10",
+  "recorded_date": "2026-07-10",
+  "state": "frozen_before_amended_outcome_run",
+  "program_id": "realistic_governed_work_flagship",
+  "original_preregistration_ref": "experiments/post_v2_evidence_program/preregistration.json",
+  "preserved_pilot_ref": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/result.json",
+  "reason": "The first prevalidation pilot exposed two protocol defects: all 16 model outputs omitted the required explicit plan line, and repository effects were evaluated against in-memory snapshots rather than fresh Git worktrees. The pilot is retained with no evidentiary or support-state effect.",
+  "unchanged_fields": {
+    "task_corpus": "experiments/post_v2_governed_work_flagship/tasks.json",
+    "task_count": 8,
+    "repeat_seeds": [17, 29],
+    "model_id": "Qwen/Qwen2.5-Coder-0.5B-Instruct",
+    "model_revision": "ea3f2471cf1b1f0db85067f1ef93848e38e88c25",
+    "attack_families": 8,
+    "baseline": "visible-test-only release decision",
+    "governed_gates": "authority, identity, visible and hidden observation, receipt, changed paths, residual, rollback, quarantine",
+    "allowed_dispositions": ["no_change", "promote", "narrow", "demote", "refute"]
+  },
+  "amended_protocol": {
+    "planning": "A separate bounded model call emits a public-safe implementation plan before code generation.",
+    "code_generation": "A second bounded model call receives the frozen request, trusted and untrusted context, and the model-generated plan.",
+    "repository_effect": "Each baseline and governed route applies the matched candidate in a fresh temporary Git repository and observes bytes, changed paths, residuals, rollback, and final state.",
+    "additional_metrics": ["planning tokens", "planning wall time", "route wall time", "observed changed paths", "initial Git commit"]
+  },
+  "stop_rule": "Execute exactly two recorded seeds for all eight unchanged tasks under this amended protocol; stop early only for resource exhaustion, model/runtime failure, or a safety boundary, retaining every completed and failed run.",
+  "pilot_support_state_effect": "none"
+}

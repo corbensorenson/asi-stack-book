@@ -1,0 +1,2 @@
+def clamp_budget(value, ceiling):
+    return int(max(0, min(value, ceiling)))

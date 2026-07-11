@@ -1,0 +1,5 @@
+def choose_reviewer(proposer, reviewers):
+    for reviewer in reviewers:
+        if reviewer != proposer:
+            return reviewer
+    return None

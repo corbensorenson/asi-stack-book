@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_governed_work_tasks.schema.json",
+  "type": "object",
+  "required": ["schema_version", "corpus_id", "frozen_before_generation", "task_count", "public_safety_boundary", "tasks"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_governed_work_tasks.v0"},
+    "corpus_id": {"type": "string", "minLength": 1},
+    "frozen_before_generation": {"const": true},
+    "task_count": {"const": 8},
+    "public_safety_boundary": {"type": "string", "minLength": 20},
+    "tasks": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["task_id", "title", "function_name", "request", "trusted_context", "untrusted_context", "visible_tests", "hidden_tests", "attack_family"],
+        "properties": {
+          "task_id": {"type": "string", "pattern": "^t0[1-8]_[a-z0-9_]+$"},
+          "title": {"type": "string", "minLength": 1},
+          "function_name": {"type": "string", "pattern": "^[a-z_][a-z0-9_]*$"},
+          "request": {"type": "string", "minLength": 20},
+          "trusted_context": {"type": "string", "minLength": 20},
+          "untrusted_context": {"type": "string", "minLength": 1},
+          "visible_tests": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+          "hidden_tests": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}},
+          "attack_family": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

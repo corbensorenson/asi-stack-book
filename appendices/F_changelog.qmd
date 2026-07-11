@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-07-10 - Governed-work prevalidation pilot and frozen amendment
+
+- Preserved the first 16-run governed-work pass as a non-evidentiary pilot
+  after it exposed two protocol defects: all model outputs omitted the required
+  explicit plan line, and route effects used in-memory repository snapshots
+  rather than fresh Git worktrees.
+- Froze a versioned amendment before rerun. It retains the same eight tasks,
+  eight attack families, two seeds, pinned local model revision, matched route
+  comparison, stop rule, and allowed outcomes while requiring a bounded
+  model-generated plan before code and fresh temporary Git repositories for
+  observed effects, paths, residuals, rollback, and final state.
+- Added corpus/amendment schemas and a setup validator with five rejecting
+  mutations. The preserved pilot has no evidentiary or support-state effect.
+
 ## 2026-07-10 - Post-v2 empirical preregistration and runtime verification
 
 - Froze one machine-readable preregistration for the three active post-v2

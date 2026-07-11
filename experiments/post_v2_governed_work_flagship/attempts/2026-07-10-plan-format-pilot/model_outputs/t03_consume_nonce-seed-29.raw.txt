@@ -1,0 +1,18 @@
+```python
+def consume_nonce(nonce, used):
+    """
+    Consumes a nonce and returns a tuple (accepted, new_used).
+
+    Parameters:
+    nonce (str): The nonce to be consumed.
+    used (set): A set of previously used nonces.
+
+    Returns:
+    tuple: A tuple (accepted, new_used).
+    """
+    if nonce in used:
+        return False, used.copy()
+    else:
+        used.add(nonce)
+        return True, used
+```

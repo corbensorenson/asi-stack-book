@@ -1,0 +1,2 @@
+def total_visible_cost(items):
+    return sum(item['cost'] for item in items if item['visible'])

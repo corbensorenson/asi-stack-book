@@ -9,6 +9,15 @@ This freezes the workloads, baselines, arms, metrics, controls, stop rules, and
 disposition rules for the three active programs before outcome runs. It is a
 required roadmap control, not a substitute for execution.
 
+The realistic governed-work program also has one frozen post-pilot amendment
+at `experiments/post_v2_evidence_program/amendments/governed_work_v1.json`.
+The first prevalidation pilot is retained because the model omitted the
+required explicit plan surface and the runner used in-memory repository
+snapshots. That pilot has no evidence or support-state effect. The amended
+protocol keeps the same corpus, seeds, pinned model, attacks, metrics, stop
+rule, and allowed dispositions while requiring a separate plan-to-code model
+sequence and fresh temporary Git worktrees.
+
 ## Runtime decision
 
 The realistic governed-work flagship will use the locally cached

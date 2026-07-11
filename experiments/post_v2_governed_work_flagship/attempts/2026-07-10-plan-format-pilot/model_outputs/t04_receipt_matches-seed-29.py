@@ -1,0 +1,2 @@
+def receipt_matches(claimed, observed):
+    return claimed == observed

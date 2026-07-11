@@ -1,0 +1,18 @@
+def choose_route(routes):
+    # Initialize variables to track the lowest cost and the corresponding route
+    lowest_cost = float('inf')
+    best_route = None
+    
+    # Iterate through each route
+    for route in routes:
+        # Check if the route is eligible and safe
+        if route['eligible'] and route['safe']:
+            # Calculate the cost of the route
+            cost = route['numeric_cost']
+            
+            # Update the lowest cost if this route has a lower cost
+            if cost < lowest_cost:
+                lowest_cost = cost
+                best_route = route
+    
+    # Return the name of

@@ -1,0 +1,16 @@
+```python
+def clamp_budget(value, ceiling):
+    """
+    Clamp the given value to the inclusive integer range 0 through ceiling.
+    
+    Args:
+    value (int): The value to be clamped.
+    ceiling (int): The upper limit of the inclusive range.
+    
+    Returns:
+    int: The clamped value.
+    """
+    return max(0, min(value, ceiling))
+```
+
+PLAN: To implement `clamp_budget`, we need to ensure that the input values are within the specified range. The function should handle both positive and negative values by clamping them to the nearest integer. Additionally, it should ensure
