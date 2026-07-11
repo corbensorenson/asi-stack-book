@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_routing_deliberation_corpus.schema.json",
+  "type": "object",
+  "required": ["schema_version", "corpus_id", "generation_seed", "frozen_before_test_outcomes", "families", "split_counts", "compute_contract", "examples", "corpus_sha256"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_routing_deliberation_corpus.v0"},
+    "corpus_id": {"type": "string"},
+    "generation_seed": {"const": 20260710},
+    "frozen_before_test_outcomes": {"const": true},
+    "families": {"type": "array", "minItems": 4, "maxItems": 4},
+    "split_counts": {"type": "object"},
+    "compute_contract": {"type": "object"},
+    "examples": {"type": "array", "minItems": 300, "maxItems": 300},
+    "corpus_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

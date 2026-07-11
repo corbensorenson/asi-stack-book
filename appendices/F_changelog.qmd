@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-10 - Frozen routing and deliberation workload
+
+- Froze a content-addressed 300-example four-family corpus with balanced
+  180/60/60 train/validation/test splits before test outcomes, three registered
+  seeds, a comparator-only oracle route, and explicit two-operation routing and
+  three-operation deliberation caps.
+- Registered executable oracle, learned, rule, single-generalist, and
+  fallback/abstention routing arms plus adaptive, fixed-three-step, and
+  no-deliberation arms. The runner retains per-example routes, coverage,
+  fallback, interference counterfactuals, candidate sequences, verifier stops,
+  branch credit, dissent, answer changes, and extra-compute harm.
+- Added a setup schema and validator with five rejecting controls for identity
+  overlap, split drift, compute inflation, oracle laundering, and an unfrozen
+  corpus. No test outcome or chapter disposition is recorded by this setup.
+
 ## 2026-07-10 - Post-v2 model-generated governed-work flagship
 
 - Executed all 16 amended preregistered plan-to-code runs across eight frozen

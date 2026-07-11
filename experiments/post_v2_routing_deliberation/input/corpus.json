@@ -1,0 +1,6102 @@
+{
+  "schema_version": "asi_stack.post_v2_routing_deliberation_corpus.v0",
+  "corpus_id": "post-v2-routing-deliberation-300-2026-07-10",
+  "generation_seed": 20260710,
+  "frozen_before_test_outcomes": true,
+  "families": [
+    "arithmetic",
+    "string_transformation",
+    "policy_decision",
+    "structured_extraction"
+  ],
+  "split_counts": {
+    "train": 180,
+    "validation": 60,
+    "test": 60
+  },
+  "compute_contract": {
+    "routing_candidate_operation_cap": 2,
+    "deliberation_candidate_operation_cap": 3,
+    "single_specialist_padding_is_counted": true,
+    "oracle_router_is_comparator_only": true,
+    "test_labels_forbidden_for_router_training": true
+  },
+  "examples": [
+    {
+      "example_id": "arithmetic-000",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for -11 and 18.",
+      "payload": {
+        "a": -11,
+        "b": 18,
+        "op": "add"
+      },
+      "answer": "7",
+      "features": [
+        0.31,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-001",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for 9 and 13.",
+      "payload": {
+        "a": 9,
+        "b": 13,
+        "op": "product"
+      },
+      "answer": "117",
+      "features": [
+        0.33,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-002",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for -3 and 5.",
+      "payload": {
+        "a": -3,
+        "b": 5,
+        "op": "difference"
+      },
+      "answer": "-8",
+      "features": [
+        0.36,
+        0.2,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-003",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for -21 and 12.",
+      "payload": {
+        "a": -21,
+        "b": 12,
+        "op": "add"
+      },
+      "answer": "-9",
+      "features": [
+        0.31,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-004",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for 19 and 17.",
+      "payload": {
+        "a": 19,
+        "b": 17,
+        "op": "product"
+      },
+      "answer": "323",
+      "features": [
+        0.34,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-005",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for -18 and 11.",
+      "payload": {
+        "a": -18,
+        "b": 11,
+        "op": "difference"
+      },
+      "answer": "-29",
+      "features": [
+        0.38,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-006",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 38 and 19.",
+      "payload": {
+        "a": 38,
+        "b": 19,
+        "op": "add"
+      },
+      "answer": "57",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-007",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for -15 and 15.",
+      "payload": {
+        "a": -15,
+        "b": 15,
+        "op": "product"
+      },
+      "answer": "-225",
+      "features": [
+        0.35,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-008",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for 24 and 12.",
+      "payload": {
+        "a": 24,
+        "b": 12,
+        "op": "difference"
+      },
+      "answer": "12",
+      "features": [
+        0.37,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-009",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 38 and 20.",
+      "payload": {
+        "a": 38,
+        "b": 20,
+        "op": "add"
+      },
+      "answer": "58",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-010",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for -3 and 15.",
+      "payload": {
+        "a": -3,
+        "b": 15,
+        "op": "product"
+      },
+      "answer": "-45",
+      "features": [
+        0.34,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-011",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for 44 and 12.",
+      "payload": {
+        "a": 44,
+        "b": 12,
+        "op": "difference"
+      },
+      "answer": "32",
+      "features": [
+        0.37,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-012",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 47 and 13.",
+      "payload": {
+        "a": 47,
+        "b": 13,
+        "op": "add"
+      },
+      "answer": "60",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-013",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for -11 and 16.",
+      "payload": {
+        "a": -11,
+        "b": 16,
+        "op": "product"
+      },
+      "answer": "-176",
+      "features": [
+        0.35,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-014",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for -17 and 17.",
+      "payload": {
+        "a": -17,
+        "b": 17,
+        "op": "difference"
+      },
+      "answer": "-34",
+      "features": [
+        0.38,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-015",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for -21 and 7.",
+      "payload": {
+        "a": -21,
+        "b": 7,
+        "op": "add"
+      },
+      "answer": "-14",
+      "features": [
+        0.3,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-016",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for -19 and 14.",
+      "payload": {
+        "a": -19,
+        "b": 14,
+        "op": "product"
+      },
+      "answer": "-266",
+      "features": [
+        0.35,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-017",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for 3 and 10.",
+      "payload": {
+        "a": 3,
+        "b": 10,
+        "op": "difference"
+      },
+      "answer": "-7",
+      "features": [
+        0.36,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-018",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for -20 and 7.",
+      "payload": {
+        "a": -20,
+        "b": 7,
+        "op": "add"
+      },
+      "answer": "-13",
+      "features": [
+        0.3,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-019",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for -27 and 16.",
+      "payload": {
+        "a": -27,
+        "b": 16,
+        "op": "product"
+      },
+      "answer": "-432",
+      "features": [
+        0.35,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-020",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for -17 and 9.",
+      "payload": {
+        "a": -17,
+        "b": 9,
+        "op": "difference"
+      },
+      "answer": "-26",
+      "features": [
+        0.37,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-021",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for -22 and 2.",
+      "payload": {
+        "a": -22,
+        "b": 2,
+        "op": "add"
+      },
+      "answer": "-20",
+      "features": [
+        0.3,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-022",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for -1 and 18.",
+      "payload": {
+        "a": -1,
+        "b": 18,
+        "op": "product"
+      },
+      "answer": "-18",
+      "features": [
+        0.34,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-023",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for -19 and 1.",
+      "payload": {
+        "a": -19,
+        "b": 1,
+        "op": "difference"
+      },
+      "answer": "-20",
+      "features": [
+        0.37,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-024",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 26 and 19.",
+      "payload": {
+        "a": 26,
+        "b": 19,
+        "op": "add"
+      },
+      "answer": "45",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-025",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for 42 and 2.",
+      "payload": {
+        "a": 42,
+        "b": 2,
+        "op": "product"
+      },
+      "answer": "84",
+      "features": [
+        0.33,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-026",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for 48 and 7.",
+      "payload": {
+        "a": 48,
+        "b": 7,
+        "op": "difference"
+      },
+      "answer": "41",
+      "features": [
+        0.36,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-027",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 26 and 19.",
+      "payload": {
+        "a": 26,
+        "b": 19,
+        "op": "add"
+      },
+      "answer": "45",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-028",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for 0 and 2.",
+      "payload": {
+        "a": 0,
+        "b": 2,
+        "op": "product"
+      },
+      "answer": "0",
+      "features": [
+        0.32,
+        0.2,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-029",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for -9 and 1.",
+      "payload": {
+        "a": -9,
+        "b": 1,
+        "op": "difference"
+      },
+      "answer": "-10",
+      "features": [
+        0.36,
+        0.2,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-030",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 21 and 11.",
+      "payload": {
+        "a": 21,
+        "b": 11,
+        "op": "add"
+      },
+      "answer": "32",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-031",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for 6 and 8.",
+      "payload": {
+        "a": 6,
+        "b": 8,
+        "op": "product"
+      },
+      "answer": "48",
+      "features": [
+        0.32,
+        0.2,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-032",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for 44 and 12.",
+      "payload": {
+        "a": 44,
+        "b": 12,
+        "op": "difference"
+      },
+      "answer": "32",
+      "features": [
+        0.37,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-033",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 18 and 12.",
+      "payload": {
+        "a": 18,
+        "b": 12,
+        "op": "add"
+      },
+      "answer": "30",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-034",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for 40 and 6.",
+      "payload": {
+        "a": 40,
+        "b": 6,
+        "op": "product"
+      },
+      "answer": "240",
+      "features": [
+        0.33,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-035",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for 21 and 1.",
+      "payload": {
+        "a": 21,
+        "b": 1,
+        "op": "difference"
+      },
+      "answer": "20",
+      "features": [
+        0.36,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-036",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 26 and 16.",
+      "payload": {
+        "a": 26,
+        "b": 16,
+        "op": "add"
+      },
+      "answer": "42",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-037",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for 7 and 5.",
+      "payload": {
+        "a": 7,
+        "b": 5,
+        "op": "product"
+      },
+      "answer": "35",
+      "features": [
+        0.32,
+        0.2,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-038",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for 35 and 11.",
+      "payload": {
+        "a": 35,
+        "b": 11,
+        "op": "difference"
+      },
+      "answer": "24",
+      "features": [
+        0.37,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-039",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 40 and 5.",
+      "payload": {
+        "a": 40,
+        "b": 5,
+        "op": "add"
+      },
+      "answer": "45",
+      "features": [
+        0.29,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-040",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for -1 and 18.",
+      "payload": {
+        "a": -1,
+        "b": 18,
+        "op": "product"
+      },
+      "answer": "-18",
+      "features": [
+        0.34,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-041",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for 6 and 5.",
+      "payload": {
+        "a": 6,
+        "b": 5,
+        "op": "difference"
+      },
+      "answer": "1",
+      "features": [
+        0.35,
+        0.2,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-042",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the add for 22 and 15.",
+      "payload": {
+        "a": 22,
+        "b": 15,
+        "op": "add"
+      },
+      "answer": "37",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-043",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the product for -4 and 11.",
+      "payload": {
+        "a": -4,
+        "b": 11,
+        "op": "product"
+      },
+      "answer": "-44",
+      "features": [
+        0.34,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-044",
+      "family": "arithmetic",
+      "split": "train",
+      "request": "Compute the difference for -11 and 3.",
+      "payload": {
+        "a": -11,
+        "b": 3,
+        "op": "difference"
+      },
+      "answer": "-14",
+      "features": [
+        0.37,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-045",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the add for 12 and 7.",
+      "payload": {
+        "a": 12,
+        "b": 7,
+        "op": "add"
+      },
+      "answer": "19",
+      "features": [
+        0.29,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-046",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the product for 9 and 15.",
+      "payload": {
+        "a": 9,
+        "b": 15,
+        "op": "product"
+      },
+      "answer": "135",
+      "features": [
+        0.33,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-047",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the difference for -23 and 7.",
+      "payload": {
+        "a": -23,
+        "b": 7,
+        "op": "difference"
+      },
+      "answer": "-30",
+      "features": [
+        0.37,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-048",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the add for 41 and 11.",
+      "payload": {
+        "a": 41,
+        "b": 11,
+        "op": "add"
+      },
+      "answer": "52",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-049",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the product for -26 and 5.",
+      "payload": {
+        "a": -26,
+        "b": 5,
+        "op": "product"
+      },
+      "answer": "-130",
+      "features": [
+        0.34,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-050",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the difference for 13 and 12.",
+      "payload": {
+        "a": 13,
+        "b": 12,
+        "op": "difference"
+      },
+      "answer": "1",
+      "features": [
+        0.37,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-051",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the add for 17 and 5.",
+      "payload": {
+        "a": 17,
+        "b": 5,
+        "op": "add"
+      },
+      "answer": "22",
+      "features": [
+        0.29,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-052",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the product for 49 and 8.",
+      "payload": {
+        "a": 49,
+        "b": 8,
+        "op": "product"
+      },
+      "answer": "392",
+      "features": [
+        0.33,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-053",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the difference for 1 and 1.",
+      "payload": {
+        "a": 1,
+        "b": 1,
+        "op": "difference"
+      },
+      "answer": "0",
+      "features": [
+        0.35,
+        0.2,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-054",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the add for 17 and 16.",
+      "payload": {
+        "a": 17,
+        "b": 16,
+        "op": "add"
+      },
+      "answer": "33",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-055",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the product for 38 and 14.",
+      "payload": {
+        "a": 38,
+        "b": 14,
+        "op": "product"
+      },
+      "answer": "532",
+      "features": [
+        0.34,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-056",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the difference for 22 and 2.",
+      "payload": {
+        "a": 22,
+        "b": 2,
+        "op": "difference"
+      },
+      "answer": "20",
+      "features": [
+        0.36,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-057",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the add for 33 and 8.",
+      "payload": {
+        "a": 33,
+        "b": 8,
+        "op": "add"
+      },
+      "answer": "41",
+      "features": [
+        0.29,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-058",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the product for -16 and 17.",
+      "payload": {
+        "a": -16,
+        "b": 17,
+        "op": "product"
+      },
+      "answer": "-272",
+      "features": [
+        0.35,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-059",
+      "family": "arithmetic",
+      "split": "validation",
+      "request": "Compute the difference for 27 and 15.",
+      "payload": {
+        "a": 27,
+        "b": 15,
+        "op": "difference"
+      },
+      "answer": "12",
+      "features": [
+        0.37,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-060",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the add for 3 and 14.",
+      "payload": {
+        "a": 3,
+        "b": 14,
+        "op": "add"
+      },
+      "answer": "17",
+      "features": [
+        0.29,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-061",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the product for -23 and 13.",
+      "payload": {
+        "a": -23,
+        "b": 13,
+        "op": "product"
+      },
+      "answer": "-299",
+      "features": [
+        0.35,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-062",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the difference for 2 and 13.",
+      "payload": {
+        "a": 2,
+        "b": 13,
+        "op": "difference"
+      },
+      "answer": "-11",
+      "features": [
+        0.36,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-063",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the add for 32 and 11.",
+      "payload": {
+        "a": 32,
+        "b": 11,
+        "op": "add"
+      },
+      "answer": "43",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-064",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the product for 28 and 13.",
+      "payload": {
+        "a": 28,
+        "b": 13,
+        "op": "product"
+      },
+      "answer": "364",
+      "features": [
+        0.34,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-065",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the difference for 49 and 16.",
+      "payload": {
+        "a": 49,
+        "b": 16,
+        "op": "difference"
+      },
+      "answer": "33",
+      "features": [
+        0.37,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-066",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the add for 29 and 8.",
+      "payload": {
+        "a": 29,
+        "b": 8,
+        "op": "add"
+      },
+      "answer": "37",
+      "features": [
+        0.29,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-067",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the product for 24 and 15.",
+      "payload": {
+        "a": 24,
+        "b": 15,
+        "op": "product"
+      },
+      "answer": "360",
+      "features": [
+        0.34,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-068",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the difference for 6 and 6.",
+      "payload": {
+        "a": 6,
+        "b": 6,
+        "op": "difference"
+      },
+      "answer": "0",
+      "features": [
+        0.35,
+        0.2,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-069",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the add for -23 and 13.",
+      "payload": {
+        "a": -23,
+        "b": 13,
+        "op": "add"
+      },
+      "answer": "-10",
+      "features": [
+        0.31,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-070",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the product for 48 and 10.",
+      "payload": {
+        "a": 48,
+        "b": 10,
+        "op": "product"
+      },
+      "answer": "480",
+      "features": [
+        0.34,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-071",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the difference for -8 and 15.",
+      "payload": {
+        "a": -8,
+        "b": 15,
+        "op": "difference"
+      },
+      "answer": "-23",
+      "features": [
+        0.37,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-072",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the add for 23 and 10.",
+      "payload": {
+        "a": 23,
+        "b": 10,
+        "op": "add"
+      },
+      "answer": "33",
+      "features": [
+        0.3,
+        0.4,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-073",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the product for 8 and 14.",
+      "payload": {
+        "a": 8,
+        "b": 14,
+        "op": "product"
+      },
+      "answer": "112",
+      "features": [
+        0.33,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "arithmetic-074",
+      "family": "arithmetic",
+      "split": "test",
+      "request": "Compute the difference for 26 and 9.",
+      "payload": {
+        "a": 26,
+        "b": 9,
+        "op": "difference"
+      },
+      "answer": "17",
+      "features": [
+        0.36,
+        0.3,
+        0.0,
+        0,
+        0,
+        2,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-000",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item0-a.",
+      "payload": {
+        "text": "item0-a",
+        "op": "uppercase"
+      },
+      "answer": "ITEM0-A",
+      "features": [
+        0.27,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-001",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item1-b.",
+      "payload": {
+        "text": "item1-b",
+        "op": "reverse"
+      },
+      "answer": "b-1meti",
+      "features": [
+        0.25,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-002",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item2-c.",
+      "payload": {
+        "text": "item2-c",
+        "op": "replace"
+      },
+      "answer": "item2_c",
+      "features": [
+        0.25,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-003",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item3-d.",
+      "payload": {
+        "text": "item3-d",
+        "op": "uppercase"
+      },
+      "answer": "ITEM3-D",
+      "features": [
+        0.27,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-004",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item4-e.",
+      "payload": {
+        "text": "item4-e",
+        "op": "reverse"
+      },
+      "answer": "e-4meti",
+      "features": [
+        0.25,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-005",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item5-f.",
+      "payload": {
+        "text": "item5-f",
+        "op": "replace"
+      },
+      "answer": "item5_f",
+      "features": [
+        0.25,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-006",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item6-g.",
+      "payload": {
+        "text": "item6-g",
+        "op": "uppercase"
+      },
+      "answer": "ITEM6-G",
+      "features": [
+        0.27,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-007",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item7-h.",
+      "payload": {
+        "text": "item7-h",
+        "op": "reverse"
+      },
+      "answer": "h-7meti",
+      "features": [
+        0.25,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-008",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item8-i.",
+      "payload": {
+        "text": "item8-i",
+        "op": "replace"
+      },
+      "answer": "item8_i",
+      "features": [
+        0.25,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-009",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item9-j.",
+      "payload": {
+        "text": "item9-j",
+        "op": "uppercase"
+      },
+      "answer": "ITEM9-J",
+      "features": [
+        0.27,
+        0.1,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-010",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item10-k.",
+      "payload": {
+        "text": "item10-k",
+        "op": "reverse"
+      },
+      "answer": "k-01meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-011",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item11-l.",
+      "payload": {
+        "text": "item11-l",
+        "op": "replace"
+      },
+      "answer": "item11_l",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-012",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item12-m.",
+      "payload": {
+        "text": "item12-m",
+        "op": "uppercase"
+      },
+      "answer": "ITEM12-M",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-013",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item13-n.",
+      "payload": {
+        "text": "item13-n",
+        "op": "reverse"
+      },
+      "answer": "n-31meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-014",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item14-o.",
+      "payload": {
+        "text": "item14-o",
+        "op": "replace"
+      },
+      "answer": "item14_o",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-015",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item15-p.",
+      "payload": {
+        "text": "item15-p",
+        "op": "uppercase"
+      },
+      "answer": "ITEM15-P",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-016",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item16-q.",
+      "payload": {
+        "text": "item16-q",
+        "op": "reverse"
+      },
+      "answer": "q-61meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-017",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item17-r.",
+      "payload": {
+        "text": "item17-r",
+        "op": "replace"
+      },
+      "answer": "item17_r",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-018",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item18-s.",
+      "payload": {
+        "text": "item18-s",
+        "op": "uppercase"
+      },
+      "answer": "ITEM18-S",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-019",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item19-t.",
+      "payload": {
+        "text": "item19-t",
+        "op": "reverse"
+      },
+      "answer": "t-91meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-020",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item20-u.",
+      "payload": {
+        "text": "item20-u",
+        "op": "replace"
+      },
+      "answer": "item20_u",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-021",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item21-v.",
+      "payload": {
+        "text": "item21-v",
+        "op": "uppercase"
+      },
+      "answer": "ITEM21-V",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-022",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item22-w.",
+      "payload": {
+        "text": "item22-w",
+        "op": "reverse"
+      },
+      "answer": "w-22meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-023",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item23-x.",
+      "payload": {
+        "text": "item23-x",
+        "op": "replace"
+      },
+      "answer": "item23_x",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-024",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item24-y.",
+      "payload": {
+        "text": "item24-y",
+        "op": "uppercase"
+      },
+      "answer": "ITEM24-Y",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-025",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item25-z.",
+      "payload": {
+        "text": "item25-z",
+        "op": "reverse"
+      },
+      "answer": "z-52meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-026",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item26-a.",
+      "payload": {
+        "text": "item26-a",
+        "op": "replace"
+      },
+      "answer": "item26_a",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-027",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item27-b.",
+      "payload": {
+        "text": "item27-b",
+        "op": "uppercase"
+      },
+      "answer": "ITEM27-B",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-028",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item28-c.",
+      "payload": {
+        "text": "item28-c",
+        "op": "reverse"
+      },
+      "answer": "c-82meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-029",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item29-d.",
+      "payload": {
+        "text": "item29-d",
+        "op": "replace"
+      },
+      "answer": "item29_d",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-030",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item30-e.",
+      "payload": {
+        "text": "item30-e",
+        "op": "uppercase"
+      },
+      "answer": "ITEM30-E",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-031",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item31-f.",
+      "payload": {
+        "text": "item31-f",
+        "op": "reverse"
+      },
+      "answer": "f-13meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-032",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item32-g.",
+      "payload": {
+        "text": "item32-g",
+        "op": "replace"
+      },
+      "answer": "item32_g",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-033",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item33-h.",
+      "payload": {
+        "text": "item33-h",
+        "op": "uppercase"
+      },
+      "answer": "ITEM33-H",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-034",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item34-i.",
+      "payload": {
+        "text": "item34-i",
+        "op": "reverse"
+      },
+      "answer": "i-43meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-035",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item35-j.",
+      "payload": {
+        "text": "item35-j",
+        "op": "replace"
+      },
+      "answer": "item35_j",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-036",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item36-k.",
+      "payload": {
+        "text": "item36-k",
+        "op": "uppercase"
+      },
+      "answer": "ITEM36-K",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-037",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item37-l.",
+      "payload": {
+        "text": "item37-l",
+        "op": "reverse"
+      },
+      "answer": "l-73meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-038",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item38-m.",
+      "payload": {
+        "text": "item38-m",
+        "op": "replace"
+      },
+      "answer": "item38_m",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-039",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item39-n.",
+      "payload": {
+        "text": "item39-n",
+        "op": "uppercase"
+      },
+      "answer": "ITEM39-N",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-040",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item40-o.",
+      "payload": {
+        "text": "item40-o",
+        "op": "reverse"
+      },
+      "answer": "o-04meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-041",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item41-p.",
+      "payload": {
+        "text": "item41-p",
+        "op": "replace"
+      },
+      "answer": "item41_p",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-042",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Uppercase the text item42-q.",
+      "payload": {
+        "text": "item42-q",
+        "op": "uppercase"
+      },
+      "answer": "ITEM42-Q",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-043",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Reverse the text item43-r.",
+      "payload": {
+        "text": "item43-r",
+        "op": "reverse"
+      },
+      "answer": "r-34meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-044",
+      "family": "string_transformation",
+      "split": "train",
+      "request": "Replace the text item44-s.",
+      "payload": {
+        "text": "item44-s",
+        "op": "replace"
+      },
+      "answer": "item44_s",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-045",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Uppercase the text item45-t.",
+      "payload": {
+        "text": "item45-t",
+        "op": "uppercase"
+      },
+      "answer": "ITEM45-T",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-046",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Reverse the text item46-u.",
+      "payload": {
+        "text": "item46-u",
+        "op": "reverse"
+      },
+      "answer": "u-64meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-047",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Replace the text item47-v.",
+      "payload": {
+        "text": "item47-v",
+        "op": "replace"
+      },
+      "answer": "item47_v",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-048",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Uppercase the text item48-w.",
+      "payload": {
+        "text": "item48-w",
+        "op": "uppercase"
+      },
+      "answer": "ITEM48-W",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-049",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Reverse the text item49-x.",
+      "payload": {
+        "text": "item49-x",
+        "op": "reverse"
+      },
+      "answer": "x-94meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-050",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Replace the text item50-y.",
+      "payload": {
+        "text": "item50-y",
+        "op": "replace"
+      },
+      "answer": "item50_y",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-051",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Uppercase the text item51-z.",
+      "payload": {
+        "text": "item51-z",
+        "op": "uppercase"
+      },
+      "answer": "ITEM51-Z",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-052",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Reverse the text item52-a.",
+      "payload": {
+        "text": "item52-a",
+        "op": "reverse"
+      },
+      "answer": "a-25meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-053",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Replace the text item53-b.",
+      "payload": {
+        "text": "item53-b",
+        "op": "replace"
+      },
+      "answer": "item53_b",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-054",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Uppercase the text item54-c.",
+      "payload": {
+        "text": "item54-c",
+        "op": "uppercase"
+      },
+      "answer": "ITEM54-C",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-055",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Reverse the text item55-d.",
+      "payload": {
+        "text": "item55-d",
+        "op": "reverse"
+      },
+      "answer": "d-55meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-056",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Replace the text item56-e.",
+      "payload": {
+        "text": "item56-e",
+        "op": "replace"
+      },
+      "answer": "item56_e",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-057",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Uppercase the text item57-f.",
+      "payload": {
+        "text": "item57-f",
+        "op": "uppercase"
+      },
+      "answer": "ITEM57-F",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-058",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Reverse the text item58-g.",
+      "payload": {
+        "text": "item58-g",
+        "op": "reverse"
+      },
+      "answer": "g-85meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-059",
+      "family": "string_transformation",
+      "split": "validation",
+      "request": "Replace the text item59-h.",
+      "payload": {
+        "text": "item59-h",
+        "op": "replace"
+      },
+      "answer": "item59_h",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-060",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Uppercase the text item60-i.",
+      "payload": {
+        "text": "item60-i",
+        "op": "uppercase"
+      },
+      "answer": "ITEM60-I",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-061",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Reverse the text item61-j.",
+      "payload": {
+        "text": "item61-j",
+        "op": "reverse"
+      },
+      "answer": "j-16meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-062",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Replace the text item62-k.",
+      "payload": {
+        "text": "item62-k",
+        "op": "replace"
+      },
+      "answer": "item62_k",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-063",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Uppercase the text item63-l.",
+      "payload": {
+        "text": "item63-l",
+        "op": "uppercase"
+      },
+      "answer": "ITEM63-L",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-064",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Reverse the text item64-m.",
+      "payload": {
+        "text": "item64-m",
+        "op": "reverse"
+      },
+      "answer": "m-46meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-065",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Replace the text item65-n.",
+      "payload": {
+        "text": "item65-n",
+        "op": "replace"
+      },
+      "answer": "item65_n",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-066",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Uppercase the text item66-o.",
+      "payload": {
+        "text": "item66-o",
+        "op": "uppercase"
+      },
+      "answer": "ITEM66-O",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-067",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Reverse the text item67-p.",
+      "payload": {
+        "text": "item67-p",
+        "op": "reverse"
+      },
+      "answer": "p-76meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-068",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Replace the text item68-q.",
+      "payload": {
+        "text": "item68-q",
+        "op": "replace"
+      },
+      "answer": "item68_q",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-069",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Uppercase the text item69-r.",
+      "payload": {
+        "text": "item69-r",
+        "op": "uppercase"
+      },
+      "answer": "ITEM69-R",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-070",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Reverse the text item70-s.",
+      "payload": {
+        "text": "item70-s",
+        "op": "reverse"
+      },
+      "answer": "s-07meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-071",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Replace the text item71-t.",
+      "payload": {
+        "text": "item71-t",
+        "op": "replace"
+      },
+      "answer": "item71_t",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-072",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Uppercase the text item72-u.",
+      "payload": {
+        "text": "item72-u",
+        "op": "uppercase"
+      },
+      "answer": "ITEM72-U",
+      "features": [
+        0.28,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-073",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Reverse the text item73-v.",
+      "payload": {
+        "text": "item73-v",
+        "op": "reverse"
+      },
+      "answer": "v-37meti",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "string_transformation-074",
+      "family": "string_transformation",
+      "split": "test",
+      "request": "Replace the text item74-w.",
+      "payload": {
+        "text": "item74-w",
+        "op": "replace"
+      },
+      "answer": "item74_w",
+      "features": [
+        0.26,
+        0.2,
+        0.0,
+        0,
+        2,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-000",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=no.",
+      "payload": {
+        "risk": 6,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-001",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=9; authorized=yes.",
+      "payload": {
+        "risk": 9,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-002",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=9; authorized=yes.",
+      "payload": {
+        "risk": 9,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-003",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-004",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=5; authorized=no.",
+      "payload": {
+        "risk": 5,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-005",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-006",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=8; authorized=yes.",
+      "payload": {
+        "risk": 8,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-007",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-008",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=no.",
+      "payload": {
+        "risk": 6,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-009",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=8; authorized=yes.",
+      "payload": {
+        "risk": 8,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-010",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=9; authorized=yes.",
+      "payload": {
+        "risk": 9,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-011",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=0; authorized=yes.",
+      "payload": {
+        "risk": 0,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-012",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=5; authorized=no.",
+      "payload": {
+        "risk": 5,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-013",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=7; authorized=yes.",
+      "payload": {
+        "risk": 7,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-014",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-015",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=8; authorized=yes.",
+      "payload": {
+        "risk": 8,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-016",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=no.",
+      "payload": {
+        "risk": 6,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-017",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=3; authorized=yes.",
+      "payload": {
+        "risk": 3,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-018",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-019",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-020",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=3; authorized=no.",
+      "payload": {
+        "risk": 3,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-021",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=9; authorized=yes.",
+      "payload": {
+        "risk": 9,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-022",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=3; authorized=yes.",
+      "payload": {
+        "risk": 3,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-023",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=9; authorized=yes.",
+      "payload": {
+        "risk": 9,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-024",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=1; authorized=no.",
+      "payload": {
+        "risk": 1,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-025",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=0; authorized=yes.",
+      "payload": {
+        "risk": 0,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-026",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=5; authorized=yes.",
+      "payload": {
+        "risk": 5,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-027",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-028",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=5; authorized=no.",
+      "payload": {
+        "risk": 5,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-029",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=2; authorized=yes.",
+      "payload": {
+        "risk": 2,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-030",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=8; authorized=yes.",
+      "payload": {
+        "risk": 8,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-031",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=0; authorized=yes.",
+      "payload": {
+        "risk": 0,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-032",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=0; authorized=no.",
+      "payload": {
+        "risk": 0,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-033",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=3; authorized=yes.",
+      "payload": {
+        "risk": 3,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-034",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=2; authorized=yes.",
+      "payload": {
+        "risk": 2,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-035",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=7; authorized=yes.",
+      "payload": {
+        "risk": 7,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-036",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=7; authorized=no.",
+      "payload": {
+        "risk": 7,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-037",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=1; authorized=yes.",
+      "payload": {
+        "risk": 1,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-038",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=0; authorized=yes.",
+      "payload": {
+        "risk": 0,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-039",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=3; authorized=yes.",
+      "payload": {
+        "risk": 3,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-040",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=2; authorized=no.",
+      "payload": {
+        "risk": 2,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-041",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=8; authorized=yes.",
+      "payload": {
+        "risk": 8,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-042",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=2; authorized=yes.",
+      "payload": {
+        "risk": 2,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-043",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=2; authorized=yes.",
+      "payload": {
+        "risk": 2,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-044",
+      "family": "policy_decision",
+      "split": "train",
+      "request": "Decide access: risk=7; authorized=no.",
+      "payload": {
+        "risk": 7,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-045",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=7; authorized=yes.",
+      "payload": {
+        "risk": 7,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-046",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=3; authorized=yes.",
+      "payload": {
+        "risk": 3,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-047",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=1; authorized=yes.",
+      "payload": {
+        "risk": 1,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-048",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=1; authorized=no.",
+      "payload": {
+        "risk": 1,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-049",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=5; authorized=yes.",
+      "payload": {
+        "risk": 5,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-050",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=5; authorized=yes.",
+      "payload": {
+        "risk": 5,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-051",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=8; authorized=yes.",
+      "payload": {
+        "risk": 8,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-052",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=4; authorized=no.",
+      "payload": {
+        "risk": 4,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-053",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=7; authorized=yes.",
+      "payload": {
+        "risk": 7,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-054",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=7; authorized=yes.",
+      "payload": {
+        "risk": 7,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-055",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-056",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=9; authorized=no.",
+      "payload": {
+        "risk": 9,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-057",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=5; authorized=yes.",
+      "payload": {
+        "risk": 5,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-058",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-059",
+      "family": "policy_decision",
+      "split": "validation",
+      "request": "Decide access: risk=4; authorized=yes.",
+      "payload": {
+        "risk": 4,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-060",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=7; authorized=no.",
+      "payload": {
+        "risk": 7,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-061",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=7; authorized=yes.",
+      "payload": {
+        "risk": 7,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-062",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=5; authorized=yes.",
+      "payload": {
+        "risk": 5,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-063",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=7; authorized=yes.",
+      "payload": {
+        "risk": 7,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-064",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=8; authorized=no.",
+      "payload": {
+        "risk": 8,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-065",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=0; authorized=yes.",
+      "payload": {
+        "risk": 0,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-066",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=0; authorized=yes.",
+      "payload": {
+        "risk": 0,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-067",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=5; authorized=yes.",
+      "payload": {
+        "risk": 5,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-068",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=6; authorized=no.",
+      "payload": {
+        "risk": 6,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-069",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=6; authorized=yes.",
+      "payload": {
+        "risk": 6,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-070",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=3; authorized=yes.",
+      "payload": {
+        "risk": 3,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-071",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=0; authorized=yes.",
+      "payload": {
+        "risk": 0,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-072",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=1; authorized=no.",
+      "payload": {
+        "risk": 1,
+        "authorized": false
+      },
+      "answer": "deny",
+      "features": [
+        0.37,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-073",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=3; authorized=yes.",
+      "payload": {
+        "risk": 3,
+        "authorized": true
+      },
+      "answer": "approve",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "policy_decision-074",
+      "family": "policy_decision",
+      "split": "test",
+      "request": "Decide access: risk=9; authorized=yes.",
+      "payload": {
+        "risk": 9,
+        "authorized": true
+      },
+      "answer": "deny",
+      "features": [
+        0.38,
+        0.1,
+        0.5,
+        3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "example_id": "structured_extraction-000",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record0;count=19.",
+      "payload": {
+        "name": "record0",
+        "count": 19
+      },
+      "answer": "{\"count\":19,\"name\":\"record0\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-001",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record1;count=24.",
+      "payload": {
+        "name": "record1",
+        "count": 24
+      },
+      "answer": "{\"count\":24,\"name\":\"record1\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-002",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record2;count=15.",
+      "payload": {
+        "name": "record2",
+        "count": 15
+      },
+      "answer": "{\"count\":15,\"name\":\"record2\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-003",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record3;count=25.",
+      "payload": {
+        "name": "record3",
+        "count": 25
+      },
+      "answer": "{\"count\":25,\"name\":\"record3\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-004",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record4;count=11.",
+      "payload": {
+        "name": "record4",
+        "count": 11
+      },
+      "answer": "{\"count\":11,\"name\":\"record4\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-005",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record5;count=20.",
+      "payload": {
+        "name": "record5",
+        "count": 20
+      },
+      "answer": "{\"count\":20,\"name\":\"record5\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-006",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record6;count=61.",
+      "payload": {
+        "name": "record6",
+        "count": 61
+      },
+      "answer": "{\"count\":61,\"name\":\"record6\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-007",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record7;count=67.",
+      "payload": {
+        "name": "record7",
+        "count": 67
+      },
+      "answer": "{\"count\":67,\"name\":\"record7\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-008",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record8;count=39.",
+      "payload": {
+        "name": "record8",
+        "count": 39
+      },
+      "answer": "{\"count\":39,\"name\":\"record8\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-009",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record9;count=35.",
+      "payload": {
+        "name": "record9",
+        "count": 35
+      },
+      "answer": "{\"count\":35,\"name\":\"record9\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-010",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record10;count=67.",
+      "payload": {
+        "name": "record10",
+        "count": 67
+      },
+      "answer": "{\"count\":67,\"name\":\"record10\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-011",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record11;count=95.",
+      "payload": {
+        "name": "record11",
+        "count": 95
+      },
+      "answer": "{\"count\":95,\"name\":\"record11\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-012",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record12;count=5.",
+      "payload": {
+        "name": "record12",
+        "count": 5
+      },
+      "answer": "{\"count\":5,\"name\":\"record12\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-013",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record13;count=17.",
+      "payload": {
+        "name": "record13",
+        "count": 17
+      },
+      "answer": "{\"count\":17,\"name\":\"record13\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-014",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record14;count=68.",
+      "payload": {
+        "name": "record14",
+        "count": 68
+      },
+      "answer": "{\"count\":68,\"name\":\"record14\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-015",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record15;count=8.",
+      "payload": {
+        "name": "record15",
+        "count": 8
+      },
+      "answer": "{\"count\":8,\"name\":\"record15\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-016",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record16;count=15.",
+      "payload": {
+        "name": "record16",
+        "count": 15
+      },
+      "answer": "{\"count\":15,\"name\":\"record16\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-017",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record17;count=73.",
+      "payload": {
+        "name": "record17",
+        "count": 73
+      },
+      "answer": "{\"count\":73,\"name\":\"record17\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-018",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record18;count=35.",
+      "payload": {
+        "name": "record18",
+        "count": 35
+      },
+      "answer": "{\"count\":35,\"name\":\"record18\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-019",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record19;count=62.",
+      "payload": {
+        "name": "record19",
+        "count": 62
+      },
+      "answer": "{\"count\":62,\"name\":\"record19\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-020",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record20;count=19.",
+      "payload": {
+        "name": "record20",
+        "count": 19
+      },
+      "answer": "{\"count\":19,\"name\":\"record20\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-021",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record21;count=72.",
+      "payload": {
+        "name": "record21",
+        "count": 72
+      },
+      "answer": "{\"count\":72,\"name\":\"record21\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-022",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record22;count=20.",
+      "payload": {
+        "name": "record22",
+        "count": 20
+      },
+      "answer": "{\"count\":20,\"name\":\"record22\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-023",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record23;count=71.",
+      "payload": {
+        "name": "record23",
+        "count": 71
+      },
+      "answer": "{\"count\":71,\"name\":\"record23\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-024",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record24;count=99.",
+      "payload": {
+        "name": "record24",
+        "count": 99
+      },
+      "answer": "{\"count\":99,\"name\":\"record24\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-025",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record25;count=16.",
+      "payload": {
+        "name": "record25",
+        "count": 16
+      },
+      "answer": "{\"count\":16,\"name\":\"record25\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-026",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record26;count=68.",
+      "payload": {
+        "name": "record26",
+        "count": 68
+      },
+      "answer": "{\"count\":68,\"name\":\"record26\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-027",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record27;count=80.",
+      "payload": {
+        "name": "record27",
+        "count": 80
+      },
+      "answer": "{\"count\":80,\"name\":\"record27\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-028",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record28;count=87.",
+      "payload": {
+        "name": "record28",
+        "count": 87
+      },
+      "answer": "{\"count\":87,\"name\":\"record28\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-029",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record29;count=95.",
+      "payload": {
+        "name": "record29",
+        "count": 95
+      },
+      "answer": "{\"count\":95,\"name\":\"record29\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-030",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record30;count=99.",
+      "payload": {
+        "name": "record30",
+        "count": 99
+      },
+      "answer": "{\"count\":99,\"name\":\"record30\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-031",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record31;count=21.",
+      "payload": {
+        "name": "record31",
+        "count": 21
+      },
+      "answer": "{\"count\":21,\"name\":\"record31\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-032",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record32;count=53.",
+      "payload": {
+        "name": "record32",
+        "count": 53
+      },
+      "answer": "{\"count\":53,\"name\":\"record32\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-033",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record33;count=82.",
+      "payload": {
+        "name": "record33",
+        "count": 82
+      },
+      "answer": "{\"count\":82,\"name\":\"record33\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-034",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record34;count=68.",
+      "payload": {
+        "name": "record34",
+        "count": 68
+      },
+      "answer": "{\"count\":68,\"name\":\"record34\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-035",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record35;count=59.",
+      "payload": {
+        "name": "record35",
+        "count": 59
+      },
+      "answer": "{\"count\":59,\"name\":\"record35\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-036",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record36;count=61.",
+      "payload": {
+        "name": "record36",
+        "count": 61
+      },
+      "answer": "{\"count\":61,\"name\":\"record36\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-037",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record37;count=19.",
+      "payload": {
+        "name": "record37",
+        "count": 19
+      },
+      "answer": "{\"count\":19,\"name\":\"record37\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-038",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record38;count=70.",
+      "payload": {
+        "name": "record38",
+        "count": 70
+      },
+      "answer": "{\"count\":70,\"name\":\"record38\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-039",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record39;count=14.",
+      "payload": {
+        "name": "record39",
+        "count": 14
+      },
+      "answer": "{\"count\":14,\"name\":\"record39\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-040",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record40;count=87.",
+      "payload": {
+        "name": "record40",
+        "count": 87
+      },
+      "answer": "{\"count\":87,\"name\":\"record40\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-041",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record41;count=76.",
+      "payload": {
+        "name": "record41",
+        "count": 76
+      },
+      "answer": "{\"count\":76,\"name\":\"record41\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-042",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record42;count=80.",
+      "payload": {
+        "name": "record42",
+        "count": 80
+      },
+      "answer": "{\"count\":80,\"name\":\"record42\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-043",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record43;count=30.",
+      "payload": {
+        "name": "record43",
+        "count": 30
+      },
+      "answer": "{\"count\":30,\"name\":\"record43\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-044",
+      "family": "structured_extraction",
+      "split": "train",
+      "request": "Extract fields from name=record44;count=48.",
+      "payload": {
+        "name": "record44",
+        "count": 48
+      },
+      "answer": "{\"count\":48,\"name\":\"record44\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-045",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record45;count=54.",
+      "payload": {
+        "name": "record45",
+        "count": 54
+      },
+      "answer": "{\"count\":54,\"name\":\"record45\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-046",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record46;count=85.",
+      "payload": {
+        "name": "record46",
+        "count": 85
+      },
+      "answer": "{\"count\":85,\"name\":\"record46\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-047",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record47;count=78.",
+      "payload": {
+        "name": "record47",
+        "count": 78
+      },
+      "answer": "{\"count\":78,\"name\":\"record47\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-048",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record48;count=87.",
+      "payload": {
+        "name": "record48",
+        "count": 87
+      },
+      "answer": "{\"count\":87,\"name\":\"record48\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-049",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record49;count=0.",
+      "payload": {
+        "name": "record49",
+        "count": 0
+      },
+      "answer": "{\"count\":0,\"name\":\"record49\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-050",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record50;count=66.",
+      "payload": {
+        "name": "record50",
+        "count": 66
+      },
+      "answer": "{\"count\":66,\"name\":\"record50\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-051",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record51;count=2.",
+      "payload": {
+        "name": "record51",
+        "count": 2
+      },
+      "answer": "{\"count\":2,\"name\":\"record51\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-052",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record52;count=49.",
+      "payload": {
+        "name": "record52",
+        "count": 49
+      },
+      "answer": "{\"count\":49,\"name\":\"record52\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-053",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record53;count=77.",
+      "payload": {
+        "name": "record53",
+        "count": 77
+      },
+      "answer": "{\"count\":77,\"name\":\"record53\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-054",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record54;count=44.",
+      "payload": {
+        "name": "record54",
+        "count": 44
+      },
+      "answer": "{\"count\":44,\"name\":\"record54\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-055",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record55;count=13.",
+      "payload": {
+        "name": "record55",
+        "count": 13
+      },
+      "answer": "{\"count\":13,\"name\":\"record55\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-056",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record56;count=45.",
+      "payload": {
+        "name": "record56",
+        "count": 45
+      },
+      "answer": "{\"count\":45,\"name\":\"record56\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-057",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record57;count=52.",
+      "payload": {
+        "name": "record57",
+        "count": 52
+      },
+      "answer": "{\"count\":52,\"name\":\"record57\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-058",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record58;count=68.",
+      "payload": {
+        "name": "record58",
+        "count": 68
+      },
+      "answer": "{\"count\":68,\"name\":\"record58\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-059",
+      "family": "structured_extraction",
+      "split": "validation",
+      "request": "Extract fields from name=record59;count=66.",
+      "payload": {
+        "name": "record59",
+        "count": 66
+      },
+      "answer": "{\"count\":66,\"name\":\"record59\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-060",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record60;count=31.",
+      "payload": {
+        "name": "record60",
+        "count": 31
+      },
+      "answer": "{\"count\":31,\"name\":\"record60\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-061",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record61;count=39.",
+      "payload": {
+        "name": "record61",
+        "count": 39
+      },
+      "answer": "{\"count\":39,\"name\":\"record61\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-062",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record62;count=99.",
+      "payload": {
+        "name": "record62",
+        "count": 99
+      },
+      "answer": "{\"count\":99,\"name\":\"record62\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-063",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record63;count=8.",
+      "payload": {
+        "name": "record63",
+        "count": 8
+      },
+      "answer": "{\"count\":8,\"name\":\"record63\"}",
+      "features": [
+        0.42,
+        0.3,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-064",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record64;count=24.",
+      "payload": {
+        "name": "record64",
+        "count": 24
+      },
+      "answer": "{\"count\":24,\"name\":\"record64\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-065",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record65;count=92.",
+      "payload": {
+        "name": "record65",
+        "count": 92
+      },
+      "answer": "{\"count\":92,\"name\":\"record65\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-066",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record66;count=90.",
+      "payload": {
+        "name": "record66",
+        "count": 90
+      },
+      "answer": "{\"count\":90,\"name\":\"record66\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-067",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record67;count=30.",
+      "payload": {
+        "name": "record67",
+        "count": 30
+      },
+      "answer": "{\"count\":30,\"name\":\"record67\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-068",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record68;count=56.",
+      "payload": {
+        "name": "record68",
+        "count": 56
+      },
+      "answer": "{\"count\":56,\"name\":\"record68\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-069",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record69;count=48.",
+      "payload": {
+        "name": "record69",
+        "count": 48
+      },
+      "answer": "{\"count\":48,\"name\":\"record69\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-070",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record70;count=32.",
+      "payload": {
+        "name": "record70",
+        "count": 32
+      },
+      "answer": "{\"count\":32,\"name\":\"record70\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-071",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record71;count=29.",
+      "payload": {
+        "name": "record71",
+        "count": 29
+      },
+      "answer": "{\"count\":29,\"name\":\"record71\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-072",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record72;count=55.",
+      "payload": {
+        "name": "record72",
+        "count": 55
+      },
+      "answer": "{\"count\":55,\"name\":\"record72\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-073",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record73;count=52.",
+      "payload": {
+        "name": "record73",
+        "count": 52
+      },
+      "answer": "{\"count\":52,\"name\":\"record73\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    },
+    {
+      "example_id": "structured_extraction-074",
+      "family": "structured_extraction",
+      "split": "test",
+      "request": "Extract fields from name=record74;count=98.",
+      "payload": {
+        "name": "record74",
+        "count": 98
+      },
+      "answer": "{\"count\":98,\"name\":\"record74\"}",
+      "features": [
+        0.43,
+        0.4,
+        0.5,
+        0,
+        0,
+        0,
+        4
+      ]
+    }
+  ],
+  "corpus_sha256": "71daed07c5992cb0b07fdd8187e46b302abbd695b273b4a312e000eee1fd14b7"
+}
