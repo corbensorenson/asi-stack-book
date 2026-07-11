@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two entries: Snapshot 4 says state=1, and a later unsigned note says state=22. They want the authoritative state if the authority is known. The instructions mention using 'abstain' if evidence is missing and 'clarify' if there's unresolved authority.
+
+First, I need to determine if there's an established authority here. The problem states that "authority and temporal-policy interpretation dominate the arithmetic surface." That suggests that the temporal aspect (which one is later) and the authority of the sources matter. The unsigned note is later, but since it's unsigned, maybe it's not considered authoritative. However, the user says to return the authoritative state only if authority is known.

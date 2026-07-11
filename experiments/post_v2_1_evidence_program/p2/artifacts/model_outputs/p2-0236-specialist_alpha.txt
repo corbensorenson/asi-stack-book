@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two snapshots. Snapshot 0 has state=21, and a later unsigned note says state=15. The instruction says to return the authoritative state only if authority is known. Otherwise, use 'abstain' or 'clarify' if needed.
+
+First, I need to determine if there's an authority that resolves this conflict. The problem mentions that "authority and temporal-policy interpretation dominate the arithmetic surface." So, the key here is whether there's an established authority or policy that determines which state takes precedence.
+
+The user provided two states: 21 from Snapshot 0 and 15 from a later unsigned note. The term "unsigned note" might imply that the second note isn

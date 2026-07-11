@@ -1,0 +1,28 @@
+{
+  "surfaces": {
+    "accumulated_gradients": "runtime/gradients.json",
+    "best_checkpoint": "checkpoints/best.pt",
+    "code_revision": "config/code.json",
+    "dataset_and_splits": "config/dataset.json",
+    "environment": "config/environment.json",
+    "evaluator_and_policy": "config/evaluator.json",
+    "feature_cache": "caches/features",
+    "final_checkpoint": "checkpoints/final.pt",
+    "inference_cache": "caches/inference",
+    "lineage_index": "lineage/index.json",
+    "local_backup_store": "backups/local",
+    "model_buffers": "checkpoints/buffers.pt",
+    "model_parameters": "checkpoints/model.pt",
+    "numpy_rng": "rng/numpy.pkl",
+    "optimizer_state": "runtime/optimizer.pt",
+    "python_rng": "rng/python.pkl",
+    "released_checkpoint": "checkpoints/released.pt",
+    "rollback_checkpoint": "checkpoints/rollback.pt",
+    "sampler_order": "runtime/sampler.json",
+    "scheduler_state": "runtime/scheduler.pt",
+    "shadow_checkpoint": "checkpoints/shadow.json",
+    "tokenizer_preprocessor": "config/preprocessor.json",
+    "torch_cpu_rng": "rng/torch.pt",
+    "training_config": "config/training.json"
+  }
+}

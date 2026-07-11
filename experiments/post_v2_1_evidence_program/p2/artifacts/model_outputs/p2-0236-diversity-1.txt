@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking for the authoritative state between two conflicting values: 21 from Snapshot 0 and 15 from a later unsigned note. The instructions mention that if authority is known, return the authoritative state; otherwise, use 'abstain' or 'clarify' if needed.
+
+First, I need to determine if there's an authority that can resolve the conflict. The problem states that "authority and temporal-policy interpretation dominate the arithmetic surface," which suggests that the temporal aspect (which snapshot is later) might be relevant. However, the note is unsigned, so its authority is unclear. 
+
+Since the note is unsigned, it's not clear if it's from a trusted source. The original snapshot (state=21) might

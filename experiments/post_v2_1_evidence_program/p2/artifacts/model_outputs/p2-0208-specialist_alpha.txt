@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two snapshots. The first snapshot (Snapshot 2) says state=28, and a later unsigned note says state=17. They want the authoritative state if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to determine if there's an authority that can resolve this conflict. The problem mentions that the preferred specialist is unavailable, so maybe a general route is acceptable. But the user says to return the authoritative state only if authority is known. Since the specialist is unavailable, maybe there's no clear authority here. 
+
+Wait, the user says "return only the answer, except the diversity role must return only its JSON list." But

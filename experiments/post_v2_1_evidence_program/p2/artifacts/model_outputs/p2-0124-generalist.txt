@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two notes: Snapshot 3 says state=20, and a later unsigned note says state=23. They want the answer to return only the authoritative state if the authority is known. If the specialist is unavailable, a bounded general route is allowed.
+
+First, I need to understand what "authoritative state" means here. It probably refers to the most correct or official value. But the problem is that there are two conflicting values: 20 and 23. The user mentions that the preferred specialist is unavailable, so maybe they're suggesting that if the main expert isn't available, use a general approach.
+
+But the key part is "Return the authoritative state only if authority is known

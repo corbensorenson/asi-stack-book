@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking whether arithmetic or policy checks are needed when changing limit 19 to 23. The patch proposal is to adjust a limit, so first, I need to figure out what kind of check is required.
+
+Arithmetic checks would involve verifying that the change is mathematically correct. For example, if the limit is a numerical value, ensuring that the new value (23) is correct in context. But the problem here is that the user hasn't provided specific details about the limit's purpose. Without knowing what the limit represents, it's hard to say if arithmetic is needed. Maybe it's a numerical threshold, but maybe it's a policy-based limit.
+
+On the other hand, policy checks would involve ensuring that the

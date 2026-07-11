@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this problem. The user is asking to determine the authoritative state based on two conflicting notes. The first note (Snapshot 2) says state=23, and a later unsigned note says state=20. The request mentions that two plausible authorities conflict, and it doesn't specify which one takes precedence.
+
+First, I need to recall the instructions: if the authority is known, return the authoritative state. Otherwise, if the evidence is unavailable, use 'abstain', and if the authority is unresolved, use 'clarify'. 
+
+In this case, the problem states that there are two conflicting authorities. The user hasn't provided any additional information about which authority is more credible or which one is the correct one. Since the request doesn't specify which authority

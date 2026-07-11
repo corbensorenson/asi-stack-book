@@ -202,6 +202,8 @@ def negative_control_errors(
 
     false_complete = copy.deepcopy(status)
     false_complete["priorities"][1]["state"] = "completed"
+    false_complete["priorities"][1]["evidence_refs"] = []
+    false_complete["residuals"][0]["state"] = "actionable_open"
     mutations.append(("completion without evidence", false_complete, roadmap, residuals, readme, predecessor, completion))
 
     missing_conditional = copy.deepcopy(status)

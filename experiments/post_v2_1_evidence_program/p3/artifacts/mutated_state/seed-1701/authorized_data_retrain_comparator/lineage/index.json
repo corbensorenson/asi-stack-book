@@ -1,0 +1,10 @@
+{
+  "arm": "authorized_data_retrain_comparator",
+  "base": "rollback_checkpoint",
+  "descendants": [
+    "best",
+    "final",
+    "released"
+  ],
+  "seed": 1701
+}

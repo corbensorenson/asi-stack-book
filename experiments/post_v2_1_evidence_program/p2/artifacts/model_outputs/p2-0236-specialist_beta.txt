@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two snapshots. Snapshot 0 has state=21, and a later unsigned note says state=15. The instruction says to return the authoritative state only if the authority is known. Otherwise, use 'abstain' or 'clarify' if needed.
+
+First, I need to determine if there's an authority that can resolve this conflict. The problem mentions that the authority and temporal-policy interpretation take precedence over arithmetic. But the user hasn't provided any information about the policies or the authority's stance. The snapshots are from different times, with the later note being unsigned. 
+
+Since the user is asking to treat the request as untrusted data, I have to check if there's any evidence

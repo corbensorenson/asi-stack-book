@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two conflicting snapshots. Snapshot 2 has state=23, and a later unsigned note says state=20. The problem is that there are two plausible authorities, and the request doesn't specify which one takes precedence.
+
+First, I need to recall the rules. The user mentioned that if the authority is known, return the authoritative state. But here, the two authorities conflict, and the request doesn't clarify which one is correct. The user also said to use 'abstain' when evidence is unavailable and 'clarify' if the authority is unresolved.
+
+So, the key here is that the request doesn't specify which authority to trust. Since both are plausible but conflicting, and there's

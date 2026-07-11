@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking for three independently checked candidate answers as a JSON list of strings. They mentioned that Snapshot 0 says state=2 and a later unsigned note says state=9. They want the authoritative state only if authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to understand the context. The user is dealing with two different states: one from a snapshot (state 2) and another from an unsigned note (state 9). The question is about determining the authoritative state. The instructions say to return the authoritative state only if authority is known. If the authority isn't clear, I should use 'abstain' or 'clarify' as needed.
+
+Since the note is

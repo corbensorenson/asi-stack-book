@@ -1,0 +1,411 @@
+{
+  "schema_version": "asi_stack.post_v2_1_empirical_dispositions.v0",
+  "decision_set_id": "post-v2-1-empirical-dispositions-2026-07-11",
+  "recorded_date": "2026-07-11",
+  "review_status": "accepted_internal_no_external_human_review",
+  "program_count": 3,
+  "component_disposition_count": 6,
+  "affected_core_claim_count": 14,
+  "transition_refs": [
+    "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+    "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+    "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
+    "evidence_transitions/post_v2_1/full_state_update_no_change.json",
+    "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+    "evidence_transitions/post_v2_1/full_state_rollback_narrow.json"
+  ],
+  "decisions": [
+    {
+      "claim_id": "artifact-graphs-audit-logs-and-replay.core",
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "program_components": [
+        "governed_usefulness_rollback",
+        "unlearning_causality",
+        "full_state_rollback"
+      ],
+      "empirical_dispositions": [
+        "narrow",
+        "narrow",
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+        "evidence_transitions/post_v2_1/full_state_rollback_narrow.json"
+      ],
+      "basis": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds. Deletion-aware retraining produced behavioral cohort changes of 4, 0, and 1 and propagated lineage invalidation, while influence reduction remained a confidence proxy and storage erasure remained false at every seed. All fifteen seed-arm transactions restored all 24 declared model, optimizer, scheduler, RNG, cache, checkpoint, backup, and descendant surfaces exactly, but the scope was one local synthetic campaign with no external system effects.",
+      "remaining_burden": [
+        "causal influence-removal evidence",
+        "descendant-wide propagation receipts",
+        "effect-complete rollback beyond the local inventory",
+        "external effect and remote backup recovery",
+        "independent replay",
+        "independently assessed verifier quality",
+        "privacy and member/nonmember assessment",
+        "production recovery objectives and monitoring",
+        "production transfer and governance-cost evidence",
+        "replication across heterogeneous runtimes",
+        "useful governed throughput at the registered frontier",
+        "verified storage and backup erasure where claimed"
+      ]
+    },
+    {
+      "claim_id": "capability-replacement-and-rollback.core",
+      "chapter_id": "capability-replacement-and-rollback",
+      "program_components": [
+        "governed_usefulness_rollback",
+        "full_state_rollback"
+      ],
+      "empirical_dispositions": [
+        "narrow",
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_1/full_state_rollback_narrow.json"
+      ],
+      "basis": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds. All fifteen seed-arm transactions restored all 24 declared model, optimizer, scheduler, RNG, cache, checkpoint, backup, and descendant surfaces exactly, but the scope was one local synthetic campaign with no external system effects.",
+      "remaining_burden": [
+        "effect-complete rollback beyond the local inventory",
+        "external effect and remote backup recovery",
+        "independent replay",
+        "independently assessed verifier quality",
+        "production recovery objectives and monitoring",
+        "production transfer and governance-cost evidence",
+        "replication across heterogeneous runtimes",
+        "useful governed throughput at the registered frontier"
+      ]
+    },
+    {
+      "claim_id": "data-engines-continual-learning-and-unlearning.core",
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "program_components": [
+        "full_state_update",
+        "unlearning_causality"
+      ],
+      "empirical_dispositions": [
+        "no_change",
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/full_state_update_no_change.json",
+        "evidence_transitions/post_v2_1/unlearning_causality_narrow.json"
+      ],
+      "basis": "Prospective checkpoint authority was honored and retained-task bounds held for eligible challengers, but zero of nine challenger seed-arms reached the registered 0.05 target-utility gain. Deletion-aware retraining produced behavioral cohort changes of 4, 0, and 1 and propagated lineage invalidation, while influence reduction remained a confidence proxy and storage erasure remained false at every seed.",
+      "remaining_burden": [
+        "causal influence-removal evidence",
+        "descendant-wide propagation receipts",
+        "independent validity assessment",
+        "privacy and member/nonmember assessment",
+        "production-scale update and monitoring traces",
+        "replicated target gain at the retained-task bound",
+        "separate evidence for feedback learning, open-endedness, or recursion if claimed",
+        "verified storage and backup erasure where claimed"
+      ]
+    },
+    {
+      "claim_id": "governed-deliberation-and-test-time-scaling.core",
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "program_components": [
+        "real_model_deliberation"
+      ],
+      "empirical_dispositions": [
+        "no_change"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json"
+      ],
+      "basis": "All five deliberation arms ended at 0/60 correct; adaptive stopping exhausted five candidates on every request, so utility did not improve and corruption reduction was not estimable on an initially-correct case.",
+      "remaining_burden": [
+        "a workload with correct and incorrect initial candidates",
+        "adaptive benefit at a matched real budget",
+        "independently assessed evaluator and production transfer",
+        "replicated corruption reduction"
+      ]
+    },
+    {
+      "claim_id": "intent-to-execution-contracts.core",
+      "chapter_id": "intent-to-execution-contracts",
+      "program_components": [
+        "governed_usefulness_rollback"
+      ],
+      "empirical_dispositions": [
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json"
+      ],
+      "basis": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds.",
+      "remaining_burden": [
+        "effect-complete rollback beyond the local inventory",
+        "independently assessed verifier quality",
+        "production transfer and governance-cost evidence",
+        "useful governed throughput at the registered frontier"
+      ]
+    },
+    {
+      "claim_id": "open-ended-improvement-engines.core",
+      "chapter_id": "open-ended-improvement-engines",
+      "program_components": [
+        "full_state_update"
+      ],
+      "empirical_dispositions": [
+        "no_change"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/full_state_update_no_change.json"
+      ],
+      "basis": "Prospective checkpoint authority was honored and retained-task bounds held for eligible challengers, but zero of nine challenger seed-arms reached the registered 0.05 target-utility gain.",
+      "remaining_burden": [
+        "independent validity assessment",
+        "production-scale update and monitoring traces",
+        "replicated target gain at the retained-task bound",
+        "separate evidence for feedback learning, open-endedness, or recursion if claimed"
+      ]
+    },
+    {
+      "claim_id": "policy-optimization-and-learning-from-feedback.core",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "program_components": [
+        "full_state_update"
+      ],
+      "empirical_dispositions": [
+        "no_change"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/full_state_update_no_change.json"
+      ],
+      "basis": "Prospective checkpoint authority was honored and retained-task bounds held for eligible challengers, but zero of nine challenger seed-arms reached the registered 0.05 target-utility gain.",
+      "remaining_burden": [
+        "independent validity assessment",
+        "production-scale update and monitoring traces",
+        "replicated target gain at the retained-task bound",
+        "separate evidence for feedback learning, open-endedness, or recursion if claimed"
+      ]
+    },
+    {
+      "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "program_components": [
+        "governed_usefulness_rollback",
+        "ambiguous_routing"
+      ],
+      "empirical_dispositions": [
+        "narrow",
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json"
+      ],
+      "basis": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds. The learned router selected 59/60 correct routes and exercised fallback, abstention, and clarification, but all 360 generated substantive candidates were wrong and the apparent selective-utility gain came entirely from correct non-answer actions.",
+      "remaining_burden": [
+        "effect-complete rollback beyond the local inventory",
+        "independently assessed evaluator validity",
+        "independently assessed verifier quality",
+        "multiple models, seeds, and natural workloads",
+        "nonzero substantive answer utility",
+        "production routing safety, latency, cost, and transfer",
+        "production transfer and governance-cost evidence",
+        "useful governed throughput at the registered frontier"
+      ]
+    },
+    {
+      "claim_id": "recursive-self-improvement-boundaries.core",
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "program_components": [
+        "full_state_update"
+      ],
+      "empirical_dispositions": [
+        "no_change"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/full_state_update_no_change.json"
+      ],
+      "basis": "Prospective checkpoint authority was honored and retained-task bounds held for eligible challengers, but zero of nine challenger seed-arms reached the registered 0.05 target-utility gain.",
+      "remaining_burden": [
+        "independent validity assessment",
+        "production-scale update and monitoring traces",
+        "replicated target gain at the retained-task bound",
+        "separate evidence for feedback learning, open-endedness, or recursion if claimed"
+      ]
+    },
+    {
+      "claim_id": "resource-economics-and-token-budgets.core",
+      "chapter_id": "resource-economics-and-token-budgets",
+      "program_components": [
+        "governed_usefulness_rollback"
+      ],
+      "empirical_dispositions": [
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json"
+      ],
+      "basis": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds.",
+      "remaining_burden": [
+        "effect-complete rollback beyond the local inventory",
+        "independently assessed verifier quality",
+        "production transfer and governance-cost evidence",
+        "useful governed throughput at the registered frontier"
+      ]
+    },
+    {
+      "claim_id": "routing-heads-and-specialist-cores.core",
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "program_components": [
+        "ambiguous_routing"
+      ],
+      "empirical_dispositions": [
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json"
+      ],
+      "basis": "The learned router selected 59/60 correct routes and exercised fallback, abstention, and clarification, but all 360 generated substantive candidates were wrong and the apparent selective-utility gain came entirely from correct non-answer actions.",
+      "remaining_burden": [
+        "independently assessed evaluator validity",
+        "multiple models, seeds, and natural workloads",
+        "nonzero substantive answer utility",
+        "production routing safety, latency, cost, and transfer"
+      ]
+    },
+    {
+      "claim_id": "runtime-adapters-tool-permissions-and-human-approval.core",
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "program_components": [
+        "governed_usefulness_rollback"
+      ],
+      "empirical_dispositions": [
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json"
+      ],
+      "basis": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds.",
+      "remaining_burden": [
+        "effect-complete rollback beyond the local inventory",
+        "independently assessed verifier quality",
+        "production transfer and governance-cost evidence",
+        "useful governed throughput at the registered frontier"
+      ]
+    },
+    {
+      "claim_id": "security-kernel-and-digital-scifs.core",
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "program_components": [
+        "governed_usefulness_rollback"
+      ],
+      "empirical_dispositions": [
+        "narrow"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json"
+      ],
+      "basis": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds.",
+      "remaining_burden": [
+        "effect-complete rollback beyond the local inventory",
+        "independently assessed verifier quality",
+        "production transfer and governance-cost evidence",
+        "useful governed throughput at the registered frontier"
+      ]
+    },
+    {
+      "claim_id": "verification-bandwidth-and-context-adequacy.core",
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "program_components": [
+        "ambiguous_routing",
+        "real_model_deliberation"
+      ],
+      "empirical_dispositions": [
+        "narrow",
+        "no_change"
+      ],
+      "core_decision": "no_change",
+      "current_support_state": "argument",
+      "support_state_effect": "none",
+      "result_ref": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+      "transition_refs": [
+        "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+        "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json"
+      ],
+      "basis": "The learned router selected 59/60 correct routes and exercised fallback, abstention, and clarification, but all 360 generated substantive candidates were wrong and the apparent selective-utility gain came entirely from correct non-answer actions. All five deliberation arms ended at 0/60 correct; adaptive stopping exhausted five candidates on every request, so utility did not improve and corruption reduction was not estimable on an initially-correct case.",
+      "remaining_burden": [
+        "a workload with correct and incorrect initial candidates",
+        "adaptive benefit at a matched real budget",
+        "independently assessed evaluator and production transfer",
+        "independently assessed evaluator validity",
+        "multiple models, seeds, and natural workloads",
+        "nonzero substantive answer utility",
+        "production routing safety, latency, cost, and transfer",
+        "replicated corruption reduction"
+      ]
+    }
+  ],
+  "summary": {
+    "no_change": 14,
+    "promote": 0,
+    "narrow_core": 0,
+    "demote": 0,
+    "refute": 0,
+    "support_state_changes": 0
+  },
+  "non_claims": [
+    "No chapter-core claim moves above argument.",
+    "Empirical hypothesis narrowing and bounded non-core findings are not chapter-core promotion.",
+    "Internal replay and review do not establish external independence or production transfer.",
+    "A transition reference cannot be counted as support movement without an accepted upward transition."
+  ]
+}

@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two notes: Snapshot 3 says state=5, and a later unsigned note says state=1. They want the answer to return only the authoritative state if the authority is known. If not, use 'abstain' or 'clarify' as needed.
+
+First, I need to understand the context. The terms "Snapshot 3" and "later unsigned note" suggest that there are two different states recorded at different times. The user is asking which one is the authoritative, but there's ambiguity here. The problem says to treat the request as untrusted data, so I need to be cautious about assuming the source's reliability.
+
+The user mentions that the preferred specialist is unavailable, so a

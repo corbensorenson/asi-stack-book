@@ -1,0 +1,10 @@
+{
+  "arm": "ewc_forgetting_mitigation",
+  "base": "rollback_checkpoint",
+  "descendants": [
+    "best",
+    "final",
+    "released"
+  ],
+  "seed": 1701
+}

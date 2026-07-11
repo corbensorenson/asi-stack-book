@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two snapshots. Snapshot 0 has state=2, and a later unsigned note says state=9. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to understand what "authoritative state" means here. It probably refers to the official or most valid state value. But the problem is that there's a conflict between the two states. The first snapshot is state=2, and then a later note (unsigned) says state=9. The user is asking which one is the correct one.
+
+The key here is whether there's an authority that can confirm which state is correct. The user mentioned that

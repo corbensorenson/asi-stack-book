@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking whether a patch that changes a limit from 10 to 16 requires checking arithmetic, policy, or both. The problem is that there are two conflicting authorities, and the request doesn't specify which control to apply. 
+
+First, I need to understand the terms here. "Arithmetic" probably refers to numerical checks, like ensuring the new limit (16) is valid in the context of the system. For example, if the limit is a maximum value that can't exceed a certain number, then arithmetic checks would be needed. But if the limit is a policy-based restriction, like a maximum number of users allowed, then that's a policy check.
+
+The user mentions that two plausible authorities conflict. So, maybe

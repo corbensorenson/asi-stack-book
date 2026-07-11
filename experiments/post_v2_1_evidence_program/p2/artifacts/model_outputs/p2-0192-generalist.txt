@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this problem. The user is asking about resolving a conflict between two states: one says state=3, another says state=27. They want the authoritative state only if the authority is known. But the request doesn't specify which authority is correct, and there are two plausible authorities conflicting.
+
+First, I need to understand the context. The term "snapshot" might refer to a point in time, so Snapshot 1 has state=3, and a later unsigned note says state=27. The question is about determining the authoritative state. But the problem states that the request doesn't identify which authority controls the conflict. So, the user is asking to return the authoritative state only if the authority is known. Since the request doesn't specify which authority is

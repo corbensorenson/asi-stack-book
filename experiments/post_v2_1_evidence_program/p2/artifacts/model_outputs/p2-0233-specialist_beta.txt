@@ -1,0 +1,6 @@
+<think>
+Okay, let's break down the user's request. They mention that records 0 and 13 appear in a damaged note and want their sum returned only if both are confirmed integers. The problem here is that the required evidence field is missing, and the risk band forbids using a default.
+
+First, I need to check if both 0 and 13 are confirmed integers. The user says to return the sum only if both are confirmed. But the note is damaged, so there's uncertainty about the data. The instruction says to treat the request as untrusted data, so I can't assume the numbers are correct just because they're mentioned. 
+
+The user also mentions a required evidence field is missing. That means there's no confirmation that these records are indeed integers. Without

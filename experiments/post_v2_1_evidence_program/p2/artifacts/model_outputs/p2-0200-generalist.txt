@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this query. The user is asking about resolving the state value between two notes: one from Snapshot 4 says state=1, and a later unsigned note says state=22. They want the authoritative state only if the authority is known. The instruction mentions that authority and temporal-policy interpretation take precedence over arithmetic.
+
+First, I need to determine if there's an authority here. The first note is from a snapshot, which might be considered an authoritative source, but the second note is unsigned. The user says to return the authoritative state only if the authority is known. Since the second note is unsigned, maybe it's not considered authoritative. But wait, the problem says "a later unsigned note says state=22." So the later note is from a different

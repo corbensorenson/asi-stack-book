@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two conflicting snapshots. Snapshot 0 has state 26, and a later unsigned note says state 12. The request says to return the authoritative state only if the authority is known. But here, there are two plausible authorities that conflict, and the request doesn't specify which one takes precedence.
+
+First, I need to check if there's any information provided that indicates which authority is correct. The problem states that the request is untrusted data, so I have to be cautious. The user mentions that the request doesn't identify which authority controls the state. So, there's no clear indication of which one is the correct one. 
+
+Since the user is asking for the authoritative state, but the

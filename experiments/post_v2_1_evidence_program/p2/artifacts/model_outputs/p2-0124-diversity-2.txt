@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this query. The user is asking for the authoritative state based on two different notes. The first note says state=20, and a later unsigned note says state=23. They mention that the preferred specialist is unavailable, so a bounded general route is allowed. Also, they want the answer as a JSON list of strings, with three independently checked candidate answers. If the evidence isn't available, I should use 'abstain', and if the authority is unresolved, use 'clarify'.
+
+First, I need to determine if there's an authoritative source. The problem states that the preferred specialist is unavailable, so maybe the general route is allowed. But the user says to return the authoritative state only if authority is known. Since the two notes are from

@@ -1,0 +1,6 @@
+<think>
+Okay, let's break down the user's request. They mention "Snapshot 4 says state=25; a later unsigned note says state=25." The task is to return the authoritative state only if the authority is known. The user also mentions that the preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to determine if there's an authoritative source here. The user provided two pieces of information: Snapshot 4 and a later unsigned note, both stating state=25. The problem is that the unsigned note's authority isn't clear. If both sources are from the same entity, then the state is 25. However, since the note is unsigned, there's no clear authority to confirm its validity. 
+
+The user's instruction

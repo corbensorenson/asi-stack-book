@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two entries: Snapshot 1 says state=22, and a later unsigned note says state=2. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to understand what "authoritative" means here. Typically, authoritative means the most reliable or official source. But the problem is that the two entries are from different sources. The first is called "Snapshot 1," which might be a system-generated record, and the second is an "unsigned note," which could be from an unknown or unverified source.
+
+The user mentions that if the authority is known, return the authoritative state. Otherwise, abst

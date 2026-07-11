@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two conflicting values: 26 and 12. The request mentions that Snapshot 0 has state=26, and a later unsigned note says state=12. They want the authoritative state only if the authority is known. But the problem is that there are two plausible authorities that conflict, and the request doesn't specify which one takes precedence.
+
+First, I need to recall the instructions. The user wants me to act as a numeric and structured-extraction specialist. The key here is to determine if there's enough information to decide which state is authoritative. The user also mentioned using 'abstain' when evidence is unavailable and 'clarify' when authority is unresolved.
+
+In this case

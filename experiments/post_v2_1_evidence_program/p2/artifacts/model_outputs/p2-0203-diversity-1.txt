@@ -1,0 +1,4 @@
+<think>
+Okay, let's break down the user's request. They want three independently checked candidate answers as a JSON list of strings. The request mentions alpha=22, beta=24, alias=beta conflict with a stale caption, and there's a required evidence field missing, so I can't use a default. Also, the risk band forbids a default.
+
+First, I need to understand the context. The terms alpha, beta, and alias are mentioned, with beta being an alias for another value. There's a conflict with a stale caption, which might mean that the current data is outdated. The user is asking for the value supported by the mapping, but there's a missing required evidence field, so I can't assume a default. The instruction says to use 'ab

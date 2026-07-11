@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two snapshots. Snapshot 0 has state=2, and a later unsigned note says state=9. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to determine if there's an authority that can confirm which state is correct. The problem mentions that the preferred specialist is unavailable, so maybe a general approach is needed. But the user says to return the authoritative state only if the authority is known. Since the note is unsigned, there's no clear authority here. 
+
+The user is asking to abstain if the evidence isn't available. Since the note is unsigned, there's no clear authority to confirm

@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this problem. The user is asking to determine the authoritative state based on two snapshots: one says state=27 and another later (unsigned) note says state=30. The instructions mention that if authority is known, return the authoritative state; otherwise, abstain or clarify if needed.
+
+First, I need to understand the context. The term "authority" here probably refers to which source is more reliable. The first snapshot is labeled as "Snapshot 1," and the second is a "later unsigned note." The user says to treat the request as untrusted data, so I should be cautious about assuming either is correct without more info.
+
+The problem mentions that "authority and temporal-policy interpretation dominate the arithmetic surface." That part is a bit confusing. Maybe

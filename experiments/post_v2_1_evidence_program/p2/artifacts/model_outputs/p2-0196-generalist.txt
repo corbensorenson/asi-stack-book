@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two snapshots. Snapshot 0 says state=2, and a later unsigned note says state=9. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to understand what "authoritative state" means here. Since the note is unsigned, it's not from a known authority. The first snapshot is state=2, and the later note is state=9. But the problem is that the later note isn't signed by an authority, so we can't trust it as the official state. The user says to return the authoritative state only if the authority is known. Since the later note is unsigned,

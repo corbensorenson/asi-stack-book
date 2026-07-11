@@ -1,0 +1,10 @@
+{
+  "arm": "deletion_aware_retrain",
+  "base": "rollback_checkpoint",
+  "descendants": [
+    "best",
+    "final",
+    "released"
+  ],
+  "seed": 1701
+}

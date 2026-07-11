@@ -1,0 +1,1074 @@
+{
+  "schema_version": "asi_stack.post_v2_1_p3_result.v0",
+  "corpus_sha256": "f31ea84bdee6092875bbd85a36300f559bdac4420711cce3daa88b56693e74e4",
+  "inventory_sha256": "feb9e26dbbaa222d6b39d20775adc7ee0a6c9ac38a8a7489dbd5dd3a0028d624",
+  "seeds": [
+    1701,
+    2903,
+    4307
+  ],
+  "arms": [
+    "bit_identical_no_update",
+    "bounded_update",
+    "ewc_forgetting_mitigation",
+    "deletion_aware_retrain",
+    "authorized_data_retrain_comparator"
+  ],
+  "environment": {
+    "platform": "macOS-15.0-arm64-arm-64bit",
+    "python": "3.9.23",
+    "torch": "2.7.1",
+    "numpy": "1.26.4",
+    "threads": 1,
+    "deterministic_algorithms": true
+  },
+  "seed_records": [
+    {
+      "seed": 1701,
+      "base_history": [
+        {
+          "epoch": 1,
+          "loss": 0.72455043,
+          "validation": 0.32499999
+        },
+        {
+          "epoch": 2,
+          "loss": 0.72081137,
+          "validation": 0.36875001
+        },
+        {
+          "epoch": 3,
+          "loss": 0.71390975,
+          "validation": 0.45625001
+        },
+        {
+          "epoch": 4,
+          "loss": 0.70449609,
+          "validation": 0.52499998
+        },
+        {
+          "epoch": 5,
+          "loss": 0.69320667,
+          "validation": 0.60000002
+        },
+        {
+          "epoch": 6,
+          "loss": 0.68059415,
+          "validation": 0.64375001
+        },
+        {
+          "epoch": 7,
+          "loss": 0.67106718,
+          "validation": 0.6875
+        },
+        {
+          "epoch": 8,
+          "loss": 0.66095877,
+          "validation": 0.71875
+        },
+        {
+          "epoch": 9,
+          "loss": 0.65039515,
+          "validation": 0.74374998
+        },
+        {
+          "epoch": 10,
+          "loss": 0.63945377,
+          "validation": 0.75625002
+        },
+        {
+          "epoch": 11,
+          "loss": 0.62817383,
+          "validation": 0.76875001
+        },
+        {
+          "epoch": 12,
+          "loss": 0.6200245,
+          "validation": 0.78750002
+        },
+        {
+          "epoch": 13,
+          "loss": 0.61160284,
+          "validation": 0.79374999
+        },
+        {
+          "epoch": 14,
+          "loss": 0.6029166,
+          "validation": 0.78750002
+        },
+        {
+          "epoch": 15,
+          "loss": 0.59397495,
+          "validation": 0.80624998
+        },
+        {
+          "epoch": 16,
+          "loss": 0.58479136,
+          "validation": 0.8125
+        },
+        {
+          "epoch": 17,
+          "loss": 0.57819861,
+          "validation": 0.81875002
+        },
+        {
+          "epoch": 18,
+          "loss": 0.5714494,
+          "validation": 0.82499999
+        },
+        {
+          "epoch": 19,
+          "loss": 0.56456214,
+          "validation": 0.82499999
+        },
+        {
+          "epoch": 20,
+          "loss": 0.5575583,
+          "validation": 0.82499999
+        }
+      ],
+      "base_state_sha256": "b80b47547c03f991b1a3e62b191fd46851cf8e3694abf01ec22ff23c2eff0e9c",
+      "base_validation_retained": 0.85833335,
+      "base_test": 0.90625,
+      "base_full_state_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+      "arms": [
+        {
+          "arm": "bit_identical_no_update",
+          "epochs_completed": 0,
+          "stop_reason": null,
+          "authority_epoch": 0,
+          "authority_eligible": true,
+          "authority_validation_target": 0.72500002,
+          "authority_validation_retained": 0.85833335,
+          "final_epoch": 0,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "b80b47547c03f991b1a3e62b191fd46851cf8e3694abf01ec22ff23c2eff0e9c",
+          "final_state_sha256": "b80b47547c03f991b1a3e62b191fd46851cf8e3694abf01ec22ff23c2eff0e9c",
+          "authority_metrics": {
+            "target_test_utility": 0.82499999,
+            "retained_test_utility": 0.93333334,
+            "worst_family_test_utility": 0.82499999,
+            "changed_test_decisions": 0,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.39079756,
+            "probe_changes": 0,
+            "test_prediction_sha256": "0347ab1b6ff4550df76650966ae0e59fd5a3a79acfa1d5aae6575cd12f937d88"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.82499999,
+            "retained_test_utility": 0.93333334,
+            "worst_family_test_utility": 0.82499999,
+            "changed_test_decisions": 0,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.39079756,
+            "probe_changes": 0,
+            "test_prediction_sha256": "0347ab1b6ff4550df76650966ae0e59fd5a3a79acfa1d5aae6575cd12f937d88"
+          },
+          "full_state_before_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_mutated_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_rollback_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 0,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 0,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-1701/bit_identical_no_update"
+        },
+        {
+          "arm": "bounded_update",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 11,
+          "authority_eligible": true,
+          "authority_validation_target": 0.875,
+          "authority_validation_retained": 0.90833336,
+          "final_epoch": 12,
+          "best_final_state_disagreement": true,
+          "authority_state_sha256": "6367fdeb083c622d3dcc0cb407410193e8a7457176f6b5c44c5cf3205b04b5ad",
+          "final_state_sha256": "834fc16ee7fec372a8751d8a8a93b42c6e1e6a7dded1412a7f912cb8b00cfbdc",
+          "authority_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.94166666,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 8,
+            "deletion_behavior_changes": 4,
+            "deletion_true_confidence": 0.32775459,
+            "probe_changes": 3,
+            "test_prediction_sha256": "79d120c02862a441d5b554f0f215771b5d28e139db380a8cf58dea745b2863c7"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 9,
+            "deletion_behavior_changes": 5,
+            "deletion_true_confidence": 0.32096639,
+            "probe_changes": 3,
+            "test_prediction_sha256": "617cb148f4ddd1dc7b186a689a855686a2ea8a27b7c1b6dcf16f56e7dabc2f84"
+          },
+          "full_state_before_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_mutated_sha256": "13690827e390d9f96b51044194ce0df8a292c8750138d4edcf72a942f9e18dec",
+          "full_state_rollback_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 4,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-1701/bounded_update"
+        },
+        {
+          "arm": "ewc_forgetting_mitigation",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 11,
+          "authority_eligible": true,
+          "authority_validation_target": 0.875,
+          "authority_validation_retained": 0.90833336,
+          "final_epoch": 12,
+          "best_final_state_disagreement": true,
+          "authority_state_sha256": "ddc7bcc15b777ba504c8788314aacc039b20d284f621594f2b3478237ab65ec4",
+          "final_state_sha256": "b00ef17e1a6421d9700ed4c8126ff1f7d159ede90b2803ba8173bd4164024e2b",
+          "authority_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.93333334,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 7,
+            "deletion_behavior_changes": 4,
+            "deletion_true_confidence": 0.32964128,
+            "probe_changes": 3,
+            "test_prediction_sha256": "c9b06c1e59a232a9f240696bcc70afd44c5526d426e747ba421a5463e52e0662"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 9,
+            "deletion_behavior_changes": 4,
+            "deletion_true_confidence": 0.32333013,
+            "probe_changes": 3,
+            "test_prediction_sha256": "617cb148f4ddd1dc7b186a689a855686a2ea8a27b7c1b6dcf16f56e7dabc2f84"
+          },
+          "full_state_before_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_mutated_sha256": "6691c4dff42a763559795a2904e8dd1192a5e418686c3c47bc46bd6838c22a9f",
+          "full_state_rollback_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 4,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-1701/ewc_forgetting_mitigation"
+        },
+        {
+          "arm": "deletion_aware_retrain",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 12,
+          "authority_eligible": true,
+          "authority_validation_target": 0.85000002,
+          "authority_validation_retained": 0.90833336,
+          "final_epoch": 12,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "830a964e413b3f782e6f87fd1d206ed7d87511edd2346773f5247a54876553e3",
+          "final_state_sha256": "830a964e413b3f782e6f87fd1d206ed7d87511edd2346773f5247a54876553e3",
+          "authority_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.96666664,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 7,
+            "deletion_behavior_changes": 4,
+            "deletion_true_confidence": 0.32160589,
+            "probe_changes": 2,
+            "test_prediction_sha256": "23ec1ba0fcf49a569fb778f0a8035fcadac2e02eedf8626af7095c6804bd8003"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.96666664,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 7,
+            "deletion_behavior_changes": 4,
+            "deletion_true_confidence": 0.32160589,
+            "probe_changes": 2,
+            "test_prediction_sha256": "23ec1ba0fcf49a569fb778f0a8035fcadac2e02eedf8626af7095c6804bd8003"
+          },
+          "full_state_before_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_mutated_sha256": "62736fadcbee005bbfde11976b5c0cad645f09ffeef27d2f4ede48dba1a8c648",
+          "full_state_rollback_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 4,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": true,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-1701/deletion_aware_retrain"
+        },
+        {
+          "arm": "authorized_data_retrain_comparator",
+          "epochs_completed": 1,
+          "stop_reason": "retained_validation_regression_exceeded_0.08",
+          "authority_epoch": 1,
+          "authority_eligible": false,
+          "authority_validation_target": 0.42500001,
+          "authority_validation_retained": 0.5,
+          "final_epoch": 1,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "f50e363cd773f0e2bf12609597e87715dc682cda91939ee3ab2c6acce36d9e8d",
+          "final_state_sha256": "f50e363cd773f0e2bf12609597e87715dc682cda91939ee3ab2c6acce36d9e8d",
+          "authority_metrics": {
+            "target_test_utility": 0.44999999,
+            "retained_test_utility": 0.54166669,
+            "worst_family_test_utility": 0.44999999,
+            "changed_test_decisions": 64,
+            "deletion_behavior_changes": 31,
+            "deletion_true_confidence": 0.50148171,
+            "probe_changes": 33,
+            "test_prediction_sha256": "6ca8b2f055600ecfdf662aec14b54b6728564233582cac5038a383bf4ec28673"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.44999999,
+            "retained_test_utility": 0.54166669,
+            "worst_family_test_utility": 0.44999999,
+            "changed_test_decisions": 64,
+            "deletion_behavior_changes": 31,
+            "deletion_true_confidence": 0.50148171,
+            "probe_changes": 33,
+            "test_prediction_sha256": "6ca8b2f055600ecfdf662aec14b54b6728564233582cac5038a383bf4ec28673"
+          },
+          "full_state_before_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_mutated_sha256": "25468cf6039d8000e25ad2e7affac6e1b159d76012ebc3286b6e6010aa3b870f",
+          "full_state_rollback_sha256": "192de5060ed47ffd973908eae5347a8f14edf773164d1f0fa0a75f381c7531c6",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 31,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": true,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-1701/authorized_data_retrain_comparator"
+        }
+      ]
+    },
+    {
+      "seed": 2903,
+      "base_history": [
+        {
+          "epoch": 1,
+          "loss": 0.73570734,
+          "validation": 0.53125
+        },
+        {
+          "epoch": 2,
+          "loss": 0.72646832,
+          "validation": 0.53125
+        },
+        {
+          "epoch": 3,
+          "loss": 0.71026194,
+          "validation": 0.53750002
+        },
+        {
+          "epoch": 4,
+          "loss": 0.68995297,
+          "validation": 0.60000002
+        },
+        {
+          "epoch": 5,
+          "loss": 0.66830623,
+          "validation": 0.69999999
+        },
+        {
+          "epoch": 6,
+          "loss": 0.64742744,
+          "validation": 0.77499998
+        },
+        {
+          "epoch": 7,
+          "loss": 0.63373786,
+          "validation": 0.81875002
+        },
+        {
+          "epoch": 8,
+          "loss": 0.62073916,
+          "validation": 0.80624998
+        },
+        {
+          "epoch": 9,
+          "loss": 0.60831773,
+          "validation": 0.83125001
+        },
+        {
+          "epoch": 10,
+          "loss": 0.59618127,
+          "validation": 0.83749998
+        },
+        {
+          "epoch": 11,
+          "loss": 0.58397073,
+          "validation": 0.83125001
+        },
+        {
+          "epoch": 12,
+          "loss": 0.57506806,
+          "validation": 0.84375
+        },
+        {
+          "epoch": 13,
+          "loss": 0.56563115,
+          "validation": 0.85000002
+        },
+        {
+          "epoch": 14,
+          "loss": 0.55565733,
+          "validation": 0.86250001
+        },
+        {
+          "epoch": 15,
+          "loss": 0.54521745,
+          "validation": 0.86250001
+        },
+        {
+          "epoch": 16,
+          "loss": 0.53444511,
+          "validation": 0.86874998
+        },
+        {
+          "epoch": 17,
+          "loss": 0.52675599,
+          "validation": 0.875
+        },
+        {
+          "epoch": 18,
+          "loss": 0.51899022,
+          "validation": 0.88749999
+        },
+        {
+          "epoch": 19,
+          "loss": 0.51125276,
+          "validation": 0.89375001
+        },
+        {
+          "epoch": 20,
+          "loss": 0.50364107,
+          "validation": 0.90625
+        }
+      ],
+      "base_state_sha256": "a88e813db7174b87d1f7e00ff398b8037d569cdaaeddd5d22855e5b9db8fbc56",
+      "base_validation_retained": 0.89999998,
+      "base_test": 0.9375,
+      "base_full_state_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+      "arms": [
+        {
+          "arm": "bit_identical_no_update",
+          "epochs_completed": 0,
+          "stop_reason": null,
+          "authority_epoch": 0,
+          "authority_eligible": true,
+          "authority_validation_target": 0.92500001,
+          "authority_validation_retained": 0.89999998,
+          "final_epoch": 0,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "a88e813db7174b87d1f7e00ff398b8037d569cdaaeddd5d22855e5b9db8fbc56",
+          "final_state_sha256": "a88e813db7174b87d1f7e00ff398b8037d569cdaaeddd5d22855e5b9db8fbc56",
+          "authority_metrics": {
+            "target_test_utility": 0.89999998,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.89999998,
+            "changed_test_decisions": 0,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.34387559,
+            "probe_changes": 0,
+            "test_prediction_sha256": "b84d6b621ee13c54fffbf66c639984854a654392961c6fecf62f2149c58ccc57"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.89999998,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.89999998,
+            "changed_test_decisions": 0,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.34387559,
+            "probe_changes": 0,
+            "test_prediction_sha256": "b84d6b621ee13c54fffbf66c639984854a654392961c6fecf62f2149c58ccc57"
+          },
+          "full_state_before_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_mutated_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_rollback_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 0,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 0,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-2903/bit_identical_no_update"
+        },
+        {
+          "arm": "bounded_update",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 3,
+          "authority_eligible": true,
+          "authority_validation_target": 0.92500001,
+          "authority_validation_retained": 0.91666669,
+          "final_epoch": 12,
+          "best_final_state_disagreement": true,
+          "authority_state_sha256": "8108d888f1aa56b2b1de93eb71befb2c4bc05198c7555364e75a37ec46afc0dc",
+          "final_state_sha256": "9b6cb0f59a95e74c5077dd5c0468616edfa7b4220b6dea44b92d38839553c6f5",
+          "authority_metrics": {
+            "target_test_utility": 0.875,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.875,
+            "changed_test_decisions": 1,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.33270049,
+            "probe_changes": 0,
+            "test_prediction_sha256": "181bcd727b3ab02ca99d5885bfa1b4640b034cdc454ad738f689f9231561714f"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.82499999,
+            "retained_test_utility": 0.95833331,
+            "worst_family_test_utility": 0.82499999,
+            "changed_test_decisions": 4,
+            "deletion_behavior_changes": 3,
+            "deletion_true_confidence": 0.27753317,
+            "probe_changes": 3,
+            "test_prediction_sha256": "40efdf8f9744584a59f7dd43fa0911623f780ade9c1106c5d703dde8286a6e2c"
+          },
+          "full_state_before_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_mutated_sha256": "34c490bcb6b2c37426212ba6671b61d427d8153e2154b31979910270b3a8dab7",
+          "full_state_rollback_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 0,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-2903/bounded_update"
+        },
+        {
+          "arm": "ewc_forgetting_mitigation",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 3,
+          "authority_eligible": true,
+          "authority_validation_target": 0.92500001,
+          "authority_validation_retained": 0.91666669,
+          "final_epoch": 12,
+          "best_final_state_disagreement": true,
+          "authority_state_sha256": "921820ece57fcce5f370241430fa099a781715efd89d5a1cebf7133840533e0f",
+          "final_state_sha256": "09550f141c2e3ca9ce79ea8539bbd55ee50edf6ecb73b85f5c2b2a9f0b14a07d",
+          "authority_metrics": {
+            "target_test_utility": 0.875,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.875,
+            "changed_test_decisions": 1,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.3327387,
+            "probe_changes": 0,
+            "test_prediction_sha256": "181bcd727b3ab02ca99d5885bfa1b4640b034cdc454ad738f689f9231561714f"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.82499999,
+            "retained_test_utility": 0.95833331,
+            "worst_family_test_utility": 0.82499999,
+            "changed_test_decisions": 4,
+            "deletion_behavior_changes": 3,
+            "deletion_true_confidence": 0.27969214,
+            "probe_changes": 2,
+            "test_prediction_sha256": "40efdf8f9744584a59f7dd43fa0911623f780ade9c1106c5d703dde8286a6e2c"
+          },
+          "full_state_before_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_mutated_sha256": "546d1d87fb87dd7efb02cc6cc741dbede7ff2d9ed9b3386b4f8a80a9d29b5839",
+          "full_state_rollback_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 0,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-2903/ewc_forgetting_mitigation"
+        },
+        {
+          "arm": "deletion_aware_retrain",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 3,
+          "authority_eligible": true,
+          "authority_validation_target": 0.92500001,
+          "authority_validation_retained": 0.92500001,
+          "final_epoch": 12,
+          "best_final_state_disagreement": true,
+          "authority_state_sha256": "823e995b66a0c41f3a2087e25dcca5924f309a2c1102d1767f85d90d72c5f6bf",
+          "final_state_sha256": "86a73bcc41640ddbc5311743a0fe8c215c5d1f52a41e549fd77130dcb9712700",
+          "authority_metrics": {
+            "target_test_utility": 0.875,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.875,
+            "changed_test_decisions": 1,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.3327187,
+            "probe_changes": 0,
+            "test_prediction_sha256": "181bcd727b3ab02ca99d5885bfa1b4640b034cdc454ad738f689f9231561714f"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.82499999,
+            "retained_test_utility": 0.97500002,
+            "worst_family_test_utility": 0.82499999,
+            "changed_test_decisions": 6,
+            "deletion_behavior_changes": 3,
+            "deletion_true_confidence": 0.27801853,
+            "probe_changes": 4,
+            "test_prediction_sha256": "d62979a74c2332bd16b88b00c64203d4db7cb595f8f58131d0ebb780ee2c9d24"
+          },
+          "full_state_before_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_mutated_sha256": "8b1b59c9ceb1b4fd5e39a3e15f5c56e3ae2f9b61a60ea251f34363ff361e3b5c",
+          "full_state_rollback_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 0,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": true,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-2903/deletion_aware_retrain"
+        },
+        {
+          "arm": "authorized_data_retrain_comparator",
+          "epochs_completed": 1,
+          "stop_reason": "retained_validation_regression_exceeded_0.08",
+          "authority_epoch": 1,
+          "authority_eligible": false,
+          "authority_validation_target": 0.42500001,
+          "authority_validation_retained": 0.59166664,
+          "final_epoch": 1,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "21138345a9aac0656cb0a5ba9b084ec8ca39e871d3efbd2ccb6aa3853b913cd2",
+          "final_state_sha256": "21138345a9aac0656cb0a5ba9b084ec8ca39e871d3efbd2ccb6aa3853b913cd2",
+          "authority_metrics": {
+            "target_test_utility": 0.40000001,
+            "retained_test_utility": 0.53333336,
+            "worst_family_test_utility": 0.40000001,
+            "changed_test_decisions": 82,
+            "deletion_behavior_changes": 41,
+            "deletion_true_confidence": 0.45975724,
+            "probe_changes": 41,
+            "test_prediction_sha256": "4c75ee5429437e81d881a974afef98f3ebfe273e45a6f7e8d706b6ea38df218d"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.40000001,
+            "retained_test_utility": 0.53333336,
+            "worst_family_test_utility": 0.40000001,
+            "changed_test_decisions": 82,
+            "deletion_behavior_changes": 41,
+            "deletion_true_confidence": 0.45975724,
+            "probe_changes": 41,
+            "test_prediction_sha256": "4c75ee5429437e81d881a974afef98f3ebfe273e45a6f7e8d706b6ea38df218d"
+          },
+          "full_state_before_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_mutated_sha256": "314efe1853189662e06a36e7c6343ffba76f0589340ea150871fbd2895770c7c",
+          "full_state_rollback_sha256": "a2aedae45f62b21c8e95f2a0724805449372a755dc69eb5be560d1f1fb3e7b5e",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 41,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": true,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-2903/authorized_data_retrain_comparator"
+        }
+      ]
+    },
+    {
+      "seed": 4307,
+      "base_history": [
+        {
+          "epoch": 1,
+          "loss": 0.71293211,
+          "validation": 0.43125001
+        },
+        {
+          "epoch": 2,
+          "loss": 0.70809782,
+          "validation": 0.45625001
+        },
+        {
+          "epoch": 3,
+          "loss": 0.69917697,
+          "validation": 0.60624999
+        },
+        {
+          "epoch": 4,
+          "loss": 0.68701595,
+          "validation": 0.63749999
+        },
+        {
+          "epoch": 5,
+          "loss": 0.67244875,
+          "validation": 0.65625
+        },
+        {
+          "epoch": 6,
+          "loss": 0.65621132,
+          "validation": 0.67500001
+        },
+        {
+          "epoch": 7,
+          "loss": 0.64399123,
+          "validation": 0.71875
+        },
+        {
+          "epoch": 8,
+          "loss": 0.63109195,
+          "validation": 0.73124999
+        },
+        {
+          "epoch": 9,
+          "loss": 0.61771405,
+          "validation": 0.77499998
+        },
+        {
+          "epoch": 10,
+          "loss": 0.60400647,
+          "validation": 0.78750002
+        },
+        {
+          "epoch": 11,
+          "loss": 0.59007967,
+          "validation": 0.8125
+        },
+        {
+          "epoch": 12,
+          "loss": 0.58018738,
+          "validation": 0.8125
+        },
+        {
+          "epoch": 13,
+          "loss": 0.57014704,
+          "validation": 0.83125001
+        },
+        {
+          "epoch": 14,
+          "loss": 0.5600031,
+          "validation": 0.83125001
+        },
+        {
+          "epoch": 15,
+          "loss": 0.54980093,
+          "validation": 0.85624999
+        },
+        {
+          "epoch": 16,
+          "loss": 0.53958935,
+          "validation": 0.86250001
+        },
+        {
+          "epoch": 17,
+          "loss": 0.5324434,
+          "validation": 0.86250001
+        },
+        {
+          "epoch": 18,
+          "loss": 0.52530175,
+          "validation": 0.875
+        },
+        {
+          "epoch": 19,
+          "loss": 0.51819354,
+          "validation": 0.88125002
+        },
+        {
+          "epoch": 20,
+          "loss": 0.51114839,
+          "validation": 0.88749999
+        }
+      ],
+      "base_state_sha256": "76f31357d2fa2a91cd305f8db61ad6e3186eddd2ccdec3a405a01a8877c7e493",
+      "base_validation_retained": 0.90833336,
+      "base_test": 0.89999998,
+      "base_full_state_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+      "arms": [
+        {
+          "arm": "bit_identical_no_update",
+          "epochs_completed": 0,
+          "stop_reason": null,
+          "authority_epoch": 0,
+          "authority_eligible": true,
+          "authority_validation_target": 0.82499999,
+          "authority_validation_retained": 0.90833336,
+          "final_epoch": 0,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "76f31357d2fa2a91cd305f8db61ad6e3186eddd2ccdec3a405a01a8877c7e493",
+          "final_state_sha256": "76f31357d2fa2a91cd305f8db61ad6e3186eddd2ccdec3a405a01a8877c7e493",
+          "authority_metrics": {
+            "target_test_utility": 0.82499999,
+            "retained_test_utility": 0.92500001,
+            "worst_family_test_utility": 0.82499999,
+            "changed_test_decisions": 0,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.34469411,
+            "probe_changes": 0,
+            "test_prediction_sha256": "f0cccaaf632704714162d66c6bc2273df268db23644f45808bd84de480907621"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.82499999,
+            "retained_test_utility": 0.92500001,
+            "worst_family_test_utility": 0.82499999,
+            "changed_test_decisions": 0,
+            "deletion_behavior_changes": 0,
+            "deletion_true_confidence": 0.34469411,
+            "probe_changes": 0,
+            "test_prediction_sha256": "f0cccaaf632704714162d66c6bc2273df268db23644f45808bd84de480907621"
+          },
+          "full_state_before_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_mutated_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_rollback_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 0,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 0,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-4307/bit_identical_no_update"
+        },
+        {
+          "arm": "bounded_update",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 11,
+          "authority_eligible": true,
+          "authority_validation_target": 0.89999998,
+          "authority_validation_retained": 0.92500001,
+          "final_epoch": 12,
+          "best_final_state_disagreement": true,
+          "authority_state_sha256": "a54b7e0e13ca2b829a28271d11bb33f9c879bd0f59125cf70ec4458357525b12",
+          "final_state_sha256": "480907aca8f66c33a8c3f1deb0c152238d356ac0f282b33d487e1bd28f63c0c4",
+          "authority_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 8,
+            "deletion_behavior_changes": 1,
+            "deletion_true_confidence": 0.28281429,
+            "probe_changes": 3,
+            "test_prediction_sha256": "36229973a42fa61d6b615255c5f29e7eac3b1eb1a471dcc491a5e45870b77fd6"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 8,
+            "deletion_behavior_changes": 1,
+            "deletion_true_confidence": 0.27664304,
+            "probe_changes": 3,
+            "test_prediction_sha256": "36229973a42fa61d6b615255c5f29e7eac3b1eb1a471dcc491a5e45870b77fd6"
+          },
+          "full_state_before_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_mutated_sha256": "947ec802e0b3a25ad3bf6051d20db83d8080f6877434d86dcf81420d5fad6832",
+          "full_state_rollback_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 1,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-4307/bounded_update"
+        },
+        {
+          "arm": "ewc_forgetting_mitigation",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 12,
+          "authority_eligible": true,
+          "authority_validation_target": 0.89999998,
+          "authority_validation_retained": 0.92500001,
+          "final_epoch": 12,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "6cad03fee1b622affb24b3d7d10bc25b28b9a8c28e5d11a0aeb166980865e973",
+          "final_state_sha256": "6cad03fee1b622affb24b3d7d10bc25b28b9a8c28e5d11a0aeb166980865e973",
+          "authority_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 8,
+            "deletion_behavior_changes": 1,
+            "deletion_true_confidence": 0.27885884,
+            "probe_changes": 3,
+            "test_prediction_sha256": "36229973a42fa61d6b615255c5f29e7eac3b1eb1a471dcc491a5e45870b77fd6"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.94999999,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 8,
+            "deletion_behavior_changes": 1,
+            "deletion_true_confidence": 0.27885884,
+            "probe_changes": 3,
+            "test_prediction_sha256": "36229973a42fa61d6b615255c5f29e7eac3b1eb1a471dcc491a5e45870b77fd6"
+          },
+          "full_state_before_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_mutated_sha256": "350f3a18113a661444615d144f7131329367e082357d6b3e986578d513a6bed3",
+          "full_state_rollback_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 1,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": false,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-4307/ewc_forgetting_mitigation"
+        },
+        {
+          "arm": "deletion_aware_retrain",
+          "epochs_completed": 12,
+          "stop_reason": null,
+          "authority_epoch": 12,
+          "authority_eligible": true,
+          "authority_validation_target": 0.875,
+          "authority_validation_retained": 0.92500001,
+          "final_epoch": 12,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "64ecb6620ebcf9f9b68a66bb1021bf79421e96c16815294582f023bb426c4106",
+          "final_state_sha256": "64ecb6620ebcf9f9b68a66bb1021bf79421e96c16815294582f023bb426c4106",
+          "authority_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.96666664,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 8,
+            "deletion_behavior_changes": 1,
+            "deletion_true_confidence": 0.27725989,
+            "probe_changes": 4,
+            "test_prediction_sha256": "ef6a405b7aa3c3af1673b5e9bf66d482ef77ce7364357015a3f7b937fb292b58"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.85000002,
+            "retained_test_utility": 0.96666664,
+            "worst_family_test_utility": 0.85000002,
+            "changed_test_decisions": 8,
+            "deletion_behavior_changes": 1,
+            "deletion_true_confidence": 0.27725989,
+            "probe_changes": 4,
+            "test_prediction_sha256": "ef6a405b7aa3c3af1673b5e9bf66d482ef77ce7364357015a3f7b937fb292b58"
+          },
+          "full_state_before_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_mutated_sha256": "80dc02e00cfdbdac44fdedcd9e194ac42baf9554b44c099ef904a906cbf893ac",
+          "full_state_rollback_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 1,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": true,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-4307/deletion_aware_retrain"
+        },
+        {
+          "arm": "authorized_data_retrain_comparator",
+          "epochs_completed": 1,
+          "stop_reason": "retained_validation_regression_exceeded_0.08",
+          "authority_epoch": 1,
+          "authority_eligible": false,
+          "authority_validation_target": 0.42500001,
+          "authority_validation_retained": 0.56666666,
+          "final_epoch": 1,
+          "best_final_state_disagreement": false,
+          "authority_state_sha256": "2d21a247f2bf091ce6a104106794aa3a3349697cf156cdb8bf7190c6e6b04438",
+          "final_state_sha256": "2d21a247f2bf091ce6a104106794aa3a3349697cf156cdb8bf7190c6e6b04438",
+          "authority_metrics": {
+            "target_test_utility": 0.34999999,
+            "retained_test_utility": 0.52499998,
+            "worst_family_test_utility": 0.34999999,
+            "changed_test_decisions": 79,
+            "deletion_behavior_changes": 37,
+            "deletion_true_confidence": 0.50798929,
+            "probe_changes": 38,
+            "test_prediction_sha256": "fe326c880702dd89767b4d0e1e7d53302d45c5cccde709b5bf2e6ffec38f8465"
+          },
+          "final_metrics": {
+            "target_test_utility": 0.34999999,
+            "retained_test_utility": 0.52499998,
+            "worst_family_test_utility": 0.34999999,
+            "changed_test_decisions": 79,
+            "deletion_behavior_changes": 37,
+            "deletion_true_confidence": 0.50798929,
+            "probe_changes": 38,
+            "test_prediction_sha256": "fe326c880702dd89767b4d0e1e7d53302d45c5cccde709b5bf2e6ffec38f8465"
+          },
+          "full_state_before_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_mutated_sha256": "dcfd4d9c23bf64af088f90ff044ca608362a7c6793b78b4c367aa7dc92792b02",
+          "full_state_rollback_sha256": "c97d6b6cc7b47a11c03819e9e2a81033fb319d4c94f3f2dc7a4aaae47b754b78",
+          "full_state_rollback_exact": true,
+          "state_surface_count": 24,
+          "lineage_descendants_invalidated": 3,
+          "unlearning_claims": {
+            "behavioral_cohort_change": 37,
+            "influence_reduction": "not_established_true-confidence-proxy_only",
+            "lineage_propagation": true,
+            "storage_erasure": false,
+            "storage_boundary": "immutable public-safe source corpus retained; no legal/privacy erasure claim"
+          },
+          "preserved_mutated_state": "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state/seed-4307/authorized_data_retrain_comparator"
+        }
+      ]
+    }
+  ],
+  "wall_seconds": 2.80643,
+  "support_state_effect": "none_pending_disposition",
+  "non_claims": [
+    "The synthetic policy network does not establish language-model unlearning.",
+    "Behavioral change does not establish influence reduction or storage erasure.",
+    "Exact rollback is bounded to the 24 declared local disposable surfaces.",
+    "Internal process separation is not external independence."
+  ],
+  "bundle_sha256": "80aca8394e965e13cc7ca459167835072613b50d31821abc12147289b6ea3206"
+}

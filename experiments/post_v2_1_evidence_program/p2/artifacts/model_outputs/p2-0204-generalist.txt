@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two conflicting sources. The request mentions Snapshot 3 has state=0 and a later unsigned note says state=4. They want the authoritative state only if the authority is known. But the problem is there are two plausible authorities that conflict, and the request doesn't specify which one takes precedence.
+
+First, I need to understand what "authoritative" means here. Typically, that would mean the source that's officially recognized or has the highest credibility. However, the user says the request doesn't identify which authority controls the conflict. So, there's no clear way to determine which one is the correct authority. 
+
+The user also mentioned to use "abstain" when the required evidence is unavailable.

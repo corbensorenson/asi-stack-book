@@ -149,14 +149,19 @@ or external peer review.
 
 | Priority | State | Residuals owned | Completion authority |
 |---|---|---:|---|
-| P0 — Public truth reconciliation | pending | public identity and roadmap drift | truth-surface audit plus deployed attestation |
-| P1 — Governed usefulness and effect-complete rollback | pending | 3 | accepted program disposition |
-| P2 — Ambiguous routing and real-model deliberation | pending | 4 | two independent accepted dispositions |
-| P3 — Full-state update and unlearning causality | pending | 4 | claim-bounded accepted dispositions |
+| P0 — Public truth reconciliation | completed | public identity and roadmap drift | truth-surface audit plus deployed attestation |
+| P1 — Governed usefulness and effect-complete rollback | completed | 3 | accepted `narrow` program disposition |
+| P2 — Ambiguous routing and real-model deliberation | completed | 4 | routing `narrow`; deliberation `no_change` |
+| P3 — Full-state update and unlearning causality | completed | 4 | update `no_change`; rollback and unlearning `narrow` |
 
 P0 is a release-hygiene gate, not an empirical program. P1–P3 are the only
 active empirical programs. A program state changes only through a dated record
 that names its artifacts, result, residuals, and disposition.
+
+The 2026-07-11 outcome checkpoint is recorded in
+`docs/post_v2_1_empirical_results.md`, the content-addressed outcome ledger,
+six accepted claim-bounded transitions, and fourteen chapter-core `no_change`
+decisions. M4 book reconciliation and M5 release remain active.
 
 ### Machine-readable state
 

@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two different notes: one says state=24 and another says state=7. They mention that authority and temporal-policy interpretation are more important than arithmetic.
+
+First, I need to understand what "authoritative state" means here. The user says to return it only if authority is known. So, if there's a clear authority, like a document or a source that's considered official, then that's the answer. But if there's a conflict, maybe the later note is more recent, but the user says the later note is unsigned. So, the problem is that the later note is unsigned, which might not be considered authoritative. 
+
+The user also mentions that the temporal-policy interpretation dominates. So

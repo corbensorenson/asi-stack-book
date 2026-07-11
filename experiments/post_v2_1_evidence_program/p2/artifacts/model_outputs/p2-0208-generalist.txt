@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this query. The user is asking about resolving the state value between two snapshots. The first snapshot (Snapshot 2) says state=28, and a later unsigned note says state=17. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to understand what "authoritative" means here. Since the preferred specialist isn't available, maybe the next step is to check if there's any other source or if the unsigned note has any context. But the problem states that the unsigned note is from a later time, so maybe that's a conflicting update. However, without knowing the authority of the sources, like if the unsigned note is from a reliable source

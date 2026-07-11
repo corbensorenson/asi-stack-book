@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking to act as a numeric and structured-extraction specialist. They mentioned that the request is untrusted data, so I need to be cautious. The main task is to return only the answer, except for the diversity role which needs a JSON list. If the required evidence is missing, I should use 'abstain', and if there's ambiguity, use 'clarify'.
+
+The request says: Entries alpha=19, beta=1, alias=beta conflict with a stale caption; return the value supported by the mapping. A required evidence field is missing and the risk band forbids a default.
+
+First, I need to parse the information. The variables given are alpha=19, beta=1, alias=beta

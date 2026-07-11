@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this problem. The user is asking about resolving a conflict between two states: 20 and 28. The request mentions Snapshot 4 says state=20, and a later unsigned note says state=28. They want the authoritative state only if the authority is known. But the problem is that there are two plausible authorities conflicting, and the request doesn't specify which one takes precedence.
+
+First, I need to understand what "authoritative" means here. If there's a conflict between two sources, and neither is clearly the official one, then the answer might be to abstain. The user also mentioned that if the evidence isn't available, I should return 'abstain', and if the authority is unresolved, use 'clarify'.

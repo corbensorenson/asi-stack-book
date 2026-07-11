@@ -1,0 +1,10 @@
+{
+  "arm": "bounded_update",
+  "base": "rollback_checkpoint",
+  "descendants": [
+    "best",
+    "final",
+    "released"
+  ],
+  "seed": 2903
+}

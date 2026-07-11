@@ -1,0 +1,6 @@
+<think>
+Okay, let's break this down. The user is asking about the authoritative state based on two entries: Snapshot 4 says state=25, and a later unsigned note also says state=25. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to determine if there's an authoritative source here. The problem states that the preferred specialist is unavailable, so maybe the general route is to use the given data. But the user says to return the authoritative state only if authority is known. Since both entries are from different sources (Snapshot 4 and an unsigned note), I need to check if either of these is considered authoritative.
+
+The term "authoritative" usually means a source that

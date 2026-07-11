@@ -1,0 +1,103 @@
+{
+  "transition_id": "post_v2_1.real_model_deliberation.no_change",
+  "claim_id": "post_v2_1.real_model_deliberation.no_change_result",
+  "claim_surface_refs": [
+    "docs/post_v2_1_empirical_results.md",
+    "chapters/governed-deliberation-and-test-time-scaling.qmd",
+    "chapters/verification-bandwidth-and-context-adequacy.qmd",
+    "docs/post_v2_1_residual_and_transfer_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+    "scripts/validate_post_v2_1_outcomes.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "All five deliberation arms ended at 0/60 correct; adaptive stopping exhausted five candidates on every request, so utility did not improve and corruption reduction was not estimable on an initially-correct case.",
+  "evidence_roles": [
+    "bounded_local_experiment",
+    "content_addressed_raw_results",
+    "negative_result_archive",
+    "exact_replay_validator",
+    "no_core_promotion_boundary"
+  ],
+  "transition_reason": "All five deliberation arms ended at 0/60 correct; adaptive stopping exhausted five candidates on every request, so utility did not improve and corruption reduction was not estimable on an initially-correct case.",
+  "required_artifacts": [
+    "a workload with correct and incorrect initial candidates",
+    "adaptive benefit at a matched real budget",
+    "replicated corruption reduction",
+    "independently assessed evaluator and production transfer"
+  ],
+  "artifact_refs": [
+    "docs/post_v2_1_empirical_results.md",
+    "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+    "scripts/validate_post_v2_1_outcomes.py"
+  ],
+  "evidence_packet_refs": [
+    "chapters/governed-deliberation-and-test-time-scaling.qmd",
+    "chapters/verification-bandwidth-and-context-adequacy.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_before_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_after_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "exact local replay added",
+    "adversarial_strength": "registered controls retained",
+    "validity": "internally assessed only",
+    "transfer_distance": "not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#governed-deliberation-and-test-time-scaling.core",
+    "appendices/C_claim_evidence_matrix.qmd#verification-bandwidth-and-context-adequacy.core"
+  ],
+  "verification_command": "python3 scripts/validate_post_v2_1_outcomes.py && python3 scripts/validate_post_v2_1_empirical_reconciliation.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "no deliberation arm produced one correct final answer",
+    "adaptive stopping never stopped before budget exhaustion",
+    "the fifteen historical harms remain regression logic rather than new held-out evidence"
+  ],
+  "negative_evidence_refs": [
+    "docs/post_v2_1_empirical_results.md",
+    "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json"
+  ],
+  "downgrade_triggers": [
+    "raw bundle or artifact replay failure",
+    "negative outcome erasure",
+    "scope or transfer laundering",
+    "core support promotion without a distinct accepted upward transition"
+  ],
+  "promotion_burden": "a workload with correct and incorrect initial candidates; adaptive benefit at a matched real budget; replicated corruption reduction; independently assessed evaluator and production transfer",
+  "limitations": [
+    "single small model",
+    "zero initially-correct held-out candidates",
+    "internal evaluator",
+    "no production latency or transfer"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2.1 empirical cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "a workload with correct and incorrect initial candidates",
+    "adaptive benefit at a matched real budget",
+    "replicated corruption reduction",
+    "independently assessed evaluator and production transfer"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-11---post-v2-1-empirical-reconciliation",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any affected chapter-core claim above argument",
+    "does not establish population validity, production transfer, external independence, open-world safety, or ASI capability",
+    "does not promote governed-deliberation-and-test-time-scaling.core",
+    "does not promote verification-bandwidth-and-context-adequacy.core"
+  ]
+}

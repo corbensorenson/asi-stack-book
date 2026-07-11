@@ -1,0 +1,6 @@
+<think>
+Okay, let's break down the user's request. They mention Snapshot 3 with state=5 and a later unsigned note with state=1. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to determine if there's an authority that can resolve this conflict. The user says to return the authoritative state only if the authority is known. Since the preferred specialist is unavailable, maybe a general rule applies. But the problem is, without knowing who the authority is, I can't confirm which state is correct. 
+
+The user is asking for the authoritative state, but there's no clear authority mentioned here. The two states (5 and 1) are from different sources (Snapshot 3

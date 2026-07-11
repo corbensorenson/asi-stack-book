@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking whether a patch that changes limit 8 to 11 requires checking arithmetic, policy, or both. The note says that authority and temporal-policy interpretation dominate the arithmetic surface.
+
+First, I need to understand the terms here. "Arithmetic" likely refers to numerical checks, like ensuring the change from 8 to 11 is a valid increment. "Policy" would involve checking if the change aligns with established rules or guidelines. The user mentions that authority and temporal-policy interpretation are dominant over arithmetic, so maybe the policy aspects are more critical here.
+
+But wait, the patch is changing a limit. If the limit is a numerical value, then arithmetic checks would involve verifying that the change is correct. However, the user

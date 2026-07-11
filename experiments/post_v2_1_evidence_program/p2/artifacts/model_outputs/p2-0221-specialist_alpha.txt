@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this query. The user wants the sum of 3 and 5 from a damaged note. But there's a catch: the required evidence is missing, and the risk band doesn't allow a default. So first, I need to check if both numbers are confirmed integers.
+
+The request says "record 3 and 5 appear in a damaged note." But the note is damaged, so maybe the numbers aren't clear. However, the user is asking to return their sum only if both are confirmed integers. The problem here is that the evidence (the damaged note) is missing. The user mentioned that a required evidence field is missing, so I can't assume the numbers are correct. Also, the risk band forbids using a default, meaning I can't

@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two conflicting entries: Snapshot 1 says state=3, and a later unsigned note says state=27. The instruction is to return the authoritative state only if the authority is known. But here, there are two plausible authorities that conflict, and the request doesn't specify which one takes precedence.
+
+First, I need to check if there's any information provided that indicates which authority is more credible. The problem states that the note is unsigned, which might mean it's not from a verified source. However, the original snapshot is referred to as "Snapshot 1," which might be a system-generated record. But without additional context, I can't determine which one is more authoritative.
+
+The user's instruction

@@ -1,0 +1,123 @@
+{
+  "transition_id": "post_v2_1.governed_usefulness_rollback.narrow",
+  "claim_id": "post_v2_1.governed_usefulness_rollback.bounded_result",
+  "claim_surface_refs": [
+    "docs/post_v2_1_empirical_results.md",
+    "chapters/intent-to-execution-contracts.qmd",
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "chapters/capability-replacement-and-rollback.qmd",
+    "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+    "chapters/security-kernel-and-digital-scifs.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "docs/post_v2_1_residual_and_transfer_roadmap.md"
+  ],
+  "claim_record_refs": [
+    "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+    "scripts/validate_post_v2_1_outcomes.py"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds.",
+  "evidence_roles": [
+    "bounded_local_experiment",
+    "content_addressed_raw_results",
+    "negative_result_archive",
+    "exact_replay_validator",
+    "no_core_promotion_boundary"
+  ],
+  "transition_reason": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds.",
+  "required_artifacts": [
+    "useful governed throughput at the registered frontier",
+    "effect-complete rollback beyond the local inventory",
+    "independently assessed verifier quality",
+    "production transfer and governance-cost evidence"
+  ],
+  "artifact_refs": [
+    "docs/post_v2_1_empirical_results.md",
+    "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+    "scripts/validate_post_v2_1_outcomes.py"
+  ],
+  "evidence_packet_refs": [
+    "chapters/intent-to-execution-contracts.qmd",
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+    "chapters/capability-replacement-and-rollback.qmd",
+    "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+    "chapters/security-kernel-and-digital-scifs.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "appendices/C_claim_evidence_matrix.qmd",
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_before_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_after_refs": [
+    "evidence_quality/core_claim_vectors.json"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "exact local replay added",
+    "adversarial_strength": "registered controls retained",
+    "validity": "internally assessed only",
+    "transfer_distance": "not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#intent-to-execution-contracts.core",
+    "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core",
+    "appendices/C_claim_evidence_matrix.qmd#artifact-graphs-audit-logs-and-replay.core",
+    "appendices/C_claim_evidence_matrix.qmd#capability-replacement-and-rollback.core",
+    "appendices/C_claim_evidence_matrix.qmd#readiness-gates-residual-escrow-and-quarantine.core",
+    "appendices/C_claim_evidence_matrix.qmd#security-kernel-and-digital-scifs.core",
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core"
+  ],
+  "verification_command": "python3 scripts/validate_post_v2_1_outcomes.py && python3 scripts/validate_post_v2_1_empirical_reconciliation.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "only two of 36 held-out candidates were correct",
+    "governed useful-release rate was 0.0556",
+    "four of 36 attack-control rollbacks remained inexact"
+  ],
+  "negative_evidence_refs": [
+    "docs/post_v2_1_empirical_results.md",
+    "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json"
+  ],
+  "downgrade_triggers": [
+    "raw bundle or artifact replay failure",
+    "negative outcome erasure",
+    "scope or transfer laundering",
+    "core support promotion without a distinct accepted upward transition"
+  ],
+  "promotion_burden": "useful governed throughput at the registered frontier; effect-complete rollback beyond the local inventory; independently assessed verifier quality; production transfer and governance-cost evidence",
+  "limitations": [
+    "finite synthetic public-safe repository-task corpus",
+    "one locally hosted four-bit model",
+    "internal observer implementation",
+    "no external effects or production service"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2.1 empirical cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "useful governed throughput at the registered frontier",
+    "effect-complete rollback beyond the local inventory",
+    "independently assessed verifier quality",
+    "production transfer and governance-cost evidence"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-11---post-v2-1-empirical-reconciliation",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any affected chapter-core claim above argument",
+    "does not establish population validity, production transfer, external independence, open-world safety, or ASI capability",
+    "does not promote intent-to-execution-contracts.core",
+    "does not promote runtime-adapters-tool-permissions-and-human-approval.core",
+    "does not promote artifact-graphs-audit-logs-and-replay.core",
+    "does not promote capability-replacement-and-rollback.core",
+    "does not promote readiness-gates-residual-escrow-and-quarantine.core",
+    "does not promote security-kernel-and-digital-scifs.core",
+    "does not promote resource-economics-and-token-budgets.core"
+  ]
+}

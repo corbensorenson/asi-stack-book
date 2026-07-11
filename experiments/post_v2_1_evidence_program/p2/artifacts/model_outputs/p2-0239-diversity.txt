@@ -1,0 +1,4 @@
+<think>
+Okay, let's try to figure out this query. The user is asking for three independently checked candidate answers as a JSON list of strings. They mentioned that the entries alpha=13, beta=17, alias=beta conflict with a stale caption, and they need the value supported by the mapping. Also, there's a required evidence field missing, and the risk band forbids a default.
+
+First, I need to understand what's going on here. The terms "alpha", "beta", and "alias" are probably keys in a mapping, and the values are 13, 17, and beta. The problem is that there's a conflict with a stale caption, which might mean that the current mapping is outdated or conflicting with some other data. The user

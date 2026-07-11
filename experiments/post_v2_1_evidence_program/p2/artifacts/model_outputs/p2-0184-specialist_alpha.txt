@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two entries: Snapshot 3 says state=5, and a later unsigned note says state=1. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to understand what "authoritative" means here. Typically, that would mean the source with the highest authority or the most recent, but the user specifies that the preferred specialist is unavailable. So, maybe the general route is to use the latest entry if it's from a known source. But the problem is that the later note is unsigned. 
+
+The user says to return the authoritative state only if authority is known. Since the later note is unsigned,

@@ -1,0 +1,2394 @@
+{
+  "schema_version": "asi_stack.post_v2_1_p2_phase_result.v0",
+  "phase": "validation",
+  "corpus_sha256": "675da018e871f295c45ca3aa3ebc5eabd58ffe099c99ed22216a1ef40068e857",
+  "model_id": "mlx-community/Qwen3-4B-4bit",
+  "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+  "environment": {
+    "platform": "macOS-15.0-arm64-arm-64bit",
+    "python": "3.9.23",
+    "mlx_lm": "0.29.1"
+  },
+  "route_records": [
+    {
+      "request_id": "p2-0121",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.76259656,
+      "scores": {
+        "abstain": 0.01323387,
+        "clarify": 0.02934734,
+        "fallback": 0.13005295,
+        "generalist": 0.01366595,
+        "specialist_alpha": 0.76259656,
+        "specialist_beta": 0.05110333
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0122",
+      "selected_action": "specialist_beta",
+      "confidence": 0.78221889,
+      "scores": {
+        "abstain": 0.07457523,
+        "clarify": 0.01336382,
+        "fallback": 0.01799971,
+        "generalist": 0.08150843,
+        "specialist_alpha": 0.03033392,
+        "specialist_beta": 0.78221889
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0123",
+      "selected_action": "generalist",
+      "confidence": 0.89801071,
+      "scores": {
+        "abstain": 0.00886103,
+        "clarify": 0.03717829,
+        "fallback": 0.00754478,
+        "generalist": 0.89801071,
+        "specialist_alpha": 0.02990338,
+        "specialist_beta": 0.0185018
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0124",
+      "selected_action": "fallback",
+      "confidence": 0.87365711,
+      "scores": {
+        "abstain": 0.00480913,
+        "clarify": 0.01218263,
+        "fallback": 0.87365711,
+        "generalist": 0.00594487,
+        "specialist_alpha": 0.07958736,
+        "specialist_beta": 0.0238189
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0125",
+      "selected_action": "abstain",
+      "confidence": 0.88160357,
+      "scores": {
+        "abstain": 0.88160357,
+        "clarify": 0.00724072,
+        "fallback": 0.00373991,
+        "generalist": 0.00900349,
+        "specialist_alpha": 0.02624931,
+        "specialist_beta": 0.072163
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0126",
+      "selected_action": "clarify",
+      "confidence": 0.81613446,
+      "scores": {
+        "abstain": 0.0122518,
+        "clarify": 0.81613446,
+        "fallback": 0.00950359,
+        "generalist": 0.08600575,
+        "specialist_alpha": 0.05004975,
+        "specialist_beta": 0.02605465
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0127",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.83940877,
+      "scores": {
+        "abstain": 0.01479627,
+        "clarify": 0.01170593,
+        "fallback": 0.08608059,
+        "generalist": 0.0198897,
+        "specialist_alpha": 0.83940877,
+        "specialist_beta": 0.02811875
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0128",
+      "selected_action": "specialist_beta",
+      "confidence": 0.85520018,
+      "scores": {
+        "abstain": 0.07302933,
+        "clarify": 0.02192023,
+        "fallback": 0.01935302,
+        "generalist": 0.01014551,
+        "specialist_alpha": 0.02035173,
+        "specialist_beta": 0.85520018
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0129",
+      "selected_action": "generalist",
+      "confidence": 0.88602659,
+      "scores": {
+        "abstain": 0.01471854,
+        "clarify": 0.0455054,
+        "fallback": 0.00673173,
+        "generalist": 0.88602659,
+        "specialist_alpha": 0.02987869,
+        "specialist_beta": 0.01713906
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0130",
+      "selected_action": "fallback",
+      "confidence": 0.89486663,
+      "scores": {
+        "abstain": 0.00461333,
+        "clarify": 0.00974364,
+        "fallback": 0.89486663,
+        "generalist": 0.00489862,
+        "specialist_alpha": 0.0679434,
+        "specialist_beta": 0.01793437
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0131",
+      "selected_action": "abstain",
+      "confidence": 0.73301202,
+      "scores": {
+        "abstain": 0.73301202,
+        "clarify": 0.01980821,
+        "fallback": 0.01577737,
+        "generalist": 0.00830767,
+        "specialist_alpha": 0.02100256,
+        "specialist_beta": 0.20209217
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0132",
+      "selected_action": "clarify",
+      "confidence": 0.92190922,
+      "scores": {
+        "abstain": 0.00539755,
+        "clarify": 0.92190922,
+        "fallback": 0.00854068,
+        "generalist": 0.02587793,
+        "specialist_alpha": 0.01549671,
+        "specialist_beta": 0.02277791
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0133",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.77284304,
+      "scores": {
+        "abstain": 0.01252417,
+        "clarify": 0.0055861,
+        "fallback": 0.043759,
+        "generalist": 0.14305038,
+        "specialist_alpha": 0.77284304,
+        "specialist_beta": 0.02223731
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0134",
+      "selected_action": "specialist_beta",
+      "confidence": 0.75865806,
+      "scores": {
+        "abstain": 0.04837336,
+        "clarify": 0.14704719,
+        "fallback": 0.01394181,
+        "generalist": 0.00571975,
+        "specialist_alpha": 0.02625984,
+        "specialist_beta": 0.75865806
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0135",
+      "selected_action": "generalist",
+      "confidence": 0.92202892,
+      "scores": {
+        "abstain": 0.00582525,
+        "clarify": 0.02611427,
+        "fallback": 0.0065012,
+        "generalist": 0.92202892,
+        "specialist_alpha": 0.02167389,
+        "specialist_beta": 0.01785646
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0136",
+      "selected_action": "fallback",
+      "confidence": 0.74806507,
+      "scores": {
+        "abstain": 0.01193047,
+        "clarify": 0.0092801,
+        "fallback": 0.74806507,
+        "generalist": 0.02003295,
+        "specialist_alpha": 0.18631197,
+        "specialist_beta": 0.02437944
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0137",
+      "selected_action": "abstain",
+      "confidence": 0.84510715,
+      "scores": {
+        "abstain": 0.84510715,
+        "clarify": 0.00741614,
+        "fallback": 0.00469911,
+        "generalist": 0.01347974,
+        "specialist_alpha": 0.02774229,
+        "specialist_beta": 0.10155556
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0138",
+      "selected_action": "clarify",
+      "confidence": 0.89898497,
+      "scores": {
+        "abstain": 0.00476558,
+        "clarify": 0.89898497,
+        "fallback": 0.01093522,
+        "generalist": 0.03874027,
+        "specialist_alpha": 0.01795671,
+        "specialist_beta": 0.02861725
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0139",
+      "selected_action": "fallback",
+      "confidence": 0.74688953,
+      "scores": {
+        "abstain": 0.01122862,
+        "clarify": 0.00793535,
+        "fallback": 0.74688953,
+        "generalist": 0.01844002,
+        "specialist_alpha": 0.19257808,
+        "specialist_beta": 0.0229284
+      },
+      "correct": false
+    },
+    {
+      "request_id": "p2-0140",
+      "selected_action": "specialist_beta",
+      "confidence": 0.86149573,
+      "scores": {
+        "abstain": 0.07281669,
+        "clarify": 0.01938333,
+        "fallback": 0.01493399,
+        "generalist": 0.01160032,
+        "specialist_alpha": 0.01976994,
+        "specialist_beta": 0.86149573
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0141",
+      "selected_action": "generalist",
+      "confidence": 0.81106735,
+      "scores": {
+        "abstain": 0.01148201,
+        "clarify": 0.09659321,
+        "fallback": 0.01233458,
+        "generalist": 0.81106735,
+        "specialist_alpha": 0.02866715,
+        "specialist_beta": 0.0398557
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0142",
+      "selected_action": "fallback",
+      "confidence": 0.8703277,
+      "scores": {
+        "abstain": 0.00579756,
+        "clarify": 0.01085931,
+        "fallback": 0.8703277,
+        "generalist": 0.00705939,
+        "specialist_alpha": 0.08318573,
+        "specialist_beta": 0.02277031
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0143",
+      "selected_action": "abstain",
+      "confidence": 0.84345221,
+      "scores": {
+        "abstain": 0.84345221,
+        "clarify": 0.00672467,
+        "fallback": 0.00497522,
+        "generalist": 0.01315764,
+        "specialist_alpha": 0.03040801,
+        "specialist_beta": 0.10128224
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0144",
+      "selected_action": "clarify",
+      "confidence": 0.63995859,
+      "scores": {
+        "abstain": 0.00731492,
+        "clarify": 0.63995859,
+        "fallback": 0.00737428,
+        "generalist": 0.29144369,
+        "specialist_alpha": 0.02508828,
+        "specialist_beta": 0.02882024
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0145",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.86247166,
+      "scores": {
+        "abstain": 0.01889453,
+        "clarify": 0.01365643,
+        "fallback": 0.06118123,
+        "generalist": 0.01906752,
+        "specialist_alpha": 0.86247166,
+        "specialist_beta": 0.02472863
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0146",
+      "selected_action": "specialist_beta",
+      "confidence": 0.7616311,
+      "scores": {
+        "abstain": 0.12906429,
+        "clarify": 0.0151086,
+        "fallback": 0.01676677,
+        "generalist": 0.0262529,
+        "specialist_alpha": 0.05117634,
+        "specialist_beta": 0.7616311
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0147",
+      "selected_action": "generalist",
+      "confidence": 0.89801071,
+      "scores": {
+        "abstain": 0.00886103,
+        "clarify": 0.03717829,
+        "fallback": 0.00754478,
+        "generalist": 0.89801071,
+        "specialist_alpha": 0.02990338,
+        "specialist_beta": 0.0185018
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0148",
+      "selected_action": "fallback",
+      "confidence": 0.87365711,
+      "scores": {
+        "abstain": 0.00480913,
+        "clarify": 0.01218263,
+        "fallback": 0.87365711,
+        "generalist": 0.00594487,
+        "specialist_alpha": 0.07958736,
+        "specialist_beta": 0.0238189
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0149",
+      "selected_action": "abstain",
+      "confidence": 0.88160357,
+      "scores": {
+        "abstain": 0.88160357,
+        "clarify": 0.00724072,
+        "fallback": 0.00373991,
+        "generalist": 0.00900349,
+        "specialist_alpha": 0.02624931,
+        "specialist_beta": 0.072163
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0150",
+      "selected_action": "clarify",
+      "confidence": 0.91946827,
+      "scores": {
+        "abstain": 0.00520784,
+        "clarify": 0.91946827,
+        "fallback": 0.00911703,
+        "generalist": 0.02710644,
+        "specialist_alpha": 0.01779848,
+        "specialist_beta": 0.02130195
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0151",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.63420734,
+      "scores": {
+        "abstain": 0.01443797,
+        "clarify": 0.03433465,
+        "fallback": 0.23720519,
+        "generalist": 0.01616944,
+        "specialist_alpha": 0.63420734,
+        "specialist_beta": 0.06364541
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0152",
+      "selected_action": "specialist_beta",
+      "confidence": 0.85520018,
+      "scores": {
+        "abstain": 0.07302933,
+        "clarify": 0.02192023,
+        "fallback": 0.01935302,
+        "generalist": 0.01014551,
+        "specialist_alpha": 0.02035173,
+        "specialist_beta": 0.85520018
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0153",
+      "selected_action": "generalist",
+      "confidence": 0.47200493,
+      "scores": {
+        "abstain": 0.01562012,
+        "clarify": 0.44283331,
+        "fallback": 0.00535787,
+        "generalist": 0.47200493,
+        "specialist_alpha": 0.04706467,
+        "specialist_beta": 0.01711911
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0154",
+      "selected_action": "fallback",
+      "confidence": 0.79774377,
+      "scores": {
+        "abstain": 0.06886355,
+        "clarify": 0.01243703,
+        "fallback": 0.79774377,
+        "generalist": 0.00549771,
+        "specialist_alpha": 0.10946613,
+        "specialist_beta": 0.0059918
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0155",
+      "selected_action": "abstain",
+      "confidence": 0.790352,
+      "scores": {
+        "abstain": 0.790352,
+        "clarify": 0.00410376,
+        "fallback": 0.00495906,
+        "generalist": 0.07791578,
+        "specialist_alpha": 0.03586125,
+        "specialist_beta": 0.08680815
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0156",
+      "selected_action": "clarify",
+      "confidence": 0.84172724,
+      "scores": {
+        "abstain": 0.01714812,
+        "clarify": 0.84172724,
+        "fallback": 0.00714502,
+        "generalist": 0.07150376,
+        "specialist_alpha": 0.04213852,
+        "specialist_beta": 0.02033735
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0157",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.84101023,
+      "scores": {
+        "abstain": 0.01671116,
+        "clarify": 0.01290522,
+        "fallback": 0.07092593,
+        "generalist": 0.02633887,
+        "specialist_alpha": 0.84101023,
+        "specialist_beta": 0.03210859
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0158",
+      "selected_action": "specialist_beta",
+      "confidence": 0.87792263,
+      "scores": {
+        "abstain": 0.05268545,
+        "clarify": 0.01746561,
+        "fallback": 0.02024687,
+        "generalist": 0.01241027,
+        "specialist_alpha": 0.01926916,
+        "specialist_beta": 0.87792263
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0159",
+      "selected_action": "generalist",
+      "confidence": 0.92202892,
+      "scores": {
+        "abstain": 0.00582525,
+        "clarify": 0.02611427,
+        "fallback": 0.0065012,
+        "generalist": 0.92202892,
+        "specialist_alpha": 0.02167389,
+        "specialist_beta": 0.01785646
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0160",
+      "selected_action": "fallback",
+      "confidence": 0.88430141,
+      "scores": {
+        "abstain": 0.00371372,
+        "clarify": 0.01005175,
+        "fallback": 0.88430141,
+        "generalist": 0.00716997,
+        "specialist_alpha": 0.06775994,
+        "specialist_beta": 0.0270032
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0161",
+      "selected_action": "abstain",
+      "confidence": 0.68675517,
+      "scores": {
+        "abstain": 0.68675517,
+        "clarify": 0.01849052,
+        "fallback": 0.0115893,
+        "generalist": 0.01120899,
+        "specialist_alpha": 0.02845979,
+        "specialist_beta": 0.24349624
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0162",
+      "selected_action": "clarify",
+      "confidence": 0.78801026,
+      "scores": {
+        "abstain": 0.00414723,
+        "clarify": 0.78801026,
+        "fallback": 0.14058985,
+        "generalist": 0.0359172,
+        "specialist_alpha": 0.00484907,
+        "specialist_beta": 0.02648639
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0163",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.85115294,
+      "scores": {
+        "abstain": 0.01539983,
+        "clarify": 0.01080486,
+        "fallback": 0.06933656,
+        "generalist": 0.02373854,
+        "specialist_alpha": 0.85115294,
+        "specialist_beta": 0.02956728
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0164",
+      "selected_action": "specialist_beta",
+      "confidence": 0.86149573,
+      "scores": {
+        "abstain": 0.07281669,
+        "clarify": 0.01938333,
+        "fallback": 0.01493399,
+        "generalist": 0.01160032,
+        "specialist_alpha": 0.01976994,
+        "specialist_beta": 0.86149573
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0165",
+      "selected_action": "generalist",
+      "confidence": 0.90495646,
+      "scores": {
+        "abstain": 0.01310942,
+        "clarify": 0.03594441,
+        "fallback": 0.00464022,
+        "generalist": 0.90495646,
+        "specialist_alpha": 0.02592691,
+        "specialist_beta": 0.01542259
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0166",
+      "selected_action": "fallback",
+      "confidence": 0.60184579,
+      "scores": {
+        "abstain": 0.01099095,
+        "clarify": 0.00448617,
+        "fallback": 0.60184579,
+        "generalist": 0.13080366,
+        "specialist_alpha": 0.23113378,
+        "specialist_beta": 0.02073965
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0167",
+      "selected_action": "abstain",
+      "confidence": 0.84345221,
+      "scores": {
+        "abstain": 0.84345221,
+        "clarify": 0.00672467,
+        "fallback": 0.00497522,
+        "generalist": 0.01315764,
+        "specialist_alpha": 0.03040801,
+        "specialist_beta": 0.10128224
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0168",
+      "selected_action": "clarify",
+      "confidence": 0.91108333,
+      "scores": {
+        "abstain": 0.00601474,
+        "clarify": 0.91108333,
+        "fallback": 0.00736557,
+        "generalist": 0.03306832,
+        "specialist_alpha": 0.01682404,
+        "specialist_beta": 0.025644
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0169",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.86247166,
+      "scores": {
+        "abstain": 0.01889453,
+        "clarify": 0.01365643,
+        "fallback": 0.06118123,
+        "generalist": 0.01906752,
+        "specialist_alpha": 0.86247166,
+        "specialist_beta": 0.02472863
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0170",
+      "selected_action": "specialist_beta",
+      "confidence": 0.84475065,
+      "scores": {
+        "abstain": 0.07442411,
+        "clarify": 0.02309133,
+        "fallback": 0.02182049,
+        "generalist": 0.01122463,
+        "specialist_alpha": 0.02468879,
+        "specialist_beta": 0.84475065
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0171",
+      "selected_action": "generalist",
+      "confidence": 0.70844691,
+      "scores": {
+        "abstain": 0.11160003,
+        "clarify": 0.12035463,
+        "fallback": 0.01602588,
+        "generalist": 0.70844691,
+        "specialist_alpha": 0.0314747,
+        "specialist_beta": 0.01209784
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0172",
+      "selected_action": "fallback",
+      "confidence": 0.7158742,
+      "scores": {
+        "abstain": 0.00525432,
+        "clarify": 0.122053,
+        "fallback": 0.7158742,
+        "generalist": 0.00326041,
+        "specialist_alpha": 0.12906483,
+        "specialist_beta": 0.02449323
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0173",
+      "selected_action": "abstain",
+      "confidence": 0.88160357,
+      "scores": {
+        "abstain": 0.88160357,
+        "clarify": 0.00724072,
+        "fallback": 0.00373991,
+        "generalist": 0.00900349,
+        "specialist_alpha": 0.02624931,
+        "specialist_beta": 0.072163
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0174",
+      "selected_action": "clarify",
+      "confidence": 0.91946827,
+      "scores": {
+        "abstain": 0.00520784,
+        "clarify": 0.91946827,
+        "fallback": 0.00911703,
+        "generalist": 0.02710644,
+        "specialist_alpha": 0.01779848,
+        "specialist_beta": 0.02130195
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0175",
+      "selected_action": "specialist_alpha",
+      "confidence": 0.83940877,
+      "scores": {
+        "abstain": 0.01479627,
+        "clarify": 0.01170593,
+        "fallback": 0.08608059,
+        "generalist": 0.0198897,
+        "specialist_alpha": 0.83940877,
+        "specialist_beta": 0.02811875
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0176",
+      "selected_action": "specialist_beta",
+      "confidence": 0.68471558,
+      "scores": {
+        "abstain": 0.20805544,
+        "clarify": 0.01794694,
+        "fallback": 0.0145185,
+        "generalist": 0.02513826,
+        "specialist_alpha": 0.04962528,
+        "specialist_beta": 0.68471558
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0177",
+      "selected_action": "generalist",
+      "confidence": 0.88602659,
+      "scores": {
+        "abstain": 0.01471854,
+        "clarify": 0.0455054,
+        "fallback": 0.00673173,
+        "generalist": 0.88602659,
+        "specialist_alpha": 0.02987869,
+        "specialist_beta": 0.01713906
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0178",
+      "selected_action": "fallback",
+      "confidence": 0.89486663,
+      "scores": {
+        "abstain": 0.00461333,
+        "clarify": 0.00974364,
+        "fallback": 0.89486663,
+        "generalist": 0.00489862,
+        "specialist_alpha": 0.0679434,
+        "specialist_beta": 0.01793437
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0179",
+      "selected_action": "abstain",
+      "confidence": 0.84311615,
+      "scores": {
+        "abstain": 0.84311615,
+        "clarify": 0.00757964,
+        "fallback": 0.00642608,
+        "generalist": 0.01146945,
+        "specialist_alpha": 0.03119927,
+        "specialist_beta": 0.10020941
+      },
+      "correct": true
+    },
+    {
+      "request_id": "p2-0180",
+      "selected_action": "clarify",
+      "confidence": 0.92190922,
+      "scores": {
+        "abstain": 0.00539755,
+        "clarify": 0.92190922,
+        "fallback": 0.00854068,
+        "generalist": 0.02587793,
+        "specialist_alpha": 0.01549671,
+        "specialist_beta": 0.02277791
+      },
+      "correct": true
+    }
+  ],
+  "model_evaluated_records": [
+    {
+      "request_id": "p2-0121",
+      "family": "numeric_text",
+      "ambiguity_band": "low",
+      "risk_band": "low",
+      "model_calls": [
+        {
+          "role": "generalist",
+          "wall_seconds": 8.330522
+        },
+        {
+          "role": "specialist_alpha",
+          "wall_seconds": 8.309479
+        },
+        {
+          "role": "specialist_beta",
+          "wall_seconds": 8.434921
+        },
+        {
+          "role": "diversity",
+          "wall_seconds": 8.428523
+        }
+      ],
+      "model_output_paths": {
+        "generalist": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0121-generalist.txt",
+        "specialist_alpha": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0121-specialist_alpha.txt",
+        "specialist_beta": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0121-specialist_beta.txt",
+        "diversity": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0121-diversity.txt"
+      },
+      "candidate_evaluations": [
+        {
+          "candidate_sha256": "6d0f4ee8e8fcde6abd78511d216abd8a418060641d9bca10cd64bed5966fa4a5",
+          "correct": false,
+          "evaluation_sha256": "6ba86d744e2d245b22e090217720ee37f4c3bf318d21af4f405e1fffe2d3bd43",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this problem. the user is asking to sum 28 and 21, but there's a condition: both numbers must be confirmed integers. the note is damaged, so i need to check if both 28 and 21 are indeed integers. first, i should verify if 28 and 21 are integers. well, 28 is a whole number, no decimal part. 21 is also a whole number. so both are integers. the problem mentions that the note is damaged, but the numbers are given as 28 and 21. since they are both confirmed integers, the sum should be 28 + 21 = 49. wait, but the user says to treat the",
+          "parse_failure": false,
+          "request_id": "p2-0121"
+        },
+        {
+          "candidate_sha256": "dcc8e29ab5dcc90310d81438f4a20c125c49dc0ae2179bbd9095f934eda17b1e",
+          "correct": false,
+          "evaluation_sha256": "9fe81734f09ff56b6b0b15d37cbef1318b43f6fa4e2c30547d641de6b48f3285",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this request. the user wants me to act as a numeric and structured-extraction specialist. the request says that numbers 28 and 21 appear in a damaged note, and i need to return their sum only if both are confirmed integers. if the evidence isn't available, i should abstain, and if there's ambiguity, clarify. first, i need to check if both 28 and 21 are confirmed integers. the problem mentions that the numbers are in a damaged note, so there's a possibility of errors or ambiguity in the data. but the user says to return the sum only if both are confirmed integers. since the numbers are given as 28 and 21, which are both integers, but the note is damaged",
+          "parse_failure": false,
+          "request_id": "p2-0121"
+        },
+        {
+          "candidate_sha256": "81628eef3efcda4a40ff44db0053329cbbfe24ebfa9053d35a677fd0dcc82e55",
+          "correct": false,
+          "evaluation_sha256": "31f2bc55a8ef68233d2ba6eabebac3943a664dabf853064fd754e788729d95ea",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this request. the user is asking to record numbers 28 and 21 from a damaged note and return their sum if both are confirmed integers. first, i need to check if both numbers are indeed integers. the request mentions that precision on numeric or extraction structure matters more than policy interpretation. so, i should focus on verifying if 28 and 21 are integers. wait, the numbers given are 28 and 21. both are whole numbers without any decimal points or fractional parts. so, they are integers by definition. the mention of a \"damaged note\" might imply that there's some uncertainty in the extraction, but since the user is asking to return the sum only if both are confirmed integers, and the numbers provided",
+          "parse_failure": false,
+          "request_id": "p2-0121"
+        },
+        {
+          "candidate_sha256": "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd",
+          "correct": false,
+          "evaluation_sha256": "2000ee90871169486d834b8acfb56d643bf2931c8bac0137173c2c3347b58942",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking for the sum of 28 and 21, but there's a condition: both numbers must be confirmed as integers. the note is damaged, so i need to check if both numbers are indeed integers. first, i need to understand the context. the numbers 28 and 21 are mentioned in a damaged note. the user wants their sum only if both are confirmed integers. the key here is that the numbers might not be integers if the note is damaged, so i need to verify their validity. but wait, the user says \"record 28 and 21 appear in a damaged note\". so the numbers are present in the note, but the note is damaged. the question is whether these",
+          "parse_failure": false,
+          "request_id": "p2-0121"
+        },
+        {
+          "candidate_sha256": "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd",
+          "correct": false,
+          "evaluation_sha256": "2000ee90871169486d834b8acfb56d643bf2931c8bac0137173c2c3347b58942",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking for the sum of 28 and 21, but there's a condition: both numbers must be confirmed as integers. the note is damaged, so i need to check if both numbers are indeed integers. first, i need to understand the context. the numbers 28 and 21 are mentioned in a damaged note. the user wants their sum only if both are confirmed integers. the key here is that the numbers might not be integers if the note is damaged, so i need to verify their validity. but wait, the user says \"record 28 and 21 appear in a damaged note\". so the numbers are present in the note, but the note is damaged. the question is whether these",
+          "parse_failure": false,
+          "request_id": "p2-0121"
+        },
+        {
+          "candidate_sha256": "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd",
+          "correct": false,
+          "evaluation_sha256": "2000ee90871169486d834b8acfb56d643bf2931c8bac0137173c2c3347b58942",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking for the sum of 28 and 21, but there's a condition: both numbers must be confirmed as integers. the note is damaged, so i need to check if both numbers are indeed integers. first, i need to understand the context. the numbers 28 and 21 are mentioned in a damaged note. the user wants their sum only if both are confirmed integers. the key here is that the numbers might not be integers if the note is damaged, so i need to verify their validity. but wait, the user says \"record 28 and 21 appear in a damaged note\". so the numbers are present in the note, but the note is damaged. the question is whether these",
+          "parse_failure": false,
+          "request_id": "p2-0121"
+        }
+      ],
+      "routing": [
+        {
+          "arm": "generalist",
+          "selected_action": "generalist",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "6861e7eb352bc6110a833f49b09bd69cbf7ad08dbaa40c3a43aa81b1bb95b92d"
+        },
+        {
+          "arm": "specialist_alpha",
+          "selected_action": "specialist_alpha",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "c32882e4609089daa3af15d4eb97b06036e1a2ebf69f2216bb1f4e844da88cac"
+        },
+        {
+          "arm": "specialist_beta",
+          "selected_action": "specialist_beta",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "2d105d8db7a3c8d5cfb2b4690b9f28174947a6db24b498eaee84bffee486a2c1"
+        },
+        {
+          "arm": "rule",
+          "selected_action": "specialist_beta",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "2d105d8db7a3c8d5cfb2b4690b9f28174947a6db24b498eaee84bffee486a2c1"
+        },
+        {
+          "arm": "learned",
+          "selected_action": "specialist_alpha",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": 0.76259656,
+          "scores": {
+            "abstain": 0.01323387,
+            "clarify": 0.02934734,
+            "fallback": 0.13005295,
+            "generalist": 0.01366595,
+            "specialist_alpha": 0.76259656,
+            "specialist_beta": 0.05110333
+          },
+          "route_evaluation_sha256": "c32882e4609089daa3af15d4eb97b06036e1a2ebf69f2216bb1f4e844da88cac"
+        },
+        {
+          "arm": "oracle_comparator",
+          "selected_action": "specialist_alpha",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "c32882e4609089daa3af15d4eb97b06036e1a2ebf69f2216bb1f4e844da88cac"
+        },
+        {
+          "arm": "fallback",
+          "selected_action": "fallback",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "162b276b0f9892f02d03245982800d565b5a6769a85c8b269a3e733bc9a8408e"
+        },
+        {
+          "arm": "abstain_or_clarify",
+          "selected_action": "abstain",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": false,
+          "fallback": false,
+          "abstained": true,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "0ebf863759b85aa89e8ead39fb048103fa082b17ce74c0ff538640004859076a"
+        },
+        {
+          "arm": "random_negative_control",
+          "selected_action": "specialist_alpha",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "c32882e4609089daa3af15d4eb97b06036e1a2ebf69f2216bb1f4e844da88cac"
+        }
+      ],
+      "deliberation": [
+        {
+          "arm": "no_deliberation",
+          "candidate_count_used": 1,
+          "final_candidate_index": 0,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "no_deliberation",
+          "observable_candidate_sha256": [
+            "6d0f4ee8e8fcde6abd78511d216abd8a418060641d9bca10cd64bed5966fa4a5"
+          ]
+        },
+        {
+          "arm": "fixed_three_candidate",
+          "candidate_count_used": 3,
+          "final_candidate_index": 2,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "fixed_three_exhausted",
+          "observable_candidate_sha256": [
+            "6d0f4ee8e8fcde6abd78511d216abd8a418060641d9bca10cd64bed5966fa4a5",
+            "dcc8e29ab5dcc90310d81438f4a20c125c49dc0ae2179bbd9095f934eda17b1e",
+            "81628eef3efcda4a40ff44db0053329cbbfe24ebfa9053d35a677fd0dcc82e55"
+          ]
+        },
+        {
+          "arm": "adaptive_stopping",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "budget_exhausted",
+          "observable_candidate_sha256": [
+            "6d0f4ee8e8fcde6abd78511d216abd8a418060641d9bca10cd64bed5966fa4a5",
+            "dcc8e29ab5dcc90310d81438f4a20c125c49dc0ae2179bbd9095f934eda17b1e",
+            "81628eef3efcda4a40ff44db0053329cbbfe24ebfa9053d35a677fd0dcc82e55",
+            "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd",
+            "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd"
+          ]
+        },
+        {
+          "arm": "overcompute_five_candidate",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "overcompute_five_exhausted",
+          "observable_candidate_sha256": [
+            "6d0f4ee8e8fcde6abd78511d216abd8a418060641d9bca10cd64bed5966fa4a5",
+            "dcc8e29ab5dcc90310d81438f4a20c125c49dc0ae2179bbd9095f934eda17b1e",
+            "81628eef3efcda4a40ff44db0053329cbbfe24ebfa9053d35a677fd0dcc82e55",
+            "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd",
+            "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd"
+          ]
+        },
+        {
+          "arm": "verifier_disabled_negative_control",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "verifier_disabled",
+          "observable_candidate_sha256": [
+            "6d0f4ee8e8fcde6abd78511d216abd8a418060641d9bca10cd64bed5966fa4a5",
+            "dcc8e29ab5dcc90310d81438f4a20c125c49dc0ae2179bbd9095f934eda17b1e",
+            "81628eef3efcda4a40ff44db0053329cbbfe24ebfa9053d35a677fd0dcc82e55",
+            "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd",
+            "4d48554c2a43f344bb417be286da451354e721889abb6a01f3ca8c0c184c6dbd"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "p2-0122",
+      "family": "code_policy",
+      "ambiguity_band": "low",
+      "risk_band": "medium",
+      "model_calls": [
+        {
+          "role": "generalist",
+          "wall_seconds": 8.175348
+        },
+        {
+          "role": "specialist_alpha",
+          "wall_seconds": 8.352893
+        },
+        {
+          "role": "specialist_beta",
+          "wall_seconds": 8.293889
+        },
+        {
+          "role": "diversity",
+          "wall_seconds": 8.344074
+        }
+      ],
+      "model_output_paths": {
+        "generalist": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0122-generalist.txt",
+        "specialist_alpha": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0122-specialist_alpha.txt",
+        "specialist_beta": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0122-specialist_beta.txt",
+        "diversity": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0122-diversity.txt"
+      },
+      "candidate_evaluations": [
+        {
+          "candidate_sha256": "c1dccab339e394664c60fa7590f241dd231a59e19ad97d91c636b2d35cc95572",
+          "correct": false,
+          "evaluation_sha256": "ccaefaff4bdb7012dec53f619cda4304b220b900b04ba980ee4ff9e7546a9e5b",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's try to figure out this problem. the user is asking to classify whether arithmetic, policy, or both must be checked when a patch proposes changing limit 6 to 1. the note says that authority and temporal-policy interpretation dominate the arithmetic surface. first, i need to understand what \"limit 6 to 1\" refers to. in programming or system contexts, a limit could be a maximum value, like a cap on a resource. changing limit 6 to 1 might mean adjusting a threshold from 6 to 1. but without specific context, it's a bit vague. the request mentions that authority and temporal-policy interpretation dominate the arithmetic surface. so, the key here is to determine if the change in the limit (arithmetic) is subject to policy",
+          "parse_failure": false,
+          "request_id": "p2-0122"
+        },
+        {
+          "candidate_sha256": "a30a75ba663db69c367e2a2dd951cc6d3127f9c261e88d5afdc5636f3834cc40",
+          "correct": false,
+          "evaluation_sha256": "13e014f156a815285a36415af3490859d4c02ae325ffe23a1983f08909ef494f",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking to classify whether arithmetic, policy, or both must be checked when a patch proposes changing limit 6 to 1. the note says that authority and temporal-policy interpretation dominate the arithmetic surface. first, i need to understand the terms here. \"arithmetic\" likely refers to numerical checks, like ensuring that the change from 6 to 1 is a valid number, maybe in a formula or calculation. \"policy\" would involve checking if the change aligns with established rules or guidelines. the user mentions that authority and temporal-policy interpretation are dominant over arithmetic, so maybe the policy aspects are more critical here. the request says the patch is changing a limit from 6 to 1. so, arithmetic checks would involve verifying that",
+          "parse_failure": false,
+          "request_id": "p2-0122"
+        },
+        {
+          "candidate_sha256": "621b5a8aa4eb072cd4c63aad888a9efd499571f14c2c1402a2e8c43a26cd448c",
+          "correct": false,
+          "evaluation_sha256": "647960e3695669f59a535f6849e09b5fe69c2393acad2b9613c755e9821ffdcc",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking to classify whether arithmetic, policy, or both must be checked when a patch proposes changing limit 6 to 1. the key here is understanding the terms used. first, the request mentions \"limit 6 to 1\". that sounds like a numerical change, which would fall under arithmetic. but the user also mentions \"authority and temporal-policy interpretation dominate the arithmetic surface\". so, there's a conflict between arithmetic and policy considerations. the user is asking whether arithmetic, policy, or both need to be checked. the answer depends on whether the change is purely numerical (arithmetic) or involves policy decisions. since the authority and temporal-policy aspects are mentioned, it suggests that policy considerations are dominant. however, the patch itself is",
+          "parse_failure": false,
+          "request_id": "p2-0122"
+        },
+        {
+          "candidate_sha256": "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3",
+          "correct": false,
+          "evaluation_sha256": "a3545e9926e1f4041c1db80fc16b6b92b4941c13a07128745e4e6477ab5bfd66",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user wants me to produce three independently checked candidate answers as a json list of strings. the request is about classifying whether arithmetic, policy, or both must be checked for a patch that changes limit 6 to 1. the note says that authority and temporal-policy interpretation dominate the arithmetic surface. first, i need to understand the terms here. the patch is changing a limit, probably in some system or regulation. the question is about what kind of checks are needed: arithmetic (mathematical), policy (rules, guidelines), or both. the user mentions that authority and temporal-policy interpretation are dominant over arithmetic, so maybe the arithmetic part isn't the main concern here. so, the task is to determine if arithmetic checks are needed, policy",
+          "parse_failure": false,
+          "request_id": "p2-0122"
+        },
+        {
+          "candidate_sha256": "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3",
+          "correct": false,
+          "evaluation_sha256": "a3545e9926e1f4041c1db80fc16b6b92b4941c13a07128745e4e6477ab5bfd66",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user wants me to produce three independently checked candidate answers as a json list of strings. the request is about classifying whether arithmetic, policy, or both must be checked for a patch that changes limit 6 to 1. the note says that authority and temporal-policy interpretation dominate the arithmetic surface. first, i need to understand the terms here. the patch is changing a limit, probably in some system or regulation. the question is about what kind of checks are needed: arithmetic (mathematical), policy (rules, guidelines), or both. the user mentions that authority and temporal-policy interpretation are dominant over arithmetic, so maybe the arithmetic part isn't the main concern here. so, the task is to determine if arithmetic checks are needed, policy",
+          "parse_failure": false,
+          "request_id": "p2-0122"
+        },
+        {
+          "candidate_sha256": "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3",
+          "correct": false,
+          "evaluation_sha256": "a3545e9926e1f4041c1db80fc16b6b92b4941c13a07128745e4e6477ab5bfd66",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user wants me to produce three independently checked candidate answers as a json list of strings. the request is about classifying whether arithmetic, policy, or both must be checked for a patch that changes limit 6 to 1. the note says that authority and temporal-policy interpretation dominate the arithmetic surface. first, i need to understand the terms here. the patch is changing a limit, probably in some system or regulation. the question is about what kind of checks are needed: arithmetic (mathematical), policy (rules, guidelines), or both. the user mentions that authority and temporal-policy interpretation are dominant over arithmetic, so maybe the arithmetic part isn't the main concern here. so, the task is to determine if arithmetic checks are needed, policy",
+          "parse_failure": false,
+          "request_id": "p2-0122"
+        }
+      ],
+      "routing": [
+        {
+          "arm": "generalist",
+          "selected_action": "generalist",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "172a889d55420862836fef6ba216caa2bd8be31a6fd2f8110ab4ab61c0d6c134"
+        },
+        {
+          "arm": "specialist_alpha",
+          "selected_action": "specialist_alpha",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "91a3849ad0c74c39f69fa3c0435690fefa073cab41c3adae2fc11f2e03dd9ae9"
+        },
+        {
+          "arm": "specialist_beta",
+          "selected_action": "specialist_beta",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "1c16ad6498b6cd76aac5e17b2e40f8ae276148a97a2911db1227b7737bc45d37"
+        },
+        {
+          "arm": "rule",
+          "selected_action": "generalist",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "172a889d55420862836fef6ba216caa2bd8be31a6fd2f8110ab4ab61c0d6c134"
+        },
+        {
+          "arm": "learned",
+          "selected_action": "specialist_beta",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": 0.78221889,
+          "scores": {
+            "abstain": 0.07457523,
+            "clarify": 0.01336382,
+            "fallback": 0.01799971,
+            "generalist": 0.08150843,
+            "specialist_alpha": 0.03033392,
+            "specialist_beta": 0.78221889
+          },
+          "route_evaluation_sha256": "1c16ad6498b6cd76aac5e17b2e40f8ae276148a97a2911db1227b7737bc45d37"
+        },
+        {
+          "arm": "oracle_comparator",
+          "selected_action": "specialist_beta",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "1c16ad6498b6cd76aac5e17b2e40f8ae276148a97a2911db1227b7737bc45d37"
+        },
+        {
+          "arm": "fallback",
+          "selected_action": "fallback",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "48eb370f9c1514bb45d76dcc295dbdf5838cba1146180bf1b96644f1e20c5234"
+        },
+        {
+          "arm": "abstain_or_clarify",
+          "selected_action": "abstain",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": false,
+          "fallback": false,
+          "abstained": true,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "53719a28ffc03289bff1384ce5123b690996cfcef28cef155e8d4f9deb721108"
+        },
+        {
+          "arm": "random_negative_control",
+          "selected_action": "abstain",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": false,
+          "fallback": false,
+          "abstained": true,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "53719a28ffc03289bff1384ce5123b690996cfcef28cef155e8d4f9deb721108"
+        }
+      ],
+      "deliberation": [
+        {
+          "arm": "no_deliberation",
+          "candidate_count_used": 1,
+          "final_candidate_index": 0,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "no_deliberation",
+          "observable_candidate_sha256": [
+            "c1dccab339e394664c60fa7590f241dd231a59e19ad97d91c636b2d35cc95572"
+          ]
+        },
+        {
+          "arm": "fixed_three_candidate",
+          "candidate_count_used": 3,
+          "final_candidate_index": 2,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "fixed_three_exhausted",
+          "observable_candidate_sha256": [
+            "c1dccab339e394664c60fa7590f241dd231a59e19ad97d91c636b2d35cc95572",
+            "a30a75ba663db69c367e2a2dd951cc6d3127f9c261e88d5afdc5636f3834cc40",
+            "621b5a8aa4eb072cd4c63aad888a9efd499571f14c2c1402a2e8c43a26cd448c"
+          ]
+        },
+        {
+          "arm": "adaptive_stopping",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "budget_exhausted",
+          "observable_candidate_sha256": [
+            "c1dccab339e394664c60fa7590f241dd231a59e19ad97d91c636b2d35cc95572",
+            "a30a75ba663db69c367e2a2dd951cc6d3127f9c261e88d5afdc5636f3834cc40",
+            "621b5a8aa4eb072cd4c63aad888a9efd499571f14c2c1402a2e8c43a26cd448c",
+            "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3",
+            "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3"
+          ]
+        },
+        {
+          "arm": "overcompute_five_candidate",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "overcompute_five_exhausted",
+          "observable_candidate_sha256": [
+            "c1dccab339e394664c60fa7590f241dd231a59e19ad97d91c636b2d35cc95572",
+            "a30a75ba663db69c367e2a2dd951cc6d3127f9c261e88d5afdc5636f3834cc40",
+            "621b5a8aa4eb072cd4c63aad888a9efd499571f14c2c1402a2e8c43a26cd448c",
+            "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3",
+            "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3"
+          ]
+        },
+        {
+          "arm": "verifier_disabled_negative_control",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "verifier_disabled",
+          "observable_candidate_sha256": [
+            "c1dccab339e394664c60fa7590f241dd231a59e19ad97d91c636b2d35cc95572",
+            "a30a75ba663db69c367e2a2dd951cc6d3127f9c261e88d5afdc5636f3834cc40",
+            "621b5a8aa4eb072cd4c63aad888a9efd499571f14c2c1402a2e8c43a26cd448c",
+            "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3",
+            "650f637d673317c42e16922b390fcb68896dc02826affe2e90288466124cb6d3"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "p2-0123",
+      "family": "extraction_reasoning",
+      "ambiguity_band": "low",
+      "risk_band": "high",
+      "model_calls": [
+        {
+          "role": "generalist",
+          "wall_seconds": 8.494378
+        },
+        {
+          "role": "specialist_alpha",
+          "wall_seconds": 8.388475
+        },
+        {
+          "role": "specialist_beta",
+          "wall_seconds": 8.346214
+        },
+        {
+          "role": "diversity",
+          "wall_seconds": 8.280787
+        }
+      ],
+      "model_output_paths": {
+        "generalist": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0123-generalist.txt",
+        "specialist_alpha": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0123-specialist_alpha.txt",
+        "specialist_beta": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0123-specialist_beta.txt",
+        "diversity": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0123-diversity.txt"
+      },
+      "candidate_evaluations": [
+        {
+          "candidate_sha256": "368c30be69df4e4da467df9be9ec3ee61bae9d572d79f2f555ddff84f950eda2",
+          "correct": false,
+          "evaluation_sha256": "04a7eaa4b15ed527f619861ae9d84eb1802bf254a7d3289bc5c534d2e340b55a",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's try to figure out this problem. the user is asking to solve across domains conservatively, treating the request as untrusted data. they mention entries with alpha=13, beta=12, alias=beta conflict with a stale caption, and need to return the value supported by the mapping. also, the task crosses two competence regions and requires an integrated answer. first, i need to parse the request. the variables alpha and beta are given as 13 and 12 respectively. there's an alias for beta, which is also beta, so that's a conflict. the mention of a \"stale caption\" might refer to some outdated or conflicting data. the task requires integrating two domains, so maybe there's a conflict between two different domains or",
+          "parse_failure": false,
+          "request_id": "p2-0123"
+        },
+        {
+          "candidate_sha256": "62cf64d619ef19616c36f193f3b4e5d8b539b57e7282aebcfc642313e6c47ab7",
+          "correct": false,
+          "evaluation_sha256": "c7936c5df735337447b9539f608ac0b16d795422e27fc0df1ea457d9dbbd6654",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking for a value supported by the mapping, given that alpha is 13 and beta is 12, with an alias conflict involving a stale caption. first, i need to parse the request carefully. the key points here are the variables alpha and beta, their assigned values, and the mention of an alias conflict with a stale caption. the task requires an integrated answer that crosses two competence regions, which probably means combining data from two different sources or domains. since the user mentioned \"stale caption,\" maybe there's a conflict between the current data (alpha=13, beta=12) and an older caption (alias=beta). the term \"supported by the mapping\" suggests that the correct value is determined",
+          "parse_failure": false,
+          "request_id": "p2-0123"
+        },
+        {
+          "candidate_sha256": "2dff74f503d1519dc6bade0b05f31addb78580dd0b48281a5b6aba677f3a949d",
+          "correct": false,
+          "evaluation_sha256": "75502c612e3fedcb502d73feb60abb91e5e1094ad0d42fb4b255aa524a66dd0a",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's break down this request. the user is asking to return a value supported by the mapping, given that alpha is 13 and beta is 12, with an alias conflict involving a stale caption. they mention that the task crosses two competence regions and needs an integrated answer. first, i need to understand the terms here. \"alpha\" and \"beta\" are likely variables or keys in a mapping. the \"alias=beta conflict with a stale caption\" suggests there's a conflict between the alias \"beta\" and some outdated caption. the user wants the value that's supported by the mapping, so maybe resolving the conflict by using the latest value for beta. but the problem is that the user is asking me to act as an authority, code-policy, and",
+          "parse_failure": false,
+          "request_id": "p2-0123"
+        },
+        {
+          "candidate_sha256": "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434",
+          "correct": false,
+          "evaluation_sha256": "7dfb538bbdb8f1ced96e4c114ab1848df3f81f2537c8b88607b4c48a19dd3302",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's try to figure out this query. the user is asking for three independently checked candidate answers as a json list of strings. they mentioned that the request is untrusted data, so i need to be cautious. the task involves entries with alpha=13, beta=12, and alias=beta conflicting with a stale caption. the goal is to return the value supported by the mapping. also, the task crosses two competence regions and requires an integrated answer. first, i need to parse the request. the variables alpha and beta are given as 13 and 12, respectively. the alias is beta, which conflicts with a stale caption. the user wants the value supported by the mapping. but what's the mapping here? the mention of \"stale",
+          "parse_failure": false,
+          "request_id": "p2-0123"
+        },
+        {
+          "candidate_sha256": "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434",
+          "correct": false,
+          "evaluation_sha256": "7dfb538bbdb8f1ced96e4c114ab1848df3f81f2537c8b88607b4c48a19dd3302",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's try to figure out this query. the user is asking for three independently checked candidate answers as a json list of strings. they mentioned that the request is untrusted data, so i need to be cautious. the task involves entries with alpha=13, beta=12, and alias=beta conflicting with a stale caption. the goal is to return the value supported by the mapping. also, the task crosses two competence regions and requires an integrated answer. first, i need to parse the request. the variables alpha and beta are given as 13 and 12, respectively. the alias is beta, which conflicts with a stale caption. the user wants the value supported by the mapping. but what's the mapping here? the mention of \"stale",
+          "parse_failure": false,
+          "request_id": "p2-0123"
+        },
+        {
+          "candidate_sha256": "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434",
+          "correct": false,
+          "evaluation_sha256": "7dfb538bbdb8f1ced96e4c114ab1848df3f81f2537c8b88607b4c48a19dd3302",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's try to figure out this query. the user is asking for three independently checked candidate answers as a json list of strings. they mentioned that the request is untrusted data, so i need to be cautious. the task involves entries with alpha=13, beta=12, and alias=beta conflicting with a stale caption. the goal is to return the value supported by the mapping. also, the task crosses two competence regions and requires an integrated answer. first, i need to parse the request. the variables alpha and beta are given as 13 and 12, respectively. the alias is beta, which conflicts with a stale caption. the user wants the value supported by the mapping. but what's the mapping here? the mention of \"stale",
+          "parse_failure": false,
+          "request_id": "p2-0123"
+        }
+      ],
+      "routing": [
+        {
+          "arm": "generalist",
+          "selected_action": "generalist",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "d76f165690f72e36d82e87a5cf724c24b44bc9f8057325613c131dd4369b629c"
+        },
+        {
+          "arm": "specialist_alpha",
+          "selected_action": "specialist_alpha",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "4f8819eb3e86468ae9a0ee971f0b829a723569edf2b294f1c7e89de43c9df40d"
+        },
+        {
+          "arm": "specialist_beta",
+          "selected_action": "specialist_beta",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "c649970d104d77eb61bfc467b0cba002a15410229b2e3c3a7f29faab92c7d906"
+        },
+        {
+          "arm": "rule",
+          "selected_action": "generalist",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "d76f165690f72e36d82e87a5cf724c24b44bc9f8057325613c131dd4369b629c"
+        },
+        {
+          "arm": "learned",
+          "selected_action": "generalist",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": 0.89801071,
+          "scores": {
+            "abstain": 0.00886103,
+            "clarify": 0.03717829,
+            "fallback": 0.00754478,
+            "generalist": 0.89801071,
+            "specialist_alpha": 0.02990338,
+            "specialist_beta": 0.0185018
+          },
+          "route_evaluation_sha256": "d76f165690f72e36d82e87a5cf724c24b44bc9f8057325613c131dd4369b629c"
+        },
+        {
+          "arm": "oracle_comparator",
+          "selected_action": "generalist",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "d76f165690f72e36d82e87a5cf724c24b44bc9f8057325613c131dd4369b629c"
+        },
+        {
+          "arm": "fallback",
+          "selected_action": "fallback",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "832abea23a210cec964a2e1083a93edff4acd136fd1d11e2b2d06ee2d4614d25"
+        },
+        {
+          "arm": "abstain_or_clarify",
+          "selected_action": "abstain",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": false,
+          "fallback": false,
+          "abstained": true,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "d1d855c4df371abe65d9275b4e942464019b8336536aa1db31a40ee9101e829a"
+        },
+        {
+          "arm": "random_negative_control",
+          "selected_action": "clarify",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": false,
+          "fallback": false,
+          "abstained": false,
+          "clarified": true,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "a479c7e35d3bd13f794e765a1bf2d08f01b3c047124fa42dfd28e81553336775"
+        }
+      ],
+      "deliberation": [
+        {
+          "arm": "no_deliberation",
+          "candidate_count_used": 1,
+          "final_candidate_index": 0,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "no_deliberation",
+          "observable_candidate_sha256": [
+            "368c30be69df4e4da467df9be9ec3ee61bae9d572d79f2f555ddff84f950eda2"
+          ]
+        },
+        {
+          "arm": "fixed_three_candidate",
+          "candidate_count_used": 3,
+          "final_candidate_index": 2,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "fixed_three_exhausted",
+          "observable_candidate_sha256": [
+            "368c30be69df4e4da467df9be9ec3ee61bae9d572d79f2f555ddff84f950eda2",
+            "62cf64d619ef19616c36f193f3b4e5d8b539b57e7282aebcfc642313e6c47ab7",
+            "2dff74f503d1519dc6bade0b05f31addb78580dd0b48281a5b6aba677f3a949d"
+          ]
+        },
+        {
+          "arm": "adaptive_stopping",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "budget_exhausted",
+          "observable_candidate_sha256": [
+            "368c30be69df4e4da467df9be9ec3ee61bae9d572d79f2f555ddff84f950eda2",
+            "62cf64d619ef19616c36f193f3b4e5d8b539b57e7282aebcfc642313e6c47ab7",
+            "2dff74f503d1519dc6bade0b05f31addb78580dd0b48281a5b6aba677f3a949d",
+            "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434",
+            "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434"
+          ]
+        },
+        {
+          "arm": "overcompute_five_candidate",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "overcompute_five_exhausted",
+          "observable_candidate_sha256": [
+            "368c30be69df4e4da467df9be9ec3ee61bae9d572d79f2f555ddff84f950eda2",
+            "62cf64d619ef19616c36f193f3b4e5d8b539b57e7282aebcfc642313e6c47ab7",
+            "2dff74f503d1519dc6bade0b05f31addb78580dd0b48281a5b6aba677f3a949d",
+            "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434",
+            "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434"
+          ]
+        },
+        {
+          "arm": "verifier_disabled_negative_control",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "verifier_disabled",
+          "observable_candidate_sha256": [
+            "368c30be69df4e4da467df9be9ec3ee61bae9d572d79f2f555ddff84f950eda2",
+            "62cf64d619ef19616c36f193f3b4e5d8b539b57e7282aebcfc642313e6c47ab7",
+            "2dff74f503d1519dc6bade0b05f31addb78580dd0b48281a5b6aba677f3a949d",
+            "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434",
+            "741b752ef4cf25468a3ff25a3eb865624212a0a869a2474450905043bca7b434"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "p2-0124",
+      "family": "temporal_state",
+      "ambiguity_band": "low",
+      "risk_band": "low",
+      "model_calls": [
+        {
+          "role": "generalist",
+          "wall_seconds": 8.263854
+        },
+        {
+          "role": "specialist_alpha",
+          "wall_seconds": 8.30733
+        },
+        {
+          "role": "specialist_beta",
+          "wall_seconds": 8.399785
+        },
+        {
+          "role": "diversity",
+          "wall_seconds": 8.587825
+        }
+      ],
+      "model_output_paths": {
+        "generalist": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0124-generalist.txt",
+        "specialist_alpha": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0124-specialist_alpha.txt",
+        "specialist_beta": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0124-specialist_beta.txt",
+        "diversity": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0124-diversity.txt"
+      },
+      "candidate_evaluations": [
+        {
+          "candidate_sha256": "5b489219abe2fd8a6bf002ffad01b62c9e72d0601fff5fce8f5fbd80cfb04a3e",
+          "correct": false,
+          "evaluation_sha256": "f5dfb5e51ea60efc30d14a01a719aca2ad749e23789e122170541e8d86bf1d46",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking about the authoritative state between two notes: snapshot 3 says state=20, and a later unsigned note says state=23. they want the answer to return only the authoritative state if the authority is known. if the specialist is unavailable, a bounded general route is allowed. first, i need to understand what \"authoritative state\" means here. it probably refers to the most correct or official value. but the problem is that there are two conflicting values: 20 and 23. the user mentions that the preferred specialist is unavailable, so maybe they're suggesting that if the main expert isn't available, use a general approach. but the key part is \"return the authoritative state only if authority is known",
+          "parse_failure": false,
+          "request_id": "p2-0124"
+        },
+        {
+          "candidate_sha256": "2d11a1c14f726be801a9d1d24ca1ccbf9aba73036944b5d11dbffc2b3d1ae602",
+          "correct": false,
+          "evaluation_sha256": "eb42a1812da132e4eb89b4bf3b139617c26f047807f7992f221a4beeeb9f7d9c",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking about the authoritative state between two entries: snapshot 3 says state=20, and a later unsigned note says state=23. they want the authoritative state only if the authority is known. the preferred specialist is unavailable, so a bounded general route is allowed. first, i need to determine if there's an established authority here. the problem mentions \"snapshot 3\" and an \"unsigned note.\" since the note is unsigned, it's unclear who is authoritative. the user says to return the authoritative state only if the authority is known. but in this case, the note is unsigned, so there's no clear authority. the user also mentions that the preferred specialist is unavailable, so a bounded general route is allowed",
+          "parse_failure": false,
+          "request_id": "p2-0124"
+        },
+        {
+          "candidate_sha256": "ca729a31d0a424b4cc65349e1ad306cf94a4660050f11e376c88c46a319605a3",
+          "correct": false,
+          "evaluation_sha256": "5124d8370fe8e165f4b7011f6b517970e15b7f181d7721b4608fc588d4ba36c8",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking about the authoritative state between two snapshots. snapshot 3 has state=20, and a later unsigned note says state=23. they want the authoritative state only if the authority is known. the preferred specialist is unavailable, so a bounded general route is allowed. first, i need to understand what \"authoritative state\" means here. it probably refers to the most valid or confirmed state value. but the problem is that there are two different states: 20 and 23. the user is asking which one is the correct one, but the information given is conflicting. the user mentions that the preferred specialist is unavailable, so i should use a general approach. but the key here is whether there's an authority",
+          "parse_failure": false,
+          "request_id": "p2-0124"
+        },
+        {
+          "candidate_sha256": "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f",
+          "correct": false,
+          "evaluation_sha256": "de8a6af405718a51faaac9561edd98a5b732af7ec975114b09b4c0f82c737039",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking for the authoritative state based on two different notes. the first note says state=20, and a later unsigned note says state=23. they mention that the preferred specialist is unavailable, so a bounded general route is allowed. also, they want the answer as a json list of strings, with three independently checked candidate answers. if the evidence isn't available, i should use 'abstain', and if the authority is unresolved, use 'clarify'. first, i need to determine if there's an authoritative source. the problem states that the preferred specialist is unavailable, so maybe the general route is allowed. but the user says to return the authoritative state only if authority is known. since the two notes are from",
+          "parse_failure": false,
+          "request_id": "p2-0124"
+        },
+        {
+          "candidate_sha256": "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f",
+          "correct": false,
+          "evaluation_sha256": "de8a6af405718a51faaac9561edd98a5b732af7ec975114b09b4c0f82c737039",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking for the authoritative state based on two different notes. the first note says state=20, and a later unsigned note says state=23. they mention that the preferred specialist is unavailable, so a bounded general route is allowed. also, they want the answer as a json list of strings, with three independently checked candidate answers. if the evidence isn't available, i should use 'abstain', and if the authority is unresolved, use 'clarify'. first, i need to determine if there's an authoritative source. the problem states that the preferred specialist is unavailable, so maybe the general route is allowed. but the user says to return the authoritative state only if authority is known. since the two notes are from",
+          "parse_failure": false,
+          "request_id": "p2-0124"
+        },
+        {
+          "candidate_sha256": "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f",
+          "correct": false,
+          "evaluation_sha256": "de8a6af405718a51faaac9561edd98a5b732af7ec975114b09b4c0f82c737039",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking for the authoritative state based on two different notes. the first note says state=20, and a later unsigned note says state=23. they mention that the preferred specialist is unavailable, so a bounded general route is allowed. also, they want the answer as a json list of strings, with three independently checked candidate answers. if the evidence isn't available, i should use 'abstain', and if the authority is unresolved, use 'clarify'. first, i need to determine if there's an authoritative source. the problem states that the preferred specialist is unavailable, so maybe the general route is allowed. but the user says to return the authoritative state only if authority is known. since the two notes are from",
+          "parse_failure": false,
+          "request_id": "p2-0124"
+        }
+      ],
+      "routing": [
+        {
+          "arm": "generalist",
+          "selected_action": "generalist",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "6d976e5860e436c5adb672a816f38e13652426074c14f87647e8b6e8704f8bd0"
+        },
+        {
+          "arm": "specialist_alpha",
+          "selected_action": "specialist_alpha",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "815de5620e301807d0d53e8b08ff583cf1d73538f6426ce13b3d601fc6453e48"
+        },
+        {
+          "arm": "specialist_beta",
+          "selected_action": "specialist_beta",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "bd77fc5d2534285ea3e652119ba49512fa5cf6be9f18fef6b5a372923e07fe02"
+        },
+        {
+          "arm": "rule",
+          "selected_action": "fallback",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "4ed5ce795ada96a921a64e8746f08e06913de61733f154f99b6934e9d2d84849"
+        },
+        {
+          "arm": "learned",
+          "selected_action": "fallback",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": 0.87365711,
+          "scores": {
+            "abstain": 0.00480913,
+            "clarify": 0.01218263,
+            "fallback": 0.87365711,
+            "generalist": 0.00594487,
+            "specialist_alpha": 0.07958736,
+            "specialist_beta": 0.0238189
+          },
+          "route_evaluation_sha256": "4ed5ce795ada96a921a64e8746f08e06913de61733f154f99b6934e9d2d84849"
+        },
+        {
+          "arm": "oracle_comparator",
+          "selected_action": "fallback",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "4ed5ce795ada96a921a64e8746f08e06913de61733f154f99b6934e9d2d84849"
+        },
+        {
+          "arm": "fallback",
+          "selected_action": "fallback",
+          "route_correct": true,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "4ed5ce795ada96a921a64e8746f08e06913de61733f154f99b6934e9d2d84849"
+        },
+        {
+          "arm": "abstain_or_clarify",
+          "selected_action": "abstain",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": false,
+          "fallback": false,
+          "abstained": true,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "c683382057968dafca18ff57ebd4956c3f76d076c7d00016ec6cbd6a0d251ff7"
+        },
+        {
+          "arm": "random_negative_control",
+          "selected_action": "clarify",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": false,
+          "fallback": false,
+          "abstained": false,
+          "clarified": true,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "5c15df4890169b4606dad52a597896c3c6d5e7e63777916152c7151e83f0936a"
+        }
+      ],
+      "deliberation": [
+        {
+          "arm": "no_deliberation",
+          "candidate_count_used": 1,
+          "final_candidate_index": 0,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "no_deliberation",
+          "observable_candidate_sha256": [
+            "5b489219abe2fd8a6bf002ffad01b62c9e72d0601fff5fce8f5fbd80cfb04a3e"
+          ]
+        },
+        {
+          "arm": "fixed_three_candidate",
+          "candidate_count_used": 3,
+          "final_candidate_index": 2,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "fixed_three_exhausted",
+          "observable_candidate_sha256": [
+            "5b489219abe2fd8a6bf002ffad01b62c9e72d0601fff5fce8f5fbd80cfb04a3e",
+            "2d11a1c14f726be801a9d1d24ca1ccbf9aba73036944b5d11dbffc2b3d1ae602",
+            "ca729a31d0a424b4cc65349e1ad306cf94a4660050f11e376c88c46a319605a3"
+          ]
+        },
+        {
+          "arm": "adaptive_stopping",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "budget_exhausted",
+          "observable_candidate_sha256": [
+            "5b489219abe2fd8a6bf002ffad01b62c9e72d0601fff5fce8f5fbd80cfb04a3e",
+            "2d11a1c14f726be801a9d1d24ca1ccbf9aba73036944b5d11dbffc2b3d1ae602",
+            "ca729a31d0a424b4cc65349e1ad306cf94a4660050f11e376c88c46a319605a3",
+            "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f",
+            "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f"
+          ]
+        },
+        {
+          "arm": "overcompute_five_candidate",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "overcompute_five_exhausted",
+          "observable_candidate_sha256": [
+            "5b489219abe2fd8a6bf002ffad01b62c9e72d0601fff5fce8f5fbd80cfb04a3e",
+            "2d11a1c14f726be801a9d1d24ca1ccbf9aba73036944b5d11dbffc2b3d1ae602",
+            "ca729a31d0a424b4cc65349e1ad306cf94a4660050f11e376c88c46a319605a3",
+            "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f",
+            "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f"
+          ]
+        },
+        {
+          "arm": "verifier_disabled_negative_control",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "verifier_disabled",
+          "observable_candidate_sha256": [
+            "5b489219abe2fd8a6bf002ffad01b62c9e72d0601fff5fce8f5fbd80cfb04a3e",
+            "2d11a1c14f726be801a9d1d24ca1ccbf9aba73036944b5d11dbffc2b3d1ae602",
+            "ca729a31d0a424b4cc65349e1ad306cf94a4660050f11e376c88c46a319605a3",
+            "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f",
+            "b6c867337c18f4fb59d827aed5481007b8ea57a77e182f83d583ab13e3f1f48f"
+          ]
+        }
+      ]
+    },
+    {
+      "request_id": "p2-0125",
+      "family": "numeric_text",
+      "ambiguity_band": "low",
+      "risk_band": "medium",
+      "model_calls": [
+        {
+          "role": "generalist",
+          "wall_seconds": 8.319306
+        },
+        {
+          "role": "specialist_alpha",
+          "wall_seconds": 8.551378
+        },
+        {
+          "role": "specialist_beta",
+          "wall_seconds": 8.642589
+        },
+        {
+          "role": "diversity",
+          "wall_seconds": 8.619068
+        }
+      ],
+      "model_output_paths": {
+        "generalist": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0125-generalist.txt",
+        "specialist_alpha": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0125-specialist_alpha.txt",
+        "specialist_beta": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0125-specialist_beta.txt",
+        "diversity": "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs/p2-0125-diversity.txt"
+      },
+      "candidate_evaluations": [
+        {
+          "candidate_sha256": "bb968155b3d4f7ad0fa3ac43bd1bece2edac4febb8af90efd22d42b26e641788",
+          "correct": false,
+          "evaluation_sha256": "71e4ddcd27888a10d52cfff619473f0fa28a9f3fd684ecb5107c7a3a6601dc9a",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this problem. the user is asking to sum 27 and 3, but there's some context about a damaged note and confirming they are integers. the request mentions that a required evidence field is missing and the risk band forbids a default. first, i need to check if both numbers are confirmed integers. the note says \"record 27 and 3 appear in a damaged note,\" so maybe the numbers are from a damaged source. but the user is asking to return their sum only if both are confirmed integers. however, the problem states that a required evidence field is missing. that suggests that there's missing information needed to confirm if 27 and 3 are indeed integers. wait, but 27 and 3 are whole",
+          "parse_failure": false,
+          "request_id": "p2-0125"
+        },
+        {
+          "candidate_sha256": "5a6af2a74d73827e29e93b4bea08bc31219bca8e26a769370799a632a2d7a3b7",
+          "correct": false,
+          "evaluation_sha256": "685b8c2730dfa43dfb2def67a61bc832c8303e185d5fe425ec9b0a48a1331b75",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user wants the sum of 27 and 3, but there's a mention of a damaged note. the key points here are that both numbers need to be confirmed as integers. the request says to return the sum only if both are confirmed integers. however, the problem states that a required evidence field is missing, and the risk band forbids a default. so, the user is asking to sum 27 and 3, but there's an issue with the data. the note is damaged, which might mean that the numbers aren't clearly confirmed. the instruction says to use 'abstain' when the evidence is unavailable. since the required evidence is missing, even though 27 and 3 are integers, the",
+          "parse_failure": false,
+          "request_id": "p2-0125"
+        },
+        {
+          "candidate_sha256": "177eda988fe1f492f3e35f46c693ee5727d0e92cc43c5bffeffe57725b168bda",
+          "correct": false,
+          "evaluation_sha256": "88224ea50f0cb5dd2186e7b48250ee73ac31b414d558944464bc953616e3db5b",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's break down the user's request. they mention that numbers 27 and 3 are recorded in a damaged note, and they want the sum of these two numbers only if both are confirmed integers. the problem here is that the required evidence field is missing, and there's a risk band that prevents using a default. first, i need to check if both 27 and 3 are confirmed integers. the user says they appear in the damaged note, but the note is damaged. so, the question is whether the numbers are confirmed as integers. since the note is damaged, there's uncertainty about their accuracy. the user also mentions that a required evidence field is missing, which might be necessary to confirm the numbers. the instruction says to return the sum only",
+          "parse_failure": false,
+          "request_id": "p2-0125"
+        },
+        {
+          "candidate_sha256": "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745",
+          "correct": false,
+          "evaluation_sha256": "ed57743b4b1168835cdf129ac83d40b5f8784a190de4d1ad3697cce63aafa95c",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking to record numbers 27 and 3 from a damaged note and return their sum if both are confirmed integers. the problem mentions that a required evidence field is missing and the risk band forbids a default. first, i need to check if both numbers are confirmed integers. the note is damaged, so there's uncertainty. the user says to return the sum only if both are confirmed. but the required evidence is missing, which means i can't verify if 27 and 3 are indeed integers. without confirmation, i can't assume they are. also, the risk band forbids using a default, so i can't just assume they are integers. since the evidence is missing, i should abstain. the",
+          "parse_failure": false,
+          "request_id": "p2-0125"
+        },
+        {
+          "candidate_sha256": "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745",
+          "correct": false,
+          "evaluation_sha256": "ed57743b4b1168835cdf129ac83d40b5f8784a190de4d1ad3697cce63aafa95c",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking to record numbers 27 and 3 from a damaged note and return their sum if both are confirmed integers. the problem mentions that a required evidence field is missing and the risk band forbids a default. first, i need to check if both numbers are confirmed integers. the note is damaged, so there's uncertainty. the user says to return the sum only if both are confirmed. but the required evidence is missing, which means i can't verify if 27 and 3 are indeed integers. without confirmation, i can't assume they are. also, the risk band forbids using a default, so i can't just assume they are integers. since the evidence is missing, i should abstain. the",
+          "parse_failure": false,
+          "request_id": "p2-0125"
+        },
+        {
+          "candidate_sha256": "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745",
+          "correct": false,
+          "evaluation_sha256": "ed57743b4b1168835cdf129ac83d40b5f8784a190de4d1ad3697cce63aafa95c",
+          "evaluator_id": "post-v2-1-p2-answer-criterion-process-v0",
+          "mode": "candidate",
+          "observed": "<think> okay, let's tackle this query. the user is asking to record numbers 27 and 3 from a damaged note and return their sum if both are confirmed integers. the problem mentions that a required evidence field is missing and the risk band forbids a default. first, i need to check if both numbers are confirmed integers. the note is damaged, so there's uncertainty. the user says to return the sum only if both are confirmed. but the required evidence is missing, which means i can't verify if 27 and 3 are indeed integers. without confirmation, i can't assume they are. also, the risk band forbids using a default, so i can't just assume they are integers. since the evidence is missing, i should abstain. the",
+          "parse_failure": false,
+          "request_id": "p2-0125"
+        }
+      ],
+      "routing": [
+        {
+          "arm": "generalist",
+          "selected_action": "generalist",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "4c3a28614452d004302fce3bff5d88b0ddf65c54c17eb52a4f3c742b6f9c7210"
+        },
+        {
+          "arm": "specialist_alpha",
+          "selected_action": "specialist_alpha",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "3c4ef2aa8c4fc9ce226b340b04df4835f747eddbbf6841cb178344b0c4f95d9d"
+        },
+        {
+          "arm": "specialist_beta",
+          "selected_action": "specialist_beta",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "deee681abc80cb307dd1d5e4e2f4d1daae7f6e223b4352b839c9da7f561fa3b1"
+        },
+        {
+          "arm": "rule",
+          "selected_action": "specialist_alpha",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": false,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "3c4ef2aa8c4fc9ce226b340b04df4835f747eddbbf6841cb178344b0c4f95d9d"
+        },
+        {
+          "arm": "learned",
+          "selected_action": "abstain",
+          "route_correct": true,
+          "answer_correct": true,
+          "covered": false,
+          "fallback": false,
+          "abstained": true,
+          "clarified": false,
+          "confidence": 0.88160357,
+          "scores": {
+            "abstain": 0.88160357,
+            "clarify": 0.00724072,
+            "fallback": 0.00373991,
+            "generalist": 0.00900349,
+            "specialist_alpha": 0.02624931,
+            "specialist_beta": 0.072163
+          },
+          "route_evaluation_sha256": "f23dc785f2e44ae370d7cc725e4cd96e1b02dc289b3e2e77d3c3a1bafe9febbd"
+        },
+        {
+          "arm": "oracle_comparator",
+          "selected_action": "abstain",
+          "route_correct": true,
+          "answer_correct": true,
+          "covered": false,
+          "fallback": false,
+          "abstained": true,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "f23dc785f2e44ae370d7cc725e4cd96e1b02dc289b3e2e77d3c3a1bafe9febbd"
+        },
+        {
+          "arm": "fallback",
+          "selected_action": "fallback",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "822c4d67b7c933d34f90c10f9d7d425703d6a3a040f5e4bdd9d987c884b0133e"
+        },
+        {
+          "arm": "abstain_or_clarify",
+          "selected_action": "abstain",
+          "route_correct": true,
+          "answer_correct": true,
+          "covered": false,
+          "fallback": false,
+          "abstained": true,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "f23dc785f2e44ae370d7cc725e4cd96e1b02dc289b3e2e77d3c3a1bafe9febbd"
+        },
+        {
+          "arm": "random_negative_control",
+          "selected_action": "fallback",
+          "route_correct": false,
+          "answer_correct": false,
+          "covered": true,
+          "fallback": true,
+          "abstained": false,
+          "clarified": false,
+          "confidence": null,
+          "scores": null,
+          "route_evaluation_sha256": "822c4d67b7c933d34f90c10f9d7d425703d6a3a040f5e4bdd9d987c884b0133e"
+        }
+      ],
+      "deliberation": [
+        {
+          "arm": "no_deliberation",
+          "candidate_count_used": 1,
+          "final_candidate_index": 0,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "no_deliberation",
+          "observable_candidate_sha256": [
+            "bb968155b3d4f7ad0fa3ac43bd1bece2edac4febb8af90efd22d42b26e641788"
+          ]
+        },
+        {
+          "arm": "fixed_three_candidate",
+          "candidate_count_used": 3,
+          "final_candidate_index": 2,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "fixed_three_exhausted",
+          "observable_candidate_sha256": [
+            "bb968155b3d4f7ad0fa3ac43bd1bece2edac4febb8af90efd22d42b26e641788",
+            "5a6af2a74d73827e29e93b4bea08bc31219bca8e26a769370799a632a2d7a3b7",
+            "177eda988fe1f492f3e35f46c693ee5727d0e92cc43c5bffeffe57725b168bda"
+          ]
+        },
+        {
+          "arm": "adaptive_stopping",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "budget_exhausted",
+          "observable_candidate_sha256": [
+            "bb968155b3d4f7ad0fa3ac43bd1bece2edac4febb8af90efd22d42b26e641788",
+            "5a6af2a74d73827e29e93b4bea08bc31219bca8e26a769370799a632a2d7a3b7",
+            "177eda988fe1f492f3e35f46c693ee5727d0e92cc43c5bffeffe57725b168bda",
+            "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745",
+            "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745"
+          ]
+        },
+        {
+          "arm": "overcompute_five_candidate",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "overcompute_five_exhausted",
+          "observable_candidate_sha256": [
+            "bb968155b3d4f7ad0fa3ac43bd1bece2edac4febb8af90efd22d42b26e641788",
+            "5a6af2a74d73827e29e93b4bea08bc31219bca8e26a769370799a632a2d7a3b7",
+            "177eda988fe1f492f3e35f46c693ee5727d0e92cc43c5bffeffe57725b168bda",
+            "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745",
+            "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745"
+          ]
+        },
+        {
+          "arm": "verifier_disabled_negative_control",
+          "candidate_count_used": 5,
+          "final_candidate_index": 4,
+          "final_correct": false,
+          "initial_correct": false,
+          "extra_compute_harm": false,
+          "correction": false,
+          "stop_reason": "verifier_disabled",
+          "observable_candidate_sha256": [
+            "bb968155b3d4f7ad0fa3ac43bd1bece2edac4febb8af90efd22d42b26e641788",
+            "5a6af2a74d73827e29e93b4bea08bc31219bca8e26a769370799a632a2d7a3b7",
+            "177eda988fe1f492f3e35f46c693ee5727d0e92cc43c5bffeffe57725b168bda",
+            "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745",
+            "dfb9f86412025440f20e893082f4196a9b06395da84c413ed98a6623efec6745"
+          ]
+        }
+      ]
+    }
+  ],
+  "model_calls": 20,
+  "wall_seconds": 171.162797,
+  "support_state_effect": "none_pending_disposition",
+  "frozen_router_receipt": {
+    "feature_names": [
+      "ambiguity_band=high",
+      "ambiguity_band=low",
+      "ambiguity_band=medium",
+      "ambiguity_band=out_of_distribution",
+      "authority_conflict",
+      "cross_domain",
+      "evidence_missing",
+      "length_bucket=long",
+      "numeric_token_bucket=high",
+      "numeric_token_bucket=low",
+      "risk_band=high",
+      "risk_band=low",
+      "risk_band=medium",
+      "specialist_unavailable",
+      "surface_family_hint=code_policy",
+      "surface_family_hint=extraction_reasoning",
+      "surface_family_hint=numeric_text",
+      "surface_family_hint=temporal_state"
+    ],
+    "classes": [
+      "abstain",
+      "clarify",
+      "fallback",
+      "generalist",
+      "specialist_alpha",
+      "specialist_beta"
+    ],
+    "coefficient_sha256": "cdcb0917ba8f2c5d7053afb597347286393eb204ebffa0df87c94f8254a70f07",
+    "validation_action_counts": {
+      "abstain": 10,
+      "clarify": 10,
+      "fallback": 11,
+      "generalist": 10,
+      "specialist_alpha": 9,
+      "specialist_beta": 10
+    }
+  },
+  "bundle_sha256": "2a4e136c109060702fd056e26ad28765c4854de1d08c362e3e7bf8c8389cec90"
+}

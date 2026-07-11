@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two snapshots. Snapshot 2 has state=4, and a later unsigned note says state=14. They want the authoritative state if the authority is known.
+
+First, I need to determine if there's an authority that can resolve this. The user mentioned treating the request as untrusted data, so I have to be cautious. The instruction says to return only the answer, except for the diversity role which needs a JSON list. But the user also says to use 'abstain' if evidence is unavailable and 'clarify' if the authority is unresolved.
+
+The key here is whether there's an established authority that determines the state. The problem states that "authority and temporal-policy interpretation dominate the

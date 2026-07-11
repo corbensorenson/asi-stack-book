@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking whether a patch that changes limit 7 to 24 requires checking arithmetic, policy, or both. The problem is that there are two conflicting authorities, and the request doesn't specify which controls to check.
+
+First, I need to understand what "limit 7 to 24" refers to. In a technical context, this could be a numeric limit, like a maximum value in a system. If the patch changes this limit, arithmetic checks would involve verifying that the new value (24) is correct and doesn't cause any mathematical errors. For example, if the limit is part of a calculation, changing it might affect the outcome.
+
+On the other hand, policy checks would involve ensuring that the change aligns with

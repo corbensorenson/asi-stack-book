@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two conflicting notes. Snapshot 3 says state=5, and a later unsigned note says state=1. They want the authoritative state only if the authority is known. The preferred specialist is unavailable, so a bounded general route is allowed.
+
+First, I need to determine if there's an authority that can resolve this conflict. The problem mentions that the preferred specialist is unavailable, so maybe a general route is acceptable. But the user says to return the authoritative state only if authority is known. Since the specialist is unavailable, maybe there's no clear authority here. 
+
+The user also says to use 'abstain' when evidence is unavailable and 'clarify' when authority is unresolved. So, if

@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two conflicting sources. The first part mentions Snapshot 3 with state=0, and a later unsigned note with state=4. The user wants the authoritative state only if the authority is known. The problem is that there are two plausible authorities, and the request doesn't specify which one takes precedence.
+
+First, I need to check if there's any information that would let me determine which authority is correct. The user says to return the authoritative state only if the authority is known. Since the request doesn't specify which authority is correct, and both are conflicting, I can't determine which one is the true authority. The unsigned note might not be from a known source, so its validity is in question.

@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two snapshots. The first snapshot (Snapshot 2) says state=4, and a later unsigned note says state=14. The instruction is to return the authoritative state only if the authority is known. Otherwise, abstain or clarify if needed.
+
+First, I need to determine if there's an authority that resolves this conflict. The problem mentions that "authority and temporal-policy interpretation dominate the arithmetic surface." So, the key here is whether there's an established authority or policy that dictates how these states are resolved over time.
+
+The user is asking for the authoritative state, which implies that there's a source of authority that determines the correct value. However, the information given doesn't specify any such authority

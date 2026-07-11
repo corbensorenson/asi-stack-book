@@ -1,0 +1,4 @@
+<think>
+Okay, let's tackle this query. The user is asking about the authoritative state between two conflicting values: 20 and 28. The request mentions Snapshot 4 says state=20, and a later unsigned note says state=28. They want the authoritative state only if the authority is known. The problem is that there are two plausible authorities, and the request doesn't specify which one takes precedence.
+
+First, I need to determine if there's any information provided that indicates which source is more authoritative. The user mentions that the note is unsigned, which might mean it's not from a verified source. However, the problem states that the request doesn't identify which authority controls the conflict. So, without additional context or a clear indication of which source is more reliable,
