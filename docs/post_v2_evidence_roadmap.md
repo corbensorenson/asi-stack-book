@@ -5,7 +5,7 @@ Roadmap ID: `asi-stack-post-v2-evidence-2026-07-10`
 Authority: Corben Sorenson
 
 Status: active canonical post-v2 execution roadmap; all empirical priorities
-complete, reconciliation and release gate in progress
+complete, reconciliation complete, v2.1.0 release gate in progress
 
 Predecessor: `docs/asi_stack_completion_roadmap.md`, completed for v2.0.0 and
 retained as immutable release history

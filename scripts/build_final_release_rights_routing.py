@@ -48,7 +48,7 @@ def build() -> dict:
     counts = Counter(item["license_route"] for item in records)
     return {
         "schema_version": "asi_stack.final_release_rights_routing.v1",
-        "release_candidate": "v2.0.0",
+        "release_candidate": "v2.1.0",
         "decision_date": "2026-07-10",
         "selected_formats": ["html-live-book"],
         "license_texts": {
@@ -59,7 +59,7 @@ def build() -> dict:
         "files": records,
         "non_claims": [
             "Excluded paths receive no license grant from this release.",
-            "The routing review is an internal authorship/provenance decision, not legal advice or third-party clearance.",
+            "The v2.1.0 routing review is an internal authorship/provenance decision, not legal advice or third-party clearance.",
             "Trademarks, endorsement, patents outside Apache-2.0, privacy, publicity, and third-party rights are not granted.",
         ],
     }

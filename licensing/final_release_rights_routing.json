@@ -1,6 +1,6 @@
 {
   "schema_version": "asi_stack.final_release_rights_routing.v1",
-  "release_candidate": "v2.0.0",
+  "release_candidate": "v2.1.0",
   "decision_date": "2026-07-10",
   "selected_formats": [
     "html-live-book"
@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 2456,
+    "path_count": 2607,
     "by_license_route": {
-      "Apache-2.0": 623,
-      "CC-BY-4.0": 478,
-      "excluded-no-grant": 1355
+      "Apache-2.0": 647,
+      "CC-BY-4.0": 486,
+      "excluded-no-grant": 1474
     },
     "unresolved_count": 0
   },
@@ -917,7 +917,21 @@
       "review_basis": "author-created public metadata/governance record cleared as documentation"
     },
     {
+      "path": "ci/post_v2_requirements.txt",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created public metadata/governance record cleared as documentation"
+    },
+    {
       "path": "citations/v1.0.0.cff",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created public metadata/governance record cleared as documentation"
+    },
+    {
+      "path": "claim_decisions/post_v2_empirical_dispositions.json",
       "artifact_class": "public_metadata_or_governance_record",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
@@ -2303,6 +2317,13 @@
       "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
     },
     {
+      "path": "docs/post_v2_empirical_reconciliation.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
       "path": "docs/post_v2_evidence_preregistration.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
@@ -2311,6 +2332,34 @@
     },
     {
       "path": "docs/post_v2_evidence_roadmap.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/post_v2_governed_work_flagship.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/post_v2_residual_ledger.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/post_v2_routing_deliberation.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/post_v2_update_causality.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
@@ -3451,6 +3500,13 @@
       "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
     },
     {
+      "path": "docs/v2_1_release_scope.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
       "path": "docs/validation_registry_and_ci_tiers.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
@@ -4488,6 +4544,27 @@
     },
     {
       "path": "evidence_transitions/README.md",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "evidence_transitions/post_v2/update_causality_no_change.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
@@ -7637,7 +7714,819 @@
       "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
+      "path": "experiments/post_v2_evidence_program/amendments/governed_work_v1.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
       "path": "experiments/post_v2_evidence_program/preregistration.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t01_clamp_budget-seed-17.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t01_clamp_budget-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t01_clamp_budget-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t01_clamp_budget-seed-29.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t01_clamp_budget-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t01_clamp_budget-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t02_normalize_scope-seed-17.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t02_normalize_scope-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t02_normalize_scope-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t02_normalize_scope-seed-29.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t02_normalize_scope-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t02_normalize_scope-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t03_consume_nonce-seed-17.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t03_consume_nonce-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t03_consume_nonce-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t03_consume_nonce-seed-29.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t03_consume_nonce-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t03_consume_nonce-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t04_receipt_matches-seed-17.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t04_receipt_matches-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t04_receipt_matches-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t04_receipt_matches-seed-29.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t04_receipt_matches-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t04_receipt_matches-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t05_choose_reviewer-seed-17.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t05_choose_reviewer-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t05_choose_reviewer-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t05_choose_reviewer-seed-29.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t05_choose_reviewer-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t05_choose_reviewer-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t06_visible_cost-seed-17.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t06_visible_cost-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t06_visible_cost-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t06_visible_cost-seed-29.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t06_visible_cost-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t06_visible_cost-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t07_restore_snapshot-seed-17.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t07_restore_snapshot-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t07_restore_snapshot-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t07_restore_snapshot-seed-29.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t07_restore_snapshot-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t07_restore_snapshot-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t08_choose_route-seed-17.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t08_choose_route-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t08_choose_route-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t08_choose_route-seed-29.plan.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t08_choose_route-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/artifacts/model_outputs/t08_choose_route-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/README.md",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t01_clamp_budget-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t01_clamp_budget-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t01_clamp_budget-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t01_clamp_budget-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t02_normalize_scope-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t02_normalize_scope-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t02_normalize_scope-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t02_normalize_scope-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t03_consume_nonce-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t03_consume_nonce-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t03_consume_nonce-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t03_consume_nonce-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t04_receipt_matches-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t04_receipt_matches-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t04_receipt_matches-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t04_receipt_matches-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t05_choose_reviewer-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t05_choose_reviewer-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t05_choose_reviewer-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t05_choose_reviewer-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t06_visible_cost-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t06_visible_cost-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t06_visible_cost-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t06_visible_cost-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t07_restore_snapshot-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t07_restore_snapshot-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t07_restore_snapshot-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t07_restore_snapshot-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t08_choose_route-seed-17.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t08_choose_route-seed-17.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t08_choose_route-seed-29.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/model_outputs/t08_choose_route-seed-29.raw.txt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/attempts/2026-07-10-plan-format-pilot/result.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_governed_work_flagship/tasks.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_routing_deliberation/input/corpus.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-base-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-bounded_finetune-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-bounded_finetune-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-deletion_aware_retrain-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-deletion_aware_retrain-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-no_update-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-no_update-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-regularized_challenger-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-17-regularized_challenger-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-base-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-bounded_finetune-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-bounded_finetune-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-deletion_aware_retrain-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-deletion_aware_retrain-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-no_update-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-no_update-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-regularized_challenger-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-29-regularized_challenger-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-base-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-bounded_finetune-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-bounded_finetune-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-deletion_aware_retrain-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-deletion_aware_retrain-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-no_update-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-no_update-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-regularized_challenger-best.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/checkpoints/seed-43-regularized_challenger-final.pt",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/input/corpus.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/post_v2_update_causality/results/2026-07-10-local.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
@@ -11928,7 +12817,63 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "schemas/post_v2_empirical_dispositions.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
       "path": "schemas/post_v2_evidence_preregistration.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/post_v2_evidence_preregistration_amendment.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/post_v2_governed_work_result.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/post_v2_governed_work_tasks.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/post_v2_routing_deliberation_corpus.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/post_v2_routing_deliberation_result.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/post_v2_update_causality_corpus.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/post_v2_update_causality_result.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
@@ -12348,6 +13293,27 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "scripts/build_post_v2_empirical_dispositions.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/build_post_v2_routing_deliberation_corpus.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/build_post_v2_update_causality_corpus.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
       "path": "scripts/build_product_projections.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -12453,6 +13419,20 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "scripts/post_v2_governed_work_observer.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/register_post_v2_validators.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
       "path": "scripts/render_curated_reader_formats.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -12517,6 +13497,27 @@
     },
     {
       "path": "scripts/run_phase5_harnesses.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/run_post_v2_governed_work_flagship.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/run_post_v2_routing_deliberation.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/run_post_v2_update_causality.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
@@ -12678,6 +13679,13 @@
     },
     {
       "path": "scripts/update_chapter_source_status.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/update_post_v2_canonical_surfaces.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
@@ -13566,7 +14574,56 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "scripts/validate_post_v2_empirical_reconciliation.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
       "path": "scripts/validate_post_v2_evidence_preregistration.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_governed_work_flagship.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_governed_work_setup.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_routing_deliberation.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_routing_deliberation_setup.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_update_causality.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_update_causality_setup.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
@@ -17222,7 +18279,7 @@
   ],
   "non_claims": [
     "Excluded paths receive no license grant from this release.",
-    "The routing review is an internal authorship/provenance decision, not legal advice or third-party clearance.",
+    "The v2.1.0 routing review is an internal authorship/provenance decision, not legal advice or third-party clearance.",
     "Trademarks, endorsement, patents outside Apache-2.0, privacy, publicity, and third-party rights are not granted."
   ]
 }

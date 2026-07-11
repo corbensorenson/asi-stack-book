@@ -16,5 +16,11 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.11"
+      - name: Install pinned post-v2 evidence runtime
+        run: |
+          python3 -m pip install --disable-pip-version-check --no-cache-dir \
+            --index-url https://download.pytorch.org/whl/cpu torch==2.7.1
+          python3 -m pip install --disable-pip-version-check --no-cache-dir \
+            -r ci/post_v2_requirements.txt
       - name: Run deep registry tier
         run: python3 scripts/run_validation_registry.py --tier deep

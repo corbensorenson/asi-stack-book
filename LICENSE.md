@@ -2,10 +2,11 @@
 
 Copyright (c) 2026 Corben Sorenson.
 
-The path-level authority for the completed `v2.0.0` release is
+The path-level authority for the current `v2.1.0` release is
 `licensing/final_release_rights_routing.json`. The grants below apply only to
 the exact files at that tag and only when the ledger assigns the corresponding
-`license_route`.
+`license_route`. The published `v2.0.0` release remains governed by its exact
+tag and the rights-routing snapshot digest recorded in its release record.
 
 ## Cleared prose and figures
 
@@ -15,7 +16,7 @@ Attribution 4.0 International Public License. The exact legal text is in
 https://creativecommons.org/licenses/by/4.0/legalcode.txt.
 
 Required attribution: “The ASI Stack: A Governed Systems Architecture for
-Advanced AI, with ASI as the Stress Case,” Corben Sorenson, version 2.0.0,
+Advanced AI, with ASI as the Stress Case,” Corben Sorenson, version 2.1.0,
 licensed CC BY 4.0. Include the version/tag and a link to the license.
 
 ## Cleared software-like artifacts
@@ -40,7 +41,7 @@ but not to imply endorsement.
 
 ## Drafting states and later changes
 
-Before the `v2.0.0` tag exists, and for later files or revisions not covered by
+Before the `v2.1.0` tag exists, and for later files or revisions not covered by
 an exact release routing ledger, all rights are reserved unless another written
 grant applies. `/latest/` is a mutable publication surface and does not itself
 expand the license beyond the tagged files named by a routing ledger.

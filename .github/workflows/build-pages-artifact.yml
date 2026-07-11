@@ -25,6 +25,13 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Install pinned post-v2 evidence runtime
+        run: |
+          python3 -m pip install --disable-pip-version-check --no-cache-dir \
+            --index-url https://download.pytorch.org/whl/cpu torch==2.7.1
+          python3 -m pip install --disable-pip-version-check --no-cache-dir \
+            -r ci/post_v2_requirements.txt
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2
         with:

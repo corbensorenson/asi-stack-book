@@ -443,11 +443,11 @@
     },
     {
       "script": "validate_final_release_rights_routing.py", "args": [],
-      "input_contract": "The current path inventory, deterministic v2.0.0 rights routing, official CC BY 4.0 and Apache-2.0 texts/digests, operative LICENSE/NOTICE, mixed-path exclusions, and HTML-only release scope.",
-      "input_artifacts": ["licensing/provenance_inventory.json", "licensing/final_release_rights_routing.json", "licenses/CC-BY-4.0.txt", "licenses/Apache-2.0.txt", "LICENSE.md", "NOTICE.md", "docs/v2_0_release_scope.md", "scripts/build_final_release_rights_routing.py", "scripts/validate_final_release_rights_routing.py"],
+      "input_contract": "The current path inventory, deterministic v2.1.0 rights routing, official CC BY 4.0 and Apache-2.0 texts/digests, operative LICENSE/NOTICE, mixed-path exclusions, and HTML-only evidence-release scope.",
+      "input_artifacts": ["licensing/provenance_inventory.json", "licensing/final_release_rights_routing.json", "licenses/CC-BY-4.0.txt", "licenses/Apache-2.0.txt", "LICENSE.md", "NOTICE.md", "docs/v2_1_release_scope.md", "scripts/build_final_release_rights_routing.py", "scripts/validate_final_release_rights_routing.py"],
       "output_contract": "Reject missing/duplicate/unresolved path routes, self-relicensed license texts, mixed/imported grants, unowned grant lanes, legal-text drift, incomplete notices, or unapproved format claims.",
       "output_assertions": ["every inventoried path exactly once", "CC Apache or excluded only", "zero unresolved", "official normalized legal-text digests", "mixed/imported/source/derivative exclusion", "author-classified grant lanes", "conditional tag boundary", "HTML-only scope"],
-      "claim_scope": "Internal record-level rights routing and selected-format control for the v2.0.0 candidate.",
+      "claim_scope": "Internal record-level rights routing and selected-format control for the v2.1.0 evidence-release candidate.",
       "negative_controls": "validator_owned", "negative_control_cases": ["missing route", "duplicate route", "unknown route", "license-text self grant", "mixed source grant", "unowned Apache/CC grant", "legal-text digest drift", "format overclaim"],
       "prohibited_inference": "Internal rights routing is not legal advice, third-party clearance, trademark permission, endorsement, privacy/publicity clearance, or a grant for excluded/untagged/later files.",
       "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"

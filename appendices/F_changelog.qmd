@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-10 - v2.1.0 evidence-release candidate
+
+- Selected v2.1.0 only after all three empirical programs closed. Kept the v2
+  title and 54-chapter architecture; selected only the canonical live/research
+  HTML book plus an exact tested-site archive. Optional reader/ebook/document/
+  audio formats remain outside scope.
+- Completed an internal exact-path ownership/provenance review over 2,607
+  paths: 486 routed CC BY 4.0, 647 Apache-2.0, and 1,474 excluded/no-grant,
+  including all experiment outputs, raw generations, candidates, checkpoints,
+  and result bundles. Zero routes are unresolved or unknown. This is not legal
+  advice or third-party clearance.
+- Pinned the post-v2 CPU evidence runtime in deep CI so checkpoint, routing,
+  observer, and worktree replays run in the tested artifact chain. The runtime
+  does not redownload model weights or regenerate outcomes in CI.
+
 ## 2026-07-10 - Post-v2 empirical reconciliation
 
 - Accepted three non-core `blocks_promotion` no-change records and exactly nine
