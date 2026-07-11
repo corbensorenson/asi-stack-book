@@ -65,7 +65,7 @@ def git(root: Path, *args: str) -> str:
     )
     if process.returncode:
         raise RuntimeError(f"git {' '.join(args)} failed: {process.stderr.strip()}")
-    return process.stdout.strip()
+    return process.stdout.rstrip("\n")
 
 
 def changed_paths(root: Path) -> list[str]:
