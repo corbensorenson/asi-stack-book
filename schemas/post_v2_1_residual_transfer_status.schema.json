@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_1_residual_transfer_status.schema.json",
+  "title": "Post-v2.1 Residual and Transfer Roadmap Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "snapshot_date",
+    "roadmap_id",
+    "roadmap_path",
+    "authority",
+    "status",
+    "predecessor",
+    "baseline",
+    "priorities",
+    "milestones",
+    "residuals",
+    "conditional_lanes",
+    "support_state_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.post_v2_1_residual_transfer_status.v0"
+    },
+    "snapshot_date": { "type": "string", "format": "date" },
+    "roadmap_id": {
+      "const": "asi-stack-post-v2-1-residual-transfer-2026-07-10"
+    },
+    "roadmap_path": {
+      "const": "docs/post_v2_1_residual_and_transfer_roadmap.md"
+    },
+    "authority": { "type": "string", "minLength": 1 },
+    "status": { "const": "active" },
+    "predecessor": {
+      "type": "object",
+      "required": ["path", "state"],
+      "properties": {
+        "path": { "const": "docs/post_v2_evidence_roadmap.md" },
+        "state": { "const": "completed" }
+      },
+      "additionalProperties": false
+    },
+    "baseline": {
+      "type": "object",
+      "required": [
+        "latest_immutable_release",
+        "active_chapter_count",
+        "core_claim_count",
+        "core_argument_count",
+        "adjacent_local_replay_count",
+        "no_claim_specific_replay_count",
+        "actionable_residual_count",
+        "conditional_residual_count",
+        "priority_count",
+        "active_empirical_program_count"
+      ],
+      "properties": {
+        "latest_immutable_release": { "const": "v2.1.0" },
+        "active_chapter_count": { "const": 54 },
+        "core_claim_count": { "const": 54 },
+        "core_argument_count": { "const": 54 },
+        "adjacent_local_replay_count": { "const": 25 },
+        "no_claim_specific_replay_count": { "const": 29 },
+        "actionable_residual_count": { "const": 11 },
+        "conditional_residual_count": { "const": 3 },
+        "priority_count": { "const": 4 },
+        "active_empirical_program_count": { "const": 3 }
+      },
+      "additionalProperties": false
+    },
+    "priorities": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": { "$ref": "#/$defs/priority" }
+    },
+    "milestones": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": { "$ref": "#/$defs/milestone" }
+    },
+    "residuals": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11,
+      "items": { "$ref": "#/$defs/residual" }
+    },
+    "conditional_lanes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "$ref": "#/$defs/conditional" }
+    },
+    "support_state_effect": { "const": "none" },
+    "non_claims": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "priority": {
+      "type": "object",
+      "required": ["id", "kind", "state", "residual_ids", "evidence_refs"],
+      "properties": {
+        "id": { "enum": ["P0", "P1", "P2", "P3"] },
+        "kind": { "enum": ["publication_gate", "empirical_program"] },
+        "state": {
+          "enum": [
+            "pending",
+            "preregistered",
+            "running",
+            "dispositioned",
+            "completed",
+            "blocked"
+          ]
+        },
+        "residual_ids": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "milestone": {
+      "type": "object",
+      "required": ["id", "state", "evidence_refs"],
+      "properties": {
+        "id": { "enum": ["M0", "M1", "M2", "M3", "M4", "M5"] },
+        "state": { "enum": ["pending", "in_progress", "completed", "blocked"] },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "residual": {
+      "type": "object",
+      "required": ["id", "priority", "state", "evidence_refs"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^(GW|RD|UU)-[0-9]{2}$" },
+        "priority": { "enum": ["P1", "P2", "P3"] },
+        "state": {
+          "enum": ["actionable_open", "closed", "narrowed", "persisted", "escalated"]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "conditional": {
+      "type": "object",
+      "required": ["id", "state", "activation_condition", "evidence_refs"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^COND-[0-9]{2}$" },
+        "state": { "enum": ["activation_absent", "active", "completed", "blocked"] },
+        "activation_condition": { "type": "string", "minLength": 1 },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

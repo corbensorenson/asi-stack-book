@@ -42,10 +42,13 @@ the record says `source_tree_state: clean` and `build_context: tested_commit`.
 A locally generated record from a dirty worktree is intentionally labeled
 `local_worktree`; it is useful for diagnosis but is not a release attestation.
 
-The record identifies the active development line and the tagged baseline
-separately. `active_version` currently reports `v1.x-development`, while
-`baseline_release` reports `v1.0.0`. This prevents a living development site
-from presenting every post-tag change as if it were part of the immutable tag.
+The record identifies the latest immutable release and historical baseline
+separately. `active_version` currently reports `v2.1.0`, while
+`baseline_release` retains `v1.0.0` for compatibility with the original
+baseline field. The active post-v2.1 roadmap is a separate execution authority;
+its machine path is `docs/post_v2_1_residual_and_transfer_roadmap.md`. Later
+root or `/latest/` commits remain mutable and are not part of the immutable
+v2.1.0 tag.
 
 ## Contradiction and Render Gates
 

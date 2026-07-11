@@ -1,0 +1,122 @@
+{
+  "schema_version": "asi_stack.post_v2_1_residual_transfer_status.v0",
+  "snapshot_date": "2026-07-10",
+  "roadmap_id": "asi-stack-post-v2-1-residual-transfer-2026-07-10",
+  "roadmap_path": "docs/post_v2_1_residual_and_transfer_roadmap.md",
+  "authority": "Corben Sorenson",
+  "status": "active",
+  "predecessor": {
+    "path": "docs/post_v2_evidence_roadmap.md",
+    "state": "completed"
+  },
+  "baseline": {
+    "latest_immutable_release": "v2.1.0",
+    "active_chapter_count": 54,
+    "core_claim_count": 54,
+    "core_argument_count": 54,
+    "adjacent_local_replay_count": 25,
+    "no_claim_specific_replay_count": 29,
+    "actionable_residual_count": 11,
+    "conditional_residual_count": 3,
+    "priority_count": 4,
+    "active_empirical_program_count": 3
+  },
+  "priorities": [
+    {
+      "id": "P0",
+      "kind": "publication_gate",
+      "state": "running",
+      "residual_ids": [],
+      "evidence_refs": [
+        "docs/post_v2_1_public_truth_audit.md",
+        "scripts/validate_post_v2_1_public_truth.py"
+      ]
+    },
+    {
+      "id": "P1",
+      "kind": "empirical_program",
+      "state": "pending",
+      "residual_ids": ["GW-01", "GW-02", "GW-03"],
+      "evidence_refs": []
+    },
+    {
+      "id": "P2",
+      "kind": "empirical_program",
+      "state": "pending",
+      "residual_ids": ["RD-01", "RD-02", "RD-03", "RD-04"],
+      "evidence_refs": []
+    },
+    {
+      "id": "P3",
+      "kind": "empirical_program",
+      "state": "pending",
+      "residual_ids": ["UU-01", "UU-02", "UU-03", "UU-04"],
+      "evidence_refs": []
+    }
+  ],
+  "milestones": [
+    {
+      "id": "M0",
+      "state": "completed",
+      "evidence_refs": [
+        "docs/post_v2_1_residual_and_transfer_roadmap.md",
+        "schemas/post_v2_1_residual_transfer_status.schema.json",
+        "roadmap_records/post_v2_1_residual_and_transfer_status.json",
+        "scripts/validate_post_v2_1_residual_transfer_roadmap.py"
+      ]
+    },
+    {
+      "id": "M1",
+      "state": "in_progress",
+      "evidence_refs": [
+        "docs/post_v2_1_public_truth_audit.md",
+        "scripts/validate_post_v2_1_public_truth.py"
+      ]
+    },
+    { "id": "M2", "state": "pending", "evidence_refs": [] },
+    { "id": "M3", "state": "pending", "evidence_refs": [] },
+    { "id": "M4", "state": "pending", "evidence_refs": [] },
+    { "id": "M5", "state": "pending", "evidence_refs": [] }
+  ],
+  "residuals": [
+    { "id": "GW-01", "priority": "P1", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "GW-02", "priority": "P1", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "GW-03", "priority": "P1", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "RD-01", "priority": "P2", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "RD-02", "priority": "P2", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "RD-03", "priority": "P2", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "RD-04", "priority": "P2", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "UU-01", "priority": "P3", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "UU-02", "priority": "P3", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "UU-03", "priority": "P3", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] },
+    { "id": "UU-04", "priority": "P3", "state": "actionable_open", "evidence_refs": ["docs/post_v2_residual_ledger.md"] }
+  ],
+  "conditional_lanes": [
+    {
+      "id": "COND-01",
+      "state": "activation_absent",
+      "activation_condition": "A non-secret disposable hardware and attestation environment is registered.",
+      "evidence_refs": ["docs/post_v2_residual_ledger.md"]
+    },
+    {
+      "id": "COND-02",
+      "state": "activation_absent",
+      "activation_condition": "A disposable multi-node environment with distinct principals is registered.",
+      "evidence_refs": ["docs/post_v2_residual_ledger.md"]
+    },
+    {
+      "id": "COND-03",
+      "state": "activation_absent",
+      "activation_condition": "A trainable Circle or Coil implementation and matched baseline are registered.",
+      "evidence_refs": ["docs/post_v2_residual_ledger.md"]
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "Roadmap activation does not complete P0 or any empirical program.",
+    "A pending program does not provide empirical support for a chapter claim.",
+    "Internal process separation is not external or institutional independence.",
+    "Conditional lanes remain inactive until their exact activation conditions pass.",
+    "The roadmap does not select a release version or approve an optional format."
+  ]
+}

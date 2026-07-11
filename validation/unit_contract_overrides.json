@@ -473,6 +473,28 @@
       "negative_controls": "validator_owned", "negative_control_cases": ["missing public file", "unsafe source path", "unsupported artifact claim"],
       "prohibited_inference": "Publication hygiene does not approve content, claims, accessibility, licensing change, or release readiness.",
       "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "script": "validate_post_v2_1_residual_transfer_roadmap.py", "args": [],
+      "input_contract": "The active post-v2.1 roadmap, machine status sidecar/schema, stable residual ledger IDs, completed predecessor/completion declaration, current evidence vectors/manifest, and README authority pointer.",
+      "input_artifacts": ["docs/post_v2_1_residual_and_transfer_roadmap.md", "roadmap_records/post_v2_1_residual_and_transfer_status.json", "schemas/post_v2_1_residual_transfer_status.schema.json", "docs/post_v2_residual_ledger.md", "docs/post_v2_evidence_roadmap.md", "docs/v2_1_completion_declaration.md", "evidence_quality/core_claim_vectors.json", "book_structure.json", "README.md", "scripts/validate_post_v2_1_residual_transfer_roadmap.py"],
+      "output_contract": "Reject baseline-count drift, missing or duplicate residuals, wrong priority ownership, unsupported state progression, erased conditional lanes, incomplete roadmap quality contracts, or stale active-roadmap pointers.",
+      "output_assertions": ["one active successor and completed predecessor", "P0 plus exactly three empirical programs", "eleven unique actionable residuals owned exactly once", "three activation-absent conditional lanes", "machine baseline agrees with 54 current evidence vectors", "statistical, portability, security, budget, risk, release, and completion contracts present"],
+      "claim_scope": "Roadmap authority, progress metadata, residual ownership, and current evidence-baseline coherence only.",
+      "negative_controls": "validator_owned", "negative_control_cases": ["residual count drift", "duplicate residual identity", "wrong residual owner", "completion without evidence", "conditional erasure", "stale active pointer"],
+      "prohibited_inference": "Roadmap and status validity do not execute a program, close a residual, establish transfer or independence, promote a claim, or approve a release.",
+      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "script": "validate_post_v2_1_public_truth.py", "args": [],
+      "input_contract": "Canonical status policy, exact v2.1.0 release record and archive row, root citation, rights surfaces, active roadmap machine state, manifest/evidence vectors, current public prose, predecessor pointers, and public-truth audit.",
+      "input_artifacts": ["status/public_status_config.json", "status/versioned_release_policy.json", "release_records/2026-07-10-v2.1.0-evidence-cb3b8605.json", "roadmap_records/post_v2_1_residual_and_transfer_status.json", "book_structure.json", "evidence_quality/core_claim_vectors.json", "CITATION.cff", "LICENSE.md", "NOTICE.md", "README.md", "index.qmd", "docs/publication_readiness.md", "docs/release_reproducibility.md", "docs/public_status_contract.md", "docs/post_v2_evidence_roadmap.md", "docs/v2_1_completion_declaration.md", "docs/post_v2_1_public_truth_audit.md", "scripts/validate_post_v2_1_public_truth.py"],
+      "output_contract": "Reject stale or multiple active identities, release/commit/archive disagreement, mutable-channel laundering, wrong rights tag, optional-format invention, current-count drift, or missing historical/current routing.",
+      "output_assertions": ["v2.1.0 release commit and archive agree", "one active successor roadmap", "54 core claims remain argument", "rights remain exact-tag bound", "latest remains mutable", "optional formats remain outside release scope"],
+      "claim_scope": "Current public release, roadmap, citation, rights, format, and count identity only.",
+      "negative_controls": "validator_owned", "negative_control_cases": ["stale version", "stale roadmap", "wrong commit", "false archive state", "wrong rights tag", "invented format approval"],
+      "prohibited_inference": "Public-truth coherence does not execute the roadmap, validate chapter claims, establish model safety or transfer, approve optional formats, or provide external review.",
+      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "non_claims": [

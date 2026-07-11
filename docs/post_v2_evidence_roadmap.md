@@ -11,6 +11,8 @@ reconciliation complete, and the release/deploy/archive gate complete
 Predecessor: `docs/asi_stack_completion_roadmap.md`, completed for v2.0.0 and
 retained as immutable release history
 
+Active successor: `docs/post_v2_1_residual_and_transfer_roadmap.md`
+
 ## Goal to point at
 
 > Move The ASI Stack from a completed, internally coherent v2.0.0 research
@@ -29,8 +31,8 @@ This paragraph is the canonical long-running post-v2 goal.
 
 Completion: all three empirical programs, reconciliation, release, deployment,
 attestation, and immutable-archive gates are complete. The exact completion
-record is `docs/v2_1_completion_declaration.md`. There is no active successor
-roadmap; future work begins only through a new author-approved goal.
+record is `docs/v2_1_completion_declaration.md`. New work is governed by the
+active successor named above and does not reopen this completed cycle.
 
 ## Why this is the next direction
 

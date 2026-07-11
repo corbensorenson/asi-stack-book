@@ -1,8 +1,11 @@
 # Release Reproducibility
 
-Last updated: 2026-06-29
+Last updated: 2026-07-10
 
-This note records the toolchain and citation boundary for the tagged v1.0.0 living-book release. It is a reproducibility and citability record, not an approval of EPUB, DOCX, PDF, e-reader, or audio artifacts.
+This note records the current toolchain and citation boundary for the tagged
+`v2.1.0` evidence release while preserving the historical `v1.0.0` citation
+record. It is a reproducibility and citability record, not an approval of EPUB,
+DOCX, PDF, e-reader, audio, or curated-reader artifacts.
 
 ## CI Toolchain
 
@@ -43,7 +46,34 @@ The HTML book currently relies on Quarto's generated site assets, the repository
 
 ## Citation Boundary
 
-`citations/v1.0.0.cff` preserves the former-title release citation as version `1.0.0` with date `2026-06-29`. The exact source state is tag `v1.0.0` at commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`. The tracked living-book release record is `release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`, and the GitHub Release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v1.0.0>. Root `CITATION.cff` describes the active v1.x development line under the reframed subtitle; it does not rewrite the tagged v1.0.0 citation.
+Root `CITATION.cff` describes version `2.1.0`, released `2026-07-10`. Cite
+exact tag `v2.1.0` and source commit
+`cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`. The tracked evidence-release
+record is `release_records/2026-07-10-v2.1.0-evidence-cb3b8605.json`, the source
+release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.1.0>,
+and the immutable rendered-site archive and SHA-256 are recorded in
+`status/versioned_release_policy.json`. The recorded archive SHA-256 is
+`c70534db9ffed722f33227b191930781b2daf1058d949b90d803bca9a47e375c`. The
+public root and `/latest/` are mutable channels, not immutable citation targets.
+
+How to cite v2.1.0:
+
+- Cite the repository and tag-specific GitHub Release.
+- Include version string `2.1.0`, tag `v2.1.0`, and source commit
+  `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`.
+- Use the immutable rendered-site archive URL and recorded SHA-256 when citing
+  rendered bytes.
+- Do not cite a DOI; no DOI or Zenodo archive identifier has been issued.
+
+### Historical v1.0.0 citation
+
+`citations/v1.0.0.cff` preserves the former-title release citation as version
+`1.0.0` with date `2026-06-29`. Its exact source state is tag `v1.0.0` at commit
+`96d0ca3c6b62f3530202535573941b1f6e50a83d`. The tracked record is
+`release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json`. This historical
+metadata does not override root `CITATION.cff`.
+
+The historical snapshot is version `1.0.0`, tag `v1.0.0` at commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`.
 
 How to cite v1.0.0:
 

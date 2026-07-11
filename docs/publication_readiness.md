@@ -4,11 +4,31 @@
 _Current canonical metrics (generated from machine records): **54 manifest chapters; 273 public-safe records; 54 chapter-core claims; 54/54 chapters externally positioned; 0 promoted core claims.**_
 <!-- canonical-status:generated-end -->
 
-Last audited: 2026-07-02
+Last audited: 2026-07-10
 
-This file tracks whether the public repository is ready for continued public
-v1.x work after the tagged v1.0.0 release. The current snapshot is summarized
-in `docs/v1_0_candidate_status.md`.
+This file tracks whether the public repository is ready for continued living-
+book work after the immutable `v2.1.0` evidence release. Current execution is
+governed by `docs/post_v2_1_residual_and_transfer_roadmap.md`; the completed v2,
+v2.1, and v1.x documents below remain historical evidence and maintenance
+records rather than active roadmaps.
+
+## Current release and roadmap authority
+
+- Latest immutable evidence release: `v2.1.0`, source commit
+  `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`.
+- Active roadmap: `docs/post_v2_1_residual_and_transfer_roadmap.md`, with state
+  in `roadmap_records/post_v2_1_residual_and_transfer_status.json`.
+- Completed predecessor: `docs/post_v2_evidence_roadmap.md`; its execution
+  history and `docs/v2_1_completion_declaration.md` remain unchanged.
+- The root site and `/latest/` are mutable. The immutable rendered v2.1.0 site
+  is the exact GitHub Release asset recorded in
+  `status/versioned_release_policy.json` with its SHA-256.
+- Root `CITATION.cff` describes v2.1.0. Historical citation snapshots remain
+  version-scoped and do not override it.
+- All 54 chapter-core claims remain at `argument`; publication reconciliation
+  creates no evidence transition or support-state promotion.
+- EPUB, DOCX, PDF, audio, and curated-reader editions are not v2.1.0 release
+  artifacts and require their own exact release records.
 
 ## Ready
 
@@ -23,13 +43,32 @@ in `docs/v1_0_candidate_status.md`.
 - The policy-optimization context ingestion report exists at `docs/policy_optimization_context_ingestion_report.md`.
 - The release-edition plan exists at `docs/release_editions_plan.md`, with public appendix coverage in `appendices/J_release_editions.qmd`.
 - The major-version release ladder exists at `docs/major_version_release_runbook.md` so live/research, reader, e-reader/document, and audio artifacts have an explicit sequence.
-- The current v1.0.0 release status snapshot exists at `docs/v1_0_candidate_status.md`.
-- The post-v1.0.0 v1.x roadmap exists at `docs/v1_x_beyond_sota_roadmap.md`, separating future evidence depth, safety-critical Lean proof work, Project Theseus/Circle replay lanes, curated human-reader prose, and artifact-release quality from the already tagged living-book release boundary. The A+ quality scorecard exists at `docs/a_plus_quality_scorecard.md` so the next work can target cold-read legibility, defended contribution tracks, and evidence depth directly. The active 54-chapter evidence-lane backlog now lives separately at `docs/per_chapter_evidence_plan.md` and is explicitly a menu for selecting one flagship measured lane plus at most two direct support lanes, not a checklist for a shallow full-book fixture sweep. The governed consolidation sequence exists at `docs/chapter_consolidation_sequence.md`; `scripts/validate_chapter_consolidation_sequence.py` preserves the full 54-to-44/47 candidate map, chapter-ownership rubric, consolidation state model, executed Part I state, executed conservative compression merge, executed intent/contracts merge, executed MoECOT runtime fold, executed simulation-fidelity fold, executed static context ABI merge, executed verification/adversarial-review merge, remaining package gates, and no-support-state boundary as planning guidance. The Part I pilot, conservative compression merge, intent/contracts merge, MoECOT runtime fold, simulation-fidelity fold, static context ABI merge, verification/adversarial-review merge, planning/DAG consolidation, and semantic-representation fold have executed with retired-URL historical stubs and archived source manuscripts under `docs/chapter_consolidation_url_history_policy.md`; their dry-run and destination-draft files remain historical review artifacts, not active manifest instructions. Historical executed-package artifacts include `docs/chapter_consolidation_dry_run_compression.md`, `docs/chapter_consolidation_destination_draft_compression.md`, `docs/chapter_consolidation_dry_run_intent_contracts.md`, `docs/chapter_consolidation_destination_draft_intent_contracts.md`, `docs/chapter_consolidation_dry_run_context_abi.md`, `docs/chapter_consolidation_destination_draft_context_abi.md`, `docs/chapter_consolidation_dry_run_verification_review.md`, `docs/chapter_consolidation_destination_draft_verification_review.md`, `docs/chapter_consolidation_fold_moecot_runtime.md`, and `docs/chapter_consolidation_fold_simulation_fidelity.md`. `docs/chapter_consolidation_dry_run_planning_dag.md` and `docs/chapter_consolidation_destination_draft_planning_dag.md` are historical review artifacts for the executed planning/DAG consolidation. `docs/chapter_consolidation_fold_semantic_representation.md` is the historical fold-disposition record for the executed semantic-representation fold. `docs/chapter_consolidation_full_review_packet.md` gives reviewers one full decision-queue surface for the remaining review-ready package and fold disposition without creating accepted review input, artifact approval, support-state movement, or manifest authorization. `docs/chapter_consolidation_release_stability_review.md` records a `deferred_for_release` reader-work outcome for the remaining unexecuted packages in the current reader-curation cycle without executing additional merges, changing support states, creating external review, or approving reader release artifacts.
+- The historical v1.0.0 release status snapshot remains at `docs/v1_0_candidate_status.md`.
+- The completed post-v1.0.0 v1.x roadmap remains at `docs/v1_x_beyond_sota_roadmap.md`; it is not the active execution authority. Its evidence plans, consolidation packets, reader workspaces, and disposition records remain useful historical inputs where the active post-v2.1 roadmap explicitly references them.
+- `docs/chapter_consolidation_full_review_packet.md` remains a historical review-request surface only; it is not an active roadmap, accepted review, merge authorization, evidence transition, or prepublication requirement.
+- The historical consolidation inventory remains auditable through
+  `docs/chapter_consolidation_sequence.md`,
+  `docs/chapter_consolidation_url_history_policy.md`,
+  `docs/chapter_consolidation_dry_run_compression.md`,
+  `docs/chapter_consolidation_destination_draft_compression.md`,
+  `docs/chapter_consolidation_dry_run_intent_contracts.md`,
+  `docs/chapter_consolidation_destination_draft_intent_contracts.md`,
+  `docs/chapter_consolidation_dry_run_context_abi.md`,
+  `docs/chapter_consolidation_destination_draft_context_abi.md`,
+  `docs/chapter_consolidation_dry_run_verification_review.md`,
+  `docs/chapter_consolidation_destination_draft_verification_review.md`,
+  `docs/chapter_consolidation_dry_run_planning_dag.md`,
+  `docs/chapter_consolidation_destination_draft_planning_dag.md`,
+  `docs/chapter_consolidation_fold_moecot_runtime.md`,
+  `docs/chapter_consolidation_fold_simulation_fidelity.md`,
+  `docs/chapter_consolidation_fold_semantic_representation.md`, and
+  `docs/chapter_consolidation_release_stability_review.md`. These are completed,
+  deferred, or superseded historical records, not current execution authority.
 - The defended contribution selection record exists at `docs/defended_contribution_tracks.md`; `scripts/validate_defended_contribution_tracks.py` checks five selected tracks, three deep-work tracks, active evidence-cycle lane anchors, and no chapter-core promotion.
 - The defended contribution prior-art positioning record exists at `docs/defended_contribution_prior_art_positioning.md`; `scripts/validate_defended_contribution_prior_art.py` checks that all five selected tracks are positioned against source-noted external comparators while preserving that the record is not exhaustive literature review, novelty proof, external review, evidence creation, or support-state movement.
 - The evidence-laundering prevention case-study record exists at `docs/evidence_laundering_prevention_case_studies.md`; `scripts/validate_evidence_laundering_case_studies.py` checks three live no-promotion examples plus one live claim-surface narrowing record and preserves that no chapter-core demotion/refutation case, external review, or support-state movement is claimed.
 - The governed repository-change vertical slice exists at `docs/governed_repository_change_slice.md`; its runner creates disposable Git repositories and executes nine matched baseline/governed scenarios through code mutation, tests, independent effect observation, receipt comparison, release/refusal, rollback, and quarantine. `scripts/validate_governed_repository_change_slice.py` reruns the workload and preserves its bounded local-fixture and no-support-state boundary.
-- The current v1.0.0 reproducibility and citation note exists at `docs/release_reproducibility.md`; `CITATION.cff` records version `1.0.0`, DOI-pending status, tag `v1.0.0`, source commit `96d0ca3c6b62f3530202535573941b1f6e50a83d`, and the public site/repository citation path; `scripts/validate_release_reproducibility.py` checks the pinned CI Quarto/Python/Node setup, Lean toolchain reference, locale notes, tag facts, and non-release artifact boundary.
+- The current reproducibility and citation note exists at `docs/release_reproducibility.md`; root `CITATION.cff` records version `2.1.0`, DOI-pending status, tag `v2.1.0`, source commit `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`, and the public repository/release citation path. `citations/v1.0.0.cff` remains the historical v1.0.0 snapshot. `scripts/validate_release_reproducibility.py` checks the pinned CI toolchain, both citation scopes, tag facts, and non-release artifact boundary.
 - The Phase 7 public-site accessibility readiness record exists at `docs/public_site_accessibility_review.md`, and the compact phase progress ledger exists at `docs/v1_progress_ledger.md`; `scripts/validate_public_site_accessibility.py` checks the assistive reading-mode hooks, focus/containment CSS, landing-image alt text, diagram walkthrough coverage, residuals, and non-claims without claiming WCAG conformance or reader-artifact approval.
 - The v1.0 release-gate audit exists at `docs/v1_0_release_gate_audit.md`; `scripts/validate_v1_release_gate_audit.py` checks all eleven Definition-of-Done gates, their evidence references, tag `v1.0.0`, source commit, GitHub Release, living-book release record, DOI-pending state, and non-claims without creating a DOI, archive, additional artifact approval, or support-state promotion.
 - The non-core evidence ledger exists at `docs/non_core_evidence_ledger.md`; `scripts/validate_non_core_evidence_ledger.py` checks that the fourteen accepted non-core upward transitions and the live count-surface narrowing record are visible, that all 54 chapter core claims remain at `argument`, and that README, landing page, and Appendix C point readers to the no-promotion boundary.
@@ -67,7 +106,7 @@ in `docs/v1_0_candidate_status.md`.
 - A public-surface audit has removed stale generated-placeholder language from live chapters and future scaffold defaults.
 - GitHub issue templates and PR template exist for source, chapter, evidence, proof/code, and site work.
 
-## Known Residuals After v1.0.0
+## Known residuals after v2.1.0
 
 - Source-derived support still requires claim-to-mechanism reconciliation and an accepted evidence transition after passage review; complete passage-reviewed mapping coverage alone remains insufficient for support-state promotion.
 - Newly added or previously unassigned sources still require source notes and chapter assignment before they can be used as source-derived support.
@@ -81,7 +120,7 @@ in `docs/v1_0_candidate_status.md`.
 - The chapters have received broad coherence, transition, Human-view, and generated-reader chapter-text review passes, and the three companion-note candidate chapters now have tracked reader/e-reader/audio routing decisions. The book still needs claim-to-mechanism support review and accepted evidence transitions before chapter core claims can rise above `argument`. The versioned reader chapter review matrix has all 44 curated-manuscript records at reviewed chapter-text status, but it is a separate edition surface and release-record and format-artifact blockers remain on every row.
 - Reader, research, PDF, EPUB, DOCX, AZW3, MOBI, and audio editions are planned and scaffolded. Local HTML/EPUB/DOCX dry-run snapshots now exist with structural inspection for review, `docs/reader_html_artifact_browser_review.md` records a full local browser review of the generated reader HTML snapshot across 118 page-view pairs, `release_records/2026-06-29-v1-reader-html-855dc277.json` records the reviewed local HTML snapshot from source tag `v1.0.0-reader-html-source`, `docs/reader_key_figure_artifact_review.md` records validator-checked draft key-figure placement and metadata while preserving final-art and release-review blockers, `docs/reader_key_figure_html_probe.md` records a rendered curated-reader HTML DOM probe for all ten draft key figures, `docs/reader_key_figure_format_probe.md` records current ignored EPUB/DOCX/PDF key-figure package-text survival with 10 EPUB title matches, 10 DOCX stem matches, and 10 PDF draft-caption matches, `docs/curated_reader_html_artifact_browser_review.md` now records automated browser layout checks for 10 rendered key figures across 20 desktop/mobile figure page-view pairs with 0 failures, `docs/reader_keyboard_only_decision.md` records a keyboard-only evidence decision that clears only the current curated HTML keyboard-only blocker, `docs/reader_accessibility_tree_review.md` records a curated-reader HTML accessibility-tree release-preparation probe across 98 page-view pairs with 0 failures, 0 unnamed interactive elements, 0 image-alt failures, 0 table-header failures, and 0 duplicate-ID hits, `docs/reader_epub_probe_manifest.md` records `en-US` EPUB metadata plus sampled source-spine entries while preserving the e-reader blocker, `docs/reader_docx_probe_manifest.md` records a 514-page LibreOffice conversion probe for the generated DOCX, an isolated PDF probe renders when `LANG` and `LC_ALL` are set to `en_US.UTF-8`, `docs/reader_pdf_probe_manifest.md` records the current 535-page PDF probe and sampled source-card appendix pages, `docs/reader_audio_script_probe_manifest.md` records the current 49-file audio-script review-workspace probe with ten key-figure spoken summaries routed and MP3/M4B/audio-embedded EPUB targets still not generated, and `docs/reader_audio_narration_treatment_review.md` accepts only the script-level narration treatment for release preparation. The reviewed local HTML snapshot is the only release-approved reader artifact; draft key figures still need manual visual judgment and final-art approval, and EPUB, DOCX, PDF, e-reader, and audio artifacts still need their own full application/layout/audio review before they can be reported as release artifacts.
 - Public-site accessibility readiness, source-level reader accessibility/navigation review, automated keyboard traversal, keyboard-only evidence decision, and automated accessibility-tree release-preparation review are now recorded, but no screen-reader pass, WCAG conformance audit, EPUB publication/e-reader release approval, DOCX publication/release approval, or PDF publication/release approval has been recorded.
-- `CITATION.cff` is v1.0.0 metadata. DOI/Zenodo remains pending until an archive exists; the v1.0.0 living-book release record explicitly preserves DOI pending.
+- Root `CITATION.cff` is v2.1.0 metadata. DOI/Zenodo remains pending; the immutable v2.1.0 rendered-site archive is a GitHub Release asset and is not a DOI-bearing external archive.
 
 ## Manuscript Maintenance Checklist
 

@@ -50,5 +50,6 @@ prepublication review, independent audit, DOI, legal opinion, production-
 safety result, production unlearning result, deployed governance result, AGI,
 or ASI capability is claimed.
 
-There is no active successor roadmap. Future living-book work may begin under
-a new author-approved goal, but it does not rewrite this completed cycle.
+The active successor is
+`docs/post_v2_1_residual_and_transfer_roadmap.md`. Its work does not rewrite
+this completed cycle.
