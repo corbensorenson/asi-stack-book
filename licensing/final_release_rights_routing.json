@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 2626,
+    "path_count": 2636,
     "by_license_route": {
       "Apache-2.0": 647,
       "CC-BY-4.0": 486,
-      "excluded-no-grant": 1493
+      "excluded-no-grant": 1503
     },
     "unresolved_count": 0
   },
@@ -2315,6 +2315,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
       "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/post_v2_1_preregistration.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
     },
     {
       "path": "docs/post_v2_1_public_truth_audit.md",
@@ -7756,6 +7763,48 @@
       "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
     },
     {
+      "path": "experiments/post_v2_1_evidence_program/p1/input/corpus.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
+      "path": "experiments/post_v2_1_evidence_program/p2/input/corpus.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
+      "path": "experiments/post_v2_1_evidence_program/p2/input/known_harm_regression.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
+      "path": "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
+      "path": "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
+      "path": "experiments/post_v2_1_evidence_program/preregistration.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
       "path": "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility-amendment-v1.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
@@ -12901,6 +12950,13 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "schemas/post_v2_1_evidence_preregistration.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
       "path": "schemas/post_v2_1_residual_transfer_status.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -13389,6 +13445,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/build_post_v2_1_preregistration_inputs.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
     },
     {
       "path": "scripts/build_post_v2_empirical_dispositions.py",
@@ -14684,6 +14747,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_1_preregistration_inputs.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
     },
     {
       "path": "scripts/validate_post_v2_1_public_truth.py",

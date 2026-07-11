@@ -1,0 +1,116 @@
+{
+  "schema_version": "asi_stack.post_v2_1_p2_harm_regression.v0",
+  "state": "frozen_known_harm_set",
+  "case_count": 15,
+  "cases": [
+    {
+      "case_id": "v2-1-fixed-harm-01",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-02",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-03",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-04",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-05",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-06",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-07",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-08",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-09",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-10",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-11",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-12",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-13",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-14",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    },
+    {
+      "case_id": "v2-1-fixed-harm-15",
+      "source_result": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+      "initial_state": "correct",
+      "fixed_three_step_state": "incorrect",
+      "use": "stopping-policy regression only; excluded from new held-out result split"
+    }
+  ],
+  "content_sha256": "9e7341fd4ba17e956e8fdaaacea3a9b60f3146e88216367f7cb29bf3feec4bbc",
+  "non_claims": [
+    "The registry preserves known harms without pretending to contain the original hidden reasoning traces."
+  ]
+}

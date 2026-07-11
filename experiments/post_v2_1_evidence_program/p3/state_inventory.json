@@ -1,0 +1,258 @@
+{
+  "schema_version": "asi_stack.post_v2_1_p3_state_inventory.v0",
+  "inventory_id": "post-v2-1-p3-complete-state-inventory-2026-07-11",
+  "state": "frozen_before_training",
+  "surface_count": 24,
+  "surfaces": [
+    {
+      "surface_id": "model_parameters",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore base checkpoint",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "model_buffers",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore base checkpoint",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "optimizer_state",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore serialized optimizer",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "scheduler_state",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore serialized scheduler",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "accumulated_gradients",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "clear or restore serialized gradients",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "python_rng",
+      "owner": "P3 state controller",
+      "identity_method": "exact_bytes",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore getstate payload",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "numpy_rng",
+      "owner": "P3 state controller",
+      "identity_method": "exact_bytes",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore bit-generator state",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "torch_cpu_rng",
+      "owner": "P3 state controller",
+      "identity_method": "exact_bytes",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore RNG tensor",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "sampler_order",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore epoch/order manifest",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "dataset_and_splits",
+      "owner": "P3 state controller",
+      "identity_method": "content_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "immutable corpus reference",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "tokenizer_preprocessor",
+      "owner": "P3 state controller",
+      "identity_method": "content_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "immutable config reference",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "training_config",
+      "owner": "P3 state controller",
+      "identity_method": "content_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "immutable arm config",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "code_revision",
+      "owner": "P3 state controller",
+      "identity_method": "git_commit",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "checkout tested source",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "environment",
+      "owner": "P3 state controller",
+      "identity_method": "package_lock_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "recreate pinned environment",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "best_checkpoint",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore or invalidate",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "final_checkpoint",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore or invalidate",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "released_checkpoint",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore authority pointer",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "shadow_checkpoint",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "delete or quarantine",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "rollback_checkpoint",
+      "owner": "P3 state controller",
+      "identity_method": "exact_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "verify base authority",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "evaluator_and_policy",
+      "owner": "P3 state controller",
+      "identity_method": "content_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore versioned configs",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "inference_cache",
+      "owner": "P3 state controller",
+      "identity_method": "tree_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "clear and verify empty/base state",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "feature_cache",
+      "owner": "P3 state controller",
+      "identity_method": "tree_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "clear and verify empty/base state",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "lineage_index",
+      "owner": "P3 state controller",
+      "identity_method": "content_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "restore base graph and invalidate descendants",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    },
+    {
+      "surface_id": "local_backup_store",
+      "owner": "P3 state controller",
+      "identity_method": "tree_sha256",
+      "mutation_rule": "mutation allowed only inside the registered arm transaction",
+      "rollback_rule": "delete experiment descendants or retain quarantined receipt",
+      "deletion_rule": "process deletion request when the surface contains cohort-derived state; otherwise record not_applicable",
+      "observation_method": "separate post-transaction inventory process",
+      "external_scope": "local disposable experiment only"
+    }
+  ],
+  "explicit_exclusions": [
+    "remote object stores: forbidden and unused",
+    "external vector databases: forbidden and unused",
+    "production services and user data: forbidden and unused",
+    "hardware firmware state: outside experiment and never claimed"
+  ],
+  "content_sha256": "feb9e26dbbaa222d6b39d20775adc7ee0a6c9ac38a8a7489dbd5dd3a0028d624",
+  "non_claims": [
+    "Inventory completeness is bounded to the declared disposable local experiment."
+  ]
+}

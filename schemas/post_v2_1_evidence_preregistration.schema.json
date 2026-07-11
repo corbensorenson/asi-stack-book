@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_1_evidence_preregistration.schema.json",
+  "title": "Post-v2.1 Evidence Program Preregistration",
+  "type": "object",
+  "required": ["schema_version", "preregistration_id", "recorded_date", "roadmap_ref", "state", "completion_blockers", "runtime_authority", "global_budget", "shared_governance", "programs", "conditional_lanes", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_1_evidence_preregistration.v0"},
+    "preregistration_id": {"type": "string", "minLength": 1},
+    "recorded_date": {"type": "string", "format": "date"},
+    "roadmap_ref": {"const": "docs/post_v2_1_residual_and_transfer_roadmap.md"},
+    "state": {"enum": ["draft_inputs_frozen_outcomes_unopened", "frozen_before_outcome_runs"]},
+    "completion_blockers": {"type": "array", "items": {"type": "string"}},
+    "runtime_authority": {"type": "object", "required": ["model_id", "revision", "snapshot_manifest_sha256", "runtime", "use_boundary"]},
+    "global_budget": {"type": "object", "required": ["wall_time_hours", "model_calls", "generated_tokens", "experiment_disk_gib", "external_service_spend_usd", "retries_per_atomic_call", "stop_rules"]},
+    "shared_governance": {"type": "object", "required": ["roles", "allowed_dispositions", "amendment_rule", "artifact_rule", "security_rule", "statistics_rule", "numeric_rule", "support_state_effect"]},
+    "programs": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["program_id", "priority", "residual_ids", "state", "corpus_ref", "corpus_sha256", "experimental_unit", "unit_of_analysis", "seeds", "primary_endpoints", "secondary_endpoints", "decision_thresholds", "stop_rules", "affected_chapter_candidates"]
+      }
+    },
+    "conditional_lanes": {"type": "array", "minItems": 3, "maxItems": 3},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

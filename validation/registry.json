@@ -1069,7 +1069,17 @@
     "docs/post_v2_1_runtime_eligibility.md",
     "scripts/run_post_v2_1_runtime_eligibility.py",
     "scripts/run_post_v2_1_runtime_eligibility_mlx.py",
-    "scripts/validate_post_v2_1_runtime_eligibility.py"
+    "scripts/validate_post_v2_1_runtime_eligibility.py",
+    "scripts/build_post_v2_1_preregistration_inputs.py",
+    "experiments/post_v2_1_evidence_program/preregistration.json",
+    "schemas/post_v2_1_evidence_preregistration.schema.json",
+    "experiments/post_v2_1_evidence_program/p1/input/corpus.json",
+    "experiments/post_v2_1_evidence_program/p2/input/corpus.json",
+    "experiments/post_v2_1_evidence_program/p2/input/known_harm_regression.json",
+    "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
+    "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
+    "docs/post_v2_1_preregistration.md",
+    "scripts/validate_post_v2_1_preregistration_inputs.py"
   ],
   "units": [
     {
@@ -6108,11 +6118,58 @@
       "prohibited_inference": "Eligibility does not prove model quality, safety, useful throughput, routing validity, deliberation benefit, transfer, independence, or any chapter claim.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_1_preregistration_inputs:272",
+      "order": 272,
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "script": "validate_post_v2_1_preregistration_inputs.py",
+      "args": [],
+      "input_contract": "Draft shared preregistration, deterministic P1 natural-repository corpus, P2 ambiguous-routing corpus and fifteen-case harm regression, P3 update/unlearning corpus and 24-surface state inventory, selected runtime boundary, schemas, builder, and readable report.",
+      "input_artifacts": [
+        "scripts/build_post_v2_1_preregistration_inputs.py",
+        "experiments/post_v2_1_evidence_program/preregistration.json",
+        "schemas/post_v2_1_evidence_preregistration.schema.json",
+        "experiments/post_v2_1_evidence_program/p1/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p2/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p2/input/known_harm_regression.json",
+        "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
+        "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json",
+        "docs/post_v2_1_preregistration.md",
+        "scripts/validate_post_v2_1_preregistration_inputs.py"
+      ],
+      "output_contract": "Reject nondeterministic input drift, duplicate task identities, eligibility contamination, fallback or abstention erasure, evaluator-label leakage, P3 cohort or state omission, wrong residual ownership, missing thresholds, budget overrun, or support-state promotion.",
+      "output_assertions": [
+        "P1 contains 36 tasks across six families and nine effect surfaces",
+        "P2 contains 240 requests with ten of each held-out action",
+        "all fifteen known extra-compute harms remain regression-only",
+        "P3 contains 1600 examples with independent deletion and probe cohorts",
+        "full-state inventory contains 24 surfaces",
+        "outcomes remain unopened and final setup blockers remain visible"
+      ],
+      "claim_scope": "Frozen deterministic inputs and draft decision rules before executable setup binding and outcome observation.",
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "duplicate P1 identity",
+        "eligibility-prompt contamination",
+        "fallback erasure",
+        "gold-label evaluator leak",
+        "P3 cohort erasure",
+        "state-inventory omission",
+        "budget overrun",
+        "support promotion",
+        "threshold erasure"
+      ],
+      "prohibited_inference": "Frozen inputs and draft rules do not constitute final preregistration, execute a model call or update, reveal outcomes, establish safety or benefit, close a residual, or move a support state.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 1025,
-    "unit_count": 271
+    "required_artifact_count": 1035,
+    "unit_count": 272
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
