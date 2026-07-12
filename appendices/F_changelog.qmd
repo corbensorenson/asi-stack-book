@@ -21,6 +21,12 @@
   clean QCSA build exposed that the runtime-eligibility and setup validators
   depended on a package present locally but absent from GitHub Actions. The
   release tag remains blocked until a fresh clean candidate build passes.
+- Made the frozen setup attestation portable without editing any frozen runner:
+  the build and scheduled-deep workflows now fetch full Git history so the
+  setup commit can be inspected, and their deep step exposes fail-closed Linux
+  import stubs for Apple MLX. The stubs support only the registered no-model-
+  call preflights and raise if model load, generation, sampling, or MLX random
+  execution is attempted.
 
 ## 2026-07-11 - Question-Compiled Semantic Addressing ingestion
 

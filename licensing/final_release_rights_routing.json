@@ -18,10 +18,10 @@
     }
   },
   "summary": {
-    "path_count": 4044,
+    "path_count": 4049,
     "by_license_route": {
-      "Apache-2.0": 678,
-      "CC-BY-4.0": 499,
+      "Apache-2.0": 682,
+      "CC-BY-4.0": 500,
       "excluded-no-grant": 2867
     },
     "unresolved_count": 0
@@ -915,6 +915,41 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
       "review_basis": "author-created public metadata/governance record cleared as documentation"
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/README.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/mlx/__init__.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/mlx/core.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/mlx_lm/__init__.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/mlx_lm/sample_utils.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "ci/post_v2_requirements.txt",

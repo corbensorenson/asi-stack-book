@@ -6,12 +6,12 @@
     "policy": "licensing/provenance_policy.json",
     "policy_sha256": "4bccb1150e204949337e9eaa03ff47cf56002df7dc6527beeafced9f407a9862",
     "file_set_command": "git ls-files --cached --others --exclude-standard -z",
-    "path_set_sha256": "e40136dedaa88c782f4afd9d0e939bceda7d3ae79ca5e87b0deffe771bab41fd"
+    "path_set_sha256": "291eff2f13cadb09f596527e0949e1ba4467d52b19c68503fd87af5f9787afa1"
   },
   "summary": {
-    "file_count": 4044,
+    "file_count": 4049,
     "by_artifact_class": {
-      "book_or_project_prose": 446,
+      "book_or_project_prose": 447,
       "build_or_citation_configuration": 1,
       "experiment_fixture_result_or_review_record": 2387,
       "external_source_commentary_or_compilation": 214,
@@ -20,7 +20,7 @@
       "nonrelease_repository_marker": 2,
       "operative_license_document": 1,
       "public_metadata_or_governance_record": 38,
-      "software_proof_schema_or_automation": 678,
+      "software_proof_schema_or_automation": 682,
       "source_metadata_commentary_or_local_project_record": 100,
       "third_party_license_text": 2
     },
@@ -28,7 +28,7 @@
       "author_assertion_and_embedded_asset_review_required": 15,
       "author_assertion_and_local_project_review_required": 100,
       "author_assertion_or_import_review_required": 2387,
-      "author_ownership_assertion_required": 1163,
+      "author_ownership_assertion_required": 1168,
       "generated_derivative_review_required": 160,
       "nonrelease_exclusion": 2,
       "operative_policy_not_relicensed": 1,
@@ -40,9 +40,9 @@
       "metadata_candidate": 38,
       "mixed_or_excluded": 474,
       "nonrelease_excluded": 2,
-      "prose_or_figures_candidate": 461,
+      "prose_or_figures_candidate": 462,
       "reserved_operative": 1,
-      "software_candidate": 678,
+      "software_candidate": 682,
       "software_or_metadata_after_review": 2388
     },
     "unknown_quarantine_count": 0
@@ -1190,6 +1190,51 @@
       "candidate_lane": "metadata_candidate",
       "current_effect": "all_rights_reserved_no_permission_granted",
       "blocking_reason": "Facts may be uncopyrightable, but selection, descriptions, imported fields, and contributed records still require ownership and scope review before a public-domain dedication."
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/README.md",
+      "rule_id": "book-and-project-prose",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "prose_or_figures_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The prose appears project-authored but ownership, quotations, contributed passages, and imported local-project text require author assertion and review."
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/mlx/__init__.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/mlx/core.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/mlx_lm/__init__.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
+    },
+    {
+      "path": "ci/linux_mlx_preflight_stubs/mlx_lm/sample_utils.py",
+      "rule_id": "software-proofs-schemas",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "software_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The software-like lane is technically separable, but author ownership, generated code, copied snippets, and inbound contribution rights must be asserted first."
     },
     {
       "path": "ci/post_v2_requirements.txt",
