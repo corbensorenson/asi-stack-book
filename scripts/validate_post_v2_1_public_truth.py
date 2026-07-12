@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "v2.1.0"
+CANDIDATE_VERSION = "v2.2.0"
 COMMIT = "cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5"
 DIGEST = "c70534db9ffed722f33227b191930781b2daf1058d949b90d803bca9a47e375c"
 ROADMAP = "docs/post_v2_1_residual_and_transfer_roadmap.md"
@@ -69,8 +70,9 @@ def validate(data: dict[str, object]) -> list[str]:
     status = mapping(data["roadmap_status"], "roadmap status", errors)
     release = mapping(data["release"], "release record", errors)
 
-    if config.get("active_version") != VERSION:
-        errors.append("canonical active_version is not v2.1.0")
+    active_version = config.get("active_version")
+    if active_version not in {VERSION, CANDIDATE_VERSION}:
+        errors.append("canonical active_version is neither immutable v2.1.0 nor the selected v2.2.0 candidate")
     if config.get("deployment_channel") != "latest":
         errors.append("canonical deployment channel is not latest")
 
@@ -134,13 +136,15 @@ def validate(data: dict[str, object]) -> list[str]:
         errors.append("an evidence-vector core support state moved above argument")
 
     citation = str(data["citation"])
-    for fragment in [
-        'version: "2.1.0"',
-        'date-released: "2026-07-10"',
-        "Cite version 2.1.0 by tag, URL, and source commit",
+    citation_fragments = [
         'url: "https://corbensorenson.github.io/asi-stack-book/"',
         'repository-code: "https://github.com/corbensorenson/asi-stack-book"',
-    ]:
+    ]
+    if active_version == CANDIDATE_VERSION:
+        citation_fragments.extend(['version: "2.2.0"', 'date-released: "2026-07-11"', "Cite version 2.2.0 by tag, URL, and source commit once the exact release is published"])
+    else:
+        citation_fragments.extend(['version: "2.1.0"', 'date-released: "2026-07-10"', "Cite version 2.1.0 by tag, URL, and source commit"])
+    for fragment in citation_fragments:
         if fragment not in citation:
             errors.append(f"CITATION.cff missing canonical fragment: {fragment}")
     if re.search(r"^doi\s*:", citation, re.MULTILINE | re.IGNORECASE):
@@ -151,7 +155,7 @@ def validate(data: dict[str, object]) -> list[str]:
         "index.qmd": (str(data["index"]), [VERSION, ROADMAP, COMMIT, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
         "docs/publication_readiness.md": (str(data["publication"]), [VERSION, ROADMAP, COMMIT, "All 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
         "docs/release_reproducibility.md": (str(data["reproducibility"]), [VERSION, COMMIT, DIGEST, "root and `/latest/` are mutable", "Historical v1.0.0 citation"]),
-        "docs/public_status_contract.md": (str(data["public_contract"]), ["`active_version` currently reports `v2.1.0`", ROADMAP, "root or `/latest/` commits remain mutable"]),
+        "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, ROADMAP, "root or `/latest/` commits remain mutable"]),
     }
     for name, (text, fragments) in required_by_surface.items():
         for fragment in fragments:
@@ -175,7 +179,11 @@ def validate(data: dict[str, object]) -> list[str]:
         "README.md": str(data["readme"]),
     }.items():
         if VERSION not in text:
-            errors.append(f"{name} does not name the v2.1.0 rights boundary")
+            errors.append(f"{name} does not preserve the v2.1.0 rights boundary")
+        if active_version not in text:
+            errors.append(f"{name} does not name the active release or candidate rights boundary")
+    if f"At exact tag `{active_version}`" not in str(data["readme"]):
+        errors.append("README rights summary does not name the active exact-tag boundary")
     if "At exact tag `v2.0.0`" in str(data["readme"]):
         errors.append("README rights summary still names v2.0.0 as current")
 
@@ -227,7 +235,8 @@ def mutation_controls(base: dict[str, object]) -> list[str]:
     mutations.append(("false archive state", false_archive))
 
     wrong_rights = copy.deepcopy(base)
-    wrong_rights["readme"] = str(wrong_rights["readme"]).replace("At exact tag `v2.1.0`", "At exact tag `v2.0.0`")
+    active = str(wrong_rights["config"].get("active_version"))
+    wrong_rights["readme"] = str(wrong_rights["readme"]).replace(f"At exact tag `{active}`", "At exact tag `v2.0.0`")
     mutations.append(("wrong rights tag", wrong_rights))
 
     invented_format = copy.deepcopy(base)

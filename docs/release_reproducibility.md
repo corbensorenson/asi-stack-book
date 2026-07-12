@@ -1,10 +1,10 @@
 # Release Reproducibility
 
-Last updated: 2026-07-10
+Last updated: 2026-07-11
 
-This note records the current toolchain and citation boundary for the tagged
-`v2.1.0` evidence release while preserving the historical `v1.0.0` citation
-record. It is a reproducibility and citability record, not an approval of EPUB,
+This note records the current toolchain and citation boundary for the selected
+`v2.2.0` release candidate while preserving the tagged `v2.1.0` and historical
+`v1.0.0` citation records. It is a reproducibility and citability record, not an approval of EPUB,
 DOCX, PDF, e-reader, audio, or curated-reader artifacts.
 
 ## CI Toolchain
@@ -46,8 +46,9 @@ The HTML book currently relies on Quarto's generated site assets, the repository
 
 ## Citation Boundary
 
-Root `CITATION.cff` describes version `2.1.0`, released `2026-07-10`. Cite
-exact tag `v2.1.0` and source commit
+Root `CITATION.cff` describes the selected version `2.2.0` candidate dated
+`2026-07-11`. It is not yet an immutable citation. Until its exact tag, source
+commit, archive, and release record exist, cite exact tag `v2.1.0` and source commit
 `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`. The tracked evidence-release
 record is `release_records/2026-07-10-v2.1.0-evidence-cb3b8605.json`, the source
 release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.1.0>,

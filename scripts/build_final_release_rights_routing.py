@@ -16,9 +16,9 @@ EXCLUDED = "excluded-no-grant"
 
 
 def exact_release_paths() -> set[str] | None:
-    """Return the tagged v2.1.0 tree once it exists, else prepublication mode."""
+    """Return the tagged v2.2.0 tree once it exists, else prepublication mode."""
     check = subprocess.run(
-        ["git", "rev-parse", "-q", "--verify", "refs/tags/v2.1.0^{commit}"],
+        ["git", "rev-parse", "-q", "--verify", "refs/tags/v2.2.0^{commit}"],
         cwd=ROOT,
         capture_output=True,
         check=False,
@@ -26,7 +26,7 @@ def exact_release_paths() -> set[str] | None:
     if check.returncode != 0:
         return None
     body = subprocess.check_output(
-        ["git", "ls-tree", "-r", "--name-only", "v2.1.0"],
+        ["git", "ls-tree", "-r", "--name-only", "v2.2.0"],
         cwd=ROOT,
         text=True,
     )
@@ -38,7 +38,7 @@ def route(record: dict, release_paths: set[str] | None) -> tuple[str, str]:
     lane = record["candidate_lane"]
     provenance = record["provenance_status"]
     if release_paths is not None and path not in release_paths:
-        return EXCLUDED, "post-tag path; not present in the exact v2.1.0 release tree"
+        return EXCLUDED, "post-tag path; not present in the exact v2.2.0 release tree"
     if path == "LICENSE.md":
         return EXCLUDED, "operative routing document; not self-licensed"
     if path.startswith("licenses/"):
@@ -70,8 +70,8 @@ def build() -> dict:
     counts = Counter(item["license_route"] for item in records)
     return {
         "schema_version": "asi_stack.final_release_rights_routing.v1",
-        "release_candidate": "v2.1.0",
-        "decision_date": "2026-07-10",
+        "release_candidate": "v2.2.0",
+        "decision_date": "2026-07-11",
         "selected_formats": ["html-live-book"],
         "license_texts": {
             CC: {"path": "licenses/CC-BY-4.0.txt", "official_url": "https://creativecommons.org/licenses/by/4.0/legalcode.txt", "normalized_sha256": "fe7b4ce83b8381cc5b216bbb4af73c570688d1b819c73bbaed8ca401f4677cd6"},
@@ -81,7 +81,7 @@ def build() -> dict:
         "files": records,
         "non_claims": [
             "Excluded paths receive no license grant from this release.",
-            "The v2.1.0 routing review is an internal authorship/provenance decision, not legal advice or third-party clearance.",
+            "The v2.2.0 routing review is an internal authorship/provenance decision, not legal advice or third-party clearance.",
             "Trademarks, endorsement, patents outside Apache-2.0, privacy, publicity, and third-party rights are not granted.",
         ],
     }

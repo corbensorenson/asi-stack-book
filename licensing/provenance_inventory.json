@@ -1,17 +1,17 @@
 {
   "schema_version": "asi_stack.licensing_provenance_inventory.v0",
   "decision_state": "decided",
-  "operative_license": "conditional_v2.0.0_and_v2.1.0_path_routed_split_otherwise_all_rights_reserved",
+  "operative_license": "conditional_v2.0.0_v2.1.0_and_v2.2.0_path_routed_split_otherwise_all_rights_reserved",
   "generated_from": {
     "policy": "licensing/provenance_policy.json",
-    "policy_sha256": "6140007432d916d34155bcabd1bf60103ecc07170f96153f618e02f6380e68b4",
+    "policy_sha256": "4bccb1150e204949337e9eaa03ff47cf56002df7dc6527beeafced9f407a9862",
     "file_set_command": "git ls-files --cached --others --exclude-standard -z",
-    "path_set_sha256": "c198e5a0523218b2ed0137e7d7e46def2d5380531111ebbd9b30b8c380b2c5ac"
+    "path_set_sha256": "e40136dedaa88c782f4afd9d0e939bceda7d3ae79ca5e87b0deffe771bab41fd"
   },
   "summary": {
-    "file_count": 4043,
+    "file_count": 4044,
     "by_artifact_class": {
-      "book_or_project_prose": 445,
+      "book_or_project_prose": 446,
       "build_or_citation_configuration": 1,
       "experiment_fixture_result_or_review_record": 2387,
       "external_source_commentary_or_compilation": 214,
@@ -28,7 +28,7 @@
       "author_assertion_and_embedded_asset_review_required": 15,
       "author_assertion_and_local_project_review_required": 100,
       "author_assertion_or_import_review_required": 2387,
-      "author_ownership_assertion_required": 1162,
+      "author_ownership_assertion_required": 1163,
       "generated_derivative_review_required": 160,
       "nonrelease_exclusion": 2,
       "operative_policy_not_relicensed": 1,
@@ -40,7 +40,7 @@
       "metadata_candidate": 38,
       "mixed_or_excluded": 474,
       "nonrelease_excluded": 2,
-      "prose_or_figures_candidate": 460,
+      "prose_or_figures_candidate": 461,
       "reserved_operative": 1,
       "software_candidate": 678,
       "software_or_metadata_after_review": 2388
@@ -4604,6 +4604,15 @@
     },
     {
       "path": "docs/v2_1_release_scope.md",
+      "rule_id": "book-and-project-prose",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "candidate_lane": "prose_or_figures_candidate",
+      "current_effect": "all_rights_reserved_no_permission_granted",
+      "blocking_reason": "The prose appears project-authored but ownership, quotations, contributed passages, and imported local-project text require author assertion and review."
+    },
+    {
+      "path": "docs/v2_2_release_scope.md",
       "rule_id": "book-and-project-prose",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",

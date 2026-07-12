@@ -36,7 +36,7 @@ Fast audit path: [the active Post-v2.1 Residual and Transfer Roadmap](docs/post_
 
 ## Current Status
 
-`v2.1.0` is the completed canonical evidence/live/research HTML release. Annotated tag `v2.1.0`, source commit `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`, clean CI-tested bundle, deployed and attested site, immutable site archive, public SHA-256, release record, citation metadata, and tag-bound rights snapshot identify the same release state. It preserves three preregistered empirical programs and nine honest core-claim `no_change` decisions; all 54 chapter-core claims remain at `argument`. Historical `v1.0.0` and `v2.0.0` releases remain intact. The root site and `/latest/` are mutable. EPUB/DOCX/PDF/audio and the divergent historical curated-reader workspace are outside the v2.1.0 format scope.
+`v2.2.0` is the selected canonical live/research HTML release candidate. It adds the completed post-v2.1 P1–P3 programs, fourteen conservative core-claim `no_change` decisions, six bounded transitions, eleven residual dispositions, six modern external-source routes, and the QCSA source synthesis across nine existing chapters; all 54 chapter-core claims remain at `argument`. It is not an immutable release until the exact tag, tested bundle, deployment, attestation, archive, public digest, release record, citation, and rights snapshot agree. Until then, `v2.1.0` at commit `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5` remains the latest completed immutable release. Historical `v1.0.0` and `v2.0.0` releases remain intact. The root site and `/latest/` are mutable. EPUB/DOCX/PDF/audio and the divergent historical curated-reader workspace are outside the v2.2.0 format scope.
 
 - Quarto book structure is initialized and renders to HTML.
 - All 54 manifest chapters exist as manuscript drafts across four manifest-driven parts.
@@ -541,4 +541,4 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). The short version:
 
 ## Rights
 
-See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and the path-level release routing ledger. At exact tag `v2.1.0`, cleared author-owned prose/figures are routed to CC BY 4.0 and cleared software-like artifacts to Apache-2.0; excluded paths and untagged or later drafting changes receive no grant. The root site and `/latest/` are mutable and do not extend the tag-bound grant to later revisions.
+See [LICENSE.md](LICENSE.md), [NOTICE.md](NOTICE.md), and the path-level release routing ledger. At exact tag `v2.2.0`, once it exists, cleared author-owned prose/figures are routed to CC BY 4.0 and cleared software-like artifacts to Apache-2.0; excluded paths and untagged or later drafting changes receive no grant. The completed v2.0.0 and v2.1.0 grants remain bound to their own exact tags. The root site and `/latest/` are mutable and do not extend a tag-bound grant to later revisions.

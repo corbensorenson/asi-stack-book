@@ -4,17 +4,20 @@
 _Current canonical metrics (generated from machine records): **54 manifest chapters; 280 public-safe records; 54 chapter-core claims; 54/54 chapters externally positioned; 0 promoted core claims.**_
 <!-- canonical-status:generated-end -->
 
-Last audited: 2026-07-10
+Last audited: 2026-07-11
 
 This file tracks whether the public repository is ready for continued living-
-book work after the immutable `v2.1.0` evidence release. Current execution is
+book work after the immutable `v2.1.0` evidence release and during the selected
+`v2.2.0` release-candidate transaction. Current execution is
 governed by `docs/post_v2_1_residual_and_transfer_roadmap.md`; the completed v2,
 v2.1, and v1.x documents below remain historical evidence and maintenance
 records rather than active roadmaps.
 
 ## Current release and roadmap authority
 
-- Latest immutable evidence release: `v2.1.0`, source commit
+- Selected release candidate: `v2.2.0`; it is not immutable or published until
+  the full tag/build/deploy/attest/archive/redownload transaction succeeds.
+- Latest completed immutable evidence release: `v2.1.0`, source commit
   `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`.
 - Active roadmap: `docs/post_v2_1_residual_and_transfer_roadmap.md`, with state
   in `roadmap_records/post_v2_1_residual_and_transfer_status.json`.
@@ -23,11 +26,12 @@ records rather than active roadmaps.
 - The root site and `/latest/` are mutable. The immutable rendered v2.1.0 site
   is the exact GitHub Release asset recorded in
   `status/versioned_release_policy.json` with its SHA-256.
-- Root `CITATION.cff` describes v2.1.0. Historical citation snapshots remain
-  version-scoped and do not override it.
+- Root `CITATION.cff` describes the selected v2.2.0 candidate. Until its exact
+  tag and release record exist, immutable citation remains v2.1.0. Historical
+  citation snapshots remain version-scoped and do not override either fact.
 - All 54 chapter-core claims remain at `argument`; publication reconciliation
   creates no evidence transition or support-state promotion.
-- EPUB, DOCX, PDF, audio, and curated-reader editions are not v2.1.0 release
+- EPUB, DOCX, PDF, audio, and curated-reader editions are not v2.2.0 release
   artifacts and require their own exact release records.
 
 ## Ready
@@ -68,7 +72,7 @@ records rather than active roadmaps.
 - The defended contribution prior-art positioning record exists at `docs/defended_contribution_prior_art_positioning.md`; `scripts/validate_defended_contribution_prior_art.py` checks that all five selected tracks are positioned against source-noted external comparators while preserving that the record is not exhaustive literature review, novelty proof, external review, evidence creation, or support-state movement.
 - The evidence-laundering prevention case-study record exists at `docs/evidence_laundering_prevention_case_studies.md`; `scripts/validate_evidence_laundering_case_studies.py` checks three live no-promotion examples plus one live claim-surface narrowing record and preserves that no chapter-core demotion/refutation case, external review, or support-state movement is claimed.
 - The governed repository-change vertical slice exists at `docs/governed_repository_change_slice.md`; its runner creates disposable Git repositories and executes nine matched baseline/governed scenarios through code mutation, tests, independent effect observation, receipt comparison, release/refusal, rollback, and quarantine. `scripts/validate_governed_repository_change_slice.py` reruns the workload and preserves its bounded local-fixture and no-support-state boundary.
-- The current reproducibility and citation note exists at `docs/release_reproducibility.md`; root `CITATION.cff` records version `2.1.0`, DOI-pending status, tag `v2.1.0`, source commit `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`, and the public repository/release citation path. `citations/v1.0.0.cff` remains the historical v1.0.0 snapshot. `scripts/validate_release_reproducibility.py` checks the pinned CI toolchain, both citation scopes, tag facts, and non-release artifact boundary.
+- The current reproducibility and citation note exists at `docs/release_reproducibility.md`; root `CITATION.cff` records the selected version `2.2.0` and DOI-pending state while the note keeps v2.1.0 as the latest immutable citation until the v2.2.0 tag, source commit, archive, and release record exist. `citations/v1.0.0.cff` remains the historical v1.0.0 snapshot. `scripts/validate_release_reproducibility.py` checks the pinned CI toolchain, citation scopes, historical tag facts, and non-release artifact boundary.
 - The Phase 7 public-site accessibility readiness record exists at `docs/public_site_accessibility_review.md`, and the compact phase progress ledger exists at `docs/v1_progress_ledger.md`; `scripts/validate_public_site_accessibility.py` checks the assistive reading-mode hooks, focus/containment CSS, landing-image alt text, diagram walkthrough coverage, residuals, and non-claims without claiming WCAG conformance or reader-artifact approval.
 - The v1.0 release-gate audit exists at `docs/v1_0_release_gate_audit.md`; `scripts/validate_v1_release_gate_audit.py` checks all eleven Definition-of-Done gates, their evidence references, tag `v1.0.0`, source commit, GitHub Release, living-book release record, DOI-pending state, and non-claims without creating a DOI, archive, additional artifact approval, or support-state promotion.
 - The non-core evidence ledger exists at `docs/non_core_evidence_ledger.md`; `scripts/validate_non_core_evidence_ledger.py` checks that the fourteen accepted non-core upward transitions and the live count-surface narrowing record are visible, that all 54 chapter core claims remain at `argument`, and that README, landing page, and Appendix C point readers to the no-promotion boundary.
@@ -120,7 +124,7 @@ records rather than active roadmaps.
 - The chapters have received broad coherence, transition, Human-view, and generated-reader chapter-text review passes, and the three companion-note candidate chapters now have tracked reader/e-reader/audio routing decisions. The book still needs claim-to-mechanism support review and accepted evidence transitions before chapter core claims can rise above `argument`. The versioned reader chapter review matrix has all 44 curated-manuscript records at reviewed chapter-text status, but it is a separate edition surface and release-record and format-artifact blockers remain on every row.
 - Reader, research, PDF, EPUB, DOCX, AZW3, MOBI, and audio editions are planned and scaffolded. Local HTML/EPUB/DOCX dry-run snapshots now exist with structural inspection for review, `docs/reader_html_artifact_browser_review.md` records a full local browser review of the generated reader HTML snapshot across 118 page-view pairs, `release_records/2026-06-29-v1-reader-html-855dc277.json` records the reviewed local HTML snapshot from source tag `v1.0.0-reader-html-source`, `docs/reader_key_figure_artifact_review.md` records validator-checked draft key-figure placement and metadata while preserving final-art and release-review blockers, `docs/reader_key_figure_html_probe.md` records a rendered curated-reader HTML DOM probe for all ten draft key figures, `docs/reader_key_figure_format_probe.md` records current ignored EPUB/DOCX/PDF key-figure package-text survival with 10 EPUB title matches, 10 DOCX stem matches, and 10 PDF draft-caption matches, `docs/curated_reader_html_artifact_browser_review.md` now records automated browser layout checks for 10 rendered key figures across 20 desktop/mobile figure page-view pairs with 0 failures, `docs/reader_keyboard_only_decision.md` records a keyboard-only evidence decision that clears only the current curated HTML keyboard-only blocker, `docs/reader_accessibility_tree_review.md` records a curated-reader HTML accessibility-tree release-preparation probe across 98 page-view pairs with 0 failures, 0 unnamed interactive elements, 0 image-alt failures, 0 table-header failures, and 0 duplicate-ID hits, `docs/reader_epub_probe_manifest.md` records `en-US` EPUB metadata plus sampled source-spine entries while preserving the e-reader blocker, `docs/reader_docx_probe_manifest.md` records a 514-page LibreOffice conversion probe for the generated DOCX, an isolated PDF probe renders when `LANG` and `LC_ALL` are set to `en_US.UTF-8`, `docs/reader_pdf_probe_manifest.md` records the current 535-page PDF probe and sampled source-card appendix pages, `docs/reader_audio_script_probe_manifest.md` records the current 49-file audio-script review-workspace probe with ten key-figure spoken summaries routed and MP3/M4B/audio-embedded EPUB targets still not generated, and `docs/reader_audio_narration_treatment_review.md` accepts only the script-level narration treatment for release preparation. The reviewed local HTML snapshot is the only release-approved reader artifact; draft key figures still need manual visual judgment and final-art approval, and EPUB, DOCX, PDF, e-reader, and audio artifacts still need their own full application/layout/audio review before they can be reported as release artifacts.
 - Public-site accessibility readiness, source-level reader accessibility/navigation review, automated keyboard traversal, keyboard-only evidence decision, and automated accessibility-tree release-preparation review are now recorded, but no screen-reader pass, WCAG conformance audit, EPUB publication/e-reader release approval, DOCX publication/release approval, or PDF publication/release approval has been recorded.
-- Root `CITATION.cff` is v2.1.0 metadata. DOI/Zenodo remains pending; the immutable v2.1.0 rendered-site archive is a GitHub Release asset and is not a DOI-bearing external archive.
+- Root `CITATION.cff` is selected v2.2.0 candidate metadata. DOI/Zenodo remains pending; until the v2.2.0 transaction completes, the immutable v2.1.0 rendered-site archive remains the latest published GitHub Release site asset and is not a DOI-bearing external archive.
 
 ## Manuscript Maintenance Checklist
 

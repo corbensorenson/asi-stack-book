@@ -163,6 +163,13 @@ The 2026-07-11 outcome checkpoint is recorded in
 six accepted claim-bounded transitions, and fourteen chapter-core `no_change`
 decisions. M4 book reconciliation is complete; M5 release is active.
 
+Results and scope now justify version `v2.2.0`: the cycle adds reproducible
+public-safe P1–P3 outcomes plus QCSA source integration without a title,
+chapter-architecture, format, or support-state break. Selection does not make
+the release immutable; M5 remains active until the exact tag, tested bundle,
+deployment, attestation, archive, redownload digest, rights snapshot, release
+record, and completion declaration reconcile.
+
 The release-content freeze also ingested Corben's `qcsa_whitepaper` source as a
 passage-reviewed design-rationale synthesis. Its identity-address-route,
 question-compiler, certificate, migration, and residual contracts were folded

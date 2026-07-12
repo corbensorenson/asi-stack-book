@@ -43,12 +43,12 @@ A locally generated record from a dirty worktree is intentionally labeled
 `local_worktree`; it is useful for diagnosis but is not a release attestation.
 
 The record identifies the latest immutable release and historical baseline
-separately. `active_version` currently reports `v2.1.0`, while
+separately. `active_version` currently reports the selected `v2.2.0` candidate, while
 `baseline_release` retains `v1.0.0` for compatibility with the original
 baseline field. The active post-v2.1 roadmap is a separate execution authority;
 its machine path is `docs/post_v2_1_residual_and_transfer_roadmap.md`. Later
 root or `/latest/` commits remain mutable and are not part of the immutable
-v2.1.0 tag.
+v2.1.0 tag or a future v2.2.0 tag until that exact release transaction succeeds.
 
 ## Contradiction and Render Gates
 
