@@ -17,6 +17,10 @@
 - Kept M5 active. Candidate selection is not a tag, deployment, attestation,
   immutable archive, public digest, release record, DOI, optional-format
   approval, external review, or chapter-core support promotion.
+- Added pinned `jsonschema==4.24.0` to the hosted post-v2 requirements after the
+  clean QCSA build exposed that the runtime-eligibility and setup validators
+  depended on a package present locally but absent from GitHub Actions. The
+  release tag remains blocked until a fresh clean candidate build passes.
 
 ## 2026-07-11 - Question-Compiled Semantic Addressing ingestion
 
