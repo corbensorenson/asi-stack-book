@@ -73,8 +73,8 @@ The cycle starts from the following bounded facts:
 
 - The active architecture has 54 chapters and no chapter-core promotion.
 - All 54 chapter-core claims remain at `argument`.
-- Twenty-five core claims have adjacent local replay and bounded controls;
-  twenty-nine still lack claim-specific reproduction and adversarial evidence.
+- Twenty-seven core claims have adjacent local replay and bounded controls;
+  twenty-seven still lack claim-specific reproduction and adversarial evidence.
 - All 54 evidence vectors retain internal-only independence, unmeasured claim-
   scope coverage, validity not independently assessed, partial public evidence,
   and transfer not established.
@@ -162,6 +162,14 @@ The 2026-07-11 outcome checkpoint is recorded in
 `docs/post_v2_1_empirical_results.md`, the content-addressed outcome ledger,
 six accepted claim-bounded transitions, and fourteen chapter-core `no_change`
 decisions. M4 book reconciliation is complete; M5 release is active.
+
+The release-content freeze also ingested Corben's `qcsa_whitepaper` source as a
+passage-reviewed design-rationale synthesis. Its identity-address-route,
+question-compiler, certificate, migration, and residual contracts were folded
+into nine existing chapter owners. The 54-chapter architecture and every core
+support state remain unchanged; QCSA's proposed implementation and evaluation
+artifacts belong to a later evidence cycle rather than expanding the frozen
+P1–P3 outcome programs.
 
 ### Machine-readable state
 

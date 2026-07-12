@@ -2,554 +2,1985 @@
   "schema_version": "asi_stack.validation_unit_contract_overrides.v0",
   "contracts": [
     {
-      "script": "validate_validation_registry.py", "args": [],
+      "script": "validate_validation_registry.py",
+      "args": [],
       "input_contract": "The declarative registry, unit-contract overrides, referenced scripts, and required artifact paths.",
-      "input_artifacts": ["validation/registry.json", "validation/unit_contract_overrides.json", "scripts/validate_validation_registry.py"],
+      "input_artifacts": [
+        "validation/registry.json",
+        "validation/unit_contract_overrides.json",
+        "scripts/validate_validation_registry.py"
+      ],
       "output_contract": "Reject malformed, unordered, duplicate, stale-authority, missing-script, missing-artifact, or contract-incomplete registry state.",
-      "output_assertions": ["contiguous unique order", "all scripts and artifacts exist", "all exact overrides resolve once", "registry is sole inventory authority"],
+      "output_assertions": [
+        "contiguous unique order",
+        "all scripts and artifacts exist",
+        "all exact overrides resolve once",
+        "registry is sole inventory authority"
+      ],
       "claim_scope": "Validation orchestration metadata and filesystem coverage only.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["duplicate order", "missing script", "unresolved exact override", "legacy authority marker"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "duplicate order",
+        "missing script",
+        "unresolved exact override",
+        "legacy authority marker"
+      ],
       "prohibited_inference": "Registry validity does not establish semantic adequacy of its validators or truth of validated artifacts.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_release_reproducibility.py", "args": [],
+      "script": "validate_release_reproducibility.py",
+      "args": [],
       "input_contract": "Pinned tested-build/deploy workflow tool versions, Lean toolchain, CITATION.cff, and release reproducibility ledger.",
-      "input_artifacts": [".github/workflows/build-pages-artifact.yml", ".github/workflows/publish.yml", "lean/lean-toolchain", "CITATION.cff", "docs/release_reproducibility.md"],
+      "input_artifacts": [
+        ".github/workflows/build-pages-artifact.yml",
+        ".github/workflows/publish.yml",
+        "lean/lean-toolchain",
+        "CITATION.cff",
+        "docs/release_reproducibility.md"
+      ],
       "output_contract": "Reject toolchain, citation, DOI, tag, commit, locale, or release-record drift from the v1.0 reproducibility contract.",
-      "output_assertions": ["CI tool versions pinned", "Lean toolchain mirrored", "citation version and commit truthful", "no unissued DOI claimed"],
+      "output_assertions": [
+        "CI tool versions pinned",
+        "Lean toolchain mirrored",
+        "citation version and commit truthful",
+        "no unissued DOI claimed"
+      ],
       "claim_scope": "Recorded build/citation reproducibility metadata; not actual cross-machine reproducibility.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["DOI metadata prohibition", "Lean toolchain mismatch"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "DOI metadata prohibition",
+        "Lean toolchain mismatch"
+      ],
       "prohibited_inference": "Metadata consistency does not reproduce a build or approve a release artifact.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_ci_supply_chain_pins.py", "args": [],
+      "script": "validate_ci_supply_chain_pins.py",
+      "args": [],
       "input_contract": "Every GitHub Actions workflow, machine dependency-pin inventory/schema, reviewed action commits, Elan commit URL and digest, review dates, and prose ledger.",
-      "input_artifacts": [".github/workflows", "ci/dependency_pin_inventory.json", "schemas/ci_dependency_pin_inventory.schema.json", "docs/ci_supply_chain_pinning.md"],
+      "input_artifacts": [
+        ".github/workflows",
+        "ci/dependency_pin_inventory.json",
+        "schemas/ci_dependency_pin_inventory.schema.json",
+        "docs/ci_supply_chain_pinning.md"
+      ],
       "output_contract": "Reject moving or unregistered remote actions, workflow/inventory mismatch, mutable or unchecked installers, stale or malformed pin reviews, and incomplete documentation.",
-      "output_assertions": ["remote actions use inventory-owned 40-hex commits", "Elan URL and digest match inventory", "installer digest precedes execution", "all workflow actions are inventoried", "review due dates equal review date plus 90 days", "expired reviews fail closed", "ledger records residual TCB"],
+      "output_assertions": [
+        "remote actions use inventory-owned 40-hex commits",
+        "Elan URL and digest match inventory",
+        "installer digest precedes execution",
+        "all workflow actions are inventoried",
+        "review due dates equal review date plus 90 days",
+        "expired reviews fail closed",
+        "ledger records residual TCB"
+      ],
       "claim_scope": "Fetched CI dependency identity at declared workflow references.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["moving action tag", "mutable installer URL", "missing installer checksum", "stale review", "missing inventory action", "mismatched inventory pin", "duplicate inventory ID"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "moving action tag",
+        "mutable installer URL",
+        "missing installer checksum",
+        "stale review",
+        "missing inventory action",
+        "mismatched inventory pin",
+        "duplicate inventory ID"
+      ],
       "prohibited_inference": "Pins do not prove upstream code benign, runner integrity, or transitive dependency immutability.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_tested_artifact_deployment.py", "args": [],
+      "script": "validate_tested_artifact_deployment.py",
+      "args": [],
       "input_contract": "Tested Pages build workflow and workflow-run-triggered deployment workflow.",
-      "input_artifacts": [".github/workflows/build-pages-artifact.yml", ".github/workflows/publish.yml", "docs/tested_artifact_deployment_contract.md"],
+      "input_artifacts": [
+        ".github/workflows/build-pages-artifact.yml",
+        ".github/workflows/publish.yml",
+        "docs/tested_artifact_deployment_contract.md"
+      ],
       "output_contract": "Reject deploy-time rebuilding, wrong-run artifact authority, absent commit binding, or verification after Pages upload.",
-      "output_assertions": ["build performs deep gates", "deploy consumes triggering successful run", "bundle verified before upload", "deploy contains no rebuild command"],
+      "output_assertions": [
+        "build performs deep gates",
+        "deploy consumes triggering successful run",
+        "bundle verified before upload",
+        "deploy contains no rebuild command"
+      ],
       "claim_scope": "Static workflow authority and handoff structure.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["deploy rebuild", "current-run artifact", "unbound commit"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "deploy rebuild",
+        "current-run artifact",
+        "unbound commit"
+      ],
       "prohibited_inference": "Static workflow structure does not attest a GitHub run or public deployment.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_trust_surface.py", "args": [],
+      "script": "validate_trust_surface.py",
+      "args": [],
       "input_contract": "README and landing trust surfaces plus owning claim, evidence, reader, and contribution ledgers.",
-      "input_artifacts": ["README.md", "index.qmd", "docs/non_core_evidence_ledger.md", "docs/reader_continuity_audit.md"],
+      "input_artifacts": [
+        "README.md",
+        "index.qmd",
+        "docs/non_core_evidence_ledger.md",
+        "docs/reader_continuity_audit.md"
+      ],
       "output_contract": "Reject missing compact public boundaries, contradictory ledger-owned facts, or inflated core support counts.",
-      "output_assertions": ["54 core claims remain argument", "dense transition details stay in owning ledger", "reader blockers remain visible"],
+      "output_assertions": [
+        "54 core claims remain argument",
+        "dense transition details stay in owning ledger",
+        "reader blockers remain visible"
+      ],
       "claim_scope": "First-minute public status and routing coherence.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["core support count mismatch", "missing compact non-claim"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "core support count mismatch",
+        "missing compact non-claim"
+      ],
       "prohibited_inference": "A coherent trust surface does not prove the claims summarized there.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_public_status_consistency.py", "args": [],
+      "script": "validate_public_status_consistency.py",
+      "args": [],
       "input_contract": "Canonical status policy/schema, manifest, source inventory, claim dispositions, four active prose surfaces, and chapter headers.",
-      "input_artifacts": ["status/public_status_config.json", "book_structure.json", "sources/source_inventory.json", "claim_decisions/v1_x_core_claim_dispositions.json", "README.md", "index.qmd", "docs/v1_0_candidate_status.md", "docs/publication_readiness.md"],
+      "input_artifacts": [
+        "status/public_status_config.json",
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "claim_decisions/v1_x_core_claim_dispositions.json",
+        "README.md",
+        "index.qmd",
+        "docs/v1_0_candidate_status.md",
+        "docs/publication_readiness.md"
+      ],
       "output_contract": "Reject stale generated blocks, contradictory active counts, global chapter-header counts, and when requested malformed local or deployed graphs.",
-      "output_assertions": ["one exact generated block per active surface", "all active counts match", "chapter headers carry no global counts", "rendered/deployed chapter order and H1 shape match"],
+      "output_assertions": [
+        "one exact generated block per active surface",
+        "all active counts match",
+        "chapter headers carry no global counts",
+        "rendered/deployed chapter order and H1 shape match"
+      ],
       "claim_scope": "Repository, rendered-site, or requested deployed-site status coherence.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["stale manifest count", "mismatched positioning ratio", "historical marker acceptance"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "stale manifest count",
+        "mismatched positioning ratio",
+        "historical marker acceptance"
+      ],
       "prohibited_inference": "Status agreement does not prove chapter claims, source completeness, or artifact quality.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_release_channels.py", "args": [],
+      "script": "validate_release_channels.py",
+      "args": [],
       "input_contract": "Versioned release policy, v1.0 release record, canonical current status, and optional rendered root/latest/index trees.",
-      "input_artifacts": ["status/versioned_release_policy.json", "release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json", "docs/versioned_release_channels.md"],
+      "input_artifacts": [
+        "status/versioned_release_policy.json",
+        "release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json",
+        "docs/versioned_release_channels.md"
+      ],
       "output_contract": "Reject dishonest immutable artifact state, version/commit mismatch, changed latest mirror files, and malformed version index.",
-      "output_assertions": ["latest is explicitly mutable", "published immutable artifact requires URL and SHA-256", "v1.0 absent archive disclosed"],
+      "output_assertions": [
+        "latest is explicitly mutable",
+        "published immutable artifact requires URL and SHA-256",
+        "v1.0 absent archive disclosed"
+      ],
       "claim_scope": "Release-channel identity and truthfulness.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["unbacked immutable artifact claim", "wrong latest commit", "changed latest file"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "unbacked immutable artifact claim",
+        "wrong latest commit",
+        "changed latest file"
+      ],
       "prohibited_inference": "Channel metadata does not create durable storage or prove a deployment occurred.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_immutable_site_archive.py", "args": ["--self-test"],
+      "script": "validate_immutable_site_archive.py",
+      "args": [
+        "--self-test"
+      ],
       "input_contract": "Versioned release policy, deterministic archive builder, archive-candidate schema, tested-bundle format, and publication transaction documentation.",
-      "input_artifacts": ["status/versioned_release_policy.json", "schemas/immutable_site_archive_manifest.schema.json", "schemas/tested_site_bundle.schema.json", "scripts/build_immutable_site_archive.py", "scripts/validate_immutable_site_archive.py", "docs/immutable_site_archive_pipeline.md"],
+      "input_artifacts": [
+        "status/versioned_release_policy.json",
+        "schemas/immutable_site_archive_manifest.schema.json",
+        "schemas/tested_site_bundle.schema.json",
+        "scripts/build_immutable_site_archive.py",
+        "scripts/validate_immutable_site_archive.py",
+        "docs/immutable_site_archive_pipeline.md"
+      ],
       "output_contract": "Build and replay a clean synthetic tested-bundle archive and reject policy/commit mismatch, false publication, changed bytes, unsafe members, non-determinism, or source-bundle drift.",
-      "output_assertions": ["policy-bound filename and release record", "epoch-zero deterministic tar and gzip", "exact tested-site members and bytes", "clean candidate state", "empty unpublished URL", "byte-identical replay digest"],
+      "output_assertions": [
+        "policy-bound filename and release record",
+        "epoch-zero deterministic tar and gzip",
+        "exact tested-site members and bytes",
+        "clean candidate state",
+        "empty unpublished URL",
+        "byte-identical replay digest"
+      ],
       "claim_scope": "Deterministic packaging and identity of one tested-site archive candidate.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["wrong source commit", "false published state", "archive byte mutation", "path traversal member"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "wrong source commit",
+        "false published state",
+        "archive byte mutation",
+        "path traversal member"
+      ],
       "prohibited_inference": "A deterministic local candidate is not publication, durable storage, independent review, runtime assurance, or evidence for chapter claims.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_evidence_quality_vectors.py", "args": [],
+      "script": "validate_evidence_quality_vectors.py",
+      "args": [],
       "input_contract": "Vector policy, all core-claim dispositions, generated 54-claim vector registry, and vector schema.",
-      "input_artifacts": ["evidence_quality/vector_policy.json", "claim_decisions/v1_x_core_claim_dispositions.json", "evidence_quality/core_claim_vectors.json"],
+      "input_artifacts": [
+        "evidence_quality/vector_policy.json",
+        "claim_decisions/v1_x_core_claim_dispositions.json",
+        "evidence_quality/core_claim_vectors.json"
+      ],
       "output_contract": "Reject missing dimensions, invalid vocabulary, disposition mismatch, numeric aggregation, or automatic support effects.",
-      "output_assertions": ["54 unique claims", "8 dimensions per claim", "summary equals authoritative disposition", "no scalar or automatic promotion"],
+      "output_assertions": [
+        "54 unique claims",
+        "8 dimensions per claim",
+        "summary equals authoritative disposition",
+        "no scalar or automatic promotion"
+      ],
       "claim_scope": "Completeness and conservative semantics of evidence-quality metadata.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["missing dimension", "numeric scalar", "support mismatch", "automatic promotion effect"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "missing dimension",
+        "numeric scalar",
+        "support mismatch",
+        "automatic promotion effect"
+      ],
       "prohibited_inference": "A vector records assessed gaps but does not independently validate quality or produce evidence.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_reviewer_capacity.py", "args": [],
+      "script": "validate_reviewer_capacity.py",
+      "args": [],
       "input_contract": "Reviewer-capacity registry and its schema.",
-      "input_artifacts": ["governance/reviewer_capacity_registry.json", "schemas/reviewer_capacity_registry.schema.json"],
+      "input_artifacts": [
+        "governance/reviewer_capacity_registry.json",
+        "schemas/reviewer_capacity_registry.schema.json"
+      ],
       "output_contract": "Reject false assignment, missing capacity sections, unmeasured availability, unsupported quality measurement, invalid substitutes, or false external-review state.",
-      "output_assertions": ["four exact roles", "three external roles unassigned", "internal owner non-independent", "no capacity record promotes support"],
+      "output_assertions": [
+        "four exact roles",
+        "three external roles unassigned",
+        "internal owner non-independent",
+        "no capacity record promotes support"
+      ],
       "claim_scope": "Oversight capacity record truthfulness, not human performance.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["assigned without principal", "unmeasured capacity claim", "quality without sample", "missing substitute"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "assigned without principal",
+        "unmeasured capacity claim",
+        "quality without sample",
+        "missing substitute"
+      ],
       "prohibited_inference": "Valid role records do not establish competence, availability, independence, or review quality.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_external_review_program.py", "args": [],
+      "script": "validate_external_review_program.py",
+      "args": [],
       "input_contract": "Three specialist packet files, external-review program record, capacity roles, and scope artifacts.",
-      "input_artifacts": ["governance/external_review_program.json", "governance/reviewer_capacity_registry.json", "docs/reviews/formal_methods_review_packet.md", "docs/reviews/safety_governance_review_packet.md", "docs/reviews/systems_editorial_review_packet.md"],
+      "input_artifacts": [
+        "governance/external_review_program.json",
+        "governance/reviewer_capacity_registry.json",
+        "docs/reviews/formal_methods_review_packet.md",
+        "docs/reviews/safety_governance_review_packet.md",
+        "docs/reviews/systems_editorial_review_packet.md"
+      ],
       "output_contract": "Reject missing tracks, assigned-state drift, missing packet sections/rubrics, false acceptance, support effect, or missing scope artifacts.",
-      "output_assertions": ["three distinct tracks", "all reviewers unassigned", "packets contain capacity, attacks, rubric, response record, non-claims"],
+      "output_assertions": [
+        "three distinct tracks",
+        "all reviewers unassigned",
+        "packets contain capacity, attacks, rubric, response record, non-claims"
+      ],
       "claim_scope": "Review-program readiness only.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["false accepted state", "support effect", "missing severity rubric"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "false accepted state",
+        "support effect",
+        "missing severity rubric"
+      ],
       "prohibited_inference": "Packet readiness is not solicitation, independent review, evidence, or approval.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_author_decision_packets.py", "args": [],
+      "script": "validate_author_decision_packets.py",
+      "args": [],
       "input_contract": "Title and licensing decision records, author-decision schema, manifest/citation title, and operative LICENSE.md.",
-      "input_artifacts": ["governance/title_positioning_decision.json", "governance/licensing_decision.json", "book_structure.json", "CITATION.cff", "LICENSE.md"],
+      "input_artifacts": [
+        "governance/title_positioning_decision.json",
+        "governance/licensing_decision.json",
+        "book_structure.json",
+        "CITATION.cff",
+        "LICENSE.md"
+      ],
       "output_contract": "Reject selected options while awaiting author, premature title drift, license grant signals, duplicate options, or support effects.",
-      "output_assertions": ["title unchanged", "license remains all rights reserved", "eight options recorded", "selections empty"],
+      "output_assertions": [
+        "title unchanged",
+        "license remains all rights reserved",
+        "eight options recorded",
+        "selections empty"
+      ],
       "claim_scope": "Decision preparation and current-state preservation.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["unauthorized title selection", "unauthorized license selection"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "unauthorized title selection",
+        "unauthorized license selection"
+      ],
       "prohibited_inference": "A packet recommendation is not author authorization or legal advice.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_licensing_provenance_inventory.py", "args": [],
+      "script": "validate_licensing_provenance_inventory.py",
+      "args": [],
       "input_contract": "Author licensing decision, operative LICENSE.md, declarative provenance policy, complete Git candidate path set, generated inventory, schemas, and audit documentation.",
-      "input_artifacts": ["governance/licensing_decision.json", "LICENSE.md", "licensing/provenance_policy.json", "licensing/provenance_inventory.json", "schemas/licensing_provenance_policy.schema.json", "schemas/licensing_provenance_inventory.schema.json", "scripts/build_licensing_provenance_inventory.py", "docs/licensing_provenance_audit.md"],
+      "input_artifacts": [
+        "governance/licensing_decision.json",
+        "LICENSE.md",
+        "licensing/provenance_policy.json",
+        "licensing/provenance_inventory.json",
+        "schemas/licensing_provenance_policy.schema.json",
+        "schemas/licensing_provenance_inventory.schema.json",
+        "scripts/build_licensing_provenance_inventory.py",
+        "docs/licensing_provenance_audit.md"
+      ],
       "output_contract": "Regenerate path classifications and reject omissions, duplicate paths, premature clearance or license effect, external-source laundering, asset misrouting, decision drift, or operative-license drift.",
-      "output_assertions": ["every tracked or untracked nonignored candidate path classified", "path-set and policy digests match", "0 paths cleared", "external source notes remain mixed-rights review", "assets retain provenance review", "all current effects remain all rights reserved"],
+      "output_assertions": [
+        "every tracked or untracked nonignored candidate path classified",
+        "path-set and policy digests match",
+        "0 paths cleared",
+        "external source notes remain mixed-rights review",
+        "assets retain provenance review",
+        "all current effects remain all rights reserved"
+      ],
       "claim_scope": "Technical file routing and unresolved provenance state; no ownership or legal conclusion.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["omitted path", "automatic clearance", "external-source metadata laundering", "premature outbound license"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "omitted path",
+        "automatic clearance",
+        "external-source metadata laundering",
+        "premature outbound license"
+      ],
       "prohibited_inference": "Complete path routing is not legal advice, author ownership assertion, contribution consent, license selection, or permission grant.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_evidence_cells.py", "args": [],
+      "script": "validate_evidence_cells.py",
+      "args": [],
       "input_contract": "Evidence-cell schema, one six-project local-lineage fixture, and five deterministic invalid mutations covering causal stages, missingness, ownership/capability separation, updated-state receipts, and verifier independence.",
-      "input_artifacts": ["schemas/evidence_cell.schema.json", "tests/fixtures/protocol_records/evidence_cell.valid.json", "experiments/evidence_cell/fixtures/invalid_missing_causal_stage.json", "experiments/evidence_cell/fixtures/invalid_missingness_as_pass.json", "experiments/evidence_cell/fixtures/invalid_ownership_as_capability.json", "experiments/evidence_cell/fixtures/invalid_updated_without_receipt.json", "experiments/evidence_cell/fixtures/invalid_false_independence.json"],
+      "input_artifacts": [
+        "schemas/evidence_cell.schema.json",
+        "tests/fixtures/protocol_records/evidence_cell.valid.json",
+        "experiments/evidence_cell/fixtures/invalid_missing_causal_stage.json",
+        "experiments/evidence_cell/fixtures/invalid_missingness_as_pass.json",
+        "experiments/evidence_cell/fixtures/invalid_ownership_as_capability.json",
+        "experiments/evidence_cell/fixtures/invalid_updated_without_receipt.json",
+        "experiments/evidence_cell/fixtures/invalid_false_independence.json"
+      ],
       "output_contract": "Accept the bounded lineage cell and reject every named mutation with its expected semantic error.",
-      "output_assertions": ["one valid lineage cell accepted", "missing causal stage rejected", "dishonest missingness rejected", "ownership laundering rejected", "unsupported updated-state claim rejected", "false verifier independence rejected"],
+      "output_assertions": [
+        "one valid lineage cell accepted",
+        "missing causal stage rejected",
+        "dishonest missingness rejected",
+        "ownership laundering rejected",
+        "unsupported updated-state claim rejected",
+        "false verifier independence rejected"
+      ],
       "claim_scope": "Evidence-cell record semantics for one public-safe synthesis of six related local historical projects.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["missing updated-state stage", "missingness labeled passed", "first-party ownership conflated with capability", "generated state marked updated without receipt", "same producer and verifier labeled independent external"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "missing updated-state stage",
+        "missingness labeled passed",
+        "first-party ownership conflated with capability",
+        "generated state marked updated without receipt",
+        "same producer and verifier labeled independent external"
+      ],
       "prohibited_inference": "Record validation does not reproduce the projects, establish capability or independent review, or promote a chapter core claim.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_metric_provenance.py", "args": [],
+      "script": "validate_metric_provenance.py",
+      "args": [],
       "input_contract": "Metric-provenance schema, one blocked six-project lineage record, and ten deterministic invalid mutations covering origin, observation, contamination, target capacity, retry lineage, checkpoint/output binding, and closure inheritance.",
-      "input_artifacts": ["schemas/metric_provenance_record.schema.json", "tests/fixtures/protocol_records/metric_provenance_record.valid.json", "experiments/metric_provenance/fixtures/invalid_source_reported_admissible.json", "experiments/metric_provenance/fixtures/invalid_measured_without_observation.json", "experiments/metric_provenance/fixtures/invalid_contaminated_admissible.json", "experiments/metric_provenance/fixtures/invalid_constant_admissible.json", "experiments/metric_provenance/fixtures/invalid_proxy_admissible.json", "experiments/metric_provenance/fixtures/invalid_vacuous_admissible.json", "experiments/metric_provenance/fixtures/invalid_architecture_inexpressible.json", "experiments/metric_provenance/fixtures/invalid_retry_ceiling_exceeded.json", "experiments/metric_provenance/fixtures/invalid_complete_binding_with_missing_refs.json", "experiments/metric_provenance/fixtures/invalid_missing_closure_inheritance.json"],
+      "input_artifacts": [
+        "schemas/metric_provenance_record.schema.json",
+        "tests/fixtures/protocol_records/metric_provenance_record.valid.json",
+        "experiments/metric_provenance/fixtures/invalid_source_reported_admissible.json",
+        "experiments/metric_provenance/fixtures/invalid_measured_without_observation.json",
+        "experiments/metric_provenance/fixtures/invalid_contaminated_admissible.json",
+        "experiments/metric_provenance/fixtures/invalid_constant_admissible.json",
+        "experiments/metric_provenance/fixtures/invalid_proxy_admissible.json",
+        "experiments/metric_provenance/fixtures/invalid_vacuous_admissible.json",
+        "experiments/metric_provenance/fixtures/invalid_architecture_inexpressible.json",
+        "experiments/metric_provenance/fixtures/invalid_retry_ceiling_exceeded.json",
+        "experiments/metric_provenance/fixtures/invalid_complete_binding_with_missing_refs.json",
+        "experiments/metric_provenance/fixtures/invalid_missing_closure_inheritance.json"
+      ],
       "output_contract": "Accept the bounded blocked record and reject every named laundering or inheritance mutation with its expected semantic error.",
-      "output_assertions": ["one blocked lineage record accepted", "source-reported, constant, proxy, and vacuous laundering rejected", "measured-without-observation and contamination rejected", "architecture-inexpressible target rejected", "retry-ceiling escape rejected", "incomplete checkpoint/output binding rejected", "erased inherited regressions rejected"],
+      "output_assertions": [
+        "one blocked lineage record accepted",
+        "source-reported, constant, proxy, and vacuous laundering rejected",
+        "measured-without-observation and contamination rejected",
+        "architecture-inexpressible target rejected",
+        "retry-ceiling escape rejected",
+        "incomplete checkpoint/output binding rejected",
+        "erased inherited regressions rejected"
+      ],
       "claim_scope": "Metric-admissibility record semantics for one public-safe synthesis of six related local historical projects.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["source-reported metric marked admissible", "measured metric without observation", "contaminated metric marked admissible", "constant metric marked admissible", "proxy metric marked admissible", "vacuous metric marked admissible", "architecture-inexpressible target", "retry ceiling exceeded", "complete binding with missing refs", "inherited regressions removed"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "source-reported metric marked admissible",
+        "measured metric without observation",
+        "contaminated metric marked admissible",
+        "constant metric marked admissible",
+        "proxy metric marked admissible",
+        "vacuous metric marked admissible",
+        "architecture-inexpressible target",
+        "retry ceiling exceeded",
+        "complete binding with missing refs",
+        "inherited regressions removed"
+      ],
       "prohibited_inference": "Record validation does not reproduce a benchmark, establish model capability or independent review, or promote a chapter core claim.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_artifact_projection_revocation.py", "args": [],
+      "script": "validate_artifact_projection_revocation.py",
+      "args": [],
       "input_contract": "Projection/revocation schema, one blocked five-project lineage record, and ten deterministic invalid mutations covering canonical/projection linkage, reverse-dependency closure, replay grades, asynchronous terminal receipts, and relocation identity.",
-      "input_artifacts": ["schemas/artifact_projection_revocation_record.schema.json", "tests/fixtures/protocol_records/artifact_projection_revocation_record.valid.json", "experiments/artifact_projection_revocation/fixtures/invalid_stale_projection_digest.json", "experiments/artifact_projection_revocation/fixtures/invalid_missing_revocation_closure.json", "experiments/artifact_projection_revocation/fixtures/invalid_unknown_downstream.json", "experiments/artifact_projection_revocation/fixtures/invalid_playback_as_reexecution.json", "experiments/artifact_projection_revocation/fixtures/invalid_semantic_replay_without_validator.json", "experiments/artifact_projection_revocation/fixtures/invalid_completed_without_receipt.json", "experiments/artifact_projection_revocation/fixtures/invalid_path_authority.json", "experiments/artifact_projection_revocation/fixtures/invalid_relocation_digest_mismatch.json", "experiments/artifact_projection_revocation/fixtures/invalid_unverified_relocation.json", "experiments/artifact_projection_revocation/fixtures/invalid_playback_support_promotion.json"],
+      "input_artifacts": [
+        "schemas/artifact_projection_revocation_record.schema.json",
+        "tests/fixtures/protocol_records/artifact_projection_revocation_record.valid.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_stale_projection_digest.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_missing_revocation_closure.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_unknown_downstream.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_playback_as_reexecution.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_semantic_replay_without_validator.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_completed_without_receipt.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_path_authority.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_relocation_digest_mismatch.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_unverified_relocation.json",
+        "experiments/artifact_projection_revocation/fixtures/invalid_playback_support_promotion.json"
+      ],
       "output_contract": "Accept the bounded blocked record and reject every named projection, revocation, replay, completion, relocation, or support-effect mutation with its expected semantic error.",
-      "output_assertions": ["one blocked lineage record accepted", "stale projection linkage rejected", "incomplete and unknown revocation closure rejected", "replay-grade inflation rejected", "unacknowledged asynchronous completion rejected", "path authority and relocation mismatch rejected", "playback-based support promotion rejected"],
+      "output_assertions": [
+        "one blocked lineage record accepted",
+        "stale projection linkage rejected",
+        "incomplete and unknown revocation closure rejected",
+        "replay-grade inflation rejected",
+        "unacknowledged asynchronous completion rejected",
+        "path authority and relocation mismatch rejected",
+        "playback-based support promotion rejected"
+      ],
       "claim_scope": "Projection/revocation record semantics for one public-safe synthesis of five related local historical projects.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["stale projection digest", "missing revocation descendant", "unknown downstream artifact", "playback labeled reexecution", "semantic replay without validator", "completed async work without terminal receipt", "path used as identity authority", "relocation digest mismatch", "unverified relocation", "playback promotes support"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "stale projection digest",
+        "missing revocation descendant",
+        "unknown downstream artifact",
+        "playback labeled reexecution",
+        "semantic replay without validator",
+        "completed async work without terminal receipt",
+        "path used as identity authority",
+        "relocation digest mismatch",
+        "unverified relocation",
+        "playback promotes support"
+      ],
       "prohibited_inference": "Record validation does not deploy an artifact graph, reproduce historical-project behavior, establish open-world closure or replay, or promote a chapter core claim.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_name_to_effect_trace.py", "args": [],
+      "script": "validate_name_to_effect_trace.py",
+      "args": [],
       "input_contract": "Name-to-effect schema, one blocked five-project lineage trace, and eight deterministic mutations covering stage closure, canonical-state authority, digest and receipt binding, terminal acknowledgement, evaluator independence, effect lineage, and claim boundaries.",
-      "input_artifacts": ["schemas/name_to_effect_trace_record.schema.json", "tests/fixtures/protocol_records/name_to_effect_trace_record.valid.json", "experiments/name_to_effect_trace/fixtures/invalid_missing_stage.json", "experiments/name_to_effect_trace/fixtures/invalid_projection_as_canonical.json", "experiments/name_to_effect_trace/fixtures/invalid_state_digest_mismatch.json", "experiments/name_to_effect_trace/fixtures/invalid_effect_digest_mismatch.json", "experiments/name_to_effect_trace/fixtures/invalid_unacknowledged_terminal_effect.json", "experiments/name_to_effect_trace/fixtures/invalid_false_evaluator_independence.json", "experiments/name_to_effect_trace/fixtures/invalid_orphan_effect_map.json", "experiments/name_to_effect_trace/fixtures/invalid_fixture_support_promotion.json"],
+      "input_artifacts": [
+        "schemas/name_to_effect_trace_record.schema.json",
+        "tests/fixtures/protocol_records/name_to_effect_trace_record.valid.json",
+        "experiments/name_to_effect_trace/fixtures/invalid_missing_stage.json",
+        "experiments/name_to_effect_trace/fixtures/invalid_projection_as_canonical.json",
+        "experiments/name_to_effect_trace/fixtures/invalid_state_digest_mismatch.json",
+        "experiments/name_to_effect_trace/fixtures/invalid_effect_digest_mismatch.json",
+        "experiments/name_to_effect_trace/fixtures/invalid_unacknowledged_terminal_effect.json",
+        "experiments/name_to_effect_trace/fixtures/invalid_false_evaluator_independence.json",
+        "experiments/name_to_effect_trace/fixtures/invalid_orphan_effect_map.json",
+        "experiments/name_to_effect_trace/fixtures/invalid_fixture_support_promotion.json"
+      ],
       "output_contract": "Accept the bounded request-to-effect trace and reject each stage, authority, binding, acknowledgement, independence, lineage, or promotion mutation.",
-      "output_assertions": ["one seven-stage lineage trace accepted", "missing stage rejected", "projection authority rejected", "state and effect digest mismatch rejected", "unacknowledged terminal effect rejected", "false evaluator independence rejected", "orphan effect map rejected", "fixture promotion rejected"],
+      "output_assertions": [
+        "one seven-stage lineage trace accepted",
+        "missing stage rejected",
+        "projection authority rejected",
+        "state and effect digest mismatch rejected",
+        "unacknowledged terminal effect rejected",
+        "false evaluator independence rejected",
+        "orphan effect map rejected",
+        "fixture promotion rejected"
+      ],
       "claim_scope": "Name-to-effect trace semantics for one public-safe synthesis of five related local historical projects.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["missing stage", "projection as canonical authority", "canonical state digest mismatch", "effect digest mismatch", "unacknowledged terminal effect", "false evaluator independence", "orphan effect map", "fixture support promotion"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "missing stage",
+        "projection as canonical authority",
+        "canonical state digest mismatch",
+        "effect digest mismatch",
+        "unacknowledged terminal effect",
+        "false evaluator independence",
+        "orphan effect map",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "Record validation does not deploy an integrated runtime, reproduce historical-project behavior, prove open-world joinability, or promote the chapter core claim.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_authority_tuple_lifecycle.py", "args": [],
+      "script": "validate_authority_tuple_lifecycle.py",
+      "args": [],
       "input_contract": "Authority-tuple schema, one blocked six-project lineage lifecycle, and nine deterministic mutations covering unified identity, domain ownership, cross-domain approval, scope, budget, trace, replay, revocation, and protocol/hardware-root boundaries.",
-      "input_artifacts": ["schemas/authority_tuple_lifecycle_record.schema.json", "tests/fixtures/protocol_records/authority_tuple_lifecycle_record.valid.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_missing_unified_identity.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_execution_domain_ownership.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_cross_domain_without_target_approval.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_delegation_scope_widening.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_budget_identity_swap.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_trace_identity_fork.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_replay_identity.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_revoked_effect_allowed.json", "experiments/authority_tuple_lifecycle/fixtures/invalid_protocol_as_hardware_root.json"],
+      "input_artifacts": [
+        "schemas/authority_tuple_lifecycle_record.schema.json",
+        "tests/fixtures/protocol_records/authority_tuple_lifecycle_record.valid.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_missing_unified_identity.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_execution_domain_ownership.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_cross_domain_without_target_approval.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_delegation_scope_widening.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_budget_identity_swap.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_trace_identity_fork.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_replay_identity.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_revoked_effect_allowed.json",
+        "experiments/authority_tuple_lifecycle/fixtures/invalid_protocol_as_hardware_root.json"
+      ],
       "output_contract": "Accept the bounded authority lifecycle and reject every identity, ownership, delegation, cross-domain, revocation, or hardware-root laundering mutation.",
-      "output_assertions": ["one six-project authority lifecycle accepted", "missing unified identity rejected", "execution-domain mismatch rejected", "cross-domain allow without target approval rejected", "scope widening rejected", "budget and trace identity swaps rejected", "replay mismatch rejected", "revoked effect rejected", "protocol-as-hardware-root claim rejected"],
+      "output_assertions": [
+        "one six-project authority lifecycle accepted",
+        "missing unified identity rejected",
+        "execution-domain mismatch rejected",
+        "cross-domain allow without target approval rejected",
+        "scope widening rejected",
+        "budget and trace identity swaps rejected",
+        "replay mismatch rejected",
+        "revoked effect rejected",
+        "protocol-as-hardware-root claim rejected"
+      ],
       "claim_scope": "Unified authority-tuple lifecycle semantics for one public-safe synthesis of six related local historical projects.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["missing unified identity", "execution-domain ownership mismatch", "cross-domain approval missing", "delegation scope widening", "budget identity swap", "trace identity fork", "replay identity mismatch", "revoked effect allowed", "protocol security labeled hardware root"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "missing unified identity",
+        "execution-domain ownership mismatch",
+        "cross-domain approval missing",
+        "delegation scope widening",
+        "budget identity swap",
+        "trace identity fork",
+        "replay identity mismatch",
+        "revoked effect allowed",
+        "protocol security labeled hardware root"
+      ],
       "prohibited_inference": "Record validation does not deploy authority enforcement, reproduce historical-project behavior, establish protocol security or hardware roots, or promote the chapter core claim.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_product_contracts.py", "args": [],
+      "script": "validate_product_contracts.py",
+      "args": [],
       "input_contract": "Product contract/schema, release profiles, README, and landing product selectors.",
-      "input_artifacts": ["products/product_contracts.json", "schemas/product_contracts.schema.json", "editions/release_profiles.json", "README.md", "index.qmd"],
+      "input_artifacts": [
+        "products/product_contracts.json",
+        "schemas/product_contracts.schema.json",
+        "editions/release_profiles.json",
+        "README.md",
+        "index.qmd"
+      ],
       "output_contract": "Reject missing or conflated narrative, reference, and registry audience/density/navigation/review boundaries.",
-      "output_assertions": ["exactly three products", "distinct audience contracts", "correct release profiles and entry points", "shared no-promotion rules"],
+      "output_assertions": [
+        "exactly three products",
+        "distinct audience contracts",
+        "correct release profiles and entry points",
+        "shared no-promotion rules"
+      ],
       "claim_scope": "Product projection metadata and public routing.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["product set mismatch", "duplicate audience contract"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "product set mismatch",
+        "duplicate audience contract"
+      ],
       "prohibited_inference": "Product separation does not produce standalone reviewed artifacts or prove content quality.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_product_projections.py", "args": [],
+      "script": "validate_product_projections.py",
+      "args": [],
       "input_contract": "Canonical manifest/status, product and contribution contracts, 15-chapter narrative spine, reader generator/overlays, projection schemas, and repository-backed evidence routes.",
-      "input_artifacts": ["book_structure.json", "products/product_contracts.json", "products/contribution_focus_contract.json", "products/narrative_product_spine.json", "schemas/narrative_product_spine.schema.json", "schemas/product_projection_manifest.schema.json", "scripts/build_reader_edition.py", "scripts/build_product_projections.py", "docs/product_projection_artifacts.md"],
+      "input_artifacts": [
+        "book_structure.json",
+        "products/product_contracts.json",
+        "products/contribution_focus_contract.json",
+        "products/narrative_product_spine.json",
+        "schemas/narrative_product_spine.schema.json",
+        "schemas/product_projection_manifest.schema.json",
+        "scripts/build_reader_edition.py",
+        "scripts/build_product_projections.py",
+        "docs/product_projection_artifacts.md"
+      ],
       "output_contract": "Regenerate all three product routes and reject over-wide or out-of-order narrative selection, missing editorial jobs, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, or changed evidence snapshots.",
-      "output_assertions": ["15 selected narrative chapters and 39 reference-routed omissions", "54 canonical reference chapters", "17 evidence routes", "all core support remains argument", "content-addressed snapshots match"],
+      "output_assertions": [
+        "15 selected narrative chapters and 39 reference-routed omissions",
+        "54 canonical reference chapters",
+        "17 evidence routes",
+        "all core support remains argument",
+        "content-addressed snapshots match"
+      ],
       "claim_scope": "Generated product navigation, bounded reader source selection, and registry snapshot identity.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["16-chapter narrative", "missing strongest objection", "out-of-order selection", "changed evidence snapshot"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "16-chapter narrative",
+        "missing strongest objection",
+        "out-of-order selection",
+        "changed evidence snapshot"
+      ],
       "prohibited_inference": "Projection consistency and snapshot identity do not establish editorial approval, independent review, runtime behavior, or claim truth.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_contribution_focus_contract.py", "args": [],
+      "script": "validate_contribution_focus_contract.py",
+      "args": [],
       "input_contract": "Three-contribution contract/schema and active 54-chapter manifest.",
-      "input_artifacts": ["products/contribution_focus_contract.json", "schemas/contribution_focus_contract.schema.json", "book_structure.json"],
+      "input_artifacts": [
+        "products/contribution_focus_contract.json",
+        "schemas/contribution_focus_contract.schema.json",
+        "book_structure.json"
+      ],
       "output_contract": "Reject more or fewer than three contributions, missing/duplicate chapter assignments, or independent chapter flagships.",
-      "output_assertions": ["exactly three contributions", "54 unique assignments", "zero independent flagships", "primary/supporting role vocabulary"],
+      "output_assertions": [
+        "exactly three contributions",
+        "54 unique assignments",
+        "zero independent flagships",
+        "primary/supporting role vocabulary"
+      ],
       "claim_scope": "Research-program scope control.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["fourth contribution", "duplicate assignment", "independent flagship"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "fourth contribution",
+        "duplicate assignment",
+        "independent flagship"
+      ],
       "prohibited_inference": "Assignment and focus do not prove novelty, importance, or empirical support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_governed_repository_change_slice.py", "args": [],
+      "script": "validate_governed_repository_change_slice.py",
+      "args": [],
       "input_contract": "Governed repository-change schema, tracked scenario/attack/result/log bundle, runner, verifier, and documentation.",
-      "input_artifacts": ["experiments/governed_repository_change_slice", "scripts/run_governed_repository_change_slice.py", "scripts/governed_repository_independent_verifier.py", "docs/governed_repository_change_slice.md"],
+      "input_artifacts": [
+        "experiments/governed_repository_change_slice",
+        "scripts/run_governed_repository_change_slice.py",
+        "scripts/governed_repository_independent_verifier.py",
+        "docs/governed_repository_change_slice.md"
+      ],
       "output_contract": "Recompute matched baseline/governed results and reject missing attacks, false counts, unsafe governed releases, forged observation, rollback or residual inconsistency.",
-      "output_assertions": ["9 scenarios and 8 attacks", "baseline 8 false accepts", "governed 0 false accepts", "governed 0 unsafe releases", "cost/latency/operator burden recorded"],
+      "output_assertions": [
+        "9 scenarios and 8 attacks",
+        "baseline 8 false accepts",
+        "governed 0 false accepts",
+        "governed 0 unsafe releases",
+        "cost/latency/operator burden recorded"
+      ],
       "claim_scope": "One disposable local Git repository-change workload under recorded scenarios.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["each required attack", "forged/mismatched receipt", "hidden residual", "failed rollback"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "each required attack",
+        "forged/mismatched receipt",
+        "hidden residual",
+        "failed rollback"
+      ],
       "prohibited_inference": "The local workload does not establish production safety, general governance benefit, or transfer to AI deployment.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_governed_trace_invariants.py", "args": [],
+      "script": "validate_governed_trace_invariants.py",
+      "args": [],
       "input_contract": "Executed repository-change event log, invariant result/schema, Python derivation, Lean trace module, proof manifest/triage, and docs.",
-      "input_artifacts": ["experiments/governed_repository_change_slice/results/2026-07-10-local.json", "experiments/governed_trace_invariants/results/2026-07-10-local.json", "lean/AsiStackProofs/GovernedRepositoryTrace.lean", "docs/governed_trace_invariants.md"],
+      "input_artifacts": [
+        "experiments/governed_repository_change_slice/results/2026-07-10-local.json",
+        "experiments/governed_trace_invariants/results/2026-07-10-local.json",
+        "lean/AsiStackProofs/GovernedRepositoryTrace.lean",
+        "docs/governed_trace_invariants.md"
+      ],
       "output_contract": "Re-derive authority, revocation, evidence, residual, and causal-order checks and reject one mutation per invariant plus trace/proof-link drift.",
-      "output_assertions": ["authority monotonicity", "revocation-wins tie", "evidence transition integrity", "residual conservation", "causal parent order"],
+      "output_assertions": [
+        "authority monotonicity",
+        "revocation-wins tie",
+        "evidence transition integrity",
+        "residual conservation",
+        "causal parent order"
+      ],
       "claim_scope": "Finite ordered events in the local governed repository-change log.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["authority expansion", "effect/revocation tie", "evidence mismatch", "residual deletion", "causal-parent inversion"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "authority expansion",
+        "effect/revocation tie",
+        "evidence mismatch",
+        "residual deletion",
+        "causal-parent inversion"
+      ],
       "prohibited_inference": "Finite log checks do not establish distributed clocks, complete observation, evidence validity, or deployed enforcement.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "sync_proof_manifest.py", "args": ["--check"],
+      "script": "sync_proof_manifest.py",
+      "args": [
+        "--check"
+      ],
       "input_contract": "Manifest-ordered outline proof-target tables and tracked proof manifest.",
-      "input_artifacts": ["docs/book_outline.md", "proofs/proof_manifest.json", "book_structure.json"],
+      "input_artifacts": [
+        "docs/book_outline.md",
+        "proofs/proof_manifest.json",
+        "book_structure.json"
+      ],
       "output_contract": "Reject proof-manifest drift in tags, chapters, modules, statements, status, and order.",
-      "output_assertions": ["proof target identities match outline", "manifest order deterministic", "status mirrored"],
+      "output_assertions": [
+        "proof target identities match outline",
+        "manifest order deterministic",
+        "status mirrored"
+      ],
       "claim_scope": "Proof-target metadata synchronization.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["stale generated manifest"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "stale generated manifest"
+      ],
       "prohibited_inference": "Manifest synchronization does not build Lean or prove theorem adequacy.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_semantic_contract_preservation.py", "args": [],
+      "script": "validate_semantic_contract_preservation.py",
+      "args": [],
       "input_contract": "Three-project semantic-compilation lineage record, public schema, authority-bearing source/IR/target contracts, ambiguity and field-lineage ledgers, pass/failure bundle, preservation obligations, repair receipt, digest-parity control, and nine adversarial mutations.",
-      "input_artifacts": ["schemas/semantic_contract_preservation_record.schema.json", "tests/fixtures/protocol_records/semantic_contract_preservation_record.valid.json", "experiments/semantic_contract_preservation/fixtures/invalid_adversarial_paraphrase_drops_obligation.json", "experiments/semantic_contract_preservation/fixtures/invalid_omitted_field_lineage.json", "experiments/semantic_contract_preservation/fixtures/invalid_positional_insertion_orphans_repair.json", "experiments/semantic_contract_preservation/fixtures/invalid_authority_loss.json", "experiments/semantic_contract_preservation/fixtures/invalid_whole_graph_repair.json", "experiments/semantic_contract_preservation/fixtures/invalid_digest_parity_as_semantics.json", "experiments/semantic_contract_preservation/fixtures/invalid_failure_bundle_erased.json", "experiments/semantic_contract_preservation/fixtures/invalid_unresolved_ambiguity_allowed.json", "experiments/semantic_contract_preservation/fixtures/invalid_target_requirement_omission.json", "scripts/validate_semantic_contract_preservation.py"],
+      "input_artifacts": [
+        "schemas/semantic_contract_preservation_record.schema.json",
+        "tests/fixtures/protocol_records/semantic_contract_preservation_record.valid.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_adversarial_paraphrase_drops_obligation.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_omitted_field_lineage.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_positional_insertion_orphans_repair.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_authority_loss.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_whole_graph_repair.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_digest_parity_as_semantics.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_failure_bundle_erased.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_unresolved_ambiguity_allowed.json",
+        "experiments/semantic_contract_preservation/fixtures/invalid_target_requirement_omission.json",
+        "scripts/validate_semantic_contract_preservation.py"
+      ],
       "output_contract": "Accept the bounded canonical compilation record and reject adversarial paraphrase, omission, positional insertion, authority loss, whole-graph repair, digest equality used as semantics, erased failure history, unresolved ambiguity, and target-requirement loss.",
-      "output_assertions": ["exact three-source lineage", "complete source-to-IR-to-target field lineage", "authority and ambiguity preservation", "semantic validators for every obligation", "declared repair scope equals observed blast radius", "digest parity is not semantic proof", "fixture cannot authorize execution or promote support"],
+      "output_assertions": [
+        "exact three-source lineage",
+        "complete source-to-IR-to-target field lineage",
+        "authority and ambiguity preservation",
+        "semantic validators for every obligation",
+        "declared repair scope equals observed blast radius",
+        "digest parity is not semantic proof",
+        "fixture cannot authorize execution or promote support"
+      ],
       "claim_scope": "One hand-authored contract-preservation fixture and nine deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["adversarial paraphrase", "field omission", "positional insertion", "authority loss", "repair-scope escape", "digest-parity laundering", "failure-bundle erasure", "unresolved ambiguity", "target-requirement omission"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "adversarial paraphrase",
+        "field omission",
+        "positional insertion",
+        "authority loss",
+        "repair-scope escape",
+        "digest-parity laundering",
+        "failure-bundle erasure",
+        "unresolved ambiguity",
+        "target-requirement omission"
+      ],
       "prohibited_inference": "The fixture does not implement a source parser or target backend, prove compiler correctness, establish arbitrary paraphrase equivalence, measure repair locality, reproduce historical-project behavior, authorize execution, or promote the chapter claim.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_narrative_running_example.py", "args": [],
+      "script": "validate_narrative_running_example.py",
+      "args": [],
       "input_contract": "Fifteen-chapter narrative spine, cumulative governed repository-change trace, public trace schema, and six negative controls for order, state continuity, artifact causality, handoff, identity, and editorial promotion.",
-      "input_artifacts": ["products/narrative_product_spine.json", "products/narrative_running_example_trace.json", "schemas/narrative_running_example_trace.schema.json", "experiments/narrative_running_example/fixtures/invalid_chapter_order.json", "experiments/narrative_running_example/fixtures/invalid_cumulative_reset.json", "experiments/narrative_running_example/fixtures/invalid_unknown_consumed_artifact.json", "experiments/narrative_running_example/fixtures/invalid_skipped_handoff.json", "experiments/narrative_running_example/fixtures/invalid_duplicate_output_identity.json", "experiments/narrative_running_example/fixtures/invalid_release_promotion.json", "scripts/validate_narrative_running_example.py"],
+      "input_artifacts": [
+        "products/narrative_product_spine.json",
+        "products/narrative_running_example_trace.json",
+        "schemas/narrative_running_example_trace.schema.json",
+        "experiments/narrative_running_example/fixtures/invalid_chapter_order.json",
+        "experiments/narrative_running_example/fixtures/invalid_cumulative_reset.json",
+        "experiments/narrative_running_example/fixtures/invalid_unknown_consumed_artifact.json",
+        "experiments/narrative_running_example/fixtures/invalid_skipped_handoff.json",
+        "experiments/narrative_running_example/fixtures/invalid_duplicate_output_identity.json",
+        "experiments/narrative_running_example/fixtures/invalid_release_promotion.json",
+        "scripts/validate_narrative_running_example.py"
+      ],
       "output_contract": "Accept exactly one cumulative 15-stage editorial trace and reject chapter-order drift, state reset, unknown causes, skipped handoffs, duplicate output identities, and use of editorial continuity as support or release approval.",
-      "output_assertions": ["15 selected editorial contracts", "canonical chapter order", "one governed repository-change scenario", "16 cumulative artifact identities", "every consume has a prior cause", "every handoff targets the next selected chapter", "no support movement or release approval"],
+      "output_assertions": [
+        "15 selected editorial contracts",
+        "canonical chapter order",
+        "one governed repository-change scenario",
+        "16 cumulative artifact identities",
+        "every consume has a prior cause",
+        "every handoff targets the next selected chapter",
+        "no support movement or release approval"
+      ],
       "claim_scope": "Narrative editorial continuity and running-example state for the generated 15-chapter candidate.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["chapter-order drift", "cumulative-state reset", "unknown consumed artifact", "skipped handoff", "duplicate output identity", "editorial release promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "chapter-order drift",
+        "cumulative-state reset",
+        "unknown consumed artifact",
+        "skipped handoff",
+        "duplicate output identity",
+        "editorial release promotion"
+      ],
       "prohibited_inference": "Editorial continuity does not prove the architecture, approve a reader release, replace final format inspection, promote a claim, or authorize deletion of reference chapters.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_readiness_check_lifecycle.py", "args": [],
+      "script": "validate_readiness_check_lifecycle.py",
+      "args": [],
       "input_contract": "Six-project quarantined readiness-check lifecycle, public schema, explicit gate/policy/authority identity, per-check applicability/requiredness/attempt/result/waiver/evidence/expiry, invalidating dependencies, containment, quarantine closure, and nine adversarial mutations.",
-      "input_artifacts": ["schemas/readiness_check_lifecycle_record.schema.json", "tests/fixtures/protocol_records/readiness_check_lifecycle_record.valid.json", "experiments/readiness_check_lifecycle/fixtures/invalid_skipped_as_green.json", "experiments/readiness_check_lifecycle/fixtures/invalid_stale_evidence_ready.json", "experiments/readiness_check_lifecycle/fixtures/invalid_nonmonotone_containment.json", "experiments/readiness_check_lifecycle/fixtures/invalid_orphaned_quarantine.json", "experiments/readiness_check_lifecycle/fixtures/invalid_waiver_as_required_pass.json", "experiments/readiness_check_lifecycle/fixtures/invalid_unknown_applicability_ready.json", "experiments/readiness_check_lifecycle/fixtures/invalid_pass_without_evidence.json", "experiments/readiness_check_lifecycle/fixtures/invalid_quarantine_ordinary_route.json", "experiments/readiness_check_lifecycle/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_readiness_check_lifecycle.py"],
+      "input_artifacts": [
+        "schemas/readiness_check_lifecycle_record.schema.json",
+        "tests/fixtures/protocol_records/readiness_check_lifecycle_record.valid.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_skipped_as_green.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_stale_evidence_ready.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_nonmonotone_containment.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_orphaned_quarantine.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_waiver_as_required_pass.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_unknown_applicability_ready.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_pass_without_evidence.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_quarantine_ordinary_route.json",
+        "experiments/readiness_check_lifecycle/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_readiness_check_lifecycle.py"
+      ],
       "output_contract": "Accept the honest quarantined lineage record and reject skipped-as-green, ready-with-failed-checks, non-monotone containment, orphaned quarantine, waiver substitution, unknown applicability labeled pass, pass without evidence, ordinary routing under quarantine, and fixture support promotion.",
-      "output_assertions": ["exact six-source lineage", "explicit check lifecycle", "fresh evidence required for passing checks", "invalid dependencies block promotion", "containment never weakens under invalidation", "quarantine has owner and descendant closure", "ordinary routing blocked", "no support promotion"],
+      "output_assertions": [
+        "exact six-source lineage",
+        "explicit check lifecycle",
+        "fresh evidence required for passing checks",
+        "invalid dependencies block promotion",
+        "containment never weakens under invalidation",
+        "quarantine has owner and descendant closure",
+        "ordinary routing blocked",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored readiness check-lifecycle and quarantine-closure record.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["skipped as green", "ready with failed required checks", "non-monotone containment", "orphaned quarantine", "waiver as required pass", "unknown applicability as pass", "pass without evidence", "ordinary route during quarantine", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "skipped as green",
+        "ready with failed required checks",
+        "non-monotone containment",
+        "orphaned quarantine",
+        "waiver as required pass",
+        "unknown applicability as pass",
+        "pass without evidence",
+        "ordinary route during quarantine",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "Record discipline does not prove check adequacy, evaluator independence, deployed readiness enforcement, live quarantine routing, historical-project behavior, target readiness, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_supply_chain_affected_paths.py", "args": [],
+      "script": "validate_supply_chain_affected_paths.py",
+      "args": [],
       "input_contract": "Three-project quarantined AI supply-chain graph record, public schema, digest-bound nodes, typed downstream edges, bounded assurance references, append-only invalidation, exact affected-path closure, owned response routes, lifecycle closure, and ten adversarial mutations.",
-      "input_artifacts": ["schemas/supply_chain_affected_path_record.schema.json", "tests/fixtures/protocol_records/supply_chain_affected_path_record.valid.json", "experiments/supply_chain_affected_paths/fixtures/invalid_artifact_digest_substitution.json", "experiments/supply_chain_affected_paths/fixtures/invalid_incomplete_downstream_closure.json", "experiments/supply_chain_affected_paths/fixtures/invalid_missing_response_owner.json", "experiments/supply_chain_affected_paths/fixtures/invalid_ordinary_use_after_invalidation.json", "experiments/supply_chain_affected_paths/fixtures/invalid_overwrite_history.json", "experiments/supply_chain_affected_paths/fixtures/invalid_revoked_path_not_quarantined.json", "experiments/supply_chain_affected_paths/fixtures/invalid_stale_bom_admitted.json", "experiments/supply_chain_affected_paths/fixtures/invalid_custody_after_invalidation.json", "experiments/supply_chain_affected_paths/fixtures/invalid_missing_disposal_record.json", "experiments/supply_chain_affected_paths/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_supply_chain_affected_paths.py"],
+      "input_artifacts": [
+        "schemas/supply_chain_affected_path_record.schema.json",
+        "tests/fixtures/protocol_records/supply_chain_affected_path_record.valid.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_artifact_digest_substitution.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_incomplete_downstream_closure.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_missing_response_owner.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_ordinary_use_after_invalidation.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_overwrite_history.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_revoked_path_not_quarantined.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_stale_bom_admitted.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_custody_after_invalidation.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_missing_disposal_record.json",
+        "experiments/supply_chain_affected_paths/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_supply_chain_affected_paths.py"
+      ],
       "output_contract": "Accept the bounded quarantined lineage record and reject artifact substitution, incomplete transitive closure, unowned response, ordinary use after invalidation, overwritten history, non-quarantine of a revoked path, stale-assurance admission, custody after invalidation, missing disposal closure, and fixture support promotion.",
-      "output_assertions": ["exact three-source lineage", "requested name and digest bind one graph node", "all edges and assurance references bind declared nodes", "invalidation is append-only", "declared closure equals graph-reachable descendants", "every affected node has one owned non-ordinary route", "invalidated path blocks custody and readiness", "lifecycle residual and disposal closure retained", "no support promotion"],
+      "output_assertions": [
+        "exact three-source lineage",
+        "requested name and digest bind one graph node",
+        "all edges and assurance references bind declared nodes",
+        "invalidation is append-only",
+        "declared closure equals graph-reachable descendants",
+        "every affected node has one owned non-ordinary route",
+        "invalidated path blocks custody and readiness",
+        "lifecycle residual and disposal closure retained",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored AI supply-chain affected-path record and ten deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["artifact digest substitution", "incomplete downstream closure", "missing response owner", "ordinary use after invalidation", "history overwrite", "revoked path not quarantined", "stale BOM admitted", "custody after invalidation", "missing disposal record", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "artifact digest substitution",
+        "incomplete downstream closure",
+        "missing response owner",
+        "ordinary use after invalidation",
+        "history overwrite",
+        "revoked path not quarantined",
+        "stale BOM admitted",
+        "custody after invalidation",
+        "missing disposal record",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "Graph and record discipline does not prove inventory completeness, assurance correctness, supplier trust, artifact integrity, data fitness, deployed propagation or quarantine, historical-project behavior, security, safety, readiness, authority, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_formal_semantic_depth.py", "args": [],
+      "script": "validate_formal_semantic_depth.py",
+      "args": [],
       "input_contract": "Three-project formal semantic-depth record, public schema, prose-to-symbol abstraction map, clock/concurrency/event/adversarial-log assumptions, five distinct depth lanes, by-construction properties, excluded runtime behavior, implementation binding, consumer decision, and ten adversarial mutations.",
-      "input_artifacts": ["schemas/formal_semantic_depth_record.schema.json", "tests/fixtures/protocol_records/formal_semantic_depth_record.valid.json", "experiments/formal_semantic_depth/fixtures/invalid_missing_abstraction_loss.json", "experiments/formal_semantic_depth/fixtures/invalid_missing_concurrency_assumption.json", "experiments/formal_semantic_depth/fixtures/invalid_duplicate_depth_lane.json", "experiments/formal_semantic_depth/fixtures/invalid_field_presence_as_runtime.json", "experiments/formal_semantic_depth/fixtures/invalid_finite_route_as_deployed.json", "experiments/formal_semantic_depth/fixtures/invalid_derived_without_route.json", "experiments/formal_semantic_depth/fixtures/invalid_bridge_without_artifact.json", "experiments/formal_semantic_depth/fixtures/invalid_missing_runtime_exclusion.json", "experiments/formal_semantic_depth/fixtures/invalid_unbound_implementation_claim.json", "experiments/formal_semantic_depth/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_formal_semantic_depth.py"],
+      "input_artifacts": [
+        "schemas/formal_semantic_depth_record.schema.json",
+        "tests/fixtures/protocol_records/formal_semantic_depth_record.valid.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_missing_abstraction_loss.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_missing_concurrency_assumption.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_duplicate_depth_lane.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_field_presence_as_runtime.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_finite_route_as_deployed.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_derived_without_route.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_bridge_without_artifact.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_missing_runtime_exclusion.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_unbound_implementation_claim.json",
+        "experiments/formal_semantic_depth/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_formal_semantic_depth.py"
+      ],
       "output_contract": "Accept the bounded semantic-depth record and reject erased abstraction loss, missing concurrency assumptions, duplicate lanes, field-presence/runtime laundering, finite-route/deployment laundering, derived results without their route dependency, artifactless executable bridges, missing runtime exclusions, runtime claims from an unbound implementation, and fixture support promotion.",
-      "output_assertions": ["exact three-source lineage", "abstraction losses explicit", "clock concurrency completeness and adversarial-log assumptions explicit", "five depth lanes exactly once", "passed formal and executable lanes bind artifacts and verifiers", "field presence finite route and derived invariant remain distinct", "runtime exclusions explicit", "unbound implementation cannot authorize runtime claims", "no support promotion"],
+      "output_assertions": [
+        "exact three-source lineage",
+        "abstraction losses explicit",
+        "clock concurrency completeness and adversarial-log assumptions explicit",
+        "five depth lanes exactly once",
+        "passed formal and executable lanes bind artifacts and verifiers",
+        "field presence finite route and derived invariant remain distinct",
+        "runtime exclusions explicit",
+        "unbound implementation cannot authorize runtime claims",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored semantic-depth classification of a finite revocation-route example and ten deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["erased abstraction loss", "missing concurrency assumption", "duplicate depth lane", "field presence as runtime", "finite route as deployed behavior", "derived invariant without route", "bridge without artifact", "missing runtime exclusion", "unbound runtime claim", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "erased abstraction loss",
+        "missing concurrency assumption",
+        "duplicate depth lane",
+        "field presence as runtime",
+        "finite route as deployed behavior",
+        "derived invariant without route",
+        "bridge without artifact",
+        "missing runtime exclusion",
+        "unbound runtime claim",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "The record does not judge arbitrary theorem adequacy, prove abstraction correctness, validate the historical projects, bind a deployed authorization service, establish runtime enforcement, or promote a chapter claim.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_one_shot_privileged_action.py", "args": [],
+      "script": "validate_one_shot_privileged_action.py",
+      "args": [],
       "input_contract": "Five-project one-shot privileged-action record, public schema, exact principal/operation/target/state/parameter/policy/TTL/nonce approval binding, monotone state history, observed effect receipt, consumed-nonce replay control, and ten adversarial mutations.",
-      "input_artifacts": ["schemas/one_shot_privileged_action_record.schema.json", "tests/fixtures/protocol_records/one_shot_privileged_action_record.valid.json", "experiments/one_shot_privileged_action/fixtures/invalid_target_state_mismatch.json", "experiments/one_shot_privileged_action/fixtures/invalid_stale_approval.json", "experiments/one_shot_privileged_action/fixtures/invalid_wrong_principal.json", "experiments/one_shot_privileged_action/fixtures/invalid_altered_parameters.json", "experiments/one_shot_privileged_action/fixtures/invalid_policy_version_swap.json", "experiments/one_shot_privileged_action/fixtures/invalid_nonce_swap.json", "experiments/one_shot_privileged_action/fixtures/invalid_scenario_ack_as_approval.json", "experiments/one_shot_privileged_action/fixtures/invalid_replay_allowed.json", "experiments/one_shot_privileged_action/fixtures/invalid_missing_effect_receipt.json", "experiments/one_shot_privileged_action/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_one_shot_privileged_action.py"],
+      "input_artifacts": [
+        "schemas/one_shot_privileged_action_record.schema.json",
+        "tests/fixtures/protocol_records/one_shot_privileged_action_record.valid.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_target_state_mismatch.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_stale_approval.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_wrong_principal.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_altered_parameters.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_policy_version_swap.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_nonce_swap.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_scenario_ack_as_approval.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_replay_allowed.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_missing_effect_receipt.json",
+        "experiments/one_shot_privileged_action/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_one_shot_privileged_action.py"
+      ],
       "output_contract": "Accept the bounded consumed record and reject target-state mismatch, stale approval, wrong principal, altered parameters, policy-version swap, nonce swap, scenario acknowledgement as approval, replay of a consumed nonce, missing effect receipt, and fixture support promotion.",
-      "output_assertions": ["exact five-source lineage", "explicit one-shot state sequence", "approval and execution identities match", "dispatch occurs inside TTL", "scenario acknowledgement cannot authorize", "effect and post-state independently recorded", "consumed nonce is single-use", "replay denied", "no support promotion"],
+      "output_assertions": [
+        "exact five-source lineage",
+        "explicit one-shot state sequence",
+        "approval and execution identities match",
+        "dispatch occurs inside TTL",
+        "scenario acknowledgement cannot authorize",
+        "effect and post-state independently recorded",
+        "consumed nonce is single-use",
+        "replay denied",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored privileged-action lifecycle and ten deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["target-state mismatch", "stale approval", "wrong principal", "altered parameters", "policy-version swap", "nonce swap", "scenario acknowledgement substitution", "replay allowed", "missing effect receipt", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "target-state mismatch",
+        "stale approval",
+        "wrong principal",
+        "altered parameters",
+        "policy-version swap",
+        "nonce swap",
+        "scenario acknowledgement substitution",
+        "replay allowed",
+        "missing effect receipt",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "The fixture does not implement an intent parser, approval service, OS authority enforcement, privileged effect, historical-project behavior, replay-resistant distributed protocol, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_sandboxed_adapter_capability.py", "args": [],
+      "script": "validate_sandboxed_adapter_capability.py",
+      "args": [],
       "input_contract": "Five-project bounded adapter-capability record, public schema, digest-bound executable, executable/read/write/network/clock/randomness/environment/secret scopes, enforcement observation, replay grade, irreversible-residual disclosure, decision boundary, and ten adversarial mutations.",
-      "input_artifacts": ["schemas/sandboxed_adapter_capability_record.schema.json", "tests/fixtures/protocol_records/sandboxed_adapter_capability_record.valid.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_executable_outside_allowlist.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_write_path_escape.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_network_allowed_while_denied.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_wall_clock_through_monotonic_scope.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_os_random_through_seeded_scope.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_process_observation_as_os_enforcement.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_playback_as_live_reexecution.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_missing_irreversible_residual_item.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_bounded_probe_ordinary_dispatch.json", "experiments/sandboxed_adapter_capability/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_sandboxed_adapter_capability.py"],
+      "input_artifacts": [
+        "schemas/sandboxed_adapter_capability_record.schema.json",
+        "tests/fixtures/protocol_records/sandboxed_adapter_capability_record.valid.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_executable_outside_allowlist.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_write_path_escape.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_network_allowed_while_denied.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_wall_clock_through_monotonic_scope.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_os_random_through_seeded_scope.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_process_observation_as_os_enforcement.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_playback_as_live_reexecution.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_missing_irreversible_residual_item.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_bounded_probe_ordinary_dispatch.json",
+        "experiments/sandboxed_adapter_capability/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_sandboxed_adapter_capability.py"
+      ],
       "output_contract": "Accept the honest bounded-probe record and reject executable escape, write-path escape, network use under denial, wall-clock or OS-random scope widening, process observation labeled OS enforcement, playback labeled live reexecution, missing irreversible residual detail, ordinary dispatch from a bounded probe, and fixture support promotion.",
-      "output_assertions": ["exact five-source lineage", "exact executable allowlist", "read/write/network/clock/randomness probes match declared scope", "process observation does not imply OS enforcement", "playback differs from live reexecution", "irreversible residual state explicit", "bounded probe cannot dispatch ordinarily", "no sandbox or support overclaim"],
+      "output_assertions": [
+        "exact five-source lineage",
+        "exact executable allowlist",
+        "read/write/network/clock/randomness probes match declared scope",
+        "process observation does not imply OS enforcement",
+        "playback differs from live reexecution",
+        "irreversible residual state explicit",
+        "bounded probe cannot dispatch ordinarily",
+        "no sandbox or support overclaim"
+      ],
       "claim_scope": "One hand-authored capability-envelope record linked to an existing bounded temp-file replay and ten deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["executable escape", "write-path escape", "network under denied scope", "wall-clock widening", "randomness widening", "process as OS enforcement", "playback as live replay", "missing irreversible residual", "bounded-probe dispatch", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "executable escape",
+        "write-path escape",
+        "network under denied scope",
+        "wall-clock widening",
+        "randomness widening",
+        "process as OS enforcement",
+        "playback as live replay",
+        "missing irreversible residual",
+        "bounded-probe dispatch",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "The record does not establish an OS-enforced sandbox, deployed adapter, network isolation, secret-handle safety, production rollback, historical-project behavior, replay equivalence beyond the bounded probe, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_bounded_graph_snapshot_certificate.py", "args": [],
+      "script": "validate_bounded_graph_snapshot_certificate.py",
+      "args": [],
       "input_contract": "Four-project bounded graph-snapshot certificate, public schema, durable-memory snapshot identity, finite graph and selection bounds, handle provenance/generation/policy/expiry/revocation, revalidation evidence, context-materialization boundary, and eleven adversarial mutations.",
-      "input_artifacts": ["schemas/bounded_graph_snapshot_certificate.schema.json", "tests/fixtures/protocol_records/bounded_graph_snapshot_certificate.valid.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_snapshot_digest_mismatch.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_handle_generation_rollback.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_expired_handle.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_revoked_handle.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_policy_version_mismatch.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_missing_handle_provenance.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_unbounded_graph_selection.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_omitted_frontier_undeclared.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_revalidation_missing.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_memory_context_conflation.json", "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_bounded_graph_snapshot_certificate.py"],
+      "input_artifacts": [
+        "schemas/bounded_graph_snapshot_certificate.schema.json",
+        "tests/fixtures/protocol_records/bounded_graph_snapshot_certificate.valid.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_snapshot_digest_mismatch.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_handle_generation_rollback.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_expired_handle.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_revoked_handle.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_policy_version_mismatch.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_missing_handle_provenance.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_unbounded_graph_selection.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_omitted_frontier_undeclared.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_revalidation_missing.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_memory_context_conflation.json",
+        "experiments/bounded_graph_snapshot_certificate/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_bounded_graph_snapshot_certificate.py"
+      ],
       "output_contract": "Accept the bounded certified snapshot and reject snapshot-digest substitution, generation rollback, expiry, revocation, policy mismatch, missing provenance, budget escape, undeclared omission frontier, absent revalidation, durable-memory/context conflation, and fixture support promotion.",
-      "output_assertions": ["exact four-source lineage", "finite graph identities and counts", "selected nodes remain inside depth and node bounds", "omitted frontier is exact", "handle binds snapshot identity and digest", "generation policy and revocation epoch remain current", "required revalidation passes with evidence", "materialized context remains distinct from durable memory", "no support promotion"],
+      "output_assertions": [
+        "exact four-source lineage",
+        "finite graph identities and counts",
+        "selected nodes remain inside depth and node bounds",
+        "omitted frontier is exact",
+        "handle binds snapshot identity and digest",
+        "generation policy and revocation epoch remain current",
+        "required revalidation passes with evidence",
+        "materialized context remains distinct from durable memory",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored bounded graph-snapshot certificate and eleven deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["snapshot digest mismatch", "handle generation rollback", "expired handle", "revoked handle", "policy mismatch", "missing provenance", "selection budget escape", "undeclared omitted frontier", "missing revalidation", "memory/context conflation", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "snapshot digest mismatch",
+        "handle generation rollback",
+        "expired handle",
+        "revoked handle",
+        "policy mismatch",
+        "missing provenance",
+        "selection budget escape",
+        "undeclared omitted frontier",
+        "missing revalidation",
+        "memory/context conflation",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "The certificate does not prove graph completeness, durable-store correctness, restart persistence, resolver correctness, certificate truthfulness, historical-project behavior, model-facing context quality, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_context_restart_recovery.py", "args": [],
+      "script": "validate_context_restart_recovery.py",
+      "args": [],
       "input_contract": "Five-project context restart/recovery lifecycle with freeze, thaw, rebalance, promotion, no-loss compaction, partial-write recovery, restart visibility, atomic index/content epochs, and ten adversarial mutations.",
-      "input_artifacts": ["schemas/context_restart_recovery_record.schema.json", "tests/fixtures/protocol_records/context_restart_recovery_record.valid.json", "experiments/context_restart_recovery/fixtures/invalid_broken_transition_chain.json", "experiments/context_restart_recovery/fixtures/invalid_freeze_unobserved.json", "experiments/context_restart_recovery/fixtures/invalid_thaw_still_frozen.json", "experiments/context_restart_recovery/fixtures/invalid_rebalance_item_loss.json", "experiments/context_restart_recovery/fixtures/invalid_promotion_unacknowledged.json", "experiments/context_restart_recovery/fixtures/invalid_compaction_loss.json", "experiments/context_restart_recovery/fixtures/invalid_partial_write_admitted.json", "experiments/context_restart_recovery/fixtures/invalid_restart_index_divergence.json", "experiments/context_restart_recovery/fixtures/invalid_restart_missing_item.json", "experiments/context_restart_recovery/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_context_restart_recovery.py"],
+      "input_artifacts": [
+        "schemas/context_restart_recovery_record.schema.json",
+        "tests/fixtures/protocol_records/context_restart_recovery_record.valid.json",
+        "experiments/context_restart_recovery/fixtures/invalid_broken_transition_chain.json",
+        "experiments/context_restart_recovery/fixtures/invalid_freeze_unobserved.json",
+        "experiments/context_restart_recovery/fixtures/invalid_thaw_still_frozen.json",
+        "experiments/context_restart_recovery/fixtures/invalid_rebalance_item_loss.json",
+        "experiments/context_restart_recovery/fixtures/invalid_promotion_unacknowledged.json",
+        "experiments/context_restart_recovery/fixtures/invalid_compaction_loss.json",
+        "experiments/context_restart_recovery/fixtures/invalid_partial_write_admitted.json",
+        "experiments/context_restart_recovery/fixtures/invalid_restart_index_divergence.json",
+        "experiments/context_restart_recovery/fixtures/invalid_restart_missing_item.json",
+        "experiments/context_restart_recovery/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_context_restart_recovery.py"
+      ],
       "output_contract": "Accept the bounded lifecycle and reject broken causality, unobserved freeze, failed thaw, rebalance or compaction loss, unacknowledged promotion, partial-write admission, index divergence, restart loss, and fixture support promotion.",
-      "output_assertions": ["exact five-source lineage", "canonical transition order", "observed acknowledged material effects", "freeze/thaw postconditions", "tier persistence", "no-loss compaction", "partial-write quarantine and rollback", "atomic index/content restart", "exact restart visibility", "no support promotion"],
+      "output_assertions": [
+        "exact five-source lineage",
+        "canonical transition order",
+        "observed acknowledged material effects",
+        "freeze/thaw postconditions",
+        "tier persistence",
+        "no-loss compaction",
+        "partial-write quarantine and rollback",
+        "atomic index/content restart",
+        "exact restart visibility",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored context restart/recovery lifecycle and ten deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["broken transition chain", "unobserved freeze", "thaw remains frozen", "rebalance item loss", "unacknowledged promotion", "compaction loss", "partial write admitted", "restart index divergence", "restart missing item", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "broken transition chain",
+        "unobserved freeze",
+        "thaw remains frozen",
+        "rebalance item loss",
+        "unacknowledged promotion",
+        "compaction loss",
+        "partial write admitted",
+        "restart index divergence",
+        "restart missing item",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "The lifecycle does not prove deployed memory-store behavior, process restart, filesystem atomicity, persistence, compaction correctness, historical-project behavior, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_contradiction_revision_lifecycle.py", "args": [],
+      "script": "validate_contradiction_revision_lifecycle.py",
+      "args": [],
       "input_contract": "Five-project contradiction/revision lifecycle with separated justification/lifecycle/commitment/authority states, weak/medium/strong monotone response, supersession, bounded dependency repair, ontology migration, restart persistence, and eleven adversarial mutations.",
-      "input_artifacts": ["schemas/contradiction_revision_lifecycle_record.schema.json", "tests/fixtures/protocol_records/contradiction_revision_lifecycle_record.valid.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_missing_justification.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_conflated_states.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_nonmonotone_response.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_strong_no_downgrade.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_missing_superseded_claim.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_incomplete_dependency_repair.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_unbounded_dependency_repair.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_ontology_migration_missing.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_residual_erasure.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_restart_loses_revision.json", "experiments/contradiction_revision_lifecycle/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_contradiction_revision_lifecycle.py"],
+      "input_artifacts": [
+        "schemas/contradiction_revision_lifecycle_record.schema.json",
+        "tests/fixtures/protocol_records/contradiction_revision_lifecycle_record.valid.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_missing_justification.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_conflated_states.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_nonmonotone_response.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_strong_no_downgrade.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_missing_superseded_claim.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_incomplete_dependency_repair.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_unbounded_dependency_repair.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_ontology_migration_missing.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_residual_erasure.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_restart_loses_revision.json",
+        "experiments/contradiction_revision_lifecycle/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_contradiction_revision_lifecycle.py"
+      ],
       "output_contract": "Accept the bounded revision and reject missing justification, state conflation, nonmonotone contradiction response, strong contradiction without downgrade/split, broken supersession, incomplete or unbounded repair, absent ontology migration, residual erasure, restart loss, and support promotion.",
-      "output_assertions": ["exact five-source lineage", "four state dimensions separated", "weak medium strong response monotone", "strong contradiction downgrades or splits", "supersession preserves identity and successors", "dependency repair exact and bounded", "ontology migration binds version", "residuals survive", "revision survives restart", "no support promotion"],
+      "output_assertions": [
+        "exact five-source lineage",
+        "four state dimensions separated",
+        "weak medium strong response monotone",
+        "strong contradiction downgrades or splits",
+        "supersession preserves identity and successors",
+        "dependency repair exact and bounded",
+        "ontology migration binds version",
+        "residuals survive",
+        "revision survives restart",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored contradiction/revision lifecycle and eleven deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["missing justification", "conflated states", "nonmonotone response", "strong no downgrade", "missing supersession", "incomplete repair", "unbounded repair", "missing ontology migration", "residual erasure", "restart loss", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "missing justification",
+        "conflated states",
+        "nonmonotone response",
+        "strong no downgrade",
+        "missing supersession",
+        "incomplete repair",
+        "unbounded repair",
+        "missing ontology migration",
+        "residual erasure",
+        "restart loss",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "The lifecycle does not prove open-domain contradiction detection, justification quality, ontology correctness, durable belief-engine persistence, historical-project behavior, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_tribunal_method_independence.py", "args": [],
+      "script": "validate_tribunal_method_independence.py",
+      "args": [],
       "input_contract": "Five-project tribunal method/independence record with six method labels, independence graph, empty-case control, falsification, abstention, visible dissent/veto, non-default verdict, and eleven mutations.",
-      "input_artifacts": ["schemas/tribunal_method_independence_record.schema.json", "tests/fixtures/protocol_records/tribunal_method_independence_record.valid.json", "experiments/tribunal_method_independence/fixtures/invalid_missing_method_label.json", "experiments/tribunal_method_independence/fixtures/invalid_shared_independence_group.json", "experiments/tribunal_method_independence/fixtures/invalid_independence_cycle.json", "experiments/tribunal_method_independence/fixtures/invalid_group_count_laundering.json", "experiments/tribunal_method_independence/fixtures/invalid_empty_case_accepted.json", "experiments/tribunal_method_independence/fixtures/invalid_falsification_missing.json", "experiments/tribunal_method_independence/fixtures/invalid_abstention_erased.json", "experiments/tribunal_method_independence/fixtures/invalid_silent_veto.json", "experiments/tribunal_method_independence/fixtures/invalid_default_approval.json", "experiments/tribunal_method_independence/fixtures/invalid_dissent_acceptance.json", "experiments/tribunal_method_independence/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_tribunal_method_independence.py"],
+      "input_artifacts": [
+        "schemas/tribunal_method_independence_record.schema.json",
+        "tests/fixtures/protocol_records/tribunal_method_independence_record.valid.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_missing_method_label.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_shared_independence_group.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_independence_cycle.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_group_count_laundering.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_empty_case_accepted.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_falsification_missing.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_abstention_erased.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_silent_veto.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_default_approval.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_dissent_acceptance.json",
+        "experiments/tribunal_method_independence/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_tribunal_method_independence.py"
+      ],
       "output_contract": "Accept the bounded tribunal and reject missing methods, shared groups, dependency cycles, group-count laundering, vacuous acceptance, missing falsification, erased abstention, silent veto, default approval, dissent acceptance, and support promotion.",
-      "output_assertions": ["exact five-source lineage", "six method labels", "independence groups distinct", "dependency graph bounded", "empty case not accepted", "falsification attempted", "abstention explicit", "veto and dissent visible", "no default approval", "no support promotion"],
+      "output_assertions": [
+        "exact five-source lineage",
+        "six method labels",
+        "independence groups distinct",
+        "dependency graph bounded",
+        "empty case not accepted",
+        "falsification attempted",
+        "abstention explicit",
+        "veto and dissent visible",
+        "no default approval",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored tribunal method/independence record and eleven deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["missing method", "shared group", "dependency cycle", "group count laundering", "vacuous accept", "missing falsification", "erased abstention", "silent veto", "default approval", "dissent acceptance", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "missing method",
+        "shared group",
+        "dependency cycle",
+        "group count laundering",
+        "vacuous accept",
+        "missing falsification",
+        "erased abstention",
+        "silent veto",
+        "default approval",
+        "dissent acceptance",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "The fixture does not prove reviewer independence, method adequacy, verdict correctness, deployed tribunal behavior, historical-project behavior, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_procedural_trace_promotion.py", "args": [],
+      "script": "validate_procedural_trace_promotion.py",
+      "args": [],
       "input_contract": "Four-project procedural trace-promotion record separating semantic facts from procedural traces, retaining failures, binding source/effect receipts, requiring regression-backed promotion, rollback, retirement, and ten adversarial mutations.",
-      "input_artifacts": ["schemas/procedural_trace_promotion_record.schema.json", "tests/fixtures/protocol_records/procedural_trace_promotion_record.valid.json", "experiments/procedural_trace_promotion/fixtures/invalid_memory_domain_conflation.json", "experiments/procedural_trace_promotion/fixtures/invalid_failure_erased.json", "experiments/procedural_trace_promotion/fixtures/invalid_missing_source_receipt.json", "experiments/procedural_trace_promotion/fixtures/invalid_missing_effect_receipt.json", "experiments/procedural_trace_promotion/fixtures/invalid_failed_regression_promoted.json", "experiments/procedural_trace_promotion/fixtures/invalid_negative_example_erased.json", "experiments/procedural_trace_promotion/fixtures/invalid_rollback_unrehearsed.json", "experiments/procedural_trace_promotion/fixtures/invalid_retirement_path_missing.json", "experiments/procedural_trace_promotion/fixtures/invalid_source_set_substitution.json", "experiments/procedural_trace_promotion/fixtures/invalid_fixture_support_promotion.json", "scripts/validate_procedural_trace_promotion.py"],
+      "input_artifacts": [
+        "schemas/procedural_trace_promotion_record.schema.json",
+        "tests/fixtures/protocol_records/procedural_trace_promotion_record.valid.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_memory_domain_conflation.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_failure_erased.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_missing_source_receipt.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_missing_effect_receipt.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_failed_regression_promoted.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_negative_example_erased.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_rollback_unrehearsed.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_retirement_path_missing.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_source_set_substitution.json",
+        "experiments/procedural_trace_promotion/fixtures/invalid_fixture_support_promotion.json",
+        "scripts/validate_procedural_trace_promotion.py"
+      ],
       "output_contract": "Accept the bounded promotion and reject memory-domain conflation, failure erasure, missing source/effect receipts, failed regression promotion, negative-example erasure, unrehearsed rollback, missing retirement path, source substitution, and fixture support promotion.",
-      "output_assertions": ["exact four-source lineage", "semantic facts separate from procedural traces", "failed attempts retained", "source and effect receipts complete", "success count exact", "regression gate passes", "rollback bound and rehearsed", "quarantine and retirement path complete", "no historical-runtime claim", "no support promotion"],
+      "output_assertions": [
+        "exact four-source lineage",
+        "semantic facts separate from procedural traces",
+        "failed attempts retained",
+        "source and effect receipts complete",
+        "success count exact",
+        "regression gate passes",
+        "rollback bound and rehearsed",
+        "quarantine and retirement path complete",
+        "no historical-runtime claim",
+        "no support promotion"
+      ],
       "claim_scope": "One hand-authored procedural trace-promotion record and ten deterministic mutations.",
-      "negative_controls": "fixture_owned", "negative_control_cases": ["memory-domain conflation", "failure erasure", "missing source receipt", "missing effect receipt", "failed regression promotion", "negative-example erasure", "unrehearsed rollback", "missing retirement path", "source substitution", "fixture support promotion"],
+      "negative_controls": "fixture_owned",
+      "negative_control_cases": [
+        "memory-domain conflation",
+        "failure erasure",
+        "missing source receipt",
+        "missing effect receipt",
+        "failed regression promotion",
+        "negative-example erasure",
+        "unrehearsed rollback",
+        "missing retirement path",
+        "source substitution",
+        "fixture support promotion"
+      ],
       "prohibited_inference": "The fixture does not prove deployed trace mining, tool synthesis, regression quality, rollback execution, retirement automation, historical-project behavior, or chapter support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_historical_project_dispositions.py", "args": [],
+      "script": "validate_historical_project_dispositions.py",
+      "args": [],
       "input_contract": "Thirteen P2/P3 historical-project packet decisions with exact ownership, completed/deferred/superseded status, concrete reason, reopen condition, evidence route, and no support-state effect.",
-      "input_artifacts": ["docs/historical_project_p2_p3_dispositions.json", "docs/historical_project_p2_p3_dispositions.md", "docs/historical_project_incorporation_roadmap.md", "scripts/validate_historical_project_dispositions.py"],
+      "input_artifacts": [
+        "docs/historical_project_p2_p3_dispositions.json",
+        "docs/historical_project_p2_p3_dispositions.md",
+        "docs/historical_project_incorporation_roadmap.md",
+        "scripts/validate_historical_project_dispositions.py"
+      ],
       "output_contract": "Reject missing, duplicate, ownerless, status-invalid, reasonless, route-less, roadmap-orphaned, or support-promoting P2/P3 dispositions.",
-      "output_assertions": ["thirteen packet IDs exact", "P2/P3 only", "owner explicit", "completed deferred or superseded", "concrete reason", "reopen condition", "evidence route", "roadmap presence", "readable definitions", "no support promotion"],
+      "output_assertions": [
+        "thirteen packet IDs exact",
+        "P2/P3 only",
+        "owner explicit",
+        "completed deferred or superseded",
+        "concrete reason",
+        "reopen condition",
+        "evidence route",
+        "roadmap presence",
+        "readable definitions",
+        "no support promotion"
+      ],
       "claim_scope": "Roadmap decision completeness for the thirteen P2/P3 historical-project packets.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["missing packet", "duplicate packet", "invalid status", "owner drift", "missing blocker", "support promotion"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "missing packet",
+        "duplicate packet",
+        "invalid status",
+        "owner drift",
+        "missing blocker",
+        "support promotion"
+      ],
       "prohibited_inference": "A disposition does not prove chapter claims, historical-project behavior, empirical adequacy, safety, or implementation completeness.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_chapter_packet_contract.py", "args": [],
+      "script": "validate_chapter_packet_contract.py",
+      "args": [],
       "input_contract": "All 54 active manifest chapters, live chapter files, required packet headings, manifest fields, objection route, authority/state/lifecycle vocabulary, source/proof/test routes, Mermaid diagram, weakening condition, and handoff depth.",
-      "input_artifacts": ["book_structure.json", "chapters", "docs/chapter_packet_contract_audit.md", "scripts/validate_chapter_packet_contract.py"],
+      "input_artifacts": [
+        "book_structure.json",
+        "chapters",
+        "docs/chapter_packet_contract_audit.md",
+        "scripts/validate_chapter_packet_contract.py"
+      ],
       "output_contract": "Reject any active chapter missing a complete architecture-reference packet surface or a current 54-row readable audit.",
-      "output_assertions": ["54 chapters exact", "required headings", "problem and insufficiency", "core claim", "mechanism interfaces invariants failures", "objection route", "authority state lifecycle boundary", "source proof test routes", "Mermaid visual", "weakening condition", "substantive handoff"],
+      "output_assertions": [
+        "54 chapters exact",
+        "required headings",
+        "problem and insufficiency",
+        "core claim",
+        "mechanism interfaces invariants failures",
+        "objection route",
+        "authority state lifecycle boundary",
+        "source proof test routes",
+        "Mermaid visual",
+        "weakening condition",
+        "substantive handoff"
+      ],
       "claim_scope": "Structural and bounded semantic completeness of active chapter packet surfaces.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["missing heading", "thin manifest field", "missing objection route", "missing source route", "missing proof/test route", "missing diagram", "thin handoff", "stale report"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "missing heading",
+        "thin manifest field",
+        "missing objection route",
+        "missing source route",
+        "missing proof/test route",
+        "missing diagram",
+        "thin handoff",
+        "stale report"
+      ],
       "prohibited_inference": "A complete packet surface does not prove prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_terminology_ownership.py", "args": [],
+      "script": "validate_terminology_ownership.py",
+      "args": [],
       "input_contract": "The public glossary, active manifest chapter IDs, term definitions, single chapter owners, and lineage-label/non-normative statuses.",
-      "input_artifacts": ["appendices/B_glossary.qmd", "book_structure.json", "scripts/validate_terminology_ownership.py"],
+      "input_artifacts": [
+        "appendices/B_glossary.qmd",
+        "book_structure.json",
+        "scripts/validate_terminology_ownership.py"
+      ],
       "output_contract": "Reject duplicate, ownerless, thin, provisional, or misleading lineage-only terminology.",
-      "output_assertions": ["unique terms", "active chapter owner", "substantive definition", "no provisional status", "lineage label explicit", "coverage retained"],
+      "output_assertions": [
+        "unique terms",
+        "active chapter owner",
+        "substantive definition",
+        "no provisional status",
+        "lineage label explicit",
+        "coverage retained"
+      ],
       "claim_scope": "Ownership and status discipline for the public glossary's working architectural terms.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["duplicate term", "inactive owner", "thin definition", "provisional status", "hidden lineage label"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "duplicate term",
+        "inactive owner",
+        "thin definition",
+        "provisional status",
+        "hidden lineage label"
+      ],
       "prohibited_inference": "Terminology ownership does not prove novelty, source truth, mechanism validity, implementation, or support.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_workstreams_d_e_f_closure.py", "args": [],
+      "script": "validate_workstreams_d_e_f_closure.py",
+      "args": [],
       "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
-      "input_artifacts": ["experiments/governed_repository_change_slice/results/2026-07-10-local.json", "experiments/governed_trace_invariants/results/2026-07-10-local.json", "claim_decisions/v1_x_core_claim_dispositions.json", "proofs/proof_manifest.json", "docs/proof_adequacy_review.md", "docs/proof_artifact_audit.md", "sources/source_inventory.json", "book_structure.json", "docs/time_sensitive_source_refresh_2026_07_10.md", "docs/workstreams_d_e_f_closure_audit.md", "scripts/validate_workstreams_d_e_f_closure.py"],
+      "input_artifacts": [
+        "experiments/governed_repository_change_slice/results/2026-07-10-local.json",
+        "experiments/governed_trace_invariants/results/2026-07-10-local.json",
+        "claim_decisions/v1_x_core_claim_dispositions.json",
+        "proofs/proof_manifest.json",
+        "docs/proof_adequacy_review.md",
+        "docs/proof_artifact_audit.md",
+        "sources/source_inventory.json",
+        "book_structure.json",
+        "docs/time_sensitive_source_refresh_2026_07_10.md",
+        "docs/workstreams_d_e_f_closure_audit.md",
+        "scripts/validate_workstreams_d_e_f_closure.py"
+      ],
       "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
-      "output_assertions": ["nine scenarios and eight attacks", "matched governance benefit and tax", "rollback and residual honesty", "five invariants and four mutations", "54 no-promotion-aware core dispositions", "225 proof targets", "adequacy classes and zero audit errors", "latest released MCP/A2A routing", "volatile-source boundaries", "no support promotion"],
+      "output_assertions": [
+        "nine scenarios and eight attacks",
+        "matched governance benefit and tax",
+        "rollback and residual honesty",
+        "five invariants and four mutations",
+        "54 no-promotion-aware core dispositions",
+        "225 proof targets",
+        "adequacy classes and zero audit errors",
+        "latest released MCP/A2A routing",
+        "volatile-source boundaries",
+        "no support promotion"
+      ],
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["metric drift", "hidden governance tax", "invariant failure", "residual erasure", "core promotion", "proof-count drift", "missing adequacy class", "stale protocol routing", "release candidate called released"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "metric drift",
+        "hidden governance tax",
+        "invariant failure",
+        "residual erasure",
+        "core promotion",
+        "proof-count drift",
+        "missing adequacy class",
+        "stale protocol routing",
+        "release candidate called released"
+      ],
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_final_release_rights_routing.py", "args": [],
+      "script": "validate_final_release_rights_routing.py",
+      "args": [],
       "input_contract": "The current path inventory, deterministic v2.1.0 rights routing, official CC BY 4.0 and Apache-2.0 texts/digests, operative LICENSE/NOTICE, mixed-path exclusions, and HTML-only evidence-release scope.",
-      "input_artifacts": ["licensing/provenance_inventory.json", "licensing/final_release_rights_routing.json", "licenses/CC-BY-4.0.txt", "licenses/Apache-2.0.txt", "LICENSE.md", "NOTICE.md", "docs/v2_1_release_scope.md", "scripts/build_final_release_rights_routing.py", "scripts/validate_final_release_rights_routing.py"],
+      "input_artifacts": [
+        "licensing/provenance_inventory.json",
+        "licensing/final_release_rights_routing.json",
+        "licenses/CC-BY-4.0.txt",
+        "licenses/Apache-2.0.txt",
+        "LICENSE.md",
+        "NOTICE.md",
+        "docs/v2_1_release_scope.md",
+        "scripts/build_final_release_rights_routing.py",
+        "scripts/validate_final_release_rights_routing.py"
+      ],
       "output_contract": "Reject missing/duplicate/unresolved path routes, self-relicensed license texts, mixed/imported grants, unowned grant lanes, legal-text drift, incomplete notices, or unapproved format claims.",
-      "output_assertions": ["every inventoried path exactly once", "CC Apache or excluded only", "zero unresolved", "official normalized legal-text digests", "mixed/imported/source/derivative exclusion", "author-classified grant lanes", "conditional tag boundary", "HTML-only scope"],
+      "output_assertions": [
+        "every inventoried path exactly once",
+        "CC Apache or excluded only",
+        "zero unresolved",
+        "official normalized legal-text digests",
+        "mixed/imported/source/derivative exclusion",
+        "author-classified grant lanes",
+        "conditional tag boundary",
+        "HTML-only scope"
+      ],
       "claim_scope": "Internal record-level rights routing and selected-format control for the v2.1.0 evidence-release candidate.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["missing route", "duplicate route", "unknown route", "license-text self grant", "mixed source grant", "unowned Apache/CC grant", "legal-text digest drift", "format overclaim"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "missing route",
+        "duplicate route",
+        "unknown route",
+        "license-text self grant",
+        "mixed source grant",
+        "unowned Apache/CC grant",
+        "legal-text digest drift",
+        "format overclaim"
+      ],
       "prohibited_inference": "Internal rights routing is not legal advice, third-party clearance, trademark permission, endorsement, privacy/publicity clearance, or a grant for excluded/untagged/later files.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_schemas.py", "args": [],
+      "script": "validate_schemas.py",
+      "args": [],
       "input_contract": "All JSON Schema files under schemas/.",
-      "input_artifacts": ["schemas"],
+      "input_artifacts": [
+        "schemas"
+      ],
       "output_contract": "Reject JSON parse errors and invalid JSON Schema declarations.",
-      "output_assertions": ["every schema parses", "every schema passes metaschema check"],
+      "output_assertions": [
+        "every schema parses",
+        "every schema passes metaschema check"
+      ],
       "claim_scope": "Schema declaration syntax and metaschema validity.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["invalid schema declaration"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "invalid schema declaration"
+      ],
       "prohibited_inference": "A valid schema does not validate instances, semantics, behavior, truth, or safety.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_publication.py", "args": [],
+      "script": "validate_publication.py",
+      "args": [],
       "input_contract": "README, contribution/license/citation files, issue templates, workflow, repository docs, and public/source metadata boundaries.",
-      "input_artifacts": ["README.md", "CONTRIBUTING.md", "LICENSE.md", "CITATION.cff", ".github", "docs/publication_readiness.md"],
+      "input_artifacts": [
+        "README.md",
+        "CONTRIBUTING.md",
+        "LICENSE.md",
+        "CITATION.cff",
+        ".github",
+        "docs/publication_readiness.md"
+      ],
       "output_contract": "Reject missing public repository surfaces, stale publication language, unsafe source metadata, or unsupported artifact/release claims.",
-      "output_assertions": ["required publication files exist", "rights/citation boundaries present", "public source inventory has no local private paths"],
+      "output_assertions": [
+        "required publication files exist",
+        "rights/citation boundaries present",
+        "public source inventory has no local private paths"
+      ],
       "claim_scope": "Repository publication hygiene.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["missing public file", "unsafe source path", "unsupported artifact claim"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "missing public file",
+        "unsafe source path",
+        "unsupported artifact claim"
+      ],
       "prohibited_inference": "Publication hygiene does not approve content, claims, accessibility, licensing change, or release readiness.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_post_v2_1_residual_transfer_roadmap.py", "args": [],
+      "script": "validate_post_v2_1_residual_transfer_roadmap.py",
+      "args": [],
       "input_contract": "The active post-v2.1 roadmap, machine status sidecar/schema, stable residual ledger IDs, completed predecessor/completion declaration, current evidence vectors/manifest, and README authority pointer.",
-      "input_artifacts": ["docs/post_v2_1_residual_and_transfer_roadmap.md", "roadmap_records/post_v2_1_residual_and_transfer_status.json", "schemas/post_v2_1_residual_transfer_status.schema.json", "docs/post_v2_residual_ledger.md", "docs/post_v2_evidence_roadmap.md", "docs/v2_1_completion_declaration.md", "evidence_quality/core_claim_vectors.json", "book_structure.json", "README.md", "scripts/validate_post_v2_1_residual_transfer_roadmap.py"],
+      "input_artifacts": [
+        "docs/post_v2_1_residual_and_transfer_roadmap.md",
+        "roadmap_records/post_v2_1_residual_and_transfer_status.json",
+        "schemas/post_v2_1_residual_transfer_status.schema.json",
+        "docs/post_v2_residual_ledger.md",
+        "docs/post_v2_evidence_roadmap.md",
+        "docs/v2_1_completion_declaration.md",
+        "evidence_quality/core_claim_vectors.json",
+        "book_structure.json",
+        "README.md",
+        "scripts/validate_post_v2_1_residual_transfer_roadmap.py"
+      ],
       "output_contract": "Reject baseline-count drift, missing or duplicate residuals, wrong priority ownership, unsupported state progression, erased conditional lanes, incomplete roadmap quality contracts, or stale active-roadmap pointers.",
-      "output_assertions": ["one active successor and completed predecessor", "P0 plus exactly three empirical programs", "eleven unique actionable residuals owned exactly once", "three activation-absent conditional lanes", "machine baseline agrees with 54 current evidence vectors", "statistical, portability, security, budget, risk, release, and completion contracts present"],
+      "output_assertions": [
+        "one active successor and completed predecessor",
+        "P0 plus exactly three empirical programs",
+        "eleven unique actionable residuals owned exactly once",
+        "three activation-absent conditional lanes",
+        "machine baseline agrees with 54 current evidence vectors",
+        "statistical, portability, security, budget, risk, release, and completion contracts present"
+      ],
       "claim_scope": "Roadmap authority, progress metadata, residual ownership, and current evidence-baseline coherence only.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["residual count drift", "duplicate residual identity", "wrong residual owner", "completion without evidence", "conditional erasure", "stale active pointer"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "residual count drift",
+        "duplicate residual identity",
+        "wrong residual owner",
+        "completion without evidence",
+        "conditional erasure",
+        "stale active pointer"
+      ],
       "prohibited_inference": "Roadmap and status validity do not execute a program, close a residual, establish transfer or independence, promote a claim, or approve a release.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_post_v2_1_public_truth.py", "args": [],
+      "script": "validate_post_v2_1_public_truth.py",
+      "args": [],
       "input_contract": "Canonical status policy, exact v2.1.0 release record and archive row, root citation, rights surfaces, active roadmap machine state, manifest/evidence vectors, current public prose, predecessor pointers, and public-truth audit.",
-      "input_artifacts": ["status/public_status_config.json", "status/versioned_release_policy.json", "release_records/2026-07-10-v2.1.0-evidence-cb3b8605.json", "roadmap_records/post_v2_1_residual_and_transfer_status.json", "book_structure.json", "evidence_quality/core_claim_vectors.json", "CITATION.cff", "LICENSE.md", "NOTICE.md", "README.md", "index.qmd", "docs/publication_readiness.md", "docs/release_reproducibility.md", "docs/public_status_contract.md", "docs/post_v2_evidence_roadmap.md", "docs/v2_1_completion_declaration.md", "docs/post_v2_1_public_truth_audit.md", "scripts/validate_post_v2_1_public_truth.py"],
+      "input_artifacts": [
+        "status/public_status_config.json",
+        "status/versioned_release_policy.json",
+        "release_records/2026-07-10-v2.1.0-evidence-cb3b8605.json",
+        "roadmap_records/post_v2_1_residual_and_transfer_status.json",
+        "book_structure.json",
+        "evidence_quality/core_claim_vectors.json",
+        "CITATION.cff",
+        "LICENSE.md",
+        "NOTICE.md",
+        "README.md",
+        "index.qmd",
+        "docs/publication_readiness.md",
+        "docs/release_reproducibility.md",
+        "docs/public_status_contract.md",
+        "docs/post_v2_evidence_roadmap.md",
+        "docs/v2_1_completion_declaration.md",
+        "docs/post_v2_1_public_truth_audit.md",
+        "scripts/validate_post_v2_1_public_truth.py"
+      ],
       "output_contract": "Reject stale or multiple active identities, release/commit/archive disagreement, mutable-channel laundering, wrong rights tag, optional-format invention, current-count drift, or missing historical/current routing.",
-      "output_assertions": ["v2.1.0 release commit and archive agree", "one active successor roadmap", "54 core claims remain argument", "rights remain exact-tag bound", "latest remains mutable", "optional formats remain outside release scope"],
+      "output_assertions": [
+        "v2.1.0 release commit and archive agree",
+        "one active successor roadmap",
+        "54 core claims remain argument",
+        "rights remain exact-tag bound",
+        "latest remains mutable",
+        "optional formats remain outside release scope"
+      ],
       "claim_scope": "Current public release, roadmap, citation, rights, format, and count identity only.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["stale version", "stale roadmap", "wrong commit", "false archive state", "wrong rights tag", "invented format approval"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "stale version",
+        "stale roadmap",
+        "wrong commit",
+        "false archive state",
+        "wrong rights tag",
+        "invented format approval"
+      ],
       "prohibited_inference": "Public-truth coherence does not execute the roadmap, validate chapter claims, establish model safety or transfer, approve optional formats, or provide external review.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_post_v2_1_runtime_eligibility.py", "args": [],
+      "script": "validate_post_v2_1_runtime_eligibility.py",
+      "args": [],
       "input_contract": "Frozen stronger-model eligibility plan, exact revisions/licenses, MPS abort, two rejected full-precision candidates, versioned single-candidate amendment, MLX result, snapshot manifests, budget/cache disposition, readable report, and runner code.",
-      "input_artifacts": ["experiments/post_v2_1_evidence_program/runtime_eligibility_plan.json", "schemas/post_v2_1_runtime_eligibility.schema.json", "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility.json", "experiments/post_v2_1_evidence_program/attempts/2026-07-10-mps-runtime-abort.json", "experiments/post_v2_1_evidence_program/amendments/runtime_candidate_v1.json", "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility-amendment-v1.json", "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json", "docs/post_v2_1_runtime_eligibility.md", "scripts/run_post_v2_1_runtime_eligibility.py", "scripts/run_post_v2_1_runtime_eligibility_mlx.py", "scripts/validate_post_v2_1_runtime_eligibility.py"],
+      "input_artifacts": [
+        "experiments/post_v2_1_evidence_program/runtime_eligibility_plan.json",
+        "schemas/post_v2_1_runtime_eligibility.schema.json",
+        "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility.json",
+        "experiments/post_v2_1_evidence_program/attempts/2026-07-10-mps-runtime-abort.json",
+        "experiments/post_v2_1_evidence_program/amendments/runtime_candidate_v1.json",
+        "experiments/post_v2_1_evidence_program/results/2026-07-10-runtime-eligibility-amendment-v1.json",
+        "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json",
+        "docs/post_v2_1_runtime_eligibility.md",
+        "scripts/run_post_v2_1_runtime_eligibility.py",
+        "scripts/run_post_v2_1_runtime_eligibility_mlx.py",
+        "scripts/validate_post_v2_1_runtime_eligibility.py"
+      ],
       "output_contract": "Reject erased or laundered failed candidates, answer/exactness drift, weakened thresholds, model revision drift, invented MPS outputs, support promotion, or call/token/cache/spend budget overrun.",
-      "output_assertions": ["initial candidates remain rejected at 2/4 and 1/4", "MPS abort retains zero completed calls", "amended MLX candidate is sole eligible runtime at 3/4", "snapshot manifests are content-addressed", "zero retries and service spend", "retained cache stays within ceiling"],
+      "output_assertions": [
+        "initial candidates remain rejected at 2/4 and 1/4",
+        "MPS abort retains zero completed calls",
+        "amended MLX candidate is sole eligible runtime at 3/4",
+        "snapshot manifests are content-addressed",
+        "zero retries and service spend",
+        "retained cache stays within ceiling"
+      ],
       "claim_scope": "Development-only local runtime eligibility and resource discipline before empirical preregistration.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["false initial eligibility", "erased failed candidate", "threshold weakening", "revision drift", "invented MPS answer", "support promotion", "budget overrun"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "false initial eligibility",
+        "erased failed candidate",
+        "threshold weakening",
+        "revision drift",
+        "invented MPS answer",
+        "support promotion",
+        "budget overrun"
+      ],
       "prohibited_inference": "Eligibility does not prove model quality, safety, useful throughput, routing validity, deliberation benefit, transfer, independence, or any chapter claim.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_post_v2_1_preregistration_inputs.py", "args": [],
+      "script": "validate_post_v2_1_preregistration_inputs.py",
+      "args": [],
       "input_contract": "Draft shared preregistration, deterministic P1 natural-repository corpus, P2 ambiguous-routing corpus and fifteen-case harm regression, P3 update/unlearning corpus and 24-surface state inventory, selected runtime boundary, schemas, builder, and readable report.",
-      "input_artifacts": ["scripts/build_post_v2_1_preregistration_inputs.py", "experiments/post_v2_1_evidence_program/preregistration.json", "schemas/post_v2_1_evidence_preregistration.schema.json", "experiments/post_v2_1_evidence_program/p1/input/corpus.json", "experiments/post_v2_1_evidence_program/p2/input/corpus.json", "experiments/post_v2_1_evidence_program/p2/input/known_harm_regression.json", "experiments/post_v2_1_evidence_program/p3/input/corpus.json", "experiments/post_v2_1_evidence_program/p3/state_inventory.json", "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json", "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json", "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json", "docs/post_v2_1_preregistration.md", "scripts/validate_post_v2_1_preregistration_inputs.py"],
+      "input_artifacts": [
+        "scripts/build_post_v2_1_preregistration_inputs.py",
+        "experiments/post_v2_1_evidence_program/preregistration.json",
+        "schemas/post_v2_1_evidence_preregistration.schema.json",
+        "experiments/post_v2_1_evidence_program/p1/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p2/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p2/input/known_harm_regression.json",
+        "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
+        "experiments/post_v2_1_evidence_program/amendments/preregistration_inputs_v1.json",
+        "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
+        "experiments/post_v2_1_evidence_program/runtime_eligibility_disposition.json",
+        "docs/post_v2_1_preregistration.md",
+        "scripts/validate_post_v2_1_preregistration_inputs.py"
+      ],
       "output_contract": "Reject nondeterministic input drift, duplicate task identities, eligibility contamination, held-out route erasure, fallback or abstention erasure, evaluator-label leakage, P3 cohort, deletion-membership, or state omission, amendment laundering, wrong residual ownership, missing thresholds, budget overrun, or support-state promotion.",
-      "output_assertions": ["P1 contains 36 tasks across six families and nine effect surfaces", "P1 held-out set contains release, clarify, quarantine, and refuse routes", "P2 contains 240 requests with ten of each held-out action", "all fifteen known extra-compute harms remain regression-only", "P3 contains 1600 examples with independent deletion and probe cohorts", "all 80 deletion members are bound into initial training", "full-state inventory contains 24 surfaces", "outcomes remain unopened and the corrected setup commit is exact-bound"],
+      "output_assertions": [
+        "P1 contains 36 tasks across six families and nine effect surfaces",
+        "P1 held-out set contains release, clarify, quarantine, and refuse routes",
+        "P2 contains 240 requests with ten of each held-out action",
+        "all fifteen known extra-compute harms remain regression-only",
+        "P3 contains 1600 examples with independent deletion and probe cohorts",
+        "all 80 deletion members are bound into initial training",
+        "full-state inventory contains 24 surfaces",
+        "outcomes remain unopened and the corrected setup commit is exact-bound"
+      ],
       "claim_scope": "Frozen deterministic inputs, decision rules, and corrected exact setup binding before outcome observation.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["duplicate P1 identity", "eligibility-prompt contamination", "held-out route erasure", "fallback erasure", "gold-label evaluator leak", "P3 cohort erasure", "deletion membership erasure", "state-inventory omission", "budget overrun", "support promotion", "threshold erasure"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "duplicate P1 identity",
+        "eligibility-prompt contamination",
+        "held-out route erasure",
+        "fallback erasure",
+        "gold-label evaluator leak",
+        "P3 cohort erasure",
+        "deletion membership erasure",
+        "state-inventory omission",
+        "budget overrun",
+        "support promotion",
+        "threshold erasure"
+      ],
       "prohibited_inference": "Final preregistration does not execute a model call or update, reveal outcomes, establish safety or benefit, close a residual, or move a support state.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_post_v2_1_evidence_setup.py", "args": [],
+      "script": "validate_post_v2_1_evidence_setup.py",
+      "args": [],
       "input_contract": "Content-addressed P1/P2/P3 runners, separate observers/evaluator, deterministic setup-manifest builder, setup schema, amended corpora, runtime authority, shared preregistration, focused source-gap scan, 24-surface inventory, outcome paths, and readable setup report.",
-      "input_artifacts": ["scripts/post_v2_1_p1_observer.py", "scripts/run_post_v2_1_p1.py", "scripts/post_v2_1_p2_evaluator.py", "scripts/run_post_v2_1_p2.py", "scripts/post_v2_1_p3_observer.py", "scripts/run_post_v2_1_p3.py", "scripts/build_post_v2_1_setup_manifest.py", "scripts/validate_post_v2_1_evidence_setup.py", "schemas/post_v2_1_evidence_setup.schema.json", "experiments/post_v2_1_evidence_program/setup_manifest.json", "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json", "experiments/post_v2_1_evidence_program/preregistration.json", "experiments/post_v2_1_evidence_program/p1/input/corpus.json", "experiments/post_v2_1_evidence_program/p2/input/corpus.json", "experiments/post_v2_1_evidence_program/p3/input/corpus.json", "experiments/post_v2_1_evidence_program/p3/state_inventory.json", "docs/post_v2_1_evidence_setup.md", "docs/post_v2_1_focused_source_gap_scan.md", "sources/source_inventory.json", "appendices/H_external_sources.qmd", "sources/source_notes/ext_claw_swe_bench_2026.md", "sources/source_notes/ext_txfs_2018.md", "sources/source_notes/ext_dont_hallucinate_abstain_2024.md", "sources/source_notes/ext_muse_unlearning_2025.md", "sources/source_notes/ext_unlearning_benchmarks_weak_2024.md", "sources/source_notes/ext_openunlearning_2025.md"],
+      "input_artifacts": [
+        "scripts/post_v2_1_p1_observer.py",
+        "scripts/run_post_v2_1_p1.py",
+        "scripts/post_v2_1_p2_evaluator.py",
+        "scripts/run_post_v2_1_p2.py",
+        "scripts/post_v2_1_p3_observer.py",
+        "scripts/run_post_v2_1_p3.py",
+        "scripts/build_post_v2_1_setup_manifest.py",
+        "scripts/validate_post_v2_1_evidence_setup.py",
+        "schemas/post_v2_1_evidence_setup.schema.json",
+        "experiments/post_v2_1_evidence_program/setup_manifest.json",
+        "experiments/post_v2_1_evidence_program/amendments/setup_validator_v1.json",
+        "experiments/post_v2_1_evidence_program/preregistration.json",
+        "experiments/post_v2_1_evidence_program/p1/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p2/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p3/input/corpus.json",
+        "experiments/post_v2_1_evidence_program/p3/state_inventory.json",
+        "docs/post_v2_1_evidence_setup.md",
+        "docs/post_v2_1_focused_source_gap_scan.md",
+        "sources/source_inventory.json",
+        "appendices/H_external_sources.qmd",
+        "sources/source_notes/ext_claw_swe_bench_2026.md",
+        "sources/source_notes/ext_txfs_2018.md",
+        "sources/source_notes/ext_dont_hallucinate_abstain_2024.md",
+        "sources/source_notes/ext_muse_unlearning_2025.md",
+        "sources/source_notes/ext_unlearning_benchmarks_weak_2024.md",
+        "sources/source_notes/ext_openunlearning_2025.md"
+      ],
       "output_contract": "Reject implementation-digest drift, wrong program order or call schedule, composed budget overflow, observer/evaluator collapse, outcome-guard weakening, premature freeze, P2 learned-label leakage, P3 selection leakage or inventory omission, overwrite/retry paths, nonlocal model loading, or support promotion.",
-      "output_assertions": ["six runner/observer/evaluator implementations are exact-digest bound", "P1 uses 12/24/36 calls and P2 uses 20/240 calls", "combined ceiling is 332 calls and 59960 generated tokens", "P3 maps all 24 surfaces and selects authority without test/deletion/probe outcomes", "three preflights execute no registered outcomes", "corrected setup commit is exact-blob bound and contains no registered outcome path"],
+      "output_assertions": [
+        "six runner/observer/evaluator implementations are exact-digest bound",
+        "P1 uses 12/24/36 calls and P2 uses 20/240 calls",
+        "combined ceiling is 332 calls and 59960 generated tokens",
+        "P3 maps all 24 surfaces and selects authority without test/deletion/probe outcomes",
+        "three preflights execute no registered outcomes",
+        "corrected setup commit is exact-blob bound and contains no registered outcome path"
+      ],
       "claim_scope": "Executable setup identity, outcome guards, role interfaces, held-out boundaries, and resource arithmetic before empirical execution.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["implementation digest", "program order", "P1 call drift", "P2 call drift", "P3 surface omission", "token budget drift", "observer collapse", "outcome-guard weakening", "support promotion", "premature setup binding"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "implementation digest",
+        "program order",
+        "P1 call drift",
+        "P2 call drift",
+        "P3 surface omission",
+        "token budget drift",
+        "observer collapse",
+        "outcome-guard weakening",
+        "support promotion",
+        "premature setup binding"
+      ],
       "prohibited_inference": "Passing preflights and setup validation does not execute an outcome, establish evaluator validity beyond the registered criteria, provide external independence, close a residual, move support, or warrant a release.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_post_v2_1_outcomes.py", "args": [],
+      "script": "validate_post_v2_1_outcomes.py",
+      "args": [],
       "input_contract": "Six exact P1/P2/P3 phase bundles, all retained public-safe model outputs and state trees, frozen preregistration and setup authority, deterministic outcome builder/schema, and readable results report.",
-      "input_artifacts": ["scripts/build_post_v2_1_outcomes.py", "scripts/validate_post_v2_1_outcomes.py", "schemas/post_v2_1_empirical_outcomes.schema.json", "experiments/post_v2_1_evidence_program/p1/results", "experiments/post_v2_1_evidence_program/p1/artifacts/model_outputs", "experiments/post_v2_1_evidence_program/p2/results", "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs", "experiments/post_v2_1_evidence_program/p3/results/result.json", "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state", "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json", "docs/post_v2_1_empirical_results.md"],
+      "input_artifacts": [
+        "scripts/build_post_v2_1_outcomes.py",
+        "scripts/validate_post_v2_1_outcomes.py",
+        "schemas/post_v2_1_empirical_outcomes.schema.json",
+        "experiments/post_v2_1_evidence_program/p1/results",
+        "experiments/post_v2_1_evidence_program/p1/artifacts/model_outputs",
+        "experiments/post_v2_1_evidence_program/p2/results",
+        "experiments/post_v2_1_evidence_program/p2/artifacts/model_outputs",
+        "experiments/post_v2_1_evidence_program/p3/results/result.json",
+        "experiments/post_v2_1_evidence_program/p3/artifacts/mutated_state",
+        "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+        "docs/post_v2_1_empirical_results.md"
+      ],
       "output_contract": "Recompute exact finite-workload counts, paired effects, thresholds, P1/P2/P3 dispositions, and eleven residual dispositions; replay every retained artifact; reject erasure, inflation, laundering, false rollback or storage claims, and support promotion.",
-      "output_assertions": ["332 of 332 registered calls with zero retries or arm expansion", "six exact input bundles and all atomic artifacts replay", "P1 narrows with 2/36 useful, 0 governed unsafe, and 32/36 exact rollback", "P2 routing narrows while deliberation remains no-change and 0/360 generated candidates are correct", "P3 has 15/15 exact 24-surface rollback and 0/9 challenger threshold hits", "eleven residual dispositions and zero core promotion"],
+      "output_assertions": [
+        "332 of 332 registered calls with zero retries or arm expansion",
+        "six exact input bundles and all atomic artifacts replay",
+        "P1 narrows with 2/36 useful, 0 governed unsafe, and 32/36 exact rollback",
+        "P2 routing narrows while deliberation remains no-change and 0/360 generated candidates are correct",
+        "P3 has 15/15 exact 24-surface rollback and 0/9 challenger threshold hits",
+        "eleven residual dispositions and zero core promotion"
+      ],
       "claim_scope": "Exact bounded local outcomes and conservative dispositions for the three preregistered post-v2.1 programs.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["unsafe-release erasure", "failed-rollback erasure", "usefulness inflation", "route inflation", "candidate invention", "historical-harm laundering", "deliberation promotion", "utility inflation", "storage-erasure invention", "state-surface omission", "residual laundering", "support promotion"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "unsafe-release erasure",
+        "failed-rollback erasure",
+        "usefulness inflation",
+        "route inflation",
+        "candidate invention",
+        "historical-harm laundering",
+        "deliberation promotion",
+        "utility inflation",
+        "storage-erasure invention",
+        "state-surface omission",
+        "residual laundering",
+        "support promotion"
+      ],
       "prohibited_inference": "Passing this gate does not establish population validity, production transfer, external independence, generated-answer utility, influence/privacy/storage erasure, external-system rollback, or chapter-core promotion.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     },
     {
-      "script": "validate_post_v2_1_empirical_reconciliation.py", "args": [],
+      "script": "validate_post_v2_1_empirical_reconciliation.py",
+      "args": [],
       "input_contract": "Exact outcome ledger, six accepted component transitions, fourteen core decisions/chapter owners, source manifest/inventory/notes, Appendix C/H, quality vectors, eleven residuals, evidence plan, proof manifest, roadmap status, reconciliation report, and changelog.",
-      "input_artifacts": ["scripts/validate_post_v2_1_empirical_reconciliation.py", "scripts/integrate_post_v2_1_manifest_sources.py", "scripts/build_post_v2_1_empirical_dispositions.py", "claim_decisions/post_v2_1_empirical_dispositions.json", "schemas/post_v2_1_empirical_dispositions.schema.json", "evidence_transitions/post_v2_1", "docs/post_v2_1_empirical_reconciliation.md", "docs/post_v2_1_empirical_results.md", "docs/post_v2_residual_ledger.md", "docs/per_chapter_evidence_plan.md", "roadmap_records/post_v2_1_residual_and_transfer_status.json", "book_structure.json", "chapters", "sources/source_inventory.json", "appendices/C_claim_evidence_matrix.qmd", "appendices/H_external_sources.qmd", "appendices/F_changelog.qmd", "evidence_quality/core_claim_vectors.json", "proofs/proof_manifest.json"],
+      "input_artifacts": [
+        "scripts/validate_post_v2_1_empirical_reconciliation.py",
+        "scripts/integrate_post_v2_1_manifest_sources.py",
+        "scripts/build_post_v2_1_empirical_dispositions.py",
+        "claim_decisions/post_v2_1_empirical_dispositions.json",
+        "schemas/post_v2_1_empirical_dispositions.schema.json",
+        "evidence_transitions/post_v2_1",
+        "docs/post_v2_1_empirical_reconciliation.md",
+        "docs/post_v2_1_empirical_results.md",
+        "docs/post_v2_residual_ledger.md",
+        "docs/per_chapter_evidence_plan.md",
+        "roadmap_records/post_v2_1_residual_and_transfer_status.json",
+        "book_structure.json",
+        "chapters",
+        "sources/source_inventory.json",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/H_external_sources.qmd",
+        "appendices/F_changelog.qmd",
+        "evidence_quality/core_claim_vectors.json",
+        "proofs/proof_manifest.json"
+      ],
       "output_contract": "Reject missing or positive dispositions, new chapter/proof invention, chapter/result drift, vector promotion or false independence/transfer, residual laundering, source-route erasure, generated appendix drift, or reconciliation/changelog omission.",
-      "output_assertions": ["six bounded transitions", "fourteen core no-change decisions and chapter owners", "eleven exact residual dispositions", "nineteen current external-source routes", "54 argument-state vectors", "no new chapter or Lean target", "M4 reconciliation surfaces agree"],
+      "output_assertions": [
+        "six bounded transitions",
+        "fourteen core no-change decisions and chapter owners",
+        "eleven exact residual dispositions",
+        "nineteen current external-source routes",
+        "54 argument-state vectors",
+        "no new chapter or Lean target",
+        "M4 reconciliation surfaces agree"
+      ],
       "claim_scope": "Repository-wide reconciliation of the completed post-v2.1 finite local results without chapter-core support movement.",
-      "negative_controls": "validator_owned", "negative_control_cases": ["core promotion", "decision erasure", "transition promotion", "chapter addition", "chapter-result erasure", "vector promotion", "false independence", "residual laundering", "source-target erasure", "Appendix H erasure", "proof invention", "changelog erasure"],
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "core promotion",
+        "decision erasure",
+        "transition promotion",
+        "chapter addition",
+        "chapter-result erasure",
+        "vector promotion",
+        "false independence",
+        "residual laundering",
+        "source-target erasure",
+        "Appendix H erasure",
+        "proof invention",
+        "changelog erasure"
+      ],
       "prohibited_inference": "Reconciliation does not establish population validity, external independence, production transfer, generated-answer utility, influence/privacy/storage erasure, external-system rollback, optional-format approval, or chapter-core promotion.",
-      "contract_precision": "exact_high_impact", "semantic_review_state": "internal_contract_audit_not_independent"
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "script": "validate_qcsa_ingestion.py",
+      "args": [],
+      "input_contract": "One digest-bound Corben-authored QCSA inventory record and source note, nine passage-reviewed existing-chapter mappings, chapter prose/crosswalks, generated source appendices, evidence vectors, and changelog.",
+      "input_artifacts": [
+        "scripts/validate_qcsa_ingestion.py",
+        "scripts/integrate_qcsa_source.py",
+        "sources/source_inventory.json",
+        "sources/source_notes/qcsa_whitepaper.md",
+        "book_structure.json",
+        "chapters",
+        "docs/book_outline.md",
+        "appendices/A_source_matrix.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/G_corben_source_corpus.qmd",
+        "appendices/F_changelog.qmd",
+        "evidence_quality/core_claim_vectors.json"
+      ],
+      "output_contract": "Reject source or target erasure, unreviewed mapping laundering, chapter-core promotion, standalone-chapter invention, or removal of the implementation/benchmark/proof/safety/performance non-claim.",
+      "output_assertions": [
+        "one QCSA author source",
+        "nine existing chapter owners",
+        "passage-reviewed mappings",
+        "54 argument-state chapters",
+        "no new chapter",
+        "six rejecting mutations"
+      ],
+      "claim_scope": "Conservative source ingestion and cross-chapter design-rationale integration for Question-Compiled Semantic Addressing.",
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "source erasure",
+        "target erasure",
+        "passage-review laundering",
+        "support promotion",
+        "chapter invention",
+        "non-claim erasure"
+      ],
+      "prohibited_inference": "Ingestion does not establish a QCSA implementation, benchmark, semantic-correctness proof, novelty, safety, performance advantage, production transfer, AGI, ASI, or chapter-core support promotion.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "non_claims": [

@@ -159,6 +159,29 @@ repair is bounded to an exact declared affected closure, ontology changes carry
 a versioned migration, and a restart observation must still expose the old
 claim, successors, revision, and residuals.
 
+### Evidence-bearing semantic graphs
+
+QCSA makes a useful evidential prohibition explicit: ontology is not belief,
+and addressability is not truth. Object definitions, type declarations,
+propositions, evidence for and against them, source and derivation lineage,
+current support state, contradiction, and authority to use a proposition are
+different records even when they share one typed hypergraph. A graph edge can
+be asserted, hypothesized, disputed, time-bounded, source-scoped, superseded,
+or revoked.
+
+A Semantic Address Certificate may route a verifier to the right claim cluster
+and state confidence that the cluster is the intended one. It cannot promote
+the proposition. Certificate integrity proves only that the recorded address
+lease has not changed under its integrity contract; atlas confidence concerns
+resolution, not evidential truth. The claim ledger remains the authority for
+support state, attacks, revisions, and permitted evidential use.
+
+Typed hyperedges also let a claim retain role structure for events with many
+participants, times, quantities, conditions, and receipts without duplicating
+their identities. This remains an architectural proposal from
+`qcsa_whitepaper`; it provides no ontology-completeness, belief-correctness, or
+claim-verification result.
+
 ## Interfaces
 
 Belief changes move through the Belief Revision Record.
@@ -316,6 +339,15 @@ These proof hooks are implemented only over finite Lean claim-update, promotion-
 
 The claim-ledger sources support the chapter's belief-revision discipline and conservative support-state boundary. Four local raw-cache sources now have passage-reviewed mappings, while `coherence_exchange` remains connector/source-note mapped. The external comparators position the chapter against formal belief revision, truth maintenance, citation support, retrieval critique, and behavioral testing. They do not promote any chapter claim merely because the repo has claim-record schemas or source notes.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Claim Ledgers and Belief Revision makes belief state durable. Claims are separated from prose, tied to evidence and uncertainty, linked to contradictions, and revised without overwriting history. The sources support the need for a ledgered boundary, while the extractor, contradiction detector, and revision engine remain implementation work this repository has not yet done.

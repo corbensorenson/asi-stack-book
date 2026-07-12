@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 4039,
+    "path_count": 4043,
     "by_license_route": {
       "Apache-2.0": 647,
       "CC-BY-4.0": 486,
-      "excluded-no-grant": 2906
+      "excluded-no-grant": 2910
     },
     "unresolved_count": 0
   },
@@ -23282,6 +23282,13 @@
       "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
     },
     {
+      "path": "scripts/integrate_qcsa_source.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
+    },
+    {
       "path": "scripts/post_v2_1_p1_observer.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -23329,6 +23336,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/register_qcsa_ingestion_validator.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
     },
     {
       "path": "scripts/render_curated_reader_formats.py",
@@ -24736,6 +24750,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_qcsa_ingestion.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
     },
     {
       "path": "scripts/validate_rankfold_artifact_import.py",
@@ -27459,6 +27480,13 @@
       "provenance_status": "author_assertion_and_local_project_review_required",
       "license_route": "excluded-no-grant",
       "review_basis": "excluded from grant: mixed_or_excluded; author_assertion_and_local_project_review_required"
+    },
+    {
+      "path": "sources/source_notes/qcsa_whitepaper.md",
+      "artifact_class": "source_metadata_commentary_or_local_project_record",
+      "provenance_status": "author_assertion_and_local_project_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.1.0 release tree"
     },
     {
       "path": "sources/source_notes/rankfold_compressor.md",

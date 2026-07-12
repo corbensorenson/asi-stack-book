@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-07-11 - Question-Compiled Semantic Addressing ingestion
+
+- Moved the complete Corben-authored QCSA whitepaper from the repository root
+  into the local raw-source cache and bound its canonical source record to SHA-
+  256 `d9e594d40dfd62c899ab25e9d395d34c702dac12e8afd75eed133392f78c0c8c`.
+- Added `qcsa_whitepaper` to the source inventory, a detailed public-safe source
+  note, nine passage-reviewed claim/source mappings, and the generated source
+  matrix, Appendix G, outline queues, and chapter crosswalks.
+- Kept the 54-chapter architecture. QCSA's strongest current value is a cross-
+  chapter identity-address-route contract; a new standalone chapter would
+  duplicate existing context, routing, representation, tool, claim, learning,
+  federation, and integration owners without chapter-owning implementation or
+  measured evidence.
+- Strengthened nine existing chapters with stable SOIDs, plural semantic
+  virtual addresses, Semantic Address Certificates, active question
+  compilation, semantic-to-physical route lowering, evidence/ontology
+  separation, atlas epochs and migration, federated semantic translation, and
+  an integrated semantic control-plane trace.
+- Preserved the executed Semantic Representation Leasing fold and all evidence
+  boundaries. The whitepaper is conceptual design rationale: no QCSA
+  implementation, benchmark, semantic-correctness proof, safety result,
+  performance advantage, new Lean target, or chapter-core support promotion is
+  claimed.
+
 ## 2026-07-11 - Post-v2.1 empirical execution and reconciliation
 
 - Executed the exact frozen P1–P3 programs once from setup commit

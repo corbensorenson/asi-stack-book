@@ -201,6 +201,29 @@ sequenceDiagram
 
 The lifecycle keeps three artifacts separate: the job request, the approval decision, and the effect receipt. Merging them is a common source of overclaiming. A job request is not approval. Approval is not proof that the effect succeeded. A successful effect is not permission to promote the route, reuse the procedure, or discard rollback obligations.
 
+### Semantic resolution never grants authority
+
+QCSA introduces a hard separation between recognizing an operation and being
+allowed to perform it. Resolving a phrase to a deletion concept, finding a tool
+under a privileged semantic address, or receiving a signed Semantic Address
+Certificate does not grant delete authority. The adapter must independently
+bind authenticated actor and delegation, stable target identity, operation and
+scope, data sensitivity, reversibility, policy version, approvals, execution
+boundary, verifier, fallback, and effect receipt.
+
+This blocks alias and neighbor escalation. An adversary cannot obtain a
+capability merely by inducing a benign label, moving an object near a trusted
+cluster, or exploiting a stale atlas path. The physical route compiler must
+intersect semantic content with the capability and policy graph, then record
+which authority predicate admitted or denied the effect. Cross-facet conflict,
+stale epoch, inadequate identity, missing permission, or unresolved migration
+must block or escalate before effect.
+
+The `qcsa_whitepaper` supplies the contract and attack vocabulary, not runtime
+enforcement evidence. It does not establish permission correctness, human
+approval quality, effect safety, rollback, or recovery, and the conservative
+evidence disposition remains unchanged.
+
 ## Interfaces
 
 Runtime work reaches tools through the Runtime Adapter Invocation.
@@ -419,6 +442,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 |---|---|---|
 | `ext_claw_swe_bench_2026` | Metadata-first comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Current preprint comparator for fixed workspace, patch, evaluator, and budget contracts across coding-agent harnesses; reported accuracy and cost differences are not reproduced here and do not validate the post-v2.1 synthetic repository corpus. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_txfs_2018` | Metadata-first comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 governed adapter boundary

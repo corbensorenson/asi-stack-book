@@ -187,6 +187,29 @@ before dispatch, while a remote response returns through a receipt and residual
 path. It does not depict a trusted peer, a verified task result, or a settled
 payment.
 
+### Federated semantic identity and address translation
+
+QCSA gives inter-stack exchange a semantic payload without assuming a universal
+ontology. A sender can name a namespace-qualified SOID, attach a signed
+Semantic Address Certificate for a particular task and consumer, declare the
+atlas epoch and facet versions, and provide a mapping manifest for the
+receiver. The receiver may translate the address into its own atlas while
+preserving candidate alternatives, confidence, provenance, prohibited uses,
+authority ceiling, and migration lineage.
+
+The stable identity and the mapping remain different claims. Two stacks may
+agree that records refer to the same object while organizing it differently;
+they may also exchange broader, narrower, contextual, disputed, or unresolved
+relations without pretending to exact equivalence. An absent epoch, invalid
+signature, stale migration, prohibited facet, or uncertainty above the
+consumer threshold blocks dispatch or routes accountable negotiation.
+
+This semantic envelope does not prove peer trustworthiness, identity
+equivalence, proposition truth, authorization, effect safety, privacy, legal
+validity, settlement, or fairness. The `qcsa_whitepaper` supplies an exchange
+design and normative record sketches only; existing protocol and economic
+gates continue to own those stronger properties.
+
 ## Interfaces
 
 The exchange boundary preserves a local division of labor. It can make a remote
@@ -365,6 +388,15 @@ credential is valid or that any cross-stack dispatch is authorized.
 | `tokenmana` | Local design context for bounded capacity, budget pressure, and human/resource constraints around an economic request. | No local pricing, payment, settlement, fairness, or economic outcome evidence. |
 | `ext_owasp_agentic_top_10_2026` | Current comparator for identity/privilege abuse, insecure inter-agent communication, agentic supply-chain weaknesses, and cascading failures. | Taxonomy coverage does not prove protocol security, peer trust, authorization, settlement, or safety. |
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 :::
 
 ## Summary

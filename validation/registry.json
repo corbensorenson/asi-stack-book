@@ -1117,7 +1117,10 @@
     "claim_decisions/post_v2_1_empirical_dispositions.json",
     "schemas/post_v2_1_empirical_dispositions.schema.json",
     "evidence_transitions/post_v2_1",
-    "docs/post_v2_1_empirical_reconciliation.md"
+    "docs/post_v2_1_empirical_reconciliation.md",
+    "scripts/validate_qcsa_ingestion.py",
+    "scripts/integrate_qcsa_source.py",
+    "sources/source_notes/qcsa_whitepaper.md"
   ],
   "units": [
     {
@@ -6381,11 +6384,56 @@
       "prohibited_inference": "Reconciliation does not establish population validity, external independence, production transfer, generated-answer utility, influence/privacy/storage erasure, external-system rollback, optional-format approval, or chapter-core promotion.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "id": "validate_qcsa_ingestion:276",
+      "order": 276,
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "script": "validate_qcsa_ingestion.py",
+      "args": [],
+      "input_contract": "One digest-bound Corben-authored QCSA inventory record and source note, nine passage-reviewed existing-chapter mappings, chapter prose/crosswalks, generated source appendices, evidence vectors, and changelog.",
+      "input_artifacts": [
+        "scripts/validate_qcsa_ingestion.py",
+        "scripts/integrate_qcsa_source.py",
+        "sources/source_inventory.json",
+        "sources/source_notes/qcsa_whitepaper.md",
+        "book_structure.json",
+        "chapters",
+        "docs/book_outline.md",
+        "appendices/A_source_matrix.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/G_corben_source_corpus.qmd",
+        "appendices/F_changelog.qmd",
+        "evidence_quality/core_claim_vectors.json"
+      ],
+      "output_contract": "Reject source or target erasure, unreviewed mapping laundering, chapter-core promotion, standalone-chapter invention, or removal of the implementation/benchmark/proof/safety/performance non-claim.",
+      "output_assertions": [
+        "one QCSA author source",
+        "nine existing chapter owners",
+        "passage-reviewed mappings",
+        "54 argument-state chapters",
+        "no new chapter",
+        "six rejecting mutations"
+      ],
+      "claim_scope": "Conservative source ingestion and cross-chapter design-rationale integration for Question-Compiled Semantic Addressing.",
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "source erasure",
+        "target erasure",
+        "passage-review laundering",
+        "support promotion",
+        "chapter invention",
+        "non-claim erasure"
+      ],
+      "prohibited_inference": "Ingestion does not establish a QCSA implementation, benchmark, semantic-correctness proof, novelty, safety, performance advantage, production transfer, AGI, ASI, or chapter-core support promotion.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 1073,
-    "unit_count": 275
+    "required_artifact_count": 1076,
+    "unit_count": 276
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

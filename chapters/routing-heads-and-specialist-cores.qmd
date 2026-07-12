@@ -160,6 +160,31 @@ The crosswalk separates source-reported, locally reproduced, externally corrobor
 
 A MoECOT-style packet also records failed and denied paths. A successful route without denied routes, failed gates, missing replay refs, unresolved handoffs, and residual branches is biased evidence. The runtime crosswalk therefore makes non-execution visible: refused authority, blocked routes, absent replay, and residual handoff are outcomes the router and readiness gate must preserve.
 
+### Semantic-to-physical route compilation
+
+QCSA adds a translation boundary before specialist dispatch. Stable SOIDs say
+what objects, requirements, claims, tools, or obligations the task concerns;
+plural semantic virtual addresses say which conceptual facets are useful for
+this consumer; the routing plane then compiles those records into temporary
+model, expert, memory, tool, verifier, and decoder choices. Semantic identity
+does not rotate when hardware moves, load changes, or an expert is replaced.
+
+The route compiler may use a soft address posterior, but it must expose the
+commitment rule. A low-risk retrieval may fan out over top-k paths; a high-risk
+tool route may require calibrated confidence, authority checks, independent
+verification, or clarification; unresolved ambiguity may route to fallback or
+abstention. Load balance, latency, token budget, cache placement, permission,
+and approval remain physical-policy objectives and cannot be smuggled into the
+semantic identity.
+
+This gives the routing receipt four distinct references: `subject_soid`,
+`semantic_address_certificate_ref`, `route_policy_and_resource_snapshot`, and
+`physical_route_plan_ref`. Evaluation must compare the full QCSA route with
+flat IDs, one semantic tree, multi-view identifiers without stable identity,
+and ablations without active questions, soft routing, physical translation, or
+migration governance. The `qcsa_whitepaper` proposes that test; it reports no
+routing advantage, so the support state does not move.
+
 ## Interfaces
 
 Each route emits a paired record set around the routing decision.
@@ -367,6 +392,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_dont_hallucinate_abstain_2024` | Metadata-first comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Primary ACL comparator for knowledge-gap detection, abstention, calibration/self-reflection limitations, and multi-model probing; reported abstention improvements are task- and model-bounded and do not validate the local router or evaluator. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result

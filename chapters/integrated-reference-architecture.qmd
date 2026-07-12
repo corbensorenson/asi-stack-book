@@ -253,6 +253,45 @@ The blocked fixture shows the same architecture under stress. `intent://restrict
 
 This table is the architecture's showpiece because it gives the system a falsifiable shape. A future implementation should be able to replace each fixture-only artifact with a live artifact of the same kind while preserving the same authority, evidence, residual, and non-claim discipline. Until that happens, the showpiece is a specification trace, not a runtime demonstration.
 
+### QCSA as the semantic control plane
+
+Question-Compiled Semantic Addressing fills one previously implicit cross-stack
+interface: how the same object survives grounding, context assembly, planning,
+routing, tool use, generation, evidence review, and system reorganization
+without confusing its meaning with its current storage or executor. The control
+plane binds stable SOIDs to plural contextual address leases, actively acquires
+missing evidence, and compiles the resulting certificate into a temporary
+physical route.
+
+```{mermaid}
+flowchart LR
+  QG["Surface and grounding evidence"] --> QR["Resolver: occurrence / type / instance / expression"]
+  QR --> QS["Stable SOID registry"]
+  QS --> QH["Typed temporal evidence hypergraph"]
+  QH --> QA["Multi-facet address atlas"]
+  QA --> QQ{"Adequate for this consumer?"}
+  QQ -- "no" --> QN["Question compiler: retrieve / test / ask / abstain"]
+  QN --> QR
+  QQ -- "yes" --> QC["Semantic Address Certificate"]
+  QC --> QT["Policy-constrained physical route compiler"]
+  QT --> QE["Memory / expert / tool / verifier / decoder"]
+  QE --> QL["Receipt, residual, migration, and claim ledgers"]
+```
+
+**Reading the QCSA control plane:** stable identity anchors the object while
+addresses and physical routes remain replaceable. Inadequate resolution loops
+through explicit evidence acquisition or abstention. Adequate resolution earns
+a scoped certificate, not truth or authority; policy compilation still decides
+what can execute and which receipts must return.
+
+The interface contributes three end-to-end invariants. Identity survives atlas
+and hardware change. Address confidence never substitutes for claim support or
+capability authority. An atlas migration either preserves the SOID for every
+supported old address or fails explicitly and rolls back. The
+`qcsa_whitepaper` makes these contracts precise and proposes artifacts and
+falsification tests, but it does not implement this reference trace or promote
+the chapter's core claim.
+
 ## Interfaces
 
 - All stack layers participate.
@@ -442,6 +481,15 @@ These Lean hooks are implemented as finite-record predicates over layer-handoff,
 
 The crosswalk is the architecture spine. VIEA supplies intent-to-execution flow, SCF supplies bounded replacement, VCM supplies governed context, PlanForge and Talos supply planning/execution contracts, Spinoza supplies proof-carrying claims, Octopus/RMI/Benchmaxxing supply routing and ratchets, and Project Theseus supplies report-first implementation context. CAIS supplies the closest broad service-composition comparator but not an implementation of this trace contract. Connector-readable MoECOT and VCM-editable sources remain planning context until artifacts are imported or rerun.
 
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Integrated Reference Architecture is where the book stops describing layers in isolation and asks whether they compose into one inspectable machine. The reference trace has to carry typed handoffs, authority stops, artifacts, evidence updates, residuals, and self-improvement gates from the first request to the final change record.

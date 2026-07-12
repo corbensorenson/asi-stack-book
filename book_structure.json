@@ -4548,7 +4548,8 @@
             "viea",
             "cca_project",
             "moecot_manifest_project",
-            "corbens_best_model_possible_project"
+            "corbens_best_model_possible_project",
+            "qcsa_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -4751,6 +4752,18 @@
                 "sources/source_notes/corbens_best_model_possible_project.md:212-225"
               ],
               "passage_review_note": "Reviewed the public-safe pinned-project note for Task spell fields, compiler passes, semantic and target IR, localized repair, compiler-truth negative cases, digest-parity laundering, positional identity, and interface-versus-effect distinctions; no semantic compiler correctness or capability result is promoted."
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Frames SOIDs and SACs as typed semantic-IR references, question traces as evidence-acquisition programs, and semantic-to-physical route plans as policy-constrained target lowering.",
+              "limits": "Conceptual compiler contract only; no QCSA compiler, semantic-preservation result, question-policy result, or route-lowering implementation is supplied.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:278-487",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1377-1384",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1557-1586"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ]
         },
@@ -4776,7 +4789,8 @@
             "cca_project",
             "moecot_manifest_project",
             "beastbrain_project",
-            "bugbrain_project"
+            "bugbrain_project",
+            "qcsa_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -5112,6 +5126,18 @@
                 "sources/source_notes/bugbrain_project.md:181-183"
               ],
               "passage_review_note": "Reviewed the public-safe pinned note for generation-leased context handles, snapshot/slice identity, expiry/revocation restore checks, and unchecked-slice negative cases; no BugBrain runtime or handle implementation was replayed."
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Adds stable SOID identity, plural contextual SVA leases, atlas epochs, SAC adequacy and residual fields, bounded graph materialization, revalidation triggers, and explicit failure when semantic uncertainty is insufficient for a consumer.",
+              "limits": "Does not establish context adequacy, retrieval quality, semantic correctness, VCM safety, or a working SAC/atlas service.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:220-375",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:572-741",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1492-1534"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ]
         },
@@ -5613,7 +5639,8 @@
             "moecot_manifest_project",
             "beastbrain_project",
             "bugbrain_project",
-            "corbens_best_model_possible_project"
+            "corbens_best_model_possible_project",
+            "qcsa_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -5760,6 +5787,19 @@
                 "sources/source_notes/corbens_best_model_possible_project.md:250-335"
               ],
               "passage_review_note": "Reviewed public-safe pinned note; no Best Model belief runtime replayed."
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Requires ontology, propositions, evidence for and against propositions, provenance, belief/support state, contradiction, and permitted-use authority to remain distinct semantic records in the evidence-bearing hypergraph.",
+              "limits": "A semantic location, address confidence, or valid certificate does not establish proposition truth, evidential support, belief correctness, or ontology completeness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:307-317",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:543-570",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1075-1078",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1385-1388"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ],
           "mechanism": [
@@ -6823,7 +6863,8 @@
             "corbens_trainer_project",
             "corbens_best_model_possible_project",
             "ext_claw_swe_bench_2026",
-            "ext_txfs_2018"
+            "ext_txfs_2018",
+            "qcsa_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -7077,6 +7118,18 @@
               ],
               "passage_review_note": "Reviewed the source note's primary USENIX summary for journaling-backed transactions, isolation, conflict handling, transaction bounds, Git/SQLite evaluation, and the gap between byte restoration and broader recovery.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Adds the hard capability-separation rule: semantic resolution, aliases, address confidence, and certificates never grant authority; the physical route must independently bind actor, target, operation, scope, policy, data, reversibility, approvals, and receipts.",
+              "limits": "A proposed route contract does not establish permission correctness, effect safety, rollback, human-approval quality, or runtime enforcement.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:751-790",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1012-1092",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1393-1396"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ],
           "mechanism": [
@@ -7230,7 +7283,8 @@
             "talos",
             "vcm_public",
             "tokenmana",
-            "ext_owasp_agentic_top_10_2026"
+            "ext_owasp_agentic_top_10_2026",
+            "qcsa_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -7331,6 +7385,19 @@
               ],
               "passage_review_note": "Reviewed the local raw-cache TokenMana source note for bounded capacity and economic-record context; no pricing, payment, settlement, or economic study was run.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Supplies namespace-qualified stable identities, signed SACs, atlas epochs, mapping manifests, migration lineage, and uncertainty-preserving translation as candidate cross-stack semantic exchange records.",
+              "limits": "Cross-stack semantic translation does not establish identity equivalence, trust, authorization, proposition truth, effect safety, payment settlement, privacy, or economic fairness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:523-540",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1020-1059",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1405-1409",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1463-1555"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ],
           "problem": "Local planning, context, artifact, and runtime contracts lose their binding when a request crosses to an independently operated protocol endpoint, agent, service, or value network without a record that separates peer identity, delegated authority, economic commitment, result evidence, revocation, and residual ownership.",
@@ -7757,7 +7824,8 @@
             "theseus_operator_os",
             "theseus_architecture_gate",
             "ext_hipporag_2024",
-            "ext_dont_hallucinate_abstain_2024"
+            "ext_dont_hallucinate_abstain_2024",
+            "qcsa_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -8022,6 +8090,19 @@
               ],
               "passage_review_note": "Reviewed the source note's primary ACL summary for knowledge-gap detection, abstention calibration, cooperative and competitive probing, shared blind spots, over-refusal, and extra-call cost.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Separates semantic identity and address selection from the physical expert/model route, while making fallback, abstention, load, cost, hardware, permissions, and verifier requirements explicit in the compiled route plan.",
+              "limits": "Does not establish specialist-routing accuracy, useful throughput, load balance, transfer, latency, or production safety.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:354-366",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:668-792",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1194-1240",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1389-1396"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ],
           "mechanism": [
@@ -9109,7 +9190,8 @@
             "cognitive_compilation",
             "circle_ai_architectures",
             "coilra_multicoil_rope",
-            "ext_raptor_2024"
+            "ext_raptor_2024",
+            "qcsa_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -9604,6 +9686,21 @@
                 "sources/source_notes/coilra_multicoil_rope.md:32-46"
               ],
               "passage_review_note": "Folded semantic mapping: Reviewed public source note only because raw local project text is not copied into this repo. The note supports adapter-block indices, residues, winding, relative RoPE laws, circulant/cyclic mixer structure, parameter accounting, baselines, wrong-period controls, and explicit non-claims; no quality, speed, memory, training-stability, or context-length improvement is promoted."
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Extends Semantic Representation Leasing with plural address leases, path deltas, open-world expressions, semantic-first generation, round-trip structural checks, consumer adequacy, and explicit collision, verification, migration, repair, and fallback residuals.",
+              "limits": "Does not demonstrate compression, reconstruction, model quality, semantic preservation, latency, or any advantage over direct generation.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:268-270",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:572-666",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:794-856",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1093-1110",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1241-1269",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1397-1400"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ],
           "draft_maturity": "v0.2 manuscript draft",
@@ -13841,7 +13938,8 @@
             "ext_mlcommons_croissant_1_1_2026",
             "ext_muse_unlearning_2025",
             "ext_unlearning_benchmarks_weak_2024",
-            "ext_openunlearning_2025"
+            "ext_openunlearning_2025",
+            "qcsa_whitepaper"
           ],
           "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record.",
           "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
@@ -13916,6 +14014,20 @@
               ],
               "passage_review_note": "Reviewed the source note's primary NeurIPS summary for unified method and metric execution, public checkpoints, comparative evaluation, metric faithfulness, and standardization failure modes.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Contributes fast/medium/slow update timescales, candidate versus authoritative atlas epochs, identity-preserving readdressing, merge/split lineage, migration compatibility, shadow evaluation, rollback, and semantic-drift tests.",
+              "limits": "Does not establish learning quality, forgetting, cohort removal, causal influence removal, privacy erasure, storage erasure, or safe self-reorganization.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:264-270",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:523-540",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:858-947",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1079-1092",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1255-1269"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ],
           "mechanism": [
@@ -14609,7 +14721,8 @@
             "corbens_trainer_project",
             "corbens_best_model_possible_project",
             "ext_drexler_cais_2019",
-            "ext_adas_2024"
+            "ext_adas_2024",
+            "qcsa_whitepaper"
           ],
           "source_queue": {
             "primary": [
@@ -15010,6 +15123,18 @@
                 "Oxford University Research Archive primary PDF, Drexler (2019), Sections 15.3-15.6, PDF pp. 86-88"
               ],
               "passage_review_note": "Reviewed primary-report passages on service composition, R&D automation, independent checking, and structured development. It is a broad comparator, not implementation or validation evidence for this reference architecture."
+            },
+            {
+              "source_id": "qcsa_whitepaper",
+              "mapped_support": "Defines QCSA as the semantic control plane connecting grounding, context, planning, memory, claims, routing, tools, generation, evidence acquisition, lifecycle migration, governance, and execution receipts through identity-address-route indirection.",
+              "limits": "Reference architecture only; it does not establish an end-to-end QCSA system, benchmark, proof of semantic correctness, production transfer, safety result, AGI, or ASI capability.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:272-487",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1373-1409",
+                "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1557-1586"
+              ],
+              "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
             }
           ],
           "mechanism": [

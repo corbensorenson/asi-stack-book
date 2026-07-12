@@ -1626,6 +1626,8 @@ Source loading queue:
 | Supporting | `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` | Mine after primary sources for cross-layer connections, authority-bearing IR, ambiguity debt, pass/failure bundles, applied repair receipts, and negative cases for digest parity, positional identity, and interface-without-effect. |
 | External comparators | `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` | Use for planning-language, decomposition, reasoning-search, program-synthesis, compiler-IR, multi-level IR, and translation-validation positioning only; do not treat as cognitive-compiler runtime evidence. |
 
+
+| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: LLM workflows need intermediate representations that separate requirements, plans, artifacts, repairs, and target runtimes.
@@ -1701,6 +1703,8 @@ Source loading queue:
 | External memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025` | Compare graph/community, associative-graph, hierarchical-abstraction, and persistent conversational memory. Type every derived representation and preserve provenance, loss, poisoning, update, and local-reproduction limits. |
 | Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
 
+
+| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Long-horizon agents need a stable context interface whose addresses, versions, materializations, typed pages, context cells, certificates, authority labels, loss contracts, adequacy states, and faults remain inspectable across planning, reasoning, execution, and audit.
@@ -1929,6 +1933,8 @@ Source loading queue:
 | External comparators | `ext_agm_belief_revision_1985`, `ext_truth_maintenance_system_1979`, `ext_assumption_based_tms_1986`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_checklist_2020` | Load after internal claim-ledger sources to position the chapter against formal belief revision, truth maintenance, assumption-based truth maintenance, citation support, retrieval critique, and behavioral testing. Treat these as lineage/comparators, not evidence that the ASI Stack implements belief revision. |
 | Provenance interoperability | `ext_w3c_prov_o_2013` | Use for derivation, attribution, revision, quotation, primary-source, delegation, and invalidation relations. Do not equate an asserted provenance graph with a justified belief or accepted support transition. |
 
+
+| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
@@ -2268,7 +2274,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
@@ -2371,6 +2377,8 @@ Source loading queue:
 | Supporting | `talos`, `vcm_public`, `tokenmana` | Mine Talos for typed job/contract/audit/replay handoffs, VCM for source-authority binding/revocation/non-success states, and TokenMana for bounded-capacity/economic-pressure context. Do not treat them as local protocol, identity, credential, payment, settlement, or deployment evidence. |
 | Current agentic-risk comparator | `ext_owasp_agentic_top_10_2026` | Use for identity/privilege abuse, insecure inter-agent communication, cascading failures, and agentic supply-chain risks. Taxonomy coverage is not protocol security, peer trust, authorization, or safety. |
 
+
+| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A local task contract loses its binding when it reaches another agent,
@@ -2552,7 +2560,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -2817,6 +2825,8 @@ Source loading queue:
 | Supporting | `bugbrain`, `simulation_scaling`, `rmi`, `project_theseus_whitepaper`, `rankfold_neuralfold`, `spinoza`, `verification_bandwidth`, `cognitive_compilation`, `circle_ai_architectures`, `coilra_multicoil_rope` | Mine after primary sources for edge/resource constraints, ratcheting, implementation lineage, artifact-compression comparison, semantic-IR pressure, proof-carrying claim graphs, optional cyclic substrate guardrails, and failure modes. |
 | Hierarchical-compression comparator | `ext_raptor_2024` | Use for recursively clustered and summarized retrieval trees. Require source bindings, loss contracts, reversibility limits, and residuals; do not infer local summary fidelity or benchmark gains. |
 
+
+| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Compact generators and generate/verify/repair receipts need one claim-accounting surface so useful compression does not hide residual burden, exactness debt, repair cost, fallback, or consumer-policy limits.
@@ -4007,7 +4017,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Learning inputs become transformed, mixed, replayed, indexed,
@@ -4210,6 +4220,8 @@ Source loading queue:
 | Connector or recovery required | `moecot`, `vcm_editable` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
+
+| Manifest assignment reconciliation | `qcsa_whitepaper` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Readers need to see how the layers operate as one machine from intent to governed action and improvement.

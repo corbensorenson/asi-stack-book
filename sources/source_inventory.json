@@ -274,11 +274,11 @@
     "title": "Benchmaxxing: The Performance Ratchet",
     "priority": "must_use",
     "layer": "benchmarks_evidence",
-  "chapter_targets": [
-    "13",
-    "capability-thresholds-and-deployment-commitments",
-    "safety-cases-and-structured-assurance"
-  ],
+    "chapter_targets": [
+      "13",
+      "capability-thresholds-and-deployment-commitments",
+      "safety-cases-and-structured-assurance"
+    ],
     "url": "https://docs.google.com/document/d/1m1EycQk56VDh1Rg3IY8GYwkebIVn3bGAWIHs93a3628",
     "notes": "Benchmarks as pressure surfaces, saturation -> regression, harder frontier, anti-Goodhart safeguards."
   },
@@ -859,12 +859,12 @@
     "title": "Theseus Architecture Gate",
     "priority": "implementation_reference",
     "layer": "readiness_gate_governance",
-  "chapter_targets": [
-    "governance",
-    "benchmarking",
-    "prototype",
-    "capability-thresholds-and-deployment-commitments"
-  ],
+    "chapter_targets": [
+      "governance",
+      "benchmarking",
+      "prototype",
+      "capability-thresholds-and-deployment-commitments"
+    ],
     "url": "https://github.com/corbensorenson/symliquid-rmi/blob/main/docs/ARCHITECTURE_GATE.md",
     "notes": "Pre-training readiness gate covering ratchet completeness, router readiness, safety ledger, residual escrow, bridge benchmarks, procedural tools, routing memory, lifecycle governance, and external-inference zero."
   },
@@ -1369,11 +1369,11 @@
     "title": "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
     "priority": "external_literature",
     "layer": "planning_search",
-  "chapter_targets": [
-    "planning-as-a-control-layer",
-    "cognitive-compilation-and-semantic-ir",
-    "benchmark-ratchets-and-anti-goodhart-evidence",
-    "governed-deliberation-and-test-time-scaling"
+    "chapter_targets": [
+      "planning-as-a-control-layer",
+      "cognitive-compilation-and-semantic-ir",
+      "benchmark-ratchets-and-anti-goodhart-evidence",
+      "governed-deliberation-and-test-time-scaling"
     ],
     "url": "https://arxiv.org/abs/2305.10601",
     "notes": "External planning/search source for exploring, evaluating, and backtracking over multiple reasoning paths rather than left-to-right token continuation alone.",
@@ -2825,9 +2825,9 @@
     "title": "Trust Region Policy Optimization",
     "priority": "external_literature",
     "layer": "policy_optimization",
-  "chapter_targets": [
-    "governed-deliberation-and-test-time-scaling"
-  ],
+    "chapter_targets": [
+      "governed-deliberation-and-test-time-scaling"
+    ],
     "url": "https://arxiv.org/abs/1502.05477",
     "notes": "Primary external source for trust-region policy-gradient updates and bounded update-size discipline.",
     "source_type": "arxiv",
@@ -2842,9 +2842,9 @@
     "title": "Proximal Policy Optimization Algorithms",
     "priority": "external_literature",
     "layer": "policy_optimization",
-  "chapter_targets": [
-    "governed-deliberation-and-test-time-scaling"
-  ],
+    "chapter_targets": [
+      "governed-deliberation-and-test-time-scaling"
+    ],
     "url": "https://arxiv.org/abs/1707.06347",
     "notes": "Primary external source for PPO-style online policy-gradient updates and proximal surrogate objectives.",
     "source_type": "arxiv",
@@ -3789,10 +3789,10 @@
     "id": "ext_bourtoule_machine_unlearning_2021",
     "title": "Machine Unlearning",
     "priority": "external_literature",
-  "layer": "machine_unlearning_data_governance",
-  "chapter_targets": [
-    "data-engines-continual-learning-and-unlearning",
-    "policy-optimization-and-learning-from-feedback",
+    "layer": "machine_unlearning_data_governance",
+    "chapter_targets": [
+      "data-engines-continual-learning-and-unlearning",
+      "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "open-research-agenda-and-bibliography-plan"
@@ -3809,10 +3809,10 @@
     "id": "ext_shumailov_model_collapse_2023",
     "title": "The Curse of Recursion: Training on Generated Data Makes Models Forget",
     "priority": "external_literature",
-  "layer": "synthetic_data_feedback_model_collapse",
-  "chapter_targets": [
-    "data-engines-continual-learning-and-unlearning",
-    "policy-optimization-and-learning-from-feedback",
+    "layer": "synthetic_data_feedback_model_collapse",
+    "chapter_targets": [
+      "data-engines-continual-learning-and-unlearning",
+      "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "open-research-agenda-and-bibliography-plan"
@@ -3829,10 +3829,10 @@
     "id": "ext_gerstgrasser_data_accumulation_2024",
     "title": "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data",
     "priority": "external_literature",
-  "layer": "synthetic_data_retention_policy",
-  "chapter_targets": [
-    "data-engines-continual-learning-and-unlearning",
-    "policy-optimization-and-learning-from-feedback",
+    "layer": "synthetic_data_retention_policy",
+    "chapter_targets": [
+      "data-engines-continual-learning-and-unlearning",
+      "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "open-research-agenda-and-bibliography-plan"
@@ -3849,10 +3849,10 @@
     "id": "theseus_synthetic_data_curation",
     "title": "Theseus Synthetic Data Curation",
     "priority": "implementation_reference",
-  "layer": "governed_synthetic_data_admission",
-  "chapter_targets": [
-    "data-engines-continual-learning-and-unlearning",
-    "policy-optimization-and-learning-from-feedback",
+    "layer": "governed_synthetic_data_admission",
+    "chapter_targets": [
+      "data-engines-continual-learning-and-unlearning",
+      "policy-optimization-and-learning-from-feedback",
       "procedural-memory-and-cognitive-loop-closure",
       "benchmark-ratchets-and-anti-goodhart-evidence",
       "project-theseus-as-report-first-implementation-reference"
@@ -4147,7 +4147,9 @@
     "title": "Model Context Protocol Specification, revision 2025-11-25",
     "priority": "external_literature",
     "layer": "agent_tool_protocol",
-    "chapter_targets": ["inter-stack-protocols-identity-and-economic-exchange"],
+    "chapter_targets": [
+      "inter-stack-protocols-identity-and-economic-exchange"
+    ],
     "url": "https://modelcontextprotocol.io/specification/2025-11-25",
     "notes": "Latest released MCP comparator inspected on 2026-07-10 for versioned lifecycle, capability negotiation, authorization and OpenID Connect discovery changes, elicitation, tasks, and modular client/server boundaries; the announced 2026-07-28 revision remains a release candidate and is not represented as released.",
     "source_type": "technical_specification",
@@ -4160,7 +4162,9 @@
     "title": "Agent2Agent Protocol Specification, version 1.0.0",
     "priority": "external_literature",
     "layer": "agent_to_agent_protocol",
-    "chapter_targets": ["inter-stack-protocols-identity-and-economic-exchange"],
+    "chapter_targets": [
+      "inter-stack-protocols-identity-and-economic-exchange"
+    ],
     "url": "https://a2a-protocol.org/latest/specification/",
     "notes": "Latest released A2A comparator inspected on 2026-07-10 for canonical data objects, version negotiation, Agent Cards, tasks/messages/artifacts, JSON-RPC, gRPC and HTTP bindings, authorization scoping, interoperability testing, and security considerations; it does not establish local conformance, peer truth, delegated authority, or safe effects.",
     "source_type": "technical_specification",
@@ -4649,5 +4653,28 @@
     "updated": "2025",
     "citation_label": "Dorna et al. (2025), OpenUnlearning",
     "doi": "10.48550/arXiv.2506.12618"
+  },
+  {
+    "id": "qcsa_whitepaper",
+    "title": "Question-Compiled Semantic Addressing",
+    "priority": "must_use",
+    "layer": "semantic_addressing_control_plane",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir",
+      "virtual-context-abi",
+      "routing-heads-and-specialist-cores",
+      "compact-generative-systems-and-residual-honesty",
+      "runtime-adapters-tool-permissions-and-human-approval",
+      "claim-ledgers-and-belief-revision",
+      "data-engines-continual-learning-and-unlearning",
+      "inter-stack-protocols-identity-and-economic-exchange",
+      "integrated-reference-architecture"
+    ],
+    "url": "local-source:sources/raw/question_compiled_semantic_addressing_whitepaper.md@sha256:d9e594d40dfd62c899ab25e9d395d34c702dac12e8afd75eed133392f78c0c8c",
+    "notes": "Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage.",
+    "source_type": "author_whitepaper",
+    "published": "2026-07-12",
+    "updated": "2026-07-12",
+    "citation_label": "Sorenson (2026), Question-Compiled Semantic Addressing"
   }
 ]

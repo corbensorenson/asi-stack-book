@@ -504,6 +504,8 @@ def public_source_ref(record: dict, label: str = "source") -> str:
     url = str(record.get("url", ""))
     if url.startswith("local-project:"):
         return "local project reference (not publicly linked)"
+    if url.startswith("local-source:"):
+        return "local source reference (not publicly linked)"
     return f"[{label}]({qmd_escape(url)})"
 
 
