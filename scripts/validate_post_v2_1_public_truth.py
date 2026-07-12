@@ -11,13 +11,12 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "v2.1.0"
-CANDIDATE_VERSION = "v2.2.0"
-COMMIT = "cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5"
-DIGEST = "c70534db9ffed722f33227b191930781b2daf1058d949b90d803bca9a47e375c"
+VERSION = "v2.2.0"
+COMMIT = "e3d5348993cc5083604c85bd699bb0e36eb00de1"
+DIGEST = "037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db"
 ROADMAP = "docs/post_v2_1_residual_and_transfer_roadmap.md"
 PREDECESSOR = "docs/post_v2_evidence_roadmap.md"
-RELEASE_RECORD = "release_records/2026-07-10-v2.1.0-evidence-cb3b8605.json"
+RELEASE_RECORD = "release_records/2026-07-11-v2.2.0-residual-transfer-e3d53489.json"
 
 
 def read_json(path: str) -> object:
@@ -45,7 +44,7 @@ def snapshot() -> dict[str, object]:
         "license": read_text("LICENSE.md"),
         "notice": read_text("NOTICE.md"),
         "predecessor": read_text(PREDECESSOR),
-        "completion": read_text("docs/v2_1_completion_declaration.md"),
+        "completion": read_text("docs/v2_2_completion_declaration.md"),
         "audit": read_text("docs/post_v2_1_public_truth_audit.md"),
         "active_roadmap_headers": [
             str(path.relative_to(ROOT))
@@ -71,15 +70,15 @@ def validate(data: dict[str, object]) -> list[str]:
     release = mapping(data["release"], "release record", errors)
 
     active_version = config.get("active_version")
-    if active_version not in {VERSION, CANDIDATE_VERSION}:
-        errors.append("canonical active_version is neither immutable v2.1.0 nor the selected v2.2.0 candidate")
+    if active_version != VERSION:
+        errors.append("canonical active_version is not the completed v2.2.0 release")
     if config.get("deployment_channel") != "latest":
         errors.append("canonical deployment channel is not latest")
 
     known = policy.get("known_releases", [])
     rows = [row for row in known if isinstance(row, dict) and row.get("version") == VERSION]
     if len(rows) != 1:
-        errors.append("release policy must contain exactly one v2.1.0 row")
+        errors.append("release policy must contain exactly one v2.2.0 row")
         row = {}
     else:
         row = rows[0]
@@ -91,10 +90,10 @@ def validate(data: dict[str, object]) -> list[str]:
     }
     for key, expected in expected_policy.items():
         if row.get(key) != expected:
-            errors.append(f"v2.1.0 policy {key} disagrees with canonical value")
+            errors.append(f"v2.2.0 policy {key} disagrees with canonical value")
     archive_url = str(row.get("site_artifact_url", ""))
     if VERSION not in archive_url or COMMIT not in archive_url:
-        errors.append("v2.1.0 archive URL is not tag-and-commit bound")
+        errors.append("v2.2.0 archive URL is not tag-and-commit bound")
     latest = mapping(policy.get("latest_channel"), "latest channel", errors)
     if latest.get("mutable") != "yes":
         errors.append("/latest/ must remain explicitly mutable")
@@ -111,18 +110,18 @@ def validate(data: dict[str, object]) -> list[str]:
             errors.append(f"released HTML format {name} is not published")
     optional = format_rows.get("epub_docx_pdf_audio_and_curated_reader", {})
     if optional.get("status") != "not_applicable":
-        errors.append("optional formats are represented as approved by v2.1.0")
+        errors.append("optional formats are represented as approved by v2.2.0")
 
-    if status.get("status") != "active" or status.get("roadmap_path") != ROADMAP:
-        errors.append("active roadmap machine authority is stale or absent")
+    if status.get("status") != "completed" or status.get("roadmap_path") != ROADMAP:
+        errors.append("completed roadmap machine authority is stale or absent")
     predecessor = mapping(status.get("predecessor"), "roadmap predecessor", errors)
     if predecessor.get("path") != PREDECESSOR or predecessor.get("state") != "completed":
         errors.append("completed predecessor authority disagrees")
     baseline = mapping(status.get("baseline"), "roadmap baseline", errors)
     if baseline.get("latest_immutable_release") != VERSION:
         errors.append("roadmap baseline names a stale immutable release")
-    if data.get("active_roadmap_headers") != [ROADMAP]:
-        errors.append("there must be exactly one active canonical roadmap header")
+    if data.get("active_roadmap_headers") != []:
+        errors.append("a completed cycle must not retain an active canonical roadmap header")
 
     structure = mapping(data["structure"], "book structure", errors)
     chapters = [c for p in structure.get("parts", []) if isinstance(p, dict) for c in p.get("chapters", [])]
@@ -140,10 +139,7 @@ def validate(data: dict[str, object]) -> list[str]:
         'url: "https://corbensorenson.github.io/asi-stack-book/"',
         'repository-code: "https://github.com/corbensorenson/asi-stack-book"',
     ]
-    if active_version == CANDIDATE_VERSION:
-        citation_fragments.extend(['version: "2.2.0"', 'date-released: "2026-07-11"', "Cite version 2.2.0 by tag, URL, and source commit once the exact release is published"])
-    else:
-        citation_fragments.extend(['version: "2.1.0"', 'date-released: "2026-07-10"', "Cite version 2.1.0 by tag, URL, and source commit"])
+    citation_fragments.extend(['version: "2.2.0"', 'date-released: "2026-07-11"', COMMIT])
     for fragment in citation_fragments:
         if fragment not in citation:
             errors.append(f"CITATION.cff missing canonical fragment: {fragment}")
@@ -151,9 +147,9 @@ def validate(data: dict[str, object]) -> list[str]:
         errors.append("CITATION.cff invents a DOI")
 
     required_by_surface = {
-        "README.md": (str(data["readme"]), [VERSION, ROADMAP, COMMIT, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
-        "index.qmd": (str(data["index"]), [VERSION, ROADMAP, COMMIT, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
-        "docs/publication_readiness.md": (str(data["publication"]), [VERSION, ROADMAP, COMMIT, "All 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
+        "README.md": (str(data["readme"]), [VERSION, ROADMAP, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
+        "index.qmd": (str(data["index"]), [VERSION, ROADMAP, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
+        "docs/publication_readiness.md": (str(data["publication"]), [VERSION, ROADMAP, COMMIT, DIGEST, "All 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
         "docs/release_reproducibility.md": (str(data["reproducibility"]), [VERSION, COMMIT, DIGEST, "root and `/latest/` are mutable", "Historical v1.0.0 citation"]),
         "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, ROADMAP, "root or `/latest/` commits remain mutable"]),
     }
@@ -179,36 +175,16 @@ def validate(data: dict[str, object]) -> list[str]:
         "README.md": str(data["readme"]),
     }.items():
         if VERSION not in text:
-            errors.append(f"{name} does not preserve the v2.1.0 rights boundary")
-        if active_version not in text:
-            errors.append(f"{name} does not name the active release or candidate rights boundary")
+            errors.append(f"{name} does not preserve the v2.2.0 rights boundary")
     if f"At exact tag `{active_version}`" not in str(data["readme"]):
         errors.append("README rights summary does not name the active exact-tag boundary")
     if "At exact tag `v2.0.0`" in str(data["readme"]):
         errors.append("README rights summary still names v2.0.0 as current")
 
-    if f"Active successor: `{ROADMAP}`" not in str(data["predecessor"]):
-        errors.append("completed predecessor does not point to active successor")
-    if ROADMAP not in str(data["completion"]):
-        errors.append("v2.1 completion declaration does not point to successor")
-
-    priorities = status.get("priorities", [])
-    p0 = next((row for row in priorities if isinstance(row, dict) and row.get("id") == "P0"), {})
-    audit = str(data["audit"])
-    audit_fragments = [VERSION, COMMIT, DIGEST, "local reconciliation", "six required mutations"]
-    if p0.get("state") == "completed":
-        audit_fragments.extend([
-            "State: complete",
-            "29139819267",
-            "29139918614",
-            "PUBLIC_ATTESTATION_OK" if "PUBLIC_ATTESTATION_OK" in audit else "nine surfaces",
-            "This closes P0 and M1",
-        ])
-    else:
-        audit_fragments.append("attestation pending")
-    for fragment in audit_fragments:
-        if fragment not in audit:
-            errors.append(f"public-truth audit missing: {fragment}")
+    completion_fragments = [VERSION, COMMIT, DIGEST, ROADMAP, "29177953198", "29178074691", "closes M5"]
+    for fragment in completion_fragments:
+        if fragment not in str(data["completion"]):
+            errors.append(f"v2.2 completion declaration missing: {fragment}")
     return errors
 
 
@@ -221,7 +197,7 @@ def mutation_controls(base: dict[str, object]) -> list[str]:
     mutations.append(("stale version", stale_version))
 
     stale_roadmap = copy.deepcopy(base)
-    stale_roadmap["roadmap_status"]["status"] = "completed"
+    stale_roadmap["roadmap_status"]["status"] = "active"
     mutations.append(("stale roadmap", stale_roadmap))
 
     wrong_commit = copy.deepcopy(base)
@@ -261,8 +237,8 @@ def main() -> None:
             print(f" - {error}")
         sys.exit(1)
     print(
-        "Post-v2.1 public-truth validation passed: v2.1.0 release/commit/archive, "
-        "one active roadmap, 54 argument-level core claims, tag-bound rights, "
+        "Post-v2.1 public-truth validation passed: v2.2.0 release/commit/archive, "
+        "completed roadmap, 54 argument-level core claims, tag-bound rights, "
         "mutable latest channel, optional-format boundary, and 6 rejecting mutations."
     )
 

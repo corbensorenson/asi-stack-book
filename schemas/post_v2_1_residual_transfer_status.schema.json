@@ -31,7 +31,7 @@
       "const": "docs/post_v2_1_residual_and_transfer_roadmap.md"
     },
     "authority": { "type": "string", "minLength": 1 },
-    "status": { "const": "active" },
+    "status": { "const": "completed" },
     "predecessor": {
       "type": "object",
       "required": ["path", "state"],
@@ -56,12 +56,12 @@
         "active_empirical_program_count"
       ],
       "properties": {
-        "latest_immutable_release": { "const": "v2.1.0" },
+        "latest_immutable_release": { "const": "v2.2.0" },
         "active_chapter_count": { "const": 54 },
         "core_claim_count": { "const": 54 },
         "core_argument_count": { "const": 54 },
-        "adjacent_local_replay_count": { "const": 25 },
-        "no_claim_specific_replay_count": { "const": 29 },
+        "adjacent_local_replay_count": { "const": 27 },
+        "no_claim_specific_replay_count": { "const": 27 },
         "actionable_residual_count": { "const": 11 },
         "conditional_residual_count": { "const": 3 },
         "priority_count": { "const": 4 },

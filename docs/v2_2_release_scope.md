@@ -59,7 +59,9 @@ publicity, or unlisted patent rights.
 - Title: *The ASI Stack: A Governed Systems Architecture for Advanced AI, with
   ASI as the Stress Case*
 - Version/tag: `v2.2.0`
-- Latest completed immutable release until this transaction succeeds: `v2.1.0`
+- Exact source commit: `e3d5348993cc5083604c85bd699bb0e36eb00de1`
+- Latest completed immutable release: `v2.2.0`
+- Immutable archive SHA-256: `037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db`
 - License routing: `licensing/final_release_rights_routing.json`
 - Historical releases: v1.0.0, v2.0.0, and v2.1.0 remain immutable history and
   are not rewritten by this release.

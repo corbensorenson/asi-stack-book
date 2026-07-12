@@ -2,7 +2,7 @@
 
 Copyright (c) 2026 Corben Sorenson.
 
-The path-level authority for the selected `v2.2.0` release candidate is
+The path-level authority for the exact `v2.2.0` release is
 `licensing/final_release_rights_routing.json`. The grants below apply only to
 the exact files after that tag exists and only when the ledger assigns the
 corresponding `license_route`. The published `v2.0.0` and `v2.1.0` releases
@@ -40,16 +40,17 @@ granted. Patent rights apply only where the Apache License 2.0 expressly says
 so. The names “The ASI Stack” and “Corben Sorenson” may be used for attribution
 but not to imply endorsement.
 
-## Drafting states and later changes
+## Later drafting states and changes
 
-Before the `v2.2.0` tag exists, and for later files or revisions not covered by
-an exact release routing ledger, all rights are reserved unless another written
+For files or revisions after the `v2.2.0` tag that are not covered by
+another exact release routing ledger, all rights are reserved unless another written
 grant applies. `/latest/` is a mutable publication surface and does not itself
 expand the license beyond the tagged files named by a routing ledger.
 
-All rights reserved for every excluded, untagged, or later-drafting path. Before
-the exact opening tag exists, no license is granted by the conditional split;
-the prepared routing is not a present license grant for the drafting worktree.
+All rights reserved for every excluded, untagged, or later-drafting path; no license is granted
+for those paths. The v2.2.0 split is effective only for
+paths and bytes routed at that exact tag. A prepared route for later work is
+not a present license grant.
 
 Prepublication contributions remain closed. Opening an issue, pull request, or
 sending material does not transfer ownership or authorize incorporation.

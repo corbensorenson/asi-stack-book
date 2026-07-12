@@ -4,7 +4,7 @@ Roadmap ID: `asi-stack-post-v2-1-residual-transfer-2026-07-10`
 
 Authority: Corben Sorenson
 
-Status: active canonical successor roadmap; unfinished work only
+Status: completed 2026-07-11; retained as immutable execution history
 
 Predecessor: `docs/post_v2_evidence_roadmap.md`, completed for the v2.1.0
 evidence release and retained as immutable execution history
@@ -25,19 +25,21 @@ scope justify one
 > existing chapter owners before considering new chapters, and change a support
 > state only through an accepted claim-bounded evidence transition.
 
-This block is the canonical long-running goal for the post-v2.1 cycle.
+This block was the canonical long-running goal for the post-v2.1 cycle. The
+goal is now complete and retained as execution history.
 
 ## Authority transition
 
-This document supersedes the completed post-v2 roadmap as the sole active
-execution authority. It does not alter the v1.0.0, v2.0.0, or v2.1.0 tags,
+This document superseded the completed post-v2 roadmap as the sole active
+execution authority during the cycle. It does not alter the v1.0.0, v2.0.0, or v2.1.0 tags,
 release records, tested bundles, archives, completion declarations, rights
 snapshots, results, or historical roadmaps.
 
 Only unfinished work appears below. Completed v2.1 artifacts are prerequisites,
 regression fixtures, or negative knowledge; they are not reopened checklist
 items. Historical documents may describe the roadmap that was active at their
-recorded date, but current public entry points must identify this roadmap.
+recorded date. Current public entry points identify this roadmap as completed
+and point to the v2.2.0 completion declaration.
 
 ## Truth-source hierarchy and change control
 
@@ -161,14 +163,14 @@ that names its artifacts, result, residuals, and disposition.
 The 2026-07-11 outcome checkpoint is recorded in
 `docs/post_v2_1_empirical_results.md`, the content-addressed outcome ledger,
 six accepted claim-bounded transitions, and fourteen chapter-core `no_change`
-decisions. M4 book reconciliation is complete; M5 release is active.
+decisions. M4 book reconciliation and M5 release are complete.
 
 Results and scope now justify version `v2.2.0`: the cycle adds reproducible
 public-safe P1–P3 outcomes plus QCSA source integration without a title,
 chapter-architecture, format, or support-state break. Selection does not make
-the release immutable; M5 remains active until the exact tag, tested bundle,
-deployment, attestation, archive, redownload digest, rights snapshot, release
-record, and completion declaration reconcile.
+the release immutable by itself. M5 closed only after the exact tag, tested
+bundle, deployment, attestation, archive, redownload digest, rights snapshot,
+release record, and completion declaration reconciled.
 
 The release-content freeze also ingested Corben's `qcsa_whitepaper` source as a
 passage-reviewed design-rationale synthesis. Its identity-address-route,

@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-07-11 - v2.2.0 residual-and-transfer release
+
+- Published annotated tag `v2.2.0` at source commit
+  `e3d5348993cc5083604c85bd699bb0e36eb00de1` after clean hosted build
+  `29177953198` passed the deep registry, Lean, render, live-view, browser,
+  canonical-status, and tested-bundle gates; deploy/attest run `29178074691`
+  published the exact bundle without rebuilding.
+- Published the deterministic 19,050,769-byte immutable HTML site archive with
+  270 regular-file members and SHA-256
+  `037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db`,
+  then redownloaded it from the public GitHub Release and confirmed byte
+  identity.
+- Added the exact release record and completion declaration, closed M5 and the
+  Post-v2.1 Residual and Transfer Roadmap, reconciled public/citation/rights
+  surfaces, and retained all 54 chapter-core claims at `argument`. No optional
+  format, external-human review, production transfer, QCSA implementation, or
+  AGI/ASI capability is claimed.
+
 ## 2026-07-11 - v2.2.0 release candidate selected
 
 - Selected minor version `v2.2.0` only after the post-v2.1 empirical outcomes,

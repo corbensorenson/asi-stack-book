@@ -2,8 +2,8 @@
 
 Last updated: 2026-07-11
 
-This note records the current toolchain and citation boundary for the selected
-`v2.2.0` release candidate while preserving the tagged `v2.1.0` and historical
+This note records the current toolchain and citation boundary for the completed
+`v2.2.0` release while preserving the tagged `v2.1.0` and historical
 `v1.0.0` citation records. It is a reproducibility and citability record, not an approval of EPUB,
 DOCX, PDF, e-reader, audio, or curated-reader artifacts.
 
@@ -46,22 +46,21 @@ The HTML book currently relies on Quarto's generated site assets, the repository
 
 ## Citation Boundary
 
-Root `CITATION.cff` describes the selected version `2.2.0` candidate dated
-`2026-07-11`. It is not yet an immutable citation. Until its exact tag, source
-commit, archive, and release record exist, cite exact tag `v2.1.0` and source commit
-`cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`. The tracked evidence-release
-record is `release_records/2026-07-10-v2.1.0-evidence-cb3b8605.json`, the source
-release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.1.0>,
+Root `CITATION.cff` describes version `2.2.0` dated `2026-07-11`. Cite exact tag
+`v2.2.0` and source commit
+`e3d5348993cc5083604c85bd699bb0e36eb00de1`. The tracked release record is
+`release_records/2026-07-11-v2.2.0-residual-transfer-e3d53489.json`, the source
+release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.2.0>,
 and the immutable rendered-site archive and SHA-256 are recorded in
 `status/versioned_release_policy.json`. The recorded archive SHA-256 is
-`c70534db9ffed722f33227b191930781b2daf1058d949b90d803bca9a47e375c`. The
+`037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db`. The
 public root and `/latest/` are mutable channels, not immutable citation targets.
 
-How to cite v2.1.0:
+How to cite v2.2.0:
 
 - Cite the repository and tag-specific GitHub Release.
-- Include version string `2.1.0`, tag `v2.1.0`, and source commit
-  `cb3b86051c3f4bd82e8b3128c0fdf180e8a7cfa5`.
+- Include version string `2.2.0`, tag `v2.2.0`, and source commit
+  `e3d5348993cc5083604c85bd699bb0e36eb00de1`.
 - Use the immutable rendered-site archive URL and recorded SHA-256 when citing
   rendered bytes.
 - Do not cite a DOI; no DOI or Zenodo archive identifier has been issued.

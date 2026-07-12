@@ -1,0 +1,93 @@
+{
+  "record_type": "edition_release",
+  "release_id": "2026-07-11-v2.2.0-residual-transfer-e3d53489",
+  "major_version": "2",
+  "source_commit": "e3d5348993cc5083604c85bd699bb0e36eb00de1",
+  "source_tag": "v2.2.0",
+  "edition_profile": "research_release",
+  "primary_audiences": [
+    "ai_agents",
+    "human_researchers",
+    "interested_humans"
+  ],
+  "derivation_source": "Exact clean commit-bound tested-site bundle from GitHub Actions build run 29177953198; deployed and attested by run 29178074691 without rebuilding.",
+  "artifact_formats": [
+    {
+      "format": "canonical_live_html",
+      "status": "published",
+      "command_or_tool": "GitHub Actions Build tested Pages artifact -> Deploy tested Quarto site",
+      "path_or_uri": "https://corbensorenson.github.io/asi-stack-book/",
+      "notes": "Mutable live channel deployed from the exact tested v2.2.0 bundle and publicly attested against source commit e3d5348993cc5083604c85bd699bb0e36eb00de1 in run 29178074691."
+    },
+    {
+      "format": "immutable_html_site_archive",
+      "status": "published",
+      "command_or_tool": "python3 scripts/build_immutable_site_archive.py and python3 scripts/validate_immutable_site_archive.py",
+      "path_or_uri": "https://github.com/corbensorenson/asi-stack-book/releases/download/v2.2.0/asi-stack-site-v2.2.0-e3d5348993cc5083604c85bd699bb0e36eb00de1.tar.gz",
+      "notes": "19,050,769 bytes; 270 regular-file members; SHA-256 037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db; public redownload verified byte-for-byte."
+    },
+    {
+      "format": "epub_docx_pdf_audio_and_curated_reader",
+      "status": "not_applicable",
+      "command_or_tool": "docs/v2_2_release_scope.md",
+      "path_or_uri": "",
+      "notes": "These formats and editions are explicitly outside the v2.2.0 release scope and are neither generated nor approved by this record."
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/run_validation_registry.py --tier deep",
+    "cd lean && lake build",
+    "quarto render --to html",
+    "node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports",
+    "python3 scripts/validate_tested_site_bundle.py --bundle build/ci-pages-tested-e3d5348993cc5083 --expected-commit e3d5348993cc5083604c85bd699bb0e36eb00de1",
+    "python3 scripts/validate_immutable_site_archive.py --bundle build/ci-pages-tested-e3d5348993cc5083 --candidate build/immutable-site-archive-v2_2 --version v2.2.0",
+    "gh release download v2.2.0 and byte-for-byte SHA-256 verification",
+    "python3 scripts/validate_public_status_consistency.py --url https://corbensorenson.github.io/asi-stack-book/ --require-clean"
+  ],
+  "validation_status": "pass",
+  "review_status": {
+    "reader_continuity_review": "pass",
+    "source_scaffold_removed": "pass",
+    "audio_script_review": "not_required",
+    "notes": "All internal content, structure, continuity, rendering, browser, proof, evidence, rights, tested-artifact, archive, public-redownload, and attestation gates passed. No external-human prepublication review was requested or claimed."
+  },
+  "companion_material": {
+    "path_or_uri": "",
+    "status": "not_required",
+    "review_notes": "No companion edition is part of this release."
+  },
+  "human_consumption_gate": {
+    "reader_spine_review": "pass",
+    "ebook_layout_review": "not_required",
+    "diagram_image_review": "pass",
+    "bedtime_readability_review": "not_required",
+    "companion_notes_status": "not_required",
+    "notes": "The canonical HTML surface passed internal continuity, live-view, accessibility, and desktop/mobile browser checks; unselected formats remain outside scope."
+  },
+  "audiobook_gate": {
+    "script_review": "not_required",
+    "spoken_treatment_review": "not_required",
+    "metadata_review": "not_required",
+    "chapter_marker_review": "not_required",
+    "audio_spot_check": "not_required",
+    "embedded_epub_check": "not_required",
+    "status": "not_required",
+    "notes": "Audio is outside the v2.2.0 release scope."
+  },
+  "release_notes": "The ASI Stack v2.2.0 completes the Post-v2.1 Residual and Transfer Roadmap. It records three bounded programs for governed usefulness and rollback, ambiguous routing and real-model deliberation, and full-state update/unlearning causality; fourteen chapter-core no-change decisions; six bounded non-core transitions; eleven residual dispositions; six modern external-source routes; and QCSA integration across nine existing chapters. No chapter-core support state is promoted. Tag-bound rights-routing snapshot SHA-256: aa28005dabd7578924e65e043f8bd5b3cba15ded160eda5876b433e7a48dd2c7.",
+  "residuals": [
+    "All 54 chapter-core claims remain at argument support; this release creates no support-state promotion.",
+    "The residual ledger preserves narrowed, persisted, and closed lanes plus three infrastructure-conditional deferrals.",
+    "The live root and /latest/ channels are mutable; the GitHub Release archive is the immutable v2.2.0 rendered-site artifact.",
+    "EPUB, DOCX, PDF, audio, and curated-reader editions remain outside this release.",
+    "No external-human prepublication review, independent audit, DOI, or external peer review is claimed."
+  ],
+  "non_claims": [
+    "does not prove ASI or AGI capability, production readiness, deployment safety, economic value, or universal governance correctness",
+    "does not promote any chapter-core claim above its recorded evidence state",
+    "does not generalize three bounded empirical programs to open-world or production behavior",
+    "does not claim QCSA implementation, benchmark performance, or empirical validation",
+    "does not claim released EPUB, DOCX, PDF, audio, or curated-reader artifacts",
+    "does not claim independent legal review, third-party ownership clearance, external audit, or external-human peer review"
+  ]
+}

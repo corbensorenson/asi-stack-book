@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 4049,
+    "path_count": 4051,
     "by_license_route": {
       "Apache-2.0": 682,
       "CC-BY-4.0": 500,
-      "excluded-no-grant": 2867
+      "excluded-no-grant": 2869
     },
     "unresolved_count": 0
   },
@@ -3610,6 +3610,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
       "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/v2_2_completion_declaration.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "docs/v2_2_release_scope.md",
@@ -22083,6 +22090,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
       "review_basis": "author-created public metadata/governance record cleared as documentation"
+    },
+    {
+      "path": "release_records/2026-07-11-v2.2.0-residual-transfer-e3d53489.json",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "release_records/README.md",

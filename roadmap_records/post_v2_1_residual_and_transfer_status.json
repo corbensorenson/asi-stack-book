@@ -4,13 +4,13 @@
   "roadmap_id": "asi-stack-post-v2-1-residual-transfer-2026-07-10",
   "roadmap_path": "docs/post_v2_1_residual_and_transfer_roadmap.md",
   "authority": "Corben Sorenson",
-  "status": "active",
+  "status": "completed",
   "predecessor": {
     "path": "docs/post_v2_evidence_roadmap.md",
     "state": "completed"
   },
   "baseline": {
-    "latest_immutable_release": "v2.1.0",
+    "latest_immutable_release": "v2.2.0",
     "active_chapter_count": 54,
     "core_claim_count": 54,
     "core_argument_count": 54,
@@ -90,7 +90,7 @@
     },
     { "id": "M3", "state": "completed", "evidence_refs": ["docs/post_v2_1_empirical_results.md", "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json", "claim_decisions/post_v2_1_empirical_dispositions.json", "evidence_transitions/post_v2_1", "scripts/validate_post_v2_1_outcomes.py"] },
     { "id": "M4", "state": "completed", "evidence_refs": ["docs/post_v2_1_empirical_reconciliation.md", "claim_decisions/post_v2_1_empirical_dispositions.json", "evidence_transitions/post_v2_1", "chapters", "appendices/C_claim_evidence_matrix.qmd", "evidence_quality/core_claim_vectors.json", "docs/per_chapter_evidence_plan.md", "docs/post_v2_residual_ledger.md", "sources/source_notes/qcsa_whitepaper.md", "scripts/integrate_qcsa_source.py", "appendices/F_changelog.qmd", "scripts/validate_post_v2_1_empirical_reconciliation.py"] },
-    { "id": "M5", "state": "in_progress", "evidence_refs": ["docs/post_v2_1_empirical_reconciliation.md", "docs/v2_2_release_scope.md", "CITATION.cff", "licensing/final_release_rights_routing.json"] }
+    { "id": "M5", "state": "completed", "evidence_refs": ["docs/post_v2_1_empirical_reconciliation.md", "docs/v2_2_release_scope.md", "CITATION.cff", "licensing/final_release_rights_routing.json", "release_records/2026-07-11-v2.2.0-residual-transfer-e3d53489.json", "docs/v2_2_completion_declaration.md", "status/versioned_release_policy.json"] }
   ],
   "residuals": [
     { "id": "GW-01", "priority": "P1", "state": "persisted", "evidence_refs": ["docs/post_v2_residual_ledger.md", "docs/post_v2_1_empirical_results.md", "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json"] },
@@ -131,6 +131,6 @@
     "A bounded empirical result does not establish population or production transfer.",
     "Internal process separation is not external or institutional independence.",
     "Conditional lanes remain inactive until their exact activation conditions pass.",
-    "The roadmap does not select a release version or approve an optional format."
+    "The completed roadmap selected only the v2.2.0 canonical HTML release; it did not approve any optional format."
   ]
 }

@@ -18,7 +18,7 @@ STRUCTURE = ROOT / "book_structure.json"
 VECTORS = ROOT / "evidence_quality/core_claim_vectors.json"
 README = ROOT / "README.md"
 PREDECESSOR = ROOT / "docs/post_v2_evidence_roadmap.md"
-COMPLETION = ROOT / "docs/v2_1_completion_declaration.md"
+COMPLETION = ROOT / "docs/v2_2_completion_declaration.md"
 
 EXPECTED_PRIORITY_RESIDUALS = {
     "P0": [],
@@ -62,7 +62,7 @@ def current_baseline() -> dict[str, int | str]:
     reproduction = Counter(row["dimensions"]["reproducibility"]["state"] for row in vectors)
     support = Counter(row["summary_support_state"] for row in vectors)
     return {
-        "latest_immutable_release": "v2.1.0",
+        "latest_immutable_release": "v2.2.0",
         "active_chapter_count": len(chapters),
         "core_claim_count": len(vectors),
         "core_argument_count": support["argument"],
@@ -143,7 +143,7 @@ def semantic_errors(
         if roadmap.count(heading) != 1:
             errors.append(f"roadmap must contain exactly one required section: {heading}")
     for phrase in (
-        "unfinished work only",
+        "Status: completed 2026-07-11",
         "eleven actionable v2.1 residuals",
         "External humans are not required",
         "do not choose the next version number before results",
@@ -164,16 +164,20 @@ def semantic_errors(
             errors.append(f"conditional residual identity is missing: {residual_id}")
 
     path = "docs/post_v2_1_residual_and_transfer_roadmap.md"
-    if path not in readme or "Current work is governed by" not in readme:
-        errors.append("README does not identify the active successor roadmap")
+    if path not in readme or "latest cycle" not in readme.lower():
+        errors.append("README does not identify the completed post-v2.1 roadmap")
     if f"Active successor: `{path}`" not in predecessor:
-        errors.append("completed predecessor does not identify the active successor")
-    if path not in completion or "active successor" not in completion.lower():
-        errors.append("v2.1 completion declaration does not identify the successor")
+        errors.append("historical predecessor lost its dated successor pointer")
+    if path not in completion or "closes m5" not in completion.lower():
+        errors.append("v2.2 completion declaration does not close the roadmap")
     if "Status: completed 2026-07-10" not in predecessor:
         errors.append("predecessor roadmap is not preserved as completed")
     if status.get("support_state_effect") != "none":
         errors.append("roadmap activation cannot change a support state")
+    if status.get("status") != "completed":
+        errors.append("roadmap machine authority is not terminal")
+    if any(row.get("state") != "completed" for row in milestones):
+        errors.append("roadmap is terminal while one or more milestones are incomplete")
     return errors
 
 
@@ -210,7 +214,7 @@ def negative_control_errors(
     missing_conditional["conditional_lanes"] = missing_conditional["conditional_lanes"][:-1]
     mutations.append(("conditional erasure", missing_conditional, roadmap, residuals, readme, predecessor, completion))
 
-    stale_pointer = readme.replace("Current work is governed by", "Historical work was once governed by")
+    stale_pointer = readme.replace("latest cycle", "unrelated cycle")
     mutations.append(("stale active pointer", status, roadmap, residuals, stale_pointer, predecessor, completion))
 
     for label, mutation, roadmap_text, residual_text, readme_text, predecessor_text, completion_text in mutations:
@@ -244,7 +248,7 @@ def main() -> None:
     if errors:
         raise SystemExit("Post-v2.1 roadmap validation failed:\n - " + "\n - ".join(errors))
     print(
-        "Post-v2.1 roadmap validation passed: one active successor, 4 priorities, "
+        "Post-v2.1 roadmap validation passed: completed successor cycle, 4 priorities, "
         "3 empirical programs, 11 uniquely owned actionable residuals, 3 activation-absent "
         "conditional lanes, current 54-claim evidence baseline, M0 machine authority, "
         "and 6 rejecting mutations."

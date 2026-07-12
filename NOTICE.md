@@ -3,7 +3,7 @@
 “The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as
 the Stress Case” is copyright © 2026 Corben Sorenson.
 
-For the selected release candidate `v2.2.0` (effective only at the exact tag):
+For release `v2.2.0` (effective only at the exact tag):
 
 - cleared author-owned prose and figures listed in
   `licensing/final_release_rights_routing.json` are licensed CC BY 4.0;
