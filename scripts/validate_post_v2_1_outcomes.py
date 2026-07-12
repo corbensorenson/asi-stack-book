@@ -42,6 +42,25 @@ def sha_file(relative: str) -> str:
     return hashlib.sha256((ROOT / relative).read_bytes()).hexdigest()
 
 
+def portable_p1_receipt(value: dict) -> dict:
+    """Remove interpreter-specific diagnostic wording from semantic replay."""
+    normalized = copy.deepcopy(value)
+    normalized.pop("observation_sha256", None)
+    normalized["static_errors"] = [
+        "syntax_error" if str(error).startswith("syntax_error:") else error
+        for error in normalized.get("static_errors", [])
+    ]
+    return normalized
+
+
+def portable_p3_identity(surface_id: str, path: Path) -> dict:
+    """Reconstruct registered empty cache surfaces that Git cannot materialize."""
+    identity = p3_observer.path_identity(path)
+    if surface_id in {"feature_cache", "inference_cache"} and identity.get("state") == "absent":
+        return {"state": "tree", "tree_sha256": p3_observer.canonical_sha([]), "members": []}
+    return identity
+
+
 def validate_ledger(candidate: dict, expected: dict) -> list[str]:
     errors = []
     schema = load(SCHEMA_PATH)
@@ -105,7 +124,7 @@ def validate_atomic_artifacts() -> list[str]:
                 # The frozen runner records a minimal fail-closed receipt when the
                 # model emits no extractable candidate; full receipts are replayed.
                 minimal_fail_closed = recorded == {"passed": False, "observer_id": "post-v2-1-p1-separate-observer-v0"} and not (ROOT / row["candidate_path"]).read_bytes()
-                if not minimal_fail_closed and observed != recorded:
+                if not minimal_fail_closed and portable_p1_receipt(observed) != portable_p1_receipt(recorded):
                     errors.append(f"P1 {suite} observation drifted: {row['task_id']}")
     p2_corpus = load(BASE / "p2/input/corpus.json")
     p2_requests = {row["request_id"]: row for row in p2_corpus["requests"]}
@@ -135,7 +154,7 @@ def validate_atomic_artifacts() -> list[str]:
             records = []
             for surface_id in [row["surface_id"] for row in inventory["surfaces"]]:
                 relative = surface_map["surfaces"].get(surface_id)
-                records.append({"surface_id": surface_id, "relative_path": relative, "identity": {"state": "unmapped"} if relative is None else p3_observer.path_identity(state_root / relative)})
+                records.append({"surface_id": surface_id, "relative_path": relative, "identity": {"state": "unmapped"} if relative is None else portable_p3_identity(surface_id, state_root / relative)})
             if len(records) != 24 or any(row["identity"]["state"] == "unmapped" for row in records):
                 errors.append(f"P3 state inventory incomplete: seed {seed['seed']} {arm['arm']}")
             if p3_observer.canonical_sha(records) != arm["full_state_mutated_sha256"]:
