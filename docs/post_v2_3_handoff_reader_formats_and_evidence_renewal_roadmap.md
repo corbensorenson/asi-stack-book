@@ -124,8 +124,8 @@ living-book version.
 
 | Priority | Activation state | Purpose | Terminal authority |
 |---|---|---|---|
-| P0 — Authority, truth repair, and clean handoff | in progress | Activate this successor, reconcile the novelty/status drift, verify the complete dirty cycle, commit coherently, push, and observe the resulting hosted chain. | Clean-tree receipt, commit series, CI/Pages receipts, reconciled public pointers. |
-| P1 — 54-chapter multi-format reader | pending | Produce and disposition EPUB, PDF, and DOCX from one frozen v2.0 reader source; keep audio deferred. | Per-format manifests, exact artifacts, review matrices, and release/block records. |
+| P0 — Authority, truth repair, and clean handoff | completed | Activate this successor, reconcile the novelty/status drift, verify the complete dirty cycle, commit coherently, push, and observe the resulting hosted chain. | Clean-tree receipt, commit series, CI/Pages receipts, reconciled public pointers. |
+| P1 — 54-chapter multi-format reader | in progress | Produce and disposition EPUB, PDF, and DOCX from one frozen v2.0 reader source; keep audio deferred. | Per-format manifests, exact artifacts, review matrices, and release/block records. |
 | P2 — Selective external anchoring and completeness residuals | pending | Close source-specific gaps in the ten newer chapters and audit the trace/world-model/foundations/Tier-2 queue without citation padding or automatic chapter growth. | Passage-reviewed source notes, owner matrix, insertion/disposition records, reconciled chapters and appendices. |
 | P3 — Evidence protocol repair and current implementation transfer | pending | Repair the failed natural-work protocol, run at most one warranted flagship campaign, reconcile scoped refutations, and import one fresh Theseus currentness lane. | Frozen preflight/preregistration, exact results or blocker, transition dispositions, currentness import record. |
 | P4 — Product reconciliation, release decision, and closure | pending | Reconcile all products and choose exact edition release, public release, blocked closure, or no-release without version or rights laundering. | Terminal declaration, release/block/no-release record, full validation and attestation receipts. |
@@ -168,6 +168,13 @@ contains the intended commits, the hosted result matches the tested source or
 is explicitly blocked, public roadmap pointers name this successor, the
 novelty/status drift is repaired, and no private or unreviewed artifact was
 published. Commit count is not a quality metric.
+
+Completed 2026-07-13. The durable receipt is
+`docs/post_v2_3_clean_handoff_receipt.md`. Commit
+`c2db70988cb3b06860c2994c0bb2e7f3e2874544` passed the commit-bound build,
+was deployed without rebuilding, and passed the deployed public-status and
+54-chapter graph attestation. The handoff changed no support state, release,
+tag, license, or immutable archive identity. P1 is now the active priority.
 
 ## P1 — 54-chapter multi-format reader
 
@@ -369,8 +376,8 @@ every residual and non-claim visible, and no silent successor activation.
 | Milestone | Activation state | Completion evidence |
 |---|---|---|
 | M0 — Critique calibrated and successor installed | completed | This roadmap, machine status, predecessor pointer, and stale/already-fixed finding table. |
-| M1 — Completed cycle cleanly handed off | pending | Reviewed commit series, clean tree or exact local residual inventory, remote branch, observed CI/Pages result. |
-| M2 — Reader source and format profiles frozen | pending | One 54-chapter source digest, pinned toolchain, prospective EPUB/PDF/DOCX profiles. |
+| M1 — Completed cycle cleanly handed off | completed | Reviewed commit series, clean tree or exact local residual inventory, remote branch, observed CI/Pages result. |
+| M2 — Reader source and format profiles frozen | in progress | One 54-chapter source digest, pinned toolchain, prospective EPUB/PDF/DOCX profiles. |
 | M3 — EPUB dispositioned | pending | Exact EPUB artifact plus pass/block record and application/accessibility evidence. |
 | M4 — PDF dispositioned | pending | Exact PDF artifact plus page-complete inspection and pass/block record. |
 | M5 — DOCX dispositioned | pending | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |

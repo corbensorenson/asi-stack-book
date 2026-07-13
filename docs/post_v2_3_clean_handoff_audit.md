@@ -5,7 +5,8 @@ Audit date: 2026-07-13
 Roadmap authority:
 `docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`
 
-State: pre-push audit complete; remote observation pending
+State: completed; terminal receipt recorded in
+`docs/post_v2_3_clean_handoff_receipt.md`
 
 ## Scope
 
@@ -19,7 +20,7 @@ work performed after that snapshot; it is not a second empirical campaign.
 
 The candidate begins at
 `cb7493ae57d576a8bf5fcc54f375683ecf929b54`, the recorded post-v2.3 activation
-baseline and current `origin/main` tip at audit time.
+baseline and `origin/main` tip at audit time.
 
 ## Publication-safety review
 
@@ -79,11 +80,12 @@ quality, deployed safety, AGI, ASI, or support-state movement.
 
 ## Remote completion boundary
 
-This audit is not the P0 completion receipt. P0 remains in progress until the
-tested commit is pushed to `main`, the commit-bound build artifact succeeds,
-the build-once Pages deployment succeeds, the deployed-site attestation
-succeeds for the same source SHA, and the follow-up receipt is committed and
-observed without leaving an unexplained local residual.
+This audit was not itself the P0 completion receipt. At audit time, P0 was to
+remain in progress until the tested commit was pushed to `main`, the
+commit-bound build artifact succeeded, the build-once Pages deployment
+succeeded, the deployed-site attestation succeeded for the same source SHA,
+and the follow-up receipt was committed and observed without leaving an
+unexplained local residual.
 
 The first clean-checkout run exposed the ignored exact reader archive; the
 second exposed a missing pinned `beautifulsoup4` dependency required by the
@@ -94,3 +96,10 @@ render directory. It now replays the tracked deterministic archive into a
 temporary directory, rejects unsafe archive paths, performs the same digest and
 link inspection there, and additionally enforces local-render byte parity when
 that optional local directory exists.
+
+Those conditions were subsequently satisfied for
+`c2db70988cb3b06860c2994c0bb2e7f3e2874544`. The terminal receipt records the
+commit series, successful build, build-once deployment, deployed-site
+attestation, and ignored local-only residual boundary. This audit remains the
+prospective scope record; the receipt is the retrospective completion
+authority.

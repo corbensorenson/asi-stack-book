@@ -35,6 +35,25 @@
     "post_v2_3_campaign_call_count": 36,
     "post_v2_3_parseable_output_count": 0
   },
+  "p0_handoff": {
+    "state": "completed",
+    "receipt_path": "docs/post_v2_3_clean_handoff_receipt.md",
+    "source_commit": "c2db70988cb3b06860c2994c0bb2e7f3e2874544",
+    "remote_branch": "origin/main",
+    "build_run_id": 29293371709,
+    "build_job_id": 86961594516,
+    "build_conclusion": "success",
+    "deploy_run_id": 29293589178,
+    "deploy_job_id": 86962240221,
+    "attestation_job_id": 86962302532,
+    "deploy_conclusion": "success",
+    "attestation_conclusion": "success",
+    "deployed_url": "https://corbensorenson.github.io/asi-stack-book/",
+    "attested_chapter_count": 54,
+    "attested_source_count": 280,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
   "critique_dispositions": [
     {"id": "CD-01", "finding": "completed cycle remains uncommitted", "disposition": "accepted", "owner_priority": "P0"},
     {"id": "CD-02", "finding": "54-chapter reader needs EPUB PDF and DOCX disposition", "disposition": "accepted_with_scope_correction", "owner_priority": "P1"},
@@ -46,16 +65,16 @@
     {"id": "CD-08", "finding": "external human review should gate completion", "disposition": "rejected_by_author_policy", "owner_priority": "P4"}
   ],
   "priorities": [
-    {"id": "P0", "state": "in_progress", "purpose": "activate successor authority, repair public-truth drift, and complete the clean source handoff"},
-    {"id": "P1", "state": "pending", "purpose": "disposition EPUB PDF and DOCX for the frozen 54-chapter reader while deferring audio"},
+    {"id": "P0", "state": "completed", "purpose": "activate successor authority, repair public-truth drift, and complete the clean source handoff"},
+    {"id": "P1", "state": "in_progress", "purpose": "disposition EPUB PDF and DOCX for the frozen 54-chapter reader while deferring audio"},
     {"id": "P2", "state": "pending", "purpose": "close selective external-grounding and completeness residuals without citation padding or automatic chapter growth"},
     {"id": "P3", "state": "pending", "purpose": "repair the evidence protocol, run at most one warranted flagship, reconcile scoped refutations, and import one fresh Theseus currentness lane"},
     {"id": "P4", "state": "pending", "purpose": "reconcile products and close with an exact release blocked or no-release transaction"}
   ],
   "milestones": [
     {"id": "M0", "state": "completed", "purpose": "calibrate critique and install successor authority"},
-    {"id": "M1", "state": "pending", "purpose": "cleanly hand off the completed post-v2.3 cycle"},
-    {"id": "M2", "state": "pending", "purpose": "freeze reader source and format profiles"},
+    {"id": "M1", "state": "completed", "purpose": "cleanly hand off the completed post-v2.3 cycle"},
+    {"id": "M2", "state": "in_progress", "purpose": "freeze reader source and format profiles"},
     {"id": "M3", "state": "pending", "purpose": "disposition EPUB"},
     {"id": "M4", "state": "pending", "purpose": "disposition PDF"},
     {"id": "M5", "state": "pending", "purpose": "disposition DOCX"},

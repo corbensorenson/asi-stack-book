@@ -90,6 +90,7 @@ NEW_UNITS = [
             "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md",
             "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
             "schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.schema.json",
+            "docs/post_v2_3_clean_handoff_receipt.md",
             "docs/post_v2_2_implementation_completion_roadmap.md",
             "docs/v2_3_completion_declaration.md",
             "editions/reader_manuscript/v1_0/manifest.json",

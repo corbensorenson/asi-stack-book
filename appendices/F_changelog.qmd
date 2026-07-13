@@ -2,6 +2,14 @@
 
 ## 2026-07-13 - Audit the post-v2.3 clean handoff boundary
 
+- Completed P0 with `docs/post_v2_3_clean_handoff_receipt.md`. The five-commit
+  handoff terminates at `c2db70988cb3b06860c2994c0bb2e7f3e2874544`; GitHub
+  build run `29293371709` passed the deep registry, Lean, clean render,
+  projections, browser smoke, and commit-bound artifact upload. Workflow-run
+  `29293589178` deployed that artifact without rebuilding and attested four
+  public status surfaces, 54 chapters, and 280 source records at the HTTPS
+  Pages URL. P0/M1 are complete and P1/M2 are now active; no release, tag,
+  license, archive identity, or support state changed.
 - Added `docs/post_v2_3_clean_handoff_audit.md` to freeze the pre-push scope,
   publication-safety review, validation obligations, and remote completion
   boundary for P0. The audit records the 172-path pre-audit candidate, zero
