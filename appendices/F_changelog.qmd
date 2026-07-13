@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-07-13 - Activate the QCSA-first implementation completion cycle
+
+- Added `docs/post_v2_2_implementation_completion_roadmap.md` as the sole
+  active successor after v2.2.0, with a schema-bound machine status record,
+  six priorities, eight milestones, twelve QCSA implementation lanes, and a
+  registered validator with eight rejecting mutations.
+- Made QCSA the first implementation spine: stable SOIDs, typed evidence graph,
+  plural atlas epochs, semantic address certificates, active question traces,
+  physical route plans/receipts, migration/rollback, adversarial addressing,
+  bounded grounding, round-trip validation, cost/governance accounting, and a
+  content-addressed artifact manifest.
+- Preserved the 54-chapter architecture, all 54 core claims at `argument`,
+  immutable v2.2.0 identity, optional-format exclusion, and the author decision
+  that external-human review is not a prepublication gate.
+
 ## 2026-07-11 - v2.2.0 residual-and-transfer release
 
 - Published annotated tag `v2.2.0` at source commit

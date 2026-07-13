@@ -45,8 +45,9 @@ A locally generated record from a dirty worktree is intentionally labeled
 The record identifies the latest immutable release and historical baseline
 separately. `active_version` currently reports the completed `v2.2.0` release, while
 `baseline_release` retains `v1.0.0` for compatibility with the original
-baseline field. The completed post-v2.1 roadmap is preserved as execution history;
-its machine path is `docs/post_v2_1_residual_and_transfer_roadmap.md`. Later
+baseline field. The completed post-v2.1 roadmap is preserved as execution history.
+The active successor is `docs/post_v2_2_implementation_completion_roadmap.md`,
+with machine state in `roadmap_records/post_v2_2_implementation_completion_status.json`. Later
 root or `/latest/` commits remain mutable and are not part of the immutable
 v2.2.0 tag unless they exactly match that tagged release.
 

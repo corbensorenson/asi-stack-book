@@ -52,3 +52,8 @@ result, QCSA implementation result, AGI, or ASI capability is claimed.
 This declaration closes M5 and the roadmap. No successor roadmap is activated
 by this release; future work requires a new explicit machine and prose
 authority rather than silently extending this completed cycle.
+
+Successor activated: 2026-07-13. The later author-directed implementation cycle
+is governed by `docs/post_v2_2_implementation_completion_roadmap.md`. This dated
+pointer does not modify the v2.2.0 tag, archive, release record, rights snapshot,
+results, or completion facts above.

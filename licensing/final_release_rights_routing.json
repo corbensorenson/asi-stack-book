@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 4051,
+    "path_count": 4056,
     "by_license_route": {
       "Apache-2.0": 682,
       "CC-BY-4.0": 500,
-      "excluded-no-grant": 2869
+      "excluded-no-grant": 2874
     },
     "unresolved_count": 0
   },
@@ -2413,6 +2413,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
       "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/post_v2_2_implementation_completion_roadmap.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "docs/post_v2_empirical_reconciliation.md",
@@ -22162,6 +22169,13 @@
       "review_basis": "author-created public metadata/governance record cleared as documentation"
     },
     {
+      "path": "roadmap_records/post_v2_2_implementation_completion_status.json",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
       "path": "schemas/README.md",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -22699,6 +22713,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/post_v2_2_implementation_completion_status.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "schemas/post_v2_empirical_dispositions.schema.json",
@@ -23385,6 +23406,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/register_post_v2_2_implementation_roadmap_validator.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "scripts/register_post_v2_validators.py",
@@ -24624,6 +24652,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_post_v2_2_implementation_completion_roadmap.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "scripts/validate_post_v2_empirical_reconciliation.py",

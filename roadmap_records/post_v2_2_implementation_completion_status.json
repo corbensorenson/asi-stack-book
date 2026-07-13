@@ -1,0 +1,66 @@
+{
+  "schema_version": "asi_stack.post_v2_2_implementation_completion_status.v0",
+  "snapshot_date": "2026-07-13",
+  "roadmap_id": "asi-stack-post-v2-2-implementation-completion-2026-07-13",
+  "roadmap_path": "docs/post_v2_2_implementation_completion_roadmap.md",
+  "authority": "Corben Sorenson",
+  "status": "active",
+  "predecessor": {
+    "path": "docs/post_v2_1_residual_and_transfer_roadmap.md",
+    "state": "completed",
+    "release": "v2.2.0"
+  },
+  "baseline": {
+    "latest_immutable_release": "v2.2.0",
+    "active_chapter_count": 54,
+    "public_safe_source_count": 280,
+    "core_claim_count": 54,
+    "core_argument_count": 54,
+    "promoted_core_claim_count": 0,
+    "qcsa_chapter_owner_count": 9,
+    "qcsa_implementation_lane_count": 12,
+    "qcsa_implemented_lane_count": 0
+  },
+  "priorities": [
+    {"id": "P0", "state": "running", "purpose": "activate implementation truth", "evidence_refs": ["docs/post_v2_2_implementation_completion_roadmap.md", "roadmap_records/post_v2_2_implementation_completion_status.json", "schemas/post_v2_2_implementation_completion_status.schema.json", "scripts/validate_post_v2_2_implementation_completion_roadmap.py"]},
+    {"id": "P1", "state": "pending", "purpose": "implement the QCSA artifact stack", "evidence_refs": []},
+    {"id": "P2", "state": "pending", "purpose": "evaluate QCSA and its ablations", "evidence_refs": []},
+    {"id": "P3", "state": "pending", "purpose": "build the governed vertical reference path", "evidence_refs": []},
+    {"id": "P4", "state": "pending", "purpose": "complete evidence and book reconciliation", "evidence_refs": []},
+    {"id": "P5", "state": "pending", "purpose": "release or honest no-release closure", "evidence_refs": []}
+  ],
+  "milestones": [
+    {"id": "M0", "state": "completed", "evidence_refs": ["docs/post_v2_2_implementation_completion_roadmap.md", "roadmap_records/post_v2_2_implementation_completion_status.json", "schemas/post_v2_2_implementation_completion_status.schema.json", "scripts/validate_post_v2_2_implementation_completion_roadmap.py"]},
+    {"id": "M1", "state": "in_progress", "evidence_refs": ["README.md", "index.qmd"]},
+    {"id": "M2", "state": "pending", "evidence_refs": []},
+    {"id": "M3", "state": "pending", "evidence_refs": []},
+    {"id": "M4", "state": "pending", "evidence_refs": []},
+    {"id": "M5", "state": "pending", "evidence_refs": []},
+    {"id": "M6", "state": "pending", "evidence_refs": []},
+    {"id": "M7", "state": "pending", "evidence_refs": []}
+  ],
+  "qcsa_lanes": [
+    {"id": "QI-01", "name": "SOID registry", "state": "pending", "owner_chapters": ["cognitive-compilation-and-semantic-ir", "virtual-context-abi"]},
+    {"id": "QI-02", "name": "typed temporal evidence hypergraph", "state": "pending", "owner_chapters": ["claim-ledgers-and-belief-revision"]},
+    {"id": "QI-03", "name": "atlas and epoch package", "state": "pending", "owner_chapters": ["virtual-context-abi", "compact-generative-systems-and-residual-honesty"]},
+    {"id": "QI-04", "name": "semantic address certificate", "state": "pending", "owner_chapters": ["virtual-context-abi", "inter-stack-protocols-identity-and-economic-exchange"]},
+    {"id": "QI-05", "name": "question compiler trace", "state": "pending", "owner_chapters": ["cognitive-compilation-and-semantic-ir", "routing-heads-and-specialist-cores"]},
+    {"id": "QI-06", "name": "physical route plan and receipt", "state": "pending", "owner_chapters": ["routing-heads-and-specialist-cores", "runtime-adapters-tool-permissions-and-human-approval"]},
+    {"id": "QI-07", "name": "migration and rollback record", "state": "pending", "owner_chapters": ["data-engines-continual-learning-and-unlearning"]},
+    {"id": "QI-08", "name": "adversarial addressing suite", "state": "pending", "owner_chapters": ["runtime-adapters-tool-permissions-and-human-approval"]},
+    {"id": "QI-09", "name": "bounded grounding suite", "state": "pending", "owner_chapters": ["compact-generative-systems-and-residual-honesty"]},
+    {"id": "QI-10", "name": "semantic round-trip validator", "state": "pending", "owner_chapters": ["compact-generative-systems-and-residual-honesty", "claim-ledgers-and-belief-revision"]},
+    {"id": "QI-11", "name": "resource and governance ledger", "state": "pending", "owner_chapters": ["routing-heads-and-specialist-cores"]},
+    {"id": "QI-12", "name": "content-addressed artifact manifest", "state": "pending", "owner_chapters": ["integrated-reference-architecture"]}
+  ],
+  "support_state_effect": "none",
+  "new_chapter_effect": "none",
+  "optional_format_effect": "none",
+  "non_claims": [
+    "Roadmap activation is not a QCSA implementation result.",
+    "A bounded QCSA implementation will not by itself establish semantic correctness, performance advantage, safety, or production transfer.",
+    "No chapter-core claim moves above argument at activation.",
+    "No new chapter or optional format is approved at activation.",
+    "External-human prepublication review is not a completion gate."
+  ]
+}

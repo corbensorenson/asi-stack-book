@@ -4,20 +4,23 @@
 _Current canonical metrics (generated from machine records): **54 manifest chapters; 280 public-safe records; 54 chapter-core claims; 54/54 chapters externally positioned; 0 promoted core claims.**_
 <!-- canonical-status:generated-end -->
 
-Last audited: 2026-07-11
+Last audited: 2026-07-13
 
 This file tracks whether the public repository is ready for continued living-
 book work after the immutable `v2.2.0` residual-and-transfer release. The
-roadmap at `docs/post_v2_1_residual_and_transfer_roadmap.md` is complete; the
-v2.2, v2.1, v2, and v1.x documents below remain historical evidence and
-maintenance records rather than active roadmaps.
+active authority is `docs/post_v2_2_implementation_completion_roadmap.md`,
+with state in `roadmap_records/post_v2_2_implementation_completion_status.json`.
+The v2.2, v2.1, v2, and v1.x completion documents remain historical evidence
+and maintenance records rather than active roadmaps.
 
 ## Current release and roadmap authority
 
 - Latest completed immutable release: `v2.2.0`, source commit
   `e3d5348993cc5083604c85bd699bb0e36eb00de1`, archive SHA-256
   `037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db`.
-- Completed roadmap: `docs/post_v2_1_residual_and_transfer_roadmap.md`, with
+- Active roadmap: `docs/post_v2_2_implementation_completion_roadmap.md`, with
+  state in `roadmap_records/post_v2_2_implementation_completion_status.json`.
+- Completed predecessor: `docs/post_v2_1_residual_and_transfer_roadmap.md`, with
   terminal state in `roadmap_records/post_v2_1_residual_and_transfer_status.json`.
 - Completed predecessor: `docs/post_v2_evidence_roadmap.md`; its execution
   history and `docs/v2_1_completion_declaration.md` remain unchanged.

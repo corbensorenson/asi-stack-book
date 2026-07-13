@@ -164,7 +164,7 @@ def semantic_errors(
             errors.append(f"conditional residual identity is missing: {residual_id}")
 
     path = "docs/post_v2_1_residual_and_transfer_roadmap.md"
-    if path not in readme or "latest cycle" not in readme.lower():
+    if path not in readme or "completed post-v2.1" not in readme.lower():
         errors.append("README does not identify the completed post-v2.1 roadmap")
     if f"Active successor: `{path}`" not in predecessor:
         errors.append("historical predecessor lost its dated successor pointer")
@@ -214,7 +214,7 @@ def negative_control_errors(
     missing_conditional["conditional_lanes"] = missing_conditional["conditional_lanes"][:-1]
     mutations.append(("conditional erasure", missing_conditional, roadmap, residuals, readme, predecessor, completion))
 
-    stale_pointer = readme.replace("latest cycle", "unrelated cycle")
+    stale_pointer = readme.replace("docs/post_v2_1_residual_and_transfer_roadmap.md", "docs/missing_completed_roadmap.md")
     mutations.append(("stale active pointer", status, roadmap, residuals, stale_pointer, predecessor, completion))
 
     for label, mutation, roadmap_text, residual_text, readme_text, predecessor_text, completion_text in mutations:

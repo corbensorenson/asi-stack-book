@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_2_implementation_completion_status.schema.json",
+  "title": "Post-v2.2 Implementation Completion Roadmap Status",
+  "type": "object",
+  "required": ["schema_version", "snapshot_date", "roadmap_id", "roadmap_path", "authority", "status", "predecessor", "baseline", "priorities", "milestones", "qcsa_lanes", "support_state_effect", "new_chapter_effect", "optional_format_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_2_implementation_completion_status.v0"},
+    "snapshot_date": {"type": "string", "format": "date"},
+    "roadmap_id": {"const": "asi-stack-post-v2-2-implementation-completion-2026-07-13"},
+    "roadmap_path": {"const": "docs/post_v2_2_implementation_completion_roadmap.md"},
+    "authority": {"type": "string", "minLength": 1},
+    "status": {"enum": ["active", "completed", "blocked"]},
+    "predecessor": {
+      "type": "object",
+      "required": ["path", "state", "release"],
+      "properties": {
+        "path": {"const": "docs/post_v2_1_residual_and_transfer_roadmap.md"},
+        "state": {"const": "completed"},
+        "release": {"const": "v2.2.0"}
+      },
+      "additionalProperties": false
+    },
+    "baseline": {
+      "type": "object",
+      "required": ["latest_immutable_release", "active_chapter_count", "public_safe_source_count", "core_claim_count", "core_argument_count", "promoted_core_claim_count", "qcsa_chapter_owner_count", "qcsa_implementation_lane_count", "qcsa_implemented_lane_count"],
+      "properties": {
+        "latest_immutable_release": {"const": "v2.2.0"},
+        "active_chapter_count": {"const": 54},
+        "public_safe_source_count": {"const": 280},
+        "core_claim_count": {"const": 54},
+        "core_argument_count": {"const": 54},
+        "promoted_core_claim_count": {"const": 0},
+        "qcsa_chapter_owner_count": {"const": 9},
+        "qcsa_implementation_lane_count": {"const": 12},
+        "qcsa_implemented_lane_count": {"type": "integer", "minimum": 0, "maximum": 12}
+      },
+      "additionalProperties": false
+    },
+    "priorities": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"$ref": "#/$defs/work_item"}},
+    "milestones": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/milestone"}},
+    "qcsa_lanes": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/qcsa_lane"}},
+    "support_state_effect": {"const": "none"},
+    "new_chapter_effect": {"const": "none"},
+    "optional_format_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "work_item": {
+      "type": "object",
+      "required": ["id", "state", "purpose", "evidence_refs"],
+      "properties": {
+        "id": {"pattern": "^P[0-5]$"},
+        "state": {"enum": ["pending", "preregistered", "running", "dispositioned", "completed", "blocked"]},
+        "purpose": {"type": "string", "minLength": 1},
+        "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "milestone": {
+      "type": "object",
+      "required": ["id", "state", "evidence_refs"],
+      "properties": {
+        "id": {"pattern": "^M[0-7]$"},
+        "state": {"enum": ["pending", "in_progress", "completed", "blocked"]},
+        "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "qcsa_lane": {
+      "type": "object",
+      "required": ["id", "name", "state", "owner_chapters"],
+      "properties": {
+        "id": {"pattern": "^QI-(0[1-9]|1[0-2])$"},
+        "name": {"type": "string", "minLength": 1},
+        "state": {"enum": ["pending", "frozen", "implemented", "dispositioned", "completed", "rejected", "blocked"]},
+        "owner_chapters": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
