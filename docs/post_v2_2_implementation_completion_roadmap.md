@@ -4,7 +4,7 @@ Roadmap ID: `asi-stack-post-v2-2-implementation-completion-2026-07-13`
 
 Authority: Corben Sorenson
 
-Status: active canonical successor roadmap; unfinished work only
+Status: completed 2026-07-13; canonical execution history
 
 Predecessor: `docs/post_v2_1_residual_and_transfer_roadmap.md`, completed for
 the immutable v2.2.0 release and retained as execution history
@@ -24,7 +24,8 @@ the immutable v2.2.0 release and retained as execution history
 > negative results, costs, residuals, and non-claims. Do not add a chapter or
 > promote a support state merely because code now exists.
 
-This is the canonical long-running goal for the post-v2.2 cycle.
+This was the canonical long-running goal for the post-v2.2 cycle. It completed
+with the exact v2.3.0 release transaction recorded below.
 
 ## What “completed” means
 
@@ -128,10 +129,10 @@ completion declaration.
 |---|---|---|---|
 | P0 — Activate implementation truth | completed | Install this roadmap, status record, validators, and current public pointers without changing v2.2 history. | Clean deployed public-truth attestation. |
 | P1 — Implement the QCSA artifact stack | completed | Build the twelve bounded artifacts with schemas, fixtures, replay, and negative controls. | Exact artifact manifest and rejecting validation suite. |
-| P2 — Evaluate QCSA and its ablations | preregistered | Test usefulness, cost, calibration, migration, and failure prevention against matched baselines. | Frozen result ledger and claim-bounded disposition. |
-| P3 — Build the governed vertical reference path | pending | Connect QCSA to existing stack owners without merging identity, evidence, or authority. | End-to-end replay, rollback/migration exercise, and residual ledger. |
-| P4 — Complete evidence and book reconciliation | pending | Fold implementation results into chapters/products and close selected evidence-floor gaps. | Machine/prose agreement with no unsupported promotion. |
-| P5 — Release or honest no-release closure | pending | Validate, publish if warranted, attest, archive, and mark the roadmap terminal. | Exact release transaction or explicit no-release record. |
+| P2 — Evaluate QCSA and its ablations | completed | Test usefulness, cost, calibration, migration, and failure prevention against matched baselines. | Frozen result ledger and claim-bounded disposition. |
+| P3 — Build the governed vertical reference path | completed | Connect QCSA to existing stack owners without merging identity, evidence, or authority. | End-to-end replay, rollback/migration exercise, and residual ledger. |
+| P4 — Complete evidence and book reconciliation | completed | Fold implementation results into chapters/products and close selected evidence-floor gaps. | Machine/prose agreement with no unsupported promotion. |
+| P5 — Release or honest no-release closure | completed | Validate, publish if warranted, attest, archive, and mark the roadmap terminal. | Exact release transaction or explicit no-release record. |
 
 ## P0 — Activate implementation truth
 
@@ -368,7 +369,7 @@ Any release must bind one clean tested commit to:
 | M4 — QCSA evaluation dispositioned | completed | 2,340 frozen predictions; failed matched-advantage/resource gates; ten non-core and nine core decisions; exact report and mutation gate. |
 | M5 — Vertical reference path complete | completed | Thirteen-stage replay, one observed temporary effect, same-SOID migration, exact rollback, ten fail-closed attacks, and readable trace. |
 | M6 — Book/evidence reconciliation complete | completed | Nine chapters, source note, Appendix C, evidence plan/vectors, residuals, changelog, and fifteen-mutation cross-book gate agree. |
-| M7 — Release/no-release transaction complete | in progress | Canonical HTML-only v2.3.0 selected; clean commit, hosted build/deploy/attestation, tag, archive, public redownload, and terminal records remain. |
+| M7 — Release/no-release transaction complete | completed | Candidate commit `e27661166e9105f37cb36d63b15795f80715ca24`; build `29234323320`; deploy/attest `29234640734`; tag `v2.3.0`; 19,088,343-byte/274-member archive; public-redownload SHA-256 `ebb3cccb0841a15a49d7d20ee8d5c7f7dce97dac562ca05068025951274ee28c`; exact release record and completion declaration. |
 
 ## Risk register
 
@@ -421,3 +422,20 @@ grounding, AGI, or ASI.
 > formats and prepublication external-human review out of scope, and do not
 > stop until the definition of done is honestly satisfied through a clean
 > release or exact no-release closure.
+
+## Terminal result
+
+The roadmap completed through the clean release path. Annotated tag `v2.3.0`
+binds candidate commit `e27661166e9105f37cb36d63b15795f80715ca24`.
+Hosted build `29234323320` passed the deep registry, Lean, clean render,
+status/product, browser, and tested-bundle gates; deploy/attest run
+`29234640734` published that exact bundle without rebuilding. The deterministic
+archive has 274 regular-file members, 19,088,343 bytes, and SHA-256
+`ebb3cccb0841a15a49d7d20ee8d5c7f7dce97dac562ca05068025951274ee28c`;
+its public redownload was byte-identical. The exact machine release record is
+`release_records/2026-07-13-v2.3.0-qcsa-e2766116.json`, and the human-readable
+closure is `docs/v2_3_completion_declaration.md`.
+
+No successor roadmap is activated by this completion. Future work requires a
+new explicit authority; this completed roadmap remains immutable execution
+history rather than an open backlog.

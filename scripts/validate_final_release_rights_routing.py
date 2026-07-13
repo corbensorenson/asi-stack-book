@@ -60,7 +60,7 @@ def main() -> None:
         if phrase not in license_md:
             errors.append(f"LICENSE.md missing routed boundary: {phrase}")
     if routing.get("release_candidate") != "v2.3.0":
-        errors.append("rights routing does not identify the v2.3.0 candidate")
+        errors.append("rights routing does not identify exact v2.3.0 release scope")
     if "v2.3.0" not in notice or "canonical live/research HTML book only" not in scope:
         errors.append("release notice or selected-format scope is incomplete")
     if errors:

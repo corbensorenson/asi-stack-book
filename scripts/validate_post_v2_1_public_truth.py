@@ -11,15 +11,18 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "v2.2.0"
-COMMIT = "e3d5348993cc5083604c85bd699bb0e36eb00de1"
-DIGEST = "037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db"
+VERSION = "v2.3.0"
+COMMIT = "e27661166e9105f37cb36d63b15795f80715ca24"
+DIGEST = "ebb3cccb0841a15a49d7d20ee8d5c7f7dce97dac562ca05068025951274ee28c"
+HISTORICAL_VERSION = "v2.2.0"
+HISTORICAL_COMMIT = "e3d5348993cc5083604c85bd699bb0e36eb00de1"
+HISTORICAL_DIGEST = "037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db"
 ROADMAP = "docs/post_v2_1_residual_and_transfer_roadmap.md"
 SUCCESSOR = "docs/post_v2_2_implementation_completion_roadmap.md"
 SUCCESSOR_STATUS = "roadmap_records/post_v2_2_implementation_completion_status.json"
 PREDECESSOR = "docs/post_v2_evidence_roadmap.md"
-RELEASE_RECORD = "release_records/2026-07-11-v2.2.0-residual-transfer-e3d53489.json"
-RIGHTS_CANDIDATE = "v2.3.0"
+RELEASE_RECORD = "release_records/2026-07-13-v2.3.0-qcsa-e2766116.json"
+RIGHTS_TAG = "v2.3.0"
 
 
 def read_json(path: str) -> object:
@@ -48,7 +51,7 @@ def snapshot() -> dict[str, object]:
         "license": read_text("LICENSE.md"),
         "notice": read_text("NOTICE.md"),
         "predecessor": read_text(PREDECESSOR),
-        "completion": read_text("docs/v2_2_completion_declaration.md"),
+        "completion": read_text("docs/v2_3_completion_declaration.md"),
         "audit": read_text("docs/post_v2_1_public_truth_audit.md"),
         "active_roadmap_headers": [
             str(path.relative_to(ROOT))
@@ -76,14 +79,14 @@ def validate(data: dict[str, object]) -> list[str]:
 
     active_version = config.get("active_version")
     if active_version != VERSION:
-        errors.append("canonical active_version is not the completed v2.2.0 release")
+        errors.append("canonical active_version is not the completed v2.3.0 release")
     if config.get("deployment_channel") != "latest":
         errors.append("canonical deployment channel is not latest")
 
     known = policy.get("known_releases", [])
     rows = [row for row in known if isinstance(row, dict) and row.get("version") == VERSION]
     if len(rows) != 1:
-        errors.append("release policy must contain exactly one v2.2.0 row")
+        errors.append("release policy must contain exactly one v2.3.0 row")
         row = {}
     else:
         row = rows[0]
@@ -95,10 +98,17 @@ def validate(data: dict[str, object]) -> list[str]:
     }
     for key, expected in expected_policy.items():
         if row.get(key) != expected:
-            errors.append(f"v2.2.0 policy {key} disagrees with canonical value")
+            errors.append(f"v2.3.0 policy {key} disagrees with canonical value")
     archive_url = str(row.get("site_artifact_url", ""))
     if VERSION not in archive_url or COMMIT not in archive_url:
-        errors.append("v2.2.0 archive URL is not tag-and-commit bound")
+        errors.append("v2.3.0 archive URL is not tag-and-commit bound")
+    historical_rows = [row for row in known if isinstance(row, dict) and row.get("version") == HISTORICAL_VERSION]
+    if len(historical_rows) != 1:
+        errors.append("historical v2.2.0 policy row is absent or duplicated")
+    else:
+        historical = historical_rows[0]
+        if historical.get("source_commit") != HISTORICAL_COMMIT or historical.get("site_artifact_sha256") != HISTORICAL_DIGEST or historical.get("site_artifact_state") != "published":
+            errors.append("historical v2.2.0 policy identity drifted")
     latest = mapping(policy.get("latest_channel"), "latest channel", errors)
     if latest.get("mutable") != "yes":
         errors.append("/latest/ must remain explicitly mutable")
@@ -115,7 +125,7 @@ def validate(data: dict[str, object]) -> list[str]:
             errors.append(f"released HTML format {name} is not published")
     optional = format_rows.get("epub_docx_pdf_audio_and_curated_reader", {})
     if optional.get("status") != "not_applicable":
-        errors.append("optional formats are represented as approved by v2.2.0")
+        errors.append("optional formats are represented as approved by v2.3.0")
 
     if status.get("status") != "completed" or status.get("roadmap_path") != ROADMAP:
         errors.append("completed roadmap machine authority is stale or absent")
@@ -123,12 +133,12 @@ def validate(data: dict[str, object]) -> list[str]:
     if predecessor.get("path") != PREDECESSOR or predecessor.get("state") != "completed":
         errors.append("completed predecessor authority disagrees")
     baseline = mapping(status.get("baseline"), "roadmap baseline", errors)
-    if baseline.get("latest_immutable_release") != VERSION:
-        errors.append("roadmap baseline names a stale immutable release")
-    if successor.get("status") != "active" or successor.get("roadmap_path") != SUCCESSOR:
-        errors.append("active successor roadmap machine authority is stale or absent")
-    if data.get("active_roadmap_headers") != [SUCCESSOR]:
-        errors.append("there must be exactly one active canonical successor roadmap")
+    if baseline.get("latest_immutable_release") != HISTORICAL_VERSION:
+        errors.append("historical roadmap baseline no longer names v2.2.0")
+    if successor.get("status") != "completed" or successor.get("roadmap_path") != SUCCESSOR:
+        errors.append("completed successor roadmap machine authority is stale or absent")
+    if data.get("active_roadmap_headers"):
+        errors.append("terminal release cannot retain an active canonical roadmap header")
 
     structure = mapping(data["structure"], "book structure", errors)
     chapters = [c for p in structure.get("parts", []) if isinstance(p, dict) for c in p.get("chapters", [])]
@@ -146,7 +156,7 @@ def validate(data: dict[str, object]) -> list[str]:
         'url: "https://corbensorenson.github.io/asi-stack-book/"',
         'repository-code: "https://github.com/corbensorenson/asi-stack-book"',
     ]
-    citation_fragments.extend(['version: "2.2.0"', 'date-released: "2026-07-11"', COMMIT])
+    citation_fragments.extend(['version: "2.3.0"', 'date-released: "2026-07-13"', COMMIT, DIGEST])
     for fragment in citation_fragments:
         if fragment not in citation:
             errors.append(f"CITATION.cff missing canonical fragment: {fragment}")
@@ -183,15 +193,15 @@ def validate(data: dict[str, object]) -> list[str]:
     }.items():
         if VERSION not in text:
             errors.append(f"{name} does not preserve the v2.2.0 rights boundary")
-    if f"At exact tag `{RIGHTS_CANDIDATE}`" not in str(data["readme"]):
-        errors.append("README rights summary does not name the selected exact-tag boundary")
+    if f"At exact tag `{RIGHTS_TAG}`" not in str(data["readme"]):
+        errors.append("README rights summary does not name the current exact-tag boundary")
     if "At exact tag `v2.0.0`" in str(data["readme"]):
         errors.append("README rights summary still names v2.0.0 as current")
 
-    completion_fragments = [VERSION, COMMIT, DIGEST, ROADMAP, SUCCESSOR, "Successor activated: 2026-07-13", "29177953198", "29178074691", "closes M5"]
+    completion_fragments = [VERSION, COMMIT, DIGEST, SUCCESSOR, RELEASE_RECORD, "29234323320", "29234640734", "closes P5, M7, and the roadmap", "No successor roadmap is"]
     for fragment in completion_fragments:
         if fragment not in str(data["completion"]):
-            errors.append(f"v2.2 completion declaration missing: {fragment}")
+            errors.append(f"v2.3 completion declaration missing: {fragment}")
     return errors
 
 
@@ -200,7 +210,7 @@ def mutation_controls(base: dict[str, object]) -> list[str]:
     mutations = []
 
     stale_version = copy.deepcopy(base)
-    stale_version["config"]["active_version"] = "v2.0.0"
+    stale_version["config"]["active_version"] = HISTORICAL_VERSION
     mutations.append(("stale version", stale_version))
 
     stale_roadmap = copy.deepcopy(base)
@@ -218,7 +228,7 @@ def mutation_controls(base: dict[str, object]) -> list[str]:
     mutations.append(("false archive state", false_archive))
 
     wrong_rights = copy.deepcopy(base)
-    wrong_rights["readme"] = str(wrong_rights["readme"]).replace(f"At exact tag `{RIGHTS_CANDIDATE}`", "At exact tag `v2.0.0`")
+    wrong_rights["readme"] = str(wrong_rights["readme"]).replace(f"At exact tag `{RIGHTS_TAG}`", "At exact tag `v2.0.0`")
     mutations.append(("wrong rights tag", wrong_rights))
 
     invented_format = copy.deepcopy(base)
@@ -243,8 +253,8 @@ def main() -> None:
             print(f" - {error}")
         sys.exit(1)
     print(
-        "Post-v2.1 public-truth validation passed: v2.2.0 release/commit/archive, "
-        "completed release roadmap plus one active successor, 54 argument-level core claims, tag-bound rights, "
+        "Post-v2.1 public-truth validation passed: v2.3.0 release/commit/archive, "
+        "completed predecessor and successor roadmaps with no active successor, 54 argument-level core claims, tag-bound rights, "
         "mutable latest channel, optional-format boundary, and 6 rejecting mutations."
     )
 

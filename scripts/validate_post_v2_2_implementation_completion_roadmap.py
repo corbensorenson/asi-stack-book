@@ -18,7 +18,8 @@ VECTORS = ROOT / "evidence_quality/core_claim_vectors.json"
 README = ROOT / "README.md"
 INDEX = ROOT / "index.qmd"
 PREDECESSOR = ROOT / "docs/post_v2_1_residual_and_transfer_roadmap.md"
-COMPLETION = ROOT / "docs/v2_2_completion_declaration.md"
+PREDECESSOR_COMPLETION = ROOT / "docs/v2_2_completion_declaration.md"
+CYCLE_COMPLETION = ROOT / "docs/v2_3_completion_declaration.md"
 
 ROADMAP_PATH = "docs/post_v2_2_implementation_completion_roadmap.md"
 STATUS_PATH = "roadmap_records/post_v2_2_implementation_completion_status.json"
@@ -148,14 +149,17 @@ def semantic_errors(data: dict) -> list[str]:
             errors.append(f"roadmap does not define {lane_id}")
 
     for name, text in [("README.md", data["readme"]), ("index.qmd", data["index"])]:
-        for phrase in [ROADMAP_PATH, STATUS_PATH, "v2.2.0", "all 54 chapter-core claims remain at `argument`"]:
+        for phrase in [ROADMAP_PATH, STATUS_PATH, "v2.2.0", "v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "all 54 chapter-core claims remain at `argument`"]:
             if phrase not in text:
-                errors.append(f"{name} missing active-roadmap truth: {phrase}")
+                errors.append(f"{name} missing roadmap/release truth: {phrase}")
     predecessor = data["predecessor"]
     if "Status: completed 2026-07-11" not in predecessor:
         errors.append("predecessor roadmap lost completed status")
-    if ROADMAP_PATH not in data["completion"] or "Successor activated: 2026-07-13" not in data["completion"]:
+    if ROADMAP_PATH not in data["predecessor_completion"] or "Successor activated: 2026-07-13" not in data["predecessor_completion"]:
         errors.append("v2.2 completion declaration lacks the dated successor pointer")
+    for phrase in ["v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "29234323320", "29234640734", "closes P5, M7, and the roadmap", "No successor roadmap is"]:
+        if phrase not in data["cycle_completion"]:
+            errors.append(f"v2.3 completion declaration lacks: {phrase}")
     if status.get("support_state_effect") != "none" or status.get("new_chapter_effect") != "none" or status.get("optional_format_effect") != "none":
         errors.append("roadmap activation changed claim, chapter, or optional-format state")
     return errors
@@ -193,10 +197,9 @@ def negative_controls(base: dict) -> list[str]:
     stale_pointer["readme"] = stale_pointer["readme"].replace(ROADMAP_PATH, "docs/post_v2_1_residual_and_transfer_roadmap.md")
     mutations.append(("stale README pointer", stale_pointer))
 
-    false_terminal = copy.deepcopy(base)
-    false_terminal["status"]["status"] = "completed"
-    false_terminal["active_roadmaps"] = []
-    mutations.append(("false terminal state", false_terminal))
+    terminal_regression = copy.deepcopy(base)
+    terminal_regression["status"]["priorities"][-1]["state"] = "running"
+    mutations.append(("terminal priority regression", terminal_regression))
 
     for label, mutated in mutations:
         if not semantic_errors(mutated):
@@ -205,7 +208,7 @@ def negative_controls(base: dict) -> list[str]:
 
 
 def main() -> None:
-    required = [ROADMAP, STATUS, SCHEMA, STRUCTURE, SOURCES, VECTORS, README, INDEX, PREDECESSOR, COMPLETION]
+    required = [ROADMAP, STATUS, SCHEMA, STRUCTURE, SOURCES, VECTORS, README, INDEX, PREDECESSOR, PREDECESSOR_COMPLETION, CYCLE_COMPLETION]
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise SystemExit("missing post-v2.2 roadmap artifacts: " + ", ".join(missing))
@@ -219,7 +222,8 @@ def main() -> None:
         "readme": README.read_text(encoding="utf-8"),
         "index": INDEX.read_text(encoding="utf-8"),
         "predecessor": PREDECESSOR.read_text(encoding="utf-8"),
-        "completion": COMPLETION.read_text(encoding="utf-8"),
+        "predecessor_completion": PREDECESSOR_COMPLETION.read_text(encoding="utf-8"),
+        "cycle_completion": CYCLE_COMPLETION.read_text(encoding="utf-8"),
         "active_roadmaps": active_roadmaps(),
     }
     errors = validate_against_schema(status, load_json(SCHEMA), STATUS.relative_to(ROOT).as_posix())
@@ -228,7 +232,7 @@ def main() -> None:
     if errors:
         raise SystemExit("Post-v2.2 implementation roadmap validation failed:\n - " + "\n - ".join(errors))
     print(
-        "Post-v2.2 implementation roadmap passed: one active successor, 6 priorities, "
+        "Post-v2.2 implementation roadmap passed: completed terminal roadmap, 6 priorities, "
         "8 milestones, 12 QCSA implementation lanes, 9 existing chapter owners, "
         "54 argument-state core claims, no new chapter/format effect, and 8 rejecting mutations."
     )

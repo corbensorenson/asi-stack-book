@@ -18,6 +18,7 @@ from build_canonical_public_status import ROOT, load_json
 POLICY = ROOT / "licensing" / "provenance_policy.json"
 OUTPUT = ROOT / "licensing" / "provenance_inventory.json"
 DECISION = ROOT / "governance" / "licensing_decision.json"
+RELEASE = "v2.3.0"
 
 
 def sha256_file(path: Path) -> str:
@@ -25,6 +26,18 @@ def sha256_file(path: Path) -> str:
 
 
 def source_paths() -> list[str]:
+    tag = subprocess.run(
+        ["git", "rev-parse", "-q", "--verify", f"refs/tags/{RELEASE}^{{commit}}"],
+        cwd=ROOT,
+        capture_output=True,
+        check=False,
+    )
+    if tag.returncode == 0:
+        body = subprocess.check_output(
+            ["git", "ls-tree", "-r", "--name-only", "-z", RELEASE],
+            cwd=ROOT,
+        )
+        return sorted(item.decode("utf-8") for item in body.split(b"\0") if item)
     body = subprocess.check_output(
         ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
         cwd=ROOT,

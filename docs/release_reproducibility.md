@@ -1,9 +1,9 @@
 # Release Reproducibility
 
-Last updated: 2026-07-11
+Last updated: 2026-07-13
 
 This note records the current toolchain and citation boundary for the completed
-`v2.2.0` release while preserving the tagged `v2.1.0` and historical
+`v2.3.0` release while preserving the tagged `v2.2.0`, `v2.1.0`, and historical
 `v1.0.0` citation records. It is a reproducibility and citability record, not an approval of EPUB,
 DOCX, PDF, e-reader, audio, or curated-reader artifacts.
 
@@ -46,21 +46,21 @@ The HTML book currently relies on Quarto's generated site assets, the repository
 
 ## Citation Boundary
 
-Root `CITATION.cff` describes version `2.2.0` dated `2026-07-11`. Cite exact tag
-`v2.2.0` and source commit
-`e3d5348993cc5083604c85bd699bb0e36eb00de1`. The tracked release record is
-`release_records/2026-07-11-v2.2.0-residual-transfer-e3d53489.json`, the source
-release is <https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.2.0>,
+Root `CITATION.cff` describes version `2.3.0` dated `2026-07-13`. Cite exact tag
+`v2.3.0` and source commit
+`e27661166e9105f37cb36d63b15795f80715ca24`. The tracked release record is
+`release_records/2026-07-13-v2.3.0-qcsa-e2766116.json`, the source release is
+<https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.3.0>,
 and the immutable rendered-site archive and SHA-256 are recorded in
 `status/versioned_release_policy.json`. The recorded archive SHA-256 is
-`037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083ee2db`. The
+`ebb3cccb0841a15a49d7d20ee8d5c7f7dce97dac562ca05068025951274ee28c`. The
 public root and `/latest/` are mutable channels, not immutable citation targets.
 
-How to cite v2.2.0:
+How to cite v2.3.0:
 
 - Cite the repository and tag-specific GitHub Release.
-- Include version string `2.2.0`, tag `v2.2.0`, and source commit
-  `e3d5348993cc5083604c85bd699bb0e36eb00de1`.
+- Include version string `2.3.0`, tag `v2.3.0`, and source commit
+  `e27661166e9105f37cb36d63b15795f80715ca24`.
 - Use the immutable rendered-site archive URL and recorded SHA-256 when citing
   rendered bytes.
 - Do not cite a DOI; no DOI or Zenodo archive identifier has been issued.

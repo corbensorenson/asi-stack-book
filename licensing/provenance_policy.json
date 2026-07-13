@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.licensing_provenance_policy.v0",
-  "operative_license": "conditional_v2.0.0_v2.1.0_and_v2.2.0_path_routed_split_otherwise_all_rights_reserved",
-  "file_set_command": "git ls-files --cached --others --exclude-standard -z",
+  "operative_license": "conditional_v2.0.0_v2.1.0_v2.2.0_and_v2.3.0_path_routed_split_otherwise_all_rights_reserved",
+  "file_set_command": "git ls-tree -r --name-only v2.3.0 after tag; otherwise git ls-files --cached --others --exclude-standard -z",
   "rules": [
     {
       "id": "operative-license",

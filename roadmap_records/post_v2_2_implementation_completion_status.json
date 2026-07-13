@@ -4,7 +4,7 @@
   "roadmap_id": "asi-stack-post-v2-2-implementation-completion-2026-07-13",
   "roadmap_path": "docs/post_v2_2_implementation_completion_roadmap.md",
   "authority": "Corben Sorenson",
-  "status": "active",
+  "status": "completed",
   "predecessor": {
     "path": "docs/post_v2_1_residual_and_transfer_roadmap.md",
     "state": "completed",
@@ -27,7 +27,7 @@
     {"id": "P2", "state": "completed", "purpose": "evaluate QCSA and its ablations", "evidence_refs": ["experiments/qcsa_reference/test_plan.json", "experiments/qcsa_reference/budgets.json", "experiments/qcsa_reference/corpus/manifest.json", "roadmap_records/qcsa_evaluation_setup_freeze.json", "roadmap_records/qcsa_evaluation_execution_authorization.json", "experiments/qcsa_reference/results/evaluation_results.json", "claim_decisions/qcsa_reference_evaluation_dispositions.json", "docs/qcsa_reference_evaluation_report.md", "scripts/validate_qcsa_evaluation.py", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29231298514", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29231557981"]},
     {"id": "P3", "state": "completed", "purpose": "build the governed vertical reference path", "evidence_refs": ["experiments/qcsa_vertical_reference/task.json", "experiments/qcsa_vertical_reference/results/vertical_result.json", "experiments/qcsa_vertical_reference/results/artifact_manifest.json", "scripts/build_qcsa_vertical_reference.py", "scripts/validate_qcsa_vertical_reference.py", "docs/qcsa_governed_vertical_reference_report.md"]},
     {"id": "P4", "state": "completed", "purpose": "complete evidence and book reconciliation", "evidence_refs": ["docs/qcsa_implementation_evidence_reconciliation.md", "claim_decisions/qcsa_reference_evaluation_dispositions.json", "evidence_quality/core_claim_vectors.json", "appendices/C_claim_evidence_matrix.qmd", "docs/per_chapter_evidence_plan.md", "docs/post_v2_residual_ledger.md", "scripts/validate_qcsa_book_reconciliation.py"]},
-    {"id": "P5", "state": "running", "purpose": "release or honest no-release closure", "evidence_refs": []}
+    {"id": "P5", "state": "completed", "purpose": "release or honest no-release closure", "evidence_refs": ["docs/v2_3_release_scope.md", "release_records/2026-07-13-v2.3.0-qcsa-e2766116.json", "docs/v2_3_completion_declaration.md", "status/versioned_release_policy.json", "licensing/final_release_rights_routing.json", "CITATION.cff", "https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.3.0", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29234323320", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29234640734"]}
   ],
   "milestones": [
     {"id": "M0", "state": "completed", "evidence_refs": ["docs/post_v2_2_implementation_completion_roadmap.md", "roadmap_records/post_v2_2_implementation_completion_status.json", "schemas/post_v2_2_implementation_completion_status.schema.json", "scripts/validate_post_v2_2_implementation_completion_roadmap.py"]},
@@ -37,30 +37,30 @@
     {"id": "M4", "state": "completed", "evidence_refs": ["experiments/qcsa_reference/test_plan.json", "experiments/qcsa_reference/budgets.json", "experiments/qcsa_reference/corpus/manifest.json", "roadmap_records/qcsa_evaluation_setup_freeze.json", "roadmap_records/qcsa_evaluation_execution_authorization.json", "experiments/qcsa_reference/results/evaluation_results.json", "claim_decisions/qcsa_reference_evaluation_dispositions.json", "docs/qcsa_reference_evaluation_report.md", "scripts/validate_qcsa_evaluation.py"]},
     {"id": "M5", "state": "completed", "evidence_refs": ["experiments/qcsa_vertical_reference/results/vertical_result.json", "experiments/qcsa_vertical_reference/results/artifact_manifest.json", "scripts/validate_qcsa_vertical_reference.py", "docs/qcsa_governed_vertical_reference_report.md"]},
     {"id": "M6", "state": "completed", "evidence_refs": ["docs/qcsa_implementation_evidence_reconciliation.md", "sources/source_notes/qcsa_whitepaper.md", "appendices/C_claim_evidence_matrix.qmd", "docs/per_chapter_evidence_plan.md", "docs/post_v2_residual_ledger.md", "scripts/validate_qcsa_book_reconciliation.py"]},
-    {"id": "M7", "state": "in_progress", "evidence_refs": []}
+    {"id": "M7", "state": "completed", "evidence_refs": ["release_records/2026-07-13-v2.3.0-qcsa-e2766116.json", "docs/v2_3_completion_declaration.md", "https://github.com/corbensorenson/asi-stack-book/releases/tag/v2.3.0", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29234323320", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29234640734"]}
   ],
   "qcsa_lanes": [
-    {"id": "QI-01", "name": "SOID registry", "state": "implemented", "owner_chapters": ["cognitive-compilation-and-semantic-ir", "virtual-context-abi"]},
-    {"id": "QI-02", "name": "typed temporal evidence hypergraph", "state": "implemented", "owner_chapters": ["claim-ledgers-and-belief-revision"]},
-    {"id": "QI-03", "name": "atlas and epoch package", "state": "implemented", "owner_chapters": ["virtual-context-abi", "compact-generative-systems-and-residual-honesty"]},
-    {"id": "QI-04", "name": "semantic address certificate", "state": "implemented", "owner_chapters": ["virtual-context-abi", "inter-stack-protocols-identity-and-economic-exchange"]},
-    {"id": "QI-05", "name": "question compiler trace", "state": "implemented", "owner_chapters": ["cognitive-compilation-and-semantic-ir", "routing-heads-and-specialist-cores"]},
-    {"id": "QI-06", "name": "physical route plan and receipt", "state": "implemented", "owner_chapters": ["routing-heads-and-specialist-cores", "runtime-adapters-tool-permissions-and-human-approval"]},
-    {"id": "QI-07", "name": "migration and rollback record", "state": "implemented", "owner_chapters": ["data-engines-continual-learning-and-unlearning"]},
-    {"id": "QI-08", "name": "adversarial addressing suite", "state": "implemented", "owner_chapters": ["runtime-adapters-tool-permissions-and-human-approval"]},
-    {"id": "QI-09", "name": "bounded grounding suite", "state": "implemented", "owner_chapters": ["compact-generative-systems-and-residual-honesty"]},
-    {"id": "QI-10", "name": "semantic round-trip validator", "state": "implemented", "owner_chapters": ["compact-generative-systems-and-residual-honesty", "claim-ledgers-and-belief-revision"]},
-    {"id": "QI-11", "name": "resource and governance ledger", "state": "implemented", "owner_chapters": ["routing-heads-and-specialist-cores"]},
-    {"id": "QI-12", "name": "content-addressed artifact manifest", "state": "implemented", "owner_chapters": ["integrated-reference-architecture"]}
+    {"id": "QI-01", "name": "SOID registry", "state": "completed", "owner_chapters": ["cognitive-compilation-and-semantic-ir", "virtual-context-abi"]},
+    {"id": "QI-02", "name": "typed temporal evidence hypergraph", "state": "completed", "owner_chapters": ["claim-ledgers-and-belief-revision"]},
+    {"id": "QI-03", "name": "atlas and epoch package", "state": "completed", "owner_chapters": ["virtual-context-abi", "compact-generative-systems-and-residual-honesty"]},
+    {"id": "QI-04", "name": "semantic address certificate", "state": "completed", "owner_chapters": ["virtual-context-abi", "inter-stack-protocols-identity-and-economic-exchange"]},
+    {"id": "QI-05", "name": "question compiler trace", "state": "completed", "owner_chapters": ["cognitive-compilation-and-semantic-ir", "routing-heads-and-specialist-cores"]},
+    {"id": "QI-06", "name": "physical route plan and receipt", "state": "completed", "owner_chapters": ["routing-heads-and-specialist-cores", "runtime-adapters-tool-permissions-and-human-approval"]},
+    {"id": "QI-07", "name": "migration and rollback record", "state": "completed", "owner_chapters": ["data-engines-continual-learning-and-unlearning"]},
+    {"id": "QI-08", "name": "adversarial addressing suite", "state": "completed", "owner_chapters": ["runtime-adapters-tool-permissions-and-human-approval"]},
+    {"id": "QI-09", "name": "bounded grounding suite", "state": "completed", "owner_chapters": ["compact-generative-systems-and-residual-honesty"]},
+    {"id": "QI-10", "name": "semantic round-trip validator", "state": "completed", "owner_chapters": ["compact-generative-systems-and-residual-honesty", "claim-ledgers-and-belief-revision"]},
+    {"id": "QI-11", "name": "resource and governance ledger", "state": "completed", "owner_chapters": ["routing-heads-and-specialist-cores"]},
+    {"id": "QI-12", "name": "content-addressed artifact manifest", "state": "completed", "owner_chapters": ["integrated-reference-architecture"]}
   ],
   "support_state_effect": "none",
   "new_chapter_effect": "none",
   "optional_format_effect": "none",
   "non_claims": [
-    "Roadmap activation is not a QCSA implementation result.",
-    "A bounded QCSA implementation will not by itself establish semantic correctness, performance advantage, safety, or production transfer.",
-    "No chapter-core claim moves above argument at activation.",
-    "No new chapter or optional format is approved at activation.",
+    "Roadmap completion does not convert the bounded QCSA package into a natural-task or production result.",
+    "The bounded QCSA implementation does not establish semantic correctness, performance advantage, safety, or production transfer.",
+    "No chapter-core claim moves above argument through this completion.",
+    "No new chapter or optional format is approved through this completion.",
     "External-human prepublication review is not a completion gate."
   ]
 }

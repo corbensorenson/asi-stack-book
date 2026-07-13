@@ -1,11 +1,11 @@
 {
   "schema_version": "asi_stack.licensing_provenance_inventory.v0",
   "decision_state": "decided",
-  "operative_license": "conditional_v2.0.0_v2.1.0_and_v2.2.0_path_routed_split_otherwise_all_rights_reserved",
+  "operative_license": "conditional_v2.0.0_v2.1.0_v2.2.0_and_v2.3.0_path_routed_split_otherwise_all_rights_reserved",
   "generated_from": {
     "policy": "licensing/provenance_policy.json",
-    "policy_sha256": "4bccb1150e204949337e9eaa03ff47cf56002df7dc6527beeafced9f407a9862",
-    "file_set_command": "git ls-files --cached --others --exclude-standard -z",
+    "policy_sha256": "3ff4cedeaa89a78134155c74e0c2c55a66482330285c87f4b4227ef132f820d8",
+    "file_set_command": "git ls-tree -r --name-only v2.3.0 after tag; otherwise git ls-files --cached --others --exclude-standard -z",
     "path_set_sha256": "4a000b65abf1f8053558e6e5fb36a6c2cf4f952d222d4bf13431b2e18865b0cd"
   },
   "summary": {

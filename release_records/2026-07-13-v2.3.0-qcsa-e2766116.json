@@ -1,0 +1,93 @@
+{
+  "record_type": "edition_release",
+  "release_id": "2026-07-13-v2.3.0-qcsa-e2766116",
+  "major_version": "2",
+  "source_commit": "e27661166e9105f37cb36d63b15795f80715ca24",
+  "source_tag": "v2.3.0",
+  "edition_profile": "research_release",
+  "primary_audiences": [
+    "ai_agents",
+    "human_researchers",
+    "interested_humans"
+  ],
+  "derivation_source": "Exact clean commit-bound tested-site bundle from GitHub Actions build run 29234323320; deployed and attested by run 29234640734 without rebuilding.",
+  "artifact_formats": [
+    {
+      "format": "canonical_live_html",
+      "status": "published",
+      "command_or_tool": "GitHub Actions Build tested Pages artifact -> Deploy tested Quarto site",
+      "path_or_uri": "https://corbensorenson.github.io/asi-stack-book/",
+      "notes": "Mutable live channel deployed from the exact tested v2.3.0 bundle and publicly attested against source commit e27661166e9105f37cb36d63b15795f80715ca24 in run 29234640734."
+    },
+    {
+      "format": "immutable_html_site_archive",
+      "status": "published",
+      "command_or_tool": "python3 scripts/build_immutable_site_archive.py and python3 scripts/validate_immutable_site_archive.py",
+      "path_or_uri": "https://github.com/corbensorenson/asi-stack-book/releases/download/v2.3.0/asi-stack-site-v2.3.0-e27661166e9105f37cb36d63b15795f80715ca24.tar.gz",
+      "notes": "19,088,343 bytes; 274 regular-file members; SHA-256 ebb3cccb0841a15a49d7d20ee8d5c7f7dce97dac562ca05068025951274ee28c; public redownload verified byte-for-byte."
+    },
+    {
+      "format": "epub_docx_pdf_audio_and_curated_reader",
+      "status": "not_applicable",
+      "command_or_tool": "docs/v2_3_release_scope.md",
+      "path_or_uri": "",
+      "notes": "These formats and editions are explicitly outside the v2.3.0 release scope and are neither generated nor approved by this record."
+    }
+  ],
+  "validation_commands": [
+    "python3 scripts/run_validation_registry.py --tier deep",
+    "cd lean && lake build",
+    "quarto render --to html",
+    "node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports",
+    "python3 scripts/validate_tested_site_bundle.py --bundle build/ci-pages-tested-e27661166e9105f37cb36d63b15795f80715ca24 --expected-commit e27661166e9105f37cb36d63b15795f80715ca24",
+    "python3 scripts/validate_immutable_site_archive.py --bundle build/ci-pages-tested-e27661166e9105f37cb36d63b15795f80715ca24 --candidate build/immutable-site-archive-v2_3 --version v2.3.0",
+    "gh release download v2.3.0 and byte-for-byte SHA-256 verification",
+    "python3 scripts/validate_public_status_consistency.py --url https://corbensorenson.github.io/asi-stack-book/ --require-clean"
+  ],
+  "validation_status": "pass",
+  "review_status": {
+    "reader_continuity_review": "pass",
+    "source_scaffold_removed": "pass",
+    "audio_script_review": "not_required",
+    "notes": "All internal content, structure, continuity, rendering, browser, proof, evidence, rights, tested-artifact, archive, public-redownload, and attestation gates passed. No external-human prepublication review was requested or claimed."
+  },
+  "companion_material": {
+    "path_or_uri": "",
+    "status": "not_required",
+    "review_notes": "No companion edition is part of this release."
+  },
+  "human_consumption_gate": {
+    "reader_spine_review": "pass",
+    "ebook_layout_review": "not_required",
+    "diagram_image_review": "pass",
+    "bedtime_readability_review": "not_required",
+    "companion_notes_status": "not_required",
+    "notes": "The canonical HTML surface passed internal continuity, live-view, accessibility, and desktop/mobile browser checks; unselected formats remain outside scope."
+  },
+  "audiobook_gate": {
+    "script_review": "not_required",
+    "spoken_treatment_review": "not_required",
+    "metadata_review": "not_required",
+    "chapter_marker_review": "not_required",
+    "audio_spot_check": "not_required",
+    "embedded_epub_check": "not_required",
+    "status": "not_required",
+    "notes": "Audio is outside the v2.3.0 release scope."
+  },
+  "release_notes": "The ASI Stack v2.3.0 completes the Post-v2.2 Implementation and Book Completion Roadmap. It publishes a deterministic twelve-lane QCSA reference package, 2,340 frozen held-out predictions over 60 cases, 13 systems, and three seeds, one 13-stage governed vertical trace, ten non-core dispositions, nine core no-change decisions, and reconciliation across nine existing chapters. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no chapter-core support state was promoted. Tag-bound rights-routing snapshot SHA-256: db8b98dac9327da13fc5c9fbf00ccdf8e1a071b10d2124259a0e31481037b14d.",
+  "residuals": [
+    "All 54 chapter-core claims remain at argument support; this release creates no chapter-core support-state promotion.",
+    "Eight QCSA residuals preserve natural-task, learned-model, evaluator-independence, production, rollback-scope, privacy, security, and universal-grounding burdens.",
+    "The live root and /latest/ channels are mutable; the GitHub Release archive is the immutable v2.3.0 rendered-site artifact.",
+    "EPUB, DOCX, PDF, audio, and curated-reader editions remain outside this release.",
+    "No external-human prepublication review, independent audit, DOI, or external peer review is claimed."
+  ],
+  "non_claims": [
+    "does not prove ASI or AGI capability, production readiness, deployment safety, economic value, or universal governance correctness",
+    "does not promote any chapter-core claim above its recorded argument state",
+    "does not generalize the synthetic QCSA corpus or hand-authored vertical trace to open-world, learned-model, or production behavior",
+    "does not claim matched-resource advantage or active-question value beyond the exact frozen corpus",
+    "does not claim released EPUB, DOCX, PDF, audio, or curated-reader artifacts",
+    "does not claim independent legal review, third-party ownership clearance, external audit, or external-human peer review"
+  ]
+}
