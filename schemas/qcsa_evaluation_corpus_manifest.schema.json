@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_evaluation_corpus_manifest.schema.json",
+  "title": "QCSA Evaluation Corpus Manifest",
+  "type": "object",
+  "required": ["schema_version", "corpus_id", "state", "parent_freeze_commit", "case_count", "families", "family_counts", "split_counts", "required_tags", "case_id_rule", "isolation_rule", "inputs_ref", "inputs_sha256", "labels_ref", "labels_sha256", "held_out_access", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_evaluation_corpus_manifest.v0"},
+    "corpus_id": {"const": "qcsa-reference-180-v0"},
+    "state": {"const": "frozen_generated_after_m3_before_outcomes"},
+    "parent_freeze_commit": {"const": "2aeb2cf92ebc2de54864c6f47439548986d5b18a"},
+    "case_count": {"const": 180},
+    "families": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "string"}, "uniqueItems": true},
+    "family_counts": {"type": "object"},
+    "split_counts": {"type": "object"},
+    "required_tags": {"type": "array", "minItems": 9, "items": {"type": "string"}, "uniqueItems": true},
+    "case_id_rule": {"type": "string", "minLength": 1},
+    "isolation_rule": {"type": "string", "minLength": 1},
+    "inputs_ref": {"const": "experiments/qcsa_reference/corpus/inputs.json"},
+    "inputs_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "labels_ref": {"const": "experiments/qcsa_reference/corpus/labels.json"},
+    "labels_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "held_out_access": {"type": "string", "minLength": 1},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

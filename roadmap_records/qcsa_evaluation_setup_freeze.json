@@ -1,0 +1,108 @@
+{
+  "schema_version": "asi_stack.qcsa_evaluation_setup_freeze.v0",
+  "freeze_id": "qcsa-evaluation-setup-2026-07-13",
+  "state": "frozen_pending_commit_and_hosted_attestation",
+  "parent_implementation_commit": "2aeb2cf92ebc2de54864c6f47439548986d5b18a",
+  "outcome_access": "sealed_pending_setup_commit_attestation",
+  "systems": [
+    "qcsa",
+    "direct_inference_or_retrieval_without_semantic_address",
+    "flat_lexical_retrieval_matched_corpus_and_budget",
+    "flat_embedding_proxy_retrieval_matched_corpus_and_budget",
+    "one_fixed_hierarchy",
+    "random_tree",
+    "frequency_derived_tree",
+    "direct_clarification_without_adaptive_question_policy",
+    "qcsa_without_plural_facets",
+    "qcsa_without_active_questions",
+    "qcsa_without_identity_address_indirection",
+    "qcsa_without_certificate_residual_authority_fields",
+    "qcsa_without_migration_compatibility"
+  ],
+  "baselines": [
+    "direct_inference_or_retrieval_without_semantic_address",
+    "flat_lexical_retrieval_matched_corpus_and_budget",
+    "flat_embedding_proxy_retrieval_matched_corpus_and_budget",
+    "one_fixed_hierarchy",
+    "random_tree",
+    "frequency_derived_tree",
+    "direct_clarification_without_adaptive_question_policy"
+  ],
+  "ablations": [
+    "qcsa_without_plural_facets",
+    "qcsa_without_active_questions",
+    "qcsa_without_identity_address_indirection",
+    "qcsa_without_certificate_residual_authority_fields",
+    "qcsa_without_migration_compatibility"
+  ],
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "held_out_case_count": 60,
+  "bootstrap_resamples": 10000,
+  "files": [
+    {
+      "path": "experiments/qcsa_reference/test_plan.json",
+      "sha256": "525acfd6b8eb601b5c08858c26e263ac7290227de10222ed99d1abfa654e291f"
+    },
+    {
+      "path": "experiments/qcsa_reference/budgets.json",
+      "sha256": "95f76501bf328452908d2d1764338879d9f214e06037f2c201ffc504629b56b1"
+    },
+    {
+      "path": "experiments/qcsa_reference/corpus/inputs.json",
+      "sha256": "afa127113fa0070e3d0d7cf78cdeb7b7c26b5ba9242f2ab69e6bd28ceb093018"
+    },
+    {
+      "path": "experiments/qcsa_reference/corpus/labels.json",
+      "sha256": "23aa4696790a7518782650368e6d0114e34ea507b2f1a905821844f8feae470f"
+    },
+    {
+      "path": "experiments/qcsa_reference/corpus/manifest.json",
+      "sha256": "8f592af8ea505bf025dfa9ca134315be7de40db43c05618bdd198b2aa34abac1"
+    },
+    {
+      "path": "experiments/qcsa_reference/qcsa_ref/evaluation.py",
+      "sha256": "bfb6874e5776afd92d033ebf7598d38c5c1bb6280ddbad547564698c2261a455"
+    },
+    {
+      "path": "scripts/build_qcsa_evaluation_corpus.py",
+      "sha256": "76cffd621510efbd0a1a6206fa4d010c127b625fb405269518b6b5b525effa7f"
+    },
+    {
+      "path": "scripts/validate_qcsa_evaluation_corpus.py",
+      "sha256": "472c6813b62cfc693e7e32fd7519aea86d324ab9e635649dceebd017148c6452"
+    },
+    {
+      "path": "scripts/run_qcsa_evaluation_predictions.py",
+      "sha256": "8e5a6b47272bdce77272554402f106aaaee01f315734256bbce2023bcd6509f1"
+    },
+    {
+      "path": "scripts/qcsa_evaluation_observer.py",
+      "sha256": "1389e3ae39d6372794f4c1fea7c3cfa439a6652fe2722946fc45e70ca67b80ca"
+    },
+    {
+      "path": "scripts/qcsa_independent_evaluator.py",
+      "sha256": "82f165e1dabf59ee82781d2f1a0356ab6c40da2908924d1cc8d652b91bb511bd"
+    },
+    {
+      "path": "schemas/qcsa_evaluation_corpus_manifest.schema.json",
+      "sha256": "b85e3fdf71f8f41a4a6b80069aee8896ed33966a02d4ec309a7b89a11f5f2e1c"
+    },
+    {
+      "path": "schemas/qcsa_evaluation_setup_freeze.schema.json",
+      "sha256": "af61f73fa61338f78e9bf4c6a288ceed4b0d2dc4e6e271ce296e690b8af21dea"
+    }
+  ],
+  "runner_label_isolation": "runner reads public inputs, interaction tokens, plan, budget, systems, and execution authorization; it never reads evaluator labels",
+  "observer_independence": "observer reads predictions and evaluator labels but imports no candidate, baseline, atlas, or round-trip implementation",
+  "decision_policy": "frozen thresholds, per-family results, 10000-resample paired intervals, and Pareto frontiers; no blended score",
+  "support_state_effect": "none",
+  "non_claims": [
+    "Freezing methods and labels is not an evaluation outcome.",
+    "The workload is synthetic, bounded, public-safe, and not an open-world or natural-task benchmark.",
+    "Internal evaluator separation is not external replication or a safety guarantee."
+  ]
+}

@@ -2156,6 +2156,93 @@
       "prohibited_inference": "The deterministic fixture implementation does not establish semantic correctness, learned routing quality, matched advantage, safety, security, privacy, universal grounding, complete unlearning, production transfer, external independence, AGI, ASI, or chapter-core support promotion.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_behavioral_audit_not_independent"
+    },
+    {
+      "script": "validate_qcsa_evaluation_corpus.py",
+      "args": [],
+      "input_contract": "The deterministic 180-case public-safe QCSA corpus with evaluator-only labels, six exact families, 72/48/60 train/development/held-out separation, nine required adversarial tags in every split, opaque identifiers, and content digests.",
+      "input_artifacts": [
+        "scripts/build_qcsa_evaluation_corpus.py",
+        "scripts/validate_qcsa_evaluation_corpus.py",
+        "schemas/qcsa_evaluation_corpus_manifest.schema.json",
+        "experiments/qcsa_reference/corpus/inputs.json",
+        "experiments/qcsa_reference/corpus/labels.json",
+        "experiments/qcsa_reference/corpus/manifest.json"
+      ],
+      "output_contract": "Rebuild byte-identically; validate schema, exact family/split/tag coverage, label isolation, template/object/descendant isolation, parent freeze ancestry, and digests; reject ten corpus mutations.",
+      "output_assertions": [
+        "180 deterministic cases",
+        "six families",
+        "72/48/60 split",
+        "12/8/10 per family",
+        "nine tags in each split",
+        "opaque IDs",
+        "isolated labels",
+        "ten rejecting mutations"
+      ],
+      "claim_scope": "Corpus construction and isolation properties for the exact synthetic QCSA fixture set.",
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "label leak",
+        "duplicate ID",
+        "split drift",
+        "missing tag",
+        "template leak",
+        "object leak",
+        "clarification leak",
+        "missing label",
+        "parent drift",
+        "family erasure"
+      ],
+      "prohibited_inference": "Corpus validity does not establish evaluation quality, natural prevalence, learned-model performance, semantic correctness, safety, privacy, or production transfer.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "script": "validate_qcsa_evaluation_setup_freeze.py",
+      "args": [],
+      "input_contract": "A content-addressed, outcome-sealed evaluation setup binding the candidate, seven baselines, five ablations, 60 held-out cases, three seeds, label-isolated runner, separately implemented observer, 10000-resample paired intervals, Pareto policy, budgets, and decision thresholds.",
+      "input_artifacts": [
+        "scripts/build_qcsa_evaluation_setup_freeze.py",
+        "scripts/validate_qcsa_evaluation_setup_freeze.py",
+        "scripts/run_qcsa_evaluation_predictions.py",
+        "scripts/qcsa_evaluation_observer.py",
+        "experiments/qcsa_reference/qcsa_ref/evaluation.py",
+        "schemas/qcsa_evaluation_setup_freeze.schema.json",
+        "roadmap_records/qcsa_evaluation_setup_freeze.json"
+      ],
+      "output_contract": "Replay the setup freeze byte-identically; validate all bound digests and method sets; statically enforce runner/label and observer/candidate separation; reject twelve setup mutations while outcomes remain sealed pending setup commit attestation.",
+      "output_assertions": [
+        "13 exact systems",
+        "three seeds",
+        "60 held out",
+        "runner label isolation",
+        "observer implementation separation",
+        "10000 resamples",
+        "Pareto policy",
+        "13 bound files",
+        "twelve rejecting mutations",
+        "outcomes sealed"
+      ],
+      "claim_scope": "Pre-outcome reproducibility and evaluator-separation properties of the exact bounded QCSA evaluation setup.",
+      "negative_controls": "validator_owned",
+      "negative_control_cases": [
+        "candidate removal",
+        "baseline removal",
+        "ablation removal",
+        "seed drift",
+        "case drift",
+        "bootstrap drift",
+        "opened outcomes",
+        "support promotion",
+        "digest mutation",
+        "label import",
+        "self-confirmation",
+        "blended score"
+      ],
+      "prohibited_inference": "A frozen setup does not establish a favorable result, matched advantage, semantic preservation, safety, privacy, external independence, production transfer, AGI, ASI, or chapter-core support movement.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "non_claims": [

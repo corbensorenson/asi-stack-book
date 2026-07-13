@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 4107,
+    "path_count": 4121,
     "by_license_route": {
       "Apache-2.0": 682,
       "CC-BY-4.0": 500,
-      "excluded-no-grant": 2925
+      "excluded-no-grant": 2939
     },
     "unresolved_count": 0
   },
@@ -18746,6 +18746,27 @@
       "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
+      "path": "experiments/qcsa_reference/corpus/inputs.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
+      "path": "experiments/qcsa_reference/corpus/labels.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
+      "path": "experiments/qcsa_reference/corpus/manifest.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
       "path": "experiments/qcsa_reference/fixtures/envelope_examples.expected_invalid.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
@@ -18796,6 +18817,13 @@
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/certificate.py",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
+      "path": "experiments/qcsa_reference/qcsa_ref/evaluation.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
@@ -22442,6 +22470,13 @@
       "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
+      "path": "roadmap_records/qcsa_evaluation_setup_freeze.json",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
       "path": "roadmap_records/qcsa_reference_implementation_freeze.json",
       "artifact_class": "public_metadata_or_governance_record",
       "provenance_status": "author_ownership_assertion_required",
@@ -23121,6 +23156,20 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "schemas/qcsa_evaluation_corpus_manifest.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
+      "path": "schemas/qcsa_evaluation_setup_freeze.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
       "path": "schemas/qcsa_reference_artifact.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -23569,6 +23618,20 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "scripts/build_qcsa_evaluation_corpus.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
+      "path": "scripts/build_qcsa_evaluation_setup_freeze.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
       "path": "scripts/build_qcsa_reference_implementation.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -23716,6 +23779,13 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "scripts/qcsa_evaluation_observer.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
       "path": "scripts/qcsa_independent_evaluator.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
@@ -23749,6 +23819,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/register_qcsa_evaluation_validators.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "scripts/register_qcsa_ingestion_validator.py",
@@ -23896,6 +23973,13 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/run_qcsa_evaluation_predictions.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "scripts/run_rankfold_public_safe_probe.py",
@@ -25184,6 +25268,20 @@
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "Apache-2.0",
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_qcsa_evaluation_corpus.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+    },
+    {
+      "path": "scripts/validate_qcsa_evaluation_setup_freeze.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
     },
     {
       "path": "scripts/validate_qcsa_ingestion.py",

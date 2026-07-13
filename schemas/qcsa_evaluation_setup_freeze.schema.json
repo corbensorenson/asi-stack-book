@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_evaluation_setup_freeze.schema.json",
+  "title": "QCSA Evaluation Setup Freeze",
+  "type": "object",
+  "required": ["schema_version", "freeze_id", "state", "parent_implementation_commit", "outcome_access", "systems", "baselines", "ablations", "seeds", "held_out_case_count", "bootstrap_resamples", "files", "runner_label_isolation", "observer_independence", "decision_policy", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_evaluation_setup_freeze.v0"},
+    "freeze_id": {"const": "qcsa-evaluation-setup-2026-07-13"},
+    "state": {"const": "frozen_pending_commit_and_hosted_attestation"},
+    "parent_implementation_commit": {"const": "2aeb2cf92ebc2de54864c6f47439548986d5b18a"},
+    "outcome_access": {"const": "sealed_pending_setup_commit_attestation"},
+    "systems": {"type": "array", "minItems": 13, "maxItems": 13, "uniqueItems": true, "items": {"type": "string"}},
+    "baselines": {"type": "array", "minItems": 7, "maxItems": 7, "uniqueItems": true, "items": {"type": "string"}},
+    "ablations": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+    "seeds": {"const": [11, 29, 47]},
+    "held_out_case_count": {"const": 60},
+    "bootstrap_resamples": {"const": 10000},
+    "files": {"type": "array", "minItems": 12, "items": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}},
+    "runner_label_isolation": {"const": "runner reads public inputs, interaction tokens, plan, budget, systems, and execution authorization; it never reads evaluator labels"},
+    "observer_independence": {"const": "observer reads predictions and evaluator labels but imports no candidate, baseline, atlas, or round-trip implementation"},
+    "decision_policy": {"const": "frozen thresholds, per-family results, 10000-resample paired intervals, and Pareto frontiers; no blended score"},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}
