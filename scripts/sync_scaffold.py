@@ -865,6 +865,33 @@ def write_claim_matrix(structure: dict) -> None:
                 f"{summary.get('chapter_core_claims_remaining_at_argument', len(chapters))} chapter core claims remaining at `argument`."
             )
 
+    qcsa_reconciliation = """## QCSA P2–P3 Evidence Reconciliation (2026-07-13)
+
+This overlay supersedes pre-implementation QCSA limits in earlier snapshots.
+The exact local result is bounded synthetic/internal evidence; every chapter-
+core state below remains `argument`.
+
+| Chapter owner | Bounded repository evidence | Negative result or remaining boundary | Core state |
+|---|---|---|---|
+| `cognitive-compilation-and-semantic-ir` | Twelve typed lanes and one 13-stage vertical replay. | Active questions added no held-out accuracy; no natural compiler or learned question policy was tested. | `argument` |
+| `virtual-context-abi` | Full object accuracy was `1.000000`; no-plural and no-indirection ablations fell to `0.916667` and `0.900000`. | Synthetic fixtures do not establish context adequacy, retrieval quality, or deployed VCM behavior. | `argument` |
+| `claim-ledgers-and-belief-revision` | Typed evidence stayed separate from identity/truth/authority; the internal observer recorded zero structural loss. | Internal labels and graph integrity do not establish truth or independent construct validity. | `argument` |
+| `runtime-adapters-tool-permissions-and-human-approval` | Removing authority fields caused 9 unsafe releases; one temporary-file write was separately authorized, observed, receipted, and rolled back. | One reversible local effect is not deployed adapter, approval-service, or security evidence. | `argument` |
+| `inter-stack-protocols-identity-and-economic-exchange` | Same-SOID compatibility was `1.000000`; no-indirection compatibility fell to `0.400000`. | No peer federation, credential, dispute, payment, or settlement ran. | `argument` |
+| `routing-heads-and-specialist-cores` | Object accuracy and prevention were `1.000000`; Brier was `0.082026`; all 10 vertical attacks failed closed. | Task accuracy tied at `1.000000`, operation ratio was `1.913386`, and no learned router or trained specialist ran. | `argument` |
+| `compact-generative-systems-and-residual-honesty` | Exact structural round trip had zero observer disagreement and preserved residuals. | No compression, semantic-utility, repair, or latency advantage was established. | `argument` |
+| `data-engines-continual-learning-and-unlearning` | Full migration compatibility was `1.000000`; no-compatibility task accuracy fell to `0.833333` and compatibility to zero. | No learning, forgetting, influence removal, privacy, or storage erasure ran. | `argument` |
+| `integrated-reference-architecture` | One 13-stage path crossed intent through a real temporary effect, observation, receipts, same-SOID migration, and exact rollback. | The path is hand-authored, local, internally observed, zero-model, and not deployment, AGI, or ASI evidence. | `argument` |
+
+Canonical records: `experiments/qcsa_reference/results/evaluation_results.json`,
+`claim_decisions/qcsa_reference_evaluation_dispositions.json`,
+`docs/qcsa_reference_evaluation_report.md`,
+`experiments/qcsa_vertical_reference/results/vertical_result.json`, and
+`docs/qcsa_governed_vertical_reference_report.md`. Five exact non-core
+mechanism findings are marked `promote` for bounded evidence review, but no
+automatic support-state transition has occurred.
+"""
+
     text = f"""# Claim/Evidence Matrix
 
 This matrix contains one core claim per dynamic chapter and records the conservative evidence state used by the current manuscript.
@@ -883,6 +910,8 @@ The current accepted non-core upward transitions are summarized in `docs/non_cor
 | Claim ID | Chapter ID | Claim | Claim label | Current support state | Assigned sources | Current evidence | Source-note chapter mapping | Claim-source mapping | Open gap | What would promote this |
 |---|---|---|---|---|---|---|---|---|---|---|
 {chr(10).join(rows)}
+
+{qcsa_reconciliation}
 
 ## Claim Labels
 

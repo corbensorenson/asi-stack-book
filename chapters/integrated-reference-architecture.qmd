@@ -104,7 +104,7 @@ A single all-purpose agent loop can make this worse by turning every boundary in
 
 [integrated-reference-architecture.core, label: Design rationale, support: argument] The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates.
 
-The claim remains at `argument` support. The source notes support architecture synthesis across intent, command contracts, plans, VCM, routing, claims, execution, benchmarks, SCFs, and report-first implementation references. They do not show a completed integrated stack run here.
+The claim remains at `argument` support. The source notes support architecture synthesis across intent, command contracts, plans, VCM, routing, claims, execution, benchmarks, SCFs, and report-first implementation references. The bounded QCSA vertical trace now shows one completed 13-stage local reversible run, but it does not show the broad learned-model, multi-service, deployed integrated stack described by the core claim.
 
 ### Claim-source mapping status
 
@@ -287,10 +287,22 @@ what can execute and which receipts must return.
 The interface contributes three end-to-end invariants. Identity survives atlas
 and hardware change. Address confidence never substitutes for claim support or
 capability authority. An atlas migration either preserves the SOID for every
-supported old address or fails explicitly and rolls back. The
-`qcsa_whitepaper` makes these contracts precise and proposes artifacts and
-falsification tests, but it does not implement this reference trace or promote
-the chapter's core claim.
+supported old address or fails explicitly and rolls back.
+
+The bounded reference trace now implements this control plane across thirteen
+stages, from intent and semantic IR through one independently authorized and
+observed temporary-file effect, receipt graph, same-SOID migration, and
+byte-exact rollback. Ten adversarial paths fail closed and eight limitations
+remain open. Together with the 12-lane artifact package and frozen evaluation,
+this replaces the earlier “concept only” status with a runnable reference
+slice.
+
+It is still one synthetic, hand-authored, internally observed path with no
+model calls, external humans, production authority, distributed services, or
+irreversible effects. P2 failed its matched-resource advantage gate. The trace
+therefore supports integration mechanics and falsifiability, not a deployed
+stack, general performance, safety, AGI, or ASI; the chapter core claim remains
+at `argument`.
 
 ## Interfaces
 
@@ -487,7 +499,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

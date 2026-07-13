@@ -55,13 +55,13 @@ def main() -> None:
             errors.append(f"{license_id} official legal text digest mismatch")
     license_md = (ROOT / "LICENSE.md").read_text(encoding="utf-8")
     notice = (ROOT / "NOTICE.md").read_text(encoding="utf-8")
-    scope = (ROOT / "docs/v2_2_release_scope.md").read_text(encoding="utf-8")
-    for phrase in ("v2.0.0", "v2.1.0", "v2.2.0", "CC-BY-4.0", "Apache-2.0", "excluded-no-grant", "all rights are reserved"):
+    scope = (ROOT / "docs/v2_3_release_scope.md").read_text(encoding="utf-8")
+    for phrase in ("v2.0.0", "v2.1.0", "v2.2.0", "v2.3.0", "CC-BY-4.0", "Apache-2.0", "excluded-no-grant", "all rights are reserved"):
         if phrase not in license_md:
             errors.append(f"LICENSE.md missing routed boundary: {phrase}")
-    if routing.get("release_candidate") != "v2.2.0":
-        errors.append("rights routing does not identify the v2.2.0 candidate")
-    if "v2.2.0" not in notice or "canonical live/research HTML book only" not in scope:
+    if routing.get("release_candidate") != "v2.3.0":
+        errors.append("rights routing does not identify the v2.3.0 candidate")
+    if "v2.3.0" not in notice or "canonical live/research HTML book only" not in scope:
         errors.append("release notice or selected-format scope is incomplete")
     if errors:
         raise SystemExit("Final-release rights routing validation failed:\n - " + "\n - ".join(errors))

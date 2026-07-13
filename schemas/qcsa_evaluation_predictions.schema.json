@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_evaluation_predictions.schema.json",
+  "title": "QCSA Held-out Predictions",
+  "type": "object",
+  "required": ["schema_version", "state", "input_ref", "input_sha256", "plan_ref", "systems", "seeds", "held_out_case_count", "prediction_count", "records", "execution_accounting", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_evaluation_predictions.v0"},
+    "state": {"const": "held_out_predictions_complete_labels_not_loaded_by_runner"},
+    "input_ref": {"const": "experiments/qcsa_reference/corpus/inputs.json"},
+    "input_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "plan_ref": {"const": "experiments/qcsa_reference/test_plan.json"},
+    "systems": {"type": "array", "minItems": 13, "maxItems": 13, "uniqueItems": true, "items": {"type": "string"}},
+    "seeds": {"const": [11, 29, 47]},
+    "held_out_case_count": {"const": 60},
+    "prediction_count": {"const": 2340},
+    "records": {"type": "array", "minItems": 2340, "maxItems": 2340, "items": {"type": "object", "required": ["case_id", "family", "seed", "system", "output", "record_digest"], "properties": {"case_id": {"pattern": "^qc:[0-9a-f]{16}$"}, "family": {"type": "string"}, "seed": {"enum": [11, 29, 47]}, "system": {"type": "string"}, "output": {"type": "object"}, "record_digest": {"pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}},
+    "execution_accounting": {"type": "object"},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

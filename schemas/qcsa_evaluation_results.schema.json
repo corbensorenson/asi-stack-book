@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_evaluation_results.schema.json",
+  "title": "QCSA Evaluation Results",
+  "type": "object",
+  "required": ["schema_version", "state", "prediction_ref", "prediction_sha256", "observer_ref", "observer_sha256", "labels_ref", "labels_sha256", "case_count", "prediction_count", "systems", "seeds", "metric_definitions", "aggregate", "by_seed", "by_family", "paired_bootstrap", "pareto_frontiers", "decision_rules", "atomic_records", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_evaluation_results.v0"},
+    "state": {"const": "frozen_synthetic_held_out_result"},
+    "prediction_ref": {"const": "experiments/qcsa_reference/results/evaluation_predictions.json"},
+    "prediction_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "observer_ref": {"const": "scripts/qcsa_evaluation_observer.py"},
+    "observer_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "labels_ref": {"const": "experiments/qcsa_reference/corpus/labels.json"},
+    "labels_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "case_count": {"const": 60},
+    "prediction_count": {"const": 2340},
+    "systems": {"type": "array", "minItems": 13, "maxItems": 13, "uniqueItems": true, "items": {"type": "string"}},
+    "seeds": {"const": [11, 29, 47]},
+    "metric_definitions": {"type": "object"},
+    "aggregate": {"type": "object", "minProperties": 13},
+    "by_seed": {"type": "object", "minProperties": 13},
+    "by_family": {"type": "object", "minProperties": 13},
+    "paired_bootstrap": {"type": "object"},
+    "pareto_frontiers": {"type": "object", "minProperties": 6},
+    "decision_rules": {"type": "object"},
+    "atomic_records": {"type": "array", "minItems": 2340, "maxItems": 2340, "items": {"type": "object"}},
+    "support_state_effect": {"const": "none_pending_claim_disposition"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

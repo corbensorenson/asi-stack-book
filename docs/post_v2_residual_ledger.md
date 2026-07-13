@@ -1,6 +1,6 @@
 # Post-v2 Empirical Residual Ledger
 
-Recorded: 2026-07-10
+Recorded: 2026-07-13
 
 This ledger preserves what the three completed empirical programs did not
 close. A completed run is not a discharged residual.
@@ -21,6 +21,19 @@ close. A completed run is not a discharged residual.
 | `COND-01` | Conditional lane | Model-weight custody and hardware roots of trust lack a disposable attestation environment. | deferred; activation absent | Non-secret measured-boot/device-binding/rotation/revocation environment is registered. |
 | `COND-02` | Conditional lane | Personal compute hives lack a distinct-principal multi-node environment. | deferred; activation absent | A disposable multi-node distinct-principal environment is registered. |
 | `COND-03` | Conditional lane | Circle/Coil lacks a trainable matched model-quality implementation. | deferred; activation absent | A trainable implementation and matched baseline are registered. |
+
+## QCSA P2–P3 Residuals
+
+| Residual ID | Owner | Residual | State | Reopen condition |
+|---|---|---|---|---|
+| `QCSA-01` | QCSA evaluation | The task-decision label ceiling let QCSA and the selected best baseline both score `1.000000` while their object accuracy differed sharply. | persisted; matched-advantage claim refuted on the exact corpus | A frozen natural or adversarial workload makes correct downstream decisions depend on correct identity and reproduces a positive paired result across models and seeds. |
+| `QCSA-02` | QCSA resources | QCSA used `1.913386` times the selected baseline operation count, exceeding both preregistered resource ceilings. | persisted; resource gates failed | A matched implementation reaches the registered quality/governance frontier within its resource ceiling under observed latency and complete governance-cost accounting. |
+| `QCSA-03` | QCSA questions | Removing active questions left object and task accuracy at `1.000000`; the full method asked few questions and gained no decision accuracy. | persisted; exact active-question value refuted | A learned, costed question policy improves calibrated decisions on ambiguous held-out natural tasks over direct inference and fixed clarification baselines. |
+| `QCSA-04` | QCSA validity | Inputs, labels, implementations, and separately coded observer were internally authored synthetic artifacts; seed repetitions mostly replay deterministic behavior. | persisted | Multiple learned models, natural data, independently assessed evaluator validity, and external-context replication reproduce the bounded findings. |
+| `QCSA-05` | QCSA routing | No learned router, trained specialist, or real-model deliberation candidate participated in P2 or P3. | persisted | Ambiguous held-out work causes learned routing, fallback, and abstention to differ usefully under matched budgets while preserving the fifteen known extra-compute harms. |
+| `QCSA-06` | QCSA migration | P2 migration covers deterministic same/fail/merge/split/stale fixtures; P3 covers one same-SOID address change. | persisted | Distributed identities, descendants, caches, backups, conflicts, and heterogeneous services migrate and roll back under prospectively chosen authority. |
+| `QCSA-07` | QCSA vertical path | The vertical path released one reversible temporary-file effect with an internal byte observer. | persisted | Multiple OS/service/external effects, irreversible-path refusal, revocation, hidden-state discovery, recovery objectives, and independent observation demonstrate effect-complete rollback. |
+| `QCSA-08` | QCSA mechanism review | Five exact mechanism findings are marked `promote` for bounded review but have not passed a separate accepted evidence-transition transaction. | open by design; no automatic movement | Each claim independently satisfies the evidence-transition schema, review, negative-result, limitation, downgrade, and public-ledger requirements—or is narrowed/refuted instead. |
 
 These residuals block promotion but do not make the completed experiments
 failures. Negative and zero-use outcomes are part of the evidence packet.

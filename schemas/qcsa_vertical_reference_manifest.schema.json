@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_vertical_reference_manifest.schema.json",
+  "title": "QCSA Governed Vertical Reference Manifest",
+  "type": "object",
+  "required": ["schema_version", "manifest_id", "state", "descendants", "result_sha256", "total_bytes", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_vertical_reference_manifest.v0"},
+    "manifest_id": {"const": "qcsa-governed-vertical-reference-manifest-2026-07-13"},
+    "state": {"const": "content_addressed_complete"},
+    "descendants": {"type": "array", "minItems": 5, "items": {"type": "object", "required": ["path", "sha256", "bytes"], "properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$"}, "bytes": {"type": "integer", "minimum": 1}}, "additionalProperties": false}},
+    "result_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "total_bytes": {"type": "integer", "minimum": 1},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

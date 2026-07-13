@@ -295,9 +295,20 @@ This distinction makes typed failure sharper. `unresolved_identity`,
 `ambiguous_address`, `stale_atlas_epoch`, `cross_facet_conflict`,
 `insufficient_consumer_adequacy`, and `migration_unresolved` are legitimate
 results. They should trigger broader retrieval, another question, fallback,
-abstention, or review rather than nearest-leaf coercion. The
-`qcsa_whitepaper` provides the design rationale only; no resolver, atlas,
-context-quality result, or semantic-correctness proof is present.
+abstention, or review rather than nearest-leaf coercion. The QCSA reference
+package now supplies a deterministic resolver/atlas fixture, certificate
+implementation, and one materialized context snapshot in the governed vertical
+trace. Full QCSA resolved all 180 seeded held-out records; the
+no-plural-facets ablation fell to 0.916667 object accuracy. The vertical trace
+also rejected ambiguous candidates and stale epochs before effect.
+
+Those results support only the exact fixture mechanics. The corpus exposes
+template structure, no deployed VCM service exists, and context adequacy was
+hand-authored rather than measured on natural tasks. The active-question
+ablation found no decision benefit, and the overall matched-resource gate
+failed. The ABI should adopt the stable-identity, plural-address, certificate,
+typed-fault, and migration records without treating them as semantic-quality
+or production evidence; the core claim remains at `argument`.
 
 ## Interfaces
 
@@ -570,7 +581,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

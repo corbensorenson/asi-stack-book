@@ -365,10 +365,10 @@ Any release must bind one clean tested commit to:
 | M1 — Public activation reconciled | completed | Commit `65120df163822a423952fe43a2231e5c65125327`; build `29228034217`; deploy/attest `29228280321`. |
 | M2 — QCSA implementation frozen | completed | `ADR-QCSA-001`, package manifest, common envelope, fixtures, budgets, 180-case protocol, and registered ten-mutation gate. |
 | M3 — QCSA artifact stack implemented | completed | Twelve content-addressed artifacts, two byte-identical clean replays, twelve lane controls, and fifteen rejecting integrated mutations. |
-| M4 — QCSA evaluation dispositioned | in progress | Frozen held-out results, baselines, ablations, costs, residuals, and decisions. |
-| M5 — Vertical reference path complete | pending | Clean replay, adversarial paths, migration/rollback exercise, and readable trace. |
-| M6 — Book/evidence reconciliation complete | pending | Chapters, appendices, ledgers, vectors, tests/proofs, products, and changelog agree. |
-| M7 — Release/no-release transaction complete | pending | Immutable release chain or exact no-release declaration; roadmap terminal. |
+| M4 — QCSA evaluation dispositioned | completed | 2,340 frozen predictions; failed matched-advantage/resource gates; ten non-core and nine core decisions; exact report and mutation gate. |
+| M5 — Vertical reference path complete | completed | Thirteen-stage replay, one observed temporary effect, same-SOID migration, exact rollback, ten fail-closed attacks, and readable trace. |
+| M6 — Book/evidence reconciliation complete | completed | Nine chapters, source note, Appendix C, evidence plan/vectors, residuals, changelog, and fifteen-mutation cross-book gate agree. |
+| M7 — Release/no-release transaction complete | in progress | Canonical HTML-only v2.3.0 selected; clean commit, hosted build/deploy/attestation, tag, archive, public redownload, and terminal records remain. |
 
 ## Risk register
 

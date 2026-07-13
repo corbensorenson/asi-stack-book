@@ -210,10 +210,22 @@ This yields three additional compiler obligations:
 | Address | A Semantic Address Certificate records context, consumer, atlas epoch, candidate paths, confidence, provenance, permitted use, residuals, and revalidation triggers. |
 | Route | Target lowering independently binds resources, authority, validators, fallback, and receipts; semantic similarity cannot grant execution capability. |
 
-The `qcsa_whitepaper` source supplies this design contract and a reference
-inference protocol. It does not supply a semantic compiler, a question-policy
-benchmark, an SOID/SAC implementation, or proof that lowering preserves
-open-domain meaning, so the core claim remains at `argument`.
+The bounded QCSA reference package now implements SOID/SAC records, plural
+atlas views, a value-minus-cost question trace, physical-route lowering, and a
+separately observed vertical trace. On 60 synthetic held-out cases repeated
+over three seeds, full QCSA resolved every labelled object and preserved every
+evaluator-labelled structure. That is useful implementation evidence, but the
+workload is template-generated and the observer is internal. It does not show
+that a compiler preserves open-domain meaning or generates correct target
+artifacts.
+
+The question-policy result is negative. Removing active questions left object
+and task-decision accuracy at 1.000 on the frozen corpus, while full QCSA asked
+questions on 0.033 of records. The vertical trace demonstrates one explicit
+environment clarification, not learned question value. The compiler owner
+should therefore keep question selection as a governed interface while
+treating adaptive-question advantage as refuted for this exact workload. The
+core claim remains at `argument`.
 
 ## Interfaces
 
@@ -366,7 +378,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -178,9 +178,18 @@ support state, attacks, revisions, and permitted evidential use.
 
 Typed hyperedges also let a claim retain role structure for events with many
 participants, times, quantities, conditions, and receipts without duplicating
-their identities. This remains an architectural proposal from
-`qcsa_whitepaper`; it provides no ontology-completeness, belief-correctness, or
-claim-verification result.
+their identities. The bounded implementation now rejects dangling evidence,
+preserves contradictions, and selects the evaluator-labelled proposition in
+all held-out evidence-revision fixtures. The governed vertical trace likewise
+keeps the proposition, evidence, provenance, permitted use, and authority
+records separate.
+
+This is record-integrity and exact synthetic task evidence, not
+ontology-completeness, belief correctness, source adequacy, or truth. The
+held-out labels were constructed from the same finite fixture family, and no
+natural contradictory corpus or independent truth adjudication was used. The
+claim ledger remains the only owner of support-state movement, and this core
+claim remains at `argument`.
 
 ## Interfaces
 
@@ -345,7 +354,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

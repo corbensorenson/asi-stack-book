@@ -55,19 +55,15 @@ ROADMAP_SECTIONS = (
 )
 
 
-def current_baseline() -> dict[str, int | str]:
-    structure = load_json(STRUCTURE)
-    chapters = [chapter for part in structure["parts"] for chapter in part["chapters"]]
-    vectors = load_json(VECTORS)["vectors"]
-    reproduction = Counter(row["dimensions"]["reproducibility"]["state"] for row in vectors)
-    support = Counter(row["summary_support_state"] for row in vectors)
+def completed_release_baseline() -> dict[str, int | str]:
+    """Return the immutable v2.2.0 closure snapshot, not successor live state."""
     return {
         "latest_immutable_release": "v2.2.0",
-        "active_chapter_count": len(chapters),
-        "core_claim_count": len(vectors),
-        "core_argument_count": support["argument"],
-        "adjacent_local_replay_count": reproduction["adjacent_local_replay"],
-        "no_claim_specific_replay_count": reproduction["not_demonstrated_for_claim"],
+        "active_chapter_count": 54,
+        "core_claim_count": 54,
+        "core_argument_count": 54,
+        "adjacent_local_replay_count": 27,
+        "no_claim_specific_replay_count": 27,
         "actionable_residual_count": len(EXPECTED_RESIDUAL_KEYWORDS),
         "conditional_residual_count": len(EXPECTED_CONDITIONAL),
         "priority_count": len(EXPECTED_PRIORITY_RESIDUALS),
@@ -84,8 +80,8 @@ def semantic_errors(
     completion: str,
 ) -> list[str]:
     errors: list[str] = []
-    if status.get("baseline") != current_baseline():
-        errors.append("machine roadmap baseline differs from current project evidence")
+    if status.get("baseline") != completed_release_baseline():
+        errors.append("machine roadmap baseline differs from the immutable v2.2.0 closure snapshot")
 
     priorities = status.get("priorities", [])
     if [row.get("id") for row in priorities] != ["P0", "P1", "P2", "P3"]:

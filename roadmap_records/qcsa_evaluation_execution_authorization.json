@@ -1,0 +1,32 @@
+{
+  "schema_version": "asi_stack.qcsa_evaluation_execution_authorization.v0",
+  "state": "authorized_for_outcome_execution",
+  "authorized_date": "2026-07-13",
+  "authority": "Corben Sorenson",
+  "setup_commit": "57cb0f2a127a1b6aa651f3d1398741990d901d5c",
+  "setup_freeze_ref": "roadmap_records/qcsa_evaluation_setup_freeze.json",
+  "hosted_build": {
+    "run_id": 29231298514,
+    "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/29231298514",
+    "conclusion": "success"
+  },
+  "deploy_and_attestation": {
+    "run_id": 29231557981,
+    "url": "https://github.com/corbensorenson/asi-stack-book/actions/runs/29231557981",
+    "conclusion": "success"
+  },
+  "allowed_action": "execute the frozen 60-case held-out QCSA evaluation exactly once per deterministic replay and score it with the frozen independent observer",
+  "prohibited_changes": [
+    "candidate or baseline methods",
+    "ablation methods",
+    "corpus inputs or labels",
+    "seeds or budgets",
+    "metrics, thresholds, resample count, or disposition rules"
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "Authorization is not an evaluation result.",
+    "Hosted build and deployment attest the setup artifact chain, not QCSA quality or safety.",
+    "The synthetic evaluation remains bounded and internally authored."
+  ]
+}

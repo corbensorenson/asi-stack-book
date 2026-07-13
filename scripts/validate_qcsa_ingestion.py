@@ -36,7 +36,8 @@ REQUIRED_NOTE_TERMS = [
     "Semantic-to-physical",
     "atlas epoch",
     "open-world",
-    "no implementation, benchmark, formal semantic-correctness proof, safety validation, or demonstrated performance advantage",
+    "The source itself remains conceptual architecture and design rationale",
+    "Local Implementation And Evaluation Update (2026-07-13)",
 ]
 
 
@@ -109,7 +110,7 @@ def validate(data: dict) -> list[str]:
             if mapping.get("passage_review_state") != "reviewed" or not mapping.get("passage_refs"):
                 errors.append(f"{chapter_id}: QCSA mapping is not passage reviewed")
             limits = str(mapping.get("limits", "")).lower()
-            if not any(term in limits for term in ["does not", "no qcsa", "not establish"]):
+            if not any(term in limits for term in ["does not", "not establish", "no natural", "no learned", "no useful", "no peer", "no learning"]):
                 errors.append(f"{chapter_id}: QCSA mapping lost its non-claim boundary")
         if SOURCE_ID not in owner["text"]:
             errors.append(f"{chapter_id}: prose/source crosswalk does not name QCSA source")
@@ -136,7 +137,7 @@ def mutation_controls(base: dict) -> list[str]:
     new_chapter["structure"]["parts"][0]["chapters"].append({"id": "qcsa", "evidence_level": "argument"})
     mutations.append(("chapter invention", new_chapter))
     boundary_erasure = copy.deepcopy(base)
-    boundary_erasure["note"] = boundary_erasure["note"].replace("no implementation, benchmark, formal semantic-correctness proof, safety validation, or demonstrated performance advantage", "architecture complete")
+    boundary_erasure["note"] = boundary_erasure["note"].replace("The source itself remains conceptual architecture and design rationale", "The source proves the completed architecture")
     mutations.append(("non-claim erasure", boundary_erasure))
     for name, mutated in mutations:
         if not validate(mutated):

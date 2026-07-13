@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_evaluation_dispositions.schema.json",
+  "title": "QCSA Evaluation Dispositions",
+  "type": "object",
+  "required": ["schema_version", "decision_set_id", "recorded_date", "result_ref", "review_status", "non_core_dispositions", "core_claim_decisions", "summary", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_evaluation_dispositions.v0"},
+    "decision_set_id": {"const": "qcsa-reference-evaluation-dispositions-2026-07-13"},
+    "recorded_date": {"const": "2026-07-13"},
+    "result_ref": {"const": "experiments/qcsa_reference/results/evaluation_results.json"},
+    "review_status": {"const": "accepted_internal_bounded_synthetic_no_external_human_review"},
+    "non_core_dispositions": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object", "required": ["claim_id", "claim", "disposition", "basis", "limitations"], "properties": {"claim_id": {"type": "string"}, "claim": {"type": "string"}, "disposition": {"enum": ["promote", "narrow", "no_change", "demote", "refute"]}, "basis": {"type": "string"}, "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}}}, "additionalProperties": false}},
+    "core_claim_decisions": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"type": "object", "required": ["claim_id", "chapter_id", "decision", "current_support_state", "support_state_effect", "basis"], "properties": {"claim_id": {"type": "string"}, "chapter_id": {"type": "string"}, "decision": {"const": "no_change"}, "current_support_state": {"const": "argument"}, "support_state_effect": {"const": "none"}, "basis": {"type": "string"}}, "additionalProperties": false}},
+    "summary": {"type": "object"},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

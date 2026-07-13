@@ -219,10 +219,21 @@ which authority predicate admitted or denied the effect. Cross-facet conflict,
 stale epoch, inadequate identity, missing permission, or unresolved migration
 must block or escalate before effect.
 
-The `qcsa_whitepaper` supplies the contract and attack vocabulary, not runtime
-enforcement evidence. It does not establish permission correctness, human
-approval quality, effect safety, rollback, or recovery, and the conservative
-evidence disposition remains unchanged.
+The bounded implementation now tests this separation directly. Full QCSA
+produced zero unsafe releases on the synthetic authority fixtures; removing
+certificate, residual, and authority fields produced nine unsafe releases
+across 180 seeded records. In the governed vertical trace, semantic resolution
+prepared a request, a separate policy allowed one reversible temporary-file
+write, an independent byte reader observed it, and rollback restored the exact
+pre-state. Scope widening, irreversible effect, stale epoch, certificate
+tampering, missing receipt, and hidden-effect paths all failed closed.
+
+That result promotes only the exact field-separation and receipt mechanism
+finding. The approval identifier is a fixture, the effect is temporary and
+public-safe, no external human or deployed policy service participated, and a
+single exact rollback cannot establish effect-complete recovery in an open
+system. Permission correctness, human-approval quality, production safety, and
+this core claim remain at `argument`.
 
 ## Interfaces
 
@@ -442,7 +453,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 |---|---|---|
 | `ext_claw_swe_bench_2026` | Metadata-first comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Current preprint comparator for fixed workspace, patch, evaluator, and budget contracts across coding-agent harnesses; reported accuracy and cost differences are not reproduced here and do not validate the post-v2.1 synthetic repository corpus. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_txfs_2018` | Metadata-first comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 governed adapter boundary

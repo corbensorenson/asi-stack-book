@@ -179,11 +179,23 @@ semantic identity.
 
 This gives the routing receipt four distinct references: `subject_soid`,
 `semantic_address_certificate_ref`, `route_policy_and_resource_snapshot`, and
-`physical_route_plan_ref`. Evaluation must compare the full QCSA route with
-flat IDs, one semantic tree, multi-view identifiers without stable identity,
-and ablations without active questions, soft routing, physical translation, or
-migration governance. The `qcsa_whitepaper` proposes that test; it reports no
-routing advantage, so the support state does not move.
+`physical_route_plan_ref`. The frozen evaluation compares the full QCSA route
+against seven baselines and five ablations over 60 held-out cases and three
+seeds. Full QCSA was Pareto-nondominated against every baseline in five of six
+families, resolved all labelled objects, prevented all defined synthetic risk
+failures, and recorded zero unsafe releases. Yet the selected
+direct-clarification baseline also reached 1.000 task-decision accuracy in
+every seed, so the paired task delta was exactly 0.000. QCSA used 1.913386
+times its operation count, exceeding the preregistered 1.50 governance ceiling.
+
+The matched-resource routing-advantage claim is therefore refuted for this
+exact workload. The task labels were ceiling-easy, the methods were
+deterministic rather than learned specialists, and the cost difference between
+full QCSA and ablations is partly confounded by frozen verifier bookkeeping.
+Routing should retain stable identity, separate authority, fallback, receipt,
+and migration interfaces, but it cannot cite this experiment as learned-route,
+latency, throughput, or efficiency evidence. The core claim remains at
+`argument`.
 
 ## Interfaces
 
@@ -392,7 +404,7 @@ These metadata-first rows keep dynamic manifest assignments visible until passag
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_dont_hallucinate_abstain_2024` | Metadata-first comparator: Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration. Primary ACL comparator for knowledge-gap detection, abstention, calibration/self-reflection limitations, and multi-model probing; reported abstention improvements are task- and model-bounded and do not validate the local router or evaluator. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. Conceptual architecture only; no implementation, benchmark, proof, safety validation, or performance advantage. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result

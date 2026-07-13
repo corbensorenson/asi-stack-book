@@ -63,6 +63,31 @@ the empirical component, not a core support promotion.
 | `open-ended-improvement-engines` | Update `no_change`; fixed campaign stops honestly. | Task generation, evolving archive, evaluator evolution, useful discovery, bounded autonomy, and open-ended transfer. |
 | `recursive-self-improvement-boundaries` | Update `no_change`; authority-preserving rollback `narrow`. | Self-proposed change, stable authority, independent evaluator, protected-invariant evidence, useful gain, canary, and production recovery. |
 
+## QCSA P2–P3 Completion Overlay
+
+The QCSA package now supplies bounded local evidence to nine existing chapter
+owners. Five exact mechanism findings are eligible for ordinary bounded
+evidence review, two claims were narrowed, two were refuted on the exact corpus,
+and open-world transfer remained unchanged. This overlay does not change any
+chapter-core support state.
+
+| Chapter | Completed QCSA evidence | Next evidence burden |
+|---|---|---|
+| `cognitive-compilation-and-semantic-ir` | Twelve typed lanes and one 13-stage trace compile a hand-authored intent through semantic IR, resolution, questions, route, effect, and rollback. | Natural tasks, paraphrase robustness, learned question selection, semantic-preservation criteria, and independent evaluation. |
+| `virtual-context-abi` | Full object resolution was `1.000000`; no-plural and no-indirection ablations fell to `0.916667` and `0.900000`. | Natural multilingual/multimodal context, retrieval/admission baselines, adequacy calibration, latency, and deployed context behavior. |
+| `claim-ledgers-and-belief-revision` | Typed evidence remains separate from identity, truth, and authority; the internal observer recorded zero structural loss. | Open-world claim revision, provenance completeness, contradiction quality, criterion validity, and independent assessment. |
+| `runtime-adapters-tool-permissions-and-human-approval` | No-authority-fields produced 9 unsafe releases; one real temporary-file effect was separately authorized, observed, receipted, and exactly rolled back. | OS/deployed adapters, approval and revocation quality, irreversible/external effects, effect-complete rollback, and security assessment. |
+| `inter-stack-protocols-identity-and-economic-exchange` | Same-SOID migration compatibility was `1.000000`; no-indirection compatibility fell to `0.400000`. | Distinct peer stacks, credentials, namespace conflicts, settlement/dispute flows, federation attacks, and privacy boundaries. |
+| `routing-heads-and-specialist-cores` | Object resolution, prevention, and calibration improved on the exact corpus; 10 vertical attacks failed closed. | Learned ambiguous routing, trained specialists, natural task decisions dependent on correct identity, matched useful throughput, and deployment transfer. |
+| `compact-generative-systems-and-residual-honesty` | The internal observer preserved exact structure and the trace retained residuals through migration and rollback. | Actual generator/compression arms, semantic utility, repair, matched cost/latency, open-world reconstruction, and independent observer validity. |
+| `data-engines-continual-learning-and-unlearning` | Full compatibility was `1.000000`; removing migration compatibility reduced task accuracy to `0.833333` and compatibility to zero. | Model/optimizer/scheduler/RNG/cache/backup descendants, distributed migration, forgetting causality, privacy, influence, and storage erasure. |
+| `integrated-reference-architecture` | One bounded trace now crosses all thirteen required stages with one observed effect, same-SOID migration, exact rollback, and 10/10 attack rejection. | Broader natural workloads, learned models, multiple effects and services, independent validity, resource advantage, production deployment, and external transfer. |
+
+Canonical evidence: `docs/qcsa_reference_evaluation_report.md`,
+`docs/qcsa_governed_vertical_reference_report.md`,
+`experiments/qcsa_reference/results/evaluation_results.json`, and
+`experiments/qcsa_vertical_reference/results/vertical_result.json`.
+
 | Part | Chapter | Primary evidence lane | Formal/prototype work | Human-reader focus | Acceptance bar before support-state change |
 |---|---|---|---|---|---|
 | I | `asi-is-a-stack-not-a-model` | Lean plus architecture trace | Deepen `StackBoundaries` with multi-layer handoff states and authority rejection cases. | Open the book with a concrete system story instead of taxonomy. | A state-machine proof plus a replayed handoff fixture; no broad ASI claim. |

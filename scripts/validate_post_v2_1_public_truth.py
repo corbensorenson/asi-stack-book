@@ -19,6 +19,7 @@ SUCCESSOR = "docs/post_v2_2_implementation_completion_roadmap.md"
 SUCCESSOR_STATUS = "roadmap_records/post_v2_2_implementation_completion_status.json"
 PREDECESSOR = "docs/post_v2_evidence_roadmap.md"
 RELEASE_RECORD = "release_records/2026-07-11-v2.2.0-residual-transfer-e3d53489.json"
+RIGHTS_CANDIDATE = "v2.3.0"
 
 
 def read_json(path: str) -> object:
@@ -182,8 +183,8 @@ def validate(data: dict[str, object]) -> list[str]:
     }.items():
         if VERSION not in text:
             errors.append(f"{name} does not preserve the v2.2.0 rights boundary")
-    if f"At exact tag `{active_version}`" not in str(data["readme"]):
-        errors.append("README rights summary does not name the active exact-tag boundary")
+    if f"At exact tag `{RIGHTS_CANDIDATE}`" not in str(data["readme"]):
+        errors.append("README rights summary does not name the selected exact-tag boundary")
     if "At exact tag `v2.0.0`" in str(data["readme"]):
         errors.append("README rights summary still names v2.0.0 as current")
 
@@ -217,8 +218,7 @@ def mutation_controls(base: dict[str, object]) -> list[str]:
     mutations.append(("false archive state", false_archive))
 
     wrong_rights = copy.deepcopy(base)
-    active = str(wrong_rights["config"].get("active_version"))
-    wrong_rights["readme"] = str(wrong_rights["readme"]).replace(f"At exact tag `{active}`", "At exact tag `v2.0.0`")
+    wrong_rights["readme"] = str(wrong_rights["readme"]).replace(f"At exact tag `{RIGHTS_CANDIDATE}`", "At exact tag `v2.0.0`")
     mutations.append(("wrong rights tag", wrong_rights))
 
     invented_format = copy.deepcopy(base)

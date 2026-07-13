@@ -7,7 +7,7 @@
 | Ingestion date | 2026-07-11 |
 | Source version / URL | Version 1.0, dated 2026-07-12 as supplied; local canonical source SHA-256 `d9e594d40dfd62c899ab25e9d395d34c702dac12e8afd75eed133392f78c0c8c` |
 | Ingestion basis | The complete 1,709-line Corben-authored whitepaper was inspected at `sources/raw/question_compiled_semantic_addressing_whitepaper.md`; raw source text is local-only and not published by this ingestion. |
-| Evidence boundary | Conceptual architecture and design rationale at `argument`; no implementation, benchmark, formal semantic-correctness proof, safety validation, or demonstrated performance advantage. |
+| Evidence boundary | The source itself remains conceptual architecture and design rationale at `argument`. A later local reference package, bounded synthetic evaluation, and governed vertical replay are repository evidence, not evidence supplied by the whitepaper; they establish no matched-resource advantage, formal semantic-correctness proof, safety validation, or production transfer. |
 
 ## Thesis
 
@@ -100,6 +100,41 @@ softmax, a universal concept tree, or a tokenizer replacement.
 
 These are implementation targets, not artifacts that this source supplies.
 
+## Local Implementation And Evaluation Update (2026-07-13)
+
+The source boundary above remains unchanged, but the repository has now built
+and evaluated the proposed artifact family as a separate, bounded evidence
+lane. The standard-library reference package implements all twelve frozen QCSA
+lanes and replays byte-identically. Its 60-case held-out synthetic evaluation
+ran the full method, seven baselines, five ablations, and three seeds, producing
+2,340 predictions. A governed vertical trace then joined thirteen stages from
+intent and semantic IR through a real temporary-file effect, independent byte
+observation, same-SOID migration, and byte-exact rollback.
+
+The outcome is mixed and deliberately narrow:
+
+- QCSA and the selected best baseline both reached `1.000000` task-decision
+  accuracy, so the preregistered matched-advantage gate failed.
+- QCSA used `1.913386` times the baseline operation count, so both frozen
+  resource ceilings failed.
+- Plural facets, identity/address indirection, certificate/residual/authority
+  fields, migration compatibility, and task calibration earned bounded
+  fixture-level promote dispositions for later evidence review.
+- Removing active questions did not reduce object or task accuracy, so active
+  question value is refuted on this exact corpus.
+- The vertical trace rejected all 10 adversarial paths and performed one exact
+  rollback, but remains synthetic, local, internally observed, and limited to
+  one reversible temporary-file effect.
+
+Canonical records are
+`experiments/qcsa_reference/results/evaluation_results.json`,
+`claim_decisions/qcsa_reference_evaluation_dispositions.json`,
+`docs/qcsa_reference_evaluation_report.md`,
+`experiments/qcsa_vertical_reference/results/vertical_result.json`, and
+`docs/qcsa_governed_vertical_reference_report.md`. These records improve the
+nine existing chapter owners; they do not promote any chapter-core claim above
+`argument` and do not warrant a standalone QCSA chapter.
+
 ## Evidence and Falsification Boundary
 
 - The source supplies a coherent architecture, formal notation, normative
@@ -150,18 +185,20 @@ These are implementation targets, not artifacts that this source supplies.
 | `claim-ledgers-and-belief-revision` | Ontology, propositions, evidence, provenance, belief state, contradiction, support, and permitted use remain distinct graph objects. | §§5.4, 7.4–7.5, 14.4, 18.3 | A semantic address is neither truth nor support-state evidence. |
 | `data-engines-continual-learning-and-unlearning` | Fast/medium/slow learning split, candidate atlases, epoch authority, migration compatibility, identity-preserving readdressing, merge/split lineage, and drift tests. | Axiom 11; §§7.3, 12, 14.5, 16.7 | Does not establish forgetting, influence removal, privacy erasure, or storage erasure. |
 | `inter-stack-protocols-identity-and-economic-exchange` | Namespace-qualified SOIDs, signed SACs, atlas/mapping manifests, epoch negotiation, and uncertainty-preserving cross-stack translation. | §§7.3, 14.2, 18.8; Appendix A | Federation does not establish equivalence, trust, authorization, truth, or settlement. |
-| `integrated-reference-architecture` | QCSA as the semantic control plane joining grounding, context, planning, memory, routing, tools, generation, evidence, and lifecycle governance. | §§5, 18; Appendix B | Reference architecture only; no end-to-end implementation or validated advantage. |
+| `integrated-reference-architecture` | QCSA as the semantic control plane joining grounding, context, planning, memory, routing, tools, generation, evidence, and lifecycle governance. | §§5, 18; Appendix B | The source is a reference architecture; the separate local vertical trace implements one bounded reversible path but establishes no validated advantage or production transfer. |
 
 ## Chapter Decision
 
 Keep the active 54-chapter architecture. QCSA is intentionally cross-cutting and
 its strongest contribution is the identity–address–route contract between
-existing chapter owners. A standalone chapter at this evidence state would
-duplicate the context, routing, representation, tool, claim, learning,
-federation, and integration chapters. Reconsider a dedicated chapter only when
-the paper's proposed artifact set supplies a chapter-owning prototype or
-measured lane—for example, an SOID/SAC implementation plus migration and
-matched-baseline question-routing results.
+existing chapter owners. A standalone chapter would still duplicate the
+context, routing, representation, tool, claim, learning, federation, and
+integration chapters. The later implementation and evaluation strengthen those
+existing owners but do not create a distinct chapter thesis: matched advantage
+failed, active-question value was refuted on the exact corpus, and production
+transfer remains open. Reconsider a dedicated chapter only if a future natural-
+task, learned-model, independently assessed program creates a chapter-owning
+body of evidence that cannot be folded coherently into the nine owners.
 
 This decision preserves the executed Semantic Representation Leasing fold.
 QCSA supersedes the earlier framing as the richer source synthesis but does not

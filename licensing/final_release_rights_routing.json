@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.final_release_rights_routing.v1",
-  "release_candidate": "v2.2.0",
-  "decision_date": "2026-07-11",
+  "release_candidate": "v2.3.0",
+  "decision_date": "2026-07-13",
   "selected_formats": [
     "html-live-book"
   ],
@@ -18,11 +18,11 @@
     }
   },
   "summary": {
-    "path_count": 4121,
+    "path_count": 4144,
     "by_license_route": {
-      "Apache-2.0": 682,
-      "CC-BY-4.0": 500,
-      "excluded-no-grant": 2939
+      "Apache-2.0": 718,
+      "CC-BY-4.0": 514,
+      "excluded-no-grant": 2912
     },
     "unresolved_count": 0
   },
@@ -974,6 +974,13 @@
     },
     {
       "path": "claim_decisions/post_v2_empirical_dispositions.json",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created public metadata/governance record cleared as documentation"
+    },
+    {
+      "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
       "artifact_class": "public_metadata_or_governance_record",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
@@ -2418,8 +2425,8 @@
       "path": "docs/post_v2_2_implementation_completion_roadmap.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
     },
     {
       "path": "docs/post_v2_empirical_reconciliation.md",
@@ -2646,18 +2653,39 @@
       "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
     },
     {
+      "path": "docs/qcsa_governed_vertical_reference_report.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/qcsa_implementation_evidence_reconciliation.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
       "path": "docs/qcsa_reference_architecture_decision.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/qcsa_reference_evaluation_report.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
     },
     {
       "path": "docs/qcsa_reference_implementation_report.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
     },
     {
       "path": "docs/rankfold_artifact_import.md",
@@ -3636,11 +3664,18 @@
       "path": "docs/v2_2_completion_declaration.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
     },
     {
       "path": "docs/v2_2_release_scope.md",
+      "artifact_class": "book_or_project_prose",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created prose/figure lane cleared for the completed HTML/live-book release"
+    },
+    {
+      "path": "docs/v2_3_release_scope.md",
       "artifact_class": "book_or_project_prose",
       "provenance_status": "author_ownership_assertion_required",
       "license_route": "CC-BY-4.0",
@@ -18659,280 +18694,315 @@
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-02.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-03.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-04.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-05.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-06.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-07.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-08.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-09.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-10.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-11.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/artifacts/QI-12.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/budgets.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/corpus/inputs.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/corpus/labels.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/corpus/manifest.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/fixtures/envelope_examples.expected_invalid.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/fixtures/envelope_examples.valid.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/package_manifest.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/__init__.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/adversarial.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/atlas.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/canonical.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/certificate.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/evaluation.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/evidence_graph.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/grounding.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/identity.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/ledger.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/manifest.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/migration.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/questions.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/round_trip.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/qcsa_ref/routes.py",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/results/environment.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/qcsa_reference/results/evaluation_predictions.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/qcsa_reference/results/evaluation_results.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/results/implementation_result.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/results/implementation_summary.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/results/replay_log.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/results/seeds.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/qcsa_reference/test_plan.json",
       "artifact_class": "experiment_fixture_result_or_review_record",
       "provenance_status": "author_assertion_or_import_review_required",
       "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/qcsa_vertical_reference/results/artifact_manifest.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/qcsa_vertical_reference/results/vertical_result.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
+    },
+    {
+      "path": "experiments/qcsa_vertical_reference/task.json",
+      "artifact_class": "experiment_fixture_result_or_review_record",
+      "provenance_status": "author_assertion_or_import_review_required",
+      "license_route": "excluded-no-grant",
+      "review_basis": "excluded from grant: software_or_metadata_after_review; author_assertion_or_import_review_required"
     },
     {
       "path": "experiments/rankfold_artifact_import/README.md",
@@ -22396,8 +22466,8 @@
       "path": "release_records/2026-07-11-v2.2.0-residual-transfer-e3d53489.json",
       "artifact_class": "public_metadata_or_governance_record",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created public metadata/governance record cleared as documentation"
     },
     {
       "path": "release_records/README.md",
@@ -22466,22 +22536,29 @@
       "path": "roadmap_records/post_v2_2_implementation_completion_status.json",
       "artifact_class": "public_metadata_or_governance_record",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created public metadata/governance record cleared as documentation"
+    },
+    {
+      "path": "roadmap_records/qcsa_evaluation_execution_authorization.json",
+      "artifact_class": "public_metadata_or_governance_record",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created public metadata/governance record cleared as documentation"
     },
     {
       "path": "roadmap_records/qcsa_evaluation_setup_freeze.json",
       "artifact_class": "public_metadata_or_governance_record",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created public metadata/governance record cleared as documentation"
     },
     {
       "path": "roadmap_records/qcsa_reference_implementation_freeze.json",
       "artifact_class": "public_metadata_or_governance_record",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "CC-BY-4.0",
+      "review_basis": "author-created public metadata/governance record cleared as documentation"
     },
     {
       "path": "schemas/README.md",
@@ -23026,8 +23103,8 @@
       "path": "schemas/post_v2_2_implementation_completion_status.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/post_v2_empirical_dispositions.schema.json",
@@ -23159,57 +23236,92 @@
       "path": "schemas/qcsa_evaluation_corpus_manifest.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/qcsa_evaluation_dispositions.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/qcsa_evaluation_predictions.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/qcsa_evaluation_results.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/qcsa_evaluation_setup_freeze.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/qcsa_reference_artifact.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/qcsa_reference_budget.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/qcsa_reference_fixture_bundle.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/qcsa_reference_freeze.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/qcsa_reference_package_manifest.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/qcsa_reference_test_plan.schema.json",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/qcsa_vertical_reference_manifest.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "schemas/qcsa_vertical_reference_result.schema.json",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "schemas/readiness_check_lifecycle_record.schema.json",
@@ -23621,22 +23733,29 @@
       "path": "scripts/build_qcsa_evaluation_corpus.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/build_qcsa_evaluation_setup_freeze.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/build_qcsa_reference_implementation.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/build_qcsa_vertical_reference.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/build_reader_edition.py",
@@ -23782,15 +23901,15 @@
       "path": "scripts/qcsa_evaluation_observer.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/qcsa_independent_evaluator.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/register_post_v2_1_outcome_validator.py",
@@ -23810,8 +23929,8 @@
       "path": "scripts/register_post_v2_2_implementation_roadmap_validator.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/register_post_v2_validators.py",
@@ -23821,11 +23940,25 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "scripts/register_qcsa_book_reconciliation_validator.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/register_qcsa_evaluation_outcome_validator.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
       "path": "scripts/register_qcsa_evaluation_validators.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/register_qcsa_ingestion_validator.py",
@@ -23838,15 +23971,22 @@
       "path": "scripts/register_qcsa_reference_implementation_freeze_validator.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/register_qcsa_reference_implementation_validator.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/register_qcsa_vertical_reference_validator.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/render_curated_reader_formats.py",
@@ -23978,8 +24118,8 @@
       "path": "scripts/run_qcsa_evaluation_predictions.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/run_rankfold_public_safe_probe.py",
@@ -25084,8 +25224,8 @@
       "path": "scripts/validate_post_v2_2_implementation_completion_roadmap.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/validate_post_v2_empirical_reconciliation.py",
@@ -25270,18 +25410,32 @@
       "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
+      "path": "scripts/validate_qcsa_book_reconciliation.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_qcsa_evaluation.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
       "path": "scripts/validate_qcsa_evaluation_corpus.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/validate_qcsa_evaluation_setup_freeze.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/validate_qcsa_ingestion.py",
@@ -25294,15 +25448,22 @@
       "path": "scripts/validate_qcsa_reference_implementation.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/validate_qcsa_reference_implementation_freeze.py",
       "artifact_class": "software_proof_schema_or_automation",
       "provenance_status": "author_ownership_assertion_required",
-      "license_route": "excluded-no-grant",
-      "review_basis": "post-tag path; not present in the exact v2.2.0 release tree"
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
+    },
+    {
+      "path": "scripts/validate_qcsa_vertical_reference.py",
+      "artifact_class": "software_proof_schema_or_automation",
+      "provenance_status": "author_ownership_assertion_required",
+      "license_route": "Apache-2.0",
+      "review_basis": "author-created software/proof/schema/automation lane cleared for release"
     },
     {
       "path": "scripts/validate_rankfold_artifact_import.py",
@@ -28877,7 +29038,7 @@
   ],
   "non_claims": [
     "Excluded paths receive no license grant from this release.",
-    "The v2.2.0 routing review is an internal authorship/provenance decision, not legal advice or third-party clearance.",
+    "The v2.3.0 routing review is an internal authorship/provenance decision, not legal advice or third-party clearance.",
     "Trademarks, endorsement, patents outside Apache-2.0, privacy, publicity, and third-party rights are not granted."
   ]
 }

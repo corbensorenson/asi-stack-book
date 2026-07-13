@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_vertical_reference_result.schema.json",
+  "title": "QCSA Governed Vertical Reference Result",
+  "type": "object",
+  "required": ["schema_version", "result_id", "state", "task_ref", "stage_order", "stages", "effect_observation", "migration_and_rollback", "adversarial_matrix", "resource_ledger", "residuals", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_vertical_reference_result.v0"},
+    "result_id": {"const": "qcsa-governed-vertical-reference-2026-07-13"},
+    "state": {"const": "completed_bounded_replay"},
+    "task_ref": {"const": "experiments/qcsa_vertical_reference/task.json"},
+    "stage_order": {"type": "array", "minItems": 13, "maxItems": 13, "uniqueItems": true, "items": {"type": "string"}},
+    "stages": {"type": "object", "minProperties": 13},
+    "effect_observation": {"type": "object"},
+    "migration_and_rollback": {"type": "object"},
+    "adversarial_matrix": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"type": "object"}},
+    "resource_ledger": {"type": "object"},
+    "residuals": {"type": "array", "minItems": 8, "items": {"type": "object"}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

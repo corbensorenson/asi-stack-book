@@ -85,7 +85,11 @@ def validate(data: dict) -> list[str]:
     vector_by_claim = {row["claim_id"]: row for row in vectors.get("vectors", [])}
     if vectors.get("summary", {}).get("summary_support_states") != {"argument": 54}:
         errors.append("evidence vectors launder core support")
-    if vectors.get("summary", {}).get("dimension_state_counts", {}).get("reproducibility") != {"adjacent_local_replay": 27, "not_demonstrated_for_claim": 27}:
+    # The completed post-v2.1 result originally covered 27 adjacent claims;
+    # the later QCSA reconciliation legitimately adds five newly adjacent
+    # owners (four of its nine owners were already adjacent) without changing
+    # support, independence, or transfer state.
+    if vectors.get("summary", {}).get("dimension_state_counts", {}).get("reproducibility") != {"adjacent_local_replay": 32, "not_demonstrated_for_claim": 22}:
         errors.append("evidence-vector replay summary drifted")
     if any(row.get("dimensions", {}).get("independence", {}).get("state") != "internal_only" or row.get("dimensions", {}).get("transfer_distance", {}).get("state") != "not_established" for row in vectors.get("vectors", [])):
         errors.append("an evidence vector overstates independence or transfer")
