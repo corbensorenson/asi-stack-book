@@ -30,6 +30,10 @@
   across `v1_x_measured`, `post_v2`, `post_v2_1`, and `post_v2_3` instead of
   silently regenerating the old v1.x-only count. The scaffold check now
   preserves the authoritative 56-decision ledger row.
+- Explicitly allowlisted the exact v2.0 curated-reader HTML ZIP beneath the
+  repository's broad `*.zip` ignore rule. This repairs clean-checkout parity:
+  the tracked artifact is the same digest-bound local archive already named by
+  the manifest and release record, not a new format or public release.
 
 ## 2026-07-13 - Activate clean-handoff, reader-format, and evidence-renewal successor
 

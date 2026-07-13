@@ -27,7 +27,10 @@ baseline and current `origin/main` tip at audit time.
   private source caches, source inbox payloads, and Lean build output.
 - A binary-size scan found no candidate file above 20 MB. The largest declared
   release binary is the 4.2 MB exact curated-reader HTML archive under
-  `editions/reader_manuscript/v2_0/artifacts/`.
+  `editions/reader_manuscript/v2_0/artifacts/`. The repository's broad `*.zip`
+  ignore rule initially excluded it from the Git index; the exact path is now
+  explicitly allowlisted so a clean checkout contains the artifact required by
+  its manifest, release record, and validator.
 - A credential-pattern scan covered 339 candidate files and found zero private
   key, GitHub token, AWS key, Google API key, OpenAI key, or Slack token hits.
 - No raw source inbox, private cache, local handoff packet, checkpoint, training
