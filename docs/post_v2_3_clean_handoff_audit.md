@@ -89,3 +89,8 @@ The first clean-checkout run exposed the ignored exact reader archive; the
 second exposed a missing pinned `beautifulsoup4` dependency required by the
 exact-reader HTML validator. Both are handoff-parity defects, not evidence or
 format changes, and are repaired prospectively for the next exact commit tip.
+The third run exposed that the validator still required the ignored local
+render directory. It now replays the tracked deterministic archive into a
+temporary directory, rejects unsafe archive paths, performs the same digest and
+link inspection there, and additionally enforces local-render byte parity when
+that optional local directory exists.

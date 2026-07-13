@@ -38,6 +38,11 @@
   the clean Linux build reached the exact-reader HTML validator and exposed the
   undeclared import. This is a clean-environment dependency repair; it does not
   change the validator's claim scope or the reader artifact.
+- Made the exact-reader HTML validator clean-checkout complete: it now rejects
+  unsafe ZIP paths, replays the tracked deterministic archive in a temporary
+  directory, and runs the same tree, link, anchor, and digest checks without
+  requiring the ignored local render directory. If that local directory is
+  present, byte-for-byte archive parity remains mandatory.
 
 ## 2026-07-13 - Activate clean-handoff, reader-format, and evidence-renewal successor
 

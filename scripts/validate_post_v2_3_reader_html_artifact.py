@@ -7,8 +7,9 @@ import copy
 import hashlib
 import json
 import posixpath
+import tempfile
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from urllib.parse import unquote, urlsplit
 
 from bs4 import BeautifulSoup
@@ -167,13 +168,13 @@ def resolve_target(source: str, href: str, files: set[str]) -> tuple[str | None,
     return target, fragment
 
 
-def inspect_links() -> tuple[int, int, list[str]]:
-    files = {path.relative_to(SITE).as_posix() for path in SITE.rglob("*") if path.is_file()}
+def inspect_links(site: Path) -> tuple[int, int, list[str]]:
+    files = {path.relative_to(site).as_posix() for path in site.rglob("*") if path.is_file()}
     html_files = sorted(path for path in files if path.endswith(".html"))
     ids: dict[str, set[str]] = {}
     soups: dict[str, BeautifulSoup] = {}
     for rel in html_files:
-        soup = BeautifulSoup((SITE / rel).read_text(errors="replace"), "html.parser")
+        soup = BeautifulSoup((site / rel).read_text(errors="replace"), "html.parser")
         soups[rel] = soup
         ids[rel] = {
             str(node.get("id"))
@@ -216,24 +217,45 @@ def main() -> None:
     errors = validate_reports(manifest, artifact, browser, access, keyboard, wcag)
 
     archive = ROOT / artifact.get("archive", "")
-    if not SITE.is_dir() or not archive.is_file():
-        errors.append("local site or deterministic archive is missing")
+    link_count = 0
+    anchor_count = 0
+    link_errors: list[str] = []
+    if not archive.is_file():
+        errors.append("deterministic archive is missing")
     else:
         if sha256(archive) != artifact.get("archive_sha256"):
             errors.append("archive digest drift")
         if archive.stat().st_size != artifact.get("archive_bytes"):
             errors.append("archive byte-count drift")
-        if tree_digest(SITE) != artifact.get("site_tree_sha256"):
-            errors.append("site-tree digest drift")
         with zipfile.ZipFile(archive) as zipped:
-            disk = {path.relative_to(SITE).as_posix(): path.read_bytes() for path in SITE.rglob("*") if path.is_file()}
-            names = set(zipped.namelist())
-            if names != set(disk):
-                errors.append("archive member set differs from inspected local site")
-            elif any(zipped.read(name) != body for name, body in disk.items()):
-                errors.append("archive bytes differ from inspected local site")
+            names = {name for name in zipped.namelist() if not name.endswith("/")}
+            unsafe = [
+                name
+                for name in names
+                if PurePosixPath(name).is_absolute() or ".." in PurePosixPath(name).parts
+            ]
+            if unsafe:
+                errors.append("archive contains unsafe absolute or parent-traversal members")
+            else:
+                with tempfile.TemporaryDirectory(prefix="asi-reader-v2-") as tmp:
+                    replay_site = Path(tmp)
+                    zipped.extractall(replay_site)
+                    if tree_digest(replay_site) != artifact.get("site_tree_sha256"):
+                        errors.append("archive-replayed site-tree digest drift")
+                    link_count, anchor_count, link_errors = inspect_links(replay_site)
+                    if SITE.is_dir():
+                        disk = {
+                            path.relative_to(SITE).as_posix(): path.read_bytes()
+                            for path in SITE.rglob("*")
+                            if path.is_file()
+                        }
+                        if tree_digest(SITE) != artifact.get("site_tree_sha256"):
+                            errors.append("local site-tree digest drift")
+                        if names != set(disk):
+                            errors.append("archive member set differs from inspected local site")
+                        elif any(zipped.read(name) != body for name, body in disk.items()):
+                            errors.append("archive bytes differ from inspected local site")
 
-    link_count, anchor_count, link_errors = inspect_links() if SITE.is_dir() else (0, 0, [])
     errors.extend(link_errors)
 
     mutation_count = 0
@@ -276,7 +298,7 @@ def main() -> None:
             for path in [BROWSER, ACCESSIBILITY, KEYBOARD, WCAG]
         },
         "negative_mutations_rejected": mutation_count,
-        "review_boundary": "Exact local HTML/archive, browser, automated accessibility-tree, automated keyboard, rendered contrast, reflow, link, anchor, heading, landmark, language, alt-text, table-header, and duplicate-ID inspection. This is not independent external-human review, screen-reader use, third-party WCAG certification, or approval of another format.",
+        "review_boundary": "Exact deterministic HTML archive replay plus local-render parity when present, browser, automated accessibility-tree, automated keyboard, rendered contrast, reflow, link, anchor, heading, landmark, language, alt-text, table-header, and duplicate-ID inspection. This is not independent external-human review, screen-reader use, third-party WCAG certification, or approval of another format.",
         "support_state_effect": "none",
         "errors": errors,
         "non_claims": [

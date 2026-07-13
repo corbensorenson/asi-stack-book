@@ -18,7 +18,7 @@
     "editions/reader_manuscript/v2_0/html_wcag_report.json": "366f648eb61bc91bc43f03ee531a6eb2f7be2aa0ab005578ad1e154743ad490d"
   },
   "negative_mutations_rejected": 6,
-  "review_boundary": "Exact local HTML/archive, browser, automated accessibility-tree, automated keyboard, rendered contrast, reflow, link, anchor, heading, landmark, language, alt-text, table-header, and duplicate-ID inspection. This is not independent external-human review, screen-reader use, third-party WCAG certification, or approval of another format.",
+  "review_boundary": "Exact deterministic HTML archive replay plus local-render parity when present, browser, automated accessibility-tree, automated keyboard, rendered contrast, reflow, link, anchor, heading, landmark, language, alt-text, table-header, and duplicate-ID inspection. This is not independent external-human review, screen-reader use, third-party WCAG certification, or approval of another format.",
   "support_state_effect": "none",
   "errors": [],
   "non_claims": [
