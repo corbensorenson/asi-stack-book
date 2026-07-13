@@ -84,3 +84,8 @@ tested commit is pushed to `main`, the commit-bound build artifact succeeds,
 the build-once Pages deployment succeeds, the deployed-site attestation
 succeeds for the same source SHA, and the follow-up receipt is committed and
 observed without leaving an unexplained local residual.
+
+The first clean-checkout run exposed the ignored exact reader archive; the
+second exposed a missing pinned `beautifulsoup4` dependency required by the
+exact-reader HTML validator. Both are handoff-parity defects, not evidence or
+format changes, and are repaired prospectively for the next exact commit tip.

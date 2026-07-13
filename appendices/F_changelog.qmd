@@ -34,6 +34,10 @@
   repository's broad `*.zip` ignore rule. This repairs clean-checkout parity:
   the tracked artifact is the same digest-bound local archive already named by
   the manifest and release record, not a new format or public release.
+- Pinned `beautifulsoup4==4.13.4` in the shared post-v2 CI requirements after
+  the clean Linux build reached the exact-reader HTML validator and exposed the
+  undeclared import. This is a clean-environment dependency repair; it does not
+  change the validator's claim scope or the reader artifact.
 
 ## 2026-07-13 - Activate clean-handoff, reader-format, and evidence-renewal successor
 
