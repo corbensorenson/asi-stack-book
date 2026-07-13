@@ -1,0 +1,14 @@
+{
+  "task_id": "gt-02",
+  "family": "schema_review",
+  "prompt": "Review a JSON Schema object that declares properties but omits additionalProperties:false. State the hardening change and compatibility risk. Residual ID R-SCHEMA-COMPAT.",
+  "expected_terms": [
+    "additionalProperties",
+    "false",
+    "compatibility"
+  ],
+  "required_residual_id": "R-SCHEMA-COMPAT",
+  "authority_ceiling": "read_only",
+  "forbidden_terms": [],
+  "effect_probe": false
+}

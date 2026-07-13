@@ -1,0 +1,277 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: planning-as-a-control-layer
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/planning-as-a-control-layer.qmd
+live_source_ref: chapters/planning-as-a-control-layer.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Planning as a Control Layer: DAGs and Intelligence Arbitrage
+
+Once a command is structured, the stack has to decide what work should exist and what kind of intelligence each piece deserves. Planning turns intent into obligations: dependencies, budgets, context needs, capability tiers, route choices, adequacy contracts, review points, and stop conditions.
+
+Planning is control, not brainstorming. A plan is valuable only if downstream layers can inspect it, reject unsafe steps, dispatch bounded jobs, preserve residual work, and explain why a cheaper route was adequate or why stronger cognition was required.
+
+The plan must be an artifact. It should show dependencies, assumptions, blocked paths, missing context, route choices, adequacy tests, and stop conditions before any runtime adapter touches the world.
+
+Good planning reduces surprise by making work visible while changes are still cheap. The plan earns trust when it exposes what must be refused, deferred, reviewed, routed differently, or split into a safer path. It should make the negative space legible: tools not granted, context not loaded, cheap routes rejected, claims not made, and approvals still waiting.
+
+That visibility turns planning into governance rather than a prettier brainstorm.
+
+## Problem
+
+Accepted goals need governed plan graphs whose dependencies, authority requirements, context demands, capability tiers, budgets, adequacy contracts, verification burdens, stop conditions, dispatch receipts, escalation paths, and residuals remain inspectable before execution.
+
+Planning begins after the command contract is explicit. Its job is to decide what work should exist, in what order, with what context, tools, budgets, authority, risk controls, verification, capability tier, adequacy contract, fallback, and residual owner. It should not own memory, perform side effects, or decide that safety constraints are inconvenient. PlanForge supplies the planning middleware and DAG scheduling frame; Cognitive Compilation supplies the compiler pipeline frame; VIEA supplies the execution spine that the plan must feed.
+
+The planner is therefore a control layer, not a general cognition blob. It turns contracts into schedulable structure while preserving constraints, counting route adequacy, and leaving execution authority to downstream gates.
+
+The planner's job is not to be clever at any cost. Its job is to keep the action surface legible: what is being attempted, why this order, what context is needed, which tools are requested, what authority is missing, which capability tier is adequate, how success will be checked, and where the work must stop.
+
+The planner should therefore be judged by the quality of its refusals as much as by the elegance of its decomposition. A plan that blocks a node because context is missing, authority is inferred, verification is unavailable, or the cheap route fails adequacy is doing useful control work. A plan that dispatches everything because the graph looks plausible is not a control layer.
+
+## Why existing approaches are insufficient
+
+Planning cannot be collapsed into prompting, memory, reasoning, routing, or execution because each layer has different authority and failure modes.
+
+A memory layer retrieves context; it should not silently create work. A reasoning layer evaluates claims; it should not silently spend tool authority. A routing layer selects capability; it should not make cheapness equivalent to adequacy. An execution layer runs jobs; it should not be the first place dependencies and stop conditions are discovered. When these roles collapse, scope creep looks like initiative, tool overreach looks like competence, cheap wrong work looks like efficiency, and replanning after failure becomes ad hoc.
+
+External planning work supplies the comparison vocabulary for this separation. ReAct (`ext_react_2022`) keeps action and observation in the loop, Tree of Thoughts (`ext_tree_of_thoughts_2023`) explores and evaluates intermediate paths, PDDL (`ext_pddl_1998`) separates domains from problems, SHOP2 (`ext_shop2_2003`) gives hierarchical decomposition, TAMP (`ext_integrated_tamp_2020`) separates discrete plans from continuous feasibility, behavior trees (`ext_behavior_trees_robotics_ai_2017`) emphasize reactive task switching, GOAP/F.E.A.R. (`ext_three_states_plan_fear_2006`) shows practical autonomous action planning, AutoGen (`ext_autogen_2023`) frames multi-agent orchestration, and TLA+ (`ext_tla_plus_home_docs`) supplies system-modeling vocabulary. Planning-as-control uses those baselines as interface pressure, not as proof of planner quality in this repository.
+
+Planning also needs to be separate from final answers because plans are cheap to reject. A bad plan can be repaired before side effects occur. A bad execution may need rollback, audit, or incident handling.
+
+Collapsing planning into execution also hides opportunity for review. A human, tribunal, router, or verifier can inspect a plan graph before a tool call exists. Once the tool call runs, the system has moved from deliberation into effects.
+
+Planning therefore needs dispatch states and scheduling states. A plan node can be valuable as an idea, dependency, question, route candidate, or risk note without being ready to become a job. If every node is treated as executable, the graph becomes a work generator instead of a boundary.
+
+## Core Claim
+
+Planning should be a separate control layer that turns accepted command contracts into schedulable DAGs with explicit dependencies, authority ceilings, context demands, capability-tier assignments, adequacy contracts, verification burdens, cost/quality ledgers, escalation routes, and residuals (evidence boundary: architectural argument).
+PlanForge supplies decomposition, dependency, tier, scheduler, and intelligence-arbitrage vocabulary; VIEA supplies the accepted-command-to-artifact spine; Cognitive Compilation supplies compiler-pass and IR pressure; Software Magic Grimoire supplies bounded workflow language; TokenMana broadens the budget surface beyond token count; Coherence Exchange remains speculative connector context for intelligence-arbitrage language; MoECOT remains an implementation-reference route rather than local evidence for planning behavior.
+
+## Mechanism
+
+Once the command fields exist, planning turns them into controllable work. PlanForge supplies decomposition, dependency, scheduling, tier, fallback, and replanning vocabulary. Cognitive Compilation supplies compiler-pass pressure, VIEA supplies the accepted-command-to-artifact spine, Software Magic Grimoire supplies guarded workflow language, TokenMana keeps budgets broader than tokens, and MoECOT remains a runtime-reference route for ledgers, readiness gates, replay, and residuals.
+
+A Plan Graph is the bounded control artifact that captures this work without granting the planner memory ownership, tool authority, or permission to rewrite the governing contract.
+
+Planning's local delta in the governed-cognition pattern is obligation ordering. The shared pattern gives records, lifecycle states, authority ceilings, evidence gates, receipts, residuals, and non-claims; planning adds the graph-level rule that an accepted command does not become work until obligations are ordered, blocked states remain distinct from dispatchable states, route adequacy and verification cost are explicit, and replanning leaves an auditable delta. The planning layer therefore owns the gap between accepted intent and authorized jobs.
+
+The reviewed passages support the shape of that artifact: PlanForge gives the planner/executor split and DAG scheduling vocabulary; VIEA gives the artifact, router, verification, runtime, and feedback spine; Cognitive Compilation gives source-plan, semantic-DAG, scheduler, validator, and localized-repair vocabulary; Software Magic Grimoire gives handoffs, guards, exit rules, loop discipline, recursion limits, and recovery paths; TokenMana keeps load, latency, review capacity, and human friction inside the budget surface. None of the reviewed passages show this repository executing a planner, proving dependency soundness, predicting context demand, measuring tier adequacy, or replaying a runtime replanning trace.
+
+```{mermaid}
+flowchart LR
+A["Command contract"] --> B["Planning control layer"]
+B --> C["Plan graph lifecycle states"]
+C --> D["Dependency DAG"]
+D --> E["Capability tier + adequacy contract"]
+E --> F["Verification, budget, and residual ledger"]
+F --> G{"Dispatch gate"}
+G -- "blocked" --> H["Residual, review, or replan"]
+G -- "dispatchable" --> I["Dispatch receipt"]
+I --> J["Semantic IR lowering"]
+J --> K["Typed job"]
+H --> L["Plan ledger"]
+K --> L
+```
+
+**How to read the planning control loop:** The planner does not execute work; it turns an accepted contract into lifecycle states, dependencies, capability tiers, adequacy contracts, verification burdens, budgets, and residual paths. Dispatch is only one branch, and blocked or failed nodes remain visible in the plan ledger instead of becoming hidden cleanup work.
+
+The control layer compiles accepted work into strategic, tactical, and runtime plans. Strategic planning chooses the broad route. Tactical planning decomposes work and dependencies. Runtime planning creates dispatchable nodes, context requests, authority requirements, budgets, verification plans, replanning policies, stop conditions, and failure behavior. The boundaries matter because execution still happens only through typed contracts downstream, and only authorized runtime layers should request specific tools, adapters, or human approvals.
+
+The planner should be allowed to say "I do not have enough context," "this dependency is cyclic," "this tool exceeds authority," or "this budget cannot satisfy the quality predicate." Those outputs are useful plan residuals, not failures to be hidden.
+
+Planning should preserve alternatives without pretending all alternatives are approved. A plan may list candidate routes, but only dispatchable nodes with satisfied constraints, authority, context, adequacy, and verification plans should lower into typed jobs. The rest remain options, residuals, or review items.
+
+### Plan node lifecycle states
+
+Plan nodes move through lifecycle states so a useful idea does not become execution authority by accident. Proposed nodes are decomposition candidates only. Nodes blocked on context need missing material or a narrower scope. Nodes blocked on authority need a new contract, approval route, or refusal. Nodes blocked on dependency wait for upstream work, and nodes blocked on verification need a success predicate before they can be dispatched.
+
+A dispatchable node is different from a plausible node: its constraints, context, authority, dependencies, and verification plan are all satisfied. Only then may it lower into a typed job. Once dispatched, it must preserve job parentage so later audit can trace the action back to the accepted command and plan node.
+
+Replanned nodes record what changed after feedback while keeping the original authority and stop-condition boundaries visible. Stopped nodes preserve the reason work ended, whether denial, budget exhaustion, risk, or a triggered stop condition. These states let the plan remain useful before execution and accountable after execution.
+
+The reader-level point is simple: the graph can contain many kinds of work, but only a narrow subset is authorized work.
+
+### DAG scheduling and intelligence arbitrage
+
+PlanForge sharpens the plan graph into a schedulable DAG. Each node should name dependencies, expected inputs, expected outputs, context demand, authority state, capability tier, adequacy contract, quality predicate, verification requirement, budget limit, route assignment, merge condition, escalation path, and residual behavior.
+
+That extra structure changes the meaning of "use a smaller model." A cheap route is acceptable only when the node has a bounded work contract, an adequacy contract, a verifier, and a fallback. A stronger model, specialist core, tool, human reviewer, or tribunal route is justified when risk, source uncertainty, context demand, quality predicate, or failure cost makes the cheaper route inadequate.
+
+Every node therefore carries two contracts. The work contract names what the node may do. The adequacy contract names what would make the output usable by downstream dependents. Scheduling without the second contract creates text or artifacts without reliable progress.
+
+The DAG also makes local repair possible. If one source-reading node used stale evidence, the scheduler should identify the affected subgraph, repair the stale node, rerun dependents whose assumptions changed, and preserve unaffected work. That is the compiler intuition behind PlanForge: the graph lets the stack rebuild only the parts whose dependencies changed while keeping residuals and rejected routes visible.
+
+## Interfaces
+
+Planning hands off through the Plan Graph.
+
+- Alignment filters goals.
+- VCM supplies context packets.
+- Routing selects specialists.
+- Execution runs typed jobs.
+
+Minimum fields:
+
+- `plan_id`
+- `command_contract`
+- `assumptions`
+- `nodes`
+- `dependencies`
+- `context_requests`
+- `tool_requirements`
+- `authority_requirements`
+- `authority_budget`
+- `risk_budget`
+- `compute_budget`
+- `verification_plan`
+- `replanning_policy`
+- `replanning_history`
+- `stop_conditions`
+- `node_lifecycle_states`
+- `blocked_nodes`
+- `dispatch_receipts`
+- `residual_register`
+- `dispatch_state`
+- `capability_tiers`
+- `adequacy_contracts`
+- `quality_predicates`
+- `route_assignments`
+- `merge_conditions`
+- `cost_quality_ledger`
+- `non_claims`
+
+Alignment filters goals before planning. VCM supplies context packets. Routing consumes capability requirements and route assignments. Cognitive Compilation receives accepted plan obligations for semantic IR lowering. Labor OS receives typed jobs. Evidence records the plan's assumptions, cost-quality decisions, residuals, verification results, and replanning events.
+
+The plan graph is also the handoff between cognition and scheduling. It should say which nodes are exploratory, which are executable, which require approval, which are blocked, and which are evidence-only. Without that state, downstream execution has to infer whether a node is a thought, a task, a request, or a permission grant.
+
+The public schemas now force the graph to name authority budget, replanning history, node lifecycle states, blocked nodes, dispatch receipts, residual register, scheduling states, adequacy contracts, route assignments, cost-quality ledger, and non-claims. Those fields do not establish decomposition quality, dependency correctness, selected-tier adequacy, or route quality. They make the plan's dispatch boundary reviewable and give later tests a stable target.
+
+A dispatch receipt should be produced when a node lowers into a job:
+
+- `plan_node_id`
+- `parent_contract_id`
+- `dispatch_state`
+- `satisfied_constraints`
+- `context_packet_refs`
+- `authority_basis`
+- `verification_plan_ref`
+- `replanning_history`
+- `typed_job_ref`
+
+This receipt is the narrow bridge to Semantic IR and then to the Labor OS. If it is missing, execution can still be attempted by an ad hoc tool caller, but the book should not treat that as governed job dispatch.
+
+## Invariants
+
+- Plans expose constraints and stop conditions.
+- Runtime replanning preserves authority limits.
+- Tool selection is justified by task requirements.
+- Only dispatchable nodes lower into typed jobs.
+- Candidate routes, blocked nodes, and review notes are not executable permission.
+- Cost savings do not remove required verification.
+- Failed quality predicates route to escalation or residuals.
+- Merge gates compare assumptions, source versions, authority ceilings, and quality predicates before parallel branches are accepted together.
+
+A plan node inherits the parent command's authority ceiling unless governance narrows or explicitly changes it. Runtime replanning may change order, route, or decomposition, but it cannot broaden the authority boundary by calling itself adaptation.
+
+Stop-condition preservation is equally important. Replanning after failure may find a new path, but it should not erase the condition that told the original plan when to stop, escalate, or ask for review.
+
+Plan provenance must also preserve discarded decompositions when their rejection explains risk, cost, authority, or verification burden.
+
+The efficiency invariant is bounded by verification: a low-cost route only counts as adequate when the node's quality predicate, fallback, downstream utility, and residual accounting remain attached. Moving verification, repair, or human cleanup outside the ledger is not intelligence arbitrage; it is displaced cost.
+
+## Failure modes
+
+- Scope creep.
+- Planning without replanning.
+- Tool choice exceeds authority or budget.
+- Dispatch laundering, where a proposed or blocked node becomes a job because it appears in the graph.
+- Replanning erasure, where feedback changes the plan while hiding the authority, stop-condition, or residual delta.
+- Wrong capability-tier selection, where a cheap route produces plausible but inadequate work.
+- Dependency cycles, where a graph looks planned while no valid dispatch order exists.
+- Merge laundering, where parallel branches pass locally while relying on conflicting assumptions or source versions.
+
+Scope creep occurs when a plan adds goals that were never accepted. Planning without replanning means failures create improvisation instead of controlled repair. Tool choice exceeding authority or budget means the plan is not dispatchable, even if the work would be useful.
+
+Plan theater is the control-layer failure: a graph that looks organized but does not control dispatch. If dependencies, authority, context demand, adequacy contracts, route choices, and verification are not checked before jobs are created, the graph is documentation rather than a control layer.
+
+Arbitrage laundering is the planning-economics failure. The system reports lower cost by assigning hard work to cheap nodes, then moves verification, repair, and human cleanup outside the ledger. A cost-quality ledger should count that displacement before calling the DAG efficient.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a public plan graph plus PlanForge DAG record surface that can represent control states and reject dishonest dispatch.
+
+Planning starts with `plan_graph`, `planforge_dag`, `command_contract`, `hive_job_contract`, and `semantic_atom` schemas plus fixtures. The current plan-execution harness checks synthetic valid and invalid records for dependency order, blocked authority, contract mismatch, DAG cycles, requirement loss, unreceipted dispatch, and approval bypass. Plan quality remains unmeasured.
+
+The schema and fixtures make the planning surface explicit. Decomposition quality, route adequacy, selected-tier correctness, scheduler optimality, live feedback handling, runtime replanning, and deployed dispatch safety still need separate checks.
+
+The Planning scheduler-state probe adds that scheduler-state stress case. It
+runs with `python3 scripts/validate_planning_scheduler_state_probe.py` and
+records `experiments/planning_scheduler_state/results/2026-07-02-local.json`.
+It has two valid synthetic scheduler traces: one with a ready dispatchable
+node, one context-blocked node, a cheap route rejected by its adequacy
+predicate, and a branch merge blocked by conflicting assumptions; and one
+local repair trace that touches only the affected subgraph. Its seven
+expected-invalid controls reject blocked-node dispatch, ready-without-context
+dispatch, failed-adequacy route selection, conflicting merge acceptance,
+replanning authority erasure, accepted dependency cycles, and cost-quality
+ledgers that erase repair, human-review, failed-attempt, or residual costs.
+The probe sharpens scheduling semantics while leaving performance, planner
+quality, route quality, and deployment unclaimed. The accepted no-promotion
+decision
+`evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json`
+records the probe as a blocking decision for scheduler-state overclaims only;
+it does not move support state, create an upward transition, or promote the
+Planning chapter core claim.
+
+The Planning runtime-replan delta audit adds the next finite replan-shape
+slice. It runs with `python3 scripts/validate_planning_runtime_replan_delta.py`
+and records
+`experiments/planning_runtime_replan_delta/results/2026-07-02-local.json`. It
+has two valid synthetic runtime-replan traces: one local source-repair delta
+that reruns only the affected subgraph and one authority-blocked replan that
+records a residual without issuing a dispatch receipt. Its nine
+expected-invalid controls reject authority widening, stop-condition erasure,
+unaffected-node reruns without dependency impact, missing residual ownership,
+missing context deltas, missing verification deltas, blocked-authority
+dispatch receipts, support-promotion overclaims, and missing non-claim
+boundaries. The audit sharpens the runtime-replan record shape while leaving
+planner quality, live feedback handling, runtime scheduler behavior, route
+quality, selected-tier adequacy, and deployment unclaimed. The accepted
+no-promotion decision
+`evidence_transitions/v1_x_measured/planning_runtime_replan_delta_no_change.json`
+records the audit as blocking evidence for those runtime claims, not as
+chapter-core promotion.
+
+## Beyond the State of the Art
+
+Planning reaches product form as a governed scheduler and capacity allocator for cognitive work, not a better brainstorming step. It receives accepted command contracts, builds and maintains plan graphs, and decides which nodes are merely proposed, blocked, reviewable, dispatchable, dispatched, replanned, residualized, or stopped. It never owns memory, authority, verification, or side effects; it coordinates the handoffs that let those layers do their own jobs.
+
+As a control layer, planning is useful even when nothing executes. The planner can expose that a request is underspecified, a dependency is cyclic, a source is inadequate, a verifier is missing, a tool exceeds authority, a cheap route failed adequacy, a merge condition conflicts, a budget cannot support the quality predicate, or a stop condition has fired. Those outputs become plan residuals, not hidden failures.
+
+A planning control plane needs:
+
+- Strategic, tactical, and runtime plan views over the same parent contract, each with assumptions, dependencies, context requests, budgets, risk limits, verification plans, and stop conditions.
+- Node lifecycle states that prevent proposed, blocked, exploratory, or review-only nodes from lowering into jobs.
+- Dispatch receipts that bind every job to a plan node, satisfied constraints, authority basis, context packet, verifier, and parent command.
+- Replanning deltas that record what changed after feedback, which obligations were preserved, and which residuals or stop conditions remain.
+- Control dashboards that show blocked context, blocked authority, blocked verifier, budget pressure, dependency pressure, and human approval queues before side effects occur.
+- Per-node adequacy contracts that bind capability tier, input context, verifier strength, fallback route, and downstream acceptance needs.
+- Merge gates that prevent incompatible assumptions, source versions, authority ceilings, or quality predicates from being combined as if parallel work had succeeded.
+- Cost-quality ledgers that count tokens, latency, tool cost, review cost, repair cost, human cleanup, failed attempts, and residuals before reporting efficiency.
+
+This traffic-control layer is still an architectural target. Keep planning support at `argument` until planner schemas, lifecycle enforcement, dispatch tests, scheduler traces, selected-tier adequacy tests, replanning traces, and authority-preservation checks show that candidate work, authorized work, blocked work, routed work, residualized work, and executed work remain separate under pressure.
+
+## Summary
+
+Planning converts accepted commands into governed structure. It exposes assumptions, tasks, dependencies, context requests, tools, authority, risk, budgets, capability tiers, adequacy contracts, verification, stop conditions, and replanning policy before execution begins.
+
+This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, inadequate routes, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation. The graph becomes schedulable only when efficiency claims name capability tiers, adequacy contracts, verification burdens, and residual costs.
+
+Typed jobs and runtime adapters depend on this boundary. A job should be born from a dispatchable plan node, not from a planner's enthusiasm. That keeps execution downstream of constraints rather than upstream of explanation. Planning also gives the human and research views a shared object: humans can see the shape of the work and why it is blocked or allowed, while agents can inspect dependencies, budgets, context leases, route choices, adequacy contracts, and verification duties. If the plan cannot explain both progress and refusal, it is not yet a control layer; it is only a narrative about action.
+
+## Handoff
+
+DAG scheduling gives work an order, a route, and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.

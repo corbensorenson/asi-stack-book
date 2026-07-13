@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/post_v2_3_campaign_adjudication.schema.json",
+  "title": "Post-v2.3 campaign result adjudication",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "adjudication_id", "recorded_date", "status", "preregistration", "program_result", "protocol_integrity", "governance_tax", "residual_honesty", "cost", "dispositions", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_3_campaign_adjudication.v0"},
+    "adjudication_id": {"const": "post-v2-3-campaign-adjudication-2026-07-13"},
+    "recorded_date": {"const": "2026-07-13"},
+    "status": {"const": "completed_protocol_failure_preserved_no_change"},
+    "preregistration": {"type": "object"},
+    "program_result": {"type": "object"},
+    "protocol_integrity": {"type": "object"},
+    "governance_tax": {"type": "object"},
+    "residual_honesty": {"type": "object"},
+    "cost": {"type": "object"},
+    "dispositions": {"type": "array", "minItems": 2, "maxItems": 2},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 12}}
+  }
+}

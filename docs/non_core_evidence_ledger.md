@@ -1,6 +1,6 @@
 # Non-Core Evidence Ledger
 
-Last updated: 2026-07-06
+Last updated: 2026-07-13
 
 This ledger makes the currently accepted non-core evidence transitions visible
 without promoting any chapter core claim. It is a public trust surface for
@@ -11,12 +11,13 @@ readers, reviewers, and future writing agents.
 | Field | Status |
 |---|---|
 | Chapter core claims | All 54 remain at `argument`. |
-| Accepted non-core upward transitions | 14 narrow transitions. |
-| Accepted no-promotion side-lane decisions | 40 accepted `blocks_promotion` decisions; no support-state movement. |
+| Accepted non-core upward transitions | 19 narrow transitions. |
+| Accepted refuted non-core claims | 2 exact QCSA fixture claims; no chapter-core refutation. |
+| Accepted no-promotion side-lane decisions | 56 accepted `blocks_promotion` decisions; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
 | Chapter-core promotion effect | None. |
-| External review status | Public review request opened in GitHub issue #1; no independent external human review record yet. |
-| No-promotion side-lane record coverage | The 40 accepted no-promotion records cover Circle consumer checking, Circle contract-pack archive verification, Circle seed-rule exact-regeneration, Circle KV-cache, recurrence, sparse-attention, strided fanout, cyclic-mixer, and MultiCoil phase receipt checking, Planning scheduler-state and runtime-replan delta reviews, System Boundaries authority revocation propagation, Runtime Adapter effect replay, adversarial boundary review, oversight degradation, partitioned authority, readiness lifecycle routing, Labor OS durable lifecycle routing, residual-ledger replay, Artifact Graphs record-reality, receipt faithfulness, receipt repository audit/challenge, epistemic-TCB, local attestation, randomized attestation, GitHub Pages CI attestation, and public deployed-site attestation lanes, Fast Generation task accounting, RankFold replay/import evidence, Resource workflow/live/workload/load/CI sublanes, Routing lease checks, Security Kernel SCIF commit replay, Project Theseus public task-bundle import, Project Theseus book-to-Theseus crosswalk pointer, and Project Theseus work-board metadata import. They are blocking decisions, not upward support-state transitions. None promotes a chapter core claim, deployment claim, benchmark claim, model-quality claim, safety claim, security claim, or ASI claim. |
+| External review status | No independent external-human review was requested, required, or claimed for this internal adjudication. |
+| No-promotion side-lane record coverage | The 56 accepted records cover the prior 40 v1.x side lanes, three post-v2 programs, six post-v2.1 result claims, five QCSA implementation/evaluation boundaries, and two preregistered post-v2.3 campaign dispositions. They are blocking decisions, not upward support-state transitions. None promotes a chapter core, deployment, benchmark, model-quality, safety, security, AGI, or ASI claim. |
 
 ## Accepted Non-Core Transitions
 
@@ -101,8 +102,8 @@ reader-quality edits do not promote a claim by themselves.
 The ledger is checked by `scripts/validate_non_core_evidence_ledger.py`. That
 validator reads the accepted transition records under
 `evidence_transitions/v1_0_measured/` and `evidence_transitions/v1_x_measured/`,
-checks that all 14 current non-core upward claims are listed here, derives and
-checks all 40 accepted `blocks_promotion` side-lane decisions, checks the live
+checks that all 19 current non-core upward claims are listed here, derives and
+checks all 56 accepted `blocks_promotion` side-lane decisions, checks the live
 claim-surface narrowing record, checks the chapter-core non-promotion boundary,
 and checks that the public entry surfaces link to this ledger. The live
 revision record is also checked by `scripts/validate_claim_revision_records.py`.
@@ -114,6 +115,55 @@ revision record is also checked by `scripts/validate_claim_revision_records.py`.
 | `post_v2_governed_work_flagship.bounded_matched_local_result` | `blocks_promotion` | `docs/post_v2_governed_work_flagship.md`; `evidence_transitions/post_v2/governed_work_flagship_no_change.json` | Sixteen retained model plan/code runs, matched Git worktrees, independent subprocess probes, receipt/path checks, residuals, ten rollbacks, eight exact and two failed, zero governed releases. | Production transfer, deployed service behavior, external independence, verifier correctness, production economics, and all three affected core promotions. |
 | `post_v2_routing_deliberation.bounded_matched_local_result` | `blocks_promotion` | `docs/post_v2_routing_deliberation.md`; `evidence_transitions/post_v2/routing_deliberation_no_change.json` | Three-seed held-out routing and deliberation records, matched caps, 15 fixed-step harms, and explicit zero-use fallback/abstention. | Ambiguous-route validity, fallback calibration, trained-specialist interference, language-model deliberation, verifier correctness, transfer, and both core promotions. |
 | `post_v2_update_causality.bounded_real_mutation_result` | `blocks_promotion` | `docs/post_v2_update_causality.md`; `evidence_transitions/post_v2/update_causality_no_change.json` | Real parameter/checkpoint/output changes, forgetting, deletion-cohort differences, best/final authority, three exact rollbacks, and nine invalidated descendant arms. | Production learning/unlearning, storage erasure, feedback optimization, open-ended improvement, recursive improvement, external independence, and four core promotions. |
+
+## Accepted Post-v2.1 Bounded and No-Change Results
+
+| Claim ID | Support-state effect | Evidence packet | What the decision records | What stays blocked |
+|---|---|---|---|---|
+| `post_v2_1.ambiguous_routing.bounded_result` | `blocks_promotion` | `evidence_transitions/post_v2_1/ambiguous_routing_narrow.json` | The learned router selected 59/60 routes and exercised fallback, abstention, and clarification, but all 360 substantive candidates were wrong; apparent utility came entirely from correct non-answer actions. | Substantive answer utility, evaluator validity, multi-model/natural transfer, production safety, latency, and cost. |
+| `post_v2_1.full_state_rollback.bounded_result` | `blocks_promotion` | `evidence_transitions/post_v2_1/full_state_rollback_narrow.json` | All 15 seed-arm transactions restored all 24 declared model, optimizer, scheduler, RNG, cache, checkpoint, backup, and descendant surfaces exactly. | Heterogeneous runtimes, remote effects/backups, production recovery objectives, monitoring, and independent replay. |
+| `post_v2_1.full_state_update.no_change_result` | `blocks_promotion` | `evidence_transitions/post_v2_1/full_state_update_no_change.json` | Prospective checkpoint authority and retained-task bounds held, but zero of nine eligible challenger arms reached the registered 0.05 target-utility gain. | Replicated gain, production-scale update/monitoring, feedback learning, open-endedness, recursion, and core promotion. |
+| `post_v2_1.governed_usefulness_rollback.bounded_result` | `blocks_promotion` | `evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json` | Governance reduced primary unsafe releases from 24/36 to 0/36, while useful release was 2/36 and attack-control exact rollback 32/36, below both frozen thresholds. | Useful governed throughput, open-system effect-complete rollback, independent verifier validity, production transfer, and acceptable governance cost. |
+| `post_v2_1.real_model_deliberation.no_change_result` | `blocks_promotion` | `evidence_transitions/post_v2_1/real_model_deliberation_no_change.json` | All five real-model deliberation arms ended at 0/60 correct; adaptive stopping exhausted five candidates on every request, so corruption reduction was not estimable. | Matched-budget adaptive benefit, initial-correct corruption estimates, replication, independent evaluator validity, and transfer. |
+| `post_v2_1.unlearning_causality.narrow_result` | `blocks_promotion` | `evidence_transitions/post_v2_1/unlearning_causality_narrow.json` | Deletion-aware retraining changed cohort behavior by 4/0/1 and propagated lineage invalidation; influence reduction remained a confidence proxy and storage erasure was false at every seed. | Causal influence removal, privacy/member assessment, descendant-wide propagation, verified backup/storage erasure, and core promotion. |
+
+## Adjudicated QCSA v2.3 Non-Core Claims
+
+These rows are the terminal P4 review of the ten evaluation recommendations
+plus the implementation-only and vertical-reference candidates. The five
+upward transitions apply only to their exact synthetic non-core claims. Two
+exact claims are refuted. Every other row remains at `argument`; every chapter
+core remains at `argument`.
+
+| Claim ID | Accepted state/effect | Transition | What the decision records | What stays blocked |
+|---|---|---|---|---|
+| `qcsa.plural_facets_exact_fixture_value` | `synthetic-test-backed` | `evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json` | Full QCSA resolved 1.000 of exact held-out objects while the no-plural-facets ablation resolved 0.916667 under the frozen 180-record corpus. | Natural-language, multilingual, multimodal, learned-representation, production, and chapter-core benefit. |
+| `qcsa.identity_indirection_exact_migration_value` | `synthetic-test-backed` | `evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json` | Removing identity/address indirection reduced object accuracy to 0.900000 and migration compatibility to 0.400000 from 1.000/1.000. | Distributed registries, open-world identity, federation, security, and Virtual Context ABI core promotion. |
+| `qcsa.certificate_authority_fields_exact_value` | `synthetic-test-backed` | `evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json` | Full QCSA had zero unsafe authority releases; the no-certificate/residual/authority ablation had nine across 180 records. | Runtime security, privacy, human-approval quality, general safety, and Runtime Adapters core promotion. |
+| `qcsa.migration_compatibility_exact_value` | `synthetic-test-backed` | `evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json` | Removing migration compatibility reduced task-decision accuracy from 1.000 to 0.833333 and compatibility from 1.000 to 0.000. | Live descendants, distributed caches, production rollback, learning/unlearning, storage erasure, and Data Engines core promotion. |
+| `qcsa.task_calibration_exact_result` | `synthetic-test-backed` | `evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json` | QCSA's exact task-decision Brier score was 0.082026 versus 0.298500 for the selected baseline, with selective risk 0 for both. | Object calibration, natural prevalence, non-ceiling tasks, learned models, external replication, and any chapter-core promotion. |
+| `qcsa.exact_synthetic_matched_advantage` | `refuted` | `evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json` | QCSA and the selected baseline both reached 1.000 task-decision accuracy while QCSA used 1.913386 times the operations, so both preregistered advantage gates failed. | Reuse of the exact matched-advantage claim; the result does not refute other corpora or implementations. |
+| `qcsa.active_questions_exact_fixture_value` | `refuted` | `evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json` | Removing active questions preserved 1.000 object and task-decision accuracy; the full system asked questions on 0.033333 of records without accuracy gain. | General claims against clarification policies; ablation verifier-cost bookkeeping remains a confound. |
+| `qcsa.semantic_round_trip_exact_preservation` | `blocks_promotion` | `evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json` | The internal independently implemented observer measured zero structural loss and zero disagreement for exact QCSA outputs. | Arbitrary semantic equivalence, independent replication, natural artifacts, and Cognitive Compilation core promotion. |
+| `qcsa.governance_prevention_resource_tradeoff` | `blocks_promotion` | `evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json` | Exact prevention was 1.000000 versus 0.487179, but the 1.913386 operation ratio exceeded the preregistered 1.50 ceiling. | Acceptable production economics, incident-rate interpretation, governance efficacy, and Resource Economics core promotion. |
+| `qcsa.open_world_or_production_transfer` | `blocks_promotion` | `evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json` | No natural workload, learned model, deployment, external replication, live effect, or prevalence study was run. | All open-world, production, safety, privacy, security, learned-model, AGI, and ASI claims. |
+| `qcsa.reference_implementation_exact_contract_conformance` | `blocks_promotion` | `evidence_transitions/post_v2_3/qcsa_reference_implementation_exact_contract_conformance_narrow.json` | The deterministic reference package conforms to its exact schemas, digests, fixtures, and expected-invalid controls. | Treating implementation conformance as held-out evaluation, semantic quality, transfer, or Integrated Architecture core support. |
+| `qcsa.vertical_reference_exact_reversible_trace` | `blocks_promotion` | `evidence_transitions/post_v2_3/qcsa_vertical_reference_exact_reversible_trace_narrow.json` | One 13-stage hand-authored trace completed a local temporary-file effect and exact declared rollback. | Open-system effect-complete rollback, learned routing, useful throughput, production transfer, and Integrated Architecture core promotion. |
+
+## Preregistered Post-v2.3 Campaign Dispositions
+
+Both campaigns completed their frozen call budgets with zero retries. Their
+outputs are retained as protocol failures: all 36 calls exhausted the
+256-token output cap; 34 ended inside unclosed reasoning blocks and two closed
+reasoning without emitting a requested final JSON object. Raw reasoning text
+is not treated as a final decision, and
+zero unsafe releases with zero total releases is not treated as safety
+evidence.
+
+| Claim ID | Support-state effect | Evidence packet | What the decision records | What stays blocked |
+|---|---|---|---|---|
+| `post_v2_3.governance_tax_natural_work.bounded_result` | `blocks_promotion` | `docs/post_v2_3_campaign_results.md`; `evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json` | Twelve matched baseline/governed natural-work calls produced zero parseable final outputs and therefore zero releases in either route. Seven raw traces contained all criterion terms, but none was an admissible candidate. The separate local rollback harness restored all nine declared surfaces on 12/12 probes and detected 12/12 omission controls. | Useful-throughput and unsafe-release contrasts, refusal calibration, governance cost, broader model quality, production rollback, independent validity, transfer, and all affected chapter-core promotions. |
+| `post_v2_3.residual_honesty_under_pressure.bounded_result` | `blocks_promotion` | `docs/post_v2_3_campaign_results.md`; `evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json` | Twenty-four frozen calls across six scenarios and four pressure conditions mentioned residual IDs only inside capped reasoning text; none emitted a parseable final decision, correct route, or reopen trigger. | Residual-disclosure quality, pressure robustness, correct routing, premature-closure effects, independent validity, production behavior, and both affected chapter-core promotions. |
 
 ## Non-Claims
 

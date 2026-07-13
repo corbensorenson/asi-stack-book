@@ -229,7 +229,8 @@ pre-state. Scope widening, irreversible effect, stale epoch, certificate
 tampering, missing receipt, and hidden-effect paths all failed closed.
 
 That result promotes only the exact field-separation and receipt mechanism
-finding. The approval identifier is a fixture, the effect is temporary and
+finding to a non-core `synthetic-test-backed` state. The approval identifier is
+a fixture, the effect is temporary and
 public-safe, no external human or deployed policy service participated, and a
 single exact rollback cannot establish effect-complete recovery in an open
 system. Permission correctness, human-approval quality, production safety, and

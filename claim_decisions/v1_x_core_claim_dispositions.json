@@ -247,7 +247,9 @@
       "formal_or_prototype_work": "Surface non-core transitions and enforce no-promotion decisions.",
       "human_reader_focus": "Turn support states into plain-language reader promises.",
       "what_would_move_this": "Appendix C/sibling ledger validates transitions without core-claim promotion.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json"
+      ]
     },
     {
       "claim_id": "scalable-oversight-and-adversarial-ai-control.core",
@@ -280,12 +282,12 @@
         "does not prove debate or consultancy efficacy, training safety, or execution authority",
         "does not prove model quality, alignment, safety, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 3 assigned sources; 3 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 4 assigned sources; 4 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
-      "primary_evidence_lane": "Source-noted weak-to-strong and weak-judge protocol comparators plus a finite admission boundary",
-      "formal_or_prototype_work": "Build a public-safe oversight-protocol record with task/risk/authority scope, supervisor/system envelopes, information access, role incentives, shared-dependency risk, direct-review baseline, independent outcome audit, residuals, escalation, and requested downstream handoff.",
-      "human_reader_focus": "Explain why helpful review is not the same as a universal judge, and why a system must preserve what its supervisor could not check.",
-      "what_would_move_this": "A replayed matched direct-review, assisted-review, and abstention workload with held-out outcome reference, baseline, correlation negatives, cost, disagreement, residuals, and accountable escalation; no local supervisor calibration, debate efficacy, weak-to-strong generalization, alignment, safety, execution-authority, or ASI claim.",
+      "primary_evidence_lane": "Passage-reviewed weak-to-strong, original debate-game, and weak-judge protocol comparators plus a finite admission boundary",
+      "formal_or_prototype_work": "Build a public-safe oversight-protocol record with task/risk/authority scope, supervisor/system envelopes, information access, role incentives, shared-dependency graph, direct-review baseline, independent outcome audit, consumer scope, expiry, residuals, escalation, and requested downstream handoff.",
+      "human_reader_focus": "Distinguish help from settlement through the selectively reported update trace; preserve what the supervisor could not check and why abstention or quarantine remains warranted.",
+      "what_would_move_this": "A replayed matched direct-review, assisted-review, correlated-failure, and abstention workload with held-out outcome reference, baseline, costs, disagreement, residuals, permitted consumers, and accountable escalation; no local supervisor calibration, debate efficacy, weak-to-strong generalization, alignment, safety, execution-authority, or ASI claim.",
       "relevant_non_core_transition_refs": []
     },
     {
@@ -559,7 +561,8 @@
       "what_would_move_this": "Valid replacement transaction and invalid promotion fixture both replay.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
-        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json"
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json"
       ]
     },
     {
@@ -654,12 +657,12 @@
         "does not prove hardware, vendor, operator, software, key-service, or attestation trustworthiness",
         "does not prove model safety, release desirability, readiness, authority, deployment, or ASI"
       ],
-      "current_evidence_summary": "Source notes available for all 6 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "current_evidence_summary": "Source notes available for all 6 assigned sources; 6 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
-      "primary_evidence_lane": "Source-noted weight-security, confidential-computing, and release-scheme comparators plus a finite invalid-attestation block",
-      "formal_or_prototype_work": "Build a public-safe custody record with model/artifact identity, lineage, encrypted-storage reference, key-release policy, environment measurement, attestation result, access scope, revocation, release classification, and residual ownership.",
-      "human_reader_focus": "Explain why a model artifact needs its own custody history, and why a hardware token is not a safety certificate.",
-      "what_would_move_this": "A replayed synthetic custody workload with stale/invalid-attestation, changed-policy, widened-scope, open-release, revocation, and missing-lineage controls; no local weights, keys, hardware, confidentiality, security, safety, readiness, authority, or deployment claim.",
+      "primary_evidence_lane": "Full comparator audit across graduated weight security, confidential-computing trust domains, vendor lifecycle, in-toto signed layouts/links/thresholds, protected-release critique, plus nine derived Lean theorems and an eight-case deterministic lifecycle bridge",
+      "formal_or_prototype_work": "Preserve consumer-bound model/artifact identity, lineage closure, policy/verifier/measurement binding, relational freshness, verifier dependencies, independent load observation, distinct revocation meanings, release authority, irreversibility, and residual ownership.",
+      "human_reader_focus": "Explain why a model artifact needs its own custody history, why a valid signature or hardware token is not a safety certificate, and why managed load cannot authorize distribution.",
+      "what_would_move_this": "Next unrun campaign: public-safe mock key service and verifier with independently generated valid/invalid evidence, observed effects, stale/changed-policy/widened-scope/open-release/revocation/missing-lineage controls, baseline false acceptance/denial, latency, operator cost, and residuals; no real weights, keys, hardware, confidentiality, security, safety, readiness, authority, or deployment claim.",
       "relevant_non_core_transition_refs": []
     },
     {
@@ -695,10 +698,10 @@
       ],
       "current_evidence_summary": "Source notes available for all 11 assigned sources; 7 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
-      "primary_evidence_lane": "Source-noted lifecycle C-SCRM, build provenance, model signing, and AI BOM comparators plus finite advisory/signature quarantine routes",
-      "formal_or_prototype_work": "Build a public-safe supply-chain admission record with artifact identity/digest, lineage, supplier scope, build/training provenance, signature result, BOM freshness, advisory state, derivative links, revocation, residual ownership, and requested use.",
-      "human_reader_focus": "Explain how a model's data, code, build, signer, supplier, and derivatives form a traceable chain without making metadata a safety certificate.",
-      "what_would_move_this": "A replayed synthetic supply-chain workload with missing lineage, stale BOM, unverified signature, unresolved critical advisory, revoked signer, changed derivative, missing revocation, and missing-residual controls; no local AI BOM, provenance, signer, supplier assessment, artifact integrity, data fitness, safety, readiness, authority, or deployment claim.",
+      "primary_evidence_lane": "Audited C-SCRM, SLSA, model-signing, AI metadata, and in-toto comparators plus seven derived admission theorems and a registered three-project affected-path fixture with ten rejecting mutations",
+      "formal_or_prototype_work": "Preserve consumer-relative completeness, exact subject/policy binding, typed derivative inheritance, append-only invalidation, exact declared downstream closure, one owned non-ordinary response per member, lifecycle closure, and explicit world-incompleteness residuals.",
+      "human_reader_focus": "Explain how a model's data, code, build, signer, supplier, and derivatives form a traceable chain without making metadata a safety certificate, and why quarantine requires repair and service-restoration ownership.",
+      "what_would_move_this": "Next unrun campaign: natural lifecycle work with independently generated rebuild/supplier evidence, false quarantine, alert fan-out, propagation cost, repair latency, availability impact, and unresolved residuals; no world-complete inventory, artifact integrity, supplier truth, data fitness, safety, readiness, authority, or deployment claim.",
       "relevant_non_core_transition_refs": []
     },
     {
@@ -802,10 +805,10 @@
       ],
       "current_evidence_summary": "Current adjacent local evidence is recorded in the affected chapter and accepted no-change core disposition; core support remains argument. Result: `experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json`.",
       "open_gap": "independent validity assessment; production-scale update and monitoring traces; replicated target gain at the retained-task bound; separate evidence for feedback learning, open-endedness, or recursion if claimed",
-      "primary_evidence_lane": "Open-ended-improvement sources plus the post-v2 fixed stopped four-arm mutation campaign",
-      "formal_or_prototype_work": "Move from a fixed campaign to bounded task/candidate generation with evaluator evolution controls, archive diversity, independent qualification, stop authority, resources, failures, and admission decisions.",
+      "primary_evidence_lane": "Full POET, FunSearch, Voyager, ADAS, and Darwin G\u00f6del Machine comparator audit; post-v2 stopped campaign; seven owned Lean routes; seven-case/ten-mutation campaign-record bridge",
+      "formal_or_prototype_work": "Move from finite record routing to the prospectively fixed generated/fixed/no-search campaign on a fresh cohort, with evaluator evolution controls, archive diversity, independent qualification, stop authority, resources, failures, and admission decisions.",
       "human_reader_focus": "Explain the difference between a workshop that may generate candidates and a release gate that may let one affect a system.",
-      "what_would_move_this": "A bounded open-ended campaign demonstrates useful novelty and transfer while preserving evaluator scope, archive negatives, resource limits, stop authority, and independent admission.",
+      "what_would_move_this": "The unrun campaign must demonstrate useful novelty and transfer while preserving evaluator scope, archive negatives, resource limits, stop authority, and independent admission; the present bridge does not.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2/update_causality_no_change.json",
         "evidence_transitions/post_v2_1/full_state_update_no_change.json"
@@ -867,7 +870,8 @@
       "what_would_move_this": "A broader deployed or externally reviewable intent-to-effect comparison preserves authority, observed effects, receipt/path reconciliation, residuals, useful throughput, and rollback under natural workloads.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
-        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json"
+        "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json"
       ]
     },
     {
@@ -961,7 +965,11 @@
       "formal_or_prototype_work": "Add semantic atom lowering and failed-preservation cases.",
       "human_reader_focus": "Use compilation as the bridge from thought to executable structure.",
       "what_would_move_this": "IR translation preserves required fields and rejects lossy lowering.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
+        "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
+        "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json"
+      ]
     },
     {
       "claim_id": "virtual-context-abi.core",
@@ -1017,7 +1025,9 @@
       "formal_or_prototype_work": "Add admission, mount, capability, typed page/cell, certificate-truthfulness, authority-ceiling, loss-contract, permitted-use, and context-window negative controls.",
       "human_reader_focus": "Make context feel like memory with permissions, receipts, and certificates that decide what memory can be trusted for.",
       "what_would_move_this": "Admission fixture rejects stale, conflicting, mode-confused, stale-certificate, missing-certificate, or authority-escalating packets and records residual.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json"
+      ]
     },
     {
       "claim_id": "context-transactions-snapshots-mounts-and-taint.core",
@@ -1356,6 +1366,7 @@
       "what_would_move_this": "High-impact adapter call fails without current approval and receipt.",
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
         "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
         "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
         "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
@@ -1395,10 +1406,10 @@
       ],
       "current_evidence_summary": "Source notes available for all 10 assigned sources; 9 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
-      "primary_evidence_lane": "Source-noted MCP, A2A, DID/VC, and Interledger comparators plus finite credential/budget dispatch routes",
-      "formal_or_prototype_work": "Build a public-safe exchange-contract workload with protocol/schema, endpoint/capability, sender/receiver/principal, delegation, credential, audience/scope/expiry, consideration/reservation, receipt, dispute, revocation, and residual controls.",
+      "primary_evidence_lane": "Audited MCP, A2A, DID/VC, Interledger, and QCSA comparators plus nine owned routes and a nine-case/eleven-mutation synthetic exchange bridge",
+      "formal_or_prototype_work": "Run the frozen cached-versus-per-request qualification campaign with protocol/schema, endpoint/capability, sender/receiver/principal, delegation, credential, audience/scope/expiry, reservation, receipt, dispute, revocation, disclosure, and residual controls.",
       "human_reader_focus": "Explain why a remote message, identity, credential, or value packet is not an automatic delegation, authorization, settlement, or truth claim.",
-      "what_would_move_this": "A replayed bounded exchange workload rejects missing identity, audience mismatch, expired/revoked/invalid credentials, missing reservation, disputed receipt, and missing residual owner; no peer trust, task truth, effect safety, payment, settlement, privacy, authorization, or deployment claim.",
+      "what_would_move_this": "Measure false dispatch, false denial, stale acceptance, dispute recovery, latency, disclosure, operator effort, and residual obligations; no peer trust, task truth, effect safety, payment, settlement, privacy, authorization, or deployment claim.",
       "relevant_non_core_transition_refs": []
     },
     {
@@ -1541,6 +1552,7 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
         "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
         "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json"
       ]
     },
@@ -1627,6 +1639,7 @@
       "human_reader_focus": "Explain compactness, repair, and semantic leasing as accountable loss rather than magic or clean ontology.",
       "what_would_move_this": "Fixture records what is compressed, represented, lost, checked, repaired, residualized, superseded, quarantined, or rejected before any compactness or semantic-representation claim promotes.",
       "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
         "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
         "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
         "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json"
@@ -1850,6 +1863,8 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
         "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+        "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+        "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
         "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
         "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
         "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -2167,10 +2182,10 @@
       ],
       "current_evidence_summary": "Source notes available for all 6 assigned sources; 5 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
-      "primary_evidence_lane": "Source-noted time-horizon and threshold-commitment comparators plus a finite safeguard-block route",
-      "formal_or_prototype_work": "Build a public-safe threshold-commitment record with domain, threat, evaluation envelope, baseline, coverage, uncertainty, safeguards, verification, exception, residual, and affected release-path fields.",
+      "primary_evidence_lane": "Five comparator families plus eight owned Lean routes and an eight-case/five-mutation synthetic commitment bridge",
+      "formal_or_prototype_work": "Run the frozen repeated assessment and separate mock-safeguard campaign with domain, threat, envelope, baseline, coverage, uncertainty, exception, residual, cumulative-drift, and cross-domain controls.",
       "human_reader_focus": "Explain a threshold as a promise made before a result, rather than a score that retroactively clears deployment.",
-      "what_would_move_this": "A replayed domain-scoped commitment workload with stale-coverage, incomparable-elicitation, expired-exception, missing-verification, and attempted-release controls; no local threshold, capability, safeguard, readiness, safety, or deployment claim.",
+      "what_would_move_this": "Measure false clearance/block, stale acceptance, exception misuse, reassessment and safeguard latency, operator effort, and residual age; no local capability, threshold adequacy, safeguard efficacy, readiness, safety, or deployment claim.",
       "relevant_non_core_transition_refs": []
     },
     {
@@ -2206,10 +2221,10 @@
       ],
       "current_evidence_summary": "Source notes available for all 8 assigned sources; 3 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
       "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
-      "primary_evidence_lane": "Source-noted primary experiments plus a finite selection-context and independent-evaluation promotion boundary",
-      "formal_or_prototype_work": "Build a public-safe evaluation-integrity record with baseline and altered selection/monitor contexts, held-out controls, a monitor-interference negative case, residuals, and independent replay.",
-      "human_reader_focus": "Explain why an evaluation is an observation made under conditions, not a complete statement of ability or safety.",
-      "what_would_move_this": "A replayed, workload-scoped cross-context comparison with declared baselines, negative controls, provenance, residuals, and independent review; no local deception, general capability, or safety claim.",
+      "primary_evidence_lane": "Five comparator families plus eight owned routes and an eight-case/five-mutation integrity bridge",
+      "formal_or_prototype_work": "Run the frozen benign cross-context campaign with visible/hidden monitor, update/no-update, elicitation, independent/correlated scorer, held-out, residual, and replay controls.",
+      "human_reader_focus": "Explain why an evaluation is an observation made under conditions, not a complete statement of ability, intent, or safety.",
+      "what_would_move_this": "Measure task outcome, context discrepancy, detector error, unsupported intent inference, unsafe promotion, quarantine, cost, and throughput; no local deception, sandbagging resistance, capability, alignment, or safety claim.",
       "relevant_non_core_transition_refs": []
     },
     {
@@ -2334,7 +2349,8 @@
       "relevant_non_core_transition_refs": [
         "evidence_transitions/post_v2/update_causality_no_change.json",
         "evidence_transitions/post_v2_1/full_state_update_no_change.json",
-        "evidence_transitions/post_v2_1/unlearning_causality_narrow.json"
+        "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+        "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json"
       ]
     },
     {
@@ -2412,7 +2428,12 @@
       "formal_or_prototype_work": "Build a public-safe thin vertical slice through several layers.",
       "human_reader_focus": "Turn the architecture into a coherent walkthrough.",
       "what_would_move_this": "Trace crosses intent, plan, authority, evidence, and artifact replay without hidden promotion.",
-      "relevant_non_core_transition_refs": []
+      "relevant_non_core_transition_refs": [
+        "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
+        "evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json",
+        "evidence_transitions/post_v2_3/qcsa_reference_implementation_exact_contract_conformance_narrow.json",
+        "evidence_transitions/post_v2_3/qcsa_vertical_reference_exact_reversible_trace_narrow.json"
+      ]
     },
     {
       "claim_id": "project-theseus-as-report-first-implementation-reference.core",

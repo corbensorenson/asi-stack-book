@@ -202,6 +202,15 @@ def transition_errors(
             "no_new_support_state_transition",
         }:
             errors.append(f"{label}: no_change support_state_effect must be non-promoting.")
+    elif effect == "refuted":
+        if old_state == new_state:
+            errors.append(f"{label}: refuted transition must change support state.")
+        if new_state != "refuted":
+            errors.append(f"{label}: refuted transition must terminate at the refuted support state.")
+        if support_effect != "blocks_promotion":
+            errors.append(f"{label}: refuted transition support_state_effect must be blocks_promotion.")
+        if record.get("acceptance_blockers") not in ([], None):
+            errors.append(f"{label}: accepted refuted transitions must not retain acceptance_blockers.")
     else:
         errors.append(f"{label}: unsupported accepted transition_effect {effect!r} in this audit.")
 
@@ -302,6 +311,7 @@ def build_expected_result(
 ) -> dict[str, Any]:
     upward = [record for record in records if record.get("transition_effect") == "upward"]
     no_change = [record for record in records if record.get("transition_effect") == "no_change"]
+    refuted = [record for record in records if record.get("transition_effect") == "refuted"]
     core_upward = [
         record
         for record in records
@@ -318,6 +328,7 @@ def build_expected_result(
         "accepted_transition_record_count": len(records),
         "accepted_no_change_record_count": len(no_change),
         "accepted_bounded_upward_non_core_transition_count": len(upward),
+        "accepted_exact_refutation_count": len(refuted),
         "accepted_core_upward_transition_count": len(core_upward),
         "accepted_no_promotion_decision_count": len(decisions) if isinstance(decisions, list) else 0,
         "manifest_core_claim_count": len(manifest_core_claim_ids),
@@ -326,6 +337,11 @@ def build_expected_result(
         "coverage": {
             "accepted_records_present": bool(records),
             "bounded_upward_transitions_are_non_core": not core_upward,
+            "accepted_refutations_are_terminal_and_non_promoting": all(
+                record.get("new_support_state") == "refuted"
+                and record.get("support_state_effect") == "blocks_promotion"
+                for record in refuted
+            ),
             "manifest_core_claims_not_promoted": not core_upward,
             "no_promotion_decisions_present": isinstance(decisions, list) and bool(decisions),
             "changelog_refs_present": all(nonempty_string(record.get("changelog_ref")) for record in records),
@@ -414,16 +430,18 @@ def validate_surfaces(errors: list[str]) -> None:
         DOC: [
             "Accepted Transition Review Audit",
             rel(RESULT),
-            "77 accepted transition records",
-            "twelve bounded non-core upward transitions",
+            "103 accepted transition records",
+            "nineteen bounded non-core upward transitions",
+            "two accepted exact refutations",
             "seven expected-invalid mutation controls",
             "no support-state transition",
         ],
         CHAPTER: [
             "Accepted live transition review audit",
             rel(RESULT),
-            "77 accepted transition records",
-            "twelve bounded non-core upward transitions",
+            "103 accepted transition records",
+            "nineteen bounded non-core upward transitions",
+            "two accepted exact refutations",
         ],
         READER: [
             "accepted live transition review audit",

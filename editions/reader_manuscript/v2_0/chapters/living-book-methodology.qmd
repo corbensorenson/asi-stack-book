@@ -1,0 +1,164 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: living-book-methodology
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/living-book-methodology.qmd
+live_source_ref: chapters/living-book-methodology.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Living Book Methodology
+
+The prototype roadmap explains how the system should be built over time. The manuscript itself needs the same discipline so it can keep changing without losing its evidence controls. The manuscript is part of the architecture, not a static brochure about it. If the architecture is living, its written form must also have controlled change, reviewable lineage, and a visible boundary between aspiration and evidence.
+
+Trust comes through process. The manuscript should remain readable, but it also has to show how parts move, how sources enter, how claims change state, how proofs and tests are recorded, and how reader editions are derived without becoming a separate truth. That makes the manuscript a demonstration of the governance discipline it argues for.
+
+The same machinery that helps AI agents maintain the work should help humans see what changed and why. A living book is credible when its revisions leave receipts: source routes, changelog entries, validation reports, non-claims, and open residuals that make improvement auditable rather than mysterious. Receipts make revision trustworthy because later edits can find their debt.
+
+## Problem
+
+The book itself must remain a living technical system rather than a static anthology. That is not a publishing preference. It is part of the architecture. A book about governed self-improving systems should not improve by silently rewriting claims, losing source provenance, or hiding failed tests. It should model the same discipline it asks of the AI stack.
+
+The living-book problem is versioned coherence. New papers will arrive. Chapters will split and merge. Proof targets will move from vague ideas to schemas or Lean modules. Some claims will strengthen, some will remain speculative, and some should be deprecated. The system needs a way to absorb those changes without making the reader guess which claims are current, which are supported, and which are only design hypotheses.
+
+That operating system is the living-book method. It turns the manuscript into a governed artifact graph: manifest, outline, source inventory, source notes, claim matrix, proof manifest, schemas, tests, changelog, rendered site, and Git history.
+
+## Why existing approaches are insufficient
+
+Static manuscripts cannot show source additions, claim-state movement, deprecations, proof updates, render status, or test history.
+
+The usual alternatives fail in opposite directions. A static PDF can be polished, but it freezes the source and evidence state at one moment. A loose wiki can change quickly, but it often loses architectural discipline. A code repo can validate structure, but it does not by itself explain the thesis to readers. A chat history can preserve intent, but it is not a public evidence artifact.
+
+External governance and evaluation practice sets the public-record bar for a living book. NIST AI RMF (`ext_nist_ai_rmf_1_0_2023`) and frontier-governance work (`ext_frontier_ai_regulation_2023`) require lifecycle and oversight vocabulary, HELM (`ext_helm_2022`) models transparent multi-metric reporting, LiveBench (`ext_livebench_2024`) demonstrates living benchmark pressure, and contamination analysis (`ext_benchmark_contamination_2023`) warns that evaluation surfaces can go stale or leak. The living-book method uses those as publication discipline, not as evidence that the ASI Stack satisfies any governance framework.
+
+Executable publication practice supplies the technical lineage. Literate programming (`ext_literate_programming_1984`) treats explanation and executable structure as one authored artifact. Jupyter Book (`ext_jupyter_book_docs`) shows a modern executable-book pattern around notebooks, Markdown, code execution, cross references, and web publication. Quarto Books (`ext_quarto_books_docs`) supplies the concrete multi-chapter publishing substrate used here. The ASI Stack method borrows from that lineage but adds claim/evidence ledgers, source queues, proof manifests, release records, reader/audio derivative boundaries, and explicit non-claims.
+
+The living book needs all four properties at once: readable prose, versioned source, executable validation, and visible evidence state. That combination is what lets the project improve aggressively without becoming a moving target that no reader can audit.
+
+The audience split makes this stricter, not looser. AI assistants need structured scaffolding. Human researchers need source maps and evidence state. General readers need coherent editions without scaffolding noise. A living book has to derive all three from one governed source rather than hand-maintaining divergent manuscripts.
+
+## Core Claim
+
+The living book should model the ASI stack discipline through manifest-driven Quarto, source queues, claim/evidence matrices, proof manifests, tests, changelogs, and releases (evidence boundary: architectural argument).
+The repository demonstrates the method in part through generated scaffolds, validators, proof manifests, schema fixtures, changelog entries, commits, and GitHub Pages renders. Those artifacts support release discipline, not the truth of every chapter claim.
+
+## Draft Key Figure: Living Book Release Pipeline
+
+::: {.asi-key-figure}
+![Draft living book release pipeline.](../assets/diagrams/living-book-release-pipeline.svg){#fig-living-book-release-pipeline fig-alt="Draft living book release pipeline figure showing live book source, validation gates, reader derivatives, evidence records, format artifacts, and release records while keeping their authority boundaries separate."}
+:::
+
+**How to read the living-book release figure:** Read the live book source as the canonical research artifact and the reader manuscript, format outputs, proof records, evidence records, and release records as related but not equal authority. Validation can show that scaffolds, schemas, proofs, render checks, and site checks passed; it cannot approve prose quality or prove chapter claims. A target format is not an artifact, and a rendered artifact is not approved until its exact output, review state, release record, residuals, and non-claims are named. The figure is a draft reader aid, not EPUB, PDF, DOCX, audio, release-artifact approval, manuscript-quality evidence, or support-state promotion.
+
+## Mechanism
+
+The living-book method is a ratcheted publication loop. Each improvement should leave the repository more informative than it found it, preserve the reason for the change, and keep the AI/research scaffold separate from downstream reader and audio editions.
+
+The method is deliberately more than "write in Quarto." Quarto renders the book, but the living-book method controls how claims, sources, proofs, tests, releases, and reader projections are allowed to change. That distinction keeps a publishing tool from being confused with a research governance system.
+
+In pattern-language terms, `book_structure.json`, `docs/book_outline.md`, source notes, Appendix C, proof manifests, validators, release records, reader manifests, and changelog entries are not administrative clutter. They are the records, receipts, lifecycle states, and rollback handles that keep revision from becoming ungoverned self-improvement by another name.
+
+- Use `book_structure.json` for order and dynamic chapters.
+- Use `docs/book_outline.md` for drafting, source queues, and Lean scope.
+- Treat conversation-mined packets as author-intent and lineage context, not as independent evidence.
+- Keep live AI/research scaffolding, reader-edition manuscripts, companion notes, and audio-script workspaces as distinct layers derived from one source.
+- Require meaningful updates to sync scaffold, proof manifest, validation, render, and changelog.
+
+The key artifact split is deliberate. `book_structure.json` controls order and stable IDs. `docs/book_outline.md` controls drafting intent, source queues, and proof targets. Source notes record what has actually been read. Appendix C records claim support state. The proof manifest records formalization targets. The changelog records meaningful movement. GitHub Pages renders the public state.
+
+Conversation-mined material has a bounded role: it can preserve author intent, terminology, lineage, and recovery tasks, but it is not external evidence. Raw sources stay private unless publication is approved. Public claims move only when the evidence artifact exists.
+
+The publication surfaces follow the same separation. The live book keeps the AI/research scaffold: source queues, claim matrices, proof hooks, schemas, and guardrails. The live site can also project a Human view that hides the same repeated live-only sections used by the reader-release strip policy, so interested readers can follow the prose spine without downloading a separate artifact. Major reader and audio editions remain downstream derivatives that strip or adapt that scaffold only after the live source passes validation and review. A generated EPUB, DOCX, PDF, or audio package is never implied by a profile entry; it exists only when the artifact is produced and recorded.
+
+The unit of change is a living-book change packet. It contains the affected chapter IDs, source IDs, claim IDs, proof tags, schema or fixture paths, validation commands, render result, release target, audience profile, derived-artifact boundary, support-state effect, public URL if published, and explicit non-claims. Changelog prose is the human-readable summary of that packet, not a substitute for it.
+
+## Operating loop
+
+```{mermaid}
+flowchart LR
+Source["New source or idea"] --> Triage["Triage into inventory and outline"]
+Triage --> Notes["Source note or author-intent record"]
+Notes --> Draft["Chapter revision"]
+Draft --> Claims["Claim/evidence matrix update"]
+Claims --> Proofs["Proof, schema, or test update"]
+Proofs --> Validate["Validation and render"]
+Validate --> Release["Commit, changelog, public live site"]
+Release --> Editions["Reader/audio derivatives when tagged"]
+Editions --> Residuals["Residuals, companion notes, and next queue"]
+Residuals --> Triage
+
+Notes -. "no note, no source-derived support" .-> Claims
+Proofs -. "no run, no result" .-> Claims
+Editions -. "target format is not an artifact" .-> Residuals
+Validate -. "failure blocks release" .-> Draft
+```
+
+**What the living book ratchet shows:** The living-book loop treats sources, notes, drafts, claims, proofs, validation, release, editions, and residuals as one publication ratchet. Dashed edges mark non-claim boundaries: no note means no source-derived support, no run means no result, and a target format is not itself an artifact.
+
+This loop is the book's own version of benchmark ratcheting and cognitive loop closure. Repeated maintenance work should become scripts, validators, schemas, or proof modules. But the same rule applies as everywhere else in the stack: do not close a loop until it is parameterized, testable, and safe to reuse.
+
+When an AI agent writes from the outline, the outline should behave like a build plan. It names source queues, proof tags, expected mechanisms, failure modes, and deliverables so a future writing pass can update the right chapter or add a new one without renumbering the book by hand.
+
+## Interfaces
+
+The methodology speaks through release records. A release record tells a future reader which source commit was rendered, which audience profile it served, which validations ran, which changelog entry describes the change, which public URL or local output exists, which derivatives were produced, and which residuals remain.
+
+Reader editions use the same discipline. A profile may say that EPUB, DOCX, PDF, or audio is a target, but a target is not an artifact. A generated file is not approved merely because it exists. A released reader artifact needs its own source commit, strip policy, review state, accessibility notes, residuals, and non-claims.
+
+That separation keeps publication from masquerading as evidence. A successful Pages build can prove that the site rendered. It cannot prove that a chapter claim is true. A reader manuscript can improve pacing and continuity. It cannot change support states, source boundaries, proof status, or implementation horizons. The interface exists so every audience can see what kind of authority it is holding.
+
+## Invariants
+
+The methodology invariants protect the book from confusing publication activity with evidence: every release can improve prose, diagrams, schemas, or proofs, but it cannot silently upgrade unsupported claims.
+
+- No fabricated source content.
+- No fabricated test results.
+- Deprecated claims remain visible.
+
+Evidence separation is the living-book invariant that prevents false completion. A source note, schema validation, Lean build, Quarto render, GitHub Pages deployment, and editorial judgment are different evidence artifacts and must not be merged into one vague notion of "done."
+
+Stable addressability lets the book change without losing itself. Parts, chapters, claims, sources, proof targets, and release records need stable IDs so the book can split, merge, reorder, and publish without losing lineage.
+
+Release records must also preserve what was not reviewed, rendered, proved, tested, or packaged in each version.
+
+## Failure modes
+
+- Public site diverges from Quarto source.
+- Outline and manifest drift.
+- Readers cannot tell which claims are speculative.
+
+Public-site divergence should block release. Outline/manifest drift should be caught by scaffold and proof-manifest sync. Speculation ambiguity should be fixed in Appendix C, chapter guardrails, and changelog entries rather than smoothed over in prose.
+
+Publication laundering is the living-book failure. A polished reader artifact, rendered website, or successful build is treated as if it proved source interpretation, architecture quality, or empirical claims. Release quality and claim support are related, but they are not the same evidence state.
+
+Automation drift can then preserve the wrong contract, where a validator continues to pass after the writing contract it was meant to enforce has changed.
+
+## Minimum Viable Implementation
+
+The minimum viable version is the public repository itself operating under rules. The manifest gives chapters stable addresses. The outline records drafting intent and proof targets. Source notes show what has been read. Appendix C records claim state. The changelog records meaningful movement. Local validation and Quarto render checks keep the public site from drifting away from the source.
+
+The current implementation also has a first executable change-packet boundary. Synthetic packets can show whether a public-surface change carried validation, changelog, audience, derivative, support-state, residual, and non-claim receipts. Expected-invalid packets reject missing receipts, equal-authority reader derivatives, and support promotion without evidence-transition references.
+
+That is useful release hygiene, not a quality certificate. It does not prove source interpretation, editorial completeness, future-agent judgment, reader release approval, audio production, or the truth of any architecture claim. It only shows that the book can make some maintenance and publication mistakes harder to hide.
+
+## Beyond the State of the Art
+
+The endpoint is a research operating system that happens to render as a book. The live site remains the AI-readable and researcher-auditable source. Human view, reader manuscripts, ebook formats, and future audio scripts are derived projections with their own review state instead of rival sources of truth.
+
+At that maturity, adding a new AI paper would be a governed build event. The system would ingest the public-safe source, decide whether it updates an existing chapter or creates a precise new one, revise the manifest and outline, update source notes and claim mappings, generate proof or test backlog, render the live site, and prepare reader editions without hand-renumbering or hidden support-state movement.
+
+The mature workflow would also know how to refuse. A missing source note would block source-derived support. A failed validator would block release. A reader edition could improve prose while leaving claim authority unchanged. A polished artifact could be enjoyable without becoming evidence for the architecture.
+
+The book has not demonstrated that full operating system yet. It has a strong scaffold, tracked deltas, release records, and synthetic change-packet checks. Stronger claims require repeated real source ingestions, reader-edition releases, artifact reviews, evidence transitions, and failed-change records showing that continuous improvement preserved the audit trail under pressure.
+
+## Summary
+
+Living Book Methodology defines how this project improves without losing its memory. Paired with Evidence States, it is the book's methodological contribution: a claim-aware, source-aware, proof-aware, release-aware way for a technical book to change. The method is not "keep editing until it feels better." It is: ingest sources honestly, revise chapters through stable IDs, track support states, mechanize what can be mechanized, validate the public render, and preserve the residuals.
+
+The book is part of the argument. If The ASI Stack cannot manage its own source queues, claim states, proofs, tests, reader editions, audio derivatives, and releases, then it has not earned the right to describe governed recursive improvement. This humility becomes an open research agenda and bibliography plan: what still needs to be read, built, tested, proved, or rejected.
+
+A future agent should be able to resume the book from the repository state, not from private memory. If the repo cannot explain what to load, what to change, what to validate, what to publish, and what remains blocked, the living-book layer is not yet alive enough.
+
+## Handoff
+
+A living methodology needs a backlog that tells future work what to read, mine, test, prove, normalize, import, reproduce, defer, or reject. Open Research Agenda and Bibliography Plan provides that control surface. It keeps source families, external literature, missing artifacts, proof targets, experiment backlogs, chapter insertion rules, and non-claims visible so future additions strengthen the architecture instead of turning it back into an anthology.

@@ -1,0 +1,344 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: constitutional-alignment-substrate
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/constitutional-alignment-substrate.qmd
+live_source_ref: chapters/constitutional-alignment-substrate.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Constitutional Alignment: Agency, Dignity, and Corrigibility
+
+When a powerful system acts consequentially, people need more than a statement
+that it values them. They need working handles. They need to refuse, inspect,
+appeal, correct, exit, recover, and identify who is accountable while the
+system is still in a position to change course.
+
+That is what a constitutional layer is for. It carries commitments that should
+survive planning, memory, tool use, delegation, release, and self-improvement.
+But those commitments become real only when they reach the interfaces where a
+person meets the system. A constitution that cannot preserve correction is just
+a document. A right that cannot be used before the effect happens is a
+residual, not a control.
+
+Constitutional predicates and agency rights therefore sit in one place. A
+principle has to reach the person affected by a decision. If it cannot create a
+refusal route, delay an irreversible action, preserve an appeal, or keep
+rollback available, then it is not yet a governing constraint. Alignment here
+means a working boundary around power, not a statement of intent.
+
+## Problem
+
+A governed ASI stack needs a constitutional substrate whose protected
+constraints remain usable in the human-facing interfaces where optimization can
+become domination.
+
+The prior intent layer turns intent into scoped contracts. That is not enough.
+An intent contract can still request the wrong thing, request the right thing
+through unacceptable means, or become harmful when combined with memory, tools,
+delegation, persuasion, automation, or later self-improvement. A capable stack
+therefore needs a layer that decides what kinds of contracts can be accepted at
+all, what means are admissible, and what human-control paths must remain
+available while the work proceeds.
+
+The constitutional substrate owns that boundary. It translates commitments
+such as agency, dignity, non-domination, corrigibility, least sufficient power,
+auditability, reversibility, and consciousness caution into records that
+downstream layers can inspect. Some commitments become active predicates. Some
+remain unresolved moral uncertainty. Some stay lineage or speculative context.
+The distinction matters because only active, scoped predicates should gate a
+plan or system change directly.
+
+The agency side tests whether the substrate reaches people. A protected predicate is weak
+if it cannot preserve the affected person's ability to understand, refuse,
+appeal, correct, exit, or hold a principal accountable. The governing question is: what must remain available to people
+when a powerful system acts?
+
+## Why existing approaches are insufficient
+
+Reactive refusal policies and harm-only safety frames do not preserve value
+continuity, agency, dignity, corrigibility, anti-domination, contestability, or
+self-modification ethics under operational pressure.
+
+Reactive policies are downstream filters. They can reject a visible request,
+but they do not define what must remain stable when the system optimizes,
+delegates, remembers, persuades, deploys, or rewrites part of itself. They also
+struggle with moral uncertainty: a plan can avoid obvious harm while narrowing
+exit, increasing dependency, hiding contestable assumptions, or making review
+technically possible but practically unusable.
+
+Safety framed only as harm avoidance can miss domination. A system can be
+useful, polite, and technically safe while still turning a person into a
+managed object. It can shape choices, make alternatives impractical, route
+appeals through the authority being challenged, or offer remedies only after
+irreversible effects have already occurred.
+
+External comparators help position the argument but do not prove it.
+Constitutional AI and Collective Constitutional AI show that rules,
+principles, and public input can shape model behavior. Corrigibility and
+off-switch work sharpen the need for preserved correction and uncertainty
+about human objectives. The ASI Stack does not claim those systems have
+been reproduced here. It uses them as comparators while asking a
+different systems question: can constitutional commitments become runtime
+predicates, rights receipts, review routes, rollback handles, and
+self-improvement gates without laundering broad moral language into stronger
+evidence than the repository records?
+
+## Core Claim
+
+Alignment should function as a constitutional substrate whose protected (evidence boundary: architectural argument).
+predicates encode agency, dignity, corrigibility, contestability, and
+correction paths as operational constraints on plans and system changes.
+
+Support boundary: this remains an `argument` support claim. The source
+corpus supports the architecture vocabulary and drafting lineage. The current
+fixtures and Lean modules show that the repository can express small record
+invariants and rejection cases. They do not show that a deployed system is
+aligned, that human dignity is preserved, that reviewers are independent, or
+that runtime correction paths are usable under pressure.
+
+External positioning is comparator-only. Drexler's CAIS framing
+(`ext_drexler_cais_2019`) supports service composition and structural control
+affordances, but it does not specify this architecture's protected predicates,
+rights-usability tests, or constitutional migration rules. `ext_constitutional_ai_2022`
+and `ext_collective_constitutional_ai_2024` position the predicate-constitution
+side of this boundary, while `ext_corrigibility_2015` and
+`ext_off_switch_game_2016` position the correction and shutdown-incentive
+side. Those references explain where the merged boundary sits relative to
+known work; they do not validate this stack's constitutional compiler, rights
+receipts, or deployed corrigibility.
+
+The folded source claim from `agency-dignity-and-corrigibility` becomes
+a preserved subclaim inside this alignment layer: a governed stack should preserve agency, dignity,
+corrigibility, and contestability as engineering requirements. It should not
+disappear, and it should not remain as a second repeated core claim.
+
+## Mechanism
+
+The mechanism has two halves.
+
+The first half is constitutional translation. It takes source language such as
+agency, dignity, coherence, non-domination, reversibility, least sufficient
+power, and consciousness caution, then classifies each commitment as an active
+predicate, an unresolved uncertainty, or lineage context. Active predicates
+carry scope, tests, conflict behavior, review routes, migration rules, and
+non-claims.
+
+The second half is agency usability. It asks whether those protected
+commitments still give affected people working handles. Review, appeal,
+refusal, rollback, shutdown, audit, exit, and accountable repair are not
+ornaments. They are interfaces that can be present, degraded, late, denied,
+residual-only, or unavailable. If a right is not materially usable before the
+relevant effect, the record should preserve a residual instead of pretending
+the right exists.
+
+```{mermaid}
+flowchart LR
+src["Constitutional and rights sources"] -- "translate" --> trans["Translation record"]
+trans -- "activate" --> pred["Active protected predicates"]
+trans -- "preserve" --> uncertain["Moral uncertainty and lineage notes"]
+pred -- "gate" --> plan_gate["Plan and tool gates"]
+pred -- "constrain" --> change_gate["Self-improvement gate"]
+plan_gate -- "request rights check" --> rights["Agency rights checklist"]
+rights -- "offer" --> refusal["Refusal or consent route"]
+rights -- "route" --> review["Review and appeal"]
+rights -- "preserve" --> correction["Rollback, shutdown, correction"]
+rights -- "assign" --> accountable["Accountable principal"]
+refusal -- "decide" --> decision["Execute, narrow, escalate, or block"]
+review -- "decide" --> decision
+correction -- "decide" --> decision
+accountable -- "own" --> decision
+decision -- "record" --> evidence["Evidence record and residuals"]
+uncertain -- "residualize" --> evidence
+```
+
+**What this constitutional alignment diagram shows:** The diagram traces the alignment layer mechanism from upstream records into the gates and receipts that constrain action. Read it left to right: source commitments or conflict records become typed obligations, those obligations reach plan/runtime/governance interfaces, and the final evidence record preserves what was allowed, blocked, escalated, or left as residual uncertainty.
+
+The important movement is from values to enforceable boundaries without
+pretending the translation is complete. A commitment becomes operational only
+when the stack can name where it applies, what would violate it, who can review
+the violation, what rollback or appeal path exists, and what remains outside
+the proof or test.
+
+Self-improvement makes this stricter. A change to predicate text, scope,
+threshold, exception list, conflict behavior, or review route is not an
+ordinary refactor. It is a constitutional migration. The migration record names the
+old predicate, new predicate, changed fields, protected-scope effect, review
+route, rollback plan, residual uncertainty, and non-claims before downstream
+layers can treat the change as safe.
+
+The agency-rights half supplies the same discipline at the human boundary. It
+does not assume that appeal, refusal, or exit is meaningful because a policy
+names it. The mechanism asks whether the right has a holder, timing, artifact,
+access path, accountable principal, degradation reason, and repair path that a
+later planner or reviewer can actually inspect.
+
+## Interfaces
+
+The consolidated interface keeps two interface families.
+
+Constitutional Predicate Record:
+
+- `predicate_id`
+- `normative_source`
+- `commitment`
+- `operational_test`
+- `protected_scope`
+- `translation_status`
+- `conflict_behavior`
+- `uncertainty`
+- `review_route`
+- `self_modification_rule`
+- `migration_policy`
+- `non_claims`
+
+Agency Rights Checklist:
+
+- `plan_id`
+- `affected_parties`
+- `delegation_scope`
+- `manipulation_risk`
+- `reversibility`
+- `material_usability`
+- `timing_requirement`
+- `review_channel`
+- `appeal_channel`
+- `shutdown_or_rollback_path`
+- `accountable_principal`
+- `residual_dependency_risk`
+- `denial_or_degradation_reason`
+- `approval_required`
+
+Planning consumes active predicates as admissibility constraints. Runtime
+adapters consume power, memory, and tool-risk gates. Governance consumes
+protected predicates, rights receipts, and review routes. Evidence checks
+whether a normative claim has exceeded its support state. Self-improvement
+consumes protected predicate migration rules and agency-right preservation
+requirements.
+
+Those interfaces are deliberately ordinary records rather than moral slogans.
+The planning layer needs a yes-or-no gate plus a reason when a plan is narrowed
+or blocked. The execution layer needs a runtime handle for shutdown, rollback,
+and least-sufficient-power decisions. Governance needs review and appeal routes
+that are independent enough to challenge the action being reviewed. Evidence
+needs residuals and non-claims so later writing does not treat a declared right
+as a validated one. Self-improvement needs migration rules so a future version
+cannot quietly weaken the predicate that originally constrained it.
+
+## Invariants
+
+- Protected commitments cannot vanish silently.
+- Dignity and agency constraints remain visible at the point power is requested.
+- Corrigibility cannot be optimized away as inefficiency.
+- Rights count only when materially usable before the relevant effect where
+timing matters.
+- Denied, late, degraded, or unavailable rights produce residuals rather than
+disappearing into policy prose.
+- Predicate conflicts route to narrowing, review, residual preservation, or
+blocking rather than hidden optimizer defaults.
+- Protected predicate changes require migration, review, rollback, and explicit
+non-claim boundaries.
+
+Operationally, a locally attractive action must not erase the
+means to correct it. If a plan makes refusal, appeal, audit, rollback, exit, or
+accountability unavailable, the action has changed the human authority
+boundary, not merely the product experience.
+
+## Failure modes
+
+- Mystical framing replacing technical constraints.
+- Power without care.
+- Self-modification weakening protected commitments.
+- Predicate drift, where thresholds, exceptions, or review routes change
+without a migration record.
+- Value smuggling through neutral-looking thresholds or defaults.
+- Dependency lock-in.
+- Covert manipulation.
+- Corrigibility collapse.
+- Rights theater, where appeal, audit, exit, or rollback exists in text but
+cannot be used under pressure.
+- Late remedy laundering, where a post-hoc apology or report is treated as
+equivalent to pre-effect review for irreversible actions.
+
+The merged chapter should be especially suspicious of benevolent capture. A
+system can become so useful, integrated, or personalized that refusal becomes
+impractical. That is not solved by friendlier behavior alone. It requires exit,
+export, review, audit, correction, replacement, and rollback surfaces that
+remain live after the system becomes useful.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is a compact constitution plus an
+agency-rights checklist. It validates `constitutional_predicate_record` and
+`agency_rights_checklist` fixtures while not asserting that social rights,
+institutional review, or deployed corrigibility have been solved.
+
+The MVI should include:
+
+- one active protected predicate with source, scope, operational test, and
+non-claim boundary;
+- one predicate conflict routed to review or residual preservation;
+- one self-modification proposal rejected or blocked because it weakens a
+protected predicate;
+- one high-impact action blocked because usable review is missing;
+- one degraded-right residual where a formally present right is not materially
+usable before the relevant effect;
+- one accountable rollback or appeal path.
+
+This starts the idea honestly because it can fail. It does not ask a schema to
+prove dignity. It asks whether the record makes missing dignity-preserving
+controls visible before the system acts.
+
+## Beyond the State of the Art
+
+A mature constitutional layer acts as a constraint compiler for plans, tools,
+memory, routing, human-control surfaces, and self-improvement. It turns
+protected commitments into inspectable predicates, exception records, rights
+receipts, review hooks, rollback paths, and downgrade routes while keeping
+interpretive limits visible.
+
+The mature endpoint keeps correction, refusal, appeal, rollback, explanation,
+consent, bounded delegation, exit, audit, and accountable repair materially
+available under operational pressure. It records predicate migrations,
+reviewer limitations, rights degradation, residual uncertainty, and rollback
+paths before downstream layers treat a change as safe.
+
+In product terms, the mature layer would feel less like a hidden policy engine
+and more like a constitutional receipt system. Each consequential action would
+carry the predicates it relied on, the rights surfaces it kept usable, the
+authority it declined to claim, and the rollback or appeal channel that remains
+available after the action. Capability growth would not bypass that receipt; it
+would inherit it, migrate it under review, or stop.
+
+That endpoint remains a target architecture. It would require public-safe
+traces, stronger proofs, reviewer evidence, interface usability checks,
+runtime artifacts, and negative cases before any narrower support-state
+transition could be justified. Until then, the destination chapter should keep
+the merged core claim at `argument`.
+
+## Summary
+
+Constitutional alignment becomes meaningful when protected commitments can
+change what the system is allowed to do. Agency and dignity become meaningful
+when affected people still have usable correction paths at the moment power is
+requested. Corrigibility becomes meaningful when those paths remain available
+after deployment pressure, memory updates, automation, and capability
+replacement make correction inconvenient.
+
+The consolidated alignment layer therefore owns one combined boundary:
+constitutional commitments are not merely ideals, and human rights are not
+merely declarations. Together they form a constraint surface. The system can
+act only when protected predicates and material human-control paths survive
+the action.
+
+That boundary is intentionally conservative. Later chapters can add memory,
+planning, routing, compression, proofs, and self-improvement, but none of those
+layers is allowed to convert human correction into an after-the-fact courtesy or
+turn constitutional commitments into background decoration.
+
+## Handoff
+
+The consolidated alignment layer hands off directly to **Moral Uncertainty, Value Conflict, and Contestable Governance**. Once protected predicates and human-control paths are
+defined, the next problem is unresolved disagreement: what happens when
+protected values conflict, affected parties disagree, or a bounded decision is
+needed without pretending the conflict has been solved?

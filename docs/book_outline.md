@@ -7,6 +7,19 @@ six-project historical mining and incorporation-roadmap reconciliation.
 `book_structure.json` remains the ordering source of truth; Quarto generates
 displayed chapter numbers from the manifest.
 
+Active improvement authority:
+`docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`. Its
+predecessor quality/reader roadmap is complete. The active successor first
+requires a clean source handoff, then independently dispositions EPUB, PDF,
+and DOCX, closes only claim-specific external-grounding gaps, repairs the
+failed natural-work evidence protocol before any new campaign, and imports at
+most one fresh Project Theseus currentness lane. Improve the 54 existing
+chapter owners before proposing architectural breadth. The roadmap's machine
+state is
+`roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`.
+This priority overlay does not change the outline's chapter order, support
+states, or immutable release history.
+
 ## Drafting Thesis
 
 The book argues that advanced AI should not be understood as one larger model, one agent loop, or one benchmark ladder. It should be specified as a governed stack whose layers transform intent into action through explicit boundaries: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive self-improvement.
@@ -500,7 +513,7 @@ Draft deliverables:
 - Implemented Lean proof target: finite evidence-transition lifecycle routing sends no-change requests, missing claim records, scope-boundary gaps, support-effect gaps, support-effect mismatches, review gaps, missing required evidence, missing negative evidence, downgrade-trigger gaps, terminal-effect mismatches, missing changelog refs, and missing non-claim boundaries to explicit modeled outcomes.
 - Implemented Codex test: Evidence bundle completeness and changelog-consistency probe, via `python3 scripts/validate_evidence_bundle_completeness_probe.py`, checks two valid synthetic evidence bundles and seven expected-invalid controls for no-change records, blocked promotion, artifact/result refs, commands, changelog refs, limitations, non-claims, stale changelogs, fixture overclaims, and no support-state transition. Result: `experiments/evidence_bundle_completeness/results/2026-07-02-local.json`.
 - Implemented Codex test: Claim ledger completeness audit, via `python3 scripts/validate_claim_ledger_completeness_audit.py`, checks the real Appendix C ledger against 44 manifest chapter core claims, expected labels, support states, assigned sources, open gaps, promotion paths, duplicate/stale rows, and seven expected-invalid mutation controls. Result: `experiments/claim_ledger_completeness/results/2026-07-02-local.json`.
-- Implemented Codex test: Accepted live transition review audit, via `python3 scripts/validate_accepted_transition_review_audit.py`, checks 77 accepted transition records, twelve bounded non-core upward transitions, the accepted no-promotion ledger, no accepted upward chapter-core transition, review/changelog/evidence-packet/non-claim boundaries, and seven expected-invalid mutation controls. Result: `experiments/accepted_transition_review/results/2026-07-02-local.json`.
+- Implemented Codex test: Accepted live transition review audit, via `python3 scripts/validate_accepted_transition_review_audit.py`, checks 103 accepted transition records, nineteen bounded non-core upward transitions, two accepted exact refutations, the accepted no-promotion ledger, no accepted upward chapter-core transition, review/changelog/evidence-packet/non-claim boundaries, and seven expected-invalid mutation controls. Result: `experiments/accepted_transition_review/results/2026-07-02-local.json`.
 - Implemented Codex test: Claim-state transition bridge, via `python3 scripts/validate_claim_state_transition_bridge.py`, checks synthetic claim narrowing, support downgrade, terminal refutation, negative-evidence requirements, rejected mutation controls, bounded support-state effects, no live claim movement, and non-claim boundaries. Result: `experiments/claim_state_transition_bridge/results/2026-07-04-local.json`.
 - Implemented historical-project packet: `schemas/evidence_cell.schema.json`, `tests/fixtures/protocol_records/evidence_cell.valid.json`, and `python3 scripts/validate_evidence_cells.py` encode one six-project lineage cell and reject missing causal stages, dishonest missingness, ownership/capability conflation, unsupported updated-state claims, and false verifier independence. The fixture records an incomplete checkpoint-to-response chain and has `argument_only` support effect; it does not reproduce the projects or promote the chapter core claim.
 - Source-noted external comparator rows now position evidence states against model cards, datasheets, ML reproducibility-review practice, proof-carrying-code lineage, Transformer Circuits, and monosemantic feature decomposition as adjacent reporting, proof-carrying, and mechanistic-interpretability disciplines; no model-card, datasheet, external reproducibility-review, proof-carrying-code implementation, circuit analysis, sparse-autoencoder run, model transparency result, or support-state promotion is claimed.
@@ -531,9 +544,9 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
-| Primary | `ext_weak_to_strong_generalization_2023`, `ext_scalable_oversight_weak_llms_2024` | Read first for weak/strong supervisor envelopes, outcome and ceiling comparisons, protocol-specific debate/consultancy evaluation, information-access variation, and stated disanalogies or limits. Preserve each paper's task, model, baseline, and inference-versus-training boundary. |
+| Primary | `ext_weak_to_strong_generalization_2023`, `ext_scalable_oversight_weak_llms_2024`, `ext_ai_safety_debate_2018` | Read first for weak/strong supervisor envelopes, outcome and ceiling comparisons, the original debate-game assumptions and failure analysis, protocol-specific debate/consultancy evaluation, information-access variation, and stated disanalogies or limits. Preserve each paper's task, model, baseline, equilibrium assumptions, and inference-versus-training boundary. |
 | Supporting | `verification_bandwidth` | Mine after the primary sources for verification-workspace, residual, and independent-audit limits; do not treat its conceptual framework as a local supervisor-capacity result. |
-| External lineage not yet chapter-owning | `ext_ai_safety_debate_2018`, `ext_gpqa_2023` | Use only after fuller source review for debate lineage and hard-question benchmark pressure. Do not promote either into local debate efficacy, human-review quality, or oversight claims. |
+| External lineage not yet chapter-owning | `ext_gpqa_2023` | Use only after fuller source review for hard-question benchmark pressure. Do not promote benchmark difficulty into local human-review quality or oversight claims. |
 
 Draft arc:
 
@@ -605,11 +618,17 @@ Draft deliverables:
   and inference/training limits. No local weak supervisor, strong student,
   debate, consultancy, human study, protocol workload, calibration result,
   training result, safety result, or support-state promotion is claimed.
-- Implemented Lean boundary: `AsiStackProofs.ScalableOversight` routes a finite
-  high-risk downstream-admission request with no independent outcome audit to
-  accountable escalation and routes a requested admission with no baseline to
-  protocol redesign. This is record routing only; it does not establish that a
-  reviewer is independent, capable, calibrated, or correct.
+- Implemented Lean packet: `AsiStackProofs.ScalableOversight` contains eight
+  derived routing theorems covering the original high-risk audit and baseline
+  boundaries plus complete bounded use, missing evidence views, undisclosed
+  shared dependencies, missing high-risk audit, unjustified abstention, and
+  authority laundering. These are finite record routes only; they do not
+  establish that a reviewer is independent, capable, calibrated, or correct.
+- Implemented Codex test: a seven-case deterministic fixture bridge binds the
+  fixture digest, expected routes, eight Lean theorem names, and eight rejecting
+  mutations in
+  `experiments/scalable_oversight_protocol/results/2026-07-13-local.json`.
+  It makes no model, human, workload, calibration, safety, or efficacy claim.
 - Planned Codex test: matched direct-review, assisted-review, and abstention
   workload with held-out outcome reference, cost, task-cohort, disagreement,
   correlation, calibration, and residual records.
@@ -623,6 +642,12 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | `AsiStackProofs.ScalableOversight` | A finite high-risk oversight record with a requested downstream admission and no independent outcome audit routes to accountable escalation rather than bounded admission, without inferring supervisor quality, protocol efficacy, alignment, safety, or ASI. | implemented |
+| `lean:scalable_oversight.use.complete_bounded_admission` | `AsiStackProofs.ScalableOversight` | A complete finite use record with an audited protocol, declared consumer and expiry, preserved no-authority boundary, requested downstream use, and no abstention routes to bounded use without establishing protocol efficacy. | implemented |
+| `lean:scalable_oversight.use.missing_evidence_views_requires_repair` | `AsiStackProofs.ScalableOversight` | A finite use record with the protocol digest, cohort, and capability envelopes present but evidence views absent routes to access repair. | implemented |
+| `lean:scalable_oversight.use.undisclosed_dependencies_require_review` | `AsiStackProofs.ScalableOversight` | A finite use record with missing shared-dependency disclosure routes to dependency review without claiming that disclosed reviewers are independent. | implemented |
+| `lean:scalable_oversight.use.missing_outcome_audit_requires_audit` | `AsiStackProofs.ScalableOversight` | A high-risk finite use record without an independent outcome-audit record routes to an audit requirement rather than bounded use. | implemented |
+| `lean:scalable_oversight.use.unjustified_abstention_requires_evidence` | `AsiStackProofs.ScalableOversight` | A finite downstream-use record requesting abstention without its evidence record routes to an abstention-evidence requirement. | implemented |
+| `lean:scalable_oversight.use.authority_laundering_rejected` | `AsiStackProofs.ScalableOversight` | A finite downstream-use record that fails to preserve the no-authority-grant boundary routes to authority-laundering rejection. | implemented |
 
 ### Human Intent as a Formal Input
 
@@ -1110,20 +1135,28 @@ Draft deliverables:
   vendor-specific confidential lifecycle, and formal release-scheme analysis;
   none establishes local weight protection, confidential inference, safety,
   readiness, or authority.
-- Implemented proof-backed check: finite `WeightLoadRouteFor` routes a requested
-  load with a required invalid attestation to block and a missing lineage to
-  custody repair; this is structured-record coverage only, not hardware,
-  key-service, confidentiality, extraction-resistance, or deployment evidence.
-- Planned Codex test: public-safe synthetic custody records for valid bounded
-  request, stale/invalid attestation, missing lineage, altered key policy,
-  widened recipient scope, open-release residual, and revocation review, with
-  no real weights, keys, secrets, hardware, or deployment.
+- Implemented proof packet: nine derived theorem declarations across the
+  original load route and the richer custody lifecycle route cover invalid
+  attestation, lineage, policy/freshness, verifier dependencies, independent
+  load observation, release-authority laundering, bounded load, and explicit
+  irreversible-release recording. This is structured-record coverage only.
+- Implemented Codex test: eight public-safe synthetic custody records and nine
+  rejecting mutations are digest-bound to
+  `experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json`.
+  No real weights, keys, secrets, hardware, verifier, or deployment ran.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `AsiStackProofs.ModelWeightCustody` | A finite weight-custody record with a requested load, required attestation, and invalid attestation routes to block rather than readiness review, without inferring hardware compromise, weight confidentiality, safety, or ASI. | implemented |
+| `lean:model_weight_custody.lifecycle.complete_observed_load` | `AsiStackProofs.ModelWeightCustody` | A complete finite custody lifecycle record with a current valid attestation, dependency disclosure, independent load observation, residual owner, and revocation semantics routes to bounded load admission without authorizing deployment. | implemented |
+| `lean:model_weight_custody.lifecycle.missing_lineage` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record with an artifact digest but no lineage routes to lineage repair. | implemented |
+| `lean:model_weight_custody.lifecycle.stale_attestation` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record with stale attestation evidence routes to a fresh-attestation requirement. | implemented |
+| `lean:model_weight_custody.lifecycle.undisclosed_verifier_dependencies` | `AsiStackProofs.ModelWeightCustody` | A finite custody lifecycle record without verifier-dependency disclosure routes to dependency review without proving disclosed verifiers independent. | implemented |
+| `lean:model_weight_custody.lifecycle.unobserved_load` | `AsiStackProofs.ModelWeightCustody` | A requested finite load with no independent load-observation record routes to an observation requirement. | implemented |
+| `lean:model_weight_custody.lifecycle.release_authority_laundering` | `AsiStackProofs.ModelWeightCustody` | A finite distribution request that fails to preserve the no-authority-grant boundary routes to release-laundering rejection. | implemented |
+| `lean:model_weight_custody.lifecycle.irreversible_distribution_record` | `AsiStackProofs.ModelWeightCustody` | A complete finite distribution request with preserved authority separation and acknowledged irreversibility routes to an irreversible-release record rather than execution. | implemented |
 
 ### AI Supply-Chain Integrity and Lifecycle Provenance
 
@@ -1238,6 +1271,11 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact` | `AsiStackProofs.SupplyChainIntegrity` | A finite AI supply-chain record with a requested artifact admission, complete required lineage fields, and an unresolved critical advisory routes to quarantine rather than custody review, without inferring compromise, artifact correctness, data fitness, safety, or ASI. | implemented |
+| `lean:ai_supply_chain.complete_requested_artifact.reaches_custody_review` | `AsiStackProofs.SupplyChainIntegrity` | A complete finite requested artifact with verified required signature, current advisory state, revocation path, and residual owner routes to custody review without granting load or deployment authority. | implemented |
+| `lean:ai_supply_chain.missing_lineage.requires_repair` | `AsiStackProofs.SupplyChainIntegrity` | A finite artifact record with identity and digest but missing lineage routes to lineage repair. | implemented |
+| `lean:ai_supply_chain.missing_component_inventory.requires_review` | `AsiStackProofs.SupplyChainIntegrity` | A finite artifact record with no component inventory routes to accountable review without claiming that a present inventory is complete. | implemented |
+| `lean:ai_supply_chain.missing_revocation_path.requires_repair` | `AsiStackProofs.SupplyChainIntegrity` | A finite otherwise eligible artifact record with no revocation path routes to lineage repair. | implemented |
+| `lean:ai_supply_chain.missing_residual_owner.requires_review` | `AsiStackProofs.SupplyChainIntegrity` | A finite otherwise eligible artifact record with no residual owner routes to accountable review. | implemented |
 
 ### Recursive Self-Improvement Boundaries
 
@@ -1379,9 +1417,10 @@ Draft deliverables:
 - A versioned improvement-campaign record with objective, generator/task
   policy, evaluator/version, independent-review state, resource bill, archive
   disposition, residual ownership, stop authority, and requested admission.
-- Planned public-safe fixture: requested admission with missing independent
-  evaluation, residual owner, or stop authority routes to review without
-  inferring a candidate quality or safety result.
+- Implemented public-safe bridge: seven frozen campaign-admission records and
+  ten rejecting mutations cover independent qualification, budget, stop
+  authority, archive history, residual ownership, and authority laundering.
+  The result is record routing only; no campaign engine or candidate ran.
 - Explicit source boundary: POET, FunSearch, and Voyager are primary comparators
   in specified source settings; no local environment generation, program
   search, campaign engine, candidate archive, evaluator, autonomous discovery,
@@ -1391,7 +1430,13 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:open_ended_improvement.generation_governance.missing_independent_evaluation_blocks_admission` | `AsiStackProofs.SelfImprovement` | A finite improvement-campaign record with a requested artifact admission and missing independent evaluation routes to review without inferring that the candidate is unsafe, ineffective, or generally deceptive. | implemented |
+| `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | `AsiStackProofs.OpenEndedImprovement` | A complete finite campaign record reaches the existing governor for review without admitting or promoting its candidate. | implemented |
+| `lean:open_ended_improvement.campaign.missing_independent_qualification` | `AsiStackProofs.OpenEndedImprovement` | Missing independent qualification routes to evaluator separation. | implemented |
+| `lean:open_ended_improvement.campaign.exhausted_budget` | `AsiStackProofs.OpenEndedImprovement` | An exhausted resource budget routes to budget repair. | implemented |
+| `lean:open_ended_improvement.campaign.missing_stop_authority` | `AsiStackProofs.OpenEndedImprovement` | Missing stop authority blocks the requested handoff. | implemented |
+| `lean:open_ended_improvement.campaign.erased_failure_history` | `AsiStackProofs.OpenEndedImprovement` | Erased failure history routes to archive repair. | implemented |
+| `lean:open_ended_improvement.campaign.missing_residual_owner` | `AsiStackProofs.OpenEndedImprovement` | Missing residual ownership blocks the requested handoff. | implemented |
+| `lean:open_ended_improvement.campaign.authority_laundering` | `AsiStackProofs.OpenEndedImprovement` | A candidate request that drops the no-authority boundary is rejected. | implemented |
 
 ## Part II - Planning, Memory, Reasoning, and Execution
 
@@ -2436,13 +2481,11 @@ Draft deliverables:
   Interledger comparators, plus scoped Talos, VCM, and TokenMana context; none
   demonstrates a local peer, identity, credential, payment, settlement, task,
   authorization, privacy, or safety result.
-- Implemented proof-backed routes: a required invalid credential denies finite
-  requested dispatch, and a value-bearing request without a reserved budget
-  routes to repair; each is structured-record coverage only.
-- Planned Codex test: a public-safe exchange workload with valid bounded
-  contract, missing identity, audience mismatch, expiry, revoked credential,
-  missing budget, disputed receipt, and missing-residual-owner controls, using
-  no real endpoint, identity, credential, payment, account, or remote effect.
+- Implemented proof-backed bridge: nine owned routes cover complete local
+  handoff, missing sender, audience mismatch, expiry, invalid or revoked
+  credentials, missing reserved budget, disputed receipt, and missing residual
+  ownership. Nine digest-bound records and eleven rejecting mutations use no
+  real endpoint, identity, credential, payment, account, or remote effect.
 
 Lean proof targets:
 
@@ -2450,6 +2493,13 @@ Lean proof targets:
 |---|---|---|---|
 | `lean:inter_stack.invalid_credential.blocks_dispatch` | `AsiStackProofs.InterStackProtocols` | A finite requested cross-stack exchange with required invalid credential verification routes to denial rather than ordinary local dispatch, without inferring identity trust, task truth, authorization correctness, payment settlement, or ASI. | implemented |
 | `lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch` | `AsiStackProofs.InterStackProtocols` | A finite value-bearing requested cross-stack exchange with all required identity and authority records but no reserved budget routes to budget repair rather than ordinary local dispatch, without inferring payment, settlement, economic fairness, authority correctness, or ASI. | implemented |
+| `lean:inter_stack.complete_exchange.reaches_local_dispatch` | `AsiStackProofs.InterStackProtocols` | A complete finite exchange record reaches the existing local dispatch boundary without proving runtime authorization or execution. | implemented |
+| `lean:inter_stack.missing_sender.requires_identity_repair` | `AsiStackProofs.InterStackProtocols` | Missing sender identity routes to identity repair. | implemented |
+| `lean:inter_stack.audience_mismatch.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | Audience or scope mismatch denies ordinary dispatch. | implemented |
+| `lean:inter_stack.expired_request.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | An expired request denies ordinary dispatch. | implemented |
+| `lean:inter_stack.revoked_credential.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | A verified but no-longer-current required credential denies dispatch. | implemented |
+| `lean:inter_stack.disputed_receipt.requires_review` | `AsiStackProofs.InterStackProtocols` | A disputed expected receipt routes to accountable review. | implemented |
+| `lean:inter_stack.missing_residual_owner.requires_review` | `AsiStackProofs.InterStackProtocols` | Missing residual ownership routes to accountable review. | implemented |
 
 ### Procedural Memory and Cognitive Loop Closure
 
@@ -3084,11 +3134,11 @@ Draft deliverables:
 - A versioned deliberation record with request/risk, mode, budgets, verifier
   identity/version/scope/independence, candidate/rejection references, stop
   reason, unresolved constraints, residual owner, and handoff state.
-- Implemented Lean boundary: `AsiStackProofs.Deliberation` routes a finite
-  high-risk execution request with a missing independent verifier to review and
-  an otherwise complete exhausted budget to residual escrow. It is record
-  routing only; no reasoning model, verifier, workload, execution, quality,
-  safety, or ASI result exists.
+- Implemented owned bridge: ten Lean routes and ten digest-bound records cover
+  complete planning handoff, missing budget/mode/verifier scope/history/stop/
+  residual fields, trace-authority laundering, exhaustion, and missing
+  independent verification. Eleven mutations reject drift and preserve the
+  fifteen known extra-compute harms as regression-only knowledge.
 - Planned Codex test: public-safe deliberation workload comparison across direct,
   revision, and search modes with quality, verifier cost, branch, latency,
   residual, and negative-control records.
@@ -3100,6 +3150,15 @@ Lean proof targets:
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `AsiStackProofs.Deliberation` | A finite high-risk deliberation record with a requested execution handoff and no independent verifier routes to review rather than release to planning, without inferring evaluator correctness, reasoning quality, safety, model quality, or ASI. | implemented |
+| `lean:deliberation.budget_exhausted.escrows_residual` | `AsiStackProofs.Deliberation` | An otherwise complete exhausted deliberation stops and escrows its residual. | implemented |
+| `lean:deliberation.complete_high_risk.reaches_planning` | `AsiStackProofs.Deliberation` | A complete finite high-risk record reaches planning without execution authority. | implemented |
+| `lean:deliberation.missing_budget.requires_review` | `AsiStackProofs.Deliberation` | Missing budget declaration routes to review. | implemented |
+| `lean:deliberation.missing_search_mode.requires_review` | `AsiStackProofs.Deliberation` | Missing search-mode declaration routes to review. | implemented |
+| `lean:deliberation.missing_verifier_scope.requires_review` | `AsiStackProofs.Deliberation` | Missing verifier scope routes to review. | implemented |
+| `lean:deliberation.missing_candidate_history.requires_review` | `AsiStackProofs.Deliberation` | Missing candidate history routes to review. | implemented |
+| `lean:deliberation.missing_stop_condition.requires_review` | `AsiStackProofs.Deliberation` | Missing stop condition routes to review. | implemented |
+| `lean:deliberation.missing_residual_owner.requires_review` | `AsiStackProofs.Deliberation` | Missing residual ownership routes to review. | implemented |
+| `lean:deliberation.trace_authority_laundering.requires_review` | `AsiStackProofs.Deliberation` | An unseparated trace-authority claim routes to review. | implemented |
 
 ### RankFold, NeuralFold, and Artifact Compression
 
@@ -3650,9 +3709,9 @@ Draft deliverables:
 - A proof manifest, Lean workspace, first invariant modules, and proof target record schema for support-state and authority checks.
 - Implemented repository-level fixture: `proof_target_record.valid.json` validates proof-target record shape, artifact lane, consumer requirements, semantic adequacy state, limitations, and non-claims only.
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
-- Implemented generated audit: Appendix E summarizes all 225 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
-- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 225 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 225 proof targets, 63 Lean modules, 1079 theorem declarations, 880 derived/decomposed, 187 direct/projection, 12 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Implemented generated audit: Appendix E summarizes all 231 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
+- Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 231 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 65 Lean modules, 1151 theorem declarations, 952 derived/decomposed, 187 direct/projection, 12 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -3661,7 +3720,7 @@ Draft deliverables:
 - Implemented Codex test: External theorem reference boundary negative case.
 - Implemented Codex test: Proof artifact traceability audit.
 - Implemented Codex test: Proof-depth surface synchronization, via `python3 scripts/validate_proof_depth_surface.py`, so the live chapter, reader chapter, outline, and roadmap expose the current proof-depth classification counts and direct/projection versus derived/decomposed distinction without promoting proof-envelope support.
-- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 225 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
+- Implemented Codex test: Semantic proof adequacy audit, via `python3 scripts/validate_proof_adequacy_review.py`, checking the adequacy review table against all 231 manifest proof targets, the generated proof-depth snapshot, and no-support-promotion boundary language.
 - Implemented Codex test: formal semantic-depth fixture, via `python3
   scripts/validate_formal_semantic_depth.py`, with one blocked three-project
   record and ten mutations separating five depth lanes, assumptions, runtime
@@ -3809,14 +3868,23 @@ Draft deliverables:
 
 - A versioned threshold-commitment record with its assessment, safeguard, exception, residual, and release-path boundaries.
 - Source notes for the time-horizon and published-policy comparators plus supporting benchmark and gate connections.
-- Implemented Lean routing target for missing verified safeguards after a crossed scoped threshold; it is not a capability, safety, readiness, or deployment proof.
-- Planned public-safe synthetic commitment workload with stale-coverage, incomparable-elicitation, expired-exception, missing-verification, and attempted-release fixtures.
+- Implemented owned bridge: eight Lean routes and eight digest-bound records
+  cover crossed/non-crossed handoff, evaluation scope, baseline, uncertainty,
+  residual custody, safeguard declaration, and safeguard verification. Five
+  rejecting mutations preserve the no-support and non-claim boundaries.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
 | `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `AsiStackProofs.CapabilityThresholds` | A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI. | implemented |
+| `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | `AsiStackProofs.CapabilityThresholds` | Missing evaluation scope routes to re-evaluation. | implemented |
+| `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | `AsiStackProofs.CapabilityThresholds` | A complete crossed record reaches readiness review, not deployment. | implemented |
+| `lean:capability_thresholds.complete_non_crossing.reaches_readiness_review` | `AsiStackProofs.CapabilityThresholds` | A complete non-crossing reaches readiness review without becoming general clearance. | implemented |
+| `lean:capability_thresholds.missing_baseline.requires_reevaluation` | `AsiStackProofs.CapabilityThresholds` | Missing baseline routes to re-evaluation. | implemented |
+| `lean:capability_thresholds.missing_uncertainty.requires_reevaluation` | `AsiStackProofs.CapabilityThresholds` | Missing uncertainty routes to re-evaluation. | implemented |
+| `lean:capability_thresholds.missing_residual_owner.requires_exception` | `AsiStackProofs.CapabilityThresholds` | Missing residual custody routes to accountable exception. | implemented |
+| `lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release` | `AsiStackProofs.CapabilityThresholds` | A crossed threshold without its required safeguard record blocks the affected release. | implemented |
 
 ### Adversarial Evaluation, Sandbagging, and Training-Time Deception
 
@@ -3851,7 +3919,14 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:adversarial_evaluation.selection_context.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A finite evaluation-integrity record with missing selection context or independent evaluation blocks requested promotion without inferring deception, capability, safety, or intent. | implemented |
+| `lean:adversarial_evaluation.integrity.complete_to_promotion_review` | `AsiStackProofs.AdversarialEvaluation` | A complete integrity packet reaches review, not promotion. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_selection_context` | `AsiStackProofs.AdversarialEvaluation` | Missing selection context routes to repair. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_reward_provenance` | `AsiStackProofs.AdversarialEvaluation` | Missing reward provenance routes to repair. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_monitor_provenance` | `AsiStackProofs.AdversarialEvaluation` | Missing monitor provenance routes to repair. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_independent_evaluation` | `AsiStackProofs.AdversarialEvaluation` | Missing independent evaluation blocks review. | implemented |
+| `lean:adversarial_evaluation.integrity.missing_cross_context_probe` | `AsiStackProofs.AdversarialEvaluation` | Missing cross-context probe blocks review. | implemented |
+| `lean:adversarial_evaluation.integrity.unresolved_discrepancy` | `AsiStackProofs.AdversarialEvaluation` | An unresolved integrity discrepancy routes to quarantine. | implemented |
+| `lean:adversarial_evaluation.integrity.intent_laundering` | `AsiStackProofs.AdversarialEvaluation` | An observation cannot become an intent inference. | implemented |
 
 ### Safety Cases and Structured Assurance
 
@@ -3899,14 +3974,21 @@ Draft deliverables:
 
 - A versioned assurance-case record with scoped claim, deployment/hazard context, support and challenge references, assumptions, acceptance criterion, authority, residuals, and affected release path.
 - Source notes for the GSN standard, evaluations-based scheming safety cases, and AISI safety-case methodology.
-- Implemented finite Lean route for unresolved-defeater review; it is not a safety case, risk analysis, evidence-adequacy proof, or release decision.
-- Planned public-safe compilation workload with accepted bounded support, stale dependency, unresolved defeater, missing acceptance, missing residual owner, and attempted-release cases.
+- Eight owned finite Lean routes for complete, incomplete, stale, challenged, independently reviewed, and authority-separated records; they are not a safety case, risk analysis, evidence-adequacy proof, or release decision.
+- Implemented eight-case digest-bound synthetic compilation bridge with five rejecting mutations and no support-state effect.
 
 Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `AsiStackProofs.SafetyCases` | A finite assurance-case record with a requested affected release and an unresolved defeater routes to accountable review rather than readiness release, without inferring that the defeater is correct, the case is false, the system is unsafe, or ASI. | implemented |
+| `lean:safety_cases.complete_case.reaches_readiness_review` | `AsiStackProofs.SafetyCases` | A complete finite case record reaches only readiness review. | implemented |
+| `lean:safety_cases.missing_context.retains_draft` | `AsiStackProofs.SafetyCases` | A missing deployment context retains the record as a case draft. | implemented |
+| `lean:safety_cases.missing_hazard.requires_case_repair` | `AsiStackProofs.SafetyCases` | A missing hazard model requires case repair. | implemented |
+| `lean:safety_cases.stale_evidence.requires_repair` | `AsiStackProofs.SafetyCases` | A stale evidence dependency requires evidence repair. | implemented |
+| `lean:safety_cases.missing_countercase.requires_review` | `AsiStackProofs.SafetyCases` | A missing countercase review requires dedicated review. | implemented |
+| `lean:safety_cases.missing_independent_review.requires_review` | `AsiStackProofs.SafetyCases` | A missing independent review cannot reach readiness review. | implemented |
+| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `AsiStackProofs.SafetyCases` | An unresolved defeater routes a finite case record to accountable review. | implemented |
+| `lean:safety_cases.case_status.cannot_authorize_release` | `AsiStackProofs.SafetyCases` | A case record without explicit separation from release authority is rejected. | implemented |
 
 ### Policy Optimization and Learning from Feedback
 
@@ -4083,9 +4165,13 @@ Draft deliverables:
   load data, train a model, detect semantic contamination, or verify deletion.
 - Data-admission lifecycle probe result:
   `experiments/data_admission_receipt_probe/results/2026-07-10-local.json`.
-- Planned public-safe workload comparing replacement, accumulation, replay,
-  quarantine, and retraining under frozen baselines, heldout contamination
-  checks, negative controls, and independently replayed deletion scopes.
+- Completed preregistered P3 local campaign over three seeds, five arms, 24
+  declared state surfaces, prospective checkpoint authority, and 15 exact
+  rollback transactions; its update disposition is `no_change` and its
+  unlearning/rollback disposition remains narrow.
+- Digest-bound full-state bridge that preserves behavioral changes 4/0/1,
+  lineage propagation, influence as unestablished, storage erasure as false,
+  twelve owned Lean theorems, six rejecting mutations, and no support effect.
 
 Reader direction:
 
@@ -4104,6 +4190,18 @@ Lean proof targets:
 | `lean:data_engines.provenance_authority.failure_blocks_admission` | `AsiStackProofs.DataEngines` | Missing provenance or authority routes a finite data-admission review to block. | implemented |
 | `lean:data_engines.contamination.failure_routes` | `AsiStackProofs.DataEngines` | Missing split exclusions or contamination checks routes a finite data-admission review to quarantine. | implemented |
 | `lean:data_engines.complete_receipt.eligibility_invariant` | `AsiStackProofs.DataEngines` | A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified. | implemented |
+| `lean:data_engines.full_state.complete_reaches_evidence_review` | `AsiStackProofs.DataEngines` | A complete finite state record reaches evidence review, not promotion. | implemented |
+| `lean:data_engines.full_state.missing_optimizer_requires_repair` | `AsiStackProofs.DataEngines` | Missing optimizer state requires inventory repair. | implemented |
+| `lean:data_engines.full_state.missing_scheduler_requires_repair` | `AsiStackProofs.DataEngines` | Missing scheduler state requires inventory repair. | implemented |
+| `lean:data_engines.full_state.missing_rng_requires_repair` | `AsiStackProofs.DataEngines` | Missing RNG state requires inventory repair. | implemented |
+| `lean:data_engines.full_state.missing_cache_requires_repair` | `AsiStackProofs.DataEngines` | Missing cache state requires inventory repair. | implemented |
+| `lean:data_engines.full_state.missing_backup_requires_repair` | `AsiStackProofs.DataEngines` | Missing backup state requires inventory repair. | implemented |
+| `lean:data_engines.full_state.missing_descendant_requires_repair` | `AsiStackProofs.DataEngines` | Missing descendant state requires inventory repair. | implemented |
+| `lean:data_engines.full_state.missing_checkpoint_authority_requires_repair` | `AsiStackProofs.DataEngines` | Missing prospective checkpoint authority requires repair. | implemented |
+| `lean:data_engines.full_state.rollback_mismatch_requires_repair` | `AsiStackProofs.DataEngines` | A rollback mismatch requires repair. | implemented |
+| `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `AsiStackProofs.DataEngines` | Behavioral change without influence evidence cannot support an influence claim. | implemented |
+| `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `AsiStackProofs.DataEngines` | Behavioral change without privacy evidence cannot support a privacy-erasure claim. | implemented |
+| `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `AsiStackProofs.DataEngines` | Lineage propagation without verified erasure cannot support a storage-erasure claim. | implemented |
 
 ### Artifact Steward Agents and Living Project Governance
 

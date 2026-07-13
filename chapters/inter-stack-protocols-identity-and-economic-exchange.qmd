@@ -3,8 +3,8 @@ title: "Inter-Stack Protocols, Identity, and Economic Exchange"
 chapter_id: "inter-stack-protocols-identity-and-economic-exchange"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
-draft_maturity: "v0.1 chapter draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.2 depth-leveled chapter"
+last_updated: "2026-07-13"
 primary_sources:
   - "ext_mcp_protocol_2025_11_25"
   - "ext_a2a_protocol_1_0_0"
@@ -19,7 +19,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "No ASI Stack protocol endpoint, peer discovery service, identity resolver, credential issuer or verifier, delegated-authority chain, payment connector, settlement workflow, dispute workflow, or cross-stack dispatch has run."
   - "No local result establishes peer trustworthiness, identity binding, authorization correctness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, or ASI."
-  - "The finite Lean routes establish only modeled record consequences for invalid credentials and missing reserved budgets; they do not establish any real protocol, identity, credential, policy, receipt, payment, or peer result."
+  - "The nine owned Lean routes and digest-bound fixture establish only finite record consequences; they do not establish any real protocol, identity, credential, policy, receipt, payment, peer, privacy, or task-quality result."
 ---
 
 ## Chapter status
@@ -41,7 +41,7 @@ open_evidence_gaps:
 An interoperable message is not a trusted peer. A resolved identity is not an
 authorization decision. A valid credential is not permission to act. A task
 completion record is not proof that the result is true. A routed value packet is
-not settlement, fairness, legality, or consent. This chapter makes those
+not settlement, fairness, legality, or consent. This protocol boundary makes those
 separations operational; it does not claim to solve them.
 
 ::: {.asi-human-only}
@@ -124,6 +124,24 @@ states. TokenMana supplies bounded capacity and economic pressure rather than a
 claim that tokens alone capture value. The missing layer is the contract that
 keeps these records bound across an independently operated protocol boundary.
 
+### Strongest-neighbor comparison
+
+The closest standards solve different slices of the handoff. Their value is
+greatest when their boundaries remain explicit rather than being blended into
+one vague interoperability promise.
+
+| Neighbor | What it standardizes | What remains outside its result | ASI Stack delta |
+|---|---|---|---|
+| MCP | Versioned lifecycle, capability negotiation, and tool/resource/prompt/task messages | Principal authority, tool truth, effect safety, and result correctness | Bind the parsed request to a local principal, authority ceiling, effect owner, receipt, and residual path. |
+| A2A | Agent discovery, Agent Cards, tasks, messages, artifacts, and multiple bindings | Peer competence, identity truth, delegated authority, and artifact correctness | Preserve the originating principal and require a local decision before a remote declaration reaches dispatch or evidence. |
+| DID Core and VC 2.0 | Identifier resolution plus issuer/holder/verifier, validity, status, and securing-mechanism fields | Trust policy and complete authorization | Keep resolution and verification as expiring inputs to consumer-specific authorization, with disclosure and correlation residuals. |
+| Interledger v4 | Packetized value transfer across independent ledgers and connectors | Consent, fair price, legal obligation, final settlement, and task value | Keep reservation, routed packet, receipt, dispute, refund, and settlement as distinct states. |
+| QCSA semantic addressing | Stable local semantic identity, versioned addresses, migration lineage, and uncertainty-preserving translation | Authenticated peers, federation policy, payment, privacy, and authority | Carry plural semantic mappings without making semantic equivalence a delegation or trust decision. |
+
+The delta is not a universal replacement protocol. It is a local admission
+envelope that can consume several protocol-specific records while preserving
+what each one did and did not establish.
+
 ## Core Claim
 
 [inter-stack-protocols-identity-and-economic-exchange.core, label: Design rationale, support: argument] A governed stack routes each cross-stack request through a versioned exchange contract that binds protocol and schema version, sender and receiver identities, endpoint and capability declaration, requested task or artifact, principal and delegated authority, credential verification, audience, scope, expiry, budget or consideration, expected receipt, dispute and revocation paths, and residual owner; an absent, mismatched, expired, revoked, unverified, or budget-unreserved required record blocks dispatch or routes accountable review, but does not itself establish peer trustworthiness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, authorization correctness, or ASI.
@@ -186,6 +204,33 @@ protocol parsing, identity verification, authority, and budget records converge
 before dispatch, while a remote response returns through a receipt and residual
 path. It does not depict a trusted peer, a verified task result, or a settled
 payment.
+
+### Worked trace: the translated analysis with a disputed receipt
+
+Suppose Stack North asks Stack South to translate a safety-analysis artifact
+into a new namespace and reserves 40 credits. The A2A task names South's
+published translation capability. North resolves the service identity, checks
+a scoped credential, and records the human principal whose approval covers
+translation but not deployment. The request includes the source artifact
+digest, a namespace-qualified SOID, the expected mapping manifest, an expiry,
+and a receipt contract. None of those records authorizes South to modify
+North's live policy or spend more than the reservation.
+
+South returns a syntactically valid artifact and declares the task completed.
+The returned mapping preserves the SOID but drops one prohibited-use facet.
+North's independent artifact check marks the expected receipt disputed. The
+40-credit reservation remains a reservation; it is neither a settled payment
+nor proof that South performed valuable work. The exchange routes the artifact
+to quarantine, the economic record to dispute, and the missing restriction to
+its residual owner. Runtime Adapters receive no effect lease.
+
+Now add a revocation race: South's credential status changes after dispatch but
+before North accepts the artifact. The request graph records the affected
+in-flight exchange and forces re-review. This does not prove that South acted
+maliciously or that the artifact is false. It shows only that North no longer
+has the current verification state required by its own contract. Message
+success, identity verification, semantic translation, economic reservation,
+artifact acceptance, and local authority remain separate transitions.
 
 ### Federated semantic identity and address translation
 
@@ -299,7 +344,89 @@ visible early enough for denial, repair, review, or dispute.
 - Residual loss, where a timeout, partial delivery, dispute, refund, or remote
   failure has no accountable owner in the local system.
 
+## Non-obvious consequences
+
+1. **Interoperability increases the importance of refusal semantics.** Common
+   message shapes remove parsing friction and can make missing authority or
+   evidence easier to overlook. Denial and repair states need to interoperate
+   as deliberately as success states.
+2. **Identity is a graph, not a string.** Endpoint, operator, software agent,
+   credential subject, delegating principal, payer, and artifact signer may be
+   different actors. Collapsing them creates confused-deputy paths even when
+   every signature verifies.
+3. **Revocation is an affected-request computation.** Changing a credential,
+   endpoint, schema, budget, or policy matters only if in-flight and retained
+   exchanges can be found and routed before their next consequential use.
+4. **Economic state needs epistemic state.** A technically successful transfer
+   can accompany a disputed or unusable result. Payment and artifact evidence
+   need cross-references without sharing one success bit.
+5. **Privacy can conflict with accountability.** Rich identity records improve
+   auditability but can enable correlation and excess disclosure. Selective
+   fields, retention limits, and explicit privacy residuals are part of the
+   contract rather than optional polish.
+
+## Strongest objections and surviving residuals
+
+**"This is merely application authorization around existing standards."** The
+chapter does not invent a new wire format. Its distinct job is to preserve
+principal, authority, evidence, economic, dispute, and residual semantics
+across several standards and local owners. Whether one envelope can remain
+usable without becoming an integration bottleneck is still untested.
+
+**"Cryptographic credentials solve the trust problem."** They support
+integrity and issuer-bound claims under stated verification methods. They do
+not decide whether the issuer is trusted for this purpose, whether the holder
+is authorized for this task, or whether the response is correct. Issuer
+governance, verifier quality, status freshness, and local policy remain open.
+
+**"Rechecking every request destroys federation's value."** Scoped cached
+qualifications can reduce work, but their consumer, audience, expiry,
+dependency, and revocation conditions must remain visible. The trade-off among
+latency, false denial, stale acceptance, and operator load is unmeasured.
+
+**"Cooperating agents need no economic exchange."** Scarce compute, quotas,
+service obligations, and opportunity costs exist without currency. The record
+can represent capacity reservation rather than price. Whether explicit
+accounting improves coordination or creates gaming pressure remains empirical.
+
+**"A remote result can never be independently verified."** Sometimes it
+cannot. The honest route is then bounded use, more evidence, quarantine, or
+refusal—not promoting declared completion. The exchange boundary supplies that
+vocabulary but no universal verifier.
+
+**"The contract creates a surveillance ledger."** It could if identities and
+interactions were retained centrally. Data minimization, selective disclosure,
+scoped identifiers, expiry, and deletion policy are requirements. The present
+design does not prove that accountability and privacy always reconcile.
+
 ## Minimum Viable Implementation
+
+**Failure containment across counterparties.**
+
+Inter-stack exchange also needs a containment unit. Revoking one credential
+should not automatically invalidate every artifact previously produced by the
+sender, yet leaving all prior artifacts untouched can preserve an active
+compromise. The receiving stack needs a policy that maps the revocation reason,
+credential scope, artifact lineage, task risk, and receipt status to a bounded
+affected set. That set can be quarantined, re-verified, narrowed, or retained
+with an explicit residual. Global distrust and silent acceptance are both
+lossy defaults.
+
+Disputes create a similar split between protocol truth and task truth. A valid
+receipt can show that a named peer accepted a payload under a contract; it does
+not show that the payload is correct or that payment is legally owed. A task
+verifier may reject the result while the transport receipt remains valid. A
+settlement service may accept payment while the artifact remains barred from
+local execution. Preserving those separate outcomes lets later reviewers
+locate the actual disagreement instead of rewriting a successful exchange as a
+successful task.
+
+The practical metric is therefore not transaction count. A useful pilot would
+report bounded dispatches, verification failures, revocation fan-out, dispute
+resolution time, uncompensated work, privacy disclosure, operator intervention,
+and residual obligations together. A protocol that increases exchange volume
+while producing unowned disputes or broad quarantine has not demonstrated
+useful interoperability.
 
 Start with a public-safe exchange record containing protocol/schema revision,
 endpoint/capability declaration, sender/receiver/principal identities, requested
@@ -310,12 +437,22 @@ with a required invalid credential and blocks a value-bearing dispatch that
 lacks a reserved budget. The record contains no real identity, credential,
 payment, remote endpoint, account, or effect.
 
-The first useful demonstration is deliberately small. It should compare one
+The implemented finite demonstration is deliberately small. It compares one
 complete synthetic request with nearby failures: a missing sender identity, an
 audience mismatch, an expired or revoked credential, a value-bearing request
 without a reservation, a response with an unresolved dispute, and a request
-whose residual owner is absent. The test earns only a record-routing result. It
+whose residual owner is absent. Nine digest-bound cases and rejecting mutations
+bridge the owned Lean routes to JSON records. The test earns only a record-routing result. It
 does not earn trust in a peer or prove the value of a remote answer.
+
+The next empirical campaign must be frozen before its peer simulator runs. It
+should compare cached qualification with per-request checking and measure false
+dispatch, false denial, stale acceptance, dispute recovery, latency, selective
+disclosure, operator effort, and unresolved obligations across complete,
+missing-identity, audience-mismatch, expired, revoked, unreserved,
+disputed-receipt, and uncustodied-residual arms. It uses no real credential,
+account, payment, or external effect and cannot alter support without separate
+evidence adjudication.
 
 ## Beyond the State of the Art
 
@@ -355,7 +492,7 @@ that must resolve the remaining obligation.
 |---|---|---|
 | Invalid-credential dispatch block | Check that a requested dispatch with a required invalid credential cannot reach ordinary local dispatch. | implemented in `AsiStackProofs.InterStackProtocols`; no real credential or verifier exercised |
 | Missing-reserved-budget economic block | Check that a value-bearing requested dispatch without a reserved budget routes to repair rather than ordinary dispatch. | implemented in `AsiStackProofs.InterStackProtocols`; no real payment, account, or settlement exercised |
-| Public-safe exchange fixture | Exercise valid bounded contracts plus missing identity, audience mismatch, expiry, revoked credential, missing budget, disputed receipt, and residual-owner controls. | planned; no fixture or exchange workload has run |
+| Public-safe exchange fixture | Exercise valid bounded contracts plus missing identity, audience mismatch, expiry, invalid/revoked credential, missing budget, disputed receipt, and residual-owner controls. | implemented over nine synthetic records with eleven rejecting mutations; no peer or exchange workload ran |
 | Cross-stack effect replay | Check that a request-to-local-adapter handoff preserves principal, authority, receipt, and revocation bindings. | planned; no protocol peer, adapter exchange, or remote effect replay has run |
 :::
 
@@ -366,17 +503,23 @@ that must resolve the remaining obligation.
 |---|---|---|---|
 | `lean:inter_stack.invalid_credential.blocks_dispatch` | `AsiStackProofs.InterStackProtocols` | A finite requested cross-stack exchange with required invalid credential verification routes to denial rather than ordinary local dispatch, without inferring identity trust, task truth, authorization correctness, payment settlement, or ASI. | implemented |
 | `lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch` | `AsiStackProofs.InterStackProtocols` | A finite value-bearing requested cross-stack exchange with all required identity/authority records but no reserved budget routes to budget repair rather than ordinary local dispatch, without inferring payment, settlement, economic fairness, authority correctness, or ASI. | implemented |
+| `lean:inter_stack.complete_exchange.reaches_local_dispatch` | `AsiStackProofs.InterStackProtocols` | A complete finite exchange record reaches the existing local dispatch boundary without proving runtime authorization or execution. | implemented |
+| `lean:inter_stack.missing_sender.requires_identity_repair` | `AsiStackProofs.InterStackProtocols` | Missing sender identity routes to identity repair. | implemented |
+| `lean:inter_stack.audience_mismatch.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | Audience or scope mismatch denies ordinary dispatch. | implemented |
+| `lean:inter_stack.expired_request.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | An expired request denies ordinary dispatch. | implemented |
+| `lean:inter_stack.revoked_credential.denies_dispatch` | `AsiStackProofs.InterStackProtocols` | A verified but no-longer-current required credential denies dispatch. | implemented |
+| `lean:inter_stack.disputed_receipt.requires_review` | `AsiStackProofs.InterStackProtocols` | A disputed expected receipt routes to accountable review. | implemented |
+| `lean:inter_stack.missing_residual_owner.requires_review` | `AsiStackProofs.InterStackProtocols` | Missing residual ownership routes to accountable review. | implemented |
 :::
 
 ## Formalization hooks
 
 ::: {.asi-ai-only}
-`AsiStackProofs.InterStackProtocols` implements
-`lean:inter_stack.invalid_credential.blocks_dispatch` and
-`lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch`. The finite
-record model denies a requested dispatch with required invalid credential
-verification and routes a value-bearing request without a reserved budget to
-repair. It does not establish a real protocol, identity, credential, verifier,
+`AsiStackProofs.InterStackProtocols` owns nine derived routes bound to the
+nine-case result under `experiments/inter_stack_exchange_contract/`. The finite
+record model covers complete handoff, sender identity, audience, expiry,
+credential validity/currentness, reserved budget, disputed receipt, and
+residual ownership. It does not establish a real protocol, identity, credential, verifier,
 authorization policy, peer, account, payment, settlement, economic outcome,
 task result, effect, safety property, or ASI. It does not prove that any
 credential is valid or that any cross-stack dispatch is authorized.

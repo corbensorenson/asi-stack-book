@@ -21,7 +21,7 @@ model-generated, general safety, or cost-effectiveness result.
 
 ## Workstream E — Formal depth
 
-The proof manifest contains 225 implemented targets across all 54 chapters and
+The proof manifest contains 298 implemented targets across all 54 chapters and
 63 Lean modules. Every target has an adequacy class and next action; public
 proof language is checked against chapter limitation prose. The governed trace
 module uses the same executed event vocabulary as Workstream D, explicitly

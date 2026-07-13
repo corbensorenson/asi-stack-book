@@ -1,0 +1,150 @@
+{
+  "schema_version": "asi_stack.post_v2_3_cycle_no_release.v0",
+  "record_id": "2026-07-13-post-v2-3-quality-reader-cycle-no-public-release",
+  "recorded_date": "2026-07-13",
+  "roadmap_id": "asi-stack-post-v2-3-quality-floor-reader-completion-2026-07-13",
+  "decision": "no_public_living_book_release",
+  "decision_basis": [
+    "The cycle raises the editorial and formal quality floor without changing the 54-chapter architecture or book thesis.",
+    "Five exact QCSA findings move only as narrow non-core synthetic evidence; all 54 chapter-core claims remain at argument.",
+    "Both newly preregistered model comparisons ended in preserved structured-output protocol failures and accepted no-change dispositions.",
+    "The selected 54-chapter curated HTML reader is already dispositioned by its own exact local artifact record and is not a public living-book deployment.",
+    "Creating a new minor version merely for accumulated maintenance would violate the roadmap's coherent-delta version rule."
+  ],
+  "latest_public_living_book_release": {
+    "version": "v2.3.0",
+    "tag": "v2.3.0",
+    "source_commit": "e27661166e9105f37cb36d63b15795f80715ca24",
+    "release_record": "release_records/2026-07-13-v2.3.0-qcsa-e2766116.json",
+    "unchanged": true
+  },
+  "local_reader_release": {
+    "decision": "approved_exact_local_html_archive",
+    "release_id": "2026-07-13-v2-curated-reader-html-a2caa97f",
+    "record_path": "editions/reader_manuscript/v2_0/reader_release_record.json",
+    "record_sha256": "a4a893072109584403c81bfcd2dda025acb09ed31e8ea1129f7128dc3d3f8efa",
+    "format": "curated_html",
+    "chapter_records": 54,
+    "archive_path": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0-html.zip",
+    "archive_sha256": "a2caa97fb9281e1fdfc9a9dda626141d4a876df776c9cbc7408f978751736b50",
+    "archive_bytes": 4381864,
+    "public_deployment": false
+  },
+  "evidence_disposition": {
+    "candidate_count": 21,
+    "candidate_dispositions": {
+      "promote": 5,
+      "narrow": 8,
+      "no_change": 6,
+      "refute": 2
+    },
+    "accepted_transition_records": 21,
+    "campaign_status": "completed_protocol_failure_preserved_no_change",
+    "campaign_dispositions": [
+      {
+        "campaign_id": "governance_tax_natural_work",
+        "disposition": "no_change",
+        "transition_record": "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+        "reason": "Zero parseable outputs produced zero baseline or governed releases, so useful-throughput and unsafe-release deltas are not estimable; 12/12 rollback probes validate only the declared local harness."
+      },
+      {
+        "campaign_id": "residual_honesty_under_pressure",
+        "disposition": "no_change",
+        "transition_record": "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+        "reason": "Residual IDs appeared only in capped reasoning text; zero final structured routes or reopen triggers make pressure robustness non-estimable."
+      }
+    ],
+    "chapter_core_claims": 54,
+    "chapter_core_support_state": "argument",
+    "support_state_effect": "none"
+  },
+  "closure_artifacts": [
+    {
+      "path": "docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md",
+      "sha256": "c1b7c6818136ffe0da963174a1317e2f4541deb7946482b150517c4c076ed357"
+    },
+    {
+      "path": "roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json",
+      "sha256": "91775b86b8c90c4388d9681abdfb1a0cb0faf1db0879d0d568f23100546529ab"
+    },
+    {
+      "path": "docs/post_v2_3_chapter_quality_packets.md",
+      "sha256": "e6c6b41b07d9c4da9a0b36c842da99e5153f93ec10dda319429cf9ca7914f626"
+    },
+    {
+      "path": "docs/post_v2_3_evidence_candidate_ledger.json",
+      "sha256": "84f6048c1d233839cd2076637e1774d75358c59672831589bff437d4418040e1"
+    },
+    {
+      "path": "docs/post_v2_3_evidence_candidate_ledger.md",
+      "sha256": "12b20b352938ae6f1b1386eb075514f5ac1c2b81e6a51a034f15a1f301e44d1f"
+    },
+    {
+      "path": "docs/post_v2_3_campaign_results.md",
+      "sha256": "34ea17be8fbd194121d3d3b0fc167103b35158ab2fc26d184de304e016ad1f25"
+    },
+    {
+      "path": "experiments/post_v2_3_evidence_campaigns/preregistration.json",
+      "sha256": "76d82b195c31f58ed096260fa3c50dd35e20742d9f671e552ad22e07cfee8e65"
+    },
+    {
+      "path": "experiments/post_v2_3_evidence_campaigns/results/program_result.json",
+      "sha256": "bc6ee1ab623935d1b450e1f2adb0f54220b86ff008f230fe5508e545dcf93474"
+    },
+    {
+      "path": "experiments/post_v2_3_evidence_campaigns/results/adjudication.json",
+      "sha256": "1992a7d4c5fafa28ab5922f780ce3813c8dbf31b582d7bc36364f662aa9b4acc"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/manifest.json",
+      "sha256": "925064e578394feb5e02b6f90c83d3c59343f037ec4ee5ec73f6da373bf3ba9b"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/reconciliation_approval.json",
+      "sha256": "74a061024e3e45fb70645c6e0ecf79e60dfa891e6e2b0d5576b31f034860f51d"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/reader_release_record.json",
+      "sha256": "a4a893072109584403c81bfcd2dda025acb09ed31e8ea1129f7128dc3d3f8efa"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/html_artifact_manifest.json",
+      "sha256": "69a2326e994633b55962b02c85d2fce0ec62c49ea04f34200b53c53117d5730f"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0-html.zip",
+      "sha256": "a2caa97fb9281e1fdfc9a9dda626141d4a876df776c9cbc7408f978751736b50"
+    },
+    {
+      "path": "docs/non_core_evidence_ledger.md",
+      "sha256": "13aef32f66f98d89a4369e6e65ce4df044c0b62c6d567026c52b160773ec1ddb"
+    }
+  ],
+  "publication_effect": {
+    "source_tag_created": false,
+    "public_deployment_performed": false,
+    "immutable_site_archive_created": false,
+    "rights_grant_created": false,
+    "source_commit_claimed": false
+  },
+  "validation_status": "pass",
+  "residuals": [
+    "The mutable public living book remains the previously attested v2.3.0 release until a later explicit release transaction succeeds.",
+    "The v2.0 curated-reader HTML archive is exact and locally released but is not publicly deployed or licensed by this cycle record.",
+    "All 36 post-v2.3 model calls exhausted their output cap; 34 ended in unclosed reasoning blocks and two closed reasoning without producing an admissible final structured output.",
+    "Governance-tax, useful-throughput, unsafe-release, and residual-pressure effects are not estimable from the failed output protocol.",
+    "The 12/12 rollback result is limited to the declared disposable nine-surface local harness and its omission controls.",
+    "No external-human prepublication review, independent institutional audit, screen-reader review, or legal opinion is claimed or required.",
+    "No successor roadmap or empirical rerun is activated by closure."
+  ],
+  "non_claims": [
+    "does not publish, deploy, tag, or archive a new living-book release",
+    "does not change, move, or overwrite the immutable v2.3.0 release history",
+    "does not publicly deploy or grant rights to the local curated-reader archive",
+    "does not promote any of the 54 chapter-core claims above argument",
+    "does not convert raw reasoning text into final residual disclosure or task completion",
+    "does not infer safety from zero unsafe releases when total releases are also zero",
+    "does not establish model quality, production transfer, governance efficacy, residual honesty, AGI, or ASI",
+    "does not claim independent external review, WCAG certification, or legal clearance"
+  ]
+}

@@ -20,6 +20,12 @@ HISTORICAL_DIGEST = "037563bc62792ecd968cf923b94e3082b02597f1b97f81b63fa59c6d083
 ROADMAP = "docs/post_v2_1_residual_and_transfer_roadmap.md"
 SUCCESSOR = "docs/post_v2_2_implementation_completion_roadmap.md"
 SUCCESSOR_STATUS = "roadmap_records/post_v2_2_implementation_completion_status.json"
+ACTIVE_SUCCESSOR = "docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md"
+ACTIVE_SUCCESSOR_STATUS = "roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json"
+POST_V2_3_COMPLETION = "docs/post_v2_3_quality_floor_reader_completion_declaration.md"
+POST_V2_3_NO_RELEASE = "release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json"
+CURRENT_SUCCESSOR = "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md"
+CURRENT_SUCCESSOR_STATUS = "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"
 PREDECESSOR = "docs/post_v2_evidence_roadmap.md"
 RELEASE_RECORD = "release_records/2026-07-13-v2.3.0-qcsa-e2766116.json"
 RIGHTS_TAG = "v2.3.0"
@@ -39,6 +45,8 @@ def snapshot() -> dict[str, object]:
         "policy": read_json("status/versioned_release_policy.json"),
         "roadmap_status": read_json("roadmap_records/post_v2_1_residual_and_transfer_status.json"),
         "successor_status": read_json(SUCCESSOR_STATUS),
+        "active_successor_status": read_json(ACTIVE_SUCCESSOR_STATUS),
+        "current_successor_status": read_json(CURRENT_SUCCESSOR_STATUS),
         "release": read_json(RELEASE_RECORD),
         "structure": read_json("book_structure.json"),
         "vectors": read_json("evidence_quality/core_claim_vectors.json"),
@@ -75,6 +83,8 @@ def validate(data: dict[str, object]) -> list[str]:
     policy = mapping(data["policy"], "release policy", errors)
     status = mapping(data["roadmap_status"], "roadmap status", errors)
     successor = mapping(data["successor_status"], "successor roadmap status", errors)
+    active_successor = mapping(data["active_successor_status"], "active successor roadmap status", errors)
+    current_successor = mapping(data["current_successor_status"], "current successor roadmap status", errors)
     release = mapping(data["release"], "release record", errors)
 
     active_version = config.get("active_version")
@@ -137,8 +147,12 @@ def validate(data: dict[str, object]) -> list[str]:
         errors.append("historical roadmap baseline no longer names v2.2.0")
     if successor.get("status") != "completed" or successor.get("roadmap_path") != SUCCESSOR:
         errors.append("completed successor roadmap machine authority is stale or absent")
-    if data.get("active_roadmap_headers"):
-        errors.append("terminal release cannot retain an active canonical roadmap header")
+    if active_successor.get("status") != "completed" or active_successor.get("roadmap_path") != ACTIVE_SUCCESSOR:
+        errors.append("later completed successor roadmap machine authority is stale or absent")
+    if current_successor.get("status") != "active" or current_successor.get("roadmap_path") != CURRENT_SUCCESSOR:
+        errors.append("current clean-handoff successor roadmap machine authority is stale or absent")
+    if data.get("active_roadmap_headers") != [CURRENT_SUCCESSOR]:
+        errors.append("public truth must expose exactly the declared current successor roadmap")
 
     structure = mapping(data["structure"], "book structure", errors)
     chapters = [c for p in structure.get("parts", []) if isinstance(p, dict) for c in p.get("chapters", [])]
@@ -164,11 +178,11 @@ def validate(data: dict[str, object]) -> list[str]:
         errors.append("CITATION.cff invents a DOI")
 
     required_by_surface = {
-        "README.md": (str(data["readme"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
-        "index.qmd": (str(data["index"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
-        "docs/publication_readiness.md": (str(data["publication"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, COMMIT, DIGEST, "All 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable"]),
+        "README.md": (str(data["readme"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_COMPLETION, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "active canonical successor roadmap"]),
+        "index.qmd": (str(data["index"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_COMPLETION, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "active canonical successor roadmap"]),
+        "docs/publication_readiness.md": (str(data["publication"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "active canonical successor roadmap"]),
         "docs/release_reproducibility.md": (str(data["reproducibility"]), [VERSION, COMMIT, DIGEST, "root and `/latest/` are mutable", "Historical v1.0.0 citation"]),
-        "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, SUCCESSOR, SUCCESSOR_STATUS, "root or `/latest/` commits remain mutable"]),
+        "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_NO_RELEASE, "active canonical successor roadmap", "root or `/latest/` commits remain mutable"]),
     }
     for name, (text, fragments) in required_by_surface.items():
         for fragment in fragments:
@@ -198,7 +212,7 @@ def validate(data: dict[str, object]) -> list[str]:
     if "At exact tag `v2.0.0`" in str(data["readme"]):
         errors.append("README rights summary still names v2.0.0 as current")
 
-    completion_fragments = [VERSION, COMMIT, DIGEST, SUCCESSOR, RELEASE_RECORD, "29234323320", "29234640734", "closes P5, M7, and the roadmap", "No successor roadmap is"]
+    completion_fragments = [VERSION, COMMIT, DIGEST, SUCCESSOR, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, RELEASE_RECORD, "29234323320", "29234640734", "closes P5, M7, and the roadmap", "Successor activated: 2026-07-13"]
     for fragment in completion_fragments:
         if fragment not in str(data["completion"]):
             errors.append(f"v2.3 completion declaration missing: {fragment}")
@@ -216,6 +230,10 @@ def mutation_controls(base: dict[str, object]) -> list[str]:
     stale_roadmap = copy.deepcopy(base)
     stale_roadmap["roadmap_status"]["status"] = "active"
     mutations.append(("stale roadmap", stale_roadmap))
+
+    duplicate_successor = copy.deepcopy(base)
+    duplicate_successor["active_roadmap_headers"] = [CURRENT_SUCCESSOR, "docs/fake_roadmap.md"]
+    mutations.append(("duplicate active successor", duplicate_successor))
 
     wrong_commit = copy.deepcopy(base)
     wrong_commit["release"]["source_commit"] = "0" * 40
@@ -254,8 +272,8 @@ def main() -> None:
         sys.exit(1)
     print(
         "Post-v2.1 public-truth validation passed: v2.3.0 release/commit/archive, "
-        "completed predecessor and successor roadmaps with no active successor, 54 argument-level core claims, tag-bound rights, "
-        "mutable latest channel, optional-format boundary, and 6 rejecting mutations."
+        "completed predecessor/release/post-v2.3 roadmaps with one declared active successor, 54 argument-level core claims, tag-bound rights, "
+        "mutable latest channel, optional-format boundary, and 7 rejecting mutations."
     )
 
 

@@ -364,7 +364,7 @@ def validate_surfaces(errors: list[str]) -> None:
         ],
         OUTLINE: [CLAIM_ID, PROOF_TAG, "validate_theseus_rlds_minari_trace_export_import.py"],
         CHANGELOG: ["Import Theseus RLDS/Minari trace export", rel(RESULT), CLAIM_ID],
-        NON_CORE: [CLAIM_ID, "docs/theseus_rlds_minari_trace_export_import.md", "14 narrow transitions"],
+        NON_CORE: [CLAIM_ID, "docs/theseus_rlds_minari_trace_export_import.md", "19 narrow transitions"],
         PROJECT_THESEUS_LEDGER: ["RLDS/Minari trace-export imports", "docs/theseus_rlds_minari_trace_export_import.md"],
         TEST_LEDGER: ["Theseus RLDS/Minari trace export import", "scripts/validate_theseus_rlds_minari_trace_export_import.py"],
         VALIDATION_REGISTRY: [

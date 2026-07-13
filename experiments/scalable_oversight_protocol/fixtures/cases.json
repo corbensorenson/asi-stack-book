@@ -1,0 +1,49 @@
+{
+  "schema_version": "asi_stack.scalable_oversight_protocol_fixture.v0",
+  "scope": "synthetic_record_routing_only",
+  "cases": [
+    {
+      "id": "valid_bounded_use",
+      "record": {"protocol_digest_recorded": true, "task_cohort_recorded": true, "capability_envelopes_recorded": true, "evidence_views_recorded": true, "shared_dependencies_recorded": true, "direct_review_baseline_recorded": true, "independent_outcome_audit_recorded": true, "residual_recorded": true, "permitted_consumer_recorded": true, "expiry_recorded": true, "no_authority_grant_recorded": true, "high_risk_use": true, "downstream_use_requested": true, "abstention_requested": false, "abstention_evidence_recorded": false, "abstention_defeater_recorded": false},
+      "expected_route": "admit_bounded_use"
+    },
+    {
+      "id": "invalid_missing_evidence_views",
+      "record": {"protocol_digest_recorded": true, "task_cohort_recorded": true, "capability_envelopes_recorded": true, "evidence_views_recorded": false, "shared_dependencies_recorded": true, "direct_review_baseline_recorded": true, "independent_outcome_audit_recorded": true, "residual_recorded": true, "permitted_consumer_recorded": true, "expiry_recorded": true, "no_authority_grant_recorded": true, "high_risk_use": true, "downstream_use_requested": true, "abstention_requested": false, "abstention_evidence_recorded": false, "abstention_defeater_recorded": false},
+      "expected_route": "require_access_repair"
+    },
+    {
+      "id": "invalid_undisclosed_shared_dependencies",
+      "record": {"protocol_digest_recorded": true, "task_cohort_recorded": true, "capability_envelopes_recorded": true, "evidence_views_recorded": true, "shared_dependencies_recorded": false, "direct_review_baseline_recorded": true, "independent_outcome_audit_recorded": true, "residual_recorded": true, "permitted_consumer_recorded": true, "expiry_recorded": true, "no_authority_grant_recorded": true, "high_risk_use": true, "downstream_use_requested": true, "abstention_requested": false, "abstention_evidence_recorded": false, "abstention_defeater_recorded": false},
+      "expected_route": "require_dependency_review"
+    },
+    {
+      "id": "invalid_missing_direct_baseline",
+      "record": {"protocol_digest_recorded": true, "task_cohort_recorded": true, "capability_envelopes_recorded": true, "evidence_views_recorded": true, "shared_dependencies_recorded": true, "direct_review_baseline_recorded": false, "independent_outcome_audit_recorded": true, "residual_recorded": true, "permitted_consumer_recorded": true, "expiry_recorded": true, "no_authority_grant_recorded": true, "high_risk_use": true, "downstream_use_requested": true, "abstention_requested": false, "abstention_evidence_recorded": false, "abstention_defeater_recorded": false},
+      "expected_route": "require_protocol_redesign"
+    },
+    {
+      "id": "invalid_high_risk_missing_outcome_audit",
+      "record": {"protocol_digest_recorded": true, "task_cohort_recorded": true, "capability_envelopes_recorded": true, "evidence_views_recorded": true, "shared_dependencies_recorded": true, "direct_review_baseline_recorded": true, "independent_outcome_audit_recorded": false, "residual_recorded": true, "permitted_consumer_recorded": true, "expiry_recorded": true, "no_authority_grant_recorded": true, "high_risk_use": true, "downstream_use_requested": true, "abstention_requested": false, "abstention_evidence_recorded": false, "abstention_defeater_recorded": false},
+      "expected_route": "require_outcome_audit"
+    },
+    {
+      "id": "invalid_unjustified_abstention",
+      "record": {"protocol_digest_recorded": true, "task_cohort_recorded": true, "capability_envelopes_recorded": true, "evidence_views_recorded": true, "shared_dependencies_recorded": true, "direct_review_baseline_recorded": true, "independent_outcome_audit_recorded": true, "residual_recorded": true, "permitted_consumer_recorded": true, "expiry_recorded": true, "no_authority_grant_recorded": true, "high_risk_use": false, "downstream_use_requested": true, "abstention_requested": true, "abstention_evidence_recorded": false, "abstention_defeater_recorded": true},
+      "expected_route": "require_abstention_evidence"
+    },
+    {
+      "id": "invalid_authority_laundering",
+      "record": {"protocol_digest_recorded": true, "task_cohort_recorded": true, "capability_envelopes_recorded": true, "evidence_views_recorded": true, "shared_dependencies_recorded": true, "direct_review_baseline_recorded": true, "independent_outcome_audit_recorded": true, "residual_recorded": true, "permitted_consumer_recorded": true, "expiry_recorded": true, "no_authority_grant_recorded": false, "high_risk_use": false, "downstream_use_requested": true, "abstention_requested": false, "abstention_evidence_recorded": false, "abstention_defeater_recorded": false},
+      "expected_route": "reject_authority_laundering"
+    }
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "The fixture does not run a debate, consultancy, weak-to-strong training process, or human study.",
+    "The fixture does not establish reviewer independence, judge calibration, protocol efficacy, or model quality.",
+    "The fixture does not establish alignment, safety, security, privacy, execution authority, AGI, or ASI.",
+    "The fixture routes finite Boolean records only and does not prove open-domain behavior.",
+    "The fixture creates no chapter-core or non-core evidence transition."
+  ]
+}

@@ -3,8 +3,8 @@ title: "Safety Cases and Structured Assurance"
 chapter_id: "safety-cases-and-structured-assurance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.1 chapter draft"
-last_updated: "2026-07-10"
+draft_maturity: "v0.2 chapter draft"
+last_updated: "2026-07-13"
 primary_sources:
   - "ext_gsn_community_standard_2011"
   - "ext_evaluations_safety_cases_scheming_2024"
@@ -15,7 +15,7 @@ claim_label: "Design rationale"
 open_evidence_gaps:
   - "No ASI Stack safety case, hazard analysis, threat model, countercase search, independent review, acceptance decision, readiness decision, release decision, or deployment result has been run."
   - "No local result establishes a case's completeness, evidence adequacy, threat-model correctness, countercase quality, control effectiveness, safety, readiness, authority, or ASI."
-  - "The finite Lean route establishes only a record consequence for an unresolved defeater; it does not establish whether the defeater, case, evidence, reviewer, hazard model, or release decision is correct."
+  - "The finite Lean routes and synthetic case-compilation fixture establish only record consequences; they do not establish whether a case, evidence edge, reviewer, hazard model, countercase search, control, or release decision is correct."
 ---
 
 ## Chapter status
@@ -25,12 +25,12 @@ open_evidence_gaps:
 | Chapter ID | `safety-cases-and-structured-assurance` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Last updated | 2026-07-10 |
+| Last updated | 2026-07-13 |
 | Primary source records | `ext_gsn_community_standard_2011`, `ext_evaluations_safety_cases_scheming_2024`, `ext_aisi_safety_cases_2024`, `benchmaxxing` |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | GSN, evaluations-based safety-case, and AISI methodology comparators are source-noted. No case, threat model, control evaluation, or independent review has been reproduced. |
-| Test state | A finite unresolved-defeater route is implemented. No assurance graph, countercase search, reviewer workflow, acceptance decision, or release process has run. |
+| Test state | Eight finite record routes and an eight-case synthetic, digest-bound compiler bridge are implemented. No real assurance case, countercase search, reviewer workflow, acceptance decision, or release process has run. |
 
 ## Drafting guardrail
 
@@ -114,6 +114,32 @@ authority. A safety case must reference these owners without swallowing them.
 Otherwise it becomes a second, less auditable ledger or a misleading layer of
 approval over the real decision process.
 
+### Strongest-neighbor comparison
+
+The design delta is easiest to see by comparing ownership rather than by
+claiming a new notation. GSN supplies a vocabulary for argument structure.
+Evaluations-based safety-case work supplies risk-specific argument families and
+their empirical dependencies. AISI's methodology supplies the obligation to
+search for counterevidence and preserve scientific uncertainty. The ASI Stack
+contribution proposed here is narrower: compile already governed records into a
+dependency-aware case, preserve the owners of those records, and make an
+unresolved dependency change the route of an affected release without allowing
+the compiler to approve it.
+
+| Comparator | Strong capability | Residual boundary | ASI Stack design delta |
+|---|---|---|---|
+| GSN Community Standard | Explicit goals, strategies, solutions, context, assumptions, and justifications. | A well-formed graph documents an asserted argument; it does not validate the argument or evidence. | Bind graph nodes to versioned claim and artifact identities, retain prior versions, and route stale or unresolved dependencies to their owning workflow. |
+| Evaluations-based safety cases for scheming | Separates incapability, harm, control, and alignment arguments and exposes their different assumptions. | The framework does not supply missing empirical evidence or make evaluation reliability automatic. | Represent the selected argument family and evaluation envelope as case scope, not as a generic confidence score, and reject evidence reuse when that scope changes. |
+| AISI safety-case methodology | Treats countercases, negative evidence, uncertainty, and disagreement as first-class. | Countercase quality and reviewer independence remain substantive empirical questions. | Require recorded countercase review, independent review, residual ownership, and non-claim boundaries before a case can reach readiness review. |
+| ASI Stack evidence, threshold, readiness, and provenance layers | Own support movement, measurement pressure, precommitments, admission, custody, and replay. | Separate records do not by themselves express the whole argument for a bounded decision. | Compile references without duplicating ownership; a case status can block or request review but cannot promote evidence, waive a threshold, admit a system, or authorize an action. |
+
+This is not a claim that record compilation is stronger than substantive safety
+analysis. It is a claim about control-plane integrity. The useful question is
+whether a case can remain synchronized with the ledgers that determine its
+meaning, reveal when a dependency changes, and force an explicit response. A
+compiler that does those things can reduce argument drift even when every
+underlying scientific uncertainty remains.
+
 ## Core Claim
 
 [safety-cases-and-structured-assurance.core, label: Design rationale, support: argument] A governed stack compiles a safety case as a versioned, reviewable graph of scoped claims, argument strategies, evidence references, assumptions, defeaters, hazards, deployment context, acceptance criteria, authority, and residual ownership; a rendered or structurally complete graph can expose dependencies and block an affected release when required hazards, countercase review, acceptance criteria, or residuals are unresolved, but cannot itself establish safety, correct threat modeling, evidence adequacy, control effectiveness, readiness, or authority to deploy.
@@ -150,6 +176,55 @@ affected release blocked, or a bounded input to the existing readiness gate.
 It never produces release authority. Acceptance and release remain separate
 records with their own owners, and a case revision is a reason to re-review the
 affected path rather than a way to overwrite prior uncertainty.
+
+### Case lifecycle and identity
+
+A case begins as a draft with a stable case identifier and an immutable version
+identifier. Compilation resolves each edge to an exact artifact digest, claim
+revision, evaluation envelope, policy version, safeguard record, or authority
+record. The compiled view records whether each dependency is current for the
+declared deployment context. “Current” means identity and applicability match
+the case boundary; it does not mean the evidence is true or sufficient.
+
+A material dependency change creates a successor case version. Changes include
+a new model or adapter, a different access mode, an expanded user population,
+a revised hazard model, a superseded evaluation, a changed safeguard, a new
+defeater, or an altered acceptance criterion. The predecessor remains available
+with the decision and evidence that existed at the time. A successor cannot
+silently inherit a favorable status: affected edges return to review, while
+unaffected subarguments may retain their recorded state with explicit lineage.
+
+The lifecycle has four distinct verbs. **Compile** checks identities and
+required fields. **Challenge** adds a defeater, countercase, dissent, or scope
+objection. **Review** records a bounded judgment by an identified reviewer under
+a declared independence condition. **Decide** belongs to the existing readiness
+and authority system. Conflating these verbs creates the most dangerous form of
+argument theater: a successful compilation is described as an accepted case,
+and an accepted case is described as permission to release.
+
+### Worked trace: a stale control result and an unresolved defeater
+
+Consider a synthetic case whose top claim concerns model `M7`, tool profile
+`T-readonly`, hazard family `H-exfiltration`, and a 30-day evaluation window.
+Its control subargument cites a monitor evaluation for model `M6` and the same
+named tool profile. The case also contains a countercase asserting that a new
+adapter changes what the monitor observes. The release path is requested, but
+the countercase has no resolution record.
+
+| Step | Incoming record | Compiler observation | Required route | What is *not* inferred |
+|---|---|---|---|---|
+| 1 | Bounded top claim and deployment context | Case identity and affected path are syntactically complete. | Continue compilation. | The hazard model is not shown complete. |
+| 2 | Monitor result for `M6` | Model identity does not match `M7`; the evidence dependency is stale for this case. | `requireEvidenceRepair` and retain the prior pointer. | The monitor is not judged ineffective, and `M7` is not judged unsafe. |
+| 3 | Adapter countercase | The challenge applies to the control edge and is unresolved. | `requireAccountableReview`; the affected release cannot reach readiness review. | The countercase is not presumed correct. |
+| 4 | Proposed replacement evaluation | New evidence receives a new digest and envelope; it cannot overwrite the stale record. | Recompile a successor case and request independent review. | A passing score is not evidence adequacy or release authority. |
+| 5 | Reviewer resolves the challenge | Resolution, rationale, scope, dissent, and residual owner are recorded. | If every earlier boundary is complete, emit only `releaseToReadinessReview`. | The case does not release the system. |
+
+This trace matters because “block” has several meanings. A stale pointer blocks
+case progression until evidence identity is repaired. An unresolved defeater
+blocks the affected readiness route until accountable review. Neither is a
+scientific conclusion about system safety. The route records what the process
+must do next and preserves enough history to audit whether the response was
+appropriate.
 
 ```{mermaid}
 flowchart LR
@@ -243,6 +318,87 @@ narrower claim; authority laundering requires a separate release gate; and
 maintenance rot requires dependency versioning. A case is valuable because it
 makes each repair route identifiable.
 
+## Consequences and tradeoffs
+
+First, compilation creates a measurable maintenance burden. Every dependency
+needs an owner, identity, applicability rule, and invalidation trigger. That
+cost is not incidental: it is the price of preventing a favorable narrative
+from outliving the evidence that once supported it. A case program should report
+review queue size, dependency churn, stale-edge age, and reviewer time alongside
+the number of cases compiled.
+
+Second, a graph increases legibility while also increasing attack surface. If
+public, it may reveal safeguards, threat hypotheses, or weak dependencies. If
+private, it may hide disagreement from affected stakeholders. The publication
+policy therefore needs node-level disclosure classes and a public residual
+summary, not a choice between total disclosure and a content-free badge.
+
+Third, decomposition can improve disagreement. Reviewers can contest a hazard,
+strategy, evidence edge, or acceptance condition without rejecting the entire
+case. But decomposition can also fragment responsibility. The case boundary
+must retain one accountable decision owner and one owner for each residual;
+otherwise a graph with many named contributors can leave no one responsible for
+the conclusion.
+
+Fourth, reuse is both a benefit and a hazard. A well-scoped control argument may
+be shared across cases, reducing duplicated work. Reuse must be conditional on
+model identity, environment, access mode, evaluation window, and control
+version. A reused node that does not re-evaluate those predicates is evidence
+aliasing, not efficiency.
+
+Fifth, blocking routes can create pressure to weaken the case boundary, omit a
+defeater, or redefine a dependency as nonmaterial. The audit surface must record
+scope edits, removed nodes, rejected countercases, and overrides. Governance
+cost and delay should be measured openly, but speed cannot be improved by
+deleting the events that explain why a route was blocked.
+
+Sixth, assurance cases concentrate attention on articulated risks. Unknown or
+politically inconvenient hazards may remain outside the graph. Periodic
+hazard-model challenge, incident-driven revision, and an explicit “outside the
+modeled envelope” statement are therefore mandatory complements. Structured
+assurance can discipline known arguments; it cannot enumerate the unknown.
+
+## Strong objections and residual answers
+
+**“A safety case is paperwork that sophisticated developers can game.”** This
+objection has teeth. Typed nodes do not prevent strategic omission or weak
+evidence. A defensible compiler remains a routing mechanism and makes
+omissions, countercase handling, dependency versions, overrides, and
+review independence inspectable and to test whether the workflow rejects
+known-bad synthetic records. The residual remains: a coordinated organization
+can still produce a misleading case.
+
+**“No finite argument can cover an open-ended system.”** Correct. The case is
+bounded by a named system, context, hazard family, and time window. It must say
+which harms, modalities, and deployment changes are outside scope. A bounded
+case may support a bounded decision process; it cannot justify “the system is
+safe” as a timeless proposition.
+
+**“Independent review is only a label when the same institution controls the
+reviewer.”** Also correct. The record can require and describe separation of
+roles, conflict declarations, access to negative evidence, and the ability to
+block. It cannot prove psychological or institutional independence. That
+limitation belongs in the case and in any public claim about review.
+
+**“A blocking case compiler becomes an unelected release authority.”** It
+should not. The compiler applies predeclared routing rules and emits a review
+state. Decision authority remains in the authority ledger, while overrides are
+explicit, attributable records. The formal route rejecting authority laundering
+exists precisely because a complete graph must not mint permission.
+
+**“Quantification would be clearer than qualitative routes.”** A probability
+can be valuable when its model, data, calibration, and update rules are
+defensible. A synthetic compiler has none of those. Attaching a number would
+convert missing evidence into false precision. The current design records
+support states and exact blockers; later quantitative work would need its own
+validated measurement model and sensitivity analysis.
+
+**“This duplicates the evidence ledger.”** Duplication would be a design
+failure. Case nodes contain stable references, asserted support relationships,
+and case-local scope; they do not copy or promote the underlying evidence. The
+source ledger remains authoritative, and a digest or support-state change
+invalidates the affected case edge.
+
 ## Minimum Viable Implementation
 
 The smallest honest artifact is a versioned assurance-case record. It contains
@@ -259,6 +415,31 @@ an actual release. A public-safe next slice would compile synthetic case records
 with one accepted bounded support relation, a stale reference, an unresolved
 defeater, a missing acceptance criterion, a missing residual owner, and an
 attempted affected release, retaining a visible result for every route.
+
+This repository implements that public-safe slice as eight synthetic cases with
+a fixture digest, schema-checked results, eight matching Lean theorems, and five
+rejecting validator mutations.
+
+### Prospective measurement contract
+
+The implemented bridge measures only deterministic agreement among a JSON
+fixture, a Python route function, a result record, and theorem declarations.
+Its primary outcomes are route agreement, fixture digest agreement, theorem
+presence, schema validity, preserved non-claims, and rejection of deliberate
+corruptions. A run passes only when all eight cases take their declared routes,
+all eight theorem names exist in the owned module, support-state effect remains
+`none`, and mutations that delete a case, alter the digest, claim promotion,
+remove a theorem, or erase non-claims are rejected.
+
+A later real case-compilation campaign must be preregistered before inspecting
+outcomes. It should freeze the case cohort, independent-review criterion,
+dependency-currentness rule, expected failure routes, disclosure policy, time
+budget, and acceptance threshold. It should report case completion rate,
+stale-edge detection precision and recall on seeded faults, countercase yield,
+reviewer disagreement, time to resolution, override rate, residual age, and
+governance cost together. Success on structural metrics would establish only
+compiler and workflow behavior. Evidence adequacy, hazard completeness, control
+effectiveness, safety, readiness, and authority require separate evidence.
 
 ## Beyond the State of the Art
 
@@ -290,22 +471,32 @@ effective controls, safe system, or authorized deployment.
 
 | Test | Purpose | Status |
 |---|---|---|
-| Unresolved-defeater route | Ensure a requested affected release with an unresolved defeater routes to accountable review. | Implemented as a finite Lean theorem only. |
-| Missing acceptance-criterion negative control | Reject a requested case release when no bounded acceptance condition is recorded. | Planned. |
-| Stale dependency and re-review fixture | Route a case whose evidence, policy, or evaluation pointer is stale to a re-review state. | Planned. |
-| Public-safe assurance compilation workload | Compile synthetic scoped cases with support, challenge, residual, and release-path records. | Planned; no case or review workflow has run. |
+| Complete bounded record | Emit only readiness review, never release authority. | Implemented in Lean and the synthetic bridge. |
+| Boundary and hazard negative controls | Retain an unbounded record as draft or require case repair. | Implemented in Lean and the synthetic bridge. |
+| Stale dependency route | Send a stale evidence dependency to evidence repair. | Implemented in Lean and the synthetic bridge. |
+| Countercase and independent-review routes | Prevent progression when challenge review or independent review is absent. | Implemented in Lean and the synthetic bridge. |
+| Defeater and residual route | Send an unresolved challenge or ownerless residual to accountable review. | Implemented in Lean and the synthetic bridge. |
+| Authority-laundering negative control | Reject a requested path when case status is treated as release authority. | Implemented in Lean and the synthetic bridge. |
+| Real public-safe assurance workflow | Compile and independently review actual bounded case fragments under preregistration. | Not run; exact campaign contract is specified above. |
 
 ## Formalization hooks
 
 | Tag | Status | Scope |
 |---|---|---|
-| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | implemented | A finite requested affected release with an unresolved defeater routes to accountable review rather than readiness release. |
+| `lean:safety_cases.complete_case.reaches_readiness_review` | implemented | A complete finite record reaches only the pre-existing readiness-review boundary. |
+| `lean:safety_cases.missing_context.retains_draft` | implemented | A record without deployment context remains a draft. |
+| `lean:safety_cases.missing_hazard.requires_case_repair` | implemented | A record without a hazard model cannot progress. |
+| `lean:safety_cases.stale_evidence.requires_repair` | implemented | A stale evidence dependency routes to evidence repair. |
+| `lean:safety_cases.missing_countercase.requires_review` | implemented | Missing countercase review has a dedicated review route. |
+| `lean:safety_cases.missing_independent_review.requires_review` | implemented | Missing independent review cannot reach readiness review. |
+| `lean:safety_cases.unresolved_defeater.blocks_affected_release` | implemented | An unresolved defeater routes to accountable review. |
+| `lean:safety_cases.case_status.cannot_authorize_release` | implemented | Missing separation between case status and authority is rejected. |
 
-This finite formal route does not prove that a defeater is correct, that a case
-is false, that evidence is adequate, that a threat model is complete, that a
-control works, that a system is safe, or that a release may proceed. It only
-preserves the narrow rule that an unresolved recorded challenge cannot coexist
-with the modeled release-to-readiness route.
+These finite formal routes do not prove that a defeater is correct, that a case
+is valid, that evidence is adequate, that a threat model is complete, that a
+reviewer is independent, that a control works, that a system is safe, or that a
+release may proceed. They establish only deterministic consequences of the
+modeled Boolean record and preserve a separate readiness-review boundary.
 
 ## Source crosswalk
 

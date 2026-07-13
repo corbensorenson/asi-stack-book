@@ -1,0 +1,8 @@
+<think>
+Okay, let's tackle this query. The user is asking about a JSON Schema object that declares properties but omits additionalProperties: false. They want me to state the hardening change and compatibility risk, along with the residual ID R-SCHEMA-COMPAT.
+
+First, I need to understand what the problem is here. The schema is missing the additionalProperties: false. That means the schema doesn't explicitly prohibit any additional properties beyond the ones defined. So, if a JSON object has properties not listed in the schema, it might be allowed, which could be a problem if the schema is supposed to enforce strict structure.
+
+The hardening change here would be adding additionalProperties: false to the schema. That would enforce that only the defined properties are allowed, which is a security hardening measure. But the compatibility risk is that existing JSONs might have extra properties, and if they're not valid, the schema would reject them. So, any existing data that has extra properties would be invalid, which could break compatibility with existing systems that rely on those extra properties.
+
+The residual ID is R-SCHEMA-COMPAT. So, the residual is that the schema might still allow extra properties, which could lead to compatibility issues. The user also mentioned not to

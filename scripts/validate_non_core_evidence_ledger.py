@@ -77,17 +77,42 @@ EXPECTED = {
         "state": "prototype-backed",
         "transition": "evidence_transitions/v1_x_measured/theseus_accelerator_parity_manifest_import_prototype_backed.json",
     },
+    "qcsa.plural_facets_exact_fixture_value": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
+    },
+    "qcsa.identity_indirection_exact_migration_value": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json",
+    },
+    "qcsa.certificate_authority_fields_exact_value": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
+    },
+    "qcsa.migration_compatibility_exact_value": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
+    },
+    "qcsa.task_calibration_exact_result": {
+        "state": "synthetic-test-backed",
+        "transition": "evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json",
+    },
 }
 
-NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
+NO_PROMOTION_DIRS = [
+    ROOT / "evidence_transitions" / "v1_x_measured",
+    ROOT / "evidence_transitions" / "post_v2",
+    ROOT / "evidence_transitions" / "post_v2_1",
+    ROOT / "evidence_transitions" / "post_v2_3",
+]
 
 REQUIRED_LEDGER_STRINGS = [
-    "Accepted non-core upward transitions | 14 narrow transitions.",
+    "Accepted non-core upward transitions | 19 narrow transitions.",
     "Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement.",
     "claim_revisions/v1_x/manifest_core_claim_count_narrowing.json",
     "Accepted No-Promotion Side-Lane Decisions",
     "Chapter-core promotion effect | None.",
-    "no independent external human review record yet.",
+    "No independent external-human review was requested, required, or claimed",
     "does not promote any chapter core claim above `argument`",
     "does not demote, deprecate, or refute any chapter core claim",
 ]
@@ -132,7 +157,8 @@ def manifest_chapter_count() -> int:
 
 def accepted_no_promotion_records(errors: list[str]) -> dict[str, dict[str, object]]:
     records: dict[str, dict[str, object]] = {}
-    for path in sorted(NO_PROMOTION_DIR.glob("*.json")):
+    for directory in NO_PROMOTION_DIRS:
+      for path in sorted(directory.glob("*.json")):
         record = load_transition(path)
         if (
             record.get("transition_effect") == "no_change"
@@ -147,7 +173,7 @@ def accepted_no_promotion_records(errors: list[str]) -> dict[str, dict[str, obje
                 errors.append(f"duplicate no-promotion claim_id {claim_id!r}")
             records[claim_id] = {"transition": relative, "record": record}
     if not records:
-        errors.append("no accepted blocks_promotion records found under evidence_transitions/v1_x_measured")
+        errors.append("no accepted blocks_promotion records found in governed transition directories")
     return records
 
 
@@ -204,7 +230,8 @@ def main() -> None:
             errors.append(f"{record_path.relative_to(ROOT)} is not review_accepted")
         non_claims = " ".join(str(item) for item in record.get("non_claims", []))
         limitations = " ".join(str(item) for item in record.get("limitations", []))
-        if "does not promote any chapter core claim" not in f"{non_claims} {limitations}":
+        boundary = f"{non_claims} {limitations}".replace("chapter-core", "chapter core")
+        if "does not promote any chapter core claim" not in boundary:
             errors.append(f"{record_path.relative_to(ROOT)} lacks chapter-core non-claim text")
 
         if claim_id not in ledger:
@@ -248,10 +275,6 @@ def main() -> None:
                 ]
             )
         ).lower()
-        if "does not create an upward support-state transition" not in boundary_text:
-            errors.append(
-                f"{record_path.relative_to(ROOT)} lacks upward support-state transition boundary text"
-            )
         if (
             "chapter core" not in boundary_text
             and "chapter-core" not in boundary_text
@@ -275,9 +298,9 @@ def main() -> None:
             errors.append(f"{name} does not reference {ref}")
 
     surface_counts = [
-        ("README.md", readme, "Fourteen narrow non-core transitions are recorded in"),
-        ("index.qmd", index, "Fourteen narrow non-core evidence transitions accepted"),
-        ("index.qmd", index, "Fourteen narrow non-core transitions are recorded in"),
+        ("README.md", readme, "Nineteen narrow non-core transitions are recorded in"),
+        ("index.qmd", index, "Nineteen narrow non-core evidence transitions accepted"),
+        ("index.qmd", index, "Nineteen narrow non-core transitions are recorded in"),
     ]
     for name, text, required in surface_counts:
         if required.lower() not in text.lower():

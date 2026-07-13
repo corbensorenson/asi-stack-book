@@ -1,0 +1,233 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: failure-modes-of-ungoverned-intelligence
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/failure-modes-of-ungoverned-intelligence.qmd
+live_source_ref: chapters/failure-modes-of-ungoverned-intelligence.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Failure Modes of Ungoverned Intelligence
+
+Once the architecture has named boundaries and authority, it has to say what happens when those boundaries fail. The failure model is not a catalog of dramatic disaster scenarios. It is a way to make failures operational: a broken contract should leave a receipt, owner, containment route, and residual question.
+
+The operating need is diagnostic clarity. If a system cannot say whether a failure came from authority creep, memory contamination, hidden optimization pressure, weak evidence, or ungoverned replacement, then it cannot learn from the failure without creating new ambiguity. A failure mode matters when the architecture gives it somewhere to go.
+
+The stack treats failure analysis as design input, not retrospective blame.
+
+The goal is a system that can fail legibly enough to be repaired. A legible failure is already safer than a hidden success story that no one can audit.
+
+Visible failure is the beginning of governance, not its defeat, because the stack can govern only what it can still name. Precise names make repair possible before failures become shared operational folklore.
+
+## Problem
+
+Governance, reliability, and self-improvement claims need an explicit failure model first.
+
+Authority boundaries are useful only if their failure modes are visible. Those boundaries are not optional. Ungoverned intelligence does not have to fail first as a cinematic catastrophe. It can fail earlier and more quietly through goal misbinding, context pollution, evaluator drift, tool overreach, residual hiding, benchmark capture, or self-improvement loops that ratify their own evidence.
+
+The point of a failure taxonomy is not pessimism. It is interface design. Each failure names a boundary that later chapters must implement: VCM for context and taint, Spinoza for claim verification and downgrades, Talos for job/tool control, SCF for replacement and lifecycle discipline, evidence ledgers for negative results, and governance rights for appeal, fork, exit, and audit. If a later chapter cannot connect its mechanism back to a failure boundary, the mechanism may be interesting, but it has not yet justified its place in the stack.
+
+## Why existing approaches are insufficient
+
+High-level safety language misses earlier engineering failures such as goal misbinding, context pollution, evaluator drift, authority creep, tool overreach, and residual hiding.
+
+Broad terms such as "alignment failure" and "unsafe autonomy" are too large to test directly. They can hide the smaller event that actually broke the system: a stale context packet was admitted, a route bypassed its authority ceiling, a verifier was trained on the same signal it was meant to judge, a residual was deleted, or a benchmark became the target rather than the pressure surface.
+
+The external safety literature gives the taxonomy an outside pressure point.
+`ext_concrete_ai_safety_2016` names accident-risk families such as side
+effects, reward hacking, scalable oversight, safe exploration, and
+distributional shift. `ext_goal_misgeneralization_2022` distinguishes capable
+behavior from correctly bound goals. `ext_learned_optimization_risks_2019`
+grounds mesa-optimization and learned-objective mismatch. `ext_optimal_policies_power_2019`
+grounds option-preservation and power-seeking pressure, while
+`ext_goodhart_variants_2018` keeps metric and proxy failures from collapsing
+into a single benchmark-capture story. The ASI Stack does not claim those
+sources validate its failure map; it uses them to keep the map from becoming
+only an internal vocabulary.
+
+The bridge between stack vocabulary and established safety vocabulary is now
+explicit:
+
+In prose, the bridge is a set of translations. Goal misbinding routes goal
+misgeneralization into intent contracts. Context pollution routes distribution
+shift and hidden input-channel control into source, taint, authority,
+revocation, and adequacy records. Authority creep routes power-seeking pressure
+into ceilings, delegation, expiry, and receipts. Evaluator drift routes
+Goodhart and reward-hacking pressure into frozen metrics, residuals, and blocked
+promotion. Hidden optimization pressure routes learned-optimization risk into
+self-improvement boundaries. Tool overreach routes side-effect and
+safe-exploration failures into scoped action, approval, and rollback. Residual
+hiding routes metric laundering into evidence ledgers that keep negative cases
+visible. This bridge does not prove detection or prevention; it keeps the
+stack's terms attached to external safety vocabulary and makes later engineering
+obligations easier to audit.
+
+The ASI Stack therefore treats failure modes as first-class architectural objects. A failure should map to an invariant, a detector, an evidence record, and a containment path. If it cannot be mapped, the right conclusion is not that the failure is impossible; it is that the stack is missing a boundary.
+
+This makes near misses valuable. A denied authority escalation, rejected context packet, failed verifier, quarantined route, or preserved residual is evidence that a boundary fired. Those events should be recorded before success stories dominate the ledger.
+
+## Core Claim
+
+Ungoverned intelligence fails through stack-level breakdowns before dramatic catastrophic scenarios are needed (evidence boundary: architectural argument).
+Seven local raw-cache mappings carry
+reviewed passage references: SCF for lifecycle, authority, evaluator, route,
+and self-ratification risks; VCM for context, taint, stale-state, and
+authority-boundary risks; Talos for execution, tool-control, audit, replay, and
+secret-boundary risks; Spinoza for verification and downgrade risks; Field of
+God for philosophical governance lineage; VIEA for durable artifact, residual,
+and claim-ledger failures; and Simulation Scaling for resource-contract
+failures. `vcm_editable` and `moecot` remain connector-only/source review
+mapped. Five external-literature mappings ground the taxonomy against
+accident-risk, goal-misgeneralization, learned-optimization, power-seeking, and
+Goodhart/proxy-failure families. Those sources supply architecture vocabulary
+and outside comparators, not empirical incident evidence or detector/prevention
+evidence.
+
+## Mechanism
+
+Failure is treated as a boundary event, not an impression. SCF identifies replacement, evaluator, migration, dependency, and recovery failures. VCM identifies context admission, taint, revocation, adequacy, and hostile-text failures. Talos identifies job, tool, approval, secret, audit, and replay failures. Spinoza identifies unsupported claims, failed verification, contradiction, and protected-axiom failures. VIEA adds artifact and residual loss, Simulation Scaling adds unbounded simulation claims, MoECOT adds runtime overpromotion, and the Field of God lineage keeps agency and governance harms visible without turning them into empirical safety evidence.
+
+A Failure Boundary Map is the mechanism that connects each risk to the boundary that must detect, contain, or preserve evidence about it.
+
+```{mermaid}
+flowchart TB
+A["Human intent"] --> B["Goal binding failure"]
+B --> C["Authority creep"]
+C --> D["Context pollution"]
+D --> E["Evaluator drift"]
+E --> F["Tool / action overreach"]
+F --> G["Residual hiding"]
+G --> H["Unsupported promotion"]
+
+B -. "intent contracts" .-> I["Boundary"]
+C -. "authority transition" .-> I
+D -. "VCM admission / adequacy" .-> I
+E -. "independent evaluator" .-> I
+F -. "typed job + permission check" .-> I
+G -. "residual escrow" .-> I
+H -. "claim support state" .-> I
+```
+
+**How to read the failure routing map:** The failure chain is a routing map for responsibility. Each risk is connected to the boundary that should detect it, contain it, or preserve the residual, so the taxonomy becomes a repair interface rather than a dramatic list.
+
+The map classifies failures by layer and failure class, then binds each one to affected contracts, an invariant, and a planned falsification test. That binding is the reason the taxonomy belongs near the front of the book: later chapters are not allowed to introduce mechanisms as impressive machinery alone. They must say which failure they prevent, which one they detect, which one they residualize, or which one they make recoverable.
+
+The map is deliberately layered. SCF identifies replacement and evaluator-capture risks when implementations, contracts, or governance procedures mutate. VCM identifies context admission, authority binding, taint, revocation, and summary self-promotion risks. Talos identifies tool isolation, typed-job, approval-gate, and replay failures. Spinoza identifies false certainty, failed verification, contradiction, and belief-revision failures. The Field of God source is not used here as empirical safety evidence; it preserves the deeper governance concern that power should not erase agency, dignity, plurality, and contestability.
+
+The failure map should be boring enough to test. Every row needs a trigger, protected invariant, detection route, containment action, evidence record, and downstream chapter that owns the fix.
+
+A useful failure map also records severity, reversibility, recurrence, and escape path. A minor reversible failure can become serious if it recurs without learning; a high-severity failure can remain contained if the escape path is blocked and the residual is preserved.
+
+## Interfaces
+
+Failure analysis enters the stack through a Failure Boundary Map.
+
+- Governance limits authority creep.
+- VCM limits context pollution.
+- Verification limits false certainty.
+- Execution limits side effects.
+
+Minimum fields:
+
+- `failure_id`
+- `failure_class`
+- `layer`
+- `affected_contract_refs`
+- `boundary_event_state`
+- `severity`
+- `reversibility`
+- `recurrence_count`
+- `trigger`
+- `protected_invariant`
+- `detection_route`
+- `containment_action`
+- `evidence_record`
+- `receipt_refs`
+- `downstream_owner`
+- `promotion_blocker`
+- `escape_path`
+- `normalization_guard`
+- `learning_path`
+- `source_refs`
+- `support_state_effect`
+- `residual_risk`
+- `non_claims`
+
+This interface lets later chapters prove that their machinery is not decorative. A VCM chapter should be able to point back to context-pollution failures. A Talos chapter should point back to tool/action overreach. A benchmark-ratchet chapter should point back to evaluator drift and residual hiding. The failure map is the obligation list.
+
+Failure receipts cover both blocked and realized failures. A blocked failure receipt is not a result claim; it is a trace that the boundary was exercised and what evidence would be needed to trust it later.
+
+The failure-mode record keeps failure class, affected contract refs, boundary event state, severity, reversibility, recurrence count, receipt references, promotion blocker, escape path, normalization guard, learning path, source refs, support-state effect, and non-claims in one inspectable surface. These fields keep near misses from disappearing. They also let later tests ask whether repeated failures escalate review, whether an irreversible failure receives a stronger containment path, whether source mappings justify the taxonomy, and whether the run produced learning obligations rather than a smoother success story.
+
+## Invariants
+
+- Every risk maps to at least one boundary.
+- Evaluator integrity is protected.
+- Negative evidence stays visible.
+
+The first invariant is coverage: no named high-level risk should remain without an owning boundary. The second is independence: an evaluator, verifier, or governance process should not be silently modified by the component it is judging. The third is memory: failed attempts, negative results, denials, and residuals stay visible because future self-improvement depends on them.
+
+Silent normalization must stay forbidden. A repeated failure should not become ordinary behavior because operators stop writing it down or because the system learns to route around the detector.
+
+Failure ownership also cannot transfer quietly; the receiving layer must accept the residual before the risk can move.
+
+## Failure modes
+
+- Evaluator capture.
+- Memory poisoning.
+- Tool/action overreach.
+- Compression that hides residual complexity.
+
+The taxonomy is recursive: the failure map can itself fail. It can become too broad to test, too narrow to catch novel risks, too stale to reflect new architecture, or too ceremonial to affect routing and promotion. That is why the evidence chapter follows immediately. A failure mode matters only if it can block promotion, force review, create residual escrow, or change the design.
+
+Failure laundering is the failure-mode chapter's own warning label. A run fails a boundary, then the narrative shifts to a narrower success metric while the blocked condition, denial, or residual disappears from the evidence path.
+
+Stale containment is equally dangerous: a mitigation remains listed after the architecture changed enough that it no longer reaches the risk.
+
+## Minimum Viable Implementation
+
+The first failure artifact should be a `failure_boundary_map` schema plus a small example for authority creep, context pollution, evaluator drift, or residual hiding. That example must not claim that those risks are solved. It should establish only that the book can represent a failure class, affected contracts, event state, severity, reversibility, recurrence, protected invariant, receipt, promotion blocker, containment path, normalization guard, learning path, source refs, support-state effect, and boundary owner.
+
+A failure-receipt suite should be the first diagnostic harness: one blocked authority creep attempt, one rejected context-pollution packet, one evaluator-drift residual, one tool-overreach denial, and one repeated near miss that escalates review.
+
+The Failure taxonomy detector and mitigation-boundary probe adds a bounded
+version of that diagnostic suite. `python3
+scripts/validate_failure_taxonomy_detector_probe.py` writes
+`experiments/failure_taxonomy_detector/results/2026-07-02-local.json` and
+checks two valid synthetic failure incidents plus seven expected-invalid
+controls. The valid incidents cover authority creep blocked at an authority
+ceiling and Goodhart/evaluator drift residualized through evaluator freeze and
+review escalation. The controls reject missing failure classes, missing
+boundary owners, mitigation without receipts, unblocked authority creep,
+Goodhart/proxy failure with no residual, recurrence without escalation, and
+fixture-driven support promotion. The slice is diagnostic, not preventive:
+runtime detection, prevention, mitigation effectiveness, evaluator
+independence, and support-state movement remain outside this evidence envelope.
+
+## Beyond the State of the Art
+
+A useful failure model routes ordinary stack breakdowns before they disappear into behavior. It turns vague safety anxiety into typed breakdowns that can be detected, assigned to a layer, blocked, residualized, or escalated before they become invisible stack behavior.
+
+Ungoverned intelligence should be monitored through ordinary stack breakdowns before those failures can hide behind dramatic or abstract risk language. A mature failure-radar layer would classify failures by layer, map each failure to an invariant, attach at least one planned falsification test, and use the resulting failures to justify new boundaries only when the records show a real control need. Governance would limit authority creep, VCM would limit context pollution, verification would limit false certainty, and execution would limit side effects.
+
+The finished failure model would preserve evaluator integrity and negative evidence. A risk that cannot be mapped to a boundary would remain a residual rather than becoming vague fear or rhetorical urgency. Evaluator capture, memory poisoning, tool overreach, and compression that hides residual complexity would produce quarantine, rollback, escalation, residual records, or SCF review before they can normalize as ordinary behavior.
+
+This failure-radar layer is still an architectural safety discipline. Its support stays at `argument` until failure records are mapped to invariant checks, falsification tests, evaluator-capture probes, negative-result retention, and residual/escalation routing that preserve failures instead of smoothing them away.
+
+## Summary
+
+Failure Modes of Ungoverned Intelligence gives the stack its obligation map.
+Each failure names a boundary that must detect, contain, and preserve evidence:
+authority for overreach, VCM for polluted context, verification for false
+certainty, execution controls for side effects, and evidence ledgers for
+residuals and negative results. The external comparator set now ties the
+chapter's internal failure names to accident-risk, goal-misgeneralization,
+learned-optimization, power-seeking, and Goodhart/proxy-failure literature.
+
+The failure taxonomy appears early because the rest of the book should read like a response to it. If a later mechanism cannot say which failure it prevents, detects, or makes recoverable, it is probably decorative. Claim/evidence discipline keeps prevention, detection, residuals, and negative results from disappearing into smoother prose.
+
+A failure mode should have somewhere to go. If it cannot produce a receipt, owner, containment action, residual, or review path, the architecture has named a worry but not yet built a boundary.
+
+## Handoff
+
+Failure records are useful only when the book can say what kind of evidence would repair, preserve, or downgrade them. Evidence States and Claim Discipline therefore follows the failure taxonomy with the support-state machinery that keeps prevention, detection, tests, proofs, source notes, and negative results from collapsing into confidence. Risk language becomes governed claim language: each assertion about failure has to carry the support it has earned.

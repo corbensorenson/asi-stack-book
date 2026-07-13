@@ -48,14 +48,14 @@ def main() -> None:
 
     proof_manifest = load("proofs/proof_manifest.json")
     targets = proof_manifest.get("targets", proof_manifest.get("records", []))
-    if len(targets) != 225:
-        errors.append("Workstream E proof manifest must retain 225 targets")
+    if len(targets) != 298:
+        errors.append("Workstream E proof manifest must retain 298 targets")
     adequacy = (ROOT / "docs/proof_adequacy_review.md").read_text(encoding="utf-8")
     for phrase in ("adequate finite-record invariant", "useful but too narrow", "needs richer state-machine or review semantics", "needs executable tests first", "needs empirical or baseline tests first"):
         if phrase not in adequacy:
             errors.append(f"Workstream E adequacy review missing class: {phrase}")
     proof_audit = (ROOT / "docs/proof_artifact_audit.md").read_text(encoding="utf-8")
-    if "Proof targets audited | 225" not in proof_audit or "Validation errors | 0" not in proof_audit:
+    if "Proof targets audited | 298" not in proof_audit or "Validation errors | 0" not in proof_audit:
         errors.append("Workstream E proof artifact audit is incomplete")
 
     inventory = load("sources/source_inventory.json")

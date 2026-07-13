@@ -43,6 +43,8 @@ def validate_value(value: Any, schema: dict[str, Any], path: str) -> list[str]:
 
     if "enum" in schema and value not in schema["enum"]:
         errors.append(f"{path}: value {value!r} not in enum {schema['enum']!r}")
+    if "const" in schema and value != schema["const"]:
+        errors.append(f"{path}: value {value!r} does not equal const {schema['const']!r}")
 
     if expected_type == "string" and schema.get("minLength", 0) > len(value):
         errors.append(f"{path}: string shorter than minLength {schema['minLength']}")
@@ -70,6 +72,11 @@ def validate_value(value: Any, schema: dict[str, Any], path: str) -> list[str]:
 
 
 def release_schema_for(value: Any) -> Path:
+    if (
+        isinstance(value, dict)
+        and value.get("schema_version") == "asi_stack.post_v2_3_cycle_no_release.v0"
+    ):
+        return SCHEMA_DIR / "post_v2_3_cycle_no_release_record.schema.json"
     if isinstance(value, dict) and value.get("record_type") == "edition_release":
         return SCHEMA_DIR / "edition_release_record.schema.json"
     return SCHEMA_DIR / "living_book_release_record.schema.json"

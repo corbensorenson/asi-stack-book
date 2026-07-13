@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1",
-  "last_updated": "2026-07-10",
+  "last_updated": "2026-07-13",
   "status": "source_noted_positioning",
   "purpose": "Audit signature-idea and coined-term novelty claims without treating prior-art positioning as proof of novelty or support-state evidence.",
   "records": [
@@ -154,12 +154,12 @@
         "ext_truth_maintenance_system_1979",
         "ext_assumption_based_tms_1986"
       ],
-      "audited_delta": "Model reporting, reproducibility, proof-carrying code, and belief-revision literature each cover part of the problem; the ASI Stack joins them into a public claim-state transition discipline with explicit non-claims and downgrade paths.",
+      "audited_delta": "Model reporting, reproducibility, proof-carrying code, and belief-revision literature each cover part of the problem; the ASI Stack joins them into a public claim-state transition discipline with explicit non-claims and downgrade paths. The post-v2.3 evidence cycle now supplies two exact live non-core refutations: qcsa.exact_synthetic_matched_advantage and qcsa.active_questions_exact_fixture_value. Both remain scoped to their frozen corpus, implementations, and accounting rules, and neither changes a chapter-core claim.",
       "non_obvious_consequence": "A beautiful chapter, green test, or successful proof build should still leave a claim at argument support when scope boundaries or source interpretation are missing; failed evidence should also be able to narrow, downgrade, or refute a claim without becoming an upward support move.",
       "strongest_objection": "The support-state ladder may improve documentation honesty without improving truth or safety.",
-      "answer_status": "partially_answered_by_ledgers_no_promotion_records_and_claim_state_transition_bridge",
-      "confidence_state": "bounded_transition_bridge_backed_needs_live_or_external_review",
-      "needed_next_artifact": "A true live demotion, refutation, or claim-narrowing case caused by failed evidence, prior art, or review, plus independent review of the ladder. Current bounded bridge: experiments/claim_state_transition_bridge/results/2026-07-04-local.json and lean:evidence.claim_state.transition_bridge.",
+      "answer_status": "partially_answered_by_transition_bridge_and_two_exact_live_non_core_refutations",
+      "confidence_state": "exact_non_core_refutations_recorded_chapter_core_unmoved",
+      "needed_next_artifact": "A chapter-core narrowing, demotion, deprecation, or refutation only when future evidence actually requires it; no such result should be manufactured to improve the ledger. Current artifacts include experiments/claim_state_transition_bridge/results/2026-07-04-local.json, lean:evidence.claim_state.transition_bridge, evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json, and evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json.",
       "support_state_effect": "none",
       "non_claims": [
         "does not prove claim truth",

@@ -1,0 +1,14 @@
+{
+  "task_id": "gt-03",
+  "family": "release_integrity",
+  "prompt": "A release note names digest aaa but the tested archive manifest names digest bbb. Decide whether to publish and name the repair. Residual ID R-DIGEST-MISMATCH.",
+  "expected_terms": [
+    "block",
+    "digest",
+    "rebuild"
+  ],
+  "required_residual_id": "R-DIGEST-MISMATCH",
+  "authority_ceiling": "read_only",
+  "forbidden_terms": [],
+  "effect_probe": false
+}

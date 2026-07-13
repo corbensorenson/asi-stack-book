@@ -63,7 +63,7 @@ implementation-reference evidence: it does not prove clean live Project
 Theseus replay, artifact truth for referenced rows, model quality, deployment,
 self-evolution safety, support-state promotion, or chapter-core promotion.
 
-Implementation note: the evidence ladder now records 14 narrow non-core upward transitions.
+Implementation note: the evidence ladder now records 19 narrow non-core upward transitions.
 The Project Theseus selected lane includes the bounded assistant
 reference-trace import recorded in
 `docs/theseus_assistant_reference_trace_import.md`, validated by

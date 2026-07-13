@@ -1,0 +1,203 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: evidence-states-and-claim-discipline
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/evidence-states-and-claim-discipline.qmd
+live_source_ref: chapters/evidence-states-and-claim-discipline.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Evidence States and Claim Discipline
+
+After naming failure modes, the architecture needs a discipline for how strong each sentence is allowed to sound. The evidence layer makes a simple promise: a claim's wording, label, and support state should not drift apart.
+
+That promise is central to the living-book format. The manuscript can improve every day, but clearer prose must not silently become stronger evidence. If a claim is only an argument, it should read as an argument. If later evidence raises it, the record must move with it, so the reader can distinguish better exposition from stronger support. Better wording should invite better testing, not smuggle in stronger certainty.
+
+The live book can stay alive only if confidence changes through records, not mood. That discipline keeps revision from becoming untracked persuasion: claim labels say what kind of assertion is being made, support states say what currently backs it, and evidence transitions say why confidence was allowed to move. This is not a footnote to the method; it is the method's spine for the ASI Stack.
+
+## Problem
+
+The living book needs a shared language for what kind of claim is being made and what currently supports it.
+
+Failure modes need a claim discipline or they turn into confident prose. A living technical book is dangerous if every revision makes claims sound cleaner while their support state stays invisible. The same problem appears in AI systems: hypotheses, design rationales, source-derived statements, proofs, tests, and measurements get blended into a single fluent surface.
+
+The book therefore treats evidence discipline as an architectural layer, not as editorial housekeeping. Each important claim must say what kind of claim it is and what currently supports it. A source note may justify a source-derived discussion. A Lean module may justify a mechanized invariant. A synthetic fixture may justify a narrow test-backed claim. None of those automatically proves the others, and none should borrow confidence from the reader's trust in the surrounding prose.
+
+That makes evidence states one of the book's methodological contributions. The proposal is not merely "write caveats." The proposal is to give claims a finite lifecycle, a support-state ledger, transition records, downgrade paths, non-claim boundaries, and public receipts so that a living architecture can revise itself without laundering confidence.
+
+Within the governed-cognition pattern, the evidence-state layer owns the claim-movement delta. A record becomes an evidence transition only when it names the claim identity, support state, artifact role, review or command receipt, negative-evidence slot, downgrade trigger, acceptance blocker, and explicit non-claims. Other layers can attach evidence gates to their mechanisms; the evidence-state layer defines how confidence is allowed to move at all.
+
+## Why existing approaches are insufficient
+
+Without explicit support states, conceptual architecture prose can accidentally read like empirical proof.
+
+Citation lists are not enough. A citation can show lineage, motivation, terminology, contradiction, or external context; it does not automatically support the exact claim being made. Benchmarks are not enough either. Benchmaxxing treats benchmarks as pressure surfaces with lifecycle states, wall diagnoses, anti-Goodhart safeguards, and regression duties, not as permanent definitions of intelligence. Spinoza adds the claim graph and downgrade discipline: failed verification must block or lower confidence. UAT adds adversarial review and proposition tiering under a bounded dossier. Verification Bandwidth adds a further warning: even a large context may not support joint verification of everything inside it.
+
+External evaluation practice supplies the comparison line for this discipline. HELM-style reporting in `ext_helm_2022`, contamination warnings in `ext_benchmark_contamination_2023`, Goodhart taxonomy in `ext_goodhart_variants_2018`, and hard-question benchmarks such as `ext_gpqa_2023` all point to the same control problem: a score, citation, or benchmark row needs scope, provenance, and failure semantics before it can move confidence. The book's support-state machine is a proposed ledger discipline around that problem, not a reproduced evaluation result.
+
+External documentation and formal-methods practice supplies a second comparison line. Model cards (`ext_model_cards_2019`) and datasheets (`ext_datasheets_datasets_2021`) show why structured documentation needs intended-use, provenance, limitation, and maintenance boundaries. The ML reproducibility-program account (`ext_ml_reproducibility_program_2021`) shows why commands, artifacts, code review, checklists, and reviewer-readable claims matter. Proof-carrying code (`ext_proof_carrying_code_1997`) shows the older formal-methods pattern of pairing an artifact with machine-checkable evidence for a declared policy. Evidence states do not reproduce or replace those methods. They generalize the control question for this book: what exact object is allowed to move this exact claim, and what remains outside the movement?
+
+Mechanistic interpretability supplies a third comparison line. Transformer Circuits (`ext_transformer_circuits_2021`) and monosemantic feature decomposition (`ext_monosemanticity_2023`) make internal model evidence visible as a different role from behavioral benchmarks, source citations, or proof artifacts. A circuit analysis or feature decomposition can matter for a claim, but only if the record names the model, layer, behavior, analysis method, artifact refs, negative cases, and limits. Otherwise "we looked inside the model" becomes another kind of citation laundering.
+
+The missing object is the evidence transition. If a claim moves from `argument` to `source-derived`, the transition should name the source note and the mapped claim. If it moves to `synthetic-test-backed`, it should name the fixture, command, environment, and result. If a test fails, the failure should remain visible rather than disappearing into the next draft. The transition is the receipt that lets the book change without losing track of why the change was allowed.
+
+Scope drift is the evidence failure this layer blocks. A source may support terminology but not the mechanism. A schema may support record shape but not the represented event. A proof may support a finite predicate but not the deployed system. A benchmark may support one workload but not a general capability claim. Evidence discipline keeps those scopes locked.
+
+## Core Claim
+
+Every major claim should carry both a claim label and a support state, and it should move only when source ingestion, prototype inspection, or actual tests justify the transition (evidence boundary: architectural argument).
+Appendix C records claim-level source review mappings for the original sources and for the six historical projects as one related local implementation lineage. Those mappings make the evidence bridge more inspectable, but they do not promote the claim. Promotion still requires an accepted evidence transition with evidence whose method, independence, causal effect, and scope match the claim.
+
+### Source contribution boundaries
+
+The source map is useful because each source contributes a different kind of discipline and a different limit. Benchmaxxing gives the book benchmark lifecycle language, anti-Goodhart pressure, regression duties, and residual accounting, but it does not supply a local benchmark result or a permanent intelligence metric. Spinoza contributes claim tiers, belief revision, contradiction handling, and downgrade behavior, but it does not prove open-domain autoformalization or arbitrary theorem validity.
+
+VIEA contributes durable ledgers for claims, artifacts, residuals, feedback, and regression coverage; that is not the same as a completed VIEA deployment or runtime benchmark. UAT contributes retrieval-bounded dossiers, proposition states, adversarial review, SME checkpoints, and sign-off patterns, while remaining unproven as a general truth-discovery system. Coherence Exchange contributes contestability, verification supply-chain, fork, exit, and audit vocabulary, but its epistemic-liquidity framing stays speculative and connector-bound.
+
+Verification Bandwidth contributes the most important reader-facing warning: loading source material into context is not equivalent to verifying the claim. Contradiction-rate tests and the proposed theory are still unrun here. Taken together, these sources justify a disciplined claim/evidence vocabulary, not a stronger support state. The claim stays at architectural argument until a specific evidence transition closes the remaining boundary.
+
+## Draft Key Figure: Evidence State Ladder
+
+::: {.asi-key-figure}
+![Draft evidence-state ladder.](../assets/diagrams/evidence-state-ladder.svg){#fig-evidence-state-ladder fig-alt="Draft evidence-state ladder figure separating claim labels from support states and showing transition review, promotion, no change, demotion or refutation, blockers, residuals, non-claims, and public ledger updates."}
+:::
+
+**How to read the evidence-state figure:** Read the figure as two parallel axes, not as one confidence meter. The claim label says what kind of assertion the book is making, while the support state says what currently backs that assertion. A promotion requires a recorded transition with an exact claim mapping, evidence artifact, command or review reference, scope boundary, blockers, downgrade triggers, and non-claims. Better prose, a nearby source, or a shape-valid fixture can leave the support state unchanged. Failed evidence, contradiction, missing scope, or terminal negative results move downward into demotion, refutation, blocker, residual, or non-claim records. The figure is a draft reader aid, not an accepted evidence transition, external review, proof result, test result, or release approval.
+
+## Mechanism
+
+Evidence discipline is the stack's anti-inflation mechanism. Benchmaxxing keeps benchmark pressure tied to lifecycle, wall diagnosis, anti-Goodhart safeguards, and regression duties. Spinoza separates claim tiers, verification, contradiction, and downgrade behavior. VIEA keeps claims, artifacts, residuals, feedback, and regression coverage durable. UAT adds retrieval-bounded proposition review and human adjudication checkpoints. Coherence Exchange contributes contestability language but remains speculative where it exceeds implemented evidence flow. Verification Bandwidth blocks the shortcut from "loaded enough context" to "verified the claim."
+
+As a methodology, the layer turns those ingredients into a repeatable discipline. A claim can be drafted in prose, mapped to a source, checked by a proof, tested by a fixture, challenged by a reviewer, rejected by a negative result, or retired after contradiction. The support state changes only when the transition record says exactly which event occurred and which part of the claim it touches.
+
+A support-state transition gate makes that anti-inflation rule operational.
+
+```{mermaid}
+flowchart LR
+A["Claim drafted"] --> B["Claim label"]
+A --> C["Support state: argument"]
+C --> D{"Exact mapping +<br/>accepted transition?"}
+D -- "yes" --> E["source-derived"]
+C --> F{"Validated schema / proof / test artifact?"}
+F -- "Lean build" --> G["Mechanized claim label within formal scope"]
+F -- "fixture or experiment" --> H["synthetic-test-backed or empirical-test-backed"]
+D -- "no" --> I["remain argument"]
+F -- "fail / inconclusive" --> J["negative result / residual"]
+E --> K["Appendix C + changelog"]
+G --> K
+H --> K
+J --> K
+```
+
+**How to read the support state gate:** The support-state gate blocks confidence from moving just because prose improved. A claim can rise only through a mapped source transition, validated proof/test artifact, or recorded negative result pathway, and every movement updates the public ledger.
+
+Appendix C is the public claim ledger, but the ledger is not a shortcut around review. Claim labels and support states remain separate so design rationales, hypotheses, measurements, mechanisms, and speculative claims are not collapsed. Source notes are prerequisites for source-derived movement, not automatic promotion. Test-backed movement requires an evidence bundle with the command, environment, result, limitations, and negative or inconclusive results where they exist.
+
+The claim record carries the pre-transition state: whether the claim has no mapping, a source review map, reviewed raw passages, an evidence packet, a blocked mapping, or a deprecated surface. It also carries the evidence-readiness state and the next evidence required before review. The transition record then decides whether that readiness changes support. A shape-valid fixture can show that the record is well formed; it cannot accept the transition for the reader. The receipt faithfulness fixture at `experiments/receipt_faithfulness/results/2026-07-03-local.json` makes that boundary concrete for artifact receipts: syntactic receipt shape, trap handling, cross-check presence, and attestation limits can be checked without moving the support state. The epistemic trusted computing base fixture at `experiments/epistemic_tcb/results/2026-07-03-local.json` adds the companion boundary for verifier trust: a support review needs a named root of trust, bounded delegation rule, recursion stop condition, verifier independence state, outside-TCB residuals, and non-claims before verifier output can even be considered for support movement.
+
+Reviewer degradation is another support-state boundary. This reviewer degradation check appears in the human oversight degradation fixture at `experiments/human_oversight_degradation/results/2026-07-03-local.json`, which checks finite records for approval fatigue, rubber-stamping, alarm fatigue, automation bias, missing reviewer qualification, support-state promotion from approval shape, and missing non-claims. It lets the book say that degraded review should be routed, not that a human approval record proves reviewer correctness or deployed approval-service quality.
+
+The gate separates two axes. Claim labels describe what kind of assertion is being made: design rationale, hypothesis, measurement, mechanism, demonstration, mechanized invariant, or speculation. Support states describe what artifact currently backs it: argument, source-derived mapping, prototype inspection, synthetic test, empirical test, external literature, refutation, or deprecation. Mixing these axes creates evidence inflation.
+
+Interpretability evidence lives inside that separation. A circuit trace, activation patch, sparse-autoencoder feature, or other white-box artifact can be an evidence role, but it does not become its own magical support state. The record must say which model and layer were inspected, which behavior or mechanism was in scope, which intervention or analysis produced the artifact, which counterexamples or negative controls were checked, and which broader safety, capability, deployment, or model-quality claims remain unsupported. That keeps mechanistic evidence useful without letting it overrule failed behavioral tests, missing proof scope, or absent deployment evidence.
+
+The layer also preserves negative information. A failed proof attempt, benchmark wall, contradiction, missing source, or invalid fixture is not clutter. It is the information that prevents the stack from ratcheting in the wrong direction.
+
+Promotion should therefore be treated as a burden, not a reward. The default move is to leave support unchanged until the exact claim, artifact, command, review status, and limitations align. Downgrade requires less ceremony: contradiction, missing support, scope mismatch, or failed verification is enough to move a claim downward or into residual status.
+
+### The evidence cell
+
+The evidence-state layer owns the **evidence cell** because adjacent layers produce evidence, evaluate benchmarks, or retain artifacts, while this layer decides what those records are allowed to do to a claim. An evidence cell is not another confidence score. It is a non-aggregating record of origin, method, independence, demonstrated effect, missing links, and claim boundary. The same passing result can therefore remain a dependent fixture, become a reproduced mechanism check, or block promotion, depending on how it was produced and what causal link it actually observed.
+
+The six-project lineage supplies the motivating failure case. Corben's Best Model Possible contains a first-party recurrent-model surface, lane-specific adaptors, verification rows, and a response path. Inspection nevertheless found a generated or frozen trunk, adaptor-only updates, explicit rather than autonomous lane selection, dependent or shape-based checks, and responses not generally caused by a checkpoint-driven decoder. Corben's Trainer separately shows that typed runs, content-addressed artifacts, and promotion records can coexist with null seed/code identity and promotions whose inputs were later quarantined. The non-obvious consequence is that implementation ownership, interface presence, and green records may all be true while the capability proposition remains unsupported.
+
+An evidence cell therefore carries five coupled controls:
+
+1. A **causal capability chain** binds data, objective, code, actually updated state, runtime output, independent evaluation, and the exact claim. A missing link is recorded rather than inferred from neighboring links.
+2. A **trainable-state manifest** distinguishes generated, frozen, pretrained, trainable, optimizer-only, and actually updated state. “Trainable” without an update receipt is not “trained.”
+3. A **response-causality receipt** binds checkpoint, request, decode path, tool substitutions, and final response. A metric on an adaptor or helper component cannot support returned-answer capability when the runtime bypasses it.
+4. **Honest missingness** classifies absent evidence as `unknown`, `not_attempted`, `not_required`, or `waived`, with a blocker or waiver authority. Missing evidence cannot default to passed, independent, hardware-observed, or real.
+5. **Ownership/capability separation** records whether a component is first-party, third-party, mixed, or unknown separately from whether its mechanism was exercised, produced an observed runtime effect, or was independently evaluated.
+
+```{mermaid}
+flowchart LR
+D["Data + objective + code"] --> U["Actually updated state"]
+U --> R["Runtime output"]
+R --> V["Evaluation"]
+V --> C["Exact claim binding"]
+M["Missing link"] -. "unknown / not attempted / not required / waived" .-> C
+O["Ownership record"] -. "never substitutes for" .-> V
+I["Method + independence"] --> V
+C --> E{"Evidence-cell disposition"}
+E -->|"scope complete"| T["eligible for transition review"]
+E -->|"lineage / dependent / incomplete"| B["argument only or blocks promotion"]
+```
+
+**How to read the evidence cell:** the solid path is deliberately conjunctive. A source tree, loss curve, checkpoint, runtime answer, or evaluator row is only one link. The dotted paths preserve honest absence and ownership without letting either masquerade as evaluation. The cell does not promote a claim; it makes the promotion burden inspectable.
+
+The strongest objection is record proliferation: sufficiently elaborate metadata can consume verification bandwidth while creating a false feeling of rigor. The answer is to keep the cell claim-scoped and sparse. It records only distinctions capable of changing a transition decision, requires artifact references for positive causal links, and permits an exact blocker instead of demanding fabricated completeness. If a simpler baseline reaches the same claim decision without a field, that field should be removed.
+
+## Interfaces
+
+Evidence movement uses three public surfaces. The claim entry says what assertion is being made and how strong it is allowed to sound. The transition entry says what happened that could change that strength. The changelog tells later readers that the movement was deliberate rather than a side effect of cleaner prose.
+
+Those surfaces keep roles separate. Drafting can clarify a claim. Source work can add a map from source to claim. Formal work or experiments can add a checked artifact. Negative results can block or lower confidence. None of those events gets to borrow authority from the others unless the transition names the exact scope.
+
+For a normal reader, the key question is simple: what object moved this claim, and what did it leave untouched? The research view keeps the complete field lists for that question. Human view keeps the rule: no claim should rise because the surrounding sentence got smoother.
+
+## Invariants
+
+- No fabricated source support.
+- No fabricated test results.
+- Negative and inconclusive results remain visible.
+
+Asymmetry is the strongest evidence-state rule: support can move up only when the required artifact exists, but support can move down whenever contradiction, failure, missing evidence, or scope mismatch is found. Appendix C deliberately remains conservative after source review coverage improves because source notes are necessary context, not automatic claim promotion.
+
+Scope non-expansion follows from that asymmetry. A claim cannot inherit broader scope from a nearby chapter, source family, proof module, or benchmark run unless the evidence transition explicitly names that broader scope and its residual risks.
+
+Promotion records also preserve downgraded and rejected transitions, so failed evidence attempts remain part of later interpretation.
+
+## Failure modes
+
+- Support-state inflation.
+- Citation laundering.
+- Silent removal of failed claims.
+- Ownership laundering: first-party or locally executed components are described as capable without a task-relevant effect.
+- Causal-chain splicing: data, updates, outputs, and evaluations from different runs or lineages are narrated as one experiment.
+- Missingness laundering: skipped, absent, or inapplicable evidence is serialized as green.
+
+Citation laundering is the common failure: a nearby source is used to make an unsupported claim feel sourced. Benchmark laundering is the analogous measurement failure: a run result is generalized beyond its scope. Proof laundering happens when a small formal invariant is rhetorically expanded into a whole-system guarantee. The correction is scope discipline. The evidence artifact says exactly what it supports and exactly what it does not support.
+
+Evidence smoothing is a prose-quality failure with epistemic consequences. A revision improves prose by removing caveats, failed attempts, or open gaps while leaving the support state unchanged. The text becomes easier to read and less true.
+
+## Minimum Viable Implementation
+
+The smallest honest version is a working claim ledger, a working transition ledger, and a rule that neither can silently change the other. Appendix C supplies the public claim surface. The schema examples and Lean module supply a narrow local model of the rule. The support-state harness checks synthetic no-change, upward, downward, and terminal cases.
+
+Three current audits make the rule harder to blur. The evidence-bundle probe checks two valid synthetic bundles and seven invalid controls. The claim-ledger audit checks all 44 manifest core claims against Appendix C and rejects seven mutation controls. The accepted-transition audit checks 74 accepted transition records, ten bounded non-core upward transitions, the no-promotion ledger, and seven invalid controls.
+
+Those artifacts are useful because they make bookkeeping failures visible. They do not prove any chapter core claim, and they do not prove that the mapped sources are interpreted correctly. A stronger exercise would include one lineage-only source, one direct-support source, one failed verification, one shape-only check, one finite formal predicate, and one benchmark result whose scope is deliberately narrower than the tempting prose claim.
+
+## Beyond the State of the Art
+
+Evidence discipline matures into the book's claim-accounting system. It gives every important sentence a governed path from unsupported idea to source-derived, test-backed, mechanized, deprecated, or refuted status without letting polish, enthusiasm, or release hygiene stand in for truth.
+
+The beyond-SOTA endpoint is a living research method, not only a better appendix. It would make the book inspectable the way model cards make model reports inspectable, datasheets make datasets inspectable, reproducibility checklists make experiments inspectable, and proof-carrying systems make policy evidence inspectable, while preserving a stricter claim-level question: did this exact evidence object justify this exact support-state movement?
+
+Every major claim should carry both a claim label and a support state, and every movement between states should require source ingestion, prototype inspection, proof/spec evidence, benchmark evidence, or actual tests appropriate to the transition. A mature evidence ledger would use Appendix C as the public claim surface while keeping claim labels separate from support states, so design rationales, hypotheses, measurements, mechanisms, and speculative claims do not collapse into one confidence word. Source notes would be necessary but not sufficient for source-derived movement; test-backed movement would require evidence bundles that include negative or inconclusive results.
+
+The mature workflow would make drafting, experiments, proof checks, release records, and changelog entries part of one evidence loop. Drafting can introduce or refine claims; experiments can update evidence; proof artifacts can mechanize narrow predicates; changelog entries can record why support moved or did not move. Support-state inflation, citation laundering, and silent removal of failed claims would become ledger corrections, demotions, residual records, or review escalations rather than confidence creep.
+
+This ledger is a proposed evidence-control system for the book and stack. Its support stays at `argument` until claim-transition records, passage-reviewed source notes, evidence-bundle fixtures, citation-laundering checks, proof-scope audits, and changelog-linked reviews demonstrate that labels move only when their artifacts justify movement.
+
+## Summary
+
+Evidence States and Claim Discipline is the book's anti-inflation layer and one half of its methodological contribution with Living Book Methodology. It lets the manuscript be ambitious without pretending that design rationales, source notes, schemas, Lean proofs, benchmarks, and empirical results are the same thing.
+
+The layer is deliberately conservative. Source review coverage improves drafting readiness, but claim support rises only after exact mappings or artifacts exist. The evidence cell now makes that rule concrete for the mined project lineage: architecture ownership, trainable interfaces, internal checks, and durable records remain separate from an observed end-to-end capability chain. The path next tests the same discipline where it becomes operationally difficult: whether a limited supervisor may interpret stronger system behavior without a protocol record, an outcome audit, or an escalation route.
+
+A reader should be able to ask "why is this claim allowed to sound this strong?" and find a precise answer. If the answer is only confidence, fluency, or proximity to a source, the claim is speaking past its evidence.
+
+## Handoff
+
+Evidence discipline governs what a record may justify; Scalable Oversight and Adversarial AI Control governs how a limited supervisor may inspect a stronger system without turning a role label or a persuasive transcript into evidence. That oversight boundary then carries into the human principal's formal goal, means, authority grant, stop condition, and ambiguity rules.

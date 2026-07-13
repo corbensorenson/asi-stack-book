@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/deliberation_admission_fixture.schema.json",
+  "title": "Deliberation Admission Fixture",
+  "type": "object",
+  "required": ["schema_version", "scope", "cases", "support_state_effect", "known_extra_compute_harms_preserved", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.deliberation_admission_fixture.v0"},
+    "scope": {"const": "synthetic_deliberation_record_routing_only"},
+    "cases": {"type": "array", "minItems": 10, "maxItems": 10, "items": {"$ref": "#/$defs/case"}},
+    "support_state_effect": {"const": "none"},
+    "known_extra_compute_harms_preserved": {"const": 15},
+    "non_claims": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "record": {"type": "object", "required": ["request_recorded", "high_risk_request", "think_budget_recorded", "search_mode_recorded", "verifier_scope_recorded", "independent_verifier_recorded", "candidate_history_recorded", "stop_condition_recorded", "residual_owner_recorded", "trace_authority_separated", "budget_exhausted", "execution_requested"], "properties": {
+      "request_recorded": {"type": "boolean"}, "high_risk_request": {"type": "boolean"}, "think_budget_recorded": {"type": "boolean"}, "search_mode_recorded": {"type": "boolean"}, "verifier_scope_recorded": {"type": "boolean"}, "independent_verifier_recorded": {"type": "boolean"}, "candidate_history_recorded": {"type": "boolean"}, "stop_condition_recorded": {"type": "boolean"}, "residual_owner_recorded": {"type": "boolean"}, "trace_authority_separated": {"type": "boolean"}, "budget_exhausted": {"type": "boolean"}, "execution_requested": {"type": "boolean"}
+    }, "additionalProperties": false},
+    "case": {"type": "object", "required": ["id", "record", "expected_route"], "properties": {"id": {"type": "string"}, "record": {"$ref": "#/$defs/record"}, "expected_route": {"enum": ["retain_as_draft", "require_independent_review", "stop_and_escrow_residual", "release_to_planning"]}}, "additionalProperties": false}
+  },
+  "additionalProperties": false
+}

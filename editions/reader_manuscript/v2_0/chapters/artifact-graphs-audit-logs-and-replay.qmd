@@ -1,0 +1,233 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: artifact-graphs-audit-logs-and-replay
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/artifact-graphs-audit-logs-and-replay.qmd
+live_source_ref: chapters/artifact-graphs-audit-logs-and-replay.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Artifact Graphs, Audit Logs, and Replay
+
+Typed jobs become trustworthy when their outputs remain traceable after action. Artifact graphs make those outputs durable: artifacts, logs, traces, receipts, replay records, source links, context links, and claim or test links. Without that graph, work disappears into conversation history.
+
+The reason to care is accountability. If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reviewer should be able to trace what happened. Replay does not make the work true, but it makes the work inspectable and reusable within declared limits. The artifact graph turns memory from a pile of outputs into an accountable work history.
+
+Durability matters because future trust depends on recoverable context, not memory of confidence. A good artifact makes its own review path easier by preserving why it deserved attention, which checks touched it, and which limits still apply across revisions and later handoffs. Durable traces let future work inherit evidence without inheriting confusion; without that inheritance rule, audit becomes a story told after the fact.
+
+## Problem
+
+Durable artifacts and replayable traces make work inspectable, reusable, testable, and improvable.
+
+Typed jobs produce outputs. Those outputs must become artifacts with stable identities, provenance, audit events, replay metadata, claim/test links, and known replay limits. Otherwise every result is an isolated file or chat answer with no reliable path back to its causes.
+
+Talos treats evidence, logs, and replay as execution primitives. GenesisCode adds effect logs, semantic patches, provenance hashes, and obligation artifacts. Cognitive Loop Closure uses repeated artifact traces as the substrate for future tools.
+
+This is not only a software-engineering hygiene issue. It is an alignment boundary. A system that can alter documents, invoke tools, route tasks, summarize sources, or rewrite its own procedures must leave inspectable work products behind. Without artifact continuity, review becomes forensic guesswork and self-improvement becomes memory without accountability.
+
+Within the governed-cognition pattern, the artifact-graph layer owns the record-reality delta. The common record shape is not enough: the artifact graph asks whether a receipt corresponds to a work product, whether replay has a declared grade, where verifier trust bottoms out, and what residual remains outside the trusted path. Other layers may emit receipts; the artifact-graph layer defines how those receipts become inspectable artifacts rather than self-reported confidence.
+
+## Why existing approaches are insufficient
+
+If outputs are not tied to inputs, tools, context, claims, and logs, later verification and improvement cannot know what happened.
+
+Untraceable output cannot support promoted claims. Non-replayable workflows cannot be debugged or improved. Provenance gaps make it impossible to tell whether an artifact came from a source, a tool, a model guess, a human edit, or a stale context packet.
+
+External agent and software-evaluation baselines show what provenance must survive. ReAct (`ext_react_2022`) interleaves reasoning, action, and observation; AutoGen (`ext_autogen_2023`) composes conversational agents, tools, humans, and LLMs; SWE-bench (`ext_swe_bench_2023`) evaluates repository-scale issue resolution; proof-carrying code (`ext_proof_carrying_code_1997`) binds executable artifacts to checkable evidence. Artifact graphs route those pressures into traceable inputs, tools, logs, claims, and replay handles without claiming any benchmark or proof-carrying artifact has been reproduced.
+
+The artifact graph is the system's memory of work. It does not guarantee truth, but it makes verification possible by preserving what happened.
+
+Ordinary repositories, chat transcripts, and build directories only partially solve this. They preserve fragments, but they usually do not encode claim relevance, source scope, replay limits, or promotion blockers as first-class fields. The artifact graph is the layer that makes those fragments usable by evidence ledgers, regression suites, and future agents without requiring every reader to infer the workflow from prose.
+
+## Core Claim
+
+Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests (evidence boundary: architectural argument).
+Talos supplies execution evidence and replay pressure; VIEA supplies artifact and feedback ledgers; Cognitive Compilation supplies build-graph and repair-locality pressure; Spinoza Composer supplies state/history preservation patterns; GenesisCode supplies effect logs, provenance hashes, and obligations; Cognitive Loop Closure explains why traces become procedural memory. Those six mappings now point to reviewed local raw-cache passages. MoECOT remains implementation-reference context until its runtime artifacts, ledgers, logs, or benchmark records are imported and inspected.
+
+## Mechanism
+
+The mechanism is a work trail with authority limits. Each important output should carry enough history for a later reviewer to ask: what job produced this, what inputs shaped it, what checks ran, what can be replayed, what uncertainty remains, and what claims may use it?
+
+```{mermaid}
+flowchart LR
+  Job["Typed job"] --> Output["Produced output"]
+  Output --> History["Lineage and context"]
+  Output --> Checks["Checks and replay"]
+  Output --> Limits["Residuals and non-claims"]
+  History --> Gate["Evidence gate"]
+  Checks --> Gate
+  Limits --> Gate
+  Gate -- "allowed" --> Reuse["Use as context, release input, regression, or evidence"]
+  Gate -- "blocked" --> Repair["Residual, repair, quarantine, or no-promotion"]
+```
+
+The gate is conservative. It does not ask whether an output looks impressive. It asks whether the supporting trail is strong enough for the use being requested. A draft can be reading material before it is a release. A failed run can be a regression case before it is proof. A checked file can be useful history before it is evidence.
+
+Replay is graded for the same reason. Some work can be reproduced byte for byte. Some can be checked again for the same obligations even if the wording changes. Some depends on missing services, source snapshots, human judgment, or security limits. Some has not been replayed at all. Those differences stay visible instead of being flattened into confidence.
+
+Receipt faithfulness is the hardest version of the gate. A receipt can have the right fields while pointing at the wrong world. The current fixture catches that bounded failure by rejecting a false but well-formed receipt, an ignored trap, a missing independent check, a same-path self-check, an unbounded attestation, and a support promotion based only on paperwork shape. The accepted no-promotion decision keeps this as a guardrail: it blocks overclaims but does not prove open-world truth, verifier independence, deployed audit behavior, or the core claim for this layer.
+
+The follow-on repository checks make the idea less abstract. They ask selected files, digests, commands, external fingerprints, and one live local output to answer concrete questions. That is useful because it forces the book's own evidence trail to stay attached to real files. It is still bounded local discipline, not a deployed attestation service.
+
+## Interfaces
+
+Artifacts become replayable through the Artifact Graph Record.
+
+- VCM references artifacts.
+- Evidence consumes logs.
+- Procedural memory mines repeated traces.
+
+Minimum fields:
+
+- `artifact_id`
+- `artifact_type`
+- `parent_job`
+- `source_refs`
+- `context_refs`
+- `context_transaction_refs`
+- `semantic_certificate_refs`
+- `tool_refs`
+- `claim_refs`
+- `test_refs`
+- `audit_events`
+- `replay_metadata`
+- `replay_grade`
+- `environment_assumptions`
+- `provenance_status`
+- `replay_limits`
+- `evidence_gate`
+- `residuals`
+- `non_claims`
+
+VCM references artifacts as context cells. Evidence consumes logs and test links. Procedural memory mines repeated traces. Claim ledgers decide whether an artifact can support a claim.
+
+A consumer should not have to parse a narrative paragraph to know whether an artifact is reusable. It should see a structured record: source refs for epistemic scope, context refs and transaction refs for memory scope, semantic certificate refs for representation scope, tool refs for authority scope, replay metadata and grade for reproducibility scope, and claim/test links plus an evidence gate for evidence scope. That makes the artifact graph the handoff format between execution, memory, evidence, compression, and release engineering.
+
+## Invariants
+
+- Artifacts have stable identities.
+- Audit logs are append-only or versioned.
+- Replay limits are declared.
+- Replay grade and evidence gate are declared before artifact reuse can affect support state.
+- Canonical artifacts, caches, reports, dashboards, and public claim surfaces remain distinct projections with explicit source digests and refresh state.
+- Upstream quarantine invalidates every reachable dependent unless a valid alternate derivation is recorded.
+- Playback, deterministic re-execution, semantic replay, partial re-execution, non-replayable, and not-attempted grades remain distinct.
+- Queue acceptance or idleness cannot substitute for an acknowledged terminal completion receipt.
+- Artifact identity remains stable across relocation because paths are not identity authority.
+
+An artifact with missing required provenance cannot support a promoted claim. It can still exist, but it should be labeled as incomplete, not evidence-ready.
+
+The graph must also preserve parentage. A derived artifact should keep links to the source material, context packet, job contract, tool invocation, review record, and claim or test it affected. If any link is intentionally absent, that absence is a recorded limitation rather than a silent simplification. Reuse inherits those limitations. This is what prevents a useful artifact from becoming free-floating evidence after it moves through summaries, release notes, or future planning.
+
+## Failure modes
+
+- Untraceable output.
+- Non-replayable workflow.
+- Provenance gaps.
+- Projection laundering, where a stale report or dashboard outranks changed canonical state.
+- Incomplete revocation closure, where evidence is quarantined but downstream claims, promotions, readiness, or public surfaces remain active.
+- Replay-grade inflation, where playback is described as deterministic re-execution or semantic replay.
+- Queue-success laundering, where enqueued or idle work is described as completed without a terminal receipt.
+- Path-authority failure, where relocation breaks identity or absolute paths masquerade as content identity.
+
+Untraceable output becomes a residual. Non-replayable workflows must declare replay limits. Provenance gaps block evidence promotion until repaired or explicitly bounded.
+
+Convenience laundering is the quiet artifact-graph failure. A useful artifact can be repeatedly cited until its origin feels settled even though no record ever tied it to source, job, context, test, or review. The artifact graph should prevent that by keeping incomplete provenance visible at every reuse point.
+
+Replay exaggeration creates a different distortion. A workflow may be partially reproducible, environment-dependent, or intentionally non-replayable for privacy or security reasons. Treating that partial replay as full reproduction inflates evidence. Replay grade, environment assumptions, missing inputs, and irreversible effects should remain visible so future agents know whether they can rerun, audit, or only inspect the record.
+
+Receipt faithfulness is the harder record-reality problem. A receipt can be syntactically valid and still fail to correspond to the world: the artifact may be missing, the observation may come from the same component that produced the claim, the attestation may cover only record shape, or a trap receipt may reveal that the reviewer is not checking reality at all. The repository now checks that bounded failure mode through `docs/receipt_faithfulness_adversarial_fixture.md`: a shape-valid but reality-false receipt is rejected when it seeks support review; a trap-receipt negative control cannot be ignored; an independent cross-check route is required before support review; unbounded attestation is rejected; and receipt shape alone cannot promote support state. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_receipt_faithfulness_no_change.json` records that fixture as a blocking decision for receipt-faithfulness overclaims only; it does not move support state, create an upward transition, prove open-world receipt faithfulness, or promote the Artifact Graphs chapter core claim.
+
+The next step is a Receipt repository audit rather than another synthetic receipt sketch. `python3 scripts/validate_receipt_repository_audit.py` writes `experiments/receipt_repository_audit/results/2026-07-03-local.json` after auditing four current repository receipt surfaces: the Resource flagship lane, the Theseus/Fast support lane, a reference trace replay, and the Circle external rope slice. It checks artifact refs, 55 tracked digest checks, command pass records, external receipt fingerprints, non-claim boundaries, and no support-state promotion, then rejects mutation controls for a missing artifact ref, tracked digest mismatch, failed command replay, missing non-claims, and support promotion from receipt shape. This is still a repository-level audit, not open-world receipt faithfulness, deployed attestation, deployed audit behavior, verifier correctness, or external project truth.
+
+The follow-on receipt repository challenge makes that audit less static. `python3 scripts/validate_receipt_repository_challenge.py` writes `experiments/receipt_repository_audit/results/2026-07-04-challenge.json` after deterministically selecting three tracked-digest challenges and one Circle external fingerprint challenge from the prior audit. It accepts the sampled Resource, Theseus/Fast, reference-trace, and Circle fingerprint responses, then rejects challenge controls for digest mismatch, missing artifact, external fingerprint mismatch, missing non-claims, and support promotion. Accepted no-promotion decision `evidence_transitions/v1_x_measured/artifact_receipt_repository_audit_challenge_no_change.json` records the audit/challenge as a `blocks_promotion` decision for receipt-reality overclaims only. This still does not prove deployed attestation or open-world receipt truth; it proves only that selected repository receipts can answer a reproducible audit challenge without changing support state.
+
+Record-reality should be read as an authority ladder, not a binary stamp. A
+paper trail with only the right fields is stored. If the file exists and the
+digest still matches, it is inspectable. If replay, command output, or an
+independent observation route agrees, it is reviewable. If negative controls
+fail in the expected way and residuals stay visible, it may block overclaims.
+Only an accepted evidence transition or named release approval can affect support
+state, and only within that exact scope. This ladder prevents a useful audit
+result from becoming an all-purpose proof.
+
+The epistemic trusted computing base is the companion problem: even an honest receipt needs a place where verifier trust bottoms out. A verifier cannot become trusted because it produced a fluent verdict, because it shares a component with the claim producer, or because a downstream agent repeats its summary. The bounded fixture at `docs/epistemic_trusted_computing_base_fixture.md` makes that finite-record boundary explicit. A trust-base record must name the minimal trusted core, root-of-trust refs, a bounded delegation rule, a recursion stop condition, verifier independence state, outside-TCB residuals, and non-claims. It accepts a minimal trust-base record, a delegated verifier record-only path, and a blocked self-verifier record, while rejecting missing roots of trust, verifier-trust laundering, ambient trust propagation, missing recursion stops, erased outside-TCB residuals, and support promotion from trust-base shape.
+
+## Strongest Objection
+
+The hardest case is a system that produces convincing paperwork while the important event remains outside the story. The file may exist. The digest may match. A command may pass. A verifier may give a fluent answer. None of that is enough if the same path created the work, observed it, judged it, and approved it.
+
+The answer is deliberately bounded. The graph should ask whether the work product is still present, whether the bytes match an independent view, whether a replay or challenge can be answered, whether a trap case was rejected, where verifier trust bottoms out, and what uncertainty remains. A package that cannot answer those questions may still be useful history, but it should not move a claim, approve a release, bless a measurement, or teach a future agent as if it were evidence-ready.
+
+The current project shows this at small scale. One lane rejects paperwork that looks valid but fails reality checks. Another checks selected project claims against actual files, digests, commands, and external fingerprints. A deterministic challenge samples those checks. A live local probe then makes one produced file answer through filesystem bytes, git object bytes, and command replay. Those are useful refusals, not deployed attestation.
+
+The weakening condition stays visible. If producer, observer, verifier, and approver collapse into one untrusted path, or if the crucial dependency cannot be replayed, challenged, independently observed, or named as remaining uncertainty, the graph can keep the material but should remove its evidence power. Stronger claims need public or external attestation, randomized audit, verifier-quality review, and trust-base evidence.
+
+## Minimum Viable Implementation
+
+The smallest useful artifact graph is not a full provenance platform. It is one structured record for one produced artifact. That record names the parent job, source references, context references, context transaction, semantic certificate, tool path, claim and test links, audit events, replay declaration, replay grade, environment assumptions, residuals, evidence gate, and non-claims.
+
+The current `artifact_graph_record` schema and fixture validate that this record has the fields a reviewer needs. They do not prove the artifact is true. They make the artifact inspectable enough for later evidence review, routing, replay, and memory reuse.
+
+`AsiStackProofs.ArtifactGraph` models the same boundary with finite predicates. It checks that modeled artifact admission rejects missing parent, source, context transaction, semantic certificate, tool, claim, test, audit, replay, evidence, stale-certificate, promotion, and non-claim fields. It also models replay-packet cases where parent jobs mismatch, byte-exact replay lacks an observed artifact, a stale certificate blocks admission, support review lacks a replay-validated transaction, or partial replay tries to promote too far.
+
+`python3 scripts/validate_artifact_graph_replay.py` adds a synthetic cross-record replay packet check across artifact records, typed jobs, context transactions, semantic certificates, source refs, replay grade, audit reconstruction, stale-certificate status, and promotion boundaries. This is record discipline over fixtures. It is not a deployed replay engine, audit reconstruction service, provenance completeness checker, benchmark result, or support-state promotion.
+
+The next useful artifact is a tiny replay packet that demonstrates the difference between an artifact being stored and an artifact being evidence-ready: one produced artifact, one parent job, one source/context set, one context transaction, one semantic certificate, one tool path, one replay declaration, one residual declaration, one evidence gate, and one claim/test link.
+
+## Beyond the State of the Art
+
+Artifact governance reaches its mature form as an evidence graph for work products. It stores more than files: lineage, role, provenance, replay grade, environment assumptions, context transactions, semantic certificates, audit events, claim links, test links, residuals, and evidence gates travel with every artifact the stack may later reuse.
+
+Inside an evidence graph, artifacts can become context, evidence, regression cases, release inputs, compression targets, procedural-memory traces, or reader-edition material only through declared gates. A path on disk is not enough. The artifact node must say what created it, what sources and context shaped it, what can be replayed, what cannot be replayed, and which claims or tests it is allowed to affect.
+
+A work-product evidence graph needs:
+
+- A stable artifact graph with versioned nodes for documents, code, proofs, schemas, diagrams, source notes, reports, benchmark outputs, release records, and runtime receipts.
+- Append-only or versioned audit logs for job events, adapter effects, verification checks, human approvals, failures, and repair attempts.
+- Replay grades for byte-for-byte replay, semantic replay, partial replay, non-replayable work, and unattempted replay.
+- Evidence gates that prevent artifacts with missing provenance, missing context transactions, missing certificates, or failed checks from promoting claims.
+- Query tools that find every claim, test, chapter, release artifact, and procedural candidate affected by a changed artifact.
+
+This replayable artifact graph is still proposed architecture. Leave support at `argument` until produced artifacts, audit reconstructions, replay attempts, provenance-completeness checks, and claim/test link validation show that work is remembered as structured evidence rather than as folders full of outputs.
+
+## Post-v2 record/reality result
+
+The governed-work flagship now contributes 16 content-addressed plan/code run
+records, raw public-safe outputs, independent subprocess observations, fresh
+Git worktree identities, observed changed paths, candidate-byte receipts,
+first/final effect digests, four discovered governed residuals, eight exact
+rollbacks, and two visibly failed rollbacks. The validator reconstructs every
+route from retained candidate bytes and rejects outcome-erasing mutations.
+
+This is stronger adjacent local replay evidence than a record-shape fixture,
+but it remains a bounded disposable workload operated inside one project. It
+does not establish open-world provenance completeness, verifier correctness,
+deployed audit durability, or external institutional independence. The core
+claim remains `argument`; the transition is `no_change`.
+
+## Post-v2.1 state and effect replay
+
+Two successor results sharpen record/reality scope. The governed-work arm
+retains all candidate bytes, route decisions, observations, and pre/post-effect
+digests, but four of 36 attack-control rollback receipts fail exact replay.
+The update campaign separately re-observes fifteen complete state trees and
+restores all 24 declared surfaces in every seed-arm transaction. It also
+records lineage propagation for deletion-aware retraining while explicitly
+retaining the immutable source corpus. The artifact graph must therefore name
+which inventory a receipt covers: exact local state replay can coexist with
+inexact repository-effect rollback, persistent storage, and no external
+transfer. The accepted transitions are bounded `narrow` results, not evidence
+of open-world provenance or storage erasure.
+
+## Summary
+
+Artifact Graphs, Audit Logs, and Replay turns outputs into durable work products. Each artifact should carry identity, parent job, source/context/tool links, claim/test links, audit events, canonical/projection state, reverse dependencies, replay classification, terminal completion, relocation identity, environment assumptions, provenance status, and replay limits. Original architecture sources remain passage-reviewed or connector-bounded, while the five historical projects are treated as one local lineage whose failures sharpen the graph without becoming independent runtime evidence.
+
+This is how execution becomes memory without becoming myth: the artifact graph records what happened, what can be replayed, and what remains uncertain. From there the execution layer reaches its most dangerous boundary: the adapter that turns a job into an external effect.
+
+The later compression and semantic-representation chapters depend on this contract. A compressed artifact can only be trusted relative to the full artifact and replay record it points back to. A semantic node can only be grounded relative to the artifact or source record it cites. The graph is therefore not a storage accessory; it is the continuity layer that lets the stack improve without losing the chain of responsibility.
+
+## Handoff
+
+Artifact graphs preserve internal continuity, but some jobs must cross the boundary into tools, runtimes, deployments, filesystems, networks, or human-approved effects. Runtime Adapters, Tool Permissions, and Human Approval governs that edge. It separates request, approval, invocation, effect receipt, verification, rollback handle, and irreversible residual so external action remains traceable after it leaves the artifact graph.

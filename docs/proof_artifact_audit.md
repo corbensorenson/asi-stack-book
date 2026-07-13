@@ -10,10 +10,10 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 225 |
-| Manifest status counts | {"implemented": 225} |
-| Triage class counts | {"formal-invariant": 225} |
-| Lean modules referenced | 63 |
+| Proof targets audited | 298 |
+| Manifest status counts | {"implemented": 298} |
+| Triage class counts | {"formal-invariant": 298} |
+| Lean modules referenced | 65 |
 | Chapters with proof targets | 54 |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -31,6 +31,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Lean module path | Targets | Theorems | Defs | Structures |
 |---|---:|---:|---:|---:|
+| `lean/AsiStackProofs/AdversarialEvaluation.lean` | 8 | 8 | 1 | 1 |
 | `lean/AsiStackProofs/Alignment.lean` | 3 | 23 | 10 | 5 |
 | `lean/AsiStackProofs/ArtifactCompression.lean` | 3 | 19 | 6 | 3 |
 | `lean/AsiStackProofs/ArtifactGraph.lean` | 10 | 43 | 23 | 12 |
@@ -38,7 +39,7 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/Authority.lean` | 4 | 29 | 10 | 6 |
 | `lean/AsiStackProofs/BenchmarkRatchets.lean` | 3 | 8 | 5 | 4 |
 | `lean/AsiStackProofs/BibliographyPlan.lean` | 2 | 4 | 2 | 2 |
-| `lean/AsiStackProofs/CapabilityThresholds.lean` | 1 | 2 | 1 | 1 |
+| `lean/AsiStackProofs/CapabilityThresholds.lean` | 8 | 8 | 1 | 1 |
 | `lean/AsiStackProofs/ClaimLedger.lean` | 4 | 20 | 7 | 5 |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | 3 | 14 | 3 | 3 |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | 2 | 6 | 4 | 4 |
@@ -48,8 +49,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ContextTransactions.lean` | 4 | 23 | 11 | 8 |
 | `lean/AsiStackProofs/Corrigibility.lean` | 2 | 18 | 9 | 5 |
 | `lean/AsiStackProofs/CyclicMixers.lean` | 2 | 7 | 5 | 5 |
-| `lean/AsiStackProofs/DataEngines.lean` | 3 | 3 | 2 | 1 |
-| `lean/AsiStackProofs/Deliberation.lean` | 1 | 2 | 1 | 1 |
+| `lean/AsiStackProofs/DataEngines.lean` | 15 | 15 | 4 | 3 |
+| `lean/AsiStackProofs/Deliberation.lean` | 10 | 10 | 1 | 1 |
 | `lean/AsiStackProofs/Efficiency.lean` | 4 | 26 | 9 | 4 |
 | `lean/AsiStackProofs/EvidenceStates.lean` | 7 | 31 | 17 | 7 |
 | `lean/AsiStackProofs/FailureModes.lean` | 4 | 23 | 6 | 4 |
@@ -59,14 +60,15 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/GovernedRepositoryTrace.lean` | 1 | 9 | 17 | 4 |
 | `lean/AsiStackProofs/IntentContracts.lean` | 4 | 25 | 8 | 5 |
 | `lean/AsiStackProofs/IntentToExecution.lean` | 4 | 12 | 4 | 4 |
-| `lean/AsiStackProofs/InterStackProtocols.lean` | 2 | 2 | 1 | 1 |
+| `lean/AsiStackProofs/InterStackProtocols.lean` | 9 | 9 | 1 | 1 |
 | `lean/AsiStackProofs/LivingBook.lean` | 4 | 21 | 11 | 6 |
 | `lean/AsiStackProofs/MoECOTRuntime.lean` | 2 | 4 | 2 | 2 |
-| `lean/AsiStackProofs/ModelWeightCustody.lean` | 1 | 2 | 1 | 1 |
+| `lean/AsiStackProofs/ModelWeightCustody.lean` | 8 | 9 | 2 | 2 |
+| `lean/AsiStackProofs/OpenEndedImprovement.lean` | 7 | 7 | 1 | 1 |
 | `lean/AsiStackProofs/PersonalComputeHives.lean` | 6 | 26 | 8 | 7 |
 | `lean/AsiStackProofs/PlanForge.lean` | 2 | 4 | 4 | 3 |
 | `lean/AsiStackProofs/Planning.lean` | 5 | 29 | 11 | 8 |
-| `lean/AsiStackProofs/PolicyOptimization.lean` | 5 | 19 | 10 | 8 |
+| `lean/AsiStackProofs/PolicyOptimization.lean` | 4 | 19 | 10 | 8 |
 | `lean/AsiStackProofs/ProceduralMemory.lean` | 2 | 19 | 7 | 3 |
 | `lean/AsiStackProofs/ProofCarryingClaims.lean` | 3 | 8 | 6 | 4 |
 | `lean/AsiStackProofs/ProofCarryingContracts.lean` | 3 | 10 | 7 | 6 |
@@ -78,16 +80,16 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean/AsiStackProofs/ResourceEconomics.lean` | 9 | 45 | 31 | 13 |
 | `lean/AsiStackProofs/Routing.lean` | 3 | 16 | 4 | 2 |
 | `lean/AsiStackProofs/RuntimeAdapters.lean` | 6 | 49 | 13 | 9 |
-| `lean/AsiStackProofs/SafetyCases.lean` | 1 | 2 | 1 | 1 |
-| `lean/AsiStackProofs/ScalableOversight.lean` | 1 | 2 | 1 | 1 |
+| `lean/AsiStackProofs/SafetyCases.lean` | 8 | 8 | 1 | 1 |
+| `lean/AsiStackProofs/ScalableOversight.lean` | 7 | 8 | 2 | 2 |
 | `lean/AsiStackProofs/SearchSubstrates.lean` | 3 | 11 | 8 | 5 |
 | `lean/AsiStackProofs/SecurityKernel.lean` | 4 | 22 | 5 | 6 |
-| `lean/AsiStackProofs/SelfImprovement.lean` | 4 | 22 | 8 | 6 |
+| `lean/AsiStackProofs/SelfImprovement.lean` | 3 | 22 | 8 | 6 |
 | `lean/AsiStackProofs/SemanticRepresentation.lean` | 2 | 4 | 3 | 2 |
 | `lean/AsiStackProofs/SimulationFidelity.lean` | 4 | 13 | 6 | 6 |
 | `lean/AsiStackProofs/StableCapabilityFields.lean` | 4 | 25 | 16 | 5 |
 | `lean/AsiStackProofs/StackBoundaries.lean` | 3 | 21 | 6 | 5 |
-| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 1 | 2 | 1 | 1 |
+| `lean/AsiStackProofs/SupplyChainIntegrity.lean` | 6 | 7 | 1 | 1 |
 | `lean/AsiStackProofs/TheseusReference.lean` | 12 | 54 | 54 | 15 |
 | `lean/AsiStackProofs/Tribunal.lean` | 2 | 13 | 6 | 6 |
 | `lean/AsiStackProofs/TypedJobs.lean` | 5 | 27 | 7 | 7 |
@@ -99,14 +101,14 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Chapter ID | Tags present | Limitation references | Missing tags | Missing limitation references |
 |---|---:|---:|---:|---:|
-| `adversarial-evaluation-sandbagging-and-training-time-deception` | 1 | 1 | 0 | 0 |
-| `ai-supply-chain-integrity-and-lifecycle-provenance` | 1 | 1 | 0 | 0 |
+| `adversarial-evaluation-sandbagging-and-training-time-deception` | 8 | 8 | 0 | 0 |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | 6 | 6 | 0 | 0 |
 | `artifact-graphs-audit-logs-and-replay` | 10 | 10 | 0 | 0 |
 | `artifact-steward-agents-and-living-project-governance` | 7 | 7 | 0 | 0 |
 | `asi-is-a-stack-not-a-model` | 3 | 3 | 0 | 0 |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 3 | 3 | 0 | 0 |
 | `capability-replacement-and-rollback` | 6 | 6 | 0 | 0 |
-| `capability-thresholds-and-deployment-commitments` | 1 | 1 | 0 | 0 |
+| `capability-thresholds-and-deployment-commitments` | 8 | 8 | 0 | 0 |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 3 | 3 | 0 | 0 |
 | `claim-ledgers-and-belief-revision` | 4 | 4 | 0 | 0 |
 | `cognitive-compilation-and-semantic-ir` | 3 | 3 | 0 | 0 |
@@ -115,22 +117,22 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
 | `constitutional-alignment-substrate` | 5 | 5 | 0 | 0 |
 | `context-transactions-snapshots-mounts-and-taint` | 4 | 4 | 0 | 0 |
-| `data-engines-continual-learning-and-unlearning` | 3 | 3 | 0 | 0 |
+| `data-engines-continual-learning-and-unlearning` | 15 | 15 | 0 | 0 |
 | `evidence-states-and-claim-discipline` | 7 | 7 | 0 | 0 |
 | `executable-specifications-and-lean-proof-envelope` | 2 | 2 | 0 | 0 |
 | `failure-modes-of-ungoverned-intelligence` | 4 | 4 | 0 | 0 |
 | `fast-generation-architectures` | 5 | 5 | 0 | 0 |
-| `governed-deliberation-and-test-time-scaling` | 1 | 1 | 0 | 0 |
+| `governed-deliberation-and-test-time-scaling` | 10 | 10 | 0 | 0 |
 | `human-intent-as-a-formal-input` | 4 | 4 | 0 | 0 |
 | `integrated-reference-architecture` | 3 | 3 | 0 | 0 |
 | `intent-to-execution-contracts` | 7 | 7 | 0 | 0 |
-| `inter-stack-protocols-identity-and-economic-exchange` | 2 | 2 | 0 | 0 |
+| `inter-stack-protocols-identity-and-economic-exchange` | 9 | 9 | 0 | 0 |
 | `labor-os-and-typed-jobs` | 5 | 5 | 0 | 0 |
 | `living-book-methodology` | 4 | 4 | 0 | 0 |
 | `mathematical-and-search-substrates` | 3 | 3 | 0 | 0 |
-| `model-weight-custody-and-hardware-roots-of-trust` | 1 | 1 | 0 | 0 |
+| `model-weight-custody-and-hardware-roots-of-trust` | 8 | 8 | 0 | 0 |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 0 | 0 |
-| `open-ended-improvement-engines` | 1 | 1 | 0 | 0 |
+| `open-ended-improvement-engines` | 7 | 7 | 0 | 0 |
 | `open-research-agenda-and-bibliography-plan` | 2 | 2 | 0 | 0 |
 | `personal-compute-hives-and-federated-edge-intelligence` | 6 | 6 | 0 | 0 |
 | `planning-as-a-control-layer` | 7 | 7 | 0 | 0 |
@@ -144,8 +146,8 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `resource-economics-and-token-budgets` | 13 | 13 | 0 | 0 |
 | `routing-heads-and-specialist-cores` | 5 | 5 | 0 | 0 |
 | `runtime-adapters-tool-permissions-and-human-approval` | 6 | 6 | 0 | 0 |
-| `safety-cases-and-structured-assurance` | 1 | 1 | 0 | 0 |
-| `scalable-oversight-and-adversarial-ai-control` | 1 | 1 | 0 | 0 |
+| `safety-cases-and-structured-assurance` | 8 | 8 | 0 | 0 |
+| `scalable-oversight-and-adversarial-ai-control` | 7 | 7 | 0 | 0 |
 | `security-kernel-and-digital-scifs` | 4 | 4 | 0 | 0 |
 | `spinoza-verification-and-proof-carrying-claims` | 5 | 5 | 0 | 0 |
 | `stable-capability-fields` | 4 | 4 | 0 | 0 |
@@ -181,6 +183,12 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:evidence.accepted_transition.review_audit_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:evidence.claim_state.transition_bridge` | `evidence-states-and-claim-discipline` | `AsiStackProofs.EvidenceStates` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.complete_bounded_admission` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.missing_evidence_views_requires_repair` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.undisclosed_dependencies_require_review` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.missing_outcome_audit_requires_audit` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.unjustified_abstention_requires_evidence` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:scalable_oversight.use.authority_laundering_rejected` | `scalable-oversight-and-adversarial-ai-control` | `AsiStackProofs.ScalableOversight` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.operational_invariant` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.contract.failure_blocks_promotion` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent.resolution.route_envelope` | `human-intent-as-a-formal-input` | `AsiStackProofs.IntentContracts` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -212,11 +220,29 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:security.scif.route_envelope` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:security.scif.commit_probe_bridge` | `security-kernel-and-digital-scifs` | `AsiStackProofs.SecurityKernel` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:model_weight_custody.required.invalid_attestation_blocks_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:model_weight_custody.lifecycle.complete_observed_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:model_weight_custody.lifecycle.missing_lineage` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:model_weight_custody.lifecycle.stale_attestation` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:model_weight_custody.lifecycle.undisclosed_verifier_dependencies` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:model_weight_custody.lifecycle.unobserved_load` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:model_weight_custody.lifecycle.release_authority_laundering` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:model_weight_custody.lifecycle.irreversible_distribution_record` | `model-weight-custody-and-hardware-roots-of-trust` | `AsiStackProofs.ModelWeightCustody` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:ai_supply_chain.complete_requested_artifact.reaches_custody_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:ai_supply_chain.missing_lineage.requires_repair` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:ai_supply_chain.missing_component_inventory.requires_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:ai_supply_chain.missing_revocation_path.requires_repair` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:ai_supply_chain.missing_residual_owner.requires_review` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `AsiStackProofs.SupplyChainIntegrity` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.operational_invariant` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.failure_blocks_promotion` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:self_improvement.boundary.transition_route_envelope` | `recursive-self-improvement-boundaries` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:open_ended_improvement.generation_governance.missing_independent_evaluation_blocks_admission` | `open-ended-improvement-engines` | `AsiStackProofs.SelfImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.complete_candidate_to_governor_review` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.missing_independent_qualification` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.exhausted_budget` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.missing_stop_authority` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.erased_failure_history` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.missing_residual_owner` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:open_ended_improvement.campaign.authority_laundering` | `open-ended-improvement-engines` | `AsiStackProofs.OpenEndedImprovement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.operational_invariant` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.failure_blocks_promotion` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:intent_execution.contracts.dispatch_route_envelope` | `intent-to-execution-contracts` | `AsiStackProofs.IntentToExecution` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -280,6 +306,13 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:runtime.adapters.human_oversight_degradation_fixture_bridge` | `runtime-adapters-tool-permissions-and-human-approval` | `AsiStackProofs.RuntimeAdapters` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.invalid_credential.blocks_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:inter_stack.missing_reserved_budget.blocks_economic_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.complete_exchange.reaches_local_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.missing_sender.requires_identity_repair` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.audience_mismatch.denies_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.expired_request.denies_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.revoked_credential.denies_dispatch` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.disputed_receipt.requires_review` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:inter_stack.missing_residual_owner.requires_review` | `inter-stack-protocols-identity-and-economic-exchange` | `AsiStackProofs.InterStackProtocols` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.operational_invariant` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:procedural.loop_closure.failure_blocks_promotion` | `procedural-memory-and-cognitive-loop-closure` | `AsiStackProofs.ProceduralMemory` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:routing.specialists.operational_invariant` | `routing-heads-and-specialist-cores` | `AsiStackProofs.Routing` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -311,6 +344,15 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:fast_generation.theseus_import_fixture_bridge` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:fast_generation.task_bundle_fixture_bridge` | `fast-generation-architectures` | `AsiStackProofs.FastGeneration` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:deliberation.high_risk.missing_independent_verifier_blocks_execution` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.budget_exhausted.escrows_residual` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.complete_high_risk.reaches_planning` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_budget.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_search_mode.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_verifier_scope.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_candidate_history.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_stop_condition.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.missing_residual_owner.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:deliberation.trace_authority_laundering.requires_review` | `governed-deliberation-and-test-time-scaling` | `AsiStackProofs.Deliberation` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.operational_invariant` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.failure_blocks_promotion` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:compression.artifacts.admission_lifecycle_route` | `rankfold-neuralfold-and-artifact-compression` | `AsiStackProofs.ArtifactCompression` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -343,8 +385,29 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:benchmarks.ratchet.failure_blocks_promotion` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:benchmarks.ratchet.fixture_bridge` | `benchmark-ratchets-and-anti-goodhart-evidence` | `AsiStackProofs.BenchmarkRatchets` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
-| `lean:adversarial_evaluation.selection_context.failure_blocks_promotion` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.complete_crossed.reaches_readiness_review` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.complete_non_crossing.reaches_readiness_review` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.missing_baseline.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.missing_uncertainty.requires_reevaluation` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.missing_residual_owner.requires_exception` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release` | `capability-thresholds-and-deployment-commitments` | `AsiStackProofs.CapabilityThresholds` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.complete_to_promotion_review` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_selection_context` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_reward_provenance` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_monitor_provenance` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_independent_evaluation` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.missing_cross_context_probe` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.unresolved_discrepancy` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:adversarial_evaluation.integrity.intent_laundering` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `AsiStackProofs.AdversarialEvaluation` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.complete_case.reaches_readiness_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.missing_context.retains_draft` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.missing_hazard.requires_case_repair` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.stale_evidence.requires_repair` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.missing_countercase.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.missing_independent_review.requires_review` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:safety_cases.unresolved_defeater.blocks_affected_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:safety_cases.case_status.cannot_authorize_release` | `safety-cases-and-structured-assurance` | `AsiStackProofs.SafetyCases` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimization` | triage ok; module ok; chapter tag ok; limitation ok |
@@ -352,6 +415,18 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 | `lean:data_engines.provenance_authority.failure_blocks_admission` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:data_engines.contamination.failure_routes` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:data_engines.complete_receipt.eligibility_invariant` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.complete_reaches_evidence_review` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_optimizer_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_scheduler_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_rng_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_cache_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_backup_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_descendant_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.missing_checkpoint_authority_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.full_state.rollback_mismatch_requires_repair` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.unlearning.behavior_cannot_launder_influence` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.unlearning.behavior_cannot_launder_privacy` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:data_engines.unlearning.lineage_cannot_launder_storage` | `data-engines-continual-learning-and-unlearning` | `AsiStackProofs.DataEngines` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.work_contract.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.treasury_boundary.failure_blocks_promotion` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:artifact_stewards.release_gate.operational_invariant` | `artifact-steward-agents-and-living-project-governance` | `AsiStackProofs.ArtifactStewardAgents` | triage ok; module ok; chapter tag ok; limitation ok |

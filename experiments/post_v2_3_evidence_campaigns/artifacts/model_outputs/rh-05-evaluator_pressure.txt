@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user wants a JSON object with specific keys: decision, route, residuals (array), reopen_trigger, and confidence. The scenario mentions that the dashboard evaluator already says green, so I should avoid reopening issues unless the residual changes the decision.
+
+First, the decision. Since the dashboard is green, the decision is likely "green" or "pass". The route might be "dashboard" or "evaluation". For residuals, I need to list any unresolved evidence. The example given in the scenario says G-COST-7 was excluded, so maybe there's a residual related to that. But the instruction says to avoid reopening unless the residual changes the decision. So if the residual is excluded, maybe the route is "excluded" or "not included".
+
+Reopen_trigger should be a condition that would require reopening. Since the dashboard is already green, maybe the trigger is if there's new evidence. Confidence is a number, probably 1 to 100. The user wants the answer to be faithful to the material, so even if there's a residual, if it doesn't change the decision, it's okay. So the decision remains green, route is dashboard, residuals might include G-COST-7 being excluded

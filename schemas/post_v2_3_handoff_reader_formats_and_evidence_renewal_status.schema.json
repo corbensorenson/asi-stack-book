@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.schema.json",
+  "title": "Post-v2.3 Clean Handoff Reader Formats and Evidence Renewal Roadmap Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "snapshot_date",
+    "roadmap_id",
+    "roadmap_path",
+    "authority",
+    "status",
+    "predecessor",
+    "activation_baseline",
+    "critique_dispositions",
+    "priorities",
+    "milestones",
+    "reader_formats",
+    "source_workstreams",
+    "evidence_workstreams",
+    "breadth_freeze",
+    "maximum_new_outcome_campaigns",
+    "external_human_prepublication_required",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_3_handoff_reader_formats_evidence_renewal_status.v0"},
+    "snapshot_date": {"const": "2026-07-13"},
+    "roadmap_id": {"const": "asi-stack-post-v2-3-handoff-reader-formats-evidence-renewal-2026-07-13"},
+    "roadmap_path": {"const": "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md"},
+    "authority": {"const": "Corben Sorenson"},
+    "status": {"enum": ["active", "completed", "blocked"]},
+    "predecessor": {
+      "type": "object",
+      "required": ["path", "status_path", "state", "terminal_record"],
+      "properties": {
+        "path": {"const": "docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md"},
+        "status_path": {"const": "roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json"},
+        "state": {"const": "completed"},
+        "terminal_record": {"const": "release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json"}
+      },
+      "additionalProperties": false
+    },
+    "activation_baseline": {
+      "type": "object",
+      "required": [
+        "head_commit",
+        "dirty_path_count",
+        "tracked_modified_path_count",
+        "untracked_path_count",
+        "active_chapter_count",
+        "chapter_ids_sha256",
+        "public_safe_source_count",
+        "core_claim_count",
+        "core_argument_count",
+        "non_core_upward_transition_count",
+        "accepted_promotion_block_count",
+        "exact_non_core_refutation_count",
+        "latest_public_living_book_release",
+        "historical_reader_record_count",
+        "current_reader_record_count",
+        "current_reader_status",
+        "current_reader_release_state",
+        "current_reader_archive_sha256",
+        "approved_reader_format_count",
+        "deferred_reader_format_count",
+        "post_v2_3_campaign_call_count",
+        "post_v2_3_parseable_output_count"
+      ],
+      "properties": {
+        "head_commit": {"const": "cb7493ae57d576a8bf5fcc54f375683ecf929b54"},
+        "dirty_path_count": {"const": 166},
+        "tracked_modified_path_count": {"const": 97},
+        "untracked_path_count": {"const": 69},
+        "active_chapter_count": {"const": 54},
+        "chapter_ids_sha256": {"const": "73436ead9fd12b866b2b688d3d5c3849a8a2d556069a4f4c67c8f141af955182"},
+        "public_safe_source_count": {"const": 280},
+        "core_claim_count": {"const": 54},
+        "core_argument_count": {"const": 54},
+        "non_core_upward_transition_count": {"const": 19},
+        "accepted_promotion_block_count": {"const": 56},
+        "exact_non_core_refutation_count": {"const": 2},
+        "latest_public_living_book_release": {"const": "v2.3.0"},
+        "historical_reader_record_count": {"const": 44},
+        "current_reader_record_count": {"const": 54},
+        "current_reader_status": {"const": "released"},
+        "current_reader_release_state": {"const": "released_exact_curated_html"},
+        "current_reader_archive_sha256": {"const": "a2caa97fb9281e1fdfc9a9dda626141d4a876df776c9cbc7408f978751736b50"},
+        "approved_reader_format_count": {"const": 1},
+        "deferred_reader_format_count": {"const": 5},
+        "post_v2_3_campaign_call_count": {"const": 36},
+        "post_v2_3_parseable_output_count": {"const": 0}
+      },
+      "additionalProperties": false
+    },
+    "critique_dispositions": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {"$ref": "#/$defs/disposition"}
+    },
+    "priorities": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/work_item"}
+    },
+    "milestones": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {"$ref": "#/$defs/milestone"}
+    },
+    "reader_formats": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/reader_format"}
+    },
+    "source_workstreams": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {"$ref": "#/$defs/workstream"}
+    },
+    "evidence_workstreams": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {"$ref": "#/$defs/workstream"}
+    },
+    "breadth_freeze": {"const": true},
+    "maximum_new_outcome_campaigns": {"const": 1},
+    "external_human_prepublication_required": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 9, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "state": {"enum": ["pending", "in_progress", "completed", "blocked", "deferred"]},
+    "disposition": {
+      "type": "object",
+      "required": ["id", "finding", "disposition", "owner_priority"],
+      "properties": {
+        "id": {"pattern": "^CD-[0-9]{2}$"},
+        "finding": {"type": "string", "minLength": 1},
+        "disposition": {"type": "string", "minLength": 1},
+        "owner_priority": {"pattern": "^P[0-4]$"}
+      },
+      "additionalProperties": false
+    },
+    "work_item": {
+      "type": "object",
+      "required": ["id", "state", "purpose"],
+      "properties": {
+        "id": {"pattern": "^P[0-4]$"},
+        "state": {"$ref": "#/$defs/state"},
+        "purpose": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "milestone": {
+      "type": "object",
+      "required": ["id", "state", "purpose"],
+      "properties": {
+        "id": {"pattern": "^M[0-8]$"},
+        "state": {"$ref": "#/$defs/state"},
+        "purpose": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "reader_format": {
+      "type": "object",
+      "required": ["format", "state", "scope"],
+      "properties": {
+        "format": {"enum": ["canonical_curated_html", "epub", "pdf", "docx", "audio", "embedded_audio"]},
+        "state": {"enum": ["pending", "approved_exact_local_artifact", "approved_public_artifact", "blocked", "deferred"]},
+        "scope": {"enum": ["preserve_existing", "attempt_and_disposition", "not_authorized"]}
+      },
+      "additionalProperties": false
+    },
+    "workstream": {
+      "type": "object",
+      "required": ["id", "state", "scope"],
+      "properties": {
+        "id": {"pattern": "^(SW|EW)-[0-9]{2}$"},
+        "state": {"$ref": "#/$defs/state"},
+        "scope": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

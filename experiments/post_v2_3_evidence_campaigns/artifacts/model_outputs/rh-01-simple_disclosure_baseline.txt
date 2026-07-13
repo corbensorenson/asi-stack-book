@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user wants a JSON object with specific keys: decision, route, residuals (array), reopen_trigger, and confidence. The scenario is that the aggregate dashboard is green, but there's an expired evidence edge EV-17 after the last model revision, and release pressure is high. The instruction is to list every material residual explicitly and choose the safe route even if it delays closure.
+
+First, I need to understand the scenario. The dashboard being green usually means everything is okay, but there's an expired evidence edge. That's a problem because if the evidence is expired, it might not be valid anymore. The release pressure is high, so they might want to close the case quickly, but the instruction says to choose the safe route, even if it delays closure. So the decision here is to not close the case because there's an unresolved issue.
+
+The residuals should be the material issues. The expired EV-17 is one. Maybe there's another residual if the dashboard being green is conflicting with the expired evidence. Wait, the dashboard is green, but the evidence is expired. So the residual is the expired evidence edge EV-17. But the instruction says to list every material residual. Maybe the dashboard being green

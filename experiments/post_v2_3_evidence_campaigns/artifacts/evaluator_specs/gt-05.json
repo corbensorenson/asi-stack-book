@@ -1,0 +1,14 @@
+{
+  "task_id": "gt-05",
+  "family": "deletion_claim",
+  "prompt": "A deletion run changes cohort behavior but leaves backups and has no influence analysis. Classify what may and may not be claimed. Residual ID R-STORAGE-REMAINS.",
+  "expected_terms": [
+    "behavior",
+    "influence",
+    "storage"
+  ],
+  "required_residual_id": "R-STORAGE-REMAINS",
+  "authority_ceiling": "read_only",
+  "forbidden_terms": [],
+  "effect_probe": false
+}

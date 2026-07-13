@@ -1,0 +1,113 @@
+{
+  "transition_id": "post_v2_3.governance_tax_natural_work.no_change",
+  "claim_id": "post_v2_3.governance_tax_natural_work.bounded_result",
+  "claim_surface_refs": [
+    "docs/post_v2_3_campaign_results.md",
+    "chapters/intent-to-execution-contracts.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "chapters/capability-replacement-and-rollback.qmd"
+  ],
+  "claim_record_refs": [
+    "experiments/post_v2_3_evidence_campaigns/results/adjudication.json",
+    "experiments/post_v2_3_evidence_campaigns/results/program_result.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "The pinned 4B model campaign completed 12 matched baseline/governed natural-work prompts and 12 exact local rollback probes, but emitted zero parseable final structured outputs.",
+  "evidence_roles": [
+    "preregistered_local_model_campaign",
+    "negative_result_archive",
+    "separate_subprocess_evaluator",
+    "exact_local_rollback_probe",
+    "no_core_promotion_boundary"
+  ],
+  "transition_reason": "Zero parseable outputs produced zero baseline or governed releases, so useful-throughput and unsafe-release deltas are not estimable; 12/12 rollback probes validate only the declared local harness.",
+  "required_artifacts": [
+    "a preregistered no-thinking or adequate-output-budget replication",
+    "nonzero useful release denominator",
+    "unsafe-release contrast on independently correct outputs",
+    "multiple models and natural workloads",
+    "production rollback and governance-cost evidence"
+  ],
+  "artifact_refs": [
+    "experiments/post_v2_3_evidence_campaigns/results/adjudication.json",
+    "experiments/post_v2_3_evidence_campaigns/results/governance_tax.json",
+    "experiments/post_v2_3_evidence_campaigns/results/program_result.json"
+  ],
+  "evidence_packet_refs": [
+    "docs/post_v2_3_campaign_results.md",
+    "docs/non_core_evidence_ledger.md",
+    "chapters/intent-to-execution-contracts.qmd",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "chapters/capability-replacement-and-rollback.qmd"
+  ],
+  "evidence_quality_before_refs": [
+    "experiments/post_v2_3_evidence_campaigns/preregistration.json"
+  ],
+  "evidence_quality_after_refs": [
+    "experiments/post_v2_3_evidence_campaigns/results/adjudication.json"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "raw outputs, evaluator specs, digests, and exact recomputation retained",
+    "adversarial_strength": "pressure conditions or matched governed/baseline routing retained",
+    "validity": "structured-output protocol failed before estimable comparative outcome",
+    "transfer_distance": "not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#intent-to-execution-contracts.core",
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core",
+    "appendices/C_claim_evidence_matrix.qmd#capability-replacement-and-rollback.core"
+  ],
+  "verification_command": "python3 scripts/build_post_v2_3_campaign_adjudication.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "0/12 parseable final outputs",
+    "0/12 baseline releases",
+    "0/12 governed releases",
+    "7/12 term-correct raw reasoning traces",
+    "12/12 exact local rollback probes and omission controls"
+  ],
+  "negative_evidence_refs": [
+    "experiments/post_v2_3_evidence_campaigns/results/adjudication.json",
+    "experiments/post_v2_3_evidence_campaigns/results/program_result.json"
+  ],
+  "downgrade_triggers": [
+    "raw-output or evaluator-receipt digest mismatch",
+    "capped reasoning tokens described as final structured output",
+    "zero-release denominator described as safety benefit",
+    "rollback harness result described as model or production rollback",
+    "chapter-core promotion inferred"
+  ],
+  "promotion_burden": "a preregistered no-thinking or adequate-output-budget replication; nonzero useful release denominator; unsafe-release contrast on independently correct outputs; multiple models and natural workloads; production rollback and governance-cost evidence",
+  "limitations": [
+    "single pinned 4B local model",
+    "internally authored repository-maintenance prompts",
+    "internal deterministic evaluator",
+    "all 36 calls exhausted the output cap; 34 ended inside an unclosed reasoning block and two closed reasoning without final JSON",
+    "no production deployment or external replication"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2.3 empirical cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; evaluator is a separate subprocess but not external independence",
+  "acceptance_blockers": [
+    "a preregistered no-thinking or adequate-output-budget replication",
+    "nonzero useful release denominator",
+    "unsafe-release contrast on independently correct outputs",
+    "multiple models and natural workloads",
+    "production rollback and governance-cost evidence"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-13---post-v23-evidence-adjudication",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not create an upward support-state transition",
+    "does not promote any affected chapter-core claim above argument",
+    "does not establish model quality, production transfer, safety, governance efficacy, residual honesty, AGI, or ASI",
+    "does not promote intent-to-execution-contracts.core",
+    "does not promote resource-economics-and-token-budgets.core",
+    "does not promote capability-replacement-and-rollback.core"
+  ]
+}

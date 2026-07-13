@@ -434,6 +434,38 @@ zero-utility no-deliberation arm. Extra computation and governance are costs
 whose value depends on jointly measured useful throughput, unsafe release,
 latency, rollback, and abstention—not on call count or route accuracy alone.
 
+## QCSA prevention-cost adjudication
+
+The QCSA evaluation makes the same joint-accounting rule concrete. Exact
+governance/migration failure prevention was 1.000000 for QCSA and 0.487179 for
+the selected baseline, a 0.512821 gain, but QCSA used 729 operations and a
+1.913386 matched operation ratio. That exceeds the preregistered 1.50 ceiling,
+so the acceptable-resource claim is not promoted. The retained narrow result
+is that the exact prevention gain came with an over-ceiling proxy cost. It is
+not a production incident rate, acceptable governance tax, economic optimum,
+or chapter-core support result.
+
+## Post-v2.3 governance-tax protocol result
+
+The prospectively frozen natural-work campaign completed 12 local Qwen3 4B
+calls, each evaluated under matched baseline and governed release policies,
+plus 12 independent rollback probes. Every model call consumed its full
+256-token output allowance; 11 ended inside an unclosed reasoning block and
+one closed reasoning but emitted no requested final JSON object. Both
+routes therefore had zero admissible candidates, zero useful releases, and
+zero unsafe releases. With a zero-release denominator, neither useful
+throughput nor unsafe-release reduction is estimable, so the campaign cannot
+price governance or support a safety comparison. The exact generation,
+evaluation, token-proxy, and wall-clock costs remain in
+`experiments/post_v2_3_evidence_campaigns/results/adjudication.json`.
+
+The separate nine-surface rollback harness restored 12/12 declared local
+states and detected 12/12 descendant-or-receipt omission controls. That result
+validates the harness boundary only. It is not evidence of model quality,
+production rollback, acceptable governance cost, useful governed throughput,
+or the resource-economics core claim. The accepted transition is
+`evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json`.
+
 ## Summary
 
 Resources are part of governance. A system that cannot account for tokens, verification, latency, human review, risk, fidelity, transfer limits, and quality cannot honestly claim efficiency.

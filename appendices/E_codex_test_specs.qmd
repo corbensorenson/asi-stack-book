@@ -40,6 +40,9 @@ No result is recorded here unless a test has actually been implemented and run.
 | `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | High-risk outcome-audit admission fixture | planned | not run |
 | `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Baseline and task-envelope completeness fixture | planned | not run |
 | `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Correlated-reviewer negative control | planned | not run |
+| `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Evidence-view access-repair fixture | planned | not run |
+| `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Abstention-evidence fixture | planned | not run |
+| `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Authority-laundering negative control | planned | not run |
 | `scalable-oversight-and-adversarial-ai-control` | Scalable Oversight and Adversarial AI Control | Oversight protocol workload comparison | planned | not run |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent resolution route proof | implemented | passes via Lean build; finite structured-record route only |
 | `human-intent-as-a-formal-input` | Human Intent as a Formal Input | Intent-origin preservation fixture | implemented | passes via synthetic plan-execution contract harness; no natural-language parser or authority-extraction claim |
@@ -98,6 +101,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `security-kernel-and-digital-scifs` | Security Kernel and Digital SCIFs | Security kernel route proof | implemented | passes via Lean build; finite authority-use route coverage only |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Required invalid-attestation load block | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Stale-attestation and key-policy negative control | planned | not run |
+| `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Verifier-dependency and independent-observation controls | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Open-weight irreversibility record fixture | planned | not run |
 | `model-weight-custody-and-hardware-roots-of-trust` | Model-Weight Custody and Hardware Roots of Trust | Public-safe custody-record workload | planned | not run |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | AI Supply-Chain Integrity and Lifecycle Provenance | Unresolved-critical-advisory quarantine route | planned | not run |
@@ -115,6 +119,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `open-ended-improvement-engines` | Open-Ended Improvement Engines | Improvement-campaign admission fixture | planned | not run |
 | `open-ended-improvement-engines` | Open-Ended Improvement Engines | Generator-evaluator separation probe | planned | not run |
 | `open-ended-improvement-engines` | Open-Ended Improvement Engines | Candidate archive and stop-boundary review | planned | not run |
+| `open-ended-improvement-engines` | Open-Ended Improvement Engines | Authority-laundering negative control | planned | not run |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Intent and trace fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Contract field completeness test | implemented | passes via synthetic plan-execution contract harness |
 | `intent-to-execution-contracts` | Command Contracts: From Intent to Executable Work | Constraint preservation test | implemented | passes via synthetic plan-execution contract harness |
@@ -231,6 +236,7 @@ No result is recorded here unless a test has actually been implemented and run.
 | `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Required-invalid-credential dispatch denial route | planned | not run |
 | `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Missing-reserved-budget value-bearing dispatch repair route | planned | not run |
 | `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Public-safe exchange contract workload with identity, delegation, expiry, revocation, budget, receipt, dispute, and residual negative controls | planned | not run |
+| `inter-stack-protocols-identity-and-economic-exchange` | Inter-Stack Protocols, Identity, and Economic Exchange | Eleven validator-owned rejecting mutations | planned | not run |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Loop detection test | implemented | passes via synthetic procedural memory loop harness; no deployed loop detector or tool-synthesis claim |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Tool abstraction test | implemented | passes via synthetic procedural memory loop harness; no generated-tool correctness claim |
 | `procedural-memory-and-cognitive-loop-closure` | Procedural Memory and Cognitive Loop Closure | Verified tool regression test | implemented | passes via synthetic procedural memory loop harness; no deployed regression-quality or routing claim |
@@ -423,10 +429,11 @@ No result is recorded here unless a test has actually been implemented and run.
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Evaluation-integrity record fixture | planned | not run |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Cross-context discrepancy probe | planned | not run |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | Training-time deception boundary review | planned | not run |
-| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Unresolved-defeater safety-case route | planned | not run |
-| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Missing acceptance-criterion negative control | planned | not run |
-| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Stale case-dependency and re-review fixture | planned | not run |
-| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Public-safe assurance-graph compilation workload | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Complete bounded record to readiness-review route | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Missing context and hazard-model negative controls | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Stale evidence, countercase, independent-review, and unresolved-defeater routes | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Authority-laundering rejection | planned | not run |
+| `safety-cases-and-structured-assurance` | Safety Cases and Structured Assurance | Eight-case digest-bound synthetic assurance bridge | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | DPO/offline preference baseline test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | PPO online RL baseline test | planned | not run |
 | `policy-optimization-and-learning-from-feedback` | Policy Optimization and Learning from Feedback | GRPO/RLOO toy math reward test | planned | not run |
@@ -564,16 +571,16 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 225 |
+| Proof targets covered by triage | 298 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
-| implemented | 225 |
+| implemented | 298 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
-| implemented | formal-invariant | lean-candidate | 225 |
+| implemented | formal-invariant | lean-candidate | 298 |

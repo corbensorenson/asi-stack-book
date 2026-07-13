@@ -55,6 +55,8 @@ import AsiStackProofs.SimulationFidelity
 import AsiStackProofs.StackBoundaries
 import AsiStackProofs.StableCapabilityFields
 import AsiStackProofs.SupplyChainIntegrity
+import AsiStackProofs.OpenEndedImprovement
+import AsiStackProofs.AdversarialEvaluation
 import AsiStackProofs.TheseusReference
 import AsiStackProofs.Tribunal
 import AsiStackProofs.TypedJobs

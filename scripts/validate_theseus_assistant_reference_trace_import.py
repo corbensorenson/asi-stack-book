@@ -553,16 +553,16 @@ def validate_surfaces(errors: list[str]) -> None:
         ACTIVE_CYCLE: [
             "assistant reference-trace import",
             "lean:theseus.reference.assistant_reference_trace_import.fixture_bridge",
-            "14 narrow non-core upward transitions",
+            "19 narrow non-core upward transitions",
         ],
         ROADMAP: [
             "assistant reference-trace import",
-            "14 accepted narrow non-core upward transitions",
+            "19 accepted narrow non-core upward transitions",
             "9 prototype-backed transitions",
         ],
         LEDGER: [
             CLAIM_ID,
-            "14 narrow transitions",
+            "19 narrow transitions",
             "docs/theseus_assistant_reference_trace_import.md",
             "prototype-backed",
         ],

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/model_weight_custody_lifecycle_result.schema.json",
+  "title": "Model Weight Custody Lifecycle Result",
+  "type": "object",
+  "required": ["schema_version", "run_date", "fixture_path", "fixture_sha256", "case_results", "route_counts", "lean_bridge", "support_state_effect", "limitations", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.model_weight_custody_lifecycle_result.v0"},
+    "run_date": {"const": "2026-07-13"},
+    "fixture_path": {"const": "experiments/model_weight_custody_lifecycle/fixtures/cases.json"},
+    "fixture_sha256": {"pattern": "^[0-9a-f]{64}$"},
+    "case_results": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"type": "object", "required": ["id", "expected_route", "actual_route", "passed"], "properties": {"id": {"type": "string"}, "expected_route": {"type": "string"}, "actual_route": {"type": "string"}, "passed": {"const": true}}, "additionalProperties": false}},
+    "route_counts": {"type": "object", "minProperties": 8, "additionalProperties": {"type": "integer", "minimum": 1}},
+    "lean_bridge": {"type": "object", "required": ["module", "source", "theorems", "build_command"], "properties": {"module": {"const": "AsiStackProofs.ModelWeightCustody"}, "source": {"const": "lean/AsiStackProofs/ModelWeightCustody.lean"}, "theorems": {"type": "array", "minItems": 9, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}, "build_command": {"const": "cd lean && lake build AsiStackProofs.ModelWeightCustody"}}, "additionalProperties": false},
+    "support_state_effect": {"const": "none"},
+    "limitations": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

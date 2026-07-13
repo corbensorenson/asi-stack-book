@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/post_v2_3_campaign_preregistration.schema.json",
+  "title": "Post-v2.3 governance-tax and residual-honesty preregistration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "program_id", "frozen_date", "state", "model", "campaigns", "aggregate_budget", "independence_boundary", "effect_complete_rollback", "transition_rules", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_3_campaign_preregistration.v0"},
+    "program_id": {"const": "post-v2-3-governance-tax-and-residual-honesty"},
+    "frozen_date": {"const": "2026-07-13"},
+    "state": {"const": "frozen_before_outcomes_opened"},
+    "model": {"type": "object"},
+    "campaigns": {"type": "array", "minItems": 2, "maxItems": 2},
+    "aggregate_budget": {"type": "object"},
+    "independence_boundary": {"type": "string", "minLength": 40},
+    "effect_complete_rollback": {"type": "object"},
+    "transition_rules": {"type": "object"},
+    "support_state_effect": {"const": "none_before_results"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 12}}
+  }
+}

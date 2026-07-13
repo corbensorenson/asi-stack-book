@@ -1,0 +1,27 @@
+{
+  "schema_version": "asi_stack.inter_stack_exchange_contract_result.v0",
+  "run_date": "2026-07-13",
+  "fixture_path": "experiments/inter_stack_exchange_contract/fixtures/cases.json",
+  "fixture_sha256": "c9da642964af13514144cf9b34b11ec0e08e289426aea71c215961af9ec877b5",
+  "case_results": [
+    {"id": "valid_complete_local_dispatch", "expected_route": "release_to_local_dispatch", "actual_route": "release_to_local_dispatch", "passed": true},
+    {"id": "invalid_missing_sender_identity", "expected_route": "require_identity_repair", "actual_route": "require_identity_repair", "passed": true},
+    {"id": "invalid_audience_scope_mismatch", "expected_route": "deny_dispatch", "actual_route": "deny_dispatch", "passed": true},
+    {"id": "invalid_expired_request", "expected_route": "deny_dispatch", "actual_route": "deny_dispatch", "passed": true},
+    {"id": "invalid_required_credential", "expected_route": "deny_dispatch", "actual_route": "deny_dispatch", "passed": true},
+    {"id": "invalid_revoked_credential", "expected_route": "deny_dispatch", "actual_route": "deny_dispatch", "passed": true},
+    {"id": "invalid_missing_reserved_budget", "expected_route": "require_budget_repair", "actual_route": "require_budget_repair", "passed": true},
+    {"id": "invalid_disputed_receipt", "expected_route": "require_accountable_review", "actual_route": "require_accountable_review", "passed": true},
+    {"id": "invalid_missing_residual_owner", "expected_route": "require_accountable_review", "actual_route": "require_accountable_review", "passed": true}
+  ],
+  "route_counts": {"release_to_local_dispatch": 1, "require_identity_repair": 1, "deny_dispatch": 4, "require_budget_repair": 1, "require_accountable_review": 2},
+  "lean_bridge": {
+    "module": "AsiStackProofs.InterStackProtocols",
+    "source": "lean/AsiStackProofs/InterStackProtocols.lean",
+    "theorems": ["invalid_credential_blocks_dispatch", "missing_reserved_budget_blocks_economic_dispatch", "complete_exchange_reaches_local_dispatch", "missing_sender_requires_identity_repair", "audience_mismatch_denies_dispatch", "expired_request_denies_dispatch", "revoked_credential_denies_dispatch", "disputed_receipt_requires_review", "missing_residual_owner_requires_review"],
+    "build_command": "cd lean && lake build AsiStackProofs.InterStackProtocols"
+  },
+  "support_state_effect": "none",
+  "limitations": ["Records are synthetic and finite.", "No wire protocol, endpoint, peer, resolver, or verifier ran.", "No real identity, credential, account, payment, settlement, or remote effect was used.", "The local-dispatch route is a modeled handoff, not runtime authorization or execution.", "The fixture does not measure latency, privacy, interoperability, task value, false denial, stale acceptance, or dispute recovery."],
+  "non_claims": ["No peer trustworthiness is established.", "No identity truth or authorization correctness is established.", "No task truth, artifact correctness, or effect safety is established.", "No payment, settlement, legality, consent, or fairness is established.", "No privacy or security effectiveness is established.", "No deployment, AGI, ASI, authority, or support-state movement is established."]
+}

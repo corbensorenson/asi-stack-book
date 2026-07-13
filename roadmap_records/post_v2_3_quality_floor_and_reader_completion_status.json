@@ -1,0 +1,87 @@
+{
+  "schema_version": "asi_stack.post_v2_3_quality_floor_reader_completion_status.v0",
+  "snapshot_date": "2026-07-13",
+  "roadmap_id": "asi-stack-post-v2-3-quality-floor-reader-completion-2026-07-13",
+  "roadmap_path": "docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md",
+  "authority": "Corben Sorenson",
+  "status": "completed",
+  "predecessor": {
+    "path": "docs/post_v2_2_implementation_completion_roadmap.md",
+    "state": "completed",
+    "release": "v2.3.0",
+    "source_commit": "e27661166e9105f37cb36d63b15795f80715ca24"
+  },
+  "activation_baseline": {
+    "active_chapter_count": 54,
+    "activation_chapter_ids_sha256": "73436ead9fd12b866b2b688d3d5c3849a8a2d556069a4f4c67c8f141af955182",
+    "public_safe_source_count": 280,
+    "core_claim_count": 54,
+    "core_argument_count": 54,
+    "target_chapter_count": 10,
+    "target_word_minimum": 2333,
+    "target_word_median": 2713,
+    "comparison_lower_quartile": 4486.75,
+    "comparison_median": 4943.5,
+    "historical_curated_reader_records": 44,
+    "current_spine_curated_reader_records": 0,
+    "borrowed_module_count": 2,
+    "registered_proof_artifacts_per_target": 1,
+    "reviewer_flagged_html_count": 1,
+    "confirmed_orphan_html_count": 0,
+    "declared_historical_redirect_count": 10
+  },
+  "priorities": [
+    {"id": "P0", "state": "completed", "purpose": "activate exact quality, reader, hygiene, and breadth-freeze authority", "evidence_refs": ["docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md", "roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json", "schemas/post_v2_3_quality_floor_reader_completion_status.schema.json", "scripts/validate_post_v2_3_quality_floor_reader_completion_roadmap.py"]},
+    {"id": "P1", "state": "completed", "purpose": "complete ten semantic chapter-depth packets", "evidence_refs": ["docs/post_v2_3_chapter_quality_packets.md"]},
+    {"id": "P2", "state": "completed", "purpose": "complete ten owned formal and executable packets", "evidence_refs": ["docs/post_v2_3_chapter_quality_packets.md", "docs/proof_adequacy_review.md", "lean/AsiStackProofs/SafetyCases.lean", "scripts/validate_safety_case_assurance.py", "lean/AsiStackProofs/DataEngines.lean", "scripts/validate_data_engine_full_state_bridge.py"]},
+    {"id": "P3", "state": "completed", "purpose": "create and disposition a current-spine 54-chapter curated reader", "evidence_refs": ["editions/reader_manuscript/v2_0/manifest.json", "editions/reader_manuscript/v2_0/reconciliation_approval.json", "editions/reader_manuscript/v2_0/reader_release_record.json", "editions/reader_manuscript/v2_0/html_release_inspection.json", "scripts/validate_post_v2_3_reader_successor.py", "scripts/validate_post_v2_3_reader_html_artifact.py", "scripts/build_post_v2_3_reader_html_release_record.py"]},
+    {"id": "P4", "state": "completed", "purpose": "adjudicate completed evidence and run only preregistered next campaigns", "evidence_refs": ["docs/post_v2_3_evidence_candidate_ledger.json", "docs/post_v2_3_campaign_results.md", "experiments/post_v2_3_evidence_campaigns/preregistration.json", "experiments/post_v2_3_evidence_campaigns/results/adjudication.json", "scripts/build_post_v2_3_campaign_adjudication.py"]},
+    {"id": "P5", "state": "completed", "purpose": "reconcile, release or record no release, and close the cycle", "evidence_refs": ["release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json", "docs/post_v2_3_quality_floor_reader_completion_declaration.md", "scripts/build_post_v2_3_cycle_no_release_record.py"]}
+  ],
+  "milestones": [
+    {"id": "M0", "state": "completed", "evidence_refs": ["docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md"]},
+    {"id": "M1", "state": "completed", "evidence_refs": ["roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json", "schemas/post_v2_3_quality_floor_reader_completion_status.schema.json", "scripts/validate_post_v2_3_quality_floor_reader_completion_roadmap.py", "README.md", "index.qmd"]},
+    {"id": "M2", "state": "completed", "evidence_refs": ["scripts/validate_chapter_source_hygiene.py"]},
+    {"id": "M3", "state": "completed", "evidence_refs": ["docs/post_v2_3_chapter_quality_packets.md"]},
+    {"id": "M4", "state": "completed", "evidence_refs": ["docs/post_v2_3_chapter_quality_packets.md", "docs/proof_adequacy_review.md", "scripts/validate_safety_case_assurance.py", "scripts/validate_data_engine_full_state_bridge.py"]},
+    {"id": "M5", "state": "completed", "evidence_refs": ["editions/reader_manuscript/v2_0/manifest.json", "editions/reader_manuscript/v2_0/reconciliation_approval.json", "scripts/validate_post_v2_3_reader_successor.py"]},
+    {"id": "M6", "state": "completed", "evidence_refs": ["editions/reader_manuscript/v2_0/reader_release_record.json", "editions/reader_manuscript/v2_0/html_release_inspection.json", "editions/reader_manuscript/v2_0/html_artifact_manifest.json", "scripts/validate_post_v2_3_reader_html_artifact.py", "scripts/build_post_v2_3_reader_html_release_record.py"]},
+    {"id": "M7", "state": "completed", "evidence_refs": ["docs/post_v2_3_evidence_candidate_ledger.json", "docs/post_v2_3_evidence_candidate_ledger.md", "scripts/build_post_v2_3_evidence_candidate_ledger.py"]},
+    {"id": "M8", "state": "completed", "evidence_refs": ["experiments/post_v2_3_evidence_campaigns/preregistration.json", "experiments/post_v2_3_evidence_campaigns/results/program_result.json", "experiments/post_v2_3_evidence_campaigns/results/adjudication.json", "docs/post_v2_3_campaign_results.md", "scripts/build_post_v2_3_campaign_preregistration.py", "scripts/build_post_v2_3_campaign_adjudication.py"]},
+    {"id": "M9", "state": "completed", "evidence_refs": ["release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json", "docs/post_v2_3_quality_floor_reader_completion_declaration.md", "scripts/build_post_v2_3_cycle_no_release_record.py"]}
+  ],
+  "chapter_cohort": [
+    {"id": "scalable-oversight-and-adversarial-ai-control", "file": "chapters/scalable-oversight-and-adversarial-ai-control.qmd", "baseline_word_count": 2663, "activation_lean_module": "AsiStackProofs.ScalableOversight", "required_lean_module": "AsiStackProofs.ScalableOversight", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "model-weight-custody-and-hardware-roots-of-trust", "file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd", "baseline_word_count": 2583, "activation_lean_module": "AsiStackProofs.ModelWeightCustody", "required_lean_module": "AsiStackProofs.ModelWeightCustody", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "ai-supply-chain-integrity-and-lifecycle-provenance", "file": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd", "baseline_word_count": 3608, "activation_lean_module": "AsiStackProofs.SupplyChainIntegrity", "required_lean_module": "AsiStackProofs.SupplyChainIntegrity", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "open-ended-improvement-engines", "file": "chapters/open-ended-improvement-engines.qmd", "baseline_word_count": 2745, "activation_lean_module": "AsiStackProofs.SelfImprovement", "required_lean_module": "AsiStackProofs.OpenEndedImprovement", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "inter-stack-protocols-identity-and-economic-exchange", "file": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd", "baseline_word_count": 3680, "activation_lean_module": "AsiStackProofs.InterStackProtocols", "required_lean_module": "AsiStackProofs.InterStackProtocols", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "governed-deliberation-and-test-time-scaling", "file": "chapters/governed-deliberation-and-test-time-scaling.qmd", "baseline_word_count": 2832, "activation_lean_module": "AsiStackProofs.Deliberation", "required_lean_module": "AsiStackProofs.Deliberation", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "capability-thresholds-and-deployment-commitments", "file": "chapters/capability-thresholds-and-deployment-commitments.qmd", "baseline_word_count": 2631, "activation_lean_module": "AsiStackProofs.CapabilityThresholds", "required_lean_module": "AsiStackProofs.CapabilityThresholds", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "adversarial-evaluation-sandbagging-and-training-time-deception", "file": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd", "baseline_word_count": 2333, "activation_lean_module": "AsiStackProofs.PolicyOptimization", "required_lean_module": "AsiStackProofs.AdversarialEvaluation", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "safety-cases-and-structured-assurance", "file": "chapters/safety-cases-and-structured-assurance.qmd", "baseline_word_count": 2681, "activation_lean_module": "AsiStackProofs.SafetyCases", "required_lean_module": "AsiStackProofs.SafetyCases", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"},
+    {"id": "data-engines-continual-learning-and-unlearning", "file": "chapters/data-engines-continual-learning-and-unlearning.qmd", "baseline_word_count": 3890, "activation_lean_module": "AsiStackProofs.DataEngines", "required_lean_module": "AsiStackProofs.DataEngines", "module_ownership": "owned", "semantic_packet_state": "completed", "formal_packet_state": "completed", "reader_record_state": "reconciled"}
+  ],
+  "reader_successor": {
+    "historical_path": "editions/reader_manuscript/v1_0/manifest.json",
+    "historical_policy": "preserve_frozen_44_chapter_snapshot",
+    "target_record_count": 54,
+    "provisional_path": "editions/reader_manuscript/v2_0/manifest.json",
+    "state": "released",
+    "selected_initial_format": "curated_html"
+  },
+  "breadth_freeze": true,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Roadmap activation does not complete any chapter-depth packet.",
+    "Word count, theorem count, and source count are not sufficient quality evidence.",
+    "The historical v1.0 curated reader is not a current-spine 54-chapter edition.",
+    "Roadmap activation does not create or approve a reader artifact or format.",
+    "Roadmap activation does not accept an evidence transition or move a support state.",
+    "The governed-work no-change record is not silently reclassified as a promotion.",
+    "No new chapter is authorized while the breadth freeze is active.",
+    "External-human prepublication review is not a completion gate.",
+    "Roadmap activation does not establish model quality, safety, transfer, AGI, or ASI."
+  ]
+}

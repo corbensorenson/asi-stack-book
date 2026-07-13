@@ -23,6 +23,10 @@ CYCLE_COMPLETION = ROOT / "docs/v2_3_completion_declaration.md"
 
 ROADMAP_PATH = "docs/post_v2_2_implementation_completion_roadmap.md"
 STATUS_PATH = "roadmap_records/post_v2_2_implementation_completion_status.json"
+ACTIVE_SUCCESSOR_PATH = "docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md"
+ACTIVE_SUCCESSOR_STATUS_PATH = "roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json"
+CURRENT_SUCCESSOR_PATH = "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md"
+CURRENT_SUCCESSOR_STATUS_PATH = "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"
 EXPECTED_PRIORITIES = [f"P{i}" for i in range(6)]
 EXPECTED_MILESTONES = [f"M{i}" for i in range(8)]
 EXPECTED_LANES = [f"QI-{i:02d}" for i in range(1, 13)]
@@ -77,8 +81,8 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("machine roadmap path drifted")
     if status.get("status") == "active" and data["active_roadmaps"] != [ROADMAP_PATH]:
         errors.append("there must be exactly one active canonical roadmap")
-    if status.get("status") == "completed" and data["active_roadmaps"]:
-        errors.append("completed roadmap cannot retain an active-roadmap header")
+    if status.get("status") == "completed" and data["active_roadmaps"] != [CURRENT_SUCCESSOR_PATH]:
+        errors.append("completed roadmap history must coexist with exactly the declared current successor")
 
     baseline = status.get("baseline", {})
     expected_baseline = {
@@ -149,7 +153,7 @@ def semantic_errors(data: dict) -> list[str]:
             errors.append(f"roadmap does not define {lane_id}")
 
     for name, text in [("README.md", data["readme"]), ("index.qmd", data["index"])]:
-        for phrase in [ROADMAP_PATH, STATUS_PATH, "v2.2.0", "v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "all 54 chapter-core claims remain at `argument`"]:
+        for phrase in [ROADMAP_PATH, STATUS_PATH, ACTIVE_SUCCESSOR_PATH, ACTIVE_SUCCESSOR_STATUS_PATH, CURRENT_SUCCESSOR_PATH, CURRENT_SUCCESSOR_STATUS_PATH, "v2.2.0", "v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "all 54 chapter-core claims remain at `argument`"]:
             if phrase not in text:
                 errors.append(f"{name} missing roadmap/release truth: {phrase}")
     predecessor = data["predecessor"]
@@ -157,7 +161,7 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("predecessor roadmap lost completed status")
     if ROADMAP_PATH not in data["predecessor_completion"] or "Successor activated: 2026-07-13" not in data["predecessor_completion"]:
         errors.append("v2.2 completion declaration lacks the dated successor pointer")
-    for phrase in ["v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "29234323320", "29234640734", "closes P5, M7, and the roadmap", "No successor roadmap is"]:
+    for phrase in ["v2.3.0", "e27661166e9105f37cb36d63b15795f80715ca24", "29234323320", "29234640734", "closes P5, M7, and the roadmap", "No successor roadmap is", ACTIVE_SUCCESSOR_PATH, "Successor activated: 2026-07-13"]:
         if phrase not in data["cycle_completion"]:
             errors.append(f"v2.3 completion declaration lacks: {phrase}")
     if status.get("support_state_effect") != "none" or status.get("new_chapter_effect") != "none" or status.get("optional_format_effect") != "none":
@@ -190,7 +194,7 @@ def negative_controls(base: dict) -> list[str]:
     mutations.append(("standalone chapter invention", chapter_invention))
 
     duplicate_active = copy.deepcopy(base)
-    duplicate_active["active_roadmaps"] = [ROADMAP_PATH, "docs/fake_roadmap.md"]
+    duplicate_active["active_roadmaps"] = [CURRENT_SUCCESSOR_PATH, "docs/fake_roadmap.md"]
     mutations.append(("duplicate active roadmap", duplicate_active))
 
     stale_pointer = copy.deepcopy(base)
@@ -234,7 +238,7 @@ def main() -> None:
     print(
         "Post-v2.2 implementation roadmap passed: completed terminal roadmap, 6 priorities, "
         "8 milestones, 12 QCSA implementation lanes, 9 existing chapter owners, "
-        "54 argument-state core claims, no new chapter/format effect, and 8 rejecting mutations."
+        "54 argument-state core claims, one declared current successor, no new chapter/format effect, and 8 rejecting mutations."
     )
 
 

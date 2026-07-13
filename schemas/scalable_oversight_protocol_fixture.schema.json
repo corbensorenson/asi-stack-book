@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/scalable_oversight_protocol_fixture.schema.json",
+  "title": "Scalable Oversight Protocol Fixture",
+  "type": "object",
+  "required": ["schema_version", "scope", "cases", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.scalable_oversight_protocol_fixture.v0"},
+    "scope": {"const": "synthetic_record_routing_only"},
+    "cases": {"type": "array", "minItems": 7, "items": {"$ref": "#/$defs/case"}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "case": {
+      "type": "object",
+      "required": ["id", "record", "expected_route"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "record": {
+          "type": "object",
+          "required": [
+            "protocol_digest_recorded", "task_cohort_recorded",
+            "capability_envelopes_recorded", "evidence_views_recorded",
+            "shared_dependencies_recorded", "direct_review_baseline_recorded",
+            "independent_outcome_audit_recorded", "residual_recorded",
+            "permitted_consumer_recorded", "expiry_recorded",
+            "no_authority_grant_recorded", "high_risk_use",
+            "downstream_use_requested", "abstention_requested",
+            "abstention_evidence_recorded", "abstention_defeater_recorded"
+          ],
+          "properties": {
+            "protocol_digest_recorded": {"type": "boolean"},
+            "task_cohort_recorded": {"type": "boolean"},
+            "capability_envelopes_recorded": {"type": "boolean"},
+            "evidence_views_recorded": {"type": "boolean"},
+            "shared_dependencies_recorded": {"type": "boolean"},
+            "direct_review_baseline_recorded": {"type": "boolean"},
+            "independent_outcome_audit_recorded": {"type": "boolean"},
+            "residual_recorded": {"type": "boolean"},
+            "permitted_consumer_recorded": {"type": "boolean"},
+            "expiry_recorded": {"type": "boolean"},
+            "no_authority_grant_recorded": {"type": "boolean"},
+            "high_risk_use": {"type": "boolean"},
+            "downstream_use_requested": {"type": "boolean"},
+            "abstention_requested": {"type": "boolean"},
+            "abstention_evidence_recorded": {"type": "boolean"},
+            "abstention_defeater_recorded": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "expected_route": {"enum": ["retain_as_draft", "require_access_repair", "require_protocol_redesign", "require_dependency_review", "require_outcome_audit", "require_abstention_evidence", "reject_authority_laundering", "admit_bounded_use"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

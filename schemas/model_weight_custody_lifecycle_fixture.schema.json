@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/model_weight_custody_lifecycle_fixture.schema.json",
+  "title": "Model Weight Custody Lifecycle Fixture",
+  "type": "object",
+  "required": ["schema_version", "scope", "cases", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.model_weight_custody_lifecycle_fixture.v0"},
+    "scope": {"const": "synthetic_record_routing_only"},
+    "cases": {"type": "array", "minItems": 8, "maxItems": 8, "items": {"$ref": "#/$defs/case"}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "case": {
+      "type": "object",
+      "required": ["id", "record", "expected_route"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "record": {
+          "type": "object",
+          "required": ["artifact_digest_recorded", "lineage_recorded", "policy_digest_recorded", "verifier_identity_recorded", "measurement_recorded", "recipient_scope_recorded", "expiry_recorded", "attestation_current", "attestation_valid", "verifier_dependencies_recorded", "independent_load_observation_recorded", "residual_owner_recorded", "revocation_semantics_recorded", "no_authority_grant_recorded", "load_requested", "distribution_requested", "irreversibility_acknowledged"],
+          "properties": {
+            "artifact_digest_recorded": {"type": "boolean"},
+            "lineage_recorded": {"type": "boolean"},
+            "policy_digest_recorded": {"type": "boolean"},
+            "verifier_identity_recorded": {"type": "boolean"},
+            "measurement_recorded": {"type": "boolean"},
+            "recipient_scope_recorded": {"type": "boolean"},
+            "expiry_recorded": {"type": "boolean"},
+            "attestation_current": {"type": "boolean"},
+            "attestation_valid": {"type": "boolean"},
+            "verifier_dependencies_recorded": {"type": "boolean"},
+            "independent_load_observation_recorded": {"type": "boolean"},
+            "residual_owner_recorded": {"type": "boolean"},
+            "revocation_semantics_recorded": {"type": "boolean"},
+            "no_authority_grant_recorded": {"type": "boolean"},
+            "load_requested": {"type": "boolean"},
+            "distribution_requested": {"type": "boolean"},
+            "irreversibility_acknowledged": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "expected_route": {"enum": ["retain_as_draft", "require_lineage_repair", "require_policy_review", "require_fresh_attestation", "require_dependency_review", "require_independent_observation", "reject_release_laundering", "record_irreversible_release", "admit_bounded_load"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

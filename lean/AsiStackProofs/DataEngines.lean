@@ -68,4 +68,183 @@ theorem complete_data_record_routes_to_eligible
   simp [DataAdmissionRouteFor, provenance, authority, exclusions, contamination,
     retention, deletion, evaluation, residuals]
 
+inductive FullStateUpdateRoute where
+  | requireInventoryRepair
+  | requireCheckpointAuthorityRepair
+  | requireRollbackRepair
+  | releaseToEvidenceReview
+deriving DecidableEq, Repr
+
+structure FullStateUpdateReview where
+  modelStateRecorded : Bool
+  optimizerStateRecorded : Bool
+  schedulerStateRecorded : Bool
+  rngStateRecorded : Bool
+  cacheStateRecorded : Bool
+  backupStateRecorded : Bool
+  descendantStateRecorded : Bool
+  prospectiveCheckpointAuthorityRecorded : Bool
+  rollbackExactRecorded : Bool
+deriving DecidableEq, Repr
+
+def FullStateUpdateRouteFor (review : FullStateUpdateReview) : FullStateUpdateRoute :=
+  if review.modelStateRecorded = false ∨ review.optimizerStateRecorded = false ∨
+      review.schedulerStateRecorded = false ∨ review.rngStateRecorded = false ∨
+      review.cacheStateRecorded = false ∨ review.backupStateRecorded = false ∨
+      review.descendantStateRecorded = false then
+    FullStateUpdateRoute.requireInventoryRepair
+  else if review.prospectiveCheckpointAuthorityRecorded = false then
+    FullStateUpdateRoute.requireCheckpointAuthorityRepair
+  else if review.rollbackExactRecorded = false then
+    FullStateUpdateRoute.requireRollbackRepair
+  else
+    FullStateUpdateRoute.releaseToEvidenceReview
+
+theorem complete_full_state_update_reaches_evidence_review
+    {review : FullStateUpdateReview} :
+    review.modelStateRecorded = true ->
+    review.optimizerStateRecorded = true ->
+    review.schedulerStateRecorded = true ->
+    review.rngStateRecorded = true ->
+    review.cacheStateRecorded = true ->
+    review.backupStateRecorded = true ->
+    review.descendantStateRecorded = true ->
+    review.prospectiveCheckpointAuthorityRecorded = true ->
+    review.rollbackExactRecorded = true ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.releaseToEvidenceReview := by
+  intro model optimizer scheduler rng cache backup descendant authority rollback
+  simp [FullStateUpdateRouteFor, model, optimizer, scheduler, rng, cache, backup,
+    descendant, authority, rollback]
+
+theorem missing_optimizer_state_requires_inventory_repair
+    {review : FullStateUpdateReview} :
+    review.optimizerStateRecorded = false ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.requireInventoryRepair := by
+  intro missing
+  simp [FullStateUpdateRouteFor, missing]
+
+theorem missing_scheduler_state_requires_inventory_repair
+    {review : FullStateUpdateReview} :
+    review.schedulerStateRecorded = false ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.requireInventoryRepair := by
+  intro missing
+  simp [FullStateUpdateRouteFor, missing]
+
+theorem missing_rng_state_requires_inventory_repair
+    {review : FullStateUpdateReview} :
+    review.rngStateRecorded = false ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.requireInventoryRepair := by
+  intro missing
+  simp [FullStateUpdateRouteFor, missing]
+
+theorem missing_cache_state_requires_inventory_repair
+    {review : FullStateUpdateReview} :
+    review.cacheStateRecorded = false ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.requireInventoryRepair := by
+  intro missing
+  simp [FullStateUpdateRouteFor, missing]
+
+theorem missing_backup_state_requires_inventory_repair
+    {review : FullStateUpdateReview} :
+    review.backupStateRecorded = false ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.requireInventoryRepair := by
+  intro missing
+  simp [FullStateUpdateRouteFor, missing]
+
+theorem missing_descendant_state_requires_inventory_repair
+    {review : FullStateUpdateReview} :
+    review.descendantStateRecorded = false ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.requireInventoryRepair := by
+  intro missing
+  simp [FullStateUpdateRouteFor, missing]
+
+theorem missing_prospective_checkpoint_authority_requires_repair
+    {review : FullStateUpdateReview} :
+    review.modelStateRecorded = true ->
+    review.optimizerStateRecorded = true ->
+    review.schedulerStateRecorded = true ->
+    review.rngStateRecorded = true ->
+    review.cacheStateRecorded = true ->
+    review.backupStateRecorded = true ->
+    review.descendantStateRecorded = true ->
+    review.prospectiveCheckpointAuthorityRecorded = false ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.requireCheckpointAuthorityRepair := by
+  intro model optimizer scheduler rng cache backup descendant missingAuthority
+  simp [FullStateUpdateRouteFor, model, optimizer, scheduler, rng, cache, backup,
+    descendant, missingAuthority]
+
+theorem rollback_mismatch_requires_repair
+    {review : FullStateUpdateReview} :
+    review.modelStateRecorded = true ->
+    review.optimizerStateRecorded = true ->
+    review.schedulerStateRecorded = true ->
+    review.rngStateRecorded = true ->
+    review.cacheStateRecorded = true ->
+    review.backupStateRecorded = true ->
+    review.descendantStateRecorded = true ->
+    review.prospectiveCheckpointAuthorityRecorded = true ->
+    review.rollbackExactRecorded = false ->
+    FullStateUpdateRouteFor review = FullStateUpdateRoute.requireRollbackRepair := by
+  intro model optimizer scheduler rng cache backup descendant authority mismatch
+  simp [FullStateUpdateRouteFor, model, optimizer, scheduler, rng, cache, backup,
+    descendant, authority, mismatch]
+
+inductive UnlearningClaimRoute where
+  | boundedBehavioralLineageReport
+  | rejectInfluenceLaundering
+  | rejectPrivacyLaundering
+  | rejectStorageLaundering
+deriving DecidableEq, Repr
+
+structure UnlearningClaimReview where
+  behavioralChangeObserved : Bool
+  lineagePropagationObserved : Bool
+  influenceEvidenceRecorded : Bool
+  influenceReductionClaimed : Bool
+  privacyEvidenceRecorded : Bool
+  privacyErasureClaimed : Bool
+  storageErasureVerified : Bool
+  storageErasureClaimed : Bool
+deriving DecidableEq, Repr
+
+def UnlearningClaimRouteFor (review : UnlearningClaimReview) : UnlearningClaimRoute :=
+  if review.influenceReductionClaimed = true ∧ review.influenceEvidenceRecorded = false then
+    UnlearningClaimRoute.rejectInfluenceLaundering
+  else if review.privacyErasureClaimed = true ∧ review.privacyEvidenceRecorded = false then
+    UnlearningClaimRoute.rejectPrivacyLaundering
+  else if review.storageErasureClaimed = true ∧ review.storageErasureVerified = false then
+    UnlearningClaimRoute.rejectStorageLaundering
+  else
+    UnlearningClaimRoute.boundedBehavioralLineageReport
+
+theorem behavioral_change_cannot_launder_influence_reduction
+    {review : UnlearningClaimReview} :
+    review.behavioralChangeObserved = true ->
+    review.influenceReductionClaimed = true ->
+    review.influenceEvidenceRecorded = false ->
+    UnlearningClaimRouteFor review = UnlearningClaimRoute.rejectInfluenceLaundering := by
+  intro _ claimed missingEvidence
+  simp [UnlearningClaimRouteFor, claimed, missingEvidence]
+
+theorem behavioral_change_cannot_launder_privacy_erasure
+    {review : UnlearningClaimReview} :
+    review.behavioralChangeObserved = true ->
+    review.privacyErasureClaimed = true ->
+    review.privacyEvidenceRecorded = false ->
+    review.influenceReductionClaimed = false ->
+    UnlearningClaimRouteFor review = UnlearningClaimRoute.rejectPrivacyLaundering := by
+  intro _ claimed missingEvidence noInfluenceClaim
+  simp [UnlearningClaimRouteFor, claimed, missingEvidence, noInfluenceClaim]
+
+theorem lineage_propagation_cannot_launder_storage_erasure
+    {review : UnlearningClaimReview} :
+    review.lineagePropagationObserved = true ->
+    review.storageErasureClaimed = true ->
+    review.storageErasureVerified = false ->
+    review.influenceReductionClaimed = false ->
+    review.privacyErasureClaimed = false ->
+    UnlearningClaimRouteFor review = UnlearningClaimRoute.rejectStorageLaundering := by
+  intro _ claimed notVerified noInfluenceClaim noPrivacyClaim
+  simp [UnlearningClaimRouteFor, claimed, notVerified, noInfluenceClaim, noPrivacyClaim]
+
 end AsiStackProofs.DataEngines

@@ -49,7 +49,8 @@ REQUIRED_SUMMARY_FRAGMENTS = [
     "Record-reality gap",
     "Human oversight degradation",
     "receipt_faithfulness_gap",
-    "all 44 chapter core claims remain",
+    "all 54 chapter core claims remain",
+    "two exact live non-core QCSA refutations",
     "does not approve reader, release, ebook, PDF, DOCX, audio",
 ]
 REQUIRED_PUBLIC_LINK = "docs/contribution_novelty_ledger.md"
@@ -219,6 +220,25 @@ def validate_surfaces(errors: list[str]) -> None:
     roadmap_text = " ".join(ROADMAP.read_text(encoding="utf-8").split())
     if "Novelty claims without a ledger row do not belong in reader prose" not in roadmap_text:
         errors.append(f"{rel(ROADMAP)} missing ledger prose guardrail.")
+
+    records = load_json(LEDGER).get("records", [])
+    support_rows = [row for row in records if isinstance(row, dict) and row.get("idea_id") == "support_state_ladder"]
+    if len(support_rows) != 1:
+        errors.append(f"{rel(LEDGER)} must contain exactly one support_state_ladder row.")
+    else:
+        row_blob = text_blob(*support_rows[0].values())
+        for claim_id in ("qcsa.exact_synthetic_matched_advantage", "qcsa.active_questions_exact_fixture_value"):
+            if claim_id not in row_blob:
+                errors.append(f"{rel(LEDGER)} support_state_ladder row missing exact refuted claim: {claim_id}")
+        if support_rows[0].get("confidence_state") != "exact_non_core_refutations_recorded_chapter_core_unmoved":
+            errors.append(f"{rel(LEDGER)} support_state_ladder confidence state is stale.")
+    for transition in (
+        "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
+        "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
+    ):
+        value = load_json(ROOT / transition)
+        if value.get("transition_effect") != "refuted" or value.get("new_support_state") != "refuted" or value.get("review_status") != "accepted":
+            errors.append(f"{transition} must remain an exact accepted refutation.")
 
 
 def main() -> None:

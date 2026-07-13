@@ -1,0 +1,89 @@
+{
+  "transition_id": "post_v2_3.qcsa_governance_prevention_resource_tradeoff.narrow",
+  "claim_id": "qcsa.governance_prevention_resource_tradeoff",
+  "claim_surface_refs": [
+    "docs/qcsa_reference_evaluation_report.md",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "docs/post_v2_3_evidence_candidate_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "QCSA prevents more exact governance/migration failures at an acceptable matched resource ratio.",
+  "evidence_roles": [
+    "bounded_synthetic_evaluation",
+    "frozen_ablation_or_reference_comparator",
+    "content_addressed_result",
+    "core_support_boundary"
+  ],
+  "transition_reason": "Prevention was 1.000000 versus 0.487179, a 0.512821 gain, but the 1.913386 operation ratio exceeded the preregistered 1.50 governance ceiling.",
+  "required_artifacts": [
+    "The prevention definition combines object, decision, authority, and structural fixture failures and is not a production incident rate.",
+    "natural tasks, learned models, external replication, and production transfer before broader use"
+  ],
+  "artifact_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "evidence_packet_refs": [
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/C_claim_evidence_matrix.qmd"
+  ],
+  "evidence_quality_before_refs": [
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "evidence_quality_after_refs": [
+    "docs/post_v2_3_evidence_candidate_ledger.json",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "exact deterministic replay and result digests",
+    "adversarial_strength": "frozen ablation or expected-invalid controls",
+    "validity": "internal synthetic labels and evaluator only",
+    "transfer_distance": "not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core"
+  ],
+  "verification_command": "python3 scripts/validate_qcsa_evaluation.py && python3 scripts/build_post_v2_3_evidence_candidate_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Prevention was 1.000000 versus 0.487179, a 0.512821 gain, but the 1.913386 operation ratio exceeded the preregistered 1.50 governance ceiling."
+  ],
+  "negative_evidence_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "downgrade_triggers": [
+    "result or disposition digest mismatch",
+    "ablation denominator or cost erasure",
+    "synthetic scope described as natural or production evidence",
+    "chapter-core promotion inferred from this non-core record"
+  ],
+  "promotion_burden": "The prevention definition combines object, decision, authority, and structural fixture failures and is not a production incident rate.; natural workloads, learned models, independent evaluation, and transfer evidence required for broader claims",
+  "limitations": [
+    "The prevention definition combines object, decision, authority, and structural fixture failures and is not a production incident rate."
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2.3 adjudication cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "The prevention definition combines object, decision, authority, and structural fixture failures and is not a production incident rate."
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-13---post-v23-evidence-adjudication",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any chapter-core claim above argument",
+    "does not establish natural-task or production transfer",
+    "does not establish external independence, safety, privacy, security, AGI, or ASI",
+    "does not promote resource-economics-and-token-budgets.core"
+  ]
+}

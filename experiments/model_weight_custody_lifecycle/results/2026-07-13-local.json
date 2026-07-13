@@ -1,0 +1,37 @@
+{
+  "schema_version": "asi_stack.model_weight_custody_lifecycle_result.v0",
+  "run_date": "2026-07-13",
+  "fixture_path": "experiments/model_weight_custody_lifecycle/fixtures/cases.json",
+  "fixture_sha256": "4a600f9d787437fde904d512a8049cb23b877a341527d223891cc1b80b221702",
+  "case_results": [
+    {"id": "valid_observed_bounded_load", "expected_route": "admit_bounded_load", "actual_route": "admit_bounded_load", "passed": true},
+    {"id": "invalid_missing_lineage", "expected_route": "require_lineage_repair", "actual_route": "require_lineage_repair", "passed": true},
+    {"id": "invalid_missing_policy_digest", "expected_route": "require_policy_review", "actual_route": "require_policy_review", "passed": true},
+    {"id": "invalid_stale_attestation", "expected_route": "require_fresh_attestation", "actual_route": "require_fresh_attestation", "passed": true},
+    {"id": "invalid_undisclosed_verifier_dependencies", "expected_route": "require_dependency_review", "actual_route": "require_dependency_review", "passed": true},
+    {"id": "invalid_unobserved_load", "expected_route": "require_independent_observation", "actual_route": "require_independent_observation", "passed": true},
+    {"id": "invalid_distribution_authority_laundering", "expected_route": "reject_release_laundering", "actual_route": "reject_release_laundering", "passed": true},
+    {"id": "valid_irreversible_distribution_record", "expected_route": "record_irreversible_release", "actual_route": "record_irreversible_release", "passed": true}
+  ],
+  "route_counts": {"admit_bounded_load": 1, "require_lineage_repair": 1, "require_policy_review": 1, "require_fresh_attestation": 1, "require_dependency_review": 1, "require_independent_observation": 1, "reject_release_laundering": 1, "record_irreversible_release": 1},
+  "lean_bridge": {
+    "module": "AsiStackProofs.ModelWeightCustody",
+    "source": "lean/AsiStackProofs/ModelWeightCustody.lean",
+    "theorems": ["required_invalid_attestation_blocks_requested_load", "missing_lineage_requires_custody_repair", "complete_observed_load_is_bounded", "missing_lineage_blocks_lifecycle", "stale_attestation_requires_refresh", "undisclosed_verifier_dependencies_require_review", "unobserved_load_requires_observation", "distribution_cannot_launder_load_authority", "acknowledged_distribution_records_irreversibility"],
+    "build_command": "cd lean && lake build AsiStackProofs.ModelWeightCustody"
+  },
+  "support_state_effect": "none",
+  "limitations": [
+    "The runner recomputes deterministic routes over eight finite Boolean records.",
+    "The Lean bridge proves route consequences for finite structures, not hardware or security behavior.",
+    "No weight, key, credential, attestation, verifier, trusted environment, or load is executed.",
+    "No confidentiality, extraction resistance, availability, release benefit, or security metric is measured."
+  ],
+  "non_claims": [
+    "This result does not establish hardware trustworthiness or attestation genuineness.",
+    "This result does not establish weight confidentiality, extraction resistance, or verifier independence.",
+    "This result does not establish model safety, readiness, deployment authority, AGI, or ASI.",
+    "This result does not authorize a key release, model load, distribution, or evidence transition.",
+    "This result creates no chapter-core or non-core support-state movement."
+  ]
+}

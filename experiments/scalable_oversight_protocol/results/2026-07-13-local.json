@@ -1,0 +1,53 @@
+{
+  "schema_version": "asi_stack.scalable_oversight_protocol_result.v0",
+  "run_date": "2026-07-13",
+  "fixture_path": "experiments/scalable_oversight_protocol/fixtures/cases.json",
+  "fixture_sha256": "2dad2470b5530f2ab2e149bd508eee195093d5631e2f9ed0f0f98811f1759068",
+  "case_results": [
+    {"id": "valid_bounded_use", "expected_route": "admit_bounded_use", "actual_route": "admit_bounded_use", "passed": true},
+    {"id": "invalid_missing_evidence_views", "expected_route": "require_access_repair", "actual_route": "require_access_repair", "passed": true},
+    {"id": "invalid_undisclosed_shared_dependencies", "expected_route": "require_dependency_review", "actual_route": "require_dependency_review", "passed": true},
+    {"id": "invalid_missing_direct_baseline", "expected_route": "require_protocol_redesign", "actual_route": "require_protocol_redesign", "passed": true},
+    {"id": "invalid_high_risk_missing_outcome_audit", "expected_route": "require_outcome_audit", "actual_route": "require_outcome_audit", "passed": true},
+    {"id": "invalid_unjustified_abstention", "expected_route": "require_abstention_evidence", "actual_route": "require_abstention_evidence", "passed": true},
+    {"id": "invalid_authority_laundering", "expected_route": "reject_authority_laundering", "actual_route": "reject_authority_laundering", "passed": true}
+  ],
+  "route_counts": {
+    "admit_bounded_use": 1,
+    "require_access_repair": 1,
+    "require_dependency_review": 1,
+    "require_protocol_redesign": 1,
+    "require_outcome_audit": 1,
+    "require_abstention_evidence": 1,
+    "reject_authority_laundering": 1
+  },
+  "lean_bridge": {
+    "module": "AsiStackProofs.ScalableOversight",
+    "source": "lean/AsiStackProofs/ScalableOversight.lean",
+    "theorems": [
+      "missing_outcome_audit_blocks_high_risk_admission",
+      "missing_baseline_requires_protocol_redesign",
+      "complete_bounded_use_is_admitted",
+      "missing_evidence_views_requires_access_repair",
+      "undisclosed_shared_dependencies_require_review",
+      "high_risk_use_without_outcome_audit_requires_audit",
+      "unjustified_abstention_requires_evidence",
+      "downstream_use_cannot_launder_authority"
+    ],
+    "build_command": "cd lean && lake build AsiStackProofs.ScalableOversight"
+  },
+  "support_state_effect": "none",
+  "limitations": [
+    "The runner recomputes deterministic routes over seven finite Boolean records.",
+    "The Lean bridge proves route consequences for finite structures, not reviewer or model behavior.",
+    "No model, human judge, debate, consultancy, weak-to-strong learner, or outcome workload is executed.",
+    "No independence, calibration, usefulness, safety, or transfer metric is measured."
+  ],
+  "non_claims": [
+    "This result does not establish reviewer independence or judge calibration.",
+    "This result does not establish debate, consultancy, or weak-to-strong efficacy.",
+    "This result does not establish alignment, safety, security, privacy, model quality, AGI, or ASI.",
+    "This result does not grant training, release, execution, or evidence-transition authority.",
+    "This result creates no chapter-core or non-core support-state movement."
+  ]
+}

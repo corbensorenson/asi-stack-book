@@ -1,0 +1,32 @@
+{
+  "schema_version": "asi_stack.post_v2_3_campaign_program_result.v0",
+  "program_id": "post-v2-3-governance-tax-and-residual-honesty",
+  "preregistration_sha256": "76d82b195c31f58ed096260fa3c50dd35e20742d9f671e552ad22e07cfee8e65",
+  "model_calls": 36,
+  "completed_campaigns": 2,
+  "wall_seconds": 1106.035618,
+  "environment": {
+    "platform": "macOS-15.0-arm64-arm-64bit",
+    "python": "3.9.23",
+    "mlx": "0.29.3",
+    "mlx_lm": "0.29.1",
+    "model_snapshot": "/Users/corbensorenson/.cache/huggingface/hub/models--mlx-community--Qwen3-4B-4bit/snapshots/4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+    "network_calls": 0,
+    "external_spend_usd": 0
+  },
+  "result_refs": [
+    "experiments/post_v2_3_evidence_campaigns/results/governance_tax.json",
+    "experiments/post_v2_3_evidence_campaigns/results/residual_honesty.json"
+  ],
+  "result_sha256": {
+    "governance_tax": "0f3abd2bfa356993a5336f70f6a8aae1d2c26760a0aaaab7d8916960aafbf3cc",
+    "residual_honesty": "c88b0b196829bb978db6f8d42a8bcc5cf932c61492d2e922df8b3a758772c163"
+  },
+  "support_state_effect": "none_pending_adjudication",
+  "non_claims": [
+    "Completion is not evidence promotion.",
+    "The model and evaluator remain local and internal.",
+    "No production, safety, governance-efficacy, AGI, or ASI claim is established."
+  ],
+  "bundle_sha256": "543b835238772e117e62869cd92ab831d632b95dd642b39ebc40fed1035f358c"
+}

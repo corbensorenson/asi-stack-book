@@ -1,0 +1,256 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: claim-ledgers-and-belief-revision
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/claim-ledgers-and-belief-revision.qmd
+live_source_ref: chapters/claim-ledgers-and-belief-revision.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Claim Ledgers and Belief Revision
+
+Once verification adequacy is visible, claims need a durable revision home. Important statements become ledgered objects that can be supported, challenged, downgraded, split, merged, promoted, or retired without losing their identity.
+
+The claim ledger is the architecture's memory for belief. Prose can change, but the ledger should remember what was asserted, what supported it, what challenged it, and why it changed. That is how a living manuscript avoids becoming a polished record of forgotten assumptions.
+
+Belief revision is therefore a maintenance operation, not an embarrassment. Downgrades, splits, contradictions, and retirements are signs that the evidence machinery is still attached to the prose. The healthiest ledger can remember being wrong without losing the trail of why, which lets confidence change without erasing accountability.
+
+Belief revision becomes safer when a downgrade is treated as progress. The ledger protects the path by which uncertainty becomes clearer, and it earns authority only when the old uncertainty remains inspectable while new evidence arrives from elsewhere. That old trail is part of the evidence, not editorial clutter.
+
+## Problem
+
+The architecture needs a durable epistemic layer for claims, evidence, contradictions, uncertainty, and revision.
+
+The VCM chapters decide what context is admitted and adequate. Reasoning now needs to decide what the system believes, why it believes it, how strongly it can say it, and what happens when evidence changes. Spinoza supplies the core discipline: neural systems can propose claims, but claims need structured support states, provenance, contradiction links, defeaters, and downgrade paths before they become commitments.
+
+In the book itself, Appendix C is the public claim ledger. The architecture should generalize that discipline: prose is an output view, not the place where belief state lives.
+
+Within the governed-cognition pattern, the claim-ledger layer owns the belief-state continuity delta. Evidence States says when a claim may move; the claim ledger says how the claim keeps its identity while wording, source context, contradiction state, surface refs, and revision history change. Other layers can cite claim records; the claim-ledger layer defines how belief survives restatement without overwriting what the system used to think.
+
+The ledger also has to record absence. A claim can lack evidence, have expired evidence, rely on contested evidence, or depend on a source that is not yet loaded. Those are different states. If they collapse into "uncertain," future agents cannot decide whether to fetch a source, run a test, ask a tribunal, or downgrade the claim.
+
+## Why existing approaches are insufficient
+
+A model can generate plausible prose without maintaining why it believes a claim or how new evidence changes prior beliefs.
+
+A fluent answer can contain assumptions that were never extracted, contradictions that were never linked, and claims that keep their confident tone after evidence weakens. Belief inertia is the epistemic version of technical debt: a claim remains in circulation because no artifact forces it to be revised.
+
+External evidence-generation baselines underline the same problem. ALCE (`ext_alce_2023`) evaluates whether generated answers are actually supported by citations, Self-RAG (`ext_self_rag_2023`) attaches retrieval and critique signals to generation, and CheckList (`ext_checklist_2020`) turns behavioral expectations into testable matrices. Claim ledgers generalize that pressure into belief-revision records: claims need source roles, contradiction handling, downgrade paths, and negative evidence, not just fluent citation-adjacent prose.
+
+Older belief-change and truth-maintenance lineages make the prior-art boundary sharper. AGM belief revision (`ext_agm_belief_revision_1985`) formalizes contraction and revision as operations over theories. Doyle's truth-maintenance system (`ext_truth_maintenance_system_1979`) treats reasons and justifications for program beliefs as maintained objects. de Kleer's assumption-based TMS (`ext_assumption_based_tms_1986`) shifts attention to assumption sets, inconsistent information, and context switching. The ASI claim ledger is not a replacement for those systems. It is an architecture bridge from explicit belief-change and reason-maintenance discipline into AI-generated artifacts: support states, publication surfaces, contradiction links, revision history, and release gates.
+
+Aletheia and UAT both push against this failure by decomposing outputs into propositions, preserving unsupported or inferred states, and routing uncertainty to review. The claim ledger gives those states a durable home.
+
+Another insufficiency is cross-output drift. The same claim can appear in a chapter, diagram, appendix, release note, and future reader edition with slightly different wording. Without a ledger identity, the system cannot tell whether those are restatements of one claim, narrower variants, or accidental contradictions.
+
+## Core Claim
+
+Reasoning should maintain claim ledgers with support states, provenance, contradiction links, uncertainty, and revision history (evidence boundary: architectural argument).
+Spinoza supplies proposer/verifier separation, proposition graphs, enforced tiers, contradiction-triggered revision, dependency tracing, and downgrade discipline. VIEA supplies artifact and claim-ledger pressure: important claims should become durable artifacts with support states, evidence relationships, provenance, and downgrade policy. Aletheia and UAT supply claim-native artifacts, verification gates, bounded review, retrieval-bounded proposition states, and SME adjudication routes. Coherence Exchange remains connector review context speculative governance vocabulary, not external corroboration.
+
+### Strongest objection
+
+A monotone revision ledger can be consistently wrong. Contradiction strength,
+dependency closure, ontology migrations, and restart visibility are themselves
+judgments that may be incomplete or biased. The ledger can guarantee that a
+recorded strong contradiction receives no weaker response than a recorded weak
+one; it cannot guarantee the contradiction detector found the right evidence
+or that the ontology describes reality. Those remain separate empirical and
+review burdens.
+
+## Mechanism
+
+After context adequacy decides what a packet can support, reasoning needs a durable place for claims, uncertainty, contradictions, and updates. Spinoza supplies the internal mechanics: proposition nodes carry provenance, tiers, dependencies, validity state, versions, audit hashes, and justifications; contradictions trigger bounded revision by dependency slicing, unsat-core use where available, entrenchment-scored retraction, invalidation, re-verification, and logs. VIEA turns the same discipline into an execution-system rule: important outputs become artifacts, claims receive support states, evidence can support or challenge them, and expired, failed, challenged, or contradicted support causes downgrade. Aletheia hardens the artifact boundary by requiring claim-native objects, evidence refs, verification tiers, adversarial review, and explicit contradiction handling. UAT supplies the human review path for claims that are inferred, unsupported, contested, or vulnerable to dossier error. Coherence Exchange contributes connector review governance vocabulary without becoming external corroboration.
+
+A Belief Revision Record is the ledger transition that keeps claims separable from prose and keeps every support-state change tied to evidence, contradiction handling, uncertainty, and history.
+
+```{mermaid}
+flowchart LR
+A["Generated or extracted claim"] --> B["Claim record"]
+B --> C["Evidence refs + support state"]
+C --> D["Contradiction / defeater scan"]
+D --> E{"Revision needed?"}
+E -- "no" --> F["Retain with state"]
+E -- "yes" --> G["Revise / downgrade / block"]
+G --> H["Revision history"]
+F --> H
+H --> I["Claim ledger"]
+I --> J["Publication support boundary"]
+J --> K["Future review trigger"]
+```
+
+**Reading the claim ledger:** The ledger path keeps claim text, evidence refs, contradiction scans, revision events, and publication boundaries separate. A contradiction does not disappear when prose is revised; it creates a downgrade, block, revision history, or future review trigger.
+
+The mechanism is a sequence rather than a checklist. Generated or extracted claims become ledger entries; each entry receives provenance, support state, uncertainty, evidence refs, and contradiction refs; and later evidence can revise the entry without erasing the prior state. When a contradiction is unresolved, the ledger preserves it and blocks support-state promotion instead of smoothing it into prose.
+
+The lifecycle should be explicit: proposed, recorded, mapped, challenged, revised, downgraded, deprecated, split, merged, promoted, or retired. These are ledger events, not editorial moods. A source note, proof result, tribunal verdict, benchmark record, or failed replication can all become revision causes, but none of them should overwrite the history they changed.
+
+The ledger separates claim text, claim label, support state, evidence refs, uncertainty, contradictions, revision reason, and review status. A claim can remain useful while unsupported, speculative, contradicted, or blocked, but it must be labeled accordingly.
+
+Belief revision is not just promotion. It includes downgrade, deprecation, split, merge, contradiction preservation, and residual creation. Negative evidence is an asset because it prevents the system from relearning the same false confidence.
+
+### Monotone contradiction and bounded repair
+
+The historical-project packet separates four dimensions that are often
+collapsed: justification state, claim lifecycle, commitment state, and action
+authority. It then records weak, medium, and strong contradiction events with
+responses that may strengthen but never weaken: annotate, block promotion,
+then downgrade or split. Supersession names both the replaced claim and its
+successors; every unresolved contradiction remains a residual. Dependency
+repair is bounded to an exact declared affected closure, ontology changes carry
+a versioned migration, and a restart observation must still expose the old
+claim, successors, revision, and residuals.
+
+### Evidence-bearing semantic graphs
+
+QCSA makes a useful evidential prohibition explicit: ontology is not belief,
+and addressability is not truth. Object definitions, type declarations,
+propositions, evidence for and against them, source and derivation lineage,
+current support state, contradiction, and authority to use a proposition are
+different records even when they share one typed hypergraph. A graph edge can
+be asserted, hypothesized, disputed, time-bounded, source-scoped, superseded,
+or revoked.
+
+A Semantic Address Certificate may route a verifier to the right claim cluster
+and state confidence that the cluster is the intended one. It cannot promote
+the proposition. Certificate integrity proves only that the recorded address
+lease has not changed under its integrity contract; atlas confidence concerns
+resolution, not evidential truth. The claim ledger remains the authority for
+support state, attacks, revisions, and permitted evidential use.
+
+Typed hyperedges also let a claim retain role structure for events with many
+participants, times, quantities, conditions, and receipts without duplicating
+their identities. The bounded implementation now rejects dangling evidence,
+preserves contradictions, and selects the evaluator-labelled proposition in
+all held-out evidence-revision fixtures. The governed vertical trace likewise
+keeps the proposition, evidence, provenance, permitted use, and authority
+records separate.
+
+This is record-integrity and exact synthetic task evidence, not
+ontology-completeness, belief correctness, source adequacy, or truth. The
+held-out labels were constructed from the same finite fixture family, and no
+natural contradictory corpus or independent truth adjudication was used. The
+claim ledger remains the only owner of support-state movement, and this core
+claim remains at `argument`.
+
+## Interfaces
+
+Belief changes move through the Belief Revision Record.
+
+- VCM supplies source context.
+- Spinoza verifies claims.
+- Evidence matrix records book-level claims.
+
+Minimum fields:
+
+- `revision_id`
+- `claim_id`
+- `claim_scope`
+- `lifecycle_state`
+- `prior_support_state`
+- `new_support_state`
+- `evidence_refs`
+- `surface_refs`
+- `contradiction_refs`
+- `contradiction_state`
+- `defeaters`
+- `residual_refs`
+- `revision_reason`
+- `uncertainty`
+- `review_status`
+- `history_refs`
+- `changed_surface_refs`
+- `non_overwrite_attestation`
+- `ledger_effect`
+- `promotion_blockers`
+- `non_claims`
+
+VCM supplies source context. Spinoza verifies or downgrades claims. UAT can review contested claims. Appendix C records book-level claim support while preserving revision history.
+
+The handoff to Spinoza should name the requested tier and the reason the claim deserves stronger treatment. The handoff to tribunal should name the conflict, risk class, dossier boundary, and what action would follow a verdict. Otherwise escalation becomes another way to delay revision.
+
+The public claim and revision schemas now record claim scope, lifecycle state, surface refs, contradiction state, residual refs, changed surfaces, non-overwrite attestation, ledger effect, promotion blockers, and non-claims. Those fields do not extract claims or detect contradictions. They keep a later extractor, editor, or release process from treating a repeated claim as a new unsupported assertion or from quietly improving the tone of a claim whose ledger state did not improve.
+
+## Invariants
+
+- Claims are separable from prose.
+- Contradictions remain linked.
+- Revision history is not overwritten.
+
+The non-overwrite invariant is central. New evidence can change the current state, but it cannot erase the fact that a prior state existed, which evidence supported it, and why it changed.
+
+Regenerated prose discipline is part of the ledger contract. If published text changes the meaning, support state, or scope of a ledgered claim, the ledger must change too. Reader editions can simplify scaffolding, but they cannot silently upgrade confidence or remove residuals that are material to the claim.
+
+Ledger identity also survives across editions, so polished prose cannot become a new unsupported claim.
+
+Supersession must name the replaced claim, not merely publish a cleaner successor.
+
+Justification, lifecycle, commitment, and authority remain separate states.
+Stronger recorded contradictions cannot receive weaker ledger responses.
+Bounded repair covers the declared affected closure exactly and stays inside
+its repair budget. Ontology migration and restart preserve claim, revision,
+successor, and unresolved-residual identities.
+
+## Failure modes
+
+- Untracked assumptions.
+- Belief inertia.
+- Contradiction deletion.
+
+Untracked assumptions should become claims or residuals. Belief inertia should trigger review when contradictions or stronger evidence arrive. Contradiction deletion is unacceptable: contradictions can be resolved, bounded, or refuted, but they should remain linked.
+
+Confidence laundering is the ledger failure to watch. A claim can move from appendix to chapter to summary to release note, sounding more settled each time even though its support state never changed. Ledger IDs, revision reasons, and support-state labels should stop that drift.
+
+Stale contradiction handling creates a second path to overconfidence. The ledger records a conflict once, but no owner, review trigger, or downgrade path keeps it active. The system then keeps citing the stronger version because the contradiction is technically stored but operationally ignored.
+
+Monotonicity inversion annotates a strong contradiction after a weaker one
+already blocked promotion. Repair sprawl rewrites claims outside the declared
+dependency closure. Ontology drift changes the meaning of a claim without a
+migration record. Restart amnesia restores the current wording but loses the
+superseded claim, revision event, or unresolved residual.
+
+## Minimum Viable Implementation
+
+A claim-record schema and belief-revision transition example.
+
+Belief revision starts with the existing `claim_record` schema plus a `belief_revision_record` fixture. That record demonstrates conservative support-state handling, claim scope, surface identity, lifecycle state, contradiction state, residual refs, non-overwrite attestation, ledger effect, promotion blockers, and non-claims while leaving actual contested-claim resolution unasserted. The current Lean target is deliberately ledger-scoped: finite claim-update records, promotion reviews, a belief-revision record envelope, preservation of prior evidence and revision-history references, a rule that an open contradiction blocks promotion until it is resolved, bounded, or recorded as residual, and a revision-lifecycle route that sends missing claim identity, support-state records, evidence transitions, open contradictions, lost history, missing non-overwrite attestations, surface-sync gaps, split-history gaps, downgrade-reason gaps, residual-record gaps, and non-claim-boundary gaps to explicit modeled outcomes.
+
+Those fixtures demonstrate record shape and conservative support-state handling. They leave three substantive questions for later machinery: whether prose extraction found the right claims, whether contradiction detection found the right conflict, and whether a substantive belief should actually change.
+
+A 2026-07-02 harness expansion makes the surface-drift boundary more concrete. `python3 scripts/validate_claim_ledger_revision.py` now passes 5 valid fixture(s) and 7 expected-invalid fixture(s), with the current result recorded at `experiments/claim_ledger_revision/results/2026-07-02-local.md`. The new fixtures accept a semantic-variant merge only when scope and support-state effect remain unchanged, accept an assumption-context split when reader wording drops or narrows a source-boundary assumption, reject a broader variant laundered as equivalent, reject a contested assumption context that is recorded but not routed, and reject a variant merge whose surface reference is absent from synchronized surface refs. This remains synthetic record discipline only: no open-domain claim extraction, contradiction-detection quality, semantic-equivalence proof, assumption-context completeness proof, deployed belief-engine behavior, or support-state promotion is claimed.
+
+`schemas/contradiction_revision_lifecycle_record.schema.json`, its bounded
+five-project record, and eleven rejecting mutations add explicit state
+separation, weak/medium/strong response monotonicity, supersession, bounded
+dependency repair, ontology migration, residual conservation, and restart
+persistence. This fixture is not a deployed belief engine.
+
+A tiny extraction-and-revision fixture set would make the ledger boundary tangible: one prose paragraph with two extracted claims, one unsupported assumption recorded as a residual, one contradiction linked to both claims, one downgrade event, and one tribunal escalation. The result would test ledger mechanics while keeping automated belief revision outside the claim.
+
+## Beyond the State of the Art
+
+The claim ledger matures into an epistemic version-control system. It annotates more than confidence labels: every material claim receives durable identity, provenance, support state, uncertainty record, contradiction state, surface references, revision history, promotion blockers, and escalation path.
+
+With a claim ledger in force, prose is a view over the ledger rather than the source of belief. A claim can appear in a chapter, diagram, appendix, release note, reader edition, benchmark report, or runtime artifact without losing its identity. If new evidence weakens it, every surface that depends on the claim can be found. If a contradiction appears, the ledger can downgrade, split, merge, deprecate, residualize, or route the claim to Spinoza, UAT, or human review.
+
+A claim ledger needs:
+
+- Claim extraction and registration tools that separate claim identity, scope, wording variants, source refs, evidence refs, and support-state effects.
+- Revision records for promotion, downgrade, split, merge, contradiction, deprecation, retirement, source expiry, failed test, proof result, and tribunal verdict.
+- Contradiction and defeater graphs that keep conflicts visible until they are resolved, bounded, refuted, or preserved as residuals.
+- Surface synchronization across chapters, diagrams, appendices, release records, reader editions, audio scripts, and generated site views.
+- Release gates that reject confidence laundering when prose, summaries, or publication artifacts sound stronger than the ledger permits.
+
+This belief-revision ledger is still proposed architecture. Do not move beyond `argument` until claim extractors, contradiction fixtures, revision checkers, surface-sync gates, and review traces show that the stack can change its mind without pretending it was always right or letting polished prose upgrade evidence.
+
+## Summary
+
+Claim Ledgers and Belief Revision makes belief state durable. Claims are separated from prose, tied to evidence and uncertainty, linked to contradictions, and revised without overwriting history. The sources support the need for a ledgered boundary, while the extractor, contradiction detector, and revision engine remain implementation work this repository has not yet done.
+
+The rule for the living book is also the rule for the stack: a claim can be written beautifully and still remain unsupported until the ledger says otherwise. The ledger then asks selected claims what kind of proof, citation, procedure, or justification artifact would be required before their tier can rise.
+
+A future editing agent is the stress case for epistemic identity. If a claim changes, the ledger should know. If a claim repeats, the ledger should know. If a claim becomes weaker, the prose should not keep sounding stronger.
+
+## Handoff
+
+Claim ledgers preserve belief identity, but high-value claims still need stronger artifacts than ordinary notes when promotion would affect planning, governance, benchmarks, or external action. **Proof-Carrying Claims and Adversarial Review** raises that boundary. It turns selected claims and high-risk artifacts into proof-carrying, justification-carrying, or tribunal-review envelopes with required tiers, verifier results, downgrades, timeouts, mismatches, dissent, and explicit refusal paths.

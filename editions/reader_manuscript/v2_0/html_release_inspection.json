@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.curated_reader_html_release_inspection.v2",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "status": "passed_exact_html_release_inspection",
+  "artifact_archive": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0-html.zip",
+  "archive_sha256": "a2caa97fb9281e1fdfc9a9dda626141d4a876df776c9cbc7408f978751736b50",
+  "site_tree_sha256": "8d4f40b57bc69e6073ee680dcd62691e25eabc4aa41b3c928e00cda426c91653",
+  "html_page_count": 59,
+  "chapter_entry_point_count": 54,
+  "page_view_pairs": 118,
+  "internal_links_checked": 5432,
+  "internal_anchors_checked": 1138,
+  "unresolved_internal_links_or_anchors": 0,
+  "report_digests": {
+    "editions/reader_manuscript/v2_0/html_browser_report.json": "d7b45de4dc15b4baac1fd81f50de281f24a6e91e8ca0cb23b7ffd0352975da64",
+    "editions/reader_manuscript/v2_0/html_accessibility_tree_report.json": "87aea51e3ba4274f6b634e1f15196d6998e76e6d4cfef536cf54fd1669d26c4f",
+    "editions/reader_manuscript/v2_0/html_keyboard_report.json": "e22f6661d2e2d9959de875734c3975b8ba5864cdc4fdaf610b24b0d07ef6b4f2",
+    "editions/reader_manuscript/v2_0/html_wcag_report.json": "366f648eb61bc91bc43f03ee531a6eb2f7be2aa0ab005578ad1e154743ad490d"
+  },
+  "negative_mutations_rejected": 6,
+  "review_boundary": "Exact local HTML/archive, browser, automated accessibility-tree, automated keyboard, rendered contrast, reflow, link, anchor, heading, landmark, language, alt-text, table-header, and duplicate-ID inspection. This is not independent external-human review, screen-reader use, third-party WCAG certification, or approval of another format.",
+  "support_state_effect": "none",
+  "errors": [],
+  "non_claims": [
+    "Does not approve EPUB, DOCX, PDF, audio, or embedded-audio artifacts.",
+    "Does not claim independent external-human, screen-reader, assistive-technology, or legal WCAG review.",
+    "Does not promote any chapter claim or establish model quality, safety, readiness, AGI, or ASI."
+  ]
+}

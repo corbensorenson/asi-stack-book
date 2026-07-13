@@ -1,0 +1,89 @@
+{
+  "transition_id": "post_v2_3.qcsa_semantic_round_trip_exact_preservation.narrow",
+  "claim_id": "qcsa.semantic_round_trip_exact_preservation",
+  "claim_surface_refs": [
+    "docs/qcsa_reference_evaluation_report.md",
+    "chapters/cognitive-compilation-and-semantic-ir.qmd",
+    "docs/post_v2_3_evidence_candidate_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "The exact QCSA outputs preserve the evaluator-labelled structures under the independent normalization used here.",
+  "evidence_roles": [
+    "bounded_synthetic_evaluation",
+    "frozen_ablation_or_reference_comparator",
+    "content_addressed_result",
+    "core_support_boundary"
+  ],
+  "transition_reason": "The independent observer measured zero structural loss and zero generator/observer disagreement for full QCSA.",
+  "required_artifacts": [
+    "The observer is separately implemented but internal, labels are synthetic, and the result does not establish arbitrary semantic equivalence.",
+    "natural tasks, learned models, external replication, and production transfer before broader use"
+  ],
+  "artifact_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "evidence_packet_refs": [
+    "chapters/cognitive-compilation-and-semantic-ir.qmd",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/C_claim_evidence_matrix.qmd"
+  ],
+  "evidence_quality_before_refs": [
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "evidence_quality_after_refs": [
+    "docs/post_v2_3_evidence_candidate_ledger.json",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "exact deterministic replay and result digests",
+    "adversarial_strength": "frozen ablation or expected-invalid controls",
+    "validity": "internal synthetic labels and evaluator only",
+    "transfer_distance": "not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#cognitive-compilation-and-semantic-ir.core"
+  ],
+  "verification_command": "python3 scripts/validate_qcsa_evaluation.py && python3 scripts/build_post_v2_3_evidence_candidate_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "The independent observer measured zero structural loss and zero generator/observer disagreement for full QCSA."
+  ],
+  "negative_evidence_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "downgrade_triggers": [
+    "result or disposition digest mismatch",
+    "ablation denominator or cost erasure",
+    "synthetic scope described as natural or production evidence",
+    "chapter-core promotion inferred from this non-core record"
+  ],
+  "promotion_burden": "The observer is separately implemented but internal, labels are synthetic, and the result does not establish arbitrary semantic equivalence.; natural workloads, learned models, independent evaluation, and transfer evidence required for broader claims",
+  "limitations": [
+    "The observer is separately implemented but internal, labels are synthetic, and the result does not establish arbitrary semantic equivalence."
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2.3 adjudication cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "The observer is separately implemented but internal, labels are synthetic, and the result does not establish arbitrary semantic equivalence."
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-13---post-v23-evidence-adjudication",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any chapter-core claim above argument",
+    "does not establish natural-task or production transfer",
+    "does not establish external independence, safety, privacy, security, AGI, or ASI",
+    "does not promote cognitive-compilation-and-semantic-ir.core"
+  ]
+}

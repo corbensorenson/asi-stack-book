@@ -14,8 +14,8 @@
         "internal_only": 54
       },
       "reproducibility": {
-        "adjacent_local_replay": 32,
-        "not_demonstrated_for_claim": 22
+        "adjacent_local_replay": 33,
+        "not_demonstrated_for_claim": 21
       },
       "recency": {
         "repository_snapshot_current": 54
@@ -24,8 +24,8 @@
         "claim_scope_unmeasured": 54
       },
       "adversarial_strength": {
-        "adjacent_bounded_controls": 32,
-        "not_demonstrated_for_claim": 22
+        "adjacent_bounded_controls": 33,
+        "not_demonstrated_for_claim": 21
       },
       "validity": {
         "not_independently_assessed": 54
@@ -536,9 +536,10 @@
           ]
         },
         "reproducibility": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "state": "adjacent_local_replay",
+          "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json",
             "chapters/evidence-states-and-claim-discipline.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -563,6 +564,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The recorded lane is Claim ledger harness and evidence-transition ledger; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json",
             "chapters/evidence-states-and-claim-discipline.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -572,9 +574,10 @@
           ]
         },
         "adversarial_strength": {
-          "state": "not_demonstrated_for_claim",
-          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "state": "adjacent_bounded_controls",
+          "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json",
             "chapters/evidence-states-and-claim-discipline.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -587,6 +590,7 @@
           "state": "not_independently_assessed",
           "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json",
             "chapters/evidence-states-and-claim-discipline.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -611,6 +615,7 @@
           "state": "not_established",
           "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json",
             "chapters/evidence-states-and-claim-discipline.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json"
@@ -678,7 +683,7 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Source-noted weak-to-strong and weak-judge protocol comparators plus a finite admission boundary; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Passage-reviewed weak-to-strong, original debate-game, and weak-judge protocol comparators plus a finite admission boundary; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -1249,6 +1254,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1277,6 +1283,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1292,6 +1299,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1307,6 +1315,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1335,6 +1344,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/capability-replacement-and-rollback.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -1538,7 +1548,7 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Source-noted weight-security, confidential-computing, and release-scheme comparators plus a finite invalid-attestation block; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Full comparator audit across graduated weight security, confidential-computing trust domains, vendor lifecycle, in-toto signed layouts/links/thresholds, protected-release critique, plus nine derived Lean theorems and an eight-case deterministic lifecycle bridge; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -1655,7 +1665,7 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Source-noted lifecycle C-SCRM, build provenance, model signing, and AI BOM comparators plus finite advisory/signature quarantine routes; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Audited C-SCRM, SLSA, model-signing, AI metadata, and in-toto comparators plus seven derived admission theorems and a registered three-project affected-path fixture with ten rejecting mutations; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -1912,7 +1922,7 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Open-ended-improvement sources plus the post-v2 fixed stopped four-arm mutation campaign; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Full POET, FunSearch, Voyager, ADAS, and Darwin Gödel Machine comparator audit; post-v2 stopped campaign; seven owned Lean routes; seven-case/ten-mutation campaign-record bridge; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2/update_causality_no_change.json",
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
@@ -2023,6 +2033,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2051,6 +2062,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2066,6 +2078,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2081,6 +2094,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2109,6 +2123,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
             "chapters/intent-to-execution-contracts.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -2283,6 +2298,9 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
+            "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2314,6 +2332,9 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The bounded QCSA package, synthetic evaluation, and vertical trace exercise a related mechanism, but their hand-authored template scope does not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
+            "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2332,6 +2353,9 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
+            "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2350,6 +2374,9 @@
           "state": "not_independently_assessed",
           "rationale": "The QCSA observer is separately implemented but internally authored; synthetic labels and validators do not establish that the artifacts measure or prove the broad construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
+            "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2381,6 +2408,9 @@
           "state": "not_established",
           "rationale": "The bounded QCSA result and one temporary-effect vertical replay do not establish transfer from synthetic fixtures to natural, learned-model, distributed, or deployed settings named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
+            "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2433,6 +2463,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2464,6 +2495,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The bounded QCSA package, synthetic evaluation, and vertical trace exercise a related mechanism, but their hand-authored template scope does not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2482,6 +2514,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2500,6 +2533,7 @@
           "state": "not_independently_assessed",
           "rationale": "The QCSA observer is separately implemented but internally authored; synthetic labels and validators do not establish that the artifacts measure or prove the broad construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -2531,6 +2565,7 @@
           "state": "not_established",
           "rationale": "The bounded QCSA result and one temporary-effect vertical replay do not establish transfer from synthetic fixtures to natural, learned-model, distributed, or deployed settings named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -3411,6 +3446,7 @@
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
@@ -3449,6 +3485,7 @@
           "rationale": "The bounded QCSA package, synthetic evaluation, and vertical trace exercise a related mechanism, but their hand-authored template scope does not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
@@ -3473,6 +3510,7 @@
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
@@ -3497,6 +3535,7 @@
           "rationale": "The QCSA observer is separately implemented but internally authored; synthetic labels and validators do not establish that the artifacts measure or prove the broad construct expressed by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
@@ -3535,6 +3574,7 @@
           "rationale": "The bounded QCSA result and one temporary-effect vertical replay do not establish transfer from synthetic fixtures to natural, learned-model, distributed, or deployed settings named by the core claim.",
           "evidence_refs": [
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
             "evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json",
             "evidence_transitions/v1_x_measured/partitioned_authority_fixture_no_change.json",
             "evidence_transitions/v1_x_measured/runtime_adapter_adversarial_boundary_no_change.json",
@@ -4034,6 +4074,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4063,6 +4104,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4079,6 +4121,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4095,6 +4138,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4124,6 +4168,7 @@
           "evidence_refs": [
             "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/readiness_lifecycle_probe_no_change.json",
             "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -4294,6 +4339,7 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4328,6 +4374,7 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The bounded QCSA package, synthetic evaluation, and vertical trace exercise a related mechanism, but their hand-authored template scope does not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4349,6 +4396,7 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4370,6 +4418,7 @@
           "state": "not_independently_assessed",
           "rationale": "The QCSA observer is separately implemented but internally authored; synthetic labels and validators do not establish that the artifacts measure or prove the broad construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4404,6 +4453,7 @@
           "state": "not_established",
           "rationale": "The bounded QCSA result and one temporary-effect vertical replay do not establish transfer from synthetic fixtures to natural, learned-model, distributed, or deployed settings named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
             "evidence_transitions/v1_x_measured/circle_seed_rule_receipt_no_change.json",
             "evidence_transitions/v1_x_measured/compact_gvr_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/residual_ledger_storage_replay_no_change.json",
@@ -4845,6 +4895,8 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4883,6 +4935,8 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4908,6 +4962,8 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4933,6 +4989,8 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -4971,6 +5029,8 @@
           "evidence_refs": [
             "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
             "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+            "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
             "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json",
             "evidence_transitions/v1_x_measured/resource_ci_cost_profile_no_change.json",
             "evidence_transitions/v1_x_measured/resource_live_probe_no_change.json",
@@ -5826,7 +5886,7 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Source-noted time-horizon and threshold-commitment comparators plus a finite safeguard-block route; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Five comparator families plus eight owned Lean routes and an eight-case/five-mutation synthetic commitment bridge; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "chapters/capability-thresholds-and-deployment-commitments.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -5943,7 +6003,7 @@
         },
         "coverage": {
           "state": "claim_scope_unmeasured",
-          "rationale": "The recorded lane is Source-noted primary experiments plus a finite selection-context and independent-evaluation promotion boundary; current artifacts do not cover the broad chapter-core claim population.",
+          "rationale": "The recorded lane is Five comparator families plus eight owned routes and an eight-case/five-mutation integrity bridge; current artifacts do not cover the broad chapter-core claim population.",
           "evidence_refs": [
             "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
             "appendices/C_claim_evidence_matrix.qmd",
@@ -6295,6 +6355,7 @@
             "evidence_transitions/post_v2/update_causality_no_change.json",
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6331,6 +6392,7 @@
             "evidence_transitions/post_v2/update_causality_no_change.json",
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6353,6 +6415,7 @@
             "evidence_transitions/post_v2/update_causality_no_change.json",
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6375,6 +6438,7 @@
             "evidence_transitions/post_v2/update_causality_no_change.json",
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6411,6 +6475,7 @@
             "evidence_transitions/post_v2/update_causality_no_change.json",
             "evidence_transitions/post_v2_1/full_state_update_no_change.json",
             "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6581,6 +6646,10 @@
           "state": "adjacent_local_replay",
           "rationale": "Related non-core records have local replay references, but they do not reproduce this broad chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_reference_implementation_exact_contract_conformance_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_vertical_reference_exact_reversible_trace_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6612,6 +6681,10 @@
           "state": "claim_scope_unmeasured",
           "rationale": "The bounded QCSA package, synthetic evaluation, and vertical trace exercise a related mechanism, but their hand-authored template scope does not cover the broad chapter-core claim population.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_reference_implementation_exact_contract_conformance_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_vertical_reference_exact_reversible_trace_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6630,6 +6703,10 @@
           "state": "adjacent_bounded_controls",
           "rationale": "Related narrow records include bounded controls, but no accepted attack directly validates the chapter-core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_reference_implementation_exact_contract_conformance_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_vertical_reference_exact_reversible_trace_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6648,6 +6725,10 @@
           "state": "not_independently_assessed",
           "rationale": "The QCSA observer is separately implemented but internally authored; synthetic labels and validators do not establish that the artifacts measure or prove the broad construct expressed by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_reference_implementation_exact_contract_conformance_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_vertical_reference_exact_reversible_trace_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",
@@ -6679,6 +6760,10 @@
           "state": "not_established",
           "rationale": "The bounded QCSA result and one temporary-effect vertical replay do not establish transfer from synthetic fixtures to natural, learned-model, distributed, or deployed settings named by the core claim.",
           "evidence_refs": [
+            "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
+            "evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json",
+            "evidence_transitions/post_v2_3/qcsa_reference_implementation_exact_contract_conformance_narrow.json",
+            "evidence_transitions/post_v2_3/qcsa_vertical_reference_exact_reversible_trace_narrow.json",
             "experiments/qcsa_reference/results/evaluation_results.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json",
             "docs/qcsa_reference_evaluation_report.md",

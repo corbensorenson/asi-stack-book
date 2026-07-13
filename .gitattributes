@@ -1,0 +1,3 @@
+# Preserve digest-bound raw model transcripts byte-for-byte. Their generated
+# whitespace is evidence payload, not source formatting.
+experiments/post_v2_3_evidence_campaigns/artifacts/model_outputs/*.txt -whitespace

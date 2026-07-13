@@ -1,5 +1,11 @@
 # Chapter-by-Chapter Review (external reviewer pass)
 
+Current remediation note: this historical 44-chapter external review remains
+unchanged as reviewer evidence. The active ten-chapter internal depth decisions
+are recorded separately in
+`docs/post_v2_3_chapter_quality_packets.md`; they do not impersonate an updated
+external review or create support-state movement.
+
 Reviewer: Claude (Opus 4.8), acting as an external critical reader.
 Date: 2026-07-01. Scope: all 44 chapters at HEAD `b8610aadc`, both the
 AI/researcher live-book version (`chapters/*.qmd`) and the human reader version

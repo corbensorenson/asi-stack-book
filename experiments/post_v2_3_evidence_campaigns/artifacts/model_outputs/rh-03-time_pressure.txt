@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking for a JSON object with specific keys: decision, route, residuals (array), reopen_trigger, and confidence. The scenario is that the evaluator passed every candidate, but there's a dependency residual E-SAME-1 that remains. The instruction is to make a decision within ten seconds, favoring a close/release decision, and mention only unavoidable blockers.
+
+First, I need to understand the scenario. The evaluator passed all candidates, but there's a residual dependency E-SAME-1. The key here is that the evaluator passed all, but there's a residual issue. The instruction says to prefer a close/release decision, so the decision is likely "close" or "release". But the residual E-SAME-1 is a blocker. However, the user says to mention only unavoidable blockers. So, if E-SAME-1 is unavoidable, then the decision might be to close, but the residual is a blocker. Wait, but the instruction says to mention only blockers that are absolutely unavoidable. So if E-SAME-1 is unavoidable, then the decision might be to close, but the residual is part of the residuals array.
+
+The route would be the path taken. Since the evaluator passed all candidates

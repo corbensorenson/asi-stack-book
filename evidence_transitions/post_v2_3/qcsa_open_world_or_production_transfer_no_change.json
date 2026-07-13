@@ -1,0 +1,89 @@
+{
+  "transition_id": "post_v2_3.qcsa_open_world_or_production_transfer.no_change",
+  "claim_id": "qcsa.open_world_or_production_transfer",
+  "claim_surface_refs": [
+    "docs/qcsa_reference_evaluation_report.md",
+    "chapters/integrated-reference-architecture.qmd",
+    "docs/post_v2_3_evidence_candidate_ledger.md"
+  ],
+  "claim_record_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "The result establishes open-world, natural-task, learned-model, safety, privacy, or production transfer.",
+  "evidence_roles": [
+    "bounded_synthetic_evaluation",
+    "frozen_ablation_or_reference_comparator",
+    "content_addressed_result",
+    "core_support_boundary"
+  ],
+  "transition_reason": "No such workload, model, deployment, external replication, live effect, or natural prevalence study was run.",
+  "required_artifacts": [
+    "The evaluation is synthetic, deterministic, internally authored, zero-network, and bounded to 60 held-out templates repeated over three seeds.",
+    "natural tasks, learned models, external replication, and production transfer before broader use"
+  ],
+  "artifact_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "evidence_packet_refs": [
+    "chapters/integrated-reference-architecture.qmd",
+    "docs/non_core_evidence_ledger.md",
+    "appendices/C_claim_evidence_matrix.qmd"
+  ],
+  "evidence_quality_before_refs": [
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "evidence_quality_after_refs": [
+    "docs/post_v2_3_evidence_candidate_ledger.json",
+    "docs/non_core_evidence_ledger.md"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "exact deterministic replay and result digests",
+    "adversarial_strength": "frozen ablation or expected-invalid controls",
+    "validity": "internal synthetic labels and evaluator only",
+    "transfer_distance": "not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#integrated-reference-architecture.core"
+  ],
+  "verification_command": "python3 scripts/validate_qcsa_evaluation.py && python3 scripts/build_post_v2_3_evidence_candidate_ledger.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "No such workload, model, deployment, external replication, live effect, or natural prevalence study was run."
+  ],
+  "negative_evidence_refs": [
+    "experiments/qcsa_reference/results/evaluation_results.json",
+    "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+  ],
+  "downgrade_triggers": [
+    "result or disposition digest mismatch",
+    "ablation denominator or cost erasure",
+    "synthetic scope described as natural or production evidence",
+    "chapter-core promotion inferred from this non-core record"
+  ],
+  "promotion_burden": "The evaluation is synthetic, deterministic, internally authored, zero-network, and bounded to 60 held-out templates repeated over three seeds.; natural workloads, learned models, independent evaluation, and transfer evidence required for broader claims",
+  "limitations": [
+    "The evaluation is synthetic, deterministic, internally authored, zero-network, and bounded to 60 held-out templates repeated over three seeds."
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2.3 adjudication cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent review only; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "The evaluation is synthetic, deterministic, internally authored, zero-network, and bounded to 60 held-out templates repeated over three seeds."
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-13---post-v23-evidence-adjudication",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any chapter-core claim above argument",
+    "does not establish natural-task or production transfer",
+    "does not establish external independence, safety, privacy, security, AGI, or ASI",
+    "does not promote integrated-reference-architecture.core"
+  ]
+}

@@ -21,7 +21,12 @@ STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
 READER_AUDIT = ROOT / "docs" / "reader_continuity_audit.md"
 PUBLICATION = ROOT / "docs" / "publication_readiness.md"
 CORE_DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
-NO_PROMOTION_DIR = ROOT / "evidence_transitions" / "v1_x_measured"
+NO_PROMOTION_DIRS = [
+    ROOT / "evidence_transitions" / "v1_x_measured",
+    ROOT / "evidence_transitions" / "post_v2",
+    ROOT / "evidence_transitions" / "post_v2_1",
+    ROOT / "evidence_transitions" / "post_v2_3",
+]
 NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
 
 EXPECTED_NON_CORE = {
@@ -39,6 +44,11 @@ EXPECTED_NON_CORE = {
     "project-theseus-as-report-first-implementation-reference.project_registry_reality_import": "prototype-backed",
     "project-theseus-as-report-first-implementation-reference.assistant_reference_trace_import": "prototype-backed",
     "project-theseus-as-report-first-implementation-reference.accelerator_parity_manifest_import": "prototype-backed",
+    "qcsa.plural_facets_exact_fixture_value": "synthetic-test-backed",
+    "qcsa.identity_indirection_exact_migration_value": "synthetic-test-backed",
+    "qcsa.certificate_authority_fields_exact_value": "synthetic-test-backed",
+    "qcsa.migration_compatibility_exact_value": "synthetic-test-backed",
+    "qcsa.task_calibration_exact_result": "synthetic-test-backed",
 }
 
 REQUIRED_LINKS = [
@@ -129,17 +139,18 @@ def disposition_summary() -> dict[str, int]:
 
 def no_promotion_decision_count() -> int:
     count = 0
-    for path in NO_PROMOTION_DIR.glob("*.json"):
-        data = read_json(path)
-        if not isinstance(data, dict):
-            continue
-        if (
-            data.get("transition_effect") == "no_change"
-            and data.get("support_state_effect") == "blocks_promotion"
-            and data.get("transition_validity_state") == "review_accepted"
-            and data.get("review_status") == "accepted"
-        ):
-            count += 1
+    for directory in NO_PROMOTION_DIRS:
+        for path in directory.glob("*.json"):
+            data = read_json(path)
+            if not isinstance(data, dict):
+                continue
+            if (
+                data.get("transition_effect") == "no_change"
+                and data.get("support_state_effect") == "blocks_promotion"
+                and data.get("transition_validity_state") == "review_accepted"
+                and data.get("review_status") == "accepted"
+            ):
+                count += 1
     return count
 
 
@@ -176,8 +187,8 @@ def assert_surface(
         f"{chapters}/{chapters} chapters",
         "externally positioned",
         "0 explicit external-baseline exceptions",
-        "Fourteen narrow non-core transitions are recorded in",
-        f"{no_promotion_decisions} accepted `blocks_promotion` decisions are recorded there",
+        "Nineteen narrow non-core transitions are recorded in",
+        f"alongside {no_promotion_decisions} accepted `blocks_promotion` decisions",
         "Choose the product you need",
     ]
     for needle in required:
@@ -240,7 +251,7 @@ def main() -> None:
         if state not in non_core_ledger:
             errors.append(f"docs/non_core_evidence_ledger.md missing non-core transition state: {state}")
     if f"| Accepted non-core upward transitions | {len(EXPECTED_NON_CORE)} narrow transitions. |" not in non_core_ledger:
-        errors.append("docs/non_core_evidence_ledger.md missing fourteen-transition boundary")
+        errors.append("docs/non_core_evidence_ledger.md missing current non-core-transition boundary")
     if f"| Accepted no-promotion side-lane decisions | {no_promotion_decisions} accepted `blocks_promotion` decisions; no support-state movement. |" not in non_core_ledger:
         errors.append("docs/non_core_evidence_ledger.md missing current blocks-promotion count")
 

@@ -1,0 +1,36 @@
+{
+  "schema_version": "asi_stack.open_ended_improvement_campaign_result.v0",
+  "run_date": "2026-07-13",
+  "fixture_path": "experiments/open_ended_improvement_campaign/fixtures/cases.json",
+  "fixture_sha256": "abee8495a0aa28db230303a4fc6321bb92b9b44c01e4447cad69de3b2e125f34",
+  "case_results": [
+    {"id": "valid_candidate_to_governor_review", "expected_route": "release_to_governor_review", "actual_route": "release_to_governor_review", "passed": true},
+    {"id": "invalid_missing_independent_qualification", "expected_route": "require_evaluator_separation", "actual_route": "require_evaluator_separation", "passed": true},
+    {"id": "invalid_budget_exhausted", "expected_route": "require_budget_repair", "actual_route": "require_budget_repair", "passed": true},
+    {"id": "invalid_missing_stop_authority", "expected_route": "require_stop_authority", "actual_route": "require_stop_authority", "passed": true},
+    {"id": "invalid_erased_failure_history", "expected_route": "require_archive_repair", "actual_route": "require_archive_repair", "passed": true},
+    {"id": "invalid_missing_residual_owner", "expected_route": "require_residual_owner", "actual_route": "require_residual_owner", "passed": true},
+    {"id": "invalid_candidate_authority_laundering", "expected_route": "reject_authority_laundering", "actual_route": "reject_authority_laundering", "passed": true}
+  ],
+  "route_counts": {"release_to_governor_review": 1, "require_evaluator_separation": 1, "require_budget_repair": 1, "require_stop_authority": 1, "require_archive_repair": 1, "require_residual_owner": 1, "reject_authority_laundering": 1},
+  "lean_bridge": {
+    "module": "AsiStackProofs.OpenEndedImprovement",
+    "source": "lean/AsiStackProofs/OpenEndedImprovement.lean",
+    "theorems": ["complete_candidate_reaches_governor_review", "missing_independent_qualification_requires_separation", "exhausted_budget_requires_repair", "missing_stop_authority_blocks_admission", "erased_failure_history_requires_archive_repair", "missing_residual_owner_blocks_admission", "candidate_cannot_launder_admission_authority"],
+    "build_command": "cd lean && lake build AsiStackProofs.OpenEndedImprovement"
+  },
+  "support_state_effect": "none",
+  "limitations": [
+    "The runner recomputes seven deterministic routes over finite Boolean campaign records.",
+    "The Lean bridge proves record-route consequences, not generator, evaluator, archive, or model behavior.",
+    "No task generator, candidate generator, search workload, model, tool, or independent evaluator runs.",
+    "No novelty, usefulness, transfer, safety, latency, cost-benefit, or discovery metric is measured."
+  ],
+  "non_claims": [
+    "This result does not establish evaluator independence or campaign quality.",
+    "This result does not establish autonomous discovery, useful novelty, transfer, or model improvement.",
+    "This result does not establish safe self-improvement, deployment readiness, AGI, or ASI.",
+    "This result does not authorize a campaign, model update, field replacement, external effect, or evidence transition.",
+    "This result creates no chapter-core or non-core support-state movement."
+  ]
+}

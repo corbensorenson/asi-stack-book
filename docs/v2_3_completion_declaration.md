@@ -53,7 +53,29 @@ This declaration closes P5, M7, and the roadmap. No successor roadmap is
 activated by this release; future work requires a new explicit machine and
 prose authority rather than silently extending this completed cycle.
 
+Successor activated: 2026-07-13. The later planning authority is
+`docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md`, with machine
+state in
+`roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json`.
+It does not alter this release, reopen this completed roadmap, or create a
+reader release, evidence transition, optional format, or support-state change.
+
 The exact machine closure is
 `release_records/2026-07-13-v2.3.0-qcsa-e2766116.json`; it binds the selected
 formats, hosted runs, tag, source commit, archive identity, rights snapshot,
 review boundary, residuals, and non-claims used by this declaration.
+
+Successor closure note: the post-v2.3 quality-floor and reader-completion
+roadmap named above completed on 2026-07-13 without a new public living-book
+release. Its terminal declaration is
+`docs/post_v2_3_quality_floor_reader_completion_declaration.md`, and its exact
+no-public-release authority is
+`release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json`.
+The later quality/reader cycle is now followed by the active canonical
+successor roadmap
+`docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`, with
+machine state in
+`roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`.
+Successor activated: 2026-07-13. This later planning authority records new
+unfinished work without altering the immutable v2.3.0 release facts or
+reopening either completed predecessor.

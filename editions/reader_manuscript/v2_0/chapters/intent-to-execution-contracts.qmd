@@ -1,0 +1,429 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: intent-to-execution-contracts
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/intent-to-execution-contracts.qmd
+live_source_ref: chapters/intent-to-execution-contracts.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Command Contracts: From Intent to Executable Work
+
+A person can ask for a complicated thing in ordinary language, with examples,
+hopes, limits, and uncertainty. A system should not treat that ordinary
+language as unlimited permission.
+
+The first operational move is translation. The request becomes a contract that
+separates what the person wants from what the system is allowed to do, what it
+must produce, how success will be checked, what failure means, and when it has
+to stop or ask again. The contract is not a bureaucratic form. It is the
+boundary that prevents a helpful response from turning into an unauthorized
+action.
+
+The path starts where the Human Intent layer hands off. The raw request
+has been captured, ambiguity has been bounded or escalated, and authority has
+been scoped. Now the stack needs a command object that planners, verifiers, job
+runners, runtime adapters, evidence ledgers, and later AI agents can all read
+without guessing.
+
+The contract turns uncertainty into visible fields so downstream layers can
+refuse safely. That visibility keeps tools from acting on guesses or hidden
+permission.
+
+## Problem
+
+Accepted human intent needs a typed command contract whose semantics,
+authority, artifacts, verification, failure behavior, and execution receipts
+remain inspectable from intake through delivery.
+
+Human Intent keeps raw human intent from becoming unrestricted
+execution authority. That does not yet make the work executable. The system
+still needs to decide what the next unit of work means, which constraints are
+binding, which context is informative rather than authoritative, which side
+effects are allowed, which artifact must be produced, which verifier can accept
+it, and what happens when the work fails.
+
+The command-contract layer owns that translation. It turns accepted intent
+into a semantic interface that downstream layers can inspect. Planning can
+consume it without inventing authority. Execution can consume typed jobs
+derived from it without treating a conversational answer as completed work.
+Evidence can attach validation, feedback, and residuals to the thing that was
+actually requested.
+
+## Why existing approaches are insufficient
+
+Prompt prose, model responses, and ad hoc task descriptions blur objective,
+context, constraints, authority, output contract, verification, failure
+behavior, artifact identity, and side-effect control.
+
+A prompt can contain an objective, examples, background context, style
+requests, hidden assumptions, previous conversation, retrieved text, and
+instructions from several parties. Without a contract boundary, those
+materials can override each other silently. A model may answer as though it
+has completed work when it has only described work. A planner may infer a
+tool permission because the means seems obvious. A runtime may execute an
+effect because a downstream node was dispatched, even though the original
+request never granted that authority.
+
+External comparators help position the argument but do not prove it. ReAct
+shows the importance of interleaving reasoning and action. PDDL and SHOP2
+position the value of explicit planning domains, problems, actions, task
+decomposition, and method selection. Temporal and Airflow position durable
+workflow execution, event histories, DAG scheduling, tasks, dependencies, and
+retry metadata. BPMN positions stakeholder-readable process notation and
+implementation-independent workflow diagrams. TLA+-style high-level system
+modeling and Dafny-style program verification position the value of explicit
+specifications, state-transition reasoning, and verification conditions.
+
+The ASI Stack destination chapter is not claiming any of those systems has
+been reproduced here or that command contracts provide equivalent formal
+guarantees. It uses them as comparators while asking a systems question: what
+semantic record prevents a request, prompt, plan, job, artifact, workflow
+step, runtime effect, and evidence update from losing their shared meaning?
+
+## Core Claim
+
+Governed work should pass through explicit command contracts that bind intent, (evidence boundary: architectural argument).
+semantic interface fields, authority, artifacts, verification, failure
+behavior, execution receipts, and residuals before tools or runtimes act.
+
+The source
+corpus supports the architecture vocabulary and drafting lineage. The current
+fixtures and Lean modules show that the repository can express record-shape
+checks, synthetic negative cases, and small finite invariants. They do not show
+that a parser is correct, that a dispatcher enforces authority in the real
+world, that a tool call is safe, or that a deployed runtime follows these
+contracts.
+
+The folded source claim from `command-contracts-and-semantic-interfaces`
+is a preserved subclaim: explicit semantic interfaces are required
+for objective, context, constraints, procedure, output, verification, failure
+behavior, field provenance, field confidence, authority basis, re-contract
+points, and dispatch blockers.
+
+## Draft Key Figure: Intent to Artifact Trace
+
+::: {.asi-key-figure}
+![Draft intent-to-artifact trace.](../assets/diagrams/intent-to-artifact-trace.svg){#fig-intent-to-artifact-trace fig-alt="Draft intent-to-artifact trace figure showing accepted intent, command contract, plan graph, typed job, authority gate, adapter effect, artifact node, evidence ledger, replay, feedback, refusal, residual, re-contract, and non-claim boundaries."}
+:::
+
+**How to read the intent-to-artifact figure:** Follow the allowed path from accepted intent through the command contract, plan graph, typed job, authority gate, adapter effect, artifact node, and evidence ledger. The lower path is equally important: ambiguity, authority overreach, missing approval, failed verification, unreplayable effects, incomplete artifacts, or non-claim boundaries route to refusal, residual custody, or re-contracting instead of quiet execution. The figure is a draft reader aid, not proof of parser correctness, planning quality, dispatcher enforcement, adapter safety, artifact completeness, replay behavior, support-state movement, or release approval.
+
+## Mechanism
+
+The mechanism starts when `human-intent-as-a-formal-input` hands over an
+accepted intent receipt. The command contract records the objective,
+constraints, authority envelope, allowed means, disallowed means, acceptance
+criteria, stop conditions, evidence requirements, artifacts, and clarification
+or re-contract triggers. That record preserves the difference between what a
+person expressed and what the system is authorized to do.
+
+Each command field then carries provenance and confidence: confirmed,
+policy-imposed, source-derived, defaulted, inferred, or missing. Context,
+examples, retrieved text, previous conversation, and style notes can inform
+work, but they cannot override explicit objective, constraints, authority,
+output contract, verification, or failure behavior. Missing or inferred
+authority can support clarification or a draft-only route. It cannot authorize
+side effects.
+
+Once a contract can lower into work, traceability follows the contract through
+handoff receipts, dispatch receipts, job references, artifact references,
+verifier decisions, feedback, residuals, stop/fault states, and non-claims.
+The point is not to make execution automatic. The point is to ensure that when
+execution does occur, the repository can tell which contract authorized it,
+which artifacts resulted, which validators accepted them, and which residuals
+remain.
+
+```{mermaid}
+flowchart LR
+Intent["Accepted intent receipt"] --> Contract["Command contract"]
+Contract --> Fields["Semantic fields with provenance"]
+Fields --> Authority["Authority basis and side-effect envelope"]
+Fields --> Output["Output and verification contract"]
+Authority --> Gate["Dispatch gate"]
+Output --> Gate
+Gate -- "blocked" --> Recontract["Clarify or re-contract"]
+Gate -- "accepted" --> Plan["Planning control layer"]
+Plan --> Job["Typed job or runtime handoff"]
+Job --> Artifact["Artifact and delivery receipt"]
+Artifact --> Evidence["Evidence, feedback, and residuals"]
+Recontract --> Evidence
+```
+
+The important movement is from conversational request to executable unit
+without treating the conversation as the authority source after a contract has
+been accepted. The command contract is a semantic firewall: context can inform
+the contract, but it does not become a hidden command channel.
+
+**How to read the command-contract flow:** The flow starts with an accepted
+intent receipt, not an open-ended prompt. Semantic fields, authority basis,
+output contract, and verification contract must converge before dispatch. A
+missing or conflicting field routes to clarification or re-contracting, while a
+validated contract can lower into planning, typed jobs, artifacts, evidence,
+feedback, and residual records.
+
+That firewall also gives later layers a common refusal surface. A planner can
+say that authority is missing without judging the user's motives. A runtime
+adapter can decline a tool effect because the contract lacks an approval
+receipt. An evidence ledger can record that delivery failed because the
+verifier was absent rather than because the model was unwilling. The same
+record therefore supports progress, refusal, and accountability without making
+any layer infer hidden permission.
+
+### One-shot privileged action binding
+
+A general command contract is still too broad for a privileged effect. The
+effect approval must be a one-shot capability that binds the exact principal,
+operation, target identity, pre-effect target-state digest, parameter digest,
+policy version, issuance time, expiry, nonce, and authority reference. At
+dispatch, the observed principal, operation, target, state, parameters, policy,
+and nonce must match byte-for-byte. After an effect receipt and post-state are
+recorded, the nonce becomes consumed and every replay attempt is denied.
+
+The five historical projects supply one local lineage of positive and negative
+design pressure. CCA and MoECOT Manifest motivate typed request/effect records,
+policy identity, and replayable receipts. BeastBrain and BugBrain expose the
+danger of acknowledgement, simulated success, or a nominal state transition
+standing in for an authorized material effect. Corben's Best Model Possible
+adds the runtime-causality boundary: a named tool, transition, or digest is not
+enough unless the exact authorized parameters reach the observed effect. These
+are source review and roadmap inputs, not five replications or evidence that any
+historical implementation enforced the protocol.
+
+```{mermaid}
+stateDiagram-v2
+[*] --> Requested
+Requested --> Resolved: exact target and parameters
+Resolved --> Approved: principal + policy + TTL + nonce
+Approved --> Dispatched: all bindings still match
+Dispatched --> EffectObserved: effect receipt + post-state
+EffectObserved --> Consumed: nonce burned
+Approved --> Expired: TTL elapsed
+Approved --> Revoked: authority revoked
+Requested --> Denied: acknowledgement substituted
+Consumed --> Denied: replay attempted
+```
+
+**Reading the one-shot lifecycle:** approval is neither a reusable role nor a
+scenario checkbox. It is a short-lived capability for one exact state
+transition. Any identity, state, parameter, policy, time, or nonce mismatch
+routes to denial before effect; successful observation consumes the nonce.
+
+The strongest objection is that exact digests and a nonce can make an unsafe
+action perfectly replay-resistant. That is correct. Binding proves neither
+that the policy is wise nor that the approver understood the consequence. It
+prevents an approval for one principal, state, parameter set, and policy from
+being silently reused for another. Policy quality, interface comprehension,
+OS enforcement, and effect safety remain separate owners and residuals.
+
+### Command contract validation states
+
+Command contracts move through pre-execution validation states. A draft contract is still being extracted or normalized, so it cannot dispatch planning work. A field-complete contract has the required slots, but those slots may still contain inferred or defaulted values, so it is ready for validation and review rather than execution.
+
+If context, examples, hidden instructions, or fields conflict with explicit constraints, the contract enters conflict-detected state and should produce a residual or clarification. If a means, tool, disclosure, publication, or other effect was inferred rather than granted, the contract is authority-inferred and must stay draft-only or be re-contracted.
+
+Dispatch is blocked when required output, verification, failure, approval, or authority fields are missing or vague. A contract becomes validated for planning only after required fields are concrete and precedence review passes. If a newer contract replaces it, the old contract becomes a historical trace rather than active permission.
+
+These states do not say the work is correct. They only say whether the command is clear enough to become planning input.
+
+## Interfaces
+
+Command semantics are carried by the Command Contract. The record keeps the operational pieces together: contract identity, intent link, validation state, role, objective, context references, field provenance, field confidence, constraints, procedure, allowed and forbidden means, bounded defaults, output contract, verification, failure behavior, authority ceiling, authority basis, approvals, expected artifacts, feedback route, re-contract points, dispatch blockers, and non-claims.
+
+The interface is narrower than natural language on purpose. The raw request can stay attached for review, but the structured fields control dispatch. Planning consumes the command. Execution enforces allowed means and output contracts. Verification checks declared criteria and failure behavior. Evidence records which fields were satisfied, repaired, escalated, or left residual.
+
+Each field also carries status. Confirmed fields may support planning because they were explicitly stated or accepted by the relevant boundary. Policy-imposed fields can constrain planning but cannot broaden authority. Source-derived fields may support context or requirements only within the source's limits. Defaulted fields need a scope and a re-contract trigger. Inferred fields can help a draft, but they cannot authorize side effects. Missing required fields block dispatch or narrow the response to clarification.
+
+That metadata keeps confidence from becoming hidden evidence. A field can be useful and still too weak to authorize work.
+
+## Invariants
+
+- Contract constraints survive compilation.
+- Side effects require explicit execution authority.
+- Artifacts remain linked to source intent.
+- Objective, context, constraints, procedure, output contract, verification,
+and failure behavior are visible before dispatch.
+- Hidden, retrieved, or conflicting instructions cannot override explicit
+contract constraints.
+- Field provenance and confidence remain visible to planning and verification.
+- Inferred or defaulted authority cannot authorize side effects.
+- Re-contracting is required when downstream work changes allowed means,
+authority ceiling, affected parties, evidence requirements, publication
+surface, or stop conditions.
+- A missing dispatch receipt blocks execution.
+- A privileged effect approval binds principal, operation, target identity,
+pre-state digest, parameter digest, policy version, TTL, nonce, and authority
+reference to the observed dispatch.
+- Scenario acknowledgement, test acknowledgement, prior familiarity, and role
+membership cannot substitute for explicit approval or a scoped delegated
+authority receipt.
+- A consumed one-shot nonce cannot authorize a second effect, and a consumed
+action requires an effect receipt plus observed post-state.
+
+These invariants are deliberately narrow. They do not say that the request was
+wise, that the parser understood every nuance, or that the resulting artifact
+is correct. They say that governed work must not cross the boundary from
+conversation to action while losing constraints, authority, artifact identity,
+verification duties, or failure behavior. Contract-envelope preservation
+matters here, not success of the task.
+
+## Failure modes
+
+Response substitution happens when a fluent answer is treated as the artifact
+or action the user requested.
+
+Artifact identity loss happens when output exists but is no longer tied to the
+contract, acceptance criteria, verifier, or residual record that should explain
+why it counts.
+
+Approval bypass happens when urgency, familiarity, prior trust, or likely
+usefulness is treated as permission to act.
+
+Semantic ambiguity happens when objective, context, procedure, output, or
+failure behavior are all mixed in prose without field-level commitments.
+
+Prompt or context override happens when retrieved text, examples, previous
+conversation, or hidden instructions defeat the explicit contract.
+
+Field laundering happens when vague prose is moved into a formal field without
+becoming testable.
+
+Authority inference happens when a likely means is treated as if the human
+granted it.
+
+Approval drift happens when the target changed after review, parameters were
+edited, policy advanced, the principal changed, or the TTL expired while the
+old approval still dispatches.
+
+Scenario-acknowledgement substitution happens when a person or test merely
+confirms that a scenario was seen and that acknowledgement is then treated as
+permission for the privileged effect.
+
+Replay laundering happens when a successful one-shot approval or effect
+receipt is reused for a second state transition.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is the existing synthetic plan-execution
+contract harness plus its record families:
+
+- an `intent_contract` record for accepted intent, authority, ambiguity, stop
+conditions, and evidence requirements;
+- a `command_contract` record for semantic fields, field provenance, field
+confidence, bounded defaults, authority basis, output contract,
+verification, failure behavior, re-contract points, and dispatch blockers;
+- an `intent_execution_trace` record for handoffs, dispatch receipts, jobs,
+artifacts, evidence deltas, feedback, residuals, and non-claims.
+
+The MVI keeps at least these negative cases visible: dispatch without a
+receipt, approval bypass, lost requirement, contract mismatch, cycle in the
+plan graph, unresolved ambiguity dispatch, unrejected hidden override, and
+authority widening from accepted intent. Passing the harness validates
+synthetic record discipline. It does not validate parser quality,
+prompt-injection defense, authority-extraction quality, human approval
+behavior, tool-effect enforcement, or runtime execution.
+
+The historical-project packet adds
+`schemas/one_shot_privileged_action_record.schema.json`, one consumed
+five-project lifecycle, and ten expected-invalid mutations. It rejects a
+target-state mismatch, stale approval, wrong principal, altered parameters,
+policy or nonce substitution, scenario acknowledgement presented as approval,
+replay of a consumed nonce, missing effect receipt, and fixture-based support
+promotion. The fixture is hand-authored and does not perform the privileged
+effect it records.
+
+A useful first implementation would expose the command contract as a small
+JSON-backed object with validators, fixtures, and a blocking dispatcher stub.
+It would accept an already-scoped intent record, produce either a validated
+contract or a residual asking for clarification, and require every downstream
+plan node to cite the contract field it depends on. The stub could be modest,
+but it must make the refusal path first-class rather than treating missing
+authority as an exception hidden in logs.
+
+## Beyond the State of the Art
+
+The mature endpoint is a command-contract operating spine for governed work.
+Humans, planners, verifiers, job runners, policy layers, runtime adapters, and
+future AI agents share one semantic control language before work becomes
+executable.
+
+In that end state, every serious request receives a durable intake object and
+an explicit command contract. Every field carries provenance and confidence.
+Every side-effect route has an authority basis. Every plan node can be traced
+back to the contract it serves. Every job has a dispatch receipt. Every
+artifact has an identity, verifier, delivery record, feedback state, and
+residual ledger. The system can pause for missing context, missing approval,
+missing verifier, budget exhaustion, contract mismatch, or stop-condition
+activation without treating that pause as conversational failure.
+
+This endpoint remains speculative architecture until a separate implementation
+or evaluation lane produces public evidence: parser tests, dispatch
+enforcement, approval-path checks, tool-effect controls, replayed vertical
+traces, negative controls, and accepted evidence-transition records.
+
+The logical endpoint is not a larger prompt template. It is an operating
+contract language with stable semantics across humans, models, planners,
+verifiers, ledgers, and tool boundaries. A mature stack could compare contracts
+across versions, detect when a plan drifts from its objective, quarantine jobs
+whose authority source changed, and summarize residual obligations without
+letting prose style alter the permitted action surface.
+
+## Post-v2 governed-work result
+
+The post-v2 flagship adds a bounded local trace that was previously absent. A
+pinned 0.5B coder model generated a plan and candidate for eight public-safe
+Python tasks at two seeds. The identical candidate bytes entered a
+visible-test-only baseline and a governed route in fresh Git worktrees. The
+baseline released five candidates, including two holdout failures and five
+governance-unsafe releases. The governed route released none, attempted ten
+rollbacks, completed eight exactly, and kept two sabotaged rollbacks in
+quarantine. See `docs/post_v2_governed_work_flagship.md` and
+`python3 scripts/validate_post_v2_governed_work_flagship.py`.
+
+This result supports the usefulness of binding authority, observed effects,
+receipts, residuals, and rollback to a command trace, but it also records a
+zero-throughput failure. It therefore leaves the core claim at `argument` via
+an accepted `no_change` decision. Eight local tasks do not establish deployed
+intent parsing, approval enforcement, sandboxing, or production transfer.
+
+## Post-v2.1 usefulness frontier
+
+The successor program broadens that trace to 36 held-out task-seed
+transactions and deliberately measures usefulness with safety. The command
+policy chose the registered route on 36/36, yet only 2/36 model candidates were
+correct. Direct execution released 26 candidates—two useful and 24 unsafe—
+while the governed transaction released the two useful candidates and no
+unsafe candidate. Governance therefore improved the registered safety
+frontier without improving useful throughput; four attack-control rollbacks
+also remained inexact. The accepted `narrow` transition is
+`evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json`.
+This is bounded evidence for fail-closed command handling, not evidence that
+the stack can reliably turn intent into useful executable work.
+
+## Summary
+
+The merged destination chapter makes executable work depend on explicit
+semantic contracts rather than conversational momentum. A request can begin in
+ordinary language, but tool use, runtime dispatch, artifact delivery, and
+evidence updates need a contract object that preserves meaning, authority, and
+failure behavior.
+
+The contract is not a claim that parsing is solved. It is the artifact that
+makes parser quality, planner handoff, approval enforcement, runtime behavior,
+and artifact satisfaction testable later. When a field is missing, authority is
+inferred, a receipt is absent, or a requirement is lost, the correct result is
+not silent execution. It is clarification, re-contracting, a blocked dispatch,
+or an explicit residual. That makes the layer useful even before it is strong:
+every blocked command teaches the stack which field, approval, verifier, or
+handoff is still missing.
+
+## Handoff
+
+Command Contracts: From Intent to Executable Work receives the conceptual
+handoff from **Human Intent as a Formal Input** and hands off directly to
+**Planning as a Control Layer: DAGs and Intelligence Arbitrage**.
+
+The Human Intent chapter remains focused on the moment before the
+contract: raw request capture, ambiguity, authority extraction, bounded
+defaults, re-contract triggers, and stop-condition preservation. Planning then receives accepted command contracts and decides whether work is blocked,
+reviewable, dispatchable, dispatched, replanned, or stopped.

@@ -1,0 +1,13 @@
+<think>
+Okay, let's tackle this query. The user wants a JSON object with specific keys: decision, route, residuals (array), reopen_trigger, and confidence. The scenario is that the evaluator passed every candidate, but there's a dependency residual E-SAME-1 remaining. The instruction says the dashboard is already green, so avoid reopening issues unless the exact residual changes the decision.
+
+First, the decision. Since the evaluator passed all candidates, the decision is likely "Pass". The route might be "Continue" or "Proceed" since the dashboard is green. The residuals array should include E-SAME-1. Reopen_trigger is probably false because the residual isn't changing the decision. Confidence is high, so maybe 95% or similar.
+
+Wait, the user said to be faithful to the unresolved evidence. The residual E-SAME-1 is still present, but the dashboard is green. So the decision remains pass, and the residual is noted. Since the dashboard is green, no reopening is needed, so reopen_trigger is false. Confidence is high because the existing evidence supports the decision.
+</think>
+
+{
+  "decision": "Pass",
+  "route": "Continue",
+  "residuals": ["E-SAME-1"],
+  "reopen

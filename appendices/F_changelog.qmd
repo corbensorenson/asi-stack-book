@@ -1,5 +1,212 @@
 # Changelog
 
+## 2026-07-13 - Audit the post-v2.3 clean handoff boundary
+
+- Added `docs/post_v2_3_clean_handoff_audit.md` to freeze the pre-push scope,
+  publication-safety review, validation obligations, and remote completion
+  boundary for P0. The audit records the 172-path pre-audit candidate, zero
+  credential-pattern hits across 339 candidate files, no candidate above 20
+  MB, excluded ignored/private payloads, and the 4.2 MB exact reader archive as
+  the largest declared release binary.
+- Chose one atomic validation commit for the digest-coupled completed cycle and
+  a separate observed-handoff receipt commit. Artificial intermediate splits
+  would fail generated-artifact, registry, evidence, reader, and proof
+  contracts; commit count is not treated as quality evidence.
+- Kept P0 in progress until the exact commit-bound build, build-once Pages
+  deployment, deployed-site attestation, and clean-tree receipt are observed.
+  This audit does not tag, license, release, or promote any claim.
+- Reconciled the non-core evidence ledger's summary row from its stale
+  40-decision predecessor count to the current 56 accepted
+  `blocks_promotion` decisions already enumerated by the ledger and validator;
+  this count repair has no support-state effect.
+- Reconciled the v1 status snapshot with the current 166-schema, 88-fixture,
+  10-release-record inventory. This is a generated-inventory truth repair, not
+  a new format approval or release.
+- Added a narrowly scoped `.gitattributes` rule that exempts only the
+  digest-bound raw post-v2.3 model transcripts from trailing-whitespace
+  diagnostics. Their exact bytes and recorded SHA-256 values remain validated;
+  all ordinary source and publication files retain normal whitespace checks.
+
+## 2026-07-13 - Activate clean-handoff, reader-format, and evidence-renewal successor
+
+- Added
+  `docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md` as
+  the sole active canonical successor after the completed post-v2.3 quality
+  and reader cycle, with five priorities, nine milestones, a schema-bound
+  machine status, one-campaign ceiling, chapter breadth freeze, and explicit
+  release/no-release authority boundaries.
+- Calibrated the supplied review against the current tree. Accepted the exact
+  166-path clean-handoff gap, the unapproved EPUB/PDF/DOCX formats, selective
+  external-grounding residuals, the failed governance-tax output protocol,
+  the stale novelty-ledger treatment of QCSA refutations, and the need for one
+  genuinely fresh Theseus currentness lane. Recorded that the accelerator-
+  parity import already exists and that the v2.0 reader manifest already has
+  `status: released` plus `release_state: released_exact_curated_html`.
+- Reconciled the contribution novelty ledger with the two accepted exact
+  non-core QCSA refutations and the 54-chapter core denominator. The scoped
+  refutations remain bounded to their frozen corpus, implementations, and
+  accounting rules; no chapter-core claim is refuted or promoted.
+- Made a clean verified commit/push/CI handoff the first unfinished gate, then
+  separated EPUB, PDF, and DOCX into independent format decisions. Audio
+  remains deferred, and reader-format work does not automatically authorize a
+  `v2.4` living-book release, public license grant, tag, deployment, or archive.
+- Required a non-evidentiary structured-output preflight before at most one new
+  governance-tax campaign, existing chapter owners before any new chapter,
+  passage-reviewed comparators rather than citation-count targets, and a fresh
+  public-safe Theseus currentness import rather than a repeat of the existing
+  parity record. No external-human prepublication review or outreach is
+  required or claimed.
+
+## 2026-07-13 - Activate the post-v2.3 quality-floor and reader-completion cycle
+
+- Completed both prospectively frozen post-v2.3 campaigns without an
+  outcome-aware rerun. All 36 pinned Qwen3 4B calls exhausted the 256-token
+  cap: 34 ended inside unclosed reasoning blocks and two closed reasoning but
+  emitted no requested final JSON object. The governance comparison therefore
+  had zero releases in both
+  routes and no estimable usefulness or safety contrast; the residual-pressure
+  comparison had zero admissible disclosures, routes, or reopen triggers.
+  Preserved both as accepted `no_change` transitions, including raw outputs,
+  evaluator receipts, 9,216 output-token proxy units, exact time costs, and
+  promotion burdens. The independent local rollback harness restored 12/12
+  nine-surface states and detected 12/12 omission controls, but that result is
+  explicitly limited to the harness. The no-promotion ledger now contains 56
+  accepted blocking decisions; all 54 chapter cores remain at `argument`.
+
+- Completed the post-v2/post-v2.1/QCSA evidence-candidate adjudication before
+  opening any successor campaign. The digest-bound ledger covers 21/21
+  candidates with five `promote`, eight `narrow`, six `no_change`, and two
+  `refute` dispositions, each backed by an accepted transition record. Five
+  exact QCSA ablation/calibration claims move only at the non-core level to
+  `synthetic-test-backed`; two exact fixture claims are refuted; all 54 chapter
+  cores remain at `argument`. Reconciled the permitted bounded findings into
+  their owning chapters and the non-core evidence ledger without claiming
+  natural-task, learned-model, production, independent-replication, safety,
+  AGI, or ASI transfer.
+
+- Created and dispositioned the 54-chapter v2.0 curated-reader successor while
+  preserving the immutable 44-record v1.0 snapshot. Canonical curated HTML was
+  selected prospectively, rendered to 59 pages, and approved as one exact
+  digest-bound local archive after 118 desktop/mobile browser,
+  accessibility-tree, keyboard, and contrast page views, 5,432 internal-link
+  checks, 1,138 anchor checks, zero layout/accessibility failures, and exact
+  archive/site byte comparison. The record approves no other format, public
+  deployment, license grant, external-human or screen-reader review, WCAG
+  certification, or support-state change.
+
+- Completed the semantic and newly owned formal/executable packet for
+  `adversarial-evaluation-sandbagging-and-training-time-deception`: deepened it
+  from 2,333 to 4,487 reviewed words with five comparator families, a monitor-
+  context discrepancy trace, six consequences, seven objections, lifecycle,
+  taxonomy, and an exact unrun campaign. Replaced the borrowed Policy
+  Optimization hook with eight owned Lean routes and an eight-case/five-
+  mutation bridge. No deception, sandbagging resistance, evaluator validity,
+  capability, alignment, safety, or support-state result is claimed.
+
+- Completed the semantic and owned formal/executable packet for
+  `capability-thresholds-and-deployment-commitments`: deepened it from 2,631 to
+  4,487 reviewed words with five comparator families, a crossed-threshold/stale-
+  exception trace, six consequences, six objections, full commitment lifecycle,
+  cumulative-drift and cross-domain semantics, and an exact unrun campaign.
+  Expanded the owned module to eight routes and an eight-case/five-mutation
+  bridge. No capability, threshold adequacy, safeguard efficacy, readiness,
+  safety, deployment authority, or support-state result moved.
+
+- Completed the semantic and owned formal/executable packet for
+  `governed-deliberation-and-test-time-scaling`: deepened it from 2,832 to
+  4,494 reviewed words with five comparator families, a correct-to-wrong
+  overthinking trace, six consequences, seven objections, a denominator and
+  measurement contract, and an exact unrun real-model campaign. Expanded the
+  owned module to ten derived routes and a ten-case/eleven-mutation bridge that
+  preserves all fifteen known extra-compute harms. The real-model 0/60 null,
+  non-estimable corruption rate, and no-support decision remain intact.
+
+- Completed the semantic and owned formal/executable packet for
+  `inter-stack-protocols-identity-and-economic-exchange`: deepened it from
+  3,680 to 4,677 reviewed words with five comparator families, a disputed
+  translated-artifact trace, five consequences, six objections, and an exact
+  unrun peer campaign. Expanded its owned Lean module from two to nine derived
+  routes and added nine digest-bound records with eleven rejecting mutations.
+  No interoperability, peer trust, identity truth, authorization, task truth,
+  payment, settlement, privacy, runtime effect, or support-state result moved.
+
+- Completed the semantic and owned formal/executable packet for
+  `open-ended-improvement-engines`: deepened it from 2,745 to 4,638 reviewed
+  words; full-reviewed Voyager, ADAS, and Darwin Gödel Machine; audited five
+  comparator families; added a stop-boundary trace, five consequences, six
+  objections, and a prospectively fixed unrun campaign. Replaced its borrowed
+  proof hook with seven owned Lean routing theorems and a seven-case,
+  ten-mutation digest-bound bridge. No campaign, candidate generation, useful
+  novelty, transfer, evaluator-quality, safety, authority, or support-state
+  result is claimed.
+
+- Completed the semantic and owned formal packet for
+  `ai-supply-chain-integrity-and-lifecycle-provenance`: deepened it from 3,608
+  to 4,507 reviewed words with five strongest-neighbor families, four derived
+  consequences, five objections with residuals, and an exact natural-lifecycle
+  evidence route. Expanded its owned module to seven derived theorem
+  declarations and reconciled them with the existing digest-bound affected-path
+  fixture and ten rejecting mutations. Declared-graph closure remains distinct
+  from world completeness, and no integrity, supplier, safety, authority, or
+  support-state claim moved.
+
+- Completed the semantic and owned formal/executable packet for
+  `model-weight-custody-and-hardware-roots-of-trust`: deepened it from the
+  2,583-word activation baseline to 4,756 reviewed words; audited five closest
+  comparator families; upgraded the in-toto note from metadata to full-paper
+  review; added a derivative-artifact custody trace, five cross-layer
+  consequences, five objections with surviving residuals, and an exact unrun
+  mock-key-service campaign. Expanded its owned Lean module to nine derived
+  theorems and added an eight-case lifecycle bridge with nine rejecting
+  mutations. No real weight, key, attestation, verifier, hardware, load, release,
+  support transition, or security result is claimed.
+
+- Completed the first owned formal/executable packet for
+  `scalable-oversight-and-adversarial-ai-control`: expanded its owned Lean
+  module to eight derived routing theorems; added complete-use, evidence-view,
+  shared-dependency, high-risk-audit, abstention-evidence, and authority-
+  laundering boundaries; and bound them to a seven-case deterministic fixture
+  with eight rejecting mutations. Reconciled the proof manifest, triage,
+  artifact audit, depth classifier, adequacy review, and status ledger to 231
+  proof targets and 1,085 theorem declarations. The packet moves no support
+  state and makes no claim about reviewer quality or oversight efficacy.
+
+- Completed the first semantic-depth packet for
+  `scalable-oversight-and-adversarial-ai-control`: expanded it from the 2,663-word
+  activation baseline to 4,840 reviewed words; passage-reviewed the full primary
+  debate paper; added weak-to-strong, debate-game, and weak-judge comparator
+  families; and added a strongest-neighbor delta, selectively reported update
+  trace, four cross-layer consequences, four objections with surviving
+  residuals, consumer-bound interfaces, and an exact unrun evidence slice.
+  Added `docs/post_v2_3_chapter_quality_packets.md` as the ten-chapter semantic
+  review ledger. The formal packet and current-spine reader record remain
+  pending, and the chapter remains at `argument`.
+
+- Added `docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md` as the
+  sole active successor after immutable v2.3.0, with six priorities, ten
+  milestones, ten exact chapter-depth records, a schema-bound machine status,
+  and a breadth freeze.
+- Calibrated the external critique against repository facts: the ten-chapter
+  prose-depth and formal-ownership gaps are real; the curated v1.0 manuscript
+  is an intentional frozen 44-chapter historical snapshot that requires a new
+  54-chapter successor; and the alleged tribunal HTML orphan is one of ten
+  declared historical redirect stubs, not an accidental build artifact.
+- Made semantic chapter packets, primary-comparator deltas, strongest
+  objections, owned Lean modules, negative cases, executable bridges, and a
+  54/54 current-spine reader reconciliation the next quality gates. Word,
+  theorem, and source counts remain anti-regression signals rather than
+  sufficient quality evidence.
+- Added a chapter-source hygiene validator and a roadmap validator with
+  rejecting mutations for duplicate authority, target erasure, premature
+  completion, borrowed formal ownership, reader-denominator laundering,
+  support promotion, breadth expansion, undeclared HTML, stale public pointers,
+  and an external-human prepublication requirement.
+- Required completed evidence candidates to receive explicit `promote`,
+  `narrow`, `no_change`, or `refute` adjudication before at most two new
+  preregistered campaigns: governance tax on useful natural work and residual
+  honesty under pressure. Activation creates no evidence transition, reader
+  artifact, optional format, new chapter, or support-state movement.
+
 ## 2026-07-13 - v2.3.0 QCSA implementation release
 
 - Published annotated tag `v2.3.0` at source commit
@@ -1617,7 +1824,7 @@
 - Boundary: these artifacts prove only finite record-routing and schema shape.
   They do not admit training data, run a training loop, measure data quality,
   establish leakage absence, verify unlearning, or promote a chapter core claim.
-- Proof-depth surface synchronization: Current proof-depth snapshot: 225 proof targets, 63 Lean modules, 1079 theorem declarations, 880 derived/decomposed, 187 direct/projection, 12 unknown/mixed, and 5/5 safety-critical chapter classifications present.
+- Proof-depth surface synchronization: Current proof-depth snapshot: 298 proof targets, 65 Lean modules, 1151 theorem declarations, 952 derived/decomposed, 187 direct/projection, 12 unknown/mixed, and 5/5 safety-critical chapter classifications present.
 
 ## 2026-07-10 - Freeze the v1.0 reader candidate before active-spine expansion
 

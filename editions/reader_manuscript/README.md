@@ -3,6 +3,27 @@
 This directory is the tracked home for manually edited human-reader manuscript
 work when generated reader source plus semantic overlays are no longer enough.
 
+The current-spine successor is `v2_0/`. It contains 54/54 tracked chapter
+records and files in active manifest order, preserves 44 identities from the
+frozen v1.0 snapshot, adds the ten later chapter identities, and records zero
+initial meaning divergence because each curated body begins as the exact
+generated Human baseline. Canonical curated HTML was selected prospectively.
+Its deterministic 59-page archive is approved by
+`v2_0/reader_release_record.json` after 118 desktop/mobile browser,
+accessibility-tree, keyboard, and rendered-contrast page views; 5,432 internal
+links; 1,138 anchors; and exact archive/site comparison. That approval is only
+for the named digest-bound local HTML archive. It is not public deployment,
+independent external-human or screen-reader review, WCAG certification, a
+license grant, approval of EPUB/DOCX/PDF/audio, or a support-state change.
+
+Validate the v2.0 successor with:
+
+```bash
+python3 scripts/validate_post_v2_3_reader_successor.py
+python3 scripts/validate_post_v2_3_reader_html_artifact.py
+python3 scripts/build_post_v2_3_reader_html_release_record.py
+```
+
 The current v1.0 state is `drafting`. `v1_0/manifest.json` records a frozen
 forty-four-chapter historical snapshot at its blocked-candidate source commit,
 plus forty-four curated chapter records: zero drafting and forty-four

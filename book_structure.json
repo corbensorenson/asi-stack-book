@@ -1508,12 +1508,14 @@
           "source_ids": [
             "ext_weak_to_strong_generalization_2023",
             "ext_scalable_oversight_weak_llms_2024",
+            "ext_ai_safety_debate_2018",
             "verification_bandwidth"
           ],
           "source_queue": {
             "primary": [
               "ext_weak_to_strong_generalization_2023",
-              "ext_scalable_oversight_weak_llms_2024"
+              "ext_scalable_oversight_weak_llms_2024",
+              "ext_ai_safety_debate_2018"
             ],
             "supporting": [
               "verification_bandwidth"
@@ -1543,6 +1545,16 @@
                 "sources/source_notes/ext_scalable_oversight_weak_llms_2024.md:14-68"
               ],
               "passage_review_note": "Reviewed primary arXiv HTML paper protocol definitions, task/capability-gap setup, reported comparative framing, and stated limitations as recorded in the source note; no protocol, judge, debater, verifier, baseline, or result was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_ai_safety_debate_2018",
+              "mapped_support": "Supplies the original debate-game comparator for precommitted claims, adversarial evidence selection, limited judge access, explicit ignorance, equilibrium assumptions, and the separation between a complexity-theoretic analogy and empirical protocol quality.",
+              "limits": "Does not establish that debate is truthful near practical equilibria, that human judges meet the required threshold, that stochastic or open-domain tasks decompose safely, or that any local oversight, training, alignment, safety, or execution result exists.",
+              "passage_refs": [
+                "sources/source_notes/ext_ai_safety_debate_2018.md:14-78"
+              ],
+              "passage_review_note": "Reviewed the full primary arXiv HTML paper for the debate game, precommitment, decomposition and information-reveal assumptions, preliminary MNIST experiment, ignorance treatment, judge/equilibrium/stochastic-simulation concerns, and proposed empirical tests; no debate system or result was reproduced.",
               "passage_review_state": "reviewed"
             },
             {
@@ -1588,12 +1600,15 @@
             "Fleet-scale pressure shortens review windows, exhausts human operators, or turns escalation into rubber-stamping.",
             "A protocol verdict is laundered into a training reward, claim transition, deployment clearance, or tool permission without the owning gate."
           ],
-          "minimal_implementation": "A versioned oversight-protocol record with task/risk/authority scope, supervisor and system envelopes, information-access declaration, role and incentive configuration, direct-review baseline, independent outcome-audit status, correlation and persuasion residuals, stop condition, escalation owner, and bounded downstream handoff. A finite Lean route blocks a high-risk admission that lacks an independent outcome audit.",
+          "minimal_implementation": "A versioned oversight-protocol record with task/risk/authority scope, supervisor and system envelopes, information-access declaration, role and incentive configuration, direct-review baseline, independent outcome-audit status, correlation and persuasion residuals, stop condition, escalation owner, and bounded downstream handoff. Eight finite Lean theorems and a seven-case deterministic fixture bridge route missing evidence views, dependency disclosure, baseline, high-risk audit, abstention evidence, and authority separation without claiming oversight efficacy.",
           "beyond_state_of_art": "A mature oversight control plane selects direct review, assisted consultation, structured adversarial review, or abstention based on task risk, access asymmetry, supervisor capability, calibrated outcome evidence, correlation risk, and available accountable escalation. It continuously tests protocol performance against held-out outcomes and stronger baselines while preserving dissent, auditability, operator-load residuals, and the separation between supervision, training, and execution authority. This is a target architecture, not a claim that the repository has solved weak-to-strong oversight, debate, alignment, safety, or autonomous control.",
           "codex_tests": [
             "High-risk outcome-audit admission fixture",
             "Baseline and task-envelope completeness fixture",
             "Correlated-reviewer negative control",
+            "Evidence-view access-repair fixture",
+            "Abstention-evidence fixture",
+            "Authority-laundering negative control",
             "Oversight protocol workload comparison"
           ],
           "lean_module": "AsiStackProofs.ScalableOversight",
@@ -1603,13 +1618,49 @@
               "module": "AsiStackProofs.ScalableOversight",
               "target": "A finite high-risk oversight record with a requested downstream admission and no independent outcome audit routes to accountable escalation rather than bounded admission, without inferring supervisor quality, protocol efficacy, alignment, safety, or ASI.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:scalable_oversight.use.complete_bounded_admission",
+              "module": "AsiStackProofs.ScalableOversight",
+              "target": "A complete finite use record with an audited protocol, declared consumer and expiry, preserved no-authority boundary, requested downstream use, and no abstention routes to bounded use without establishing protocol efficacy.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:scalable_oversight.use.missing_evidence_views_requires_repair",
+              "module": "AsiStackProofs.ScalableOversight",
+              "target": "A finite use record with the protocol digest, cohort, and capability envelopes present but evidence views absent routes to access repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:scalable_oversight.use.undisclosed_dependencies_require_review",
+              "module": "AsiStackProofs.ScalableOversight",
+              "target": "A finite use record with missing shared-dependency disclosure routes to dependency review without claiming that disclosed reviewers are independent.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:scalable_oversight.use.missing_outcome_audit_requires_audit",
+              "module": "AsiStackProofs.ScalableOversight",
+              "target": "A high-risk finite use record without an independent outcome-audit record routes to an audit requirement rather than bounded use.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:scalable_oversight.use.unjustified_abstention_requires_evidence",
+              "module": "AsiStackProofs.ScalableOversight",
+              "target": "A finite downstream-use record requesting abstention without its evidence record routes to an abstention-evidence requirement.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:scalable_oversight.use.authority_laundering_rejected",
+              "module": "AsiStackProofs.ScalableOversight",
+              "target": "A finite downstream-use record that fails to preserve the no-authority-grant boundary routes to authority-laundering rejection.",
+              "status": "implemented"
             }
           ],
-          "draft_maturity": "v0.1 chapter draft",
+          "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
             "No ASI Stack oversight protocol, human study, weak judge, debater, consultant, passage verifier, training signal, fleet-scale review window, or measured outcome has been run.",
             "No local result establishes supervisor calibration, evaluator independence, debate or consultancy efficacy, reliable weak-to-strong generalization, alignment, safety, execution authority, or model quality.",
-            "The finite Lean route establishes only structured-record consequences of a missing independent outcome audit and a missing baseline; it does not establish that any auditor is independent, capable, or correct."
+            "The eight finite Lean theorems and seven-case deterministic fixture establish only structured-record routing consequences; they do not establish that any auditor is independent, capable, or correct, or that the protocol improves outcomes."
           ]
         },
         {
@@ -3132,7 +3183,8 @@
               "ext_provable_model_weight_release_2025"
             ],
             "supporting": [
-              "cca_project"
+              "cca_project",
+              "ext_in_toto_2019"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -3190,6 +3242,16 @@
               ],
               "passage_review_note": "Reviewed the public-safe pinned local-project source note; no CCA runtime, device mesh, weight store, key service, or attestation was replayed.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_in_toto_2019",
+              "mapped_support": "Supports a scoped comparator for signed layouts, authorized functionaries, material/product link metadata, role separation, thresholds, partial key-compromise degradation, and consumer-side lifecycle verification.",
+              "limits": "Does not establish artifact correctness, weight confidentiality, uncompromised actors, model safety, custody authority, release merit, or local conformance.",
+              "passage_refs": [
+                "sources/source_notes/ext_in_toto_2019.md:13-94"
+              ],
+              "passage_review_note": "Reviewed the full primary USENIX paper's mechanism, deployment, overhead, historical-incident, threshold, and dependency boundaries as recorded in the source note; no local layout, link, signature, or verification ran.",
+              "passage_review_state": "reviewed"
             }
           ],
           "problem": "Runtime secret handling can be governed while the model artifact itself remains copied, loaded, released, or revoked without an explicit custody, key-release, attestation, or incident record.",
@@ -3227,6 +3289,7 @@
           "codex_tests": [
             "Required invalid-attestation load block",
             "Stale-attestation and key-policy negative control",
+            "Verifier-dependency and independent-observation controls",
             "Open-weight irreversibility record fixture",
             "Public-safe custody-record workload"
           ],
@@ -3237,13 +3300,55 @@
               "module": "AsiStackProofs.ModelWeightCustody",
               "target": "A finite weight-custody record with a requested load, required attestation, and invalid attestation routes to block rather than readiness review, without inferring hardware compromise, weight confidentiality, safety, or ASI.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:model_weight_custody.lifecycle.complete_observed_load",
+              "module": "AsiStackProofs.ModelWeightCustody",
+              "target": "A complete finite custody lifecycle record with a current valid attestation, dependency disclosure, independent load observation, residual owner, and revocation semantics routes to bounded load admission without authorizing deployment.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:model_weight_custody.lifecycle.missing_lineage",
+              "module": "AsiStackProofs.ModelWeightCustody",
+              "target": "A finite custody lifecycle record with an artifact digest but no lineage routes to lineage repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:model_weight_custody.lifecycle.stale_attestation",
+              "module": "AsiStackProofs.ModelWeightCustody",
+              "target": "A finite custody lifecycle record with stale attestation evidence routes to a fresh-attestation requirement.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:model_weight_custody.lifecycle.undisclosed_verifier_dependencies",
+              "module": "AsiStackProofs.ModelWeightCustody",
+              "target": "A finite custody lifecycle record without verifier-dependency disclosure routes to dependency review without proving disclosed verifiers independent.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:model_weight_custody.lifecycle.unobserved_load",
+              "module": "AsiStackProofs.ModelWeightCustody",
+              "target": "A requested finite load with no independent load-observation record routes to an observation requirement.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:model_weight_custody.lifecycle.release_authority_laundering",
+              "module": "AsiStackProofs.ModelWeightCustody",
+              "target": "A finite distribution request that fails to preserve the no-authority-grant boundary routes to release-laundering rejection.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:model_weight_custody.lifecycle.irreversible_distribution_record",
+              "module": "AsiStackProofs.ModelWeightCustody",
+              "target": "A complete finite distribution request with preserved authority separation and acknowledged irreversibility routes to an irreversible-release record rather than execution.",
+              "status": "implemented"
             }
           ],
-          "draft_maturity": "v0.1 chapter draft",
+          "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
             "No ASI Stack weight store, encrypted weight artifact, key release, TEE, attestation, custody audit, open-weight release, or deployment has been run.",
             "No local result establishes hardware trustworthiness, confidentiality, extraction resistance, release desirability, model safety, readiness, authority, or ASI.",
-            "The finite Lean route establishes only a structured record consequence for a required invalid attestation; it does not establish whether any environment, token, hardware, weight, policy, or reviewer is correct."
+            "The nine finite Lean theorems and eight-case deterministic fixture establish only structured-record routing consequences; they do not establish whether any environment, token, hardware, weight, policy, verifier, or reviewer is correct or secure."
           ]
         },
         {
@@ -3413,13 +3518,43 @@
               "module": "AsiStackProofs.SupplyChainIntegrity",
               "target": "A finite AI supply-chain record with a requested artifact admission, complete required lineage fields, and an unresolved critical advisory routes to quarantine rather than custody review, without inferring compromise, artifact correctness, data fitness, safety, or ASI.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:ai_supply_chain.complete_requested_artifact.reaches_custody_review",
+              "module": "AsiStackProofs.SupplyChainIntegrity",
+              "target": "A complete finite requested artifact with verified required signature, current advisory state, revocation path, and residual owner routes to custody review without granting load or deployment authority.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:ai_supply_chain.missing_lineage.requires_repair",
+              "module": "AsiStackProofs.SupplyChainIntegrity",
+              "target": "A finite artifact record with identity and digest but missing lineage routes to lineage repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:ai_supply_chain.missing_component_inventory.requires_review",
+              "module": "AsiStackProofs.SupplyChainIntegrity",
+              "target": "A finite artifact record with no component inventory routes to accountable review without claiming that a present inventory is complete.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:ai_supply_chain.missing_revocation_path.requires_repair",
+              "module": "AsiStackProofs.SupplyChainIntegrity",
+              "target": "A finite otherwise eligible artifact record with no revocation path routes to lineage repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:ai_supply_chain.missing_residual_owner.requires_review",
+              "module": "AsiStackProofs.SupplyChainIntegrity",
+              "target": "A finite otherwise eligible artifact record with no residual owner routes to accountable review.",
+              "status": "implemented"
             }
           ],
-          "draft_maturity": "v0.1 chapter draft",
+          "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
             "One hand-authored three-project affected-path fixture and ten deterministic mutations have run; no real ASI Stack AI BOM, supplier assessment, build or training provenance, signature, verification, advisory feed, derivative graph, revocation action, reproducible rebuild, incident exercise, or deployment has run.",
             "No local result establishes complete inventory, artifact integrity, absence of compromise, data fitness, trustworthy suppliers, legal compliance, model safety, readiness, authority, or ASI.",
-            "The finite Lean route establishes only a structured record consequence for a modeled unresolved critical advisory or required unverified signature; it does not establish whether any artifact, source, signature, advisory, policy, reviewer, or supplier record is correct."
+            "The seven finite Lean theorems and affected-path fixture establish only structured-record routing and declared-graph closure consequences; they do not establish whether any artifact, source, signature, advisory, policy, reviewer, supplier record, or graph is correct or complete."
           ]
         },
         {
@@ -3750,7 +3885,10 @@
               "scf",
               "ext_drexler_cais_2019"
             ],
-            "variants": [],
+            "variants": [
+              "ext_adas_2024",
+              "ext_darwin_godel_machine_2025"
+            ],
             "connector_or_recovery": [
               "moecot"
             ],
@@ -3784,9 +3922,29 @@
               "mapped_support": "Supports an external comparator for automatic curriculum, executable-code skill library, environment feedback, execution errors, and source-setting self-verification.",
               "limits": "Does not establish independent evaluator quality, local lifelong learning, model improvement, safety, or deployment readiness.",
               "passage_refs": [
-                "sources/source_notes/ext_voyager_2023.md:18-36"
+                "sources/source_notes/ext_voyager_2023.md:1-80"
               ],
-              "passage_review_note": "Reviewed primary arXiv source note with its Minecraft-specific mechanism and limits; no code, environment, prompt, or evaluation was imported or reproduced.",
+              "passage_review_note": "Reviewed the full primary paper through its curriculum, skill-library, feedback, ablation, cost, and failure sections; no code, environment, prompt, or evaluation was imported or reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_adas_2024",
+              "mapped_support": "Supports a comparator for searching over code-defined agent architectures with a meta-agent, validation split, archive, repair reflection, and cross-domain transfer tests.",
+              "limits": "Does not establish evaluator independence, safe autonomous self-improvement, deployment authority, general transfer, or a local reproduction.",
+              "passage_refs": [
+                "sources/source_notes/ext_adas_2024.md:1-100"
+              ],
+              "passage_review_note": "Reviewed the full primary paper's formulation, Meta Agent Search loop, archive, validation/test separation, transfer results, costs, and limitations; no search run or result was reproduced.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_darwin_godel_machine_2025",
+              "mapped_support": "Supports a comparator for branching self-modification archives, parent selection, compile/edit eligibility, benchmark evaluation, and retained failed variants.",
+              "limits": "Does not establish safe open-ended improvement, benchmark validity, deployment readiness, general transfer, or authority for a candidate to promote itself.",
+              "passage_refs": [
+                "sources/source_notes/ext_darwin_godel_machine_2025.md:1-110"
+              ],
+              "passage_review_note": "Reviewed the full primary paper's archive algorithm, baselines, benchmark-proxy assumptions, sandbox and resource boundaries, costs, failures, and deployment limitations; no self-modifying run was reproduced.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -3819,21 +3977,63 @@
             "Generated artifacts entering a procedure library, model update, or capability field without authority, regression, rollback, or monitor checks.",
             "Open-ended search consuming unbounded budget or generating dual-use artifacts without stop authority or residual ownership."
           ],
-          "minimal_implementation": "A versioned improvement-campaign record containing objective, generator and task-policy bounds, candidate identifier, evaluator/version, independent-review flag, resource bill, failure or residual record, archive disposition, and a route that blocks admission when independent evaluation or a stop boundary is absent.",
+          "minimal_implementation": "Implemented as seven digest-bound improvement-campaign records and ten rejecting mutations covering complete review handoff, independent qualification, budget, stop authority, failure-history retention, residual ownership, and authority laundering. It is a finite routing bridge, not a campaign engine.",
           "beyond_state_of_art": "The mature system runs multiple constrained discovery campaigns across simulations, program spaces, data curation, and tools while preserving evaluator separation, challenge provenance, counterexamples, resource economics, sandbox limits, dual-use review, reproducibility, and campaign stop authority. It uses generated discoveries only through qualified capability fields and governed replacement, rather than granting a search process the power to promote itself. This is a target architecture, not a claim of autonomous scientific discovery, safe recursive self-improvement, or open-ended general intelligence.",
           "codex_tests": [
             "Improvement-campaign admission fixture",
             "Generator-evaluator separation probe",
-            "Candidate archive and stop-boundary review"
+            "Candidate archive and stop-boundary review",
+            "Authority-laundering negative control"
           ],
-          "lean_module": "AsiStackProofs.SelfImprovement",
+          "lean_module": "AsiStackProofs.OpenEndedImprovement",
           "proof_targets": [
             {
-              "tag": "lean:open_ended_improvement.generation_governance.missing_independent_evaluation_blocks_admission",
-              "module": "AsiStackProofs.SelfImprovement",
-              "target": "A finite improvement-campaign record with a requested artifact admission and missing independent evaluation routes to review without inferring that the candidate is unsafe, ineffective, or generally deceptive.",
+              "tag": "lean:open_ended_improvement.campaign.complete_candidate_to_governor_review",
+              "module": "AsiStackProofs.OpenEndedImprovement",
+              "target": "A complete finite campaign record reaches the existing governor for review without admitting or promoting its candidate.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:open_ended_improvement.campaign.missing_independent_qualification",
+              "module": "AsiStackProofs.OpenEndedImprovement",
+              "target": "Missing independent qualification routes to evaluator separation.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:open_ended_improvement.campaign.exhausted_budget",
+              "module": "AsiStackProofs.OpenEndedImprovement",
+              "target": "An exhausted resource budget routes to budget repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:open_ended_improvement.campaign.missing_stop_authority",
+              "module": "AsiStackProofs.OpenEndedImprovement",
+              "target": "Missing stop authority blocks the requested handoff.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:open_ended_improvement.campaign.erased_failure_history",
+              "module": "AsiStackProofs.OpenEndedImprovement",
+              "target": "Erased failure history routes to archive repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:open_ended_improvement.campaign.missing_residual_owner",
+              "module": "AsiStackProofs.OpenEndedImprovement",
+              "target": "Missing residual ownership blocks the requested handoff.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:open_ended_improvement.campaign.authority_laundering",
+              "module": "AsiStackProofs.OpenEndedImprovement",
+              "target": "A candidate request that drops the no-authority boundary is rejected.",
               "status": "implemented"
             }
+          ],
+          "draft_maturity": "v0.2 depth-leveled chapter",
+          "open_evidence_gaps": [
+            "The seven Lean theorems and digest-bound fixture establish finite record routing only; they do not establish campaign quality, evaluator independence or correctness, autonomous discovery, useful novelty, transfer, safe self-improvement, model quality, or ASI.",
+            "Run the prospectively specified fixed/generated/no-search campaign on a fresh cohort before considering any empirical support change."
           ]
         }
       ]
@@ -7433,12 +7633,13 @@
             "Economic commitment laundering turns a budget reservation or routed value packet into settlement, consent, fair price, or legal authorization.",
             "Revocation races or residual loss leave a changed credential, endpoint, policy, budget, timeout, partial delivery, dispute, refund, or remote failure without accountable local handling."
           ],
-          "minimal_implementation": "A public-safe exchange record with protocol/schema revision, endpoint/capability declaration, sender/receiver/principal identities, task or artifact reference, delegated-authority scope, credential requirement/result, audience, expiry, budget reservation, expected receipt, dispute/revocation path, residual owner, and requested dispatch. Finite Lean routes deny a requested dispatch with a required invalid credential and route a value-bearing requested dispatch without a reserved budget to budget repair.",
+          "minimal_implementation": "Nine digest-bound synthetic exchange records and eleven rejecting mutations bridge owned Lean routes for complete local handoff, missing sender, audience mismatch, expiry, invalid or revoked credentials, missing reserved budget, disputed receipt, and missing residual ownership. No peer, protocol, credential, payment, account, or remote effect ran.",
           "beyond_state_of_art": "A mature stack exposes a protocol-neutral exchange control plane that maps tool requests, agent tasks, federated service calls, identity presentations, and value-bearing requests into bounded local contracts. It tracks discovery separately from trust, credentials separately from authorization, reservations separately from settlement, and declared results separately from independently reviewed evidence; it propagates expiry, revocation, endpoint change, budget release, dispute, and residual ownership to affected requests before existing local owners permit the next effect. This is a target architecture, not a claim of a local protocol, identity system, credential framework, payment network, peer-trust model, authorization service, task verifier, settlement system, privacy program, safe distributed deployment, or ASI.",
           "codex_tests": [
             "Required-invalid-credential dispatch denial route",
             "Missing-reserved-budget value-bearing dispatch repair route",
-            "Public-safe exchange contract workload with identity, delegation, expiry, revocation, budget, receipt, dispute, and residual negative controls"
+            "Public-safe exchange contract workload with identity, delegation, expiry, revocation, budget, receipt, dispute, and residual negative controls",
+            "Eleven validator-owned rejecting mutations"
           ],
           "lean_module": "AsiStackProofs.InterStackProtocols",
           "proof_targets": [
@@ -7453,13 +7654,56 @@
               "module": "AsiStackProofs.InterStackProtocols",
               "target": "A finite value-bearing requested cross-stack exchange with all required identity and authority records but no reserved budget routes to budget repair rather than ordinary local dispatch, without inferring payment, settlement, economic fairness, authority correctness, or ASI.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:inter_stack.complete_exchange.reaches_local_dispatch",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "A complete finite exchange record reaches the existing local dispatch boundary without proving runtime authorization or execution.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:inter_stack.missing_sender.requires_identity_repair",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "Missing sender identity routes to identity repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:inter_stack.audience_mismatch.denies_dispatch",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "Audience or scope mismatch denies ordinary dispatch.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:inter_stack.expired_request.denies_dispatch",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "An expired request denies ordinary dispatch.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:inter_stack.revoked_credential.denies_dispatch",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "A verified but no-longer-current required credential denies dispatch.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:inter_stack.disputed_receipt.requires_review",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "A disputed expected receipt routes to accountable review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:inter_stack.missing_residual_owner.requires_review",
+              "module": "AsiStackProofs.InterStackProtocols",
+              "target": "Missing residual ownership routes to accountable review.",
+              "status": "implemented"
             }
           ],
-          "draft_maturity": "v0.1 chapter draft",
+          "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
             "No ASI Stack protocol endpoint, peer discovery service, identity resolver, credential issuer or verifier, delegated-authority chain, payment connector, settlement workflow, dispute workflow, or cross-stack dispatch has run.",
             "No local result establishes peer trustworthiness, identity binding, authorization correctness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, or ASI.",
-            "The finite Lean routes establish only modeled record consequences for invalid credentials and missing reserved budgets; they do not establish any real protocol, identity, credential, policy, receipt, payment, or peer result."
+            "The nine Lean routes and digest-bound fixture establish only finite record consequences; they do not establish any real protocol, identity, credential, policy, receipt, payment, peer, privacy, or task-quality result.",
+            "Run the prospectively fixed synthetic peer campaign with cached-versus-per-request qualification and false-dispatch, false-denial, stale-acceptance, dispute, latency, disclosure, operator-effort, and residual measures next."
           ]
         },
         {
@@ -10283,7 +10527,7 @@
             "A persuasive trace becomes implied planning, evidence, or execution authority.",
             "Parallel deliberation outruns available reviewer or verifier capacity."
           ],
-          "minimal_implementation": "A versioned deliberation record with request/risk tier, selected mode, time/token/branch/cost budget, verifier identity/version/scope/independence, candidate and rejection references, stop reason, unresolved constraints, residual owner, and downstream handoff. A finite fixture routes a high-risk execution request without independent verification to review and an exhausted budget to residual escrow.",
+          "minimal_implementation": "Ten digest-bound synthetic deliberation records and eleven rejecting mutations bridge ten owned Lean routes for complete planning handoff, budget/mode/verifier/history/stop/residual completeness, trace-authority separation, exhaustion, and high-risk independent verification. Fifteen known extra-compute harms remain regression-only knowledge.",
           "beyond_state_of_art": "A mature deliberation control plane chooses direct generation, bounded revision, candidate search, or abstention by risk, expected verification value, budget, and independent-check availability. It measures quality, verifier cost, branch count, latency, residuals, and counterexamples without turning a trace or benchmark score into authority. This is a target architecture, not a claim of local reasoning quality, reliable test-time scaling, safe self-reflection, or autonomous general intelligence.",
           "codex_tests": [
             "High-risk independent-verifier admission fixture",
@@ -10298,13 +10542,23 @@
               "module": "AsiStackProofs.Deliberation",
               "target": "A finite high-risk deliberation record with a requested execution handoff and no independent verifier routes to review rather than release to planning, without inferring evaluator correctness, reasoning quality, safety, model quality, or ASI.",
               "status": "implemented"
-            }
+            },
+            {"tag": "lean:deliberation.budget_exhausted.escrows_residual", "module": "AsiStackProofs.Deliberation", "target": "An otherwise complete exhausted deliberation stops and escrows its residual.", "status": "implemented"},
+            {"tag": "lean:deliberation.complete_high_risk.reaches_planning", "module": "AsiStackProofs.Deliberation", "target": "A complete finite high-risk record reaches planning without execution authority.", "status": "implemented"},
+            {"tag": "lean:deliberation.missing_budget.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing budget declaration routes to review.", "status": "implemented"},
+            {"tag": "lean:deliberation.missing_search_mode.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing search-mode declaration routes to review.", "status": "implemented"},
+            {"tag": "lean:deliberation.missing_verifier_scope.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing verifier scope routes to review.", "status": "implemented"},
+            {"tag": "lean:deliberation.missing_candidate_history.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing candidate history routes to review.", "status": "implemented"},
+            {"tag": "lean:deliberation.missing_stop_condition.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing stop condition routes to review.", "status": "implemented"},
+            {"tag": "lean:deliberation.missing_residual_owner.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing residual ownership routes to review.", "status": "implemented"},
+            {"tag": "lean:deliberation.trace_authority_laundering.requires_review", "module": "AsiStackProofs.Deliberation", "target": "An unseparated trace-authority claim routes to review.", "status": "implemented"}
           ],
-          "draft_maturity": "v0.1 chapter draft",
+          "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
-            "No ASI Stack reasoning model, search procedure, verifier, difficulty estimator, test-time-compute policy, workload, or measured result has been run.",
-            "The cited external systems remain source-setting comparators with their own models, prompts, tasks, evaluators, training conditions, and budgets; none is local implementation evidence.",
-            "The finite Lean routes establish only record-routing consequences for missing independent verification and exhausted budgets; they do not establish verifier independence, correctness, reasoning quality, trace faithfulness, safety, model quality, or ASI."
+            "The frozen local real-model comparison produced 0/60 correct in every arm; it did not supply useful candidates or an estimable initially-correct corruption rate.",
+            "No independently implemented evaluator, ambiguous natural workload, beneficial test-time-compute result, verifier correctness, efficient inference, safety, trace faithfulness, or model-quality result exists.",
+            "The ten Lean routes and digest-bound fixture establish finite record routing only; they do not establish verifier independence, correctness, reasoning quality, trace faithfulness, test-time efficiency, safety, model quality, or ASI.",
+            "Run the prospectively fixed ambiguous held-out real-model campaign with an independently implemented evaluator and preserve all fifteen known extra-compute harms."
           ]
         },
         {
@@ -13093,7 +13347,7 @@
             "Exception laundering lets competitive pressure or schedule pressure bypass the commitment without named authority, expiry, or compensating controls.",
             "Cross-domain collapse treats cyber, biological, autonomy, replication, and other profiles as interchangeable because they share an aggregate score."
           ],
-          "minimal_implementation": "A versioned threshold-commitment record with capability domain and threat model, evaluation envelope and coverage date, threshold rule and uncertainty, baseline/elicitation/access references, required safeguards and verification criteria, deadline, exception authority, re-evaluation triggers, residual owner, and affected release path. A finite Lean route blocks a requested release when a crossed threshold lacks verified safeguards.",
+          "minimal_implementation": "Eight digest-bound synthetic threshold-commitment records and five rejecting mutations bridge eight owned Lean routes for crossed and non-crossed readiness handoffs, missing evaluation scope, baseline, uncertainty, residual custody, safeguard record, and safeguard verification. No capability evaluation or release ran.",
           "beyond_state_of_art": "A mature capability-commitment control plane maintains a versioned portfolio of domain-specific thresholds with public or reviewable evaluation envelopes, uncertainty and coverage records, precommitted safeguards, independent verification, residual-risk review, prospective exception governance, and automatic re-evaluation when models, scaffolds, elicitation, or threat models change. It coordinates release, security, monitoring, access, rollback, and disclosure obligations without reducing diverse dangerous-capability profiles to one autonomy scalar. This is a target architecture, not a claim that this repository has measured capability, set an adequate threshold, verified safeguards, or achieved safe deployment.",
           "codex_tests": [
             "Crossed-threshold safeguard-completeness route",
@@ -13108,13 +13362,21 @@
               "module": "AsiStackProofs.CapabilityThresholds",
               "target": "A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI.",
               "status": "implemented"
-            }
+            },
+            {"tag": "lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation", "module": "AsiStackProofs.CapabilityThresholds", "target": "Missing evaluation scope routes to re-evaluation.", "status": "implemented"},
+            {"tag": "lean:capability_thresholds.complete_crossed.reaches_readiness_review", "module": "AsiStackProofs.CapabilityThresholds", "target": "A complete crossed record reaches readiness review, not deployment.", "status": "implemented"},
+            {"tag": "lean:capability_thresholds.complete_non_crossing.reaches_readiness_review", "module": "AsiStackProofs.CapabilityThresholds", "target": "A complete non-crossing reaches readiness review without becoming general clearance.", "status": "implemented"},
+            {"tag": "lean:capability_thresholds.missing_baseline.requires_reevaluation", "module": "AsiStackProofs.CapabilityThresholds", "target": "Missing baseline routes to re-evaluation.", "status": "implemented"},
+            {"tag": "lean:capability_thresholds.missing_uncertainty.requires_reevaluation", "module": "AsiStackProofs.CapabilityThresholds", "target": "Missing uncertainty routes to re-evaluation.", "status": "implemented"},
+            {"tag": "lean:capability_thresholds.missing_residual_owner.requires_exception", "module": "AsiStackProofs.CapabilityThresholds", "target": "Missing residual custody routes to accountable exception.", "status": "implemented"},
+            {"tag": "lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release", "module": "AsiStackProofs.CapabilityThresholds", "target": "A crossed threshold without its required safeguard record blocks the affected release.", "status": "implemented"}
           ],
-          "draft_maturity": "v0.1 chapter draft",
+          "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
             "No ASI Stack capability assessment, time-horizon task suite, human baseline, dangerous-capability profile, threshold crossing, safeguard verification, exception review, release decision, or deployment result has been run.",
             "No local result establishes threshold validity, metric comparability, capability level, time horizon, general autonomy, safeguard efficacy, residual-risk reduction, readiness, safety, or authority to deploy.",
-            "The finite Lean route establishes only structured-record consequences of a crossed threshold with missing verified safeguards; it does not establish that the threshold, assessment, safeguard, exception, or reviewer is correct."
+            "The eight Lean routes and digest-bound fixture establish only structured-record consequences; they do not establish that the threshold, assessment, safeguard, exception, reviewer, readiness decision, or institution is correct.",
+            "Run the prospectively frozen public-safe repeated assessment and mock-safeguard campaign before considering empirical support movement."
           ]
         },
         {
@@ -13210,22 +13472,31 @@
             "Monitor interference, evaluation awareness, or selection-context adaptation.",
             "Detector or mitigation laundering into a safety guarantee."
           ],
-          "minimal_implementation": "A versioned evaluation-integrity record with elicitation, selection, reward, monitor, held-out/cross-context probe, discrepancy, residual, and no-promotion fields, plus finite routing for missing controls and interference findings.",
+          "minimal_implementation": "Eight digest-bound synthetic evaluation-integrity records and five rejecting mutations bridge eight owned Lean routes for complete review handoff, selection/reward/monitor provenance, independent evaluation, cross-context probes, discrepancy quarantine, and intent-laundering rejection. No model or detector ran.",
           "beyond_state_of_art": "The mature system continuously tests how its own evidence depends on observation through diversified evaluators, context perturbations, trusted and untrusted monitor separation, blinded holdouts where feasible, independent replay, countercases, and assurance-state handoff into training leases and deployment gates. This is a target architecture, not a claim of complete deception detection, universal evaluator trust, or safety.",
           "codex_tests": [
             "Evaluation-integrity record fixture",
             "Cross-context discrepancy probe",
             "Training-time deception boundary review"
           ],
-          "lean_module": "AsiStackProofs.PolicyOptimization",
+          "lean_module": "AsiStackProofs.AdversarialEvaluation",
           "proof_targets": [
             {
-              "tag": "lean:adversarial_evaluation.selection_context.failure_blocks_promotion",
-              "module": "AsiStackProofs.PolicyOptimization",
-              "target": "A finite evaluation-integrity record with missing selection context or independent evaluation blocks requested promotion without inferring deception, capability, safety, or intent.",
+              "tag": "lean:adversarial_evaluation.integrity.complete_to_promotion_review",
+              "module": "AsiStackProofs.AdversarialEvaluation",
+              "target": "A complete integrity packet reaches review, not promotion.",
               "status": "implemented"
-            }
-          ]
+            },
+            {"tag": "lean:adversarial_evaluation.integrity.missing_selection_context", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing selection context routes to repair.", "status": "implemented"},
+            {"tag": "lean:adversarial_evaluation.integrity.missing_reward_provenance", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing reward provenance routes to repair.", "status": "implemented"},
+            {"tag": "lean:adversarial_evaluation.integrity.missing_monitor_provenance", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing monitor provenance routes to repair.", "status": "implemented"},
+            {"tag": "lean:adversarial_evaluation.integrity.missing_independent_evaluation", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing independent evaluation blocks review.", "status": "implemented"},
+            {"tag": "lean:adversarial_evaluation.integrity.missing_cross_context_probe", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing cross-context probe blocks review.", "status": "implemented"},
+            {"tag": "lean:adversarial_evaluation.integrity.unresolved_discrepancy", "module": "AsiStackProofs.AdversarialEvaluation", "target": "An unresolved integrity discrepancy routes to quarantine.", "status": "implemented"},
+            {"tag": "lean:adversarial_evaluation.integrity.intent_laundering", "module": "AsiStackProofs.AdversarialEvaluation", "target": "An observation cannot become an intent inference.", "status": "implemented"}
+          ],
+          "draft_maturity": "v0.2 depth-leveled chapter",
+          "open_evidence_gaps": ["No deceptive model, detector, evaluator ensemble, or mitigation was run.", "The eight Lean routes and digest-bound fixture establish finite record routing only; they do not detect deception, establish sandbagging resistance, validate evaluators, infer intent or capability, or establish safety.", "Run the frozen benign cross-context campaign with an independently implemented evaluator before considering empirical support movement."]
         },
         {
           "id": "safety-cases-and-structured-assurance",
@@ -13332,25 +13603,68 @@
           "minimal_implementation": "A versioned assurance-case record with one scoped top claim, deployment and hazard context, argument/evidence references, assumptions, defeaters, countercase-review state, acceptance criterion, residual owner, decision authority, and affected release path. A finite Lean route sends a requested release with an unresolved defeater to accountable review rather than readiness release.",
           "beyond_state_of_art": "A mature assurance compiler continuously builds auditable, versioned cases from the book's evidence, evaluation, threshold, safeguard, readiness, provenance, and residual records; it highlights stale dependencies, missing countercase searches, evidence-scope mismatch, contradiction, and changed deployment conditions; requests independent review; and feeds only a bounded case status to existing release and authority gates. It preserves dissent and failure history, supports multiple threat-model arguments without combining them into a single confidence score, and makes a case revision a reviewable deployment event. This is a target architecture, not a claim that this repository has a complete case, valid threat model, adequate evidence, effective controls, safe system, or authorized deployment.",
           "codex_tests": [
-            "Unresolved-defeater safety-case route",
-            "Missing acceptance-criterion negative control",
-            "Stale case-dependency and re-review fixture",
-            "Public-safe assurance-graph compilation workload"
+            "Complete bounded record to readiness-review route",
+            "Missing context and hazard-model negative controls",
+            "Stale evidence, countercase, independent-review, and unresolved-defeater routes",
+            "Authority-laundering rejection",
+            "Eight-case digest-bound synthetic assurance bridge"
           ],
           "lean_module": "AsiStackProofs.SafetyCases",
           "proof_targets": [
             {
+              "tag": "lean:safety_cases.complete_case.reaches_readiness_review",
+              "module": "AsiStackProofs.SafetyCases",
+              "target": "A complete finite case record reaches only readiness review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:safety_cases.missing_context.retains_draft",
+              "module": "AsiStackProofs.SafetyCases",
+              "target": "A missing deployment context retains the record as a case draft.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:safety_cases.missing_hazard.requires_case_repair",
+              "module": "AsiStackProofs.SafetyCases",
+              "target": "A missing hazard model requires case repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:safety_cases.stale_evidence.requires_repair",
+              "module": "AsiStackProofs.SafetyCases",
+              "target": "A stale evidence dependency requires evidence repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:safety_cases.missing_countercase.requires_review",
+              "module": "AsiStackProofs.SafetyCases",
+              "target": "A missing countercase review requires dedicated review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:safety_cases.missing_independent_review.requires_review",
+              "module": "AsiStackProofs.SafetyCases",
+              "target": "A missing independent review cannot reach readiness review.",
+              "status": "implemented"
+            },
+            {
               "tag": "lean:safety_cases.unresolved_defeater.blocks_affected_release",
               "module": "AsiStackProofs.SafetyCases",
-              "target": "A finite assurance-case record with a requested affected release and an unresolved defeater routes to accountable review rather than readiness release, without inferring that the defeater is correct, the case is false, the system is unsafe, or ASI.",
+              "target": "An unresolved defeater routes a finite case record to accountable review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:safety_cases.case_status.cannot_authorize_release",
+              "module": "AsiStackProofs.SafetyCases",
+              "target": "A case record without explicit separation from release authority is rejected.",
               "status": "implemented"
             }
           ],
-          "draft_maturity": "v0.1 chapter draft",
+          "draft_maturity": "v0.2 chapter draft",
           "open_evidence_gaps": [
             "No ASI Stack safety case, hazard analysis, threat model, countercase search, independent review, acceptance decision, readiness decision, release decision, or deployment result has been run.",
             "No local result establishes a case's completeness, evidence adequacy, threat-model correctness, countercase quality, control effectiveness, safety, readiness, authority, or ASI.",
-            "The finite Lean route establishes only a record consequence for an unresolved defeater; it does not establish whether the defeater, case, evidence, reviewer, hazard model, or release decision is correct."
+            "The finite Lean routes and synthetic case-compilation fixture establish only record consequences; they do not establish whether a case, evidence edge, reviewer, hazard model, countercase search, control, or release decision is correct."
           ]
         },
         {
@@ -14125,14 +14439,50 @@
               "module": "AsiStackProofs.DataEngines",
               "target": "A complete finite data-admission review routes to eligibility without claiming that data quality, training, or unlearning has been verified.",
               "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.complete_reaches_evidence_review", "module": "AsiStackProofs.DataEngines", "target": "A complete finite state record reaches evidence review, not promotion.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.missing_optimizer_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing optimizer state requires inventory repair.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.missing_scheduler_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing scheduler state requires inventory repair.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.missing_rng_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing RNG state requires inventory repair.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.missing_cache_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing cache state requires inventory repair.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.missing_backup_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing backup state requires inventory repair.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.missing_descendant_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing descendant state requires inventory repair.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.missing_checkpoint_authority_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing prospective checkpoint authority requires repair.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.full_state.rollback_mismatch_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "A rollback mismatch requires repair.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.unlearning.behavior_cannot_launder_influence", "module": "AsiStackProofs.DataEngines", "target": "Behavioral change without influence evidence cannot support an influence claim.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.unlearning.behavior_cannot_launder_privacy", "module": "AsiStackProofs.DataEngines", "target": "Behavioral change without privacy evidence cannot support a privacy-erasure claim.", "status": "implemented"
+            },
+            {
+              "tag": "lean:data_engines.unlearning.lineage_cannot_launder_storage", "module": "AsiStackProofs.DataEngines", "target": "Lineage propagation without verified erasure cannot support a storage-erasure claim.", "status": "implemented"
             }
           ],
-          "draft_maturity": "v0.1 chapter draft",
+          "draft_maturity": "v0.2 chapter draft",
           "open_evidence_gaps": [
-            "No ASI Stack data-admission runtime, dataset import, training run, continual-learning comparison, or model-quality evaluation exists.",
+            "No production data-admission runtime, natural-task dataset import, foundation-model training run, production continual-learning comparison, or transfer result exists; the local evidence is a small synthetic PyTorch campaign.",
             "No semantic-leakage, coverage, poisoning, privacy, or benchmark-contamination guarantee has been established.",
-            "No deletion request has been propagated or verified across model parameters, checkpoints, adapters, caches, retrieval stores, distilled models, or published artifacts.",
-            "The finite schema and Lean routing model prove record-shape and branch behavior only; they do not validate the truth of receipt fields or promote the core claim."
+            "The local deletion-aware arm propagated three declared lineage invalidations per seed but did not establish influence reduction, privacy or legal erasure, storage or backup erasure, or closure across external descendants.",
+            "The finite schema, Lean routes, and full-state bridge establish bounded record consequences and local campaign facts only; they do not validate receipt truth, production completeness, or promote the core claim."
           ]
         },
         {

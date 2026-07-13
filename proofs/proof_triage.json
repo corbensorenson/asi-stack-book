@@ -1780,6 +1780,18 @@
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.DataEngines as a finite completeness route: declared control fields yield eligibility for bounded use only, without establishing provenance truth, data quality, training value, deletion propagation, or chapter-core support movement."
     },
+    {"tag": "lean:data_engines.full_state.complete_reaches_evidence_review", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "A complete finite state record reaches evidence review, not promotion.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite state-record routing bridged to the existing local campaign; it does not establish useful learning, transfer, or promotion."},
+    {"tag": "lean:data_engines.full_state.missing_optimizer_requires_repair", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Missing optimizer state requires inventory repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite inventory routing only; it does not establish inventory completeness beyond declared scope."},
+    {"tag": "lean:data_engines.full_state.missing_scheduler_requires_repair", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Missing scheduler state requires inventory repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite inventory routing only; it does not establish inventory completeness beyond declared scope."},
+    {"tag": "lean:data_engines.full_state.missing_rng_requires_repair", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Missing RNG state requires inventory repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite inventory routing only; it does not establish deterministic production replay."},
+    {"tag": "lean:data_engines.full_state.missing_cache_requires_repair", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Missing cache state requires inventory repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite inventory routing only; it does not establish cache discovery or external invalidation."},
+    {"tag": "lean:data_engines.full_state.missing_backup_requires_repair", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Missing backup state requires inventory repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite inventory routing only; it does not establish remote backup closure or erasure."},
+    {"tag": "lean:data_engines.full_state.missing_descendant_requires_repair", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Missing descendant state requires inventory repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite inventory routing only; it does not establish world-complete lineage."},
+    {"tag": "lean:data_engines.full_state.missing_checkpoint_authority_requires_repair", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Missing prospective checkpoint authority requires repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite authority-record routing only; it does not establish checkpoint quality or deployment authority."},
+    {"tag": "lean:data_engines.full_state.rollback_mismatch_requires_repair", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "A rollback mismatch requires repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite exactness-input routing only; the campaign bridge is bounded to 24 local surfaces."},
+    {"tag": "lean:data_engines.unlearning.behavior_cannot_launder_influence", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Behavioral change without influence evidence cannot support an influence claim.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite claim-separation routing only; it does not measure causal influence."},
+    {"tag": "lean:data_engines.unlearning.behavior_cannot_launder_privacy", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Behavioral change without privacy evidence cannot support a privacy-erasure claim.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite claim-separation routing only; it does not measure privacy or legal erasure."},
+    {"tag": "lean:data_engines.unlearning.lineage_cannot_launder_storage", "chapter_id": "data-engines-continual-learning-and-unlearning", "module": "AsiStackProofs.DataEngines", "formal_target": "Lineage propagation without verified erasure cannot support a storage-erasure claim.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite claim-separation routing only; it does not verify storage or backup erasure."},
     {
       "tag": "lean:artifact_stewards.work_contract.operational_invariant",
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
@@ -2151,24 +2163,91 @@
       "rationale": "Implemented in AsiStackProofs.TheseusReference as a finite metadata-only fixture bridge: it preserves durable work-board row counts, stale-snapshot currentness blocking, zero public training rows, zero external inference calls, no raw-report or SQLite/task payload copy, and no clean-live-replay or chapter-core promotion boundaries."
     },
     {
-      "tag": "lean:adversarial_evaluation.selection_context.failure_blocks_promotion",
+      "tag": "lean:adversarial_evaluation.integrity.complete_to_promotion_review",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "module": "AsiStackProofs.PolicyOptimization",
-      "formal_target": "A finite evaluation-integrity record with missing selection context or independent evaluation blocks requested promotion without inferring deception, capability, safety, or intent.",
+      "module": "AsiStackProofs.AdversarialEvaluation",
+      "formal_target": "A complete integrity packet reaches review, not promotion.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite promotion-boundary theorem for missing selection context or independent evaluation. It does not detect sandbagging, infer model intent, establish evaluator correctness, or prove capability or safety."
+      "rationale": "Finite promotion-review handoff only; it does not establish promotion, evaluator validity, deception, intent, capability, or safety."
+    },
+    {"tag": "lean:adversarial_evaluation.integrity.missing_selection_context", "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception", "module": "AsiStackProofs.AdversarialEvaluation", "formal_target": "Missing selection context routes to repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite context routing only; it does not detect sandbagging."},
+    {"tag": "lean:adversarial_evaluation.integrity.missing_reward_provenance", "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception", "module": "AsiStackProofs.AdversarialEvaluation", "formal_target": "Missing reward provenance routes to repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite provenance routing only; it does not establish reward fidelity."},
+    {"tag": "lean:adversarial_evaluation.integrity.missing_monitor_provenance", "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception", "module": "AsiStackProofs.AdversarialEvaluation", "formal_target": "Missing monitor provenance routes to repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite provenance routing only; it does not establish monitor validity."},
+    {"tag": "lean:adversarial_evaluation.integrity.missing_independent_evaluation", "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception", "module": "AsiStackProofs.AdversarialEvaluation", "formal_target": "Missing independent evaluation blocks review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite independence routing only; it does not establish actual evaluator independence."},
+    {"tag": "lean:adversarial_evaluation.integrity.missing_cross_context_probe", "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception", "module": "AsiStackProofs.AdversarialEvaluation", "formal_target": "Missing cross-context probe blocks review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite probe routing only; it does not establish probe adequacy."},
+    {"tag": "lean:adversarial_evaluation.integrity.unresolved_discrepancy", "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception", "module": "AsiStackProofs.AdversarialEvaluation", "formal_target": "An unresolved integrity discrepancy routes to quarantine.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite discrepancy routing only; it does not diagnose deception."},
+    {"tag": "lean:adversarial_evaluation.integrity.intent_laundering", "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception", "module": "AsiStackProofs.AdversarialEvaluation", "formal_target": "An observation cannot become an intent inference.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite no-intent boundary only; it does not infer latent objectives."},
+    {
+      "tag": "lean:open_ended_improvement.campaign.complete_candidate_to_governor_review",
+      "chapter_id": "open-ended-improvement-engines",
+      "module": "AsiStackProofs.OpenEndedImprovement",
+      "formal_target": "A complete finite campaign record reaches the existing governor for review without admitting or promoting its candidate.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Finite campaign-record routing only; governor review is not admission, promotion, campaign quality, or useful novelty."
     },
     {
-      "tag": "lean:open_ended_improvement.generation_governance.missing_independent_evaluation_blocks_admission",
+      "tag": "lean:open_ended_improvement.campaign.missing_independent_qualification",
       "chapter_id": "open-ended-improvement-engines",
-      "module": "AsiStackProofs.SelfImprovement",
-      "formal_target": "A finite improvement-campaign record with a requested artifact admission and missing independent evaluation routes to review without inferring that the candidate is unsafe, ineffective, or generally deceptive.",
+      "module": "AsiStackProofs.OpenEndedImprovement",
+      "formal_target": "Missing independent qualification routes to evaluator separation.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.SelfImprovement as a finite campaign-admission routing theorem for a missing independent evaluation. It does not establish campaign quality, evaluator correctness, autonomous discovery, self-improvement safety, model quality, or ASI."
+      "rationale": "Finite qualification routing only; it does not establish evaluator independence or correctness."
+    },
+    {
+      "tag": "lean:open_ended_improvement.campaign.exhausted_budget",
+      "chapter_id": "open-ended-improvement-engines",
+      "module": "AsiStackProofs.OpenEndedImprovement",
+      "formal_target": "An exhausted resource budget routes to budget repair.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Finite budget routing only; it does not establish efficiency, cost control, or search quality."
+    },
+    {
+      "tag": "lean:open_ended_improvement.campaign.missing_stop_authority",
+      "chapter_id": "open-ended-improvement-engines",
+      "module": "AsiStackProofs.OpenEndedImprovement",
+      "formal_target": "Missing stop authority blocks the requested handoff.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Finite stop-boundary routing only; it does not establish effective intervention or safe autonomy."
+    },
+    {
+      "tag": "lean:open_ended_improvement.campaign.erased_failure_history",
+      "chapter_id": "open-ended-improvement-engines",
+      "module": "AsiStackProofs.OpenEndedImprovement",
+      "formal_target": "Erased failure history routes to archive repair.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Finite archive routing only; it does not establish archive completeness, diversity, or discovery value."
+    },
+    {
+      "tag": "lean:open_ended_improvement.campaign.missing_residual_owner",
+      "chapter_id": "open-ended-improvement-engines",
+      "module": "AsiStackProofs.OpenEndedImprovement",
+      "formal_target": "Missing residual ownership blocks the requested handoff.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Finite residual-custody routing only; it does not establish that residuals are complete or mitigated."
+    },
+    {
+      "tag": "lean:open_ended_improvement.campaign.authority_laundering",
+      "chapter_id": "open-ended-improvement-engines",
+      "module": "AsiStackProofs.OpenEndedImprovement",
+      "formal_target": "A candidate request that drops the no-authority boundary is rejected.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Finite authority-boundary routing only; it does not establish runtime enforcement or candidate safety."
     },
     {
       "tag": "lean:deliberation.high_risk.missing_independent_verifier_blocks_execution",
@@ -2180,16 +2259,23 @@
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.Deliberation as a finite high-risk handoff boundary. It routes missing independent verification to review and does not establish verifier independence, verifier correctness, reasoning quality, trace faithfulness, safety, model quality, or ASI."
     },
-    {
-      "tag": "lean:safety_cases.unresolved_defeater.blocks_affected_release",
-      "chapter_id": "safety-cases-and-structured-assurance",
-      "module": "AsiStackProofs.SafetyCases",
-      "formal_target": "A finite assurance-case record with a requested affected release and an unresolved defeater routes to accountable review rather than readiness release, without inferring that the defeater is correct, the case is false, the system is unsafe, or ASI.",
-      "target_status": "implemented",
-      "triage": "formal-invariant",
-      "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.SafetyCases as a finite unresolved-defeater and countercase-review boundary. It does not establish defeater correctness, argument validity, evidence adequacy, hazard-model completeness, control efficacy, safety, readiness, authority, or ASI."
-    },
+    {"tag": "lean:deliberation.budget_exhausted.escrows_residual", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "An otherwise complete exhausted deliberation stops and escrows its residual.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite exhaustion routing only; it does not establish stopping quality or useful allocation."},
+    {"tag": "lean:deliberation.complete_high_risk.reaches_planning", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "A complete finite high-risk record reaches planning without execution authority.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite planning handoff only; it does not establish correctness, safety, or authority."},
+    {"tag": "lean:deliberation.missing_budget.requires_review", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "Missing budget declaration routes to review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite budget-record routing only; it does not establish efficiency."},
+    {"tag": "lean:deliberation.missing_search_mode.requires_review", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "Missing search-mode declaration routes to review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite mode routing only; it does not establish search quality."},
+    {"tag": "lean:deliberation.missing_verifier_scope.requires_review", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "Missing verifier scope routes to review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite verifier-scope routing only; it does not establish evaluator validity."},
+    {"tag": "lean:deliberation.missing_candidate_history.requires_review", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "Missing candidate history routes to review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite history routing only; it does not establish archive completeness."},
+    {"tag": "lean:deliberation.missing_stop_condition.requires_review", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "Missing stop condition routes to review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite stop-contract routing only; it does not establish optimal stopping."},
+    {"tag": "lean:deliberation.missing_residual_owner.requires_review", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "Missing residual ownership routes to review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite residual routing only; it does not establish completeness."},
+    {"tag": "lean:deliberation.trace_authority_laundering.requires_review", "chapter_id": "governed-deliberation-and-test-time-scaling", "module": "AsiStackProofs.Deliberation", "formal_target": "An unseparated trace-authority claim routes to review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite authority-separation routing only; it does not establish trace faithfulness or runtime enforcement."},
+    {"tag": "lean:safety_cases.complete_case.reaches_readiness_review", "chapter_id": "safety-cases-and-structured-assurance", "module": "AsiStackProofs.SafetyCases", "formal_target": "A complete finite case record reaches only readiness review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite synthetic record routing only; it does not establish case validity, evidence adequacy, safety, readiness, or authority."},
+    {"tag": "lean:safety_cases.missing_context.retains_draft", "chapter_id": "safety-cases-and-structured-assurance", "module": "AsiStackProofs.SafetyCases", "formal_target": "A missing deployment context retains the record as a case draft.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite context-record routing only; it does not establish context completeness."},
+    {"tag": "lean:safety_cases.missing_hazard.requires_case_repair", "chapter_id": "safety-cases-and-structured-assurance", "module": "AsiStackProofs.SafetyCases", "formal_target": "A missing hazard model requires case repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite hazard-record routing only; it does not validate a hazard model."},
+    {"tag": "lean:safety_cases.stale_evidence.requires_repair", "chapter_id": "safety-cases-and-structured-assurance", "module": "AsiStackProofs.SafetyCases", "formal_target": "A stale evidence dependency requires evidence repair.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite currentness-input routing only; it does not establish evidence quality or live provenance."},
+    {"tag": "lean:safety_cases.missing_countercase.requires_review", "chapter_id": "safety-cases-and-structured-assurance", "module": "AsiStackProofs.SafetyCases", "formal_target": "A missing countercase review requires dedicated review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite review-record routing only; it does not establish countercase adequacy."},
+    {"tag": "lean:safety_cases.missing_independent_review.requires_review", "chapter_id": "safety-cases-and-structured-assurance", "module": "AsiStackProofs.SafetyCases", "formal_target": "A missing independent review cannot reach readiness review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite review-record routing only; it does not establish reviewer independence or correctness."},
+    {"tag": "lean:safety_cases.unresolved_defeater.blocks_affected_release", "chapter_id": "safety-cases-and-structured-assurance", "module": "AsiStackProofs.SafetyCases", "formal_target": "An unresolved defeater routes a finite case record to accountable review.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite defeater-record routing only; it does not establish defeater correctness, safety, or readiness."},
+    {"tag": "lean:safety_cases.case_status.cannot_authorize_release", "chapter_id": "safety-cases-and-structured-assurance", "module": "AsiStackProofs.SafetyCases", "formal_target": "A case record without explicit separation from release authority is rejected.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite authority-separation routing only; it does not establish runtime enforcement or release correctness."},
     {
       "tag": "lean:model_weight_custody.required.invalid_attestation_blocks_load",
       "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
@@ -2201,6 +2287,76 @@
       "rationale": "Implemented in AsiStackProofs.ModelWeightCustody as a finite required-invalid-attestation load boundary, with a companion missing-lineage custody-repair route. It does not establish hardware trustworthiness, attestation genuineness, weight confidentiality, extraction resistance, key-service behavior, model safety, readiness, authority, deployment, or ASI."
     },
     {
+      "tag": "lean:model_weight_custody.lifecycle.complete_observed_load",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "formal_target": "A complete finite custody lifecycle record with a current valid attestation, dependency disclosure, independent load observation, residual owner, and revocation semantics routes to bounded load admission without authorizing deployment.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived finite-record route and bridged to the deterministic custody fixture. It does not prove confidentiality, security effectiveness, or deployment merit."
+    },
+    {
+      "tag": "lean:model_weight_custody.lifecycle.missing_lineage",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "formal_target": "A finite custody lifecycle record with an artifact digest but no lineage routes to lineage repair.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived lineage-completeness route. It does not prove that recorded lineage is complete or authentic."
+    },
+    {
+      "tag": "lean:model_weight_custody.lifecycle.stale_attestation",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "formal_target": "A finite custody lifecycle record with stale attestation evidence routes to a fresh-attestation requirement.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived freshness route. It does not prove that current evidence is genuine or sufficient."
+    },
+    {
+      "tag": "lean:model_weight_custody.lifecycle.undisclosed_verifier_dependencies",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "formal_target": "A finite custody lifecycle record without verifier-dependency disclosure routes to dependency review without proving disclosed verifiers independent.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived dependency-disclosure route. It does not establish verifier independence."
+    },
+    {
+      "tag": "lean:model_weight_custody.lifecycle.unobserved_load",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "formal_target": "A requested finite load with no independent load-observation record routes to an observation requirement.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived observation route. It does not establish that a recorded observation is independent or complete."
+    },
+    {
+      "tag": "lean:model_weight_custody.lifecycle.release_authority_laundering",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "formal_target": "A finite distribution request that fails to preserve the no-authority-grant boundary routes to release-laundering rejection.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived authority-separation route. It records a refusal boundary and grants no external authority."
+    },
+    {
+      "tag": "lean:model_weight_custody.lifecycle.irreversible_distribution_record",
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "module": "AsiStackProofs.ModelWeightCustody",
+      "formal_target": "A complete finite distribution request with preserved authority separation and acknowledged irreversibility routes to an irreversible-release record rather than execution.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived release-record route. It does not authorize distribution or prove release merit, recall, or extraction resistance."
+    },
+    {
       "tag": "lean:ai_supply_chain.unresolved_critical_advisory.quarantines_artifact",
       "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
       "module": "AsiStackProofs.SupplyChainIntegrity",
@@ -2209,6 +2365,56 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.SupplyChainIntegrity as a finite advisory/signature admission boundary. It does not establish advisory accuracy, signature genuineness, inventory completeness, artifact integrity, absence of compromise, data fitness, supplier trustworthiness, legal compliance, model safety, readiness, authority, deployment, or ASI."
+    },
+    {
+      "tag": "lean:ai_supply_chain.complete_requested_artifact.reaches_custody_review",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "module": "AsiStackProofs.SupplyChainIntegrity",
+      "formal_target": "A complete finite requested artifact with verified required signature, current advisory state, revocation path, and residual owner routes to custody review without granting load or deployment authority.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived finite-record admission route. It does not prove artifact integrity, inventory completeness, or custody eligibility."
+    },
+    {
+      "tag": "lean:ai_supply_chain.missing_lineage.requires_repair",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "module": "AsiStackProofs.SupplyChainIntegrity",
+      "formal_target": "A finite artifact record with identity and digest but missing lineage routes to lineage repair.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived lineage-completeness route. It does not prove recorded lineage complete."
+    },
+    {
+      "tag": "lean:ai_supply_chain.missing_component_inventory.requires_review",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "module": "AsiStackProofs.SupplyChainIntegrity",
+      "formal_target": "A finite artifact record with no component inventory routes to accountable review without claiming that a present inventory is complete.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived inventory-presence route. It does not validate inventory truth or completeness."
+    },
+    {
+      "tag": "lean:ai_supply_chain.missing_revocation_path.requires_repair",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "module": "AsiStackProofs.SupplyChainIntegrity",
+      "formal_target": "A finite otherwise eligible artifact record with no revocation path routes to lineage repair.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived revocation-path route. It does not establish revocation effectiveness."
+    },
+    {
+      "tag": "lean:ai_supply_chain.missing_residual_owner.requires_review",
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "module": "AsiStackProofs.SupplyChainIntegrity",
+      "formal_target": "A finite otherwise eligible artifact record with no residual owner routes to accountable review.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived ownership route. It does not establish reviewer competence or response quality."
     },
     {
       "tag": "lean:inter_stack.invalid_credential.blocks_dispatch",
@@ -2231,6 +2437,62 @@
       "rationale": "Implemented in AsiStackProofs.InterStackProtocols as a finite reservation-required value-bearing dispatch boundary. It does not establish a payment, account, connector, settlement, legal transfer, economic fairness, authority correctness, safety, deployment, or ASI."
     },
     {
+      "tag": "lean:inter_stack.complete_exchange.reaches_local_dispatch",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "A complete finite exchange record reaches the existing local dispatch boundary without proving runtime authorization or execution.",
+      "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate",
+      "rationale": "Finite handoff routing only; it does not establish runtime authorization, peer trust, or execution."
+    },
+    {
+      "tag": "lean:inter_stack.missing_sender.requires_identity_repair",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "Missing sender identity routes to identity repair.",
+      "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate",
+      "rationale": "Finite identity-record routing only; it does not establish identity truth or resolver quality."
+    },
+    {
+      "tag": "lean:inter_stack.audience_mismatch.denies_dispatch",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "Audience or scope mismatch denies ordinary dispatch.",
+      "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate",
+      "rationale": "Finite audience routing only; it does not establish policy or authorization correctness."
+    },
+    {
+      "tag": "lean:inter_stack.expired_request.denies_dispatch",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "An expired request denies ordinary dispatch.",
+      "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate",
+      "rationale": "Finite expiry routing only; it does not establish clock, propagation, or runtime enforcement correctness."
+    },
+    {
+      "tag": "lean:inter_stack.revoked_credential.denies_dispatch",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "A verified but no-longer-current required credential denies dispatch.",
+      "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate",
+      "rationale": "Finite currentness routing only; it does not establish credential validity or revocation propagation."
+    },
+    {
+      "tag": "lean:inter_stack.disputed_receipt.requires_review",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "A disputed expected receipt routes to accountable review.",
+      "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate",
+      "rationale": "Finite dispute routing only; it does not establish task truth, receipt correctness, or settlement."
+    },
+    {
+      "tag": "lean:inter_stack.missing_residual_owner.requires_review",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "module": "AsiStackProofs.InterStackProtocols",
+      "formal_target": "Missing residual ownership routes to accountable review.",
+      "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate",
+      "rationale": "Finite custody routing only; it does not establish residual completeness or recovery quality."
+    },
+    {
       "tag": "lean:capability_thresholds.crossed.missing_verified_safeguards_blocks_release",
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "module": "AsiStackProofs.CapabilityThresholds",
@@ -2240,6 +2502,13 @@
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.CapabilityThresholds as a finite safeguard-completeness boundary, with a companion missing-evaluation-envelope route. It does not establish assessment correctness, threshold adequacy, safeguard efficacy, reviewer correctness, capability level, readiness, safety, authority, or ASI."
     },
+    {"tag": "lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation", "chapter_id": "capability-thresholds-and-deployment-commitments", "module": "AsiStackProofs.CapabilityThresholds", "formal_target": "Missing evaluation scope routes to re-evaluation.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite scope routing only; it does not establish evaluator validity."},
+    {"tag": "lean:capability_thresholds.complete_crossed.reaches_readiness_review", "chapter_id": "capability-thresholds-and-deployment-commitments", "module": "AsiStackProofs.CapabilityThresholds", "formal_target": "A complete crossed record reaches readiness review, not deployment.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite handoff only; it does not establish readiness or authority."},
+    {"tag": "lean:capability_thresholds.complete_non_crossing.reaches_readiness_review", "chapter_id": "capability-thresholds-and-deployment-commitments", "module": "AsiStackProofs.CapabilityThresholds", "formal_target": "A complete non-crossing reaches readiness review without becoming general clearance.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite non-crossing routing only; it does not establish safety."},
+    {"tag": "lean:capability_thresholds.missing_baseline.requires_reevaluation", "chapter_id": "capability-thresholds-and-deployment-commitments", "module": "AsiStackProofs.CapabilityThresholds", "formal_target": "Missing baseline routes to re-evaluation.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite baseline routing only; it does not establish comparability."},
+    {"tag": "lean:capability_thresholds.missing_uncertainty.requires_reevaluation", "chapter_id": "capability-thresholds-and-deployment-commitments", "module": "AsiStackProofs.CapabilityThresholds", "formal_target": "Missing uncertainty routes to re-evaluation.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite uncertainty routing only; it does not establish calibration."},
+    {"tag": "lean:capability_thresholds.missing_residual_owner.requires_exception", "chapter_id": "capability-thresholds-and-deployment-commitments", "module": "AsiStackProofs.CapabilityThresholds", "formal_target": "Missing residual custody routes to accountable exception.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite custody routing only; it does not establish residual completeness."},
+    {"tag": "lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release", "chapter_id": "capability-thresholds-and-deployment-commitments", "module": "AsiStackProofs.CapabilityThresholds", "formal_target": "A crossed threshold without its required safeguard record blocks the affected release.", "target_status": "implemented", "triage": "formal-invariant", "recommended_route": "lean-candidate", "rationale": "Finite safeguard-record routing only; it does not establish safeguard efficacy."},
     {
       "tag": "lean:scalable_oversight.high_risk.missing_outcome_audit_blocks_admission",
       "chapter_id": "scalable-oversight-and-adversarial-ai-control",
@@ -2249,6 +2518,66 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Implemented in AsiStackProofs.ScalableOversight as a finite high-risk admission boundary, with a companion baseline-completeness route. It does not establish reviewer independence, supervisor calibration, debate or consultancy efficacy, training safety, execution authority, model quality, safety, or ASI."
+    },
+    {
+      "tag": "lean:scalable_oversight.use.complete_bounded_admission",
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "module": "AsiStackProofs.ScalableOversight",
+      "formal_target": "A complete finite use record with an audited protocol, declared consumer and expiry, preserved no-authority boundary, requested downstream use, and no abstention routes to bounded use without establishing protocol efficacy.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived finite-record route and connected to the deterministic protocol fixture. It establishes only routing completeness, not that oversight is useful, correct, independent, or safe."
+    },
+    {
+      "tag": "lean:scalable_oversight.use.missing_evidence_views_requires_repair",
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "module": "AsiStackProofs.ScalableOversight",
+      "formal_target": "A finite use record with the protocol digest, cohort, and capability envelopes present but evidence views absent routes to access repair.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived access-completeness route. It does not establish that a recorded evidence view is adequate or truth preserving."
+    },
+    {
+      "tag": "lean:scalable_oversight.use.undisclosed_dependencies_require_review",
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "module": "AsiStackProofs.ScalableOversight",
+      "formal_target": "A finite use record with missing shared-dependency disclosure routes to dependency review without claiming that disclosed reviewers are independent.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived dependency-disclosure route. It does not measure or prove evaluator independence."
+    },
+    {
+      "tag": "lean:scalable_oversight.use.missing_outcome_audit_requires_audit",
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "module": "AsiStackProofs.ScalableOversight",
+      "formal_target": "A high-risk finite use record without an independent outcome-audit record routes to an audit requirement rather than bounded use.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived high-risk audit route. It does not establish that a present audit is independent, correct, or sufficient."
+    },
+    {
+      "tag": "lean:scalable_oversight.use.unjustified_abstention_requires_evidence",
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "module": "AsiStackProofs.ScalableOversight",
+      "formal_target": "A finite downstream-use record requesting abstention without its evidence record routes to an abstention-evidence requirement.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived abstention route. It does not establish that an evidence-backed abstention is calibrated or beneficial."
+    },
+    {
+      "tag": "lean:scalable_oversight.use.authority_laundering_rejected",
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "module": "AsiStackProofs.ScalableOversight",
+      "formal_target": "A finite downstream-use record that fails to preserve the no-authority-grant boundary routes to authority-laundering rejection.",
+      "target_status": "implemented",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Implemented as a derived authority-separation route. It preserves a record boundary but does not implement or authorize an external action."
     },
     {
       "tag": "lean:reference_architecture.governed_trace.four_invariants",
@@ -2261,5 +2590,5 @@
       "rationale": "Implemented as a finite Python/Lean bridge over one executed local repository-change log with logical-time tie precedence, bounded authority scopes, explicit no-transition evidence events, residual accounting, and one negative control per invariant. It does not establish distributed timing, deployed enforcement, evidence-pipeline correctness, residual completeness, safety, security, or ASI."
     }
   ],
-  "record_count": 225
+  "record_count": 298
 }

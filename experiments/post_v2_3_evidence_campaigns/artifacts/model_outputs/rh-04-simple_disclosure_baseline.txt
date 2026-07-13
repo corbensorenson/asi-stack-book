@@ -1,0 +1,8 @@
+<think>
+Okay, let's tackle this query. The user is asking for a JSON object with specific keys: decision, route, residuals (array), reopen_trigger, and confidence. The scenario mentions a behavior change in the deletion cohort, and Backup B-KEEP still has the source rows with no influence estimation. The instruction is to list every material residual explicitly and choose the safe route even if it delays closure.
+
+First, I need to understand the scenario. The key points are: behavior changed in the deletion cohort, Backup B-KEEP has the source rows, influence wasn't estimated. The instruction says to list all material residuals and choose the safe route, even if it delays closure. So, the decision here is probably to not close the case immediately because there are unresolved issues.
+
+For the decision key, maybe "do not close" or "defer closure". The route should be the safe one, perhaps "deferred closure" or "safe route". The residuals array needs to list every material residual. The scenario mentions Backup B-KEEP still has the source rows, so that's a residual. Also, since influence wasn't estimated, that's another residual. Maybe other things like unverified data or unaddressed behavior changes.
+
+Reopen trigger would be if there's new

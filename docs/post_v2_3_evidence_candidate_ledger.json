@@ -1,0 +1,1016 @@
+{
+  "schema_version": "asi_stack.post_v2_3_evidence_candidate_ledger.v0",
+  "ledger_id": "post-v2-3-evidence-candidate-adjudication-2026-07-13",
+  "recorded_date": "2026-07-13",
+  "scope": "Every completed post-v2, post-v2.1, and QCSA v2.3 result that was a promotion recommendation, an accepted prior transition, or plausibly supports a narrower bounded claim.",
+  "candidate_count": 21,
+  "disposition_counts": {
+    "promote": 5,
+    "narrow": 8,
+    "no_change": 6,
+    "refute": 2
+  },
+  "accepted_transition_count": 21,
+  "candidates": [
+    {
+      "candidate_id": "post_v2_governed_work_flagship.bounded_matched_local_result",
+      "program": "post_v2",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_governed_work_flagship/results/2026-07-10-local.json",
+          "sha256": "0e5108a9f8acfa776cdce7fcceb48f86aa0b33a44bc8ac0e3857d3bcf9eb9079"
+        },
+        {
+          "path": "scripts/validate_post_v2_governed_work_flagship.py",
+          "sha256": "4eb2ae4fa3e8b9dd039552d09643618b4d21da8cea47b28b3e604c2f7b99e189"
+        },
+        {
+          "path": "docs/post_v2_governed_work_flagship.md",
+          "sha256": "7abd7d18b5c06efca17a8791f93cce596a812bf6d2da59c1ba1378d036850b1c"
+        }
+      ],
+      "candidate_claim": "Sixteen model-generated plan/code runs provide bounded local comparative evidence for authority, effect observation, receipt/path reconciliation, residuals, rollback, quarantine, and measured cost, while zero governed releases and two failed rollbacks block broader promotion.",
+      "owner": "intent-to-execution-contracts",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "eight disposable local tasks; one small local coder model; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "eight disposable local tasks",
+        "one small local coder model",
+        "internal subprocess observer only",
+        "no deployed authorization, sandbox, verifier, rollback, or release service",
+        "no production transfer or economics"
+      ],
+      "counterevidence": [
+        "governed route released zero useful candidates",
+        "two governed rollbacks remained inexact and quarantined",
+        "four governed residuals were discovered and two remained open",
+        "the prevalidation pilot was preserved as non-evidentiary after protocol defects"
+      ],
+      "residuals": [
+        "deployed or externally reviewable governed-work traces",
+        "broader natural workloads and models",
+        "independent verifier-quality assessment",
+        "production cost, throughput, rollback, and residual evidence"
+      ],
+      "disposition": "no_change",
+      "transition_record": "evidence_transitions/post_v2/governed_work_flagship_no_change.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "deployed or externally reviewable governed-work traces; broader natural workloads and models; independent verifier-quality assessment; production cost, throughput, rollback, and residual evidence"
+    },
+    {
+      "candidate_id": "post_v2_routing_deliberation.bounded_matched_local_result",
+      "program": "post_v2",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_routing_deliberation/results/2026-07-10-local.json",
+          "sha256": "aeb55600763191c83938ec9bf87a3d6814e06f490442f0babb5deab487041ad6"
+        },
+        {
+          "path": "scripts/validate_post_v2_routing_deliberation.py",
+          "sha256": "6c8afd85ee7caefc2e508f1ebc0291805564683e4e174a0c80d885268f3960c4"
+        },
+        {
+          "path": "docs/post_v2_routing_deliberation.md",
+          "sha256": "df391aac8eadeb2b5d06775475dbd1fa10a81c376330aaeb9a2186d73aba6de1"
+        }
+      ],
+      "candidate_claim": "The frozen three-seed held-out study measures specialist routing, generalist baselines, matched operation caps, adaptive/fixed/no-deliberation arms, and extra-compute harm, while route separability and zero fallback activation block broader routing claims and deterministic verification blocks model-scale deliberation claims.",
+      "owner": "routing-heads-and-specialist-cores",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "synthetic four-family workload; deterministic specialists and task verifier; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "synthetic four-family workload",
+        "deterministic specialists and task verifier",
+        "no language-model reasoning traces",
+        "no trained-specialist interference or production fallback calibration",
+        "no model-scale transfer"
+      ],
+      "counterevidence": [
+        "fallback and abstention activated zero times",
+        "oracle, learned, and rule routing were indistinguishable on an overly separable corpus",
+        "fixed three-step deliberation harmed 15 initially correct answers",
+        "one adaptive case exhausted its budget without a verified candidate"
+      ],
+      "residuals": [
+        "harder ambiguous routing workload with exercised fallback and abstention",
+        "trained specialists and interference measurements",
+        "language-model deliberation with independent verifier-quality assessment",
+        "production latency, cost, safety, and transfer evidence"
+      ],
+      "disposition": "no_change",
+      "transition_record": "evidence_transitions/post_v2/routing_deliberation_no_change.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "harder ambiguous routing workload with exercised fallback and abstention; trained specialists and interference measurements; language-model deliberation with independent verifier-quality assessment; production latency, cost, safety, and transfer evidence"
+    },
+    {
+      "candidate_id": "post_v2_update_causality.bounded_real_mutation_result",
+      "program": "post_v2",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_update_causality/results/2026-07-10-local.json",
+          "sha256": "4bb8aec5648e01da1d01ad68420849e2dcf93e18b2f9936266c74890ad0ec3ef"
+        },
+        {
+          "path": "scripts/validate_post_v2_update_causality.py",
+          "sha256": "a2b4800f6ad909374182fff09b3b2d65feb04dd97a6b84c68a421344d2b12360"
+        },
+        {
+          "path": "docs/post_v2_update_causality.md",
+          "sha256": "8333b50ec21da07fcb5397b8d37e0bebf050f9846ce4d9bc2767f3bcb5cb8759"
+        }
+      ],
+      "candidate_claim": "Three seeds and four arms establish real local parameter/checkpoint/output causality, best/final authority, forgetting, deletion-cohort differences, rollback identity, and descendant invalidation, while modest utility and synthetic scope block production learning, unlearning, open-ended improvement, or recursive-improvement claims.",
+      "owner": "data-engines-continual-learning-and-unlearning",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "small synthetic policy network; poisoned-cohort exclusion is not production unlearning; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "small synthetic policy network",
+        "poisoned-cohort exclusion is not production unlearning",
+        "no human or model feedback",
+        "fixed stopped campaign is not open-ended",
+        "rollback covers recorded checkpoints only",
+        "no recursive self-proposed update"
+      ],
+      "counterevidence": [
+        "challenger utility gains were modest and seed-sensitive",
+        "bounded and regularized updates reduced retained-base accuracy on average",
+        "best and final challenger checkpoints disagreed on 62 test decisions",
+        "deletion-aware retraining does not prove storage erasure or verified forgetting"
+      ],
+      "residuals": [
+        "production-scale continual-learning and feedback-update traces",
+        "verified deletion propagation across descendants and storage",
+        "independent evaluator and privacy assessment",
+        "deployed canary, rollback, invalidation, and monitor evidence",
+        "open-ended or recursive campaign evidence if those claims are pursued"
+      ],
+      "disposition": "no_change",
+      "transition_record": "evidence_transitions/post_v2/update_causality_no_change.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "production-scale continual-learning and feedback-update traces; verified deletion propagation across descendants and storage; independent evaluator and privacy assessment; deployed canary, rollback, invalidation, and monitor evidence; open-ended or recursive campaign evidence if those claims are pursued"
+    },
+    {
+      "candidate_id": "post_v2_1.ambiguous_routing.bounded_result",
+      "program": "post_v2_1",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+          "sha256": "aaedd64c15afe0903b0b15b9569313fffa1dbb977ee0d8234b56252bef779d76"
+        },
+        {
+          "path": "scripts/validate_post_v2_1_outcomes.py",
+          "sha256": "5da27a8f3da1bed2d91d2a36418efc6651c7edc5384306f4649f942f25bcfd28"
+        },
+        {
+          "path": "docs/post_v2_1_empirical_results.md",
+          "sha256": "1624b1a1d6034c413010fffdcc4b879d02167ba58798b6f93824dd1c52b4cc72"
+        }
+      ],
+      "candidate_claim": "The learned router selected 59/60 correct routes and exercised fallback, abstention, and clarification, but all 360 generated substantive candidates were wrong and the apparent selective-utility gain came entirely from correct non-answer actions.",
+      "owner": "routing-heads-and-specialist-cores",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "synthetic six-action workload; single model and seed; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "synthetic six-action workload",
+        "single model and seed",
+        "internal deterministic criterion evaluator",
+        "no trained-specialist interference or deployment"
+      ],
+      "counterevidence": [
+        "zero of 360 substantive candidate evaluations were correct",
+        "learned answer correctness consisted only of abstention, clarification, and fallback decisions",
+        "one bounded synthetic finite set cannot establish transfer"
+      ],
+      "residuals": [
+        "nonzero substantive answer utility",
+        "independently assessed evaluator validity",
+        "multiple models, seeds, and natural workloads",
+        "production routing safety, latency, cost, and transfer"
+      ],
+      "disposition": "narrow",
+      "transition_record": "evidence_transitions/post_v2_1/ambiguous_routing_narrow.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "nonzero substantive answer utility; independently assessed evaluator validity; multiple models, seeds, and natural workloads; production routing safety, latency, cost, and transfer"
+    },
+    {
+      "candidate_id": "post_v2_1.full_state_rollback.bounded_result",
+      "program": "post_v2_1",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+          "sha256": "aaedd64c15afe0903b0b15b9569313fffa1dbb977ee0d8234b56252bef779d76"
+        },
+        {
+          "path": "scripts/validate_post_v2_1_outcomes.py",
+          "sha256": "5da27a8f3da1bed2d91d2a36418efc6651c7edc5384306f4649f942f25bcfd28"
+        },
+        {
+          "path": "docs/post_v2_1_empirical_results.md",
+          "sha256": "1624b1a1d6034c413010fffdcc4b879d02167ba58798b6f93824dd1c52b4cc72"
+        }
+      ],
+      "candidate_claim": "All fifteen seed-arm transactions restored all 24 declared model, optimizer, scheduler, RNG, cache, checkpoint, backup, and descendant surfaces exactly, but the scope was one local synthetic campaign with no external system effects.",
+      "owner": "capability-replacement-and-rollback",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "local disposable state trees; single implementation; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "local disposable state trees",
+        "single implementation",
+        "no remote or production effect",
+        "no independent operator"
+      ],
+      "counterevidence": [
+        "rollback identity is bounded to the declared local inventory",
+        "no production cache, remote backup, service, or external effect was exercised",
+        "exact local bytes do not prove semantic or production recovery"
+      ],
+      "residuals": [
+        "replication across heterogeneous runtimes",
+        "external effect and remote backup recovery",
+        "production recovery objectives and monitoring",
+        "independent replay"
+      ],
+      "disposition": "narrow",
+      "transition_record": "evidence_transitions/post_v2_1/full_state_rollback_narrow.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "replication across heterogeneous runtimes; external effect and remote backup recovery; production recovery objectives and monitoring; independent replay"
+    },
+    {
+      "candidate_id": "post_v2_1.full_state_update.no_change_result",
+      "program": "post_v2_1",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+          "sha256": "aaedd64c15afe0903b0b15b9569313fffa1dbb977ee0d8234b56252bef779d76"
+        },
+        {
+          "path": "scripts/validate_post_v2_1_outcomes.py",
+          "sha256": "5da27a8f3da1bed2d91d2a36418efc6651c7edc5384306f4649f942f25bcfd28"
+        },
+        {
+          "path": "docs/post_v2_1_empirical_results.md",
+          "sha256": "1624b1a1d6034c413010fffdcc4b879d02167ba58798b6f93824dd1c52b4cc72"
+        }
+      ],
+      "candidate_claim": "Prospective checkpoint authority was honored and retained-task bounds held for eligible challengers, but zero of nine challenger seed-arms reached the registered 0.05 target-utility gain.",
+      "owner": "data-engines-continual-learning-and-unlearning",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "small synthetic policy network; three seeds; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "small synthetic policy network",
+        "three seeds",
+        "fixed twelve-epoch campaign",
+        "no feedback-learning, open-ended, recursive, or deployed update loop"
+      ],
+      "counterevidence": [
+        "zero of nine eligible challenger seed-arms met the target-gain threshold",
+        "gains were small and seed-sensitive",
+        "authorized-data comparators crossed the safety bound and remained ineligible"
+      ],
+      "residuals": [
+        "replicated target gain at the retained-task bound",
+        "production-scale update and monitoring traces",
+        "independent validity assessment",
+        "separate evidence for feedback learning, open-endedness, or recursion if claimed"
+      ],
+      "disposition": "no_change",
+      "transition_record": "evidence_transitions/post_v2_1/full_state_update_no_change.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "replicated target gain at the retained-task bound; production-scale update and monitoring traces; independent validity assessment; separate evidence for feedback learning, open-endedness, or recursion if claimed"
+    },
+    {
+      "candidate_id": "post_v2_1.governed_usefulness_rollback.bounded_result",
+      "program": "post_v2_1",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+          "sha256": "aaedd64c15afe0903b0b15b9569313fffa1dbb977ee0d8234b56252bef779d76"
+        },
+        {
+          "path": "scripts/validate_post_v2_1_outcomes.py",
+          "sha256": "5da27a8f3da1bed2d91d2a36418efc6651c7edc5384306f4649f942f25bcfd28"
+        },
+        {
+          "path": "docs/post_v2_1_empirical_results.md",
+          "sha256": "1624b1a1d6034c413010fffdcc4b879d02167ba58798b6f93824dd1c52b4cc72"
+        }
+      ],
+      "candidate_claim": "Governance reduced registered primary unsafe releases from 24/36 to 0/36, but useful release remained 2/36 and attack-control exact rollback was 32/36, below both registered usefulness and rollback thresholds.",
+      "owner": "intent-to-execution-contracts",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "finite synthetic public-safe repository-task corpus; one locally hosted four-bit model; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "finite synthetic public-safe repository-task corpus",
+        "one locally hosted four-bit model",
+        "internal observer implementation",
+        "no external effects or production service"
+      ],
+      "counterevidence": [
+        "only two of 36 held-out candidates were correct",
+        "governed useful-release rate was 0.0556",
+        "four of 36 attack-control rollbacks remained inexact"
+      ],
+      "residuals": [
+        "useful governed throughput at the registered frontier",
+        "effect-complete rollback beyond the local inventory",
+        "independently assessed verifier quality",
+        "production transfer and governance-cost evidence"
+      ],
+      "disposition": "narrow",
+      "transition_record": "evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "useful governed throughput at the registered frontier; effect-complete rollback beyond the local inventory; independently assessed verifier quality; production transfer and governance-cost evidence"
+    },
+    {
+      "candidate_id": "post_v2_1.real_model_deliberation.no_change_result",
+      "program": "post_v2_1",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+          "sha256": "aaedd64c15afe0903b0b15b9569313fffa1dbb977ee0d8234b56252bef779d76"
+        },
+        {
+          "path": "scripts/validate_post_v2_1_outcomes.py",
+          "sha256": "5da27a8f3da1bed2d91d2a36418efc6651c7edc5384306f4649f942f25bcfd28"
+        },
+        {
+          "path": "docs/post_v2_1_empirical_results.md",
+          "sha256": "1624b1a1d6034c413010fffdcc4b879d02167ba58798b6f93824dd1c52b4cc72"
+        }
+      ],
+      "candidate_claim": "All five deliberation arms ended at 0/60 correct; adaptive stopping exhausted five candidates on every request, so utility did not improve and corruption reduction was not estimable on an initially-correct case.",
+      "owner": "governed-deliberation-and-test-time-scaling",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "single small model; zero initially-correct held-out candidates; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "single small model",
+        "zero initially-correct held-out candidates",
+        "internal evaluator",
+        "no production latency or transfer"
+      ],
+      "counterevidence": [
+        "no deliberation arm produced one correct final answer",
+        "adaptive stopping never stopped before budget exhaustion",
+        "the fifteen historical harms remain regression logic rather than new held-out evidence"
+      ],
+      "residuals": [
+        "a workload with correct and incorrect initial candidates",
+        "adaptive benefit at a matched real budget",
+        "replicated corruption reduction",
+        "independently assessed evaluator and production transfer"
+      ],
+      "disposition": "no_change",
+      "transition_record": "evidence_transitions/post_v2_1/real_model_deliberation_no_change.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "a workload with correct and incorrect initial candidates; adaptive benefit at a matched real budget; replicated corruption reduction; independently assessed evaluator and production transfer"
+    },
+    {
+      "candidate_id": "post_v2_1.unlearning_causality.narrow_result",
+      "program": "post_v2_1",
+      "result_refs": [
+        {
+          "path": "experiments/post_v2_1_evidence_program/results/2026-07-11-post-v2-1-outcomes.json",
+          "sha256": "aaedd64c15afe0903b0b15b9569313fffa1dbb977ee0d8234b56252bef779d76"
+        },
+        {
+          "path": "scripts/validate_post_v2_1_outcomes.py",
+          "sha256": "5da27a8f3da1bed2d91d2a36418efc6651c7edc5384306f4649f942f25bcfd28"
+        },
+        {
+          "path": "docs/post_v2_1_empirical_results.md",
+          "sha256": "1624b1a1d6034c413010fffdcc4b879d02167ba58798b6f93824dd1c52b4cc72"
+        }
+      ],
+      "candidate_claim": "Deletion-aware retraining produced behavioral cohort changes of 4, 0, and 1 and propagated lineage invalidation, while influence reduction remained a confidence proxy and storage erasure remained false at every seed.",
+      "owner": "data-engines-continual-learning-and-unlearning",
+      "comparator": "The preregistered matched baseline, ablation, challenger, or no-update route named by the frozen campaign and transition record.",
+      "cohort": "synthetic deletion cohort; behavioral proxy only; exact retained result denominator only.",
+      "cost": "Campaign-recorded latency, token/tool, review, rollback, state, or resource fields are retained; unmeasured production cost is not inferred.",
+      "independence": "local maintainer-agent review only; no external human review requested or claimed",
+      "transfer": "No population, production, institutional, or open-world transfer is established beyond the exact local workload.",
+      "validity_limits": [
+        "synthetic deletion cohort",
+        "behavioral proxy only",
+        "no privacy audit",
+        "no legal or physical storage-erasure transaction"
+      ],
+      "counterevidence": [
+        "one seed had zero behavioral deletion-cohort changes",
+        "influence removal was not established",
+        "the immutable source corpus remained stored"
+      ],
+      "residuals": [
+        "causal influence-removal evidence",
+        "privacy and member/nonmember assessment",
+        "descendant-wide propagation receipts",
+        "verified storage and backup erasure where claimed"
+      ],
+      "disposition": "narrow",
+      "transition_record": "evidence_transitions/post_v2_1/unlearning_causality_narrow.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Preserve the bounded result and its negative evidence in the owning chapter/ledger.",
+        "Clarify only the exact local mechanism or blocker; do not move a chapter-core support state."
+      ],
+      "prohibited_inference": "causal influence-removal evidence; privacy and member/nonmember assessment; descendant-wide propagation receipts; verified storage and backup erasure where claimed"
+    },
+    {
+      "candidate_id": "qcsa.active_questions_exact_fixture_value",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "The active-question mechanism improves held-out decisions in this exact corpus.",
+      "owner": "cognitive-compilation-and-semantic-ir",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "Question-policy cost is additionally confounded by the frozen ablation verifier-cost bookkeeping; no general claim against clarification is licensed."
+      ],
+      "counterevidence": [
+        "Removing active questions left object and task-decision accuracy at 1.000; the full candidate asked questions on 0.033333 of records and gained no decision accuracy.",
+        "Question-policy cost is additionally confounded by the frozen ablation verifier-cost bookkeeping; no general claim against clarification is licensed."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "refute",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_active_questions_exact_fixture_value_refute.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "refuted",
+      "old_support_state": "argument",
+      "new_support_state": "refuted",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.certificate_authority_fields_exact_value",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "Certificate, residual, and authority fields prevent the exact authority-escalation fixtures.",
+      "owner": "runtime-adapters-tool-permissions-and-human-approval",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "Blocked synthetic tool fixtures do not establish runtime, security, privacy, or general safety."
+      ],
+      "counterevidence": [
+        "Full QCSA produced zero unsafe authority releases; the frozen no-certificate/residual/authority ablation produced 9 unsafe releases across 180 seeded records.",
+        "Blocked synthetic tool fixtures do not establish runtime, security, privacy, or general safety."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "promote",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_certificate_authority_fields_exact_value_promote.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "upward",
+      "old_support_state": "argument",
+      "new_support_state": "synthetic-test-backed",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.exact_synthetic_matched_advantage",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "QCSA achieves the preregistered matched-resource performance advantage on the exact synthetic held-out corpus.",
+      "owner": "integrated-reference-architecture",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "Refutation is limited to the exact deterministic corpus, implementations, operation accounting, and frozen baseline-selection rule."
+      ],
+      "counterevidence": [
+        "Task-decision accuracy was 1.000 for QCSA and 1.000 for the selected best baseline in every seed, while QCSA used 1.913386 times as many operations; both the 0.03 task-accuracy and resource gates failed.",
+        "Refutation is limited to the exact deterministic corpus, implementations, operation accounting, and frozen baseline-selection rule."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "refute",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_exact_synthetic_matched_advantage_refute.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "refuted",
+      "old_support_state": "argument",
+      "new_support_state": "refuted",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.governance_prevention_resource_tradeoff",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "QCSA prevents more exact governance/migration failures at an acceptable matched resource ratio.",
+      "owner": "resource-economics-and-token-budgets",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "The prevention definition combines object, decision, authority, and structural fixture failures and is not a production incident rate."
+      ],
+      "counterevidence": [
+        "Prevention was 1.000000 versus 0.487179, a 0.512821 gain, but the 1.913386 operation ratio exceeded the preregistered 1.50 governance ceiling.",
+        "The prevention definition combines object, decision, authority, and structural fixture failures and is not a production incident rate."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "narrow",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_governance_prevention_resource_tradeoff_narrow.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.identity_indirection_exact_migration_value",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "Stable identity/address indirection contributes to exact migration compatibility in this implementation.",
+      "owner": "virtual-context-abi",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "This is exact fixture-level causal evidence, not a distributed registry, open-world identity, or federation result."
+      ],
+      "counterevidence": [
+        "Full QCSA achieved 1.000 migration compatibility and object accuracy; removing identity indirection reduced aggregate object accuracy to 0.900000 and migration compatibility to 0.400000.",
+        "This is exact fixture-level causal evidence, not a distributed registry, open-world identity, or federation result."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "promote",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_identity_indirection_exact_migration_value_promote.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "upward",
+      "old_support_state": "argument",
+      "new_support_state": "synthetic-test-backed",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.migration_compatibility_exact_value",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "Explicit migration compatibility contributes to exact lifecycle correctness in this implementation.",
+      "owner": "data-engines-continual-learning-and-unlearning",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "The result covers deterministic same/fail/merge/split/stale fixtures, not live descendants, distributed caches, or production rollback."
+      ],
+      "counterevidence": [
+        "Full QCSA achieved 1.000 task decisions and migration compatibility; the no-migration-compatibility ablation fell to 0.833333 task-decision accuracy and 0.000000 compatibility.",
+        "The result covers deterministic same/fail/merge/split/stale fixtures, not live descendants, distributed caches, or production rollback."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "promote",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_migration_compatibility_exact_value_promote.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "upward",
+      "old_support_state": "argument",
+      "new_support_state": "synthetic-test-backed",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.open_world_or_production_transfer",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "The result establishes open-world, natural-task, learned-model, safety, privacy, or production transfer.",
+      "owner": "integrated-reference-architecture",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "The evaluation is synthetic, deterministic, internally authored, zero-network, and bounded to 60 held-out templates repeated over three seeds."
+      ],
+      "counterevidence": [
+        "No such workload, model, deployment, external replication, live effect, or natural prevalence study was run.",
+        "The evaluation is synthetic, deterministic, internally authored, zero-network, and bounded to 60 held-out templates repeated over three seeds."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "no_change",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_open_world_or_production_transfer_no_change.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.plural_facets_exact_fixture_value",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "Plural facets contribute to exact synthetic identity resolution in this implementation.",
+      "owner": "cognitive-compilation-and-semantic-ir",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "Template-transparent synthetic fixtures do not establish natural-language, multilingual, multimodal, or learned-representation benefit."
+      ],
+      "counterevidence": [
+        "The full candidate resolved 1.000 of objects while the no-plural-facets ablation resolved 0.916667 under the same held-out inputs.",
+        "Template-transparent synthetic fixtures do not establish natural-language, multilingual, multimodal, or learned-representation benefit."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "promote",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "upward",
+      "old_support_state": "argument",
+      "new_support_state": "synthetic-test-backed",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.reference_implementation_exact_contract_conformance",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/implementation_result.json",
+          "sha256": "52528115e47ae80482479bb238f40062401a3bfde430906585dfe40c7b18caba"
+        },
+        {
+          "path": "docs/qcsa_reference_implementation_report.md",
+          "sha256": "db51daa46cc19b5526bcfe3cac38ae4af452e687909618d71c5a5198414fb67e"
+        }
+      ],
+      "candidate_claim": "The bounded QCSA reference package conforms to its exact schemas, fixtures, digest manifest, and expected-invalid controls.",
+      "owner": "integrated-reference-architecture",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "bounded deterministic reference package",
+        "no held-out outcome licensed by implementation conformance alone"
+      ],
+      "counterevidence": [
+        "The deterministic implementation and replay validators pass, but implementation conformance is not an evaluation outcome or natural semantic-quality result.",
+        "bounded deterministic reference package",
+        "no held-out outcome licensed by implementation conformance alone"
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "narrow",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_reference_implementation_exact_contract_conformance_narrow.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.semantic_round_trip_exact_preservation",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "The exact QCSA outputs preserve the evaluator-labelled structures under the independent normalization used here.",
+      "owner": "cognitive-compilation-and-semantic-ir",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "The observer is separately implemented but internal, labels are synthetic, and the result does not establish arbitrary semantic equivalence."
+      ],
+      "counterevidence": [
+        "The independent observer measured zero structural loss and zero generator/observer disagreement for full QCSA.",
+        "The observer is separately implemented but internal, labels are synthetic, and the result does not establish arbitrary semantic equivalence."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "narrow",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.task_calibration_exact_result",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_reference/results/evaluation_results.json",
+          "sha256": "d1bb7aede10b8c7cebd76856581116e1c49298e62eb26521946bab522c974353"
+        },
+        {
+          "path": "claim_decisions/qcsa_reference_evaluation_dispositions.json",
+          "sha256": "0f6c6c6b78b049326c3a31b03119c463b5d664b03894161dd0a8f4fe15bb3b76"
+        }
+      ],
+      "candidate_claim": "QCSA meets the preregistered task-calibration comparison on this exact corpus.",
+      "owner": "evidence-states-and-claim-discipline",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "Brier targets task-decision correctness, not object correctness; many task labels were ceiling-easy."
+      ],
+      "counterevidence": [
+        "QCSA Brier score was 0.082026 versus 0.298500 for the selected best baseline, with selective risk 0.000000 for both, so the frozen calibration gate passed.",
+        "Brier targets task-decision correctness, not object correctness; many task labels were ceiling-easy."
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "promote",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_task_calibration_exact_result_promote.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "upward",
+      "old_support_state": "argument",
+      "new_support_state": "synthetic-test-backed",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    },
+    {
+      "candidate_id": "qcsa.vertical_reference_exact_reversible_trace",
+      "program": "qcsa_v2_3",
+      "result_refs": [
+        {
+          "path": "experiments/qcsa_vertical_reference/results/vertical_result.json",
+          "sha256": "b78b7dc9918647d02269e6da31b38f8206c0fd0bcc895615ac54fb59792953a2"
+        },
+        {
+          "path": "docs/qcsa_governed_vertical_reference_report.md",
+          "sha256": "3cb4c550d2b3b33f1dddaffbd5072ea3362a65722accefa0a8e2b8e0411ed7df"
+        }
+      ],
+      "candidate_claim": "The 13-stage QCSA vertical reference executes one exact local governed effect and restores its declared temporary-file state.",
+      "owner": "integrated-reference-architecture",
+      "comparator": "Frozen QCSA baselines or component ablations under the exact preregistered corpus, labels, resource accounting, and observer implementation.",
+      "cohort": "60 held-out deterministic templates repeated across three seeds (180 records), or the exact separately named bounded reference trace.",
+      "cost": "QCSA used 729 total operations (4.05 mean) and a 1.913386 matched operation ratio; proxy latency, verifier work, questions, and human burden remain visible.",
+      "independence": "Evaluator/observer is separately implemented but internal to the same project; no external replication or human review occurred.",
+      "transfer": "Template-transparent synthetic fixtures and local temporary-file effects do not establish natural-language, learned-model, distributed, or production transfer.",
+      "validity_limits": [
+        "one hand-authored local trace",
+        "declared temporary-file state only; not open-system effect-complete rollback"
+      ],
+      "counterevidence": [
+        "One digest-bound local trace completed all stages and exact declared rollback, while remaining a hand-authored zero-model temporary-file demonstration.",
+        "one hand-authored local trace",
+        "declared temporary-file state only; not open-system effect-complete rollback"
+      ],
+      "residuals": [
+        "Ceiling-easy labels, internal authorship, deterministic templates, proxy cost, and absent natural prevalence remain material."
+      ],
+      "disposition": "narrow",
+      "transition_record": "evidence_transitions/post_v2_3/qcsa_vertical_reference_exact_reversible_trace_narrow.json",
+      "accepted_transition_exists": true,
+      "transition_effect": "no_change",
+      "old_support_state": "argument",
+      "new_support_state": "argument",
+      "permitted_changes": [
+        "Record the exact bounded non-core result and its disposition in the non-core evidence ledger.",
+        "Revise owning prose only to state the exact mechanism result, counterevidence, cost, and transfer boundary; keep every chapter core at argument."
+      ],
+      "prohibited_inference": "No natural-task, learned-model, open-world, production, safety, privacy, security, external-independence, AGI, ASI, or chapter-core support inference is permitted."
+    }
+  ],
+  "support_state_effect": "non_core_only_core_states_unchanged",
+  "non_claims": [
+    "All 54 chapter-core claims remain at argument.",
+    "A bounded non-core upward transition does not promote its owning chapter core.",
+    "QCSA promote recommendations were reviewed through the transition schema rather than copied as conclusions.",
+    "No natural-task, learned-model, production, independent-replication, safety, AGI, or ASI claim is created."
+  ]
+}

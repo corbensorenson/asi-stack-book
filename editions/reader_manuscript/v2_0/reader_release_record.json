@@ -1,0 +1,111 @@
+{
+  "schema_version": "asi_stack.curated_reader_html_release_record.v2",
+  "record_type": "edition_release",
+  "release_id": "2026-07-13-v2-curated-reader-html-a2caa97f",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "decision": "approved_exact_local_html_archive",
+  "decision_date": "2026-07-13",
+  "source_authority": {
+    "manifest": "editions/reader_manuscript/v2_0/manifest.json",
+    "source_tree_sha256": "bfe8e766162a6ddf1a26b144fcdcd77623a11ad420d4bba9e04fb881bcb87753",
+    "book_structure_sha256": "8ed8864d7a14673d75d81620f81a4f3740bf826fbb3862ee41e0e20ad56c485e",
+    "generated_baseline_bundle_sha256": "54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0",
+    "curated_chapter_count": 54,
+    "core_support_snapshot": {
+      "argument": 54
+    },
+    "canonical_relationship": "parallel derivative; live book remains claim/evidence authority"
+  },
+  "artifact": {
+    "format": "canonical_curated_html",
+    "archive": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0-html.zip",
+    "archive_sha256": "a2caa97fb9281e1fdfc9a9dda626141d4a876df776c9cbc7408f978751736b50",
+    "archive_bytes": 4381864,
+    "site_tree_sha256": "8d4f40b57bc69e6073ee680dcd62691e25eabc4aa41b3c928e00cda426c91653",
+    "format_profile_sha256": "47460de35d96ac221ec01dd9c12019997856fc6ceb0454b5e6e14574a6d70919",
+    "html_page_count": 59,
+    "chapter_entry_point_count": 54,
+    "publication_state": "tracked_local_archive_not_publicly_deployed"
+  },
+  "inspection_evidence": {
+    "exact_archive_and_link_inspection": {
+      "path": "editions/reader_manuscript/v2_0/html_release_inspection.json",
+      "sha256": "20e5232d674c56a98d4f85010339ed501e2886a1bfc29907e9ca70e2640209c6",
+      "internal_links_checked": 5432,
+      "internal_anchors_checked": 1138,
+      "unresolved": 0
+    },
+    "browser": {
+      "path": "editions/reader_manuscript/v2_0/html_browser_report.json",
+      "sha256": "d7b45de4dc15b4baac1fd81f50de281f24a6e91e8ca0cb23b7ffd0352975da64",
+      "page_view_pairs": 118,
+      "failures": 0,
+      "reflow_overflow_failures": 0
+    },
+    "accessibility_tree": {
+      "path": "editions/reader_manuscript/v2_0/html_accessibility_tree_report.json",
+      "sha256": "87aea51e3ba4274f6b634e1f15196d6998e76e6d4cfef536cf54fd1669d26c4f",
+      "page_view_pairs": 118,
+      "failed_page_view_pairs": 0,
+      "unnamed_interactive_elements": 0,
+      "duplicate_id_page_views": 0
+    },
+    "keyboard": {
+      "path": "editions/reader_manuscript/v2_0/html_keyboard_report.json",
+      "sha256": "e22f6661d2e2d9959de875734c3975b8ba5864cdc4fdaf610b24b0d07ef6b4f2",
+      "page_view_pairs": 118,
+      "failed_page_view_pairs": 0,
+      "keyboard_trap_candidates": 0
+    },
+    "wcag_preparation": {
+      "path": "editions/reader_manuscript/v2_0/html_wcag_report.json",
+      "sha256": "366f648eb61bc91bc43f03ee531a6eb2f7be2aa0ab005578ad1e154743ad490d",
+      "page_view_pairs": 118,
+      "text_contrast_samples": 4386,
+      "contrast_failure_samples": 0,
+      "minimum_contrast_ratio": 4.69
+    }
+  },
+  "review_boundaries": {
+    "all_chapter_entry_points_desktop_and_mobile": true,
+    "automated_accessibility_tree": true,
+    "automated_keyboard_traversal": true,
+    "rendered_text_contrast": true,
+    "static_internal_links_and_anchors": true,
+    "screen_reader_review": "not_performed_not_required_for_selected_scope",
+    "independent_external_human_review": false,
+    "third_party_or_legal_wcag_certification": false
+  },
+  "rights_snapshot": {
+    "authority": "LICENSE.md",
+    "license_route": "all_rights_reserved_untagged_or_later_drafting_path",
+    "public_license_grant": false,
+    "note": "This local artifact is not included in an exact tagged release routing ledger; no license grant is inferred from historical tagged releases."
+  },
+  "approved_formats": [
+    "canonical_curated_html"
+  ],
+  "deferred_formats": [
+    "epub",
+    "docx",
+    "pdf",
+    "audio",
+    "embedded_audio"
+  ],
+  "selected_format_blockers": [],
+  "residuals": [
+    "The approved archive is tracked locally and is not a public deployment or hosted attestation.",
+    "No independent external-human, screen-reader, or assistive-technology review occurred.",
+    "Automated WCAG-preparation evidence is not third-party or legal WCAG certification.",
+    "EPUB, DOCX, PDF, audio, and embedded-audio editions were not selected, generated, or approved in this cycle.",
+    "The curated prose begins as an exact generated Human baseline; byte identity is meaning reconciliation, not proof of literary perfection."
+  ],
+  "support_state_effect": "none",
+  "non_claims": [
+    "This record does not approve any format other than the exact digest-bound canonical HTML archive.",
+    "This record does not claim public deployment, independent review, screen-reader review, or legal WCAG conformance.",
+    "This reader artifact is not canonical claim, source, proof, experiment, or release authority for the live book.",
+    "This record does not promote any chapter core claim above argument.",
+    "This record does not establish model quality, capability, safety, readiness, governance efficacy, AGI, or ASI."
+  ]
+}

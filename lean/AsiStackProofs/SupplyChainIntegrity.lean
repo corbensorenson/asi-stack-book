@@ -87,4 +87,96 @@ theorem required_unverified_signature_quarantines_artifact
   simp [artifactIdentity, artifactDigest, lineage, supplierScope, buildOrTraining,
     signatureRequired, signatureUnverified]
 
+theorem complete_requested_artifact_reaches_custody_review
+    {record : SupplyChainRecord} :
+    record.artifactIdentityRecorded = true ->
+    record.artifactDigestRecorded = true ->
+    record.lineageRecorded = true ->
+    record.supplierScopeRecorded = true ->
+    record.buildOrTrainingProvenanceRecorded = true ->
+    record.signatureRequired = true ->
+    record.signatureVerified = true ->
+    record.componentInventoryRecorded = true ->
+    record.advisoryStateRecorded = true ->
+    record.unresolvedCriticalAdvisory = false ->
+    record.revocationPathRecorded = true ->
+    record.residualOwnerRecorded = true ->
+    record.artifactAdmissionRequested = true ->
+    SupplyChainAdmissionRouteFor record =
+      SupplyChainAdmissionRoute.releaseToCustodyReview := by
+  intro identity digest lineage supplier provenance signatureRequired
+    signatureVerified inventory advisory noCritical revocation residual requested
+  unfold SupplyChainAdmissionRouteFor
+  simp [identity, digest, lineage, supplier, provenance, signatureRequired,
+    signatureVerified, inventory, advisory, noCritical, revocation, residual,
+    requested]
+
+theorem missing_lineage_requires_repair
+    {record : SupplyChainRecord} :
+    record.artifactIdentityRecorded = true ->
+    record.artifactDigestRecorded = true ->
+    record.lineageRecorded = false ->
+    SupplyChainAdmissionRouteFor record =
+      SupplyChainAdmissionRoute.requireLineageRepair := by
+  intro identity digest missingLineage
+  unfold SupplyChainAdmissionRouteFor
+  simp [identity, digest, missingLineage]
+
+theorem missing_component_inventory_requires_review
+    {record : SupplyChainRecord} :
+    record.artifactIdentityRecorded = true ->
+    record.artifactDigestRecorded = true ->
+    record.lineageRecorded = true ->
+    record.supplierScopeRecorded = true ->
+    record.buildOrTrainingProvenanceRecorded = true ->
+    record.signatureRequired = false ->
+    record.componentInventoryRecorded = false ->
+    SupplyChainAdmissionRouteFor record =
+      SupplyChainAdmissionRoute.requireAccountableReview := by
+  intro identity digest lineage supplier provenance noSignature missingInventory
+  unfold SupplyChainAdmissionRouteFor
+  simp [identity, digest, lineage, supplier, provenance, noSignature,
+    missingInventory]
+
+theorem missing_revocation_path_requires_repair
+    {record : SupplyChainRecord} :
+    record.artifactIdentityRecorded = true ->
+    record.artifactDigestRecorded = true ->
+    record.lineageRecorded = true ->
+    record.supplierScopeRecorded = true ->
+    record.buildOrTrainingProvenanceRecorded = true ->
+    record.signatureRequired = false ->
+    record.componentInventoryRecorded = true ->
+    record.advisoryStateRecorded = true ->
+    record.unresolvedCriticalAdvisory = false ->
+    record.revocationPathRecorded = false ->
+    SupplyChainAdmissionRouteFor record =
+      SupplyChainAdmissionRoute.requireLineageRepair := by
+  intro identity digest lineage supplier provenance noSignature inventory
+    advisory noCritical missingRevocation
+  unfold SupplyChainAdmissionRouteFor
+  simp [identity, digest, lineage, supplier, provenance, noSignature, inventory,
+    advisory, noCritical, missingRevocation]
+
+theorem missing_residual_owner_requires_review
+    {record : SupplyChainRecord} :
+    record.artifactIdentityRecorded = true ->
+    record.artifactDigestRecorded = true ->
+    record.lineageRecorded = true ->
+    record.supplierScopeRecorded = true ->
+    record.buildOrTrainingProvenanceRecorded = true ->
+    record.signatureRequired = false ->
+    record.componentInventoryRecorded = true ->
+    record.advisoryStateRecorded = true ->
+    record.unresolvedCriticalAdvisory = false ->
+    record.revocationPathRecorded = true ->
+    record.residualOwnerRecorded = false ->
+    SupplyChainAdmissionRouteFor record =
+      SupplyChainAdmissionRoute.requireAccountableReview := by
+  intro identity digest lineage supplier provenance noSignature inventory
+    advisory noCritical revocation missingResidual
+  unfold SupplyChainAdmissionRouteFor
+  simp [identity, digest, lineage, supplier, provenance, noSignature, inventory,
+    advisory, noCritical, revocation, missingResidual]
+
 end AsiStackProofs.SupplyChainIntegrity

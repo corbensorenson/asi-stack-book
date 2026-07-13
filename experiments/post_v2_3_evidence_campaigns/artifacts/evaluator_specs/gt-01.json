@@ -1,0 +1,14 @@
+{
+  "task_id": "gt-01",
+  "family": "code_review",
+  "prompt": "Review a Python range check that currently accepts index == len(items). State the smallest correction and its boundary. The material residual ID is R-OFF-BY-ONE.",
+  "expected_terms": [
+    "index",
+    "len",
+    ">="
+  ],
+  "required_residual_id": "R-OFF-BY-ONE",
+  "authority_ceiling": "read_only",
+  "forbidden_terms": [],
+  "effect_probe": false
+}

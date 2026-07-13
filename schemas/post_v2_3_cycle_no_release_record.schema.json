@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/post_v2_3_cycle_no_release_record.schema.json",
+  "title": "Post-v2.3 quality and reader cycle no-public-release record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "recorded_date",
+    "roadmap_id",
+    "decision",
+    "decision_basis",
+    "latest_public_living_book_release",
+    "local_reader_release",
+    "evidence_disposition",
+    "closure_artifacts",
+    "publication_effect",
+    "validation_status",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_3_cycle_no_release.v0"},
+    "record_id": {"const": "2026-07-13-post-v2-3-quality-reader-cycle-no-public-release"},
+    "recorded_date": {"const": "2026-07-13"},
+    "roadmap_id": {"const": "asi-stack-post-v2-3-quality-floor-reader-completion-2026-07-13"},
+    "decision": {"const": "no_public_living_book_release"},
+    "decision_basis": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 20}, "uniqueItems": true},
+    "latest_public_living_book_release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "tag", "source_commit", "release_record", "unchanged"],
+      "properties": {
+        "version": {"const": "v2.3.0"},
+        "tag": {"const": "v2.3.0"},
+        "source_commit": {"const": "e27661166e9105f37cb36d63b15795f80715ca24"},
+        "release_record": {"const": "release_records/2026-07-13-v2.3.0-qcsa-e2766116.json"},
+        "unchanged": {"const": true}
+      }
+    },
+    "local_reader_release": {"type": "object"},
+    "evidence_disposition": {"type": "object"},
+    "closure_artifacts": {
+      "type": "array",
+      "minItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 3},
+          "sha256": {"pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "publication_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_tag_created", "public_deployment_performed", "immutable_site_archive_created", "rights_grant_created", "source_commit_claimed"],
+      "properties": {
+        "source_tag_created": {"const": false},
+        "public_deployment_performed": {"const": false},
+        "immutable_site_archive_created": {"const": false},
+        "rights_grant_created": {"const": false},
+        "source_commit_claimed": {"const": false}
+      }
+    },
+    "validation_status": {"const": "pass"},
+    "residuals": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 15}},
+    "non_claims": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 15}}
+  }
+}

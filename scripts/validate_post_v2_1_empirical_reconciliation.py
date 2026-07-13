@@ -86,10 +86,10 @@ def validate(data: dict) -> list[str]:
     if vectors.get("summary", {}).get("summary_support_states") != {"argument": 54}:
         errors.append("evidence vectors launder core support")
     # The completed post-v2.1 result originally covered 27 adjacent claims;
-    # the later QCSA reconciliation legitimately adds five newly adjacent
-    # owners (four of its nine owners were already adjacent) without changing
-    # support, independence, or transfer state.
-    if vectors.get("summary", {}).get("dimension_state_counts", {}).get("reproducibility") != {"adjacent_local_replay": 32, "not_demonstrated_for_claim": 22}:
+    # the later QCSA and post-v2.3 quality-floor reconciliations legitimately
+    # add adjacent local replay coverage without changing support,
+    # independence, or transfer state.
+    if vectors.get("summary", {}).get("dimension_state_counts", {}).get("reproducibility") != {"adjacent_local_replay": 33, "not_demonstrated_for_claim": 21}:
         errors.append("evidence-vector replay summary drifted")
     if any(row.get("dimensions", {}).get("independence", {}).get("state") != "internal_only" or row.get("dimensions", {}).get("transfer_distance", {}).get("state") != "not_established" for row in vectors.get("vectors", [])):
         errors.append("an evidence vector overstates independence or transfer")
@@ -120,7 +120,7 @@ def validate(data: dict) -> list[str]:
             errors.append(f"{source_id}: generated Appendix H or C route missing")
     if "2026-07-11 - Post-v2.1 empirical execution and reconciliation" not in data["changelog"]:
         errors.append("changelog reconciliation entry missing")
-    if "no new lean theorem" not in data["reconciliation"].lower() or data["proof_manifest"].get("proof_target_count") != 225:
+    if "no new lean theorem" not in data["reconciliation"].lower() or data["proof_manifest"].get("proof_target_count") != 298:
         errors.append("proof/no-new-theorem boundary drifted")
     if outcome.get("support_state_effect") != "none" or ledger.get("summary", {}).get("promote") != 0:
         errors.append("outcome or ledger invents promotion")
@@ -153,7 +153,7 @@ def main() -> None:
         ("residual closure laundering", lambda x: x["status"]["residuals"][0].__setitem__("state", "closed")),
         ("source target erasure", lambda x: next(row for row in x["source_inventory"] if row["id"] == "ext_txfs_2018")["chapter_targets"].pop()),
         ("Appendix H erasure", lambda x: x.__setitem__("appendix_h", x["appendix_h"].replace("ext_muse_unlearning_2025", "erased"))),
-        ("proof invention", lambda x: x["proof_manifest"].__setitem__("proof_target_count", 226)),
+        ("proof invention", lambda x: x["proof_manifest"].__setitem__("proof_target_count", 299)),
         ("changelog erasure", lambda x: x.__setitem__("changelog", "")),
     ]
     for name, mutate in mutations:

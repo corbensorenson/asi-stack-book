@@ -302,6 +302,13 @@ trace. Full QCSA resolved all 180 seeded held-out records; the
 no-plural-facets ablation fell to 0.916667 object accuracy. The vertical trace
 also rejected ambiguous candidates and stale epochs before effect.
 
+The identity-indirection ablation supplies the separate causal check: removing
+stable identity/address indirection reduced aggregate object accuracy to
+0.900000 and migration compatibility to 0.400000, versus 1.000000 for both in
+full QCSA. The accepted transition is therefore `synthetic-test-backed` only
+for that exact non-core fixture claim. It does not establish a distributed
+registry, federation, credential truth, or the Virtual Context ABI core.
+
 Those results support only the exact fixture mechanics. The corpus exposes
 template structure, no deployed VCM service exists, and context adequacy was
 hand-authored rather than measured on natural tasks. The active-question

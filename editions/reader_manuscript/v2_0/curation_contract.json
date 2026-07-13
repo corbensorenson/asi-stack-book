@@ -1,0 +1,52 @@
+{
+  "schema_version": "asi_stack.curated_reader_contract.v2",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "canonical_relationship": "parallel_derivative_not_equal_authority",
+  "selected_initial_format": "canonical_curated_html",
+  "required_chapter_fields": [
+    "claim meaning",
+    "support state",
+    "implementation horizon",
+    "unrun-test boundary",
+    "source boundary",
+    "formal boundary",
+    "strongest objection",
+    "material residuals",
+    "worked example",
+    "reader stakes",
+    "reader payoff",
+    "next-chapter continuity",
+    "key-figure accessibility and non-claim boundary"
+  ],
+  "allowed_divergence": [
+    "pacing",
+    "openings and closings",
+    "section flow",
+    "examples",
+    "transitions",
+    "sentence-level voice",
+    "compression"
+  ],
+  "blocked_divergence": [
+    "claim meaning",
+    "support-state meaning",
+    "source or formal boundary meaning",
+    "proof/test status",
+    "implementation horizon",
+    "release truth",
+    "chapter identity"
+  ],
+  "initial_divergence": "none_exact_generated_baseline",
+  "external_human_prepublication_required": false,
+  "selected_format_gates": [
+    "frozen source and profile",
+    "54/54 reconciliation",
+    "exact HTML render",
+    "structural inspection",
+    "all-entry-point desktop/mobile browser review",
+    "accessibility semantics and navigation",
+    "exact blocker disposition",
+    "release or blocked record"
+  ],
+  "support_state_effect": "none"
+}

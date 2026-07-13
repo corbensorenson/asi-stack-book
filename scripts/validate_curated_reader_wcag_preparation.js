@@ -52,6 +52,7 @@ function parseArgs(argv) {
     report: DEFAULT_REPORT,
     writeManifest: false,
     trackedOnly: false,
+    standalone: false,
   };
   for (let index = 2; index < argv.length; index += 1) {
     const value = argv[index];
@@ -65,6 +66,8 @@ function parseArgs(argv) {
       args.writeManifest = true;
     } else if (value === "--tracked-only") {
       args.trackedOnly = true;
+    } else if (value === "--standalone") {
+      args.standalone = true;
     } else {
       throw new Error(`Unknown argument: ${value}`);
     }
@@ -577,10 +580,29 @@ function summarize(results, files, expectedFiles, args) {
   };
 }
 
-function validateManifest(manifest) {
+function validateManifest(manifest, { standalone = false } = {}) {
   const errors = [];
   const summary = manifest.summary || {};
-  const expected = {
+  const expected = standalone ? {
+    pages_checked: summary.expected_pages,
+    viewport_count: 2,
+    page_view_pairs: summary.expected_pages * 2,
+    failed_page_view_pairs: 0,
+    lang_en_us_pairs: summary.page_view_pairs,
+    titled_pairs: summary.page_view_pairs,
+    one_h1_pairs: summary.page_view_pairs,
+    main_landmark_pairs: summary.page_view_pairs,
+    navigation_landmark_pairs: summary.page_view_pairs,
+    skip_link_pairs: summary.page_view_pairs,
+    focus_visible_rule_pairs: summary.page_view_pairs,
+    unnamed_interactive_elements: 0,
+    image_alt_failures: 0,
+    table_header_failures: 0,
+    duplicate_id_page_views: 0,
+    contrast_failure_samples: 0,
+    live_marker_leak_pairs: 0,
+    raw_core_claim_marker_leak_pairs: 0,
+  } : {
     pages_checked: 49,
     expected_pages: 49,
     viewport_count: 2,
@@ -604,6 +626,9 @@ function validateManifest(manifest) {
   };
   if (manifest.status !== "accepted_wcag_automation_evidence_for_release_preparation") {
     errors.push("status must be accepted_wcag_automation_evidence_for_release_preparation.");
+  }
+  if (standalone && (!Number.isInteger(summary.expected_pages) || summary.expected_pages < 1)) {
+    errors.push(`summary.expected_pages must be a positive integer; found ${summary.expected_pages}.`);
   }
   if (JSON.stringify(manifest.cleared_blockers || []) !== JSON.stringify(["wcag_conformance_review_not_completed"])) {
     errors.push("cleared_blockers must clear only wcag_conformance_review_not_completed.");
@@ -739,6 +764,9 @@ function trackedComparable(manifest) {
 
 async function main() {
   const args = parseArgs(process.argv);
+  if (args.standalone && (args.trackedOnly || args.writeManifest)) {
+    throw new Error("--standalone cannot be combined with --tracked-only or --write-manifest.");
+  }
   if (args.trackedOnly) {
     if (args.writeManifest) throw new Error("--tracked-only cannot be combined with --write-manifest.");
     if (!fs.existsSync(TRACKED_MANIFEST)) {
@@ -782,7 +810,7 @@ async function main() {
   }
 
   const manifest = summarize(results, files, expectedFiles, args);
-  const manifestErrors = validateManifest(manifest);
+  const manifestErrors = validateManifest(manifest, { standalone: args.standalone });
   const report = {
     ...manifest,
     results,
@@ -794,7 +822,7 @@ async function main() {
   if (args.writeManifest) {
     fs.writeFileSync(TRACKED_MANIFEST, JSON.stringify(manifest, null, 2) + "\n", "utf8");
     fs.writeFileSync(REVIEW_DOC, renderReviewDoc(manifest), "utf8");
-  } else {
+  } else if (!args.standalone) {
     if (!fs.existsSync(TRACKED_MANIFEST)) {
       manifestErrors.push(`${rel(TRACKED_MANIFEST)} is missing; run \`${WRITE_COMMAND}\`.`);
     } else {

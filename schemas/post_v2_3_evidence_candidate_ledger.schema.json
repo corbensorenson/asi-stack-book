@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/post_v2_3_evidence_candidate_ledger.schema.json",
+  "title": "Post-v2.3 evidence candidate adjudication ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "ledger_id", "recorded_date", "scope", "candidate_count", "disposition_counts", "accepted_transition_count", "candidates", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_3_evidence_candidate_ledger.v0"},
+    "ledger_id": {"const": "post-v2-3-evidence-candidate-adjudication-2026-07-13"},
+    "recorded_date": {"const": "2026-07-13"},
+    "scope": {"type": "string", "minLength": 40},
+    "candidate_count": {"const": 21},
+    "disposition_counts": {
+      "type": "object",
+      "required": ["promote", "narrow", "no_change", "refute"],
+      "additionalProperties": false,
+      "properties": {
+        "promote": {"type": "integer", "minimum": 0},
+        "narrow": {"type": "integer", "minimum": 0},
+        "no_change": {"type": "integer", "minimum": 0},
+        "refute": {"type": "integer", "minimum": 0}
+      }
+    },
+    "accepted_transition_count": {"const": 21},
+    "candidates": {
+      "type": "array",
+      "minItems": 21,
+      "maxItems": 21,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["candidate_id", "program", "result_refs", "candidate_claim", "owner", "comparator", "cohort", "cost", "independence", "transfer", "validity_limits", "counterevidence", "residuals", "disposition", "transition_record", "accepted_transition_exists", "transition_effect", "old_support_state", "new_support_state", "permitted_changes", "prohibited_inference"],
+        "properties": {
+          "candidate_id": {"type": "string", "minLength": 3},
+          "program": {"enum": ["post_v2", "post_v2_1", "qcsa_v2_3"]},
+          "result_refs": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}},
+          "candidate_claim": {"type": "string", "minLength": 20},
+          "owner": {"type": "string", "minLength": 3},
+          "comparator": {"type": "string", "minLength": 15},
+          "cohort": {"type": "string", "minLength": 15},
+          "cost": {"type": "string", "minLength": 15},
+          "independence": {"type": "string", "minLength": 15},
+          "transfer": {"type": "string", "minLength": 15},
+          "validity_limits": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 8}},
+          "counterevidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 8}},
+          "residuals": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 8}},
+          "disposition": {"enum": ["promote", "narrow", "no_change", "refute"]},
+          "transition_record": {"type": "string", "pattern": "^evidence_transitions/.+\\.json$"},
+          "accepted_transition_exists": {"const": true},
+          "transition_effect": {"enum": ["upward", "no_change", "refuted"]},
+          "old_support_state": {"type": "string"},
+          "new_support_state": {"type": "string"},
+          "permitted_changes": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 8}},
+          "prohibited_inference": {"type": "string", "minLength": 20}
+        }
+      }
+    },
+    "support_state_effect": {"const": "non_core_only_core_states_unchanged"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 12}}
+  }
+}

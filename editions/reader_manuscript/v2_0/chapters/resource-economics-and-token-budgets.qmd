@@ -1,0 +1,286 @@
+<!--
+Curated reader manuscript v2.0 source.
+chapter_id: resource-economics-and-token-budgets
+generated_baseline_ref: generated:54412328b6b9826f9c42de59ff7894c5a256dbc3ce5d852e5d7e0bcc2d8d82f0:chapters/resource-economics-and-token-budgets.qmd
+live_source_ref: chapters/resource-economics-and-token-budgets.qmd@cb7493ae57d5
+This derivative preserves claim meaning, argument support, source/formal boundaries, implementation horizons, residuals, and non-claims.
+No independent external-human review is claimed.
+-->
+
+# Resource Economics and Token Budgets
+
+Governed routing, compression, faster generation, richer representations, and synthetic experiments can look locally cheap. Resource economics asks whether they still save anything after verification, repair, fallback, memory pressure, fidelity limits, and risk are counted.
+
+The efficiency thesis depends on this accounting. A route is efficient only when full system cost, protected overhead, displaced work, and residual burden are visible.
+
+Token budgets are policy objects, not just engineering knobs. They decide what may be shortened, what must be reviewed, what cannot be compressed, and which costs are protected from local optimization.
+
+A budget expresses values when it protects work from optimization. Simulation contracts express honesty when they say what a synthetic result is allowed to mean. Cheapness that erases verification or outruns fidelity is debt moved into the future.
+
+The budget should reveal tradeoffs before they become hidden policy: which latency target is flexible, which review cost is mandatory, which cache is safe, which simulation boundary is narrow, and which shortcut would spend authority the task lacks. Efficiency is credible only after protected costs and fidelity boundaries are paid.
+
+## Problem
+
+ASI architecture consumes scarce resources: tokens, context, verifier time, model calls, tool time, storage, latency, human attention, review capacity, and risk budget. If those resources are implicit, the system will overspend expensive cognition on low-value tasks, cut verification when it is most needed, and overload at synchronized demand spikes.
+
+Resource economics is not an accounting appendix. It is a control layer. Planning needs budgets. Routing needs costed specialists. Evidence needs verification tax. Governance needs to know when cost pressure is trying to bypass protected gates.
+
+The central question is not "how do we spend less?" It is "which costs are safe to reduce, which costs are evidence obligations, and which costs are protected governance overhead?" That distinction keeps efficiency work from becoming permission to cut the very checks that make capability usable.
+
+## Why existing approaches are insufficient
+
+Ignoring resource economics makes high-quality verification unaffordable and encourages hidden cost shifts. Hard quota resets can synchronize bursts. Token-only accounting can ignore human friction, sleep, quality, latency, and risk. Cheap routes can look efficient while exporting cost into later repair, review, or failure handling.
+
+TokenMana contributes the regenerative-capacity idea: bounded capacity accumulates continuously instead of appearing in synchronized cliffs. PlanForge contributes tier-aware scheduling: tasks should be assigned to the minimum adequate capability with fallback and replanning. Simulation Scaling contributes the transfer warning: synthetic or simulated results mean only what their scope, fidelity, resource bill, omissions, and transfer decision allow. PagedAttention/vLLM contributes a serving-layer warning: KV-cache memory, batching, and aggregate throughput are real resource variables, but they are not the same as verified output quality. Together they imply that budgets should be typed, risk-aware, fidelity-aware, and tied to evidence.
+
+Budget records should therefore include the cost of not acting, too. Deferral, rejection, escalation, and scope reduction are not failures if they preserve higher-value capacity or prevent unverifiable high-risk work. The ledger should make those choices visible instead of rewarding only dispatch.
+
+## Core Claim
+
+Resource governance accounts for token budgets, verification tax, load stability, and risk-adjusted inference value (evidence boundary: architectural argument).
+The source notes justify design discussion of regenerative capacity, tier-aware planning, load variance, cognitive friction, cost-quality tradeoffs, and verification scarcity. They do not establish measured infrastructure or human-outcome claims in this repository.
+
+Folded simulation-fidelity subclaim: simulation and synthetic-environment results are resource-governed claim-transport records whose support cannot exceed declared scope, fidelity, temporal semantics, resource bill, assumptions, omitted variables, instrumentation effects, residual risks, and transfer decision.
+
+## Draft Key Figure: Route Selection Budget Tradeoff
+
+::: {.asi-key-figure}
+![Draft route-selection budget tradeoff.](../assets/diagrams/route-selection-budget-tradeoff.svg){#fig-route-selection-budget-tradeoff fig-alt="Draft route-selection budget tradeoff figure showing a task request, eligibility gates, selected bounded transform plus verifier route at 14.2 cost units, adequate overkill baseline at 43.0 cost units, rejected failed-verification route at 2.3 cost units, rejected hidden-residual route at 8.2 cost units, and no deployed-router or core-claim-promotion boundary."}
+:::
+
+**How to read the route-selection figure:** Treat this draft reader aid as a summary of the bounded public costed-route slice, not a deployed scheduler. Read it from left to right: the task request enters eligibility gates, where verification, adequacy, budget dispatch, fallback, residual custody, and non-claims must all remain visible. The cheapest route is rejected because verification fails. The hidden-residual route is rejected because residual ownership and reviewer handoff are lost even though it looks cheaper than the selected route. The adequate overkill baseline stays eligible but costs more. The selected route is the lowest-cost eligible route in this synthetic fixture, with the already recorded 66.98 percent synthetic cost reduction against the adequate overkill baseline. The figure does not promote the Resource Economics core claim, prove deployed routing, measure model quality, establish scheduler behavior, or create a new evidence transition.
+
+## Mechanism
+
+Resource economics is the control layer that prevents efficiency work from becoming blind cost cutting. TokenMana supplies regenerative-capacity and load-variance pressure; PlanForge supplies task and route scheduling; Verification Bandwidth turns verification into a scarce resource; Simulation Scaling keeps physical capacity and fidelity explicit; VIEA and Project Theseus connect cost to execution/report discipline; PagedAttention-style serving work keeps aggregate throughput separate from single-request verified-output quality.
+
+A budget record is not a quota override. It is the policy surface that decides whether a task can afford the required cognition, context, tool use, verification, and human review without weakening protected gates. When the budget is insufficient, the correct result is escalation, scope reduction, deferral, rejection, or residual accounting, not quiet degradation.
+
+The budget state should therefore be an adjudication state, not just a number. A task can be `proposed`, `priced`, `underfunded`, `protected_overhead_required`, `dispatchable`, `escalated`, `deferred`, `scope_reduced`, `rejected`, or `residualized`. Those states keep verification, security, approval, replay, and human-review costs visible when local optimization pressure wants to compress them into zero.
+
+A Resource Budget Record attaches those constraints to a task, route, plan node, benchmark run, or review process. It records value, risk, capacity, cost, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence references.
+
+```{mermaid}
+flowchart LR
+A["Task or plan node"] --> B["Value and risk estimate"]
+B --> C["Capacity pool"]
+C --> D["Cost estimate"]
+S["Serving memory / throughput pressure"] --> D
+D --> E["Verification + security overhead"]
+P["Protected gates"] --> F{"Budget adequate and gates intact?"}
+E --> F
+F -- "yes" --> G["Dispatch route"]
+F -- "no" --> H["Escalate, defer, shrink, or reject"]
+G --> I["Cost-quality and residual evidence"]
+H --> I
+```
+
+**What the budget adequacy gate shows:** Budget adequacy is checked after risk, capacity, cost, verification tax, serving pressure, and protected gates are visible. If the gates cannot stay intact, the correct route is escalation, deferral, scope reduction, rejection, or residual accounting rather than quiet quality degradation.
+
+A budget ledger separates:
+
+- Value hypothesis: why the task is worth spending on.
+- Risk class: what failure would cost.
+- Capacity pool: what resource is being drawn down or regenerated.
+- Cost estimate: tokens, time, tools, storage, human review, or money.
+- Verification tax: the extra cost required to trust the output.
+- Protected overhead: security handles, Digital SCIFs, approval, replay, rollback, audit, and human review that policy requires.
+- Serving pressure: memory pressure, batching, cache reuse, aggregate throughput, and latency when those affect route cost.
+- Safety gates: checks that cannot be disabled by budget pressure.
+- Budget decision: dispatch, escalate, defer, shrink, reject, or residual.
+
+The stack can save resources, but not by silently dropping protected verification. High-risk tasks should either pay the verification cost or route to escalation.
+
+The security interface matters here. Secure handles, Digital SCIFs, human approval, and replayable artifacts add cost, but those costs are part of the task when protected authority is involved. A route that is cheap only because it avoids the security boundary is not a cheaper equivalent route.
+
+The budget record should also carry a displaced-cost section. If a route saves model calls by increasing future debugging, reviewer burden, hidden context reconstruction, private-data exposure, benchmark contamination, or rollback difficulty, the savings are not yet accepted. They become residual costs until a cost-quality test or evidence packet shows the displacement is harmless for the specific risk class.
+
+### Simulation Fidelity and Claim Transport
+
+Simulation fidelity is folded here because the central object is not a standalone simulator. It is a resource-governed claim-transport rule. A simulated, synthetic, benchmark, or scenario result may travel only as far as its contract permits: declared scope, fidelity standard, temporal semantics, demand estimate, resource bill, capacity bottlenecks, omitted variables, approximation liberties, instrumentation effects, observed-result boundary, supported-claim boundary, transfer decision, residual risks, and non-claims.
+
+The Resource Budget Record says what the stack can afford. The Simulation Contract Record says what a cheap or synthetic experiment is allowed to mean. Those records should be paired whenever a budget, benchmark, safety rehearsal, or synthetic environment is used as evidence. A cheap simulation can be excellent for a unit invariant and useless for a physical-deployment claim; a high-fidelity simulation can still fail if it omits the bottleneck that decides the question.
+
+Reluplex is useful as a comparison point because scoped verification gains authority from its property boundary. It can verify a specified property or return a counterexample inside its own model class; it does not verify all behavior. Simulation contracts should follow the same discipline. Name the preserved structure, omitted physics, resource cost, instrumentation effect, and transfer boundary before a result is allowed to support a broader claim.
+
+```{mermaid}
+flowchart LR
+A["Simulation or synthetic result"] --> B["Scope and claim class"]
+B --> C["Fidelity and temporal semantics"]
+C --> D["Demand, resource bill, and bottlenecks"]
+D --> E["Omissions and instrumentation effects"]
+E --> F{"Transfer allowed?"}
+F -- "yes" --> G["Bounded evidence claim"]
+F -- "no" --> H["Residual, downgrade, or blocked claim"]
+G --> I["Resource/evidence ledger"]
+H --> I
+```
+
+**Reading the claim-transport gate:** A simulation output is not promoted merely because it came from a simulator. It moves only after scope, fidelity, temporal semantics, resources, bottlenecks, omissions, and transfer are explicit. Failed transfer is still useful: it becomes a downgrade, residual, reduced-scope test, or blocked claim rather than hidden evidence inflation.
+
+This fold preserves the old simulation-fidelity chapter's restoration condition. Simulation Fidelity and Physical Constraints should be restored as a standalone chapter if public-safe artifacts create a distinct evidence lane: a feasibility calculator, physical-computation audit, simulation benchmark with negative controls, executable simulator evidence tied to a `Simulation Contract Record`, or independent external review showing that the simulation contract is too central to remain a section inside resource economics.
+
+## Interfaces
+
+Resource choices move through the Resource Budget Record and, when synthetic or simulated evidence is used, the Simulation Contract Record.
+
+Minimum fields:
+
+- `budget_id`
+- `task_id`
+- `value_hypothesis`
+- `risk_class`
+- `capacity_pool`
+- `budget_state`
+- `cost_estimate`
+- `verification_tax`
+- `protected_overhead`
+- `displaced_costs`
+- `quality_predicate`
+- `safety_gates`
+- `budget_decision`
+- `escalation_rule`
+- `residuals`
+- `evidence_refs`
+
+Simulation-contract companion fields:
+
+- `simulation_id`
+- `claim_id`
+- `contract_version`
+- `claim_class`
+- `scope`
+- `fidelity_standard`
+- `fidelity_state`
+- `temporal_semantics`
+- `input_assumptions`
+- `demand_estimate`
+- `resource_bill`
+- `capacity_bottlenecks`
+- `omitted_variables`
+- `approximation_liberties`
+- `instrumentation_effects`
+- `supported_claim_boundary`
+- `observed_result_boundary`
+- `transfer_decision`
+- `support_state_effect`
+- `failure_behavior`
+- `residual_risks`
+- `non_claims`
+
+Planning allocates budgets and schedules work. Routing chooses costed specialists. Runtime adapters record actual spend. Evidence compares cost and quality. Serving infrastructure reports memory and throughput costs without converting them into quality claims. Simulation records preserve fidelity limits and claim boundaries before synthetic results enter the evidence ledger. Governance protects gates that budget pressure is not allowed to override. Benchmark chapters use the same record pair to avoid Goodharting cheap metrics or laundering convenient synthetic environments.
+
+Self-improvement transitions also consume this interface. A proposed improvement should say whether it saves tokens, verifier time, human review, memory, or latency, and whether those savings preserve quality and protected gates. Cost savings without a support boundary are just a pressure to overclaim.
+
+That means budgets can constrain self-improvement in both directions. They can block wasteful architecture churn, but they can also block supposedly efficient changes that reduce the verifier, security kernel, rollback, or human-review budget below the risk class. Efficiency is admissible only after the protected overhead remains paid.
+
+## Invariants
+
+- Budgets do not override protected safety gates.
+- High-risk tasks pay verification cost.
+- Cost savings are recorded with quality results.
+- Capacity mechanisms are bounded and cannot create infinite spend rights.
+- Low-value tasks cannot hoard scarce review capacity while high-risk work waits.
+- Serving-throughput gains remain separate from verified-output and task-success claims.
+- Protected overhead is budgeted explicitly and cannot be silently deleted.
+- Displaced costs remain residuals until measured or accepted by a scoped evidence transition.
+- Simulation fidelity is declared before a synthetic result supports a claim.
+- Simulation results do not transfer beyond their supported claim boundary by default.
+- Approximation liberties, omitted variables, and instrumentation effects remain visible after results are summarized.
+
+The central invariant is risk-adjusted adequacy: a route is not cheap if it leaves the system unable to verify a high-impact outcome.
+
+Protected overhead keeps budgeting from deleting governance. Safety gates, evidence requirements, approval paths, and secret-handling boundaries are not optional line items unless governance explicitly changes the policy. Budgets can force escalation or deferral, but they cannot erase the requirement.
+
+## Failure modes
+
+- Cost-cutting verification away.
+- Load-synchronized degradation.
+- Resource hoarding by low-value tasks.
+- Token optimization that increases human repair burden.
+- Economic metaphors treated as implemented mechanisms.
+- Aggregate serving throughput mistaken for lower single-request risk or better answer quality.
+- Protected-overhead deletion, where isolation, audit, approval, replay, rollback, or review are removed and the route is still called efficient.
+- Review-capacity capture, where low-risk throughput consumes the scarce human or verifier budget needed for high-risk work.
+- Simulation laundering, where a clean synthetic result is described as if omitted variables, resource bottlenecks, approximation liberties, and transfer limits were irrelevant.
+- Sandbox-to-world transfer, where a benchmark or safety rehearsal is treated as deployment evidence without a declared transfer decision.
+- Parent-physics drift, where physical assumptions change without updating the simulation contract.
+
+Cost-cut verification should block or escalate. Load synchronization should trigger capacity smoothing or scheduling changes. Resource hoarding should be visible in the ledger. Human repair burden should count as cost. Speculative market language should remain optional until executable records and tests exist.
+
+Efficiency laundering returns at the budget layer. A route may look cheaper because it shifts work into future debugging, human review, hidden context reconstruction, or unrecorded security risk. The budget record should count those displaced costs as residuals rather than letting the route appear efficient.
+
+## Minimum Viable Implementation
+
+The smallest honest implementation is not a market, scheduler, or TokenMana simulation. It is a Resource Budget Record paired with the evidence records that say what a route was allowed to mean.
+
+That record has to price the whole route before calling anything efficient: task value, risk class, capacity pool, cost estimate, verification tax, protected overhead, displaced costs, quality predicate, safety gates, escalation rule, residuals, and evidence references. When synthetic or simulated evidence is involved, a Simulation Contract Record has to travel with it so scope, fidelity, omissions, instrumentation effects, resource bills, and transfer limits stay attached.
+
+The current repository has a deliberately narrow version of that idea. The budget fixtures and ledger checks accept low-risk dispatch, high-risk escalation, protected-overhead dispatch, displaced-cost residualization, review-capacity hoarding detection, and security-overhead erasure rejection. The simulation-transfer checks accept only scoped claim movement and reject missing fidelity, unbounded world transfer, missing resource bills, ignored instrumentation, and support-state promotion.
+
+The flagship Resource lane then makes the accounting concrete. Its costed-route slice compares four routes: an adequate but expensive manual-review baseline, a bounded transform route with verification, a cheaper route that fails verification, and a cheaper route that hides residual cost. The accepted slice chooses the bounded transform route only after the cheaper failed and hidden-residual routes are rejected. The Lean bridge checks the same finite selector state rather than asking the reader to trust the prose.
+
+The workflow and load-stability fixtures add route history. The workflow trace keeps high-risk release work ahead of lower-risk work and preserves protected overhead, residual ownership, and non-claim boundaries. The finite load-stability probe selects protected capacity smoothing over admitting every arrival in a 10-task synthetic burst, while residualizing seven deferrals and rejecting review erasure.
+
+The aggregate replay ties the local evidence package together: `python3 scripts/validate_resource_flagship_lane.py` checks ten command replays, twenty-six tracked artifact digests, three accepted narrow transitions, five explicit no-promotion decisions, preserved negative controls, residuals, non-claims, and the no-core-promotion boundary. The CI cost profile adds publication-pipeline metadata, including classified deploy-service failures and a recorded recovery boundary, but it remains operations metadata rather than workload evidence.
+
+The governance-tax model supplies the reader-facing trade-off. Two modeled cases choose governance once hidden verification, fallback, reviewer burden, and residual discharge are priced. One low-risk shortcut remains allowed because no protected gate is required and the full cost stays lower. This is the point of resource economics: governed efficiency is neither always-pay-every-tax nor always-take-the-cheapest-route. It is the discipline of pricing the whole route before accepting the saving.
+
+None of this proves deployed scheduler behavior, real verification-tax measurement, stable speedup, TokenMana or PlanForge behavior, model quality, economic optimality, physical feasibility, external review, artifact approval, support-state movement, or the Resource Economics core claim. It is a public-safe minimum slice for one narrower claim: a route is not cheaper when the savings come from erased verification, erased protected overhead, or displaced residual burden.
+
+## Beyond the State of the Art
+
+Resource economics matures into a risk-aware budget operating system for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, or residualize work without letting local cost pressure delete verification, security, approval, replay, rollback, or human review.
+
+Cognition has a budget, but the budget cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, or residual burden. Budget records price the value hypothesis, risk class, capacity pool, budget state, model/tool/storage/human-review cost, verification tax, protected overhead, serving pressure, displaced costs, safety gates, quality predicate, escalation rule, and residuals before ordinary dispatch.
+
+Cost savings are accepted only with quality results, verifier cost, repair burden, fallback frequency, human-review load, evidence loss, privacy exposure, rollback difficulty, memory pressure, and baseline comparison visible. Planning allocates budget and defers or scopes work, routing chooses costed specialists, runtime adapters report actual spend, evidence measures cost-quality tradeoffs, serving infrastructure reports KV-cache and throughput economics without promoting quality claims, and governance protects gates that budgets cannot erase.
+
+Cheap routes that preserve evidence become defaults, underfunded high-risk tasks escalate or shrink, synchronized load triggers smoothing, low-value work loses scarce review capacity, and displaced costs remain residuals until measured or accepted under a scoped evidence transition. Verification cost-cutting, load-synchronized degradation, low-value resource hoarding, protected-overhead deletion, review-capacity capture, token optimization that increases human repair, and aggregate-throughput overclaim become blocked dispatches, escalations, residual-cost records, or budget-policy updates.
+
+Simulation becomes part of the same budget operating system. Synthetic worlds, unit simulators, benchmark environments, safety rehearsals, and scenario models can be used aggressively, but their outputs travel only through a contract that names scope, fidelity, resources, omissions, instrumentation, and transfer. Failed transfers reduce claim scope, missing bottlenecks become residuals, instrumentation costs force downgrades, and approximate worlds stay useful for narrow tests instead of becoming borrowed reality.
+
+This cognition-budget and claim-transport system is still proposed architecture. Resource economics should remain `argument` until budget ledgers, verification-budget checks, load/friction tests, value-of-computation comparisons, scarce-resource scheduler traces, rejected-saving records, simulation-fidelity declarations, physical-constraint reviews, transfer checks, and negative simulation results show that resource discipline improves the stack without hiding risk.
+
+## Post-v2 measured governance cost
+
+The governed-work flagship records 1,968 planning-input, 1,024 planning-output,
+3,166 code-input, and 2,048 code-output tokens. On one Apple M1 it measured
+160.711 seconds of planning, 330.028 seconds of code generation, 1.960 seconds
+of independent observation, and 498.459 seconds end to end. Governed route
+bookkeeping took 3.026 seconds versus 2.534 seconds for the baseline, while
+reducing unsafe releases from five to zero but also reducing useful releases
+to zero.
+
+The routing/deliberation study adds matched candidate-operation accounts:
+adaptive stopping reached 179/180 correct in 236 operations, fixed three-step
+reached 154/180 in 540 and harmed 15 initially correct answers, and the
+one-step reference reached 130/180 in 180. These are local synthetic costs, not
+production economics, so the core claim remains at `argument` with a
+`no_change` disposition.
+
+## Post-v2.1 joint cost accounting
+
+The successor cycle consumes exactly 332 registered model calls with zero
+retries or outcome-driven arm expansion. Its outcomes show why compute totals
+must be joined to utility: the governed arm's safety gain accompanies only
+2/36 useful releases; the learned router's 20/60 correct outcomes are all
+non-answer actions; and adaptive deliberation spends 300 candidate operations
+without one correct final answer, compared with 60 operations for the equally
+zero-utility no-deliberation arm. Extra computation and governance are costs
+whose value depends on jointly measured useful throughput, unsafe release,
+latency, rollback, and abstention—not on call count or route accuracy alone.
+
+## Summary
+
+Resources are part of governance. A system that cannot account for tokens, verification, latency, human review, risk, fidelity, transfer limits, and quality cannot honestly claim efficiency.
+
+Budget pressure becomes an explicit record so the stack can save cost where it is safe, spend verification where risk demands it, and keep protected gates above local optimization. Simulation pressure becomes an explicit record so synthetic success cannot outrun scope, fidelity, resources, omissions, or transfer. With compactness, speed, representation, budgets, and simulation claims bounded, the sequence can ask which mathematical substrates are legitimate targets for adoption rather than architectural fashion.
+
+The handoff is deliberate: cyclic mixers and mathematical substrates are not adopted because they look elegant or cheap. They have to enter through resource, fidelity, baseline, and evidence contracts.
+
+The same rule governs self-improvement. A system may not call itself more efficient by moving verification, security, or human repair cost out of sight.
+
+## Handoff
+
+Resource budgets and simulation contracts decide what the stack can afford to try and what each experiment is allowed to mean. Mathematical and Search Substrates extends the same discipline to unusual calculi, cyclic structures, semantic graphs, search spaces, and sequence alternatives. Candidate substrates can remain interesting only while carrying baselines, falsification conditions, readiness states, proof boundaries, resource bills, fidelity limits, and ordinary fallback paths.

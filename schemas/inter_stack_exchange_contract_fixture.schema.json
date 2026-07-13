@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/inter_stack_exchange_contract_fixture.schema.json",
+  "title": "Inter-Stack Exchange Contract Fixture",
+  "type": "object",
+  "required": ["schema_version", "scope", "cases", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.inter_stack_exchange_contract_fixture.v0"},
+    "scope": {"const": "synthetic_cross_stack_record_routing_only"},
+    "cases": {"type": "array", "minItems": 9, "maxItems": 9, "items": {"$ref": "#/$defs/case"}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": ["protocol_version_recorded", "endpoint_capability_recorded", "sender_identity_recorded", "receiver_identity_recorded", "principal_recorded", "delegated_authority_recorded", "audience_scope_bound", "request_expiry_current", "credential_required", "credential_verified", "credential_current", "revocation_path_recorded", "value_bearing_request", "budget_reserved", "expected_receipt_recorded", "receipt_disputed", "residual_owner_recorded", "dispatch_requested"],
+      "properties": {
+        "protocol_version_recorded": {"type": "boolean"}, "endpoint_capability_recorded": {"type": "boolean"},
+        "sender_identity_recorded": {"type": "boolean"}, "receiver_identity_recorded": {"type": "boolean"},
+        "principal_recorded": {"type": "boolean"}, "delegated_authority_recorded": {"type": "boolean"},
+        "audience_scope_bound": {"type": "boolean"}, "request_expiry_current": {"type": "boolean"},
+        "credential_required": {"type": "boolean"}, "credential_verified": {"type": "boolean"},
+        "credential_current": {"type": "boolean"}, "revocation_path_recorded": {"type": "boolean"},
+        "value_bearing_request": {"type": "boolean"}, "budget_reserved": {"type": "boolean"},
+        "expected_receipt_recorded": {"type": "boolean"}, "receipt_disputed": {"type": "boolean"},
+        "residual_owner_recorded": {"type": "boolean"}, "dispatch_requested": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "case": {
+      "type": "object",
+      "required": ["id", "record", "expected_route"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "record": {"$ref": "#/$defs/record"},
+        "expected_route": {"enum": ["retain_as_exchange_draft", "require_identity_repair", "require_accountable_review", "require_budget_repair", "deny_dispatch", "release_to_local_dispatch"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

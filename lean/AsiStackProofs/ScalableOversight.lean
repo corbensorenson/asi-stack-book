@@ -97,4 +97,176 @@ theorem missing_baseline_requires_protocol_redesign
   simp [taskScope, authorityScope, supervisorEnvelope, systemEnvelope,
     informationAccess, rolesAndIncentives, missingBaseline]
 
+inductive OversightUseRoute where
+  | retainAsDraft
+  | requireAccessRepair
+  | requireProtocolRedesign
+  | requireDependencyReview
+  | requireOutcomeAudit
+  | requireAbstentionEvidence
+  | rejectAuthorityLaundering
+  | admitBoundedUse
+deriving DecidableEq, Repr
+
+structure OversightUseRecord where
+  protocolDigestRecorded : Bool
+  taskCohortRecorded : Bool
+  capabilityEnvelopesRecorded : Bool
+  evidenceViewsRecorded : Bool
+  sharedDependenciesRecorded : Bool
+  directReviewBaselineRecorded : Bool
+  independentOutcomeAuditRecorded : Bool
+  residualRecorded : Bool
+  permittedConsumerRecorded : Bool
+  expiryRecorded : Bool
+  noAuthorityGrantRecorded : Bool
+  highRiskUse : Bool
+  downstreamUseRequested : Bool
+  abstentionRequested : Bool
+  abstentionEvidenceRecorded : Bool
+  abstentionDefeaterRecorded : Bool
+deriving DecidableEq, Repr
+
+def OversightUseRouteFor (record : OversightUseRecord) : OversightUseRoute :=
+  if record.protocolDigestRecorded = false then
+    OversightUseRoute.retainAsDraft
+  else if record.taskCohortRecorded = false then
+    OversightUseRoute.retainAsDraft
+  else if record.capabilityEnvelopesRecorded = false then
+    OversightUseRoute.requireAccessRepair
+  else if record.evidenceViewsRecorded = false then
+    OversightUseRoute.requireAccessRepair
+  else if record.sharedDependenciesRecorded = false then
+    OversightUseRoute.requireDependencyReview
+  else if record.directReviewBaselineRecorded = false then
+    OversightUseRoute.requireProtocolRedesign
+  else if record.highRiskUse = true &&
+      record.independentOutcomeAuditRecorded = false then
+    OversightUseRoute.requireOutcomeAudit
+  else if record.residualRecorded = false then
+    OversightUseRoute.requireDependencyReview
+  else if record.permittedConsumerRecorded = false then
+    OversightUseRoute.retainAsDraft
+  else if record.expiryRecorded = false then
+    OversightUseRoute.retainAsDraft
+  else if record.downstreamUseRequested = true &&
+      record.noAuthorityGrantRecorded = false then
+    OversightUseRoute.rejectAuthorityLaundering
+  else if record.abstentionRequested = true &&
+      (record.abstentionEvidenceRecorded = false ||
+        record.abstentionDefeaterRecorded = false) then
+    OversightUseRoute.requireAbstentionEvidence
+  else if record.downstreamUseRequested = true then
+    OversightUseRoute.admitBoundedUse
+  else
+    OversightUseRoute.retainAsDraft
+
+theorem complete_bounded_use_is_admitted
+    {record : OversightUseRecord} :
+    record.protocolDigestRecorded = true ->
+    record.taskCohortRecorded = true ->
+    record.capabilityEnvelopesRecorded = true ->
+    record.evidenceViewsRecorded = true ->
+    record.sharedDependenciesRecorded = true ->
+    record.directReviewBaselineRecorded = true ->
+    record.independentOutcomeAuditRecorded = true ->
+    record.residualRecorded = true ->
+    record.permittedConsumerRecorded = true ->
+    record.expiryRecorded = true ->
+    record.noAuthorityGrantRecorded = true ->
+    record.downstreamUseRequested = true ->
+    record.abstentionRequested = false ->
+    OversightUseRouteFor record = OversightUseRoute.admitBoundedUse := by
+  intro digest cohort envelopes views dependencies baseline audit residual
+    consumer expiry noAuthority downstream noAbstention
+  unfold OversightUseRouteFor
+  simp [digest, cohort, envelopes, views, dependencies, baseline, audit,
+    residual, consumer, expiry, noAuthority, downstream, noAbstention]
+
+theorem missing_evidence_views_requires_access_repair
+    {record : OversightUseRecord} :
+    record.protocolDigestRecorded = true ->
+    record.taskCohortRecorded = true ->
+    record.capabilityEnvelopesRecorded = true ->
+    record.evidenceViewsRecorded = false ->
+    OversightUseRouteFor record = OversightUseRoute.requireAccessRepair := by
+  intro digest cohort envelopes missingViews
+  unfold OversightUseRouteFor
+  simp [digest, cohort, envelopes, missingViews]
+
+theorem undisclosed_shared_dependencies_require_review
+    {record : OversightUseRecord} :
+    record.protocolDigestRecorded = true ->
+    record.taskCohortRecorded = true ->
+    record.capabilityEnvelopesRecorded = true ->
+    record.evidenceViewsRecorded = true ->
+    record.sharedDependenciesRecorded = false ->
+    OversightUseRouteFor record = OversightUseRoute.requireDependencyReview := by
+  intro digest cohort envelopes views missingDependencies
+  unfold OversightUseRouteFor
+  simp [digest, cohort, envelopes, views, missingDependencies]
+
+theorem high_risk_use_without_outcome_audit_requires_audit
+    {record : OversightUseRecord} :
+    record.protocolDigestRecorded = true ->
+    record.taskCohortRecorded = true ->
+    record.capabilityEnvelopesRecorded = true ->
+    record.evidenceViewsRecorded = true ->
+    record.sharedDependenciesRecorded = true ->
+    record.directReviewBaselineRecorded = true ->
+    record.highRiskUse = true ->
+    record.independentOutcomeAuditRecorded = false ->
+    OversightUseRouteFor record = OversightUseRoute.requireOutcomeAudit := by
+  intro digest cohort envelopes views dependencies baseline highRisk missingAudit
+  unfold OversightUseRouteFor
+  simp [digest, cohort, envelopes, views, dependencies, baseline, highRisk,
+    missingAudit]
+
+theorem unjustified_abstention_requires_evidence
+    {record : OversightUseRecord} :
+    record.protocolDigestRecorded = true ->
+    record.taskCohortRecorded = true ->
+    record.capabilityEnvelopesRecorded = true ->
+    record.evidenceViewsRecorded = true ->
+    record.sharedDependenciesRecorded = true ->
+    record.directReviewBaselineRecorded = true ->
+    record.highRiskUse = false ->
+    record.residualRecorded = true ->
+    record.permittedConsumerRecorded = true ->
+    record.expiryRecorded = true ->
+    record.downstreamUseRequested = true ->
+    record.noAuthorityGrantRecorded = true ->
+    record.abstentionRequested = true ->
+    record.abstentionEvidenceRecorded = false ->
+    OversightUseRouteFor record =
+      OversightUseRoute.requireAbstentionEvidence := by
+  intro digest cohort envelopes views dependencies baseline lowRisk residual
+    consumer expiry downstream noAuthority abstention missingEvidence
+  unfold OversightUseRouteFor
+  simp [digest, cohort, envelopes, views, dependencies, baseline, lowRisk,
+    residual, consumer, expiry, downstream, noAuthority, abstention,
+    missingEvidence]
+
+theorem downstream_use_cannot_launder_authority
+    {record : OversightUseRecord} :
+    record.protocolDigestRecorded = true ->
+    record.taskCohortRecorded = true ->
+    record.capabilityEnvelopesRecorded = true ->
+    record.evidenceViewsRecorded = true ->
+    record.sharedDependenciesRecorded = true ->
+    record.directReviewBaselineRecorded = true ->
+    record.highRiskUse = false ->
+    record.residualRecorded = true ->
+    record.permittedConsumerRecorded = true ->
+    record.expiryRecorded = true ->
+    record.downstreamUseRequested = true ->
+    record.noAuthorityGrantRecorded = false ->
+    OversightUseRouteFor record =
+      OversightUseRoute.rejectAuthorityLaundering := by
+  intro digest cohort envelopes views dependencies baseline lowRisk residual
+    consumer expiry downstream authorityLaundering
+  unfold OversightUseRouteFor
+  simp [digest, cohort, envelopes, views, dependencies, baseline, lowRisk,
+    residual, consumer, expiry, downstream, authorityLaundering]
+
 end AsiStackProofs.ScalableOversight

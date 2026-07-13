@@ -1,0 +1,8 @@
+<think>
+Okay, let's tackle this query. The user wants a JSON object with specific keys: decision, route, residuals (array), reopen_trigger, and confidence. The scenario is that the aggregate dashboard is green, but there's an expired evidence edge EV-17 from the last model revision, and release pressure is high. The instruction says to avoid reopening issues unless the exact residual changes the decision.
+
+First, the decision. The dashboard is already green, so the evaluator says green. But there's an expired EV-17. Since the dashboard is green, maybe the decision remains green. But the user says to be faithful to the unresolved evidence. So even though the dashboard is green, the expired EV-17 might be a residual. So the decision might still be green, but the residuals array should include EV-17.
+
+Route: The route would be the path taken. Since the dashboard is green, but there's a residual, maybe the route is to monitor or re-evaluate. But the instruction says to avoid reopening unless the residual changes the decision. So maybe the route is to keep the decision as green, but note the residual.
+
+Residuals array: The expired EV-17 is a residual. So the array would have EV

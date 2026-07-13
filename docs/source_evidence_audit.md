@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 54 |
-| Assigned source/chapter pairs | 665 |
-| Exact claim-source mappings | 586 |
-| Unmapped assigned pairs | 79 |
-| Source notes present for assigned pairs | 665 |
-| Source notes listing assigned chapter | 665 |
-| Passage-reviewed mappings recorded | 586 |
+| Assigned source/chapter pairs | 666 |
+| Exact claim-source mappings | 590 |
+| Unmapped assigned pairs | 76 |
+| Source notes present for assigned pairs | 666 |
+| Source notes listing assigned chapter | 666 |
+| Passage-reviewed mappings recorded | 590 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -38,17 +38,17 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `system-boundaries-and-authority` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
 | `failure-modes-of-ungoverned-intelligence` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `evidence-states-and-claim-discipline` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
-| `scalable-oversight-and-adversarial-ai-control` | 3 | 3 | 3 | 3 | 3 | argument | eligible for support review |
+| `scalable-oversight-and-adversarial-ai-control` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `constitutional-alignment-substrate` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `stable-capability-fields` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `capability-replacement-and-rollback` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `security-kernel-and-digital-scifs` | 13 | 5 | 13 | 13 | 5 | argument | passage review required before source-derived promotion |
-| `model-weight-custody-and-hardware-roots-of-trust` | 6 | 5 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
+| `model-weight-custody-and-hardware-roots-of-trust` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 11 | 7 | 11 | 11 | 7 | argument | passage review required before source-derived promotion |
 | `recursive-self-improvement-boundaries` | 13 | 11 | 13 | 13 | 11 | argument | passage review required before source-derived promotion |
-| `open-ended-improvement-engines` | 8 | 3 | 8 | 8 | 3 | argument | passage review required before source-derived promotion |
+| `open-ended-improvement-engines` | 8 | 5 | 8 | 8 | 5 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `planning-as-a-control-layer` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
@@ -190,6 +190,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_goodhart_variants_2018` | 1 | yes |
 | `ext_weak_to_strong_generalization_2023` | 1 | yes |
 | `ext_scalable_oversight_weak_llms_2024` | 1 | yes |
+| `ext_ai_safety_debate_2018` | 1 | yes |
 | `eternal_code` | 1 | yes |
 | `ext_rand_model_weight_security_2024` | 1 | yes |
 | `ext_nist_confidential_computing_2026` | 1 | yes |
@@ -335,6 +336,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `ext_unlearning_benchmarks_weak_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_weak_to_strong_generalization_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_scalable_oversight_weak_llms_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_ai_safety_debate_2018` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
@@ -386,7 +388,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_nvidia_confidential_model_lifecycle_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_provable_model_weight_release_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `cca_project` | mapped | note present | chapter listed | passage-reviewed |
-| `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_in_toto_2019` | unmapped | note present | chapter listed | not passage-reviewed |
+| `model-weight-custody-and-hardware-roots-of-trust.core` | `model-weight-custody-and-hardware-roots-of-trust` | `ext_in_toto_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_nist_cscrm_2022` | mapped | note present | chapter listed | passage-reviewed |
 | `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_slsa_build_track_1_2` | mapped | note present | chapter listed | passage-reviewed |
 | `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_openssf_model_signing_spec_2025` | mapped | note present | chapter listed | passage-reviewed |
@@ -417,8 +419,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_poet_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_funsearch_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_voyager_2023` | mapped | note present | chapter listed | passage-reviewed |
-| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_darwin_godel_machine_2025` | unmapped | note present | chapter listed | not passage-reviewed |
-| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_adas_2024` | unmapped | note present | chapter listed | not passage-reviewed |
+| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_darwin_godel_machine_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `ext_adas_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `intent-to-execution-contracts.core` | `intent-to-execution-contracts` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |

@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_3_quality_floor_reader_completion_status.schema.json",
+  "title": "Post-v2.3 Quality Floor and Reader Completion Roadmap Status",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "snapshot_date",
+    "roadmap_id",
+    "roadmap_path",
+    "authority",
+    "status",
+    "predecessor",
+    "activation_baseline",
+    "priorities",
+    "milestones",
+    "chapter_cohort",
+    "reader_successor",
+    "breadth_freeze",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.post_v2_3_quality_floor_reader_completion_status.v0"},
+    "snapshot_date": {"const": "2026-07-13"},
+    "roadmap_id": {"const": "asi-stack-post-v2-3-quality-floor-reader-completion-2026-07-13"},
+    "roadmap_path": {"const": "docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md"},
+    "authority": {"const": "Corben Sorenson"},
+    "status": {"enum": ["active", "completed", "blocked"]},
+    "predecessor": {
+      "type": "object",
+      "required": ["path", "state", "release", "source_commit"],
+      "properties": {
+        "path": {"const": "docs/post_v2_2_implementation_completion_roadmap.md"},
+        "state": {"const": "completed"},
+        "release": {"const": "v2.3.0"},
+        "source_commit": {"const": "e27661166e9105f37cb36d63b15795f80715ca24"}
+      },
+      "additionalProperties": false
+    },
+    "activation_baseline": {
+      "type": "object",
+      "required": [
+        "active_chapter_count",
+        "activation_chapter_ids_sha256",
+        "public_safe_source_count",
+        "core_claim_count",
+        "core_argument_count",
+        "target_chapter_count",
+        "target_word_minimum",
+        "target_word_median",
+        "comparison_lower_quartile",
+        "comparison_median",
+        "historical_curated_reader_records",
+        "current_spine_curated_reader_records",
+        "borrowed_module_count",
+        "registered_proof_artifacts_per_target",
+        "reviewer_flagged_html_count",
+        "confirmed_orphan_html_count",
+        "declared_historical_redirect_count"
+      ],
+      "properties": {
+        "active_chapter_count": {"const": 54},
+        "activation_chapter_ids_sha256": {"const": "73436ead9fd12b866b2b688d3d5c3849a8a2d556069a4f4c67c8f141af955182"},
+        "public_safe_source_count": {"const": 280},
+        "core_claim_count": {"const": 54},
+        "core_argument_count": {"const": 54},
+        "target_chapter_count": {"const": 10},
+        "target_word_minimum": {"const": 2333},
+        "target_word_median": {"const": 2713},
+        "comparison_lower_quartile": {"const": 4486.75},
+        "comparison_median": {"const": 4943.5},
+        "historical_curated_reader_records": {"const": 44},
+        "current_spine_curated_reader_records": {"const": 0},
+        "borrowed_module_count": {"const": 2},
+        "registered_proof_artifacts_per_target": {"const": 1},
+        "reviewer_flagged_html_count": {"const": 1},
+        "confirmed_orphan_html_count": {"const": 0},
+        "declared_historical_redirect_count": {"const": 10}
+      },
+      "additionalProperties": false
+    },
+    "priorities": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/work_item"}
+    },
+    "milestones": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {"$ref": "#/$defs/milestone"}
+    },
+    "chapter_cohort": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {"$ref": "#/$defs/chapter_record"}
+    },
+    "reader_successor": {
+      "type": "object",
+      "required": ["historical_path", "historical_policy", "target_record_count", "provisional_path", "state", "selected_initial_format"],
+      "properties": {
+        "historical_path": {"const": "editions/reader_manuscript/v1_0/manifest.json"},
+        "historical_policy": {"const": "preserve_frozen_44_chapter_snapshot"},
+        "target_record_count": {"const": 54},
+        "provisional_path": {"const": "editions/reader_manuscript/v2_0/manifest.json"},
+        "state": {"enum": ["absent", "initialized", "reconciling", "reconciled", "released", "blocked"]},
+        "selected_initial_format": {"enum": ["unselected", "curated_html", "epub", "docx", "pdf"]}
+      },
+      "additionalProperties": false
+    },
+    "breadth_freeze": {"const": true},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 8, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "work_item": {
+      "type": "object",
+      "required": ["id", "state", "purpose", "evidence_refs"],
+      "properties": {
+        "id": {"pattern": "^P[0-5]$"},
+        "state": {"enum": ["pending", "in_progress", "completed", "blocked"]},
+        "purpose": {"type": "string", "minLength": 1},
+        "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "milestone": {
+      "type": "object",
+      "required": ["id", "state", "evidence_refs"],
+      "properties": {
+        "id": {"pattern": "^M[0-9]$"},
+        "state": {"enum": ["pending", "in_progress", "completed", "blocked"]},
+        "evidence_refs": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "chapter_record": {
+      "type": "object",
+      "required": [
+        "id",
+        "file",
+        "baseline_word_count",
+        "activation_lean_module",
+        "required_lean_module",
+        "module_ownership",
+        "semantic_packet_state",
+        "formal_packet_state",
+        "reader_record_state"
+      ],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "file": {"pattern": "^chapters/.+\\.qmd$"},
+        "baseline_word_count": {"type": "integer", "minimum": 1},
+        "activation_lean_module": {"pattern": "^AsiStackProofs\\..+$"},
+        "required_lean_module": {"pattern": "^AsiStackProofs\\..+$"},
+        "module_ownership": {"enum": ["owned", "borrowed"]},
+        "semantic_packet_state": {"enum": ["pending", "in_progress", "completed", "blocked"]},
+        "formal_packet_state": {"enum": ["pending", "in_progress", "completed", "blocked"]},
+        "reader_record_state": {"enum": ["absent", "drafting", "reconciled", "released", "blocked"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

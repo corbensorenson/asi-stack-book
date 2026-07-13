@@ -339,7 +339,7 @@ def validate_surfaces(errors: list[str]) -> None:
         LEDGER: [
             CLAIM_ID,
             rel(TRANSITION),
-            "book-to-Theseus crosswalk pointer",
+            "book-to-Theseus crosswalk import",
         ],
         PROJECT_LEDGER: [
             "Book-to-Theseus crosswalk pointer imports | 1",

@@ -1,0 +1,10 @@
+<think>
+Okay, let's tackle this query. The user is asking to correct a claim that the prose says the deployed system is safe, but the green fixture only validates the record shape. The task is to name the missing evidence and return a JSON object with specific keys.
+
+First, I need to understand the problem. The green fixture validates the record shape, which is a part of the system's structure. However, the prose claims the system is safe, which might be an overstatement. The missing evidence here is probably something that ensures safety beyond just the record shape. 
+
+The user mentioned not to invent execution or claim that a local check proves production safety. So, the answer should not assume that a local check is sufficient. Instead, the missing evidence could be things like safety testing in production, real-world scenarios, or other validation steps that ensure safety in actual use cases.
+
+The residual ID is R-SHAPE-NOT-SAFETY. So, the residual is that the safety claim is not supported by the evidence of record shape validation. The release recommendation here might be to abstain because the safety claim isn't adequately supported. The confidence would be low since the evidence is insufficient. The requested effect is read_only, as per the authority ceiling.
+
+So, the

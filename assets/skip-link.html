@@ -32,3 +32,55 @@
     });
   })();
 </script>
+<script>
+  (() => {
+    const referenceAttributes = [
+      "href", "xlink:href", "fill", "stroke", "filter", "clip-path",
+      "mask", "marker-start", "marker-mid", "marker-end",
+      "aria-labelledby", "aria-describedby", "style"
+    ];
+    const namespaceSvgIds = () => {
+      document.querySelectorAll("svg:not([data-asi-ids-namespaced])").forEach((svg, svgIndex) => {
+        const map = new Map();
+        const prefix = `asi-svg-${svgIndex}-${Math.random().toString(36).slice(2, 8)}-`;
+        svg.querySelectorAll("[id]").forEach((node) => {
+          const oldId = node.id;
+          const newId = `${prefix}${oldId}`;
+          map.set(oldId, newId);
+          node.id = newId;
+        });
+        if (map.size) {
+          svg.querySelectorAll("*").forEach((node) => {
+            referenceAttributes.forEach((name) => {
+              const value = node.getAttribute(name);
+              if (!value) return;
+              let updated = value;
+              map.forEach((newId, oldId) => {
+                updated = updated
+                  .replaceAll(`url(#${oldId})`, `url(#${newId})`)
+                  .replaceAll(`#${oldId}`, `#${newId}`);
+              });
+              if (updated !== value) node.setAttribute(name, updated);
+            });
+          });
+        }
+        svg.setAttribute("data-asi-ids-namespaced", "true");
+      });
+    };
+    let queued = false;
+    const queueNamespace = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => {
+        queued = false;
+        namespaceSvgIds();
+      });
+    };
+    queueNamespace();
+    window.addEventListener("load", queueNamespace, { once: true });
+    new MutationObserver(queueNamespace).observe(document.documentElement, {
+      childList: true,
+      subtree: true
+    });
+  })();
+</script>

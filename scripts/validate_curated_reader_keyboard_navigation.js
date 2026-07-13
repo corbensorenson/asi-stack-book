@@ -52,6 +52,7 @@ function parseArgs(argv) {
     report: DEFAULT_REPORT,
     writeManifest: false,
     trackedOnly: false,
+    standalone: false,
   };
   for (let index = 2; index < argv.length; index += 1) {
     const value = argv[index];
@@ -65,6 +66,8 @@ function parseArgs(argv) {
       args.writeManifest = true;
     } else if (value === "--tracked-only") {
       args.trackedOnly = true;
+    } else if (value === "--standalone") {
+      args.standalone = true;
     } else {
       throw new Error(`Unknown argument: ${value}`);
     }
@@ -435,10 +438,22 @@ function summarize(results, files, expectedFiles, args) {
   };
 }
 
-function validateManifest(manifest) {
+function validateManifest(manifest, { standalone = false } = {}) {
   const errors = [];
   const summary = manifest.summary || {};
-  const expected = {
+  const expected = standalone ? {
+    pages_checked: summary.expected_pages,
+    viewport_count: 2,
+    page_view_pairs: summary.expected_pages * 2,
+    tab_steps_per_page_view: TAB_STEPS,
+    failed_page_view_pairs: 0,
+    skip_link_reached_pairs: summary.page_view_pairs,
+    skip_link_activated_pairs: summary.page_view_pairs,
+    main_content_route_available_pairs: summary.page_view_pairs,
+    navigation_focus_reached_pairs: summary.page_view_pairs,
+    search_focus_reached_pairs: summary.page_view_pairs,
+    keyboard_trap_candidates: 0,
+  } : {
     pages_checked: 49,
     expected_pages: 49,
     viewport_count: 2,
@@ -455,6 +470,9 @@ function validateManifest(manifest) {
   };
   if (manifest.status !== "passed_automated_keyboard_traversal_review") {
     errors.push("status must be passed_automated_keyboard_traversal_review.");
+  }
+  if (standalone && (!Number.isInteger(summary.expected_pages) || summary.expected_pages < 1)) {
+    errors.push(`summary.expected_pages must be a positive integer; found ${summary.expected_pages}.`);
   }
   for (const [key, value] of Object.entries(expected)) {
     if (summary[key] !== value) {
@@ -580,6 +598,9 @@ function trackedComparable(manifest) {
 
 async function main() {
   const args = parseArgs(process.argv);
+  if (args.standalone && (args.trackedOnly || args.writeManifest)) {
+    throw new Error("--standalone cannot be combined with --tracked-only or --write-manifest.");
+  }
   if (args.trackedOnly) {
     if (args.writeManifest) throw new Error("--tracked-only cannot be combined with --write-manifest.");
     if (!fs.existsSync(TRACKED_MANIFEST)) {
@@ -623,7 +644,7 @@ async function main() {
   }
 
   const manifest = summarize(results, files, expectedFiles, args);
-  const manifestErrors = validateManifest(manifest);
+  const manifestErrors = validateManifest(manifest, { standalone: args.standalone });
   const report = {
     ...manifest,
     results,
@@ -635,7 +656,7 @@ async function main() {
   if (args.writeManifest) {
     fs.writeFileSync(TRACKED_MANIFEST, JSON.stringify(manifest, null, 2) + "\n", "utf8");
     fs.writeFileSync(REVIEW_DOC, renderReviewDoc(manifest), "utf8");
-  } else {
+  } else if (!args.standalone) {
     if (!fs.existsSync(TRACKED_MANIFEST)) {
       manifestErrors.push(`${rel(TRACKED_MANIFEST)} is missing; run \`${WRITE_COMMAND}\`.`);
     } else {

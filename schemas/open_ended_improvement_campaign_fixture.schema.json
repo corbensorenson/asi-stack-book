@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/open_ended_improvement_campaign_fixture.schema.json",
+  "title": "Open-Ended Improvement Campaign Fixture",
+  "type": "object",
+  "required": ["schema_version", "scope", "cases", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.open_ended_improvement_campaign_fixture.v0"},
+    "scope": {"const": "synthetic_campaign_record_routing_only"},
+    "cases": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"$ref": "#/$defs/case"}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "case": {
+      "type": "object",
+      "required": ["id", "record", "expected_route"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "record": {
+          "type": "object",
+          "required": ["objective_digest_recorded", "task_policy_digest_recorded", "generator_identity_recorded", "evaluator_identity_recorded", "evaluator_dependencies_recorded", "independent_qualification_recorded", "resource_bill_recorded", "within_registered_budget", "stop_authority_recorded", "failure_history_preserved", "archive_disposition_recorded", "residual_owner_recorded", "permitted_consumer_recorded", "no_authority_grant_recorded", "admission_requested"],
+          "properties": {
+            "objective_digest_recorded": {"type": "boolean"},
+            "task_policy_digest_recorded": {"type": "boolean"},
+            "generator_identity_recorded": {"type": "boolean"},
+            "evaluator_identity_recorded": {"type": "boolean"},
+            "evaluator_dependencies_recorded": {"type": "boolean"},
+            "independent_qualification_recorded": {"type": "boolean"},
+            "resource_bill_recorded": {"type": "boolean"},
+            "within_registered_budget": {"type": "boolean"},
+            "stop_authority_recorded": {"type": "boolean"},
+            "failure_history_preserved": {"type": "boolean"},
+            "archive_disposition_recorded": {"type": "boolean"},
+            "residual_owner_recorded": {"type": "boolean"},
+            "permitted_consumer_recorded": {"type": "boolean"},
+            "no_authority_grant_recorded": {"type": "boolean"},
+            "admission_requested": {"type": "boolean"}
+          },
+          "additionalProperties": false
+        },
+        "expected_route": {"enum": ["retain_as_draft", "require_evaluator_separation", "require_budget_repair", "require_stop_authority", "require_archive_repair", "require_residual_owner", "reject_authority_laundering", "release_to_governor_review"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,7 @@
+{
+  "scenario_id": "rh-04",
+  "family": "deletion_storage",
+  "context": "Behavior changed on the deletion cohort. Backup B-KEEP still contains the source rows and influence was not estimated.",
+  "residual_id": "B-KEEP",
+  "required_route": "block"
+}

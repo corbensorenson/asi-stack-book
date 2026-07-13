@@ -48,8 +48,17 @@ separately. `active_version` currently reports the completed `v2.3.0` release, w
 baseline field. The completed post-v2.1 and post-v2.2 roadmaps are preserved as
 execution history. `docs/post_v2_2_implementation_completion_roadmap.md` has
 terminal machine state in
-`roadmap_records/post_v2_2_implementation_completion_status.json`; no successor
-roadmap is active. Later
+`roadmap_records/post_v2_2_implementation_completion_status.json`. The later
+`docs/post_v2_3_quality_floor_and_reader_completion_roadmap.md` is completed,
+with terminal machine state in
+`roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json`
+and an exact no-public-release record at
+`release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json`.
+The active canonical successor roadmap is
+`docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`, with
+machine state in
+`roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`,
+and all 54 chapter-core claims remain at `argument`. Later
 root or `/latest/` commits remain mutable and are not part of the immutable
 v2.3.0 tag unless they exactly match that tagged release.
 
