@@ -22,8 +22,8 @@
     "qcsa_implemented_lane_count": 0
   },
   "priorities": [
-    {"id": "P0", "state": "running", "purpose": "activate implementation truth", "evidence_refs": ["docs/post_v2_2_implementation_completion_roadmap.md", "roadmap_records/post_v2_2_implementation_completion_status.json", "schemas/post_v2_2_implementation_completion_status.schema.json", "scripts/validate_post_v2_2_implementation_completion_roadmap.py"]},
-    {"id": "P1", "state": "pending", "purpose": "implement the QCSA artifact stack", "evidence_refs": []},
+    {"id": "P0", "state": "completed", "purpose": "activate implementation truth", "evidence_refs": ["docs/post_v2_2_implementation_completion_roadmap.md", "roadmap_records/post_v2_2_implementation_completion_status.json", "schemas/post_v2_2_implementation_completion_status.schema.json", "scripts/validate_post_v2_2_implementation_completion_roadmap.py", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29228034217", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29228280321"]},
+    {"id": "P1", "state": "preregistered", "purpose": "implement the QCSA artifact stack", "evidence_refs": ["docs/post_v2_2_implementation_completion_roadmap.md"]},
     {"id": "P2", "state": "pending", "purpose": "evaluate QCSA and its ablations", "evidence_refs": []},
     {"id": "P3", "state": "pending", "purpose": "build the governed vertical reference path", "evidence_refs": []},
     {"id": "P4", "state": "pending", "purpose": "complete evidence and book reconciliation", "evidence_refs": []},
@@ -31,8 +31,8 @@
   ],
   "milestones": [
     {"id": "M0", "state": "completed", "evidence_refs": ["docs/post_v2_2_implementation_completion_roadmap.md", "roadmap_records/post_v2_2_implementation_completion_status.json", "schemas/post_v2_2_implementation_completion_status.schema.json", "scripts/validate_post_v2_2_implementation_completion_roadmap.py"]},
-    {"id": "M1", "state": "in_progress", "evidence_refs": ["README.md", "index.qmd"]},
-    {"id": "M2", "state": "pending", "evidence_refs": []},
+    {"id": "M1", "state": "completed", "evidence_refs": ["README.md", "index.qmd", "https://github.com/corbensorenson/asi-stack-book/commit/65120df163822a423952fe43a2231e5c65125327", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29228034217", "https://github.com/corbensorenson/asi-stack-book/actions/runs/29228280321"]},
+    {"id": "M2", "state": "in_progress", "evidence_refs": ["docs/post_v2_2_implementation_completion_roadmap.md"]},
     {"id": "M3", "state": "pending", "evidence_refs": []},
     {"id": "M4", "state": "pending", "evidence_refs": []},
     {"id": "M5", "state": "pending", "evidence_refs": []},

@@ -126,8 +126,8 @@ completion declaration.
 
 | Priority | Initial state | Purpose | Terminal authority |
 |---|---|---|---|
-| P0 — Activate implementation truth | running | Install this roadmap, status record, validators, and current public pointers without changing v2.2 history. | Clean deployed public-truth attestation. |
-| P1 — Implement the QCSA artifact stack | pending | Build the twelve bounded artifacts with schemas, fixtures, replay, and negative controls. | Exact artifact manifest and rejecting validation suite. |
+| P0 — Activate implementation truth | completed | Install this roadmap, status record, validators, and current public pointers without changing v2.2 history. | Clean deployed public-truth attestation. |
+| P1 — Implement the QCSA artifact stack | preregistered | Build the twelve bounded artifacts with schemas, fixtures, replay, and negative controls. | Exact artifact manifest and rejecting validation suite. |
 | P2 — Evaluate QCSA and its ablations | pending | Test usefulness, cost, calibration, migration, and failure prevention against matched baselines. | Frozen result ledger and claim-bounded disposition. |
 | P3 — Build the governed vertical reference path | pending | Connect QCSA to existing stack owners without merging identity, evidence, or authority. | End-to-end replay, rollback/migration exercise, and residual ledger. |
 | P4 — Complete evidence and book reconciliation | pending | Fold implementation results into chapters/products and close selected evidence-floor gaps. | Machine/prose agreement with no unsupported promotion. |
@@ -362,8 +362,8 @@ Any release must bind one clean tested commit to:
 | Milestone | State at activation | Completion evidence |
 |---|---|---|
 | M0 — Roadmap authority installed | completed | Roadmap, schema, status record, validator, registered contract, and goal. |
-| M1 — Public activation reconciled | in progress | Current public pointers plus clean deploy/attestation. |
-| M2 — QCSA implementation frozen | pending | Architecture decision record, package manifest, schemas, fixtures, budgets, and test plan. |
+| M1 — Public activation reconciled | completed | Commit `65120df163822a423952fe43a2231e5c65125327`; build `29228034217`; deploy/attest `29228280321`. |
+| M2 — QCSA implementation frozen | in progress | Architecture decision record, package manifest, schemas, fixtures, budgets, and test plan. |
 | M3 — QCSA artifact stack implemented | pending | `QI-01` through `QI-12` pass deterministic replay and negative controls. |
 | M4 — QCSA evaluation dispositioned | pending | Frozen held-out results, baselines, ablations, costs, residuals, and decisions. |
 | M5 — Vertical reference path complete | pending | Clean replay, adversarial paths, migration/rollback exercise, and readable trace. |

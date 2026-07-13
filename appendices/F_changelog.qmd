@@ -14,6 +14,13 @@
 - Preserved the 54-chapter architecture, all 54 core claims at `argument`,
   immutable v2.2.0 identity, optional-format exclusion, and the author decision
   that external-human review is not a prepublication gate.
+- Closed P0 and M1 after commit
+  `65120df163822a423952fe43a2231e5c65125327` passed tested build run
+  `29228034217` and deploy/attest run `29228280321`. The exact tested artifact
+  was deployed without rebuilding and its public status/chapter graph passed
+  the live crawl. P1 is preregistered and M2, the QCSA implementation freeze,
+  is now in progress; this activation is still no QCSA result or support-state
+  movement.
 
 ## 2026-07-11 - v2.2.0 residual-and-transfer release
 
