@@ -2,6 +2,13 @@
 
 ## 2026-07-13 - Audit the post-v2.3 clean handoff boundary
 
+- Generalized the curated-reader workspace and format renderer to accept an
+  explicit tracked manifest, so the 54-chapter v2.0 successor cannot silently
+  fall back to the historical 44-chapter v1.0 source. Both the v2.0 renderable
+  source check and the immutable v1.0 historical check pass. Added a bounded
+  per-format render timeout that terminates the whole Quarto process group and
+  records timeout state; the first v2 EPUB preflight exposed an indefinitely
+  idle Mermaid/Chrome conversion and produced no candidate artifact.
 - Completed P0 with `docs/post_v2_3_clean_handoff_receipt.md`. The five-commit
   handoff terminates at `c2db70988cb3b06860c2994c0bb2e7f3e2874544`; GitHub
   build run `29293371709` passed the deep registry, Lean, clean render,

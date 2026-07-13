@@ -18,6 +18,7 @@ import math
 import os
 from pathlib import Path
 import re
+import signal
 import shutil
 import subprocess
 import tempfile
@@ -28,6 +29,7 @@ import build_curated_reader_edition
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT = ROOT / "build" / "curated_reader_edition"
+DEFAULT_MANIFEST = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 DEFAULT_FORMATS = ("html", "epub", "docx")
 FORMAT_EXTENSIONS = {
     "html": [".html"],
@@ -432,7 +434,31 @@ def raster_diagram_fallbacks(output_dir: Path) -> Iterator[dict[str, object]]:
             path.write_text(text, encoding="utf-8")
 
 
-def run_render(output_dir: Path, fmt: str) -> dict[str, object]:
+def run_bounded_render(
+    command: list[str], output_dir: Path, log_file: object, timeout_seconds: int
+) -> tuple[int, bool]:
+    process = subprocess.Popen(
+        command,
+        cwd=output_dir,
+        text=True,
+        stdout=log_file,
+        stderr=subprocess.STDOUT,
+        env=render_environment(),
+        start_new_session=True,
+    )
+    try:
+        return process.wait(timeout=timeout_seconds), False
+    except subprocess.TimeoutExpired:
+        os.killpg(process.pid, signal.SIGTERM)
+        try:
+            process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            os.killpg(process.pid, signal.SIGKILL)
+            process.wait()
+        return 124, True
+
+
+def run_render(output_dir: Path, fmt: str, timeout_seconds: int) -> dict[str, object]:
     command = ["quarto", "render", "--to", fmt]
     fallback_info: dict[str, object] = {
         "applied": False,
@@ -456,46 +482,30 @@ def run_render(output_dir: Path, fmt: str) -> dict[str, object]:
         if fmt == "pdf":
             with raster_diagram_fallbacks(output_dir) as fallback_info:
                 with pdf_mermaid_static_fallbacks(output_dir) as mermaid_fallback_info:
-                    result = subprocess.run(
-                        command,
-                        cwd=output_dir,
-                        check=False,
-                        text=True,
-                        stdout=log_file,
-                        stderr=subprocess.STDOUT,
-                        env=render_environment(),
+                    returncode, timed_out = run_bounded_render(
+                        command, output_dir, log_file, timeout_seconds
                     )
         elif fmt == "docx":
             with raster_diagram_fallbacks(output_dir) as fallback_info:
-                result = subprocess.run(
-                    command,
-                    cwd=output_dir,
-                    check=False,
-                    text=True,
-                    stdout=log_file,
-                    stderr=subprocess.STDOUT,
-                    env=render_environment(),
+                returncode, timed_out = run_bounded_render(
+                    command, output_dir, log_file, timeout_seconds
                 )
         else:
-            result = subprocess.run(
-                command,
-                cwd=output_dir,
-                check=False,
-                text=True,
-                stdout=log_file,
-                stderr=subprocess.STDOUT,
-                env=render_environment(),
+            returncode, timed_out = run_bounded_render(
+                command, output_dir, log_file, timeout_seconds
             )
         log_file.seek(0)
         output = log_file.read()
-    artifacts = find_artifacts(output_dir, fmt) if result.returncode == 0 else []
+    artifacts = find_artifacts(output_dir, fmt) if returncode == 0 else []
     preserved_artifacts = preserve_artifacts(output_dir, fmt, artifacts) if artifacts else []
     warning_lines = [line for line in output.splitlines() if "[WARNING]" in line]
     svg_conversion_warning_count = sum("Could not convert image" in line for line in warning_lines)
     return {
         "format": fmt,
-        "status": "rendered" if result.returncode == 0 else "failed",
-        "returncode": result.returncode,
+        "status": "rendered" if returncode == 0 else "failed",
+        "returncode": returncode,
+        "timed_out": timed_out,
+        "timeout_seconds": timeout_seconds,
         "command": " ".join(command),
         "artifacts": artifacts,
         "preserved_artifacts": preserved_artifacts,
@@ -511,12 +521,13 @@ def write_report(
     output_dir: Path,
     generation_report: dict[str, object],
     render_records: list[dict[str, object]],
+    manifest_path: Path,
 ) -> dict[str, object]:
     report = {
         "schema_version": "0.1",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source_mode": "tracked_curated_reader_manuscript",
-        "source_manifest": "editions/reader_manuscript/v1_0/manifest.json",
+        "source_manifest": str(manifest_path.resolve().relative_to(ROOT)),
         "curated_generation": generation_report,
         "format_results": render_records,
         "review_status": "review_required",
@@ -543,6 +554,7 @@ def write_report(
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", default="reader_release", help="reader profile id to use for scaffolding")
+    parser.add_argument("--manifest", default=str(DEFAULT_MANIFEST), help="tracked curated-reader manifest")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT), help="generated curated reader workspace")
     parser.add_argument(
         "--formats",
@@ -552,19 +564,23 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--include-pdf", action="store_true", help="also attempt PDF if it is not already listed")
     parser.add_argument("--stop-on-fail", action="store_true", help="stop after the first failed format render")
+    parser.add_argument("--timeout-seconds", type=int, default=300, help="per-format render timeout")
     parser.add_argument("--check", action="store_true", help="validate setup in a temporary workspace without rendering formats")
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
+    if args.timeout_seconds < 30:
+        raise SystemExit("Curated reader format timeout must be at least 30 seconds.")
+    manifest_path = Path(args.manifest)
     formats = list(dict.fromkeys(args.formats + (["pdf"] if args.include_pdf else [])))
 
     if args.check:
         if shutil.which("quarto") is None:
             raise SystemExit("Curated reader format render check failed: quarto is not on PATH.")
         with tempfile.TemporaryDirectory(prefix="asi-curated-reader-render-check-") as temp_dir:
-            report = build_curated_reader_edition.generate(Path(temp_dir), args.profile)
+            report = build_curated_reader_edition.generate(Path(temp_dir), args.profile, manifest_path)
             if not (Path(temp_dir) / "reader_manifest.json").exists():
                 raise SystemExit("Curated reader format render check failed: missing reader_manifest.json.")
             print(
@@ -577,16 +593,16 @@ def main() -> None:
         raise SystemExit("Cannot render curated reader formats: quarto is not on PATH.")
 
     output_dir = Path(args.output)
-    generation_report = build_curated_reader_edition.generate(output_dir, args.profile)
+    generation_report = build_curated_reader_edition.generate(output_dir, args.profile, manifest_path)
     render_records: list[dict[str, object]] = []
     for fmt in formats:
-        record = run_render(output_dir, fmt)
+        record = run_render(output_dir, fmt, args.timeout_seconds)
         render_records.append(record)
         print(f"{fmt}: {record['status']}")
         if args.stop_on_fail and record["status"] != "rendered":
             break
 
-    report = write_report(output_dir, generation_report, render_records)
+    report = write_report(output_dir, generation_report, render_records, manifest_path)
     failed = [record["format"] for record in render_records if record["status"] != "rendered"]
     print(f"Curated reader render report wrote: {output_dir / REPORT_NAME}")
     if failed:

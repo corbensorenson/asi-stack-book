@@ -27,7 +27,7 @@ import build_reader_edition
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE_PATH = ROOT / "book_structure.json"
-MANIFEST_PATH = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
+DEFAULT_MANIFEST_PATH = ROOT / "editions" / "reader_manuscript" / "v1_0" / "manifest.json"
 DEFAULT_OUTPUT = ROOT / "build" / "curated_reader_edition"
 REPORT_NAME = "curated_reader_build_report.json"
 CHECKLIST_NAME = "CURATED_READER_REVIEW_CHECKLIST.md"
@@ -163,6 +163,8 @@ def curated_record_map(manifest: dict[str, Any]) -> dict[str, dict[str, Any]]:
 def validate_curated_sources(
     chapters: list[dict[str, str]],
     records: dict[str, dict[str, Any]],
+    manifest_path: Path,
+    required_release_blockers: set[str],
 ) -> list[str]:
     errors: list[str] = []
     expected_ids = {chapter["chapter_id"] for chapter in chapters}
@@ -182,8 +184,11 @@ def validate_curated_sources(
             errors.append(f"{chapter_id}: curated record missing file")
             continue
         path = ROOT / file_value
-        if not file_value.startswith("editions/reader_manuscript/v1_0/chapters/"):
-            errors.append(f"{chapter_id}: curated file must stay under editions/reader_manuscript/v1_0/chapters/")
+        expected_root = manifest_path.parent / "chapters"
+        try:
+            path.relative_to(expected_root)
+        except ValueError:
+            errors.append(f"{chapter_id}: curated file must stay under {rel(expected_root)}/")
         if not path.exists():
             errors.append(f"{chapter_id}: curated file does not exist: {file_value}")
             continue
@@ -199,12 +204,12 @@ def validate_curated_sources(
         if not isinstance(blockers, list):
             errors.append(f"{chapter_id}: release_blockers must be a list")
             blockers = []
-        missing_blockers = sorted(REQUIRED_RELEASE_BLOCKERS - {str(item) for item in blockers})
+        missing_blockers = sorted(required_release_blockers - {str(item) for item in blockers})
         if missing_blockers:
             errors.append(f"{chapter_id}: release_blockers missing {missing_blockers}")
         if record.get("reconciliation_status") not in {"drafting", "reconciled"}:
             errors.append(f"{chapter_id}: reconciliation_status must be drafting or reconciled")
-        if record.get("canonical_change_required") is not False:
+        if required_release_blockers and record.get("canonical_change_required") is not False:
             errors.append(f"{chapter_id}: canonical_change_required must remain false for a renderable draft")
     return errors
 
@@ -248,7 +253,7 @@ def copy_reader_assets(output_dir: Path) -> None:
     shutil.copytree(source_assets, target_assets, dirs_exist_ok=True)
 
 
-def write_curated_checklist(output_dir: Path, copied: list[dict[str, str]]) -> str:
+def write_curated_checklist(output_dir: Path, copied: list[dict[str, str]], manifest_path: Path) -> str:
     lines = [
         "# Curated Reader Review Checklist",
         "",
@@ -259,7 +264,7 @@ def write_curated_checklist(output_dir: Path, copied: list[dict[str, str]]) -> s
         "## Scope",
         "",
         f"- Curated chapters copied: {len(copied)}",
-        "- Source manifest: `editions/reader_manuscript/v1_0/manifest.json`",
+        f"- Source manifest: `{rel(manifest_path)}`",
         f"- Build report: `{REPORT_NAME}`",
         "",
         "## Review Gate",
@@ -299,13 +304,14 @@ def write_report(
     baseline_summary: dict[str, Any],
     copied: list[dict[str, str]],
     records: dict[str, dict[str, Any]],
+    manifest_path: Path,
 ) -> dict[str, Any]:
     report = {
         "schema_version": "0.1",
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "status": "curated_reader_source_renderable",
         "source_mode": "tracked_curated_reader_manuscript",
-        "source_manifest": rel(MANIFEST_PATH),
+        "source_manifest": rel(manifest_path),
         "baseline_generator": "scripts/build_reader_edition.py",
         "baseline_summary": baseline_summary,
         "chapter_count": len(copied),
@@ -330,13 +336,13 @@ def write_report(
     return report
 
 
-def update_reader_manifest(output_dir: Path, report: dict[str, Any]) -> None:
+def update_reader_manifest(output_dir: Path, report: dict[str, Any], manifest_path: Path) -> None:
     path = output_dir / "reader_manifest.json"
     data = load_json(path)
     if not isinstance(data, dict):
         raise TypeError("generated reader_manifest.json must contain an object")
     data["source_mode"] = "tracked_curated_reader_manuscript"
-    data["curated_reader_manifest"] = rel(MANIFEST_PATH)
+    data["curated_reader_manifest"] = rel(manifest_path)
     data["curated_reader_build_report"] = REPORT_NAME
     data["curated_reader_review_checklist"] = CHECKLIST_NAME
     data["curated_reader_release_blocker_counts"] = report["release_blocker_counts"]
@@ -382,9 +388,14 @@ def validate_generated_workspace(output_dir: Path, chapters: list[dict[str, str]
     return errors
 
 
-def generate(output_dir: Path, profile_id: str = "reader_release") -> dict[str, Any]:
+def generate(
+    output_dir: Path,
+    profile_id: str = "reader_release",
+    manifest_path: Path = DEFAULT_MANIFEST_PATH,
+) -> dict[str, Any]:
     structure = load_json(STRUCTURE_PATH)
-    manifest = load_json(MANIFEST_PATH)
+    manifest_path = manifest_path.resolve()
+    manifest = load_json(manifest_path)
     if not isinstance(structure, dict) or not isinstance(manifest, dict):
         raise TypeError("book_structure.json and curated reader manifest must contain objects")
 
@@ -397,7 +408,8 @@ def generate(output_dir: Path, profile_id: str = "reader_release") -> dict[str, 
         if missing_records:
             fail(f"historical reader snapshot missing curated record(s): {missing_records}")
         chapters = historical_snapshot_chapters(snapshot_ids, records, active_chapters)
-    errors = validate_curated_sources(chapters, records)
+    required_release_blockers = REQUIRED_RELEASE_BLOCKERS if manifest.get("status") != "released" else set()
+    errors = validate_curated_sources(chapters, records, manifest_path, required_release_blockers)
     if errors:
         fail(errors)
 
@@ -410,9 +422,9 @@ def generate(output_dir: Path, profile_id: str = "reader_release") -> dict[str, 
     baseline_summary = build_reader_edition.generate(output_dir, profile_id)
     copy_reader_assets(output_dir)
     copied = copy_curated_chapters(output_dir, chapters, records)
-    write_curated_checklist(output_dir, copied)
-    report = write_report(output_dir, baseline_summary, copied, records)
-    update_reader_manifest(output_dir, report)
+    write_curated_checklist(output_dir, copied, manifest_path)
+    report = write_report(output_dir, baseline_summary, copied, records, manifest_path)
+    update_reader_manifest(output_dir, report, manifest_path)
 
     workspace_errors = validate_generated_workspace(output_dir, chapters)
     if workspace_errors:
@@ -423,6 +435,7 @@ def generate(output_dir: Path, profile_id: str = "reader_release") -> dict[str, 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--profile", default="reader_release", help="reader profile id to use for scaffolding")
+    parser.add_argument("--manifest", default=str(DEFAULT_MANIFEST_PATH), help="tracked curated-reader manifest")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT), help="output directory for generated Quarto workspace")
     parser.add_argument("--check", action="store_true", help="generate into a temporary directory and validate only")
     return parser.parse_args()
@@ -430,8 +443,9 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    manifest_path = Path(args.manifest)
     if args.check:
-        manifest = load_json(MANIFEST_PATH)
+        manifest = load_json(manifest_path)
         structure = load_json(STRUCTURE_PATH)
         if not isinstance(manifest, dict) or not isinstance(structure, dict):
             fail("book_structure.json and curated reader manifest must contain objects")
@@ -442,7 +456,12 @@ def main() -> None:
             missing_records = missing_snapshot_records(snapshot_ids, records)
             if missing_records:
                 fail(f"historical reader snapshot missing curated record(s): {missing_records}")
-            errors = validate_curated_sources(historical_snapshot_chapters(snapshot_ids, records), records)
+            errors = validate_curated_sources(
+                historical_snapshot_chapters(snapshot_ids, records),
+                records,
+                manifest_path.resolve(),
+                REQUIRED_RELEASE_BLOCKERS if manifest.get("status") != "released" else set(),
+            )
             if errors:
                 fail(errors)
             print(
@@ -452,7 +471,7 @@ def main() -> None:
             )
             return
         with tempfile.TemporaryDirectory(prefix="asi-curated-reader-") as temp_dir:
-            report = generate(Path(temp_dir), args.profile)
+            report = generate(Path(temp_dir), args.profile, manifest_path)
             print(
                 "Curated reader edition check passed: "
                 f"{report['chapter_count']} curated chapters renderable as Quarto source; "
@@ -461,7 +480,7 @@ def main() -> None:
             return
 
     output_dir = Path(args.output)
-    report = generate(output_dir, args.profile)
+    report = generate(output_dir, args.profile, manifest_path)
     print(f"Curated reader edition wrote: {output_dir}")
     print(f"Curated reader build report wrote: {output_dir / REPORT_NAME}")
     print(
