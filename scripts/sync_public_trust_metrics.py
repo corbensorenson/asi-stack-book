@@ -23,7 +23,12 @@ DISPOSITIONS = ROOT / "claim_decisions" / "v1_x_core_claim_dispositions.json"
 EVIDENCE_PLAN = ROOT / "docs" / "per_chapter_evidence_plan.md"
 ACTIVE_CYCLE = ROOT / "docs" / "v1_x_active_evidence_cycle.md"
 NON_CORE_LEDGER = ROOT / "docs" / "non_core_evidence_ledger.md"
-EVIDENCE_TRANSITIONS = ROOT / "evidence_transitions" / "v1_x_measured"
+NO_PROMOTION_TRANSITION_DIRS = [
+    ROOT / "evidence_transitions" / "v1_x_measured",
+    ROOT / "evidence_transitions" / "post_v2",
+    ROOT / "evidence_transitions" / "post_v2_1",
+    ROOT / "evidence_transitions" / "post_v2_3",
+]
 
 
 def read_json(path: Path) -> object:
@@ -82,15 +87,16 @@ def disposition_counts() -> tuple[int, int, int]:
 def no_promotion_side_lane_count() -> int:
     """Count accepted, non-promoting side-lane decisions from their records."""
     total = 0
-    for path in EVIDENCE_TRANSITIONS.glob("*.json"):
-        record = read_json(path)
-        if not isinstance(record, dict):
-            raise TypeError(f"{path.relative_to(ROOT)} must contain an object")
-        if (
-            record.get("transition_effect") == "no_change"
-            and record.get("support_state_effect") == "blocks_promotion"
-        ):
-            total += 1
+    for directory in NO_PROMOTION_TRANSITION_DIRS:
+        for path in directory.glob("*.json"):
+            record = read_json(path)
+            if not isinstance(record, dict):
+                raise TypeError(f"{path.relative_to(ROOT)} must contain an object")
+            if (
+                record.get("transition_effect") == "no_change"
+                and record.get("support_state_effect") == "blocks_promotion"
+            ):
+                total += 1
     return total
 
 

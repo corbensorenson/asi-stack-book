@@ -26,6 +26,10 @@
   digest-bound raw post-v2.3 model transcripts from trailing-whitespace
   diagnostics. Their exact bytes and recorded SHA-256 values remain validated;
   all ordinary source and publication files retain normal whitespace checks.
+- Fixed `sync_public_trust_metrics.py` to count accepted no-promotion records
+  across `v1_x_measured`, `post_v2`, `post_v2_1`, and `post_v2_3` instead of
+  silently regenerating the old v1.x-only count. The scaffold check now
+  preserves the authoritative 56-decision ledger row.
 
 ## 2026-07-13 - Activate clean-handoff, reader-format, and evidence-renewal successor
 
