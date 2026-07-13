@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_reference_test_plan.schema.json",
+  "title": "QCSA Reference Test Plan",
+  "type": "object",
+  "required": ["schema_version", "plan_id", "state", "corpus", "seeds", "baselines", "ablations", "metrics", "evaluator_separation", "decision_rules", "implementation_checks", "outcome_dispositions", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_reference_test_plan.v0"},
+    "plan_id": {"const": "qcsa-reference-test-plan-2026-07-13"},
+    "state": {"const": "frozen_inputs_and_decisions_outcomes_unopened"},
+    "corpus": {"type": "object"},
+    "seeds": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "integer"}, "uniqueItems": true},
+    "baselines": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "ablations": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "metrics": {"type": "array", "minItems": 20, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "evaluator_separation": {"type": "object"},
+    "decision_rules": {"type": "object"},
+    "implementation_checks": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+    "outcome_dispositions": {"type": "array", "minItems": 5, "items": {"type": "string"}, "uniqueItems": true},
+    "support_state_effect": {"const": "none_before_accepted_transition"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

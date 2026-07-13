@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_reference_budget.schema.json",
+  "title": "QCSA Reference Resource Budget",
+  "type": "object",
+  "required": ["schema_version", "state", "service_spend_usd_max", "network_calls_max", "implementation_wall_seconds_max", "evaluation_wall_seconds_max", "peak_resident_memory_bytes_max", "tracked_artifact_bytes_max", "result_and_log_bytes_max", "corpus_case_count", "held_out_case_count", "seed_count", "max_questions_per_case", "max_route_steps_per_case", "max_retrievals_per_case", "max_tool_attempts_per_case", "max_migration_descendants_per_case", "human_burden_proxy", "stop_rules", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_reference_budget.v0"},
+    "state": {"const": "frozen_before_implementation_and_outcomes"},
+    "service_spend_usd_max": {"const": 0},
+    "network_calls_max": {"const": 0},
+    "implementation_wall_seconds_max": {"type": "integer", "minimum": 1},
+    "evaluation_wall_seconds_max": {"type": "integer", "minimum": 1},
+    "peak_resident_memory_bytes_max": {"type": "integer", "minimum": 1},
+    "tracked_artifact_bytes_max": {"type": "integer", "minimum": 1},
+    "result_and_log_bytes_max": {"type": "integer", "minimum": 1},
+    "corpus_case_count": {"const": 180},
+    "held_out_case_count": {"const": 60},
+    "seed_count": {"const": 3},
+    "max_questions_per_case": {"const": 3},
+    "max_route_steps_per_case": {"const": 8},
+    "max_retrievals_per_case": {"const": 3},
+    "max_tool_attempts_per_case": {"const": 1},
+    "max_migration_descendants_per_case": {"const": 50},
+    "human_burden_proxy": {"type": "string", "minLength": 1},
+    "stop_rules": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_reference_fixture_bundle.schema.json",
+  "title": "QCSA Reference Envelope Fixture Bundle",
+  "type": "object",
+  "required": ["schema_version", "fixture_state", "artifacts", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_reference_fixture_bundle.v0"},
+    "fixture_state": {"const": "frozen_contract_examples_not_implementation_results"},
+    "artifacts": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "qcsa_reference_artifact.schema.json"}},
+    "non_claims": {"type": "array", "minItems": 3, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

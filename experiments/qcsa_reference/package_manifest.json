@@ -1,0 +1,132 @@
+{
+  "schema_version": "asi_stack.qcsa_reference_package_manifest.v0",
+  "package_id": "qcsa-reference",
+  "package_version": "0.0.0-freeze",
+  "state": "frozen_contracts_implementation_absent",
+  "language": "python>=3.11",
+  "dependency_policy": "python_standard_library_only",
+  "network_policy": "forbidden_in_replay_and_evaluation",
+  "canonicalization": "UTF-8 JSON; sorted keys; compact separators; one trailing newline; SHA-256 over object without content_digest",
+  "shared_artifact_schema": "schemas/qcsa_reference_artifact.schema.json",
+  "valid_fixture_ref": "experiments/qcsa_reference/fixtures/envelope_examples.valid.json",
+  "invalid_fixture_ref": "experiments/qcsa_reference/fixtures/envelope_examples.expected_invalid.json",
+  "lanes": [
+    {
+      "id": "QI-01",
+      "name": "SOID registry",
+      "module": "experiments/qcsa_reference/qcsa_ref/identity.py",
+      "artifact_kind": "semantic_object_registry",
+      "owner_chapters": ["cognitive-compilation-and-semantic-ir", "virtual-context-abi"],
+      "required_payload_fields": ["objects", "aliases", "merge_lineage", "split_lineage", "duplicate_controls", "retarget_controls"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-02",
+      "name": "typed temporal evidence hypergraph",
+      "module": "experiments/qcsa_reference/qcsa_ref/evidence_graph.py",
+      "artifact_kind": "typed_temporal_evidence_hypergraph",
+      "owner_chapters": ["claim-ledgers-and-belief-revision"],
+      "required_payload_fields": ["nodes", "hyperedges", "propositions", "evidence", "provenance", "beliefs", "authorities", "lifecycles", "permitted_uses", "contradictions"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-03",
+      "name": "atlas and epoch package",
+      "module": "experiments/qcsa_reference/qcsa_ref/atlas.py",
+      "artifact_kind": "semantic_atlas_epoch",
+      "owner_chapters": ["virtual-context-abi", "compact-generative-systems-and-residual-honesty"],
+      "required_payload_fields": ["epoch_id", "authority_state", "candidate_epoch", "immutable", "facets", "paths", "top_k", "unknowns", "conflicts", "abstentions", "codebook_digest"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-04",
+      "name": "semantic address certificate",
+      "module": "experiments/qcsa_reference/qcsa_ref/certificate.py",
+      "artifact_kind": "semantic_address_certificate",
+      "owner_chapters": ["virtual-context-abi", "inter-stack-protocols-identity-and-economic-exchange"],
+      "required_payload_fields": ["soid", "occurrence_or_expression", "context", "task", "consumer", "epoch", "paths", "confidence", "provenance", "grounding", "residuals", "allowed_uses", "prohibited_uses", "authority_ceiling", "validity", "migration", "signature_fixture"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-05",
+      "name": "question compiler trace",
+      "module": "experiments/qcsa_reference/qcsa_ref/questions.py",
+      "artifact_kind": "question_compiler_trace",
+      "owner_chapters": ["cognitive-compilation-and-semantic-ir", "routing-heads-and-specialist-cores"],
+      "required_payload_fields": ["posterior_before", "candidate_actions", "expected_decision_value", "compute_cost", "latency_cost", "privacy_cost", "burden_cost", "risk_cost", "selected_action", "posterior_after", "stop_reason"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-06",
+      "name": "physical route plan and receipt",
+      "module": "experiments/qcsa_reference/qcsa_ref/routes.py",
+      "artifact_kind": "semantic_physical_route_receipt",
+      "owner_chapters": ["routing-heads-and-specialist-cores", "runtime-adapters-tool-permissions-and-human-approval"],
+      "required_payload_fields": ["certificate_digest", "steps", "authority_request", "authority_decision", "attempted_effects", "receipts", "verification", "fallback"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-07",
+      "name": "migration and rollback record",
+      "module": "experiments/qcsa_reference/qcsa_ref/migration.py",
+      "artifact_kind": "atlas_migration_rollback_record",
+      "owner_chapters": ["data-engines-continual-learning-and-unlearning"],
+      "required_payload_fields": ["source_epoch", "target_epoch", "compatibility", "typed_failures", "merge_lineage", "split_lineage", "shadow_results", "descendants", "caches", "backups", "receipts", "rollback_identity"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-08",
+      "name": "adversarial addressing suite",
+      "module": "experiments/qcsa_reference/qcsa_ref/adversarial.py",
+      "artifact_kind": "adversarial_addressing_result",
+      "owner_chapters": ["runtime-adapters-tool-permissions-and-human-approval"],
+      "required_payload_fields": ["alias_escalation", "collision", "poisoning", "stale_epoch", "branch_overload", "route_disagreement", "certificate_tampering", "privacy_leakage", "missing_residual", "disposition"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-09",
+      "name": "bounded grounding suite",
+      "module": "experiments/qcsa_reference/qcsa_ref/grounding.py",
+      "artifact_kind": "bounded_grounding_result",
+      "owner_chapters": ["compact-generative-systems-and-residual-honesty"],
+      "required_payload_fields": ["paired_labels", "synthetic_modality_descriptors", "resolved_pairs", "false_equivalences", "unsupported_groundings", "coverage_boundary"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-10",
+      "name": "semantic round-trip validator",
+      "module": "experiments/qcsa_reference/qcsa_ref/round_trip.py",
+      "artifact_kind": "semantic_round_trip_result",
+      "owner_chapters": ["compact-generative-systems-and-residual-honesty", "claim-ledgers-and-belief-revision"],
+      "required_payload_fields": ["candidate_digest", "evaluator_implementation", "identity", "roles", "negation", "modality", "quantity", "time", "claim_citation_bindings", "authority", "residuals", "evaluator_disagreement"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-11",
+      "name": "resource and governance ledger",
+      "module": "experiments/qcsa_reference/qcsa_ref/ledger.py",
+      "artifact_kind": "resource_governance_ledger",
+      "owner_chapters": ["routing-heads-and-specialist-cores"],
+      "required_payload_fields": ["latency_ns", "bytes", "tokens", "questions", "retrievals", "model_calls", "tool_calls", "verifier_cost", "fallbacks", "abstentions", "repairs", "migrations", "human_burden"],
+      "state": "frozen_unimplemented"
+    },
+    {
+      "id": "QI-12",
+      "name": "content-addressed artifact manifest",
+      "module": "experiments/qcsa_reference/qcsa_ref/manifest.py",
+      "artifact_kind": "content_addressed_artifact_manifest",
+      "owner_chapters": ["integrated-reference-architecture"],
+      "required_payload_fields": ["code", "schemas", "fixtures", "corpora", "seeds", "configs", "results", "logs", "environment", "missing_descendants", "mutated_descendants"],
+      "state": "frozen_unimplemented"
+    }
+  ],
+  "adapter_interfaces": ["retrieval", "model", "sensor", "specialist", "authority", "tool", "verification"],
+  "implementation_order": ["QI-01", "QI-02", "QI-03", "QI-04", "QI-05", "QI-06", "QI-07", "QI-08", "QI-09", "QI-10", "QI-11", "QI-12"],
+  "support_state_effect": "none",
+  "non_claims": [
+    "This manifest freezes file and interface intent; the listed modules do not yet exist.",
+    "A schema-valid artifact is not evidence of semantic correctness, usefulness, safety, or production transfer.",
+    "Fixture signing remains an integrity-shaped example, not verified cryptographic identity or federation trust.",
+    "No chapter-core support state changes through this package freeze."
+  ]
+}

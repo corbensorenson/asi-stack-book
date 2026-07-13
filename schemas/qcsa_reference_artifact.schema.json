@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_reference_artifact.schema.json",
+  "title": "QCSA Reference Artifact Envelope",
+  "type": "object",
+  "required": ["schema_version", "lane_id", "artifact_id", "artifact_version", "owner_chapters", "created_by", "input_digests", "payload", "non_claim_boundary", "content_digest"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_reference_artifact.v0"},
+    "lane_id": {"enum": ["QI-01", "QI-02", "QI-03", "QI-04", "QI-05", "QI-06", "QI-07", "QI-08", "QI-09", "QI-10", "QI-11", "QI-12"]},
+    "artifact_id": {"type": "string", "pattern": "^qa:[0-9a-f]{16}$"},
+    "artifact_version": {"type": "string", "pattern": "^0\\.[0-9]+\\.[0-9]+$"},
+    "owner_chapters": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "created_by": {"enum": ["fixture", "qcsa_ref"]},
+    "input_digests": {"type": "array", "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "uniqueItems": true},
+    "payload": {"type": "object"},
+    "non_claim_boundary": {"type": "string", "minLength": 40},
+    "content_digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  },
+  "additionalProperties": false
+}

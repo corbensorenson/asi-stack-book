@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_reference_freeze.schema.json",
+  "title": "QCSA Reference Implementation Freeze",
+  "type": "object",
+  "required": ["schema_version", "freeze_id", "recorded_date", "state", "roadmap_ref", "architecture_decision_ref", "package_manifest_ref", "budget_ref", "test_plan_ref", "fixture_refs", "lane_ids", "outcome_access", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_reference_freeze.v0"},
+    "freeze_id": {"const": "qcsa-reference-implementation-freeze-2026-07-13"},
+    "recorded_date": {"const": "2026-07-13"},
+    "state": {"const": "frozen_before_implementation_and_outcomes"},
+    "roadmap_ref": {"const": "docs/post_v2_2_implementation_completion_roadmap.md"},
+    "architecture_decision_ref": {"const": "docs/qcsa_reference_architecture_decision.md"},
+    "package_manifest_ref": {"const": "experiments/qcsa_reference/package_manifest.json"},
+    "budget_ref": {"const": "experiments/qcsa_reference/budgets.json"},
+    "test_plan_ref": {"const": "experiments/qcsa_reference/test_plan.json"},
+    "fixture_refs": {"type": "array", "minItems": 2, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "lane_ids": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "string"}, "uniqueItems": true},
+    "outcome_access": {"const": "unopened"},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}}
+  },
+  "additionalProperties": false
+}

@@ -21,6 +21,38 @@
   the live crawl. P1 is preregistered and M2, the QCSA implementation freeze,
   is now in progress; this activation is still no QCSA result or support-state
   movement.
+- Completed the M2 pre-outcome QCSA implementation freeze. Added
+  `ADR-QCSA-001`, a standard-library/file-backed package manifest, common
+  content-addressed artifact envelope, twelve lane field contracts,
+  representative valid and expected-invalid fixtures, zero-service/network
+  budgets, and a frozen 180-case six-family protocol with a 72/48/60 split,
+  seven matched baselines, five ablations, seeds 11/29/47, exact decision
+  rules, and an independently bound evaluator surface.
+- Registered an exact high-impact freeze validator with ten rejecting
+  mutations covering lane erasure, label leakage, opened outcomes, split/budget
+  drift, evaluator self-confirmation, authority collapse, premature
+  implementation claims, weakened migration rollback, negative-fixture
+  erasure, and support promotion. P1 and M3 are now active; all twelve lanes are
+  frozen but unimplemented. The freeze creates no QCSA behavior, benchmark,
+  safety, privacy, migration, production-transfer, or support-state result.
+- Completed M3 by implementing all twelve frozen QCSA lanes as a
+  standard-library, deterministic, file-backed package. Two clean replays
+  produce byte-identical content-addressed artifacts. The package separates
+  eight identity kinds, typed evidence from truth and authority, candidate
+  from authoritative atlas epochs, semantic certificates from independent
+  effect authority, and same-SOID migration from merge/split lineage and typed
+  failure. It also records one receipt per attempted effect, full rollback
+  inventory, nine adversarial controls, bounded grounding residuals, a
+  separately implemented round-trip evaluator, resource/governance counters,
+  and a descendant manifest.
+- Registered an exact behavioral validator with one passing negative control
+  per lane and fifteen additional rejecting integrated mutations. The grounding
+  fixture deliberately retains one false-equivalence and one unsupported case;
+  the round-trip fixture deliberately retains a residual-order disagreement
+  between candidate and independent evaluators. P1 and M3 are complete; P2 is
+  preregistered and M4 is in progress. Held-out outcomes remain unopened, and
+  no matched advantage, semantic correctness, safety, privacy, production
+  transfer, external independence, or support-state movement is claimed.
 
 ## 2026-07-11 - v2.2.0 residual-and-transfer release
 

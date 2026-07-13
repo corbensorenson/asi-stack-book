@@ -1,0 +1,25 @@
+{
+  "schema_version": "asi_stack.qcsa_reference_freeze.v0",
+  "freeze_id": "qcsa-reference-implementation-freeze-2026-07-13",
+  "recorded_date": "2026-07-13",
+  "state": "frozen_before_implementation_and_outcomes",
+  "roadmap_ref": "docs/post_v2_2_implementation_completion_roadmap.md",
+  "architecture_decision_ref": "docs/qcsa_reference_architecture_decision.md",
+  "package_manifest_ref": "experiments/qcsa_reference/package_manifest.json",
+  "budget_ref": "experiments/qcsa_reference/budgets.json",
+  "test_plan_ref": "experiments/qcsa_reference/test_plan.json",
+  "fixture_refs": [
+    "experiments/qcsa_reference/fixtures/envelope_examples.valid.json",
+    "experiments/qcsa_reference/fixtures/envelope_examples.expected_invalid.json"
+  ],
+  "lane_ids": ["QI-01", "QI-02", "QI-03", "QI-04", "QI-05", "QI-06", "QI-07", "QI-08", "QI-09", "QI-10", "QI-11", "QI-12"],
+  "outcome_access": "unopened",
+  "support_state_effect": "none",
+  "non_claims": [
+    "The freeze establishes exact implementation and evaluation contracts, not QCSA behavior.",
+    "The package modules and outcome corpus are absent at this freeze.",
+    "Schema-valid fixtures do not establish semantic correctness or useful routing.",
+    "No safety, privacy, performance, migration, production-transfer, AGI, or ASI result exists.",
+    "No chapter-core claim, chapter count, optional format, rights grant, or release identity changes."
+  ]
+}

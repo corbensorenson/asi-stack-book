@@ -127,8 +127,8 @@ completion declaration.
 | Priority | Initial state | Purpose | Terminal authority |
 |---|---|---|---|
 | P0 — Activate implementation truth | completed | Install this roadmap, status record, validators, and current public pointers without changing v2.2 history. | Clean deployed public-truth attestation. |
-| P1 — Implement the QCSA artifact stack | preregistered | Build the twelve bounded artifacts with schemas, fixtures, replay, and negative controls. | Exact artifact manifest and rejecting validation suite. |
-| P2 — Evaluate QCSA and its ablations | pending | Test usefulness, cost, calibration, migration, and failure prevention against matched baselines. | Frozen result ledger and claim-bounded disposition. |
+| P1 — Implement the QCSA artifact stack | completed | Build the twelve bounded artifacts with schemas, fixtures, replay, and negative controls. | Exact artifact manifest and rejecting validation suite. |
+| P2 — Evaluate QCSA and its ablations | preregistered | Test usefulness, cost, calibration, migration, and failure prevention against matched baselines. | Frozen result ledger and claim-bounded disposition. |
 | P3 — Build the governed vertical reference path | pending | Connect QCSA to existing stack owners without merging identity, evidence, or authority. | End-to-end replay, rollback/migration exercise, and residual ledger. |
 | P4 — Complete evidence and book reconciliation | pending | Fold implementation results into chapters/products and close selected evidence-floor gaps. | Machine/prose agreement with no unsupported promotion. |
 | P5 — Release or honest no-release closure | pending | Validate, publish if warranted, attest, archive, and mark the roadmap terminal. | Exact release transaction or explicit no-release record. |
@@ -363,9 +363,9 @@ Any release must bind one clean tested commit to:
 |---|---|---|
 | M0 — Roadmap authority installed | completed | Roadmap, schema, status record, validator, registered contract, and goal. |
 | M1 — Public activation reconciled | completed | Commit `65120df163822a423952fe43a2231e5c65125327`; build `29228034217`; deploy/attest `29228280321`. |
-| M2 — QCSA implementation frozen | in progress | Architecture decision record, package manifest, schemas, fixtures, budgets, and test plan. |
-| M3 — QCSA artifact stack implemented | pending | `QI-01` through `QI-12` pass deterministic replay and negative controls. |
-| M4 — QCSA evaluation dispositioned | pending | Frozen held-out results, baselines, ablations, costs, residuals, and decisions. |
+| M2 — QCSA implementation frozen | completed | `ADR-QCSA-001`, package manifest, common envelope, fixtures, budgets, 180-case protocol, and registered ten-mutation gate. |
+| M3 — QCSA artifact stack implemented | completed | Twelve content-addressed artifacts, two byte-identical clean replays, twelve lane controls, and fifteen rejecting integrated mutations. |
+| M4 — QCSA evaluation dispositioned | in progress | Frozen held-out results, baselines, ablations, costs, residuals, and decisions. |
 | M5 — Vertical reference path complete | pending | Clean replay, adversarial paths, migration/rollback exercise, and readable trace. |
 | M6 — Book/evidence reconciliation complete | pending | Chapters, appendices, ledgers, vectors, tests/proofs, products, and changelog agree. |
 | M7 — Release/no-release transaction complete | pending | Immutable release chain or exact no-release declaration; roadmap terminal. |

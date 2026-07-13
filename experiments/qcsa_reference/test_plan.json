@@ -1,0 +1,96 @@
+{
+  "schema_version": "asi_stack.qcsa_reference_test_plan.v0",
+  "plan_id": "qcsa-reference-test-plan-2026-07-13",
+  "state": "frozen_inputs_and_decisions_outcomes_unopened",
+  "corpus": {
+    "total_cases": 180,
+    "families": [
+      "polysemy_and_same_name_identity",
+      "paraphrase_and_cross_language_reference",
+      "compositional_roles_negation_modality_quantity_time",
+      "evidence_conflict_and_proposition_revision",
+      "route_ambiguity_with_authority_differences",
+      "migration_merge_split_stale_address_compatibility"
+    ],
+    "cases_per_family": 30,
+    "split_per_family": {"train": 12, "development": 8, "held_out": 10},
+    "train_cases": 72,
+    "development_cases": 48,
+    "held_out_cases": 60,
+    "required_case_tags": ["tail", "unknown", "collision", "poisoned_alias", "privacy_sensitive", "route_disagreement", "fallback", "abstain", "clarification"],
+    "split_rule": "case IDs are opaque and assigned by SHA-256 rank within family before labels are attached; no paraphrase, alias family, migrated descendant, or shared template crosses a split",
+    "held_out_access": "labels and aggregate outcomes remain sealed until implementation, baselines, ablations, evaluator, budgets, and freeze validator pass at one commit"
+  },
+  "seeds": [11, 29, 47],
+  "baselines": [
+    "direct_inference_or_retrieval_without_semantic_address",
+    "flat_lexical_retrieval_matched_corpus_and_budget",
+    "flat_embedding_proxy_retrieval_matched_corpus_and_budget",
+    "one_fixed_hierarchy",
+    "random_tree",
+    "frequency_derived_tree",
+    "direct_clarification_without_adaptive_question_policy"
+  ],
+  "ablations": [
+    "qcsa_without_plural_facets",
+    "qcsa_without_active_questions",
+    "qcsa_without_identity_address_indirection",
+    "qcsa_without_certificate_residual_authority_fields",
+    "qcsa_without_migration_compatibility"
+  ],
+  "metrics": [
+    "object_resolution_accuracy",
+    "task_decision_accuracy",
+    "brier_score",
+    "selective_risk",
+    "fallback_rate",
+    "abstention_rate",
+    "clarification_rate",
+    "questions",
+    "retrievals",
+    "tool_and_model_calls",
+    "latency_ns",
+    "bytes_and_tokens",
+    "verifier_cost",
+    "human_burden_proxy",
+    "prevented_and_missed_collision_poison_stale_migration_authority_route_failures",
+    "round_trip_structural_loss",
+    "evaluator_disagreement",
+    "repair_locality",
+    "compatibility",
+    "rollback_identity",
+    "residual_count"
+  ],
+  "evaluator_separation": {
+    "candidate_path": "experiments/qcsa_reference/qcsa_ref/round_trip.py",
+    "independent_evaluator_path": "scripts/qcsa_independent_evaluator.py",
+    "shared_candidate_code_forbidden": true,
+    "disagreements_preserved": true
+  },
+  "decision_rules": {
+    "advantage_gate": "No advantage claim unless QCSA is Pareto-nondominated against every matched baseline in at least three families and aggregate task-decision accuracy improves by at least 0.03 in every seed without increasing unsafe authority release.",
+    "resource_gate": "A quality gain qualifies only at no more than 1.25 times matched total operation count, or a governance-failure prevention gain of at least 0.10 absolute qualifies at no more than 1.50 times matched total operation count; report latency and burden separately.",
+    "calibration_gate": "Brier score and selective risk must not worsen by more than 0.01 absolute in aggregate; all family-level regressions remain visible.",
+    "semantic_preservation_gate": "No preservation claim from the candidate generator and its paired validator alone; the independent evaluator must agree and disagreement must remain below 0.05 aggregate without hiding family failures.",
+    "authority_gate": "Any semantic alias or address that widens authority, or any attempted effect lacking an independent authority decision and receipt, fails the authority lane regardless of aggregate quality.",
+    "migration_gate": "Every compatible old address resolves to the same SOID; every incompatible, merge, or split case fails explicitly or carries typed lineage; any silent retarget blocks promotion.",
+    "narrowing_gate": "Narrow or reject a lane when its overhead yields neither a task-decision improvement nor a prevented governance or migration failure under the frozen frontier.",
+    "statistics": "Report exact counts and seed-level values, paired bootstrap 95 percent intervals with 10000 deterministic resamples for accuracy deltas, and no blended scalar score."
+  },
+  "implementation_checks": [
+    "schema rejection for every lane",
+    "canonical serialization and digest replay",
+    "deterministic replay across all seeds",
+    "negative controls for every required adversarial family",
+    "manifest rejection after descendant mutation",
+    "clean-environment replay without network access"
+  ],
+  "outcome_dispositions": ["promote", "narrow", "no_change", "demote", "refute"],
+  "support_state_effect": "none_before_accepted_transition",
+  "non_claims": [
+    "This plan preregisters a bounded synthetic and public-safe evaluation; it is not an open-world benchmark.",
+    "A favorable local result would not establish production safety, privacy, universal grounding, or external transfer.",
+    "The exact thresholds govern reached non-core claims and do not automatically promote chapter-core claims.",
+    "No external humans are recruited; clarification and approval burden are deterministic proxies."
+  ]
+}

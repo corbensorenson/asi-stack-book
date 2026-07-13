@@ -1,0 +1,22 @@
+{
+  "schema_version": "asi_stack.qcsa_reference_expected_invalid.v0",
+  "fixture_state": "frozen_rejecting_mutations_not_results",
+  "cases": [
+    {"lane_id": "QI-01", "mutation": "remove artifact_id", "expected_error": "required artifact_id"},
+    {"lane_id": "QI-02", "mutation": "use label-bearing artifact_id qa:bank_finance", "expected_error": "opaque identifier pattern"},
+    {"lane_id": "QI-03", "mutation": "replace lane_id with QI-13", "expected_error": "lane enum"},
+    {"lane_id": "QI-04", "mutation": "remove non_claim_boundary", "expected_error": "required non-claim boundary"},
+    {"lane_id": "QI-05", "mutation": "replace payload with string", "expected_error": "payload object"},
+    {"lane_id": "QI-06", "mutation": "add undeclared authority_granted property", "expected_error": "additional property"},
+    {"lane_id": "QI-07", "mutation": "shorten content_digest", "expected_error": "64-character SHA-256"},
+    {"lane_id": "QI-08", "mutation": "empty owner_chapters", "expected_error": "at least one owner"},
+    {"lane_id": "QI-09", "mutation": "replace schema_version", "expected_error": "schema version const"},
+    {"lane_id": "QI-10", "mutation": "duplicate owner_chapters", "expected_error": "unique owners"},
+    {"lane_id": "QI-11", "mutation": "replace created_by with external_model", "expected_error": "creator enum"},
+    {"lane_id": "QI-12", "mutation": "add unbound descendant", "expected_error": "additional property"}
+  ],
+  "non_claims": [
+    "Mutation cases prove only that the frozen envelope is intended to reject malformed records.",
+    "Behavioral lane controls remain unimplemented until M3."
+  ]
+}

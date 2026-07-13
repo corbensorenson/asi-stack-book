@@ -1,0 +1,155 @@
+{
+  "schema_version": "asi_stack.qcsa_reference_fixture_bundle.v0",
+  "fixture_state": "frozen_contract_examples_not_implementation_results",
+  "artifacts": [
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-01",
+      "artifact_id": "qa:0000000000000001",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["cognitive-compilation-and-semantic-ir", "virtual-context-abi"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["objects", "aliases", "merge_lineage", "split_lineage", "duplicate_controls", "retarget_controls"]},
+      "non_claim_boundary": "Envelope fixture only; no identity registry has been implemented or tested.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000001"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-02",
+      "artifact_id": "qa:0000000000000002",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["claim-ledgers-and-belief-revision"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["nodes", "hyperedges", "propositions", "evidence", "provenance", "beliefs", "authorities", "lifecycles", "permitted_uses", "contradictions"]},
+      "non_claim_boundary": "Envelope fixture only; no evidence hypergraph has been implemented or tested.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000002"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-03",
+      "artifact_id": "qa:0000000000000003",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["virtual-context-abi", "compact-generative-systems-and-residual-honesty"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["epoch_id", "authority_state", "candidate_epoch", "immutable", "facets", "paths", "top_k", "unknowns", "conflicts", "abstentions", "codebook_digest"]},
+      "non_claim_boundary": "Envelope fixture only; no atlas or authoritative epoch has been implemented or tested.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-04",
+      "artifact_id": "qa:0000000000000004",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["virtual-context-abi", "inter-stack-protocols-identity-and-economic-exchange"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["soid", "occurrence_or_expression", "context", "task", "consumer", "epoch", "paths", "confidence", "provenance", "grounding", "residuals", "allowed_uses", "prohibited_uses", "authority_ceiling", "validity", "migration", "signature_fixture"]},
+      "non_claim_boundary": "Envelope fixture only; no semantic address certificate has been implemented or signed.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000004"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-05",
+      "artifact_id": "qa:0000000000000005",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["cognitive-compilation-and-semantic-ir", "routing-heads-and-specialist-cores"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["posterior_before", "candidate_actions", "expected_decision_value", "compute_cost", "latency_cost", "privacy_cost", "burden_cost", "risk_cost", "selected_action", "posterior_after", "stop_reason"]},
+      "non_claim_boundary": "Envelope fixture only; no adaptive question policy has been implemented or evaluated.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000005"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-06",
+      "artifact_id": "qa:0000000000000006",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["routing-heads-and-specialist-cores", "runtime-adapters-tool-permissions-and-human-approval"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["certificate_digest", "steps", "authority_request", "authority_decision", "attempted_effects", "receipts", "verification", "fallback"]},
+      "non_claim_boundary": "Envelope fixture only; no route, authority decision, tool effect, or receipt was executed.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000006"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-07",
+      "artifact_id": "qa:0000000000000007",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["data-engines-continual-learning-and-unlearning"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["source_epoch", "target_epoch", "compatibility", "typed_failures", "merge_lineage", "split_lineage", "shadow_results", "descendants", "caches", "backups", "receipts", "rollback_identity"]},
+      "non_claim_boundary": "Envelope fixture only; no migration, compatibility run, or rollback was performed.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000007"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-08",
+      "artifact_id": "qa:0000000000000008",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["runtime-adapters-tool-permissions-and-human-approval"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["alias_escalation", "collision", "poisoning", "stale_epoch", "branch_overload", "route_disagreement", "certificate_tampering", "privacy_leakage", "missing_residual", "disposition"]},
+      "non_claim_boundary": "Envelope fixture only; no adversarial suite has been run and no safety result exists.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000008"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-09",
+      "artifact_id": "qa:0000000000000009",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["compact-generative-systems-and-residual-honesty"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["paired_labels", "synthetic_modality_descriptors", "resolved_pairs", "false_equivalences", "unsupported_groundings", "coverage_boundary"]},
+      "non_claim_boundary": "Envelope fixture only; no multilingual or multimodal grounding result exists.",
+      "content_digest": "0000000000000000000000000000000000000000000000000000000000000009"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-10",
+      "artifact_id": "qa:000000000000000a",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["compact-generative-systems-and-residual-honesty", "claim-ledgers-and-belief-revision"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["candidate_digest", "evaluator_implementation", "identity", "roles", "negation", "modality", "quantity", "time", "claim_citation_bindings", "authority", "residuals", "evaluator_disagreement"]},
+      "non_claim_boundary": "Envelope fixture only; no semantic round-trip validation or independent agreement exists.",
+      "content_digest": "000000000000000000000000000000000000000000000000000000000000000a"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-11",
+      "artifact_id": "qa:000000000000000b",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["routing-heads-and-specialist-cores"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["latency_ns", "bytes", "tokens", "questions", "retrievals", "model_calls", "tool_calls", "verifier_cost", "fallbacks", "abstentions", "repairs", "migrations", "human_burden"]},
+      "non_claim_boundary": "Envelope fixture only; no resource, latency, or governance cost was measured.",
+      "content_digest": "000000000000000000000000000000000000000000000000000000000000000b"
+    },
+    {
+      "schema_version": "asi_stack.qcsa_reference_artifact.v0",
+      "lane_id": "QI-12",
+      "artifact_id": "qa:000000000000000c",
+      "artifact_version": "0.0.0",
+      "owner_chapters": ["integrated-reference-architecture"],
+      "created_by": "fixture",
+      "input_digests": [],
+      "payload": {"fixture_kind": "field_contract", "frozen_required_fields": ["code", "schemas", "fixtures", "corpora", "seeds", "configs", "results", "logs", "environment", "missing_descendants", "mutated_descendants"]},
+      "non_claim_boundary": "Envelope fixture only; no content-addressed implementation bundle exists.",
+      "content_digest": "000000000000000000000000000000000000000000000000000000000000000c"
+    }
+  ],
+  "non_claims": [
+    "These are schema and field-contract examples, not outputs from an implementation.",
+    "Placeholder digests demonstrate shape only and are not replay attestations.",
+    "No semantic, migration, authority, grounding, cost, or performance result is represented."
+  ]
+}

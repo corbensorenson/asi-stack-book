@@ -1,0 +1,30 @@
+{
+  "schema_version": "asi_stack.qcsa_reference_budget.v0",
+  "state": "frozen_before_implementation_and_outcomes",
+  "service_spend_usd_max": 0,
+  "network_calls_max": 0,
+  "implementation_wall_seconds_max": 1800,
+  "evaluation_wall_seconds_max": 1800,
+  "peak_resident_memory_bytes_max": 4294967296,
+  "tracked_artifact_bytes_max": 52428800,
+  "result_and_log_bytes_max": 104857600,
+  "corpus_case_count": 180,
+  "held_out_case_count": 60,
+  "seed_count": 3,
+  "max_questions_per_case": 3,
+  "max_route_steps_per_case": 8,
+  "max_retrievals_per_case": 3,
+  "max_tool_attempts_per_case": 1,
+  "max_migration_descendants_per_case": 50,
+  "human_burden_proxy": "count clarification and approval requests; no external participants",
+  "stop_rules": [
+    "Stop before outcomes if any split, baseline, threshold, seed, or evaluator binding drifts.",
+    "Stop the affected case on malformed input, stale authoritative epoch, authority widening, unresolved collision, unknown migration, or missing effect receipt.",
+    "Stop and preserve partial artifacts if a global resource ceiling is exceeded."
+  ],
+  "non_claims": [
+    "Budgets are governance constraints, not evidence that the implementation is efficient.",
+    "Synthetic burden counts are not measurements of real human workload.",
+    "Zero service spend does not establish production affordability or environmental efficiency."
+  ]
+}

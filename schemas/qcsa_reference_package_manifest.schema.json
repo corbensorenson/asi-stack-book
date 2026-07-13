@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/qcsa_reference_package_manifest.schema.json",
+  "title": "QCSA Reference Package Manifest",
+  "type": "object",
+  "required": ["schema_version", "package_id", "package_version", "state", "language", "dependency_policy", "network_policy", "canonicalization", "shared_artifact_schema", "valid_fixture_ref", "invalid_fixture_ref", "lanes", "adapter_interfaces", "implementation_order", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.qcsa_reference_package_manifest.v0"},
+    "package_id": {"const": "qcsa-reference"},
+    "package_version": {"const": "0.0.0-freeze"},
+    "state": {"enum": ["frozen_contracts_implementation_absent", "implemented", "evaluated", "completed"]},
+    "language": {"const": "python>=3.11"},
+    "dependency_policy": {"const": "python_standard_library_only"},
+    "network_policy": {"const": "forbidden_in_replay_and_evaluation"},
+    "canonicalization": {"type": "string", "minLength": 1},
+    "shared_artifact_schema": {"const": "schemas/qcsa_reference_artifact.schema.json"},
+    "valid_fixture_ref": {"type": "string", "minLength": 1},
+    "invalid_fixture_ref": {"type": "string", "minLength": 1},
+    "lanes": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"$ref": "#/$defs/lane"}},
+    "adapter_interfaces": {"type": "array", "minItems": 7, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "implementation_order": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "string"}, "uniqueItems": true},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 4, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "lane": {
+      "type": "object",
+      "required": ["id", "name", "module", "artifact_kind", "owner_chapters", "required_payload_fields", "state"],
+      "properties": {
+        "id": {"pattern": "^QI-(0[1-9]|1[0-2])$"},
+        "name": {"type": "string", "minLength": 1},
+        "module": {"type": "string", "minLength": 1},
+        "artifact_kind": {"type": "string", "minLength": 1},
+        "owner_chapters": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "required_payload_fields": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+        "state": {"enum": ["frozen_unimplemented", "implemented", "evaluated", "completed", "rejected"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
