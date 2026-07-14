@@ -624,3 +624,23 @@ create, review, fund, retain, publish, and retire such artifacts.
 It asks who carries the records forward, how governance remains replayable, and
 how a living system preserves its mission while its evidence and implementation
 continue to change.
+### World-model data, versions, and prediction-error custody
+
+A learned predictive state introduces a second lifecycle beside the controller.
+`ext_v_jepa_2_2025` separates action-free video pretraining from a smaller
+action-conditioned predictor, so the data engine must preserve that separation:
+source video and consent/provenance, preprocessing, encoder version, predictor
+version, action-labelled adaptation data, observation distribution, forecast
+horizon, error cohort, and controller consumer all need distinct lineage.
+
+Prediction errors are learning inputs, not self-authenticating evidence. The
+engine retains error distributions, calibration shifts, camera or sensor
+changes, action-search failures, and sim-to-real residuals before admitting an
+update. Deletion or revocation must propagate through encoder checkpoints,
+predictors, caches, replay buffers, backups, controllers, and descendants.
+Behavioral change still does not establish causal influence removal, privacy
+erasure, or storage erasure. The cited paper provides an architecture and
+empirical comparator; it does not establish a local data engine, causal world
+model, or safe robot policy.
+
+| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

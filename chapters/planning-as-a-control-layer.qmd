@@ -394,3 +394,32 @@ Typed jobs and runtime adapters depend on this boundary. A job should be born fr
 ## Handoff
 
 DAG scheduling gives work an order, a route, and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.
+### Predictive state and model-predictive control
+
+Task-graph planning and learned world-model planning are complementary. A task
+DAG says which obligations depend on which artifacts. A predictive model says
+how an observed state may change under candidate actions. `ext_v_jepa_2_2025`
+provides a concrete comparator: action-free video pretraining supplies a latent
+representation, a smaller action-conditioned predictor estimates future
+representations, and model-predictive control repeatedly scores candidate
+action sequences and replans from new observations.
+
+The plan node must therefore name the observation and world-model versions,
+predictor and representation identities, action space, horizon, candidate
+search budget, prediction-error ledger, uncertainty or disagreement, replanning
+trigger, controller fallback, and sim-to-real boundary. A low predicted cost is
+not execution authority. Camera sensitivity, accumulated prediction error,
+exponential action search, image-goal assumptions, and representation limits
+remain explicit residuals. Adoption requires a matched baseline, intervention
+tests, calibration, cost accounting, and safe fallback; the cited robot results
+do not establish local control quality or safety.
+
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->

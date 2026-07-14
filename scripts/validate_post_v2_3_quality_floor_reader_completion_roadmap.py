@@ -125,8 +125,8 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("the completed post-v2.3 cycle must have exactly the declared clean-handoff successor active")
     if "Status: completed 2026-07-13" not in data["predecessor"]:
         errors.append("predecessor roadmap lost completed status")
-    if len(rows) != 54 or len(source_rows) != 280:
-        errors.append("activation chapter or public-safe source count drifted")
+    if len(rows) != 54 or len(source_rows) < 280:
+        errors.append("activation chapter count drifted or historical public-safe source floor was violated")
     digest = hashlib.sha256("\n".join(ids).encode()).hexdigest()
     if status["activation_baseline"].get("activation_chapter_ids_sha256") != digest:
         errors.append("breadth freeze was violated or active chapter identity/order drifted")
@@ -235,6 +235,8 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("successor silently requires external-human prepublication review")
     if successor.get("maximum_new_outcome_campaigns") != 1 or successor.get("breadth_freeze") is not True:
         errors.append("successor campaign ceiling or chapter breadth freeze drifted")
+    if successor.get("activation_baseline", {}).get("public_safe_source_count") != 280:
+        errors.append("successor lost the exact historical 280-source activation baseline")
     p0 = next((row for row in successor.get("priorities", []) if row.get("id") == "P0"), {})
     m1 = next((row for row in successor.get("milestones", []) if row.get("id") == "M1"), {})
     handoff = successor.get("p0_handoff", {})

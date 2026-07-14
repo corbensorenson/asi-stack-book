@@ -1,0 +1,197 @@
+# Verification Bandwidth and Context Adequacy
+
+A coherent memory view can still be insufficient for verification work. The stack has to separate having context from being able to verify with it. It needs to know when the available context, attention, time, tools, comparison method, and reviewer capacity are adequate for the claim being made.
+
+This is a warning against long-context theater. More text in the window does not automatically mean better reasoning. A governed system should record when verification bandwidth is too narrow and downgrade, defer, split, or escalate instead of sounding certain. The honest output may be an adequacy label, not a more confident answer. Adequacy is a budgeted property, not a mood.
+
+Knowing that verification is underpowered is itself valuable evidence for the next decision.
+
+Adequacy labels keep uncertainty actionable instead of merely uncomfortable. They tell the system when more text would not actually create more checkable understanding.
+
+Verification improves when the system knows what it cannot afford to check, and adequacy becomes the honest substitute for impossible total review. Honesty beats impossible certainty because context limits are part of truth.
+
+## Problem
+
+Long context does not automatically provide long-range reasoning or enough verification capacity.
+
+The central distinction is between **generation capacity** and **verification bandwidth**. A model may have enough context to mention two documents, summarize them, or weave them into plausible prose while still lacking enough active workspace to compare the relevant semantic units in detail. Context is adequate only relative to a target claim, a set of semantic units, a verification task, and a declared risk level.
+
+The layer receives context packets from VCM, claims from the reasoning layer, and risk labels from governance. It emits an adequacy state: sufficient for drafting, sufficient for local consistency checks, insufficient for verification, or escalated to tribunal/proof review. The output is not more prose. The output is a decision about whether the currently loaded context can support the kind of claim the system is about to make.
+
+That decision is local to a claim. A packet can be adequate for writing a chapter summary and inadequate for promoting a safety claim. It can be adequate for checking one citation and inadequate for comparing two long specifications. It can be adequate for a low-risk planning note and inadequate for a governance decision. Adequacy is therefore not a property of context in general; it is a property of a context/claim/verification-mode triple.
+
+## Why existing approaches are insufficient
+
+Adding tokens can increase distractors, attention interference, and unverified summary burden.
+
+The `verification_bandwidth` source frames this as a two-body problem: rigorous comparison requires enough effective workspace to hold the compared units together. If one document, codebase, or specification dominates the active workspace, it can suppress the ability to check another. If consistency is checked only through a chain of local summaries, non-adjacent contradictions can survive by transitive decay.
+
+External evaluation work gives the adequacy test sharper edges. ALCE (`ext_alce_2023`) separates generated answers from citation support, CheckList (`ext_checklist_2020`) shows behavioral test matrices beyond aggregate accuracy, GPQA (`ext_gpqa_2023`) exposes hard-question oversight pressure, LongBench (`ext_longbench_2023`) and RULER (`ext_ruler_2024`) stress long-context claims, LongLLMLingua (`ext_longllmlingua_2023`) highlights compression tradeoffs, and Reluplex (`ext_reluplex_2017`) shows how property-specific verification can be narrower than a broad safety story. Verification bandwidth uses those baselines to require adequacy certificates, not to claim that the repository has run their evaluations.
+
+RAG and long context are therefore necessary infrastructure, not proof. They help place material near the model, but they do not certify that the model jointly verified all relevant constraints. Tree-structured representation, VCM pages, and Spinoza-style claim ledgers are useful only if they expose what was compared, what was summarized, what was left as residual, and what claim class the packet is allowed to support.
+
+The same warning applies to elegant diagrams, dense source notes, and high-quality summaries. They may improve retrieval and understanding, but they also create a temptation to confuse coverage with comparison. Verification bandwidth asks the system to name the comparison it actually performed.
+
+## Core Claim
+
+Context systems must distinguish generation capacity from verification bandwidth and declare when context is inadequate (evidence boundary: architectural argument).
+Verification Bandwidth supplies the generation-versus-verification distinction, semantic-unit comparison frame, transitive-decay risk, and proposed contradiction-rate test. VCM supplies adequacy/admission states, use-relative certificates, exact-decode versus semantic-materialization boundaries, and non-success vocabulary. Spinoza supplies claim-ledger consequences. TreeLLM supplies a representation route for explicit semantic units. Editable VCM remains a connector review refinement source, not a local benchmark.
+
+## Mechanism
+
+After ABI resolution, certificates, and transaction semantics produce an authorized context packet, Verification Bandwidth asks whether that packet can support the target claim. The Verification Bandwidth source supplies the generation-versus-verification distinction, semantic-unit comparison frame, two-body verification limit, crowd-out risk, transitive-decay risk, and contradiction-rate test agenda. VCM supplies adequacy/admission separation, use-relative sufficiency, non-success states, and the rule that a summary cannot recover omitted information without consulting a stronger source. Spinoza supplies claim-ledger consequences when verification is unknown or contradicted. TreeLLM supplies an explicit semantic-unit representation route, with the usual warning that representation format is not proof of adequacy. Editable VCM supplies the planner-guided context-compiler agenda as connector review context only.
+
+The mechanism turns context loading into an explicit adequacy contract. A context packet should identify the semantic units it claims to cover, the target claim or task, the compression path used to fit them, the loss or residual warnings, and the verification mode that was actually applied.
+
+```{mermaid}
+flowchart LR
+A["Source units"] --> B["VCM packet"]
+B --> C["Semantic-unit inventory"]
+C --> D["Compression and loss record"]
+D --> E{"Joint verification possible?"}
+E -- "yes" --> F["Adequate for target claim"]
+E -- "no" --> G["Inadequate or summary-only"]
+G --> H["Escalate retrieval or split review"]
+H --> I["Tribunal, proof, or human review"]
+F --> J["Bounded claim-ledger support"]
+I --> J
+J --> K["Residuals and downgrade path"]
+```
+
+**Reading the verification adequacy flow:** The adequacy flow asks whether the loaded packet can jointly verify the target claim, not merely whether more context was supplied. If joint verification is impossible, the route moves to retrieval, split review, tribunal, proof, or human review while support remains bounded.
+
+The adequacy record models verification as constrained by semantic-unit coverage, representation quality, compression path, attention budget, and the actual comparison mode applied. Every context packet should carry an adequacy label for the target claim or task. High-risk claims route to stronger verification, split context, retrieval, tribunal review, proof work, or human review instead of receiving more context and a stronger-sounding answer.
+
+The adequacy rule is deliberately blunt: if the system cannot name the semantic units that must be jointly checked, it cannot claim verification. If the units are too large for joint checking, the system may still draft, summarize, or propose a claim, but the claim ledger must mark the verification state as inadequate, summary-derived, or escalated.
+
+### Adequacy states
+
+Adequacy states give the system a public way to refuse overconfident prose. If required source units are absent, the system has no basis for a source-derived claim. If the packet is drafting-only, it may help write, orient, or assemble a source queue, but it cannot verify the target claim. A local check is narrower still: a citation, schema, fact, or consistency relation may have been checked without proving the broader claim.
+
+Joint check is the first state that can plausibly support a stronger move, because the required semantic units were compared in the declared mode. Even then, support promotion still depends on the other evidence gates. Summary-derived context carries an explicit ceiling: a compressed packet or summary may be useful, but the claim cannot outrun the known loss and residuals. Escalated context is an honest stop sign, routing the claim to retrieval, split review, tribunal, proof, or human review until stronger evidence returns.
+
+Contradicted is not a minor confidence adjustment. It means the adequacy pass found a conflict that matters to the target claim, so the claim needs revision, downgrade, refutation, or residual preservation. These states do not measure a model's hidden attention. They give the stack a visible vocabulary for saying which use the loaded context can honestly support.
+
+## Interfaces
+
+Context adequacy is carried by a compact adequacy record that travels with the context packet and the claim it supports.
+
+- VCM declares adequacy.
+- Spinoza checks claims.
+- Planning decides escalation when adequacy is insufficient.
+
+Minimum fields:
+
+- `adequacy_id`
+- `target_claim_id`
+- `claim_scope`
+- `context_packet_ref`
+- `context_scope`
+- `risk_tier`
+- `semantic_units`
+- `compression_path`
+- `verification_mode`
+- `adequacy_state`
+- `residual_risks`
+- `negative_evidence`
+- `required_escalation`
+- `verification_artifact_refs`
+- `audit_refs`
+- `support_state_effect`
+- `non_claims`
+
+Planning consumes the adequacy state before assigning review effort. VCM uses it to decide whether retrieval, summarization, or splitting is required. Spinoza-style claim ledgers use it to block support-state promotion when the context packet is adequate for drafting but not for verification.
+
+An adequacy record also names the comparison mode:
+
+- direct source lookup
+- pairwise semantic-unit comparison
+- schema or fixture validation
+- proof-checker result
+- tribunal/adversarial review
+- human review
+- summary-only review
+
+Naming the mode prevents an adequacy state from becoming vague confidence. A claim may be locally checked by schema validation and still be unverified as an empirical claim. A proof-checker result may verify a finite predicate and still leave open whether the predicate models the real system. Mode-tagged adequacy preserves that difference.
+
+### Capacity model
+
+The Verification bandwidth capacity model turns the "long-context theater" warning into a bounded record-level obligation count. `python3 scripts/validate_verification_bandwidth_capacity_model.py` writes `experiments/verification_bandwidth_capacity/results/2026-07-03-local.json` and checks three valid synthetic capacity traces plus five expected-invalid controls. In the worst-case all-pairwise trace, 12 semantic units create 66 all-pairwise obligations. A verifier that checks only 18 obligations records 48 residual obligations and must split, escalate, or keep the claim below verified support.
+
+The model also records a valid named-decomposition trace: three clusters of four semantic units plus six boundary checks reduce the modeled obligation set to 24 checks. That reduction is allowed only because the decomposition names the boundary obligations; a control that hides those boundary checks is rejected. Other controls reject treating linear context slots as pairwise verification capacity, hiding residual obligations, declaring adequacy without identified semantic units, and promoting a core support state from the fixture.
+
+This is still a synthetic record model. It does not prove a model verification bandwidth law, does not measure contradiction-rate performance, does not validate an adequacy classifier, does not prove long-context failure in deployed systems, and does not promote any core support state.
+
+## Invariants
+
+- Adequacy is explicit.
+- More context is not treated as proof.
+- High-risk claims pay verification tax.
+- Adequacy is scoped to a target claim and verification mode.
+- Summary-derived support cannot exceed the declared loss and residual record.
+
+These invariants are deliberately weaker than a theorem about model cognition. The book does not claim to know a model's true internal workspace. It claims that a governed stack should expose the boundary conditions under which a claim was produced, and should refuse to treat context length as evidence when the comparison task was not actually performed.
+
+A refusal to verify under too little bandwidth is a valid outcome, not a failure of usefulness.
+
+## Failure modes
+
+- Attention interference.
+- False confidence from large context.
+- Verification skipped for cost reasons.
+- Adequacy laundering, where a context packet adequate for drafting is reused as if it were adequate for support promotion.
+- Mode confusion, where a local schema or proof check is treated as an empirical or deployment result.
+
+Three failures deserve special handling. First, a dominant source can crowd out a smaller but decisive contradiction. Second, a summary can preserve topic coverage while dropping the exact constraint that matters. Third, a chain of locally consistent summaries can conceal a global contradiction. Dominance, summary-loss, and local-consistency failures emit residual records, not merely lower confidence scores.
+
+Verification debt rollover turns skipped checks into apparent acceptance when they are repeatedly deferred.
+
+## Minimum Viable Implementation
+
+A context adequacy rubric and verification-bandwidth warning states.
+
+The first adequacy implementation is deliberately narrow: a context adequacy rubric and warning-state schema. A toy fixture can give the system two or three documents with planted cross-document contradictions, then compare ordinary long-context drafting against a final explicit pairwise checking pass. The expected artifact is not a performance claim; it is a contradiction ledger showing which claims were checked, missed, escalated, or left unsupported.
+
+The existing artifact is narrower: a `context_adequacy_record` schema and fixture. It records adequacy identity, target claim, claim scope, context packet ref, context scope, risk tier, semantic units, compression path, verification mode, adequacy state, residual risks, negative evidence, escalation requirements, verification artifact refs, audit refs, support-state effect, and non-claims, but it does not measure verification performance.
+
+The Verification bandwidth contradiction probe is the next executable slice. `python3 scripts/validate_verification_bandwidth_probe.py` writes `experiments/verification_bandwidth/results/2026-07-02-local.json` and checks two valid synthetic adequacy traces plus seven expected-invalid controls. The valid traces cover a pairwise contradiction that blocks verified support and a drafting-only packet that remains inadequate for verification. The invalid controls reject summary-derived promotion, dominant-distractor contradiction misses, high-risk inadequate context without escalation, schema-mode support for empirical runtime claims, ignored negative evidence, verified support with unidentified semantic units, and support-state promotion from the fixture. This is a deterministic synthetic contradiction and adequacy fixture only; it creates no support-state transition, no evidence transition, no model-verification-bandwidth result, and no distractor-resistance benchmark.
+
+The capacity model adds the first explicit verification-workload artifact. `python3 scripts/validate_verification_bandwidth_capacity_model.py` writes `experiments/verification_bandwidth_capacity/results/2026-07-03-local.json`, checking a 12-unit all-pairwise case with 66 modeled obligations, 18 checked obligations, and 48 residual obligations; a named-decomposition case with 24 modeled obligations; and five expected-invalid controls for linear-context overclaim, hidden decomposition boundary checks, hidden residual gaps, unidentified units, and support-state promotion. It is a record-level capacity model only, not a model benchmark or support-state transition.
+
+## Beyond the State of the Art
+
+Verification bandwidth becomes mature when it functions as a capacity-control plane. It does not reward a system for loading more text. It asks whether the loaded semantic units, representations, tools, reviewers, and comparison mode are strong enough for the exact claim, risk level, and support-state effect being requested.
+
+When verification capacity is governed, every important claim has an adequacy record before it receives a stronger support label. The record names the source units, compression path, verification mode, negative evidence, residual risks, and escalation route. A context packet adequate for orientation can remain drafting-only; a packet adequate for one local citation can still be inadequate for a cross-document safety claim; a proof check over a finite predicate can stay separate from an empirical deployment claim.
+
+A verification control plane needs:
+
+- Adequacy classifiers scoped to target claim, risk tier, context packet, semantic-unit set, compression path, and verification mode.
+- Warning states for absent context, drafting-only context, local checks, joint checks, summary-derived support, escalated review, and contradicted claims.
+- Contradiction-rate and distractor-resistance test suites that measure when longer context hides rather than resolves conflicts.
+- Escalation routes to stronger retrieval, split-context review, Spinoza proof envelopes, UAT review, human review, or residual preservation.
+- Claim-ledger gates that block support-state promotion when the verification mode is narrower than the claim being made.
+
+This verification-budget layer is still a target architecture. Verification-bandwidth support remains `argument` until adequacy classifiers, contradiction suites, escalation traces, and claim-ledger promotion gates show that the stack treats context length as exposure, not epistemic strength, and records when verification is insufficient.
+
+## Post-v2.1 evaluator adequacy result
+
+The routing/deliberation evaluator receives only the request, public candidate,
+and answer criterion; it sees neither gold route nor router score. That
+implementation boundary is useful, but its outcome is stark: zero of 360
+substantive candidates satisfy the criterion, while route-level policy actions
+can still score as correct. The result separates evaluator bandwidth from
+candidate adequacy and from route adequacy. It does not independently validate
+the criterion, establish that a richer context would repair the answers, or
+show that five low-quality candidates provide more verifiable information than
+one. `RD-03` therefore narrows rather than closes.
+
+## Summary
+
+Verification Bandwidth and Context Adequacy is the stack's refusal to equate access with understanding. A system may hold the right documents, have enough context length, and still lack the time, comparison method, tool support, or reviewer bandwidth needed to verify the claim it is about to make.
+
+The design principle is conservative: context can be present, relevant, and still inadequate for the claim being made. A living ASI stack should therefore record adequacy as a first-class state, route high-risk claims to stronger verification, and treat missed contradictions as residuals that improve the next context compiler. Source review supports the control boundary, not a measured verification-bandwidth law. This closes the context substrate and hands the book to the claim-ledger chapters, where adequacy records become belief-revision inputs rather than background notes.
+
+## Handoff
+
+Adequacy records need somewhere durable to land, otherwise verification limits remain comments around the work rather than part of the work. Claim Ledgers and Belief Revision turns those limits into claim identity, evidence state, contradiction links, revision history, uncertainty, and required promotion conditions. The stack can then change belief without erasing why the earlier belief was weaker.

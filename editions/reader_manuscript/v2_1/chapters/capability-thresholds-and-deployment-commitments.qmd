@@ -1,0 +1,484 @@
+# Capability Thresholds and Deployment Commitments
+
+A threshold earns its place when it changes a decision that was specified before
+the number arrived. Otherwise it is easy to celebrate a score, explain away an
+uncomfortable result, and later call the improvisation a policy. The important
+question is what the line was meant to mean, for which task, under what test
+conditions, and what the organization had already agreed to do next.
+
+The agreement is a deployment commitment. It records the capability being
+assessed, the relevant threat, the task and access envelope, the uncertainty
+around the result, the safeguards required at the threshold, and the person or
+body that owns an exception. It also preserves the ordinary possibility that a
+test was stale, too narrow, or unable to elicit the behavior that matters.
+
+The resulting discipline separates measurement, commitment, readiness, and
+authority. Measurement describes a bounded observation, while a threshold says
+how that observation constrains a future path; readiness and authority remain
+separate questions, so a favorable result can inform careful review without
+becoming a license to deploy.
+
+## Problem
+
+Capability assessment creates a tempting but incomplete artifact: a headline
+score. A benchmark result, a time-horizon estimate, a red-team outcome, or a
+domain-risk classification can be valuable within its evaluation envelope. Yet
+the same artifact is routinely asked to answer questions it was not designed to
+answer. Does a system have a general capability? Is a dangerous use now likely?
+Are safeguards sufficient? May a team expand access or ship a release? A single
+measurement cannot carry all of those claims.
+
+The operational failure appears after the result arrives. A team may introduce
+a threshold only once a number looks favorable, narrow the evaluation surface
+until the result becomes convenient, or add a safeguard after a crossing with
+no record of what was originally required. The record then reports a decision
+without preserving the commitment that made the decision accountable. A
+non-crossing can become silent clearance; a crossing can become a discussion
+that has no named owner, deadline, or route.
+
+The missing architectural object is a threshold commitment. It binds a scoped
+assessment to a predeclared response while retaining the limits of the
+assessment. Its job is not to decide whether a system is safe. Its job is to
+prevent a result from silently changing the deployment path without a visible
+policy, safeguard, exception, residual, and authority record.
+
+## Why existing approaches are insufficient
+
+The METR time-horizons paper is a useful measurement comparator because it
+defines a statistic over particular tasks, agents, human baselines, and success
+criteria, and it discusses external-validity limits. It is not a universal
+autonomy scale. Anthropic's Responsible Scaling Policy and OpenAI's
+Preparedness Framework are useful published-policy comparators because they
+connect assessed capability levels to safeguards, reports, reassessment, and
+versioned commitments. They are organization-specific policies, not evidence
+that this repository has selected valid thresholds or implemented effective
+controls.
+
+Existing ASI Stack chapters separate important adjacent concerns. Benchmark
+Ratchets and Anti-Goodhart Evidence owns baseline preservation, regression
+pressure, and measurement integrity. Adversarial Evaluation, Sandbagging, and
+Training-Time Deception owns whether the observed behavior was elicited under
+trustworthy monitoring, reward, and selection conditions. Readiness Gates,
+Residual Escrow, and Quarantine owns technical admission and residual custody.
+Security Kernel, Model-Weight Custody, and Runtime Adapters own the safeguards
+and authority mechanisms that a commitment may require. None should silently
+become the owner of the if-then promise linking a scoped result to a future
+deployment constraint.
+
+Treating those concerns as one score is therefore a category error. A
+measurement can be honest but incomplete; a threshold can be explicit but
+poorly justified; a safeguard can be implemented but unverified; a release can
+be technically ready but unauthorized. The commitment record keeps those
+states distinct so disagreement and uncertainty remain actionable rather than
+being flattened into a dashboard color.
+
+### Strongest-neighbor comparison
+
+| Neighbor | Strongest contribution | Boundary that survives | ASI Stack delta |
+|---|---|---|---|
+| METR time horizons | A statistic tied to agents, tasks, human baselines, success criteria, and external-validity limits | Not a universal autonomy or danger level | Bind it to one deployment commitment, coverage date, and reassessment trigger. |
+| Anthropic RSP | Versioned capability thresholds linked to safeguards and governance responses | Organization-specific policy; controls need separate verification | Keep assessment, crossing, safeguard evidence, exception, and authority separate. |
+| OpenAI Preparedness Framework | Risk categories, capability levels, safeguards, and deployment decisions | Labels do not establish local threshold validity or safeguard efficacy | Require consumer-specific release paths and no-generalization boundaries. |
+| Inspect AI | Versioned tasks, datasets, solvers, scorers, tools, sandboxes, and logs | Infrastructure does not set a normative threshold or authorize deployment | Pin the evaluation envelope and route stale or incomparable runs to re-evaluation. |
+| Benchmark ratchets | Baselines, saturation, holdouts, and anti-Goodhart pressure | A benchmark decision is not a deployment commitment | Translate only an adjudicated scoped result into the predeclared response. |
+
+The distinct object is the durable if-then promise. It prevents changing what
+a score means after seeing it while refusing to pretend that a prospective
+promise makes the measurement or safeguard true.
+
+## Core Claim
+
+A governed stack treats capability thresholds as versioned commitments rather than headline scores: it records the capability domain, threat model, task and evaluation envelope, elicitation and access conditions, threshold definition and uncertainty, baseline and coverage date, required safeguards and verification criteria, deadline, exception authority, residual owner, and release decision; a crossing or non-crossing can alter only the explicitly governed deployment path and cannot by itself establish general capability, safeguard sufficiency, safety, readiness, or authority to deploy (evidence boundary: architectural argument).
+## Mechanism
+
+The first object is a commitment written before interpretation. It names the
+capability domain and threat model, the task and evaluation envelope, success
+rule, elicitation and access conditions, threshold definition, uncertainty
+treatment, human or system baseline, coverage date, required safeguards,
+verification criteria, deadline, affected release path, exception authority,
+re-evaluation triggers, and residual owner. A threshold without these fields is
+not a usable operational commitment; it is an aspiration attached to a metric.
+
+The second object is a separation of records. The capability assessment retains
+what was observed. The threshold decision records how the predeclared rule
+applies and where uncertainty remains. The safeguard record provides its own
+completion and verification evidence. The residual review records what remains
+unresolved. The release path then passes to its existing readiness and authority
+gates. Keeping these records separate prevents a favorable score from inheriting
+the authority of a completed safeguard or a release review.
+
+The third object is change control. A commitment is versioned, and a change
+records its prior obligation, rationale, authority, scope, timing, and whether
+an evaluation began before or after the change. An exception is not an erasure.
+It records the affected scope, approver, expiry or review trigger, compensating
+controls, and residual owner. An unclear, stale, incomparable, under-elicited,
+or out-of-scope assessment is not interpreted as a non-crossing; it routes to
+re-evaluation, accountable escalation, or residual escrow. The resulting
+history allows a later reviewer to reconstruct which rule applied at the time,
+what evidence it consumed, who could alter it, and why a constrained path was
+chosen instead of silently converting uncertainty into permission.
+
+```{mermaid}
+flowchart LR
+A["Scoped capability assessment"] --> B["Versioned threshold commitment"]
+B --> C["Threshold decision and uncertainty"]
+C -->|"crossed"| D["Required safeguards and verification"]
+C -->|"not crossed or unclear"| E["Re-evaluate, constrain, or escrow residual"]
+D --> F{"Safeguards verified?"}
+F -->|"no"| G["Block affected release or accountable escalation"]
+F -->|"yes"| H["Residual-risk and release review"]
+E --> I["Coverage, baseline, exception, and residual ledger"]
+G --> I
+H --> J["Existing readiness and authority gates"]
+J --> I
+```
+
+**What the commitment flow shows:** a crossed threshold changes only the path
+named by its contract. It does not establish a general capability level or
+prove a safeguard effective. Missing verified safeguards block the affected
+path in the finite model; a separately governed readiness and authority review
+still decides whether any later action is allowed.
+
+### Worked trace: the crossed cyber threshold with a stale exception
+
+A model is evaluated on a predeclared cyber task family under fixed tool access,
+elicitation, time, scorer, and human baseline. The confidence interval crosses
+the commitment's threshold for one externally exposed automation path. The
+crossing does not label the model generally dangerous. It activates the named
+response: network isolation, credential scoping, independent safeguard
+verification, and residual-risk review before that path reaches readiness.
+
+The product team presents an earlier exception approved for a different model
+version. Its expiry passed, the evaluation used broader tool access, and no
+owner is named for the remaining credential-exfiltration risk. The release is
+blocked because the request lacks current scoped records—not because the route
+proves the model malicious or a safeguard ineffective.
+
+After the safeguards are independently exercised, the affected path may reach
+Readiness Review but is still not released. A non-crossing in a separate
+biological domain retains its uncertainty and coverage date; it does not clear
+the cyber path, exempt future versions, or become a permanent safety certificate.
+
+## Interfaces
+
+- **Benchmark Ratchets and Anti-Goodhart Evidence** owns baseline, coverage,
+holdout, saturation, and regression integrity. The commitment layer owns the
+predeclared deployment response to a scoped result.
+- **Adversarial Evaluation, Sandbagging, and Training-Time Deception** owns
+elicitation, monitor, reward, and selection integrity. Its findings can make
+a threshold result non-comparable or require re-evaluation.
+- **Readiness Gates, Residual Escrow, and Quarantine** owns operational
+admission, quarantine, and residual custody after a commitment constrains a
+release path.
+- **Security Kernel, Model-Weight Custody, and Runtime Adapters** own technical
+safeguards, secret custody, and authority enforcement. The commitment layer records
+requirements for them; it does not implement or validate them.
+- **Evidence States and Claim Discipline** owns support-state movement. A
+threshold decision changes a bounded path, not the evidential support of a
+broad capability or safety claim.
+- **Recursive Self-Improvement and Open-Ended Improvement Engines** consume
+threshold commitments for automation-related risk conditions while retaining
+their own promotion, rollback, and change-control gates.
+
+This division matters because the attractive alternative is a universal
+readiness score. Such a score would hide the differences among cyber,
+biological, autonomy, replication, and other risk profiles. A commitment
+portfolio instead names the particular profile, evaluation, safeguards, and
+route it governs, while allowing different owners to contest whether its
+measurement and response are adequate.
+
+## Invariants
+
+- A threshold is bound to a named capability domain, threat model, evaluation
+envelope, policy version, coverage date, and affected deployment path.
+- A score, time-horizon estimate, benchmark result, or non-crossing is not a
+general autonomy, safety, readiness, or deployment-clearance claim.
+- A crossed threshold cannot release its affected path until required safeguards
+have separately recorded completion and verification criteria.
+- An unclear, stale, under-elicited, incomparable, or out-of-scope assessment
+routes to re-evaluation, escalation, or residual escrow rather than implied
+non-crossing.
+- An exception records scope, rationale, approver, expiry or review trigger,
+compensating controls, and residual owner; it cannot silently weaken a
+commitment.
+
+These rules preserve a useful middle ground between paralysis and automation.
+They allow an organization to change a bounded path when a well-described
+assessment changes, while forcing it to carry uncertainty forward when the
+assessment or required controls do not support a stronger conclusion.
+
+## Failure modes
+
+- **Metric laundering:** one benchmark or time-horizon headline becomes a
+general capability or dangerousness conclusion.
+- **Retroactive commitment drift:** a team changes required safeguards after an
+evaluation begins or a threshold is crossed.
+- **Threshold gaming:** task selection, access, prompts, or elicitation are
+narrowed until a convenient non-crossing appears.
+- **Safeguard theater:** a required control is listed without completion,
+verification, or residual-risk evidence.
+- **Exception laundering:** schedule or competitive pressure bypasses the
+commitment without named authority, review trigger, or compensating control.
+- **Cross-domain collapse:** unlike risk profiles are treated as interchangeable
+because they share an aggregate score.
+
+Each failure has a different remedy. Metric laundering calls for scope and
+claim boundaries; retroactive drift calls for version history; threshold gaming
+calls for evaluation-integrity review; safeguard theater calls for independent
+verification; exception laundering calls for accountable expiry and residual
+ownership; cross-domain collapse calls for separate commitments. No remedy
+turns the process into proof of safety. It makes the reasons for further review
+legible and difficult to silently discard.
+
+## Non-obvious consequences
+
+1. **A non-crossing is an expiring observation.** Model, scaffold, tools,
+elicitation, task mix, or threat-model changes can invalidate it without a
+threshold ever being crossed.
+2. **Threshold portfolios need typed incomparability.** Domains may use
+different tasks, units, baselines, uncertainties, and consequences; one
+aggregate risk score destroys their policy meaning.
+3. **Safeguard verification is a second evaluation program.** Listing a
+control and demonstrating its behavior are different claims with distinct
+evaluators, attack surfaces, dates, and residuals.
+4. **Exceptions are temporary commitments.** They require compensating
+controls, expiry, review triggers, affected scope, and an owner; otherwise
+they are policy deletion.
+5. **Transparency can change the threat model.** Disclosure improves
+accountability while enabling gaming or revealing evaluation details. Its
+audience and residual policy must be explicit.
+6. **Commitment latency is a safety and usefulness variable.** Slow reassessment
+or safeguard verification invites bypass, overblocking, or stale acceptance.
+
+## Strongest objections and surviving residuals
+
+**"Thresholds create false precision."** They can. Visible uncertainty,
+sensitivity analysis, incomparable states, and bounded responses prevent some
+laundering but do not prove a threshold adequate.
+
+**"Published commitments encourage benchmark gaming."** Holdouts, rotating
+tasks, access-condition records, adversarial evaluation, and delayed disclosure
+reduce but do not eliminate the risk. Every outcome stays conditional on
+evaluation integrity.
+
+**"A serious hazard should trigger a global stop."** Some evidence may warrant
+that, but scope must be declared. Automatically globalizing every result creates
+brittle policy; automatically narrowing it creates loopholes. Propagation is a
+separate governed decision.
+
+**"Safeguards should be continuous, not gated."** Monitoring complements a
+decision point. A commitment may require pre-release evidence, canary limits,
+post-release monitors, and rollback triggers while retaining who owns each.
+
+**"Competitive pressure makes rigid commitments unrealistic."** Pressure is
+why exceptions need authority, expiry, compensating controls, residual custody,
+and accounting. The architecture cannot prove institutions will comply.
+
+**"This launders political judgment as engineering."** Threshold selection and
+acceptable residual risk are normative choices. The design makes their owners,
+rationale, scope, evidence, and revision history visible; it does not derive the
+correct social policy from a metric.
+
+## Measurement and evidence contract
+
+The finite campaign freezes a synthetic portfolio with crossed, non-crossed,
+stale-coverage, missing-baseline, missing-uncertainty, incomparable-envelope,
+missing-safeguard, unverified-safeguard, expired-exception, and uncustodied-
+residual cases. Each record names its domain, evaluation digest, policy version,
+affected release path, expected route, and non-claims.
+
+The next empirical step uses a public-safe harness with repeated runs, multiple
+scorers, elicitation variants, baseline uncertainty, and a separate mock-
+safeguard evaluator. It measures false clearance, false block, stale acceptance,
+exception misuse, reassessment latency, safeguard-decision latency, operator
+effort, and residual age. Scores are diagnostic inputs; the question is whether
+the commitment routes them consistently and honestly.
+
+No threshold, domain, or route changes after outcomes are visible. Invalid runs
+remain in the denominator. A non-crossing supports only its envelope and expiry.
+A crossed case with passing mock safeguards may reach readiness review but not
+deployment approval. This yields governance evidence even when the synthetic
+capability proxy has no external validity.
+
+## Commitment lifecycle and change control
+
+A threshold begins as a **proposed commitment**, not a policy fact. Its sponsor
+states the domain, threatened assets, evidence envelope, threshold logic,
+uncertainty treatment, response, and sunset condition. A separate review checks
+whether the response is operationally possible: a promise to require an
+unavailable safeguard is not a strong commitment. Acceptance records who can
+change the rule and which later changes require a new evaluation.
+
+Once active, the commitment points to a versioned evaluation family rather than
+a mutable dashboard query. Dataset, task, scorer, solver, prompt, tool, sandbox,
+model, scaffold, and access changes produce a new envelope identity. Minor
+repairs may remain comparable if the policy prospectively defines that class;
+otherwise the result is `incomparable`, not automatically better, worse,
+crossed, or clear. Comparability is an adjudicated relation with evidence.
+
+Coverage expires through time and events. A scheduled date is the simplest
+trigger, but material model updates, newly enabled tools, longer context,
+stronger elicitation, changed deployment topology, new threat intelligence,
+benchmark leakage, evaluator failure, and safeguard drift can all demand
+reassessment. The trigger record identifies affected commitments and live
+release paths. It does not erase the old result; it changes what may still rely
+on it.
+
+At evaluation time, the system records all outcomes, including execution
+failures, scorer disagreements, ambiguous cases, and runs excluded from the
+primary statistic. A confidence interval overlapping the threshold follows the
+predeclared uncertainty route. It is neither rounded into a convenient
+non-crossing nor automatically treated as a crossing unless the commitment said
+so prospectively. Sensitivity analyses can inform review but cannot silently
+replace the registered decision rule.
+
+A crossing creates obligations against the affected release path. Each
+safeguard has an owner, implementation reference, verification criterion,
+evaluator, validity period, dependency graph, and residual. "Implemented" is
+not "verified"; "verified in a lab" is not "effective in deployment"; and
+"effective under one attacker model" is not universal sufficiency. Readiness
+receives these distinctions instead of a single safeguard-complete flag.
+
+A non-crossing also creates obligations: preserve the envelope, uncertainty,
+coverage, and re-evaluation triggers; prevent broader consumers from citing it;
+and record which capability questions were never tested. This negative-space
+record is essential because deployment pressure tends to translate "did not
+cross this threshold here" into "no relevant risk was found." The latter claim
+requires a far broader search and is not licensed.
+
+An exception begins with a still-binding commitment. The request explains which
+obligation cannot be met, why delay or constraint is inadequate, who bears the
+resulting risk, what compensating controls apply, what evidence will be
+collected, and when the exception ends. Approval does not rewrite the threshold
+history. Expiry returns the path to its prior blocked or review state unless a
+new prospective decision replaces it.
+
+After release, monitor signals remain connected to the originating commitment.
+A safeguard alarm, capability drift, changed access condition, or incident can
+trigger constraint, rollback, re-evaluation, or exception review. Monitoring
+does not retroactively prove the original decision right; it supplies new
+evidence. Silent absence of alarms is not evidence if coverage, sensitivity,
+or reporting health is unknown.
+
+Finally, retirement is explicit. A commitment may be superseded because the
+domain taxonomy changed, the deployment path disappeared, the evaluation lost
+validity, or a stronger policy absorbed it. The retirement record preserves
+successor links, unresolved residuals, and the last decisions that depended on
+the old version. No active release path may point only to a retired commitment.
+This lifecycle makes threshold governance inspectable without pretending that
+inspectability guarantees wise thresholds or effective institutions.
+
+### Cross-domain and cumulative commitments
+
+Separate domain records do not imply independent risk. A cyber capability may
+amplify biological research access; persuasion capability may change the human
+approval threat model; model-weight access may increase the consequence of
+another capability. The portfolio therefore records declared dependency and
+amplification edges without collapsing the underlying measurements. A
+cross-domain review may impose a narrower release path even when no individual
+threshold crossed, but it must name the rule and evidence rather than inventing
+an aggregate score after the fact.
+
+Cumulative change matters as well. Several model or scaffold updates can each
+fall below a material-change trigger while jointly invalidating an old
+assessment. Commitments need an accumulation window or a reviewer-owned drift
+rule. Otherwise change control can be gamed through incremental updates. The
+same principle applies to exceptions: overlapping narrow exceptions can create
+a broad de facto bypass even when each looks bounded alone.
+
+The dependency graph remains incomplete by design. Unknown interactions are
+residuals, not assumed independence. Reviewers can add edges prospectively,
+record why an interaction was considered immaterial, and trigger reassessment
+when incidents or research reveal a new coupling. This is an honest middle
+ground between one universal danger number and a portfolio that ignores
+composition.
+
+The campaign tests this logic with paired cases: two individually non-crossing
+records with an explicit amplification rule; two unrelated non-crossings that
+must not be merged; sequential updates that exceed a cumulative drift limit;
+and overlapping exceptions that widen the effective release surface. These
+cases earn only portfolio-routing evidence. They do not estimate real
+cross-domain capability interaction, social harm, or deployment risk.
+
+Portfolio reporting must preserve this structure. Publish the number of active,
+expired, incomparable, crossed, non-crossed, blocked, excepted, and reassessment-
+pending commitments; the age of their evidence; and the release paths that
+depend on them. Do not report only the count of crossings or a highest risk
+color. A quiet dashboard can hide stale evidence, accumulating exceptions, and
+unowned residuals. A busy dashboard can exaggerate repeated measurements of
+one narrow domain. Denominators, unique affected paths, and unresolved
+obligations make both distortions visible. Where disclosure would expose attack
+details, publish the existence, owner, review date, and bounded rationale for a
+redacted commitment rather than erasing it from the public accounting.
+Every summary links back to the versioned decision record so readers can tell
+whether a blocked path reflects a measured crossing, missing evidence, an
+expired exception, or precaution under uncertainty. Those states can share an
+operational outcome while carrying very different claims and next actions.
+This distinction is mandatory for audit, appeal, reassessment, and honest public
+status reporting.
+
+## Minimum Viable Implementation
+
+The smallest honest artifact is a versioned threshold-commitment record. It
+contains the capability domain and threat model, evaluation envelope and
+coverage date, threshold rule and uncertainty treatment, baseline and
+elicitation/access references, required safeguards and verification criteria,
+deadline, exception authority, re-evaluation triggers, residual owner, and
+affected release path. A finite Lean route blocks a requested release when a
+crossed threshold lacks verified safeguards.
+
+This is a record-and-routing foundation, not a capability evaluator or release
+engine. It does not run a time-horizon task suite, select a valid threshold,
+infer a dangerous capability, inspect technical safeguards, evaluate an
+exception, assess residual risk, or authorize an action. A public-safe next
+slice would add matched synthetic records for a clear crossing, stale coverage,
+incomparable elicitation, expired exception, missing safeguard verification,
+and an attempted release, each with a visible residual and no capability claim.
+
+## Beyond the State of the Art
+
+The mature endpoint is a capability-commitment control plane, not a universal
+danger score. It maintains a versioned portfolio of domain-specific commitments
+with reviewable evaluation envelopes, baselines, coverage and uncertainty
+records, precommitted safeguards, independent verification, residual-risk
+review, prospective exception governance, and automatic re-evaluation when the
+model, scaffold, access conditions, elicitation, or threat model changes.
+
+At that endpoint, a deployment organization can coordinate release, security,
+monitoring, access, rollback, and disclosure obligations without asking one
+benchmark to serve as a constitution. Capability profiles remain distinct, and
+a crossing invokes the controls appropriate to the named profile. A transparent
+record also makes it possible for reviewers to ask whether the measurement,
+threshold, safeguard, or exception should be challenged, rather than only
+debating the final release label.
+
+The public evidence for such a system would include assessment envelopes,
+version lineage, coverage and uncertainty disclosure, safeguard verification,
+exceptions, residual reviews, re-evaluation triggers, and preserved decisions.
+It would also retain failed or ambiguous cases so a non-crossing cannot become
+an invisible all-clear, preserving challengeable decision history across policy
+versions. This is a target architecture, not a claim that this
+repository has measured capability, set an adequate threshold, verified
+safeguards, or achieved safe deployment.
+
+## Summary
+
+Capability thresholds are most useful when they are promises made before a
+result is known. The promise says which domain and threat are being assessed,
+what the test can and cannot show, what uncertainty remains, which safeguards
+must be verified, who can approve an exception, and which release path is
+affected. The result then changes only that bounded path.
+
+This preserves several distinctions that an aggregate score would erase. A
+measurement is not a policy. A policy is not a safeguard. A safeguard is not a
+readiness decision. A readiness decision is not authority. Each record can be
+reviewed, challenged, and revised without pretending that a favorable number
+settles the others.
+
+Adversarial evaluation turns to the integrity of the observation itself. A
+threshold commitment is only as useful as the conditions under which a system
+was asked, monitored, rewarded, and selected to reveal relevant behavior.
+
+## Handoff
+
+Capability Thresholds and Deployment Commitments binds a scoped assessment to a versioned safeguard, exception, residual, and release-path contract; Adversarial Evaluation, Sandbagging, and Training-Time Deception now tests whether the observed behavior was elicited, monitored, rewarded, and selected under conditions that make that contract interpretable at all.

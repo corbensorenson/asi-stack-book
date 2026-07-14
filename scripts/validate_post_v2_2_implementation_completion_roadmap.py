@@ -27,6 +27,7 @@ ACTIVE_SUCCESSOR_PATH = "docs/post_v2_3_quality_floor_and_reader_completion_road
 ACTIVE_SUCCESSOR_STATUS_PATH = "roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json"
 CURRENT_SUCCESSOR_PATH = "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md"
 CURRENT_SUCCESSOR_STATUS_PATH = "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"
+CURRENT_SUCCESSOR_STATUS = ROOT / CURRENT_SUCCESSOR_STATUS_PATH
 EXPECTED_PRIORITIES = [f"P{i}" for i in range(6)]
 EXPECTED_MILESTONES = [f"M{i}" for i in range(8)]
 EXPECTED_LANES = [f"QI-{i:02d}" for i in range(1, 13)]
@@ -100,8 +101,10 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("activation baseline drifted")
     if len(chapters) != 54:
         errors.append("active chapter count is not 54")
-    if len(source_rows) != 280:
-        errors.append("public-safe source count is not 280")
+    if len(source_rows) < 280:
+        errors.append("current public-safe source inventory fell below the 280-source historical activation floor")
+    if data["current_successor_status"].get("activation_baseline", {}).get("public_safe_source_count") != 280:
+        errors.append("current successor lost the exact historical 280-source activation baseline")
     if not isinstance(vectors, list) or len(vectors) != 54:
         errors.append("core evidence-vector count is not 54")
     elif any(row.get("summary_support_state") != "argument" for row in vectors):
@@ -212,7 +215,7 @@ def negative_controls(base: dict) -> list[str]:
 
 
 def main() -> None:
-    required = [ROADMAP, STATUS, SCHEMA, STRUCTURE, SOURCES, VECTORS, README, INDEX, PREDECESSOR, PREDECESSOR_COMPLETION, CYCLE_COMPLETION]
+    required = [ROADMAP, STATUS, SCHEMA, STRUCTURE, SOURCES, VECTORS, README, INDEX, PREDECESSOR, PREDECESSOR_COMPLETION, CYCLE_COMPLETION, CURRENT_SUCCESSOR_STATUS]
     missing = [path.relative_to(ROOT).as_posix() for path in required if not path.is_file()]
     if missing:
         raise SystemExit("missing post-v2.2 roadmap artifacts: " + ", ".join(missing))
@@ -229,6 +232,7 @@ def main() -> None:
         "predecessor_completion": PREDECESSOR_COMPLETION.read_text(encoding="utf-8"),
         "cycle_completion": CYCLE_COMPLETION.read_text(encoding="utf-8"),
         "active_roadmaps": active_roadmaps(),
+        "current_successor_status": load_json(CURRENT_SUCCESSOR_STATUS),
     }
     errors = validate_against_schema(status, load_json(SCHEMA), STATUS.relative_to(ROOT).as_posix())
     errors.extend(semantic_errors(data))

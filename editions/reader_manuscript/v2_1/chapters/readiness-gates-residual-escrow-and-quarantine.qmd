@@ -1,0 +1,239 @@
+# Readiness Gates, Residual Escrow, and Quarantine
+
+Routing can identify a plausible specialist, but plausibility is not readiness. The readiness gate asks when a route, model, tool, memory packet, procedure, runtime lane, or replacement is allowed to become ordinary execution and when it must stay in shadow, canary, escrow, quarantine, diagnostic use, or review. The gate is where evidence becomes permission, and where missing evidence becomes an explicit operating mode instead of a hidden exception.
+
+Uncertainty should have somewhere to live. If a capability is promising but stale, narrow, risky, or partly unverified, the stack should not either trust it or discard it. It should keep the residual, expiry, fallback path, and next review condition visible until the evidence catches up. That makes improvement less dramatic but more durable: new capability can approach production without being treated as already safe.
+
+Escrow is useful because it lets the system remember promise without spending it as permission.
+
+The gate protects future adoption from present enthusiasm. Quarantine is how the system says maybe without surrendering rigor, memory, fallback, or review.
+
+## Problem
+
+A specialist can be useful without being ready. It can pass a narrow benchmark and still hide residual failures. It can improve on the frontier and regress on the floor. It can be safe in canary and unsafe as default. The stack therefore needs lifecycle states that are stricter than "available" and richer than a single score.
+
+Readiness is the bridge between routing and self-improvement. The router needs to know whether a specialist can be selected. Stable Capability Fields need to know whether an implementation can replace another. Benchmark ratchets need to know whether a result belongs to frontier exploration, regression preservation, or quarantine.
+
+Readiness cannot be treated as a mood or leaderboard position. It is a lifecycle state with evidence, scope, residuals, monitors, and rollback. A candidate may be excellent for research, acceptable for canary, blocked from default, or quarantined after a regression. Those distinctions must be machine-readable before routing or replacement can be trusted.
+
+Within the governed-cognition pattern, the readiness layer owns the routability delta. The shared record pattern becomes a lifecycle gate: a capability may keep its identity while its allowed routes change from draft to shadow, canary, default, diagnostic-only, quarantined, retired, or superseded. Other layers can record evidence and residuals; the readiness layer defines when those records are allowed to change ordinary use.
+
+## Why existing approaches are insufficient
+
+A benchmark score alone cannot decide whether a specialist is ready or whether unresolved residuals are being hidden. Benchmaxxing treats benchmarks as temporary pressure surfaces, not permanent definitions of intelligence. RMI treats residual escrow as a visible tail of unsolved cases. SCF treats qualification as scoped, defeasible, expiring, and tied to a field boundary.
+
+External governance, evaluation, routing, and assurance baselines sharpen that readiness standard. NIST AI RMF (`ext_nist_ai_rmf_1_0_2023`) and frontier-governance work (`ext_frontier_ai_regulation_2023`) separate risk framing, assessment, scrutiny, and monitoring; model-evaluation work for extreme risks (`ext_model_evaluation_extreme_risks_2023`) ties capability and alignment evaluations to deployment decisions; HELM (`ext_helm_2022`), BIG-bench (`ext_bigbench_2022`), Dynabench (`ext_dynabench_2021`), and contamination work (`ext_benchmark_contamination_2023`) show why benchmark state matters; routing baselines such as `ext_expert_choice_routing_2022` and `ext_hybrid_llm_2024` expose cost-quality routing pressure; TLA+ (`ext_tla_plus_home_docs`), PRISM (`ext_prism_model_checker_2002`), Black-Box Simplex (`ext_black_box_simplex_2021`), and Copilot (`ext_copilot_runtime_monitor_2010`) give assurance and monitor vocabulary. Readiness gates compose those pressures into lifecycle records, not an approved deployment result.
+
+Without readiness gates, the architecture confuses motion with progress. A module can improve one visible metric while weakening a hidden invariant. Without residual escrow, promotion erases the cases that should shape the next frontier. Without quarantine, failed or stale modules remain routable through habit.
+
+The missing primitive is a transition record. A lifecycle move should say what changed, which evidence justified the change, which residuals survived it, which regressions were checked, when the gate expires, and which routes are now allowed or blocked.
+
+## Core Claim
+
+Readiness gates and residual escrow should govern when modules are promoted, quarantined, split, merged, retired, or retrained (evidence boundary: architectural argument).
+The assigned sources support the design vocabulary of benchmark lifecycle, residual escrow, lifecycle state, readiness gates, and route validity, but no particular module is claimed to currently pass those gates.
+
+## Draft Key Figure: Readiness, Residual, Quarantine Map
+
+![Draft readiness residual quarantine map.](../assets/diagrams/readiness-residual-quarantine-map.svg){#fig-readiness-residual-quarantine-map fig-alt="Draft readiness residual quarantine map showing a candidate route or replacement proposal entering a readiness gate record, splitting into limited allowed use, residual escrow, quarantine, blocker handling, review rerun, gate-laundering boundary, and support-state non-claim boundary."}
+
+**How to read the readiness-residual figure:** Read the figure as a route-permission map, not as a claim that a deployed readiness engine exists. A candidate route, tool, specialist, memory packet, runtime lane, or replacement proposal enters a readiness gate record with field identity, workload scope, fresh evidence, expiry, authority, allowed routes, fallback, rollback path, residual escrow, non-claims, review refs, and next review trigger.
+
+If the envelope is adequate, the target may move to limited allowed use such as shadow, canary, qualified, or default within that envelope. If uncertainty remains, residual escrow preserves inherited failures, blocked obligations, owners, and review conditions. If evidence is missing, expired, authority-mismatched, or hides residuals, quarantine blocks ordinary routing while preserving diagnostic replay only with a visible fallback.
+
+Renaming, wrapping, splitting, merging, retraining, or retiring a target cannot erase failed gates or inherited residuals. The figure is a draft reader aid, not proof of readiness-engine behavior, residual-ledger storage, quarantine enforcement, safety, benchmark performance, support-state movement, or release approval.
+
+## Mechanism
+
+Readiness is the router's memory of what has earned ordinary use. RMI supplies residual escrow and specialist lifecycle pressure; Benchmaxxing supplies benchmark lifecycle and anti-Goodhart caution; SCF supplies scoped, defeasible, expiring qualification; Octopus Router supplies arm cards and quarantine; Theseus supplies architecture gates and evidence-first self-evolution boundaries. Together they make readiness a governed state, not an informal confidence score.
+
+The readiness gate changes routability, not identity. A specialist can remain the same registered capability while moving from draft to shadow, canary, qualified, default, quarantined, retired, or diagnostic-only. The router consumes a current route permission, while SCF-style qualification preserves the longer-lived capability boundary and its evidence history.
+
+A Readiness Gate Record attaches that state to every module, specialist, tool, field implementation, or runtime lane that can be routed to or promoted. It does not say the target is globally safe or permanently qualified. It says what field identity is involved, what workload family and freshness window apply, what evidence was checked, what residuals survived or were inherited, what routes are allowed or blocked, what state transition is requested, when the gate expires, and what should happen if the gate fails.
+
+A readiness record keeps frontier pressure and floor preservation separate. Frontier evidence says what the target newly handles. Floor evidence says what it must not forget. Residual escrow names the tail that is still outside both.
+
+```{mermaid}
+flowchart LR
+A["Module or specialist"] --> B["Gate evidence"]
+B --> C["Regression suite"]
+C --> D["Residual escrow"]
+D --> E["Authority and scope check"]
+E --> F{"Promotion allowed?"}
+F -- "yes" --> G["Shadow / canary / qualified / default"]
+F -- "no" --> H["Quarantine / revise / split / retire"]
+G --> I["Lifecycle ledger"]
+H --> I
+I --> J["Monitor window"]
+J --> K["Requalification trigger"]
+```
+
+**Reading the readiness gate:** The gate changes routability without changing the underlying capability identity. Evidence, regressions, residual escrow, authority, scope, lifecycle state, monitoring, and requalification all have to line up before a module becomes ordinary route material.
+
+Those inputs answer different questions and should not be collapsed into one readiness score. Gate evidence asks what was actually checked. Regression preservation asks what must remain true after change. Residual escrow asks what is still unresolved and who must carry it. A target can improve on new work while failing its old floor, or pass every measured case while a required check was never attempted. The lifecycle must preserve both distinctions before it changes routability.
+
+### Check lifecycle and monotone containment
+
+A gate-level state is too coarse unless each contributing check exposes how it reached that state. Every check therefore records applicability, requiredness, attempt, result, waiver, evidence identity, observation time, and expiry. These fields prevent three attractive substitutions: not applicable for not attempted, skipped for passed, and waived for satisfied. A required applicable check can support readiness only when it was attempted, passed, and carries fresh evidence. Unknown applicability is itself a blocker until resolved.
+
+BugBrain supplies the sharpest local negative case: retained green reports counted missing artifact manifests as skipped successes. Corben's Trainer supplies the downstream failure: claim and candidate records survived after all contributing evidence runs were quarantined. Together they imply that readiness is not merely a row of checks. It is a dependency-sensitive lease. When a required check fails or an upstream artifact becomes stale, quarantined, revoked, or unknown, the promotion lease invalidates and containment must stay the same or tighten.
+
+```{mermaid}
+flowchart LR
+A["Check applicability"] --> B{"Required?"}
+B -- "no / not applicable" --> C["Explicit not-applicable record"]
+B -- "yes" --> D["Attempt + result"]
+D --> E["Evidence identity + observed time + expiry"]
+E --> F{"Fresh passing evidence?"}
+F -- "yes" --> G["Contribute to scoped readiness"]
+F -- "no" --> H["Block or quarantine"]
+H --> I["Owner + affected descendants + disposition"]
+I --> J["Same or tighter route set"]
+```
+
+**Reading the check lifecycle:** readiness is allowed to strengthen only through fresh passing evidence or narrower scope. Failure, missingness, waiver, expiry, or upstream invalidation routes to a named quarantine closure and cannot add ordinary routes.
+
+The strongest objection is that a detailed lifecycle can still validate the wrong checks. That is correct. Completeness of check metadata does not establish benchmark adequacy, evaluator independence, or real enforcement. The lifecycle is a truthfulness boundary: it stops missing, stale, waived, or quarantined evidence from being mislabeled as green while leaving check quality and deployed containment as explicit residuals.
+
+The earlier deterministic lifecycle probe remains part of that boundary rather than being superseded by the six-project contract. Its recorded result at `experiments/readiness_lifecycle_probe/results/2026-07-02-local.json` contains six valid synthetic readiness lifecycle transitions plus twelve expected-invalid controls. The newer check-lifecycle fixture narrows a different seam: whether each contributing check can be truthfully promoted and whether dependency invalidation forces monotone containment. Neither synthetic trace demonstrates a deployed readiness engine, live router enforcement, or current module readiness.
+
+Readiness has three inputs. Gate evidence names the source notes, test records, benchmark results, proof artifacts, review records, or operator reports that are allowed to bear on the decision. Regression preservation protects a floor that should not be lost while the frontier moves. Residual escrow keeps named failures, edge cases, uncertainties, and blocked obligations attached to the target even when some narrower promotion is allowed.
+
+Quarantine is not deletion. It is a routing state. A quarantined module can remain available for diagnosis, replay, repair, or restricted review while ordinary routes are blocked. This distinction is what lets the architecture learn from failures without letting failures remain live in the control path.
+
+Residual escrow is not an unstructured backlog or a reputation marker. It is the mechanism that prevents unresolved cases from being laundered away during promotion, merge, split, retirement, or retraining. A residual can be accepted as bounded only when its scope, trigger, owner, and next review condition are named. Inherited residuals are especially important: a renamed, wrapped, split, or merged target must carry old residuals forward unless a separate record retires them.
+
+## Interfaces
+
+Readiness decisions pass through the Readiness Gate Record.
+
+Minimum fields:
+
+- `gate_id`
+- `target_id`
+- `target_kind`
+- `field_id`
+- `current_state`
+- `candidate_state`
+- `workload_family`
+- `freshness_window`
+- `evidence_state`
+- `gate_evidence`
+- `floor_evidence`
+- `frontier_evidence`
+- `regression_results`
+- `residual_escrow`
+- `inherited_residuals`
+- `authority_scope`
+- `promotion_blockers`
+- `quarantine_conditions`
+- `allowed_routes`
+- `blocked_routes`
+- `diagnostic_permissions`
+- `fallback_path`
+- `expiry`
+- `decision`
+- `closure_conditions`
+- `review_refs`
+- `next_review_trigger`
+- `non_claims`
+
+Routing reads `current_state`, `authority_scope`, `allowed_routes`, `blocked_routes`, and `promotion_blockers`. Benchmark ratchets update `gate_evidence`, `regression_results`, and `residual_escrow`. SCF replacement transactions use the record as part of qualification and rollback. Artifact graphs preserve the ledger references so future decisions can distinguish "not tested" from "tested and failed" from "tested in a narrower context."
+
+The public schema now separates evidence state, floor evidence, frontier evidence, diagnostic permissions, and closure conditions. This keeps canary or diagnostic permission from becoming ordinary route permission and keeps stale or source-reported evidence from being confused with reproduced readiness.
+
+The lifecycle states should be explicit enough for routers and auditors to consume: draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded. The exact names can vary, but ordinary execution must not depend on prose interpretation of a benchmark note.
+
+## Invariants
+
+- Promotion requires gate evidence.
+- Every required applicable check is attempted, passes, carries evidence identity, and remains unexpired before it can contribute to readiness.
+- Not-applicable, unknown, skipped, unattempted, waived, failed, errored, and expired states remain distinct.
+- Residuals are not deleted on promotion.
+- Quarantine blocks ordinary routing.
+- Containment cannot weaken or add routes while an invalidating dependency remains.
+- Active quarantine retains reasons, owner, affected descendants, and a recovery or retirement disposition.
+- A saturated benchmark cannot be the sole basis for higher readiness.
+- A stale gate must be rerun after architecture, frontier, authority, or lifecycle changes.
+- Inherited residuals survive rename, wrapper, split, merge, retirement, and retraining unless an explicit retirement record closes them.
+
+The strongest operational invariant is negative: a failed readiness predicate must not be converted into a success by renaming the target, changing the benchmark scope, or hiding residuals in prose.
+
+Transition monotonicity over evidence keeps readiness from being laundered. A target can move to a stronger state only by adding adequate gate evidence or by narrowing its permitted scope. It cannot become more routable by losing records.
+
+## Failure modes
+
+- Premature promotion.
+- Residual hiding.
+- Untracked regression after merge.
+- Stale gate reuse after architecture change.
+- Over-quarantine that prevents useful diagnosis.
+- Skipped-as-green reporting.
+- Waiver-as-pass substitution.
+- Stale promotion that survives upstream quarantine or revocation.
+- Orphaned quarantine without an owner, descendant closure, or disposition.
+
+Premature promotion should create a rollback or quarantine transaction. Residual hiding should create a belief-revision or tribunal-review issue. Regression after merge should preserve the old floor as a regression benchmark. Stale gate reuse should block promotion until the relevant checks are rerun. Over-quarantine should be reviewed because excessive blockage can hide the difference between unsafe execution and safe diagnostic use.
+
+Gate laundering is the readiness failure that defeats quarantine. A target fails readiness under one name, is wrapped or merged under another, and then re-enters ordinary routing without carrying the failed gate and residual escrow forward.
+
+## Minimum Viable Implementation
+
+The smallest useful readiness layer is a record plus a replayable fixture suite. The record names the target, the workload family, the authority envelope, the current lifecycle state, the evidence used, the residuals that survived, the routes that are allowed or blocked, the fallback path, and the expiry condition.
+
+The existing `readiness_gate_record` schema checks that those fields are present. Passing schema validation does not mean a module is ready. It means the readiness decision has enough shape for reviewers, routers, benchmark ratchets, and replacement transactions to inspect what was claimed and what remained unresolved.
+
+The older readiness/residual gate harness checks cross-record consistency across costed routes, readiness gates, and replacement transactions. It exercises canary and default scenarios, residual custody, quarantine, expired evidence, fallback paths, and rollback-readiness links. The newer readiness lifecycle probe focuses on the state machine itself: six valid synthetic lifecycle moves and twelve invalid controls for non-forward jumps, missing evidence, missing residual escrow, unsafe default readiness, quarantine leakage, missing terminal records, retired-state reuse, missing non-claims, and support-promotion overclaim.
+
+`AsiStackProofs.ReadinessGates` models the same boundary with finite predicates and a fixture-summary bridge. It checks promoted decisions, quarantine routing, stale-gate reuse, default readiness, supersession, retirement, retired-state closure, and the lifecycle-probe summary. That is useful record discipline, not deployed readiness behavior. It does not prove benchmark quality, residual-ledger storage, lifecycle execution, live routing enforcement, terminal-state governance, MoECOT replay, or support-state promotion.
+
+## Beyond the State of the Art
+
+Readiness is the lifecycle control plane for every routable or replaceable capability in the stack. It is the mechanism that lets the architecture improve without confusing novelty, benchmark wins, or source-reported success with permission for ordinary use.
+
+Readiness becomes a lifecycle state with evidence, residuals, expiry, allowed routes, blocked routes, and rollback consequences. Draft, shadow, canary, qualified, default, diagnostic-only, quarantined, retired, and superseded states are scoped to field identity, workload family, freshness window, authority envelope, allowed routes, blocked routes, diagnostic permissions, fallback path, and expiry.
+
+Gate evidence, floor evidence, frontier evidence, regression results, inherited residuals, promotion blockers, closure conditions, review refs, and next review triggers remain separate so a module can improve on the frontier without losing the floor. Routers consume ordinary-route permissions, benchmark ratchets update frontier and floor evidence, SCF transactions use readiness records for replacement and rollback, and artifact graphs preserve inherited residuals through rename, wrapper, split, merge, retirement, or retraining.
+
+Unresolved failures become residual escrow, recurring residuals become benchmark candidates, passed canaries become scoped qualification, stale qualifications expire, and unsafe or misleading modules remain available for diagnostic replay without staying in ordinary routing. Premature promotion, residual hiding, untracked regression after merge, stale-gate reuse, over-quarantine, and gate laundering become blocked transitions, rollback transactions, quarantine routes, tribunal issues, or explicit residual records.
+
+This readiness lifecycle is still a design target. Readiness remains at `argument` until promotion, demotion, quarantine, escrow, stale-gate replay, and reroute traces show that unready capability is contained and that residual burden follows the route instead of disappearing from the ledger.
+
+## Post-v2.1 readiness calibration
+
+The governed program shows why “safe” and “ready” cannot be synonyms: it
+eliminated registered unsafe releases but released only 2/36 useful candidates
+and missed the rollback threshold. The routing program adds a second
+calibration warning. A learned policy reached 59/60 correct routes and
+activated fallback, abstention, and clarification, yet every one of 360
+substantive generated candidates was wrong. A readiness gate must therefore
+separate route correctness, useful non-answer behavior, substantive answer
+utility, and rollback completeness. `RD-02` closes at its narrow activation
+criterion; the broader routing and production-readiness residuals remain.
+
+The post-v2.3 residual-pressure campaign failed one layer earlier. Across six
+scenarios and four pressure conditions, zero of 24 calls emitted a parseable
+final decision, route, or reopen trigger; residual identifiers appeared only
+inside capped reasoning text (23 unclosed blocks and one closed block without a
+final object). A readiness gate must not treat that
+hidden fragment as public escrow or quarantine routing. The campaign remains a
+`no_change` record, and pressure robustness is not estimable until a
+prospectively specified replication produces admissible final decisions.
+
+| Source | Title | Use and boundary |
+|---|---|---|
+| `ext_dont_hallucinate_abstain_2024` | Don’t Hallucinate, Abstain | Selective-prediction comparator for abstention utility and calibration; not evidence that the local router is calibrated beyond its frozen workload. |
+
+## Summary
+
+Readiness is the stack's refusal to confuse availability with qualification. Gates decide when a module can move from experiment to route, residual escrow keeps unsolved cases alive, and quarantine turns failure into governed learning rather than hidden state.
+
+Readiness turns modular intelligence into a lifecycle discipline: promote only with evidence, preserve the floor, expose the tail, and keep unsafe or stale routes out of ordinary execution. A concrete runtime reference must then record enough detail for this routing and readiness discipline to become operational evidence.
+
+That runtime reference must publish the same evidence shape the gate expects: route decisions, specialist states, replay links, benchmark or regression records, residuals, and promotion blockers.
+
+A readiness decision should still be understandable after the module changes names. If evidence, residuals, scope, expiry, and quarantine permissions do not survive that change, the lifecycle layer is not yet governing promotion.
+
+## Handoff
+
+Readiness gates define what evidence a module owes before ordinary routing, and the Routing Heads chapter now carries the MoECOT runtime crosswalk for the records a concrete orchestrator would have to emit. Personal Compute Hives and Federated Edge Intelligence moves the next concern from runtime packet shape to substrate: where route decisions, specialist work, ledgers, replay hooks, residuals, and approvals may run without confusing reachable devices for authorized devices.

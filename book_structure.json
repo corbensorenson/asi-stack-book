@@ -54,7 +54,8 @@
             "talos",
             "moecot",
             "scf",
-            "ext_drexler_cais_2019"
+            "ext_drexler_cais_2019",
+            "ext_embedded_agency_2019"
           ],
           "source_queue": {
             "primary": [
@@ -174,6 +175,17 @@
                 "Oxford University Research Archive primary PDF, Drexler (2019), Sections 12.7-12.10, PDF pp. 77-78"
               ],
               "passage_review_note": "Reviewed primary-report passages on service composition, R&D automation, and structural safety framing. It is used as prior-art context only and does not promote the stack claim."
+            },
+            {
+              "source_id": "ext_embedded_agency_2019",
+              "mapped_support": "Provides a foundations-level objection to a clean agent/environment boundary and motivates explicit ownership of internal models, subcomponents, and self-reference limits.",
+              "limits": "The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency.",
+              "passage_refs": [
+                "arXiv:1902.09469v1, Abstract",
+                "Demski and Garrabrant (2018/2019), Embedded Agency full-text sections on embedded world-models, robust delegation, and subsystem alignment"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "mechanism": [
@@ -1195,7 +1207,8 @@
             "bugbrain_project",
             "corbens_trainer_project",
             "corbens_best_model_possible_project",
-            "ext_unlearning_benchmarks_weak_2024"
+            "ext_unlearning_benchmarks_weak_2024",
+            "ext_embedded_agency_2019"
           ],
           "source_queue": {
             "primary": [
@@ -1372,6 +1385,17 @@
               ],
               "passage_review_note": "Reviewed the source note's primary-paper summary for optimistic scores under benign changes, target ambiguity, query overfitting, hidden retained effects, and residual accessibility.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_embedded_agency_2019",
+              "mapped_support": "Motivates separating finite record-level guarantees from claims about the complete embedded agent, environment, self-model, or future descendants.",
+              "limits": "The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency.",
+              "passage_refs": [
+                "arXiv:1902.09469v1, Abstract",
+                "Demski and Garrabrant (2018/2019), Embedded Agency full-text sections on embedded world-models, robust delegation, and subsystem alignment"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "mechanism": [
@@ -1509,7 +1533,8 @@
             "ext_weak_to_strong_generalization_2023",
             "ext_scalable_oversight_weak_llms_2024",
             "ext_ai_safety_debate_2018",
-            "verification_bandwidth"
+            "verification_bandwidth",
+            "ext_monitorbench_2026"
           ],
           "source_queue": {
             "primary": [
@@ -1566,6 +1591,18 @@
               ],
               "passage_review_note": "Reviewed local source note and its raw-cache-backed conceptual framework; no contradiction-rate test, supervisor audit, or oversight workload was run.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_monitorbench_2026",
+              "mapped_support": "Provides a held-out, multi-task monitorability benchmark and adversarial stress-test design showing that visible reasoning can become less monitorable under pressure and that stronger capability does not imply better monitorability.",
+              "limits": "Reported benchmark associations do not establish causal faithfulness, local oversight quality, model safety, or a general law across future systems.",
+              "passage_refs": [
+                "arXiv:2603.28590v2, Abstract and Introduction, HTML lines 105-120",
+                "arXiv:2603.28590v2, benchmark and stress-test design sections",
+                "arXiv:2603.28590v2, limitations section"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "problem": "A system can ask a weaker human or model to judge a stronger system without recording whether the supervisor can see the relevant evidence, whether the protocol is vulnerable to persuasion or correlated failure, what direct-review baseline exists, or who escalates an unresolved result.",
@@ -1890,7 +1927,8 @@
             "coherence_exchange",
             "spinoza",
             "field_of_god_ai_constitution",
-            "ext_drexler_cais_2019"
+            "ext_drexler_cais_2019",
+            "ext_embedded_agency_2019"
           ],
           "source_queue": {
             "primary": [
@@ -2205,6 +2243,17 @@
                 "Oxford University Research Archive primary PDF, Drexler (2019), Sections 13.3-13.5, PDF pp. 81-82"
               ],
               "passage_review_note": "Reviewed primary-report passages on structure-based control affordances and independent checking. It does not provide a constitutional predicate or correction-right implementation."
+            },
+            {
+              "source_id": "ext_embedded_agency_2019",
+              "mapped_support": "Shows why corrigibility and alignment cannot assume an external, fully informed agent model when the system and its modifiable parts are embedded in the governed world.",
+              "limits": "The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency.",
+              "passage_refs": [
+                "arXiv:1902.09469v1, Abstract",
+                "Demski and Garrabrant (2018/2019), Embedded Agency full-text sections on embedded world-models, robust delegation, and subsystem alignment"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ]
         },
@@ -3577,7 +3626,8 @@
             "theseus_architecture_gate",
             "ext_drexler_cais_2019",
             "ext_darwin_godel_machine_2025",
-            "ext_adas_2024"
+            "ext_adas_2024",
+            "ext_embedded_agency_2019"
           ],
           "source_queue": {
             "primary": [
@@ -3851,6 +3901,17 @@
                 "Oxford University Research Archive primary PDF, Drexler (2019), Sections 15.3-15.6, PDF pp. 86-88"
               ],
               "passage_review_note": "Reviewed primary-report passages on R&D automation and structured development. It is used to separate improvement capability from a product's authority to promote itself."
+            },
+            {
+              "source_id": "ext_embedded_agency_2019",
+              "mapped_support": "Grounds the boundary that a self-modifying system reasons about itself with models smaller than the world and may contain parts with divergent objectives.",
+              "limits": "The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency.",
+              "passage_refs": [
+                "arXiv:1902.09469v1, Abstract",
+                "Demski and Garrabrant (2018/2019), Embedded Agency full-text sections on embedded world-models, robust delegation, and subsystem alignment"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ]
         },
@@ -4462,7 +4523,8 @@
             "moecot",
             "planforge_compiler_arch",
             "coherence_exchange",
-            "tokenmana"
+            "tokenmana",
+            "ext_v_jepa_2_2025"
           ],
           "source_queue": {
             "primary": [
@@ -4730,6 +4792,17 @@
               ],
               "passage_review_note": "Reviewed source note only for MoECOT runtime-reference context: compact orchestration, specialist lanes, fail-closed control plane, ledgers, readiness gates, replay, benchmark artifacts, promotion blockers, residuals, and implementation-reference gaps; no runtime artifact, command, report, or benchmark result is promoted.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_v_jepa_2_2025",
+              "mapped_support": "Provides a concrete model-predictive-control comparator that scores candidate action sequences in learned representation space and replans from observations.",
+              "limits": "The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result.",
+              "passage_refs": [
+                "arXiv:2506.09985, Abstract and Sections 1-3, HTML lines 128-175",
+                "arXiv:2506.09985, planning results and limitations, HTML lines 368-396"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ]
         },
@@ -6658,7 +6731,8 @@
             "corbens_trainer_project",
             "corbens_best_model_possible_project",
             "ext_claw_swe_bench_2026",
-            "ext_txfs_2018"
+            "ext_txfs_2018",
+            "ext_faithfulness_information_flow_2026"
           ],
           "source_queue": {
             "primary": [
@@ -6857,6 +6931,18 @@
               ],
               "passage_review_note": "Reviewed the source note's primary USENIX summary for journaling-backed transactions, isolation, conflict handling, transaction bounds, Git/SQLite evaluation, and the gap between byte restoration and broader recovery.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_faithfulness_information_flow_2026",
+              "mapped_support": "Separates a plausible reasoning transcript from causal reliance by distinguishing sufficiency, completeness, and interventional necessity; this sharpens the artifact graph's private-reasoning, reported-rationale, action-trace, receipt, and authoritative-effect boundaries.",
+              "limits": "The paper's metrics and training interventions are model- and task-bounded; they do not make a chain of thought a receipt or prove local record-reality faithfulness.",
+              "passage_refs": [
+                "arXiv:2605.24286v1, Sections 1 and 3, HTML lines 76-95 and 109-139",
+                "arXiv:2605.24286v1, Sections 4 and 6.3, HTML lines 140-183 and 244-252",
+                "arXiv:2605.24286v1, Limitations, HTML lines 333-345"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "mechanism": [
@@ -10436,7 +10522,8 @@
             "ext_deepseek_r1_2025",
             "ext_s_grpo_2025",
             "ext_universal_transformer_2019",
-            "ext_dynamic_compute_recurrent_transformers_2026"
+            "ext_dynamic_compute_recurrent_transformers_2026",
+            "ext_faithfulness_information_flow_2026"
           ],
           "source_queue": {
             "primary": [
@@ -10494,6 +10581,17 @@
               ],
               "passage_review_note": "Reviewed primary arXiv metadata and abstract as recorded in the source note; no reasoning policy, reward, evaluator, or benchmark was reproduced.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_faithfulness_information_flow_2026",
+              "mapped_support": "Provides a causal-information-flow objection to treating longer or more plausible deliberation traces as faithful, and supplies sufficiency, completeness, and necessity as separate evaluation targets.",
+              "limits": "The reported interventions do not establish that any ASI Stack deliberation route is faithful, useful, or safe, and transcript inspection alone cannot establish necessity.",
+              "passage_refs": [
+                "arXiv:2605.24286v1, Sections 1 and 3, HTML lines 76-95 and 109-139",
+                "arXiv:2605.24286v1, Section 4, HTML lines 140-183"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "problem": "A system can spend additional inference on search, revisions, candidate aggregation, or verifier calls without a clear rule for which work merits that budget, what the verifier establishes, when to stop, or whether a resulting trace may influence planning or action.",
@@ -10543,15 +10641,60 @@
               "target": "A finite high-risk deliberation record with a requested execution handoff and no independent verifier routes to review rather than release to planning, without inferring evaluator correctness, reasoning quality, safety, model quality, or ASI.",
               "status": "implemented"
             },
-            {"tag": "lean:deliberation.budget_exhausted.escrows_residual", "module": "AsiStackProofs.Deliberation", "target": "An otherwise complete exhausted deliberation stops and escrows its residual.", "status": "implemented"},
-            {"tag": "lean:deliberation.complete_high_risk.reaches_planning", "module": "AsiStackProofs.Deliberation", "target": "A complete finite high-risk record reaches planning without execution authority.", "status": "implemented"},
-            {"tag": "lean:deliberation.missing_budget.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing budget declaration routes to review.", "status": "implemented"},
-            {"tag": "lean:deliberation.missing_search_mode.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing search-mode declaration routes to review.", "status": "implemented"},
-            {"tag": "lean:deliberation.missing_verifier_scope.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing verifier scope routes to review.", "status": "implemented"},
-            {"tag": "lean:deliberation.missing_candidate_history.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing candidate history routes to review.", "status": "implemented"},
-            {"tag": "lean:deliberation.missing_stop_condition.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing stop condition routes to review.", "status": "implemented"},
-            {"tag": "lean:deliberation.missing_residual_owner.requires_review", "module": "AsiStackProofs.Deliberation", "target": "Missing residual ownership routes to review.", "status": "implemented"},
-            {"tag": "lean:deliberation.trace_authority_laundering.requires_review", "module": "AsiStackProofs.Deliberation", "target": "An unseparated trace-authority claim routes to review.", "status": "implemented"}
+            {
+              "tag": "lean:deliberation.budget_exhausted.escrows_residual",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "An otherwise complete exhausted deliberation stops and escrows its residual.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:deliberation.complete_high_risk.reaches_planning",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "A complete finite high-risk record reaches planning without execution authority.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:deliberation.missing_budget.requires_review",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "Missing budget declaration routes to review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:deliberation.missing_search_mode.requires_review",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "Missing search-mode declaration routes to review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:deliberation.missing_verifier_scope.requires_review",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "Missing verifier scope routes to review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:deliberation.missing_candidate_history.requires_review",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "Missing candidate history routes to review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:deliberation.missing_stop_condition.requires_review",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "Missing stop condition routes to review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:deliberation.missing_residual_owner.requires_review",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "Missing residual ownership routes to review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:deliberation.trace_authority_laundering.requires_review",
+              "module": "AsiStackProofs.Deliberation",
+              "target": "An unseparated trace-authority claim routes to review.",
+              "status": "implemented"
+            }
           ],
           "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
@@ -11319,7 +11462,8 @@
             "theseus_circle_transfer",
             "ext_mamba_2023",
             "ext_universal_transformer_2019",
-            "ext_recurrent_transformer_2026"
+            "ext_recurrent_transformer_2026",
+            "ext_v_jepa_2_2025"
           ],
           "source_queue": {
             "primary": [
@@ -11602,6 +11746,17 @@
                 "sources/source_notes/ext_mamba_2023.md:29-46"
               ],
               "passage_review_note": "Reviewed public arXiv abstract/metadata and the local external-literature source note for selective state-space sequence modeling, hardware-aware recurrent-mode computation, source-reported throughput/scaling, and taxonomy separation from decoding tricks; no Mamba model, training run, serving comparison, governance route, or local baseline comparison is reproduced."
+            },
+            {
+              "source_id": "ext_v_jepa_2_2025",
+              "mapped_support": "Adds a concrete latent-prediction architecture family to the substrate adoption gate: action-free representation learning, an action-conditioned predictor, and explicit separation between structural design and capability evidence.",
+              "limits": "The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result.",
+              "passage_refs": [
+                "arXiv:2506.09985, Abstract and Sections 1-3, HTML lines 128-175",
+                "arXiv:2506.09985, planning results and limitations, HTML lines 368-396"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "draft_maturity": "v0.2 manuscript draft",
@@ -13363,13 +13518,48 @@
               "target": "A finite threshold-commitment record with a crossed scoped threshold and missing verified safeguards routes the affected release path to block rather than release, without inferring capability level, safeguard efficacy, safety, readiness, or ASI.",
               "status": "implemented"
             },
-            {"tag": "lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation", "module": "AsiStackProofs.CapabilityThresholds", "target": "Missing evaluation scope routes to re-evaluation.", "status": "implemented"},
-            {"tag": "lean:capability_thresholds.complete_crossed.reaches_readiness_review", "module": "AsiStackProofs.CapabilityThresholds", "target": "A complete crossed record reaches readiness review, not deployment.", "status": "implemented"},
-            {"tag": "lean:capability_thresholds.complete_non_crossing.reaches_readiness_review", "module": "AsiStackProofs.CapabilityThresholds", "target": "A complete non-crossing reaches readiness review without becoming general clearance.", "status": "implemented"},
-            {"tag": "lean:capability_thresholds.missing_baseline.requires_reevaluation", "module": "AsiStackProofs.CapabilityThresholds", "target": "Missing baseline routes to re-evaluation.", "status": "implemented"},
-            {"tag": "lean:capability_thresholds.missing_uncertainty.requires_reevaluation", "module": "AsiStackProofs.CapabilityThresholds", "target": "Missing uncertainty routes to re-evaluation.", "status": "implemented"},
-            {"tag": "lean:capability_thresholds.missing_residual_owner.requires_exception", "module": "AsiStackProofs.CapabilityThresholds", "target": "Missing residual custody routes to accountable exception.", "status": "implemented"},
-            {"tag": "lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release", "module": "AsiStackProofs.CapabilityThresholds", "target": "A crossed threshold without its required safeguard record blocks the affected release.", "status": "implemented"}
+            {
+              "tag": "lean:capability_thresholds.missing_evaluation_envelope.requires_reevaluation",
+              "module": "AsiStackProofs.CapabilityThresholds",
+              "target": "Missing evaluation scope routes to re-evaluation.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:capability_thresholds.complete_crossed.reaches_readiness_review",
+              "module": "AsiStackProofs.CapabilityThresholds",
+              "target": "A complete crossed record reaches readiness review, not deployment.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:capability_thresholds.complete_non_crossing.reaches_readiness_review",
+              "module": "AsiStackProofs.CapabilityThresholds",
+              "target": "A complete non-crossing reaches readiness review without becoming general clearance.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:capability_thresholds.missing_baseline.requires_reevaluation",
+              "module": "AsiStackProofs.CapabilityThresholds",
+              "target": "Missing baseline routes to re-evaluation.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:capability_thresholds.missing_uncertainty.requires_reevaluation",
+              "module": "AsiStackProofs.CapabilityThresholds",
+              "target": "Missing uncertainty routes to re-evaluation.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:capability_thresholds.missing_residual_owner.requires_exception",
+              "module": "AsiStackProofs.CapabilityThresholds",
+              "target": "Missing residual custody routes to accountable exception.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:capability_thresholds.crossed.missing_safeguard_record.blocks_release",
+              "module": "AsiStackProofs.CapabilityThresholds",
+              "target": "A crossed threshold without its required safeguard record blocks the affected release.",
+              "status": "implemented"
+            }
           ],
           "draft_maturity": "v0.2 depth-leveled chapter",
           "open_evidence_gaps": [
@@ -13394,7 +13584,9 @@
             "ext_emergent_misalignment_reward_hacking_2025",
             "ext_inspect_ai_2024",
             "ext_agentdojo_2024",
-            "ext_owasp_agentic_top_10_2026"
+            "ext_owasp_agentic_top_10_2026",
+            "ext_faithfulness_information_flow_2026",
+            "ext_monitorbench_2026"
           ],
           "source_queue": {
             "primary": [
@@ -13444,6 +13636,30 @@
               ],
               "passage_review_note": "Reviewed primary-paper passages as recorded in the source note; no environment, model, or mitigation was reproduced.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_faithfulness_information_flow_2026",
+              "mapped_support": "Supplies trace/action inconsistency controls and the boundary that a transcript may correlate with an answer without being causally necessary, including a reward-hackable code-repair setting.",
+              "limits": "The study is not evidence that a local model sandbags or deceives, and its diagnostics have low-entropy and reference-model confounds.",
+              "passage_refs": [
+                "arXiv:2605.24286v1, Sections 3-4, HTML lines 109-183",
+                "arXiv:2605.24286v1, Section 6.3, HTML lines 244-252",
+                "arXiv:2605.24286v1, Limitations, HTML lines 333-345"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "ext_monitorbench_2026",
+              "mapped_support": "Adds a multi-task held-out monitorability benchmark and adversarial stress-test design, complementing causal trace/action inconsistency controls with cross-task monitor degradation evidence.",
+              "limits": "The reported benchmark relations do not prove causal trace faithfulness, local deception, evaluator quality, safety, or a general capability/monitorability law.",
+              "passage_refs": [
+                "arXiv:2603.28590v2, Abstract and Introduction, HTML lines 105-120",
+                "arXiv:2603.28590v2, benchmark and stress-test design sections",
+                "arXiv:2603.28590v2, limitations section"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "problem": "Evaluation, training, and deployment can select for behavior that looks good to the current observer without reliably measuring capability, intent, or future behavior.",
@@ -13487,16 +13703,55 @@
               "target": "A complete integrity packet reaches review, not promotion.",
               "status": "implemented"
             },
-            {"tag": "lean:adversarial_evaluation.integrity.missing_selection_context", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing selection context routes to repair.", "status": "implemented"},
-            {"tag": "lean:adversarial_evaluation.integrity.missing_reward_provenance", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing reward provenance routes to repair.", "status": "implemented"},
-            {"tag": "lean:adversarial_evaluation.integrity.missing_monitor_provenance", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing monitor provenance routes to repair.", "status": "implemented"},
-            {"tag": "lean:adversarial_evaluation.integrity.missing_independent_evaluation", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing independent evaluation blocks review.", "status": "implemented"},
-            {"tag": "lean:adversarial_evaluation.integrity.missing_cross_context_probe", "module": "AsiStackProofs.AdversarialEvaluation", "target": "Missing cross-context probe blocks review.", "status": "implemented"},
-            {"tag": "lean:adversarial_evaluation.integrity.unresolved_discrepancy", "module": "AsiStackProofs.AdversarialEvaluation", "target": "An unresolved integrity discrepancy routes to quarantine.", "status": "implemented"},
-            {"tag": "lean:adversarial_evaluation.integrity.intent_laundering", "module": "AsiStackProofs.AdversarialEvaluation", "target": "An observation cannot become an intent inference.", "status": "implemented"}
+            {
+              "tag": "lean:adversarial_evaluation.integrity.missing_selection_context",
+              "module": "AsiStackProofs.AdversarialEvaluation",
+              "target": "Missing selection context routes to repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:adversarial_evaluation.integrity.missing_reward_provenance",
+              "module": "AsiStackProofs.AdversarialEvaluation",
+              "target": "Missing reward provenance routes to repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:adversarial_evaluation.integrity.missing_monitor_provenance",
+              "module": "AsiStackProofs.AdversarialEvaluation",
+              "target": "Missing monitor provenance routes to repair.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:adversarial_evaluation.integrity.missing_independent_evaluation",
+              "module": "AsiStackProofs.AdversarialEvaluation",
+              "target": "Missing independent evaluation blocks review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:adversarial_evaluation.integrity.missing_cross_context_probe",
+              "module": "AsiStackProofs.AdversarialEvaluation",
+              "target": "Missing cross-context probe blocks review.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:adversarial_evaluation.integrity.unresolved_discrepancy",
+              "module": "AsiStackProofs.AdversarialEvaluation",
+              "target": "An unresolved integrity discrepancy routes to quarantine.",
+              "status": "implemented"
+            },
+            {
+              "tag": "lean:adversarial_evaluation.integrity.intent_laundering",
+              "module": "AsiStackProofs.AdversarialEvaluation",
+              "target": "An observation cannot become an intent inference.",
+              "status": "implemented"
+            }
           ],
           "draft_maturity": "v0.2 depth-leveled chapter",
-          "open_evidence_gaps": ["No deceptive model, detector, evaluator ensemble, or mitigation was run.", "The eight Lean routes and digest-bound fixture establish finite record routing only; they do not detect deception, establish sandbagging resistance, validate evaluators, infer intent or capability, or establish safety.", "Run the frozen benign cross-context campaign with an independently implemented evaluator before considering empirical support movement."]
+          "open_evidence_gaps": [
+            "No deceptive model, detector, evaluator ensemble, or mitigation was run.",
+            "The eight Lean routes and digest-bound fixture establish finite record routing only; they do not detect deception, establish sandbagging resistance, validate evaluators, infer intent or capability, or establish safety.",
+            "Run the frozen benign cross-context campaign with an independently implemented evaluator before considering empirical support movement."
+          ]
         },
         {
           "id": "safety-cases-and-structured-assurance",
@@ -13702,7 +13957,8 @@
             "ext_s_grpo_2025",
             "ext_longrlvr_2026",
             "ext_rlhf_limitations_2023",
-            "ext_muse_unlearning_2025"
+            "ext_muse_unlearning_2025",
+            "ext_faithfulness_information_flow_2026"
           ],
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
@@ -14070,6 +14326,17 @@
               ],
               "passage_review_note": "Reviewed the source note's primary ICLR summary for six-way owner/deployer evaluation, verbatim and knowledge memory, privacy, utility, scale, and repeated-request failure modes.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_faithfulness_information_flow_2026",
+              "mapped_support": "Shows that reward improvement can coexist with shortcut use and under-verbalized reward hacking, and tests update-time interventions that change information flow without changing rollout rewards.",
+              "limits": "The intervention results are bounded to the reported arithmetic, code-repair, and DAPO-Math settings; they do not validate local policy optimization or eliminate reward hacking.",
+              "passage_refs": [
+                "arXiv:2605.24286v1, Sections 5-6.3, HTML lines 184-252",
+                "arXiv:2605.24286v1, Limitations, HTML lines 333-345"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "mechanism": [
@@ -14253,7 +14520,8 @@
             "ext_muse_unlearning_2025",
             "ext_unlearning_benchmarks_weak_2024",
             "ext_openunlearning_2025",
-            "qcsa_whitepaper"
+            "qcsa_whitepaper",
+            "ext_v_jepa_2_2025"
           ],
           "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record.",
           "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
@@ -14342,6 +14610,17 @@
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1255-1269"
               ],
               "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
+            },
+            {
+              "source_id": "ext_v_jepa_2_2025",
+              "mapped_support": "Shows why world-model data lineage must separate action-free pretraining, action-conditioned adaptation, predictor versions, and error/residual records.",
+              "limits": "The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result.",
+              "passage_refs": [
+                "arXiv:2506.09985, Abstract and Sections 1-3, HTML lines 128-175",
+                "arXiv:2506.09985, planning results and limitations, HTML lines 368-396"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "mechanism": [
@@ -14441,40 +14720,76 @@
               "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.complete_reaches_evidence_review", "module": "AsiStackProofs.DataEngines", "target": "A complete finite state record reaches evidence review, not promotion.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.complete_reaches_evidence_review",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "A complete finite state record reaches evidence review, not promotion.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.missing_optimizer_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing optimizer state requires inventory repair.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.missing_optimizer_requires_repair",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing optimizer state requires inventory repair.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.missing_scheduler_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing scheduler state requires inventory repair.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.missing_scheduler_requires_repair",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing scheduler state requires inventory repair.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.missing_rng_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing RNG state requires inventory repair.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.missing_rng_requires_repair",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing RNG state requires inventory repair.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.missing_cache_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing cache state requires inventory repair.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.missing_cache_requires_repair",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing cache state requires inventory repair.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.missing_backup_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing backup state requires inventory repair.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.missing_backup_requires_repair",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing backup state requires inventory repair.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.missing_descendant_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing descendant state requires inventory repair.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.missing_descendant_requires_repair",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing descendant state requires inventory repair.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.missing_checkpoint_authority_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "Missing prospective checkpoint authority requires repair.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.missing_checkpoint_authority_requires_repair",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Missing prospective checkpoint authority requires repair.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.full_state.rollback_mismatch_requires_repair", "module": "AsiStackProofs.DataEngines", "target": "A rollback mismatch requires repair.", "status": "implemented"
+              "tag": "lean:data_engines.full_state.rollback_mismatch_requires_repair",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "A rollback mismatch requires repair.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.unlearning.behavior_cannot_launder_influence", "module": "AsiStackProofs.DataEngines", "target": "Behavioral change without influence evidence cannot support an influence claim.", "status": "implemented"
+              "tag": "lean:data_engines.unlearning.behavior_cannot_launder_influence",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Behavioral change without influence evidence cannot support an influence claim.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.unlearning.behavior_cannot_launder_privacy", "module": "AsiStackProofs.DataEngines", "target": "Behavioral change without privacy evidence cannot support a privacy-erasure claim.", "status": "implemented"
+              "tag": "lean:data_engines.unlearning.behavior_cannot_launder_privacy",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Behavioral change without privacy evidence cannot support a privacy-erasure claim.",
+              "status": "implemented"
             },
             {
-              "tag": "lean:data_engines.unlearning.lineage_cannot_launder_storage", "module": "AsiStackProofs.DataEngines", "target": "Lineage propagation without verified erasure cannot support a storage-erasure claim.", "status": "implemented"
+              "tag": "lean:data_engines.unlearning.lineage_cannot_launder_storage",
+              "module": "AsiStackProofs.DataEngines",
+              "target": "Lineage propagation without verified erasure cannot support a storage-erasure claim.",
+              "status": "implemented"
             }
           ],
           "draft_maturity": "v0.2 chapter draft",
@@ -15072,7 +15387,9 @@
             "corbens_best_model_possible_project",
             "ext_drexler_cais_2019",
             "ext_adas_2024",
-            "qcsa_whitepaper"
+            "qcsa_whitepaper",
+            "ext_v_jepa_2_2025",
+            "ext_embedded_agency_2019"
           ],
           "source_queue": {
             "primary": [
@@ -15485,6 +15802,28 @@
                 "sources/raw/question_compiled_semantic_addressing_whitepaper.md:1557-1586"
               ],
               "passage_review_note": "Reviewed the complete local Corben-authored QCSA whitepaper for the named chapter interface, formal contract, failure modes, baselines, evaluation gates, and non-claims; the mapping remains design rationale at argument support."
+            },
+            {
+              "source_id": "ext_v_jepa_2_2025",
+              "mapped_support": "Supplies the external predictive-state-to-planning interface for a governed world-model lane while preserving camera, search-cost, representation, and sim-to-real residuals.",
+              "limits": "The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result.",
+              "passage_refs": [
+                "arXiv:2506.09985, Abstract and Sections 1-3, HTML lines 128-175",
+                "arXiv:2506.09985, planning results and limitations, HTML lines 368-396"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "ext_embedded_agency_2019",
+              "mapped_support": "Supplies the open-world foundations residual beneath the finite reference trace: the stack is inside the world it records and cannot treat its own ledger as an external omniscient model.",
+              "limits": "The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency.",
+              "passage_refs": [
+                "arXiv:1902.09469v1, Abstract",
+                "Demski and Garrabrant (2018/2019), Embedded Agency full-text sections on embedded world-models, robust delegation, and subsystem alignment"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
             }
           ],
           "mechanism": [

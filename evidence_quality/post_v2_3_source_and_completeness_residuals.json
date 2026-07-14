@@ -1,0 +1,1036 @@
+{
+  "schema_version": "asi_stack.post_v2_3_source_completeness_audit.v1",
+  "snapshot_date": "2026-07-14",
+  "roadmap": "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md#p2--selective-external-anchoring-and-completeness-residuals",
+  "status": "completed",
+  "active_chapter_count": 54,
+  "source_count": 284,
+  "ten_chapter_audit": [
+    {
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "distinct_claim": "A scoped oversight protocol may inform a bounded decision only when access, capability envelopes, baseline, outcome audit, correlation, residuals, and accountable escalation are explicit.",
+      "strongest_primary_comparator": "ext_scalable_oversight_weak_llms_2024",
+      "assigned_external_source_ids": [
+        "ext_weak_to_strong_generalization_2023",
+        "ext_scalable_oversight_weak_llms_2024",
+        "ext_ai_safety_debate_2018",
+        "ext_monitorbench_2026"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_ai_safety_debate_2018",
+        "ext_monitorbench_2026",
+        "ext_scalable_oversight_weak_llms_2024",
+        "ext_weak_to_strong_generalization_2023"
+      ],
+      "passage_reviews": {
+        "ext_monitorbench_2026": [
+          "arXiv:2603.28590v2, Abstract and Introduction, HTML lines 105-120",
+          "arXiv:2603.28590v2, benchmark and stress-test design sections",
+          "arXiv:2603.28590v2, limitations section"
+        ]
+      },
+      "strongest_omitted_or_weak_neighbor": "Monitorability under adversarial pressure and capability scaling was weakly treated.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "insert",
+      "accepted_source_ids": [
+        "ext_monitorbench_2026"
+      ],
+      "permitted_changes": [
+        "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
+        "editions/reader_manuscript/v2_1/chapters/scalable-oversight-and-adversarial-ai-control.qmd",
+        "sources/source_inventory.json",
+        "appendices/A_source_matrix.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/H_external_sources.qmd",
+        "docs/book_outline.md"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "distinct_claim": "Weight custody binds identity, lineage, encryption, key release, attestation, authorized environment, release scope, revocation, and irreversible disclosure.",
+      "strongest_primary_comparator": "ext_rand_model_weight_security_2024",
+      "assigned_external_source_ids": [
+        "ext_rand_model_weight_security_2024",
+        "ext_nist_confidential_computing_2026",
+        "ext_nvidia_confidential_model_lifecycle_2026",
+        "ext_provable_model_weight_release_2025",
+        "ext_in_toto_2019"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_in_toto_2019",
+        "ext_nist_confidential_computing_2026",
+        "ext_nvidia_confidential_model_lifecycle_2026",
+        "ext_provable_model_weight_release_2025",
+        "ext_rand_model_weight_security_2024"
+      ],
+      "passage_reviews": {},
+      "strongest_omitted_or_weak_neighbor": "NIST COSAiS control overlays are current but still discussion-draft material and do not beat the assigned custody comparators.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "watch",
+      "accepted_source_ids": [],
+      "permitted_changes": [
+        "audit/disposition records only; no prose or manifest mutation"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "distinct_claim": "A versioned AI supply-chain graph binds model, data, code, build/training, signer, supplier, advisory, derivative, release, revocation, and disposal state.",
+      "strongest_primary_comparator": "ext_slsa_build_track_1_2",
+      "assigned_external_source_ids": [
+        "ext_nist_cscrm_2022",
+        "ext_slsa_build_track_1_2",
+        "ext_openssf_model_signing_spec_2025",
+        "ext_spdx_ai_profile_3_0_1",
+        "ext_w3c_prov_o_2013",
+        "ext_mlcommons_croissant_1_1_2026",
+        "ext_in_toto_2019",
+        "ext_owasp_agentic_top_10_2026"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_in_toto_2019",
+        "ext_mlcommons_croissant_1_1_2026",
+        "ext_nist_cscrm_2022",
+        "ext_openssf_model_signing_spec_2025",
+        "ext_owasp_agentic_top_10_2026",
+        "ext_slsa_build_track_1_2",
+        "ext_spdx_ai_profile_3_0_1",
+        "ext_w3c_prov_o_2013"
+      ],
+      "passage_reviews": {},
+      "strongest_omitted_or_weak_neighbor": "NIST COSAiS and SP 1326 add current overlay/due-diligence framing but no stronger finalized mechanism than the existing SLSA, in-toto, SPDX AI, Croissant, signing, and C-SCRM set.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "already_covered",
+      "accepted_source_ids": [],
+      "permitted_changes": [
+        "audit/disposition records only; no prose or manifest mutation"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "open-ended-improvement-engines",
+      "distinct_claim": "Open-ended generation remains a bounded campaign whose artifacts cannot widen authority or enter live capability fields without independent qualification.",
+      "strongest_primary_comparator": "ext_darwin_godel_machine_2025",
+      "assigned_external_source_ids": [
+        "ext_poet_2019",
+        "ext_funsearch_2024",
+        "ext_voyager_2023",
+        "ext_darwin_godel_machine_2025",
+        "ext_adas_2024"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_adas_2024",
+        "ext_darwin_godel_machine_2025",
+        "ext_funsearch_2024",
+        "ext_poet_2019",
+        "ext_voyager_2023"
+      ],
+      "passage_reviews": {},
+      "strongest_omitted_or_weak_neighbor": "Newer discovery systems were screened, but none changes the existing POET, Voyager, FunSearch, ADAS, and Darwin-Godel boundary enough to justify another citation.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "already_covered",
+      "accepted_source_ids": [],
+      "permitted_changes": [
+        "audit/disposition records only; no prose or manifest mutation"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "distinct_claim": "Cross-stack dispatch requires versioned protocol, identity, delegated authority, credential, audience, expiry, budget, receipt, dispute, revocation, and residual records.",
+      "strongest_primary_comparator": "ext_mcp_protocol_2025_11_25",
+      "assigned_external_source_ids": [
+        "ext_mcp_protocol_2025_11_25",
+        "ext_a2a_protocol_1_0_0",
+        "ext_w3c_did_core_1_0_2022",
+        "ext_w3c_vc_data_model_2_0_2025",
+        "ext_interledger_protocol_v4",
+        "ext_owasp_agentic_top_10_2026"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_a2a_protocol_1_0_0",
+        "ext_interledger_protocol_v4",
+        "ext_mcp_protocol_2025_11_25",
+        "ext_owasp_agentic_top_10_2026",
+        "ext_w3c_did_core_1_0_2022",
+        "ext_w3c_vc_data_model_2_0_2025"
+      ],
+      "passage_reviews": {},
+      "strongest_omitted_or_weak_neighbor": "No omitted current protocol changes the existing MCP, A2A, DID, VC, Interledger, and agentic-security division of responsibility.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "already_covered",
+      "accepted_source_ids": [],
+      "permitted_changes": [
+        "audit/disposition records only; no prose or manifest mutation"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "distinct_claim": "Extra inference is a bounded campaign with verifier, budget, stop, candidate, cost, residual, and handoff records; it does not create correctness or authority.",
+      "strongest_primary_comparator": "ext_test_time_compute_scaling_2024",
+      "assigned_external_source_ids": [
+        "ext_tree_of_thoughts_2023",
+        "ext_test_time_compute_scaling_2024",
+        "ext_deepseek_r1_2025",
+        "ext_s_grpo_2025",
+        "ext_universal_transformer_2019",
+        "ext_dynamic_compute_recurrent_transformers_2026",
+        "ext_faithfulness_information_flow_2026"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_deepseek_r1_2025",
+        "ext_dynamic_compute_recurrent_transformers_2026",
+        "ext_faithfulness_information_flow_2026",
+        "ext_s_grpo_2025",
+        "ext_test_time_compute_scaling_2024",
+        "ext_tree_of_thoughts_2023",
+        "ext_universal_transformer_2019"
+      ],
+      "passage_reviews": {
+        "ext_faithfulness_information_flow_2026": [
+          "arXiv:2605.24286v1, Sections 1 and 3, HTML lines 76-95 and 109-139",
+          "arXiv:2605.24286v1, Section 4, HTML lines 140-183"
+        ]
+      },
+      "strongest_omitted_or_weak_neighbor": "Causal faithfulness of the visible reasoning trace was only a prose caution, not an owned evaluation gate.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "insert",
+      "accepted_source_ids": [
+        "ext_faithfulness_information_flow_2026"
+      ],
+      "permitted_changes": [
+        "chapters/governed-deliberation-and-test-time-scaling.qmd",
+        "editions/reader_manuscript/v2_1/chapters/governed-deliberation-and-test-time-scaling.qmd",
+        "sources/source_inventory.json",
+        "appendices/A_source_matrix.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/H_external_sources.qmd",
+        "docs/book_outline.md"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "capability-thresholds-and-deployment-commitments",
+      "distinct_claim": "Capability thresholds are versioned commitments with domain, threat, elicitation/access, uncertainty, safeguards, exceptions, residuals, and release effects.",
+      "strongest_primary_comparator": "ext_metr_time_horizons_2025",
+      "assigned_external_source_ids": [
+        "ext_metr_time_horizons_2025",
+        "ext_anthropic_rsp_2026",
+        "ext_openai_preparedness_framework_2025",
+        "ext_inspect_ai_2024"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_anthropic_rsp_2026",
+        "ext_inspect_ai_2024",
+        "ext_metr_time_horizons_2025",
+        "ext_openai_preparedness_framework_2025"
+      ],
+      "passage_reviews": {},
+      "strongest_omitted_or_weak_neighbor": "Current frontier policies and Inspect already cover the strongest operational neighbor; broader policy catalogs would add count rather than a new decision boundary.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "already_covered",
+      "accepted_source_ids": [],
+      "permitted_changes": [
+        "audit/disposition records only; no prose or manifest mutation"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "distinct_claim": "Evaluation observations are context-bound evidence whose monitor, reward, selection, cross-context, and interference conditions must remain visible.",
+      "strongest_primary_comparator": "ext_alignment_faking_2024",
+      "assigned_external_source_ids": [
+        "ext_alignment_faking_2024",
+        "ext_ai_sandbagging_2024",
+        "ext_emergent_misalignment_reward_hacking_2025",
+        "ext_inspect_ai_2024",
+        "ext_agentdojo_2024",
+        "ext_owasp_agentic_top_10_2026",
+        "ext_faithfulness_information_flow_2026",
+        "ext_monitorbench_2026"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_agentdojo_2024",
+        "ext_ai_sandbagging_2024",
+        "ext_alignment_faking_2024",
+        "ext_emergent_misalignment_reward_hacking_2025",
+        "ext_faithfulness_information_flow_2026",
+        "ext_inspect_ai_2024",
+        "ext_monitorbench_2026",
+        "ext_owasp_agentic_top_10_2026"
+      ],
+      "passage_reviews": {
+        "ext_faithfulness_information_flow_2026": [
+          "arXiv:2605.24286v1, Sections 3-4, HTML lines 109-183",
+          "arXiv:2605.24286v1, Section 6.3, HTML lines 244-252",
+          "arXiv:2605.24286v1, Limitations, HTML lines 333-345"
+        ],
+        "ext_monitorbench_2026": [
+          "arXiv:2603.28590v2, Abstract and Introduction, HTML lines 105-120",
+          "arXiv:2603.28590v2, benchmark and stress-test design sections",
+          "arXiv:2603.28590v2, limitations section"
+        ]
+      },
+      "strongest_omitted_or_weak_neighbor": "Trace/action causal inconsistency and multi-task monitorability stress testing were missing as explicit evidence-design surfaces.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "insert",
+      "accepted_source_ids": [
+        "ext_faithfulness_information_flow_2026",
+        "ext_monitorbench_2026"
+      ],
+      "permitted_changes": [
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+        "editions/reader_manuscript/v2_1/chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+        "sources/source_inventory.json",
+        "appendices/A_source_matrix.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/H_external_sources.qmd",
+        "docs/book_outline.md"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "safety-cases-and-structured-assurance",
+      "distinct_claim": "A safety case is a versioned graph of claims, strategies, evidence, assumptions, defeaters, hazards, context, acceptance criteria, authority, and residual ownership.",
+      "strongest_primary_comparator": "ext_aisi_safety_cases_2024",
+      "assigned_external_source_ids": [
+        "ext_gsn_community_standard_2011",
+        "ext_evaluations_safety_cases_scheming_2024",
+        "ext_aisi_safety_cases_2024"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_aisi_safety_cases_2024",
+        "ext_evaluations_safety_cases_scheming_2024",
+        "ext_gsn_community_standard_2011"
+      ],
+      "passage_reviews": {},
+      "strongest_omitted_or_weak_neighbor": "No current primary neighbor materially improves the existing GSN, AISI, and scheming-evaluation safety-case boundary without duplicating the chapter.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "already_covered",
+      "accepted_source_ids": [],
+      "permitted_changes": [
+        "audit/disposition records only; no prose or manifest mutation"
+      ],
+      "support_state_effect": "none"
+    },
+    {
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "distinct_claim": "Learning inputs and all update/deletion state remain versioned, provenance-bound artifacts with separate admission, quarantine, retention, replay, deletion, and promotion authority.",
+      "strongest_primary_comparator": "ext_openunlearning_2025",
+      "assigned_external_source_ids": [
+        "ext_bourtoule_machine_unlearning_2021",
+        "ext_shumailov_model_collapse_2023",
+        "ext_gerstgrasser_data_accumulation_2024",
+        "ext_w3c_prov_o_2013",
+        "ext_mlcommons_croissant_1_1_2026",
+        "ext_muse_unlearning_2025",
+        "ext_unlearning_benchmarks_weak_2024",
+        "ext_openunlearning_2025",
+        "ext_v_jepa_2_2025"
+      ],
+      "prose_used_external_source_ids": [
+        "ext_bourtoule_machine_unlearning_2021",
+        "ext_gerstgrasser_data_accumulation_2024",
+        "ext_mlcommons_croissant_1_1_2026",
+        "ext_muse_unlearning_2025",
+        "ext_openunlearning_2025",
+        "ext_shumailov_model_collapse_2023",
+        "ext_unlearning_benchmarks_weak_2024",
+        "ext_v_jepa_2_2025",
+        "ext_w3c_prov_o_2013"
+      ],
+      "passage_reviews": {
+        "ext_v_jepa_2_2025": [
+          "arXiv:2506.09985, Abstract and Sections 1-3, HTML lines 128-175",
+          "arXiv:2506.09985, planning results and limitations, HTML lines 368-396"
+        ]
+      },
+      "strongest_omitted_or_weak_neighbor": "Predictive encoders and action-conditioned world-model predictors added a distinct data/version/error lineage not owned by the existing unlearning sources.",
+      "value_test": "accepted additions change a boundary, objection, mechanism, or evidence design; all other candidates are terminally dispositioned without count padding",
+      "disposition": "insert",
+      "accepted_source_ids": [
+        "ext_v_jepa_2_2025"
+      ],
+      "permitted_changes": [
+        "chapters/data-engines-continual-learning-and-unlearning.qmd",
+        "editions/reader_manuscript/v2_1/chapters/data-engines-continual-learning-and-unlearning.qmd",
+        "sources/source_inventory.json",
+        "appendices/A_source_matrix.qmd",
+        "appendices/C_claim_evidence_matrix.qmd",
+        "appendices/H_external_sources.qmd",
+        "docs/book_outline.md"
+      ],
+      "support_state_effect": "none"
+    }
+  ],
+  "source_decisions": [
+    {
+      "source_id": "ext_faithfulness_information_flow_2026",
+      "decision": "insert",
+      "reason": "Changes the trace/action evidence design and authoritative-receipt boundary.",
+      "passage_review": "Abstract; Sections 1, 3, 4, 6.3, and Limitations reviewed."
+    },
+    {
+      "source_id": "ext_monitorbench_2026",
+      "decision": "insert",
+      "reason": "Adds a distinct multi-task adversarial monitorability benchmark design.",
+      "passage_review": "Abstract, introduction, design, stress tests, results, and limitations reviewed."
+    },
+    {
+      "source_id": "ext_v_jepa_2_2025",
+      "decision": "insert",
+      "reason": "Adds a concrete predictive-state and MPC interface plus explicit adoption residuals.",
+      "passage_review": "Abstract, architecture, planning, results, and limitations reviewed."
+    },
+    {
+      "source_id": "ext_embedded_agency_2019",
+      "decision": "insert",
+      "reason": "Adds the missing foundations boundary between finite records and an embedded agent/world.",
+      "passage_review": "Primary abstract and canonical authors' full-text sections reviewed."
+    },
+    {
+      "source_id": "watch_nist_cosais_2026",
+      "decision": "watch",
+      "url": "https://csrc.nist.gov/Projects/cosais",
+      "reason": "Official 2026 control-overlay work remains a discussion draft and is redundant with stronger finalized custody/supply-chain comparators."
+    },
+    {
+      "source_id": "watch_nist_sp_1326_2026",
+      "decision": "already_covered",
+      "url": "https://csrc.nist.gov/pubs/sp/1326/final",
+      "reason": "Due-diligence and provenance framing does not change the existing C-SCRM/SLSA/in-toto/SPDX/Croissant mechanism."
+    },
+    {
+      "source_id": "watch_preliminary_jepa_neighbors_2026",
+      "decision": "reject",
+      "reason": "Preliminary JEPA/energy-based neighbors do not beat V-JEPA 2 as the mature empirical interface comparator for this pass."
+    }
+  ],
+  "crosscuts": {
+    "reasoning_trace_faithfulness": {
+      "disposition": "insert",
+      "source_ids": [
+        "ext_faithfulness_information_flow_2026",
+        "ext_monitorbench_2026"
+      ],
+      "owners": [
+        "artifact-graphs-audit-logs-and-replay",
+        "adversarial-evaluation-sandbagging-and-training-time-deception",
+        "governed-deliberation-and-test-time-scaling",
+        "policy-optimization-and-learning-from-feedback",
+        "scalable-oversight-and-adversarial-ai-control"
+      ]
+    },
+    "world_models_jepa_energy_based": {
+      "disposition": "insert_existing_owners",
+      "source_ids": [
+        "ext_v_jepa_2_2025"
+      ],
+      "owners": [
+        "mathematical-and-search-substrates",
+        "planning-as-a-control-layer",
+        "data-engines-continual-learning-and-unlearning",
+        "integrated-reference-architecture"
+      ]
+    },
+    "foundations": {
+      "disposition": "insert_and_reconcile",
+      "source_ids": [
+        "ext_embedded_agency_2019",
+        "ext_drexler_cais_2019",
+        "ext_corrigibility_2015",
+        "ext_off_switch_game_2016",
+        "ext_goodhart_variants_2018"
+      ],
+      "owners": [
+        "asi-is-a-stack-not-a-model",
+        "constitutional-alignment-substrate",
+        "recursive-self-improvement-boundaries",
+        "evidence-states-and-claim-discipline",
+        "integrated-reference-architecture"
+      ]
+    }
+  },
+  "ownership_test": {
+    "new_chapter_warranted": false,
+    "decision": "keep_54_chapter_spine",
+    "interface_test": "reasoning traces, predictive state, and embedded-agent limits already have unambiguous consumer/owner interfaces",
+    "invariant_test": "each residual strengthens an existing invariant rather than creating a non-duplicative new one",
+    "artifact_test": "trace records, substrate adoption records, plan/world-model records, evidence cells, and reference traces already own the needed artifacts",
+    "failure_mode_test": "new chapters would duplicate trace/action mismatch, prediction error, sim-to-real, self-reference, and record-completeness failures",
+    "evidence_program_test": "existing chapter validators and future campaign lanes can host the tests",
+    "manifest_effect": "none"
+  },
+  "tier_2_disposition_audit": [
+    {
+      "id": "T2-01",
+      "title": "Output content provenance",
+      "owner_chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "disposition": "defer",
+      "rationale": "Internal provenance is mature, but no passage-reviewed primary C2PA/watermarking comparator was accepted in this bounded pass; retain as an event-driven source intake.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-02",
+      "title": "Interpretability as runtime control",
+      "owner_chapter_id": "evidence-states-and-claim-discipline",
+      "disposition": "narrow",
+      "rationale": "Interpretability remains evidence with bounded steering implications; the 2026 steering candidates were not passage-reviewed deeply enough to become runtime-control claims.",
+      "current_text_refs": [
+        "chapters/compact-generative-systems-and-residual-honesty.qmd:93",
+        "chapters/evidence-states-and-claim-discipline.qmd:20",
+        "chapters/evidence-states-and-claim-discipline.qmd:85",
+        "chapters/evidence-states-and-claim-discipline.qmd:162",
+        "chapters/evidence-states-and-claim-discipline.qmd:266"
+      ],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-03",
+      "title": "Memory consolidation lifecycle",
+      "owner_chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "disposition": "already_covered",
+      "rationale": "Consolidation, replay, proceduralization, and forgetting budgets already have owners and source-noted boundaries.",
+      "current_text_refs": [
+        "chapters/asi-is-a-stack-not-a-model.qmd:97",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:316",
+        "chapters/intent-to-execution-contracts.qmd:23",
+        "chapters/intent-to-execution-contracts.qmd:27",
+        "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd:220",
+        "chapters/procedural-memory-and-cognitive-loop-closure.qmd:307",
+        "chapters/resource-economics-and-token-budgets.qmd:84",
+        "chapters/routing-heads-and-specialist-cores.qmd:100",
+        "chapters/spinoza-verification-and-proof-carrying-claims.qmd:24",
+        "chapters/spinoza-verification-and-proof-carrying-claims.qmd:27",
+        "chapters/virtual-context-abi.qmd:23",
+        "chapters/virtual-context-abi.qmd:25"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-04",
+      "title": "Calibration selective prediction and abstention",
+      "owner_chapter_id": "claim-ledgers-and-belief-revision",
+      "disposition": "already_covered",
+      "rationale": "Calibration, abstention, uncertainty, and reject routes are already explicit across Claim Ledgers, Readiness, Routing, and Verification Bandwidth.",
+      "current_text_refs": [
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:273",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:99",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:199",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:213",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:231",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:263",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:265",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:287",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:205",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:473",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:637",
+        "chapters/evidence-states-and-claim-discipline.qmd:153"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-05",
+      "title": "Metacognition and capability self-knowledge",
+      "owner_chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "disposition": "defer",
+      "rationale": "The capability self-model remains an event-driven intake; current self-assessment mentions do not warrant a new unreviewed source claim.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-06",
+      "title": "Collusion between components against oversight",
+      "owner_chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "disposition": "already_covered",
+      "rationale": "Shared dependencies, coordinated failure, role separation, and randomized or independent observation routes are already owned.",
+      "current_text_refs": [
+        "chapters/scalable-oversight-and-adversarial-ai-control.qmd:383",
+        "chapters/spinoza-verification-and-proof-carrying-claims.qmd:364"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-07",
+      "title": "Oversight latency and fleet-scale monitoring",
+      "owner_chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "disposition": "defer",
+      "rationale": "Governance cost and latency are measured, but fleet-scale windows need a passage-reviewed deployment comparator before insertion.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-08",
+      "title": "Control tax as governance-tax comparator",
+      "owner_chapter_id": "resource-economics-and-token-budgets",
+      "disposition": "already_covered",
+      "rationale": "The local governance-tax lane and its zero-denominator boundary are explicit; a new citation is unnecessary until a matched natural-work outcome exists.",
+      "current_text_refs": [
+        "chapters/resource-economics-and-token-budgets.qmd:300",
+        "chapters/resource-economics-and-token-budgets.qmd:445",
+        "chapters/scalable-oversight-and-adversarial-ai-control.qmd:411"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-09",
+      "title": "Automated AI R&D acceleration thresholds",
+      "owner_chapter_id": "capability-thresholds-and-deployment-commitments",
+      "disposition": "already_covered",
+      "rationale": "CAIS R&D automation and threshold commitments are already positioned; no new metric is claimed.",
+      "current_text_refs": [
+        "chapters/asi-is-a-stack-not-a-model.qmd:80",
+        "chapters/asi-is-a-stack-not-a-model.qmd:86",
+        "chapters/asi-is-a-stack-not-a-model.qmd:280",
+        "chapters/integrated-reference-architecture.qmd:95",
+        "chapters/integrated-reference-architecture.qmd:491",
+        "chapters/recursive-self-improvement-boundaries.qmd:78",
+        "chapters/recursive-self-improvement-boundaries.qmd:301"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-10",
+      "title": "STPA-style systematic hazard analysis",
+      "owner_chapter_id": "safety-cases-and-structured-assurance",
+      "disposition": "watch",
+      "rationale": "STPA is named as an open hazard-analysis route, but the candidate source was not accepted at passage depth in this pass.",
+      "current_text_refs": [
+        "chapters/safety-cases-and-structured-assurance.qmd:16",
+        "chapters/safety-cases-and-structured-assurance.qmd:508"
+      ],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-11",
+      "title": "Autonomous insider",
+      "owner_chapter_id": "security-kernel-and-digital-scifs",
+      "disposition": "defer",
+      "rationale": "Agent-as-insider remains a valid security expansion but lacks a newly reviewed primary comparator and executable owner packet.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-12",
+      "title": "Hardware attestation trust-root class",
+      "owner_chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "disposition": "already_covered",
+      "rationale": "TEE quotes, roots, verifier chains, stale evidence, and custody boundaries are central to the current chapter.",
+      "current_text_refs": [
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:231",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:244",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:115",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:136",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:242",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:299",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:533",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:78",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:294",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:486",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:94",
+        "chapters/capability-replacement-and-rollback.qmd:309"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-13",
+      "title": "Open-weight release decision record",
+      "owner_chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "disposition": "already_covered",
+      "rationale": "Irreversible public release, disclosure scope, key release, revocation limits, and publication authority are already explicit.",
+      "current_text_refs": [
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:18",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:89",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:186",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:296",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:416",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd:538"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-14",
+      "title": "Public governance graphs for market collusion",
+      "owner_chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "disposition": "defer",
+      "rationale": "Economic receipts are covered, but market-collusion governance graphs need a passage-reviewed primary source and systemic-risk owner.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-15",
+      "title": "Guaranteed-safe AI positioning",
+      "owner_chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "disposition": "defer",
+      "rationale": "The record/spec versus model-safety boundary is already explicit; GSA positioning awaits paper-depth intake rather than relying on the older scan.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-16",
+      "title": "Machine unlearning and parametric deletion closure",
+      "owner_chapter_id": "data-engines-continual-learning-and-unlearning",
+      "disposition": "already_covered",
+      "rationale": "Full-state update, checkpoint authority, behavioral/influence/privacy/storage partitioning, and multiple primary unlearning comparators are present.",
+      "current_text_refs": [
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:333",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:24",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:42",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:46",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:66",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:74",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:86",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:114",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:117",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:125",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:136",
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd:145"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-17",
+      "title": "Prompt-injection impossibility as strongest objection",
+      "owner_chapter_id": "security-kernel-and-digital-scifs",
+      "disposition": "already_covered",
+      "rationale": "Prompt-injection limits, architectural separation, AgentDojo, CAMEL, OWASP, and fail-closed external authority are already treated.",
+      "current_text_refs": [
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:113",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:561",
+        "chapters/human-intent-as-a-formal-input.qmd:19",
+        "chapters/human-intent-as-a-formal-input.qmd:37",
+        "chapters/human-intent-as-a-formal-input.qmd:229",
+        "chapters/human-intent-as-a-formal-input.qmd:251",
+        "chapters/human-intent-as-a-formal-input.qmd:252",
+        "chapters/human-intent-as-a-formal-input.qmd:256",
+        "chapters/human-intent-as-a-formal-input.qmd:268",
+        "chapters/intent-to-execution-contracts.qmd:24",
+        "chapters/intent-to-execution-contracts.qmd:419",
+        "chapters/intent-to-execution-contracts.qmd:480"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-18",
+      "title": "Scheming-oriented safety cases",
+      "owner_chapter_id": "safety-cases-and-structured-assurance",
+      "disposition": "already_covered",
+      "rationale": "The evaluations-based scheming safety-case source and defeater/countercase structure are already assigned and used.",
+      "current_text_refs": [
+        "chapters/safety-cases-and-structured-assurance.qmd:32",
+        "chapters/safety-cases-and-structured-assurance.qmd:121",
+        "chapters/safety-cases-and-structured-assurance.qmd:132"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-19",
+      "title": "Non-agentic Scientist AI position",
+      "owner_chapter_id": "asi-is-a-stack-not-a-model",
+      "disposition": "defer",
+      "rationale": "The zero-execution-authority route is expressible, but Scientist AI needs primary passage review before a named position is added.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-20",
+      "title": "CAIS prior-art mandate",
+      "owner_chapter_id": "asi-is-a-stack-not-a-model",
+      "disposition": "already_covered",
+      "rationale": "CAIS is passage-reviewed in the opener, alignment, RSI, and reference architecture with a narrow typed-governance delta.",
+      "current_text_refs": [
+        "chapters/asi-is-a-stack-not-a-model.qmd:36",
+        "chapters/asi-is-a-stack-not-a-model.qmd:37",
+        "chapters/asi-is-a-stack-not-a-model.qmd:80",
+        "chapters/asi-is-a-stack-not-a-model.qmd:86",
+        "chapters/asi-is-a-stack-not-a-model.qmd:280",
+        "chapters/asi-is-a-stack-not-a-model.qmd:286",
+        "chapters/asi-is-a-stack-not-a-model.qmd:307",
+        "chapters/constitutional-alignment-substrate.qmd:162",
+        "chapters/constitutional-alignment-substrate.qmd:163",
+        "chapters/constitutional-alignment-substrate.qmd:437",
+        "chapters/integrated-reference-architecture.qmd:95",
+        "chapters/integrated-reference-architecture.qmd:491"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-21",
+      "title": "Behavior-specification practice crosswalk",
+      "owner_chapter_id": "constitutional-alignment-substrate",
+      "disposition": "defer",
+      "rationale": "Constitutional predicates are mature, but the three-style and deliberative-alignment comparison remains a future passage-reviewed intake.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-22",
+      "title": "Formal-mathematics agents",
+      "owner_chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "disposition": "defer",
+      "rationale": "Proof producer/consumer interfaces exist; AlphaProof or another current capability comparator needs a separate primary-source pass.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-23",
+      "title": "ARC-style program synthesis and test-time training",
+      "owner_chapter_id": "cognitive-compilation-and-semantic-ir",
+      "disposition": "already_covered",
+      "rationale": "Program synthesis, semantic IR, verifier-guided search, and test-time adaptation already have explicit owners.",
+      "current_text_refs": [
+        "chapters/cognitive-compilation-and-semantic-ir.qmd:21",
+        "chapters/cognitive-compilation-and-semantic-ir.qmd:376",
+        "chapters/cognitive-compilation-and-semantic-ir.qmd:381"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-24",
+      "title": "Compute governance and distributed-training tension",
+      "owner_chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "disposition": "defer",
+      "rationale": "Federated compute governance/evasion dual remains a valid missing comparator but was not passage-reviewed in this bounded pass.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-25",
+      "title": "Introspection-training evidence",
+      "owner_chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "disposition": "defer",
+      "rationale": "This duplicates the metacognition intake and remains deferred to one joint source-specific review.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-26",
+      "title": "Goal continuity under inherited trajectory pressure",
+      "owner_chapter_id": "human-intent-as-a-formal-input",
+      "disposition": "already_covered",
+      "rationale": "Objective fingerprints, periodic recontracting, drift, and inherited trajectory pressure are already explicit.",
+      "current_text_refs": [
+        "chapters/human-intent-as-a-formal-input.qmd:37",
+        "chapters/human-intent-as-a-formal-input.qmd:150",
+        "chapters/human-intent-as-a-formal-input.qmd:189",
+        "chapters/human-intent-as-a-formal-input.qmd:229",
+        "chapters/human-intent-as-a-formal-input.qmd:256",
+        "chapters/intent-to-execution-contracts.qmd:203",
+        "chapters/intent-to-execution-contracts.qmd:208"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-27",
+      "title": "Causal and counterfactual reasoning",
+      "owner_chapter_id": "planning-as-a-control-layer",
+      "disposition": "narrow",
+      "rationale": "V-JEPA 2 adds predictive-state and MPC ownership while the text explicitly refuses to infer causal/interventional understanding; a causal-model source remains open.",
+      "current_text_refs": [
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:112",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:267",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:325",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:531",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:588",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:592",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:598",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:611",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:612",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:97",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:289",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:518"
+      ],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-28",
+      "title": "Distribution shift OOD detection and runtime uncertainty",
+      "owner_chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "disposition": "already_covered",
+      "rationale": "OOD, distribution shift, calibration, abstention, fallback, and quarantine are distributed across their current owners.",
+      "current_text_refs": [
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:70",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:118",
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:204",
+        "chapters/artifact-graphs-audit-logs-and-replay.qmd:55",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:36",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:52",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:176",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:310",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:327",
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd:338",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:2",
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:3"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-29",
+      "title": "Temporal-logic monitoring and physical safety envelopes",
+      "owner_chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "disposition": "narrow",
+      "rationale": "Bounded runtime monitoring is source-noted, but physical closed-loop safety envelopes remain outside the digital-adapter evidence scope.",
+      "current_text_refs": [
+        "chapters/capability-replacement-and-rollback.qmd:57"
+      ],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-30",
+      "title": "Human-AI delegation calibration",
+      "owner_chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "disposition": "defer",
+      "rationale": "Weak-supervisor and escalation boundaries are present; rejector/router calibration needs its primary source pass.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-31",
+      "title": "Evaluator-access levels and environment custody",
+      "owner_chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "disposition": "already_covered",
+      "rationale": "Access, monitor visibility, evaluator provenance, model information, budgets, and false-negative residuals are explicit.",
+      "current_text_refs": [
+        "chapters/evidence-states-and-claim-discipline.qmd:162",
+        "chapters/executable-specifications-and-lean-proof-envelope.qmd:81",
+        "chapters/governed-deliberation-and-test-time-scaling.qmd:580",
+        "chapters/integrated-reference-architecture.qmd:95",
+        "chapters/readiness-gates-residual-escrow-and-quarantine.qmd:82",
+        "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd:84"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-32",
+      "title": "Domain-specific dangerous-capability profiles",
+      "owner_chapter_id": "capability-thresholds-and-deployment-commitments",
+      "disposition": "already_covered",
+      "rationale": "Thresholds are domain- and threat-specific and explicitly prohibit cross-domain generalization.",
+      "current_text_refs": [
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:15",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:204",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:230",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:419",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:477",
+        "chapters/capability-thresholds-and-deployment-commitments.qmd:540",
+        "chapters/recursive-self-improvement-boundaries.qmd:78"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-33",
+      "title": "Post-deployment monitoring and incident disclosure",
+      "owner_chapter_id": "safety-cases-and-structured-assurance",
+      "disposition": "defer",
+      "rationale": "Safety-case invalidation exists, but an end-to-end operational-resilience/incident owner remains outside the current 54-chapter spine.",
+      "current_text_refs": [
+        "chapters/living-book-methodology.qmd:272"
+      ],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-34",
+      "title": "AIBOM lineage and signed build attestations",
+      "owner_chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "disposition": "already_covered",
+      "rationale": "Component inventory, model/data/build/training lineage, signing, attestations, derivatives, advisories, rebuild, and revocation are current core mechanisms.",
+      "current_text_refs": [
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:276",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:453",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:516",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:531"
+      ],
+      "active_queue": false,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-35",
+      "title": "Purpose limitation privacy budgets and internal-channel leakage",
+      "owner_chapter_id": "data-engines-continual-learning-and-unlearning",
+      "disposition": "defer",
+      "rationale": "Privacy evidence is partitioned for unlearning, but subject-rights and multi-user internal-channel governance still lack a dedicated owner/source packet.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-36",
+      "title": "Unlearning privacy paradox",
+      "owner_chapter_id": "data-engines-continual-learning-and-unlearning",
+      "disposition": "narrow",
+      "rationale": "MUSE and the benchmark critiques keep privacy separate from behavior; the specific before/after leakage source remains unreviewed.",
+      "current_text_refs": [
+        "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:333",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:137",
+        "chapters/data-engines-continual-learning-and-unlearning.qmd:558",
+        "chapters/policy-optimization-and-learning-from-feedback.qmd:373"
+      ],
+      "active_queue": true,
+      "support_state_effect": "none"
+    },
+    {
+      "id": "T2-37",
+      "title": "Provider concentration substitutability and impact tolerances",
+      "owner_chapter_id": "resource-economics-and-token-budgets",
+      "disposition": "defer",
+      "rationale": "Exit and fallback exist as general controls, but provider-concentration and resilience claims need a current primary-source owner packet.",
+      "current_text_refs": [],
+      "active_queue": true,
+      "support_state_effect": "none"
+    }
+  ],
+  "reader_reconciliation": {
+    "edition_id": "asi-stack-curated-reader-v2.1",
+    "path": "editions/reader_manuscript/v2_1",
+    "relationship": "successor source edition; immutable v1.0 and v2.0 not modified",
+    "chapter_count": 54,
+    "status": "reconciled_source_only",
+    "format_effect": "none"
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Source insertion does not reproduce a paper result.",
+    "Citation count is not a completion metric.",
+    "No chapter-core claim moves above argument.",
+    "No new chapter is admitted.",
+    "The v2.1 reader source is not a released format artifact.",
+    "No model quality, monitorability, causal world model, corrigibility, safety, AGI, or ASI result is established."
+  ]
+}

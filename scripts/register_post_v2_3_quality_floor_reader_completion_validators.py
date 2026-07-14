@@ -165,6 +165,63 @@ READER_UNITS.append(
     }
 )
 
+READER_UNITS.append(
+    {
+        "script": "validate_post_v2_3_p2_source_audit.py",
+        "execution_tier": "deep",
+        "validation_class": "proof_or_evidence_gate",
+        "input_contract": "The exact ten newer chapters, four passage-reviewed accepted primary sources and source notes, 37 ordered Tier-2 dispositions, reasoning-trace/world-model/foundations ownership records, immutable v1.0/v2.0 reader history, one 54-chapter source-only v2.1 reader successor, completed P2/M6 status, and no support or release effect.",
+        "input_artifacts": [
+            "scripts/validate_post_v2_3_p2_source_audit.py",
+            "scripts/build_post_v2_3_p2_source_audit.py",
+            "scripts/integrate_post_v2_3_p2_sources.py",
+            "scripts/build_post_v2_3_reader_v2_1.py",
+            "evidence_quality/post_v2_3_source_and_completeness_residuals.json",
+            "docs/post_v2_3_external_anchoring_and_completeness_audit.md",
+            "editions/reader_manuscript/v2_1/manifest.json",
+            "sources/source_inventory.json",
+            "sources/source_notes/ext_faithfulness_information_flow_2026.md",
+            "sources/source_notes/ext_monitorbench_2026.md",
+            "sources/source_notes/ext_v_jepa_2_2025.md",
+            "sources/source_notes/ext_embedded_agency_2019.md",
+            "appendices/A_source_matrix.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "appendices/H_external_sources.qmd",
+            "docs/book_outline.md",
+            "book_structure.json",
+            "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
+            "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md",
+        ],
+        "output_contract": "Reject a missing ten-chapter or Tier-2 row, nonterminal disposition, accepted source without inventory/note/passage mapping/live prose/reader prose, citation padding, unearned chapter growth, v2.1 identity drift, source-count drift, P2/M6 reopening, support laundering, or release laundering.",
+        "output_assertions": [
+            "ten unique chapter rows",
+            "37 ordered Tier-2 rows",
+            "four accepted source-specific insertions",
+            "54-chapter breadth preserved",
+            "54-chapter source-only v2.1 reader",
+            "completed P2 and M6",
+            "no support or release effect",
+            "nine rejecting mutations",
+        ],
+        "claim_scope": "Passage-reviewed source selection, chapter ownership, live/reader prose reconciliation, and terminal P2 completeness dispositions only.",
+        "negative_controls": "validator_owned_and_source_mapping_bound",
+        "negative_control_cases": [
+            "missing ten-chapter row",
+            "missing Tier-2 row",
+            "accepted source erased",
+            "citation padding",
+            "unearned new chapter",
+            "breadth drift",
+            "nonterminal audit",
+            "support laundering",
+            "invalid disposition",
+        ],
+        "prohibited_inference": "Passage review and prose reconciliation do not reproduce external results, prove monitorability, causal world modeling, corrigibility, safety, model quality, AGI, ASI, approve a reader format, publish a release, or move chapter-core support.",
+        "contract_precision": "exact_high_impact",
+        "semantic_review_state": "internal_primary_source_and_cross_product_audit_not_independent",
+    }
+)
+
 NEW_UNITS = [
     {
         "script": "validate_chapter_source_hygiene.py",

@@ -126,8 +126,8 @@ living-book version.
 |---|---|---|---|
 | P0 — Authority, truth repair, and clean handoff | completed | Activate this successor, reconcile the novelty/status drift, verify the complete dirty cycle, commit coherently, push, and observe the resulting hosted chain. | Clean-tree receipt, commit series, CI/Pages receipts, reconciled public pointers. |
 | P1 — 54-chapter multi-format reader | completed | Produce and disposition EPUB, PDF, and DOCX from one frozen v2.0 reader source; keep audio deferred. | Per-format manifests, exact artifacts, review matrices, and release/block records. |
-| P2 — Selective external anchoring and completeness residuals | pending | Close source-specific gaps in the ten newer chapters and audit the trace/world-model/foundations/Tier-2 queue without citation padding or automatic chapter growth. | Passage-reviewed source notes, owner matrix, insertion/disposition records, reconciled chapters and appendices. |
-| P3 — Evidence protocol repair and current implementation transfer | pending | Repair the failed natural-work protocol, run at most one warranted flagship campaign, reconcile scoped refutations, and import one fresh Theseus currentness lane. | Frozen preflight/preregistration, exact results or blocker, transition dispositions, currentness import record. |
+| P2 — Selective external anchoring and completeness residuals | completed | Close source-specific gaps in the ten newer chapters and audit the trace/world-model/foundations/Tier-2 queue without citation padding or automatic chapter growth. | Passage-reviewed source notes, owner matrix, insertion/disposition records, reconciled chapters and appendices. |
+| P3 — Evidence protocol repair and current implementation transfer | in progress | Repair the failed natural-work protocol, run at most one warranted flagship campaign, reconcile scoped refutations, and import one fresh Theseus currentness lane. | Frozen preflight/preregistration, exact results or blocker, transition dispositions, currentness import record. |
 | P4 — Product reconciliation, release decision, and closure | pending | Reconcile all products and choose exact edition release, public release, blocked closure, or no-release without version or rights laundering. | Terminal declaration, release/block/no-release record, full validation and attestation receipts. |
 
 ## P0 — Authority, truth repair, and clean handoff
@@ -350,6 +350,21 @@ with source/evidence boundaries; Appendix H, Appendix C, the outline, source
 inventory, and source notes agree; no source was added merely to raise a count;
 and any proposed chapter passes the ownership test before manifest mutation.
 
+Completed 2026-07-14. The durable prose audit is
+`docs/post_v2_3_external_anchoring_and_completeness_audit.md`, and the
+machine-readable authority is
+`evidence_quality/post_v2_3_source_and_completeness_residuals.json`. Four
+passage-reviewed primary sources were accepted because they changed a boundary
+or evidence design: causal reasoning-trace faithfulness, multi-task adversarial
+monitorability, V-JEPA 2 predictive-state/model-predictive-control ownership,
+and embedded-agency limits. The ten-chapter audit and all 37 earlier Tier-2
+routes have terminal dispositions. Existing chapters passed the ownership
+test; no new chapter was warranted and the spine remains at 54. Live prose and
+source-only reader successor `editions/reader_manuscript/v2_1` agree while
+immutable v1.0 and v2.0 remain untouched. All 54 core claims remain
+`argument`; no external result was reproduced and no reader format or public
+release was approved. P3 is now active.
+
 ## P3 — Evidence protocol repair and current implementation transfer
 
 ### Governance-tax flagship
@@ -446,7 +461,7 @@ every residual and non-claim visible, and no silent successor activation.
 | M3 — EPUB dispositioned | completed | Exact EPUB artifact plus pass/block record and application/accessibility evidence. |
 | M4 — PDF dispositioned | completed | Exact PDF artifact plus page-complete inspection and pass/block record. |
 | M5 — DOCX dispositioned | completed | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |
-| M6 — Source and completeness residuals dispositioned | pending | Ten-chapter matrix plus trace/world-model/foundations/Tier-2 insertion or rejection artifacts. |
+| M6 — Source and completeness residuals dispositioned | completed | Ten-chapter matrix plus trace/world-model/foundations/Tier-2 insertion or rejection artifacts. |
 | M7 — Evidence/currentness work dispositioned | pending | Protocol preflight and at most one flagship campaign; QCSA novelty reconciliation; one fresh Theseus currentness import or exact blocker. |
 | M8 — Products reconciled and cycle closed | pending | Full validation, exact release/block/no-release record, completion declaration, no silent successor. |
 

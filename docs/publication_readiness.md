@@ -1,7 +1,7 @@
 # Publication Readiness
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **54 manifest chapters; 280 public-safe records; 54 chapter-core claims; 54/54 chapters externally positioned; 0 promoted core claims.**_
+_Current canonical metrics (generated from machine records): **54 manifest chapters; 284 public-safe records; 54 chapter-core claims; 54/54 chapters externally positioned; 0 promoted core claims.**_
 <!-- canonical-status:generated-end -->
 
 Last audited: 2026-07-13

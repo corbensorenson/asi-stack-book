@@ -587,3 +587,30 @@ the supervisor is not allowed to decide.
 ## Handoff
 
 Scalable Oversight and Adversarial AI Control constrains how a limited supervisor may interpret stronger-system behavior, retain its residuals, and escalate uncertain outcomes; Human Intent as a Formal Input now defines the principal, goal, means, authority ceiling, stop conditions, and ambiguity rules that give each supervision request a legitimate object and a bounded purpose.
+### Monitorability is an evaluated dependency
+
+Scalable oversight often treats visible reasoning as extra evidence for a weak
+reviewer. `ext_monitorbench_2026` makes the dependency testable rather than
+assumed: its open benchmark spans 1,514 instances, 19 tasks, seven categories,
+and two stress settings, and reports that monitorability can degrade under
+pressure and need not rise with model capability. Those are bounded benchmark
+findings, not a general theorem and not evidence that a local reviewer is
+calibrated.
+
+An oversight record therefore names the decision-critical factor, why the task
+requires or does not require reasoning through it, reviewer access, trace
+visibility, stress condition, baseline, denominator, abstentions, and observed
+degradation. If the stronger system becomes less monitorable, the route narrows
+authority or escalates; it does not compensate by trusting a more fluent
+transcript. Private reasoning may remain unavailable, but the action, tool,
+receipt, and counterfactual outcome surfaces still require independent checks.
+
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_monitorbench_2026` | Metadata-first comparator: MonitorBench: A Comprehensive Benchmark for Chain-of-Thought Monitorability in Large Language Models. Primary open benchmark comparator with 1,514 instances across 19 tasks and seven categories plus two stress-test settings; its reported capability/monitorability relation and up-to-30-percent degradation motivate held-out trace-action stress tests. The benchmark does not establish local monitoring quality, causal trace faithfulness, or safety. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->

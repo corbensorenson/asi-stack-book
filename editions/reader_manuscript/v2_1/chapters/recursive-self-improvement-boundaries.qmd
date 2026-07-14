@@ -1,0 +1,255 @@
+# Recursive Self-Improvement Boundaries
+
+Bounded self-improvement is the hardest promise in the stack: the system may improve itself, but it may not become its own unchecked source of permission, evidence, or moral authority. Intent contracts, protected constraints, rights, stable fields, rollback, and security boundaries become the gate that any powerful operational layer must pass. A stronger system should inherit tighter receipts, not looser ones.
+
+Together, those pieces become a rule for growth. Improvement is allowed only when the system can show what changed, who or what authorized it, which invariant survived, what evidence was produced, and how the change can be reversed or contained. The aim is not to stop improvement; it is to prevent improvement from becoming a loophole in governance.
+
+Mature self-improvement should feel like accountable maintenance before it feels like autonomy. Growth earns trust when every stronger capability arrives with a stronger record, and the record should make the system easier to inspect and easier to stop as power increases. Stop paths preserve governance when improvement pressure rises across the system.
+
+## Problem
+
+Self-improvement must state when it is allowed, what it may modify, and which invariants it cannot weaken.
+
+The previous chapters define stable fields and replacement transactions. Recursive self-improvement is the rule for when the system may initiate those transactions about itself. It is not a general permission to rewrite cognition. It is a bounded protocol over fields, evidence gates, protected invariants, evaluator independence, governance approval, and rollback.
+
+Part I closes by turning governance into a constraint on future growth. Part II can now describe planning, memory, reasoning, and execution without pretending those mechanisms are allowed to improve themselves freely.
+
+The self-improvement boundary is therefore a continuity contract. The system may change implementations, tools, policies, prompts, data, routes, or architecture only while preserving the invariants that made the previous system governable. If a change weakens the receipts, rights, budgets, rollback paths, or security leases that make the stack inspectable, it is not a neutral optimization.
+
+## Why existing approaches are insufficient
+
+Treating self-improvement as automatic capability growth ignores evaluator integrity, constitutional preservation, authority ceilings, and regression memory.
+
+Unbounded self-improvement makes the evaluator part of the optimization target. A system that can change its own gates, benchmarks, memory, authority ceilings, or constitutional predicates can make itself look better without becoming safer or more capable. Theseus adds a practical engineering pattern: use an intervention ladder and allow teacher or architecture changes only after cheaper interventions and evidence walls are exhausted. Benchmaxxing and RMI add the ratchet: protect regressions, residuals, and lifecycle discipline while moving the frontier.
+
+External control work gives the self-improvement boundary its warning labels. Drexler's CAIS report (`ext_drexler_cais_2019`) distinguishes distributed R&D automation from self-transforming agents and treats the latter as potential products rather than necessary engines of AI development. `ext_corrigibility_2015` and `ext_off_switch_game_2016` foreground preserved correction and shutdown incentives, `ext_optimal_policies_power_2019` warns that option-preservation pressure can grow with capability, and `ext_model_evaluation_extreme_risks_2023` treats dangerous-capability and alignment evaluations as deployment-relevant gates. The ASI Stack binds those pressures into reversible transition records; the cited sources do not certify autonomous improvement, evaluator independence, or rollback reliability here.
+
+The boundary is therefore not "never self-improve." It is "self-improve only through governed, reversible, evidence-gated transitions whose evaluators and protected invariants are not controlled by the candidate."
+
+The important distinction is proposal versus promotion. A system can propose its own patch, benchmark, route, or architecture change. Promotion requires a different authority path: independent evaluation, preserved regression floors, protected-invariant review, approval, monitor window, and rollback.
+
+That distinction lets the book be ambitious without being reckless. It can welcome self-generated ideas, teacher edits, architecture experiments, and routing improvements while still refusing self-ratification. The candidate may explain why it should change; it may not be the only reason the change is accepted.
+
+### Strongest objection
+
+A sufficiently capable improver may route around any finite boundary or shape
+its evaluator without changing a protected field directly. The transition
+transition records can make declared mutation authority and rollback duties
+inspectable, but they cannot establish that the protected partition is
+complete, that evaluators are independent, or that rollback will remain
+possible under capability growth.
+
+## Core Claim
+
+Recursive self-improvement is allowed only as a bounded, evidence-gated, reversible transition over stable capability fields (evidence boundary: architectural argument).
+SCF, Benchmaxxing, RMI, Alignment Field, VIEA, and Talos now have reviewed local raw-cache passage references for the concepts they contribute. The Field of God AI Constitution provides protected-invariant pressure through a public-project source note, and Theseus supplies source review mappings for a self-evolution lane plus one static digest-verified architecture-gate report import that was not live-rerun in this repo. `moecot` remains connector-only review context. No passage review or static import promotes autonomous improvement, runtime safety, benchmark performance, teacher independence, or rollback effectiveness.
+
+## Mechanism
+
+A self-improvement transition composes the prior three controls. The target must be an SCF, the change must be a replacement transaction, and any privileged action must pass through the security kernel. Theseus adds a practical ordering rule: try cheaper interventions and collect evidence before editing teachers, architecture, or parameters. The transition records where that ladder stopped and why a stronger intervention is justified.
+
+Recursive self-improvement's local delta is promotion legitimacy under self-reference. The shared pattern already records lifecycle, authority, evidence, residuals, and rollback; the self-improvement boundary adds the rule that a candidate may propose changes about itself but cannot be the only authority that declares the proposal promoted. The transition must preserve protected invariants, evaluator independence, boundary-delta review, verification budget, canary monitoring, rollback, and residual escrow before any stronger component becomes default.
+
+The missing object in many self-improvement stories is the boundary delta. A proposal should not merely say what capability improves; it should say what changes in authority, security, context access, resource budget, evaluator policy, evidence requirements, rollback, and human review. A change whose only advantage is that it widens handles, weakens a SCIF lifecycle, drops verification tax, retires a regression floor, or lets the candidate judge itself is not an improvement under this architecture.
+
+```{mermaid}
+flowchart LR
+A["Observed wall / residual"] --> B["Cheaper intervention ladder"]
+B --> C["Improvement proposal + evidence packet"]
+C --> D["SCF target and authority ceiling"]
+D --> E["Boundary-delta review"]
+E --> F["Protected invariant check"]
+F --> G["Evaluator independence check"]
+G --> H["Replacement transaction request"]
+E -- "boundary widens unsafely" --> J["Boundary blocked"]
+F -- "invariant breach" --> K["Invariant blocked"]
+G -- "self-judging" --> L["Evaluator blocked"]
+H --> M["Gate packet ready"]
+J --> P["Outcome ledger"]
+K --> P
+L --> P
+```
+
+The second half of the transition controls what happens after a replacement
+request is ready for review.
+
+```{mermaid}
+flowchart LR
+A2["Gate packet ready"] --> B2{"Gates pass?"}
+B2 -- "no" --> C2["Reject / quarantine / residual"]
+B2 -- "yes" --> D2["Governance approval"]
+D2 --> E2["Approval receipt"]
+D2 --> F2["Canary / monitor"]
+F2 --> G2{"Regression or invariant breach?"}
+G2 -- "yes" --> H2["Rollback / retire"]
+G2 -- "no" --> I2["Promote within field scope"]
+C2 --> J2["Outcome ledger"]
+H2 --> J2
+I2 --> J2
+E2 --> J2
+J2 --> K2["Next review trigger"]
+```
+
+**How to read the self improvement gate:** The first diagram starts from a wall or residual and moves through cheaper interventions before any stronger change is considered. Boundary-delta review, protected invariants, and evaluator independence can each block a proposal before replacement. The second diagram shows that even a ready replacement packet still needs gate review, governance approval, canary monitoring, rollback, and an outcome ledger before promotion.
+
+The transition record separates proposing, evaluating, approving, committing, monitoring, rolling back, and retiring. It names the improvement proposal, protected invariants, and evidence gates before a candidate can become the new default. More autonomous replacement is deliberately delayed until evaluators, readiness gates, governance logs, and rollback paths are credible enough to make the transition inspectable.
+
+The proposal must identify the observed wall or residual, the field being changed, the cheaper interventions already tried, protected invariants, evaluator independence evidence, replacement transaction link, governance approval, monitor window, and rollback path. If those records are missing, the proposal remains an idea, not an accepted self-improvement.
+
+Transition states should be explicit: `proposed`, `research_only`, `evidence_packet_ready`, `boundary_delta_blocked`, `canary`, `default_candidate`, `promoted`, `quarantined`, `rolled_back`, `superseded`, or `retired`. Those states prevent an architecture experiment, teacher suggestion, or green source-reported gate from being narrated as default self-improvement.
+
+The passage review tightens the boundary of this claim. SCF supports the need for stable meanings, authority/state/evidence continuity, evaluator separation, goalpost separation, and non-universal rollback. Benchmaxxing and RMI support the intervention ladder and regression floor. VIEA and Talos support artifact, evidence, audit, replay, residual, and feedback records around work. Alignment Field material remains normative caution about agency, moral scope, and align-before-amplify risk. None of those passages demonstrate that this repository has run an autonomous self-improvement loop or that a candidate can safely evaluate itself.
+
+Security and resource records should travel with the transition. A proposal that saves cost by dropping verification, widens a secret handle, weakens a SCIF lifecycle, increases hidden human repair burden, or depends on unreproduced benchmark evidence is not merely incomplete; it is trying to improve by moving a boundary.
+
+Autonomy should be phased. The early stack can propose changes, produce evidence packets, and ask for review. More autonomous replacement should wait until evaluators, readiness gates, rollback paths, and governance logs are credible.
+
+This phased posture avoids opening with a promise of runaway growth. The architecture earns autonomy by making lower-risk transitions boring, inspectable, and reversible first.
+
+## Interfaces
+
+A Self-Improvement Transition points outward rather than absorbing the other ledgers. It links to the residual that triggered the proposal, the SCF being changed, the replacement transaction, the protected-invariant review, evaluator-independence evidence, governance approval, monitor window, rollback path, and outcome ledger.
+
+- SCFs define replaceable units.
+- Evidence ratchets provide gates.
+- Alignment supplies protected constraints.
+- Governance supplies approval boundaries and non-self-ratification rules.
+
+The transition should include a Boundary Delta Review:
+
+- `authority_delta`: new, widened, narrowed, or revoked authorities.
+- `security_delta`: handle scope, SCIF lifecycle, secret access, sanitization, and audit changes.
+- `resource_delta`: verification tax, protected overhead, human review, serving cost, and rollback cost changes.
+- `evaluator_delta`: whether the candidate can influence its evaluator, benchmark, or gate.
+- `evidence_delta`: added, removed, retired, or downgraded evidence requirements and regression floors.
+- `rollback_delta`: whether state migration, data changes, external effects, and dependency updates remain reversible.
+
+Minimum fields:
+
+- `transition_id`
+- `trigger_residual`
+- `field_id`
+- `proposal`
+- `cheaper_interventions_tried`
+- `protected_invariants`
+- `boundary_delta_review`
+- `verification_budget_preservation`
+- `gate_freshness`
+- `evaluator_independence`
+- `replacement_transaction`
+- `governance_approval`
+- `monitor_window`
+- `rollback_path`
+- `outcome_state`
+
+SCFs define replaceable units. Evidence ratchets and readiness gates decide whether a proposal can move. Alignment supplies protected constraints. Governance decides whether approval can be delegated.
+
+The transition should be readable as a chain of custody: residual or wall, proposed change, authority used, budget spent, evidence collected, independent evaluator, protected-invariant result, approval decision, canary behavior, rollback status, and final lifecycle state. If any link is missing, the transition remains research or quarantine.
+
+## Invariants
+
+- Self-improvement cannot weaken protected invariants.
+- Evaluator independence is required.
+- Every accepted change remains auditable.
+- Boundary deltas are explicit before promotion.
+- Resource savings cannot spend security, verification, rollback, or human-review obligations unless governance separately changes those obligations.
+
+The decisive invariant is non-self-ratification: the candidate may not be the sole judge of whether it should replace the current component. If independent evaluation is unavailable, the transition can still be researched, but it cannot be promoted as governed self-improvement.
+
+Boundary monotonicity should hold unless review explicitly says otherwise. The change cannot silently broaden authority, relax security rules, reduce verification budget, weaken rollback, or retire regressions. Any such move is a separate governance question, not an implementation detail.
+
+## Failure modes
+
+- Recursive evaluator capture.
+- Constitutional weakening.
+- Irreversible flawed upgrades.
+- Boundary delta laundering, where a change is described as performance work while silently widening authority, context, handles, or budget rights.
+- Stale-gate promotion, where a past green readiness or architecture gate is reused after architecture, frontier, source, or lifecycle state changed.
+
+Recursive evaluator capture is the core failure: the system improves its ability to pass its own gate. Constitutional weakening removes the predicates that would have blocked the change. Irreversible flawed upgrades turn a failed experiment into a new baseline. These are not acceptable residuals for a default route; they require quarantine or rollback.
+
+Acceleration pressure is the self-improvement failure that will sound reasonable. A self-improvement loop can argue that the next change will make evaluation easier, cheaper, or more accurate later. The transition gate treats that as debt, not evidence. Future verification cannot justify present promotion unless a protected gate explicitly allows the deferral.
+
+## Minimum Viable Implementation
+
+The first self-improvement artifact is a `self_improvement_transition` schema plus a rejected or canary-only change record. That record should show protected invariants and evaluator independence fields; it should not claim autonomous improvement succeeded.
+
+A canary-transition fixture is the smallest honest rehearsal: one proposed improvement, one preserved invariant, one boundary-widening attempt rejected by governance, one insufficient verification-budget decision, one monitor result, and one rollback path. The fixture would make the self-improvement boundary concrete while leaving self-improvement success unclaimed.
+
+The transition fixture also records who is not allowed to approve the change. A self-improving component may propose evidence, but the acceptance decision needs independent evaluator status, protected-invariant checks, and an explicit non-claim that the transition is only a record-shape test.
+
+The current formal slice turns that fixture logic into a finite route envelope. A structured transition review now routes missing proposals, missing invariant declarations, missing evidence bundles, invariant breaches, sole self-evaluation, missing independent evaluators, authority/security/resource boundary deltas, missing governance approval, missing rollback, stale gates, missing residual escrow, closed canary monitor windows, complete canary reviews, and complete promotion reviews into explicit outcomes. The route proof is useful because self-improvement failure paths become modeled decisions rather than prose wishes, but it remains a finite-record envelope rather than proof of runtime evaluator independence, rollback execution, monitor quality, or safe autonomous improvement.
+
+## Beyond the State of the Art
+
+Recursive improvement belongs inside a governed improvement market, not a runaway loop. Components may propose patches, tools, routes, policy updates, benchmarks, teacher edits, and architecture changes, but promotion flows through stable fields, replacement transactions, independent evaluators, protected-invariant checks, boundary-delta review, monitor windows, and rollback ownership.
+
+In that end state, the system can improve faster because the rules are sharper. Cheap interventions are tried before expensive or irreversible ones. Verification, security, human review, and rollback budgets are protected from being "optimized away." Readiness gates expire when the frontier, architecture, source corpus, lifecycle state, or threat model changes. A candidate may generate evidence, but it cannot be the only judge of whether the evidence is enough.
+
+Beyond current practice, self-improvement would become auditable chain of custody: residual, proposal, authority used, budget spent, evidence collected, evaluator independence, protected-invariant result, approval, canary, incident, rollback, and lifecycle state. That is the point where Part II's planning, memory, reasoning, execution, routing, and compression layers can safely become powerful enough to help improve themselves.
+
+That endpoint is still a design destination, not evidence that self-improvement is safe today. It stays at `argument` support until protected-invariant tests, evaluator-independence scenarios, boundary-delta fixtures, stale-gate replays, verification-budget checks, rollback scenarios, and current runtime/readiness artifacts exercise the transition under changed frontier and threat-model conditions.
+
+## Post-v2 mutation, rollback, and invalidation result
+
+The update-causality campaign exercises the transaction boundary with actual
+model state. Across three seeds, it retains three base checkpoints and 24 best
+or final arm checkpoints, records tensor and output digests, and performs three
+exact rollbacks to the base state. Those rollbacks invalidate nine descendant
+challenger arms. No-update arms remain zero-delta, preventing an evaluation
+change from being mislabeled as learning.
+
+This closes a narrow local mutation/rollback record gap, but it is not recursive
+self-improvement: no model proposes its own update, widens authority, changes
+the evaluator, or operates through a deployed canary. The core claim remains
+`argument` through `no_change`; the result applies only at the transaction
+boundary.
+
+## Post-v2.1 authority-preserving update result
+
+The successor binds model, optimizer, scheduler, RNG, cache, checkpoint,
+backup, and descendant state before any update. Prospective checkpoint
+authority is honored, six best/final disagreements remain visible, unsafe
+comparators stay ineligible, and all fifteen transactions restore their
+declared 24-surface trees exactly. Yet no eligible challenger meets the utility
+threshold, and no model proposes or governs its own change. This strengthens
+the bounded transaction boundary while leaving recursive improvement entirely
+unestablished. Exact rollback cannot substitute for evaluator independence,
+useful gain, stable authority, or evidence that a self-proposed update is safe.
+
+## Summary
+
+Recursive self-improvement is allowed only through stable fields, replacement transactions, independent evaluators, protected invariants, governance approval, monitoring, and rollback. Improvement is not a special exemption from the stack's rules; it is the hardest case for those rules.
+
+Part I now passes a governed frame to the operational stack. Planning, memory, reasoning, execution, routing, and compression can become powerful only if their future changes remain auditable, bounded, and reversible. Part II can now build machinery under a clear condition: every new layer must remain governable when it learns, compiles, routes, or replaces itself.
+
+The operating principle is that improvement must preserve governability. A faster, cheaper, or more capable system that weakens receipts, budgets, security boundaries, human rights, or evaluator independence has not improved the ASI Stack. That rule is deliberately demanding because self-improvement compounds whatever the architecture normalizes. If unsupported claims become acceptable, unsupported claims scale. If authority leaks become tolerable, authority leaks scale. If residuals vanish during upgrades, the system becomes less inspectable exactly when it becomes more powerful. Bounded improvement therefore begins by making every operational layer accountable to the governance frame already established.
+
+## Handoff
+
+Part I establishes the governing frame: stack boundaries, efficiency accounting, authority ceilings, failure records, evidence states, human intent, constitutional predicates, rights, replacement, security, bounded improvement, and the governed generation campaigns that can propose future changes. Open-Ended Improvement Engines closes this part by separating discovery from admission: it records how candidates, tasks, evaluators, archives, and residuals are produced before the existing improvement governor decides whether any candidate can proceed. Command Contracts: From Intent to Executable Work then opens Part II by turning accepted intent into the first operational trace.
+**Embedded self-reference is a standing residual.**
+
+`ext_embedded_agency_2019` explains why self-improvement is not only a release
+engineering problem. An improving system reasons about itself with a model
+that is smaller than the world, contains parts that can be modified, and may
+delegate to components whose objectives or ontologies diverge. A complete
+mutation manifest can enumerate declared state; it cannot prove that the
+declaration contains every causally relevant part of an embedded agent.
+
+Every improvement transaction therefore records the self-model version,
+declared state inventory, verifier and trust roots, recursion stop, descendant
+identity, ontology changes, outside-inventory residuals, and the authority that
+may halt or roll back the change. Full-state rollback remains exact only over
+its prospective inventory. Record-level correctness must not be upgraded into
+embedded-agent corrigibility, stable goals, or safe recursive improvement.
+
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_embedded_agency_2019` | Metadata-first comparator: Embedded Agency. Primary informal survey of the obstacles that arise when agents are physical parts of the worlds they model, must use smaller internal models, and reason about modifiable internal parts. It supplies a foundations boundary; the book's finite records, authority ceilings, and proofs do not solve embedded agency. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->

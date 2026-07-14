@@ -1,0 +1,445 @@
+# Safety Cases and Structured Assurance
+
+Complex systems can accumulate evidence far faster than they accumulate understanding.
+There may be test results, model cards, policy documents, proof files, incident
+notes, and approval records, yet no clear answer to a simple question: what is
+the argument for allowing this particular system to do this particular thing in
+this particular setting? A safety case makes that question visible instead of
+answering it with a folder full of artifacts.
+
+The case links a claim to its reasons, evidence, assumptions, and conditions.
+It also records the reasons the claim may fail: an untested threat, a stale
+evaluation, a disputed inference, or a safeguard whose effectiveness has not
+been verified. These are not embarrassing footnotes. They determine whether a
+decision should proceed, narrow its scope, or wait for more work.
+
+What remains is an argument that can be inspected and revised. It is not a
+mathematical proof of safety or a substitute for judgment. Its value lies in
+making disagreement, missing evidence, and residual risk impossible to hide
+inside an impressive-looking release decision.
+
+## Problem
+
+The ASI Stack already produces many artifacts that matter to a high-consequence
+decision: a claim ledger, source notes, proof envelopes, evaluation records,
+threshold commitments, safeguard evidence, readiness gates, authority records,
+and residual escrow. Each has a local owner. A reviewer deciding whether a
+specific release path is justified still needs to understand how these pieces
+relate. Which risk is being addressed? Which claim is actually supported by a
+benchmark? Which safeguard is required? Which assumption makes the inference
+valid? Which failed evaluation or dissenting view would change the decision?
+
+Without a compilation layer, the answer can become a narrative assembled at the
+end of the process. Narratives hide gaps well. A dashboard can show many green
+statuses while a critical hazard is outside the evaluation envelope. A report
+can cite a proof that establishes only record routing, not system behavior. A
+threshold non-crossing can be read as a safety result even though it says
+nothing about a different threat model. The missing capability is not documents;
+it is missing explicit relationships among documents.
+
+Structured assurance turns those relationships into a reviewable object. It
+does not aim to make uncertainty disappear. It aims to identify the exact
+assumptions, countercases, evidence properties, and decision boundaries that
+would have to hold for a bounded conclusion to be defensible.
+
+## Why existing approaches are insufficient
+
+Goal Structuring Notation provides a useful structural comparator: claims,
+strategies, evidence, context, assumptions, and justifications can be recorded
+as explicit relationships. The standard also states the key limitation: such a
+graph documents an asserted argument and does not establish its truth. An
+assurance case can therefore be well structured while its evidence is stale,
+its inference is invalid, its hazards are incomplete, or its decision owner is
+not authorized.
+
+AI safety-case work supplies equally important limits. The evaluations-based
+scheming paper separates inability, harm, control, and alignment arguments,
+each with different evidence needs and unresolved assumptions. AISI's safety
+case work emphasizes positive support, countercase searches, disagreement, and
+scientific uncertainty. These sources describe methodology and open problems,
+not a reusable safety conclusion. They show why a single template or confidence
+score cannot turn frontier-AI uncertainty into an operational all-clear.
+
+Existing ASI Stack layers own inputs but not compilation. Evidence States owns
+support-state changes; Benchmark Ratchets owns quality of measurement pressure;
+Adversarial Evaluation owns the integrity of an observation; Capability
+Thresholds owns a predeclared response; Readiness owns admission; Artifact
+Graphs owns provenance; Security Kernel and Runtime Adapters own controls and
+authority. A safety case must reference these owners without swallowing them.
+Otherwise it becomes a second, less auditable ledger or a misleading layer of
+approval over the real decision process.
+
+### Strongest-neighbor comparison
+
+The design delta is easiest to see by comparing ownership rather than by
+claiming a new notation. GSN supplies a vocabulary for argument structure.
+Evaluations-based safety-case work supplies risk-specific argument families and
+their empirical dependencies. AISI's methodology supplies the obligation to
+search for counterevidence and preserve scientific uncertainty. The ASI Stack
+contribution proposed here is narrower: compile already governed records into a
+dependency-aware case, preserve the owners of those records, and make an
+unresolved dependency change the route of an affected release without allowing
+the compiler to approve it.
+
+| Comparator | Strong capability | Residual boundary | ASI Stack design delta |
+|---|---|---|---|
+| GSN Community Standard | Explicit goals, strategies, solutions, context, assumptions, and justifications. | A well-formed graph documents an asserted argument; it does not validate the argument or evidence. | Bind graph nodes to versioned claim and artifact identities, retain prior versions, and route stale or unresolved dependencies to their owning workflow. |
+| Evaluations-based safety cases for scheming | Separates incapability, harm, control, and alignment arguments and exposes their different assumptions. | The framework does not supply missing empirical evidence or make evaluation reliability automatic. | Represent the selected argument family and evaluation envelope as case scope, not as a generic confidence score, and reject evidence reuse when that scope changes. |
+| AISI safety-case methodology | Treats countercases, negative evidence, uncertainty, and disagreement as first-class. | Countercase quality and reviewer independence remain substantive empirical questions. | Require recorded countercase review, independent review, residual ownership, and non-claim boundaries before a case can reach readiness review. |
+| ASI Stack evidence, threshold, readiness, and provenance layers | Own support movement, measurement pressure, precommitments, admission, custody, and replay. | Separate records do not by themselves express the whole argument for a bounded decision. | Compile references without duplicating ownership; a case status can block or request review but cannot promote evidence, waive a threshold, admit a system, or authorize an action. |
+
+This is not a claim that record compilation is stronger than substantive safety
+analysis. It is a claim about control-plane integrity. The useful question is
+whether a case can remain synchronized with the ledgers that determine its
+meaning, reveal when a dependency changes, and force an explicit response. A
+compiler that does those things can reduce argument drift even when every
+underlying scientific uncertainty remains.
+
+## Core Claim
+
+A governed stack compiles a safety case as a versioned, reviewable graph of scoped claims, argument strategies, evidence references, assumptions, defeaters, hazards, deployment context, acceptance criteria, authority, and residual ownership; a rendered or structurally complete graph can expose dependencies and block an affected release when required hazards, countercase review, acceptance criteria, or residuals are unresolved, but cannot itself establish safety, correct threat modeling, evidence adequacy, control effectiveness, readiness, or authority to deploy (evidence boundary: architectural argument).
+## Mechanism
+
+The first object is a case boundary, written before an argument is assembled.
+It names the system and version, deployment context, top claim, threat and
+hazard model, affected release path, decision owner, acceptance criterion,
+review deadline, and case version. A top claim such as "safe" is unusable on its
+own. A bounded claim might concern a named system, a named access mode, a named
+harm model, and a named operating period. The boundary prevents a case prepared
+for one evaluation setting from being silently reused for another.
+
+The second object is a typed argument graph. Each claim records its scope and
+support state. Each strategy says how a higher claim is decomposed. Each
+evidence reference points to an artifact owned elsewhere and identifies the
+property it is asserted to support. Context, assumptions, and justifications
+make the interpretation visible. A case does not copy a benchmark report, proof
+file, or policy decision into a prettier document. It records the exact
+relationship claimed between that artifact and a particular statement.
+
+The third object is a defeater and countercase ledger attached to the graph.
+An unresolved counterexample, stale evaluation, missing threat-model review,
+contradictory evidence, unverified safeguard, or missing residual owner is a
+node with a route, not a prose caveat that a report generator can omit. A
+countercase search also records its scope and reviewer conditions, because a
+failed search is only informative when its ability to find a problem is itself
+open to review.
+
+The final object is a decision boundary. Compilation may produce a draft case,
+a case requiring repair, a case requiring accountable review, a case with an
+affected release blocked, or a bounded input to the existing readiness gate.
+It never produces release authority. Acceptance and release remain separate
+records with their own owners, and a case revision is a reason to re-review the
+affected path rather than a way to overwrite prior uncertainty.
+
+### Case lifecycle and identity
+
+A case begins as a draft with a stable case identifier and an immutable version
+identifier. Compilation resolves each edge to an exact artifact digest, claim
+revision, evaluation envelope, policy version, safeguard record, or authority
+record. The compiled view records whether each dependency is current for the
+declared deployment context. “Current” means identity and applicability match
+the case boundary; it does not mean the evidence is true or sufficient.
+
+A material dependency change creates a successor case version. Changes include
+a new model or adapter, a different access mode, an expanded user population,
+a revised hazard model, a superseded evaluation, a changed safeguard, a new
+defeater, or an altered acceptance criterion. The predecessor remains available
+with the decision and evidence that existed at the time. A successor cannot
+silently inherit a favorable status: affected edges return to review, while
+unaffected subarguments may retain their recorded state with explicit lineage.
+
+The lifecycle has four distinct verbs. **Compile** checks identities and
+required fields. **Challenge** adds a defeater, countercase, dissent, or scope
+objection. **Review** records a bounded judgment by an identified reviewer under
+a declared independence condition. **Decide** belongs to the existing readiness
+and authority system. Conflating these verbs creates the most dangerous form of
+argument theater: a successful compilation is described as an accepted case,
+and an accepted case is described as permission to release.
+
+### Worked trace: a stale control result and an unresolved defeater
+
+Consider a synthetic case whose top claim concerns model `M7`, tool profile
+`T-readonly`, hazard family `H-exfiltration`, and a 30-day evaluation window.
+Its control subargument cites a monitor evaluation for model `M6` and the same
+named tool profile. The case also contains a countercase asserting that a new
+adapter changes what the monitor observes. The release path is requested, but
+the countercase has no resolution record.
+
+| Step | Incoming record | Compiler observation | Required route | What is *not* inferred |
+|---|---|---|---|---|
+| 1 | Bounded top claim and deployment context | Case identity and affected path are syntactically complete. | Continue compilation. | The hazard model is not shown complete. |
+| 2 | Monitor result for `M6` | Model identity does not match `M7`; the evidence dependency is stale for this case. | `requireEvidenceRepair` and retain the prior pointer. | The monitor is not judged ineffective, and `M7` is not judged unsafe. |
+| 3 | Adapter countercase | The challenge applies to the control edge and is unresolved. | `requireAccountableReview`; the affected release cannot reach readiness review. | The countercase is not presumed correct. |
+| 4 | Proposed replacement evaluation | New evidence receives a new digest and envelope; it cannot overwrite the stale record. | Recompile a successor case and request independent review. | A passing score is not evidence adequacy or release authority. |
+| 5 | Reviewer resolves the challenge | Resolution, rationale, scope, dissent, and residual owner are recorded. | If every earlier boundary is complete, emit only `releaseToReadinessReview`. | The case does not release the system. |
+
+This trace matters because “block” has several meanings. A stale pointer blocks
+case progression until evidence identity is repaired. An unresolved defeater
+blocks the affected readiness route until accountable review. Neither is a
+scientific conclusion about system safety. The route records what the process
+must do next and preserves enough history to audit whether the response was
+appropriate.
+
+```{mermaid}
+flowchart LR
+B["Deployment, hazard, and authority boundary"] --> C["Versioned case graph"]
+C --> G["Scoped claims and strategies"]
+C --> E["Evidence and provenance references"]
+C --> A["Context, assumptions, and acceptance criteria"]
+C --> D["Defeaters, countercases, and residuals"]
+G --> R{"Required support and review complete?"}
+E --> R
+A --> R
+D --> R
+R -->|"no or unresolved"| Q["Repair, accountable review, or affected-path block"]
+R -->|"bounded case status"| H["Existing readiness and authority gates"]
+Q --> L["Case version, dissent, and residual ledger"]
+H --> L
+```
+
+**What the assurance flow shows:** compilation makes dependencies inspectable.
+It can preserve a narrow case status and prevent an unresolved case from being
+mistaken for a release decision. The evidence, evaluation, safeguard, readiness,
+and authority layers retain ownership of their own truth conditions.
+
+## Interfaces
+
+- **Evidence States and Claim Discipline** owns claim support states and
+transition review. The case references claim records and cannot promote a
+claim by presenting it in a graph.
+- **Benchmark Ratchets and Anti-Goodhart Evidence** owns benchmark integrity;
+**Adversarial Evaluation, Sandbagging, and Training-Time Deception** owns
+whether the observed behavior can support an argument under its elicitation,
+monitor, reward, and selection conditions.
+- **Capability Thresholds and Deployment Commitments** owns threshold response.
+A case can identify the commitment it bears on but cannot set, relax, or
+waive the threshold.
+- **Readiness Gates, Residual Escrow, and Quarantine** owns admission,
+quarantine, and residual custody. An unresolved case routes to those controls
+rather than deciding its own outcome.
+- **Artifact Graphs, Audit Logs, and Replay** owns provenance and replay. Case
+nodes carry stable pointers and scope claims instead of becoming a duplicate
+evidence store.
+- **Security Kernel and Runtime Adapters** own technical safeguards and action
+authority. The case can require evidence about them but cannot implement or
+authorize them.
+
+The interfaces prevent two opposite errors. One is treating the case as a
+decorative summary that cannot change any workflow. The other is treating it as
+a super-layer that replaces the detailed evidence and authority systems beneath
+it. A useful case affects routing by making a gap visible; the underlying owner
+still decides whether and how that gap can be closed.
+
+## Invariants
+
+- Every top claim is bound to deployment context, hazard/threat scope, case
+version, acceptance criterion, decision authority, and affected release path.
+- A support edge names the property, evidence reference, strategy, and scope it
+is asserted to support; visual connectivity does not establish adequacy.
+- An unresolved defeater, missing countercase review, missing acceptance
+criterion, or missing residual owner cannot become a favorable conclusion or
+release clearance.
+- A rendered, complete, or notation-conformant graph cannot change support
+state, establish safety, or supply authority to deploy.
+- A change retains the prior version, rationale, reviewer, affected claims, and
+re-review trigger.
+
+These invariants make the case a form of disciplined memory. They do not give
+the compiler privileged knowledge of hazards or truth. They ensure that the
+conditions for a conclusion remain visible long enough for an independent
+reviewer to challenge them, and they make a missing condition operationally
+meaningful rather than merely embarrassing.
+
+## Failure modes
+
+- **Argument theater:** a polished graph has unsupported edges, stale evidence,
+or omitted assumptions.
+- **Defeater laundering:** a case records only favorable evidence and hides
+countercases, failed evaluations, or dissent.
+- **Scope drift:** a case is reused outside its deployment context, hazard
+model, model version, access conditions, or review period.
+- **Evidence aliasing:** a receipt, metric, or theorem is cited as if it proved
+a broader safety or control claim.
+- **Authority laundering:** structural completeness or case acceptance is read
+as release permission.
+- **Maintenance rot:** a graph remains connected to superseded policies,
+evaluations, safeguards, or residuals.
+
+The response to these failures is not a more elaborate diagram. Unsupported
+edges require evidence review; hidden countercases require active challenge;
+scope drift requires a new boundary and re-review; evidence aliasing requires a
+narrower claim; authority laundering requires a separate release gate; and
+maintenance rot requires dependency versioning. A case is valuable because it
+makes each repair route identifiable.
+
+## Consequences and tradeoffs
+
+First, compilation creates a measurable maintenance burden. Every dependency
+needs an owner, identity, applicability rule, and invalidation trigger. That
+cost is not incidental: it is the price of preventing a favorable narrative
+from outliving the evidence that once supported it. A case program should report
+review queue size, dependency churn, stale-edge age, and reviewer time alongside
+the number of cases compiled.
+
+Second, a graph increases legibility while also increasing attack surface. If
+public, it may reveal safeguards, threat hypotheses, or weak dependencies. If
+private, it may hide disagreement from affected stakeholders. The publication
+policy therefore needs node-level disclosure classes and a public residual
+summary, not a choice between total disclosure and a content-free badge.
+
+Third, decomposition can improve disagreement. Reviewers can contest a hazard,
+strategy, evidence edge, or acceptance condition without rejecting the entire
+case. But decomposition can also fragment responsibility. The case boundary
+must retain one accountable decision owner and one owner for each residual;
+otherwise a graph with many named contributors can leave no one responsible for
+the conclusion.
+
+Fourth, reuse is both a benefit and a hazard. A well-scoped control argument may
+be shared across cases, reducing duplicated work. Reuse must be conditional on
+model identity, environment, access mode, evaluation window, and control
+version. A reused node that does not re-evaluate those predicates is evidence
+aliasing, not efficiency.
+
+Fifth, blocking routes can create pressure to weaken the case boundary, omit a
+defeater, or redefine a dependency as nonmaterial. The audit surface must record
+scope edits, removed nodes, rejected countercases, and overrides. Governance
+cost and delay should be measured openly, but speed cannot be improved by
+deleting the events that explain why a route was blocked.
+
+Sixth, assurance cases concentrate attention on articulated risks. Unknown or
+politically inconvenient hazards may remain outside the graph. Periodic
+hazard-model challenge, incident-driven revision, and an explicit “outside the
+modeled envelope” statement are therefore mandatory complements. Structured
+assurance can discipline known arguments; it cannot enumerate the unknown.
+
+## Strong objections and residual answers
+
+**“A safety case is paperwork that sophisticated developers can game.”** This
+objection has teeth. Typed nodes do not prevent strategic omission or weak
+evidence. A defensible compiler remains a routing mechanism and makes
+omissions, countercase handling, dependency versions, overrides, and
+review independence inspectable and to test whether the workflow rejects
+known-bad synthetic records. The residual remains: a coordinated organization
+can still produce a misleading case.
+
+**“No finite argument can cover an open-ended system.”** Correct. The case is
+bounded by a named system, context, hazard family, and time window. It must say
+which harms, modalities, and deployment changes are outside scope. A bounded
+case may support a bounded decision process; it cannot justify “the system is
+safe” as a timeless proposition.
+
+**“Independent review is only a label when the same institution controls the
+reviewer.”** Also correct. The record can require and describe separation of
+roles, conflict declarations, access to negative evidence, and the ability to
+block. It cannot prove psychological or institutional independence. That
+limitation belongs in the case and in any public claim about review.
+
+**“A blocking case compiler becomes an unelected release authority.”** It
+should not. The compiler applies predeclared routing rules and emits a review
+state. Decision authority remains in the authority ledger, while overrides are
+explicit, attributable records. The formal route rejecting authority laundering
+exists precisely because a complete graph must not mint permission.
+
+**“Quantification would be clearer than qualitative routes.”** A probability
+can be valuable when its model, data, calibration, and update rules are
+defensible. A synthetic compiler has none of those. Attaching a number would
+convert missing evidence into false precision. The current design records
+support states and exact blockers; later quantitative work would need its own
+validated measurement model and sensitivity analysis.
+
+**“This duplicates the evidence ledger.”** Duplication would be a design
+failure. Case nodes contain stable references, asserted support relationships,
+and case-local scope; they do not copy or promote the underlying evidence. The
+source ledger remains authoritative, and a digest or support-state change
+invalidates the affected case edge.
+
+## Minimum Viable Implementation
+
+The smallest honest artifact is a versioned assurance-case record. It contains
+one scoped top claim, deployment and hazard context, argument and evidence
+references, context and assumptions, known defeaters, countercase-review state,
+acceptance criterion, residual owner, decision authority, and affected release
+path. A finite Lean route sends a requested release with an unresolved defeater
+to accountable review rather than readiness release.
+
+This is a compilation and routing foundation, not a risk model or safety
+analysis. It does not identify hazards, evaluate a model, establish evidence
+quality, verify controls, perform independent review, calculate risk, or decide
+an actual release. A public-safe next slice would compile synthetic case records
+with one accepted bounded support relation, a stale reference, an unresolved
+defeater, a missing acceptance criterion, a missing residual owner, and an
+attempted affected release, retaining a visible result for every route.
+
+This repository implements that public-safe slice as eight synthetic cases with
+a fixture digest, schema-checked results, eight matching Lean theorems, and five
+rejecting validator mutations.
+
+### Prospective measurement contract
+
+The implemented bridge measures only deterministic agreement among a JSON
+fixture, a Python route function, a result record, and theorem declarations.
+Its primary outcomes are route agreement, fixture digest agreement, theorem
+presence, schema validity, preserved non-claims, and rejection of deliberate
+corruptions. A run passes only when all eight cases take their declared routes,
+all eight theorem names exist in the owned module, support-state effect remains
+`none`, and mutations that delete a case, alter the digest, claim promotion,
+remove a theorem, or erase non-claims are rejected.
+
+A later real case-compilation campaign must be preregistered before inspecting
+outcomes. It should freeze the case cohort, independent-review criterion,
+dependency-currentness rule, expected failure routes, disclosure policy, time
+budget, and acceptance threshold. It should report case completion rate,
+stale-edge detection precision and recall on seeded faults, countercase yield,
+reviewer disagreement, time to resolution, override rate, residual age, and
+governance cost together. Success on structural metrics would establish only
+compiler and workflow behavior. Evidence adequacy, hazard completeness, control
+effectiveness, safety, readiness, and authority require separate evidence.
+
+## Beyond the State of the Art
+
+The mature endpoint is a continuously compiled assurance control plane. It
+builds a versioned case from the system's claim, evidence, evaluation,
+threshold, safeguard, readiness, provenance, and residual records; recognizes
+stale dependencies, contradiction, changed deployment conditions, missing
+countercase searches, and evidence-scope mismatch; and asks the appropriate
+independent reviewer to inspect the affected argument before any existing gate
+can progress.
+
+At that endpoint, assurance is not a single confidence number. Different harm
+models retain different arguments, control assumptions, evidence boundaries,
+and unresolved questions. A case can be challenged by a new red-team result,
+a weaker evaluation envelope, a failed safeguard check, or an altered release
+context without discarding unrelated evidence. Dissent and failed arguments
+remain part of the decision history, allowing later reviewers to see why a
+conclusion changed.
+
+Public artifacts would show the case boundary, version lineage, claims,
+strategies, evidence references, assumptions, active defeaters, countercase
+searches, review decisions, residuals, and affected release paths. The result
+would be more inspectable than a policy memo while remaining candid about what
+the graph cannot establish. It is a target architecture, not a claim that this
+repository has a complete case, valid threat model, adequate evidence,
+effective controls, safe system, or authorized deployment.
+
+## Summary
+
+Safety cases make an argument inspectable. They connect a bounded claim to the
+reasoning, evidence, assumptions, threat model, countercases, and residuals
+that the claim depends on. That connection is valuable because a complex
+system's artifacts rarely speak for themselves, especially when their limits
+and disagreements point in different directions.
+
+The case adds discipline without taking ownership away from the systems that
+produce its inputs. It cannot certify a benchmark, validate a proof's modeling
+choice, approve a safeguard, or authorize a release. It can expose where a
+proposed conclusion relies on one of those acts and stop an affected path when
+the dependency remains unresolved.
+
+Policy Optimization and Learning from Feedback can then consume only feedback
+and argument status that remain bounded by their source evidence, unresolved
+defeaters, and authority conditions. Learning should update behavior from a
+reviewable case state, not from a convenient narrative about safety.
+
+## Handoff
+
+Safety Cases and Structured Assurance compiles the claims, evidence, assumptions, countercases, residuals, and decision boundaries that constrain a proposed change; Policy Optimization and Learning from Feedback now owns the bounded update lease, admissible feedback, rollback, and target-policy behavior once the relevant assurance state has remained explicit and unresolved defeaters have not been laundered into permission.

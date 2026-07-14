@@ -1,0 +1,180 @@
+# Benchmark Ratchets and Anti-Goodhart Evidence
+
+Executable specs say what a narrow artifact can certify before use. Benchmarks ask how measured performance should change future behavior without becoming a game. Benchmark ratchets can move a floor forward only when regressions, scope, baselines, and negative results remain visible.
+
+The anti-Goodhart theme matters throughout this layer. A score is not evidence by itself. It becomes useful when the stack records what was measured, what was not measured, what got worse, what incentives changed, and what claim the result is allowed to support. Improvement should become cumulative without allowing the scoreboard to become the mission. A failed benchmark should teach as much as a win when the ledger is honest.
+
+The measured frontier should become a disciplined memory, not a target to exploit. A benchmark only strengthens the stack when it keeps failures useful after success.
+
+A ratchet should make regression harder to hide, not merely victory easier to announce, because the evidence floor matters more than the score that clears it. Regression floors discipline winning scores by preserving what improvement forgot earlier.
+
+## Problem
+
+Capability claims need pressure, but fixed benchmarks can become traps. A system can overfit a public style, erase regressions, optimize cheap metrics, or confuse saturation with general competence. Benchmaxxing reframes benchmarks as temporary pressure surfaces. RMI adds residual escrow and regression floors.
+
+The benchmark ratchet exists to make progress cumulative without making claims inflationary. A frontier should push the system into new work. Once the frontier becomes easy, it should become a floor. The score matters less than the transition record that says what improved, what stayed fragile, and what must never regress silently.
+
+Self-improving stacks make benchmark pressure especially sharp. The system may learn what the benchmark rewards, route around expensive checks, or optimize the presentation of progress rather than the underlying capability. Benchmarks have to create memory: baselines, negative cases, residuals, floor regressions, reviewer notes, and downgrade triggers that survive after the headline score stops being novel.
+
+## Why existing approaches are insufficient
+
+Benchmarks can saturate, be gamed, erase regressions, or fail to represent real requirements. A result is especially dangerous when it lacks command, environment, baseline, residuals, negative results, holdouts, transfer checks, and contamination notes. The stack must make benchmark state explicit enough to decide whether a result can update readiness.
+
+External benchmark science gives this layer its comparison set. MMLU (`ext_mmlu_2020`), BIG-bench (`ext_bigbench_2022`), HELM (`ext_helm_2022`), GPQA (`ext_gpqa_2023`), SWE-bench (`ext_swe_bench_2023`), LiveBench (`ext_livebench_2024`), Dynabench (`ext_dynabench_2021`), CheckList (`ext_checklist_2020`), contamination analysis (`ext_benchmark_contamination_2023`), and Goodhart variants (`ext_goodhart_variants_2018`) show broad, living, adversarial, behavioral, contamination-aware, and proxy-failure pressures. The ratchet design uses them as evaluation vocabulary, not as a reproduced benchmark suite.
+
+The important distinction is between a benchmark as an event and a benchmark as a managed instrument. An event produces a score. An instrument produces a history: what was tried, what changed, what regressed, what saturated, what transferred, and what still failed. The score can be useful, but only the history can support governance. Without that history, the system has no way to tell whether it learned the capability, learned the test, learned a presentation pattern, or merely found a path around the measurement.
+
+Goodhart pressure also appears before anyone is acting maliciously. If the easiest visible metric is speed, the system may drop verification work. If the easiest visible metric is pass rate, the system may avoid difficult cases. If the easiest visible metric is a public benchmark, the system may shape memory, examples, prompts, and training pressure around that surface until the benchmark stops measuring the thing it was meant to measure. A ratchet is the countermeasure: every success preserves a floor, exposes residuals, and asks for a harder frontier instead of turning one number into a broad capability claim.
+
+This also protects the reader. A living book can accumulate validation badges, generated fixtures, source notes, and local renders, but those are not interchangeable forms of evidence. The ratchet record should tell the reader whether a result is a book-build check, schema fixture, synthetic example, source-reported benchmark, reproduced benchmark, or empirical capability result.
+
+## Core Claim
+
+Benchmark ratchets should preserve regressions, create harder frontiers, record residuals, and resist Goodhart pressure (evidence boundary: architectural argument).
+The assigned sources support design discussion of benchmark lifecycle, anti-Goodhart controls, residual escrow, regression floors, readiness gates, and the mined distinction between metrics that were measured, derived, modeled, fixed, proxied, or never causally connected to a returned output. They do not prove benchmark gains in this repository.
+
+## Mechanism
+
+A benchmark ratchet turns a result into an evidence-state transition, not a celebration. The record captures the run, baseline, frontier state, residuals, regressions, holdouts, contamination checks, and promotion decision before any capability claim is allowed to move.
+
+The ratchet needs evidence states that are harder to confuse than a single pass/fail flag: `candidate_metric`, `schema_fixture_pass`, `synthetic_probe`, `source_reported`, `locally_reproduced`, `regression_floor`, `frontier_probe`, `contaminated`, `blocked`, and `retired`. These states are not all encoded as separate fields in the current minimal schema, but future agents need them as drafting and implementation vocabulary so they cannot spend a fixture pass as benchmark evidence or a source-reported command as local reproduction.
+
+The ratchet has two memories. The first is a regression memory: once a behavior matters, later systems must keep passing it or explicitly explain why the requirement changed. The second is a frontier memory: once a benchmark stops applying pressure, it should be retired into a floor and replaced by harder, less predictable work. The stack therefore does not ask whether a benchmark is "solved" in the abstract. It asks what the benchmark is allowed to prove now, what it must continue to guard, and what new pressure is needed next.
+
+This creates an asymmetry that is useful for governance. Failure can immediately create a residual, a diagnosis, a regression, or a blocked promotion. Success only opens a review path. To become evidence, success must survive baseline comparison, negative-result accounting, hidden or transfer checks where appropriate, contamination review, and a claim-specific promotion decision. That asymmetry is deliberate: it is cheaper to record uncertainty than to repair an overpromoted capability.
+
+```{mermaid}
+flowchart LR
+A["Candidate metric or frontier"] --> B["Evidence-state classification"]
+B --> C["Run record, baseline, environment"]
+C --> D["Mastery, saturation, wall diagnosis"]
+D --> E["Residual escrow + negative results"]
+E --> F["Regression floor and harder frontier split"]
+F --> G["Holdout, transfer, mutation, contamination"]
+G --> H{"Promote readiness or claims?"}
+H -- "yes" --> I["Scoped support-state transition"]
+H -- "no" --> J["Blocked promotion / residual queue"]
+I --> K["Claim/evidence matrix"]
+J --> K
+```
+
+**What the benchmark ratchet shows:** The ratchet converts benchmark work into an evidence-state decision, not a celebration of a score. Residuals, regressions, holdouts, transfer checks, mutation, contamination, and negative results all gate whether readiness or a claim can move.
+
+A benchmark ratchet record tracks benchmark state, baseline, command, environment, mastery threshold, saturation, residuals, regressions, holdouts, mutation/transfer checks, contamination audit, claim support effect, and negative results.
+
+In practice, this means benchmark work should leave behind enough material for a future reader or agent to reconstruct the decision. If a model clears a threshold but fails a neighboring task family, the residual belongs beside the result. If a benchmark is useful only as a smoke test, the record should say so. If a source reports a command that this repository has not rerun, the record should preserve that boundary instead of laundering it into local evidence. Benchmark evidence discipline depends on this mundane bookkeeping.
+
+The ratchet should also name the capability field it pressures. Without an SCF boundary, benchmark success can attach to a vague product, model, or agent identity and then survive migrations it was never meant to cover. With an SCF boundary, the benchmark can preserve a regression floor for the specific capability that earned it.
+
+### Metric provenance and closure inheritance
+
+Benchmark Ratchets owns metric admissibility because Evidence States decides whether support may move, while this layer decides whether a result is a valid measurement input at all. The **Metric Provenance Record** sits beneath the ratchet and names the metric's origin as `measured`, `derived`, `recomputed`, `modeled`, `fixture`, `constant`, `declared`, `proxy`, `vacuous`, `source_reported`, or `unknown`. The class is not decorative. A source-reported number stays source-reported; a constant bonus stays constant; a proxy cannot be narrated as the target; and a fixture can preserve a regression without becoming empirical capability evidence.
+
+The record also installs four inherited gates:
+
+1. **Benchmark closure inheritance.** A descendant frontier inherits prior regression floors, exclusions, contamination findings, and residuals. Renaming a suite, checkpoint, model family, or report cannot shed them without an explicit override record.
+2. **Representation-capacity gate.** A metric is inadmissible when the evaluated architecture cannot express the target class. A repeated-token adaptor cannot be judged as a general sequence generator; a status-polling workload cannot establish cognitive throughput; a tone codec cannot establish ordinary speech recognition.
+3. **Retry-lineage ceiling.** Materially equivalent retries share one lineage and a declared ceiling. Once the ceiling is crossed, another attempt requires a new intervention, transfer-distance change, or authorized override; favorable-number search is not evidence accumulation.
+4. **Checkpoint-to-output binding.** A capability metric binds checkpoint, tokenizer, runtime path, raw output, evaluator output, and exact claim. If the runtime bypasses the trained component, an adaptor score cannot support the returned answer.
+
+The historical projects make all four gates concrete. CCA records falling loss without honest benchmark lift and canonical closure that can disagree with partial score surfaces. Corben's Trainer records quarantined fixture runs that had already influenced claim and promotion records. Corben's Best Model Possible contains constants, formulas, proxies, vacuous passes, explicit lane binding, and a runtime answer path not generally driven by the trained adaptor. BeastBrain and BugBrain contain simulated I/O, fixed random paths, and status workloads that resemble stronger evaluations. MoECOT Manifest records the useful opposite discipline—separate internal contracts and external holdouts—while also showing that strong internal scores can coexist with weak external performance.
+
+```{mermaid}
+flowchart LR
+M["Metric value"] --> O{"Origin class"}
+O -->|"measured / recomputed"| C["Observation + evaluator"]
+O -->|"source / fixture / constant / proxy / vacuous"| B["Block or regression-only"]
+C --> R{"Target representable?"}
+R -->|"no / unknown"| B
+R -->|"yes"| L["Inherit floors, exclusions, residuals"]
+L --> T{"Retry ceiling intact?"}
+T -->|"no"| B
+T -->|"yes"| K{"Checkpoint-to-output binding complete?"}
+K -->|"no"| B
+K -->|"yes"| A["Admissible ratchet input"]
+A --> P["Claim-specific promotion review"]
+```
+
+**How to read the provenance gate:** the number enters from the left, but its origin and causal route determine whether it can reach a promotion review. A blocked metric may still be valuable as a regression, negative case, or residual. The figure does not report a benchmark result.
+
+The strongest objection is that metric provenance can become paperwork around bad constructs. That objection is correct when fields are filled without changing a decision. The gate therefore rejects records that cannot name a target construct, representation-capacity basis, observation, evaluator, inherited floor, retry lineage, and causal output binding. An exact blocker is preferable to a complete-looking but meaningless packet.
+
+## Interfaces
+
+The interface is not a leaderboard row. It is a decision packet around an evaluation event. A later system should be able to see what was tested, what counted as the old floor, what changed, what failed nearby, and which claim was allowed to move.
+
+A useful packet names the capability being pressured, the task or suite, the run command or source boundary, the baseline, the environment, the threshold, the saturation state, the residuals, the regressions that must be preserved, the hidden or transfer checks, the contamination review, the negative results, and the promotion decision. If those details are missing, the result may still be interesting, but it is not permission to move a support state.
+
+Routing and stable capability fields consume the packet as readiness context. Procedural memory consumes it as retirement pressure: a tool that fails an old floor should be revised, quarantined, or retired. Appendix C consumes it only when the packet supports an exact claim and preserves the non-claims around every stronger-sounding interpretation.
+
+That is why the ratchet interface is conservative. It lets a win become memory without letting a score become mythology.
+
+## Invariants
+
+- No test success is claimed without execution.
+- Synthetic and empirical evidence remain distinct.
+- Regressions are preserved.
+- Saturated benchmarks become regression floors, not permanent definitions of intelligence.
+- Negative and inconclusive results remain visible.
+- Source-reported, synthetic, fixture, reproduced, and empirical results never collapse into one evidence class.
+- Public-calibration boundaries are preserved even when a benchmark is useful for orientation.
+- Every metric exposes its origin class; measured, derived, modeled, fixed, proxy, vacuous, and unknown values remain distinct.
+- Descendant benchmarks inherit prior floors, exclusions, contamination findings, and residuals unless an explicit override is recorded.
+- A metric cannot be admitted when the architecture cannot express the target or the evaluated checkpoint cannot be bound to the output.
+- Equivalent retries cannot escape a lineage ceiling through renamed runs.
+
+Claim specificity is the benchmark ratchet's strongest invariant. A benchmark can support only the claim it actually measured, under the recorded conditions. Broader readiness, deployment safety, model quality, or ASI-progress claims require their own evidence.
+
+Ratchets must preserve old baselines and failed attempts so benchmark progress cannot erase regression history.
+
+Evaluator updates also need versioned admission rules before old scores and new scores are compared.
+
+## Failure modes
+
+- Benchmark overfitting.
+- Hidden regression deletion.
+- Claim support inflation.
+- Source-reported results presented as reproduced results.
+- Public-calibration leakage.
+- Evidence-class collapse, where a schema fixture, book-build check, synthetic probe, or source-reported command is narrated like empirical capability evidence.
+- Floor/frontier inversion, where a saturated regression floor is used to justify broad readiness while the new frontier remains untested.
+- Metric-origin laundering, where a constant, formula, fixture, proxy, source-reported, or vacuous value is presented as measured.
+- Architecture-inexpressible evaluation, where the scoring target is impossible for the evaluated output path.
+- Retry laundering, where materially identical failed runs are renamed until a favorable number appears.
+- Checkpoint/output disconnect, where a trained artifact is scored but the returned behavior bypasses it.
+
+Each failure blocks promotion or downgrades support state until the evidence boundary is repaired.
+
+A subtler failure is benchmark nostalgia. A once-useful benchmark may remain in the book because it was historically important, even after it stops applying pressure. The ratchet should preserve it as a regression floor or historical note while making clear that it no longer defines the frontier.
+
+## Minimum Viable Implementation
+
+The smallest honest ratchet is not a benchmark suite. It is a tiny evidence rehearsal that keeps four outcomes separate: a passing path, a nearby failure, a saturated task that becomes a regression floor, and a blocked promotion. The rehearsal is valuable only if it refuses to turn any one of those outcomes into a broad capability story.
+
+The current repository already exercises a narrower version of that shape. It checks a small synthetic anti-Goodhart packet with two valid cases and five expected-invalid controls. The passing side covers one promotion-ready synthetic path and one saturated task preserved as a floor. The rejected side blocks missing anti-Goodhart checks, promotion from blocked evidence, reward-as-truth confusion, saturation-as-readiness, and a steward release without approval.
+
+That bridge is useful because the success and failure paths are checked together. It demonstrates record discipline at the boundary where claims might otherwise inflate. It is still not an empirical run, not a hidden-holdout test, not a contamination detector, not a policy-training result, not a steward-agent release review, not a Theseus replay, not model-quality evidence, and not a support-state transition.
+
+The next useful slice should be a public toy ratchet with one intentionally contaminated case and one source-reported-only case. Those cases would force the book to preserve two important refusals: contamination creates a quarantine or blocked decision, and source-reported status stays source-reported until the command, environment, data boundary, and artifacts are imported or rerun.
+
+## Beyond the State of the Art
+
+The mature endpoint is an evaluation operating system, not a bigger scoreboard. Every task would have a lifecycle: candidate pressure, frontier probe, regression floor, contamination review, retirement, or blocked state. The system would remember why a task mattered and why it stopped being enough.
+
+In that endpoint, a result could not travel alone. It would carry its old floor, neighboring failures, residuals, negative cases, hidden or transfer checks, public-calibration limits, and the exact claim under review. Success would open a promotion review; it would not become promotion by itself.
+
+This would also change how self-improving systems learn. Once a planner, policy, or tool can adapt to feedback, the evaluation surface becomes part of the environment. The ratchet has to preserve the difference between learning a capability, learning a test, exploiting a proxy, and improving the presentation of progress.
+
+The endpoint remains a target architecture. The book has not shown that such an evaluation OS works in deployment. It has a synthetic boundary check and a design discipline. Stronger claims require real ratchet packets, contamination reviews, transfer checks, regression-preservation runs, and accepted evidence transitions that show exactly which claim boundary changed.
+
+## Summary
+
+Benchmarks are pressure surfaces, not truth machines. They become useful when every result has a run record, baseline, origin class, target-capacity check, inherited floors, retry lineage, checkpoint/output binding, residuals, regressions, anti-Goodhart checks, and a conservative support-state effect.
+
+That pressure changes future behavior only if policy optimization preserves provenance, rollback, and governance gates while learning from rewards, preferences, verifier outputs, and benchmark signals.
+
+The durable rule is that benchmarks should improve memory, not erase it. A good ratchet makes the next system harder to fool and easier to compare; a bad one gives the next system a number to optimize and a story to overclaim. Benchmark ratchets therefore treat each run as a governed evidence event: environment, seed, task, baseline, metric, failure cases, residuals, and downgrade triggers all matter. Anti-Goodhart discipline is not pessimism. It is how the system keeps learning signals useful after models, planners, and policies begin adapting to them. Once benchmarks become ratchets, policy optimization can update behavior without turning every reward into truth or every score into permission.
+
+## Handoff
+
+Benchmark Ratchets and Anti-Goodhart Evidence makes measurements harder to game; Capability Thresholds and Deployment Commitments now converts a scoped, integrity-bounded assessment into a versioned precommitment about safeguards, exceptions, residuals, and release-path constraints before Adversarial Evaluation tests whether the observation itself was elicited under trustworthy conditions.

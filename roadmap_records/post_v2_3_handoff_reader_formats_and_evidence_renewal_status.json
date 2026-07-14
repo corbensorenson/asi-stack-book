@@ -1,6 +1,6 @@
 {
   "schema_version": "asi_stack.post_v2_3_handoff_reader_formats_evidence_renewal_status.v0",
-  "snapshot_date": "2026-07-13",
+  "snapshot_date": "2026-07-14",
   "roadmap_id": "asi-stack-post-v2-3-handoff-reader-formats-evidence-renewal-2026-07-13",
   "roadmap_path": "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md",
   "authority": "Corben Sorenson",
@@ -67,8 +67,8 @@
   "priorities": [
     {"id": "P0", "state": "completed", "purpose": "activate successor authority, repair public-truth drift, and complete the clean source handoff"},
     {"id": "P1", "state": "completed", "purpose": "disposition EPUB PDF and DOCX for the frozen 54-chapter reader while deferring audio"},
-    {"id": "P2", "state": "pending", "purpose": "close selective external-grounding and completeness residuals without citation padding or automatic chapter growth"},
-    {"id": "P3", "state": "pending", "purpose": "repair the evidence protocol, run at most one warranted flagship, reconcile scoped refutations, and import one fresh Theseus currentness lane"},
+    {"id": "P2", "state": "completed", "purpose": "close selective external-grounding and completeness residuals without citation padding or automatic chapter growth"},
+    {"id": "P3", "state": "in_progress", "purpose": "repair the evidence protocol, run at most one warranted flagship, reconcile scoped refutations, and import one fresh Theseus currentness lane"},
     {"id": "P4", "state": "pending", "purpose": "reconcile products and close with an exact release blocked or no-release transaction"}
   ],
   "milestones": [
@@ -78,7 +78,7 @@
     {"id": "M3", "state": "completed", "purpose": "disposition EPUB"},
     {"id": "M4", "state": "completed", "purpose": "disposition PDF"},
     {"id": "M5", "state": "completed", "purpose": "disposition DOCX"},
-    {"id": "M6", "state": "pending", "purpose": "disposition source and completeness residuals"},
+    {"id": "M6", "state": "completed", "purpose": "disposition source and completeness residuals"},
     {"id": "M7", "state": "pending", "purpose": "disposition evidence protocol and Theseus currentness work"},
     {"id": "M8", "state": "pending", "purpose": "reconcile products and close the cycle"}
   ],
@@ -91,11 +91,11 @@
     {"format": "embedded_audio", "state": "deferred", "scope": "not_authorized"}
   ],
   "source_workstreams": [
-    {"id": "SW-01", "state": "pending", "scope": "ten_chapter_claim_specific_external_grounding"},
-    {"id": "SW-02", "state": "pending", "scope": "reasoning_trace_faithfulness_crosscut"},
-    {"id": "SW-03", "state": "pending", "scope": "world_models_jepa_energy_based_ownership_test"},
-    {"id": "SW-04", "state": "pending", "scope": "cais_embedded_agency_corrigibility_foundations_reconciliation"},
-    {"id": "SW-05", "state": "pending", "scope": "tier_2_current_text_disposition_audit"}
+    {"id": "SW-01", "state": "completed", "scope": "ten_chapter_claim_specific_external_grounding"},
+    {"id": "SW-02", "state": "completed", "scope": "reasoning_trace_faithfulness_crosscut"},
+    {"id": "SW-03", "state": "completed", "scope": "world_models_jepa_energy_based_ownership_test"},
+    {"id": "SW-04", "state": "completed", "scope": "cais_embedded_agency_corrigibility_foundations_reconciliation"},
+    {"id": "SW-05", "state": "completed", "scope": "tier_2_current_text_disposition_audit"}
   ],
   "evidence_workstreams": [
     {"id": "EW-01", "state": "pending", "scope": "governance_tax_protocol_repair_preflight"},

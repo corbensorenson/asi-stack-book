@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 54 |
-| Assigned source/chapter pairs | 666 |
-| Exact claim-source mappings | 590 |
+| Assigned source/chapter pairs | 681 |
+| Exact claim-source mappings | 605 |
 | Unmapped assigned pairs | 76 |
-| Source notes present for assigned pairs | 666 |
-| Source notes listing assigned chapter | 666 |
-| Passage-reviewed mappings recorded | 590 |
+| Source notes present for assigned pairs | 681 |
+| Source notes listing assigned chapter | 681 |
+| Passage-reviewed mappings recorded | 605 |
 | Support-state counts | {"argument": 54} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -33,24 +33,24 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Chapter ID | Assigned pairs | Claim-source mappings | Source notes present | Source notes listing chapter | Passage-reviewed mappings | Support state | Next action |
 |---|---:|---:|---:|---:|---:|---|---|
-| `asi-is-a-stack-not-a-model` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
+| `asi-is-a-stack-not-a-model` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `the-efficient-asi-hypothesis` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `system-boundaries-and-authority` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
 | `failure-modes-of-ungoverned-intelligence` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
-| `evidence-states-and-claim-discipline` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
-| `scalable-oversight-and-adversarial-ai-control` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
+| `evidence-states-and-claim-discipline` | 15 | 14 | 15 | 15 | 14 | argument | passage review required before source-derived promotion |
+| `scalable-oversight-and-adversarial-ai-control` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `constitutional-alignment-substrate` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `constitutional-alignment-substrate` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `moral-uncertainty-and-value-conflict` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `stable-capability-fields` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `capability-replacement-and-rollback` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `security-kernel-and-digital-scifs` | 13 | 5 | 13 | 13 | 5 | argument | passage review required before source-derived promotion |
 | `model-weight-custody-and-hardware-roots-of-trust` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 11 | 7 | 11 | 11 | 7 | argument | passage review required before source-derived promotion |
-| `recursive-self-improvement-boundaries` | 13 | 11 | 13 | 13 | 11 | argument | passage review required before source-derived promotion |
+| `recursive-self-improvement-boundaries` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
 | `open-ended-improvement-engines` | 8 | 5 | 8 | 8 | 5 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
-| `planning-as-a-control-layer` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
+| `planning-as-a-control-layer` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `virtual-context-abi` | 16 | 12 | 16 | 16 | 12 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 12 | 10 | 12 | 12 | 10 | argument | passage review required before source-derived promotion |
@@ -58,7 +58,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `claim-ledgers-and-belief-revision` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `spinoza-verification-and-proof-carrying-claims` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `labor-os-and-typed-jobs` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `artifact-graphs-audit-logs-and-replay` | 17 | 14 | 17 | 17 | 14 | argument | passage review required before source-derived promotion |
+| `artifact-graphs-audit-logs-and-replay` | 18 | 15 | 18 | 18 | 15 | argument | passage review required before source-derived promotion |
 | `runtime-adapters-tool-permissions-and-human-approval` | 25 | 20 | 25 | 25 | 20 | argument | passage review required before source-derived promotion |
 | `inter-stack-protocols-identity-and-economic-exchange` | 10 | 9 | 10 | 10 | 9 | argument | passage review required before source-derived promotion |
 | `procedural-memory-and-cognitive-loop-closure` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
@@ -67,22 +67,22 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `personal-compute-hives-and-federated-edge-intelligence` | 23 | 22 | 23 | 23 | 22 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 17 | 16 | 17 | 17 | 16 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 21 | 20 | 21 | 21 | 20 | argument | passage review required before source-derived promotion |
-| `governed-deliberation-and-test-time-scaling` | 7 | 4 | 7 | 7 | 4 | argument | passage review required before source-derived promotion |
+| `governed-deliberation-and-test-time-scaling` | 8 | 5 | 8 | 8 | 5 | argument | passage review required before source-derived promotion |
 | `rankfold-neuralfold-and-artifact-compression` | 6 | 5 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
 | `resource-economics-and-token-budgets` | 16 | 13 | 16 | 16 | 13 | argument | passage review required before source-derived promotion |
-| `mathematical-and-search-substrates` | 13 | 11 | 13 | 13 | 11 | argument | passage review required before source-derived promotion |
+| `mathematical-and-search-substrates` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 7 | 4 | 7 | 7 | 4 | argument | passage review required before source-derived promotion |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 29 | 22 | 29 | 29 | 22 | argument | passage review required before source-derived promotion |
 | `capability-thresholds-and-deployment-commitments` | 6 | 5 | 6 | 6 | 5 | argument | passage review required before source-derived promotion |
-| `adversarial-evaluation-sandbagging-and-training-time-deception` | 8 | 3 | 8 | 8 | 3 | argument | passage review required before source-derived promotion |
+| `adversarial-evaluation-sandbagging-and-training-time-deception` | 10 | 5 | 10 | 10 | 5 | argument | passage review required before source-derived promotion |
 | `safety-cases-and-structured-assurance` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
-| `policy-optimization-and-learning-from-feedback` | 28 | 28 | 28 | 28 | 28 | argument | eligible for support review |
-| `data-engines-continual-learning-and-unlearning` | 10 | 8 | 10 | 10 | 8 | argument | passage review required before source-derived promotion |
+| `policy-optimization-and-learning-from-feedback` | 29 | 29 | 29 | 29 | 29 | argument | eligible for support review |
+| `data-engines-continual-learning-and-unlearning` | 11 | 9 | 11 | 11 | 9 | argument | passage review required before source-derived promotion |
 | `artifact-steward-agents-and-living-project-governance` | 23 | 23 | 23 | 23 | 23 | argument | eligible for support review |
-| `integrated-reference-architecture` | 28 | 27 | 28 | 28 | 27 | argument | passage review required before source-derived promotion |
+| `integrated-reference-architecture` | 30 | 29 | 30 | 30 | 29 | argument | passage review required before source-derived promotion |
 | `project-theseus-as-report-first-implementation-reference` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `prototype-roadmap` | 19 | 19 | 19 | 19 | 19 | argument | eligible for support review |
 | `living-book-methodology` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
@@ -129,6 +129,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_owasp_agentic_top_10_2026` | 6 | yes |
 | `vcm_editable` | 6 | yes |
 | `circle_ai_contract_suite` | 6 | yes |
+| `ext_embedded_agency_2019` | 5 | yes |
 | `uat` | 5 | yes |
 | `ext_w3c_prov_o_2013` | 5 | yes |
 | `software_magic_grimoire` | 5 | yes |
@@ -143,10 +144,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_mlcommons_croissant_1_1_2026` | 4 | yes |
 | `ext_darwin_godel_machine_2025` | 4 | yes |
 | `ext_adas_2024` | 4 | yes |
+| `ext_v_jepa_2_2025` | 4 | yes |
 | `ext_graphrag_2024` | 4 | yes |
 | `ext_hipporag_2024` | 4 | yes |
 | `ext_raptor_2024` | 4 | yes |
 | `ext_claw_swe_bench_2026` | 4 | yes |
+| `ext_faithfulness_information_flow_2026` | 4 | yes |
 | `ext_inspect_ai_2024` | 4 | yes |
 | `bugbrain` | 4 | yes |
 | `circle_ai_architectures` | 4 | yes |
@@ -172,6 +175,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `theseus_plan_compiler` | 3 | yes |
 | `beastbrain_timeless` | 2 | yes |
 | `field_of_god` | 2 | yes |
+| `ext_monitorbench_2026` | 2 | yes |
 | `ethica_mechanica` | 2 | yes |
 | `planforge_compiler_arch` | 2 | yes |
 | `ext_cap_theorem_gilbert_lynch_2002` | 2 | yes |
@@ -282,6 +286,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `moecot` | mapped | note present | chapter listed | passage-reviewed |
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `asi-is-a-stack-not-a-model.core` | `asi-is-a-stack-not-a-model` | `ext_embedded_agency_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `the-efficient-asi-hypothesis.core` | `the-efficient-asi-hypothesis` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
@@ -334,10 +339,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `corbens_trainer_project` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `corbens_best_model_possible_project` | mapped | note present | chapter listed | passage-reviewed |
 | `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `ext_unlearning_benchmarks_weak_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `evidence-states-and-claim-discipline.core` | `evidence-states-and-claim-discipline` | `ext_embedded_agency_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_weak_to_strong_generalization_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_scalable_oversight_weak_llms_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_ai_safety_debate_2018` | mapped | note present | chapter listed | passage-reviewed |
 | `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
+| `scalable-oversight-and-adversarial-ai-control.core` | `scalable-oversight-and-adversarial-ai-control` | `ext_monitorbench_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `software_magic_grimoire` | mapped | note present | chapter listed | passage-reviewed |
 | `human-intent-as-a-formal-input.core` | `human-intent-as-a-formal-input` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
@@ -351,6 +358,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `field_of_god_ai_constitution` | mapped | note present | chapter listed | passage-reviewed |
 | `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
+| `constitutional-alignment-substrate.core` | `constitutional-alignment-substrate` | `ext_embedded_agency_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
@@ -413,6 +421,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_darwin_godel_machine_2025` | unmapped | note present | chapter listed | not passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_adas_2024` | unmapped | note present | chapter listed | not passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_embedded_agency_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `rmi` | unmapped | note present | chapter listed | not passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `cognitive_loop_closure` | unmapped | note present | chapter listed | not passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `benchmaxxing` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -441,6 +450,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `planforge_compiler_arch` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `coherence_exchange` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
+| `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `ext_v_jepa_2_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `planforge_compiler_arch` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
@@ -534,6 +544,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `corbens_best_model_possible_project` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `ext_claw_swe_bench_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `ext_txfs_2018` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `ext_faithfulness_information_flow_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
@@ -685,6 +696,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_s_grpo_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_universal_transformer_2019` | unmapped | note present | chapter listed | not passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_dynamic_compute_recurrent_transformers_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_faithfulness_information_flow_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_compressor` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |
@@ -720,6 +732,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `ext_mamba_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `ext_universal_transformer_2019` | unmapped | note present | chapter listed | not passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `ext_recurrent_transformer_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `ext_v_jepa_2_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `circle_calculus_core` | mapped | note present | chapter listed | passage-reviewed |
 | `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `circle_ai_contract_suite` | mapped | note present | chapter listed | passage-reviewed |
 | `circle-calculus-and-proof-carrying-ai-contracts.core` | `circle-calculus-and-proof-carrying-ai-contracts` | `rope_position_certifier` | mapped | note present | chapter listed | passage-reviewed |
@@ -792,6 +805,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_inspect_ai_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_agentdojo_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_owasp_agentic_top_10_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_faithfulness_information_flow_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `adversarial-evaluation-sandbagging-and-training-time-deception.core` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `ext_monitorbench_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `ext_gsn_community_standard_2011` | mapped | note present | chapter listed | passage-reviewed |
 | `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `ext_evaluations_safety_cases_scheming_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `safety-cases-and-structured-assurance.core` | `safety-cases-and-structured-assurance` | `ext_aisi_safety_cases_2024` | mapped | note present | chapter listed | passage-reviewed |
@@ -824,6 +839,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_longrlvr_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_rlhf_limitations_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_muse_unlearning_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `ext_faithfulness_information_flow_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_bourtoule_machine_unlearning_2021` | mapped | note present | chapter listed | passage-reviewed |
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_shumailov_model_collapse_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_gerstgrasser_data_accumulation_2024` | mapped | note present | chapter listed | passage-reviewed |
@@ -834,6 +850,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_unlearning_benchmarks_weak_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_openunlearning_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_v_jepa_2_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
@@ -885,6 +902,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `ext_drexler_cais_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `ext_adas_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `integrated-reference-architecture.core` | `integrated-reference-architecture` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `ext_v_jepa_2_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `integrated-reference-architecture.core` | `integrated-reference-architecture` | `ext_embedded_agency_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `project_theseus_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_plan_compiler` | mapped | note present | chapter listed | passage-reviewed |
 | `project-theseus-as-report-first-implementation-reference.core` | `project-theseus-as-report-first-implementation-reference` | `theseus_self_evolution_system` | mapped | note present | chapter listed | passage-reviewed |

@@ -1,0 +1,331 @@
+# Proof-Carrying Claims and Adversarial Review
+
+Some claims are cheap enough to remain drafts while evidence matures. Other claims shape plans,
+permissions, releases, or safety boundaries. Those claims need more than a
+well-written paragraph.
+
+The first upgrade is a proof-carrying or justification-carrying envelope. The
+system chooses a tier: formal proof, citation dossier, executable procedure,
+replay log, benchmark artifact, tribunal review, or downgrade route. It records
+the mapping from the human-language claim to the artifact that was checked, and
+it records the limits of that check.
+
+When the claim is contested, high-risk, or mismatched, adversarial review is
+the next escalation. A tribunal-style record defines a dossier, assigns roles,
+runs probes, preserves dissent, and issues scoped actions. The result goes
+back to the claim ledger as a bounded effect: no change, downgrade, block,
+revise, accept within scope, or escalate.
+
+The reader-level point is simple: stronger claims should leave stronger
+evidence trails, and failed review should be remembered. A proof, citation,
+benchmark, replay, or tribunal verdict earns its place when later readers can
+see what it covered, what it missed, who challenged it, and what changed.
+
+## Problem
+
+High-value claims and high-risk artifacts need a governed verification path
+that can choose proof, citation, procedure, replay, benchmark, or
+adversarial-review treatment without laundering failed, mismatched, or
+contested evidence into support.
+
+The claim ledger gives claims durable identity and history. That is necessary
+but not enough. Some claims need evidence stronger than ordinary prose. Some
+need a formal proof. Some need citations. Some need an executable procedure or
+replay. Some need a tribunal because the mapping is contested, the stakes are
+high, or the evidence points in different directions.
+
+This verification-event layer defines how a claim or artifact receives a
+justification envelope, how failure is preserved, how adversarial review
+operates, and how bounded results write back to the ledger without
+overclaiming. The same path also protects readers and downstream systems from
+treating fluent certainty as verified standing.
+
+## Why existing approaches are insufficient
+
+Neural generation, one-pass self-critique, and informal review can produce
+plausible justification language without preserving proof scope, verifier
+result, evidence dossier, dissent, failed attempts, verdict constraints, or
+downgrade routes.
+
+A model can explain why a claim sounds right without checking it. A proof can
+verify the wrong formalization. A citation can support a nearby statement but
+not the target inference. A reviewer can agree without independent evidence. A
+tribunal can be rerun until it accepts unchanged evidence. If the record does
+not preserve those failures, review becomes a confidence-laundering machine.
+
+External comparators help position the boundary but do not prove it.
+Proof-carrying-code literature, Lean theorem-proving materials,
+autoformalization work, debate, LLM-as-judge evaluation, and contestable-AI
+design all illuminate adjacent parts of the problem. Proof-carrying code
+shows why evidence should travel with an artifact and remain scoped to a
+consumer policy. Lean grounds the proof-assistant vocabulary. Autoformalization
+sharpens the interpretation risk between prose and formal target. Debate and
+LLM-as-judge work show why scalable review needs judge limits, adversarial
+pressure, bias controls, and human-calibration records. Contestable-AI design
+grounds the challenge, appeal, audit, and dissent surface. The ASI Stack uses
+them as comparators while asking a systems question: what record should exist
+before a claim receives stronger standing?
+
+## Core Claim
+
+Selected claims and artifacts should move through proof-carrying, justification-carrying, or adversarial-review envelopes that record tier, interpretation mapping, evidence dossier, verifier or tribunal result, dissent, limitations, failed attempts, required actions, residuals, and ledger effects (evidence boundary: architectural argument).
+Spinoza supplies the central
+discipline: neural systems may propose, but structured verifiers decide; formal
+scope is explicit; outward claims carry tiers; unknown, failed, timed-out, or
+mismatched verification cannot be narrated as success. GenesisCode supplies
+the obligation-envelope pattern for software artifacts: obligations, evidence
+hashes, replay logs, semantic patches, provenance, and small trusted-core
+boundaries. UAT supplies retrieval-bounded proposition review, adversarial
+siege, cycle caps, and human checkpoints. Talos supplies execution/audit
+pressure for review artifacts: claim graphs, evidence sets, proof bundles,
+logs, replay, residual risk, and human adjudication. Verification Bandwidth
+explains why some claims need stronger verification rather than more context.
+TreeLLM supplies a possible semantic representation substrate for
+interpretation mappings and traces. Coherence Exchange remains a speculative
+synthesis context rather than verifier evidence.
+
+### Strongest objection
+
+Method diversity can be theater. Six differently named checks may share the
+same evidence, prompt, implementation, evaluator, or blind spot. An
+independence graph can disclose those dependencies, but it cannot prove that
+the remaining groups are substantively independent or competent. The protocol
+therefore treats method labels and independence groups as accounting inputs,
+not reviewer-quality evidence; verdict correctness still requires empirical
+calibration beyond the fixture.
+
+## Mechanism
+
+The verification event begins with route selection. A claim or artifact enters
+from the claim ledger, planning layer, execution layer, or release gate. The
+system chooses a treatment: formal proof, citation dossier, executable
+procedure, replay log, benchmark artifact, tribunal review, downgrade, block,
+or escalation. The choice records risk, claim type, support-state effect, and
+consumer requirements.
+
+The selected route then becomes proof-carrying or justification-carrying
+structure. A record names the target claim, required tier, interpretation
+mapping, justification artifact, verifier result, failed attempts,
+limitations, formal scope, source refs, semantic adequacy notes, residual
+route, and non-claims. A successful proof can support a narrow formal object
+without promoting a broader natural-language claim.
+
+The same discipline applies to receipt faithfulness. A proof or receipt can
+validate a record-shaped object while missing the reality that object claims to
+record, so the artifact graph now includes a bounded adversarial fixture for
+shape-valid but reality-false receipts, ignored trap receipts, missing
+independent cross-checks, and unbounded attestations. That fixture is a
+proof-carrying-claim lesson, not an open-world truth guarantee: the verifier
+must preserve the interpretation boundary before any stronger standing can be
+reviewed.
+
+The epistemic trusted computing base is the next verifier boundary. Spinoza's
+proposer/verifier separation only helps if the verifier route itself is not
+laundered. The fixture at `experiments/epistemic_tcb/results/2026-07-03-local.json`
+checks a finite version of that rule: support review needs a root of trust,
+bounded delegation, a recursion stop, independent verifier status, visible
+outside-TCB residuals, and non-claims. It rejects same-component self-verifier
+laundering and ambient trust propagation, but it does not prove verifier
+correctness or deployed trust-base behavior.
+
+In this sense, verifier-trust laundering is a proof-carrying-claim failure:
+the record asks readers to trust the verifier without showing why that verifier
+is inside the trusted core.
+
+Contested, high-risk, or mismatched cases move into adversarial review. A
+tribunal-style record constructs a dossier, assigns role-separated reviewers,
+runs adversarial probes, preserves evidence-linked findings, records dissent,
+applies cycle caps, guards against unchanged-evidence laundering, and issues
+scoped verdicts with required actions or constraint effects.
+
+Every result returns through ledger writeback. Results become explicit ledger
+effects: no change, bounded support review, downgrade, block, revise, accept
+within scope, dispatch blocker, authority narrowing, human sign-off, or
+residual work. Failed and mismatched attempts remain useful because they
+prevent the same overclaim from returning without new evidence or corrected
+mapping.
+
+Route refusal is part of the mechanism, not an exceptional afterthought. A
+claim can ask for a formal tier and receive only a citation dossier; a tribunal
+can produce dissent without acceptance; a replay can show procedure adherence
+without proving the surrounding interpretation. Those mismatches become
+recorded blockers or residuals rather than editorial discretion.
+
+### Method labels, independence, and refusal
+
+The historical-project packet requires each tribunal route to name its method:
+formal proof, citation check, procedural replay, adversarial probe,
+falsification, or abstention. Each method has an independence group and a
+bounded dependency graph, so dependent duplicates cannot inflate the
+independent-method count. An empty dossier cannot pass by vacuity;
+falsification must be attempted; abstention remains an explicit non-approval
+result; every veto carries a reason and appears in preserved dissent; and no
+default approval is allowed. These are record semantics, not evidence that the
+methods are adequate or the reviewers independent.
+
+```{mermaid}
+flowchart LR
+Ledger["Claim ledger or artifact record"] -- "requests stronger standing" --> Select["Verification selection"]
+Select -- "formal or structured route" --> Proof["Proof, citation, procedure, replay, or benchmark envelope"]
+Select -- "contested or high-risk route" --> Tribunal["Adversarial tribunal review"]
+Proof -- "records pass, fail, timeout, mismatch" --> Result["Verifier result and limitations"]
+Tribunal -- "records dossier, probes, dissent" --> Dissent["Scoped verdict and unresolved issues"]
+Result -- "bounded effect only" --> Effect["Ledger effect"]
+Dissent -- "bounded effect only" --> Effect
+Effect -- "no change, downgrade, revise, accept within scope" --> Ledger
+Effect -- "required action" --> Plan["Planning or execution constraint"]
+Result -- "mismatch or timeout" --> Residual
+Effect -- "remaining uncertainty" --> Residual["Residual work or human review"]
+```
+
+**How to read the verification-event flow:** The flow starts with a claim or
+artifact asking for stronger standing. The route can be formal, procedural,
+evidence-based, replay-based, benchmark-based, tribunal-based, or explicitly
+blocked. Every pass, failure, timeout, mismatch, dissent, and verdict returns
+as a bounded ledger effect rather than a free-floating confidence phrase.
+
+The important movement is from "the system says it checked" to "the system can
+show what was checked, by which route, what failed, what remains out of scope,
+and what effect the result is allowed to have."
+
+## Interfaces
+
+This layer sits between durable claims and downstream action. Claim ledgers supply the stable claim identity, support state, provenance, contradictions, revision history, and promotion blockers. Spinoza-style verification does not replace that ledger; it writes bounded verification outcomes back to it.
+
+VCM and semantic context cells supply the source and evidence objects that proof, citation, and tribunal records point to. That pointer is useful only when it preserves the boundary: a source reference or context cell is not the same thing as verification success. Verification Bandwidth handles a different question: whether the available context and reviewer capacity are adequate for the risk carried by the claim.
+
+Formal and executable artifacts can enter when the claim type permits them. Lean proofs, GenesisCode-style obligations, Circle-style contracts, procedure logs, replay logs, and benchmark artifacts can support narrow checks, but each artifact needs its own scope, limitations, failed attempts, and non-claims. UAT-style tribunal review handles contested, high-risk, or mismatched cases by recording dossiers, reviewer roles, adversarial probes, dissent, verdicts, required actions, and residuals.
+
+The field lists in the live research chapter name those records precisely. At reader level, the important idea is simpler: a proof-carrying claim record must say which claim was checked, what tier was requested, what artifact or dossier was used, how the human-language claim was mapped to that artifact, what the verifier or tribunal returned, what failed, what remains out of scope, and what ledger effect is allowed. A tribunal record must say what was reviewed, what evidence boundary was used, who or what played which review role, what challenges were run, what dissent survived, which verdict was issued, and what action or constraint follows.
+
+Planning and execution consume those outcomes as blockers, constraints, required actions, authority narrowing, human sign-off, or residual work. They do not receive an invisible support-state promotion. That boundary is the point of the interface: stronger claims can ask for stronger records, but every pass, failure, timeout, mismatch, dissent, and verdict returns with an explicit limit.
+
+## Invariants
+
+- Proof tier is explicit.
+- Formal tiers require formal proof artifacts.
+- Citation tiers require citation or dossier artifacts.
+- Procedure tiers require procedure logs or schema fixtures.
+- Failed, timed-out, or mismatched verification blocks promotion or routes to
+downgrade, no change, block, or escalation.
+- Narrow passes cannot promote broader natural-language claims without a
+semantic adequacy record.
+- Dissent remains visible.
+- Accept verdicts require scoped evidence.
+- High-risk artifacts cannot bypass required tribunal review.
+- Prior review over unchanged evidence cannot quietly reverse a rejection into
+acceptance.
+- Proof, citation, replay, adversarial, falsification, and abstention methods
+are labeled explicitly and counted by distinct independence groups.
+- Empty or vacuous cases abstain or block rather than pass.
+- Falsification and abstention remain visible, and every veto or dissent is
+preserved in the verdict instead of becoming a silent override.
+- Default approval is forbidden.
+
+Together, these invariants keep verification from becoming ceremony. A strong
+label is not enough. The stack must know which tier was requested, which
+artifact was inspected, what the artifact actually covered, whether the
+interpretation mapping was adequate, which objections survived, which action
+was required, and why the ledger effect was allowed.
+
+## Failure modes
+
+Certified delusion happens when a formal-looking artifact decorates a false or
+unsupported natural-language claim.
+
+Invalid formalization happens when the proof target no longer means the prose
+claim readers care about.
+
+Missing justification artifact happens when a claim asks for a strong tier but
+does not carry the proof, citation, procedure, replay, benchmark, or tribunal
+record required for that tier.
+
+Theorem laundering happens when a narrow formal theorem is used to promote a
+larger systems claim.
+
+Reviewer collusion happens when multiple reviewers share the same blind spot,
+prompt, source error, or incentive.
+
+Consensus theater happens when agreement is recorded without evidence-linked
+findings or unresolved dissent.
+
+Critique without action happens when review produces objections but no ledger
+effect, required action, blocker, downgrade, or residual.
+
+Repeated-review laundering happens when unchanged evidence is reviewed until a
+desired answer appears.
+
+Independence laundering counts correlated methods as separate reviewers.
+Vacuous-pass laundering accepts an empty case because no counterexample was
+present. Silent-veto laundering blocks or shapes a verdict without recording
+who objected and why. Abstention erasure converts “insufficient evidence” into
+agreement, while default approval treats missing review as acceptance.
+
+## Minimum Viable Implementation
+
+The minimum viable implementation is a record discipline, not an open-domain verifier or a working tribunal. It needs enough structure to represent a verification event, reject obvious laundering, preserve failed attempts, and write only bounded effects back to the claim ledger.
+
+The current slice uses proof-carrying-claim, tribunal-review, claim-record, and belief-revision schemas. Its proof-carrying fixtures include a valid narrow formal pass, a citation dossier that makes no support change, and a mismatch that escalates. The invalid controls reject passed verifier records without artifact references, mismatches that try to promote, formal tiers backed by the wrong justification type, timeouts that overpromote support, and negative evidence without a failed-attempt record.
+
+The tribunal fixtures cover scoped acceptance with constraints, unchanged evidence that remains blocked, and high-risk revision with dissent preserved. Their invalid controls reject acceptance without evidence, high-risk review without adversarial probes, prior-review laundering, dissent that does not preserve an unresolved issue, and weak non-claim boundaries.
+
+The adversarial review dossier probe adds a bounded synthetic slice: two valid review dossiers and seven expected-invalid controls. It is useful because it exercises the record shape and laundering defenses. It does not prove semantic equivalence, reviewer independence, adversarial-probe quality, verdict correctness, LLM-judge quality, debate-system quality, deployed review behavior, or support-state movement.
+
+## Beyond the State of the Art
+
+At product maturity, this layer becomes a verification operating system. The
+mature target state does not try to formalize every sentence. It routes each
+high-value claim or artifact to the cheapest adequate verifier or review
+process, then writes a bounded result back to the ledger.
+
+In that system, a claim can ask for a proof, citation dossier, procedure log,
+replay artifact, benchmark record, tribunal verdict, human sign-off, or
+downgrade route. The system records the interpretation mapping, verifier
+result, failed attempts, timeouts, semantic adequacy, dissent, required
+actions, and non-claims. A formal pass can remain narrow. A tribunal acceptance
+can remain scoped. A failed attempt can become a blocker against future
+overpromotion.
+
+The endpoint is not "AI proves everything." The endpoint is anti-laundering
+epistemic machinery: stronger claims require stronger artifacts, failures
+remain visible, and every support-state effect is routed through a record that
+can be audited.
+
+The beyond-SOTA form also changes the economics of review. Routine claims stay
+cheap. Load-bearing claims pay for verification. High-risk or contested claims
+pay for adversarial review. Rigor is spent where it changes permissions,
+release readiness, dispatch, authority, or public claims, while failure records
+remain useful negative evidence.
+
+Support stays at `argument` until future artifacts show verifier adequacy,
+reviewer independence, source interpretation quality, and deployed writeback
+behavior rather than only schema-shaped discipline.
+
+## Summary
+
+Proof-carrying claims and adversarial review are one verification surface. The
+claim ledger says what the claim is and how its belief state changes. This
+verification-event layer says what kind of proof, citation, procedure, replay,
+benchmark, tribunal, or human-review record is adequate before a selected claim
+or artifact can ask for stronger standing.
+
+Some claims need proof. Some need citations. Some need procedures, replay
+logs, benchmarks, or tribunal review. Every route needs a record that names
+its scope, artifact, failed attempts, limitations, dissent, and allowed ledger
+effect. Without that record, stronger-sounding justification can become a
+laundering channel.
+
+The boundary remains narrow. Durable claim identity and belief revision remain
+the job of `claim-ledgers-and-belief-revision`; runtime action remains
+downstream in Labor OS and typed jobs. Labor OS receives only bounded
+constraints, required actions, or residuals, never a hidden promotion from
+review rhetoric alone.
+
+## Handoff
+
+The next layer turns accepted constraints, blocked states, and required actions
+into work. Once a verification event narrows a claim, blocks a route, requires
+source fetch, demands human sign-off, or creates residual work, the execution
+system needs typed jobs that preserve those constraints.
+
+That is the job of **Labor OS and Typed Jobs**.

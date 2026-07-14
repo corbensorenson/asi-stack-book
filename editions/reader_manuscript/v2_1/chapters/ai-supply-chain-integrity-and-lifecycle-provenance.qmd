@@ -1,0 +1,476 @@
+# AI Supply-Chain Integrity and Lifecycle Provenance
+
+An AI system is assembled from models, datasets, tokenizers, libraries,
+training jobs, cloud services, policy files, and derivatives. A familiar name
+does not reveal which ingredient changed, who supplied it, or whether an
+upstream warning applies to a downstream release.
+
+Supply-chain integrity records those relationships. It identifies the exact
+artifact, upstream inputs and processes, checked provenance statements,
+components and suppliers in scope, and downstream descendants affected by an
+advisory or revocation. Missing lineage, stale inventory, and unresolved
+warnings become conditions instead of surprises discovered during
+an incident.
+
+Metadata can be true and insufficient. A signature may show that bytes
+have not changed since signing without showing that training data was fit, the
+objective was sound, or the use is permitted. Each question needs its
+own evidence and owner.
+
+Start with an artifact and requested use, walk backward through data, code,
+build, training, supplier, and signer relationships, then change one upstream
+fact and walk forward through every derivative, custody decision, and release.
+Integrity holds only when the affected closure, response owner, and evidence
+limits survive both directions without metadata becoming authority.
+
+## Problem
+
+Model-Weight Custody can govern whether a known artifact may be loaded into a
+bounded environment. It cannot establish how that artifact came to exist. A
+named model may hide a changed dependency, an altered tokenizer, a substituted
+dataset, a new fine-tune, a different build process, a revoked signing identity,
+or a downstream derivative whose relationship was never recorded. If those
+facts are scattered across repositories, vendor pages, job logs, object stores,
+and informal messages, a response to an advisory or incident becomes guesswork.
+
+The supply-chain boundary spans more than code dependencies. AI systems combine
+data acquisition and curation, training and fine-tuning, evaluation packages,
+model and configuration artifacts, runtime libraries, suppliers and
+distributors, signing and provenance statements, deployment bundles, and
+retirement or disposal obligations. Each can change independently. Each can
+affect a later custody, readiness, or release decision. A system that records
+only the final model digest preserves too little information to identify the
+affected path when an upstream assumption changes.
+
+The operational task is therefore not to predict every compromise. It is to
+preserve enough typed identity, relationship, freshness, scope, and response
+information that a bounded decision can stop, repair, quarantine, or re-review
+instead of silently inheriting an obsolete assurance.
+
+## Why existing approaches are insufficient
+
+NIST's cybersecurity supply-chain risk-management guidance supplies the broad
+lifecycle comparator. It treats supply chains as linked resources and processes
+across acquisition, development, delivery, operations, and disposal, and it
+links risk framing, assessment, response, and monitoring to organizational
+context. That framing is useful because it resists the idea that procurement or
+an inventory export finishes the security task. It is not an AI-specific local
+implementation, supplier assessment, or integrity result.
+
+SLSA supplies a narrower build-provenance comparator. Its build track describes
+what provenance can say about a builder, process, and top-level inputs, and
+why unsigned or lower-assurance provenance has limited resistance to tampering.
+The limit matters as much as the mechanism: build provenance cannot establish
+the correctness or fitness of a training dataset, the behavior of a model, or
+the authority to deploy an artifact.
+
+OpenSSF Model Signing makes the AI-artifact case more concrete. It describes
+signed bundles of weights, configuration, tokenizers, and datasets and names
+verification points across an artifact lifecycle. Its own non-guarantees are
+essential: a signature is not a proof of model quality, fairness, privacy,
+secure development, access control, or safe use. SPDX provides the companion
+interoperability model for AI, datasets, build information, supplier identity,
+provenance, integrity, relationships, and lifecycle metadata. A well-formed BOM
+still can omit a relevant relationship or be stale.
+
+The ASI Stack already has layers that hold pieces of this story. Artifact Graphs
+record provenance and replay; Data Engines controls learning-data admission and
+deletion mechanics; Model-Weight Custody controls a known artifact's loading
+conditions; Security Kernel controls runtime secrets and authority; Readiness
+Gates control bounded admission. The missing owner is the policy that relates
+their upstream AI-supply-chain artifacts, detects a material gap or change, and
+routes every affected downstream path to the appropriate existing owner.
+
+### Strongest-neighbor comparison
+
+| Neighbor | Strongest contribution | Boundary that survives | Chapter delta |
+|---|---|---|---|
+| NIST C-SCRM | Organization-wide framing across acquisition, development, delivery, operation, monitoring, response, and disposal. | Broad risk practice does not identify the exact graph closure or consumer route for one changed AI artifact. | Bind lifecycle risk decisions to typed AI nodes, edges, affected consumers, and append-only re-review events. |
+| SLSA Build Track | Builder, process, input, provenance, signing, and verification requirements with graduated assurance. | Build provenance does not cover semantic dataset fitness, training objective, derivative release, supplier truth, or model behavior. | Join build evidence to training, data, model, and derivative lineage without allowing a SLSA level to become a model-security verdict. |
+| OpenSSF Model Signing | Signed AI artifact bundles, hashes, metadata, and lifecycle verification points with explicit non-guarantees. | Authenticity and integrity of the signed bundle do not prove completeness, confidentiality, quality, safety, or permitted use. | Make the signed subject and policy scope one bounded edge in the graph and propagate signer revocation to every declared consumer. |
+| SPDX AI Profile and dataset metadata | Interoperable model, dataset, supplier, build, provenance, integrity, and relationship descriptions. | Interoperability can faithfully exchange stale, incomplete, or incorrect declarations. | Attach freshness, source, unresolved gaps, verifier, residual owner, and decision consequence to exchanged descriptions. |
+| in-toto | Signed owner layout, authorized functionaries, material/product links, thresholds, and client verification of the declared chain. | A correct layout can omit a relevant AI relation; key and threshold quality plus last-mile freshness remain deployment-specific. | Treat layout/link evidence as a declared subgraph, test closure across AI derivatives, and retain omissions as explicit residuals. |
+
+This layer is not a universal superset of these mechanisms. Its distinct job is
+policy composition at the AI lifecycle boundary: it says which bounded records
+must agree for one requested use, what happens when they do not, and how a later
+invalidation reaches declared downstream decisions without rewriting history.
+
+## Core Claim
+
+A governed stack maintains a versioned AI supply-chain graph that binds each admitted model, dataset, code dependency, build or training run, signer or provenance statement, supplier or distributor, advisory and vulnerability state, derivative relationship, release scope, revocation path, residual owner, and retention or disposal event; a missing, inconsistent, unverified, revoked, or unresolved-critical component record blocks affected artifact admission or routes accountable review, but does not itself establish artifact correctness, absence of compromise, dataset fitness, model safety, legal compliance, readiness, authority, or ASI (evidence boundary: architectural argument).
+## Mechanism
+
+The first object is a typed supply-chain graph. Its nodes identify models,
+datasets, code dependencies, build and training runs, configuration artifacts,
+signers, suppliers, distributors, advisories, derivatives, releases, and
+disposal events. Its edges express a limited relation: trained-from, built-from,
+depends-on, signed-by, supplied-by, distributed-by, derived-from, affected-by,
+revokes, or retired-by. Each node and edge carries a version, scope, source,
+freshness state, and owner. The graph is not a claim that every relationship
+has been discovered; it is a record of the relationships a proposed decision is
+willing to rely on.
+
+The second object is a supply-chain admission record. Before a downstream
+artifact can move to weight custody or readiness review, the record names its
+identity and digest, lineage reference, supplier/distributor scope, build or
+training provenance reference, signature requirement and result, component
+inventory reference and freshness, advisory state, revocation path, residual
+owner, and requested use. A policy evaluates those fields against the stated
+scope. Missing lineage may require repair; a stale inventory may require
+accountable review; a required but unverified signature or unresolved critical
+advisory can quarantine the affected artifact path.
+
+The third object is a change and incident propagation record. A new advisory,
+revoked signer, compromised supplier, altered dependency, discovered derivative,
+or changed dataset does not overwrite an old graph node. It creates a versioned
+event that identifies its affected edges and routes the relevant custody,
+readiness, release, and residual records for re-review. The propagation is
+bounded by declared relationships and scope. It cannot discover hidden copies,
+infer that an advisory is correct, or prove that every downstream effect has
+been found.
+
+The final object is an interoperability boundary. BOMs, signatures, provenance
+statements, vulnerability feeds, and supplier declarations should be retained as
+typed references with their own verifier, timestamp, policy, and limitation.
+They are not flattened into a single trusted label. A valid signature can bind
+one bundle; a BOM can describe a declared set; a provenance statement can name
+a build process; none grants runtime authority or settles the quality and safety
+questions that other layers must still answer.
+
+```{mermaid}
+flowchart LR
+U["Data, code, dependencies, suppliers"] --> G["Versioned AI supply-chain graph"]
+T["Build or training provenance and signatures"] --> G
+G --> P["Declared derivatives and affected releases"]
+P --> A["Artifact admission record"]
+V["BOM freshness and advisory state"] --> A
+A --> D{"Required lineage and policy conditions current?"}
+D -->|"missing, stale, unverified, revoked, or critical"| Q["Repair, accountable review, or quarantine"]
+D -->|"bounded record complete"| C["Model-weight custody review"]
+C --> R["Existing readiness and runtime-authority gates"]
+Q --> L["Affected paths, residuals, and re-review record"]
+R --> L
+```
+
+**What the supply-chain flow shows:** provenance, signatures, inventories, and
+advisories are inputs to an accountable route. They can identify which stated
+artifact path needs attention, but they do not collapse security, quality,
+fairness, legality, safety, and deployment authority into one metadata check.
+
+### Append-only invalidation and affected-path closure
+
+The historical-project lineage sharpens the propagation step. CCA contributes
+append-only supersession and invalidation: a new warning becomes a distinct
+event linked to the prior decision rather than an edit that erases what was
+previously believed. MoECOT Manifest contributes digest-bound artifacts,
+attestation scope, and revocable records: a valid statement must name the exact
+subject and policy scope it covers. Corben's Trainer contributes quarantine and
+revocable promotion: when upstream evidence is invalidated, downstream claims
+and candidates cannot remain green merely because their own rows did not
+change. These are design inputs from one local lineage, not independent
+replications or evidence that any historical implementation enforced the rule.
+
+For a bounded graph, an invalidation event names one subject node. The affected
+closure is that node plus every declared downstream node reachable through the
+typed edges. Each member receives exactly one owned repair, review, quarantine,
+or retirement route, and no member retains ordinary use while the invalidation
+is active. This makes a newly revoked dependency operationally different from a
+free-floating advisory note: the record identifies which training run, model,
+derivative, and release must be reconsidered.
+
+The typed input is a digest-bound graph, scoped assurance references, one
+append-only invalidation event, and a requested artifact admission. The typed
+output is the exact declared affected closure, one owned response per member, a
+custody/readiness admission result, and lifecycle closure containing residual,
+retention, disposal, and re-review ownership. Hidden copies and undeclared
+edges remain outside the computed closure and therefore remain explicit
+residuals.
+
+The strongest objection is that exact propagation over a declared graph can
+create false confidence in an incomplete graph. That objection holds. Closure
+correctness is conditional on recorded identities and edges; it does not show
+that the inventory is complete, the advisory is accurate, the signer is honest,
+or the artifact is uncompromised. The mechanism improves response
+accountability after a known change. It cannot guarantee discovery of unknown
+relationships.
+
+## Interfaces
+
+The supply-chain layer governs the integrity policy across lifecycle artifacts.
+It must remain downstream of neither a raw provenance graph nor a custody token:
+the first stores and replays records, while the second controls a bounded load.
+The layer creates a narrow affected-path result that can be consumed by other
+owners without rewriting their distinct approval criteria.
+
+- **Artifact Graphs, Audit Logs, and Replay** owns generic provenance storage
+and replay. Supply-chain policy checks whether the declared upstream records
+are present, current, and connected for a requested artifact path.
+- **Model-Weight Custody and Hardware Roots of Trust** owns encrypted custody
+and attestation-gated loading. An upstream supply-chain result can block or
+permit custody review; it does not release a decryption key itself.
+- **Data Engines, Continual Learning, and Unlearning** owns data admission,
+contamination, retention, and deletion mechanics. Supply-chain records link
+datasets to artifacts without deciding semantic fitness or unlearning success.
+- **Security Kernel and Runtime Adapters** own runtime secrets and action
+authority. A verified provenance statement does not grant credentials, tools,
+network access, or deployment permission.
+- **Readiness Gates, Residual Escrow, and Quarantine** owns bounded admission,
+quarantine, and residual custody after an artifact path is eligible for its
+separate review.
+
+## Invariants
+
+- An admitted artifact has a recorded identity and digest, declared upstream
+lineage, requested scope, and affected decision path.
+- A required provenance or signature result is bound to the declared artifact
+and policy scope; a missing, stale, mismatched, or unverified result cannot be
+silently accepted.
+- A component inventory and supplier/distributor record retain their version,
+scope, source, freshness, and unresolved gaps rather than claiming completeness
+by default.
+- An unresolved critical advisory, revoked signer, or invalidated lineage record
+propagates to affected derivatives and routes the requested path to quarantine,
+repair, or accountable review.
+- Invalidation appends a new event linked to the prior event; it does not
+overwrite the decision history it is revising.
+- The declared affected closure equals every node reachable downstream from the
+invalidated subject in the declared graph, and every member has exactly one
+owned non-ordinary response route.
+- Lifecycle closure preserves a residual owner, retention horizon,
+disposal-or-retirement reference, and re-review trigger.
+- A BOM, signature, provenance statement, or conformance label cannot establish
+artifact correctness, absence of compromise, data fitness, legal compliance,
+model safety, readiness, authority, or ASI.
+
+These rules make a supply-chain record honest about what it knows and what it
+does not. The record can state that an expected field is missing, a verifier did
+not accept a declared bundle, an advisory remains unresolved, or a derivative
+relationship requires re-review. It cannot turn an exhaustive-looking graph
+into evidence that the world outside the graph is complete or benign.
+
+The guarantees weaken at every observation boundary. An omitted edge narrows
+the computed closure; a stale verifier weakens an assurance reference; a hidden
+copy defeats local revocation; and an unowned route turns quarantine into an
+orphaned label. Those conditions do not silently relax admission. They remain
+blockers or residuals until a new scoped record resolves them.
+
+## Non-obvious consequences
+
+### Completeness is consumer-relative
+
+A graph sufficient to reproduce a package may be inadequate for a data-rights
+review, contamination inquiry, custody load, or open-release decision. The
+admission record therefore names the consumer and required relation classes.
+“Complete BOM” without that scope is not a stable proposition.
+
+### Invalidation is monotone even when belief is not
+
+New evidence may reverse a former conclusion, but the event history should only
+grow. The prior admission, its evidence, the invalidating event, the affected
+closure, and each repair disposition remain addressable. This lets a reviewer
+ask what was known at the time without treating an obsolete decision as current.
+
+### A derivative is defined by policy, not filename similarity
+
+A quantized model, adapter, merged checkpoint, distilled model, exported
+runtime, or regenerated dataset may preserve different properties of its
+source. One generic `derived-from` edge is insufficient for every incident.
+Propagation policy must name which relation kinds carry which advisories,
+license duties, contamination findings, signer revocations, or retirement
+requirements. Unknown inheritance remains a residual rather than defaulting to
+unaffected.
+
+### Quarantine without service restoration is incomplete governance
+
+Blocking an affected path can prevent propagation while still imposing severe
+availability and operator costs. Every non-ordinary route needs a repair owner,
+priority, expiry or re-review trigger, and an explicit fallback. Otherwise the
+system optimizes for the number of quarantines rather than safe useful service.
+
+## Strongest objections and surviving residuals
+
+### “The graph can never be complete”
+
+Agreed. The mechanism proves no world completeness. It makes a declared closure
+testable, records excluded relation classes, and prevents an incomplete graph
+from being described as exhaustive. Discovery controls, supplier challenge,
+artifact scanning, and independent rebuilds can reduce uncertainty but cannot
+eliminate hidden copies, undisclosed inputs, or malicious omissions.
+
+### “Signed metadata just moves compromise to keys and authorized actors”
+
+Signatures answer who vouched for which bytes or statement under which key.
+They do not answer whether the functionary was honest or uncompromised. The
+response is threshold design, role separation, revocation, independent evidence,
+and exact subject binding, not trust by syntax. The residual includes stolen
+keys, coerced suppliers, compromised builders, and colluding functionaries.
+
+### “Continuous propagation will cause alert storms and permanent quarantine”
+
+Unbounded fan-out is a real operational failure. Events need severity,
+relation-specific propagation, affected-use scope, deduplication, repair state,
+and rate-limited escalation. But suppressing an event for convenience cannot
+leave an affected path ordinary without an owned exception and residual. The
+unrun empirical question is whether the added governance cost produces net
+useful risk reduction on natural lifecycle work.
+
+### “Existing artifact graphs already do this”
+
+Generic provenance storage is the substrate, not the decision policy. This
+chapter adds AI-specific admission requirements, affected-path semantics,
+consumer-bound completeness, append-only invalidation, non-ordinary response
+ownership, and cross-layer handoffs. If an artifact graph implementation already
+provides those contracts, it can satisfy the supply-chain boundary without a second graph.
+
+### “A valid supply chain can still produce a dangerous model”
+
+Correct, and this is the decisive boundary. Integrity can show that the declared
+process and artifact relation held. It cannot validate the objective, dataset
+fitness, evaluations, behavior, rights, or deployment decision. Those claims
+remain with their owning chapters even when every supply-chain check passes.
+
+## Failure modes
+
+- **Substitution behind a familiar name:** a dependency, dataset, model, build,
+or package changes while the downstream label remains unchanged.
+- **BOM theater:** a syntactically valid inventory is incomplete, stale,
+unverified, or scoped too narrowly for the decision it is used to support.
+- **Provenance laundering:** a signature or build statement is stretched into a
+claim of secure development, suitable data, safe model behavior, or permission
+to deploy.
+- **Propagation loss:** an advisory, revoked signer, compromised supplier, or
+discovered derivative fails to reach affected custody, readiness, or release
+paths.
+- **Lifecycle orphaning:** a handoff loses its residual owner, freshness rule,
+disposal record, or re-review trigger when a component changes or retires.
+- **History overwrite:** a mutable incident row replaces the earlier admission
+record, making it impossible to reconstruct which assurance was relied upon.
+- **Partial closure:** the directly affected component is quarantined while a
+declared model derivative or release remains on an ordinary route.
+
+The repair path depends on the error. Identity or lineage gaps need discovery
+and correction; a stale inventory needs a scoped refresh; a failed signature
+needs verifier or artifact investigation; an unresolved critical advisory needs
+quarantine or review; and an unowned residual needs a named owner before a
+downstream path can be considered. No one outcome is a generic verdict about
+the artifact itself.
+
+## Minimum Viable Implementation
+
+**Incident closure and restoration semantics.**
+
+Affected-path computation is only the opening move of an incident. Every
+quarantined consumer needs a restoration condition: replacement artifact,
+revalidated supplier, patched dependency, compensating control, narrowed use,
+or explicit retirement. Without that condition, conservative propagation can
+turn a bounded advisory into permanent operational paralysis. With a weak
+condition, the organization can restore service before the reason for
+quarantine is addressed. The condition must therefore be declared with the
+policy that computed the affected set, not invented after pressure to resume.
+
+Restoration creates a new lineage event. A rebuilt model from the same source
+data is not the old artifact with a green status; it has a new build identity,
+environment, dependency set, signatures, evaluations, and affected-path
+relationship. If a compensating control is used instead, the original defect
+and the control's expiry remain visible. An override is neither restoration nor
+evidence that the advisory was wrong. It is an attributable authority decision
+with a narrower duration and an owned residual.
+
+Supplier uncertainty needs symmetric treatment. A missing attestation is not
+proof of compromise, and a valid attestation is not proof of benign behavior.
+The policy can route missing or conflicting records without converting them
+into a forensic conclusion. This matters for availability: if every metadata
+gap is called an attack, operators will learn to ignore the system; if every
+signed record is treated as truth, authorized compromise becomes invisible.
+
+The service-level evaluation should pair security and recovery outcomes. It
+should measure seeded affected-path recall and precision, time to quarantine,
+time to safe restoration, incorrect restoration, unaffected-service loss,
+revocation fan-out, operator effort, and unresolved descendants. Costs belong
+beside successful detections because an unusable control invites bypass. The
+current finite graph and policy routes can test deterministic closure over
+declared nodes, but they do not establish world-complete lineage, supplier
+truth, forensic correctness, or production recovery.
+
+Finally, retirement must close authority without deleting history. A retired
+artifact loses eligibility for named consumers, while its digest, decisions,
+incidents, derivatives, and replacement links remain queryable under the
+retention policy. That distinction prevents “removed from service” from being
+misreported as “erased from every store” and lets future investigations
+reconstruct which downstream systems once depended on it.
+
+The smallest honest artifact is a versioned supply-chain admission record with
+artifact identity and digest, lineage reference, supplier/distributor scope,
+build or training provenance reference, signature requirement and result,
+component inventory reference and freshness, advisory state, revocation path,
+residual owner, and requested artifact admission. A finite Lean route sends a
+requested artifact with an unresolved critical advisory to quarantine and sends
+a requested artifact with a required but unverified signature to the same route.
+
+The repository now includes
+`schemas/supply_chain_affected_path_record.schema.json`, one quarantined
+three-project record, and ten expected-invalid mutations. The harness rejects
+artifact-digest substitution, incomplete downstream closure, missing response
+ownership, ordinary use after invalidation, overwritten history, a revoked path
+that avoids quarantine, stale assurance admitted as current, custody after
+invalidation, missing disposal closure, and fixture-based support promotion.
+
+This is not an AI BOM service, vulnerability feed, supplier-assessment program,
+reproducible build system, secure training platform, signing service, incident
+response operation, or deployment gate. A public-safe next slice would exercise
+synthetic records for a complete bounded path, missing lineage, stale component
+inventory, required unverified signature, unresolved critical advisory, revoked
+signer, changed derivative, absent revocation path, and missing residual owner
+without using real supplier data, private build inputs, model artifacts, or
+credentials.
+
+## Beyond the State of the Art
+
+A mature AI supply-chain control plane maintains a continuously updated graph
+across data acquisition and curation, code and dependency changes, build and
+training runs, model and derivative artifacts, signing and verification,
+suppliers and distributors, deployment packages, vulnerability and advisory
+feeds, incident response, revocation, retention, and disposal. It can identify
+which declared downstream paths are affected by a changed input, preserve prior
+decisions, and request bounded re-review without silently overwriting history.
+
+At that endpoint, interoperable BOM and provenance references let different
+organizations exchange enough structured information to compare identities,
+relationships, policies, freshness, and residuals. A recipient can distinguish
+an absent record from an unverified record, an unverified record from a verified
+one, and a verified record from an approval to use the artifact. The control
+plane can trace a decision's stated dependency chain even when it cannot see or
+revoke every copy outside its authority.
+
+The endpoint also preserves a difficult negative conclusion: transparency does
+not prove security, and integrity does not prove safety. A complete-looking BOM
+can still omit a relationship; a valid signature can cover a flawed artifact;
+an attested build can consume unsuitable data; and a compliant supplier process
+can be insufficient for a high-consequence deployment. This remains a target architecture, not a claim that this repository has complete lineage, secure training or build pipelines, trustworthy suppliers, verified signatures, effective revocation, compliant distribution, safe models, or authorized deployment.
+
+## Summary
+
+AI supply-chain integrity gives a system a disciplined answer to a practical
+question: what exactly are we relying on when we rely on this artifact? The
+answer names more than a model file. It includes the data, code, dependencies,
+build or training record, signer, supplier, advisory state, derivative chain,
+release scope, and retirement conditions that remain relevant to a bounded
+decision.
+
+That answer is valuable because it can expose a missing or changed assumption
+before it is inherited by model custody, readiness, or runtime use. It does not
+make the underlying artifact correct, secure, safe, fair, legal, or desirable.
+It makes the limits of a stated artifact path inspectable, and it gives a
+governed system a specific place to pause when that path is incomplete or under
+active challenge.
+
+## Handoff
+
+AI Supply-Chain Integrity and Lifecycle Provenance governs how lifecycle
+artifacts, relationships, provenance, signatures, advisories, and residuals
+remain traceable before an artifact path reaches custody or readiness review.
+Recursive Self-Improvement Boundaries now owns proposed changes that alter those
+data, code, build, training, model, signer, policy, evaluator, or rollback
+relationships, and must treat such a change as a governed transition with
+affected-path re-review rather than a private implementation update.

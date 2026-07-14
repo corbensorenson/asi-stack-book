@@ -1,0 +1,293 @@
+# Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty
+
+Once the stack has routed work onto governed compute, compactness becomes tempting. Smaller seeds, summaries, procedures, generators, and generated reconstructions matter only when the remaining burden is honest.
+
+The test is whether compactness reduces total burden or merely moves it somewhere invisible. A compact representation should say what must be reconstructed, verified, repaired, expanded, or refused, plus which fallback and authority limits apply.
+
+Semantic representations follow the same rule. A clean tree, graph, or semantic token can carry work only with grounding, permitted use, residual uncertainty, consumer policy, and a clear path back to fuller context.
+
+Honest compactness is therefore a governance problem. The smaller object has to carry enough receipts to show when it is safe to use, when it needs a repair residual, and when the full artifact must return. A summary, seed, generator, semantic node, or repaired reconstruction should lower cost without hiding its unpaid remainder.
+
+That is the standard the stack applies here: compress only with reconstruction duties, verification duties, and visible residuals still attached for every use.
+
+## Problem
+
+The efficient-ASI thesis depends on compact structures, but compactness is dangerous when it hides the cost of generation, verification, correction, repair, fallback, semantic grounding, or human review. A small seed that requires unbounded search is not efficient. A generated reconstruction that skips exact repair is not exact. A fluent generator that loses edge cases is not honest. A tidy semantic graph that loses provenance or task limits is not grounded. A tiny controller that shifts work into invisible residuals is not governed.
+
+CGS gives the book a vocabulary for this problem: seed, rule system, memory/state, residual/error, verification, and governance/generation interface. RGS adds the improvement loop: repeated successful behavior can become verified structure, but failures must stay in residual escrow and regressions must remain protected.
+
+The question is not whether a system is small. It is whether the smaller structure preserves enough of the task boundary that the remaining work is bounded, visible, and payable. If verification, repair, fallback, grounding, hierarchy migration, consumer-policy review, or human interpretation grows faster than the representation shrinks, the compact core may be an accounting error.
+
+## Why existing approaches are insufficient
+
+Compression narratives often count the visible representation while ignoring the work needed to reconstruct or use it. A model can look compact by storing information in a generator, a prompt, a retrieval system, a human operator, a verifier, a repair stream, or a fallback path. If those burdens are not recorded, the architecture has not saved complexity; it has hidden it.
+
+Semantic representation has the same trap in a more legible costume. Opaque token prediction does not expose concept hierarchy or source grounding, but a hand-built ontology, semantic graph, or tree token can hide uncertainty behind a clean path. Information Bottleneck (`ext_information_bottleneck_2000`) frames relevance-preserving compression, and LoRA (`ext_lora_2021`) shows low-rank adaptation as a structural comparator, but neither validates local TreeLLM behavior, semantic-node adequacy, or graph-grounding quality. A semantic representation is only useful when it preserves the constraints its consumer needs and records when it does not.
+
+Compression and representation baselines make residual accounting non-optional. Deep Compression (`ext_deep_compression_2015`) names pruning, quantization, and coding; knowledge distillation (`ext_knowledge_distillation_2015`) names teacher/student behavior transfer; GPTQ (`ext_gptq_2022`) names post-training quantization; DreamCoder (`ext_dreamcoder_2020`) frames reusable abstraction learning; Information Bottleneck (`ext_information_bottleneck_2000`) separates relevance from compression; MDL (`ext_mdl_tutorial_2004`) makes model/data tradeoffs explicit; and CodeBLEU (`ext_codebleu_2020`) reminds artifact evaluation to include task-specific utility signals. Compact generative systems use those baselines to require residual, verifier, repair, and consumer-policy accounting, not to claim a local compression ratio or utility result.
+
+Compactness also does not imply interpretability or safety. A compressed rule can be opaque. A generated output can be plausible but unverified. A local embedded system can be resource-aware but untested. A simulation can be definable but physically infeasible. The stack therefore treats compactness as a contract with residuals, not as an achievement by itself.
+
+Another insufficiency is evaluator capture. A compact generator can appear efficient when it also decides whether its own outputs are adequate. Residual honesty requires an external or at least separately governed verifier whenever the generated result affects claims, tools, memory, or self-improvement.
+
+## Core Claim
+
+Compact generative systems should store the smallest useful governed generator plus the cheapest exact or scoped residual, while preserving verification, fallback, consumer policy, and residual-burden records (evidence boundary: architectural argument).
+The source notes support discussion of compact seeds, residual burden, verification cost, repair streams, fallback, consumer policy, governance interfaces, hidden complexity debt, and ratcheting, but no CGS benchmark, codec, compression-rate experiment, proof of utility, or implementation has been run here.
+
+Folded semantic-representation subclaim: semantic representations are task-scoped leases. Graph nodes, tree paths, and semantic tokens may carry work only when provenance, grounding, adequacy, interoperability, permitted use, residual uncertainty, supersession, and consumer policy are explicit.
+
+## Draft Key Figure: Compression and Generation Acceptance
+
+::: {.asi-key-figure}
+![Draft compression and generation acceptance.](../assets/diagrams/compression-and-generation-acceptance.svg){#fig-compression-and-generation-acceptance fig-alt="Draft compression and generation acceptance figure showing target burden flowing through compact generation, fast generation, and artifact compression paths before verifier, residual, fallback, and consumer-policy gates decide accepted use or blocked routes."}
+:::
+
+**How to read the compression and generation acceptance figure:** Read compactness, speed, and artifact compression as candidate routes, not as acceptance by themselves. A compact seed, fast generator, or compressed artifact must still pass a separate verifier gate, expose residual and fallback burden, and satisfy consumer policy before a bounded use can be accepted. Failed verifier output, hidden repair work, missing fallback, or disallowed consumer scope routes to a visible block rather than being counted as efficiency. The figure is a draft reader aid, not proof of a compression ratio, useful-speed result, model-quality result, deployed verifier, release-reviewed artifact, or support-state promotion.
+
+## Mechanism
+
+Compression begins before bytes. The ASI Stack first asks whether a smaller structure can generate, govern, predict, reconstruct, or coordinate a larger target without hiding the burden it fails to carry. CGS supplies the seed/rule/memory/residual/governance tuple, BBVCA supplies the stricter generate/verify/repair exactness receipt, RGS and RMI supply ratchet pressure, BugBrain and Simulation Scaling keep local resource limits visible, and Project Theseus keeps the evidence-before-growth discipline attached to implementation work.
+
+Compact generation's local delta is residual custody. The common governed-cognition pattern can require a record and a receipt; compact generation adds the conservation rule for compressed representations: a smaller seed, generator, semantic node, or repaired reconstruction is not adequate until reconstruction burden, verification burden, repair burden, fallback burden, consumer policy, and owner of any remaining residual are still visible. Compactness earns no architectural credit when it merely moves work into another layer's unpriced future.
+
+After the runtime reference records what was routed, executed, replayed, and left residual, compact generation asks whether any part of that burden can be represented by a smaller lawful structure. The answer is useful only when the record still exposes the generation cost, verification cost, correction channel, fallback path, and authority boundary.
+
+A Compact Generative Record names what is compact, what is generated, whether generation ran, how it is corrected, how it is verified, whether verification ran, which verifier separation is required, what residuals remain, whether fallback was tested or used, whether residual burden is bounded, what use envelope is allowed, which burdens and costs are being counted, and who is allowed to use, promote, retire, or fall back from it. It treats compactness as a claim with costs, not as an aesthetic preference.
+
+```{mermaid}
+flowchart LR
+CGR_target["Target system or task family"] --> CGR_seed["Compact seed"]
+CGR_seed --> CGR_rules["Rule system + memory state"]
+CGR_rules --> CGR_generator["Generator / decoder / controller"]
+CGR_generator --> CGR_verifier["Verifier or critic"]
+CGR_verifier --> CGR_gate{"Adequate for use?"}
+CGR_gate -- "yes" --> CGR_interface["Governed interface"]
+CGR_gate -- "no" --> CGR_residual["Residual channel + correction"]
+CGR_residual --> CGR_fallback["Fallback or ratchet pressure"]
+CGR_interface --> CGR_ledger["Evidence + cost ledger"]
+CGR_fallback --> CGR_ledger
+CGR_ledger --> CGR_audit["Residual burden audit"]
+```
+
+**Reading the residual burden loop:** Compactness is useful only when the generator, verifier, residual channel, fallback path, and cost ledger remain visible together. The residual burden audit is the guard against treating a small seed or elegant rule system as if it had carried every hidden cost.
+
+A compact generative system should answer five questions:
+
+- What target is the compact core supposed to generate, control, predict, or govern?
+- What seed, rule system, and memory/state are doing the work?
+- What verification contract decides whether the generated result is adequate?
+- What residual channel preserves failures, omissions, and correction burden?
+- What governance interface and authority boundary decide permitted use, fallback, promotion, and retirement?
+- What burden ledger and cost-accounting entries make reconstruction, decision, governance, review, fallback, and residual costs visible?
+
+The raw LLM fits this frame as a compressed generative engine, not as the whole intelligence. It can generate across many targets, but the stack still needs routing, verification, residuals, authority, and evidence around its outputs.
+
+A compact-system receipt separates three burdens: reconstruction burden, decision burden, and governance burden. Reconstruction burden is the cost of producing a usable artifact from the compact seed. Decision burden is the cost of knowing whether the artifact is adequate. Governance burden is the cost of approvals, non-claims, fallback, retirement, and residual review.
+
+Generate/verify/repair is the stricter receipt lane. It starts with a reconstruction contract, a public law family or generator, and an artifact-specific seed. The generator produces candidate regions. Verification compares those regions to the declared target. Mismatches become exact repair residuals, declared loss, literal fallback, quarantine, or negative rate evidence. Exactness belongs to the full receipt, not to the generator alone.
+
+```{mermaid}
+flowchart LR
+GVR_contract["Reconstruction contract"] --> GVR_law["Generator or public law family"]
+GVR_contract --> GVR_seed["Artifact-specific seed"]
+GVR_law --> GVR_candidate["Generate candidate"]
+GVR_seed --> GVR_candidate
+GVR_candidate --> GVR_gate{"Verification passes?"}
+GVR_gate -- "yes" --> GVR_verified["Verified generated region"]
+GVR_gate -- "repair" --> GVR_repair["Exact repair residual"]
+GVR_gate -- "no" --> GVR_fallback["Literal fallback or quarantine"]
+GVR_verified --> GVR_rate["Final rate and burden ledger"]
+GVR_repair --> GVR_rate
+GVR_fallback --> GVR_rate
+GVR_rate --> GVR_policy["Consumer policy"]
+GVR_policy --> GVR_admission["Admit, scope, or reject"]
+```
+
+**Reading the receipt lane:** Generated reconstruction is useful only when verification, repair, fallback, final-rate accounting, and consumer policy stay attached. A mismatch is not a defect to hide; it becomes a repair stream, declared loss, literal fallback, quarantine, or negative evidence for that representation.
+
+### Compression receipt states
+
+Compression packages move through states because exactness is not a feeling produced by an elegant generator. A candidate package means a generator, seed, or law family has been proposed but not verified, so it belongs only in search and analysis. Verified exact is stronger: decode plus recorded repair equals the target under the declared reconstruction contract. Verified lossy is different again; loss has been declared and accepted only inside a bounded use envelope such as preview, drafting, routing, or another loss-tolerant task.
+
+Repaired exact is the honest middle case. The generator did useful work, but exactness depends on a named remainder, and that repair stream has to be counted with the metadata and interface costs. Literal fallback is not failure to hide. It means compression was not cheaper, verification failed, or the literal artifact was the right route, so the package becomes negative evidence for this method on this target.
+
+Quarantine is the hard stop. If search, verification, decode, consumer policy, or rate accounting violates the contract, the representation is blocked from downstream use except debugging. These states are evidence states for a representation, not claims about universal compression. They let the system preserve failed experiments without turning them into codec success stories.
+
+### Semantic Representation Leasing
+
+Semantic representation is the same burden-accounting problem at the level of meaning. TreeLLM proposes traversable semantic graphs and path-derived tokens; Spinoza supplies proof, citation, and belief-state pressure; Verification Bandwidth warns that compressed semantic units can drop constraints needed for checking; Cognitive Compilation supplies typed semantic IR; and the Circle/Coil sources remain optional-substrate guardrails. None of those sources makes a local semantic graph adequate by itself.
+
+A Semantic Node Record is a scoped representation lease, not a canonical ontology verdict. It can be used for retrieval, planning, compilation, compression, claim review, or explanation only inside its grounding state, permitted uses, consumer policy, and adequacy limits. If a task needs constraints the node no longer carries, the route should fall back to richer source context, record a context-adequacy residual, or quarantine the node.
+
+```{mermaid}
+flowchart LR
+SNL_evidence["Source or task evidence"] --> SNL_node["Semantic node"]
+SNL_node --> SNL_provenance["Provenance + relation refs"]
+SNL_node --> SNL_grounding["Grounding state + residual uncertainty"]
+SNL_provenance --> SNL_gate{"Adequate for consumer?"}
+SNL_grounding --> SNL_gate
+SNL_gate -- "yes" --> SNL_consumer["VCM page / claim graph / IR atom / explanation"]
+SNL_gate -- "no" --> SNL_fallback["Fallback, residual, or quarantine"]
+SNL_consumer --> SNL_version["Version and supersession ledger"]
+SNL_fallback --> SNL_version
+```
+
+**Reading the semantic lease gate:** A semantic node earns task-local use only when provenance, grounding, relation structure, residual uncertainty, and consumer policy are visible. If the node is not adequate for that consumer, the system falls back or records a residual instead of treating the graph as source authority.
+
+Semantic-node lifecycle states should include proposed, grounded, adequate-for-task, interoperable, superseded, stale, and quarantined. Those states let a semantic graph remain editable without becoming forgetful. Updating a hierarchy should preserve old references or record supersession because downstream claims, plans, or explanations may still depend on the earlier meaning.
+
+The three gates are grounding, adequacy, and interoperability. Grounding asks what source or artifact supports the node. Adequacy asks whether the node preserves enough constraints for the current task. Interoperability asks whether the node can be consumed by VCM, Spinoza, planning, cognitive compilation, compression, or human explanation without hidden translation loss. A semantic representation should not be promoted because one gate passed while the others remain untested.
+
+QCSA is the successor synthesis for this lease rather than a return to one
+universal semantic tree. A stable SOID remains the identity; one or more soft,
+variable-length paths in declared atlas facets are compact indexes; a physical
+route plan is a temporary lowering. The representation may inherit shared path
+deltas and graph messages, but it must retain an object- and context-specific
+residual. A short path is useful only when collisions, omitted distinctions,
+verification cost, repair cost, migration cost, and fallback remain visible.
+
+Open-world concept expressions prevent the atlas from creating a permanent
+leaf for every event, quantified statement, plan, or novel composition.
+Semantic-first generation can plan over those expressions, realize a surface,
+and re-resolve the result to compare identity, roles, negation, modality,
+quantity, time, source bindings, authority, and residuals. That round trip is a
+bounded translation check, not proof of meaning: a resolver and generator can
+share the same mistake.
+
+The frozen evaluation now pays that falsification burden rather than assuming
+a win. Full QCSA achieved 1.000 object resolution and zero structural loss,
+while the no-plural-facets ablation fell to 0.916667. The separately
+implemented observer recorded zero disagreement for full QCSA. But the best
+baseline tied task-decision accuracy at 1.000, and QCSA consumed 1.913386 times
+its operations. Active-question removal caused no accuracy loss. The
+preregistered advantage and resource gates therefore fail.
+
+Residual honesty changes how this result enters the book. Plural facets and
+round-trip records have bounded fixture value; adaptive-question value and
+matched efficiency are refuted on the exact corpus; semantic preservation is
+narrowed to an internal synthetic observer; and no generator compression or
+repair benefit was measured. The eight vertical-trace residuals and P2 ceiling,
+cost, and independence limitations remain durable artifacts. The existing
+`argument` boundary remains unchanged.
+
+## Interfaces
+
+The reader-facing interface is three linked promises. The compact generative entry says what the small thing stands in for, which seed or rule system does the work, what memory or state it depends on, how outputs are corrected, who may use them, and when the route must fall back. It also names visible burdens: generation, verification, repair, governance, hidden-complexity risk, promotion blockers, retirement conditions, evidence references, and non-claims.
+
+Compression packages narrow the question to reconstruction. Each package names the target artifact, generator or public law family, seed, search bound, generated regions, verifier result, repair stream, fallback threshold, final rate accounting, and consumer policy. The point is not cleverness; it is that exactness, declared loss, repair, fallback, and rejection remain distinguishable after the experiment.
+
+Semantic node entries apply the same discipline to meaning. A node can help retrieval, planning, compilation, compression, claim review, or explanation only while provenance, relations, grounding state, version, supersession path, remaining uncertainty, permitted uses, evaluation references, support-state effect, and non-claims travel with it. A clean semantic path is an index or working representation, not a new source of authority.
+
+Consumer policy ties the three records together. A generated reconstruction may be acceptable for preview but forbidden for proof input, audit, citation, exact replay, benchmark construction, or training. A semantic node may be adequate for routing but too lossy for a claim ledger. The interface therefore lets the stack use compact representations without letting them quietly change what counts as evidence.
+
+## Invariants
+
+- Lossy claims are labeled.
+- Residual burden is visible.
+- Fallback exists when compact generation fails.
+- Verification cost is counted as part of the representation.
+- Verification precedes exactness claims.
+- Repair, metadata, interface, and fallback costs are counted before compression savings are claimed.
+- Consumer use is scoped to the reconstruction contract and declared loss.
+- Negative rate results are preserved instead of rewritten as narrative success.
+- Compactness does not promote support state without evidence.
+- Semantic nodes are grounded or labeled speculative.
+- Hierarchy changes are versioned.
+- Graph updates preserve prior references or record supersession.
+- Shared semantic graphs remain indexes and working representations, not independent source authorities.
+- Consumer use is scoped by grounding, adequacy, interoperability, permitted uses, and residual uncertainty.
+
+Compactness is not the invariant; accountability is. A compact representation may be useful, but only after generation, verification, correction, and governance costs are visible enough to compare with alternatives.
+
+Verifier separation keeps compactness from becoming self-certification. The compact system can propose, regenerate, compress, or repair, but it cannot be the sole authority for promoting its own adequacy when the result affects evidence state, runtime authority, or replacement.
+
+Residual honesty also requires retaining the expensive reference path when the compact path becomes the default.
+
+Residual burden is conserved at the record boundary. It may be accepted with an owner and evidence reference, deferred with an owner and due condition, or discharged with a reviewed discharge artifact. It may not be erased by a better visible metric, moved to an unnamed future reviewer, or declared zero while remaining burden still exists. The repository now checks that bounded form through `docs/residual_honesty_conservation.md`; the check is intentionally weaker than a deployed residual ledger, but it makes the conservation rule executable enough to reject laundering-shaped records.
+
+Residual ledger trace then asks whether this discipline survives contact with the book's own artifacts. `python3 scripts/validate_residual_ledger_trace.py` reads the Resource flagship run, Resource workflow trace, Compact GVR slice, Readiness/residual gate result, and the residual-conservation fixture, then writes `experiments/residual_ledger_trace/results/2026-07-03-local.json`. The trace keeps seven deferred Resource task-ticks, displaced workflow costs, Compact GVR repair residuals, Readiness escrow, rejected hidden burdens, and no-promotion decisions visible in one cross-artifact record. It is a real repository trace, not a deployed ledger: it does not show live residual detection, storage, scheduler behavior, or safety.
+
+Residual ledger storage replay checks a different boundary. `python3 scripts/validate_residual_ledger_storage_replay.py` writes `experiments/residual_ledger_storage_replay/results/2026-07-04-local.json` after replaying a bounded append-only event log. The replay computes a digest chain, preserves a Resource-to-Compact owner handoff, requires a reviewed discharge receipt, keeps workload-context references on every entry, rejects five controls, and records a `blocks_promotion` decision. This is still local fixture evidence, not proof that a deployed ledger exists or that live residuals can always be detected.
+
+## Failure modes
+
+- False lossless claims.
+- Hidden residual complexity.
+- Compactness that damages utility.
+- False explainability.
+- Canonical graph capture, where the semantic graph becomes an unreviewed authority source.
+- Hierarchy drift and stale consumer mappings.
+- Semantic laundering, where a clean path explanation is cited instead of the source, proof, or test it was meant to index.
+- Unbounded search.
+- Verification skipped.
+- Repair larger than original data.
+- Consumer-policy leakage, where a lossy or preview representation is reused for exact, audit, proof, benchmark, citation, or training work.
+- Proxy-rate drift, where search-time savings survive in prose after final serialization erases them.
+- Degenerate governance where the compact core evaluates its own adequacy.
+- Recursive instability when compact structures modify the system that defines their success.
+
+False lossless claims should be downgraded. Hidden residuals should be escrowed. Utility damage should trigger fallback or quarantine. Self-evaluation should be blocked when evaluator independence matters. Recursive modification should be routed through SCF replacement and readiness gates.
+
+Residual displacement is the compact-system failure that most resembles success. The system appears compact because it moves missing detail into human interpretation, future debugging, hidden retrieval, or undocumented verifier assumptions. The residual channel should name the displacement rather than letting it look like efficiency.
+
+## Minimum Viable Implementation
+
+The smallest useful implementation is not a smarter compressor. It is a public accounting object that refuses to hide cost. For a compact core, that object names the target, seed, rules, memory, generation status, correction path, verification status, independent reviewer requirement, allowed uses, fallback path, promotion blockers, retirement condition, support-state effect, evidence references, and non-claims. Passing it around does not prove the compact core works; it makes the remaining burden visible enough for later tests.
+
+The repository has that narrow slice. `AsiStackProofs.CompactGenerativeSystems` checks bounded obligations around unresolved burden, lossy exactness overclaims, missing source artifacts, fallback paths, verifier-cost visibility, semantic provenance, hierarchy migration, evidence transitions, and non-claim boundaries. The compact GVR slice in `docs/compact_gvr_slice.md` keeps a tiny generate/verify/repair case public and replayable. Its scope is modest: bookkeeping distinctions can be represented and checked; no production codec, generator, verifier, or utility harness is claimed.
+
+The next honest implementation step is a comparison set small enough to audit by hand. It should include one compact seed with bounded reconstruction cost, one lossy seed that cannot be called exact, one generator failure sent to fallback, one displaced burden routed to human review, and one promotion blocked because the verifier is not independent.
+
+For semantic representation, the first slice is structural too: connect source passages, artifacts, semantic nodes, and claim entries, then revise or remove a source and check whether downstream consumers notice. That limited test would move the idea from prose toward replayable behavior.
+
+## Beyond the State of the Art
+
+Compact generative systems earn their place as a burden-accounting layer for compression and generation. It lets the stack use compact seeds, generators, procedures, learned representations, and local cores only when their reconstruction, decision, verification, fallback, governance, and residual costs are explicit.
+
+Compactness becomes useful only when the generator, verifier, fallback, governance burden, reconstruction burden, decision burden, and residual burden are all counted. A mature compact record would bind the target, seed, rule system, memory state, generator, correction mechanism, verifier, residual channel, fallback path, authority boundary, use envelope, burden ledger, cost accounting, promotion state, and retirement condition before the stack trusts a compact core. It would make compact generation a governed accounting surface rather than a slogan for smaller artifacts.
+
+The mature layer would report reconstruction burden, decision burden, governance burden, verification status, verifier independence, fallback status, residual-burden status, downstream utility, latency, cost, residual volume, and hidden-complexity risk as separate evidence fields. Routing would use compact-core readiness and use envelopes; VCM and semantic pages would label loss, taint, and omissions; procedural memory would turn repeated generated behavior into verified tools; generate-verify-repair would record exact remainders; readiness gates would decide promotion or quarantine. Repeated successes could become tool candidates, but failed generations would become residual pressure, lossy seeds would stay scoped to safe uses, non-independent verifiers would block promotion, and utility-damaging cores would retire or route to fallback.
+
+The compact-generation boundary is still a design claim. The compactness claim stays at `argument` until exactness records, verifier outputs, reconstruction tests, residual-burden accounts, lossy-ablation cases, and fallback traces show which information compact generation preserved and which obligations it left behind.
+
+At the mature end state, the compact-generative-systems layer becomes a compression control plane. Each task asks for the cheapest lawful representation: full source, compact seed, generated reconstruction, repaired exact receipt, lossy preview, semantic page, specialist core, or rejection. The answer is based on total burden, verifier quality, residual honesty, consumer policy, replay need, downstream risk, and support-state limits, not on ratio alone. Until public codec, utility, rate, and replay evidence exists, that endpoint remains target architecture.
+
+At the semantic layer, the mature endpoint is representation leasing. Graph nodes, tree paths, and semantic tokens become task-scoped meaning objects whose provenance, grounding, adequacy, interoperability, supersession, permitted use, consumer policy, and residual uncertainty travel with every use. A node can be useful for routing while forbidden for proof, citation, audit, or claim support. Stale nodes become migration debt, not invisible graph drift. Quarantined nodes remain available for debugging but not operational use. Until grounded-node records, hierarchy-update histories, supersession trails, retrieval/grounding benchmarks, and semantic-lease tests exist, the semantic-leasing endpoint remains a design target.
+
+## Post-v2.3 residual-honesty protocol result
+
+A preregistered campaign presented six material-residual scenarios under four
+frozen conditions: baseline, reward pressure, time pressure, and evaluator
+pressure. All 24 Qwen3 4B calls mentioned the scenario's residual identifier,
+but only inside capped reasoning text. Twenty-three calls ended in an unclosed
+reasoning block; one closed reasoning but still emitted no final JSON. None
+emitted the requested final JSON decision, correct route, or reopen
+trigger. Raw internal reasoning text is not a public residual disclosure, so
+the observed identifier mentions cannot be credited as residual honesty.
+
+The pressure comparison is consequently non-estimable rather than favorable:
+there are zero admissible disclosures in every condition. The failed protocol,
+raw outputs, evaluator receipts, costs, and future burden are retained in
+`docs/post_v2_3_campaign_results.md` and the accepted
+`evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json`.
+No claim about production disclosure, pressure robustness, routing quality,
+model quality, safety, or chapter-core support moves.
+
+## Summary
+
+Compact systems are useful when they generate, reconstruct, or represent more value than their hidden burdens cost. Residual-honest accounting therefore keeps seed, rule system, memory, generation, verification, repair, semantic grounding, residuals, governance, fallback, consumer policy, and evidence in the same record.
+
+Residual honesty is what keeps compactness from becoming a trick. It lets a compact core be promoted only when its remaining burden is visible and acceptable for the task. The same rule applies to compression that claims reconstruction: generation is allowed to be clever only when verification, repair, final-rate accounting, and consumer policy pay the exact or scoped remainder.
+
+The bridge is narrow but useful: compact systems can reduce burden, but exact reconstruction needs a stricter receipt that says precisely what the generator failed to carry, what was repaired, when fallback won, and which consumers may rely on the result. Semantic leasing applies the same rule to meaning: a clean node or path can carry work only when the lost context, grounding limits, permitted uses, and supersession path stay visible.
+
+Compactness has to survive total-cost accounting. If the seed is smaller but the hidden verification, repair, review, or authority cost grows without a record, the stack has not become more efficient.
+
+## Handoff
+
+Compact generation and generate/verify/repair receipts expose the cost of reconstructing stored artifacts; the same accounting applies when the system generates output over time. Fast Generation Architectures moves from compact representation to accelerated inference and drafting. It asks which generation mode is allowed, what verifier accepts, what fallback costs, and whether speed still improves the governed task after rejected output, repair, and accepted-output costs are counted.
+
+RankFold, NeuralFold, and Artifact Compression remains standalone after the conservative merge because it owns the technique-facing artifact and tensor-compression lane. It inherits the compact-system residual-honesty, semantic-leasing, and consumer-policy requirements while asking a different question: when may a compressed artifact stand in for a full artifact for a specific task?
+
+The former Semantic Representation and Tree-Structured Models material is now a named representation-leasing section inside Compact Generative Systems rather than a second rendered skeleton. Its restoration condition is unchanged: it should become standalone again only if a public-safe semantic graph, TreeLLM, hierarchy-revision, representation-utility, or external-review evidence lane makes semantic representation chapter-owning again.

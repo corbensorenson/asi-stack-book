@@ -1,0 +1,201 @@
+# Labor OS and Typed Jobs
+
+After planning, verification, and review, the stack has to turn accepted work into bounded execution. A Labor OS is the layer where tasks become typed jobs with lifecycle, parentage, inputs, outputs, approvals, isolation, logs, failure behavior, and completion criteria.
+
+This is where "agent" becomes less useful as a word. The architecture does not need a free-floating actor; it needs jobs that say what they are allowed to do, which gate can stop them, what evidence they must return, and how their work can be audited or replayed later. A job is small enough to govern and durable enough to inspect.
+
+Typed work turns execution from a personality problem into a recordkeeping and authority problem.
+
+That shift is what makes large-scale AI labor auditable rather than mysterious. The work item becomes something a team can inspect, replay, deny, or improve.
+
+Execution becomes safer when the smallest useful unit is a record rather than a persona, because typed work makes delegation reviewable before personality enters the story. Records precede delegation so execution remains bounded after handoff begins downstream.
+
+## Problem
+
+Intelligence must become typed work with lifecycle, permissions, artifacts, logs, and approvals.
+
+The previous chapters decide what should be believed and reviewed. Execution begins when accepted plans become work. Talos supplies the right frame: an AI labor operating system turns plans into typed jobs with contract locks, permissions, isolated workspaces, adjudication, delivery, feedback, audit, and replay.
+
+A job is the unit that keeps agency bounded. It carries a contract, lifecycle state, inputs, outputs, permissions, approval state, runtime adapter, failure behavior, audit events, and replay status.
+
+This makes jobs the execution-side partner of command contracts. Commands expose the semantic fields; plans decompose those fields; jobs bind each dispatchable node to an execution state that can be approved, denied, audited, retried, or retired.
+
+The job boundary is also where the stack distinguishes work from evidence. A job can run and produce something useful without proving that the work was authorized, verified, replayable, or safe to reuse. The labor OS should make that difference explicit instead of collapsing it into a single "done" status.
+
+## Why existing approaches are insufficient
+
+Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
+
+Chat is not a factory. It does not lock a contract, isolate tools, enforce permission boundaries, require approvals, preserve logs, or tell a later verifier how to replay what happened. Without jobs, the system has vibes and side effects instead of controlled work.
+
+AutoGen (`ext_autogen_2023`) gives an external multi-agent workflow baseline, and SWE-bench (`ext_swe_bench_2023`) gives an external software-task benchmark baseline with repository-scale context and patch evaluation. Labor OS uses those comparison points to ask for typed job lifecycles, artifact receipts, replay, and approval boundaries around agentic work. The baseline references do not claim that Talos jobs reproduce AutoGen workflows or solve SWE-bench tasks.
+
+Workflow and job systems already solve important adjacent problems. Temporal (`ext_temporal_docs`) supplies durable workflow execution, event history, worker, and failure-recovery vocabulary. Airflow (`ext_airflow_dag_docs`) supplies DAG, schedule, task, dependency, callback, retry, and timeout vocabulary. BPMN 2.0.2 (`ext_bpmn_2_0_2_spec`) supplies stakeholder-readable process-notation and process-component translation lineage. Kubernetes Jobs (`ext_kubernetes_jobs_docs`) supplies batch-job completion, failure, backoff, deadline, terminal-condition, and cleanup vocabulary. The Labor OS does not claim to replace those systems; it asks what must be added when the work is AI labor that carries authority, tool permissions, approvals, artifact/evidence receipts, residuals, and support-state effects.
+
+GenesisCode reinforces the distinction: proposals and effects are different things. Effects require capability boundaries and replay logs. Software Magic adds that workflows need entry rules, exit rules, guards, loops, and recovery paths.
+
+Agent swarms often fail at this boundary. They start many plausible subtasks but lose the lifecycle state, permission scope, parent contract, or artifact trail that would let a reviewer know which work was authorized and which work merely happened. A Labor OS should make unauthorized work hard to start and unlogged work hard to hide.
+
+The same failure can happen in a single-agent workflow. A model may create files, messages, patches, summaries, or decisions that look complete but lack approval state, effect receipts, or replay metadata. The unit of governance is therefore not the agent; it is the typed job record.
+
+## Core Claim
+
+The execution layer should convert plans into typed jobs managed by a governed labor operating system (evidence boundary: architectural argument).
+Talos supplies the labor-OS frame, contract-lock discipline, job pipeline, evidence-bound artifact, audit, replay, and explicit non-claim boundaries. VIEA supplies the intent-to-artifact-to-runtime trace, permission envelopes, approval roles, side-effect classes, runtime-adapter maturity levels, and feedback loop. GenesisCode supplies the proposal/effect separation, host-provided capability boundary, deterministic effect logs, replay semantics, obligations, provenance, and semantic patch discipline. Software Magic Grimoire supplies workflow guard vocabulary for bounded instruction artifacts, output contracts, verification, failure behavior, and gated spell stacks. The Markdown Talos release and MoECOT remain connector review context context, not passage-reviewed evidence.
+
+## Mechanism
+
+The execution layer is where a plan stops being an intention and becomes a governed unit of work. Talos supplies the labor-OS shape: contract lock, fixed pipeline, evidence-bound artifact, audit, and replay. VIEA keeps that work inside the larger intent-to-artifact-to-runtime trace and adds permission envelopes, approval roles, side-effect classes, and runtime maturity levels. GenesisCode sharpens the boundary between proposals and effects: capabilities come from the host runner, effects produce logs, and acceptance depends on obligations and provenance. Software Magic Grimoire gives the workflow vocabulary for bounded instruction artifacts, output contracts, verification, failure behavior, gates, loops, and stop conditions.
+
+A Typed Job is the packet that binds those ideas together. It says what kind of work this is, which contract authorized it, which inputs and tools are allowed, which artifact is expected, which approval state blocks dispatch, how failure is handled, and what audit trail must survive.
+
+```{mermaid}
+flowchart LR
+A["Plan node"] --> B["Typed job"]
+B --> C["Contract lock"]
+C --> D["Permission check"]
+D --> E{"Approval required?"}
+E -- "yes" --> F["Approval gate"]
+E -- "no" --> G["Dispatch"]
+F --> G
+G --> H["Runtime adapter"]
+H --> I["Artifact + audit events"]
+I --> J["Adjudication / delivery"]
+J --> K["Feedback + replay status"]
+```
+
+**Reading the typed job lifecycle:** The execution flow is a lifecycle gate around work, not a direct line from plan to tool. A typed job is locked, checked, approved when necessary, dispatched through an adapter, and returned with artifact, audit, feedback, and replay state.
+
+The job packet binds work type, inputs, allowed tools, permissions, expected artifacts, approval gates, failure behavior, and replay expectations before dispatch. Dispatch is not a model decision alone; it is a lifecycle transition that can be rejected, quarantined, replayed, or retired. Orchestration, secure workspace setup, access control, secret isolation, adapter invocation, adjudication, delivery, feedback, and replay stay separate so a failure in one boundary does not disappear into the general idea of "the agent did it."
+
+The lifecycle should be explicit enough to reject invalid transitions. A job can be drafted, locked, awaiting approval, dispatchable, running, adjudicating, delivered, failed, blocked, replayed, or retired. High-impact work should stop at the approval gate until the required record exists.
+
+The execution layer should not merge all subfunctions into one agent. Orchestration, secure workspace setup, access control, adapter invocation, artifact capture, adjudication, delivery, feedback, and replay are different boundaries.
+
+Typed jobs should also preserve parentage. A reviewer should be able to trace each job back to a command contract, plan node, approval record if required, runtime adapter, produced artifact, and residual. If that chain breaks, the job may still be useful work, but it should not count as governed execution.
+
+### Typed job lifecycle states
+
+Typed jobs use lifecycle states so work cannot slide from idea to side effect without review. A drafted job is only a packet proposal; it cannot dispatch. A locked job has fixed contract, parentage, expected artifact, and failure behavior, so it can enter permission review. If approval is missing or stale, the job waits. If approval is present and scoped, it may become dispatchable once permissions, inputs, and adapter requirements also pass.
+
+Running is not completion. A running job must emit audit events. When output exists, the job enters adjudication until verification, review, or acceptance is complete. A delivered job has returned or exposed a useful artifact, but that still does not make it evidence-ready.
+
+Evidence readiness requires the required artifact capture, verification, audit, residual, and replay or non-replay fields to exist. Failed or blocked jobs need residuals and recovery paths. Quarantined jobs had unauthorized effects, missing provenance, or unsafe behavior and cannot support promotion. Replayed or retired jobs become historical trace unless they are requalified.
+
+The distinction between delivered and evidence-ready is central. Delivery satisfies a user-facing workflow; evidence readiness satisfies the living stack.
+
+## Interfaces
+
+Typed work enters execution as the Typed Job.
+
+- Planning dispatches jobs.
+- Security mediates permissions.
+- Artifact graph receives outputs.
+
+Minimum fields:
+
+- `job_id`
+- `contract_id`
+- `job_type`
+- `lifecycle_state`
+- `runtime_adapter`
+- `inputs`
+- `outputs`
+- `permissions`
+- `approval_state`
+- `failure_behavior`
+- `audit_events`
+- `replay_status`
+
+Planning dispatches jobs. Security mediates permissions. Runtime adapters perform effects. Artifact graphs receive outputs, logs, and replay metadata.
+
+The job interface should carry enough state for other layers to refuse it. Security can reject missing permissions. Approval can block high-impact work. Runtime adapters can reject unsupported capabilities. Artifact graphs can mark incomplete provenance. Evidence can refuse to treat delivery as support until adjudication and replay fields exist.
+
+The job should emit a completion receipt:
+
+- `parent_contract_id`
+- `plan_node_id`
+- `approval_record`
+- `permission_basis`
+- `runtime_adapter_ref`
+- `artifact_refs`
+- `verification_refs`
+- `audit_event_refs`
+- `residuals`
+- `replay_or_non_replay_reason`
+- `delivery_state`
+- `evidence_state`
+
+This receipt is what prevents completion laundering. A job can be delivered while its evidence state remains incomplete, disputed, blocked, or quarantined.
+
+## Invariants
+
+- Every job has type and lifecycle state.
+- Tool permissions are explicit.
+- Human approval gates block high-impact jobs.
+- Delivered output is not evidence-ready until verification, artifact capture, audit, residual, and replay/non-replay fields are present.
+- Job parentage remains traceable to contract, plan node, approval, adapter, artifact, and residual.
+
+The approval invariant is non-negotiable: a job requiring approval cannot execute because a planner or model predicts approval would be granted. The approval record is part of the job state.
+
+Effect accountability keeps typed labor from becoming ambient action. Every external effect should have an adapter reference, permission basis, audit event, and replay or non-replay declaration. Otherwise the labor OS has produced side effects without a work record.
+
+## Failure modes
+
+- Tool overreach.
+- Unlogged side effects.
+- Infinite or chaotic agent swarms.
+- Completion laundering, where output existence is treated as governed evidence.
+- Parentage loss, where a job cannot be traced back to the command contract and dispatchable plan node that authorized it.
+
+Tool overreach is a permission failure. Unlogged side effects are audit failures. Chaotic agent swarms are lifecycle failures: work escapes the job boundary and becomes unreviewable. Each should block dispatch or force quarantine.
+
+Completion laundering is the typed-job failure. A job can be marked done because an output exists, even though required approval, verification, artifact capture, or replay metadata is missing. Delivery should not be the same state as evidence-ready completion.
+
+## Minimum Viable Implementation
+
+A typed-job schema with lifecycle states and permission checks.
+
+The labor OS starts with the expanded `typed_job` schema and fixture. It validates lifecycle, approval, failure behavior, permissions, audit events, and replay status while leaving real job execution unclaimed.
+
+The typed-job fixture checks the job record surface. `AsiStackProofs.TypedJobs` adds a bounded transition predicate for declared lifecycle moves and a bounded approval predicate showing that an approval-required job cannot be allowed to run without an approval record. Adapter permission checks, scheduler implementation, approval-service integration, and replay results remain separate artifacts.
+
+A small lifecycle harness over fixture jobs should come before any scheduler claim: one valid transition path, one invalid transition, one missing approval, one missing permission, and one delivered-but-not-evidence-ready job. The harness would exercise the labor-OS boundary while keeping deployed scheduling unclaimed.
+
+The Typed job delivery and evidence-readiness probe is that first bounded slice. `python3 scripts/validate_typed_job_delivery_probe.py` writes `experiments/typed_job_delivery/results/2026-07-02-local.json` and checks two valid synthetic typed-job traces plus seven expected-invalid controls. The valid traces cover a verified delivery that is evidence-ready because parentage, approval, permissions, artifact refs, audit refs, residuals, verification, and replay state are present, plus a delivered job that stays not evidence-ready because verification is pending. The invalid controls reject a missing parent contract, approval bypass, permission overreach, delivery laundered as evidence-ready, missing artifact refs, missing audit events, and support-state promotion from the fixture. This is a deterministic synthetic typed-job delivery fixture only; no deployed scheduler, permission-enforcement service, approval service, runtime adapter, replay correctness, evidence transition, or support-state promotion is claimed.
+
+The Typed job durable lifecycle probe adds the next bounded slice without pretending that a durable workflow engine exists. `python3 scripts/validate_typed_job_durable_lifecycle_probe.py` writes `experiments/typed_job_durable_lifecycle/results/2026-07-02-local.json` and checks two valid synthetic durable lifecycle traces plus nine expected-invalid controls.
+
+The valid traces cover a retry that resumes under the same parent contract, idempotency key, authority envelope, permission basis, active lease, completion receipt, artifact refs, audit refs, replay ref, and non-claim boundary. They also cover an expired-lease trace that blocks dispatch and assigns a residual owner instead of claiming the job ran.
+
+The invalid controls reject retry without idempotency, authority widening on retry, permission overreach after resume, expired-lease dispatch, missing completion receipt, missing replay ref, missing residual owner, missing non-claim boundary, and support-state promotion from the fixture.
+
+This is a deterministic synthetic durable lifecycle fixture only; no deployed scheduler, durable workflow recovery, permission enforcement, approval-service behavior, replay correctness, upward evidence transition, or support-state promotion is claimed. The accepted no-promotion decision `evidence_transitions/v1_x_measured/typed_job_durable_lifecycle_probe_no_change.json` records the fixture as blocking evidence for those runtime claims, not as chapter-core promotion.
+
+## Beyond the State of the Art
+
+The labor layer reaches its mature form as an operating system for bounded cognitive work. It refuses ambient "agent" actors and admits work only as typed jobs whose parent contract, plan node, lifecycle state, permission basis, approval record, workspace, adapter route, expected artifact, failure behavior, audit trail, delivery state, and evidence state are explicit.
+
+In a labor OS, every job can be refused, approved, dispatched, adjudicated, delivered, quarantined, replayed, or retired through declared transitions. Delivery and evidence readiness remain separate: a user-visible output may exist while verification, artifact capture, replay declaration, or residual accounting is still incomplete. That separation prevents useful output from being laundered into governed evidence.
+
+A bounded labor OS needs:
+
+- A job lifecycle engine that rejects invalid transitions and preserves parentage from command contract to plan node to approval to adapter to artifact.
+- Permission and approval services that block high-impact work until scoped records exist.
+- Workspace and isolation controls for source access, secret handles, tool calls, runtime effects, and audit capture.
+- Completion receipts that separate request, approval, execution, artifact capture, verification, delivery, residuals, and replay/non-replay state.
+- Operator surfaces that show drafted, blocked, awaiting-approval, running, adjudicating, delivered, evidence-ready, quarantined, replayed, and retired work.
+
+This accountable execution layer is still an architectural target. Leave typed-job support at `argument` until lifecycle harnesses, permission checks, approval services, adapter runners, completion receipts, and replayable job traces show that intelligence produces work packets with receipts instead of unmanaged activity.
+
+## Summary
+
+Labor OS and Typed Jobs turns plans into controlled work. It gives each executable unit a type, contract, lifecycle, permissions, approval state, adapter, artifacts, failure behavior, audit events, and replay status. The sources justify treating execution as typed work, but this repo still lacks the scheduler, permission service, approval service, adapter runner, and replay system that would turn the boundary into runtime evidence.
+
+Typed jobs do not reduce autonomy; they make autonomy inspectable, approvable, replayable, repairable, and improvable. The job's output then enters the artifact graph, where work becomes durable memory instead of a disappearing side effect.
+
+The handoff to artifacts should be mandatory. A job that leaves no artifact, audit event, residual, or replay declaration has not become part of the living stack's memory, even if it produced a useful answer.
+
+## Handoff
+
+Typed jobs give execution a bounded work unit, but the stack still needs a durable record of what each job produced, read, changed, and failed to prove. Artifact Graphs, Audit Logs, and Replay supplies that continuity layer. It makes outputs, sources, context transactions, tools, audit events, replay limits, and residuals part of the system's memory rather than leftovers around the work.

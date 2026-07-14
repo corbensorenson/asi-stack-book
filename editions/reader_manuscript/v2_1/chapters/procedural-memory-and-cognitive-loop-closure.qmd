@@ -1,0 +1,199 @@
+# Procedural Memory and Cognitive Loop Closure
+
+Repeated work creates a question the execution layer cannot avoid: what should the stack learn from traces that keep recurring? Procedural memory is the path from comparable traces to a reusable tool, checklist, workflow, or capability candidate, after the evidence and boundaries are mature enough.
+
+Automation should be earned. A repeated reasoning loop should not be improvised forever, but it also should not become default behavior just because it worked once. Promotion gates let memory become capability without becoming unchecked habit. That is how self-improvement starts as operational memory rather than as a vague urge to automate everything.
+
+Loop closure is progress only when the closed loop remains inspectable. A reusable procedure should make future work clearer, not merely easier to repeat. It should preserve promotion traces, limiting failures, regression checks, and retirement paths under changed conditions.
+
+Memory becomes capability when reuse carries the reason it was allowed. The loop should close around evidence, not habit. Procedural memory turns repetition into a governed candidate for toolmaking, routing, or delegation while keeping residuals visible.
+
+## Problem
+
+Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
+
+The execution layer produces traces. Cognitive loop closure asks which repeated traces should become procedural memory. The source's key point is that repeated reasoning should not remain a bespoke conversation forever: the system should detect recurring trajectories, abstract invariant structure, discover parameters, synthesize tools, verify them, register them, monitor them, and retire or revise them when they fail.
+
+Procedural memory closes Part II because it is the handoff to routing and readiness. Once a loop becomes a tool, the router can select it, readiness gates can govern it, and benchmark ratchets can preserve its floor.
+
+The loop-closure question is therefore not "can this be automated?" but "what evidence would make this safe to reuse?" Some traces should remain examples. Some should become checklists. Some should become scripts or tools. Some should become warnings. The promotion path must keep those categories separate.
+
+## Why existing approaches are insufficient
+
+Agents waste cognition and introduce inconsistency when recurring workflows are repeatedly reconstructed from scratch.
+
+Repeated improvisation wastes tokens, time, and reviewer attention. It also creates drift: the same task is solved differently each time, with different hidden assumptions and different failure modes. But the opposite failure is premature toolification: turning one lucky trace into a routable tool before preconditions, parameters, risks, and regressions are known.
+
+MemGPT (`ext_memgpt_2023`) supplies the closest external memory-management baseline: long-running agents need explicit memory tiers and control flow rather than unbounded context. Procedural memory applies that pressure to workflows instead of only facts. A recurring procedure should move from trace to tool card only after preconditions, authority, regression checks, and residual risks are recorded; the MemGPT reference is context for memory architecture, not proof that this loop-closure mechanism works.
+
+The adjacent tool-learning literature sharpens the boundary. Toolformer (`ext_toolformer_2023`) shows a learned policy for deciding when and how to call simple external APIs. Voyager (`ext_voyager_2023`) shows an embodied agent pattern with an automatic curriculum, executable-code skill library, environment feedback, execution errors, and self-verification. DreamCoder (`ext_dreamcoder_2020`) shows program-synthesis library learning where solved tasks feed reusable abstractions. Those sources make the procedural-memory ambition less isolated, but they also clarify the missing ASI Stack evidence: this repo has not trained a tool-use policy, reproduced a skill library, learned program abstractions, run a deployed loop detector, or promoted a generated tool through regression and readiness gates.
+
+The efficient stack needs three modes: interpretation for novel work, compiled-tool mode for verified recurring procedures, and failsafe/reflex mode for safety-critical responses. Moving between modes requires evidence.
+
+Current agent systems often blur those modes. A workflow gets repeated because it is convenient, copied into a prompt because it seems useful, and later invoked as if it were validated procedure. The ASI Stack should make that transition explicit: comparable traces first, abstraction second, verification third, routable memory last.
+
+## Core Claim
+
+Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory (evidence boundary: architectural argument).
+Cognitive Loop Closure supplies trajectory logging, loop detection, abstraction, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement vocabulary. RMI, RGS, and Benchmaxxing supply ratchet and regression pressure. Talos supplies execution traces and audit discipline. Project Theseus sources supply implementation-lineage pressure, not local proof of unattended self-evolution. `moecot` supplies connector review context only until its usable source text or runtime artifacts are imported.
+
+### Strongest objection
+
+Trace promotion can formalize superstition. Four records may share a digest and
+carry receipts while still encoding a coincidental shortcut, a correlated
+failure, or an evaluator blind spot. The historical-project fixture therefore
+establishes record discipline only: it can require failure retention,
+regression evidence, rollback, and retirement, but it cannot establish that the
+abstracted procedure is useful, causal, safe, or general.
+
+## Mechanism
+
+Loop closure begins after the execution layer has left enough trace to learn from. Artifact graphs supply source traces, job paths, adapter effects, failures, residuals, and replay limits. Cognitive Loop Closure turns that material into a governed promotion path: detect recurring trajectories, abstract invariant structure, discover parameters, synthesize a candidate tool, verify it, register it, route future matching work through it, monitor it, and retire it when it decays.
+
+RMI and RGS connect this path to the broader ratchet: benchmark pressure creates traces, traces expose repeated structure, verified structure becomes tools, residuals remain visible, and regressions protect the floor. Benchmaxxing keeps promotion tied to evaluation rather than enthusiasm. Theseus adds the report-first implementation boundary: a tool is not routable just because a trace looked useful; it needs a card, checks, ledgers, and retirement criteria.
+
+```{mermaid}
+flowchart LR
+A["Candidate traces"] --> B["Loop cluster"]
+B --> C["Invariant abstraction"]
+C --> D["Parameter discovery"]
+D --> E["Tool candidate"]
+E --> F["Verification + negative examples"]
+F --> G{"Qualified reuse?"}
+G -- "yes" --> H["Routable tool card"]
+G -- "no" --> I["Quarantine / residual / retire"]
+H --> J["SCF, benchmark floor, monitoring"]
+I --> J
+J --> K["Retirement or requalification trigger"]
+```
+
+**Reading the loop closure path:** The loop-closure path turns repeated traces into a candidate procedure only after invariant abstraction, parameter discovery, verification, and negative examples. Qualified reuse creates a routable tool card; failed qualification preserves quarantine, residual, retirement, and requalification routes.
+
+The loop-closure path starts with safe traces that preserve provenance, failures, residuals, and replay limits. Comparable traces justify detection; detection leads to invariant abstraction, parameter discovery, preconditions, postconditions, and then candidate synthesis. Verification, regressions, monitoring, and retirement criteria decide whether the candidate becomes routable, remains in quarantine, returns to revision, or is retired.
+
+The state machine should be explicit enough for a future implementation to refuse reuse. A trace starts as a `candidate_trace`, becomes a `loop_cluster` only when there are comparable cases, becomes a `tool_candidate` only after the invariant and parameters are named, becomes `verified_reuse` only after checks and negative examples bound the envelope, becomes `routable` only through an SCF/readiness gate, and can later be `quarantined` or `retired`. The existing public fixture validates the smaller `procedural_tool_record` shape; these states define the fuller procedure-qualification discipline the next harness should implement.
+
+A tool card should name source traces, invariant structure, parameters, preconditions, postconditions, verification result, risk tier, runtime tier, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
+
+Negative examples are part of the memory, not clutter. A loop detector that only sees successes will overgeneralize; a tool card without failed cases cannot say where the procedure stops. The procedure card preserves near misses, rejected traces, and residuals so the future router knows when not to use the tool.
+
+Loop closure is reasoning compression. It turns many successful trajectories into one parameterized procedure, but only when the verification burden has been paid.
+
+Semantic facts and procedural traces remain separate memory domains. A fact
+can justify a precondition or policy, but it is not evidence that a procedure
+ran; a trace can show an observed route and effect, but it does not become a
+timeless semantic fact. Promotion binds every candidate trace to both a source
+receipt and an effect receipt, retains failed attempts as negative examples,
+and requires a passing regression suite plus a rehearsed rollback route.
+
+## Interfaces
+
+Reusable cognition becomes operational through the Procedural Tool Record.
+
+- Artifact graph supplies traces.
+- Routing selects new tools.
+- Evidence tests utility and regressions.
+
+A fuller Procedure Qualification Packet should sit around the record when the tool is being promoted. It should include the candidate trace set, rejected traces, near misses, abstraction rationale, parameter-discovery notes, precondition and postcondition evidence, SCF target, benchmark floor, risk tier, authority requirement, monitoring signal, retirement trigger, and explicit non-claims. The packet is not a success badge; it is the material a gate needs in order to say yes, no, quarantine, or retire.
+
+Minimum fields:
+
+- `tool_id`
+- `source_traces`
+- `invariant_structure`
+- `parameters`
+- `preconditions`
+- `postconditions`
+- `verification_result`
+- `risk_tier`
+- `runtime_tier`
+- `monitoring_plan`
+- `residuals`
+- `regressions`
+- `lifecycle_state`
+- `retirement_criteria`
+
+Artifact graphs supply traces. Routing selects verified tools. Evidence tests utility and regressions. Readiness gates decide promotion, quarantine, revision, or retirement.
+
+SCFs give the generated tool a capability boundary; benchmark ratchets give it a floor to preserve; artifact graphs give it lineage; readiness gates decide whether it can be selected. Without those interfaces, procedural memory becomes a private shortcut instead of a governed stack layer.
+
+## Invariants
+
+- Only verified loops become tools.
+- Parameters and assumptions are explicit.
+- Tool promotion records residuals and regressions.
+- Negative examples stay attached to the reusable procedure.
+- Retirement triggers are part of the tool, not later maintenance notes.
+- Semantic facts cannot be substituted for observed procedural traces.
+- Every promoted trace retains source and effect receipts, including failures.
+- Routable promotion requires passing regressions and a rehearsed rollback route.
+- Quarantine and retirement remain reachable lifecycle states after promotion.
+
+The promotion invariant is simple: only verified loops become routable tools. A failed regression does not become "future work" hidden inside a successful tool card; it blocks promotion or remains residual.
+
+Scope fidelity is the tool-memory invariant. The generated tool may be narrower than the traces that inspired it, but it should not be broader unless new evidence justifies the expansion. Tool cards should prefer small verified envelopes over broad automation that is hard to falsify.
+
+## Failure modes
+
+- Premature toolification.
+- Hidden assumptions.
+- Procedural memory poisoning.
+- Anecdote closure, where one appealing trace becomes a tool without a comparable cluster.
+- Route drift, where a verified tool is reused outside its SCF, benchmark floor, or authority envelope.
+- Memory-domain laundering, where semantic assertions substitute for execution traces.
+- Success-only promotion, where failed attempts or near misses disappear from the reusable record.
+- Receipt laundering, where declared inputs or intended effects replace observed source/effect receipts.
+- Immortal promotion, where rollback, quarantine, or retirement paths disappear after routing begins.
+
+Premature toolification creates brittle automation. Hidden assumptions make the tool fail outside its original context. Procedural memory poisoning occurs when bad traces become reusable machinery. Those memory failures keep the tool in draft, residual, quarantine, or retired state.
+
+Tool immortality is the memory-layer failure. A procedure that was once verified can become stale when sources change, APIs shift, benchmarks saturate, or governance rules tighten. Retirement criteria and monitoring are therefore part of memory, not administrative cleanup.
+
+## Minimum Viable Implementation
+
+A loop closure pipeline from trace detection to verified tool record.
+
+Procedural memory begins with a `procedural_tool_record` schema and fixture. It validates source traces, invariant structure, parameters, pre/postconditions, verification result, risk/runtime tiers, monitoring plan, residuals, regressions, lifecycle state, and retirement criteria.
+
+The synthetic procedural-memory loop harness now adds a small procedure-qualification gate around that record shape. It checks three valid and six expected-invalid packets for comparable success traces, near misses or failures, preserved negative examples, explicit parameters/preconditions/postconditions, matching invariant structure, regression quarantine, retirement triggers, and source-trace mismatch.
+
+The historical-project trace-promotion fixture adds a stricter closure record.
+`python3 scripts/validate_procedural_trace_promotion.py` accepts one bounded
+four-project promotion and rejects ten mutations covering memory-domain
+conflation, failure erasure, missing source/effect receipts, regression
+laundering, negative-example erasure, unrehearsed rollback, missing retirement,
+source substitution, and fixture support promotion.
+
+`AsiStackProofs.ProceduralMemory` adds finite record gates for generated tools, regression promotion reviews, and lifecycle transitions. The module now has 19 theorem declarations, including 17 derived/decomposed declarations. Its lifecycle route model rejects routable promotion when comparable trace clusters, negative examples, closure artifacts, verification, regression preservation, benchmark floor, active SCF target, retirement handling, monitoring plan, residuals, non-claims, or verified source state are missing. It also includes fixture-shaped Lean bridge records for the harness's valid routable-with-negative-examples, failed-regression-quarantined, and retired-stale-precondition scenarios.
+
+The miniature trace set is still synthetic record-gate evidence. It shows how the book expects a procedure candidate to cite source traces, preserve failures, narrow scope, and deny routable promotion when regressions or retirement triggers fire.
+
+This is enough to make the qualification discipline executable, but not enough to show a working loop-closure product. A real MVI still needs deployed trace mining, candidate generation, regression execution, route monitoring, and retirement automation.
+
+## Beyond the State of the Art
+
+Procedural memory reaches product form as a foundry for verified reusable cognition. It is more than a prompt or script cache: it mines artifact traces, clusters comparable work, preserves failures and near misses, abstracts invariant structure, discovers parameters, synthesizes candidate procedures, verifies regressions, attaches monitoring and retirement rules, and then offers qualified tools to Part III routing.
+
+In procedural memory, reusable cognition has states rather than vibes: candidate trace, loop cluster, tool candidate, verified reuse, routable tool, quarantined tool, retired tool. A trace cannot jump straight into routable behavior because it looks elegant. The procedure card must carry source traces, rejected traces, near misses, abstraction rationale, preconditions, postconditions, SCF target, benchmark floor, authority requirement, monitoring signal, retirement trigger, and non-claims.
+
+A procedure foundry needs:
+
+- Trace-mining tools over artifact graphs, job receipts, adapter receipts, failures, residuals, and replay records.
+- Loop-clustering logic that requires comparable successes plus negative examples before tool synthesis.
+- Tool-card generation with parameters, assumptions, preconditions, postconditions, risk/runtime tier, authority envelope, monitoring plan, regressions, and retirement criteria.
+- Readiness gates that bind procedural tools to SCF identity, benchmark floors, residual escrow, route limits, and rollback or quarantine paths.
+- Retirement and revision machinery that reacts to stale sources, failed regressions, changed APIs, governance updates, route drift, and tool bloat.
+
+This procedural-memory loop is still proposed architecture. Procedural memory remains `argument` until trace sets, loop detectors, tool candidates, regression harnesses, readiness gates, monitoring logs, and retirement traces show that the stack can learn from repetition without letting repetition become ungoverned habit.
+
+## Summary
+
+Procedural Memory and Cognitive Loop Closure turns repeated traces into governed tools. It detects loops, abstracts invariant structure, discovers parameters, synthesizes candidate tools, verifies them, registers them, monitors them, and retires or revises them when they fail. The present evidence boundary is still a record-gate boundary: the sources and mappings explain what such closure requires, Lean checks finite generated-tool, regression, lifecycle-route, and fixture-bridge gates, and the synthetic harness checks procedure-qualification packet discipline, while deployed tool generation, regression-quality testing, routing, monitoring, retirement automation, and a full loop-closure run remain unexecuted.
+
+The discipline is closure with evidence. A repeated pattern becomes procedural memory only when the stack can state what was learned, where it applies, how it was verified, and when it should stop being used. That is the hinge into Part III: once procedures and specialists exist, the next problem is routing them without hiding residuals or letting capability outrun readiness.
+
+The same discipline returns in Part IV as benchmark ratchets. A procedure that becomes easier to run must also become easier to test, regress, retire, and explain. Otherwise memory increases capability faster than governance can remember why it trusted the capability in the first place.
+
+## Handoff
+
+Procedural memory completes the planning, memory, reasoning, and execution loop, but verified procedures are not useful by themselves unless the system can choose among them under bounded authority and readiness evidence. Routing Heads and Specialist Cores opens that next layer. It treats tools, procedures, and specialist workers as candidates for governed routing rather than as ambient capabilities available to every task.

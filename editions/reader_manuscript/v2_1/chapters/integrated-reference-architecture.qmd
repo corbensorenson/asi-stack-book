@@ -1,0 +1,246 @@
+# Integrated Reference Architecture
+
+After every major layer is named, the machine has to come back together. Intent, planning, memory, routing, verification, execution, evidence, benchmarks, and improvement should cooperate in one inspectable flow.
+
+This is the synthesis checkpoint. The question is not whether every implementation exists yet. The question is whether a future implementation could produce a trace clear enough to show what happened, why it was allowed, what evidence changed, which residuals remained, and where the system stopped. A reference architecture earns trust only when the blocked path is as visible as the happy path.
+
+The integrated architecture should make composition legible. If the layers only look coherent in a diagram but lose authority, context, evidence, or residuals at the handoffs, integration has failed. If the trace survives across every handoff, the stack has a practical test for whether new parts compose.
+
+Integration succeeds when the trace remains understandable after every layer has done its work.
+
+The whole stack is credible only when its combined behavior stays explainable under stress, failure, and revision.
+
+## Problem
+
+Readers need to see how the layers operate as one machine from intent to governed action and improvement. A chapter-by-chapter specification is necessary, but it is not sufficient. The architecture becomes real only when a reader can trace one request across the whole stack and identify every artifact, permission check, evidence update, and possible stop condition.
+
+The end-to-end integration point receives the constitutional frame, command-contract machinery, planning layer, memory compiler, claim ledger, execution OS, routing substrate, compression loop, evidence ratchet, and improvement boundary. The job is to show how those pieces compose without pretending that composition is already implemented or proven.
+
+The integration question has two halves. The happy path asks whether intent can become an artifact without losing context, authority, or evidence. The blocked path asks whether missing authorization, inadequate context, failed verification, excessive residual, or evaluator capture actually stops the flow. A reference architecture that cannot explain the blocked path is not governed; it is only sequenced.
+
+## Why existing approaches are insufficient
+
+Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
+
+The failure mode is architectural fragmentation. A planner can produce tasks, a memory system can supply context, a verifier can score claims, an execution OS can run tools, and a benchmark harness can report improvement, while no one can answer whether the original authority grant still covers the final action. That is not a minor documentation gap. It is the difference between a collection of useful mechanisms and a governed system.
+
+The integrated view has to compose external baselines that are normally studied separately. CAIS (`ext_drexler_cais_2019`) provides the closest broad precursor: it frames general AI as comprehensive services and R&D automation, but leaves this book's typed handoff, authority, claim-state, residual, and release-record contract unspecified. TAMP (`ext_integrated_tamp_2020`) and behavior trees (`ext_behavior_trees_robotics_ai_2017`) name planning/execution interfaces, GShard (`ext_gshard_2020`) names distributed conditional computation, TLA+ (`ext_tla_plus_home_docs`) and PRISM (`ext_prism_model_checker_2002`) name system/model-checking lanes, and Black-Box Simplex (`ext_black_box_simplex_2021`) names runtime assurance around controller switching. The reference architecture's contribution is the handoff ledger across those lanes, not a claim that one implementation has integrated them.
+
+The local delta of Integrated Reference Architecture is therefore not another instance of the governed-cognition pattern. It is joinability. The same record/lifecycle/authority/evidence/receipt/rollback pattern has to survive across many layers as one trace, including the blocked path. A planner record, context packet, route decision, claim envelope, work order, audit log, evidence delta, and SCF gate are only integrated when their parentage, authority deltas, residual deltas, and non-claims can be joined after the run.
+
+The integrated reference architecture therefore has to be explicit about handoffs. The output of one layer is not "more context" or "a better answer." It is a typed artifact: a command contract, plan DAG, context packet, claim record, work order, route decision, proof obligation, audit log, benchmark result, or capability-field transition.
+
+A single all-purpose agent loop can make this worse by turning every boundary into hidden prompt state. The ASI Stack should resist that collapse. The planner should not silently become the verifier; the memory compiler should not silently become the authority source; the execution OS should not silently decide that a failed residual is acceptable; and the benchmark ratchet should not silently promote a candidate whose regression floor moved.
+
+## Core Claim
+
+The stack can be specified as an integrated reference architecture with typed handoffs, authority stops, artifacts, evidence updates, and self-improvement gates (evidence boundary: architectural argument).
+The source notes support architecture synthesis across intent, command contracts, plans, VCM, routing, claims, execution, benchmarks, SCFs, and report-first implementation references. The bounded QCSA vertical trace now shows one completed 13-stage local reversible run, but it does not show the broad learned-model, multi-service, deployed integrated stack described by the core claim.
+
+## Mechanism
+
+The mechanism is a trace kernel for the stack. A request enters with a human purpose and a limited authority grant. Each layer then emits something durable enough for the next layer to inspect: a command contract, plan, context packet, route decision, claim envelope, work order, audit log, evidence update, or improvement decision.
+
+The point is not to make every layer run inside one agent loop. The point is to prevent the layers from dissolving into hidden prompt state. Planning should not silently become verification. Memory should not silently become authority. Execution should not silently forgive a failed residual. Evidence should not silently promote a result whose support boundary is still only architectural argument.
+
+```{mermaid}
+flowchart LR
+A["Human intent"] --> B["Governed command"]
+B --> C["Plan and context"]
+C --> D["Route and verification"]
+D --> E["Work order and audit"]
+E --> F["Evidence update"]
+F --> G["SCF decision"]
+G -- "insufficient authority or evidence" --> H["Blocked, narrowed, or reviewed"]
+G -- "accepted narrow result" --> I["Bounded continuation"]
+```
+
+The current repository has a modest version of that shape. It has deterministic reference-trace fixtures: one approved maintenance flow and one blocked authority flow. The approved flow carries stable parent artifacts from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review. The blocked flow follows the same spine but stops because runtime execution authority is missing and governance review is required.
+
+A first local command replay now sits beside those fixtures through the Resource flagship lane. That replay records a command, output digest, artifact bundle, validation path, and blocked-path reference. It is useful because it shows that the record family can carry a real local command result, not only a hand-written example.
+
+The boundary remains strict. These records do not prove a deployed runtime, live artifact-continuity service, authority-stop enforcement outside the fixture, model quality, benchmark quality, scheduler behavior, economic outcome, or support-state promotion. They show the shape of accountable integration: parentage, authority deltas, evidence deltas, residual deltas, validation commands, stop conditions, source references, and non-claims survive the handoff.
+
+That is the integration test the rest of the stack has to meet. A future implementation can be impressive only after it produces comparable traces under both success and refusal. If parentage disappears, authority becomes ambient, evidence changes without a named claim, or residuals are erased, the architecture has not composed yet.
+
+## Interfaces
+
+- All stack layers participate.
+- Artifacts and evidence ledgers provide continuity.
+- SCF gates control improvement.
+
+The Reference Trace Record carries the interface: a finite public record of trace state, execution boundary, intent, parent artifacts, authority chain and deltas, layer handoffs, artifacts, evidence updates and deltas, residual deltas, stop conditions, missing contracts, validation commands, promotion blockers, source refs, support-state effect, and non-claims. It gives a future runtime trace harness a stable target without pretending that the harness already exists.
+
+A useful trace record is not merely chronological. It records parentage, authority deltas, evidence deltas, and residual deltas. Parentage says which artifact produced the next artifact. Authority deltas say whether authority narrowed, expired, escalated, or was denied. Evidence deltas say which claim state changed, if any. Residual deltas say what risk or missing work survived the handoff. Without those deltas, the trace becomes a log of events rather than an architecture record.
+
+## Invariants
+
+The reference-architecture invariants keep an end-to-end trace from becoming a shortcut around the stack: every layer may add evidence, but none may erase authority, provenance, or residual obligations.
+
+- No layer bypasses governance.
+- Artifacts remain traceable.
+- Self-improvement follows evidence and authority gates.
+- Every named integration stage joins to the material output it claims to own.
+- Canonical state remains authoritative over projections, and the request-to-effect receipt binds request, policy, state, effect, and terminal acknowledgement.
+- Evaluator identity and method remain visible before a result can reach the claim boundary.
+
+Continuity under authority is the strongest integration invariant. A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.
+
+Completeness is also an invariant. A blank field in the trace must mean "not applicable" or "not yet available," not "the system forgot to ask." Missing contracts, missing evidence, missing approvals, and missing rollback paths should be visible as records that block, narrow, or defer work.
+
+## Failure modes
+
+- Untraceable handoffs.
+- Planning/execution collapse.
+- Self-improvement without evaluator integrity.
+- Interface theater: named layers or green projections without a joined material effect.
+- Receipt drift: a receipt binds the wrong request, policy decision, canonical state, effect, or terminal outcome.
+- Projection authority and evaluator-independence laundering.
+
+Untraceable handoffs should create missing-contract records. Planning/execution collapse should preserve the failed plan, runtime artifact, and residual. Self-improvement without evaluator integrity should stop at the SCF gate.
+
+Integration theater is the reference-architecture failure: every layer name appears in the diagram, but the actual run still depends on informal summaries, ambient authority, unversioned context, dashboard prose, or unverifiable benchmark claims. A reference architecture should make that theater obvious because the trace record will have missing parentage, unsupported evidence deltas, or stop conditions that were acknowledged but ignored.
+
+Trace fragmentation is the companion failure, where each layer records locally valid receipts that cannot be joined into one accountable run.
+
+## Minimum Viable Implementation
+
+A minimum integrated architecture first exists as the reference flow diagram plus the `reference_trace_record` schema and deterministic fixture set. The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.
+
+The historical-project packet adds the smaller `name_to_effect_trace_record` contract and `python3 scripts/validate_name_to_effect_trace.py`. One blocked five-project lineage trace carries the seven ordered stages and one request-to-effect receipt; eight mutations attack stage closure, canonical-state authority, digest binding, terminal acknowledgement, evaluator independence, effect lineage, and support promotion. This is fixture-level joinability only, not a deployed runtime or reproduction of the projects.
+
+That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required. A first actual command replay exists as a local Resource flagship validator trace with an artifact bundle, output digest, and attached blocked-path stop conditions. The governed repository-change slice now adds an executed local Git workflow with code mutation, tests, independent byte-and-behavior observation, matched baseline accounting, release/refusal decisions, exact and failed rollback, and quarantine. A live or external runtime trace remains stronger and still needs comparable records from real deployed layer handoffs.
+
+## Beyond the State of the Art
+
+The integration endpoint is a trace kernel for the whole ASI Stack. The stack would not be a diagram of cooperating layers; it would be an inspectable machine that can explain what authority entered, which artifacts were produced, what evidence changed, which residuals survived, and why a path was promoted, blocked, narrowed, rolled back, or escalated.
+
+A mature reference trace kernel would make every significant run emit a Reference Trace Record. The record would connect human intent, constitutional authority, command contracts, plan DAGs, VCM packets, route decisions, claim envelopes, work orders, execution logs, proof/spec receipts, benchmark ratchets, policy-update leases, steward decisions, SCF transitions, release notes, and residual ledgers. The reference architecture would be judged by whether those records survive happy paths and blocked paths, not by how coherent the diagram looks.
+
+An integrated reference surface needs:
+
+- End-to-end traces with stable parent artifacts from intent through planning, memory, routing, verification, execution, evidence update, release, and improvement gates.
+- Authority deltas at every handoff: granted, narrowed, expired, denied, escalated, quarantined, or returned for human review.
+- Evidence deltas that say exactly which claim, support state, benchmark floor, proof target, policy update, or readiness gate changed, if any.
+- Residual deltas that preserve missing context, failed verification, contamination, regression, safety debt, unfunded work, governance concern, or unresolved source gap.
+- Stop-condition records for missing contracts, inadequate context, failed proof/spec, failed test, failed benchmark, unaccepted residual, evaluator-integrity concern, or rollback absence.
+- Cross-layer consumers that can reject a trace when a required artifact, source ref, validation command, non-claim, or approval is missing.
+- Failure closure that exposes integration theater: informal summaries, ambient authority, unversioned context, unsupported evidence deltas, and ignored stop conditions become visible defects.
+
+The record-reality problem sits inside that trace kernel. A trace is not enough
+if each layer merely produces shape-valid records about a world nobody checked.
+The receipt-faithfulness fixture now gives the reference architecture a bounded
+negative control: a support-seeking receipt must survive independent
+cross-check, trap-receipt, attestation-limit, and no-promotion checks before it
+can be treated as reviewable evidence. A future integrated runtime still needs
+live attestation and audit behavior; the receipt-faithfulness fixture only
+prevents record-shape laundering inside the static architecture.
+
+The epistemic trusted computing base fixture adds the related trust-chain
+negative control. A reference trace must not merely say "the verifier passed."
+It must identify the trusted core, root-of-trust refs, delegation rule,
+recursion stop, verifier independence state, outside-TCB residuals, and
+non-claims that make the verifier route consumable. The epistemic-TCB fixture
+rejects verifier-trust laundering and ambient trust propagation in finite
+records; it does not prove a deployed trust base or verifier correctness.
+
+### Governed repository-change slice
+
+The local governed repository-change slice turns the abstract trace into one
+actual disposable Git effect path. Nine matched scenarios receive the same
+budget-clamp request. The simple baseline releases all nine after public smoke
+tests and produces eight false accepts. The governed route binds one allowed
+path, quarantines retrieved-context instructions, rechecks authority before
+effect, rejects correlated review, verifies claimed file hashes against
+observed bytes in a separate process, runs stronger behavior probes, discovers
+undeclared files, and distinguishes exact rollback from incomplete rollback.
+It records three safe local releases, five refusals, one quarantine, three
+rollback attempts, two exact rollbacks, one failed rollback, zero false
+accepts, and zero unsafe releases.
+
+That result makes overhead visible too: the governed route uses 66 versus 27
+deterministic cost units, 89 versus 27 trace steps, and nine versus zero review
+steps. These are fixture accounting units, not production latency or economic
+measurements. The slice is validated by
+`scripts/validate_governed_repository_change_slice.py` and documented in
+`docs/governed_repository_change_slice.md`. It executes a bounded local
+repository workflow, but it creates no chapter-core support-state transition
+and does not prove a deployed authorization, sandbox, verifier, rollback,
+security, safety, software-quality, or ASI system.
+
+### Four trace invariants over one executed log
+
+The repository-change event log now feeds one shared finite trace model rather
+than four unrelated record examples. Authority monotonicity checks that each
+child scope stays within its parent and each request stays within the child.
+Revocation-before-effect attaches logical times to revocation and effect and
+gives revocation precedence when the two tie. Evidence-transition integrity
+requires unchanged support when no transition exists and accepted review,
+matching artifact bytes, plus independent effect observation when a transition
+does exist. Residual conservation requires created residuals to equal
+discharged residuals plus the final open inventory.
+
+The executed local trace has three authority handoffs, three timed effect attempts,
+nine evidence events, two residuals created, one discharged, and one final open
+residual preserved by quarantine. Four mutations try to widen authority, allow
+an effect at revocation time, change support without a transition, and erase
+the open residual; all are rejected by
+`scripts/validate_governed_trace_invariants.py`. Lean target
+`lean:reference_architecture.governed_trace.four_invariants` proves the same
+finite values in `AsiStackProofs.GovernedRepositoryTrace`. These are bounded
+trace semantics connected to an executed local log, not a distributed-runtime,
+service-enforcement, completeness, safety, or chapter-core promotion claim.
+
+When the trace kernel works, a future implementation could be evaluated by trace quality before anyone argues about intelligence. If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture. The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.
+
+## Predictive state inside an embedded system
+
+The reference trace can carry a latent world-model handoff without adding a
+new layer. `ext_v_jepa_2_2025` motivates records for observation and encoder
+identity, action-conditioned predictor, candidate sequence, horizon, search
+budget, uncertainty, prediction error, replanning trigger, fallback, and
+sim-to-real residual. Planning may propose an action from that packet; it does
+not inherit authority to execute it.
+
+The trace is also inside the world it describes. `ext_embedded_agency_2019`
+warns that the stack, its verifier, and its subsystems use bounded models and
+can share blind spots or divergent objectives. Trust roots, recursion stops,
+descendant identity, ontology changes, and outside-model residuals remain
+visible; a complete-looking ledger is not a solution to embedded agency.
+
+## Summary
+
+Integrated Reference Architecture is where the book stops describing layers in isolation and asks whether they compose into one inspectable machine. The reference trace has to carry typed handoffs, authority stops, artifacts, evidence updates, residuals, and self-improvement gates from the first request to the final change record.
+
+The architecture is coherent only if a reader can follow a request from human intent to evidence-backed change. The trace has a specific shape: governance approves the command, planning compiles it, memory bounds the working context, routing selects capability, verification checks claims and residuals, execution produces artifacts, evidence records outcomes, and SCF gates decide whether improvement is allowed.
+
+Future implementation work also gets a falsification target. If a demo cannot produce parent artifacts, authority deltas, evidence deltas, residual deltas, and blocked-path records, then it may still be interesting, but it has not yet instantiated this reference architecture.
+
+The integration claim then narrows into an implementation reference. Project Theseus becomes useful precisely because it is report-first: it shows how pieces of this trace could become inspectable machinery without letting local reports stand in for public empirical proof. The current static architecture-gate import demonstrates the report-import boundary while leaving the end-to-end runtime trace unclaimed.
+
+## Handoff
+
+The integrated trace defines what a complete stack must preserve; an implementation reference shows where that trace can become concrete without pretending the proof is already public. Project Theseus as Report-First Implementation Reference provides that bounded example. It maps pressure loops, residuals, plan contracts, gates, ledgers, operator work boards, checkpoints, and self-evolution governance to public-safe report surfaces and explicit non-claims, now including a static architecture-gate import that is useful evidence of report shape rather than proof of integrated runtime behavior.
+### Predictive-state handoff and the embedded-system boundary
+
+The reference trace can carry a world-model lane without making it a new
+chapter. `ext_v_jepa_2_2025` supplies the concrete handoff: an observation and
+encoder version produce a latent state; an action-conditioned predictor and
+candidate sequence produce forecast states and costs; Planning proposes a
+bounded action; Runtime Adapters and physical or digital controls retain the
+authority to act. The trace records model, predictor, observation, action
+space, horizon, search budget, uncertainty, prediction error, replanning
+trigger, fallback, and sim-to-real residual.
+
+That trace remains finite and internal to the world. `ext_embedded_agency_2019`
+is the foundations objection: the stack, its verifier, its models, and its
+subsystems are physical parts of the environment they describe; their models
+are smaller than that environment and may share blind spots or divergent
+objectives. A complete-looking ledger is therefore not an external omniscient
+view. The reference architecture records trust roots, recursion stops,
+descendant identity, ontology/version changes, and outside-model residuals,
+while explicitly declining to claim a solution to logical uncertainty,
+embedded world-models, robust delegation, or subsystem alignment.
+
+| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_embedded_agency_2019` | Metadata-first comparator: Embedded Agency. Primary informal survey of the obstacles that arise when agents are physical parts of the worlds they model, must use smaller internal models, and reason about modifiable internal parts. It supplies a foundations boundary; the book's finite records, authority ceilings, and proofs do not solve embedded agency. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

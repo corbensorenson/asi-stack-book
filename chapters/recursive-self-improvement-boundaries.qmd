@@ -341,3 +341,28 @@ The operating principle is that improvement must preserve governability. A faste
 ## Handoff
 
 Part I establishes the governing frame: stack boundaries, efficiency accounting, authority ceilings, failure records, evidence states, human intent, constitutional predicates, rights, replacement, security, bounded improvement, and the governed generation campaigns that can propose future changes. Open-Ended Improvement Engines closes this part by separating discovery from admission: it records how candidates, tasks, evaluators, archives, and residuals are produced before the existing improvement governor decides whether any candidate can proceed. Command Contracts: From Intent to Executable Work then opens Part II by turning accepted intent into the first operational trace.
+**Embedded self-reference is a standing residual.**
+
+`ext_embedded_agency_2019` explains why self-improvement is not only a release
+engineering problem. An improving system reasons about itself with a model
+that is smaller than the world, contains parts that can be modified, and may
+delegate to components whose objectives or ontologies diverge. A complete
+mutation manifest can enumerate declared state; it cannot prove that the
+declaration contains every causally relevant part of an embedded agent.
+
+Every improvement transaction therefore records the self-model version,
+declared state inventory, verifier and trust roots, recursion stop, descendant
+identity, ontology changes, outside-inventory residuals, and the authority that
+may halt or roll back the change. Full-state rollback remains exact only over
+its prospective inventory. Record-level correctness must not be upgraded into
+embedded-agent corrigibility, stable goals, or safe recursive improvement.
+
+### Manifest source assignment reconciliation
+
+These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_embedded_agency_2019` | Metadata-first comparator: Embedded Agency. Primary informal survey of the obstacles that arise when agents are physical parts of the worlds they model, must use smaller internal models, and reason about modifiable internal parts. It supplies a foundations boundary; the book's finite records, authority ceilings, and proofs do not solve embedded agency. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->

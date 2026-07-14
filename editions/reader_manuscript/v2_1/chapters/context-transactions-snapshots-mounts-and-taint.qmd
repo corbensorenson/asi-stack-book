@@ -1,0 +1,221 @@
+# Context Transactions, Snapshots, Mounts, and Taint
+
+Typed context cells still need runtime semantics before use in memory. Context becomes a transactional view: it can be mounted, branched, tainted, committed, rolled back, expired, declassified, or denied. Without those semantics, even well-labeled memory can become stale, mixed across incompatible tasks, or derived from material that should no longer be used.
+
+The human analogy is version control for what the model gets to see. If a future reviewer cannot tell which memory view was read, which branch it came from, what was private, what was tainted, and what derivatives now carry obligations, the system cannot honestly explain its own reasoning surface. Each transition should leave a receipt.
+
+Context should behave like accountable state, not like a pile of helpful snippets. The same discipline that protects code history has to protect cognitive history, because every later claim depends on knowing which context state was actually active. The transaction log gives memory a boundary that can be challenged, while taint lets downstream work inherit caution instead of laundering risky context across operational boundaries.
+
+## Problem
+
+Memory and context need runtime semantics for consistency, branches, contradiction, deletion, privacy, and taint.
+
+Certified context representations are not yet runtime memory. The memory system also needs runtime semantics. Long-horizon work needs snapshots that are coherent enough to replay, mounts that define what memory is visible, branches that support experiments, taint that follows sensitive or suspect sources, and deletion closure that prevents derived summaries from resurrecting removed data.
+
+VCM supplies the transaction model. Context Engineer and Ladon add need-to-know and sensitive-mount pressure. Black Hole Context Manager adds practical memory-budget machinery: chunks, drift, mass, freezing, eviction, and critical context preservation.
+
+The central problem is not only "which context is relevant?" It is "which context view is legally, epistemically, temporally, and authority-wise valid for this task?" A high-quality retrieval hit can still be invalid if it came from a revoked source, an expired snapshot, an unauthorized mount, or a tainted derivative.
+
+## Why existing approaches are insufficient
+
+A retrieval store cannot guarantee read-your-writes behavior, copy-on-write experimentation, deletion closure, or taint propagation by itself.
+
+Retrieval can return plausible neighbors, but it does not by itself define consistency. A worker may read a mixture of old and new facts, see a source after revocation, miss a contradiction, or consume a summary derived from deleted data. Security labels can also evaporate when context is copied, summarized, embedded, logged, or sent to a tool.
+
+The external baselines make the consistency problem visible from several angles. RAG (`ext_rag_2020`) supplies explicit retrieval, MemGPT (`ext_memgpt_2023`) supplies virtual memory control, Lost in the Middle (`ext_lost_in_middle_2023`) and LongBench (`ext_longbench_2023`) show long-context usage and evaluation limits, RULER (`ext_ruler_2024`) adds synthetic stress tests, and LongLLMLingua (`ext_longllmlingua_2023`) adds compression-induced loss pressure. Context transactions add snapshot, mount, taint, and deletion-closure semantics around those mechanisms; no long-context benchmark or compression result is claimed.
+
+Context memory needs database-like discipline without pretending memory is a database table. Context objects are semantic, versioned, compressed, mounted, and task-relative. That makes transaction semantics more important, not less.
+
+Long-context windows can hide this problem by making more material visible at once. More visibility is not the same as a coherent view. A transcript that mixes old summaries, fresh evidence, private notes, and revoked derivatives can be larger while becoming less governable.
+
+## Core Claim
+
+VCM should use transactional memory semantics: immutable events, versioned pages, snapshots, mounts, taint, temporal validity, and deletion closure (evidence boundary: architectural argument).
+VCM public v1 supplies snapshot, revocation, invalidation, protected compilation, and audit vocabulary. Ladon/Manhattan and Context Engineer supply compartmentalization and need-to-know pressure. Black Hole Context Manager supplies chunk mass, drift, freezing, and eviction patterns. The editable VCM source refines terminology; it is not a local memory-store implementation.
+
+### Strongest objection
+
+A perfect transaction log can describe a memory system that never persisted
+correctly. Freeze, thaw, promotion, compaction, and restart labels are not
+material effects; index and content records can agree inside the log while the
+store loses data. This design therefore requires observed postconditions and
+restart visibility in its bounded fixture, but keeps the result at record-level
+support until a real process and durable store are crashed and recovered.
+
+## Draft Key Figure: Context Transaction Lifecycle
+
+::: {.asi-key-figure}
+![Draft context transaction lifecycle.](../assets/diagrams/context-transaction-lifecycle.svg){#fig-context-transaction-lifecycle fig-alt="Draft context transaction lifecycle figure showing context ABI records, certificates, transaction records, snapshots, mount policies, branch or commit decisions, taint and deletion closure, materialized views, faults, quarantine, downstream artifact, adequacy, claim-ledger, and job handoff boundaries."}
+:::
+
+**How to read the context-transaction figure:** Read the figure as a state lifecycle, not a retrieval pipeline. A context ABI record and certificate enter a transaction record, which fixes the read set, write set, snapshot, mount policy, audit refs, and replay boundary. Branch or commit decisions do not erase taint or deletion obligations. Tainted, revoked, unauthorized, stale, or unclosed derivatives route to fault or quarantine instead of materialization. Downstream artifacts, adequacy records, claim ledgers, and jobs should cite the transaction that materialized their view. The figure is a draft reader aid, not proof of deployed memory-store behavior, branch isolation, resolver correctness, deletion closure, taint enforcement, side-channel safety, benchmark performance, support-state movement, or release approval.
+
+## Mechanism
+
+Certificates make context units honest; transactions make memory operations replayable. VCM public v1 supplies immutable versions, snapshot coherence, revocation, invalidation, protected compilation, and audit records. Ladon/Manhattan and Context Engineer supply sensitive mounts, opaque handles, ephemeral compartments, zeroization, clearance labels, memory masks, and sanitized commits. Black Hole Context Manager contributes chunk mass, drift, freezing, eviction, and critical-context preservation. Editable VCM ties those ideas back to mounts, snapshots, materializations, semantic paging, protected compilation, and transactional memory.
+
+A Context Transaction Record is the runtime ledger for reads, writes, branches, taint propagation, deletion obligations, contradiction records, and faults.
+
+The sources define a runtime boundary, not a running memory store. VCM public v1 justifies transaction vocabulary, snapshot coherence, invalidation, deletion-residue reporting, copy-on-write branches, execution classes, and write-time controls. Ladon/Manhattan justifies keeping sensitive authority behind handles and ephemeral compartments. Context Engineer justifies clearance-labeled mission contexts, memory masks, Digital SCIF zeroization, sanitized commits, and leak-scanning pressure. Black Hole Context Manager justifies memory-budget machinery around chunks, mass, drift, freezing, eviction, and critical-context preservation. The repository has not yet shown enforced mount visibility, branch-isolation proof, derivative deletion closure, side-channel defense validation, or reproduction of source-reported benchmark numbers.
+
+```{mermaid}
+flowchart LR
+A["Immutable memory event"] --> B["Versioned page"]
+B --> C["Mount policy"]
+C --> D["Snapshot"]
+D --> E["Read / write / derive"]
+E --> F{"Branch or commit?"}
+F -- "branch" --> G["Copy-on-write branch"]
+F -- "commit" --> H["Committed event"]
+E --> I["Taint + deletion closure"]
+G --> I
+H --> I
+I --> J["Derivative refs + declassification refs"]
+J --> K{"Closure satisfied?"}
+K -- "yes" --> L["Materializable view"]
+K -- "no" --> M["Fault / quarantine"]
+```
+
+**Reading the context transaction:** Read this as a memory transaction, not a retrieval pipeline. A view can branch or commit, but taint and deletion closure must be tracked across derivatives before the view becomes materializable; otherwise the correct output is a fault or quarantine state.
+
+The transaction model records immutable memory events, compiles task snapshots with mounts and copy-on-write branches, and propagates taint plus deletion obligations through every derived context unit. A materialized view is acceptable only when its read set, write set, branch policy, transaction validity state, isolation state, taint labels, deletion obligations, declassification references, derivative references, contradiction references, materialization state, closure state, faults, consumer policy, verification refs, promotion blockers, replay boundary, non-claims, and audit references are coherent enough to replay.
+
+A context transaction record distinguishes view construction from view use. View construction decides mounts, snapshot, clearance, branch, and materialization. View use records which cells were actually read, which derivatives were produced, which taint labels propagated, and whether any deletion or declassification obligation was triggered. If the view becomes a durable artifact, the artifact should point back to the transaction rather than merely naming the source files it happened to read.
+
+Immutable events make audit and replay possible. Versioned pages make supersession explicit. Snapshots give a task a coherent read view. Mounts define what can be seen and written. Copy-on-write branches let the system test alternate summaries, repairs, or plans without mutating the committed memory space.
+
+Taint should propagate through derived cells unless authorized declassification occurs. Deletion should close over derivatives or fault when closure cannot be proven. Contradictions should become evidence records, not overwritten memory.
+
+### Material transitions and restart recovery
+
+The historical-project packet makes seven state changes explicit: freeze,
+thaw, rebalance, tier promotion, no-loss compaction, partial-write recovery,
+and restart. Every transition binds a pre-state to an observed and acknowledged
+post-state. Authoritative item identities survive every no-loss operation.
+Index and content epochs advance atomically; a detected partial write blocks
+ordinary commit and rolls back to the last shared epoch. Restart then proves
+only that the hand-authored committed set is visible again—not that a deployed
+store, filesystem, or compactor behaves this way.
+
+## Interfaces
+
+Context changes travel through the Context Transaction Record.
+
+- Planning receives consistent views.
+- Security labels sensitive mounts.
+- Evidence records contradictions and supersession.
+
+Minimum fields:
+
+- `transaction_id`
+- `transaction_state`
+- `transaction_validity_state`
+- `operation`
+- `snapshot_id`
+- `snapshot_boundary`
+- `mounts`
+- `mount_policy`
+- `read_set`
+- `write_set`
+- `branch_policy`
+- `isolation_state`
+- `taint_labels`
+- `taint_propagation`
+- `deletion_obligations`
+- `rollback_or_deletion_closure`
+- `declassification_refs`
+- `derivative_refs`
+- `contradiction_refs`
+- `materialization_state`
+- `closure_state`
+- `faults`
+- `context_abi_refs`
+- `source_refs`
+- `audit_refs`
+- `consumer_policy`
+- `verification_refs`
+- `promotion_blockers`
+- `replay_boundary`
+- `support_state_effect`
+- `non_claims`
+
+Planning receives consistent views. Security labels sensitive mounts and tainted derivatives. Evidence records contradictions, supersession, invalidation, deletion closure, declassification decisions, materialization state, and faults.
+
+Failed materialization should be an ordinary interface result. A context compiler that cannot prove mount visibility, snapshot coherence, taint propagation, or deletion closure should emit a typed fault that planning can route around. Silent best-effort context is the unsafe fallback.
+
+The record also tells downstream artifacts what kind of memory they inherited. A generated proof attempt, plan, summary, tool call, or release note should be able to point back to the transaction that materialized its context. If that transaction later faults, the dependent artifact should be reviewable rather than silently trusted.
+
+## Invariants
+
+- Snapshots are consistent.
+- Taint propagates to derivatives.
+- Deletion closure is enforced or faulted.
+- Materialization state is explicit before a view is used by a downstream artifact or job.
+- Freeze, thaw, rebalance, promotion, compaction, and recovery have observed,
+acknowledged postconditions and one causal state chain.
+- No-loss transitions preserve every authoritative item identity.
+- Ordinary committed states keep index and content epochs equal; divergence
+routes to recovery before restart or use.
+
+The deletion invariant is strict: deleted or revoked source material cannot reappear through derived summaries unless a policy explicitly says what remains permitted. If closure cannot be established, the system should fault rather than materialize the view.
+
+Branch containment protects committed memory. Experimental summaries, speculative repairs, and alternate plans can branch, but they do not become committed memory unless merge policy, authority, taint, contradiction, and residual checks pass.
+
+Mount provenance must remain visible after branching, because a clean-looking derivative can still carry tainted source obligations.
+
+## Failure modes
+
+- Memory poisoning.
+- Stale or contradictory reads.
+- Deleted data reappearing in derived summaries.
+
+Memory poisoning enters through malicious, stale, or over-weighted chunks. Stale or contradictory reads produce incoherent plans. Deleted data reappearing in summaries creates legal, privacy, and trust failures. These are transaction faults, not mere retrieval imperfections.
+
+Context laundering is the memory-side failure. A sensitive or unsupported source can be summarized, embedded, cached, or merged until its original restrictions disappear. Transaction records should keep the restriction attached to every derivative or force an explicit declassification decision.
+
+Snapshot fiction makes the problem operational. The system behaves as if it read one coherent context view, but the answer actually blends stale pages, live edits, unauthorized mounts, and summaries with different loss profiles. That makes replay impossible and can make contradiction handling look arbitrary. A context transaction should either produce a coherent view with declared faults or refuse to materialize as ordinary working memory.
+
+Lifecycle theater labels a requested freeze, thaw, rebalance, promotion, or
+compaction as complete without observing the postcondition. Partial-write
+laundering admits a new index over old content. Restart amnesia returns a
+healthy status while committed item identities are missing.
+
+## Minimum Viable Implementation
+
+The smallest useful context-transaction implementation is not a production memory store. It is one transaction record for one materialized context view. That record says what operation occurred, which snapshot and mount policy were used, what was read or written, which branch policy applied, what taint and deletion obligations followed the view, whether declassification or closure exists, and what replay boundary future reviewers can inspect.
+
+The current `context_transaction_record` schema and fixture validate that this record has the fields needed for review: transaction state, snapshot boundary, mount policy, read/write sets, isolation state, taint propagation, deletion closure, materialization state, faults, context ABI refs, source refs, audit refs, consumer policy, verification refs, promotion blockers, support-state effect, and non-claims. Passing the fixture means the record is inspectable. It does not mean a deployed memory service exists.
+
+`AsiStackProofs.ContextTransactions` models the same boundary with finite records. It checks committed-event snapshot reads, taint propagation, materialization blocking when open deletion obligations lack closure or declassification, and transaction-route outcomes for missing or stale snapshots, branch mismatches, mount faults, taint without declassification, deleted-cell materialization, invisible committed reads, missing replay boundaries, unsupported support promotion, missing non-claims, and complete committed-read admission.
+
+The bounded memory-store fixture set is a behavioral rehearsal over synthetic events: one coherent snapshot read, one tainted branch that cannot merge, one deleted source whose derivative blocks materialization, one unauthorized mount fault, one declassification record that preserves residual risk, and one artifact replay reference. That is useful transaction discipline, but it is not read-your-writes consistency across a real store, runtime branch isolation, deployed mount repair, deployed deletion closure, poisoning resistance, VCM conformance, benchmark evidence, or support-state promotion.
+
+The next useful implementation slice is a tiny public-safe transaction packet that can be replayed from record to dependent artifact: one source context object, one transaction, one materialized view or typed fault, one taint/deletion decision, one downstream artifact reference, one replay boundary, and explicit non-claims.
+
+## Beyond the State of the Art
+
+Context management reaches product maturity as a transactional memory substrate for AI context. Memory is not a vector store with annotations; every context view is the product of committed events, versioned pages, mount policies, snapshots, branch rules, taint propagation, deletion obligations, declassification decisions, and replay boundaries.
+
+Under transactional context memory, every materialized context view can explain itself. It can show which immutable events were visible, which branch was used, which mounts were readable or writable, which cells were actually read, which derivatives were created, which taint labels propagated, which deletion obligations closed, which contradictions were recorded, and why a view was allowed to feed a job, artifact, claim, or release.
+
+A context transaction substrate needs:
+
+- A context event store with immutable writes, versioned pages, pinned snapshots, copy-on-write branches, and merge policies.
+- Mount and isolation policies for public memory, private notes, source caches, secret handles, Digital SCIF material, and task-local scratch space.
+- Taint propagation and declassification records that follow sensitive, suspect, private, revoked, or unsupported material through every derived cell.
+- Deletion-closure and revocation checks that fault when deleted material survives in summaries, embeddings, artifacts, or cached packets.
+- Replay and audit tools that reconstruct a context view and its derivative obligations before a claim or artifact is promoted.
+
+This governable-memory state layer is still an architectural target. Keep the memory claim at `argument` until deployed memory-store behavior, runtime mount visibility, branch isolation, deletion closure, taint propagation, and replay tests show that the stack can branch, summarize, and forget without losing obligations attached to what it read.
+
+## Summary
+
+Context transactions, snapshots, mounts, and taint give VCM runtime semantics. Memory becomes immutable events, versioned pages, coherent snapshots, mounted views, copy-on-write branches, tainted derivatives, deletion obligations, contradiction records, and auditable faults.
+
+The rule is that memory operations must leave a reviewable trace. If a context view cannot satisfy consistency, taint, or deletion closure, it should fault before becoming working context. A separate adequacy question follows: even when the context view is coherent and authorized, is it adequate for the claim the system is about to make?
+
+Context must fail closed. A system that cannot explain the view it read should not use that view as if it were ordinary memory. That failure behavior is what makes long-lived memory compatible with governed intelligence. Without it, every summary, cached artifact, copied page, and derived note becomes a possible authority leak or stale belief. With it, memory can support ambitious planning while still preserving deletion closure, contradiction handling, provenance, and replay. The stack can then distinguish a valid memory operation from an adequate epistemic basis, which is the move needed before claims can be allowed to sound stronger.
+
+## Handoff
+
+Valid context operations are necessary, but they do not automatically give enough evidence for a claim. Verification Bandwidth and Context Adequacy separates coherent access from adequate understanding. It asks whether the system has enough time, comparison method, tools, reviewer bandwidth, and contradiction search for the claim at hand, so memory validity does not inflate into epistemic confidence.
