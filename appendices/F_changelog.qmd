@@ -15,6 +15,11 @@
   state capture on both the application-name and clean-reset bundle-ID routes;
   no application, reflow, font/theme/search, screen-reader, device-family,
   publication, rights, or support-state approval is claimed.
+- Reconciled the v1 status snapshot from 166 to 167 JSON Schemas after the new
+  generic reader-format disposition schema made the commit-bound Linux deep
+  validation expose the stale count. Fixture and public release-record counts
+  remain 88 and 10; this is inventory truth repair, not a release or support
+  change.
 - Added deterministic EPUB container canonicalization after the first
   post-freeze render showed source/profile-equivalent but byte-different ZIP
   output. The canonicalizer fixes member order, timestamps, permissions,
