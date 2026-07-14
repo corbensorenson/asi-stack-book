@@ -1,0 +1,72 @@
+{
+  "schema_version": "asi_stack.reader_epub_reproducibility.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "decision_date": "2026-07-13",
+  "state": "exact_replay_passed",
+  "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats epub --timeout-seconds 600 --stop-on-fail",
+  "frozen_inputs": {
+    "manifest_sha256": "925064e578394feb5e02b6f90c83d3c59343f037ec4ee5ec73f6da373bf3ba9b",
+    "source_tree_sha256": "bfe8e766162a6ddf1a26b144fcdcd77623a11ad420d4bba9e04fb881bcb87753",
+    "text_format_profile_sha256": "9791e0de4ffe35cf97c757dd75dbe39ca5517ae3d783cffb3d94f6b3aa4e2d18",
+    "renderer_sha256": "434ea81905ae3117da9d8b9346dae3524b8958137af78e7ac6c523d87b1cb26f",
+    "pinned_rasters": [
+      {
+        "member": "EPUB/media/file7.png",
+        "sha256": "f37c8341e0d244660e6b193ab4b30e38c5794e0888638a372bb02c961c29661f"
+      },
+      {
+        "member": "EPUB/media/file27.png",
+        "sha256": "9360540977e4b4d8c90c99ea4ffed77603e94c3b9478eb24fed13c6e7c785447"
+      }
+    ]
+  },
+  "replays": [
+    {
+      "id": "epub-replay-a",
+      "independent_full_quarto_render": true,
+      "canonical_sha256": "bcc3e3c13e4c3b26a16eb1d84ea93bee7765b8b0c6c4660c87d24f94c1eb7245",
+      "canonical_bytes": 5505557,
+      "structural_state": "passed_structural_application_review_pending"
+    },
+    {
+      "id": "epub-replay-b-clean-command",
+      "independent_full_quarto_render": true,
+      "command_exit_code": 0,
+      "render_status": "rendered",
+      "timed_out": false,
+      "warning_count": 0,
+      "svg_conversion_warning_count": 0,
+      "local_render_report_sha256": "0245949cf6b4270f64d3dc1192b56da4a9c507fd58801d19a4eb3d03daaa3de8",
+      "canonical_sha256": "bcc3e3c13e4c3b26a16eb1d84ea93bee7765b8b0c6c4660c87d24f94c1eb7245",
+      "canonical_bytes": 5505557,
+      "structural_state": "passed_structural_application_review_pending"
+    }
+  ],
+  "canonicalization": {
+    "archive_member_count": 148,
+    "stable_edition_uuid": "4825c00b-46da-59fc-9020-39339e4309b7",
+    "stable_metadata_timestamp": "2026-07-13T00:00:00Z",
+    "identity_replacements": 2,
+    "timestamp_replacements": 2,
+    "internal_link_repairs": 1,
+    "landmark_repairs": 1,
+    "pinned_raster_replacements": 2,
+    "mimetype_first_and_stored": true
+  },
+  "variance_diagnosis": {
+    "pre_fix_differing_archive_members": 2,
+    "otherwise_identical_archive_members": 146,
+    "member_1_changed_pixels": 86,
+    "member_2_changed_pixels": 107,
+    "cause": "Mermaid/RoughJS state-diagram geometry produced small antialiasing differences across full renders.",
+    "remedy": "Two exact profile-bound PNG fallbacks are digest-verified and injected before canonical ZIP serialization; no lossy whole-book quantization is used."
+  },
+  "exact_replay_equal": true,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Exact EPUB replay does not establish Apple Books behavior or application compatibility.",
+    "Pinned state-diagram rasters are valid only for this frozen 54-chapter source/profile combination.",
+    "Reproducibility does not approve publication, public deployment, rights, model quality, safety, AGI, ASI, or evidence promotion."
+  ]
+}

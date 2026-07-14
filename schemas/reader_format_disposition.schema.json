@@ -1,0 +1,130 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/reader_format_disposition.schema.json",
+  "title": "ASI Stack Reader Format Disposition",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "edition_id",
+    "format",
+    "decision",
+    "decision_date",
+    "artifact",
+    "source_snapshot",
+    "profile",
+    "inspection_evidence",
+    "reproducibility",
+    "blockers",
+    "rights_snapshot",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.reader_format_disposition.v1"
+    },
+    "edition_id": {
+      "const": "asi-stack-curated-reader-v2.0"
+    },
+    "format": {
+      "enum": ["epub", "pdf", "docx"]
+    },
+    "decision": {
+      "enum": ["approved_exact_local_artifact", "approved_public_artifact", "blocked"]
+    },
+    "decision_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "artifact": {
+      "$ref": "#/$defs/artifact"
+    },
+    "source_snapshot": {
+      "type": "object",
+      "required": ["manifest", "manifest_sha256", "source_tree_sha256", "chapter_count"],
+      "properties": {
+        "manifest": {"type": "string", "minLength": 1},
+        "manifest_sha256": {"$ref": "#/$defs/digest"},
+        "source_tree_sha256": {"$ref": "#/$defs/digest"},
+        "chapter_count": {"const": 54}
+      },
+      "additionalProperties": false
+    },
+    "profile": {
+      "type": "object",
+      "required": ["path", "sha256", "state"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "state": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "inspection_evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["kind", "path", "sha256", "state"],
+        "properties": {
+          "kind": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"$ref": "#/$defs/digest"},
+          "state": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "reproducibility": {
+      "type": "object",
+      "required": ["path", "sha256", "state"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "state": {"enum": ["exact_replay_passed", "blocked"]}
+      },
+      "additionalProperties": false
+    },
+    "blockers": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "rights_snapshot": {
+      "type": "object",
+      "required": ["authority", "route", "public_license_grant", "public_artifact_authorized"],
+      "properties": {
+        "authority": {"const": "LICENSE.md"},
+        "route": {"const": "all_rights_reserved_untagged_or_later_drafting_path"},
+        "public_license_grant": {"const": false},
+        "public_artifact_authorized": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {
+      "type": "array",
+      "minItems": 4,
+      "items": {"type": "string", "minLength": 1}
+    }
+  },
+  "$defs": {
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["path", "sha256", "bytes", "publication_state"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "bytes": {"type": "integer", "minimum": 1},
+        "publication_state": {"const": "tracked_local_artifact_not_publicly_deployed"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

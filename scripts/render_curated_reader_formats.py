@@ -13,16 +13,20 @@ from __future__ import annotations
 import argparse
 from contextlib import contextmanager
 from datetime import datetime, timezone
+import hashlib
 import json
 import math
 import os
 from pathlib import Path
+import posixpath
 import re
 import signal
 import shutil
 import subprocess
 import tempfile
 from typing import Iterator
+import uuid
+import xml.etree.ElementTree as ET
 from zipfile import ZIP_DEFLATED, ZIP_STORED, ZipFile, ZipInfo
 
 import build_curated_reader_edition
@@ -135,21 +139,124 @@ def preserve_artifacts(output_dir: Path, fmt: str, artifacts: list[str]) -> list
     return sorted(preserved)
 
 
-def canonicalize_epub(path: Path) -> dict[str, object]:
+def canonicalize_epub(path: Path, manifest_path: Path) -> dict[str, object]:
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    profile_path = manifest_path.parent / TEXT_FORMAT_PROFILE_NAME
+    profile = json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.is_file() else {}
+    edition_id = str(manifest.get("edition_id", "asi-stack-reader"))
+    stable_uuid = str(uuid.uuid5(uuid.NAMESPACE_URL, f"https://asi-stack.org/editions/{edition_id}"))
+    freeze_date = str(profile.get("freeze_date", "1980-01-01"))
+    stable_timestamp = f"{freeze_date}T00:00:00Z"
     canonical = path.with_suffix(".canonical.epub")
     with ZipFile(path) as source:
         names = source.namelist()
         ordered = (["mimetype"] if "mimetype" in names else []) + sorted(
             name for name in names if name != "mimetype"
         )
+        payloads = {name: source.read(name) for name in names}
+
+        pinned_raster_replacements = 0
+        pinned_rasters = (
+            profile.get("shared_profile", {})
+            .get("mermaid_policy", {})
+            .get("epub_pinned_raster_members", [])
+        )
+        for record in pinned_rasters:
+            member = record["member"]
+            reference = ROOT / record["reference"]
+            if member not in payloads:
+                raise RuntimeError(f"pinned EPUB raster member is absent: {member}")
+            if not reference.is_file():
+                raise RuntimeError(f"pinned EPUB raster reference is absent: {reference}")
+            reference_bytes = reference.read_bytes()
+            observed = hashlib.sha256(reference_bytes).hexdigest()
+            if observed != record["sha256"]:
+                raise RuntimeError(
+                    f"pinned EPUB raster reference drifted: {record['reference']} "
+                    f"({observed} != {record['sha256']})"
+                )
+            payloads[member] = reference_bytes
+            pinned_raster_replacements += 1
+
+        identity_replacements = 0
+        timestamp_replacements = 0
+        for name in names:
+            payload = payloads[name]
+            replaced, count = re.subn(
+                rb"urn:uuid:[0-9a-fA-F-]{36}",
+                f"urn:uuid:{stable_uuid}".encode("ascii"),
+                payload,
+            )
+            identity_replacements += count
+            if name == "EPUB/content.opf":
+                replaced, date_count = re.subn(
+                    rb"20\d\d-\d\d-\d\dT\d\d:\d\d:\d\dZ",
+                    stable_timestamp.encode("ascii"),
+                    replaced,
+                )
+                timestamp_replacements += date_count
+            payloads[name] = replaced
+
+        appendix_target = ""
+        first_chapter_target = ""
+        nav_payload = payloads.get("EPUB/nav.xhtml", b"")
+        if nav_payload:
+            nav_tree = ET.fromstring(nav_payload)
+            for node in nav_tree.iter():
+                if node.tag.rsplit("}", 1)[-1] != "a":
+                    continue
+                node_text = " ".join(node.itertext())
+                if manifest.get("chapter_records") and manifest["chapter_records"][0]["title"] in node_text:
+                    first_chapter_target = node.attrib.get("href", "").split("#", 1)[0]
+                if "External Sources by Other Authors" in node_text:
+                    appendix_target = node.attrib.get("href", "").split("#", 1)[0]
+        landmark_repairs = 0
+        if nav_payload and first_chapter_target and b'epub:type="bodymatter"' not in nav_payload:
+            landmark_pattern = re.compile(
+                rb'(<nav\s+epub:type="landmarks"[\s\S]*?<ol>)([\s\S]*?)(</ol>\s*</nav>)'
+            )
+            bodymatter = (
+                f'<li><a epub:type="bodymatter" href="{first_chapter_target}">Begin reading</a></li>'
+            ).encode("utf-8")
+            nav_payload, landmark_repairs = landmark_pattern.subn(
+                lambda match: match.group(1) + match.group(2) + bodymatter + match.group(3),
+                nav_payload,
+                count=1,
+            )
+            payloads["EPUB/nav.xhtml"] = nav_payload
+        link_repairs = 0
+        if appendix_target:
+            for name in names:
+                if not name.endswith(".xhtml"):
+                    continue
+                owner_dir = Path(name).parent.as_posix()
+                target = posixpath.relpath(posixpath.normpath(f"EPUB/{appendix_target}"), owner_dir)
+                payloads[name], count = re.subn(
+                    rb'href="H_external_sources\.qmd"',
+                    f'href="{target}"'.encode("utf-8"),
+                    payloads[name],
+                )
+                link_repairs += count
+
         with ZipFile(canonical, "w") as target:
             for name in ordered:
                 info = ZipInfo(name, (1980, 1, 1, 0, 0, 0))
                 info.compress_type = ZIP_STORED if name == "mimetype" else ZIP_DEFLATED
                 info.external_attr = 0o644 << 16
-                target.writestr(info, source.read(name), compresslevel=9)
+                target.writestr(info, payloads[name], compresslevel=9)
     canonical.replace(path)
-    return {"applied": True, "member_count": len(ordered), "mimetype_first_and_stored": ordered[:1] == ["mimetype"]}
+    return {
+        "applied": True,
+        "member_count": len(ordered),
+        "mimetype_first_and_stored": ordered[:1] == ["mimetype"],
+        "stable_edition_uuid": stable_uuid,
+        "stable_metadata_timestamp": stable_timestamp,
+        "identity_replacements": identity_replacements,
+        "timestamp_replacements": timestamp_replacements,
+        "internal_link_repairs": link_repairs,
+        "landmark_repairs": landmark_repairs,
+        "pinned_raster_replacements": pinned_raster_replacements,
+    }
 
 
 def convert_svg_to_png(svg_path: Path, png_path: Path) -> str:
@@ -249,6 +356,7 @@ def rendered_mermaid_svgs(chrome_binary: str, html_path: Path) -> list[str]:
 def normalize_svg(svg: str) -> str:
     svg = svg.strip().replace("&nbsp;", "&#160;")
     svg = re.sub(r"<br([^>/]*?)>", r"<br\1/>", svg)
+    svg = re.sub(r"animation\s*:[^;\"']*;", "animation:none;", svg)
     first_tag_end = svg.find(">")
     if first_tag_end != -1 and "xmlns=" not in svg[:first_tag_end]:
         svg = svg.replace("<svg", '<svg xmlns="http://www.w3.org/2000/svg"', 1)
@@ -513,7 +621,9 @@ def run_bounded_render(
         return 124, True
 
 
-def run_render(output_dir: Path, fmt: str, timeout_seconds: int) -> dict[str, object]:
+def run_render(
+    output_dir: Path, fmt: str, timeout_seconds: int, manifest_path: Path
+) -> dict[str, object]:
     command = ["quarto", "render", "--to", fmt]
     fallback_info: dict[str, object] = {
         "applied": False,
@@ -562,7 +672,7 @@ def run_render(output_dir: Path, fmt: str, timeout_seconds: int) -> dict[str, ob
     if fmt == "epub" and artifacts:
         if len(artifacts) != 1:
             raise RuntimeError(f"expected one EPUB artifact before canonicalization, found {len(artifacts)}")
-        epub_canonicalization = canonicalize_epub(output_dir / artifacts[0])
+        epub_canonicalization = canonicalize_epub(output_dir / artifacts[0], manifest_path)
     preserved_artifacts = preserve_artifacts(output_dir, fmt, artifacts) if artifacts else []
     warning_lines = [line for line in output.splitlines() if "[WARNING]" in line]
     svg_conversion_warning_count = sum("Could not convert image" in line for line in warning_lines)
@@ -666,7 +776,7 @@ def main() -> None:
     )
     render_records: list[dict[str, object]] = []
     for fmt in formats:
-        record = run_render(output_dir, fmt, args.timeout_seconds)
+        record = run_render(output_dir, fmt, args.timeout_seconds, manifest_path)
         render_records.append(record)
         print(f"{fmt}: {record['status']}")
         if args.stop_on_fail and record["status"] != "rendered":

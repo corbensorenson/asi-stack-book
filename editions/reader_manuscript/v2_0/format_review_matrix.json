@@ -10,8 +10,12 @@
       "selected": true
     },
     "epub": {
-      "state": "not_selected_not_generated",
-      "selected": false
+      "state": "blocked",
+      "selected": true,
+      "artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.epub",
+      "artifact_sha256": "bcc3e3c13e4c3b26a16eb1d84ea93bee7765b8b0c6c4660c87d24f94c1eb7245",
+      "disposition": "editions/reader_manuscript/v2_0/epub_disposition.json",
+      "blocker": "apple_books_computer_use_native_pipe_unavailable"
     },
     "docx": {
       "state": "not_selected_not_generated",

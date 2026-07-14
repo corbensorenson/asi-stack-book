@@ -24,6 +24,20 @@
       "expected_source_file_count": 54,
       "extractor_timeout_seconds_per_file": 120,
       "rasterizer": "sips",
+      "epub_pinned_raster_members": [
+        {
+          "member": "EPUB/media/file7.png",
+          "reference": "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file7.png",
+          "sha256": "f37c8341e0d244660e6b193ab4b30e38c5794e0888638a372bb02c961c29661f",
+          "reason": "Freeze the authority-lifecycle state-diagram raster because Mermaid/RoughJS replay changed 86 antialiased pixels across otherwise identical packages."
+        },
+        {
+          "member": "EPUB/media/file27.png",
+          "reference": "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file27.png",
+          "sha256": "9360540977e4b4d8c90c99ea4ffed77603e94c3b9478eb24fed13c6e7c785447",
+          "reason": "Freeze the one-shot intent lifecycle state-diagram raster because Mermaid/RoughJS replay changed 107 antialiased pixels across otherwise identical packages."
+        }
+      ],
       "preflight_only_epub_sha256": "9d4804913894a971195339a4ee630e7fd34e6d88c02af2d0bafa1b6b3e753d59",
       "preflight_disposition": "excluded_from_release_consideration_and_must_be_regenerated_after_this_freeze"
     }
@@ -40,12 +54,18 @@
   },
   "formats": {
     "epub": {
-      "state": "profile_frozen_candidate_not_generated",
+      "state": "blocked_application_inspection_after_exact_structural_candidate",
       "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats epub --timeout-seconds 600 --stop-on-fail",
       "package": "EPUB 3 produced by Quarto/Pandoc",
       "cover": "assets/images/asi-stack-hero.png",
       "toc": true,
       "application_review": "/System/Applications/Books.app",
+      "exact_artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.epub",
+      "exact_artifact_sha256": "bcc3e3c13e4c3b26a16eb1d84ea93bee7765b8b0c6c4660c87d24f94c1eb7245",
+      "exact_artifact_bytes": 5505557,
+      "structural_inspection": "editions/reader_manuscript/v2_0/epub_structural_inspection.json",
+      "application_inspection": "editions/reader_manuscript/v2_0/epub_application_review.json",
+      "disposition": "editions/reader_manuscript/v2_0/epub_disposition.json",
       "required_gates": ["container_and_opf", "all_xhtml_xml", "navigation_and_landmarks", "internal_links_and_anchors", "images_alt_tables_code_math", "reflow_font_scale_dark_light", "search_and_text_extraction", "apple_books_application"]
     },
     "pdf": {

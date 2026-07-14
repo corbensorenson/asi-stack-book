@@ -207,6 +207,18 @@ renderer preflight and must be regenerated; it is not a release candidate.
 - Record automation separately from application inspection. Do not claim
   screen-reader or device review that did not occur.
 
+M3 completed 2026-07-13 with a blocked EPUB disposition. The exact tracked
+EPUB passes package, metadata, navigation, landmark, spine, chapter-order,
+link, image, table, code, note, and reader-boundary automation. Two independent
+full renders converge byte-for-byte after stable edition metadata, one package
+link repair, one body-matter landmark repair, and two digest-verified pinned
+Mermaid/RoughJS state-diagram rasters. Apple Books inspection remains blocked:
+the Computer Use native accessibility bridge failed before application state
+capture on both the application-name route and a clean-reset bundle-identifier
+route. No Apple Books, reflow, font-scaling, theme, search, text-interaction,
+screen-reader, device-family, or publication approval is claimed. M3 is
+terminally dispositioned as `blocked`; P1 remains active for PDF and DOCX.
+
 ### PDF gate
 
 - Record page size, fonts and embedding, bookmarks/outline, metadata, page
@@ -386,7 +398,7 @@ every residual and non-claim visible, and no silent successor activation.
 | M0 — Critique calibrated and successor installed | completed | This roadmap, machine status, predecessor pointer, and stale/already-fixed finding table. |
 | M1 — Completed cycle cleanly handed off | completed | Reviewed commit series, clean tree or exact local residual inventory, remote branch, observed CI/Pages result. |
 | M2 — Reader source and format profiles frozen | completed | One 54-chapter source digest, pinned toolchain, prospective EPUB/PDF/DOCX profiles. |
-| M3 — EPUB dispositioned | pending | Exact EPUB artifact plus pass/block record and application/accessibility evidence. |
+| M3 — EPUB dispositioned | completed | Exact EPUB artifact plus pass/block record and application/accessibility evidence. |
 | M4 — PDF dispositioned | pending | Exact PDF artifact plus page-complete inspection and pass/block record. |
 | M5 — DOCX dispositioned | pending | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |
 | M6 — Source and completeness residuals dispositioned | pending | Ten-chapter matrix plus trace/world-model/foundations/Tier-2 insertion or rejection artifacts. |

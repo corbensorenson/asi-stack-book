@@ -2,6 +2,19 @@
 
 ## 2026-07-13 - Audit the post-v2.3 clean handoff boundary
 
+- Completed M3 with an honest blocked EPUB disposition for the exact tracked
+  54-chapter artifact: 5,505,557 bytes, SHA-256
+  `bcc3e3c13e4c3b26a16eb1d84ea93bee7765b8b0c6c4660c87d24f94c1eb7245`.
+  The all-member/all-XHTML audit passes 148 package members, 62 XHTML entries,
+  54 ordered chapter entry points, 1,415 internal links, 79 images, 23 tables,
+  and zero structural errors. Two independent full renders now reproduce exact
+  bytes after stable edition metadata, one Appendix G/H package-link repair,
+  one body-matter landmark repair, and two digest-verified pinned
+  Mermaid/RoughJS state-diagram rasters. Apple Books inspection remains
+  blocked because the Computer Use native accessibility bridge failed before
+  state capture on both the application-name and clean-reset bundle-ID routes;
+  no application, reflow, font/theme/search, screen-reader, device-family,
+  publication, rights, or support-state approval is claimed.
 - Added deterministic EPUB container canonicalization after the first
   post-freeze render showed source/profile-equivalent but byte-different ZIP
   output. The canonicalizer fixes member order, timestamps, permissions,

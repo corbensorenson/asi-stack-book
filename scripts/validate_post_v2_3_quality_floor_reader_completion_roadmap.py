@@ -29,6 +29,8 @@ SUCCESSOR_SCHEMA_PATH = "schemas/post_v2_3_handoff_reader_formats_and_evidence_r
 SUCCESSOR_P0_RECEIPT_PATH = "docs/post_v2_3_clean_handoff_receipt.md"
 SUCCESSOR_TEXT_FORMAT_PROFILE_PATH = "editions/reader_manuscript/v2_0/text_format_profile.json"
 SUCCESSOR_DOCX_REFERENCE_PATH = "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx"
+SUCCESSOR_FORMAT_MATRIX_PATH = "editions/reader_manuscript/v2_0/format_review_matrix.json"
+SUCCESSOR_EPUB_DISPOSITION_PATH = "editions/reader_manuscript/v2_0/epub_disposition.json"
 ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
 TARGET_IDS = [
     "scalable-oversight-and-adversarial-ai-control",
@@ -98,6 +100,8 @@ def snapshot() -> dict:
         "successor_schema": load_json(ROOT / SUCCESSOR_SCHEMA_PATH),
         "successor_p0_receipt": (ROOT / SUCCESSOR_P0_RECEIPT_PATH).read_text(encoding="utf-8"),
         "successor_text_format_profile": load_json(ROOT / SUCCESSOR_TEXT_FORMAT_PROFILE_PATH),
+        "successor_format_matrix": load_json(ROOT / SUCCESSOR_FORMAT_MATRIX_PATH),
+        "successor_epub_disposition": load_json(ROOT / SUCCESSOR_EPUB_DISPOSITION_PATH),
         "active_roadmaps": active_roadmaps(),
         "hygiene_errors": hygiene_errors(),
     }
@@ -264,14 +268,42 @@ def semantic_errors(data: dict) -> list[str]:
                 errors.append(f"successor M2 artifact is missing: {path}")
             elif expected and hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
                 errors.append(f"successor M2 artifact digest drifted: {path}")
-        if [profile.get("formats", {}).get(name, {}).get("state") for name in ["epub", "pdf", "docx"]] != [
-            "profile_frozen_candidate_not_generated"
-        ] * 3:
-            errors.append("successor M2 format profiles were not frozen before release candidates")
+        milestone_states = {
+            row.get("id"): row.get("state") for row in successor.get("milestones", [])
+        }
+        expected_terminal_prefix = {
+            "epub": ("M3", ("approved_", "blocked_")),
+            "pdf": ("M4", ("approved_", "blocked_")),
+            "docx": ("M5", ("approved_", "blocked_")),
+        }
+        for name, (milestone_id, terminal_prefixes) in expected_terminal_prefix.items():
+            format_state = profile.get("formats", {}).get(name, {}).get("state", "")
+            if milestone_states.get(milestone_id) == "completed":
+                if not format_state.startswith(terminal_prefixes):
+                    errors.append(f"successor {milestone_id} completed without terminal {name} profile state")
+            elif format_state != "profile_frozen_candidate_not_generated":
+                errors.append(f"successor {name} profile advanced before {milestone_id} completion")
         if any(profile.get("formats", {}).get(name, {}).get("state") != "deferred_not_authorized" for name in ["audio", "embedded_audio"]):
             errors.append("successor M2 silently authorized an audio format")
         if profile.get("support_state_effect") != "none" or profile.get("release_effect") != "none":
             errors.append("successor M2 profile invented support or release effect")
+    m3 = next((row for row in successor.get("milestones", []) if row.get("id") == "M3"), {})
+    if m3.get("state") == "completed":
+        disposition = data["successor_epub_disposition"]
+        epub_status = next(
+            (row for row in successor.get("reader_formats", []) if row.get("format") == "epub"), {}
+        )
+        matrix_epub = data["successor_format_matrix"].get("formats", {}).get("epub", {})
+        if disposition.get("decision") not in {"approved_exact_local_artifact", "approved_public_artifact", "blocked"}:
+            errors.append("successor M3 completed without a terminal EPUB disposition")
+        if epub_status.get("state") != disposition.get("decision") or matrix_epub.get("state") != disposition.get("decision"):
+            errors.append("successor EPUB status, format matrix, and disposition disagree")
+        artifact = disposition.get("artifact", {})
+        artifact_path = ROOT / artifact.get("path", "")
+        if not artifact_path.is_file():
+            errors.append("successor M3 exact EPUB artifact is absent")
+        elif hashlib.sha256(artifact_path.read_bytes()).hexdigest() != artifact.get("sha256"):
+            errors.append("successor M3 exact EPUB artifact digest drifted")
     successor_roadmap_normalized = " ".join(data["successor_roadmap"].split())
     for phrase in [
         "Critique adjudication",

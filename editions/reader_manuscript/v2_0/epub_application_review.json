@@ -1,0 +1,62 @@
+{
+  "schema_version": "asi_stack.reader_epub_application_review.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "decision_date": "2026-07-13",
+  "state": "blocked_application_inspection",
+  "artifact": {
+    "path": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.epub",
+    "sha256": "bcc3e3c13e4c3b26a16eb1d84ea93bee7765b8b0c6c4660c87d24f94c1eb7245",
+    "bytes": 5505557
+  },
+  "selected_application": {
+    "name": "Apple Books",
+    "bundle_identifier": "com.apple.iBooksX",
+    "path": "/System/Applications/Books.app",
+    "control_route": "Computer Use native accessibility bridge through node_repl"
+  },
+  "attempts": [
+    {
+      "target": "Books",
+      "result": "blocked_before_application_state_capture",
+      "error": "Sky Computer Use native pipe startup failed"
+    },
+    {
+      "target": "com.apple.iBooksX",
+      "runtime_reset_before_attempt": true,
+      "result": "blocked_before_application_state_capture",
+      "error": "Sky Computer Use native pipe startup failed"
+    }
+  ],
+  "application_checks": {
+    "exact_artifact_import": "not_performed_control_bridge_unavailable",
+    "table_of_contents_and_navigation": "not_performed_control_bridge_unavailable",
+    "narrow_reflow": "not_performed_control_bridge_unavailable",
+    "wide_reflow": "not_performed_control_bridge_unavailable",
+    "font_scaling": "not_performed_control_bridge_unavailable",
+    "light_presentation": "not_performed_control_bridge_unavailable",
+    "dark_presentation": "not_performed_control_bridge_unavailable",
+    "search": "not_performed_control_bridge_unavailable",
+    "text_selection_or_extraction": "not_performed_control_bridge_unavailable",
+    "cover_and_key_figures": "not_performed_control_bridge_unavailable"
+  },
+  "automation_evidence": {
+    "structural_inspection": "editions/reader_manuscript/v2_0/epub_structural_inspection.json",
+    "structural_state": "passed_structural_application_review_pending",
+    "application_evidence_substitution_allowed": false
+  },
+  "blockers": [
+    "apple_books_computer_use_native_pipe_unavailable",
+    "exact_epub_application_import_not_observed",
+    "application_reflow_font_theme_search_and_text_interaction_not_observed"
+  ],
+  "cleared_blockers": [],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "The Apple Books application did not return inspectable state, so no application behavior is claimed.",
+    "Passing package automation does not substitute for Apple Books inspection.",
+    "No screen-reader, assistive-technology, device-family, independent-human, or legal-WCAG review occurred.",
+    "This record does not approve, publish, deploy, tag, archive, or grant rights to the EPUB.",
+    "This blocked application record cannot promote a chapter claim or establish model quality, safety, AGI, or ASI."
+  ]
+}

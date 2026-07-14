@@ -1326,7 +1326,17 @@
     "docs/post_v2_3_clean_handoff_receipt.md",
     "editions/reader_manuscript/v2_0/text_format_profile.json",
     "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx",
-    "scripts/build_post_v2_3_reader_docx_reference.py"
+    "scripts/build_post_v2_3_reader_docx_reference.py",
+    "editions/reader_manuscript/v2_0/epub_disposition.json",
+    "editions/reader_manuscript/v2_0/epub_structural_inspection.json",
+    "editions/reader_manuscript/v2_0/epub_application_review.json",
+    "editions/reader_manuscript/v2_0/epub_reproducibility.json",
+    "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.epub",
+    "scripts/validate_post_v2_3_reader_epub_disposition.py",
+    "scripts/audit_post_v2_3_reader_epub_artifact.py",
+    "schemas/reader_format_disposition.schema.json",
+    "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file7.png",
+    "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file27.png"
   ],
   "units": [
     {
@@ -7177,6 +7187,12 @@
         "docs/post_v2_3_clean_handoff_receipt.md",
         "editions/reader_manuscript/v2_0/text_format_profile.json",
         "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx",
+        "editions/reader_manuscript/v2_0/format_review_matrix.json",
+        "editions/reader_manuscript/v2_0/epub_disposition.json",
+        "editions/reader_manuscript/v2_0/epub_structural_inspection.json",
+        "editions/reader_manuscript/v2_0/epub_application_review.json",
+        "editions/reader_manuscript/v2_0/epub_reproducibility.json",
+        "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.epub",
         "scripts/build_post_v2_3_reader_docx_reference.py",
         "docs/post_v2_2_implementation_completion_roadmap.md",
         "docs/v2_3_completion_declaration.md",
@@ -7912,11 +7928,63 @@
       "prohibited_inference": "Closure coherence does not establish model quality, safety, production readiness, governance efficacy, residual honesty, AGI, ASI, or public publication.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_terminal_audit_not_independent"
+    },
+    {
+      "id": "validate_post_v2_3_reader_epub_disposition:304",
+      "order": 304,
+      "script": "validate_post_v2_3_reader_epub_disposition.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "reader_artifact_gate",
+      "input_contract": "The exact frozen-source v2.0 EPUB, generic format-disposition schema, all-member/all-XHTML structural inspection, two independent canonical replays, two digest-bound state-diagram raster pins, two failed Apple Books control-bridge attempts, terminal M3 status, rights snapshot, and no support or release effect.",
+      "input_artifacts": [
+        "scripts/validate_post_v2_3_reader_epub_disposition.py",
+        "scripts/audit_post_v2_3_reader_epub_artifact.py",
+        "scripts/render_curated_reader_formats.py",
+        "schemas/reader_format_disposition.schema.json",
+        "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.epub",
+        "editions/reader_manuscript/v2_0/epub_disposition.json",
+        "editions/reader_manuscript/v2_0/epub_structural_inspection.json",
+        "editions/reader_manuscript/v2_0/epub_application_review.json",
+        "editions/reader_manuscript/v2_0/epub_reproducibility.json",
+        "editions/reader_manuscript/v2_0/text_format_profile.json",
+        "editions/reader_manuscript/v2_0/format_review_matrix.json",
+        "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file7.png",
+        "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file27.png",
+        "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
+        "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md",
+        "LICENSE.md"
+      ],
+      "output_contract": "Reject artifact/profile/evidence digest drift, package or structural denominator failure, nondeterministic replay, lost raster pins, false Apple Books evidence, premature approval, matrix/roadmap disagreement, rights laundering, support movement, or release effect.",
+      "output_assertions": [
+        "one exact 5,505,557-byte EPUB",
+        "148 package members and 62 XHTML entries",
+        "54 ordered chapter entry points",
+        "1,415 resolved hrefs",
+        "two byte-identical full replays",
+        "two failed Apple Books bridge attempts",
+        "blocked terminal M3 disposition",
+        "seven rejecting mutations"
+      ],
+      "claim_scope": "Exact local EPUB package, structural automation, deterministic replay, and honest application-inspection blocker only.",
+      "negative_controls": "validator_owned_and_exact_artifact_bound",
+      "negative_control_cases": [
+        "premature approval",
+        "artifact digest drift",
+        "structural failure",
+        "Apple Books evidence laundering",
+        "replay inequality",
+        "M3 reopening",
+        "support promotion"
+      ],
+      "prohibited_inference": "Structural and reproducibility success do not establish Apple Books behavior, reflow, font/theme/search interaction, screen-reader or device review, publication approval, rights, model quality, safety, AGI, ASI, or support movement.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_automated_artifact_audit_with_blocked_application_route_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 1282,
-    "unit_count": 303
+    "required_artifact_count": 1292,
+    "unit_count": 304
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
