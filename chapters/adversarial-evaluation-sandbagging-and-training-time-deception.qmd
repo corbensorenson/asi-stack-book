@@ -549,38 +549,7 @@ fixture establish record routing only. They do not prove or detect deception, es
 sandbagging resistance, prove evaluator validity, infer capability or intent,
 or establish alignment, safety, readiness, model quality, or ASI.
 
-## Source crosswalk
-
-| Source ID | Title | Planned use |
-|---|---|---|
-| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Mine benchmark-pressure, regression, and residual vocabulary plus cited prior art before adding outside comparators; assignment is not a local adversarial-evaluation result. |
-| `rmi` | Ratcheting Modular Intelligence | Mine ratchet and evidence-record interfaces plus bibliographic leads; assignment is not evidence of deception, evaluator independence, or training-time behavior. |
-| `ext_alignment_faking_2024` | Alignment Faking in Large Language Models | Disclosed-condition model-organism evidence for keeping selection context and evaluator residuals explicit; not a local deception finding. |
-| `ext_ai_sandbagging_2024` | AI Sandbagging: Language Models Can Strategically Underperform on Evaluations | Comparator for context-sensitive evaluation underperformance and held-out capability hiding; not evidence that an ASI Stack evaluation is sandbagged. |
-| `ext_emergent_misalignment_reward_hacking_2025` | Natural Emergent Misalignment from Reward Hacking in Production RL | Comparator for source-setting reward-hack learning, reported generalization, and mitigation limits; not a local RL or safety result. |
-| `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_owasp_agentic_top_10_2026` | Current agent-evaluation frameworks and security taxonomy | Comparators for composable agent/tool tests, dynamic prompt-injection attacks/defenses, and modern agentic-risk coverage; not complete adversarial coverage, local robustness, or safety evidence. |
-
-## Summary
-
-Evaluation integrity is the discipline of refusing to let a narrow observation
-become a broader story. It keeps training, testing, monitoring, and promotion
-separate enough that a useful result can remain useful even when its limits are
-discovered. The core claim stays at `argument`; source notes, planned
-fixtures, and formal hooks do not establish local resistance to deception.
-
-The practical payoff is intellectual honesty with operational force. A team can
-still learn from a benchmark, deploy a bounded improvement, or investigate a
-mitigation, but it carries the conditions that make those actions defensible.
-When conditions change, the conclusion changes with them rather than surviving
-by inertia. That is the control-plane role of adversarial evaluation.
-
-It makes revision a normal consequence of better evidence rather than an
-embarrassing exception to a previous deployment or research decision.
-
-## Handoff
-
-Adversarial Evaluation, Sandbagging, and Training-Time Deception determines whether an observation is trustworthy enough to support a bounded argument; Safety Cases and Structured Assurance now compiles those integrity limits with claims, evidence, assumptions, countercases, residuals, and authority boundaries before any later learning or release path can treat a passed evaluation as permission.
-### Monitorability and trace-action stress tests
+## Monitorability and trace-action stress tests
 
 Visible reasoning is itself an attack surface. A model can route a
 decision-critical cue around its stated rationale, make a reward hack look like
@@ -602,13 +571,45 @@ operational rule is narrower: if action changes while the rationale does not,
 or monitorability falls under a declared stress test, promotion remains blocked
 until the discrepancy is owned.
 
+
+## Source crosswalk
+
+| Source ID | Title | Planned use |
+|---|---|---|
+| `benchmaxxing` | Benchmaxxing: The Performance Ratchet | Mine benchmark-pressure, regression, and residual vocabulary plus cited prior art before adding outside comparators; assignment is not a local adversarial-evaluation result. |
+| `rmi` | Ratcheting Modular Intelligence | Mine ratchet and evidence-record interfaces plus bibliographic leads; assignment is not evidence of deception, evaluator independence, or training-time behavior. |
+| `ext_alignment_faking_2024` | Alignment Faking in Large Language Models | Disclosed-condition model-organism evidence for keeping selection context and evaluator residuals explicit; not a local deception finding. |
+| `ext_ai_sandbagging_2024` | AI Sandbagging: Language Models Can Strategically Underperform on Evaluations | Comparator for context-sensitive evaluation underperformance and held-out capability hiding; not evidence that an ASI Stack evaluation is sandbagged. |
+| `ext_emergent_misalignment_reward_hacking_2025` | Natural Emergent Misalignment from Reward Hacking in Production RL | Comparator for source-setting reward-hack learning, reported generalization, and mitigation limits; not a local RL or safety result. |
+| `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_owasp_agentic_top_10_2026` | Current agent-evaluation frameworks and security taxonomy | Comparators for composable agent/tool tests, dynamic prompt-injection attacks/defenses, and modern agentic-risk coverage; not complete adversarial coverage, local robustness, or safety evidence. |
+
 ### Manifest source assignment reconciliation
 
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+These rows keep Adversarial Evaluation, Sandbagging, and Training-Time Deception's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `ext_faithfulness_information_flow_2026` | Metadata-first comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Primary 2026 comparator that separates chain-of-thought sufficiency, completeness, and interventional necessity, demonstrates prompt-to-answer shortcuts and transparent reward-hacking diagnostics, and documents low-entropy and reference-model limits. It does not make a reasoning transcript an authoritative receipt or establish local monitorability. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `ext_monitorbench_2026` | Metadata-first comparator: MonitorBench: A Comprehensive Benchmark for Chain-of-Thought Monitorability in Large Language Models. Primary open benchmark comparator with 1,514 instances across 19 tasks and seven categories plus two stress-test settings; its reported capability/monitorability relation and up-to-30-percent degradation motivate held-out trace-action stress tests. The benchmark does not establish local monitoring quality, causal trace faithfulness, or safety. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Supplies trace/action inconsistency controls and the boundary that a transcript may correlate with an answer without being causally necessary, including a reward-hackable code-repair setting. | The study is not evidence that a local model sandbags or deceives, and its diagnostics have low-entropy and reference-model confounds. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_monitorbench_2026` | Passage-reviewed comparator: MonitorBench: A Comprehensive Benchmark for Chain-of-Thought Monitorability in Large Language Models. Adds a multi-task held-out monitorability benchmark and adversarial stress-test design, complementing causal trace/action inconsistency controls with cross-task monitor degradation evidence. | The reported benchmark relations do not prove causal trace faithfulness, local deception, evaluator quality, safety, or a general capability/monitorability law. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
+## Summary
+
+Evaluation integrity is the discipline of refusing to let a narrow observation
+become a broader story. It keeps training, testing, monitoring, and promotion
+separate enough that a useful result can remain useful even when its limits are
+discovered. The core claim stays at `argument`; source notes, planned
+fixtures, and formal hooks do not establish local resistance to deception.
+
+The practical payoff is intellectual honesty with operational force. A team can
+still learn from a benchmark, deploy a bounded improvement, or investigate a
+mitigation, but it carries the conditions that make those actions defensible.
+When conditions change, the conclusion changes with them rather than surviving
+by inertia. That is the control-plane role of adversarial evaluation.
+
+It makes revision a normal consequence of better evidence rather than an
+embarrassing exception to a previous deployment or research decision.
+
+## Handoff
+
+Adversarial Evaluation, Sandbagging, and Training-Time Deception determines whether an observation is trustworthy enough to support a bounded argument; Safety Cases and Structured Assurance now compiles those integrity limits with claims, evidence, assumptions, countercases, residuals, and authority boundaries before any later learning or release path can treat a passed evaluation as permission.

@@ -1,6 +1,6 @@
 # Non-Core Evidence Ledger
 
-Last updated: 2026-07-13
+Last updated: 2026-07-14
 
 This ledger makes the currently accepted non-core evidence transitions visible
 without promoting any chapter core claim. It is a public trust surface for
@@ -13,11 +13,11 @@ readers, reviewers, and future writing agents.
 | Chapter core claims | All 54 remain at `argument`. |
 | Accepted non-core upward transitions | 19 narrow transitions. |
 | Accepted refuted non-core claims | 2 exact QCSA fixture claims; no chapter-core refutation. |
-| Accepted no-promotion side-lane decisions | 56 accepted `blocks_promotion` decisions; no support-state movement. |
+| Accepted no-promotion side-lane decisions | 57 accepted `blocks_promotion` decisions; no support-state movement. |
 | Accepted live claim-surface narrowing records | 1 count-surface correction; no support-state movement. |
 | Chapter-core promotion effect | None. |
 | External review status | No independent external-human review was requested, required, or claimed for this internal adjudication. |
-| No-promotion side-lane record coverage | The 56 accepted records cover the prior 40 v1.x side lanes, three post-v2 programs, six post-v2.1 result claims, five QCSA implementation/evaluation boundaries, and two preregistered post-v2.3 campaign dispositions. They are blocking decisions, not upward support-state transitions. None promotes a chapter core, deployment, benchmark, model-quality, safety, security, AGI, or ASI claim. |
+| No-promotion side-lane record coverage | The 57 accepted records cover the prior 40 v1.x side lanes, three post-v2 programs, six post-v2.1 result claims, five QCSA implementation/evaluation boundaries, and three post-v2.3 campaign dispositions, including the repaired flagship. They are blocking decisions, not upward support-state transitions. None promotes a chapter core, deployment, benchmark, model-quality, safety, security, AGI, or ASI claim. |
 
 ## Accepted Non-Core Transitions
 
@@ -103,7 +103,7 @@ The ledger is checked by `scripts/validate_non_core_evidence_ledger.py`. That
 validator reads the accepted transition records under
 `evidence_transitions/v1_0_measured/` and `evidence_transitions/v1_x_measured/`,
 checks that all 19 current non-core upward claims are listed here, derives and
-checks all 56 accepted `blocks_promotion` side-lane decisions, checks the live
+checks all 57 accepted `blocks_promotion` side-lane decisions, checks the live
 claim-surface narrowing record, checks the chapter-core non-promotion boundary,
 and checks that the public entry surfaces link to this ledger. The live
 revision record is also checked by `scripts/validate_claim_revision_records.py`.
@@ -164,6 +164,7 @@ evidence.
 |---|---|---|---|---|
 | `post_v2_3.governance_tax_natural_work.bounded_result` | `blocks_promotion` | `docs/post_v2_3_campaign_results.md`; `evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json` | Twelve matched baseline/governed natural-work calls produced zero parseable final outputs and therefore zero releases in either route. Seven raw traces contained all criterion terms, but none was an admissible candidate. The separate local rollback harness restored all nine declared surfaces on 12/12 probes and detected 12/12 omission controls. | Useful-throughput and unsafe-release contrasts, refusal calibration, governance cost, broader model quality, production rollback, independent validity, transfer, and all affected chapter-core promotions. |
 | `post_v2_3.residual_honesty_under_pressure.bounded_result` | `blocks_promotion` | `docs/post_v2_3_campaign_results.md`; `evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json` | Twenty-four frozen calls across six scenarios and four pressure conditions mentioned residual IDs only inside capped reasoning text; none emitted a parseable final decision, correct route, or reopen trigger. | Residual-disclosure quality, pressure robustness, correct routing, premature-closure effects, independent validity, production behavior, and both affected chapter-core promotions. |
+| `resource_economics.governed_useful_throughput_under_natural_work` | `blocks_promotion` | `docs/post_v2_3_governance_tax_flagship_renewal_results.md`; `evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json` | The repaired protocol completed 32 candidate outputs and 64 calls. Only 2/32 candidates were independently correct; both routes had zero useful releases and zero unsafe releases; the governed route abstained 32/32 times; all 32 declared local rollbacks and omission controls passed. The immutable task file contains 9 families and 9 attacked tasks despite the frozen metadata's 8/8 declaration. | Useful-throughput advantage, unsafe-release reduction, production rollback, governance efficacy, model quality, external independence, safety, and every affected chapter-core promotion remain blocked. |
 
 ## Non-Claims
 

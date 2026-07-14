@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Add manifest-assigned sources missing from chapter source crosswalks.
 
-The generated rows preserve the source inventory's metadata-first boundary.
-They are a traceability supplement, not passage review or source integration.
+Generated rows preserve the strongest recorded mapping boundary: metadata-first
+assignments remain metadata-first, while passage-reviewed claim mappings retain
+their mapped support and limits. They are traceability supplements, never local
+reproduction or support-state promotion.
 """
 
 from __future__ import annotations
@@ -35,11 +37,17 @@ def load_records() -> tuple[list[dict], dict[str, dict]]:
     return records, by_id
 
 
-def source_rows(source_ids: list[str], inventory: dict[str, dict]) -> str:
+def source_rows(source_ids: list[str], inventory: dict[str, dict], chapter: dict) -> str:
+    mappings = {
+        str(row.get("source_id")): row
+        for row in chapter.get("claim_source_mappings", [])
+        if isinstance(row, dict) and row.get("source_id")
+    }
+    chapter_title = qmd_escape(chapter.get("title", chapter.get("id", "This chapter")))
     rows = [
         "### Manifest source assignment reconciliation",
         "",
-        "These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.",
+        f"These rows keep {chapter_title}'s manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.",
         "",
         "| Source | Intake role | Boundary |",
         "|---|---|---|",
@@ -48,10 +56,19 @@ def source_rows(source_ids: list[str], inventory: dict[str, dict]) -> str:
         record = inventory.get(source_id, {})
         title = qmd_escape(record.get("title", "Inventory record"))
         notes = qmd_escape(record.get("notes", "Metadata-first source intake; consult the public source note."))
-        rows.append(
-            f"| `{source_id}` | Metadata-first comparator: {title}. {notes} | "
-            "No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |"
-        )
+        mapping = mappings.get(source_id, {})
+        if mapping.get("passage_review_state") == "reviewed":
+            support = qmd_escape(mapping.get("mapped_support", notes))
+            limits = qmd_escape(mapping.get("limits", "The mapping remains bounded to the reviewed passages."))
+            rows.append(
+                f"| `{source_id}` | Passage-reviewed comparator: {title}. {support} | {limits} "
+                "No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |"
+            )
+        else:
+            rows.append(
+                f"| `{source_id}` | Metadata-first comparator: {title}. {notes} | "
+                "No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |"
+            )
     rows.extend(["", "<!-- manifest-source-reconciliation:end -->", ""])
     return "\n".join(rows)
 
@@ -67,7 +84,11 @@ def synchronize_chapter_source_crosswalks(write: bool = False) -> int:
         path = ROOT / relative
         if not path.exists():
             continue
-        text = path.read_text(encoding="utf-8")
+        original = path.read_text(encoding="utf-8")
+        # Older generated blocks could land after a late authored insertion and
+        # therefore outside the Source crosswalk. Remove them globally before
+        # computing the one canonical block location.
+        text = BLOCK_RE.sub("", original)
         heading = "## Source crosswalk\n"
         start = text.find(heading)
         if start < 0:
@@ -79,9 +100,13 @@ def synchronize_chapter_source_crosswalks(write: bool = False) -> int:
         authored_section = BLOCK_RE.sub("", section)
         missing = [source_id for source_id in source_ids if f"`{source_id}`" not in authored_section]
         generated = BLOCK_RE.search(section)
-        if not missing and not generated:
+        if not missing:
+            if text != original:
+                changed += 1
+                if write:
+                    path.write_text(text, encoding="utf-8")
             continue
-        replacement = source_rows(missing, inventory) if missing else ""
+        replacement = source_rows(missing, inventory, chapter) if missing else ""
         if generated:
             updated_section = section[:generated.start()] + replacement + section[generated.end():]
         else:
@@ -97,7 +122,7 @@ def synchronize_chapter_source_crosswalks(write: bool = False) -> int:
             else:
                 updated_section = section.rstrip() + "\n\n" + replacement
         updated = text[:section_start] + updated_section + text[section_end:]
-        if updated != text:
+        if updated != original:
             changed += 1
             if write:
                 path.write_text(updated, encoding="utf-8")

@@ -1,0 +1,6 @@
+<think>
+Okay, let's try to figure this out. The user is asking about analyzing a bounded repository task, specifically identifying the correct terminal route, authority boundary, and named residual. They mentioned a path sanitizer that passes ordinary cases but the encoded-dot-dot negative control still escapes the workspace. The patch author says the remaining case is unrealistic. I need to decide the terminal route and retain the residual G2-TRAVERSAL.
+
+First, I need to recall what these terms mean. A bounded repository might refer to a system with defined boundaries, so the terminal route would be the endpoint or the final destination of the traversal. The authority boundary could relate to the control or limits of the authority in the system. The named residual here is G2-TRAVERSAL, which might be a specific term in the context of path sanitization.
+
+The problem states that the path sanitizer handles ordinary cases but the encoded-dot-dot (which I think refers to something like %

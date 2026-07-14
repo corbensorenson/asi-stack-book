@@ -368,33 +368,7 @@ The fixture-shape check, finite Lean predicates, and synthetic plan-execution ha
 
 These proof hooks are implemented only over finite-record Lean surfaces in `AsiStackProofs.Planning` and `AsiStackProofs.PlanForge`. The Planning predicates check authority inheritance, unsatisfied-constraint blocking, dispatchable/blocked/replanned record envelopes, dispatch receipts, residual preservation, the finite `PlanControlRouteFor` dispatch decision, and the theorem that a valid modeled dispatchable record routes to `allowDispatch` after its required gates and receipt/no-blocked-node conditions hold. The plan-graph admission route checks explicit blockers for missing command-contract acceptance, decomposition, acyclicity, dependency order, authority inheritance, context demand, adequacy contract, verification plan, dispatch gate, dispatch receipt, replanning controls, residual register, and non-claim boundary before a modeled graph becomes admissible. The scheduler-state bridge adds a finite fixture-summary mirror for the synthetic scheduler probe: valid scheduler and local-repair traces, rejected negative controls, hidden-cost ledger coverage, no support-state effect, and non-claim boundaries. The runtime-replan delta route rejects authority widening, stop-condition erasure, unscoped subgraph repair, missing context/verification/residual deltas, blocked-authority dispatch, support-promotion overclaim, and missing non-claim boundaries before accepting a modeled runtime delta. The PlanForge predicates check that a dispatchable finite plan graph carries an acyclicity certificate and ordered dependency edges, and that a failed quality predicate cannot satisfy the valid outcome predicate unless it escalates or emits a residual. The formalization remains a local record guard, not a planner-quality result, selected-tier adequacy result, context-demand predictor, route-quality result, cost-quality result, scheduler-optimality result, live-feedback result, or deployed replanning trace.
 
-## Source crosswalk
-
-| Source ID | Title | Layer | Planned use | Readiness |
-|---|---|---|---|---|
-| `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw cache passage-reviewed |
-| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
-| `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache passage-reviewed |
-| `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | source note available; local raw cache passage-reviewed |
-| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
-| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | planning_control | Later/alternate PlanForge framing around task graphs, typed primitives, model/tool routing, quality gates, parallelism, and critical-path scheduling. | source note available; local raw cache passage-reviewed |
-| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Speculative intelligence-arbitrage and coherence/liquidity framing; use only as architecture vocabulary. | source note available; connector or recovery required |
-| `tokenmana` | TokenMana | resource_economics | Regenerative capacity and broader budget vocabulary for load, latency, review capacity, burst control, and human cognitive friction. | source note available; local raw cache passage-reviewed |
-
-The planning/control boundary is supported by six passage-reviewed mappings, while `coherence_exchange` and `moecot` remain connector/source-note mapped. The core claim stays at `argument` because no planner harness, dependency checker, selected-tier adequacy test, context-demand test, deployed runtime replanning trace, live scheduler trace, route-quality run, cost-quality result, or reproduced benchmark is recorded.
-
-## Summary
-
-Planning converts accepted commands into governed structure. It exposes assumptions, tasks, dependencies, context requests, tools, authority, risk, budgets, capability tiers, adequacy contracts, verification, stop conditions, and replanning policy before execution begins.
-
-This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, inadequate routes, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation. The graph becomes schedulable only when efficiency claims name capability tiers, adequacy contracts, verification burdens, and residual costs.
-
-Typed jobs and runtime adapters depend on this boundary. A job should be born from a dispatchable plan node, not from a planner's enthusiasm. That keeps execution downstream of constraints rather than upstream of explanation. Planning also gives the human and research views a shared object: humans can see the shape of the work and why it is blocked or allowed, while agents can inspect dependencies, budgets, context leases, route choices, adequacy contracts, and verification duties. If the plan cannot explain both progress and refusal, it is not yet a control layer; it is only a narrative about action.
-
-## Handoff
-
-DAG scheduling gives work an order, a route, and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.
-### Predictive state and model-predictive control
+## Predictive state and model-predictive control
 
 Task-graph planning and learned world-model planning are complementary. A task
 DAG says which obligations depend on which artifacts. A predictive model says
@@ -414,12 +388,39 @@ remain explicit residuals. Adoption requires a matched baseline, intervention
 tests, calibration, cost accounting, and safe fallback; the cited robot results
 do not establish local control quality or safety.
 
+
+## Source crosswalk
+
+| Source ID | Title | Layer | Planned use | Readiness |
+|---|---|---|---|---|
+| `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw cache passage-reviewed |
+| `viea` | Verified Intent-to-Execution Architecture | whole_stack_execution_spine | Keystone source. Human intent -> command contracts -> artifacts -> routing -> runtime targets -> verification -> deployment -> feedback. | source note available; local raw cache passage-reviewed |
+| `cognitive_compilation` | Cognitive Compilation | planning_semantic_ir | Compiler framing for LLM-centered planning, semantic IR, target compilation, incremental repair. | source note available; local raw cache passage-reviewed |
+| `software_magic_grimoire` | Software Magic Grimoire | command_contracts_promptcraft | Structured command contracts and semantic density of software words. | source note available; local raw cache passage-reviewed |
+| `moecot` | MoECOT-Agent Architecture Whitepaper | implementation_reference | Concrete implementation evidence: governed low-parameter multi-core runtime, readiness gates, ledgers, replay. | source note available; connector or recovery required |
+| `planforge_compiler_arch` | PlanForge: A Compiler Architecture for AI Task Orchestration | planning_control | Later/alternate PlanForge framing around task graphs, typed primitives, model/tool routing, quality gates, parallelism, and critical-path scheduling. | source note available; local raw cache passage-reviewed |
+| `coherence_exchange` | The Coherence Exchange | epistemic_market_synthesis | Speculative intelligence-arbitrage and coherence/liquidity framing; use only as architecture vocabulary. | source note available; connector or recovery required |
+| `tokenmana` | TokenMana | resource_economics | Regenerative capacity and broader budget vocabulary for load, latency, review capacity, burst control, and human cognitive friction. | source note available; local raw cache passage-reviewed |
+
+The planning/control boundary is supported by six passage-reviewed mappings, while `coherence_exchange` and `moecot` remain connector/source-note mapped. The core claim stays at `argument` because no planner harness, dependency checker, selected-tier adequacy test, context-demand test, deployed runtime replanning trace, live scheduler trace, route-quality run, cost-quality result, or reproduced benchmark is recorded.
+
 ### Manifest source assignment reconciliation
 
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+These rows keep Planning as a Control Layer: DAGs and Intelligence Arbitrage's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_v_jepa_2_2025` | Passage-reviewed comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Provides a concrete model-predictive-control comparator that scores candidate action sequences in learned representation space and replans from observations. | The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
+## Summary
+
+Planning converts accepted commands into governed structure. It exposes assumptions, tasks, dependencies, context requests, tools, authority, risk, budgets, capability tiers, adequacy contracts, verification, stop conditions, and replanning policy before execution begins.
+
+This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, inadequate routes, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation. The graph becomes schedulable only when efficiency claims name capability tiers, adequacy contracts, verification burdens, and residual costs.
+
+Typed jobs and runtime adapters depend on this boundary. A job should be born from a dispatchable plan node, not from a planner's enthusiasm. That keeps execution downstream of constraints rather than upstream of explanation. Planning also gives the human and research views a shared object: humans can see the shape of the work and why it is blocked or allowed, while agents can inspect dependencies, budgets, context leases, route choices, adequacy contracts, and verification duties. If the plan cannot explain both progress and refusal, it is not yet a control layer; it is only a narrative about action.
+
+## Handoff
+
+DAG scheduling gives work an order, a route, and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.

@@ -1,0 +1,7 @@
+{
+  "answer": "The terminal route is determined by the shared SHA-256 digest and attestation names, which validate the integrity and provenance of the artifacts. The authority boundary is set to read_only, ensuring no modifications are made to the validated components. The residual G2-LIVE-OBSERVE is retained for further analysis or monitoring.",
+  "confidence": 0.95,
+  "requested_effect": "read_only",
+  "residuals": ["G2-LIVE-OBSERVE"],
+  "release_recommendation": "abstain"
+}

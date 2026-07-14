@@ -539,6 +539,27 @@ formalization remains a bounded control-plane boundary. The full-state bridge
 binds the added routes to the existing preregistration, inventory, and P3
 result digests and rejects six mutations; it does not broaden those results.
 
+## World-model data, versions, and prediction-error custody
+
+A learned predictive state introduces a second lifecycle beside the controller.
+`ext_v_jepa_2_2025` separates action-free video pretraining from a smaller
+action-conditioned predictor, so the data engine must preserve that separation:
+source video and consent/provenance, preprocessing, encoder version, predictor
+version, action-labelled adaptation data, observation distribution, forecast
+horizon, error cohort, and controller consumer all need distinct lineage.
+
+Prediction errors are learning inputs, not self-authenticating evidence. The
+engine retains error distributions, calibration shifts, camera or sensor
+changes, action-search failures, and sim-to-real residuals before admitting an
+update. Deletion or revocation must propagate through encoder checkpoints,
+predictors, caches, replay buffers, backups, controllers, and descendants.
+Behavioral change still does not establish causal influence removal, privacy
+erasure, or storage erasure. The cited paper provides an architecture and
+empirical comparator; it does not establish a local data engine, causal world
+model, or safe robot policy.
+
+| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
 ## Source crosswalk
 
 | Source | Role in the argument | Boundary |
@@ -551,14 +572,15 @@ result digests and rejects six mutations; it does not broaden those results.
 
 ### Manifest source assignment reconciliation
 
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+These rows keep Data Engines, Continual Learning, and Unlearning's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `ext_muse_unlearning_2025` | Metadata-first comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Primary ICLR benchmark comparator separating verbatim and knowledge memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability; none of its 7B-language-model results are reproduced by the local policy network. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `ext_unlearning_benchmarks_weak_2024` | Metadata-first comparator: Position: LLM Unlearning Benchmarks are Weak Measures of Progress. Primary critical comparator showing that benign benchmark modifications, forget/retain dependencies, and ambiguous targets can make unlearning scores optimistic; it strengthens the book's prohibition on turning toy behavioral change into influence, privacy, or storage claims. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `ext_openunlearning_2025` | Metadata-first comparator: OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics. Primary NeurIPS 2025 benchmark-framework comparator for unified algorithms, diverse evaluations, public checkpoints, and meta-evaluation of metric faithfulness; it reinforces evaluator-quality residuals rather than establishing local unlearning. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_muse_unlearning_2025` | Passage-reviewed comparator: MUSE: Machine Unlearning Six-Way Evaluation for Language Models. Supports separating memorization, privacy leakage, retained utility, removal-scale behavior, and sequential sustainability instead of using one forgetting score. | No MUSE corpus, method, 7B model, privacy probe, scale test, or sequential deletion request was reproduced by the local small policy network. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_unlearning_benchmarks_weak_2024` | Passage-reviewed comparator: Position: LLM Unlearning Benchmarks are Weak Measures of Progress. Supports treating unlearning benchmark validity, target ambiguity, forget/retain dependence, and benign perturbation robustness as separate evidence burdens. | The position paper raises the interpretation standard but does not validate the local workload or establish influence, privacy, legal erasure, or storage erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_openunlearning_2025` | Passage-reviewed comparator: OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics. Supports versioned unlearning methods, standardized execution interfaces, public checkpoints, diverse evaluations, and meta-evaluation of metric faithfulness. | The framework, methods, checkpoints, evaluations, and meta-evaluations were not run; standardized record shape does not establish semantic validity or erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Contributes fast/medium/slow update timescales, candidate versus authoritative atlas epochs, identity-preserving readdressing, merge/split lineage, migration compatibility, shadow evaluation, rollback, and semantic-drift tests; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. No learning, forgetting, influence, privacy/storage erasure, chapter-core promotion, AGI, or ASI result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_v_jepa_2_2025` | Passage-reviewed comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Shows why world-model data lineage must separate action-free pretraining, action-conditioned adaptation, predictor versions, and error/residual records. | The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 update and deletion result
@@ -624,23 +646,3 @@ create, review, fund, retain, publish, and retire such artifacts.
 It asks who carries the records forward, how governance remains replayable, and
 how a living system preserves its mission while its evidence and implementation
 continue to change.
-### World-model data, versions, and prediction-error custody
-
-A learned predictive state introduces a second lifecycle beside the controller.
-`ext_v_jepa_2_2025` separates action-free video pretraining from a smaller
-action-conditioned predictor, so the data engine must preserve that separation:
-source video and consent/provenance, preprocessing, encoder version, predictor
-version, action-labelled adaptation data, observation distribution, forecast
-horizon, error cohort, and controller consumer all need distinct lineage.
-
-Prediction errors are learning inputs, not self-authenticating evidence. The
-engine retains error distributions, calibration shifts, camera or sensor
-changes, action-search failures, and sim-to-real residuals before admitting an
-update. Deletion or revocation must propagate through encoder checkpoints,
-predictors, caches, replay buffers, backups, controllers, and descendants.
-Behavioral change still does not establish causal influence removal, privacy
-erasure, or storage erasure. The cited paper provides an architecture and
-empirical comparator; it does not establish a local data engine, causal world
-model, or safe robot policy.
-
-| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

@@ -282,6 +282,26 @@ The implemented rows validate fixture/schema consistency and finite-record negat
 
 These Lean hooks are implemented as finite-record predicates over substrate-adoption and promotion-review fields. They prove only that the record exposes baseline, measured-target, and falsification fields, and that a substrate without passing evidence remains in a non-core state. The module also now proves bounded negative cases named `substrate_adoption_record_missing_required_field_rejected`, `unproven_qualified_substrate_rejected`, `qualified_substrate_without_passing_evidence_rejected`, `consumer_axis_reliance_without_measurement_or_unblocked_axis_rejected`, and `canary_substrate_without_complete_evidence_packet_rejected`. These cases reject malformed substrate-adoption records; they do not prove that any substrate improves search, routing, compression, representation, long-context behavior, runtime, verifier burden, or model quality.
 
+## JEPA and latent world models use the same adoption gate
+
+Joint-embedding prediction is not a free-standing layer in this spine. It is a
+substrate candidate whose consumers are planning, data engines, and the
+reference architecture. `ext_v_jepa_2_2025` demonstrates the relevant shape:
+predict future latent representations, add an action-conditioned predictor,
+and use representation-space costs for model-predictive control. That changes
+the adoption packet by adding predictive-state identity, observation and
+action provenance, forecast horizon, calibration, intervention tests,
+prediction-error ledgers, and sim-to-real residuals.
+
+The structural claim—prediction occurs in representation space—must remain
+separate from benchmark quality, causal understanding, controller quality, and
+safe transfer. A JEPA or energy-based candidate reaches
+`qualified_for_scope` only after matched pixel/token/latent baselines, measured
+search and latency cost, counterfactual or intervention probes, downstream
+task evidence, and a fallback. A paper architecture or identifiability result
+cannot by itself authorize adoption.
+
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |
@@ -301,6 +321,15 @@ These Lean hooks are implemented as finite-record predicates over substrate-adop
 
 The crosswalk keeps optional substrates optional. `genesiscode` supplies small-kernel and obligation discipline, `temporal_coil_research` supplies manifest-driven A/B discipline, `coilmoecot` stays a readable design source rather than benchmark evidence, the Circle sources supply proof-boundary language, and `ext_mamba_2023` keeps sequence-backbone efficiency separate from substrate adoption. None of the assigned sources promotes a substrate without baselines, controls, and adoption evidence.
 
+### Manifest source assignment reconciliation
+
+These rows keep Mathematical and Search Substrates's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_v_jepa_2_2025` | Passage-reviewed comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Adds a concrete latent-prediction architecture family to the substrate adoption gate: action-free representation learning, an action-conditioned predictor, and explicit separation between structural design and capability evidence. | The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Mathematical substrates are valuable when they become disciplined specialists. They should carry baselines, proof boundaries, falsification conditions, evidence requirements, and readiness states.
@@ -312,31 +341,3 @@ A substrate should become easier to reject as it becomes more interesting. If th
 ## Handoff
 
 Exploratory substrates become usable only when their structural claims can travel without inflating into performance claims. Circle Calculus and Proof-Carrying AI Contracts gives that travel path. It packages finite facts as theorem references, receipts, fingerprints, deterministic fields, validator state, consumer gates, and non-claims so downstream systems can inspect structure without treating it as model quality or deployment evidence.
-### JEPA and latent world models use the same adoption gate
-
-Joint-embedding prediction is not a free-standing layer in this spine. It is a
-substrate candidate whose consumers are planning, data engines, and the
-reference architecture. `ext_v_jepa_2_2025` demonstrates the relevant shape:
-predict future latent representations, add an action-conditioned predictor,
-and use representation-space costs for model-predictive control. That changes
-the adoption packet by adding predictive-state identity, observation and
-action provenance, forecast horizon, calibration, intervention tests,
-prediction-error ledgers, and sim-to-real residuals.
-
-The structural claim—prediction occurs in representation space—must remain
-separate from benchmark quality, causal understanding, controller quality, and
-safe transfer. A JEPA or energy-based candidate reaches
-`qualified_for_scope` only after matched pixel/token/latent baselines, measured
-search and latency cost, counterfactual or intervention probes, downstream
-task evidence, and a fallback. A paper architecture or identifiability result
-cannot by itself authorize adoption.
-
-### Manifest source assignment reconciliation
-
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
-
-| Source | Intake role | Boundary |
-|---|---|---|
-| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-
-<!-- manifest-source-reconciliation:end -->

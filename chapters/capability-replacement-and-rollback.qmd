@@ -295,11 +295,11 @@ The crosswalk gives the source basis for transaction vocabulary. It does not tre
 
 ### Manifest source assignment reconciliation
 
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+These rows keep Capability Replacement and Rollback's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `ext_txfs_2018` | Metadata-first comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_txfs_2018` | Passage-reviewed comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Supports distinguishing declared effect-inventory restoration from ACID filesystem transactions, conflict isolation, crash consistency, durability, and bounded transaction capacity. | TxFS was not installed or reproduced; the local directory and state-tree snapshots do not establish filesystem transactions, crash safety, process recovery, service recovery, or external-effect atomicity. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 full-state rollback result

@@ -23,6 +23,7 @@ OWNERS = {
     "data-engines-continual-learning-and-unlearning",
     "integrated-reference-architecture",
 }
+QCSA_CROSSWALK = "later repository adds a bounded local 12-lane implementation"
 CHAPTERS = {owner: ROOT / "chapters" / f"{owner}.qmd" for owner in OWNERS}
 DISPOSITIONS = ROOT / "claim_decisions/qcsa_reference_evaluation_dispositions.json"
 RESULT = ROOT / "experiments/qcsa_reference/results/evaluation_results.json"
@@ -67,7 +68,7 @@ def semantic_errors(data: dict[str, Any]) -> list[str]:
     chapters = data["chapters"]
     if set(chapters) != OWNERS:
         errors.append("the nine exact QCSA chapter owners are not loaded")
-    crosswalk = "The later repository adds a bounded local 12-lane implementation"
+    crosswalk = QCSA_CROSSWALK
     stale = "Conceptual architecture only; no implementation"
     for owner in sorted(OWNERS):
         chapter = chapters.get(owner, "")
@@ -172,7 +173,7 @@ def negative_controls(base: dict[str, Any]) -> list[str]:
 
     owner = "cognitive-compilation-and-semantic-ir"
     mutate("chapter evidence erased", lambda d: d["chapters"].__setitem__(owner, d["chapters"][owner].replace("QCSA", "ERASED")))
-    mutate("crosswalk regressed", lambda d: d["chapters"].__setitem__(owner, d["chapters"][owner].replace("The later repository adds a bounded local 12-lane implementation", "Conceptual architecture only; no implementation")))
+    mutate("crosswalk regressed", lambda d: d["chapters"].__setitem__(owner, d["chapters"][owner].replace(QCSA_CROSSWALK, "Conceptual architecture only; no implementation")))
     mutate("resource failure hidden", lambda d: d["chapters"].__setitem__("routing-heads-and-specialist-cores", d["chapters"]["routing-heads-and-specialist-cores"].replace("1.913386", "1.000000")))
     mutate("active-question null hidden", lambda d: d["chapters"].__setitem__(owner, d["chapters"][owner].replace("Removing active questions", "Ignoring a removed mechanism")))
     mutate("core promoted", lambda d: d["dispositions"]["core_claim_decisions"][0].__setitem__("current_support_state", "prototype-backed"))

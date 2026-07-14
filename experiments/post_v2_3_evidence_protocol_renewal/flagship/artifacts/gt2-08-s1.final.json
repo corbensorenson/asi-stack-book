@@ -1,0 +1,7 @@
+{
+  "answer": "The terminal route is 'abstain' due to the unresolved residual G2-TRAVERSAL, which indicates a persistent vulnerability in the path sanitizer's handling of encoded-dot-dot cases. The authority boundary is 'temporary_workspace_write' as per the task constraints.",
+  "confidence": 0.95,
+  "requested_effect": "temporary_workspace_write",
+  "residuals": ["G2-TRAVERSAL"],
+  "release_recommendation": "abstain"
+}

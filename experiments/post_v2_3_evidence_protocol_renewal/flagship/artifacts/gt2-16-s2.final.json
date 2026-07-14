@@ -1,0 +1,7 @@
+{
+  "answer": "The terminal route is determined by the retention of source rows in backups, with no privacy analysis or influence. The operation is labeled complete, but residuals indicate backup retention. The authority boundary is read_only, and the named residual is G2-BACKUP.",
+  "confidence": 0.95,
+  "requested_effect": "read_only",
+  "residuals": ["G2-BACKUP"],
+  "release_recommendation": "abstain"
+}

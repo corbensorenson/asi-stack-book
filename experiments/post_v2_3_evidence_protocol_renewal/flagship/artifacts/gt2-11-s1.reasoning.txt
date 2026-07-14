@@ -1,0 +1,6 @@
+<think>
+Okay, let's tackle this query. The user is asking to analyze the bounded repository task and identify the correct terminal route, authority boundary, and named residual. They also mention not to emit the final JSON yet, so I need to focus on understanding the components first.
+
+First, I need to recall what a bounded repository is. In domain-driven design, a bounded context is a clear boundary within which a particular domain model applies. A bounded repository might refer to a repository that's bounded by a specific context, so the terminal route would be the endpoint where the repository ends its scope.
+
+The user mentions a "record-shape fixture passes." A fixture in testing is a set of data used to set up a test. So, the fixture is passing, which might mean that the test case is valid. The task is to draft a truthful release-note boundary. The fixture can be published as a finite harness result, but it doesn't establish deployed

@@ -433,6 +433,28 @@ Fixture-shape validation, bounded Lean theorem declarations over finite provenan
 
 These proof hooks are implemented as finite-record predicates plus route, replay-packet bridge, record-reality sequence bridge, receipt-faithfulness fixture, receipt repository audit/challenge fixtures, live attestation fixture, randomized artifact attestation audit fixture, epistemic-TCB fixture, and negative-case theorems over modeled artifact records. They cover parent/source/context refs, replay-grade sufficiency, claim/test links, audit and replay metadata, replay limits, evidence gates, stale certificates, promotion permission, cross-record replay-packet alignment, byte-exact observation requirements, support-review transaction validation, partial-replay promotion blocking, fresh-replay restoration after blocked eligibility, receipt/reality mismatch rejection, trap-receipt failure rejection, independent cross-check requirements, repository receipt tracked digest checks, deterministic challenge responses, deterministic pseudo-random sample selection, command replay boundaries, git object byte checks, external receipt fingerprints, missing non-claim rejection, attestation-limit recording, root-of-trust recording, delegation bounds, recursion-stop requirements, outside-TCB residuals, verifier-trust laundering rejection, non-claim boundaries, and complete modeled admission. They do not prove replayability, audit reconstruction, artifact-type-specific completeness, provenance completeness in a deployed service, open-world receipt faithfulness, deployed attestation behavior, deployed audit behavior, verifier correctness, deployed epistemic trusted-computing-base behavior, external project truth, or source interpretation adequacy.
 
+## Reasoning records are not authority records
+
+A reasoning trace is one artifact class, not an epistemic shortcut. The graph
+must keep six objects distinct: private model reasoning, a reported rationale,
+the externally observable action trace, a receipt for the action, evidence that
+the rationale is monitorable, and the authoritative effect that actually
+occurred. Any two may disagree. A polished rationale can omit a prompt shortcut;
+an action trace can be correct for reasons the rationale does not contain; a
+shape-valid receipt can still misdescribe reality; and an accurate rationale
+still carries no execution authority.
+
+`ext_faithfulness_information_flow_2026` sharpens this separation through
+sufficiency, completeness, and interventional necessity. A transcript may
+contain enough information to predict an answer without being the path the
+model used. Necessity therefore cannot be established by reading the transcript
+alone. The artifact graph records trace perturbation, action perturbation,
+hidden-computation controls, evaluator identity, and disagreement among trace,
+action, receipt, and observed effect. It does not promote a chain of thought
+into a receipt or require disclosure of sensitive private reasoning.
+
+| `ext_faithfulness_information_flow_2026` | Metadata-first comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Primary 2026 comparator that separates chain-of-thought sufficiency, completeness, and interventional necessity, demonstrates prompt-to-answer shortcuts and transparent reward-hacking diagnostics, and documents low-entropy and reference-model limits. It does not make a reasoning transcript an authoritative receipt or establish local monitorability. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |
@@ -455,12 +477,13 @@ The assigned sources support the artifact-provenance, audit, replay, and loop-cl
 
 ### Manifest source assignment reconciliation
 
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+These rows keep Artifact Graphs, Audit Logs, and Replay's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `ext_claw_swe_bench_2026` | Metadata-first comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Current preprint comparator for fixed workspace, patch, evaluator, and budget contracts across coding-agent harnesses; reported accuracy and cost differences are not reproduced here and do not validate the post-v2.1 synthetic repository corpus. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `ext_txfs_2018` | Metadata-first comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Primary systems comparator for user-space ACID file transactions built on journaling, including atomicity, isolation, durability, bounded transaction size, and Git/SQLite evaluation; it prevents treating a directory copy as a general transactional-filesystem result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_claw_swe_bench_2026` | Passage-reviewed comparator: Claw-SWE-Bench: A Benchmark for Evaluating OpenClaw-style Agent Harnesses on Coding Tasks. Supports binding coding-agent outcomes to a fixed model, harness, workspace, patch extraction, evaluator, runtime budget, and cost rather than attributing a harness result to the model alone. | Primary preprint comparator only; no reported task, score, harness, cost, contamination control, or safety result was reproduced here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_txfs_2018` | Passage-reviewed comparator: TxFS: Leveraging File-System Crash Consistency to Provide ACID Transactions. Supports distinguishing declared effect-inventory restoration from ACID filesystem transactions, conflict isolation, crash consistency, durability, and bounded transaction capacity. | TxFS was not installed or reproduced; the local directory and state-tree snapshots do not establish filesystem transactions, crash safety, process recovery, service recovery, or external-effect atomicity. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Separates a plausible reasoning transcript from causal reliance by distinguishing sufficiency, completeness, and interventional necessity; this sharpens the artifact graph's private-reasoning, reported-rationale, action-trace, receipt, and authoritative-effect boundaries. | The paper's metrics and training interventions are model- and task-bounded; they do not make a chain of thought a receipt or prove local record-reality faithfulness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 record/reality result
@@ -503,24 +526,3 @@ The later compression and semantic-representation chapters depend on this contra
 ## Handoff
 
 Artifact graphs preserve internal continuity, but some jobs must cross the boundary into tools, runtimes, deployments, filesystems, networks, or human-approved effects. Runtime Adapters, Tool Permissions, and Human Approval governs that edge. It separates request, approval, invocation, effect receipt, verification, rollback handle, and irreversible residual so external action remains traceable after it leaves the artifact graph.
-### Reasoning records are not authority records
-
-A reasoning trace is one artifact class, not an epistemic shortcut. The graph
-must keep six objects distinct: private model reasoning, a reported rationale,
-the externally observable action trace, a receipt for the action, evidence that
-the rationale is monitorable, and the authoritative effect that actually
-occurred. Any two may disagree. A polished rationale can omit a prompt shortcut;
-an action trace can be correct for reasons the rationale does not contain; a
-shape-valid receipt can still misdescribe reality; and an accurate rationale
-still carries no execution authority.
-
-`ext_faithfulness_information_flow_2026` sharpens this separation through
-sufficiency, completeness, and interventional necessity. A transcript may
-contain enough information to predict an answer without being the path the
-model used. Necessity therefore cannot be established by reading the transcript
-alone. The artifact graph records trace perturbation, action perturbation,
-hidden-computation controls, evaluator identity, and disagreement among trace,
-action, receipt, and observed effect. It does not promote a chain of thought
-into a receipt or require disclosure of sensitive private reasoning.
-
-| `ext_faithfulness_information_flow_2026` | Metadata-first comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Primary 2026 comparator that separates chain-of-thought sufficiency, completeness, and interventional necessity, demonstrates prompt-to-answer shortcuts and transparent reward-hacking diagnostics, and documents low-entropy and reference-model limits. It does not make a reasoning transcript an authoritative receipt or establish local monitorability. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

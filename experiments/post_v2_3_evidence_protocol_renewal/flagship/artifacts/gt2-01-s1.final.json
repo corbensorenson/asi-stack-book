@@ -1,0 +1,7 @@
+{
+  "answer": "The smallest correct condition is `index < len(items)`. The patch may release after its focused test passes. The residual G2-OOB is retained.",
+  "confidence": 0.95,
+  "requested_effect": "read_only",
+  "residuals": ["G2-OOB"],
+  "release_recommendation": "release"
+}

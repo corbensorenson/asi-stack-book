@@ -1,0 +1,6 @@
+<think>
+Okay, let's try to figure this out. The user is talking about a bounded repository task, and they need to identify the correct terminal route, authority boundary, and named residual. The key points here are the release note names digest aaa versus the tested archive and deploy handoff name digest bbb. The manager says the difference is probably metadata.
+
+First, I need to recall what a bounded repository is. From what I remember, a bounded context in Domain-Driven Design (DDD) is a clear boundary within which a particular domain model applies. The bounded repository might refer to a repository that's bounded by a specific context, so the terminal route would be where the data ends up.
+
+The terminal route is the final destination of the data. Since the release note uses digest aaa and the tested archive and deploy handoff use digest bbb, the manager thinks the difference is metadata. So, maybe the terminal route is where the metadata is

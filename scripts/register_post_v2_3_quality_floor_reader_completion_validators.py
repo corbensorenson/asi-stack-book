@@ -432,6 +432,58 @@ NEW_UNITS = [
     },
 ]
 
+RENEWAL_UNITS = [
+    {
+        "script": "validate_post_v2_3_protocol_preflight.py",
+        "execution_tier": "deep", "validation_class": "proof_or_evidence_gate",
+        "input_contract": "The immutable 36-output historical failure, two historical no-change transitions, one prospectively frozen four-task sacrificial split, separated 192/320-token reasoning/final protocol, exact preflight artifacts, evaluator replay, terminal/cost/latency capture, and no support effect.",
+        "input_artifacts": ["scripts/build_post_v2_3_protocol_preflight.py", "scripts/run_post_v2_3_protocol_preflight.py", "scripts/post_v2_3_renewal_evaluator.py", "scripts/validate_post_v2_3_protocol_preflight.py", "experiments/post_v2_3_evidence_protocol_renewal/preflight/preregistration.json", "experiments/post_v2_3_evidence_protocol_renewal/preflight/tasks.json", "experiments/post_v2_3_evidence_protocol_renewal/preflight/attempt_1_result.json"],
+        "output_contract": "Reject historical erasure, sacrificial-split leakage, exact artifact/evaluator drift, missing terminal/cost/arm capture, false pass state, or support promotion.",
+        "output_assertions": ["36 historical outputs preserved", "two no-change transitions preserved", "four sacrificial tasks", "4/4 exact final JSON", "four planned arms captured", "five rejecting mutations"],
+        "claim_scope": "Non-evidentiary protocol-operability preflight only.", "negative_controls": "validator_owned_and_preflight_bound",
+        "negative_control_cases": ["denominator mutation", "parseability mutation", "arm erasure", "input drift", "support laundering"],
+        "prohibited_inference": "Preflight success does not establish model quality, useful throughput, unsafe-release reduction, governance efficacy, safety, production transfer, AGI, ASI, or support movement.",
+        "contract_precision": "exact_high_impact", "semantic_review_state": "internal_sacrificial_protocol_audit_not_independent",
+    },
+    {
+        "script": "validate_post_v2_3_governance_tax_flagship_freeze.py",
+        "execution_tier": "deep", "validation_class": "proof_or_evidence_gate",
+        "input_contract": "One prospectively frozen 16-task, two-seed, 64-call flagship with label-isolated evaluation, matched candidate/authority routes, nine rollback surfaces, exact outcomes, and the required post-outcome 8/8-declared versus 9/9-exact metadata erratum.",
+        "input_artifacts": ["scripts/build_post_v2_3_governance_tax_flagship_freeze.py", "scripts/run_post_v2_3_governance_tax_flagship.py", "scripts/post_v2_3_flagship_evaluator.py", "scripts/validate_post_v2_3_governance_tax_flagship_freeze.py", "experiments/post_v2_3_evidence_protocol_renewal/flagship/preregistration.json", "experiments/post_v2_3_evidence_protocol_renewal/flagship/tasks.json", "experiments/post_v2_3_evidence_protocol_renewal/flagship/evaluator_labels.json", "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/program_result.json", "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json"],
+        "output_contract": "Reject frozen-file/result digest drift, call-budget expansion, label leakage, rollback/authority erasure, missing outcomes, or hidden family/attack metadata erratum.",
+        "output_assertions": ["16 exact tasks", "32 exact candidate outputs", "64-call ceiling", "two seeds", "nine rollback surfaces", "declared 8/8 and actual 9/9 metadata retained"],
+        "claim_scope": "Exact frozen flagship inputs, outputs, and erratum integrity only.", "negative_controls": "validator_and_exact_file_bound",
+        "negative_control_cases": ["result digest drift", "budget expansion", "label leakage", "rollback erasure", "metadata erratum erasure"],
+        "prohibited_inference": "Freeze/result integrity does not establish useful throughput, unsafe-release reduction, governance efficacy, safety, production rollback, model quality, AGI, ASI, or support movement.",
+        "contract_precision": "exact_high_impact", "semantic_review_state": "internal_campaign_with_label_isolated_evaluator_not_external",
+    },
+    {
+        "script": "build_post_v2_3_governance_tax_flagship_adjudication.py",
+        "execution_tier": "deep", "validation_class": "proof_or_evidence_gate",
+        "input_contract": "All 32 exact flagship candidates, 64 calls, deterministic evaluator receipts, route metrics, cost/latency/token/governance burden, 32 rollback probes, frozen promotion thresholds, metadata erratum, no-change transition, and non-claims.",
+        "input_artifacts": ["scripts/build_post_v2_3_governance_tax_flagship_adjudication.py", "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/program_result.json", "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json", "docs/post_v2_3_governance_tax_flagship_renewal_results.md", "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json"],
+        "output_contract": "Reject promotion, denominator drift, useful/unsafe outcome laundering, rollback inflation, metadata-error erasure, failed-threshold reversal, or support movement.",
+        "output_assertions": ["32/32 candidates", "64/64 calls", "2/32 independently correct", "zero useful releases", "zero unsafe releases", "32 exact rollbacks", "no-change disposition", "five rejecting mutations"],
+        "claim_scope": "Exact bounded negative governance-tax outcome and no-change disposition only.", "negative_controls": "validator_owned_and_outcome_bound",
+        "negative_control_cases": ["promotion", "denominator shrink", "metadata erasure", "unsafe threshold reversal", "support laundering"],
+        "prohibited_inference": "The negative result does not establish safety, governance efficacy, model quality, production rollback, useful throughput, external independence, AGI, ASI, or core support movement.",
+        "contract_precision": "exact_high_impact", "semantic_review_state": "internal_outcome_adjudication_not_independent",
+    },
+    {
+        "script": "validate_theseus_pretraining_readiness_currentness_import.py",
+        "execution_tier": "deep", "validation_class": "proof_or_evidence_gate",
+        "input_contract": "One clean same-commit d2343540 temporary-output Project Theseus readiness-gate replay, three source-file and four output digests, exact 20-phase YELLOW summary, partial/frozen residuals, public-safety filter, non-claims, and no support/release effect.",
+        "input_artifacts": ["scripts/build_theseus_pretraining_readiness_currentness_import.py", "scripts/validate_theseus_pretraining_readiness_currentness_import.py", "experiments/theseus_pretraining_readiness_currentness_import/results/2026-07-14-local.json", "docs/theseus_pretraining_readiness_currentness_import.md"],
+        "output_contract": "Reject source-commit/cleanliness drift, failed replay, digest drift, partial/frozen erasure, private payload inclusion, YELLOW-to-GREEN laundering, support promotion, or release overclaim.",
+        "output_assertions": ["same clean d2343540 commit before/after", "20 phases", "12 wired", "2 implemented", "5 partial", "1 frozen", "YELLOW boundary", "four output digests", "eight rejecting mutations"],
+        "claim_scope": "Exact sanitized implementation-reference currentness observation only.", "negative_controls": "validator_owned_and_import_bound",
+        "negative_control_cases": ["commit mismatch", "dirty checkout", "digest mismatch", "partial erasure", "private copy", "release overclaim", "support overclaim", "YELLOW erasure"],
+        "prohibited_inference": "The import does not establish current behavior after d2343540, learned model quality, benchmark superiority, training success, deployment readiness, distributed operation, safety, alignment, transfer, AGI, ASI, or support movement.",
+        "contract_precision": "exact_high_impact", "semantic_review_state": "author_owned_local_project_import_not_external_replication",
+    },
+]
+
+
 TERMINAL_UNITS = [
     {
         "script": "build_post_v2_3_evidence_candidate_ledger.py",
@@ -555,7 +607,7 @@ def main() -> None:
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     overrides = json.loads(OVERRIDES.read_text(encoding="utf-8"))
     update_historical_units(registry, overrides)
-    for spec in NEW_UNITS + READER_UNITS + TERMINAL_UNITS:
+    for spec in NEW_UNITS + READER_UNITS + RENEWAL_UNITS + TERMINAL_UNITS:
         sync_override(overrides, upsert(registry, spec))
     registry["summary"] = {"required_artifact_count": len(registry["required_artifacts"]), "unit_count": len(registry["units"])}
     REGISTRY.write_text(json.dumps(registry, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")

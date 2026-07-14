@@ -182,6 +182,28 @@ A work-product evidence graph needs:
 
 This replayable artifact graph is still proposed architecture. Leave support at `argument` until produced artifacts, audit reconstructions, replay attempts, provenance-completeness checks, and claim/test link validation show that work is remembered as structured evidence rather than as folders full of outputs.
 
+## Reasoning records are not authority records
+
+A reasoning trace is one artifact class, not an epistemic shortcut. The graph
+must keep six objects distinct: private model reasoning, a reported rationale,
+the externally observable action trace, a receipt for the action, evidence that
+the rationale is monitorable, and the authoritative effect that actually
+occurred. Any two may disagree. A polished rationale can omit a prompt shortcut;
+an action trace can be correct for reasons the rationale does not contain; a
+shape-valid receipt can still misdescribe reality; and an accurate rationale
+still carries no execution authority.
+
+`ext_faithfulness_information_flow_2026` sharpens this separation through
+sufficiency, completeness, and interventional necessity. A transcript may
+contain enough information to predict an answer without being the path the
+model used. Necessity therefore cannot be established by reading the transcript
+alone. The artifact graph records trace perturbation, action perturbation,
+hidden-computation controls, evaluator identity, and disagreement among trace,
+action, receipt, and observed effect. It does not promote a chain of thought
+into a receipt or require disclosure of sensitive private reasoning.
+
+| `ext_faithfulness_information_flow_2026` | Metadata-first comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Primary 2026 comparator that separates chain-of-thought sufficiency, completeness, and interventional necessity, demonstrates prompt-to-answer shortcuts and transparent reward-hacking diagnostics, and documents low-entropy and reference-model limits. It does not make a reasoning transcript an authoritative receipt or establish local monitorability. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
 ## Post-v2 record/reality result
 
 The governed-work flagship now contributes 16 content-addressed plan/code run
@@ -233,24 +255,3 @@ The later compression and semantic-representation chapters depend on this contra
 ## Handoff
 
 Artifact graphs preserve internal continuity, but some jobs must cross the boundary into tools, runtimes, deployments, filesystems, networks, or human-approved effects. Runtime Adapters, Tool Permissions, and Human Approval governs that edge. It separates request, approval, invocation, effect receipt, verification, rollback handle, and irreversible residual so external action remains traceable after it leaves the artifact graph.
-### Reasoning records are not authority records
-
-A reasoning trace is one artifact class, not an epistemic shortcut. The graph
-must keep six objects distinct: private model reasoning, a reported rationale,
-the externally observable action trace, a receipt for the action, evidence that
-the rationale is monitorable, and the authoritative effect that actually
-occurred. Any two may disagree. A polished rationale can omit a prompt shortcut;
-an action trace can be correct for reasons the rationale does not contain; a
-shape-valid receipt can still misdescribe reality; and an accurate rationale
-still carries no execution authority.
-
-`ext_faithfulness_information_flow_2026` sharpens this separation through
-sufficiency, completeness, and interventional necessity. A transcript may
-contain enough information to predict an answer without being the path the
-model used. Necessity therefore cannot be established by reading the transcript
-alone. The artifact graph records trace perturbation, action perturbation,
-hidden-computation controls, evaluator identity, and disagreement among trace,
-action, receipt, and observed effect. It does not promote a chain of thought
-into a receipt or require disclosure of sensitive private reasoning.
-
-| `ext_faithfulness_information_flow_2026` | Metadata-first comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Primary 2026 comparator that separates chain-of-thought sufficiency, completeness, and interventional necessity, demonstrates prompt-to-answer shortcuts and transparent reward-hacking diagnostics, and documents low-entropy and reference-model limits. It does not make a reasoning transcript an authoritative receipt or establish local monitorability. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

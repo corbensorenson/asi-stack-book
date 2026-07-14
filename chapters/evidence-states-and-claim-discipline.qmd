@@ -366,11 +366,12 @@ The crosswalk names the evidence vocabulary loaded for the evidence-state layer.
 
 ### Manifest source assignment reconciliation
 
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+These rows keep Evidence States and Claim Discipline's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `ext_unlearning_benchmarks_weak_2024` | Metadata-first comparator: Position: LLM Unlearning Benchmarks are Weak Measures of Progress. Primary critical comparator showing that benign benchmark modifications, forget/retain dependencies, and ambiguous targets can make unlearning scores optimistic; it strengthens the book's prohibition on turning toy behavioral change into influence, privacy, or storage claims. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_unlearning_benchmarks_weak_2024` | Passage-reviewed comparator: Position: LLM Unlearning Benchmarks are Weak Measures of Progress. Supports treating unlearning benchmark validity, target ambiguity, forget/retain dependence, and benign perturbation robustness as separate evidence burdens. | The position paper raises the interpretation standard but does not validate the local workload or establish influence, privacy, legal erasure, or storage erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_embedded_agency_2019` | Passage-reviewed comparator: Embedded Agency. Motivates separating finite record-level guarantees from claims about the complete embedded agent, environment, self-model, or future descendants. | The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

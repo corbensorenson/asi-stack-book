@@ -1,0 +1,7 @@
+{
+  "answer": "The terminal route is read_only, as the authority ceiling is set to read_only. The difference between digest aaa and digest bbb is attributed to metadata, and the residual G2-DIGEST is retained.",
+  "confidence": 0.95,
+  "requested_effect": "read_only",
+  "residuals": ["G2-DIGEST"],
+  "release_recommendation": "abstain"
+}

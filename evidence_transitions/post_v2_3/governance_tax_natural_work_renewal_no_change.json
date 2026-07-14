@@ -1,0 +1,118 @@
+{
+  "transition_id": "post_v2_3.governance_tax_natural_work_renewal.no_change",
+  "claim_id": "resource_economics.governed_useful_throughput_under_natural_work",
+  "claim_surface_refs": [
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+    "docs/post_v2_3_governance_tax_flagship_renewal_results.md"
+  ],
+  "claim_record_refs": [
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/preregistration.json",
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/program_result.json",
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json"
+  ],
+  "old_support_state": "argument",
+  "new_support_state": "argument",
+  "transition_effect": "no_change",
+  "transition_validity_state": "review_accepted",
+  "scope_boundary": "One 16-task, two-seed, author-constructed public-safe repository-maintenance corpus using one pinned local 4B model, matched candidate outputs and authority ceilings, internal deterministic evaluation, and disposable local rollback probes.",
+  "evidence_roles": [
+    "preregistered_local_model_campaign",
+    "negative_result_archive",
+    "label_isolated_deterministic_evaluator",
+    "exact_local_rollback_probe",
+    "metadata_erratum",
+    "no_core_promotion_boundary"
+  ],
+  "transition_reason": "The governed route suppressed three baseline releases, but none was independently useful and neither route produced an unsafe release. With zero useful releases and zero unsafe releases in both arms, safer useful throughput is not established. Only 2/32 candidates met the full criterion, and the frozen 8/8 family/attack metadata was incorrect for the exact 9/9 files.",
+  "required_artifacts": [
+    "a prospectively correct family and attack denominator",
+    "a materially broader natural-task corpus and stronger model set",
+    "at least 24 of 32 independently correct candidates under the declared criterion",
+    "a nonzero useful-release denominator with matched unsafe-release comparison",
+    "effect-complete production rollback and governance-cost evidence"
+  ],
+  "artifact_refs": [
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/preregistration.json",
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/tasks.json",
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/evaluator_labels.json",
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/program_result.json",
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json"
+  ],
+  "evidence_packet_refs": [
+    "docs/post_v2_3_governance_tax_flagship_renewal_results.md",
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json",
+    "docs/non_core_evidence_ledger.md",
+    "chapters/resource-economics-and-token-budgets.qmd",
+    "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd"
+  ],
+  "evidence_quality_before_refs": [
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/preregistration.json",
+    "experiments/post_v2_3_evidence_protocol_renewal/preflight/attempt_1_result.json"
+  ],
+  "evidence_quality_after_refs": [
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json"
+  ],
+  "evidence_quality_dimension_deltas": {
+    "reproducibility": "complete exact task, label, output, evaluator, cost, and rollback artifacts retained",
+    "adversarial_strength": "nine attacked tasks and two seeds retained without outcome rescue",
+    "validity": "final-output protocol is estimable, but the metadata erratum and zero useful-release denominator block promotion",
+    "transfer_distance": "not established"
+  },
+  "source_mapping_refs": [
+    "appendices/C_claim_evidence_matrix.qmd#resource-economics-and-token-budgets.core",
+    "appendices/C_claim_evidence_matrix.qmd#runtime-adapters-tool-permissions-and-human-approval.core"
+  ],
+  "verification_command": "python3 scripts/build_post_v2_3_governance_tax_flagship_adjudication.py && python3 scripts/validate_post_v2_3_governance_tax_flagship_freeze.py",
+  "verification_result": "pass",
+  "negative_results": [
+    "Only 2/32 candidates met the full independently implemented criterion.",
+    "Both routes produced zero useful releases and zero unsafe releases, so safety-through-useful-throughput is not estimable.",
+    "The governed route added evaluator, rollback, and five-operation-per-candidate burden while producing no useful-release gain.",
+    "The frozen corpus metadata declared 8 balanced families and 8 attacked tasks, while exact files contain 9 families with two singleton families and 9 attacked tasks.",
+    "The evaluator is separately implemented and label-isolated but remains internal and deterministic.",
+    "The corpus is author-constructed rather than population sampled."
+  ],
+  "negative_evidence_refs": [
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/program_result.json",
+    "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json",
+    "docs/post_v2_3_governance_tax_flagship_renewal_results.md"
+  ],
+  "downgrade_triggers": [
+    "frozen input or output digest mismatch",
+    "the 9/9 exact-file erratum being erased or rewritten after outcomes",
+    "zero useful releases being described as useful throughput or safety evidence",
+    "local exact rollback being described as production or semantic rollback",
+    "chapter-core or family-wide promotion being inferred"
+  ],
+  "promotion_burden": "Prospectively correct metadata, broader natural work and stronger models, a high independently correct denominator, nonzero useful releases with matched unsafe-release accounting, and effect-complete production rollback evidence are required before reconsideration.",
+  "limitations": [
+    "one pinned local 4B model",
+    "author-constructed repository-maintenance corpus",
+    "internal deterministic evaluator despite label isolation",
+    "only 2 of 32 independently correct candidates",
+    "zero useful releases in either route",
+    "frozen metadata incorrectly declared eight rather than nine families and attacked tasks",
+    "no production deployment, external replication, or production rollback"
+  ],
+  "review_status": "accepted",
+  "reviewer_refs": [
+    "Author-directed Codex post-v2.3 evidence-renewal cycle"
+  ],
+  "reviewer_independence": "local maintainer-agent adjudication; no external human review requested or claimed",
+  "acceptance_blockers": [
+    "prospectively correct family and attack metadata",
+    "broader natural-task and stronger-model coverage",
+    "at least 24 of 32 independently correct candidates",
+    "nonzero useful-release denominator with matched unsafe-release comparison",
+    "effect-complete production rollback and governance-cost evidence"
+  ],
+  "changelog_ref": "appendices/F_changelog.qmd#2026-07-14---evidence-protocol-renewal-and-theseus-currentness",
+  "support_state_effect": "blocks_promotion",
+  "non_claims": [
+    "does not promote any chapter core claim above argument",
+    "does not promote resource-economics-and-token-budgets.core",
+    "does not establish model quality, useful throughput advantage, unsafe-release reduction, production rollback, governance efficacy, safety, external independence, AGI, or ASI",
+    "does not erase the earlier 36-output protocol failure or either historical no-change transition"
+  ]
+}

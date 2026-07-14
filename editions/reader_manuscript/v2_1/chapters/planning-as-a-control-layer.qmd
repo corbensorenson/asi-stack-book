@@ -255,18 +255,7 @@ A planning control plane needs:
 
 This traffic-control layer is still an architectural target. Keep planning support at `argument` until planner schemas, lifecycle enforcement, dispatch tests, scheduler traces, selected-tier adequacy tests, replanning traces, and authority-preservation checks show that candidate work, authorized work, blocked work, routed work, residualized work, and executed work remain separate under pressure.
 
-## Summary
-
-Planning converts accepted commands into governed structure. It exposes assumptions, tasks, dependencies, context requests, tools, authority, risk, budgets, capability tiers, adequacy contracts, verification, stop conditions, and replanning policy before execution begins.
-
-This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, inadequate routes, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation. The graph becomes schedulable only when efficiency claims name capability tiers, adequacy contracts, verification burdens, and residual costs.
-
-Typed jobs and runtime adapters depend on this boundary. A job should be born from a dispatchable plan node, not from a planner's enthusiasm. That keeps execution downstream of constraints rather than upstream of explanation. Planning also gives the human and research views a shared object: humans can see the shape of the work and why it is blocked or allowed, while agents can inspect dependencies, budgets, context leases, route choices, adequacy contracts, and verification duties. If the plan cannot explain both progress and refusal, it is not yet a control layer; it is only a narrative about action.
-
-## Handoff
-
-DAG scheduling gives work an order, a route, and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.
-### Predictive state and model-predictive control
+## Predictive state and model-predictive control
 
 Task-graph planning and learned world-model planning are complementary. A task
 DAG says which obligations depend on which artifacts. A predictive model says
@@ -286,12 +275,14 @@ remain explicit residuals. Adoption requires a matched baseline, intervention
 tests, calibration, cost accounting, and safe fallback; the cited robot results
 do not establish local control quality or safety.
 
-### Manifest source assignment reconciliation
+## Summary
 
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+Planning converts accepted commands into governed structure. It exposes assumptions, tasks, dependencies, context requests, tools, authority, risk, budgets, capability tiers, adequacy contracts, verification, stop conditions, and replanning policy before execution begins.
 
-| Source | Intake role | Boundary |
-|---|---|---|
-| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+This layer makes action governable by making non-action explicit: missing context, blocked authority, cyclic dependencies, inadequate routes, exhausted budget, and failed predicates all become plan residuals instead of hidden improvisation. The graph becomes schedulable only when efficiency claims name capability tiers, adequacy contracts, verification burdens, and residual costs.
 
-<!-- manifest-source-reconciliation:end -->
+Typed jobs and runtime adapters depend on this boundary. A job should be born from a dispatchable plan node, not from a planner's enthusiasm. That keeps execution downstream of constraints rather than upstream of explanation. Planning also gives the human and research views a shared object: humans can see the shape of the work and why it is blocked or allowed, while agents can inspect dependencies, budgets, context leases, route choices, adequacy contracts, and verification duties. If the plan cannot explain both progress and refusal, it is not yet a control layer; it is only a narrative about action.
+
+## Handoff
+
+DAG scheduling gives work an order, a route, and a budget, but scheduled nodes still need an artifact form that can be optimized, checked, repaired, and lowered to concrete outputs. Cognitive Compilation and Semantic IR supplies that compiler boundary. It turns plan obligations into semantic atoms, validators, target constraints, lowering receipts, and repair ledgers so the stack can audit what survived the translation from plan to artifact.

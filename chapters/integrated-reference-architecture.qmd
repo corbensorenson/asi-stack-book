@@ -459,6 +459,30 @@ The implemented rows validate deterministic fixture behavior, one local command 
 
 These Lean hooks are implemented as finite-record predicates over layer-handoff, governance-gate, and trace-route reviews. They prove only the record-level gates: a declared handoff has its required artifact, a trace missing a required governance gate cannot be marked valid, and modeled traces with missing parent artifacts, missing authority deltas, missing residual deltas, missing required governance gates, or missing validation commands route to repair, blocking, or validation rather than accepted trace status. The deterministic reference-trace harness adds fixture-level checks for parentage, layer coverage, authority deltas, residuals, blocked-path stop conditions, validation commands, and support-state non-promotion. Together these checks do not prove an implemented ASI runtime, real layer enforcement, artifact continuity across a deployed trace, authority stop-condition behavior, or runtime replay.
 
+## Predictive-state handoff and the embedded-system boundary
+
+The reference trace can carry a world-model lane without making it a new
+chapter. `ext_v_jepa_2_2025` supplies the concrete handoff: an observation and
+encoder version produce a latent state; an action-conditioned predictor and
+candidate sequence produce forecast states and costs; Planning proposes a
+bounded action; Runtime Adapters and physical or digital controls retain the
+authority to act. The trace records model, predictor, observation, action
+space, horizon, search budget, uncertainty, prediction error, replanning
+trigger, fallback, and sim-to-real residual.
+
+That trace remains finite and internal to the world. `ext_embedded_agency_2019`
+is the foundations objection: the stack, its verifier, its models, and its
+subsystems are physical parts of the environment they describe; their models
+are smaller than that environment and may share blind spots or divergent
+objectives. A complete-looking ledger is therefore not an external omniscient
+view. The reference architecture records trust roots, recursion stops,
+descendant identity, ontology/version changes, and outside-model residuals,
+while explicitly declining to claim a solution to logical uncertainty,
+embedded world-models, robust delegation, or subsystem alignment.
+
+| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_embedded_agency_2019` | Metadata-first comparator: Embedded Agency. Primary informal survey of the obstacles that arise when agents are physical parts of the worlds they model, must use smaller internal models, and reason about modifiable internal parts. It supplies a foundations boundary; the book's finite records, authority ceilings, and proofs do not solve embedded agency. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+
 ## Source crosswalk
 
 | Source ID | Title | Layer | Planned use | Readiness |
@@ -495,11 +519,13 @@ The crosswalk is the architecture spine. VIEA supplies intent-to-execution flow,
 
 ### Manifest source assignment reconciliation
 
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
+These rows keep Integrated Reference Architecture's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
 
 | Source | Intake role | Boundary |
 |---|---|---|
-| `qcsa_whitepaper` | Metadata-first comparator: Question-Compiled Semantic Addressing. Corben-authored successor synthesis for stable semantic identity, plural versioned semantic virtual addresses, active question compilation, evidence-bearing hypergraphs, semantic address certificates, semantic-to-physical routing, lifecycle-safe migration, and explicit residuals. The later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. The matched-advantage and resource gates failed, active-question value was refuted on this corpus, and no natural-task, learned-model, production, independent, chapter-core promotion, AGI, or ASI result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `qcsa_whitepaper` | Passage-reviewed comparator: Question-Compiled Semantic Addressing. Defines QCSA as the semantic control plane connecting grounding, context, planning, memory, claims, routing, tools, generation, evidence acquisition, lifecycle migration, governance, and execution receipts through identity-address-route indirection; the later repository adds a bounded local 12-lane implementation, 60-case held-out evaluation over 13 systems and three seeds, and one 13-stage governed vertical trace. | The exact matched-advantage and resource gates failed, and active-question value was refuted on this corpus. The local vertical path does not establish broad deployment, production safety, chapter-core promotion, AGI, or ASI. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_v_jepa_2_2025` | Passage-reviewed comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Supplies the external predictive-state-to-planning interface for a governed world-model lane while preserving camera, search-cost, representation, and sim-to-real residuals. | The reported video and robot results do not establish local model quality, causal understanding, safe control, transfer, deployment, or an ASI Stack result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_embedded_agency_2019` | Passage-reviewed comparator: Embedded Agency. Supplies the open-world foundations residual beneath the finite reference trace: the stack is inside the world it records and cannot treat its own ledger as an external omniscient model. | The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary
@@ -515,26 +541,3 @@ The integration claim then narrows into an implementation reference. Project The
 ## Handoff
 
 The integrated trace defines what a complete stack must preserve; an implementation reference shows where that trace can become concrete without pretending the proof is already public. Project Theseus as Report-First Implementation Reference provides that bounded example. It maps pressure loops, residuals, plan contracts, gates, ledgers, operator work boards, checkpoints, and self-evolution governance to public-safe report surfaces and explicit non-claims, now including a static architecture-gate import that is useful evidence of report shape rather than proof of integrated runtime behavior.
-### Predictive-state handoff and the embedded-system boundary
-
-The reference trace can carry a world-model lane without making it a new
-chapter. `ext_v_jepa_2_2025` supplies the concrete handoff: an observation and
-encoder version produce a latent state; an action-conditioned predictor and
-candidate sequence produce forecast states and costs; Planning proposes a
-bounded action; Runtime Adapters and physical or digital controls retain the
-authority to act. The trace records model, predictor, observation, action
-space, horizon, search budget, uncertainty, prediction error, replanning
-trigger, fallback, and sim-to-real residual.
-
-That trace remains finite and internal to the world. `ext_embedded_agency_2019`
-is the foundations objection: the stack, its verifier, its models, and its
-subsystems are physical parts of the environment they describe; their models
-are smaller than that environment and may share blind spots or divergent
-objectives. A complete-looking ledger is therefore not an external omniscient
-view. The reference architecture records trust roots, recursion stops,
-descendant identity, ontology/version changes, and outside-model residuals,
-while explicitly declining to claim a solution to logical uncertainty,
-embedded world-models, robust delegation, or subsystem alignment.
-
-| `ext_v_jepa_2_2025` | Metadata-first comparator: V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning. Primary empirical comparator for action-free latent video pretraining, a small action-conditioned predictor, and model-predictive control. Camera sensitivity, autoregressive error accumulation, action-search cost, image-goal assumptions, and representation-bounded capability remain explicit limits; no local world model or robot-control result is established. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `ext_embedded_agency_2019` | Metadata-first comparator: Embedded Agency. Primary informal survey of the obstacles that arise when agents are physical parts of the worlds they model, must use smaller internal models, and reason about modifiable internal parts. It supplies a foundations boundary; the book's finite records, authority ceilings, and proofs do not solve embedded agency. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |

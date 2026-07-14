@@ -1,0 +1,6 @@
+<think>
+Okay, let's try to figure out this problem. The user is asking about analyzing a bounded repository task, specifically identifying the correct terminal route, authority boundary, and named residual. They mentioned a versioned v2 schema with additionalProperties: false, both historical consumers were migrated, valid/invalid fixtures pass, and v1 remains readable. They want the terminal route and retain residual G2-V1-READ.
+
+First, I need to recall what a bounded repository is. From what I remember, a bounded context in Domain-Driven Design (DDD) is a boundary that defines the scope of a particular domain model. The bounded repository would be part of that context, handling data within the boundaries. The terms mentioned here—terminal route, authority boundary, and named residual—seem to be specific to some framework or system, maybe related to data modeling or versioning.
+
+The user mentioned a v2 schema with additionalProperties: false. That probably

@@ -1,0 +1,157 @@
+{
+  "schema_version": "asi_stack.theseus_pretraining_readiness_currentness_import.v0",
+  "import_id": "theseus-pretraining-readiness-currentness-2026-07-14-d2343540",
+  "observed_utc": "2026-07-14T08:30:37.235577+00:00",
+  "source_authority": {
+    "project": "Project Theseus / Theseus-Hive",
+    "owner": "Corben Sorenson",
+    "source_kind": "local_author_owned_implementation_reference",
+    "commit": "d2343540a17ea3e12760983f653529621fa445f1",
+    "head_before": "d2343540a17ea3e12760983f653529621fa445f1",
+    "head_after": "d2343540a17ea3e12760983f653529621fa445f1",
+    "clean_before": true,
+    "clean_after": true,
+    "network_calls": 0,
+    "external_inference_calls": 0
+  },
+  "frozen_source_files": [
+    {
+      "path": "scripts/roadmap_implementation_gate.py",
+      "sha256": "8a40511d9f9e4c3a284735586a7a1cd2b4edc553db8f81e3e4486c54af328178",
+      "bytes": 103652
+    },
+    {
+      "path": "configs/roadmap_implementation_matrix.json",
+      "sha256": "6ca1a43fd29fba1c721aaefa800a7c68127d2a00d3e256dbed0c24b0e13c7b47",
+      "bytes": 556313
+    },
+    {
+      "path": "configs/project_manifest_registry.json",
+      "sha256": "78f22273dac9c9b44d7a5b54513b49a74f514091851924a5bcd6962cac776e1b",
+      "bytes": 465434
+    }
+  ],
+  "replay": {
+    "command": "python3 $THESEUS_ROOT/scripts/roadmap_implementation_gate.py --gate --require-pre-training-ready --out $TMPDIR/gate.json --markdown-out $TMPDIR/gate.md --crosswalk-out $TMPDIR/crosswalk.json --ai-book-root $AI_BOOK_ROOT",
+    "exit_code": 0,
+    "environment": "local macOS arm64; Python 3; isolated temporary outputs; no source-project write",
+    "expected_outputs": [
+      "gate.json",
+      "gate.md",
+      "crosswalk.json",
+      "stdout.txt"
+    ],
+    "outputs": [
+      {
+        "name": "gate.json",
+        "sha256": "dfa888a352f9aaaf81b8f166657a52fb1a35972bb700862e0ec56757c7681587",
+        "bytes": 48298
+      },
+      {
+        "name": "gate.md",
+        "sha256": "5c88d672c22343c472d78d64c4c7ce3c80fc01b8af99593aa8239990c5041b6d",
+        "bytes": 6084
+      },
+      {
+        "name": "crosswalk.json",
+        "sha256": "b1bf7615a802ef83011ae937790b7a0d35376d464b93e435a33aabe4001d76bf",
+        "bytes": 1481519
+      },
+      {
+        "name": "stdout.txt",
+        "sha256": "dcaa9b9767892375871630113473066ca0dab75c0feb40d5d5054a5aaf90ad89",
+        "bytes": 4126
+      }
+    ],
+    "artifact_truth_checks": {
+      "same_commit_before_after": true,
+      "clean_checkout_before_after": true,
+      "require_pre_training_ready_exit_zero": true,
+      "temporary_output_only": true,
+      "source_project_mutations": 0
+    }
+  },
+  "sanitized_summary": {
+    "trigger_state": "YELLOW",
+    "phase_count": 20,
+    "required_phase_count": 20,
+    "phase_status_counts": {
+      "wired": 12,
+      "implemented": 2,
+      "partial": 5,
+      "frozen": 1
+    },
+    "implemented_or_wired_count": 14,
+    "missing_count": 0,
+    "hard_gap_count": 0,
+    "warning_count": 1,
+    "pre_training_architecture_ready": true,
+    "pre_training_architecture_blocker_count": 0,
+    "pre_training_architecture_warning_count": 0,
+    "externally_frozen_phase_count": 1,
+    "externally_frozen_phase": {
+      "phase": 9,
+      "title": "Hive Policy-First Distributed Operation",
+      "reason_class": "trusted_peers_and_eligible_remote_device_unreachable"
+    },
+    "deferred_training_or_behavior_phases": [
+      5,
+      7,
+      10,
+      13,
+      16
+    ],
+    "book_manifest_chapter_count": 54,
+    "book_manifest_commit": "32635eb94ded42a5f54e528302685cab343993b7",
+    "book_manifest_digest_match": true,
+    "book_manifest_order_match": true,
+    "live_book_manifest_differs_from_pin": true,
+    "book_active_flagship_lane_id": "C1_correctness_rl_and_generator_survival_lane",
+    "book_active_core_slice_count": 1,
+    "book_to_theseus_crosswalk_item_count": 20,
+    "theseus_to_book_evidence_count": 73,
+    "book_to_theseus_source_sync_smoke_passed": true,
+    "public_safe_evidence_smoke_passed": true
+  },
+  "currentness_residual": {
+    "id": "THESEUS-CURRENTNESS-PRETRAINING-READINESS",
+    "prior_state": "fresh post-accelerator-parity implementation currentness lane absent",
+    "new_state": "closed_for_exact_d2343540_readiness_gate_observation_only",
+    "remaining": [
+      "The imported book pin is 32635eb94 and intentionally predates current ASI Stack source work.",
+      "Five training/behavior phases remain partial and phase 9 remains externally frozen.",
+      "YELLOW readiness is not deployment readiness, model quality, benchmark performance, or clean open-world replay.",
+      "Future Theseus commits supersede currentness but do not falsify this exact historical observation."
+    ]
+  },
+  "public_safety": {
+    "raw_gate_copied": false,
+    "raw_crosswalk_copied": false,
+    "private_payloads_copied": 0,
+    "training_rows_copied": 0,
+    "prompts_copied": 0,
+    "solutions_copied": 0,
+    "checkpoints_copied": 0,
+    "restricted_paths_copied": 0,
+    "allowed_fields": "aggregate phase/status counts, exact public-safe digests, commit identity, command receipt, bounded residuals, and non-claims"
+  },
+  "negative_controls": [
+    "source_commit_mismatch",
+    "dirty_checkout_hidden",
+    "gate_exit_failure_hidden",
+    "output_digest_mismatch",
+    "missing_partial_or_frozen_phase",
+    "private_payload_copied",
+    "deployment_readiness_overclaim",
+    "chapter_core_promotion_overclaim"
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This is implementation-reference currentness evidence only.",
+    "The import does not prove learned model quality, benchmark superiority, training success, useful throughput, production routing, distributed operation, deployment readiness, safety, alignment, transfer, AGI, or ASI.",
+    "The import does not prove current behavior after source commit d2343540a17ea3e12760983f653529621fa445f1.",
+    "The readiness gate's own YELLOW/ready distinction and partial/frozen phases remain visible.",
+    "No chapter-core or non-core support state is promoted."
+  ]
+}

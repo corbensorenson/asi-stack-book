@@ -127,8 +127,8 @@ living-book version.
 | P0 — Authority, truth repair, and clean handoff | completed | Activate this successor, reconcile the novelty/status drift, verify the complete dirty cycle, commit coherently, push, and observe the resulting hosted chain. | Clean-tree receipt, commit series, CI/Pages receipts, reconciled public pointers. |
 | P1 — 54-chapter multi-format reader | completed | Produce and disposition EPUB, PDF, and DOCX from one frozen v2.0 reader source; keep audio deferred. | Per-format manifests, exact artifacts, review matrices, and release/block records. |
 | P2 — Selective external anchoring and completeness residuals | completed | Close source-specific gaps in the ten newer chapters and audit the trace/world-model/foundations/Tier-2 queue without citation padding or automatic chapter growth. | Passage-reviewed source notes, owner matrix, insertion/disposition records, reconciled chapters and appendices. |
-| P3 — Evidence protocol repair and current implementation transfer | in progress | Repair the failed natural-work protocol, run at most one warranted flagship campaign, reconcile scoped refutations, and import one fresh Theseus currentness lane. | Frozen preflight/preregistration, exact results or blocker, transition dispositions, currentness import record. |
-| P4 — Product reconciliation, release decision, and closure | pending | Reconcile all products and choose exact edition release, public release, blocked closure, or no-release without version or rights laundering. | Terminal declaration, release/block/no-release record, full validation and attestation receipts. |
+| P3 — Evidence protocol repair and current implementation transfer | completed | Repair the failed natural-work protocol, run at most one warranted flagship campaign, reconcile scoped refutations, and import one fresh Theseus currentness lane. | Frozen preflight/preregistration, exact results or blocker, transition dispositions, currentness import record. |
+| P4 — Product reconciliation, release decision, and closure | in progress | Reconcile all products and choose exact edition release, public release, blocked closure, or no-release without version or rights laundering. | Terminal declaration, release/block/no-release record, full validation and attestation receipts. |
 
 ## P0 — Authority, truth repair, and clean handoff
 
@@ -416,6 +416,31 @@ release was approved. P3 is now active.
   evidence transition clears currentness, replay, comparator, independence,
   transfer, and support-state gates.
 
+### P3 completion record
+
+Completed 2026-07-14. The non-evidentiary four-task protocol preflight passed
+4 of 4 exact final-JSON outcomes while preserving all 36 historical failures
+and both historical `no_change` transitions. The prospectively frozen flagship
+then completed its exact 16-task, two-seed design with 32 candidate outputs and
+64 total model calls. Only 2 of 32 candidates were independently correct;
+neither route produced a useful release; no unsafe release occurred because no
+candidate was released; the governed route abstained 32 of 32 times; and all
+32 exact rollback probes and omission controls passed their declared local
+surfaces. The frozen task metadata declared eight families and eight attacked
+tasks while the immutable exact task file contains nine of each. That
+post-outcome metadata defect is preserved in an explicit erratum and
+independently blocks promotion. The exact disposition is `no_change`, not
+safety or governance efficacy. Durable records are
+`docs/post_v2_3_governance_tax_flagship_renewal_results.md` and
+`evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json`.
+
+The two QCSA refutations remain scoped non-core fixture refutations in the
+novelty ledger. The fresh Theseus lane is the clean same-commit readiness-gate
+replay at `d2343540a17ea3e12760983f653529621fa445f1`, recorded in
+`docs/theseus_pretraining_readiness_currentness_import.md`. It reports
+`YELLOW`: 20 phases, 12 wired, 2 implemented, 5 partial, and 1 frozen, with no
+support or release effect. P4 is now active.
+
 ## P4 — Product reconciliation, release decision, and closure
 
 ### Reconciliation
@@ -462,8 +487,8 @@ every residual and non-claim visible, and no silent successor activation.
 | M4 — PDF dispositioned | completed | Exact PDF artifact plus page-complete inspection and pass/block record. |
 | M5 — DOCX dispositioned | completed | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |
 | M6 — Source and completeness residuals dispositioned | completed | Ten-chapter matrix plus trace/world-model/foundations/Tier-2 insertion or rejection artifacts. |
-| M7 — Evidence/currentness work dispositioned | pending | Protocol preflight and at most one flagship campaign; QCSA novelty reconciliation; one fresh Theseus currentness import or exact blocker. |
-| M8 — Products reconciled and cycle closed | pending | Full validation, exact release/block/no-release record, completion declaration, no silent successor. |
+| M7 — Evidence/currentness work dispositioned | completed | Passing protocol preflight; one exact no-change flagship with preserved metadata erratum; scoped QCSA reconciliation; one fresh bounded Theseus currentness import. |
+| M8 — Products reconciled and cycle closed | in progress | Full validation, exact release/block/no-release record, completion declaration, no silent successor. |
 
 ## Stop and amendment rules
 

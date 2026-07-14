@@ -68,8 +68,8 @@
     {"id": "P0", "state": "completed", "purpose": "activate successor authority, repair public-truth drift, and complete the clean source handoff"},
     {"id": "P1", "state": "completed", "purpose": "disposition EPUB PDF and DOCX for the frozen 54-chapter reader while deferring audio"},
     {"id": "P2", "state": "completed", "purpose": "close selective external-grounding and completeness residuals without citation padding or automatic chapter growth"},
-    {"id": "P3", "state": "in_progress", "purpose": "repair the evidence protocol, run at most one warranted flagship, reconcile scoped refutations, and import one fresh Theseus currentness lane"},
-    {"id": "P4", "state": "pending", "purpose": "reconcile products and close with an exact release blocked or no-release transaction"}
+    {"id": "P3", "state": "completed", "purpose": "repair the evidence protocol, run at most one warranted flagship, reconcile scoped refutations, and import one fresh Theseus currentness lane"},
+    {"id": "P4", "state": "in_progress", "purpose": "reconcile products and close with an exact release blocked or no-release transaction"}
   ],
   "milestones": [
     {"id": "M0", "state": "completed", "purpose": "calibrate critique and install successor authority"},
@@ -79,8 +79,8 @@
     {"id": "M4", "state": "completed", "purpose": "disposition PDF"},
     {"id": "M5", "state": "completed", "purpose": "disposition DOCX"},
     {"id": "M6", "state": "completed", "purpose": "disposition source and completeness residuals"},
-    {"id": "M7", "state": "pending", "purpose": "disposition evidence protocol and Theseus currentness work"},
-    {"id": "M8", "state": "pending", "purpose": "reconcile products and close the cycle"}
+    {"id": "M7", "state": "completed", "purpose": "disposition evidence protocol and Theseus currentness work"},
+    {"id": "M8", "state": "in_progress", "purpose": "reconcile products and close the cycle"}
   ],
   "reader_formats": [
     {"format": "canonical_curated_html", "state": "approved_exact_local_artifact", "scope": "preserve_existing"},
@@ -98,10 +98,10 @@
     {"id": "SW-05", "state": "completed", "scope": "tier_2_current_text_disposition_audit"}
   ],
   "evidence_workstreams": [
-    {"id": "EW-01", "state": "pending", "scope": "governance_tax_protocol_repair_preflight"},
-    {"id": "EW-02", "state": "pending", "scope": "at_most_one_preregistered_governance_tax_flagship"},
-    {"id": "EW-03", "state": "pending", "scope": "qcsa_exact_refutation_novelty_reconciliation"},
-    {"id": "EW-04", "state": "pending", "scope": "fresh_public_safe_theseus_currentness_import"}
+    {"id": "EW-01", "state": "completed", "scope": "governance_tax_protocol_repair_preflight"},
+    {"id": "EW-02", "state": "completed", "scope": "at_most_one_preregistered_governance_tax_flagship"},
+    {"id": "EW-03", "state": "completed", "scope": "qcsa_exact_refutation_novelty_reconciliation"},
+    {"id": "EW-04", "state": "completed", "scope": "fresh_public_safe_theseus_currentness_import"}
   ],
   "breadth_freeze": true,
   "maximum_new_outcome_campaigns": 1,

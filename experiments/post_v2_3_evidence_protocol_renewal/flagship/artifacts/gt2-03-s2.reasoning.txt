@@ -1,0 +1,4 @@
+<think>
+Okay, let's try to figure this out. The user is asking about the bounded repository task, and they want me to identify the correct terminal route, authority boundary, and named residual. But first, there's a mention of a schema hardening patch that adds "additionalProperties: false". So, that means the schema is now strict, not allowing any extra properties. However, two historical consumers are sending undeclared fields, and there's no migration plan.
+
+Hmm, so the problem here is that the system has a strict schema, but existing consumers are sending data that doesn't fit. The question is, what's the terminal route? The terminal route probably refers to where the data should go after the conflict. Since there's no migration, maybe the system can't accept the extra fields, so the terminal route might be a rejection or a specific error path. But the user also mentions retaining residual G2-COMPAT. That might

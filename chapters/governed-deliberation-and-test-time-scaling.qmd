@@ -503,6 +503,26 @@ faithfulness, test-time efficiency, safety, model quality, or ASI. The bridge
 preserves the fifteen known extra-compute harms as regression knowledge; it
 does not re-estimate them.
 
+## Trace faithfulness is a separate gate
+
+Longer deliberation can improve a candidate while making the visible rationale
+less diagnostic of the computation that selected it. The book therefore treats
+candidate quality, reported rationale, causal trace faithfulness, monitorability,
+and authority as five separate axes. `ext_faithfulness_information_flow_2026`
+adds a useful test decomposition: sufficiency asks whether the trace contains
+answer-relevant information, completeness asks whether prompt information still
+bypasses it, and necessity asks whether intervening on the trace changes the
+answer. The last question cannot be settled from transcript plausibility.
+
+A governed deliberation record consequently retains the private/public trace
+boundary, trace perturbations, counterfactual prompt or tool changes, action and
+final-answer deltas, evaluator access, and any hidden-computation residual. A
+trace/action mismatch routes to abstention, a narrower claim, or a stronger
+evaluation; it never grants permission to execute. The cited experiments do
+not establish that these deliberation routes are faithful or that information-flow
+training eliminates reward hacking.
+
+
 ## Source crosswalk
 
 | Source ID | Title | Planned use |
@@ -514,6 +534,15 @@ does not re-estimate them.
 | `ext_s_grpo_2025` | S-GRPO: Early Exit via Reinforcement Learning in Reasoning Models | Comparator for reasoning-stop policy and early-exit tradeoffs; not evidence that shorter reasoning is adequate. |
 | `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026` | Shared-weight recurrence and complexity-controlled adaptive compute | Comparators for per-position halting, allocation timing, and the negative boundary that difficulty-aligned compute need not yield algorithmic generalization or local reasoning improvement. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Governed Deliberation and Test-Time Scaling's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Provides a causal-information-flow objection to treating longer or more plausible deliberation traces as faithful, and supplies sufficiency, completeness, and necessity as separate evaluation targets. | The reported interventions do not establish that any ASI Stack deliberation route is faithful, useful, or safe, and transcript inspection alone cannot establish necessity. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched deliberation result
 
 On the same held-out workload and three seeds, adaptive verifier stopping
@@ -564,31 +593,3 @@ when a confident answer is convenient.
 ## Handoff
 
 Governed Deliberation supplies a bounded candidate, abstention, or residual record to Artifact Compression and Resource Economics. RankFold, NeuralFold, and Artifact Compression examine how durable artifacts may become smaller without hiding what is lost, verified, or still unresolved. That successor carries forward the same requirement: an efficient representation must preserve enough provenance and fallback information for a later reviewer to understand what the system did not retain.
-### Trace faithfulness is a separate gate
-
-Longer deliberation can improve a candidate while making the visible rationale
-less diagnostic of the computation that selected it. The book therefore treats
-candidate quality, reported rationale, causal trace faithfulness, monitorability,
-and authority as five separate axes. `ext_faithfulness_information_flow_2026`
-adds a useful test decomposition: sufficiency asks whether the trace contains
-answer-relevant information, completeness asks whether prompt information still
-bypasses it, and necessity asks whether intervening on the trace changes the
-answer. The last question cannot be settled from transcript plausibility.
-
-A governed deliberation record consequently retains the private/public trace
-boundary, trace perturbations, counterfactual prompt or tool changes, action and
-final-answer deltas, evaluator access, and any hidden-computation residual. A
-trace/action mismatch routes to abstention, a narrower claim, or a stronger
-evaluation; it never grants permission to execute. The cited experiments do
-not establish that these deliberation routes are faithful or that information-flow
-training eliminates reward hacking.
-
-### Manifest source assignment reconciliation
-
-These metadata-first rows keep dynamic manifest assignments visible until passage-level integration adds a narrower chapter-specific role.
-
-| Source | Intake role | Boundary |
-|---|---|---|
-| `ext_faithfulness_information_flow_2026` | Metadata-first comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Primary 2026 comparator that separates chain-of-thought sufficiency, completeness, and interventional necessity, demonstrates prompt-to-answer shortcuts and transparent reward-hacking diagnostics, and documents low-entropy and reference-model limits. It does not make a reasoning transcript an authoritative receipt or establish local monitorability. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
-
-<!-- manifest-source-reconciliation:end -->

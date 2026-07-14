@@ -32,6 +32,12 @@ README_ROOT = ROOT / "README.md"
 INDEX = ROOT / "index.qmd"
 STATUS = ROOT / "docs" / "v1_0_candidate_status.md"
 CHANGELOG = ROOT / "appendices" / "F_changelog.qmd"
+NO_PROMOTION_DIRS = (
+    ROOT / "evidence_transitions" / "v1_x_measured",
+    ROOT / "evidence_transitions" / "post_v2",
+    ROOT / "evidence_transitions" / "post_v2_1",
+    ROOT / "evidence_transitions" / "post_v2_3",
+)
 
 EXPECTED = {
     "result_id": "2026-07-05-local-circle-strided-fanout-receipt-slice",
@@ -119,6 +125,23 @@ def rel(path: Path) -> str:
 
 def load_json(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def accepted_no_promotion_count() -> int:
+    """Derive the live public count instead of freezing a historical total."""
+    count = 0
+    for directory in NO_PROMOTION_DIRS:
+        for path in directory.glob("*.json"):
+            record = load_json(path)
+            if (
+                isinstance(record, dict)
+                and record.get("transition_effect") == "no_change"
+                and record.get("support_state_effect") == "blocks_promotion"
+                and record.get("transition_validity_state") == "review_accepted"
+                and record.get("review_status") == "accepted"
+            ):
+                count += 1
+    return count
 
 
 def text_blob(value: Any) -> str:
@@ -330,6 +353,7 @@ def validate_transition(errors: list[str]) -> None:
 
 
 def validate_surfaces(errors: list[str]) -> None:
+    no_promotion_count = accepted_no_promotion_count()
     for path in (SUMMARY, README):
         if not path.exists():
             errors.append(f"Missing {rel(path)}.")
@@ -342,7 +366,7 @@ def validate_surfaces(errors: list[str]) -> None:
         OUTLINE: SURFACE_FRAGMENTS,
         APPENDIX_E: ("Circle strided fanout receipt-slice validation", EXPECTED["contract_id"], "circle_strided_fanout_receipt_no_change.json"),
         LEDGER: (
-            "Accepted no-promotion side-lane decisions | 56 accepted `blocks_promotion` decisions; no support-state movement.",
+            f"Accepted no-promotion side-lane decisions | {no_promotion_count} accepted `blocks_promotion` decisions; no support-state movement.",
             EXPECTED["claim_id"],
             rel(SUMMARY),
             rel(TRANSITION),
@@ -351,7 +375,7 @@ def validate_surfaces(errors: list[str]) -> None:
             "duplicate_count=0",
             "does not promote any chapter core claim",
         ),
-        STATUS: ("56 accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
+        STATUS: (f"{no_promotion_count} accepted `blocks_promotion`", rel(SUMMARY), "strided candidate-fanout"),
         ROADMAP: (EXPECTED["contract_id"], "strided candidate-fanout", "circle_strided_fanout_receipt_no_change.json", "56 accepted"),
         CHANGELOG: ("Import Circle strided fanout receipt slice", EXPECTED["contract_id"], "3 passed in 4.65s", "1 passed in 2.77s"),
     }
