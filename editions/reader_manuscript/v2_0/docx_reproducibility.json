@@ -1,0 +1,60 @@
+{
+  "schema_version": "asi_stack.reader_docx_reproducibility.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "decision_date": "2026-07-13",
+  "state": "exact_replay_passed",
+  "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats docx --timeout-seconds 600 --stop-on-fail",
+  "frozen_inputs": {
+    "manifest_sha256": "925064e578394feb5e02b6f90c83d3c59343f037ec4ee5ec73f6da373bf3ba9b",
+    "source_tree_sha256": "bfe8e766162a6ddf1a26b144fcdcd77623a11ad420d4bba9e04fb881bcb87753",
+    "text_format_profile_sha256": "ada8d524c15d6f4b6d8c272e76e195b59ebedced98ae01be2dbc556d50ea9308",
+    "renderer_sha256": "7200650b937339dba7d65cb50496fd0ab5712989fb637c669a04ab2e4aac25af",
+    "extractor_sha256": "ccddedfd50d7606598be3e6bc32aa7a8d7d530bccb5cc446c634be5e3f874f35",
+    "reference_doc_sha256": "3be6973e2b9859e914e536e0c159f71fbb2e18f7493170ca4993828b6358fdf7"
+  },
+  "replays": [
+    {
+      "id": "docx-independent-full-render-a",
+      "independent_full_quarto_render": true,
+      "canonical_sha256": "0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e",
+      "canonical_bytes": 7429468,
+      "package_state": "passed_package_and_page_automation_visual_review_pending",
+      "page_complete_application_engine_review": true
+    },
+    {
+      "id": "docx-independent-full-render-b",
+      "independent_full_quarto_render": true,
+      "canonical_sha256": "0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e",
+      "canonical_bytes": 7429468,
+      "package_state": "exact_bytes_equal_to_reviewed_render_a",
+      "page_complete_application_engine_review": false
+    }
+  ],
+  "canonicalization": {
+    "member_count": 95,
+    "stable_core_timestamp": "2026-07-13T00:00:00Z",
+    "core_timestamp_replacements": 2,
+    "image_description_replacements": 79,
+    "empty_image_descriptions_after_repair": 0,
+    "content_types_first": true,
+    "stable_zip_member_order": true,
+    "stable_zip_member_timestamps": true,
+    "stable_zip_permissions_and_compression": true
+  },
+  "layout_fallback": {
+    "scope": "DOCX_render_workspace_only",
+    "source": "appendices/B_glossary.qmd",
+    "entry_count": 21,
+    "canonical_source_restored_after_each_render": true,
+    "both_replays_used_same_fallback": true
+  },
+  "exact_replay_equal": true,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Exact DOCX replay does not establish Microsoft Word, LibreOffice GUI, Google Docs, screen-reader, assistive-technology, or device-family behavior.",
+    "OOXML canonicalization changes package identity metadata and missing image descriptions; it does not change chapter claims or canonical prose.",
+    "The DOCX-only glossary fallback is valid only for this frozen 54-chapter source and profile.",
+    "Reproducibility does not create public publication, deployment, tag, archive, rights, model-quality, safety, AGI, ASI, or support effects."
+  ]
+}

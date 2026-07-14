@@ -66,7 +66,7 @@
   ],
   "priorities": [
     {"id": "P0", "state": "completed", "purpose": "activate successor authority, repair public-truth drift, and complete the clean source handoff"},
-    {"id": "P1", "state": "in_progress", "purpose": "disposition EPUB PDF and DOCX for the frozen 54-chapter reader while deferring audio"},
+    {"id": "P1", "state": "completed", "purpose": "disposition EPUB PDF and DOCX for the frozen 54-chapter reader while deferring audio"},
     {"id": "P2", "state": "pending", "purpose": "close selective external-grounding and completeness residuals without citation padding or automatic chapter growth"},
     {"id": "P3", "state": "pending", "purpose": "repair the evidence protocol, run at most one warranted flagship, reconcile scoped refutations, and import one fresh Theseus currentness lane"},
     {"id": "P4", "state": "pending", "purpose": "reconcile products and close with an exact release blocked or no-release transaction"}
@@ -77,7 +77,7 @@
     {"id": "M2", "state": "completed", "purpose": "freeze reader source and format profiles"},
     {"id": "M3", "state": "completed", "purpose": "disposition EPUB"},
     {"id": "M4", "state": "completed", "purpose": "disposition PDF"},
-    {"id": "M5", "state": "pending", "purpose": "disposition DOCX"},
+    {"id": "M5", "state": "completed", "purpose": "disposition DOCX"},
     {"id": "M6", "state": "pending", "purpose": "disposition source and completeness residuals"},
     {"id": "M7", "state": "pending", "purpose": "disposition evidence protocol and Theseus currentness work"},
     {"id": "M8", "state": "pending", "purpose": "reconcile products and close the cycle"}
@@ -86,7 +86,7 @@
     {"format": "canonical_curated_html", "state": "approved_exact_local_artifact", "scope": "preserve_existing"},
     {"format": "epub", "state": "blocked", "scope": "attempt_and_disposition"},
     {"format": "pdf", "state": "blocked", "scope": "attempt_and_disposition"},
-    {"format": "docx", "state": "pending", "scope": "attempt_and_disposition"},
+    {"format": "docx", "state": "approved_exact_local_artifact", "scope": "attempt_and_disposition"},
     {"format": "audio", "state": "deferred", "scope": "not_authorized"},
     {"format": "embedded_audio", "state": "deferred", "scope": "not_authorized"}
   ],

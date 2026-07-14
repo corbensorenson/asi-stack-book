@@ -2,6 +2,21 @@
 
 ## 2026-07-13 - Audit the post-v2.3 clean handoff boundary
 
+- Completed M5 and P1 with an `approved_exact_local_artifact` disposition for
+  the 7,429,468-byte DOCX, SHA-256
+  `0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e`.
+  The gate parses all 16 XML members in the 95-member OOXML package, resolves
+  relationships, confirms all 54 chapter titles, 79 described drawings, 274
+  hyperlinks, and 1,169 bookmarks, and preserves the explicit text-not-OMML
+  mathematics boundary. The pinned LibreOfficeDev Writer headless engine and
+  internal page review cover all 644 pages in 33 contact sheets with no blank,
+  near-edge, or ordering residual. A first candidate with a blank and
+  fragmented glossary page was rejected; the final DOCX-only workspace
+  linearizes all 21 glossary entries and restores the canonical source after
+  rendering. Two independent full renders reproduce exact bytes. Approval is
+  local and digest-bound only; no Word, LibreOffice GUI, Google Docs,
+  assistive-technology, independent-human, public-release, rights, evidence,
+  or support claim is made.
 - Completed M4 with an honest blocked PDF disposition for the exact tracked
   54-chapter artifact: 13,897,492 bytes, 565 US-letter pages, SHA-256
   `55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676`.

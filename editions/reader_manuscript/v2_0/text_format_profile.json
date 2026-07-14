@@ -105,7 +105,7 @@
       "required_gates": ["metadata_fonts_outline", "links_and_destinations", "text_extraction_order", "replacement_characters", "every_page_raster", "risk_page_viewer_review"]
     },
     "docx": {
-      "state": "profile_frozen_candidate_not_generated",
+      "state": "approved_exact_local_artifact_after_package_application_engine_page_and_replay_review",
       "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats docx --timeout-seconds 600 --stop-on-fail",
       "design_preset": "narrative_proposal",
       "reference_doc": "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx",
@@ -114,7 +114,23 @@
       "margins_inches": 1.0,
       "body_font": "Calibri 11 pt",
       "body_spacing": "8 pt after, 1.333 lines",
-      "application_review": "LibreOfficeDev 26.8.0.0.alpha0",
+      "application_review": "LibreOfficeDev 26.8.0.0.alpha0 headless Writer export",
+      "exact_artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.docx",
+      "exact_artifact_sha256": "0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e",
+      "exact_artifact_bytes": 7429468,
+      "package_and_page_inspection": "editions/reader_manuscript/v2_0/docx_package_and_page_inspection.json",
+      "visual_review": "editions/reader_manuscript/v2_0/docx_visual_review.json",
+      "application_inspection": "editions/reader_manuscript/v2_0/docx_application_review.json",
+      "reproducibility": "editions/reader_manuscript/v2_0/docx_reproducibility.json",
+      "disposition": "editions/reader_manuscript/v2_0/docx_disposition.json",
+      "layout_fallback": {
+        "scope": "DOCX_render_workspace_only",
+        "source": "appendices/B_glossary.qmd",
+        "entry_count": 21,
+        "treatment": "linear_entries_preserving_term_definition_owner_and_status",
+        "reason": "The canonical four-column table produced one empty page and fragmented narrow columns under the pinned LibreOffice pagination path.",
+        "canonical_source_restored_after_render": true
+      },
       "required_gates": ["ooxml_integrity", "styles_headings_lists_tables", "links_media_alt_equations", "metadata_language_reading_order", "libreoffice_conversion", "every_page_raster"]
     },
     "audio": {"state": "deferred_not_authorized"},

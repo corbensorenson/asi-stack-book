@@ -15,6 +15,7 @@ import base64
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
+import html
 import json
 import math
 import os
@@ -336,6 +337,117 @@ def canonicalize_pdf(path: Path, manifest_path: Path) -> dict[str, object]:
     }
 
 
+def canonicalize_docx(path: Path, manifest_path: Path) -> dict[str, object]:
+    """Repair image descriptions and stabilize OOXML dates and ZIP metadata."""
+    profile_path = manifest_path.parent / TEXT_FORMAT_PROFILE_NAME
+    profile = json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.is_file() else {}
+    stable_timestamp = f"{profile.get('freeze_date', '1980-01-01')}T00:00:00Z".encode("ascii")
+    with ZipFile(path, "r") as source:
+        names = source.namelist()
+        if len(names) != len(set(names)):
+            raise RuntimeError("DOCX contains duplicate ZIP member names")
+        if any(name.startswith("/") or ".." in Path(name).parts for name in names):
+            raise RuntimeError("DOCX contains an unsafe ZIP member path")
+        payloads = {name: source.read(name) for name in names}
+    core_name = "docProps/core.xml"
+    if core_name not in payloads:
+        raise RuntimeError("DOCX is missing docProps/core.xml")
+    core, timestamp_replacements = re.subn(
+        rb"(<dcterms:(?:created|modified)[^>]*>)[^<]+(</dcterms:(?:created|modified)>)",
+        lambda match: match.group(1) + stable_timestamp + match.group(2),
+        payloads[core_name],
+    )
+    if timestamp_replacements != 2:
+        raise RuntimeError(
+            f"unexpected DOCX core timestamp surface: replacements={timestamp_replacements}"
+        )
+    payloads[core_name] = core
+    document_name = "word/document.xml"
+    if document_name not in payloads:
+        raise RuntimeError("DOCX is missing word/document.xml")
+    document_root = ET.fromstring(payloads[document_name])
+    w = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+    wp = "{http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing}"
+    paragraphs = document_root.findall(f".//{w}p")
+
+    def paragraph_text(paragraph: ET.Element) -> str:
+        return "".join(node.text or "" for node in paragraph.findall(f".//{w}t")).strip()
+
+    def paragraph_style(paragraph: ET.Element) -> str:
+        style = paragraph.find(f"./{w}pPr/{w}pStyle")
+        return style.get(f"{w}val", "") if style is not None else ""
+
+    descriptions: list[str] = []
+    heading_1 = ""
+    heading_2 = ""
+    for index, paragraph in enumerate(paragraphs):
+        style = paragraph_style(paragraph)
+        text = paragraph_text(paragraph)
+        if style == "Heading1" and text:
+            heading_1, heading_2 = text, ""
+        elif style == "Heading2" and text:
+            heading_2 = text
+        drawing_count = len(paragraph.findall(f".//{wp}docPr"))
+        if not drawing_count:
+            continue
+        caption = ""
+        for candidate in paragraphs[index + 1:index + 4]:
+            candidate_text = paragraph_text(candidate)
+            if paragraph_style(candidate) == "ImageCaption" and candidate_text:
+                caption = candidate_text
+                break
+            if candidate_text:
+                break
+        context = " — ".join(value for value in (heading_1, heading_2) if value)
+        if caption:
+            description = f"{caption} Diagram context: {context or 'The ASI Stack reader edition'}."
+        elif context:
+            description = f"Architecture or process diagram for {context}."
+        else:
+            description = "The ASI Stack reader cover or opening illustration."
+        descriptions.extend([description[:500]] * drawing_count)
+
+    docpr_pattern = re.compile(rb"<wp:docPr\b[^>]*/>")
+    matches = list(docpr_pattern.finditer(payloads[document_name]))
+    if len(matches) != len(descriptions) or not matches:
+        raise RuntimeError(
+            "DOCX image-description repair denominator drifted: "
+            f"xml={len(matches)}, contexts={len(descriptions)}"
+        )
+    description_iter = iter(descriptions)
+
+    def repair_docpr(match: re.Match[bytes]) -> bytes:
+        description = html.escape(next(description_iter), quote=True).encode("utf-8")
+        element = match.group(0)
+        if re.search(rb'\bdescr="[^"]*"', element):
+            return re.sub(rb'\bdescr="[^"]*"', b'descr="' + description + b'"', element, count=1)
+        return element[:-2] + b' descr="' + description + b'" />'
+
+    repaired_document, alt_text_replacements = docpr_pattern.subn(
+        repair_docpr, payloads[document_name]
+    )
+    ET.fromstring(repaired_document)
+    payloads[document_name] = repaired_document
+    ordered = sorted(names, key=lambda name: (name != "[Content_Types].xml", name))
+    canonical = path.with_suffix(".canonical.docx")
+    with ZipFile(canonical, "w") as target:
+        for name in ordered:
+            info = ZipInfo(name, (1980, 1, 1, 0, 0, 0))
+            info.compress_type = ZIP_DEFLATED
+            info.external_attr = 0o644 << 16
+            target.writestr(info, payloads[name], compresslevel=9)
+    canonical.replace(path)
+    return {
+        "applied": True,
+        "member_count": len(ordered),
+        "stable_core_timestamp": stable_timestamp.decode("ascii"),
+        "core_timestamp_replacements": timestamp_replacements,
+        "image_description_replacements": alt_text_replacements,
+        "empty_image_descriptions_after_repair": 0,
+        "content_types_first": ordered[:1] == ["[Content_Types].xml"],
+    }
+
+
 def convert_svg_to_png(svg_path: Path, png_path: Path) -> str:
     """Create a PNG fallback for non-HTML rendering without changing source assets."""
     png_path.parent.mkdir(parents=True, exist_ok=True)
@@ -616,6 +728,67 @@ def render_mermaid_svg_to_png(chrome_binary: str, svg_path: Path, svg: str, png_
 
 
 @contextmanager
+def docx_glossary_layout_fallback(output_dir: Path) -> Iterator[dict[str, object]]:
+    """Replace the four-column glossary with equivalent DOCX-friendly entries."""
+    glossary = output_dir / "appendices/B_glossary.qmd"
+    info: dict[str, object] = {
+        "applied": False,
+        "source": str(glossary.relative_to(output_dir)) if glossary.exists() else "",
+        "entry_count": 0,
+        "reason": "",
+    }
+    if not glossary.is_file():
+        yield info
+        return
+    original = glossary.read_text(encoding="utf-8")
+    lines = original.splitlines()
+    header_index = next(
+        (index for index, line in enumerate(lines) if line.strip() == "| Term | Working definition | Owner | Status |"),
+        None,
+    )
+    if header_index is None or header_index + 1 >= len(lines):
+        raise RuntimeError("DOCX glossary table header is absent or malformed")
+    row_index = header_index + 2
+    rows: list[list[str]] = []
+    while row_index < len(lines) and lines[row_index].lstrip().startswith("|"):
+        cells = [cell.strip() for cell in lines[row_index].strip().strip("|").split("|")]
+        if len(cells) != 4:
+            raise RuntimeError(f"DOCX glossary row has {len(cells)} cells instead of four")
+        rows.append(cells)
+        row_index += 1
+    if not rows:
+        raise RuntimeError("DOCX glossary table contains no entries")
+    replacement: list[str] = []
+    for term, definition, owner, status in rows:
+        replacement.extend(
+            [
+                f"## {term}",
+                "",
+                definition,
+                "",
+                f"**Owner:** {owner}",
+                "",
+                f"**Status:** {status}",
+                "",
+            ]
+        )
+    glossary.write_text(
+        "\n".join(lines[:header_index] + replacement + lines[row_index:]).rstrip() + "\n",
+        encoding="utf-8",
+    )
+    info = {
+        "applied": True,
+        "source": str(glossary.relative_to(output_dir)),
+        "entry_count": len(rows),
+        "reason": "Preserve all glossary fields in a linear entry layout because the four-column table creates an empty page and fragmented narrow columns in LibreOffice Writer pagination.",
+    }
+    try:
+        yield info
+    finally:
+        glossary.write_text(original, encoding="utf-8")
+
+
+@contextmanager
 def pdf_mermaid_static_fallbacks(output_dir: Path) -> Iterator[dict[str, object]]:
     """Temporarily replace Mermaid fences with browser-rendered static PNGs."""
     qmd_paths = [
@@ -814,6 +987,7 @@ def run_render(
         "html_rendered_for_fallback": False,
         "error": "",
     }
+    docx_layout_info: dict[str, object] = {"applied": False}
     with tempfile.NamedTemporaryFile("w+", encoding="utf-8", errors="ignore") as log_file:
         if fmt == "pdf":
             with raster_diagram_fallbacks(output_dir) as fallback_info:
@@ -824,9 +998,10 @@ def run_render(
         elif fmt == "docx":
             with raster_diagram_fallbacks(output_dir) as fallback_info:
                 with pdf_mermaid_static_fallbacks(output_dir) as mermaid_fallback_info:
-                    returncode, timed_out = run_bounded_render(
-                        command, output_dir, log_file, timeout_seconds
-                    )
+                    with docx_glossary_layout_fallback(output_dir) as docx_layout_info:
+                        returncode, timed_out = run_bounded_render(
+                            command, output_dir, log_file, timeout_seconds
+                        )
         elif fmt == "epub":
             with pdf_mermaid_static_fallbacks(output_dir) as mermaid_fallback_info:
                 returncode, timed_out = run_bounded_render(
@@ -841,6 +1016,7 @@ def run_render(
     artifacts = find_artifacts(output_dir, fmt) if returncode == 0 else []
     epub_canonicalization: dict[str, object] = {"applied": False}
     pdf_canonicalization: dict[str, object] = {"applied": False}
+    docx_canonicalization: dict[str, object] = {"applied": False}
     if fmt == "epub" and artifacts:
         if len(artifacts) != 1:
             raise RuntimeError(f"expected one EPUB artifact before canonicalization, found {len(artifacts)}")
@@ -849,6 +1025,13 @@ def run_render(
         if len(artifacts) != 1:
             raise RuntimeError(f"expected one PDF artifact before canonicalization, found {len(artifacts)}")
         pdf_canonicalization = canonicalize_pdf(output_dir / artifacts[0], manifest_path)
+    if fmt == "docx" and artifacts:
+        docx_artifacts = [artifact for artifact in artifacts if Path(artifact).name == "The-ASI-Stack.docx"]
+        if len(docx_artifacts) != 1:
+            raise RuntimeError(
+                f"expected one primary DOCX artifact before canonicalization, found {len(docx_artifacts)}"
+            )
+        docx_canonicalization = canonicalize_docx(output_dir / docx_artifacts[0], manifest_path)
     preserved_artifacts = preserve_artifacts(output_dir, fmt, artifacts) if artifacts else []
     warning_lines = [line for line in output.splitlines() if "[WARNING]" in line]
     svg_conversion_warning_count = sum("Could not convert image" in line for line in warning_lines)
@@ -865,8 +1048,10 @@ def run_render(
         "svg_conversion_warning_count": svg_conversion_warning_count,
         "raster_diagram_fallbacks": fallback_info,
         "pdf_mermaid_static_fallbacks": mermaid_fallback_info,
+        "docx_layout_fallbacks": docx_layout_info,
         "epub_canonicalization": epub_canonicalization,
         "pdf_canonicalization": pdf_canonicalization,
+        "docx_canonicalization": docx_canonicalization,
         "log_excerpt": output[-4000:],
     }
 

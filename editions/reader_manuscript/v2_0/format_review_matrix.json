@@ -18,8 +18,12 @@
       "blocker": "apple_books_computer_use_native_pipe_unavailable"
     },
     "docx": {
-      "state": "not_selected_not_generated",
-      "selected": false
+      "state": "approved_exact_local_artifact",
+      "selected": true,
+      "artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.docx",
+      "artifact_sha256": "0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e",
+      "disposition": "editions/reader_manuscript/v2_0/docx_disposition.json",
+      "blocker": null
     },
     "pdf": {
       "state": "blocked",

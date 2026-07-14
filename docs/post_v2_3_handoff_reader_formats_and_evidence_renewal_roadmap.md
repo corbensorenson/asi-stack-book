@@ -125,7 +125,7 @@ living-book version.
 | Priority | Activation state | Purpose | Terminal authority |
 |---|---|---|---|
 | P0 — Authority, truth repair, and clean handoff | completed | Activate this successor, reconcile the novelty/status drift, verify the complete dirty cycle, commit coherently, push, and observe the resulting hosted chain. | Clean-tree receipt, commit series, CI/Pages receipts, reconciled public pointers. |
-| P1 — 54-chapter multi-format reader | in progress | Produce and disposition EPUB, PDF, and DOCX from one frozen v2.0 reader source; keep audio deferred. | Per-format manifests, exact artifacts, review matrices, and release/block records. |
+| P1 — 54-chapter multi-format reader | completed | Produce and disposition EPUB, PDF, and DOCX from one frozen v2.0 reader source; keep audio deferred. | Per-format manifests, exact artifacts, review matrices, and release/block records. |
 | P2 — Selective external anchoring and completeness residuals | pending | Close source-specific gaps in the ten newer chapters and audit the trace/world-model/foundations/Tier-2 queue without citation padding or automatic chapter growth. | Passage-reviewed source notes, owner matrix, insertion/disposition records, reconciled chapters and appendices. |
 | P3 — Evidence protocol repair and current implementation transfer | pending | Repair the failed natural-work protocol, run at most one warranted flagship campaign, reconcile scoped refutations, and import one fresh Theseus currentness lane. | Frozen preflight/preregistration, exact results or blocker, transition dispositions, currentness import record. |
 | P4 — Product reconciliation, release decision, and closure | pending | Reconcile all products and choose exact edition release, public release, blocked closure, or no-release without version or rights laundering. | Terminal declaration, release/block/no-release record, full validation and attestation receipts. |
@@ -259,6 +259,32 @@ dispositioned as `blocked`; P1 remains active for DOCX.
 - If Word, LibreOffice, or another local application is available, record the
   exact application-level inspection. Do not infer Microsoft Word approval from
   package validity or LibreOffice conversion.
+
+M5 completed 2026-07-13 with an `approved_exact_local_artifact` DOCX
+disposition. The exact tracked DOCX is 7,429,468 bytes with SHA-256
+`0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e`.
+Package inspection parses all 16 XML members in the 95-member OOXML package,
+resolves all relationship targets, confirms `en-US` metadata, 196 style
+definitions, 59 level-one headings, all 54 chapter titles in order, 3,405 list
+paragraphs, 33 tables, 79 described PNG drawings, 274 hyperlinks, 1,169
+bookmarks, one US-letter section with one-inch margins, and the explicit
+boundary that mathematical notation is preserved as text rather than claimed
+as native OMML. The pinned LibreOfficeDev Writer headless engine exported the
+exact artifact to a tagged, unencrypted 644-page PDF; page automation and
+internal review covered all 644 rasters in 33 contact sheets with no blank,
+low-ink, near-edge, replacement-character, chapter-order, clipping, collision,
+figure-placement, or table-overflow residual. The first candidate was rejected
+after its four-column glossary created an empty page and fragmented narrow
+columns; the final DOCX-only workspace linearizes all 21 glossary entries,
+preserves every field, and restores the canonical QMD after rendering. Two
+independent full renders converge byte-for-byte after stable OOXML dates,
+ZIP-member canonicalization, and contextual descriptions for all 79 drawings.
+Approval is limited to this digest-bound local DOCX. No Microsoft Word,
+LibreOffice GUI, Google Docs, GUI editing, tracked-changes, screen-reader,
+assistive-technology, device-family, independent-human, legal-WCAG, public
+deployment, tag, archive, rights, claim-support, model-quality, safety, AGI, or
+ASI approval is claimed. M5 is terminal and P1 is complete; EPUB and PDF remain
+honestly blocked on their separate application-inspection routes.
 
 ### Shared release boundary
 
@@ -419,7 +445,7 @@ every residual and non-claim visible, and no silent successor activation.
 | M2 — Reader source and format profiles frozen | completed | One 54-chapter source digest, pinned toolchain, prospective EPUB/PDF/DOCX profiles. |
 | M3 — EPUB dispositioned | completed | Exact EPUB artifact plus pass/block record and application/accessibility evidence. |
 | M4 — PDF dispositioned | completed | Exact PDF artifact plus page-complete inspection and pass/block record. |
-| M5 — DOCX dispositioned | pending | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |
+| M5 — DOCX dispositioned | completed | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |
 | M6 — Source and completeness residuals dispositioned | pending | Ten-chapter matrix plus trace/world-model/foundations/Tier-2 insertion or rejection artifacts. |
 | M7 — Evidence/currentness work dispositioned | pending | Protocol preflight and at most one flagship campaign; QCSA novelty reconciliation; one fresh Theseus currentness import or exact blocker. |
 | M8 — Products reconciled and cycle closed | pending | Full validation, exact release/block/no-release record, completion declaration, no silent successor. |

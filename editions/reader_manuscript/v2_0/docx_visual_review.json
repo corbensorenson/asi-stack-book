@@ -1,0 +1,53 @@
+{
+  "schema_version": "asi_stack.reader_docx_visual_review.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "review_date": "2026-07-13",
+  "state": "passed_internal_page_complete_review",
+  "artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.docx",
+  "artifact_sha256": "0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e",
+  "automated_report": {
+    "path": "editions/reader_manuscript/v2_0/docx_package_and_page_inspection.json",
+    "sha256": "f5be5f1bd5124c04261eee770b982adfa19893a86e3e5e05875ac58d95d44b16",
+    "state": "passed_package_and_page_automation_visual_review_pending"
+  },
+  "page_complete_review": {
+    "pages": 644,
+    "contact_sheets": 33,
+    "every_page_reviewed": true,
+    "review_surfaces": [
+      "all_644_LibreOffice-rendered_page_rasters_in_33_contact_sheets",
+      "full_resolution_pages_524_525_526_and_529_at_the_repaired_glossary_and_appendix_transition"
+    ],
+    "checks": [
+      "clipping",
+      "collision",
+      "blank_or_near_blank_pages",
+      "figure_placement_and_legibility",
+      "table_overflow",
+      "heading_drift",
+      "list_readability",
+      "glossary_continuity",
+      "source_appendix_path_wrapping"
+    ],
+    "state": "passed"
+  },
+  "repairs": [
+    {
+      "rejected_candidate": "the first page-complete LibreOffice render contained an empty page before the glossary and fragmented the four-column glossary table across narrow columns",
+      "repair": "the DOCX-only render workspace linearizes all 21 glossary entries while preserving every field and restores the canonical QMD after rendering",
+      "canonical_prose_changed": false,
+      "verification": "the repaired exact artifact renders to 644 pages with zero blank, low-ink, near-edge, or out-of-order chapter pages"
+    }
+  ],
+  "residual_defects": [],
+  "application_review_separate": true,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Internal page-complete visual review is not independent-human review.",
+    "LibreOffice-rendered raster review does not establish Microsoft Word, LibreOffice GUI, Google Docs, screen-reader, assistive-technology, device-family, or legal-WCAG behavior.",
+    "The DOCX-only glossary layout fallback does not change the canonical book prose or approve another format.",
+    "Visual quality review does not promote a chapter claim or establish model quality, safety, governance efficacy, AGI, or ASI.",
+    "This record is not a public artifact, deployment, tag, immutable site archive, rights grant, or support-state change."
+  ]
+}

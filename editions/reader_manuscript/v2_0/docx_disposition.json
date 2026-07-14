@@ -1,0 +1,66 @@
+{
+  "schema_version": "asi_stack.reader_format_disposition.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "format": "docx",
+  "decision": "approved_exact_local_artifact",
+  "decision_date": "2026-07-13",
+  "artifact": {
+    "path": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.docx",
+    "sha256": "0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e",
+    "bytes": 7429468,
+    "publication_state": "tracked_local_artifact_not_publicly_deployed"
+  },
+  "source_snapshot": {
+    "manifest": "editions/reader_manuscript/v2_0/manifest.json",
+    "manifest_sha256": "925064e578394feb5e02b6f90c83d3c59343f037ec4ee5ec73f6da373bf3ba9b",
+    "source_tree_sha256": "bfe8e766162a6ddf1a26b144fcdcd77623a11ad420d4bba9e04fb881bcb87753",
+    "chapter_count": 54
+  },
+  "profile": {
+    "path": "editions/reader_manuscript/v2_0/text_format_profile.json",
+    "sha256": "ada8d524c15d6f4b6d8c272e76e195b59ebedced98ae01be2dbc556d50ea9308",
+    "state": "approved_exact_local_artifact_after_package_application_engine_page_and_replay_review"
+  },
+  "inspection_evidence": [
+    {
+      "kind": "ooxml_package_and_page_automation",
+      "path": "editions/reader_manuscript/v2_0/docx_package_and_page_inspection.json",
+      "sha256": "f5be5f1bd5124c04261eee770b982adfa19893a86e3e5e05875ac58d95d44b16",
+      "state": "passed_package_and_page_automation_visual_review_pending"
+    },
+    {
+      "kind": "all_page_internal_visual_review",
+      "path": "editions/reader_manuscript/v2_0/docx_visual_review.json",
+      "sha256": "d382d51ce5574bca3e3a2c30f2fd54d981bedcf9bf529b2a3da515e3d80f8d32",
+      "state": "passed_internal_page_complete_review"
+    },
+    {
+      "kind": "pinned_libreoffice_writer_application_engine_review",
+      "path": "editions/reader_manuscript/v2_0/docx_application_review.json",
+      "sha256": "4f7b37e9547f5f3bbb4c99abcdcb411d08e38007ed89a6509938d53157f25334",
+      "state": "passed_pinned_libreoffice_headless_application_engine_review"
+    }
+  ],
+  "reproducibility": {
+    "path": "editions/reader_manuscript/v2_0/docx_reproducibility.json",
+    "sha256": "6ab622e83be12c15f0d7ef7464eb13d21fbae18ef779403f731c6b15e9b3c82e",
+    "state": "exact_replay_passed"
+  },
+  "blockers": [],
+  "rights_snapshot": {
+    "authority": "LICENSE.md",
+    "route": "all_rights_reserved_untagged_or_later_drafting_path",
+    "public_license_grant": false,
+    "public_artifact_authorized": false
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Approval is limited to this exact digest-bound tracked local DOCX and does not approve public deployment.",
+    "The passed office path is LibreOffice Writer headless export; no Microsoft Word, LibreOffice GUI, Google Docs, GUI editing, tracked-changes, or comments behavior is claimed.",
+    "No screen-reader, assistive-technology, device-family, independent-human, or legal-WCAG review is claimed.",
+    "The DOCX-only glossary layout fallback preserves canonical prose and does not approve another format.",
+    "The exact local DOCX is not a public release, deployment, tag, immutable site archive, or license grant.",
+    "The format artifact and its checks cannot promote chapter claims or establish model quality, safety, readiness, governance efficacy, AGI, or ASI."
+  ]
+}

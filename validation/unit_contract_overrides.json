@@ -3256,6 +3256,57 @@
       "prohibited_inference": "Structural, visual, and reproducibility success do not establish Preview behavior, assistive-technology or device review, independent-human review, publication approval, rights, model quality, safety, AGI, ASI, or support movement.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_automated_and_visual_artifact_audit_with_blocked_application_route_not_independent"
+    },
+    {
+      "script": "validate_post_v2_3_reader_docx_disposition.py",
+      "args": [],
+      "input_contract": "The exact frozen-source v2.0 DOCX, generic format-disposition schema, all-member OOXML and relationship inspection, all-page pinned LibreOffice Writer headless export and visual review, two byte-identical full renders, bounded DOCX-only glossary repair, terminal P1/M5 status, rights snapshot, and no support or release effect.",
+      "input_artifacts": [
+        "scripts/validate_post_v2_3_reader_docx_disposition.py",
+        "scripts/audit_post_v2_3_reader_docx_artifact.py",
+        "scripts/render_curated_reader_formats.py",
+        "scripts/extract_rendered_mermaid_svgs.js",
+        "schemas/reader_format_disposition.schema.json",
+        "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.docx",
+        "editions/reader_manuscript/v2_0/docx_disposition.json",
+        "editions/reader_manuscript/v2_0/docx_package_and_page_inspection.json",
+        "editions/reader_manuscript/v2_0/docx_visual_review.json",
+        "editions/reader_manuscript/v2_0/docx_application_review.json",
+        "editions/reader_manuscript/v2_0/docx_reproducibility.json",
+        "editions/reader_manuscript/v2_0/text_format_profile.json",
+        "editions/reader_manuscript/v2_0/format_review_matrix.json",
+        "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx",
+        "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
+        "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md",
+        "LICENSE.md"
+      ],
+      "output_contract": "Reject artifact/profile/evidence digest drift, OOXML/member/relationship/style/heading/list/table/link/media/alt/language/page denominator failure, incomplete visual review, false Word or GUI evidence, nondeterministic replay, glossary-repair laundering, matrix/roadmap disagreement, public-rights laundering, support movement, or release effect.",
+      "output_assertions": [
+        "one exact 7,429,468-byte DOCX",
+        "95 OOXML members and 16 parsed XML members",
+        "79 described PNG drawings and 274 hyperlinks",
+        "54 ordered chapter titles and 1,169 bookmarks",
+        "644 reviewed office-engine pages in 33 contact sheets",
+        "two byte-identical full renders",
+        "approved exact local terminal P1/M5 disposition",
+        "nine rejecting mutations"
+      ],
+      "claim_scope": "Exact local DOCX package, pinned LibreOffice Writer headless application-engine path, page-complete internal review, deterministic replay, and bounded local approval only.",
+      "negative_controls": "validator_owned_and_exact_artifact_bound",
+      "negative_control_cases": [
+        "public-approval laundering",
+        "artifact digest drift",
+        "OOXML denominator failure",
+        "blank-page regression",
+        "incomplete visual review",
+        "Microsoft Word evidence laundering",
+        "replay inequality",
+        "M5 reopening",
+        "support promotion"
+      ],
+      "prohibited_inference": "Package, application-engine, visual, and reproducibility success do not establish Microsoft Word, LibreOffice GUI, Google Docs, assistive-technology, device-family, independent-human, legal-WCAG, public publication, rights, model quality, safety, AGI, ASI, or support movement.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_automated_application_engine_and_visual_artifact_audit_not_independent"
     }
   ],
   "non_claims": [

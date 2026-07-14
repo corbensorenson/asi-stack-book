@@ -1,0 +1,50 @@
+{
+  "schema_version": "asi_stack.reader_docx_application_review.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "review_date": "2026-07-13",
+  "state": "passed_pinned_libreoffice_headless_application_engine_review",
+  "artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.docx",
+  "artifact_sha256": "0ccadd213fd1c8489d40eaa8dd80090125f88be4190b24e2e40efdb7baf1fa7e",
+  "selected_application_path": {
+    "name": "LibreOfficeDev Writer",
+    "version": "LibreOfficeDev 26.8.0.0.alpha0 (AARCH64)",
+    "mode": "headless Writer PDF export through the documents-skill render path",
+    "command": "/Users/corbensorenson/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 /Users/corbensorenson/.codex/plugins/cache/openai-primary-runtime/documents/26.709.11516/skills/documents/render_docx.py editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.docx --output_dir build/post_v2_3_docx_review/repaired_exact --dpi 72 --emit_pdf"
+  },
+  "observed_conversion": {
+    "pdf_sha256": "6b81d3228fdfdeea21821c617431e911aba7d69d06203cd5ddd5277e91baf6bb",
+    "pdf_bytes": 8281239,
+    "pages": 644,
+    "page_size": "612 x 792 pts (letter)",
+    "tagged": true,
+    "encrypted": false,
+    "chapter_titles_checked_in_order": 54,
+    "replacement_characters": 0,
+    "blank_pages": 0,
+    "near_edge_pages": 0,
+    "application_engine_path_passed": true
+  },
+  "application_checks": {
+    "exact_artifact_open_and_export": "passed_in_pinned_LibreOffice_Writer_headless_engine",
+    "page_complete_rendering": "passed_644_of_644_rasters",
+    "chapter_order": "passed_54_of_54_titles",
+    "page_geometry": "passed_US_letter_one_inch_source_section",
+    "GUI_navigation_and_editing": "not_claimed",
+    "Microsoft_Word": "not_performed",
+    "Google_Docs": "not_performed",
+    "assistive_technology": "not_performed"
+  },
+  "cleared_blockers": [
+    "pinned_office_conversion_not_completed",
+    "page_complete_office_engine_render_not_reviewed"
+  ],
+  "remaining_blockers": [],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "The passed application-engine path is LibreOffice Writer headless export, not a LibreOffice GUI interaction claim.",
+    "No Microsoft Word, Google Docs, GUI editing, tracked-changes, comments, screen-reader, assistive-technology, device-family, independent-human, or legal-WCAG review is claimed.",
+    "Application-engine success approves only the digest-bound local DOCX when the separate package, visual, and reproducibility gates also pass.",
+    "This record does not create public publication, deployment, tag, archive, rights, evidence, model-quality, safety, AGI, ASI, or support effects."
+  ]
+}
