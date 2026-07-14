@@ -2,6 +2,12 @@
 
 ## 2026-07-13 - Audit the post-v2.3 clean handoff boundary
 
+- Added deterministic EPUB container canonicalization after the first
+  post-freeze render showed source/profile-equivalent but byte-different ZIP
+  output. The canonicalizer fixes member order, timestamps, permissions,
+  compression level, and the required first/uncompressed `mimetype` entry.
+  EPUB approval remains closed until a second independent post-freeze render
+  reproduces the canonical digest and all content/application gates pass.
 - Completed M2 with an exact 54-chapter source and multi-format profile lock at
   `editions/reader_manuscript/v2_0/text_format_profile.json`. The profile pins
   the source/profile digests, locale, toolchain, bounded static-Mermaid route,

@@ -23,6 +23,7 @@ import shutil
 import subprocess
 import tempfile
 from typing import Iterator
+from zipfile import ZIP_DEFLATED, ZIP_STORED, ZipFile, ZipInfo
 
 import build_curated_reader_edition
 
@@ -132,6 +133,23 @@ def preserve_artifacts(output_dir: Path, fmt: str, artifacts: list[str]) -> list
         shutil.copy2(src, dst)
         preserved.append(str(dst.relative_to(output_dir)))
     return sorted(preserved)
+
+
+def canonicalize_epub(path: Path) -> dict[str, object]:
+    canonical = path.with_suffix(".canonical.epub")
+    with ZipFile(path) as source:
+        names = source.namelist()
+        ordered = (["mimetype"] if "mimetype" in names else []) + sorted(
+            name for name in names if name != "mimetype"
+        )
+        with ZipFile(canonical, "w") as target:
+            for name in ordered:
+                info = ZipInfo(name, (1980, 1, 1, 0, 0, 0))
+                info.compress_type = ZIP_STORED if name == "mimetype" else ZIP_DEFLATED
+                info.external_attr = 0o644 << 16
+                target.writestr(info, source.read(name), compresslevel=9)
+    canonical.replace(path)
+    return {"applied": True, "member_count": len(ordered), "mimetype_first_and_stored": ordered[:1] == ["mimetype"]}
 
 
 def convert_svg_to_png(svg_path: Path, png_path: Path) -> str:
@@ -540,6 +558,11 @@ def run_render(output_dir: Path, fmt: str, timeout_seconds: int) -> dict[str, ob
         log_file.seek(0)
         output = log_file.read()
     artifacts = find_artifacts(output_dir, fmt) if returncode == 0 else []
+    epub_canonicalization: dict[str, object] = {"applied": False}
+    if fmt == "epub" and artifacts:
+        if len(artifacts) != 1:
+            raise RuntimeError(f"expected one EPUB artifact before canonicalization, found {len(artifacts)}")
+        epub_canonicalization = canonicalize_epub(output_dir / artifacts[0])
     preserved_artifacts = preserve_artifacts(output_dir, fmt, artifacts) if artifacts else []
     warning_lines = [line for line in output.splitlines() if "[WARNING]" in line]
     svg_conversion_warning_count = sum("Could not convert image" in line for line in warning_lines)
@@ -556,6 +579,7 @@ def run_render(output_dir: Path, fmt: str, timeout_seconds: int) -> dict[str, ob
         "svg_conversion_warning_count": svg_conversion_warning_count,
         "raster_diagram_fallbacks": fallback_info,
         "pdf_mermaid_static_fallbacks": mermaid_fallback_info,
+        "epub_canonicalization": epub_canonicalization,
         "log_excerpt": output[-4000:],
     }
 
