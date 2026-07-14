@@ -1,0 +1,69 @@
+{
+  "schema_version": "asi_stack.reader_format_disposition.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "format": "pdf",
+  "decision": "blocked",
+  "decision_date": "2026-07-13",
+  "artifact": {
+    "path": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.pdf",
+    "sha256": "55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676",
+    "bytes": 13897492,
+    "publication_state": "tracked_local_artifact_not_publicly_deployed"
+  },
+  "source_snapshot": {
+    "manifest": "editions/reader_manuscript/v2_0/manifest.json",
+    "manifest_sha256": "925064e578394feb5e02b6f90c83d3c59343f037ec4ee5ec73f6da373bf3ba9b",
+    "source_tree_sha256": "bfe8e766162a6ddf1a26b144fcdcd77623a11ad420d4bba9e04fb881bcb87753",
+    "chapter_count": 54
+  },
+  "profile": {
+    "path": "editions/reader_manuscript/v2_0/text_format_profile.json",
+    "sha256": "e508abba29bca0644629d49efcc51ea3287885f9e2c35b1ac634a136f4638e07",
+    "state": "blocked_preview_application_inspection_after_exact_structural_visual_replay_candidate"
+  },
+  "inspection_evidence": [
+    {
+      "kind": "all_page_structural_text_bbox_and_raster_inspection",
+      "path": "editions/reader_manuscript/v2_0/pdf_structural_and_page_inspection.json",
+      "sha256": "45508d7bb3ff0a46322e55f3a919d5753480e7bf16e98e7f1bacb5dd1a6715d7",
+      "state": "passed_automated_page_complete_visual_review_pending"
+    },
+    {
+      "kind": "all_page_and_native_resolution_diagram_visual_review",
+      "path": "editions/reader_manuscript/v2_0/pdf_visual_review.json",
+      "sha256": "f930750b3b29fe68494a303241f97d73fdca46bc0d57a2fc9dba94fef865834f",
+      "state": "passed_internal_page_complete_and_native_diagram_review"
+    },
+    {
+      "kind": "preview_application_inspection",
+      "path": "editions/reader_manuscript/v2_0/pdf_application_review.json",
+      "sha256": "4e7ae68462b7b2dc05be31acc4d5aa6e962bf743f790e9e245d8c8b33ecc325f",
+      "state": "blocked_application_inspection"
+    }
+  ],
+  "reproducibility": {
+    "path": "editions/reader_manuscript/v2_0/pdf_reproducibility.json",
+    "sha256": "ae2aff5ebc2e3c93771dca01b34376a3a302b4853ff9880423bf77154aaeddda",
+    "state": "exact_replay_passed"
+  },
+  "blockers": [
+    "preview_computer_use_native_pipe_unavailable",
+    "exact_pdf_application_open_not_observed",
+    "preview_navigation_bookmark_link_search_selection_and_zoom_behavior_not_observed"
+  ],
+  "rights_snapshot": {
+    "authority": "LICENSE.md",
+    "route": "all_rights_reserved_untagged_or_later_drafting_path",
+    "public_license_grant": false,
+    "public_artifact_authorized": false
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This decision blocks PDF approval even though the exact artifact passes structural automation, page-complete internal visual review, and deterministic replay.",
+    "No Preview open, navigation, bookmark, link, search, selection/copy, zoom, fit, or rendering behavior is claimed.",
+    "No screen-reader, assistive-technology, Microsoft application, device-family, independent-human, or legal-WCAG review is claimed.",
+    "The exact local PDF is not a public release, deployment, tag, immutable site archive, or license grant.",
+    "The format artifact and its checks cannot promote chapter claims or establish model quality, safety, readiness, governance efficacy, AGI, or ASI."
+  ]
+}

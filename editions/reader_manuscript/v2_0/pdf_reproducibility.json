@@ -1,0 +1,69 @@
+{
+  "schema_version": "asi_stack.reader_pdf_reproducibility.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "decision_date": "2026-07-13",
+  "state": "exact_replay_passed",
+  "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats pdf --timeout-seconds 600 --stop-on-fail",
+  "frozen_inputs": {
+    "manifest_sha256": "925064e578394feb5e02b6f90c83d3c59343f037ec4ee5ec73f6da373bf3ba9b",
+    "source_tree_sha256": "bfe8e766162a6ddf1a26b144fcdcd77623a11ad420d4bba9e04fb881bcb87753",
+    "text_format_profile_sha256": "e508abba29bca0644629d49efcc51ea3287885f9e2c35b1ac634a136f4638e07",
+    "renderer_sha256": "ad5db30d9b230553bcf264fdb1f4810c6c7b00c1893c2b82ff1c6e85e5b12bb0",
+    "extractor_sha256": "ccddedfd50d7606598be3e6bc32aa7a8d7d530bccb5cc446c634be5e3f874f35",
+    "pinned_rasters": [
+      {
+        "reference": "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-intent-to-execution-contracts-mermaid-02.png",
+        "sha256": "40bf74dfda485f231e4dbfc15e6eba9cb06b812e2c072a2a06162ce8ed73f12b"
+      },
+      {
+        "reference": "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-system-boundaries-and-authority-mermaid-02.png",
+        "sha256": "2217afd707207efd8dcffd5ecb7a16d590a6ab2dfe804674a11daea33a065746"
+      }
+    ]
+  },
+  "replays": [
+    {
+      "id": "pdf-independent-render-b",
+      "independent_full_quarto_render": true,
+      "precanonical_sha256": "93a0625680e8c7f91b9c93f4f1ecbcb95e61d75a9413c5e397ea3b9176e274f2",
+      "precanonical_bytes": 13897492,
+      "canonical_sha256": "55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676",
+      "canonical_bytes": 13897492,
+      "structural_state": "passed_automated_page_complete_visual_review_pending"
+    },
+    {
+      "id": "pdf-independent-render-c-with_diagnosed_pins",
+      "independent_full_quarto_render": true,
+      "precanonical_sha256": "f32147c6e446bfe669f1f1f3944ca0930f0ef178776dac1fab816b8ac16550e3",
+      "precanonical_bytes": 13897492,
+      "canonical_sha256": "55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676",
+      "canonical_bytes": 13897492,
+      "structural_state": "passed_automated_page_complete_visual_review_pending"
+    }
+  ],
+  "canonicalization": {
+    "date_replacements": 2,
+    "trailer_id_replacements": 1,
+    "xmp_date_replacements": 2,
+    "xmp_id_replacements": 1,
+    "stable_pdf_date": "20260713000000-05'00",
+    "stable_xmp_date": "2026-07-13T00:00:00-05:00",
+    "stable_modified_id": "n/jdmDqZ+k+kIZESAR6hwA==",
+    "fixed_length_only": true
+  },
+  "variance_diagnosis": {
+    "pre_pin_differing_embedded_images": 2,
+    "otherwise_identical_embedded_images": true,
+    "cause": "Two Mermaid/RoughJS state diagrams changed across full renders while all other embedded images and inspected structure remained stable.",
+    "remedy": "Two exact profile-bound PNG references are digest-verified and substituted before Typst rendering; fixed-length metadata canonicalization then stabilizes the render-time PDF identity surface."
+  },
+  "exact_replay_equal": true,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Exact PDF replay does not establish Preview application behavior.",
+    "Pinned state-diagram rasters are valid only for this frozen 54-chapter source and profile.",
+    "Fixed-length metadata canonicalization does not change page content or substitute for structural and visual review.",
+    "Reproducibility does not approve publication, public deployment, rights, model quality, safety, AGI, ASI, or evidence promotion."
+  ]
+}

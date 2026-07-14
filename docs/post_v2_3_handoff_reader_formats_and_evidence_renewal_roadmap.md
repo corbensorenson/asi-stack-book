@@ -230,6 +230,25 @@ terminally dispositioned as `blocked`; P1 remains active for PDF and DOCX.
 - Inspect risk pages in a real local PDF viewer and preserve the exact viewer,
   command, screenshots, page list, and residuals.
 
+M4 completed 2026-07-13 with a blocked PDF disposition. The exact tracked,
+US-letter PDF is 13,897,492 bytes with SHA-256
+`55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676`.
+Automated inspection covers all 565 pages and 270,359 word boxes, confirms four
+embedded font rows, 1,142 outline entries and named destinations, 1,418 link
+annotations with none unresolved, all 54 chapter titles in order, no
+replacement characters, no live-only markers, no blank, low-ink, near-edge,
+or out-of-bounds content, and 29 page-complete contact sheets. Internal visual
+review covered every page plus all 68 native-resolution Mermaid figures; two
+corrupted rasterization candidates and four root-viewBox geometry defects were
+rejected and repaired. Two independent full renders converge byte-for-byte
+after two diagnosed Mermaid/RoughJS state-diagram pins and fixed-length Typst
+date, XMP instance, and trailer-ID canonicalization. Preview inspection remains
+blocked because both native control-bridge routes failed before application
+state capture. No Preview navigation, bookmark, link, search, selection/copy,
+zoom/fit, assistive-technology, Microsoft application, independent-human,
+publication, rights, or support-state approval is claimed. M4 is terminally
+dispositioned as `blocked`; P1 remains active for DOCX.
+
 ### DOCX gate
 
 - Validate OOXML package integrity, styles, headings, section breaks, lists,
@@ -399,7 +418,7 @@ every residual and non-claim visible, and no silent successor activation.
 | M1 — Completed cycle cleanly handed off | completed | Reviewed commit series, clean tree or exact local residual inventory, remote branch, observed CI/Pages result. |
 | M2 — Reader source and format profiles frozen | completed | One 54-chapter source digest, pinned toolchain, prospective EPUB/PDF/DOCX profiles. |
 | M3 — EPUB dispositioned | completed | Exact EPUB artifact plus pass/block record and application/accessibility evidence. |
-| M4 — PDF dispositioned | pending | Exact PDF artifact plus page-complete inspection and pass/block record. |
+| M4 — PDF dispositioned | completed | Exact PDF artifact plus page-complete inspection and pass/block record. |
 | M5 — DOCX dispositioned | pending | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |
 | M6 — Source and completeness residuals dispositioned | pending | Ten-chapter matrix plus trace/world-model/foundations/Tier-2 insertion or rejection artifacts. |
 | M7 — Evidence/currentness work dispositioned | pending | Protocol preflight and at most one flagship campaign; QCSA novelty reconciliation; one fresh Theseus currentness import or exact blocker. |

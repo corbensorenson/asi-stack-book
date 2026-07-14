@@ -61,12 +61,24 @@ function candidateBrowserExecutables() {
 }
 
 async function launchChromium(playwright) {
+  const launchOptions = {
+    headless: true,
+    args: [
+      "--disable-background-networking",
+      "--disable-component-update",
+      "--disable-dev-shm-usage",
+      "--disable-extensions",
+      "--disable-sync",
+      "--no-default-browser-check",
+      "--no-first-run",
+    ],
+  };
   try {
-    return await playwright.chromium.launch({ headless: true });
+    return await playwright.chromium.launch(launchOptions);
   } catch (managedError) {
     for (const executablePath of candidateBrowserExecutables()) {
       try {
-        return await playwright.chromium.launch({ headless: true, executablePath });
+        return await playwright.chromium.launch({ ...launchOptions, executablePath });
       } catch (_) {
         // Keep trying candidates.
       }
@@ -85,13 +97,14 @@ async function main() {
   try {
     const page = await browser.newPage({ viewport: { width: 1600, height: 1200 } });
     await page.goto(pathToFileURL(path.resolve(htmlPath)).href, {
-      waitUntil: "networkidle",
-      timeout: 60000,
+      waitUntil: "domcontentloaded",
+      timeout: 30000,
     });
     await page.waitForFunction(
       () => document.querySelectorAll('svg[id^="mermaid-"], pre.mermaid svg, .mermaid svg').length > 0,
-      { timeout: 60000 }
+      { timeout: 30000 }
     );
+    await page.waitForTimeout(250);
     const svgs = await page.evaluate(() =>
       Array.from(document.querySelectorAll('svg[id^="mermaid-"], pre.mermaid svg, .mermaid svg')).map((svg) =>
         svg.outerHTML
@@ -99,7 +112,10 @@ async function main() {
     );
     process.stdout.write(JSON.stringify(svgs));
   } finally {
-    await browser.close();
+    await Promise.race([
+      browser.close(),
+      new Promise((resolve) => setTimeout(resolve, 5000)),
+    ]);
   }
 }
 

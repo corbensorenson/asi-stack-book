@@ -2,6 +2,19 @@
 
 ## 2026-07-13 - Audit the post-v2.3 clean handoff boundary
 
+- Completed M4 with an honest blocked PDF disposition for the exact tracked
+  54-chapter artifact: 13,897,492 bytes, 565 US-letter pages, SHA-256
+  `55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676`.
+  Page-complete automation covers 270,359 word boxes, four embedded fonts,
+  1,142 outline destinations, 1,418 resolved link annotations, ordered chapter
+  titles, text extraction, and every page raster. Internal visual review covers
+  all 29 page contact sheets and all 68 native-resolution Mermaid figures. Two
+  corrupted raster candidates and four root-viewBox defects were rejected and
+  repaired; exact replay now passes with two diagnosed state-diagram pins and
+  fixed-length Typst metadata canonicalization. Preview application inspection
+  remains blocked because both native control-bridge routes failed before state
+  capture; no Preview, assistive-technology, independent-human, publication,
+  rights, release, or support-state approval is claimed.
 - Completed M3 with an honest blocked EPUB disposition for the exact tracked
   54-chapter artifact: 5,505,557 bytes, SHA-256
   `bcc3e3c13e4c3b26a16eb1d84ea93bee7765b8b0c6c4660c87d24f94c1eb7245`.

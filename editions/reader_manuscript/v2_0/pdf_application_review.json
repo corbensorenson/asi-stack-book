@@ -1,0 +1,53 @@
+{
+  "schema_version": "asi_stack.reader_pdf_application_review.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "review_date": "2026-07-13",
+  "state": "blocked_application_inspection",
+  "artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.pdf",
+  "artifact_sha256": "55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676",
+  "selected_application": {
+    "name": "Preview",
+    "path": "/System/Applications/Preview.app",
+    "bundle_identifier": "com.apple.Preview"
+  },
+  "attempts": [
+    {
+      "route": "clean_node_repl_then_list_apps",
+      "operation": "skyPreview.list_apps()",
+      "result": "failed_before_application_state_capture",
+      "error": "Sky Computer Use native pipe startup failed"
+    },
+    {
+      "route": "clean_node_repl_then_bundle_identifier_state",
+      "operation": "skyPreview.get_app_state({ app: 'com.apple.Preview' })",
+      "result": "failed_before_application_state_capture",
+      "error": "Sky Computer Use native pipe startup failed"
+    }
+  ],
+  "application_checks": {
+    "exact_artifact_open": "not_performed_native_bridge_unavailable",
+    "page_navigation": "not_performed_native_bridge_unavailable",
+    "bookmark_outline_navigation": "not_performed_native_bridge_unavailable",
+    "internal_link_activation": "not_performed_native_bridge_unavailable",
+    "external_link_surface": "not_performed_native_bridge_unavailable",
+    "search": "not_performed_native_bridge_unavailable",
+    "selection_and_copy": "not_performed_native_bridge_unavailable",
+    "zoom_and_fit": "not_performed_native_bridge_unavailable",
+    "risk_page_view": "not_performed_native_bridge_unavailable"
+  },
+  "automation_substitution": false,
+  "cleared_blockers": [],
+  "remaining_blockers": [
+    "preview_computer_use_native_pipe_unavailable",
+    "exact_pdf_application_open_not_observed",
+    "preview_navigation_bookmark_link_search_selection_and_zoom_behavior_not_observed"
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "The structural, text, link, outline, font, raster, and internal visual checks do not substitute for Preview application inspection.",
+    "No Preview open, navigation, bookmark, internal-link, search, selection/copy, zoom, fit, or rendering behavior is claimed.",
+    "No screen-reader, assistive-technology, Microsoft application, device-family, independent-human, or legal-WCAG review is claimed.",
+    "This blocked application record is not publication approval, a public artifact, a rights grant, a release, or a support-state change."
+  ]
+}

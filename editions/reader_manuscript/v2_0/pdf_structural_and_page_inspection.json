@@ -1,0 +1,119 @@
+{
+  "schema_version": "asi_stack.reader_pdf_structural_page_inspection.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "state": "passed_automated_page_complete_visual_review_pending",
+  "artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.pdf",
+  "sha256": "55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676",
+  "bytes": 13897492,
+  "pdf_objects": {
+    "pages": 565,
+    "encrypted": false,
+    "page_sizes_points": [
+      [
+        612.0,
+        792.0
+      ]
+    ],
+    "metadata_title": "The ASI Stack",
+    "metadata_author": "Corben Sorenson",
+    "outline_entries": 1142,
+    "outline_first": [
+      "Reader Edition Baseline",
+      "Reader Edition Note",
+      "Core Thesis",
+      "Reading Path",
+      "Preface"
+    ],
+    "outline_last": [
+      "57.6.210 Don't Hallucinate, Abstain: Identifying LLM Knowledge Gaps via Multi-LLM Collaboration",
+      "57.6.211 MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+      "57.6.212 Position: LLM Unlearning Benchmarks are Weak Measures of Progress",
+      "57.6.213 OpenUnlearning: Accelerating LLM Unlearning via Unified Benchmarking of Methods and Metrics",
+      "57.7 External Citation Policy"
+    ],
+    "link_annotations": 1418,
+    "external_links": 273,
+    "internal_links": 1145,
+    "unresolved_link_annotations": 0,
+    "named_destinations": 1142
+  },
+  "fonts": {
+    "font_rows": 4,
+    "embedded_no_rows": 0,
+    "subset_no_rows": 0,
+    "font_names": [
+      "FJVSEJ+LibertinusSerif-Italic-Identity-H",
+      "IJKVUI+DejaVuSansMono",
+      "JOYLEH+LibertinusSerif-Regular-Identity-H",
+      "PPPPYT+LibertinusSerif-Bold-Identity-H"
+    ],
+    "raw_rows": [
+      "PPPPYT+LibertinusSerif-Bold-Identity-H CID Type 0C Identity-H yes yes yes 25307 0",
+      "JOYLEH+LibertinusSerif-Regular-Identity-H CID Type 0C Identity-H yes yes yes 25313 0",
+      "IJKVUI+DejaVuSansMono CID TrueType Identity-H yes yes yes 25319 0",
+      "FJVSEJ+LibertinusSerif-Italic-Identity-H CID Type 0C Identity-H yes yes yes 25325 0"
+    ]
+  },
+  "text": {
+    "pages_checked": 565,
+    "characters_checked": 1719152,
+    "replacement_characters": 0,
+    "minimum_page_characters": 691,
+    "maximum_page_characters": 7498,
+    "pages_under_300_characters": [],
+    "chapter_titles_checked_in_order": 54,
+    "missing_or_out_of_order_chapter_titles": [],
+    "live_marker_hits": []
+  },
+  "bbox": {
+    "pages_checked": 565,
+    "word_boxes_checked": 270359,
+    "out_of_bounds_word_boxes": 0
+  },
+  "raster": {
+    "dpi": 72,
+    "pages_checked": 565,
+    "blank_pages": [],
+    "low_ink_pages": [],
+    "near_edge_pages": [],
+    "minimum_nonwhite_pixels": 15655,
+    "maximum_nonwhite_pixels": 146199,
+    "contact_sheets": [
+      "build/post_v2_3_pdf_review/contact_sheets/contact-001.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-002.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-003.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-004.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-005.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-006.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-007.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-008.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-009.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-010.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-011.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-012.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-013.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-014.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-015.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-016.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-017.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-018.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-019.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-020.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-021.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-022.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-023.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-024.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-025.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-026.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-027.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-028.png",
+      "build/post_v2_3_pdf_review/contact_sheets/contact-029.png"
+    ],
+    "risk_pages": []
+  },
+  "errors": [],
+  "visual_review": "pending_contact_sheet_and_preview_risk_page_review",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "review_boundary": "Every PDF page was text-, bbox-, and raster-processed. Contact sheets and risk pages still require visual review; Preview application review is separate. This is not independent-human, assistive-technology, legal-WCAG, release, or support-state approval."
+}

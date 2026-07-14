@@ -11,6 +11,7 @@ blockers, or create an edition release record.
 from __future__ import annotations
 
 import argparse
+import base64
 from contextlib import contextmanager
 from datetime import datetime, timezone
 import hashlib
@@ -24,6 +25,7 @@ import signal
 import shutil
 import subprocess
 import tempfile
+import time
 from typing import Iterator
 import uuid
 import xml.etree.ElementTree as ET
@@ -48,11 +50,24 @@ TEXT_FORMAT_PROFILE_NAME = "text_format_profile.json"
 DIAGRAM_SVG_REF_RE = re.compile(r"(\]\()(\.\./assets/diagrams/)([^)]+?)\.svg(\))")
 MERMAID_BLOCK_RE = re.compile(r"```\{mermaid\}\s*\n([\s\S]*?)\n```")
 MERMAID_SVG_RE = re.compile(r"""<svg\b(?=[^>]*\bid=["']mermaid-\d+["'])[\s\S]*?</svg>""")
-VIEWBOX_RE = re.compile(r"""viewBox=["']\s*0\s+0\s+([0-9.]+)\s+([0-9.]+)\s*["']""")
+ROOT_VIEWBOX_RE = re.compile(
+    r"""<svg\b[^>]*\bviewBox=["']\s*[-0-9.]+\s+[-0-9.]+\s+([0-9.]+)\s+([0-9.]+)\s*["']""",
+    re.IGNORECASE,
+)
 CHROME_CANDIDATES = (
     "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     "/Applications/Chromium.app/Contents/MacOS/Chromium",
 )
+PDF_PINNED_MERMAID_RASTERS = {
+    "chapters-intent-to-execution-contracts-mermaid-02.png": (
+        "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-intent-to-execution-contracts-mermaid-02.png",
+        "40bf74dfda485f231e4dbfc15e6eba9cb06b812e2c072a2a06162ce8ed73f12b",
+    ),
+    "chapters-system-boundaries-and-authority-mermaid-02.png": (
+        "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-system-boundaries-and-authority-mermaid-02.png",
+        "2217afd707207efd8dcffd5ecb7a16d590a6ab2dfe804674a11daea33a065746",
+    ),
+}
 
 
 def render_environment() -> dict[str, str]:
@@ -97,6 +112,7 @@ def apply_frozen_text_format_profile(output_dir: Path, manifest_path: Path) -> d
         "  pdf:\n    toc: true\n    number-sections: true\n"
         "    pdf-engine: typst\n    papersize: us-letter\n"
         "    mainfont: Libertinus Serif\n    monofont: DejaVu Sans Mono\n"
+        "    linkcolor: \"2f4f88\"\n"
     )
     if docx_old not in text or pdf_old not in text:
         raise RuntimeError("generated Quarto format blocks drifted from frozen profile patch points")
@@ -259,6 +275,67 @@ def canonicalize_epub(path: Path, manifest_path: Path) -> dict[str, object]:
     }
 
 
+def canonicalize_pdf(path: Path, manifest_path: Path) -> dict[str, object]:
+    """Stabilize Typst's render-time PDF dates and derived trailer identifier."""
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    profile_path = manifest_path.parent / TEXT_FORMAT_PROFILE_NAME
+    profile = json.loads(profile_path.read_text(encoding="utf-8")) if profile_path.is_file() else {}
+    freeze_date = str(profile.get("freeze_date", "1980-01-01")).replace("-", "")
+    edition_id = str(manifest.get("edition_id", "asi-stack-reader"))
+    stable_date = f"{freeze_date}000000-05'00".encode("ascii")
+    stable_xmp_date = (
+        f"{profile.get('freeze_date', '1980-01-01')}T00:00:00-05:00".encode("ascii")
+    )
+    stable_modified_id = base64.b64encode(
+        hashlib.sha256(f"{edition_id}:pdf-trailer-id".encode("utf-8")).digest()[:16]
+    )
+    payload = path.read_bytes()
+    payload, date_replacements = re.subn(
+        rb"(/(?:ModDate|CreationDate) \(D:)\d{14}[+-]\d{2}'\d{2}(\))",
+        lambda match: match.group(1) + stable_date + match.group(2),
+        payload,
+    )
+    payload, id_replacements = re.subn(
+        rb"(/ID \[\([^)]*\) )\([^)]*\)(\])",
+        lambda match: match.group(1) + b"(" + stable_modified_id + b")" + match.group(2),
+        payload,
+        count=1,
+    )
+    payload, xmp_date_replacements = re.subn(
+        rb"(<xmp:(?:ModifyDate|CreateDate)>)[^<]+(</xmp:(?:ModifyDate|CreateDate)>)",
+        lambda match: match.group(1) + stable_xmp_date + match.group(2),
+        payload,
+    )
+    payload, xmp_id_replacements = re.subn(
+        rb"(<xmpMM:InstanceID>)[^<]+(</xmpMM:InstanceID>)",
+        lambda match: match.group(1) + stable_modified_id + match.group(2),
+        payload,
+        count=1,
+    )
+    if (
+        date_replacements != 2
+        or id_replacements != 1
+        or xmp_date_replacements != 2
+        or xmp_id_replacements != 1
+    ):
+        raise RuntimeError(
+            "unexpected PDF canonicalization surface: "
+            f"dates={date_replacements}, trailer_ids={id_replacements}, "
+            f"xmp_dates={xmp_date_replacements}, xmp_ids={xmp_id_replacements}"
+        )
+    path.write_bytes(payload)
+    return {
+        "applied": True,
+        "date_replacements": date_replacements,
+        "trailer_id_replacements": id_replacements,
+        "xmp_date_replacements": xmp_date_replacements,
+        "xmp_id_replacements": xmp_id_replacements,
+        "stable_pdf_date": stable_date.decode("ascii"),
+        "stable_xmp_date": stable_xmp_date.decode("ascii"),
+        "stable_modified_id": stable_modified_id.decode("ascii"),
+    }
+
+
 def convert_svg_to_png(svg_path: Path, png_path: Path) -> str:
     """Create a PNG fallback for non-HTML rendering without changing source assets."""
     png_path.parent.mkdir(parents=True, exist_ok=True)
@@ -327,18 +404,39 @@ def rendered_mermaid_svgs(chrome_binary: str, html_path: Path) -> list[str]:
     helper = ROOT / "scripts" / "extract_rendered_mermaid_svgs.js"
     env = os.environ.copy()
     env["PLAYWRIGHT_CHROMIUM_EXECUTABLE"] = chrome_binary
-    try:
-        result = subprocess.run(
-            [node, str(helper), str(html_path.resolve())],
-            check=False,
+    failures: list[str] = []
+    result: subprocess.CompletedProcess[str] | None = None
+    command = [node, str(helper), str(html_path.resolve())]
+    for attempt in range(1, 4):
+        process = subprocess.Popen(
+            command,
             text=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             env=env,
-            timeout=120,
+            start_new_session=True,
         )
-    except subprocess.TimeoutExpired as exc:
-        raise RuntimeError(f"Playwright Mermaid SVG extraction timed out for {html_path.name}") from exc
+        try:
+            stdout, stderr = process.communicate(timeout=75)
+            result = subprocess.CompletedProcess(command, process.returncode, stdout, stderr)
+        except subprocess.TimeoutExpired:
+            os.killpg(process.pid, signal.SIGTERM)
+            try:
+                stdout, stderr = process.communicate(timeout=5)
+            except subprocess.TimeoutExpired:
+                os.killpg(process.pid, signal.SIGKILL)
+                stdout, stderr = process.communicate()
+            failures.append(f"attempt {attempt}: timed out; {stderr[-1000:]}")
+            result = None
+            continue
+        if result.returncode == 0:
+            break
+        failures.append(f"attempt {attempt}: exit {result.returncode}; {result.stderr[-1000:]}")
+        result = None
+    if result is None:
+        raise RuntimeError(
+            f"Playwright Mermaid SVG extraction failed for {html_path.name}:\n" + "\n".join(failures)
+        )
     if result.returncode != 0:
         raise RuntimeError(
             f"Playwright Mermaid SVG extraction failed for {html_path.name} "
@@ -373,7 +471,7 @@ def mermaid_image_attrs(svg: str) -> str:
 
 
 def svg_viewbox_size(svg: str) -> tuple[float, float]:
-    match = VIEWBOX_RE.search(svg)
+    match = ROOT_VIEWBOX_RE.search(svg)
     if not match:
         return (800.0, 500.0)
     return (float(match.group(1)), float(match.group(2)))
@@ -395,7 +493,15 @@ def render_svg_to_png_with_chrome(chrome_binary: str, svg: str, png_path: Path) 
                         "<head>",
                         "<meta charset=\"utf-8\">",
                         "<style>",
-                        "html, body { margin: 0; padding: 0; background: #fff; overflow: hidden; }",
+                        (
+                            "html, body { margin: 0; padding: 0; background: #fff; overflow: hidden; "
+                            "--mermaid-bg-color: #fff; --mermaid-fg-color: #333; "
+                            "--mermaid-fg-color--lighter: #aaa; --mermaid-fg-color--lightest: #f0f0f0; "
+                            "--mermaid-node-bg-color: #ECECFF; --mermaid-node-fg-color: #9370DB; "
+                            "--mermaid-label-bg-color: #fff; --mermaid-label-fg-color: #131300; "
+                            "--mermaid-edge-color: #333; --mermaid-font-family: 'Trebuchet MS', Verdana, Arial, sans-serif; "
+                            "--mermaid-font-weight: 400; }"
+                        ),
                         f"svg {{ width: {viewport_width}px !important; height: {viewport_height}px !important; max-width: none !important; }}",
                         "</style>",
                         "</head>",
@@ -407,30 +513,84 @@ def render_svg_to_png_with_chrome(chrome_binary: str, svg: str, png_path: Path) 
                 ),
                 encoding="utf-8",
             )
-            result = subprocess.run(
-                [
+            failures: list[str] = []
+            result: subprocess.CompletedProcess[str] | None = None
+            for attempt in range(1, 4):
+                profile_dir = Path(temp_dir) / f"chrome-profile-{attempt}"
+                command = [
                     chrome_binary,
-                    "--headless",
+                    "--headless=new",
                     "--disable-gpu",
+                    "--disable-background-networking",
+                    "--disable-component-update",
+                    "--disable-dev-shm-usage",
+                    "--disable-extensions",
+                    "--disable-sync",
                     "--hide-scrollbars",
+                    "--metrics-recording-only",
+                    "--no-default-browser-check",
+                    "--no-first-run",
+                    f"--user-data-dir={profile_dir}",
                     "--force-device-scale-factor=1",
                     "--run-all-compositor-stages-before-draw",
                     "--virtual-time-budget=10000",
-                    "--timeout=60000",
+                    "--timeout=45000",
                     f"--window-size={viewport_width},{viewport_height}",
-                    f"--screenshot={png_path}",
+                    f"--screenshot={png_path.resolve()}",
                     html_path.resolve().as_uri(),
-                ],
-                check=False,
-                text=True,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                timeout=120,
-            )
-    except subprocess.TimeoutExpired as exc:
-        raise RuntimeError(f"Chrome SVG screenshot timed out for {png_path.name}") from exc
-    if result.returncode != 0:
-        raise RuntimeError(f"Chrome SVG screenshot failed for {png_path.name}: {result.stderr[-2000:]}")
+                ]
+                process = subprocess.Popen(
+                    command,
+                    text=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    start_new_session=True,
+                )
+                deadline = time.monotonic() + 60
+                prior_size = -1
+                stable_observations = 0
+                screenshot_ready = False
+                while time.monotonic() < deadline and process.poll() is None:
+                    if png_path.exists() and png_path.stat().st_size > 0:
+                        current_size = png_path.stat().st_size
+                        stable_observations = stable_observations + 1 if current_size == prior_size else 0
+                        prior_size = current_size
+                        if stable_observations >= 3:
+                            screenshot_ready = True
+                            break
+                    time.sleep(0.1)
+                if screenshot_ready:
+                    os.killpg(process.pid, signal.SIGTERM)
+                    try:
+                        stdout, stderr = process.communicate(timeout=5)
+                    except subprocess.TimeoutExpired:
+                        os.killpg(process.pid, signal.SIGKILL)
+                        stdout, stderr = process.communicate()
+                    result = subprocess.CompletedProcess(command, 0, stdout, stderr)
+                    break
+                if process.poll() is None:
+                    os.killpg(process.pid, signal.SIGTERM)
+                    try:
+                        stdout, stderr = process.communicate(timeout=5)
+                    except subprocess.TimeoutExpired:
+                        os.killpg(process.pid, signal.SIGKILL)
+                        stdout, stderr = process.communicate()
+                    failures.append(f"attempt {attempt}: timed out; {stderr[-1000:]}")
+                    result = None
+                    continue
+                stdout, stderr = process.communicate()
+                result = subprocess.CompletedProcess(command, process.returncode, stdout, stderr)
+                if result.returncode == 0 and png_path.exists() and png_path.stat().st_size > 0:
+                    break
+                failures.append(
+                    f"attempt {attempt}: exit {result.returncode}; {result.stderr[-1000:]}"
+                )
+                result = None
+            if result is None:
+                detail = "\n".join(failures)
+                raise RuntimeError(f"Chrome SVG screenshot failed for {png_path.name}:\n{detail}")
+    except OSError as exc:
+        raise RuntimeError(f"Chrome SVG screenshot could not start for {png_path.name}: {exc}") from exc
     if not png_path.exists() or png_path.stat().st_size == 0:
         raise RuntimeError(f"Chrome SVG screenshot did not create {png_path}")
     return "chrome-screenshot"
@@ -438,10 +598,21 @@ def render_svg_to_png_with_chrome(chrome_binary: str, svg: str, png_path: Path) 
 
 def render_mermaid_svg_to_png(chrome_binary: str, svg_path: Path, svg: str, png_path: Path) -> str:
     """Render a browser-extracted Mermaid SVG into a static PNG fallback."""
-    try:
-        return convert_svg_to_png(svg_path, png_path)
-    except (RuntimeError, subprocess.CalledProcessError):
-        return render_svg_to_png_with_chrome(chrome_binary, svg, png_path)
+    pinned = PDF_PINNED_MERMAID_RASTERS.get(png_path.name)
+    if pinned:
+        reference = ROOT / pinned[0]
+        if not reference.is_file():
+            raise RuntimeError(f"pinned PDF Mermaid raster is absent: {reference}")
+        reference_bytes = reference.read_bytes()
+        observed = hashlib.sha256(reference_bytes).hexdigest()
+        if observed != pinned[1]:
+            raise RuntimeError(
+                f"pinned PDF Mermaid raster drifted: {pinned[0]} ({observed} != {pinned[1]})"
+            )
+        png_path.parent.mkdir(parents=True, exist_ok=True)
+        png_path.write_bytes(reference_bytes)
+        return "pinned-digest-raster"
+    return render_svg_to_png_with_chrome(chrome_binary, svg, png_path)
 
 
 @contextmanager
@@ -669,10 +840,15 @@ def run_render(
         output = log_file.read()
     artifacts = find_artifacts(output_dir, fmt) if returncode == 0 else []
     epub_canonicalization: dict[str, object] = {"applied": False}
+    pdf_canonicalization: dict[str, object] = {"applied": False}
     if fmt == "epub" and artifacts:
         if len(artifacts) != 1:
             raise RuntimeError(f"expected one EPUB artifact before canonicalization, found {len(artifacts)}")
         epub_canonicalization = canonicalize_epub(output_dir / artifacts[0], manifest_path)
+    if fmt == "pdf" and artifacts:
+        if len(artifacts) != 1:
+            raise RuntimeError(f"expected one PDF artifact before canonicalization, found {len(artifacts)}")
+        pdf_canonicalization = canonicalize_pdf(output_dir / artifacts[0], manifest_path)
     preserved_artifacts = preserve_artifacts(output_dir, fmt, artifacts) if artifacts else []
     warning_lines = [line for line in output.splitlines() if "[WARNING]" in line]
     svg_conversion_warning_count = sum("Could not convert image" in line for line in warning_lines)
@@ -690,6 +866,7 @@ def run_render(
         "raster_diagram_fallbacks": fallback_info,
         "pdf_mermaid_static_fallbacks": mermaid_fallback_info,
         "epub_canonicalization": epub_canonicalization,
+        "pdf_canonicalization": pdf_canonicalization,
         "log_excerpt": output[-4000:],
     }
 

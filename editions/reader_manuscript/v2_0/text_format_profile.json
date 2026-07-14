@@ -22,8 +22,11 @@
       "mode": "static_png_from_rendered_html_projection",
       "expected_diagram_count": 68,
       "expected_source_file_count": 54,
-      "extractor_timeout_seconds_per_file": 120,
-      "rasterizer": "sips",
+      "extractor_timeout_seconds_per_file": 75,
+      "extractor_retry_count": 3,
+      "rasterizer": "chrome_headless_screenshot_with_pinned_state_rasters",
+      "rasterizer_timeout_seconds_per_diagram": 60,
+      "rasterizer_retry_count": 3,
       "epub_pinned_raster_members": [
         {
           "member": "EPUB/media/file7.png",
@@ -36,6 +39,20 @@
           "reference": "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file27.png",
           "sha256": "9360540977e4b4d8c90c99ea4ffed77603e94c3b9478eb24fed13c6e7c785447",
           "reason": "Freeze the one-shot intent lifecycle state-diagram raster because Mermaid/RoughJS replay changed 107 antialiased pixels across otherwise identical packages."
+        }
+      ],
+      "pdf_pinned_raster_references": [
+        {
+          "generated_name": "chapters-intent-to-execution-contracts-mermaid-02.png",
+          "reference": "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-intent-to-execution-contracts-mermaid-02.png",
+          "sha256": "40bf74dfda485f231e4dbfc15e6eba9cb06b812e2c072a2a06162ce8ed73f12b",
+          "reason": "Freeze the one-shot intent lifecycle state-diagram raster because Mermaid/RoughJS replay changed its embedded PDF image while every other inspected image and structure remained identical."
+        },
+        {
+          "generated_name": "chapters-system-boundaries-and-authority-mermaid-02.png",
+          "reference": "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-system-boundaries-and-authority-mermaid-02.png",
+          "sha256": "2217afd707207efd8dcffd5ecb7a16d590a6ab2dfe804674a11daea33a065746",
+          "reason": "Freeze the authority-lifecycle state-diagram raster because Mermaid/RoughJS replay changed its embedded PDF image while every other inspected image and structure remained identical."
         }
       ],
       "preflight_only_epub_sha256": "9d4804913894a971195339a4ee630e7fd34e6d88c02af2d0bafa1b6b3e753d59",
@@ -69,13 +86,22 @@
       "required_gates": ["container_and_opf", "all_xhtml_xml", "navigation_and_landmarks", "internal_links_and_anchors", "images_alt_tables_code_math", "reflow_font_scale_dark_light", "search_and_text_extraction", "apple_books_application"]
     },
     "pdf": {
-      "state": "profile_frozen_candidate_not_generated",
+      "state": "blocked_preview_application_inspection_after_exact_structural_visual_replay_candidate",
       "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats pdf --timeout-seconds 600 --stop-on-fail",
       "engine": "typst 0.14.2",
       "page_size": "us-letter",
       "body_font": "Libertinus Serif",
       "mono_font": "DejaVu Sans Mono",
+      "link_color_hex": "2f4f88",
       "application_review": "/System/Applications/Preview.app",
+      "exact_artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.pdf",
+      "exact_artifact_sha256": "55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676",
+      "exact_artifact_bytes": 13897492,
+      "structural_and_page_inspection": "editions/reader_manuscript/v2_0/pdf_structural_and_page_inspection.json",
+      "visual_review": "editions/reader_manuscript/v2_0/pdf_visual_review.json",
+      "application_inspection": "editions/reader_manuscript/v2_0/pdf_application_review.json",
+      "reproducibility": "editions/reader_manuscript/v2_0/pdf_reproducibility.json",
+      "disposition": "editions/reader_manuscript/v2_0/pdf_disposition.json",
       "required_gates": ["metadata_fonts_outline", "links_and_destinations", "text_extraction_order", "replacement_characters", "every_page_raster", "risk_page_viewer_review"]
     },
     "docx": {

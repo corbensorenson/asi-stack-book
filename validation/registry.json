@@ -1336,7 +1336,19 @@
     "scripts/audit_post_v2_3_reader_epub_artifact.py",
     "schemas/reader_format_disposition.schema.json",
     "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file7.png",
-    "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file27.png"
+    "editions/reader_manuscript/v2_0/profiles/epub-mermaid/file27.png",
+    "editions/reader_manuscript/v2_0/pdf_disposition.json",
+    "editions/reader_manuscript/v2_0/pdf_structural_and_page_inspection.json",
+    "editions/reader_manuscript/v2_0/pdf_visual_review.json",
+    "editions/reader_manuscript/v2_0/pdf_application_review.json",
+    "editions/reader_manuscript/v2_0/pdf_reproducibility.json",
+    "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.pdf",
+    "scripts/validate_post_v2_3_reader_pdf_disposition.py",
+    "scripts/audit_post_v2_3_reader_pdf_artifact.py",
+    "scripts/extract_rendered_mermaid_svgs.js",
+    "ci/post_v2_requirements.txt",
+    "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-intent-to-execution-contracts-mermaid-02.png",
+    "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-system-boundaries-and-authority-mermaid-02.png"
   ],
   "units": [
     {
@@ -7980,11 +7992,67 @@
       "prohibited_inference": "Structural and reproducibility success do not establish Apple Books behavior, reflow, font/theme/search interaction, screen-reader or device review, publication approval, rights, model quality, safety, AGI, ASI, or support movement.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_automated_artifact_audit_with_blocked_application_route_not_independent"
+    },
+    {
+      "id": "validate_post_v2_3_reader_pdf_disposition:305",
+      "order": 305,
+      "script": "validate_post_v2_3_reader_pdf_disposition.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "reader_artifact_gate",
+      "input_contract": "The exact frozen-source v2.0 PDF, generic format-disposition schema, all-page structural/text/bbox/raster inspection, page-complete and native-diagram internal visual review, two exact canonical replays, two digest-bound state-diagram raster pins, two failed Preview control-bridge attempts, terminal M4 status, rights snapshot, and no support or release effect.",
+      "input_artifacts": [
+        "scripts/validate_post_v2_3_reader_pdf_disposition.py",
+        "scripts/audit_post_v2_3_reader_pdf_artifact.py",
+        "scripts/render_curated_reader_formats.py",
+        "scripts/extract_rendered_mermaid_svgs.js",
+        "ci/post_v2_requirements.txt",
+        "schemas/reader_format_disposition.schema.json",
+        "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.pdf",
+        "editions/reader_manuscript/v2_0/pdf_disposition.json",
+        "editions/reader_manuscript/v2_0/pdf_structural_and_page_inspection.json",
+        "editions/reader_manuscript/v2_0/pdf_visual_review.json",
+        "editions/reader_manuscript/v2_0/pdf_application_review.json",
+        "editions/reader_manuscript/v2_0/pdf_reproducibility.json",
+        "editions/reader_manuscript/v2_0/text_format_profile.json",
+        "editions/reader_manuscript/v2_0/format_review_matrix.json",
+        "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-intent-to-execution-contracts-mermaid-02.png",
+        "editions/reader_manuscript/v2_0/profiles/pdf-mermaid/chapters-system-boundaries-and-authority-mermaid-02.png",
+        "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
+        "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md",
+        "LICENSE.md"
+      ],
+      "output_contract": "Reject artifact/profile/evidence digest drift, page/outline/link/font/text/bbox/raster denominator failure, incomplete visual review, lost raster pins, nondeterministic replay, false Preview evidence, premature approval, matrix/roadmap disagreement, rights laundering, support movement, or release effect.",
+      "output_assertions": [
+        "one exact 13,897,492-byte 565-page PDF",
+        "270,359 in-bounds word boxes",
+        "1,142 outline destinations and 1,418 resolved link annotations",
+        "29 page-complete and 17 native-diagram contact sheets",
+        "two byte-identical canonical full replays",
+        "two failed Preview bridge attempts",
+        "blocked terminal M4 disposition",
+        "eight rejecting mutations"
+      ],
+      "claim_scope": "Exact local PDF structure, page-complete automation, internal visual review, deterministic replay, and honest application-inspection blocker only.",
+      "negative_controls": "validator_owned_and_exact_artifact_bound",
+      "negative_control_cases": [
+        "premature approval",
+        "artifact digest drift",
+        "page denominator failure",
+        "incomplete visual review",
+        "Preview evidence laundering",
+        "replay inequality",
+        "M4 reopening",
+        "support promotion"
+      ],
+      "prohibited_inference": "Structural, visual, and reproducibility success do not establish Preview behavior, assistive-technology or device review, independent-human review, publication approval, rights, model quality, safety, AGI, ASI, or support movement.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_automated_and_visual_artifact_audit_with_blocked_application_route_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 1292,
-    "unit_count": 304
+    "required_artifact_count": 1304,
+    "unit_count": 305
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

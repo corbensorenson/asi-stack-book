@@ -1,0 +1,66 @@
+{
+  "schema_version": "asi_stack.reader_pdf_visual_review.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "review_date": "2026-07-13",
+  "state": "passed_internal_page_complete_and_native_diagram_review",
+  "artifact": "editions/reader_manuscript/v2_0/artifacts/asi-stack-curated-reader-v2.0.pdf",
+  "artifact_sha256": "55764db2301e85838233b6357ac81e37dc78b3657c022189778238b7ec770676",
+  "automated_report": {
+    "path": "editions/reader_manuscript/v2_0/pdf_structural_and_page_inspection.json",
+    "sha256": "45508d7bb3ff0a46322e55f3a919d5753480e7bf16e98e7f1bacb5dd1a6715d7",
+    "state": "passed_automated_page_complete_visual_review_pending"
+  },
+  "page_complete_review": {
+    "pages": 565,
+    "contact_sheets": 29,
+    "every_page_reviewed": true,
+    "review_surfaces": [
+      "all_565_page_rasters_in_29_contact_sheets",
+      "all_68_generated_mermaid_rasters_at_native_resolution_in_17_contact_sheets"
+    ],
+    "checks": [
+      "clipping",
+      "collision",
+      "overflow",
+      "blank_or_near_blank_pages",
+      "orphaned_headings",
+      "stranded_captions",
+      "code_and_table_overflow",
+      "figure_legibility",
+      "source_appendix_path_wrapping"
+    ],
+    "state": "passed"
+  },
+  "diagram_review": {
+    "generated_diagrams": 68,
+    "native_resolution_contact_sheets": 17,
+    "all_reviewed": true,
+    "repaired_defects": [
+      "context-transactions root SVG viewBox parsed from a nested SVG and collapsed to 64 by 64 pixels",
+      "open-ended-improvement root SVG viewBox parsed from a nested SVG and collapsed to 64 by 64 pixels",
+      "runtime-adapter sequence diagram root viewBox was missed and fell back to 800 by 500 pixels",
+      "security-kernel sequence diagram root viewBox was missed and fell back to 800 by 500 pixels"
+    ],
+    "residual_defects": [],
+    "state": "passed"
+  },
+  "rejected_candidates": [
+    {
+      "reason": "macOS sips corrupted Mermaid foreignObject and CSS rendering",
+      "disposition": "rejected_before_terminal_artifact"
+    },
+    {
+      "reason": "root SVG viewBox parser selected nested or missed nonzero-origin viewBoxes in four figures",
+      "disposition": "rejected_before_terminal_artifact"
+    }
+  ],
+  "application_review_separate": true,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "Internal page-complete visual review is not independent-human review.",
+    "Contact-sheet and native-raster review do not establish Preview, Microsoft Word, assistive-technology, device-family, or legal-WCAG behavior.",
+    "Visual quality review does not promote a chapter claim or establish model quality, safety, governance efficacy, AGI, or ASI.",
+    "This record is not publication approval, a public artifact, a rights grant, a release, or a support-state change."
+  ]
+}

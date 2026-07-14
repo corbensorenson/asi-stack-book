@@ -1,3 +1,9 @@
 # Preserve digest-bound raw model transcripts byte-for-byte. Their generated
 # whitespace is evidence payload, not source formatting.
 experiments/post_v2_3_evidence_campaigns/artifacts/model_outputs/*.txt -whitespace
+
+# Treat exact reader artifacts as binary payloads even when their container
+# bytes happen to look text-heavy to Git's heuristic.
+editions/reader_manuscript/v2_0/artifacts/*.pdf binary
+editions/reader_manuscript/v2_0/artifacts/*.epub binary
+editions/reader_manuscript/v2_0/artifacts/*.docx binary
