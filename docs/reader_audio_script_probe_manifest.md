@@ -52,8 +52,8 @@ script order.
 | Script order | matches book-structure order |
 | Ordered chapter markers | 59 ordered markers |
 | Chapter-marker timecodes | 59 `TBD` rows |
-| Narration notes | 102 narration notes |
-| Table narration notes | 23 |
+| Narration notes | 107 narration notes |
+| Table narration notes | 28 |
 | Diagram narration notes | 68 |
 | Image narration notes | 11 |
 | Code/schema narration notes | 0 |
@@ -80,7 +80,7 @@ timecoding, not an audiobook, not audio generation, and not release approval.
 
 | Material | Count |
 |---|---:|
-| Tables | 23 |
+| Tables | 28 |
 | Mermaid diagrams | 68 |
 | Code/schema blocks | 0 |
 | Images | 11 |

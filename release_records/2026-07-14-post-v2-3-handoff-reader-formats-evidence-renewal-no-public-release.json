@@ -1,0 +1,158 @@
+{
+  "schema_version": "asi_stack.post_v2_3_handoff_reader_formats_evidence_renewal_terminal.v0",
+  "record_id": "2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release",
+  "recorded_date": "2026-07-14",
+  "roadmap_id": "asi-stack-post-v2-3-handoff-reader-formats-evidence-renewal-2026-07-13",
+  "decision": "exact_local_reader_multiformat_disposition_no_public_release",
+  "substantive_source_commit": "f93a4d8fa51ac7cafa0db180d7360ee1fb2c498c",
+  "latest_public_living_book_release": {
+    "version": "v2.3.0",
+    "tag": "v2.3.0",
+    "source_commit": "e27661166e9105f37cb36d63b15795f80715ca24",
+    "release_record": "release_records/2026-07-13-v2.3.0-qcsa-e2766116.json",
+    "unchanged": true
+  },
+  "reader_disposition": {
+    "chapter_count": 54,
+    "approved_exact_local_formats": [
+      "canonical_html",
+      "docx"
+    ],
+    "blocked_formats": [
+      "epub",
+      "pdf"
+    ],
+    "deferred_formats": [
+      "audio",
+      "embedded_audio"
+    ],
+    "source_only_successor": "editions/reader_manuscript/v2_1/manifest.json",
+    "public_release": false
+  },
+  "source_disposition": {
+    "chapter_audit_count": 10,
+    "tier_2_rows": 37,
+    "accepted_new_sources": 4,
+    "inserted_controls": 9,
+    "new_chapters": 0,
+    "support_state_effect": "none"
+  },
+  "evidence_disposition": {
+    "preflight_parseable_finals": 4,
+    "flagship_candidates": 32,
+    "flagship_calls": 64,
+    "independently_correct": 2,
+    "useful_releases": 0,
+    "unsafe_releases": 0,
+    "exact_rollbacks": 32,
+    "metadata_erratum": "declared_8_of_8_exact_task_file_9_of_9_blocks_promotion",
+    "transition": "no_change_blocks_promotion",
+    "theseus_readiness": "YELLOW_12_wired_2_implemented_5_partial_1_frozen",
+    "core_claim_count": 54,
+    "core_support_state": "argument",
+    "support_state_effect": "none"
+  },
+  "closure_artifacts": [
+    {
+      "path": "docs/post_v2_3_clean_handoff_receipt.md",
+      "sha256": "05959f6e2ca8ad85c44aa5037d4b4283f4434d2cfc868c2822f43c9ca0e54bdb"
+    },
+    {
+      "path": "docs/post_v2_3_handoff_reader_formats_evidence_renewal_attestation_receipt.md",
+      "sha256": "9ee92e2d0a2f011a7bb9ed038fd1d4e0dd5d5e9da2b2414d995ba08759b4cf24"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/reader_release_record.json",
+      "sha256": "d2b2531c409d56ca1d59f54b77ca369c8b9af8802b320deba347807fd1817a34"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/text_format_profile.json",
+      "sha256": "ada8d524c15d6f4b6d8c272e76e195b59ebedced98ae01be2dbc556d50ea9308"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/format_review_matrix.json",
+      "sha256": "a58075ca36cc874052a1cb6559784c9c3dc8fd3f4d67225c4753ec0623e0d74f"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/epub_disposition.json",
+      "sha256": "b8427109ea9df95b6dc057bb9d5aa75ce2f6a73c1190d2921e55f565ef603a87"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/pdf_disposition.json",
+      "sha256": "1b8aff1795fd2e9098b3a9a429dc6e0ec663c15c667ba9f84e73d0e41ca70ac4"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_0/docx_disposition.json",
+      "sha256": "1cf327a38b2c90abe9e8ca3b1096530be723e8614470220696550de597987e7d"
+    },
+    {
+      "path": "editions/reader_manuscript/v2_1/manifest.json",
+      "sha256": "cfde5aa692a1468b579ba04a2680290aaeb0b04530386ad943f33764b2432d7d"
+    },
+    {
+      "path": "docs/post_v2_3_external_anchoring_and_completeness_audit.md",
+      "sha256": "344a598a564605a456021f479af946ed386bc8a22fc894d6c57d4cbb01a36f13"
+    },
+    {
+      "path": "experiments/post_v2_3_evidence_protocol_renewal/preflight/attempt_1_result.json",
+      "sha256": "69924e90de54147e510979b00ba1caf75f1f48c3a44a89686c0a6151d77c891d"
+    },
+    {
+      "path": "experiments/post_v2_3_evidence_protocol_renewal/flagship/results/adjudication.json",
+      "sha256": "f681ef1f5590cb21352935de6f19e81bac51ccc9d17c6443c0c025357814969c"
+    },
+    {
+      "path": "docs/post_v2_3_governance_tax_flagship_renewal_results.md",
+      "sha256": "57c7761e9a0b87f5fd475c93bbb7b4845d55e74bdfecf5628f9a7248998db400"
+    },
+    {
+      "path": "evidence_transitions/post_v2_3/governance_tax_natural_work_renewal_no_change.json",
+      "sha256": "9442bca6b6bc14bc1344df2e603ad3cbc6d2008b2d38f0c28073cddbe919779b"
+    },
+    {
+      "path": "experiments/theseus_pretraining_readiness_currentness_import/results/2026-07-14-local.json",
+      "sha256": "03856169ea4a1867434931306fe36070fa692322466e71c61c7696d45ddbcacb"
+    },
+    {
+      "path": "docs/theseus_pretraining_readiness_currentness_import.md",
+      "sha256": "5aecc003aeac3524ecd51fada16ef6c20fdf0646442373045f401cb32b48350d"
+    },
+    {
+      "path": "claim_decisions/v1_x_core_claim_dispositions.json",
+      "sha256": "fa5eb6f98f40d635eef9922ca2206b0c624e5d87ba8a8b0df8cba8d08543f024"
+    },
+    {
+      "path": "docs/non_core_evidence_ledger.md",
+      "sha256": "aa0c4028c62e29c07684641a9971607990e8105115098866a59f6956520135e5"
+    }
+  ],
+  "publication_effect": {
+    "source_tag_created": false,
+    "public_reader_deployment_performed": false,
+    "immutable_site_archive_created": false,
+    "rights_grant_created": false,
+    "living_book_version_changed": false
+  },
+  "validation_status": "pass",
+  "residuals": [
+    "EPUB structural and deterministic replay checks pass, but Apple Books application inspection remains blocked by the native accessibility bridge.",
+    "PDF structural, deterministic, page-complete, and internal visual checks pass, but Preview application inspection remains blocked by the native control bridge.",
+    "DOCX is an approved exact local artifact; this record does not claim Microsoft Word review, public deployment, or a public rights grant.",
+    "The v2.1 reader workspace contains the source-renewal delta only and has no approved format artifact or release identity.",
+    "Only two of 32 flagship candidates were independently correct, so neither route produced a useful release denominator.",
+    "The post-outcome 8-of-8 metadata declaration disagrees with the immutable 9-of-9 task file and independently blocks evidence promotion.",
+    "Project Theseus readiness is YELLOW and bounded to one clean same-commit report replay; runtime, model, deployment, and safety transfer remain unestablished.",
+    "No successor roadmap is activated by this terminal transaction."
+  ],
+  "non_claims": [
+    "does not publish or publicly deploy a new reader edition",
+    "does not create a new living-book version, source tag, or immutable site archive",
+    "does not grant a repository-wide, reader, or source license",
+    "does not approve EPUB or PDF for release",
+    "does not infer safety from zero unsafe releases when useful releases are also zero",
+    "does not generalize the exact governance-tax result beyond the frozen local tasks, model, evaluator, and rollback surfaces",
+    "does not promote any of the 54 chapter-core claims above argument",
+    "does not establish external-human review, screen-reader review, legal clearance, or WCAG certification",
+    "does not establish model quality, production readiness, governance efficacy, AGI, or ASI"
+  ]
+}

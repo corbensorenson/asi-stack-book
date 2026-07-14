@@ -77,6 +77,12 @@ def release_schema_for(value: Any) -> Path:
         and value.get("schema_version") == "asi_stack.post_v2_3_cycle_no_release.v0"
     ):
         return SCHEMA_DIR / "post_v2_3_cycle_no_release_record.schema.json"
+    if (
+        isinstance(value, dict)
+        and value.get("schema_version")
+        == "asi_stack.post_v2_3_handoff_reader_formats_evidence_renewal_terminal.v0"
+    ):
+        return SCHEMA_DIR / "post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.schema.json"
     if isinstance(value, dict) and value.get("record_type") == "edition_release":
         return SCHEMA_DIR / "edition_release_record.schema.json"
     return SCHEMA_DIR / "living_book_release_record.schema.json"

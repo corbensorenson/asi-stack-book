@@ -149,10 +149,10 @@ def validate(data: dict[str, object]) -> list[str]:
         errors.append("completed successor roadmap machine authority is stale or absent")
     if active_successor.get("status") != "completed" or active_successor.get("roadmap_path") != ACTIVE_SUCCESSOR:
         errors.append("later completed successor roadmap machine authority is stale or absent")
-    if current_successor.get("status") != "active" or current_successor.get("roadmap_path") != CURRENT_SUCCESSOR:
-        errors.append("current clean-handoff successor roadmap machine authority is stale or absent")
-    if data.get("active_roadmap_headers") != [CURRENT_SUCCESSOR]:
-        errors.append("public truth must expose exactly the declared current successor roadmap")
+    if current_successor.get("status") != "completed" or current_successor.get("roadmap_path") != CURRENT_SUCCESSOR:
+        errors.append("terminal clean-handoff successor roadmap machine authority is stale or absent")
+    if data.get("active_roadmap_headers") != []:
+        errors.append("terminal public truth must expose no active roadmap")
 
     structure = mapping(data["structure"], "book structure", errors)
     chapters = [c for p in structure.get("parts", []) if isinstance(p, dict) for c in p.get("chapters", [])]
@@ -178,11 +178,11 @@ def validate(data: dict[str, object]) -> list[str]:
         errors.append("CITATION.cff invents a DOI")
 
     required_by_surface = {
-        "README.md": (str(data["readme"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_COMPLETION, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "active canonical successor roadmap"]),
-        "index.qmd": (str(data["index"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_COMPLETION, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "active canonical successor roadmap"]),
-        "docs/publication_readiness.md": (str(data["publication"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "active canonical successor roadmap"]),
+        "README.md": (str(data["readme"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_COMPLETION, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "No successor roadmap is active"]),
+        "index.qmd": (str(data["index"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_COMPLETION, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "No successor roadmap is active"]),
+        "docs/publication_readiness.md": (str(data["publication"]), [VERSION, ROADMAP, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_NO_RELEASE, COMMIT, DIGEST, "all 54 chapter-core claims remain at `argument`", "root site and `/latest/` are mutable", "No successor roadmap is active"]),
         "docs/release_reproducibility.md": (str(data["reproducibility"]), [VERSION, COMMIT, DIGEST, "root and `/latest/` are mutable", "Historical v1.0.0 citation"]),
-        "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_NO_RELEASE, "active canonical successor roadmap", "root or `/latest/` commits remain mutable"]),
+        "docs/public_status_contract.md": (str(data["public_contract"]), [f"`active_version` currently reports" , active_version, SUCCESSOR, SUCCESSOR_STATUS, ACTIVE_SUCCESSOR, ACTIVE_SUCCESSOR_STATUS, CURRENT_SUCCESSOR, CURRENT_SUCCESSOR_STATUS, POST_V2_3_NO_RELEASE, "No successor roadmap is active", "root or `/latest/` commits remain mutable"]),
     }
     for name, (text, fragments) in required_by_surface.items():
         for fragment in fragments:
@@ -272,7 +272,7 @@ def main() -> None:
         sys.exit(1)
     print(
         "Post-v2.1 public-truth validation passed: v2.3.0 release/commit/archive, "
-        "completed predecessor/release/post-v2.3 roadmaps with one declared active successor, 54 argument-level core claims, tag-bound rights, "
+        "completed predecessor/release/post-v2.3 roadmaps with no active successor, 54 argument-level core claims, tag-bound rights, "
         "mutable latest channel, optional-format boundary, and 7 rejecting mutations."
     )
 

@@ -4,7 +4,7 @@
 _Current canonical metrics (generated from machine records): **54 manifest chapters; 284 public-safe records; 54 chapter-core claims; 54/54 chapters externally positioned; 0 promoted core claims.**_
 <!-- canonical-status:generated-end -->
 
-Last audited: 2026-07-13
+Last audited: 2026-07-14
 
 This file tracks whether the public repository is ready for continued living-
 book work after the immutable `v2.3.0` QCSA implementation release. That
@@ -16,11 +16,14 @@ complete, with terminal machine state in
 `roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json`
 and its no-public-release decision in
 `release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json`.
-The active canonical successor roadmap is
+The later handoff/reader/evidence roadmap is also complete:
 `docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`, with
-machine state in
+terminal machine state in
 `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`.
-It does not alter the immutable v2.3 release.
+Its exact no-public-release decision is
+`release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json`.
+No successor roadmap is active. This terminal state does not alter the
+immutable v2.3 release.
 
 ## Current release and roadmap authority
 
@@ -37,13 +40,13 @@ It does not alter the immutable v2.3 release.
   its exact local 54-chapter HTML reader is separately dispositioned, it creates
   no new public living-book release, and all 54 chapter-core claims remain at
   `argument`.
-- Active canonical successor roadmap:
+- Completed handoff/reader/evidence roadmap:
   `docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`, with
-  machine state in
+  terminal machine state in
   `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`;
-  its first unfinished gate is the clean source handoff, followed by independent
-  EPUB/PDF/DOCX disposition, selective source grounding, protocol repair, and
-  one fresh Theseus currentness lane.
+  canonical HTML and DOCX are approved exact local artifacts, EPUB and PDF are
+  honestly blocked, audio remains deferred, and the exact transaction creates
+  no public release. No successor roadmap is active.
 - Completed predecessor: `docs/post_v2_1_residual_and_transfer_roadmap.md`, with
   terminal state in `roadmap_records/post_v2_1_residual_and_transfer_status.json`.
 - Completed predecessor: `docs/post_v2_evidence_roadmap.md`; its execution
@@ -57,7 +60,8 @@ It does not alter the immutable v2.3 release.
   creates no evidence transition or support-state promotion.
 - Public closure boundary: all 54 chapter-core claims remain at `argument`.
 - EPUB, DOCX, PDF, audio, and curated-reader editions are not v2.3.0 release
-  artifacts and require their own exact release records.
+  artifacts. The terminal local reader record approves exact HTML and DOCX
+  only; it does not create a public reader release.
 
 ## Ready
 

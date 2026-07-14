@@ -4,7 +4,7 @@ Roadmap ID: `asi-stack-post-v2-3-handoff-reader-formats-evidence-renewal-2026-07
 
 Authority: Corben Sorenson
 
-Status: active canonical successor roadmap; unfinished work only
+Status: completed 2026-07-14; no active successor
 
 Machine status:
 `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`
@@ -128,7 +128,7 @@ living-book version.
 | P1 — 54-chapter multi-format reader | completed | Produce and disposition EPUB, PDF, and DOCX from one frozen v2.0 reader source; keep audio deferred. | Per-format manifests, exact artifacts, review matrices, and release/block records. |
 | P2 — Selective external anchoring and completeness residuals | completed | Close source-specific gaps in the ten newer chapters and audit the trace/world-model/foundations/Tier-2 queue without citation padding or automatic chapter growth. | Passage-reviewed source notes, owner matrix, insertion/disposition records, reconciled chapters and appendices. |
 | P3 — Evidence protocol repair and current implementation transfer | completed | Repair the failed natural-work protocol, run at most one warranted flagship campaign, reconcile scoped refutations, and import one fresh Theseus currentness lane. | Frozen preflight/preregistration, exact results or blocker, transition dispositions, currentness import record. |
-| P4 — Product reconciliation, release decision, and closure | in progress | Reconcile all products and choose exact edition release, public release, blocked closure, or no-release without version or rights laundering. | Terminal declaration, release/block/no-release record, full validation and attestation receipts. |
+| P4 — Product reconciliation, release decision, and closure | completed | Reconcile all products and choose exact edition release, public release, blocked closure, or no-release without version or rights laundering. | Terminal declaration, release/block/no-release record, full validation and attestation receipts. |
 
 ## P0 — Authority, truth repair, and clean handoff
 
@@ -476,6 +476,23 @@ secret checks, deterministic artifact replay, and terminal release validator.
 Write a completion declaration with every priority and milestone terminal,
 every residual and non-claim visible, and no silent successor activation.
 
+P4 completed 2026-07-14. The exact terminal decision is an approved local
+two-format reader disposition—canonical HTML plus DOCX—combined with an honest
+no-public-release transaction. EPUB and PDF remain explicitly blocked at their
+native-application inspection boundaries; audio and embedded audio remain
+deferred; the v2.1 reader workspace is source-only. The four-source/nine-control
+renewal, exact governance-tax `no_change` result, promotion-blocking metadata
+erratum, and YELLOW Theseus currentness import create no chapter-core support
+movement. `v2.3.0` remains the latest immutable public living-book release.
+No tag, public reader deployment, immutable archive, or rights grant is created.
+The terminal record is
+`release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json`;
+the declaration is
+`docs/post_v2_3_handoff_reader_formats_evidence_renewal_completion_declaration.md`.
+The tested build–deploy–attest receipt is
+`docs/post_v2_3_handoff_reader_formats_evidence_renewal_attestation_receipt.md`.
+No successor roadmap is active.
+
 ## Milestones
 
 | Milestone | Activation state | Completion evidence |
@@ -488,7 +505,7 @@ every residual and non-claim visible, and no silent successor activation.
 | M5 — DOCX dispositioned | completed | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |
 | M6 — Source and completeness residuals dispositioned | completed | Ten-chapter matrix plus trace/world-model/foundations/Tier-2 insertion or rejection artifacts. |
 | M7 — Evidence/currentness work dispositioned | completed | Passing protocol preflight; one exact no-change flagship with preserved metadata erratum; scoped QCSA reconciliation; one fresh bounded Theseus currentness import. |
-| M8 — Products reconciled and cycle closed | in progress | Full validation, exact release/block/no-release record, completion declaration, no silent successor. |
+| M8 — Products reconciled and cycle closed | completed | Full validation, exact release/block/no-release record, completion declaration, no silent successor. |
 
 ## Stop and amendment rules
 

@@ -71,11 +71,12 @@ release. Its terminal declaration is
 `docs/post_v2_3_quality_floor_reader_completion_declaration.md`, and its exact
 no-public-release authority is
 `release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json`.
-The later quality/reader cycle is now followed by the active canonical
-successor roadmap
+The later quality/reader cycle was followed by
 `docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`, with
-machine state in
+terminal machine state in
 `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`.
-Successor activated: 2026-07-13. This later planning authority records new
-unfinished work without altering the immutable v2.3.0 release facts or
-reopening either completed predecessor.
+Successor activated: 2026-07-13; successor completed: 2026-07-14. Its terminal
+no-public-release record is
+`release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json`.
+No roadmap is now active. This later completion does not alter the immutable
+v2.3.0 release facts or reopen either completed predecessor.

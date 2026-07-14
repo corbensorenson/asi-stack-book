@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.schema.json",
+  "title": "Post-v2.3 handoff, reader formats, and evidence renewal terminal record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "recorded_date",
+    "roadmap_id",
+    "decision",
+    "substantive_source_commit",
+    "latest_public_living_book_release",
+    "reader_disposition",
+    "source_disposition",
+    "evidence_disposition",
+    "closure_artifacts",
+    "publication_effect",
+    "validation_status",
+    "residuals",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "asi_stack.post_v2_3_handoff_reader_formats_evidence_renewal_terminal.v0"
+    },
+    "record_id": {
+      "const": "2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release"
+    },
+    "recorded_date": {
+      "const": "2026-07-14"
+    },
+    "roadmap_id": {
+      "const": "asi-stack-post-v2-3-handoff-reader-formats-evidence-renewal-2026-07-13"
+    },
+    "decision": {
+      "const": "exact_local_reader_multiformat_disposition_no_public_release"
+    },
+    "substantive_source_commit": {
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "latest_public_living_book_release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "tag", "source_commit", "release_record", "unchanged"],
+      "properties": {
+        "version": {"const": "v2.3.0"},
+        "tag": {"const": "v2.3.0"},
+        "source_commit": {"const": "e27661166e9105f37cb36d63b15795f80715ca24"},
+        "release_record": {"const": "release_records/2026-07-13-v2.3.0-qcsa-e2766116.json"},
+        "unchanged": {"const": true}
+      }
+    },
+    "reader_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chapter_count", "approved_exact_local_formats", "blocked_formats", "deferred_formats", "source_only_successor", "public_release"],
+      "properties": {
+        "chapter_count": {"const": 54},
+        "approved_exact_local_formats": {
+          "type": "array",
+          "const": ["canonical_html", "docx"]
+        },
+        "blocked_formats": {
+          "type": "array",
+          "const": ["epub", "pdf"]
+        },
+        "deferred_formats": {
+          "type": "array",
+          "const": ["audio", "embedded_audio"]
+        },
+        "source_only_successor": {"const": "editions/reader_manuscript/v2_1/manifest.json"},
+        "public_release": {"const": false}
+      }
+    },
+    "source_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["chapter_audit_count", "tier_2_rows", "accepted_new_sources", "inserted_controls", "new_chapters", "support_state_effect"],
+      "properties": {
+        "chapter_audit_count": {"const": 10},
+        "tier_2_rows": {"const": 37},
+        "accepted_new_sources": {"const": 4},
+        "inserted_controls": {"const": 9},
+        "new_chapters": {"const": 0},
+        "support_state_effect": {"const": "none"}
+      }
+    },
+    "evidence_disposition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["preflight_parseable_finals", "flagship_candidates", "flagship_calls", "independently_correct", "useful_releases", "unsafe_releases", "exact_rollbacks", "metadata_erratum", "transition", "theseus_readiness", "core_claim_count", "core_support_state", "support_state_effect"],
+      "properties": {
+        "preflight_parseable_finals": {"const": 4},
+        "flagship_candidates": {"const": 32},
+        "flagship_calls": {"const": 64},
+        "independently_correct": {"const": 2},
+        "useful_releases": {"const": 0},
+        "unsafe_releases": {"const": 0},
+        "exact_rollbacks": {"const": 32},
+        "metadata_erratum": {"const": "declared_8_of_8_exact_task_file_9_of_9_blocks_promotion"},
+        "transition": {"const": "no_change_blocks_promotion"},
+        "theseus_readiness": {"const": "YELLOW_12_wired_2_implemented_5_partial_1_frozen"},
+        "core_claim_count": {"const": 54},
+        "core_support_state": {"const": "argument"},
+        "support_state_effect": {"const": "none"}
+      }
+    },
+    "closure_artifacts": {
+      "type": "array",
+      "minItems": 14,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 3},
+          "sha256": {"pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "publication_effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["source_tag_created", "public_reader_deployment_performed", "immutable_site_archive_created", "rights_grant_created", "living_book_version_changed"],
+      "properties": {
+        "source_tag_created": {"const": false},
+        "public_reader_deployment_performed": {"const": false},
+        "immutable_site_archive_created": {"const": false},
+        "rights_grant_created": {"const": false},
+        "living_book_version_changed": {"const": false}
+      }
+    },
+    "validation_status": {"const": "pass"},
+    "residuals": {
+      "type": "array",
+      "minItems": 7,
+      "items": {"type": "string", "minLength": 15}
+    },
+    "non_claims": {
+      "type": "array",
+      "minItems": 9,
+      "items": {"type": "string", "minLength": 15}
+    }
+  }
+}

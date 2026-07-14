@@ -82,8 +82,8 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("machine roadmap path drifted")
     if status.get("status") == "active" and data["active_roadmaps"] != [ROADMAP_PATH]:
         errors.append("there must be exactly one active canonical roadmap")
-    if status.get("status") == "completed" and data["active_roadmaps"] != [CURRENT_SUCCESSOR_PATH]:
-        errors.append("completed roadmap history must coexist with exactly the declared current successor")
+    if status.get("status") == "completed" and data["active_roadmaps"] != []:
+        errors.append("terminal roadmap history must coexist with no active successor")
 
     baseline = status.get("baseline", {})
     expected_baseline = {
@@ -242,7 +242,7 @@ def main() -> None:
     print(
         "Post-v2.2 implementation roadmap passed: completed terminal roadmap, 6 priorities, "
         "8 milestones, 12 QCSA implementation lanes, 9 existing chapter owners, "
-        "54 argument-state core claims, one declared current successor, no new chapter/format effect, and 8 rejecting mutations."
+        "54 argument-state core claims, no active successor, no new chapter/format effect, and 8 rejecting mutations."
     )
 
 

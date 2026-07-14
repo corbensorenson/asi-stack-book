@@ -1390,7 +1390,13 @@
     "scripts/build_theseus_pretraining_readiness_currentness_import.py",
     "scripts/validate_theseus_pretraining_readiness_currentness_import.py",
     "experiments/theseus_pretraining_readiness_currentness_import/results/2026-07-14-local.json",
-    "docs/theseus_pretraining_readiness_currentness_import.md"
+    "docs/theseus_pretraining_readiness_currentness_import.md",
+    "scripts/build_post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.py",
+    "schemas/post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.schema.json",
+    "release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json",
+    "scripts/validate_post_v2_3_handoff_reader_formats_evidence_renewal_closure.py",
+    "docs/post_v2_3_handoff_reader_formats_evidence_renewal_completion_declaration.md",
+    "docs/post_v2_3_handoff_reader_formats_evidence_renewal_attestation_receipt.md"
   ],
   "units": [
     {
@@ -6374,7 +6380,7 @@
       "output_contract": "Reject stale or stale, reopened, or multiple active identities, release/commit/archive disagreement, mutable-channel laundering, wrong rights tag, optional-format invention, current-count drift, or missing historical/current routing.",
       "output_assertions": [
         "v2.3.0 release commit and archive agree",
-        "predecessor and successor roadmaps are completed with a completed later successor and one declared current successor",
+        "predecessor and successor roadmaps are completed with completed later successors and no active roadmap",
         "54 core claims remain argument",
         "rights remain exact-tag bound",
         "latest remains mutable",
@@ -7261,7 +7267,7 @@
       ],
       "output_contract": "Reject incomplete or silently reopened roadmap authority, cohort or breadth drift, premature semantic/formal completion, borrowed-module completion, reader-denominator laundering, mutation of historical reader identity, undeclared chapter HTML, no-release/public-pointer drift, support promotion, or an external-human prepublication requirement.",
       "output_assertions": [
-        "completed roadmap with one declared active successor",
+        "completed roadmap with terminal later successor",
         "frozen 54-chapter spine",
         "ten exact depth targets",
         "44-record historical reader preserved",
@@ -7962,7 +7968,7 @@
       "output_assertions": [
         "P0-P5 completed",
         "M0-M9 completed",
-        "one declared active successor",
+        "no active successor",
         "54-chapter local reader",
         "21 candidate dispositions",
         "two campaign no-change dispositions",
@@ -8363,11 +8369,93 @@
       "prohibited_inference": "The import does not establish current behavior after d2343540, learned model quality, benchmark superiority, training success, deployment readiness, distributed operation, safety, alignment, transfer, AGI, ASI, or support movement.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "author_owned_local_project_import_not_external_replication"
+    },
+    {
+      "id": "build_post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record:312",
+      "order": 312,
+      "script": "build_post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.py",
+      "args": [],
+      "execution_tier": "release",
+      "validation_class": "publication_gate",
+      "input_contract": "Exact P0-P3 artifacts, substantive tested commit f93a4d8f, format dispositions, source audit, flagship adjudication, Theseus import, immutable v2.3.0 identity, and zero public-release effects.",
+      "input_artifacts": [
+        "scripts/build_post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.py",
+        "schemas/post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.schema.json",
+        "release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json",
+        "docs/post_v2_3_handoff_reader_formats_evidence_renewal_attestation_receipt.md"
+      ],
+      "output_contract": "Reject false format approval, public release, support promotion, useful-release laundering, metadata-erratum erasure, artifact omission, or immutable-release drift.",
+      "output_assertions": [
+        "exact local HTML and DOCX",
+        "EPUB and PDF blocked",
+        "four source additions",
+        "nine controls",
+        "32 flagship candidates",
+        "YELLOW Theseus import",
+        "v2.3.0 unchanged",
+        "six rejecting mutations"
+      ],
+      "claim_scope": "Exact terminal local-reader disposition and no-public-release transaction only.",
+      "negative_controls": "validator_owned_and_terminal_artifact_bound",
+      "negative_control_cases": [
+        "false public release",
+        "false EPUB approval",
+        "support promotion",
+        "unsafe denominator laundering",
+        "erratum erased",
+        "artifact omission"
+      ],
+      "prohibited_inference": "The record does not publish, tag, grant rights, approve blocked formats, promote core claims, or establish model quality, governance efficacy, safety, AGI, or ASI.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_terminal_release_decision_not_independent"
+    },
+    {
+      "id": "validate_post_v2_3_handoff_reader_formats_evidence_renewal_closure:313",
+      "order": 313,
+      "script": "validate_post_v2_3_handoff_reader_formats_evidence_renewal_closure.py",
+      "args": [],
+      "execution_tier": "release",
+      "validation_class": "publication_gate",
+      "input_contract": "Completed P0-P4/M0-M8 status and roadmap, exact terminal record, local format dispositions, 54 core vectors, exact flagship and Theseus results, public truth, and null successor authority.",
+      "input_artifacts": [
+        "scripts/validate_post_v2_3_handoff_reader_formats_evidence_renewal_closure.py",
+        "docs/post_v2_3_handoff_reader_formats_evidence_renewal_completion_declaration.md",
+        "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md",
+        "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
+        "schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.schema.json",
+        "release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json"
+      ],
+      "output_contract": "Reject reopened or hidden roadmap authority, public-release or format laundering, support promotion, useful-denominator inflation, Theseus readiness inflation, or stale public pointers.",
+      "output_assertions": [
+        "P0-P4 completed",
+        "M0-M8 completed",
+        "HTML and DOCX local approval",
+        "EPUB and PDF blocked",
+        "54 argument cores",
+        "v2.3.0 unchanged",
+        "no active successor",
+        "eight rejecting mutations"
+      ],
+      "claim_scope": "Cross-product terminal closure coherence only.",
+      "negative_controls": "validator_owned_and_public_truth_bound",
+      "negative_control_cases": [
+        "reopened roadmap",
+        "hidden successor",
+        "release laundering",
+        "EPUB laundering",
+        "support promotion",
+        "useful denominator laundering",
+        "Theseus readiness laundering",
+        "stale public pointer"
+      ],
+      "prohibited_inference": "Closure coherence does not create a public release or establish model quality, safety, governance efficacy, production readiness, AGI, or ASI.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_terminal_audit_not_independent"
     }
   ],
   "summary": {
-    "required_artifact_count": 1346,
-    "unit_count": 311
+    "required_artifact_count": 1352,
+    "unit_count": 313
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

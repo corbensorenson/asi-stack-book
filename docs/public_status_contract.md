@@ -54,11 +54,14 @@ with terminal machine state in
 `roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json`
 and an exact no-public-release record at
 `release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json`.
-The active canonical successor roadmap is
+The later handoff/reader/evidence roadmap is completed:
 `docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`, with
-machine state in
+terminal machine state in
 `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`,
-and all 54 chapter-core claims remain at `argument`. Later
+and exact no-public-release authority in
+`release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json`.
+No successor roadmap is active, and all 54 chapter-core claims remain at
+`argument`. Later
 root or `/latest/` commits remain mutable and are not part of the immutable
 v2.3.0 tag unless they exactly match that tagged release.
 

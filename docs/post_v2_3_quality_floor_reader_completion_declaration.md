@@ -109,10 +109,12 @@ Future work requires a new explicit prose and machine authority. It may use
 the retained protocol failures and promotion burdens, but it may not silently
 reopen this completed cycle or overwrite its historical records.
 
-Successor activated: 2026-07-13. The current unfinished-work authority is
+Successor activated: 2026-07-13. That later authority was
 `docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md`, with
-machine state in
+terminal machine state in
 `roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json`.
-It preserves this declaration and the exact no-public-release transaction as
-completed history; it does not retroactively create a release effect for this
-cycle.
+It completed on 2026-07-14 with exact no-public-release record
+`release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json`.
+No roadmap is now active. The later closure preserves this declaration and the
+exact historical transaction; it does not retroactively create a release
+effect for this cycle.

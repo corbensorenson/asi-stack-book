@@ -273,7 +273,7 @@ NEW_UNITS = [
             "README.md", "index.qmd", "docs/publication_readiness.md", "docs/public_status_contract.md",
         ],
         "output_contract": "Reject incomplete or silently reopened roadmap authority, cohort or breadth drift, premature semantic/formal completion, borrowed-module completion, reader-denominator laundering, mutation of historical reader identity, undeclared chapter HTML, no-release/public-pointer drift, support promotion, or an external-human prepublication requirement.",
-        "output_assertions": ["completed roadmap with one declared active successor", "frozen 54-chapter spine", "ten exact depth targets", "44-record historical reader preserved", "54-record successor released", "exact no-public-release decision", "ten declared redirects", "54 argument-state core claims", "ten rejecting mutations"],
+        "output_assertions": ["completed roadmap with terminal later successor", "frozen 54-chapter spine", "ten exact depth targets", "44-record historical reader preserved", "54-record successor released", "exact no-public-release decision", "ten declared redirects", "54 argument-state core claims", "ten rejecting mutations"],
         "claim_scope": "Terminal planning, quality-floor, formal-ownership, reader-identity, hygiene, no-release, and public-authority coherence for the post-v2.3 cycle.",
         "negative_controls": "validator_owned_and_surface_bound",
         "negative_control_cases": ["duplicate active roadmap", "missing target", "premature semantic completion", "borrowed module completion", "reader laundering", "support promotion", "breadth expansion", "undeclared HTML", "stale pointer", "external review requirement"],
@@ -539,10 +539,34 @@ TERMINAL_UNITS = [
         "input_contract": "Terminal roadmap/status/declaration, no-public-release transaction, exact local reader, candidate and campaign adjudications, 54 core vectors, closure digests, and reconciled public surfaces.",
         "input_artifacts": ["scripts/validate_post_v2_3_cycle_closure.py", "docs/post_v2_3_quality_floor_reader_completion_declaration.md", "roadmap_records/post_v2_3_quality_floor_and_reader_completion_status.json", "release_records/2026-07-13-post-v2-3-quality-reader-cycle-no-public-release.json", "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md", "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"],
         "output_contract": "Reject incomplete or reopened work, hidden active roadmap, reader deployment laundering, campaign reasoning laundering, support promotion, closure digest drift, or stale public truth.",
-        "output_assertions": ["P0-P5 completed", "M0-M9 completed", "one declared active successor", "54-chapter local reader", "21 candidate dispositions", "two campaign no-change dispositions", "v2.3.0 latest public", "six rejecting mutations"],
+        "output_assertions": ["P0-P5 completed", "M0-M9 completed", "no active successor", "54-chapter local reader", "21 candidate dispositions", "two campaign no-change dispositions", "v2.3.0 latest public", "six rejecting mutations"],
         "claim_scope": "Cross-surface terminal closure coherence only.", "negative_controls": "validator_owned_and_terminal_surface_bound",
         "negative_control_cases": ["reopened roadmap", "hidden successor", "release laundering", "reasoning laundering", "support promotion", "reader deployment laundering"],
         "prohibited_inference": "Closure coherence does not establish model quality, safety, production readiness, governance efficacy, residual honesty, AGI, ASI, or public publication.",
+        "contract_precision": "exact_high_impact", "semantic_review_state": "internal_terminal_audit_not_independent",
+    },
+    {
+        "script": "build_post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.py",
+        "execution_tier": "release", "validation_class": "publication_gate",
+        "input_contract": "Exact P0-P3 artifacts, substantive tested commit f93a4d8f, format dispositions, source audit, flagship adjudication, Theseus import, immutable v2.3.0 identity, and zero public-release effects.",
+        "input_artifacts": ["scripts/build_post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.py", "schemas/post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.schema.json", "release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json", "docs/post_v2_3_handoff_reader_formats_evidence_renewal_attestation_receipt.md"],
+        "output_contract": "Reject false format approval, public release, support promotion, useful-release laundering, metadata-erratum erasure, artifact omission, or immutable-release drift.",
+        "output_assertions": ["exact local HTML and DOCX", "EPUB and PDF blocked", "four source additions", "nine controls", "32 flagship candidates", "YELLOW Theseus import", "v2.3.0 unchanged", "six rejecting mutations"],
+        "claim_scope": "Exact terminal local-reader disposition and no-public-release transaction only.", "negative_controls": "validator_owned_and_terminal_artifact_bound",
+        "negative_control_cases": ["false public release", "false EPUB approval", "support promotion", "unsafe denominator laundering", "erratum erased", "artifact omission"],
+        "prohibited_inference": "The record does not publish, tag, grant rights, approve blocked formats, promote core claims, or establish model quality, governance efficacy, safety, AGI, or ASI.",
+        "contract_precision": "exact_high_impact", "semantic_review_state": "internal_terminal_release_decision_not_independent",
+    },
+    {
+        "script": "validate_post_v2_3_handoff_reader_formats_evidence_renewal_closure.py",
+        "execution_tier": "release", "validation_class": "publication_gate",
+        "input_contract": "Completed P0-P4/M0-M8 status and roadmap, exact terminal record, local format dispositions, 54 core vectors, exact flagship and Theseus results, public truth, and null successor authority.",
+        "input_artifacts": ["scripts/validate_post_v2_3_handoff_reader_formats_evidence_renewal_closure.py", "docs/post_v2_3_handoff_reader_formats_evidence_renewal_completion_declaration.md", "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md", "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json", "schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.schema.json", "release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json"],
+        "output_contract": "Reject reopened or hidden roadmap authority, public-release or format laundering, support promotion, useful-denominator inflation, Theseus readiness inflation, or stale public pointers.",
+        "output_assertions": ["P0-P4 completed", "M0-M8 completed", "HTML and DOCX local approval", "EPUB and PDF blocked", "54 argument cores", "v2.3.0 unchanged", "no active successor", "eight rejecting mutations"],
+        "claim_scope": "Cross-product terminal closure coherence only.", "negative_controls": "validator_owned_and_public_truth_bound",
+        "negative_control_cases": ["reopened roadmap", "hidden successor", "release laundering", "EPUB laundering", "support promotion", "useful denominator laundering", "Theseus readiness laundering", "stale public pointer"],
+        "prohibited_inference": "Closure coherence does not create a public release or establish model quality, safety, governance efficacy, production readiness, AGI, or ASI.",
         "contract_precision": "exact_high_impact", "semantic_review_state": "internal_terminal_audit_not_independent",
     },
 ]
@@ -591,13 +615,13 @@ def update_historical_units(registry: dict, overrides: dict) -> None:
                 unit["input_artifacts"].append(artifact)
             if artifact not in registry["required_artifacts"]:
                 registry["required_artifacts"].append(artifact)
-        unit["input_contract"] = unit["input_contract"].replace("with one declared later active successor", "with a completed later successor and one declared current successor")
-        unit["input_contract"] = unit["input_contract"].replace("with a completed later successor and no active roadmap", "with a completed later successor and one declared current successor")
+        unit["input_contract"] = unit["input_contract"].replace("with one declared later active successor", "with completed later successors and no active roadmap")
+        unit["input_contract"] = unit["input_contract"].replace("with a completed later successor and one declared current successor", "with completed later successors and no active roadmap")
         unit["output_contract"] = unit["output_contract"].replace("missing or multiple later active identities", "stale, reopened, or multiple active identities")
         unit["output_assertions"] = [
-            item.replace("with one declared later active successor", "with a completed later successor and one declared current successor")
-                .replace("with a completed later successor and no active roadmap", "with a completed later successor and one declared current successor")
-                .replace("no active successor", "one declared current successor")
+            item.replace("with one declared later active successor", "with completed later successors and no active roadmap")
+                .replace("with a completed later successor and one declared current successor", "with completed later successors and no active roadmap")
+                .replace("one declared current successor", "no active successor")
             for item in unit["output_assertions"]
         ]
         sync_override(overrides, unit)

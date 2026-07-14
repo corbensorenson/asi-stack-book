@@ -121,8 +121,8 @@ def semantic_errors(data: dict) -> list[str]:
 
     if status.get("status") != "completed":
         errors.append("post-v2.3 roadmap must be completed after every terminal gate closes")
-    if data["active_roadmaps"] != [SUCCESSOR_ROADMAP_PATH]:
-        errors.append("the completed post-v2.3 cycle must have exactly the declared clean-handoff successor active")
+    if data["active_roadmaps"] != []:
+        errors.append("terminal roadmap history must expose no active successor")
     if "Status: completed 2026-07-13" not in data["predecessor"]:
         errors.append("predecessor roadmap lost completed status")
     if len(rows) != 54 or len(source_rows) < 280:
@@ -225,8 +225,8 @@ def semantic_errors(data: dict) -> list[str]:
 
     successor = data["successor_status"]
     errors.extend(validate_against_schema(successor, data["successor_schema"], SUCCESSOR_STATUS_PATH))
-    if successor.get("status") != "active" or successor.get("roadmap_path") != SUCCESSOR_ROADMAP_PATH:
-        errors.append("declared clean-handoff successor machine authority is absent or not active")
+    if successor.get("status") != "completed" or successor.get("roadmap_path") != SUCCESSOR_ROADMAP_PATH:
+        errors.append("declared clean-handoff successor machine authority is absent or not terminal")
     if [row.get("id") for row in successor.get("priorities", [])] != [f"P{i}" for i in range(5)]:
         errors.append("successor priority order must be P0 through P4")
     if [row.get("id") for row in successor.get("milestones", [])] != [f"M{i}" for i in range(9)]:

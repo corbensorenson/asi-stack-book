@@ -66,8 +66,8 @@ def errors(data: dict) -> list[str]:
         out.append("P0-P5 are not exactly completed")
     if [row.get("id") for row in status.get("milestones", [])] != [f"M{i}" for i in range(10)] or any(row.get("state") != "completed" for row in status.get("milestones", [])):
         out.append("M0-M9 are not exactly completed")
-    if data["active_roadmaps"] != [SUCCESSOR]:
-        out.append("the completed cycle must expose exactly its declared active successor")
+    if data["active_roadmaps"] != []:
+        out.append("terminal roadmap history must expose no active successor")
     if "Status: completed 2026-07-13" not in data["roadmap"]:
         out.append("roadmap prose is not terminal")
 
@@ -109,8 +109,8 @@ def errors(data: dict) -> list[str]:
             out.append(f"closure artifact digest mismatch: {path}")
 
     successor = data["successor_status"]
-    if successor.get("status") != "active" or successor.get("roadmap_path") != SUCCESSOR:
-        out.append("declared successor machine state is absent or not active")
+    if successor.get("status") != "completed" or successor.get("roadmap_path") != SUCCESSOR:
+        out.append("declared successor machine state is absent or not terminal")
 
     for phrase in ["P0–P5", "M0–M9", NO_RELEASE, SUCCESSOR, SUCCESSOR_STATUS, "Successor activated: 2026-07-13", "All 54 chapter-core claims remain at `argument`"]:
         if phrase not in data["declaration"]:
@@ -137,7 +137,7 @@ def main() -> None:
             failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit("Post-v2.3 cycle closure failed:\n - " + "\n - ".join(failures))
-    print("Post-v2.3 cycle closure passed: P0-P5 and M0-M9 remain complete with one declared active successor, exact local 54-chapter reader, 21 candidate and 2 campaign dispositions, v2.3.0 still latest public, 54 argument cores, and 6 rejecting mutations.")
+    print("Post-v2.3 cycle closure passed: P0-P5 and M0-M9 remain complete with no active successor, exact local 54-chapter reader, 21 candidate and 2 campaign dispositions, v2.3.0 still latest public, 54 argument cores, and 6 rejecting mutations.")
 
 
 if __name__ == "__main__":
