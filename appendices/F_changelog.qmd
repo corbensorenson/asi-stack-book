@@ -9,6 +9,13 @@
   per-format render timeout that terminates the whole Quarto process group and
   records timeout state; the first v2 EPUB preflight exposed an indefinitely
   idle Mermaid/Chrome conversion and produced no candidate artifact.
+- Extended the already bounded static Mermaid fallback from PDF to EPUB and
+  DOCX. The repaired v2.0 EPUB preflight rendered successfully with 68 static
+  Mermaid PNG fallbacks across 54 source files, zero Quarto warnings, and no
+  timeout. The resulting local candidate is 5,512,523 bytes with SHA-256
+  `9d4804913894a971195339a4ee630e7fd34e6d88c02af2d0bafa1b6b3e753d59`;
+  it remains unapproved pending the full package, navigation, accessibility,
+  and Apple Books review gates.
 - Completed P0 with `docs/post_v2_3_clean_handoff_receipt.md`. The five-commit
   handoff terminates at `c2db70988cb3b06860c2994c0bb2e7f3e2874544`; GitHub
   build run `29293371709` passed the deep registry, Lean, clean render,

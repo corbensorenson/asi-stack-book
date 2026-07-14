@@ -203,10 +203,10 @@ def normalize_svg(svg: str) -> str:
 def mermaid_image_attrs(svg: str) -> str:
     width, height = svg_viewbox_size(svg)
     if height / max(width, 1.0) > 1.05:
-        return 'height=5.85in fig-alt="PDF-safe rendered Mermaid diagram."'
+        return 'height=5.85in fig-alt="Static rendered Mermaid diagram."'
     if width / max(height, 1.0) > 2.2:
-        return 'width=95% fig-alt="PDF-safe rendered Mermaid diagram."'
-    return 'width=90% fig-alt="PDF-safe rendered Mermaid diagram."'
+        return 'width=95% fig-alt="Static rendered Mermaid diagram."'
+    return 'width=90% fig-alt="Static rendered Mermaid diagram."'
 
 
 def svg_viewbox_size(svg: str) -> tuple[float, float]:
@@ -274,7 +274,7 @@ def render_svg_to_png_with_chrome(chrome_binary: str, svg: str, png_path: Path) 
 
 
 def render_mermaid_svg_to_png(chrome_binary: str, svg_path: Path, svg: str, png_path: Path) -> str:
-    """Render a browser-extracted Mermaid SVG into a PDF-safe PNG fallback."""
+    """Render a browser-extracted Mermaid SVG into a static PNG fallback."""
     try:
         return convert_svg_to_png(svg_path, png_path)
     except (RuntimeError, subprocess.CalledProcessError):
@@ -283,7 +283,7 @@ def render_mermaid_svg_to_png(chrome_binary: str, svg_path: Path, svg: str, png_
 
 @contextmanager
 def pdf_mermaid_static_fallbacks(output_dir: Path) -> Iterator[dict[str, object]]:
-    """Temporarily replace Mermaid fences with browser-rendered PNGs for PDF."""
+    """Temporarily replace Mermaid fences with browser-rendered static PNGs."""
     qmd_paths = [
         path
         for path in sorted(output_dir.rglob("*.qmd"))
@@ -487,6 +487,12 @@ def run_render(output_dir: Path, fmt: str, timeout_seconds: int) -> dict[str, ob
                     )
         elif fmt == "docx":
             with raster_diagram_fallbacks(output_dir) as fallback_info:
+                with pdf_mermaid_static_fallbacks(output_dir) as mermaid_fallback_info:
+                    returncode, timed_out = run_bounded_render(
+                        command, output_dir, log_file, timeout_seconds
+                    )
+        elif fmt == "epub":
+            with pdf_mermaid_static_fallbacks(output_dir) as mermaid_fallback_info:
                 returncode, timed_out = run_bounded_render(
                     command, output_dir, log_file, timeout_seconds
                 )
