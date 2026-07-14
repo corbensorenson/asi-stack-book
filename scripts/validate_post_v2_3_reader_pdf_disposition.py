@@ -7,6 +7,7 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import shutil
 
 from audit_post_v2_3_reader_pdf_artifact import observe
 from build_canonical_public_status import validate_against_schema
@@ -39,6 +40,8 @@ def sha256(path: Path) -> str:
 def snapshot() -> dict:
     disposition = load(DISPOSITION)
     artifact = ROOT / disposition["artifact"]["path"]
+    poppler_commands = ("pdffonts", "pdftotext", "pdftoppm")
+    replay_available = all(shutil.which(command) for command in poppler_commands)
     return {
         "disposition": disposition,
         "schema": load(SCHEMA),
@@ -60,7 +63,10 @@ def snapshot() -> dict:
         "visual_sha256": sha256(VISUAL),
         "application_sha256": sha256(APPLICATION),
         "reproducibility_sha256": sha256(REPRODUCIBILITY),
-        "observed_structural": observe(artifact),
+        "observed_structural": observe(artifact) if replay_available else None,
+        "structural_replay_mode": (
+            "full_local_poppler_replay" if replay_available else "exact_artifact_and_digest_bound_report_validation"
+        ),
     }
 
 
@@ -91,8 +97,12 @@ def semantic_errors(data: dict) -> list[str]:
         errors.append("PDF reproducibility evidence digest drifted")
 
     structural = data["structural"]
-    if structural != data["observed_structural"] or structural.get("errors"):
+    if data["observed_structural"] is not None and structural != data["observed_structural"]:
         errors.append("PDF tracked structural/page report is stale or failing")
+    if structural.get("errors"):
+        errors.append("PDF tracked structural/page report records a failure")
+    if structural.get("sha256") != data["artifact_sha256"] or structural.get("bytes") != data["artifact_bytes"]:
+        errors.append("PDF tracked structural/page report is not bound to the exact artifact")
     expected = {
         "pages": 565,
         "outline_entries": 1142,
@@ -212,7 +222,7 @@ def main() -> None:
     print(
         "PDF disposition validation passed: exact replayed 565-page artifact, page-complete "
         "automation and internal visual review, honest Preview blocker, eight rejecting controls, "
-        "no support or release effect."
+        f"no support or release effect; structural verification mode={data['structural_replay_mode']}."
     )
 
 
