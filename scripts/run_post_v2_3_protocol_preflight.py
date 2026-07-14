@@ -60,6 +60,7 @@ def call(model, tokenizer, prompt: str, max_tokens: int, seed: int) -> tuple[str
         sampler=make_sampler(temp=0.1, top_p=0.9),
         verbose=False,
     ).strip()
+    raw = "\n".join(line.rstrip() for line in raw.splitlines())
     return raw, time.perf_counter() - started, tokens(tokenizer, raw)
 
 

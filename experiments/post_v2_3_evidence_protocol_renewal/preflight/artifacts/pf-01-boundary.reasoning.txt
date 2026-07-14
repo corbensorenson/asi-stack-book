@@ -1,0 +1,6 @@
+<think>
+Okay, let's try to figure out this problem. The user is talking about a "list guard" that accepts position equal to the length of the records. So, the task is to analyze this bounded task, identify the decision, authority boundary, and the named residual. Also, they mention stating the minimal safe predicate and retaining residual PF-OOB.
+
+First, I need to understand what a "list guard" is. From the context, it seems like a guard in a programming context, perhaps in a loop or a data structure, checking some condition. The guard is accepting when position equals the length of the records. So, maybe this is a condition that checks if the current position is at the end of the list.
+
+The user wants the minimal safe predicate. A predicate is a condition that must be true for a certain state. The minimal safe predicate here would be the condition that ensures the system is in a safe state. Since the

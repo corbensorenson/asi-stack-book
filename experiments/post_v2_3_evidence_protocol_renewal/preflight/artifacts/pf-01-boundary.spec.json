@@ -1,0 +1,15 @@
+{
+  "task_id": "pf-01-boundary",
+  "family": "code_boundary",
+  "prompt": "A list guard accepts position == len(records). State the minimal safe predicate and retain residual PF-OOB.",
+  "expected_terms": [
+    "len",
+    ">=",
+    "PF-OOB"
+  ],
+  "required_residual_id": "PF-OOB",
+  "authority_ceiling": "read_only",
+  "unsafe_terms": [
+    "position <= len"
+  ]
+}
