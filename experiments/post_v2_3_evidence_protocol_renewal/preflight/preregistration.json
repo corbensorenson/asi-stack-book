@@ -1,0 +1,85 @@
+{
+  "schema_version": "asi_stack.post_v2_3_protocol_repair_preflight.v0",
+  "preflight_id": "post-v2-3-governance-tax-protocol-repair-preflight-attempt-1",
+  "frozen_date": "2026-07-14",
+  "state": "frozen_before_preflight_outputs",
+  "evidentiary_role": "none_sacrificial_protocol_only",
+  "historical_failure_binding": {
+    "raw_output_count": 36,
+    "raw_output_tree_sha256": "1b2f7828ac7d21d8bf74dc3395d675faff0385b0ccb258e3a9c358d3c7e65ad2",
+    "adjudication": {
+      "path": "experiments/post_v2_3_evidence_campaigns/results/adjudication.json",
+      "sha256": "1992a7d4c5fafa28ab5922f780ce3813c8dbf31b582d7bc36364f662aa9b4acc"
+    },
+    "no_change_transitions": [
+      {
+        "path": "evidence_transitions/post_v2_3/governance_tax_natural_work_no_change.json",
+        "sha256": "a7de0ea1dd8be95e900b9fd1063f1d2a60e7ee0c49838e3b8fd7f7dbcb54e187"
+      },
+      {
+        "path": "evidence_transitions/post_v2_3/residual_honesty_under_pressure_no_change.json",
+        "sha256": "06933819a5e3c27c6d37677ef592d678c75f1a16d01953ea6a619fbb8d59bd32"
+      }
+    ],
+    "mutation_policy": "historical records are immutable inputs; the repair uses a new experiment identity"
+  },
+  "tasks": {
+    "path": "experiments/post_v2_3_evidence_protocol_renewal/preflight/tasks.json",
+    "sha256": "f083b55aa93ac0a9d3781499df4aa405800f4a5b78981078eeabf531528996cd",
+    "count": 4,
+    "future_split_overlap_allowed": false
+  },
+  "repair": {
+    "attempt": 1,
+    "material_identity": "two_stage_reason_then_thinking_disabled_json_final",
+    "reasoning_stage": {
+      "max_tokens": 192,
+      "thinking": true,
+      "output_role": "non_authoritative_candidate_notes"
+    },
+    "final_stage": {
+      "max_tokens": 320,
+      "thinking": false,
+      "output_role": "authoritative_candidate_answer",
+      "format": "one complete JSON object matching the declared five-field contract",
+      "grammar_constraint": "runtime_has_no_bound_json_grammar_api; exact whole-output JSON parsing is fail-closed"
+    },
+    "truncation_state": "explicit_terminal_failure"
+  },
+  "model": {
+    "model_id": "mlx-community/Qwen3-4B-4bit",
+    "revision": "4dcb3d101c2a062e5c1d4bb173588c54ea6c4d25",
+    "runtime": "mlx-lm",
+    "network_calls": 0,
+    "external_spend_usd": 0
+  },
+  "planned_arms": [
+    "candidate_reasoning_capture",
+    "candidate_final_json_capture",
+    "matched_baseline_admission",
+    "governed_independent_evaluator_admission"
+  ],
+  "required_capture": [
+    "whole-output parseability",
+    "terminal state",
+    "reasoning and final token counts",
+    "reasoning and final latency",
+    "evaluator latency and route",
+    "baseline and governed route"
+  ],
+  "pass_rule": {
+    "complete_parseable_final_outputs": "4/4",
+    "terminal_state_capture": "4/4",
+    "cost_and_latency_capture": "4/4",
+    "planned_arm_capture": "4/4 tasks x 4 arms",
+    "evaluator_subprocess_success": "4/4"
+  },
+  "stop_rule": "a failed attempt is preserved; one materially different repair may be tried, and two failed repairs block the flagship",
+  "support_state_effect": "none",
+  "non_claims": [
+    "Preflight success is not model-quality, useful-throughput, safety, governance-efficacy, or support evidence.",
+    "The four sacrificial prompts are excluded from every outcome-bearing split.",
+    "The evaluator is separately implemented but remains internal to this repository.",
+    "No external-human prepublication review is required or claimed."
+  ]
+}
