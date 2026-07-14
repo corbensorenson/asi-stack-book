@@ -1,0 +1,90 @@
+{
+  "schema_version": "asi_stack.reader_text_format_profile.v1",
+  "edition_id": "asi-stack-curated-reader-v2.0",
+  "freeze_date": "2026-07-13",
+  "state": "frozen_before_release_candidates",
+  "source_lock": {
+    "manifest_path": "editions/reader_manuscript/v2_0/manifest.json",
+    "manifest_sha256": "925064e578394feb5e02b6f90c83d3c59343f037ec4ee5ec73f6da373bf3ba9b",
+    "source_tree_sha256": "bfe8e766162a6ddf1a26b144fcdcd77623a11ad420d4bba9e04fb881bcb87753",
+    "curated_chapter_bundle_sha256": "95f8130d7199501f76c2005ade17e78b8842e5523889d5bf1e8553b80fff69c0",
+    "chapter_ids_sha256": "2f1aeb579823752eff3a402bd5852395e1b4876cb1fcce47c737759a2be2b7ab",
+    "chapter_count": 54,
+    "approved_html_archive_sha256": "a2caa97fb9281e1fdfc9a9dda626141d4a876df776c9cbc7408f978751736b50"
+  },
+  "shared_profile": {
+    "quarto_profile": "reader_release",
+    "generated_quarto_profile_sha256": "47460de35d96ac221ec01dd9c12019997856fc6ceb0454b5e6e14574a6d70919",
+    "language": "en-US",
+    "locale": "en_US.UTF-8",
+    "per_format_timeout_seconds": 600,
+    "mermaid_policy": {
+      "mode": "static_png_from_rendered_html_projection",
+      "expected_diagram_count": 68,
+      "expected_source_file_count": 54,
+      "extractor_timeout_seconds_per_file": 120,
+      "rasterizer": "sips",
+      "preflight_only_epub_sha256": "9d4804913894a971195339a4ee630e7fd34e6d88c02af2d0bafa1b6b3e753d59",
+      "preflight_disposition": "excluded_from_release_consideration_and_must_be_regenerated_after_this_freeze"
+    }
+  },
+  "toolchain": {
+    "platform": "macOS 15.0 build 24A5320a",
+    "quarto": "1.9.38",
+    "pandoc": "3.8.3",
+    "node": "22.15.0",
+    "chrome": "150.0.7871.49",
+    "sips": "307",
+    "typst": "0.14.2",
+    "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5"
+  },
+  "formats": {
+    "epub": {
+      "state": "profile_frozen_candidate_not_generated",
+      "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats epub --timeout-seconds 600 --stop-on-fail",
+      "package": "EPUB 3 produced by Quarto/Pandoc",
+      "cover": "assets/images/asi-stack-hero.png",
+      "toc": true,
+      "application_review": "/System/Applications/Books.app",
+      "required_gates": ["container_and_opf", "all_xhtml_xml", "navigation_and_landmarks", "internal_links_and_anchors", "images_alt_tables_code_math", "reflow_font_scale_dark_light", "search_and_text_extraction", "apple_books_application"]
+    },
+    "pdf": {
+      "state": "profile_frozen_candidate_not_generated",
+      "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats pdf --timeout-seconds 600 --stop-on-fail",
+      "engine": "typst 0.14.2",
+      "page_size": "us-letter",
+      "body_font": "Libertinus Serif",
+      "mono_font": "DejaVu Sans Mono",
+      "application_review": "/System/Applications/Preview.app",
+      "required_gates": ["metadata_fonts_outline", "links_and_destinations", "text_extraction_order", "replacement_characters", "every_page_raster", "risk_page_viewer_review"]
+    },
+    "docx": {
+      "state": "profile_frozen_candidate_not_generated",
+      "command": "python3 scripts/render_curated_reader_formats.py --manifest editions/reader_manuscript/v2_0/manifest.json --output build/curated_reader_v2_0_formats --formats docx --timeout-seconds 600 --stop-on-fail",
+      "design_preset": "narrative_proposal",
+      "reference_doc": "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx",
+      "reference_doc_sha256": "3be6973e2b9859e914e536e0c159f71fbb2e18f7493170ca4993828b6358fdf7",
+      "page_size": "us-letter",
+      "margins_inches": 1.0,
+      "body_font": "Calibri 11 pt",
+      "body_spacing": "8 pt after, 1.333 lines",
+      "application_review": "LibreOfficeDev 26.8.0.0.alpha0",
+      "required_gates": ["ooxml_integrity", "styles_headings_lists_tables", "links_media_alt_equations", "metadata_language_reading_order", "libreoffice_conversion", "every_page_raster"]
+    },
+    "audio": {"state": "deferred_not_authorized"},
+    "embedded_audio": {"state": "deferred_not_authorized"}
+  },
+  "rights_snapshot": {
+    "default": "all_rights_reserved",
+    "new_public_license_grant": false,
+    "public_artifact_authorized": false
+  },
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This profile freeze is not a format artifact approval or public release.",
+    "The pre-freeze EPUB is a renderer preflight and is excluded from release consideration.",
+    "Application paths do not imply screen-reader, device-family, Microsoft Word, legal WCAG, or independent-human review.",
+    "Format success cannot promote a chapter claim or change evidence support."
+  ]
+}

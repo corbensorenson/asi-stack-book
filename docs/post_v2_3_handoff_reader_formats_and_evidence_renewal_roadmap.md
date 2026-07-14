@@ -187,6 +187,14 @@ tag, license, or immutable archive identity. P1 is now the active priority.
 - Select format profiles before rendering and record dependencies, locale,
   fonts, toolchain versions, commands, and deterministic inputs.
 
+M2 completed 2026-07-13 through
+`editions/reader_manuscript/v2_0/text_format_profile.json`. It binds the exact
+54-chapter source, approved HTML predecessor, generated Quarto profile,
+toolchain, bounded static-Mermaid route, EPUB/Apple Books path, Typst/Preview
+PDF path, deterministic narrative-proposal DOCX reference, and
+LibreOffice/page-raster path. The successful pre-freeze EPUB is explicitly a
+renderer preflight and must be regenerated; it is not a release candidate.
+
 ### EPUB gate
 
 - Validate package, mimetype, container, OPF metadata, language, identifier,
@@ -377,7 +385,7 @@ every residual and non-claim visible, and no silent successor activation.
 |---|---|---|
 | M0 — Critique calibrated and successor installed | completed | This roadmap, machine status, predecessor pointer, and stale/already-fixed finding table. |
 | M1 — Completed cycle cleanly handed off | completed | Reviewed commit series, clean tree or exact local residual inventory, remote branch, observed CI/Pages result. |
-| M2 — Reader source and format profiles frozen | in progress | One 54-chapter source digest, pinned toolchain, prospective EPUB/PDF/DOCX profiles. |
+| M2 — Reader source and format profiles frozen | completed | One 54-chapter source digest, pinned toolchain, prospective EPUB/PDF/DOCX profiles. |
 | M3 — EPUB dispositioned | pending | Exact EPUB artifact plus pass/block record and application/accessibility evidence. |
 | M4 — PDF dispositioned | pending | Exact PDF artifact plus page-complete inspection and pass/block record. |
 | M5 — DOCX dispositioned | pending | Exact DOCX artifact plus package/application/layout evidence and pass/block record. |

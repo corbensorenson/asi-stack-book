@@ -1323,7 +1323,10 @@
     "docs/post_v2_3_handoff_reader_formats_and_evidence_renewal_roadmap.md",
     "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
     "schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.schema.json",
-    "docs/post_v2_3_clean_handoff_receipt.md"
+    "docs/post_v2_3_clean_handoff_receipt.md",
+    "editions/reader_manuscript/v2_0/text_format_profile.json",
+    "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx",
+    "scripts/build_post_v2_3_reader_docx_reference.py"
   ],
   "units": [
     {
@@ -7172,6 +7175,9 @@
         "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json",
         "schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.schema.json",
         "docs/post_v2_3_clean_handoff_receipt.md",
+        "editions/reader_manuscript/v2_0/text_format_profile.json",
+        "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx",
+        "scripts/build_post_v2_3_reader_docx_reference.py",
         "docs/post_v2_2_implementation_completion_roadmap.md",
         "docs/v2_3_completion_declaration.md",
         "editions/reader_manuscript/v1_0/manifest.json",
@@ -7909,7 +7915,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 1279,
+    "required_artifact_count": 1282,
     "unit_count": 303
   },
   "non_claims": [

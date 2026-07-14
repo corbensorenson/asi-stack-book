@@ -39,6 +39,7 @@ FORMAT_EXTENSIONS = {
 }
 PRESERVED_ARTIFACT_DIR = "format_artifacts"
 REPORT_NAME = "curated_reader_render_report.json"
+TEXT_FORMAT_PROFILE_NAME = "text_format_profile.json"
 DIAGRAM_SVG_REF_RE = re.compile(r"(\]\()(\.\./assets/diagrams/)([^)]+?)\.svg(\))")
 MERMAID_BLOCK_RE = re.compile(r"```\{mermaid\}\s*\n([\s\S]*?)\n```")
 MERMAID_SVG_RE = re.compile(r"""<svg\b(?=[^>]*\bid=["']mermaid-\d+["'])[\s\S]*?</svg>""")
@@ -69,6 +70,42 @@ def find_artifacts(output_dir: Path, fmt: str) -> list[str]:
         if any(path.name.endswith(suffix) for suffix in suffixes):
             artifacts.append(str(relative))
     return sorted(artifacts)
+
+
+def apply_frozen_text_format_profile(output_dir: Path, manifest_path: Path) -> dict[str, object]:
+    profile_path = manifest_path.resolve().parent / TEXT_FORMAT_PROFILE_NAME
+    if not profile_path.is_file():
+        return {"applied": False, "profile": "", "reference_doc": ""}
+    profile = json.loads(profile_path.read_text(encoding="utf-8"))
+    if profile.get("state") != "frozen_before_release_candidates":
+        raise RuntimeError("text format profile exists but is not frozen")
+    quarto_path = output_dir / "_quarto.yml"
+    text = quarto_path.read_text(encoding="utf-8")
+    docx_old = "  docx:\n    toc: true\n"
+    docx_new = "  docx:\n    toc: true\n    reference-doc: assets/reader-v2-reference.docx\n"
+    pdf_old = (
+        "  pdf:\n    toc: true\n    number-sections: true\n"
+        "    include-in-header:\n      - assets/pdf-long-inline-code.tex\n"
+        "    filters:\n      - assets/pdf-break-inline-code.lua\n"
+    )
+    pdf_new = (
+        "  pdf:\n    toc: true\n    number-sections: true\n"
+        "    pdf-engine: typst\n    papersize: us-letter\n"
+        "    mainfont: Libertinus Serif\n    monofont: DejaVu Sans Mono\n"
+    )
+    if docx_old not in text or pdf_old not in text:
+        raise RuntimeError("generated Quarto format blocks drifted from frozen profile patch points")
+    reference_rel = profile["formats"]["docx"]["reference_doc"]
+    reference_src = ROOT / reference_rel
+    reference_dst = output_dir / "assets" / "reader-v2-reference.docx"
+    reference_dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(reference_src, reference_dst)
+    quarto_path.write_text(text.replace(docx_old, docx_new).replace(pdf_old, pdf_new), encoding="utf-8")
+    return {
+        "applied": True,
+        "profile": str(profile_path.relative_to(ROOT)),
+        "reference_doc": str(reference_src.relative_to(ROOT)),
+    }
 
 
 def preserve_artifacts(output_dir: Path, fmt: str, artifacts: list[str]) -> list[str]:
@@ -600,6 +637,9 @@ def main() -> None:
 
     output_dir = Path(args.output)
     generation_report = build_curated_reader_edition.generate(output_dir, args.profile, manifest_path)
+    generation_report["frozen_text_format_profile"] = apply_frozen_text_format_profile(
+        output_dir, manifest_path
+    )
     render_records: list[dict[str, object]] = []
     for fmt in formats:
         record = run_render(output_dir, fmt, args.timeout_seconds)

@@ -2,6 +2,12 @@
 
 ## 2026-07-13 - Audit the post-v2.3 clean handoff boundary
 
+- Completed M2 with an exact 54-chapter source and multi-format profile lock at
+  `editions/reader_manuscript/v2_0/text_format_profile.json`. The profile pins
+  the source/profile digests, locale, toolchain, bounded static-Mermaid route,
+  EPUB/Apple Books checks, Typst/Preview PDF checks, and a byte-deterministic
+  narrative-proposal DOCX reference plus LibreOffice/page-raster checks. The
+  earlier successful EPUB remains excluded as a pre-freeze preflight.
 - Generalized the curated-reader workspace and format renderer to accept an
   explicit tracked manifest, so the 54-chapter v2.0 successor cannot silently
   fall back to the historical 44-chapter v1.0 source. Both the v2.0 renderable

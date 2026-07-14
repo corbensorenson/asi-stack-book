@@ -27,6 +27,8 @@ SUCCESSOR_ROADMAP_PATH = "docs/post_v2_3_handoff_reader_formats_and_evidence_ren
 SUCCESSOR_STATUS_PATH = "roadmap_records/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.json"
 SUCCESSOR_SCHEMA_PATH = "schemas/post_v2_3_handoff_reader_formats_and_evidence_renewal_status.schema.json"
 SUCCESSOR_P0_RECEIPT_PATH = "docs/post_v2_3_clean_handoff_receipt.md"
+SUCCESSOR_TEXT_FORMAT_PROFILE_PATH = "editions/reader_manuscript/v2_0/text_format_profile.json"
+SUCCESSOR_DOCX_REFERENCE_PATH = "editions/reader_manuscript/v2_0/profiles/reader-v2-reference.docx"
 ACTIVE_MARKER = "Status: active canonical successor roadmap; unfinished work only"
 TARGET_IDS = [
     "scalable-oversight-and-adversarial-ai-control",
@@ -95,6 +97,7 @@ def snapshot() -> dict:
         "successor_status": load_json(ROOT / SUCCESSOR_STATUS_PATH),
         "successor_schema": load_json(ROOT / SUCCESSOR_SCHEMA_PATH),
         "successor_p0_receipt": (ROOT / SUCCESSOR_P0_RECEIPT_PATH).read_text(encoding="utf-8"),
+        "successor_text_format_profile": load_json(ROOT / SUCCESSOR_TEXT_FORMAT_PROFILE_PATH),
         "active_roadmaps": active_roadmaps(),
         "hygiene_errors": hygiene_errors(),
     }
@@ -246,6 +249,29 @@ def semantic_errors(data: dict) -> list[str]:
                 errors.append(f"successor clean-handoff receipt missing machine-bound value: {value}")
         if handoff.get("support_state_effect") != "none" or handoff.get("release_effect") != "none":
             errors.append("successor clean-handoff receipt invented a support or release effect")
+    m2 = next((row for row in successor.get("milestones", []) if row.get("id") == "M2"), {})
+    if m2.get("state") == "completed":
+        profile = data["successor_text_format_profile"]
+        source_lock = profile.get("source_lock", {})
+        if profile.get("state") != "frozen_before_release_candidates" or source_lock.get("chapter_count") != 54:
+            errors.append("successor M2 completed without a frozen 54-chapter text-format profile")
+        for path, expected in [
+            (SUCCESSOR_TEXT_FORMAT_PROFILE_PATH, None),
+            (PROVISIONAL_READER_PATH, source_lock.get("manifest_sha256")),
+            (SUCCESSOR_DOCX_REFERENCE_PATH, profile.get("formats", {}).get("docx", {}).get("reference_doc_sha256")),
+        ]:
+            if not (ROOT / path).is_file():
+                errors.append(f"successor M2 artifact is missing: {path}")
+            elif expected and hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != expected:
+                errors.append(f"successor M2 artifact digest drifted: {path}")
+        if [profile.get("formats", {}).get(name, {}).get("state") for name in ["epub", "pdf", "docx"]] != [
+            "profile_frozen_candidate_not_generated"
+        ] * 3:
+            errors.append("successor M2 format profiles were not frozen before release candidates")
+        if any(profile.get("formats", {}).get(name, {}).get("state") != "deferred_not_authorized" for name in ["audio", "embedded_audio"]):
+            errors.append("successor M2 silently authorized an audio format")
+        if profile.get("support_state_effect") != "none" or profile.get("release_effect") != "none":
+            errors.append("successor M2 profile invented support or release effect")
     successor_roadmap_normalized = " ".join(data["successor_roadmap"].split())
     for phrase in [
         "Critique adjudication",
@@ -351,7 +377,7 @@ def mutation_controls(base: dict) -> list[str]:
 
 
 def main() -> None:
-    required = [ROADMAP_PATH, STATUS_PATH, SCHEMA_PATH, PREDECESSOR_PATH, HISTORICAL_READER_PATH, QUALITY_PACKETS_PATH, COMPLETION_PATH, NO_RELEASE_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, SUCCESSOR_SCHEMA_PATH, SUCCESSOR_P0_RECEIPT_PATH]
+    required = [ROADMAP_PATH, STATUS_PATH, SCHEMA_PATH, PREDECESSOR_PATH, HISTORICAL_READER_PATH, QUALITY_PACKETS_PATH, COMPLETION_PATH, NO_RELEASE_PATH, SUCCESSOR_ROADMAP_PATH, SUCCESSOR_STATUS_PATH, SUCCESSOR_SCHEMA_PATH, SUCCESSOR_P0_RECEIPT_PATH, SUCCESSOR_TEXT_FORMAT_PROFILE_PATH, SUCCESSOR_DOCX_REFERENCE_PATH]
     missing = [path for path in required if not (ROOT / path).is_file()]
     if missing:
         raise SystemExit("missing post-v2.3 roadmap artifacts: " + ", ".join(missing))
