@@ -1152,14 +1152,13 @@ progress:
   natural multi-researcher matched-workflow, injected-error, causal-ablation,
   independent-reproduction, and heterogeneous-transfer campaign;
 - the current activation registry contains 3,730 atoms, all semantically
-  reviewed. The prose queue contains 2,695 adjudicated rows and zero pending
+  reviewed. The prose queue contains 2,709 adjudicated rows and zero pending
   rows, so 54/54 activation chapter sweeps are complete. This differs from the
   original 2,693-row count through transparent content change rather than
-  receipt rewriting: two obsolete routing scanner fragments were retired,
-  one nonmaterial artifact-steward fragment and three integrated-trace formal
-  explanation/boundary candidates plus one effect-ledger retry/custody
-  restatement were explicitly adjudicated, and superseded
-  scanner identities retain their review lineage; and
+  receipt rewriting: subsequent refinement prose, including the governed
+  Policy Optimization lifecycle and its explicit non-claim boundary, was
+  separately adjudicated; obsolete scanner identities were retired; and all
+  superseded identities retain their review lineage; and
 - the support-state effect remains exactly `none`.
 
 These counts, chapter review packets, zero-candidate validators, exact owners,
@@ -2715,6 +2714,26 @@ competence, independence, calibration, outcome truth, debate or consultancy
 efficacy, weak-to-strong generalization, causal usefulness, readiness, safety,
 release, deployed invalidation, transfer, support, nor an external effect.
 
+Policy Optimization governed-update refinement receipt: all four stable Policy
+Optimization targets now resolve to
+`AsiStackProofs.PolicyOptimizationRefinement` rather than stopping at
+projection-shaped promotion implications and disconnected guard routes. The
+independently encoded consumer reruns the exact six-sample, two-holdout,
+five-candidate lease probe, preserves all three rejected controls and the
+experimental-only disposition, reaches all 63 routes across draft, scoped,
+full-state-bound, updated, evaluated, adjudicated, and lease-bound stages, and
+rejects all 73 registered identity, state-custody, evaluation, causal,
+forgetting, rollback, monitoring, authority, replay, and readmission mutations.
+The witness records one bounded lease followed by effect-complete rollback,
+descendant invalidation, ordinary-route blocking, and protocol version 2 back
+to scoped full-state binding. Eleven legacy contradictions and guard routes
+remain useful; five projection restatements are retired and three copied
+fixture facts are replaced by generated result conformance. This establishes
+neither learning, reward or evaluator validity, causal improvement, retained
+capability, forgetting control, runtime rollback, monitor efficacy, useful
+throughput, safety, alignment, readiness, release, reproduction, transfer,
+support, SOTA, AGI, ASI, nor an external effect.
+
 Personal Compute Hive policy-to-closure refinement receipt: all six stable Hive
 targets now resolve to `AsiStackProofs.HiveLifecycleRefinement`. The reachable
 model separates requested, policy-bound, node-selected, leased, executed,
@@ -3633,9 +3652,9 @@ All terminal records agree and one exact successor is active.
 | Milestone | State | Completion condition |
 |---|---|---|
 | M0 — Successor activation | completed | Roadmap, status, schema, validator, public pointers, continuity rule, and negative controls are installed. |
-| M1 — Claim-atom coverage | completed | All 3,730 activation structured atoms are semantically reviewed, all 2,695 current activation prose candidates are dispositioned, all 54 activation chapter sweeps have zero unowned material claims, and the authorized 55th chapter adds 15 semantically reviewed atoms in a preserved addendum; prose identity changes retain lineage and no support state changed. |
+| M1 — Claim-atom coverage | completed | All 3,730 activation structured atoms are semantically reviewed, all 2,709 current activation prose candidates are dispositioned, all 54 activation chapter sweeps have zero unowned material claims, and the authorized 55th chapter adds 15 semantically reviewed atoms in a preserved addendum; prose identity changes retain lineage and no support state changed. |
 | M2 — Measurement and reproduction foundation | pending | Natural corpus, model-selection record, evaluator suite, environment locks, statistics policy, and artifact protocol pass sacrificial preflight. |
-| M3 — Proof rationalization and formal semantic depth | in progress | All 1,151 baseline declarations and 298 targets have claim-centered dispositions; 296 baseline declarations and 154 baseline targets are now absent or changed through preserved-lineage retirement/replacement. The live corpus contains 1,289 theorem declarations and 298 targets. The shared safety lifecycle, post-activation Cognitive Kernel ABI, integrated reference trace, stack boundary, Intent-to-Execution, Authority grant-to-effect, Human Intent, Command semantic-interface, Cognitive Compilation, Virtual Context ABI, Context Certificates, Context Transactions, Verification Bandwidth, Claim Ledgers, Proof-Carrying Claims, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport lifecycles now have explicit assumptions, reachable transition/trace semantics, countermodels, adequacy dossiers, and independent consumers. Additional live-schema refinements and consumers for the other retained proof families remain open. |
+| M3 — Proof rationalization and formal semantic depth | in progress | All 1,151 baseline declarations and 298 targets have claim-centered dispositions; 296 baseline declarations and 158 baseline targets are now absent or changed through preserved-lineage retirement/replacement. The live corpus contains 1,290 theorem declarations and 298 targets. The shared safety lifecycle, post-activation Cognitive Kernel ABI, integrated reference trace, stack boundary, Intent-to-Execution, Authority grant-to-effect, Human Intent, Command semantic-interface, Cognitive Compilation, Virtual Context ABI, Context Certificates, Context Transactions, Verification Bandwidth, Claim Ledgers, Proof-Carrying Claims, Tribunal versioned-verdict/appeal, Typed Job versioned execution/closure, Artifact record-reality/trust, Procedural Memory promotion/retirement, Routing/MoECOT request-to-closure, Safety Case readiness/invalidation, Capability Threshold repeated assessment, Adversarial Evaluation observation/re-evaluation, Scalable Oversight review/readmission, Policy Optimization governed-update/readmission, Readiness candidate-to-terminal, Hive policy-to-closure, Compact Generation source-to-closure, Fast Generation request-to-closure, Governed Deliberation request-to-closure, Artifact Compression artifact-to-consumption, and Resource Economics allocation-and-simulation-transport lifecycles now have explicit assumptions, reachable transition/trace semantics, countermodels, adequacy dossiers, and independent consumers. Additional live-schema refinements and consumers for the other retained proof families remain open. |
 | M4 — Integrated executable slices | pending | Governed work, learning, and assurance slices execute with failure injection, environment–observation–belief lineage, sealed quiescent stabilization, and effect-complete accounting. |
 | M5 — Governance/usefulness campaign | pending | Informative-regime matched campaign is adjudicated without zero-release or floor laundering. |
 | M6 — Routing/deliberation campaign | pending | Ambiguous held-out real-model campaign is adjudicated with the fifteen harm controls. |

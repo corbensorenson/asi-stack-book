@@ -1654,7 +1654,14 @@
     "experiments/scalable_oversight_refinement/results/2026-07-15-local.json",
     "docs/scalable_oversight_refinement.md",
     "evidence_quality/model_adequacy_dossiers/scalable-oversight-refinement.md",
-    "lean/AsiStackProofs/ScalableOversightRefinement.lean"
+    "lean/AsiStackProofs/ScalableOversightRefinement.lean",
+    "scripts/validate_policy_optimization_refinement.py",
+    "schemas/policy_optimization_refinement.schema.json",
+    "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+    "docs/policy_optimization_refinement.md",
+    "evidence_quality/model_adequacy_dossiers/policy-optimization-refinement.md",
+    "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
+    "lean/AsiStackProofs/PolicyOptimization.lean"
   ],
   "units": [
     {
@@ -10316,11 +10323,49 @@
       "prohibited_inference": "Does not establish reviewer competence, independence, calibration, outcome truth, debate, consultancy, weak-to-strong efficacy, causal usefulness, safety, readiness, release authority, deployed invalidation, transfer, AGI, ASI, or chapter-core support.",
       "contract_precision": "inherited",
       "semantic_review_state": "checked_structured_oversight_review_lifecycle_not_competence_empirical_deployed_or_support_authority"
+    },
+    {
+      "id": "validate_policy_optimization_refinement.py:351",
+      "order": 351,
+      "script": "validate_policy_optimization_refinement.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "Reachable Lean governed-update lifecycle, exact inherited six-sample/five-candidate lease probe, independent consumer, result schema, receipt, and model-adequacy dossier.",
+      "input_artifacts": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "docs/policy_optimization_refinement.md",
+        "evidence_quality/model_adequacy_dossiers/policy-optimization-refinement.md",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
+        "lean/AsiStackProofs/PolicyOptimization.lean",
+        "scripts/validate_policy_update_lease_probe.py",
+        "experiments/policy_update_lease/results/2026-07-02-local.json"
+      ],
+      "output_contract": "Reject identity substitution, incomplete scope/full-state/update/evaluation/adjudication/lease/readmission custody, reward or causal laundering, incomplete rollback, replay, support assignment, and external-effect requests.",
+      "output_assertions": [
+        "exact inherited six-sample, five-candidate lease result",
+        "seven reachable stages and sixty-three routes",
+        "seventy-three rejected mutations",
+        "one bounded lease followed by successor-version readmission",
+        "no support-state or external-effect authority"
+      ],
+      "claim_scope": "One finite authored governed policy-update record lifecycle plus the existing deterministic lease fixture only.",
+      "negative_controls": "validator_owned_identity_scope_state_update_evaluation_adjudication_lease_readmission_authority_mutations",
+      "negative_control_cases": [
+        "target, baseline, objective, data, feedback, checkpoint, optimizer, scheduler, RNG, evaluator, rollback, consumer, authority, or version substitution",
+        "missing scope, full-state, update receipt, evaluation, causal, regression, forgetting, safety/rights, uncertainty, residual, rollback, monitoring, bounded-lease, invalidation, or readmission record",
+        "wrong stage, replay, improvement/release/support authority laundering, support assignment, or external-effect request"
+      ],
+      "prohibited_inference": "Does not establish learning, reward validity, evaluator validity, causal improvement, forgetting control, rollback efficacy, policy/task quality, safety, alignment, readiness, release, reproduction, transfer, SOTA, AGI, ASI, or chapter-core support.",
+      "contract_precision": "inherited",
+      "semantic_review_state": "checked_structured_policy_update_lifecycle_not_learning_empirical_deployed_or_support_authority"
     }
   ],
   "summary": {
-    "required_artifact_count": 1610,
-    "unit_count": 350
+    "required_artifact_count": 1617,
+    "unit_count": 351
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

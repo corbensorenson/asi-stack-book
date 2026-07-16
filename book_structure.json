@@ -18459,7 +18459,7 @@
             "Update churn and governance burden consume compute, reviewer capacity, energy, release time, and opportunity without useful-throughput improvement.",
             "A result is transferred across tasks, policies, models, scaffolds, tools, authority, evaluators, organizations, environments, or time without requalification."
           ],
-          "minimal_implementation": "One public policy-optimization schema and valid protocol fixture plus one persisted deterministic lease-probe result over six synthetic routing samples, two holdouts, five candidate policies, three expected-invalid candidates, one selected canary kept experimental, and one fixture-only rollback dry run. Nineteen local Lean theorem declarations are projections, finite implications, route reductions, or fixed-fixture assertions. The adjacent anti-Goodhart harness remains Benchmark Ratchets evidence. No optimizer, model, live router, natural workload, preference dataset, reward model, real canary, deployed rollback, causal improvement, independent reproduction, or transfer ran; chapter-core support effect is zero.",
+          "minimal_implementation": "The exact current minimum preserves eleven inherited contradiction/guard theorems and the deterministic six-sample, two-holdout, five-candidate lease probe inside a seven-stage, 63-route governed-update lifecycle with 73/73 rejecting mutations, one bounded lease, and one protocol-version-2 readmission witness. It runs no optimizer, model, trainer, preference dataset, reward model, natural workload, real policy update, deployed canary, live rollback, independent reproduction, transfer, chapter-core transition, or SOTA comparison.",
           "beyond_state_of_art": "The mature Governed Policy Update program preregisters natural planner, context, router, verifier, execution, generation, and governance workloads; compares strong online-RL, offline-preference, verifier-RL, deterministic, no-update, and simpler baselines under matched opportunity; preserves complete rollout and selection lineage; tests reward validity, target outcomes, contamination, tails, authority, safety, privacy, rights, resource cost, forgetting, reward hacking, evaluator dependence, causal mechanisms, effect-complete rollback, and natural post-update monitoring; and requires independent trainer/evaluator/institution reproduction plus heterogeneous transfer. It records positive, negative, null, inconclusive, narrowed, refuted, rolled-back, deprecated, retired, and blocked-after-full-attempt outcomes. This is a target campaign, not a current trained policy, reward-quality result, safe optimizer, capability gain, deployment, or SOTA claim.",
           "codex_tests": [
             "DPO/offline preference baseline test",
@@ -18525,6 +18525,11 @@
               "status": "implemented by `python3 scripts/validate_policy_update_lease_probe.py`; deterministic fixture only; no optimizer, deployed canary, live rollback, route-quality claim, or support-state promotion",
               "implementation_status": "implemented",
               "result_status": "validated locally by `experiments/policy_update_lease/results/2026-07-02-local.json`; no policy-improvement, reward-quality, route-quality, deployed rollback, or support-state claim"
+            },
+            {
+              "name": "Policy-optimization update-lifecycle refinement",
+              "implementation_status": "implemented",
+              "result_status": "passes the inherited six-sample/five-candidate lease, 63 routes, seven reachable stages, and 73/73 rejecting mutations; one bounded lease returns to scoped full-state binding only through version-2 readmission; support/effect none; no learning, reward-validity, causal, forgetting, rollback-efficacy, safety, release, transfer, or support claim"
             }
           ],
           "source_queue": {
@@ -18567,38 +18572,39 @@
               "sources/inbox/policy_optimization_browser_note_2026-06-24/"
             ]
           },
-          "lean_module": "AsiStackProofs.PolicyOptimization",
+          "lean_module": "AsiStackProofs.PolicyOptimization; AsiStackProofs.PolicyOptimizationRefinement",
           "proof_targets": [
             {
               "tag": "lean:policy_optimization.update.operational_invariant",
-              "module": "AsiStackProofs.PolicyOptimization",
-              "target": "An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan.",
+              "module": "AsiStackProofs.PolicyOptimizationRefinement",
+              "target": "A versioned governed-update lifecycle binds target, baseline, objective, data, feedback, full optimizer/checkpoint/RNG and descendant state, evaluation, adjudication, bounded consumption, rollback, and readmission without assigning support or an external effect.",
               "status": "implemented"
             },
             {
               "tag": "lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-              "module": "AsiStackProofs.PolicyOptimization",
-              "target": "A policy update with unverified reward or missing governance gate cannot be promoted.",
+              "module": "AsiStackProofs.PolicyOptimizationRefinement",
+              "target": "Missing target evaluation, causal ablation, reward-hacking probes, regression, forgetting, safety/rights, uncertainty, or independent evaluation blocks a policy update before bounded-lease adjudication.",
               "status": "implemented"
             },
             {
               "tag": "lean:policy_optimization.promotion_route.failure_routes",
-              "module": "AsiStackProofs.PolicyOptimization",
-              "target": "A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion.",
+              "module": "AsiStackProofs.PolicyOptimizationRefinement",
+              "target": "All finite update-lifecycle routes reject or redirect incomplete scope, state, update, evaluation, adjudication, lease, rollback, or readmission records before bounded use.",
               "status": "implemented"
             },
             {
               "tag": "lean:policy_optimization.lease_probe_fixture_bridge",
-              "module": "AsiStackProofs.PolicyOptimization",
-              "target": "The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary.",
+              "module": "AsiStackProofs.PolicyOptimizationRefinement",
+              "target": "The independently consumed six-sample/five-candidate lease probe and the reachable lifecycle preserve three rejected controls, experimental-only use, versioned readmission, and no support or external-effect authority.",
               "status": "implemented"
             }
           ],
           "draft_maturity": "v0.3 manuscript draft",
           "open_evidence_gaps": [
-            "Freeze and run natural target-policy workloads with strong matched no-update, deterministic, online-RL, offline-preference, verifier-RL, and simpler baselines, complete rollout and selection denominators, hidden holdouts, and no outcome-aware changes.",
-            "Measure target-property causality, reward and evaluator validity, contamination, tails, forgetting, authority, safety, privacy, rights, resources, reward hacking, natural post-update behavior, and effect-complete rollback across full model and system state.",
-            "Run independent trainer, evaluator, data-custody, institutional reproduction, and heterogeneous transfer before considering any policy-improvement, reward-quality, rollback, capability, safety, support, or SOTA promotion."
+            "No ASI Stack model, optimizer, trainer, natural planner/router/context/execution workload, preference or reward dataset, reward model, policy update, real checkpoint, deployed canary, live rollback, independent reproduction, or heterogeneous transfer has run.",
+            "No local result establishes reward or preference validity, evaluator validity, causal target improvement, retained capability, forgetting control, effect-complete runtime rollback, monitor efficacy, useful throughput, safety, alignment, readiness, release, or SOTA.",
+            "The seven-stage lifecycle, 63-route consumer, and 73 rejecting mutations establish only finite authored record consequences; all digests, inventories, evaluations, causal checks, rollback assertions, monitors, invalidations, and authority fields remain trusted.",
+            "Run the prospectively frozen natural multi-layer campaign with matched no-update and strong method baselines, real training-state capture, independent evaluation, reward attacks, causal ablations, forgetting tests, effect-complete rollback, post-update monitoring, joint utility/safety/rights/resource accounting, reproduction, and transfer before considering empirical support movement."
           ]
         },
         {

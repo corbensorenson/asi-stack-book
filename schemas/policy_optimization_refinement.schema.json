@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack policy-optimization refinement result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "result_id", "source_sha256", "inherited_lease_probe", "reachable_stage_count", "route_case_count", "route_coverage", "mutation_count", "mutation_rejection_count", "mutation_receipts", "command_receipts", "witness", "support_state_effect", "non_claims"],
+  "properties": {
+    "schema_version": {"const": "asi_stack.policy_optimization_refinement.v1"},
+    "result_id": {"const": "policy-optimization-refinement-2026-07-16-local"},
+    "source_sha256": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "inherited_lease_probe": {"type": "object", "additionalProperties": false, "required": ["workload_sample_count", "holdout_sample_count", "candidate_count", "rejected_negative_control_count", "selected_canary_promotion_decision", "support_state_effect"], "properties": {"workload_sample_count": {"const": 6}, "holdout_sample_count": {"const": 2}, "candidate_count": {"const": 5}, "rejected_negative_control_count": {"const": 3}, "selected_canary_promotion_decision": {"const": "keep_experimental"}, "support_state_effect": {"const": "none"}}},
+    "reachable_stage_count": {"const": 7},
+    "route_case_count": {"const": 63},
+    "route_coverage": {"type": "array", "minItems": 63, "maxItems": 63, "items": {"type": "object", "required": ["case_id", "expected_route"], "properties": {"case_id": {"type": "string"}, "expected_route": {"type": "string"}}, "additionalProperties": false}},
+    "mutation_count": {"const": 73},
+    "mutation_rejection_count": {"const": 73},
+    "mutation_receipts": {"type": "array", "minItems": 73, "maxItems": 73, "items": {"type": "object", "required": ["mutation_id", "rejected"], "properties": {"mutation_id": {"type": "string"}, "rejected": {"const": true}}, "additionalProperties": false}},
+    "command_receipts": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["command", "exit_code", "output_sha256"], "properties": {"command": {"type": "string"}, "exit_code": {"const": 0}, "output_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}},
+    "witness": {"type": "object", "additionalProperties": false, "required": ["terminal_stage", "protocol_version", "receipt_count", "bounded_lease_count", "readmission_count", "support_assignment_count", "external_effect_count"], "properties": {"terminal_stage": {"const": "scoped"}, "protocol_version": {"const": 2}, "receipt_count": {"const": 7}, "bounded_lease_count": {"const": 1}, "readmission_count": {"const": 1}, "support_assignment_count": {"const": 0}, "external_effect_count": {"const": 0}}},
+    "support_state_effect": {"const": "none"},
+    "non_claims": {"type": "array", "minItems": 5, "items": {"type": "string"}}
+  }
+}

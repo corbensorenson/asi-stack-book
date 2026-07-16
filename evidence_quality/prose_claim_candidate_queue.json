@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 54,
-    "candidate_count": 2707,
+    "candidate_count": 2709,
     "review_state_counts": {
       "duplicate_of_atom": 1229,
       "editorial_or_question": 51,
       "historical_or_source_report": 253,
       "material_atom": 3,
-      "nonmaterial_explanation": 1171
+      "nonmaterial_explanation": 1173
     }
   },
   "candidates": [
@@ -44516,9 +44516,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.9086c91e10f7",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:311",
+      "sentence": "rollback, causal improvement, independent reproduction, or transfer ran.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7ca6b9f5046c",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:313",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:314",
       "sentence": "Policy learning should begin as `policy_optimization_record.schema.json` with one valid fixture, one deterministic policy-update lease probe, and a finite Lean module.",
       "cues": [
         "should"
@@ -44535,9 +44554,47 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.5b3570b5ec18",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:320",
+      "sentence": "It binds model and candidate checkpoints together with optimizer, scheduler, RNG, cache, backup, descendant, evaluator, rollback, consumer, authority, and version identities; it also requires target evaluation, a strong baseline, causal ablation, reward-hacking probes, regressions, forgetting, safety and rights checks, uncertainty, monitoring, effect-complete rollback, and descendant invalidation.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.85b5f33655be",
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:320",
+      "sentence": "These are authored record consequences, not evidence that any field is true or effective: no training, learning, reward validation, causal improvement, live rollback, monitoring, reproduction, transfer, release, or support transition occurred.",
+      "cues": [
+        "transfer"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.a03409688abc",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:319",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:322",
       "sentence": "A policy-delta trace should carry the first governed-learning rehearsal: one offline preference update kept experimental, one reward-hacking probe that blocks promotion, one router-policy canary with authority unchanged, one latency reward rejected for suppressing verification, and one rollback dry run.",
       "cues": [
         "should"
@@ -44556,7 +44613,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.4ed3119afde0",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:336",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:339",
       "sentence": "energy, human burden, opportunity cost, and residuals jointly; then require",
       "cues": [
         "require"
@@ -44575,7 +44632,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.9da811c22645",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:355",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:358",
       "sentence": "Failure closure that blocks reward laundering: proxy improvement cannot become task improvement unless target-specific evaluations and residuals support that transition.",
       "cues": [
         "cannot"
@@ -44594,7 +44651,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.79f6e0f62688",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:357",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:360",
       "sentence": "The system could improve its policies while preserving authority conservation, rollback, evidence review, and human/governance control.",
       "cues": [
         "improve"
@@ -44613,7 +44670,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.1ef7c33963d4",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:357",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:360",
       "sentence": "The learning actuator remains a target architecture until local policy-update harnesses, reward-quality studies, rollout records, rollback dry runs, and accepted evidence transitions show that improvement is governed instead of merely optimized.",
       "cues": [
         "show"
@@ -44632,7 +44689,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.49a283e55433",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:381",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:385",
       "sentence": "The remaining tests require executable training or simulation harnesses.",
       "cues": [
         "require"
@@ -44649,10 +44706,10 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.cdfd73c11dee",
+      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.7bc9fef89b8a",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:392",
-      "sentence": "They do not prove reward quality, RL convergence, benchmark improvement, policy safety, route quality, context-selection quality, reward-hacking resistance, hidden-holdout adequacy, contamination-detection quality, approval quality, rollback execution, live rollback behavior, or runtime policy-update behavior.",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:396",
+      "sentence": "These checks prove only finite authored record and transition consequences.",
       "cues": [
         "prove"
       ],
@@ -44664,16 +44721,17 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created.",
+      "disposition_rationale": "Semantically reviewed as bounded explanation of the finite-record authority boundary; the complete material obligation is already atomized and no independent promoted atom is created.",
       "target_atom_id": null
     },
     {
-      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.541c2328fcec",
+      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.11983fcfc93e",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:397",
-      "sentence": "checks over hand-authored records, seven reduce the hand-authored promotion",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:396",
+      "sentence": "They do not prove reward quality, evaluator validity, RL convergence, benchmark improvement, causal policy improvement, retained capability, forgetting control, policy safety, route quality, reward-hacking resistance, hidden-holdout or contamination quality, approval quality, effect-complete runtime rollback, live monitoring, reproduction, or transfer.",
       "cues": [
-        "reduce"
+        "prove",
+        "transfer"
       ],
       "review_state": "nonmaterial_explanation",
       "allowed_dispositions": [
@@ -44683,32 +44741,13 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created.",
-      "target_atom_id": null
-    },
-    {
-      "candidate_id": "policy-optimization-and-learning-from-feedback.prose.710f7fa9e412",
-      "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:398",
-      "sentence": "route, three normalize a fixed synthetic lease summary, and one reduces a",
-      "cues": [
-        "reduces"
-      ],
-      "review_state": "nonmaterial_explanation",
-      "allowed_dispositions": [
-        "material_atom",
-        "nonmaterial_explanation",
-        "duplicate_of_atom",
-        "editorial_or_question",
-        "historical_or_source_report"
-      ],
-      "disposition_rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created.",
+      "disposition_rationale": "Semantically reviewed as an explicit non-claim preserving the empirical, causal, runtime, reproduction, and transfer boundary; no independent promoted atom is created.",
       "target_atom_id": null
     },
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.aff9dc861c04",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:423",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:427",
       "sentence": "shows the sharper failure: visible-test reward can rise while a code-repair",
       "cues": [
         "shows"
@@ -44727,7 +44766,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.4a1fedfb372a",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:492",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:496",
       "sentence": "This establishes local checkpoint/output causality and preserves modest gains,",
       "cues": [
         "establishes"
@@ -44746,7 +44785,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.c131c11353d5",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:517",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:521",
       "sentence": "A steward agent may coordinate work and preserve memory, but it cannot turn feedback loops into ownership, treasury authority, or silent governance change.",
       "cues": [
         "cannot"
@@ -44765,7 +44804,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.8958c7f00ed1",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:521",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:525",
       "sentence": "Policy updates decide how behavior responds to feedback, but they still require a",
       "cues": [
         "require"
@@ -44784,7 +44823,7 @@
     {
       "candidate_id": "policy-optimization-and-learning-from-feedback.prose.346b1c43b827",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:527",
+      "source": "chapters/policy-optimization-and-learning-from-feedback.qmd:531",
       "sentence": "policy optimization must not manufacture for itself before the book turns to",
       "cues": [
         "must"

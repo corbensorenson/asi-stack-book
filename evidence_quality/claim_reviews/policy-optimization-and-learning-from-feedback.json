@@ -5,19 +5,19 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/policy-optimization-and-learning-from-feedback.qmd",
     "structured_atoms_reviewed": 75,
-    "prose_candidates_adjudicated": 38,
+    "prose_candidates_adjudicated": 40,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all twenty-nine exact source mappings, policy schema and valid fixture, persisted six-sample/five-policy synthetic lease probe, adjacent benchmark harness boundary, all four proof targets, all nineteen PolicyOptimization declarations, every manifest atom, every prose candidate, test plan, source crosswalk, summary, and handoff. The sweep made the target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease the distinct owner; expanded it to eighteen mechanisms, twelve interfaces, eighteen invariants, and eighteen failure modes; preserved zero chapter-core effect; and froze the natural matched-baseline, reward-validity, causal, full-state-rollback, reproduction, and transfer campaign."
+    "review_note": "Reviewed the complete chapter, all twenty-nine exact source mappings, policy schema and valid fixture, persisted six-sample/five-policy synthetic lease probe, seven-stage/63-route/73-mutation lifecycle refinement, adjacent benchmark harness boundary, all four proof targets, all nineteen legacy PolicyOptimization declarations plus the combined refinement theorem, every manifest atom, all forty current prose candidates, test plan, source crosswalk, summary, and handoff. The sweep made the target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease the distinct owner; preserved zero chapter-core effect; and froze the natural matched-baseline, reward-validity, causal, full-state-rollback, reproduction, and transfer campaign."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
     "scope": {
       "population": "Named consumers, legitimate objectives, target policies, baselines, feedback, evaluators, datasets, optimizers, checkpoints, rollouts, authorities, resources, monitors, rollback state, environments, and times.",
-      "environment": "Twenty-nine exact mappings; one schema and valid fixture; one persisted deterministic result over six synthetic samples, two holdouts, five policies, three invalid candidates, one experimental canary, and fixture rollback; four targets; nineteen finite declarations. No optimizer, model, live router, natural workload, reward model, real canary, deployed rollback, reproduction, or transfer is represented.",
+      "environment": "Twenty-nine exact mappings; one schema and valid fixture; one persisted deterministic result over six synthetic samples, two holdouts, five policies, three invalid candidates, one experimental canary, and fixture rollback; four targets; eleven useful legacy declarations plus one lifecycle theorem; seven reachable stages, 63 routes, and 73/73 rejecting mutations. No optimizer, model, live router, natural workload, reward model, real canary, deployed rollback, reproduction, or transfer is represented.",
       "model": "A scoped Governed Policy Update Lease over target behavior, admissible feedback and proxy boundaries, matched baselines, update method and budget, drift and authority ceilings, evaluation, attacks, complete lineage, causal checks, lifecycle, full-state rollback, monitoring, expiry, and joint outcomes.",
       "authority": "This chapter owns the bounded update lease only. Benchmark, observation, evidence/review, target-layer, data/supply chain, artifact, runtime/security, capability/readiness, threshold/assurance, resource, formal, incident/release, and publication owners retain their boundaries.",
-      "time": "Semantic review current through 2026-07-15; objective, feedback, evaluator, data, model, scaffold, tool, authority, threat, environment, consumer, policy, or time changes expire affected leases.",
-      "artifact": "Chapter and manifest; twenty-nine mappings; schema and fixture; persisted synthetic probe; validator; four targets; nineteen declarations; semantic review; and future natural causal-transfer campaign."
+      "time": "Semantic review current through 2026-07-16; objective, feedback, evaluator, data, model, scaffold, tool, authority, threat, environment, consumer, policy, or time changes expire affected leases.",
+      "artifact": "Chapter and manifest; twenty-nine mappings; schema and fixture; persisted synthetic probe; seven-stage lifecycle result, validator, schema, receipt, and adequacy dossier; four targets; eleven useful legacy declarations plus one lifecycle theorem; semantic review; and future natural causal-transfer campaign."
     },
     "current_disposition": "retain_argument_with_synthetic_policy_lease_probe_no_core_effect_pending_natural_independent_causal_update_campaign",
     "assumptions": [
@@ -73,13 +73,13 @@
       "schema": "schemas/policy_optimization_record.schema.json",
       "fixture": "tests/fixtures/protocol_records/policy_optimization_record.valid.json",
       "result": "experiments/policy_update_lease/results/2026-07-02-local.json",
-      "validator": "scripts/validate_policy_update_lease_probe.py",
-      "lean": "lean/AsiStackProofs/PolicyOptimization.lean",
+      "validator": "scripts/validate_policy_optimization_refinement.py",
+      "lean": "lean/AsiStackProofs/PolicyOptimizationRefinement.lean",
       "manifest": "book_structure.json"
     },
     "contrary_evidence": [
       "The six samples, five policies, and rollback are deterministic synthetic fixtures, not training or deployment events.",
-      "All nineteen declarations are finite record implications, route reductions, fixture normalizations, or a finite observation gate; none models learning or causal improvement.",
+      "The useful legacy declarations and combined lifecycle theorem remain finite authored record consequences; none models learning or causal improvement.",
       "Twenty-nine mappings include source-reported methods and results that were not locally reproduced.",
       "The selected synthetic canary remains experimental and no live router, reward model, optimizer, natural monitor, or deployed rollback exists.",
       "The adjacent anti-Goodhart harness belongs to Benchmark Ratchets and cannot establish policy learning."
@@ -112,8 +112,8 @@
     ],
     "promotion_ceiling": "argument_until_natural_causal_policy_update_campaign_with_effect_complete_rollback_independent_reproduction_and_transfer",
     "reproduction": {
-      "command": "python3 scripts/validate_policy_update_lease_probe.py && python3 scripts/validate_protocol_examples.py && cd lean && lake build AsiStackProofs.PolicyOptimization",
-      "environment_lock": "Local schema, fixture, deterministic result, validator, and finite module current through 2026-07-15; natural independent update campaign not frozen or run.",
+      "command": "python3 scripts/validate_policy_optimization_refinement.py && python3 scripts/validate_policy_update_lease_probe.py && cd lean && lake build AsiStackProofs.PolicyOptimizationRefinement",
+      "environment_lock": "Local schema, fixture, deterministic result, seven-stage lifecycle consumer, and finite modules current through 2026-07-16; natural independent update campaign not frozen or run.",
       "artifact_digest": null,
       "evaluator_identity": "Current fixtures, validator, and formalization are repository-local; independent trainers, evaluators, data custody, institutions, monitors, and transfer environments are required."
     },
@@ -257,17 +257,25 @@
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
-    "policy-optimization-and-learning-from-feedback.prose.cdfd73c11dee": {
+    "policy-optimization-and-learning-from-feedback.prose.9086c91e10f7": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
-    "policy-optimization-and-learning-from-feedback.prose.541c2328fcec": {
+    "policy-optimization-and-learning-from-feedback.prose.5b3570b5ec18": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
-    "policy-optimization-and-learning-from-feedback.prose.710f7fa9e412": {
+    "policy-optimization-and-learning-from-feedback.prose.85b5f33655be": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source or fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.7bc9fef89b8a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as bounded explanation of the finite-record authority boundary; the complete material obligation is already atomized and no independent promoted atom is created."
+    },
+    "policy-optimization-and-learning-from-feedback.prose.11983fcfc93e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "Semantically reviewed as an explicit non-claim preserving the empirical, causal, runtime, reproduction, and transfer boundary; no independent promoted atom is created."
     },
     "policy-optimization-and-learning-from-feedback.prose.aff9dc861c04": {
       "state": "nonmaterial_explanation",

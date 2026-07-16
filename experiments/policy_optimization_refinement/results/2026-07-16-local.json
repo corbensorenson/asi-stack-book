@@ -1,0 +1,592 @@
+{
+  "schema_version": "asi_stack.policy_optimization_refinement.v1",
+  "result_id": "policy-optimization-refinement-2026-07-16-local",
+  "source_sha256": {
+    "lean_model": "5bbe96f96e3baeb227385cc195ed36d9a2771e942d8594e884d24ac3ef66186a",
+    "inherited_result": "c63a1b182cf2d3b1b0c78a94952974796750b1236d809b18897ebdef4b44ab5c"
+  },
+  "inherited_lease_probe": {
+    "workload_sample_count": 6,
+    "holdout_sample_count": 2,
+    "candidate_count": 5,
+    "rejected_negative_control_count": 3,
+    "selected_canary_promotion_decision": "keep_experimental",
+    "support_state_effect": "none"
+  },
+  "reachable_stage_count": 7,
+  "route_case_count": 63,
+  "route_coverage": [
+    {
+      "case_id": "draft_accepted",
+      "expected_route": "accept_scope"
+    },
+    {
+      "case_id": "scoped_accepted",
+      "expected_route": "accept_state_binding"
+    },
+    {
+      "case_id": "stateBound_accepted",
+      "expected_route": "accept_update_receipt"
+    },
+    {
+      "case_id": "updated_accepted",
+      "expected_route": "accept_evaluation"
+    },
+    {
+      "case_id": "evaluated_accepted",
+      "expected_route": "accept_adjudication"
+    },
+    {
+      "case_id": "adjudicated_accepted",
+      "expected_route": "accept_bounded_lease"
+    },
+    {
+      "case_id": "leaseBound_accepted",
+      "expected_route": "accept_readmission"
+    },
+    {
+      "case_id": "draft_targetPolicyPresent",
+      "expected_route": "request_target_policy"
+    },
+    {
+      "case_id": "draft_baselinePresent",
+      "expected_route": "request_baseline"
+    },
+    {
+      "case_id": "draft_objectivePresent",
+      "expected_route": "request_objective"
+    },
+    {
+      "case_id": "draft_permittedDeltaPresent",
+      "expected_route": "request_permitted_delta"
+    },
+    {
+      "case_id": "draft_authorityCeilingPresent",
+      "expected_route": "request_authority_ceiling"
+    },
+    {
+      "case_id": "draft_riskTierPresent",
+      "expected_route": "request_risk_tier"
+    },
+    {
+      "case_id": "draft_consumerPresent",
+      "expected_route": "request_consumer"
+    },
+    {
+      "case_id": "scoped_datasetPresent",
+      "expected_route": "request_dataset"
+    },
+    {
+      "case_id": "scoped_feedbackBoundaryPresent",
+      "expected_route": "request_feedback_boundary"
+    },
+    {
+      "case_id": "scoped_holdoutPresent",
+      "expected_route": "request_holdout"
+    },
+    {
+      "case_id": "scoped_contaminationCheckPresent",
+      "expected_route": "request_contamination_check"
+    },
+    {
+      "case_id": "scoped_baseCheckpointPresent",
+      "expected_route": "request_base_checkpoint"
+    },
+    {
+      "case_id": "scoped_optimizerPresent",
+      "expected_route": "request_optimizer"
+    },
+    {
+      "case_id": "scoped_schedulerPresent",
+      "expected_route": "request_scheduler"
+    },
+    {
+      "case_id": "scoped_rngPresent",
+      "expected_route": "request_rng"
+    },
+    {
+      "case_id": "scoped_cacheInventoryPresent",
+      "expected_route": "request_cache_inventory"
+    },
+    {
+      "case_id": "scoped_backupInventoryPresent",
+      "expected_route": "request_backup_inventory"
+    },
+    {
+      "case_id": "scoped_descendantInventoryPresent",
+      "expected_route": "request_descendant_inventory"
+    },
+    {
+      "case_id": "scoped_rollbackSnapshotPresent",
+      "expected_route": "request_rollback_snapshot"
+    },
+    {
+      "case_id": "stateBound_candidateCheckpointPresent",
+      "expected_route": "request_candidate_checkpoint"
+    },
+    {
+      "case_id": "stateBound_updateReceiptPresent",
+      "expected_route": "request_update_receipt"
+    },
+    {
+      "case_id": "stateBound_completeDenominatorPresent",
+      "expected_route": "request_complete_denominator"
+    },
+    {
+      "case_id": "stateBound_failureLogPresent",
+      "expected_route": "request_failure_log"
+    },
+    {
+      "case_id": "stateBound_resourceCostPresent",
+      "expected_route": "request_resource_cost"
+    },
+    {
+      "case_id": "stateBound_stateLineageComplete",
+      "expected_route": "reject_state_lineage_gap"
+    },
+    {
+      "case_id": "updated_independentEvaluatorPresent",
+      "expected_route": "request_independent_evaluator"
+    },
+    {
+      "case_id": "updated_targetEvaluationPresent",
+      "expected_route": "request_target_evaluation"
+    },
+    {
+      "case_id": "updated_strongBaselinePresent",
+      "expected_route": "request_strong_baseline"
+    },
+    {
+      "case_id": "updated_causalAblationPresent",
+      "expected_route": "request_causal_ablation"
+    },
+    {
+      "case_id": "updated_rewardHackProbePresent",
+      "expected_route": "request_reward_hack_probe"
+    },
+    {
+      "case_id": "updated_regressionSuitePresent",
+      "expected_route": "request_regression_suite"
+    },
+    {
+      "case_id": "updated_forgettingTestPresent",
+      "expected_route": "request_forgetting_test"
+    },
+    {
+      "case_id": "updated_safetyRightsTestPresent",
+      "expected_route": "request_safety_rights_test"
+    },
+    {
+      "case_id": "updated_uncertaintyPresent",
+      "expected_route": "request_uncertainty"
+    },
+    {
+      "case_id": "evaluated_residualOwnerPresent",
+      "expected_route": "request_residual_owner"
+    },
+    {
+      "case_id": "evaluated_counterevidencePresent",
+      "expected_route": "request_counterevidence"
+    },
+    {
+      "case_id": "evaluated_rollbackCriterionPresent",
+      "expected_route": "request_rollback_criterion"
+    },
+    {
+      "case_id": "evaluated_rollbackRehearsalPresent",
+      "expected_route": "request_rollback_rehearsal"
+    },
+    {
+      "case_id": "evaluated_monitoringPlanPresent",
+      "expected_route": "request_monitoring_plan"
+    },
+    {
+      "case_id": "evaluated_noImprovementInferenceRecorded",
+      "expected_route": "reject_improvement_inference"
+    },
+    {
+      "case_id": "evaluated_noReleaseAuthorityRecorded",
+      "expected_route": "reject_release_authority_laundering"
+    },
+    {
+      "case_id": "adjudicated_permittedConsumerPresent",
+      "expected_route": "request_permitted_consumer"
+    },
+    {
+      "case_id": "adjudicated_boundedLeaseRecordPresent",
+      "expected_route": "request_bounded_lease_record"
+    },
+    {
+      "case_id": "adjudicated_checkpointDigestBound",
+      "expected_route": "request_checkpoint_binding"
+    },
+    {
+      "case_id": "adjudicated_expiryPresent",
+      "expected_route": "request_expiry"
+    },
+    {
+      "case_id": "adjudicated_rollbackHandlePresent",
+      "expected_route": "request_rollback_handle"
+    },
+    {
+      "case_id": "adjudicated_noSupportAuthorityRecorded",
+      "expected_route": "request_no_support_authority"
+    },
+    {
+      "case_id": "leaseBound_materialChangeTriggerPresent",
+      "expected_route": "request_material_change_trigger"
+    },
+    {
+      "case_id": "leaseBound_descendantInvalidationComplete",
+      "expected_route": "request_descendant_invalidation"
+    },
+    {
+      "case_id": "leaseBound_ordinaryRouteBlocked",
+      "expected_route": "request_ordinary_route_block"
+    },
+    {
+      "case_id": "leaseBound_effectCompleteRollbackPresent",
+      "expected_route": "request_effect_complete_rollback"
+    },
+    {
+      "case_id": "leaseBound_successorVersion",
+      "expected_route": "reject_successor_version"
+    },
+    {
+      "case_id": "wrong_stage",
+      "expected_route": "reject_wrong_stage"
+    },
+    {
+      "case_id": "identity_substitution",
+      "expected_route": "reject_identity_substitution"
+    },
+    {
+      "case_id": "event_replay",
+      "expected_route": "reject_replay"
+    },
+    {
+      "case_id": "authority_leak",
+      "expected_route": "reject_authority_leak"
+    }
+  ],
+  "mutation_count": 73,
+  "mutation_rejection_count": 73,
+  "mutation_receipts": [
+    {
+      "mutation_id": "binding_authorityDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_baseCheckpointDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_baselineDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_candidateCheckpointDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_consumerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_currentVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_datasetDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_evaluatorDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_feedbackDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_objectiveDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_optimizerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_rngDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_rollbackDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_schedulerDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_targetPolicyDigest",
+      "rejected": true
+    },
+    {
+      "mutation_id": "binding_updateId",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_targetPolicyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_baselinePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_objectivePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_permittedDeltaPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_authorityCeilingPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_riskTierPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_draft_consumerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_datasetPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_feedbackBoundaryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_holdoutPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_contaminationCheckPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_baseCheckpointPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_optimizerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_schedulerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_rngPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_cacheInventoryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_backupInventoryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_descendantInventoryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_scoped_rollbackSnapshotPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_stateBound_candidateCheckpointPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_stateBound_updateReceiptPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_stateBound_completeDenominatorPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_stateBound_failureLogPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_stateBound_resourceCostPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_stateBound_stateLineageComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_independentEvaluatorPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_targetEvaluationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_strongBaselinePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_causalAblationPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_rewardHackProbePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_regressionSuitePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_forgettingTestPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_safetyRightsTestPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_updated_uncertaintyPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_residualOwnerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_counterevidencePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_rollbackCriterionPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_rollbackRehearsalPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_monitoringPlanPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_noImprovementInferenceRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_evaluated_noReleaseAuthorityRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_permittedConsumerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_boundedLeaseRecordPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_checkpointDigestBound",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_expiryPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_rollbackHandlePresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_adjudicated_noSupportAuthorityRecorded",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leaseBound_materialChangeTriggerPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leaseBound_descendantInvalidationComplete",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leaseBound_ordinaryRouteBlocked",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leaseBound_effectCompleteRollbackPresent",
+      "rejected": true
+    },
+    {
+      "mutation_id": "gate_leaseBound_successorVersion",
+      "rejected": true
+    },
+    {
+      "mutation_id": "wrong_kind",
+      "rejected": true
+    },
+    {
+      "mutation_id": "event_replay",
+      "rejected": true
+    },
+    {
+      "mutation_id": "support_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "effect_leak",
+      "rejected": true
+    },
+    {
+      "mutation_id": "stale_lease_after_readmission",
+      "rejected": true
+    }
+  ],
+  "command_receipts": [
+    {
+      "command": "python3 scripts/validate_policy_update_lease_probe.py",
+      "exit_code": 0,
+      "output_sha256": "ec16f321a82d47a1050bd0e9b38c739c781f505dc285d84ead7120fdef88d2a0"
+    }
+  ],
+  "witness": {
+    "terminal_stage": "scoped",
+    "protocol_version": 2,
+    "receipt_count": 7,
+    "bounded_lease_count": 1,
+    "readmission_count": 1,
+    "support_assignment_count": 0,
+    "external_effect_count": 0
+  },
+  "support_state_effect": "none",
+  "non_claims": [
+    "no optimizer, model, trainer, preference dataset, reward model, or policy update ran",
+    "no reward, evaluator, causal, forgetting, rollback, policy, or task quality result",
+    "no natural workload, deployed canary, live monitor, or external effect",
+    "no independent reproduction or heterogeneous transfer",
+    "no release, readiness, safety, alignment, support, SOTA, AGI, or ASI authority"
+  ]
+}

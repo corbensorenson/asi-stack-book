@@ -30121,15 +30121,28 @@
       "semantic_role": "Direct application of the exact policy implication supplied as a hypothesis.",
       "assumptions": [],
       "excluded_effects": [],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.update.operational_invariant",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.admitted-update-effect-refinement.v1"
+        "proof-model:policy-optimization.admitted-update-effect-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
     },
@@ -30139,15 +30152,28 @@
       "semantic_role": "Direct application of the exact policy implication supplied as a hypothesis.",
       "assumptions": [],
       "excluded_effects": [],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.reward-governance-effect-trace.v1"
+        "proof-model:policy-optimization.reward-governance-effect-trace.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
     },
@@ -30157,15 +30183,28 @@
       "semantic_role": "Direct application of the exact policy implication supplied as a hypothesis.",
       "assumptions": [],
       "excluded_effects": [],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.promotion-evidence-result-refinement.v1"
+        "proof-model:policy-optimization.promotion-evidence-result-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
     },
@@ -30175,15 +30214,28 @@
       "semantic_role": "Direct application of the exact policy implication supplied as a hypothesis.",
       "assumptions": [],
       "excluded_effects": [],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.reward-proxy-target-evaluation-refinement.v1"
+        "proof-model:policy-optimization.reward-proxy-target-evaluation-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
     },
@@ -30193,15 +30245,28 @@
       "semantic_role": "Direct application of the exact policy implication supplied as a hypothesis.",
       "assumptions": [],
       "excluded_effects": [],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.authority-change-effect-trace.v1"
+        "proof-model:policy-optimization.authority-change-effect-trace.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
     },
@@ -30215,15 +30280,28 @@
       "excluded_effects": [
         "Artifact identity/quality, feedback/reward truth, evaluation independence, promotion/authority/rollback effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.promotion-evidence-result-refinement.v1"
+        "proof-model:policy-optimization.promotion-evidence-result-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30237,15 +30315,28 @@
       "excluded_effects": [
         "Artifact identity/quality, feedback/reward truth, evaluation independence, promotion/authority/rollback effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.reward-proxy-target-evaluation-refinement.v1"
+        "proof-model:policy-optimization.reward-proxy-target-evaluation-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30259,15 +30350,28 @@
       "excluded_effects": [
         "Artifact identity/quality, feedback/reward truth, evaluation independence, promotion/authority/rollback effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.authority-change-effect-trace.v1"
+        "proof-model:policy-optimization.authority-change-effect-trace.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30281,15 +30385,28 @@
       "excluded_effects": [
         "Artifact identity/quality, feedback/reward truth, evaluation independence, promotion/authority/rollback effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.reward_boundary.failure_blocks_promotion",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.evaluation-integrity-refinement.v1"
+        "proof-model:policy-optimization.evaluation-integrity-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30303,15 +30420,28 @@
       "excluded_effects": [
         "Field truth, feedback admissibility, evaluation/holdout/probe/governance quality, runtime rejection/review/rollback/residual effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.promotion_route.failure_routes",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.generated-promotion-route-refinement.v1"
+        "proof-model:policy-optimization.generated-promotion-route-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30325,15 +30455,28 @@
       "excluded_effects": [
         "Field truth, feedback admissibility, evaluation/holdout/probe/governance quality, runtime rejection/review/rollback/residual effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.promotion_route.failure_routes",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.generated-promotion-route-refinement.v1"
+        "proof-model:policy-optimization.generated-promotion-route-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30347,15 +30490,28 @@
       "excluded_effects": [
         "Field truth, feedback admissibility, evaluation/holdout/probe/governance quality, runtime rejection/review/rollback/residual effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.promotion_route.failure_routes",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.generated-promotion-route-refinement.v1"
+        "proof-model:policy-optimization.generated-promotion-route-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30369,15 +30525,28 @@
       "excluded_effects": [
         "Field truth, feedback admissibility, evaluation/holdout/probe/governance quality, runtime rejection/review/rollback/residual effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.promotion_route.failure_routes",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.generated-promotion-route-refinement.v1"
+        "proof-model:policy-optimization.generated-promotion-route-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30391,15 +30560,28 @@
       "excluded_effects": [
         "Field truth, feedback admissibility, evaluation/holdout/probe/governance quality, runtime rejection/review/rollback/residual effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.promotion_route.failure_routes",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.generated-promotion-route-refinement.v1"
+        "proof-model:policy-optimization.generated-promotion-route-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30413,15 +30595,28 @@
       "excluded_effects": [
         "Field truth, feedback admissibility, evaluation/holdout/probe/governance quality, runtime rejection/review/rollback/residual effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.promotion_route.failure_routes",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.generated-promotion-route-refinement.v1"
+        "proof-model:policy-optimization.generated-promotion-route-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30435,15 +30630,28 @@
       "excluded_effects": [
         "Field truth, feedback admissibility, evaluation/holdout/probe/governance quality, runtime rejection/review/rollback/residual effects, policy improvement, reproduction, and transfer are excluded."
       ],
-      "countermodel_refs": [],
-      "mutation_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.promotion_route.failure_routes",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
-      "runtime_consumer_refs": [],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.generated-promotion-route-refinement.v1"
+        "proof-model:policy-optimization.generated-promotion-route-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retain only at exact finite predicate, route-function, or validator-owned fixture scope."
     },
@@ -30453,20 +30661,30 @@
       "semantic_role": "Validity witness over counts and flags copied into the hard-coded lease-probe summary.",
       "assumptions": [],
       "excluded_effects": [],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_policy_update_lease_probe.py#three-controls"
+        "scripts/validate_policy_update_lease_probe.py#three-controls",
+        "scripts/validate_policy_optimization_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.lease_probe_fixture_bridge",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_policy_update_lease_probe.py",
-        "experiments/policy_update_lease/results/2026-07-02-local.json"
+        "experiments/policy_update_lease/results/2026-07-02-local.json",
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json"
       ],
       "replacement_refs": [
-        "proof-model:policy-optimization.lease-probe-result-conformance.v1"
+        "proof-model:policy-optimization.lease-probe-result-conformance.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
     },
@@ -30476,20 +30694,30 @@
       "semantic_role": "Normalization of the copied reward-only rejection flag.",
       "assumptions": [],
       "excluded_effects": [],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_policy_update_lease_probe.py#three-controls"
+        "scripts/validate_policy_update_lease_probe.py#three-controls",
+        "scripts/validate_policy_optimization_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.lease_probe_fixture_bridge",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_policy_update_lease_probe.py",
-        "experiments/policy_update_lease/results/2026-07-02-local.json"
+        "experiments/policy_update_lease/results/2026-07-02-local.json",
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json"
       ],
       "replacement_refs": [
-        "proof-model:policy-optimization.lease-probe-result-conformance.v1"
+        "proof-model:policy-optimization.lease-probe-result-conformance.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
     },
@@ -30499,20 +30727,30 @@
       "semantic_role": "Normalization of copied rollback-dry-run, no-support, and non-claim flags.",
       "assumptions": [],
       "excluded_effects": [],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
       "mutation_refs": [
-        "scripts/validate_policy_update_lease_probe.py#three-controls"
+        "scripts/validate_policy_update_lease_probe.py#three-controls",
+        "scripts/validate_policy_optimization_refinement.py#mutations"
       ],
       "consumer_refs": [
         "proof-target:lean:policy_optimization.lease_probe_fixture_bridge",
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_policy_update_lease_probe.py",
-        "experiments/policy_update_lease/results/2026-07-02-local.json"
+        "experiments/policy_update_lease/results/2026-07-02-local.json",
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json"
       ],
       "replacement_refs": [
-        "proof-model:policy-optimization.lease-probe-result-conformance.v1"
+        "proof-model:policy-optimization.lease-probe-result-conformance.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
       "review_rationale": "Retire or replace the active proof surface while preserving frozen lineage and adjacent evidence."
     },
@@ -42778,95 +43016,152 @@
       "dependencies": [
         "policy-optimization-and-learning-from-feedback.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
       "review_state": "terminally_dispositioned",
       "disposition": "replace_with_stronger_model",
-      "semantic_role": "The admitted-update theorem assumes every required record field rather than observing an update or admission effect.",
-      "assumptions": [],
-      "excluded_effects": [],
-      "mutation_refs": [],
-      "runtime_consumer_refs": [],
-      "replacement_refs": [
-        "proof-model:policy-optimization.admitted-update-effect-refinement.v1"
+      "semantic_role": "Reachable scope-to-full-state-to-update-to-evaluation-to-adjudication-to-bounded-lease lifecycle with exact identity, causal, rollback, invalidation, authority, and successor-version boundaries.",
+      "assumptions": [
+        "All target, baseline, objective, data, feedback, checkpoint, optimizer, scheduler, RNG, cache, backup, descendant, evaluator, causal, rollback, monitor, invalidation, consumer, authority, and version records are trusted inside the finite authored model."
       ],
-      "review_rationale": "Replace the assumed headline with reachable effects, executable evidence, and checked consumers."
+      "excluded_effects": [
+        "Learning, reward/evaluator validity, causal improvement, retained capability, forgetting control, rollback/monitor efficacy, useful throughput, safety, alignment, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
+      "replacement_refs": [
+        "proof-model:policy-optimization.admitted-update-effect-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
+      ],
+      "review_rationale": "Replace projection headlines and disconnected promotion routes with a reachable versioned update lifecycle, independent replay, sixty-three routes, and 73 rejecting mutations."
     },
     "lean:policy_optimization.reward_boundary.failure_blocks_promotion": {
       "dependencies": [
         "policy-optimization-and-learning-from-feedback.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
       "review_state": "terminally_dispositioned",
       "disposition": "replace_with_stronger_model",
-      "semantic_role": "Headline reward/governance and positive evidence theorems assume the desired implications; four retained negatives remain bounded record contradictions.",
-      "assumptions": [],
-      "excluded_effects": [],
-      "mutation_refs": [],
-      "runtime_consumer_refs": [],
+      "semantic_role": "Reachable scope-to-full-state-to-update-to-evaluation-to-adjudication-to-bounded-lease lifecycle with exact identity, causal, rollback, invalidation, authority, and successor-version boundaries.",
+      "assumptions": [
+        "All target, baseline, objective, data, feedback, checkpoint, optimizer, scheduler, RNG, cache, backup, descendant, evaluator, causal, rollback, monitor, invalidation, consumer, authority, and version records are trusted inside the finite authored model."
+      ],
+      "excluded_effects": [
+        "Learning, reward/evaluator validity, causal improvement, retained capability, forgetting control, rollback/monitor efficacy, useful throughput, safety, alignment, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
+      ],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
         "proof-model:policy-optimization.reward-governance-effect-trace.v1",
-        "proof-model:policy-optimization.promotion-evidence-result-refinement.v1"
+        "proof-model:policy-optimization.promotion-evidence-result-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
-      "review_rationale": "Replace the assumed headline with reachable effects, executable evidence, and checked consumers."
+      "review_rationale": "Replace projection headlines and disconnected promotion routes with a reachable versioned update lifecycle, independent replay, sixty-three routes, and 73 rejecting mutations."
     },
     "lean:policy_optimization.promotion_route.failure_routes": {
       "dependencies": [
         "policy-optimization-and-learning-from-feedback.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_load_bearing_semantic",
-      "semantic_role": "Seven general finite guard-priority routes reject or redirect policy-promotion records before promote.",
+      "semantic_role": "Reachable scope-to-full-state-to-update-to-evaluation-to-adjudication-to-bounded-lease lifecycle with exact identity, causal, rollback, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "PolicyUpdatePromotionRouteFor and declared fields are authoritative for the finite model."
+        "All target, baseline, objective, data, feedback, checkpoint, optimizer, scheduler, RNG, cache, backup, descendant, evaluator, causal, rollback, monitor, invalidation, consumer, authority, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No field truth, optimizer/training run, evaluation quality, promotion/rollback effect, policy improvement, reproduction, or transfer."
+        "Learning, reward/evaluator validity, causal improvement, retained capability, forgetting control, rollback/monitor efficacy, useful throughput, safety, alignment, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
-      "mutation_refs": [],
-      "runtime_consumer_refs": [],
+      "mutation_refs": [
+        "scripts/validate_policy_optimization_refinement.py#mutations"
+      ],
+      "runtime_consumer_refs": [
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json",
+        "scripts/validate_policy_update_lease_probe.py"
+      ],
       "replacement_refs": [
-        "proof-model:policy-optimization.generated-promotion-route-refinement.v1"
+        "proof-model:policy-optimization.generated-promotion-route-refinement.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Replace projection headlines and disconnected promotion routes with a reachable versioned update lifecycle, independent replay, sixty-three routes, and 73 rejecting mutations."
     },
     "lean:policy_optimization.lease_probe_fixture_bridge": {
       "dependencies": [
         "policy-optimization-and-learning-from-feedback.core"
       ],
-      "countermodel_refs": [],
+      "countermodel_refs": [
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean#policy_update_lifecycle_routes"
+      ],
       "consumer_refs": [
-        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks"
+        "chapter:policy-optimization-and-learning-from-feedback#formalization-hooks",
+        "docs:policy_optimization_refinement",
+        "evidence_quality:model_adequacy_dossiers/policy-optimization-refinement.md"
       ],
       "review_state": "semantically_reviewed",
       "disposition": "retain_refinement_or_executable_bridge",
-      "semantic_role": "Validator-owned six-sample/five-candidate synthetic lease probe rejects three invalid candidates, keeps the selected canary experimental, dry-runs fixture rollback, and creates no support transition; copied Lean summary facts are replaced.",
+      "semantic_role": "Reachable scope-to-full-state-to-update-to-evaluation-to-adjudication-to-bounded-lease lifecycle with exact identity, causal, rollback, invalidation, authority, and successor-version boundaries.",
       "assumptions": [
-        "Tracked deterministic workload/candidate/result records remain current."
+        "All target, baseline, objective, data, feedback, checkpoint, optimizer, scheduler, RNG, cache, backup, descendant, evaluator, causal, rollback, monitor, invalidation, consumer, authority, and version records are trusted inside the finite authored model."
       ],
       "excluded_effects": [
-        "No PPO/DPO/GRPO/RLVR or optimizer, real policy improvement, reward/route quality, deployed canary, live rollback, reproduction, or transfer."
+        "Learning, reward/evaluator validity, causal improvement, retained capability, forgetting control, rollback/monitor efficacy, useful throughput, safety, alignment, readiness, release, reproduction, transfer, SOTA, and chapter-core support are excluded."
       ],
       "mutation_refs": [
-        "scripts/validate_policy_update_lease_probe.py#three-controls"
+        "scripts/validate_policy_update_lease_probe.py#three-controls",
+        "scripts/validate_policy_optimization_refinement.py#mutations"
       ],
       "runtime_consumer_refs": [
         "scripts/validate_policy_update_lease_probe.py",
-        "experiments/policy_update_lease/results/2026-07-02-local.json"
+        "experiments/policy_update_lease/results/2026-07-02-local.json",
+        "scripts/validate_policy_optimization_refinement.py",
+        "schemas/policy_optimization_refinement.schema.json",
+        "experiments/policy_optimization_refinement/results/2026-07-16-local.json"
       ],
       "replacement_refs": [
-        "proof-model:policy-optimization.lease-probe-result-conformance.v1"
+        "proof-model:policy-optimization.lease-probe-result-conformance.v1",
+        "proof-model:policy-optimization-refinement.v1",
+        "lean/AsiStackProofs/PolicyOptimizationRefinement.lean"
       ],
-      "review_rationale": "Retain only the bounded route or validator-owned fixture; no training, quality, or deployment conclusion follows."
+      "review_rationale": "Replace projection headlines and disconnected promotion routes with a reachable versioned update lifecycle, independent replay, sixty-three routes, and 73 rejecting mutations."
     },
     "lean:data_engines.provenance_authority.failure_blocks_admission": {
       "dependencies": [

@@ -4213,7 +4213,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` proves local finite-record implemented-target, non-operational routing, proof-lane authority, support-promotion boundary, and external-theorem reference requirements without claiming broad system proof, semantic adequacy, source correctness, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 298 proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`.
 - Implemented generated audit: `docs/proof_artifact_audit.md` checks that all 298 proof targets are traceable through manifest, triage, Lean module, root import, chapter hook, limitation prose, and Appendix E coverage; this is not a semantic adequacy review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 94 Lean modules, 1289 theorem declarations, 894 derived/decomposed, 230 direct/projection, 165 unknown/mixed, and 1/1 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 298 proof targets, 95 Lean modules, 1290 theorem declarations, 894 derived/decomposed, 230 direct/projection, 166 unknown/mixed, and 1/1 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -4714,9 +4714,12 @@ Draft arc:
   reward/evaluator attacks, causal ablation, forgetting, natural monitoring,
   effect-complete rollback, joint utility/safety/rights/resource measurement,
   independent trainers/evaluators/data custody/institutions, and transfer.
-- Formal audit: nineteen declarations comprise eight finite record implications,
-  seven route reductions, three fixture normalizations, and one finite
-  evaluation-integrity gate; none proves learning, reward quality, convergence,
+- Formal audit: five legacy projections are retired; four contradictions and
+  seven guard-priority routes remain useful; three copied fixture facts are
+  replaced by generated result conformance. One combined refinement theorem and
+  an independent seven-stage, 63-route, 73-mutation consumer now connect scope,
+  full-state custody, update, evaluation, adjudication, bounded lease, and
+  versioned readmission. None proves learning, reward quality, convergence,
   causal target improvement, forgetting control, runtime rollback, or transfer.
 
 Primary invariants:
@@ -4742,6 +4745,7 @@ Draft deliverables:
 - A policy optimization record schema with update state, target layer, policy delta, feedback source/admissibility, reward signal/boundary, verifier refs, reward-hacking probes, update constraint, drift bound, holdouts, regressions, evaluation refs, governance gates, authority effect, rollback plan, monitor window, evidence packet refs, deployment scope, support-state effect, residuals, and non-claims.
 - Implemented repository-level fixture: `policy_optimization_record.valid.json` validates update state, policy delta summary, feedback admissibility, reward boundary, reward-hacking probes, holdouts, regressions, authority effect, monitor window, evidence packet refs, deployment scope, support-state effect, and non-claims only; no PPO, DPO, GRPO, RLVR, router-policy, context-policy, or reasoning-budget experiment has been run.
 - Implemented deterministic Policy update lease probe: `python3 scripts/validate_policy_update_lease_probe.py` validates `experiments/policy_update_lease/results/2026-07-02-local.json`, a six-sample synthetic router-policy canary lease with holdouts, contamination check, reward-hacking probes, unchanged authority, rollback dry run, expected-invalid controls, residuals, and non-claims only; no optimizer, live canary, deployed rollback, route-quality result, or support-state promotion exists.
+- Implemented update-lifecycle refinement: `python3 scripts/validate_policy_optimization_refinement.py` independently reruns the inherited lease, reaches all 63 routes across seven stages, rejects 73/73 mutations, emits one bounded lease and version-2 readmission witness, and preserves support/external-effect authority at none; no optimizer, learning, reward-validity, causal, forgetting, rollback-efficacy, deployment, reproduction, transfer, or support result exists.
 - Public-safe ingestion report: `docs/policy_optimization_context_ingestion_report.md`.
 - External literature queue: initial source records and conservative source notes now exist for TRPO, PPO, ReMax, DPO, IPO/preference-learning theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, and RLHF limitation work; process-reward work beyond LongRLVR remains queued.
 - Planned Codex test: DPO/offline preference baseline test.
@@ -4762,10 +4766,10 @@ Lean proof targets:
 
 | Tag | Lean module | Formal target | Status |
 |---|---|---|---|
-| `lean:policy_optimization.update.operational_invariant` | `AsiStackProofs.PolicyOptimization` | An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan. | implemented |
-| `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimization` | A policy update with unverified reward or missing governance gate cannot be promoted. | implemented |
-| `lean:policy_optimization.promotion_route.failure_routes` | `AsiStackProofs.PolicyOptimization` | A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion. | implemented |
-| `lean:policy_optimization.lease_probe_fixture_bridge` | `AsiStackProofs.PolicyOptimization` | The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary. | implemented |
+| `lean:policy_optimization.update.operational_invariant` | `AsiStackProofs.PolicyOptimizationRefinement` | A versioned governed-update lifecycle binds target, baseline, objective, data, feedback, full optimizer/checkpoint/RNG and descendant state, evaluation, adjudication, bounded consumption, rollback, and readmission without assigning support or an external effect. | implemented |
+| `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `AsiStackProofs.PolicyOptimizationRefinement` | Missing target evaluation, causal ablation, reward-hacking probes, regression, forgetting, safety/rights, uncertainty, or independent evaluation blocks a policy update before bounded-lease adjudication. | implemented |
+| `lean:policy_optimization.promotion_route.failure_routes` | `AsiStackProofs.PolicyOptimizationRefinement` | All finite update-lifecycle routes reject or redirect incomplete scope, state, update, evaluation, adjudication, lease, rollback, or readmission records before bounded use. | implemented |
+| `lean:policy_optimization.lease_probe_fixture_bridge` | `AsiStackProofs.PolicyOptimizationRefinement` | The independently consumed six-sample/five-candidate lease probe and the reachable lifecycle preserve three rejected controls, experimental-only use, versioned readmission, and no support or external-effect authority. | implemented |
 
 ### Data Engines, Continual Learning, and Unlearning
 

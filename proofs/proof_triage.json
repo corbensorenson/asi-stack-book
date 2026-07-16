@@ -1593,42 +1593,42 @@
     {
       "tag": "lean:policy_optimization.update.operational_invariant",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "module": "AsiStackProofs.PolicyOptimization",
-      "formal_target": "An admitted policy update records target layer, reward signal, update constraint, evaluation refs, governance gates, and rollback plan.",
+      "module": "AsiStackProofs.PolicyOptimizationRefinement",
+      "formal_target": "A versioned governed-update lifecycle binds target, baseline, objective, data, feedback, full optimizer/checkpoint/RNG and descendant state, evaluation, adjudication, bounded consumption, rollback, and readmission without assigning support or an external effect.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite policy-update predicate: admitted policy updates require target-layer, reward-signal, update-constraint, evaluation, governance-gate, and rollback fields."
+      "rationale": "Reachable governed policy-update lifecycle with prospective scope, full optimizer/checkpoint/RNG and descendant custody, update receipt, independent evaluation, adjudication, bounded lease, effect-complete rollback, successor-version readmission, 63 routes, 73 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:policy_optimization.reward_boundary.failure_blocks_promotion",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "module": "AsiStackProofs.PolicyOptimization",
-      "formal_target": "A policy update with unverified reward or missing governance gate cannot be promoted.",
+      "module": "AsiStackProofs.PolicyOptimizationRefinement",
+      "formal_target": "Missing target evaluation, causal ablation, reward-hacking probes, regression, forgetting, safety/rights, uncertainty, or independent evaluation blocks a policy update before bounded-lease adjudication.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite reward/governance predicate: unverified reward or missing governance gate blocks policy-update promotion."
+      "rationale": "Reachable governed policy-update lifecycle with prospective scope, full optimizer/checkpoint/RNG and descendant custody, update receipt, independent evaluation, adjudication, bounded lease, effect-complete rollback, successor-version readmission, 63 routes, 73 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:policy_optimization.promotion_route.failure_routes",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "module": "AsiStackProofs.PolicyOptimization",
-      "formal_target": "A policy-promotion route rejects or routes updates with inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, or regression/residual gaps before promotion.",
+      "module": "AsiStackProofs.PolicyOptimizationRefinement",
+      "formal_target": "All finite update-lifecycle routes reject or redirect incomplete scope, state, update, evaluation, adjudication, lease, rollback, or readmission records before bounded use.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite promotion-route predicate: inadmissible feedback, missing target evaluation, missing holdout or contamination checks, missing reward-hacking probes, governance or authority gaps, missing rollback, and regression/residual gaps route away from promotion."
+      "rationale": "Reachable governed policy-update lifecycle with prospective scope, full optimizer/checkpoint/RNG and descendant custody, update receipt, independent evaluation, adjudication, bounded lease, effect-complete rollback, successor-version readmission, 63 routes, 73 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:policy_optimization.lease_probe_fixture_bridge",
       "chapter_id": "policy-optimization-and-learning-from-feedback",
-      "module": "AsiStackProofs.PolicyOptimization",
-      "formal_target": "The deterministic policy-update lease probe records six synthetic routing samples, five candidate policies, selected canary kept experimental, expected-invalid controls, rollback dry run, no support-state effect, and non-claim boundary.",
+      "module": "AsiStackProofs.PolicyOptimizationRefinement",
+      "formal_target": "The independently consumed six-sample/five-candidate lease probe and the reachable lifecycle preserve three rejected controls, experimental-only use, versioned readmission, and no support or external-effect authority.",
       "target_status": "implemented",
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
-      "rationale": "Implemented in AsiStackProofs.PolicyOptimization as a finite synthetic lease-probe summary: it mirrors sample/candidate counts, expected-invalid control rejection, rollback dry-run presence, no-support-effect status, and non-claim boundary only, without proving optimizer behavior, reward quality, route quality, live canary behavior, live rollback behavior, or chapter-core support movement."
+      "rationale": "Reachable governed policy-update lifecycle with prospective scope, full optimizer/checkpoint/RNG and descendant custody, update receipt, independent evaluation, adjudication, bounded lease, effect-complete rollback, successor-version readmission, 63 routes, 73 rejecting mutations, and no support/effect authority."
     },
     {
       "tag": "lean:data_engines.provenance_authority.failure_blocks_admission",

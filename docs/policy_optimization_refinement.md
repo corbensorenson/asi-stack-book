@@ -1,0 +1,9 @@
+# Policy Optimization update-lifecycle refinement
+
+The refinement replaces two projection-shaped Policy Optimization headlines with a reachable seven-stage Governed Policy Update Lease lifecycle. It independently consumes the existing six-sample, five-candidate synthetic lease probe, preserves its three rejected negative controls and experimental-only disposition, then exercises all 63 lifecycle routes and rejects 73/73 registered mutations.
+
+The stages are scope, full training-state binding, update receipt, independent evaluation, adjudication, bounded lease, and material-change readmission. Exact identity custody covers the target policy, baseline, objective, dataset, feedback, base and candidate checkpoints, optimizer, scheduler, RNG, evaluator, rollback, consumer, authority, and protocol version. The state-binding stage also requires cache, backup, descendant, and rollback-snapshot inventories; evaluation requires target measures, a strong baseline, causal ablation, reward-hacking probes, regressions, forgetting, safety/rights, and uncertainty; readmission requires effect-complete rollback and descendant invalidation.
+
+The complete witness emits one bounded lease and returns only to version-2 scoped binding. Support-state and external-effect authority remain exactly `none`. The result is at `experiments/policy_optimization_refinement/results/2026-07-16-local.json`; reproduce it with `python3 scripts/validate_policy_optimization_refinement.py`.
+
+This is finite authored record logic. No optimizer, model, trainer, preference dataset, reward model, natural workload, real policy update, deployed canary, live rollback, independent reproduction, or transfer ran. It proves no learning, reward, causal, forgetting, rollback, task, safety, readiness, alignment, release, SOTA, AGI, or ASI claim.
