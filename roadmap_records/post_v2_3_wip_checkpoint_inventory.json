@@ -3,15 +3,15 @@
   "roadmap_id": "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14",
   "recorded_date": "2026-07-16",
   "base_commit": "1faacc14d1134192a5776715a38d704c16fbb62b",
-  "checkpoint_commit": null,
-  "closure_commit": null,
+  "checkpoint_commit": "9b06a40e5028ad5636c254aba00c11490011cabe",
+  "closure_commit": "self_commit_containing_this_record",
   "changed_path_count": 296,
   "independent_work_package_count": 7,
   "changed_path_soft_limit": 250,
   "independent_work_package_limit": 3,
   "threshold_exceeded": true,
   "scope_expansion_blocked": false,
-  "checkpoint_disposition": "checkpoint_authorized_pending_commit",
+  "checkpoint_disposition": "checkpoint_committed_attested_closure_recorded",
   "commit_authorized": true,
   "authorization_basis": "On 2026-07-16 the user explicitly instructed Codex to reconcile the current work onto main and push it so GitHub main reflects the most current project state, while prohibiting new branches.",
   "authorization_scope": "Commit the complete validated intended worktree directly on main, attest the committed checkpoint, record closure, push main, and delete the two obsolete remote codex branches after verifying both are ancestors of main. No tag, deployment, raw-source publication, book release, or social publication is authorized.",
@@ -149,20 +149,20 @@
     }
   ],
   "checkpoint_closure": {
-    "attestation_result_path": null,
-    "attestation_state": "pending_authorized_checkpoint_commit",
-    "dependent_artifact_reality_state": "validated_worktree_pending_committed_object_attestation",
-    "closure_commit_parent_is_checkpoint_commit": false,
-    "worktree_was_clean_after_closure_commit": false,
+    "attestation_result_path": "roadmap_records/post_v2_3_checkpoint_attestation_2026_07_16.json",
+    "attestation_state": "passed_committed_object_and_clean_worktree",
+    "dependent_artifact_reality_state": "committed_object_attested",
+    "closure_commit_parent_is_checkpoint_commit": true,
+    "worktree_was_clean_after_closure_commit": true,
     "external_actions_authorized": true
   },
-  "next_checkpoint_requirement": "Create one coherent main-branch checkpoint for these seven packages, run committed-object and clean-worktree attestation, record the checkpoint and closure commits, push main, and delete only the two verified ancestor remote codex branches. Do not tag, deploy, publish raw sources, release the book, or publish the X article.",
+  "next_checkpoint_requirement": "Push the attested main-branch closure commit, verify origin/main equals local main, and delete only the two verified ancestor remote codex branches. Do not tag, deploy, publish raw sources, release the book, or publish the X article.",
   "support_state_effect": "none",
   "release_effect": "none",
   "non_claims": [
     "Changed-path and package counts are engineering-risk indicators, not semantic or empirical proof.",
-    "Inventory completion is not checkpoint completion; commit and push authority comes only from the user's explicit 2026-07-16 instruction.",
-    "The current uncommitted worktree has no committed-object attestation yet; closure must record it after the checkpoint commit.",
+    "Checkpoint completion does not imply push, deployment, release, or publication beyond the user's explicit 2026-07-16 main-branch instruction.",
+    "The symbolic closure_commit value identifies the Git commit containing this record; the attestation binds its required parent to the exact checkpoint commit without inventing a self-hash.",
     "No tag, deploy, raw-source publication, book release, social publication, support, reproduction, transfer, SOTA, AGI, or ASI claim follows."
   ]
 }

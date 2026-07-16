@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.checkpoint_attestation.v0",
+  "recorded_date": "2026-07-16",
+  "roadmap_id": "asi-stack-post-v2-3-claim-proof-sota-challenge-2026-07-14",
+  "checkpoint_commit": "9b06a40e5028ad5636c254aba00c11490011cabe",
+  "checkpoint_tree": "d1efe9f9731ffbddaebea900b24c4c1cc50d25e0",
+  "checkpoint_parent": "1faacc14d1134192a5776715a38d704c16fbb62b",
+  "checkpoint_branch": "main",
+  "checkpoint_subject": "Complete proof campaigns and integrate KERC roadmap",
+  "changed_path_count": 296,
+  "independent_work_package_count": 7,
+  "closure_commit_identity": "the Git commit whose tree contains this attestation record",
+  "closure_commit_required_parent": "9b06a40e5028ad5636c254aba00c11490011cabe",
+  "committed_object_checks": {
+    "commit_object_exists": true,
+    "checkpoint_tree_matches": true,
+    "checkpoint_parent_matches": true,
+    "branch_was_main": true,
+    "worktree_was_clean_before_closure_record": true
+  },
+  "validated_checkpoint_contracts": [
+    "publication_surface",
+    "release_profiles",
+    "reader_spine",
+    "book_base",
+    "visual_coverage",
+    "212_schemas",
+    "89_protocol_fixtures_and_11_release_records",
+    "trust_surface",
+    "p4_m6_routing_deliberation",
+    "363_unit_1703_artifact_validation_registry",
+    "post_v2_3_roadmap",
+    "101_job_lean_build",
+    "68_page_quarto_html_render",
+    "114_rendered_page_viewport_pairs"
+  ],
+  "raw_kerc_source_tracked": false,
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This attestation binds a committed repository state; it is not independent reproduction or transfer evidence.",
+    "The KERC intake remains argument-only and does not establish an implementation or empirical result.",
+    "The M6 routing result remains mixed and creates no support promotion.",
+    "No tag, deployment, book release, raw-source publication, or social publication follows."
+  ]
+}

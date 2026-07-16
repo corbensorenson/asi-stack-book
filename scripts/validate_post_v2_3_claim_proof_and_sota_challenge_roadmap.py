@@ -216,6 +216,7 @@ def snapshot() -> dict:
         "structural_expansion_atoms": load("evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json"),
         "claim_atom_registry": load("evidence_quality/claim_atom_registry.json"),
         "wip_checkpoint_inventory": load("roadmap_records/post_v2_3_wip_checkpoint_inventory.json"),
+        "checkpoint_attestation": load("roadmap_records/post_v2_3_checkpoint_attestation_2026_07_16.json"),
         "governed_usefulness_prereg": load(GOVERNED_USEFULNESS_PREREG),
         "governed_usefulness_access": load(GOVERNED_USEFULNESS_ACCESS),
         "governed_usefulness_v1_result": load(GOVERNED_USEFULNESS_V1_RESULT),
@@ -492,19 +493,33 @@ def errors(data: dict) -> list[str]:
         out.append("WIP checkpoint package inventory drifted")
     if wip.get("changed_path_count") != 296 or wip.get("threshold_exceeded") is not True or wip.get("scope_expansion_blocked") is not False:
         out.append("current inventoried WIP snapshot drifted")
-    if wip.get("checkpoint_disposition") != "checkpoint_authorized_pending_commit" or wip.get("commit_authorized") is not True:
+    checkpoint_commit = "9b06a40e5028ad5636c254aba00c11490011cabe"
+    checkpoint_tree = "d1efe9f9731ffbddaebea900b24c4c1cc50d25e0"
+    if wip.get("checkpoint_disposition") != "checkpoint_committed_attested_closure_recorded" or wip.get("commit_authorized") is not True:
         out.append("authorized WIP checkpoint disposition drifted")
-    if wip.get("checkpoint_commit") is not None or wip.get("closure_commit") is not None:
-        out.append("no-authority WIP inventory invented checkpoint commits")
+    if wip.get("checkpoint_commit") != checkpoint_commit or wip.get("closure_commit") != "self_commit_containing_this_record":
+        out.append("WIP checkpoint or symbolic closure identity drifted")
     closure = wip.get("checkpoint_closure", {})
-    if closure.get("attestation_state") != "pending_authorized_checkpoint_commit":
+    if closure.get("attestation_result_path") != "roadmap_records/post_v2_3_checkpoint_attestation_2026_07_16.json":
+        out.append("authorized WIP checkpoint attestation path drifted")
+    if closure.get("attestation_state") != "passed_committed_object_and_clean_worktree":
         out.append("authorized WIP checkpoint attestation state drifted")
-    if closure.get("dependent_artifact_reality_state") != "validated_worktree_pending_committed_object_attestation":
+    if closure.get("dependent_artifact_reality_state") != "committed_object_attested":
         out.append("authorized WIP dependent-attestation boundary drifted")
-    if closure.get("closure_commit_parent_is_checkpoint_commit") is not False:
-        out.append("no-authority WIP parent/closure assertion drifted")
-    if closure.get("worktree_was_clean_after_closure_commit") is not False or closure.get("external_actions_authorized") is not True:
+    if closure.get("closure_commit_parent_is_checkpoint_commit") is not True:
+        out.append("authorized WIP parent/closure assertion drifted")
+    if closure.get("worktree_was_clean_after_closure_commit") is not True or closure.get("external_actions_authorized") is not True:
         out.append("authorized WIP closure boundary drifted")
+    attestation = data["checkpoint_attestation"]
+    if attestation.get("checkpoint_commit") != checkpoint_commit or attestation.get("checkpoint_tree") != checkpoint_tree:
+        out.append("checkpoint attestation identity drifted")
+    if attestation.get("closure_commit_required_parent") != checkpoint_commit:
+        out.append("checkpoint attestation closure-parent binding drifted")
+    checks = attestation.get("committed_object_checks", {})
+    if not checks or not all(checks.values()):
+        out.append("checkpoint committed-object checks are incomplete")
+    if attestation.get("raw_kerc_source_tracked") is not False:
+        out.append("checkpoint attestation invented raw KERC publication")
     if wip.get("support_state_effect") != "none" or wip.get("release_effect") != "none":
         out.append("WIP checkpoint invented support or release effect")
 
